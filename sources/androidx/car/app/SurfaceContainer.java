@@ -1,7 +1,9 @@
 package androidx.car.app;
 
+import a9.p;
 import android.view.Surface;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class SurfaceContainer {
     private final int mDpi;
@@ -9,18 +11,19 @@ public final class SurfaceContainer {
     private final Surface mSurface;
     private final int mWidth;
 
-    public SurfaceContainer(Surface surface, int i, int i2, int i3) {
+    public SurfaceContainer(Surface surface, int i10, int i11, int i12) {
         this.mSurface = surface;
-        this.mWidth = i;
-        this.mHeight = i2;
-        this.mDpi = i3;
+        this.mWidth = i10;
+        this.mHeight = i11;
+        this.mDpi = i12;
     }
 
-    private SurfaceContainer() {
-        this.mSurface = null;
-        this.mWidth = 0;
-        this.mHeight = 0;
-        this.mDpi = 0;
+    public int getDpi() {
+        return this.mDpi;
+    }
+
+    public int getHeight() {
+        return this.mHeight;
     }
 
     public Surface getSurface() {
@@ -31,15 +34,21 @@ public final class SurfaceContainer {
         return this.mWidth;
     }
 
-    public int getHeight() {
-        return this.mHeight;
-    }
-
-    public int getDpi() {
-        return this.mDpi;
-    }
-
     public String toString() {
-        return "[" + this.mSurface + ", " + this.mWidth + "x" + this.mHeight + ", dpi: " + this.mDpi + "]";
+        StringBuilder sb2 = new StringBuilder("[");
+        sb2.append(this.mSurface);
+        sb2.append(", ");
+        sb2.append(this.mWidth);
+        sb2.append("x");
+        sb2.append(this.mHeight);
+        sb2.append(", dpi: ");
+        return p.k(this.mDpi, "]", sb2);
+    }
+
+    private SurfaceContainer() {
+        this.mSurface = null;
+        this.mWidth = 0;
+        this.mHeight = 0;
+        this.mDpi = 0;
     }
 }

@@ -2,37 +2,18 @@ package androidx.car.app.hardware.info;
 
 import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
+import s.g;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class Model {
     private final CarValue<String> mManufacturer;
     private final CarValue<String> mName;
     private final CarValue<Integer> mYear;
 
-    public CarValue<String> getName() {
-        CarValue<String> carValue = this.mName;
-        Objects.requireNonNull(carValue);
-        return carValue;
-    }
-
-    public CarValue<Integer> getYear() {
-        CarValue<Integer> carValue = this.mYear;
-        Objects.requireNonNull(carValue);
-        return carValue;
-    }
-
-    public CarValue<String> getManufacturer() {
-        CarValue<String> carValue = this.mManufacturer;
-        Objects.requireNonNull(carValue);
-        return carValue;
-    }
-
-    public String toString() {
-        return "[ name: " + this.mName + ", year: " + this.mYear + ", manufacturer: " + this.mManufacturer + "]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mName, this.mYear, this.mManufacturer);
+    public Model(g gVar) {
+        gVar.getClass();
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -46,16 +27,30 @@ public final class Model {
         return Objects.equals(this.mName, model.mName) && Objects.equals(this.mYear, model.mYear) && Objects.equals(this.mManufacturer, model.mManufacturer);
     }
 
-    Model(Builder builder) {
-        CarValue<String> carValue = builder.mName;
+    public CarValue<String> getManufacturer() {
+        CarValue<String> carValue = this.mManufacturer;
         Objects.requireNonNull(carValue);
-        this.mName = carValue;
-        CarValue<String> carValue2 = builder.mManufacturer;
-        Objects.requireNonNull(carValue2);
-        this.mManufacturer = carValue2;
-        CarValue<Integer> carValue3 = builder.mYear;
-        Objects.requireNonNull(carValue3);
-        this.mYear = carValue3;
+        return carValue;
+    }
+
+    public CarValue<String> getName() {
+        CarValue<String> carValue = this.mName;
+        Objects.requireNonNull(carValue);
+        return carValue;
+    }
+
+    public CarValue<Integer> getYear() {
+        CarValue<Integer> carValue = this.mYear;
+        Objects.requireNonNull(carValue);
+        return carValue;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mName, this.mYear, this.mManufacturer);
+    }
+
+    public String toString() {
+        return "[ name: " + this.mName + ", year: " + this.mYear + ", manufacturer: " + this.mManufacturer + "]";
     }
 
     private Model() {
@@ -63,22 +58,5 @@ public final class Model {
         this.mName = carValue;
         this.mManufacturer = carValue;
         this.mYear = CarValue.UNKNOWN_INTEGER;
-    }
-
-    public static final class Builder {
-        CarValue mManufacturer;
-        CarValue mName;
-        CarValue mYear;
-
-        public Builder() {
-            CarValue<String> carValue = CarValue.UNKNOWN_STRING;
-            this.mName = carValue;
-            this.mYear = CarValue.UNKNOWN_INTEGER;
-            this.mManufacturer = carValue;
-        }
-
-        public Model build() {
-            return new Model(this);
-        }
     }
 }

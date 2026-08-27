@@ -1,8 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import androidx.activity.OnBackPressedDispatcher$$ExternalSyntheticNonNull0;
-import kotlin.jvm.internal.Intrinsics;
-
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzjf implements zzjt {
     public static final zzjf zza = new zzjf();
@@ -11,7 +9,7 @@ public final class zzjf implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i10, zziz zzizVar, zzzt... zzztVarArr) {
         if (zzztVarArr.length != 3) {
             throw new zzdm(4, 3, null);
         }
@@ -28,20 +26,20 @@ public final class zzjf implements zzjt {
             throw new zzdm(4, 6, null);
         }
         Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
-        if (true != OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(zza3)) {
+        if (zza3 == null) {
             zza3 = null;
         }
         if (zza3 == null) {
             throw new zzdm(4, 5, null);
         }
         Object zza4 = zzizVar.zzc().zza(zzztVarArr[2]);
-        if (true != OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(zza4)) {
+        if (zza4 == null) {
             zza4 = null;
         }
         if (zza4 == null) {
             throw new zzdm(4, 5, null);
         }
-        if (Intrinsics.areEqual(zza3, zza4)) {
+        if (zza3.equals(zza4)) {
             zzizVar.zzg(zzizVar.zza() + intValue);
         }
     }

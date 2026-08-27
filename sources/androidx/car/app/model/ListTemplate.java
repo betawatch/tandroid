@@ -1,15 +1,14 @@
 package androidx.car.app.model;
 
 import androidx.car.app.messaging.model.ConversationItem;
-import androidx.car.app.model.ItemList;
-import androidx.car.app.utils.CollectionUtils;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class ListTemplate implements Template {
+public final class ListTemplate implements x0 {
     static final int MAX_ALLOWED_ITEMS = 100;
     static final int MAX_MESSAGES_PER_CONVERSATION = 10;
     private final ActionStrip mActionStrip;
@@ -20,40 +19,81 @@ public final class ListTemplate implements Template {
     private final ItemList mSingleList;
     private final CarText mTitle;
 
-    public CarText getTitle() {
-        return this.mTitle;
+    public ListTemplate(u uVar) {
+        this.mIsLoading = uVar.a;
+        this.mTitle = uVar.d;
+        this.mHeaderAction = uVar.e;
+        this.mSingleList = uVar.b;
+        this.mSectionedLists = androidx.car.app.utils.i.g(uVar.c);
+        this.mActionStrip = uVar.f;
+        this.mActions = androidx.car.app.utils.i.g(uVar.g);
     }
 
-    public Action getHeaderAction() {
-        return this.mHeaderAction;
+    public static List<SectionedItemList> getTruncatedCopy(List<SectionedItemList> list) {
+        v vVar = new v();
+        vVar.a = 100;
+        ArrayList arrayList = new ArrayList();
+        for (SectionedItemList sectionedItemList : list) {
+            arrayList.add(SectionedItemList.create(truncate(sectionedItemList.getItemList(), vVar), sectionedItemList.getHeader().toCharSequence()));
+            if (vVar.a <= 0) {
+                break;
+            }
+        }
+        return arrayList;
     }
 
-    public ActionStrip getActionStrip() {
-        return this.mActionStrip;
-    }
-
-    public boolean isLoading() {
-        return this.mIsLoading;
-    }
-
-    public ItemList getSingleList() {
-        return this.mSingleList;
-    }
-
-    public List<SectionedItemList> getSectionedLists() {
-        return CollectionUtils.emptyIfNull(this.mSectionedLists);
-    }
-
-    public List<Action> getActions() {
-        return this.mActions;
-    }
-
-    public String toString() {
-        return "ListTemplate";
-    }
-
-    public int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.mIsLoading), this.mTitle, this.mHeaderAction, this.mSingleList, this.mSectionedLists, this.mActionStrip);
+    public static ItemList truncate(ItemList itemList, v vVar) {
+        r rVar = new r(itemList);
+        ArrayList arrayList = rVar.a;
+        arrayList.clear();
+        for (q qVar : itemList.getItems()) {
+            if (!(qVar instanceof ConversationItem)) {
+                if (vVar.a < 1) {
+                    break;
+                }
+                Objects.requireNonNull(qVar);
+                arrayList.add(qVar);
+                vVar.a--;
+            } else {
+                ConversationItem conversationItem = (ConversationItem) qVar;
+                if (vVar.a < 2) {
+                    break;
+                }
+                androidx.car.app.messaging.model.f fVar = new androidx.car.app.messaging.model.f(conversationItem);
+                int i10 = vVar.a - 1;
+                vVar.a = i10;
+                int min = Math.min(i10, 10);
+                int size = conversationItem.getMessages().size();
+                int min2 = Math.min(size, min);
+                fVar.f = conversationItem.getMessages().subList(size - min2, size);
+                arrayList.add(new ConversationItem(fVar));
+                vVar.a -= min2;
+            }
+        }
+        if (rVar.c != null) {
+            int size2 = arrayList.size();
+            if (size2 == 0) {
+                throw new IllegalStateException("A selectable list cannot be empty");
+            }
+            int i11 = rVar.b;
+            if (i11 >= size2) {
+                throw new IllegalStateException("The selected item index (" + i11 + ") is larger than the size of the list (" + size2 + ")");
+            }
+            int size3 = arrayList.size();
+            int i12 = 0;
+            while (i12 < size3) {
+                Object obj = arrayList.get(i12);
+                i12++;
+                q qVar2 = (q) obj;
+                if (ItemList.getOnClickDelegate(qVar2) != null) {
+                    throw new IllegalStateException("Items that belong to selectable lists can't have an onClickListener. Use the OnSelectedListener of the list instead");
+                }
+                if (ItemList.getToggle(qVar2) != null) {
+                    throw new IllegalStateException("Items that belong to selectable lists can't have a toggle");
+                }
+            }
+        }
+        return new ItemList(rVar);
     }
 
     public boolean equals(Object obj) {
@@ -67,14 +107,45 @@ public final class ListTemplate implements Template {
         return this.mIsLoading == listTemplate.mIsLoading && Objects.equals(this.mTitle, listTemplate.mTitle) && Objects.equals(this.mHeaderAction, listTemplate.mHeaderAction) && Objects.equals(this.mSingleList, listTemplate.mSingleList) && Objects.equals(this.mSectionedLists, listTemplate.mSectionedLists) && Objects.equals(this.mActionStrip, listTemplate.mActionStrip) && Objects.equals(this.mActions, listTemplate.mActions);
     }
 
-    ListTemplate(Builder builder) {
-        this.mIsLoading = builder.mIsLoading;
-        this.mTitle = builder.mTitle;
-        this.mHeaderAction = builder.mHeaderAction;
-        this.mSingleList = builder.mSingleList;
-        this.mSectionedLists = CollectionUtils.unmodifiableCopy(builder.mSectionedLists);
-        this.mActionStrip = builder.mActionStrip;
-        this.mActions = CollectionUtils.unmodifiableCopy(builder.mActions);
+    public ActionStrip getActionStrip() {
+        return this.mActionStrip;
+    }
+
+    public List<Action> getActions() {
+        return this.mActions;
+    }
+
+    public Action getHeaderAction() {
+        return this.mHeaderAction;
+    }
+
+    public List<SectionedItemList> getSectionedLists() {
+        List<SectionedItemList> list = this.mSectionedLists;
+        return list != null ? list : Collections.EMPTY_LIST;
+    }
+
+    public ItemList getSingleList() {
+        return this.mSingleList;
+    }
+
+    public CarText getTitle() {
+        return this.mTitle;
+    }
+
+    public int hashCode() {
+        return Objects.hash(Boolean.valueOf(this.mIsLoading), this.mTitle, this.mHeaderAction, this.mSingleList, this.mSectionedLists, this.mActionStrip);
+    }
+
+    public boolean isLoading() {
+        return this.mIsLoading;
+    }
+
+    public u toBuilder() {
+        return new u(this);
+    }
+
+    public String toString() {
+        return "ListTemplate";
     }
 
     private ListTemplate() {
@@ -86,96 +157,5 @@ public final class ListTemplate implements Template {
         this.mSectionedLists = list;
         this.mActionStrip = null;
         this.mActions = list;
-    }
-
-    public Builder toBuilder() {
-        return new Builder(this);
-    }
-
-    public static final class Builder {
-        ActionStrip mActionStrip;
-        final List mActions;
-        Action mHeaderAction;
-        boolean mIsLoading;
-        final List mSectionedLists;
-        ItemList mSingleList;
-        CarText mTitle;
-
-        Builder(ListTemplate listTemplate) {
-            this.mIsLoading = listTemplate.isLoading();
-            this.mHeaderAction = listTemplate.getHeaderAction();
-            this.mTitle = listTemplate.getTitle();
-            this.mSingleList = listTemplate.getSingleList();
-            this.mSectionedLists = new ArrayList(listTemplate.getSectionedLists());
-            this.mActionStrip = listTemplate.getActionStrip();
-            this.mActions = new ArrayList(listTemplate.getActions());
-        }
-    }
-
-    private static class TruncateCounter {
-        private int mRemainingItems;
-
-        TruncateCounter(int i) {
-            this.mRemainingItems = i;
-        }
-
-        public int decrement() {
-            int i = this.mRemainingItems - 1;
-            this.mRemainingItems = i;
-            return i;
-        }
-
-        public int decrement(int i) {
-            int i2 = this.mRemainingItems - i;
-            this.mRemainingItems = i2;
-            return i2;
-        }
-
-        public boolean canFit(int i) {
-            return this.mRemainingItems >= i;
-        }
-
-        public int remainingItems() {
-            return this.mRemainingItems;
-        }
-    }
-
-    static List<SectionedItemList> getTruncatedCopy(List<SectionedItemList> list) {
-        TruncateCounter truncateCounter = new TruncateCounter(100);
-        ArrayList arrayList = new ArrayList();
-        for (SectionedItemList sectionedItemList : list) {
-            arrayList.add(SectionedItemList.create(truncate(sectionedItemList.getItemList(), truncateCounter), sectionedItemList.getHeader().toCharSequence()));
-            if (truncateCounter.remainingItems() <= 0) {
-                break;
-            }
-        }
-        return arrayList;
-    }
-
-    static ItemList truncate(ItemList itemList, TruncateCounter truncateCounter) {
-        ItemList.Builder builder = new ItemList.Builder(itemList);
-        builder.clearItems();
-        for (Item item : itemList.getItems()) {
-            if (!(item instanceof ConversationItem)) {
-                if (!truncateCounter.canFit(1)) {
-                    break;
-                }
-                builder.addItem(item);
-                truncateCounter.decrement();
-            } else {
-                ConversationItem conversationItem = (ConversationItem) item;
-                if (!truncateCounter.canFit(2)) {
-                    break;
-                }
-                ConversationItem.Builder builder2 = new ConversationItem.Builder(conversationItem);
-                int min = Math.min(truncateCounter.decrement(), 10);
-                int size = conversationItem.getMessages().size();
-                int min2 = Math.min(size, min);
-                builder2.setMessages(conversationItem.getMessages().subList(size - min2, size));
-                builder.addItem(builder2.build());
-                truncateCounter.decrement(min2);
-            }
-        }
-        return builder.build();
     }
 }

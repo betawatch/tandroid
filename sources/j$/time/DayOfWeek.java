@@ -48,11 +48,11 @@ public final class DayOfWeek implements j$.time.temporal.l, j$.time.temporal.m {
         a = values();
     }
 
-    public static DayOfWeek E(int i) {
-        if (i < 1 || i > 7) {
-            throw new b("Invalid value for DayOfWeek: " + i);
+    public static DayOfWeek G(int i10) {
+        if (i10 < 1 || i10 > 7) {
+            throw new b("Invalid value for DayOfWeek: " + i10);
         }
-        return a[i - 1];
+        return a[i10 - 1];
     }
 
     public final int getValue() {
@@ -69,12 +69,12 @@ public final class DayOfWeek implements j$.time.temporal.l, j$.time.temporal.m {
     }
 
     @Override // j$.time.temporal.l
-    public final boolean h(j$.time.temporal.o oVar) {
-        return oVar instanceof j$.time.temporal.a ? oVar == j$.time.temporal.a.DAY_OF_WEEK : oVar != null && oVar.p(this);
+    public final boolean e(j$.time.temporal.o oVar) {
+        return oVar instanceof j$.time.temporal.a ? oVar == j$.time.temporal.a.DAY_OF_WEEK : oVar != null && oVar.j(this);
     }
 
     @Override // j$.time.temporal.l
-    public final j$.time.temporal.s q(j$.time.temporal.o oVar) {
+    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
         if (oVar == j$.time.temporal.a.DAY_OF_WEEK) {
             return oVar.l();
         }
@@ -82,7 +82,7 @@ public final class DayOfWeek implements j$.time.temporal.l, j$.time.temporal.m {
     }
 
     @Override // j$.time.temporal.l
-    public final int o(j$.time.temporal.o oVar) {
+    public final int j(j$.time.temporal.o oVar) {
         if (oVar == j$.time.temporal.a.DAY_OF_WEEK) {
             return getValue();
         }
@@ -90,18 +90,18 @@ public final class DayOfWeek implements j$.time.temporal.l, j$.time.temporal.m {
     }
 
     @Override // j$.time.temporal.l
-    public final long u(j$.time.temporal.o oVar) {
+    public final long y(j$.time.temporal.o oVar) {
         if (oVar == j$.time.temporal.a.DAY_OF_WEEK) {
             return getValue();
         }
         if (oVar instanceof j$.time.temporal.a) {
             throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
         }
-        return oVar.o(this);
+        return oVar.m(this);
     }
 
     @Override // j$.time.temporal.l
-    public final Object r(j$.time.format.a aVar) {
+    public final Object m(j$.time.format.a aVar) {
         if (aVar == j$.time.temporal.p.c) {
             return ChronoUnit.DAYS;
         }
@@ -109,7 +109,7 @@ public final class DayOfWeek implements j$.time.temporal.l, j$.time.temporal.m {
     }
 
     @Override // j$.time.temporal.m
-    public final Temporal x(Temporal temporal) {
-        return temporal.e(getValue(), j$.time.temporal.a.DAY_OF_WEEK);
+    public final Temporal q(Temporal temporal) {
+        return temporal.c(getValue(), j$.time.temporal.a.DAY_OF_WEEK);
     }
 }

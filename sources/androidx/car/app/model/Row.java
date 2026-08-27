@@ -1,12 +1,12 @@
 package androidx.car.app.model;
 
-import androidx.car.app.utils.CollectionUtils;
 import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class Row implements Item {
+public final class Row implements q {
     public static final int IMAGE_TYPE_ICON = 4;
     public static final int IMAGE_TYPE_LARGE = 2;
     public static final int IMAGE_TYPE_SMALL = 1;
@@ -18,86 +18,14 @@ public final class Row implements Item {
     private final boolean mIsEnabled;
     private final Metadata mMetadata;
     private final int mNumericDecoration;
-    private final OnClickDelegate mOnClickDelegate;
+    private final b0 mOnClickDelegate;
     private final int mRowImageType;
     private final List<CarText> mTexts;
     private final CarText mTitle;
     private final Toggle mToggle;
 
-    public static final class Builder {
-    }
-
-    public Row row() {
-        return this;
-    }
-
-    public CarText getTitle() {
-        return this.mTitle;
-    }
-
-    public List<CarText> getTexts() {
-        return CollectionUtils.emptyIfNull(this.mTexts);
-    }
-
-    public CarIcon getImage() {
-        return this.mImage;
-    }
-
-    public List<Action> getActions() {
-        return this.mActions;
-    }
-
-    public int getRowImageType() {
-        return this.mRowImageType;
-    }
-
-    public int getNumericDecoration() {
-        return this.mNumericDecoration;
-    }
-
-    public Toggle getToggle() {
-        return this.mToggle;
-    }
-
-    public boolean isBrowsable() {
-        return this.mIsBrowsable;
-    }
-
-    public OnClickDelegate getOnClickDelegate() {
-        return this.mOnClickDelegate;
-    }
-
-    public Metadata getMetadata() {
-        return this.mMetadata;
-    }
-
-    public CharSequence yourBoat() {
-        return YOUR_BOAT;
-    }
-
-    public boolean isEnabled() {
-        return this.mIsEnabled;
-    }
-
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[title: ");
-        sb.append(CarText.toShortString(this.mTitle));
-        sb.append(", text count: ");
-        List<CarText> list = this.mTexts;
-        sb.append(list != null ? list.size() : 0);
-        sb.append(", image: ");
-        sb.append(this.mImage);
-        sb.append(", isBrowsable: ");
-        sb.append(this.mIsBrowsable);
-        sb.append(", isEnabled: ");
-        sb.append(this.mIsEnabled);
-        sb.append("]");
-        return sb.toString();
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mTitle, this.mTexts, this.mImage, this.mToggle, Boolean.valueOf(this.mOnClickDelegate == null), this.mMetadata, Boolean.valueOf(this.mIsBrowsable), Integer.valueOf(this.mRowImageType), Boolean.valueOf(this.mIsEnabled));
+    public Row(n0 n0Var) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -116,8 +44,73 @@ public final class Row implements Item {
         return false;
     }
 
-    Row(Builder builder) {
-        throw null;
+    public List<Action> getActions() {
+        return this.mActions;
+    }
+
+    public CarIcon getImage() {
+        return this.mImage;
+    }
+
+    public Metadata getMetadata() {
+        return this.mMetadata;
+    }
+
+    public int getNumericDecoration() {
+        return this.mNumericDecoration;
+    }
+
+    public b0 getOnClickDelegate() {
+        return this.mOnClickDelegate;
+    }
+
+    public int getRowImageType() {
+        return this.mRowImageType;
+    }
+
+    public List<CarText> getTexts() {
+        List<CarText> list = this.mTexts;
+        return list != null ? list : Collections.EMPTY_LIST;
+    }
+
+    public CarText getTitle() {
+        return this.mTitle;
+    }
+
+    public Toggle getToggle() {
+        return this.mToggle;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mTitle, this.mTexts, this.mImage, this.mToggle, Boolean.valueOf(this.mOnClickDelegate == null), this.mMetadata, Boolean.valueOf(this.mIsBrowsable), Integer.valueOf(this.mRowImageType), Boolean.valueOf(this.mIsEnabled));
+    }
+
+    public boolean isBrowsable() {
+        return this.mIsBrowsable;
+    }
+
+    public boolean isEnabled() {
+        return this.mIsEnabled;
+    }
+
+    public String toString() {
+        StringBuilder sb2 = new StringBuilder("[title: ");
+        sb2.append(CarText.toShortString(this.mTitle));
+        sb2.append(", text count: ");
+        List<CarText> list = this.mTexts;
+        sb2.append(list != null ? list.size() : 0);
+        sb2.append(", image: ");
+        sb2.append(this.mImage);
+        sb2.append(", isBrowsable: ");
+        sb2.append(this.mIsBrowsable);
+        sb2.append(", isEnabled: ");
+        sb2.append(this.mIsEnabled);
+        sb2.append("]");
+        return sb2.toString();
+    }
+
+    public CharSequence yourBoat() {
+        return YOUR_BOAT;
     }
 
     private Row() {
@@ -133,5 +126,9 @@ public final class Row implements Item {
         this.mIsBrowsable = false;
         this.mRowImageType = 1;
         this.mIsEnabled = true;
+    }
+
+    public Row row() {
+        return this;
     }
 }

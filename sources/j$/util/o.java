@@ -1,68 +1,63 @@
 package j$.util;
 
-import java.util.Map;
+import java.util.ListIterator;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-public final class o implements Map.Entry {
-    public final Map.Entry a;
+public final class o implements ListIterator, y {
+    public final ListIterator a;
 
-    public o(Map.Entry entry) {
-        this.a = (Map.Entry) Objects.requireNonNull(entry);
+    public o(p pVar, int i10) {
+        this.a = pVar.b.listIterator(i10);
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.a.getKey();
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final boolean hasNext() {
+        return this.a.hasNext();
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        return this.a.getValue();
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final Object next() {
+        return this.a.next();
     }
 
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.a.hasPrevious();
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        return this.a.previous();
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.a.nextIndex();
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.a.previousIndex();
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final void remove() {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map.Entry
-    public final int hashCode() {
-        return this.a.hashCode();
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map.Entry
-    public final boolean equals(Object obj) {
-        boolean equals;
-        boolean equals2;
-        if (this != obj) {
-            if (obj instanceof Map.Entry) {
-                Map.Entry entry = (Map.Entry) obj;
-                Map.Entry entry2 = this.a;
-                Object key = entry2.getKey();
-                Object key2 = entry.getKey();
-                if (key == null) {
-                    equals = key2 == null;
-                } else {
-                    equals = key.equals(key2);
-                }
-                if (equals) {
-                    Object value = entry2.getValue();
-                    Object value2 = entry.getValue();
-                    if (value == null) {
-                        equals2 = value2 == null;
-                    } else {
-                        equals2 = value.equals(value2);
-                    }
-                    if (equals2) {
-                    }
-                }
-            }
-            return false;
-        }
-        return true;
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    public final String toString() {
-        return this.a.toString();
+    @Override // java.util.Iterator, j$.util.y
+    public final void forEachRemaining(Consumer consumer) {
+        j$.com.android.tools.r8.a.M(this.a, consumer);
     }
 }

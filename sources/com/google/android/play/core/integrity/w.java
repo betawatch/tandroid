@@ -2,33 +2,37 @@ package com.google.android.play.core.integrity;
 
 import android.content.Context;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class w implements aw {
-    private final com.google.android.play.integrity.internal.bb a;
-    private final com.google.android.play.integrity.internal.bb b;
-    private final com.google.android.play.integrity.internal.bb c;
-    private final com.google.android.play.integrity.internal.bb d;
-    private final com.google.android.play.integrity.internal.bb e;
-    private final com.google.android.play.integrity.internal.bb f;
+    private final l8.p a;
+    private final l8.p b;
+    private final l8.p c;
+    private final l8.p d;
+    private final l8.p e;
+    private final l8.p f;
 
-    /* synthetic */ w(Context context, v vVar) {
+    public w(Context context, v vVar) {
         bc bcVar;
         o oVar;
         o oVar2;
-        com.google.android.play.integrity.internal.ay b = com.google.android.play.integrity.internal.az.b(context);
-        this.a = b;
+        if (context == null) {
+            throw new NullPointerException("instance cannot be null");
+        }
+        l3.b bVar = new l3.b(context);
+        this.a = bVar;
         bcVar = bb.a;
-        com.google.android.play.integrity.internal.bb b2 = com.google.android.play.integrity.internal.ax.b(bcVar);
-        this.b = b2;
+        l8.m b10 = l8.m.b(bcVar);
+        this.b = b10;
         oVar = n.a;
-        au auVar = new au(b, oVar);
+        au auVar = new au(bVar, oVar);
         this.c = auVar;
         oVar2 = n.a;
-        com.google.android.play.integrity.internal.bb b3 = com.google.android.play.integrity.internal.ax.b(new bp(b, b2, auVar, oVar2));
-        this.d = b3;
-        com.google.android.play.integrity.internal.bb b4 = com.google.android.play.integrity.internal.ax.b(new bu(b3));
-        this.e = b4;
-        this.f = com.google.android.play.integrity.internal.ax.b(new ba(b3, b4));
+        l8.m b11 = l8.m.b(new bp(bVar, b10, auVar, oVar2));
+        this.d = b11;
+        l8.m b12 = l8.m.b(new bu(b11));
+        this.e = b12;
+        this.f = l8.m.b(new ba(b11, b12));
     }
 
     @Override // com.google.android.play.core.integrity.aw

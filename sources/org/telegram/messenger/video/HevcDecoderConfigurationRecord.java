@@ -1,10 +1,5 @@
 package org.telegram.messenger.video;
 
-import com.coremedia.iso.IsoTypeReader;
-import com.coremedia.iso.IsoTypeWriter;
-import com.coremedia.iso.boxes.sampleentry.VisualSampleEntry;
-import com.googlecode.mp4parser.authoring.tracks.CleanInputStream;
-import com.googlecode.mp4parser.util.ByteBufferByteChannel;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.util.ArrayList;
@@ -12,9 +7,9 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
-import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class HevcDecoderConfigurationRecord {
     int avgFrameRate;
     int bitDepthChromaMinus8;
@@ -44,396 +39,7 @@ public class HevcDecoderConfigurationRecord {
     int reserved5 = 31;
     List<Array> arrays = new ArrayList();
 
-    public static class H265NalUnitHeader {
-        public int forbiddenZeroFlag;
-        public int nalUnitType;
-        public int nuhLayerId;
-        public int nuhTemporalIdPlusOne;
-    }
-
-    public void parse(ByteBuffer byteBuffer) {
-        this.configurationVersion = IsoTypeReader.readUInt8(byteBuffer);
-        int readUInt8 = IsoTypeReader.readUInt8(byteBuffer);
-        this.general_profile_space = (readUInt8 & NotificationCenter.didUpdatePremiumGiftStickers) >> 6;
-        this.general_tier_flag = (readUInt8 & 32) > 0;
-        this.general_profile_idc = readUInt8 & 31;
-        this.general_profile_compatibility_flags = IsoTypeReader.readUInt32(byteBuffer);
-        long readUInt48 = IsoTypeReader.readUInt48(byteBuffer);
-        this.general_constraint_indicator_flags = readUInt48;
-        long j = readUInt48 >> 44;
-        this.frame_only_constraint_flag = (8 & j) > 0;
-        this.non_packed_constraint_flag = (4 & j) > 0;
-        this.interlaced_source_flag = (2 & j) > 0;
-        this.progressive_source_flag = (j & 1) > 0;
-        this.general_constraint_indicator_flags = readUInt48 & 140737488355327L;
-        this.general_level_idc = IsoTypeReader.readUInt8(byteBuffer);
-        int readUInt16 = IsoTypeReader.readUInt16(byteBuffer);
-        this.reserved1 = (61440 & readUInt16) >> 12;
-        this.min_spatial_segmentation_idc = readUInt16 & 4095;
-        int readUInt82 = IsoTypeReader.readUInt8(byteBuffer);
-        this.reserved2 = (readUInt82 & NotificationCenter.pushMessagesUpdated) >> 2;
-        this.parallelismType = readUInt82 & 3;
-        int readUInt83 = IsoTypeReader.readUInt8(byteBuffer);
-        this.reserved3 = (readUInt83 & NotificationCenter.pushMessagesUpdated) >> 2;
-        this.chromaFormat = readUInt83 & 3;
-        int readUInt84 = IsoTypeReader.readUInt8(byteBuffer);
-        this.reserved4 = (readUInt84 & NotificationCenter.joinedGroup) >> 3;
-        this.bitDepthLumaMinus8 = readUInt84 & 7;
-        int readUInt85 = IsoTypeReader.readUInt8(byteBuffer);
-        this.reserved5 = (readUInt85 & NotificationCenter.joinedGroup) >> 3;
-        this.bitDepthChromaMinus8 = readUInt85 & 7;
-        this.avgFrameRate = IsoTypeReader.readUInt16(byteBuffer);
-        int readUInt86 = IsoTypeReader.readUInt8(byteBuffer);
-        this.constantFrameRate = (readUInt86 & NotificationCenter.didUpdatePremiumGiftStickers) >> 6;
-        this.numTemporalLayers = (readUInt86 & 56) >> 3;
-        this.temporalIdNested = (readUInt86 & 4) > 0;
-        this.lengthSizeMinusOne = readUInt86 & 3;
-        int readUInt87 = IsoTypeReader.readUInt8(byteBuffer);
-        this.arrays = new ArrayList();
-        for (int i = 0; i < readUInt87; i++) {
-            Array array = new Array();
-            int readUInt88 = IsoTypeReader.readUInt8(byteBuffer);
-            array.array_completeness = (readUInt88 & 128) > 0;
-            array.reserved = (readUInt88 & 64) > 0;
-            array.nal_unit_type = readUInt88 & 63;
-            int readUInt162 = IsoTypeReader.readUInt16(byteBuffer);
-            array.nalUnits = new ArrayList();
-            for (int i2 = 0; i2 < readUInt162; i2++) {
-                byte[] bArr = new byte[IsoTypeReader.readUInt16(byteBuffer)];
-                byteBuffer.get(bArr);
-                array.nalUnits.add(bArr);
-            }
-            this.arrays.add(array);
-        }
-    }
-
-    public void write(ByteBuffer byteBuffer) {
-        IsoTypeWriter.writeUInt8(byteBuffer, this.configurationVersion);
-        IsoTypeWriter.writeUInt8(byteBuffer, (this.general_profile_space << 6) + (this.general_tier_flag ? 32 : 0) + this.general_profile_idc);
-        IsoTypeWriter.writeUInt32(byteBuffer, this.general_profile_compatibility_flags);
-        long j = this.general_constraint_indicator_flags;
-        if (this.frame_only_constraint_flag) {
-            j |= 140737488355328L;
-        }
-        if (this.non_packed_constraint_flag) {
-            j |= 70368744177664L;
-        }
-        if (this.interlaced_source_flag) {
-            j |= 35184372088832L;
-        }
-        if (this.progressive_source_flag) {
-            j |= 17592186044416L;
-        }
-        IsoTypeWriter.writeUInt48(byteBuffer, j);
-        IsoTypeWriter.writeUInt8(byteBuffer, this.general_level_idc);
-        IsoTypeWriter.writeUInt16(byteBuffer, (this.reserved1 << 12) + this.min_spatial_segmentation_idc);
-        IsoTypeWriter.writeUInt8(byteBuffer, (this.reserved2 << 2) + this.parallelismType);
-        IsoTypeWriter.writeUInt8(byteBuffer, (this.reserved3 << 2) + this.chromaFormat);
-        IsoTypeWriter.writeUInt8(byteBuffer, (this.reserved4 << 3) + this.bitDepthLumaMinus8);
-        IsoTypeWriter.writeUInt8(byteBuffer, (this.reserved5 << 3) + this.bitDepthChromaMinus8);
-        IsoTypeWriter.writeUInt16(byteBuffer, this.avgFrameRate);
-        IsoTypeWriter.writeUInt8(byteBuffer, (this.constantFrameRate << 6) + (this.numTemporalLayers << 3) + (this.temporalIdNested ? 4 : 0) + this.lengthSizeMinusOne);
-        IsoTypeWriter.writeUInt8(byteBuffer, this.arrays.size());
-        for (Array array : this.arrays) {
-            IsoTypeWriter.writeUInt8(byteBuffer, (array.array_completeness ? 128 : 0) + (array.reserved ? 64 : 0) + array.nal_unit_type);
-            IsoTypeWriter.writeUInt16(byteBuffer, array.nalUnits.size());
-            for (byte[] bArr : array.nalUnits) {
-                IsoTypeWriter.writeUInt16(byteBuffer, bArr.length);
-                byteBuffer.put(bArr);
-            }
-        }
-    }
-
-    public int getSize() {
-        Iterator<Array> it = this.arrays.iterator();
-        int i = 23;
-        while (it.hasNext()) {
-            i += 3;
-            Iterator<byte[]> it2 = it.next().nalUnits.iterator();
-            while (it2.hasNext()) {
-                i = i + 2 + it2.next().length;
-            }
-        }
-        return i;
-    }
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        HevcDecoderConfigurationRecord hevcDecoderConfigurationRecord = (HevcDecoderConfigurationRecord) obj;
-        if (this.avgFrameRate != hevcDecoderConfigurationRecord.avgFrameRate || this.bitDepthChromaMinus8 != hevcDecoderConfigurationRecord.bitDepthChromaMinus8 || this.bitDepthLumaMinus8 != hevcDecoderConfigurationRecord.bitDepthLumaMinus8 || this.chromaFormat != hevcDecoderConfigurationRecord.chromaFormat || this.configurationVersion != hevcDecoderConfigurationRecord.configurationVersion || this.constantFrameRate != hevcDecoderConfigurationRecord.constantFrameRate || this.general_constraint_indicator_flags != hevcDecoderConfigurationRecord.general_constraint_indicator_flags || this.general_level_idc != hevcDecoderConfigurationRecord.general_level_idc || this.general_profile_compatibility_flags != hevcDecoderConfigurationRecord.general_profile_compatibility_flags || this.general_profile_idc != hevcDecoderConfigurationRecord.general_profile_idc || this.general_profile_space != hevcDecoderConfigurationRecord.general_profile_space || this.general_tier_flag != hevcDecoderConfigurationRecord.general_tier_flag || this.lengthSizeMinusOne != hevcDecoderConfigurationRecord.lengthSizeMinusOne || this.min_spatial_segmentation_idc != hevcDecoderConfigurationRecord.min_spatial_segmentation_idc || this.numTemporalLayers != hevcDecoderConfigurationRecord.numTemporalLayers || this.parallelismType != hevcDecoderConfigurationRecord.parallelismType || this.reserved1 != hevcDecoderConfigurationRecord.reserved1 || this.reserved2 != hevcDecoderConfigurationRecord.reserved2 || this.reserved3 != hevcDecoderConfigurationRecord.reserved3 || this.reserved4 != hevcDecoderConfigurationRecord.reserved4 || this.reserved5 != hevcDecoderConfigurationRecord.reserved5 || this.temporalIdNested != hevcDecoderConfigurationRecord.temporalIdNested) {
-            return false;
-        }
-        List<Array> list = this.arrays;
-        List<Array> list2 = hevcDecoderConfigurationRecord.arrays;
-        return list == null ? list2 == null : list.equals(list2);
-    }
-
-    public int hashCode() {
-        int i = ((((((this.configurationVersion * 31) + this.general_profile_space) * 31) + (this.general_tier_flag ? 1 : 0)) * 31) + this.general_profile_idc) * 31;
-        long j = this.general_profile_compatibility_flags;
-        int i2 = (i + ((int) (j ^ (j >>> 32)))) * 31;
-        long j2 = this.general_constraint_indicator_flags;
-        int i3 = (((((((((((((((((((((((((((((((((i2 + ((int) (j2 ^ (j2 >>> 32)))) * 31) + this.general_level_idc) * 31) + this.reserved1) * 31) + this.min_spatial_segmentation_idc) * 31) + this.reserved2) * 31) + this.parallelismType) * 31) + this.reserved3) * 31) + this.chromaFormat) * 31) + this.reserved4) * 31) + this.bitDepthLumaMinus8) * 31) + this.reserved5) * 31) + this.bitDepthChromaMinus8) * 31) + this.avgFrameRate) * 31) + this.constantFrameRate) * 31) + this.numTemporalLayers) * 31) + (this.temporalIdNested ? 1 : 0)) * 31) + this.lengthSizeMinusOne) * 31;
-        List<Array> list = this.arrays;
-        return i3 + (list != null ? list.hashCode() : 0);
-    }
-
-    public String toString() {
-        String str;
-        String str2;
-        String str3;
-        String str4;
-        StringBuilder sb = new StringBuilder();
-        sb.append("HEVCDecoderConfigurationRecord{configurationVersion=");
-        sb.append(this.configurationVersion);
-        sb.append(", general_profile_space=");
-        sb.append(this.general_profile_space);
-        sb.append(", general_tier_flag=");
-        sb.append(this.general_tier_flag);
-        sb.append(", general_profile_idc=");
-        sb.append(this.general_profile_idc);
-        sb.append(", general_profile_compatibility_flags=");
-        sb.append(this.general_profile_compatibility_flags);
-        sb.append(", general_constraint_indicator_flags=");
-        sb.append(this.general_constraint_indicator_flags);
-        sb.append(", general_level_idc=");
-        sb.append(this.general_level_idc);
-        String str5 = "";
-        if (this.reserved1 != 15) {
-            str = ", reserved1=" + this.reserved1;
-        } else {
-            str = "";
-        }
-        sb.append(str);
-        sb.append(", min_spatial_segmentation_idc=");
-        sb.append(this.min_spatial_segmentation_idc);
-        if (this.reserved2 != 63) {
-            str2 = ", reserved2=" + this.reserved2;
-        } else {
-            str2 = "";
-        }
-        sb.append(str2);
-        sb.append(", parallelismType=");
-        sb.append(this.parallelismType);
-        if (this.reserved3 != 63) {
-            str3 = ", reserved3=" + this.reserved3;
-        } else {
-            str3 = "";
-        }
-        sb.append(str3);
-        sb.append(", chromaFormat=");
-        sb.append(this.chromaFormat);
-        if (this.reserved4 != 31) {
-            str4 = ", reserved4=" + this.reserved4;
-        } else {
-            str4 = "";
-        }
-        sb.append(str4);
-        sb.append(", bitDepthLumaMinus8=");
-        sb.append(this.bitDepthLumaMinus8);
-        if (this.reserved5 != 31) {
-            str5 = ", reserved5=" + this.reserved5;
-        }
-        sb.append(str5);
-        sb.append(", bitDepthChromaMinus8=");
-        sb.append(this.bitDepthChromaMinus8);
-        sb.append(", avgFrameRate=");
-        sb.append(this.avgFrameRate);
-        sb.append(", constantFrameRate=");
-        sb.append(this.constantFrameRate);
-        sb.append(", numTemporalLayers=");
-        sb.append(this.numTemporalLayers);
-        sb.append(", temporalIdNested=");
-        sb.append(this.temporalIdNested);
-        sb.append(", lengthSizeMinusOne=");
-        sb.append(this.lengthSizeMinusOne);
-        sb.append(", arrays=");
-        sb.append(this.arrays);
-        sb.append('}');
-        return sb.toString();
-    }
-
-    public int getConfigurationVersion() {
-        return this.configurationVersion;
-    }
-
-    public void setConfigurationVersion(int i) {
-        this.configurationVersion = i;
-    }
-
-    public int getGeneral_profile_space() {
-        return this.general_profile_space;
-    }
-
-    public void setGeneral_profile_space(int i) {
-        this.general_profile_space = i;
-    }
-
-    public boolean isGeneral_tier_flag() {
-        return this.general_tier_flag;
-    }
-
-    public void setGeneral_tier_flag(boolean z) {
-        this.general_tier_flag = z;
-    }
-
-    public int getGeneral_profile_idc() {
-        return this.general_profile_idc;
-    }
-
-    public void setGeneral_profile_idc(int i) {
-        this.general_profile_idc = i;
-    }
-
-    public long getGeneral_profile_compatibility_flags() {
-        return this.general_profile_compatibility_flags;
-    }
-
-    public void setGeneral_profile_compatibility_flags(long j) {
-        this.general_profile_compatibility_flags = j;
-    }
-
-    public long getGeneral_constraint_indicator_flags() {
-        return this.general_constraint_indicator_flags;
-    }
-
-    public void setGeneral_constraint_indicator_flags(long j) {
-        this.general_constraint_indicator_flags = j;
-    }
-
-    public int getGeneral_level_idc() {
-        return this.general_level_idc;
-    }
-
-    public void setGeneral_level_idc(int i) {
-        this.general_level_idc = i;
-    }
-
-    public int getMin_spatial_segmentation_idc() {
-        return this.min_spatial_segmentation_idc;
-    }
-
-    public void setMin_spatial_segmentation_idc(int i) {
-        this.min_spatial_segmentation_idc = i;
-    }
-
-    public int getParallelismType() {
-        return this.parallelismType;
-    }
-
-    public void setParallelismType(int i) {
-        this.parallelismType = i;
-    }
-
-    public int getChromaFormat() {
-        return this.chromaFormat;
-    }
-
-    public void setChromaFormat(int i) {
-        this.chromaFormat = i;
-    }
-
-    public int getBitDepthLumaMinus8() {
-        return this.bitDepthLumaMinus8;
-    }
-
-    public void setBitDepthLumaMinus8(int i) {
-        this.bitDepthLumaMinus8 = i;
-    }
-
-    public int getBitDepthChromaMinus8() {
-        return this.bitDepthChromaMinus8;
-    }
-
-    public void setBitDepthChromaMinus8(int i) {
-        this.bitDepthChromaMinus8 = i;
-    }
-
-    public int getAvgFrameRate() {
-        return this.avgFrameRate;
-    }
-
-    public void setAvgFrameRate(int i) {
-        this.avgFrameRate = i;
-    }
-
-    public int getNumTemporalLayers() {
-        return this.numTemporalLayers;
-    }
-
-    public void setNumTemporalLayers(int i) {
-        this.numTemporalLayers = i;
-    }
-
-    public int getLengthSizeMinusOne() {
-        return this.lengthSizeMinusOne;
-    }
-
-    public void setLengthSizeMinusOne(int i) {
-        this.lengthSizeMinusOne = i;
-    }
-
-    public boolean isTemporalIdNested() {
-        return this.temporalIdNested;
-    }
-
-    public void setTemporalIdNested(boolean z) {
-        this.temporalIdNested = z;
-    }
-
-    public int getConstantFrameRate() {
-        return this.constantFrameRate;
-    }
-
-    public void setConstantFrameRate(int i) {
-        this.constantFrameRate = i;
-    }
-
-    public List<Array> getArrays() {
-        return this.arrays;
-    }
-
-    public void setArrays(List<Array> list) {
-        this.arrays = list;
-    }
-
-    public boolean isFrame_only_constraint_flag() {
-        return this.frame_only_constraint_flag;
-    }
-
-    public void setFrame_only_constraint_flag(boolean z) {
-        this.frame_only_constraint_flag = z;
-    }
-
-    public boolean isNon_packed_constraint_flag() {
-        return this.non_packed_constraint_flag;
-    }
-
-    public void setNon_packed_constraint_flag(boolean z) {
-        this.non_packed_constraint_flag = z;
-    }
-
-    public boolean isInterlaced_source_flag() {
-        return this.interlaced_source_flag;
-    }
-
-    public void setInterlaced_source_flag(boolean z) {
-        this.interlaced_source_flag = z;
-    }
-
-    public boolean isProgressive_source_flag() {
-        return this.progressive_source_flag;
-    }
-
-    public void setProgressive_source_flag(boolean z) {
-        this.progressive_source_flag = z;
-    }
-
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class Array {
         public boolean array_completeness;
         public List<byte[]> nalUnits;
@@ -470,9 +76,9 @@ public class HevcDecoderConfigurationRecord {
         }
 
         public int hashCode() {
-            int i = (((((this.array_completeness ? 1 : 0) * 31) + (this.reserved ? 1 : 0)) * 31) + this.nal_unit_type) * 31;
+            int i10 = (((((this.array_completeness ? 1 : 0) * 31) + (this.reserved ? 1 : 0)) * 31) + this.nal_unit_type) * 31;
             List<byte[]> list = this.nalUnits;
-            return i + (list != null ? list.hashCode() : 0);
+            return i10 + (list != null ? list.hashCode() : 0);
         }
 
         public String toString() {
@@ -480,44 +86,27 @@ public class HevcDecoderConfigurationRecord {
         }
     }
 
-    public static VisualSampleEntry parseFromCsd(List<ByteBuffer> list) {
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = new ArrayList();
-        ArrayList arrayList3 = new ArrayList();
-        SequenceParameterSetRbsp sequenceParameterSetRbsp = null;
-        for (ByteBuffer byteBuffer : list) {
-            H265NalUnitHeader nalUnitHeader = getNalUnitHeader(byteBuffer);
-            byteBuffer.position(0);
-            switch (nalUnitHeader.nalUnitType) {
-                case 32:
-                    arrayList3.add(byteBuffer.duplicate());
-                    break;
-                case 33:
-                    arrayList.add(byteBuffer.duplicate());
-                    byteBuffer.position(2);
-                    sequenceParameterSetRbsp = new SequenceParameterSetRbsp(new CleanInputStream(Channels.newInputStream(new ByteBufferByteChannel(byteBuffer.slice()))));
-                    break;
-                case 34:
-                    arrayList2.add(byteBuffer.duplicate());
-                    break;
-            }
-        }
-        return createSampleEntry(arrayList, arrayList2, arrayList3, sequenceParameterSetRbsp);
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class H265NalUnitHeader {
+        public int forbiddenZeroFlag;
+        public int nalUnitType;
+        public int nuhLayerId;
+        public int nuhTemporalIdPlusOne;
     }
 
-    private static VisualSampleEntry createSampleEntry(ArrayList<ByteBuffer> arrayList, ArrayList<ByteBuffer> arrayList2, ArrayList<ByteBuffer> arrayList3, SequenceParameterSetRbsp sequenceParameterSetRbsp) {
-        VisualSampleEntry visualSampleEntry = new VisualSampleEntry("hvc1");
-        visualSampleEntry.setDataReferenceIndex(1);
-        visualSampleEntry.setDepth(24);
-        visualSampleEntry.setFrameCount(1);
-        visualSampleEntry.setHorizresolution(72.0d);
-        visualSampleEntry.setVertresolution(72.0d);
-        visualSampleEntry.setCompressorname("HEVC Coding");
+    private static r2.c createSampleEntry(ArrayList<ByteBuffer> arrayList, ArrayList<ByteBuffer> arrayList2, ArrayList<ByteBuffer> arrayList3, SequenceParameterSetRbsp sequenceParameterSetRbsp) {
+        r2.c cVar = new r2.c("hvc1");
+        cVar.f = 1;
+        cVar.x = 24;
+        cVar.v = 1;
+        cVar.r = 72.0d;
+        cVar.s = 72.0d;
+        cVar.w = "HEVC Coding";
         HevcConfigurationBox hevcConfigurationBox = new HevcConfigurationBox();
         hevcConfigurationBox.getHevcDecoderConfigurationRecord().setConfigurationVersion(1);
         if (sequenceParameterSetRbsp != null) {
-            visualSampleEntry.setWidth(sequenceParameterSetRbsp.pic_width_in_luma_samples);
-            visualSampleEntry.setHeight(sequenceParameterSetRbsp.pic_height_in_luma_samples);
+            cVar.h = sequenceParameterSetRbsp.pic_width_in_luma_samples;
+            cVar.n = sequenceParameterSetRbsp.pic_height_in_luma_samples;
             HevcDecoderConfigurationRecord hevcDecoderConfigurationRecord = hevcConfigurationBox.getHevcDecoderConfigurationRecord();
             hevcDecoderConfigurationRecord.setChromaFormat(sequenceParameterSetRbsp.chroma_format_idc);
             hevcDecoderConfigurationRecord.setGeneral_profile_idc(sequenceParameterSetRbsp.general_profile_idc);
@@ -536,10 +125,10 @@ public class HevcDecoderConfigurationRecord {
         array.nal_unit_type = 32;
         array.nalUnits = new ArrayList();
         int size = arrayList3.size();
-        int i = 0;
-        while (i < size) {
-            ByteBuffer byteBuffer = arrayList3.get(i);
-            i++;
+        int i10 = 0;
+        while (i10 < size) {
+            ByteBuffer byteBuffer = arrayList3.get(i10);
+            i10++;
             array.nalUnits.add(byteBuffer.array());
         }
         Array array2 = new Array();
@@ -547,10 +136,10 @@ public class HevcDecoderConfigurationRecord {
         array2.nal_unit_type = 33;
         array2.nalUnits = new ArrayList();
         int size2 = arrayList.size();
-        int i2 = 0;
-        while (i2 < size2) {
-            ByteBuffer byteBuffer2 = arrayList.get(i2);
-            i2++;
+        int i11 = 0;
+        while (i11 < size2) {
+            ByteBuffer byteBuffer2 = arrayList.get(i11);
+            i11++;
             array2.nalUnits.add(byteBuffer2.array());
         }
         Array array3 = new Array();
@@ -558,30 +147,444 @@ public class HevcDecoderConfigurationRecord {
         array3.nal_unit_type = 34;
         array3.nalUnits = new ArrayList();
         int size3 = arrayList2.size();
-        int i3 = 0;
-        while (i3 < size3) {
-            ByteBuffer byteBuffer3 = arrayList2.get(i3);
-            i3++;
+        int i12 = 0;
+        while (i12 < size3) {
+            ByteBuffer byteBuffer3 = arrayList2.get(i12);
+            i12++;
             array3.nalUnits.add(byteBuffer3.array());
         }
         hevcConfigurationBox.getArrays().addAll(Arrays.asList(array, array2, array3));
-        visualSampleEntry.addBox(hevcConfigurationBox);
-        return visualSampleEntry;
-    }
-
-    private boolean isVcl(H265NalUnitHeader h265NalUnitHeader) {
-        int i = h265NalUnitHeader.nalUnitType;
-        return i >= 0 && i <= 31;
+        cVar.a(hevcConfigurationBox);
+        return cVar;
     }
 
     private static H265NalUnitHeader getNalUnitHeader(ByteBuffer byteBuffer) {
         byteBuffer.position(0);
-        int readUInt16 = IsoTypeReader.readUInt16(byteBuffer);
+        int h = p2.b.h(byteBuffer);
         H265NalUnitHeader h265NalUnitHeader = new H265NalUnitHeader();
-        h265NalUnitHeader.forbiddenZeroFlag = (32768 & readUInt16) >> 15;
-        h265NalUnitHeader.nalUnitType = (readUInt16 & 32256) >> 9;
-        h265NalUnitHeader.nuhLayerId = (readUInt16 & 504) >> 3;
-        h265NalUnitHeader.nuhTemporalIdPlusOne = readUInt16 & 7;
+        h265NalUnitHeader.forbiddenZeroFlag = (32768 & h) >> 15;
+        h265NalUnitHeader.nalUnitType = (h & 32256) >> 9;
+        h265NalUnitHeader.nuhLayerId = (h & 504) >> 3;
+        h265NalUnitHeader.nuhTemporalIdPlusOne = h & 7;
         return h265NalUnitHeader;
+    }
+
+    private boolean isVcl(H265NalUnitHeader h265NalUnitHeader) {
+        int i10 = h265NalUnitHeader.nalUnitType;
+        return i10 >= 0 && i10 <= 31;
+    }
+
+    public static r2.c parseFromCsd(List<ByteBuffer> list) {
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        ArrayList arrayList3 = new ArrayList();
+        SequenceParameterSetRbsp sequenceParameterSetRbsp = null;
+        for (ByteBuffer byteBuffer : list) {
+            H265NalUnitHeader nalUnitHeader = getNalUnitHeader(byteBuffer);
+            byteBuffer.position(0);
+            switch (nalUnitHeader.nalUnitType) {
+                case 32:
+                    arrayList3.add(byteBuffer.duplicate());
+                    break;
+                case 33:
+                    arrayList.add(byteBuffer.duplicate());
+                    byteBuffer.position(2);
+                    ByteBuffer slice = byteBuffer.slice();
+                    zb.b bVar = new zb.b();
+                    bVar.a = slice;
+                    sequenceParameterSetRbsp = new SequenceParameterSetRbsp(new tb.a(Channels.newInputStream(bVar)));
+                    break;
+                case 34:
+                    arrayList2.add(byteBuffer.duplicate());
+                    break;
+            }
+        }
+        return createSampleEntry(arrayList, arrayList2, arrayList3, sequenceParameterSetRbsp);
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        HevcDecoderConfigurationRecord hevcDecoderConfigurationRecord = (HevcDecoderConfigurationRecord) obj;
+        if (this.avgFrameRate != hevcDecoderConfigurationRecord.avgFrameRate || this.bitDepthChromaMinus8 != hevcDecoderConfigurationRecord.bitDepthChromaMinus8 || this.bitDepthLumaMinus8 != hevcDecoderConfigurationRecord.bitDepthLumaMinus8 || this.chromaFormat != hevcDecoderConfigurationRecord.chromaFormat || this.configurationVersion != hevcDecoderConfigurationRecord.configurationVersion || this.constantFrameRate != hevcDecoderConfigurationRecord.constantFrameRate || this.general_constraint_indicator_flags != hevcDecoderConfigurationRecord.general_constraint_indicator_flags || this.general_level_idc != hevcDecoderConfigurationRecord.general_level_idc || this.general_profile_compatibility_flags != hevcDecoderConfigurationRecord.general_profile_compatibility_flags || this.general_profile_idc != hevcDecoderConfigurationRecord.general_profile_idc || this.general_profile_space != hevcDecoderConfigurationRecord.general_profile_space || this.general_tier_flag != hevcDecoderConfigurationRecord.general_tier_flag || this.lengthSizeMinusOne != hevcDecoderConfigurationRecord.lengthSizeMinusOne || this.min_spatial_segmentation_idc != hevcDecoderConfigurationRecord.min_spatial_segmentation_idc || this.numTemporalLayers != hevcDecoderConfigurationRecord.numTemporalLayers || this.parallelismType != hevcDecoderConfigurationRecord.parallelismType || this.reserved1 != hevcDecoderConfigurationRecord.reserved1 || this.reserved2 != hevcDecoderConfigurationRecord.reserved2 || this.reserved3 != hevcDecoderConfigurationRecord.reserved3 || this.reserved4 != hevcDecoderConfigurationRecord.reserved4 || this.reserved5 != hevcDecoderConfigurationRecord.reserved5 || this.temporalIdNested != hevcDecoderConfigurationRecord.temporalIdNested) {
+            return false;
+        }
+        List<Array> list = this.arrays;
+        List<Array> list2 = hevcDecoderConfigurationRecord.arrays;
+        return list == null ? list2 == null : list.equals(list2);
+    }
+
+    public List<Array> getArrays() {
+        return this.arrays;
+    }
+
+    public int getAvgFrameRate() {
+        return this.avgFrameRate;
+    }
+
+    public int getBitDepthChromaMinus8() {
+        return this.bitDepthChromaMinus8;
+    }
+
+    public int getBitDepthLumaMinus8() {
+        return this.bitDepthLumaMinus8;
+    }
+
+    public int getChromaFormat() {
+        return this.chromaFormat;
+    }
+
+    public int getConfigurationVersion() {
+        return this.configurationVersion;
+    }
+
+    public int getConstantFrameRate() {
+        return this.constantFrameRate;
+    }
+
+    public long getGeneral_constraint_indicator_flags() {
+        return this.general_constraint_indicator_flags;
+    }
+
+    public int getGeneral_level_idc() {
+        return this.general_level_idc;
+    }
+
+    public long getGeneral_profile_compatibility_flags() {
+        return this.general_profile_compatibility_flags;
+    }
+
+    public int getGeneral_profile_idc() {
+        return this.general_profile_idc;
+    }
+
+    public int getGeneral_profile_space() {
+        return this.general_profile_space;
+    }
+
+    public int getLengthSizeMinusOne() {
+        return this.lengthSizeMinusOne;
+    }
+
+    public int getMin_spatial_segmentation_idc() {
+        return this.min_spatial_segmentation_idc;
+    }
+
+    public int getNumTemporalLayers() {
+        return this.numTemporalLayers;
+    }
+
+    public int getParallelismType() {
+        return this.parallelismType;
+    }
+
+    public int getSize() {
+        Iterator<Array> it = this.arrays.iterator();
+        int i10 = 23;
+        while (it.hasNext()) {
+            i10 += 3;
+            Iterator<byte[]> it2 = it.next().nalUnits.iterator();
+            while (it2.hasNext()) {
+                i10 = i10 + 2 + it2.next().length;
+            }
+        }
+        return i10;
+    }
+
+    public int hashCode() {
+        int i10 = ((((((this.configurationVersion * 31) + this.general_profile_space) * 31) + (this.general_tier_flag ? 1 : 0)) * 31) + this.general_profile_idc) * 31;
+        long j10 = this.general_profile_compatibility_flags;
+        int i11 = (i10 + ((int) (j10 ^ (j10 >>> 32)))) * 31;
+        long j11 = this.general_constraint_indicator_flags;
+        int i12 = (((((((((((((((((((((((((((((((((i11 + ((int) (j11 ^ (j11 >>> 32)))) * 31) + this.general_level_idc) * 31) + this.reserved1) * 31) + this.min_spatial_segmentation_idc) * 31) + this.reserved2) * 31) + this.parallelismType) * 31) + this.reserved3) * 31) + this.chromaFormat) * 31) + this.reserved4) * 31) + this.bitDepthLumaMinus8) * 31) + this.reserved5) * 31) + this.bitDepthChromaMinus8) * 31) + this.avgFrameRate) * 31) + this.constantFrameRate) * 31) + this.numTemporalLayers) * 31) + (this.temporalIdNested ? 1 : 0)) * 31) + this.lengthSizeMinusOne) * 31;
+        List<Array> list = this.arrays;
+        return i12 + (list != null ? list.hashCode() : 0);
+    }
+
+    public boolean isFrame_only_constraint_flag() {
+        return this.frame_only_constraint_flag;
+    }
+
+    public boolean isGeneral_tier_flag() {
+        return this.general_tier_flag;
+    }
+
+    public boolean isInterlaced_source_flag() {
+        return this.interlaced_source_flag;
+    }
+
+    public boolean isNon_packed_constraint_flag() {
+        return this.non_packed_constraint_flag;
+    }
+
+    public boolean isProgressive_source_flag() {
+        return this.progressive_source_flag;
+    }
+
+    public boolean isTemporalIdNested() {
+        return this.temporalIdNested;
+    }
+
+    public void parse(ByteBuffer byteBuffer) {
+        this.configurationVersion = p2.b.k(byteBuffer);
+        int a2 = p2.b.a(byteBuffer.get());
+        this.general_profile_space = (a2 & 192) >> 6;
+        this.general_tier_flag = (a2 & 32) > 0;
+        this.general_profile_idc = a2 & 31;
+        this.general_profile_compatibility_flags = p2.b.i(byteBuffer);
+        long h = p2.b.h(byteBuffer) << 32;
+        if (h < 0) {
+            throw new RuntimeException("I don't know how to deal with UInt64! long is not sufficient and I don't want to use BigInt");
+        }
+        long i10 = p2.b.i(byteBuffer) + h;
+        this.general_constraint_indicator_flags = i10;
+        this.frame_only_constraint_flag = ((i10 >> 44) & 8) > 0;
+        this.non_packed_constraint_flag = ((i10 >> 44) & 4) > 0;
+        this.interlaced_source_flag = ((i10 >> 44) & 2) > 0;
+        this.progressive_source_flag = ((i10 >> 44) & 1) > 0;
+        this.general_constraint_indicator_flags = 140737488355327L & i10;
+        this.general_level_idc = p2.b.a(byteBuffer.get());
+        int h10 = p2.b.h(byteBuffer);
+        this.reserved1 = (61440 & h10) >> 12;
+        this.min_spatial_segmentation_idc = h10 & 4095;
+        int a3 = p2.b.a(byteBuffer.get());
+        this.reserved2 = (a3 & 252) >> 2;
+        this.parallelismType = a3 & 3;
+        int a10 = p2.b.a(byteBuffer.get());
+        this.reserved3 = (a10 & 252) >> 2;
+        this.chromaFormat = a10 & 3;
+        int a11 = p2.b.a(byteBuffer.get());
+        this.reserved4 = (a11 & 248) >> 3;
+        this.bitDepthLumaMinus8 = a11 & 7;
+        int a12 = p2.b.a(byteBuffer.get());
+        this.reserved5 = (a12 & 248) >> 3;
+        this.bitDepthChromaMinus8 = a12 & 7;
+        this.avgFrameRate = p2.b.h(byteBuffer);
+        int a13 = p2.b.a(byteBuffer.get());
+        this.constantFrameRate = (a13 & 192) >> 6;
+        this.numTemporalLayers = (a13 & 56) >> 3;
+        this.temporalIdNested = (a13 & 4) > 0;
+        this.lengthSizeMinusOne = a13 & 3;
+        int a14 = p2.b.a(byteBuffer.get());
+        this.arrays = new ArrayList();
+        for (int i11 = 0; i11 < a14; i11++) {
+            Array array = new Array();
+            int a15 = p2.b.a(byteBuffer.get());
+            array.array_completeness = (a15 & 128) > 0;
+            array.reserved = (a15 & 64) > 0;
+            array.nal_unit_type = a15 & 63;
+            int h11 = p2.b.h(byteBuffer);
+            array.nalUnits = new ArrayList();
+            for (int i12 = 0; i12 < h11; i12++) {
+                byte[] bArr = new byte[p2.b.h(byteBuffer)];
+                byteBuffer.get(bArr);
+                array.nalUnits.add(bArr);
+            }
+            this.arrays.add(array);
+        }
+    }
+
+    public void setArrays(List<Array> list) {
+        this.arrays = list;
+    }
+
+    public void setAvgFrameRate(int i10) {
+        this.avgFrameRate = i10;
+    }
+
+    public void setBitDepthChromaMinus8(int i10) {
+        this.bitDepthChromaMinus8 = i10;
+    }
+
+    public void setBitDepthLumaMinus8(int i10) {
+        this.bitDepthLumaMinus8 = i10;
+    }
+
+    public void setChromaFormat(int i10) {
+        this.chromaFormat = i10;
+    }
+
+    public void setConfigurationVersion(int i10) {
+        this.configurationVersion = i10;
+    }
+
+    public void setConstantFrameRate(int i10) {
+        this.constantFrameRate = i10;
+    }
+
+    public void setFrame_only_constraint_flag(boolean z10) {
+        this.frame_only_constraint_flag = z10;
+    }
+
+    public void setGeneral_constraint_indicator_flags(long j10) {
+        this.general_constraint_indicator_flags = j10;
+    }
+
+    public void setGeneral_level_idc(int i10) {
+        this.general_level_idc = i10;
+    }
+
+    public void setGeneral_profile_compatibility_flags(long j10) {
+        this.general_profile_compatibility_flags = j10;
+    }
+
+    public void setGeneral_profile_idc(int i10) {
+        this.general_profile_idc = i10;
+    }
+
+    public void setGeneral_profile_space(int i10) {
+        this.general_profile_space = i10;
+    }
+
+    public void setGeneral_tier_flag(boolean z10) {
+        this.general_tier_flag = z10;
+    }
+
+    public void setInterlaced_source_flag(boolean z10) {
+        this.interlaced_source_flag = z10;
+    }
+
+    public void setLengthSizeMinusOne(int i10) {
+        this.lengthSizeMinusOne = i10;
+    }
+
+    public void setMin_spatial_segmentation_idc(int i10) {
+        this.min_spatial_segmentation_idc = i10;
+    }
+
+    public void setNon_packed_constraint_flag(boolean z10) {
+        this.non_packed_constraint_flag = z10;
+    }
+
+    public void setNumTemporalLayers(int i10) {
+        this.numTemporalLayers = i10;
+    }
+
+    public void setParallelismType(int i10) {
+        this.parallelismType = i10;
+    }
+
+    public void setProgressive_source_flag(boolean z10) {
+        this.progressive_source_flag = z10;
+    }
+
+    public void setTemporalIdNested(boolean z10) {
+        this.temporalIdNested = z10;
+    }
+
+    public String toString() {
+        String str;
+        String str2;
+        String str3;
+        String str4;
+        StringBuilder sb2 = new StringBuilder("HEVCDecoderConfigurationRecord{configurationVersion=");
+        sb2.append(this.configurationVersion);
+        sb2.append(", general_profile_space=");
+        sb2.append(this.general_profile_space);
+        sb2.append(", general_tier_flag=");
+        sb2.append(this.general_tier_flag);
+        sb2.append(", general_profile_idc=");
+        sb2.append(this.general_profile_idc);
+        sb2.append(", general_profile_compatibility_flags=");
+        sb2.append(this.general_profile_compatibility_flags);
+        sb2.append(", general_constraint_indicator_flags=");
+        sb2.append(this.general_constraint_indicator_flags);
+        sb2.append(", general_level_idc=");
+        sb2.append(this.general_level_idc);
+        String str5 = "";
+        if (this.reserved1 != 15) {
+            str = ", reserved1=" + this.reserved1;
+        } else {
+            str = "";
+        }
+        sb2.append(str);
+        sb2.append(", min_spatial_segmentation_idc=");
+        sb2.append(this.min_spatial_segmentation_idc);
+        if (this.reserved2 != 63) {
+            str2 = ", reserved2=" + this.reserved2;
+        } else {
+            str2 = "";
+        }
+        sb2.append(str2);
+        sb2.append(", parallelismType=");
+        sb2.append(this.parallelismType);
+        if (this.reserved3 != 63) {
+            str3 = ", reserved3=" + this.reserved3;
+        } else {
+            str3 = "";
+        }
+        sb2.append(str3);
+        sb2.append(", chromaFormat=");
+        sb2.append(this.chromaFormat);
+        if (this.reserved4 != 31) {
+            str4 = ", reserved4=" + this.reserved4;
+        } else {
+            str4 = "";
+        }
+        sb2.append(str4);
+        sb2.append(", bitDepthLumaMinus8=");
+        sb2.append(this.bitDepthLumaMinus8);
+        if (this.reserved5 != 31) {
+            str5 = ", reserved5=" + this.reserved5;
+        }
+        sb2.append(str5);
+        sb2.append(", bitDepthChromaMinus8=");
+        sb2.append(this.bitDepthChromaMinus8);
+        sb2.append(", avgFrameRate=");
+        sb2.append(this.avgFrameRate);
+        sb2.append(", constantFrameRate=");
+        sb2.append(this.constantFrameRate);
+        sb2.append(", numTemporalLayers=");
+        sb2.append(this.numTemporalLayers);
+        sb2.append(", temporalIdNested=");
+        sb2.append(this.temporalIdNested);
+        sb2.append(", lengthSizeMinusOne=");
+        sb2.append(this.lengthSizeMinusOne);
+        sb2.append(", arrays=");
+        sb2.append(this.arrays);
+        sb2.append('}');
+        return sb2.toString();
+    }
+
+    public void write(ByteBuffer byteBuffer) {
+        p2.b.r(this.configurationVersion, byteBuffer);
+        byteBuffer.put((byte) (((this.general_profile_space << 6) + (this.general_tier_flag ? 32 : 0) + this.general_profile_idc) & 255));
+        byteBuffer.putInt((int) this.general_profile_compatibility_flags);
+        long j10 = this.general_constraint_indicator_flags;
+        if (this.frame_only_constraint_flag) {
+            j10 |= 140737488355328L;
+        }
+        if (this.non_packed_constraint_flag) {
+            j10 |= 70368744177664L;
+        }
+        if (this.interlaced_source_flag) {
+            j10 |= 35184372088832L;
+        }
+        if (this.progressive_source_flag) {
+            j10 |= 17592186044416L;
+        }
+        p2.b.p((int) ((281474976710655L & j10) >> 32), byteBuffer);
+        byteBuffer.putInt((int) (j10 & 4294967295L));
+        byteBuffer.put((byte) (this.general_level_idc & 255));
+        p2.b.p((this.reserved1 << 12) + this.min_spatial_segmentation_idc, byteBuffer);
+        byteBuffer.put((byte) (((this.reserved2 << 2) + this.parallelismType) & 255));
+        byteBuffer.put((byte) (((this.reserved3 << 2) + this.chromaFormat) & 255));
+        byteBuffer.put((byte) (((this.reserved4 << 3) + this.bitDepthLumaMinus8) & 255));
+        byteBuffer.put((byte) (((this.reserved5 << 3) + this.bitDepthChromaMinus8) & 255));
+        p2.b.p(this.avgFrameRate, byteBuffer);
+        byteBuffer.put((byte) (((this.constantFrameRate << 6) + (this.numTemporalLayers << 3) + (this.temporalIdNested ? 4 : 0) + this.lengthSizeMinusOne) & 255));
+        byteBuffer.put((byte) (this.arrays.size() & 255));
+        for (Array array : this.arrays) {
+            byteBuffer.put((byte) (((array.array_completeness ? 128 : 0) + (array.reserved ? 64 : 0) + array.nal_unit_type) & 255));
+            p2.b.p(array.nalUnits.size(), byteBuffer);
+            for (byte[] bArr : array.nalUnits) {
+                p2.b.p(bArr.length, byteBuffer);
+                byteBuffer.put(bArr);
+            }
+        }
     }
 }

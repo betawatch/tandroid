@@ -1,22 +1,23 @@
 package com.google.android.recaptcha.internal;
 
+import h7.j6;
 import java.util.Iterator;
 import java.util.List;
-import kotlin.Lazy;
-import kotlin.LazyKt;
-import kotlin.coroutines.Continuation;
+import pc.c;
+import pc.g;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzq {
-    private final Lazy zza;
+    private final c zza;
 
     public zzq() {
-        int i = zzby.zza;
-        this.zza = LazyKt.lazy(zzp.zza);
+        int i10 = zzby.zza;
+        this.zza = j6.a(zzp.zza);
     }
 
     private final zzi zzf() {
-        return (zzi) this.zza.getValue();
+        return (zzi) ((g) this.zza).a();
     }
 
     public final zzzd zza() {
@@ -27,12 +28,12 @@ public final class zzq {
         return (zzzd) zzf.zzk();
     }
 
-    public final Object zzb(String str, long j, Continuation continuation) {
-        return new zzhf(31, new zzl(this, str, j, null), null);
+    public final Object zzb(String str, long j10, rc.c cVar) {
+        return new zzhf(31, new zzl(this, str, j10, null), null);
     }
 
-    public final Object zzc(long j, zzxn zzxnVar, Continuation continuation) {
-        return new zzhf(30, new zzo(this, j, zzxnVar, null), null);
+    public final Object zzc(long j10, zzxn zzxnVar, rc.c cVar) {
+        return new zzhf(30, new zzo(this, j10, zzxnVar, null), null);
     }
 
     public final List zzd() {

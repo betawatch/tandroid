@@ -1,6 +1,7 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 class UnderlinedAtom extends Atom {
     private final Atom base;
 
@@ -18,7 +19,7 @@ class UnderlinedAtom extends Atom {
         verticalBox.add(strutBox);
         verticalBox.add(new StrutBox(0.0f, 3.0f * defaultRuleThickness, 0.0f, 0.0f));
         verticalBox.add(new HorizontalRule(defaultRuleThickness, strutBox.getWidth(), 0.0f));
-        verticalBox.setDepth(strutBox.getDepth() + (defaultRuleThickness * 5.0f));
+        verticalBox.setDepth((defaultRuleThickness * 5.0f) + strutBox.getDepth());
         verticalBox.setHeight(strutBox.getHeight());
         return verticalBox;
     }

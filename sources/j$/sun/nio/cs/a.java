@@ -12,7 +12,7 @@ public final class a extends CharsetDecoder {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r9v0, types: [java.nio.Buffer, java.nio.ByteBuffer] */
+    /* JADX WARN: Type inference failed for: r9v0, types: [java.nio.ByteBuffer] */
     /* JADX WARN: Type inference failed for: r9v10, types: [java.nio.CharBuffer] */
     /* JADX WARN: Type inference failed for: r9v11, types: [java.nio.ByteBuffer] */
     /* JADX WARN: Type inference failed for: r9v5 */
@@ -36,19 +36,19 @@ public final class a extends CharsetDecoder {
             while (true) {
                 if (position < limit) {
                     try {
-                        byte b = array[position];
+                        byte b10 = array[position];
                         if (position2 >= limit2) {
                             coderResult2 = CoderResult.OVERFLOW;
                             break;
                         }
-                        int i = position2 + 1;
+                        int i10 = position2 + 1;
                         try {
-                            array2[position2] = (char) (b & 255);
+                            array2[position2] = (char) (b10 & 255);
                             position++;
-                            position2 = i;
+                            position2 = i10;
                         } catch (Throwable th) {
                             th = th;
-                            position2 = i;
+                            position2 = i10;
                             throw th;
                         }
                     } catch (Throwable th2) {
@@ -68,12 +68,12 @@ public final class a extends CharsetDecoder {
         while (true) {
             try {
                 if (byteBuffer.hasRemaining()) {
-                    byte b2 = byteBuffer.get();
+                    byte b11 = byteBuffer.get();
                     if (!charBuffer.hasRemaining()) {
                         coderResult = CoderResult.OVERFLOW;
                         break;
                     }
-                    charBuffer.put((char) (b2 & 255));
+                    charBuffer.put((char) (b11 & 255));
                     position3++;
                 } else {
                     coderResult = CoderResult.UNDERFLOW;

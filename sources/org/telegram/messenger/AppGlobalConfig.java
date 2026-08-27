@@ -7,7 +7,8 @@ import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class AppGlobalConfig {
     public final ConfigInt aicomposeToneExamplesNum;
     public final ConfigInt aicomposeTonePromptLengthMax;
@@ -74,10 +75,250 @@ public class AppGlobalConfig {
     public final ConfigLong tonSuggestedPostAmountMin = ofLong("ton_suggested_post_amount_min", 10000000);
     public final ConfigLong tonSuggestedPostAmountMax = ofLong("ton_suggested_post_amount_max", 10000000000000L);
 
-    private interface ConfigInternal {
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class ConfigBoolean {
+        private final Internal handler;
+
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static class Internal implements ConfigInternal {
+            private final boolean defaultValue;
+            private final String name;
+            private boolean value;
+
+            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
+            public boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
+                boolean z10;
+                if (!(jSONValue instanceof TLRPC.TL_jsonBool) || (z10 = ((TLRPC.TL_jsonBool) jSONValue).value) == this.value) {
+                    return false;
+                }
+                this.value = z10;
+                editor.putBoolean(this.name, z10);
+                return true;
+            }
+
+            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
+            public void load(SharedPreferences sharedPreferences) {
+                this.value = sharedPreferences.getBoolean(this.name, this.defaultValue);
+            }
+
+            private Internal(String str, boolean z10) {
+                this.name = str;
+                this.defaultValue = z10;
+            }
+        }
+
+        public boolean get() {
+            return this.handler.value;
+        }
+
+        private ConfigBoolean(String str, boolean z10) {
+            this.handler = new Internal(str, z10);
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class ConfigDouble {
+        private final Internal handler;
+
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static class Internal implements ConfigInternal {
+            private final double defaultValue;
+            private final String name;
+            private double value;
+
+            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
+            public boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
+                if (!(jSONValue instanceof TLRPC.TL_jsonNumber)) {
+                    return false;
+                }
+                double d = ((TLRPC.TL_jsonNumber) jSONValue).value;
+                if (d == this.value) {
+                    return false;
+                }
+                this.value = d;
+                editor.putFloat(this.name, (float) d);
+                return true;
+            }
+
+            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
+            public void load(SharedPreferences sharedPreferences) {
+                this.value = sharedPreferences.getFloat(this.name, (float) this.defaultValue);
+            }
+
+            private Internal(String str, double d) {
+                this.name = str;
+                this.defaultValue = d;
+            }
+        }
+
+        public double get() {
+            return this.handler.value;
+        }
+
+        private ConfigDouble(String str, double d) {
+            this.handler = new Internal(str, d);
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class ConfigInt {
+        private final Internal handler;
+
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static class Internal implements ConfigInternal {
+            private final int defaultValue;
+            private final String name;
+            private int value;
+
+            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
+            public boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
+                if (!(jSONValue instanceof TLRPC.TL_jsonNumber)) {
+                    return false;
+                }
+                double d = ((TLRPC.TL_jsonNumber) jSONValue).value;
+                if (d == this.value) {
+                    return false;
+                }
+                int i10 = (int) d;
+                this.value = i10;
+                editor.putInt(this.name, i10);
+                return true;
+            }
+
+            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
+            public void load(SharedPreferences sharedPreferences) {
+                this.value = sharedPreferences.getInt(this.name, this.defaultValue);
+            }
+
+            private Internal(String str, int i10) {
+                this.name = str;
+                this.defaultValue = i10;
+            }
+        }
+
+        public int get() {
+            return this.handler.value;
+        }
+
+        private ConfigInt(String str, int i10) {
+            this.handler = new Internal(str, i10);
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public interface ConfigInternal {
         boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue);
 
         void load(SharedPreferences sharedPreferences);
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class ConfigLong {
+        private final Internal handler;
+
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static class Internal implements ConfigInternal {
+            private final long defaultValue;
+            private final String name;
+            private long value;
+
+            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
+            public boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
+                if (!(jSONValue instanceof TLRPC.TL_jsonNumber)) {
+                    return false;
+                }
+                double d = ((TLRPC.TL_jsonNumber) jSONValue).value;
+                if (d == this.value) {
+                    return false;
+                }
+                long j10 = (long) d;
+                this.value = j10;
+                editor.putLong(this.name, j10);
+                return true;
+            }
+
+            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
+            public void load(SharedPreferences sharedPreferences) {
+                this.value = sharedPreferences.getLong(this.name, this.defaultValue);
+            }
+
+            private Internal(String str, long j10) {
+                this.name = str;
+                this.defaultValue = j10;
+            }
+        }
+
+        public long get() {
+            return this.handler.value;
+        }
+
+        private ConfigLong(String str, long j10) {
+            this.handler = new Internal(str, j10);
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class ConfigString {
+        private final Internal handler;
+
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static class Internal implements ConfigInternal {
+            private final String defaultValue;
+            private final String name;
+            private String value;
+
+            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
+            public boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
+                if (!(jSONValue instanceof TLRPC.TL_jsonString)) {
+                    return false;
+                }
+                TLRPC.TL_jsonString tL_jsonString = (TLRPC.TL_jsonString) jSONValue;
+                if (TextUtils.equals(tL_jsonString.value, this.value)) {
+                    return false;
+                }
+                String str = tL_jsonString.value;
+                this.value = str;
+                editor.putString(this.name, str);
+                return true;
+            }
+
+            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
+            public void load(SharedPreferences sharedPreferences) {
+                this.value = sharedPreferences.getString(this.name, this.defaultValue);
+            }
+
+            private Internal(String str, String str2) {
+                this.name = str;
+                this.defaultValue = str2;
+            }
+        }
+
+        public String get() {
+            return this.handler.value;
+        }
+
+        public boolean is(String str) {
+            return TextUtils.equals(get(), str);
+        }
+
+        private ConfigString(String str, String str2) {
+            this.handler = new Internal(str, str2);
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class ConfigTime {
+        private final ConfigLong.Internal handler;
+        private final TimeUnit timeUnit;
+
+        public long get(TimeUnit timeUnit) {
+            return timeUnit.convert(this.handler.value, this.timeUnit);
+        }
+
+        private ConfigTime(String str, TimeUnit timeUnit, long j10) {
+            this.handler = new ConfigLong.Internal(str, j10);
+            this.timeUnit = timeUnit;
+        }
     }
 
     public AppGlobalConfig() {
@@ -112,9 +353,9 @@ public class AppGlobalConfig {
         this.pollAnswersMax = ofInt("poll_answers_max", 12);
         this.pollCountriesMax = ofInt("poll_countries_max", 12);
         this.pollAnswerLengthMax = ofInt("poll_answer_length_max", 100);
-        this.pollQuestionLengthMax = ofInt("poll_question_length_max", NotificationCenter.didReceiveSmsCode);
-        this.pollSolutionLengthMax = ofInt("poll_solution_length_max", NotificationCenter.dialogPhotosUpdate);
-        this.pollCaptionLengthMax = ofInt("poll_caption_length_max", NotificationCenter.dialogsUnreadPollVotesCounterChanged);
+        this.pollQuestionLengthMax = ofInt("poll_question_length_max", 255);
+        this.pollSolutionLengthMax = ofInt("poll_solution_length_max", 200);
+        this.pollCaptionLengthMax = ofInt("poll_caption_length_max", 300);
         this.pollAnswerDeletePeriod = ofTime("poll_answer_delete_period", 300L, timeUnit);
         this.botsCreateLimitDefault = ofInt("bots_create_limit_default", 20);
         this.botsCreateLimitPremium = ofInt("bots_create_limit_premium", 40);
@@ -140,268 +381,14 @@ public class AppGlobalConfig {
         this.starsSpendTopUpInvoiceDisabled = ofBoolean("stars_spend_topup_invoice_disabled", false);
     }
 
-    public boolean apply(SharedPreferences.Editor editor, TLRPC.TL_jsonObject tL_jsonObject) {
-        int size = tL_jsonObject.value.size();
-        boolean z = false;
-        for (int i = 0; i < size; i++) {
-            TLRPC.TL_jsonObjectValue tL_jsonObjectValue = tL_jsonObject.value.get(i);
-            ConfigInternal configInternal = this.map.get(tL_jsonObjectValue.key);
-            if (configInternal != null) {
-                z |= configInternal.apply(editor, tL_jsonObjectValue.value);
-            }
-        }
-        return z;
+    public static AppGlobalConfig getInstance(int i10) {
+        return MessagesController.getInstance(i10).config;
     }
 
-    public void load(SharedPreferences sharedPreferences) {
-        Iterator<ConfigInternal> it = this.map.values().iterator();
-        while (it.hasNext()) {
-            try {
-                it.next().load(sharedPreferences);
-            } catch (ClassCastException e) {
-                FileLog.e(e);
-            }
-        }
-    }
-
-    public static class ConfigInt {
-        private final Internal handler;
-
-        private ConfigInt(String str, int i) {
-            this.handler = new Internal(str, i);
-        }
-
-        public int get() {
-            return this.handler.value;
-        }
-
-        private static class Internal implements ConfigInternal {
-            private final int defaultValue;
-            private final String name;
-            private int value;
-
-            private Internal(String str, int i) {
-                this.name = str;
-                this.defaultValue = i;
-            }
-
-            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
-            public boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
-                if (!(jSONValue instanceof TLRPC.TL_jsonNumber)) {
-                    return false;
-                }
-                double d = ((TLRPC.TL_jsonNumber) jSONValue).value;
-                if (d == this.value) {
-                    return false;
-                }
-                int i = (int) d;
-                this.value = i;
-                editor.putInt(this.name, i);
-                return true;
-            }
-
-            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
-            public void load(SharedPreferences sharedPreferences) {
-                this.value = sharedPreferences.getInt(this.name, this.defaultValue);
-            }
-        }
-    }
-
-    public static class ConfigLong {
-        private final Internal handler;
-
-        private ConfigLong(String str, long j) {
-            this.handler = new Internal(str, j);
-        }
-
-        public long get() {
-            return this.handler.value;
-        }
-
-        private static class Internal implements ConfigInternal {
-            private final long defaultValue;
-            private final String name;
-            private long value;
-
-            private Internal(String str, long j) {
-                this.name = str;
-                this.defaultValue = j;
-            }
-
-            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
-            public boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
-                if (!(jSONValue instanceof TLRPC.TL_jsonNumber)) {
-                    return false;
-                }
-                double d = ((TLRPC.TL_jsonNumber) jSONValue).value;
-                if (d == this.value) {
-                    return false;
-                }
-                long j = (long) d;
-                this.value = j;
-                editor.putLong(this.name, j);
-                return true;
-            }
-
-            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
-            public void load(SharedPreferences sharedPreferences) {
-                this.value = sharedPreferences.getLong(this.name, this.defaultValue);
-            }
-        }
-    }
-
-    public static class ConfigDouble {
-        private final Internal handler;
-
-        private ConfigDouble(String str, double d) {
-            this.handler = new Internal(str, d);
-        }
-
-        public double get() {
-            return this.handler.value;
-        }
-
-        private static class Internal implements ConfigInternal {
-            private final double defaultValue;
-            private final String name;
-            private double value;
-
-            private Internal(String str, double d) {
-                this.name = str;
-                this.defaultValue = d;
-            }
-
-            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
-            public boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
-                if (!(jSONValue instanceof TLRPC.TL_jsonNumber)) {
-                    return false;
-                }
-                double d = ((TLRPC.TL_jsonNumber) jSONValue).value;
-                if (d == this.value) {
-                    return false;
-                }
-                this.value = d;
-                editor.putFloat(this.name, (float) d);
-                return true;
-            }
-
-            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
-            public void load(SharedPreferences sharedPreferences) {
-                this.value = sharedPreferences.getFloat(this.name, (float) this.defaultValue);
-            }
-        }
-    }
-
-    public static class ConfigString {
-        private final Internal handler;
-
-        private ConfigString(String str, String str2) {
-            this.handler = new Internal(str, str2);
-        }
-
-        public String get() {
-            return this.handler.value;
-        }
-
-        public boolean is(String str) {
-            return TextUtils.equals(get(), str);
-        }
-
-        private static class Internal implements ConfigInternal {
-            private final String defaultValue;
-            private final String name;
-            private String value;
-
-            private Internal(String str, String str2) {
-                this.name = str;
-                this.defaultValue = str2;
-            }
-
-            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
-            public boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
-                if (!(jSONValue instanceof TLRPC.TL_jsonString)) {
-                    return false;
-                }
-                TLRPC.TL_jsonString tL_jsonString = (TLRPC.TL_jsonString) jSONValue;
-                if (TextUtils.equals(tL_jsonString.value, this.value)) {
-                    return false;
-                }
-                String str = tL_jsonString.value;
-                this.value = str;
-                editor.putString(this.name, str);
-                return true;
-            }
-
-            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
-            public void load(SharedPreferences sharedPreferences) {
-                this.value = sharedPreferences.getString(this.name, this.defaultValue);
-            }
-        }
-    }
-
-    public static class ConfigBoolean {
-        private final Internal handler;
-
-        private ConfigBoolean(String str, boolean z) {
-            this.handler = new Internal(str, z);
-        }
-
-        public boolean get() {
-            return this.handler.value;
-        }
-
-        private static class Internal implements ConfigInternal {
-            private final boolean defaultValue;
-            private final String name;
-            private boolean value;
-
-            private Internal(String str, boolean z) {
-                this.name = str;
-                this.defaultValue = z;
-            }
-
-            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
-            public boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
-                boolean z;
-                if (!(jSONValue instanceof TLRPC.TL_jsonBool) || (z = ((TLRPC.TL_jsonBool) jSONValue).value) == this.value) {
-                    return false;
-                }
-                this.value = z;
-                editor.putBoolean(this.name, z);
-                return true;
-            }
-
-            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
-            public void load(SharedPreferences sharedPreferences) {
-                this.value = sharedPreferences.getBoolean(this.name, this.defaultValue);
-            }
-        }
-    }
-
-    public static class ConfigTime {
-        private final ConfigLong.Internal handler;
-        private final TimeUnit timeUnit;
-
-        private ConfigTime(String str, TimeUnit timeUnit, long j) {
-            this.handler = new ConfigLong.Internal(str, j);
-            this.timeUnit = timeUnit;
-        }
-
-        public long get(TimeUnit timeUnit) {
-            return timeUnit.convert(this.handler.value, this.timeUnit);
-        }
-    }
-
-    private ConfigInt ofInt(String str, int i) {
-        ConfigInt configInt = new ConfigInt(str, i);
-        this.map.put(str, configInt.handler);
-        return configInt;
-    }
-
-    private ConfigLong ofLong(String str, long j) {
-        ConfigLong configLong = new ConfigLong(str, j);
-        this.map.put(str, configLong.handler);
-        return configLong;
+    private ConfigBoolean ofBoolean(String str, boolean z10) {
+        ConfigBoolean configBoolean = new ConfigBoolean(str, z10);
+        this.map.put(str, configBoolean.handler);
+        return configBoolean;
     }
 
     private ConfigDouble ofDouble(String str, double d) {
@@ -410,10 +397,16 @@ public class AppGlobalConfig {
         return configDouble;
     }
 
-    private ConfigBoolean ofBoolean(String str, boolean z) {
-        ConfigBoolean configBoolean = new ConfigBoolean(str, z);
-        this.map.put(str, configBoolean.handler);
-        return configBoolean;
+    private ConfigInt ofInt(String str, int i10) {
+        ConfigInt configInt = new ConfigInt(str, i10);
+        this.map.put(str, configInt.handler);
+        return configInt;
+    }
+
+    private ConfigLong ofLong(String str, long j10) {
+        ConfigLong configLong = new ConfigLong(str, j10);
+        this.map.put(str, configLong.handler);
+        return configLong;
     }
 
     private ConfigString ofString(String str, String str2) {
@@ -422,13 +415,33 @@ public class AppGlobalConfig {
         return configString;
     }
 
-    private ConfigTime ofTime(String str, long j, TimeUnit timeUnit) {
-        ConfigTime configTime = new ConfigTime(str, timeUnit, j);
+    private ConfigTime ofTime(String str, long j10, TimeUnit timeUnit) {
+        ConfigTime configTime = new ConfigTime(str, timeUnit, j10);
         this.map.put(str, configTime.handler);
         return configTime;
     }
 
-    public static AppGlobalConfig getInstance(int i) {
-        return MessagesController.getInstance(i).config;
+    public boolean apply(SharedPreferences.Editor editor, TLRPC.TL_jsonObject tL_jsonObject) {
+        int size = tL_jsonObject.value.size();
+        boolean z10 = false;
+        for (int i10 = 0; i10 < size; i10++) {
+            TLRPC.TL_jsonObjectValue tL_jsonObjectValue = tL_jsonObject.value.get(i10);
+            ConfigInternal configInternal = this.map.get(tL_jsonObjectValue.key);
+            if (configInternal != null) {
+                z10 |= configInternal.apply(editor, tL_jsonObjectValue.value);
+            }
+        }
+        return z10;
+    }
+
+    public void load(SharedPreferences sharedPreferences) {
+        Iterator<ConfigInternal> it = this.map.values().iterator();
+        while (it.hasNext()) {
+            try {
+                it.next().load(sharedPreferences);
+            } catch (ClassCastException e9) {
+                FileLog.e(e9);
+            }
+        }
     }
 }

@@ -15,21 +15,21 @@ public final /* synthetic */ class Comparator$-CC {
 
     public static <T, U extends Comparable<? super U>> Comparator<T> comparing(Function<? super T, ? extends U> function) {
         Objects.requireNonNull(function);
-        return new b(2, function);
+        return new c(2, function);
     }
 
     public static <T> Comparator<T> comparingInt(ToIntFunction<? super T> toIntFunction) {
         Objects.requireNonNull(toIntFunction);
-        return new b(0, toIntFunction);
+        return new c(0, toIntFunction);
     }
 
     public static <T> Comparator<T> comparingLong(ToLongFunction<? super T> toLongFunction) {
         Objects.requireNonNull(toLongFunction);
-        return new b(3, toLongFunction);
+        return new c(3, toLongFunction);
     }
 
     public static <T> Comparator<T> comparingDouble(ToDoubleFunction<? super T> toDoubleFunction) {
         Objects.requireNonNull(toDoubleFunction);
-        return new b(1, toDoubleFunction);
+        return new c(1, toDoubleFunction);
     }
 }

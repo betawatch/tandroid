@@ -1,38 +1,39 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzmd {
-    public static void zza(boolean z) {
-        if (!z) {
+    public static void zza(boolean z10) {
+        if (!z10) {
             throw new IllegalArgumentException();
         }
     }
 
-    public static void zzb(boolean z, Object obj) {
-        if (!z) {
+    public static void zzb(boolean z10, Object obj) {
+        if (!z10) {
             throw new IllegalArgumentException((String) obj);
         }
     }
 
-    public static void zzc(boolean z, String str, char c) {
-        if (!z) {
-            throw new IllegalArgumentException(zzmg.zza(str, Character.valueOf(c)));
+    public static void zzc(boolean z10, String str, char c10) {
+        if (!z10) {
+            throw new IllegalArgumentException(zzmg.zza(str, Character.valueOf(c10)));
         }
     }
 
-    public static void zzd(int i, int i2, int i3) {
-        if (i < 0 || i2 < i || i2 > i3) {
-            throw new IndexOutOfBoundsException((i < 0 || i > i3) ? zzf(i, i3, "start index") : (i2 < 0 || i2 > i3) ? zzf(i2, i3, "end index") : zzmg.zza("end index (%s) must not be less than start index (%s)", Integer.valueOf(i2), Integer.valueOf(i)));
+    public static void zzd(int i10, int i11, int i12) {
+        if (i10 < 0 || i11 < i10 || i11 > i12) {
+            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? zzf(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? zzf(i11, i12, "end index") : zzmg.zza("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
         }
     }
 
-    public static void zze(boolean z, Object obj) {
-        if (!z) {
+    public static void zze(boolean z10, Object obj) {
+        if (!z10) {
             throw new IllegalStateException((String) obj);
         }
     }
 
-    private static String zzf(int i, int i2, String str) {
-        return i < 0 ? zzmg.zza("%s (%s) must not be negative", str, Integer.valueOf(i)) : zzmg.zza("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i), Integer.valueOf(i2));
+    private static String zzf(int i10, int i11, String str) {
+        return i10 < 0 ? zzmg.zza("%s (%s) must not be negative", str, Integer.valueOf(i10)) : zzmg.zza("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
     }
 }

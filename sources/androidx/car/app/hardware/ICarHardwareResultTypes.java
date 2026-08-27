@@ -5,6 +5,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public interface ICarHardwareResultTypes extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$hardware$ICarHardwareResultTypes".replace('$', '.');
@@ -21,6 +22,7 @@ public interface ICarHardwareResultTypes extends IInterface {
     public static final int TYPE_SENSOR_GYROSCOPE = 22;
     public static final int TYPE_UNKNOWN = 0;
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class Default implements ICarHardwareResultTypes {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -28,41 +30,14 @@ public interface ICarHardwareResultTypes extends IInterface {
         }
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static abstract class Stub extends Binder implements ICarHardwareResultTypes {
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return this;
-        }
 
-        public Stub() {
-            attachInterface(this, ICarHardwareResultTypes.DESCRIPTOR);
-        }
-
-        public static ICarHardwareResultTypes asInterface(IBinder iBinder) {
-            if (iBinder == null) {
-                return null;
-            }
-            IInterface queryLocalInterface = iBinder.queryLocalInterface(ICarHardwareResultTypes.DESCRIPTOR);
-            if (queryLocalInterface != null && (queryLocalInterface instanceof ICarHardwareResultTypes)) {
-                return (ICarHardwareResultTypes) queryLocalInterface;
-            }
-            return new Proxy(iBinder);
-        }
-
-        @Override // android.os.Binder
-        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String str = ICarHardwareResultTypes.DESCRIPTOR;
-            if (i == 1598968902) {
-                parcel2.writeString(str);
-                return true;
-            }
-            return super.onTransact(i, parcel, parcel2, i2);
-        }
-
-        private static class Proxy implements ICarHardwareResultTypes {
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static class Proxy implements ICarHardwareResultTypes {
             private IBinder mRemote;
 
-            Proxy(IBinder iBinder) {
+            public Proxy(IBinder iBinder) {
                 this.mRemote = iBinder;
             }
 
@@ -74,6 +49,33 @@ public interface ICarHardwareResultTypes extends IInterface {
             public String getInterfaceDescriptor() {
                 return ICarHardwareResultTypes.DESCRIPTOR;
             }
+        }
+
+        public Stub() {
+            attachInterface(this, ICarHardwareResultTypes.DESCRIPTOR);
+        }
+
+        public static ICarHardwareResultTypes asInterface(IBinder iBinder) {
+            if (iBinder == null) {
+                return null;
+            }
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(ICarHardwareResultTypes.DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof ICarHardwareResultTypes)) ? new Proxy(iBinder) : (ICarHardwareResultTypes) queryLocalInterface;
+        }
+
+        @Override // android.os.Binder
+        public boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+            String str = ICarHardwareResultTypes.DESCRIPTOR;
+            if (i10 != 1598968902) {
+                return super.onTransact(i10, parcel, parcel2, i11);
+            }
+            parcel2.writeString(str);
+            return true;
+        }
+
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return this;
         }
     }
 }

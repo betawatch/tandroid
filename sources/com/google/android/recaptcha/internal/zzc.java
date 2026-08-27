@@ -1,15 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.CoroutineScope;
+import ad.p;
+import h7.k6;
+import id.c0;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzc extends SuspendLambda implements Function2 {
+final class zzc extends i implements p {
     Object zza;
     int zzb;
     final /* synthetic */ zzgr zzc;
@@ -17,37 +16,37 @@ final class zzc extends SuspendLambda implements Function2 {
     final /* synthetic */ zzxn zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzc(zzgr zzgrVar, zzg zzgVar, zzxn zzxnVar, Continuation continuation) {
-        super(2, continuation);
+    public zzc(zzgr zzgrVar, zzg zzgVar, zzxn zzxnVar, c cVar) {
+        super(2, cVar);
         this.zzc = zzgrVar;
         this.zzd = zzgVar;
         this.zze = zzxnVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzc(this.zzc, this.zzd, this.zze, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        return new zzc(this.zzc, this.zzd, this.zze, cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzc) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzc) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0028, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0026, code lost:
     
         if (r5 != r0) goto L10;
      */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zzb;
-        if (i == 0) {
-            ResultKt.throwOnFailure(obj);
+        sc.a aVar = sc.a.a;
+        int i10 = this.zzb;
+        if (i10 == 0) {
+            k6.b(obj);
             zzgrVar = this.zzc;
             zzg zzgVar = this.zzd;
             zzxn zzxnVar = this.zze;
@@ -55,16 +54,16 @@ final class zzc extends SuspendLambda implements Function2 {
             this.zzb = 1;
             obj = zzgVar.zzd(zzxnVar, this);
         } else {
-            if (i != 1) {
-                ResultKt.throwOnFailure(obj);
+            if (i10 != 1) {
+                k6.b(obj);
                 return obj;
             }
             zzgrVar = (zzgr) this.zza;
-            ResultKt.throwOnFailure(obj);
+            k6.b(obj);
         }
         this.zza = null;
         this.zzb = 2;
         Object zza = ((zzhg) obj).zza(zzgrVar.zza(), this);
-        return zza == coroutine_suspended ? coroutine_suspended : zza;
+        return zza == aVar ? aVar : zza;
     }
 }

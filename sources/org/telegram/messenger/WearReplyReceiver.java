@@ -1,17 +1,77 @@
 package org.telegram.messenger;
 
+import android.app.RemoteInput;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import androidx.core.app.RemoteInput;
 import java.util.ArrayList;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class WearReplyReceiver extends BroadcastReceiver {
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onReceive$0(AccountInstance accountInstance, TLRPC.User user, CharSequence charSequence, long j10, long j11, int i10, int[] iArr) {
+        accountInstance.getMessagesController().putUser(user, true);
+        sendMessage(accountInstance, charSequence, j10, j11, i10, iArr);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onReceive$1(AccountInstance accountInstance, long j10, CharSequence charSequence, long j11, int i10, int[] iArr) {
+        AndroidUtilities.runOnUIThread(new oc(this, accountInstance, accountInstance.getMessagesStorage().getUserSync(j10), charSequence, j10, j11, i10, iArr, 2));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onReceive$2(AccountInstance accountInstance, TLRPC.Chat chat, CharSequence charSequence, long j10, long j11, int i10, int[] iArr) {
+        accountInstance.getMessagesController().putChat(chat, true);
+        sendMessage(accountInstance, charSequence, j10, j11, i10, iArr);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onReceive$3(AccountInstance accountInstance, long j10, CharSequence charSequence, long j11, int i10, int[] iArr) {
+        AndroidUtilities.runOnUIThread(new oc(this, accountInstance, accountInstance.getMessagesStorage().getChatSync(-j10), charSequence, j10, j11, i10, iArr, 3));
+    }
+
+    private void sendMessage(AccountInstance accountInstance, CharSequence charSequence, long j10, long j11, int i10, int[] iArr) {
+        MessageObject messageObject;
+        MessageObject messageObject2 = null;
+        if (i10 != 0) {
+            TLRPC.TL_message tL_message = new TLRPC.TL_message();
+            tL_message.message = "";
+            tL_message.id = i10;
+            tL_message.peer_id = accountInstance.getMessagesController().getPeer(j10);
+            messageObject = new MessageObject(accountInstance.getCurrentAccount(), tL_message, false, false);
+        } else {
+            messageObject = null;
+        }
+        if (j11 != 0) {
+            TLRPC.TL_message tL_message2 = new TLRPC.TL_message();
+            tL_message2.message = "";
+            tL_message2.id = (int) j11;
+            tL_message2.peer_id = accountInstance.getMessagesController().getPeer(j10);
+            TLRPC.TL_messageActionTopicCreate tL_messageActionTopicCreate = new TLRPC.TL_messageActionTopicCreate();
+            tL_message2.action = tL_messageActionTopicCreate;
+            tL_messageActionTopicCreate.title = "";
+            messageObject2 = new MessageObject(accountInstance.getCurrentAccount(), tL_message2, false, false);
+        }
+        accountInstance.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence.toString(), j10, messageObject, messageObject2, null, true, null, null, null, true, 0, 0, null, false));
+        if (iArr != null && iArr.length > 0) {
+            ArrayList<Integer> arrayList = new ArrayList<>(iArr.length);
+            int length = iArr.length;
+            int i11 = 0;
+            while (i11 < length) {
+                i11 = i0.a.f(iArr[i11], i11, 1, arrayList);
+            }
+            accountInstance.getMessagesStorage().markVoiceMessageContentAsRead(j10, arrayList);
+        }
+        if (j11 == 0) {
+            accountInstance.getMessagesController().markDialogAsRead(j10, i10, i10, 0, false, j11, 0, true, 0);
+        }
+    }
+
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
         ApplicationLoader.postInitApplication();
@@ -34,92 +94,51 @@ public class WearReplyReceiver extends BroadcastReceiver {
         final AccountInstance accountInstance = AccountInstance.getInstance(intExtra2);
         if (DialogObject.isUserDialog(longExtra)) {
             if (accountInstance.getMessagesController().getUser(Long.valueOf(longExtra)) == null) {
-                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.WearReplyReceiver$$ExternalSyntheticLambda0
+                final int i10 = 0;
+                Utilities.globalQueue.postRunnable(new Runnable(this) { // from class: org.telegram.messenger.sl
+                    public final /* synthetic */ WearReplyReceiver b;
+
+                    {
+                        this.b = this;
+                    }
+
                     @Override // java.lang.Runnable
                     public final void run() {
-                        WearReplyReceiver.$r8$lambda$0GZdQXBmuJobg22hpdaOrwhRICE(WearReplyReceiver.this, accountInstance, longExtra, charSequence, longExtra2, intExtra, intArrayExtra);
+                        switch (i10) {
+                            case 0:
+                                this.b.lambda$onReceive$1(accountInstance, longExtra, charSequence, longExtra2, intExtra, intArrayExtra);
+                                break;
+                            default:
+                                this.b.lambda$onReceive$3(accountInstance, longExtra, charSequence, longExtra2, intExtra, intArrayExtra);
+                                break;
+                        }
                     }
                 });
                 return;
             }
         } else if (DialogObject.isChatDialog(longExtra) && accountInstance.getMessagesController().getChat(Long.valueOf(-longExtra)) == null) {
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.WearReplyReceiver$$ExternalSyntheticLambda1
+            final int i11 = 1;
+            Utilities.globalQueue.postRunnable(new Runnable(this) { // from class: org.telegram.messenger.sl
+                public final /* synthetic */ WearReplyReceiver b;
+
+                {
+                    this.b = this;
+                }
+
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WearReplyReceiver.$r8$lambda$xUwpbw6rYF_U6i0mwB6MDuDwBTU(WearReplyReceiver.this, accountInstance, longExtra, charSequence, longExtra2, intExtra, intArrayExtra);
+                    switch (i11) {
+                        case 0:
+                            this.b.lambda$onReceive$1(accountInstance, longExtra, charSequence, longExtra2, intExtra, intArrayExtra);
+                            break;
+                        default:
+                            this.b.lambda$onReceive$3(accountInstance, longExtra, charSequence, longExtra2, intExtra, intArrayExtra);
+                            break;
+                    }
                 }
             });
             return;
         }
         sendMessage(accountInstance, charSequence, longExtra, longExtra2, intExtra, intArrayExtra);
-    }
-
-    public static /* synthetic */ void $r8$lambda$0GZdQXBmuJobg22hpdaOrwhRICE(final WearReplyReceiver wearReplyReceiver, final AccountInstance accountInstance, final long j, final CharSequence charSequence, final long j2, final int i, final int[] iArr) {
-        wearReplyReceiver.getClass();
-        final TLRPC.User userSync = accountInstance.getMessagesStorage().getUserSync(j);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.WearReplyReceiver$$ExternalSyntheticLambda2
-            @Override // java.lang.Runnable
-            public final void run() {
-                WearReplyReceiver.$r8$lambda$tjK12x6hUXEHtlX5cK6YjtPSLDc(WearReplyReceiver.this, accountInstance, userSync, charSequence, j, j2, i, iArr);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$tjK12x6hUXEHtlX5cK6YjtPSLDc(WearReplyReceiver wearReplyReceiver, AccountInstance accountInstance, TLRPC.User user, CharSequence charSequence, long j, long j2, int i, int[] iArr) {
-        wearReplyReceiver.getClass();
-        accountInstance.getMessagesController().putUser(user, true);
-        wearReplyReceiver.sendMessage(accountInstance, charSequence, j, j2, i, iArr);
-    }
-
-    public static /* synthetic */ void $r8$lambda$xUwpbw6rYF_U6i0mwB6MDuDwBTU(final WearReplyReceiver wearReplyReceiver, final AccountInstance accountInstance, final long j, final CharSequence charSequence, final long j2, final int i, final int[] iArr) {
-        wearReplyReceiver.getClass();
-        final TLRPC.Chat chatSync = accountInstance.getMessagesStorage().getChatSync(-j);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.WearReplyReceiver$$ExternalSyntheticLambda3
-            @Override // java.lang.Runnable
-            public final void run() {
-                WearReplyReceiver.$r8$lambda$0U_NgXVbIc5H7G7w3HW0O3ZlLV0(WearReplyReceiver.this, accountInstance, chatSync, charSequence, j, j2, i, iArr);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$0U_NgXVbIc5H7G7w3HW0O3ZlLV0(WearReplyReceiver wearReplyReceiver, AccountInstance accountInstance, TLRPC.Chat chat, CharSequence charSequence, long j, long j2, int i, int[] iArr) {
-        wearReplyReceiver.getClass();
-        accountInstance.getMessagesController().putChat(chat, true);
-        wearReplyReceiver.sendMessage(accountInstance, charSequence, j, j2, i, iArr);
-    }
-
-    private void sendMessage(AccountInstance accountInstance, CharSequence charSequence, long j, long j2, int i, int[] iArr) {
-        MessageObject messageObject;
-        MessageObject messageObject2 = null;
-        if (i != 0) {
-            TLRPC.TL_message tL_message = new TLRPC.TL_message();
-            tL_message.message = "";
-            tL_message.id = i;
-            tL_message.peer_id = accountInstance.getMessagesController().getPeer(j);
-            messageObject = new MessageObject(accountInstance.getCurrentAccount(), tL_message, false, false);
-        } else {
-            messageObject = null;
-        }
-        if (j2 != 0) {
-            TLRPC.TL_message tL_message2 = new TLRPC.TL_message();
-            tL_message2.message = "";
-            tL_message2.id = (int) j2;
-            tL_message2.peer_id = accountInstance.getMessagesController().getPeer(j);
-            TLRPC.TL_messageActionTopicCreate tL_messageActionTopicCreate = new TLRPC.TL_messageActionTopicCreate();
-            tL_message2.action = tL_messageActionTopicCreate;
-            tL_messageActionTopicCreate.title = "";
-            messageObject2 = new MessageObject(accountInstance.getCurrentAccount(), tL_message2, false, false);
-        }
-        accountInstance.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence.toString(), j, messageObject, messageObject2, null, true, null, null, null, true, 0, 0, null, false));
-        if (iArr != null && iArr.length > 0) {
-            ArrayList<Integer> arrayList = new ArrayList<>(iArr.length);
-            for (int i2 : iArr) {
-                arrayList.add(Integer.valueOf(i2));
-            }
-            accountInstance.getMessagesStorage().markVoiceMessageContentAsRead(j, arrayList);
-        }
-        if (j2 == 0) {
-            accountInstance.getMessagesController().markDialogAsRead(j, i, i, 0, false, j2, 0, true, 0);
-        }
     }
 }

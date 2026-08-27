@@ -12,7 +12,7 @@ public final class DateTimeFormatter {
     public final e a;
     public final Locale b;
     public final v c;
-    public final j$.time.chrono.r d;
+    public final j$.time.chrono.k d;
 
     static {
         p pVar = new p();
@@ -27,18 +27,18 @@ public final class DateTimeFormatter {
         pVar.g(aVar3, 2);
         w wVar = w.STRICT;
         j$.time.chrono.r rVar = j$.time.chrono.r.c;
-        DateTimeFormatter k = pVar.k(wVar, rVar);
-        ISO_LOCAL_DATE = k;
+        DateTimeFormatter k10 = pVar.k(wVar, rVar);
+        ISO_LOCAL_DATE = k10;
         p pVar2 = new p();
         k kVar = k.INSENSITIVE;
         pVar2.b(kVar);
-        pVar2.a(k);
+        pVar2.a(k10);
         j jVar = j.e;
         pVar2.b(jVar);
         pVar2.k(wVar, rVar);
         p pVar3 = new p();
         pVar3.b(kVar);
-        pVar3.a(k);
+        pVar3.a(k10);
         pVar3.j();
         pVar3.b(jVar);
         pVar3.k(wVar, rVar);
@@ -61,35 +61,35 @@ public final class DateTimeFormatter {
             throw new IllegalArgumentException("Field must have a fixed set of values: " + aVar7);
         }
         pVar4.b(gVar);
-        DateTimeFormatter k2 = pVar4.k(wVar, null);
+        DateTimeFormatter k11 = pVar4.k(wVar, null);
         p pVar5 = new p();
         pVar5.b(kVar);
-        pVar5.a(k2);
+        pVar5.a(k11);
         pVar5.b(jVar);
         pVar5.k(wVar, null);
         p pVar6 = new p();
         pVar6.b(kVar);
-        pVar6.a(k2);
+        pVar6.a(k11);
         pVar6.j();
         pVar6.b(jVar);
         pVar6.k(wVar, null);
         p pVar7 = new p();
         pVar7.b(kVar);
-        pVar7.a(k);
+        pVar7.a(k10);
         pVar7.c('T');
-        pVar7.a(k2);
-        DateTimeFormatter k3 = pVar7.k(wVar, rVar);
+        pVar7.a(k11);
+        DateTimeFormatter k12 = pVar7.k(wVar, rVar);
         p pVar8 = new p();
         pVar8.b(kVar);
-        pVar8.a(k3);
+        pVar8.a(k12);
         k kVar2 = k.LENIENT;
         pVar8.b(kVar2);
         pVar8.b(jVar);
         k kVar3 = k.STRICT;
         pVar8.b(kVar3);
-        DateTimeFormatter k4 = pVar8.k(wVar, rVar);
+        DateTimeFormatter k13 = pVar8.k(wVar, rVar);
         p pVar9 = new p();
-        pVar9.a(k4);
+        pVar9.a(k13);
         pVar9.j();
         pVar9.c('[');
         k kVar4 = k.SENSITIVE;
@@ -99,7 +99,7 @@ public final class DateTimeFormatter {
         pVar9.c(']');
         pVar9.k(wVar, rVar);
         p pVar10 = new p();
-        pVar10.a(k3);
+        pVar10.a(k12);
         pVar10.j();
         pVar10.b(jVar);
         pVar10.j();
@@ -187,23 +187,24 @@ public final class DateTimeFormatter {
         pVar15.k(w.SMART, rVar);
     }
 
-    public DateTimeFormatter(e eVar, Locale locale, w wVar, j$.time.chrono.r rVar) {
+    public DateTimeFormatter(e eVar, Locale locale, w wVar, j$.time.chrono.k kVar) {
         v vVar = v.a;
         this.a = (e) Objects.requireNonNull(eVar, "printerParser");
         this.b = (Locale) Objects.requireNonNull(locale, "locale");
         this.c = (v) Objects.requireNonNull(vVar, "decimalStyle");
-        this.d = rVar;
+        this.d = kVar;
     }
 
     public final String a(j$.time.temporal.l lVar) {
-        StringBuilder sb = new StringBuilder(32);
+        StringBuilder sb2 = new StringBuilder(32);
+        e eVar = this.a;
         Objects.requireNonNull(lVar, "temporal");
-        Objects.requireNonNull(sb, "appendable");
+        Objects.requireNonNull(sb2, "appendable");
         try {
-            this.a.l(new r(lVar, this), sb);
-            return sb.toString();
-        } catch (IOException e2) {
-            throw new j$.time.b(e2.getMessage(), e2);
+            eVar.j(new r(lVar, this), sb2);
+            return sb2.toString();
+        } catch (IOException e9) {
+            throw new j$.time.b(e9.getMessage(), e9);
         }
     }
 

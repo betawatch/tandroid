@@ -1,14 +1,11 @@
 package com.google.android.gms.tasks;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class TaskCompletionSource<TResult> {
     private final zzw zza = new zzw();
 
     public TaskCompletionSource() {
-    }
-
-    public TaskCompletionSource(CancellationToken cancellationToken) {
-        cancellationToken.onCanceledRequested(new zzs(this));
     }
 
     public Task<TResult> getTask() {
@@ -29,5 +26,9 @@ public class TaskCompletionSource<TResult> {
 
     public boolean trySetResult(TResult tresult) {
         return this.zza.zze(tresult);
+    }
+
+    public TaskCompletionSource(CancellationToken cancellationToken) {
+        cancellationToken.onCanceledRequested(new zzs(this));
     }
 }

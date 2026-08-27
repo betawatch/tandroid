@@ -2,1857 +2,1662 @@ package androidx.appcompat.widget;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.ContextThemeWrapper;
-import android.view.KeyEvent;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.window.OnBackInvokedCallback;
 import android.window.OnBackInvokedDispatcher;
-import androidx.appcompat.R$attr;
-import androidx.appcompat.R$styleable;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.content.res.AppCompatResources;
-import androidx.appcompat.view.CollapsibleActionView;
-import androidx.appcompat.view.SupportMenuInflater;
-import androidx.appcompat.view.menu.MenuBuilder;
-import androidx.appcompat.view.menu.MenuItemImpl;
-import androidx.appcompat.view.menu.MenuPresenter;
-import androidx.appcompat.view.menu.SubMenuBuilder;
-import androidx.appcompat.widget.ActionMenuView;
-import androidx.core.view.GravityCompat;
-import androidx.core.view.MarginLayoutParamsCompat;
-import androidx.core.view.MenuHost;
-import androidx.core.view.MenuHostHelper;
-import androidx.core.view.MenuProvider;
-import androidx.core.view.ViewCompat;
-import androidx.customview.view.AbsSavedState;
-import j$.util.Objects;
+import androidx.fragment.app.b0;
+import g7.o7;
+import h7.m;
 import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.MediaController;
+import java.util.Iterator;
+import java.util.WeakHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
+import k.h;
+import l.l;
+import l.n;
+import m.a1;
+import m.h3;
+import m.i;
+import m.i3;
+import m.j3;
+import m.k3;
+import m.l1;
+import m.l3;
+import m.m3;
+import m.n3;
+import m.o3;
+import m.p2;
+import m.p3;
+import m.v;
+import m.w;
+import m.w3;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
+import r0.j0;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class Toolbar extends ViewGroup implements MenuHost {
-    private MenuPresenter.Callback mActionMenuPresenterCallback;
-    private OnBackInvokedCallback mBackInvokedCallback;
-    private boolean mBackInvokedCallbackEnabled;
-    private OnBackInvokedDispatcher mBackInvokedDispatcher;
-    int mButtonGravity;
-    ImageButton mCollapseButtonView;
-    private CharSequence mCollapseDescription;
-    private Drawable mCollapseIcon;
-    private boolean mCollapsible;
-    private int mContentInsetEndWithActions;
-    private int mContentInsetStartWithNavigation;
-    private RtlSpacingHelper mContentInsets;
-    private boolean mEatingHover;
-    private boolean mEatingTouch;
-    View mExpandedActionView;
-    private ExpandedActionViewMenuPresenter mExpandedMenuPresenter;
-    private int mGravity;
-    private final ArrayList mHiddenViews;
-    private ImageView mLogoView;
-    private int mMaxButtonHeight;
-    MenuBuilder.Callback mMenuBuilderCallback;
-    final MenuHostHelper mMenuHostHelper;
-    ActionMenuView mMenuView;
-    private final ActionMenuView.OnMenuItemClickListener mMenuViewItemClickListener;
-    private ImageButton mNavButtonView;
-    private ActionMenuPresenter mOuterActionMenuPresenter;
-    private Context mPopupContext;
-    private int mPopupTheme;
-    private ArrayList mProvidedMenuItems;
-    private final Runnable mShowOverflowMenuRunnable;
-    private CharSequence mSubtitleText;
-    private int mSubtitleTextAppearance;
-    private ColorStateList mSubtitleTextColor;
-    private TextView mSubtitleTextView;
-    private final int[] mTempMargins;
-    private final ArrayList mTempViews;
-    private int mTitleMarginBottom;
-    private int mTitleMarginEnd;
-    private int mTitleMarginStart;
-    private int mTitleMarginTop;
-    private CharSequence mTitleText;
-    private int mTitleTextAppearance;
-    private ColorStateList mTitleTextColor;
-    private TextView mTitleTextView;
-    private ToolbarWidgetWrapper mWrapper;
-
-    public interface OnMenuItemClickListener {
-    }
-
-    public void setOnMenuItemClickListener(OnMenuItemClickListener onMenuItemClickListener) {
-    }
+public class Toolbar extends ViewGroup {
+    public final int A;
+    public int B;
+    public int C;
+    public int D;
+    public int E;
+    public p2 F;
+    public int G;
+    public int H;
+    public final int I;
+    public CharSequence J;
+    public CharSequence K;
+    public ColorStateList L;
+    public ColorStateList M;
+    public boolean N;
+    public boolean O;
+    public final ArrayList P;
+    public final ArrayList Q;
+    public final int[] R;
+    public final j9.a S;
+    public ArrayList T;
+    public final ga.c U;
+    public p3 V;
+    public i W;
+    public ActionMenuView a;
+    public k3 a0;
+    public a1 b;
+    public boolean b0;
+    public a1 c;
+    public OnBackInvokedCallback c0;
+    public v d;
+    public OnBackInvokedDispatcher d0;
+    public w e;
+    public boolean e0;
+    public final Drawable f;
+    public final i3 f0;
+    public final CharSequence h;
+    public v n;
+    public View r;
+    public Context s;
+    public int v;
+    public int w;
+    public int x;
+    public final int y;
 
     public Toolbar(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R$attr.toolbarStyle);
-    }
-
-    public Toolbar(Context context, AttributeSet attributeSet, int i) {
-        super(context, attributeSet, i);
-        this.mGravity = 8388627;
-        this.mTempViews = new ArrayList();
-        this.mHiddenViews = new ArrayList();
-        this.mTempMargins = new int[2];
-        this.mMenuHostHelper = new MenuHostHelper(new Runnable() { // from class: androidx.appcompat.widget.Toolbar$$ExternalSyntheticLambda1
-            @Override // java.lang.Runnable
-            public final void run() {
-                Toolbar.this.invalidateMenu();
-            }
-        });
-        this.mProvidedMenuItems = new ArrayList();
-        this.mMenuViewItemClickListener = new ActionMenuView.OnMenuItemClickListener() { // from class: androidx.appcompat.widget.Toolbar.1
-            @Override // androidx.appcompat.widget.ActionMenuView.OnMenuItemClickListener
-            public boolean onMenuItemClick(MenuItem menuItem) {
-                if (Toolbar.this.mMenuHostHelper.onMenuItemSelected(menuItem)) {
-                    return true;
-                }
-                Toolbar.this.getClass();
-                return false;
-            }
-        };
-        this.mShowOverflowMenuRunnable = new Runnable() { // from class: androidx.appcompat.widget.Toolbar.2
-            @Override // java.lang.Runnable
-            public void run() {
-                Toolbar.this.showOverflowMenu();
-            }
-        };
+        super(context, attributeSet, R.attr.toolbarStyle);
+        this.I = 8388627;
+        this.P = new ArrayList();
+        this.Q = new ArrayList();
+        this.R = new int[2];
+        this.S = new j9.a(new h3(this, 1));
+        this.T = new ArrayList();
+        this.U = new ga.c(this, 24);
+        this.f0 = new i3(this, 0);
         Context context2 = getContext();
-        int[] iArr = R$styleable.Toolbar;
-        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context2, attributeSet, iArr, i, 0);
-        ViewCompat.saveAttributeDataForStyleable(this, context, iArr, attributeSet, obtainStyledAttributes.getWrappedTypeArray(), i, 0);
-        this.mTitleTextAppearance = obtainStyledAttributes.getResourceId(R$styleable.Toolbar_titleTextAppearance, 0);
-        this.mSubtitleTextAppearance = obtainStyledAttributes.getResourceId(R$styleable.Toolbar_subtitleTextAppearance, 0);
-        this.mGravity = obtainStyledAttributes.getInteger(R$styleable.Toolbar_android_gravity, this.mGravity);
-        this.mButtonGravity = obtainStyledAttributes.getInteger(R$styleable.Toolbar_buttonGravity, 48);
-        int dimensionPixelOffset = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_titleMargin, 0);
-        int i2 = R$styleable.Toolbar_titleMargins;
-        dimensionPixelOffset = obtainStyledAttributes.hasValue(i2) ? obtainStyledAttributes.getDimensionPixelOffset(i2, dimensionPixelOffset) : dimensionPixelOffset;
-        this.mTitleMarginBottom = dimensionPixelOffset;
-        this.mTitleMarginTop = dimensionPixelOffset;
-        this.mTitleMarginEnd = dimensionPixelOffset;
-        this.mTitleMarginStart = dimensionPixelOffset;
-        int dimensionPixelOffset2 = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_titleMarginStart, -1);
+        int[] iArr = f.a.x;
+        j9.a G = j9.a.G(context2, attributeSet, iArr, R.attr.toolbarStyle);
+        j0.j(this, context, iArr, attributeSet, (TypedArray) G.c, R.attr.toolbarStyle);
+        TypedArray typedArray = (TypedArray) G.c;
+        this.w = typedArray.getResourceId(28, 0);
+        this.x = typedArray.getResourceId(19, 0);
+        this.I = typedArray.getInteger(0, 8388627);
+        this.y = typedArray.getInteger(2, 48);
+        int dimensionPixelOffset = typedArray.getDimensionPixelOffset(22, 0);
+        dimensionPixelOffset = typedArray.hasValue(27) ? typedArray.getDimensionPixelOffset(27, dimensionPixelOffset) : dimensionPixelOffset;
+        this.E = dimensionPixelOffset;
+        this.D = dimensionPixelOffset;
+        this.C = dimensionPixelOffset;
+        this.B = dimensionPixelOffset;
+        int dimensionPixelOffset2 = typedArray.getDimensionPixelOffset(25, -1);
         if (dimensionPixelOffset2 >= 0) {
-            this.mTitleMarginStart = dimensionPixelOffset2;
+            this.B = dimensionPixelOffset2;
         }
-        int dimensionPixelOffset3 = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_titleMarginEnd, -1);
+        int dimensionPixelOffset3 = typedArray.getDimensionPixelOffset(24, -1);
         if (dimensionPixelOffset3 >= 0) {
-            this.mTitleMarginEnd = dimensionPixelOffset3;
+            this.C = dimensionPixelOffset3;
         }
-        int dimensionPixelOffset4 = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_titleMarginTop, -1);
+        int dimensionPixelOffset4 = typedArray.getDimensionPixelOffset(26, -1);
         if (dimensionPixelOffset4 >= 0) {
-            this.mTitleMarginTop = dimensionPixelOffset4;
+            this.D = dimensionPixelOffset4;
         }
-        int dimensionPixelOffset5 = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_titleMarginBottom, -1);
+        int dimensionPixelOffset5 = typedArray.getDimensionPixelOffset(23, -1);
         if (dimensionPixelOffset5 >= 0) {
-            this.mTitleMarginBottom = dimensionPixelOffset5;
+            this.E = dimensionPixelOffset5;
         }
-        this.mMaxButtonHeight = obtainStyledAttributes.getDimensionPixelSize(R$styleable.Toolbar_maxButtonHeight, -1);
-        int dimensionPixelOffset6 = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_contentInsetStart, TLObject.FLAG_31);
-        int dimensionPixelOffset7 = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_contentInsetEnd, TLObject.FLAG_31);
-        int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(R$styleable.Toolbar_contentInsetLeft, 0);
-        int dimensionPixelSize2 = obtainStyledAttributes.getDimensionPixelSize(R$styleable.Toolbar_contentInsetRight, 0);
-        ensureContentInsets();
-        this.mContentInsets.setAbsolute(dimensionPixelSize, dimensionPixelSize2);
+        this.A = typedArray.getDimensionPixelSize(13, -1);
+        int dimensionPixelOffset6 = typedArray.getDimensionPixelOffset(9, TLObject.FLAG_31);
+        int dimensionPixelOffset7 = typedArray.getDimensionPixelOffset(5, TLObject.FLAG_31);
+        int dimensionPixelSize = typedArray.getDimensionPixelSize(7, 0);
+        int dimensionPixelSize2 = typedArray.getDimensionPixelSize(8, 0);
+        d();
+        p2 p2Var = this.F;
+        p2Var.h = false;
+        if (dimensionPixelSize != Integer.MIN_VALUE) {
+            p2Var.e = dimensionPixelSize;
+            p2Var.a = dimensionPixelSize;
+        }
+        if (dimensionPixelSize2 != Integer.MIN_VALUE) {
+            p2Var.f = dimensionPixelSize2;
+            p2Var.b = dimensionPixelSize2;
+        }
         if (dimensionPixelOffset6 != Integer.MIN_VALUE || dimensionPixelOffset7 != Integer.MIN_VALUE) {
-            this.mContentInsets.setRelative(dimensionPixelOffset6, dimensionPixelOffset7);
+            p2Var.a(dimensionPixelOffset6, dimensionPixelOffset7);
         }
-        this.mContentInsetStartWithNavigation = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_contentInsetStartWithNavigation, TLObject.FLAG_31);
-        this.mContentInsetEndWithActions = obtainStyledAttributes.getDimensionPixelOffset(R$styleable.Toolbar_contentInsetEndWithActions, TLObject.FLAG_31);
-        this.mCollapseIcon = obtainStyledAttributes.getDrawable(R$styleable.Toolbar_collapseIcon);
-        this.mCollapseDescription = obtainStyledAttributes.getText(R$styleable.Toolbar_collapseContentDescription);
-        CharSequence text = obtainStyledAttributes.getText(R$styleable.Toolbar_title);
+        this.G = typedArray.getDimensionPixelOffset(10, TLObject.FLAG_31);
+        this.H = typedArray.getDimensionPixelOffset(6, TLObject.FLAG_31);
+        this.f = G.y(4);
+        this.h = typedArray.getText(3);
+        CharSequence text = typedArray.getText(21);
         if (!TextUtils.isEmpty(text)) {
             setTitle(text);
         }
-        CharSequence text2 = obtainStyledAttributes.getText(R$styleable.Toolbar_subtitle);
+        CharSequence text2 = typedArray.getText(18);
         if (!TextUtils.isEmpty(text2)) {
             setSubtitle(text2);
         }
-        this.mPopupContext = getContext();
-        setPopupTheme(obtainStyledAttributes.getResourceId(R$styleable.Toolbar_popupTheme, 0));
-        Drawable drawable = obtainStyledAttributes.getDrawable(R$styleable.Toolbar_navigationIcon);
-        if (drawable != null) {
-            setNavigationIcon(drawable);
+        this.s = getContext();
+        setPopupTheme(typedArray.getResourceId(17, 0));
+        Drawable y10 = G.y(16);
+        if (y10 != null) {
+            setNavigationIcon(y10);
         }
-        CharSequence text3 = obtainStyledAttributes.getText(R$styleable.Toolbar_navigationContentDescription);
+        CharSequence text3 = typedArray.getText(15);
         if (!TextUtils.isEmpty(text3)) {
             setNavigationContentDescription(text3);
         }
-        Drawable drawable2 = obtainStyledAttributes.getDrawable(R$styleable.Toolbar_logo);
-        if (drawable2 != null) {
-            setLogo(drawable2);
+        Drawable y11 = G.y(11);
+        if (y11 != null) {
+            setLogo(y11);
         }
-        CharSequence text4 = obtainStyledAttributes.getText(R$styleable.Toolbar_logoDescription);
+        CharSequence text4 = typedArray.getText(12);
         if (!TextUtils.isEmpty(text4)) {
             setLogoDescription(text4);
         }
-        int i3 = R$styleable.Toolbar_titleTextColor;
-        if (obtainStyledAttributes.hasValue(i3)) {
-            setTitleTextColor(obtainStyledAttributes.getColorStateList(i3));
+        if (typedArray.hasValue(29)) {
+            setTitleTextColor(G.x(29));
         }
-        int i4 = R$styleable.Toolbar_subtitleTextColor;
-        if (obtainStyledAttributes.hasValue(i4)) {
-            setSubtitleTextColor(obtainStyledAttributes.getColorStateList(i4));
+        if (typedArray.hasValue(20)) {
+            setSubtitleTextColor(G.x(20));
         }
-        int i5 = R$styleable.Toolbar_menu;
-        if (obtainStyledAttributes.hasValue(i5)) {
-            inflateMenu(obtainStyledAttributes.getResourceId(i5, 0));
+        if (typedArray.hasValue(14)) {
+            getMenuInflater().inflate(typedArray.getResourceId(14, 0), getMenu());
         }
-        obtainStyledAttributes.recycle();
+        G.I();
     }
 
-    public void setBackInvokedCallbackEnabled(boolean z) {
-        if (this.mBackInvokedCallbackEnabled != z) {
-            this.mBackInvokedCallbackEnabled = z;
-            updateBackInvokedCallbackState();
+    private ArrayList<MenuItem> getCurrentMenuItems() {
+        ArrayList<MenuItem> arrayList = new ArrayList<>();
+        Menu menu = getMenu();
+        for (int i10 = 0; i10 < menu.size(); i10++) {
+            arrayList.add(menu.getItem(i10));
         }
-    }
-
-    public void setPopupTheme(int i) {
-        if (this.mPopupTheme != i) {
-            this.mPopupTheme = i;
-            if (i == 0) {
-                this.mPopupContext = getContext();
-            } else {
-                this.mPopupContext = new ContextThemeWrapper(getContext(), i);
-            }
-        }
-    }
-
-    public int getPopupTheme() {
-        return this.mPopupTheme;
-    }
-
-    public int getTitleMarginStart() {
-        return this.mTitleMarginStart;
-    }
-
-    public void setTitleMarginStart(int i) {
-        this.mTitleMarginStart = i;
-        requestLayout();
-    }
-
-    public int getTitleMarginTop() {
-        return this.mTitleMarginTop;
-    }
-
-    public void setTitleMarginTop(int i) {
-        this.mTitleMarginTop = i;
-        requestLayout();
-    }
-
-    public int getTitleMarginEnd() {
-        return this.mTitleMarginEnd;
-    }
-
-    public void setTitleMarginEnd(int i) {
-        this.mTitleMarginEnd = i;
-        requestLayout();
-    }
-
-    public int getTitleMarginBottom() {
-        return this.mTitleMarginBottom;
-    }
-
-    public void setTitleMarginBottom(int i) {
-        this.mTitleMarginBottom = i;
-        requestLayout();
-    }
-
-    @Override // android.view.View
-    public void onRtlPropertiesChanged(int i) {
-        super.onRtlPropertiesChanged(i);
-        ensureContentInsets();
-        this.mContentInsets.setDirection(i == 1);
-    }
-
-    public void setLogo(int i) {
-        setLogo(AppCompatResources.getDrawable(getContext(), i));
-    }
-
-    public boolean canShowOverflowMenu() {
-        ActionMenuView actionMenuView;
-        return getVisibility() == 0 && (actionMenuView = this.mMenuView) != null && actionMenuView.isOverflowReserved();
-    }
-
-    public boolean isOverflowMenuShowing() {
-        ActionMenuView actionMenuView = this.mMenuView;
-        return actionMenuView != null && actionMenuView.isOverflowMenuShowing();
-    }
-
-    public boolean isOverflowMenuShowPending() {
-        ActionMenuView actionMenuView = this.mMenuView;
-        return actionMenuView != null && actionMenuView.isOverflowMenuShowPending();
-    }
-
-    public boolean showOverflowMenu() {
-        ActionMenuView actionMenuView = this.mMenuView;
-        return actionMenuView != null && actionMenuView.showOverflowMenu();
-    }
-
-    public boolean hideOverflowMenu() {
-        ActionMenuView actionMenuView = this.mMenuView;
-        return actionMenuView != null && actionMenuView.hideOverflowMenu();
-    }
-
-    public void setMenu(MenuBuilder menuBuilder, ActionMenuPresenter actionMenuPresenter) {
-        if (menuBuilder == null && this.mMenuView == null) {
-            return;
-        }
-        ensureMenuView();
-        MenuBuilder peekMenu = this.mMenuView.peekMenu();
-        if (peekMenu == menuBuilder) {
-            return;
-        }
-        if (peekMenu != null) {
-            peekMenu.removeMenuPresenter(this.mOuterActionMenuPresenter);
-            peekMenu.removeMenuPresenter(this.mExpandedMenuPresenter);
-        }
-        if (this.mExpandedMenuPresenter == null) {
-            this.mExpandedMenuPresenter = new ExpandedActionViewMenuPresenter();
-        }
-        actionMenuPresenter.setExpandedActionViewsExclusive(true);
-        if (menuBuilder != null) {
-            menuBuilder.addMenuPresenter(actionMenuPresenter, this.mPopupContext);
-            menuBuilder.addMenuPresenter(this.mExpandedMenuPresenter, this.mPopupContext);
-        } else {
-            actionMenuPresenter.initForMenu(this.mPopupContext, null);
-            this.mExpandedMenuPresenter.initForMenu(this.mPopupContext, null);
-            actionMenuPresenter.updateMenuView(true);
-            this.mExpandedMenuPresenter.updateMenuView(true);
-        }
-        this.mMenuView.setPopupTheme(this.mPopupTheme);
-        this.mMenuView.setPresenter(actionMenuPresenter);
-        this.mOuterActionMenuPresenter = actionMenuPresenter;
-        updateBackInvokedCallbackState();
-    }
-
-    public void dismissPopupMenus() {
-        ActionMenuView actionMenuView = this.mMenuView;
-        if (actionMenuView != null) {
-            actionMenuView.dismissPopupMenus();
-        }
-    }
-
-    public void setLogo(Drawable drawable) {
-        if (drawable != null) {
-            ensureLogoView();
-            if (!isChildOrHidden(this.mLogoView)) {
-                addSystemView(this.mLogoView, true);
-            }
-        } else {
-            ImageView imageView = this.mLogoView;
-            if (imageView != null && isChildOrHidden(imageView)) {
-                removeView(this.mLogoView);
-                this.mHiddenViews.remove(this.mLogoView);
-            }
-        }
-        ImageView imageView2 = this.mLogoView;
-        if (imageView2 != null) {
-            imageView2.setImageDrawable(drawable);
-        }
-    }
-
-    public Drawable getLogo() {
-        ImageView imageView = this.mLogoView;
-        if (imageView != null) {
-            return imageView.getDrawable();
-        }
-        return null;
-    }
-
-    public void setLogoDescription(int i) {
-        setLogoDescription(getContext().getText(i));
-    }
-
-    public void setLogoDescription(CharSequence charSequence) {
-        if (!TextUtils.isEmpty(charSequence)) {
-            ensureLogoView();
-        }
-        ImageView imageView = this.mLogoView;
-        if (imageView != null) {
-            imageView.setContentDescription(charSequence);
-        }
-    }
-
-    public CharSequence getLogoDescription() {
-        ImageView imageView = this.mLogoView;
-        if (imageView != null) {
-            return imageView.getContentDescription();
-        }
-        return null;
-    }
-
-    private void ensureLogoView() {
-        if (this.mLogoView == null) {
-            this.mLogoView = new AppCompatImageView(getContext());
-        }
-    }
-
-    public boolean hasExpandedActionView() {
-        ExpandedActionViewMenuPresenter expandedActionViewMenuPresenter = this.mExpandedMenuPresenter;
-        return (expandedActionViewMenuPresenter == null || expandedActionViewMenuPresenter.mCurrentExpandedItem == null) ? false : true;
-    }
-
-    public void collapseActionView() {
-        ExpandedActionViewMenuPresenter expandedActionViewMenuPresenter = this.mExpandedMenuPresenter;
-        MenuItemImpl menuItemImpl = expandedActionViewMenuPresenter == null ? null : expandedActionViewMenuPresenter.mCurrentExpandedItem;
-        if (menuItemImpl != null) {
-            menuItemImpl.collapseActionView();
-        }
-    }
-
-    public CharSequence getTitle() {
-        return this.mTitleText;
-    }
-
-    public void setTitle(int i) {
-        setTitle(getContext().getText(i));
-    }
-
-    public void setTitle(CharSequence charSequence) {
-        if (!TextUtils.isEmpty(charSequence)) {
-            if (this.mTitleTextView == null) {
-                Context context = getContext();
-                AppCompatTextView appCompatTextView = new AppCompatTextView(context);
-                this.mTitleTextView = appCompatTextView;
-                appCompatTextView.setSingleLine();
-                this.mTitleTextView.setEllipsize(TextUtils.TruncateAt.END);
-                int i = this.mTitleTextAppearance;
-                if (i != 0) {
-                    this.mTitleTextView.setTextAppearance(context, i);
-                }
-                ColorStateList colorStateList = this.mTitleTextColor;
-                if (colorStateList != null) {
-                    this.mTitleTextView.setTextColor(colorStateList);
-                }
-            }
-            if (!isChildOrHidden(this.mTitleTextView)) {
-                addSystemView(this.mTitleTextView, true);
-            }
-        } else {
-            TextView textView = this.mTitleTextView;
-            if (textView != null && isChildOrHidden(textView)) {
-                removeView(this.mTitleTextView);
-                this.mHiddenViews.remove(this.mTitleTextView);
-            }
-        }
-        TextView textView2 = this.mTitleTextView;
-        if (textView2 != null) {
-            textView2.setText(charSequence);
-        }
-        this.mTitleText = charSequence;
-    }
-
-    public CharSequence getSubtitle() {
-        return this.mSubtitleText;
-    }
-
-    public void setSubtitle(int i) {
-        setSubtitle(getContext().getText(i));
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        if (!TextUtils.isEmpty(charSequence)) {
-            if (this.mSubtitleTextView == null) {
-                Context context = getContext();
-                AppCompatTextView appCompatTextView = new AppCompatTextView(context);
-                this.mSubtitleTextView = appCompatTextView;
-                appCompatTextView.setSingleLine();
-                this.mSubtitleTextView.setEllipsize(TextUtils.TruncateAt.END);
-                int i = this.mSubtitleTextAppearance;
-                if (i != 0) {
-                    this.mSubtitleTextView.setTextAppearance(context, i);
-                }
-                ColorStateList colorStateList = this.mSubtitleTextColor;
-                if (colorStateList != null) {
-                    this.mSubtitleTextView.setTextColor(colorStateList);
-                }
-            }
-            if (!isChildOrHidden(this.mSubtitleTextView)) {
-                addSystemView(this.mSubtitleTextView, true);
-            }
-        } else {
-            TextView textView = this.mSubtitleTextView;
-            if (textView != null && isChildOrHidden(textView)) {
-                removeView(this.mSubtitleTextView);
-                this.mHiddenViews.remove(this.mSubtitleTextView);
-            }
-        }
-        TextView textView2 = this.mSubtitleTextView;
-        if (textView2 != null) {
-            textView2.setText(charSequence);
-        }
-        this.mSubtitleText = charSequence;
-    }
-
-    public void setTitleTextAppearance(Context context, int i) {
-        this.mTitleTextAppearance = i;
-        TextView textView = this.mTitleTextView;
-        if (textView != null) {
-            textView.setTextAppearance(context, i);
-        }
-    }
-
-    public void setSubtitleTextAppearance(Context context, int i) {
-        this.mSubtitleTextAppearance = i;
-        TextView textView = this.mSubtitleTextView;
-        if (textView != null) {
-            textView.setTextAppearance(context, i);
-        }
-    }
-
-    public void setTitleTextColor(int i) {
-        setTitleTextColor(ColorStateList.valueOf(i));
-    }
-
-    public void setTitleTextColor(ColorStateList colorStateList) {
-        this.mTitleTextColor = colorStateList;
-        TextView textView = this.mTitleTextView;
-        if (textView != null) {
-            textView.setTextColor(colorStateList);
-        }
-    }
-
-    public void setSubtitleTextColor(int i) {
-        setSubtitleTextColor(ColorStateList.valueOf(i));
-    }
-
-    public void setSubtitleTextColor(ColorStateList colorStateList) {
-        this.mSubtitleTextColor = colorStateList;
-        TextView textView = this.mSubtitleTextView;
-        if (textView != null) {
-            textView.setTextColor(colorStateList);
-        }
-    }
-
-    public CharSequence getNavigationContentDescription() {
-        ImageButton imageButton = this.mNavButtonView;
-        if (imageButton != null) {
-            return imageButton.getContentDescription();
-        }
-        return null;
-    }
-
-    public void setNavigationContentDescription(int i) {
-        setNavigationContentDescription(i != 0 ? getContext().getText(i) : null);
-    }
-
-    public void setNavigationContentDescription(CharSequence charSequence) {
-        if (!TextUtils.isEmpty(charSequence)) {
-            ensureNavButtonView();
-        }
-        ImageButton imageButton = this.mNavButtonView;
-        if (imageButton != null) {
-            imageButton.setContentDescription(charSequence);
-            TooltipCompat.setTooltipText(this.mNavButtonView, charSequence);
-        }
-    }
-
-    public void setNavigationIcon(int i) {
-        setNavigationIcon(AppCompatResources.getDrawable(getContext(), i));
-    }
-
-    public void setNavigationIcon(Drawable drawable) {
-        if (drawable != null) {
-            ensureNavButtonView();
-            if (!isChildOrHidden(this.mNavButtonView)) {
-                addSystemView(this.mNavButtonView, true);
-            }
-        } else {
-            ImageButton imageButton = this.mNavButtonView;
-            if (imageButton != null && isChildOrHidden(imageButton)) {
-                removeView(this.mNavButtonView);
-                this.mHiddenViews.remove(this.mNavButtonView);
-            }
-        }
-        ImageButton imageButton2 = this.mNavButtonView;
-        if (imageButton2 != null) {
-            imageButton2.setImageDrawable(drawable);
-        }
-    }
-
-    public Drawable getNavigationIcon() {
-        ImageButton imageButton = this.mNavButtonView;
-        if (imageButton != null) {
-            return imageButton.getDrawable();
-        }
-        return null;
-    }
-
-    public void setNavigationOnClickListener(View.OnClickListener onClickListener) {
-        ensureNavButtonView();
-        this.mNavButtonView.setOnClickListener(onClickListener);
-    }
-
-    public CharSequence getCollapseContentDescription() {
-        ImageButton imageButton = this.mCollapseButtonView;
-        if (imageButton != null) {
-            return imageButton.getContentDescription();
-        }
-        return null;
-    }
-
-    public void setCollapseContentDescription(int i) {
-        setCollapseContentDescription(i != 0 ? getContext().getText(i) : null);
-    }
-
-    public void setCollapseContentDescription(CharSequence charSequence) {
-        if (!TextUtils.isEmpty(charSequence)) {
-            ensureCollapseButtonView();
-        }
-        ImageButton imageButton = this.mCollapseButtonView;
-        if (imageButton != null) {
-            imageButton.setContentDescription(charSequence);
-        }
-    }
-
-    public Drawable getCollapseIcon() {
-        ImageButton imageButton = this.mCollapseButtonView;
-        if (imageButton != null) {
-            return imageButton.getDrawable();
-        }
-        return null;
-    }
-
-    public void setCollapseIcon(int i) {
-        setCollapseIcon(AppCompatResources.getDrawable(getContext(), i));
-    }
-
-    public void setCollapseIcon(Drawable drawable) {
-        if (drawable != null) {
-            ensureCollapseButtonView();
-            this.mCollapseButtonView.setImageDrawable(drawable);
-        } else {
-            ImageButton imageButton = this.mCollapseButtonView;
-            if (imageButton != null) {
-                imageButton.setImageDrawable(this.mCollapseIcon);
-            }
-        }
-    }
-
-    public Menu getMenu() {
-        ensureMenu();
-        return this.mMenuView.getMenu();
-    }
-
-    public void setOverflowIcon(Drawable drawable) {
-        ensureMenu();
-        this.mMenuView.setOverflowIcon(drawable);
-    }
-
-    public Drawable getOverflowIcon() {
-        ensureMenu();
-        return this.mMenuView.getOverflowIcon();
-    }
-
-    private void ensureMenu() {
-        ensureMenuView();
-        if (this.mMenuView.peekMenu() == null) {
-            MenuBuilder menuBuilder = (MenuBuilder) this.mMenuView.getMenu();
-            if (this.mExpandedMenuPresenter == null) {
-                this.mExpandedMenuPresenter = new ExpandedActionViewMenuPresenter();
-            }
-            this.mMenuView.setExpandedActionViewsExclusive(true);
-            menuBuilder.addMenuPresenter(this.mExpandedMenuPresenter, this.mPopupContext);
-            updateBackInvokedCallbackState();
-        }
-    }
-
-    private void ensureMenuView() {
-        if (this.mMenuView == null) {
-            ActionMenuView actionMenuView = new ActionMenuView(getContext());
-            this.mMenuView = actionMenuView;
-            actionMenuView.setPopupTheme(this.mPopupTheme);
-            this.mMenuView.setOnMenuItemClickListener(this.mMenuViewItemClickListener);
-            this.mMenuView.setMenuCallbacks(this.mActionMenuPresenterCallback, new MenuBuilder.Callback() { // from class: androidx.appcompat.widget.Toolbar.3
-                @Override // androidx.appcompat.view.menu.MenuBuilder.Callback
-                public boolean onMenuItemSelected(MenuBuilder menuBuilder, MenuItem menuItem) {
-                    MenuBuilder.Callback callback = Toolbar.this.mMenuBuilderCallback;
-                    return callback != null && callback.onMenuItemSelected(menuBuilder, menuItem);
-                }
-
-                @Override // androidx.appcompat.view.menu.MenuBuilder.Callback
-                public void onMenuModeChange(MenuBuilder menuBuilder) {
-                    if (!Toolbar.this.mMenuView.isOverflowMenuShowing()) {
-                        Toolbar.this.mMenuHostHelper.onPrepareMenu(menuBuilder);
-                    }
-                    MenuBuilder.Callback callback = Toolbar.this.mMenuBuilderCallback;
-                    if (callback != null) {
-                        callback.onMenuModeChange(menuBuilder);
-                    }
-                }
-            });
-            LayoutParams generateDefaultLayoutParams = generateDefaultLayoutParams();
-            generateDefaultLayoutParams.gravity = (this.mButtonGravity & 112) | 8388613;
-            this.mMenuView.setLayoutParams(generateDefaultLayoutParams);
-            addSystemView(this.mMenuView, false);
-        }
+        return arrayList;
     }
 
     private MenuInflater getMenuInflater() {
-        return new SupportMenuInflater(getContext());
+        return new h(getContext());
     }
 
-    public void inflateMenu(int i) {
-        getMenuInflater().inflate(i, getMenu());
+    public static l3 h() {
+        l3 l3Var = new l3(-2, -2);
+        l3Var.b = 0;
+        l3Var.a = 8388627;
+        return l3Var;
     }
 
-    public void setContentInsetsRelative(int i, int i2) {
-        ensureContentInsets();
-        this.mContentInsets.setRelative(i, i2);
-    }
-
-    public int getContentInsetStart() {
-        RtlSpacingHelper rtlSpacingHelper = this.mContentInsets;
-        if (rtlSpacingHelper != null) {
-            return rtlSpacingHelper.getStart();
+    public static l3 i(ViewGroup.LayoutParams layoutParams) {
+        boolean z10 = layoutParams instanceof l3;
+        if (z10) {
+            l3 l3Var = (l3) layoutParams;
+            l3 l3Var2 = new l3(l3Var);
+            l3Var2.b = 0;
+            l3Var2.b = l3Var.b;
+            return l3Var2;
         }
-        return 0;
+        if (z10) {
+            l3 l3Var3 = new l3((l3) layoutParams);
+            l3Var3.b = 0;
+            return l3Var3;
+        }
+        if (!(layoutParams instanceof ViewGroup.MarginLayoutParams)) {
+            l3 l3Var4 = new l3(layoutParams);
+            l3Var4.b = 0;
+            return l3Var4;
+        }
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
+        l3 l3Var5 = new l3(marginLayoutParams);
+        l3Var5.b = 0;
+        ((ViewGroup.MarginLayoutParams) l3Var5).leftMargin = marginLayoutParams.leftMargin;
+        ((ViewGroup.MarginLayoutParams) l3Var5).topMargin = marginLayoutParams.topMargin;
+        ((ViewGroup.MarginLayoutParams) l3Var5).rightMargin = marginLayoutParams.rightMargin;
+        ((ViewGroup.MarginLayoutParams) l3Var5).bottomMargin = marginLayoutParams.bottomMargin;
+        return l3Var5;
+    }
+
+    public static int k(View view) {
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        return marginLayoutParams.getMarginEnd() + marginLayoutParams.getMarginStart();
+    }
+
+    public static int l(View view) {
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        return marginLayoutParams.topMargin + marginLayoutParams.bottomMargin;
+    }
+
+    public final void a(int i10, ArrayList arrayList) {
+        WeakHashMap weakHashMap = j0.a;
+        boolean z10 = getLayoutDirection() == 1;
+        int childCount = getChildCount();
+        int absoluteGravity = Gravity.getAbsoluteGravity(i10, getLayoutDirection());
+        arrayList.clear();
+        if (!z10) {
+            for (int i11 = 0; i11 < childCount; i11++) {
+                View childAt = getChildAt(i11);
+                l3 l3Var = (l3) childAt.getLayoutParams();
+                if (l3Var.b == 0 && s(childAt)) {
+                    int i12 = l3Var.a;
+                    WeakHashMap weakHashMap2 = j0.a;
+                    int layoutDirection = getLayoutDirection();
+                    int absoluteGravity2 = Gravity.getAbsoluteGravity(i12, layoutDirection) & 7;
+                    if (absoluteGravity2 != 1 && absoluteGravity2 != 3 && absoluteGravity2 != 5) {
+                        absoluteGravity2 = layoutDirection == 1 ? 5 : 3;
+                    }
+                    if (absoluteGravity2 == absoluteGravity) {
+                        arrayList.add(childAt);
+                    }
+                }
+            }
+            return;
+        }
+        for (int i13 = childCount - 1; i13 >= 0; i13--) {
+            View childAt2 = getChildAt(i13);
+            l3 l3Var2 = (l3) childAt2.getLayoutParams();
+            if (l3Var2.b == 0 && s(childAt2)) {
+                int i14 = l3Var2.a;
+                WeakHashMap weakHashMap3 = j0.a;
+                int layoutDirection2 = getLayoutDirection();
+                int absoluteGravity3 = Gravity.getAbsoluteGravity(i14, layoutDirection2) & 7;
+                if (absoluteGravity3 != 1 && absoluteGravity3 != 3 && absoluteGravity3 != 5) {
+                    absoluteGravity3 = layoutDirection2 == 1 ? 5 : 3;
+                }
+                if (absoluteGravity3 == absoluteGravity) {
+                    arrayList.add(childAt2);
+                }
+            }
+        }
+    }
+
+    public final void b(View view, boolean z10) {
+        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        l3 h = layoutParams == null ? h() : !checkLayoutParams(layoutParams) ? i(layoutParams) : (l3) layoutParams;
+        h.b = 1;
+        if (!z10 || this.r == null) {
+            addView(view, h);
+        } else {
+            view.setLayoutParams(h);
+            this.Q.add(view);
+        }
+    }
+
+    public final void c() {
+        if (this.n == null) {
+            v vVar = new v(getContext(), null, R.attr.toolbarNavigationButtonStyle);
+            this.n = vVar;
+            vVar.setImageDrawable(this.f);
+            this.n.setContentDescription(this.h);
+            l3 h = h();
+            h.a = (this.y & 112) | 8388611;
+            h.b = 2;
+            this.n.setLayoutParams(h);
+            this.n.setOnClickListener(new g.a(this, 2));
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
+        return super.checkLayoutParams(layoutParams) && (layoutParams instanceof l3);
+    }
+
+    public final void d() {
+        if (this.F == null) {
+            p2 p2Var = new p2();
+            p2Var.a = 0;
+            p2Var.b = 0;
+            p2Var.c = TLObject.FLAG_31;
+            p2Var.d = TLObject.FLAG_31;
+            p2Var.e = 0;
+            p2Var.f = 0;
+            p2Var.g = false;
+            p2Var.h = false;
+            this.F = p2Var;
+        }
+    }
+
+    public final void e() {
+        f();
+        ActionMenuView actionMenuView = this.a;
+        if (actionMenuView.B == null) {
+            l lVar = (l) actionMenuView.getMenu();
+            if (this.a0 == null) {
+                this.a0 = new k3(this);
+            }
+            this.a.setExpandedActionViewsExclusive(true);
+            lVar.b(this.a0, this.s);
+            t();
+        }
+    }
+
+    public final void f() {
+        if (this.a == null) {
+            ActionMenuView actionMenuView = new ActionMenuView(getContext(), null);
+            this.a = actionMenuView;
+            actionMenuView.setPopupTheme(this.v);
+            this.a.setOnMenuItemClickListener(this.U);
+            ActionMenuView actionMenuView2 = this.a;
+            k5.i iVar = new k5.i(this, 26);
+            actionMenuView2.getClass();
+            actionMenuView2.G = iVar;
+            l3 h = h();
+            h.a = (this.y & 112) | 8388613;
+            this.a.setLayoutParams(h);
+            b(this.a, false);
+        }
+    }
+
+    public final void g() {
+        if (this.d == null) {
+            this.d = new v(getContext(), null, R.attr.toolbarNavigationButtonStyle);
+            l3 h = h();
+            h.a = (this.y & 112) | 8388611;
+            this.d.setLayoutParams(h);
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final /* bridge */ /* synthetic */ ViewGroup.LayoutParams generateDefaultLayoutParams() {
+        return h();
+    }
+
+    @Override // android.view.ViewGroup
+    public final /* bridge */ /* synthetic */ ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+        return i(layoutParams);
+    }
+
+    public CharSequence getCollapseContentDescription() {
+        v vVar = this.n;
+        if (vVar != null) {
+            return vVar.getContentDescription();
+        }
+        return null;
+    }
+
+    public Drawable getCollapseIcon() {
+        v vVar = this.n;
+        if (vVar != null) {
+            return vVar.getDrawable();
+        }
+        return null;
     }
 
     public int getContentInsetEnd() {
-        RtlSpacingHelper rtlSpacingHelper = this.mContentInsets;
-        if (rtlSpacingHelper != null) {
-            return rtlSpacingHelper.getEnd();
+        p2 p2Var = this.F;
+        if (p2Var != null) {
+            return p2Var.g ? p2Var.a : p2Var.b;
         }
         return 0;
     }
 
+    public int getContentInsetEndWithActions() {
+        int i10 = this.H;
+        return i10 != Integer.MIN_VALUE ? i10 : getContentInsetEnd();
+    }
+
     public int getContentInsetLeft() {
-        RtlSpacingHelper rtlSpacingHelper = this.mContentInsets;
-        if (rtlSpacingHelper != null) {
-            return rtlSpacingHelper.getLeft();
+        p2 p2Var = this.F;
+        if (p2Var != null) {
+            return p2Var.a;
         }
         return 0;
     }
 
     public int getContentInsetRight() {
-        RtlSpacingHelper rtlSpacingHelper = this.mContentInsets;
-        if (rtlSpacingHelper != null) {
-            return rtlSpacingHelper.getRight();
+        p2 p2Var = this.F;
+        if (p2Var != null) {
+            return p2Var.b;
+        }
+        return 0;
+    }
+
+    public int getContentInsetStart() {
+        p2 p2Var = this.F;
+        if (p2Var != null) {
+            return p2Var.g ? p2Var.b : p2Var.a;
         }
         return 0;
     }
 
     public int getContentInsetStartWithNavigation() {
-        int i = this.mContentInsetStartWithNavigation;
-        return i != Integer.MIN_VALUE ? i : getContentInsetStart();
-    }
-
-    public void setContentInsetStartWithNavigation(int i) {
-        if (i < 0) {
-            i = TLObject.FLAG_31;
-        }
-        if (i != this.mContentInsetStartWithNavigation) {
-            this.mContentInsetStartWithNavigation = i;
-            if (getNavigationIcon() != null) {
-                requestLayout();
-            }
-        }
-    }
-
-    public int getContentInsetEndWithActions() {
-        int i = this.mContentInsetEndWithActions;
-        return i != Integer.MIN_VALUE ? i : getContentInsetEnd();
-    }
-
-    public void setContentInsetEndWithActions(int i) {
-        if (i < 0) {
-            i = TLObject.FLAG_31;
-        }
-        if (i != this.mContentInsetEndWithActions) {
-            this.mContentInsetEndWithActions = i;
-            if (getNavigationIcon() != null) {
-                requestLayout();
-            }
-        }
-    }
-
-    public int getCurrentContentInsetStart() {
-        if (getNavigationIcon() != null) {
-            return Math.max(getContentInsetStart(), Math.max(this.mContentInsetStartWithNavigation, 0));
-        }
-        return getContentInsetStart();
+        int i10 = this.G;
+        return i10 != Integer.MIN_VALUE ? i10 : getContentInsetStart();
     }
 
     public int getCurrentContentInsetEnd() {
-        MenuBuilder peekMenu;
-        ActionMenuView actionMenuView = this.mMenuView;
-        if (actionMenuView != null && (peekMenu = actionMenuView.peekMenu()) != null && peekMenu.hasVisibleItems()) {
-            return Math.max(getContentInsetEnd(), Math.max(this.mContentInsetEndWithActions, 0));
-        }
-        return getContentInsetEnd();
+        l lVar;
+        ActionMenuView actionMenuView = this.a;
+        return (actionMenuView == null || (lVar = actionMenuView.B) == null || !lVar.hasVisibleItems()) ? getContentInsetEnd() : Math.max(getContentInsetEnd(), Math.max(this.H, 0));
     }
 
     public int getCurrentContentInsetLeft() {
-        if (ViewCompat.getLayoutDirection(this) == 1) {
-            return getCurrentContentInsetEnd();
-        }
-        return getCurrentContentInsetStart();
+        WeakHashMap weakHashMap = j0.a;
+        return getLayoutDirection() == 1 ? getCurrentContentInsetEnd() : getCurrentContentInsetStart();
     }
 
     public int getCurrentContentInsetRight() {
-        if (ViewCompat.getLayoutDirection(this) == 1) {
-            return getCurrentContentInsetStart();
+        WeakHashMap weakHashMap = j0.a;
+        return getLayoutDirection() == 1 ? getCurrentContentInsetStart() : getCurrentContentInsetEnd();
+    }
+
+    public int getCurrentContentInsetStart() {
+        return getNavigationIcon() != null ? Math.max(getContentInsetStart(), Math.max(this.G, 0)) : getContentInsetStart();
+    }
+
+    public Drawable getLogo() {
+        w wVar = this.e;
+        if (wVar != null) {
+            return wVar.getDrawable();
         }
-        return getCurrentContentInsetEnd();
+        return null;
     }
 
-    private void ensureNavButtonView() {
-        if (this.mNavButtonView == null) {
-            this.mNavButtonView = new AppCompatImageButton(getContext(), null, R$attr.toolbarNavigationButtonStyle);
-            LayoutParams generateDefaultLayoutParams = generateDefaultLayoutParams();
-            generateDefaultLayoutParams.gravity = (this.mButtonGravity & 112) | 8388611;
-            this.mNavButtonView.setLayoutParams(generateDefaultLayoutParams);
+    public CharSequence getLogoDescription() {
+        w wVar = this.e;
+        if (wVar != null) {
+            return wVar.getContentDescription();
         }
+        return null;
     }
 
-    View getNavButtonView() {
-        return this.mNavButtonView;
+    public Menu getMenu() {
+        e();
+        return this.a.getMenu();
     }
 
-    void ensureCollapseButtonView() {
-        if (this.mCollapseButtonView == null) {
-            AppCompatImageButton appCompatImageButton = new AppCompatImageButton(getContext(), null, R$attr.toolbarNavigationButtonStyle);
-            this.mCollapseButtonView = appCompatImageButton;
-            appCompatImageButton.setImageDrawable(this.mCollapseIcon);
-            this.mCollapseButtonView.setContentDescription(this.mCollapseDescription);
-            LayoutParams generateDefaultLayoutParams = generateDefaultLayoutParams();
-            generateDefaultLayoutParams.gravity = (this.mButtonGravity & 112) | 8388611;
-            generateDefaultLayoutParams.mViewType = 2;
-            this.mCollapseButtonView.setLayoutParams(generateDefaultLayoutParams);
-            this.mCollapseButtonView.setOnClickListener(new View.OnClickListener() { // from class: androidx.appcompat.widget.Toolbar.4
-                @Override // android.view.View.OnClickListener
-                public void onClick(View view) {
-                    Toolbar.this.collapseActionView();
+    public View getNavButtonView() {
+        return this.d;
+    }
+
+    public CharSequence getNavigationContentDescription() {
+        v vVar = this.d;
+        if (vVar != null) {
+            return vVar.getContentDescription();
+        }
+        return null;
+    }
+
+    public Drawable getNavigationIcon() {
+        v vVar = this.d;
+        if (vVar != null) {
+            return vVar.getDrawable();
+        }
+        return null;
+    }
+
+    public i getOuterActionMenuPresenter() {
+        return this.W;
+    }
+
+    public Drawable getOverflowIcon() {
+        e();
+        return this.a.getOverflowIcon();
+    }
+
+    public Context getPopupContext() {
+        return this.s;
+    }
+
+    public int getPopupTheme() {
+        return this.v;
+    }
+
+    public CharSequence getSubtitle() {
+        return this.K;
+    }
+
+    public final TextView getSubtitleTextView() {
+        return this.c;
+    }
+
+    public CharSequence getTitle() {
+        return this.J;
+    }
+
+    public int getTitleMarginBottom() {
+        return this.E;
+    }
+
+    public int getTitleMarginEnd() {
+        return this.C;
+    }
+
+    public int getTitleMarginStart() {
+        return this.B;
+    }
+
+    public int getTitleMarginTop() {
+        return this.D;
+    }
+
+    public final TextView getTitleTextView() {
+        return this.b;
+    }
+
+    public l1 getWrapper() {
+        Drawable drawable;
+        if (this.V == null) {
+            p3 p3Var = new p3();
+            p3Var.n = 0;
+            p3Var.a = this;
+            p3Var.h = getTitle();
+            p3Var.i = getSubtitle();
+            p3Var.g = p3Var.h != null;
+            p3Var.f = getNavigationIcon();
+            j9.a G = j9.a.G(getContext(), null, f.a.a, R.attr.actionBarStyle);
+            TypedArray typedArray = (TypedArray) G.c;
+            p3Var.o = G.y(15);
+            CharSequence text = typedArray.getText(27);
+            if (!TextUtils.isEmpty(text)) {
+                p3Var.g = true;
+                p3Var.h = text;
+                if ((p3Var.b & 8) != 0) {
+                    setTitle(text);
+                    if (p3Var.g) {
+                        j0.l(getRootView(), text);
+                    }
                 }
-            });
+            }
+            CharSequence text2 = typedArray.getText(25);
+            if (!TextUtils.isEmpty(text2)) {
+                p3Var.i = text2;
+                if ((p3Var.b & 8) != 0) {
+                    setSubtitle(text2);
+                }
+            }
+            Drawable y10 = G.y(20);
+            if (y10 != null) {
+                p3Var.e = y10;
+                p3Var.c();
+            }
+            Drawable y11 = G.y(17);
+            if (y11 != null) {
+                p3Var.d = y11;
+                p3Var.c();
+            }
+            if (p3Var.f == null && (drawable = p3Var.o) != null) {
+                p3Var.f = drawable;
+                if ((p3Var.b & 4) != 0) {
+                    setNavigationIcon(drawable);
+                } else {
+                    setNavigationIcon((Drawable) null);
+                }
+            }
+            p3Var.a(typedArray.getInt(10, 0));
+            int resourceId = typedArray.getResourceId(9, 0);
+            if (resourceId != 0) {
+                View inflate = LayoutInflater.from(getContext()).inflate(resourceId, (ViewGroup) this, false);
+                View view = p3Var.c;
+                if (view != null && (p3Var.b & 16) != 0) {
+                    removeView(view);
+                }
+                p3Var.c = inflate;
+                if (inflate != null && (p3Var.b & 16) != 0) {
+                    addView(inflate);
+                }
+                p3Var.a(p3Var.b | 16);
+            }
+            int layoutDimension = typedArray.getLayoutDimension(13, 0);
+            if (layoutDimension > 0) {
+                ViewGroup.LayoutParams layoutParams = getLayoutParams();
+                layoutParams.height = layoutDimension;
+                setLayoutParams(layoutParams);
+            }
+            int dimensionPixelOffset = typedArray.getDimensionPixelOffset(7, -1);
+            int dimensionPixelOffset2 = typedArray.getDimensionPixelOffset(3, -1);
+            if (dimensionPixelOffset >= 0 || dimensionPixelOffset2 >= 0) {
+                int max = Math.max(dimensionPixelOffset, 0);
+                int max2 = Math.max(dimensionPixelOffset2, 0);
+                d();
+                this.F.a(max, max2);
+            }
+            int resourceId2 = typedArray.getResourceId(28, 0);
+            if (resourceId2 != 0) {
+                Context context = getContext();
+                this.w = resourceId2;
+                a1 a1Var = this.b;
+                if (a1Var != null) {
+                    a1Var.setTextAppearance(context, resourceId2);
+                }
+            }
+            int resourceId3 = typedArray.getResourceId(26, 0);
+            if (resourceId3 != 0) {
+                Context context2 = getContext();
+                this.x = resourceId3;
+                a1 a1Var2 = this.c;
+                if (a1Var2 != null) {
+                    a1Var2.setTextAppearance(context2, resourceId3);
+                }
+            }
+            int resourceId4 = typedArray.getResourceId(22, 0);
+            if (resourceId4 != 0) {
+                setPopupTheme(resourceId4);
+            }
+            G.I();
+            if (R.string.abc_action_bar_up_description != p3Var.n) {
+                p3Var.n = R.string.abc_action_bar_up_description;
+                if (TextUtils.isEmpty(getNavigationContentDescription())) {
+                    int i10 = p3Var.n;
+                    p3Var.j = i10 != 0 ? getContext().getString(i10) : null;
+                    p3Var.b();
+                }
+            }
+            p3Var.j = getNavigationContentDescription();
+            setNavigationOnClickListener(new o3(p3Var));
+            this.V = p3Var;
         }
+        return this.V;
     }
 
-    private void addSystemView(View view, boolean z) {
-        LayoutParams layoutParams;
-        ViewGroup.LayoutParams layoutParams2 = view.getLayoutParams();
-        if (layoutParams2 == null) {
-            layoutParams = generateDefaultLayoutParams();
-        } else if (!checkLayoutParams(layoutParams2)) {
-            layoutParams = generateLayoutParams(layoutParams2);
+    public final int j(int i10, View view) {
+        l3 l3Var = (l3) view.getLayoutParams();
+        int measuredHeight = view.getMeasuredHeight();
+        int i11 = i10 > 0 ? (measuredHeight - i10) / 2 : 0;
+        int i12 = l3Var.a & 112;
+        if (i12 != 16 && i12 != 48 && i12 != 80) {
+            i12 = this.I & 112;
+        }
+        if (i12 == 48) {
+            return getPaddingTop() - i11;
+        }
+        if (i12 == 80) {
+            return (((getHeight() - getPaddingBottom()) - measuredHeight) - ((ViewGroup.MarginLayoutParams) l3Var).bottomMargin) - i11;
+        }
+        int paddingTop = getPaddingTop();
+        int paddingBottom = getPaddingBottom();
+        int height = getHeight();
+        int i13 = (((height - paddingTop) - paddingBottom) - measuredHeight) / 2;
+        int i14 = ((ViewGroup.MarginLayoutParams) l3Var).topMargin;
+        if (i13 < i14) {
+            i13 = i14;
         } else {
-            layoutParams = (LayoutParams) layoutParams2;
-        }
-        layoutParams.mViewType = 1;
-        if (z && this.mExpandedActionView != null) {
-            view.setLayoutParams(layoutParams);
-            this.mHiddenViews.add(view);
-        } else {
-            addView(view, layoutParams);
-        }
-    }
-
-    @Override // android.view.View
-    protected Parcelable onSaveInstanceState() {
-        MenuItemImpl menuItemImpl;
-        SavedState savedState = new SavedState(super.onSaveInstanceState());
-        ExpandedActionViewMenuPresenter expandedActionViewMenuPresenter = this.mExpandedMenuPresenter;
-        if (expandedActionViewMenuPresenter != null && (menuItemImpl = expandedActionViewMenuPresenter.mCurrentExpandedItem) != null) {
-            savedState.expandedMenuItemId = menuItemImpl.getItemId();
-        }
-        savedState.isOverflowOpen = isOverflowMenuShowing();
-        return savedState;
-    }
-
-    @Override // android.view.View
-    protected void onRestoreInstanceState(Parcelable parcelable) {
-        MenuItem findItem;
-        if (!(parcelable instanceof SavedState)) {
-            super.onRestoreInstanceState(parcelable);
-            return;
-        }
-        SavedState savedState = (SavedState) parcelable;
-        super.onRestoreInstanceState(savedState.getSuperState());
-        ActionMenuView actionMenuView = this.mMenuView;
-        MenuBuilder peekMenu = actionMenuView != null ? actionMenuView.peekMenu() : null;
-        int i = savedState.expandedMenuItemId;
-        if (i != 0 && this.mExpandedMenuPresenter != null && peekMenu != null && (findItem = peekMenu.findItem(i)) != null) {
-            findItem.expandActionView();
-        }
-        if (savedState.isOverflowOpen) {
-            postShowOverflowMenu();
-        }
-    }
-
-    private void postShowOverflowMenu() {
-        removeCallbacks(this.mShowOverflowMenuRunnable);
-        post(this.mShowOverflowMenuRunnable);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        removeCallbacks(this.mShowOverflowMenuRunnable);
-        updateBackInvokedCallbackState();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        updateBackInvokedCallbackState();
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked == 0) {
-            this.mEatingTouch = false;
-        }
-        if (!this.mEatingTouch) {
-            boolean onTouchEvent = super.onTouchEvent(motionEvent);
-            if (actionMasked == 0 && !onTouchEvent) {
-                this.mEatingTouch = true;
+            int i15 = (((height - paddingBottom) - measuredHeight) - i13) - paddingTop;
+            int i16 = ((ViewGroup.MarginLayoutParams) l3Var).bottomMargin;
+            if (i15 < i16) {
+                i13 = Math.max(0, i13 - (i16 - i15));
             }
         }
-        if (actionMasked == 1 || actionMasked == 3) {
-            this.mEatingTouch = false;
+        return paddingTop + i13;
+    }
+
+    public final void m() {
+        ArrayList arrayList = this.T;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            getMenu().removeItem(((MenuItem) obj).getItemId());
         }
-        return true;
+        getMenu();
+        ArrayList<MenuItem> currentMenuItems = getCurrentMenuItems();
+        getMenuInflater();
+        Iterator it = ((CopyOnWriteArrayList) this.S.d).iterator();
+        while (it.hasNext()) {
+            ((b0) it.next()).a.k();
+        }
+        ArrayList<MenuItem> currentMenuItems2 = getCurrentMenuItems();
+        currentMenuItems2.removeAll(currentMenuItems);
+        this.T = currentMenuItems2;
+    }
+
+    public final boolean n(View view) {
+        return view.getParent() == this || this.Q.contains(view);
+    }
+
+    public final int o(View view, int i10, int i11, int[] iArr) {
+        l3 l3Var = (l3) view.getLayoutParams();
+        int i12 = ((ViewGroup.MarginLayoutParams) l3Var).leftMargin - iArr[0];
+        int max = Math.max(0, i12) + i10;
+        iArr[0] = Math.max(0, -i12);
+        int j10 = j(i11, view);
+        int measuredWidth = view.getMeasuredWidth();
+        view.layout(max, j10, max + measuredWidth, view.getMeasuredHeight() + j10);
+        return measuredWidth + ((ViewGroup.MarginLayoutParams) l3Var).rightMargin + max;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        t();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        removeCallbacks(this.f0);
+        t();
     }
 
     @Override // android.view.View
-    public boolean onHoverEvent(MotionEvent motionEvent) {
+    public final boolean onHoverEvent(MotionEvent motionEvent) {
         int actionMasked = motionEvent.getActionMasked();
         if (actionMasked == 9) {
-            this.mEatingHover = false;
+            this.O = false;
         }
-        if (!this.mEatingHover) {
+        if (!this.O) {
             boolean onHoverEvent = super.onHoverEvent(motionEvent);
             if (actionMasked == 9 && !onHoverEvent) {
-                this.mEatingHover = true;
+                this.O = true;
             }
         }
-        if (actionMasked == 10 || actionMasked == 3) {
-            this.mEatingHover = false;
+        if (actionMasked != 10 && actionMasked != 3) {
+            return true;
         }
+        this.O = false;
         return true;
     }
 
-    private void measureChildConstrained(View view, int i, int i2, int i3, int i4, int i5) {
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        int childMeasureSpec = ViewGroup.getChildMeasureSpec(i, getPaddingLeft() + getPaddingRight() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + i2, marginLayoutParams.width);
-        int childMeasureSpec2 = ViewGroup.getChildMeasureSpec(i3, getPaddingTop() + getPaddingBottom() + marginLayoutParams.topMargin + marginLayoutParams.bottomMargin + i4, marginLayoutParams.height);
-        int mode = View.MeasureSpec.getMode(childMeasureSpec2);
-        if (mode != 1073741824 && i5 >= 0) {
-            if (mode != 0) {
-                i5 = Math.min(View.MeasureSpec.getSize(childMeasureSpec2), i5);
-            }
-            childMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i5, TLObject.FLAG_30);
-        }
-        view.measure(childMeasureSpec, childMeasureSpec2);
-    }
-
-    private int measureChildCollapseMargins(View view, int i, int i2, int i3, int i4, int[] iArr) {
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        int i5 = marginLayoutParams.leftMargin - iArr[0];
-        int i6 = marginLayoutParams.rightMargin - iArr[1];
-        int max = Math.max(0, i5) + Math.max(0, i6);
-        iArr[0] = Math.max(0, -i5);
-        iArr[1] = Math.max(0, -i6);
-        view.measure(ViewGroup.getChildMeasureSpec(i, getPaddingLeft() + getPaddingRight() + max + i2, marginLayoutParams.width), ViewGroup.getChildMeasureSpec(i3, getPaddingTop() + getPaddingBottom() + marginLayoutParams.topMargin + marginLayoutParams.bottomMargin + i4, marginLayoutParams.height));
-        return view.getMeasuredWidth() + max;
-    }
-
-    private boolean shouldCollapse() {
-        if (!this.mCollapsible) {
-            return false;
-        }
-        int childCount = getChildCount();
-        for (int i = 0; i < childCount; i++) {
-            View childAt = getChildAt(i);
-            if (shouldLayout(childAt) && childAt.getMeasuredWidth() > 0 && childAt.getMeasuredHeight() > 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override // android.view.View
-    protected void onMeasure(int i, int i2) {
-        int i3;
-        int i4;
-        int i5;
-        int i6;
-        int[] iArr;
-        int i7;
-        int i8;
-        int i9;
-        int[] iArr2 = this.mTempMargins;
-        boolean isLayoutRtl = ViewUtils.isLayoutRtl(this);
-        int i10 = !isLayoutRtl ? 1 : 0;
-        if (shouldLayout(this.mNavButtonView)) {
-            measureChildConstrained(this.mNavButtonView, i, 0, i2, 0, this.mMaxButtonHeight);
-            i3 = this.mNavButtonView.getMeasuredWidth() + getHorizontalMargins(this.mNavButtonView);
-            i4 = Math.max(0, this.mNavButtonView.getMeasuredHeight() + getVerticalMargins(this.mNavButtonView));
-            i5 = View.combineMeasuredStates(0, this.mNavButtonView.getMeasuredState());
-        } else {
-            i3 = 0;
-            i4 = 0;
-            i5 = 0;
-        }
-        if (shouldLayout(this.mCollapseButtonView)) {
-            measureChildConstrained(this.mCollapseButtonView, i, 0, i2, 0, this.mMaxButtonHeight);
-            i3 = this.mCollapseButtonView.getMeasuredWidth() + getHorizontalMargins(this.mCollapseButtonView);
-            i4 = Math.max(i4, this.mCollapseButtonView.getMeasuredHeight() + getVerticalMargins(this.mCollapseButtonView));
-            i5 = View.combineMeasuredStates(i5, this.mCollapseButtonView.getMeasuredState());
-        }
-        int currentContentInsetStart = getCurrentContentInsetStart();
-        int max = Math.max(currentContentInsetStart, i3);
-        iArr2[isLayoutRtl ? 1 : 0] = Math.max(0, currentContentInsetStart - i3);
-        if (shouldLayout(this.mMenuView)) {
-            measureChildConstrained(this.mMenuView, i, max, i2, 0, this.mMaxButtonHeight);
-            i6 = this.mMenuView.getMeasuredWidth() + getHorizontalMargins(this.mMenuView);
-            i4 = Math.max(i4, this.mMenuView.getMeasuredHeight() + getVerticalMargins(this.mMenuView));
-            i5 = View.combineMeasuredStates(i5, this.mMenuView.getMeasuredState());
-        } else {
-            i6 = 0;
-        }
-        int currentContentInsetEnd = getCurrentContentInsetEnd();
-        int max2 = max + Math.max(currentContentInsetEnd, i6);
-        iArr2[i10] = Math.max(0, currentContentInsetEnd - i6);
-        if (shouldLayout(this.mExpandedActionView)) {
-            iArr = iArr2;
-            max2 += measureChildCollapseMargins(this.mExpandedActionView, i, max2, i2, 0, iArr);
-            i4 = Math.max(i4, this.mExpandedActionView.getMeasuredHeight() + getVerticalMargins(this.mExpandedActionView));
-            i5 = View.combineMeasuredStates(i5, this.mExpandedActionView.getMeasuredState());
-        } else {
-            iArr = iArr2;
-        }
-        if (shouldLayout(this.mLogoView)) {
-            max2 += measureChildCollapseMargins(this.mLogoView, i, max2, i2, 0, iArr);
-            i4 = Math.max(i4, this.mLogoView.getMeasuredHeight() + getVerticalMargins(this.mLogoView));
-            i5 = View.combineMeasuredStates(i5, this.mLogoView.getMeasuredState());
-        }
-        int childCount = getChildCount();
-        for (int i11 = 0; i11 < childCount; i11++) {
-            View childAt = getChildAt(i11);
-            if (((LayoutParams) childAt.getLayoutParams()).mViewType == 0 && shouldLayout(childAt)) {
-                max2 += measureChildCollapseMargins(childAt, i, max2, i2, 0, iArr);
-                int max3 = Math.max(i4, childAt.getMeasuredHeight() + getVerticalMargins(childAt));
-                i5 = View.combineMeasuredStates(i5, childAt.getMeasuredState());
-                i4 = max3;
-            } else {
-                max2 = max2;
-            }
-        }
-        int i12 = max2;
-        int i13 = this.mTitleMarginTop + this.mTitleMarginBottom;
-        int i14 = this.mTitleMarginStart + this.mTitleMarginEnd;
-        if (shouldLayout(this.mTitleTextView)) {
-            measureChildCollapseMargins(this.mTitleTextView, i, i12 + i14, i2, i13, iArr);
-            int measuredWidth = this.mTitleTextView.getMeasuredWidth() + getHorizontalMargins(this.mTitleTextView);
-            int measuredHeight = this.mTitleTextView.getMeasuredHeight() + getVerticalMargins(this.mTitleTextView);
-            i8 = measuredWidth;
-            i7 = View.combineMeasuredStates(i5, this.mTitleTextView.getMeasuredState());
-            i9 = measuredHeight;
-        } else {
-            i7 = i5;
-            i8 = 0;
-            i9 = 0;
-        }
-        if (shouldLayout(this.mSubtitleTextView)) {
-            i8 = Math.max(i8, measureChildCollapseMargins(this.mSubtitleTextView, i, i12 + i14, i2, i13 + i9, iArr));
-            i9 += this.mSubtitleTextView.getMeasuredHeight() + getVerticalMargins(this.mSubtitleTextView);
-            i7 = View.combineMeasuredStates(i7, this.mSubtitleTextView.getMeasuredState());
-        }
-        int max4 = Math.max(i4, i9);
-        setMeasuredDimension(View.resolveSizeAndState(Math.max(i12 + i8 + getPaddingLeft() + getPaddingRight(), getSuggestedMinimumWidth()), i, (-16777216) & i7), shouldCollapse() ? 0 : View.resolveSizeAndState(Math.max(max4 + getPaddingTop() + getPaddingBottom(), getSuggestedMinimumHeight()), i2, i7 << 16));
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:107:0x01a2  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0133  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x012c  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x011d  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x00ff  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0077  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00cb  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00e8  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0298 A[LOOP:0: B:40:0x0296->B:41:0x0298, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x02b6 A[LOOP:1: B:44:0x02b4->B:45:0x02b6, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x02dd  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x02ec A[LOOP:2: B:53:0x02ea->B:54:0x02ec, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0129  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0130  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0166  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x01af  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x021e  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x019d  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x0131  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x011f  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0101  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00b6  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00cd  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x028f A[LOOP:0: B:39:0x028d->B:40:0x028f, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x02a7 A[LOOP:1: B:43:0x02a5->B:44:0x02a7, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x02c6 A[LOOP:2: B:47:0x02c4->B:48:0x02c6, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x030c  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0319 A[LOOP:3: B:56:0x0317->B:57:0x0319, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0164  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x01aa  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0218  */
     @Override // android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        int i5;
-        int i6;
-        int max;
-        boolean shouldLayout;
-        boolean shouldLayout2;
-        boolean z2;
-        int i7;
-        int i8;
-        int paddingTop;
-        int i9;
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        int size;
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14;
         int i15;
-        int size2;
+        int max;
+        boolean s10;
+        boolean s11;
+        boolean z11;
         int i16;
         int i17;
+        int paddingTop;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
+        int size;
+        int i22;
+        int i23;
+        int size2;
+        int i24;
         int size3;
-        boolean z3 = ViewCompat.getLayoutDirection(this) == 1;
+        int i25;
+        int i26;
+        int i27;
+        int size4;
+        WeakHashMap weakHashMap = j0.a;
+        boolean z12 = getLayoutDirection() == 1;
         int width = getWidth();
         int height = getHeight();
         int paddingLeft = getPaddingLeft();
         int paddingRight = getPaddingRight();
         int paddingTop2 = getPaddingTop();
         int paddingBottom = getPaddingBottom();
-        int i18 = width - paddingRight;
-        int[] iArr = this.mTempMargins;
+        int i28 = width - paddingRight;
+        int[] iArr = this.R;
         iArr[1] = 0;
         iArr[0] = 0;
-        int minimumHeight = ViewCompat.getMinimumHeight(this);
-        int min = minimumHeight >= 0 ? Math.min(minimumHeight, i4 - i2) : 0;
-        if (!shouldLayout(this.mNavButtonView)) {
-            i5 = paddingLeft;
+        int minimumHeight = getMinimumHeight();
+        int min = minimumHeight >= 0 ? Math.min(minimumHeight, i13 - i11) : 0;
+        if (!s(this.d)) {
+            i14 = paddingLeft;
         } else {
-            if (z3) {
-                i6 = layoutChildRight(this.mNavButtonView, i18, iArr, min);
-                i5 = paddingLeft;
-                if (shouldLayout(this.mCollapseButtonView)) {
-                    if (z3) {
-                        i6 = layoutChildRight(this.mCollapseButtonView, i6, iArr, min);
+            if (z12) {
+                i15 = p(this.d, i28, min, iArr);
+                i14 = paddingLeft;
+                if (s(this.n)) {
+                    if (z12) {
+                        i15 = p(this.n, i15, min, iArr);
                     } else {
-                        i5 = layoutChildLeft(this.mCollapseButtonView, i5, iArr, min);
+                        i14 = o(this.n, i14, min, iArr);
                     }
                 }
-                if (shouldLayout(this.mMenuView)) {
-                    if (z3) {
-                        i5 = layoutChildLeft(this.mMenuView, i5, iArr, min);
+                if (s(this.a)) {
+                    if (z12) {
+                        i14 = o(this.a, i14, min, iArr);
                     } else {
-                        i6 = layoutChildRight(this.mMenuView, i6, iArr, min);
+                        i15 = p(this.a, i15, min, iArr);
                     }
                 }
                 int currentContentInsetLeft = getCurrentContentInsetLeft();
                 int currentContentInsetRight = getCurrentContentInsetRight();
-                iArr[0] = Math.max(0, currentContentInsetLeft - i5);
-                iArr[1] = Math.max(0, currentContentInsetRight - (i18 - i6));
-                max = Math.max(i5, currentContentInsetLeft);
-                int min2 = Math.min(i6, i18 - currentContentInsetRight);
-                if (shouldLayout(this.mExpandedActionView)) {
-                    if (z3) {
-                        min2 = layoutChildRight(this.mExpandedActionView, min2, iArr, min);
+                iArr[0] = Math.max(0, currentContentInsetLeft - i14);
+                iArr[1] = Math.max(0, currentContentInsetRight - (i28 - i15));
+                max = Math.max(i14, currentContentInsetLeft);
+                int min2 = Math.min(i15, i28 - currentContentInsetRight);
+                if (s(this.r)) {
+                    if (z12) {
+                        min2 = p(this.r, min2, min, iArr);
                     } else {
-                        max = layoutChildLeft(this.mExpandedActionView, max, iArr, min);
+                        max = o(this.r, max, min, iArr);
                     }
                 }
-                if (shouldLayout(this.mLogoView)) {
-                    if (z3) {
-                        min2 = layoutChildRight(this.mLogoView, min2, iArr, min);
+                if (s(this.e)) {
+                    if (z12) {
+                        min2 = p(this.e, min2, min, iArr);
                     } else {
-                        max = layoutChildLeft(this.mLogoView, max, iArr, min);
+                        max = o(this.e, max, min, iArr);
                     }
                 }
-                shouldLayout = shouldLayout(this.mTitleTextView);
-                shouldLayout2 = shouldLayout(this.mSubtitleTextView);
-                if (shouldLayout) {
-                    z2 = z3;
-                    i7 = 0;
+                s10 = s(this.b);
+                s11 = s(this.c);
+                if (s10) {
+                    z11 = z12;
+                    i16 = 0;
                 } else {
-                    LayoutParams layoutParams = (LayoutParams) this.mTitleTextView.getLayoutParams();
-                    z2 = z3;
-                    i7 = ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin + ((ViewGroup.MarginLayoutParams) layoutParams).topMargin + this.mTitleTextView.getMeasuredHeight();
+                    l3 l3Var = (l3) this.b.getLayoutParams();
+                    z11 = z12;
+                    i16 = this.b.getMeasuredHeight() + ((ViewGroup.MarginLayoutParams) l3Var).topMargin + ((ViewGroup.MarginLayoutParams) l3Var).bottomMargin;
                 }
-                if (!shouldLayout2) {
-                    LayoutParams layoutParams2 = (LayoutParams) this.mSubtitleTextView.getLayoutParams();
-                    i7 += ((ViewGroup.MarginLayoutParams) layoutParams2).topMargin + this.mSubtitleTextView.getMeasuredHeight() + ((ViewGroup.MarginLayoutParams) layoutParams2).bottomMargin;
+                if (!s11) {
+                    l3 l3Var2 = (l3) this.c.getLayoutParams();
+                    i16 = this.c.getMeasuredHeight() + ((ViewGroup.MarginLayoutParams) l3Var2).topMargin + ((ViewGroup.MarginLayoutParams) l3Var2).bottomMargin + i16;
                 }
-                if (!shouldLayout || shouldLayout2) {
-                    TextView textView = !shouldLayout ? this.mTitleTextView : this.mSubtitleTextView;
-                    TextView textView2 = !shouldLayout2 ? this.mSubtitleTextView : this.mTitleTextView;
-                    LayoutParams layoutParams3 = (LayoutParams) textView.getLayoutParams();
-                    LayoutParams layoutParams4 = (LayoutParams) textView2.getLayoutParams();
-                    int i19 = i7;
-                    boolean z4 = (!shouldLayout && this.mTitleTextView.getMeasuredWidth() > 0) || (shouldLayout2 && this.mSubtitleTextView.getMeasuredWidth() > 0);
-                    i8 = this.mGravity & 112;
-                    int i20 = max;
-                    if (i8 != 48) {
-                        paddingTop = getPaddingTop() + ((ViewGroup.MarginLayoutParams) layoutParams3).topMargin + this.mTitleMarginTop;
-                    } else if (i8 != 80) {
-                        int i21 = (((height - paddingTop2) - paddingBottom) - i19) / 2;
-                        int i22 = ((ViewGroup.MarginLayoutParams) layoutParams3).topMargin;
-                        int i23 = this.mTitleMarginTop;
-                        if (i21 < i22 + i23) {
-                            i21 = i22 + i23;
+                if (!s10 || s11) {
+                    a1 a1Var = !s10 ? this.b : this.c;
+                    a1 a1Var2 = !s11 ? this.c : this.b;
+                    l3 l3Var3 = (l3) a1Var.getLayoutParams();
+                    l3 l3Var4 = (l3) a1Var2.getLayoutParams();
+                    int i29 = i16;
+                    boolean z13 = (!s10 && this.b.getMeasuredWidth() > 0) || (s11 && this.c.getMeasuredWidth() > 0);
+                    i17 = this.I & 112;
+                    int i30 = max;
+                    if (i17 != 48) {
+                        paddingTop = getPaddingTop() + ((ViewGroup.MarginLayoutParams) l3Var3).topMargin + this.D;
+                    } else if (i17 != 80) {
+                        int i31 = (((height - paddingTop2) - paddingBottom) - i29) / 2;
+                        int i32 = ((ViewGroup.MarginLayoutParams) l3Var3).topMargin + this.D;
+                        if (i31 < i32) {
+                            i31 = i32;
                         } else {
-                            int i24 = (((height - paddingBottom) - i19) - i21) - paddingTop2;
-                            int i25 = ((ViewGroup.MarginLayoutParams) layoutParams3).bottomMargin;
-                            int i26 = this.mTitleMarginBottom;
-                            if (i24 < i25 + i26) {
-                                i21 = Math.max(0, i21 - ((((ViewGroup.MarginLayoutParams) layoutParams4).bottomMargin + i26) - i24));
+                            int i33 = (((height - paddingBottom) - i29) - i31) - paddingTop2;
+                            int i34 = ((ViewGroup.MarginLayoutParams) l3Var3).bottomMargin;
+                            int i35 = this.E;
+                            if (i33 < i34 + i35) {
+                                i31 = Math.max(0, i31 - ((((ViewGroup.MarginLayoutParams) l3Var4).bottomMargin + i35) - i33));
                             }
                         }
-                        paddingTop = paddingTop2 + i21;
+                        paddingTop = paddingTop2 + i31;
                     } else {
-                        paddingTop = (((height - paddingBottom) - ((ViewGroup.MarginLayoutParams) layoutParams4).bottomMargin) - this.mTitleMarginBottom) - i19;
+                        paddingTop = (((height - paddingBottom) - ((ViewGroup.MarginLayoutParams) l3Var4).bottomMargin) - this.E) - i29;
                     }
-                    if (!z2) {
-                        int i27 = (z4 ? this.mTitleMarginStart : 0) - iArr[1];
-                        min2 -= Math.max(0, i27);
-                        iArr[1] = Math.max(0, -i27);
-                        if (shouldLayout) {
-                            LayoutParams layoutParams5 = (LayoutParams) this.mTitleTextView.getLayoutParams();
-                            int measuredWidth = min2 - this.mTitleTextView.getMeasuredWidth();
-                            int measuredHeight = this.mTitleTextView.getMeasuredHeight() + paddingTop;
-                            this.mTitleTextView.layout(measuredWidth, paddingTop, min2, measuredHeight);
-                            i12 = measuredWidth - this.mTitleMarginEnd;
-                            paddingTop = measuredHeight + ((ViewGroup.MarginLayoutParams) layoutParams5).bottomMargin;
+                    if (z11) {
+                        int i36 = (z13 ? this.B : 0) - iArr[0];
+                        max = Math.max(0, i36) + i30;
+                        iArr[0] = Math.max(0, -i36);
+                        if (s10) {
+                            l3 l3Var5 = (l3) this.b.getLayoutParams();
+                            int measuredWidth = this.b.getMeasuredWidth() + max;
+                            int measuredHeight = this.b.getMeasuredHeight() + paddingTop;
+                            this.b.layout(max, paddingTop, measuredWidth, measuredHeight);
+                            i18 = measuredWidth + this.C;
+                            paddingTop = measuredHeight + ((ViewGroup.MarginLayoutParams) l3Var5).bottomMargin;
                         } else {
-                            i12 = min2;
+                            i18 = max;
                         }
-                        if (shouldLayout2) {
-                            int i28 = paddingTop + ((ViewGroup.MarginLayoutParams) ((LayoutParams) this.mSubtitleTextView.getLayoutParams())).topMargin;
-                            this.mSubtitleTextView.layout(min2 - this.mSubtitleTextView.getMeasuredWidth(), i28, min2, this.mSubtitleTextView.getMeasuredHeight() + i28);
-                            i13 = min2 - this.mTitleMarginEnd;
+                        if (s11) {
+                            int i37 = paddingTop + ((ViewGroup.MarginLayoutParams) ((l3) this.c.getLayoutParams())).topMargin;
+                            int measuredWidth2 = this.c.getMeasuredWidth() + max;
+                            this.c.layout(max, i37, measuredWidth2, this.c.getMeasuredHeight() + i37);
+                            i19 = measuredWidth2 + this.C;
                         } else {
-                            i13 = min2;
+                            i19 = max;
                         }
-                        if (z4) {
-                            min2 = Math.min(i12, i13);
+                        if (z13) {
+                            max = Math.max(i18, i19);
                         }
-                        max = i20;
                     } else {
-                        i9 = 0;
-                        int i29 = (z4 ? this.mTitleMarginStart : 0) - iArr[0];
-                        max = i20 + Math.max(0, i29);
-                        iArr[0] = Math.max(0, -i29);
-                        if (shouldLayout) {
-                            LayoutParams layoutParams6 = (LayoutParams) this.mTitleTextView.getLayoutParams();
-                            int measuredWidth2 = this.mTitleTextView.getMeasuredWidth() + max;
-                            int measuredHeight2 = this.mTitleTextView.getMeasuredHeight() + paddingTop;
-                            this.mTitleTextView.layout(max, paddingTop, measuredWidth2, measuredHeight2);
-                            i10 = measuredWidth2 + this.mTitleMarginEnd;
-                            paddingTop = measuredHeight2 + ((ViewGroup.MarginLayoutParams) layoutParams6).bottomMargin;
+                        int i38 = (z13 ? this.B : 0) - iArr[1];
+                        min2 -= Math.max(0, i38);
+                        iArr[1] = Math.max(0, -i38);
+                        if (s10) {
+                            l3 l3Var6 = (l3) this.b.getLayoutParams();
+                            int measuredWidth3 = min2 - this.b.getMeasuredWidth();
+                            int measuredHeight2 = this.b.getMeasuredHeight() + paddingTop;
+                            this.b.layout(measuredWidth3, paddingTop, min2, measuredHeight2);
+                            i20 = measuredWidth3 - this.C;
+                            paddingTop = measuredHeight2 + ((ViewGroup.MarginLayoutParams) l3Var6).bottomMargin;
                         } else {
-                            i10 = max;
+                            i20 = min2;
                         }
-                        if (shouldLayout2) {
-                            int i30 = paddingTop + ((ViewGroup.MarginLayoutParams) ((LayoutParams) this.mSubtitleTextView.getLayoutParams())).topMargin;
-                            int measuredWidth3 = this.mSubtitleTextView.getMeasuredWidth() + max;
-                            this.mSubtitleTextView.layout(max, i30, measuredWidth3, this.mSubtitleTextView.getMeasuredHeight() + i30);
-                            i11 = measuredWidth3 + this.mTitleMarginEnd;
+                        if (s11) {
+                            int i39 = paddingTop + ((ViewGroup.MarginLayoutParams) ((l3) this.c.getLayoutParams())).topMargin;
+                            this.c.layout(min2 - this.c.getMeasuredWidth(), i39, min2, this.c.getMeasuredHeight() + i39);
+                            i21 = min2 - this.C;
                         } else {
-                            i11 = max;
+                            i21 = min2;
                         }
-                        if (z4) {
-                            max = Math.max(i10, i11);
+                        if (z13) {
+                            min2 = Math.min(i20, i21);
                         }
-                        addCustomViewsWithGravity(this.mTempViews, 3);
-                        size = this.mTempViews.size();
-                        i14 = max;
-                        for (i15 = 0; i15 < size; i15++) {
-                            i14 = layoutChildLeft((View) this.mTempViews.get(i15), i14, iArr, min);
-                        }
-                        addCustomViewsWithGravity(this.mTempViews, 5);
-                        size2 = this.mTempViews.size();
-                        for (i16 = 0; i16 < size2; i16++) {
-                            min2 = layoutChildRight((View) this.mTempViews.get(i16), min2, iArr, min);
-                        }
-                        addCustomViewsWithGravity(this.mTempViews, 1);
-                        int viewListMeasuredWidth = getViewListMeasuredWidth(this.mTempViews, iArr);
-                        i17 = (paddingLeft + (((width - paddingLeft) - paddingRight) / 2)) - (viewListMeasuredWidth / 2);
-                        int i31 = viewListMeasuredWidth + i17;
-                        if (i17 >= i14) {
-                            i14 = i31 > min2 ? i17 - (i31 - min2) : i17;
-                        }
-                        size3 = this.mTempViews.size();
-                        while (i9 < size3) {
-                            i14 = layoutChildLeft((View) this.mTempViews.get(i9), i14, iArr, min);
-                            i9++;
-                        }
-                        this.mTempViews.clear();
-                        return;
+                        max = i30;
                     }
                 }
-                i9 = 0;
-                addCustomViewsWithGravity(this.mTempViews, 3);
-                size = this.mTempViews.size();
-                i14 = max;
-                while (i15 < size) {
+                ArrayList arrayList = this.P;
+                a(3, arrayList);
+                size = arrayList.size();
+                i22 = max;
+                for (i23 = 0; i23 < size; i23++) {
+                    i22 = o((View) arrayList.get(i23), i22, min, iArr);
                 }
-                addCustomViewsWithGravity(this.mTempViews, 5);
-                size2 = this.mTempViews.size();
-                while (i16 < size2) {
+                a(5, arrayList);
+                size2 = arrayList.size();
+                for (i24 = 0; i24 < size2; i24++) {
+                    min2 = p((View) arrayList.get(i24), min2, min, iArr);
                 }
-                addCustomViewsWithGravity(this.mTempViews, 1);
-                int viewListMeasuredWidth2 = getViewListMeasuredWidth(this.mTempViews, iArr);
-                i17 = (paddingLeft + (((width - paddingLeft) - paddingRight) / 2)) - (viewListMeasuredWidth2 / 2);
-                int i312 = viewListMeasuredWidth2 + i17;
-                if (i17 >= i14) {
+                a(1, arrayList);
+                int i40 = iArr[0];
+                int i41 = iArr[1];
+                size3 = arrayList.size();
+                int i42 = i40;
+                i25 = 0;
+                int i43 = 0;
+                while (i25 < size3) {
+                    View view = (View) arrayList.get(i25);
+                    l3 l3Var7 = (l3) view.getLayoutParams();
+                    int i44 = i41;
+                    int i45 = ((ViewGroup.MarginLayoutParams) l3Var7).leftMargin - i42;
+                    int i46 = ((ViewGroup.MarginLayoutParams) l3Var7).rightMargin - i44;
+                    int max2 = Math.max(0, i45);
+                    int max3 = Math.max(0, i46);
+                    int max4 = Math.max(0, -i45);
+                    int max5 = Math.max(0, -i46);
+                    i43 += view.getMeasuredWidth() + max2 + max3;
+                    i25++;
+                    i42 = max4;
+                    i41 = max5;
                 }
-                size3 = this.mTempViews.size();
-                while (i9 < size3) {
+                i27 = ((((width - paddingLeft) - paddingRight) / 2) + paddingLeft) - (i43 / 2);
+                int i47 = i43 + i27;
+                if (i27 >= i22) {
+                    i22 = i47 > min2 ? i27 - (i47 - min2) : i27;
                 }
-                this.mTempViews.clear();
-                return;
+                size4 = arrayList.size();
+                for (i26 = 0; i26 < size4; i26++) {
+                    i22 = o((View) arrayList.get(i26), i22, min, iArr);
+                }
+                arrayList.clear();
             }
-            i5 = layoutChildLeft(this.mNavButtonView, paddingLeft, iArr, min);
+            i14 = o(this.d, paddingLeft, min, iArr);
         }
-        i6 = i18;
-        if (shouldLayout(this.mCollapseButtonView)) {
+        i15 = i28;
+        if (s(this.n)) {
         }
-        if (shouldLayout(this.mMenuView)) {
+        if (s(this.a)) {
         }
         int currentContentInsetLeft2 = getCurrentContentInsetLeft();
         int currentContentInsetRight2 = getCurrentContentInsetRight();
-        iArr[0] = Math.max(0, currentContentInsetLeft2 - i5);
-        iArr[1] = Math.max(0, currentContentInsetRight2 - (i18 - i6));
-        max = Math.max(i5, currentContentInsetLeft2);
-        int min22 = Math.min(i6, i18 - currentContentInsetRight2);
-        if (shouldLayout(this.mExpandedActionView)) {
+        iArr[0] = Math.max(0, currentContentInsetLeft2 - i14);
+        iArr[1] = Math.max(0, currentContentInsetRight2 - (i28 - i15));
+        max = Math.max(i14, currentContentInsetLeft2);
+        int min22 = Math.min(i15, i28 - currentContentInsetRight2);
+        if (s(this.r)) {
         }
-        if (shouldLayout(this.mLogoView)) {
+        if (s(this.e)) {
         }
-        shouldLayout = shouldLayout(this.mTitleTextView);
-        shouldLayout2 = shouldLayout(this.mSubtitleTextView);
-        if (shouldLayout) {
+        s10 = s(this.b);
+        s11 = s(this.c);
+        if (s10) {
         }
-        if (!shouldLayout2) {
+        if (!s11) {
         }
-        if (!shouldLayout) {
+        if (!s10) {
         }
-        if (!shouldLayout) {
+        if (!s10) {
         }
-        if (!shouldLayout2) {
+        if (!s11) {
         }
-        LayoutParams layoutParams32 = (LayoutParams) textView.getLayoutParams();
-        LayoutParams layoutParams42 = (LayoutParams) textView2.getLayoutParams();
-        int i192 = i7;
-        if (shouldLayout) {
+        l3 l3Var32 = (l3) a1Var.getLayoutParams();
+        l3 l3Var42 = (l3) a1Var2.getLayoutParams();
+        int i292 = i16;
+        if (s10) {
         }
-        i8 = this.mGravity & 112;
-        int i202 = max;
-        if (i8 != 48) {
+        i17 = this.I & 112;
+        int i302 = max;
+        if (i17 != 48) {
         }
-        if (!z2) {
+        if (z11) {
         }
+        ArrayList arrayList2 = this.P;
+        a(3, arrayList2);
+        size = arrayList2.size();
+        i22 = max;
+        while (i23 < size) {
+        }
+        a(5, arrayList2);
+        size2 = arrayList2.size();
+        while (i24 < size2) {
+        }
+        a(1, arrayList2);
+        int i402 = iArr[0];
+        int i412 = iArr[1];
+        size3 = arrayList2.size();
+        int i422 = i402;
+        i25 = 0;
+        int i432 = 0;
+        while (i25 < size3) {
+        }
+        i27 = ((((width - paddingLeft) - paddingRight) / 2) + paddingLeft) - (i432 / 2);
+        int i472 = i432 + i27;
+        if (i27 >= i22) {
+        }
+        size4 = arrayList2.size();
+        while (i26 < size4) {
+        }
+        arrayList2.clear();
     }
 
-    private int getViewListMeasuredWidth(List list, int[] iArr) {
-        int i = iArr[0];
-        int i2 = iArr[1];
-        int size = list.size();
-        int i3 = 0;
-        int i4 = 0;
-        while (i3 < size) {
-            View view = (View) list.get(i3);
-            LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
-            int i5 = ((ViewGroup.MarginLayoutParams) layoutParams).leftMargin - i;
-            int i6 = ((ViewGroup.MarginLayoutParams) layoutParams).rightMargin - i2;
-            int max = Math.max(0, i5);
-            int max2 = Math.max(0, i6);
-            int max3 = Math.max(0, -i5);
-            int max4 = Math.max(0, -i6);
-            i4 += max + view.getMeasuredWidth() + max2;
-            i3++;
-            i2 = max4;
-            i = max3;
-        }
-        return i4;
-    }
-
-    private int layoutChildLeft(View view, int i, int[] iArr, int i2) {
-        LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
-        int i3 = ((ViewGroup.MarginLayoutParams) layoutParams).leftMargin - iArr[0];
-        int max = i + Math.max(0, i3);
-        iArr[0] = Math.max(0, -i3);
-        int childTop = getChildTop(view, i2);
-        int measuredWidth = view.getMeasuredWidth();
-        view.layout(max, childTop, max + measuredWidth, view.getMeasuredHeight() + childTop);
-        return max + measuredWidth + ((ViewGroup.MarginLayoutParams) layoutParams).rightMargin;
-    }
-
-    private int layoutChildRight(View view, int i, int[] iArr, int i2) {
-        LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
-        int i3 = ((ViewGroup.MarginLayoutParams) layoutParams).rightMargin - iArr[1];
-        int max = i - Math.max(0, i3);
-        iArr[1] = Math.max(0, -i3);
-        int childTop = getChildTop(view, i2);
-        int measuredWidth = view.getMeasuredWidth();
-        view.layout(max - measuredWidth, childTop, max, view.getMeasuredHeight() + childTop);
-        return max - (measuredWidth + ((ViewGroup.MarginLayoutParams) layoutParams).leftMargin);
-    }
-
-    private int getChildTop(View view, int i) {
-        LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
-        int measuredHeight = view.getMeasuredHeight();
-        int i2 = i > 0 ? (measuredHeight - i) / 2 : 0;
-        int childVerticalGravity = getChildVerticalGravity(layoutParams.gravity);
-        if (childVerticalGravity == 48) {
-            return getPaddingTop() - i2;
-        }
-        if (childVerticalGravity == 80) {
-            return (((getHeight() - getPaddingBottom()) - measuredHeight) - ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin) - i2;
-        }
-        int paddingTop = getPaddingTop();
-        int paddingBottom = getPaddingBottom();
-        int height = getHeight();
-        int i3 = (((height - paddingTop) - paddingBottom) - measuredHeight) / 2;
-        int i4 = ((ViewGroup.MarginLayoutParams) layoutParams).topMargin;
-        if (i3 < i4) {
-            i3 = i4;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        boolean a2 = w3.a(this);
+        int i19 = !a2 ? 1 : 0;
+        int i20 = 0;
+        if (s(this.d)) {
+            r(this.d, i10, 0, i11, this.A);
+            i12 = k(this.d) + this.d.getMeasuredWidth();
+            i13 = Math.max(0, l(this.d) + this.d.getMeasuredHeight());
+            i14 = View.combineMeasuredStates(0, this.d.getMeasuredState());
         } else {
-            int i5 = (((height - paddingBottom) - measuredHeight) - i3) - paddingTop;
-            int i6 = ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin;
-            if (i5 < i6) {
-                i3 = Math.max(0, i3 - (i6 - i5));
+            i12 = 0;
+            i13 = 0;
+            i14 = 0;
+        }
+        if (s(this.n)) {
+            r(this.n, i10, 0, i11, this.A);
+            i12 = k(this.n) + this.n.getMeasuredWidth();
+            i13 = Math.max(i13, l(this.n) + this.n.getMeasuredHeight());
+            i14 = View.combineMeasuredStates(i14, this.n.getMeasuredState());
+        }
+        int currentContentInsetStart = getCurrentContentInsetStart();
+        int max = Math.max(currentContentInsetStart, i12);
+        int max2 = Math.max(0, currentContentInsetStart - i12);
+        int[] iArr = this.R;
+        iArr[a2 ? 1 : 0] = max2;
+        if (s(this.a)) {
+            r(this.a, i10, max, i11, this.A);
+            i15 = k(this.a) + this.a.getMeasuredWidth();
+            i13 = Math.max(i13, l(this.a) + this.a.getMeasuredHeight());
+            i14 = View.combineMeasuredStates(i14, this.a.getMeasuredState());
+        } else {
+            i15 = 0;
+        }
+        int currentContentInsetEnd = getCurrentContentInsetEnd();
+        int max3 = max + Math.max(currentContentInsetEnd, i15);
+        iArr[i19] = Math.max(0, currentContentInsetEnd - i15);
+        if (s(this.r)) {
+            max3 += q(this.r, i10, max3, i11, 0, iArr);
+            i13 = Math.max(i13, l(this.r) + this.r.getMeasuredHeight());
+            i14 = View.combineMeasuredStates(i14, this.r.getMeasuredState());
+        }
+        if (s(this.e)) {
+            max3 += q(this.e, i10, max3, i11, 0, iArr);
+            i13 = Math.max(i13, l(this.e) + this.e.getMeasuredHeight());
+            i14 = View.combineMeasuredStates(i14, this.e.getMeasuredState());
+        }
+        int childCount = getChildCount();
+        for (int i21 = 0; i21 < childCount; i21++) {
+            View childAt = getChildAt(i21);
+            if (((l3) childAt.getLayoutParams()).b == 0 && s(childAt)) {
+                max3 += q(childAt, i10, max3, i11, 0, iArr);
+                int max4 = Math.max(i13, l(childAt) + childAt.getMeasuredHeight());
+                i14 = View.combineMeasuredStates(i14, childAt.getMeasuredState());
+                i13 = max4;
+            } else {
+                max3 = max3;
             }
         }
-        return paddingTop + i3;
-    }
-
-    private int getChildVerticalGravity(int i) {
-        int i2 = i & 112;
-        return (i2 == 16 || i2 == 48 || i2 == 80) ? i2 : this.mGravity & 112;
-    }
-
-    private void addCustomViewsWithGravity(List list, int i) {
-        boolean z = ViewCompat.getLayoutDirection(this) == 1;
-        int childCount = getChildCount();
-        int absoluteGravity = GravityCompat.getAbsoluteGravity(i, ViewCompat.getLayoutDirection(this));
-        list.clear();
-        if (!z) {
-            for (int i2 = 0; i2 < childCount; i2++) {
-                View childAt = getChildAt(i2);
-                LayoutParams layoutParams = (LayoutParams) childAt.getLayoutParams();
-                if (layoutParams.mViewType == 0 && shouldLayout(childAt) && getChildHorizontalGravity(layoutParams.gravity) == absoluteGravity) {
-                    list.add(childAt);
+        int i22 = max3;
+        int i23 = this.D + this.E;
+        int i24 = this.B + this.C;
+        if (s(this.b)) {
+            q(this.b, i10, i22 + i24, i11, i23, iArr);
+            int k10 = k(this.b) + this.b.getMeasuredWidth();
+            i18 = l(this.b) + this.b.getMeasuredHeight();
+            i16 = View.combineMeasuredStates(i14, this.b.getMeasuredState());
+            i17 = k10;
+        } else {
+            i16 = i14;
+            i17 = 0;
+            i18 = 0;
+        }
+        if (s(this.c)) {
+            i17 = Math.max(i17, q(this.c, i10, i22 + i24, i11, i23 + i18, iArr));
+            i18 += l(this.c) + this.c.getMeasuredHeight();
+            i16 = View.combineMeasuredStates(i16, this.c.getMeasuredState());
+        }
+        int max5 = Math.max(i13, i18);
+        int paddingRight = getPaddingRight() + getPaddingLeft() + i22 + i17;
+        int paddingBottom = getPaddingBottom() + getPaddingTop() + max5;
+        int resolveSizeAndState = View.resolveSizeAndState(Math.max(paddingRight, getSuggestedMinimumWidth()), i10, (-16777216) & i16);
+        int resolveSizeAndState2 = View.resolveSizeAndState(Math.max(paddingBottom, getSuggestedMinimumHeight()), i11, i16 << 16);
+        if (this.b0) {
+            int childCount2 = getChildCount();
+            for (int i25 = 0; i25 < childCount2; i25++) {
+                View childAt2 = getChildAt(i25);
+                if (!s(childAt2) || childAt2.getMeasuredWidth() <= 0 || childAt2.getMeasuredHeight() <= 0) {
                 }
             }
+            setMeasuredDimension(resolveSizeAndState, i20);
+        }
+        i20 = resolveSizeAndState2;
+        setMeasuredDimension(resolveSizeAndState, i20);
+    }
+
+    @Override // android.view.View
+    public final void onRestoreInstanceState(Parcelable parcelable) {
+        MenuItem findItem;
+        if (!(parcelable instanceof n3)) {
+            super.onRestoreInstanceState(parcelable);
             return;
         }
-        for (int i3 = childCount - 1; i3 >= 0; i3--) {
-            View childAt2 = getChildAt(i3);
-            LayoutParams layoutParams2 = (LayoutParams) childAt2.getLayoutParams();
-            if (layoutParams2.mViewType == 0 && shouldLayout(childAt2) && getChildHorizontalGravity(layoutParams2.gravity) == absoluteGravity) {
-                list.add(childAt2);
-            }
+        n3 n3Var = (n3) parcelable;
+        super.onRestoreInstanceState(n3Var.a);
+        ActionMenuView actionMenuView = this.a;
+        l lVar = actionMenuView != null ? actionMenuView.B : null;
+        int i10 = n3Var.c;
+        if (i10 != 0 && this.a0 != null && lVar != null && (findItem = lVar.findItem(i10)) != null) {
+            findItem.expandActionView();
+        }
+        if (n3Var.d) {
+            i3 i3Var = this.f0;
+            removeCallbacks(i3Var);
+            post(i3Var);
         }
     }
 
-    private int getChildHorizontalGravity(int i) {
-        int layoutDirection = ViewCompat.getLayoutDirection(this);
-        int absoluteGravity = GravityCompat.getAbsoluteGravity(i, layoutDirection) & 7;
-        return (absoluteGravity == 1 || absoluteGravity == 3 || absoluteGravity == 5) ? absoluteGravity : layoutDirection == 1 ? 5 : 3;
+    @Override // android.view.View
+    public final void onRtlPropertiesChanged(int i10) {
+        super.onRtlPropertiesChanged(i10);
+        d();
+        p2 p2Var = this.F;
+        boolean z10 = i10 == 1;
+        if (z10 == p2Var.g) {
+            return;
+        }
+        p2Var.g = z10;
+        if (!p2Var.h) {
+            p2Var.a = p2Var.e;
+            p2Var.b = p2Var.f;
+            return;
+        }
+        if (z10) {
+            int i11 = p2Var.d;
+            if (i11 == Integer.MIN_VALUE) {
+                i11 = p2Var.e;
+            }
+            p2Var.a = i11;
+            int i12 = p2Var.c;
+            if (i12 == Integer.MIN_VALUE) {
+                i12 = p2Var.f;
+            }
+            p2Var.b = i12;
+            return;
+        }
+        int i13 = p2Var.c;
+        if (i13 == Integer.MIN_VALUE) {
+            i13 = p2Var.e;
+        }
+        p2Var.a = i13;
+        int i14 = p2Var.d;
+        if (i14 == Integer.MIN_VALUE) {
+            i14 = p2Var.f;
+        }
+        p2Var.b = i14;
     }
 
-    private boolean shouldLayout(View view) {
+    @Override // android.view.View
+    public final Parcelable onSaveInstanceState() {
+        i iVar;
+        n nVar;
+        n3 n3Var = new n3(super.onSaveInstanceState());
+        k3 k3Var = this.a0;
+        if (k3Var != null && (nVar = k3Var.b) != null) {
+            n3Var.c = nVar.a;
+        }
+        ActionMenuView actionMenuView = this.a;
+        n3Var.d = (actionMenuView == null || (iVar = actionMenuView.F) == null || !iVar.g()) ? false : true;
+        return n3Var;
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            this.N = false;
+        }
+        if (!this.N) {
+            boolean onTouchEvent = super.onTouchEvent(motionEvent);
+            if (actionMasked == 0 && !onTouchEvent) {
+                this.N = true;
+            }
+        }
+        if (actionMasked != 1 && actionMasked != 3) {
+            return true;
+        }
+        this.N = false;
+        return true;
+    }
+
+    public final int p(View view, int i10, int i11, int[] iArr) {
+        l3 l3Var = (l3) view.getLayoutParams();
+        int i12 = ((ViewGroup.MarginLayoutParams) l3Var).rightMargin - iArr[1];
+        int max = i10 - Math.max(0, i12);
+        iArr[1] = Math.max(0, -i12);
+        int j10 = j(i11, view);
+        int measuredWidth = view.getMeasuredWidth();
+        view.layout(max - measuredWidth, j10, max, view.getMeasuredHeight() + j10);
+        return max - (measuredWidth + ((ViewGroup.MarginLayoutParams) l3Var).leftMargin);
+    }
+
+    public final int q(View view, int i10, int i11, int i12, int i13, int[] iArr) {
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        int i14 = marginLayoutParams.leftMargin - iArr[0];
+        int i15 = marginLayoutParams.rightMargin - iArr[1];
+        int max = Math.max(0, i15) + Math.max(0, i14);
+        iArr[0] = Math.max(0, -i14);
+        iArr[1] = Math.max(0, -i15);
+        view.measure(ViewGroup.getChildMeasureSpec(i10, getPaddingRight() + getPaddingLeft() + max + i11, marginLayoutParams.width), ViewGroup.getChildMeasureSpec(i12, getPaddingBottom() + getPaddingTop() + marginLayoutParams.topMargin + marginLayoutParams.bottomMargin + i13, marginLayoutParams.height));
+        return view.getMeasuredWidth() + max;
+    }
+
+    public final void r(View view, int i10, int i11, int i12, int i13) {
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        int childMeasureSpec = ViewGroup.getChildMeasureSpec(i10, getPaddingRight() + getPaddingLeft() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + i11, marginLayoutParams.width);
+        int childMeasureSpec2 = ViewGroup.getChildMeasureSpec(i12, getPaddingBottom() + getPaddingTop() + marginLayoutParams.topMargin + marginLayoutParams.bottomMargin, marginLayoutParams.height);
+        int mode = View.MeasureSpec.getMode(childMeasureSpec2);
+        if (mode != 1073741824 && i13 >= 0) {
+            if (mode != 0) {
+                i13 = Math.min(View.MeasureSpec.getSize(childMeasureSpec2), i13);
+            }
+            childMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30);
+        }
+        view.measure(childMeasureSpec, childMeasureSpec2);
+    }
+
+    public final boolean s(View view) {
         return (view == null || view.getParent() != this || view.getVisibility() == 8) ? false : true;
     }
 
-    private int getHorizontalMargins(View view) {
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        return MarginLayoutParamsCompat.getMarginStart(marginLayoutParams) + MarginLayoutParamsCompat.getMarginEnd(marginLayoutParams);
-    }
-
-    private int getVerticalMargins(View view) {
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        return marginLayoutParams.topMargin + marginLayoutParams.bottomMargin;
-    }
-
-    @Override // android.view.ViewGroup
-    public LayoutParams generateLayoutParams(AttributeSet attributeSet) {
-        return new LayoutParams(getContext(), attributeSet);
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.ViewGroup
-    public LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
-        if (layoutParams instanceof LayoutParams) {
-            return new LayoutParams((LayoutParams) layoutParams);
-        }
-        if (layoutParams instanceof ActionBar.LayoutParams) {
-            return new LayoutParams((ActionBar.LayoutParams) layoutParams);
-        }
-        if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
-            return new LayoutParams((ViewGroup.MarginLayoutParams) layoutParams);
-        }
-        return new LayoutParams(layoutParams);
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.ViewGroup
-    public LayoutParams generateDefaultLayoutParams() {
-        return new LayoutParams(-2, -2);
-    }
-
-    @Override // android.view.ViewGroup
-    protected boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
-        return super.checkLayoutParams(layoutParams) && (layoutParams instanceof LayoutParams);
-    }
-
-    public DecorToolbar getWrapper() {
-        if (this.mWrapper == null) {
-            this.mWrapper = new ToolbarWidgetWrapper(this, true);
-        }
-        return this.mWrapper;
-    }
-
-    void removeChildrenForExpandedActionView() {
-        for (int childCount = getChildCount() - 1; childCount >= 0; childCount--) {
-            View childAt = getChildAt(childCount);
-            if (((LayoutParams) childAt.getLayoutParams()).mViewType != 2 && childAt != this.mMenuView) {
-                removeViewAt(childCount);
-                this.mHiddenViews.add(childAt);
-            }
+    public void setBackInvokedCallbackEnabled(boolean z10) {
+        if (this.e0 != z10) {
+            this.e0 = z10;
+            t();
         }
     }
 
-    void addChildrenForExpandedActionView() {
-        for (int size = this.mHiddenViews.size() - 1; size >= 0; size--) {
-            addView((View) this.mHiddenViews.get(size));
-        }
-        this.mHiddenViews.clear();
+    public void setCollapseContentDescription(int i10) {
+        setCollapseContentDescription(i10 != 0 ? getContext().getText(i10) : null);
     }
 
-    private boolean isChildOrHidden(View view) {
-        return view.getParent() == this || this.mHiddenViews.contains(view);
+    public void setCollapseIcon(int i10) {
+        setCollapseIcon(o7.b(getContext(), i10));
     }
 
-    public void setCollapsible(boolean z) {
-        this.mCollapsible = z;
+    public void setCollapsible(boolean z10) {
+        this.b0 = z10;
         requestLayout();
     }
 
-    private void ensureContentInsets() {
-        if (this.mContentInsets == null) {
-            this.mContentInsets = new RtlSpacingHelper();
+    public void setContentInsetEndWithActions(int i10) {
+        if (i10 < 0) {
+            i10 = TLObject.FLAG_31;
+        }
+        if (i10 != this.H) {
+            this.H = i10;
+            if (getNavigationIcon() != null) {
+                requestLayout();
+            }
         }
     }
 
-    final TextView getTitleTextView() {
-        return this.mTitleTextView;
-    }
-
-    final TextView getSubtitleTextView() {
-        return this.mSubtitleTextView;
-    }
-
-    ActionMenuPresenter getOuterActionMenuPresenter() {
-        return this.mOuterActionMenuPresenter;
-    }
-
-    Context getPopupContext() {
-        return this.mPopupContext;
-    }
-
-    private ArrayList<MenuItem> getCurrentMenuItems() {
-        ArrayList<MenuItem> arrayList = new ArrayList<>();
-        Menu menu = getMenu();
-        for (int i = 0; i < menu.size(); i++) {
-            arrayList.add(menu.getItem(i));
+    public void setContentInsetStartWithNavigation(int i10) {
+        if (i10 < 0) {
+            i10 = TLObject.FLAG_31;
         }
-        return arrayList;
-    }
-
-    private void onCreateMenu() {
-        Menu menu = getMenu();
-        ArrayList<MenuItem> currentMenuItems = getCurrentMenuItems();
-        this.mMenuHostHelper.onCreateMenu(menu, getMenuInflater());
-        ArrayList<MenuItem> currentMenuItems2 = getCurrentMenuItems();
-        currentMenuItems2.removeAll(currentMenuItems);
-        this.mProvidedMenuItems = currentMenuItems2;
-    }
-
-    @Override // androidx.core.view.MenuHost
-    public void addMenuProvider(MenuProvider menuProvider) {
-        this.mMenuHostHelper.addMenuProvider(menuProvider);
-    }
-
-    @Override // androidx.core.view.MenuHost
-    public void removeMenuProvider(MenuProvider menuProvider) {
-        this.mMenuHostHelper.removeMenuProvider(menuProvider);
-    }
-
-    public void invalidateMenu() {
-        ArrayList arrayList = this.mProvidedMenuItems;
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            getMenu().removeItem(((MenuItem) obj).getItemId());
+        if (i10 != this.G) {
+            this.G = i10;
+            if (getNavigationIcon() != null) {
+                requestLayout();
+            }
         }
-        onCreateMenu();
     }
 
-    void updateBackInvokedCallbackState() {
+    public void setLogo(int i10) {
+        setLogo(o7.b(getContext(), i10));
+    }
+
+    public void setLogoDescription(int i10) {
+        setLogoDescription(getContext().getText(i10));
+    }
+
+    public void setNavigationContentDescription(int i10) {
+        setNavigationContentDescription(i10 != 0 ? getContext().getText(i10) : null);
+    }
+
+    public void setNavigationIcon(int i10) {
+        setNavigationIcon(o7.b(getContext(), i10));
+    }
+
+    public void setNavigationOnClickListener(View.OnClickListener onClickListener) {
+        g();
+        this.d.setOnClickListener(onClickListener);
+    }
+
+    public void setOverflowIcon(Drawable drawable) {
+        e();
+        this.a.setOverflowIcon(drawable);
+    }
+
+    public void setPopupTheme(int i10) {
+        if (this.v != i10) {
+            this.v = i10;
+            if (i10 == 0) {
+                this.s = getContext();
+            } else {
+                this.s = new ContextThemeWrapper(getContext(), i10);
+            }
+        }
+    }
+
+    public void setSubtitle(int i10) {
+        setSubtitle(getContext().getText(i10));
+    }
+
+    public void setSubtitleTextColor(int i10) {
+        setSubtitleTextColor(ColorStateList.valueOf(i10));
+    }
+
+    public void setTitle(int i10) {
+        setTitle(getContext().getText(i10));
+    }
+
+    public void setTitleMarginBottom(int i10) {
+        this.E = i10;
+        requestLayout();
+    }
+
+    public void setTitleMarginEnd(int i10) {
+        this.C = i10;
+        requestLayout();
+    }
+
+    public void setTitleMarginStart(int i10) {
+        this.B = i10;
+        requestLayout();
+    }
+
+    public void setTitleMarginTop(int i10) {
+        this.D = i10;
+        requestLayout();
+    }
+
+    public void setTitleTextColor(int i10) {
+        setTitleTextColor(ColorStateList.valueOf(i10));
+    }
+
+    public final void t() {
+        boolean z10;
         OnBackInvokedDispatcher onBackInvokedDispatcher;
         if (Build.VERSION.SDK_INT >= 33) {
-            OnBackInvokedDispatcher findOnBackInvokedDispatcher = Api33Impl.findOnBackInvokedDispatcher(this);
-            boolean z = hasExpandedActionView() && findOnBackInvokedDispatcher != null && ViewCompat.isAttachedToWindow(this) && this.mBackInvokedCallbackEnabled;
-            if (z && this.mBackInvokedDispatcher == null) {
-                if (this.mBackInvokedCallback == null) {
-                    this.mBackInvokedCallback = Api33Impl.newOnBackInvokedCallback(new Runnable() { // from class: androidx.appcompat.widget.Toolbar$$ExternalSyntheticLambda0
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            Toolbar.this.collapseActionView();
+            OnBackInvokedDispatcher a2 = j3.a(this);
+            k3 k3Var = this.a0;
+            int i10 = 0;
+            if (k3Var != null && k3Var.b != null && a2 != null) {
+                WeakHashMap weakHashMap = j0.a;
+                if (isAttachedToWindow() && this.e0) {
+                    z10 = true;
+                    if (!z10 && this.d0 == null) {
+                        if (this.c0 == null) {
+                            this.c0 = j3.b(new h3(this, i10));
                         }
-                    });
-                }
-                Api33Impl.tryRegisterOnBackInvokedCallback(findOnBackInvokedDispatcher, this.mBackInvokedCallback);
-                this.mBackInvokedDispatcher = findOnBackInvokedDispatcher;
-                return;
-            }
-            if (z || (onBackInvokedDispatcher = this.mBackInvokedDispatcher) == null) {
-                return;
-            }
-            Api33Impl.tryUnregisterOnBackInvokedCallback(onBackInvokedDispatcher, this.mBackInvokedCallback);
-            this.mBackInvokedDispatcher = null;
-        }
-    }
-
-    public static class LayoutParams extends ActionBar.LayoutParams {
-        int mViewType;
-
-        public LayoutParams(Context context, AttributeSet attributeSet) {
-            super(context, attributeSet);
-            this.mViewType = 0;
-        }
-
-        public LayoutParams(int i, int i2) {
-            super(i, i2);
-            this.mViewType = 0;
-            this.gravity = 8388627;
-        }
-
-        public LayoutParams(LayoutParams layoutParams) {
-            super((ActionBar.LayoutParams) layoutParams);
-            this.mViewType = 0;
-            this.mViewType = layoutParams.mViewType;
-        }
-
-        public LayoutParams(ActionBar.LayoutParams layoutParams) {
-            super(layoutParams);
-            this.mViewType = 0;
-        }
-
-        public LayoutParams(ViewGroup.MarginLayoutParams marginLayoutParams) {
-            super(marginLayoutParams);
-            this.mViewType = 0;
-            copyMarginsFromCompat(marginLayoutParams);
-        }
-
-        public LayoutParams(ViewGroup.LayoutParams layoutParams) {
-            super(layoutParams);
-            this.mViewType = 0;
-        }
-
-        void copyMarginsFromCompat(ViewGroup.MarginLayoutParams marginLayoutParams) {
-            ((ViewGroup.MarginLayoutParams) this).leftMargin = marginLayoutParams.leftMargin;
-            ((ViewGroup.MarginLayoutParams) this).topMargin = marginLayoutParams.topMargin;
-            ((ViewGroup.MarginLayoutParams) this).rightMargin = marginLayoutParams.rightMargin;
-            ((ViewGroup.MarginLayoutParams) this).bottomMargin = marginLayoutParams.bottomMargin;
-        }
-    }
-
-    public static class SavedState extends AbsSavedState {
-        public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.ClassLoaderCreator() { // from class: androidx.appcompat.widget.Toolbar.SavedState.1
-            @Override // android.os.Parcelable.ClassLoaderCreator
-            public SavedState createFromParcel(Parcel parcel, ClassLoader classLoader) {
-                return new SavedState(parcel, classLoader);
-            }
-
-            @Override // android.os.Parcelable.Creator
-            public SavedState createFromParcel(Parcel parcel) {
-                return new SavedState(parcel, null);
-            }
-
-            @Override // android.os.Parcelable.Creator
-            public SavedState[] newArray(int i) {
-                return new SavedState[i];
-            }
-        };
-        int expandedMenuItemId;
-        boolean isOverflowOpen;
-
-        public SavedState(Parcel parcel, ClassLoader classLoader) {
-            super(parcel, classLoader);
-            this.expandedMenuItemId = parcel.readInt();
-            this.isOverflowOpen = parcel.readInt() != 0;
-        }
-
-        public SavedState(Parcelable parcelable) {
-            super(parcelable);
-        }
-
-        @Override // androidx.customview.view.AbsSavedState, android.os.Parcelable
-        public void writeToParcel(Parcel parcel, int i) {
-            super.writeToParcel(parcel, i);
-            parcel.writeInt(this.expandedMenuItemId);
-            parcel.writeInt(this.isOverflowOpen ? 1 : 0);
-        }
-    }
-
-    private class ExpandedActionViewMenuPresenter implements MenuPresenter {
-        MenuItemImpl mCurrentExpandedItem;
-        MenuBuilder mMenu;
-
-        @Override // androidx.appcompat.view.menu.MenuPresenter
-        public boolean flagActionItems() {
-            return false;
-        }
-
-        @Override // androidx.appcompat.view.menu.MenuPresenter
-        public void onCloseMenu(MenuBuilder menuBuilder, boolean z) {
-        }
-
-        @Override // androidx.appcompat.view.menu.MenuPresenter
-        public boolean onSubMenuSelected(SubMenuBuilder subMenuBuilder) {
-            return false;
-        }
-
-        ExpandedActionViewMenuPresenter() {
-        }
-
-        @Override // androidx.appcompat.view.menu.MenuPresenter
-        public void initForMenu(Context context, MenuBuilder menuBuilder) {
-            MenuItemImpl menuItemImpl;
-            MenuBuilder menuBuilder2 = this.mMenu;
-            if (menuBuilder2 != null && (menuItemImpl = this.mCurrentExpandedItem) != null) {
-                menuBuilder2.collapseItemActionView(menuItemImpl);
-            }
-            this.mMenu = menuBuilder;
-        }
-
-        @Override // androidx.appcompat.view.menu.MenuPresenter
-        public void updateMenuView(boolean z) {
-            if (this.mCurrentExpandedItem != null) {
-                MenuBuilder menuBuilder = this.mMenu;
-                if (menuBuilder != null) {
-                    int size = menuBuilder.size();
-                    for (int i = 0; i < size; i++) {
-                        if (this.mMenu.getItem(i) == this.mCurrentExpandedItem) {
-                            return;
-                        }
+                        j3.c(a2, this.c0);
+                        this.d0 = a2;
+                        return;
                     }
+                    if (!z10 || (onBackInvokedDispatcher = this.d0) == null) {
+                    }
+                    j3.d(onBackInvokedDispatcher, this.c0);
+                    this.d0 = null;
+                    return;
                 }
-                collapseItemActionView(this.mMenu, this.mCurrentExpandedItem);
             }
-        }
-
-        @Override // androidx.appcompat.view.menu.MenuPresenter
-        public boolean expandItemActionView(MenuBuilder menuBuilder, MenuItemImpl menuItemImpl) {
-            Toolbar.this.ensureCollapseButtonView();
-            ViewParent parent = Toolbar.this.mCollapseButtonView.getParent();
-            Toolbar toolbar = Toolbar.this;
-            if (parent != toolbar) {
-                if (parent instanceof ViewGroup) {
-                    ((ViewGroup) parent).removeView(toolbar.mCollapseButtonView);
-                }
-                Toolbar toolbar2 = Toolbar.this;
-                toolbar2.addView(toolbar2.mCollapseButtonView);
+            z10 = false;
+            if (!z10) {
             }
-            Toolbar.this.mExpandedActionView = menuItemImpl.getActionView();
-            this.mCurrentExpandedItem = menuItemImpl;
-            ViewParent parent2 = Toolbar.this.mExpandedActionView.getParent();
-            Toolbar toolbar3 = Toolbar.this;
-            if (parent2 != toolbar3) {
-                if (parent2 instanceof ViewGroup) {
-                    ((ViewGroup) parent2).removeView(toolbar3.mExpandedActionView);
-                }
-                LayoutParams generateDefaultLayoutParams = Toolbar.this.generateDefaultLayoutParams();
-                Toolbar toolbar4 = Toolbar.this;
-                generateDefaultLayoutParams.gravity = (toolbar4.mButtonGravity & 112) | 8388611;
-                generateDefaultLayoutParams.mViewType = 2;
-                toolbar4.mExpandedActionView.setLayoutParams(generateDefaultLayoutParams);
-                Toolbar toolbar5 = Toolbar.this;
-                toolbar5.addView(toolbar5.mExpandedActionView);
+            if (z10) {
             }
-            Toolbar.this.removeChildrenForExpandedActionView();
-            Toolbar.this.requestLayout();
-            menuItemImpl.setActionViewExpanded(true);
-            KeyEvent.Callback callback = Toolbar.this.mExpandedActionView;
-            if (callback instanceof CollapsibleActionView) {
-                ((CollapsibleActionView) callback).onActionViewExpanded();
-            }
-            Toolbar.this.updateBackInvokedCallbackState();
-            return true;
-        }
-
-        @Override // androidx.appcompat.view.menu.MenuPresenter
-        public boolean collapseItemActionView(MenuBuilder menuBuilder, MenuItemImpl menuItemImpl) {
-            KeyEvent.Callback callback = Toolbar.this.mExpandedActionView;
-            if (callback instanceof CollapsibleActionView) {
-                ((CollapsibleActionView) callback).onActionViewCollapsed();
-            }
-            Toolbar toolbar = Toolbar.this;
-            toolbar.removeView(toolbar.mExpandedActionView);
-            Toolbar toolbar2 = Toolbar.this;
-            toolbar2.removeView(toolbar2.mCollapseButtonView);
-            Toolbar toolbar3 = Toolbar.this;
-            toolbar3.mExpandedActionView = null;
-            toolbar3.addChildrenForExpandedActionView();
-            this.mCurrentExpandedItem = null;
-            Toolbar.this.requestLayout();
-            menuItemImpl.setActionViewExpanded(false);
-            Toolbar.this.updateBackInvokedCallbackState();
-            return true;
         }
     }
 
-    static class Api33Impl {
-        static void tryRegisterOnBackInvokedCallback(Object obj, Object obj2) {
-            ((OnBackInvokedDispatcher) obj).registerOnBackInvokedCallback(MediaController.VIDEO_BITRATE_480, (OnBackInvokedCallback) obj2);
-        }
+    @Override // android.view.ViewGroup
+    public final ViewGroup.LayoutParams generateLayoutParams(AttributeSet attributeSet) {
+        Context context = getContext();
+        l3 l3Var = new l3(context, attributeSet);
+        l3Var.a = 0;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.b);
+        l3Var.a = obtainStyledAttributes.getInt(0, 0);
+        obtainStyledAttributes.recycle();
+        l3Var.b = 0;
+        return l3Var;
+    }
 
-        static void tryUnregisterOnBackInvokedCallback(Object obj, Object obj2) {
-            ((OnBackInvokedDispatcher) obj).unregisterOnBackInvokedCallback((OnBackInvokedCallback) obj2);
+    public void setCollapseContentDescription(CharSequence charSequence) {
+        if (!TextUtils.isEmpty(charSequence)) {
+            c();
         }
-
-        static OnBackInvokedDispatcher findOnBackInvokedDispatcher(View view) {
-            return view.findOnBackInvokedDispatcher();
+        v vVar = this.n;
+        if (vVar != null) {
+            vVar.setContentDescription(charSequence);
         }
+    }
 
-        static OnBackInvokedCallback newOnBackInvokedCallback(final Runnable runnable) {
-            Objects.requireNonNull(runnable);
-            return new OnBackInvokedCallback() { // from class: androidx.appcompat.widget.Toolbar$Api33Impl$$ExternalSyntheticLambda0
-                @Override // android.window.OnBackInvokedCallback
-                public final void onBackInvoked() {
-                    runnable.run();
+    public void setCollapseIcon(Drawable drawable) {
+        if (drawable != null) {
+            c();
+            this.n.setImageDrawable(drawable);
+        } else {
+            v vVar = this.n;
+            if (vVar != null) {
+                vVar.setImageDrawable(this.f);
+            }
+        }
+    }
+
+    public void setLogo(Drawable drawable) {
+        if (drawable != null) {
+            if (this.e == null) {
+                this.e = new w(getContext(), null, 0);
+            }
+            if (!n(this.e)) {
+                b(this.e, true);
+            }
+        } else {
+            w wVar = this.e;
+            if (wVar != null && n(wVar)) {
+                removeView(this.e);
+                this.Q.remove(this.e);
+            }
+        }
+        w wVar2 = this.e;
+        if (wVar2 != null) {
+            wVar2.setImageDrawable(drawable);
+        }
+    }
+
+    public void setLogoDescription(CharSequence charSequence) {
+        if (!TextUtils.isEmpty(charSequence) && this.e == null) {
+            this.e = new w(getContext(), null, 0);
+        }
+        w wVar = this.e;
+        if (wVar != null) {
+            wVar.setContentDescription(charSequence);
+        }
+    }
+
+    public void setNavigationContentDescription(CharSequence charSequence) {
+        if (!TextUtils.isEmpty(charSequence)) {
+            g();
+        }
+        v vVar = this.d;
+        if (vVar != null) {
+            vVar.setContentDescription(charSequence);
+            m.a(this.d, charSequence);
+        }
+    }
+
+    public void setNavigationIcon(Drawable drawable) {
+        if (drawable != null) {
+            g();
+            if (!n(this.d)) {
+                b(this.d, true);
+            }
+        } else {
+            v vVar = this.d;
+            if (vVar != null && n(vVar)) {
+                removeView(this.d);
+                this.Q.remove(this.d);
+            }
+        }
+        v vVar2 = this.d;
+        if (vVar2 != null) {
+            vVar2.setImageDrawable(drawable);
+        }
+    }
+
+    public void setSubtitle(CharSequence charSequence) {
+        if (TextUtils.isEmpty(charSequence)) {
+            a1 a1Var = this.c;
+            if (a1Var != null && n(a1Var)) {
+                removeView(this.c);
+                this.Q.remove(this.c);
+            }
+        } else {
+            if (this.c == null) {
+                Context context = getContext();
+                a1 a1Var2 = new a1(context, null);
+                this.c = a1Var2;
+                a1Var2.setSingleLine();
+                this.c.setEllipsize(TextUtils.TruncateAt.END);
+                int i10 = this.x;
+                if (i10 != 0) {
+                    this.c.setTextAppearance(context, i10);
                 }
-            };
+                ColorStateList colorStateList = this.M;
+                if (colorStateList != null) {
+                    this.c.setTextColor(colorStateList);
+                }
+            }
+            if (!n(this.c)) {
+                b(this.c, true);
+            }
         }
+        a1 a1Var3 = this.c;
+        if (a1Var3 != null) {
+            a1Var3.setText(charSequence);
+        }
+        this.K = charSequence;
+    }
+
+    public void setSubtitleTextColor(ColorStateList colorStateList) {
+        this.M = colorStateList;
+        a1 a1Var = this.c;
+        if (a1Var != null) {
+            a1Var.setTextColor(colorStateList);
+        }
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        if (TextUtils.isEmpty(charSequence)) {
+            a1 a1Var = this.b;
+            if (a1Var != null && n(a1Var)) {
+                removeView(this.b);
+                this.Q.remove(this.b);
+            }
+        } else {
+            if (this.b == null) {
+                Context context = getContext();
+                a1 a1Var2 = new a1(context, null);
+                this.b = a1Var2;
+                a1Var2.setSingleLine();
+                this.b.setEllipsize(TextUtils.TruncateAt.END);
+                int i10 = this.w;
+                if (i10 != 0) {
+                    this.b.setTextAppearance(context, i10);
+                }
+                ColorStateList colorStateList = this.L;
+                if (colorStateList != null) {
+                    this.b.setTextColor(colorStateList);
+                }
+            }
+            if (!n(this.b)) {
+                b(this.b, true);
+            }
+        }
+        a1 a1Var3 = this.b;
+        if (a1Var3 != null) {
+            a1Var3.setText(charSequence);
+        }
+        this.J = charSequence;
+    }
+
+    public void setTitleTextColor(ColorStateList colorStateList) {
+        this.L = colorStateList;
+        a1 a1Var = this.b;
+        if (a1Var != null) {
+            a1Var.setTextColor(colorStateList);
+        }
+    }
+
+    public void setOnMenuItemClickListener(m3 m3Var) {
     }
 }

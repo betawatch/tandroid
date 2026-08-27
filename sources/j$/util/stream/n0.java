@@ -1,31 +1,51 @@
 package j$.util.stream;
 
-import java.util.function.DoubleConsumer;
-import java.util.function.DoublePredicate;
+import j$.util.Spliterator;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public final class n0 extends o0 implements d2 {
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void E(Double d) {
-        r1.e(this, d);
-    }
+public final class n0 extends p0 implements i5 {
+    public final LongConsumer b;
 
     @Override // java.util.function.Consumer
-    public final /* bridge */ /* synthetic */ void accept(Object obj) {
-        E((Double) obj);
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void x(Object obj) {
+        x((Long) obj);
     }
 
-    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
-        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.d(this, longConsumer);
     }
 
-    @Override // j$.util.stream.o0, j$.util.stream.g2
-    public final void accept(double d) {
-        if (this.a) {
-            return;
-        }
-        DoublePredicate doublePredicate = null;
-        doublePredicate.test(d);
-        throw null;
+    @Override // java.util.function.Supplier
+    public final /* bridge */ /* synthetic */ Object get() {
+        return null;
+    }
+
+    @Override // j$.util.stream.i5
+    public final /* synthetic */ void x(Long l10) {
+        t3.H(this, l10);
+    }
+
+    @Override // j$.util.stream.b8
+    public final Object f(a aVar, Spliterator spliterator) {
+        aVar.F0(spliterator, this);
+        return null;
+    }
+
+    @Override // j$.util.stream.b8
+    public final /* bridge */ /* synthetic */ Object i(t3 t3Var, Spliterator spliterator) {
+        a(t3Var, spliterator);
+        return null;
+    }
+
+    public n0(LongConsumer longConsumer, boolean z10) {
+        super(z10);
+        this.b = longConsumer;
+    }
+
+    @Override // j$.util.stream.p0, j$.util.stream.j5
+    public final void accept(long j10) {
+        this.b.accept(j10);
     }
 }

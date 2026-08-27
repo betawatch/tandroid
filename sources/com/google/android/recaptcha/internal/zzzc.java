@@ -1,19 +1,10 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzzc extends zzsh implements zztt {
     private zzzc() {
         throw null;
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzzc(zzzv zzzvVar) {
-        super(r1);
-        zzzd zzzdVar;
-        zzzdVar = zzzd.zzb;
     }
 
     public final zzzc zze(String str) {
@@ -22,15 +13,15 @@ public final class zzzc extends zzsh implements zztt {
         return this;
     }
 
-    public final zzzc zzf(boolean z) {
+    public final zzzc zzf(boolean z10) {
         zzn();
-        ((zzzd) this.zza).zzm = z;
+        ((zzzd) this.zza).zzm = z10;
         return this;
     }
 
-    public final zzzc zzq(boolean z) {
+    public final zzzc zzq(boolean z10) {
         zzn();
-        ((zzzd) this.zza).zzn = z;
+        ((zzzd) this.zza).zzn = z10;
         return this;
     }
 
@@ -70,9 +61,19 @@ public final class zzzc extends zzsh implements zztt {
         return this;
     }
 
-    public final zzzc zzx(int i) {
+    public final zzzc zzx(int i10) {
         zzn();
-        ((zzzd) this.zza).zzi = i - 2;
+        ((zzzd) this.zza).zzi = i10 - 2;
         return this;
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public /* synthetic */ zzzc(zzzv zzzvVar) {
+        super(r1);
+        zzzd zzzdVar;
+        zzzdVar = zzzd.zzb;
     }
 }

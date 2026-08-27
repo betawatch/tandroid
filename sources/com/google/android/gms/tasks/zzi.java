@@ -1,11 +1,12 @@
 package com.google.android.gms.tasks;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzi implements Runnable {
     final /* synthetic */ Task zza;
     final /* synthetic */ zzj zzb;
 
-    zzi(zzj zzjVar, Task task) {
+    public zzi(zzj zzjVar, Task task) {
         this.zzb = zzjVar;
         this.zza = task;
     }

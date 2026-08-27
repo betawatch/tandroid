@@ -1,23 +1,22 @@
 package com.google.android.recaptcha.internal;
 
 import android.app.Application;
-import android.content.ContentResolver;
-import com.google.android.gms.common.GoogleApiAvailabilityLight;
 import com.google.android.play.core.integrity.IntegrityManagerFactory;
-import com.google.android.play.core.integrity.StandardIntegrityManager;
 import java.util.Map;
-import kotlin.collections.CollectionsKt;
+import qc.h;
+import v5.e;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzdp {
     /* JADX WARN: Multi-variable type inference failed */
     public static final void zza(Application application) {
         Map map;
         Map map2;
-        int i = zzby.zza;
-        zzbz[] zzbzVarArr = {new zzbz(zzcc.class.getName().hashCode(), new zzcc(null, 1, null)), new zzbz(zziq.class.getName().hashCode(), new zziq()), new zzbz(zzch.class.getName().hashCode(), new zzch()), new zzbz(zzmb.class.getName().hashCode(), new zzmb()), new zzbz(zzcy.class.getName().hashCode(), new zzcy("https://www.recaptcha.net/recaptcha/api3")), new zzbz(zzhm.class.getName().hashCode(), new zzhm(null, 1, null)), new zzbz(zzig.class.getName().hashCode(), new zzig(true)), new zzbz(Application.class.getName().hashCode(), application), new zzbz(zzci.class.getName().hashCode(), new zzci(application)), new zzbz(zzif.class.getName().hashCode(), new zzif()), new zzbz(zzbt.class.getName().hashCode(), new zzcq(application)), new zzbz(zzhn.class.getName().hashCode(), new zzhp()), new zzbz(zzht.class.getName().hashCode(), new zzht()), new zzbz(zzib.class.getName().hashCode(), new zzib()), new zzbz(zzda.class.getName().hashCode(), new zzcz(GoogleApiAvailabilityLight.getInstance())), new zzbz(zzcr.class.getName().hashCode(), new zzcm()), new zzbz(zzha.class.getName().hashCode(), new zzhc()), new zzbz(zzgs.class.getName().hashCode(), new zzgz(application)), new zzbz(ContentResolver.class.getName().hashCode(), application.getContentResolver()), new zzbz(StandardIntegrityManager.class.getName().hashCode(), IntegrityManagerFactory.createStandard(application)), new zzbz(zzi.class.getName().hashCode(), new zzi(CollectionsKt.listOf((Object[]) new zzg[]{new zzaj(null, 1, 0 == true ? 1 : 0), new zzu(0 == true ? 1 : 0, 0 == true ? 1 : 0, 3, 0 == true ? 1 : 0), new zzly()}))), new zzbz(zzdk.class.getName().hashCode(), new zzdk()), new zzbz(zzgh.class.getName().hashCode(), new zzgh()), new zzbz(zzq.class.getName().hashCode(), new zzq()), new zzbz(zzbr.class.getName().hashCode(), new zzbr(new zza())), new zzbz(zzbq.class.getName().hashCode(), new zzbq())};
-        for (int i2 = 0; i2 < 26; i2++) {
-            zzbz zzbzVar = zzbzVarArr[i2];
+        int i10 = zzby.zza;
+        zzbz[] zzbzVarArr = {new zzbz(915034691, new zzcc(null, 1, null)), new zzbz(915034891, new zziq()), new zzbz(915034696, new zzch()), new zzbz(915035000, new zzmb()), new zzbz(915034713, new zzcy("https://www.recaptcha.net/recaptcha/api3")), new zzbz(915034856, new zzhm(null, 1, null)), new zzbz(915034881, new zzig(true)), new zzbz(735120228, application), new zzbz(915034697, new zzci(application)), new zzbz(915034880, new zzif()), new zzbz(915034677, new zzcq(application)), new zzbz(915034857, new zzhp()), new zzbz(915034863, new zzht()), new zzbz(915034876, new zzib()), new zzbz(915034720, new zzcz(e.b)), new zzbz(915034706, new zzcm()), new zzbz(915034844, new zzhc()), new zzbz(915034831, new zzgz(application)), new zzbz(1931397515, application.getContentResolver()), new zzbz(-800379174, IntegrityManagerFactory.createStandard(application)), new zzbz(-940314074, new zzi(h.c(new zzaj(null, 1, 0 == true ? 1 : 0), new zzu(null, null, 3, null), new zzly()))), new zzbz(915034730, new zzdk()), new zzbz(915034820, new zzgh()), new zzbz(-940314066, new zzq()), new zzbz(915034675, new zzbr(new zza())), new zzbz(915034674, new zzbq())};
+        for (int i11 = 0; i11 < 26; i11++) {
+            zzbz zzbzVar = zzbzVarArr[i11];
             map = zzby.zzc;
             if (!map.containsKey(Integer.valueOf(zzbzVar.zza()))) {
                 map2 = zzby.zzc;

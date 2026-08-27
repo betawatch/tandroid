@@ -1,23 +1,25 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class CharAtom extends CharSymbol {
     private final char c;
     private boolean mathMode;
     private String textStyle;
 
-    public CharAtom(char c, String str, boolean z) {
-        this.c = c;
+    public CharAtom(char c10, String str, boolean z10) {
+        this.c = c10;
         this.textStyle = str;
-        this.mathMode = z;
+        this.mathMode = z10;
     }
 
-    public CharAtom(char c, String str) {
-        this(c, str, false);
-    }
-
-    public boolean isMathMode() {
-        return this.mathMode;
+    private Char getChar(TeXFont teXFont, int i10, boolean z10) {
+        char c10 = this.c;
+        if (z10 && Character.isLowerCase(c10)) {
+            c10 = Character.toUpperCase(this.c);
+        }
+        String str = this.textStyle;
+        return str == null ? teXFont.getDefaultChar(c10, i10) : teXFont.getChar(c10, str, i10);
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
@@ -31,28 +33,24 @@ public class CharAtom extends CharSymbol {
         return (smallCap && Character.isLowerCase(this.c)) ? new ScaleBox(charBox, 0.800000011920929d, 0.800000011920929d) : charBox;
     }
 
-    public char getCharacter() {
-        return this.c;
-    }
-
-    private Char getChar(TeXFont teXFont, int i, boolean z) {
-        char c = this.c;
-        if (z && Character.isLowerCase(c)) {
-            c = Character.toUpperCase(this.c);
-        }
-        String str = this.textStyle;
-        if (str == null) {
-            return teXFont.getDefaultChar(c, i);
-        }
-        return teXFont.getChar(c, str, i);
-    }
-
     @Override // org.scilab.forge.jlatexmath.CharSymbol
     public CharFont getCharFont(TeXFont teXFont) {
         return getChar(teXFont, 0, false).getCharFont();
     }
 
+    public char getCharacter() {
+        return this.c;
+    }
+
+    public boolean isMathMode() {
+        return this.mathMode;
+    }
+
     public String toString() {
         return "CharAtom: '" + this.c + "'";
+    }
+
+    public CharAtom(char c10, String str) {
+        this(c10, str, false);
     }
 }

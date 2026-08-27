@@ -1,85 +1,118 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.concurrent.ConcurrentHashMap;
 import j$.util.function.Consumer$-CC;
-import java.util.Comparator;
 import java.util.function.Consumer;
+import java.util.function.IntConsumer;
+import java.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
-public final class b3 implements Spliterator, Consumer {
-    public static final Object d = new Object();
-    public final Spliterator a;
-    public final ConcurrentHashMap b;
-    public Object c;
+public final class b3 extends o6 implements a2, u1 {
+    @Override // j$.util.stream.j5
+    public final /* synthetic */ void accept(double d) {
+        t3.C();
+        throw null;
+    }
+
+    @Override // j$.util.stream.j5
+    public final /* synthetic */ void accept(long j10) {
+        t3.K();
+        throw null;
+    }
+
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void x(Object obj) {
+        p((Integer) obj);
+    }
 
     public final /* synthetic */ Consumer andThen(Consumer consumer) {
         return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.n(this);
+    @Override // j$.util.stream.u1, j$.util.stream.w1
+    public final a2 build() {
+        return this;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.com.android.tools.r8.a.p(this, i);
+    @Override // j$.util.stream.w1
+    public final e2 build() {
+        return this;
     }
 
-    public b3(Spliterator spliterator, ConcurrentHashMap concurrentHashMap) {
-        this.a = spliterator;
-        this.b = concurrentHashMap;
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
+        return t3.T(this, j10, j11);
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void s(Object obj) {
-        this.c = obj;
+    @Override // j$.util.stream.j5
+    public final void end() {
     }
 
-    @Override // j$.util.Spliterator
-    public final boolean tryAdvance(Consumer consumer) {
-        while (this.a.tryAdvance(this)) {
-            Object obj = this.c;
-            if (obj == null) {
-                obj = d;
-            }
-            if (this.b.putIfAbsent(obj, Boolean.TRUE) == null) {
-                consumer.s(this.c);
-                this.c = null;
-                return true;
-            }
-        }
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ Object[] g(IntFunction intFunction) {
+        return t3.L(this, intFunction);
+    }
+
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ int h() {
+        return 0;
+    }
+
+    @Override // j$.util.stream.h5
+    public final /* synthetic */ void p(Integer num) {
+        t3.F(this, num);
+    }
+
+    @Override // j$.util.stream.j5
+    public final /* synthetic */ boolean q() {
         return false;
     }
 
-    @Override // j$.util.Spliterator
-    public final void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining(new j$.util.concurrent.t(8, this, consumer));
+    @Override // j$.util.stream.e2
+    public final /* bridge */ /* synthetic */ e2 a(int i10) {
+        a(i10);
+        throw null;
     }
 
-    @Override // j$.util.Spliterator
-    public final Spliterator trySplit() {
-        Spliterator trySplit = this.a.trySplit();
-        if (trySplit != null) {
-            return new b3(trySplit, this.b);
-        }
-        return null;
+    @Override // j$.util.stream.d2, j$.util.stream.e2
+    public final d2 a(int i10) {
+        throw new IndexOutOfBoundsException();
     }
 
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        return this.a.estimateSize();
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ void f(Object[] objArr, int i10) {
+        t3.N(this, (Integer[]) objArr, i10);
     }
 
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return (this.a.characteristics() & (-16469)) | 1;
+    @Override // j$.util.stream.s6, j$.util.stream.d2
+    public final void c(int i10, Object obj) {
+        super.c(i10, (int[]) obj);
     }
 
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        return this.a.getComparator();
+    @Override // j$.util.stream.s6, j$.util.stream.d2
+    public final void d(Object obj) {
+        super.d((IntConsumer) obj);
+    }
+
+    @Override // j$.util.stream.o6, j$.util.stream.s6, java.lang.Iterable, j$.util.stream.e2
+    public final Spliterator spliterator() {
+        return super.spliterator();
+    }
+
+    @Override // j$.util.stream.o6, j$.util.stream.s6, java.lang.Iterable, j$.util.stream.e2
+    public final j$.util.d1 spliterator() {
+        return super.spliterator();
+    }
+
+    @Override // j$.util.stream.j5
+    public final void o(long j10) {
+        clear();
+        l(j10);
+    }
+
+    @Override // j$.util.stream.s6, j$.util.stream.d2
+    public final Object b() {
+        return (int[]) super.b();
     }
 }

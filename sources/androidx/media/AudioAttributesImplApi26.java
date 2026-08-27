@@ -1,13 +1,6 @@
 package androidx.media;
 
-import android.media.AudioAttributes;
-
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class AudioAttributesImplApi26 extends AudioAttributesImplApi21 {
-    public AudioAttributesImplApi26() {
-    }
-
-    AudioAttributesImplApi26(AudioAttributes audioAttributes) {
-        super(audioAttributes, -1);
-    }
 }

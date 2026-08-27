@@ -5,15 +5,16 @@ import java.io.StringWriter;
 import java.util.EnumSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class Logging {
     private static final Logger fallbackLogger = createFallbackLogger();
     private static Loggable loggable;
     private static Severity loggableSeverity;
     private static volatile boolean loggingEnabled;
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public enum Severity {
         LS_VERBOSE,
         LS_INFO,
@@ -22,35 +23,7 @@ public class Logging {
         LS_NONE
     }
 
-    @Deprecated
-    public static void enableTracing(String str, EnumSet<TraceLevel> enumSet) {
-    }
-
-    private static native void nativeEnableLogThreads();
-
-    private static native void nativeEnableLogTimeStamps();
-
-    private static native void nativeEnableLogToDebugOutput(int i);
-
-    private static native void nativeLog(int i, String str, String str2);
-
-    private static Logger createFallbackLogger() {
-        Logger logger = Logger.getLogger("org.webrtc.Logging");
-        logger.setLevel(Level.ALL);
-        return logger;
-    }
-
-    static void injectLoggable(Loggable loggable2, Severity severity) {
-        if (loggable2 != null) {
-            loggable = loggable2;
-            loggableSeverity = severity;
-        }
-    }
-
-    static void deleteInjectedLoggable() {
-        loggable = null;
-    }
-
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     @Deprecated
     public enum TraceLevel {
         TRACE_NONE(0),
@@ -59,7 +32,7 @@ public class Logging {
         TRACE_ERROR(4),
         TRACE_CRITICAL(8),
         TRACE_APICALL(16),
-        TRACE_DEFAULT(NotificationCenter.didReceiveSmsCode),
+        TRACE_DEFAULT(255),
         TRACE_MODULECALL(32),
         TRACE_MEMORY(256),
         TRACE_TIMER(512),
@@ -71,9 +44,27 @@ public class Logging {
 
         public final int level;
 
-        TraceLevel(int i) {
-            this.level = i;
+        TraceLevel(int i10) {
+            this.level = i10;
         }
+    }
+
+    private static Logger createFallbackLogger() {
+        Logger logger = Logger.getLogger("org.webrtc.Logging");
+        logger.setLevel(Level.ALL);
+        return logger;
+    }
+
+    public static void d(String str, String str2) {
+        log(Severity.LS_INFO, str, str2);
+    }
+
+    public static void deleteInjectedLoggable() {
+        loggable = null;
+    }
+
+    public static void e(String str, String str2) {
+        log(Severity.LS_ERROR, str, str2);
     }
 
     public static void enableLogThreads() {
@@ -94,8 +85,23 @@ public class Logging {
         }
     }
 
+    private static String getStackTraceString(Throwable th) {
+        if (th == null) {
+            return "";
+        }
+        StringWriter stringWriter = new StringWriter();
+        th.printStackTrace(new PrintWriter(stringWriter));
+        return stringWriter.toString();
+    }
+
+    public static void injectLoggable(Loggable loggable2, Severity severity) {
+        if (loggable2 != null) {
+            loggable = loggable2;
+            loggableSeverity = severity;
+        }
+    }
+
     public static void log(Severity severity, String str, String str2) {
-        Level level;
         if (str == null || str2 == null) {
             throw new IllegalArgumentException("Logging tag or message may not be null.");
         }
@@ -104,31 +110,27 @@ public class Logging {
                 return;
             }
             loggable.onLogMessage(str2, severity, str);
-            return;
-        }
-        if (loggingEnabled) {
-            nativeLog(severity.ordinal(), str, str2);
-            return;
-        }
-        int ordinal = severity.ordinal();
-        if (ordinal == 1) {
-            level = Level.INFO;
-        } else if (ordinal == 2) {
-            level = Level.WARNING;
-        } else if (ordinal == 3) {
-            level = Level.SEVERE;
         } else {
-            level = Level.FINE;
+            if (loggingEnabled) {
+                nativeLog(severity.ordinal(), str, str2);
+                return;
+            }
+            int ordinal = severity.ordinal();
+            Level level = ordinal != 1 ? ordinal != 2 ? ordinal != 3 ? Level.FINE : Level.SEVERE : Level.WARNING : Level.INFO;
+            fallbackLogger.log(level, str + ": " + str2);
         }
-        fallbackLogger.log(level, str + ": " + str2);
     }
 
-    public static void d(String str, String str2) {
-        log(Severity.LS_INFO, str, str2);
-    }
+    private static native void nativeEnableLogThreads();
 
-    public static void e(String str, String str2) {
-        log(Severity.LS_ERROR, str, str2);
+    private static native void nativeEnableLogTimeStamps();
+
+    private static native void nativeEnableLogToDebugOutput(int i10);
+
+    private static native void nativeLog(int i10, String str, String str2);
+
+    public static void v(String str, String str2) {
+        log(Severity.LS_VERBOSE, str, str2);
     }
 
     public static void w(String str, String str2) {
@@ -149,16 +151,7 @@ public class Logging {
         log(severity, str, getStackTraceString(th));
     }
 
-    public static void v(String str, String str2) {
-        log(Severity.LS_VERBOSE, str, str2);
-    }
-
-    private static String getStackTraceString(Throwable th) {
-        if (th == null) {
-            return "";
-        }
-        StringWriter stringWriter = new StringWriter();
-        th.printStackTrace(new PrintWriter(stringWriter));
-        return stringWriter.toString();
+    @Deprecated
+    public static void enableTracing(String str, EnumSet<TraceLevel> enumSet) {
     }
 }

@@ -1,13 +1,15 @@
 package com.google.android.exoplayer2.decoder;
 
-import com.google.android.exoplayer2.Format;
-import com.google.android.exoplayer2.decoder.DecoderOutputBuffer;
+import h3.t0;
 import java.nio.ByteBuffer;
+import k3.j;
+import k3.k;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class VideoDecoderOutputBuffer extends DecoderOutputBuffer {
+public class VideoDecoderOutputBuffer extends k {
     public static final int COLORSPACE_BT2020 = 3;
     public static final int COLORSPACE_BT601 = 1;
     public static final int COLORSPACE_BT709 = 2;
@@ -15,60 +17,67 @@ public class VideoDecoderOutputBuffer extends DecoderOutputBuffer {
     public int colorspace;
     public ByteBuffer data;
     public int decoderPrivate;
-    public Format format;
+    public t0 format;
     public int height;
     public int mode;
-    private final DecoderOutputBuffer.Owner owner;
+    private final j owner;
     public ByteBuffer supplementalData;
     public int width;
     public ByteBuffer[] yuvPlanes;
     public int[] yuvStrides;
 
-    public VideoDecoderOutputBuffer(DecoderOutputBuffer.Owner owner) {
-        this.owner = owner;
+    public VideoDecoderOutputBuffer(j jVar) {
+        this.owner = jVar;
     }
 
-    @Override // com.google.android.exoplayer2.decoder.DecoderOutputBuffer
-    public void release() {
-        this.owner.releaseOutputBuffer(this);
+    private static boolean isSafeToMultiply(int i10, int i11) {
+        if (i10 < 0 || i11 < 0) {
+            return false;
+        }
+        return i11 <= 0 || i10 < ConnectionsManager.DEFAULT_DATACENTER_ID / i11;
     }
 
-    public void init(long j, int i, ByteBuffer byteBuffer) {
-        this.timeUs = j;
-        this.mode = i;
-        if (byteBuffer != null && byteBuffer.hasRemaining()) {
-            addFlag(TLObject.FLAG_28);
-            int limit = byteBuffer.limit();
-            ByteBuffer byteBuffer2 = this.supplementalData;
-            if (byteBuffer2 == null || byteBuffer2.capacity() < limit) {
-                this.supplementalData = ByteBuffer.allocate(limit);
-            } else {
-                this.supplementalData.clear();
-            }
-            this.supplementalData.put(byteBuffer);
-            this.supplementalData.flip();
-            byteBuffer.position(0);
+    public void init(long j10, int i10, ByteBuffer byteBuffer) {
+        this.timeUs = j10;
+        this.mode = i10;
+        if (byteBuffer == null || !byteBuffer.hasRemaining()) {
+            this.supplementalData = null;
             return;
         }
-        this.supplementalData = null;
+        addFlag(TLObject.FLAG_28);
+        int limit = byteBuffer.limit();
+        ByteBuffer byteBuffer2 = this.supplementalData;
+        if (byteBuffer2 == null || byteBuffer2.capacity() < limit) {
+            this.supplementalData = ByteBuffer.allocate(limit);
+        } else {
+            this.supplementalData.clear();
+        }
+        this.supplementalData.put(byteBuffer);
+        this.supplementalData.flip();
+        byteBuffer.position(0);
     }
 
-    public boolean initForYuvFrame(int i, int i2, int i3, int i4, int i5) {
-        this.width = i;
-        this.height = i2;
-        this.colorspace = i5;
-        int i6 = (int) ((i2 + 1) / 2);
-        if (isSafeToMultiply(i3, i2) && isSafeToMultiply(i4, i6)) {
-            int i7 = i2 * i3;
-            int i8 = i6 * i4;
-            int i9 = (i8 * 2) + i7;
-            if (isSafeToMultiply(i8, 2) && i9 >= i7) {
+    public void initForPrivateFrame(int i10, int i11) {
+        this.width = i10;
+        this.height = i11;
+    }
+
+    public boolean initForYuvFrame(int i10, int i11, int i12, int i13, int i14) {
+        this.width = i10;
+        this.height = i11;
+        this.colorspace = i14;
+        int i15 = (int) ((i11 + 1) / 2);
+        if (isSafeToMultiply(i12, i11) && isSafeToMultiply(i13, i15)) {
+            int i16 = i11 * i12;
+            int i17 = i15 * i13;
+            int i18 = (i17 * 2) + i16;
+            if (isSafeToMultiply(i17, 2) && i18 >= i16) {
                 ByteBuffer byteBuffer = this.data;
-                if (byteBuffer == null || byteBuffer.capacity() < i9) {
-                    this.data = ByteBuffer.allocateDirect(i9);
+                if (byteBuffer == null || byteBuffer.capacity() < i18) {
+                    this.data = ByteBuffer.allocateDirect(i18);
                 } else {
                     this.data.position(0);
-                    this.data.limit(i9);
+                    this.data.limit(i18);
                 }
                 if (this.yuvPlanes == null) {
                     this.yuvPlanes = new ByteBuffer[3];
@@ -77,37 +86,30 @@ public class VideoDecoderOutputBuffer extends DecoderOutputBuffer {
                 ByteBuffer[] byteBufferArr = this.yuvPlanes;
                 ByteBuffer slice = byteBuffer2.slice();
                 byteBufferArr[0] = slice;
-                slice.limit(i7);
-                byteBuffer2.position(i7);
+                slice.limit(i16);
+                byteBuffer2.position(i16);
                 ByteBuffer slice2 = byteBuffer2.slice();
                 byteBufferArr[1] = slice2;
-                slice2.limit(i8);
-                byteBuffer2.position(i7 + i8);
+                slice2.limit(i17);
+                byteBuffer2.position(i16 + i17);
                 ByteBuffer slice3 = byteBuffer2.slice();
                 byteBufferArr[2] = slice3;
-                slice3.limit(i8);
+                slice3.limit(i17);
                 if (this.yuvStrides == null) {
                     this.yuvStrides = new int[3];
                 }
                 int[] iArr = this.yuvStrides;
-                iArr[0] = i3;
-                iArr[1] = i4;
-                iArr[2] = i4;
+                iArr[0] = i12;
+                iArr[1] = i13;
+                iArr[2] = i13;
                 return true;
             }
         }
         return false;
     }
 
-    public void initForPrivateFrame(int i, int i2) {
-        this.width = i;
-        this.height = i2;
-    }
-
-    private static boolean isSafeToMultiply(int i, int i2) {
-        if (i < 0 || i2 < 0) {
-            return false;
-        }
-        return i2 <= 0 || i < ConnectionsManager.DEFAULT_DATACENTER_ID / i2;
+    @Override // k3.k
+    public void release() {
+        this.owner.c(this);
     }
 }

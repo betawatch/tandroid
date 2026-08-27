@@ -7,9 +7,10 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, BuilderType extends zzpv<MessageType, BuilderType>> implements zztr {
-    protected static void zzd(Iterable iterable, List list) {
+    public static void zzd(Iterable iterable, List list) {
         byte[] bArr = zzsv.zzb;
         iterable.getClass();
         if (iterable instanceof zzte) {
@@ -18,12 +19,12 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
             int size = list.size();
             for (Object obj : zza) {
                 if (obj == null) {
-                    String str = "Element at index " + (zzteVar.size() - size) + " is null.";
+                    String l10 = i0.a.l(zzteVar.size() - size, "Element at index ", " is null.");
                     int size2 = zzteVar.size();
                     while (true) {
                         size2--;
                         if (size2 < size) {
-                            throw new NullPointerException(str);
+                            throw new NullPointerException(l10);
                         }
                         zzteVar.remove(size2);
                     }
@@ -63,8 +64,8 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
         }
         List list2 = (List) iterable;
         int size5 = list2.size();
-        for (int i = 0; i < size5; i++) {
-            Object obj3 = list2.get(i);
+        for (int i10 = 0; i10 < size5; i10++) {
+            Object obj3 = list2.get(i10);
             if (obj3 == null) {
                 zze(list, size4);
             }
@@ -72,13 +73,13 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
         }
     }
 
-    private static void zze(List list, int i) {
-        String str = "Element at index " + (list.size() - i) + " is null.";
+    private static void zze(List list, int i10) {
+        String l10 = i0.a.l(list.size() - i10, "Element at index ", " is null.");
         int size = list.size();
         while (true) {
             size--;
-            if (size < i) {
-                throw new NullPointerException(str);
+            if (size < i10) {
+                throw new NullPointerException(l10);
             }
             list.remove(size);
         }
@@ -87,7 +88,7 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
     @Override // 
     public abstract zzpv zza();
 
-    protected abstract zzpv zzb(zzpw zzpwVar);
+    public abstract zzpv zzb(zzpw zzpwVar);
 
     @Override // com.google.android.recaptcha.internal.zztr
     public final /* bridge */ /* synthetic */ zztr zzc(zzts zztsVar) {

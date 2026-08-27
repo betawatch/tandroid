@@ -2,27 +2,23 @@ package com.google.android.gms.cast.framework.internal.featurehighlight;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 class OuterHighlightDrawable extends Drawable {
-    private final Paint zzf;
-    private float zzg;
-    private float zzh;
-    private float zzi;
-    private float zzj;
-    private float zzk;
-    private float zzl;
+    public float a;
+    public float b;
+    public float c;
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        canvas.drawCircle(this.zzi + this.zzk, this.zzj + this.zzl, this.zzg * this.zzh, this.zzf);
+        canvas.drawCircle(this.b + 0.0f, this.c + 0.0f, 0.0f * this.a, null);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getAlpha() {
-        return this.zzf.getAlpha();
+        throw null;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -31,29 +27,27 @@ class OuterHighlightDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        this.zzf.setAlpha(i);
-        invalidateSelf();
+    public final void setAlpha(int i10) {
+        throw null;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
-        this.zzf.setColorFilter(colorFilter);
+        throw null;
+    }
+
+    public void setScale(float f10) {
+        this.a = f10;
         invalidateSelf();
     }
 
-    public void setScale(float f) {
-        this.zzh = f;
+    public void setTranslationX(float f10) {
+        this.b = f10;
         invalidateSelf();
     }
 
-    public void setTranslationX(float f) {
-        this.zzk = f;
-        invalidateSelf();
-    }
-
-    public void setTranslationY(float f) {
-        this.zzl = f;
+    public void setTranslationY(float f10) {
+        this.c = f10;
         invalidateSelf();
     }
 }

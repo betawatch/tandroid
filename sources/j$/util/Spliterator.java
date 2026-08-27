@@ -14,7 +14,7 @@ public interface Spliterator<T> {
             if (spliterator == null) {
                 return null;
             }
-            return spliterator instanceof d0 ? ((d0) spliterator).a : spliterator instanceof c0 ? b0.a((c0) spliterator) : new Wrapper();
+            return spliterator instanceof e1 ? ((e1) spliterator).a : spliterator instanceof d1 ? c1.a((d1) spliterator) : new Wrapper();
         }
 
         @Override // java.util.Spliterator
@@ -51,8 +51,8 @@ public interface Spliterator<T> {
         }
 
         @Override // java.util.Spliterator
-        public final /* synthetic */ boolean hasCharacteristics(int i) {
-            return Spliterator.this.hasCharacteristics(i);
+        public final /* synthetic */ boolean hasCharacteristics(int i10) {
+            return Spliterator.this.hasCharacteristics(i10);
         }
 
         public final /* synthetic */ int hashCode() {
@@ -80,7 +80,7 @@ public interface Spliterator<T> {
 
     long getExactSizeIfKnown();
 
-    boolean hasCharacteristics(int i);
+    boolean hasCharacteristics(int i10);
 
     boolean tryAdvance(Consumer consumer);
 

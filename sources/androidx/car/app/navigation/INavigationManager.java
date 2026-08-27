@@ -6,67 +6,22 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public interface INavigationManager extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$navigation$INavigationManager".replace('$', '.');
 
-    public static class Default implements INavigationManager {
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return null;
-        }
-
-        @Override // androidx.car.app.navigation.INavigationManager
-        public void onStopNavigation(IOnDoneCallback iOnDoneCallback) {
-        }
-    }
-
     void onStopNavigation(IOnDoneCallback iOnDoneCallback);
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static abstract class Stub extends Binder implements INavigationManager {
         static final int TRANSACTION_onStopNavigation = 2;
 
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return this;
-        }
-
-        public Stub() {
-            attachInterface(this, INavigationManager.DESCRIPTOR);
-        }
-
-        public static INavigationManager asInterface(IBinder iBinder) {
-            if (iBinder == null) {
-                return null;
-            }
-            IInterface queryLocalInterface = iBinder.queryLocalInterface(INavigationManager.DESCRIPTOR);
-            if (queryLocalInterface != null && (queryLocalInterface instanceof INavigationManager)) {
-                return (INavigationManager) queryLocalInterface;
-            }
-            return new Proxy(iBinder);
-        }
-
-        @Override // android.os.Binder
-        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String str = INavigationManager.DESCRIPTOR;
-            if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(str);
-            }
-            if (i == 1598968902) {
-                parcel2.writeString(str);
-                return true;
-            }
-            if (i == 2) {
-                onStopNavigation(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
-                return true;
-            }
-            return super.onTransact(i, parcel, parcel2, i2);
-        }
-
-        private static class Proxy implements INavigationManager {
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static class Proxy implements INavigationManager {
             private IBinder mRemote;
 
-            Proxy(IBinder iBinder) {
+            public Proxy(IBinder iBinder) {
                 this.mRemote = iBinder;
             }
 
@@ -90,6 +45,52 @@ public interface INavigationManager extends IInterface {
                     obtain.recycle();
                 }
             }
+        }
+
+        public Stub() {
+            attachInterface(this, INavigationManager.DESCRIPTOR);
+        }
+
+        public static INavigationManager asInterface(IBinder iBinder) {
+            if (iBinder == null) {
+                return null;
+            }
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(INavigationManager.DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof INavigationManager)) ? new Proxy(iBinder) : (INavigationManager) queryLocalInterface;
+        }
+
+        @Override // android.os.Binder
+        public boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+            String str = INavigationManager.DESCRIPTOR;
+            if (i10 >= 1 && i10 <= 16777215) {
+                parcel.enforceInterface(str);
+            }
+            if (i10 == 1598968902) {
+                parcel2.writeString(str);
+                return true;
+            }
+            if (i10 != 2) {
+                return super.onTransact(i10, parcel, parcel2, i11);
+            }
+            onStopNavigation(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
+            return true;
+        }
+
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return this;
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class Default implements INavigationManager {
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return null;
+        }
+
+        @Override // androidx.car.app.navigation.INavigationManager
+        public void onStopNavigation(IOnDoneCallback iOnDoneCallback) {
         }
     }
 }

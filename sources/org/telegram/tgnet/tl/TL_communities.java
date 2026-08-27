@@ -6,16 +6,85 @@ import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1;
-import org.telegram.tgnet.TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1;
 import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.tgnet.l;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes3.dex */
 public class TL_communities {
-    private TL_communities() {
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class CommunityPeer extends TLObject {
+        public static final int constructor = 1981030077;
+        public boolean can_view_history;
+        public int flags;
+        public TLRPC.Peer peer;
+        public boolean visible;
+
+        public static CommunityPeer TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return (CommunityPeer) TLObject.TLdeserialize(CommunityPeer.class, i10 != 1981030077 ? null : new CommunityPeer(), inputSerializedData, i10, z10);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
+            this.flags = readInt32;
+            this.can_view_history = TLObject.hasFlag(readInt32, 4);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                this.visible = inputSerializedData.readBool(z10);
+            }
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 4, this.can_view_history);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                outputSerializedData.writeBool(this.visible);
+            }
+            this.peer.serializeToStream(outputSerializedData);
+        }
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class CommunityPeerRequest extends TLObject {
+        public static final int constructor = 2078997125;
+        public int date;
+        public int flags;
+        public TLRPC.Peer peer;
+        public long requested_by;
+        public boolean visible;
+
+        public static CommunityPeerRequest TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return (CommunityPeerRequest) TLObject.TLdeserialize(CommunityPeerRequest.class, i10 != 2078997125 ? null : new CommunityPeerRequest(), inputSerializedData, i10, z10);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
+            this.flags = readInt32;
+            this.visible = TLObject.hasFlag(readInt32, 1);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.requested_by = inputSerializedData.readInt64(z10);
+            this.date = inputSerializedData.readInt32(z10);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1, this.visible);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
+            this.peer.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt64(this.requested_by);
+            outputSerializedData.writeInt32(this.date);
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class ParticipantJoinedChats extends TLObject {
         public static final int constructor = -1921494742;
         public ArrayList<Long> creator_chat_ids = new ArrayList<>();
@@ -23,16 +92,16 @@ public class TL_communities {
         public ArrayList<TLRPC.Chat> chats = new ArrayList<>();
         public ArrayList<TLRPC.User> users = new ArrayList<>();
 
-        public static ParticipantJoinedChats TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-            return (ParticipantJoinedChats) TLObject.TLdeserialize(ParticipantJoinedChats.class, i != -1921494742 ? null : new ParticipantJoinedChats(), inputSerializedData, i, z);
+        public static ParticipantJoinedChats TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return (ParticipantJoinedChats) TLObject.TLdeserialize(ParticipantJoinedChats.class, i10 != -1921494742 ? null : new ParticipantJoinedChats(), inputSerializedData, i10, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.creator_chat_ids = Vector.deserializeLong(inputSerializedData, z);
-            this.joined_chat_ids = Vector.deserializeLong(inputSerializedData, z);
-            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
-            this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.creator_chat_ids = Vector.deserializeLong(inputSerializedData, z10);
+            this.joined_chat_ids = Vector.deserializeLong(inputSerializedData, z10);
+            this.chats = Vector.deserialize(inputSerializedData, new l(10), z10);
+            this.users = Vector.deserialize(inputSerializedData, new l(4), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -45,6 +114,7 @@ public class TL_communities {
         }
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class PeerLinkRequests extends TLObject {
         public static final int constructor = 574926765;
         public int flags;
@@ -54,25 +124,20 @@ public class TL_communities {
         public ArrayList<TLRPC.Chat> chats = new ArrayList<>();
         public ArrayList<TLRPC.User> users = new ArrayList<>();
 
-        public static PeerLinkRequests TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-            return (PeerLinkRequests) TLObject.TLdeserialize(PeerLinkRequests.class, i != 574926765 ? null : new PeerLinkRequests(), inputSerializedData, i, z);
+        public static PeerLinkRequests TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return (PeerLinkRequests) TLObject.TLdeserialize(PeerLinkRequests.class, i10 != 574926765 ? null : new PeerLinkRequests(), inputSerializedData, i10, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.flags = inputSerializedData.readInt32(z);
-            this.total_count = inputSerializedData.readInt32(z);
-            this.requests = Vector.deserialize(inputSerializedData, new Vector.TLDeserializer() { // from class: org.telegram.tgnet.tl.TL_communities$PeerLinkRequests$$ExternalSyntheticLambda0
-                @Override // org.telegram.tgnet.Vector.TLDeserializer
-                public final TLObject deserialize(InputSerializedData inputSerializedData2, int i, boolean z2) {
-                    return TL_communities.CommunityPeerRequest.TLdeserialize(inputSerializedData2, i, z2);
-                }
-            }, z);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.flags = inputSerializedData.readInt32(z10);
+            this.total_count = inputSerializedData.readInt32(z10);
+            this.requests = Vector.deserialize(inputSerializedData, new c(21), z10);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.next_offset = inputSerializedData.readString(z);
+                this.next_offset = inputSerializedData.readString(z10);
             }
-            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
-            this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new l(10), z10);
+            this.users = Vector.deserialize(inputSerializedData, new l(4), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -91,75 +156,7 @@ public class TL_communities {
         }
     }
 
-    public static class CommunityPeer extends TLObject {
-        public static final int constructor = 1981030077;
-        public boolean can_view_history;
-        public int flags;
-        public TLRPC.Peer peer;
-        public boolean visible;
-
-        public static CommunityPeer TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-            return (CommunityPeer) TLObject.TLdeserialize(CommunityPeer.class, i != 1981030077 ? null : new CommunityPeer(), inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.can_view_history = TLObject.hasFlag(readInt32, 4);
-            if (TLObject.hasFlag(this.flags, 1)) {
-                this.visible = inputSerializedData.readBool(z);
-            }
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 4, this.can_view_history);
-            this.flags = flag;
-            outputSerializedData.writeInt32(flag);
-            if (TLObject.hasFlag(this.flags, 1)) {
-                outputSerializedData.writeBool(this.visible);
-            }
-            this.peer.serializeToStream(outputSerializedData);
-        }
-    }
-
-    public static class CommunityPeerRequest extends TLObject {
-        public static final int constructor = 2078997125;
-        public int date;
-        public int flags;
-        public TLRPC.Peer peer;
-        public long requested_by;
-        public boolean visible;
-
-        public static CommunityPeerRequest TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-            return (CommunityPeerRequest) TLObject.TLdeserialize(CommunityPeerRequest.class, i != 2078997125 ? null : new CommunityPeerRequest(), inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.visible = TLObject.hasFlag(readInt32, 1);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.requested_by = inputSerializedData.readInt64(z);
-            this.date = inputSerializedData.readInt32(z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.visible);
-            this.flags = flag;
-            outputSerializedData.writeInt32(flag);
-            this.peer.serializeToStream(outputSerializedData);
-            outputSerializedData.writeInt64(this.requested_by);
-            outputSerializedData.writeInt32(this.date);
-        }
-    }
-
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class TL_communities_create extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -1506256404;
         public String about;
@@ -167,11 +164,6 @@ public class TL_communities {
         public boolean hidden;
         public TLRPC.InputPeer peer;
         public String title;
-
-        @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
-            return TLRPC.Updates.TLdeserialize(inputSerializedData, i, z);
-        }
 
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
@@ -187,8 +179,137 @@ public class TL_communities {
             }
             this.peer.serializeToStream(outputSerializedData);
         }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return TLRPC.Updates.TLdeserialize(inputSerializedData, i10, z10);
+        }
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class TL_communities_getJoinedCommunities extends TLMethod<TLRPC.messages_Chats> {
+        public static final int constructor = -1503401936;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public TLRPC.messages_Chats deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return TLRPC.messages_Chats.TLdeserialize(inputSerializedData, i10, z10);
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class TL_communities_getParticipantJoinedChats extends TLMethod<ParticipantJoinedChats> {
+        public static final int constructor = -125916245;
+        public TLRPC.InputChannel community;
+        public TLRPC.InputPeer participant;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.community.serializeToStream(outputSerializedData);
+            this.participant.serializeToStream(outputSerializedData);
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public ParticipantJoinedChats deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return ParticipantJoinedChats.TLdeserialize(inputSerializedData, i10, z10);
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class TL_communities_getPeerLinkRequests extends TLMethod<PeerLinkRequests> {
+        public static final int constructor = -1820904636;
+        public TLRPC.InputChannel community;
+        public int limit;
+        public String offset;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.community.serializeToStream(outputSerializedData);
+            outputSerializedData.writeString(this.offset);
+            outputSerializedData.writeInt32(this.limit);
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public PeerLinkRequests deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return PeerLinkRequests.TLdeserialize(inputSerializedData, i10, z10);
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class TL_communities_toggleAllPeerLinkRequestApproval extends TLMethod<TLRPC.Bool> {
+        public static final int constructor = -1075585731;
+        public TLRPC.InputChannel community;
+        public int flags;
+        public boolean reject;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1, this.reject);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
+            this.community.serializeToStream(outputSerializedData);
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i10, z10);
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class TL_communities_toggleCommunityCollapsedInDialogs extends TLMethod<TLRPC.Updates> {
+        public static final int constructor = -681122838;
+        public boolean collapsed;
+        public TLRPC.InputChannel community;
+        public int flags;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1, this.collapsed);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
+            this.community.serializeToStream(outputSerializedData);
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return TLRPC.Updates.TLdeserialize(inputSerializedData, i10, z10);
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class TL_communities_toggleParticipantBanned extends TLMethod<TLRPC.Bool> {
+        public static final int constructor = -1721258737;
+        public TLRPC.InputChannel community;
+        public int flags;
+        public TLRPC.InputPeer participant;
+        public boolean unban;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1, this.unban);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
+            this.community.serializeToStream(outputSerializedData);
+            this.participant.serializeToStream(outputSerializedData);
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i10, z10);
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class TL_communities_togglePeerLink extends TLMethod<TLRPC.Bool> {
         public static final int constructor = 1936576490;
         public TLRPC.InputChannel community;
@@ -197,11 +318,6 @@ public class TL_communities {
         public boolean hidden;
         public TLRPC.InputPeer peer;
         public boolean visible;
-
-        @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i, z);
-        }
 
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
@@ -216,74 +332,20 @@ public class TL_communities {
             this.community.serializeToStream(outputSerializedData);
             this.peer.serializeToStream(outputSerializedData);
         }
-    }
-
-    public static class TL_communities_getJoinedCommunities extends TLMethod<TLRPC.messages_Chats> {
-        public static final int constructor = -1503401936;
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.messages_Chats deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
-            return TLRPC.messages_Chats.TLdeserialize(inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i10, z10);
         }
     }
 
-    public static class TL_communities_toggleCommunityCollapsedInDialogs extends TLMethod<TLRPC.Updates> {
-        public static final int constructor = -681122838;
-        public boolean collapsed;
-        public TLRPC.InputChannel community;
-        public int flags;
-
-        @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
-            return TLRPC.Updates.TLdeserialize(inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.collapsed);
-            this.flags = flag;
-            outputSerializedData.writeInt32(flag);
-            this.community.serializeToStream(outputSerializedData);
-        }
-    }
-
-    public static class TL_communities_getPeerLinkRequests extends TLMethod<PeerLinkRequests> {
-        public static final int constructor = -1820904636;
-        public TLRPC.InputChannel community;
-        public int limit;
-        public String offset;
-
-        @Override // org.telegram.tgnet.TLMethod
-        public PeerLinkRequests deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
-            return PeerLinkRequests.TLdeserialize(inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            this.community.serializeToStream(outputSerializedData);
-            outputSerializedData.writeString(this.offset);
-            outputSerializedData.writeInt32(this.limit);
-        }
-    }
-
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class TL_communities_togglePeerLinkRequestApproval extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -1937630808;
         public TLRPC.InputChannel community;
         public int flags;
         public TLRPC.InputPeer peer;
         public boolean reject;
-
-        @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i, z);
-        }
 
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
@@ -294,67 +356,13 @@ public class TL_communities {
             this.community.serializeToStream(outputSerializedData);
             this.peer.serializeToStream(outputSerializedData);
         }
-    }
-
-    public static class TL_communities_toggleAllPeerLinkRequestApproval extends TLMethod<TLRPC.Bool> {
-        public static final int constructor = -1075585731;
-        public TLRPC.InputChannel community;
-        public int flags;
-        public boolean reject;
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.reject);
-            this.flags = flag;
-            outputSerializedData.writeInt32(flag);
-            this.community.serializeToStream(outputSerializedData);
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i10, z10);
         }
     }
 
-    public static class TL_communities_toggleParticipantBanned extends TLMethod<TLRPC.Bool> {
-        public static final int constructor = -1721258737;
-        public TLRPC.InputChannel community;
-        public int flags;
-        public TLRPC.InputPeer participant;
-        public boolean unban;
-
-        @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.unban);
-            this.flags = flag;
-            outputSerializedData.writeInt32(flag);
-            this.community.serializeToStream(outputSerializedData);
-            this.participant.serializeToStream(outputSerializedData);
-        }
-    }
-
-    public static class TL_communities_getParticipantJoinedChats extends TLMethod<ParticipantJoinedChats> {
-        public static final int constructor = -125916245;
-        public TLRPC.InputChannel community;
-        public TLRPC.InputPeer participant;
-
-        @Override // org.telegram.tgnet.TLMethod
-        public ParticipantJoinedChats deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
-            return ParticipantJoinedChats.TLdeserialize(inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            this.community.serializeToStream(outputSerializedData);
-            this.participant.serializeToStream(outputSerializedData);
-        }
+    private TL_communities() {
     }
 }

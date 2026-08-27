@@ -1,9 +1,0 @@
-package androidx.biometric;
-
-/* loaded from: classes.dex */
-public abstract class R$id {
-    public static final int fingerprint_description = 2131296433;
-    public static final int fingerprint_error = 2131296434;
-    public static final int fingerprint_icon = 2131296435;
-    public static final int fingerprint_subtitle = 2131296436;
-}

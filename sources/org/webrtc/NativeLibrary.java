@@ -1,18 +1,14 @@
 package org.webrtc;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 class NativeLibrary {
     private static String TAG = "NativeLibrary";
     private static boolean libraryLoaded;
     private static Object lock = new Object();
 
-    NativeLibrary() {
-    }
-
-    static class DefaultLoader implements NativeLibraryLoader {
-        DefaultLoader() {
-        }
-
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class DefaultLoader implements NativeLibraryLoader {
         @Override // org.webrtc.NativeLibraryLoader
         public boolean load(String str) {
             Logging.d(NativeLibrary.TAG, "Loading library: " + str);
@@ -21,7 +17,7 @@ class NativeLibrary {
         }
     }
 
-    static void initialize(NativeLibraryLoader nativeLibraryLoader, String str) {
+    public static void initialize(NativeLibraryLoader nativeLibraryLoader, String str) {
         synchronized (lock) {
             try {
                 if (libraryLoaded) {
@@ -36,11 +32,11 @@ class NativeLibrary {
         }
     }
 
-    static boolean isLoaded() {
-        boolean z;
+    public static boolean isLoaded() {
+        boolean z10;
         synchronized (lock) {
-            z = libraryLoaded;
+            z10 = libraryLoaded;
         }
-        return z;
+        return z10;
     }
 }

@@ -1,41 +1,47 @@
 package com.google.firebase.crashlytics;
 
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.analytics.connector.AnalyticsConnector;
-import com.google.firebase.components.Component;
-import com.google.firebase.components.ComponentContainer;
-import com.google.firebase.components.ComponentFactory;
+import a9.m;
+import android.util.Log;
 import com.google.firebase.components.ComponentRegistrar;
-import com.google.firebase.components.Dependency;
-import com.google.firebase.crashlytics.internal.CrashlyticsNativeComponent;
-import com.google.firebase.installations.FirebaseInstallationsApi;
-import com.google.firebase.platforminfo.LibraryVersionComponent;
-import com.google.firebase.remoteconfig.interop.FirebaseRemoteConfigInterop;
-import com.google.firebase.sessions.api.FirebaseSessionsDependencies;
-import com.google.firebase.sessions.api.SessionSubscriber;
+import g7.i7;
+import ja.a;
+import ja.c;
+import ja.d;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import t8.h;
+import ug.b;
+import z8.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
+    public static final /* synthetic */ int a = 0;
+
     static {
-        FirebaseSessionsDependencies.INSTANCE.addDependency(SessionSubscriber.Name.CRASHLYTICS);
+        c cVar = c.a;
+        Map map = c.b;
+        d dVar = d.a;
+        if (map.containsKey(dVar)) {
+            Log.d("SessionsDependencies", "Dependency " + dVar + " already added.");
+            return;
+        }
+        map.put(dVar, new a(new rd.d(true)));
+        Log.d("SessionsDependencies", "Dependency to " + dVar + " added.");
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List getComponents() {
-        return Arrays.asList(Component.builder(FirebaseCrashlytics.class).name("fire-cls").add(Dependency.required(FirebaseApp.class)).add(Dependency.required(FirebaseInstallationsApi.class)).add(Dependency.deferred(CrashlyticsNativeComponent.class)).add(Dependency.deferred(AnalyticsConnector.class)).add(Dependency.deferred(FirebaseRemoteConfigInterop.class)).factory(new ComponentFactory() { // from class: com.google.firebase.crashlytics.CrashlyticsRegistrar$$ExternalSyntheticLambda0
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                FirebaseCrashlytics buildCrashlytics;
-                buildCrashlytics = CrashlyticsRegistrar.this.buildCrashlytics(componentContainer);
-                return buildCrashlytics;
-            }
-        }).eagerInDefaultApp().build(), LibraryVersionComponent.create("fire-cls", "18.6.0"));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public FirebaseCrashlytics buildCrashlytics(ComponentContainer componentContainer) {
-        return FirebaseCrashlytics.init((FirebaseApp) componentContainer.get(FirebaseApp.class), (FirebaseInstallationsApi) componentContainer.get(FirebaseInstallationsApi.class), componentContainer.getDeferred(CrashlyticsNativeComponent.class), componentContainer.getDeferred(AnalyticsConnector.class), componentContainer.getDeferred(FirebaseRemoteConfigInterop.class));
+    public final List getComponents() {
+        b a2 = z8.a.a(b9.c.class);
+        a2.c = "fire-cls";
+        a2.a(i.a(h.class));
+        a2.a(i.a(z9.d.class));
+        a2.a(new i(0, 2, c9.a.class));
+        a2.a(new i(0, 2, u8.a.class));
+        a2.a(new i(0, 2, ha.a.class));
+        a2.f = new m(this, 11);
+        a2.c(2);
+        return Arrays.asList(a2.b(), i7.a("fire-cls", "18.6.0"));
     }
 }

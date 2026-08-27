@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import androidx.activity.OnBackPressedDispatcher$$ExternalSyntheticNonNull0;
 import java.util.Arrays;
-import kotlin.collections.ArraysKt;
-import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.j;
+import qc.f;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzjy implements zzjt {
     public static final zzjy zza = new zzjy();
@@ -13,13 +13,13 @@ public final class zzjy implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i10, zziz zzizVar, zzzt... zzztVarArr) {
         int length = zzztVarArr.length;
         if (length < 2) {
             throw new zzdm(4, 3, null);
         }
         Class<?> zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
-        if (true != OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(zza2)) {
+        if (zza2 == null) {
             zza2 = null;
         }
         if (zza2 == null) {
@@ -35,14 +35,14 @@ public final class zzjy implements zzjt {
             throw new zzdm(4, 5, null);
         }
         String zza4 = zzizVar.zzh().zza(str);
-        if (Intrinsics.areEqual(zza4, "forName")) {
+        if (j.a(zza4, "forName")) {
             throw new zzdm(6, 48, null);
         }
-        Class[] zzf = zzizVar.zzc().zzf(ArraysKt.toList(zzztVarArr).subList(2, length));
+        Class[] zzf = zzizVar.zzc().zzf(f.h(zzztVarArr).subList(2, length));
         try {
-            zzizVar.zzc().zze(i, cls.getMethod(zza4, (Class[]) Arrays.copyOf(zzf, zzf.length)));
-        } catch (Exception e) {
-            throw new zzdm(6, 13, e);
+            zzizVar.zzc().zze(i10, cls.getMethod(zza4, (Class[]) Arrays.copyOf(zzf, zzf.length)));
+        } catch (Exception e9) {
+            throw new zzdm(6, 13, e9);
         }
     }
 }

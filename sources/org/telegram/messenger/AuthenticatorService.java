@@ -9,11 +9,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.IBinder;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class AuthenticatorService extends Service {
     private static Authenticator authenticator;
 
-    private static class Authenticator extends AbstractAccountAuthenticator {
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class Authenticator extends AbstractAccountAuthenticator {
+        public Authenticator(Context context) {
+            super(context);
+        }
+
         @Override // android.accounts.AbstractAccountAuthenticator
         public Bundle addAccount(AccountAuthenticatorResponse accountAuthenticatorResponse, String str, String str2, String[] strArr, Bundle bundle) {
             return null;
@@ -27,6 +33,11 @@ public class AuthenticatorService extends Service {
         @Override // android.accounts.AbstractAccountAuthenticator
         public Bundle editProperties(AccountAuthenticatorResponse accountAuthenticatorResponse, String str) {
             return null;
+        }
+
+        @Override // android.accounts.AbstractAccountAuthenticator
+        public Bundle getAccountRemovalAllowed(AccountAuthenticatorResponse accountAuthenticatorResponse, Account account) {
+            return super.getAccountRemovalAllowed(accountAuthenticatorResponse, account);
         }
 
         @Override // android.accounts.AbstractAccountAuthenticator
@@ -48,18 +59,9 @@ public class AuthenticatorService extends Service {
         public Bundle updateCredentials(AccountAuthenticatorResponse accountAuthenticatorResponse, Account account, String str, Bundle bundle) {
             return null;
         }
-
-        public Authenticator(Context context) {
-            super(context);
-        }
-
-        @Override // android.accounts.AbstractAccountAuthenticator
-        public Bundle getAccountRemovalAllowed(AccountAuthenticatorResponse accountAuthenticatorResponse, Account account) {
-            return super.getAccountRemovalAllowed(accountAuthenticatorResponse, account);
-        }
     }
 
-    protected Authenticator getAuthenticator() {
+    public Authenticator getAuthenticator() {
         if (authenticator == null) {
             authenticator = new Authenticator(this);
         }

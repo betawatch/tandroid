@@ -5,13 +5,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import com.google.android.gms.cast.framework.CastContext;
-import com.google.android.gms.cast.framework.CastSession;
-import com.google.android.gms.cast.framework.Session;
-import com.google.android.gms.cast.framework.SessionManager;
-import com.google.android.gms.cast.internal.Logger;
-import com.google.android.gms.common.internal.Preconditions;
+import m5.q;
+import n5.a;
+import n5.c;
+import n5.g;
+import o5.h;
+import o5.i;
+import r5.b;
+import y5.l;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class MediaIntentReceiver extends BroadcastReceiver {
     public static final String ACTION_DISCONNECT = "com.google.android.gms.cast.framework.action.DISCONNECT";
@@ -23,180 +26,161 @@ public class MediaIntentReceiver extends BroadcastReceiver {
     public static final String ACTION_TOGGLE_PLAYBACK = "com.google.android.gms.cast.framework.action.TOGGLE_PLAYBACK";
     public static final String EXTRA_SKIP_STEP_MS = "googlecast-extra_skip_step_ms";
     private static final String TAG = "MediaIntentReceiver";
-    private static final Logger log = new Logger(TAG);
+    private static final b log = new b(TAG, null);
 
-    private static RemoteMediaClient getRemoteMediaClient(CastSession castSession) {
-        if (castSession == null || !castSession.isConnected()) {
+    private static h getRemoteMediaClient(c cVar) {
+        if (cVar == null || !cVar.b()) {
             return null;
         }
-        return castSession.getRemoteMediaClient();
+        l.e("Must be called from the main thread.");
+        return cVar.j;
     }
 
-    private void seek(CastSession castSession, long j) {
-        RemoteMediaClient remoteMediaClient;
-        if (j == 0 || (remoteMediaClient = getRemoteMediaClient(castSession)) == null || remoteMediaClient.isLiveStream() || remoteMediaClient.isPlayingAd()) {
+    private void seek(c cVar, long j10) {
+        h remoteMediaClient;
+        if (j10 == 0 || (remoteMediaClient = getRemoteMediaClient(cVar)) == null || remoteMediaClient.j() || remoteMediaClient.n()) {
             return;
         }
-        remoteMediaClient.seek(remoteMediaClient.getApproximateStreamPosition() + j);
+        remoteMediaClient.q(new q(remoteMediaClient.a() + j10));
     }
 
-    private void togglePlayback(CastSession castSession) {
-        RemoteMediaClient remoteMediaClient = getRemoteMediaClient(castSession);
+    private void togglePlayback(c cVar) {
+        h remoteMediaClient = getRemoteMediaClient(cVar);
         if (remoteMediaClient == null) {
             return;
         }
-        remoteMediaClient.togglePlayback();
+        remoteMediaClient.r();
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
+    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
+     */
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
-        SessionManager sessionManager;
-        Session currentSession;
-        char c;
+        n5.h b10;
+        g d;
         String action = intent.getAction();
-        log.d("onReceive action: %s", action);
-        if (action == null || (currentSession = (sessionManager = CastContext.getSharedInstance(context).getSessionManager()).getCurrentSession()) == null) {
+        log.b("onReceive action: %s", action);
+        if (action == null || (d = (b10 = a.c(context).b()).d()) == null) {
             return;
         }
         switch (action.hashCode()) {
             case -1699820260:
                 if (action.equals(ACTION_REWIND)) {
-                    c = 4;
-                    break;
+                    onReceiveActionRewind(d, intent.getLongExtra(EXTRA_SKIP_STEP_MS, 0L));
+                    return;
                 }
-                c = 65535;
                 break;
             case -945151566:
                 if (action.equals(ACTION_SKIP_NEXT)) {
-                    c = 1;
-                    break;
+                    onReceiveActionSkipNext(d);
+                    return;
                 }
-                c = 65535;
                 break;
             case -945080078:
                 if (action.equals(ACTION_SKIP_PREV)) {
-                    c = 2;
-                    break;
+                    onReceiveActionSkipPrev(d);
+                    return;
                 }
-                c = 65535;
                 break;
             case -668151673:
                 if (action.equals(ACTION_STOP_CASTING)) {
-                    c = 5;
-                    break;
+                    b10.b(true);
+                    return;
                 }
-                c = 65535;
                 break;
             case -124479363:
                 if (action.equals(ACTION_DISCONNECT)) {
-                    c = 6;
-                    break;
+                    b10.b(false);
+                    return;
                 }
-                c = 65535;
                 break;
             case 235550565:
                 if (action.equals(ACTION_TOGGLE_PLAYBACK)) {
-                    c = 0;
-                    break;
+                    onReceiveActionTogglePlayback(d);
+                    return;
                 }
-                c = 65535;
                 break;
             case 1362116196:
                 if (action.equals(ACTION_FORWARD)) {
-                    c = 3;
-                    break;
+                    onReceiveActionForward(d, intent.getLongExtra(EXTRA_SKIP_STEP_MS, 0L));
+                    return;
                 }
-                c = 65535;
                 break;
             case 1997055314:
                 if (action.equals("android.intent.action.MEDIA_BUTTON")) {
-                    c = 7;
-                    break;
+                    onReceiveActionMediaButton(d, intent);
+                    return;
                 }
-                c = 65535;
-                break;
-            default:
-                c = 65535;
                 break;
         }
-        switch (c) {
-            case 0:
-                onReceiveActionTogglePlayback(currentSession);
-                break;
-            case 1:
-                onReceiveActionSkipNext(currentSession);
-                break;
-            case 2:
-                onReceiveActionSkipPrev(currentSession);
-                break;
-            case 3:
-                onReceiveActionForward(currentSession, intent.getLongExtra(EXTRA_SKIP_STEP_MS, 0L));
-                break;
-            case 4:
-                onReceiveActionRewind(currentSession, intent.getLongExtra(EXTRA_SKIP_STEP_MS, 0L));
-                break;
-            case 5:
-                sessionManager.endCurrentSession(true);
-                break;
-            case 6:
-                sessionManager.endCurrentSession(false);
-                break;
-            case 7:
-                onReceiveActionMediaButton(currentSession, intent);
-                break;
-            default:
-                onReceiveOtherAction(context, action, intent);
-                break;
+        onReceiveOtherAction(context, action, intent);
+    }
+
+    public void onReceiveActionForward(g gVar, long j10) {
+        if (gVar instanceof c) {
+            seek((c) gVar, j10);
         }
     }
 
-    protected void onReceiveActionForward(Session session, long j) {
-        if (session instanceof CastSession) {
-            seek((CastSession) session, j);
+    public void onReceiveActionMediaButton(g gVar, Intent intent) {
+        if ((gVar instanceof c) && intent.hasExtra("android.intent.extra.KEY_EVENT")) {
+            Bundle extras = intent.getExtras();
+            l.h(extras);
+            KeyEvent keyEvent = (KeyEvent) extras.get("android.intent.extra.KEY_EVENT");
+            if (keyEvent != null && keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 85) {
+                togglePlayback((c) gVar);
+            }
         }
     }
 
-    protected void onReceiveActionMediaButton(Session session, Intent intent) {
-        KeyEvent keyEvent;
-        if ((session instanceof CastSession) && intent.hasExtra("android.intent.extra.KEY_EVENT") && (keyEvent = (KeyEvent) ((Bundle) Preconditions.checkNotNull(intent.getExtras())).get("android.intent.extra.KEY_EVENT")) != null && keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 85) {
-            togglePlayback((CastSession) session);
+    public void onReceiveActionRewind(g gVar, long j10) {
+        if (gVar instanceof c) {
+            seek((c) gVar, -j10);
         }
     }
 
-    protected void onReceiveActionRewind(Session session, long j) {
-        if (session instanceof CastSession) {
-            seek((CastSession) session, -j);
-        }
-    }
-
-    protected void onReceiveActionSkipNext(Session session) {
-        RemoteMediaClient remoteMediaClient;
-        if (!(session instanceof CastSession) || (remoteMediaClient = getRemoteMediaClient((CastSession) session)) == null || remoteMediaClient.isPlayingAd()) {
+    public void onReceiveActionSkipNext(g gVar) {
+        h remoteMediaClient;
+        if (!(gVar instanceof c) || (remoteMediaClient = getRemoteMediaClient((c) gVar)) == null || remoteMediaClient.n()) {
             return;
         }
-        remoteMediaClient.queueNext(null);
+        l.e("Must be called from the main thread.");
+        if (remoteMediaClient.w()) {
+            h.x(new i(remoteMediaClient, 2));
+        } else {
+            h.t();
+        }
     }
 
-    protected void onReceiveActionSkipPrev(Session session) {
-        RemoteMediaClient remoteMediaClient;
-        if (!(session instanceof CastSession) || (remoteMediaClient = getRemoteMediaClient((CastSession) session)) == null || remoteMediaClient.isPlayingAd()) {
+    public void onReceiveActionSkipPrev(g gVar) {
+        h remoteMediaClient;
+        if (!(gVar instanceof c) || (remoteMediaClient = getRemoteMediaClient((c) gVar)) == null || remoteMediaClient.n()) {
             return;
         }
-        remoteMediaClient.queuePrev(null);
-    }
-
-    protected void onReceiveActionTogglePlayback(Session session) {
-        if (session instanceof CastSession) {
-            togglePlayback((CastSession) session);
+        l.e("Must be called from the main thread.");
+        if (remoteMediaClient.w()) {
+            h.x(new i(remoteMediaClient, 1));
+        } else {
+            h.t();
         }
     }
 
-    protected void onReceiveOtherAction(Context context, String str, Intent intent) {
+    public void onReceiveActionTogglePlayback(g gVar) {
+        if (gVar instanceof c) {
+            togglePlayback((c) gVar);
+        }
+    }
+
+    public void onReceiveOtherAction(Context context, String str, Intent intent) {
     }
 
     @Deprecated
-    protected void onReceiveOtherAction(String str, Intent intent) {
+    public void onReceiveOtherAction(String str, Intent intent) {
         onReceiveOtherAction(null, str, intent);
     }
 }

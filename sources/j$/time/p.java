@@ -5,7 +5,6 @@ import java.io.Externalizable;
 import java.io.InvalidClassException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
-import java.io.Serializable;
 import java.io.StreamCorruptedException;
 
 /* loaded from: classes2.dex */
@@ -17,17 +16,17 @@ public final class p implements Externalizable {
     public p() {
     }
 
-    public p(byte b, Object obj) {
-        this.a = b;
+    public p(byte b10, Object obj) {
+        this.a = b10;
         this.b = obj;
     }
 
     @Override // java.io.Externalizable
     public final void writeExternal(ObjectOutput objectOutput) {
-        byte b = this.a;
+        byte b10 = this.a;
         Object obj = this.b;
-        objectOutput.writeByte(b);
-        switch (b) {
+        objectOutput.writeByte(b10);
+        switch (b10) {
             case 1:
                 Duration duration = (Duration) obj;
                 objectOutput.writeLong(duration.a);
@@ -118,13 +117,13 @@ public final class p implements Externalizable {
         this.b = a(readByte, objectInput);
     }
 
-    public static Serializable a(byte b, ObjectInput objectInput) {
-        switch (b) {
+    public static Object a(byte b10, ObjectInput objectInput) {
+        switch (b10) {
             case 1:
                 Duration duration = Duration.c;
                 long readLong = objectInput.readLong();
                 long readInt = objectInput.readInt();
-                return Duration.l(j$.com.android.tools.r8.a.O(readLong, j$.com.android.tools.r8.a.S(readInt, 1000000000L)), (int) j$.com.android.tools.r8.a.R(readInt, 1000000000L));
+                return Duration.j(j$.com.android.tools.r8.a.O(readLong, j$.com.android.tools.r8.a.S(readInt, 1000000000L)), (int) j$.com.android.tools.r8.a.R(readInt, 1000000000L));
             case 2:
                 Instant instant = Instant.c;
                 return Instant.I(objectInput.readLong(), objectInput.readInt());
@@ -151,30 +150,30 @@ public final class p implements Externalizable {
                 }
                 throw new IllegalArgumentException("ZoneId must match ZoneOffset");
             case 7:
-                int i = u.d;
+                int i10 = u.d;
                 return ZoneId.H(objectInput.readUTF(), false);
             case 8:
                 return ZoneOffset.Q(objectInput);
             case 9:
-                int i2 = o.c;
+                int i11 = o.c;
                 return new o(h.Q(objectInput), ZoneOffset.Q(objectInput));
             case 10:
-                int i3 = OffsetDateTime.c;
+                int i12 = OffsetDateTime.c;
                 LocalDate localDate4 = LocalDate.d;
                 return new OffsetDateTime(LocalDateTime.J(LocalDate.of(objectInput.readInt(), objectInput.readByte(), objectInput.readByte()), h.Q(objectInput)), ZoneOffset.Q(objectInput));
             case 11:
-                int i4 = r.b;
-                return r.E(objectInput.readInt());
+                int i13 = r.b;
+                return r.G(objectInput.readInt());
             case 12:
-                int i5 = YearMonth.c;
+                int i14 = YearMonth.c;
                 return YearMonth.of(objectInput.readInt(), objectInput.readByte());
             case 13:
-                int i6 = l.c;
+                int i15 = l.c;
                 byte readByte = objectInput.readByte();
                 byte readByte2 = objectInput.readByte();
                 j J2 = j.J(readByte);
                 Objects.requireNonNull(J2, "month");
-                j$.time.temporal.a.DAY_OF_MONTH.x(readByte2);
+                j$.time.temporal.a.DAY_OF_MONTH.w(readByte2);
                 if (readByte2 <= J2.I()) {
                     return new l(J2.getValue(), readByte2);
                 }

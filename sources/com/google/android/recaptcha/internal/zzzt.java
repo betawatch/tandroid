@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzzt extends zzsn implements zztt {
     private static final zzzt zzb;
@@ -92,6 +93,47 @@ public final class zzzt extends zzsn implements zztt {
         return 0.0f;
     }
 
+    @Override // com.google.android.recaptcha.internal.zzsn
+    public final Object zzh(int i10, Object obj, Object obj2) {
+        zzua zzuaVar;
+        int i11 = i10 - 1;
+        if (i11 == 0) {
+            return (byte) 1;
+        }
+        if (i11 == 2) {
+            return zzsn.zzF(zzb, "\u0000\u000f\u0001\u0000\u0001\u000f\u000f\u0000\u0000\u0000\u0001>\u0000\u0002:\u0000\u0003=\u0000\u0004Ȼ\u0000\u0005B\u0000\u0006B\u0000\u0007>\u0000\bC\u0000\t6\u0000\n4\u0000\u000b3\u0000\fȻ\u0000\r:\u0000\u000e?\u0000\u000f?\u0000", new Object[]{"zzf", "zze"});
+        }
+        if (i11 == 3) {
+            return new zzzt();
+        }
+        zzzv zzzvVar = null;
+        if (i11 == 4) {
+            return new zzzs(zzzvVar);
+        }
+        if (i11 == 5) {
+            return zzb;
+        }
+        if (i11 != 6) {
+            throw null;
+        }
+        zzua zzuaVar2 = zzd;
+        if (zzuaVar2 != null) {
+            return zzuaVar2;
+        }
+        synchronized (zzzt.class) {
+            try {
+                zzuaVar = zzd;
+                if (zzuaVar == null) {
+                    zzuaVar = new zzsi(zzb);
+                    zzd = zzuaVar;
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        return zzuaVar;
+    }
+
     public final int zzi() {
         if (this.zze == 1) {
             return ((Integer) this.zzf).intValue();
@@ -118,46 +160,5 @@ public final class zzzt extends zzsn implements zztt {
             return ((Long) this.zzf).longValue();
         }
         return 0L;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzsn
-    protected final Object zzh(int i, Object obj, Object obj2) {
-        zzua zzuaVar;
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
-        }
-        if (i2 == 2) {
-            return zzsn.zzF(zzb, "\u0000\u000f\u0001\u0000\u0001\u000f\u000f\u0000\u0000\u0000\u0001>\u0000\u0002:\u0000\u0003=\u0000\u0004Ȼ\u0000\u0005B\u0000\u0006B\u0000\u0007>\u0000\bC\u0000\t6\u0000\n4\u0000\u000b3\u0000\fȻ\u0000\r:\u0000\u000e?\u0000\u000f?\u0000", new Object[]{"zzf", "zze"});
-        }
-        if (i2 == 3) {
-            return new zzzt();
-        }
-        zzzv zzzvVar = null;
-        if (i2 == 4) {
-            return new zzzs(zzzvVar);
-        }
-        if (i2 == 5) {
-            return zzb;
-        }
-        if (i2 != 6) {
-            throw null;
-        }
-        zzua zzuaVar2 = zzd;
-        if (zzuaVar2 != null) {
-            return zzuaVar2;
-        }
-        synchronized (zzzt.class) {
-            try {
-                zzuaVar = zzd;
-                if (zzuaVar == null) {
-                    zzuaVar = new zzsi(zzb);
-                    zzd = zzuaVar;
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return zzuaVar;
     }
 }

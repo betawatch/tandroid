@@ -1,24 +1,15 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzyv extends zzsh implements zztt {
     private zzyv() {
         throw null;
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzyv(zzyy zzyyVar) {
-        super(r1);
-        zzyw zzywVar;
-        zzywVar = zzyw.zzb;
-    }
-
-    public final zzyv zze(boolean z) {
+    public final zzyv zze(boolean z10) {
         zzn();
-        zzyw.zzi((zzyw) this.zza, z);
+        zzyw.zzi((zzyw) this.zza, z10);
         return this;
     }
 
@@ -40,27 +31,27 @@ public final class zzyv extends zzsh implements zztt {
         return this;
     }
 
-    public final zzyv zzs(float f) {
+    public final zzyv zzs(float f10) {
         zzn();
-        zzyw.zzM((zzyw) this.zza, f);
+        zzyw.zzM((zzyw) this.zza, f10);
         return this;
     }
 
-    public final zzyv zzt(int i) {
+    public final zzyv zzt(int i10) {
         zzn();
-        zzyw.zzN((zzyw) this.zza, i);
+        zzyw.zzN((zzyw) this.zza, i10);
         return this;
     }
 
-    public final zzyv zzu(int i) {
+    public final zzyv zzu(int i10) {
         zzn();
-        zzyw.zzO((zzyw) this.zza, i);
+        zzyw.zzO((zzyw) this.zza, i10);
         return this;
     }
 
-    public final zzyv zzv(long j) {
+    public final zzyv zzv(long j10) {
         zzn();
-        zzyw.zzP((zzyw) this.zza, j);
+        zzyw.zzP((zzyw) this.zza, j10);
         return this;
     }
 
@@ -68,5 +59,15 @@ public final class zzyv extends zzsh implements zztt {
         zzn();
         zzyw.zzQ((zzyw) this.zza, str);
         return this;
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public /* synthetic */ zzyv(zzyy zzyyVar) {
+        super(r1);
+        zzyw zzywVar;
+        zzywVar = zzyw.zzb;
     }
 }

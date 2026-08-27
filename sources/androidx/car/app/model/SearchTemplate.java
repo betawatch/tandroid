@@ -2,63 +2,20 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class SearchTemplate implements Template {
+public final class SearchTemplate implements x0 {
     private final ActionStrip mActionStrip;
     private final Action mHeaderAction;
     private final String mInitialSearchText;
     private final boolean mIsLoading;
     private final ItemList mItemList;
-    private final SearchCallbackDelegate mSearchCallbackDelegate;
+    private final o0 mSearchCallbackDelegate;
     private final String mSearchHint;
     private final boolean mShowKeyboardByDefault;
 
-    public static final class Builder {
-    }
-
-    public interface SearchCallback {
-    }
-
-    public Action getHeaderAction() {
-        return this.mHeaderAction;
-    }
-
-    public ActionStrip getActionStrip() {
-        return this.mActionStrip;
-    }
-
-    public boolean isLoading() {
-        return this.mIsLoading;
-    }
-
-    public String getInitialSearchText() {
-        return this.mInitialSearchText;
-    }
-
-    public String getSearchHint() {
-        return this.mSearchHint;
-    }
-
-    public ItemList getItemList() {
-        return this.mItemList;
-    }
-
-    public SearchCallbackDelegate getSearchCallbackDelegate() {
-        SearchCallbackDelegate searchCallbackDelegate = this.mSearchCallbackDelegate;
-        Objects.requireNonNull(searchCallbackDelegate);
-        return searchCallbackDelegate;
-    }
-
-    public boolean isShowKeyboardByDefault() {
-        return this.mShowKeyboardByDefault;
-    }
-
-    public String toString() {
-        return "SearchTemplate";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mInitialSearchText, Boolean.valueOf(this.mIsLoading), this.mSearchHint, this.mItemList, Boolean.valueOf(this.mShowKeyboardByDefault), this.mHeaderAction, this.mActionStrip);
+    public SearchTemplate(q0 q0Var) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -72,8 +29,46 @@ public final class SearchTemplate implements Template {
         return this.mIsLoading == searchTemplate.mIsLoading && Objects.equals(this.mInitialSearchText, searchTemplate.mInitialSearchText) && Objects.equals(this.mSearchHint, searchTemplate.mSearchHint) && Objects.equals(this.mItemList, searchTemplate.mItemList) && Objects.equals(this.mHeaderAction, searchTemplate.mHeaderAction) && Objects.equals(this.mActionStrip, searchTemplate.mActionStrip) && this.mShowKeyboardByDefault == searchTemplate.mShowKeyboardByDefault;
     }
 
-    SearchTemplate(Builder builder) {
-        throw null;
+    public ActionStrip getActionStrip() {
+        return this.mActionStrip;
+    }
+
+    public Action getHeaderAction() {
+        return this.mHeaderAction;
+    }
+
+    public String getInitialSearchText() {
+        return this.mInitialSearchText;
+    }
+
+    public ItemList getItemList() {
+        return this.mItemList;
+    }
+
+    public o0 getSearchCallbackDelegate() {
+        o0 o0Var = this.mSearchCallbackDelegate;
+        Objects.requireNonNull(o0Var);
+        return o0Var;
+    }
+
+    public String getSearchHint() {
+        return this.mSearchHint;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mInitialSearchText, Boolean.valueOf(this.mIsLoading), this.mSearchHint, this.mItemList, Boolean.valueOf(this.mShowKeyboardByDefault), this.mHeaderAction, this.mActionStrip);
+    }
+
+    public boolean isLoading() {
+        return this.mIsLoading;
+    }
+
+    public boolean isShowKeyboardByDefault() {
+        return this.mShowKeyboardByDefault;
+    }
+
+    public String toString() {
+        return "SearchTemplate";
     }
 
     private SearchTemplate() {

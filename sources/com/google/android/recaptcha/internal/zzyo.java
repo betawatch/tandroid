@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzyo extends zzsn implements zztt {
     private static final zzyo zzb;
@@ -21,18 +22,18 @@ public final class zzyo extends zzsn implements zztt {
         return (zzyn) zzb.zzq();
     }
 
-    static /* synthetic */ void zzi(zzyo zzyoVar, Iterable iterable) {
+    public static /* synthetic */ void zzi(zzyo zzyoVar, Iterable iterable) {
         zzyoVar.zzl();
         zzpw.zzc(iterable, zzyoVar.zzg);
     }
 
-    static /* synthetic */ void zzj(zzyo zzyoVar, zzym zzymVar) {
+    public static /* synthetic */ void zzj(zzyo zzyoVar, zzym zzymVar) {
         zzymVar.getClass();
         zzyoVar.zzl();
         zzyoVar.zzg.add(zzymVar);
     }
 
-    static /* synthetic */ void zzk(zzyo zzyoVar, String str) {
+    public static /* synthetic */ void zzk(zzyo zzyoVar, String str) {
         str.getClass();
         zzyoVar.zze |= 1;
         zzyoVar.zzf = str;
@@ -47,26 +48,26 @@ public final class zzyo extends zzsn implements zztt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsn
-    protected final Object zzh(int i, Object obj, Object obj2) {
+    public final Object zzh(int i10, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i2 = i - 1;
-        if (i2 == 0) {
+        int i11 = i10 - 1;
+        if (i11 == 0) {
             return (byte) 1;
         }
-        if (i2 == 2) {
+        if (i11 == 2) {
             return zzsn.zzF(zzb, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0001\u0000\u0001\u001b\u0002ဈ\u0000", new Object[]{"zze", "zzg", zzym.class, "zzf"});
         }
-        if (i2 == 3) {
+        if (i11 == 3) {
             return new zzyo();
         }
         zzyp zzypVar = null;
-        if (i2 == 4) {
+        if (i11 == 4) {
             return new zzyn(zzypVar);
         }
-        if (i2 == 5) {
+        if (i11 == 5) {
             return zzb;
         }
-        if (i2 != 6) {
+        if (i11 != 6) {
             throw null;
         }
         zzua zzuaVar2 = zzd;

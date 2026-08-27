@@ -1,47 +1,54 @@
 package com.google.android.recaptcha.internal;
 
+import h7.y6;
+import id.b2;
+import id.c0;
+import id.f0;
+import id.n0;
+import id.z0;
 import java.util.concurrent.Executors;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.CoroutineScopeKt;
-import kotlinx.coroutines.Dispatchers;
-import kotlinx.coroutines.ExecutorsKt;
+import nd.o;
+import pd.e;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzcm implements zzcr {
-    private final CoroutineScope zza = CoroutineScopeKt.MainScope();
-    private final CoroutineScope zzb;
-    private final CoroutineScope zzc;
-    private final CoroutineScope zzd;
+    private final c0 zza;
+    private final c0 zzb;
+    private final c0 zzc;
+    private final c0 zzd;
 
     public zzcm() {
-        CoroutineScope CoroutineScope = CoroutineScopeKt.CoroutineScope(ExecutorsKt.from(Executors.newSingleThreadExecutor()));
-        BuildersKt__Builders_commonKt.launch$default(CoroutineScope, null, null, new zzcl(null), 3, null);
-        this.zzb = CoroutineScope;
-        this.zzc = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO());
-        CoroutineScope CoroutineScope2 = CoroutineScopeKt.CoroutineScope(ExecutorsKt.from(Executors.newSingleThreadExecutor()));
-        BuildersKt__Builders_commonKt.launch$default(CoroutineScope2, null, null, new zzck(null), 3, null);
-        this.zzd = CoroutineScope2;
-        BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(ExecutorsKt.from(Executors.newSingleThreadExecutor())), null, null, new zzcj(null), 3, null);
+        b2 b2Var = new b2();
+        e eVar = n0.a;
+        this.zza = new nd.e(y6.c(b2Var, o.a));
+        nd.e b10 = f0.b(new z0(Executors.newSingleThreadExecutor()));
+        f0.q(b10, new zzcl(null));
+        this.zzb = b10;
+        this.zzc = f0.b(n0.b);
+        nd.e b11 = f0.b(new z0(Executors.newSingleThreadExecutor()));
+        f0.q(b11, new zzck(null));
+        this.zzd = b11;
+        f0.q(f0.b(new z0(Executors.newSingleThreadExecutor())), new zzcj(null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzcr
-    public final CoroutineScope zza() {
+    public final c0 zza() {
         return this.zzc;
     }
 
     @Override // com.google.android.recaptcha.internal.zzcr
-    public final CoroutineScope zzb() {
+    public final c0 zzb() {
         return this.zza;
     }
 
     @Override // com.google.android.recaptcha.internal.zzcr
-    public final CoroutineScope zzc() {
+    public final c0 zzc() {
         return this.zzd;
     }
 
     @Override // com.google.android.recaptcha.internal.zzcr
-    public final CoroutineScope zzd() {
+    public final c0 zzd() {
         return this.zzb;
     }
 }

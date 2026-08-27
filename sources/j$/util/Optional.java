@@ -19,14 +19,14 @@ public final class Optional<T> {
         this.a = Objects.requireNonNull(obj);
     }
 
-    public static <T> Optional<T> of(T t) {
-        return new Optional<>(t);
+    public static <T> Optional<T> of(T t10) {
+        return new Optional<>(t10);
     }
 
     public T get() {
-        T t = (T) this.a;
-        if (t != null) {
-            return t;
+        T t10 = (T) this.a;
+        if (t10 != null) {
+            return t10;
         }
         throw new NoSuchElementException("No value present");
     }
@@ -51,9 +51,6 @@ public final class Optional<T> {
 
     public final String toString() {
         Object obj = this.a;
-        if (obj != null) {
-            return String.format("Optional[%s]", obj);
-        }
-        return "Optional.empty";
+        return obj != null ? String.format("Optional[%s]", obj) : "Optional.empty";
     }
 }

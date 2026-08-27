@@ -1,13 +1,14 @@
 package com.google.android.recaptcha;
 
-import kotlin.enums.EnumEntries;
-import kotlin.enums.EnumEntriesKt;
+import h7.s7;
+import uc.a;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class RecaptchaErrorCode {
-    private static final /* synthetic */ EnumEntries $ENTRIES;
+    private static final /* synthetic */ a $ENTRIES;
     private static final /* synthetic */ RecaptchaErrorCode[] $VALUES;
     private final int errorCode;
     private final String errorMessage;
@@ -28,15 +29,15 @@ public final class RecaptchaErrorCode {
     static {
         RecaptchaErrorCode[] $values = $values();
         $VALUES = $values;
-        $ENTRIES = EnumEntriesKt.enumEntries($values);
+        $ENTRIES = s7.a($values);
     }
 
-    private RecaptchaErrorCode(String str, int i, int i2, String str2) {
-        this.errorCode = i2;
+    private RecaptchaErrorCode(String str, int i10, int i11, String str2) {
+        this.errorCode = i11;
         this.errorMessage = str2;
     }
 
-    public static EnumEntries getEntries() {
+    public static a getEntries() {
         return $ENTRIES;
     }
 

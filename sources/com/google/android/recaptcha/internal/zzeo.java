@@ -1,15 +1,14 @@
 package com.google.android.recaptcha.internal;
 
+import ad.p;
 import com.google.android.recaptcha.RecaptchaAction;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
+import h7.k6;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzeo extends SuspendLambda implements Function2 {
+final class zzeo extends i implements p {
     int zza;
     final /* synthetic */ zzeq zzb;
     final /* synthetic */ long zzc;
@@ -17,32 +16,32 @@ final class zzeo extends SuspendLambda implements Function2 {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzeo(zzeq zzeqVar, long j, RecaptchaAction recaptchaAction, Continuation continuation) {
-        super(2, continuation);
+    public zzeo(zzeq zzeqVar, long j10, RecaptchaAction recaptchaAction, c cVar) {
+        super(2, cVar);
         this.zzb = zzeqVar;
-        this.zzc = j;
+        this.zzc = j10;
         this.zzd = recaptchaAction;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        zzeo zzeoVar = new zzeo(this.zzb, this.zzc, this.zzd, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        zzeo zzeoVar = new zzeo(this.zzb, this.zzc, this.zzd, cVar);
         zzeoVar.zze = obj;
         return zzeoVar;
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzeo) create((zzgr) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzeo) create((zzgr) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0049, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0047, code lost:
     
         if (r10 != r0) goto L19;
      */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0066 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0067 A[Catch: Exception -> 0x0076, zzcg -> 0x0079, TryCatch #4 {zzcg -> 0x0079, Exception -> 0x0076, blocks: (B:13:0x005e, B:17:0x0067, B:18:0x0075, B:10:0x004b, B:8:0x0045), top: B:7:0x0045 }] */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0064 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0065 A[Catch: Exception -> 0x0074, zzcg -> 0x0077, TryCatch #4 {zzcg -> 0x0077, Exception -> 0x0074, blocks: (B:13:0x005c, B:17:0x0065, B:18:0x0073, B:10:0x0049, B:8:0x0043), top: B:7:0x0043 }] */
+    @Override // tc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -50,19 +49,19 @@ final class zzeo extends SuspendLambda implements Function2 {
         Exception exc;
         zzgr zzgrVar;
         zzeo zzeoVar;
-        Exception e;
-        zzcg e2;
+        Exception e9;
+        zzcg e10;
         String str;
-        long j;
+        long j10;
         RecaptchaAction recaptchaAction;
         zzdw zzdwVar;
         String zzb;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zza;
-        if (i != 0) {
+        sc.a aVar = sc.a.a;
+        int i10 = this.zza;
+        if (i10 != 0) {
             try {
-                if (i != 1) {
-                    ResultKt.throwOnFailure(obj);
+                if (i10 != 1) {
+                    k6.b(obj);
                     str = (String) obj;
                     if (str.length() == 0) {
                         return str;
@@ -70,51 +69,51 @@ final class zzeo extends SuspendLambda implements Function2 {
                     throw new zzcg(zzce.zzb, zzcd.zzaW, null, null, 12, null);
                 }
                 zzgrVar = (zzgr) this.zze;
-                ResultKt.throwOnFailure(obj);
+                k6.b(obj);
                 zzeoVar = this;
-            } catch (zzcg e3) {
-                throw e3;
-            } catch (Exception e4) {
-                exc = e4;
+            } catch (zzcg e11) {
+                throw e11;
+            } catch (Exception e12) {
+                exc = e12;
                 throw new zzcg(zzce.zzb, zzcd.zzX, exc.getMessage(), null, 8, null);
             }
         } else {
-            ResultKt.throwOnFailure(obj);
+            k6.b(obj);
             zzgrVar = (zzgr) this.zze;
             try {
                 zzeq zzeqVar = this.zzb;
-                j = this.zzc;
+                j10 = this.zzc;
                 recaptchaAction = this.zzd;
-                zzeq.zzd(zzeqVar, j, recaptchaAction);
+                zzeq.zzd(zzeqVar, j10, recaptchaAction);
                 zzdwVar = zzeqVar.zzb;
                 zzb = zzgrVar.zza().zzb();
                 this.zze = zzgrVar;
                 this.zza = 1;
                 zzeoVar = this;
-            } catch (zzcg e5) {
-                e2 = e5;
-                throw e2;
-            } catch (Exception e6) {
-                e = e6;
-                exc = e;
+            } catch (zzcg e13) {
+                e10 = e13;
+                throw e10;
+            } catch (Exception e14) {
+                e9 = e14;
+                exc = e9;
                 throw new zzcg(zzce.zzb, zzcd.zzX, exc.getMessage(), null, 8, null);
             }
             try {
-                obj = zzdwVar.zza(zzb, recaptchaAction, j, zzeoVar);
-            } catch (zzcg e7) {
-                e2 = e7;
-                throw e2;
-            } catch (Exception e8) {
-                e = e8;
-                exc = e;
+                obj = zzdwVar.zza(zzb, recaptchaAction, j10, zzeoVar);
+            } catch (zzcg e15) {
+                e10 = e15;
+                throw e10;
+            } catch (Exception e16) {
+                e9 = e16;
+                exc = e9;
                 throw new zzcg(zzce.zzb, zzcd.zzX, exc.getMessage(), null, 8, null);
             }
         }
         zzeoVar.zze = null;
         zzeoVar.zza = 2;
         obj = ((zzhg) obj).zza(zzgrVar.zza(), this);
-        if (obj == coroutine_suspended) {
-            return coroutine_suspended;
+        if (obj == aVar) {
+            return aVar;
         }
         str = (String) obj;
         if (str.length() == 0) {

@@ -1,16 +1,15 @@
 package com.google.android.recaptcha.internal;
 
+import ad.p;
 import com.google.android.recaptcha.RecaptchaAction;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
+import h7.k6;
+import kotlin.jvm.internal.j;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzgc extends SuspendLambda implements Function2 {
+final class zzgc extends i implements p {
     Object zza;
     double zzb;
     int zzc;
@@ -21,34 +20,34 @@ final class zzgc extends SuspendLambda implements Function2 {
     private /* synthetic */ Object zzh;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzgc(zzge zzgeVar, long j, String str, RecaptchaAction recaptchaAction, Continuation continuation) {
-        super(2, continuation);
+    public zzgc(zzge zzgeVar, long j10, String str, RecaptchaAction recaptchaAction, c cVar) {
+        super(2, cVar);
         this.zzd = zzgeVar;
-        this.zze = j;
+        this.zze = j10;
         this.zzf = str;
         this.zzg = recaptchaAction;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        zzgc zzgcVar = new zzgc(this.zzd, this.zze, this.zzf, this.zzg, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        zzgc zzgcVar = new zzgc(this.zzd, this.zze, this.zzf, this.zzg, cVar);
         zzgcVar.zzh = obj;
         return zzgcVar;
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzgc) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzgc) create((zzhk) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x011c  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x011a  */
     /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00d4  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00d2  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00e8  */
     /* JADX WARN: Removed duplicated region for block: B:42:? A[RETURN, SYNTHETIC] */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -61,7 +60,7 @@ final class zzgc extends SuspendLambda implements Function2 {
         double d;
         zzhk zzhkVar2;
         Object zza;
-        double d2;
+        double d10;
         zzfp zzfpVar2;
         zzxn zzxnVar;
         zzfp zzfpVar3;
@@ -72,44 +71,44 @@ final class zzgc extends SuspendLambda implements Function2 {
         zzfp zzfpVar4;
         Object zzo;
         zzyg zzygVar2;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zzc;
+        sc.a aVar = sc.a.a;
+        int i10 = this.zzc;
         try {
-            if (i == 0) {
-                ResultKt.throwOnFailure(obj);
+            if (i10 == 0) {
+                k6.b(obj);
                 zzhkVar = (zzhk) this.zzh;
                 zzge zzgeVar = this.zzd;
                 zzdvVar = zzgeVar.zzb;
                 zzdsVar = zzdv.zzb;
-                if (!Intrinsics.areEqual(zzdvVar, zzdsVar)) {
+                if (!j.a(zzdvVar, zzdsVar)) {
                     throw new zzcg(zzce.zzb, zzcd.zzas, null, null, 12, null);
                 }
-                double d3 = this.zze;
+                double d11 = this.zze;
                 zzfpVar = zzgeVar.zza;
                 String str = this.zzf;
-                double d4 = 0.45d * d3;
+                double d12 = 0.45d * d11;
                 this.zzh = zzhkVar;
                 this.zza = zzhkVar;
-                double d5 = d3 * 0.55d;
-                this.zzb = d5;
+                double d13 = d11 * 0.55d;
+                this.zzb = d13;
                 this.zzc = 1;
-                zzl = zzfpVar.zzl(str, (long) d4, this);
-                if (zzl == coroutine_suspended) {
-                    return coroutine_suspended;
+                zzl = zzfpVar.zzl(str, (long) d12, this);
+                if (zzl == aVar) {
+                    return aVar;
                 }
-                d = d5;
+                d = d13;
                 zzhkVar2 = zzhkVar;
-            } else if (i == 1) {
+            } else if (i10 == 1) {
                 d = this.zzb;
                 zzhkVar = (zzhk) this.zza;
                 zzhk zzhkVar4 = (zzhk) this.zzh;
-                ResultKt.throwOnFailure(obj);
+                k6.b(obj);
                 zzhkVar2 = zzhkVar4;
                 zzl = obj;
-            } else if (i == 2) {
-                d2 = this.zzb;
+            } else if (i10 == 2) {
+                d10 = this.zzb;
                 zzhk zzhkVar5 = (zzhk) this.zzh;
-                ResultKt.throwOnFailure(obj);
+                k6.b(obj);
                 zzhkVar2 = zzhkVar5;
                 zza = obj;
                 zzxx zzxxVar = (zzxx) zza;
@@ -125,16 +124,16 @@ final class zzgc extends SuspendLambda implements Function2 {
                 this.zzh = zzhkVar2;
                 this.zza = zzhkVar2;
                 this.zzc = 3;
-                zzm = zzfpVar3.zzm(zzk, (long) d2, this);
-                if (zzm != coroutine_suspended) {
-                    return coroutine_suspended;
+                zzm = zzfpVar3.zzm(zzk, (long) d10, this);
+                if (zzm != aVar) {
+                    return aVar;
                 }
                 zzhkVar3 = zzhkVar2;
                 this.zzh = zzhkVar3;
                 this.zza = null;
                 this.zzc = 4;
                 zza2 = ((zzhf) zzm).zza(zzhkVar2, this);
-                if (zza2 == coroutine_suspended) {
+                if (zza2 == aVar) {
                 }
                 zzygVar = (zzyg) zza2;
                 zzfpVar4 = this.zzd.zza;
@@ -142,25 +141,25 @@ final class zzgc extends SuspendLambda implements Function2 {
                 this.zza = zzhkVar3;
                 this.zzc = 5;
                 zzo = zzfpVar4.zzo(zzygVar, this);
-                if (zzo == coroutine_suspended) {
+                if (zzo == aVar) {
                 }
                 this.zzh = zzygVar;
                 this.zza = null;
                 this.zzc = 6;
-                if (zzhj.zzb(zzhkVar3, (zzhf) zzo, this) != coroutine_suspended) {
+                if (zzhj.zzb(zzhkVar3, (zzhf) zzo, this) != aVar) {
                 }
-            } else if (i == 3) {
+            } else if (i10 == 3) {
                 zzhk zzhkVar6 = (zzhk) this.zza;
                 zzhkVar3 = (zzhk) this.zzh;
-                ResultKt.throwOnFailure(obj);
+                k6.b(obj);
                 zzhkVar2 = zzhkVar6;
                 zzm = obj;
                 this.zzh = zzhkVar3;
                 this.zza = null;
                 this.zzc = 4;
                 zza2 = ((zzhf) zzm).zza(zzhkVar2, this);
-                if (zza2 == coroutine_suspended) {
-                    return coroutine_suspended;
+                if (zza2 == aVar) {
+                    return aVar;
                 }
                 zzygVar = (zzyg) zza2;
                 zzfpVar4 = this.zzd.zza;
@@ -168,37 +167,37 @@ final class zzgc extends SuspendLambda implements Function2 {
                 this.zza = zzhkVar3;
                 this.zzc = 5;
                 zzo = zzfpVar4.zzo(zzygVar, this);
-                if (zzo == coroutine_suspended) {
+                if (zzo == aVar) {
                 }
                 this.zzh = zzygVar;
                 this.zza = null;
                 this.zzc = 6;
-                if (zzhj.zzb(zzhkVar3, (zzhf) zzo, this) != coroutine_suspended) {
+                if (zzhj.zzb(zzhkVar3, (zzhf) zzo, this) != aVar) {
                 }
             } else {
-                if (i != 4) {
-                    if (i != 5) {
+                if (i10 != 4) {
+                    if (i10 != 5) {
                         zzygVar2 = (zzyg) this.zzh;
-                        ResultKt.throwOnFailure(obj);
+                        k6.b(obj);
                         return zzygVar2.zzj();
                     }
                     zzhk zzhkVar7 = (zzhk) this.zza;
                     zzyg zzygVar3 = (zzyg) this.zzh;
-                    ResultKt.throwOnFailure(obj);
+                    k6.b(obj);
                     zzhkVar3 = zzhkVar7;
                     zzygVar = zzygVar3;
                     zzo = obj;
                     this.zzh = zzygVar;
                     this.zza = null;
                     this.zzc = 6;
-                    if (zzhj.zzb(zzhkVar3, (zzhf) zzo, this) != coroutine_suspended) {
-                        return coroutine_suspended;
+                    if (zzhj.zzb(zzhkVar3, (zzhf) zzo, this) != aVar) {
+                        return aVar;
                     }
                     zzygVar2 = zzygVar;
                     return zzygVar2.zzj();
                 }
                 zzhk zzhkVar8 = (zzhk) this.zzh;
-                ResultKt.throwOnFailure(obj);
+                k6.b(obj);
                 zzhkVar3 = zzhkVar8;
                 zza2 = obj;
                 zzygVar = (zzyg) zza2;
@@ -207,13 +206,13 @@ final class zzgc extends SuspendLambda implements Function2 {
                 this.zza = zzhkVar3;
                 this.zzc = 5;
                 zzo = zzfpVar4.zzo(zzygVar, this);
-                if (zzo == coroutine_suspended) {
-                    return coroutine_suspended;
+                if (zzo == aVar) {
+                    return aVar;
                 }
                 this.zzh = zzygVar;
                 this.zza = null;
                 this.zzc = 6;
-                if (zzhj.zzb(zzhkVar3, (zzhf) zzo, this) != coroutine_suspended) {
+                if (zzhj.zzb(zzhkVar3, (zzhf) zzo, this) != aVar) {
                 }
             }
             this.zzh = zzhkVar2;
@@ -221,10 +220,10 @@ final class zzgc extends SuspendLambda implements Function2 {
             this.zzb = d;
             this.zzc = 2;
             zza = ((zzhf) zzl).zza(zzhkVar, this);
-            if (zza == coroutine_suspended) {
-                return coroutine_suspended;
+            if (zza == aVar) {
+                return aVar;
             }
-            d2 = d;
+            d10 = d;
             zzxx zzxxVar2 = (zzxx) zza;
             zzge zzgeVar22 = this.zzd;
             zzfpVar2 = zzgeVar22.zza;
@@ -237,13 +236,13 @@ final class zzgc extends SuspendLambda implements Function2 {
             this.zzh = zzhkVar2;
             this.zza = zzhkVar2;
             this.zzc = 3;
-            zzm = zzfpVar3.zzm(zzk2, (long) d2, this);
-            if (zzm != coroutine_suspended) {
+            zzm = zzfpVar3.zzm(zzk2, (long) d10, this);
+            if (zzm != aVar) {
             }
-        } catch (zzcg e) {
-            throw e;
-        } catch (Exception e2) {
-            throw new zzcg(zzce.zzb, zzcd.zzaC, e2.getMessage(), null, 8, null);
+        } catch (zzcg e9) {
+            throw e9;
+        } catch (Exception e10) {
+            throw new zzcg(zzce.zzb, zzcd.zzaC, e10.getMessage(), null, 8, null);
         }
     }
 }

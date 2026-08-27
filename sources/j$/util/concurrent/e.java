@@ -85,14 +85,14 @@ public final class e extends b implements Set, j$.util.Set {
     @Override // java.util.Collection, java.util.Set
     public final boolean addAll(java.util.Collection collection) {
         Iterator it = collection.iterator();
-        boolean z = false;
+        boolean z10 = false;
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
             if (this.a.f(entry.getKey(), entry.getValue(), false) == null) {
-                z = true;
+                z10 = true;
             }
         }
-        return z;
+        return z10;
     }
 
     @Override // java.util.Collection, j$.util.Collection
@@ -100,39 +100,39 @@ public final class e extends b implements Set, j$.util.Set {
         ConcurrentHashMap concurrentHashMap = this.a;
         predicate.getClass();
         l[] lVarArr = concurrentHashMap.a;
-        boolean z = false;
+        boolean z10 = false;
         if (lVarArr != null) {
             p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
             while (true) {
-                l a = pVar.a();
-                if (a == null) {
+                l a2 = pVar.a();
+                if (a2 == null) {
                     break;
                 }
-                Object obj = a.b;
-                Object obj2 = a.c;
+                Object obj = a2.b;
+                Object obj2 = a2.c;
                 if (predicate.test(new AbstractMap.SimpleImmutableEntry(obj, obj2)) && concurrentHashMap.g(obj, null, obj2) != null) {
-                    z = true;
+                    z10 = true;
                 }
             }
         }
-        return z;
+        return z10;
     }
 
     @Override // java.util.Collection, java.util.Set
     public final int hashCode() {
         l[] lVarArr = this.a.a;
-        int i = 0;
+        int i10 = 0;
         if (lVarArr != null) {
             p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
             while (true) {
-                l a = pVar.a();
-                if (a == null) {
+                l a2 = pVar.a();
+                if (a2 == null) {
                     break;
                 }
-                i += a.hashCode();
+                i10 += a2.hashCode();
             }
         }
-        return i;
+        return i10;
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -150,10 +150,10 @@ public final class e extends b implements Set, j$.util.Set {
     @Override // java.util.Collection, java.lang.Iterable, java.util.Set, j$.util.Collection
     public final j$.util.Spliterator spliterator() {
         ConcurrentHashMap concurrentHashMap = this.a;
-        long j = concurrentHashMap.j();
+        long j10 = concurrentHashMap.j();
         l[] lVarArr = concurrentHashMap.a;
         int length = lVarArr == null ? 0 : lVarArr.length;
-        return new f(lVarArr, length, 0, length, j >= 0 ? j : 0L, concurrentHashMap);
+        return new f(lVarArr, length, 0, length, j10 >= 0 ? j10 : 0L, concurrentHashMap);
     }
 
     @Override // java.lang.Iterable, j$.util.Collection
@@ -165,11 +165,11 @@ public final class e extends b implements Set, j$.util.Set {
         }
         p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
         while (true) {
-            l a = pVar.a();
-            if (a == null) {
+            l a2 = pVar.a();
+            if (a2 == null) {
                 return;
             } else {
-                consumer.s(new k(a.b, a.c, this.a));
+                consumer.x(new k(a2.b, a2.c, this.a));
             }
         }
     }

@@ -3,15 +3,16 @@ package com.google.android.recaptcha.internal;
 import java.security.MessageDigest;
 import java.util.Arrays;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzph extends zzoy {
     private final MessageDigest zza;
     private final int zzb;
     private boolean zzc;
 
-    /* synthetic */ zzph(MessageDigest messageDigest, int i, zzpi zzpiVar) {
+    public /* synthetic */ zzph(MessageDigest messageDigest, int i10, zzpi zzpiVar) {
         this.zza = messageDigest;
-        this.zzb = i;
+        this.zzb = i10;
     }
 
     private final void zzc() {
@@ -19,24 +20,24 @@ final class zzph extends zzoy {
     }
 
     @Override // com.google.android.recaptcha.internal.zzoy
-    protected final void zza(byte[] bArr, int i, int i2) {
+    public final void zza(byte[] bArr, int i10, int i11) {
         zzc();
-        this.zza.update(bArr, 0, i2);
+        this.zza.update(bArr, 0, i11);
     }
 
     @Override // com.google.android.recaptcha.internal.zzpe
     public final zzpc zzb() {
         zzc();
         this.zzc = true;
-        int i = this.zzb;
+        int i10 = this.zzb;
         MessageDigest messageDigest = this.zza;
-        if (i == messageDigest.getDigestLength()) {
+        if (i10 == messageDigest.getDigestLength()) {
             byte[] digest = messageDigest.digest();
-            int i2 = zzpc.zzb;
+            int i11 = zzpc.zzb;
             return new zzpb(digest);
         }
-        byte[] copyOf = Arrays.copyOf(messageDigest.digest(), i);
-        int i3 = zzpc.zzb;
+        byte[] copyOf = Arrays.copyOf(messageDigest.digest(), i10);
+        int i12 = zzpc.zzb;
         return new zzpb(copyOf);
     }
 }

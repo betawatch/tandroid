@@ -1,106 +1,50 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import java.util.Comparator;
+import j$.util.Spliterator;
 import java.util.function.DoubleConsumer;
-import java.util.function.IntConsumer;
-import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public abstract class l3 extends n3 implements j$.util.c0 {
-    public abstract Object b();
+public final class l3 extends p3 implements g5 {
+    public final double[] h;
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.n(this);
+    @Override // j$.util.stream.g5
+    public final /* synthetic */ void B(Double d) {
+        t3.D(this, d);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.com.android.tools.r8.a.p(this, i);
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void x(Object obj) {
+        B((Double) obj);
     }
 
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
     }
 
-    public l3(j$.util.c0 c0Var, long j, long j2) {
-        super(c0Var, j, j2, 0L, Math.min(c0Var.estimateSize(), j2));
+    public l3(Spliterator spliterator, t3 t3Var, double[] dArr) {
+        super(spliterator, t3Var, dArr.length);
+        this.h = dArr;
     }
 
-    @Override // j$.util.c0
-    public final boolean tryAdvance(Object obj) {
-        long j;
-        Objects.requireNonNull(obj);
-        long j2 = this.e;
-        long j3 = this.a;
-        if (j3 >= j2) {
-            return false;
+    public l3(l3 l3Var, Spliterator spliterator, long j10, long j11) {
+        super(l3Var, spliterator, j10, j11, l3Var.h.length);
+        this.h = l3Var.h;
+    }
+
+    @Override // j$.util.stream.p3
+    public final p3 a(Spliterator spliterator, long j10, long j11) {
+        return new l3(this, spliterator, j10, j11);
+    }
+
+    @Override // j$.util.stream.p3, j$.util.stream.j5
+    public final void accept(double d) {
+        int i10 = this.f;
+        if (i10 >= this.g) {
+            throw new IndexOutOfBoundsException(Integer.toString(this.f));
         }
-        while (true) {
-            j = this.d;
-            if (j3 <= j) {
-                break;
-            }
-            ((j$.util.c0) this.c).tryAdvance(b());
-            this.d++;
-        }
-        if (j >= this.e) {
-            return false;
-        }
-        this.d = j + 1;
-        return ((j$.util.c0) this.c).tryAdvance(obj);
-    }
-
-    @Override // j$.util.c0
-    public final void forEachRemaining(Object obj) {
-        Objects.requireNonNull(obj);
-        long j = this.e;
-        long j2 = this.a;
-        if (j2 >= j) {
-            return;
-        }
-        long j3 = this.d;
-        if (j3 >= j) {
-            return;
-        }
-        if (j3 >= j2 && ((j$.util.c0) this.c).estimateSize() + j3 <= this.b) {
-            ((j$.util.c0) this.c).forEachRemaining(obj);
-            this.d = this.e;
-            return;
-        }
-        while (j2 > this.d) {
-            ((j$.util.c0) this.c).tryAdvance(b());
-            this.d++;
-        }
-        while (this.d < this.e) {
-            ((j$.util.c0) this.c).tryAdvance(obj);
-            this.d++;
-        }
-    }
-
-    public /* bridge */ /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
-        forEachRemaining((Object) intConsumer);
-    }
-
-    public /* bridge */ /* synthetic */ boolean tryAdvance(IntConsumer intConsumer) {
-        return tryAdvance((Object) intConsumer);
-    }
-
-    public /* bridge */ /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
-        forEachRemaining((Object) longConsumer);
-    }
-
-    public /* bridge */ /* synthetic */ boolean tryAdvance(LongConsumer longConsumer) {
-        return tryAdvance((Object) longConsumer);
-    }
-
-    public /* bridge */ /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
-        forEachRemaining((Object) doubleConsumer);
-    }
-
-    public /* bridge */ /* synthetic */ boolean tryAdvance(DoubleConsumer doubleConsumer) {
-        return tryAdvance((Object) doubleConsumer);
+        double[] dArr = this.h;
+        this.f = i10 + 1;
+        dArr[i10] = d;
     }
 }

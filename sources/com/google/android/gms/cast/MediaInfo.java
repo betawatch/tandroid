@@ -3,293 +3,165 @@ package com.google.android.gms.cast;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import com.google.android.gms.cast.internal.CastUtils;
-import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-import com.google.android.gms.common.util.JsonUtils;
-import com.google.android.gms.internal.cast.zzfn;
-import com.google.android.gms.internal.cast.zzfq;
+import com.google.android.gms.internal.cast.g0;
+import com.google.android.gms.internal.cast.l0;
+import f6.c;
+import g7.o5;
+import h7.r8;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.regex.Pattern;
+import m5.b;
+import m5.l;
+import m5.t;
+import m5.u;
+import m5.w;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import z5.a;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class MediaInfo extends AbstractSafeParcelable implements ReflectedParcelable {
-    String zzb;
-    private String zzc;
-    private int zzd;
-    private String zze;
-    private MediaMetadata zzf;
-    private long zzg;
-    private List zzh;
-    private TextTrackStyle zzi;
-    private List zzj;
-    private List zzk;
-    private String zzl;
-    private VastAdsRequest zzm;
-    private long zzn;
-    private String zzo;
-    private String zzp;
-    private String zzq;
-    private String zzr;
-    private JSONObject zzs;
-    private final Writer zzt;
-    public static final long zza = CastUtils.secToMillisec(-1L);
-    public static final Parcelable.Creator<MediaInfo> CREATOR = new zzby();
+public class MediaInfo extends a implements ReflectedParcelable {
+    public static final Parcelable.Creator<MediaInfo> CREATOR;
+    public final String A;
+    public final String B;
+    public final String C;
+    public final JSONObject D;
+    public final String a;
+    public final int b;
+    public final String c;
+    public final l d;
+    public final long e;
+    public final List f;
+    public final t h;
+    public String n;
+    public List r;
+    public List s;
+    public final String v;
+    public final u w;
+    public final long x;
+    public final String y;
 
-    public static class Builder {
-        private String zza;
-        private String zzc;
-        private MediaMetadata zzd;
-        private List zzf;
-        private TextTrackStyle zzg;
-        private String zzh;
-        private List zzi;
-        private List zzj;
-        private String zzk;
-        private VastAdsRequest zzl;
-        private String zzm;
-        private String zzn;
-        private String zzo;
-        private String zzp;
-        private int zzb = -1;
-        private long zze = -1;
-
-        public Builder(String str) {
-            this.zza = str;
-        }
-
-        public MediaInfo build() {
-            return new MediaInfo(this.zza, this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, this.zzh, this.zzi, this.zzj, this.zzk, this.zzl, -1L, this.zzm, this.zzn, this.zzo, this.zzp);
-        }
-
-        public Builder setContentType(String str) {
-            this.zzc = str;
-            return this;
-        }
-
-        public Builder setMetadata(MediaMetadata mediaMetadata) {
-            this.zzd = mediaMetadata;
-            return this;
-        }
-
-        public Builder setStreamType(int i) {
-            if (i < -1 || i > 2) {
-                throw new IllegalArgumentException("invalid stream type");
-            }
-            this.zzb = i;
-            return this;
-        }
+    static {
+        Pattern pattern = r5.a.a;
+        CREATOR = new w(7);
     }
 
-    public class Writer {
-        public Writer() {
-        }
-    }
-
-    MediaInfo(String str, int i, String str2, MediaMetadata mediaMetadata, long j, List list, TextTrackStyle textTrackStyle, String str3, List list2, List list3, String str4, VastAdsRequest vastAdsRequest, long j2, String str5, String str6, String str7, String str8) {
-        this.zzt = new Writer();
-        this.zzc = str;
-        this.zzd = i;
-        this.zze = str2;
-        this.zzf = mediaMetadata;
-        this.zzg = j;
-        this.zzh = list;
-        this.zzi = textTrackStyle;
-        this.zzb = str3;
+    public MediaInfo(String str, int i10, String str2, l lVar, long j10, ArrayList arrayList, t tVar, String str3, ArrayList arrayList2, ArrayList arrayList3, String str4, u uVar, long j11, String str5, String str6, String str7, String str8) {
+        this.a = str;
+        this.b = i10;
+        this.c = str2;
+        this.d = lVar;
+        this.e = j10;
+        this.f = arrayList;
+        this.h = tVar;
+        this.n = str3;
         if (str3 != null) {
             try {
-                this.zzs = new JSONObject(this.zzb);
+                this.D = new JSONObject(this.n);
             } catch (JSONException unused) {
-                this.zzs = null;
-                this.zzb = null;
+                this.D = null;
+                this.n = null;
             }
         } else {
-            this.zzs = null;
+            this.D = null;
         }
-        this.zzj = list2;
-        this.zzk = list3;
-        this.zzl = str4;
-        this.zzm = vastAdsRequest;
-        this.zzn = j2;
-        this.zzo = str5;
-        this.zzp = str6;
-        this.zzq = str7;
-        this.zzr = str8;
-        if (this.zzc == null && str6 == null && str4 == null) {
+        this.r = arrayList2;
+        this.s = arrayList3;
+        this.v = str4;
+        this.w = uVar;
+        this.x = j11;
+        this.y = str5;
+        this.A = str6;
+        this.B = str7;
+        this.C = str8;
+        if (this.a == null && str6 == null && str4 == null) {
             throw new IllegalArgumentException("Either contentID or contentUrl or entity should be set");
         }
     }
 
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof MediaInfo)) {
-            return false;
-        }
-        MediaInfo mediaInfo = (MediaInfo) obj;
-        JSONObject jSONObject = this.zzs;
-        boolean z = jSONObject == null;
-        JSONObject jSONObject2 = mediaInfo.zzs;
-        if (z != (jSONObject2 == null)) {
-            return false;
-        }
-        return (jSONObject == null || jSONObject2 == null || JsonUtils.areJsonValuesEquivalent(jSONObject, jSONObject2)) && CastUtils.zze(this.zzc, mediaInfo.zzc) && this.zzd == mediaInfo.zzd && CastUtils.zze(this.zze, mediaInfo.zze) && CastUtils.zze(this.zzf, mediaInfo.zzf) && this.zzg == mediaInfo.zzg && CastUtils.zze(this.zzh, mediaInfo.zzh) && CastUtils.zze(this.zzi, mediaInfo.zzi) && CastUtils.zze(this.zzj, mediaInfo.zzj) && CastUtils.zze(this.zzk, mediaInfo.zzk) && CastUtils.zze(this.zzl, mediaInfo.zzl) && CastUtils.zze(this.zzm, mediaInfo.zzm) && this.zzn == mediaInfo.zzn && CastUtils.zze(this.zzo, mediaInfo.zzo) && CastUtils.zze(this.zzp, mediaInfo.zzp) && CastUtils.zze(this.zzq, mediaInfo.zzq) && CastUtils.zze(this.zzr, mediaInfo.zzr);
-    }
-
-    public List getAdBreakClips() {
-        List list = this.zzk;
-        if (list == null) {
-            return null;
-        }
-        return DesugarCollections.unmodifiableList(list);
-    }
-
-    public List getAdBreaks() {
-        List list = this.zzj;
-        if (list == null) {
-            return null;
-        }
-        return DesugarCollections.unmodifiableList(list);
-    }
-
-    public String getContentId() {
-        String str = this.zzc;
-        return str == null ? "" : str;
-    }
-
-    public String getContentType() {
-        return this.zze;
-    }
-
-    public String getContentUrl() {
-        return this.zzp;
-    }
-
-    public String getEntity() {
-        return this.zzl;
-    }
-
-    public String getHlsSegmentFormat() {
-        return this.zzq;
-    }
-
-    public String getHlsVideoSegmentFormat() {
-        return this.zzr;
-    }
-
-    public List getMediaTracks() {
-        return this.zzh;
-    }
-
-    public MediaMetadata getMetadata() {
-        return this.zzf;
-    }
-
-    public long getStartAbsoluteTime() {
-        return this.zzn;
-    }
-
-    public long getStreamDuration() {
-        return this.zzg;
-    }
-
-    public int getStreamType() {
-        return this.zzd;
-    }
-
-    public TextTrackStyle getTextTrackStyle() {
-        return this.zzi;
-    }
-
-    public VastAdsRequest getVmapAdsRequest() {
-        return this.zzm;
-    }
-
-    public int hashCode() {
-        return Objects.hashCode(this.zzc, Integer.valueOf(this.zzd), this.zze, this.zzf, Long.valueOf(this.zzg), String.valueOf(this.zzs), this.zzh, this.zzi, this.zzj, this.zzk, this.zzl, this.zzm, Long.valueOf(this.zzn), this.zzo, this.zzq, this.zzr);
-    }
-
-    public final JSONObject zza() {
+    public final JSONObject b() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("contentId", this.zzc);
-            jSONObject.putOpt("contentUrl", this.zzp);
-            int i = this.zzd;
-            jSONObject.put("streamType", i != 1 ? i != 2 ? "NONE" : "LIVE" : "BUFFERED");
-            String str = this.zze;
+            jSONObject.put("contentId", this.a);
+            jSONObject.putOpt("contentUrl", this.A);
+            int i10 = this.b;
+            jSONObject.put("streamType", i10 != 1 ? i10 != 2 ? "NONE" : "LIVE" : "BUFFERED");
+            String str = this.c;
             if (str != null) {
                 jSONObject.put("contentType", str);
             }
-            MediaMetadata mediaMetadata = this.zzf;
-            if (mediaMetadata != null) {
-                jSONObject.put("metadata", mediaMetadata.zza());
+            l lVar = this.d;
+            if (lVar != null) {
+                jSONObject.put("metadata", lVar.d());
             }
-            long j = this.zzg;
-            if (j <= -1) {
+            long j10 = this.e;
+            if (j10 <= -1) {
                 jSONObject.put("duration", JSONObject.NULL);
             } else {
-                jSONObject.put("duration", CastUtils.millisecToSec(j));
+                Pattern pattern = r5.a.a;
+                jSONObject.put("duration", j10 / 1000.0d);
             }
-            if (this.zzh != null) {
+            List list = this.f;
+            if (list != null) {
                 JSONArray jSONArray = new JSONArray();
-                Iterator it = this.zzh.iterator();
+                Iterator it = list.iterator();
                 while (it.hasNext()) {
-                    jSONArray.put(((MediaTrack) it.next()).zza());
+                    jSONArray.put(((MediaTrack) it.next()).b());
                 }
                 jSONObject.put("tracks", jSONArray);
             }
-            TextTrackStyle textTrackStyle = this.zzi;
-            if (textTrackStyle != null) {
-                jSONObject.put("textTrackStyle", textTrackStyle.zza());
+            t tVar = this.h;
+            if (tVar != null) {
+                jSONObject.put("textTrackStyle", tVar.b());
             }
-            JSONObject jSONObject2 = this.zzs;
+            JSONObject jSONObject2 = this.D;
             if (jSONObject2 != null) {
                 jSONObject.put("customData", jSONObject2);
             }
-            String str2 = this.zzl;
+            String str2 = this.v;
             if (str2 != null) {
                 jSONObject.put("entity", str2);
             }
-            if (this.zzj != null) {
+            if (this.r != null) {
                 JSONArray jSONArray2 = new JSONArray();
-                Iterator it2 = this.zzj.iterator();
+                Iterator it2 = this.r.iterator();
                 while (it2.hasNext()) {
-                    jSONArray2.put(((AdBreakInfo) it2.next()).zza());
+                    jSONArray2.put(((b) it2.next()).b());
                 }
                 jSONObject.put("breaks", jSONArray2);
             }
-            if (this.zzk != null) {
+            if (this.s != null) {
                 JSONArray jSONArray3 = new JSONArray();
-                Iterator it3 = this.zzk.iterator();
+                Iterator it3 = this.s.iterator();
                 while (it3.hasNext()) {
-                    jSONArray3.put(((AdBreakClipInfo) it3.next()).zza());
+                    jSONArray3.put(((m5.a) it3.next()).b());
                 }
                 jSONObject.put("breakClips", jSONArray3);
             }
-            VastAdsRequest vastAdsRequest = this.zzm;
-            if (vastAdsRequest != null) {
-                jSONObject.put("vmapAdsRequest", vastAdsRequest.zza());
+            u uVar = this.w;
+            if (uVar != null) {
+                jSONObject.put("vmapAdsRequest", uVar.b());
             }
-            long j2 = this.zzn;
-            if (j2 != -1) {
-                jSONObject.put("startAbsoluteTime", CastUtils.millisecToSec(j2));
+            long j11 = this.x;
+            if (j11 != -1) {
+                Pattern pattern2 = r5.a.a;
+                jSONObject.put("startAbsoluteTime", j11 / 1000.0d);
             }
-            jSONObject.putOpt("atvEntity", this.zzo);
-            String str3 = this.zzq;
+            jSONObject.putOpt("atvEntity", this.y);
+            String str3 = this.B;
             if (str3 != null) {
                 jSONObject.put("hlsSegmentFormat", str3);
             }
-            String str4 = this.zzr;
+            String str4 = this.C;
             if (str4 != null) {
                 jSONObject.put("hlsVideoSegmentFormat", str4);
             }
@@ -298,249 +170,388 @@ public class MediaInfo extends AbstractSafeParcelable implements ReflectedParcel
         return jSONObject;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x00ba A[LOOP:0: B:4:0x0023->B:10:0x00ba, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x00c1 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x019f A[LOOP:1: B:17:0x00e7->B:23:0x019f, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x01a5 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x00bb A[LOOP:0: B:4:0x0025->B:11:0x00bb, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00c4 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x01b7 A[LOOP:1: B:18:0x00e9->B:24:0x01b7, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x01be A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    final void zzr(JSONObject jSONObject) {
-        char c;
-        AdBreakClipInfo adBreakClipInfo;
-        AdBreakInfo adBreakInfo;
-        int i = 0;
+    public final void c(JSONObject jSONObject) {
+        long j10;
+        m5.a aVar;
+        b bVar;
+        long j11 = 1000;
+        int i10 = 0;
         if (jSONObject.has("breaks")) {
             JSONArray jSONArray = jSONObject.getJSONArray("breaks");
             ArrayList arrayList = new ArrayList(jSONArray.length());
-            int i2 = 0;
+            int i11 = 0;
             while (true) {
-                if (i2 >= jSONArray.length()) {
-                    c = 0;
+                if (i11 >= jSONArray.length()) {
+                    j10 = j11;
                     break;
                 }
-                JSONObject jSONObject2 = jSONArray.getJSONObject(i2);
-                Parcelable.Creator<AdBreakInfo> creator = AdBreakInfo.CREATOR;
-                if (jSONObject2 != null) {
-                    if (!jSONObject2.has("id")) {
-                        c = 0;
-                    } else if (jSONObject2.has("position")) {
-                        try {
-                            String string = jSONObject2.getString("id");
-                            long secToMillisec = CastUtils.secToMillisec(jSONObject2.getLong("position"));
-                            boolean optBoolean = jSONObject2.optBoolean("isWatched");
-                            long secToMillisec2 = CastUtils.secToMillisec(jSONObject2.optLong("duration"));
-                            JSONArray optJSONArray = jSONObject2.optJSONArray("breakClipIds");
-                            String[] strArr = new String[i];
-                            if (optJSONArray != null) {
-                                strArr = new String[optJSONArray.length()];
-                                c = 0;
-                                for (int i3 = 0; i3 < optJSONArray.length(); i3++) {
-                                    try {
-                                        strArr[i3] = optJSONArray.getString(i3);
-                                    } catch (JSONException e) {
-                                        e = e;
-                                        Object[] objArr = new Object[1];
-                                        objArr[c] = e.getMessage();
-                                        Log.d("AdBreakInfo", String.format(Locale.ROOT, "Error while creating an AdBreakInfo from JSON: %s", objArr));
-                                        adBreakInfo = null;
-                                        if (adBreakInfo != null) {
-                                        }
+                JSONObject jSONObject2 = jSONArray.getJSONObject(i11);
+                if (jSONObject2 != null && jSONObject2.has("id") && jSONObject2.has("position")) {
+                    try {
+                        String string = jSONObject2.getString("id");
+                        long j12 = jSONObject2.getLong("position");
+                        Pattern pattern = r5.a.a;
+                        long j13 = j12 * j11;
+                        boolean optBoolean = jSONObject2.optBoolean("isWatched");
+                        long optLong = jSONObject2.optLong("duration") * j11;
+                        JSONArray optJSONArray = jSONObject2.optJSONArray("breakClipIds");
+                        String[] strArr = new String[0];
+                        if (optJSONArray != null) {
+                            strArr = new String[optJSONArray.length()];
+                            j10 = j11;
+                            for (int i12 = 0; i12 < optJSONArray.length(); i12++) {
+                                try {
+                                    strArr[i12] = optJSONArray.getString(i12);
+                                } catch (JSONException e9) {
+                                    e = e9;
+                                    String message = e.getMessage();
+                                    Locale locale = Locale.ROOT;
+                                    Log.d("AdBreakInfo", "Error while creating an AdBreakInfo from JSON: " + message);
+                                    bVar = null;
+                                    if (bVar == null) {
                                     }
                                 }
-                            } else {
-                                c = 0;
                             }
-                            adBreakInfo = new AdBreakInfo(secToMillisec, string, secToMillisec2, optBoolean, strArr, jSONObject2.optBoolean("isEmbedded"), jSONObject2.optBoolean("expanded"));
-                        } catch (JSONException e2) {
-                            e = e2;
-                            c = 0;
-                        }
-                        if (adBreakInfo != null) {
-                            arrayList.clear();
-                            break;
                         } else {
-                            arrayList.add(adBreakInfo);
-                            i2++;
-                            i = 0;
+                            j10 = j11;
                         }
+                        bVar = new b(j13, string, optLong, optBoolean, strArr, jSONObject2.optBoolean("isEmbedded"), jSONObject2.optBoolean("expanded"));
+                    } catch (JSONException e10) {
+                        e = e10;
+                        j10 = j11;
                     }
-                    adBreakInfo = null;
-                    if (adBreakInfo != null) {
+                    if (bVar == null) {
+                        arrayList.clear();
+                        break;
+                    } else {
+                        arrayList.add(bVar);
+                        i11++;
+                        j11 = j10;
                     }
+                } else {
+                    j10 = j11;
                 }
-                adBreakInfo = null;
-                c = 0;
-                if (adBreakInfo != null) {
+                bVar = null;
+                if (bVar == null) {
                 }
             }
-            this.zzj = new ArrayList(arrayList);
+            this.r = new ArrayList(arrayList);
         } else {
-            c = 0;
+            j10 = 1000;
         }
         if (jSONObject.has("breakClips")) {
             JSONArray jSONArray2 = jSONObject.getJSONArray("breakClips");
             ArrayList arrayList2 = new ArrayList(jSONArray2.length());
-            int i4 = 0;
             while (true) {
-                if (i4 >= jSONArray2.length()) {
+                if (i10 >= jSONArray2.length()) {
                     break;
                 }
-                JSONObject jSONObject3 = jSONArray2.getJSONObject(i4);
-                Parcelable.Creator<AdBreakClipInfo> creator2 = AdBreakClipInfo.CREATOR;
+                JSONObject jSONObject3 = jSONArray2.getJSONObject(i10);
                 if (jSONObject3 != null && jSONObject3.has("id")) {
                     try {
                         String string2 = jSONObject3.getString("id");
-                        long secToMillisec3 = CastUtils.secToMillisec(jSONObject3.optLong("duration"));
-                        String optStringOrNull = CastUtils.optStringOrNull(jSONObject3, "clickThroughUrl");
-                        String optStringOrNull2 = CastUtils.optStringOrNull(jSONObject3, "contentUrl");
-                        String optStringOrNull3 = CastUtils.optStringOrNull(jSONObject3, "mimeType");
-                        if (optStringOrNull3 == null) {
-                            optStringOrNull3 = CastUtils.optStringOrNull(jSONObject3, "contentType");
+                        long optLong2 = jSONObject3.optLong("duration") * j10;
+                        String a2 = r5.a.a("clickThroughUrl", jSONObject3);
+                        String a3 = r5.a.a("contentUrl", jSONObject3);
+                        String a10 = r5.a.a("mimeType", jSONObject3);
+                        if (a10 == null) {
+                            a10 = r5.a.a("contentType", jSONObject3);
                         }
-                        String str = optStringOrNull3;
-                        String optStringOrNull4 = CastUtils.optStringOrNull(jSONObject3, "title");
+                        String str = a10;
+                        String a11 = r5.a.a("title", jSONObject3);
                         JSONObject optJSONObject = jSONObject3.optJSONObject("customData");
-                        adBreakClipInfo = new AdBreakClipInfo(string2, optStringOrNull4, secToMillisec3, optStringOrNull2, str, optStringOrNull, (optJSONObject == null || optJSONObject.length() == 0) ? null : optJSONObject.toString(), CastUtils.optStringOrNull(jSONObject3, "contentId"), CastUtils.optStringOrNull(jSONObject3, "posterUrl"), jSONObject3.has("whenSkippable") ? CastUtils.secToMillisec(((Integer) jSONObject3.get("whenSkippable")).intValue()) : -1L, CastUtils.optStringOrNull(jSONObject3, "hlsSegmentFormat"), VastAdsRequest.fromJson(jSONObject3.optJSONObject("vastAdsRequest")));
-                    } catch (JSONException e3) {
-                        Object[] objArr2 = new Object[1];
-                        objArr2[c] = e3.getMessage();
-                        Log.d("AdBreakClipInfo", String.format(Locale.ROOT, "Error while creating an AdBreakClipInfo from JSON: %s", objArr2));
+                        String a12 = r5.a.a("contentId", jSONObject3);
+                        String a13 = r5.a.a("posterUrl", jSONObject3);
+                        long intValue = jSONObject3.has("whenSkippable") ? ((Integer) jSONObject3.get("whenSkippable")).intValue() * j10 : -1L;
+                        String a14 = r5.a.a("hlsSegmentFormat", jSONObject3);
+                        JSONObject optJSONObject2 = jSONObject3.optJSONObject("vastAdsRequest");
+                        aVar = new m5.a(string2, a11, optLong2, a3, str, a2, (optJSONObject == null || optJSONObject.length() == 0) ? null : optJSONObject.toString(), a12, a13, intValue, a14, optJSONObject2 == null ? null : new u(r5.a.a("adTagUrl", optJSONObject2), r5.a.a("adsResponse", optJSONObject2)));
+                    } catch (JSONException e11) {
+                        String message2 = e11.getMessage();
+                        Locale locale2 = Locale.ROOT;
+                        Log.d("AdBreakClipInfo", "Error while creating an AdBreakClipInfo from JSON: " + message2);
                     }
-                    if (adBreakClipInfo != null) {
+                    if (aVar != null) {
                         arrayList2.clear();
                         break;
                     } else {
-                        arrayList2.add(adBreakClipInfo);
-                        i4++;
+                        arrayList2.add(aVar);
+                        i10++;
                     }
                 }
-                adBreakClipInfo = null;
-                if (adBreakClipInfo != null) {
+                aVar = null;
+                if (aVar != null) {
                 }
             }
-            this.zzk = new ArrayList(arrayList2);
+            this.s = new ArrayList(arrayList2);
         }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof MediaInfo)) {
+            return false;
+        }
+        MediaInfo mediaInfo = (MediaInfo) obj;
+        JSONObject jSONObject = this.D;
+        boolean z10 = jSONObject == null;
+        JSONObject jSONObject2 = mediaInfo.D;
+        if (z10 != (jSONObject2 == null)) {
+            return false;
+        }
+        return (jSONObject == null || jSONObject2 == null || c.a(jSONObject, jSONObject2)) && r5.a.d(this.a, mediaInfo.a) && this.b == mediaInfo.b && r5.a.d(this.c, mediaInfo.c) && r5.a.d(this.d, mediaInfo.d) && this.e == mediaInfo.e && r5.a.d(this.f, mediaInfo.f) && r5.a.d(this.h, mediaInfo.h) && r5.a.d(this.r, mediaInfo.r) && r5.a.d(this.s, mediaInfo.s) && r5.a.d(this.v, mediaInfo.v) && r5.a.d(this.w, mediaInfo.w) && this.x == mediaInfo.x && r5.a.d(this.y, mediaInfo.y) && r5.a.d(this.A, mediaInfo.A) && r5.a.d(this.B, mediaInfo.B) && r5.a.d(this.C, mediaInfo.C);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, Integer.valueOf(this.b), this.c, this.d, Long.valueOf(this.e), String.valueOf(this.D), this.f, this.h, this.r, this.s, this.v, this.w, Long.valueOf(this.x), this.y, this.B, this.C});
     }
 
     @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        JSONObject jSONObject = this.zzs;
-        this.zzb = jSONObject == null ? null : jSONObject.toString();
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeString(parcel, 2, getContentId(), false);
-        SafeParcelWriter.writeInt(parcel, 3, getStreamType());
-        SafeParcelWriter.writeString(parcel, 4, getContentType(), false);
-        SafeParcelWriter.writeParcelable(parcel, 5, getMetadata(), i, false);
-        SafeParcelWriter.writeLong(parcel, 6, getStreamDuration());
-        SafeParcelWriter.writeTypedList(parcel, 7, getMediaTracks(), false);
-        SafeParcelWriter.writeParcelable(parcel, 8, getTextTrackStyle(), i, false);
-        SafeParcelWriter.writeString(parcel, 9, this.zzb, false);
-        SafeParcelWriter.writeTypedList(parcel, 10, getAdBreaks(), false);
-        SafeParcelWriter.writeTypedList(parcel, 11, getAdBreakClips(), false);
-        SafeParcelWriter.writeString(parcel, 12, getEntity(), false);
-        SafeParcelWriter.writeParcelable(parcel, 13, getVmapAdsRequest(), i, false);
-        SafeParcelWriter.writeLong(parcel, 14, getStartAbsoluteTime());
-        SafeParcelWriter.writeString(parcel, 15, this.zzo, false);
-        SafeParcelWriter.writeString(parcel, 16, getContentUrl(), false);
-        SafeParcelWriter.writeString(parcel, 17, getHlsSegmentFormat(), false);
-        SafeParcelWriter.writeString(parcel, 18, getHlsVideoSegmentFormat(), false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        JSONObject jSONObject = this.D;
+        this.n = jSONObject == null ? null : jSONObject.toString();
+        int q6 = r8.q(parcel, 20293);
+        String str = this.a;
+        if (str == null) {
+            str = "";
+        }
+        r8.l(parcel, 2, str);
+        r8.s(parcel, 3, 4);
+        parcel.writeInt(this.b);
+        r8.l(parcel, 4, this.c);
+        r8.k(parcel, 5, this.d, i10);
+        r8.s(parcel, 6, 8);
+        parcel.writeLong(this.e);
+        r8.p(parcel, 7, this.f);
+        r8.k(parcel, 8, this.h, i10);
+        r8.l(parcel, 9, this.n);
+        List list = this.r;
+        r8.p(parcel, 10, list == null ? null : DesugarCollections.unmodifiableList(list));
+        List list2 = this.s;
+        r8.p(parcel, 11, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
+        r8.l(parcel, 12, this.v);
+        r8.k(parcel, 13, this.w, i10);
+        r8.s(parcel, 14, 8);
+        parcel.writeLong(this.x);
+        r8.l(parcel, 15, this.y);
+        r8.l(parcel, 16, this.A);
+        r8.l(parcel, 17, this.B);
+        r8.l(parcel, 18, this.C);
+        r8.r(parcel, q6);
     }
 
-    MediaInfo(JSONObject jSONObject) {
+    /* JADX WARN: Removed duplicated region for block: B:105:0x02a5  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x02bf  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x031e  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public MediaInfo(JSONObject jSONObject) {
         this(jSONObject.optString("contentId"), -1, null, null, -1L, null, null, null, null, null, null, null, -1L, null, null, null, null);
-        int i;
-        zzfq zzfqVar;
+        double d;
+        int i10;
+        int i11;
+        int i12;
+        l0 l0Var;
         String optString = jSONObject.optString("streamType", "NONE");
         if ("NONE".equals(optString)) {
-            this.zzd = 0;
+            this.b = 0;
         } else if ("BUFFERED".equals(optString)) {
-            this.zzd = 1;
+            this.b = 1;
         } else if ("LIVE".equals(optString)) {
-            this.zzd = 2;
+            this.b = 2;
         } else {
-            this.zzd = -1;
+            this.b = -1;
         }
-        this.zze = CastUtils.optStringOrNull(jSONObject, "contentType");
+        this.c = r5.a.a("contentType", jSONObject);
         if (jSONObject.has("metadata")) {
             JSONObject jSONObject2 = jSONObject.getJSONObject("metadata");
-            MediaMetadata mediaMetadata = new MediaMetadata(jSONObject2.getInt("metadataType"));
-            this.zzf = mediaMetadata;
-            mediaMetadata.zzc(jSONObject2);
+            l lVar = new l(jSONObject2.getInt("metadataType"));
+            this.d = lVar;
+            lVar.e(jSONObject2);
         }
-        this.zzg = -1L;
-        if (this.zzd != 2 && jSONObject.has("duration") && !jSONObject.isNull("duration")) {
+        this.e = -1L;
+        if (this.b != 2 && jSONObject.has("duration") && !jSONObject.isNull("duration")) {
             double optDouble = jSONObject.optDouble("duration", 0.0d);
             if (!Double.isNaN(optDouble) && !Double.isInfinite(optDouble) && optDouble >= 0.0d) {
-                this.zzg = CastUtils.secToMillisec(optDouble);
+                this.e = (long) (optDouble * 1000.0d);
             }
         }
+        int i13 = 4;
         if (jSONObject.has("tracks")) {
             ArrayList arrayList = new ArrayList();
             JSONArray jSONArray = jSONObject.getJSONArray("tracks");
-            for (int i2 = 0; i2 < jSONArray.length(); i2++) {
-                JSONObject jSONObject3 = jSONArray.getJSONObject(i2);
-                Parcelable.Creator<MediaTrack> creator = MediaTrack.CREATOR;
-                long j = jSONObject3.getLong("trackId");
+            d = 0.0d;
+            int i14 = 0;
+            while (i14 < jSONArray.length()) {
+                JSONObject jSONObject3 = jSONArray.getJSONObject(i14);
+                long j10 = jSONObject3.getLong("trackId");
                 String optString2 = jSONObject3.optString(TeXSymbolParser.TYPE_ATTR);
-                int i3 = 3;
                 if ("TEXT".equals(optString2)) {
-                    i3 = 1;
+                    i11 = 1;
                 } else if ("AUDIO".equals(optString2)) {
-                    i3 = 2;
-                } else if (!"VIDEO".equals(optString2)) {
-                    i3 = 0;
+                    i11 = 2;
+                } else {
+                    i11 = "VIDEO".equals(optString2) ? 3 : 0;
                 }
-                String optStringOrNull = CastUtils.optStringOrNull(jSONObject3, "trackContentId");
-                String optStringOrNull2 = CastUtils.optStringOrNull(jSONObject3, "trackContentType");
-                String optStringOrNull3 = CastUtils.optStringOrNull(jSONObject3, "name");
-                String optStringOrNull4 = CastUtils.optStringOrNull(jSONObject3, "language");
+                String a2 = r5.a.a("trackContentId", jSONObject3);
+                String a3 = r5.a.a("trackContentType", jSONObject3);
+                String a10 = r5.a.a("name", jSONObject3);
+                String a11 = r5.a.a("language", jSONObject3);
                 if (jSONObject3.has("subtype")) {
                     String string = jSONObject3.getString("subtype");
-                    i = "SUBTITLES".equals(string) ? 1 : "CAPTIONS".equals(string) ? 2 : "DESCRIPTIONS".equals(string) ? 3 : "CHAPTERS".equals(string) ? 4 : "METADATA".equals(string) ? 5 : -1;
+                    if ("SUBTITLES".equals(string)) {
+                        i12 = 1;
+                    } else if ("CAPTIONS".equals(string)) {
+                        i12 = 2;
+                    } else if ("DESCRIPTIONS".equals(string)) {
+                        i12 = 3;
+                    } else if ("CHAPTERS".equals(string)) {
+                        i12 = 4;
+                    } else {
+                        i12 = "METADATA".equals(string) ? 5 : -1;
+                    }
                 } else {
-                    i = 0;
+                    i12 = 0;
                 }
                 if (jSONObject3.has("roles")) {
-                    zzfn zzfnVar = new zzfn();
+                    Object[] objArr = new Object[i13];
                     JSONArray jSONArray2 = jSONObject3.getJSONArray("roles");
-                    for (int i4 = 0; i4 < jSONArray2.length(); i4++) {
-                        zzfnVar.zzb(jSONArray2.optString(i4));
+                    int i15 = 0;
+                    int i16 = 0;
+                    while (i15 < jSONArray2.length()) {
+                        String optString3 = jSONArray2.optString(i15);
+                        optString3.getClass();
+                        int i17 = i16 + 1;
+                        int length = objArr.length;
+                        if (length < i17) {
+                            objArr = Arrays.copyOf(objArr, o5.a(length, i17));
+                        }
+                        objArr[i16] = optString3;
+                        i15++;
+                        i16 = i17;
                     }
-                    zzfqVar = zzfnVar.zzc();
+                    l0Var = g0.r(i16, objArr);
                 } else {
-                    zzfqVar = null;
+                    l0Var = null;
                 }
-                arrayList.add(new MediaTrack(j, i3, optStringOrNull, optStringOrNull2, optStringOrNull3, optStringOrNull4, i, zzfqVar, jSONObject3.optJSONObject("customData")));
+                arrayList.add(new MediaTrack(j10, i11, a2, a3, a10, a11, i12, l0Var, jSONObject3.optJSONObject("customData")));
+                i14++;
+                i13 = 4;
             }
-            this.zzh = new ArrayList(arrayList);
+            this.f = new ArrayList(arrayList);
         } else {
-            this.zzh = null;
+            d = 0.0d;
+            this.f = null;
         }
         if (jSONObject.has("textTrackStyle")) {
             JSONObject jSONObject4 = jSONObject.getJSONObject("textTrackStyle");
-            TextTrackStyle textTrackStyle = new TextTrackStyle();
-            textTrackStyle.fromJson(jSONObject4);
-            this.zzi = textTrackStyle;
+            t tVar = new t(1.0f, 0, 0, -1, 0, -1, 0, 0, null, -1, -1, null);
+            tVar.a = (float) jSONObject4.optDouble("fontScale", 1.0d);
+            tVar.b = t.c(jSONObject4.optString("foregroundColor"));
+            tVar.c = t.c(jSONObject4.optString("backgroundColor"));
+            if (jSONObject4.has("edgeType")) {
+                String string2 = jSONObject4.getString("edgeType");
+                if ("NONE".equals(string2)) {
+                    tVar.d = 0;
+                } else if ("OUTLINE".equals(string2)) {
+                    tVar.d = 1;
+                } else if ("DROP_SHADOW".equals(string2)) {
+                    tVar.d = 2;
+                } else if ("RAISED".equals(string2)) {
+                    tVar.d = 3;
+                } else if ("DEPRESSED".equals(string2)) {
+                    tVar.d = 4;
+                }
+            }
+            tVar.e = t.c(jSONObject4.optString("edgeColor"));
+            if (jSONObject4.has("windowType")) {
+                String string3 = jSONObject4.getString("windowType");
+                if ("NONE".equals(string3)) {
+                    tVar.f = 0;
+                } else if ("NORMAL".equals(string3)) {
+                    tVar.f = 1;
+                } else if ("ROUNDED_CORNERS".equals(string3)) {
+                    i10 = 2;
+                    tVar.f = 2;
+                    tVar.h = t.c(jSONObject4.optString("windowColor"));
+                    if (tVar.f == i10) {
+                        tVar.n = jSONObject4.optInt("windowRoundedCornerRadius", 0);
+                    }
+                    tVar.r = r5.a.a("fontFamily", jSONObject4);
+                    if (jSONObject4.has("fontGenericFamily")) {
+                        String string4 = jSONObject4.getString("fontGenericFamily");
+                        if ("SANS_SERIF".equals(string4)) {
+                            tVar.s = 0;
+                        } else if ("MONOSPACED_SANS_SERIF".equals(string4)) {
+                            tVar.s = 1;
+                        } else if ("SERIF".equals(string4)) {
+                            tVar.s = 2;
+                        } else if ("MONOSPACED_SERIF".equals(string4)) {
+                            tVar.s = 3;
+                        } else if ("CASUAL".equals(string4)) {
+                            tVar.s = 4;
+                        } else if ("CURSIVE".equals(string4)) {
+                            tVar.s = 5;
+                        } else if ("SMALL_CAPITALS".equals(string4)) {
+                            tVar.s = 6;
+                        }
+                    }
+                    if (jSONObject4.has("fontStyle")) {
+                        String string5 = jSONObject4.getString("fontStyle");
+                        if ("NORMAL".equals(string5)) {
+                            tVar.v = 0;
+                        } else if ("BOLD".equals(string5)) {
+                            tVar.v = 1;
+                        } else if ("ITALIC".equals(string5)) {
+                            tVar.v = 2;
+                        } else if ("BOLD_ITALIC".equals(string5)) {
+                            tVar.v = 3;
+                        }
+                    }
+                    tVar.x = jSONObject4.optJSONObject("customData");
+                    this.h = tVar;
+                }
+            }
+            i10 = 2;
+            tVar.h = t.c(jSONObject4.optString("windowColor"));
+            if (tVar.f == i10) {
+            }
+            tVar.r = r5.a.a("fontFamily", jSONObject4);
+            if (jSONObject4.has("fontGenericFamily")) {
+            }
+            if (jSONObject4.has("fontStyle")) {
+            }
+            tVar.x = jSONObject4.optJSONObject("customData");
+            this.h = tVar;
         } else {
-            this.zzi = null;
+            this.h = null;
         }
-        zzr(jSONObject);
-        this.zzs = jSONObject.optJSONObject("customData");
-        this.zzl = CastUtils.optStringOrNull(jSONObject, "entity");
-        this.zzo = CastUtils.optStringOrNull(jSONObject, "atvEntity");
-        this.zzm = VastAdsRequest.fromJson(jSONObject.optJSONObject("vmapAdsRequest"));
+        c(jSONObject);
+        this.D = jSONObject.optJSONObject("customData");
+        this.v = r5.a.a("entity", jSONObject);
+        this.y = r5.a.a("atvEntity", jSONObject);
+        JSONObject optJSONObject = jSONObject.optJSONObject("vmapAdsRequest");
+        this.w = optJSONObject != null ? new u(r5.a.a("adTagUrl", optJSONObject), r5.a.a("adsResponse", optJSONObject)) : null;
         if (jSONObject.has("startAbsoluteTime") && !jSONObject.isNull("startAbsoluteTime")) {
             double optDouble2 = jSONObject.optDouble("startAbsoluteTime");
-            if (!Double.isNaN(optDouble2) && !Double.isInfinite(optDouble2) && optDouble2 >= 0.0d) {
-                this.zzn = CastUtils.secToMillisec(optDouble2);
+            if (!Double.isNaN(optDouble2) && !Double.isInfinite(optDouble2) && optDouble2 >= d) {
+                this.x = (long) (optDouble2 * 1000.0d);
             }
         }
         if (jSONObject.has("contentUrl")) {
-            this.zzp = jSONObject.optString("contentUrl");
+            this.A = jSONObject.optString("contentUrl");
         }
-        this.zzq = CastUtils.optStringOrNull(jSONObject, "hlsSegmentFormat");
-        this.zzr = CastUtils.optStringOrNull(jSONObject, "hlsVideoSegmentFormat");
+        this.B = r5.a.a("hlsSegmentFormat", jSONObject);
+        this.C = r5.a.a("hlsVideoSegmentFormat", jSONObject);
     }
 }

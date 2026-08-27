@@ -9,7 +9,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public final class EmuInputDevicesDetector {
     private static final String INPUT_DEVICES_FILE = "/proc/bus/input/devices";
     private static final String NAME_PREFIX = "N: Name=\"";
@@ -42,20 +43,19 @@ public final class EmuInputDevicesDetector {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
             while (true) {
                 String readLine = bufferedReader.readLine();
-                if (readLine != null) {
-                    if (readLine.startsWith(NAME_PREFIX)) {
-                        String substring = readLine.substring(9, readLine.length() - 1);
-                        if (!TextUtils.isEmpty(substring)) {
-                            arrayList.add(substring);
-                        }
-                    }
-                } else {
+                if (readLine == null) {
                     bufferedReader.close();
                     return arrayList;
                 }
+                if (readLine.startsWith(NAME_PREFIX)) {
+                    String substring = readLine.substring(9, readLine.length() - 1);
+                    if (!TextUtils.isEmpty(substring)) {
+                        arrayList.add(substring);
+                    }
+                }
             }
-        } catch (IOException e) {
-            FileLog.e(e);
+        } catch (IOException e9) {
+            FileLog.e(e9);
             return null;
         }
     }

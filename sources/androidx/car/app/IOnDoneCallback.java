@@ -4,82 +4,26 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import android.os.Parcelable;
-import androidx.car.app.serialization.Bundleable;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public interface IOnDoneCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$IOnDoneCallback".replace('$', '.');
 
-    public static class Default implements IOnDoneCallback {
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return null;
-        }
+    void onFailure(w.b bVar);
 
-        @Override // androidx.car.app.IOnDoneCallback
-        public void onFailure(Bundleable bundleable) {
-        }
+    void onSuccess(w.b bVar);
 
-        @Override // androidx.car.app.IOnDoneCallback
-        public void onSuccess(Bundleable bundleable) {
-        }
-    }
-
-    void onFailure(Bundleable bundleable);
-
-    void onSuccess(Bundleable bundleable);
-
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static abstract class Stub extends Binder implements IOnDoneCallback {
         static final int TRANSACTION_onFailure = 3;
         static final int TRANSACTION_onSuccess = 2;
 
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return this;
-        }
-
-        public Stub() {
-            attachInterface(this, IOnDoneCallback.DESCRIPTOR);
-        }
-
-        public static IOnDoneCallback asInterface(IBinder iBinder) {
-            if (iBinder == null) {
-                return null;
-            }
-            IInterface queryLocalInterface = iBinder.queryLocalInterface(IOnDoneCallback.DESCRIPTOR);
-            if (queryLocalInterface != null && (queryLocalInterface instanceof IOnDoneCallback)) {
-                return (IOnDoneCallback) queryLocalInterface;
-            }
-            return new Proxy(iBinder);
-        }
-
-        @Override // android.os.Binder
-        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String str = IOnDoneCallback.DESCRIPTOR;
-            if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(str);
-            }
-            if (i == 1598968902) {
-                parcel2.writeString(str);
-                return true;
-            }
-            if (i == 2) {
-                onSuccess((Bundleable) _Parcel.readTypedObject(parcel, Bundleable.CREATOR));
-                parcel2.writeNoException();
-            } else if (i == 3) {
-                onFailure((Bundleable) _Parcel.readTypedObject(parcel, Bundleable.CREATOR));
-                parcel2.writeNoException();
-            } else {
-                return super.onTransact(i, parcel, parcel2, i2);
-            }
-            return true;
-        }
-
-        private static class Proxy implements IOnDoneCallback {
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static class Proxy implements IOnDoneCallback {
             private IBinder mRemote;
 
-            Proxy(IBinder iBinder) {
+            public Proxy(IBinder iBinder) {
                 this.mRemote = iBinder;
             }
 
@@ -93,13 +37,18 @@ public interface IOnDoneCallback extends IInterface {
             }
 
             @Override // androidx.car.app.IOnDoneCallback
-            public void onSuccess(Bundleable bundleable) {
+            public void onFailure(w.b bVar) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IOnDoneCallback.DESCRIPTOR);
-                    _Parcel.writeTypedObject(obtain, bundleable, 0);
-                    this.mRemote.transact(2, obtain, obtain2, 0);
+                    if (bVar != null) {
+                        obtain.writeInt(1);
+                        obtain.writeBundle(bVar.a);
+                    } else {
+                        obtain.writeInt(0);
+                    }
+                    this.mRemote.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -108,13 +57,18 @@ public interface IOnDoneCallback extends IInterface {
             }
 
             @Override // androidx.car.app.IOnDoneCallback
-            public void onFailure(Bundleable bundleable) {
+            public void onSuccess(w.b bVar) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IOnDoneCallback.DESCRIPTOR);
-                    _Parcel.writeTypedObject(obtain, bundleable, 0);
-                    this.mRemote.transact(3, obtain, obtain2, 0);
+                    if (bVar != null) {
+                        obtain.writeInt(1);
+                        obtain.writeBundle(bVar.a);
+                    } else {
+                        obtain.writeInt(0);
+                    }
+                    this.mRemote.transact(2, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -122,25 +76,61 @@ public interface IOnDoneCallback extends IInterface {
                 }
             }
         }
+
+        public Stub() {
+            attachInterface(this, IOnDoneCallback.DESCRIPTOR);
+        }
+
+        public static IOnDoneCallback asInterface(IBinder iBinder) {
+            if (iBinder == null) {
+                return null;
+            }
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(IOnDoneCallback.DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IOnDoneCallback)) ? new Proxy(iBinder) : (IOnDoneCallback) queryLocalInterface;
+        }
+
+        @Override // android.os.Binder
+        public boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+            String str = IOnDoneCallback.DESCRIPTOR;
+            if (i10 >= 1 && i10 <= 16777215) {
+                parcel.enforceInterface(str);
+            }
+            if (i10 == 1598968902) {
+                parcel2.writeString(str);
+                return true;
+            }
+            if (i10 == 2) {
+                onSuccess(parcel.readInt() != 0 ? w.b.CREATOR.createFromParcel(parcel) : null);
+                parcel2.writeNoException();
+                return true;
+            }
+            if (i10 != 3) {
+                return super.onTransact(i10, parcel, parcel2, i11);
+            }
+            onFailure(parcel.readInt() != 0 ? w.b.CREATOR.createFromParcel(parcel) : null);
+            parcel2.writeNoException();
+            return true;
+        }
+
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return this;
+        }
     }
 
-    public static class _Parcel {
-        /* JADX INFO: Access modifiers changed from: private */
-        public static Object readTypedObject(Parcel parcel, Parcelable.Creator creator) {
-            if (parcel.readInt() != 0) {
-                return creator.createFromParcel(parcel);
-            }
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class Default implements IOnDoneCallback {
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
             return null;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static void writeTypedObject(Parcel parcel, Parcelable parcelable, int i) {
-            if (parcelable != null) {
-                parcel.writeInt(1);
-                parcelable.writeToParcel(parcel, i);
-            } else {
-                parcel.writeInt(0);
-            }
+        @Override // androidx.car.app.IOnDoneCallback
+        public void onFailure(w.b bVar) {
+        }
+
+        @Override // androidx.car.app.IOnDoneCallback
+        public void onSuccess(w.b bVar) {
         }
     }
 }

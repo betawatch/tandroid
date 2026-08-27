@@ -10,8 +10,8 @@ public final /* synthetic */ class a implements BinaryOperator {
     public final /* synthetic */ int a;
     public final /* synthetic */ Comparator b;
 
-    public /* synthetic */ a(Comparator comparator, int i) {
-        this.a = i;
+    public /* synthetic */ a(Comparator comparator, int i10) {
+        this.a = i10;
         this.b = comparator;
     }
 

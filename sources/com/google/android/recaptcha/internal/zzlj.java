@@ -1,51 +1,50 @@
 package com.google.android.recaptcha.internal;
 
+import ad.p;
 import android.webkit.WebView;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.CoroutineScope;
+import h7.k6;
+import id.c0;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzlj extends SuspendLambda implements Function2 {
+final class zzlj extends i implements p {
     int zza;
     final /* synthetic */ zzly zzb;
     final /* synthetic */ String zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzlj(zzly zzlyVar, String str, Continuation continuation) {
-        super(2, continuation);
+    public zzlj(zzly zzlyVar, String str, c cVar) {
+        super(2, cVar);
         this.zzb = zzlyVar;
         this.zzc = str;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzlj(this.zzb, this.zzc, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        return new zzlj(this.zzb, this.zzc, cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlj) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzlj) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zza;
-        ResultKt.throwOnFailure(obj);
-        if (i == 0) {
+        sc.a aVar = sc.a.a;
+        int i10 = this.zza;
+        k6.b(obj);
+        if (i10 == 0) {
             zzly zzlyVar = this.zzb;
             this.zza = 1;
             obj = zzlyVar.zzv(this);
-            if (obj == coroutine_suspended) {
-                return coroutine_suspended;
+            if (obj == aVar) {
+                return aVar;
             }
         }
         ((WebView) obj).evaluateJavascript("recaptcha.m.Main.execute(\"" + this.zzc + "\")", null);
-        return Unit.INSTANCE;
+        return pc.i.a;
     }
 }

@@ -3,72 +3,72 @@ package j$.util.stream;
 import j$.util.Spliterator;
 
 /* loaded from: classes2.dex */
-public final class k extends c2 {
+public final class k extends f5 {
     public final /* synthetic */ int b = 2;
     public boolean c;
     public Object d;
 
-    public /* synthetic */ k(g2 g2Var) {
-        super(g2Var);
+    public /* synthetic */ k(j5 j5Var) {
+        super(j5Var);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(B3 b3, g2 g2Var) {
-        super(g2Var);
-        this.d = b3;
+    public k(e8 e8Var, j5 j5Var) {
+        super(j5Var);
+        this.d = e8Var;
         this.c = true;
     }
 
-    @Override // j$.util.stream.c2, j$.util.stream.g2
-    public final void y(long j) {
+    @Override // j$.util.stream.f5, j$.util.stream.j5
+    public final void o(long j10) {
         switch (this.b) {
             case 0:
                 this.c = false;
                 this.d = null;
-                this.a.y(-1L);
+                this.a.o(-1L);
                 break;
             case 1:
-                this.a.y(-1L);
+                this.a.o(-1L);
                 break;
             default:
-                this.a.y(-1L);
+                this.a.o(-1L);
                 break;
         }
     }
 
     @Override // java.util.function.Consumer
     /* renamed from: accept */
-    public final void s(Object obj) {
+    public final void x(Object obj) {
         switch (this.b) {
             case 0:
-                g2 g2Var = this.a;
+                j5 j5Var = this.a;
                 if (obj == null) {
                     if (this.c) {
                         return;
                     }
                     this.c = true;
                     this.d = null;
-                    g2Var.s((g2) null);
+                    j5Var.x((j5) null);
                     return;
                 }
                 Object obj2 = this.d;
                 if (obj2 == null || !obj.equals(obj2)) {
                     this.d = obj;
-                    g2Var.s((g2) obj);
+                    j5Var.x((j5) obj);
                     return;
                 }
                 return;
             case 1:
-                Stream stream = (Stream) ((j$.time.t) ((q) this.d).n).apply((j$.time.t) obj);
+                Stream stream = (Stream) ((j$.time.t) ((q) this.d).t).apply((j$.time.t) obj);
                 if (stream != null) {
                     try {
-                        boolean z = this.c;
-                        g2 g2Var2 = this.a;
-                        if (!z) {
-                            ((Stream) stream.sequential()).forEach(g2Var2);
+                        boolean z10 = this.c;
+                        j5 j5Var2 = this.a;
+                        if (!z10) {
+                            ((Stream) stream.sequential()).forEach(j5Var2);
                         } else {
                             Spliterator spliterator = ((Stream) stream.sequential()).spliterator();
-                            while (!g2Var2.C() && spliterator.tryAdvance(g2Var2)) {
+                            while (!j5Var2.q() && spliterator.tryAdvance(j5Var2)) {
                             }
                         }
                     } catch (Throwable th) {
@@ -87,10 +87,10 @@ public final class k extends c2 {
                 return;
             default:
                 if (this.c) {
-                    boolean test = ((B3) this.d).m.test(obj);
+                    boolean test = ((e8) this.d).t.test(obj);
                     this.c = test;
                     if (test) {
-                        this.a.s((g2) obj);
+                        this.a.x((j5) obj);
                         return;
                     }
                     return;
@@ -99,36 +99,36 @@ public final class k extends c2 {
         }
     }
 
-    @Override // j$.util.stream.c2, j$.util.stream.g2
-    public boolean C() {
+    @Override // j$.util.stream.f5, j$.util.stream.j5
+    public boolean q() {
         switch (this.b) {
             case 1:
                 this.c = true;
-                return this.a.C();
+                return this.a.q();
             case 2:
-                return !this.c || this.a.C();
+                return !this.c || this.a.q();
             default:
-                return super.C();
+                return super.q();
         }
     }
 
-    @Override // j$.util.stream.c2, j$.util.stream.g2
-    public void x() {
+    @Override // j$.util.stream.f5, j$.util.stream.j5
+    public void end() {
         switch (this.b) {
             case 0:
                 this.c = false;
                 this.d = null;
-                this.a.x();
+                this.a.end();
                 break;
             default:
-                super.x();
+                super.end();
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(q qVar, g2 g2Var) {
-        super(g2Var);
+    public k(q qVar, j5 j5Var) {
+        super(j5Var);
         this.d = qVar;
     }
 }

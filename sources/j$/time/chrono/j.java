@@ -23,17 +23,17 @@ public final class j implements ChronoZonedDateTime, Serializable {
     public final transient ZoneId c;
 
     @Override // j$.time.chrono.ChronoZonedDateTime
-    public final /* synthetic */ long G() {
+    public final /* synthetic */ long F() {
         return j$.com.android.tools.r8.a.x(this);
     }
 
     @Override // j$.time.temporal.l
-    public final /* synthetic */ int o(j$.time.temporal.o oVar) {
+    public final /* synthetic */ int j(j$.time.temporal.o oVar) {
         return j$.com.android.tools.r8.a.l(this, oVar);
     }
 
     @Override // j$.time.temporal.l
-    public final /* synthetic */ Object r(j$.time.format.a aVar) {
+    public final /* synthetic */ Object m(j$.time.format.a aVar) {
         return j$.com.android.tools.r8.a.u(this, aVar);
     }
 
@@ -42,7 +42,7 @@ public final class j implements ChronoZonedDateTime, Serializable {
         return j$.com.android.tools.r8.a.g(this, chronoZonedDateTime);
     }
 
-    public static j E(ZoneId zoneId, ZoneOffset zoneOffset, f fVar) {
+    public static j G(ZoneId zoneId, ZoneOffset zoneOffset, f fVar) {
         Objects.requireNonNull(fVar, "localDateTime");
         Objects.requireNonNull(zoneId, "zone");
         if (zoneId instanceof ZoneOffset) {
@@ -50,16 +50,16 @@ public final class j implements ChronoZonedDateTime, Serializable {
         }
         ZoneRules rules = zoneId.getRules();
         LocalDateTime H = LocalDateTime.H(fVar);
-        List f = rules.f(H);
-        if (f.size() == 1) {
-            zoneOffset = (ZoneOffset) f.get(0);
-        } else if (f.size() == 0) {
-            j$.time.zone.b e = rules.e(H);
-            fVar = fVar.I(fVar.a, 0L, 0L, Duration.l(e.d.getTotalSeconds() - e.c.getTotalSeconds(), 0).getSeconds(), 0L);
-            zoneOffset = e.d;
+        List f10 = rules.f(H);
+        if (f10.size() == 1) {
+            zoneOffset = (ZoneOffset) f10.get(0);
+        } else if (f10.size() == 0) {
+            j$.time.zone.b e9 = rules.e(H);
+            fVar = fVar.I(fVar.a, 0L, 0L, Duration.j(e9.d.getTotalSeconds() - e9.c.getTotalSeconds(), 0).getSeconds(), 0L);
+            zoneOffset = e9.d;
         } else {
-            if (zoneOffset == null || !f.contains(zoneOffset)) {
-                zoneOffset = (ZoneOffset) f.get(0);
+            if (zoneOffset == null || !f10.contains(zoneOffset)) {
+                zoneOffset = (ZoneOffset) f10.get(0);
             }
             fVar = fVar;
         }
@@ -70,41 +70,41 @@ public final class j implements ChronoZonedDateTime, Serializable {
     public static j H(k kVar, Instant instant, ZoneId zoneId) {
         ZoneOffset offset = zoneId.getRules().getOffset(instant);
         Objects.requireNonNull(offset, "offset");
-        return new j(zoneId, offset, (f) kVar.s(LocalDateTime.K(instant.a, instant.b, offset)));
+        return new j(zoneId, offset, (f) kVar.B(LocalDateTime.K(instant.a, instant.b, offset)));
     }
 
     @Override // j$.time.temporal.l
-    public final j$.time.temporal.s q(j$.time.temporal.o oVar) {
+    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             if (oVar != j$.time.temporal.a.INSTANT_SECONDS && oVar != j$.time.temporal.a.OFFSET_SECONDS) {
-                return ((f) B()).q(oVar);
+                return ((f) r()).l(oVar);
             }
             return ((j$.time.temporal.a) oVar).b;
         }
-        return oVar.r(this);
+        return oVar.k(this);
     }
 
-    public static j x(k kVar, Temporal temporal) {
+    public static j q(k kVar, Temporal temporal) {
         j jVar = (j) temporal;
-        if (kVar.equals(jVar.b())) {
+        if (kVar.equals(jVar.a())) {
             return jVar;
         }
-        throw new ClassCastException("Chronology mismatch, required: " + kVar.getId() + ", actual: " + jVar.b().getId());
+        throw new ClassCastException("Chronology mismatch, required: " + kVar.getId() + ", actual: " + jVar.a().getId());
     }
 
     @Override // j$.time.temporal.l
-    public final long u(j$.time.temporal.o oVar) {
+    public final long y(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            int i = h.a[((j$.time.temporal.a) oVar).ordinal()];
-            if (i == 1) {
-                return G();
+            int i10 = h.a[((j$.time.temporal.a) oVar).ordinal()];
+            if (i10 == 1) {
+                return F();
             }
-            if (i == 2) {
-                return i().getTotalSeconds();
+            if (i10 == 2) {
+                return h().getTotalSeconds();
             }
-            return ((f) B()).u(oVar);
+            return ((f) r()).y(oVar);
         }
-        return oVar.o(this);
+        return oVar.m(this);
     }
 
     public j(ZoneId zoneId, ZoneOffset zoneOffset, f fVar) {
@@ -114,23 +114,37 @@ public final class j implements ChronoZonedDateTime, Serializable {
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
-    public final ZoneOffset i() {
+    public final ZoneOffset h() {
         return this.b;
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
-    public final b d() {
-        return ((f) B()).d();
+    public final b f() {
+        return ((f) r()).f();
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
-    public final j$.time.h c() {
-        return ((f) B()).c();
+    public final j$.time.h b() {
+        return ((f) r()).b();
+    }
+
+    public final int hashCode() {
+        return (this.a.hashCode() ^ this.b.b) ^ Integer.rotateLeft(this.c.hashCode(), 3);
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
-    public final ChronoLocalDateTime B() {
+    public final ChronoLocalDateTime r() {
         return this.a;
+    }
+
+    public final String toString() {
+        String str = this.a.toString() + this.b.c;
+        ZoneOffset zoneOffset = this.b;
+        ZoneId zoneId = this.c;
+        if (zoneOffset == zoneId) {
+            return str;
+        }
+        return str + "[" + zoneId.toString() + "]";
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
@@ -139,76 +153,76 @@ public final class j implements ChronoZonedDateTime, Serializable {
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
-    public final k b() {
-        return d().b();
+    public final k a() {
+        return f().a();
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
-    public final ChronoZonedDateTime k(ZoneId zoneId) {
-        return E(zoneId, this.b, this.a);
+    public final ChronoZonedDateTime v(ZoneId zoneId) {
+        return G(zoneId, this.b, this.a);
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
-    public final ChronoZonedDateTime j(ZoneId zoneId) {
+    public final ChronoZonedDateTime i(ZoneId zoneId) {
         Objects.requireNonNull(zoneId, "zone");
         if (this.c.equals(zoneId)) {
             return this;
         }
         f fVar = this.a;
+        ZoneOffset zoneOffset = this.b;
         fVar.getClass();
-        return H(b(), j$.com.android.tools.r8.a.y(fVar, this.b), zoneId);
+        return H(a(), j$.com.android.tools.r8.a.y(fVar, zoneOffset), zoneId);
     }
 
     @Override // j$.time.temporal.l
-    public final boolean h(j$.time.temporal.o oVar) {
+    public final boolean e(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             return true;
         }
-        return oVar != null && oVar.p(this);
+        return oVar != null && oVar.j(this);
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal e(long j, j$.time.temporal.o oVar) {
+    public final Temporal c(long j10, j$.time.temporal.o oVar) {
         if (!(oVar instanceof j$.time.temporal.a)) {
-            return x(b(), oVar.q(this, j));
+            return q(a(), oVar.q(this, j10));
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        int i = i.a[aVar.ordinal()];
-        if (i == 1) {
-            return f(j - j$.com.android.tools.r8.a.x(this), ChronoUnit.SECONDS);
+        int i10 = i.a[aVar.ordinal()];
+        if (i10 == 1) {
+            return d(j10 - j$.com.android.tools.r8.a.x(this), ChronoUnit.SECONDS);
         }
-        ZoneId zoneId = this.c;
+        if (i10 != 2) {
+            return G(this.c, this.b, this.a.c(j10, oVar));
+        }
+        ZoneOffset O = ZoneOffset.O(aVar.b.a(j10, aVar));
         f fVar = this.a;
-        if (i != 2) {
-            return E(zoneId, this.b, fVar.e(j, oVar));
-        }
-        ZoneOffset O = ZoneOffset.O(aVar.b.a(j, aVar));
         fVar.getClass();
-        return H(b(), j$.com.android.tools.r8.a.y(fVar, O), zoneId);
+        return H(a(), j$.com.android.tools.r8.a.y(fVar, O), this.c);
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: I, reason: merged with bridge method [inline-methods] */
-    public final j f(long j, j$.time.temporal.q qVar) {
+    public final j d(long j10, j$.time.temporal.q qVar) {
         if (qVar instanceof ChronoUnit) {
-            return x(b(), this.a.f(j, qVar).x(this));
+            return q(a(), this.a.d(j10, qVar).q(this));
         }
-        return x(b(), qVar.l(this, j));
+        return q(a(), qVar.j(this, j10));
     }
 
     @Override // j$.time.temporal.Temporal
     public final long g(Temporal temporal, j$.time.temporal.q qVar) {
         Objects.requireNonNull(temporal, "endExclusive");
-        ChronoZonedDateTime n = b().n(temporal);
+        ChronoZonedDateTime p6 = a().p(temporal);
         if (qVar instanceof ChronoUnit) {
-            return this.a.g(n.j(this.b).B(), qVar);
+            return this.a.g(p6.i(this.b).r(), qVar);
         }
         Objects.requireNonNull(qVar, "unit");
-        return qVar.between(this, n);
+        return qVar.between(this, p6);
     }
 
     private Object writeReplace() {
-        return new D((byte) 3, this);
+        return new d0((byte) 3, this);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
@@ -222,33 +236,18 @@ public final class j implements ChronoZonedDateTime, Serializable {
         return (obj instanceof ChronoZonedDateTime) && j$.com.android.tools.r8.a.g(this, (ChronoZonedDateTime) obj) == 0;
     }
 
-    public final int hashCode() {
-        return (this.a.hashCode() ^ this.b.b) ^ Integer.rotateLeft(this.c.hashCode(), 3);
-    }
-
-    public final String toString() {
-        String fVar = this.a.toString();
-        ZoneOffset zoneOffset = this.b;
-        String str = fVar + zoneOffset.c;
-        ZoneId zoneId = this.c;
-        if (zoneOffset == zoneId) {
-            return str;
-        }
-        return str + "[" + zoneId.toString() + "]";
+    @Override // j$.time.temporal.Temporal
+    public final Temporal k(LocalDate localDate) {
+        return q(a(), localDate.q(this));
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal p(LocalDate localDate) {
-        return x(b(), localDate.x(this));
-    }
-
-    @Override // j$.time.temporal.Temporal
-    public final Temporal l(long j, ChronoUnit chronoUnit) {
-        return x(b(), j$.time.temporal.p.b(this, j, chronoUnit));
+    public final Temporal w(long j10, ChronoUnit chronoUnit) {
+        return q(a(), j$.time.temporal.p.b(this, j10, chronoUnit));
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
     public final Instant toInstant() {
-        return Instant.I(G(), c().d);
+        return Instant.I(F(), b().d);
     }
 }

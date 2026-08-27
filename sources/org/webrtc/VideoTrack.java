@@ -3,22 +3,23 @@ package org.webrtc;
 import java.util.IdentityHashMap;
 import java.util.Iterator;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class VideoTrack extends MediaStreamTrack {
     private final IdentityHashMap<VideoSink, Long> sinks;
 
-    private static native void nativeAddSink(long j, long j2);
-
-    private static native void nativeFreeSink(long j);
-
-    private static native void nativeRemoveSink(long j, long j2);
-
-    private static native long nativeWrapSink(VideoSink videoSink);
-
-    public VideoTrack(long j) {
-        super(j);
+    public VideoTrack(long j10) {
+        super(j10);
         this.sinks = new IdentityHashMap<>();
     }
+
+    private static native void nativeAddSink(long j10, long j11);
+
+    private static native void nativeFreeSink(long j10);
+
+    private static native void nativeRemoveSink(long j10, long j11);
+
+    private static native long nativeWrapSink(VideoSink videoSink);
 
     public void addSink(VideoSink videoSink) {
         if (videoSink == null) {
@@ -30,14 +31,6 @@ public class VideoTrack extends MediaStreamTrack {
         long nativeWrapSink = nativeWrapSink(videoSink);
         this.sinks.put(videoSink, Long.valueOf(nativeWrapSink));
         nativeAddSink(getNativeMediaStreamTrack(), nativeWrapSink);
-    }
-
-    public void removeSink(VideoSink videoSink) {
-        Long remove = this.sinks.remove(videoSink);
-        if (remove != null) {
-            nativeRemoveSink(getNativeMediaStreamTrack(), remove.longValue());
-            nativeFreeSink(remove.longValue());
-        }
     }
 
     @Override // org.webrtc.MediaStreamTrack
@@ -54,5 +47,13 @@ public class VideoTrack extends MediaStreamTrack {
 
     public long getNativeVideoTrack() {
         return getNativeMediaStreamTrack();
+    }
+
+    public void removeSink(VideoSink videoSink) {
+        Long remove = this.sinks.remove(videoSink);
+        if (remove != null) {
+            nativeRemoveSink(getNativeMediaStreamTrack(), remove.longValue());
+            nativeFreeSink(remove.longValue());
+        }
     }
 }

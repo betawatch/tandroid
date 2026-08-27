@@ -1,0 +1,29 @@
+package nh;
+
+import android.content.Context;
+import android.graphics.Point;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.c6;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
+public final class x2 extends v {
+    public final /* synthetic */ b3 s;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x2(b3 b3Var, Context context, c6 c6Var) {
+        super(context, c6Var);
+        this.s = b3Var;
+    }
+
+    @Override // nh.v, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        if (!this.s.Z && AndroidUtilities.isTablet() && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isSmallTablet()) {
+            Point point = AndroidUtilities.displaySize;
+            i10 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point.x, point.y) * 0.8f), TLObject.FLAG_30);
+        }
+        super.onMeasure(i10, i11);
+    }
+}

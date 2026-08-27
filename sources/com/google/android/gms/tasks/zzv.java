@@ -1,29 +1,30 @@
 package com.google.android.gms.tasks;
 
 import android.app.Activity;
-import com.google.android.gms.common.api.internal.LifecycleCallback;
-import com.google.android.gms.common.api.internal.LifecycleFragment;
+import com.google.android.gms.common.api.internal.l;
+import com.google.android.gms.common.api.internal.m;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzv extends LifecycleCallback {
+final class zzv extends l {
     private final List zza;
 
-    private zzv(LifecycleFragment lifecycleFragment) {
-        super(lifecycleFragment);
+    private zzv(m mVar) {
+        super(mVar);
         this.zza = new ArrayList();
-        this.mLifecycleFragment.addCallback("TaskOnStopCallback", this);
+        this.mLifecycleFragment.a("TaskOnStopCallback", this);
     }
 
     public static zzv zza(Activity activity) {
         zzv zzvVar;
-        LifecycleFragment fragment = LifecycleCallback.getFragment(activity);
+        m fragment = l.getFragment(activity);
         synchronized (fragment) {
             try {
-                zzvVar = (zzv) fragment.getCallbackOrNull("TaskOnStopCallback", zzv.class);
+                zzvVar = (zzv) fragment.b(zzv.class, "TaskOnStopCallback");
                 if (zzvVar == null) {
                     zzvVar = new zzv(fragment);
                 }
@@ -34,7 +35,7 @@ final class zzv extends LifecycleCallback {
         return zzvVar;
     }
 
-    @Override // com.google.android.gms.common.api.internal.LifecycleCallback
+    @Override // com.google.android.gms.common.api.internal.l
     public final void onStop() {
         synchronized (this.zza) {
             try {

@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzkn implements zzjt {
     public static final zzkn zza = new zzkn();
@@ -8,7 +9,7 @@ public final class zzkn implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i10, zziz zzizVar, zzzt... zzztVarArr) {
         if (zzztVarArr.length != 2) {
             throw new zzdm(4, 3, null);
         }
@@ -29,14 +30,14 @@ public final class zzkn implements zzjt {
             throw new zzdm(4, 5, null);
         }
         zzja zzc = zzizVar.zzc();
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb2 = new StringBuilder();
         try {
-            for (int i2 : iArr) {
-                sb.append(str.charAt(i2));
+            for (int i11 : iArr) {
+                sb2.append(str.charAt(i11));
             }
-            zzc.zze(i, sb.toString());
-        } catch (Exception e) {
-            throw new zzdm(4, 22, e);
+            zzc.zze(i10, sb2.toString());
+        } catch (Exception e9) {
+            throw new zzdm(4, 22, e9);
         }
     }
 }

@@ -8,15 +8,15 @@ public final class e {
     public CoderResult a;
     public boolean b;
 
-    public final int a(char c, CharBuffer charBuffer) {
-        if (Character.isHighSurrogate(c)) {
+    public final int a(char c10, CharBuffer charBuffer) {
+        if (Character.isHighSurrogate(c10)) {
             if (!charBuffer.hasRemaining()) {
                 this.a = CoderResult.UNDERFLOW;
                 return -1;
             }
-            char c2 = charBuffer.get();
-            if (Character.isLowSurrogate(c2)) {
-                int codePoint = Character.toCodePoint(c, c2);
+            char c11 = charBuffer.get();
+            if (Character.isLowSurrogate(c11)) {
+                int codePoint = Character.toCodePoint(c10, c11);
                 this.b = true;
                 this.a = null;
                 return codePoint;
@@ -24,32 +24,32 @@ public final class e {
             this.a = CoderResult.malformedForLength(1);
             return -1;
         }
-        if (Character.isLowSurrogate(c)) {
+        if (Character.isLowSurrogate(c10)) {
             this.a = CoderResult.malformedForLength(1);
             return -1;
         }
         this.b = false;
         this.a = null;
-        return c;
+        return c10;
     }
 
-    public final int b(char c, char[] cArr, int i, int i2) {
-        if (!Character.isHighSurrogate(c)) {
-            if (Character.isLowSurrogate(c)) {
+    public final int b(char c10, char[] cArr, int i10, int i11) {
+        if (!Character.isHighSurrogate(c10)) {
+            if (Character.isLowSurrogate(c10)) {
                 this.a = CoderResult.malformedForLength(1);
                 return -1;
             }
             this.b = false;
             this.a = null;
-            return c;
+            return c10;
         }
-        if (i2 - i < 2) {
+        if (i11 - i10 < 2) {
             this.a = CoderResult.UNDERFLOW;
             return -1;
         }
-        char c2 = cArr[i + 1];
-        if (Character.isLowSurrogate(c2)) {
-            int codePoint = Character.toCodePoint(c, c2);
+        char c11 = cArr[i10 + 1];
+        if (Character.isLowSurrogate(c11)) {
+            int codePoint = Character.toCodePoint(c10, c11);
             this.b = true;
             this.a = null;
             return codePoint;

@@ -1,21 +1,20 @@
 package com.google.android.recaptcha.internal;
 
+import ad.l;
+import ad.p;
+import h7.k6;
+import id.b0;
+import id.c0;
+import id.g1;
 import java.util.List;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.collections.CollectionsKt;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.Boxing;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.CoroutineScopeKt;
+import kotlin.jvm.internal.j;
+import qc.g;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzim extends SuspendLambda implements Function2 {
+final class zzim extends i implements p {
     public static final /* synthetic */ int zze = 0;
     int zza;
     final /* synthetic */ zziz zzb;
@@ -24,67 +23,73 @@ final class zzim extends SuspendLambda implements Function2 {
     private /* synthetic */ Object zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzim(zziz zzizVar, List list, zzip zzipVar, Continuation continuation) {
-        super(2, continuation);
+    public zzim(zziz zzizVar, List list, zzip zzipVar, c cVar) {
+        super(2, cVar);
         this.zzb = zzizVar;
         this.zzc = list;
         this.zzd = zzipVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        zzim zzimVar = new zzim(this.zzb, this.zzc, this.zzd, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        zzim zzimVar = new zzim(this.zzb, this.zzc, this.zzd, cVar);
         zzimVar.zzf = obj;
         return zzimVar;
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzim) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzim) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
         Object zzh;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zza;
-        ResultKt.throwOnFailure(obj);
-        if (i == 0) {
-            CoroutineScope coroutineScope = (CoroutineScope) this.zzf;
-            while (true) {
-                zziz zzizVar = this.zzb;
-                if (zzizVar.zza() < 0) {
-                    break;
-                }
-                List list = this.zzc;
-                if (zzizVar.zza() >= list.size() || !CoroutineScopeKt.isActive(coroutineScope)) {
+        sc.a aVar = sc.a.a;
+        int i10 = this.zza;
+        pc.i iVar = pc.i.a;
+        k6.b(obj);
+        if (i10 != 0) {
+            return iVar;
+        }
+        c0 c0Var = (c0) this.zzf;
+        while (true) {
+            zziz zzizVar = this.zzb;
+            if (zzizVar.zza() < 0) {
+                break;
+            }
+            List list = this.zzc;
+            if (zzizVar.zza() < list.size()) {
+                g1 g1Var = (g1) c0Var.c().get(b0.b);
+                if (!(g1Var != null ? g1Var.isActive() : true)) {
                     break;
                 }
                 zzzu zzzuVar = (zzzu) list.get(zzizVar.zza());
                 try {
                     zzip.zzf(this.zzd, zzzuVar, zzizVar);
-                } catch (Exception e) {
+                } catch (Exception e9) {
                     zzzuVar.zzk();
-                    Boxing.boxInt(zzzuVar.zzg());
+                    new Integer(zzzuVar.zzg());
                     List zzj = zzzuVar.zzj();
                     final zzip zzipVar = this.zzd;
-                    CollectionsKt.joinToString$default(zzj, null, null, null, 0, null, new Function1(zzipVar) { // from class: com.google.android.recaptcha.internal.zzil
-                        @Override // kotlin.jvm.functions.Function1
+                    g.h(zzj, null, null, null, new l(zzipVar) { // from class: com.google.android.recaptcha.internal.zzil
+                        @Override // ad.l
                         public final Object invoke(Object obj2) {
-                            Intrinsics.checkNotNull((zzzt) obj2);
+                            j.b((zzzt) obj2);
                             return "";
                         }
-                    }, 31, null);
+                    }, 31);
                     zziz zzizVar2 = this.zzb;
                     this.zza = 1;
-                    zzh = zzipVar.zzh(e, zzizVar2, this);
-                    if (zzh == coroutine_suspended) {
-                        return coroutine_suspended;
+                    zzh = zzipVar.zzh(e9, zzizVar2, this);
+                    if (zzh == aVar) {
+                        return aVar;
                     }
                 }
+            } else {
+                break;
             }
-            return Unit.INSTANCE;
         }
-        return Unit.INSTANCE;
+        return iVar;
     }
 }

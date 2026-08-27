@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Map;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class RtpCapabilities {
     public List<CodecCapability> codecs;
     public List<HeaderExtensionCapability> headerExtensions;
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class CodecCapability {
         public Integer clockRate;
         public MediaStreamTrack.MediaType kind;
@@ -21,8 +23,32 @@ public class RtpCapabilities {
         public CodecCapability() {
         }
 
-        CodecCapability(int i, String str, MediaStreamTrack.MediaType mediaType, Integer num, Integer num2, String str2, Map<String, String> map) {
-            this.preferredPayloadType = i;
+        public Integer getClockRate() {
+            return this.clockRate;
+        }
+
+        public MediaStreamTrack.MediaType getKind() {
+            return this.kind;
+        }
+
+        public String getName() {
+            return this.name;
+        }
+
+        public Integer getNumChannels() {
+            return this.numChannels;
+        }
+
+        public Map getParameters() {
+            return this.parameters;
+        }
+
+        public int getPreferredPayloadType() {
+            return this.preferredPayloadType;
+        }
+
+        public CodecCapability(int i10, String str, MediaStreamTrack.MediaType mediaType, Integer num, Integer num2, String str2, Map<String, String> map) {
+            this.preferredPayloadType = i10;
             this.name = str;
             this.kind = mediaType;
             this.clockRate = num;
@@ -30,66 +56,43 @@ public class RtpCapabilities {
             this.parameters = map;
             this.mimeType = str2;
         }
-
-        int getPreferredPayloadType() {
-            return this.preferredPayloadType;
-        }
-
-        String getName() {
-            return this.name;
-        }
-
-        MediaStreamTrack.MediaType getKind() {
-            return this.kind;
-        }
-
-        Integer getClockRate() {
-            return this.clockRate;
-        }
-
-        Integer getNumChannels() {
-            return this.numChannels;
-        }
-
-        Map getParameters() {
-            return this.parameters;
-        }
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class HeaderExtensionCapability {
         private final boolean preferredEncrypted;
         private final int preferredId;
         private final String uri;
 
-        HeaderExtensionCapability(String str, int i, boolean z) {
+        public HeaderExtensionCapability(String str, int i10, boolean z10) {
             this.uri = str;
-            this.preferredId = i;
-            this.preferredEncrypted = z;
+            this.preferredId = i10;
+            this.preferredEncrypted = z10;
         }
 
-        public String getUri() {
-            return this.uri;
+        public boolean getPreferredEncrypted() {
+            return this.preferredEncrypted;
         }
 
         public int getPreferredId() {
             return this.preferredId;
         }
 
-        public boolean getPreferredEncrypted() {
-            return this.preferredEncrypted;
+        public String getUri() {
+            return this.uri;
         }
     }
 
-    RtpCapabilities(List<CodecCapability> list, List<HeaderExtensionCapability> list2) {
+    public RtpCapabilities(List<CodecCapability> list, List<HeaderExtensionCapability> list2) {
         this.headerExtensions = list2;
         this.codecs = list;
     }
 
-    public List<HeaderExtensionCapability> getHeaderExtensions() {
-        return this.headerExtensions;
+    public List<CodecCapability> getCodecs() {
+        return this.codecs;
     }
 
-    List<CodecCapability> getCodecs() {
-        return this.codecs;
+    public List<HeaderExtensionCapability> getHeaderExtensions() {
+        return this.headerExtensions;
     }
 }

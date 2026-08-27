@@ -1,14 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
+import ad.p;
+import h7.k6;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzee extends SuspendLambda implements Function2 {
+final class zzee extends i implements p {
     int zza;
     final /* synthetic */ zzeh zzb;
     final /* synthetic */ long zzc;
@@ -18,72 +17,72 @@ final class zzee extends SuspendLambda implements Function2 {
     private /* synthetic */ Object zzg;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzee(zzeh zzehVar, long j, zzdw zzdwVar, String str, zzhh zzhhVar, Continuation continuation) {
-        super(2, continuation);
+    public zzee(zzeh zzehVar, long j10, zzdw zzdwVar, String str, zzhh zzhhVar, c cVar) {
+        super(2, cVar);
         this.zzb = zzehVar;
-        this.zzc = j;
+        this.zzc = j10;
         this.zzd = zzdwVar;
         this.zze = str;
         this.zzf = zzhhVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        zzee zzeeVar = new zzee(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        zzee zzeeVar = new zzee(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, cVar);
         zzeeVar.zzg = obj;
         return zzeeVar;
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzee) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzee) create((zzhk) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0036, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0034, code lost:
     
         if (r8 != r0) goto L17;
      */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zza;
+        sc.a aVar = sc.a.a;
+        int i10 = this.zza;
         try {
-            if (i == 0) {
-                ResultKt.throwOnFailure(obj);
+            if (i10 == 0) {
+                k6.b(obj);
                 zzhkVar = (zzhk) this.zzg;
                 zzeh zzehVar = this.zzb;
-                long j = this.zzc;
-                zzeh.zzf(zzehVar, j);
+                long j10 = this.zzc;
+                zzeh.zzf(zzehVar, j10);
                 zzdw zzdwVar = this.zzd;
                 this.zzg = zzhkVar;
                 this.zza = 1;
-                obj = zzdwVar.zzb(j, this);
+                obj = zzdwVar.zzb(j10, this);
             } else {
-                if (i != 1) {
-                    ResultKt.throwOnFailure(obj);
+                if (i10 != 1) {
+                    k6.b(obj);
                     zzeq zzeqVar = new zzeq(this.zzd, this.zze, this.zzf);
                     this.zzb.zzc = zzeqVar;
                     return zzeqVar;
                 }
                 zzhkVar = (zzhk) this.zzg;
-                ResultKt.throwOnFailure(obj);
+                k6.b(obj);
             }
             this.zzg = null;
             this.zza = 2;
-            if (((zzhg) obj).zza(zzhkVar, this) == coroutine_suspended) {
-                return coroutine_suspended;
+            if (((zzhg) obj).zza(zzhkVar, this) == aVar) {
+                return aVar;
             }
             zzeq zzeqVar2 = new zzeq(this.zzd, this.zze, this.zzf);
             this.zzb.zzc = zzeqVar2;
             return zzeqVar2;
-        } catch (zzcg e) {
-            throw e;
-        } catch (Exception e2) {
-            throw new zzcg(zzce.zzb, zzcd.zza, e2.getMessage(), null, 8, null);
+        } catch (zzcg e9) {
+            throw e9;
+        } catch (Exception e10) {
+            throw new zzcg(zzce.zzb, zzcd.zza, e10.getMessage(), null, 8, null);
         }
     }
 }

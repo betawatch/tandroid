@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzsd {
     private static final zzsd zzb = new zzsd(true);
@@ -29,56 +30,56 @@ final class zzsd {
             zzA2 += zzA2;
         }
         zzvh zzvhVar = zzvh.zza;
-        int i = 4;
+        int i10 = 4;
         switch (zzd2.ordinal()) {
             case 0:
                 ((Double) obj).getClass();
-                i = 8;
-                return zzA2 + i;
+                i10 = 8;
+                return zzA2 + i10;
             case 1:
                 ((Float) obj).getClass();
-                return zzA2 + i;
+                return zzA2 + i10;
             case 2:
-                i = zzqv.zzB(((Long) obj).longValue());
-                return zzA2 + i;
+                i10 = zzqv.zzB(((Long) obj).longValue());
+                return zzA2 + i10;
             case 3:
-                i = zzqv.zzB(((Long) obj).longValue());
-                return zzA2 + i;
+                i10 = zzqv.zzB(((Long) obj).longValue());
+                return zzA2 + i10;
             case 4:
-                i = zzqv.zzB(((Integer) obj).intValue());
-                return zzA2 + i;
+                i10 = zzqv.zzB(((Integer) obj).intValue());
+                return zzA2 + i10;
             case 5:
                 ((Long) obj).getClass();
-                i = 8;
-                return zzA2 + i;
+                i10 = 8;
+                return zzA2 + i10;
             case 6:
                 ((Integer) obj).getClass();
-                return zzA2 + i;
+                return zzA2 + i10;
             case 7:
                 ((Boolean) obj).getClass();
-                i = 1;
-                return zzA2 + i;
+                i10 = 1;
+                return zzA2 + i10;
             case 8:
                 if (!(obj instanceof zzqm)) {
-                    i = zzqv.zzz((String) obj);
-                    return zzA2 + i;
+                    i10 = zzqv.zzz((String) obj);
+                    return zzA2 + i10;
                 }
                 zzd = ((zzqm) obj).zzd();
                 zzA = zzqv.zzA(zzd);
-                i = zzA + zzd;
-                return zzA2 + i;
+                i10 = zzA + zzd;
+                return zzA2 + i10;
             case 9:
-                i = ((zzts) obj).zzo();
-                return zzA2 + i;
+                i10 = ((zzts) obj).zzo();
+                return zzA2 + i10;
             case 10:
                 if (!(obj instanceof zztc)) {
-                    i = zzqv.zzx((zzts) obj);
-                    return zzA2 + i;
+                    i10 = zzqv.zzx((zzts) obj);
+                    return zzA2 + i10;
                 }
                 zzd = ((zztc) obj).zza();
                 zzA = zzqv.zzA(zzd);
-                i = zzA + zzd;
-                return zzA2 + i;
+                i10 = zzA + zzd;
+                return zzA2 + i10;
             case 11:
                 if (obj instanceof zzqm) {
                     zzd = ((zzqm) obj).zzd();
@@ -87,29 +88,29 @@ final class zzsd {
                     zzd = ((byte[]) obj).length;
                     zzA = zzqv.zzA(zzd);
                 }
-                i = zzA + zzd;
-                return zzA2 + i;
+                i10 = zzA + zzd;
+                return zzA2 + i10;
             case 12:
-                i = zzqv.zzA(((Integer) obj).intValue());
-                return zzA2 + i;
+                i10 = zzqv.zzA(((Integer) obj).intValue());
+                return zzA2 + i10;
             case 13:
-                i = obj instanceof zzsp ? zzqv.zzB(((zzsp) obj).zza()) : zzqv.zzB(((Integer) obj).intValue());
-                return zzA2 + i;
+                i10 = obj instanceof zzsp ? zzqv.zzB(((zzsp) obj).zza()) : zzqv.zzB(((Integer) obj).intValue());
+                return zzA2 + i10;
             case 14:
                 ((Integer) obj).getClass();
-                return zzA2 + i;
+                return zzA2 + i10;
             case 15:
                 ((Long) obj).getClass();
-                i = 8;
-                return zzA2 + i;
+                i10 = 8;
+                return zzA2 + i10;
             case 16:
                 int intValue = ((Integer) obj).intValue();
-                i = zzqv.zzA((intValue >> 31) ^ (intValue + intValue));
-                return zzA2 + i;
+                i10 = zzqv.zzA((intValue >> 31) ^ (intValue + intValue));
+                return zzA2 + i10;
             case 17:
                 long longValue = ((Long) obj).longValue();
-                i = zzqv.zzB((longValue >> 63) ^ (longValue + longValue));
-                return zzA2 + i;
+                i10 = zzqv.zzB((longValue >> 63) ^ (longValue + longValue));
+                return zzA2 + i10;
             default:
                 throw new RuntimeException("There is no way to get here, but the compiler thinks otherwise.");
         }
@@ -136,10 +137,10 @@ final class zzsd {
     private final void zzm(Map.Entry entry) {
         zzsc zzscVar = (zzsc) entry.getKey();
         Object value = entry.getValue();
-        boolean z = value instanceof zztc;
+        boolean z10 = value instanceof zztc;
         zzscVar.zzg();
         if (zzscVar.zze() != zzvh.zzi) {
-            if (z) {
+            if (z10) {
                 throw new IllegalStateException("Lazy fields must be message-valued");
             }
             this.zza.put(zzscVar, zzl(value));
@@ -147,13 +148,13 @@ final class zzsd {
         }
         Object zze = zze(zzscVar);
         if (zze != null) {
-            if (z) {
+            if (z10) {
                 throw null;
             }
             this.zza.put(zzscVar, zze instanceof zztx ? zzscVar.zzc((zztx) zze, (zztx) value) : zzscVar.zzb(((zzts) zze).zzag(), (zzts) value).zzk());
         } else {
             this.zza.put(zzscVar, zzl(value));
-            if (z) {
+            if (z10) {
                 this.zzd = true;
             }
         }
@@ -176,9 +177,9 @@ final class zzsd {
     }
 
     private static final int zzo(Map.Entry entry) {
-        int i;
+        int i10;
         int zzA;
-        int zzA2;
+        int zzx;
         zzsc zzscVar = (zzsc) entry.getKey();
         Object value = entry.getValue();
         if (zzscVar.zze() != zzvh.zzi) {
@@ -188,20 +189,20 @@ final class zzsd {
         zzscVar.zzf();
         if (value instanceof zztc) {
             int zza = ((zzsc) entry.getKey()).zza();
-            int zzA3 = zzqv.zzA(8);
-            i = zzA3 + zzA3;
-            zzA = zzqv.zzA(16) + zzqv.zzA(zza);
-            int zzA4 = zzqv.zzA(24);
+            int zzA2 = zzqv.zzA(8);
+            i10 = zzA2 + zzA2;
+            zzA = zzqv.zzA(zza) + zzqv.zzA(16);
+            int zzA3 = zzqv.zzA(24);
             int zza2 = ((zztc) value).zza();
-            zzA2 = zzA4 + zzqv.zzA(zza2) + zza2;
+            zzx = a.e(zza2, zza2, zzA3);
         } else {
             int zza3 = ((zzsc) entry.getKey()).zza();
-            int zzA5 = zzqv.zzA(8);
-            i = zzA5 + zzA5;
-            zzA = zzqv.zzA(16) + zzqv.zzA(zza3);
-            zzA2 = zzqv.zzA(24) + zzqv.zzx((zzts) value);
+            int zzA4 = zzqv.zzA(8);
+            i10 = zzA4 + zzA4;
+            zzA = zzqv.zzA(zza3) + zzqv.zzA(16);
+            zzx = zzqv.zzx((zzts) value) + zzqv.zzA(24);
         }
-        return i + zzA + zzA2;
+        return i10 + zzA + zzx;
     }
 
     public final boolean equals(Object obj) {
@@ -221,15 +222,15 @@ final class zzsd {
     public final int zzb() {
         zzuo zzuoVar = this.zza;
         int zzc = zzuoVar.zzc();
-        int i = 0;
-        for (int i2 = 0; i2 < zzc; i2++) {
-            i += zzo(zzuoVar.zzg(i2));
+        int i10 = 0;
+        for (int i11 = 0; i11 < zzc; i11++) {
+            i10 += zzo(zzuoVar.zzg(i11));
         }
         Iterator it = zzuoVar.zzd().iterator();
         while (it.hasNext()) {
-            i += zzo((Map.Entry) it.next());
+            i10 += zzo((Map.Entry) it.next());
         }
-        return i;
+        return i10;
     }
 
     /* renamed from: zzc, reason: merged with bridge method [inline-methods] */
@@ -237,8 +238,8 @@ final class zzsd {
         zzsd zzsdVar = new zzsd();
         zzuo zzuoVar = this.zza;
         int zzc = zzuoVar.zzc();
-        for (int i = 0; i < zzc; i++) {
-            Map.Entry zzg = zzuoVar.zzg(i);
+        for (int i10 = 0; i10 < zzc; i10++) {
+            Map.Entry zzg = zzuoVar.zzg(i10);
             zzsdVar.zzi((zzsc) ((zzuk) zzg).zza(), zzg.getValue());
         }
         for (Map.Entry entry : zzuoVar.zzd()) {
@@ -267,8 +268,8 @@ final class zzsd {
         }
         zzuo zzuoVar = this.zza;
         int zzc = zzuoVar.zzc();
-        for (int i = 0; i < zzc; i++) {
-            Object value = zzuoVar.zzg(i).getValue();
+        for (int i10 = 0; i10 < zzc; i10++) {
+            Object value = zzuoVar.zzg(i10).getValue();
             if (value instanceof zzsn) {
                 ((zzsn) value).zzG();
             }
@@ -287,8 +288,8 @@ final class zzsd {
     public final void zzh(zzsd zzsdVar) {
         zzuo zzuoVar = zzsdVar.zza;
         int zzc = zzuoVar.zzc();
-        for (int i = 0; i < zzc; i++) {
-            zzm(zzuoVar.zzg(i));
+        for (int i10 = 0; i10 < zzc; i10++) {
+            zzm(zzuoVar.zzg(i10));
         }
         Iterator it = zzuoVar.zzd().iterator();
         while (it.hasNext()) {
@@ -307,7 +308,7 @@ final class zzsd {
      */
     /* JADX WARN: Code restructure failed: missing block: B:22:0x0049, code lost:
     
-        if (r1 == false) goto L32;
+        if (r0 == false) goto L32;
      */
     /* JADX WARN: Code restructure failed: missing block: B:6:0x0023, code lost:
     
@@ -318,31 +319,31 @@ final class zzsd {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void zzi(zzsc zzscVar, Object obj) {
-        boolean z;
+        boolean z10;
         zzscVar.zzg();
         zzscVar.zzd();
         byte[] bArr = zzsv.zzb;
         obj.getClass();
         zzvg zzvgVar = zzvg.zza;
         zzvh zzvhVar = zzvh.zza;
-        switch (r1.zza()) {
+        switch (r0.zza()) {
             case zza:
-                z = obj instanceof Integer;
+                z10 = obj instanceof Integer;
                 break;
             case zzb:
-                z = obj instanceof Long;
+                z10 = obj instanceof Long;
                 break;
             case zzc:
-                z = obj instanceof Float;
+                z10 = obj instanceof Float;
                 break;
             case zzd:
-                z = obj instanceof Double;
+                z10 = obj instanceof Double;
                 break;
             case zze:
-                z = obj instanceof Boolean;
+                z10 = obj instanceof Boolean;
                 break;
             case zzf:
-                z = obj instanceof String;
+                z10 = obj instanceof String;
                 break;
             case zzg:
                 if (!(obj instanceof zzqm)) {
@@ -381,8 +382,8 @@ final class zzsd {
     public final boolean zzk() {
         zzuo zzuoVar = this.zza;
         int zzc = zzuoVar.zzc();
-        for (int i = 0; i < zzc; i++) {
-            if (!zzn(zzuoVar.zzg(i))) {
+        for (int i10 = 0; i10 < zzc; i10++) {
+            if (!zzn(zzuoVar.zzg(i10))) {
                 return false;
             }
         }
@@ -395,7 +396,7 @@ final class zzsd {
         return true;
     }
 
-    private zzsd(boolean z) {
+    private zzsd(boolean z10) {
         zzg();
         zzg();
     }

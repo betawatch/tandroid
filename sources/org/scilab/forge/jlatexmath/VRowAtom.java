@@ -3,7 +3,8 @@ package org.scilab.forge.jlatexmath;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class VRowAtom extends Atom {
     protected LinkedList<Atom> elements = new LinkedList<>();
     private SpaceAtom raise = new SpaceAtom(1, 0.0f, 0.0f, 0.0f);
@@ -12,48 +13,6 @@ public class VRowAtom extends Atom {
     protected int halign = 5;
 
     public VRowAtom() {
-    }
-
-    public VRowAtom(Atom atom) {
-        if (atom != null) {
-            if (atom instanceof VRowAtom) {
-                this.elements.addAll(((VRowAtom) atom).elements);
-            } else {
-                this.elements.add(atom);
-            }
-        }
-    }
-
-    public void setAddInterline(boolean z) {
-        this.addInterline = z;
-    }
-
-    public boolean getAddInterline() {
-        return this.addInterline;
-    }
-
-    public void setHalign(int i) {
-        this.halign = i;
-    }
-
-    public int getHalign() {
-        return this.halign;
-    }
-
-    public void setVtop(boolean z) {
-        this.vtop = z;
-    }
-
-    public boolean getVtop() {
-        return this.vtop;
-    }
-
-    public void setRaise(int i, float f) {
-        this.raise = new SpaceAtom(i, f, 0.0f, 0.0f);
-    }
-
-    public Atom getLastAtom() {
-        return this.elements.removeLast();
     }
 
     public final void add(Atom atom) {
@@ -75,18 +34,18 @@ public class VRowAtom extends Atom {
         if (this.halign != 5) {
             LinkedList linkedList = new LinkedList();
             ListIterator<Atom> listIterator = this.elements.listIterator();
-            float f = Float.NEGATIVE_INFINITY;
+            float f10 = Float.NEGATIVE_INFINITY;
             while (listIterator.hasNext()) {
                 Box createBox = listIterator.next().createBox(teXEnvironment);
                 linkedList.add(createBox);
-                if (f < createBox.getWidth()) {
-                    f = createBox.getWidth();
+                if (f10 < createBox.getWidth()) {
+                    f10 = createBox.getWidth();
                 }
             }
             StrutBox strutBox = new StrutBox(0.0f, teXEnvironment.getInterline(), 0.0f, 0.0f);
             ListIterator listIterator2 = linkedList.listIterator();
             while (listIterator2.hasNext()) {
-                verticalBox.add(new HorizontalBox((Box) listIterator2.next(), f, this.halign));
+                verticalBox.add(new HorizontalBox((Box) listIterator2.next(), f10, this.halign));
                 if (this.addInterline && listIterator2.hasNext()) {
                     verticalBox.add(strutBox);
                 }
@@ -105,12 +64,54 @@ public class VRowAtom extends Atom {
         if (this.vtop) {
             depth = verticalBox.getSize() != 0 ? verticalBox.children.getFirst().getHeight() : 0.0f;
             verticalBox.setHeight(depth);
-            verticalBox.setDepth((verticalBox.getDepth() + verticalBox.getHeight()) - depth);
+            verticalBox.setDepth((verticalBox.getHeight() + verticalBox.getDepth()) - depth);
             return verticalBox;
         }
         depth = verticalBox.getSize() != 0 ? verticalBox.children.getLast().getDepth() : 0.0f;
-        verticalBox.setHeight((verticalBox.getDepth() + verticalBox.getHeight()) - depth);
+        verticalBox.setHeight((verticalBox.getHeight() + verticalBox.getDepth()) - depth);
         verticalBox.setDepth(depth);
         return verticalBox;
+    }
+
+    public boolean getAddInterline() {
+        return this.addInterline;
+    }
+
+    public int getHalign() {
+        return this.halign;
+    }
+
+    public Atom getLastAtom() {
+        return this.elements.removeLast();
+    }
+
+    public boolean getVtop() {
+        return this.vtop;
+    }
+
+    public void setAddInterline(boolean z10) {
+        this.addInterline = z10;
+    }
+
+    public void setHalign(int i10) {
+        this.halign = i10;
+    }
+
+    public void setRaise(int i10, float f10) {
+        this.raise = new SpaceAtom(i10, f10, 0.0f, 0.0f);
+    }
+
+    public void setVtop(boolean z10) {
+        this.vtop = z10;
+    }
+
+    public VRowAtom(Atom atom) {
+        if (atom != null) {
+            if (atom instanceof VRowAtom) {
+                this.elements.addAll(((VRowAtom) atom).elements);
+            } else {
+                this.elements.add(atom);
+            }
+        }
     }
 }

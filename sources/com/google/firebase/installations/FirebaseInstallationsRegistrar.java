@@ -1,38 +1,45 @@
 package com.google.firebase.installations;
 
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.annotations.concurrent.Background;
-import com.google.firebase.annotations.concurrent.Blocking;
-import com.google.firebase.components.Component;
-import com.google.firebase.components.ComponentContainer;
-import com.google.firebase.components.ComponentFactory;
 import com.google.firebase.components.ComponentRegistrar;
-import com.google.firebase.components.Dependency;
-import com.google.firebase.components.Qualified;
-import com.google.firebase.concurrent.FirebaseExecutors;
-import com.google.firebase.heartbeatinfo.HeartBeatConsumerComponent;
-import com.google.firebase.heartbeatinfo.HeartBeatController;
-import com.google.firebase.platforminfo.LibraryVersionComponent;
+import g7.i7;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
+import t8.h;
+import u3.k;
+import v8.a;
+import w9.e;
+import z8.b;
+import z8.i;
+import z8.q;
+import z9.c;
+import z9.d;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-installations";
 
-    @Override // com.google.firebase.components.ComponentRegistrar
-    public List<Component> getComponents() {
-        return Arrays.asList(Component.builder(FirebaseInstallationsApi.class).name(LIBRARY_NAME).add(Dependency.required(FirebaseApp.class)).add(Dependency.optionalProvider(HeartBeatController.class)).add(Dependency.required(Qualified.qualified(Background.class, ExecutorService.class))).add(Dependency.required(Qualified.qualified(Blocking.class, Executor.class))).factory(new ComponentFactory() { // from class: com.google.firebase.installations.FirebaseInstallationsRegistrar$$ExternalSyntheticLambda0
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                return FirebaseInstallationsRegistrar.$r8$lambda$vJ_ijnislX2JLJx5rFvt8ObqNeg(componentContainer);
-            }
-        }).build(), HeartBeatConsumerComponent.create(), LibraryVersionComponent.create(LIBRARY_NAME, "17.2.0"));
+    /* JADX INFO: Access modifiers changed from: private */
+    public static d lambda$getComponents$0(b bVar) {
+        return new c((h) bVar.a(h.class), bVar.e(e.class), (ExecutorService) bVar.b(new q(a.class, ExecutorService.class)), new a9.q((Executor) bVar.b(new q(v8.b.class, Executor.class))));
     }
 
-    public static /* synthetic */ FirebaseInstallationsApi $r8$lambda$vJ_ijnislX2JLJx5rFvt8ObqNeg(ComponentContainer componentContainer) {
-        return new FirebaseInstallations((FirebaseApp) componentContainer.get(FirebaseApp.class), componentContainer.getProvider(HeartBeatController.class), (ExecutorService) componentContainer.get(Qualified.qualified(Background.class, ExecutorService.class)), FirebaseExecutors.newSequentialExecutor((Executor) componentContainer.get(Qualified.qualified(Blocking.class, Executor.class))));
+    @Override // com.google.firebase.components.ComponentRegistrar
+    public List<z8.a> getComponents() {
+        ug.b a2 = z8.a.a(d.class);
+        a2.c = LIBRARY_NAME;
+        a2.a(i.a(h.class));
+        a2.a(new i(0, 1, e.class));
+        a2.a(new i(new q(a.class, ExecutorService.class), 1, 0));
+        a2.a(new i(new q(v8.b.class, Executor.class), 1, 0));
+        a2.f = new k(17);
+        z8.a b10 = a2.b();
+        w9.d dVar = new w9.d(0);
+        ug.b a3 = z8.a.a(w9.d.class);
+        a3.b = 1;
+        a3.f = new t0.c(dVar, 7);
+        return Arrays.asList(b10, a3.b(), i7.a(LIBRARY_NAME, "17.2.0"));
     }
 }

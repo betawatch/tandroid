@@ -12,7 +12,8 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.MediaDataController;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class FileVideoCapturer implements VideoCapturer {
     private static final String TAG = "FileVideoCapturer";
     private CapturerObserver capturerObserver;
@@ -25,22 +26,15 @@ public class FileVideoCapturer implements VideoCapturer {
         }
     };
 
-    private interface VideoReader {
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public interface VideoReader {
         void close();
 
         VideoFrame getNextFrame();
     }
 
-    @Override // org.webrtc.VideoCapturer
-    public void changeCaptureFormat(int i, int i2, int i3) {
-    }
-
-    @Override // org.webrtc.VideoCapturer
-    public boolean isScreencast() {
-        return false;
-    }
-
-    private static class VideoReaderY4M implements VideoReader {
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class VideoReaderY4M implements VideoReader {
         private static final int FRAME_DELIMETER_LENGTH = 6;
         private static final String TAG = "VideoReaderY4M";
         private static final String Y4M_FRAME_DELIMETER = "FRAME";
@@ -54,41 +48,49 @@ public class FileVideoCapturer implements VideoCapturer {
             RandomAccessFile randomAccessFile = new RandomAccessFile(str, "r");
             this.mediaFile = randomAccessFile;
             this.mediaFileChannel = randomAccessFile.getChannel();
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb2 = new StringBuilder();
             while (true) {
                 int read = this.mediaFile.read();
                 if (read == -1) {
-                    throw new RuntimeException("Found end of file before end of header for file: " + str);
+                    throw new RuntimeException(s3.c.e("Found end of file before end of header for file: ", str));
                 }
-                if (read != 10) {
-                    sb.append((char) read);
-                } else {
+                if (read == 10) {
                     this.videoStart = this.mediaFileChannel.position();
                     String str2 = "";
-                    int i = 0;
-                    int i2 = 0;
-                    for (String str3 : sb.toString().split("[ ]")) {
+                    int i10 = 0;
+                    int i11 = 0;
+                    for (String str3 : sb2.toString().split("[ ]")) {
                         char charAt = str3.charAt(0);
                         if (charAt == 'C') {
                             str2 = str3.substring(1);
                         } else if (charAt == 'H') {
-                            i2 = Integer.parseInt(str3.substring(1));
+                            i11 = Integer.parseInt(str3.substring(1));
                         } else if (charAt == 'W') {
-                            i = Integer.parseInt(str3.substring(1));
+                            i10 = Integer.parseInt(str3.substring(1));
                         }
                     }
                     Logging.d(TAG, "Color space: " + str2);
                     if (!str2.equals("420") && !str2.equals("420mpeg2")) {
                         throw new IllegalArgumentException("Does not support any other color space than I420 or I420mpeg2");
                     }
-                    if (i % 2 == 1 || i2 % 2 == 1) {
+                    if (i10 % 2 == 1 || i11 % 2 == 1) {
                         throw new IllegalArgumentException("Does not support odd width or height");
                     }
-                    this.frameWidth = i;
-                    this.frameHeight = i2;
-                    Logging.d(TAG, "frame dim: (" + i + ", " + i2 + ")");
+                    this.frameWidth = i10;
+                    this.frameHeight = i11;
+                    Logging.d(TAG, "frame dim: (" + i10 + ", " + i11 + ")");
                     return;
                 }
+                sb2.append((char) read);
+            }
+        }
+
+        @Override // org.webrtc.FileVideoCapturer.VideoReader
+        public void close() {
+            try {
+                this.mediaFile.close();
+            } catch (IOException e9) {
+                Logging.e(TAG, "Problem closing file", e9);
             }
         }
 
@@ -103,33 +105,24 @@ public class FileVideoCapturer implements VideoCapturer {
             allocate.getStrideU();
             allocate.getStrideV();
             try {
-                int i = FRAME_DELIMETER_LENGTH;
-                ByteBuffer allocate2 = ByteBuffer.allocate(i);
-                if (this.mediaFileChannel.read(allocate2) < i) {
+                int i10 = FRAME_DELIMETER_LENGTH;
+                ByteBuffer allocate2 = ByteBuffer.allocate(i10);
+                if (this.mediaFileChannel.read(allocate2) < i10) {
                     this.mediaFileChannel.position(this.videoStart);
-                    if (this.mediaFileChannel.read(allocate2) < i) {
+                    if (this.mediaFileChannel.read(allocate2) < i10) {
                         throw new RuntimeException("Error looping video");
                     }
                 }
                 String str = new String(allocate2.array(), Charset.forName("US-ASCII"));
-                if (!str.equals("FRAME\n")) {
-                    throw new RuntimeException("Frames should be delimited by FRAME plus newline, found delimter was: '" + str + "'");
+                if (str.equals("FRAME\n")) {
+                    this.mediaFileChannel.read(dataY);
+                    this.mediaFileChannel.read(dataU);
+                    this.mediaFileChannel.read(dataV);
+                    return new VideoFrame(allocate, 0, nanos);
                 }
-                this.mediaFileChannel.read(dataY);
-                this.mediaFileChannel.read(dataU);
-                this.mediaFileChannel.read(dataV);
-                return new VideoFrame(allocate, 0, nanos);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-        @Override // org.webrtc.FileVideoCapturer.VideoReader
-        public void close() {
-            try {
-                this.mediaFile.close();
-            } catch (IOException e) {
-                Logging.e(TAG, "Problem closing file", e);
+                throw new RuntimeException("Frames should be delimited by FRAME plus newline, found delimter was: '" + str + "'");
+            } catch (IOException e9) {
+                throw new RuntimeException(e9);
             }
         }
     }
@@ -137,10 +130,35 @@ public class FileVideoCapturer implements VideoCapturer {
     public FileVideoCapturer(String str) {
         try {
             this.videoReader = new VideoReaderY4M(str);
-        } catch (IOException e) {
+        } catch (IOException e9) {
             Logging.d(TAG, "Could not open video file: " + str);
-            throw e;
+            throw e9;
         }
+    }
+
+    @Override // org.webrtc.VideoCapturer
+    public void dispose() {
+        this.videoReader.close();
+    }
+
+    @Override // org.webrtc.VideoCapturer
+    public void initialize(SurfaceTextureHelper surfaceTextureHelper, Context context, CapturerObserver capturerObserver) {
+        this.capturerObserver = capturerObserver;
+    }
+
+    @Override // org.webrtc.VideoCapturer
+    public boolean isScreencast() {
+        return false;
+    }
+
+    @Override // org.webrtc.VideoCapturer
+    public void startCapture(int i10, int i11, int i12) {
+        this.timer.schedule(this.tickTask, 0L, MediaDataController.MAX_STYLE_RUNS_COUNT / i12);
+    }
+
+    @Override // org.webrtc.VideoCapturer
+    public void stopCapture() {
+        this.timer.cancel();
     }
 
     public void tick() {
@@ -150,22 +168,6 @@ public class FileVideoCapturer implements VideoCapturer {
     }
 
     @Override // org.webrtc.VideoCapturer
-    public void initialize(SurfaceTextureHelper surfaceTextureHelper, Context context, CapturerObserver capturerObserver) {
-        this.capturerObserver = capturerObserver;
-    }
-
-    @Override // org.webrtc.VideoCapturer
-    public void startCapture(int i, int i2, int i3) {
-        this.timer.schedule(this.tickTask, 0L, MediaDataController.MAX_STYLE_RUNS_COUNT / i3);
-    }
-
-    @Override // org.webrtc.VideoCapturer
-    public void stopCapture() {
-        this.timer.cancel();
-    }
-
-    @Override // org.webrtc.VideoCapturer
-    public void dispose() {
-        this.videoReader.close();
+    public void changeCaptureFormat(int i10, int i11, int i12) {
     }
 }

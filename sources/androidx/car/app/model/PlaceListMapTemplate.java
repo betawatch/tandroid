@@ -2,58 +2,20 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class PlaceListMapTemplate implements Template {
+public final class PlaceListMapTemplate implements x0 {
     private final ActionStrip mActionStrip;
     private final Place mAnchor;
     private final Action mHeaderAction;
     private final boolean mIsLoading;
     private final ItemList mItemList;
-    private final OnContentRefreshDelegate mOnContentRefreshDelegate;
+    private final d0 mOnContentRefreshDelegate;
     private final boolean mShowCurrentLocation;
     private final CarText mTitle;
 
-    public static final class Builder {
-    }
-
-    public boolean isCurrentLocationEnabled() {
-        return this.mShowCurrentLocation;
-    }
-
-    public CarText getTitle() {
-        return this.mTitle;
-    }
-
-    public Action getHeaderAction() {
-        return this.mHeaderAction;
-    }
-
-    public ActionStrip getActionStrip() {
-        return this.mActionStrip;
-    }
-
-    public boolean isLoading() {
-        return this.mIsLoading;
-    }
-
-    public ItemList getItemList() {
-        return this.mItemList;
-    }
-
-    public Place getAnchor() {
-        return this.mAnchor;
-    }
-
-    public OnContentRefreshDelegate getOnContentRefreshDelegate() {
-        return this.mOnContentRefreshDelegate;
-    }
-
-    public String toString() {
-        return "PlaceListMapTemplate";
-    }
-
-    public int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.mShowCurrentLocation), Boolean.valueOf(this.mIsLoading), this.mTitle, this.mItemList, this.mHeaderAction, this.mActionStrip, this.mAnchor, Boolean.valueOf(this.mOnContentRefreshDelegate == null));
+    public PlaceListMapTemplate(l0 l0Var) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -72,8 +34,44 @@ public final class PlaceListMapTemplate implements Template {
         return false;
     }
 
-    PlaceListMapTemplate(Builder builder) {
-        throw null;
+    public ActionStrip getActionStrip() {
+        return this.mActionStrip;
+    }
+
+    public Place getAnchor() {
+        return this.mAnchor;
+    }
+
+    public Action getHeaderAction() {
+        return this.mHeaderAction;
+    }
+
+    public ItemList getItemList() {
+        return this.mItemList;
+    }
+
+    public d0 getOnContentRefreshDelegate() {
+        return this.mOnContentRefreshDelegate;
+    }
+
+    public CarText getTitle() {
+        return this.mTitle;
+    }
+
+    public int hashCode() {
+        return Objects.hash(Boolean.valueOf(this.mShowCurrentLocation), Boolean.valueOf(this.mIsLoading), this.mTitle, this.mItemList, this.mHeaderAction, this.mActionStrip, this.mAnchor, Boolean.valueOf(this.mOnContentRefreshDelegate == null));
+    }
+
+    public boolean isCurrentLocationEnabled() {
+        return this.mShowCurrentLocation;
+    }
+
+    public boolean isLoading() {
+        return this.mIsLoading;
+    }
+
+    public String toString() {
+        return "PlaceListMapTemplate";
     }
 
     private PlaceListMapTemplate() {

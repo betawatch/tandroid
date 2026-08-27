@@ -1,6 +1,7 @@
 package org.webrtc;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public final class CandidatePairChangeEvent {
     public final int estimatedDisconnectedTimeMs;
     public final int lastDataReceivedMs;
@@ -8,11 +9,11 @@ public final class CandidatePairChangeEvent {
     public final String reason;
     public final IceCandidate remote;
 
-    CandidatePairChangeEvent(IceCandidate iceCandidate, IceCandidate iceCandidate2, int i, String str, int i2) {
+    public CandidatePairChangeEvent(IceCandidate iceCandidate, IceCandidate iceCandidate2, int i10, String str, int i11) {
         this.local = iceCandidate;
         this.remote = iceCandidate2;
-        this.lastDataReceivedMs = i;
+        this.lastDataReceivedMs = i10;
         this.reason = str;
-        this.estimatedDisconnectedTimeMs = i2;
+        this.estimatedDisconnectedTimeMs = i11;
     }
 }

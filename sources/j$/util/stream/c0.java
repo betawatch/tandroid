@@ -1,59 +1,85 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import java.util.function.LongConsumer;
+import java.util.function.BiConsumer;
+import java.util.function.DoubleBinaryOperator;
+import java.util.function.DoubleConsumer;
+import java.util.function.DoubleFunction;
+import java.util.function.ObjDoubleConsumer;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-public final class c0 extends b2 {
-    public boolean b;
-    public final j$.util.K c;
-    public final /* synthetic */ d0 d;
+public interface c0 extends BaseStream {
+    boolean B();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c0(d0 d0Var, g2 g2Var) {
-        super(g2Var);
-        this.d = d0Var;
-        g2 g2Var2 = this.a;
-        Objects.requireNonNull(g2Var2);
-        this.c = new j$.util.K(g2Var2, 1);
-    }
+    c0 a();
 
-    @Override // j$.util.stream.b2, j$.util.stream.g2
-    public final void y(long j) {
-        this.a.y(-1L);
-    }
+    j$.util.b0 average();
 
-    @Override // j$.util.stream.f2, j$.util.stream.g2
-    public final void accept(long j) {
-        LongStream longStream = (LongStream) ((j$.time.t) this.d.n).apply(j);
-        if (longStream != null) {
-            try {
-                boolean z = this.b;
-                j$.util.K k = this.c;
-                if (!z) {
-                    longStream.sequential().forEach(k);
-                } else {
-                    j$.util.Z spliterator = longStream.sequential().spliterator();
-                    while (!this.a.C() && spliterator.tryAdvance((LongConsumer) k)) {
-                    }
-                }
-            } catch (Throwable th) {
-                try {
-                    longStream.close();
-                } catch (Throwable th2) {
-                    th.addSuppressed(th2);
-                }
-                throw th;
-            }
-        }
-        if (longStream != null) {
-            longStream.close();
-        }
-    }
+    c0 b();
 
-    @Override // j$.util.stream.b2, j$.util.stream.g2
-    public final boolean C() {
-        this.b = true;
-        return this.a.C();
-    }
+    Stream boxed();
+
+    c0 c();
+
+    Object collect(Supplier supplier, ObjDoubleConsumer objDoubleConsumer, BiConsumer biConsumer);
+
+    long count();
+
+    c0 d(j$.time.t tVar);
+
+    c0 distinct();
+
+    c0 e();
+
+    j$.util.b0 findAny();
+
+    j$.util.b0 findFirst();
+
+    void forEach(DoubleConsumer doubleConsumer);
+
+    void forEachOrdered(DoubleConsumer doubleConsumer);
+
+    @Override // j$.util.stream.BaseStream
+    j$.util.h0 iterator();
+
+    c0 limit(long j10);
+
+    boolean m();
+
+    Stream mapToObj(DoubleFunction doubleFunction);
+
+    j$.util.b0 max();
+
+    j$.util.b0 min();
+
+    @Override // j$.util.stream.BaseStream
+    c0 parallel();
+
+    c0 peek(DoubleConsumer doubleConsumer);
+
+    double reduce(double d, DoubleBinaryOperator doubleBinaryOperator);
+
+    j$.util.b0 reduce(DoubleBinaryOperator doubleBinaryOperator);
+
+    boolean s();
+
+    @Override // j$.util.stream.BaseStream
+    c0 sequential();
+
+    c0 skip(long j10);
+
+    c0 sorted();
+
+    @Override // j$.util.stream.BaseStream
+    j$.util.u0 spliterator();
+
+    double sum();
+
+    j$.util.w summaryStatistics();
+
+    LongStream t();
+
+    double[] toArray();
+
+    IntStream z();
 }

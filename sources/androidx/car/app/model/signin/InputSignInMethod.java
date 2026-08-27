@@ -1,12 +1,15 @@
 package androidx.car.app.model.signin;
 
+import a9.p;
 import androidx.car.app.model.CarText;
-import androidx.car.app.model.InputCallbackDelegate;
-import androidx.car.app.model.signin.SignInTemplate;
+import androidx.car.app.model.o;
 import j$.util.Objects;
+import u.a;
+import u.c;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class InputSignInMethod implements SignInTemplate.SignInMethod {
+public final class InputSignInMethod implements c {
     public static final int INPUT_TYPE_DEFAULT = 1;
     public static final int INPUT_TYPE_PASSWORD = 2;
     public static final int KEYBOARD_DEFAULT = 1;
@@ -16,46 +19,13 @@ public final class InputSignInMethod implements SignInTemplate.SignInMethod {
     private final CarText mDefaultValue;
     private final CarText mErrorMessage;
     private final CarText mHint;
-    private final InputCallbackDelegate mInputCallbackDelegate;
+    private final o mInputCallbackDelegate;
     private final int mInputType;
     private final int mKeyboardType;
     private final boolean mShowKeyboardByDefault;
 
-    public static final class Builder {
-    }
-
-    public CarText getHint() {
-        return this.mHint;
-    }
-
-    public CarText getDefaultValue() {
-        return this.mDefaultValue;
-    }
-
-    public int getInputType() {
-        return this.mInputType;
-    }
-
-    public CarText getErrorMessage() {
-        return this.mErrorMessage;
-    }
-
-    public int getKeyboardType() {
-        return this.mKeyboardType;
-    }
-
-    public InputCallbackDelegate getInputCallbackDelegate() {
-        InputCallbackDelegate inputCallbackDelegate = this.mInputCallbackDelegate;
-        Objects.requireNonNull(inputCallbackDelegate);
-        return inputCallbackDelegate;
-    }
-
-    public boolean isShowKeyboardByDefault() {
-        return this.mShowKeyboardByDefault;
-    }
-
-    public String toString() {
-        return "[inputType:" + this.mInputType + ", keyboardType: " + this.mKeyboardType + "]";
+    public InputSignInMethod(a aVar) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -69,12 +39,45 @@ public final class InputSignInMethod implements SignInTemplate.SignInMethod {
         return this.mInputType == inputSignInMethod.mInputType && this.mKeyboardType == inputSignInMethod.mKeyboardType && this.mShowKeyboardByDefault == inputSignInMethod.mShowKeyboardByDefault && Objects.equals(this.mHint, inputSignInMethod.mHint) && Objects.equals(this.mDefaultValue, inputSignInMethod.mDefaultValue) && Objects.equals(this.mErrorMessage, inputSignInMethod.mErrorMessage);
     }
 
+    public CarText getDefaultValue() {
+        return this.mDefaultValue;
+    }
+
+    public CarText getErrorMessage() {
+        return this.mErrorMessage;
+    }
+
+    public CarText getHint() {
+        return this.mHint;
+    }
+
+    public o getInputCallbackDelegate() {
+        o oVar = this.mInputCallbackDelegate;
+        Objects.requireNonNull(oVar);
+        return oVar;
+    }
+
+    public int getInputType() {
+        return this.mInputType;
+    }
+
+    public int getKeyboardType() {
+        return this.mKeyboardType;
+    }
+
     public int hashCode() {
         return Objects.hash(this.mHint, this.mDefaultValue, Integer.valueOf(this.mInputType), this.mErrorMessage, Integer.valueOf(this.mKeyboardType), Boolean.valueOf(this.mShowKeyboardByDefault));
     }
 
-    InputSignInMethod(Builder builder) {
-        throw null;
+    public boolean isShowKeyboardByDefault() {
+        return this.mShowKeyboardByDefault;
+    }
+
+    public String toString() {
+        StringBuilder sb2 = new StringBuilder("[inputType:");
+        sb2.append(this.mInputType);
+        sb2.append(", keyboardType: ");
+        return p.k(this.mKeyboardType, "]", sb2);
     }
 
     private InputSignInMethod() {

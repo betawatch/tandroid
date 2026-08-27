@@ -2,11 +2,13 @@ package org.webrtc;
 
 import java.util.Locale;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class SessionDescription {
     public final String description;
     public final Type type;
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public enum Type {
         OFFER,
         PRANSWER,
@@ -23,11 +25,11 @@ public class SessionDescription {
         this.description = str;
     }
 
-    String getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
-    String getTypeInCanonicalForm() {
+    public String getTypeInCanonicalForm() {
         return this.type.canonicalForm();
     }
 }

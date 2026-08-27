@@ -1,266 +1,275 @@
 package j$.util.stream;
 
+import j$.util.Objects;
 import j$.util.Spliterator;
-import j$.util.stream.IntStream;
-import j$.util.stream.Stream;
-import java.util.Iterator;
+import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.DoubleBinaryOperator;
 import java.util.function.DoubleConsumer;
 import java.util.function.DoubleFunction;
+import java.util.function.IntFunction;
 import java.util.function.ObjDoubleConsumer;
 import java.util.function.Supplier;
-import java.util.stream.DoubleStream;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class z implements B, AutoCloseable {
-    public final /* synthetic */ DoubleStream a;
-
-    public /* synthetic */ z(DoubleStream doubleStream) {
-        this.a = doubleStream;
+public abstract class z extends a implements c0 {
+    @Override // j$.util.stream.c0
+    public final j$.util.b0 findAny() {
+        return (j$.util.b0) I0(e0.d);
     }
 
-    public static /* synthetic */ B j(DoubleStream doubleStream) {
-        if (doubleStream == null) {
-            return null;
+    @Override // j$.util.stream.c0
+    public final j$.util.b0 findFirst() {
+        return (j$.util.b0) I0(e0.c);
+    }
+
+    @Override // j$.util.stream.c0
+    public final c0 sorted() {
+        return new b6(this, v6.q | v6.o, 0);
+    }
+
+    public static j$.util.u0 U0(Spliterator spliterator) {
+        if (spliterator instanceof j$.util.u0) {
+            return (j$.util.u0) spliterator;
         }
-        return doubleStream instanceof A ? ((A) doubleStream).a : new z(doubleStream);
-    }
-
-    @Override // j$.util.stream.B
-    public final /* synthetic */ B a() {
-        return j(this.a.takeWhile(null));
-    }
-
-    @Override // j$.util.stream.B
-    public final /* synthetic */ j$.util.z average() {
-        return j$.com.android.tools.r8.a.F(this.a.average());
-    }
-
-    @Override // j$.util.stream.B
-    public final /* synthetic */ B b() {
-        return j(this.a.filter(null));
-    }
-
-    @Override // j$.util.stream.B
-    public final /* synthetic */ Stream boxed() {
-        return Stream.VivifiedWrapper.convert(this.a.boxed());
-    }
-
-    @Override // j$.util.stream.B
-    public final /* synthetic */ B c() {
-        return j(this.a.dropWhile(null));
-    }
-
-    @Override // j$.util.stream.BaseStream, java.lang.AutoCloseable
-    public final /* synthetic */ void close() {
-        this.a.close();
-    }
-
-    @Override // j$.util.stream.B
-    public final /* synthetic */ Object collect(Supplier supplier, ObjDoubleConsumer objDoubleConsumer, BiConsumer biConsumer) {
-        return this.a.collect(supplier, objDoubleConsumer, biConsumer);
-    }
-
-    @Override // j$.util.stream.B
-    public final /* synthetic */ long count() {
-        return this.a.count();
-    }
-
-    @Override // j$.util.stream.B
-    public final /* synthetic */ B distinct() {
-        return j(this.a.distinct());
-    }
-
-    @Override // j$.util.stream.B
-    public final /* synthetic */ B e() {
-        return j(this.a.map(null));
-    }
-
-    public final /* synthetic */ boolean equals(Object obj) {
-        DoubleStream doubleStream = this.a;
-        if (obj instanceof z) {
-            obj = ((z) obj).a;
+        if (d8.a) {
+            d8.a(a.class, "using DoubleStream.adapt(Spliterator<Double> s)");
+            throw null;
         }
-        return doubleStream.equals(obj);
+        throw new UnsupportedOperationException("DoubleStream.adapt(Spliterator<Double> s)");
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ j$.util.z findAny() {
-        return j$.com.android.tools.r8.a.F(this.a.findAny());
+    public void forEach(DoubleConsumer doubleConsumer) {
+        Objects.requireNonNull(doubleConsumer);
+        I0(new l0(doubleConsumer, false));
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ j$.util.z findFirst() {
-        return j$.com.android.tools.r8.a.F(this.a.findFirst());
+    public void forEachOrdered(DoubleConsumer doubleConsumer) {
+        Objects.requireNonNull(doubleConsumer);
+        I0(new l0(doubleConsumer, true));
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ void forEach(DoubleConsumer doubleConsumer) {
-        this.a.forEach(doubleConsumer);
+    @Override // j$.util.stream.a
+    public final w6 M0() {
+        return w6.DOUBLE_VALUE;
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ void forEachOrdered(DoubleConsumer doubleConsumer) {
-        this.a.forEachOrdered(doubleConsumer);
+    @Override // j$.util.stream.a
+    public final e2 K0(a aVar, Spliterator spliterator, boolean z10, IntFunction intFunction) {
+        return t3.b0(aVar, spliterator, z10);
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ boolean h() {
-        return this.a.allMatch(null);
+    @Override // j$.util.stream.a
+    public final Spliterator T0(a aVar, Supplier supplier, boolean z10) {
+        return new g7(aVar, supplier, z10);
     }
 
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
-    }
-
-    @Override // j$.util.stream.B
-    public final /* synthetic */ LongStream i() {
-        return h0.j(this.a.mapToLong(null));
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final /* synthetic */ boolean isParallel() {
-        return this.a.isParallel();
-    }
-
-    /* JADX WARN: Type inference failed for: r0v1, types: [java.util.PrimitiveIterator$OfDouble] */
-    @Override // j$.util.stream.B, j$.util.stream.BaseStream
-    public final /* synthetic */ j$.util.F iterator() {
-        ?? it = this.a.iterator();
-        if (it == 0) {
-            return null;
+    @Override // j$.util.stream.a
+    public final boolean L0(Spliterator spliterator, j5 j5Var) {
+        DoubleConsumer e0Var;
+        boolean q6;
+        j$.util.u0 U0 = U0(spliterator);
+        if (j5Var instanceof DoubleConsumer) {
+            e0Var = (DoubleConsumer) j5Var;
+        } else {
+            if (d8.a) {
+                d8.a(a.class, "using DoubleStream.adapt(Sink<Double> s)");
+                throw null;
+            }
+            Objects.requireNonNull(j5Var);
+            e0Var = new j$.util.e0(j5Var, 1);
         }
-        return it instanceof j$.util.E ? ((j$.util.E) it).a : new j$.util.D(it);
+        do {
+            q6 = j5Var.q();
+            if (q6) {
+                break;
+            }
+        } while (U0.tryAdvance(e0Var));
+        return q6;
+    }
+
+    @Override // j$.util.stream.t3
+    public final w1 A0(long j10, IntFunction intFunction) {
+        return t3.h0(j10);
     }
 
     @Override // j$.util.stream.BaseStream
-    public final /* synthetic */ Iterator iterator() {
-        return this.a.iterator();
+    public final j$.util.h0 iterator() {
+        j$.util.u0 spliterator = spliterator();
+        Objects.requireNonNull(spliterator);
+        return new j$.util.i1(spliterator);
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ B limit(long j) {
-        return j(this.a.limit(j));
+    @Override // j$.util.stream.a, j$.util.stream.BaseStream
+    public final j$.util.u0 spliterator() {
+        return U0(super.spliterator());
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ Stream mapToObj(DoubleFunction doubleFunction) {
-        return Stream.VivifiedWrapper.convert(this.a.mapToObj(doubleFunction));
+    @Override // j$.util.stream.c0
+    public final Stream boxed() {
+        return new q(this, 0, new n(4), 0);
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ j$.util.z max() {
-        return j$.com.android.tools.r8.a.F(this.a.max());
+    @Override // j$.util.stream.c0
+    public final c0 e() {
+        Objects.requireNonNull(null);
+        return new r(this, v6.p | v6.n, 0);
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ j$.util.z min() {
-        return j$.com.android.tools.r8.a.F(this.a.min());
+    @Override // j$.util.stream.c0
+    public final Stream mapToObj(DoubleFunction doubleFunction) {
+        Objects.requireNonNull(doubleFunction);
+        return new q(this, v6.p | v6.n, doubleFunction, 0);
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ boolean o() {
-        return this.a.anyMatch(null);
+    @Override // j$.util.stream.c0
+    public final IntStream z() {
+        Objects.requireNonNull(null);
+        return new s(this, v6.p | v6.n, 0);
     }
 
-    @Override // j$.util.stream.BaseStream
-    public final /* synthetic */ BaseStream onClose(Runnable runnable) {
-        return e.j(this.a.onClose(runnable));
+    @Override // j$.util.stream.c0
+    public final LongStream t() {
+        Objects.requireNonNull(null);
+        return new t(this, v6.p | v6.n, 0);
     }
 
-    @Override // j$.util.stream.B, j$.util.stream.BaseStream
-    public final /* synthetic */ B parallel() {
-        return j(this.a.parallel());
+    @Override // j$.util.stream.c0
+    public final c0 d(j$.time.t tVar) {
+        Objects.requireNonNull(tVar);
+        return new v(this, v6.p | v6.n | v6.t, tVar, 0);
     }
 
-    @Override // j$.util.stream.BaseStream
-    public final /* synthetic */ BaseStream parallel() {
-        return e.j(this.a.parallel());
+    @Override // j$.util.stream.c0
+    public final c0 b() {
+        Objects.requireNonNull(null);
+        return new r(this, v6.t, 2);
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ B peek(DoubleConsumer doubleConsumer) {
-        return j(this.a.peek(doubleConsumer));
+    @Override // j$.util.stream.c0
+    public final c0 peek(DoubleConsumer doubleConsumer) {
+        Objects.requireNonNull(doubleConsumer);
+        return new v(this, doubleConsumer);
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ double reduce(double d, DoubleBinaryOperator doubleBinaryOperator) {
-        return this.a.reduce(d, doubleBinaryOperator);
+    @Override // j$.util.stream.c0
+    public final c0 limit(long j10) {
+        if (j10 < 0) {
+            throw new IllegalArgumentException(Long.toString(j10));
+        }
+        return t3.v0(this, 0L, j10);
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ j$.util.z reduce(DoubleBinaryOperator doubleBinaryOperator) {
-        return j$.com.android.tools.r8.a.F(this.a.reduce(doubleBinaryOperator));
+    @Override // j$.util.stream.c0
+    public final c0 skip(long j10) {
+        if (j10 >= 0) {
+            return j10 == 0 ? this : t3.v0(this, j10, -1L);
+        }
+        throw new IllegalArgumentException(Long.toString(j10));
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ IntStream s() {
-        return IntStream.VivifiedWrapper.convert(this.a.mapToInt(null));
+    @Override // j$.util.stream.c0
+    public final c0 a() {
+        int i10 = w8.a;
+        Objects.requireNonNull(null);
+        return new b6(this, w8.a, 1);
     }
 
-    @Override // j$.util.stream.B, j$.util.stream.BaseStream
-    public final /* synthetic */ B sequential() {
-        return j(this.a.sequential());
+    @Override // j$.util.stream.c0
+    public final c0 c() {
+        int i10 = w8.a;
+        Objects.requireNonNull(null);
+        return new b6(this, w8.b, 2);
     }
 
-    @Override // j$.util.stream.BaseStream
-    public final /* synthetic */ BaseStream sequential() {
-        return e.j(this.a.sequential());
+    @Override // j$.util.stream.c0
+    public final c0 distinct() {
+        return ((b5) boxed()).distinct().mapToDouble(new n(5));
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ B skip(long j) {
-        return j(this.a.skip(j));
+    @Override // j$.util.stream.c0
+    public final double sum() {
+        double[] dArr = (double[]) collect(new n(8), new n(9), new j$.time.format.a(27));
+        Set set = Collectors.a;
+        double d = dArr[0] + dArr[1];
+        double d10 = dArr[dArr.length - 1];
+        return (Double.isNaN(d) && Double.isInfinite(d10)) ? d10 : d;
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ B sorted() {
-        return j(this.a.sorted());
+    @Override // j$.util.stream.c0
+    public final j$.util.b0 min() {
+        return reduce(new j$.time.format.a(28));
     }
 
-    @Override // j$.util.stream.BaseStream
-    public final /* synthetic */ Spliterator spliterator() {
-        return j$.util.d0.a(this.a.spliterator());
+    @Override // j$.util.stream.c0
+    public final j$.util.b0 max() {
+        return reduce(new n(7));
     }
 
-    /* JADX WARN: Type inference failed for: r0v1, types: [java.util.Spliterator$OfDouble] */
-    @Override // j$.util.stream.B, j$.util.stream.BaseStream
-    public final /* synthetic */ j$.util.T spliterator() {
-        return j$.util.Q.a(this.a.spliterator());
+    @Override // j$.util.stream.c0
+    public final j$.util.b0 average() {
+        double[] dArr = (double[]) collect(new j$.time.format.a(29), new n(0), new n(1));
+        if (dArr[2] <= 0.0d) {
+            return j$.util.b0.c;
+        }
+        Set set = Collectors.a;
+        double d = dArr[0] + dArr[1];
+        double d10 = dArr[dArr.length - 1];
+        if (Double.isNaN(d) && Double.isInfinite(d10)) {
+            d = d10;
+        }
+        return new j$.util.b0(d / dArr[2]);
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ double sum() {
-        return this.a.sum();
+    @Override // j$.util.stream.c0
+    public final j$.util.w summaryStatistics() {
+        return (j$.util.w) collect(new j$.time.format.a(9), new n(2), new n(3));
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ double[] toArray() {
-        return this.a.toArray();
+    @Override // j$.util.stream.c0
+    public final Object collect(Supplier supplier, ObjDoubleConsumer objDoubleConsumer, BiConsumer biConsumer) {
+        Objects.requireNonNull(biConsumer);
+        o oVar = new o(biConsumer, 0);
+        Objects.requireNonNull(supplier);
+        Objects.requireNonNull(objDoubleConsumer);
+        Objects.requireNonNull(oVar);
+        return I0(new y3(w6.DOUBLE_VALUE, oVar, objDoubleConsumer, supplier, 1));
     }
 
-    @Override // j$.util.stream.BaseStream
-    public final /* synthetic */ BaseStream unordered() {
-        return e.j(this.a.unordered());
+    @Override // j$.util.stream.c0
+    public final boolean m() {
+        return ((Boolean) I0(t3.u0(r1.ANY))).booleanValue();
     }
 
-    @Override // j$.util.stream.B
-    public final /* synthetic */ boolean y() {
-        return this.a.noneMatch(null);
+    @Override // j$.util.stream.c0
+    public final boolean s() {
+        return ((Boolean) I0(t3.u0(r1.ALL))).booleanValue();
     }
 
-    @Override // j$.util.stream.B
-    public final j$.util.u summaryStatistics() {
-        this.a.summaryStatistics();
-        throw new Error("Java 8+ API desugaring (library desugaring) cannot convert from java.util.DoubleSummaryStatistics");
+    @Override // j$.util.stream.c0
+    public final boolean B() {
+        return ((Boolean) I0(t3.u0(r1.NONE))).booleanValue();
     }
 
-    @Override // j$.util.stream.B
-    public final B d(j$.time.t tVar) {
-        DoubleStream doubleStream = this.a;
-        j$.time.t tVar2 = new j$.time.t(6);
-        tVar2.b = tVar;
-        return j(doubleStream.flatMap(tVar2));
+    @Override // j$.util.stream.c0
+    public final double[] toArray() {
+        return (double[]) t3.n0((y1) J0(new n(6))).b();
+    }
+
+    @Override // j$.util.stream.c0
+    public final double reduce(double d, DoubleBinaryOperator doubleBinaryOperator) {
+        Objects.requireNonNull(doubleBinaryOperator);
+        return ((Double) I0(new c4(w6.DOUBLE_VALUE, doubleBinaryOperator, d))).doubleValue();
+    }
+
+    @Override // j$.util.stream.c0
+    public final j$.util.b0 reduce(DoubleBinaryOperator doubleBinaryOperator) {
+        Objects.requireNonNull(doubleBinaryOperator);
+        return (j$.util.b0) I0(new w3(w6.DOUBLE_VALUE, doubleBinaryOperator, 1));
+    }
+
+    @Override // j$.util.stream.c0
+    public final long count() {
+        return ((Long) I0(new a4(1))).longValue();
     }
 }

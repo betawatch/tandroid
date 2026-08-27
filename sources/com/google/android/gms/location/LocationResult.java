@@ -4,69 +4,61 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import h7.r8;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import r6.l;
+import z5.a;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class LocationResult extends AbstractSafeParcelable implements ReflectedParcelable {
-    private final List zzb;
-    static final List zza = Collections.EMPTY_LIST;
-    public static final Parcelable.Creator<LocationResult> CREATOR = new zzy();
+public final class LocationResult extends a implements ReflectedParcelable {
+    public final List a;
+    public static final List b = Collections.EMPTY_LIST;
+    public static final Parcelable.Creator<LocationResult> CREATOR = new l(13);
 
-    LocationResult(List list) {
-        this.zzb = list;
+    public LocationResult(List list) {
+        this.a = list;
     }
 
-    public boolean equals(Object obj) {
+    public final boolean equals(Object obj) {
         if (!(obj instanceof LocationResult)) {
             return false;
         }
-        LocationResult locationResult = (LocationResult) obj;
-        if (Build.VERSION.SDK_INT >= 31) {
-            return this.zzb.equals(locationResult.zzb);
+        List list = ((LocationResult) obj).a;
+        int i10 = Build.VERSION.SDK_INT;
+        List<Location> list2 = this.a;
+        if (i10 >= 31) {
+            return list2.equals(list);
         }
-        if (this.zzb.size() != locationResult.zzb.size()) {
+        if (list2.size() != list.size()) {
             return false;
         }
-        Iterator it = locationResult.zzb.iterator();
-        for (Location location : this.zzb) {
+        Iterator it = list.iterator();
+        for (Location location : list2) {
             Location location2 = (Location) it.next();
-            if (Double.compare(location.getLatitude(), location2.getLatitude()) != 0 || Double.compare(location.getLongitude(), location2.getLongitude()) != 0 || location.getTime() != location2.getTime() || location.getElapsedRealtimeNanos() != location2.getElapsedRealtimeNanos() || !Objects.equal(location.getProvider(), location2.getProvider())) {
+            if (Double.compare(location.getLatitude(), location2.getLatitude()) != 0 || Double.compare(location.getLongitude(), location2.getLongitude()) != 0 || location.getTime() != location2.getTime() || location.getElapsedRealtimeNanos() != location2.getElapsedRealtimeNanos() || !y5.l.l(location.getProvider(), location2.getProvider())) {
                 return false;
             }
         }
         return true;
     }
 
-    public Location getLastLocation() {
-        int size = this.zzb.size();
-        if (size == 0) {
-            return null;
-        }
-        return (Location) this.zzb.get(size - 1);
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a});
     }
 
-    public List getLocations() {
-        return this.zzb;
-    }
-
-    public int hashCode() {
-        return Objects.hashCode(this.zzb);
-    }
-
-    public String toString() {
-        return "LocationResult".concat(String.valueOf(this.zzb));
+    public final String toString() {
+        return "LocationResult".concat(String.valueOf(this.a));
     }
 
     @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeTypedList(parcel, 1, getLocations(), false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = r8.q(parcel, 20293);
+        r8.p(parcel, 1, this.a);
+        r8.r(parcel, q6);
     }
 }

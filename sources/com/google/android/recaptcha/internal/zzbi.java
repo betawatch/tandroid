@@ -1,8 +1,9 @@
 package com.google.android.recaptcha.internal;
 
+import id.f0;
 import java.util.TimerTask;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzbi extends TimerTask {
     final /* synthetic */ zzbo zza;
@@ -16,6 +17,6 @@ public final class zzbi extends TimerTask {
     @Override // java.util.TimerTask, java.lang.Runnable
     public final void run() {
         zzbo zzboVar = this.zza;
-        BuildersKt__Builders_commonKt.launch$default(zzbo.zzb(zzboVar).zzc(), null, null, new zzbh(zzboVar, this.zzb, null), 3, null);
+        f0.q(zzbo.zzb(zzboVar).zzc(), new zzbh(zzboVar, this.zzb, null));
     }
 }

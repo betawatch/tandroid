@@ -1,15 +1,51 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class XLeftRightArrowFactory {
     private static final Atom MINUS = SymbolAtom.get("minus");
     private static final Atom LEFT = SymbolAtom.get("leftarrow");
     private static final Atom RIGHT = SymbolAtom.get("rightarrow");
 
-    public static Box create(boolean z, TeXEnvironment teXEnvironment, float f) {
-        float f2;
-        float min = Math.min((!DelimiterFactory$$ExternalSyntheticBackport0.m(f) || f < 0.0f) ? 0.0f : f, 4096.0f);
-        Box createBox = (z ? LEFT : RIGHT).createBox(teXEnvironment);
+    public static Box create(TeXEnvironment teXEnvironment, float f10) {
+        float f11 = 0.0f;
+        if (Float.isInfinite(f10) || Float.isNaN(f10) || f10 < 0.0f) {
+            f10 = 0.0f;
+        }
+        float min = Math.min(f10, 4096.0f);
+        Box createBox = LEFT.createBox(teXEnvironment);
+        Box createBox2 = RIGHT.createBox(teXEnvironment);
+        float width = createBox2.getWidth() + createBox.getWidth();
+        if (min < width) {
+            HorizontalBox horizontalBox = new HorizontalBox(createBox);
+            horizontalBox.add(new StrutBox(-Math.min(width - min, createBox.getWidth()), 0.0f, 0.0f, 0.0f));
+            horizontalBox.add(createBox2);
+            return horizontalBox;
+        }
+        Box createBox3 = new SmashedAtom(MINUS, "").createBox(teXEnvironment);
+        Box createBox4 = new SpaceAtom(5, -3.4f, 0.0f, 0.0f).createBox(teXEnvironment);
+        float width2 = createBox4.getWidth() + createBox3.getWidth();
+        float width3 = (createBox4.getWidth() * 2.0f) + width;
+        HorizontalBox horizontalBox2 = new HorizontalBox();
+        while (true) {
+            if (f11 >= (min - width3) - width2) {
+                horizontalBox2.add(new ScaleBox(createBox3, (r4 - f11) / createBox3.getWidth(), 1.0d));
+                horizontalBox2.add(0, createBox4);
+                horizontalBox2.add(0, createBox);
+                horizontalBox2.add(createBox4);
+                horizontalBox2.add(createBox2);
+                return horizontalBox2;
+            }
+            horizontalBox2.add(createBox3);
+            horizontalBox2.add(createBox4);
+            f11 += width2;
+        }
+    }
+
+    public static Box create(boolean z10, TeXEnvironment teXEnvironment, float f10) {
+        float f11;
+        float min = Math.min((Float.isInfinite(f10) || Float.isNaN(f10) || f10 < 0.0f) ? 0.0f : f10, 4096.0f);
+        Box createBox = (z10 ? LEFT : RIGHT).createBox(teXEnvironment);
         float height = createBox.getHeight();
         float depth = createBox.getDepth();
         float width = createBox.getWidth();
@@ -19,68 +55,32 @@ public class XLeftRightArrowFactory {
         }
         Box createBox2 = new SmashedAtom(MINUS, "").createBox(teXEnvironment);
         Box createBox3 = new SpaceAtom(5, -4.0f, 0.0f, 0.0f).createBox(teXEnvironment);
-        float width2 = createBox2.getWidth() + createBox3.getWidth();
-        float width3 = width + createBox3.getWidth();
+        float width2 = createBox3.getWidth() + createBox2.getWidth();
+        float width3 = createBox3.getWidth() + width;
         HorizontalBox horizontalBox = new HorizontalBox();
-        float f3 = 0.0f;
+        float f12 = 0.0f;
         while (true) {
-            f2 = min - width3;
-            if (f3 >= f2 - width2) {
+            f11 = min - width3;
+            if (f12 >= f11 - width2) {
                 break;
             }
             horizontalBox.add(createBox2);
             horizontalBox.add(createBox3);
-            f3 += width2;
+            f12 += width2;
         }
-        float width4 = (f2 - f3) / createBox2.getWidth();
-        float f4 = (-2.0f) * width4;
-        horizontalBox.add(new SpaceAtom(5, f4, 0.0f, 0.0f).createBox(teXEnvironment));
+        float width4 = (f11 - f12) / createBox2.getWidth();
+        float f13 = (-2.0f) * width4;
+        horizontalBox.add(new SpaceAtom(5, f13, 0.0f, 0.0f).createBox(teXEnvironment));
         horizontalBox.add(new ScaleAtom(MINUS, width4, 1.0d).createBox(teXEnvironment));
-        if (z) {
+        if (z10) {
             horizontalBox.add(0, new SpaceAtom(5, -3.5f, 0.0f, 0.0f).createBox(teXEnvironment));
             horizontalBox.add(0, createBox);
         } else {
-            horizontalBox.add(new SpaceAtom(5, f4 - 2.0f, 0.0f, 0.0f).createBox(teXEnvironment));
+            horizontalBox.add(new SpaceAtom(5, f13 - 2.0f, 0.0f, 0.0f).createBox(teXEnvironment));
             horizontalBox.add(createBox);
         }
         horizontalBox.setDepth(depth / 2.0f);
         horizontalBox.setHeight(height);
         return horizontalBox;
-    }
-
-    public static Box create(TeXEnvironment teXEnvironment, float f) {
-        float f2 = 0.0f;
-        if (!DelimiterFactory$$ExternalSyntheticBackport0.m(f) || f < 0.0f) {
-            f = 0.0f;
-        }
-        float min = Math.min(f, 4096.0f);
-        Box createBox = LEFT.createBox(teXEnvironment);
-        Box createBox2 = RIGHT.createBox(teXEnvironment);
-        float width = createBox.getWidth() + createBox2.getWidth();
-        if (min < width) {
-            HorizontalBox horizontalBox = new HorizontalBox(createBox);
-            horizontalBox.add(new StrutBox(-Math.min(width - min, createBox.getWidth()), 0.0f, 0.0f, 0.0f));
-            horizontalBox.add(createBox2);
-            return horizontalBox;
-        }
-        Box createBox3 = new SmashedAtom(MINUS, "").createBox(teXEnvironment);
-        Box createBox4 = new SpaceAtom(5, -3.4f, 0.0f, 0.0f).createBox(teXEnvironment);
-        float width2 = createBox3.getWidth() + createBox4.getWidth();
-        float width3 = width + (createBox4.getWidth() * 2.0f);
-        HorizontalBox horizontalBox2 = new HorizontalBox();
-        while (true) {
-            if (f2 < (min - width3) - width2) {
-                horizontalBox2.add(createBox3);
-                horizontalBox2.add(createBox4);
-                f2 += width2;
-            } else {
-                horizontalBox2.add(new ScaleBox(createBox3, (r6 - f2) / createBox3.getWidth(), 1.0d));
-                horizontalBox2.add(0, createBox4);
-                horizontalBox2.add(0, createBox);
-                horizontalBox2.add(createBox4);
-                horizontalBox2.add(createBox2);
-                return horizontalBox2;
-            }
-        }
     }
 }

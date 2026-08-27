@@ -21,7 +21,7 @@ public final /* synthetic */ class h implements Collector {
 
     @Override // j$.util.stream.Collector
     public final /* synthetic */ Set characteristics() {
-        return r1.N(this.a.characteristics());
+        return t3.q0(this.a.characteristics());
     }
 
     @Override // j$.util.stream.Collector

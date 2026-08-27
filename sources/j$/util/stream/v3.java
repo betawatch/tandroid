@@ -2,98 +2,74 @@ package j$.util.stream;
 
 import j$.util.function.Consumer$-CC;
 import java.util.function.Consumer;
+import java.util.function.LongConsumer;
+import java.util.function.ObjLongConsumer;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class v3 implements g2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Consumer b;
+public final class v3 extends p4 implements o4, i5 {
+    public final /* synthetic */ Supplier b;
+    public final /* synthetic */ ObjLongConsumer c;
+    public final /* synthetic */ o d;
 
-    public /* synthetic */ v3(Consumer consumer, int i) {
-        this.a = i;
-        this.b = consumer;
-    }
-
-    private final /* synthetic */ void b(long j) {
-    }
-
-    private final /* synthetic */ void c(long j) {
-    }
-
-    private final /* synthetic */ void d() {
-    }
-
-    private final /* synthetic */ void e() {
-    }
-
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ boolean C() {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    @Override // j$.util.stream.g2
+    @Override // j$.util.stream.j5
     public final /* synthetic */ void accept(double d) {
-        switch (this.a) {
-            case 0:
-                r1.a();
-                throw null;
-            default:
-                r1.a();
-                throw null;
-        }
+        t3.C();
+        throw null;
     }
 
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ void accept(int i) {
-        switch (this.a) {
-            case 0:
-                r1.k();
-                throw null;
-            default:
-                r1.k();
-                throw null;
-        }
-    }
-
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ void accept(long j) {
-        switch (this.a) {
-            case 0:
-                r1.l();
-                throw null;
-            default:
-                r1.l();
-                throw null;
-        }
+    @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
+    public final /* synthetic */ void accept(int i10) {
+        t3.J();
+        throw null;
     }
 
     @Override // java.util.function.Consumer
     /* renamed from: accept */
-    public final void s(Object obj) {
-        switch (this.a) {
-            case 0:
-                ((Q2) this.b).s(obj);
-                break;
-            default:
-                this.b.s(obj);
-                break;
-        }
+    public final /* bridge */ /* synthetic */ void x(Object obj) {
+        x((Long) obj);
     }
 
     public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        switch (this.a) {
-        }
         return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ void x() {
-        int i = this.a;
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.d(this, longConsumer);
     }
 
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ void y(long j) {
-        int i = this.a;
+    @Override // j$.util.stream.j5
+    public final /* synthetic */ void end() {
+    }
+
+    @Override // j$.util.stream.j5
+    public final /* synthetic */ boolean q() {
+        return false;
+    }
+
+    @Override // j$.util.stream.i5
+    public final /* synthetic */ void x(Long l10) {
+        t3.H(this, l10);
+    }
+
+    @Override // j$.util.stream.o4
+    public final void u(o4 o4Var) {
+        this.a = this.d.apply(this.a, ((v3) o4Var).a);
+    }
+
+    @Override // j$.util.stream.j5
+    public final void o(long j10) {
+        this.a = this.b.get();
+    }
+
+    @Override // j$.util.stream.j5
+    public final void accept(long j10) {
+        this.c.accept(this.a, j10);
+    }
+
+    public v3(Supplier supplier, ObjLongConsumer objLongConsumer, o oVar) {
+        this.b = supplier;
+        this.c = objLongConsumer;
+        this.d = oVar;
     }
 }

@@ -1,57 +1,35 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.function.LongConsumer;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-public final class e0 extends g0 {
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final LongStream sequential() {
-        this.a.k = false;
-        return this;
+public final class e0 extends i0 implements g5 {
+    public static final d0 c;
+    public static final d0 d;
+
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
     }
 
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final LongStream parallel() {
-        this.a.k = true;
-        return this;
+    @Override // j$.util.stream.i0, j$.util.stream.j5
+    public final void accept(double d10) {
+        x(Double.valueOf(d10));
     }
 
-    @Override // j$.util.stream.g0, j$.util.stream.LongStream
-    public final void forEach(LongConsumer longConsumer) {
-        if (this.a.k) {
-            super.forEach(longConsumer);
-        } else {
-            g0.T(O()).forEachRemaining(longConsumer);
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        if (this.a) {
+            return new j$.util.b0(((Double) this.b).doubleValue());
         }
+        return null;
     }
 
-    @Override // j$.util.stream.g0, j$.util.stream.LongStream
-    public final void forEachOrdered(LongConsumer longConsumer) {
-        if (this.a.k) {
-            super.forEachOrdered(longConsumer);
-        } else {
-            g0.T(O()).forEachRemaining(longConsumer);
-        }
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream unordered() {
-        return !S2.ORDERED.q(this.f) ? this : new t(this, S2.r, 4);
-    }
-
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
-        return spliterator();
-    }
-
-    @Override // j$.util.stream.a
-    public final boolean L() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // j$.util.stream.a
-    public final g2 M(int i, g2 g2Var) {
-        throw new UnsupportedOperationException();
+    static {
+        w6 w6Var = w6.DOUBLE_VALUE;
+        n nVar = new n(10);
+        n nVar2 = new n(11);
+        j$.util.b0 b0Var = j$.util.b0.c;
+        c = new d0(true, w6Var, b0Var, nVar, nVar2);
+        d = new d0(false, w6Var, b0Var, new n(10), new n(11));
     }
 }

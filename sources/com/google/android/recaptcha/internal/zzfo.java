@@ -1,73 +1,72 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.TimeoutCancellationException;
-import kotlinx.coroutines.TimeoutKt;
+import ad.p;
+import h7.k6;
+import id.e2;
+import id.f0;
+import kotlin.jvm.internal.j;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzfo extends SuspendLambda implements Function2 {
+final class zzfo extends i implements p {
     int zza;
     final /* synthetic */ long zzb;
     final /* synthetic */ zzfp zzc;
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzfo(long j, zzfp zzfpVar, Continuation continuation) {
-        super(2, continuation);
-        this.zzb = j;
+    public zzfo(long j10, zzfp zzfpVar, c cVar) {
+        super(2, cVar);
+        this.zzb = j10;
         this.zzc = zzfpVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        zzfo zzfoVar = new zzfo(this.zzb, this.zzc, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        zzfo zzfoVar = new zzfo(this.zzb, this.zzc, cVar);
         zzfoVar.zzd = obj;
         return zzfoVar;
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfo) create((zzgr) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzfo) create((zzgr) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
         zzcg zzt;
         zzcg zzt2;
         zzcg zzt3;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        sc.a aVar = sc.a.a;
         try {
             if (this.zza != 0) {
-                ResultKt.throwOnFailure(obj);
+                k6.b(obj);
             } else {
-                ResultKt.throwOnFailure(obj);
+                k6.b(obj);
                 zzgr zzgrVar = (zzgr) this.zzd;
-                long j = this.zzb;
+                long j10 = this.zzb;
                 zzfn zzfnVar = new zzfn(zzgrVar, this.zzc, null);
                 this.zza = 1;
-                obj = TimeoutKt.withTimeout(j, zzfnVar, this);
-                if (obj == coroutine_suspended) {
-                    return coroutine_suspended;
+                obj = f0.x(j10, zzfnVar, this);
+                if (obj == aVar) {
+                    return aVar;
                 }
             }
             return (zzxn) obj;
-        } catch (zzcg e) {
-            if (!Intrinsics.areEqual(e.zzb(), zzce.zzc)) {
-                throw e;
+        } catch (zzcg e9) {
+            if (!j.a(e9.zzb(), zzce.zzc)) {
+                throw e9;
             }
-            zzt3 = this.zzc.zzt(e, e);
+            zzt3 = this.zzc.zzt(e9, e9);
             throw zzt3;
-        } catch (TimeoutCancellationException e2) {
-            zzt2 = this.zzc.zzt(e2, new zzcg(zzce.zzc, zzcd.zzb, e2.getMessage(), null, 8, null));
+        } catch (e2 e10) {
+            zzt2 = this.zzc.zzt(e10, new zzcg(zzce.zzc, zzcd.zzb, e10.getMessage(), null, 8, null));
             throw zzt2;
-        } catch (Exception e3) {
-            zzt = this.zzc.zzt(e3, new zzcg(zzce.zzc, zzcd.zzaz, e3.getMessage(), null, 8, null));
+        } catch (Exception e11) {
+            zzt = this.zzc.zzt(e11, new zzcg(zzce.zzc, zzcd.zzaz, e11.getMessage(), null, 8, null));
             throw zzt;
         }
     }

@@ -3,6 +3,7 @@ package com.google.android.play.core.integrity.model;
 import java.util.HashMap;
 import java.util.Map;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class a {
     private static final Map a;
@@ -51,9 +52,9 @@ public final class a {
         hashMap2.put(-17, "CLIENT_TRANSIENT_ERROR");
     }
 
-    public static String a(int i) {
+    public static String a(int i10) {
         Map map = a;
-        Integer valueOf = Integer.valueOf(i);
+        Integer valueOf = Integer.valueOf(i10);
         if (!map.containsKey(valueOf)) {
             return "";
         }

@@ -1,49 +1,55 @@
 package com.google.android.recaptcha.internal;
 
+import ad.p;
+import h7.k6;
+import id.b0;
+import id.c0;
+import id.g1;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 import java.util.Arrays;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Reflection;
-import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.CoroutineScopeKt;
+import java.util.LinkedHashMap;
+import kotlin.jvm.internal.e;
+import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.r;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzin extends SuspendLambda implements Function2 {
+final class zzin extends i implements p {
     final /* synthetic */ Exception zza;
     final /* synthetic */ zziz zzb;
     final /* synthetic */ zzip zzc;
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzin(Exception exc, zziz zzizVar, zzip zzipVar, Continuation continuation) {
-        super(2, continuation);
+    public zzin(Exception exc, zziz zzizVar, zzip zzipVar, c cVar) {
+        super(2, cVar);
         this.zza = exc;
         this.zzb = zzizVar;
         this.zzc = zzipVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        zzin zzinVar = new zzin(this.zza, this.zzb, this.zzc, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        zzin zzinVar = new zzin(this.zza, this.zzb, this.zzc, cVar);
         zzinVar.zzd = obj;
         return zzinVar;
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzin) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzin) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
         zzys zzysVar;
-        IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        ResultKt.throwOnFailure(obj);
-        CoroutineScope coroutineScope = (CoroutineScope) this.zzd;
+        String str;
+        sc.a aVar = sc.a.a;
+        k6.b(obj);
+        c0 c0Var = (c0) this.zzd;
         Exception exc = this.zza;
         if (exc instanceof zzdm) {
             zzysVar = ((zzdm) exc).zza();
@@ -59,7 +65,34 @@ final class zzin extends SuspendLambda implements Function2 {
         zzyt zzytVar = (zzyt) zzysVar.zzk();
         zzytVar.zzl();
         zzytVar.zzk();
-        Reflection.getOrCreateKotlinClass(exc.getClass()).getSimpleName();
+        e a2 = r.a(exc.getClass());
+        LinkedHashMap linkedHashMap = e.c;
+        Class jClass = a2.a;
+        j.e(jClass, "jClass");
+        if (!jClass.isAnonymousClass()) {
+            if (jClass.isLocalClass()) {
+                String simpleName = jClass.getSimpleName();
+                Method enclosingMethod = jClass.getEnclosingMethod();
+                if (enclosingMethod != null) {
+                    gd.j.i(simpleName, enclosingMethod.getName() + '$', simpleName);
+                } else {
+                    Constructor<?> enclosingConstructor = jClass.getEnclosingConstructor();
+                    if (enclosingConstructor != null) {
+                        gd.j.i(simpleName, enclosingConstructor.getName() + '$', simpleName);
+                    } else {
+                        int indexOf = simpleName.indexOf(36, 0);
+                        if (indexOf != -1) {
+                            j.d(simpleName.substring(indexOf + 1, simpleName.length()), "substring(...)");
+                        }
+                    }
+                }
+            } else if (jClass.isArray()) {
+                Class<?> componentType = jClass.getComponentType();
+                if (componentType.isPrimitive() && (str = (String) linkedHashMap.get(componentType.getName())) != null) {
+                    str.concat("Array");
+                }
+            }
+        }
         exc.getMessage();
         zziz zzizVar2 = this.zzb;
         zzcs zzb = zzizVar2.zzb();
@@ -72,7 +105,8 @@ final class zzin extends SuspendLambda implements Function2 {
         if (zzd.length() == 0) {
             zzd = "recaptcha.m.Main.rge";
         }
-        if (CoroutineScopeKt.isActive(coroutineScope)) {
+        g1 g1Var = (g1) c0Var.c().get(b0.b);
+        if (g1Var != null ? g1Var.isActive() : true) {
             zzip zzipVar = this.zzc;
             zzpp zzh = zzpp.zzh();
             byte[] zzd2 = zzytVar.zzd();
@@ -81,6 +115,6 @@ final class zzin extends SuspendLambda implements Function2 {
             byte[] zzd3 = zza.zzd();
             zzipVar.zzb.zzd().zzb(zzd, (String[]) Arrays.copyOf(new String[]{zzi, zzh2.zzi(zzd3, 0, zzd3.length)}, 2));
         }
-        return Unit.INSTANCE;
+        return pc.i.a;
     }
 }

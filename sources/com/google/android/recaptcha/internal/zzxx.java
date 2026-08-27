@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzxx extends zzsn implements zztt {
     private static final zzxx zzb;
@@ -25,31 +26,31 @@ public final class zzxx extends zzsn implements zztt {
     private zzxx() {
     }
 
-    static /* synthetic */ void zzN(zzxx zzxxVar, String str) {
+    public static /* synthetic */ void zzN(zzxx zzxxVar, String str) {
         str.getClass();
         zzxxVar.zze |= 1;
         zzxxVar.zzf = str;
     }
 
-    static /* synthetic */ void zzO(zzxx zzxxVar, zzxj zzxjVar) {
+    public static /* synthetic */ void zzO(zzxx zzxxVar, zzxj zzxjVar) {
         zzxjVar.getClass();
         zzxxVar.zzn = zzxjVar;
         zzxxVar.zze |= 256;
     }
 
-    static /* synthetic */ void zzP(zzxx zzxxVar, zzxr zzxrVar) {
+    public static /* synthetic */ void zzP(zzxx zzxxVar, zzxr zzxrVar) {
         zzxrVar.getClass();
         zzxxVar.zzl = zzxrVar;
         zzxxVar.zze |= 64;
     }
 
-    static /* synthetic */ void zzQ(zzxx zzxxVar, zzyb zzybVar) {
+    public static /* synthetic */ void zzQ(zzxx zzxxVar, zzyb zzybVar) {
         zzybVar.getClass();
         zzxxVar.zzk = zzybVar;
         zzxxVar.zze |= 32;
     }
 
-    static /* synthetic */ void zzR(zzxx zzxxVar, zzxz zzxzVar) {
+    public static /* synthetic */ void zzR(zzxx zzxxVar, zzxz zzxzVar) {
         zzxzVar.getClass();
         zzxxVar.zzm = zzxzVar;
         zzxxVar.zze |= 128;
@@ -68,41 +69,27 @@ public final class zzxx extends zzsn implements zztt {
         return this.zzh;
     }
 
-    @Deprecated
-    public final String zzj() {
-        return this.zzi;
-    }
-
-    public final String zzk() {
-        return this.zzf;
-    }
-
-    @Deprecated
-    public final String zzl() {
-        return this.zzg;
-    }
-
     @Override // com.google.android.recaptcha.internal.zzsn
-    protected final Object zzh(int i, Object obj, Object obj2) {
+    public final Object zzh(int i10, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i2 = i - 1;
-        if (i2 == 0) {
+        int i11 = i10 - 1;
+        if (i11 == 0) {
             return (byte) 1;
         }
-        if (i2 == 2) {
+        if (i11 == 2) {
             return zzsn.zzF(zzb, "\u0000\n\u0000\u0001\u0001\n\n\u0000\u0000\u0000\u0001ለ\u0000\u0002ለ\u0001\u0003ለ\u0002\u0004ለ\u0003\u0005ለ\u0004\u0006ဉ\u0005\u0007ဉ\u0006\bဉ\u0007\tဉ\b\nဉ\t", new Object[]{"zze", "zzf", "zzg", "zzh", "zzi", "zzj", "zzk", "zzl", "zzm", "zzn", "zzo"});
         }
-        if (i2 == 3) {
+        if (i11 == 3) {
             return new zzxx();
         }
         zzyc zzycVar = null;
-        if (i2 == 4) {
+        if (i11 == 4) {
             return new zzxw(zzycVar);
         }
-        if (i2 == 5) {
+        if (i11 == 5) {
             return zzb;
         }
-        if (i2 != 6) {
+        if (i11 != 6) {
             throw null;
         }
         zzua zzuaVar2 = zzd;
@@ -121,5 +108,19 @@ public final class zzxx extends zzsn implements zztt {
             }
         }
         return zzuaVar;
+    }
+
+    @Deprecated
+    public final String zzj() {
+        return this.zzi;
+    }
+
+    public final String zzk() {
+        return this.zzf;
+    }
+
+    @Deprecated
+    public final String zzl() {
+        return this.zzg;
     }
 }

@@ -1,23 +1,24 @@
 package androidx.media;
 
-import androidx.versionedparcelable.VersionedParcel;
+import l2.b;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class AudioAttributesImplBaseParcelizer {
-    public static AudioAttributesImplBase read(VersionedParcel versionedParcel) {
+    public static AudioAttributesImplBase read(b bVar) {
         AudioAttributesImplBase audioAttributesImplBase = new AudioAttributesImplBase();
-        audioAttributesImplBase.mUsage = versionedParcel.readInt(audioAttributesImplBase.mUsage, 1);
-        audioAttributesImplBase.mContentType = versionedParcel.readInt(audioAttributesImplBase.mContentType, 2);
-        audioAttributesImplBase.mFlags = versionedParcel.readInt(audioAttributesImplBase.mFlags, 3);
-        audioAttributesImplBase.mLegacyStream = versionedParcel.readInt(audioAttributesImplBase.mLegacyStream, 4);
+        audioAttributesImplBase.a = bVar.f(audioAttributesImplBase.a, 1);
+        audioAttributesImplBase.b = bVar.f(audioAttributesImplBase.b, 2);
+        audioAttributesImplBase.c = bVar.f(audioAttributesImplBase.c, 3);
+        audioAttributesImplBase.d = bVar.f(audioAttributesImplBase.d, 4);
         return audioAttributesImplBase;
     }
 
-    public static void write(AudioAttributesImplBase audioAttributesImplBase, VersionedParcel versionedParcel) {
-        versionedParcel.setSerializationFlags(false, false);
-        versionedParcel.writeInt(audioAttributesImplBase.mUsage, 1);
-        versionedParcel.writeInt(audioAttributesImplBase.mContentType, 2);
-        versionedParcel.writeInt(audioAttributesImplBase.mFlags, 3);
-        versionedParcel.writeInt(audioAttributesImplBase.mLegacyStream, 4);
+    public static void write(AudioAttributesImplBase audioAttributesImplBase, b bVar) {
+        bVar.getClass();
+        bVar.j(audioAttributesImplBase.a, 1);
+        bVar.j(audioAttributesImplBase.b, 2);
+        bVar.j(audioAttributesImplBase.c, 3);
+        bVar.j(audioAttributesImplBase.d, 4);
     }
 }

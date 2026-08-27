@@ -2,91 +2,62 @@ package com.google.android.gms.wallet.wobs;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-import com.google.android.gms.common.util.ArrayUtils;
+import h5.h;
+import h7.r8;
+import h8.f;
 import java.util.ArrayList;
+import z5.a;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class CommonWalletObject extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<CommonWalletObject> CREATOR = new zzc();
-    String zza;
-    String zzb;
-    String zzc;
-    String zzd;
-    String zze;
-    String zzf;
-    String zzg;
-    String zzh;
-    int zzi;
-    ArrayList zzj;
-    TimeInterval zzk;
-    ArrayList zzl;
-    String zzm;
-    String zzn;
-    ArrayList zzo;
-    boolean zzp;
-    ArrayList zzq;
-    ArrayList zzr;
-    ArrayList zzs;
-
-    CommonWalletObject() {
-        this.zzj = ArrayUtils.newArrayList();
-        this.zzl = ArrayUtils.newArrayList();
-        this.zzo = ArrayUtils.newArrayList();
-        this.zzq = ArrayUtils.newArrayList();
-        this.zzr = ArrayUtils.newArrayList();
-        this.zzs = ArrayUtils.newArrayList();
-    }
-
-    public static zzb zzb() {
-        return new zzb(new CommonWalletObject(), null);
-    }
+public class CommonWalletObject extends a {
+    public static final Parcelable.Creator<CommonWalletObject> CREATOR = new h(6);
+    public boolean B;
+    public String a;
+    public String b;
+    public String c;
+    public String d;
+    public String e;
+    public String f;
+    public String h;
+    public String n;
+    public int r;
+    public f v;
+    public String x;
+    public String y;
+    public ArrayList s = new ArrayList();
+    public ArrayList w = new ArrayList();
+    public ArrayList A = new ArrayList();
+    public ArrayList C = new ArrayList();
+    public ArrayList D = new ArrayList();
+    public ArrayList E = new ArrayList();
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeString(parcel, 2, this.zza, false);
-        SafeParcelWriter.writeString(parcel, 3, this.zzb, false);
-        SafeParcelWriter.writeString(parcel, 4, this.zzc, false);
-        SafeParcelWriter.writeString(parcel, 5, this.zzd, false);
-        SafeParcelWriter.writeString(parcel, 6, this.zze, false);
-        SafeParcelWriter.writeString(parcel, 7, this.zzf, false);
-        SafeParcelWriter.writeString(parcel, 8, this.zzg, false);
-        SafeParcelWriter.writeString(parcel, 9, this.zzh, false);
-        SafeParcelWriter.writeInt(parcel, 10, this.zzi);
-        SafeParcelWriter.writeTypedList(parcel, 11, this.zzj, false);
-        SafeParcelWriter.writeParcelable(parcel, 12, this.zzk, i, false);
-        SafeParcelWriter.writeTypedList(parcel, 13, this.zzl, false);
-        SafeParcelWriter.writeString(parcel, 14, this.zzm, false);
-        SafeParcelWriter.writeString(parcel, 15, this.zzn, false);
-        SafeParcelWriter.writeTypedList(parcel, 16, this.zzo, false);
-        SafeParcelWriter.writeBoolean(parcel, 17, this.zzp);
-        SafeParcelWriter.writeTypedList(parcel, 18, this.zzq, false);
-        SafeParcelWriter.writeTypedList(parcel, 19, this.zzr, false);
-        SafeParcelWriter.writeTypedList(parcel, 20, this.zzs, false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
-    }
-
-    CommonWalletObject(String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, int i, ArrayList arrayList, TimeInterval timeInterval, ArrayList arrayList2, String str9, String str10, ArrayList arrayList3, boolean z, ArrayList arrayList4, ArrayList arrayList5, ArrayList arrayList6) {
-        this.zza = str;
-        this.zzb = str2;
-        this.zzc = str3;
-        this.zzd = str4;
-        this.zze = str5;
-        this.zzf = str6;
-        this.zzg = str7;
-        this.zzh = str8;
-        this.zzi = i;
-        this.zzj = arrayList;
-        this.zzk = timeInterval;
-        this.zzl = arrayList2;
-        this.zzm = str9;
-        this.zzn = str10;
-        this.zzo = arrayList3;
-        this.zzp = z;
-        this.zzq = arrayList4;
-        this.zzr = arrayList5;
-        this.zzs = arrayList6;
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = r8.q(parcel, 20293);
+        r8.l(parcel, 2, this.a);
+        r8.l(parcel, 3, this.b);
+        r8.l(parcel, 4, this.c);
+        r8.l(parcel, 5, this.d);
+        r8.l(parcel, 6, this.e);
+        r8.l(parcel, 7, this.f);
+        r8.l(parcel, 8, this.h);
+        r8.l(parcel, 9, this.n);
+        int i11 = this.r;
+        r8.s(parcel, 10, 4);
+        parcel.writeInt(i11);
+        r8.p(parcel, 11, this.s);
+        r8.k(parcel, 12, this.v, i10);
+        r8.p(parcel, 13, this.w);
+        r8.l(parcel, 14, this.x);
+        r8.l(parcel, 15, this.y);
+        r8.p(parcel, 16, this.A);
+        boolean z10 = this.B;
+        r8.s(parcel, 17, 4);
+        parcel.writeInt(z10 ? 1 : 0);
+        r8.p(parcel, 18, this.C);
+        r8.p(parcel, 19, this.D);
+        r8.p(parcel, 20, this.E);
+        r8.r(parcel, q6);
     }
 }

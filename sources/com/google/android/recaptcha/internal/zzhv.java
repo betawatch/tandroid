@@ -1,54 +1,53 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlin.text.StringsKt;
+import ad.p;
+import gd.j;
+import h7.k6;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzhv extends SuspendLambda implements Function2 {
+final class zzhv extends i implements p {
     int zza;
     final /* synthetic */ zzib zzb;
     final /* synthetic */ zzxn zzc;
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzhv(zzib zzibVar, zzxn zzxnVar, Continuation continuation) {
-        super(2, continuation);
+    public zzhv(zzib zzibVar, zzxn zzxnVar, c cVar) {
+        super(2, cVar);
         this.zzb = zzibVar;
         this.zzc = zzxnVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        zzhv zzhvVar = new zzhv(this.zzb, this.zzc, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        zzhv zzhvVar = new zzhv(this.zzb, this.zzc, cVar);
         zzhvVar.zzd = obj;
         return zzhvVar;
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzhv) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzhv) create((zzhk) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x003d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x003b, code lost:
     
         if (r9 != r0) goto L15;
      */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zza;
+        sc.a aVar = sc.a.a;
+        int i10 = this.zza;
         try {
-            if (i == 0) {
-                ResultKt.throwOnFailure(obj);
+            if (i10 == 0) {
+                k6.b(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzib zzibVar = this.zzb;
                 zzxn zzxnVar = this.zzc;
@@ -58,25 +57,25 @@ final class zzhv extends SuspendLambda implements Function2 {
                 this.zza = 1;
                 obj = new zzhg(new zzhw(zzibVar, zzN, zzM, null));
             } else {
-                if (i != 1) {
-                    ResultKt.throwOnFailure(obj);
-                    return StringsKt.replace$default(this.zzc.zzl(), "JAVASCRIPT_TAG", (String) obj, false, 4, null);
+                if (i10 != 1) {
+                    k6.b(obj);
+                    return j.g(this.zzc.zzl(), "JAVASCRIPT_TAG", (String) obj);
                 }
                 zzhkVar = (zzhk) this.zzd;
-                ResultKt.throwOnFailure(obj);
+                k6.b(obj);
             }
             this.zzd = null;
             this.zza = 2;
             obj = ((zzhg) obj).zza(zzhkVar, this);
-            if (obj == coroutine_suspended) {
-                return coroutine_suspended;
+            if (obj == aVar) {
+                return aVar;
             }
-            return StringsKt.replace$default(this.zzc.zzl(), "JAVASCRIPT_TAG", (String) obj, false, 4, null);
-        } catch (Exception e) {
-            if (e instanceof zzcg) {
-                throw e;
+            return j.g(this.zzc.zzl(), "JAVASCRIPT_TAG", (String) obj);
+        } catch (Exception e9) {
+            if (e9 instanceof zzcg) {
+                throw e9;
             }
-            throw new zzcg(zzce.zzb, zzcd.zzL, e.getMessage(), null, 8, null);
+            throw new zzcg(zzce.zzb, zzcd.zzL, e9.getMessage(), null, 8, null);
         }
     }
 }

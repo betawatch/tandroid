@@ -4,14 +4,15 @@ import j$.util.Spliterator;
 import j$.util.function.BiConsumer$-CC;
 import j$.util.function.BiFunction$-CC;
 import j$.util.function.Consumer$-CC;
-import j$.util.stream.S2;
-import j$.util.stream.T2;
-import j$.util.stream.b3;
-import j$.util.stream.k0;
-import j$.util.stream.o0;
-import j$.util.stream.p0;
-import j$.util.stream.q0;
-import j$.util.stream.y3;
+import j$.util.stream.b8;
+import j$.util.stream.e7;
+import j$.util.stream.m1;
+import j$.util.stream.q1;
+import j$.util.stream.r1;
+import j$.util.stream.s1;
+import j$.util.stream.t3;
+import j$.util.stream.v6;
+import j$.util.stream.w6;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.BiConsumer;
@@ -22,13 +23,13 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class t implements BiConsumer, BiFunction, Consumer, Supplier, y3 {
+public final /* synthetic */ class t implements BiConsumer, BiFunction, Consumer, Supplier, b8 {
     public final /* synthetic */ int a;
     public final Object b;
     public final Object c;
 
-    public /* synthetic */ t(int i, Object obj, Object obj2) {
-        this.a = i;
+    public /* synthetic */ t(int i10, Object obj, Object obj2) {
+        this.a = i10;
         this.b = obj;
         this.c = obj2;
     }
@@ -64,75 +65,75 @@ public final /* synthetic */ class t implements BiConsumer, BiFunction, Consumer
     public void accept(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                break;
+                ConcurrentMap concurrentMap = (ConcurrentMap) this.b;
+                BiFunction biFunction = (BiFunction) this.c;
+                while (!concurrentMap.replace(obj, obj2, biFunction.apply(obj, obj2)) && (obj2 = concurrentMap.get(obj)) != null) {
+                }
             default:
-                ((BiConsumer) this.b).accept(obj, obj2);
-                ((BiConsumer) this.c).accept(obj, obj2);
-                return;
+                BiConsumer biConsumer = (BiConsumer) this.b;
+                BiConsumer biConsumer2 = (BiConsumer) this.c;
+                biConsumer.accept(obj, obj2);
+                biConsumer2.accept(obj, obj2);
+                break;
         }
-        do {
-            Object apply = ((BiFunction) this.c).apply(obj, obj2);
-            ConcurrentMap concurrentMap = (ConcurrentMap) this.b;
-            if (concurrentMap.replace(obj, obj2, apply)) {
-                return;
-            } else {
-                obj2 = concurrentMap.get(obj);
-            }
-        } while (obj2 != null);
     }
 
     @Override // java.util.function.Supplier
     public Object get() {
-        return new k0((p0) this.b, (Predicate) this.c);
+        return new m1((r1) this.b, (Predicate) this.c);
     }
 
-    public t(T2 t2, p0 p0Var, Supplier supplier) {
+    public t(w6 w6Var, r1 r1Var, Supplier supplier) {
         this.a = 6;
-        this.b = p0Var;
+        this.b = r1Var;
         this.c = supplier;
     }
 
-    @Override // j$.util.stream.y3
-    public int d() {
-        return S2.u | S2.r;
+    @Override // j$.util.stream.b8
+    public int v() {
+        return v6.u | v6.r;
     }
 
-    @Override // j$.util.stream.y3
-    public Object b(j$.util.stream.a aVar, Spliterator spliterator) {
-        o0 o0Var = (o0) ((Supplier) this.c).get();
-        aVar.Q(spliterator, o0Var);
-        return Boolean.valueOf(o0Var.b);
+    @Override // j$.util.stream.b8
+    public Object f(j$.util.stream.a aVar, Spliterator spliterator) {
+        q1 q1Var = (q1) ((Supplier) this.c).get();
+        aVar.F0(spliterator, q1Var);
+        return Boolean.valueOf(q1Var.b);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // j$.util.stream.y3
-    public Object c(j$.util.stream.a aVar, Spliterator spliterator) {
-        return (Boolean) new q0(this, aVar, spliterator).invoke();
+    @Override // j$.util.stream.b8
+    public Object i(t3 t3Var, Spliterator spliterator) {
+        return (Boolean) new s1(this, (j$.util.stream.a) t3Var, spliterator).invoke();
     }
 
     @Override // java.util.function.Consumer
     /* renamed from: accept */
-    public void s(Object obj) {
+    public void x(Object obj) {
         switch (this.a) {
             case 3:
-                ((Consumer) this.b).s(obj);
-                ((Consumer) this.c).s(obj);
+                Consumer consumer = (Consumer) this.b;
+                Consumer consumer2 = (Consumer) this.c;
+                consumer.x(obj);
+                consumer2.x(obj);
                 break;
             case 4:
-                if (obj == null) {
-                    ((AtomicBoolean) this.b).set(true);
+                AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
+                ConcurrentHashMap concurrentHashMap = (ConcurrentHashMap) this.c;
+                if (obj != null) {
+                    concurrentHashMap.putIfAbsent(obj, Boolean.TRUE);
                     break;
                 } else {
-                    ((ConcurrentHashMap) this.c).putIfAbsent(obj, Boolean.TRUE);
+                    atomicBoolean.set(true);
                     break;
                 }
             case 5:
             case 6:
             default:
-                b3 b3Var = (b3) this.b;
-                b3Var.getClass();
-                if (b3Var.b.putIfAbsent(obj != null ? obj : b3.d, Boolean.TRUE) == null) {
-                    ((Consumer) this.c).s(obj);
+                e7 e7Var = (e7) this.b;
+                Consumer consumer3 = (Consumer) this.c;
+                if (e7Var.b.putIfAbsent(obj != null ? obj : e7.d, Boolean.TRUE) == null) {
+                    consumer3.x(obj);
                     break;
                 }
                 break;

@@ -6,8 +6,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.google.android.gms.cast.framework.R$id;
+import org.telegram.messenger.beta.R;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class HelpTextView extends LinearLayout {
     TextView bodyTextView;
@@ -22,17 +23,13 @@ public class HelpTextView extends LinearLayout {
         textView.setVisibility(true != TextUtils.isEmpty(charSequence) ? 0 : 8);
     }
 
-    public View asView() {
-        return this;
-    }
-
     @Override // android.view.View
-    protected void onFinishInflate() {
+    public void onFinishInflate() {
         super.onFinishInflate();
-        TextView textView = (TextView) findViewById(R$id.cast_featurehighlight_help_text_header_view);
+        TextView textView = (TextView) findViewById(R.id.cast_featurehighlight_help_text_header_view);
         textView.getClass();
         this.headerTextView = textView;
-        TextView textView2 = (TextView) findViewById(R$id.cast_featurehighlight_help_text_body_view);
+        TextView textView2 = (TextView) findViewById(R.id.cast_featurehighlight_help_text_body_view);
         textView2.getClass();
         this.bodyTextView = textView2;
     }
@@ -40,5 +37,9 @@ public class HelpTextView extends LinearLayout {
     public void setText(CharSequence charSequence, CharSequence charSequence2) {
         setTextAndVisibility(this.headerTextView, charSequence);
         setTextAndVisibility(this.bodyTextView, charSequence2);
+    }
+
+    public View asView() {
+        return this;
     }
 }

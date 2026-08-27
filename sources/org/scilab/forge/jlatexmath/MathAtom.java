@@ -1,13 +1,14 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class MathAtom extends Atom {
     protected Atom base;
     private int style;
 
-    public MathAtom(Atom atom, int i) {
+    public MathAtom(Atom atom, int i10) {
         this.base = atom;
-        this.style = i;
+        this.style = i10;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom

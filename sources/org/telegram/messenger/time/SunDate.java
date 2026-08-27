@@ -3,63 +3,92 @@ package org.telegram.messenger.time;
 import java.util.Calendar;
 import java.util.TimeZone;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class SunDate {
     private static final double DEGRAD = 0.017453292519943295d;
     private static final double INV360 = 0.002777777777777778d;
     private static final double RADEG = 57.29577951308232d;
 
-    private static long days_since_2000_Jan_0(int i, int i2, int i3) {
-        return ((((i * 367) - (((i + ((i2 + 9) / 12)) * 7) / 4)) + ((i2 * NotificationCenter.proxySettingsChanged) / 9)) + i3) - 730530;
-    }
-
-    private static double revolution(double d) {
-        return d - (Math.floor(INV360 * d) * 360.0d);
-    }
-
-    private static double rev180(double d) {
-        return d - (Math.floor((INV360 * d) + 0.5d) * 360.0d);
-    }
-
     private static double GMST0(double d) {
         return revolution((d * 0.985647352d) + 818.9874d);
-    }
-
-    private static double sind(double d) {
-        return Math.sin(d * DEGRAD);
-    }
-
-    private static double cosd(double d) {
-        return Math.cos(d * DEGRAD);
-    }
-
-    private static double tand(double d) {
-        return Math.tan(d * DEGRAD);
     }
 
     private static double acosd(double d) {
         return Math.acos(d) * RADEG;
     }
 
-    private static double atan2d(double d, double d2) {
-        return Math.atan2(d, d2) * RADEG;
+    private static double atan2d(double d, double d10) {
+        return Math.atan2(d, d10) * RADEG;
     }
 
-    private static void sunposAtDay(double d, double[] dArr, double[] dArr2) {
-        double revolution = revolution((0.9856002585d * d) + 356.047d);
-        double d2 = (4.70935E-5d * d) + 282.9404d;
-        double d3 = 0.016709d - (d * 1.151E-9d);
-        double sind = (RADEG * d3 * sind(revolution) * ((cosd(revolution) * d3) + 1.0d)) + revolution;
-        double cosd = cosd(sind) - d3;
-        double sqrt = Math.sqrt(1.0d - (d3 * d3)) * sind(sind);
-        dArr2[0] = Math.sqrt((cosd * cosd) + (sqrt * sqrt));
-        double atan2d = atan2d(sqrt, cosd) + d2;
-        dArr[0] = atan2d;
-        if (atan2d >= 360.0d) {
-            dArr[0] = atan2d - 360.0d;
+    public static int[] calculateSunriseSunset(double d, double d10) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        double[] dArr = new double[2];
+        sunRiseSetForYear(calendar.get(1), calendar.get(2) + 1, calendar.get(5), d10, d, dArr);
+        int offset = (TimeZone.getDefault().getOffset(System.currentTimeMillis()) / MediaDataController.MAX_STYLE_RUNS_COUNT) / 60;
+        int i10 = ((int) (dArr[0] * 60.0d)) + offset;
+        int i11 = ((int) (dArr[1] * 60.0d)) + offset;
+        if (i10 < 0) {
+            i10 += 1440;
+        } else if (i10 > 1440) {
+            i10 -= 1440;
         }
+        if (i11 < 0 || i11 > 1440) {
+            i11 += 1440;
+        }
+        return new int[]{i10, i11};
+    }
+
+    private static double cosd(double d) {
+        return Math.cos(d * DEGRAD);
+    }
+
+    private static long days_since_2000_Jan_0(int i10, int i11, int i12) {
+        return ((((i10 * 367) - (((((i11 + 9) / 12) + i10) * 7) / 4)) + ((i11 * 275) / 9)) + i12) - 730530;
+    }
+
+    private static double rev180(double d) {
+        return d - (Math.floor((INV360 * d) + 0.5d) * 360.0d);
+    }
+
+    private static double revolution(double d) {
+        return d - (Math.floor(INV360 * d) * 360.0d);
+    }
+
+    private static double sind(double d) {
+        return Math.sin(d * DEGRAD);
+    }
+
+    private static int sunRiseSetForYear(int i10, int i11, int i12, double d, double d10, double[] dArr) {
+        return sunRiseSetHelperForYear(i10, i11, i12, d, d10, -0.5833333333333334d, 1, dArr);
+    }
+
+    private static int sunRiseSetHelperForYear(int i10, int i11, int i12, double d, double d10, double d11, int i13, double[] dArr) {
+        int i14;
+        double[] dArr2 = new double[1];
+        double[] dArr3 = new double[1];
+        double[] dArr4 = new double[1];
+        double days_since_2000_Jan_0 = (days_since_2000_Jan_0(i10, i11, i12) + 0.5d) - (d / 360.0d);
+        double revolution = revolution(GMST0(days_since_2000_Jan_0) + 180.0d + d);
+        sun_RA_decAtDay(days_since_2000_Jan_0, dArr2, dArr3, dArr4);
+        double d12 = 12.0d;
+        double rev180 = 12.0d - (rev180(revolution - dArr2[0]) / 15.0d);
+        double sind = (sind(i13 != 0 ? d11 - (0.2666d / dArr4[0]) : d11) - (sind(d10) * sind(dArr3[0]))) / (cosd(d10) * cosd(dArr3[0]));
+        if (sind >= 1.0d) {
+            i14 = -1;
+            d12 = 0.0d;
+        } else if (sind <= -1.0d) {
+            i14 = 1;
+        } else {
+            d12 = acosd(sind) / 15.0d;
+            i14 = 0;
+        }
+        dArr[0] = rev180 - d12;
+        dArr[1] = rev180 + d12;
+        return i14;
     }
 
     private static void sun_RA_decAtDay(double d, double[] dArr, double[] dArr2, double[] dArr3) {
@@ -67,58 +96,29 @@ public class SunDate {
         sunposAtDay(d, dArr4, dArr3);
         double cosd = dArr3[0] * cosd(dArr4[0]);
         double sind = dArr3[0] * sind(dArr4[0]);
-        double d2 = 23.4393d - (d * 3.563E-7d);
-        double cosd2 = cosd(d2) * sind;
-        double sind2 = sind * sind(d2);
+        double d10 = 23.4393d - (d * 3.563E-7d);
+        double cosd2 = cosd(d10) * sind;
+        double sind2 = sind * sind(d10);
         dArr[0] = atan2d(cosd2, cosd);
-        dArr2[0] = atan2d(sind2, Math.sqrt((cosd * cosd) + (cosd2 * cosd2)));
+        dArr2[0] = atan2d(sind2, Math.sqrt((cosd2 * cosd2) + (cosd * cosd)));
     }
 
-    private static int sunRiseSetHelperForYear(int i, int i2, int i3, double d, double d2, double d3, int i4, double[] dArr) {
-        int i5;
-        double[] dArr2 = new double[1];
-        double[] dArr3 = new double[1];
-        double[] dArr4 = new double[1];
-        double days_since_2000_Jan_0 = (days_since_2000_Jan_0(i, i2, i3) + 0.5d) - (d / 360.0d);
-        double revolution = revolution(GMST0(days_since_2000_Jan_0) + 180.0d + d);
-        sun_RA_decAtDay(days_since_2000_Jan_0, dArr2, dArr3, dArr4);
-        double d4 = 12.0d;
-        double rev180 = 12.0d - (rev180(revolution - dArr2[0]) / 15.0d);
-        double sind = (sind(i4 != 0 ? d3 - (0.2666d / dArr4[0]) : d3) - (sind(d2) * sind(dArr3[0]))) / (cosd(d2) * cosd(dArr3[0]));
-        if (sind >= 1.0d) {
-            i5 = -1;
-            d4 = 0.0d;
-        } else if (sind <= -1.0d) {
-            i5 = 1;
-        } else {
-            d4 = acosd(sind) / 15.0d;
-            i5 = 0;
+    private static void sunposAtDay(double d, double[] dArr, double[] dArr2) {
+        double revolution = revolution((0.9856002585d * d) + 356.047d);
+        double d10 = (4.70935E-5d * d) + 282.9404d;
+        double d11 = 0.016709d - (d * 1.151E-9d);
+        double cosd = (((cosd(revolution) * d11) + 1.0d) * RADEG * d11 * sind(revolution)) + revolution;
+        double cosd2 = cosd(cosd) - d11;
+        double sqrt = Math.sqrt(1.0d - (d11 * d11)) * sind(cosd);
+        dArr2[0] = Math.sqrt((sqrt * sqrt) + (cosd2 * cosd2));
+        double atan2d = atan2d(sqrt, cosd2) + d10;
+        dArr[0] = atan2d;
+        if (atan2d >= 360.0d) {
+            dArr[0] = atan2d - 360.0d;
         }
-        dArr[0] = rev180 - d4;
-        dArr[1] = rev180 + d4;
-        return i5;
     }
 
-    private static int sunRiseSetForYear(int i, int i2, int i3, double d, double d2, double[] dArr) {
-        return sunRiseSetHelperForYear(i, i2, i3, d, d2, -0.5833333333333334d, 1, dArr);
-    }
-
-    public static int[] calculateSunriseSunset(double d, double d2) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(System.currentTimeMillis());
-        double[] dArr = new double[2];
-        sunRiseSetForYear(calendar.get(1), calendar.get(2) + 1, calendar.get(5), d2, d, dArr);
-        int offset = (TimeZone.getDefault().getOffset(System.currentTimeMillis()) / MediaDataController.MAX_STYLE_RUNS_COUNT) / 60;
-        int i = ((int) (dArr[0] * 60.0d)) + offset;
-        int i2 = ((int) (dArr[1] * 60.0d)) + offset;
-        if (i < 0) {
-            i += 1440;
-        } else if (i > 1440) {
-            i -= 1440;
-        }
-        if (i2 < 0 || i2 > 1440) {
-            i2 += 1440;
-        }
-        return new int[]{i, i2};
+    private static double tand(double d) {
+        return Math.tan(d * DEGRAD);
     }
 }

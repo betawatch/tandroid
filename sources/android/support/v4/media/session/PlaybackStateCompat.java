@@ -5,459 +5,171 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.SystemClock;
 import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class PlaybackStateCompat implements Parcelable {
-    public static final Parcelable.Creator<PlaybackStateCompat> CREATOR = new Parcelable.Creator() { // from class: android.support.v4.media.session.PlaybackStateCompat.1
-        @Override // android.os.Parcelable.Creator
-        public PlaybackStateCompat createFromParcel(Parcel parcel) {
-            return new PlaybackStateCompat(parcel);
-        }
+    public static final Parcelable.Creator<PlaybackStateCompat> CREATOR = new c0(4);
+    public final int a;
+    public final long b;
+    public final long c;
+    public final float d;
+    public final long e;
+    public final int f;
+    public final CharSequence h;
+    public final long n;
+    public final ArrayList r;
+    public final long s;
+    public final Bundle v;
+    public PlaybackState w;
 
-        @Override // android.os.Parcelable.Creator
-        public PlaybackStateCompat[] newArray(int i) {
-            return new PlaybackStateCompat[i];
-        }
-    };
-    final long mActions;
-    final long mActiveItemId;
-    final long mBufferedPosition;
-    List mCustomActions;
-    final int mErrorCode;
-    final CharSequence mErrorMessage;
-    final Bundle mExtras;
-    final long mPosition;
-    final float mSpeed;
-    final int mState;
-    private PlaybackState mStateFwk;
-    final long mUpdateTime;
-
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
+    public PlaybackStateCompat(int i10, long j10, long j11, float f10, long j12, int i11, CharSequence charSequence, long j13, ArrayList arrayList, long j14, Bundle bundle) {
+        this.a = i10;
+        this.b = j10;
+        this.c = j11;
+        this.d = f10;
+        this.e = j12;
+        this.f = i11;
+        this.h = charSequence;
+        this.n = j13;
+        this.r = new ArrayList(arrayList);
+        this.s = j14;
+        this.v = bundle;
     }
 
-    PlaybackStateCompat(int i, long j, long j2, float f, long j3, int i2, CharSequence charSequence, long j4, List list, long j5, Bundle bundle) {
-        this.mState = i;
-        this.mPosition = j;
-        this.mBufferedPosition = j2;
-        this.mSpeed = f;
-        this.mActions = j3;
-        this.mErrorCode = i2;
-        this.mErrorMessage = charSequence;
-        this.mUpdateTime = j4;
-        this.mCustomActions = new ArrayList(list);
-        this.mActiveItemId = j5;
-        this.mExtras = bundle;
-    }
-
-    PlaybackStateCompat(Parcel parcel) {
-        this.mState = parcel.readInt();
-        this.mPosition = parcel.readLong();
-        this.mSpeed = parcel.readFloat();
-        this.mUpdateTime = parcel.readLong();
-        this.mBufferedPosition = parcel.readLong();
-        this.mActions = parcel.readLong();
-        this.mErrorMessage = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-        this.mCustomActions = parcel.createTypedArrayList(CustomAction.CREATOR);
-        this.mActiveItemId = parcel.readLong();
-        this.mExtras = parcel.readBundle(MediaSessionCompat.class.getClassLoader());
-        this.mErrorCode = parcel.readInt();
-    }
-
-    public String toString() {
-        return "PlaybackState {state=" + this.mState + ", position=" + this.mPosition + ", buffered position=" + this.mBufferedPosition + ", speed=" + this.mSpeed + ", updated=" + this.mUpdateTime + ", actions=" + this.mActions + ", error code=" + this.mErrorCode + ", error message=" + this.mErrorMessage + ", custom actions=" + this.mCustomActions + ", active item id=" + this.mActiveItemId + "}";
-    }
-
-    @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.mState);
-        parcel.writeLong(this.mPosition);
-        parcel.writeFloat(this.mSpeed);
-        parcel.writeLong(this.mUpdateTime);
-        parcel.writeLong(this.mBufferedPosition);
-        parcel.writeLong(this.mActions);
-        TextUtils.writeToParcel(this.mErrorMessage, parcel, i);
-        parcel.writeTypedList(this.mCustomActions);
-        parcel.writeLong(this.mActiveItemId);
-        parcel.writeBundle(this.mExtras);
-        parcel.writeInt(this.mErrorCode);
-    }
-
-    public int getState() {
-        return this.mState;
-    }
-
-    public long getPosition() {
-        return this.mPosition;
-    }
-
-    public long getLastPositionUpdateTime() {
-        return this.mUpdateTime;
-    }
-
-    public float getPlaybackSpeed() {
-        return this.mSpeed;
-    }
-
-    public long getActions() {
-        return this.mActions;
-    }
-
-    public long getActiveQueueItemId() {
-        return this.mActiveItemId;
-    }
-
-    public static PlaybackStateCompat fromPlaybackState(Object obj) {
+    public static PlaybackStateCompat a(PlaybackState playbackState) {
         ArrayList arrayList;
+        CustomAction customAction;
         Bundle bundle = null;
-        if (obj == null) {
+        if (playbackState == null) {
             return null;
         }
-        PlaybackState playbackState = (PlaybackState) obj;
-        List<PlaybackState.CustomAction> customActions = Api21Impl.getCustomActions(playbackState);
-        if (customActions != null) {
-            ArrayList arrayList2 = new ArrayList(customActions.size());
-            Iterator<PlaybackState.CustomAction> it = customActions.iterator();
-            while (it.hasNext()) {
-                arrayList2.add(CustomAction.fromCustomAction(it.next()));
+        List<PlaybackState.CustomAction> j10 = e0.j(playbackState);
+        if (j10 != null) {
+            ArrayList arrayList2 = new ArrayList(j10.size());
+            for (PlaybackState.CustomAction customAction2 : j10) {
+                if (customAction2 != null) {
+                    PlaybackState.CustomAction customAction3 = customAction2;
+                    Bundle l10 = e0.l(customAction3);
+                    d0.a(l10);
+                    customAction = new CustomAction(e0.f(customAction3), e0.o(customAction3), e0.m(customAction3), l10);
+                    customAction.e = customAction3;
+                } else {
+                    customAction = null;
+                }
+                arrayList2.add(customAction);
             }
             arrayList = arrayList2;
         } else {
             arrayList = null;
         }
         if (Build.VERSION.SDK_INT >= 22) {
-            bundle = Api22Impl.getExtras(playbackState);
-            MediaSessionCompat.ensureClassLoader(bundle);
+            bundle = f0.a(playbackState);
+            d0.a(bundle);
         }
-        PlaybackStateCompat playbackStateCompat = new PlaybackStateCompat(Api21Impl.getState(playbackState), Api21Impl.getPosition(playbackState), Api21Impl.getBufferedPosition(playbackState), Api21Impl.getPlaybackSpeed(playbackState), Api21Impl.getActions(playbackState), 0, Api21Impl.getErrorMessage(playbackState), Api21Impl.getLastPositionUpdateTime(playbackState), arrayList, Api21Impl.getActiveQueueItemId(playbackState), bundle);
-        playbackStateCompat.mStateFwk = playbackState;
+        PlaybackStateCompat playbackStateCompat = new PlaybackStateCompat(e0.r(playbackState), e0.q(playbackState), e0.i(playbackState), e0.p(playbackState), e0.g(playbackState), 0, e0.k(playbackState), e0.n(playbackState), arrayList, e0.h(playbackState), bundle);
+        playbackStateCompat.w = playbackState;
         return playbackStateCompat;
     }
 
-    public Object getPlaybackState() {
-        if (this.mStateFwk == null) {
-            PlaybackState.Builder createBuilder = Api21Impl.createBuilder();
-            Api21Impl.setState(createBuilder, this.mState, this.mPosition, this.mSpeed, this.mUpdateTime);
-            Api21Impl.setBufferedPosition(createBuilder, this.mBufferedPosition);
-            Api21Impl.setActions(createBuilder, this.mActions);
-            Api21Impl.setErrorMessage(createBuilder, this.mErrorMessage);
-            Iterator it = this.mCustomActions.iterator();
-            while (it.hasNext()) {
-                Api21Impl.addCustomAction(createBuilder, (PlaybackState.CustomAction) ((CustomAction) it.next()).getCustomAction());
-            }
-            Api21Impl.setActiveQueueItemId(createBuilder, this.mActiveItemId);
-            if (Build.VERSION.SDK_INT >= 22) {
-                Api22Impl.setExtras(createBuilder, this.mExtras);
-            }
-            this.mStateFwk = Api21Impl.build(createBuilder);
-        }
-        return this.mStateFwk;
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
-    public static final class CustomAction implements Parcelable {
-        public static final Parcelable.Creator<CustomAction> CREATOR = new Parcelable.Creator() { // from class: android.support.v4.media.session.PlaybackStateCompat.CustomAction.1
-            @Override // android.os.Parcelable.Creator
-            public CustomAction createFromParcel(Parcel parcel) {
-                return new CustomAction(parcel);
-            }
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("PlaybackState {state=");
+        sb2.append(this.a);
+        sb2.append(", position=");
+        sb2.append(this.b);
+        sb2.append(", buffered position=");
+        sb2.append(this.c);
+        sb2.append(", speed=");
+        sb2.append(this.d);
+        sb2.append(", updated=");
+        sb2.append(this.n);
+        sb2.append(", actions=");
+        sb2.append(this.e);
+        sb2.append(", error code=");
+        sb2.append(this.f);
+        sb2.append(", error message=");
+        sb2.append(this.h);
+        sb2.append(", custom actions=");
+        sb2.append(this.r);
+        sb2.append(", active item id=");
+        return a9.p.o(sb2, this.s, "}");
+    }
 
-            @Override // android.os.Parcelable.Creator
-            public CustomAction[] newArray(int i) {
-                return new CustomAction[i];
-            }
-        };
-        private final String mAction;
-        private PlaybackState.CustomAction mCustomActionFwk;
-        private final Bundle mExtras;
-        private final int mIcon;
-        private final CharSequence mName;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeInt(this.a);
+        parcel.writeLong(this.b);
+        parcel.writeFloat(this.d);
+        parcel.writeLong(this.n);
+        parcel.writeLong(this.c);
+        parcel.writeLong(this.e);
+        TextUtils.writeToParcel(this.h, parcel, i10);
+        parcel.writeTypedList(this.r);
+        parcel.writeLong(this.s);
+        parcel.writeBundle(this.v);
+        parcel.writeInt(this.f);
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static final class CustomAction implements Parcelable {
+        public static final Parcelable.Creator<CustomAction> CREATOR = new h0();
+        public final String a;
+        public final CharSequence b;
+        public final int c;
+        public final Bundle d;
+        public PlaybackState.CustomAction e;
+
+        public CustomAction(String str, CharSequence charSequence, int i10, Bundle bundle) {
+            this.a = str;
+            this.b = charSequence;
+            this.c = i10;
+            this.d = bundle;
+        }
 
         @Override // android.os.Parcelable
-        public int describeContents() {
+        public final int describeContents() {
             return 0;
         }
 
-        CustomAction(String str, CharSequence charSequence, int i, Bundle bundle) {
-            this.mAction = str;
-            this.mName = charSequence;
-            this.mIcon = i;
-            this.mExtras = bundle;
-        }
-
-        CustomAction(Parcel parcel) {
-            this.mAction = parcel.readString();
-            this.mName = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-            this.mIcon = parcel.readInt();
-            this.mExtras = parcel.readBundle(MediaSessionCompat.class.getClassLoader());
+        public final String toString() {
+            return "Action:mName='" + ((Object) this.b) + ", mIcon=" + this.c + ", mExtras=" + this.d;
         }
 
         @Override // android.os.Parcelable
-        public void writeToParcel(Parcel parcel, int i) {
-            parcel.writeString(this.mAction);
-            TextUtils.writeToParcel(this.mName, parcel, i);
-            parcel.writeInt(this.mIcon);
-            parcel.writeBundle(this.mExtras);
+        public final void writeToParcel(Parcel parcel, int i10) {
+            parcel.writeString(this.a);
+            TextUtils.writeToParcel(this.b, parcel, i10);
+            parcel.writeInt(this.c);
+            parcel.writeBundle(this.d);
         }
 
-        public static CustomAction fromCustomAction(Object obj) {
-            if (obj == null) {
-                return null;
-            }
-            PlaybackState.CustomAction customAction = (PlaybackState.CustomAction) obj;
-            Bundle extras = Api21Impl.getExtras(customAction);
-            MediaSessionCompat.ensureClassLoader(extras);
-            CustomAction customAction2 = new CustomAction(Api21Impl.getAction(customAction), Api21Impl.getName(customAction), Api21Impl.getIcon(customAction), extras);
-            customAction2.mCustomActionFwk = customAction;
-            return customAction2;
-        }
-
-        public Object getCustomAction() {
-            PlaybackState.CustomAction customAction = this.mCustomActionFwk;
-            if (customAction != null) {
-                return customAction;
-            }
-            PlaybackState.CustomAction.Builder createCustomActionBuilder = Api21Impl.createCustomActionBuilder(this.mAction, this.mName, this.mIcon);
-            Api21Impl.setExtras(createCustomActionBuilder, this.mExtras);
-            return Api21Impl.build(createCustomActionBuilder);
-        }
-
-        public String getAction() {
-            return this.mAction;
-        }
-
-        public String toString() {
-            return "Action:mName='" + ((Object) this.mName) + ", mIcon=" + this.mIcon + ", mExtras=" + this.mExtras;
-        }
-
-        public static final class Builder {
-            private final String mAction;
-            private Bundle mExtras;
-            private final int mIcon;
-            private final CharSequence mName;
-
-            public Builder(String str, CharSequence charSequence, int i) {
-                if (TextUtils.isEmpty(str)) {
-                    throw new IllegalArgumentException("You must specify an action to build a CustomAction");
-                }
-                if (TextUtils.isEmpty(charSequence)) {
-                    throw new IllegalArgumentException("You must specify a name to build a CustomAction");
-                }
-                if (i == 0) {
-                    throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
-                }
-                this.mAction = str;
-                this.mName = charSequence;
-                this.mIcon = i;
-            }
-
-            public CustomAction build() {
-                return new CustomAction(this.mAction, this.mName, this.mIcon, this.mExtras);
-            }
+        public CustomAction(Parcel parcel) {
+            this.a = parcel.readString();
+            this.b = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+            this.c = parcel.readInt();
+            this.d = parcel.readBundle(d0.class.getClassLoader());
         }
     }
 
-    public static final class Builder {
-        private long mActions;
-        private long mActiveItemId;
-        private long mBufferedPosition;
-        private final List mCustomActions;
-        private int mErrorCode;
-        private CharSequence mErrorMessage;
-        private Bundle mExtras;
-        private long mPosition;
-        private float mRate;
-        private int mState;
-        private long mUpdateTime;
-
-        public Builder() {
-            this.mCustomActions = new ArrayList();
-            this.mActiveItemId = -1L;
-        }
-
-        public Builder(PlaybackStateCompat playbackStateCompat) {
-            ArrayList arrayList = new ArrayList();
-            this.mCustomActions = arrayList;
-            this.mActiveItemId = -1L;
-            this.mState = playbackStateCompat.mState;
-            this.mPosition = playbackStateCompat.mPosition;
-            this.mRate = playbackStateCompat.mSpeed;
-            this.mUpdateTime = playbackStateCompat.mUpdateTime;
-            this.mBufferedPosition = playbackStateCompat.mBufferedPosition;
-            this.mActions = playbackStateCompat.mActions;
-            this.mErrorCode = playbackStateCompat.mErrorCode;
-            this.mErrorMessage = playbackStateCompat.mErrorMessage;
-            List list = playbackStateCompat.mCustomActions;
-            if (list != null) {
-                arrayList.addAll(list);
-            }
-            this.mActiveItemId = playbackStateCompat.mActiveItemId;
-            this.mExtras = playbackStateCompat.mExtras;
-        }
-
-        public Builder setState(int i, long j, float f) {
-            return setState(i, j, f, SystemClock.elapsedRealtime());
-        }
-
-        public Builder setState(int i, long j, float f, long j2) {
-            this.mState = i;
-            this.mPosition = j;
-            this.mUpdateTime = j2;
-            this.mRate = f;
-            return this;
-        }
-
-        public Builder setBufferedPosition(long j) {
-            this.mBufferedPosition = j;
-            return this;
-        }
-
-        public Builder setActions(long j) {
-            this.mActions = j;
-            return this;
-        }
-
-        public Builder addCustomAction(CustomAction customAction) {
-            if (customAction == null) {
-                throw new IllegalArgumentException("You may not add a null CustomAction to PlaybackStateCompat");
-            }
-            this.mCustomActions.add(customAction);
-            return this;
-        }
-
-        public Builder setActiveQueueItemId(long j) {
-            this.mActiveItemId = j;
-            return this;
-        }
-
-        public Builder setErrorMessage(int i, CharSequence charSequence) {
-            this.mErrorCode = i;
-            this.mErrorMessage = charSequence;
-            return this;
-        }
-
-        public Builder setExtras(Bundle bundle) {
-            this.mExtras = bundle;
-            return this;
-        }
-
-        public PlaybackStateCompat build() {
-            return new PlaybackStateCompat(this.mState, this.mPosition, this.mBufferedPosition, this.mRate, this.mActions, this.mErrorCode, this.mErrorMessage, this.mUpdateTime, this.mCustomActions, this.mActiveItemId, this.mExtras);
-        }
-    }
-
-    private static class Api21Impl {
-        static PlaybackState.Builder createBuilder() {
-            return new PlaybackState.Builder();
-        }
-
-        static void setState(PlaybackState.Builder builder, int i, long j, float f, long j2) {
-            builder.setState(i, j, f, j2);
-        }
-
-        static void setBufferedPosition(PlaybackState.Builder builder, long j) {
-            builder.setBufferedPosition(j);
-        }
-
-        static void setActions(PlaybackState.Builder builder, long j) {
-            builder.setActions(j);
-        }
-
-        static void setErrorMessage(PlaybackState.Builder builder, CharSequence charSequence) {
-            builder.setErrorMessage(charSequence);
-        }
-
-        static void addCustomAction(PlaybackState.Builder builder, PlaybackState.CustomAction customAction) {
-            builder.addCustomAction(customAction);
-        }
-
-        static void setActiveQueueItemId(PlaybackState.Builder builder, long j) {
-            builder.setActiveQueueItemId(j);
-        }
-
-        static List<PlaybackState.CustomAction> getCustomActions(PlaybackState playbackState) {
-            return playbackState.getCustomActions();
-        }
-
-        static PlaybackState build(PlaybackState.Builder builder) {
-            return builder.build();
-        }
-
-        static int getState(PlaybackState playbackState) {
-            return playbackState.getState();
-        }
-
-        static long getPosition(PlaybackState playbackState) {
-            return playbackState.getPosition();
-        }
-
-        static long getBufferedPosition(PlaybackState playbackState) {
-            return playbackState.getBufferedPosition();
-        }
-
-        static float getPlaybackSpeed(PlaybackState playbackState) {
-            return playbackState.getPlaybackSpeed();
-        }
-
-        static long getActions(PlaybackState playbackState) {
-            return playbackState.getActions();
-        }
-
-        static CharSequence getErrorMessage(PlaybackState playbackState) {
-            return playbackState.getErrorMessage();
-        }
-
-        static long getLastPositionUpdateTime(PlaybackState playbackState) {
-            return playbackState.getLastPositionUpdateTime();
-        }
-
-        static long getActiveQueueItemId(PlaybackState playbackState) {
-            return playbackState.getActiveQueueItemId();
-        }
-
-        static PlaybackState.CustomAction.Builder createCustomActionBuilder(String str, CharSequence charSequence, int i) {
-            return new PlaybackState.CustomAction.Builder(str, charSequence, i);
-        }
-
-        static void setExtras(PlaybackState.CustomAction.Builder builder, Bundle bundle) {
-            builder.setExtras(bundle);
-        }
-
-        static PlaybackState.CustomAction build(PlaybackState.CustomAction.Builder builder) {
-            return builder.build();
-        }
-
-        static Bundle getExtras(PlaybackState.CustomAction customAction) {
-            return customAction.getExtras();
-        }
-
-        static String getAction(PlaybackState.CustomAction customAction) {
-            return customAction.getAction();
-        }
-
-        static CharSequence getName(PlaybackState.CustomAction customAction) {
-            return customAction.getName();
-        }
-
-        static int getIcon(PlaybackState.CustomAction customAction) {
-            return customAction.getIcon();
-        }
-    }
-
-    private static class Api22Impl {
-        static void setExtras(PlaybackState.Builder builder, Bundle bundle) {
-            builder.setExtras(bundle);
-        }
-
-        static Bundle getExtras(PlaybackState playbackState) {
-            Bundle extras;
-            extras = playbackState.getExtras();
-            return extras;
-        }
+    public PlaybackStateCompat(Parcel parcel) {
+        this.a = parcel.readInt();
+        this.b = parcel.readLong();
+        this.d = parcel.readFloat();
+        this.n = parcel.readLong();
+        this.c = parcel.readLong();
+        this.e = parcel.readLong();
+        this.h = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.r = parcel.createTypedArrayList(CustomAction.CREATOR);
+        this.s = parcel.readLong();
+        this.v = parcel.readBundle(d0.class.getClassLoader());
+        this.f = parcel.readInt();
     }
 }

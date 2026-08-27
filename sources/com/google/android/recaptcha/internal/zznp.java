@@ -2,6 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.lang.reflect.InvocationTargetException;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zznp {
     private static final zznr zza = zzb(zznr.zzd);
@@ -16,21 +17,21 @@ final class zznp {
         if (zznvVar != null) {
             return zznvVar;
         }
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb2 = new StringBuilder();
         for (String str : strArr) {
             try {
                 return (zznr) Class.forName(str).getConstructor(null).newInstance(null);
             } catch (Throwable th) {
                 th = th;
-                sb.append('\n');
-                sb.append(str);
-                sb.append(": ");
+                sb2.append('\n');
+                sb2.append(str);
+                sb2.append(": ");
                 if (th instanceof InvocationTargetException) {
                     th = th.getCause();
                 }
-                sb.append(th);
+                sb2.append(th);
             }
         }
-        throw new IllegalStateException(sb.insert(0, "No logging platforms found:").toString());
+        throw new IllegalStateException(sb2.insert(0, "No logging platforms found:").toString());
     }
 }

@@ -8,144 +8,145 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
 
-/* loaded from: classes5.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes3.dex */
 public class AnimatedArrowDrawable extends Drawable {
-    private float animProgress;
-    private float animateToProgress;
-    private float customHeightDp;
-    private float customStrokeWidthDp;
-    private float customWidthDp;
-    private boolean isSmall;
-    private long lastUpdateTime;
-    private Paint paint;
-    private Path path = new Path();
+    public final Paint a;
+    public final Path b = new Path();
+    public float c;
+    public float d;
+    public long e;
+    public final boolean f;
+    public final float g;
+    public final float h;
+    public final float i;
 
-    @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i) {
-    }
-
-    public AnimatedArrowDrawable(int i, boolean z) {
+    public AnimatedArrowDrawable(int i10, boolean z10) {
         Paint paint = new Paint(1);
-        this.paint = paint;
+        this.a = paint;
         paint.setStyle(Paint.Style.STROKE);
-        this.paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        this.paint.setColor(i);
-        this.paint.setStrokeCap(Paint.Cap.ROUND);
-        this.paint.setStrokeJoin(Paint.Join.ROUND);
-        this.isSmall = z;
-        updatePath();
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        paint.setColor(i10);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        this.f = z10;
+        b();
     }
 
-    public AnimatedArrowDrawable(int i, float f, float f2, float f3) {
-        Paint paint = new Paint(1);
-        this.paint = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        this.paint.setStrokeWidth(AndroidUtilities.dpf2(f3));
-        this.paint.setColor(i);
-        this.paint.setStrokeCap(Paint.Cap.ROUND);
-        this.paint.setStrokeJoin(Paint.Join.ROUND);
-        this.isSmall = true;
-        this.customWidthDp = f;
-        this.customHeightDp = f2;
-        this.customStrokeWidthDp = f3;
-        updatePath();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void draw(Canvas canvas) {
-        canvas.drawPath(this.path, this.paint);
-        checkAnimation();
-    }
-
-    private void updatePath() {
-        this.path.reset();
-        float f = (this.animProgress * 2.0f) - 1.0f;
-        if (this.customWidthDp > 0.0f && this.customHeightDp > 0.0f) {
-            float dpf2 = AndroidUtilities.dpf2(this.customStrokeWidthDp) / 2.0f;
-            float dpf22 = AndroidUtilities.dpf2(this.customWidthDp) - dpf2;
-            float dpf23 = AndroidUtilities.dpf2(this.customHeightDp) - dpf2;
-            float f2 = dpf23 - dpf2;
-            this.path.moveTo(dpf2, dpf23 - (this.animProgress * f2));
-            this.path.lineTo((dpf2 + dpf22) / 2.0f, dpf2 + (this.animProgress * f2));
-            this.path.lineTo(dpf22, dpf23 - (f2 * this.animProgress));
+    public final void a(float f10) {
+        if (this.d == f10) {
             return;
         }
-        if (this.isSmall) {
-            this.path.moveTo(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(6.0f) - (AndroidUtilities.dp(2.0f) * f));
-            this.path.lineTo(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(6.0f) + (AndroidUtilities.dp(2.0f) * f));
-            this.path.lineTo(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(6.0f) - (AndroidUtilities.dp(2.0f) * f));
-        } else {
-            this.path.moveTo(AndroidUtilities.dp(4.5f), (AndroidUtilities.dp(12.0f) - (AndroidUtilities.dp(4.0f) * f)) + (AndroidUtilities.dp(2.0f) * this.animProgress));
-            this.path.lineTo(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(12.0f) + (AndroidUtilities.dp(4.0f) * f) + (AndroidUtilities.dp(2.0f) * this.animProgress));
-            this.path.lineTo(AndroidUtilities.dp(21.5f), (AndroidUtilities.dp(12.0f) - (AndroidUtilities.dp(4.0f) * f)) + (AndroidUtilities.dp(2.0f) * this.animProgress));
-        }
-    }
-
-    public void setAnimationProgress(float f) {
-        this.animProgress = f;
-        this.animateToProgress = f;
-        updatePath();
+        this.d = f10;
+        this.e = SystemClock.elapsedRealtime();
         invalidateSelf();
     }
 
-    public void setAnimationProgressAnimated(float f) {
-        if (this.animateToProgress == f) {
+    public final void b() {
+        Path path = this.b;
+        path.reset();
+        float f10 = (this.c * 2.0f) - 1.0f;
+        float f11 = this.g;
+        if (f11 > 0.0f) {
+            float f12 = this.h;
+            if (f12 > 0.0f) {
+                float dpf2 = AndroidUtilities.dpf2(this.i) / 2.0f;
+                float dpf22 = AndroidUtilities.dpf2(f11) - dpf2;
+                float dpf23 = AndroidUtilities.dpf2(f12) - dpf2;
+                float f13 = dpf23 - dpf2;
+                path.moveTo(dpf2, dpf23 - (this.c * f13));
+                path.lineTo((dpf2 + dpf22) / 2.0f, (this.c * f13) + dpf2);
+                path.lineTo(dpf22, dpf23 - (f13 * this.c));
+                return;
+            }
+        }
+        if (this.f) {
+            path.moveTo(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(6.0f) - (AndroidUtilities.dp(2.0f) * f10));
+            path.lineTo(AndroidUtilities.dp(8.0f), (AndroidUtilities.dp(2.0f) * f10) + AndroidUtilities.dp(6.0f));
+            path.lineTo(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(6.0f) - (AndroidUtilities.dp(2.0f) * f10));
             return;
         }
-        this.animateToProgress = f;
-        this.lastUpdateTime = SystemClock.elapsedRealtime();
-        invalidateSelf();
+        path.moveTo(AndroidUtilities.dp(4.5f), (AndroidUtilities.dp(2.0f) * this.c) + (AndroidUtilities.dp(12.0f) - (AndroidUtilities.dp(4.0f) * f10)));
+        path.lineTo(AndroidUtilities.dp(13.0f), (AndroidUtilities.dp(2.0f) * this.c) + (AndroidUtilities.dp(4.0f) * f10) + AndroidUtilities.dp(12.0f));
+        path.lineTo(AndroidUtilities.dp(21.5f), (AndroidUtilities.dp(2.0f) * this.c) + (AndroidUtilities.dp(12.0f) - (AndroidUtilities.dp(4.0f) * f10)));
     }
 
-    private void checkAnimation() {
-        if (this.animateToProgress != this.animProgress) {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.drawPath(this.b, this.a);
+        if (this.d != this.c) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            long j = elapsedRealtime - this.lastUpdateTime;
-            this.lastUpdateTime = elapsedRealtime;
-            float f = this.animProgress;
-            float f2 = this.animateToProgress;
-            if (f < f2) {
-                float f3 = f + (j / 180.0f);
-                this.animProgress = f3;
-                if (f3 > f2) {
-                    this.animProgress = f2;
+            long j10 = elapsedRealtime - this.e;
+            this.e = elapsedRealtime;
+            float f10 = this.c;
+            float f11 = this.d;
+            if (f10 < f11) {
+                float f12 = (j10 / 180.0f) + f10;
+                this.c = f12;
+                if (f12 > f11) {
+                    this.c = f11;
                 }
             } else {
-                float f4 = f - (j / 180.0f);
-                this.animProgress = f4;
-                if (f4 < f2) {
-                    this.animProgress = f2;
+                float f13 = f10 - (j10 / 180.0f);
+                this.c = f13;
+                if (f13 < f11) {
+                    this.c = f11;
                 }
             }
-            updatePath();
+            b();
             invalidateSelf();
         }
     }
 
-    public void setColor(int i) {
-        this.paint.setColor(i);
+    public float getAnimationProgress() {
+        return this.c;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        float f10 = this.h;
+        return f10 > 0.0f ? AndroidUtilities.dp(f10) : AndroidUtilities.dp(26.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        float f10 = this.g;
+        return f10 > 0.0f ? AndroidUtilities.dp(f10) : AndroidUtilities.dp(26.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    public void setAnimationProgress(float f10) {
+        this.c = f10;
+        this.d = f10;
+        b();
         invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
-        this.paint.setColorFilter(colorFilter);
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+    }
+
+    public AnimatedArrowDrawable(int i10) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dpf2(1.66f));
+        paint.setColor(i10);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        this.f = true;
+        this.g = 12.66f;
+        this.h = 6.16f;
+        this.i = 1.66f;
+        b();
     }
 
     @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        float f = this.customWidthDp;
-        return f > 0.0f ? AndroidUtilities.dp(f) : AndroidUtilities.dp(26.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        float f = this.customHeightDp;
-        return f > 0.0f ? AndroidUtilities.dp(f) : AndroidUtilities.dp(26.0f);
+    public final void setAlpha(int i10) {
     }
 }

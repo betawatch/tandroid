@@ -1,69 +1,31 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import j$.util.Spliterator;
-import java.util.function.Consumer;
+import java.util.function.BinaryOperator;
+import java.util.function.DoubleBinaryOperator;
+import java.util.function.IntBinaryOperator;
+import java.util.function.LongBinaryOperator;
 
 /* loaded from: classes2.dex */
-public final class w3 extends U2 {
-    @Override // j$.util.stream.U2
-    public final U2 e(Spliterator spliterator) {
-        return new w3(this.b, spliterator, this.a);
+public final class w3 extends t3 {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ Object i;
+
+    public /* synthetic */ w3(w6 w6Var, Object obj, int i10) {
+        this.h = i10;
+        this.i = obj;
     }
 
-    @Override // j$.util.stream.U2
-    public final void d() {
-        Q2 q2 = new Q2();
-        this.h = q2;
-        Objects.requireNonNull(q2);
-        this.e = this.b.R(new v3(q2, 0));
-        this.f = new j$.time.t(15, this);
-    }
-
-    @Override // j$.util.Spliterator
-    public final boolean tryAdvance(Consumer consumer) {
-        Object obj;
-        Objects.requireNonNull(consumer);
-        boolean a = a();
-        if (!a) {
-            return a;
-        }
-        Q2 q2 = (Q2) this.h;
-        long j = this.g;
-        if (q2.c != 0) {
-            if (j >= q2.count()) {
-                throw new IndexOutOfBoundsException(Long.toString(j));
-            }
-            for (int i = 0; i <= q2.c; i++) {
-                long j2 = q2.d[i];
-                Object[] objArr = q2.f[i];
-                if (j < objArr.length + j2) {
-                    obj = objArr[(int) (j - j2)];
-                }
-            }
-            throw new IndexOutOfBoundsException(Long.toString(j));
-        }
-        if (j < q2.b) {
-            obj = q2.e[(int) j];
-        } else {
-            throw new IndexOutOfBoundsException(Long.toString(j));
-        }
-        consumer.s(obj);
-        return a;
-    }
-
-    @Override // j$.util.Spliterator
-    public final void forEachRemaining(Consumer consumer) {
-        if (this.h == null && !this.i) {
-            Objects.requireNonNull(consumer);
-            c();
-            Objects.requireNonNull(consumer);
-            v3 v3Var = new v3(consumer, 1);
-            this.b.Q(this.d, v3Var);
-            this.i = true;
-            return;
-        }
-        while (tryAdvance(consumer)) {
+    @Override // j$.util.stream.t3
+    public final o4 D0() {
+        switch (this.h) {
+            case 0:
+                return new n4((LongBinaryOperator) this.i);
+            case 1:
+                return new z3((DoubleBinaryOperator) this.i);
+            case 2:
+                return new e4((BinaryOperator) this.i);
+            default:
+                return new k4((IntBinaryOperator) this.i);
         }
     }
 }

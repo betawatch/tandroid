@@ -1,42 +1,38 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+
 /* loaded from: classes2.dex */
-public final class l2 extends b2 {
-    public long b;
-    public long c;
-    public final /* synthetic */ m2 d;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l2(m2 m2Var, g2 g2Var) {
-        super(g2Var);
-        this.d = m2Var;
-        this.b = m2Var.m;
-        long j = m2Var.n;
-        this.c = j < 0 ? Long.MAX_VALUE : j;
+public final class l2 extends o2 implements y1 {
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
+        return t3.S(this, j10, j11);
     }
 
-    @Override // j$.util.stream.b2, j$.util.stream.g2
-    public final void y(long j) {
-        this.a.y(r1.x(j, this.d.m, this.c));
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ void forEach(Consumer consumer) {
+        t3.P(this, consumer);
     }
 
-    @Override // j$.util.stream.f2, j$.util.stream.g2
-    public final void accept(long j) {
-        long j2 = this.b;
-        if (j2 == 0) {
-            long j3 = this.c;
-            if (j3 > 0) {
-                this.c = j3 - 1;
-                this.a.accept(j);
-                return;
-            }
-            return;
-        }
-        this.b = j2 - 1;
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ void f(Object[] objArr, int i10) {
+        t3.M(this, (Double[]) objArr, i10);
     }
 
-    @Override // j$.util.stream.b2, j$.util.stream.g2
-    public final boolean C() {
-        return this.c == 0 || this.a.C();
+    @Override // j$.util.stream.d2
+    public final Object newArray(int i10) {
+        return new double[i10];
+    }
+
+    @Override // j$.util.stream.e2
+    public final Spliterator spliterator() {
+        return new c3(this);
+    }
+
+    @Override // j$.util.stream.e2
+    public final j$.util.d1 spliterator() {
+        return new c3(this);
     }
 }

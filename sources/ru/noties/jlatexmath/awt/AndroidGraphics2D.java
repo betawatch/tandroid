@@ -10,7 +10,8 @@ import ru.noties.jlatexmath.awt.geom.Line2D;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 import ru.noties.jlatexmath.awt.geom.RoundRectangle2D;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class AndroidGraphics2D implements Graphics2D {
     private Canvas canvas;
     private Color color;
@@ -19,6 +20,74 @@ public class AndroidGraphics2D implements Graphics2D {
     private final RectF rectF = new RectF();
     private Stroke stroke;
     private AffineTransform transform;
+
+    public AndroidGraphics2D() {
+        Paint paint = new Paint(1);
+        this.paint = paint;
+        paint.setStrokeCap(Paint.Cap.BUTT);
+        paint.setStrokeJoin(Paint.Join.MITER);
+    }
+
+    @Override // ru.noties.jlatexmath.awt.Graphics2D
+    public void draw(Rectangle2D.Float r92) {
+        this.paint.setStyle(Paint.Style.STROKE);
+        Canvas canvas = this.canvas;
+        float f10 = r92.x;
+        float f11 = r92.y;
+        canvas.drawRect(f10, f11, f10 + r92.w, f11 + r92.h, this.paint);
+    }
+
+    @Override // ru.noties.jlatexmath.awt.Graphics2D
+    public void drawArc(int i10, int i11, int i12, int i13, int i14, int i15) {
+        this.paint.setStyle(Paint.Style.STROKE);
+        this.rectF.set(i10, i11, i10 + i12, i11 + i13);
+        this.canvas.drawArc(this.rectF, i14, i15, false, this.paint);
+    }
+
+    @Override // ru.noties.jlatexmath.awt.Graphics2D
+    public void drawChars(char[] cArr, int i10, int i11, int i12, int i13) {
+        Font font = this.font;
+        if (font != null) {
+            this.paint.setTypeface(font.typeface());
+            this.paint.setTextSize(this.font.size());
+        }
+        this.canvas.drawText(cArr, i10, i11, i12, i13, this.paint);
+    }
+
+    @Override // ru.noties.jlatexmath.awt.Graphics2D
+    public void fill(Rectangle2D.Float r92) {
+        this.paint.setStyle(Paint.Style.FILL);
+        Canvas canvas = this.canvas;
+        float f10 = r92.x;
+        float f11 = r92.y;
+        canvas.drawRect(f10, f11, f10 + r92.w, f11 + r92.h, this.paint);
+    }
+
+    @Override // ru.noties.jlatexmath.awt.Graphics2D
+    public void fillArc(int i10, int i11, int i12, int i13, int i14, int i15) {
+        this.paint.setStyle(Paint.Style.FILL);
+        this.rectF.set(i10, i11, i10 + i12, i11 + i13);
+        this.canvas.drawArc(this.rectF, i14, i15, false, this.paint);
+    }
+
+    @Override // ru.noties.jlatexmath.awt.Graphics2D
+    public void fillRect(int i10, int i11, int i12, int i13) {
+        this.paint.setStyle(Paint.Style.FILL);
+        this.canvas.drawRect(i10, i11, i10 + i12, i11 + i13, this.paint);
+    }
+
+    @Override // ru.noties.jlatexmath.awt.Graphics2D
+    public Color getColor() {
+        if (this.color == null) {
+            this.color = new Color(this.paint.getColor());
+        }
+        return this.color;
+    }
+
+    @Override // ru.noties.jlatexmath.awt.Graphics2D
+    public Font getFont() {
+        return this.font;
+    }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
     public FontRenderContext getFontRenderContext() {
@@ -31,31 +100,33 @@ public class AndroidGraphics2D implements Graphics2D {
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void setRenderingHint(RenderingHints.Key key, Object obj) {
+    public Stroke getStroke() {
+        if (this.stroke == null) {
+            this.stroke = new BasicStroke(this.paint.getStrokeWidth(), 0, 0, this.paint.getStrokeMiter());
+        }
+        return this.stroke;
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void setRenderingHints(RenderingHints renderingHints) {
+    public AffineTransform getTransform() {
+        AffineTransform save = this.transform.save();
+        this.transform = save;
+        return save;
     }
 
-    public AndroidGraphics2D() {
-        Paint paint = new Paint(1);
-        this.paint = paint;
-        paint.setStrokeCap(Paint.Cap.BUTT);
-        paint.setStrokeJoin(Paint.Join.MITER);
+    @Override // ru.noties.jlatexmath.awt.Graphics2D
+    public void rotate(double d) {
+        this.canvas.rotate((float) Math.toDegrees(d));
+    }
+
+    @Override // ru.noties.jlatexmath.awt.Graphics2D
+    public void scale(double d, double d10) {
+        this.transform.scale(d, d10);
     }
 
     public void setCanvas(Canvas canvas) {
         this.canvas = canvas;
         this.transform = AffineTransform.create(canvas);
-    }
-
-    @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public Color getColor() {
-        if (this.color == null) {
-            this.color = new Color(this.paint.getColor());
-        }
-        return this.color;
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
@@ -65,33 +136,14 @@ public class AndroidGraphics2D implements Graphics2D {
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void fill(Rectangle2D.Float r9) {
-        this.paint.setStyle(Paint.Style.FILL);
-        Canvas canvas = this.canvas;
-        float f = r9.x;
-        float f2 = r9.y;
-        canvas.drawRect(f, f2, f + r9.w, f2 + r9.h, this.paint);
-    }
-
-    @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public Stroke getStroke() {
-        if (this.stroke == null) {
-            this.stroke = new BasicStroke(this.paint.getStrokeWidth(), 0, 0, this.paint.getStrokeMiter());
-        }
-        return this.stroke;
+    public void setFont(Font font) {
+        this.font = font;
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
     public void setStroke(Stroke stroke) {
         this.stroke = stroke;
         this.paint.setStrokeWidth(stroke.width());
-    }
-
-    @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public AffineTransform getTransform() {
-        AffineTransform save = this.transform.save();
-        this.transform = save;
-        return save;
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
@@ -103,87 +155,36 @@ public class AndroidGraphics2D implements Graphics2D {
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void draw(Rectangle2D.Float r9) {
+    public void translate(double d, double d10) {
+        this.transform.translate((float) d, (float) d10);
+    }
+
+    @Override // ru.noties.jlatexmath.awt.Graphics2D
+    public void rotate(double d, double d10, double d11) {
+        this.canvas.rotate((float) Math.toDegrees(d), (float) d10, (float) d11);
+    }
+
+    @Override // ru.noties.jlatexmath.awt.Graphics2D
+    public void draw(Line2D.Float r92) {
         this.paint.setStyle(Paint.Style.STROKE);
-        Canvas canvas = this.canvas;
-        float f = r9.x;
-        float f2 = r9.y;
-        canvas.drawRect(f, f2, f + r9.w, f2 + r9.h, this.paint);
+        this.canvas.drawLine((float) r92.x1, (float) r92.y1, (float) r92.x2, (float) r92.y2, this.paint);
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void translate(double d, double d2) {
-        this.transform.translate((float) d, (float) d2);
-    }
-
-    @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void scale(double d, double d2) {
-        this.transform.scale(d, d2);
-    }
-
-    @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public Font getFont() {
-        return this.font;
-    }
-
-    @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void setFont(Font font) {
-        this.font = font;
-    }
-
-    @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void drawChars(char[] cArr, int i, int i2, int i3, int i4) {
-        Font font = this.font;
-        if (font != null) {
-            this.paint.setTypeface(font.typeface());
-            this.paint.setTextSize(this.font.size());
-        }
-        this.canvas.drawText(cArr, i, i2, i3, i4, this.paint);
-    }
-
-    @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void draw(Line2D.Float r9) {
-        this.paint.setStyle(Paint.Style.STROKE);
-        this.canvas.drawLine((float) r9.x1, (float) r9.y1, (float) r9.x2, (float) r9.y2, this.paint);
-    }
-
-    @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void rotate(double d) {
-        this.canvas.rotate((float) Math.toDegrees(d));
-    }
-
-    @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void rotate(double d, double d2, double d3) {
-        this.canvas.rotate((float) Math.toDegrees(d), (float) d2, (float) d3);
-    }
-
-    @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void drawArc(int i, int i2, int i3, int i4, int i5, int i6) {
-        this.paint.setStyle(Paint.Style.STROKE);
-        this.rectF.set(i, i2, i + i3, i2 + i4);
-        this.canvas.drawArc(this.rectF, i5, i6, false, this.paint);
-    }
-
-    @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void fillArc(int i, int i2, int i3, int i4, int i5, int i6) {
-        this.paint.setStyle(Paint.Style.FILL);
-        this.rectF.set(i, i2, i + i3, i2 + i4);
-        this.canvas.drawArc(this.rectF, i5, i6, false, this.paint);
-    }
-
-    @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void draw(RoundRectangle2D.Float r6) {
+    public void draw(RoundRectangle2D.Float r62) {
         this.paint.setStyle(Paint.Style.STROKE);
         RectF rectF = this.rectF;
-        float f = r6.x;
-        float f2 = r6.y;
-        rectF.set(f, f2, r6.width + f, r6.height + f2);
-        this.canvas.drawRoundRect(this.rectF, r6.arcwidth, r6.archeight, this.paint);
+        float f10 = r62.x;
+        float f11 = r62.y;
+        rectF.set(f10, f11, r62.width + f10, r62.height + f11);
+        this.canvas.drawRoundRect(this.rectF, r62.arcwidth, r62.archeight, this.paint);
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void fillRect(int i, int i2, int i3, int i4) {
-        this.paint.setStyle(Paint.Style.FILL);
-        this.canvas.drawRect(i, i2, i + i3, i2 + i4, this.paint);
+    public void setRenderingHints(RenderingHints renderingHints) {
+    }
+
+    @Override // ru.noties.jlatexmath.awt.Graphics2D
+    public void setRenderingHint(RenderingHints.Key key, Object obj) {
     }
 }

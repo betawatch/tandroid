@@ -3,11 +3,13 @@ package org.webrtc;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class MediaConstraints {
     public final List<KeyValuePair> mandatory = new ArrayList();
     public final List<KeyValuePair> optional = new ArrayList();
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class KeyValuePair {
         private final String key;
         private final String value;
@@ -15,18 +17,6 @@ public class MediaConstraints {
         public KeyValuePair(String str, String str2) {
             this.key = str;
             this.value = str2;
-        }
-
-        public String getKey() {
-            return this.key;
-        }
-
-        public String getValue() {
-            return this.value;
-        }
-
-        public String toString() {
-            return this.key + ": " + this.value;
         }
 
         public boolean equals(Object obj) {
@@ -42,32 +32,44 @@ public class MediaConstraints {
             return false;
         }
 
+        public String getKey() {
+            return this.key;
+        }
+
+        public String getValue() {
+            return this.value;
+        }
+
         public int hashCode() {
-            return this.key.hashCode() + this.value.hashCode();
+            return this.value.hashCode() + this.key.hashCode();
+        }
+
+        public String toString() {
+            return this.key + ": " + this.value;
         }
     }
 
     private static String stringifyKeyValuePairList(List<KeyValuePair> list) {
-        StringBuilder sb = new StringBuilder("[");
+        StringBuilder sb2 = new StringBuilder("[");
         for (KeyValuePair keyValuePair : list) {
-            if (sb.length() > 1) {
-                sb.append(", ");
+            if (sb2.length() > 1) {
+                sb2.append(", ");
             }
-            sb.append(keyValuePair.toString());
+            sb2.append(keyValuePair.toString());
         }
-        sb.append("]");
-        return sb.toString();
+        sb2.append("]");
+        return sb2.toString();
+    }
+
+    public List<KeyValuePair> getMandatory() {
+        return this.mandatory;
+    }
+
+    public List<KeyValuePair> getOptional() {
+        return this.optional;
     }
 
     public String toString() {
         return "mandatory: " + stringifyKeyValuePairList(this.mandatory) + ", optional: " + stringifyKeyValuePairList(this.optional);
-    }
-
-    List<KeyValuePair> getMandatory() {
-        return this.mandatory;
-    }
-
-    List<KeyValuePair> getOptional() {
-        return this.optional;
     }
 }

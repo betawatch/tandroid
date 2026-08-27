@@ -1,94 +1,73 @@
 package j$.util.stream;
 
-import j$.util.Objects;
-import j$.util.Spliterator;
-import j$.util.function.Consumer$-CC;
-import java.util.Comparator;
-import java.util.function.Consumer;
+import java.util.concurrent.CountedCompleter;
 
 /* loaded from: classes2.dex */
-public final class s3 extends u3 implements Spliterator, Consumer {
-    public Object f;
+public class s3 extends CountedCompleter {
+    public final e2 a;
+    public final int b;
+    public final /* synthetic */ int c;
+    public final Object d;
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    public s3(e2 e2Var, Object obj, int i10) {
+        this.c = i10;
+        this.a = e2Var;
+        this.b = 0;
+        this.d = obj;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.n(this);
+    public s3(s3 s3Var, e2 e2Var, int i10, byte b10) {
+        super(s3Var);
+        this.a = e2Var;
+        this.b = i10;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.com.android.tools.r8.a.p(this, i);
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
-    }
-
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void s(Object obj) {
-        this.f = obj;
-    }
-
-    @Override // j$.util.Spliterator
-    public final boolean tryAdvance(Consumer consumer) {
-        Objects.requireNonNull(consumer);
-        while (d() != t3.NO_MORE && this.a.tryAdvance(this)) {
-            if (b(1L) == 1) {
-                consumer.s(this.f);
-                this.f = null;
-                return true;
+    @Override // java.util.concurrent.CountedCompleter
+    public final void compute() {
+        s3 s3Var = this;
+        while (s3Var.a.h() != 0) {
+            s3Var.setPendingCount(s3Var.a.h() - 1);
+            int i10 = 0;
+            int i11 = 0;
+            while (i10 < s3Var.a.h() - 1) {
+                s3 a2 = s3Var.a(i10, s3Var.b + i11);
+                i11 = (int) (a2.a.count() + i11);
+                a2.fork();
+                i10++;
             }
+            s3Var = s3Var.a(i10, s3Var.b + i11);
         }
-        return false;
+        switch (s3Var.c) {
+            case 0:
+                ((d2) s3Var.a).c(s3Var.b, s3Var.d);
+                break;
+            default:
+                s3Var.a.f((Object[]) s3Var.d, s3Var.b);
+                break;
+        }
+        s3Var.propagateCompletion();
     }
 
-    @Override // j$.util.Spliterator
-    public final void forEachRemaining(Consumer consumer) {
-        Objects.requireNonNull(consumer);
-        Z2 z2 = null;
-        while (true) {
-            t3 d = d();
-            if (d == t3.NO_MORE) {
-                return;
-            }
-            t3 t3Var = t3.MAYBE_MORE;
-            Spliterator spliterator = this.a;
-            if (d == t3Var) {
-                int i = this.c;
-                if (z2 == null) {
-                    z2 = new Z2(i);
-                } else {
-                    z2.a = 0;
-                }
-                long j = 0;
-                while (spliterator.tryAdvance(z2)) {
-                    j++;
-                    if (j >= i) {
-                        break;
-                    }
-                }
-                if (j == 0) {
-                    return;
-                }
-                long b = b(j);
-                for (int i2 = 0; i2 < b; i2++) {
-                    consumer.s(z2.b[i2]);
-                }
-            } else {
-                spliterator.forEachRemaining(consumer);
-                return;
-            }
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public s3(s3 s3Var, e2 e2Var, int i10) {
+        this(s3Var, e2Var, i10, (byte) 0);
+        this.c = 1;
+        this.d = (Object[]) s3Var.d;
+    }
+
+    public final s3 a(int i10, int i11) {
+        switch (this.c) {
+            case 0:
+                return new s3(this, ((d2) this.a).a(i10), i11);
+            default:
+                return new s3(this, this.a.a(i10), i11);
         }
     }
 
-    @Override // j$.util.stream.u3
-    public final Spliterator c(Spliterator spliterator) {
-        return new s3(spliterator, this);
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public s3(s3 s3Var, d2 d2Var, int i10) {
+        this(s3Var, d2Var, i10, (byte) 0);
+        this.c = 0;
+        this.d = s3Var.d;
     }
 }

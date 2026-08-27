@@ -2,12 +2,13 @@ package org.telegram.messenger;
 
 import android.content.SharedPreferences;
 import android.os.Build;
-import com.android.billingclient.api.ProductDetails;
 import j$.util.Objects;
 import java.lang.Thread;
+import java.util.ArrayList;
 import java.util.Iterator;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class BuildVars {
     public static String APP_HASH = null;
     public static int APP_ID = 0;
@@ -28,7 +29,7 @@ public class BuildVars {
     private static Boolean betaApp;
 
     static {
-        boolean z = true;
+        boolean z10 = true;
         NO_SCOPED_STORAGE = Build.VERSION.SDK_INT <= 29;
         BUILD_VERSION_STRING = BuildConfig.BUILD_VERSION_STRING;
         APP_ID = 4;
@@ -42,47 +43,46 @@ public class BuildVars {
         SUPPORTS_PASSKEYS = true;
         if (ApplicationLoader.applicationContext != null) {
             SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", 0);
-            boolean z2 = DEBUG_VERSION;
-            if (!z2 && !sharedPreferences.getBoolean("logsEnabled", z2)) {
-                z = false;
+            boolean z11 = DEBUG_VERSION;
+            if (!z11 && !sharedPreferences.getBoolean("logsEnabled", z11)) {
+                z10 = false;
             }
-            LOGS_ENABLED = z;
-            if (z) {
+            LOGS_ENABLED = z10;
+            if (z10) {
                 final Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
-                Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() { // from class: org.telegram.messenger.BuildVars$$ExternalSyntheticLambda0
+                Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() { // from class: org.telegram.messenger.n0
                     @Override // java.lang.Thread.UncaughtExceptionHandler
                     public final void uncaughtException(Thread thread, Throwable th) {
-                        BuildVars.$r8$lambda$8fLp805Q7pNFu8Bc11LDPpNHh7A(defaultUncaughtExceptionHandler, thread, th);
+                        BuildVars.lambda$static$0(defaultUncaughtExceptionHandler, thread, th);
                     }
                 });
             }
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$8fLp805Q7pNFu8Bc11LDPpNHh7A(Thread.UncaughtExceptionHandler uncaughtExceptionHandler, Thread thread, Throwable th) {
-        FileLog.fatal(th, false);
-        if (uncaughtExceptionHandler != null) {
-            uncaughtExceptionHandler.uncaughtException(thread, th);
-        }
-    }
-
-    public static boolean useInvoiceBilling() {
-        if (BillingController.billingClientEmpty || ApplicationLoader.isStandaloneBuild()) {
-            return true;
-        }
-        isBetaApp();
-        return isHuaweiStoreApp() || hasDirectCurrency();
+    public static String getSmsHash() {
+        return ApplicationLoader.isStandaloneBuild() ? "w0lkcmTZkKh" : DEBUG_VERSION ? "O2P2z+/jBpJ" : "oLeq9AcOZkT";
     }
 
     private static boolean hasDirectCurrency() {
-        ProductDetails productDetails;
-        if (BillingController.getInstance().isReady() && (productDetails = BillingController.PREMIUM_PRODUCT_DETAILS) != null) {
-            Iterator it = productDetails.getSubscriptionOfferDetails().iterator();
-            while (it.hasNext()) {
-                for (ProductDetails.PricingPhase pricingPhase : ((ProductDetails.SubscriptionOfferDetails) it.next()).getPricingPhases().getPricingPhaseList()) {
-                    Iterator<String> it2 = MessagesController.getInstance(UserConfig.selectedAccount).directPaymentsCurrency.iterator();
-                    while (it2.hasNext()) {
-                        if (Objects.equals(pricingPhase.getPriceCurrencyCode(), it2.next())) {
+        n2.l lVar;
+        if (BillingController.getInstance().isReady() && (lVar = BillingController.PREMIUM_PRODUCT_DETAILS) != null) {
+            ArrayList arrayList = lVar.h;
+            int size = arrayList.size();
+            int i10 = 0;
+            while (i10 < size) {
+                Object obj = arrayList.get(i10);
+                i10++;
+                ArrayList arrayList2 = ((n2.k) obj).b.a;
+                int size2 = arrayList2.size();
+                int i11 = 0;
+                while (i11 < size2) {
+                    Object obj2 = arrayList2.get(i11);
+                    i11++;
+                    n2.j jVar = (n2.j) obj2;
+                    Iterator<String> it = MessagesController.getInstance(UserConfig.selectedAccount).directPaymentsCurrency.iterator();
+                    while (it.hasNext()) {
+                        if (Objects.equals(jVar.c, it.next())) {
                             return true;
                         }
                     }
@@ -103,7 +103,19 @@ public class BuildVars {
         return ApplicationLoader.isHuaweiStoreBuild();
     }
 
-    public static String getSmsHash() {
-        return ApplicationLoader.isStandaloneBuild() ? "w0lkcmTZkKh" : DEBUG_VERSION ? "O2P2z+/jBpJ" : "oLeq9AcOZkT";
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$static$0(Thread.UncaughtExceptionHandler uncaughtExceptionHandler, Thread thread, Throwable th) {
+        FileLog.fatal(th, false);
+        if (uncaughtExceptionHandler != null) {
+            uncaughtExceptionHandler.uncaughtException(thread, th);
+        }
+    }
+
+    public static boolean useInvoiceBilling() {
+        if (BillingController.billingClientEmpty || ApplicationLoader.isStandaloneBuild()) {
+            return true;
+        }
+        isBetaApp();
+        return isHuaweiStoreApp() || hasDirectCurrency();
     }
 }

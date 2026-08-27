@@ -7,28 +7,43 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import androidx.core.util.Consumer;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public interface IMapsProvider {
     public static final int MAP_TYPE_HYBRID = 2;
     public static final int MAP_TYPE_NORMAL = 0;
     public static final int MAP_TYPE_SATELLITE = 1;
 
-    public interface ICallableMethod<R, A> {
-        R call(A a);
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static final class CameraPosition {
+        public final LatLng target;
+        public final float zoom;
+
+        public CameraPosition(LatLng latLng, float f10) {
+            this.target = latLng;
+            this.zoom = f10;
+        }
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public interface ICallableMethod<R, A> {
+        R call(A a2);
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface ICameraUpdate {
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface ICancelableCallback {
         void onCancel();
 
         void onFinish();
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface ICircle {
         double getRadius();
 
@@ -36,37 +51,41 @@ public interface IMapsProvider {
 
         void setCenter(LatLng latLng);
 
-        void setFillColor(int i);
+        void setFillColor(int i10);
 
         void setRadius(double d);
 
-        void setStrokeColor(int i);
+        void setStrokeColor(int i10);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface ICircleOptions {
         ICircleOptions center(LatLng latLng);
 
-        ICircleOptions fillColor(int i);
+        ICircleOptions fillColor(int i10);
 
         ICircleOptions radius(double d);
 
-        ICircleOptions strokeColor(int i);
+        ICircleOptions strokeColor(int i10);
 
         ICircleOptions strokePattern(List<PatternItem> list);
 
-        ICircleOptions strokeWidth(int i);
+        ICircleOptions strokeWidth(int i10);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface ILatLngBounds {
         LatLng getCenter();
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface ILatLngBoundsBuilder {
         ILatLngBounds build();
 
         ILatLngBoundsBuilder include(LatLng latLng);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface IMap {
         ICircle addCircle(ICircleOptions iCircleOptions);
 
@@ -74,7 +93,7 @@ public interface IMapsProvider {
 
         void animateCamera(ICameraUpdate iCameraUpdate);
 
-        void animateCamera(ICameraUpdate iCameraUpdate, int i, ICancelableCallback iCancelableCallback);
+        void animateCamera(ICameraUpdate iCameraUpdate, int i10, ICancelableCallback iCancelableCallback);
 
         void animateCamera(ICameraUpdate iCameraUpdate, ICancelableCallback iCancelableCallback);
 
@@ -92,9 +111,9 @@ public interface IMapsProvider {
 
         void setMapStyle(IMapStyleOptions iMapStyleOptions);
 
-        void setMapType(int i);
+        void setMapType(int i10);
 
-        void setMyLocationEnabled(boolean z);
+        void setMyLocationEnabled(boolean z10);
 
         void setOnCameraIdleListener(Runnable runnable);
 
@@ -106,25 +125,20 @@ public interface IMapsProvider {
 
         void setOnMarkerClickListener(OnMarkerClickListener onMarkerClickListener);
 
-        void setOnMyLocationChangeListener(Consumer consumer);
+        void setOnMyLocationChangeListener(q0.a aVar);
 
-        void setPadding(int i, int i2, int i3, int i4);
+        void setPadding(int i10, int i11, int i12, int i13);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface IMapStyleOptions {
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface IMapView {
-
-        public abstract /* synthetic */ class -CC {
-            public static GLSurfaceView $default$getGlSurfaceView(IMapView iMapView) {
-                return null;
-            }
-        }
-
         GLSurfaceView getGlSurfaceView();
 
-        void getMapAsync(Consumer consumer);
+        void getMapAsync(q0.a aVar);
 
         View getView();
 
@@ -145,6 +159,7 @@ public interface IMapsProvider {
         void setOnLayoutListener(Runnable runnable);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface IMarker {
         LatLng getPosition();
 
@@ -152,23 +167,24 @@ public interface IMapsProvider {
 
         void remove();
 
-        void setIcon(int i);
+        void setIcon(int i10);
 
         void setIcon(Bitmap bitmap);
 
         void setPosition(LatLng latLng);
 
-        void setRotation(int i);
+        void setRotation(int i10);
 
         void setTag(Object obj);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface IMarkerOptions {
-        IMarkerOptions anchor(float f, float f2);
+        IMarkerOptions anchor(float f10, float f11);
 
-        IMarkerOptions flat(boolean z);
+        IMarkerOptions flat(boolean z10);
 
-        IMarkerOptions icon(int i);
+        IMarkerOptions icon(int i10);
 
         IMarkerOptions icon(Bitmap bitmap);
 
@@ -179,32 +195,70 @@ public interface IMapsProvider {
         IMarkerOptions title(String str);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface IProjection {
         Point toScreenLocation(LatLng latLng);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface ITouchInterceptor {
         boolean onInterceptTouchEvent(MotionEvent motionEvent, ICallableMethod<Boolean, MotionEvent> iCallableMethod);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface IUISettings {
-        void setCompassEnabled(boolean z);
+        void setCompassEnabled(boolean z10);
 
-        void setMyLocationButtonEnabled(boolean z);
+        void setMyLocationButtonEnabled(boolean z10);
 
-        void setZoomControlsEnabled(boolean z);
+        void setZoomControlsEnabled(boolean z10);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static final class LatLng {
+        public final double latitude;
+        public final double longitude;
+
+        public LatLng(double d, double d10) {
+            this.latitude = d;
+            this.longitude = d10;
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface OnCameraMoveStartedListener {
         public static final int REASON_API_ANIMATION = 2;
         public static final int REASON_DEVELOPER_ANIMATION = 3;
         public static final int REASON_GESTURE = 1;
 
-        void onCameraMoveStarted(int i);
+        void onCameraMoveStarted(int i10);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface OnMarkerClickListener {
         boolean onClick(IMarker iMarker);
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class PatternItem {
+
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static final class Dash extends PatternItem {
+            public final int length;
+
+            public Dash(int i10) {
+                this.length = i10;
+            }
+        }
+
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static final class Gap extends PatternItem {
+            public final int length;
+
+            public Gap(int i10) {
+                this.length = i10;
+            }
+        }
     }
 
     int getInstallMapsString();
@@ -213,13 +267,13 @@ public interface IMapsProvider {
 
     void initializeMaps(Context context);
 
-    IMapStyleOptions loadRawResourceStyle(Context context, int i);
+    IMapStyleOptions loadRawResourceStyle(Context context, int i10);
 
     ICameraUpdate newCameraUpdateLatLng(LatLng latLng);
 
-    ICameraUpdate newCameraUpdateLatLngBounds(ILatLngBounds iLatLngBounds, int i);
+    ICameraUpdate newCameraUpdateLatLngBounds(ILatLngBounds iLatLngBounds, int i10);
 
-    ICameraUpdate newCameraUpdateLatLngZoom(LatLng latLng, float f);
+    ICameraUpdate newCameraUpdateLatLngZoom(LatLng latLng, float f10);
 
     ICircleOptions onCreateCircleOptions();
 
@@ -228,43 +282,4 @@ public interface IMapsProvider {
     IMapView onCreateMapView(Context context);
 
     IMarkerOptions onCreateMarkerOptions();
-
-    public static class PatternItem {
-
-        public static final class Gap extends PatternItem {
-            public final int length;
-
-            public Gap(int i) {
-                this.length = i;
-            }
-        }
-
-        public static final class Dash extends PatternItem {
-            public final int length;
-
-            public Dash(int i) {
-                this.length = i;
-            }
-        }
-    }
-
-    public static final class CameraPosition {
-        public final LatLng target;
-        public final float zoom;
-
-        public CameraPosition(LatLng latLng, float f) {
-            this.target = latLng;
-            this.zoom = f;
-        }
-    }
-
-    public static final class LatLng {
-        public final double latitude;
-        public final double longitude;
-
-        public LatLng(double d, double d2) {
-            this.latitude = d;
-            this.longitude = d2;
-        }
-    }
 }

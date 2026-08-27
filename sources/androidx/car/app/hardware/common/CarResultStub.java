@@ -1,100 +1,86 @@
 package androidx.car.app.hardware.common;
 
 import android.os.IBinder;
-import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.hardware.ICarHardwareResult;
-import androidx.car.app.serialization.Bundleable;
-import androidx.car.app.utils.RemoteUtils;
+import androidx.car.app.utils.i;
+import b5.d;
 import j$.util.Objects;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
+import org.telegram.ui.zh1;
+import r.a;
+import r.c;
+import w.b;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
-    private final Bundleable mBundle;
-    private final CarHardwareHostDispatcher mHostDispatcher;
+    private final b mBundle;
+    private final a mHostDispatcher;
     private final boolean mIsSingleShot;
-    private final Map<OnCarDataAvailableListener, Executor> mListeners = new HashMap();
+    private final Map<c, Executor> mListeners = new HashMap();
     private final int mResultType;
     private final T mUnsupportedValue;
 
-    public CarResultStub(int i, Bundleable bundleable, boolean z, T t, CarHardwareHostDispatcher carHardwareHostDispatcher) {
-        Objects.requireNonNull(carHardwareHostDispatcher);
-        this.mHostDispatcher = carHardwareHostDispatcher;
-        this.mResultType = i;
-        this.mBundle = bundleable;
-        this.mIsSingleShot = z;
-        Objects.requireNonNull(t);
-        this.mUnsupportedValue = t;
+    public CarResultStub(int i10, b bVar, boolean z10, T t10, a aVar) {
+        Objects.requireNonNull(aVar);
+        this.mHostDispatcher = aVar;
+        this.mResultType = i10;
+        this.mBundle = bVar;
+        this.mIsSingleShot = z10;
+        Objects.requireNonNull(t10);
+        this.mUnsupportedValue = t10;
     }
 
-    public void addListener(Executor executor, OnCarDataAvailableListener onCarDataAvailableListener) {
-        boolean isEmpty = this.mListeners.isEmpty();
-        Map<OnCarDataAvailableListener, Executor> map = this.mListeners;
-        Objects.requireNonNull(onCarDataAvailableListener);
-        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(onCarDataAvailableListener);
-        map.put(null, executor);
-        if (isEmpty) {
-            if (this.mIsSingleShot) {
-                this.mHostDispatcher.dispatchGetCarHardwareResult(this.mResultType, this.mBundle, this);
-            } else {
-                this.mHostDispatcher.dispatchSubscribeCarHardwareResult(this.mResultType, this.mBundle, this);
-            }
-        }
+    private T convertAndRecast(b bVar) {
+        return (T) bVar.a();
     }
 
-    public boolean removeListener(OnCarDataAvailableListener onCarDataAvailableListener) {
-        Map<OnCarDataAvailableListener, Executor> map = this.mListeners;
-        Objects.requireNonNull(onCarDataAvailableListener);
-        map.remove(onCarDataAvailableListener);
-        if (!this.mListeners.isEmpty()) {
-            return false;
-        }
-        if (this.mIsSingleShot) {
-            return true;
-        }
-        this.mHostDispatcher.dispatchUnsubscribeCarHardwareResult(this.mResultType, this.mBundle);
-        return true;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$notifyResults$1(Map.Entry entry, Object obj) {
+        entry.getKey().getClass();
+        throw new ClassCastException();
     }
 
-    @Override // androidx.car.app.hardware.ICarHardwareResult
-    public void onCarHardwareResult(int i, final boolean z, final Bundleable bundleable, IBinder iBinder) {
-        RemoteUtils.dispatchCallFromHost(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new RemoteUtils.HostCall() { // from class: androidx.car.app.hardware.common.CarResultStub$$ExternalSyntheticLambda1
-            @Override // androidx.car.app.utils.RemoteUtils.HostCall
-            public final Object dispatch() {
-                return CarResultStub.$r8$lambda$pqrm3pBqWmiTYzPQnBV2xWWZWww(CarResultStub.this, z, bundleable);
-            }
-        });
-    }
-
-    public static /* synthetic */ Object $r8$lambda$pqrm3pBqWmiTYzPQnBV2xWWZWww(CarResultStub carResultStub, boolean z, Bundleable bundleable) {
-        carResultStub.notifyResults(z, bundleable);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Object lambda$onCarHardwareResult$0(boolean z10, b bVar) {
+        notifyResults(z10, bVar);
         return null;
     }
 
-    private void notifyResults(boolean z, Bundleable bundleable) {
-        final T convertAndRecast = z ? convertAndRecast(bundleable) : this.mUnsupportedValue;
-        for (final Map.Entry<OnCarDataAvailableListener, Executor> entry : this.mListeners.entrySet()) {
-            entry.getValue().execute(new Runnable() { // from class: androidx.car.app.hardware.common.CarResultStub$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    CarResultStub.$r8$lambda$vYNy658eO7HEYi1xIs0Tfw1Qm5E(entry, convertAndRecast);
-                }
-            });
+    private void notifyResults(boolean z10, b bVar) {
+        T convertAndRecast = z10 ? convertAndRecast(bVar) : this.mUnsupportedValue;
+        for (Map.Entry<c, Executor> entry : this.mListeners.entrySet()) {
+            entry.getValue().execute(new zh1(25, entry, convertAndRecast));
         }
         if (this.mIsSingleShot) {
             this.mListeners.clear();
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$vYNy658eO7HEYi1xIs0Tfw1Qm5E(Map.Entry entry, Object obj) {
-        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
-        throw null;
+    public void addListener(Executor executor, c cVar) {
+        this.mListeners.isEmpty();
+        Objects.requireNonNull(cVar);
+        throw new ClassCastException();
     }
 
-    private T convertAndRecast(Bundleable bundleable) {
-        return (T) bundleable.get();
+    @Override // androidx.car.app.hardware.ICarHardwareResult
+    public void onCarHardwareResult(int i10, boolean z10, b bVar, IBinder iBinder) {
+        i.b(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new d(this, z10, bVar, 12));
+    }
+
+    public boolean removeListener(c cVar) {
+        Map<c, Executor> map = this.mListeners;
+        Objects.requireNonNull(cVar);
+        map.remove(cVar);
+        if (!this.mListeners.isEmpty()) {
+            return false;
+        }
+        if (this.mIsSingleShot) {
+            return true;
+        }
+        throw null;
     }
 }

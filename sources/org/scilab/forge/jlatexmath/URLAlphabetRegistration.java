@@ -4,7 +4,8 @@ import java.lang.Character;
 import java.net.URL;
 import java.net.URLClassLoader;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class URLAlphabetRegistration implements AlphabetRegistration {
     private Character.UnicodeBlock[] blocks;
     private String language;
@@ -22,35 +23,34 @@ public class URLAlphabetRegistration implements AlphabetRegistration {
     }
 
     @Override // org.scilab.forge.jlatexmath.AlphabetRegistration
-    public Character.UnicodeBlock[] getUnicodeBlock() {
-        return this.blocks;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.AlphabetRegistration
     public Object getPackage() {
         URL[] urlArr = {this.url};
         this.language = this.language.toLowerCase();
-        StringBuilder sb = new StringBuilder();
-        sb.append("org.scilab.forge.jlatexmath.");
-        sb.append(this.language);
-        sb.append(".");
-        sb.append(Character.toString(Character.toUpperCase(this.language.charAt(0))));
+        StringBuilder sb2 = new StringBuilder("org.scilab.forge.jlatexmath.");
+        sb2.append(this.language);
+        sb2.append(".");
+        sb2.append(Character.toString(Character.toUpperCase(this.language.charAt(0))));
         String str = this.language;
-        sb.append(str.substring(1, str.length()));
-        sb.append("Registration");
+        sb2.append(str.substring(1, str.length()));
+        sb2.append("Registration");
         try {
-            AlphabetRegistration alphabetRegistration = (AlphabetRegistration) Class.forName(sb.toString(), true, new URLClassLoader(urlArr)).newInstance();
+            AlphabetRegistration alphabetRegistration = (AlphabetRegistration) Class.forName(sb2.toString(), true, new URLClassLoader(urlArr)).newInstance();
             this.pack = alphabetRegistration;
             return alphabetRegistration;
         } catch (ClassNotFoundException unused) {
             throw new AlphabetRegistrationException("Class at " + this.url + " cannot be got.");
-        } catch (Exception e) {
-            throw new AlphabetRegistrationException("Problem in loading the class at " + this.url + " :\n" + e.getMessage());
+        } catch (Exception e9) {
+            throw new AlphabetRegistrationException("Problem in loading the class at " + this.url + " :\n" + e9.getMessage());
         }
     }
 
     @Override // org.scilab.forge.jlatexmath.AlphabetRegistration
     public String getTeXFontFileName() {
         return this.pack.getTeXFontFileName();
+    }
+
+    @Override // org.scilab.forge.jlatexmath.AlphabetRegistration
+    public Character.UnicodeBlock[] getUnicodeBlock() {
+        return this.blocks;
     }
 }

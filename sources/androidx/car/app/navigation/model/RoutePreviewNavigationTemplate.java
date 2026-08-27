@@ -5,11 +5,12 @@ import androidx.car.app.model.ActionStrip;
 import androidx.car.app.model.CarText;
 import androidx.car.app.model.Header;
 import androidx.car.app.model.ItemList;
-import androidx.car.app.model.Template;
+import androidx.car.app.model.x0;
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class RoutePreviewNavigationTemplate implements Template {
+public final class RoutePreviewNavigationTemplate implements x0 {
     private final ActionStrip mActionStrip;
     private final Header mHeader;
 
@@ -19,58 +20,13 @@ public final class RoutePreviewNavigationTemplate implements Template {
     private final ItemList mItemList;
     private final ActionStrip mMapActionStrip;
     private final Action mNavigateAction;
-    private final PanModeDelegate mPanModeDelegate;
+    private final g mPanModeDelegate;
 
     @Deprecated
     private final CarText mTitle;
 
-    public static final class Builder {
-    }
-
-    @Deprecated
-    public CarText getTitle() {
-        return this.mTitle;
-    }
-
-    public Header getHeader() {
-        return this.mHeader;
-    }
-
-    @Deprecated
-    public Action getHeaderAction() {
-        return this.mHeaderAction;
-    }
-
-    public ActionStrip getActionStrip() {
-        return this.mActionStrip;
-    }
-
-    public ActionStrip getMapActionStrip() {
-        return this.mMapActionStrip;
-    }
-
-    public PanModeDelegate getPanModeDelegate() {
-        return this.mPanModeDelegate;
-    }
-
-    public boolean isLoading() {
-        return this.mIsLoading;
-    }
-
-    public Action getNavigateAction() {
-        return this.mNavigateAction;
-    }
-
-    public ItemList getItemList() {
-        return this.mItemList;
-    }
-
-    public String toString() {
-        return "RoutePreviewNavigationTemplate";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mTitle, Boolean.valueOf(this.mIsLoading), this.mNavigateAction, this.mItemList, this.mHeaderAction, this.mActionStrip, this.mMapActionStrip, Boolean.valueOf(this.mPanModeDelegate == null), this.mHeader);
+    public RoutePreviewNavigationTemplate(k kVar) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -89,8 +45,50 @@ public final class RoutePreviewNavigationTemplate implements Template {
         return false;
     }
 
-    RoutePreviewNavigationTemplate(Builder builder) {
-        throw null;
+    public ActionStrip getActionStrip() {
+        return this.mActionStrip;
+    }
+
+    public Header getHeader() {
+        return this.mHeader;
+    }
+
+    @Deprecated
+    public Action getHeaderAction() {
+        return this.mHeaderAction;
+    }
+
+    public ItemList getItemList() {
+        return this.mItemList;
+    }
+
+    public ActionStrip getMapActionStrip() {
+        return this.mMapActionStrip;
+    }
+
+    public Action getNavigateAction() {
+        return this.mNavigateAction;
+    }
+
+    public g getPanModeDelegate() {
+        return this.mPanModeDelegate;
+    }
+
+    @Deprecated
+    public CarText getTitle() {
+        return this.mTitle;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mTitle, Boolean.valueOf(this.mIsLoading), this.mNavigateAction, this.mItemList, this.mHeaderAction, this.mActionStrip, this.mMapActionStrip, Boolean.valueOf(this.mPanModeDelegate == null), this.mHeader);
+    }
+
+    public boolean isLoading() {
+        return this.mIsLoading;
+    }
+
+    public String toString() {
+        return "RoutePreviewNavigationTemplate";
     }
 
     private RoutePreviewNavigationTemplate() {

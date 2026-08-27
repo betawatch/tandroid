@@ -1,29 +1,32 @@
 package com.google.mlkit.vision.segmentation.subject.internal;
 
-import com.google.android.gms.internal.mlkit_vision_subject_segmentation.zzav;
-import com.google.firebase.components.Component;
-import com.google.firebase.components.ComponentContainer;
-import com.google.firebase.components.ComponentFactory;
 import com.google.firebase.components.ComponentRegistrar;
-import com.google.firebase.components.Dependency;
-import com.google.mlkit.common.sdkinternal.ExecutorSelector;
-import com.google.mlkit.common.sdkinternal.MlKitContext;
+import g7.v8;
 import java.util.List;
+import kb.c;
+import ug.b;
+import z8.a;
+import z8.i;
+import za.d;
+import za.g;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class SubjectSegmentationRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        return zzav.zzi(Component.builder(zze.class).add(Dependency.required(MlKitContext.class)).factory(new ComponentFactory() { // from class: com.google.mlkit.vision.segmentation.subject.internal.zza
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                return new zze((MlKitContext) componentContainer.get(MlKitContext.class));
-            }
-        }).build(), Component.builder(zzc.class).add(Dependency.required(zze.class)).add(Dependency.required(ExecutorSelector.class)).factory(new ComponentFactory() { // from class: com.google.mlkit.vision.segmentation.subject.internal.zzb
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                return new zzc((zze) componentContainer.get(zze.class), (ExecutorSelector) componentContainer.get(ExecutorSelector.class));
-            }
-        }).build());
+        b a2 = a.a(c.class);
+        a2.a(i.a(g.class));
+        a2.f = kb.a.b;
+        a b10 = a2.b();
+        b a3 = a.a(kb.b.class);
+        a3.a(i.a(c.class));
+        a3.a(i.a(d.class));
+        a3.f = kb.a.c;
+        a b11 = a3.b();
+        k7.g gVar = k7.i.b;
+        Object[] objArr = {b10, b11};
+        v8.a(2, objArr);
+        return k7.i.r(2, objArr);
     }
 }

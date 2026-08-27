@@ -4,13 +4,13 @@ import j$.time.LocalDate;
 
 /* loaded from: classes2.dex */
 public interface Temporal extends l {
-    Temporal e(long j, o oVar);
+    Temporal c(long j10, o oVar);
 
-    Temporal f(long j, q qVar);
+    Temporal d(long j10, q qVar);
 
     long g(Temporal temporal, q qVar);
 
-    Temporal l(long j, ChronoUnit chronoUnit);
+    Temporal k(LocalDate localDate);
 
-    Temporal p(LocalDate localDate);
+    Temporal w(long j10, ChronoUnit chronoUnit);
 }

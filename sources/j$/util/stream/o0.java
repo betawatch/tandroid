@@ -1,49 +1,37 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
+import j$.util.Spliterator;
 import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-public abstract class o0 implements g2 {
-    public boolean a;
-    public boolean b;
+public final class o0 extends p0 {
+    public final Consumer b;
 
-    @Override // j$.util.stream.g2
-    public /* synthetic */ void accept(double d) {
-        r1.a();
-        throw null;
+    @Override // java.util.function.Supplier
+    public final /* bridge */ /* synthetic */ Object get() {
+        return null;
     }
 
-    @Override // j$.util.stream.g2
-    public /* synthetic */ void accept(int i) {
-        r1.k();
-        throw null;
+    @Override // j$.util.stream.b8
+    public final Object f(a aVar, Spliterator spliterator) {
+        aVar.F0(spliterator, this);
+        return null;
     }
 
-    @Override // j$.util.stream.g2
-    public /* synthetic */ void accept(long j) {
-        r1.l();
-        throw null;
+    @Override // j$.util.stream.b8
+    public final /* bridge */ /* synthetic */ Object i(t3 t3Var, Spliterator spliterator) {
+        a(t3Var, spliterator);
+        return null;
     }
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    public o0(Consumer consumer, boolean z10) {
+        super(z10);
+        this.b = consumer;
     }
 
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ void x() {
-    }
-
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ void y(long j) {
-    }
-
-    public o0(p0 p0Var) {
-        this.b = !p0Var.b;
-    }
-
-    @Override // j$.util.stream.g2
-    public final boolean C() {
-        return this.a;
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
+        this.b.x(obj);
     }
 }

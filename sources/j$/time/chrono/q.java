@@ -9,28 +9,28 @@ public final class q implements l {
     public static final q AH;
     public static final /* synthetic */ q[] a;
 
+    @Override // j$.time.temporal.l
+    public final /* synthetic */ boolean e(j$.time.temporal.o oVar) {
+        return j$.com.android.tools.r8.a.r(this, oVar);
+    }
+
     @Override // j$.time.chrono.l
     public final int getValue() {
         return 1;
     }
 
     @Override // j$.time.temporal.l
-    public final /* synthetic */ boolean h(j$.time.temporal.o oVar) {
-        return j$.com.android.tools.r8.a.r(this, oVar);
+    public final /* synthetic */ int j(j$.time.temporal.o oVar) {
+        return j$.com.android.tools.r8.a.m(this, oVar);
     }
 
     @Override // j$.time.temporal.l
-    public final /* synthetic */ int o(j$.time.temporal.o oVar) {
-        return j$.com.android.tools.r8.a.m(this, (j$.time.temporal.a) oVar);
-    }
-
-    @Override // j$.time.temporal.l
-    public final /* synthetic */ Object r(j$.time.format.a aVar) {
+    public final /* synthetic */ Object m(j$.time.format.a aVar) {
         return j$.com.android.tools.r8.a.v(this, aVar);
     }
 
     @Override // j$.time.temporal.l
-    public final /* synthetic */ long u(j$.time.temporal.o oVar) {
+    public final /* synthetic */ long y(j$.time.temporal.o oVar) {
         return j$.com.android.tools.r8.a.o(this, oVar);
     }
 
@@ -49,7 +49,7 @@ public final class q implements l {
     }
 
     @Override // j$.time.temporal.l
-    public final j$.time.temporal.s q(j$.time.temporal.o oVar) {
+    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
         if (oVar == j$.time.temporal.a.ERA) {
             return j$.time.temporal.s.e(1L, 1L);
         }
@@ -57,7 +57,7 @@ public final class q implements l {
     }
 
     @Override // j$.time.temporal.m
-    public final Temporal x(Temporal temporal) {
-        return temporal.e(1, j$.time.temporal.a.ERA);
+    public final Temporal q(Temporal temporal) {
+        return temporal.c(1, j$.time.temporal.a.ERA);
     }
 }

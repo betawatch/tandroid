@@ -4,6 +4,7 @@ import j$.util.DesugarCollections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzpu {
     private static final Map zza;
@@ -24,14 +25,14 @@ public final class zzpu {
         DesugarCollections.unmodifiableMap(linkedHashMap2);
     }
 
-    private static void zzb(Map map, Map map2, Class cls, Class cls2) {
-        map.put(cls, cls2);
-        map2.put(cls2, cls);
-    }
-
     public static Class zza(Class cls) {
         cls.getClass();
         Class cls2 = (Class) zza.get(cls);
         return cls2 == null ? cls : cls2;
+    }
+
+    private static void zzb(Map map, Map map2, Class cls, Class cls2) {
+        map.put(cls, cls2);
+        map2.put(cls2, cls);
     }
 }

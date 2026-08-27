@@ -1,28 +1,30 @@
 package org.telegram.tgnet;
 
+import nh.f0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes3.dex */
 public class TLParseException extends RuntimeException {
     private TLParseException(String str) {
         super(str);
     }
 
-    public static void doThrowOrLog(InputSerializedData inputSerializedData, String str, int i, boolean z) {
-        final TLParseException tLParseException = new TLParseException(String.format("can't parse magic %x in %s. Source: %s", Integer.valueOf(i), str, inputSerializedData != null ? inputSerializedData.getDataSourceType() : null));
-        FileLog.e(tLParseException, i != -847714938);
-        if (i != -847714938 && i != -779361553) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.TLParseException$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.tlSchemeParseException, TLParseException.this);
-                }
-            });
+    public static void doThrowOrLog(InputSerializedData inputSerializedData, String str, int i10, boolean z10) {
+        TLParseException tLParseException = new TLParseException(String.format("can't parse magic %x in %s. Source: %s", Integer.valueOf(i10), str, inputSerializedData != null ? inputSerializedData.getDataSourceType() : null));
+        FileLog.e(tLParseException, i10 != -847714938);
+        if (i10 != -847714938 && i10 != -779361553) {
+            AndroidUtilities.runOnUIThread(new f0(tLParseException, 10));
         }
-        if (z) {
+        if (z10) {
             throw tLParseException;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$doThrowOrLog$0(TLParseException tLParseException) {
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.tlSchemeParseException, tLParseException);
     }
 }

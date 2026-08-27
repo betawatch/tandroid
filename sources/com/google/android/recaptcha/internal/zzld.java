@@ -1,11 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 import android.webkit.JavascriptInterface;
+import id.s;
+import id.t;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import kotlin.Unit;
-import kotlinx.coroutines.CompletableDeferred;
+import pc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzld {
     final /* synthetic */ zzly zza;
@@ -31,7 +33,7 @@ public final class zzld {
     @JavascriptInterface
     public final void zzlce(String str) {
         zzly zzlyVar = this.zza;
-        Long l = zzlyVar.zzr().zzb;
+        Long l10 = zzlyVar.zzr().zzb;
         zzb();
         zzwn zzM = zzwn.zzM(zzdb.zza(str));
         zzzl zzi = zzzm.zzi();
@@ -52,21 +54,21 @@ public final class zzld {
         zzb();
         zzzh zzg = zzzh.zzg(zzdb.zza(str));
         zzg.zzi().name();
-        if (zzg.zzi() == zzzk.zzb) {
+        if (zzg.zzi() != zzzk.zzb) {
+            zzg.zzi().name();
+            int i10 = zzcg.zza;
+            zzcg zza = zzcf.zza(zzg.zzi());
             zzly zzlyVar = this.zza;
             zzlyVar.zzz().hashCode();
-            if (zzlyVar.zzz().complete(Unit.INSTANCE)) {
-                return;
-            }
-            zzlyVar.zzz().hashCode();
+            ((t) zzlyVar.zzz()).L(zza);
             return;
         }
-        zzg.zzi().name();
-        int i = zzcg.zza;
-        zzcg zza = zzcf.zza(zzg.zzi());
         zzly zzlyVar2 = this.zza;
         zzlyVar2.zzz().hashCode();
-        zzlyVar2.zzz().completeExceptionally(zza);
+        if (((t) zzlyVar2.zzz()).A(i.a)) {
+            return;
+        }
+        zzlyVar2.zzz().hashCode();
     }
 
     @JavascriptInterface
@@ -86,9 +88,9 @@ public final class zzld {
         zzxx zzi = zzxx.zzi(zzdb.zza(str));
         zzi.toString();
         map = this.zza.zzd;
-        CompletableDeferred completableDeferred = (CompletableDeferred) map.remove(zzi.zzk());
-        if (completableDeferred != null) {
-            completableDeferred.complete(zzi);
+        s sVar = (s) map.remove(zzi.zzk());
+        if (sVar != null) {
+            ((t) sVar).A(zzi);
         }
     }
 }

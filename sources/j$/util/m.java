@@ -1,63 +1,58 @@
 package j$.util;
 
-import java.util.ListIterator;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-public final class m implements ListIterator, w {
-    public final ListIterator a;
+public final class m implements Iterator, y {
+    public final /* synthetic */ int a = 0;
+    public final Iterator b;
 
-    public m(n nVar, int i) {
-        this.a = nVar.b.listIterator(i);
+    public m(n nVar) {
+        this.b = nVar.a.iterator();
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator
+    public m(s sVar) {
+        this.b = sVar.a.iterator();
+    }
+
+    @Override // java.util.Iterator
     public final boolean hasNext() {
-        return this.a.hasNext();
+        switch (this.a) {
+        }
+        return this.b.hasNext();
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator
+    @Override // java.util.Iterator
     public final Object next() {
-        return this.a.next();
+        switch (this.a) {
+            case 0:
+                return this.b.next();
+            default:
+                return new q((Map.Entry) this.b.next());
+        }
     }
 
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.a.hasPrevious();
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        return this.a.previous();
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.a.nextIndex();
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.a.previousIndex();
-    }
-
-    @Override // java.util.ListIterator, java.util.Iterator
+    @Override // java.util.Iterator
     public final void remove() {
-        throw new UnsupportedOperationException();
+        switch (this.a) {
+            case 0:
+                throw new UnsupportedOperationException();
+            default:
+                throw new UnsupportedOperationException();
+        }
     }
 
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, j$.util.w
+    @Override // java.util.Iterator, j$.util.y
     public final void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.M(this.a, consumer);
+        switch (this.a) {
+            case 0:
+                j$.com.android.tools.r8.a.M(this.b, consumer);
+                break;
+            default:
+                j$.com.android.tools.r8.a.M(this.b, new j$.time.t(1, consumer));
+                break;
+        }
     }
 }

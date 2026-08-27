@@ -1,8 +1,7 @@
 package ru.noties.jlatexmath.awt;
 
-import org.telegram.messenger.NotificationCenter;
-
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class Color {
     public static final Color BLACK;
     public static final Color RED;
@@ -15,10 +14,6 @@ public class Color {
     public static final Color white;
     public static final Color yellow;
     private final int color;
-
-    public int getAlpha() {
-        return NotificationCenter.didReceiveSmsCode;
-    }
 
     static {
         Color color = new Color(-16777216);
@@ -35,35 +30,39 @@ public class Color {
         RED = color2;
     }
 
+    public Color(int i10) {
+        this.color = i10;
+    }
+
     public static Color decode(String str) {
         return new Color(android.graphics.Color.parseColor(str));
     }
 
-    public Color(int i) {
-        this.color = i;
-    }
-
-    public Color(int i, int i2, int i3) {
-        this(android.graphics.Color.rgb(i, i2, i3));
-    }
-
-    public Color(float f, float f2, float f3) {
-        this((int) ((f * 255.0f) + 0.5f), (int) ((f2 * 255.0f) + 0.5f), (int) ((f3 * 255.0f) + 0.5f));
-    }
-
-    public int getRed() {
-        return android.graphics.Color.red(this.color);
+    public int getAlpha() {
+        return 255;
     }
 
     public int getBlue() {
         return android.graphics.Color.blue(this.color);
     }
 
+    public int getColorInt() {
+        return this.color;
+    }
+
     public int getGreen() {
         return android.graphics.Color.green(this.color);
     }
 
-    public int getColorInt() {
-        return this.color;
+    public int getRed() {
+        return android.graphics.Color.red(this.color);
+    }
+
+    public Color(int i10, int i11, int i12) {
+        this(android.graphics.Color.rgb(i10, i11, i12));
+    }
+
+    public Color(float f10, float f11, float f12) {
+        this((int) ((f10 * 255.0f) + 0.5f), (int) ((f11 * 255.0f) + 0.5f), (int) ((f12 * 255.0f) + 0.5f));
     }
 }

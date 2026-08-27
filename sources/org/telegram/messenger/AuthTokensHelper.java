@@ -7,17 +7,53 @@ import org.telegram.messenger.NotificationBadge;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class AuthTokensHelper {
+    public static void addLogOutToken(TLRPC.TL_auth_loggedOut tL_auth_loggedOut) {
+        SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("saved_tokens", 0);
+        int i10 = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
+        SerializedData serializedData = new SerializedData(tL_auth_loggedOut.getObjectSize());
+        tL_auth_loggedOut.serializeToStream(serializedData);
+        sharedPreferences.edit().putString(i0.a.k(i10, "log_out_token_"), Utilities.bytesToHex(serializedData.toByteArray())).putInt(NotificationBadge.NewHtcHomeBadger.COUNT, i10 + 1).apply();
+        BackupAgent.requestBackup();
+    }
+
+    public static void clearLogInTokens() {
+        ApplicationLoader.applicationContext.getSharedPreferences("saved_tokens_login", 0).edit().clear().apply();
+        ApplicationLoader.applicationContext.getSharedPreferences("saved_tokens", 0).edit().clear().apply();
+    }
+
+    public static ArrayList<TLRPC.TL_auth_authorization> getSavedLogInTokens() {
+        SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("saved_tokens_login", 0);
+        int i10 = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
+        if (i10 == 0) {
+            return null;
+        }
+        ArrayList<TLRPC.TL_auth_authorization> arrayList = new ArrayList<>();
+        for (int i11 = 0; i11 < i10; i11++) {
+            try {
+                SerializedData serializedData = new SerializedData(Utilities.hexToBytes(sharedPreferences.getString("log_in_token_" + i11, "")));
+                TLRPC.auth_Authorization TLdeserialize = TLRPC.auth_Authorization.TLdeserialize(serializedData, serializedData.readInt32(true), true);
+                if (TLdeserialize instanceof TLRPC.TL_auth_authorization) {
+                    arrayList.add((TLRPC.TL_auth_authorization) TLdeserialize);
+                }
+            } catch (Exception e9) {
+                FileLog.e(e9);
+            }
+        }
+        return arrayList;
+    }
+
     public static ArrayList<TLRPC.TL_auth_loggedOut> getSavedLogOutTokens() {
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("saved_tokens", 0);
-        int i = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
-        if (i == 0) {
+        int i10 = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
+        if (i10 == 0) {
             return null;
         }
         ArrayList<TLRPC.TL_auth_loggedOut> arrayList = new ArrayList<>();
-        for (int i2 = 0; i2 < i; i2++) {
-            SerializedData serializedData = new SerializedData(Utilities.hexToBytes(sharedPreferences.getString("log_out_token_" + i2, "")));
+        for (int i11 = 0; i11 < i10; i11++) {
+            SerializedData serializedData = new SerializedData(Utilities.hexToBytes(sharedPreferences.getString("log_out_token_" + i11, "")));
             TLRPC.TL_auth_loggedOut TLdeserialize = TLRPC.TL_auth_loggedOut.TLdeserialize(serializedData, serializedData.readInt32(true), true);
             if (TLdeserialize != null) {
                 arrayList.add(TLdeserialize);
@@ -26,50 +62,9 @@ public class AuthTokensHelper {
         return arrayList;
     }
 
-    public static void saveLogOutTokens(ArrayList<TLRPC.TL_auth_loggedOut> arrayList) {
-        SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("saved_tokens", 0);
-        ArrayList arrayList2 = new ArrayList();
-        sharedPreferences.edit().clear().apply();
-        System.currentTimeMillis();
-        for (int i = 0; i < Math.min(20, arrayList.size()); i++) {
-            arrayList2.add(arrayList.get(i));
-        }
-        if (arrayList2.size() > 0) {
-            SharedPreferences.Editor edit = sharedPreferences.edit();
-            edit.putInt(NotificationBadge.NewHtcHomeBadger.COUNT, arrayList2.size());
-            for (int i2 = 0; i2 < arrayList2.size(); i2++) {
-                SerializedData serializedData = new SerializedData(((TLRPC.TL_auth_loggedOut) arrayList2.get(i2)).getObjectSize());
-                ((TLRPC.TL_auth_loggedOut) arrayList2.get(i2)).serializeToStream(serializedData);
-                edit.putString("log_out_token_" + i2, Utilities.bytesToHex(serializedData.toByteArray()));
-            }
-            edit.apply();
-        }
-    }
-
-    public static ArrayList<TLRPC.TL_auth_authorization> getSavedLogInTokens() {
-        SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("saved_tokens_login", 0);
-        int i = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
-        if (i == 0) {
-            return null;
-        }
-        ArrayList<TLRPC.TL_auth_authorization> arrayList = new ArrayList<>();
-        for (int i2 = 0; i2 < i; i2++) {
-            try {
-                SerializedData serializedData = new SerializedData(Utilities.hexToBytes(sharedPreferences.getString("log_in_token_" + i2, "")));
-                TLRPC.auth_Authorization TLdeserialize = TLRPC.auth_Authorization.TLdeserialize(serializedData, serializedData.readInt32(true), true);
-                if (TLdeserialize instanceof TLRPC.TL_auth_authorization) {
-                    arrayList.add((TLRPC.TL_auth_authorization) TLdeserialize);
-                }
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-        }
-        return arrayList;
-    }
-
     public static void saveLogInToken(TLRPC.TL_auth_authorization tL_auth_authorization) {
         if (BuildVars.DEBUG_VERSION) {
-            FileLog.d("saveLogInToken " + new String(tL_auth_authorization.future_auth_token, StandardCharsets.UTF_8));
+            FileLog.d("saveLogInToken ".concat(new String(tL_auth_authorization.future_auth_token, StandardCharsets.UTF_8)));
         }
         ArrayList<TLRPC.TL_auth_authorization> savedLogInTokens = getSavedLogInTokens();
         if (savedLogInTokens == null) {
@@ -83,33 +78,39 @@ public class AuthTokensHelper {
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("saved_tokens_login", 0);
         ArrayList arrayList2 = new ArrayList();
         sharedPreferences.edit().clear().apply();
-        for (int i = 0; i < Math.min(20, arrayList.size()); i++) {
-            arrayList2.add(arrayList.get(i));
+        for (int i10 = 0; i10 < Math.min(20, arrayList.size()); i10++) {
+            arrayList2.add(arrayList.get(i10));
         }
         if (arrayList2.size() > 0) {
             SharedPreferences.Editor edit = sharedPreferences.edit();
             edit.putInt(NotificationBadge.NewHtcHomeBadger.COUNT, arrayList2.size());
-            for (int i2 = 0; i2 < arrayList2.size(); i2++) {
-                SerializedData serializedData = new SerializedData(((TLRPC.TL_auth_authorization) arrayList2.get(i2)).getObjectSize());
-                ((TLRPC.TL_auth_authorization) arrayList2.get(i2)).serializeToStream(serializedData);
-                edit.putString("log_in_token_" + i2, Utilities.bytesToHex(serializedData.toByteArray()));
+            for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+                SerializedData serializedData = new SerializedData(((TLRPC.TL_auth_authorization) arrayList2.get(i11)).getObjectSize());
+                ((TLRPC.TL_auth_authorization) arrayList2.get(i11)).serializeToStream(serializedData);
+                edit.putString("log_in_token_" + i11, Utilities.bytesToHex(serializedData.toByteArray()));
             }
             edit.apply();
             BackupAgent.requestBackup();
         }
     }
 
-    public static void addLogOutToken(TLRPC.TL_auth_loggedOut tL_auth_loggedOut) {
+    public static void saveLogOutTokens(ArrayList<TLRPC.TL_auth_loggedOut> arrayList) {
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("saved_tokens", 0);
-        int i = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
-        SerializedData serializedData = new SerializedData(tL_auth_loggedOut.getObjectSize());
-        tL_auth_loggedOut.serializeToStream(serializedData);
-        sharedPreferences.edit().putString("log_out_token_" + i, Utilities.bytesToHex(serializedData.toByteArray())).putInt(NotificationBadge.NewHtcHomeBadger.COUNT, i + 1).apply();
-        BackupAgent.requestBackup();
-    }
-
-    public static void clearLogInTokens() {
-        ApplicationLoader.applicationContext.getSharedPreferences("saved_tokens_login", 0).edit().clear().apply();
-        ApplicationLoader.applicationContext.getSharedPreferences("saved_tokens", 0).edit().clear().apply();
+        ArrayList arrayList2 = new ArrayList();
+        sharedPreferences.edit().clear().apply();
+        System.currentTimeMillis();
+        for (int i10 = 0; i10 < Math.min(20, arrayList.size()); i10++) {
+            arrayList2.add(arrayList.get(i10));
+        }
+        if (arrayList2.size() > 0) {
+            SharedPreferences.Editor edit = sharedPreferences.edit();
+            edit.putInt(NotificationBadge.NewHtcHomeBadger.COUNT, arrayList2.size());
+            for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+                SerializedData serializedData = new SerializedData(((TLRPC.TL_auth_loggedOut) arrayList2.get(i11)).getObjectSize());
+                ((TLRPC.TL_auth_loggedOut) arrayList2.get(i11)).serializeToStream(serializedData);
+                edit.putString("log_out_token_" + i11, Utilities.bytesToHex(serializedData.toByteArray()));
+            }
+            edit.apply();
+        }
     }
 }

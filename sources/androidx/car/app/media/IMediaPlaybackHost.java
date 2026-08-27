@@ -4,71 +4,23 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import android.os.Parcelable;
-import androidx.car.app.serialization.Bundleable;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public interface IMediaPlaybackHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$media$IMediaPlaybackHost".replace('$', '.');
 
-    public static class Default implements IMediaPlaybackHost {
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return null;
-        }
+    void registerMediaSessionToken(w.b bVar);
 
-        @Override // androidx.car.app.media.IMediaPlaybackHost
-        public void registerMediaSessionToken(Bundleable bundleable) {
-        }
-    }
-
-    void registerMediaSessionToken(Bundleable bundleable);
-
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static abstract class Stub extends Binder implements IMediaPlaybackHost {
         static final int TRANSACTION_registerMediaSessionToken = 1;
 
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return this;
-        }
-
-        public Stub() {
-            attachInterface(this, IMediaPlaybackHost.DESCRIPTOR);
-        }
-
-        public static IMediaPlaybackHost asInterface(IBinder iBinder) {
-            if (iBinder == null) {
-                return null;
-            }
-            IInterface queryLocalInterface = iBinder.queryLocalInterface(IMediaPlaybackHost.DESCRIPTOR);
-            if (queryLocalInterface != null && (queryLocalInterface instanceof IMediaPlaybackHost)) {
-                return (IMediaPlaybackHost) queryLocalInterface;
-            }
-            return new Proxy(iBinder);
-        }
-
-        @Override // android.os.Binder
-        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String str = IMediaPlaybackHost.DESCRIPTOR;
-            if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(str);
-            }
-            if (i == 1598968902) {
-                parcel2.writeString(str);
-                return true;
-            }
-            if (i == 1) {
-                registerMediaSessionToken((Bundleable) _Parcel.readTypedObject(parcel, Bundleable.CREATOR));
-                parcel2.writeNoException();
-                return true;
-            }
-            return super.onTransact(i, parcel, parcel2, i2);
-        }
-
-        private static class Proxy implements IMediaPlaybackHost {
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static class Proxy implements IMediaPlaybackHost {
             private IBinder mRemote;
 
-            Proxy(IBinder iBinder) {
+            public Proxy(IBinder iBinder) {
                 this.mRemote = iBinder;
             }
 
@@ -82,12 +34,17 @@ public interface IMediaPlaybackHost extends IInterface {
             }
 
             @Override // androidx.car.app.media.IMediaPlaybackHost
-            public void registerMediaSessionToken(Bundleable bundleable) {
+            public void registerMediaSessionToken(w.b bVar) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IMediaPlaybackHost.DESCRIPTOR);
-                    _Parcel.writeTypedObject(obtain, bundleable, 0);
+                    if (bVar != null) {
+                        obtain.writeInt(1);
+                        bVar.writeToParcel(obtain, 0);
+                    } else {
+                        obtain.writeInt(0);
+                    }
                     this.mRemote.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
@@ -96,25 +53,52 @@ public interface IMediaPlaybackHost extends IInterface {
                 }
             }
         }
+
+        public Stub() {
+            attachInterface(this, IMediaPlaybackHost.DESCRIPTOR);
+        }
+
+        public static IMediaPlaybackHost asInterface(IBinder iBinder) {
+            if (iBinder == null) {
+                return null;
+            }
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(IMediaPlaybackHost.DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IMediaPlaybackHost)) ? new Proxy(iBinder) : (IMediaPlaybackHost) queryLocalInterface;
+        }
+
+        @Override // android.os.Binder
+        public boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+            String str = IMediaPlaybackHost.DESCRIPTOR;
+            if (i10 >= 1 && i10 <= 16777215) {
+                parcel.enforceInterface(str);
+            }
+            if (i10 == 1598968902) {
+                parcel2.writeString(str);
+                return true;
+            }
+            if (i10 != 1) {
+                return super.onTransact(i10, parcel, parcel2, i11);
+            }
+            registerMediaSessionToken(parcel.readInt() != 0 ? w.b.CREATOR.createFromParcel(parcel) : null);
+            parcel2.writeNoException();
+            return true;
+        }
+
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return this;
+        }
     }
 
-    public static class _Parcel {
-        /* JADX INFO: Access modifiers changed from: private */
-        public static Object readTypedObject(Parcel parcel, Parcelable.Creator creator) {
-            if (parcel.readInt() != 0) {
-                return creator.createFromParcel(parcel);
-            }
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class Default implements IMediaPlaybackHost {
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
             return null;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static void writeTypedObject(Parcel parcel, Parcelable parcelable, int i) {
-            if (parcelable != null) {
-                parcel.writeInt(1);
-                parcelable.writeToParcel(parcel, i);
-            } else {
-                parcel.writeInt(0);
-            }
+        @Override // androidx.car.app.media.IMediaPlaybackHost
+        public void registerMediaSessionToken(w.b bVar) {
         }
     }
 }

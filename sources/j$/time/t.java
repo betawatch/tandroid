@@ -4,24 +4,24 @@ import j$.util.Spliterator;
 import j$.util.function.Consumer$-CC;
 import j$.util.function.Function$-CC;
 import j$.util.function.Predicate$-CC;
-import j$.util.r0;
-import j$.util.stream.A;
-import j$.util.stream.B;
+import j$.util.s1;
 import j$.util.stream.Collectors;
 import j$.util.stream.IntStream;
 import j$.util.stream.LongStream;
-import j$.util.stream.R2;
 import j$.util.stream.Stream;
-import j$.util.stream.d3;
-import j$.util.stream.f3;
-import j$.util.stream.g2;
-import j$.util.stream.h0;
-import j$.util.stream.h3;
-import j$.util.stream.i0;
-import j$.util.stream.w3;
-import j$.util.stream.z;
-import java.util.ArrayList;
+import j$.util.stream.a0;
+import j$.util.stream.b0;
+import j$.util.stream.c0;
+import j$.util.stream.g7;
+import j$.util.stream.i7;
+import j$.util.stream.j1;
+import j$.util.stream.j5;
+import j$.util.stream.k1;
+import j$.util.stream.k7;
+import j$.util.stream.u6;
+import j$.util.stream.z7;
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.BooleanSupplier;
@@ -38,12 +38,12 @@ public final class t implements j$.time.temporal.l, Consumer, Predicate, Supplie
     public final /* synthetic */ int a;
     public Object b;
 
-    public /* synthetic */ t(int i) {
-        this.a = i;
+    public /* synthetic */ t(int i10) {
+        this.a = i10;
     }
 
-    public /* synthetic */ t(int i, Object obj) {
-        this.a = i;
+    public /* synthetic */ t(int i10, Object obj) {
+        this.a = i10;
         this.b = obj;
     }
 
@@ -70,26 +70,26 @@ public final class t implements j$.time.temporal.l, Consumer, Predicate, Supplie
     }
 
     @Override // j$.time.temporal.l
-    public boolean h(j$.time.temporal.o oVar) {
+    public boolean e(j$.time.temporal.o oVar) {
         return false;
+    }
+
+    @Override // j$.time.temporal.l
+    public /* synthetic */ int j(j$.time.temporal.o oVar) {
+        return j$.time.temporal.p.a(this, oVar);
+    }
+
+    @Override // j$.time.temporal.l
+    public /* synthetic */ j$.time.temporal.s l(j$.time.temporal.o oVar) {
+        return j$.time.temporal.p.d(this, oVar);
     }
 
     public /* synthetic */ Predicate negate() {
         return Predicate$-CC.$default$negate(this);
     }
 
-    @Override // j$.time.temporal.l
-    public /* synthetic */ int o(j$.time.temporal.o oVar) {
-        return j$.time.temporal.p.a(this, oVar);
-    }
-
     public /* synthetic */ Predicate or(Predicate predicate) {
         return Predicate$-CC.$default$or(this, predicate);
-    }
-
-    @Override // j$.time.temporal.l
-    public /* synthetic */ j$.time.temporal.s q(j$.time.temporal.o oVar) {
-        return j$.time.temporal.p.d(this, oVar);
     }
 
     @Override // java.util.function.Predicate
@@ -115,19 +115,19 @@ public final class t implements j$.time.temporal.l, Consumer, Predicate, Supplie
         if (apply instanceof java.util.stream.IntStream) {
             return IntStream.VivifiedWrapper.convert((java.util.stream.IntStream) apply);
         }
-        if (apply instanceof B) {
-            return A.j((B) apply);
+        if (apply instanceof c0) {
+            return b0.f((c0) apply);
         }
         if (apply instanceof DoubleStream) {
-            return z.j((DoubleStream) apply);
+            return a0.f((DoubleStream) apply);
         }
         if (apply instanceof LongStream) {
-            return i0.j((LongStream) apply);
+            return k1.f((LongStream) apply);
         }
         if (apply instanceof java.util.stream.LongStream) {
-            return h0.j((java.util.stream.LongStream) apply);
+            return j1.f((java.util.stream.LongStream) apply);
         }
-        j$.util.e.a("java.util.stream.*Stream", apply.getClass());
+        j$.util.g.a(apply.getClass(), "java.util.stream.*Stream");
         throw null;
     }
 
@@ -137,29 +137,29 @@ public final class t implements j$.time.temporal.l, Consumer, Predicate, Supplie
         if (apply == null) {
             return null;
         }
-        if (apply instanceof B) {
-            return A.j((B) apply);
+        if (apply instanceof c0) {
+            return b0.f((c0) apply);
         }
         if (apply instanceof DoubleStream) {
-            return z.j((DoubleStream) apply);
+            return a0.f((DoubleStream) apply);
         }
-        j$.util.e.a("java.util.stream.DoubleStream", apply.getClass());
+        j$.util.g.a(apply.getClass(), "java.util.stream.DoubleStream");
         throw null;
     }
 
     @Override // java.util.function.LongFunction
-    public Object apply(long j) {
-        Object apply = ((LongFunction) this.b).apply(j);
+    public Object apply(long j10) {
+        Object apply = ((LongFunction) this.b).apply(j10);
         if (apply == null) {
             return null;
         }
         if (apply instanceof LongStream) {
-            return i0.j((LongStream) apply);
+            return k1.f((LongStream) apply);
         }
         if (apply instanceof java.util.stream.LongStream) {
-            return h0.j((java.util.stream.LongStream) apply);
+            return j1.f((java.util.stream.LongStream) apply);
         }
-        j$.util.e.a("java.util.stream.LongStream", apply.getClass());
+        j$.util.g.a(apply.getClass(), "java.util.stream.LongStream");
         throw null;
     }
 
@@ -167,44 +167,45 @@ public final class t implements j$.time.temporal.l, Consumer, Predicate, Supplie
     public boolean getAsBoolean() {
         switch (this.a) {
             case 12:
-                d3 d3Var = (d3) this.b;
-                return d3Var.d.tryAdvance(d3Var.e);
+                g7 g7Var = (g7) this.b;
+                return g7Var.d.tryAdvance(g7Var.e);
             case 13:
-                f3 f3Var = (f3) this.b;
-                return f3Var.d.tryAdvance(f3Var.e);
+                i7 i7Var = (i7) this.b;
+                return i7Var.d.tryAdvance(i7Var.e);
             case 14:
-                h3 h3Var = (h3) this.b;
-                return h3Var.d.tryAdvance(h3Var.e);
+                k7 k7Var = (k7) this.b;
+                return k7Var.d.tryAdvance(k7Var.e);
             default:
-                w3 w3Var = (w3) this.b;
-                return w3Var.d.tryAdvance(w3Var.e);
+                z7 z7Var = (z7) this.b;
+                return z7Var.d.tryAdvance(z7Var.e);
         }
     }
 
-    public void H(R2 r2) {
-        ((EnumMap) this.b).put((EnumMap) r2, (R2) 1);
+    public void D(u6 u6Var) {
+        ((EnumMap) ((Map) this.b)).put((EnumMap) u6Var, (u6) 1);
     }
 
     @Override // java.util.function.Supplier
     public Object get() {
         switch (this.a) {
             case 3:
-                return ((j$.util.stream.a) this.b).N(0);
+                return ((j$.util.stream.a) this.b).R0(0);
             case 4:
                 return (Spliterator) this.b;
             default:
+                CharSequence charSequence = (CharSequence) this.b;
                 Set set = Collectors.a;
-                return new r0((CharSequence) this.b);
+                return new s1(charSequence);
         }
     }
 
     @Override // j$.time.temporal.l
-    public long u(j$.time.temporal.o oVar) {
+    public long y(j$.time.temporal.o oVar) {
         throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
     }
 
     @Override // j$.time.temporal.l
-    public Object r(j$.time.format.a aVar) {
+    public Object m(j$.time.format.a aVar) {
         if (aVar == j$.time.temporal.p.a) {
             return (ZoneId) this.b;
         }
@@ -215,13 +216,13 @@ public final class t implements j$.time.temporal.l, Consumer, Predicate, Supplie
     public void accept(Object obj) {
         switch (this.a) {
             case 1:
-                ((Consumer) this.b).accept(new j$.util.o((Map.Entry) obj));
+                ((Consumer) this.b).accept(new j$.util.q((Map.Entry) obj));
                 break;
             case 9:
-                ((g2) this.b).accept((g2) obj);
+                ((j5) this.b).accept((j5) obj);
                 break;
             default:
-                ((ArrayList) this.b).add(obj);
+                ((List) this.b).add(obj);
                 break;
         }
     }

@@ -3,33 +3,36 @@ package com.google.android.play.core.integrity;
 import android.os.Bundle;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-class bi extends com.google.android.play.integrity.internal.j {
+class bi extends l8.w {
     final TaskCompletionSource a;
     final /* synthetic */ bn b;
 
-    bi(bn bnVar, TaskCompletionSource taskCompletionSource) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bi(bn bnVar, TaskCompletionSource taskCompletionSource) {
+        super("com.google.android.play.core.integrity.protocol.IExpressIntegrityServiceCallback");
         this.b = bnVar;
         this.a = taskCompletionSource;
     }
 
-    @Override // com.google.android.play.integrity.internal.k
+    @Override // l8.x
     public final void b(Bundle bundle) {
-        this.b.a.v(this.a);
+        this.b.a.d(this.a);
     }
 
-    @Override // com.google.android.play.integrity.internal.k
+    @Override // l8.x
     public void c(Bundle bundle) {
-        this.b.a.v(this.a);
+        this.b.a.d(this.a);
     }
 
-    @Override // com.google.android.play.integrity.internal.k
+    @Override // l8.x
     public final void d(Bundle bundle) {
-        this.b.a.v(this.a);
+        this.b.a.d(this.a);
     }
 
-    @Override // com.google.android.play.integrity.internal.k
+    @Override // l8.x
     public void e(Bundle bundle) {
-        this.b.a.v(this.a);
+        this.b.a.d(this.a);
     }
 }

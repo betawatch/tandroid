@@ -1,24 +1,23 @@
 package com.google.android.recaptcha.internal;
 
+import ad.p;
+import h7.k6;
+import id.c0;
+import id.f0;
+import id.i0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import kotlin.Result;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.AwaitKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.Deferred;
+import pc.e;
+import pc.f;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzn extends SuspendLambda implements Function2 {
+final class zzn extends i implements p {
     int zza;
     final /* synthetic */ zzq zzb;
     final /* synthetic */ zzgr zzc;
@@ -27,57 +26,52 @@ final class zzn extends SuspendLambda implements Function2 {
     private /* synthetic */ Object zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzn(zzq zzqVar, zzgr zzgrVar, long j, zzxn zzxnVar, Continuation continuation) {
-        super(2, continuation);
+    public zzn(zzq zzqVar, zzgr zzgrVar, long j10, zzxn zzxnVar, c cVar) {
+        super(2, cVar);
         this.zzb = zzqVar;
         this.zzc = zzgrVar;
-        this.zzd = j;
+        this.zzd = j10;
         this.zze = zzxnVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        zzn zznVar = new zzn(this.zzb, this.zzc, this.zzd, this.zze, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        zzn zznVar = new zzn(this.zzb, this.zzc, this.zzd, this.zze, cVar);
         zznVar.zzf = obj;
         return zznVar;
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzn) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzn) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
-        Object awaitAll;
-        Deferred async$default;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zza;
-        ResultKt.throwOnFailure(obj);
-        if (i != 0) {
-            awaitAll = obj;
-        } else {
-            CoroutineScope coroutineScope = (CoroutineScope) this.zzf;
+        sc.a aVar = sc.a.a;
+        int i10 = this.zza;
+        k6.b(obj);
+        if (i10 == 0) {
+            c0 c0Var = (c0) this.zzf;
             ArrayList arrayList = new ArrayList();
             Iterator it = this.zzb.zzd().iterator();
             while (it.hasNext()) {
-                async$default = BuildersKt__Builders_commonKt.async$default(coroutineScope, null, null, new zzm(this.zzc, (zzg) it.next(), this.zzd, this.zze, null), 3, null);
-                arrayList.add(async$default);
+                arrayList.add(f0.c(c0Var, new zzm(this.zzc, (zzg) it.next(), this.zzd, this.zze, null)));
             }
-            Deferred[] deferredArr = (Deferred[]) arrayList.toArray(new Deferred[0]);
-            Deferred[] deferredArr2 = (Deferred[]) Arrays.copyOf(deferredArr, deferredArr.length);
+            i0[] i0VarArr = (i0[]) arrayList.toArray(new i0[0]);
+            i0[] i0VarArr2 = (i0[]) Arrays.copyOf(i0VarArr, i0VarArr.length);
             this.zza = 1;
-            awaitAll = AwaitKt.awaitAll(deferredArr2, this);
-            if (awaitAll == coroutine_suspended) {
-                return coroutine_suspended;
+            obj = f0.d(i0VarArr2, this);
+            if (obj == aVar) {
+                return aVar;
             }
         }
-        List list = (List) awaitAll;
+        List list = (List) obj;
         if (!(list instanceof Collection) || !list.isEmpty()) {
             Iterator it2 = list.iterator();
             while (it2.hasNext()) {
-                if (!Result.isFailure-impl(((Result) it2.next()).unbox-impl())) {
-                    return Unit.INSTANCE;
+                if (!(((f) it2.next()).a instanceof e)) {
+                    return pc.i.a;
                 }
             }
         }

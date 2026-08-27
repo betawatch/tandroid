@@ -1,7 +1,7 @@
 package com.google.android.gms.tasks;
 
 import android.os.Looper;
-import com.google.android.gms.common.internal.Preconditions;
+import j$.util.Objects;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -13,16 +13,24 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import o7.a;
+import y5.l;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class Tasks {
     private Tasks() {
     }
 
     public static <TResult> TResult await(Task<TResult> task) {
-        Preconditions.checkNotMainThread();
-        Preconditions.checkNotGoogleApiHandlerThread();
-        Preconditions.checkNotNull(task, "Task must not be null");
+        if (Looper.getMainLooper() == Looper.myLooper()) {
+            throw new IllegalStateException("Must not be called on the main application thread");
+        }
+        Looper myLooper = Looper.myLooper();
+        if (myLooper != null && Objects.equals(myLooper.getThread().getName(), "GoogleApiHandler")) {
+            throw new IllegalStateException("Must not be called on GoogleApiHandler thread.");
+        }
+        l.i(task, "Task must not be null");
         if (task.isComplete()) {
             return (TResult) zza(task);
         }
@@ -82,23 +90,23 @@ public final class Tasks {
         return whenAllSuccess(TaskExecutors.MAIN_THREAD, collection);
     }
 
-    public static <T> Task<T> withTimeout(Task<T> task, long j, TimeUnit timeUnit) {
-        Preconditions.checkNotNull(task, "Task must not be null");
-        Preconditions.checkArgument(j > 0, "Timeout must be positive");
-        Preconditions.checkNotNull(timeUnit, "TimeUnit must not be null");
+    public static <T> Task<T> withTimeout(Task<T> task, long j10, TimeUnit timeUnit) {
+        l.i(task, "Task must not be null");
+        l.a("Timeout must be positive", j10 > 0);
+        l.i(timeUnit, "TimeUnit must not be null");
         final zzb zzbVar = new zzb();
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource(zzbVar);
-        final com.google.android.gms.internal.tasks.zza zzaVar = new com.google.android.gms.internal.tasks.zza(Looper.getMainLooper());
-        zzaVar.postDelayed(new Runnable() { // from class: com.google.android.gms.tasks.zzx
+        final a aVar = new a(Looper.getMainLooper());
+        aVar.postDelayed(new Runnable() { // from class: com.google.android.gms.tasks.zzx
             @Override // java.lang.Runnable
             public final void run() {
                 TaskCompletionSource.this.trySetException(new TimeoutException());
             }
-        }, timeUnit.toMillis(j));
+        }, timeUnit.toMillis(j10));
         task.addOnCompleteListener(new OnCompleteListener() { // from class: com.google.android.gms.tasks.zzy
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task2) {
-                com.google.android.gms.internal.tasks.zza.this.removeCallbacksAndMessages(null);
+                a.this.removeCallbacksAndMessages(null);
                 TaskCompletionSource taskCompletionSource2 = taskCompletionSource;
                 if (task2.isSuccessful()) {
                     taskCompletionSource2.trySetResult(task2.getResult());
@@ -135,8 +143,8 @@ public final class Tasks {
 
     @Deprecated
     public static <TResult> Task<TResult> call(Executor executor, Callable<TResult> callable) {
-        Preconditions.checkNotNull(executor, "Executor must not be null");
-        Preconditions.checkNotNull(callable, "Callback must not be null");
+        l.i(executor, "Executor must not be null");
+        l.i(callable, "Callback must not be null");
         zzw zzwVar = new zzw();
         executor.execute(new zzz(zzwVar, callable));
         return zzwVar;
@@ -151,53 +159,58 @@ public final class Tasks {
     }
 
     public static Task<List<Task<?>>> whenAllComplete(Executor executor, Task<?>... taskArr) {
-        if (taskArr == null || taskArr.length == 0) {
-            return forResult(Collections.EMPTY_LIST);
+        if (taskArr != null && taskArr.length != 0) {
+            return whenAllComplete(executor, Arrays.asList(taskArr));
         }
-        return whenAllComplete(executor, Arrays.asList(taskArr));
+        return forResult(Collections.EMPTY_LIST);
     }
 
     public static <TResult> Task<List<TResult>> whenAllSuccess(Executor executor, Task... taskArr) {
-        if (taskArr == null || taskArr.length == 0) {
-            return forResult(Collections.EMPTY_LIST);
+        if (taskArr != null && taskArr.length != 0) {
+            return whenAllSuccess(executor, Arrays.asList(taskArr));
         }
-        return whenAllSuccess(executor, Arrays.asList(taskArr));
+        return forResult(Collections.EMPTY_LIST);
     }
 
     public static Task<List<Task<?>>> whenAllComplete(Task<?>... taskArr) {
-        if (taskArr == null || taskArr.length == 0) {
-            return forResult(Collections.EMPTY_LIST);
+        if (taskArr != null && taskArr.length != 0) {
+            return whenAllComplete(Arrays.asList(taskArr));
         }
-        return whenAllComplete(Arrays.asList(taskArr));
+        return forResult(Collections.EMPTY_LIST);
     }
 
     public static <TResult> Task<List<TResult>> whenAllSuccess(Task... taskArr) {
-        if (taskArr == null || taskArr.length == 0) {
-            return forResult(Collections.EMPTY_LIST);
+        if (taskArr != null && taskArr.length != 0) {
+            return whenAllSuccess(Arrays.asList(taskArr));
         }
-        return whenAllSuccess(Arrays.asList(taskArr));
-    }
-
-    public static <TResult> TResult await(Task<TResult> task, long j, TimeUnit timeUnit) {
-        Preconditions.checkNotMainThread();
-        Preconditions.checkNotGoogleApiHandlerThread();
-        Preconditions.checkNotNull(task, "Task must not be null");
-        Preconditions.checkNotNull(timeUnit, "TimeUnit must not be null");
-        if (task.isComplete()) {
-            return (TResult) zza(task);
-        }
-        zzad zzadVar = new zzad(null);
-        zzb(task, zzadVar);
-        if (!zzadVar.zzb(j, timeUnit)) {
-            throw new TimeoutException("Timed out waiting for Task");
-        }
-        return (TResult) zza(task);
+        return forResult(Collections.EMPTY_LIST);
     }
 
     public static Task<Void> whenAll(Task<?>... taskArr) {
-        if (taskArr == null || taskArr.length == 0) {
-            return forResult(null);
+        if (taskArr != null && taskArr.length != 0) {
+            return whenAll(Arrays.asList(taskArr));
         }
-        return whenAll(Arrays.asList(taskArr));
+        return forResult(null);
+    }
+
+    public static <TResult> TResult await(Task<TResult> task, long j10, TimeUnit timeUnit) {
+        if (Looper.getMainLooper() != Looper.myLooper()) {
+            Looper myLooper = Looper.myLooper();
+            if (myLooper != null && Objects.equals(myLooper.getThread().getName(), "GoogleApiHandler")) {
+                throw new IllegalStateException("Must not be called on GoogleApiHandler thread.");
+            }
+            l.i(task, "Task must not be null");
+            l.i(timeUnit, "TimeUnit must not be null");
+            if (task.isComplete()) {
+                return (TResult) zza(task);
+            }
+            zzad zzadVar = new zzad(null);
+            zzb(task, zzadVar);
+            if (zzadVar.zzb(j10, timeUnit)) {
+                return (TResult) zza(task);
+            }
+            throw new TimeoutException("Timed out waiting for Task");
+        }
+        throw new IllegalStateException("Must not be called on the main application thread");
     }
 }

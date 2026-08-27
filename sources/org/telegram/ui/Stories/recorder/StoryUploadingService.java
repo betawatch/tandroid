@@ -4,8 +4,8 @@ import android.R;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
+import e0.n0;
+import e0.t;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
@@ -14,108 +14,118 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.UserConfig;
 
-/* loaded from: classes5.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class StoryUploadingService extends Service implements NotificationCenter.NotificationCenterDelegate {
-    private NotificationCompat.Builder builder;
-    private int currentAccount = -1;
-    private float currentProgress;
-    private String path;
-
-    @Override // android.app.Service
-    public IBinder onBind(Intent intent) {
-        return null;
-    }
+    public t a;
+    public String b;
+    public float c;
+    public int d = -1;
 
     public StoryUploadingService() {
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.uploadStoryEnd);
     }
 
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        String str;
+        if (i10 != NotificationCenter.uploadStoryProgress) {
+            if (i10 == NotificationCenter.uploadStoryEnd && (str = this.b) != null && str.equals((String) objArr[0])) {
+                stopSelf();
+                return;
+            }
+            return;
+        }
+        String str2 = this.b;
+        if (str2 == null || !str2.equals((String) objArr[0])) {
+            return;
+        }
+        float floatValue = ((Float) objArr[1]).floatValue();
+        this.c = floatValue;
+        t tVar = this.a;
+        int round = Math.round(floatValue * 100.0f);
+        boolean z10 = this.c <= 0.0f;
+        tVar.n = 100;
+        tVar.o = round;
+        tVar.p = z10;
+        try {
+            new n0(ApplicationLoader.applicationContext).d(33, this.a.b());
+        } catch (Throwable th) {
+            FileLog.e(th);
+        }
+    }
+
     @Override // android.app.Service
-    public void onDestroy() {
+    public final IBinder onBind(Intent intent) {
+        return null;
+    }
+
+    @Override // android.app.Service
+    public final void onDestroy() {
         super.onDestroy();
         try {
             stopForeground(true);
         } catch (Exception unused) {
         }
-        NotificationManagerCompat.from(ApplicationLoader.applicationContext).cancel(33);
+        new n0(ApplicationLoader.applicationContext).b(33);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.uploadStoryEnd);
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.uploadStoryProgress);
+        NotificationCenter.getInstance(this.d).removeObserver(this, NotificationCenter.uploadStoryProgress);
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("upload story destroy");
         }
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i, int i2, Object... objArr) {
-        String str;
-        if (i == NotificationCenter.uploadStoryProgress) {
-            String str2 = this.path;
-            if (str2 == null || !str2.equals((String) objArr[0])) {
-                return;
-            }
-            float floatValue = ((Float) objArr[1]).floatValue();
-            this.currentProgress = floatValue;
-            this.builder.setProgress(100, Math.round(floatValue * 100.0f), this.currentProgress <= 0.0f);
-            try {
-                NotificationManagerCompat.from(ApplicationLoader.applicationContext).notify(33, this.builder.build());
-                return;
-            } catch (Throwable th) {
-                FileLog.e(th);
-                return;
-            }
-        }
-        if (i == NotificationCenter.uploadStoryEnd && (str = this.path) != null && str.equals((String) objArr[0])) {
-            stopSelf();
-        }
-    }
-
     @Override // android.app.Service
-    public int onStartCommand(Intent intent, int i, int i2) {
-        this.path = intent.getStringExtra("path");
-        int i3 = this.currentAccount;
+    public final int onStartCommand(Intent intent, int i10, int i11) {
+        this.b = intent.getStringExtra("path");
+        int i12 = this.d;
         int intExtra = intent.getIntExtra("currentAccount", UserConfig.selectedAccount);
-        this.currentAccount = intExtra;
+        this.d = intExtra;
         if (!UserConfig.isValidAccount(intExtra)) {
             stopSelf();
             return 2;
         }
-        if (i3 != this.currentAccount) {
-            if (i3 != -1) {
-                NotificationCenter.getInstance(i3).removeObserver(this, NotificationCenter.uploadStoryProgress);
+        if (i12 != this.d) {
+            if (i12 != -1) {
+                NotificationCenter.getInstance(i12).removeObserver(this, NotificationCenter.uploadStoryProgress);
             }
-            int i4 = this.currentAccount;
-            if (i4 != -1) {
-                NotificationCenter.getInstance(i4).addObserver(this, NotificationCenter.uploadStoryProgress);
+            int i13 = this.d;
+            if (i13 != -1) {
+                NotificationCenter.getInstance(i13).addObserver(this, NotificationCenter.uploadStoryProgress);
             }
         }
-        if (this.path == null) {
+        if (this.b == null) {
             stopSelf();
             return 2;
         }
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("start upload story");
         }
-        if (this.builder == null) {
+        if (this.a == null) {
             NotificationsController.checkOtherNotificationsChannel();
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(ApplicationLoader.applicationContext);
-            this.builder = builder;
-            builder.setSmallIcon(R.drawable.stat_sys_upload);
-            this.builder.setWhen(System.currentTimeMillis());
-            this.builder.setChannelId(NotificationsController.OTHER_NOTIFICATIONS_CHANNEL);
-            this.builder.setContentTitle(LocaleController.getString(org.telegram.messenger.R.string.AppName));
-            NotificationCompat.Builder builder2 = this.builder;
-            int i5 = org.telegram.messenger.R.string.StoryUploading;
-            builder2.setTicker(LocaleController.getString(i5));
-            this.builder.setContentText(LocaleController.getString(i5));
+            t tVar = new t(ApplicationLoader.applicationContext, null);
+            this.a = tVar;
+            tVar.E.icon = R.drawable.stat_sys_upload;
+            tVar.E.when = System.currentTimeMillis();
+            t tVar2 = this.a;
+            tVar2.y = NotificationsController.OTHER_NOTIFICATIONS_CHANNEL;
+            tVar2.g(LocaleController.getString(org.telegram.messenger.R.string.AppName));
+            this.a.p(LocaleController.getString(org.telegram.messenger.R.string.StoryUploading));
+            this.a.f(LocaleController.getString(org.telegram.messenger.R.string.StoryUploading));
         }
-        this.currentProgress = 0.0f;
-        this.builder.setProgress(100, Math.round(0.0f), false);
-        startForeground(33, this.builder.build());
+        this.c = 0.0f;
+        t tVar3 = this.a;
+        int round = Math.round(0.0f);
+        tVar3.n = 100;
+        tVar3.o = round;
+        tVar3.p = false;
+        startForeground(33, this.a.b());
         try {
-            NotificationManagerCompat.from(ApplicationLoader.applicationContext).notify(33, this.builder.build());
+            new n0(ApplicationLoader.applicationContext).d(33, this.a.b());
+            return 2;
         } catch (Throwable th) {
             FileLog.e(th);
+            return 2;
         }
-        return 2;
     }
 }

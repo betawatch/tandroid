@@ -3,11 +3,9 @@ package com.google.android.recaptcha.internal;
 import java.util.Collection;
 import java.util.Iterator;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public abstract class zzml extends zzmm implements Collection {
-    protected zzml() {
-    }
-
     public boolean add(Object obj) {
         return zzc().add(obj);
     }
@@ -67,11 +65,11 @@ public abstract class zzml extends zzmm implements Collection {
     }
 
     @Override // com.google.android.recaptcha.internal.zzmm
-    protected /* bridge */ /* synthetic */ Object zzb() {
+    public /* bridge */ /* synthetic */ Object zzb() {
         throw null;
     }
 
-    protected abstract Collection zzc();
+    public abstract Collection zzc();
 
     @Override // java.util.Collection
     public final Object[] toArray(Object[] objArr) {

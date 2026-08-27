@@ -14,15 +14,100 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.telegram.messenger.CompoundEmoji;
 import org.telegram.messenger.Emoji;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.er;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class CompoundEmoji {
     public static List<String> skinTones = Arrays.asList("🏻", "🏼", "🏽", "🏾", "🏿");
     private static Paint placeholderPaint = new Paint(2);
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class DrawableInfo {
+        private static final SparseArray<Bitmap> bitmaps = new SparseArray<>();
+        private static final ArrayList<Integer> loading = new ArrayList<>();
+        int emoji;
+        int hash;
+        int place;
+        boolean placeholder;
+        int skin;
+
+        public DrawableInfo(int i10, int i11, int i12) {
+            if (i11 == -2) {
+                this.placeholder = true;
+                i11 = -1;
+            }
+            this.emoji = i10;
+            Integer valueOf = Integer.valueOf(i10);
+            this.skin = i11;
+            Integer valueOf2 = Integer.valueOf(i11);
+            this.place = i12;
+            this.hash = Objects.hash(valueOf, valueOf2, Integer.valueOf(i12));
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$load$0() {
+            Bitmap loadBitmap = Emoji.loadBitmap("emoji/compound/" + this.emoji + "_" + this.skin + "_" + this.place + ".png");
+            if (loadBitmap != null) {
+                bitmaps.put(this.hash, loadBitmap);
+                Runnable runnable = Emoji.invalidateUiRunnable;
+                AndroidUtilities.cancelRunOnUIThread(runnable);
+                AndroidUtilities.runOnUIThread(runnable);
+            }
+            loading.remove(Integer.valueOf(this.hash));
+        }
+
+        public Bitmap getBitmap() {
+            return bitmaps.get(this.hash);
+        }
+
+        public int hashCode() {
+            return this.hash;
+        }
+
+        public boolean isLoaded() {
+            return bitmaps.indexOfKey(this.hash) >= 0;
+        }
+
+        public void load() {
+            if (isLoaded()) {
+                return;
+            }
+            ArrayList<Integer> arrayList = loading;
+            if (arrayList.contains(Integer.valueOf(this.hash))) {
+                return;
+            }
+            arrayList.add(Integer.valueOf(this.hash));
+            Utilities.globalQueue.postRunnable(new d1(this, 0));
+        }
+
+        public DrawableInfo updateSkin(int i10) {
+            return this.skin == i10 ? this : new DrawableInfo(this.emoji, i10, this.place);
+        }
+    }
+
+    public static String applyColor(String str, String str2) {
+        if (isHandshake(str) == null) {
+            return str;
+        }
+        if (str2 == null) {
+            return "🤝";
+        }
+        if (!str2.contains("\u200d")) {
+            return "🤝".concat(str2);
+        }
+        String[] split = str2.split("\u200d");
+        StringBuilder sb2 = new StringBuilder("\u1faf1");
+        sb2.append(split.length >= 1 ? split[0] : "");
+        sb2.append("\u200d\u1faf2");
+        sb2.append(split.length >= 2 ? split[1] : "");
+        return sb2.toString();
+    }
+
+    public static CompoundEmojiDrawable getCompoundEmojiDrawable(String str) {
+        return getCompoundEmojiDrawable(str, null, null);
+    }
 
     public static int getSkinTone(String str) {
         if (str == null) {
@@ -31,8 +116,40 @@ public class CompoundEmoji {
         return skinTones.indexOf(str.substring(str.length() - 2));
     }
 
-    public static CompoundEmojiDrawable getCompoundEmojiDrawable(String str) {
-        return getCompoundEmojiDrawable(str, null, null);
+    public static boolean isCompound(String str) {
+        return getCompoundEmojiDrawable(str) != null;
+    }
+
+    public static Pair<Integer, Integer> isHandshake(String str) {
+        int i10;
+        String[] split;
+        if (str.startsWith("🤝")) {
+            if (str.length() != 2) {
+                if (str.length() == 4) {
+                    i10 = getSkinTone(str);
+                    r3 = i10 >= 0 ? i10 : -1;
+                    split = str.split("\u200d");
+                    if (split.length == 2 || !split[0].startsWith("\u1faf1") || !split[1].startsWith("\u1faf2")) {
+                        return null;
+                    }
+                    if (split[0].length() != 2 && (split[0].length() != 4 || (i10 = getSkinTone(split[0])) < 0)) {
+                        return null;
+                    }
+                    if (split[1].length() == 2 || (split[1].length() == 4 && (r3 = getSkinTone(split[1])) >= 0)) {
+                        return new Pair<>(Integer.valueOf(i10), Integer.valueOf(r3));
+                    }
+                    return null;
+                }
+            }
+            return new Pair<>(Integer.valueOf(r3), Integer.valueOf(r3));
+        }
+        i10 = -1;
+        split = str.split("\u200d");
+        return split.length == 2 ? null : null;
+    }
+
+    public static void setPlaceholderColor(int i10) {
+        placeholderPaint.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
     }
 
     public static CompoundEmojiDrawable getCompoundEmojiDrawable(String str, Integer num, Integer num2) {
@@ -54,225 +171,39 @@ public class CompoundEmoji {
         return compoundEmojiDrawable;
     }
 
-    public static Pair<Integer, Integer> isHandshake(String str) {
-        int i;
-        String[] split;
-        if (str.startsWith("🤝")) {
-            if (str.length() != 2) {
-                if (str.length() == 4) {
-                    i = getSkinTone(str);
-                    r3 = i >= 0 ? i : -1;
-                    split = str.split("\u200d");
-                    if (split.length == 2 || !split[0].startsWith("\u1faf1") || !split[1].startsWith("\u1faf2")) {
-                        return null;
-                    }
-                    if (split[0].length() != 2 && (split[0].length() != 4 || (i = getSkinTone(split[0])) < 0)) {
-                        return null;
-                    }
-                    if (split[1].length() == 2 || (split[1].length() == 4 && (r3 = getSkinTone(split[1])) >= 0)) {
-                        return new Pair<>(Integer.valueOf(i), Integer.valueOf(r3));
-                    }
-                    return null;
-                }
-            }
-            return new Pair<>(Integer.valueOf(r3), Integer.valueOf(r3));
-        }
-        i = -1;
-        split = str.split("\u200d");
-        return split.length == 2 ? null : null;
-    }
-
-    public static String applyColor(String str, String str2) {
-        if (isHandshake(str) == null) {
-            return str;
-        }
-        if (str2 == null) {
-            return "🤝";
-        }
-        if (str2.contains("\u200d")) {
-            String[] split = str2.split("\u200d");
-            StringBuilder sb = new StringBuilder();
-            sb.append("\u1faf1");
-            sb.append(split.length >= 1 ? split[0] : "");
-            sb.append("\u200d\u1faf2");
-            sb.append(split.length >= 2 ? split[1] : "");
-            return sb.toString();
-        }
-        return "🤝" + str2;
-    }
-
-    public static boolean isCompound(String str) {
-        return getCompoundEmojiDrawable(str) != null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    static class DrawableInfo {
-        private static final SparseArray<Bitmap> bitmaps = new SparseArray<>();
-        private static final ArrayList<Integer> loading = new ArrayList<>();
-        int emoji;
-        int hash;
-        int place;
-        boolean placeholder;
-        int skin;
-
-        public DrawableInfo(int i, int i2, int i3) {
-            if (i2 == -2) {
-                this.placeholder = true;
-                i2 = -1;
-            }
-            this.emoji = i;
-            Integer valueOf = Integer.valueOf(i);
-            this.skin = i2;
-            Integer valueOf2 = Integer.valueOf(i2);
-            this.place = i3;
-            this.hash = Objects.hash(valueOf, valueOf2, Integer.valueOf(i3));
-        }
-
-        public DrawableInfo updateSkin(int i) {
-            return this.skin == i ? this : new DrawableInfo(this.emoji, i, this.place);
-        }
-
-        public int hashCode() {
-            return this.hash;
-        }
-
-        public boolean isLoaded() {
-            return bitmaps.indexOfKey(this.hash) >= 0;
-        }
-
-        public void load() {
-            if (isLoaded()) {
-                return;
-            }
-            ArrayList<Integer> arrayList = loading;
-            if (arrayList.contains(Integer.valueOf(this.hash))) {
-                return;
-            }
-            arrayList.add(Integer.valueOf(this.hash));
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.CompoundEmoji$DrawableInfo$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    CompoundEmoji.DrawableInfo.$r8$lambda$wbW9CXuP9w0yW9XkwcIeNNNomWw(CompoundEmoji.DrawableInfo.this);
-                }
-            });
-        }
-
-        public static /* synthetic */ void $r8$lambda$wbW9CXuP9w0yW9XkwcIeNNNomWw(DrawableInfo drawableInfo) {
-            drawableInfo.getClass();
-            Bitmap loadBitmap = Emoji.loadBitmap("emoji/compound/" + drawableInfo.emoji + "_" + drawableInfo.skin + "_" + drawableInfo.place + ".png");
-            if (loadBitmap != null) {
-                bitmaps.put(drawableInfo.hash, loadBitmap);
-                Runnable runnable = Emoji.invalidateUiRunnable;
-                AndroidUtilities.cancelRunOnUIThread(runnable);
-                AndroidUtilities.runOnUIThread(runnable);
-            }
-            loading.remove(Integer.valueOf(drawableInfo.hash));
-        }
-
-        public Bitmap getBitmap() {
-            return bitmaps.get(this.hash);
-        }
-    }
-
-    public static void setPlaceholderColor(int i) {
-        placeholderPaint.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
-    }
-
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class CompoundEmojiDrawable extends Emoji.EmojiDrawable {
         private static Paint paint = new Paint(2);
         private static Rect rect = new Rect();
         private DrawableInfo left;
-        private AnimatedFloat leftUpdateT;
+        private org.telegram.ui.Components.y5 leftUpdateT;
         private DrawableInfo newLeft;
         private DrawableInfo newRight;
         private View parent;
         private DrawableInfo right;
-        private AnimatedFloat rightUpdateT;
-
-        @Override // android.graphics.drawable.Drawable
-        public int getOpacity() {
-            return -2;
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public void setColorFilter(ColorFilter colorFilter) {
-        }
+        private org.telegram.ui.Components.y5 rightUpdateT;
 
         public CompoundEmojiDrawable(DrawableInfo drawableInfo, DrawableInfo drawableInfo2) {
             this.left = drawableInfo;
             this.right = drawableInfo2;
         }
 
-        public Rect getDrawRect() {
-            Rect bounds = getBounds();
-            int centerX = bounds.centerX();
-            int centerY = bounds.centerY();
-            Rect rect2 = rect;
-            boolean z = this.fullSize;
-            rect2.left = centerX - ((z ? Emoji.bigImgSize : Emoji.drawImgSize) / 2);
-            rect.right = centerX + ((z ? Emoji.bigImgSize : Emoji.drawImgSize) / 2);
-            rect.top = centerY - ((z ? Emoji.bigImgSize : Emoji.drawImgSize) / 2);
-            rect.bottom = centerY + ((z ? Emoji.bigImgSize : Emoji.drawImgSize) / 2);
-            return rect;
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public void draw(Canvas canvas) {
-            Rect bounds;
-            if (!isLoaded()) {
-                preload();
-                Emoji.placeholderPaint.setColor(this.placeholderColor);
-                Rect bounds2 = getBounds();
-                canvas.drawCircle(bounds2.centerX(), bounds2.centerY(), bounds2.width() * 0.4f, Emoji.placeholderPaint);
-                return;
-            }
-            if (this.fullSize) {
-                bounds = getDrawRect();
-            } else {
-                bounds = getBounds();
-            }
-            if (canvas.quickReject(bounds.left, bounds.top, bounds.right, bounds.bottom, Canvas.EdgeType.AA)) {
-                return;
-            }
-            if (this.newLeft != null) {
-                if (this.leftUpdateT == null) {
-                    this.leftUpdateT = new AnimatedFloat(0.0f, new Runnable() { // from class: org.telegram.messenger.CompoundEmoji$CompoundEmojiDrawable$$ExternalSyntheticLambda0
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            CompoundEmoji.CompoundEmojiDrawable.this.invalidate();
-                        }
-                    }, 0L, 320L, CubicBezierInterpolator.EASE_OUT);
+        private void drawDrawableInfo(Canvas canvas, DrawableInfo drawableInfo, Rect rect2, float f10) {
+            int i10;
+            Bitmap bitmap = drawableInfo.getBitmap();
+            if (bitmap != null) {
+                Paint paint2 = drawableInfo.placeholder ? CompoundEmoji.placeholderPaint : paint;
+                if (f10 < 1.0f) {
+                    i10 = paint2.getAlpha();
+                    paint2.setAlpha((int) (i10 * f10));
+                } else {
+                    i10 = 255;
                 }
-                float f = this.leftUpdateT.set(1.0f);
-                drawDrawableInfo(canvas, this.newLeft, bounds, Math.min(1.0f, f * 1.5f));
-                drawDrawableInfo(canvas, this.left, bounds, 1.0f - f);
-                if (f >= 1.0f) {
-                    this.left = this.newLeft;
-                    this.newLeft = null;
+                canvas.drawBitmap(bitmap, (Rect) null, rect2, paint2);
+                if (f10 < 1.0f) {
+                    paint2.setAlpha(i10);
                 }
-            } else {
-                drawDrawableInfo(canvas, this.left, bounds, 1.0f);
             }
-            if (this.newRight != null) {
-                if (this.rightUpdateT == null) {
-                    this.rightUpdateT = new AnimatedFloat(0.0f, new Runnable() { // from class: org.telegram.messenger.CompoundEmoji$CompoundEmojiDrawable$$ExternalSyntheticLambda0
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            CompoundEmoji.CompoundEmojiDrawable.this.invalidate();
-                        }
-                    }, 0L, 320L, CubicBezierInterpolator.EASE_OUT);
-                }
-                float f2 = this.rightUpdateT.set(1.0f);
-                drawDrawableInfo(canvas, this.newRight, bounds, Math.min(1.0f, 1.5f * f2));
-                drawDrawableInfo(canvas, this.right, bounds, 1.0f - f2);
-                if (f2 >= 1.0f) {
-                    this.right = this.newRight;
-                    this.newRight = null;
-                    return;
-                }
-                return;
-            }
-            drawDrawableInfo(canvas, this.right, bounds, 1.0f);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -284,53 +215,65 @@ public class CompoundEmoji {
             invalidateSelf();
         }
 
-        public void update(int i, int i2) {
-            if (this.left.skin != i) {
-                DrawableInfo drawableInfo = this.newLeft;
-                if (drawableInfo != null) {
-                    this.left = drawableInfo;
-                }
-                this.newLeft = this.left.updateSkin(i);
-                AnimatedFloat animatedFloat = this.leftUpdateT;
-                if (animatedFloat != null) {
-                    animatedFloat.set(0.0f, true);
-                }
+        @Override // android.graphics.drawable.Drawable
+        public void draw(Canvas canvas) {
+            if (!isLoaded()) {
+                preload();
+                Emoji.placeholderPaint.setColor(this.placeholderColor);
+                Rect bounds = getBounds();
+                canvas.drawCircle(bounds.centerX(), bounds.centerY(), bounds.width() * 0.4f, Emoji.placeholderPaint);
+                return;
             }
-            if (this.right.skin != i2) {
-                DrawableInfo drawableInfo2 = this.newRight;
-                if (drawableInfo2 != null) {
-                    this.right = drawableInfo2;
-                }
-                this.newRight = this.right.updateSkin(i2);
-                AnimatedFloat animatedFloat2 = this.rightUpdateT;
-                if (animatedFloat2 != null) {
-                    animatedFloat2.set(0.0f, true);
-                }
+            Rect drawRect = this.fullSize ? getDrawRect() : getBounds();
+            if (canvas.quickReject(drawRect.left, drawRect.top, drawRect.right, drawRect.bottom, Canvas.EdgeType.AA)) {
+                return;
             }
-            invalidate();
+            if (this.newLeft != null) {
+                if (this.leftUpdateT == null) {
+                    this.leftUpdateT = new org.telegram.ui.Components.y5(0.0f, new d1(this, 16), 0L, 320L, er.g);
+                }
+                float d = this.leftUpdateT.d(1.0f, false);
+                drawDrawableInfo(canvas, this.newLeft, drawRect, Math.min(1.0f, d * 1.5f));
+                drawDrawableInfo(canvas, this.left, drawRect, 1.0f - d);
+                if (d >= 1.0f) {
+                    this.left = this.newLeft;
+                    this.newLeft = null;
+                }
+            } else {
+                drawDrawableInfo(canvas, this.left, drawRect, 1.0f);
+            }
+            if (this.newRight == null) {
+                drawDrawableInfo(canvas, this.right, drawRect, 1.0f);
+                return;
+            }
+            if (this.rightUpdateT == null) {
+                this.rightUpdateT = new org.telegram.ui.Components.y5(0.0f, new d1(this, 16), 0L, 320L, er.g);
+            }
+            float d10 = this.rightUpdateT.d(1.0f, false);
+            drawDrawableInfo(canvas, this.newRight, drawRect, Math.min(1.0f, 1.5f * d10));
+            drawDrawableInfo(canvas, this.right, drawRect, 1.0f - d10);
+            if (d10 >= 1.0f) {
+                this.right = this.newRight;
+                this.newRight = null;
+            }
         }
 
-        private void drawDrawableInfo(Canvas canvas, DrawableInfo drawableInfo, Rect rect2, float f) {
-            int i;
-            Bitmap bitmap = drawableInfo.getBitmap();
-            if (bitmap != null) {
-                Paint paint2 = drawableInfo.placeholder ? CompoundEmoji.placeholderPaint : paint;
-                if (f < 1.0f) {
-                    i = paint2.getAlpha();
-                    paint2.setAlpha((int) (i * f));
-                } else {
-                    i = NotificationCenter.didReceiveSmsCode;
-                }
-                canvas.drawBitmap(bitmap, (Rect) null, rect2, paint2);
-                if (f < 1.0f) {
-                    paint2.setAlpha(i);
-                }
-            }
+        public Rect getDrawRect() {
+            Rect bounds = getBounds();
+            int centerX = bounds.centerX();
+            int centerY = bounds.centerY();
+            Rect rect2 = rect;
+            boolean z10 = this.fullSize;
+            rect2.left = centerX - ((z10 ? Emoji.bigImgSize : Emoji.drawImgSize) / 2);
+            rect.right = ((z10 ? Emoji.bigImgSize : Emoji.drawImgSize) / 2) + centerX;
+            rect.top = centerY - ((z10 ? Emoji.bigImgSize : Emoji.drawImgSize) / 2);
+            rect.bottom = ((z10 ? Emoji.bigImgSize : Emoji.drawImgSize) / 2) + centerY;
+            return rect;
         }
 
         @Override // android.graphics.drawable.Drawable
-        public void setAlpha(int i) {
-            paint.setAlpha(i);
+        public int getOpacity() {
+            return -2;
         }
 
         @Override // org.telegram.messenger.Emoji.EmojiDrawable
@@ -345,6 +288,41 @@ public class CompoundEmoji {
             }
             this.left.load();
             this.right.load();
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void setAlpha(int i10) {
+            paint.setAlpha(i10);
+        }
+
+        public void update(int i10, int i11) {
+            if (this.left.skin != i10) {
+                DrawableInfo drawableInfo = this.newLeft;
+                if (drawableInfo != null) {
+                    this.left = drawableInfo;
+                }
+                this.newLeft = this.left.updateSkin(i10);
+                org.telegram.ui.Components.y5 y5Var = this.leftUpdateT;
+                if (y5Var != null) {
+                    y5Var.d(0.0f, true);
+                }
+            }
+            if (this.right.skin != i11) {
+                DrawableInfo drawableInfo2 = this.newRight;
+                if (drawableInfo2 != null) {
+                    this.right = drawableInfo2;
+                }
+                this.newRight = this.right.updateSkin(i11);
+                org.telegram.ui.Components.y5 y5Var2 = this.rightUpdateT;
+                if (y5Var2 != null) {
+                    y5Var2.d(0.0f, true);
+                }
+            }
+            invalidate();
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void setColorFilter(ColorFilter colorFilter) {
         }
     }
 }

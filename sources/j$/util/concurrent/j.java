@@ -10,10 +10,10 @@ public final class j extends p implements Spliterator {
     public long j;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j(l[] lVarArr, int i, int i2, int i3, long j, int i4) {
-        super(lVarArr, i, i2, i3);
-        this.i = i4;
-        this.j = j;
+    public /* synthetic */ j(l[] lVarArr, int i10, int i11, int i12, long j10, int i13) {
+        super(lVarArr, i10, i11, i12);
+        this.i = i13;
+        this.j = j10;
     }
 
     @Override // j$.util.Spliterator
@@ -34,10 +34,10 @@ public final class j extends p implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
+    public final /* synthetic */ boolean hasCharacteristics(int i10) {
         switch (this.i) {
         }
-        return j$.com.android.tools.r8.a.p(this, i);
+        return j$.com.android.tools.r8.a.p(this, i10);
     }
 
     @Override // j$.util.Spliterator
@@ -54,29 +54,29 @@ public final class j extends p implements Spliterator {
     public final Spliterator trySplit() {
         switch (this.i) {
             case 0:
-                int i = this.f;
-                int i2 = this.g;
-                int i3 = (i + i2) >>> 1;
-                if (i3 <= i) {
+                int i10 = this.f;
+                int i11 = this.g;
+                int i12 = (i10 + i11) >>> 1;
+                if (i12 <= i10) {
                     return null;
                 }
                 l[] lVarArr = this.a;
-                this.g = i3;
-                long j = this.j >>> 1;
-                this.j = j;
-                return new j(lVarArr, this.h, i3, i2, j, 0);
+                this.g = i12;
+                long j10 = this.j >>> 1;
+                this.j = j10;
+                return new j(lVarArr, this.h, i12, i11, j10, 0);
             default:
-                int i4 = this.f;
-                int i5 = this.g;
-                int i6 = (i4 + i5) >>> 1;
-                if (i6 <= i4) {
+                int i13 = this.f;
+                int i14 = this.g;
+                int i15 = (i13 + i14) >>> 1;
+                if (i15 <= i13) {
                     return null;
                 }
                 l[] lVarArr2 = this.a;
-                this.g = i6;
-                long j2 = this.j >>> 1;
-                this.j = j2;
-                return new j(lVarArr2, this.h, i6, i5, j2, 1);
+                this.g = i15;
+                long j11 = this.j >>> 1;
+                this.j = j11;
+                return new j(lVarArr2, this.h, i15, i14, j11, 1);
         }
     }
 
@@ -86,21 +86,21 @@ public final class j extends p implements Spliterator {
             case 0:
                 consumer.getClass();
                 while (true) {
-                    l a = a();
-                    if (a == null) {
+                    l a2 = a();
+                    if (a2 == null) {
                         break;
                     } else {
-                        consumer.s(a.b);
+                        consumer.x(a2.b);
                     }
                 }
             default:
                 consumer.getClass();
                 while (true) {
-                    l a2 = a();
-                    if (a2 == null) {
+                    l a3 = a();
+                    if (a3 == null) {
                         break;
                     } else {
-                        consumer.s(a2.c);
+                        consumer.x(a3.c);
                     }
                 }
         }
@@ -111,17 +111,17 @@ public final class j extends p implements Spliterator {
         switch (this.i) {
             case 0:
                 consumer.getClass();
-                l a = a();
-                if (a != null) {
-                    consumer.s(a.b);
+                l a2 = a();
+                if (a2 != null) {
+                    consumer.x(a2.b);
                     break;
                 }
                 break;
             default:
                 consumer.getClass();
-                l a2 = a();
-                if (a2 != null) {
-                    consumer.s(a2.c);
+                l a3 = a();
+                if (a3 != null) {
+                    consumer.x(a3.c);
                     break;
                 }
                 break;

@@ -1,42 +1,55 @@
 package com.google.android.recaptcha.internal;
 
+import a9.p;
 import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Locale;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public abstract class zzqm implements Iterable, Serializable {
     public static final zzqm zzb = new zzqk(zzsv.zzb);
     private int zza = 0;
 
     static {
-        int i = zzqa.zza;
+        int i10 = zzqa.zza;
     }
 
-    zzqm() {
+    public static int zzj(int i10, int i11, int i12) {
+        int i13 = i11 - i10;
+        if ((i10 | i11 | i13 | (i12 - i11)) >= 0) {
+            return i13;
+        }
+        if (i10 < 0) {
+            throw new IndexOutOfBoundsException(i0.a.l(i10, "Beginning index: ", " < 0"));
+        }
+        if (i11 < i10) {
+            throw new IndexOutOfBoundsException(p.j(i10, i11, "Beginning index larger than ending index: ", ", "));
+        }
+        throw new IndexOutOfBoundsException(p.j(i11, i12, "End index: ", " >= "));
     }
 
-    public static zzqm zzl(byte[] bArr, int i, int i2) {
-        zzj(i, i + i2, bArr.length);
-        byte[] bArr2 = new byte[i2];
-        System.arraycopy(bArr, i, bArr2, 0, i2);
+    public static zzqm zzl(byte[] bArr, int i10, int i11) {
+        zzj(i10, i10 + i11, bArr.length);
+        byte[] bArr2 = new byte[i11];
+        System.arraycopy(bArr, i10, bArr2, 0, i11);
         return new zzqk(bArr2);
     }
 
     public abstract boolean equals(Object obj);
 
     public final int hashCode() {
-        int i = this.zza;
-        if (i == 0) {
+        int i10 = this.zza;
+        if (i10 == 0) {
             int zzd = zzd();
-            i = zzf(zzd, 0, zzd);
-            if (i == 0) {
-                i = 1;
+            i10 = zzf(zzd, 0, zzd);
+            if (i10 == 0) {
+                i10 = 1;
             }
-            this.zza = i;
+            this.zza = i10;
         }
-        return i;
+        return i10;
     }
 
     @Override // java.lang.Iterable
@@ -45,26 +58,35 @@ public abstract class zzqm implements Iterable, Serializable {
     }
 
     public final String toString() {
-        return String.format(Locale.ROOT, "<ByteString@%s size=%d contents=\"%s\">", Integer.toHexString(System.identityHashCode(this)), Integer.valueOf(zzd()), zzd() <= 50 ? zzuq.zza(this) : zzuq.zza(zzg(0, 47)).concat("..."));
+        Locale locale = Locale.ROOT;
+        String hexString = Integer.toHexString(System.identityHashCode(this));
+        int zzd = zzd();
+        String zza = zzd() <= 50 ? zzuq.zza(this) : zzuq.zza(zzg(0, 47)).concat("...");
+        StringBuilder sb2 = new StringBuilder("<ByteString@");
+        sb2.append(hexString);
+        sb2.append(" size=");
+        sb2.append(zzd);
+        sb2.append(" contents=\"");
+        return p.p(sb2, zza, "\">");
     }
 
-    public abstract byte zza(int i);
+    public abstract byte zza(int i10);
 
-    abstract byte zzb(int i);
+    public abstract byte zzb(int i10);
 
     public abstract int zzd();
 
-    protected abstract void zze(byte[] bArr, int i, int i2, int i3);
+    public abstract void zze(byte[] bArr, int i10, int i11, int i12);
 
-    protected abstract int zzf(int i, int i2, int i3);
+    public abstract int zzf(int i10, int i11, int i12);
 
-    public abstract zzqm zzg(int i, int i2);
+    public abstract zzqm zzg(int i10, int i11);
 
-    protected abstract String zzh(Charset charset);
+    public abstract String zzh(Charset charset);
 
-    abstract void zzi(zzqe zzqeVar);
+    public abstract void zzi(zzqe zzqeVar);
 
-    protected final int zzk() {
+    public final int zzk() {
         return this.zza;
     }
 
@@ -84,19 +106,5 @@ public abstract class zzqm implements Iterable, Serializable {
         byte[] bArr = new byte[zzd];
         zze(bArr, 0, 0, zzd);
         return bArr;
-    }
-
-    static int zzj(int i, int i2, int i3) {
-        int i4 = i2 - i;
-        if ((i | i2 | i4 | (i3 - i2)) >= 0) {
-            return i4;
-        }
-        if (i < 0) {
-            throw new IndexOutOfBoundsException("Beginning index: " + i + " < 0");
-        }
-        if (i2 < i) {
-            throw new IndexOutOfBoundsException("Beginning index larger than ending index: " + i + ", " + i2);
-        }
-        throw new IndexOutOfBoundsException("End index: " + i2 + " >= " + i3);
     }
 }

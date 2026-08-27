@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import androidx.activity.OnBackPressedDispatcher$$ExternalSyntheticNonNull0;
 import java.util.ArrayList;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzjr implements zzjt {
     public static final zzjr zza = new zzjr();
@@ -11,13 +11,13 @@ public final class zzjr implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i10, zziz zzizVar, zzzt... zzztVarArr) {
         Object array;
         if (zzztVarArr.length != 2) {
             throw new zzdm(4, 3, null);
         }
         Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
-        if (true != OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(zza2)) {
+        if (zza2 == null) {
             zza2 = null;
         }
         if (zza2 == null) {
@@ -41,14 +41,14 @@ public final class zzjr implements zzjt {
                 }
                 int[] iArr = (int[]) zza2;
                 ArrayList arrayList = new ArrayList(iArr.length);
-                for (int i2 : iArr) {
-                    arrayList.add(Integer.valueOf(i2 / intValue));
+                for (int i11 : iArr) {
+                    arrayList.add(Integer.valueOf(i11 / intValue));
                 }
                 array = arrayList.toArray(new Integer[0]);
             }
-            zzizVar.zzc().zze(i, array);
-        } catch (ArithmeticException e) {
-            throw new zzdm(4, 6, e);
+            zzizVar.zzc().zze(i10, array);
+        } catch (ArithmeticException e9) {
+            throw new zzdm(4, 6, e9);
         }
     }
 }

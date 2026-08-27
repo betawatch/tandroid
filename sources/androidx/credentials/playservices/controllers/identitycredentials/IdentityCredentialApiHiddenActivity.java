@@ -5,22 +5,34 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.ResultReceiver;
-import androidx.credentials.playservices.controllers.CredentialProviderBaseController;
-import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.jvm.internal.Intrinsics;
+import b1.a;
+import b1.d;
+import kotlin.jvm.internal.j;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class IdentityCredentialApiHiddenActivity extends Activity {
-    public static final Companion Companion = new Companion(null);
-    private boolean mWaitingForActivityResult;
-    private ResultReceiver resultReceiver;
+    public ResultReceiver a;
+    public boolean b;
 
     @Override // android.app.Activity
-    protected void onCreate(Bundle bundle) {
+    public final void onActivityResult(int i10, int i11, Intent intent) {
+        super.onActivityResult(i10, i11, intent);
+        ResultReceiver resultReceiver = this.a;
+        if (resultReceiver != null) {
+            int i12 = d.d;
+            a.d(resultReceiver, i10, i11, intent);
+        }
+        this.b = false;
+        finish();
+    }
+
+    @Override // android.app.Activity
+    public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         overridePendingTransition(0, 0);
         ResultReceiver resultReceiver = (ResultReceiver) getIntent().getParcelableExtra("RESULT_RECEIVER");
-        this.resultReceiver = resultReceiver;
+        this.a = resultReceiver;
         if (resultReceiver == null) {
             finish();
         }
@@ -29,53 +41,30 @@ public class IdentityCredentialApiHiddenActivity extends Activity {
             finish();
             return;
         }
-        restoreState(bundle);
-        if (this.mWaitingForActivityResult) {
+        if (bundle != null) {
+            this.b = bundle.getBoolean("androidx.credentials.playservices.AWAITING_RESULT", false);
+        }
+        if (this.b) {
             return;
         }
         PendingIntent pendingIntent = (PendingIntent) getIntent().getParcelableExtra("EXTRA_FLOW_PENDING_INTENT");
         if (pendingIntent != null) {
-            this.mWaitingForActivityResult = true;
-            startIntentSenderForResult(pendingIntent.getIntentSender(), CredentialProviderBaseController.Companion.getCONTROLLER_REQUEST_CODE$credentials_play_services_auth_release(), null, 0, 0, 0, null);
-        } else {
-            ResultReceiver resultReceiver2 = this.resultReceiver;
-            if (resultReceiver2 != null) {
-                CredentialProviderBaseController.Companion.reportError$credentials_play_services_auth_release(resultReceiver2, stringExtra, "Internal error");
-            }
-            finish();
+            this.b = true;
+            startIntentSenderForResult(pendingIntent.getIntentSender(), d.c, null, 0, 0, 0, null);
+            return;
         }
-    }
-
-    private final void restoreState(Bundle bundle) {
-        if (bundle != null) {
-            this.mWaitingForActivityResult = bundle.getBoolean("androidx.credentials.playservices.AWAITING_RESULT", false);
+        ResultReceiver resultReceiver2 = this.a;
+        if (resultReceiver2 != null) {
+            int i10 = d.d;
+            a.c(resultReceiver2, stringExtra, "Internal error");
         }
-    }
-
-    @Override // android.app.Activity
-    protected void onSaveInstanceState(Bundle outState) {
-        Intrinsics.checkNotNullParameter(outState, "outState");
-        outState.putBoolean("androidx.credentials.playservices.AWAITING_RESULT", this.mWaitingForActivityResult);
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override // android.app.Activity
-    protected void onActivityResult(int i, int i2, Intent intent) {
-        super.onActivityResult(i, i2, intent);
-        ResultReceiver resultReceiver = this.resultReceiver;
-        if (resultReceiver != null) {
-            CredentialProviderBaseController.Companion.reportResult$credentials_play_services_auth_release(resultReceiver, i, i2, intent);
-        }
-        this.mWaitingForActivityResult = false;
         finish();
     }
 
-    public static final class Companion {
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-
-        private Companion() {
-        }
+    @Override // android.app.Activity
+    public final void onSaveInstanceState(Bundle outState) {
+        j.e(outState, "outState");
+        outState.putBoolean("androidx.credentials.playservices.AWAITING_RESULT", this.b);
+        super.onSaveInstanceState(outState);
     }
 }

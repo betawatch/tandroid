@@ -1,8 +1,10 @@
 package com.google.android.recaptcha;
 
-import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.jvm.internal.Intrinsics;
+import a9.p;
+import kotlin.jvm.internal.f;
+import kotlin.jvm.internal.j;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class RecaptchaAction {
     public static final Companion Companion = new Companion(null);
@@ -10,16 +12,17 @@ public final class RecaptchaAction {
     public static final RecaptchaAction SIGNUP = new RecaptchaAction("signup");
     private final String action;
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static final class Companion {
         private Companion() {
         }
 
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-
         public final RecaptchaAction custom(String str) {
             return new RecaptchaAction(str, null);
+        }
+
+        public /* synthetic */ Companion(f fVar) {
+            this();
         }
     }
 
@@ -27,12 +30,8 @@ public final class RecaptchaAction {
         this.action = str;
     }
 
-    public /* synthetic */ RecaptchaAction(String str, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str);
-    }
-
-    public static /* synthetic */ RecaptchaAction copy$default(RecaptchaAction recaptchaAction, String str, int i, Object obj) {
-        if ((i & 1) != 0) {
+    public static /* synthetic */ RecaptchaAction copy$default(RecaptchaAction recaptchaAction, String str, int i10, Object obj) {
+        if ((i10 & 1) != 0) {
             str = recaptchaAction.action;
         }
         return recaptchaAction.copy(str);
@@ -54,7 +53,7 @@ public final class RecaptchaAction {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof RecaptchaAction) && Intrinsics.areEqual(this.action, ((RecaptchaAction) obj).action);
+        return (obj instanceof RecaptchaAction) && j.a(this.action, ((RecaptchaAction) obj).action);
     }
 
     public final String getAction() {
@@ -66,6 +65,10 @@ public final class RecaptchaAction {
     }
 
     public String toString() {
-        return "RecaptchaAction(action=" + this.action + ")";
+        return p.p(new StringBuilder("RecaptchaAction(action="), this.action, ")");
+    }
+
+    public /* synthetic */ RecaptchaAction(String str, f fVar) {
+        this(str);
     }
 }

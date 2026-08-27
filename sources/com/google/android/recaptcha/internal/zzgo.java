@@ -1,16 +1,19 @@
 package com.google.android.recaptcha.internal;
 
+import ad.l;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import h7.q6;
 import java.util.ArrayList;
 import java.util.List;
-import kotlin.collections.CollectionsKt;
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.f;
+import kotlin.jvm.internal.j;
+import qc.g;
+import qc.o;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzgo extends SQLiteOpenHelper {
     public static final zzgn zza = new zzgn(null);
@@ -27,7 +30,7 @@ public final class zzgo extends SQLiteOpenHelper {
         zzc = zzd2;
     }
 
-    public /* synthetic */ zzgo(Context context, DefaultConstructorMarker defaultConstructorMarker) {
+    public /* synthetic */ zzgo(Context context, f fVar) {
         super(context, zzc, (SQLiteDatabase.CursorFactory) null, zzb);
     }
 
@@ -37,13 +40,13 @@ public final class zzgo extends SQLiteOpenHelper {
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
-    public final void onDowngrade(SQLiteDatabase sQLiteDatabase, int i, int i2) {
+    public final void onDowngrade(SQLiteDatabase sQLiteDatabase, int i10, int i11) {
         sQLiteDatabase.execSQL("DROP TABLE IF EXISTS ce");
         sQLiteDatabase.execSQL("CREATE TABLE ce (id INTEGER PRIMARY KEY,ts BIGINT NOT NULL,ss TEXT NOT NULL)");
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
-    public final void onUpgrade(SQLiteDatabase sQLiteDatabase, int i, int i2) {
+    public final void onUpgrade(SQLiteDatabase sQLiteDatabase, int i10, int i11) {
         sQLiteDatabase.execSQL("DROP TABLE IF EXISTS ce");
         sQLiteDatabase.execSQL("CREATE TABLE ce (id INTEGER PRIMARY KEY,ts BIGINT NOT NULL,ss TEXT NOT NULL)");
     }
@@ -52,21 +55,21 @@ public final class zzgo extends SQLiteOpenHelper {
         if (list.isEmpty()) {
             return 0;
         }
-        return getWritableDatabase().delete("ce", "id IN ".concat(String.valueOf(CollectionsKt.joinToString$default(list, ", ", "(", ")", 0, null, new Function1() { // from class: com.google.android.recaptcha.internal.zzgm
-            @Override // kotlin.jvm.functions.Function1
+        return getWritableDatabase().delete("ce", "id IN ".concat(String.valueOf(g.h(list, ", ", "(", ")", new l() { // from class: com.google.android.recaptcha.internal.zzgm
+            @Override // ad.l
             public final Object invoke(Object obj) {
                 zzgn zzgnVar = zzgo.zza;
                 return String.valueOf(((zzgp) obj).zza());
             }
-        }, 24, null))), null);
+        }, 24))), null);
     }
 
     public final int zzb() {
         Cursor rawQuery = getReadableDatabase().rawQuery("SELECT COUNT(*) FROM ce", null);
-        int i = -1;
+        int i10 = -1;
         try {
             if (rawQuery.moveToNext()) {
-                i = rawQuery.getInt(0);
+                i10 = rawQuery.getInt(0);
             }
         } catch (Exception unused) {
         } catch (Throwable th) {
@@ -74,7 +77,7 @@ public final class zzgo extends SQLiteOpenHelper {
             throw th;
         }
         rawQuery.close();
-        return i;
+        return i10;
     }
 
     public final List zzd() {
@@ -83,13 +86,13 @@ public final class zzgo extends SQLiteOpenHelper {
         while (query.moveToNext()) {
             try {
                 try {
-                    int i = query.getInt(query.getColumnIndexOrThrow("id"));
+                    int i10 = query.getInt(query.getColumnIndexOrThrow("id"));
                     String string = query.getString(query.getColumnIndexOrThrow("ss"));
-                    long j = query.getLong(query.getColumnIndexOrThrow("ts"));
-                    Intrinsics.checkNotNull(string);
-                    arrayList.add(new zzgp(string, j, i));
+                    long j10 = query.getLong(query.getColumnIndexOrThrow("ts"));
+                    j.b(string);
+                    arrayList.add(new zzgp(string, j10, i10));
                 } catch (Exception unused) {
-                    arrayList = CollectionsKt.emptyList();
+                    arrayList = o.a;
                 }
             } finally {
                 query.close();
@@ -99,6 +102,6 @@ public final class zzgo extends SQLiteOpenHelper {
     }
 
     public final boolean zzf(zzgp zzgpVar) {
-        return zza(CollectionsKt.listOf(zzgpVar)) == 1;
+        return zza(q6.a(zzgpVar)) == 1;
     }
 }

@@ -3,7 +3,8 @@ package org.telegram.messenger;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class AnimatedFileDrawableStream implements FileLoadOperationStream {
     private volatile boolean canceled;
     private CountDownLatch countDownLatch;
@@ -22,60 +23,108 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
     private final Object sync = new Object();
     private boolean waitingForLoad;
 
-    public AnimatedFileDrawableStream(TLRPC.Document document, ImageLocation imageLocation, Object obj, int i, boolean z, int i2, int i3) {
+    public AnimatedFileDrawableStream(TLRPC.Document document, ImageLocation imageLocation, Object obj, int i10, boolean z10, int i11, int i12) {
         this.document = document;
         this.location = imageLocation;
         this.parentObject = obj;
-        this.currentAccount = i;
-        this.preview = z;
-        this.loadingPriority = i2;
-        this.loadOperation = FileLoader.getInstance(i).loadStreamFile(this, this.document, this.location, this.parentObject, 0L, this.preview, i2, i3);
+        this.currentAccount = i10;
+        this.preview = z10;
+        this.loadingPriority = i11;
+        this.loadOperation = FileLoader.getInstance(i10).loadStreamFile(this, this.document, this.location, this.parentObject, 0L, this.preview, i11, i12);
     }
 
-    public boolean isFinishedLoadingFile() {
-        return this.finishedLoadingFile;
+    private void cancelLoadingInternal() {
+        FileLoader.getInstance(this.currentAccount).cancelLoadFile(this.document);
+        if (this.location != null) {
+            FileLoader.getInstance(this.currentAccount).cancelLoadFile(this.location.location, "mp4");
+        }
+    }
+
+    public void cancel() {
+        cancel(true);
+    }
+
+    public int getCurrentAccount() {
+        return this.currentAccount;
+    }
+
+    public TLRPC.Document getDocument() {
+        return this.document;
     }
 
     public String getFinishedFilePath() {
         return this.finishedFilePath;
     }
 
-    public int read(int i, int i2) {
-        long j;
-        long j2;
+    public ImageLocation getLocation() {
+        return this.location;
+    }
+
+    public Object getParentObject() {
+        return this.document;
+    }
+
+    public boolean isCanceled() {
+        return this.canceled;
+    }
+
+    public boolean isFinishedLoadingFile() {
+        return this.finishedLoadingFile;
+    }
+
+    public boolean isPreview() {
+        return this.preview;
+    }
+
+    public boolean isWaitingForLoad() {
+        return this.waitingForLoad;
+    }
+
+    @Override // org.telegram.messenger.FileLoadOperationStream
+    public void newDataAvailable() {
+        CountDownLatch countDownLatch = this.countDownLatch;
+        if (countDownLatch != null) {
+            countDownLatch.countDown();
+            this.countDownLatch = null;
+        }
+    }
+
+    public int read(int i10, int i11) {
+        long j10;
+        long j11;
         synchronized (this.sync) {
             try {
                 if (this.canceled) {
-                    int i3 = this.debugCanceledCount + 1;
-                    this.debugCanceledCount = i3;
-                    if (!this.debugReportSend && i3 > 200) {
+                    int i12 = this.debugCanceledCount + 1;
+                    this.debugCanceledCount = i12;
+                    if (!this.debugReportSend && i12 > 200) {
                         this.debugReportSend = true;
                         FileLog.e(new RuntimeException("infinity stream reading!!!"));
                     }
                     return 0;
                 }
-                if (i2 == 0) {
+                if (i11 == 0) {
                     return 0;
                 }
-                long j3 = 0;
-                while (j3 == 0) {
+                long j12 = 0;
+                while (j12 == 0) {
                     try {
-                        j = i;
-                        long[] downloadedLengthFromOffset = this.loadOperation.getDownloadedLengthFromOffset(j, i2);
-                        j2 = downloadedLengthFromOffset[0];
+                        j10 = i10;
+                        long[] downloadedLengthFromOffset = this.loadOperation.getDownloadedLengthFromOffset(j10, i11);
+                        j11 = downloadedLengthFromOffset[0];
                         try {
                             if (!this.finishedLoadingFile && downloadedLengthFromOffset[1] != 0) {
                                 this.finishedLoadingFile = true;
                                 this.finishedFilePath = this.loadOperation.getCacheFileFinal().getAbsolutePath();
                             }
-                        } catch (Exception e) {
-                            e = e;
-                            j3 = j2;
+                        } catch (Exception e9) {
+                            e = e9;
+                            j12 = j11;
                         }
-                    } catch (Exception e2) {
-                        e = e2;
+                    } catch (Exception e10) {
+                        e = e10;
                     }
-                    if (j2 == 0) {
+                    if (j11 == 0) {
                         synchronized (this.sync) {
                             try {
                                 if (this.canceled) {
@@ -83,14 +132,14 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                                     return 0;
                                 }
                                 this.countDownLatch = new CountDownLatch(1);
-                                if (this.loadOperation.isPaused() || this.lastOffset != j || this.preview) {
-                                    FileLoadOperation loadStreamFile = FileLoader.getInstance(this.currentAccount).loadStreamFile(this, this.document, this.location, this.parentObject, j, this.preview, this.loadingPriority);
+                                if (this.loadOperation.isPaused() || this.lastOffset != j10 || this.preview) {
+                                    FileLoadOperation loadStreamFile = FileLoader.getInstance(this.currentAccount).loadStreamFile(this, this.document, this.location, this.parentObject, j10, this.preview, this.loadingPriority);
                                     FileLoadOperation fileLoadOperation = this.loadOperation;
                                     if (fileLoadOperation != loadStreamFile) {
                                         fileLoadOperation.removeStreamListener(this);
                                         this.loadOperation = loadStreamFile;
                                     }
-                                    this.lastOffset = j + j2;
+                                    this.lastOffset = j10 + j11;
                                 }
                                 synchronized (this.sync) {
                                     try {
@@ -113,60 +162,18 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                                 }
                             } finally {
                             }
-                            e = e;
-                            j3 = j2;
+                            e = e9;
+                            j12 = j11;
                             FileLog.e((Throwable) e, false);
-                            return (int) j3;
+                            return (int) j12;
                         }
                     }
-                    j3 = j2;
+                    j12 = j11;
                 }
-                this.lastOffset = i + j3;
-                return (int) j3;
+                this.lastOffset = i10 + j12;
+                return (int) j12;
             } finally {
             }
-        }
-    }
-
-    public void cancel() {
-        cancel(true);
-    }
-
-    public void cancel(boolean z) {
-        if (this.canceled) {
-            return;
-        }
-        synchronized (this.sync) {
-            try {
-                CountDownLatch countDownLatch = this.countDownLatch;
-                if (countDownLatch != null) {
-                    countDownLatch.countDown();
-                    this.countDownLatch = null;
-                    if (z && !this.canceled && !this.preview) {
-                        FileLoader.getInstance(this.currentAccount).removeLoadingVideo(this.document, false, true);
-                    }
-                }
-                Object obj = this.parentObject;
-                if (obj instanceof MessageObject) {
-                    MessageObject messageObject = (MessageObject) obj;
-                    if (DownloadController.getInstance(messageObject.currentAccount).isDownloading(messageObject.getId())) {
-                        z = false;
-                    }
-                }
-                if (z) {
-                    cancelLoadingInternal();
-                }
-                this.canceled = true;
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-    }
-
-    private void cancelLoadingInternal() {
-        FileLoader.getInstance(this.currentAccount).cancelLoadFile(this.document);
-        if (this.location != null) {
-            FileLoader.getInstance(this.currentAccount).cancelLoadFile(this.location.location, "mp4");
         }
     }
 
@@ -176,40 +183,34 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
         }
     }
 
-    public TLRPC.Document getDocument() {
-        return this.document;
-    }
-
-    public ImageLocation getLocation() {
-        return this.location;
-    }
-
-    public Object getParentObject() {
-        return this.document;
-    }
-
-    public boolean isPreview() {
-        return this.preview;
-    }
-
-    public int getCurrentAccount() {
-        return this.currentAccount;
-    }
-
-    public boolean isWaitingForLoad() {
-        return this.waitingForLoad;
-    }
-
-    @Override // org.telegram.messenger.FileLoadOperationStream
-    public void newDataAvailable() {
-        CountDownLatch countDownLatch = this.countDownLatch;
-        if (countDownLatch != null) {
-            countDownLatch.countDown();
-            this.countDownLatch = null;
+    public void cancel(boolean z10) {
+        if (this.canceled) {
+            return;
         }
-    }
-
-    public boolean isCanceled() {
-        return this.canceled;
+        synchronized (this.sync) {
+            try {
+                CountDownLatch countDownLatch = this.countDownLatch;
+                if (countDownLatch != null) {
+                    countDownLatch.countDown();
+                    this.countDownLatch = null;
+                    if (z10 && !this.canceled && !this.preview) {
+                        FileLoader.getInstance(this.currentAccount).removeLoadingVideo(this.document, false, true);
+                    }
+                }
+                Object obj = this.parentObject;
+                if (obj instanceof MessageObject) {
+                    MessageObject messageObject = (MessageObject) obj;
+                    if (DownloadController.getInstance(messageObject.currentAccount).isDownloading(messageObject.getId())) {
+                        z10 = false;
+                    }
+                }
+                if (z10) {
+                    cancelLoadingInternal();
+                }
+                this.canceled = true;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
     }
 }

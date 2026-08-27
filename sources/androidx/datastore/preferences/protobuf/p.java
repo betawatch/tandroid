@@ -1,0 +1,17 @@
+package androidx.datastore.preferences.protobuf;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
+public abstract class p {
+    public static final o a = new o();
+    public static final o b;
+
+    static {
+        o oVar = null;
+        try {
+            oVar = (o) Class.forName("androidx.datastore.preferences.protobuf.ExtensionSchemaFull").getDeclaredConstructor(null).newInstance(null);
+        } catch (Exception unused) {
+        }
+        b = oVar;
+    }
+}

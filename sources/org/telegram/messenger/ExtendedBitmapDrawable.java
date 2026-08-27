@@ -3,23 +3,16 @@ package org.telegram.messenger;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class ExtendedBitmapDrawable extends BitmapDrawable {
     private int invert;
     private int orientation;
 
-    public ExtendedBitmapDrawable(Bitmap bitmap, int i, int i2) {
+    public ExtendedBitmapDrawable(Bitmap bitmap, int i10, int i11) {
         super(bitmap);
-        this.invert = i2;
-        this.orientation = i;
-    }
-
-    public boolean invertHorizontally() {
-        return (this.invert & 1) != 0;
-    }
-
-    public boolean invertVertically() {
-        return (this.invert & 2) != 0;
+        this.invert = i11;
+        this.orientation = i10;
     }
 
     public int getInvert() {
@@ -28,5 +21,13 @@ public class ExtendedBitmapDrawable extends BitmapDrawable {
 
     public int getOrientation() {
         return this.orientation;
+    }
+
+    public boolean invertHorizontally() {
+        return (this.invert & 1) != 0;
+    }
+
+    public boolean invertVertically() {
+        return (this.invert & 2) != 0;
     }
 }

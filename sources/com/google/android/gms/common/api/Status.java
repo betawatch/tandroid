@@ -3,135 +3,85 @@ package com.google.android.gms.common.api;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.app.PendingIntent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.internal.Objects;
-import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-import com.google.android.gms.common.util.PlatformVersion;
+import h7.r8;
+import java.util.Arrays;
+import w3.b0;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class Status extends AbstractSafeParcelable implements Result, ReflectedParcelable {
-    private final int zzb;
-    private final String zzc;
-    private final PendingIntent zzd;
-    private final ConnectionResult zze;
-    public static final Status RESULT_SUCCESS_CACHE = new Status(-1);
-    public static final Status RESULT_SUCCESS = new Status(0);
-    public static final Status RESULT_INTERRUPTED = new Status(14);
-    public static final Status RESULT_INTERNAL_ERROR = new Status(8);
-    public static final Status RESULT_TIMEOUT = new Status(15);
-    public static final Status RESULT_CANCELED = new Status(16);
-    public static final Status zza = new Status(17);
-    public static final Status RESULT_DEAD_CLIENT = new Status(18);
-    public static final Parcelable.Creator<Status> CREATOR = new zze();
+public final class Status extends z5.a implements q, ReflectedParcelable {
+    public final int a;
+    public final String b;
+    public final PendingIntent c;
+    public final v5.a d;
+    public static final Status e = new Status(0, null, null, null);
+    public static final Status f = new Status(14, null, null, null);
+    public static final Status h = new Status(8, null, null, null);
+    public static final Status n = new Status(15, null, null, null);
+    public static final Status r = new Status(16, null, null, null);
+    public static final Parcelable.Creator<Status> CREATOR = new t(3);
 
-    public Status(int i) {
-        this(i, (String) null);
+    public Status(int i10, String str, PendingIntent pendingIntent, v5.a aVar) {
+        this.a = i10;
+        this.b = str;
+        this.c = pendingIntent;
+        this.d = aVar;
     }
 
-    Status(int i, String str, PendingIntent pendingIntent, ConnectionResult connectionResult) {
-        this.zzb = i;
-        this.zzc = str;
-        this.zzd = pendingIntent;
-        this.zze = connectionResult;
+    public final boolean b() {
+        return this.a <= 0;
     }
 
-    public Status(ConnectionResult connectionResult, String str) {
-        this(connectionResult, str, 17);
+    public final void c(Activity activity, int i10) {
+        PendingIntent pendingIntent = this.c;
+        if (pendingIntent != null) {
+            Bundle bundle = Build.VERSION.SDK_INT >= 34 ? ActivityOptions.makeBasic().setPendingIntentBackgroundActivityStartMode(1).toBundle() : null;
+            y5.l.h(pendingIntent);
+            activity.startIntentSenderForResult(pendingIntent.getIntentSender(), i10, null, 0, 0, 0, bundle);
+        }
     }
 
-    public boolean equals(Object obj) {
+    public final boolean equals(Object obj) {
         if (!(obj instanceof Status)) {
             return false;
         }
         Status status = (Status) obj;
-        return this.zzb == status.zzb && Objects.equal(this.zzc, status.zzc) && Objects.equal(this.zzd, status.zzd) && Objects.equal(this.zze, status.zze);
+        return this.a == status.a && y5.l.l(this.b, status.b) && y5.l.l(this.c, status.c) && y5.l.l(this.d, status.d);
     }
 
-    public ConnectionResult getConnectionResult() {
-        return this.zze;
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), this.b, this.c, this.d});
     }
 
-    @Override // com.google.android.gms.common.api.Result
-    public Status getStatus() {
-        return this;
-    }
-
-    public int getStatusCode() {
-        return this.zzb;
-    }
-
-    public String getStatusMessage() {
-        return this.zzc;
-    }
-
-    public boolean hasResolution() {
-        return this.zzd != null;
-    }
-
-    public int hashCode() {
-        return Objects.hashCode(Integer.valueOf(this.zzb), this.zzc, this.zzd, this.zze);
-    }
-
-    public boolean isSuccess() {
-        return this.zzb <= 0;
-    }
-
-    public void startResolutionForResult(Activity activity, int i) {
-        Bundle bundle;
-        ActivityOptions makeBasic;
-        ActivityOptions pendingIntentBackgroundActivityStartMode;
-        if (hasResolution()) {
-            if (PlatformVersion.isAtLeastU()) {
-                makeBasic = ActivityOptions.makeBasic();
-                pendingIntentBackgroundActivityStartMode = makeBasic.setPendingIntentBackgroundActivityStartMode(1);
-                bundle = pendingIntentBackgroundActivityStartMode.toBundle();
-            } else {
-                bundle = null;
-            }
-            Bundle bundle2 = bundle;
-            PendingIntent pendingIntent = this.zzd;
-            Preconditions.checkNotNull(pendingIntent);
-            activity.startIntentSenderForResult(pendingIntent.getIntentSender(), i, null, 0, 0, 0, bundle2);
+    public final String toString() {
+        b0 b0Var = new b0(this);
+        String str = this.b;
+        if (str == null) {
+            str = i8.j.a(this.a);
         }
-    }
-
-    public String toString() {
-        Objects.ToStringHelper stringHelper = Objects.toStringHelper(this);
-        stringHelper.add("statusCode", zza());
-        stringHelper.add("resolution", this.zzd);
-        return stringHelper.toString();
+        b0Var.e(str, "statusCode");
+        b0Var.e(this.c, "resolution");
+        return b0Var.toString();
     }
 
     @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeInt(parcel, 1, getStatusCode());
-        SafeParcelWriter.writeString(parcel, 2, getStatusMessage(), false);
-        SafeParcelWriter.writeParcelable(parcel, 3, this.zzd, i, false);
-        SafeParcelWriter.writeParcelable(parcel, 4, getConnectionResult(), i, false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = r8.q(parcel, 20293);
+        r8.s(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        r8.l(parcel, 2, this.b);
+        r8.k(parcel, 3, this.c, i10);
+        r8.k(parcel, 4, this.d, i10);
+        r8.r(parcel, q6);
     }
 
-    public final String zza() {
-        String str = this.zzc;
-        return str != null ? str : CommonStatusCodes.getStatusCodeString(this.zzb);
-    }
-
-    public Status(int i, String str) {
-        this(i, str, (PendingIntent) null);
-    }
-
-    public Status(ConnectionResult connectionResult, String str, int i) {
-        this(i, str, connectionResult.getResolution(), connectionResult);
-    }
-
-    public Status(int i, String str, PendingIntent pendingIntent) {
-        this(i, str, pendingIntent, null);
+    @Override // com.google.android.gms.common.api.q
+    public final Status i() {
+        return this;
     }
 }

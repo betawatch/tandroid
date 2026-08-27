@@ -9,160 +9,64 @@ import android.view.animation.Interpolator;
 import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class OverlayListView extends ListView {
-    private final List mOverlayObjects;
+    public final ArrayList a;
 
     public OverlayListView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.mOverlayObjects = new ArrayList();
-    }
-
-    public void addOverlayObject(OverlayObject overlayObject) {
-        this.mOverlayObjects.add(overlayObject);
-    }
-
-    public void startAnimationAll() {
-        for (OverlayObject overlayObject : this.mOverlayObjects) {
-            if (!overlayObject.isAnimationStarted()) {
-                overlayObject.startAnimation(getDrawingTime());
-            }
-        }
-    }
-
-    public void stopAnimationAll() {
-        Iterator it = this.mOverlayObjects.iterator();
-        while (it.hasNext()) {
-            ((OverlayObject) it.next()).stopAnimation();
-        }
+        this.a = new ArrayList();
     }
 
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    public final void onDraw(Canvas canvas) {
+        boolean z10;
         super.onDraw(canvas);
-        if (this.mOverlayObjects.size() > 0) {
-            Iterator it = this.mOverlayObjects.iterator();
+        ArrayList arrayList = this.a;
+        if (arrayList.size() > 0) {
+            Iterator it = arrayList.iterator();
             while (it.hasNext()) {
-                OverlayObject overlayObject = (OverlayObject) it.next();
-                BitmapDrawable bitmapDrawable = overlayObject.getBitmapDrawable();
+                q0 q0Var = (q0) it.next();
+                BitmapDrawable bitmapDrawable = q0Var.a;
                 if (bitmapDrawable != null) {
                     bitmapDrawable.draw(canvas);
                 }
-                if (!overlayObject.update(getDrawingTime())) {
+                long drawingTime = getDrawingTime();
+                BitmapDrawable bitmapDrawable2 = q0Var.a;
+                Rect rect = q0Var.c;
+                if (q0Var.k) {
+                    z10 = false;
+                } else {
+                    float max = q0Var.j ? Math.max(0.0f, Math.min(1.0f, (drawingTime - q0Var.i) / q0Var.e)) : 0.0f;
+                    Interpolator interpolator = q0Var.d;
+                    float interpolation = interpolator == null ? max : interpolator.getInterpolation(max);
+                    int i10 = (int) (q0Var.g * interpolation);
+                    Rect rect2 = q0Var.f;
+                    rect.top = rect2.top + i10;
+                    rect.bottom = rect2.bottom + i10;
+                    float z11 = com.google.android.recaptcha.internal.a.z(q0Var.h, 1.0f, interpolation, 1.0f);
+                    q0Var.b = z11;
+                    if (bitmapDrawable2 != null) {
+                        bitmapDrawable2.setAlpha((int) (z11 * 255.0f));
+                        bitmapDrawable2.setBounds(rect);
+                    }
+                    if (q0Var.j && max >= 1.0f) {
+                        q0Var.k = true;
+                        xe.b bVar = q0Var.l;
+                        if (bVar != null) {
+                            u uVar = (u) bVar.c;
+                            uVar.V.remove((c2.z) bVar.b);
+                            uVar.R.notifyDataSetChanged();
+                        }
+                    }
+                    z10 = !q0Var.k;
+                }
+                if (!z10) {
                     it.remove();
                 }
             }
-        }
-    }
-
-    public static class OverlayObject {
-        private BitmapDrawable mBitmap;
-        private Rect mCurrentBounds;
-        private int mDeltaY;
-        private long mDuration;
-        private Interpolator mInterpolator;
-        private boolean mIsAnimationEnded;
-        private boolean mIsAnimationStarted;
-        private OnAnimationEndListener mListener;
-        private Rect mStartRect;
-        private long mStartTime;
-        private float mCurrentAlpha = 1.0f;
-        private float mStartAlpha = 1.0f;
-        private float mEndAlpha = 1.0f;
-
-        public interface OnAnimationEndListener {
-            void onAnimationEnd();
-        }
-
-        OverlayObject(BitmapDrawable bitmapDrawable, Rect rect) {
-            this.mBitmap = bitmapDrawable;
-            this.mStartRect = rect;
-            this.mCurrentBounds = new Rect(rect);
-            BitmapDrawable bitmapDrawable2 = this.mBitmap;
-            if (bitmapDrawable2 != null) {
-                bitmapDrawable2.setAlpha((int) (this.mCurrentAlpha * 255.0f));
-                this.mBitmap.setBounds(this.mCurrentBounds);
-            }
-        }
-
-        public BitmapDrawable getBitmapDrawable() {
-            return this.mBitmap;
-        }
-
-        public boolean isAnimationStarted() {
-            return this.mIsAnimationStarted;
-        }
-
-        public OverlayObject setAlphaAnimation(float f, float f2) {
-            this.mStartAlpha = f;
-            this.mEndAlpha = f2;
-            return this;
-        }
-
-        public OverlayObject setTranslateYAnimation(int i) {
-            this.mDeltaY = i;
-            return this;
-        }
-
-        public OverlayObject setDuration(long j) {
-            this.mDuration = j;
-            return this;
-        }
-
-        public OverlayObject setInterpolator(Interpolator interpolator) {
-            this.mInterpolator = interpolator;
-            return this;
-        }
-
-        public OverlayObject setAnimationEndListener(OnAnimationEndListener onAnimationEndListener) {
-            this.mListener = onAnimationEndListener;
-            return this;
-        }
-
-        public void startAnimation(long j) {
-            this.mStartTime = j;
-            this.mIsAnimationStarted = true;
-        }
-
-        public void stopAnimation() {
-            this.mIsAnimationStarted = true;
-            this.mIsAnimationEnded = true;
-            OnAnimationEndListener onAnimationEndListener = this.mListener;
-            if (onAnimationEndListener != null) {
-                onAnimationEndListener.onAnimationEnd();
-            }
-        }
-
-        public boolean update(long j) {
-            if (this.mIsAnimationEnded) {
-                return false;
-            }
-            float max = this.mIsAnimationStarted ? Math.max(0.0f, Math.min(1.0f, (j - this.mStartTime) / this.mDuration)) : 0.0f;
-            Interpolator interpolator = this.mInterpolator;
-            float interpolation = interpolator == null ? max : interpolator.getInterpolation(max);
-            int i = (int) (this.mDeltaY * interpolation);
-            Rect rect = this.mCurrentBounds;
-            Rect rect2 = this.mStartRect;
-            rect.top = rect2.top + i;
-            rect.bottom = rect2.bottom + i;
-            float f = this.mStartAlpha;
-            float f2 = f + ((this.mEndAlpha - f) * interpolation);
-            this.mCurrentAlpha = f2;
-            BitmapDrawable bitmapDrawable = this.mBitmap;
-            if (bitmapDrawable != null && rect != null) {
-                bitmapDrawable.setAlpha((int) (f2 * 255.0f));
-                this.mBitmap.setBounds(this.mCurrentBounds);
-            }
-            if (this.mIsAnimationStarted && max >= 1.0f) {
-                this.mIsAnimationEnded = true;
-                OnAnimationEndListener onAnimationEndListener = this.mListener;
-                if (onAnimationEndListener != null) {
-                    onAnimationEndListener.onAnimationEnd();
-                }
-            }
-            return !this.mIsAnimationEnded;
         }
     }
 }

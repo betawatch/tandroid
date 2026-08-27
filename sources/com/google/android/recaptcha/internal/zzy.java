@@ -1,40 +1,38 @@
 package com.google.android.recaptcha.internal;
 
+import ad.p;
 import android.os.Build;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.collections.ArraysKt;
-import kotlin.collections.CollectionsKt;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.functions.Function2;
+import h7.k6;
+import qc.f;
+import qc.h;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzy extends SuspendLambda implements Function2 {
+final class zzy extends i implements p {
     final /* synthetic */ zzz zza;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzy(zzz zzzVar, Continuation continuation) {
-        super(2, continuation);
+    public zzy(zzz zzzVar, c cVar) {
+        super(2, cVar);
         this.zza = zzzVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzy(this.zza, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        return new zzy(this.zza, cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzy) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzy) create((zzhk) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
-        IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        ResultKt.throwOnFailure(obj);
+        sc.a aVar = sc.a.a;
+        k6.b(obj);
         zzyu zzf = zzyx.zzf();
         zzz zzzVar = this.zza;
         zzyw zzb = zzz.zzb(zzzVar, Build.MANUFACTURER);
@@ -45,11 +43,11 @@ final class zzy extends SuspendLambda implements Function2 {
         zzyw zzb6 = zzz.zzb(zzzVar, Build.PRODUCT);
         zzyw zzb7 = zzz.zzb(zzzVar, Build.BOARD);
         zzyw zzb8 = zzz.zzb(zzzVar, Build.BRAND);
-        zzyw zzb9 = zzz.zzb(zzzVar, ArraysKt.joinToString$default(Build.SUPPORTED_ABIS, ",", "[", "]", 0, (CharSequence) null, (Function1) null, 56, (Object) null));
-        long j = Build.TIME;
+        zzyw zzb9 = zzz.zzb(zzzVar, f.f(Build.SUPPORTED_ABIS));
+        long j10 = Build.TIME;
         zzyv zzf2 = zzyw.zzf();
-        zzf2.zzv(j);
-        zzf.zze(CollectionsKt.listOf((Object[]) new zzyw[]{zzb, zzb2, zzb3, zzb4, zzb5, zzb6, zzb7, zzb8, zzb9, (zzyw) zzf2.zzk(), zzz.zzb(zzzVar, Build.ID), zzz.zzb(zzzVar, Build.BOOTLOADER), zzz.zzb(zzzVar, Build.DISPLAY), zzz.zzb(zzzVar, Build.TYPE), zzz.zzb(zzzVar, Build.TAGS)}));
+        zzf2.zzv(j10);
+        zzf.zze(h.c(zzb, zzb2, zzb3, zzb4, zzb5, zzb6, zzb7, zzb8, zzb9, (zzyw) zzf2.zzk(), zzz.zzb(zzzVar, Build.ID), zzz.zzb(zzzVar, Build.BOOTLOADER), zzz.zzb(zzzVar, Build.DISPLAY), zzz.zzb(zzzVar, Build.TYPE), zzz.zzb(zzzVar, Build.TAGS)));
         return zzas.zzb(zzzVar, (zzyx) zzf.zzk());
     }
 }

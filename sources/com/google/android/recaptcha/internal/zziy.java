@@ -1,7 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.LazyKt;
+import h7.j6;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zziy {
     public static final Class zza(Object obj) {
@@ -22,13 +23,13 @@ public final class zziy {
         try {
             String str = (String) obj;
             Class<?> cls2 = Class.forName(str);
-            int i = zzby.zza;
-            if (((zziq) LazyKt.lazy(zzix.zza).getValue()).zzb(str)) {
+            int i10 = zzby.zza;
+            if (((zziq) j6.a(zzix.zza).a()).zzb(str)) {
                 return cls2;
             }
             throw new zzdm(6, 47, null);
-        } catch (Exception e) {
-            throw new zzdm(6, 8, e);
+        } catch (Exception e9) {
+            throw new zzdm(6, 8, e9);
         }
     }
 }

@@ -12,67 +12,67 @@ public final class s implements Serializable {
     public final long c;
     public final long d;
 
-    public static s e(long j, long j2) {
-        if (j > j2) {
+    public static s e(long j10, long j11) {
+        if (j10 > j11) {
             throw new IllegalArgumentException("Minimum value must be less than maximum value");
         }
-        return new s(j, j, j2, j2);
+        return new s(j10, j10, j11, j11);
     }
 
-    public static s f(long j, long j2) {
-        if (j > j2) {
+    public static s f(long j10, long j11) {
+        if (j10 > j11) {
             throw new IllegalArgumentException("Smallest maximum value must be less than largest maximum value");
         }
-        if (1 > j2) {
+        if (1 > j11) {
             throw new IllegalArgumentException("Minimum value must be less than maximum value");
         }
-        return new s(1L, 1L, j, j2);
+        return new s(1L, 1L, j10, j11);
     }
 
-    public s(long j, long j2, long j3, long j4) {
-        this.a = j;
-        this.b = j2;
-        this.c = j3;
-        this.d = j4;
+    public s(long j10, long j11, long j12, long j13) {
+        this.a = j10;
+        this.b = j11;
+        this.c = j12;
+        this.d = j13;
     }
 
-    public final int a(long j, o oVar) {
-        if (this.a < -2147483648L || this.d > 2147483647L || !d(j)) {
-            throw new j$.time.b(c(j, oVar));
+    public final int a(long j10, o oVar) {
+        if (this.a < -2147483648L || this.d > 2147483647L || !d(j10)) {
+            throw new j$.time.b(c(j10, oVar));
         }
-        return (int) j;
+        return (int) j10;
     }
 
-    public final boolean d(long j) {
-        return j >= this.a && j <= this.d;
+    public final boolean d(long j10) {
+        return j10 >= this.a && j10 <= this.d;
     }
 
-    public final void b(long j, o oVar) {
-        if (!d(j)) {
-            throw new j$.time.b(c(j, oVar));
+    public final void b(long j10, o oVar) {
+        if (!d(j10)) {
+            throw new j$.time.b(c(j10, oVar));
         }
     }
 
-    public final String c(long j, o oVar) {
+    public final String c(long j10, o oVar) {
         if (oVar != null) {
-            return "Invalid value for " + oVar + " (valid values " + this + "): " + j;
+            return "Invalid value for " + oVar + " (valid values " + this + "): " + j10;
         }
-        return "Invalid value (valid values " + this + "): " + j;
+        return "Invalid value (valid values " + this + "): " + j10;
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
         objectInputStream.defaultReadObject();
-        long j = this.a;
-        long j2 = this.b;
-        if (j > j2) {
+        long j10 = this.a;
+        long j11 = this.b;
+        if (j10 > j11) {
             throw new InvalidObjectException("Smallest minimum value must be less than largest minimum value");
         }
-        long j3 = this.c;
-        long j4 = this.d;
-        if (j3 > j4) {
+        long j12 = this.c;
+        long j13 = this.d;
+        if (j12 > j13) {
             throw new InvalidObjectException("Smallest maximum value must be less than largest maximum value");
         }
-        if (j2 > j4) {
+        if (j11 > j13) {
             throw new InvalidObjectException("Minimum value must be less than maximum value");
         }
     }
@@ -91,32 +91,29 @@ public final class s implements Serializable {
     }
 
     public final int hashCode() {
-        long j = this.b;
-        long j2 = this.a + (j << 16) + (j >> 48);
-        long j3 = this.c;
-        long j4 = j2 + (j3 << 32) + (j3 >> 32);
-        long j5 = this.d;
-        long j6 = j4 + (j5 << 48) + (j5 >> 16);
-        return (int) ((j6 >>> 32) ^ j6);
+        long j10 = this.a;
+        long j11 = this.b;
+        long j12 = j10 + (j11 << 16) + (j11 >> 48);
+        long j13 = this.c;
+        long j14 = j12 + (j13 << 32) + (j13 >> 32);
+        long j15 = this.d;
+        long j16 = j14 + (j15 << 48) + (j15 >> 16);
+        return (int) (j16 ^ (j16 >>> 32));
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder();
-        long j = this.a;
-        sb.append(j);
-        long j2 = this.b;
-        if (j != j2) {
-            sb.append('/');
-            sb.append(j2);
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(this.a);
+        if (this.a != this.b) {
+            sb2.append('/');
+            sb2.append(this.b);
         }
-        sb.append(" - ");
-        long j3 = this.c;
-        sb.append(j3);
-        long j4 = this.d;
-        if (j3 != j4) {
-            sb.append('/');
-            sb.append(j4);
+        sb2.append(" - ");
+        sb2.append(this.c);
+        if (this.c != this.d) {
+            sb2.append('/');
+            sb2.append(this.d);
         }
-        return sb.toString();
+        return sb2.toString();
     }
 }

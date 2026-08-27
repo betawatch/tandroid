@@ -1,0 +1,51 @@
+package fh;
+
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.Components.h00;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes3.dex */
+public final class m extends h00 {
+    public final /* synthetic */ int Q;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ m(Context context, int i10, c6 c6Var) {
+        super(context, c6Var);
+        this.Q = i10;
+    }
+
+    @Override // org.telegram.ui.Components.h00
+    public int getColumnsCount() {
+        switch (this.Q) {
+            case 1:
+                return 3;
+            default:
+                return super.getColumnsCount();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.h00
+    public int getViewType() {
+        switch (this.Q) {
+            case 1:
+                return 2;
+            default:
+                return super.getViewType();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.h00, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.Q) {
+            case 0:
+                setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(104.0f));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+}

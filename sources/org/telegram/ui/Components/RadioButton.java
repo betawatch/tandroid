@@ -10,167 +10,154 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* loaded from: classes5.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes3.dex */
 public class RadioButton extends View {
-    private static Paint checkedPaint;
-    private static Paint eraser;
-    private static Paint paint;
-    private boolean attachedToWindow;
-    private ObjectAnimator checkAnimator;
-    private int checkedColor;
-    private int color;
-    private Drawable icon;
-    private int iconColor;
-    private boolean isChecked;
-    private float progress;
-    private int size;
+    public static Paint s;
+    public static Paint v;
+    public static Paint w;
+    public int a;
+    public int b;
+    public float c;
+    public ObjectAnimator d;
+    public boolean e;
+    public boolean f;
+    public int h;
+    public int n;
+    public Drawable r;
 
     public RadioButton(Context context) {
         super(context);
-        this.size = AndroidUtilities.dp(16.0f);
-        if (paint == null) {
+        this.h = AndroidUtilities.dp(16.0f);
+        if (s == null) {
+            Paint paint = new Paint(1);
+            s = paint;
+            paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+            s.setStyle(Paint.Style.STROKE);
+            w = new Paint(1);
             Paint paint2 = new Paint(1);
-            paint = paint2;
-            paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
-            paint.setStyle(Paint.Style.STROKE);
-            checkedPaint = new Paint(1);
-            Paint paint3 = new Paint(1);
-            eraser = paint3;
-            paint3.setColor(0);
-            eraser.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+            v = paint2;
+            paint2.setColor(0);
+            v.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         }
     }
 
-    public void setProgress(float f) {
-        if (this.progress == f) {
+    public final void a(boolean z10, boolean z11) {
+        if (z10 == this.f) {
             return;
         }
-        this.progress = f;
-        invalidate();
-    }
-
-    public float getProgress() {
-        return this.progress;
-    }
-
-    public void setSize(int i) {
-        if (this.size == i) {
+        this.f = z10;
+        if (this.e && z11) {
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
+            this.d = ofFloat;
+            ofFloat.setDuration(200L);
+            this.d.start();
             return;
         }
-        this.size = i;
+        ObjectAnimator objectAnimator = this.d;
+        if (objectAnimator != null) {
+            objectAnimator.cancel();
+        }
+        setProgress(z10 ? 1.0f : 0.0f);
     }
 
-    public void setIcon(Drawable drawable) {
-        this.iconColor = 0;
-        this.icon = drawable;
+    public final void b(int i10, int i11) {
+        this.b = i10;
+        this.a = i11;
         invalidate();
     }
 
     public int getColor() {
-        return this.color;
+        return this.b;
     }
 
-    public void setColor(int i, int i2) {
-        this.color = i;
-        this.checkedColor = i2;
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public void setBackgroundColor(int i) {
-        this.color = i;
-        invalidate();
-    }
-
-    public void setCheckedColor(int i) {
-        this.checkedColor = i;
-        invalidate();
-    }
-
-    private void cancelCheckAnimator() {
-        ObjectAnimator objectAnimator = this.checkAnimator;
-        if (objectAnimator != null) {
-            objectAnimator.cancel();
-        }
-    }
-
-    private void animateToCheckedState(boolean z) {
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z ? 1.0f : 0.0f);
-        this.checkAnimator = ofFloat;
-        ofFloat.setDuration(200L);
-        this.checkAnimator.start();
+    public float getProgress() {
+        return this.c;
     }
 
     @Override // android.view.View
-    protected void onAttachedToWindow() {
+    public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.attachedToWindow = true;
+        this.e = true;
     }
 
     @Override // android.view.View
-    protected void onDetachedFromWindow() {
+    public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.attachedToWindow = false;
-    }
-
-    public void setChecked(boolean z, boolean z2) {
-        if (z == this.isChecked) {
-            return;
-        }
-        this.isChecked = z;
-        if (this.attachedToWindow && z2) {
-            animateToCheckedState(z);
-        } else {
-            cancelCheckAnimator();
-            setProgress(z ? 1.0f : 0.0f);
-        }
-    }
-
-    public boolean isChecked() {
-        return this.isChecked;
+        this.e = false;
     }
 
     @Override // android.view.View
-    protected void onDraw(Canvas canvas) {
-        float f;
-        float f2 = this.progress;
-        if (f2 <= 0.5f) {
-            paint.setColor(this.color);
-            checkedPaint.setColor(this.color);
-            f = this.progress / 0.5f;
+    public final void onDraw(Canvas canvas) {
+        float f10;
+        float f11 = this.c;
+        if (f11 <= 0.5f) {
+            s.setColor(this.b);
+            w.setColor(this.b);
+            f10 = this.c / 0.5f;
         } else {
-            f = 2.0f - (f2 / 0.5f);
-            float f3 = 1.0f - f;
-            int rgb = Color.rgb(Color.red(this.color) + ((int) ((Color.red(this.checkedColor) - r4) * f3)), Color.green(this.color) + ((int) ((Color.green(this.checkedColor) - r7) * f3)), Color.blue(this.color) + ((int) ((Color.blue(this.checkedColor) - r9) * f3)));
-            paint.setColor(rgb);
-            checkedPaint.setColor(rgb);
+            f10 = 2.0f - (f11 / 0.5f);
+            float f12 = 1.0f - f10;
+            int rgb = Color.rgb(Color.red(this.b) + ((int) ((Color.red(this.a) - r4) * f12)), Color.green(this.b) + ((int) ((Color.green(this.a) - r7) * f12)), Color.blue(this.b) + ((int) ((Color.blue(this.a) - r9) * f12)));
+            s.setColor(rgb);
+            w.setColor(rgb);
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
-        float f4 = (this.size / 2) - ((f + 1.0f) * AndroidUtilities.density);
-        canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f4, paint);
-        if (this.icon == null) {
-            if (this.progress <= 0.5f) {
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f4 - AndroidUtilities.dp(1.0f), checkedPaint);
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (f4 - AndroidUtilities.dp(1.0f)) * (1.0f - f), eraser);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+        float f13 = (this.h / 2) - ((f10 + 1.0f) * AndroidUtilities.density);
+        canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f13, s);
+        if (this.r == null) {
+            if (this.c <= 0.5f) {
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f13 - AndroidUtilities.dp(1.0f), w);
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f10) * (f13 - AndroidUtilities.dp(1.0f)), v);
             } else {
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (this.size / 4) + (((f4 - AndroidUtilities.dp(1.0f)) - (this.size / 4)) * f), checkedPaint);
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, com.google.android.recaptcha.internal.a.z(f13 - AndroidUtilities.dp(1.0f), this.h / 4, f10, this.h / 4), w);
             }
         }
         canvas.restore();
-        if (this.icon != null) {
-            int blendARGB = ColorUtils.blendARGB(this.color, this.checkedColor, Utilities.clamp(this.progress, 1.0f, 0.0f));
-            if (this.iconColor != blendARGB) {
-                Drawable drawable = this.icon;
-                this.iconColor = blendARGB;
-                drawable.setColorFilter(new PorterDuffColorFilter(blendARGB, PorterDuff.Mode.SRC_IN));
+        if (this.r != null) {
+            int d = i0.b.d(Utilities.clamp(this.c, 1.0f, 0.0f), this.b, this.a);
+            if (this.n != d) {
+                Drawable drawable = this.r;
+                this.n = d;
+                drawable.setColorFilter(new PorterDuffColorFilter(d, PorterDuff.Mode.SRC_IN));
             }
-            this.icon.setBounds((int) ((getWidth() / 2.0f) - (this.icon.getIntrinsicWidth() / 2.0f)), (int) ((getHeight() / 2.0f) - (this.icon.getIntrinsicHeight() / 2.0f)), (int) ((getWidth() / 2.0f) + (this.icon.getIntrinsicWidth() / 2.0f)), (int) ((getHeight() / 2.0f) + (this.icon.getIntrinsicHeight() / 2.0f)));
-            this.icon.draw(canvas);
+            this.r.setBounds((int) ((getWidth() / 2.0f) - (this.r.getIntrinsicWidth() / 2.0f)), (int) ((getHeight() / 2.0f) - (this.r.getIntrinsicHeight() / 2.0f)), (int) ((this.r.getIntrinsicWidth() / 2.0f) + (getWidth() / 2.0f)), (int) ((this.r.getIntrinsicHeight() / 2.0f) + (getHeight() / 2.0f)));
+            this.r.draw(canvas);
         }
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i10) {
+        this.b = i10;
+        invalidate();
+    }
+
+    public void setCheckedColor(int i10) {
+        this.a = i10;
+        invalidate();
+    }
+
+    public void setIcon(Drawable drawable) {
+        this.n = 0;
+        this.r = drawable;
+        invalidate();
+    }
+
+    public void setProgress(float f10) {
+        if (this.c == f10) {
+            return;
+        }
+        this.c = f10;
+        invalidate();
+    }
+
+    public void setSize(int i10) {
+        if (this.h == i10) {
+            return;
+        }
+        this.h = i10;
     }
 }

@@ -1,10 +1,10 @@
 package androidx.car.app.model;
 
-import androidx.car.app.utils.CollectionUtils;
 import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class Pane {
     private final List<Action> mActionList;
@@ -12,38 +12,8 @@ public final class Pane {
     private final boolean mIsLoading;
     private final List<Row> mRows;
 
-    public static final class Builder {
-    }
-
-    public boolean isLoading() {
-        return this.mIsLoading;
-    }
-
-    public List<Action> getActions() {
-        return CollectionUtils.emptyIfNull(this.mActionList);
-    }
-
-    public List<Row> getRows() {
-        return CollectionUtils.emptyIfNull(this.mRows);
-    }
-
-    public CarIcon getImage() {
-        return this.mImage;
-    }
-
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[ rows: ");
-        List<Row> list = this.mRows;
-        sb.append(list != null ? list.toString() : null);
-        sb.append(", action list: ");
-        sb.append(this.mActionList);
-        sb.append("]");
-        return sb.toString();
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mRows, this.mActionList, Boolean.valueOf(this.mIsLoading), this.mImage);
+    public Pane(i0 i0Var) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -57,8 +27,36 @@ public final class Pane {
         return this.mIsLoading == pane.mIsLoading && Objects.equals(this.mActionList, pane.mActionList) && Objects.equals(this.mRows, pane.mRows) && Objects.equals(this.mImage, pane.mImage);
     }
 
-    Pane(Builder builder) {
-        throw null;
+    public List<Action> getActions() {
+        List<Action> list = this.mActionList;
+        return list != null ? list : Collections.EMPTY_LIST;
+    }
+
+    public CarIcon getImage() {
+        return this.mImage;
+    }
+
+    public List<Row> getRows() {
+        List<Row> list = this.mRows;
+        return list != null ? list : Collections.EMPTY_LIST;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mRows, this.mActionList, Boolean.valueOf(this.mIsLoading), this.mImage);
+    }
+
+    public boolean isLoading() {
+        return this.mIsLoading;
+    }
+
+    public String toString() {
+        StringBuilder sb2 = new StringBuilder("[ rows: ");
+        List<Row> list = this.mRows;
+        sb2.append(list != null ? list.toString() : null);
+        sb2.append(", action list: ");
+        sb2.append(this.mActionList);
+        sb2.append("]");
+        return sb2.toString();
     }
 
     private Pane() {

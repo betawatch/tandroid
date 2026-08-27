@@ -1,11 +1,12 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class IJAtom extends Atom {
     private boolean upper;
 
-    public IJAtom(boolean z) {
-        this.upper = z;
+    public IJAtom(boolean z10) {
+        this.upper = z10;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom

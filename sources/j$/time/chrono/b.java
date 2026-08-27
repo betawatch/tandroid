@@ -4,30 +4,30 @@ import j$.time.temporal.Temporal;
 
 /* loaded from: classes2.dex */
 public interface b extends Temporal, j$.time.temporal.m, Comparable {
-    b D(long j, j$.time.temporal.q qVar);
+    ChronoLocalDateTime A(j$.time.h hVar);
 
-    /* renamed from: F */
+    /* renamed from: E */
     int compareTo(b bVar);
 
-    k b();
+    k a();
 
     @Override // j$.time.temporal.Temporal
-    b e(long j, j$.time.temporal.o oVar);
+    b c(long j10, j$.time.temporal.o oVar);
 
     @Override // j$.time.temporal.Temporal
-    b f(long j, j$.time.temporal.q qVar);
+    b d(long j10, j$.time.temporal.q qVar);
+
+    @Override // j$.time.temporal.l
+    boolean e(j$.time.temporal.o oVar);
 
     @Override // j$.time.temporal.Temporal
     long g(Temporal temporal, j$.time.temporal.q qVar);
 
-    @Override // j$.time.temporal.l
-    boolean h(j$.time.temporal.o oVar);
-
     int hashCode();
+
+    b t(long j10, j$.time.temporal.q qVar);
 
     String toString();
 
-    long v();
-
-    ChronoLocalDateTime w(j$.time.h hVar);
+    long z();
 }

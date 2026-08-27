@@ -12,29 +12,35 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import lh.z7;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Stories.recorder.StoryEntry;
 
-/* loaded from: classes3.dex */
-public class HttpGetFileTask extends AsyncTask {
-    private Utilities.Callback doneCallback;
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
+public class HttpGetFileTask extends AsyncTask<String, Void, File> {
+    private Utilities.Callback<File> doneCallback;
     private Exception exception;
     private File file;
     private long max_size = -1;
     private String overrideExt;
-    private Utilities.Callback progressCallback;
+    private Utilities.Callback<Float> progressCallback;
 
-    public HttpGetFileTask(Utilities.Callback callback, Utilities.Callback callback2) {
+    public HttpGetFileTask(Utilities.Callback<File> callback, Utilities.Callback<Float> callback2) {
         this.doneCallback = callback;
         this.progressCallback = callback2;
     }
 
-    public HttpGetFileTask setOverrideExtension(String str) {
-        this.overrideExt = str;
-        return this;
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$doInBackground$0(float f10) {
+        this.progressCallback.run(Float.valueOf(f10));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$doInBackground$1() {
+        this.progressCallback.run(Float.valueOf(1.0f));
     }
 
     public HttpGetFileTask setDestFile(File file) {
@@ -42,52 +48,50 @@ public class HttpGetFileTask extends AsyncTask {
         return this;
     }
 
-    public HttpGetFileTask setMaxSize(long j) {
-        this.max_size = j;
+    public HttpGetFileTask setMaxSize(long j10) {
+        this.max_size = j10;
         return this;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
+    public HttpGetFileTask setOverrideExtension(String str) {
+        this.overrideExt = str;
+        return this;
+    }
+
     /* JADX WARN: Code restructure failed: missing block: B:86:0x00ec, code lost:
     
         r18.file.delete();
      */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0174 A[LOOP:0: B:2:0x0009->B:35:0x0174, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x017f A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0178 A[LOOP:0: B:2:0x0009->B:35:0x0178, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0183 A[SYNTHETIC] */
     @Override // android.os.AsyncTask
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public File doInBackground(String... strArr) {
-        long j;
-        InputStream errorStream;
-        long contentLength;
+        long j10;
         BufferedInputStream bufferedInputStream;
         Throwable th;
         FileOutputStream fileOutputStream;
         Throwable th2;
         FileChannel channel;
         String str = strArr[0];
-        long j2 = 0;
-        long j3 = 0;
-        int i = 0;
-        while (i < 5) {
-            boolean z = i > 0;
+        long j11 = 0;
+        long j12 = 0;
+        int i10 = 0;
+        while (i10 < 5) {
+            boolean z10 = i10 > 0;
             try {
                 HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str).openConnection();
                 httpURLConnection.setRequestMethod("GET");
-                if (z) {
-                    httpURLConnection.setRequestProperty("Range", "bytes=" + j3 + "-");
+                if (z10) {
+                    httpURLConnection.setRequestProperty("Range", "bytes=" + j12 + "-");
                 }
                 httpURLConnection.setDoInput(true);
                 int responseCode = httpURLConnection.getResponseCode();
-                if (responseCode >= 200 && responseCode < 300) {
-                    errorStream = httpURLConnection.getInputStream();
-                } else {
-                    errorStream = httpURLConnection.getErrorStream();
-                }
+                InputStream errorStream = (responseCode < 200 || responseCode >= 300) ? httpURLConnection.getErrorStream() : httpURLConnection.getInputStream();
                 int responseCode2 = httpURLConnection.getResponseCode();
-                if (z && responseCode2 != 206) {
+                if (z10 && responseCode2 != 206) {
                     FileLog.d("failed to resume, server doesn't support partial content. downloading from the beginning");
                     try {
                         File file = this.file;
@@ -98,107 +102,49 @@ public class HttpGetFileTask extends AsyncTask {
                             }
                             this.file = null;
                         }
-                        j3 = j2;
-                        z = false;
-                    } catch (Exception e) {
-                        e = e;
-                        j3 = j2;
-                        j = j3;
-                        if (!(e instanceof ProtocolException)) {
-                            FileLog.d("got unexpected end of stream, lets try to resume");
-                            i++;
-                            j2 = j;
-                        } else {
+                        j12 = j11;
+                        z10 = false;
+                    } catch (Exception e9) {
+                        e = e9;
+                        j12 = j11;
+                        j10 = j12;
+                        if (e instanceof ProtocolException) {
                             this.exception = e;
                             FileLog.e(e);
                             return null;
                         }
+                        FileLog.d("got unexpected end of stream, lets try to resume");
+                        i10++;
+                        j11 = j10;
                     }
                 }
-                if (Build.VERSION.SDK_INT >= 24) {
-                    contentLength = httpURLConnection.getContentLengthLong();
-                } else {
-                    contentLength = httpURLConnection.getContentLength();
-                }
-                long j4 = this.max_size;
-                int i2 = (j4 > j2 ? 1 : (j4 == j2 ? 0 : -1));
-                j = i2;
-                if (i2 > 0) {
-                    int i3 = (contentLength > j4 ? 1 : (contentLength == j4 ? 0 : -1));
-                    j = i3;
-                    if (i3 > 0) {
-                        errorStream.close();
-                        if (this.file != null) {
-                            this.file = null;
-                        }
-                        return null;
-                    }
-                }
-                if (this.file == null) {
-                    String str2 = this.overrideExt;
-                    if (str2 == null) {
-                        str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
-                    }
-                    this.file = StoryEntry.makeCacheFile(UserConfig.selectedAccount, str2);
-                }
-                bufferedInputStream = new BufferedInputStream(errorStream, 16384);
+                long contentLengthLong = Build.VERSION.SDK_INT >= 24 ? httpURLConnection.getContentLengthLong() : httpURLConnection.getContentLength();
+                long j13 = this.max_size;
+                int i11 = (j13 > j11 ? 1 : (j13 == j11 ? 0 : -1));
+                j10 = i11;
                 try {
                     try {
-                        fileOutputStream = new FileOutputStream(this.file, z);
                         try {
                             try {
-                                channel = fileOutputStream.getChannel();
                                 try {
+                                    if (i11 > 0) {
+                                        int i12 = (contentLengthLong > j13 ? 1 : (contentLengthLong == j13 ? 0 : -1));
+                                        j10 = i12;
+                                        if (i12 > 0) {
+                                            errorStream.close();
+                                            if (this.file != null) {
+                                                this.file = null;
+                                            }
+                                            return null;
+                                        }
+                                    }
                                     byte[] bArr = new byte[16384];
                                     while (true) {
                                         int read = bufferedInputStream.read(bArr);
-                                        j = j2;
-                                        if (read != -1) {
-                                            try {
-                                                channel.write(ByteBuffer.wrap(bArr, 0, read));
-                                                j3 += read;
-                                                if (isCancelled()) {
-                                                    try {
-                                                        break;
-                                                    } catch (Exception e2) {
-                                                        FileLog.e(e2);
-                                                    }
-                                                } else {
-                                                    if (contentLength > j) {
-                                                        final float clamp01 = Utilities.clamp01(j3 / contentLength);
-                                                        if (this.progressCallback != null) {
-                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.HttpGetFileTask$$ExternalSyntheticLambda0
-                                                                @Override // java.lang.Runnable
-                                                                public final void run() {
-                                                                    HttpGetFileTask.this.progressCallback.run(Float.valueOf(clamp01));
-                                                                }
-                                                            });
-                                                        }
-                                                    }
-                                                    j2 = j;
-                                                }
-                                            } catch (Throwable th3) {
-                                                th = th3;
-                                                Throwable th4 = th;
-                                                if (channel == null) {
-                                                    throw th4;
-                                                }
-                                                try {
-                                                    channel.close();
-                                                    throw th4;
-                                                } catch (Throwable th5) {
-                                                    th4.addSuppressed(th5);
-                                                    throw th4;
-                                                }
-                                            }
-                                        } else {
+                                        j10 = j11;
+                                        if (read == -1) {
                                             if (this.progressCallback != null) {
-                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.HttpGetFileTask$$ExternalSyntheticLambda1
-                                                    @Override // java.lang.Runnable
-                                                    public final void run() {
-                                                        HttpGetFileTask.this.progressCallback.run(Float.valueOf(1.0f));
-                                                    }
-                                                });
+                                                AndroidUtilities.runOnUIThread(new nh.f0(this, 25));
                                             }
                                             if (channel != null) {
                                                 channel.close();
@@ -210,11 +156,44 @@ public class HttpGetFileTask extends AsyncTask {
                                             }
                                             return this.file;
                                         }
+                                        try {
+                                            channel.write(ByteBuffer.wrap(bArr, 0, read));
+                                            j12 += read;
+                                            if (isCancelled()) {
+                                                try {
+                                                    break;
+                                                } catch (Exception e10) {
+                                                    FileLog.e(e10);
+                                                }
+                                            } else {
+                                                if (contentLengthLong > j10) {
+                                                    float clamp01 = Utilities.clamp01(j12 / contentLengthLong);
+                                                    if (this.progressCallback != null) {
+                                                        AndroidUtilities.runOnUIThread(new org.telegram.ui.e0(this, clamp01, 5));
+                                                    }
+                                                }
+                                                j11 = j10;
+                                            }
+                                        } catch (Throwable th3) {
+                                            th = th3;
+                                            Throwable th4 = th;
+                                            if (channel == null) {
+                                                throw th4;
+                                            }
+                                            try {
+                                                channel.close();
+                                                throw th4;
+                                            } catch (Throwable th5) {
+                                                th4.addSuppressed(th5);
+                                                throw th4;
+                                            }
+                                        }
                                     }
                                 } catch (Throwable th6) {
                                     th = th6;
-                                    j = j2;
+                                    j10 = j11;
                                 }
+                                channel = fileOutputStream.getChannel();
                             } catch (Throwable th7) {
                                 th = th7;
                                 th2 = th;
@@ -228,14 +207,14 @@ public class HttpGetFileTask extends AsyncTask {
                             }
                         } catch (Throwable th9) {
                             th = th9;
-                            j = j2;
+                            j10 = j11;
                             th2 = th;
                             fileOutputStream.close();
                             throw th2;
                         }
+                        fileOutputStream = new FileOutputStream(this.file, z10);
                     } catch (Throwable th10) {
                         th = th10;
-                        j = j2;
                         th = th;
                         try {
                             try {
@@ -245,21 +224,30 @@ public class HttpGetFileTask extends AsyncTask {
                                 th.addSuppressed(th11);
                                 throw th;
                             }
-                        } catch (Exception e3) {
-                            e = e3;
-                            if (!(e instanceof ProtocolException)) {
+                        } catch (Exception e11) {
+                            e = e11;
+                            if (e instanceof ProtocolException) {
                             }
                         }
                     }
                 } catch (Throwable th12) {
                     th = th12;
+                    j10 = j11;
                     th = th;
                     bufferedInputStream.close();
                     throw th;
                 }
-            } catch (Exception e4) {
-                e = e4;
-                j = j2;
+                if (this.file == null) {
+                    String str2 = this.overrideExt;
+                    if (str2 == null) {
+                        str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
+                    }
+                    this.file = z7.w(UserConfig.selectedAccount, str2);
+                }
+                bufferedInputStream = new BufferedInputStream(errorStream, 16384);
+            } catch (Exception e12) {
+                e = e12;
+                j10 = j11;
             }
         }
         this.exception = new RuntimeException("too many retries");
@@ -270,10 +258,9 @@ public class HttpGetFileTask extends AsyncTask {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.os.AsyncTask
     public void onPostExecute(File file) {
-        Utilities.Callback callback = this.doneCallback;
+        Utilities.Callback<File> callback = this.doneCallback;
         if (callback != null) {
             if (this.exception == null) {
                 callback.run(file);

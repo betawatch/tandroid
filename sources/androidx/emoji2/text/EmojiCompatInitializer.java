@@ -1,147 +1,81 @@
 package androidx.emoji2.text;
 
 import android.content.Context;
-import androidx.core.os.TraceCompat;
-import androidx.emoji2.text.EmojiCompat;
-import androidx.emoji2.text.EmojiCompatInitializer;
-import androidx.lifecycle.DefaultLifecycleObserver;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleOwner;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import androidx.lifecycle.ProcessLifecycleInitializer;
-import androidx.startup.AppInitializer;
-import androidx.startup.Initializer;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
-import java.util.concurrent.ThreadPoolExecutor;
-import kotlin.jvm.internal.Intrinsics;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class EmojiCompatInitializer implements Initializer {
-    @Override // androidx.startup.Initializer
-    public Boolean create(Context context) {
-        EmojiCompat.init(new BackgroundDefaultConfig(context));
-        delayUntilFirstResume(context);
-        return Boolean.TRUE;
-    }
-
-    void delayUntilFirstResume(Context context) {
-        final Lifecycle lifecycle = ((LifecycleOwner) AppInitializer.getInstance(context).initializeComponent(ProcessLifecycleInitializer.class)).getLifecycle();
-        lifecycle.addObserver(new DefaultLifecycleObserver() { // from class: androidx.emoji2.text.EmojiCompatInitializer.1
-            @Override // androidx.lifecycle.DefaultLifecycleObserver
-            public /* synthetic */ void onCreate(LifecycleOwner lifecycleOwner) {
-                Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
-            }
-
-            @Override // androidx.lifecycle.DefaultLifecycleObserver
-            public /* synthetic */ void onDestroy(LifecycleOwner lifecycleOwner) {
-                Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
-            }
-
-            @Override // androidx.lifecycle.DefaultLifecycleObserver
-            public /* synthetic */ void onPause(LifecycleOwner lifecycleOwner) {
-                Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
-            }
-
-            @Override // androidx.lifecycle.DefaultLifecycleObserver
-            public /* synthetic */ void onStart(LifecycleOwner lifecycleOwner) {
-                Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
-            }
-
-            @Override // androidx.lifecycle.DefaultLifecycleObserver
-            public /* synthetic */ void onStop(LifecycleOwner lifecycleOwner) {
-                Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
-            }
-
-            @Override // androidx.lifecycle.DefaultLifecycleObserver
-            public void onResume(LifecycleOwner lifecycleOwner) {
-                EmojiCompatInitializer.this.loadEmojiCompatAfterDelay();
-                lifecycle.removeObserver(this);
-            }
-        });
-    }
-
-    void loadEmojiCompatAfterDelay() {
-        ConcurrencyHelpers.mainHandlerAsync().postDelayed(new LoadEmojiCompatRunnable(), 500L);
-    }
-
-    @Override // androidx.startup.Initializer
-    public List dependencies() {
+public class EmojiCompatInitializer implements i2.b {
+    @Override // i2.b
+    public final List a() {
         return Collections.singletonList(ProcessLifecycleInitializer.class);
     }
 
-    static class LoadEmojiCompatRunnable implements Runnable {
-        LoadEmojiCompatRunnable() {
-        }
-
-        @Override // java.lang.Runnable
-        public void run() {
-            try {
-                TraceCompat.beginSection("EmojiCompat.EmojiCompatInitializer.run");
-                if (EmojiCompat.isConfigured()) {
-                    EmojiCompat.get().load();
+    @Override // i2.b
+    public final Object b(Context context) {
+        q qVar = new q(new androidx.biometric.s(context, 1));
+        qVar.a = 1;
+        if (l.j == null) {
+            synchronized (l.i) {
+                try {
+                    if (l.j == null) {
+                        l.j = new l(qVar);
+                    }
+                } finally {
                 }
-            } finally {
-                TraceCompat.endSection();
             }
         }
+        c(context);
+        return Boolean.TRUE;
     }
 
-    static class BackgroundDefaultConfig extends EmojiCompat.Config {
-        protected BackgroundDefaultConfig(Context context) {
-            super(new BackgroundDefaultLoader(context));
-            setMetadataLoadStrategy(1);
-        }
-    }
-
-    static class BackgroundDefaultLoader implements EmojiCompat.MetadataRepoLoader {
-        private final Context mContext;
-
-        BackgroundDefaultLoader(Context context) {
-            this.mContext = context.getApplicationContext();
-        }
-
-        @Override // androidx.emoji2.text.EmojiCompat.MetadataRepoLoader
-        public void load(final EmojiCompat.MetadataRepoLoaderCallback metadataRepoLoaderCallback) {
-            final ThreadPoolExecutor createBackgroundPriorityExecutor = ConcurrencyHelpers.createBackgroundPriorityExecutor("EmojiCompatInitializer");
-            createBackgroundPriorityExecutor.execute(new Runnable() { // from class: androidx.emoji2.text.EmojiCompatInitializer$BackgroundDefaultLoader$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    EmojiCompatInitializer.BackgroundDefaultLoader.this.doLoad(metadataRepoLoaderCallback, createBackgroundPriorityExecutor);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: package-private */
-        public void doLoad(final EmojiCompat.MetadataRepoLoaderCallback metadataRepoLoaderCallback, final ThreadPoolExecutor threadPoolExecutor) {
+    public final void c(Context context) {
+        Object obj;
+        i2.a c10 = i2.a.c(context);
+        c10.getClass();
+        synchronized (i2.a.e) {
             try {
-                FontRequestEmojiCompatConfig create = DefaultEmojiCompatConfig.create(this.mContext);
-                if (create == null) {
-                    throw new RuntimeException("EmojiCompat font provider not available on this device.");
+                obj = c10.a.get(ProcessLifecycleInitializer.class);
+                if (obj == null) {
+                    obj = c10.b(ProcessLifecycleInitializer.class, new HashSet());
                 }
-                create.setLoadingExecutor(threadPoolExecutor);
-                create.getMetadataRepoLoader().load(new EmojiCompat.MetadataRepoLoaderCallback() { // from class: androidx.emoji2.text.EmojiCompatInitializer.BackgroundDefaultLoader.1
-                    @Override // androidx.emoji2.text.EmojiCompat.MetadataRepoLoaderCallback
-                    public void onLoaded(MetadataRepo metadataRepo) {
-                        try {
-                            metadataRepoLoaderCallback.onLoaded(metadataRepo);
-                        } finally {
-                            threadPoolExecutor.shutdown();
-                        }
-                    }
-
-                    @Override // androidx.emoji2.text.EmojiCompat.MetadataRepoLoaderCallback
-                    public void onFailed(Throwable th) {
-                        try {
-                            metadataRepoLoaderCallback.onFailed(th);
-                        } finally {
-                            threadPoolExecutor.shutdown();
-                        }
-                    }
-                });
             } catch (Throwable th) {
-                metadataRepoLoaderCallback.onFailed(th);
-                threadPoolExecutor.shutdown();
+                throw th;
             }
         }
+        final androidx.lifecycle.o m10 = ((androidx.lifecycle.t) obj).m();
+        m10.a(new androidx.lifecycle.e(this) { // from class: androidx.emoji2.text.EmojiCompatInitializer.1
+            @Override // androidx.lifecycle.e
+            public final void a(androidx.lifecycle.t tVar) {
+                (Build.VERSION.SDK_INT >= 28 ? b.a(Looper.getMainLooper()) : new Handler(Looper.getMainLooper())).postDelayed(new n(0), 500L);
+                m10.b(this);
+            }
+
+            @Override // androidx.lifecycle.e
+            public final /* synthetic */ void b(androidx.lifecycle.t tVar) {
+            }
+
+            @Override // androidx.lifecycle.e
+            public final /* synthetic */ void e(androidx.lifecycle.t tVar) {
+            }
+
+            @Override // androidx.lifecycle.e
+            public final /* synthetic */ void f(androidx.lifecycle.t tVar) {
+            }
+
+            @Override // androidx.lifecycle.e
+            public final /* synthetic */ void h(androidx.lifecycle.t tVar) {
+            }
+
+            @Override // androidx.lifecycle.e
+            public final /* synthetic */ void i(androidx.lifecycle.t tVar) {
+            }
+        });
     }
 }

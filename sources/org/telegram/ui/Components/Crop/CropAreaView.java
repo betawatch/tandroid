@@ -1,16 +1,11 @@
 package org.telegram.ui.Components.Crop;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.os.SystemClock;
 import android.text.Layout;
@@ -21,1019 +16,918 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
-import androidx.core.graphics.ColorUtils;
+import i0.b;
+import m1.j;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.BubbleActivity;
+import org.telegram.ui.zb1;
+import uf.a;
+import uf.l;
+import uf.m;
+import uf.n;
 
-/* loaded from: classes5.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes3.dex */
 public class CropAreaView extends ViewGroup {
-    private Control activeControl;
-    private RectF actualRect;
-    private Animator animator;
-    private Paint bitmapPaint;
-    private RectF bottomEdge;
-    private RectF bottomLeftCorner;
-    private float bottomPadding;
-    private RectF bottomRightCorner;
-    private Bitmap circleBitmap;
-    private Paint dimPaint;
-    private boolean dimVisibile;
-    private Paint eraserPaint;
-    private float frameAlpha;
-    private Paint framePaint;
-    private boolean frameVisible;
-    private boolean freeform;
-    private Animator gridAnimator;
-    private float gridProgress;
-    private GridType gridType;
-    private Paint handlePaint;
-    private boolean inBubbleMode;
-    private AccelerateDecelerateInterpolator interpolator;
-    private boolean isDragging;
-    private long lastUpdateTime;
-    public float left;
-    private RectF leftEdge;
-    private Paint linePaint;
-    private AreaViewListener listener;
-    private float lockAspectRatio;
-    private float minWidth;
-    private float overrideDimAlpha;
-    private float overrideFrameAlpha;
-    private GridType previousGridType;
-    private int previousX;
-    private int previousY;
-    private RectF rightEdge;
-    public float rotate;
-    public float scale;
-    private Paint shadowPaint;
-    private float sidePadding;
-    public int size;
-    private String subtitle;
-    private StaticLayout subtitleLayout;
-    TextPaint subtitlePaint;
-    private RectF targetRect;
-    private RectF tempRect;
-    public float top;
-    private RectF topEdge;
-    private RectF topLeftCorner;
-    private float topPadding;
-    private RectF topRightCorner;
-    public float tx;
-    public float ty;
+    public int A;
+    public int B;
+    public float C;
+    public float D;
+    public boolean E;
+    public boolean F;
+    public float G;
+    public float H;
+    public float I;
+    public long J;
+    public Paint K;
+    public Paint L;
+    public Paint M;
+    public Paint N;
+    public Paint O;
+    public Paint P;
+    public AccelerateDecelerateInterpolator Q;
+    public float R;
+    public float S;
+    public boolean T;
+    public float U;
+    public ObjectAnimator V;
+    public a W;
+    public int a;
+    public boolean a0;
+    public float b;
+    public boolean b0;
+    public float c;
+    public Bitmap c0;
+    public RectF d;
+    public Paint d0;
+    public RectF e;
+    public String e0;
+    public RectF f;
+    public StaticLayout f0;
+    public AnimatorSet g0;
+    public RectF h;
+    public RectF h0;
+    public TextPaint i0;
+    public float j0;
+    public float k0;
+    public float l0;
+    public float m0;
+    public RectF n;
+    public int n0;
+    public int o0;
+    public int p0;
+    public RectF r;
+    public RectF s;
+    public RectF v;
+    public float w;
+    public RectF x;
+    public RectF y;
 
-    interface AreaViewListener {
-        void onAreaChange();
-
-        void onAreaChangeBegan();
-
-        void onAreaChangeEnded();
+    public static void b(RectF rectF, float f10) {
+        float height = rectF.height();
+        rectF.right = rectF.left + (f10 * height);
+        rectF.bottom = rectF.top + height;
     }
 
-    private enum Control {
-        NONE,
-        TOP_LEFT,
-        TOP_RIGHT,
-        BOTTOM_LEFT,
-        BOTTOM_RIGHT,
-        TOP,
-        LEFT,
-        BOTTOM,
-        RIGHT
-    }
-
-    enum GridType {
-        NONE,
-        MINOR,
-        MAJOR
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-    }
-
-    public CropAreaView(Context context) {
-        super(context);
-        this.topLeftCorner = new RectF();
-        this.topRightCorner = new RectF();
-        this.bottomLeftCorner = new RectF();
-        this.bottomRightCorner = new RectF();
-        this.topEdge = new RectF();
-        this.leftEdge = new RectF();
-        this.bottomEdge = new RectF();
-        this.rightEdge = new RectF();
-        this.actualRect = new RectF();
-        this.tempRect = new RectF();
-        this.overrideDimAlpha = -1.0f;
-        this.frameAlpha = 1.0f;
-        this.overrideFrameAlpha = -1.0f;
-        this.interpolator = new AccelerateDecelerateInterpolator();
-        this.freeform = true;
-        this.targetRect = new RectF();
-        this.rotate = 0.0f;
-        this.scale = 1.0f;
-        this.tx = 0.0f;
-        this.ty = 0.0f;
-        this.inBubbleMode = context instanceof BubbleActivity;
-        this.frameVisible = true;
-        this.dimVisibile = true;
-        this.sidePadding = AndroidUtilities.dp(16.0f);
-        this.minWidth = AndroidUtilities.dp(32.0f);
-        this.gridType = GridType.NONE;
-        Paint paint = new Paint();
-        this.dimPaint = paint;
-        paint.setColor(2130706432);
-        Paint paint2 = new Paint();
-        this.shadowPaint = paint2;
-        Paint.Style style = Paint.Style.FILL;
-        paint2.setStyle(style);
-        this.shadowPaint.setColor(436207616);
-        this.shadowPaint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        Paint paint3 = new Paint();
-        this.linePaint = paint3;
-        paint3.setStyle(style);
-        this.linePaint.setColor(-1);
-        this.linePaint.setStrokeWidth(AndroidUtilities.dp(1.0f));
-        Paint paint4 = new Paint();
-        this.handlePaint = paint4;
-        paint4.setStyle(style);
-        this.handlePaint.setColor(-1);
-        Paint paint5 = new Paint();
-        this.framePaint = paint5;
-        paint5.setStyle(style);
-        this.framePaint.setColor(-1291845633);
-        Paint paint6 = new Paint(1);
-        this.eraserPaint = paint6;
-        paint6.setColor(0);
-        this.eraserPaint.setStyle(style);
-        this.eraserPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        Paint paint7 = new Paint(2);
-        this.bitmapPaint = paint7;
-        paint7.setColor(-1);
-        setWillNotDraw(false);
-    }
-
-    @Override // android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        updateSubtitle();
-    }
-
-    private void updateSubtitle() {
-        if (this.subtitle != null) {
-            if (this.subtitlePaint == null) {
-                TextPaint textPaint = new TextPaint();
-                this.subtitlePaint = textPaint;
-                textPaint.setColor(ColorUtils.setAlphaComponent(-1, 120));
-                this.subtitlePaint.setTextSize(AndroidUtilities.dp(13.0f));
-                this.subtitlePaint.setTextAlign(Paint.Align.CENTER);
-            }
-            this.subtitleLayout = new StaticLayout(this.subtitle, this.subtitlePaint, getMeasuredWidth() - AndroidUtilities.dp(120.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            return;
-        }
-        this.subtitleLayout = null;
-    }
-
-    public void setIsVideo(boolean z) {
-        this.minWidth = AndroidUtilities.dp(z ? 64.0f : 32.0f);
-    }
-
-    public boolean isDragging() {
-        return this.isDragging;
-    }
-
-    public void setDimVisibility(boolean z) {
-        this.dimVisibile = z;
-    }
-
-    public void setDimAlpha(float f) {
-        this.overrideDimAlpha = f;
-    }
-
-    public void setFrameAlpha(float f) {
-        this.overrideFrameAlpha = f;
-    }
-
-    public void setFrameVisibility(boolean z, boolean z2) {
-        this.frameVisible = z;
-        if (z) {
-            this.frameAlpha = z2 ? 0.0f : 1.0f;
-            this.lastUpdateTime = SystemClock.elapsedRealtime();
-            invalidate();
-            return;
-        }
-        this.frameAlpha = 1.0f;
-    }
-
-    public void setBottomPadding(float f) {
-        this.bottomPadding = f;
-    }
-
-    public void setTopPadding(float f) {
-        this.topPadding = f;
-    }
-
-    public Interpolator getInterpolator() {
-        return this.interpolator;
-    }
-
-    public void setListener(AreaViewListener areaViewListener) {
-        this.listener = areaViewListener;
-    }
-
-    public void setBitmap(int i, int i2, boolean z, boolean z2) {
-        this.freeform = z2;
-        float f = z ? i2 / i : i / i2;
-        if (!z2) {
-            f = 1.0f;
-            this.lockAspectRatio = 1.0f;
-        }
-        setActualRect(f);
-    }
-
-    public void setFreeform(boolean z) {
-        this.freeform = z;
-    }
-
-    public void setActualRect(float f) {
-        calculateRect(this.actualRect, f);
-        updateTouchAreas();
-        invalidate();
-    }
-
-    public void setActualRect(RectF rectF) {
-        this.actualRect.set(rectF);
-        updateTouchAreas();
-        invalidate();
-    }
-
-    public void setRotationScaleTranslation(float f, float f2, float f3, float f4) {
-        this.rotate = f;
-        this.scale = f2;
-        this.tx = f3;
-        this.ty = f4;
-        invalidate();
-    }
-
-    @Override // android.view.View
-    protected void onDraw(Canvas canvas) {
-        int i;
-        int i2;
-        float f;
-        int i3;
-        if (this.freeform) {
-            int dp = AndroidUtilities.dp(2.0f / this.scale);
-            int dp2 = AndroidUtilities.dp(16.0f / this.scale);
-            int dp3 = AndroidUtilities.dp(3.0f / this.scale);
-            RectF rectF = this.actualRect;
-            float f2 = rectF.left;
-            int i4 = ((int) f2) - dp;
-            float f3 = rectF.top;
-            int i5 = ((int) f3) - dp;
-            int i6 = (int) (rectF.right - f2);
-            int i7 = dp * 2;
-            int i8 = i6 + i7;
-            int i9 = ((int) (rectF.bottom - f3)) + i7;
-            canvas.save();
-            canvas.translate(this.tx, this.ty);
-            float f4 = this.scale;
-            float f5 = (i8 / 2) + i4;
-            float f6 = (i9 / 2) + i5;
-            canvas.scale(f4, f4, f5, f6);
-            canvas.rotate(this.rotate, f5, f6);
-            if (this.dimVisibile) {
-                int i10 = (-getWidth()) * 4;
-                int i11 = (-getHeight()) * 4;
-                int width = getWidth() * 4;
-                int height = getHeight() * 4;
-                float f7 = this.overrideDimAlpha;
-                if (f7 >= 0.0f) {
-                    this.dimPaint.setAlpha((int) (f7 * 255.0f));
-                } else {
-                    this.dimPaint.setAlpha((int) (255.0f - (this.frameAlpha * 127.0f)));
-                }
-                float f8 = i10;
-                float f9 = i11;
-                float f10 = width;
-                i = i5;
-                i2 = 4;
-                f = 255.0f;
-                canvas.drawRect(f8, f9, f10, 0.0f, this.dimPaint);
-                canvas.drawRect(f8, 0.0f, 0.0f, getHeight(), this.dimPaint);
-                canvas.drawRect(getWidth(), 0.0f, f10, getHeight(), this.dimPaint);
-                canvas.drawRect(f8, getHeight(), f10, height, this.dimPaint);
-                float f11 = i + dp;
-                canvas.drawRect(0.0f, 0.0f, getWidth(), f11, this.dimPaint);
-                float f12 = (i + i9) - dp;
-                canvas.drawRect(0.0f, f11, i4 + dp, f12, this.dimPaint);
-                canvas.drawRect((i4 + i8) - dp, f11, getWidth(), f12, this.dimPaint);
-                canvas.drawRect(0.0f, f12, getWidth(), getHeight(), this.dimPaint);
-            } else {
-                i = i5;
-                i2 = 4;
-                f = 255.0f;
-            }
-            if (!this.frameVisible) {
-                return;
-            }
-            int i12 = dp3 - dp;
-            int i13 = dp3 * 2;
-            int i14 = i8 - i13;
-            int i15 = i9 - i13;
-            GridType gridType = this.gridType;
-            if (gridType == GridType.NONE && this.gridProgress > 0.0f) {
-                gridType = this.previousGridType;
-            }
-            float f13 = this.overrideFrameAlpha;
-            if (f13 >= 0.0f) {
-                this.shadowPaint.setAlpha((int) (this.gridProgress * 26.0f * f13));
-                this.linePaint.setAlpha((int) (this.gridProgress * 178.0f * this.overrideFrameAlpha));
-                this.framePaint.setAlpha((int) (this.overrideFrameAlpha * 178.0f));
-                this.handlePaint.setAlpha((int) (this.overrideFrameAlpha * f));
-            } else {
-                this.shadowPaint.setAlpha((int) (this.gridProgress * 26.0f * this.frameAlpha));
-                this.linePaint.setAlpha((int) (this.gridProgress * 178.0f * this.frameAlpha));
-                this.framePaint.setAlpha((int) (this.frameAlpha * 178.0f));
-                this.handlePaint.setAlpha((int) (this.frameAlpha * f));
-            }
-            int i16 = i4 + i12;
-            float f14 = i16;
-            float f15 = i + i12;
-            int i17 = i4 + i8;
-            float f16 = i17 - i12;
-            GridType gridType2 = gridType;
-            canvas.drawRect(f14, f15, f16, r6 + dp, this.framePaint);
-            float f17 = i16 + dp;
-            int i18 = i + i9;
-            float f18 = i18 - i12;
-            canvas.drawRect(f14, f15, f17, f18, this.framePaint);
-            canvas.drawRect(f14, r8 - dp, f16, f18, this.framePaint);
-            canvas.drawRect(r4 - dp, f15, f16, f18, this.framePaint);
-            int i19 = 0;
-            while (i19 < 3) {
-                if (gridType2 == GridType.MINOR) {
-                    int i20 = 1;
-                    while (i20 < i2) {
-                        if (i19 == 2 && i20 == 3) {
-                            i3 = i20;
-                        } else {
-                            int i21 = i4 + dp3;
-                            int i22 = i14 / 3;
-                            float f19 = ((i22 / 3) * i20) + i21 + (i22 * i19);
-                            int i23 = i + dp3;
-                            float f20 = i23;
-                            float f21 = i23 + i15;
-                            i3 = i20;
-                            canvas.drawLine(f19, f20, f19, f21, this.shadowPaint);
-                            canvas.drawLine(f19, f20, f19, f21, this.linePaint);
-                            int i24 = i15 / 3;
-                            float f22 = i21;
-                            float f23 = i23 + ((i24 / 3) * i3) + (i24 * i19);
-                            float f24 = i21 + i14;
-                            canvas.drawLine(f22, f23, f24, f23, this.shadowPaint);
-                            canvas.drawLine(f22, f23, f24, f23, this.linePaint);
-                        }
-                        i20 = i3 + 1;
-                        i2 = 4;
-                    }
-                } else if (gridType2 == GridType.MAJOR && i19 > 0) {
-                    int i25 = i4 + dp3;
-                    float f25 = ((i14 / 3) * i19) + i25;
-                    int i26 = i + dp3;
-                    float f26 = i26;
-                    float f27 = i26 + i15;
-                    canvas.drawLine(f25, f26, f25, f27, this.shadowPaint);
-                    canvas.drawLine(f25, f26, f25, f27, this.linePaint);
-                    float f28 = i25;
-                    float f29 = i26 + ((i15 / 3) * i19);
-                    float f30 = i25 + i14;
-                    canvas.drawLine(f28, f29, f30, f29, this.shadowPaint);
-                    canvas.drawLine(f28, f29, f30, f29, this.linePaint);
-                }
-                i19++;
-                i2 = 4;
-            }
-            float f31 = i4;
-            float f32 = i;
-            float f33 = i4 + dp2;
-            float f34 = i + dp3;
-            canvas.drawRect(f31, f32, f33, f34, this.handlePaint);
-            float f35 = i4 + dp3;
-            float f36 = i + dp2;
-            canvas.drawRect(f31, f32, f35, f36, this.handlePaint);
-            float f37 = i17 - dp2;
-            float f38 = i17;
-            canvas.drawRect(f37, f32, f38, f34, this.handlePaint);
-            float f39 = i17 - dp3;
-            canvas.drawRect(f39, f32, f38, f36, this.handlePaint);
-            float f40 = i18 - dp3;
-            float f41 = i18;
-            canvas.drawRect(f31, f40, f33, f41, this.handlePaint);
-            float f42 = i18 - dp2;
-            canvas.drawRect(f31, f42, f35, f41, this.handlePaint);
-            canvas.drawRect(f37, f40, f38, f41, this.handlePaint);
-            canvas.drawRect(f39, f42, f38, f41, this.handlePaint);
-            canvas.restore();
-        } else {
-            float measuredWidth = getMeasuredWidth() - (this.sidePadding * 2.0f);
-            float measuredHeight = (((getMeasuredHeight() - this.bottomPadding) - (!this.inBubbleMode ? AndroidUtilities.statusBarHeight : 0)) - this.topPadding) - (this.sidePadding * 2.0f);
-            this.size = (int) Math.min(measuredWidth, measuredHeight);
-            Bitmap bitmap = this.circleBitmap;
-            if (bitmap == null || bitmap.getWidth() != this.size) {
-                Bitmap bitmap2 = this.circleBitmap;
-                boolean z = bitmap2 != null;
-                if (bitmap2 != null) {
-                    bitmap2.recycle();
-                    this.circleBitmap = null;
-                }
-                try {
-                    int i27 = this.size;
-                    this.circleBitmap = Bitmap.createBitmap(i27, i27, Bitmap.Config.ARGB_8888);
-                    Canvas canvas2 = new Canvas(this.circleBitmap);
-                    float f43 = this.size;
-                    canvas2.drawRect(0.0f, 0.0f, f43, f43, this.dimPaint);
-                    int i28 = this.size;
-                    canvas2.drawCircle(i28 / 2, i28 / 2, i28 / 2, this.eraserPaint);
-                    canvas2.setBitmap(null);
-                    if (!z) {
-                        this.frameAlpha = 0.0f;
-                        this.lastUpdateTime = SystemClock.elapsedRealtime();
-                    }
-                } catch (Throwable unused) {
-                }
-            }
-            if (this.circleBitmap != null) {
-                this.bitmapPaint.setAlpha((int) (this.frameAlpha * 255.0f));
-                this.dimPaint.setAlpha((int) (this.frameAlpha * 127.0f));
-                float f44 = this.sidePadding;
-                float f45 = this.size;
-                this.left = ((measuredWidth - f45) / 2.0f) + f44;
-                float f46 = f44 + ((measuredHeight - f45) / 2.0f) + (!this.inBubbleMode ? AndroidUtilities.statusBarHeight : 0);
-                this.top = f46;
-                float f47 = f46 + f45;
-                canvas.drawRect(0.0f, 0.0f, getWidth(), (int) this.top, this.dimPaint);
-                float f48 = (int) f47;
-                canvas.drawRect(0.0f, (int) this.top, (int) this.left, f48, this.dimPaint);
-                canvas.drawRect((int) (r1 + f45), (int) this.top, getWidth(), f48, this.dimPaint);
-                canvas.drawRect(0.0f, f48, getWidth(), getHeight(), this.dimPaint);
-                canvas.drawBitmap(this.circleBitmap, (int) this.left, (int) this.top, this.bitmapPaint);
-                if (getMeasuredHeight() > getMeasuredWidth() && this.subtitleLayout != null) {
-                    canvas.save();
-                    canvas.translate(getMeasuredWidth() / 2.0f, f47 + AndroidUtilities.dp(16.0f));
-                    this.subtitleLayout.draw(canvas);
-                    canvas.restore();
-                }
-            }
-        }
-        if (this.frameAlpha < 1.0f) {
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            long j = elapsedRealtime - this.lastUpdateTime;
-            if (j > 17) {
-                j = 17;
-            }
-            this.lastUpdateTime = elapsedRealtime;
-            float f49 = this.frameAlpha + (j / 180.0f);
-            this.frameAlpha = f49;
-            if (f49 > 1.0f) {
-                this.frameAlpha = 1.0f;
-            }
-            invalidate();
-        }
-    }
-
-    public void updateTouchAreas() {
-        int dp = AndroidUtilities.dp(16.0f);
-        RectF rectF = this.topLeftCorner;
-        RectF rectF2 = this.actualRect;
-        float f = rectF2.left;
-        float f2 = dp;
-        float f3 = rectF2.top;
-        rectF.set(f - f2, f3 - f2, f + f2, f3 + f2);
-        RectF rectF3 = this.topRightCorner;
-        RectF rectF4 = this.actualRect;
-        float f4 = rectF4.right;
-        float f5 = rectF4.top;
-        rectF3.set(f4 - f2, f5 - f2, f4 + f2, f5 + f2);
-        RectF rectF5 = this.bottomLeftCorner;
-        RectF rectF6 = this.actualRect;
-        float f6 = rectF6.left;
-        float f7 = rectF6.bottom;
-        rectF5.set(f6 - f2, f7 - f2, f6 + f2, f7 + f2);
-        RectF rectF7 = this.bottomRightCorner;
-        RectF rectF8 = this.actualRect;
-        float f8 = rectF8.right;
-        float f9 = rectF8.bottom;
-        rectF7.set(f8 - f2, f9 - f2, f8 + f2, f9 + f2);
-        RectF rectF9 = this.topEdge;
-        RectF rectF10 = this.actualRect;
-        float f10 = rectF10.left + f2;
-        float f11 = rectF10.top;
-        rectF9.set(f10, f11 - f2, rectF10.right - f2, f11 + f2);
-        RectF rectF11 = this.leftEdge;
-        RectF rectF12 = this.actualRect;
-        float f12 = rectF12.left;
-        rectF11.set(f12 - f2, rectF12.top + f2, f12 + f2, rectF12.bottom - f2);
-        RectF rectF13 = this.rightEdge;
-        RectF rectF14 = this.actualRect;
-        float f13 = rectF14.right;
-        rectF13.set(f13 - f2, rectF14.top + f2, f13 + f2, rectF14.bottom - f2);
-        RectF rectF15 = this.bottomEdge;
-        RectF rectF16 = this.actualRect;
-        float f14 = rectF16.left + f2;
-        float f15 = rectF16.bottom;
-        rectF15.set(f14, f15 - f2, rectF16.right - f2, f15 + f2);
-    }
-
-    public float getLockAspectRatio() {
-        return this.lockAspectRatio;
-    }
-
-    public void setLockedAspectRatio(float f) {
-        this.lockAspectRatio = f;
-    }
-
-    public void setGridType(GridType gridType, boolean z) {
-        Animator animator = this.gridAnimator;
-        if (animator != null && (!z || this.gridType != gridType)) {
-            animator.cancel();
-            this.gridAnimator = null;
-        }
-        GridType gridType2 = this.gridType;
-        if (gridType2 == gridType) {
-            return;
-        }
-        this.previousGridType = gridType2;
-        this.gridType = gridType;
-        GridType gridType3 = GridType.NONE;
-        float f = gridType == gridType3 ? 0.0f : 1.0f;
-        if (!z) {
-            this.gridProgress = f;
-            invalidate();
-            return;
-        }
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "gridProgress", this.gridProgress, f);
-        this.gridAnimator = ofFloat;
-        ofFloat.setDuration(200L);
-        this.gridAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Crop.CropAreaView.1
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationEnd(Animator animator2) {
-                CropAreaView.this.gridAnimator = null;
-            }
-        });
-        if (gridType == gridType3) {
-            this.gridAnimator.setStartDelay(200L);
-        }
-        this.gridAnimator.start();
-    }
-
-    private void setGridProgress(float f) {
-        this.gridProgress = f;
-        invalidate();
+    public static void c(RectF rectF, float f10) {
+        float width = rectF.width();
+        rectF.right = rectF.left + width;
+        rectF.bottom = rectF.top + (width / f10);
     }
 
     private float getGridProgress() {
-        return this.gridProgress;
+        return this.U;
+    }
+
+    private void setCropBottom(float f10) {
+        this.x.bottom = f10;
+        invalidate();
+    }
+
+    private void setCropLeft(float f10) {
+        this.x.left = f10;
+        invalidate();
+    }
+
+    private void setCropRight(float f10) {
+        this.x.right = f10;
+        invalidate();
+    }
+
+    private void setCropTop(float f10) {
+        this.x.top = f10;
+        invalidate();
+    }
+
+    private void setGridProgress(float f10) {
+        this.U = f10;
+        invalidate();
+    }
+
+    public final void a(RectF rectF, float f10) {
+        float f11;
+        float f12;
+        float f13;
+        float f14;
+        float f15 = this.R;
+        float f16 = !this.T ? AndroidUtilities.statusBarHeight : 0;
+        float measuredHeight = ((getMeasuredHeight() - this.C) - this.D) - f16;
+        float measuredWidth = getMeasuredWidth() / measuredHeight;
+        float f17 = f15 * 2.0f;
+        float min = Math.min(getMeasuredWidth(), measuredHeight) - f17;
+        float measuredWidth2 = getMeasuredWidth() - f17;
+        float f18 = measuredHeight - f17;
+        float measuredWidth3 = getMeasuredWidth() / 2.0f;
+        float f19 = (measuredHeight / 2.0f) + f16 + this.D;
+        if (Math.abs(1.0f - f10) < 1.0E-4d) {
+            float f20 = min / 2.0f;
+            f14 = measuredWidth3 - f20;
+            f13 = f19 - f20;
+            f11 = measuredWidth3 + f20;
+            f12 = f19 + f20;
+        } else {
+            if (f10 - measuredWidth <= 1.0E-4d) {
+                float f21 = f18 * f10;
+                if (f21 <= measuredWidth2) {
+                    float f22 = f21 / 2.0f;
+                    f14 = measuredWidth3 - f22;
+                    float f23 = f18 / 2.0f;
+                    float f24 = f19 - f23;
+                    f11 = measuredWidth3 + f22;
+                    f12 = f19 + f23;
+                    f13 = f24;
+                }
+            }
+            float f25 = measuredWidth2 / 2.0f;
+            float f26 = measuredWidth3 - f25;
+            float f27 = (measuredWidth2 / f10) / 2.0f;
+            float f28 = f19 - f27;
+            f11 = measuredWidth3 + f25;
+            f12 = f19 + f27;
+            f13 = f28;
+            f14 = f26;
+        }
+        rectF.set(f14, f13, f11, f12);
+    }
+
+    public final void d(RectF rectF) {
+        rectF.set(this.x);
+    }
+
+    public final void e(int i10, int i11, boolean z10, boolean z11) {
+        this.b0 = z11;
+        float f10 = z10 ? i11 / i10 : i10 / i11;
+        if (!z11) {
+            f10 = 1.0f;
+            this.w = 1.0f;
+        }
+        setActualRect(f10);
+    }
+
+    public final void f(boolean z10, boolean z11) {
+        this.F = z10;
+        if (!z10) {
+            this.H = 1.0f;
+            return;
+        }
+        this.H = z11 ? 0.0f : 1.0f;
+        this.J = SystemClock.elapsedRealtime();
+        invalidate();
+    }
+
+    public final void g(int i10, boolean z10) {
+        ObjectAnimator objectAnimator = this.V;
+        if (objectAnimator != null && (!z10 || this.p0 != i10)) {
+            objectAnimator.cancel();
+            this.V = null;
+        }
+        int i11 = this.p0;
+        if (i11 == i10) {
+            return;
+        }
+        this.o0 = i11;
+        this.p0 = i10;
+        float f10 = i10 == 1 ? 0.0f : 1.0f;
+        if (!z10) {
+            this.U = f10;
+            invalidate();
+            return;
+        }
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "gridProgress", this.U, f10);
+        this.V = ofFloat;
+        ofFloat.setDuration(200L);
+        this.V.addListener(new zb1(this, 10));
+        if (i10 == 1) {
+            this.V.setStartDelay(200L);
+        }
+        this.V.start();
     }
 
     public float getAspectRatio() {
-        RectF rectF = this.actualRect;
+        RectF rectF = this.x;
         return (rectF.right - rectF.left) / (rectF.bottom - rectF.top);
     }
 
-    public void fill(final RectF rectF, Animator animator, boolean z) {
-        if (z) {
-            Animator animator2 = this.animator;
-            if (animator2 != null) {
-                animator2.cancel();
-                this.animator = null;
-            }
-            AnimatorSet animatorSet = new AnimatorSet();
-            this.animator = animatorSet;
-            animatorSet.setDuration(300L);
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "cropLeft", rectF.left);
-            ofFloat.setInterpolator(this.interpolator);
-            ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this, "cropTop", rectF.top);
-            ofFloat2.setInterpolator(this.interpolator);
-            ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this, "cropRight", rectF.right);
-            ofFloat3.setInterpolator(this.interpolator);
-            ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this, "cropBottom", rectF.bottom);
-            ofFloat4.setInterpolator(this.interpolator);
-            animator.setInterpolator(this.interpolator);
-            animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4, animator);
-            animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Crop.CropAreaView.2
-                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                public void onAnimationEnd(Animator animator3) {
-                    CropAreaView.this.setActualRect(rectF);
-                    CropAreaView.this.animator = null;
-                }
-            });
-            animatorSet.start();
-            return;
-        }
-        setActualRect(rectF);
-    }
-
-    public void resetAnimator() {
-        Animator animator = this.animator;
-        if (animator != null) {
-            animator.cancel();
-            this.animator = null;
-        }
-    }
-
-    private void setCropLeft(float f) {
-        this.actualRect.left = f;
-        invalidate();
-    }
-
-    public float getCropLeft() {
-        return this.actualRect.left;
-    }
-
-    private void setCropTop(float f) {
-        this.actualRect.top = f;
-        invalidate();
-    }
-
-    public float getCropTop() {
-        return this.actualRect.top;
-    }
-
-    private void setCropRight(float f) {
-        this.actualRect.right = f;
-        invalidate();
-    }
-
-    public float getCropRight() {
-        return this.actualRect.right;
-    }
-
-    private void setCropBottom(float f) {
-        this.actualRect.bottom = f;
-        invalidate();
-    }
-
     public float getCropBottom() {
-        return this.actualRect.bottom;
+        return this.x.bottom;
     }
 
     public float getCropCenterX() {
-        RectF rectF = this.actualRect;
+        RectF rectF = this.x;
         return (rectF.left + rectF.right) / 2.0f;
     }
 
     public float getCropCenterY() {
-        RectF rectF = this.actualRect;
+        RectF rectF = this.x;
         return (rectF.top + rectF.bottom) / 2.0f;
     }
 
-    public float getCropWidth() {
-        RectF rectF = this.actualRect;
-        return rectF.right - rectF.left;
-    }
-
     public float getCropHeight() {
-        RectF rectF = this.actualRect;
+        RectF rectF = this.x;
         return rectF.bottom - rectF.top;
     }
 
+    public float getCropLeft() {
+        return this.x.left;
+    }
+
+    public float getCropRight() {
+        return this.x.right;
+    }
+
+    public float getCropTop() {
+        return this.x.top;
+    }
+
+    public float getCropWidth() {
+        RectF rectF = this.x;
+        return rectF.right - rectF.left;
+    }
+
+    public Interpolator getInterpolator() {
+        return this.Q;
+    }
+
+    public float getLockAspectRatio() {
+        return this.w;
+    }
+
     public RectF getTargetRectToFill() {
-        return getTargetRectToFill(getAspectRatio());
+        float aspectRatio = getAspectRatio();
+        RectF rectF = this.h0;
+        a(rectF, aspectRatio);
+        return rectF;
     }
 
-    public RectF getTargetRectToFill(float f) {
-        calculateRect(this.targetRect, f);
-        return this.targetRect;
+    public final void h(boolean z10) {
+        try {
+            View decorView = ((Activity) getContext()).getWindow().getDecorView();
+            int systemUiVisibility = decorView.getSystemUiVisibility();
+            decorView.setSystemUiVisibility(z10 ? systemUiVisibility | 4 : systemUiVisibility & (-5));
+        } catch (Exception unused) {
+        }
     }
 
-    public void calculateRect(RectF rectF, float f) {
-        float f2;
-        float f3;
-        float f4;
-        float f5;
-        float f6 = !this.inBubbleMode ? AndroidUtilities.statusBarHeight : 0;
-        float measuredHeight = ((getMeasuredHeight() - this.bottomPadding) - this.topPadding) - f6;
-        float measuredWidth = getMeasuredWidth() / measuredHeight;
-        float min = Math.min(getMeasuredWidth(), measuredHeight) - (this.sidePadding * 2.0f);
-        float measuredWidth2 = getMeasuredWidth();
-        float f7 = this.sidePadding * 2.0f;
-        float f8 = measuredWidth2 - f7;
-        float f9 = measuredHeight - f7;
-        float measuredWidth3 = getMeasuredWidth() / 2.0f;
-        float f10 = f6 + this.topPadding + (measuredHeight / 2.0f);
-        if (Math.abs(1.0f - f) < 1.0E-4d) {
-            float f11 = min / 2.0f;
-            f5 = measuredWidth3 - f11;
-            f4 = f10 - f11;
-            f2 = measuredWidth3 + f11;
-            f3 = f10 + f11;
+    public final void i() {
+        if (this.e0 == null) {
+            this.f0 = null;
+            return;
+        }
+        if (this.i0 == null) {
+            TextPaint textPaint = new TextPaint();
+            this.i0 = textPaint;
+            textPaint.setColor(b.k(-1, 120));
+            this.i0.setTextSize(AndroidUtilities.dp(13.0f));
+            this.i0.setTextAlign(Paint.Align.CENTER);
+        }
+        this.f0 = new StaticLayout(this.e0, this.i0, getMeasuredWidth() - AndroidUtilities.dp(120.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+    }
+
+    public final void j() {
+        int dp = AndroidUtilities.dp(16.0f);
+        RectF rectF = this.d;
+        RectF rectF2 = this.x;
+        float f10 = rectF2.left;
+        float f11 = dp;
+        float f12 = rectF2.top;
+        rectF.set(f10 - f11, f12 - f11, f10 + f11, f12 + f11);
+        RectF rectF3 = this.e;
+        float f13 = rectF2.right;
+        float f14 = rectF2.top;
+        rectF3.set(f13 - f11, f14 - f11, f13 + f11, f14 + f11);
+        RectF rectF4 = this.f;
+        float f15 = rectF2.left;
+        float f16 = rectF2.bottom;
+        rectF4.set(f15 - f11, f16 - f11, f15 + f11, f16 + f11);
+        RectF rectF5 = this.h;
+        float f17 = rectF2.right;
+        float f18 = rectF2.bottom;
+        rectF5.set(f17 - f11, f18 - f11, f17 + f11, f18 + f11);
+        RectF rectF6 = this.n;
+        float f19 = rectF2.left + f11;
+        float f20 = rectF2.top;
+        rectF6.set(f19, f20 - f11, rectF2.right - f11, f20 + f11);
+        RectF rectF7 = this.r;
+        float f21 = rectF2.left;
+        rectF7.set(f21 - f11, rectF2.top + f11, f21 + f11, rectF2.bottom - f11);
+        RectF rectF8 = this.v;
+        float f22 = rectF2.right;
+        rectF8.set(f22 - f11, rectF2.top + f11, f22 + f11, rectF2.bottom - f11);
+        RectF rectF9 = this.s;
+        float f23 = rectF2.left + f11;
+        float f24 = rectF2.bottom;
+        rectF9.set(f23, f24 - f11, rectF2.right - f11, f24 + f11);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0437  */
+    /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x038c  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        float f10;
+        int i10;
+        int i11;
+        int i12;
+        Paint paint;
+        Paint paint2;
+        int i13;
+        Paint paint3;
+        Paint paint4 = this.P;
+        boolean z10 = this.T;
+        float f11 = this.R;
+        Paint paint5 = this.O;
+        Paint paint6 = this.M;
+        Paint paint7 = this.L;
+        Paint paint8 = this.N;
+        Paint paint9 = this.K;
+        if (this.b0) {
+            int dp = AndroidUtilities.dp(2.0f / this.k0);
+            int dp2 = AndroidUtilities.dp(16.0f / this.k0);
+            int dp3 = AndroidUtilities.dp(3.0f / this.k0);
+            RectF rectF = this.x;
+            float f12 = rectF.left;
+            int i14 = ((int) f12) - dp;
+            float f13 = rectF.top;
+            int i15 = ((int) f13) - dp;
+            int i16 = dp * 2;
+            int i17 = ((int) (rectF.right - f12)) + i16;
+            int i18 = i16 + ((int) (rectF.bottom - f13));
+            canvas.save();
+            canvas.translate(this.l0, this.m0);
+            float f14 = this.k0;
+            float f15 = (i17 / 2) + i14;
+            float f16 = (i18 / 2) + i15;
+            canvas.scale(f14, f14, f15, f16);
+            canvas.rotate(this.j0, f15, f16);
+            if (this.E) {
+                int i19 = (-getWidth()) * 4;
+                int i20 = (-getHeight()) * 4;
+                int width = getWidth() * 4;
+                int height = getHeight() * 4;
+                float f17 = this.G;
+                if (f17 >= 0.0f) {
+                    paint9.setAlpha((int) (f17 * 255.0f));
+                } else {
+                    paint9.setAlpha((int) (255.0f - (this.H * 127.0f)));
+                }
+                float f18 = i19;
+                float f19 = width;
+                i10 = dp;
+                i11 = dp2;
+                i12 = i14;
+                canvas.drawRect(f18, i20, f19, 0.0f, paint9);
+                canvas.drawRect(f18, 0.0f, 0.0f, getHeight(), paint9);
+                canvas.drawRect(getWidth(), 0.0f, f19, getHeight(), paint9);
+                canvas.drawRect(f18, getHeight(), f19, height, paint9);
+                float f20 = i15 + i10;
+                canvas.drawRect(0.0f, 0.0f, getWidth(), f20, paint9);
+                float f21 = (i15 + i18) - i10;
+                canvas.drawRect(0.0f, f20, i12 + i10, f21, paint9);
+                canvas.drawRect((i12 + i17) - i10, f20, getWidth(), f21, paint9);
+                canvas.drawRect(0.0f, f21, getWidth(), getHeight(), paint9);
+            } else {
+                i10 = dp;
+                i11 = dp2;
+                i12 = i14;
+            }
+            if (!this.F) {
+                return;
+            }
+            int i21 = dp3 - i10;
+            int i22 = dp3 * 2;
+            int i23 = i17 - i22;
+            int i24 = i18 - i22;
+            int i25 = this.p0;
+            if (i25 == 1 && this.U > 0.0f) {
+                i25 = this.o0;
+            }
+            float f22 = this.I;
+            if (f22 >= 0.0f) {
+                paint7.setAlpha((int) (this.U * 26.0f * f22));
+                paint6.setAlpha((int) (this.U * 178.0f * this.I));
+                paint5.setAlpha((int) (this.I * 178.0f));
+                paint8.setAlpha((int) (this.I * 255.0f));
+            } else {
+                paint7.setAlpha((int) (this.U * 26.0f * this.H));
+                paint6.setAlpha((int) (this.U * 178.0f * this.H));
+                paint5.setAlpha((int) (this.H * 178.0f));
+                paint8.setAlpha((int) (this.H * 255.0f));
+            }
+            float f23 = i12 + i21;
+            float f24 = i15 + i21;
+            int i26 = i12 + i17;
+            float f25 = i26 - i21;
+            int i27 = i25;
+            Paint paint10 = paint6;
+            canvas.drawRect(f23, f24, f25, r4 + i10, paint5);
+            int i28 = i18 + i15;
+            float f26 = i28 - i21;
+            canvas.drawRect(f23, f24, r3 + i10, f26, paint5);
+            canvas.drawRect(f23, r12 - i10, f25, f26, paint5);
+            canvas.drawRect(r14 - i10, f24, f25, f26, paint5);
+            int i29 = 0;
+            while (true) {
+                int i30 = 3;
+                if (i29 >= 3) {
+                    break;
+                }
+                int i31 = 2;
+                if (i27 == 2) {
+                    int i32 = 1;
+                    while (i32 < 4) {
+                        if (i29 == i31 && i32 == i30) {
+                            paint3 = paint7;
+                            i13 = i32;
+                        } else {
+                            int i33 = i12 + dp3;
+                            int i34 = i23 / 3;
+                            float f27 = (i34 * i29) + ((i34 / 3) * i32) + i33;
+                            int i35 = i15 + dp3;
+                            float f28 = i35;
+                            float f29 = i35 + i24;
+                            Paint paint11 = paint7;
+                            i13 = i32;
+                            canvas.drawLine(f27, f28, f27, f29, paint11);
+                            paint3 = paint11;
+                            canvas.drawLine(f27, f28, f27, f29, paint10);
+                            int i36 = i24 / 3;
+                            float f30 = i33;
+                            float f31 = (i36 * i29) + ((i36 / 3) * i13) + i35;
+                            float f32 = i33 + i23;
+                            canvas.drawLine(f30, f31, f32, f31, paint3);
+                            canvas.drawLine(f30, f31, f32, f31, paint10);
+                        }
+                        i32 = i13 + 1;
+                        paint7 = paint3;
+                        i31 = 2;
+                        i30 = 3;
+                    }
+                    paint = paint7;
+                } else {
+                    paint = paint7;
+                    if (i27 == 3 && i29 > 0) {
+                        int i37 = i12 + dp3;
+                        float f33 = ((i23 / 3) * i29) + i37;
+                        int i38 = i15 + dp3;
+                        float f34 = i38;
+                        float f35 = i38 + i24;
+                        canvas.drawLine(f33, f34, f33, f35, paint);
+                        canvas.drawLine(f33, f34, f33, f35, paint10);
+                        float f36 = i37;
+                        float f37 = ((i24 / 3) * i29) + i38;
+                        float f38 = i37 + i23;
+                        canvas.drawLine(f36, f37, f38, f37, paint);
+                        paint2 = paint10;
+                        canvas.drawLine(f36, f37, f38, f37, paint2);
+                        i29++;
+                        paint10 = paint2;
+                        paint7 = paint;
+                    }
+                }
+                paint2 = paint10;
+                i29++;
+                paint10 = paint2;
+                paint7 = paint;
+            }
+            float f39 = i12;
+            float f40 = i15;
+            float f41 = i12 + i11;
+            float f42 = i15 + dp3;
+            canvas.drawRect(f39, f40, f41, f42, paint8);
+            float f43 = i12 + dp3;
+            float f44 = i15 + i11;
+            canvas.drawRect(f39, f40, f43, f44, paint8);
+            float f45 = i26 - i11;
+            float f46 = i26;
+            canvas.drawRect(f45, f40, f46, f42, paint8);
+            float f47 = i26 - dp3;
+            canvas.drawRect(f47, f40, f46, f44, paint8);
+            float f48 = i28 - dp3;
+            float f49 = i28;
+            canvas.drawRect(f39, f48, f41, f49, paint8);
+            float f50 = i28 - i11;
+            canvas.drawRect(f39, f50, f43, f49, paint8);
+            canvas.drawRect(f45, f48, f46, f49, paint8);
+            canvas.drawRect(f47, f50, f46, f49, paint8);
+            canvas.restore();
         } else {
-            if (f - measuredWidth <= 1.0E-4d) {
-                float f12 = f9 * f;
-                if (f12 <= f8) {
-                    float f13 = f12 / 2.0f;
-                    f5 = measuredWidth3 - f13;
-                    float f14 = f9 / 2.0f;
-                    float f15 = f10 - f14;
-                    f2 = measuredWidth3 + f13;
-                    f3 = f10 + f14;
-                    f4 = f15;
+            float f51 = f11 * 2.0f;
+            float measuredWidth = getMeasuredWidth() - f51;
+            float measuredHeight = (((getMeasuredHeight() - this.C) - (!z10 ? AndroidUtilities.statusBarHeight : 0)) - this.D) - f51;
+            this.a = (int) Math.min(measuredWidth, measuredHeight);
+            Bitmap bitmap = this.c0;
+            if (bitmap == null || bitmap.getWidth() != this.a) {
+                Bitmap bitmap2 = this.c0;
+                boolean z11 = bitmap2 != null;
+                if (bitmap2 != null) {
+                    bitmap2.recycle();
+                    this.c0 = null;
+                }
+                try {
+                    int i39 = this.a;
+                    this.c0 = Bitmap.createBitmap(i39, i39, Bitmap.Config.ARGB_8888);
+                    Canvas canvas2 = new Canvas(this.c0);
+                    float f52 = this.a;
+                    f10 = 2.0f;
+                    try {
+                        canvas2.drawRect(0.0f, 0.0f, f52, f52, paint9);
+                        try {
+                            int i40 = this.a;
+                            canvas2.drawCircle(i40 / 2, i40 / 2, i40 / 2, this.d0);
+                            canvas2.setBitmap(null);
+                            if (!z11) {
+                                this.H = 0.0f;
+                                this.J = SystemClock.elapsedRealtime();
+                            }
+                        } catch (Throwable unused) {
+                            if (this.c0 != null) {
+                            }
+                            if (this.H >= 1.0f) {
+                            }
+                        }
+                    } catch (Throwable unused2) {
+                        paint9 = paint9;
+                    }
+                } catch (Throwable unused3) {
+                    f10 = 2.0f;
+                }
+            } else {
+                f10 = 2.0f;
+            }
+            if (this.c0 != null) {
+                paint4.setAlpha((int) (this.H * 255.0f));
+                paint9.setAlpha((int) (this.H * 127.0f));
+                float f53 = this.a;
+                this.b = com.google.android.recaptcha.internal.a.A(measuredWidth, f53, f10, f11);
+                float A = com.google.android.recaptcha.internal.a.A(measuredHeight, f53, f10, f11) + (!z10 ? AndroidUtilities.statusBarHeight : 0);
+                this.c = A;
+                float f54 = A + f53;
+                canvas.drawRect(0.0f, 0.0f, getWidth(), (int) this.c, paint9);
+                float f55 = (int) f54;
+                canvas.drawRect(0.0f, (int) this.c, (int) this.b, f55, paint9);
+                canvas.drawRect((int) (r1 + f53), (int) this.c, getWidth(), f55, paint9);
+                canvas.drawRect(0.0f, f55, getWidth(), getHeight(), paint9);
+                canvas.drawBitmap(this.c0, (int) this.b, (int) this.c, paint4);
+                if (getMeasuredHeight() > getMeasuredWidth() && this.f0 != null) {
+                    canvas.save();
+                    canvas.translate(getMeasuredWidth() / f10, f54 + AndroidUtilities.dp(16.0f));
+                    this.f0.draw(canvas);
+                    canvas.restore();
                 }
             }
-            float f16 = f8 / 2.0f;
-            float f17 = measuredWidth3 - f16;
-            float f18 = (f8 / f) / 2.0f;
-            float f19 = f10 - f18;
-            f2 = measuredWidth3 + f16;
-            f3 = f10 + f18;
-            f4 = f19;
-            f5 = f17;
         }
-        rectF.set(f5, f4, f2, f3);
+        if (this.H >= 1.0f) {
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            long j10 = elapsedRealtime - this.J;
+            if (j10 > 17) {
+                j10 = 17;
+            }
+            this.J = elapsedRealtime;
+            float f56 = (j10 / 180.0f) + this.H;
+            this.H = f56;
+            if (f56 > 1.0f) {
+                this.H = 1.0f;
+            }
+            invalidate();
+        }
     }
 
     @Override // android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.isDragging) {
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.a0) {
             return false;
         }
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    public void updateStatusShow(boolean z) {
-        try {
-            View decorView = ((Activity) getContext()).getWindow().getDecorView();
-            int systemUiVisibility = decorView.getSystemUiVisibility();
-            decorView.setSystemUiVisibility(z ? systemUiVisibility | 4 : systemUiVisibility & (-5));
-        } catch (Exception unused) {
-        }
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        i();
     }
 
     @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        int x = (int) (motionEvent.getX() - ((ViewGroup) getParent()).getX());
-        int y = (int) (motionEvent.getY() - ((ViewGroup) getParent()).getY());
-        float f = !this.inBubbleMode ? AndroidUtilities.statusBarHeight : 0;
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        float f10 = this.R;
+        RectF rectF = this.y;
+        int x8 = (int) (motionEvent.getX() - ((ViewGroup) getParent()).getX());
+        int y10 = (int) (motionEvent.getY() - ((ViewGroup) getParent()).getY());
+        float f11 = !this.T ? AndroidUtilities.statusBarHeight : 0;
         int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked == 0) {
-            if (this.freeform) {
-                float f2 = x;
-                float f3 = y;
-                if (this.topLeftCorner.contains(f2, f3)) {
-                    this.activeControl = Control.TOP_LEFT;
-                } else if (this.topRightCorner.contains(f2, f3)) {
-                    this.activeControl = Control.TOP_RIGHT;
-                } else if (this.bottomLeftCorner.contains(f2, f3)) {
-                    this.activeControl = Control.BOTTOM_LEFT;
-                } else if (this.bottomRightCorner.contains(f2, f3)) {
-                    this.activeControl = Control.BOTTOM_RIGHT;
-                } else if (this.leftEdge.contains(f2, f3)) {
-                    this.activeControl = Control.LEFT;
-                } else if (this.topEdge.contains(f2, f3)) {
-                    this.activeControl = Control.TOP;
-                } else if (this.rightEdge.contains(f2, f3)) {
-                    this.activeControl = Control.RIGHT;
-                } else if (this.bottomEdge.contains(f2, f3)) {
-                    this.activeControl = Control.BOTTOM;
-                } else {
-                    this.activeControl = Control.NONE;
-                    return false;
+        if (actionMasked != 0) {
+            if (actionMasked == 1 || actionMasked == 3) {
+                this.a0 = false;
+                h(false);
+                if (this.n0 != 1) {
+                    this.n0 = 1;
+                    a aVar = this.W;
+                    if (aVar != null) {
+                        n nVar = (n) aVar;
+                        CropAreaView cropAreaView = nVar.a;
+                        cropAreaView.g(1, true);
+                        nVar.d(cropAreaView.getTargetRectToFill());
+                    }
                 }
-                this.previousX = x;
-                this.previousY = y;
-                setGridType(GridType.MAJOR, false);
-                this.isDragging = true;
-                updateStatusShow(true);
-                AreaViewListener areaViewListener = this.listener;
-                if (areaViewListener != null) {
-                    areaViewListener.onAreaChangeBegan();
-                }
-                return true;
-            }
-            this.activeControl = Control.NONE;
-            return false;
-        }
-        if (actionMasked == 1 || actionMasked == 3) {
-            this.isDragging = false;
-            updateStatusShow(false);
-            Control control = this.activeControl;
-            Control control2 = Control.NONE;
-            if (control == control2) {
                 return false;
             }
-            this.activeControl = control2;
-            AreaViewListener areaViewListener2 = this.listener;
-            if (areaViewListener2 != null) {
-                areaViewListener2.onAreaChangeEnded();
+            if (actionMasked == 2 && this.n0 != 1) {
+                rectF.set(this.x);
+                float f12 = x8 - this.A;
+                float f13 = y10 - this.B;
+                this.A = x8;
+                this.B = y10;
+                boolean z10 = Math.abs(f12) > Math.abs(f13);
+                switch (j.b(this.n0)) {
+                    case 1:
+                        rectF.left += f12;
+                        rectF.top += f13;
+                        if (this.w > 0.0f) {
+                            float width = rectF.width();
+                            float height = rectF.height();
+                            if (z10) {
+                                c(rectF, this.w);
+                            } else {
+                                b(rectF, this.w);
+                            }
+                            rectF.left -= rectF.width() - width;
+                            rectF.top -= rectF.width() - height;
+                            break;
+                        }
+                        break;
+                    case 2:
+                        rectF.right += f12;
+                        rectF.top += f13;
+                        if (this.w > 0.0f) {
+                            float height2 = rectF.height();
+                            if (z10) {
+                                c(rectF, this.w);
+                            } else {
+                                b(rectF, this.w);
+                            }
+                            rectF.top -= rectF.width() - height2;
+                            break;
+                        }
+                        break;
+                    case 3:
+                        rectF.left += f12;
+                        rectF.bottom += f13;
+                        if (this.w > 0.0f) {
+                            float width2 = rectF.width();
+                            if (z10) {
+                                c(rectF, this.w);
+                            } else {
+                                b(rectF, this.w);
+                            }
+                            rectF.left -= rectF.width() - width2;
+                            break;
+                        }
+                        break;
+                    case 4:
+                        rectF.right += f12;
+                        rectF.bottom += f13;
+                        float f14 = this.w;
+                        if (f14 > 0.0f) {
+                            if (!z10) {
+                                b(rectF, f14);
+                                break;
+                            } else {
+                                c(rectF, f14);
+                                break;
+                            }
+                        }
+                        break;
+                    case 5:
+                        rectF.top += f13;
+                        float f15 = this.w;
+                        if (f15 > 0.0f) {
+                            b(rectF, f15);
+                            break;
+                        }
+                        break;
+                    case 6:
+                        rectF.left += f12;
+                        float f16 = this.w;
+                        if (f16 > 0.0f) {
+                            c(rectF, f16);
+                            break;
+                        }
+                        break;
+                    case 7:
+                        rectF.bottom += f13;
+                        float f17 = this.w;
+                        if (f17 > 0.0f) {
+                            b(rectF, f17);
+                            break;
+                        }
+                        break;
+                    case 8:
+                        rectF.right += f12;
+                        float f18 = this.w;
+                        if (f18 > 0.0f) {
+                            c(rectF, f18);
+                            break;
+                        }
+                        break;
+                }
+                if (rectF.left < f10) {
+                    float f19 = this.w;
+                    if (f19 > 0.0f) {
+                        rectF.bottom = com.google.android.recaptcha.internal.a.A(rectF.right, f10, f19, rectF.top);
+                    }
+                    rectF.left = f10;
+                } else if (rectF.right > getWidth() - f10) {
+                    rectF.right = getWidth() - f10;
+                    if (this.w > 0.0f) {
+                        rectF.bottom = (rectF.width() / this.w) + rectF.top;
+                    }
+                }
+                float f20 = f11 + this.D + f10;
+                float f21 = this.C + f10;
+                if (rectF.top < f20) {
+                    float f22 = this.w;
+                    if (f22 > 0.0f) {
+                        rectF.right = com.google.android.recaptcha.internal.a.z(rectF.bottom, f20, f22, rectF.left);
+                    }
+                    rectF.top = f20;
+                } else if (rectF.bottom > getHeight() - f21) {
+                    rectF.bottom = getHeight() - f21;
+                    if (this.w > 0.0f) {
+                        rectF.right = (rectF.height() * this.w) + rectF.left;
+                    }
+                }
+                float width3 = rectF.width();
+                float f23 = this.S;
+                if (width3 < f23) {
+                    rectF.right = rectF.left + f23;
+                }
+                float height3 = rectF.height();
+                float f24 = this.S;
+                if (height3 < f24) {
+                    rectF.bottom = rectF.top + f24;
+                }
+                float f25 = this.w;
+                if (f25 > 0.0f) {
+                    if (f25 < 1.0f) {
+                        float width4 = rectF.width();
+                        float f26 = this.S;
+                        if (width4 <= f26) {
+                            rectF.right = rectF.left + f26;
+                            rectF.bottom = (rectF.width() / this.w) + rectF.top;
+                        }
+                    } else {
+                        float height4 = rectF.height();
+                        float f27 = this.S;
+                        if (height4 <= f27) {
+                            rectF.bottom = rectF.top + f27;
+                            rectF.right = (rectF.height() * this.w) + rectF.left;
+                        }
+                    }
+                }
+                setActualRect(rectF);
+                a aVar2 = this.W;
+                if (aVar2 != null) {
+                    n nVar2 = (n) aVar2;
+                    CropAreaView cropAreaView2 = nVar2.a;
+                    cropAreaView2.g(3, false);
+                    RectF rectF2 = nVar2.f;
+                    float centerX = rectF2.centerX() - cropAreaView2.getCropCenterX();
+                    float centerY = rectF2.centerY() - cropAreaView2.getCropCenterY();
+                    l lVar = nVar2.H;
+                    if (lVar != null) {
+                        l.f(lVar, centerX, centerY);
+                    }
+                    nVar2.r(false);
+                    rectF2.set(cropAreaView2.x);
+                    nVar2.e(true, false, false, false);
+                    return true;
+                }
             }
-            return true;
-        }
-        if (actionMasked != 2 || this.activeControl == Control.NONE) {
             return false;
         }
-        this.tempRect.set(this.actualRect);
-        float f4 = x - this.previousX;
-        float f5 = y - this.previousY;
-        this.previousX = x;
-        this.previousY = y;
-        boolean z = Math.abs(f4) > Math.abs(f5);
-        switch (this.activeControl.ordinal()) {
-            case 1:
-                RectF rectF = this.tempRect;
-                rectF.left += f4;
-                rectF.top += f5;
-                if (this.lockAspectRatio > 0.0f) {
-                    float width = rectF.width();
-                    float height = this.tempRect.height();
-                    if (z) {
-                        constrainRectByWidth(this.tempRect, this.lockAspectRatio);
-                    } else {
-                        constrainRectByHeight(this.tempRect, this.lockAspectRatio);
-                    }
-                    RectF rectF2 = this.tempRect;
-                    rectF2.left -= rectF2.width() - width;
-                    RectF rectF3 = this.tempRect;
-                    rectF3.top -= rectF3.width() - height;
-                    break;
-                }
-                break;
-            case 2:
-                RectF rectF4 = this.tempRect;
-                rectF4.right += f4;
-                rectF4.top += f5;
-                if (this.lockAspectRatio > 0.0f) {
-                    float height2 = rectF4.height();
-                    if (z) {
-                        constrainRectByWidth(this.tempRect, this.lockAspectRatio);
-                    } else {
-                        constrainRectByHeight(this.tempRect, this.lockAspectRatio);
-                    }
-                    RectF rectF5 = this.tempRect;
-                    rectF5.top -= rectF5.width() - height2;
-                    break;
-                }
-                break;
-            case 3:
-                RectF rectF6 = this.tempRect;
-                rectF6.left += f4;
-                rectF6.bottom += f5;
-                if (this.lockAspectRatio > 0.0f) {
-                    float width2 = rectF6.width();
-                    if (z) {
-                        constrainRectByWidth(this.tempRect, this.lockAspectRatio);
-                    } else {
-                        constrainRectByHeight(this.tempRect, this.lockAspectRatio);
-                    }
-                    RectF rectF7 = this.tempRect;
-                    rectF7.left -= rectF7.width() - width2;
-                    break;
-                }
-                break;
-            case 4:
-                RectF rectF8 = this.tempRect;
-                rectF8.right += f4;
-                rectF8.bottom += f5;
-                float f6 = this.lockAspectRatio;
-                if (f6 > 0.0f) {
-                    if (z) {
-                        constrainRectByWidth(rectF8, f6);
-                        break;
-                    } else {
-                        constrainRectByHeight(rectF8, f6);
-                        break;
-                    }
-                }
-                break;
-            case 5:
-                RectF rectF9 = this.tempRect;
-                rectF9.top += f5;
-                float f7 = this.lockAspectRatio;
-                if (f7 > 0.0f) {
-                    constrainRectByHeight(rectF9, f7);
-                    break;
-                }
-                break;
-            case 6:
-                RectF rectF10 = this.tempRect;
-                rectF10.left += f4;
-                float f8 = this.lockAspectRatio;
-                if (f8 > 0.0f) {
-                    constrainRectByWidth(rectF10, f8);
-                    break;
-                }
-                break;
-            case 7:
-                RectF rectF11 = this.tempRect;
-                rectF11.bottom += f5;
-                float f9 = this.lockAspectRatio;
-                if (f9 > 0.0f) {
-                    constrainRectByHeight(rectF11, f9);
-                    break;
-                }
-                break;
-            case 8:
-                RectF rectF12 = this.tempRect;
-                rectF12.right += f4;
-                float f10 = this.lockAspectRatio;
-                if (f10 > 0.0f) {
-                    constrainRectByWidth(rectF12, f10);
-                    break;
-                }
-                break;
+        if (!this.b0) {
+            this.n0 = 1;
+            return false;
         }
-        RectF rectF13 = this.tempRect;
-        float f11 = rectF13.left;
-        float f12 = this.sidePadding;
-        if (f11 < f12) {
-            float f13 = this.lockAspectRatio;
-            if (f13 > 0.0f) {
-                rectF13.bottom = rectF13.top + ((rectF13.right - f12) / f13);
+        float f28 = x8;
+        float f29 = y10;
+        if (this.d.contains(f28, f29)) {
+            this.n0 = 2;
+        } else if (this.e.contains(f28, f29)) {
+            this.n0 = 3;
+        } else if (this.f.contains(f28, f29)) {
+            this.n0 = 4;
+        } else if (this.h.contains(f28, f29)) {
+            this.n0 = 5;
+        } else if (this.r.contains(f28, f29)) {
+            this.n0 = 7;
+        } else if (this.n.contains(f28, f29)) {
+            this.n0 = 6;
+        } else if (this.v.contains(f28, f29)) {
+            this.n0 = 9;
+        } else {
+            if (!this.s.contains(f28, f29)) {
+                this.n0 = 1;
+                return false;
             }
-            rectF13.left = f12;
-        } else if (rectF13.right > getWidth() - this.sidePadding) {
-            this.tempRect.right = getWidth() - this.sidePadding;
-            if (this.lockAspectRatio > 0.0f) {
-                RectF rectF14 = this.tempRect;
-                rectF14.bottom = rectF14.top + (rectF14.width() / this.lockAspectRatio);
+            this.n0 = 8;
+        }
+        this.A = x8;
+        this.B = y10;
+        g(3, false);
+        this.a0 = true;
+        h(true);
+        a aVar3 = this.W;
+        if (aVar3 != null) {
+            n nVar3 = (n) aVar3;
+            nVar3.a.d(nVar3.f);
+            nVar3.n = 0.0f;
+            m mVar = nVar3.I;
+            if (mVar != null) {
+                mVar.D(false);
+                return true;
             }
-        }
-        float f14 = f + this.topPadding;
-        float f15 = this.sidePadding;
-        float f16 = f14 + f15;
-        float f17 = this.bottomPadding + f15;
-        RectF rectF15 = this.tempRect;
-        if (rectF15.top < f16) {
-            float f18 = this.lockAspectRatio;
-            if (f18 > 0.0f) {
-                rectF15.right = rectF15.left + ((rectF15.bottom - f16) * f18);
-            }
-            rectF15.top = f16;
-        } else if (rectF15.bottom > getHeight() - f17) {
-            this.tempRect.bottom = getHeight() - f17;
-            if (this.lockAspectRatio > 0.0f) {
-                RectF rectF16 = this.tempRect;
-                rectF16.right = rectF16.left + (rectF16.height() * this.lockAspectRatio);
-            }
-        }
-        float width3 = this.tempRect.width();
-        float f19 = this.minWidth;
-        if (width3 < f19) {
-            RectF rectF17 = this.tempRect;
-            rectF17.right = rectF17.left + f19;
-        }
-        float height3 = this.tempRect.height();
-        float f20 = this.minWidth;
-        if (height3 < f20) {
-            RectF rectF18 = this.tempRect;
-            rectF18.bottom = rectF18.top + f20;
-        }
-        float f21 = this.lockAspectRatio;
-        if (f21 > 0.0f) {
-            if (f21 < 1.0f) {
-                float width4 = this.tempRect.width();
-                float f22 = this.minWidth;
-                if (width4 <= f22) {
-                    RectF rectF19 = this.tempRect;
-                    rectF19.right = rectF19.left + f22;
-                    rectF19.bottom = rectF19.top + (rectF19.width() / this.lockAspectRatio);
-                }
-            } else {
-                float height4 = this.tempRect.height();
-                float f23 = this.minWidth;
-                if (height4 <= f23) {
-                    RectF rectF20 = this.tempRect;
-                    rectF20.bottom = rectF20.top + f23;
-                    rectF20.right = rectF20.left + (rectF20.height() * this.lockAspectRatio);
-                }
-            }
-        }
-        setActualRect(this.tempRect);
-        AreaViewListener areaViewListener3 = this.listener;
-        if (areaViewListener3 != null) {
-            areaViewListener3.onAreaChange();
         }
         return true;
     }
 
-    private void constrainRectByWidth(RectF rectF, float f) {
-        float width = rectF.width();
-        rectF.right = rectF.left + width;
-        rectF.bottom = rectF.top + (width / f);
+    public void setActualRect(float f10) {
+        a(this.x, f10);
+        j();
+        invalidate();
     }
 
-    private void constrainRectByHeight(RectF rectF, float f) {
-        float height = rectF.height();
-        rectF.right = rectF.left + (f * height);
-        rectF.bottom = rectF.top + height;
+    public void setBottomPadding(float f10) {
+        this.C = f10;
     }
 
-    public void getCropRect(RectF rectF) {
-        rectF.set(this.actualRect);
+    public void setDimAlpha(float f10) {
+        this.G = f10;
+    }
+
+    public void setDimVisibility(boolean z10) {
+        this.E = z10;
+    }
+
+    public void setFrameAlpha(float f10) {
+        this.I = f10;
+    }
+
+    public void setFreeform(boolean z10) {
+        this.b0 = z10;
+    }
+
+    public void setIsVideo(boolean z10) {
+        this.S = AndroidUtilities.dp(z10 ? 64.0f : 32.0f);
+    }
+
+    public void setListener(a aVar) {
+        this.W = aVar;
+    }
+
+    public void setLockedAspectRatio(float f10) {
+        this.w = f10;
     }
 
     public void setSubtitle(String str) {
-        this.subtitle = str;
+        this.e0 = str;
         if (getMeasuredWidth() > 0) {
-            updateSubtitle();
+            i();
         }
+    }
+
+    public void setTopPadding(float f10) {
+        this.D = f10;
+    }
+
+    public void setActualRect(RectF rectF) {
+        this.x.set(rectF);
+        j();
+        invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
     }
 }

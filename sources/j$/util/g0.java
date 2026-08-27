@@ -1,75 +1,66 @@
 package j$.util;
 
-import java.util.NoSuchElementException;
+import java.util.PrimitiveIterator;
 import java.util.function.Consumer;
-import java.util.function.LongConsumer;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-public final class g0 implements N, LongConsumer, w {
-    public boolean a = false;
-    public long b;
-    public final /* synthetic */ Z c;
+public final /* synthetic */ class g0 implements PrimitiveIterator.OfDouble {
+    public final /* synthetic */ h0 a;
 
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+    public /* synthetic */ g0(h0 h0Var) {
+        this.a = h0Var;
     }
 
-    @Override // j$.util.O
-    public final void forEachRemaining(LongConsumer longConsumer) {
-        Objects.requireNonNull(longConsumer);
-        while (hasNext()) {
-            longConsumer.accept(nextLong());
+    public final /* synthetic */ boolean equals(Object obj) {
+        h0 h0Var = this.a;
+        if (obj instanceof g0) {
+            obj = ((g0) obj).a;
         }
+        return h0Var.equals(obj);
+    }
+
+    @Override // java.util.PrimitiveIterator
+    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
+        this.a.forEachRemaining((Object) doubleConsumer);
+    }
+
+    @Override // java.util.PrimitiveIterator.OfDouble, java.util.Iterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        this.a.forEachRemaining(consumer);
+    }
+
+    @Override // java.util.PrimitiveIterator.OfDouble
+    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
+        this.a.forEachRemaining(doubleConsumer);
     }
 
     @Override // java.util.Iterator
-    public final Long next() {
-        if (t0.a) {
-            t0.a(g0.class, "{0} calling PrimitiveIterator.OfLong.nextLong()");
-            throw null;
-        }
-        return Long.valueOf(nextLong());
+    public final /* synthetic */ boolean hasNext() {
+        return this.a.hasNext();
     }
 
-    @Override // j$.util.N, java.util.Iterator, j$.util.w
-    public final void forEachRemaining(Consumer consumer) {
-        if (consumer instanceof LongConsumer) {
-            forEachRemaining((LongConsumer) consumer);
-            return;
-        }
-        Objects.requireNonNull(consumer);
-        if (t0.a) {
-            t0.a(g0.class, "{0} calling PrimitiveIterator.OfLong.forEachRemainingLong(action::accept)");
-            throw null;
-        }
-        Objects.requireNonNull(consumer);
-        forEachRemaining((LongConsumer) new K(consumer, 0));
+    public final /* synthetic */ int hashCode() {
+        return this.a.hashCode();
     }
 
-    public g0(Z z) {
-        this.c = z;
+    @Override // java.util.PrimitiveIterator.OfDouble, java.util.Iterator
+    public final /* synthetic */ Double next() {
+        return this.a.next();
     }
 
-    @Override // java.util.function.LongConsumer
-    public final void accept(long j) {
-        this.a = true;
-        this.b = j;
+    @Override // java.util.PrimitiveIterator.OfDouble, java.util.Iterator
+    public final /* synthetic */ Object next() {
+        return this.a.next();
+    }
+
+    @Override // java.util.PrimitiveIterator.OfDouble
+    public final /* synthetic */ double nextDouble() {
+        return this.a.nextDouble();
     }
 
     @Override // java.util.Iterator
-    public final boolean hasNext() {
-        if (!this.a) {
-            this.c.tryAdvance((LongConsumer) this);
-        }
-        return this.a;
-    }
-
-    @Override // j$.util.N
-    public final long nextLong() {
-        if (!this.a && !hasNext()) {
-            throw new NoSuchElementException();
-        }
-        this.a = false;
-        return this.b;
+    public final /* synthetic */ void remove() {
+        this.a.remove();
     }
 }

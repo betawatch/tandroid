@@ -3,6 +3,7 @@ package org.telegram.messenger;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.RectF;
 import android.text.TextUtils;
 import android.util.LongSparseArray;
 import android.util.Pair;
@@ -21,32 +22,26 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 import org.telegram.messenger.NotificationBadge;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wallpaper.WallpaperBitmapHolder;
-import org.telegram.messenger.wallpaper.WallpaperGiftPatternPosition;
-import org.telegram.messenger.wallpaper.pgm.PGMImage;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.EmojiThemes;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.theme.ThemeKey;
-import org.telegram.ui.ChatBackgroundDrawable;
+import org.telegram.ui.un;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class ChatThemeController extends BaseController {
     public static final int THEME_LIST_WITH_DEFAULT = 1;
     public static final int THEME_LIST_WITH_EMOJI = 2;
     public static final int THEME_LIST_WITH_GIFTS = 4;
     public static volatile DispatchQueue chatThemeQueue = new DispatchQueue("chatThemeQueue");
     private static final ChatThemeController[] instances = new ChatThemeController[4];
-    private final Map<String, EmojiThemes> allChatGiftThemes;
-    private List<EmojiThemes> allChatThemes;
-    private final LongSparseArray<ThemeKey> dialogEmoticonsMap;
+    private final Map<String, org.telegram.ui.ActionBar.b4> allChatGiftThemes;
+    private List<org.telegram.ui.ActionBar.b4> allChatThemes;
+    private final LongSparseArray<of.b> dialogEmoticonsMap;
     private final ThemeList giftsThemeList;
     private volatile long lastReloadTimeMs;
     private final long reloadTimeoutMs;
@@ -55,26 +50,20 @@ public class ChatThemeController extends BaseController {
     private final Map<String, Long> usedGiftThemesBySlug;
     private final Map<Long, String> usedGiftThemesByUsers;
 
-    public static /* synthetic */ void $r8$lambda$77dFMoX2BBulnIAL_No9baTMG4Q(TLObject tLObject, TLRPC.TL_error tL_error) {
-    }
-
-    public void clearWallpaperImages() {
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    static class ThemeList {
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class ThemeList {
         private boolean completed;
         private long hash;
         private long lastReloadTimeMs;
         private String offset;
-        private List<EmojiThemes> themes;
+        private List<org.telegram.ui.ActionBar.b4> themes;
 
         private ThemeList() {
         }
     }
 
-    private ChatThemeController(int i) {
-        super(i);
+    private ChatThemeController(int i10) {
+        super(i10);
         this.reloadTimeoutMs = 7200000L;
         this.themeIdWallpaperThumbMap = new HashMap<>();
         this.allChatGiftThemes = new HashMap();
@@ -83,234 +72,6 @@ public class ChatThemeController extends BaseController {
         this.usedGiftThemesByUsers = new HashMap();
         this.usedGiftThemesBySlug = new HashMap();
         init();
-    }
-
-    private void init() {
-        SharedPreferences sharedPreferences = getSharedPreferences();
-        this.themesHash = 0L;
-        this.lastReloadTimeMs = 0L;
-        try {
-            this.themesHash = sharedPreferences.getLong("hash", 0L);
-            this.lastReloadTimeMs = sharedPreferences.getLong("lastReload", 0L);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        this.allChatThemes = getAllChatThemesFromPrefs();
-        getMessagesStorage().loadGiftChatTheme(new Utilities.Callback() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda13
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                ChatThemeController.$r8$lambda$fRCmsGE1lNmR4kEwlX8rD99F8SA(ChatThemeController.this, (List) obj);
-            }
-        });
-        preloadSticker("❌");
-        if (this.allChatThemes.isEmpty()) {
-            return;
-        }
-        Iterator<EmojiThemes> it = this.allChatThemes.iterator();
-        while (it.hasNext()) {
-            preloadSticker(it.next().getEmoticon());
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$fRCmsGE1lNmR4kEwlX8rD99F8SA(ChatThemeController chatThemeController, List list) {
-        chatThemeController.getClass();
-        if (list != null) {
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = (TLRPC.TL_chatThemeUniqueGift) it.next();
-                chatThemeController.allChatGiftThemes.put(tL_chatThemeUniqueGift.gift.slug, new EmojiThemes(chatThemeController.currentAccount, tL_chatThemeUniqueGift));
-            }
-        }
-    }
-
-    public void putThemeIfNeeded(TLRPC.ChatTheme chatTheme) {
-        if (chatTheme instanceof TLRPC.TL_chatThemeUniqueGift) {
-            TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = (TLRPC.TL_chatThemeUniqueGift) chatTheme;
-            if (this.allChatGiftThemes.containsKey(tL_chatThemeUniqueGift.gift.slug)) {
-                return;
-            }
-            EmojiThemes emojiThemes = new EmojiThemes(this.currentAccount, tL_chatThemeUniqueGift);
-            emojiThemes.initColors();
-            this.allChatGiftThemes.put(tL_chatThemeUniqueGift.gift.slug, emojiThemes);
-            getMessagesStorage().putGiftChatTheme(chatTheme);
-        }
-    }
-
-    private void preloadSticker(String str) {
-        new ImageReceiver().setImage(ImageLocation.getForDocument(MediaDataController.getInstance(UserConfig.selectedAccount).getEmojiAnimatedSticker(str)), "50_50", null, null, null, 0);
-        Emoji.preloadEmoji(str);
-    }
-
-    public void requestAllChatThemes(final ResultCallback<List<EmojiThemes>> resultCallback, final boolean z) {
-        if (this.themesHash == 0 || this.lastReloadTimeMs == 0) {
-            init();
-        }
-        boolean z2 = System.currentTimeMillis() - this.lastReloadTimeMs > 7200000;
-        List<EmojiThemes> list = this.allChatThemes;
-        if (list == null || list.isEmpty() || z2) {
-            TL_account.getChatThemes getchatthemes = new TL_account.getChatThemes();
-            getchatthemes.hash = this.themesHash;
-            ConnectionsManager connectionsManager = getConnectionsManager();
-            DispatchQueue dispatchQueue = chatThemeQueue;
-            Objects.requireNonNull(dispatchQueue);
-            connectionsManager.sendRequestTyped(getchatthemes, new ChatThemeController$$ExternalSyntheticLambda8(dispatchQueue), new Utilities.Callback2() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda21
-                @Override // org.telegram.messenger.Utilities.Callback2
-                public final void run(Object obj, Object obj2) {
-                    ChatThemeController.$r8$lambda$44Rz8eaP-orJeYIAtpLzNNrhE-8(ChatThemeController.this, resultCallback, z, (TL_account.Themes) obj, (TLRPC.TL_error) obj2);
-                }
-            });
-        }
-        List<EmojiThemes> list2 = this.allChatThemes;
-        if (list2 == null || list2.isEmpty()) {
-            return;
-        }
-        resultCallback.onComplete(getEmojiThemes((z ? 1 : 0) | 2));
-    }
-
-    public static /* synthetic */ void $r8$lambda$44Rz8eaP-orJeYIAtpLzNNrhE-8(final ChatThemeController chatThemeController, final ResultCallback resultCallback, final boolean z, TL_account.Themes themes, final TLRPC.TL_error tL_error) {
-        final List<EmojiThemes> list;
-        chatThemeController.getClass();
-        boolean z2 = false;
-        if (themes instanceof TL_account.TL_themes) {
-            TL_account.TL_themes tL_themes = (TL_account.TL_themes) themes;
-            chatThemeController.themesHash = tL_themes.hash;
-            chatThemeController.lastReloadTimeMs = System.currentTimeMillis();
-            SharedPreferences.Editor edit = chatThemeController.getSharedPreferences().edit();
-            edit.clear();
-            edit.putLong("hash", chatThemeController.themesHash);
-            edit.putLong("lastReload", chatThemeController.lastReloadTimeMs);
-            edit.putInt(NotificationBadge.NewHtcHomeBadger.COUNT, tL_themes.themes.size());
-            list = new ArrayList<>(tL_themes.themes.size());
-            for (int i = 0; i < tL_themes.themes.size(); i++) {
-                TLRPC.TL_theme tL_theme = tL_themes.themes.get(i);
-                Emoji.preloadEmoji(tL_theme.emoticon);
-                SerializedData serializedData = new SerializedData(tL_theme.getObjectSize());
-                tL_theme.serializeToStream(serializedData);
-                edit.putString("theme_" + i, Utilities.bytesToHex(serializedData.toByteArray()));
-                EmojiThemes emojiThemes = new EmojiThemes(chatThemeController.currentAccount, tL_theme, false);
-                emojiThemes.preloadWallpaper();
-                list.add(emojiThemes);
-            }
-            edit.apply();
-        } else if (themes instanceof TL_account.TL_themesNotModified) {
-            list = chatThemeController.getAllChatThemesFromPrefs();
-        } else {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    ResultCallback.this.onError(tL_error);
-                }
-            });
-            z2 = true;
-            list = null;
-        }
-        if (z2) {
-            return;
-        }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda1
-            @Override // java.lang.Runnable
-            public final void run() {
-                ChatThemeController.$r8$lambda$Xxoj7_by-VUM0PSz7uqh6jMmvwE(ChatThemeController.this, list, resultCallback, z);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$Xxoj7_by-VUM0PSz7uqh6jMmvwE(ChatThemeController chatThemeController, List list, ResultCallback resultCallback, boolean z) {
-        chatThemeController.getClass();
-        chatThemeController.allChatThemes = new ArrayList(list);
-        resultCallback.onComplete(chatThemeController.getEmojiThemes((z ? 1 : 0) | 2));
-    }
-
-    public void loadNextChatThemes(ResultCallback<Void> resultCallback) {
-        requestNextChatThemes(resultCallback);
-    }
-
-    private SharedPreferences getSharedPreferences() {
-        return ApplicationLoader.applicationContext.getSharedPreferences("chatthemeconfig_" + this.currentAccount, 0);
-    }
-
-    private SharedPreferences getEmojiSharedPreferences() {
-        return ApplicationLoader.applicationContext.getSharedPreferences("chatthemeconfig_emoji", 0);
-    }
-
-    private List<EmojiThemes> getAllChatThemesFromPrefs() {
-        SharedPreferences sharedPreferences = getSharedPreferences();
-        int i = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
-        ArrayList arrayList = new ArrayList(i);
-        for (int i2 = 0; i2 < i; i2++) {
-            SerializedData serializedData = new SerializedData(Utilities.hexToBytes(sharedPreferences.getString("theme_" + i2, "")));
-            try {
-                TLRPC.TL_theme TLdeserialize = TLRPC.Theme.TLdeserialize(serializedData, serializedData.readInt32(true), true);
-                if (TLdeserialize != null) {
-                    arrayList.add(new EmojiThemes(this.currentAccount, TLdeserialize, false));
-                }
-            } catch (Throwable th) {
-                FileLog.e(th);
-            }
-        }
-        return arrayList;
-    }
-
-    public void requestChatTheme(final ThemeKey themeKey, final ResultCallback<EmojiThemes> resultCallback) {
-        if (themeKey == null || themeKey.isEmpty()) {
-            resultCallback.onComplete(null);
-            return;
-        }
-        if (!TextUtils.isEmpty(themeKey.giftSlug)) {
-            EmojiThemes emojiThemes = this.allChatGiftThemes.get(themeKey.giftSlug);
-            if (emojiThemes != null) {
-                emojiThemes.initColors();
-                resultCallback.onComplete(emojiThemes);
-                return;
-            } else {
-                resultCallback.onComplete(null);
-                return;
-            }
-        }
-        requestAllChatThemes(new ResultCallback<List<EmojiThemes>>() { // from class: org.telegram.messenger.ChatThemeController.1
-            @Override // org.telegram.tgnet.ResultCallback
-            public /* synthetic */ void onError(Throwable th) {
-                ResultCallback.-CC.$default$onError(this, th);
-            }
-
-            @Override // org.telegram.tgnet.ResultCallback
-            public void onComplete(List<EmojiThemes> list) {
-                for (EmojiThemes emojiThemes2 : list) {
-                    if (themeKey.equals(emojiThemes2.getThemeKey())) {
-                        emojiThemes2.initColors();
-                        resultCallback.onComplete(emojiThemes2);
-                        return;
-                    }
-                }
-                resultCallback.onComplete(null);
-            }
-
-            @Override // org.telegram.tgnet.ResultCallback
-            public void onError(TLRPC.TL_error tL_error) {
-                resultCallback.onComplete(null);
-            }
-        }, false);
-    }
-
-    public static ChatThemeController getInstance(int i) {
-        ChatThemeController chatThemeController;
-        ChatThemeController[] chatThemeControllerArr = instances;
-        ChatThemeController chatThemeController2 = chatThemeControllerArr[i];
-        if (chatThemeController2 != null) {
-            return chatThemeController2;
-        }
-        synchronized (ChatThemeController.class) {
-            try {
-                chatThemeController = chatThemeControllerArr[i];
-                if (chatThemeController == null) {
-                    chatThemeController = new ChatThemeController(i);
-                    chatThemeControllerArr[i] = chatThemeController;
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return chatThemeController;
     }
 
     public static boolean equals(TLRPC.WallPaper wallPaper, TLRPC.WallPaper wallPaper2) {
@@ -322,428 +83,417 @@ public class ChatThemeController extends BaseController {
             if (str != null) {
                 return TextUtils.equals(wallPaper2.uploadingImage, str);
             }
-            if (wallPaper.id == wallPaper2.id && TextUtils.equals(ChatBackgroundDrawable.hash(wallPaper.settings), ChatBackgroundDrawable.hash(wallPaper2.settings)) && TextUtils.equals(getWallpaperEmoticon(wallPaper), getWallpaperEmoticon(wallPaper2))) {
+            if (wallPaper.id == wallPaper2.id && TextUtils.equals(un.e(wallPaper.settings), un.e(wallPaper2.settings)) && TextUtils.equals(getWallpaperEmoticon(wallPaper), getWallpaperEmoticon(wallPaper2))) {
                 return true;
             }
         }
         return false;
     }
 
-    public void setDialogTheme(long j, TLRPC.ChatTheme chatTheme, boolean z) {
-        setDialogTheme(j, ThemeKey.of(chatTheme), chatTheme, z);
-    }
-
-    public void setDialogTheme(long j, ThemeKey themeKey) {
-        setDialogTheme(j, themeKey, null, true);
-    }
-
-    private void setDialogTheme(long j, ThemeKey themeKey, TLRPC.ChatTheme chatTheme, boolean z) {
-        if (ThemeKey.equals(this.dialogEmoticonsMap.get(j), themeKey)) {
-            return;
-        }
-        if (themeKey == null) {
-            this.dialogEmoticonsMap.delete(j);
-        } else {
-            this.dialogEmoticonsMap.put(j, themeKey);
-        }
-        setGiftThemeUser(themeKey != null ? themeKey.giftSlug : null, j);
-        if (j >= 0) {
-            TLRPC.UserFull userFull = getMessagesController().getUserFull(j);
-            if (userFull != null && (themeKey == null || themeKey.isEmpty() || chatTheme != null)) {
-                userFull.theme = chatTheme;
-                getMessagesStorage().updateUserInfo(userFull, true);
-            }
-        } else {
-            TLRPC.ChatFull chatFull = getMessagesController().getChatFull(-j);
-            if (chatFull != null) {
-                chatFull.theme_emoticon = themeKey != null ? themeKey.emoticon : null;
-                getMessagesStorage().updateChatInfo(chatFull, true);
-            }
-        }
-        getEmojiSharedPreferences().edit().putString("chatTheme_" + this.currentAccount + "_" + j, themeKey != null ? themeKey.toSavedString() : null).apply();
-        if (z) {
-            TLRPC.TL_messages_setChatTheme tL_messages_setChatTheme = new TLRPC.TL_messages_setChatTheme();
-            tL_messages_setChatTheme.theme = ThemeKey.toInputTheme(themeKey);
-            tL_messages_setChatTheme.peer = getMessagesController().getInputPeer(j);
-            getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new Utilities.Callback2() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda12
-                @Override // org.telegram.messenger.Utilities.Callback2
-                public final void run(Object obj, Object obj2) {
-                    ChatThemeController.$r8$lambda$c7iT1GqF1XNW26FfnceC3pBfemo(ChatThemeController.this, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
-                }
-            });
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$c7iT1GqF1XNW26FfnceC3pBfemo(ChatThemeController chatThemeController, TLRPC.Updates updates, TLRPC.TL_error tL_error) {
-        if (updates != null) {
-            chatThemeController.getMessagesController().processUpdates(updates, false);
-        } else {
-            chatThemeController.getClass();
-        }
-    }
-
-    public EmojiThemes getDialogTheme(long j) {
-        ThemeKey themeKey = this.dialogEmoticonsMap.get(j);
-        if (themeKey == null) {
-            themeKey = ThemeKey.fromSavedString(getEmojiSharedPreferences().getString("chatTheme_" + this.currentAccount + "_" + j, null));
-            this.dialogEmoticonsMap.put(j, themeKey);
-        }
-        return getTheme(themeKey);
-    }
-
-    public EmojiThemes getTheme(ThemeKey themeKey) {
-        if (themeKey == null) {
-            return null;
-        }
-        if (!TextUtils.isEmpty(themeKey.giftSlug)) {
-            return this.allChatGiftThemes.get(themeKey.giftSlug);
-        }
-        for (EmojiThemes emojiThemes : this.allChatThemes) {
-            if (themeKey.equals(emojiThemes.getThemeKey())) {
-                return emojiThemes;
-            }
-        }
-        return null;
-    }
-
-    public void saveChatWallpaper(long j, TLRPC.WallPaper wallPaper) {
-        if (wallPaper != null) {
-            if (wallPaper.document == null) {
-                return;
-            }
-            SerializedData serializedData = new SerializedData(wallPaper.getObjectSize());
-            wallPaper.serializeToStream(serializedData);
-            String bytesToHex = Utilities.bytesToHex(serializedData.toByteArray());
-            getEmojiSharedPreferences().edit().putString("chatWallpaper_" + this.currentAccount + "_" + j, bytesToHex).apply();
-            return;
-        }
-        getEmojiSharedPreferences().edit().remove("chatWallpaper_" + this.currentAccount + "_" + j).apply();
-    }
-
-    public TLRPC.WallPaper getDialogWallpaper(long j) {
-        if (j >= 0) {
-            TLRPC.UserFull userFull = getMessagesController().getUserFull(j);
-            if (userFull != null) {
-                return userFull.wallpaper;
-            }
-        } else {
-            TLRPC.ChatFull chatFull = getMessagesController().getChatFull(-j);
-            if (chatFull != null) {
-                return chatFull.wallpaper;
-            }
-        }
-        String string = getEmojiSharedPreferences().getString("chatWallpaper_" + this.currentAccount + "_" + j, null);
-        if (string != null) {
-            SerializedData serializedData = new SerializedData(Utilities.hexToBytes(string));
+    private List<org.telegram.ui.ActionBar.b4> getAllChatThemesFromPrefs() {
+        SharedPreferences sharedPreferences = getSharedPreferences();
+        int i10 = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
+        ArrayList arrayList = new ArrayList(i10);
+        for (int i11 = 0; i11 < i10; i11++) {
+            SerializedData serializedData = new SerializedData(Utilities.hexToBytes(sharedPreferences.getString("theme_" + i11, "")));
             try {
-                return TLRPC.WallPaper.TLdeserialize(serializedData, serializedData.readInt32(true), true);
+                TLRPC.TL_theme TLdeserialize = TLRPC.Theme.TLdeserialize(serializedData, serializedData.readInt32(true), true);
+                if (TLdeserialize != null) {
+                    arrayList.add(new org.telegram.ui.ActionBar.b4(this.currentAccount, TLdeserialize));
+                }
             } catch (Throwable th) {
                 FileLog.e(th);
             }
         }
-        return null;
+        return arrayList;
     }
 
-    public void preloadAllWallpaperImages(boolean z) {
-        for (EmojiThemes emojiThemes : this.allChatThemes) {
-            long themeId = emojiThemes.getThemeId(z ? 1 : 0);
-            if (themeId != 0 && !getPatternFile(themeId).exists()) {
-                emojiThemes.loadWallpaper(z ? 1 : 0, null);
+    private SharedPreferences getEmojiSharedPreferences() {
+        return ApplicationLoader.applicationContext.getSharedPreferences("chatthemeconfig_emoji", 0);
+    }
+
+    public static ChatThemeController getInstance(int i10) {
+        ChatThemeController chatThemeController;
+        ChatThemeController[] chatThemeControllerArr = instances;
+        ChatThemeController chatThemeController2 = chatThemeControllerArr[i10];
+        if (chatThemeController2 != null) {
+            return chatThemeController2;
+        }
+        synchronized (ChatThemeController.class) {
+            try {
+                chatThemeController = chatThemeControllerArr[i10];
+                if (chatThemeController == null) {
+                    chatThemeController = new ChatThemeController(i10);
+                    chatThemeControllerArr[i10] = chatThemeController;
+                }
+            } catch (Throwable th) {
+                throw th;
             }
         }
+        return chatThemeController;
     }
 
-    public void preloadAllWallpaperThumbs(boolean z) {
-        for (EmojiThemes emojiThemes : this.allChatThemes) {
-            long themeId = emojiThemes.getThemeId(z ? 1 : 0);
-            if (themeId != 0 && !this.themeIdWallpaperThumbMap.containsKey(Long.valueOf(themeId))) {
-                emojiThemes.loadWallpaperThumb(z ? 1 : 0, new ResultCallback() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda22
-                    @Override // org.telegram.tgnet.ResultCallback
-                    public final void onComplete(Object obj) {
-                        ChatThemeController.$r8$lambda$7yGZ6xw0k-oWfs7qcSov9oM4XIA(ChatThemeController.this, (Pair) obj);
-                    }
-
-                    @Override // org.telegram.tgnet.ResultCallback
-                    public /* synthetic */ void onError(Throwable th) {
-                        ResultCallback.-CC.$default$onError(this, th);
-                    }
-
-                    @Override // org.telegram.tgnet.ResultCallback
-                    public /* synthetic */ void onError(TLRPC.TL_error tL_error) {
-                        ResultCallback.-CC.$default$onError(this, tL_error);
-                    }
-                });
-            }
-        }
+    private File getPatternFile(long j10) {
+        File filesDirFixed = ApplicationLoader.getFilesDirFixed();
+        Locale locale = Locale.US;
+        return new File(filesDirFixed, j10 + "_" + this.themesHash + ".jpg");
     }
 
-    public static /* synthetic */ void $r8$lambda$7yGZ6xw0k-oWfs7qcSov9oM4XIA(ChatThemeController chatThemeController, Pair pair) {
-        if (pair != null) {
-            chatThemeController.themeIdWallpaperThumbMap.put((Long) pair.first, (Bitmap) pair.second);
-        } else {
-            chatThemeController.getClass();
-        }
+    private SharedPreferences getSharedPreferences() {
+        return ApplicationLoader.applicationContext.getSharedPreferences("chatthemeconfig_" + this.currentAccount, 0);
     }
 
-    public void clearWallpaperThumbImages() {
-        this.themeIdWallpaperThumbMap.clear();
-    }
-
-    private void getWallpaperBitmap(long j, final ResultCallback<Bitmap> resultCallback) {
+    private void getWallpaperBitmap(long j10, ResultCallback<Bitmap> resultCallback) {
         if (this.themesHash == 0) {
             resultCallback.onComplete(null);
         } else {
-            final File patternFile = getPatternFile(j);
-            chatThemeQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda10
-                @Override // java.lang.Runnable
-                public final void run() {
-                    ChatThemeController.$r8$lambda$Zs8pYystiunLHPJJTO-c_Qu4XXY(patternFile, resultCallback);
-                }
-            });
+            chatThemeQueue.postRunnable(new e3(14, getPatternFile(j10), resultCallback));
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:6:0x0016  */
-    /* JADX WARN: Removed duplicated region for block: B:9:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static /* synthetic */ void $r8$lambda$Zs8pYystiunLHPJJTO-c_Qu4XXY(File file, final ResultCallback resultCallback) {
-        final Bitmap bitmap;
-        try {
-        } catch (Exception e) {
-            FileLog.e(e);
+    public static String getWallpaperEmoticon(TLRPC.WallPaper wallPaper) {
+        if (wallPaper == null) {
+            return null;
         }
-        if (file.exists()) {
-            bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
-            if (resultCallback == null) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda11
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        ResultCallback.this.onComplete(bitmap);
-                    }
-                });
-                return;
-            }
+        TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
+        return (wallPaperSettings == null || TextUtils.isEmpty(wallPaperSettings.emoticon)) ? "" : wallPaper.settings.emoticon;
+    }
+
+    private void init() {
+        SharedPreferences sharedPreferences = getSharedPreferences();
+        this.themesHash = 0L;
+        this.lastReloadTimeMs = 0L;
+        try {
+            this.themesHash = sharedPreferences.getLong("hash", 0L);
+            this.lastReloadTimeMs = sharedPreferences.getLong("lastReload", 0L);
+        } catch (Exception e9) {
+            FileLog.e(e9);
+        }
+        this.allChatThemes = getAllChatThemesFromPrefs();
+        getMessagesStorage().loadGiftChatTheme(new z0(this, 0));
+        preloadSticker("❌");
+        if (this.allChatThemes.isEmpty()) {
             return;
         }
-        bitmap = null;
-        if (resultCallback == null) {
+        Iterator<org.telegram.ui.ActionBar.b4> it = this.allChatThemes.iterator();
+        while (it.hasNext()) {
+            preloadSticker(it.next().e);
         }
     }
 
-    private File getPatternFile(long j) {
-        return new File(ApplicationLoader.getFilesDirFixed(), String.format(Locale.US, "%d_%d.jpg", Long.valueOf(j), Long.valueOf(this.themesHash)));
+    public static boolean isNotEmoticonWallpaper(TLRPC.WallPaper wallPaper) {
+        String wallpaperEmoticon = getWallpaperEmoticon(wallPaper);
+        return wallpaperEmoticon != null && wallpaperEmoticon.length() == 0;
     }
 
-    private void saveWallpaperBitmap(final Bitmap bitmap, long j) {
-        final File patternFile = getPatternFile(j);
-        chatThemeQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda6
-            @Override // java.lang.Runnable
-            public final void run() {
-                ChatThemeController.$r8$lambda$M18YAJUFr8emMvyiyGyewL9fM5E(patternFile, bitmap);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$M18YAJUFr8emMvyiyGyewL9fM5E(File file, Bitmap bitmap) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$getWallpaperBitmap$7(File file, ResultCallback resultCallback) {
+        Bitmap bitmap = null;
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream(file);
-            bitmap.compress(Bitmap.CompressFormat.PNG, 87, fileOutputStream);
-            fileOutputStream.close();
-        } catch (Exception e) {
-            FileLog.e(e);
+            if (file.exists()) {
+                bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+            }
+        } catch (Exception e9) {
+            FileLog.e(e9);
+        }
+        if (resultCallback != null) {
+            AndroidUtilities.runOnUIThread(new e3(15, resultCallback, bitmap));
         }
     }
 
-    public void saveWallpaperBitmap(WallpaperBitmapHolder wallpaperBitmapHolder, long j) {
-        Bitmap bitmap = wallpaperBitmapHolder.bitmap;
-        int i = wallpaperBitmapHolder.mode;
-        if (i == 0) {
-            saveWallpaperBitmap(bitmap, j);
-        } else if (i == 1) {
-            saveWallpaperPatternBitmap(bitmap, wallpaperBitmapHolder.giftPatternPositions, j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$init$0(List list) {
+        if (list != null) {
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = (TLRPC.TL_chatThemeUniqueGift) it.next();
+                this.allChatGiftThemes.put(tL_chatThemeUniqueGift.gift.slug, new org.telegram.ui.ActionBar.b4(this.currentAccount, tL_chatThemeUniqueGift));
+            }
         }
     }
 
-    public void loadWallpaperBitmap(long j, int i, final Utilities.Callback<WallpaperBitmapHolder> callback) {
-        if (i == 0) {
-            getWallpaperBitmap(j, new ResultCallback() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda17
-                @Override // org.telegram.tgnet.ResultCallback
-                public final void onComplete(Object obj) {
-                    ChatThemeController.$r8$lambda$NMH0Ju019saWs5ohtOLM6LShZkc(Utilities.Callback.this, (Bitmap) obj);
-                }
-
-                @Override // org.telegram.tgnet.ResultCallback
-                public /* synthetic */ void onError(Throwable th) {
-                    ResultCallback.-CC.$default$onError(this, th);
-                }
-
-                @Override // org.telegram.tgnet.ResultCallback
-                public /* synthetic */ void onError(TLRPC.TL_error tL_error) {
-                    ResultCallback.-CC.$default$onError(this, tL_error);
-                }
-            });
-        } else if (i == 1) {
-            loadWallpaperPatternBitmap(j, callback);
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$NMH0Ju019saWs5ohtOLM6LShZkc(Utilities.Callback callback, Bitmap bitmap) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static void lambda$loadWallpaperBitmap$9(Utilities.Callback callback, Bitmap bitmap) {
         if (bitmap != null) {
-            callback.run(new WallpaperBitmapHolder(bitmap, 0));
+            callback.run(new mf.a(bitmap, 0, null));
         } else {
             callback.run(null);
         }
     }
 
-    private void loadWallpaperPatternBitmap(long j, final Utilities.Callback<WallpaperBitmapHolder> callback) {
-        final File file = new File(ApplicationLoader.getFilesDirFixed("rasterized/wallpaper"), String.format(Locale.US, "pattern_%d.pgm.gz", Long.valueOf(j)));
-        chatThemeQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda18
-            @Override // java.lang.Runnable
-            public final void run() {
-                ChatThemeController.$r8$lambda$WBpokJdYESI9y-cPd61Ng0Z3BZ4(file, callback);
-            }
-        });
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:16:0x008d  */
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x008b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static /* synthetic */ void $r8$lambda$WBpokJdYESI9y-cPd61Ng0Z3BZ4(File file, final Utilities.Callback callback) {
-        ArrayList arrayList;
+    public static /* synthetic */ void lambda$loadWallpaperPatternBitmap$11(File file, Utilities.Callback callback) {
         Bitmap bitmap;
-        ArrayList arrayList2;
+        ArrayList arrayList;
         try {
             try {
                 FileInputStream fileInputStream = new FileInputStream(file);
                 try {
-                    GZIPInputStream gZIPInputStream = new GZIPInputStream(fileInputStream);
                     try {
-                        ArrayList arrayList3 = new ArrayList(1);
-                        bitmap = PGMImage.read(gZIPInputStream, arrayList3);
+                        GZIPInputStream gZIPInputStream = new GZIPInputStream(fileInputStream);
                         try {
-                            int size = arrayList3.size();
-                            arrayList = null;
-                            int i = 0;
-                            while (i < size) {
-                                try {
-                                    Object obj = arrayList3.get(i);
-                                    i++;
-                                    String str = (String) obj;
-                                    if (str.startsWith("patterns = ")) {
-                                        byte[] hexToBytes = Utilities.hexToBytes(str.substring(11));
-                                        int length = hexToBytes.length / 52;
-                                        SerializedData serializedData = new SerializedData(hexToBytes);
-                                        arrayList2 = new ArrayList(length);
-                                        for (int i2 = 0; i2 < length; i2++) {
-                                            try {
-                                                arrayList2.add(WallpaperGiftPatternPosition.deserialize(serializedData));
-                                            } catch (Throwable th) {
-                                                th = th;
+                            ArrayList arrayList2 = new ArrayList(1);
+                            bitmap = h7.a0.d(gZIPInputStream, arrayList2);
+                            try {
+                                int size = arrayList2.size();
+                                arrayList = null;
+                                int i10 = 0;
+                                while (i10 < size) {
+                                    try {
+                                        Object obj = arrayList2.get(i10);
+                                        i10++;
+                                        String str = (String) obj;
+                                        if (str.startsWith("patterns = ")) {
+                                            byte[] hexToBytes = Utilities.hexToBytes(str.substring(11));
+                                            int length = hexToBytes.length / 52;
+                                            SerializedData serializedData = new SerializedData(hexToBytes);
+                                            ArrayList arrayList3 = new ArrayList(length);
+                                            for (int i11 = 0; i11 < length; i11++) {
                                                 try {
+                                                    arrayList3.add(mf.c.a(serializedData));
+                                                } catch (Throwable th) {
+                                                    th = th;
+                                                    arrayList = arrayList3;
                                                     try {
                                                         gZIPInputStream.close();
                                                     } catch (Throwable th2) {
                                                         th.addSuppressed(th2);
                                                     }
                                                     throw th;
-                                                } catch (Throwable th3) {
-                                                    th = th3;
-                                                    arrayList = arrayList2;
-                                                    try {
-                                                        fileInputStream.close();
-                                                    } catch (Throwable th4) {
-                                                        th.addSuppressed(th4);
-                                                    }
-                                                    throw th;
                                                 }
                                             }
+                                            serializedData.cleanup();
+                                            arrayList = arrayList3;
                                         }
-                                        serializedData.cleanup();
-                                        arrayList = arrayList2;
+                                    } catch (Throwable th3) {
+                                        th = th3;
                                     }
-                                } catch (Throwable th5) {
-                                    th = th5;
-                                    arrayList2 = arrayList;
-                                    gZIPInputStream.close();
-                                    throw th;
                                 }
-                            }
-                            try {
                                 gZIPInputStream.close();
                                 fileInputStream.close();
-                            } catch (Throwable th6) {
-                                th = th6;
-                                fileInputStream.close();
-                                throw th;
+                            } catch (Throwable th4) {
+                                th = th4;
+                                arrayList = null;
                             }
-                        } catch (Throwable th7) {
-                            th = th7;
+                        } catch (Throwable th5) {
+                            th = th5;
+                            bitmap = null;
                             arrayList = null;
                         }
-                    } catch (Throwable th8) {
-                        th = th8;
-                        bitmap = null;
-                        arrayList = null;
+                    } catch (Throwable th6) {
+                        th = th6;
+                        try {
+                            fileInputStream.close();
+                        } catch (Throwable th7) {
+                            th.addSuppressed(th7);
+                        }
+                        throw th;
                     }
-                } catch (Throwable th9) {
-                    th = th9;
+                } catch (Throwable th8) {
+                    th = th8;
                     bitmap = null;
                     arrayList = null;
+                    fileInputStream.close();
+                    throw th;
                 }
-            } catch (Exception e) {
-                e = e;
-                bitmap = null;
-                arrayList = null;
+            } catch (Exception e9) {
+                e = e9;
                 FileLog.e(e);
-                if (bitmap != null) {
-                }
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda19
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        Utilities.Callback.this.run(r2);
-                    }
-                });
+                AndroidUtilities.runOnUIThread(new e3(18, callback, bitmap != null ? new mf.a(bitmap, 1, arrayList) : null));
             }
-        } catch (Exception e2) {
-            e = e2;
+        } catch (Exception e10) {
+            e = e10;
+            bitmap = null;
+            arrayList = null;
             FileLog.e(e);
-            if (bitmap != null) {
-            }
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda19
-                @Override // java.lang.Runnable
-                public final void run() {
-                    Utilities.Callback.this.run(r2);
-                }
-            });
+            AndroidUtilities.runOnUIThread(new e3(18, callback, bitmap != null ? new mf.a(bitmap, 1, arrayList) : null));
         }
-        final WallpaperBitmapHolder wallpaperBitmapHolder = bitmap != null ? new WallpaperBitmapHolder(bitmap, 1, arrayList) : null;
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda19
-            @Override // java.lang.Runnable
-            public final void run() {
-                Utilities.Callback.this.run(wallpaperBitmapHolder);
-            }
-        });
+        AndroidUtilities.runOnUIThread(new e3(18, callback, bitmap != null ? new mf.a(bitmap, 1, arrayList) : null));
     }
 
-    private void saveWallpaperPatternBitmap(final Bitmap bitmap, final List<WallpaperGiftPatternPosition> list, long j) {
-        final File file = new File(ApplicationLoader.getFilesDirFixed("rasterized/wallpaper"), String.format(Locale.US, "pattern_%d.pgm.gz", Long.valueOf(j)));
-        chatThemeQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda20
-            @Override // java.lang.Runnable
-            public final void run() {
-                ChatThemeController.$r8$lambda$CaKN7edLHKI7am2_9Lvm19l550M(file, list, bitmap);
-            }
-        });
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$preloadAllWallpaperThumbs$5(Pair pair) {
+        if (pair != null) {
+            this.themeIdWallpaperThumbMap.put((Long) pair.first, (Bitmap) pair.second);
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0061 A[Catch: all -> 0x0031, TRY_LEAVE, TryCatch #1 {all -> 0x0031, blocks: (B:16:0x000c, B:18:0x0012, B:19:0x0021, B:21:0x0027, B:23:0x0033, B:7:0x0055, B:9:0x005d, B:14:0x0061), top: B:15:0x000c, outer: #2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x005d A[Catch: all -> 0x0031, TryCatch #1 {all -> 0x0031, blocks: (B:16:0x000c, B:18:0x0012, B:19:0x0021, B:21:0x0027, B:23:0x0033, B:7:0x0055, B:9:0x005d, B:14:0x0061), top: B:15:0x000c, outer: #2 }] */
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$processUpdate$13(long j10, TLRPC.UserFull userFull) {
+        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(j10), userFull);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$processUpdate$14(TLRPC.ChatFull chatFull) {
+        NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
+        int i10 = NotificationCenter.chatInfoDidLoad;
+        Boolean bool = Boolean.FALSE;
+        notificationCenter.lambda$postNotificationNameOnUIThread$1(i10, chatFull, 0, bool, bool);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$requestAllChatThemes$2(List list, ResultCallback resultCallback, boolean z10) {
+        this.allChatThemes = new ArrayList(list);
+        resultCallback.onComplete(getEmojiThemes((z10 ? 1 : 0) | 2));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x00b3  */
+    /* JADX WARN: Removed duplicated region for block: B:14:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static /* synthetic */ void $r8$lambda$CaKN7edLHKI7am2_9Lvm19l550M(File file, List list, Bitmap bitmap) {
+    public void lambda$requestAllChatThemes$3(ResultCallback resultCallback, boolean z10, TL_account.Themes themes, TLRPC.TL_error tL_error) {
+        List<org.telegram.ui.ActionBar.b4> list;
+        boolean z11 = true;
+        if (themes instanceof TL_account.TL_themes) {
+            TL_account.TL_themes tL_themes = (TL_account.TL_themes) themes;
+            this.themesHash = tL_themes.hash;
+            this.lastReloadTimeMs = System.currentTimeMillis();
+            SharedPreferences.Editor edit = getSharedPreferences().edit();
+            edit.clear();
+            edit.putLong("hash", this.themesHash);
+            edit.putLong("lastReload", this.lastReloadTimeMs);
+            edit.putInt(NotificationBadge.NewHtcHomeBadger.COUNT, tL_themes.themes.size());
+            ArrayList arrayList = new ArrayList(tL_themes.themes.size());
+            for (int i10 = 0; i10 < tL_themes.themes.size(); i10++) {
+                TLRPC.TL_theme tL_theme = tL_themes.themes.get(i10);
+                Emoji.preloadEmoji(tL_theme.emoticon);
+                SerializedData serializedData = new SerializedData(tL_theme.getObjectSize());
+                tL_theme.serializeToStream(serializedData);
+                edit.putString("theme_" + i10, Utilities.bytesToHex(serializedData.toByteArray()));
+                org.telegram.ui.ActionBar.b4 b4Var = new org.telegram.ui.ActionBar.b4(this.currentAccount, tL_theme);
+                b4Var.p(0, null);
+                b4Var.p(1, null);
+                b4Var.o(0, null);
+                b4Var.o(1, null);
+                arrayList.add(b4Var);
+            }
+            edit.apply();
+            list = arrayList;
+        } else {
+            if (!(themes instanceof TL_account.TL_themesNotModified)) {
+                AndroidUtilities.runOnUIThread(new y0(resultCallback, tL_error, 0));
+                list = null;
+                if (z11) {
+                    AndroidUtilities.runOnUIThread(new qj(this, list, resultCallback, z10, 3));
+                    return;
+                }
+                return;
+            }
+            list = getAllChatThemesFromPrefs();
+        }
+        z11 = false;
+        if (z11) {
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void lambda$requestNextChatThemes$19(TL_account.Tl_chatThemes tl_chatThemes, List list, List list2, ResultCallback resultCallback) {
+        this.giftsThemeList.offset = tl_chatThemes.next_offset;
+        this.giftsThemeList.hash = tl_chatThemes.hash;
+        this.giftsThemeList.lastReloadTimeMs = System.currentTimeMillis();
+        if (this.giftsThemeList.themes == null) {
+            this.giftsThemeList.themes = new ArrayList(list);
+        } else {
+            this.giftsThemeList.themes.addAll(list);
+        }
+        if (TextUtils.isEmpty(tl_chatThemes.next_offset)) {
+            this.giftsThemeList.completed = true;
+        }
+        Iterator it = list.iterator();
+        while (true) {
+            String str = null;
+            if (!it.hasNext()) {
+                break;
+            }
+            org.telegram.ui.ActionBar.b4 b4Var = (org.telegram.ui.ActionBar.b4) it.next();
+            Map<String, org.telegram.ui.ActionBar.b4> map = this.allChatGiftThemes;
+            of.b bVar = b4Var.c;
+            if (bVar != null && (str = bVar.b) == null) {
+                str = bVar.a;
+            }
+            map.put(str, b4Var);
+        }
+        Iterator it2 = list2.iterator();
+        while (it2.hasNext()) {
+            TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = (TLRPC.TL_chatThemeUniqueGift) it2.next();
+            setGiftThemeUser(tL_chatThemeUniqueGift.gift.slug, DialogObject.getPeerDialogId(tL_chatThemeUniqueGift.gift.theme_peer));
+        }
+        resultCallback.onComplete(null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$requestNextChatThemes$20(ResultCallback resultCallback) {
+        this.giftsThemeList.lastReloadTimeMs = System.currentTimeMillis();
+        this.giftsThemeList.completed = true;
+        resultCallback.onComplete(null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void lambda$requestNextChatThemes$21(ResultCallback resultCallback, TL_account.ChatThemes chatThemes, TLRPC.TL_error tL_error) {
+        if (tL_error != null) {
+            AndroidUtilities.runOnUIThread(new y0(resultCallback, tL_error, 1));
+            return;
+        }
+        ArrayList arrayList = new ArrayList();
+        if (!(chatThemes instanceof TL_account.Tl_chatThemes)) {
+            if (chatThemes instanceof TL_account.TL_chatThemesNotModified) {
+                AndroidUtilities.runOnUIThread(new e3(19, this, resultCallback));
+                return;
+            }
+            return;
+        }
+        TL_account.Tl_chatThemes tl_chatThemes = (TL_account.Tl_chatThemes) chatThemes;
+        getMessagesStorage().putGiftChatThemes(tl_chatThemes.themes);
+        getMessagesStorage().putUsersAndChats(tl_chatThemes.users, tl_chatThemes.chats, true, true);
+        getMessagesController().putUsers(tl_chatThemes.users, false);
+        getMessagesController().putChats(tl_chatThemes.chats, false);
+        ArrayList<TLRPC.ChatTheme> arrayList2 = tl_chatThemes.themes;
+        int size = arrayList2.size();
+        int i10 = 0;
+        while (i10 < size) {
+            TLRPC.ChatTheme chatTheme = arrayList2.get(i10);
+            i10++;
+            TLRPC.ChatTheme chatTheme2 = chatTheme;
+            if (chatTheme2 instanceof TLRPC.TL_chatThemeUniqueGift) {
+                arrayList.add((TLRPC.TL_chatThemeUniqueGift) chatTheme2);
+            }
+        }
+        ArrayList arrayList3 = new ArrayList(arrayList.size());
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            org.telegram.ui.ActionBar.b4 b4Var = new org.telegram.ui.ActionBar.b4(this.currentAccount, (TLRPC.TL_chatThemeUniqueGift) arrayList.get(i11));
+            b4Var.p(0, null);
+            b4Var.p(1, null);
+            b4Var.o(0, null);
+            b4Var.o(1, null);
+            arrayList3.add(b4Var);
+        }
+        AndroidUtilities.runOnUIThread(new c5(this, tl_chatThemes, arrayList3, arrayList, resultCallback, 3));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$saveWallpaperBitmap$8(File file, Bitmap bitmap) {
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 87, fileOutputStream);
+            fileOutputStream.close();
+        } catch (Exception e9) {
+            FileLog.e(e9);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x008c A[Catch: all -> 0x005b, TRY_LEAVE, TryCatch #1 {all -> 0x005b, blocks: (B:16:0x000c, B:18:0x0012, B:19:0x0021, B:21:0x0027, B:24:0x0053, B:28:0x005d, B:7:0x0080, B:9:0x0088, B:14:0x008c), top: B:15:0x000c, outer: #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0088 A[Catch: all -> 0x005b, TryCatch #1 {all -> 0x005b, blocks: (B:16:0x000c, B:18:0x0012, B:19:0x0021, B:21:0x0027, B:24:0x0053, B:28:0x005d, B:7:0x0080, B:9:0x0088, B:14:0x008c), top: B:15:0x000c, outer: #3 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void lambda$saveWallpaperPatternBitmap$12(File file, List list, Bitmap bitmap) {
         List singletonList;
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(file);
@@ -755,15 +505,25 @@ public class ChatThemeController extends BaseController {
                             SerializedData serializedData = new SerializedData(list.size() * 52);
                             Iterator it = list.iterator();
                             while (it.hasNext()) {
-                                ((WallpaperGiftPatternPosition) it.next()).serialize(serializedData);
+                                mf.c cVar = (mf.c) it.next();
+                                RectF rectF = cVar.a;
+                                serializedData.writeFloat(rectF.left);
+                                serializedData.writeFloat(rectF.top);
+                                serializedData.writeFloat(rectF.width());
+                                serializedData.writeFloat(rectF.height());
+                                float[] fArr = new float[9];
+                                cVar.b.getValues(fArr);
+                                for (int i10 = 0; i10 < 9; i10++) {
+                                    serializedData.writeFloat(fArr[i10]);
+                                }
                             }
                             singletonList = Collections.singletonList("patterns = " + Utilities.bytesToHex(serializedData.toByteArray()));
                             serializedData.cleanup();
                             if (bitmap.getConfig() != Bitmap.Config.ALPHA_8) {
-                                PGMImage.write(bitmap, gZIPOutputStream, singletonList);
+                                h7.a0.e(bitmap, gZIPOutputStream, singletonList);
                             } else {
                                 Bitmap extractAlpha = bitmap.extractAlpha();
-                                PGMImage.write(extractAlpha, gZIPOutputStream, singletonList);
+                                h7.a0.e(extractAlpha, gZIPOutputStream, singletonList);
                                 extractAlpha.recycle();
                             }
                             gZIPOutputStream.close();
@@ -779,74 +539,152 @@ public class ChatThemeController extends BaseController {
                 fileOutputStream.close();
             } finally {
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e9) {
+            FileLog.e(e9);
         }
     }
 
-    public Bitmap getWallpaperThumbBitmap(long j) {
-        return this.themeIdWallpaperThumbMap.get(Long.valueOf(j));
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setDialogTheme$4(TLRPC.Updates updates, TLRPC.TL_error tL_error) {
+        if (updates != null) {
+            getMessagesController().processUpdates(updates, false);
+        }
     }
 
-    public void clearCache() {
-        this.themesHash = 0L;
-        this.lastReloadTimeMs = 0L;
-        getSharedPreferences().edit().clear().apply();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setWallpaperToPeer$16(TLObject tLObject, long j10, boolean z10, String str, Runnable runnable) {
+        TLRPC.ChatFull chatFull;
+        TLRPC.UserFull userFull;
+        String str2;
+        if (tLObject instanceof TLRPC.Updates) {
+            TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+            TLRPC.WallPaper wallPaper = null;
+            if (j10 >= 0) {
+                userFull = MessagesController.getInstance(this.currentAccount).getUserFull(j10);
+                chatFull = null;
+            } else {
+                chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(-j10);
+                userFull = null;
+            }
+            if (userFull != null) {
+                wallPaper = userFull.wallpaper;
+            } else if (chatFull != null) {
+                wallPaper = chatFull.wallpaper;
+            }
+            int i10 = 0;
+            while (true) {
+                if (i10 >= updates.updates.size()) {
+                    break;
+                }
+                if (updates.updates.get(i10) instanceof TL_update.TL_updateNewMessage) {
+                    TLRPC.MessageAction messageAction = ((TL_update.TL_updateNewMessage) updates.updates.get(i10)).message.action;
+                    if (messageAction instanceof TLRPC.TL_messageActionSetChatWallPaper) {
+                        if (z10) {
+                            TLRPC.TL_messageActionSetChatWallPaper tL_messageActionSetChatWallPaper = (TLRPC.TL_messageActionSetChatWallPaper) messageAction;
+                            tL_messageActionSetChatWallPaper.wallpaper.uploadingImage = str;
+                            if (wallPaper != null && (str2 = wallPaper.uploadingImage) != null && str2.equals(str)) {
+                                tL_messageActionSetChatWallPaper.wallpaper.stripedThumb = wallPaper.stripedThumb;
+                            }
+                            if (userFull != null) {
+                                TLRPC.WallPaper wallPaper2 = tL_messageActionSetChatWallPaper.wallpaper;
+                                userFull.wallpaper = wallPaper2;
+                                userFull.flags |= 16777216;
+                                saveChatWallpaper(j10, wallPaper2);
+                                getMessagesStorage().updateUserInfo(userFull, false);
+                                NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(j10), userFull);
+                            } else if (chatFull != null) {
+                                TLRPC.WallPaper wallPaper3 = tL_messageActionSetChatWallPaper.wallpaper;
+                                chatFull.wallpaper = wallPaper3;
+                                chatFull.flags2 |= 128;
+                                saveChatWallpaper(j10, wallPaper3);
+                                getMessagesStorage().updateChatInfo(chatFull, false);
+                                NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
+                                int i11 = NotificationCenter.chatInfoDidLoad;
+                                Boolean bool = Boolean.FALSE;
+                                notificationCenter.lambda$postNotificationNameOnUIThread$1(i11, chatFull, 0, bool, bool);
+                            }
+                        }
+                    }
+                }
+                i10++;
+            }
+            MessagesController.getInstance(this.currentAccount).processUpdateArray(updates.updates, updates.users, updates.chats, false, updates.date);
+            if (runnable != null) {
+                runnable.run();
+            }
+            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.wallpaperSettedToUser, new Object[0]);
+        }
     }
 
-    public void processUpdate(TL_update.TL_updatePeerWallpaper tL_updatePeerWallpaper) {
-        if (tL_updatePeerWallpaper.peer instanceof TLRPC.TL_peerUser) {
-            final TLRPC.UserFull userFull = getMessagesController().getUserFull(tL_updatePeerWallpaper.peer.user_id);
-            if (userFull == null || wallpaperEquals(userFull.wallpaper, tL_updatePeerWallpaper.wallpaper)) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setWallpaperToPeer$17(long j10, boolean z10, String str, Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new jd(this, tLObject, j10, z10, str, runnable));
+    }
+
+    private void loadWallpaperPatternBitmap(long j10, Utilities.Callback<mf.a> callback) {
+        File filesDirFixed = ApplicationLoader.getFilesDirFixed("rasterized/wallpaper");
+        Locale locale = Locale.US;
+        chatThemeQueue.postRunnable(new e3(17, new File(filesDirFixed, com.google.android.recaptcha.internal.a.m(j10, "pattern_", ".pgm.gz")), callback));
+    }
+
+    private void preloadSticker(String str) {
+        new ImageReceiver().setImage(ImageLocation.getForDocument(MediaDataController.getInstance(UserConfig.selectedAccount).getEmojiAnimatedSticker(str)), "50_50", null, null, null, 0);
+        Emoji.preloadEmoji(str);
+    }
+
+    private void requestNextChatThemes(ResultCallback<Void> resultCallback) {
+        if (this.giftsThemeList.hash != 0) {
+            long unused = this.giftsThemeList.lastReloadTimeMs;
+        }
+        boolean z10 = System.currentTimeMillis() - this.giftsThemeList.lastReloadTimeMs > 7200000;
+        if (this.giftsThemeList.themes == null || !this.giftsThemeList.completed || z10) {
+            TL_account.Tl_getUniqueGiftChatThemes tl_getUniqueGiftChatThemes = new TL_account.Tl_getUniqueGiftChatThemes();
+            tl_getUniqueGiftChatThemes.offset = this.giftsThemeList.offset;
+            tl_getUniqueGiftChatThemes.hash = this.giftsThemeList.hash;
+            tl_getUniqueGiftChatThemes.limit = 50;
+            ConnectionsManager connectionsManager = getConnectionsManager();
+            DispatchQueue dispatchQueue = chatThemeQueue;
+            Objects.requireNonNull(dispatchQueue);
+            connectionsManager.sendRequestTyped(tl_getUniqueGiftChatThemes, new b1(dispatchQueue), new c1(0, this, resultCallback));
+        }
+    }
+
+    private void saveWallpaperBitmap(Bitmap bitmap, long j10) {
+        chatThemeQueue.postRunnable(new e3(20, getPatternFile(j10), bitmap));
+    }
+
+    private void saveWallpaperPatternBitmap(Bitmap bitmap, List<mf.c> list, long j10) {
+        File filesDirFixed = ApplicationLoader.getFilesDirFixed("rasterized/wallpaper");
+        Locale locale = Locale.US;
+        chatThemeQueue.postRunnable(new f0(new File(filesDirFixed, com.google.android.recaptcha.internal.a.m(j10, "pattern_", ".pgm.gz")), list, bitmap, 11));
+    }
+
+    private void setGiftThemeUser(String str, long j10) {
+        if (TextUtils.isEmpty(str)) {
+            String remove = this.usedGiftThemesByUsers.remove(Long.valueOf(j10));
+            if (remove != null) {
+                this.usedGiftThemesBySlug.remove(remove);
                 return;
             }
-            final long j = userFull.id;
-            if ((tL_updatePeerWallpaper.flags & 1) != 0) {
-                userFull.wallpaper_overridden = tL_updatePeerWallpaper.wallpaper_overridden;
-                userFull.wallpaper = tL_updatePeerWallpaper.wallpaper;
-                userFull.flags |= 16777216;
-            } else {
-                userFull.wallpaper_overridden = false;
-                userFull.wallpaper = null;
-                userFull.flags &= -16777217;
-            }
-            getMessagesStorage().updateUserInfo(userFull, false);
-            saveChatWallpaper(j, userFull.wallpaper);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda14
-                @Override // java.lang.Runnable
-                public final void run() {
-                    NotificationCenter.getInstance(ChatThemeController.this.currentAccount).postNotificationName(NotificationCenter.userInfoDidLoad, Long.valueOf(j), userFull);
-                }
-            });
             return;
         }
-        final TLRPC.ChatFull chatFull = getMessagesController().getChatFull(-DialogObject.getPeerDialogId(tL_updatePeerWallpaper.peer));
-        if (chatFull == null || wallpaperEquals(chatFull.wallpaper, tL_updatePeerWallpaper.wallpaper)) {
+        if (j10 == 0) {
+            Long remove2 = this.usedGiftThemesBySlug.remove(str);
+            if (remove2 != null) {
+                this.usedGiftThemesByUsers.remove(remove2);
+                return;
+            }
             return;
         }
-        long j2 = -chatFull.id;
-        if ((tL_updatePeerWallpaper.flags & 1) != 0) {
-            chatFull.wallpaper = tL_updatePeerWallpaper.wallpaper;
-            chatFull.flags2 |= 128;
-        } else {
-            chatFull.wallpaper = null;
-            chatFull.flags2 &= -129;
+        String put = this.usedGiftThemesByUsers.put(Long.valueOf(j10), str);
+        Long put2 = this.usedGiftThemesBySlug.put(str, Long.valueOf(j10));
+        if (put != null && !TextUtils.equals(str, put)) {
+            this.usedGiftThemesBySlug.remove(put);
         }
-        getMessagesStorage().updateChatInfo(chatFull, false);
-        saveChatWallpaper(j2, chatFull.wallpaper);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda15
-            @Override // java.lang.Runnable
-            public final void run() {
-                ChatThemeController.$r8$lambda$uo__osMR6pe_hWQF3OsJvmIlQDw(ChatThemeController.this, chatFull);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$uo__osMR6pe_hWQF3OsJvmIlQDw(ChatThemeController chatThemeController, TLRPC.ChatFull chatFull) {
-        NotificationCenter notificationCenter = NotificationCenter.getInstance(chatThemeController.currentAccount);
-        int i = NotificationCenter.chatInfoDidLoad;
-        Boolean bool = Boolean.FALSE;
-        notificationCenter.postNotificationName(i, chatFull, 0, bool, bool);
+        if (put2 == null || put2.longValue() == j10) {
+            return;
+        }
+        this.usedGiftThemesByUsers.remove(put2);
     }
 
     public static boolean wallpaperEquals(TLRPC.WallPaper wallPaper, TLRPC.WallPaper wallPaper2) {
@@ -867,282 +705,71 @@ public class ChatThemeController extends BaseController {
         return false;
     }
 
-    public static String getWallpaperEmoticon(TLRPC.WallPaper wallPaper) {
-        if (wallPaper == null) {
-            return null;
-        }
-        TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-        if (wallPaperSettings != null && !TextUtils.isEmpty(wallPaperSettings.emoticon)) {
-            return wallPaper.settings.emoticon;
-        }
-        return "";
+    public void clearCache() {
+        this.themesHash = 0L;
+        this.lastReloadTimeMs = 0L;
+        getSharedPreferences().edit().clear().apply();
     }
 
-    public static boolean isNotEmoticonWallpaper(TLRPC.WallPaper wallPaper) {
-        String wallpaperEmoticon = getWallpaperEmoticon(wallPaper);
-        return wallpaperEmoticon != null && wallpaperEmoticon.length() == 0;
+    public void clearWallpaper(long j10, boolean z10) {
+        clearWallpaper(j10, z10, false);
     }
 
-    public void clearWallpaper(long j, boolean z) {
-        clearWallpaper(j, z, false);
+    public void clearWallpaperThumbImages() {
+        this.themeIdWallpaperThumbMap.clear();
     }
 
-    public void clearWallpaper(long j, boolean z, boolean z2) {
-        TLRPC.TL_messages_setChatWallPaper tL_messages_setChatWallPaper = new TLRPC.TL_messages_setChatWallPaper();
-        if (j >= 0) {
-            tL_messages_setChatWallPaper.peer = MessagesController.getInputPeer(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j)));
-            tL_messages_setChatWallPaper.revert = z2;
-            if (!z2) {
-                TLRPC.UserFull userFull = getMessagesController().getUserFull(j);
-                if (userFull != null) {
-                    userFull.wallpaper = null;
-                    userFull.flags &= -16777217;
-                    getMessagesStorage().updateUserInfo(userFull, false);
+    public org.telegram.ui.ActionBar.b4 getDialogTheme(long j10) {
+        of.b bVar;
+        of.b bVar2 = this.dialogEmoticonsMap.get(j10);
+        if (bVar2 == null) {
+            String string = getEmojiSharedPreferences().getString("chatTheme_" + this.currentAccount + "_" + j10, null);
+            if (string != null) {
+                if (string.startsWith("gift_")) {
+                    bVar = new of.b(null, string.substring(5));
+                } else if (string.startsWith("emoticon_")) {
+                    bVar = new of.b(string.substring(9), null);
+                } else if (!TextUtils.isEmpty(string)) {
+                    bVar = new of.b(string, null);
                 }
-                saveChatWallpaper(j, null);
-                if (z) {
-                    NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.userInfoDidLoad, Long.valueOf(j), userFull);
-                }
+                bVar2 = bVar;
+                this.dialogEmoticonsMap.put(j10, bVar2);
+            }
+            bVar2 = null;
+            this.dialogEmoticonsMap.put(j10, bVar2);
+        }
+        return getTheme(bVar2);
+    }
+
+    public TLRPC.WallPaper getDialogWallpaper(long j10) {
+        if (j10 >= 0) {
+            TLRPC.UserFull userFull = getMessagesController().getUserFull(j10);
+            if (userFull != null) {
+                return userFull.wallpaper;
             }
         } else {
-            long j2 = -j;
-            tL_messages_setChatWallPaper.peer = MessagesController.getInputPeer(MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(j2)));
-            TLRPC.ChatFull chatFull = getMessagesController().getChatFull(j2);
+            TLRPC.ChatFull chatFull = getMessagesController().getChatFull(-j10);
             if (chatFull != null) {
-                chatFull.wallpaper = null;
-                chatFull.flags2 &= -129;
-                getMessagesStorage().updateChatInfo(chatFull, false);
-            }
-            saveChatWallpaper(j, null);
-            if (z) {
-                NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
-                int i = NotificationCenter.chatInfoDidLoad;
-                Boolean bool = Boolean.FALSE;
-                notificationCenter.postNotificationName(i, chatFull, 0, bool, bool);
+                return chatFull.wallpaper;
             }
         }
-        getConnectionsManager().sendRequest(tL_messages_setChatWallPaper, new RequestDelegate() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda2
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                ChatThemeController.$r8$lambda$77dFMoX2BBulnIAL_No9baTMG4Q(tLObject, tL_error);
+        String string = getEmojiSharedPreferences().getString("chatWallpaper_" + this.currentAccount + "_" + j10, null);
+        if (string != null) {
+            SerializedData serializedData = new SerializedData(Utilities.hexToBytes(string));
+            try {
+                return TLRPC.WallPaper.TLdeserialize(serializedData, serializedData.readInt32(true), true);
+            } catch (Throwable th) {
+                FileLog.e(th);
             }
-        });
+        }
+        return null;
     }
 
-    public int setWallpaperToPeer(final long j, final String str, Theme.OverrideWallpaperInfo overrideWallpaperInfo, MessageObject messageObject, final Runnable runnable) {
-        TLRPC.TL_messages_setChatWallPaper tL_messages_setChatWallPaper;
-        final boolean z;
-        TLRPC.ChatFull chatFull;
-        TLRPC.UserFull userFull;
-        String str2;
-        TLRPC.TL_messages_setChatWallPaper tL_messages_setChatWallPaper2 = new TLRPC.TL_messages_setChatWallPaper();
-        if (j >= 0) {
-            tL_messages_setChatWallPaper2.peer = MessagesController.getInputPeer(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j)));
-        } else {
-            tL_messages_setChatWallPaper2.peer = MessagesController.getInputPeer(MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j)));
-        }
-        tL_messages_setChatWallPaper2.for_both = overrideWallpaperInfo.forBoth;
-        if (messageObject != null && (messageObject.messageOwner.action instanceof TLRPC.TL_messageActionSetChatWallPaper)) {
-            tL_messages_setChatWallPaper2.flags |= 2;
-            tL_messages_setChatWallPaper2.id = messageObject.getId();
-            TLRPC.WallPaper wallPaper = null;
-            if (j >= 0) {
-                userFull = MessagesController.getInstance(this.currentAccount).getUserFull(j);
-                chatFull = null;
-            } else {
-                chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(-j);
-                userFull = null;
-            }
-            TLRPC.TL_messageActionSetChatWallPaper tL_messageActionSetChatWallPaper = (TLRPC.TL_messageActionSetChatWallPaper) messageObject.messageOwner.action;
-            TLRPC.TL_wallPaper tL_wallPaper = new TLRPC.TL_wallPaper();
-            TLRPC.WallPaper wallPaper2 = tL_messageActionSetChatWallPaper.wallpaper;
-            tL_wallPaper.id = wallPaper2.id;
-            tL_wallPaper.document = wallPaper2.document;
-            TLRPC.TL_wallPaperSettings tL_wallPaperSettings = new TLRPC.TL_wallPaperSettings();
-            tL_wallPaper.settings = tL_wallPaperSettings;
-            tL_wallPaperSettings.intensity = (int) (overrideWallpaperInfo.intensity * 100.0f);
-            tL_wallPaperSettings.motion = overrideWallpaperInfo.isMotion;
-            tL_wallPaperSettings.blur = overrideWallpaperInfo.isBlurred;
-            tL_wallPaperSettings.background_color = overrideWallpaperInfo.color;
-            tL_wallPaperSettings.second_background_color = overrideWallpaperInfo.gradientColor1;
-            tL_wallPaperSettings.third_background_color = overrideWallpaperInfo.gradientColor2;
-            tL_wallPaperSettings.fourth_background_color = overrideWallpaperInfo.gradientColor3;
-            tL_wallPaperSettings.rotation = overrideWallpaperInfo.rotation;
-            tL_wallPaper.uploadingImage = str;
-            if (userFull != null) {
-                wallPaper = userFull.wallpaper;
-            } else if (chatFull != null) {
-                wallPaper = chatFull.wallpaper;
-            }
-            if (wallPaper != null && (str2 = wallPaper.uploadingImage) != null && str2.equals(str)) {
-                tL_wallPaper.stripedThumb = wallPaper.stripedThumb;
-            }
-            tL_wallPaper.settings.flags |= 121;
-            TLRPC.TL_wallPaper tL_wallPaper2 = new TLRPC.TL_wallPaper();
-            TLRPC.WallPaper wallPaper3 = tL_messageActionSetChatWallPaper.wallpaper;
-            tL_wallPaper2.pattern = wallPaper3.pattern;
-            tL_messages_setChatWallPaper = tL_messages_setChatWallPaper2;
-            tL_wallPaper2.id = wallPaper3.id;
-            tL_wallPaper2.document = wallPaper3.document;
-            int i = wallPaper3.flags;
-            tL_wallPaper2.creator = wallPaper3.creator;
-            tL_wallPaper2.dark = wallPaper3.dark;
-            tL_wallPaper2.isDefault = wallPaper3.isDefault;
-            tL_wallPaper2.slug = wallPaper3.slug;
-            tL_wallPaper2.access_hash = wallPaper3.access_hash;
-            tL_wallPaper2.stripedThumb = wallPaper3.stripedThumb;
-            tL_wallPaper2.settings = tL_wallPaper.settings;
-            tL_wallPaper2.flags = i | 4;
-            if (userFull != null) {
-                userFull.wallpaper = tL_wallPaper2;
-                userFull.flags |= 16777216;
-                getMessagesStorage().updateUserInfo(userFull, false);
-                NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.userInfoDidLoad, Long.valueOf(j), userFull);
-            } else if (chatFull != null) {
-                chatFull.wallpaper = tL_wallPaper2;
-                chatFull.flags2 |= 128;
-                getMessagesStorage().updateChatInfo(chatFull, false);
-                NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
-                int i2 = NotificationCenter.chatInfoDidLoad;
-                Boolean bool = Boolean.FALSE;
-                notificationCenter.postNotificationName(i2, chatFull, 0, bool, bool);
-            }
-            if (runnable != null) {
-                runnable.run();
-            }
-            z = false;
-        } else {
-            tL_messages_setChatWallPaper = tL_messages_setChatWallPaper2;
-            tL_messages_setChatWallPaper.flags |= 1;
-            tL_messages_setChatWallPaper.wallpaper = MessagesController.getInputWallpaper(overrideWallpaperInfo);
-            z = true;
-        }
-        tL_messages_setChatWallPaper.flags |= 4;
-        tL_messages_setChatWallPaper.settings = MessagesController.getWallpaperSetting(overrideWallpaperInfo);
-        return ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_setChatWallPaper, new RequestDelegate() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda16
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                ChatThemeController.$r8$lambda$N7MnqJqAhf7TTbEbKRxIO7C6jr0(ChatThemeController.this, j, z, str, runnable, tLObject, tL_error);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$N7MnqJqAhf7TTbEbKRxIO7C6jr0(final ChatThemeController chatThemeController, final long j, final boolean z, final String str, final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        chatThemeController.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda7
-            @Override // java.lang.Runnable
-            public final void run() {
-                ChatThemeController.$r8$lambda$Sf3aClVUeRUgN5dzQz7zMbAztUw(ChatThemeController.this, tLObject, j, z, str, runnable);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$Sf3aClVUeRUgN5dzQz7zMbAztUw(ChatThemeController chatThemeController, TLObject tLObject, long j, boolean z, String str, Runnable runnable) {
-        TLRPC.ChatFull chatFull;
-        TLRPC.UserFull userFull;
-        String str2;
-        chatThemeController.getClass();
-        if (tLObject instanceof TLRPC.Updates) {
-            TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-            TLRPC.WallPaper wallPaper = null;
-            if (j >= 0) {
-                userFull = MessagesController.getInstance(chatThemeController.currentAccount).getUserFull(j);
-                chatFull = null;
-            } else {
-                chatFull = MessagesController.getInstance(chatThemeController.currentAccount).getChatFull(-j);
-                userFull = null;
-            }
-            if (userFull != null) {
-                wallPaper = userFull.wallpaper;
-            } else if (chatFull != null) {
-                wallPaper = chatFull.wallpaper;
-            }
-            int i = 0;
-            while (true) {
-                if (i >= updates.updates.size()) {
-                    break;
-                }
-                if (updates.updates.get(i) instanceof TL_update.TL_updateNewMessage) {
-                    TLRPC.MessageAction messageAction = ((TL_update.TL_updateNewMessage) updates.updates.get(i)).message.action;
-                    if (messageAction instanceof TLRPC.TL_messageActionSetChatWallPaper) {
-                        if (z) {
-                            TLRPC.TL_messageActionSetChatWallPaper tL_messageActionSetChatWallPaper = (TLRPC.TL_messageActionSetChatWallPaper) messageAction;
-                            tL_messageActionSetChatWallPaper.wallpaper.uploadingImage = str;
-                            if (wallPaper != null && (str2 = wallPaper.uploadingImage) != null && str2.equals(str)) {
-                                tL_messageActionSetChatWallPaper.wallpaper.stripedThumb = wallPaper.stripedThumb;
-                            }
-                            if (userFull != null) {
-                                TLRPC.WallPaper wallPaper2 = tL_messageActionSetChatWallPaper.wallpaper;
-                                userFull.wallpaper = wallPaper2;
-                                userFull.flags |= 16777216;
-                                chatThemeController.saveChatWallpaper(j, wallPaper2);
-                                chatThemeController.getMessagesStorage().updateUserInfo(userFull, false);
-                                NotificationCenter.getInstance(chatThemeController.currentAccount).postNotificationName(NotificationCenter.userInfoDidLoad, Long.valueOf(j), userFull);
-                            } else if (chatFull != null) {
-                                TLRPC.WallPaper wallPaper3 = tL_messageActionSetChatWallPaper.wallpaper;
-                                chatFull.wallpaper = wallPaper3;
-                                chatFull.flags2 |= 128;
-                                chatThemeController.saveChatWallpaper(j, wallPaper3);
-                                chatThemeController.getMessagesStorage().updateChatInfo(chatFull, false);
-                                NotificationCenter notificationCenter = NotificationCenter.getInstance(chatThemeController.currentAccount);
-                                int i2 = NotificationCenter.chatInfoDidLoad;
-                                Boolean bool = Boolean.FALSE;
-                                notificationCenter.postNotificationName(i2, chatFull, 0, bool, bool);
-                            }
-                        }
-                    }
-                }
-                i++;
-            }
-            MessagesController.getInstance(chatThemeController.currentAccount).processUpdateArray(updates.updates, updates.users, updates.chats, false, updates.date);
-            if (runnable != null) {
-                runnable.run();
-            }
-            NotificationCenter.getInstance(chatThemeController.currentAccount).postNotificationName(NotificationCenter.wallpaperSettedToUser, new Object[0]);
-        }
-    }
-
-    private void setGiftThemeUser(String str, long j) {
-        if (TextUtils.isEmpty(str)) {
-            String remove = this.usedGiftThemesByUsers.remove(Long.valueOf(j));
-            if (remove != null) {
-                this.usedGiftThemesBySlug.remove(remove);
-                return;
-            }
-            return;
-        }
-        if (j == 0) {
-            Long remove2 = this.usedGiftThemesBySlug.remove(str);
-            if (remove2 != null) {
-                this.usedGiftThemesByUsers.remove(remove2);
-                return;
-            }
-            return;
-        }
-        String put = this.usedGiftThemesByUsers.put(Long.valueOf(j), str);
-        Long put2 = this.usedGiftThemesBySlug.put(str, Long.valueOf(j));
-        if (put != null && !TextUtils.equals(str, put)) {
-            this.usedGiftThemesBySlug.remove(put);
-        }
-        if (put2 == null || put2.longValue() == j) {
-            return;
-        }
-        this.usedGiftThemesByUsers.remove(put2);
-    }
-
-    public long getGiftThemeUser(String str) {
-        Long l = this.usedGiftThemesBySlug.get(str);
-        if (l != null) {
-            return l.longValue();
-        }
-        return 0L;
-    }
-
-    public List<EmojiThemes> getEmojiThemes(int i) {
-        List<EmojiThemes> list;
-        boolean hasFlag = TLObject.hasFlag(i, 1);
-        boolean hasFlag2 = TLObject.hasFlag(i, 2);
-        boolean hasFlag3 = TLObject.hasFlag(i, 4);
+    public List<org.telegram.ui.ActionBar.b4> getEmojiThemes(int i10) {
+        List<org.telegram.ui.ActionBar.b4> list;
+        boolean hasFlag = TLObject.hasFlag(i10, 1);
+        boolean hasFlag2 = TLObject.hasFlag(i10, 2);
+        boolean hasFlag3 = TLObject.hasFlag(i10, 4);
         ArrayList arrayList = new ArrayList();
         if (hasFlag3 && this.giftsThemeList.themes != null) {
             arrayList.addAll(this.giftsThemeList.themes);
@@ -1150,21 +777,60 @@ public class ChatThemeController extends BaseController {
         if (hasFlag2 && (list = this.allChatThemes) != null) {
             arrayList.addAll(list);
         }
-        int i2 = 0;
-        if (hasFlag && (arrayList.isEmpty() || !((EmojiThemes) arrayList.get(0)).showAsDefaultStub)) {
-            arrayList.add(0, EmojiThemes.createChatThemesDefault(this.currentAccount));
+        int i11 = 0;
+        if (hasFlag && (arrayList.isEmpty() || !((org.telegram.ui.ActionBar.b4) arrayList.get(0)).a)) {
+            org.telegram.ui.ActionBar.b4 b4Var = new org.telegram.ui.ActionBar.b4(this.currentAccount);
+            b4Var.e = "❌";
+            b4Var.c = of.b.d("❌");
+            b4Var.d = TLRPC.ChatTheme.ofEmoticon("❌");
+            b4Var.a = true;
+            org.telegram.ui.ActionBar.a4 a4Var = new org.telegram.ui.ActionBar.a4();
+            a4Var.a = org.telegram.ui.ActionBar.b4.e(true);
+            b4Var.f.add(a4Var);
+            org.telegram.ui.ActionBar.a4 a4Var2 = new org.telegram.ui.ActionBar.a4();
+            a4Var2.a = org.telegram.ui.ActionBar.b4.e(false);
+            b4Var.f.add(a4Var2);
+            arrayList.add(0, b4Var);
         }
         int size = arrayList.size();
-        while (i2 < size) {
-            Object obj = arrayList.get(i2);
-            i2++;
-            ((EmojiThemes) obj).initColors();
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            ((org.telegram.ui.ActionBar.b4) obj).l();
         }
         return arrayList;
     }
 
+    public long getGiftThemeUser(String str) {
+        Long l10 = this.usedGiftThemesBySlug.get(str);
+        if (l10 != null) {
+            return l10.longValue();
+        }
+        return 0L;
+    }
+
+    public org.telegram.ui.ActionBar.b4 getTheme(of.b bVar) {
+        if (bVar == null) {
+            return null;
+        }
+        String str = bVar.b;
+        if (!TextUtils.isEmpty(str)) {
+            return this.allChatGiftThemes.get(str);
+        }
+        for (org.telegram.ui.ActionBar.b4 b4Var : this.allChatThemes) {
+            if (bVar.equals(b4Var.c)) {
+                return b4Var;
+            }
+        }
+        return null;
+    }
+
+    public Bitmap getWallpaperThumbBitmap(long j10) {
+        return this.themeIdWallpaperThumbMap.get(Long.valueOf(j10));
+    }
+
     public boolean isAllThemesFullyLoaded() {
-        List<EmojiThemes> list;
+        List<org.telegram.ui.ActionBar.b4> list;
         return (!isGiftThemesFullyLoaded() || (list = this.allChatThemes) == null || list.isEmpty()) ? false : true;
     }
 
@@ -1172,109 +838,399 @@ public class ChatThemeController extends BaseController {
         return this.giftsThemeList.completed;
     }
 
-    private void requestNextChatThemes(final ResultCallback<Void> resultCallback) {
-        if (this.giftsThemeList.hash != 0) {
-            long unused = this.giftsThemeList.lastReloadTimeMs;
+    public void loadNextChatThemes(ResultCallback<Void> resultCallback) {
+        requestNextChatThemes(resultCallback);
+    }
+
+    public void loadWallpaperBitmap(long j10, int i10, Utilities.Callback<mf.a> callback) {
+        if (i10 == 0) {
+            getWallpaperBitmap(j10, new d(callback, 2));
+        } else if (i10 == 1) {
+            loadWallpaperPatternBitmap(j10, callback);
         }
-        boolean z = System.currentTimeMillis() - this.giftsThemeList.lastReloadTimeMs > 7200000;
-        if (this.giftsThemeList.themes == null || !this.giftsThemeList.completed || z) {
-            TL_account.Tl_getUniqueGiftChatThemes tl_getUniqueGiftChatThemes = new TL_account.Tl_getUniqueGiftChatThemes();
-            tl_getUniqueGiftChatThemes.offset = this.giftsThemeList.offset;
-            tl_getUniqueGiftChatThemes.hash = this.giftsThemeList.hash;
-            tl_getUniqueGiftChatThemes.limit = 50;
+    }
+
+    public void preloadAllWallpaperImages(boolean z10) {
+        for (org.telegram.ui.ActionBar.b4 b4Var : this.allChatThemes) {
+            long i10 = b4Var.i(z10 ? 1 : 0);
+            if (i10 != 0 && !getPatternFile(i10).exists()) {
+                b4Var.o(z10 ? 1 : 0, null);
+            }
+        }
+    }
+
+    public void preloadAllWallpaperThumbs(boolean z10) {
+        for (org.telegram.ui.ActionBar.b4 b4Var : this.allChatThemes) {
+            long i10 = b4Var.i(z10 ? 1 : 0);
+            if (i10 != 0 && !this.themeIdWallpaperThumbMap.containsKey(Long.valueOf(i10))) {
+                b4Var.p(z10 ? 1 : 0, new d(this, 3));
+            }
+        }
+    }
+
+    public void processUpdate(TL_update.TL_updatePeerWallpaper tL_updatePeerWallpaper) {
+        if (!(tL_updatePeerWallpaper.peer instanceof TLRPC.TL_peerUser)) {
+            TLRPC.ChatFull chatFull = getMessagesController().getChatFull(-DialogObject.getPeerDialogId(tL_updatePeerWallpaper.peer));
+            if (chatFull == null || wallpaperEquals(chatFull.wallpaper, tL_updatePeerWallpaper.wallpaper)) {
+                return;
+            }
+            long j10 = -chatFull.id;
+            if ((tL_updatePeerWallpaper.flags & 1) != 0) {
+                chatFull.wallpaper = tL_updatePeerWallpaper.wallpaper;
+                chatFull.flags2 |= 128;
+            } else {
+                chatFull.wallpaper = null;
+                chatFull.flags2 &= -129;
+            }
+            getMessagesStorage().updateChatInfo(chatFull, false);
+            saveChatWallpaper(j10, chatFull.wallpaper);
+            AndroidUtilities.runOnUIThread(new e3(16, this, chatFull));
+            return;
+        }
+        TLRPC.UserFull userFull = getMessagesController().getUserFull(tL_updatePeerWallpaper.peer.user_id);
+        if (userFull == null || wallpaperEquals(userFull.wallpaper, tL_updatePeerWallpaper.wallpaper)) {
+            return;
+        }
+        long j11 = userFull.id;
+        if ((tL_updatePeerWallpaper.flags & 1) != 0) {
+            userFull.wallpaper_overridden = tL_updatePeerWallpaper.wallpaper_overridden;
+            userFull.wallpaper = tL_updatePeerWallpaper.wallpaper;
+            userFull.flags |= 16777216;
+        } else {
+            userFull.wallpaper_overridden = false;
+            userFull.wallpaper = null;
+            userFull.flags &= -16777217;
+        }
+        getMessagesStorage().updateUserInfo(userFull, false);
+        saveChatWallpaper(j11, userFull.wallpaper);
+        AndroidUtilities.runOnUIThread(new c4(this, j11, userFull, 3));
+    }
+
+    public void putThemeIfNeeded(TLRPC.ChatTheme chatTheme) {
+        if (chatTheme instanceof TLRPC.TL_chatThemeUniqueGift) {
+            TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = (TLRPC.TL_chatThemeUniqueGift) chatTheme;
+            if (this.allChatGiftThemes.containsKey(tL_chatThemeUniqueGift.gift.slug)) {
+                return;
+            }
+            org.telegram.ui.ActionBar.b4 b4Var = new org.telegram.ui.ActionBar.b4(this.currentAccount, tL_chatThemeUniqueGift);
+            b4Var.l();
+            this.allChatGiftThemes.put(tL_chatThemeUniqueGift.gift.slug, b4Var);
+            getMessagesStorage().putGiftChatTheme(chatTheme);
+        }
+    }
+
+    public void requestAllChatThemes(final ResultCallback<List<org.telegram.ui.ActionBar.b4>> resultCallback, final boolean z10) {
+        if (this.themesHash == 0 || this.lastReloadTimeMs == 0) {
+            init();
+        }
+        boolean z11 = System.currentTimeMillis() - this.lastReloadTimeMs > 7200000;
+        List<org.telegram.ui.ActionBar.b4> list = this.allChatThemes;
+        if (list == null || list.isEmpty() || z11) {
+            TL_account.getChatThemes getchatthemes = new TL_account.getChatThemes();
+            getchatthemes.hash = this.themesHash;
             ConnectionsManager connectionsManager = getConnectionsManager();
             DispatchQueue dispatchQueue = chatThemeQueue;
             Objects.requireNonNull(dispatchQueue);
-            connectionsManager.sendRequestTyped(tl_getUniqueGiftChatThemes, new ChatThemeController$$ExternalSyntheticLambda8(dispatchQueue), new Utilities.Callback2() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda9
+            connectionsManager.sendRequestTyped(getchatthemes, new b1(dispatchQueue), new Utilities.Callback2() { // from class: org.telegram.messenger.a1
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    ChatThemeController.$r8$lambda$uy9WD7HjET57H-LSOK4Epdl5yRk(ChatThemeController.this, resultCallback, (TL_account.ChatThemes) obj, (TLRPC.TL_error) obj2);
+                    ChatThemeController.this.lambda$requestAllChatThemes$3(resultCallback, z10, (TL_account.Themes) obj, (TLRPC.TL_error) obj2);
                 }
             });
         }
-    }
-
-    public static /* synthetic */ void $r8$lambda$uy9WD7HjET57H-LSOK4Epdl5yRk(final ChatThemeController chatThemeController, final ResultCallback resultCallback, TL_account.ChatThemes chatThemes, final TLRPC.TL_error tL_error) {
-        chatThemeController.getClass();
-        if (tL_error != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda3
-                @Override // java.lang.Runnable
-                public final void run() {
-                    ResultCallback.this.onError(tL_error);
-                }
-            });
+        List<org.telegram.ui.ActionBar.b4> list2 = this.allChatThemes;
+        if (list2 == null || list2.isEmpty()) {
             return;
         }
-        final ArrayList arrayList = new ArrayList();
-        if (chatThemes instanceof TL_account.Tl_chatThemes) {
-            final TL_account.Tl_chatThemes tl_chatThemes = (TL_account.Tl_chatThemes) chatThemes;
-            chatThemeController.getMessagesStorage().putGiftChatThemes(tl_chatThemes.themes);
-            chatThemeController.getMessagesStorage().putUsersAndChats(tl_chatThemes.users, tl_chatThemes.chats, true, true);
-            chatThemeController.getMessagesController().putUsers(tl_chatThemes.users, false);
-            chatThemeController.getMessagesController().putChats(tl_chatThemes.chats, false);
-            ArrayList<TLRPC.ChatTheme> arrayList2 = tl_chatThemes.themes;
-            int size = arrayList2.size();
-            int i = 0;
-            while (i < size) {
-                TLRPC.ChatTheme chatTheme = arrayList2.get(i);
-                i++;
-                TLRPC.ChatTheme chatTheme2 = chatTheme;
-                if (chatTheme2 instanceof TLRPC.TL_chatThemeUniqueGift) {
-                    arrayList.add((TLRPC.TL_chatThemeUniqueGift) chatTheme2);
-                }
-            }
-            final ArrayList arrayList3 = new ArrayList(arrayList.size());
-            for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                EmojiThemes emojiThemes = new EmojiThemes(chatThemeController.currentAccount, (TLRPC.TL_chatThemeUniqueGift) arrayList.get(i2));
-                emojiThemes.preloadWallpaper();
-                arrayList3.add(emojiThemes);
-            }
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda4
-                @Override // java.lang.Runnable
-                public final void run() {
-                    ChatThemeController.$r8$lambda$iJuwr9Cq_3ty8YWVrdXS1E0mdPk(ChatThemeController.this, tl_chatThemes, arrayList3, arrayList, resultCallback);
-                }
-            });
-            return;
-        }
-        if (chatThemes instanceof TL_account.TL_chatThemesNotModified) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda5
-                @Override // java.lang.Runnable
-                public final void run() {
-                    ChatThemeController.$r8$lambda$Uoq3bcZsyLANMCadVto3lv_ee6A(ChatThemeController.this, resultCallback);
-                }
-            });
-        }
+        resultCallback.onComplete(getEmojiThemes((z10 ? 1 : 0) | 2));
     }
 
-    public static /* synthetic */ void $r8$lambda$iJuwr9Cq_3ty8YWVrdXS1E0mdPk(ChatThemeController chatThemeController, TL_account.Tl_chatThemes tl_chatThemes, List list, List list2, ResultCallback resultCallback) {
-        chatThemeController.giftsThemeList.offset = tl_chatThemes.next_offset;
-        chatThemeController.giftsThemeList.hash = tl_chatThemes.hash;
-        chatThemeController.giftsThemeList.lastReloadTimeMs = System.currentTimeMillis();
-        if (chatThemeController.giftsThemeList.themes != null) {
-            chatThemeController.giftsThemeList.themes.addAll(list);
+    public void requestChatTheme(final of.b bVar, final ResultCallback<org.telegram.ui.ActionBar.b4> resultCallback) {
+        if (bVar != null) {
+            String str = bVar.b;
+            if (!bVar.b()) {
+                if (TextUtils.isEmpty(str)) {
+                    requestAllChatThemes(new ResultCallback<List<org.telegram.ui.ActionBar.b4>>() { // from class: org.telegram.messenger.ChatThemeController.1
+                        @Override // org.telegram.tgnet.ResultCallback
+                        public final /* synthetic */ void onError(Throwable th) {
+                            org.telegram.tgnet.k.a(this, th);
+                        }
+
+                        @Override // org.telegram.tgnet.ResultCallback
+                        public void onComplete(List<org.telegram.ui.ActionBar.b4> list) {
+                            for (org.telegram.ui.ActionBar.b4 b4Var : list) {
+                                if (bVar.equals(b4Var.c)) {
+                                    b4Var.l();
+                                    resultCallback.onComplete(b4Var);
+                                    return;
+                                }
+                            }
+                            resultCallback.onComplete(null);
+                        }
+
+                        @Override // org.telegram.tgnet.ResultCallback
+                        public void onError(TLRPC.TL_error tL_error) {
+                            resultCallback.onComplete(null);
+                        }
+                    }, false);
+                    return;
+                }
+                org.telegram.ui.ActionBar.b4 b4Var = this.allChatGiftThemes.get(str);
+                if (b4Var == null) {
+                    resultCallback.onComplete(null);
+                    return;
+                } else {
+                    b4Var.l();
+                    resultCallback.onComplete(b4Var);
+                    return;
+                }
+            }
+        }
+        resultCallback.onComplete(null);
+    }
+
+    public void saveChatWallpaper(long j10, TLRPC.WallPaper wallPaper) {
+        if (wallPaper == null) {
+            getEmojiSharedPreferences().edit().remove("chatWallpaper_" + this.currentAccount + "_" + j10).apply();
+            return;
+        }
+        if (wallPaper.document == null) {
+            return;
+        }
+        SerializedData serializedData = new SerializedData(wallPaper.getObjectSize());
+        wallPaper.serializeToStream(serializedData);
+        String bytesToHex = Utilities.bytesToHex(serializedData.toByteArray());
+        getEmojiSharedPreferences().edit().putString("chatWallpaper_" + this.currentAccount + "_" + j10, bytesToHex).apply();
+    }
+
+    public void setDialogTheme(long j10, TLRPC.ChatTheme chatTheme, boolean z10) {
+        setDialogTheme(j10, of.b.c(chatTheme), chatTheme, z10);
+    }
+
+    public int setWallpaperToPeer(long j10, String str, org.telegram.ui.ActionBar.z5 z5Var, MessageObject messageObject, Runnable runnable) {
+        boolean z10;
+        TLRPC.ChatFull chatFull;
+        TLRPC.UserFull userFull;
+        String str2;
+        TLRPC.TL_messages_setChatWallPaper tL_messages_setChatWallPaper = new TLRPC.TL_messages_setChatWallPaper();
+        if (j10 >= 0) {
+            tL_messages_setChatWallPaper.peer = MessagesController.getInputPeer(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j10)));
         } else {
-            chatThemeController.giftsThemeList.themes = new ArrayList(list);
+            tL_messages_setChatWallPaper.peer = MessagesController.getInputPeer(MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10)));
         }
-        if (TextUtils.isEmpty(tl_chatThemes.next_offset)) {
-            chatThemeController.giftsThemeList.completed = true;
+        tL_messages_setChatWallPaper.for_both = z5Var.o;
+        if (messageObject == null || !(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionSetChatWallPaper)) {
+            tL_messages_setChatWallPaper.flags |= 1;
+            tL_messages_setChatWallPaper.wallpaper = MessagesController.getInputWallpaper(z5Var);
+            z10 = true;
+        } else {
+            tL_messages_setChatWallPaper.flags |= 2;
+            tL_messages_setChatWallPaper.id = messageObject.getId();
+            if (j10 >= 0) {
+                userFull = MessagesController.getInstance(this.currentAccount).getUserFull(j10);
+                chatFull = null;
+            } else {
+                chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(-j10);
+                userFull = null;
+            }
+            TLRPC.TL_messageActionSetChatWallPaper tL_messageActionSetChatWallPaper = (TLRPC.TL_messageActionSetChatWallPaper) messageObject.messageOwner.action;
+            TLRPC.TL_wallPaper tL_wallPaper = new TLRPC.TL_wallPaper();
+            TLRPC.WallPaper wallPaper = tL_messageActionSetChatWallPaper.wallpaper;
+            tL_wallPaper.id = wallPaper.id;
+            tL_wallPaper.document = wallPaper.document;
+            TLRPC.TL_wallPaperSettings tL_wallPaperSettings = new TLRPC.TL_wallPaperSettings();
+            tL_wallPaper.settings = tL_wallPaperSettings;
+            tL_wallPaperSettings.intensity = (int) (z5Var.k * 100.0f);
+            tL_wallPaperSettings.motion = z5Var.j;
+            tL_wallPaperSettings.blur = z5Var.i;
+            tL_wallPaperSettings.background_color = z5Var.d;
+            tL_wallPaperSettings.second_background_color = z5Var.e;
+            tL_wallPaperSettings.third_background_color = z5Var.f;
+            tL_wallPaperSettings.fourth_background_color = z5Var.g;
+            tL_wallPaperSettings.rotation = z5Var.h;
+            tL_wallPaper.uploadingImage = str;
+            TLRPC.WallPaper wallPaper2 = userFull != null ? userFull.wallpaper : chatFull != null ? chatFull.wallpaper : null;
+            if (wallPaper2 != null && (str2 = wallPaper2.uploadingImage) != null && str2.equals(str)) {
+                tL_wallPaper.stripedThumb = wallPaper2.stripedThumb;
+            }
+            tL_wallPaper.settings.flags |= 121;
+            TLRPC.TL_wallPaper tL_wallPaper2 = new TLRPC.TL_wallPaper();
+            TLRPC.WallPaper wallPaper3 = tL_messageActionSetChatWallPaper.wallpaper;
+            tL_wallPaper2.pattern = wallPaper3.pattern;
+            TLRPC.ChatFull chatFull2 = chatFull;
+            tL_wallPaper2.id = wallPaper3.id;
+            tL_wallPaper2.document = wallPaper3.document;
+            int i10 = wallPaper3.flags;
+            tL_wallPaper2.creator = wallPaper3.creator;
+            tL_wallPaper2.dark = wallPaper3.dark;
+            tL_wallPaper2.isDefault = wallPaper3.isDefault;
+            tL_wallPaper2.slug = wallPaper3.slug;
+            tL_wallPaper2.access_hash = wallPaper3.access_hash;
+            tL_wallPaper2.stripedThumb = wallPaper3.stripedThumb;
+            tL_wallPaper2.settings = tL_wallPaper.settings;
+            tL_wallPaper2.flags = i10 | 4;
+            z10 = false;
+            if (userFull != null) {
+                userFull.wallpaper = tL_wallPaper2;
+                userFull.flags |= 16777216;
+                getMessagesStorage().updateUserInfo(userFull, false);
+                NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(j10), userFull);
+            } else if (chatFull2 != null) {
+                chatFull2.wallpaper = tL_wallPaper2;
+                chatFull2.flags2 |= 128;
+                getMessagesStorage().updateChatInfo(chatFull2, false);
+                NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
+                int i11 = NotificationCenter.chatInfoDidLoad;
+                Boolean bool = Boolean.FALSE;
+                notificationCenter.lambda$postNotificationNameOnUIThread$1(i11, chatFull2, 0, bool, bool);
+            }
+            if (runnable != null) {
+                runnable.run();
+            }
         }
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            EmojiThemes emojiThemes = (EmojiThemes) it.next();
-            chatThemeController.allChatGiftThemes.put(emojiThemes.getEmoticonOrSlug(), emojiThemes);
-        }
-        Iterator it2 = list2.iterator();
-        while (it2.hasNext()) {
-            TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = (TLRPC.TL_chatThemeUniqueGift) it2.next();
-            chatThemeController.setGiftThemeUser(tL_chatThemeUniqueGift.gift.slug, DialogObject.getPeerDialogId(tL_chatThemeUniqueGift.gift.theme_peer));
-        }
-        resultCallback.onComplete(null);
+        tL_messages_setChatWallPaper.flags |= 4;
+        tL_messages_setChatWallPaper.settings = MessagesController.getWallpaperSetting(z5Var);
+        return ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_setChatWallPaper, new oa(this, j10, z10, str, runnable));
     }
 
-    public static /* synthetic */ void $r8$lambda$Uoq3bcZsyLANMCadVto3lv_ee6A(ChatThemeController chatThemeController, ResultCallback resultCallback) {
-        chatThemeController.giftsThemeList.lastReloadTimeMs = System.currentTimeMillis();
-        chatThemeController.giftsThemeList.completed = true;
-        resultCallback.onComplete(null);
+    public void clearWallpaper(long j10, boolean z10, boolean z11) {
+        TLRPC.TL_messages_setChatWallPaper tL_messages_setChatWallPaper = new TLRPC.TL_messages_setChatWallPaper();
+        int i10 = 1;
+        if (j10 >= 0) {
+            tL_messages_setChatWallPaper.peer = MessagesController.getInputPeer(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j10)));
+            tL_messages_setChatWallPaper.revert = z11;
+            if (!z11) {
+                TLRPC.UserFull userFull = getMessagesController().getUserFull(j10);
+                if (userFull != null) {
+                    userFull.wallpaper = null;
+                    userFull.flags &= -16777217;
+                    getMessagesStorage().updateUserInfo(userFull, false);
+                }
+                saveChatWallpaper(j10, null);
+                if (z10) {
+                    NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(j10), userFull);
+                }
+            }
+        } else {
+            long j11 = -j10;
+            tL_messages_setChatWallPaper.peer = MessagesController.getInputPeer(MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(j11)));
+            TLRPC.ChatFull chatFull = getMessagesController().getChatFull(j11);
+            if (chatFull != null) {
+                chatFull.wallpaper = null;
+                chatFull.flags2 &= -129;
+                getMessagesStorage().updateChatInfo(chatFull, false);
+            }
+            saveChatWallpaper(j10, null);
+            if (z10) {
+                NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
+                int i11 = NotificationCenter.chatInfoDidLoad;
+                Boolean bool = Boolean.FALSE;
+                notificationCenter.lambda$postNotificationNameOnUIThread$1(i11, chatFull, 0, bool, bool);
+            }
+        }
+        getConnectionsManager().sendRequest(tL_messages_setChatWallPaper, new e5(i10));
+    }
+
+    public void saveWallpaperBitmap(mf.a aVar, long j10) {
+        Bitmap bitmap = aVar.b;
+        int i10 = aVar.a;
+        if (i10 == 0) {
+            saveWallpaperBitmap(bitmap, j10);
+        } else if (i10 == 1) {
+            saveWallpaperPatternBitmap(bitmap, aVar.c, j10);
+        }
+    }
+
+    public void setDialogTheme(long j10, of.b bVar) {
+        setDialogTheme(j10, bVar, null, true);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:37:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private void setDialogTheme(long j10, of.b bVar, TLRPC.ChatTheme chatTheme, boolean z10) {
+        String str;
+        TLRPC.Tl_inputChatThemeEmpty tl_inputChatThemeEmpty;
+        if (of.b.a(this.dialogEmoticonsMap.get(j10), bVar)) {
+            return;
+        }
+        if (bVar == null) {
+            this.dialogEmoticonsMap.delete(j10);
+        } else {
+            this.dialogEmoticonsMap.put(j10, bVar);
+        }
+        setGiftThemeUser(bVar != null ? bVar.b : null, j10);
+        if (j10 >= 0) {
+            TLRPC.UserFull userFull = getMessagesController().getUserFull(j10);
+            if (userFull != null && (bVar == null || bVar.b() || chatTheme != null)) {
+                userFull.theme = chatTheme;
+                getMessagesStorage().updateUserInfo(userFull, true);
+            }
+        } else {
+            TLRPC.ChatFull chatFull = getMessagesController().getChatFull(-j10);
+            if (chatFull != null) {
+                chatFull.theme_emoticon = bVar != null ? bVar.a : null;
+                getMessagesStorage().updateChatInfo(chatFull, true);
+            }
+        }
+        SharedPreferences.Editor edit = getEmojiSharedPreferences().edit();
+        String str2 = "chatTheme_" + this.currentAccount + "_" + j10;
+        if (bVar != null) {
+            String str3 = bVar.a;
+            String str4 = bVar.b;
+            if (str4 != null) {
+                str = "gift_".concat(str4);
+            } else if (str3 != null) {
+                str = "emoticon_".concat(str3);
+            }
+            edit.putString(str2, str).apply();
+            if (z10) {
+                return;
+            }
+            TLRPC.TL_messages_setChatTheme tL_messages_setChatTheme = new TLRPC.TL_messages_setChatTheme();
+            if (bVar != null) {
+                String str5 = bVar.a;
+                if (!TextUtils.isEmpty(str5)) {
+                    TLRPC.Tl_inputChatTheme tl_inputChatTheme = new TLRPC.Tl_inputChatTheme();
+                    tl_inputChatTheme.emoticon = str5;
+                    tl_inputChatThemeEmpty = tl_inputChatTheme;
+                    tL_messages_setChatTheme.theme = tl_inputChatThemeEmpty;
+                    tL_messages_setChatTheme.peer = getMessagesController().getInputPeer(j10);
+                    getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new le(this, 2));
+                    return;
+                }
+            }
+            if (bVar != null) {
+                String str6 = bVar.b;
+                if (!TextUtils.isEmpty(str6)) {
+                    TLRPC.Tl_inputChatThemeUniqueGift tl_inputChatThemeUniqueGift = new TLRPC.Tl_inputChatThemeUniqueGift();
+                    tl_inputChatThemeUniqueGift.slug = str6;
+                    tl_inputChatThemeEmpty = tl_inputChatThemeUniqueGift;
+                    tL_messages_setChatTheme.theme = tl_inputChatThemeEmpty;
+                    tL_messages_setChatTheme.peer = getMessagesController().getInputPeer(j10);
+                    getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new le(this, 2));
+                    return;
+                }
+            }
+            tl_inputChatThemeEmpty = new TLRPC.Tl_inputChatThemeEmpty();
+            tL_messages_setChatTheme.theme = tl_inputChatThemeEmpty;
+            tL_messages_setChatTheme.peer = getMessagesController().getInputPeer(j10);
+            getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new le(this, 2));
+            return;
+        }
+        str = null;
+        edit.putString(str2, str).apply();
+        if (z10) {
+        }
+    }
+
+    public void clearWallpaperImages() {
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$clearWallpaper$15(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 }

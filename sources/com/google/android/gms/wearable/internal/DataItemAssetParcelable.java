@@ -1,60 +1,65 @@
 package com.google.android.gms.wearable.internal;
 
+import a9.p;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-import com.google.android.gms.wearable.DataItemAsset;
+import h7.r8;
+import i8.f;
+import j8.c;
+import y5.l;
+import z5.a;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class DataItemAssetParcelable extends AbstractSafeParcelable implements DataItemAsset, ReflectedParcelable {
-    public static final Parcelable.Creator<DataItemAssetParcelable> CREATOR = new zzdf();
-    private final String zza;
-    private final String zzb;
+public class DataItemAssetParcelable extends a implements f, ReflectedParcelable {
+    public static final Parcelable.Creator<DataItemAssetParcelable> CREATOR = new c(7);
+    public final String a;
+    public final String b;
 
-    public DataItemAssetParcelable(DataItemAsset dataItemAsset) {
-        this.zza = (String) Preconditions.checkNotNull(dataItemAsset.getId());
-        this.zzb = (String) Preconditions.checkNotNull(dataItemAsset.getDataItemKey());
+    public DataItemAssetParcelable(f fVar) {
+        String id2 = fVar.getId();
+        l.h(id2);
+        this.a = id2;
+        String a2 = fVar.a();
+        l.h(a2);
+        this.b = a2;
     }
 
-    @Override // com.google.android.gms.wearable.DataItemAsset
-    public final String getDataItemKey() {
-        return this.zzb;
+    @Override // i8.f
+    public final String a() {
+        return this.b;
     }
 
-    @Override // com.google.android.gms.wearable.DataItemAsset
+    @Override // i8.f
     public final String getId() {
-        return this.zza;
+        return this.a;
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("DataItemAssetParcelable[@");
-        sb.append(Integer.toHexString(hashCode()));
-        if (this.zza == null) {
-            sb.append(",noid");
+        StringBuilder sb2 = new StringBuilder("DataItemAssetParcelable[@");
+        sb2.append(Integer.toHexString(hashCode()));
+        String str = this.a;
+        if (str == null) {
+            sb2.append(",noid");
         } else {
-            sb.append(",");
-            sb.append(this.zza);
+            sb2.append(",");
+            sb2.append(str);
         }
-        sb.append(", key=");
-        sb.append(this.zzb);
-        sb.append("]");
-        return sb.toString();
+        sb2.append(", key=");
+        return p.p(sb2, this.b, "]");
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeString(parcel, 2, this.zza, false);
-        SafeParcelWriter.writeString(parcel, 3, this.zzb, false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = r8.q(parcel, 20293);
+        r8.l(parcel, 2, this.a);
+        r8.l(parcel, 3, this.b);
+        r8.r(parcel, q6);
     }
 
-    DataItemAssetParcelable(String str, String str2) {
-        this.zza = str;
-        this.zzb = str2;
+    public DataItemAssetParcelable(String str, String str2) {
+        this.a = str;
+        this.b = str2;
     }
 }

@@ -1,24 +1,31 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.text.StringsKt;
+import gd.j;
+import kotlin.jvm.internal.f;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzgn {
     private zzgn() {
         throw null;
     }
 
-    public /* synthetic */ zzgn(DefaultConstructorMarker defaultConstructorMarker) {
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public static final int zzc(String str) {
-        return Integer.parseInt(StringsKt.substringBefore$default(StringsKt.replace$default("18.7.1", ".", "", false, 4, null), "-", null, 2, null));
+        String g10 = j.g("18.7.1", ".", "");
+        int d = j.d(0, g10, "-", false);
+        if (d != -1) {
+            g10 = g10.substring(0, d);
+            kotlin.jvm.internal.j.d(g10, "substring(...)");
+        }
+        return Integer.parseInt(g10);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final String zzd(String str) {
-        return "cesdb".concat(String.valueOf(StringsKt.substringAfter("18.7.1", "-", "")));
+        return "cesdb".concat(j.i("18.7.1", "-", ""));
+    }
+
+    public /* synthetic */ zzgn(f fVar) {
     }
 }

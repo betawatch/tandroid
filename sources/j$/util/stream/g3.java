@@ -1,118 +1,53 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
+import j$.util.Spliterator;
+import java.util.Deque;
 import java.util.function.Consumer;
-import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class g3 implements f2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ LongConsumer b;
-
-    public /* synthetic */ g3(LongConsumer longConsumer, int i) {
-        this.a = i;
-        this.b = longConsumer;
-    }
-
-    private final /* synthetic */ void b(long j) {
-    }
-
-    private final /* synthetic */ void c(long j) {
-    }
-
-    private final /* synthetic */ void d() {
-    }
-
-    private final /* synthetic */ void e() {
-    }
-
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ boolean C() {
-        switch (this.a) {
+public final class g3 extends h3 {
+    @Override // j$.util.Spliterator
+    public final boolean tryAdvance(Consumer consumer) {
+        e2 a2;
+        if (!c()) {
+            return false;
         }
-        return false;
-    }
-
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ void accept(double d) {
-        switch (this.a) {
-            case 0:
-                r1.a();
-                throw null;
-            default:
-                r1.a();
-                throw null;
+        boolean tryAdvance = this.d.tryAdvance(consumer);
+        if (!tryAdvance) {
+            if (this.c == null && (a2 = h3.a(this.e)) != null) {
+                Spliterator spliterator = a2.spliterator();
+                this.d = spliterator;
+                return spliterator.tryAdvance(consumer);
+            }
+            this.a = null;
         }
+        return tryAdvance;
     }
 
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ void accept(int i) {
-        switch (this.a) {
-            case 0:
-                r1.k();
-                throw null;
-            default:
-                r1.k();
-                throw null;
+    @Override // j$.util.Spliterator
+    public final void forEachRemaining(Consumer consumer) {
+        if (this.a == null) {
+            return;
         }
-    }
-
-    @Override // j$.util.stream.f2, j$.util.stream.g2
-    public final void accept(long j) {
-        switch (this.a) {
-            case 0:
-                this.b.accept(j);
-                break;
-            default:
-                ((N2) this.b).accept(j);
-                break;
+        if (this.d == null) {
+            Spliterator spliterator = this.c;
+            if (spliterator == null) {
+                Deque b10 = b();
+                while (true) {
+                    e2 a2 = h3.a(b10);
+                    if (a2 != null) {
+                        a2.forEach(consumer);
+                    } else {
+                        this.a = null;
+                        return;
+                    }
+                }
+            } else {
+                spliterator.forEachRemaining(consumer);
+            }
+        } else {
+            while (tryAdvance(consumer)) {
+            }
         }
-    }
-
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void s(Object obj) {
-        switch (this.a) {
-            case 0:
-                s((Long) obj);
-                break;
-            default:
-                s((Long) obj);
-                break;
-        }
-    }
-
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        switch (this.a) {
-        }
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        switch (this.a) {
-        }
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
-    }
-
-    @Override // j$.util.stream.f2
-    public final /* synthetic */ void s(Long l) {
-        switch (this.a) {
-            case 0:
-                r1.i(this, l);
-                break;
-            default:
-                r1.i(this, l);
-                break;
-        }
-    }
-
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ void x() {
-        int i = this.a;
-    }
-
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ void y(long j) {
-        int i = this.a;
     }
 }

@@ -5,39 +5,31 @@ import java.util.LinkedHashSet;
 import org.webrtc.EglBase;
 import org.webrtc.VideoEncoderFactory;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class DefaultVideoEncoderFactory implements VideoEncoderFactory {
     private final VideoEncoderFactory hardwareVideoEncoderFactory;
     private final VideoEncoderFactory softwareVideoEncoderFactory = new SoftwareVideoEncoderFactory();
 
-    @Override // org.webrtc.VideoEncoderFactory
-    public /* synthetic */ VideoEncoderFactory.VideoEncoderSelector getEncoderSelector() {
-        return VideoEncoderFactory.-CC.$default$getEncoderSelector(this);
-    }
-
-    @Override // org.webrtc.VideoEncoderFactory
-    public /* synthetic */ VideoCodecInfo[] getImplementations() {
-        VideoCodecInfo[] supportedCodecs;
-        supportedCodecs = getSupportedCodecs();
-        return supportedCodecs;
-    }
-
-    public DefaultVideoEncoderFactory(EglBase.Context context, boolean z, boolean z2) {
-        this.hardwareVideoEncoderFactory = new HardwareVideoEncoderFactory(context, z, z2);
-    }
-
-    DefaultVideoEncoderFactory(VideoEncoderFactory videoEncoderFactory) {
-        this.hardwareVideoEncoderFactory = videoEncoderFactory;
+    public DefaultVideoEncoderFactory(EglBase.Context context, boolean z10, boolean z11) {
+        this.hardwareVideoEncoderFactory = new HardwareVideoEncoderFactory(context, z10, z11);
     }
 
     @Override // org.webrtc.VideoEncoderFactory
     public VideoEncoder createEncoder(VideoCodecInfo videoCodecInfo) {
         VideoEncoder createEncoder = this.softwareVideoEncoderFactory.createEncoder(videoCodecInfo);
         VideoEncoder createEncoder2 = this.hardwareVideoEncoderFactory.createEncoder(videoCodecInfo);
-        if (createEncoder2 == null || createEncoder == null) {
-            return createEncoder2 != null ? createEncoder2 : createEncoder;
-        }
-        return new VideoEncoderFallback(createEncoder, createEncoder2);
+        return (createEncoder2 == null || createEncoder == null) ? createEncoder2 != null ? createEncoder2 : createEncoder : new VideoEncoderFallback(createEncoder, createEncoder2);
+    }
+
+    @Override // org.webrtc.VideoEncoderFactory
+    public final /* synthetic */ VideoEncoderFactory.VideoEncoderSelector getEncoderSelector() {
+        return y.a(this);
+    }
+
+    @Override // org.webrtc.VideoEncoderFactory
+    public final /* synthetic */ VideoCodecInfo[] getImplementations() {
+        return y.b(this);
     }
 
     @Override // org.webrtc.VideoEncoderFactory
@@ -46,5 +38,9 @@ public class DefaultVideoEncoderFactory implements VideoEncoderFactory {
         linkedHashSet.addAll(Arrays.asList(this.softwareVideoEncoderFactory.getSupportedCodecs()));
         linkedHashSet.addAll(Arrays.asList(this.hardwareVideoEncoderFactory.getSupportedCodecs()));
         return (VideoCodecInfo[]) linkedHashSet.toArray(new VideoCodecInfo[linkedHashSet.size()]);
+    }
+
+    public DefaultVideoEncoderFactory(VideoEncoderFactory videoEncoderFactory) {
+        this.hardwareVideoEncoderFactory = videoEncoderFactory;
     }
 }

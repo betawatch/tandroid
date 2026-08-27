@@ -1,22 +1,20 @@
 package com.google.android.recaptcha.internal;
 
+import ad.p;
+import h7.k6;
+import id.c0;
+import id.f0;
+import id.g1;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import kotlin.Result;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.AwaitKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.Job;
+import pc.f;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzaf extends SuspendLambda implements Function2 {
+final class zzaf extends i implements p {
     int zza;
     final /* synthetic */ zzaj zzb;
     final /* synthetic */ String zzc;
@@ -24,35 +22,34 @@ final class zzaf extends SuspendLambda implements Function2 {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzaf(zzaj zzajVar, String str, zzhk zzhkVar, Continuation continuation) {
-        super(2, continuation);
+    public zzaf(zzaj zzajVar, String str, zzhk zzhkVar, c cVar) {
+        super(2, cVar);
         this.zzb = zzajVar;
         this.zzc = str;
         this.zzd = zzhkVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        zzaf zzafVar = new zzaf(this.zzb, this.zzc, this.zzd, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        zzaf zzafVar = new zzaf(this.zzb, this.zzc, this.zzd, cVar);
         zzafVar.zze = obj;
         return zzafVar;
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzaf) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzaf) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
         zzxx zzp;
         List list;
-        Job launch$default;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zza;
-        ResultKt.throwOnFailure(obj);
-        if (i == 0) {
-            CoroutineScope coroutineScope = (CoroutineScope) this.zze;
+        sc.a aVar = sc.a.a;
+        int i10 = this.zza;
+        k6.b(obj);
+        if (i10 == 0) {
+            c0 c0Var = (c0) this.zze;
             ArrayList arrayList = new ArrayList();
             zzaj zzajVar = this.zzb;
             String str = this.zzc;
@@ -66,24 +63,17 @@ final class zzaf extends SuspendLambda implements Function2 {
                 }
             }
             int size = arrayList3.size();
-            int i2 = 0;
-            while (i2 < size) {
-                int i3 = i2 + 1;
-                launch$default = BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new zzae(this.zzd, (zzar) arrayList3.get(i2), str, arrayList, null), 3, null);
-                arrayList2.add(launch$default);
-                arrayList = arrayList;
-                i2 = i3;
-                str = str;
+            for (int i11 = 0; i11 < size; i11++) {
+                arrayList2.add(f0.q(c0Var, new zzae(this.zzd, (zzar) arrayList3.get(i11), str, arrayList, null)));
             }
-            Job[] jobArr = (Job[]) arrayList2.toArray(new Job[0]);
-            Job[] jobArr2 = (Job[]) Arrays.copyOf(jobArr, jobArr.length);
+            g1[] g1VarArr = (g1[]) arrayList2.toArray(new g1[0]);
+            g1[] g1VarArr2 = (g1[]) Arrays.copyOf(g1VarArr, g1VarArr.length);
             this.zza = 1;
-            if (AwaitKt.joinAll(jobArr2, this) == coroutine_suspended) {
-                return coroutine_suspended;
+            if (f0.p(g1VarArr2, this) == aVar) {
+                return aVar;
             }
         }
-        Result.Companion companion = Result.Companion;
         zzp = this.zzb.zzp(this.zzc);
-        return Result.box-impl(Result.constructor-impl(zzp));
+        return new f(zzp);
     }
 }

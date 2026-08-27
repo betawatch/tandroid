@@ -1,41 +1,33 @@
 package androidx.car.app.suggestion;
 
-import androidx.lifecycle.DefaultLifecycleObserver;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleOwner;
-import kotlin.jvm.internal.Intrinsics;
+import androidx.lifecycle.e;
+import androidx.lifecycle.t;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-class SuggestionManager$1 implements DefaultLifecycleObserver {
-    final /* synthetic */ Lifecycle val$lifecycle;
-
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public /* synthetic */ void onCreate(LifecycleOwner lifecycleOwner) {
-        Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
+class SuggestionManager$1 implements e {
+    @Override // androidx.lifecycle.e
+    public final void h(t tVar) {
+        throw null;
     }
 
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public /* synthetic */ void onPause(LifecycleOwner lifecycleOwner) {
-        Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
+    @Override // androidx.lifecycle.e
+    public final /* synthetic */ void a(t tVar) {
     }
 
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public /* synthetic */ void onResume(LifecycleOwner lifecycleOwner) {
-        Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
+    @Override // androidx.lifecycle.e
+    public final /* synthetic */ void b(t tVar) {
     }
 
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public /* synthetic */ void onStart(LifecycleOwner lifecycleOwner) {
-        Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
+    @Override // androidx.lifecycle.e
+    public final /* synthetic */ void e(t tVar) {
     }
 
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public /* synthetic */ void onStop(LifecycleOwner lifecycleOwner) {
-        Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
+    @Override // androidx.lifecycle.e
+    public final /* synthetic */ void f(t tVar) {
     }
 
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public void onDestroy(LifecycleOwner lifecycleOwner) {
-        this.val$lifecycle.removeObserver(this);
+    @Override // androidx.lifecycle.e
+    public final /* synthetic */ void i(t tVar) {
     }
 }

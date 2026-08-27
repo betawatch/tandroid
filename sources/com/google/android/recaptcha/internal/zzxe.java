@@ -2,6 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzxe extends zzsn implements zztt {
     private static final zzxe zzb;
@@ -21,31 +22,27 @@ public final class zzxe extends zzsn implements zztt {
         return zzb;
     }
 
-    public final List zzi() {
-        return this.zze;
-    }
-
     @Override // com.google.android.recaptcha.internal.zzsn
-    protected final Object zzh(int i, Object obj, Object obj2) {
+    public final Object zzh(int i10, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i2 = i - 1;
-        if (i2 == 0) {
+        int i11 = i10 - 1;
+        if (i11 == 0) {
             return (byte) 1;
         }
-        if (i2 == 2) {
+        if (i11 == 2) {
             return zzsn.zzF(zzb, "\u0000\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001Ț", new Object[]{"zze"});
         }
-        if (i2 == 3) {
+        if (i11 == 3) {
             return new zzxe();
         }
         zzxh zzxhVar = null;
-        if (i2 == 4) {
+        if (i11 == 4) {
             return new zzxd(zzxhVar);
         }
-        if (i2 == 5) {
+        if (i11 == 5) {
             return zzb;
         }
-        if (i2 != 6) {
+        if (i11 != 6) {
             throw null;
         }
         zzua zzuaVar2 = zzd;
@@ -64,5 +61,9 @@ public final class zzxe extends zzsn implements zztt {
             }
         }
         return zzuaVar;
+    }
+
+    public final List zzi() {
+        return this.zze;
     }
 }

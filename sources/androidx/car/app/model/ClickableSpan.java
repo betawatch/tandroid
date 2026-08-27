@@ -2,27 +2,18 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class ClickableSpan extends CarSpan {
-    private final OnClickDelegate mOnClickDelegate;
+    private final b0 mOnClickDelegate;
 
-    public static ClickableSpan create(OnClickListener onClickListener) {
-        Objects.requireNonNull(onClickListener);
-        return new ClickableSpan(onClickListener);
+    private ClickableSpan(c0 c0Var) {
+        this.mOnClickDelegate = OnClickDelegateImpl.create(c0Var);
     }
 
-    public OnClickDelegate getOnClickDelegate() {
-        OnClickDelegate onClickDelegate = this.mOnClickDelegate;
-        Objects.requireNonNull(onClickDelegate);
-        return onClickDelegate;
-    }
-
-    public String toString() {
-        return "[clickable]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.mOnClickDelegate == null));
+    public static ClickableSpan create(c0 c0Var) {
+        Objects.requireNonNull(c0Var);
+        return new ClickableSpan(c0Var);
     }
 
     public boolean equals(Object obj) {
@@ -35,8 +26,18 @@ public final class ClickableSpan extends CarSpan {
         return Boolean.valueOf(this.mOnClickDelegate == null).equals(Boolean.valueOf(((ClickableSpan) obj).mOnClickDelegate == null));
     }
 
-    private ClickableSpan(OnClickListener onClickListener) {
-        this.mOnClickDelegate = OnClickDelegateImpl.create(onClickListener);
+    public b0 getOnClickDelegate() {
+        b0 b0Var = this.mOnClickDelegate;
+        Objects.requireNonNull(b0Var);
+        return b0Var;
+    }
+
+    public int hashCode() {
+        return Objects.hash(Boolean.valueOf(this.mOnClickDelegate == null));
+    }
+
+    public String toString() {
+        return "[clickable]";
     }
 
     private ClickableSpan() {

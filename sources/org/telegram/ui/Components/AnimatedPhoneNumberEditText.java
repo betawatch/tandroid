@@ -1,236 +1,202 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.TypedValue;
-import androidx.dynamicanimation.animation.FloatPropertyCompat;
-import androidx.dynamicanimation.animation.SpringAnimation;
-import androidx.dynamicanimation.animation.SpringForce;
 import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
-/* loaded from: classes5.dex */
-public abstract class AnimatedPhoneNumberEditText extends HintEditText {
-    private ObjectAnimator animator;
-    private Runnable hintAnimationCallback;
-    private List hintAnimationValues;
-    private List hintAnimations;
-    private HintFadeProperty hintFadeProperty;
-    private ArrayList letters;
-    private ArrayList oldLetters;
-    private String oldText;
-    private float progress;
-    private TextPaint textPaint;
-    private String wasHint;
-    private Boolean wasHintVisible;
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes3.dex */
+public class AnimatedPhoneNumberEditText extends u30 {
+    public String A;
+    public hh.t5 B;
+    public final ArrayList e;
+    public final ArrayList f;
+    public final TextPaint h;
+    public ObjectAnimator n;
+    public float r;
+    public String s;
+    public final o1.d v;
+    public final ArrayList w;
+    public final ArrayList x;
+    public Boolean y;
 
     public AnimatedPhoneNumberEditText(Context context) {
         super(context);
-        this.letters = new ArrayList();
-        this.oldLetters = new ArrayList();
-        this.textPaint = new TextPaint(1);
-        this.oldText = "";
-        this.hintFadeProperty = new HintFadeProperty();
-        this.hintAnimationValues = new ArrayList();
-        this.hintAnimations = new ArrayList();
+        this.e = new ArrayList();
+        this.f = new ArrayList();
+        this.h = new TextPaint(1);
+        this.s = "";
+        this.v = new o1.d(this, 1);
+        this.w = new ArrayList();
+        this.x = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Components.HintEditText
-    public void setHintText(final String str) {
-        boolean isEmpty;
-        boolean isEmpty2 = TextUtils.isEmpty(str);
-        final boolean z = !isEmpty2;
-        Boolean bool = this.wasHintVisible;
-        if (bool == null || bool.booleanValue() != z) {
-            this.hintAnimationValues.clear();
-            Iterator it = this.hintAnimations.iterator();
-            while (it.hasNext()) {
-                ((SpringAnimation) it.next()).cancel();
-            }
-            this.hintAnimations.clear();
-            this.wasHintVisible = Boolean.valueOf(z);
-            isEmpty = TextUtils.isEmpty(getText());
-        } else {
-            isEmpty = false;
+    public static /* synthetic */ void j(AnimatedPhoneNumberEditText animatedPhoneNumberEditText, boolean z10, String str) {
+        animatedPhoneNumberEditText.w.clear();
+        ArrayList arrayList = animatedPhoneNumberEditText.x;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((o1.j) obj).c();
         }
-        String str2 = !isEmpty2 ? str : this.wasHint;
-        if (str2 == null) {
-            str2 = "";
-        }
-        this.wasHint = str;
-        if (!isEmpty2 || !isEmpty) {
-            super.setHintText(str);
-        }
-        if (isEmpty) {
-            runHintAnimation(str2.length(), z, new Runnable() { // from class: org.telegram.ui.Components.AnimatedPhoneNumberEditText$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AnimatedPhoneNumberEditText.$r8$lambda$76maNKFM1wbgeVCpXRqshSiubfw(AnimatedPhoneNumberEditText.this, z, str);
-                }
-            });
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$76maNKFM1wbgeVCpXRqshSiubfw(AnimatedPhoneNumberEditText animatedPhoneNumberEditText, boolean z, String str) {
-        animatedPhoneNumberEditText.hintAnimationValues.clear();
-        Iterator it = animatedPhoneNumberEditText.hintAnimations.iterator();
-        while (it.hasNext()) {
-            ((SpringAnimation) it.next()).cancel();
-        }
-        if (z) {
+        if (z10) {
             return;
         }
         super.setHintText(str);
     }
 
-    @Override // org.telegram.ui.Components.HintEditText
+    @Override // org.telegram.ui.Components.u30
     public String getHintText() {
-        return this.wasHint;
-    }
-
-    private void runHintAnimation(int i, boolean z, Runnable runnable) {
-        Runnable runnable2 = this.hintAnimationCallback;
-        if (runnable2 != null) {
-            removeCallbacks(runnable2);
-        }
-        for (int i2 = 0; i2 < i; i2++) {
-            float f = 0.0f;
-            float f2 = z ? 0.0f : 1.0f;
-            if (z) {
-                f = 1.0f;
-            }
-            float f3 = f * 100.0f;
-            final SpringAnimation springAnimation = (SpringAnimation) new SpringAnimation(Integer.valueOf(i2), this.hintFadeProperty).setSpring(new SpringForce(f3).setStiffness(500.0f).setDampingRatio(1.0f).setFinalPosition(f3)).setStartValue(100.0f * f2);
-            this.hintAnimations.add(springAnimation);
-            this.hintAnimationValues.add(Float.valueOf(f2));
-            Objects.requireNonNull(springAnimation);
-            postDelayed(new Runnable() { // from class: org.telegram.ui.Components.AnimatedPhoneNumberEditText$$ExternalSyntheticLambda1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    SpringAnimation.this.start();
-                }
-            }, i2 * 5);
-        }
-        this.hintAnimationCallback = runnable;
-        postDelayed(runnable, (i * 5) + 150);
-    }
-
-    @Override // org.telegram.ui.Components.HintEditText, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
-    public void setTextSize(int i, float f) {
-        super.setTextSize(i, f);
-        this.textPaint.setTextSize(TypedValue.applyDimension(i, f, getResources().getDisplayMetrics()));
-    }
-
-    @Override // org.telegram.ui.Components.EditTextEffects, android.widget.TextView
-    public void setTextColor(int i) {
-        super.setTextColor(i);
-        this.textPaint.setColor(i);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.EditTextEffects, android.widget.TextView
-    protected void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        super.onTextChanged(charSequence, i, i2, i3);
-    }
-
-    @Override // org.telegram.ui.Components.HintEditText, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.EditTextEffects, android.widget.TextView, android.view.View
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-    }
-
-    public void setNewText(String str) {
-        if (this.oldLetters == null || this.letters == null || Objects.equals(this.oldText, str)) {
-            return;
-        }
-        ObjectAnimator objectAnimator = this.animator;
-        if (objectAnimator != null) {
-            objectAnimator.cancel();
-            this.animator = null;
-        }
-        this.oldLetters.clear();
-        this.oldLetters.addAll(this.letters);
-        this.letters.clear();
-        int i = 0;
-        boolean z = TextUtils.isEmpty(this.oldText) && !TextUtils.isEmpty(str);
-        this.progress = 0.0f;
-        while (i < str.length()) {
-            int i2 = i + 1;
-            String substring = str.substring(i, i2);
-            String substring2 = (this.oldLetters.isEmpty() || i >= this.oldText.length()) ? null : this.oldText.substring(i, i2);
-            if (!z && substring2 != null && substring2.equals(substring)) {
-                this.letters.add((StaticLayout) this.oldLetters.get(i));
-                this.oldLetters.set(i, null);
-            } else {
-                if (z && substring2 == null) {
-                    this.oldLetters.add(new StaticLayout("", this.textPaint, 0, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
-                }
-                this.letters.add(new StaticLayout(substring, this.textPaint, (int) Math.ceil(r9.measureText(substring)), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
-            }
-            i = i2;
-        }
-        if (!this.oldLetters.isEmpty()) {
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", -1.0f, 0.0f);
-            this.animator = ofFloat;
-            ofFloat.setDuration(150L);
-            this.animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.AnimatedPhoneNumberEditText.1
-                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                public void onAnimationEnd(Animator animator) {
-                    AnimatedPhoneNumberEditText.this.animator = null;
-                    AnimatedPhoneNumberEditText.this.oldLetters.clear();
-                }
-            });
-            this.animator.start();
-        }
-        this.oldText = str;
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.Components.HintEditText
-    protected void onPreDrawHintCharacter(int i, Canvas canvas, float f, float f2) {
-        if (i < this.hintAnimationValues.size()) {
-            this.hintPaint.setAlpha((int) (((Float) this.hintAnimationValues.get(i)).floatValue() * 255.0f));
-        }
-    }
-
-    public void setProgress(float f) {
-        if (this.progress == f) {
-            return;
-        }
-        this.progress = f;
-        invalidate();
+        return this.A;
     }
 
     public float getProgress() {
-        return this.progress;
+        return this.r;
     }
 
-    private final class HintFadeProperty extends FloatPropertyCompat {
-        public HintFadeProperty() {
-            super("hint_fade");
+    @Override // org.telegram.ui.Components.u30
+    public final void i(int i10) {
+        ArrayList arrayList = this.w;
+        if (i10 < arrayList.size()) {
+            this.b.setAlpha((int) (((Float) arrayList.get(i10)).floatValue() * 255.0f));
         }
+    }
 
-        @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
-        public float getValue(Integer num) {
-            if (num.intValue() < AnimatedPhoneNumberEditText.this.hintAnimationValues.size()) {
-                return ((Float) AnimatedPhoneNumberEditText.this.hintAnimationValues.get(num.intValue())).floatValue() * 100.0f;
+    @Override // org.telegram.ui.Components.u30
+    public void setHintText(String str) {
+        boolean isEmpty;
+        boolean isEmpty2 = TextUtils.isEmpty(str);
+        boolean z10 = !isEmpty2;
+        Boolean bool = this.y;
+        ArrayList arrayList = this.w;
+        ArrayList arrayList2 = this.x;
+        if (bool == null || bool.booleanValue() != z10) {
+            arrayList.clear();
+            int size = arrayList2.size();
+            int i10 = 0;
+            while (i10 < size) {
+                Object obj = arrayList2.get(i10);
+                i10++;
+                ((o1.j) obj).c();
             }
-            return 0.0f;
+            arrayList2.clear();
+            this.y = Boolean.valueOf(z10);
+            isEmpty = TextUtils.isEmpty(getText());
+        } else {
+            isEmpty = false;
         }
+        String str2 = !isEmpty2 ? str : this.A;
+        if (str2 == null) {
+            str2 = "";
+        }
+        this.A = str;
+        if (!isEmpty2 || !isEmpty) {
+            super.setHintText(str);
+        }
+        if (isEmpty) {
+            int length = str2.length();
+            hh.t5 t5Var = new hh.t5(this, z10, str, 14);
+            Runnable runnable = this.B;
+            if (runnable != null) {
+                removeCallbacks(runnable);
+            }
+            for (int i11 = 0; i11 < length; i11++) {
+                float f10 = 0.0f;
+                float f11 = !isEmpty2 ? 0.0f : 1.0f;
+                if (!isEmpty2) {
+                    f10 = 1.0f;
+                }
+                o1.j jVar = new o1.j(Integer.valueOf(i11), this.v);
+                float f12 = f10 * 100.0f;
+                o1.k kVar = new o1.k(f12);
+                kVar.b(500.0f);
+                kVar.a(1.0f);
+                kVar.i = f12;
+                jVar.u = kVar;
+                jVar.b = 100.0f * f11;
+                jVar.c = true;
+                arrayList2.add(jVar);
+                arrayList.add(Float.valueOf(f11));
+                postDelayed(new bg(jVar, 7), i11 * 5);
+            }
+            this.B = t5Var;
+            postDelayed(t5Var, (length * 5) + 150);
+        }
+    }
 
-        @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
-        public void setValue(Integer num, float f) {
-            if (num.intValue() < AnimatedPhoneNumberEditText.this.hintAnimationValues.size()) {
-                AnimatedPhoneNumberEditText.this.hintAnimationValues.set(num.intValue(), Float.valueOf(f / 100.0f));
-                AnimatedPhoneNumberEditText.this.invalidate();
-            }
+    public void setNewText(String str) {
+        ArrayList arrayList;
+        TextPaint textPaint;
+        ArrayList arrayList2 = this.f;
+        if (arrayList2 == null || (arrayList = this.e) == null || Objects.equals(this.s, str)) {
+            return;
         }
+        ObjectAnimator objectAnimator = this.n;
+        if (objectAnimator != null) {
+            objectAnimator.cancel();
+            this.n = null;
+        }
+        arrayList2.clear();
+        arrayList2.addAll(arrayList);
+        arrayList.clear();
+        int i10 = 0;
+        boolean z10 = TextUtils.isEmpty(this.s) && !TextUtils.isEmpty(str);
+        this.r = 0.0f;
+        while (i10 < str.length()) {
+            int i11 = i10 + 1;
+            String substring = str.substring(i10, i11);
+            String substring2 = (arrayList2.isEmpty() || i10 >= this.s.length()) ? null : this.s.substring(i10, i11);
+            if (z10 || substring2 == null || !substring2.equals(substring)) {
+                TextPaint textPaint2 = this.h;
+                if (z10 && substring2 == null) {
+                    textPaint = textPaint2;
+                    arrayList2.add(new StaticLayout("", textPaint, 0, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
+                } else {
+                    textPaint = textPaint2;
+                }
+                arrayList.add(new StaticLayout(substring, textPaint, (int) Math.ceil(textPaint.measureText(substring)), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
+            } else {
+                arrayList.add((StaticLayout) arrayList2.get(i10));
+                arrayList2.set(i10, null);
+            }
+            i10 = i11;
+        }
+        if (!arrayList2.isEmpty()) {
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", -1.0f, 0.0f);
+            this.n = ofFloat;
+            ofFloat.setDuration(150L);
+            this.n.addListener(new org.telegram.ui.am(this, 5));
+            this.n.start();
+        }
+        this.s = str;
+        invalidate();
+    }
+
+    public void setProgress(float f10) {
+        if (this.r == f10) {
+            return;
+        }
+        this.r = f10;
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.nt, android.widget.TextView
+    public void setTextColor(int i10) {
+        super.setTextColor(i10);
+        this.h.setColor(i10);
+    }
+
+    @Override // org.telegram.ui.Components.u30, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
+    public final void setTextSize(int i10, float f10) {
+        super.setTextSize(i10, f10);
+        this.h.setTextSize(TypedValue.applyDimension(i10, f10, getResources().getDisplayMetrics()));
     }
 }

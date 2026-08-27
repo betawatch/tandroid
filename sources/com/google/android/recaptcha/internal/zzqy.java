@@ -4,6 +4,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.ConnectionsManager;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public enum zzqy implements zzsp {
     zza(0),
@@ -21,8 +22,8 @@ public enum zzqy implements zzsp {
 
     private final int zzn;
 
-    zzqy(int i) {
-        this.zzn = i;
+    zzqy(int i10) {
+        this.zzn = i10;
     }
 
     @Override // java.lang.Enum

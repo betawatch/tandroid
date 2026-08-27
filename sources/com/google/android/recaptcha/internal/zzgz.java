@@ -1,16 +1,20 @@
 package com.google.android.recaptcha.internal;
 
 import android.content.Context;
+import fd.c;
+import h7.h7;
+import h7.j6;
+import id.f0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.RandomAccess;
 import java.util.Timer;
-import kotlin.LazyKt;
-import kotlin.NoWhenBranchMatchedException;
-import kotlin.Unit;
-import kotlin.collections.CollectionsKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlin.jvm.internal.j;
+import qc.n;
+import qc.u;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzgz implements zzgs {
     private static Timer zza;
@@ -34,11 +38,49 @@ public final class zzgz implements zzgs {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void zzf() {
+        ArrayList arrayList;
+        Iterator it;
         zzgo zzgoVar = this.zzc;
         if (zzgoVar != null) {
-            Iterator it = CollectionsKt.windowed(zzgoVar.zzd(), 20, 20, true).iterator();
-            while (it.hasNext()) {
-                zzg((List) it.next());
+            List zzd = zzgoVar.zzd();
+            j.e(zzd, "<this>");
+            int i10 = 0;
+            if ((zzd instanceof RandomAccess) && (zzd instanceof List)) {
+                List list = zzd;
+                int size = list.size();
+                arrayList = new ArrayList((size / 20) + (size % 20 == 0 ? 0 : 1));
+                for (int i11 = 0; i11 >= 0 && i11 < size; i11 += 20) {
+                    int i12 = size - i11;
+                    if (20 <= i12) {
+                        i12 = 20;
+                    }
+                    ArrayList arrayList2 = new ArrayList(i12);
+                    for (int i13 = 0; i13 < i12; i13++) {
+                        arrayList2.add(list.get(i13 + i11));
+                    }
+                    arrayList.add(arrayList2);
+                }
+            } else {
+                arrayList = new ArrayList();
+                Iterator iterator = zzd.iterator();
+                j.e(iterator, "iterator");
+                if (iterator.hasNext()) {
+                    u uVar = new u(iterator, null);
+                    c cVar = new c();
+                    cVar.c = h7.a(uVar, cVar, cVar);
+                    it = cVar;
+                } else {
+                    it = n.a;
+                }
+                while (it.hasNext()) {
+                    arrayList.add((List) it.next());
+                }
+            }
+            int size2 = arrayList.size();
+            while (i10 < size2) {
+                Object obj = arrayList.get(i10);
+                i10++;
+                zzg((List) obj);
             }
         }
     }
@@ -47,7 +89,7 @@ public final class zzgz implements zzgs {
         zzgo zzgoVar;
         zzzm zzk;
         int zzN;
-        int i;
+        int i10;
         zzwo zzi = zzwq.zzi();
         ArrayList arrayList = new ArrayList();
         Iterator it = list.iterator();
@@ -56,7 +98,7 @@ public final class zzgz implements zzgs {
             try {
                 zzk = zzzm.zzk(zzpp.zzg().zzj(zzgpVar.zzc()));
                 zzN = zzk.zzN();
-                i = zzN - 1;
+                i10 = zzN - 1;
             } catch (Exception unused) {
                 zzgo zzgoVar2 = this.zzc;
                 if (zzgoVar2 != null) {
@@ -66,25 +108,22 @@ public final class zzgz implements zzgs {
             if (zzN == 0) {
                 throw null;
             }
-            if (i == 0) {
+            if (i10 == 0) {
                 zzi.zzq(zzk.zzf());
-            } else if (i == 1) {
+            } else if (i10 == 1) {
                 zzi.zzr(zzk.zzg());
-            } else {
-                if (i != 2) {
-                    throw new NoWhenBranchMatchedException();
-                }
-                Unit unit = Unit.INSTANCE;
+            } else if (i10 != 2) {
+                throw new a7.c();
             }
             arrayList.add(zzgpVar);
         }
-        if (zzi.zze() + zzi.zzf() == 0) {
+        if (zzi.zzf() + zzi.zze() == 0) {
             return;
         }
         byte[] zzd = ((zzwq) zzi.zzk()).zzd();
         try {
-            int i2 = zzby.zza;
-            if (!((zzha) LazyKt.lazy(zzgt.zza).getValue()).zza(zzd) || (zzgoVar = this.zzc) == null) {
+            int i11 = zzby.zza;
+            if (!((zzha) j6.a(zzgt.zza).a()).zza(zzd) || (zzgoVar = this.zzc) == null) {
                 return;
             }
             zzgoVar.zza(arrayList);
@@ -103,8 +142,8 @@ public final class zzgz implements zzgs {
     @Override // com.google.android.recaptcha.internal.zzgs
     public final void zza(zzzm zzzmVar) {
         try {
-            int i = zzby.zza;
-            BuildersKt__Builders_commonKt.launch$default(((zzcr) LazyKt.lazy(zzgx.zza).getValue()).zza(), null, null, new zzgy(this, zzzmVar, null), 3, null);
+            int i10 = zzby.zza;
+            f0.q(((zzcr) j6.a(zzgx.zza).a()).zza(), new zzgy(this, zzzmVar, null));
         } catch (Exception unused) {
         }
         zzh();

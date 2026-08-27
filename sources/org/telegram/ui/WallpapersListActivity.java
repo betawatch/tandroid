@@ -6,25 +6,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.SpannableString;
 import android.text.TextUtils;
-import android.text.style.ForegroundColorSpan;
 import android.util.LongSparseArray;
 import android.util.Property;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.view.WindowManager;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,1147 +21,228 @@ import java.util.Comparator;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenu;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.GraySectionCell;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Cells.TextCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Cells.WallpaperCell;
-import org.telegram.ui.Components.EmptyTextProgressView;
-import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.NumberTextView;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.WallpaperUpdater;
-import org.telegram.ui.DialogsActivity;
-import org.telegram.ui.ThemePreviewActivity;
-import org.telegram.ui.WallpapersListActivity;
 
-/* loaded from: classes4.dex */
-public class WallpapersListActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
-    private ArrayList actionModeViews;
-    private ColorWallpaper addedColorWallpaper;
-    private FileWallpaper addedFileWallpaper;
-    private ArrayList allWallPapers;
-    private HashMap allWallPapersDict;
-    private ColorWallpaper catsWallpaper;
-    private Paint colorFramePaint;
-    private Paint colorPaint;
-    private int columnsCount;
-    private int currentType;
-    private final long dialogId;
-    private int galleryHintRow;
-    private int galleryRow;
-    private LinearLayoutManager layoutManager;
-    private ListAdapter listAdapter;
-    private RecyclerListView listView;
-    private HashMap localDict;
-    private ArrayList localWallPapers;
-    private ArrayList patterns;
-    private HashMap patternsDict;
-    private AlertDialog progressDialog;
-    private int resetInfoRow;
-    private int resetRow;
-    private int resetSectionRow;
-    private int rowCount;
-    private boolean scrolling;
-    private SearchAdapter searchAdapter;
-    private EmptyTextProgressView searchEmptyView;
-    private ActionBarMenuItem searchItem;
-    private int sectionRow;
-    private boolean selectedBackgroundBlurred;
-    private boolean selectedBackgroundMotion;
-    private String selectedBackgroundSlug;
-    private int selectedColor;
-    private int selectedGradientColor1;
-    private int selectedGradientColor2;
-    private int selectedGradientColor3;
-    private int selectedGradientRotation;
-    private float selectedIntensity;
-    private NumberTextView selectedMessagesCountTextView;
-    private final LongSparseArray selectedWallPapers;
-    private int setColorRow;
-    private FileWallpaper themeWallpaper;
-    private int totalWallpaperRows;
-    private WallpaperUpdater updater;
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes3.dex */
+public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
+    public static final int[][] g0 = {new int[]{-2368069, -9722489, -2762611, -7817084}, new int[]{-7487253, -4599318, -3755537, -1320977}, new int[]{-6832405, -5117462, -3755537, -1067044}, new int[]{-7676942, -7827988, -1859606, -9986835}, new int[]{-5190165, -6311702, -4461867, -5053475}, new int[]{-2430264, -6114049, -1258497, -4594945}, new int[]{-2298990, -7347754, -9985038, -8006011}, new int[]{-1399954, -990074, -876865, -1523602}, new int[]{-15438, -1916673, -6222, -471346}, new int[]{-2891798}, new int[]{-5913125}, new int[]{-9463352}, new int[]{-2956375}, new int[]{-5974898}, new int[]{-8537234}, new int[]{-1647186}, new int[]{-2769263}, new int[]{-3431303}, new int[]{-1326919}, new int[]{-2054243}, new int[]{-3573648}, new int[]{-1328696}, new int[]{-2056777}, new int[]{-2984557}, new int[]{-2440467}, new int[]{-2906649}, new int[]{-4880430}, new int[]{-4013331}, new int[]{-5921305}, new int[]{-8421424}, new int[]{-4005139}, new int[]{-5908761}, new int[]{-8406320}, new int[]{-2702663}, new int[]{-6518654}, new int[]{-16777216}};
+    public static final int[][] h0 = {new int[]{-14797481, -15394250, -14924974, -14006975}, new int[]{-14867905, -14870478, -14997181, -15460815}, new int[]{-14666695, -15720408, -14861254, -15260107}, new int[]{-14932175, -15066075, -14208965, -15000799}, new int[]{-12968902, -14411460, -13029826, -15067598}, new int[]{-13885157, -12307670, -14542561, -12899018}, new int[]{-14797481, -15196106, -14924974, -15325638}, new int[]{-15658442, -15449521, -16047308, -12897955}, new int[]{-13809610, -15258855, -13221071, -15715791}, new int[]{-14865092}, new int[]{-15656154}, new int[]{-16051170}, new int[]{-14731745}, new int[]{-15524075}, new int[]{-15853808}, new int[]{-13685209}, new int[]{-14014945}, new int[]{-15132649}, new int[]{-12374480}, new int[]{-13755362}, new int[]{-14740716}, new int[]{-12374468}, new int[]{-13755352}, new int[]{-14740709}, new int[]{-12833213}, new int[]{-14083026}, new int[]{-14872031}, new int[]{-13554109}, new int[]{-14803922}, new int[]{-15461855}, new int[]{-13680833}, new int[]{-14602960}, new int[]{-15458784}, new int[]{-14211804}, new int[]{-15132906}, new int[]{-16777216}};
+    public static final int[] i0 = {-16746753, -65536, -30208, -13824, -16718798, -14702165, -9240406, -409915, -9224159, -16777216, -10725281, -1};
+    public static final String[] j0 = {"Blue", "Red", "Orange", "Yellow", "Green", "Teal", "Purple", "Pink", "Brown", "Black", "Gray", "White"};
+    public static final int[] k0 = {R.string.Blue, R.string.Red, R.string.Orange, R.string.Yellow, R.string.Green, R.string.Teal, R.string.Purple, R.string.Pink, R.string.Brown, R.string.Black, R.string.Gray, R.string.White};
+    public xh1 A;
+    public wh1 B;
+    public xh1 C;
+    public org.telegram.ui.Components.zk0 D;
+    public yh1 E;
+    public ai1 F;
+    public j G;
+    public org.telegram.ui.ActionBar.v0 H;
+    public NumberTextView I;
+    public org.telegram.ui.Components.az J;
+    public final ArrayList K;
+    public org.telegram.ui.ActionBar.b2 L;
+    public org.telegram.ui.Components.w71 M;
+    public int N;
+    public String O;
+    public int P;
+    public int Q;
+    public int R;
+    public int S;
+    public int T;
+    public float U;
+    public boolean V;
+    public boolean W;
+    public final ArrayList X;
+    public final HashMap Y;
+    public final HashMap Z;
+    public int a;
+    public final ArrayList a0;
+    public int b;
+    public final ArrayList b0;
+    public int c;
+    public ArrayList c0;
+    public int d;
+    public final HashMap d0;
+    public int e;
+    public final LongSparseArray e0;
+    public int f;
+    public boolean f0;
+    public int h;
+    public int n;
+    public int r;
+    public int s;
     private int uploadImageRow;
-    private int wallPaperStartRow;
-    private ArrayList wallPapers;
-    private static final int[][] defaultColorsLight = {new int[]{-2368069, -9722489, -2762611, -7817084}, new int[]{-7487253, -4599318, -3755537, -1320977}, new int[]{-6832405, -5117462, -3755537, -1067044}, new int[]{-7676942, -7827988, -1859606, -9986835}, new int[]{-5190165, -6311702, -4461867, -5053475}, new int[]{-2430264, -6114049, -1258497, -4594945}, new int[]{-2298990, -7347754, -9985038, -8006011}, new int[]{-1399954, -990074, -876865, -1523602}, new int[]{-15438, -1916673, -6222, -471346}, new int[]{-2891798}, new int[]{-5913125}, new int[]{-9463352}, new int[]{-2956375}, new int[]{-5974898}, new int[]{-8537234}, new int[]{-1647186}, new int[]{-2769263}, new int[]{-3431303}, new int[]{-1326919}, new int[]{-2054243}, new int[]{-3573648}, new int[]{-1328696}, new int[]{-2056777}, new int[]{-2984557}, new int[]{-2440467}, new int[]{-2906649}, new int[]{-4880430}, new int[]{-4013331}, new int[]{-5921305}, new int[]{-8421424}, new int[]{-4005139}, new int[]{-5908761}, new int[]{-8406320}, new int[]{-2702663}, new int[]{-6518654}, new int[]{-16777216}};
-    private static final int[][] defaultColorsDark = {new int[]{-14797481, -15394250, -14924974, -14006975}, new int[]{-14867905, -14870478, -14997181, -15460815}, new int[]{-14666695, -15720408, -14861254, -15260107}, new int[]{-14932175, -15066075, -14208965, -15000799}, new int[]{-12968902, -14411460, -13029826, -15067598}, new int[]{-13885157, -12307670, -14542561, -12899018}, new int[]{-14797481, -15196106, -14924974, -15325638}, new int[]{-15658442, -15449521, -16047308, -12897955}, new int[]{-13809610, -15258855, -13221071, -15715791}, new int[]{-14865092}, new int[]{-15656154}, new int[]{-16051170}, new int[]{-14731745}, new int[]{-15524075}, new int[]{-15853808}, new int[]{-13685209}, new int[]{-14014945}, new int[]{-15132649}, new int[]{-12374480}, new int[]{-13755362}, new int[]{-14740716}, new int[]{-12374468}, new int[]{-13755352}, new int[]{-14740709}, new int[]{-12833213}, new int[]{-14083026}, new int[]{-14872031}, new int[]{-13554109}, new int[]{-14803922}, new int[]{-15461855}, new int[]{-13680833}, new int[]{-14602960}, new int[]{-15458784}, new int[]{-14211804}, new int[]{-15132906}, new int[]{-16777216}};
-    private static final int[] searchColors = {-16746753, -65536, -30208, -13824, -16718798, -14702165, -9240406, -409915, -9224159, -16777216, -10725281, -1};
-    private static final String[] searchColorsNames = {"Blue", "Red", "Orange", "Yellow", "Green", "Teal", "Purple", "Pink", "Brown", "Black", "Gray", "White"};
-    private static final int[] searchColorsNamesR = {R.string.Blue, R.string.Red, R.string.Orange, R.string.Yellow, R.string.Green, R.string.Teal, R.string.Purple, R.string.Pink, R.string.Brown, R.string.Black, R.string.Gray, R.string.White};
+    public final int v;
+    public Paint w;
+    public Paint x;
+    public wh1 y;
 
-    public static /* synthetic */ boolean $r8$lambda$wfA44qyGaX_B4XNajFoxnQYt0RQ(View view, MotionEvent motionEvent) {
-        return true;
+    public WallpapersListActivity(int i10) {
+        super(null);
+        this.K = new ArrayList();
+        this.N = 3;
+        this.O = "";
+        this.X = new ArrayList();
+        this.Y = new HashMap();
+        this.Z = new HashMap();
+        this.a0 = new ArrayList();
+        this.b0 = new ArrayList();
+        this.c0 = new ArrayList();
+        this.d0 = new HashMap();
+        this.e0 = new LongSparseArray();
+        this.v = i10;
     }
 
-    public static class ColorWallpaper {
-        public int color;
-        public Bitmap defaultCache;
-        public int gradientColor1;
-        public int gradientColor2;
-        public int gradientColor3;
-        public int gradientRotation;
-        public float intensity;
-        public boolean isGradient;
-        public boolean motion;
-        public TLRPC.WallPaper parentWallpaper;
-        public File path;
-        public TLRPC.TL_wallPaper pattern;
-        public long patternId;
-        public String slug;
-
-        public String getHash() {
-            StringBuilder sb = new StringBuilder();
-            sb.append(String.valueOf(this.color));
-            sb.append(this.gradientColor1);
-            sb.append(this.gradientColor2);
-            sb.append(this.gradientColor3);
-            sb.append(this.gradientRotation);
-            sb.append(this.intensity);
-            String str = this.slug;
-            if (str == null) {
-                str = "";
-            }
-            sb.append(str);
-            return Utilities.MD5(sb.toString());
+    public static void U(WallpapersListActivity wallpapersListActivity) {
+        if (wallpapersListActivity.actionBar.t()) {
+            wallpapersListActivity.e0.clear();
+            wallpapersListActivity.actionBar.s();
+            wallpapersListActivity.D0();
         }
-
-        public ColorWallpaper(String str, int i, int i2, int i3) {
-            this.slug = str;
-            this.color = i | (-16777216);
-            int i4 = i2 == 0 ? 0 : (-16777216) | i2;
-            this.gradientColor1 = i4;
-            this.gradientRotation = i4 == 0 ? 0 : i3;
-            this.intensity = 1.0f;
-        }
-
-        public ColorWallpaper(String str, int i, int i2, int i3, int i4) {
-            this.slug = str;
-            this.color = i | (-16777216);
-            this.gradientColor1 = i2 == 0 ? 0 : i2 | (-16777216);
-            this.gradientColor2 = i3 == 0 ? 0 : i3 | (-16777216);
-            this.gradientColor3 = i4 != 0 ? i4 | (-16777216) : 0;
-            this.intensity = 1.0f;
-            this.isGradient = true;
-        }
-
-        public ColorWallpaper(String str, int i, int i2, int i3, int i4, int i5, float f, boolean z, File file) {
-            this.slug = str;
-            this.color = i | (-16777216);
-            int i6 = i2 == 0 ? 0 : i2 | (-16777216);
-            this.gradientColor1 = i6;
-            this.gradientColor2 = i3 == 0 ? 0 : i3 | (-16777216);
-            this.gradientColor3 = i4 != 0 ? i4 | (-16777216) : 0;
-            this.gradientRotation = i6 == 0 ? 45 : i5;
-            this.intensity = f;
-            this.path = file;
-            this.motion = z;
-        }
-
-        public String getUrl() {
-            int i = this.gradientColor1;
-            String lowerCase = i != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i >> 16)) & 255), Integer.valueOf(((byte) (this.gradientColor1 >> 8)) & 255), Byte.valueOf((byte) (this.gradientColor1 & NotificationCenter.didReceiveSmsCode))).toLowerCase() : null;
-            String lowerCase2 = String.format("%02x%02x%02x", Integer.valueOf(((byte) (this.color >> 16)) & 255), Integer.valueOf(((byte) (this.color >> 8)) & 255), Byte.valueOf((byte) (this.color & NotificationCenter.didReceiveSmsCode))).toLowerCase();
-            int i2 = this.gradientColor2;
-            String lowerCase3 = i2 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (this.gradientColor2 >> 8)) & 255), Byte.valueOf((byte) (this.gradientColor2 & NotificationCenter.didReceiveSmsCode))).toLowerCase() : null;
-            int i3 = this.gradientColor3;
-            String lowerCase4 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (this.gradientColor3 >> 8)) & 255), Byte.valueOf((byte) (this.gradientColor3 & NotificationCenter.didReceiveSmsCode))).toLowerCase() : null;
-            if (lowerCase == null || lowerCase3 == null) {
-                if (lowerCase != null) {
-                    String str = lowerCase2 + "-" + lowerCase;
-                    if (this.pattern != null) {
-                        lowerCase2 = str + "&rotation=" + AndroidUtilities.getWallpaperRotation(this.gradientRotation, true);
-                    } else {
-                        lowerCase2 = str + "?rotation=" + AndroidUtilities.getWallpaperRotation(this.gradientRotation, true);
-                    }
-                }
-            } else if (lowerCase4 != null) {
-                lowerCase2 = lowerCase2 + "~" + lowerCase + "~" + lowerCase3 + "~" + lowerCase4;
-            } else {
-                lowerCase2 = lowerCase2 + "~" + lowerCase + "~" + lowerCase3;
-            }
-            if (this.pattern != null) {
-                String str2 = "https://" + MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix + "/bg/" + this.pattern.slug + "?intensity=" + ((int) (this.intensity * 100.0f)) + "&bg_color=" + lowerCase2;
-                if (!this.motion) {
-                    return str2;
-                }
-                return str2 + "&mode=motion";
-            }
-            return "https://" + MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix + "/bg/" + lowerCase2;
-        }
+        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(wallpapersListActivity.getParentActivity(), 3, null);
+        wallpapersListActivity.L = b2Var;
+        b2Var.c0 = false;
+        b2Var.show();
+        ConnectionsManager.getInstance(wallpapersListActivity.currentAccount).sendRequest(new TL_account.resetWallPapers(), new n(wallpapersListActivity, 24));
     }
 
-    public static class FileWallpaper {
-        public File originalPath;
-        public File path;
-        public int resId;
-        public String slug;
-        public int thumbResId;
-
-        public FileWallpaper(String str, File file, File file2) {
-            this.slug = str;
-            this.path = file;
-            this.originalPath = file2;
-        }
-
-        public FileWallpaper(String str, int i, int i2) {
-            this.slug = str;
-            this.resId = i;
-            this.thumbResId = i2;
-        }
-    }
-
-    public WallpapersListActivity(int i) {
-        this(i, 0L);
-    }
-
-    public WallpapersListActivity(int i, long j) {
-        this.actionModeViews = new ArrayList();
-        this.columnsCount = 3;
-        this.selectedBackgroundSlug = "";
-        this.allWallPapers = new ArrayList();
-        this.allWallPapersDict = new HashMap();
-        this.localDict = new HashMap();
-        this.wallPapers = new ArrayList();
-        this.localWallPapers = new ArrayList();
-        this.patterns = new ArrayList();
-        this.patternsDict = new HashMap();
-        this.selectedWallPapers = new LongSparseArray();
-        this.currentType = i;
-        this.dialogId = j;
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onFragmentCreate() {
-        int i = this.currentType;
-        if (i == 0 || i == 2) {
-            NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.wallpapersDidLoad);
-            NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetNewWallpapper);
-            NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.wallpapersNeedReload);
-            getMessagesStorage().getWallpapers();
-        } else {
-            fillDefaultColors(this.wallPapers, Theme.isCurrentThemeDark());
-            if (this.currentType == 1 && this.patterns.isEmpty()) {
-                NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.wallpapersDidLoad);
-                getMessagesStorage().getWallpapers();
-            }
-        }
-        return super.onFragmentCreate();
-    }
-
-    public static void fillDefaultColors(ArrayList arrayList, boolean z) {
-        for (int[] iArr : z ? defaultColorsDark : defaultColorsLight) {
-            if (iArr.length == 1) {
-                arrayList.add(new ColorWallpaper("c", iArr[0], 0, 45));
-            } else {
-                arrayList.add(new ColorWallpaper("c", iArr[0], iArr[1], iArr[2], iArr[3]));
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onFragmentDestroy() {
-        int i = this.currentType;
-        if (i == 0 || i == 2) {
-            this.searchAdapter.onDestroy();
-            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.wallpapersDidLoad);
-            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.didSetNewWallpapper);
-            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.wallpapersNeedReload);
-        } else if (i == 1) {
-            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.wallpapersDidLoad);
-        }
-        this.updater.cleanup();
-        super.onFragmentDestroy();
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public View createView(Context context) {
-        int i = 1;
-        this.colorPaint = new Paint(1);
-        Paint paint = new Paint(1);
-        this.colorFramePaint = paint;
-        paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
-        this.colorFramePaint.setStyle(Paint.Style.STROKE);
-        this.colorFramePaint.setColor(855638016);
-        this.updater = new WallpaperUpdater(getParentActivity(), this, new 1());
-        this.hasOwnBackground = true;
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        int i2 = this.currentType;
-        if (i2 == 0) {
-            this.actionBar.setTitle(LocaleController.getString(R.string.ChatBackground));
-        } else if (i2 == 2) {
-            this.actionBar.setTitle("Channel Wallpaper");
-        } else if (i2 == 1) {
-            this.actionBar.setTitle(LocaleController.getString(R.string.SelectColorTitle));
-        }
-        this.actionBar.setActionBarMenuOnItemClick(new 2());
-        boolean z = false;
-        if (this.currentType == 0) {
-            ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, R.drawable.outline_header_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.WallpapersListActivity.3
-                @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
-                public void onSearchExpand() {
-                    WallpapersListActivity.this.listView.setAdapter(WallpapersListActivity.this.searchAdapter);
-                    WallpapersListActivity.this.listView.invalidate();
-                }
-
-                @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
-                public void onSearchCollapse() {
-                    WallpapersListActivity.this.listView.setAdapter(WallpapersListActivity.this.listAdapter);
-                    WallpapersListActivity.this.listView.invalidate();
-                    WallpapersListActivity.this.searchAdapter.processSearch(null, true);
-                    WallpapersListActivity.this.searchItem.setSearchFieldCaption(null);
-                    onCaptionCleared();
-                }
-
-                @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
-                public void onTextChanged(EditText editText) {
-                    WallpapersListActivity.this.searchAdapter.processSearch(editText.getText().toString(), false);
-                }
-
-                @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
-                public void onCaptionCleared() {
-                    WallpapersListActivity.this.searchAdapter.clearColor();
-                    WallpapersListActivity.this.searchItem.setSearchFieldHint(LocaleController.getString(R.string.SearchBackgrounds));
-                }
-            });
-            this.searchItem = actionBarMenuItemSearchListener;
-            actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString(R.string.SearchBackgrounds));
-            ActionBarMenu createActionMode = this.actionBar.createActionMode(false, null);
-            createActionMode.setBackgroundColor(Theme.getColor(Theme.key_actionBarDefault));
-            ActionBar actionBar = this.actionBar;
-            int i3 = Theme.key_actionBarDefaultIcon;
-            actionBar.setItemsColor(Theme.getColor(i3), true);
-            this.actionBar.setItemsBackgroundColor(Theme.getColor(Theme.key_actionBarDefaultSelector), true);
-            NumberTextView numberTextView = new NumberTextView(createActionMode.getContext());
-            this.selectedMessagesCountTextView = numberTextView;
-            numberTextView.setTextSize(18);
-            this.selectedMessagesCountTextView.setTypeface(AndroidUtilities.bold());
-            this.selectedMessagesCountTextView.setTextColor(Theme.getColor(i3));
-            this.selectedMessagesCountTextView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda0
-                @Override // android.view.View.OnTouchListener
-                public final boolean onTouch(View view, MotionEvent motionEvent) {
-                    return WallpapersListActivity.$r8$lambda$wfA44qyGaX_B4XNajFoxnQYt0RQ(view, motionEvent);
-                }
-            });
-            createActionMode.addView(this.selectedMessagesCountTextView, LayoutHelper.createLinear(0, -1, 1.0f, 65, 0, 0, 0));
-            this.actionModeViews.add(createActionMode.addItemWithWidth(3, R.drawable.msg_forward, AndroidUtilities.dp(54.0f), LocaleController.getString(R.string.Forward)));
-            this.actionModeViews.add(createActionMode.addItemWithWidth(4, R.drawable.msg_delete, AndroidUtilities.dp(54.0f), LocaleController.getString(R.string.Delete)));
-            this.selectedWallPapers.clear();
-        }
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        RecyclerListView recyclerListView = new RecyclerListView(context);
-        this.listView = recyclerListView;
-        recyclerListView.setSections();
-        this.actionBar.setAdaptiveBackground(this.listView);
-        RecyclerListView recyclerListView2 = this.listView;
-        int i4 = Theme.key_windowBackgroundGray;
-        recyclerListView2.setBackgroundColor(getThemedColor(i4));
-        this.listView.setClipToPadding(false);
-        this.listView.setHorizontalScrollBarEnabled(false);
-        this.listView.setVerticalScrollBarEnabled(false);
-        this.listView.setItemAnimator(null);
-        this.listView.setLayoutAnimation(null);
-        RecyclerListView recyclerListView3 = this.listView;
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, i, z) { // from class: org.telegram.ui.WallpapersListActivity.4
-            @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
-            public boolean supportsPredictiveItemAnimations() {
-                return false;
-            }
-        };
-        this.layoutManager = linearLayoutManager;
-        recyclerListView3.setLayoutManager(linearLayoutManager);
-        frameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1, 51));
-        RecyclerListView recyclerListView4 = this.listView;
-        ListAdapter listAdapter = new ListAdapter(context);
-        this.listAdapter = listAdapter;
-        recyclerListView4.setAdapter(listAdapter);
-        this.searchAdapter = new SearchAdapter(context);
-        this.listView.setGlowColor(Theme.getColor(Theme.key_avatar_backgroundActionBarBlue));
-        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda1
-            @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i5) {
-                WallpapersListActivity.$r8$lambda$_FEgVfGtf1hLJu7KHYnxW2pib9k(WallpapersListActivity.this, view, i5);
-            }
-        });
-        this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.WallpapersListActivity.5
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrollStateChanged(RecyclerView recyclerView, int i5) {
-                if (i5 == 1) {
-                    AndroidUtilities.hideKeyboard(WallpapersListActivity.this.getParentActivity().getCurrentFocus());
-                }
-                WallpapersListActivity.this.scrolling = i5 != 0;
-            }
-
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i5, int i6) {
-                if (WallpapersListActivity.this.listView.getAdapter() == WallpapersListActivity.this.searchAdapter) {
-                    int findFirstVisibleItemPosition = WallpapersListActivity.this.layoutManager.findFirstVisibleItemPosition();
-                    int abs = findFirstVisibleItemPosition == -1 ? 0 : Math.abs(WallpapersListActivity.this.layoutManager.findLastVisibleItemPosition() - findFirstVisibleItemPosition) + 1;
-                    if (abs > 0) {
-                        int itemCount = WallpapersListActivity.this.layoutManager.getItemCount();
-                        if (abs == 0 || findFirstVisibleItemPosition + abs <= itemCount - 2) {
-                            return;
-                        }
-                        WallpapersListActivity.this.searchAdapter.loadMoreResults();
-                    }
-                }
-            }
-        });
-        EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context);
-        this.searchEmptyView = emptyTextProgressView;
-        emptyTextProgressView.setVisibility(8);
-        this.searchEmptyView.setShowAtCenter(true);
-        this.searchEmptyView.setBackgroundColor(Theme.getColor(i4));
-        this.searchEmptyView.setText(LocaleController.getString(R.string.NoResult));
-        this.listView.setEmptyView(this.searchEmptyView);
-        frameLayout.addView(this.searchEmptyView, LayoutHelper.createFrame(-1, -1.0f));
-        updateRows();
-        return this.fragmentView;
-    }
-
-    class 1 implements WallpaperUpdater.WallpaperUpdaterDelegate {
-        @Override // org.telegram.ui.Components.WallpaperUpdater.WallpaperUpdaterDelegate
-        public void needOpenColorPicker() {
-        }
-
-        1() {
-        }
-
-        @Override // org.telegram.ui.Components.WallpaperUpdater.WallpaperUpdaterDelegate
-        public void didSelectWallpaper(File file, Bitmap bitmap, boolean z) {
-            ThemePreviewActivity themePreviewActivity = new ThemePreviewActivity(new FileWallpaper("", file, file), bitmap);
-            themePreviewActivity.setDialogId(WallpapersListActivity.this.dialogId);
-            if (WallpapersListActivity.this.dialogId != 0) {
-                themePreviewActivity.setDelegate(new ThemePreviewActivity.WallpaperActivityDelegate() { // from class: org.telegram.ui.WallpapersListActivity$1$$ExternalSyntheticLambda0
-                    @Override // org.telegram.ui.ThemePreviewActivity.WallpaperActivityDelegate
-                    public final void didSetNewBackground(TLRPC.WallPaper wallPaper) {
-                        WallpapersListActivity.this.removeSelfFromStack();
-                    }
-                });
-            }
-            WallpapersListActivity.this.presentFragment(themePreviewActivity, z);
-        }
-    }
-
-    class 2 extends ActionBar.ActionBarMenuOnItemClick {
-        2() {
-        }
-
-        @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
-        public void onItemClick(int i) {
-            if (i == -1) {
-                if (((BaseFragment) WallpapersListActivity.this).actionBar.isActionModeShowed()) {
-                    WallpapersListActivity.this.selectedWallPapers.clear();
-                    ((BaseFragment) WallpapersListActivity.this).actionBar.hideActionMode();
-                    WallpapersListActivity.this.updateRowsSelection();
-                    return;
-                }
-                WallpapersListActivity.this.finishFragment();
-                return;
-            }
-            if (i != 4) {
-                if (i == 3) {
-                    Bundle bundle = new Bundle();
-                    bundle.putBoolean("onlySelect", true);
-                    bundle.putInt("dialogsType", 3);
-                    DialogsActivity dialogsActivity = new DialogsActivity(bundle);
-                    dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.WallpapersListActivity$2$$ExternalSyntheticLambda1
-                        @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
-                        public /* synthetic */ boolean canSelectStories() {
-                            return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
-                        }
-
-                        @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
-                        public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, int i3, TopicsFragment topicsFragment) {
-                            return WallpapersListActivity.2.$r8$lambda$_ur62TRHQSp77Km64BUW0w3cEcg(WallpapersListActivity.2.this, dialogsActivity2, arrayList, charSequence, z, z2, i2, i3, topicsFragment);
-                        }
-
-                        @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
-                        public /* synthetic */ boolean didSelectStories(DialogsActivity dialogsActivity2) {
-                            return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
-                        }
-                    });
-                    WallpapersListActivity.this.presentFragment(dialogsActivity);
-                    return;
-                }
-                return;
-            }
-            if (WallpapersListActivity.this.getParentActivity() == null) {
-                return;
-            }
-            AlertDialog.Builder builder = new AlertDialog.Builder(WallpapersListActivity.this.getParentActivity());
-            builder.setTitle(LocaleController.formatPluralString("DeleteBackground", WallpapersListActivity.this.selectedWallPapers.size(), new Object[0]));
-            builder.setMessage(LocaleController.formatString("DeleteChatBackgroundsAlert", R.string.DeleteChatBackgroundsAlert, new Object[0]));
-            builder.setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.WallpapersListActivity$2$$ExternalSyntheticLambda0
-                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                public final void onClick(AlertDialog alertDialog, int i2) {
-                    WallpapersListActivity.2.$r8$lambda$1B7jWEpv3usY6_kIDMcq9V-HHkY(WallpapersListActivity.2.this, alertDialog, i2);
-                }
-            });
-            builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
-            AlertDialog create = builder.create();
-            WallpapersListActivity.this.showDialog(create);
-            TextView textView = (TextView) create.getButton(-1);
-            if (textView != null) {
-                textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
-            }
-        }
-
-        public static /* synthetic */ void $r8$lambda$1B7jWEpv3usY6_kIDMcq9V-HHkY(final 2 r10, AlertDialog alertDialog, int i) {
-            WallpapersListActivity.this.progressDialog = new AlertDialog(WallpapersListActivity.this.getParentActivity(), 3);
-            WallpapersListActivity.this.progressDialog.setCanCancel(false);
-            WallpapersListActivity.this.progressDialog.show();
-            new ArrayList();
-            final int[] iArr = {0};
-            for (int i2 = 0; i2 < WallpapersListActivity.this.selectedWallPapers.size(); i2++) {
-                Object valueAt = WallpapersListActivity.this.selectedWallPapers.valueAt(i2);
-                if (valueAt instanceof ColorWallpaper) {
-                    ColorWallpaper colorWallpaper = (ColorWallpaper) valueAt;
-                    TLRPC.WallPaper wallPaper = colorWallpaper.parentWallpaper;
-                    if (wallPaper == null || wallPaper.id >= 0) {
-                        valueAt = wallPaper;
-                    } else {
-                        WallpapersListActivity.this.getMessagesStorage().deleteWallpaper(colorWallpaper.parentWallpaper.id);
-                        WallpapersListActivity.this.localWallPapers.remove(colorWallpaper);
-                        WallpapersListActivity.this.localDict.remove(colorWallpaper.getHash());
-                    }
-                }
-                if (valueAt instanceof TLRPC.WallPaper) {
-                    iArr[0] = iArr[0] + 1;
-                    TLRPC.WallPaper wallPaper2 = (TLRPC.WallPaper) valueAt;
-                    TL_account.saveWallPaper savewallpaper = new TL_account.saveWallPaper();
-                    savewallpaper.settings = new TLRPC.TL_wallPaperSettings();
-                    savewallpaper.unsave = true;
-                    if (valueAt instanceof TLRPC.TL_wallPaperNoFile) {
-                        TLRPC.TL_inputWallPaperNoFile tL_inputWallPaperNoFile = new TLRPC.TL_inputWallPaperNoFile();
-                        tL_inputWallPaperNoFile.id = wallPaper2.id;
-                        savewallpaper.wallpaper = tL_inputWallPaperNoFile;
-                    } else {
-                        TLRPC.TL_inputWallPaper tL_inputWallPaper = new TLRPC.TL_inputWallPaper();
-                        tL_inputWallPaper.id = wallPaper2.id;
-                        tL_inputWallPaper.access_hash = wallPaper2.access_hash;
-                        savewallpaper.wallpaper = tL_inputWallPaper;
-                    }
-                    String str = wallPaper2.slug;
-                    if (str != null && str.equals(WallpapersListActivity.this.selectedBackgroundSlug)) {
-                        WallpapersListActivity.this.selectedBackgroundSlug = Theme.hasWallpaperFromTheme() ? "t" : "d";
-                        Theme.getActiveTheme().setOverrideWallpaper(null);
-                        Theme.reloadWallpaper(true);
-                    }
-                    ConnectionsManager.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendRequest(savewallpaper, new RequestDelegate() { // from class: org.telegram.ui.WallpapersListActivity$2$$ExternalSyntheticLambda2
-                        @Override // org.telegram.tgnet.RequestDelegate
-                        public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            WallpapersListActivity.2.$r8$lambda$7bcQSne_XncLXIUcqvemE0C7fis(WallpapersListActivity.2.this, iArr, tLObject, tL_error);
-                        }
-                    });
-                }
-            }
-            if (iArr[0] == 0) {
-                WallpapersListActivity.this.loadWallpapers(true);
-            }
-            WallpapersListActivity.this.selectedWallPapers.clear();
-            ((BaseFragment) WallpapersListActivity.this).actionBar.hideActionMode();
-            ((BaseFragment) WallpapersListActivity.this).actionBar.closeSearchField();
-        }
-
-        public static /* synthetic */ void $r8$lambda$7bcQSne_XncLXIUcqvemE0C7fis(final 2 r0, final int[] iArr, TLObject tLObject, TLRPC.TL_error tL_error) {
-            r0.getClass();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.WallpapersListActivity$2$$ExternalSyntheticLambda3
-                @Override // java.lang.Runnable
-                public final void run() {
-                    WallpapersListActivity.2.$r8$lambda$R7DTo3dz5xWdm0ymifJARzSBdC8(WallpapersListActivity.2.this, iArr);
-                }
-            });
-        }
-
-        public static /* synthetic */ void $r8$lambda$R7DTo3dz5xWdm0ymifJARzSBdC8(2 r3, int[] iArr) {
-            r3.getClass();
-            int i = iArr[0] - 1;
-            iArr[0] = i;
-            if (i == 0) {
-                WallpapersListActivity.this.loadWallpapers(true);
-            }
-        }
-
-        public static /* synthetic */ boolean $r8$lambda$_ur62TRHQSp77Km64BUW0w3cEcg(2 r22, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
-            String url;
-            StringBuilder sb = new StringBuilder();
-            for (int i3 = 0; i3 < WallpapersListActivity.this.selectedWallPapers.size(); i3++) {
-                Object valueAt = WallpapersListActivity.this.selectedWallPapers.valueAt(i3);
-                if (valueAt instanceof TLRPC.TL_wallPaper) {
-                    url = AndroidUtilities.getWallPaperUrl(valueAt);
-                } else if (valueAt instanceof ColorWallpaper) {
-                    url = ((ColorWallpaper) valueAt).getUrl();
-                }
-                if (!TextUtils.isEmpty(url)) {
-                    if (sb.length() > 0) {
-                        sb.append('\n');
-                    }
-                    sb.append(url);
-                }
-            }
-            WallpapersListActivity.this.selectedWallPapers.clear();
-            ((BaseFragment) WallpapersListActivity.this).actionBar.hideActionMode();
-            ((BaseFragment) WallpapersListActivity.this).actionBar.closeSearchField();
-            if (arrayList.size() > 1 || ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId == UserConfig.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).getClientUserId() || charSequence != null) {
-                WallpapersListActivity.this.updateRowsSelection();
-                for (int i4 = 0; i4 < arrayList.size(); i4++) {
-                    long j = ((MessagesStorage.TopicKey) arrayList.get(i4)).dialogId;
-                    if (charSequence != null) {
-                        SendMessagesHelper.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence.toString(), j, null, null, null, true, null, null, null, true, 0, 0, null, false));
-                    }
-                    if (!TextUtils.isEmpty(sb)) {
-                        SendMessagesHelper.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(sb.toString(), j, null, null, null, true, null, null, null, true, 0, 0, null, false));
-                    }
-                }
-                dialogsActivity.finishFragment();
-                return true;
-            }
-            long j2 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-            Bundle bundle = new Bundle();
-            bundle.putBoolean("scrollToTopOnResume", true);
-            if (DialogObject.isEncryptedDialog(j2)) {
-                bundle.putInt("enc_id", DialogObject.getEncryptedChatId(j2));
-            } else {
-                if (DialogObject.isUserDialog(j2)) {
-                    bundle.putLong("user_id", j2);
-                } else if (DialogObject.isChatDialog(j2)) {
-                    bundle.putLong("chat_id", -j2);
-                }
-                if (!MessagesController.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).checkCanOpenChat(bundle, dialogsActivity)) {
-                    return true;
-                }
-            }
-            NotificationCenter.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).postNotificationName(NotificationCenter.closeChats, new Object[0]);
-            WallpapersListActivity.this.presentFragment(new ChatActivity(bundle), true);
-            SendMessagesHelper.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(sb.toString(), j2, null, null, null, true, null, null, null, true, 0, 0, null, false));
-            return true;
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$_FEgVfGtf1hLJu7KHYnxW2pib9k(final WallpapersListActivity wallpapersListActivity, View view, int i) {
-        if (wallpapersListActivity.getParentActivity() == null || wallpapersListActivity.listView.getAdapter() == wallpapersListActivity.searchAdapter) {
+    public static void V(WallpapersListActivity wallpapersListActivity, int i10) {
+        if (wallpapersListActivity.getParentActivity() == null || wallpapersListActivity.D.getAdapter() == wallpapersListActivity.F) {
             return;
         }
-        if (i == wallpapersListActivity.uploadImageRow) {
-            wallpapersListActivity.updater.openGallery();
+        if (i10 == wallpapersListActivity.uploadImageRow) {
+            wallpapersListActivity.M.b();
             return;
         }
-        if (i == wallpapersListActivity.setColorRow) {
+        if (i10 == wallpapersListActivity.b) {
             WallpapersListActivity wallpapersListActivity2 = new WallpapersListActivity(1);
-            wallpapersListActivity2.patterns = wallpapersListActivity.patterns;
+            wallpapersListActivity2.c0 = wallpapersListActivity.c0;
             wallpapersListActivity.presentFragment(wallpapersListActivity2);
-        } else if (i == wallpapersListActivity.resetRow) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(wallpapersListActivity.getParentActivity());
-            builder.setTitle(LocaleController.getString(R.string.ResetChatBackgroundsAlertTitle));
-            builder.setMessage(LocaleController.getString(R.string.ResetChatBackgroundsAlert));
-            builder.setPositiveButton(LocaleController.getString(R.string.Reset), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda4
-                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                public final void onClick(AlertDialog alertDialog, int i2) {
-                    WallpapersListActivity.$r8$lambda$JlAJDvoRMyNONTBfaWEXLLIPrAk(WallpapersListActivity.this, alertDialog, i2);
-                }
-            });
-            builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
-            AlertDialog create = builder.create();
-            wallpapersListActivity.showDialog(create);
-            TextView textView = (TextView) create.getButton(-1);
+        } else if (i10 == wallpapersListActivity.h) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wallpapersListActivity.getParentActivity());
+            alertDialog$Builder.a.N = LocaleController.getString(R.string.ResetChatBackgroundsAlertTitle);
+            alertDialog$Builder.a.P = LocaleController.getString(R.string.ResetChatBackgroundsAlert);
+            alertDialog$Builder.k(LocaleController.getString(R.string.Reset), new qh1(wallpapersListActivity));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+            wallpapersListActivity.showDialog(b2Var);
+            TextView textView = (TextView) b2Var.d(-1);
             if (textView != null) {
-                textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
+                textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.q7, false));
             }
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$JlAJDvoRMyNONTBfaWEXLLIPrAk(final WallpapersListActivity wallpapersListActivity, AlertDialog alertDialog, int i) {
-        if (wallpapersListActivity.actionBar.isActionModeShowed()) {
-            wallpapersListActivity.selectedWallPapers.clear();
-            wallpapersListActivity.actionBar.hideActionMode();
-            wallpapersListActivity.updateRowsSelection();
-        }
-        AlertDialog alertDialog2 = new AlertDialog(wallpapersListActivity.getParentActivity(), 3);
-        wallpapersListActivity.progressDialog = alertDialog2;
-        alertDialog2.setCanCancel(false);
-        wallpapersListActivity.progressDialog.show();
-        ConnectionsManager.getInstance(wallpapersListActivity.currentAccount).sendRequest(new TL_account.resetWallPapers(), new RequestDelegate() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda6
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                WallpapersListActivity.$r8$lambda$plnluGjWCIUIIl9iDWFW-VAy0-Y(WallpapersListActivity.this, tLObject, tL_error);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$plnluGjWCIUIIl9iDWFW-VAy0-Y(final WallpapersListActivity wallpapersListActivity, TLObject tLObject, TLRPC.TL_error tL_error) {
-        wallpapersListActivity.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                WallpapersListActivity.this.loadWallpapers(false);
-            }
-        });
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onResume() {
-        TLRPC.WallPaper wallPaper;
-        super.onResume();
-        MessagesController.getGlobalMainSettings();
-        Theme.ThemeInfo activeTheme = Theme.getActiveTheme();
-        if (this.dialogId != 0) {
-            TLRPC.UserFull userFull = getMessagesController().getUserFull(this.dialogId);
-            if (userFull != null && (wallPaper = userFull.wallpaper) != null) {
-                String str = wallPaper.slug;
-                this.selectedBackgroundSlug = str;
-                if (str == null) {
-                    this.selectedBackgroundSlug = "";
+    public static void r0(WallpapersListActivity wallpapersListActivity, org.telegram.ui.Components.ti tiVar, Object obj, int i10) {
+        Object obj2 = obj;
+        LongSparseArray longSparseArray = wallpapersListActivity.e0;
+        boolean z10 = true;
+        if (wallpapersListActivity.actionBar.t()) {
+            Object obj3 = obj2 instanceof wh1 ? ((wh1) obj2).l : obj2;
+            if (obj3 instanceof TLRPC.WallPaper) {
+                TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) obj3;
+                if (longSparseArray.indexOfKey(wallPaper.id) >= 0) {
+                    longSparseArray.remove(wallPaper.id);
+                } else {
+                    longSparseArray.put(wallPaper.id, obj2);
                 }
-                TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-                if (wallPaperSettings != null) {
-                    this.selectedColor = wallPaperSettings.background_color;
-                    this.selectedGradientColor1 = wallPaperSettings.second_background_color;
-                    this.selectedGradientColor2 = wallPaperSettings.third_background_color;
-                    this.selectedGradientColor3 = wallPaperSettings.fourth_background_color;
-                    this.selectedGradientRotation = wallPaperSettings.rotation;
-                    this.selectedIntensity = wallPaperSettings.intensity;
-                    this.selectedBackgroundMotion = wallPaperSettings.motion;
-                    this.selectedBackgroundBlurred = wallPaperSettings.blur;
+                if (longSparseArray.size() == 0) {
+                    wallpapersListActivity.actionBar.s();
+                } else {
+                    wallpapersListActivity.I.a(longSparseArray.size(), true);
                 }
+                wallpapersListActivity.f0 = false;
+                tiVar.c(i10, longSparseArray.indexOfKey(wallPaper.id) >= 0, true);
+                return;
             }
-        } else {
-            Theme.OverrideWallpaperInfo overrideWallpaperInfo = activeTheme.overrideWallpaper;
-            if (overrideWallpaperInfo != null) {
-                String str2 = overrideWallpaperInfo.slug;
-                this.selectedBackgroundSlug = str2;
-                if (str2 == null) {
-                    this.selectedBackgroundSlug = "";
-                }
-                this.selectedColor = overrideWallpaperInfo.color;
-                this.selectedGradientColor1 = overrideWallpaperInfo.gradientColor1;
-                this.selectedGradientColor2 = overrideWallpaperInfo.gradientColor2;
-                this.selectedGradientColor3 = overrideWallpaperInfo.gradientColor3;
-                this.selectedGradientRotation = overrideWallpaperInfo.rotation;
-                this.selectedIntensity = overrideWallpaperInfo.intensity;
-                this.selectedBackgroundMotion = overrideWallpaperInfo.isMotion;
-                this.selectedBackgroundBlurred = overrideWallpaperInfo.isBlurred;
-            } else {
-                this.selectedBackgroundSlug = Theme.hasWallpaperFromTheme() ? "t" : "d";
-                this.selectedColor = 0;
-                this.selectedGradientColor1 = 0;
-                this.selectedGradientColor2 = 0;
-                this.selectedGradientColor3 = 0;
-                this.selectedGradientRotation = 45;
-                this.selectedIntensity = 1.0f;
-                this.selectedBackgroundMotion = false;
-                this.selectedBackgroundBlurred = false;
+            return;
+        }
+        boolean z11 = obj2 instanceof TLRPC.TL_wallPaper;
+        Bitmap bitmap = null;
+        String str = z11 ? ((TLRPC.TL_wallPaper) obj2).slug : obj2 instanceof wh1 ? ((wh1) obj2).a : obj2 instanceof xh1 ? ((xh1) obj2).a : null;
+        if (z11) {
+            TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) obj2;
+            if (tL_wallPaper.pattern) {
+                String str2 = tL_wallPaper.slug;
+                TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper.settings;
+                wh1 wh1Var = new wh1(str2, wallPaperSettings.background_color, wallPaperSettings.second_background_color, wallPaperSettings.third_background_color, wallPaperSettings.fourth_background_color, AndroidUtilities.getWallpaperRotation(wallPaperSettings.rotation, false), r1.intensity / 100.0f, tL_wallPaper.settings.motion, null);
+                wh1Var.g = tL_wallPaper;
+                wh1Var.l = tL_wallPaper;
+                obj2 = wh1Var;
             }
         }
-        fillWallpapersWithCustom();
-        fixLayout();
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        fixLayout();
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onActivityResultFragment(int i, int i2, Intent intent) {
-        this.updater.onActivityResult(i, i2, intent);
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void saveSelfArgs(Bundle bundle) {
-        String currentPicturePath = this.updater.getCurrentPicturePath();
-        if (currentPicturePath != null) {
-            bundle.putString("path", currentPicturePath);
+        org.telegram.ui.Components.oo ooVar = new org.telegram.ui.Components.oo(obj2, bitmap, z10, 4);
+        if (wallpapersListActivity.v == 1) {
+            ooVar.E1 = new qh1(wallpapersListActivity);
         }
+        if (wallpapersListActivity.O.equals(str)) {
+            boolean z12 = wallpapersListActivity.W;
+            boolean z13 = wallpapersListActivity.V;
+            float f10 = wallpapersListActivity.U;
+            ooVar.B1 = z12;
+            ooVar.A1 = z13;
+            ooVar.j1 = f10;
+        }
+        ooVar.Q0 = wallpapersListActivity.c0;
+        if (ooVar.b == 1 || (ooVar.x1 instanceof wh1)) {
+            ((wh1) ooVar.x1).getClass();
+        }
+        ooVar.c1(0L);
+        org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+        l2Var.a = true;
+        ooVar.a.a = wallpapersListActivity.resourceProvider;
+        l2Var.c = new tq0(7);
+        l2Var.e = true;
+        wallpapersListActivity.showAsSheet(ooVar, l2Var);
     }
 
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void restoreSelfArgs(Bundle bundle) {
-        this.updater.setCurrentPicturePath(bundle.getString("path"));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public boolean onItemLongClick(WallpaperCell wallpaperCell, Object obj, int i) {
-        int i2 = this.currentType;
-        if (i2 != 2 && i2 != 3) {
-            Object obj2 = obj instanceof ColorWallpaper ? ((ColorWallpaper) obj).parentWallpaper : obj;
-            if (!this.actionBar.isActionModeShowed() && getParentActivity() != null && (obj2 instanceof TLRPC.WallPaper)) {
-                AndroidUtilities.hideKeyboard(getParentActivity().getCurrentFocus());
-                this.selectedWallPapers.put(((TLRPC.WallPaper) obj2).id, obj);
-                this.selectedMessagesCountTextView.setNumber(1, false);
+    public static boolean s0(WallpapersListActivity wallpapersListActivity, org.telegram.ui.Components.ti tiVar, Object obj, int i10) {
+        ArrayList arrayList = wallpapersListActivity.K;
+        int i11 = wallpapersListActivity.v;
+        if (i11 != 2 && i11 != 3) {
+            Object obj2 = obj instanceof wh1 ? ((wh1) obj).l : obj;
+            if (!wallpapersListActivity.actionBar.t() && wallpapersListActivity.getParentActivity() != null && (obj2 instanceof TLRPC.WallPaper)) {
+                AndroidUtilities.hideKeyboard(wallpapersListActivity.getParentActivity().getCurrentFocus());
+                wallpapersListActivity.e0.put(((TLRPC.WallPaper) obj2).id, obj);
+                wallpapersListActivity.I.a(1, false);
                 AnimatorSet animatorSet = new AnimatorSet();
-                ArrayList arrayList = new ArrayList();
-                for (int i3 = 0; i3 < this.actionModeViews.size(); i3++) {
-                    View view = (View) this.actionModeViews.get(i3);
+                ArrayList arrayList2 = new ArrayList();
+                for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                    View view = (View) arrayList.get(i12);
                     AndroidUtilities.clearDrawableAnimation(view);
-                    arrayList.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.1f, 1.0f));
+                    arrayList2.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.1f, 1.0f));
                 }
-                animatorSet.playTogether(arrayList);
+                animatorSet.playTogether(arrayList2);
                 animatorSet.setDuration(250L);
                 animatorSet.start();
-                this.scrolling = false;
-                this.actionBar.showActionMode();
-                wallpaperCell.setChecked(i, true, true);
+                wallpapersListActivity.f0 = false;
+                wallpapersListActivity.actionBar.O(null, null);
+                tiVar.c(i10, true, true);
                 return true;
             }
         }
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00c7  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void onItemClick(WallpaperCell wallpaperCell, Object obj, int i) {
-        Object obj2;
-        ThemePreviewActivity themePreviewActivity;
-        if (this.actionBar.isActionModeShowed()) {
-            Object obj3 = obj instanceof ColorWallpaper ? ((ColorWallpaper) obj).parentWallpaper : obj;
-            if (obj3 instanceof TLRPC.WallPaper) {
-                TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) obj3;
-                if (this.selectedWallPapers.indexOfKey(wallPaper.id) >= 0) {
-                    this.selectedWallPapers.remove(wallPaper.id);
-                } else {
-                    this.selectedWallPapers.put(wallPaper.id, obj);
-                }
-                if (this.selectedWallPapers.size() == 0) {
-                    this.actionBar.hideActionMode();
-                } else {
-                    this.selectedMessagesCountTextView.setNumber(this.selectedWallPapers.size(), true);
-                }
-                this.scrolling = false;
-                wallpaperCell.setChecked(i, this.selectedWallPapers.indexOfKey(wallPaper.id) >= 0, true);
-                return;
+    public static void z0(ArrayList arrayList, boolean z10) {
+        for (int[] iArr : z10 ? h0 : g0) {
+            if (iArr.length == 1) {
+                arrayList.add(new wh1(iArr[0], 0, "c", 45));
+            } else {
+                arrayList.add(new wh1("c", iArr[0], iArr[1], iArr[2], iArr[3]));
             }
-            return;
-        }
-        String wallPaperSlug = getWallPaperSlug(obj);
-        if (obj instanceof TLRPC.TL_wallPaper) {
-            TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) obj;
-            if (tL_wallPaper.pattern) {
-                String str = tL_wallPaper.slug;
-                TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper.settings;
-                ColorWallpaper colorWallpaper = new ColorWallpaper(str, wallPaperSettings.background_color, wallPaperSettings.second_background_color, wallPaperSettings.third_background_color, wallPaperSettings.fourth_background_color, AndroidUtilities.getWallpaperRotation(wallPaperSettings.rotation, false), r0.intensity / 100.0f, tL_wallPaper.settings.motion, null);
-                colorWallpaper.pattern = tL_wallPaper;
-                colorWallpaper.parentWallpaper = tL_wallPaper;
-                obj2 = colorWallpaper;
-                themePreviewActivity = new ThemePreviewActivity(obj2, null, true, false) { // from class: org.telegram.ui.WallpapersListActivity.6
-                    @Override // org.telegram.ui.ThemePreviewActivity
-                    public boolean insideBottomSheet() {
-                        return true;
-                    }
-                };
-                if (this.currentType != 1 || this.dialogId != 0) {
-                    themePreviewActivity.setDelegate(new ThemePreviewActivity.WallpaperActivityDelegate() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda7
-                        @Override // org.telegram.ui.ThemePreviewActivity.WallpaperActivityDelegate
-                        public final void didSetNewBackground(TLRPC.WallPaper wallPaper2) {
-                            WallpapersListActivity.this.removeSelfFromStack();
-                        }
-                    });
-                }
-                if (this.selectedBackgroundSlug.equals(wallPaperSlug)) {
-                    themePreviewActivity.setInitialModes(this.selectedBackgroundBlurred, this.selectedBackgroundMotion, this.selectedIntensity);
-                }
-                themePreviewActivity.setPatterns(this.patterns);
-                themePreviewActivity.setDialogId(this.dialogId);
-                showAsSheet(themePreviewActivity);
-            }
-        }
-        obj2 = obj;
-        themePreviewActivity = new ThemePreviewActivity(obj2, null, true, false) { // from class: org.telegram.ui.WallpapersListActivity.6
-            @Override // org.telegram.ui.ThemePreviewActivity
-            public boolean insideBottomSheet() {
-                return true;
-            }
-        };
-        if (this.currentType != 1) {
-        }
-        themePreviewActivity.setDelegate(new ThemePreviewActivity.WallpaperActivityDelegate() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda7
-            @Override // org.telegram.ui.ThemePreviewActivity.WallpaperActivityDelegate
-            public final void didSetNewBackground(TLRPC.WallPaper wallPaper2) {
-                WallpapersListActivity.this.removeSelfFromStack();
-            }
-        });
-        if (this.selectedBackgroundSlug.equals(wallPaperSlug)) {
-        }
-        themePreviewActivity.setPatterns(this.patterns);
-        themePreviewActivity.setDialogId(this.dialogId);
-        showAsSheet(themePreviewActivity);
-    }
-
-    private void showAsSheet(ThemePreviewActivity themePreviewActivity) {
-        BaseFragment.BottomSheetParams bottomSheetParams = new BaseFragment.BottomSheetParams();
-        bottomSheetParams.transitionFromLeft = true;
-        bottomSheetParams.allowNestedScroll = false;
-        themePreviewActivity.setResourceProvider(this.resourceProvider);
-        bottomSheetParams.onOpenAnimationFinished = new Runnable() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda9
-            @Override // java.lang.Runnable
-            public final void run() {
-                PhotoViewer.getInstance().closePhoto(false, false);
-            }
-        };
-        bottomSheetParams.occupyNavigationBar = true;
-        showAsSheet(themePreviewActivity, bottomSheetParams);
-    }
-
-    private String getWallPaperSlug(Object obj) {
-        if (obj instanceof TLRPC.TL_wallPaper) {
-            return ((TLRPC.TL_wallPaper) obj).slug;
-        }
-        if (obj instanceof ColorWallpaper) {
-            return ((ColorWallpaper) obj).slug;
-        }
-        if (obj instanceof FileWallpaper) {
-            return ((FileWallpaper) obj).slug;
-        }
-        return null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void updateRowsSelection() {
-        int childCount = this.listView.getChildCount();
-        for (int i = 0; i < childCount; i++) {
-            View childAt = this.listView.getChildAt(i);
-            if (childAt instanceof WallpaperCell) {
-                WallpaperCell wallpaperCell = (WallpaperCell) childAt;
-                for (int i2 = 0; i2 < 5; i2++) {
-                    wallpaperCell.setChecked(i2, false, true);
-                }
-            }
-        }
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i, int i2, Object... objArr) {
-        ColorWallpaper colorWallpaper;
-        TLRPC.WallPaperSettings wallPaperSettings;
-        int i3;
-        boolean z;
-        TLRPC.WallPaperSettings wallPaperSettings2;
-        TLRPC.WallPaperSettings wallPaperSettings3;
-        if (i == NotificationCenter.wallpapersDidLoad) {
-            ArrayList arrayList = (ArrayList) objArr[0];
-            this.patterns.clear();
-            this.patternsDict.clear();
-            int i4 = this.currentType;
-            if (i4 != 1 && i4 != 2) {
-                this.wallPapers.clear();
-                this.localWallPapers.clear();
-                this.localDict.clear();
-                this.allWallPapers.clear();
-                this.allWallPapersDict.clear();
-                this.allWallPapers.addAll(arrayList);
-            }
-            int size = arrayList.size();
-            ArrayList arrayList2 = null;
-            for (int i5 = 0; i5 < size; i5++) {
-                TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) arrayList.get(i5);
-                if (!"fqv01SQemVIBAAAApND8LDRUhRU".equals(wallPaper.slug)) {
-                    if (wallPaper instanceof TLRPC.TL_wallPaper) {
-                        TLRPC.Document document = wallPaper.document;
-                        if (!(document instanceof TLRPC.TL_documentEmpty)) {
-                            if (wallPaper.pattern && document != null && !this.patternsDict.containsKey(Long.valueOf(document.id))) {
-                                this.patterns.add(wallPaper);
-                                this.patternsDict.put(Long.valueOf(wallPaper.document.id), wallPaper);
-                            }
-                            this.allWallPapersDict.put(wallPaper.slug, wallPaper);
-                            int i6 = this.currentType;
-                            if (i6 != 1 && ((!(z = wallPaper.pattern) || ((wallPaperSettings3 = wallPaper.settings) != null && wallPaperSettings3.background_color != 0)) && ((i6 != 2 || z) && (Theme.isCurrentThemeDark() || (wallPaperSettings2 = wallPaper.settings) == null || wallPaperSettings2.intensity >= 0)))) {
-                                this.wallPapers.add(wallPaper);
-                            }
-                        }
-                    }
-                    TLRPC.WallPaperSettings wallPaperSettings4 = wallPaper.settings;
-                    int i7 = wallPaperSettings4.background_color;
-                    if (i7 != 0) {
-                        int i8 = wallPaperSettings4.second_background_color;
-                        if (i8 != 0 && (i3 = wallPaperSettings4.third_background_color) != 0) {
-                            colorWallpaper = new ColorWallpaper(null, i7, i8, i3, wallPaperSettings4.fourth_background_color);
-                        } else {
-                            colorWallpaper = new ColorWallpaper(null, i7, i8, wallPaperSettings4.rotation);
-                        }
-                        colorWallpaper.slug = wallPaper.slug;
-                        TLRPC.WallPaperSettings wallPaperSettings5 = wallPaper.settings;
-                        colorWallpaper.intensity = wallPaperSettings5.intensity / 100.0f;
-                        colorWallpaper.gradientRotation = AndroidUtilities.getWallpaperRotation(wallPaperSettings5.rotation, false);
-                        colorWallpaper.parentWallpaper = wallPaper;
-                        if (wallPaper.id < 0) {
-                            String hash = colorWallpaper.getHash();
-                            if (this.localDict.containsKey(hash)) {
-                                if (arrayList2 == null) {
-                                    arrayList2 = new ArrayList();
-                                }
-                                arrayList2.add(wallPaper);
-                            } else {
-                                this.localWallPapers.add(colorWallpaper);
-                                this.localDict.put(hash, colorWallpaper);
-                            }
-                        }
-                        if (Theme.isCurrentThemeDark() || (wallPaperSettings = wallPaper.settings) == null || wallPaperSettings.intensity >= 0) {
-                            this.wallPapers.add(colorWallpaper);
-                        }
-                    }
-                }
-            }
-            if (arrayList2 != null) {
-                int size2 = arrayList2.size();
-                for (int i9 = 0; i9 < size2; i9++) {
-                    getMessagesStorage().deleteWallpaper(((TLRPC.WallPaper) arrayList2.get(i9)).id);
-                }
-            }
-            if (this.dialogId == 0) {
-                this.selectedBackgroundSlug = Theme.getSelectedBackgroundSlug();
-            }
-            fillWallpapersWithCustom();
-            loadWallpapers(false);
-            return;
-        }
-        if (i == NotificationCenter.didSetNewWallpapper) {
-            RecyclerListView recyclerListView = this.listView;
-            if (recyclerListView != null) {
-                recyclerListView.invalidateViews();
-            }
-            ActionBar actionBar = this.actionBar;
-            if (actionBar != null) {
-                actionBar.closeSearchField();
-                return;
-            }
-            return;
-        }
-        if (i == NotificationCenter.wallpapersNeedReload) {
-            getMessagesStorage().getWallpapers();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void loadWallpapers(final boolean z) {
-        long j = 0;
-        if (!z) {
-            int size = this.allWallPapers.size();
-            long j2 = 0;
-            for (int i = 0; i < size; i++) {
-                Object obj = this.allWallPapers.get(i);
-                if (obj instanceof TLRPC.WallPaper) {
-                    long j3 = ((TLRPC.WallPaper) obj).id;
-                    if (j3 >= 0) {
-                        j2 = MediaDataController.calcHash(j2, j3);
-                    }
-                }
-            }
-            j = j2;
-        }
-        TL_account.getWallPapers getwallpapers = new TL_account.getWallPapers();
-        getwallpapers.hash = j;
-        ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(getwallpapers, new RequestDelegate() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda2
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                WallpapersListActivity.$r8$lambda$7zYtv6K0xW92C4pSJLixru3o7-g(WallpapersListActivity.this, z, tLObject, tL_error);
-            }
-        }), this.classGuid);
-    }
-
-    public static /* synthetic */ void $r8$lambda$7zYtv6K0xW92C4pSJLixru3o7-g(final WallpapersListActivity wallpapersListActivity, final boolean z, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        wallpapersListActivity.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda5
-            @Override // java.lang.Runnable
-            public final void run() {
-                WallpapersListActivity.$r8$lambda$cjY_gCgr2yKcfIZuawwfbh97W9k(WallpapersListActivity.this, tLObject, z);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$cjY_gCgr2yKcfIZuawwfbh97W9k(WallpapersListActivity wallpapersListActivity, TLObject tLObject, boolean z) {
-        ColorWallpaper colorWallpaper;
-        int i;
-        TLRPC.WallPaperSettings wallPaperSettings;
-        boolean z2;
-        TLRPC.WallPaperSettings wallPaperSettings2;
-        TLRPC.WallPaperSettings wallPaperSettings3;
-        TLRPC.Document document;
-        wallpapersListActivity.getClass();
-        if (tLObject instanceof TL_account.TL_wallPapers) {
-            TL_account.TL_wallPapers tL_wallPapers = (TL_account.TL_wallPapers) tLObject;
-            wallpapersListActivity.patterns.clear();
-            wallpapersListActivity.patternsDict.clear();
-            int i2 = wallpapersListActivity.currentType;
-            if (i2 != 1 && i2 != 2) {
-                wallpapersListActivity.wallPapers.clear();
-                wallpapersListActivity.allWallPapersDict.clear();
-                wallpapersListActivity.allWallPapers.clear();
-                wallpapersListActivity.allWallPapers.addAll(tL_wallPapers.wallpapers);
-                wallpapersListActivity.wallPapers.addAll(wallpapersListActivity.localWallPapers);
-            }
-            int size = tL_wallPapers.wallpapers.size();
-            for (int i3 = 0; i3 < size; i3++) {
-                TLRPC.WallPaper wallPaper = tL_wallPapers.wallpapers.get(i3);
-                if (!"fqv01SQemVIBAAAApND8LDRUhRU".equals(wallPaper.slug)) {
-                    if ((wallPaper instanceof TLRPC.TL_wallPaper) && !(wallPaper.document instanceof TLRPC.TL_documentEmpty)) {
-                        wallpapersListActivity.allWallPapersDict.put(wallPaper.slug, wallPaper);
-                        if (wallPaper.pattern && (document = wallPaper.document) != null && !wallpapersListActivity.patternsDict.containsKey(Long.valueOf(document.id))) {
-                            wallpapersListActivity.patterns.add(wallPaper);
-                            wallpapersListActivity.patternsDict.put(Long.valueOf(wallPaper.document.id), wallPaper);
-                        }
-                        int i4 = wallpapersListActivity.currentType;
-                        if (i4 != 1 && ((!(z2 = wallPaper.pattern) || ((wallPaperSettings3 = wallPaper.settings) != null && wallPaperSettings3.background_color != 0)) && ((i4 != 2 || z2) && (Theme.isCurrentThemeDark() || (wallPaperSettings2 = wallPaper.settings) == null || wallPaperSettings2.intensity >= 0)))) {
-                            wallpapersListActivity.wallPapers.add(wallPaper);
-                        }
-                    } else if (wallPaper.settings.background_color != 0 && (Theme.isCurrentThemeDark() || (wallPaperSettings = wallPaper.settings) == null || wallPaperSettings.intensity >= 0)) {
-                        TLRPC.WallPaperSettings wallPaperSettings4 = wallPaper.settings;
-                        int i5 = wallPaperSettings4.second_background_color;
-                        if (i5 != 0 && (i = wallPaperSettings4.third_background_color) != 0) {
-                            colorWallpaper = new ColorWallpaper(null, wallPaperSettings4.background_color, i5, i, wallPaperSettings4.fourth_background_color);
-                        } else {
-                            colorWallpaper = new ColorWallpaper(null, wallPaperSettings4.background_color, i5, wallPaperSettings4.rotation);
-                        }
-                        colorWallpaper.slug = wallPaper.slug;
-                        TLRPC.WallPaperSettings wallPaperSettings5 = wallPaper.settings;
-                        colorWallpaper.intensity = wallPaperSettings5.intensity / 100.0f;
-                        colorWallpaper.gradientRotation = AndroidUtilities.getWallpaperRotation(wallPaperSettings5.rotation, false);
-                        colorWallpaper.parentWallpaper = wallPaper;
-                        wallpapersListActivity.wallPapers.add(colorWallpaper);
-                    }
-                }
-            }
-            wallpapersListActivity.fillWallpapersWithCustom();
-            wallpapersListActivity.getMessagesStorage().putWallpapers(tL_wallPapers.wallpapers, 1);
-        }
-        AlertDialog alertDialog = wallpapersListActivity.progressDialog;
-        if (alertDialog != null) {
-            alertDialog.dismiss();
-            if (z) {
-                return;
-            }
-            wallpapersListActivity.listView.smoothScrollToPosition(0);
         }
     }
 
@@ -1180,73 +250,76 @@ public class WallpapersListActivity extends BaseFragment implements Notification
     /* JADX WARN: Type inference failed for: r5v0 */
     /* JADX WARN: Type inference failed for: r5v1 */
     /* JADX WARN: Type inference failed for: r5v10, types: [org.telegram.tgnet.TLRPC$TL_wallPaper, org.telegram.tgnet.TLRPC$WallPaper] */
-    /* JADX WARN: Type inference failed for: r5v11, types: [org.telegram.ui.WallpapersListActivity$ColorWallpaper] */
-    private void fillWallpapersWithCustom() {
-        int i;
+    /* JADX WARN: Type inference failed for: r5v11, types: [org.telegram.ui.wh1] */
+    public final void A0() {
+        int i10;
+        HashMap hashMap;
         TLRPC.TL_wallPaper tL_wallPaper;
         final String str;
-        final long j;
+        final long j10;
         Object obj;
         TLRPC.TL_wallPaper tL_wallPaper2;
         TLRPC.WallPaper wallPaper;
-        int i2;
-        int i3;
-        int i4;
-        int i5;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
         String str2;
         TLRPC.TL_wallPaper tL_wallPaper3;
         Object obj2;
-        int i6 = this.currentType;
-        if (i6 == 0 || i6 == 2) {
+        int i15 = this.v;
+        if (i15 == 0 || i15 == 2) {
             MessagesController.getGlobalMainSettings();
-            ColorWallpaper colorWallpaper = this.addedColorWallpaper;
-            if (colorWallpaper != null) {
-                this.wallPapers.remove(colorWallpaper);
-                this.addedColorWallpaper = null;
+            wh1 wh1Var = this.y;
+            ArrayList arrayList = this.a0;
+            if (wh1Var != null) {
+                arrayList.remove(wh1Var);
+                this.y = null;
             }
-            FileWallpaper fileWallpaper = this.addedFileWallpaper;
-            if (fileWallpaper != null) {
-                this.wallPapers.remove(fileWallpaper);
-                this.addedFileWallpaper = null;
+            xh1 xh1Var = this.A;
+            if (xh1Var != null) {
+                arrayList.remove(xh1Var);
+                this.A = null;
             }
-            ColorWallpaper colorWallpaper2 = this.catsWallpaper;
-            if (colorWallpaper2 == null) {
-                ColorWallpaper colorWallpaper3 = new ColorWallpaper("d", -2368069, -9722489, -2762611, -7817084);
-                this.catsWallpaper = colorWallpaper3;
-                colorWallpaper3.intensity = 0.34f;
+            wh1 wh1Var2 = this.B;
+            if (wh1Var2 == null) {
+                wh1 wh1Var3 = new wh1("d", -2368069, -9722489, -2762611, -7817084);
+                this.B = wh1Var3;
+                wh1Var3.h = 0.34f;
             } else {
-                this.wallPapers.remove(colorWallpaper2);
+                arrayList.remove(wh1Var2);
             }
-            FileWallpaper fileWallpaper2 = this.themeWallpaper;
-            if (fileWallpaper2 != null) {
-                this.wallPapers.remove(fileWallpaper2);
+            xh1 xh1Var2 = this.C;
+            if (xh1Var2 != null) {
+                arrayList.remove(xh1Var2);
             }
-            int size = this.wallPapers.size();
+            int size = arrayList.size();
             while (true) {
-                if (i >= size) {
+                hashMap = this.Y;
+                if (i10 >= size) {
                     tL_wallPaper = 0;
                     break;
                 }
-                Object obj3 = this.wallPapers.get(i);
-                if (obj3 instanceof ColorWallpaper) {
-                    tL_wallPaper = (ColorWallpaper) obj3;
-                    String str3 = tL_wallPaper.slug;
+                Object obj3 = arrayList.get(i10);
+                if (obj3 instanceof wh1) {
+                    tL_wallPaper = (wh1) obj3;
+                    String str3 = tL_wallPaper.a;
                     if (str3 != null) {
-                        tL_wallPaper.pattern = (TLRPC.TL_wallPaper) this.allWallPapersDict.get(str3);
+                        tL_wallPaper.g = (TLRPC.TL_wallPaper) hashMap.get(str3);
                     }
-                    if (!"c".equals(tL_wallPaper.slug)) {
-                        String str4 = tL_wallPaper.slug;
-                        i = (str4 == null || TextUtils.equals(this.selectedBackgroundSlug, str4)) ? 0 : i + 1;
+                    if (!"c".equals(tL_wallPaper.a)) {
+                        String str4 = tL_wallPaper.a;
+                        i10 = (str4 == null || TextUtils.equals(this.O, str4)) ? 0 : i10 + 1;
                     }
-                    if (this.selectedColor == tL_wallPaper.color) {
-                        int i7 = this.selectedGradientColor1;
-                        if (i7 != tL_wallPaper.gradientColor1) {
+                    if (this.P == tL_wallPaper.b) {
+                        int i16 = this.Q;
+                        if (i16 != tL_wallPaper.c) {
                             continue;
-                        } else if (this.selectedGradientColor2 != tL_wallPaper.gradientColor2) {
+                        } else if (this.R != tL_wallPaper.d) {
                             continue;
-                        } else if (this.selectedGradientColor3 != tL_wallPaper.gradientColor3) {
+                        } else if (this.S != tL_wallPaper.e) {
                             continue;
-                        } else if (i7 == 0 || this.selectedGradientRotation == tL_wallPaper.gradientRotation) {
+                        } else if (i16 == 0 || this.T == tL_wallPaper.f) {
                             break;
                         }
                     } else {
@@ -1255,7 +328,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                 } else {
                     if (obj3 instanceof TLRPC.TL_wallPaper) {
                         tL_wallPaper = (TLRPC.TL_wallPaper) obj3;
-                        if (tL_wallPaper.settings != null && TextUtils.equals(this.selectedBackgroundSlug, tL_wallPaper.slug) && this.selectedColor == Theme.getWallpaperColor(tL_wallPaper.settings.background_color) && this.selectedGradientColor1 == Theme.getWallpaperColor(tL_wallPaper.settings.second_background_color) && this.selectedGradientColor2 == Theme.getWallpaperColor(tL_wallPaper.settings.third_background_color) && this.selectedGradientColor3 == Theme.getWallpaperColor(tL_wallPaper.settings.fourth_background_color) && ((this.selectedGradientColor1 == 0 || this.selectedGradientRotation == AndroidUtilities.getWallpaperRotation(tL_wallPaper.settings.rotation, false)) && Math.abs(Theme.getThemeIntensity(tL_wallPaper.settings.intensity / 100.0f) - this.selectedIntensity) <= 0.001f)) {
+                        if (tL_wallPaper.settings != null && TextUtils.equals(this.O, tL_wallPaper.slug) && this.P == org.telegram.ui.ActionBar.g6.X0(tL_wallPaper.settings.background_color) && this.Q == org.telegram.ui.ActionBar.g6.X0(tL_wallPaper.settings.second_background_color) && this.R == org.telegram.ui.ActionBar.g6.X0(tL_wallPaper.settings.third_background_color) && this.S == org.telegram.ui.ActionBar.g6.X0(tL_wallPaper.settings.fourth_background_color) && ((this.Q == 0 || this.T == AndroidUtilities.getWallpaperRotation(tL_wallPaper.settings.rotation, false)) && Math.abs(org.telegram.ui.ActionBar.g6.R0(tL_wallPaper.settings.intensity / 100.0f) - this.U) <= 0.001f)) {
                             break;
                         }
                     } else {
@@ -1265,793 +338,586 @@ public class WallpapersListActivity extends BaseFragment implements Notification
             }
             if (tL_wallPaper instanceof TLRPC.WallPaper) {
                 TLRPC.TL_wallPaper tL_wallPaper4 = tL_wallPaper;
-                Theme.OverrideWallpaperInfo overrideWallpaperInfo = Theme.getActiveTheme().overrideWallpaper;
+                org.telegram.ui.ActionBar.z5 z5Var = org.telegram.ui.ActionBar.g6.I.e0;
                 TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper4.settings;
-                if (wallPaperSettings == null || this.selectedColor != Theme.getWallpaperColor(wallPaperSettings.background_color) || this.selectedGradientColor1 != Theme.getWallpaperColor(tL_wallPaper4.settings.second_background_color) || this.selectedGradientColor2 != Theme.getWallpaperColor(tL_wallPaper4.settings.third_background_color) || this.selectedGradientColor3 != Theme.getWallpaperColor(tL_wallPaper4.settings.fourth_background_color) || (this.selectedGradientColor1 != 0 && this.selectedGradientColor2 == 0 && this.selectedGradientRotation != AndroidUtilities.getWallpaperRotation(tL_wallPaper4.settings.rotation, false) && Math.abs(Theme.getThemeIntensity(tL_wallPaper4.settings.intensity / 100.0f) - this.selectedIntensity) > 0.001f)) {
+                if (wallPaperSettings != null && this.P == org.telegram.ui.ActionBar.g6.X0(wallPaperSettings.background_color) && this.Q == org.telegram.ui.ActionBar.g6.X0(tL_wallPaper4.settings.second_background_color) && this.R == org.telegram.ui.ActionBar.g6.X0(tL_wallPaper4.settings.third_background_color) && this.S == org.telegram.ui.ActionBar.g6.X0(tL_wallPaper4.settings.fourth_background_color) && (this.Q == 0 || this.R != 0 || this.T == AndroidUtilities.getWallpaperRotation(tL_wallPaper4.settings.rotation, false) || Math.abs(org.telegram.ui.ActionBar.g6.R0(tL_wallPaper4.settings.intensity / 100.0f) - this.U) <= 0.001f)) {
+                    str2 = this.O;
+                    tL_wallPaper3 = null;
+                    obj2 = tL_wallPaper;
+                } else {
                     str2 = "";
                     tL_wallPaper3 = tL_wallPaper4;
                     obj2 = null;
-                } else {
-                    str2 = this.selectedBackgroundSlug;
-                    tL_wallPaper3 = null;
-                    obj2 = tL_wallPaper;
                 }
                 str = str2;
                 tL_wallPaper2 = tL_wallPaper3;
                 obj = obj2;
-                j = tL_wallPaper4.id;
+                j10 = tL_wallPaper4.id;
             } else {
-                str = this.selectedBackgroundSlug;
-                j = (!(tL_wallPaper instanceof ColorWallpaper) || (wallPaper = tL_wallPaper.parentWallpaper) == null) ? 0L : wallPaper.id;
+                str = this.O;
+                j10 = (!(tL_wallPaper instanceof wh1) || (wallPaper = tL_wallPaper.l) == null) ? 0L : wallPaper.id;
                 obj = tL_wallPaper;
                 tL_wallPaper2 = null;
             }
-            final boolean isDark = Theme.getCurrentTheme().isDark();
+            final boolean q6 = org.telegram.ui.ActionBar.g6.A0().q();
             try {
-                Collections.sort(this.wallPapers, new Comparator() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda3
+                Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.ph1
                     @Override // java.util.Comparator
                     public final int compare(Object obj4, Object obj5) {
-                        return WallpapersListActivity.$r8$lambda$X3yZjldfw-BnZ8wMqTasT2ktGL8(WallpapersListActivity.this, j, str, isDark, obj4, obj5);
+                        ArrayList arrayList2 = WallpapersListActivity.this.X;
+                        if (obj4 instanceof wh1) {
+                            obj4 = ((wh1) obj4).l;
+                        }
+                        if (obj5 instanceof wh1) {
+                            obj5 = ((wh1) obj5).l;
+                        }
+                        if (!(obj4 instanceof TLRPC.WallPaper) || !(obj5 instanceof TLRPC.WallPaper)) {
+                            return 0;
+                        }
+                        TLRPC.WallPaper wallPaper2 = (TLRPC.WallPaper) obj4;
+                        TLRPC.WallPaper wallPaper3 = (TLRPC.WallPaper) obj5;
+                        long j11 = j10;
+                        if (j11 == 0) {
+                            String str5 = wallPaper2.slug;
+                            String str6 = str;
+                            if (str6.equals(str5)) {
+                                return -1;
+                            }
+                            if (str6.equals(wallPaper3.slug)) {
+                                return 1;
+                            }
+                        } else {
+                            if (wallPaper2.id == j11) {
+                                return -1;
+                            }
+                            if (wallPaper3.id == j11) {
+                                return 1;
+                            }
+                        }
+                        boolean z10 = q6;
+                        if (!z10) {
+                            if ("qeZWES8rGVIEAAAARfWlK1lnfiI".equals(wallPaper2.slug)) {
+                                return -1;
+                            }
+                            if ("qeZWES8rGVIEAAAARfWlK1lnfiI".equals(wallPaper3.slug)) {
+                                return 1;
+                            }
+                        }
+                        int indexOf = arrayList2.indexOf(wallPaper2);
+                        int indexOf2 = arrayList2.indexOf(wallPaper3);
+                        boolean z11 = wallPaper2.dark;
+                        if (!(z11 && wallPaper3.dark) && (z11 || wallPaper3.dark)) {
+                            return (!z11 || wallPaper3.dark) ? z10 ? 1 : -1 : z10 ? -1 : 1;
+                        }
+                        if (indexOf > indexOf2) {
+                            return 1;
+                        }
+                        return indexOf < indexOf2 ? -1 : 0;
                     }
                 });
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e9) {
+                FileLog.e(e9);
             }
-            if (Theme.hasWallpaperFromTheme() && !Theme.isThemeWallpaperPublic()) {
-                if (this.themeWallpaper == null) {
-                    this.themeWallpaper = new FileWallpaper("t", -2, -2);
+            if (org.telegram.ui.ActionBar.g6.d1() && TextUtils.isEmpty(org.telegram.ui.ActionBar.g6.h0)) {
+                if (this.C == null) {
+                    xh1 xh1Var3 = new xh1();
+                    xh1Var3.a = "t";
+                    xh1Var3.b = -2;
+                    xh1Var3.c = -2;
+                    this.C = xh1Var3;
                 }
-                this.wallPapers.add(0, this.themeWallpaper);
+                arrayList.add(0, this.C);
             } else {
-                this.themeWallpaper = null;
+                this.C = null;
             }
-            Theme.ThemeInfo activeTheme = Theme.getActiveTheme();
-            if (TextUtils.isEmpty(this.selectedBackgroundSlug) || (!"d".equals(this.selectedBackgroundSlug) && obj == null)) {
-                if (!"c".equals(this.selectedBackgroundSlug) && (i3 = this.selectedColor) != 0) {
-                    if (activeTheme.overrideWallpaper != null) {
-                        ColorWallpaper colorWallpaper4 = new ColorWallpaper(this.selectedBackgroundSlug, i3, this.selectedGradientColor1, this.selectedGradientColor2, this.selectedGradientColor3, this.selectedGradientRotation, this.selectedIntensity, this.selectedBackgroundMotion, new File(ApplicationLoader.getFilesDirFixed(), activeTheme.overrideWallpaper.fileName));
-                        this.addedColorWallpaper = colorWallpaper4;
-                        colorWallpaper4.pattern = tL_wallPaper2;
-                        this.wallPapers.add(0, colorWallpaper4);
-                    }
-                } else {
-                    int i8 = this.selectedColor;
-                    if (i8 != 0) {
-                        int i9 = this.selectedGradientColor1;
-                        if (i9 != 0 && (i2 = this.selectedGradientColor2) != 0) {
-                            ColorWallpaper colorWallpaper5 = new ColorWallpaper(this.selectedBackgroundSlug, i8, i9, i2, this.selectedGradientColor3);
-                            this.addedColorWallpaper = colorWallpaper5;
-                            colorWallpaper5.gradientRotation = this.selectedGradientRotation;
+            org.telegram.ui.ActionBar.f6 f6Var = org.telegram.ui.ActionBar.g6.I;
+            if (TextUtils.isEmpty(this.O) || (!"d".equals(this.O) && obj == null)) {
+                if ("c".equals(this.O) || (i12 = this.P) == 0) {
+                    int i17 = this.P;
+                    if (i17 != 0) {
+                        int i18 = this.Q;
+                        if (i18 == 0 || (i11 = this.R) == 0) {
+                            this.y = new wh1(i17, i18, this.O, this.T);
                         } else {
-                            this.addedColorWallpaper = new ColorWallpaper(this.selectedBackgroundSlug, i8, i9, this.selectedGradientRotation);
+                            wh1 wh1Var4 = new wh1(this.O, i17, i18, i11, this.S);
+                            this.y = wh1Var4;
+                            wh1Var4.f = this.T;
                         }
-                        this.wallPapers.add(0, this.addedColorWallpaper);
-                    } else if (activeTheme.overrideWallpaper != null && !this.allWallPapersDict.containsKey(this.selectedBackgroundSlug)) {
-                        FileWallpaper fileWallpaper3 = new FileWallpaper(this.selectedBackgroundSlug, new File(ApplicationLoader.getFilesDirFixed(), activeTheme.overrideWallpaper.fileName), new File(ApplicationLoader.getFilesDirFixed(), activeTheme.overrideWallpaper.originalFileName));
-                        this.addedFileWallpaper = fileWallpaper3;
-                        this.wallPapers.add(this.themeWallpaper != null ? 1 : 0, fileWallpaper3);
+                        arrayList.add(0, this.y);
+                    } else if (f6Var.e0 != null && !hashMap.containsKey(this.O)) {
+                        xh1 xh1Var4 = new xh1(new File(ApplicationLoader.getFilesDirFixed(), f6Var.e0.a), new File(ApplicationLoader.getFilesDirFixed(), f6Var.e0.b), this.O);
+                        this.A = xh1Var4;
+                        arrayList.add(this.C != null ? 1 : 0, xh1Var4);
                     }
+                } else if (f6Var.e0 != null) {
+                    wh1 wh1Var5 = new wh1(this.O, i12, this.Q, this.R, this.S, this.T, this.U, this.V, new File(ApplicationLoader.getFilesDirFixed(), f6Var.e0.a));
+                    this.y = wh1Var5;
+                    wh1Var5.g = tL_wallPaper2;
+                    arrayList.add(0, wh1Var5);
                 }
-            } else if (obj == null && this.selectedColor != 0 && "c".equals(this.selectedBackgroundSlug)) {
-                int i10 = this.selectedGradientColor1;
-                if (i10 != 0 && (i4 = this.selectedGradientColor2) != 0 && (i5 = this.selectedGradientColor3) != 0) {
-                    ColorWallpaper colorWallpaper6 = new ColorWallpaper(this.selectedBackgroundSlug, this.selectedColor, i10, i4, i5);
-                    this.addedColorWallpaper = colorWallpaper6;
-                    colorWallpaper6.gradientRotation = this.selectedGradientRotation;
+            } else if (obj == null && this.P != 0 && "c".equals(this.O)) {
+                int i19 = this.Q;
+                if (i19 == 0 || (i13 = this.R) == 0 || (i14 = this.S) == 0) {
+                    this.y = new wh1(this.P, i19, this.O, this.T);
                 } else {
-                    this.addedColorWallpaper = new ColorWallpaper(this.selectedBackgroundSlug, this.selectedColor, i10, this.selectedGradientRotation);
+                    wh1 wh1Var6 = new wh1(this.O, this.P, i19, i13, i14);
+                    this.y = wh1Var6;
+                    wh1Var6.f = this.T;
                 }
-                this.wallPapers.add(0, this.addedColorWallpaper);
+                arrayList.add(0, this.y);
             }
-            if ("d".equals(this.selectedBackgroundSlug) || this.wallPapers.isEmpty()) {
-                this.wallPapers.add(0, this.catsWallpaper);
+            if ("d".equals(this.O) || arrayList.isEmpty()) {
+                arrayList.add(0, this.B);
             } else {
-                this.wallPapers.add(1, this.catsWallpaper);
+                arrayList.add(1, this.B);
             }
-            updateRows();
+            C0();
         }
     }
 
-    public static /* synthetic */ int $r8$lambda$X3yZjldfw-BnZ8wMqTasT2ktGL8(WallpapersListActivity wallpapersListActivity, long j, String str, boolean z, Object obj, Object obj2) {
-        wallpapersListActivity.getClass();
-        if (obj instanceof ColorWallpaper) {
-            obj = ((ColorWallpaper) obj).parentWallpaper;
-        }
-        if (obj2 instanceof ColorWallpaper) {
-            obj2 = ((ColorWallpaper) obj2).parentWallpaper;
-        }
-        if (!(obj instanceof TLRPC.WallPaper) || !(obj2 instanceof TLRPC.WallPaper)) {
-            return 0;
-        }
-        TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) obj;
-        TLRPC.WallPaper wallPaper2 = (TLRPC.WallPaper) obj2;
-        if (j != 0) {
-            if (wallPaper.id == j) {
-                return -1;
-            }
-            if (wallPaper2.id == j) {
-                return 1;
-            }
-        } else {
-            if (str.equals(wallPaper.slug)) {
-                return -1;
-            }
-            if (str.equals(wallPaper2.slug)) {
-                return 1;
-            }
-        }
-        if (!z) {
-            if ("qeZWES8rGVIEAAAARfWlK1lnfiI".equals(wallPaper.slug)) {
-                return -1;
-            }
-            if ("qeZWES8rGVIEAAAARfWlK1lnfiI".equals(wallPaper2.slug)) {
-                return 1;
-            }
-        }
-        int indexOf = wallpapersListActivity.allWallPapers.indexOf(wallPaper);
-        int indexOf2 = wallpapersListActivity.allWallPapers.indexOf(wallPaper2);
-        boolean z2 = wallPaper.dark;
-        if (!(z2 && wallPaper2.dark) && (z2 || wallPaper2.dark)) {
-            return (!z2 || wallPaper2.dark) ? z ? 1 : -1 : z ? -1 : 1;
-        }
-        if (indexOf > indexOf2) {
-            return 1;
-        }
-        return indexOf < indexOf2 ? -1 : 0;
-    }
-
-    private void updateRows() {
-        this.rowCount = 0;
-        int i = this.currentType;
-        if (i == 0) {
-            this.uploadImageRow = 0;
-            this.setColorRow = 1;
-            this.rowCount = 3;
-            this.sectionRow = 2;
-            this.galleryRow = -1;
-            this.galleryHintRow = -1;
-        } else if (i == 2) {
-            this.uploadImageRow = -1;
-            this.setColorRow = -1;
-            this.sectionRow = -1;
-            this.galleryRow = 0;
-            this.rowCount = 2;
-            this.galleryHintRow = 1;
-        } else {
-            this.uploadImageRow = -1;
-            this.setColorRow = -1;
-            this.sectionRow = -1;
-            this.galleryRow = -1;
-            this.galleryHintRow = -1;
-        }
-        if (!this.wallPapers.isEmpty()) {
-            int ceil = (int) Math.ceil(this.wallPapers.size() / this.columnsCount);
-            this.totalWallpaperRows = ceil;
-            int i2 = this.rowCount;
-            this.wallPaperStartRow = i2;
-            this.rowCount = i2 + ceil;
-        } else {
-            this.wallPaperStartRow = -1;
-        }
-        if (this.currentType == 0) {
-            int i3 = this.rowCount;
-            this.resetSectionRow = i3;
-            this.resetRow = i3 + 1;
-            this.rowCount = i3 + 3;
-            this.resetInfoRow = i3 + 2;
-        } else {
-            this.resetSectionRow = -1;
-            this.resetRow = -1;
-            this.resetInfoRow = -1;
-        }
-        ListAdapter listAdapter = this.listAdapter;
-        if (listAdapter != null) {
-            this.scrolling = true;
-            listAdapter.notifyDataSetChanged();
-        }
-    }
-
-    private void fixLayout() {
-        RecyclerListView recyclerListView = this.listView;
-        if (recyclerListView != null) {
-            recyclerListView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.WallpapersListActivity.7
-                @Override // android.view.ViewTreeObserver.OnPreDrawListener
-                public boolean onPreDraw() {
-                    WallpapersListActivity.this.fixLayoutInternal();
-                    if (WallpapersListActivity.this.listView == null) {
-                        return true;
+    public final void B0(boolean z10) {
+        long j10 = 0;
+        if (!z10) {
+            ArrayList arrayList = this.X;
+            int size = arrayList.size();
+            long j11 = 0;
+            for (int i10 = 0; i10 < size; i10++) {
+                Object obj = arrayList.get(i10);
+                if (obj instanceof TLRPC.WallPaper) {
+                    long j12 = ((TLRPC.WallPaper) obj).id;
+                    if (j12 >= 0) {
+                        j11 = MediaDataController.calcHash(j11, j12);
                     }
-                    WallpapersListActivity.this.listView.getViewTreeObserver().removeOnPreDrawListener(this);
-                    return true;
                 }
-            });
+            }
+            j10 = j11;
+        }
+        TL_account.getWallPapers getwallpapers = new TL_account.getWallPapers();
+        getwallpapers.hash = j10;
+        ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(getwallpapers, new lh.n3(13, this, z10)), this.classGuid);
+    }
+
+    public final void C0() {
+        this.a = 0;
+        int i10 = this.v;
+        if (i10 == 0) {
+            this.uploadImageRow = 0;
+            this.b = 1;
+            this.a = 3;
+            this.c = 2;
+            this.r = -1;
+            this.s = -1;
+        } else if (i10 == 2) {
+            this.uploadImageRow = -1;
+            this.b = -1;
+            this.c = -1;
+            this.r = 0;
+            this.a = 2;
+            this.s = 1;
+        } else {
+            this.uploadImageRow = -1;
+            this.b = -1;
+            this.c = -1;
+            this.r = -1;
+            this.s = -1;
+        }
+        if (this.a0.isEmpty()) {
+            this.d = -1;
+        } else {
+            int ceil = (int) Math.ceil(r0.size() / this.N);
+            this.e = ceil;
+            int i11 = this.a;
+            this.d = i11;
+            this.a = i11 + ceil;
+        }
+        if (i10 == 0) {
+            int i12 = this.a;
+            this.f = i12;
+            this.h = i12 + 1;
+            this.a = i12 + 3;
+            this.n = i12 + 2;
+        } else {
+            this.f = -1;
+            this.h = -1;
+            this.n = -1;
+        }
+        yh1 yh1Var = this.E;
+        if (yh1Var != null) {
+            this.f0 = true;
+            yh1Var.l();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void fixLayoutInternal() {
-        if (getParentActivity() == null) {
+    public final void D0() {
+        int childCount = this.D.getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = this.D.getChildAt(i10);
+            if (childAt instanceof org.telegram.ui.Cells.wa) {
+                org.telegram.ui.Cells.wa waVar = (org.telegram.ui.Cells.wa) childAt;
+                for (int i11 = 0; i11 < 5; i11++) {
+                    waVar.c(i11, false, true);
+                }
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        int i10 = 1;
+        this.w = new Paint(1);
+        Paint paint = new Paint(1);
+        this.x = paint;
+        paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        this.x.setStyle(Paint.Style.STROKE);
+        this.x.setColor(855638016);
+        this.M = new org.telegram.ui.Components.w71(getParentActivity(), this, new rh1(this));
+        this.hasOwnBackground = true;
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        int i11 = this.v;
+        if (i11 == 0) {
+            this.actionBar.setTitle(LocaleController.getString(R.string.ChatBackground));
+        } else if (i11 == 2) {
+            this.actionBar.setTitle("Channel Wallpaper");
+        } else if (i11 == 1) {
+            this.actionBar.setTitle(LocaleController.getString(R.string.SelectColorTitle));
+        }
+        this.actionBar.setActionBarMenuOnItemClick(new th1(this));
+        boolean z10 = false;
+        if (i11 == 0) {
+            org.telegram.ui.ActionBar.v0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
+            a2.F();
+            a2.D = new uh1(this);
+            this.H = a2;
+            a2.setSearchFieldHint(LocaleController.getString(R.string.SearchBackgrounds));
+            org.telegram.ui.ActionBar.z j10 = this.actionBar.j(null);
+            j10.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.s8, false));
+            org.telegram.ui.ActionBar.k kVar = this.actionBar;
+            int i12 = org.telegram.ui.ActionBar.g6.v8;
+            kVar.D(org.telegram.ui.ActionBar.g6.w0(null, i12, false), true);
+            this.actionBar.C(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.t8, false), true);
+            NumberTextView numberTextView = new NumberTextView(j10.getContext());
+            this.I = numberTextView;
+            numberTextView.setTextSize(18);
+            this.I.setTypeface(AndroidUtilities.bold());
+            this.I.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, i12, false));
+            this.I.setOnTouchListener(new xd1(1));
+            j10.addView(this.I, h7.z5.m(1.0f, 0, -1, 65, 0, 0));
+            org.telegram.ui.ActionBar.v0 h = j10.h(3, R.drawable.msg_forward, LocaleController.getString(R.string.Forward), AndroidUtilities.dp(54.0f));
+            ArrayList arrayList = this.K;
+            arrayList.add(h);
+            arrayList.add(j10.h(4, R.drawable.msg_delete, LocaleController.getString(R.string.Delete), AndroidUtilities.dp(54.0f)));
+            this.e0.clear();
+        }
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.fragmentView = frameLayout;
+        org.telegram.ui.Components.zk0 zk0Var = new org.telegram.ui.Components.zk0(context, null);
+        this.D = zk0Var;
+        zk0Var.p1();
+        this.actionBar.setAdaptiveBackground(this.D);
+        org.telegram.ui.Components.zk0 zk0Var2 = this.D;
+        int i13 = org.telegram.ui.ActionBar.g6.a7;
+        zk0Var2.setBackgroundColor(getThemedColor(i13));
+        this.D.setClipToPadding(false);
+        this.D.setHorizontalScrollBarEnabled(false);
+        this.D.setVerticalScrollBarEnabled(false);
+        this.D.setItemAnimator(null);
+        this.D.setLayoutAnimation(null);
+        org.telegram.ui.Components.zk0 zk0Var3 = this.D;
+        j jVar = new j(i10, z10, 17);
+        this.G = jVar;
+        zk0Var3.setLayoutManager(jVar);
+        frameLayout.addView(this.D, h7.z5.e(-1, -1, 51));
+        org.telegram.ui.Components.zk0 zk0Var4 = this.D;
+        yh1 yh1Var = new yh1(this, context);
+        this.E = yh1Var;
+        zk0Var4.setAdapter(yh1Var);
+        this.F = new ai1(this, context);
+        this.D.setGlowColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.e8, false));
+        this.D.setOnItemClickListener(new b21(this, 11));
+        this.D.setOnScrollListener(new ib1(this, 4));
+        org.telegram.ui.Components.az azVar = new org.telegram.ui.Components.az(context, null);
+        this.J = azVar;
+        azVar.setVisibility(8);
+        this.J.setShowAtCenter(true);
+        this.J.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(null, i13, false));
+        this.J.setText(LocaleController.getString(R.string.NoResult));
+        this.D.setEmptyView(this.J);
+        frameLayout.addView(this.J, h7.z5.c(-1.0f, -1));
+        C0();
+        return this.fragmentView;
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12;
+        ArrayList arrayList;
+        wh1 wh1Var;
+        HashMap hashMap;
+        TLRPC.WallPaperSettings wallPaperSettings;
+        int i13;
+        boolean z10;
+        TLRPC.WallPaperSettings wallPaperSettings2;
+        TLRPC.WallPaperSettings wallPaperSettings3;
+        int i14 = 1;
+        if (i10 != NotificationCenter.wallpapersDidLoad) {
+            if (i10 != NotificationCenter.didSetNewWallpapper) {
+                if (i10 == NotificationCenter.wallpapersNeedReload) {
+                    getMessagesStorage().getWallpapers();
+                    return;
+                }
+                return;
+            }
+            org.telegram.ui.Components.zk0 zk0Var = this.D;
+            if (zk0Var != null) {
+                zk0Var.f1();
+            }
+            org.telegram.ui.ActionBar.k kVar = this.actionBar;
+            if (kVar != null) {
+                kVar.h(true);
+                return;
+            }
             return;
         }
-        int rotation = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-        if (AndroidUtilities.isTablet()) {
-            this.columnsCount = 3;
-        } else if (rotation == 3 || rotation == 1) {
-            this.columnsCount = 5;
-        } else {
-            this.columnsCount = 3;
+        ArrayList arrayList2 = (ArrayList) objArr[0];
+        this.c0.clear();
+        HashMap hashMap2 = this.d0;
+        hashMap2.clear();
+        HashMap hashMap3 = this.Y;
+        ArrayList arrayList3 = this.b0;
+        int i15 = this.v;
+        HashMap hashMap4 = this.Z;
+        ArrayList arrayList4 = this.a0;
+        if (i15 != 1 && i15 != 2) {
+            arrayList4.clear();
+            arrayList3.clear();
+            hashMap4.clear();
+            ArrayList arrayList5 = this.X;
+            arrayList5.clear();
+            hashMap3.clear();
+            arrayList5.addAll(arrayList2);
         }
-        updateRows();
+        int size = arrayList2.size();
+        int i16 = 0;
+        ArrayList arrayList6 = null;
+        while (i16 < size) {
+            TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) arrayList2.get(i16);
+            if ("fqv01SQemVIBAAAApND8LDRUhRU".equals(wallPaper.slug)) {
+                arrayList = arrayList2;
+                hashMap = hashMap2;
+                i12 = i15;
+            } else {
+                if (wallPaper instanceof TLRPC.TL_wallPaper) {
+                    TLRPC.Document document = wallPaper.document;
+                    if (!(document instanceof TLRPC.TL_documentEmpty)) {
+                        if (!wallPaper.pattern || document == null) {
+                            i12 = i15;
+                        } else {
+                            i12 = i15;
+                            if (!hashMap2.containsKey(Long.valueOf(document.id))) {
+                                this.c0.add(wallPaper);
+                                hashMap2.put(Long.valueOf(wallPaper.document.id), wallPaper);
+                            }
+                        }
+                        hashMap3.put(wallPaper.slug, wallPaper);
+                        if (i12 != i14 && ((!(z10 = wallPaper.pattern) || ((wallPaperSettings3 = wallPaper.settings) != null && wallPaperSettings3.background_color != 0)) && ((i12 != 2 || z10) && (org.telegram.ui.ActionBar.g6.I.q() || (wallPaperSettings2 = wallPaper.settings) == null || wallPaperSettings2.intensity >= 0)))) {
+                            arrayList4.add(wallPaper);
+                        }
+                        arrayList = arrayList2;
+                        hashMap = hashMap2;
+                    }
+                }
+                i12 = i15;
+                TLRPC.WallPaperSettings wallPaperSettings4 = wallPaper.settings;
+                int i17 = wallPaperSettings4.background_color;
+                if (i17 != 0) {
+                    int i18 = wallPaperSettings4.second_background_color;
+                    if (i18 == 0 || (i13 = wallPaperSettings4.third_background_color) == 0) {
+                        arrayList = arrayList2;
+                        hashMap = hashMap2;
+                        wh1Var = new wh1(i17, i18, null, wallPaperSettings4.rotation);
+                    } else {
+                        arrayList = arrayList2;
+                        wh1Var = new wh1(null, i17, i18, i13, wallPaperSettings4.fourth_background_color);
+                        hashMap = hashMap2;
+                    }
+                    wh1Var.a = wallPaper.slug;
+                    wh1Var.h = wallPaperSettings4.intensity / 100.0f;
+                    wh1Var.f = AndroidUtilities.getWallpaperRotation(wallPaperSettings4.rotation, false);
+                    wh1Var.l = wallPaper;
+                    if (wallPaper.id < 0) {
+                        String a2 = wh1Var.a();
+                        if (hashMap4.containsKey(a2)) {
+                            if (arrayList6 == null) {
+                                arrayList6 = new ArrayList();
+                            }
+                            arrayList6.add(wallPaper);
+                            i16++;
+                            i15 = i12;
+                            hashMap2 = hashMap;
+                            arrayList2 = arrayList;
+                            i14 = 1;
+                        } else {
+                            arrayList3.add(wh1Var);
+                            hashMap4.put(a2, wh1Var);
+                        }
+                    }
+                    if (org.telegram.ui.ActionBar.g6.I.q() || (wallPaperSettings = wallPaper.settings) == null || wallPaperSettings.intensity >= 0) {
+                        arrayList4.add(wh1Var);
+                    }
+                    i16++;
+                    i15 = i12;
+                    hashMap2 = hashMap;
+                    arrayList2 = arrayList;
+                    i14 = 1;
+                }
+                arrayList = arrayList2;
+                hashMap = hashMap2;
+            }
+            i16++;
+            i15 = i12;
+            hashMap2 = hashMap;
+            arrayList2 = arrayList;
+            i14 = 1;
+        }
+        if (arrayList6 != null) {
+            int size2 = arrayList6.size();
+            for (int i19 = 0; i19 < size2; i19++) {
+                getMessagesStorage().deleteWallpaper(((TLRPC.WallPaper) arrayList6.get(i19)).id);
+            }
+        }
+        this.O = org.telegram.ui.ActionBar.g6.H0();
+        A0();
+        B0(false);
     }
 
-    private class ColorCell extends View {
-        private int color;
-
-        public ColorCell(Context context) {
-            super(context);
-        }
-
-        @Override // android.view.View
-        protected void onMeasure(int i, int i2) {
-            setMeasuredDimension(AndroidUtilities.dp(50.0f), AndroidUtilities.dp(62.0f));
-        }
-
-        public void setColor(int i) {
-            this.color = i;
-        }
-
-        @Override // android.view.View
-        protected void onDraw(Canvas canvas) {
-            WallpapersListActivity.this.colorPaint.setColor(this.color);
-            canvas.drawCircle(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(31.0f), AndroidUtilities.dp(18.0f), WallpapersListActivity.this.colorPaint);
-            if (this.color == Theme.getColor(Theme.key_windowBackgroundWhite)) {
-                canvas.drawCircle(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(31.0f), AndroidUtilities.dp(18.0f), WallpapersListActivity.this.colorFramePaint);
-            }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    class SearchAdapter extends RecyclerListView.SelectionAdapter {
-        private int imageReqId;
-        private RecyclerListView innerListView;
-        private String lastSearchImageString;
-        private String lastSearchString;
-        private int lastSearchToken;
-        private Context mContext;
-        private String nextImagesSearchOffset;
-        private Runnable searchRunnable;
-        private boolean searchingUser;
-        private String selectedColor;
-        private ArrayList searchResult = new ArrayList();
-        private HashMap searchResultKeys = new HashMap();
-        private boolean bingSearchEndReached = true;
-
-        private class CategoryAdapterRecycler extends RecyclerListView.SelectionAdapter {
-            @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
-            public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
-                return true;
-            }
-
-            private CategoryAdapterRecycler() {
-            }
-
-            /* synthetic */ CategoryAdapterRecycler(SearchAdapter searchAdapter, 1 r2) {
-                this();
-            }
-
-            @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-            public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-                SearchAdapter searchAdapter = SearchAdapter.this;
-                return new RecyclerListView.Holder(WallpapersListActivity.this.new ColorCell(searchAdapter.mContext));
-            }
-
-            @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-            public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-                ((ColorCell) viewHolder.itemView).setColor(WallpapersListActivity.searchColors[i]);
-            }
-
-            @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-            public int getItemCount() {
-                return WallpapersListActivity.searchColors.length;
-            }
-        }
-
-        public SearchAdapter(Context context) {
-            this.mContext = context;
-        }
-
-        public void onDestroy() {
-            if (this.imageReqId != 0) {
-                ConnectionsManager.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).cancelRequest(this.imageReqId, true);
-                this.imageReqId = 0;
-            }
-        }
-
-        public void clearColor() {
-            this.selectedColor = null;
-            processSearch(null, true);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public void processSearch(final String str, boolean z) {
-            if (str != null && this.selectedColor != null) {
-                str = "#color" + this.selectedColor + " " + str;
-            }
-            Runnable runnable = this.searchRunnable;
-            if (runnable != null) {
-                AndroidUtilities.cancelRunOnUIThread(runnable);
-                this.searchRunnable = null;
-            }
-            if (!TextUtils.isEmpty(str)) {
-                WallpapersListActivity.this.searchEmptyView.showProgress();
-                if (z) {
-                    doSearch(str);
-                } else {
-                    Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.WallpapersListActivity$SearchAdapter$$ExternalSyntheticLambda0
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            WallpapersListActivity.SearchAdapter.$r8$lambda$rJ9qX6XYeRwO8WGB3mOpdASh3rA(WallpapersListActivity.SearchAdapter.this, str);
-                        }
-                    };
-                    this.searchRunnable = runnable2;
-                    AndroidUtilities.runOnUIThread(runnable2, 500L);
-                }
-            } else {
-                this.searchResult.clear();
-                this.searchResultKeys.clear();
-                this.bingSearchEndReached = true;
-                this.lastSearchString = null;
-                if (this.imageReqId != 0) {
-                    ConnectionsManager.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).cancelRequest(this.imageReqId, true);
-                    this.imageReqId = 0;
-                }
-                WallpapersListActivity.this.searchEmptyView.showTextView();
-            }
-            notifyDataSetChanged();
-        }
-
-        public static /* synthetic */ void $r8$lambda$rJ9qX6XYeRwO8WGB3mOpdASh3rA(SearchAdapter searchAdapter, String str) {
-            searchAdapter.doSearch(str);
-            searchAdapter.searchRunnable = null;
-        }
-
-        private void doSearch(String str) {
-            this.searchResult.clear();
-            this.searchResultKeys.clear();
-            this.bingSearchEndReached = true;
-            searchImages(str, "", true);
-            this.lastSearchString = str;
-            notifyDataSetChanged();
-        }
-
-        private void searchBotUser() {
-            if (this.searchingUser) {
-                return;
-            }
-            this.searchingUser = true;
-            TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-            tL_contacts_resolveUsername.username = MessagesController.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).imageSearchBot;
-            ConnectionsManager.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendRequest(tL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.ui.WallpapersListActivity$SearchAdapter$$ExternalSyntheticLambda3
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    WallpapersListActivity.SearchAdapter.$r8$lambda$aFh6x-1UW2_LzlIvxZPBj40akb4(WallpapersListActivity.SearchAdapter.this, tLObject, tL_error);
-                }
-            });
-        }
-
-        public static /* synthetic */ void $r8$lambda$aFh6x-1UW2_LzlIvxZPBj40akb4(final SearchAdapter searchAdapter, final TLObject tLObject, TLRPC.TL_error tL_error) {
-            searchAdapter.getClass();
-            if (tLObject != null) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.WallpapersListActivity$SearchAdapter$$ExternalSyntheticLambda5
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        WallpapersListActivity.SearchAdapter.$r8$lambda$8XQWcWqYXGOj9myOZ3ul4jXwsEM(WallpapersListActivity.SearchAdapter.this, tLObject);
-                    }
-                });
-            }
-        }
-
-        public static /* synthetic */ void $r8$lambda$8XQWcWqYXGOj9myOZ3ul4jXwsEM(SearchAdapter searchAdapter, TLObject tLObject) {
-            searchAdapter.getClass();
-            TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
-            MessagesController.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).putUsers(tL_contacts_resolvedPeer.users, false);
-            MessagesController.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).putChats(tL_contacts_resolvedPeer.chats, false);
-            WallpapersListActivity.this.getMessagesStorage().putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
-            String str = searchAdapter.lastSearchImageString;
-            searchAdapter.lastSearchImageString = null;
-            searchAdapter.searchImages(str, "", false);
-        }
-
-        public void loadMoreResults() {
-            if (this.bingSearchEndReached || this.imageReqId != 0) {
-                return;
-            }
-            searchImages(this.lastSearchString, this.nextImagesSearchOffset, true);
-        }
-
-        private void searchImages(String str, String str2, boolean z) {
-            if (this.imageReqId != 0) {
-                ConnectionsManager.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).cancelRequest(this.imageReqId, true);
-                this.imageReqId = 0;
-            }
-            this.lastSearchImageString = str;
-            TLObject userOrChat = MessagesController.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).getUserOrChat(MessagesController.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).imageSearchBot);
-            if (!(userOrChat instanceof TLRPC.User)) {
-                if (z) {
-                    searchBotUser();
-                    return;
-                }
-                return;
-            }
-            TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-            tL_messages_getInlineBotResults.query = "#wallpaper " + str;
-            tL_messages_getInlineBotResults.bot = MessagesController.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).getInputUser((TLRPC.User) userOrChat);
-            tL_messages_getInlineBotResults.offset = str2;
-            tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
-            final int i = this.lastSearchToken + 1;
-            this.lastSearchToken = i;
-            this.imageReqId = ConnectionsManager.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendRequest(tL_messages_getInlineBotResults, new RequestDelegate() { // from class: org.telegram.ui.WallpapersListActivity$SearchAdapter$$ExternalSyntheticLambda2
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    WallpapersListActivity.SearchAdapter.$r8$lambda$20W4i7ifNTaxs1i3t5ioKSj-UFo(WallpapersListActivity.SearchAdapter.this, i, tLObject, tL_error);
-                }
-            });
-            ConnectionsManager.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).bindRequestToGuid(this.imageReqId, ((BaseFragment) WallpapersListActivity.this).classGuid);
-        }
-
-        public static /* synthetic */ void $r8$lambda$20W4i7ifNTaxs1i3t5ioKSj-UFo(final SearchAdapter searchAdapter, final int i, final TLObject tLObject, TLRPC.TL_error tL_error) {
-            searchAdapter.getClass();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.WallpapersListActivity$SearchAdapter$$ExternalSyntheticLambda4
-                @Override // java.lang.Runnable
-                public final void run() {
-                    WallpapersListActivity.SearchAdapter.$r8$lambda$VnyBTM75juEbDBeOSTkWv0NUVT8(WallpapersListActivity.SearchAdapter.this, i, tLObject);
-                }
-            });
-        }
-
-        public static /* synthetic */ void $r8$lambda$VnyBTM75juEbDBeOSTkWv0NUVT8(SearchAdapter searchAdapter, int i, TLObject tLObject) {
-            if (i != searchAdapter.lastSearchToken) {
-                return;
-            }
-            searchAdapter.imageReqId = 0;
-            int size = searchAdapter.searchResult.size();
-            if (tLObject != null) {
-                TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-                searchAdapter.nextImagesSearchOffset = messages_botresults.next_offset;
-                int size2 = messages_botresults.results.size();
-                for (int i2 = 0; i2 < size2; i2++) {
-                    TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i2);
-                    if ("photo".equals(botInlineResult.type) && !searchAdapter.searchResultKeys.containsKey(botInlineResult.id)) {
-                        MediaController.SearchImage searchImage = new MediaController.SearchImage();
-                        TLRPC.Photo photo = botInlineResult.photo;
-                        if (photo != null) {
-                            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
-                            TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(botInlineResult.photo.sizes, NotificationCenter.onDatabaseReset);
-                            if (closestPhotoSizeWithSize != null) {
-                                searchImage.width = closestPhotoSizeWithSize.w;
-                                searchImage.height = closestPhotoSizeWithSize.h;
-                                searchImage.photoSize = closestPhotoSizeWithSize;
-                                searchImage.photo = botInlineResult.photo;
-                                searchImage.size = closestPhotoSizeWithSize.size;
-                                searchImage.thumbPhotoSize = closestPhotoSizeWithSize2;
-                                searchImage.id = botInlineResult.id;
-                                searchImage.type = 0;
-                                searchAdapter.searchResult.add(searchImage);
-                                searchAdapter.searchResultKeys.put(searchImage.id, searchImage);
-                            }
-                        } else if (botInlineResult.content != null) {
-                            int i3 = 0;
-                            while (true) {
-                                if (i3 >= botInlineResult.content.attributes.size()) {
-                                    break;
-                                }
-                                TLRPC.DocumentAttribute documentAttribute = botInlineResult.content.attributes.get(i3);
-                                if (documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) {
-                                    searchImage.width = documentAttribute.w;
-                                    searchImage.height = documentAttribute.h;
-                                    break;
-                                }
-                                i3++;
-                            }
-                            TLRPC.WebDocument webDocument = botInlineResult.thumb;
-                            if (webDocument != null) {
-                                searchImage.thumbUrl = webDocument.url;
-                            } else {
-                                searchImage.thumbUrl = null;
-                            }
-                            TLRPC.WebDocument webDocument2 = botInlineResult.content;
-                            searchImage.imageUrl = webDocument2.url;
-                            searchImage.size = webDocument2.size;
-                            searchImage.id = botInlineResult.id;
-                            searchImage.type = 0;
-                            searchAdapter.searchResult.add(searchImage);
-                            searchAdapter.searchResultKeys.put(searchImage.id, searchImage);
-                        }
-                    }
-                }
-                searchAdapter.bingSearchEndReached = size == searchAdapter.searchResult.size() || searchAdapter.nextImagesSearchOffset == null;
-            }
-            if (size != searchAdapter.searchResult.size()) {
-                int i4 = size % WallpapersListActivity.this.columnsCount;
-                float f = size;
-                int ceil = (int) Math.ceil(f / WallpapersListActivity.this.columnsCount);
-                if (i4 != 0) {
-                    searchAdapter.notifyItemChanged(((int) Math.ceil(f / WallpapersListActivity.this.columnsCount)) - 1);
-                }
-                WallpapersListActivity.this.searchAdapter.notifyItemRangeInserted(ceil, ((int) Math.ceil(searchAdapter.searchResult.size() / WallpapersListActivity.this.columnsCount)) - ceil);
-            }
-            WallpapersListActivity.this.searchEmptyView.showTextView();
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemCount() {
-            if (TextUtils.isEmpty(this.lastSearchString)) {
-                return 2;
-            }
-            return (int) Math.ceil(this.searchResult.size() / WallpapersListActivity.this.columnsCount);
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
-        public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
-            return viewHolder.getItemViewType() != 2;
-        }
-
-        public static /* synthetic */ void $r8$lambda$AZ3eBseOQMUD9ozugNA6g5McQ_c(SearchAdapter searchAdapter, View view, int i) {
-            searchAdapter.getClass();
-            String string = LocaleController.getString(R.string.BackgroundSearchColor);
-            SpannableString spannableString = new SpannableString(string + " " + LocaleController.getString(WallpapersListActivity.searchColorsNames[i], WallpapersListActivity.searchColorsNamesR[i]));
-            spannableString.setSpan(new ForegroundColorSpan(Theme.getColor(Theme.key_actionBarDefaultSubtitle)), string.length(), spannableString.length(), 33);
-            WallpapersListActivity.this.searchItem.setSearchFieldCaption(spannableString);
-            WallpapersListActivity.this.searchItem.setSearchFieldHint(null);
-            WallpapersListActivity.this.searchItem.setSearchFieldText("", true);
-            searchAdapter.selectedColor = WallpapersListActivity.searchColorsNames[i];
-            searchAdapter.processSearch("", true);
-        }
-
-        /* JADX WARN: Multi-variable type inference failed */
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            View view;
-            if (i != 0) {
-                view = null;
-                Object[] objArr = 0;
-                if (i == 1) {
-                    RecyclerListView recyclerListView = new RecyclerListView(this.mContext) { // from class: org.telegram.ui.WallpapersListActivity.SearchAdapter.2
-                        @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-                        public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-                            if (getParent() != null && getParent().getParent() != null) {
-                                getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
-                            }
-                            return super.onInterceptTouchEvent(motionEvent);
-                        }
-                    };
-                    recyclerListView.setItemAnimator(null);
-                    recyclerListView.setLayoutAnimation(null);
-                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.mContext) { // from class: org.telegram.ui.WallpapersListActivity.SearchAdapter.3
-                        @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
-                        public boolean supportsPredictiveItemAnimations() {
-                            return false;
-                        }
-                    };
-                    recyclerListView.setPadding(AndroidUtilities.dp(7.0f), 0, AndroidUtilities.dp(7.0f), 0);
-                    recyclerListView.setClipToPadding(false);
-                    linearLayoutManager.setOrientation(0);
-                    recyclerListView.setLayoutManager(linearLayoutManager);
-                    recyclerListView.setAdapter(new CategoryAdapterRecycler(this, objArr == true ? 1 : 0));
-                    recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.WallpapersListActivity$SearchAdapter$$ExternalSyntheticLambda1
-                        @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-                        public final void onItemClick(View view2, int i2) {
-                            WallpapersListActivity.SearchAdapter.$r8$lambda$AZ3eBseOQMUD9ozugNA6g5McQ_c(WallpapersListActivity.SearchAdapter.this, view2, i2);
-                        }
-                    });
-                    this.innerListView = recyclerListView;
-                    view = recyclerListView;
-                } else if (i == 2) {
-                    view = new GraySectionCell(this.mContext);
-                }
-            } else {
-                view = new WallpaperCell(this.mContext) { // from class: org.telegram.ui.WallpapersListActivity.SearchAdapter.1
-                    @Override // org.telegram.ui.Cells.WallpaperCell
-                    protected void onWallpaperClick(Object obj, int i2) {
-                        WallpapersListActivity.this.presentFragment(new ThemePreviewActivity(obj, null, true, false));
-                    }
-                };
-            }
-            if (i == 1) {
-                view.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.dp(60.0f)));
-            } else {
-                view.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            }
-            return new RecyclerListView.Holder(view);
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-            int itemViewType = viewHolder.getItemViewType();
-            if (itemViewType != 0) {
-                if (itemViewType != 2) {
-                    return;
-                }
-                ((GraySectionCell) viewHolder.itemView).setText(LocaleController.getString(R.string.SearchByColor));
-                return;
-            }
-            WallpaperCell wallpaperCell = (WallpaperCell) viewHolder.itemView;
-            int i2 = i * WallpapersListActivity.this.columnsCount;
-            wallpaperCell.setParams(WallpapersListActivity.this.columnsCount, i2 == 0, i2 / WallpapersListActivity.this.columnsCount == ((int) Math.ceil((double) (((float) this.searchResult.size()) / ((float) WallpapersListActivity.this.columnsCount)))) - 1);
-            for (int i3 = 0; i3 < WallpapersListActivity.this.columnsCount; i3++) {
-                int i4 = i2 + i3;
-                wallpaperCell.setWallpaper(WallpapersListActivity.this.currentType, i3, i4 < this.searchResult.size() ? this.searchResult.get(i4) : null, "", null, false);
-            }
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemViewType(int i) {
-            if (TextUtils.isEmpty(this.lastSearchString)) {
-                return i == 0 ? 2 : 1;
-            }
-            return 0;
-        }
-    }
-
-    private class ListAdapter extends RecyclerListView.SelectionAdapter {
-        private Context mContext;
-
-        public ListAdapter(Context context) {
-            this.mContext = context;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
-        public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
-            return viewHolder.getItemViewType() == 0;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemCount() {
-            return WallpapersListActivity.this.rowCount;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            View textCell;
-            if (i == 0) {
-                textCell = new TextCell(this.mContext);
-            } else if (i == 1) {
-                textCell = new ShadowSectionCell(this.mContext);
-            } else if (i == 3) {
-                textCell = new TextInfoPrivacyCell(this.mContext);
-            } else {
-                textCell = new WallpaperCell(this.mContext) { // from class: org.telegram.ui.WallpapersListActivity.ListAdapter.1
-                    @Override // org.telegram.ui.Cells.WallpaperCell
-                    protected void onWallpaperClick(Object obj, int i2) {
-                        WallpapersListActivity.this.onItemClick(this, obj, i2);
-                    }
-
-                    @Override // org.telegram.ui.Cells.WallpaperCell
-                    protected boolean onWallpaperLongClick(Object obj, int i2) {
-                        return WallpapersListActivity.this.onItemLongClick(this, obj, i2);
-                    }
-                };
-            }
-            return new RecyclerListView.Holder(textCell);
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-            long j;
-            int itemViewType = viewHolder.getItemViewType();
-            if (itemViewType == 0) {
-                TextCell textCell = (TextCell) viewHolder.itemView;
-                if (i != WallpapersListActivity.this.uploadImageRow) {
-                    if (i != WallpapersListActivity.this.setColorRow) {
-                        if (i != WallpapersListActivity.this.resetRow) {
-                            if (i == WallpapersListActivity.this.galleryRow) {
-                                textCell.setTextAndIcon((CharSequence) "Choose from gallery", R.drawable.msg_background, false);
-                                textCell.setLockLevel(false, 10);
-                                return;
-                            }
-                            return;
-                        }
-                        textCell.setText(LocaleController.getString(R.string.ResetChatBackgrounds), false);
-                        return;
-                    }
-                    textCell.setTextAndIcon((CharSequence) LocaleController.getString(R.string.SetColor), R.drawable.msg_palette, true);
-                    return;
-                }
-                textCell.setTextAndIcon((CharSequence) LocaleController.getString(R.string.SelectFromGallery), R.drawable.msg_photos, true);
-                return;
-            }
-            if (itemViewType != 2) {
-                if (itemViewType != 3) {
-                    return;
-                }
-                TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
-                if (i != WallpapersListActivity.this.resetInfoRow) {
-                    if (i == WallpapersListActivity.this.galleryHintRow) {
-                        textInfoPrivacyCell.setText("Upload your own background for the channel.");
-                        return;
-                    }
-                    return;
-                }
-                textInfoPrivacyCell.setText(LocaleController.getString(R.string.ResetChatBackgroundsInfo));
-                return;
-            }
-            WallpaperCell wallpaperCell = (WallpaperCell) viewHolder.itemView;
-            int i2 = (i - WallpapersListActivity.this.wallPaperStartRow) * WallpapersListActivity.this.columnsCount;
-            wallpaperCell.setParams(WallpapersListActivity.this.columnsCount, i2 == 0, i2 / WallpapersListActivity.this.columnsCount == WallpapersListActivity.this.totalWallpaperRows - 1);
-            for (int i3 = 0; i3 < WallpapersListActivity.this.columnsCount; i3++) {
-                int i4 = i2 + i3;
-                Object obj = null;
-                Object obj2 = i4 < WallpapersListActivity.this.wallPapers.size() ? WallpapersListActivity.this.wallPapers.get(i4) : null;
-                if (obj2 instanceof TLRPC.TL_wallPaper) {
-                    TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) obj2;
-                    Theme.OverrideWallpaperInfo overrideWallpaperInfo = Theme.getActiveTheme().overrideWallpaper;
-                    if (WallpapersListActivity.this.selectedBackgroundSlug.equals(tL_wallPaper.slug) && (!WallpapersListActivity.this.selectedBackgroundSlug.equals(tL_wallPaper.slug) || tL_wallPaper.settings == null || (WallpapersListActivity.this.selectedColor == Theme.getWallpaperColor(tL_wallPaper.settings.background_color) && WallpapersListActivity.this.selectedGradientColor1 == Theme.getWallpaperColor(tL_wallPaper.settings.second_background_color) && WallpapersListActivity.this.selectedGradientColor2 == Theme.getWallpaperColor(tL_wallPaper.settings.third_background_color) && WallpapersListActivity.this.selectedGradientColor3 == Theme.getWallpaperColor(tL_wallPaper.settings.fourth_background_color) && (WallpapersListActivity.this.selectedGradientColor1 == 0 || WallpapersListActivity.this.selectedGradientColor2 != 0 || WallpapersListActivity.this.selectedGradientRotation == AndroidUtilities.getWallpaperRotation(tL_wallPaper.settings.rotation, false) || !tL_wallPaper.pattern || Math.abs(Theme.getThemeIntensity(tL_wallPaper.settings.intensity / 100.0f) - WallpapersListActivity.this.selectedIntensity) <= 0.001f)))) {
-                        obj = tL_wallPaper;
-                    }
-                    j = tL_wallPaper.id;
-                } else {
-                    j = 0;
-                    if (obj2 instanceof ColorWallpaper) {
-                        ColorWallpaper colorWallpaper = (ColorWallpaper) obj2;
-                        if (("d".equals(colorWallpaper.slug) && WallpapersListActivity.this.selectedBackgroundSlug != null && WallpapersListActivity.this.selectedBackgroundSlug.equals(colorWallpaper.slug)) || (colorWallpaper.color == WallpapersListActivity.this.selectedColor && colorWallpaper.gradientColor1 == WallpapersListActivity.this.selectedGradientColor1 && colorWallpaper.gradientColor2 == WallpapersListActivity.this.selectedGradientColor2 && colorWallpaper.gradientColor3 == WallpapersListActivity.this.selectedGradientColor3 && ((WallpapersListActivity.this.selectedGradientColor1 == 0 || colorWallpaper.gradientRotation == WallpapersListActivity.this.selectedGradientRotation) && ((!"c".equals(WallpapersListActivity.this.selectedBackgroundSlug) || colorWallpaper.slug == null) && ("c".equals(WallpapersListActivity.this.selectedBackgroundSlug) || (TextUtils.equals(WallpapersListActivity.this.selectedBackgroundSlug, colorWallpaper.slug) && ((int) (colorWallpaper.intensity * 100.0f)) == ((int) (WallpapersListActivity.this.selectedIntensity * 100.0f)))))))) {
-                            obj = obj2;
-                        }
-                        TLRPC.WallPaper wallPaper = colorWallpaper.parentWallpaper;
-                        if (wallPaper != null) {
-                            j = wallPaper.id;
-                        }
-                    } else if ((obj2 instanceof FileWallpaper) && WallpapersListActivity.this.selectedBackgroundSlug.equals(((FileWallpaper) obj2).slug)) {
-                        obj = obj2;
-                    }
-                }
-                long j2 = j;
-                wallpaperCell.setWallpaper(WallpapersListActivity.this.currentType, i3, obj2, obj, null, false);
-                if (((BaseFragment) WallpapersListActivity.this).actionBar.isActionModeShowed()) {
-                    wallpaperCell.setChecked(i3, WallpapersListActivity.this.selectedWallPapers.indexOfKey(j2) >= 0, !WallpapersListActivity.this.scrolling);
-                } else {
-                    wallpaperCell.setChecked(i3, false, !WallpapersListActivity.this.scrolling);
-                }
-            }
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemViewType(int i) {
-            if (i == WallpapersListActivity.this.uploadImageRow || i == WallpapersListActivity.this.galleryRow || i == WallpapersListActivity.this.setColorRow || i == WallpapersListActivity.this.resetRow) {
-                return 0;
-            }
-            if (i == WallpapersListActivity.this.sectionRow || i == WallpapersListActivity.this.resetSectionRow) {
-                return 1;
-            }
-            return (i == WallpapersListActivity.this.resetInfoRow || i == WallpapersListActivity.this.galleryHintRow) ? 3 : 2;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public ArrayList getThemeDescriptions() {
+    @Override // org.telegram.ui.ActionBar.n2
+    public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         View view = this.fragmentView;
-        int i = Theme.key_windowBackgroundWhite;
-        arrayList.add(new ThemeDescription(view, 0, null, null, null, null, i));
+        int i10 = org.telegram.ui.ActionBar.g6.d6;
+        arrayList.add(new org.telegram.ui.ActionBar.i6(view, 0, null, null, null, null, i10));
         View view2 = this.fragmentView;
-        int i2 = Theme.key_windowBackgroundGray;
-        arrayList.add(new ThemeDescription(view2, 0, null, null, null, null, i2));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, Theme.key_actionBarDefault));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i2));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i2));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{ShadowSectionCell.class}, null, null, null, i2));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayIcon));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{GraySectionCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_graySectionText));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{GraySectionCell.class}, null, null, null, Theme.key_graySection));
-        arrayList.add(new ThemeDescription(this.searchEmptyView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_emptyListPlaceholder));
-        arrayList.add(new ThemeDescription(this.searchEmptyView, ThemeDescription.FLAG_PROGRESSBAR, null, null, null, null, Theme.key_progressCircle));
-        arrayList.add(new ThemeDescription(this.searchEmptyView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i));
+        int i11 = org.telegram.ui.ActionBar.g6.a7;
+        arrayList.add(new org.telegram.ui.ActionBar.i6(view2, 0, null, null, null, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.D, 32768, null, null, null, null, org.telegram.ui.ActionBar.g6.s8));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.g6.v8));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.g6.A8));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.g6.t8));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.D, 1, null, null, null, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.D, 4096, null, null, null, null, org.telegram.ui.ActionBar.g6.i6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.D, 48, new Class[]{org.telegram.ui.Cells.x8.class}, null, null, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.D, 0, new Class[]{org.telegram.ui.Cells.x8.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.B6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.D, 48, new Class[]{org.telegram.ui.Cells.w6.class}, null, null, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.D, 0, new Class[]{org.telegram.ui.Cells.l8.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.G6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.D, 0, new Class[]{org.telegram.ui.Cells.l8.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.I6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.D, 0, new Class[]{org.telegram.ui.Cells.l8.class}, new String[]{"imageView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.m6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.D, 0, new Class[]{org.telegram.ui.Cells.s3.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.f7));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.D, 16, new Class[]{org.telegram.ui.Cells.s3.class}, null, null, null, org.telegram.ui.ActionBar.g6.e7));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.J, 4, null, null, null, null, org.telegram.ui.ActionBar.g6.c7));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.J, 2048, null, null, null, null, org.telegram.ui.ActionBar.g6.h6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.J, 1, null, null, null, null, i10));
         return arrayList;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onActivityResultFragment(int i10, int i11, Intent intent) {
+        this.M.a(i10, i11, intent);
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        org.telegram.ui.Components.zk0 zk0Var = this.D;
+        if (zk0Var != null) {
+            zk0Var.getViewTreeObserver().addOnPreDrawListener(new uh(this, 6));
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean onFragmentCreate() {
+        int i10 = this.v;
+        if (i10 == 0 || i10 == 2) {
+            NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.wallpapersDidLoad);
+            NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetNewWallpapper);
+            NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.wallpapersNeedReload);
+            getMessagesStorage().getWallpapers();
+        } else {
+            z0(this.a0, org.telegram.ui.ActionBar.g6.I.q());
+            if (i10 == 1 && this.c0.isEmpty()) {
+                NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.wallpapersDidLoad);
+                getMessagesStorage().getWallpapers();
+            }
+        }
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onFragmentDestroy() {
+        int i10 = this.v;
+        if (i10 == 0 || i10 == 2) {
+            ai1 ai1Var = this.F;
+            if (ai1Var.s != 0) {
+                ConnectionsManager.getInstance(ai1Var.A.currentAccount).cancelRequest(ai1Var.s, true);
+                ai1Var.s = 0;
+            }
+            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.wallpapersDidLoad);
+            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.didSetNewWallpapper);
+            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.wallpapersNeedReload);
+        } else if (i10 == 1) {
+            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.wallpapersDidLoad);
+        }
+        this.M.getClass();
+        super.onFragmentDestroy();
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onResume() {
+        super.onResume();
+        MessagesController.getGlobalMainSettings();
+        org.telegram.ui.ActionBar.z5 z5Var = org.telegram.ui.ActionBar.g6.I.e0;
+        if (z5Var != null) {
+            String str = z5Var.c;
+            this.O = str;
+            if (str == null) {
+                this.O = "";
+            }
+            this.P = z5Var.d;
+            this.Q = z5Var.e;
+            this.R = z5Var.f;
+            this.S = z5Var.g;
+            this.T = z5Var.h;
+            this.U = z5Var.k;
+            this.V = z5Var.j;
+            this.W = z5Var.i;
+        } else {
+            this.O = org.telegram.ui.ActionBar.g6.d1() ? "t" : "d";
+            this.P = 0;
+            this.Q = 0;
+            this.R = 0;
+            this.S = 0;
+            this.T = 45;
+            this.U = 1.0f;
+            this.V = false;
+            this.W = false;
+        }
+        A0();
+        org.telegram.ui.Components.zk0 zk0Var = this.D;
+        if (zk0Var != null) {
+            zk0Var.getViewTreeObserver().addOnPreDrawListener(new uh(this, 6));
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void restoreSelfArgs(Bundle bundle) {
+        this.M.a = bundle.getString("path");
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void saveSelfArgs(Bundle bundle) {
+        String str = this.M.a;
+        if (str != null) {
+            bundle.putString("path", str);
+        }
     }
 }

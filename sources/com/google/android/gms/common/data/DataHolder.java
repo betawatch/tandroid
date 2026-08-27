@@ -6,70 +6,91 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import h7.r8;
 import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.MediaDataController;
+import r6.l;
+import z5.a;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class DataHolder extends AbstractSafeParcelable implements Closeable, AutoCloseable {
-    public static final Parcelable.Creator<DataHolder> CREATOR = new zaf();
-    private static final Builder zaf = new zab(new String[0], null);
-    final int zaa;
-    Bundle zab;
-    int[] zac;
-    int zad;
-    private final String[] zag;
-    private final CursorWindow[] zah;
-    private final int zai;
-    private final Bundle zaj;
-    boolean zae = false;
-    private boolean zak = true;
+public final class DataHolder extends a implements Closeable {
+    public static final Parcelable.Creator<DataHolder> CREATOR = new l(28);
+    public final int a;
+    public final String[] b;
+    public Bundle c;
+    public final CursorWindow[] d;
+    public final int e;
+    public final Bundle f;
+    public int[] h;
+    public int n;
+    public boolean r = false;
 
-    public static class Builder {
-        private final String[] zaa;
-        private final ArrayList zab = new ArrayList();
-        private final HashMap zac = new HashMap();
+    static {
+        new ArrayList();
+        new HashMap();
     }
 
-    DataHolder(int i, String[] strArr, CursorWindow[] cursorWindowArr, int i2, Bundle bundle) {
-        this.zaa = i;
-        this.zag = strArr;
-        this.zah = cursorWindowArr;
-        this.zai = i2;
-        this.zaj = bundle;
+    public DataHolder(int i10, String[] strArr, CursorWindow[] cursorWindowArr, int i11, Bundle bundle) {
+        this.a = i10;
+        this.b = strArr;
+        this.d = cursorWindowArr;
+        this.e = i11;
+        this.f = bundle;
     }
 
-    private final void zae(String str, int i) {
-        Bundle bundle = this.zab;
-        if (bundle == null || !bundle.containsKey(str)) {
-            throw new IllegalArgumentException("No such column: ".concat(String.valueOf(str)));
+    public final int b(int i10) {
+        int length;
+        int i11 = 0;
+        y5.l.k(i10 >= 0 && i10 < this.n);
+        while (true) {
+            int[] iArr = this.h;
+            length = iArr.length;
+            if (i11 >= length) {
+                break;
+            }
+            if (i10 < iArr[i11]) {
+                i11--;
+                break;
+            }
+            i11++;
         }
-        if (isClosed()) {
+        return i11 == length ? i11 - 1 : i11;
+    }
+
+    public final void c(int i10, String str) {
+        boolean z10;
+        Bundle bundle = this.c;
+        if (bundle == null || !bundle.containsKey(str)) {
+            throw new IllegalArgumentException("No such column: ".concat(str));
+        }
+        synchronized (this) {
+            z10 = this.r;
+        }
+        if (z10) {
             throw new IllegalArgumentException("Buffer is closed.");
         }
-        if (i < 0 || i >= this.zad) {
-            throw new CursorIndexOutOfBoundsException(i, this.zad);
+        if (i10 < 0 || i10 >= this.n) {
+            throw new CursorIndexOutOfBoundsException(i10, this.n);
         }
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
-    public void close() {
+    public final void close() {
         synchronized (this) {
             try {
-                if (!this.zae) {
-                    this.zae = true;
-                    int i = 0;
+                if (!this.r) {
+                    this.r = true;
+                    int i10 = 0;
                     while (true) {
-                        CursorWindow[] cursorWindowArr = this.zah;
-                        if (i >= cursorWindowArr.length) {
+                        CursorWindow[] cursorWindowArr = this.d;
+                        if (i10 >= cursorWindowArr.length) {
                             break;
                         }
-                        cursorWindowArr[i].close();
-                        i++;
+                        cursorWindowArr[i10].close();
+                        i10++;
                     }
                 }
             } catch (Throwable th) {
@@ -78,109 +99,36 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
         }
     }
 
-    protected final void finalize() {
+    public final void finalize() {
+        boolean z10;
         try {
-            if (this.zak && this.zah.length > 0 && !isClosed()) {
-                close();
-                Log.e("DataBuffer", "Internal data leak within a DataBuffer object detected!  Be sure to explicitly call release() on all DataBuffer extending objects when you are done with them. (internal object: " + toString() + ")");
+            if (this.d.length > 0) {
+                synchronized (this) {
+                    z10 = this.r;
+                }
+                if (!z10) {
+                    close();
+                    Log.e("DataBuffer", "Internal data leak within a DataBuffer object detected!  Be sure to explicitly call release() on all DataBuffer extending objects when you are done with them. (internal object: " + toString() + ")");
+                }
             }
         } finally {
             super.finalize();
         }
     }
 
-    public byte[] getByteArray(String str, int i, int i2) {
-        zae(str, i);
-        return this.zah[i2].getBlob(i, this.zab.getInt(str));
-    }
-
-    public int getCount() {
-        return this.zad;
-    }
-
-    public int getInteger(String str, int i, int i2) {
-        zae(str, i);
-        return this.zah[i2].getInt(i, this.zab.getInt(str));
-    }
-
-    public Bundle getMetadata() {
-        return this.zaj;
-    }
-
-    public int getStatusCode() {
-        return this.zai;
-    }
-
-    public String getString(String str, int i, int i2) {
-        zae(str, i);
-        return this.zah[i2].getString(i, this.zab.getInt(str));
-    }
-
-    public int getWindowIndex(int i) {
-        int length;
-        int i2 = 0;
-        Preconditions.checkState(i >= 0 && i < this.zad);
-        while (true) {
-            int[] iArr = this.zac;
-            length = iArr.length;
-            if (i2 >= length) {
-                break;
-            }
-            if (i < iArr[i2]) {
-                i2--;
-                break;
-            }
-            i2++;
-        }
-        return i2 == length ? i2 - 1 : i2;
-    }
-
-    public boolean isClosed() {
-        boolean z;
-        synchronized (this) {
-            z = this.zae;
-        }
-        return z;
-    }
-
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        String[] strArr = this.zag;
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeStringArray(parcel, 1, strArr, false);
-        SafeParcelWriter.writeTypedArray(parcel, 2, this.zah, i, false);
-        SafeParcelWriter.writeInt(parcel, 3, getStatusCode());
-        SafeParcelWriter.writeBundle(parcel, 4, getMetadata(), false);
-        SafeParcelWriter.writeInt(parcel, MediaDataController.MAX_STYLE_RUNS_COUNT, this.zaa);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
-        if ((i & 1) != 0) {
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = r8.q(parcel, 20293);
+        r8.m(parcel, 1, this.b);
+        r8.o(parcel, 2, this.d, i10);
+        r8.s(parcel, 3, 4);
+        parcel.writeInt(this.e);
+        r8.b(parcel, 4, this.f);
+        r8.s(parcel, MediaDataController.MAX_STYLE_RUNS_COUNT, 4);
+        parcel.writeInt(this.a);
+        r8.r(parcel, q6);
+        if ((i10 & 1) != 0) {
             close();
-        }
-    }
-
-    public final void zad() {
-        this.zab = new Bundle();
-        int i = 0;
-        int i2 = 0;
-        while (true) {
-            String[] strArr = this.zag;
-            if (i2 >= strArr.length) {
-                break;
-            }
-            this.zab.putInt(strArr[i2], i2);
-            i2++;
-        }
-        this.zac = new int[this.zah.length];
-        int i3 = 0;
-        while (true) {
-            CursorWindow[] cursorWindowArr = this.zah;
-            if (i >= cursorWindowArr.length) {
-                this.zad = i3;
-                return;
-            }
-            this.zac[i] = i3;
-            i3 += this.zah[i].getNumRows() - (i3 - cursorWindowArr[i].getStartPosition());
-            i++;
         }
     }
 }

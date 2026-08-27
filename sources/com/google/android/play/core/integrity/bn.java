@@ -4,95 +4,104 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.IInterface;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 import java.util.ArrayList;
+import l8.f0;
+import l8.j0;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class bn {
-    final com.google.android.play.integrity.internal.ae a;
-    private final com.google.android.play.integrity.internal.s b;
+    final l8.c a;
+    private final f0 b;
     private final String c;
     private final TaskCompletionSource d;
     private final at e;
     private final k f;
 
-    bn(Context context, com.google.android.play.integrity.internal.s sVar, at atVar, k kVar) {
+    public bn(Context context, f0 f0Var, at atVar, k kVar) {
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
         this.d = taskCompletionSource;
         this.c = context.getPackageName();
-        this.b = sVar;
+        this.b = f0Var;
         this.e = atVar;
         this.f = kVar;
-        com.google.android.play.integrity.internal.ae aeVar = new com.google.android.play.integrity.internal.ae(context, sVar, "ExpressIntegrityService", bo.a, new com.google.android.play.integrity.internal.z() { // from class: com.google.android.play.core.integrity.bd
-            @Override // com.google.android.play.integrity.internal.z
+        l8.c cVar = new l8.c(context, f0Var, "ExpressIntegrityService", bo.a, new j0() { // from class: com.google.android.play.core.integrity.bd
+            @Override // l8.j0
             public final Object a(IBinder iBinder) {
-                return com.google.android.play.integrity.internal.h.b(iBinder);
+                int i10 = l8.u.i;
+                if (iBinder == null) {
+                    return null;
+                }
+                IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.play.core.integrity.protocol.IExpressIntegrityService");
+                return queryLocalInterface instanceof l8.v ? (l8.v) queryLocalInterface : new l8.t(iBinder, "com.google.android.play.core.integrity.protocol.IExpressIntegrityService", 7);
             }
-        }, null);
-        this.a = aeVar;
-        aeVar.c().post(new be(this, taskCompletionSource, context));
+        });
+        this.a = cVar;
+        cVar.a().post(new be(this, taskCompletionSource, context));
     }
 
-    static /* bridge */ /* synthetic */ Bundle a(bn bnVar, StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest, long j, long j2, int i) {
+    public static Bundle a(bn bnVar, StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest, long j10, long j11, int i10) {
         Bundle bundle = new Bundle();
         bundle.putString("package.name", bnVar.c);
-        bundle.putLong("cloud.prj", j);
+        bundle.putLong("cloud.prj", j10);
         bundle.putString("nonce", standardIntegrityTokenRequest.requestHash());
-        bundle.putLong("warm.up.sid", j2);
+        bundle.putLong("warm.up.sid", j11);
         bundle.putInt("playcore.integrity.version.major", 1);
         bundle.putInt("playcore.integrity.version.minor", 4);
         bundle.putInt("playcore.integrity.version.patch", 0);
         bundle.putInt("webview.request.mode", 0);
         bundle.putIntegerArrayList("request.verdict.opt.out", new ArrayList<>(standardIntegrityTokenRequest.verdictOptOut()));
         ArrayList arrayList = new ArrayList();
-        com.google.android.play.integrity.internal.d.b(5, arrayList);
-        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(com.google.android.play.integrity.internal.d.a(arrayList)));
+        arrayList.add(new l8.s(5, System.currentTimeMillis()));
+        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(h7.k.a(arrayList)));
         return bundle;
     }
 
-    static /* bridge */ /* synthetic */ Bundle b(bn bnVar, long j, int i) {
+    public static Bundle b(bn bnVar, long j10, int i10) {
         Bundle bundle = new Bundle();
         bundle.putString("package.name", bnVar.c);
-        bundle.putLong("cloud.prj", j);
+        bundle.putLong("cloud.prj", j10);
         bundle.putInt("playcore.integrity.version.major", 1);
         bundle.putInt("playcore.integrity.version.minor", 4);
         bundle.putInt("playcore.integrity.version.patch", 0);
         bundle.putInt("webview.request.mode", 0);
         ArrayList arrayList = new ArrayList();
-        com.google.android.play.integrity.internal.d.b(4, arrayList);
-        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(com.google.android.play.integrity.internal.d.a(arrayList)));
+        arrayList.add(new l8.s(4, System.currentTimeMillis()));
+        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(h7.k.a(arrayList)));
         return bundle;
     }
 
-    static /* bridge */ /* synthetic */ boolean k(bn bnVar, int i) {
+    public static /* bridge */ /* synthetic */ boolean k(bn bnVar, int i10) {
         return bnVar.d.getTask().isSuccessful() && ((Integer) bnVar.d.getTask().getResult()).intValue() < 83420000;
     }
 
-    static /* bridge */ /* synthetic */ boolean l(bn bnVar) {
+    public static /* bridge */ /* synthetic */ boolean l(bn bnVar) {
         return bnVar.d.getTask().isSuccessful() && ((Integer) bnVar.d.getTask().getResult()).intValue() == 0;
     }
 
-    final Task c(Activity activity, Bundle bundle) {
-        int i = bundle.getInt("dialog.intent.type");
-        this.b.d("requestAndShowDialog(%s)", Integer.valueOf(i));
+    public final Task c(Activity activity, Bundle bundle) {
+        int i10 = bundle.getInt("dialog.intent.type");
+        this.b.b("requestAndShowDialog(%s)", Integer.valueOf(i10));
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.a.t(new bh(this, taskCompletionSource, bundle, activity, taskCompletionSource, i), taskCompletionSource);
+        this.a.c(new bh(this, taskCompletionSource, bundle, activity, taskCompletionSource, i10), taskCompletionSource);
         return taskCompletionSource.getTask();
     }
 
-    public final Task d(StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest, long j, long j2, int i) {
-        this.b.d("requestExpressIntegrityToken(%s)", Long.valueOf(j2));
+    public final Task d(StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest, long j10, long j11, int i10) {
+        this.b.b("requestExpressIntegrityToken(%s)", Long.valueOf(j11));
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.a.t(new bg(this, taskCompletionSource, 0, standardIntegrityTokenRequest, j, j2, taskCompletionSource), taskCompletionSource);
+        this.a.c(new bg(this, taskCompletionSource, 0, standardIntegrityTokenRequest, j10, j11, taskCompletionSource), taskCompletionSource);
         return taskCompletionSource.getTask();
     }
 
-    public final Task e(long j, int i) {
-        this.b.d("warmUpIntegrityToken(%s)", Long.valueOf(j));
+    public final Task e(long j10, int i10) {
+        this.b.b("warmUpIntegrityToken(%s)", Long.valueOf(j10));
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.a.t(new bf(this, taskCompletionSource, 0, j, taskCompletionSource), taskCompletionSource);
+        this.a.c(new bf(this, taskCompletionSource, 0, j10, taskCompletionSource), taskCompletionSource);
         return taskCompletionSource.getTask();
     }
 }

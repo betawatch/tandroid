@@ -1,42 +1,41 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.CoroutineScope;
+import ad.p;
+import h7.k6;
+import id.c0;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzaw extends SuspendLambda implements Function2 {
+final class zzaw extends i implements p {
     Object zza;
     int zzb;
     final /* synthetic */ zzhk zzc;
     final /* synthetic */ zzba zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzaw(zzhk zzhkVar, zzba zzbaVar, Continuation continuation) {
-        super(2, continuation);
+    public zzaw(zzhk zzhkVar, zzba zzbaVar, c cVar) {
+        super(2, cVar);
         this.zzc = zzhkVar;
         this.zzd = zzbaVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzaw(this.zzc, this.zzd, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        return new zzaw(this.zzc, this.zzd, cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzaw) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzaw) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0037, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0035, code lost:
     
         if (r6 != r0) goto L15;
      */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -44,11 +43,11 @@ final class zzaw extends SuspendLambda implements Function2 {
         zzhk zzhkVar;
         zzbo zzboVar;
         String str;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zzb;
+        sc.a aVar = sc.a.a;
+        int i10 = this.zzb;
         try {
-            if (i == 0) {
-                ResultKt.throwOnFailure(obj);
+            if (i10 == 0) {
+                k6.b(obj);
                 zzhkVar = this.zzc;
                 zzba zzbaVar = this.zzd;
                 zzboVar = zzbaVar.zza;
@@ -57,8 +56,8 @@ final class zzaw extends SuspendLambda implements Function2 {
                 this.zzb = 1;
                 obj = new zzhg(new zzbb(zzboVar, str, null));
             } else {
-                if (i != 1) {
-                    ResultKt.throwOnFailure(obj);
+                if (i10 != 1) {
+                    k6.b(obj);
                     zzba zzbaVar2 = this.zzd;
                     zzyu zzf = zzyx.zzf();
                     zzyv zzf2 = zzyw.zzf();
@@ -67,13 +66,13 @@ final class zzaw extends SuspendLambda implements Function2 {
                     return zzas.zzb(zzbaVar2, (zzyx) zzf.zzk());
                 }
                 zzhkVar = (zzhk) this.zza;
-                ResultKt.throwOnFailure(obj);
+                k6.b(obj);
             }
             this.zza = null;
             this.zzb = 2;
             obj = ((zzhg) obj).zza(zzhkVar, this);
-            if (obj == coroutine_suspended) {
-                return coroutine_suspended;
+            if (obj == aVar) {
+                return aVar;
             }
             zzba zzbaVar22 = this.zzd;
             zzyu zzf3 = zzyx.zzf();
@@ -81,8 +80,8 @@ final class zzaw extends SuspendLambda implements Function2 {
             zzf22.zzw((String) obj);
             zzf3.zzf((zzyw) zzf22.zzk());
             return zzas.zzb(zzbaVar22, (zzyx) zzf3.zzk());
-        } catch (Exception e) {
-            throw new zzcg(zzce.zzb, zzcd.zzaa, e.getMessage(), e);
+        } catch (Exception e9) {
+            throw new zzcg(zzce.zzb, zzcd.zzaa, e9.getMessage(), e9);
         }
     }
 }

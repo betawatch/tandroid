@@ -2,15 +2,12 @@ package j$.time.chrono;
 
 import j$.time.Instant;
 import j$.time.ZoneId;
-import j$.time.temporal.Temporal;
 
 /* loaded from: classes2.dex */
 public interface k extends Comparable {
-    ChronoZonedDateTime A(Instant instant, ZoneId zoneId);
+    ChronoLocalDateTime B(j$.time.temporal.l lVar);
 
-    l C(int i);
-
-    b a(j$.time.temporal.l lVar);
+    ChronoZonedDateTime D(Instant instant, ZoneId zoneId);
 
     boolean equals(Object obj);
 
@@ -18,13 +15,15 @@ public interface k extends Comparable {
 
     int hashCode();
 
-    String m();
+    String o();
 
-    ChronoZonedDateTime n(Temporal temporal);
+    ChronoZonedDateTime p(j$.time.temporal.l lVar);
 
-    ChronoLocalDateTime s(Temporal temporal);
+    j$.time.temporal.s s(j$.time.temporal.a aVar);
 
     String toString();
 
-    j$.time.temporal.s y(j$.time.temporal.a aVar);
+    l u(int i10);
+
+    b x(j$.time.temporal.l lVar);
 }

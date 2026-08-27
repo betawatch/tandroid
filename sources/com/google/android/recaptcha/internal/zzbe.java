@@ -1,38 +1,37 @@
 package com.google.android.recaptcha.internal;
 
+import ad.p;
 import com.google.android.play.core.integrity.StandardIntegrityException;
-import com.google.android.play.core.integrity.model.StandardIntegrityErrorCode;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Ref$ObjectRef;
-import kotlinx.coroutines.CompletableDeferred;
-import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.TimeoutKt;
+import h7.k6;
+import id.c0;
+import id.f0;
+import id.s;
+import id.t;
+import kotlin.jvm.internal.q;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzbe extends SuspendLambda implements Function2 {
+final class zzbe extends i implements p {
     Object zza;
     int zzb;
     final /* synthetic */ zzbo zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzbe(zzbo zzboVar, Continuation continuation) {
-        super(2, continuation);
+    public zzbe(zzbo zzboVar, c cVar) {
+        super(2, cVar);
         this.zzc = zzboVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzbe(this.zzc, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        return new zzbe(this.zzc, cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbe) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzbe) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -40,41 +39,41 @@ final class zzbe extends SuspendLambda implements Function2 {
     /* JADX WARN: Type inference failed for: r1v12 */
     /* JADX WARN: Type inference failed for: r1v13 */
     /* JADX WARN: Type inference failed for: r1v9 */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
         zzcd zzcdVar;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        Ref$ObjectRef ref$ObjectRef = this.zzb;
+        sc.a aVar = sc.a.a;
+        q qVar = this.zzb;
         try {
-            if (ref$ObjectRef != 0) {
-                Ref$ObjectRef ref$ObjectRef2 = (Ref$ObjectRef) this.zza;
-                ResultKt.throwOnFailure(obj);
-                ref$ObjectRef = ref$ObjectRef2;
+            if (qVar != 0) {
+                q qVar2 = (q) this.zza;
+                k6.b(obj);
+                qVar = qVar2;
             } else {
-                ResultKt.throwOnFailure(obj);
-                Ref$ObjectRef ref$ObjectRef3 = new Ref$ObjectRef();
-                zzbd zzbdVar = new zzbd(this.zzc, ref$ObjectRef3, null);
-                this.zza = ref$ObjectRef3;
+                k6.b(obj);
+                q qVar3 = new q();
+                zzbd zzbdVar = new zzbd(this.zzc, qVar3, null);
+                this.zza = qVar3;
                 this.zzb = 1;
-                ref$ObjectRef = ref$ObjectRef3;
-                if (TimeoutKt.withTimeout(60000L, zzbdVar, this) == coroutine_suspended) {
-                    return coroutine_suspended;
+                qVar = qVar3;
+                if (f0.x(60000L, zzbdVar, this) == aVar) {
+                    return aVar;
                 }
             }
-            return Unit.INSTANCE;
-        } catch (Exception e) {
+            return pc.i.a;
+        } catch (Exception e9) {
             zzbo zzboVar = this.zzc;
-            CompletableDeferred zzf = zzboVar.zzf();
-            Throwable th = (Throwable) ref$ObjectRef.element;
+            s zzf = zzboVar.zzf();
+            Throwable th = (Throwable) qVar.a;
             if (th == null) {
-                th = e;
+                th = e9;
             }
-            zzf.completeExceptionally(th);
+            ((t) zzf).L(th);
             zzboVar.zzc = zzbp.zza;
             zzce zzceVar = zzce.zzb;
-            Throwable th2 = (Throwable) ref$ObjectRef.element;
+            Throwable th2 = (Throwable) qVar.a;
             if (th2 == null) {
-                th2 = e;
+                th2 = e9;
             }
             if (th2 instanceof StandardIntegrityException) {
                 int errorCode = ((StandardIntegrityException) th2).getErrorCode();
@@ -88,10 +87,10 @@ final class zzbe extends SuspendLambda implements Function2 {
                     zzcdVar = zzcd.zzaH;
                 } else if (errorCode != -1) {
                     switch (errorCode) {
-                        case StandardIntegrityErrorCode.INTEGRITY_TOKEN_PROVIDER_INVALID /* -19 */:
+                        case -19:
                             zzcdVar = zzcd.zzaU;
                             break;
-                        case StandardIntegrityErrorCode.CLIENT_TRANSIENT_ERROR /* -18 */:
+                        case -18:
                             zzcdVar = zzcd.zzaT;
                             break;
                         case -17:
@@ -134,7 +133,7 @@ final class zzbe extends SuspendLambda implements Function2 {
             } else {
                 zzcdVar = zzcd.zza;
             }
-            throw new zzcg(zzceVar, zzcdVar, e.getMessage(), null, 8, null);
+            throw new zzcg(zzceVar, zzcdVar, e9.getMessage(), null, 8, null);
         }
     }
 }

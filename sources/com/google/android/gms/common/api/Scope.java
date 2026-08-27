@@ -2,55 +2,46 @@ package com.google.android.gms.common.api;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import h7.r8;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class Scope extends AbstractSafeParcelable implements ReflectedParcelable {
-    public static final Parcelable.Creator<Scope> CREATOR = new zzd();
-    final int zza;
-    private final String zzb;
+public final class Scope extends z5.a implements ReflectedParcelable {
+    public static final Parcelable.Creator<Scope> CREATOR = new t(2);
+    public final int a;
+    public final String b;
 
-    Scope(int i, String str) {
-        Preconditions.checkNotEmpty(str, "scopeUri must not be null or empty");
-        this.zza = i;
-        this.zzb = str;
+    public Scope(int i10, String str) {
+        y5.l.g(str, "scopeUri must not be null or empty");
+        this.a = i10;
+        this.b = str;
     }
 
-    public boolean equals(Object obj) {
+    public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj instanceof Scope) {
-            return this.zzb.equals(((Scope) obj).zzb);
+        if (!(obj instanceof Scope)) {
+            return false;
         }
-        return false;
+        return this.b.equals(((Scope) obj).b);
     }
 
-    public String getScopeUri() {
-        return this.zzb;
+    public final int hashCode() {
+        return this.b.hashCode();
     }
 
-    public int hashCode() {
-        return this.zzb.hashCode();
-    }
-
-    public String toString() {
-        return this.zzb;
+    public final String toString() {
+        return this.b;
     }
 
     @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        int i2 = this.zza;
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeInt(parcel, 1, i2);
-        SafeParcelWriter.writeString(parcel, 2, getScopeUri(), false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
-    }
-
-    public Scope(String str) {
-        this(1, str);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = r8.q(parcel, 20293);
+        r8.s(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        r8.l(parcel, 2, this.b);
+        r8.r(parcel, q6);
     }
 }

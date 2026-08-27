@@ -1,1757 +1,871 @@
 package org.telegram.ui;
 
-import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.ImageSpan;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.CheckBoxCell;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.RadioColorCell;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Cells.TextCell;
-import org.telegram.ui.Cells.TextCheckCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Cells.TextSettingsCell;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Premium.PremiumGradient;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.TextStyleSpan;
-import org.telegram.ui.SessionsActivity;
-import org.telegram.ui.bots.BotBiometry;
-import org.telegram.ui.bots.BotBiometrySettings;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* loaded from: classes4.dex */
-public class PrivacySettingsActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
-    private int advancedSectionRow;
-    private boolean archiveChats;
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes3.dex */
+public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
+    public int A;
+    public int B;
+    public int C;
+    public int D;
+    public int E;
+    public int F;
+    public int G;
+    public int H;
+    public int I;
+    public int J;
+    public int K;
+    public final ArrayList L;
+    public boolean M;
+    public boolean N;
+    public boolean O;
+    public boolean P;
+    public boolean Q;
+    public boolean R;
+    public boolean S;
+    public boolean T;
+    public boolean U;
+    public final boolean[] V;
+    public SessionsActivity W;
+    public SessionsActivity X;
+    public SpannableString Y;
+    public yw0 a;
     private int autoDeleteMesages;
+    public org.telegram.ui.Components.zk0 b;
     private int bioRow;
     private int birthdayRow;
     private int blockedRow;
-    private int botsAndWebsitesShadowRow;
-    private int botsBiometryRow;
-    private int botsDetailRow;
-    private int botsSectionRow;
+    public org.telegram.ui.ActionBar.b2 c;
     private int callsRow;
     private int contactsDeleteRow;
-    private int contactsDetailRow;
-    private int contactsSectionRow;
     private int contactsSuggestRow;
     private int contactsSyncRow;
-    public ArrayList currentPasskeys;
-    private TL_account.Password currentPassword;
-    private boolean currentSuggest;
-    private boolean currentSync;
-    private int deleteAccountDetailRow;
+    public TL_account.Password d;
     private int deleteAccountRow;
-    private boolean deleteAccountUpdate;
-    private SessionsActivity devicesActivityPreload;
+    public ArrayList e;
     private int emailLoginRow;
-    private boolean feeValue;
+    public int f;
     private int forwardsRow;
     private int giftsRow;
-    private int groupsDetailRow;
-    private int groupsRow;
+    public int h;
     private int lastSeenRow;
-    private LinearLayoutManager layoutManager;
-    private ListAdapter listAdapter;
-    private RecyclerListView listView;
     private int musicRow;
-    private int newChatsHeaderRow;
+    public int n;
     private int newChatsRow;
-    private int newChatsSectionRow;
-    private boolean newSuggest;
-    private boolean newSync;
     private int noncontactsRow;
-    private boolean noncontactsValue;
     private int passcodeRow;
     private int passkeysRow;
-    private int passportRow;
     private int passwordRow;
     private int paymentsClearRow;
     private int phoneNumberRow;
-    private SpannableString premiumStar;
-    private int privacySectionRow;
-    private int privacyShadowRow;
     private int profilePhotoRow;
-    private AlertDialog progressDialog;
-    private int rowCount;
-    private int secretDetailRow;
+    public int r;
+    public int s;
     private int secretMapRow;
-    private boolean secretMapUpdate;
-    private int secretSectionRow;
     private int secretWebpageRow;
-    private int securitySectionRow;
-    private int sessionsDetailRow;
-    private int sessionsRow;
+    public int v;
     private int voicesRow;
-    private SessionsActivity webSessionsActivityPreload;
+    public int w;
     private int webSessionsRow;
-    private final ArrayList biometryBots = new ArrayList();
-    private boolean[] clear = new boolean[2];
+    public int x;
+    public int y;
 
-    public static /* synthetic */ void $r8$lambda$WPUDIx9ZRykv2jZdq9nsvHdP-NU(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public PrivacySettingsActivity() {
+        super(null);
+        this.L = new ArrayList();
+        this.V = new boolean[2];
     }
 
-    public static /* synthetic */ void $r8$lambda$nCUBhXGADMz2X7VlwI6Kii7dtoM(TLObject tLObject, TLRPC.TL_error tL_error) {
-    }
-
-    public static /* synthetic */ void $r8$lambda$ozrsefcIfWZf5i3CX7ZHyh19qJA(TLObject tLObject, TLRPC.TL_error tL_error) {
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onFragmentCreate() {
-        super.onFragmentCreate();
-        getContactsController().loadPrivacySettings();
-        getMessagesController().getBlockedPeers(true);
-        boolean z = getUserConfig().syncContacts;
-        this.newSync = z;
-        this.currentSync = z;
-        boolean z2 = getUserConfig().suggestContacts;
-        this.newSuggest = z2;
-        this.currentSuggest = z2;
-        TLRPC.GlobalPrivacySettings globalPrivacySettings = getContactsController().getGlobalPrivacySettings();
-        if (globalPrivacySettings != null) {
-            this.archiveChats = globalPrivacySettings.archive_and_mute_new_noncontact_peers;
-            this.noncontactsValue = globalPrivacySettings.new_noncontact_peers_require_premium;
-            this.feeValue = (globalPrivacySettings.flags & 32) != 0;
-        }
-        updateRows();
-        loadPasswordSettings();
-        loadPasskeys();
-        getNotificationCenter().addObserver(this, NotificationCenter.privacyRulesUpdated);
-        getNotificationCenter().addObserver(this, NotificationCenter.blockedUsersDidLoad);
-        getNotificationCenter().addObserver(this, NotificationCenter.didSetOrRemoveTwoStepPassword);
-        getNotificationCenter().addObserver(this, NotificationCenter.didUpdateGlobalAutoDeleteTimer);
-        getUserConfig().loadGlobalTTl();
-        SessionsActivity sessionsActivity = new SessionsActivity(0);
-        this.devicesActivityPreload = sessionsActivity;
-        sessionsActivity.setDelegate(new SessionsActivity.Delegate() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda5
-            @Override // org.telegram.ui.SessionsActivity.Delegate
-            public final void sessionsLoaded() {
-                PrivacySettingsActivity.$r8$lambda$V5qMGBQuhYL6AfnHZEgaZs1lr4A(PrivacySettingsActivity.this);
-            }
-        });
-        this.devicesActivityPreload.loadSessions(false);
-        SessionsActivity sessionsActivity2 = new SessionsActivity(1);
-        this.webSessionsActivityPreload = sessionsActivity2;
-        sessionsActivity2.setDelegate(new SessionsActivity.Delegate() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda6
-            @Override // org.telegram.ui.SessionsActivity.Delegate
-            public final void sessionsLoaded() {
-                PrivacySettingsActivity.$r8$lambda$ip7LGhFjxEHCpvg5mROtj-dupN4(PrivacySettingsActivity.this);
-            }
-        });
-        this.webSessionsActivityPreload.loadSessions(false);
-        return true;
-    }
-
-    public static /* synthetic */ void $r8$lambda$V5qMGBQuhYL6AfnHZEgaZs1lr4A(PrivacySettingsActivity privacySettingsActivity) {
-        int i;
-        ListAdapter listAdapter = privacySettingsActivity.listAdapter;
-        if (listAdapter == null || (i = privacySettingsActivity.sessionsRow) < 0) {
-            return;
-        }
-        listAdapter.notifyItemChanged(i);
-    }
-
-    public static /* synthetic */ void $r8$lambda$ip7LGhFjxEHCpvg5mROtj-dupN4(PrivacySettingsActivity privacySettingsActivity) {
-        if (privacySettingsActivity.listAdapter != null) {
-            int sessionsCount = privacySettingsActivity.webSessionsActivityPreload.getSessionsCount();
-            if (privacySettingsActivity.webSessionsRow >= 0 || sessionsCount <= 0) {
+    public static void U(PrivacySettingsActivity privacySettingsActivity) {
+        if (privacySettingsActivity.a != null) {
+            int j02 = privacySettingsActivity.X.j0();
+            if (privacySettingsActivity.webSessionsRow >= 0 || j02 <= 0) {
                 return;
             }
-            privacySettingsActivity.updateRows();
+            privacySettingsActivity.A0(true);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00cf  */
-    /* JADX WARN: Removed duplicated region for block: B:28:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void onFragmentDestroy() {
-        boolean z;
-        super.onFragmentDestroy();
-        getNotificationCenter().removeObserver(this, NotificationCenter.privacyRulesUpdated);
-        getNotificationCenter().removeObserver(this, NotificationCenter.blockedUsersDidLoad);
-        getNotificationCenter().removeObserver(this, NotificationCenter.didSetOrRemoveTwoStepPassword);
-        getNotificationCenter().removeObserver(this, NotificationCenter.didUpdateGlobalAutoDeleteTimer);
-        boolean z2 = true;
-        if (this.currentSync != this.newSync) {
-            UserConfig userConfig = getUserConfig();
-            boolean z3 = this.newSync;
-            userConfig.syncContacts = z3;
-            if (z3 && ContactsController.hasContactsPermission()) {
-                getContactsController().forceImportContacts();
-                if (getParentActivity() != null) {
-                    Toast.makeText(getParentActivity(), LocaleController.getString("SyncContactsAdded", R.string.SyncContactsAdded), 0).show();
-                }
-            }
-            z = true;
-        } else {
-            z = false;
-        }
-        boolean z4 = this.newSuggest;
-        if (z4 != this.currentSuggest) {
-            if (!z4) {
-                getMediaDataController().clearTopPeers();
-            }
-            getUserConfig().suggestContacts = this.newSuggest;
-            TLRPC.TL_contacts_toggleTopPeers tL_contacts_toggleTopPeers = new TLRPC.TL_contacts_toggleTopPeers();
-            tL_contacts_toggleTopPeers.enabled = this.newSuggest;
-            getConnectionsManager().sendRequest(tL_contacts_toggleTopPeers, new RequestDelegate() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda0
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    PrivacySettingsActivity.$r8$lambda$ozrsefcIfWZf5i3CX7ZHyh19qJA(tLObject, tL_error);
-                }
-            });
-            z = true;
-        }
-        TLRPC.GlobalPrivacySettings globalPrivacySettings = getContactsController().getGlobalPrivacySettings();
-        if (globalPrivacySettings != null) {
-            boolean z5 = globalPrivacySettings.archive_and_mute_new_noncontact_peers;
-            boolean z6 = this.archiveChats;
-            if (z5 != z6) {
-                globalPrivacySettings.archive_and_mute_new_noncontact_peers = z6;
-                TL_account.setGlobalPrivacySettings setglobalprivacysettings = new TL_account.setGlobalPrivacySettings();
-                TLRPC.GlobalPrivacySettings globalPrivacySettings2 = getContactsController().getGlobalPrivacySettings();
-                setglobalprivacysettings.settings = globalPrivacySettings2;
-                if (globalPrivacySettings2 == null) {
-                    setglobalprivacysettings.settings = new TLRPC.TL_globalPrivacySettings();
-                }
-                setglobalprivacysettings.settings.archive_and_mute_new_noncontact_peers = this.archiveChats;
-                getConnectionsManager().sendRequest(setglobalprivacysettings, new RequestDelegate() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda1
-                    @Override // org.telegram.tgnet.RequestDelegate
-                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        PrivacySettingsActivity.$r8$lambda$nCUBhXGADMz2X7VlwI6Kii7dtoM(tLObject, tL_error);
-                    }
-                });
-                if (z2) {
-                    return;
-                }
-                getUserConfig().saveConfig(false);
-                return;
-            }
-        }
-        z2 = z;
-        if (z2) {
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public View createView(final Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        int i = 1;
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString(R.string.PrivacySettings));
-        this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PrivacySettingsActivity.1
-            @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i2) {
-                if (i2 == -1) {
-                    PrivacySettingsActivity.this.finishFragment();
-                }
-            }
-        });
-        INavigationLayout iNavigationLayout = this.parentLayout;
-        if (iNavigationLayout != null && iNavigationLayout.isRightLayout()) {
-            this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
-        }
-        this.listAdapter = new ListAdapter(context);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
-        RecyclerListView recyclerListView = new RecyclerListView(context);
-        this.listView = recyclerListView;
-        recyclerListView.setSections();
-        this.actionBar.setAdaptiveBackground(this.listView);
-        RecyclerListView recyclerListView2 = this.listView;
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, i, false) { // from class: org.telegram.ui.PrivacySettingsActivity.2
-            @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
-            public boolean supportsPredictiveItemAnimations() {
-                return false;
-            }
-        };
-        this.layoutManager = linearLayoutManager;
-        recyclerListView2.setLayoutManager(linearLayoutManager);
-        this.listView.setVerticalScrollBarEnabled(false);
-        this.listView.setLayoutAnimation(null);
-        this.listView.setItemAnimator(null);
-        frameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1.0f));
-        this.listView.setAdapter(this.listAdapter);
-        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda2
-            @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i2) {
-                PrivacySettingsActivity.$r8$lambda$qn5aB5MHlo-SJ_qG6JtA6eDly6g(PrivacySettingsActivity.this, context, view, i2);
-            }
-        });
-        BotBiometry.getBots(getContext(), this.currentAccount, new Utilities.Callback() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda3
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                PrivacySettingsActivity.$r8$lambda$flSoyrAfJSglkMKzEQ5Tnz7GoLo(PrivacySettingsActivity.this, (ArrayList) obj);
-            }
-        });
-        return this.fragmentView;
-    }
-
-    public static /* synthetic */ void $r8$lambda$qn5aB5MHlo-SJ_qG6JtA6eDly6g(final PrivacySettingsActivity privacySettingsActivity, Context context, View view, int i) {
-        String string;
+    public static void V(PrivacySettingsActivity privacySettingsActivity, Context context, View view, int i10) {
         String str;
-        privacySettingsActivity.getClass();
         if (view.isEnabled()) {
-            if (i == privacySettingsActivity.autoDeleteMesages) {
+            if (i10 == privacySettingsActivity.autoDeleteMesages) {
                 if (privacySettingsActivity.getUserConfig().getGlobalTTl() >= 0) {
-                    privacySettingsActivity.presentFragment(new AutoDeleteMessagesActivity());
+                    privacySettingsActivity.presentFragment(new q4());
                     return;
                 }
                 return;
             }
-            if (i == privacySettingsActivity.blockedRow) {
-                privacySettingsActivity.presentFragment(new PrivacyUsersActivity());
+            if (i10 == privacySettingsActivity.blockedRow) {
+                privacySettingsActivity.presentFragment(new cx0());
                 return;
             }
-            if (i == privacySettingsActivity.sessionsRow) {
-                privacySettingsActivity.devicesActivityPreload.resetFragment();
-                privacySettingsActivity.presentFragment(privacySettingsActivity.devicesActivityPreload);
+            if (i10 == privacySettingsActivity.s) {
+                privacySettingsActivity.W.resetFragment();
+                privacySettingsActivity.presentFragment(privacySettingsActivity.W);
                 return;
             }
-            if (i == privacySettingsActivity.webSessionsRow) {
-                privacySettingsActivity.webSessionsActivityPreload.resetFragment();
-                privacySettingsActivity.presentFragment(privacySettingsActivity.webSessionsActivityPreload);
+            if (i10 == privacySettingsActivity.webSessionsRow) {
+                privacySettingsActivity.X.resetFragment();
+                privacySettingsActivity.presentFragment(privacySettingsActivity.X);
                 return;
             }
-            int i2 = 4;
-            if (i == privacySettingsActivity.deleteAccountRow) {
+            int i11 = 4;
+            if (i10 == privacySettingsActivity.deleteAccountRow) {
                 if (privacySettingsActivity.getParentActivity() == null) {
                     return;
                 }
                 int deleteAccountTTL = privacySettingsActivity.getContactsController().getDeleteAccountTTL();
                 if (deleteAccountTTL <= 31) {
-                    i2 = 0;
+                    i11 = 0;
                 } else if (deleteAccountTTL <= 93) {
-                    i2 = 1;
+                    i11 = 1;
                 } else if (deleteAccountTTL <= 182) {
-                    i2 = 2;
+                    i11 = 2;
                 } else if (deleteAccountTTL != 548) {
-                    i2 = deleteAccountTTL == 730 ? 5 : 3;
+                    i11 = deleteAccountTTL == 730 ? 5 : 3;
                 }
-                final AlertDialog.Builder builder = new AlertDialog.Builder(privacySettingsActivity.getParentActivity());
-                builder.setTitle(LocaleController.getString("DeleteAccountTitle", R.string.DeleteAccountTitle));
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(privacySettingsActivity.getParentActivity());
+                alertDialog$Builder.a.N = LocaleController.getString("DeleteAccountTitle", R.string.DeleteAccountTitle);
                 String[] strArr = {LocaleController.formatPluralString("Months", 1, new Object[0]), LocaleController.formatPluralString("Months", 3, new Object[0]), LocaleController.formatPluralString("Months", 6, new Object[0]), LocaleController.formatPluralString("Months", 12, new Object[0]), LocaleController.formatPluralString("Months", 18, new Object[0]), LocaleController.formatPluralString("Months", 24, new Object[0])};
                 LinearLayout linearLayout = new LinearLayout(privacySettingsActivity.getParentActivity());
                 linearLayout.setOrientation(1);
-                builder.setView(linearLayout);
-                int i3 = 0;
-                while (i3 < 6) {
-                    RadioColorCell radioColorCell = new RadioColorCell(privacySettingsActivity.getParentActivity());
-                    radioColorCell.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-                    radioColorCell.setTag(Integer.valueOf(i3));
-                    radioColorCell.setCheckColor(Theme.getColor(Theme.key_radioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
-                    radioColorCell.setTextAndValue(strArr[i3], i2 == i3);
-                    linearLayout.addView(radioColorCell);
-                    radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda8
-                        @Override // android.view.View.OnClickListener
-                        public final void onClick(View view2) {
-                            PrivacySettingsActivity.$r8$lambda$OIdxqxp-kCc07d4deboX0DG8CG8(PrivacySettingsActivity.this, builder, view2);
-                        }
-                    });
-                    i3++;
+                alertDialog$Builder.n(linearLayout);
+                int i12 = 0;
+                while (i12 < 6) {
+                    org.telegram.ui.Cells.h6 h6Var = new org.telegram.ui.Cells.h6(privacySettingsActivity.getParentActivity(), null);
+                    h6Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+                    h6Var.setTag(Integer.valueOf(i12));
+                    h6Var.a(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.g7, false), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.E5, false));
+                    h6Var.b(strArr[i12], i11 == i12);
+                    linearLayout.addView(h6Var);
+                    h6Var.setOnClickListener(new u70(16, privacySettingsActivity, alertDialog$Builder));
+                    i12++;
                 }
-                builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
-                privacySettingsActivity.showDialog(builder.create());
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                privacySettingsActivity.showDialog(alertDialog$Builder.a);
                 return;
             }
-            if (i == privacySettingsActivity.lastSeenRow) {
-                privacySettingsActivity.presentFragment(new PrivacyControlActivity(0));
+            if (i10 == privacySettingsActivity.lastSeenRow) {
+                privacySettingsActivity.presentFragment(new PrivacyControlActivity(0, false));
                 return;
             }
-            if (i == privacySettingsActivity.phoneNumberRow) {
-                privacySettingsActivity.presentFragment(new PrivacyControlActivity(6));
+            if (i10 == privacySettingsActivity.phoneNumberRow) {
+                privacySettingsActivity.presentFragment(new PrivacyControlActivity(6, false));
                 return;
             }
-            if (i == privacySettingsActivity.groupsRow) {
-                privacySettingsActivity.presentFragment(new PrivacyControlActivity(1));
+            if (i10 == privacySettingsActivity.n) {
+                privacySettingsActivity.presentFragment(new PrivacyControlActivity(1, false));
                 return;
             }
-            if (i == privacySettingsActivity.callsRow) {
-                privacySettingsActivity.presentFragment(new PrivacyControlActivity(2));
+            if (i10 == privacySettingsActivity.callsRow) {
+                privacySettingsActivity.presentFragment(new PrivacyControlActivity(2, false));
                 return;
             }
-            if (i == privacySettingsActivity.profilePhotoRow) {
-                privacySettingsActivity.presentFragment(new PrivacyControlActivity(4));
+            if (i10 == privacySettingsActivity.profilePhotoRow) {
+                privacySettingsActivity.presentFragment(new PrivacyControlActivity(4, false));
                 return;
             }
-            if (i == privacySettingsActivity.bioRow) {
-                privacySettingsActivity.presentFragment(new PrivacyControlActivity(9));
+            if (i10 == privacySettingsActivity.bioRow) {
+                privacySettingsActivity.presentFragment(new PrivacyControlActivity(9, false));
                 return;
             }
-            if (i == privacySettingsActivity.musicRow) {
-                privacySettingsActivity.presentFragment(new PrivacyControlActivity(14));
+            if (i10 == privacySettingsActivity.musicRow) {
+                privacySettingsActivity.presentFragment(new PrivacyControlActivity(14, false));
                 return;
             }
-            if (i == privacySettingsActivity.birthdayRow) {
-                privacySettingsActivity.presentFragment(new PrivacyControlActivity(11));
+            if (i10 == privacySettingsActivity.birthdayRow) {
+                privacySettingsActivity.presentFragment(new PrivacyControlActivity(11, false));
                 return;
             }
-            if (i == privacySettingsActivity.giftsRow) {
-                privacySettingsActivity.presentFragment(new PrivacyControlActivity(12));
+            if (i10 == privacySettingsActivity.giftsRow) {
+                privacySettingsActivity.presentFragment(new PrivacyControlActivity(12, false));
                 return;
             }
-            if (i == privacySettingsActivity.forwardsRow) {
-                privacySettingsActivity.presentFragment(new PrivacyControlActivity(5));
+            if (i10 == privacySettingsActivity.forwardsRow) {
+                privacySettingsActivity.presentFragment(new PrivacyControlActivity(5, false));
                 return;
             }
-            if (i == privacySettingsActivity.voicesRow) {
-                privacySettingsActivity.presentFragment(new PrivacyControlActivity(8));
+            if (i10 == privacySettingsActivity.voicesRow) {
+                privacySettingsActivity.presentFragment(new PrivacyControlActivity(8, false));
                 return;
             }
-            if (i == privacySettingsActivity.noncontactsRow) {
-                privacySettingsActivity.presentFragment(new PrivacyControlActivity(10));
+            if (i10 == privacySettingsActivity.noncontactsRow) {
+                privacySettingsActivity.presentFragment(new PrivacyControlActivity(10, false));
                 return;
             }
-            if (i == privacySettingsActivity.emailLoginRow) {
-                TL_account.Password password = privacySettingsActivity.currentPassword;
+            if (i10 == privacySettingsActivity.emailLoginRow) {
+                TL_account.Password password = privacySettingsActivity.d;
                 if (password == null || (str = password.login_email_pattern) == null) {
                     return;
                 }
                 SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(str);
-                int indexOf = privacySettingsActivity.currentPassword.login_email_pattern.indexOf(42);
-                int lastIndexOf = privacySettingsActivity.currentPassword.login_email_pattern.lastIndexOf(42);
+                int indexOf = privacySettingsActivity.d.login_email_pattern.indexOf(42);
+                int lastIndexOf = privacySettingsActivity.d.login_email_pattern.lastIndexOf(42);
                 if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                    TextStyleSpan.TextStyleRun textStyleRun = new TextStyleSpan.TextStyleRun();
-                    textStyleRun.flags |= 256;
-                    textStyleRun.start = indexOf;
-                    int i4 = lastIndexOf + 1;
-                    textStyleRun.end = i4;
-                    valueOf.setSpan(new TextStyleSpan(textStyleRun), indexOf, i4, 0);
+                    org.telegram.ui.Components.xz0 xz0Var = new org.telegram.ui.Components.xz0();
+                    xz0Var.a |= 256;
+                    xz0Var.b = indexOf;
+                    int i13 = lastIndexOf + 1;
+                    xz0Var.c = i13;
+                    valueOf.setSpan(new org.telegram.ui.Components.yz0(xz0Var, 0), indexOf, i13, 0);
                 }
-                new AlertDialog.Builder(context).setTitle(valueOf).setMessage(LocaleController.getString(R.string.EmailLoginChangeMessage)).setPositiveButton(LocaleController.getString(R.string.ChangeEmail), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda9
-                    @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                    public final void onClick(AlertDialog alertDialog, int i5) {
-                        PrivacySettingsActivity.$r8$lambda$FeMA-DrVj6cCAnEUkIi9Lt825Y8(PrivacySettingsActivity.this, alertDialog, i5);
-                    }
-                }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).show();
+                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(context);
+                alertDialog$Builder2.a.N = valueOf;
+                alertDialog$Builder2.a.P = LocaleController.getString(R.string.EmailLoginChangeMessage);
+                alertDialog$Builder2.k(LocaleController.getString(R.string.ChangeEmail), new xw0(privacySettingsActivity, 4));
+                i0.a.w(R.string.Cancel, alertDialog$Builder2, null);
                 return;
             }
-            if (i == privacySettingsActivity.passwordRow) {
-                TL_account.Password password2 = privacySettingsActivity.currentPassword;
+            if (i10 == privacySettingsActivity.passwordRow) {
+                TL_account.Password password2 = privacySettingsActivity.d;
                 if (password2 == null) {
                     return;
                 }
-                if (!TwoStepVerificationActivity.canHandleCurrentPassword(password2, false)) {
-                    AlertsCreator.showUpdateAppAlert(privacySettingsActivity.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
+                if (!TwoStepVerificationActivity.i0(password2, false)) {
+                    org.telegram.ui.Components.y4.x0(privacySettingsActivity.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
                 }
-                TL_account.Password password3 = privacySettingsActivity.currentPassword;
-                if (password3.has_password) {
-                    TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-                    twoStepVerificationActivity.setPassword(privacySettingsActivity.currentPassword);
-                    privacySettingsActivity.presentFragment(twoStepVerificationActivity);
+                TL_account.Password password3 = privacySettingsActivity.d;
+                if (!password3.has_password) {
+                    privacySettingsActivity.presentFragment(new zf1(TextUtils.isEmpty(password3.email_unconfirmed_pattern) ? 6 : 5, privacySettingsActivity.d));
                     return;
                 }
-                privacySettingsActivity.presentFragment(new TwoStepVerificationSetupActivity(TextUtils.isEmpty(password3.email_unconfirmed_pattern) ? 6 : 5, privacySettingsActivity.currentPassword));
+                TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
+                twoStepVerificationActivity.E = privacySettingsActivity.d;
+                twoStepVerificationActivity.F = false;
+                privacySettingsActivity.presentFragment(twoStepVerificationActivity);
                 return;
             }
-            if (i == privacySettingsActivity.passkeysRow) {
+            if (i10 == privacySettingsActivity.passkeysRow) {
                 if (Build.VERSION.SDK_INT < 28 || !BuildVars.SUPPORTS_PASSKEYS) {
                     return;
                 }
-                ArrayList arrayList = privacySettingsActivity.currentPasskeys;
-                if (arrayList != null && arrayList.size() > 0) {
-                    privacySettingsActivity.presentFragment(new PasskeysActivity(privacySettingsActivity.currentPasskeys));
+                ArrayList arrayList = privacySettingsActivity.e;
+                if (arrayList == null || arrayList.size() <= 0) {
+                    PasskeysActivity.a0(privacySettingsActivity.currentAccount, context, privacySettingsActivity.resourceProvider, true);
                     return;
                 } else {
-                    PasskeysActivity.showLearnSheet(context, privacySettingsActivity.currentAccount, privacySettingsActivity.resourceProvider, true);
+                    privacySettingsActivity.presentFragment(new PasskeysActivity(privacySettingsActivity.e));
                     return;
                 }
             }
-            if (i == privacySettingsActivity.passcodeRow) {
-                privacySettingsActivity.presentFragment(PasscodeActivity.determineOpenFragment());
+            if (i10 == privacySettingsActivity.passcodeRow) {
+                privacySettingsActivity.presentFragment(PasscodeActivity.b0());
                 return;
             }
-            if (i == privacySettingsActivity.secretWebpageRow) {
+            if (i10 == privacySettingsActivity.secretWebpageRow) {
                 if (privacySettingsActivity.getMessagesController().secretWebpagePreview == 1) {
                     privacySettingsActivity.getMessagesController().secretWebpagePreview = 0;
                 } else {
                     privacySettingsActivity.getMessagesController().secretWebpagePreview = 1;
                 }
                 MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", privacySettingsActivity.getMessagesController().secretWebpagePreview).commit();
-                if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(privacySettingsActivity.getMessagesController().secretWebpagePreview == 1);
+                if (view instanceof org.telegram.ui.Cells.p8) {
+                    ((org.telegram.ui.Cells.p8) view).setChecked(privacySettingsActivity.getMessagesController().secretWebpagePreview == 1);
                     return;
                 }
                 return;
             }
-            if (i == privacySettingsActivity.contactsDeleteRow) {
+            if (i10 == privacySettingsActivity.contactsDeleteRow) {
                 if (privacySettingsActivity.getParentActivity() == null) {
                     return;
                 }
-                AlertDialog.Builder builder2 = new AlertDialog.Builder(privacySettingsActivity.getParentActivity());
-                builder2.setTitle(LocaleController.getString("SyncContactsDeleteTitle", R.string.SyncContactsDeleteTitle));
-                builder2.setMessage(AndroidUtilities.replaceTags(LocaleController.getString("SyncContactsDeleteText", R.string.SyncContactsDeleteText)));
-                builder2.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null);
-                builder2.setPositiveButton(LocaleController.getString("Delete", R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda10
-                    @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                    public final void onClick(AlertDialog alertDialog, int i5) {
-                        PrivacySettingsActivity.$r8$lambda$15p-6aZ6R6zAdzlqL9noDJZmdNs(PrivacySettingsActivity.this, alertDialog, i5);
-                    }
-                });
-                AlertDialog create = builder2.create();
-                privacySettingsActivity.showDialog(create);
-                TextView textView = (TextView) create.getButton(-1);
+                AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(privacySettingsActivity.getParentActivity());
+                alertDialog$Builder3.a.N = LocaleController.getString("SyncContactsDeleteTitle", R.string.SyncContactsDeleteTitle);
+                alertDialog$Builder3.a.P = AndroidUtilities.replaceTags(LocaleController.getString("SyncContactsDeleteText", R.string.SyncContactsDeleteText));
+                alertDialog$Builder3.h(LocaleController.getString("Cancel", R.string.Cancel), null);
+                alertDialog$Builder3.k(LocaleController.getString("Delete", R.string.Delete), new xw0(privacySettingsActivity, 5));
+                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder3.a;
+                privacySettingsActivity.showDialog(b2Var);
+                TextView textView = (TextView) b2Var.d(-1);
                 if (textView != null) {
-                    textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
+                    textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.q7, false));
                     return;
                 }
                 return;
             }
-            if (i == privacySettingsActivity.contactsSuggestRow) {
-                final TextCheckCell textCheckCell = (TextCheckCell) view;
-                if (privacySettingsActivity.newSuggest) {
-                    AlertDialog.Builder builder3 = new AlertDialog.Builder(privacySettingsActivity.getParentActivity());
-                    builder3.setTitle(LocaleController.getString("SuggestContactsTitle", R.string.SuggestContactsTitle));
-                    builder3.setMessage(LocaleController.getString("SuggestContactsAlert", R.string.SuggestContactsAlert));
-                    builder3.setPositiveButton(LocaleController.getString("MuteDisable", R.string.MuteDisable), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda11
-                        @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                        public final void onClick(AlertDialog alertDialog, int i5) {
-                            PrivacySettingsActivity.$r8$lambda$Z6YWwVaxuf2HiR6M5nXHZLBr9Yc(PrivacySettingsActivity.this, textCheckCell, alertDialog, i5);
-                        }
-                    });
-                    builder3.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null);
-                    AlertDialog create2 = builder3.create();
-                    privacySettingsActivity.showDialog(create2);
-                    TextView textView2 = (TextView) create2.getButton(-1);
-                    if (textView2 != null) {
-                        textView2.setTextColor(Theme.getColor(Theme.key_text_RedBold));
+            if (i10 == privacySettingsActivity.contactsSuggestRow) {
+                org.telegram.ui.Cells.p8 p8Var = (org.telegram.ui.Cells.p8) view;
+                if (!privacySettingsActivity.R) {
+                    privacySettingsActivity.R = true;
+                    p8Var.setChecked(true);
+                    return;
+                }
+                AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(privacySettingsActivity.getParentActivity());
+                alertDialog$Builder4.a.N = LocaleController.getString("SuggestContactsTitle", R.string.SuggestContactsTitle);
+                alertDialog$Builder4.a.P = LocaleController.getString("SuggestContactsAlert", R.string.SuggestContactsAlert);
+                alertDialog$Builder4.k(LocaleController.getString("MuteDisable", R.string.MuteDisable), new nl0(13, privacySettingsActivity, p8Var));
+                alertDialog$Builder4.h(LocaleController.getString("Cancel", R.string.Cancel), null);
+                org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder4.a;
+                privacySettingsActivity.showDialog(b2Var2);
+                TextView textView2 = (TextView) b2Var2.d(-1);
+                if (textView2 != null) {
+                    textView2.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.q7, false));
+                    return;
+                }
+                return;
+            }
+            if (i10 == privacySettingsActivity.newChatsRow) {
+                boolean z10 = !privacySettingsActivity.S;
+                privacySettingsActivity.S = z10;
+                ((org.telegram.ui.Cells.p8) view).setChecked(z10);
+                return;
+            }
+            if (i10 == privacySettingsActivity.contactsSyncRow) {
+                boolean z11 = !privacySettingsActivity.P;
+                privacySettingsActivity.P = z11;
+                if (view instanceof org.telegram.ui.Cells.p8) {
+                    ((org.telegram.ui.Cells.p8) view).setChecked(z11);
+                    return;
+                }
+                return;
+            }
+            if (i10 == privacySettingsActivity.secretMapRow) {
+                org.telegram.ui.Components.y4.s0(privacySettingsActivity.getParentActivity(), privacySettingsActivity.currentAccount, new ww0(privacySettingsActivity, 0), false, null);
+                return;
+            }
+            if (i10 != privacySettingsActivity.paymentsClearRow) {
+                if (i10 == privacySettingsActivity.C) {
+                    privacySettingsActivity.presentFragment(new xm0(5, 0L, "", "", (String) null, (String) null, (String) null, (TL_account.authorizationForm) null, (TL_account.Password) null));
+                    return;
+                } else {
+                    if (i10 == privacySettingsActivity.D) {
+                        privacySettingsActivity.presentFragment(new nh.s());
                         return;
                     }
                     return;
                 }
-                privacySettingsActivity.newSuggest = true;
-                textCheckCell.setChecked(true);
-                return;
             }
-            if (i == privacySettingsActivity.newChatsRow) {
-                boolean z = !privacySettingsActivity.archiveChats;
-                privacySettingsActivity.archiveChats = z;
-                ((TextCheckCell) view).setChecked(z);
-                return;
+            AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(privacySettingsActivity.getParentActivity());
+            alertDialog$Builder5.a.N = LocaleController.getString("PrivacyPaymentsClearAlertTitle", R.string.PrivacyPaymentsClearAlertTitle);
+            alertDialog$Builder5.a.P = LocaleController.getString("PrivacyPaymentsClearAlertText", R.string.PrivacyPaymentsClearAlertText);
+            LinearLayout linearLayout2 = new LinearLayout(privacySettingsActivity.getParentActivity());
+            linearLayout2.setOrientation(1);
+            alertDialog$Builder5.n(linearLayout2);
+            int i14 = 0;
+            while (i14 < 2) {
+                String string = i14 == 0 ? LocaleController.getString("PrivacyClearShipping", R.string.PrivacyClearShipping) : LocaleController.getString("PrivacyClearPayment", R.string.PrivacyClearPayment);
+                privacySettingsActivity.V[i14] = true;
+                org.telegram.ui.Cells.y1 y1Var = new org.telegram.ui.Cells.y1(1, 21, privacySettingsActivity.getParentActivity(), null, false);
+                y1Var.setTag(Integer.valueOf(i14));
+                y1Var.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.K0(false));
+                y1Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+                linearLayout2.addView(y1Var, h7.z5.n(-1, 50));
+                y1Var.e(string, null, true, false, false);
+                y1Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.j5, false));
+                y1Var.setOnClickListener(new u50(privacySettingsActivity, 26));
+                i14++;
             }
-            if (i == privacySettingsActivity.contactsSyncRow) {
-                boolean z2 = !privacySettingsActivity.newSync;
-                privacySettingsActivity.newSync = z2;
-                if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(z2);
-                    return;
-                }
-                return;
-            }
-            if (i == privacySettingsActivity.secretMapRow) {
-                AlertsCreator.showSecretLocationAlert(privacySettingsActivity.getParentActivity(), privacySettingsActivity.currentAccount, new Runnable() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda12
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        PrivacySettingsActivity.$r8$lambda$pf38SEDL3vn3AwvaZH3S6hyQxu8(PrivacySettingsActivity.this);
-                    }
-                }, false, null);
-                return;
-            }
-            if (i == privacySettingsActivity.paymentsClearRow) {
-                AlertDialog.Builder builder4 = new AlertDialog.Builder(privacySettingsActivity.getParentActivity());
-                builder4.setTitle(LocaleController.getString("PrivacyPaymentsClearAlertTitle", R.string.PrivacyPaymentsClearAlertTitle));
-                builder4.setMessage(LocaleController.getString("PrivacyPaymentsClearAlertText", R.string.PrivacyPaymentsClearAlertText));
-                LinearLayout linearLayout2 = new LinearLayout(privacySettingsActivity.getParentActivity());
-                linearLayout2.setOrientation(1);
-                builder4.setView(linearLayout2);
-                for (int i5 = 0; i5 < 2; i5++) {
-                    if (i5 == 0) {
-                        string = LocaleController.getString("PrivacyClearShipping", R.string.PrivacyClearShipping);
-                    } else {
-                        string = LocaleController.getString("PrivacyClearPayment", R.string.PrivacyClearPayment);
-                    }
-                    privacySettingsActivity.clear[i5] = true;
-                    CheckBoxCell checkBoxCell = new CheckBoxCell(privacySettingsActivity.getParentActivity(), 1, 21, null);
-                    checkBoxCell.setTag(Integer.valueOf(i5));
-                    checkBoxCell.setBackgroundDrawable(Theme.getSelectorDrawable(false));
-                    checkBoxCell.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-                    linearLayout2.addView(checkBoxCell, LayoutHelper.createLinear(-1, 50));
-                    checkBoxCell.setText(string, null, true, false);
-                    checkBoxCell.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
-                    checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda13
-                        @Override // android.view.View.OnClickListener
-                        public final void onClick(View view2) {
-                            PrivacySettingsActivity.$r8$lambda$UaDQg2UPohJSKbOkJk6CEJD2jtM(PrivacySettingsActivity.this, view2);
-                        }
-                    });
-                }
-                builder4.setPositiveButton(LocaleController.getString("ClearButton", R.string.ClearButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda14
-                    @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                    public final void onClick(AlertDialog alertDialog, int i6) {
-                        PrivacySettingsActivity.$r8$lambda$C2n4damLdF1a_NRKKDhcDvl1PZE(PrivacySettingsActivity.this, alertDialog, i6);
-                    }
-                });
-                builder4.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null);
-                privacySettingsActivity.showDialog(builder4.create());
-                AlertDialog create3 = builder4.create();
-                privacySettingsActivity.showDialog(create3);
-                TextView textView3 = (TextView) create3.getButton(-1);
-                if (textView3 != null) {
-                    textView3.setTextColor(Theme.getColor(Theme.key_text_RedBold));
-                    return;
-                }
-                return;
-            }
-            if (i == privacySettingsActivity.passportRow) {
-                privacySettingsActivity.presentFragment(new PassportActivity(5, 0L, "", "", (String) null, (String) null, (String) null, (TL_account.authorizationForm) null, (TL_account.Password) null));
-            } else if (i == privacySettingsActivity.botsBiometryRow) {
-                privacySettingsActivity.presentFragment(new BotBiometrySettings());
+            alertDialog$Builder5.k(LocaleController.getString("ClearButton", R.string.ClearButton), new xw0(privacySettingsActivity, 0));
+            alertDialog$Builder5.h(LocaleController.getString("Cancel", R.string.Cancel), null);
+            privacySettingsActivity.showDialog(alertDialog$Builder5.a);
+            org.telegram.ui.ActionBar.b2 b2Var3 = alertDialog$Builder5.a;
+            privacySettingsActivity.showDialog(b2Var3);
+            TextView textView3 = (TextView) b2Var3.d(-1);
+            if (textView3 != null) {
+                textView3.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.q7, false));
             }
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$OIdxqxp-kCc07d4deboX0DG8CG8(final PrivacySettingsActivity privacySettingsActivity, AlertDialog.Builder builder, View view) {
-        int i;
-        privacySettingsActivity.getClass();
-        builder.getDismissRunnable().run();
-        Integer num = (Integer) view.getTag();
-        if (num.intValue() == 0) {
-            i = 30;
-        } else if (num.intValue() == 1) {
-            i = 90;
-        } else if (num.intValue() == 2) {
-            i = NotificationCenter.themeUploadedToServer;
-        } else if (num.intValue() == 3) {
-            i = 365;
-        } else if (num.intValue() == 4) {
-            i = 548;
-        } else {
-            i = num.intValue() == 5 ? 730 : 0;
+    public static SpannableStringBuilder u0(PrivacySettingsActivity privacySettingsActivity, String str) {
+        if (privacySettingsActivity.Y == null) {
+            privacySettingsActivity.Y = new SpannableString("★");
+            org.telegram.ui.Components.j5 j5Var = new org.telegram.ui.Components.j5(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), ag.j2.d().f);
+            j5Var.setBounds(0, 0, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f));
+            privacySettingsActivity.Y.setSpan(new ImageSpan(j5Var, 2), 0, privacySettingsActivity.Y.length(), 17);
         }
-        final AlertDialog alertDialog = new AlertDialog(privacySettingsActivity.getParentActivity(), 3);
-        alertDialog.setCanCancel(false);
-        alertDialog.show();
-        final TL_account.setAccountTTL setaccountttl = new TL_account.setAccountTTL();
-        TLRPC.TL_accountDaysTTL tL_accountDaysTTL = new TLRPC.TL_accountDaysTTL();
-        setaccountttl.ttl = tL_accountDaysTTL;
-        tL_accountDaysTTL.days = i;
-        privacySettingsActivity.getConnectionsManager().sendRequest(setaccountttl, new RequestDelegate() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda19
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                PrivacySettingsActivity.$r8$lambda$ZFctJiASFicANOUKY8Inyeguu78(PrivacySettingsActivity.this, alertDialog, setaccountttl, tLObject, tL_error);
-            }
-        });
+        return new SpannableStringBuilder(str).append((CharSequence) " \u2009").append((CharSequence) privacySettingsActivity.Y);
     }
 
-    public static /* synthetic */ void $r8$lambda$ZFctJiASFicANOUKY8Inyeguu78(final PrivacySettingsActivity privacySettingsActivity, final AlertDialog alertDialog, final TL_account.setAccountTTL setaccountttl, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        privacySettingsActivity.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda23
-            @Override // java.lang.Runnable
-            public final void run() {
-                PrivacySettingsActivity.$r8$lambda$0paU0ceofjM3nsRkxRyKuSsyprI(PrivacySettingsActivity.this, alertDialog, tLObject, setaccountttl);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$0paU0ceofjM3nsRkxRyKuSsyprI(PrivacySettingsActivity privacySettingsActivity, AlertDialog alertDialog, TLObject tLObject, TL_account.setAccountTTL setaccountttl) {
-        privacySettingsActivity.getClass();
-        try {
-            alertDialog.dismiss();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        if (tLObject instanceof TLRPC.TL_boolTrue) {
-            privacySettingsActivity.deleteAccountUpdate = true;
-            privacySettingsActivity.getContactsController().setDeleteAccountTTL(setaccountttl.ttl.days);
-            privacySettingsActivity.listAdapter.notifyDataSetChanged();
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$FeMA-DrVj6cCAnEUkIi9Lt825Y8(final PrivacySettingsActivity privacySettingsActivity, AlertDialog alertDialog, int i) {
-        privacySettingsActivity.getClass();
-        privacySettingsActivity.presentFragment(new LoginActivity().changeEmail(new Runnable() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda17
-            @Override // java.lang.Runnable
-            public final void run() {
-                PrivacySettingsActivity.$r8$lambda$TQxQiJzIvaY-3LWY_oofj4g--kQ(PrivacySettingsActivity.this);
-            }
-        }));
-    }
-
-    public static /* synthetic */ void $r8$lambda$TQxQiJzIvaY-3LWY_oofj4g--kQ(PrivacySettingsActivity privacySettingsActivity) {
-        privacySettingsActivity.getClass();
-        Bulletin.LottieLayout lottieLayout = new Bulletin.LottieLayout(privacySettingsActivity.getContext(), null);
-        lottieLayout.setAnimation(R.raw.email_check_inbox, new String[0]);
-        lottieLayout.textView.setText(LocaleController.getString(R.string.YourLoginEmailChangedSuccess));
-        Bulletin.make(privacySettingsActivity, lottieLayout, 1500).show();
-        try {
-            privacySettingsActivity.fragmentView.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
-        }
-        privacySettingsActivity.loadPasswordSettings();
-    }
-
-    public static /* synthetic */ void $r8$lambda$15p-6aZ6R6zAdzlqL9noDJZmdNs(final PrivacySettingsActivity privacySettingsActivity, AlertDialog alertDialog, int i) {
-        AlertDialog show = new AlertDialog.Builder(privacySettingsActivity.getParentActivity(), 3, null).show();
-        privacySettingsActivity.progressDialog = show;
-        show.setCanCancel(false);
-        if (privacySettingsActivity.currentSync != privacySettingsActivity.newSync) {
-            UserConfig userConfig = privacySettingsActivity.getUserConfig();
-            boolean z = privacySettingsActivity.newSync;
-            userConfig.syncContacts = z;
-            privacySettingsActivity.currentSync = z;
-            privacySettingsActivity.getUserConfig().saveConfig(false);
-        }
-        privacySettingsActivity.getContactsController().deleteAllContacts(new Runnable() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda16
-            @Override // java.lang.Runnable
-            public final void run() {
-                PrivacySettingsActivity.this.progressDialog.dismiss();
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$Z6YWwVaxuf2HiR6M5nXHZLBr9Yc(final PrivacySettingsActivity privacySettingsActivity, final TextCheckCell textCheckCell, AlertDialog alertDialog, int i) {
-        privacySettingsActivity.getClass();
-        TLRPC.TL_payments_clearSavedInfo tL_payments_clearSavedInfo = new TLRPC.TL_payments_clearSavedInfo();
-        boolean[] zArr = privacySettingsActivity.clear;
-        tL_payments_clearSavedInfo.credentials = zArr[1];
-        tL_payments_clearSavedInfo.info = zArr[0];
-        privacySettingsActivity.getUserConfig().tmpPassword = null;
-        privacySettingsActivity.getUserConfig().saveConfig(false);
-        privacySettingsActivity.getConnectionsManager().sendRequest(tL_payments_clearSavedInfo, new RequestDelegate() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda20
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                PrivacySettingsActivity.$r8$lambda$6U9gsut_6AHITMkXC6Ev7hqfvds(PrivacySettingsActivity.this, textCheckCell, tLObject, tL_error);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$6U9gsut_6AHITMkXC6Ev7hqfvds(final PrivacySettingsActivity privacySettingsActivity, final TextCheckCell textCheckCell, TLObject tLObject, TLRPC.TL_error tL_error) {
-        privacySettingsActivity.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda22
-            @Override // java.lang.Runnable
-            public final void run() {
-                PrivacySettingsActivity.$r8$lambda$OTKuGTAxjwg_eDeow8SziRxEcCs(PrivacySettingsActivity.this, textCheckCell);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$OTKuGTAxjwg_eDeow8SziRxEcCs(PrivacySettingsActivity privacySettingsActivity, TextCheckCell textCheckCell) {
-        boolean z = !privacySettingsActivity.newSuggest;
-        privacySettingsActivity.newSuggest = z;
-        textCheckCell.setChecked(z);
-    }
-
-    public static /* synthetic */ void $r8$lambda$pf38SEDL3vn3AwvaZH3S6hyQxu8(PrivacySettingsActivity privacySettingsActivity) {
-        privacySettingsActivity.listAdapter.notifyDataSetChanged();
-        privacySettingsActivity.secretMapUpdate = true;
-    }
-
-    public static /* synthetic */ void $r8$lambda$UaDQg2UPohJSKbOkJk6CEJD2jtM(PrivacySettingsActivity privacySettingsActivity, View view) {
-        privacySettingsActivity.getClass();
-        CheckBoxCell checkBoxCell = (CheckBoxCell) view;
-        int intValue = ((Integer) checkBoxCell.getTag()).intValue();
-        boolean[] zArr = privacySettingsActivity.clear;
-        boolean z = !zArr[intValue];
-        zArr[intValue] = z;
-        checkBoxCell.setChecked(z, true);
-    }
-
-    public static /* synthetic */ void $r8$lambda$C2n4damLdF1a_NRKKDhcDvl1PZE(final PrivacySettingsActivity privacySettingsActivity, AlertDialog alertDialog, int i) {
-        privacySettingsActivity.getClass();
-        try {
-            Dialog dialog = privacySettingsActivity.visibleDialog;
-            if (dialog != null) {
-                dialog.dismiss();
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        AlertDialog.Builder builder = new AlertDialog.Builder(privacySettingsActivity.getParentActivity());
-        builder.setTitle(LocaleController.getString("PrivacyPaymentsClearAlertTitle", R.string.PrivacyPaymentsClearAlertTitle));
-        builder.setMessage(LocaleController.getString("PrivacyPaymentsClearAlert", R.string.PrivacyPaymentsClearAlert));
-        builder.setPositiveButton(LocaleController.getString("ClearButton", R.string.ClearButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda18
-            @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-            public final void onClick(AlertDialog alertDialog2, int i2) {
-                PrivacySettingsActivity.$r8$lambda$IbcFnRbEbHd9gjCFwCIyIJsmq_M(PrivacySettingsActivity.this, alertDialog2, i2);
-            }
-        });
-        builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null);
-        privacySettingsActivity.showDialog(builder.create());
-        AlertDialog create = builder.create();
-        privacySettingsActivity.showDialog(create);
-        TextView textView = (TextView) create.getButton(-1);
-        if (textView != null) {
-            textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$IbcFnRbEbHd9gjCFwCIyIJsmq_M(PrivacySettingsActivity privacySettingsActivity, AlertDialog alertDialog, int i) {
-        String string;
-        privacySettingsActivity.getClass();
-        TLRPC.TL_payments_clearSavedInfo tL_payments_clearSavedInfo = new TLRPC.TL_payments_clearSavedInfo();
-        boolean[] zArr = privacySettingsActivity.clear;
-        tL_payments_clearSavedInfo.credentials = zArr[1];
-        tL_payments_clearSavedInfo.info = zArr[0];
-        privacySettingsActivity.getUserConfig().tmpPassword = null;
-        privacySettingsActivity.getUserConfig().saveConfig(false);
-        privacySettingsActivity.getConnectionsManager().sendRequest(tL_payments_clearSavedInfo, new RequestDelegate() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda21
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                PrivacySettingsActivity.$r8$lambda$WPUDIx9ZRykv2jZdq9nsvHdP-NU(tLObject, tL_error);
-            }
-        });
-        boolean[] zArr2 = privacySettingsActivity.clear;
-        boolean z = zArr2[0];
-        if (z && zArr2[1]) {
-            string = LocaleController.getString("PrivacyPaymentsPaymentShippingCleared", R.string.PrivacyPaymentsPaymentShippingCleared);
-        } else if (z) {
-            string = LocaleController.getString("PrivacyPaymentsShippingInfoCleared", R.string.PrivacyPaymentsShippingInfoCleared);
-        } else if (!zArr2[1]) {
-            return;
-        } else {
-            string = LocaleController.getString("PrivacyPaymentsPaymentInfoCleared", R.string.PrivacyPaymentsPaymentInfoCleared);
-        }
-        BulletinFactory.of(privacySettingsActivity).createSimpleBulletin(R.raw.chats_infotip, string).show();
-    }
-
-    public static /* synthetic */ void $r8$lambda$flSoyrAfJSglkMKzEQ5Tnz7GoLo(PrivacySettingsActivity privacySettingsActivity, ArrayList arrayList) {
-        privacySettingsActivity.biometryBots.clear();
-        privacySettingsActivity.biometryBots.addAll(arrayList);
-        privacySettingsActivity.updateRows(true);
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i, int i2, Object... objArr) {
-        ListAdapter listAdapter;
-        if (i == NotificationCenter.privacyRulesUpdated) {
-            TLRPC.GlobalPrivacySettings globalPrivacySettings = getContactsController().getGlobalPrivacySettings();
-            if (globalPrivacySettings != null) {
-                this.archiveChats = globalPrivacySettings.archive_and_mute_new_noncontact_peers;
-                this.noncontactsValue = globalPrivacySettings.new_noncontact_peers_require_premium;
-                this.feeValue = (globalPrivacySettings.flags & 32) != 0;
-            }
-            ListAdapter listAdapter2 = this.listAdapter;
-            if (listAdapter2 != null) {
-                listAdapter2.notifyDataSetChanged();
-            }
-        } else if (i == NotificationCenter.blockedUsersDidLoad) {
-            this.listAdapter.notifyItemChanged(this.blockedRow);
-        } else if (i == NotificationCenter.didSetOrRemoveTwoStepPassword) {
-            if (objArr.length > 0) {
-                this.currentPassword = (TL_account.Password) objArr[0];
-                ListAdapter listAdapter3 = this.listAdapter;
-                if (listAdapter3 != null) {
-                    listAdapter3.notifyItemChanged(this.passwordRow);
-                }
-            } else {
-                this.currentPassword = null;
-                loadPasswordSettings();
-                updateRows();
-            }
-        }
-        if (i != NotificationCenter.didUpdateGlobalAutoDeleteTimer || (listAdapter = this.listAdapter) == null) {
-            return;
-        }
-        listAdapter.notifyItemChanged(this.autoDeleteMesages);
-    }
-
-    private void updateRows() {
-        updateRows(true);
-    }
-
-    public void updateRows(boolean z) {
-        this.passkeysRow = -1;
-        this.securitySectionRow = 0;
-        this.passwordRow = 1;
-        this.autoDeleteMesages = 2;
-        this.rowCount = 4;
-        this.passcodeRow = 3;
-        if (getMessagesController().config.settingsDisplayPasskeys.get() && Build.VERSION.SDK_INT >= 28 && BuildVars.SUPPORTS_PASSKEYS) {
-            int i = this.rowCount;
-            this.rowCount = i + 1;
-            this.passkeysRow = i;
-        }
-        TL_account.Password password = this.currentPassword;
-        if (password == null ? SharedConfig.hasEmailLogin : password.login_email_pattern != null) {
-            int i2 = this.rowCount;
-            this.rowCount = i2 + 1;
-            this.emailLoginRow = i2;
-        } else {
-            this.emailLoginRow = -1;
-        }
-        int i3 = this.rowCount;
-        this.rowCount = i3 + 1;
-        this.blockedRow = i3;
-        if (password != null) {
-            boolean z2 = password.login_email_pattern != null;
-            if (SharedConfig.hasEmailLogin != z2) {
-                SharedConfig.hasEmailLogin = z2;
-                SharedConfig.saveConfig();
-            }
-        }
-        int i4 = this.rowCount;
-        this.sessionsRow = i4;
-        this.sessionsDetailRow = i4 + 1;
-        this.privacySectionRow = i4 + 2;
-        this.phoneNumberRow = i4 + 3;
-        this.lastSeenRow = i4 + 4;
-        this.profilePhotoRow = i4 + 5;
-        this.forwardsRow = i4 + 6;
-        this.rowCount = i4 + 8;
-        this.callsRow = i4 + 7;
-        this.groupsDetailRow = -1;
-        if (!getMessagesController().premiumFeaturesBlocked() || getUserConfig().isPremium()) {
-            int i5 = this.rowCount;
-            this.voicesRow = i5;
-            this.rowCount = i5 + 2;
-            this.noncontactsRow = i5 + 1;
-        } else {
-            this.voicesRow = -1;
-            this.noncontactsRow = -1;
-        }
-        int i6 = this.rowCount;
-        this.birthdayRow = i6;
-        this.giftsRow = i6 + 1;
-        this.bioRow = i6 + 2;
-        this.musicRow = i6 + 3;
-        this.groupsRow = i6 + 4;
-        this.rowCount = i6 + 6;
-        this.privacyShadowRow = i6 + 5;
-        if (getMessagesController().autoarchiveAvailable || getUserConfig().isPremium()) {
-            int i7 = this.rowCount;
-            this.newChatsHeaderRow = i7;
-            this.newChatsRow = i7 + 1;
-            this.rowCount = i7 + 3;
-            this.newChatsSectionRow = i7 + 2;
-        } else {
-            this.newChatsHeaderRow = -1;
-            this.newChatsRow = -1;
-            this.newChatsSectionRow = -1;
-        }
-        int i8 = this.rowCount;
-        this.advancedSectionRow = i8;
-        this.deleteAccountRow = i8 + 1;
-        this.deleteAccountDetailRow = i8 + 2;
-        this.rowCount = i8 + 4;
-        this.botsSectionRow = i8 + 3;
-        if (getUserConfig().hasSecureData) {
-            int i9 = this.rowCount;
-            this.rowCount = i9 + 1;
-            this.passportRow = i9;
-        } else {
-            this.passportRow = -1;
-        }
-        int i10 = this.rowCount;
-        this.rowCount = i10 + 1;
-        this.paymentsClearRow = i10;
-        if (!this.biometryBots.isEmpty()) {
-            int i11 = this.rowCount;
-            this.rowCount = i11 + 1;
-            this.botsBiometryRow = i11;
-        } else {
-            this.botsBiometryRow = -1;
-        }
-        SessionsActivity sessionsActivity = this.webSessionsActivityPreload;
-        if (sessionsActivity != null && sessionsActivity.getSessionsCount() > 0) {
-            int i12 = this.rowCount;
-            this.webSessionsRow = i12;
-            this.rowCount = i12 + 2;
-            this.botsDetailRow = i12 + 1;
-            this.botsAndWebsitesShadowRow = -1;
-        } else {
-            this.webSessionsRow = -1;
-            this.botsDetailRow = -1;
-            int i13 = this.rowCount;
-            this.rowCount = i13 + 1;
-            this.botsAndWebsitesShadowRow = i13;
-        }
-        int i14 = this.rowCount;
-        this.contactsSectionRow = i14;
-        this.contactsDeleteRow = i14 + 1;
-        this.contactsSyncRow = i14 + 2;
-        this.contactsSuggestRow = i14 + 3;
-        this.contactsDetailRow = i14 + 4;
-        this.secretSectionRow = i14 + 5;
-        this.secretMapRow = i14 + 6;
-        this.secretWebpageRow = i14 + 7;
-        this.rowCount = i14 + 9;
-        this.secretDetailRow = i14 + 8;
-        ListAdapter listAdapter = this.listAdapter;
-        if (listAdapter == null || !z) {
-            return;
-        }
-        listAdapter.notifyDataSetChanged();
-    }
-
-    public PrivacySettingsActivity setCurrentPassword(TL_account.Password password) {
-        this.currentPassword = password;
-        if (password != null) {
-            initPassword();
-        }
-        return this;
-    }
-
-    private void initPassword() {
-        TwoStepVerificationActivity.initPasswordNewAlgo(this.currentPassword);
-        if (!getUserConfig().hasSecureData && this.currentPassword.has_secure_values) {
-            getUserConfig().hasSecureData = true;
-            getUserConfig().saveConfig(false);
-            updateRows();
-            return;
-        }
-        TL_account.Password password = this.currentPassword;
-        if (password != null) {
-            int i = this.emailLoginRow;
-            String str = password.login_email_pattern;
-            boolean z = str != null && i == -1;
-            boolean z2 = str == null && i != -1;
-            if (z || z2) {
-                updateRows(false);
-                ListAdapter listAdapter = this.listAdapter;
-                if (listAdapter != null) {
-                    if (z) {
-                        listAdapter.notifyItemInserted(this.emailLoginRow);
-                    } else {
-                        listAdapter.notifyItemRemoved(i);
-                    }
-                }
-            }
-        }
-        ListAdapter listAdapter2 = this.listAdapter;
-        if (listAdapter2 != null) {
-            listAdapter2.notifyItemChanged(this.passwordRow);
-        }
-    }
-
-    private void loadPasswordSettings() {
-        getConnectionsManager().sendRequest(new TL_account.getPassword(), new RequestDelegate() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda4
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                PrivacySettingsActivity.$r8$lambda$-T06dH54o4GlidQJRuJmTyC0vJI(PrivacySettingsActivity.this, tLObject, tL_error);
-            }
-        }, 10);
-    }
-
-    public static /* synthetic */ void $r8$lambda$-T06dH54o4GlidQJRuJmTyC0vJI(final PrivacySettingsActivity privacySettingsActivity, TLObject tLObject, TLRPC.TL_error tL_error) {
-        privacySettingsActivity.getClass();
-        if (tLObject != null) {
-            final TL_account.Password password = (TL_account.Password) tLObject;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda15
-                @Override // java.lang.Runnable
-                public final void run() {
-                    PrivacySettingsActivity.$r8$lambda$FTJoF-zBwwVT4r4RrY-3qSZC3T4(PrivacySettingsActivity.this, password);
-                }
-            });
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$FTJoF-zBwwVT4r4RrY-3qSZC3T4(PrivacySettingsActivity privacySettingsActivity, TL_account.Password password) {
-        privacySettingsActivity.currentPassword = password;
-        privacySettingsActivity.initPassword();
-    }
-
-    private void loadPasskeys() {
-        getConnectionsManager().sendRequestTyped(new TL_account.getPasskeys(), new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda7
-            @Override // org.telegram.messenger.Utilities.Callback2
-            public final void run(Object obj, Object obj2) {
-                PrivacySettingsActivity.$r8$lambda$yTv3CGGH1GpA2jrfnyrwzoZjucg(PrivacySettingsActivity.this, (TL_account.Passkeys) obj, (TLRPC.TL_error) obj2);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$yTv3CGGH1GpA2jrfnyrwzoZjucg(PrivacySettingsActivity privacySettingsActivity, TL_account.Passkeys passkeys, TLRPC.TL_error tL_error) {
-        privacySettingsActivity.getClass();
-        if (passkeys != null) {
-            privacySettingsActivity.currentPasskeys = passkeys.passkeys;
-            privacySettingsActivity.updateRows();
-        }
-    }
-
-    public static String formatRulesString(AccountInstance accountInstance, int i) {
+    public static String x0(int i10, AccountInstance accountInstance) {
         TLRPC.DisallowedGiftsSettings disallowedGiftsSettings;
         TLRPC.DisallowedGiftsSettings disallowedGiftsSettings2;
         Boolean bool;
-        ArrayList<TLRPC.PrivacyRule> privacyRules = accountInstance.getContactsController().getPrivacyRules(i);
+        ArrayList<TLRPC.PrivacyRule> privacyRules = accountInstance.getContactsController().getPrivacyRules(i10);
         TLRPC.GlobalPrivacySettings globalPrivacySettings = accountInstance.getContactsController().getGlobalPrivacySettings();
         if (privacyRules == null || privacyRules.size() == 0) {
-            if (i == 3) {
-                return LocaleController.getString(R.string.P2PNobody);
-            }
-            return LocaleController.getString(R.string.LastSeenNobody);
+            return i10 == 3 ? LocaleController.getString(R.string.P2PNobody) : LocaleController.getString(R.string.LastSeenNobody);
         }
         Boolean bool2 = null;
-        int i2 = 0;
-        int i3 = 0;
-        char c = 65535;
-        boolean z = false;
-        for (int i4 = 0; i4 < privacyRules.size(); i4++) {
-            TLRPC.PrivacyRule privacyRule = privacyRules.get(i4);
+        int i11 = 0;
+        int i12 = 0;
+        char c10 = 65535;
+        boolean z10 = false;
+        for (int i13 = 0; i13 < privacyRules.size(); i13++) {
+            TLRPC.PrivacyRule privacyRule = privacyRules.get(i13);
             if (privacyRule instanceof TLRPC.TL_privacyValueAllowChatParticipants) {
                 TLRPC.TL_privacyValueAllowChatParticipants tL_privacyValueAllowChatParticipants = (TLRPC.TL_privacyValueAllowChatParticipants) privacyRule;
                 int size = tL_privacyValueAllowChatParticipants.chats.size();
-                for (int i5 = 0; i5 < size; i5++) {
-                    TLRPC.Chat chat = accountInstance.getMessagesController().getChat(tL_privacyValueAllowChatParticipants.chats.get(i5));
+                for (int i14 = 0; i14 < size; i14++) {
+                    TLRPC.Chat chat = accountInstance.getMessagesController().getChat(tL_privacyValueAllowChatParticipants.chats.get(i14));
                     if (chat != null) {
-                        i2 += chat.participants_count;
+                        i11 += chat.participants_count;
                     }
                 }
             } else if (privacyRule instanceof TLRPC.TL_privacyValueDisallowChatParticipants) {
                 TLRPC.TL_privacyValueDisallowChatParticipants tL_privacyValueDisallowChatParticipants = (TLRPC.TL_privacyValueDisallowChatParticipants) privacyRule;
                 int size2 = tL_privacyValueDisallowChatParticipants.chats.size();
-                for (int i6 = 0; i6 < size2; i6++) {
-                    TLRPC.Chat chat2 = accountInstance.getMessagesController().getChat(tL_privacyValueDisallowChatParticipants.chats.get(i6));
+                for (int i15 = 0; i15 < size2; i15++) {
+                    TLRPC.Chat chat2 = accountInstance.getMessagesController().getChat(tL_privacyValueDisallowChatParticipants.chats.get(i15));
                     if (chat2 != null) {
-                        i3 += chat2.participants_count;
+                        i12 += chat2.participants_count;
                     }
                 }
             } else if (privacyRule instanceof TLRPC.TL_privacyValueAllowUsers) {
-                i2 += ((TLRPC.TL_privacyValueAllowUsers) privacyRule).users.size();
+                i11 += ((TLRPC.TL_privacyValueAllowUsers) privacyRule).users.size();
             } else if (privacyRule instanceof TLRPC.TL_privacyValueDisallowUsers) {
-                i3 += ((TLRPC.TL_privacyValueDisallowUsers) privacyRule).users.size();
+                i12 += ((TLRPC.TL_privacyValueDisallowUsers) privacyRule).users.size();
             } else if (privacyRule instanceof TLRPC.TL_privacyValueAllowPremium) {
-                z = true;
+                z10 = true;
             } else {
                 if (privacyRule instanceof TLRPC.TL_privacyValueAllowBots) {
                     bool = Boolean.TRUE;
                 } else if (privacyRule instanceof TLRPC.TL_privacyValueDisallowBots) {
                     bool = Boolean.FALSE;
-                } else if (c == 65535) {
-                    if (privacyRule instanceof TLRPC.TL_privacyValueAllowAll) {
-                        c = 0;
-                    } else {
-                        c = privacyRule instanceof TLRPC.TL_privacyValueDisallowAll ? (char) 1 : (char) 2;
-                    }
+                } else if (c10 == 65535) {
+                    c10 = privacyRule instanceof TLRPC.TL_privacyValueAllowAll ? (char) 0 : privacyRule instanceof TLRPC.TL_privacyValueDisallowAll ? (char) 1 : (char) 2;
                 }
                 bool2 = bool;
             }
         }
-        if (i == 12 && globalPrivacySettings != null && (disallowedGiftsSettings2 = globalPrivacySettings.disallowed_stargifts) != null && disallowedGiftsSettings2.disallow_unique_stargifts && disallowedGiftsSettings2.disallow_unlimited_stargifts && disallowedGiftsSettings2.disallow_limited_stargifts && !disallowedGiftsSettings2.disallow_premium_gifts) {
+        if (i10 == 12 && globalPrivacySettings != null && (disallowedGiftsSettings2 = globalPrivacySettings.disallowed_stargifts) != null && disallowedGiftsSettings2.disallow_unique_stargifts && disallowedGiftsSettings2.disallow_unlimited_stargifts && disallowedGiftsSettings2.disallow_limited_stargifts && !disallowedGiftsSettings2.disallow_premium_gifts) {
             return LocaleController.getString(R.string.PrivacyValueGiftsOnlyPremium);
         }
-        if (i == 12 && globalPrivacySettings != null && (disallowedGiftsSettings = globalPrivacySettings.disallowed_stargifts) != null && disallowedGiftsSettings.disallow_unique_stargifts && disallowedGiftsSettings.disallow_unlimited_stargifts && disallowedGiftsSettings.disallow_limited_stargifts && disallowedGiftsSettings.disallow_premium_gifts) {
+        if (i10 == 12 && globalPrivacySettings != null && (disallowedGiftsSettings = globalPrivacySettings.disallowed_stargifts) != null && disallowedGiftsSettings.disallow_unique_stargifts && disallowedGiftsSettings.disallow_unlimited_stargifts && disallowedGiftsSettings.disallow_limited_stargifts && disallowedGiftsSettings.disallow_premium_gifts) {
             return LocaleController.getString(R.string.PrivacyValueGiftsNone);
         }
-        if (c == 0 || (c == 65535 && i3 > 0)) {
-            if (i == 3) {
-                return i3 == 0 ? LocaleController.getString(R.string.P2PEverybody) : LocaleController.formatString(R.string.P2PEverybodyMinus, Integer.valueOf(i3));
+        if (c10 == 0 || (c10 == 65535 && i12 > 0)) {
+            if (i10 == 3) {
+                return i12 == 0 ? LocaleController.getString(R.string.P2PEverybody) : LocaleController.formatString(R.string.P2PEverybodyMinus, Integer.valueOf(i12));
             }
-            if (i != 12) {
-                return i3 == 0 ? LocaleController.getString(R.string.LastSeenEverybody) : LocaleController.formatString(R.string.LastSeenEverybodyMinus, Integer.valueOf(i3));
+            if (i10 != 12) {
+                return i12 == 0 ? LocaleController.getString(R.string.LastSeenEverybody) : LocaleController.formatString(R.string.LastSeenEverybodyMinus, Integer.valueOf(i12));
             }
-            if (i3 == 0) {
+            if (i12 == 0) {
                 return LocaleController.getString((bool2 == null || bool2.booleanValue()) ? R.string.LastSeenEverybody : R.string.PrivacyValueEveryoneExceptBots);
             }
-            return LocaleController.formatString((bool2 == null || bool2.booleanValue()) ? R.string.LastSeenEverybodyMinus : R.string.PrivacyValueEveryoneExceptBotsMinus, Integer.valueOf(i3));
+            return LocaleController.formatString((bool2 == null || bool2.booleanValue()) ? R.string.LastSeenEverybodyMinus : R.string.PrivacyValueEveryoneExceptBotsMinus, Integer.valueOf(i12));
         }
-        if (c != 2 && (c != 65535 || i3 <= 0 || i2 <= 0)) {
-            if (c != 1 && i2 <= 0) {
-                if (bool2 != null && bool2.booleanValue()) {
-                    return LocaleController.getString(R.string.PrivacyValueOnlyBots);
-                }
-                return "unknown";
+        if (c10 != 2 && (c10 != 65535 || i12 <= 0 || i11 <= 0)) {
+            if (c10 != 1 && i11 <= 0) {
+                return (bool2 == null || !bool2.booleanValue()) ? "unknown" : LocaleController.getString(R.string.PrivacyValueOnlyBots);
             }
-            if (i == 3) {
-                return i2 == 0 ? LocaleController.getString(R.string.P2PNobody) : LocaleController.formatString(R.string.P2PNobodyPlus, Integer.valueOf(i2));
+            if (i10 == 3) {
+                return i11 == 0 ? LocaleController.getString(R.string.P2PNobody) : LocaleController.formatString(R.string.P2PNobodyPlus, Integer.valueOf(i11));
             }
-            if (i2 != 0) {
-                return LocaleController.formatString(z ? R.string.LastSeenNobodyPremiumPlus : R.string.LastSeenNobodyPlus, Integer.valueOf(i2));
+            if (i11 == 0) {
+                return z10 ? LocaleController.getString(R.string.LastSeenNobodyPremium) : (bool2 == null || !bool2.booleanValue()) ? LocaleController.getString(R.string.LastSeenNobody) : LocaleController.getString(R.string.PrivacyValueOnlyBots);
             }
-            if (z) {
-                return LocaleController.getString(R.string.LastSeenNobodyPremium);
-            }
-            if (bool2 != null && bool2.booleanValue()) {
-                return LocaleController.getString(R.string.PrivacyValueOnlyBots);
-            }
-            return LocaleController.getString(R.string.LastSeenNobody);
+            return LocaleController.formatString(z10 ? R.string.LastSeenNobodyPremiumPlus : R.string.LastSeenNobodyPlus, Integer.valueOf(i11));
         }
-        if (i == 3) {
-            if (i2 == 0 && i3 == 0) {
-                return LocaleController.getString("P2PContacts", R.string.P2PContacts);
-            }
-            return (i2 == 0 || i3 == 0) ? i3 != 0 ? LocaleController.formatString(R.string.P2PContactsMinus, Integer.valueOf(i3)) : LocaleController.formatString(R.string.P2PContactsPlus, Integer.valueOf(i2)) : LocaleController.formatString(R.string.P2PContactsMinusPlus, Integer.valueOf(i3), Integer.valueOf(i2));
+        if (i10 == 3) {
+            return (i11 == 0 && i12 == 0) ? LocaleController.getString("P2PContacts", R.string.P2PContacts) : (i11 == 0 || i12 == 0) ? i12 != 0 ? LocaleController.formatString(R.string.P2PContactsMinus, Integer.valueOf(i12)) : LocaleController.formatString(R.string.P2PContactsPlus, Integer.valueOf(i11)) : LocaleController.formatString(R.string.P2PContactsMinusPlus, Integer.valueOf(i12), Integer.valueOf(i11));
         }
-        if (i2 == 0 && i3 == 0) {
-            if (z) {
-                return LocaleController.getString(R.string.LastSeenContactsPremium);
-            }
-            if (bool2 != null && bool2.booleanValue()) {
-                return LocaleController.getString(R.string.PrivacyContactsAndBotUsers);
-            }
-            return LocaleController.getString(R.string.LastSeenContacts);
+        if (i11 == 0 && i12 == 0) {
+            return z10 ? LocaleController.getString(R.string.LastSeenContactsPremium) : (bool2 == null || !bool2.booleanValue()) ? LocaleController.getString(R.string.LastSeenContacts) : LocaleController.getString(R.string.PrivacyContactsAndBotUsers);
         }
-        if (i2 != 0 && i3 != 0) {
-            return LocaleController.formatString((bool2 == null || !bool2.booleanValue()) ? z ? R.string.LastSeenContactsPremiumMinusPlus : R.string.LastSeenContactsMinusPlus : R.string.PrivacyContactsAndBotUsersMinusPlus, Integer.valueOf(i3), Integer.valueOf(i2));
+        if (i11 != 0 && i12 != 0) {
+            return LocaleController.formatString((bool2 == null || !bool2.booleanValue()) ? z10 ? R.string.LastSeenContactsPremiumMinusPlus : R.string.LastSeenContactsMinusPlus : R.string.PrivacyContactsAndBotUsersMinusPlus, Integer.valueOf(i12), Integer.valueOf(i11));
         }
-        if (i3 != 0) {
-            return LocaleController.formatString((bool2 == null || !bool2.booleanValue()) ? z ? R.string.LastSeenContactsPremiumMinus : R.string.LastSeenContactsMinus : R.string.PrivacyContactsAndBotUsersMinus, Integer.valueOf(i3));
+        if (i12 != 0) {
+            return LocaleController.formatString((bool2 == null || !bool2.booleanValue()) ? z10 ? R.string.LastSeenContactsPremiumMinus : R.string.LastSeenContactsMinus : R.string.PrivacyContactsAndBotUsersMinus, Integer.valueOf(i12));
         }
-        return LocaleController.formatString((bool2 == null || !bool2.booleanValue()) ? z ? R.string.LastSeenContactsPremiumPlus : R.string.LastSeenContactsPlus : R.string.PrivacyContactsAndBotUsersPlus, Integer.valueOf(i2));
+        return LocaleController.formatString((bool2 == null || !bool2.booleanValue()) ? z10 ? R.string.LastSeenContactsPremiumPlus : R.string.LastSeenContactsPlus : R.string.PrivacyContactsAndBotUsersPlus, Integer.valueOf(i11));
     }
 
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onResume() {
-        super.onResume();
-        ListAdapter listAdapter = this.listAdapter;
-        if (listAdapter != null) {
-            listAdapter.notifyDataSetChanged();
+    public final void A0(boolean z10) {
+        this.passkeysRow = -1;
+        this.passwordRow = 1;
+        this.autoDeleteMesages = 2;
+        this.K = 4;
+        this.passcodeRow = 3;
+        if (getMessagesController().config.settingsDisplayPasskeys.get() && Build.VERSION.SDK_INT >= 28 && BuildVars.SUPPORTS_PASSKEYS) {
+            int i10 = this.K;
+            this.K = i10 + 1;
+            this.passkeysRow = i10;
         }
+        TL_account.Password password = this.d;
+        if (password == null ? !SharedConfig.hasEmailLogin : password.login_email_pattern == null) {
+            this.emailLoginRow = -1;
+        } else {
+            int i11 = this.K;
+            this.K = i11 + 1;
+            this.emailLoginRow = i11;
+        }
+        int i12 = this.K;
+        this.K = i12 + 1;
+        this.blockedRow = i12;
+        if (password != null) {
+            boolean z11 = password.login_email_pattern != null;
+            if (SharedConfig.hasEmailLogin != z11) {
+                SharedConfig.hasEmailLogin = z11;
+                SharedConfig.saveConfig();
+            }
+        }
+        int i13 = this.K;
+        this.s = i13;
+        this.v = i13 + 1;
+        this.f = i13 + 2;
+        this.phoneNumberRow = i13 + 3;
+        this.lastSeenRow = i13 + 4;
+        this.profilePhotoRow = i13 + 5;
+        this.forwardsRow = i13 + 6;
+        this.K = i13 + 8;
+        this.callsRow = i13 + 7;
+        this.r = -1;
+        if (!getMessagesController().premiumFeaturesBlocked() || getUserConfig().isPremium()) {
+            int i14 = this.K;
+            this.voicesRow = i14;
+            this.K = i14 + 2;
+            this.noncontactsRow = i14 + 1;
+        } else {
+            this.voicesRow = -1;
+            this.noncontactsRow = -1;
+        }
+        int i15 = this.K;
+        this.birthdayRow = i15;
+        this.giftsRow = i15 + 1;
+        this.bioRow = i15 + 2;
+        this.musicRow = i15 + 3;
+        this.n = i15 + 4;
+        this.K = i15 + 6;
+        this.h = i15 + 5;
+        if (getMessagesController().autoarchiveAvailable || getUserConfig().isPremium()) {
+            int i16 = this.K;
+            this.w = i16;
+            this.newChatsRow = i16 + 1;
+            this.K = i16 + 3;
+            this.x = i16 + 2;
+        } else {
+            this.w = -1;
+            this.newChatsRow = -1;
+            this.x = -1;
+        }
+        int i17 = this.K;
+        this.y = i17;
+        this.deleteAccountRow = i17 + 1;
+        this.A = i17 + 2;
+        this.K = i17 + 4;
+        this.B = i17 + 3;
+        if (getUserConfig().hasSecureData) {
+            int i18 = this.K;
+            this.K = i18 + 1;
+            this.C = i18;
+        } else {
+            this.C = -1;
+        }
+        int i19 = this.K;
+        this.K = i19 + 1;
+        this.paymentsClearRow = i19;
+        if (this.L.isEmpty()) {
+            this.D = -1;
+        } else {
+            int i20 = this.K;
+            this.K = i20 + 1;
+            this.D = i20;
+        }
+        SessionsActivity sessionsActivity = this.X;
+        if (sessionsActivity == null || sessionsActivity.j0() <= 0) {
+            this.webSessionsRow = -1;
+            this.E = -1;
+            int i21 = this.K;
+            this.K = i21 + 1;
+            this.F = i21;
+        } else {
+            int i22 = this.K;
+            this.webSessionsRow = i22;
+            this.K = i22 + 2;
+            this.E = i22 + 1;
+            this.F = -1;
+        }
+        int i23 = this.K;
+        this.G = i23;
+        this.contactsDeleteRow = i23 + 1;
+        this.contactsSyncRow = i23 + 2;
+        this.contactsSuggestRow = i23 + 3;
+        this.H = i23 + 4;
+        this.I = i23 + 5;
+        this.secretMapRow = i23 + 6;
+        this.secretWebpageRow = i23 + 7;
+        this.K = i23 + 9;
+        this.J = i23 + 8;
+        yw0 yw0Var = this.a;
+        if (yw0Var == null || !z10) {
+            return;
+        }
+        yw0Var.l();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    class ListAdapter extends RecyclerListView.SelectionAdapter {
-        private Context mContext;
-
-        public ListAdapter(Context context) {
-            this.mContext = context;
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        int i10 = 1;
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(LocaleController.getString(R.string.PrivacySettings));
+        this.actionBar.setActionBarMenuOnItemClick(new pb0(this, 17));
+        org.telegram.ui.ActionBar.b5 b5Var = this.parentLayout;
+        if (b5Var != null && ((ActionBarLayout) b5Var).J0) {
+            this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
         }
+        this.a = new yw0(this, context);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.fragmentView = frameLayout;
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.a7, false));
+        org.telegram.ui.Components.zk0 zk0Var = new org.telegram.ui.Components.zk0(context, null);
+        this.b = zk0Var;
+        zk0Var.p1();
+        this.actionBar.setAdaptiveBackground(this.b);
+        this.b.setLayoutManager(new j(i10, false, 14));
+        this.b.setVerticalScrollBarEnabled(false);
+        this.b.setLayoutAnimation(null);
+        this.b.setItemAnimator(null);
+        frameLayout.addView(this.b, h7.z5.c(-1.0f, -1));
+        this.b.setAdapter(this.a);
+        this.b.setOnItemClickListener(new cg.x0(23, this, context));
+        nh.q.d(getParentActivity(), this.currentAccount, new x3(this, 16));
+        return this.fragmentView;
+    }
 
-        @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
-        public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
-            int adapterPosition = viewHolder.getAdapterPosition();
-            return adapterPosition == PrivacySettingsActivity.this.passcodeRow || adapterPosition == PrivacySettingsActivity.this.passwordRow || adapterPosition == PrivacySettingsActivity.this.passkeysRow || adapterPosition == PrivacySettingsActivity.this.blockedRow || adapterPosition == PrivacySettingsActivity.this.sessionsRow || adapterPosition == PrivacySettingsActivity.this.secretWebpageRow || adapterPosition == PrivacySettingsActivity.this.webSessionsRow || (adapterPosition == PrivacySettingsActivity.this.groupsRow && !PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(1)) || ((adapterPosition == PrivacySettingsActivity.this.lastSeenRow && !PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(0)) || ((adapterPosition == PrivacySettingsActivity.this.callsRow && !PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(2)) || ((adapterPosition == PrivacySettingsActivity.this.profilePhotoRow && !PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(4)) || ((adapterPosition == PrivacySettingsActivity.this.bioRow && !PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(9)) || ((adapterPosition == PrivacySettingsActivity.this.musicRow && !PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(14)) || ((adapterPosition == PrivacySettingsActivity.this.birthdayRow && !PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(11)) || ((adapterPosition == PrivacySettingsActivity.this.giftsRow && !PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(12)) || ((adapterPosition == PrivacySettingsActivity.this.forwardsRow && !PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(5)) || ((adapterPosition == PrivacySettingsActivity.this.phoneNumberRow && !PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(6)) || ((adapterPosition == PrivacySettingsActivity.this.voicesRow && !PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(8)) || adapterPosition == PrivacySettingsActivity.this.noncontactsRow || ((adapterPosition == PrivacySettingsActivity.this.deleteAccountRow && !PrivacySettingsActivity.this.getContactsController().getLoadingDeleteInfo()) || ((adapterPosition == PrivacySettingsActivity.this.newChatsRow && !PrivacySettingsActivity.this.getContactsController().getLoadingGlobalSettings()) || adapterPosition == PrivacySettingsActivity.this.emailLoginRow || adapterPosition == PrivacySettingsActivity.this.paymentsClearRow || adapterPosition == PrivacySettingsActivity.this.secretMapRow || adapterPosition == PrivacySettingsActivity.this.contactsSyncRow || adapterPosition == PrivacySettingsActivity.this.passportRow || adapterPosition == PrivacySettingsActivity.this.contactsDeleteRow || adapterPosition == PrivacySettingsActivity.this.contactsSuggestRow || adapterPosition == PrivacySettingsActivity.this.autoDeleteMesages || adapterPosition == PrivacySettingsActivity.this.botsBiometryRow))))))))))));
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemCount() {
-            return PrivacySettingsActivity.this.rowCount;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            View textSettingsCell;
-            if (i == 0) {
-                textSettingsCell = new TextSettingsCell(this.mContext);
-            } else if (i == 1) {
-                textSettingsCell = new TextInfoPrivacyCell(this.mContext);
-            } else if (i == 2) {
-                textSettingsCell = new HeaderCell(this.mContext);
-            } else if (i == 4) {
-                textSettingsCell = new ShadowSectionCell(this.mContext);
-            } else if (i == 5) {
-                textSettingsCell = new TextCell(this.mContext);
-            } else {
-                textSettingsCell = new TextCheckCell(this.mContext);
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        yw0 yw0Var;
+        if (i10 == NotificationCenter.privacyRulesUpdated) {
+            TLRPC.GlobalPrivacySettings globalPrivacySettings = getContactsController().getGlobalPrivacySettings();
+            if (globalPrivacySettings != null) {
+                this.S = globalPrivacySettings.archive_and_mute_new_noncontact_peers;
+                this.T = globalPrivacySettings.new_noncontact_peers_require_premium;
+                this.U = (globalPrivacySettings.flags & 32) != 0;
             }
-            return new RecyclerListView.Holder(textSettingsCell);
-        }
-
-        /* JADX WARN: Multi-variable type inference failed */
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-            String string;
-            int i2;
-            boolean z;
-            String str;
-            String format;
-            String string2;
-            int i3;
-            String string3;
-            String str2;
-            String string4;
-            int i4;
-            String str3;
-            String str4;
-            String format2;
-            String str5;
-            String string5;
-            String str6;
-            boolean z2 = false;
-            int itemViewType = viewHolder.getItemViewType();
-            String str7 = null;
-            int i5 = 16;
-            if (itemViewType == 0) {
-                boolean z3 = viewHolder.itemView.getTag() != null && ((Integer) viewHolder.itemView.getTag()).intValue() == i;
-                viewHolder.itemView.setTag(Integer.valueOf(i));
-                TextSettingsCell textSettingsCell = (TextSettingsCell) viewHolder.itemView;
-                textSettingsCell.setBetterLayout(true);
-                if (i != PrivacySettingsActivity.this.webSessionsRow) {
-                    if (i == PrivacySettingsActivity.this.phoneNumberRow) {
-                        if (PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(6)) {
-                            z2 = true;
-                            i5 = 30;
-                        } else {
-                            str7 = PrivacySettingsActivity.formatRulesString(PrivacySettingsActivity.this.getAccountInstance(), 6);
-                        }
-                        textSettingsCell.setTextAndValue(LocaleController.getString("PrivacyPhone", R.string.PrivacyPhone), str7, true);
-                    } else if (i == PrivacySettingsActivity.this.lastSeenRow) {
-                        if (PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(0)) {
-                            z2 = true;
-                            i5 = 30;
-                        } else {
-                            str7 = PrivacySettingsActivity.formatRulesString(PrivacySettingsActivity.this.getAccountInstance(), 0);
-                        }
-                        textSettingsCell.setTextAndValue(LocaleController.getString("PrivacyLastSeen", R.string.PrivacyLastSeen), str7, true);
-                    } else {
-                        if (i == PrivacySettingsActivity.this.groupsRow) {
-                            if (PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(1)) {
-                                i5 = 30;
-                            } else {
-                                str7 = PrivacySettingsActivity.formatRulesString(PrivacySettingsActivity.this.getAccountInstance(), 1);
-                                r3 = false;
-                            }
-                            textSettingsCell.setTextAndValue(LocaleController.getString(R.string.PrivacyInvites), str7, false);
-                        } else if (i == PrivacySettingsActivity.this.callsRow) {
-                            if (PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(2)) {
-                                z2 = true;
-                                i5 = 30;
-                            } else {
-                                str7 = PrivacySettingsActivity.formatRulesString(PrivacySettingsActivity.this.getAccountInstance(), 2);
-                            }
-                            textSettingsCell.setTextAndValue(LocaleController.getString("Calls", R.string.Calls), str7, true);
-                        } else if (i == PrivacySettingsActivity.this.profilePhotoRow) {
-                            if (PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(4)) {
-                                z2 = true;
-                                i5 = 30;
-                            } else {
-                                str7 = PrivacySettingsActivity.formatRulesString(PrivacySettingsActivity.this.getAccountInstance(), 4);
-                            }
-                            textSettingsCell.setTextAndValue(LocaleController.getString("PrivacyProfilePhoto", R.string.PrivacyProfilePhoto), str7, true);
-                        } else if (i == PrivacySettingsActivity.this.bioRow) {
-                            if (PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(9)) {
-                                z2 = true;
-                                i5 = 30;
-                            } else {
-                                str7 = PrivacySettingsActivity.formatRulesString(PrivacySettingsActivity.this.getAccountInstance(), 9);
-                            }
-                            textSettingsCell.setTextAndValue(LocaleController.getString("PrivacyBio", R.string.PrivacyBio), str7, true);
-                        } else if (i == PrivacySettingsActivity.this.musicRow) {
-                            if (PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(14)) {
-                                z2 = true;
-                                i5 = 30;
-                            } else {
-                                str7 = PrivacySettingsActivity.formatRulesString(PrivacySettingsActivity.this.getAccountInstance(), 14);
-                            }
-                            textSettingsCell.setTextAndValue(LocaleController.getString(R.string.PrivacyMusic), str7, true);
-                        } else if (i == PrivacySettingsActivity.this.birthdayRow) {
-                            if (PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(11)) {
-                                z2 = true;
-                                i5 = 30;
-                            } else {
-                                str7 = PrivacySettingsActivity.formatRulesString(PrivacySettingsActivity.this.getAccountInstance(), 11);
-                            }
-                            textSettingsCell.setTextAndValue(LocaleController.getString(R.string.PrivacyBirthday), str7, true);
-                        } else if (i == PrivacySettingsActivity.this.giftsRow) {
-                            if (PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(12)) {
-                                z2 = true;
-                                i5 = 30;
-                            } else {
-                                str7 = PrivacySettingsActivity.formatRulesString(PrivacySettingsActivity.this.getAccountInstance(), 12);
-                            }
-                            textSettingsCell.setTextAndValue(LocaleController.getString(R.string.PrivacyGifts), str7, true);
-                        } else if (i == PrivacySettingsActivity.this.forwardsRow) {
-                            if (PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(5)) {
-                                z2 = true;
-                                i5 = 30;
-                            } else {
-                                str7 = PrivacySettingsActivity.formatRulesString(PrivacySettingsActivity.this.getAccountInstance(), 5);
-                            }
-                            textSettingsCell.setTextAndValue(LocaleController.getString("PrivacyForwards", R.string.PrivacyForwards), str7, true);
-                        } else if (i == PrivacySettingsActivity.this.voicesRow) {
-                            if (PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(8)) {
-                                z = true;
-                                i5 = 30;
-                            } else {
-                                if (!PrivacySettingsActivity.this.getUserConfig().isPremium()) {
-                                    str7 = LocaleController.getString(R.string.P2PEverybody);
-                                } else {
-                                    str7 = PrivacySettingsActivity.formatRulesString(PrivacySettingsActivity.this.getAccountInstance(), 8);
-                                }
-                                z = false;
-                            }
-                            textSettingsCell.setTextAndValue(PrivacySettingsActivity.this.addPremiumStar(LocaleController.getString(R.string.PrivacyVoiceMessages)), str7, PrivacySettingsActivity.this.noncontactsRow != -1);
-                            textSettingsCell.getValueImageView().setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon), PorterDuff.Mode.MULTIPLY));
-                            z2 = z;
-                        } else if (i == PrivacySettingsActivity.this.noncontactsRow) {
-                            if (PrivacySettingsActivity.this.feeValue) {
-                                i2 = R.string.ContactsAndFee;
-                            } else {
-                                i2 = PrivacySettingsActivity.this.noncontactsValue ? R.string.ContactsAndPremium : R.string.P2PEverybody;
-                            }
-                            textSettingsCell.setTextAndValue((!PrivacySettingsActivity.this.getMessagesController().newNoncontactPeersRequirePremiumWithoutOwnpremium || PrivacySettingsActivity.this.getMessagesController().starsPaidMessagesAvailable) ? PrivacySettingsActivity.this.addPremiumStar(LocaleController.getString(R.string.PrivacyMessages)) : LocaleController.getString(R.string.PrivacyMessages), LocaleController.getString(i2), PrivacySettingsActivity.this.musicRow != -1);
-                        } else if (i != PrivacySettingsActivity.this.passportRow) {
-                            if (i == PrivacySettingsActivity.this.deleteAccountRow) {
-                                if (!PrivacySettingsActivity.this.getContactsController().getLoadingDeleteInfo()) {
-                                    int deleteAccountTTL = PrivacySettingsActivity.this.getContactsController().getDeleteAccountTTL();
-                                    if (deleteAccountTTL <= 182) {
-                                        str7 = LocaleController.formatPluralString("Months", deleteAccountTTL / 30, new Object[0]);
-                                    } else if (deleteAccountTTL == 365) {
-                                        str7 = LocaleController.formatPluralString("Months", 12, new Object[0]);
-                                    } else if (deleteAccountTTL == 548) {
-                                        str7 = LocaleController.formatPluralString("Months", 18, new Object[0]);
-                                    } else if (deleteAccountTTL == 730) {
-                                        str7 = LocaleController.formatPluralString("Months", 24, new Object[0]);
-                                    } else if (deleteAccountTTL > 30) {
-                                        str7 = LocaleController.formatPluralString("Months", (int) Math.round(deleteAccountTTL / 30.0d), new Object[0]);
-                                    } else {
-                                        str7 = LocaleController.formatPluralString("Days", deleteAccountTTL, new Object[0]);
-                                    }
-                                    r3 = false;
-                                }
-                                textSettingsCell.setTextAndValue(LocaleController.getString("DeleteAccountIfAwayFor3", R.string.DeleteAccountIfAwayFor3), str7, PrivacySettingsActivity.this.deleteAccountUpdate, false);
-                                PrivacySettingsActivity.this.deleteAccountUpdate = false;
-                            } else if (i != PrivacySettingsActivity.this.paymentsClearRow) {
-                                if (i != PrivacySettingsActivity.this.botsBiometryRow) {
-                                    if (i != PrivacySettingsActivity.this.secretMapRow) {
-                                        if (i == PrivacySettingsActivity.this.contactsDeleteRow) {
-                                            textSettingsCell.setText(LocaleController.getString("SyncContactsDelete", R.string.SyncContactsDelete), true);
-                                        }
-                                    } else {
-                                        int i6 = SharedConfig.mapPreviewType;
-                                        if (i6 == 0) {
-                                            string = LocaleController.getString("MapPreviewProviderTelegram", R.string.MapPreviewProviderTelegram);
-                                        } else if (i6 == 1) {
-                                            string = LocaleController.getString("MapPreviewProviderGoogle", R.string.MapPreviewProviderGoogle);
-                                        } else if (i6 == 2) {
-                                            string = LocaleController.getString("MapPreviewProviderNobody", R.string.MapPreviewProviderNobody);
-                                        } else {
-                                            string = LocaleController.getString("MapPreviewProviderYandex", R.string.MapPreviewProviderYandex);
-                                        }
-                                        textSettingsCell.setTextAndValue(LocaleController.getString("MapPreviewProvider", R.string.MapPreviewProvider), string, PrivacySettingsActivity.this.secretMapUpdate, true);
-                                        PrivacySettingsActivity.this.secretMapUpdate = false;
-                                    }
-                                } else {
-                                    textSettingsCell.setText(LocaleController.getString(R.string.PrivacyBiometryBotsButton), true);
-                                }
-                            } else {
-                                textSettingsCell.setText(LocaleController.getString("PrivacyPaymentsClear", R.string.PrivacyPaymentsClear), true);
-                            }
-                        } else {
-                            textSettingsCell.setText(LocaleController.getString("TelegramPassport", R.string.TelegramPassport), true);
-                        }
-                        z2 = r3;
-                    }
-                } else {
-                    textSettingsCell.setText(LocaleController.getString("WebSessionsTitle", R.string.WebSessionsTitle), false);
-                }
-                textSettingsCell.setDrawLoading(z2, i5, z3);
-                return;
+            yw0 yw0Var2 = this.a;
+            if (yw0Var2 != null) {
+                yw0Var2.l();
             }
-            if (itemViewType == 1) {
-                TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
-                getItemCount();
-                if (i != PrivacySettingsActivity.this.deleteAccountDetailRow) {
-                    if (i != PrivacySettingsActivity.this.groupsDetailRow) {
-                        if (i != PrivacySettingsActivity.this.sessionsDetailRow) {
-                            if (i != PrivacySettingsActivity.this.secretDetailRow) {
-                                if (i != PrivacySettingsActivity.this.botsDetailRow) {
-                                    if (i != PrivacySettingsActivity.this.privacyShadowRow) {
-                                        if (i != PrivacySettingsActivity.this.contactsDetailRow) {
-                                            if (i == PrivacySettingsActivity.this.newChatsSectionRow) {
-                                                textInfoPrivacyCell.setText(LocaleController.getString("ArchiveAndMuteInfo", R.string.ArchiveAndMuteInfo));
-                                                return;
-                                            }
-                                            return;
-                                        }
-                                        textInfoPrivacyCell.setText(LocaleController.getString("SuggestContactsInfo", R.string.SuggestContactsInfo));
-                                        return;
-                                    }
-                                    textInfoPrivacyCell.setText(LocaleController.getString(R.string.PrivacyInvitesInfo));
-                                    return;
-                                }
-                                textInfoPrivacyCell.setText(LocaleController.getString("PrivacyBotsInfo", R.string.PrivacyBotsInfo));
-                                return;
-                            }
-                            textInfoPrivacyCell.setText(LocaleController.getString("SecretWebPageInfo", R.string.SecretWebPageInfo));
-                            return;
-                        }
-                        textInfoPrivacyCell.setText(LocaleController.getString("SessionsSettingsInfo", R.string.SessionsSettingsInfo));
-                        return;
-                    }
-                    textInfoPrivacyCell.setText(LocaleController.getString("GroupsAndChannelsHelp", R.string.GroupsAndChannelsHelp));
-                    return;
-                }
-                textInfoPrivacyCell.setText(LocaleController.getString("DeleteAccountHelp", R.string.DeleteAccountHelp));
-                return;
-            }
-            if (itemViewType == 2) {
-                HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
-                if (i != PrivacySettingsActivity.this.privacySectionRow) {
-                    if (i != PrivacySettingsActivity.this.securitySectionRow) {
-                        if (i != PrivacySettingsActivity.this.advancedSectionRow) {
-                            if (i != PrivacySettingsActivity.this.secretSectionRow) {
-                                if (i != PrivacySettingsActivity.this.botsSectionRow) {
-                                    if (i != PrivacySettingsActivity.this.contactsSectionRow) {
-                                        if (i == PrivacySettingsActivity.this.newChatsHeaderRow) {
-                                            headerCell.setText(LocaleController.getString("NewChatsFromNonContacts", R.string.NewChatsFromNonContacts));
-                                            return;
-                                        }
-                                        return;
-                                    }
-                                    headerCell.setText(LocaleController.getString("Contacts", R.string.Contacts));
-                                    return;
-                                }
-                                headerCell.setText(LocaleController.getString("PrivacyBots", R.string.PrivacyBots));
-                                return;
-                            }
-                            headerCell.setText(LocaleController.getString("SecretChat", R.string.SecretChat));
-                            return;
-                        }
-                        headerCell.setText(LocaleController.getString("DeleteMyAccount", R.string.DeleteMyAccount));
-                        return;
-                    }
-                    headerCell.setText(LocaleController.getString("SecurityTitle", R.string.SecurityTitle));
-                    return;
-                }
-                headerCell.setText(LocaleController.getString("PrivacyTitle", R.string.PrivacyTitle));
-                return;
-            }
-            if (itemViewType == 3) {
-                TextCheckCell textCheckCell = (TextCheckCell) viewHolder.itemView;
-                if (i != PrivacySettingsActivity.this.secretWebpageRow) {
-                    if (i == PrivacySettingsActivity.this.contactsSyncRow) {
-                        textCheckCell.setTextAndCheck(LocaleController.getString("SyncContacts", R.string.SyncContacts), PrivacySettingsActivity.this.newSync, true);
-                        return;
-                    } else if (i == PrivacySettingsActivity.this.contactsSuggestRow) {
-                        textCheckCell.setTextAndCheck(LocaleController.getString("SuggestContacts", R.string.SuggestContacts), PrivacySettingsActivity.this.newSuggest, false);
-                        return;
-                    } else {
-                        if (i == PrivacySettingsActivity.this.newChatsRow) {
-                            textCheckCell.setTextAndCheck(LocaleController.getString("ArchiveAndMute", R.string.ArchiveAndMute), PrivacySettingsActivity.this.archiveChats, false);
-                            return;
-                        }
-                        return;
-                    }
-                }
-                textCheckCell.setTextAndCheck(LocaleController.getString("SecretWebPage", R.string.SecretWebPage), PrivacySettingsActivity.this.getMessagesController().secretWebpagePreview == 1, false);
-                return;
-            }
-            if (itemViewType != 5) {
-                return;
-            }
-            View view = viewHolder.itemView;
-            TextCell textCell = (TextCell) view;
-            boolean z4 = view.getTag() != null && ((Integer) viewHolder.itemView.getTag()).intValue() == i;
-            viewHolder.itemView.setTag(Integer.valueOf(i));
-            textCell.setPrioritizeTitleOverValue(false);
-            if (i != PrivacySettingsActivity.this.autoDeleteMesages) {
-                String str8 = "";
-                if (i == PrivacySettingsActivity.this.sessionsRow) {
-                    if (PrivacySettingsActivity.this.devicesActivityPreload.getSessionsCount() == 0) {
-                        if (PrivacySettingsActivity.this.getMessagesController().lastKnownSessionsCount == 0) {
-                            str5 = "";
-                            PrivacySettingsActivity.this.getMessagesController().lastKnownSessionsCount = PrivacySettingsActivity.this.devicesActivityPreload.getSessionsCount();
-                            textCell.setTextAndValueAndIcon(LocaleController.getString(R.string.SessionsTitle), str5, true, R.drawable.msg2_devices, false);
-                        } else {
-                            format2 = String.format(LocaleController.getInstance().getCurrentLocale(), "%d", Integer.valueOf(PrivacySettingsActivity.this.getMessagesController().lastKnownSessionsCount));
-                        }
-                    } else {
-                        format2 = String.format(LocaleController.getInstance().getCurrentLocale(), "%d", Integer.valueOf(PrivacySettingsActivity.this.devicesActivityPreload.getSessionsCount()));
-                    }
-                    str5 = format2;
-                    r3 = false;
-                    PrivacySettingsActivity.this.getMessagesController().lastKnownSessionsCount = PrivacySettingsActivity.this.devicesActivityPreload.getSessionsCount();
-                    textCell.setTextAndValueAndIcon(LocaleController.getString(R.string.SessionsTitle), str5, true, R.drawable.msg2_devices, false);
-                } else {
-                    if (i == PrivacySettingsActivity.this.emailLoginRow) {
-                        if (PrivacySettingsActivity.this.currentPassword == null) {
-                            z2 = true;
-                            str4 = str8;
-                        } else {
-                            SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(PrivacySettingsActivity.this.currentPassword.login_email_pattern);
-                            int indexOf = PrivacySettingsActivity.this.currentPassword.login_email_pattern.indexOf(42);
-                            int lastIndexOf = PrivacySettingsActivity.this.currentPassword.login_email_pattern.lastIndexOf(42);
-                            str4 = valueOf;
-                            str4 = valueOf;
-                            str4 = valueOf;
-                            if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                                TextStyleSpan.TextStyleRun textStyleRun = new TextStyleSpan.TextStyleRun();
-                                textStyleRun.flags |= 256;
-                                textStyleRun.start = indexOf;
-                                int i7 = lastIndexOf + 1;
-                                textStyleRun.end = i7;
-                                valueOf.setSpan(new TextStyleSpan(textStyleRun), indexOf, i7, 0);
-                                str4 = valueOf;
-                            }
-                        }
-                        textCell.setPrioritizeTitleOverValue(true);
-                        textCell.setTextAndSpoilersValueAndIcon(LocaleController.getString(R.string.EmailLogin), str4, R.drawable.msg2_email, true);
-                    } else if (i != PrivacySettingsActivity.this.passwordRow) {
-                        if (i != PrivacySettingsActivity.this.passkeysRow) {
-                            if (i != PrivacySettingsActivity.this.passcodeRow) {
-                                if (i == PrivacySettingsActivity.this.blockedRow) {
-                                    int i8 = PrivacySettingsActivity.this.getMessagesController().totalBlockedCount;
-                                    if (i8 == 0) {
-                                        format = LocaleController.getString("BlockedEmpty", R.string.BlockedEmpty);
-                                    } else if (i8 > 0) {
-                                        format = String.format(LocaleController.getInstance().getCurrentLocale(), "%d", Integer.valueOf(i8));
-                                    } else {
-                                        str = "";
-                                        textCell.setTextAndValueAndIcon(LocaleController.getString("BlockedUsers", R.string.BlockedUsers), str, true, R.drawable.msg2_block2, true);
-                                    }
-                                    str = format;
-                                    r3 = false;
-                                    textCell.setTextAndValueAndIcon(LocaleController.getString("BlockedUsers", R.string.BlockedUsers), str, true, R.drawable.msg2_block2, true);
-                                }
-                            } else {
-                                if (SharedConfig.passcodeHash.length() != 0) {
-                                    string2 = LocaleController.getString(R.string.PasswordOn);
-                                    i3 = R.drawable.msg2_secret;
-                                } else {
-                                    string2 = LocaleController.getString(R.string.PasswordOff);
-                                    i3 = R.drawable.msg2_secret;
-                                }
-                                textCell.setTextAndValueAndIcon(LocaleController.getString(R.string.Passcode), string2, true, i3, true);
-                            }
-                        } else {
-                            ArrayList arrayList = PrivacySettingsActivity.this.currentPasskeys;
-                            if (arrayList == null) {
-                                str2 = "";
-                            } else {
-                                if (arrayList.size() == 1 && textCell.valueTextView.getPaint().measureText(((TL_account.Passkey) PrivacySettingsActivity.this.currentPasskeys.get(0)).name) < AndroidUtilities.displaySize.x / 3.0f) {
-                                    string3 = ((TL_account.Passkey) PrivacySettingsActivity.this.currentPasskeys.get(0)).name;
-                                } else if (PrivacySettingsActivity.this.currentPasskeys.size() > 0) {
-                                    string3 = PrivacySettingsActivity.this.currentPasskeys.size() + "";
-                                } else {
-                                    string3 = LocaleController.getString(R.string.PasswordOff);
-                                }
-                                str2 = string3;
-                                r3 = false;
-                            }
-                            textCell.setTextAndValueAndIcon(LocaleController.getString(R.string.Passkey), str2, true, R.drawable.msg2_permissions, true);
-                        }
-                    } else {
-                        int i9 = R.drawable.menu_2sv;
-                        if (PrivacySettingsActivity.this.currentPassword == null) {
-                            i4 = i9;
-                            str3 = "";
-                        } else {
-                            if (PrivacySettingsActivity.this.currentPassword.has_password) {
-                                i9 = R.drawable.menu_2sv_on;
-                                string4 = LocaleController.getString(R.string.PasswordOn);
-                            } else {
-                                string4 = LocaleController.getString(R.string.PasswordOff);
-                            }
-                            i4 = i9;
-                            str3 = string4;
-                            r3 = false;
-                        }
-                        textCell.setTextAndValueAndIcon(LocaleController.getString(R.string.TwoStepVerification), str3, true, i4, true);
-                    }
-                    textCell.setDrawLoading(z2, 16, z4);
+        } else if (i10 == NotificationCenter.blockedUsersDidLoad) {
+            this.a.m(this.blockedRow);
+        } else if (i10 == NotificationCenter.didSetOrRemoveTwoStepPassword) {
+            if (objArr.length > 0) {
+                this.d = (TL_account.Password) objArr[0];
+                yw0 yw0Var3 = this.a;
+                if (yw0Var3 != null) {
+                    yw0Var3.m(this.passwordRow);
                 }
             } else {
-                int globalTTl = PrivacySettingsActivity.this.getUserConfig().getGlobalTTl();
-                if (globalTTl == -1) {
-                    str6 = null;
-                } else {
-                    if (globalTTl > 0) {
-                        string5 = LocaleController.formatTTLString(globalTTl * 60);
-                    } else {
-                        string5 = LocaleController.getString("PasswordOff", R.string.PasswordOff);
-                    }
-                    str6 = string5;
-                    r3 = false;
-                }
-                textCell.setTextAndValueAndIcon(LocaleController.getString("AutoDeleteMessages", R.string.AutoDeleteMessages), str6, true, R.drawable.msg2_autodelete, true);
+                this.d = null;
+                z0();
+                A0(true);
             }
-            z2 = r3;
-            textCell.setDrawLoading(z2, 16, z4);
         }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemViewType(int i) {
-            if (i == PrivacySettingsActivity.this.passportRow || i == PrivacySettingsActivity.this.lastSeenRow || i == PrivacySettingsActivity.this.phoneNumberRow || i == PrivacySettingsActivity.this.deleteAccountRow || i == PrivacySettingsActivity.this.webSessionsRow || i == PrivacySettingsActivity.this.groupsRow || i == PrivacySettingsActivity.this.paymentsClearRow || i == PrivacySettingsActivity.this.secretMapRow || i == PrivacySettingsActivity.this.contactsDeleteRow || i == PrivacySettingsActivity.this.botsBiometryRow) {
-                return 0;
-            }
-            if (i == PrivacySettingsActivity.this.privacyShadowRow || i == PrivacySettingsActivity.this.deleteAccountDetailRow || i == PrivacySettingsActivity.this.groupsDetailRow || i == PrivacySettingsActivity.this.sessionsDetailRow || i == PrivacySettingsActivity.this.secretDetailRow || i == PrivacySettingsActivity.this.botsDetailRow || i == PrivacySettingsActivity.this.contactsDetailRow || i == PrivacySettingsActivity.this.newChatsSectionRow) {
-                return 1;
-            }
-            if (i == PrivacySettingsActivity.this.securitySectionRow || i == PrivacySettingsActivity.this.advancedSectionRow || i == PrivacySettingsActivity.this.privacySectionRow || i == PrivacySettingsActivity.this.secretSectionRow || i == PrivacySettingsActivity.this.botsSectionRow || i == PrivacySettingsActivity.this.contactsSectionRow || i == PrivacySettingsActivity.this.newChatsHeaderRow) {
-                return 2;
-            }
-            if (i == PrivacySettingsActivity.this.secretWebpageRow || i == PrivacySettingsActivity.this.contactsSyncRow || i == PrivacySettingsActivity.this.contactsSuggestRow || i == PrivacySettingsActivity.this.newChatsRow) {
-                return 3;
-            }
-            if (i == PrivacySettingsActivity.this.botsAndWebsitesShadowRow) {
-                return 4;
-            }
-            return (i == PrivacySettingsActivity.this.autoDeleteMesages || i == PrivacySettingsActivity.this.sessionsRow || i == PrivacySettingsActivity.this.emailLoginRow || i == PrivacySettingsActivity.this.passwordRow || i == PrivacySettingsActivity.this.passkeysRow || i == PrivacySettingsActivity.this.passcodeRow || i == PrivacySettingsActivity.this.blockedRow) ? 5 : 0;
+        if (i10 != NotificationCenter.didUpdateGlobalAutoDeleteTimer || (yw0Var = this.a) == null) {
+            return;
         }
+        yw0Var.m(this.autoDeleteMesages);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public CharSequence addPremiumStar(String str) {
-        if (this.premiumStar == null) {
-            this.premiumStar = new SpannableString("★");
-            AnimatedEmojiDrawable.WrapSizeDrawable wrapSizeDrawable = new AnimatedEmojiDrawable.WrapSizeDrawable(PremiumGradient.getInstance().premiumStarMenuDrawable, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f));
-            wrapSizeDrawable.setBounds(0, 0, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f));
-            this.premiumStar.setSpan(new ImageSpan(wrapSizeDrawable, 2), 0, this.premiumStar.length(), 17);
-        }
-        return new SpannableStringBuilder(str).append((CharSequence) " \u2009").append((CharSequence) this.premiumStar);
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public ArrayList getThemeDescriptions() {
+    @Override // org.telegram.ui.ActionBar.n2
+    public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, HeaderCell.class, TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundWhite));
-        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, Theme.key_actionBarDefault));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
-        int i = Theme.key_windowBackgroundWhiteBlackText;
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrack));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackChecked));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 16, new Class[]{org.telegram.ui.Cells.x9.class, org.telegram.ui.Cells.j4.class, org.telegram.ui.Cells.p8.class}, null, null, null, org.telegram.ui.ActionBar.g6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.g6.a7));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 32768, null, null, null, null, org.telegram.ui.ActionBar.g6.s8));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.g6.v8));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.g6.A8));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.g6.t8));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 4096, null, null, null, null, org.telegram.ui.ActionBar.g6.i6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{View.class}, org.telegram.ui.ActionBar.g6.k0, null, null, org.telegram.ui.ActionBar.g6.d7));
+        int i10 = org.telegram.ui.ActionBar.g6.G6;
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{org.telegram.ui.Cells.x9.class}, new String[]{"textView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{org.telegram.ui.Cells.x9.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.I6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{org.telegram.ui.Cells.j4.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.L6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 32, new Class[]{org.telegram.ui.Cells.x8.class}, null, null, null, org.telegram.ui.ActionBar.g6.b7));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{org.telegram.ui.Cells.x8.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.B6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{org.telegram.ui.Cells.p8.class}, new String[]{"textView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{org.telegram.ui.Cells.p8.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.z6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{org.telegram.ui.Cells.p8.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.M6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{org.telegram.ui.Cells.p8.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.N6));
         return arrayList;
     }
 
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onInsets(int i, int i2, int i3, int i4) {
-        this.listView.setPadding(0, 0, 0, i4);
-        this.listView.setClipToPadding(false);
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean onFragmentCreate() {
+        super.onFragmentCreate();
+        getContactsController().loadPrivacySettings();
+        getMessagesController().getBlockedPeers(true);
+        boolean z10 = getUserConfig().syncContacts;
+        this.P = z10;
+        this.O = z10;
+        boolean z11 = getUserConfig().suggestContacts;
+        this.R = z11;
+        this.Q = z11;
+        TLRPC.GlobalPrivacySettings globalPrivacySettings = getContactsController().getGlobalPrivacySettings();
+        if (globalPrivacySettings != null) {
+            this.S = globalPrivacySettings.archive_and_mute_new_noncontact_peers;
+            this.T = globalPrivacySettings.new_noncontact_peers_require_premium;
+            this.U = (globalPrivacySettings.flags & 32) != 0;
+        }
+        A0(true);
+        z0();
+        getConnectionsManager().sendRequestTyped(new TL_account.getPasskeys(), new org.telegram.messenger.a(), new b5(this, 17));
+        getNotificationCenter().addObserver(this, NotificationCenter.privacyRulesUpdated);
+        getNotificationCenter().addObserver(this, NotificationCenter.blockedUsersDidLoad);
+        getNotificationCenter().addObserver(this, NotificationCenter.didSetOrRemoveTwoStepPassword);
+        getNotificationCenter().addObserver(this, NotificationCenter.didUpdateGlobalAutoDeleteTimer);
+        getUserConfig().loadGlobalTTl();
+        SessionsActivity sessionsActivity = new SessionsActivity(0);
+        this.W = sessionsActivity;
+        sessionsActivity.U = new xw0(this, 2);
+        sessionsActivity.k0(false);
+        SessionsActivity sessionsActivity2 = new SessionsActivity(1);
+        this.X = sessionsActivity2;
+        sessionsActivity2.U = new xw0(this, 3);
+        sessionsActivity2.k0(false);
+        return true;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00d1  */
+    /* JADX WARN: Removed duplicated region for block: B:28:? A[RETURN, SYNTHETIC] */
+    @Override // org.telegram.ui.ActionBar.n2
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onFragmentDestroy() {
+        boolean z10;
+        super.onFragmentDestroy();
+        getNotificationCenter().removeObserver(this, NotificationCenter.privacyRulesUpdated);
+        getNotificationCenter().removeObserver(this, NotificationCenter.blockedUsersDidLoad);
+        getNotificationCenter().removeObserver(this, NotificationCenter.didSetOrRemoveTwoStepPassword);
+        getNotificationCenter().removeObserver(this, NotificationCenter.didUpdateGlobalAutoDeleteTimer);
+        boolean z11 = true;
+        if (this.O != this.P) {
+            UserConfig userConfig = getUserConfig();
+            boolean z12 = this.P;
+            userConfig.syncContacts = z12;
+            if (z12 && ContactsController.hasContactsPermission()) {
+                getContactsController().forceImportContacts();
+                if (getParentActivity() != null) {
+                    Toast.makeText(getParentActivity(), LocaleController.getString("SyncContactsAdded", R.string.SyncContactsAdded), 0).show();
+                }
+            }
+            z10 = true;
+        } else {
+            z10 = false;
+        }
+        boolean z13 = this.R;
+        if (z13 != this.Q) {
+            if (!z13) {
+                getMediaDataController().clearTopPeers();
+            }
+            getUserConfig().suggestContacts = this.R;
+            TLRPC.TL_contacts_toggleTopPeers tL_contacts_toggleTopPeers = new TLRPC.TL_contacts_toggleTopPeers();
+            tL_contacts_toggleTopPeers.enabled = this.R;
+            getConnectionsManager().sendRequest(tL_contacts_toggleTopPeers, new jh.m5(5));
+            z10 = true;
+        }
+        TLRPC.GlobalPrivacySettings globalPrivacySettings = getContactsController().getGlobalPrivacySettings();
+        if (globalPrivacySettings != null) {
+            boolean z14 = globalPrivacySettings.archive_and_mute_new_noncontact_peers;
+            boolean z15 = this.S;
+            if (z14 != z15) {
+                globalPrivacySettings.archive_and_mute_new_noncontact_peers = z15;
+                TL_account.setGlobalPrivacySettings setglobalprivacysettings = new TL_account.setGlobalPrivacySettings();
+                TLRPC.GlobalPrivacySettings globalPrivacySettings2 = getContactsController().getGlobalPrivacySettings();
+                setglobalprivacysettings.settings = globalPrivacySettings2;
+                if (globalPrivacySettings2 == null) {
+                    setglobalprivacysettings.settings = new TLRPC.TL_globalPrivacySettings();
+                }
+                setglobalprivacysettings.settings.archive_and_mute_new_noncontact_peers = this.S;
+                getConnectionsManager().sendRequest(setglobalprivacysettings, new jh.m5(5));
+                if (z11) {
+                    return;
+                }
+                getUserConfig().saveConfig(false);
+                return;
+            }
+        }
+        z11 = z10;
+        if (z11) {
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onInsets(int i10, int i11, int i12, int i13) {
+        this.b.setPadding(0, 0, 0, i13);
+        this.b.setClipToPadding(false);
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onResume() {
+        super.onResume();
+        yw0 yw0Var = this.a;
+        if (yw0Var != null) {
+            yw0Var.l();
+        }
+    }
+
+    public final void y0() {
+        TwoStepVerificationActivity.m0(this.d);
+        if (!getUserConfig().hasSecureData && this.d.has_secure_values) {
+            getUserConfig().hasSecureData = true;
+            getUserConfig().saveConfig(false);
+            A0(true);
+            return;
+        }
+        TL_account.Password password = this.d;
+        if (password != null) {
+            int i10 = this.emailLoginRow;
+            String str = password.login_email_pattern;
+            boolean z10 = str != null && i10 == -1;
+            boolean z11 = str == null && i10 != -1;
+            if (z10 || z11) {
+                A0(false);
+                yw0 yw0Var = this.a;
+                if (yw0Var != null) {
+                    if (z10) {
+                        yw0Var.o(this.emailLoginRow);
+                    } else {
+                        yw0Var.u(i10);
+                    }
+                }
+            }
+        }
+        yw0 yw0Var2 = this.a;
+        if (yw0Var2 != null) {
+            yw0Var2.m(this.passwordRow);
+        }
+    }
+
+    public final void z0() {
+        getConnectionsManager().sendRequest(new TL_account.getPassword(), new n(this, 19), 10);
     }
 }

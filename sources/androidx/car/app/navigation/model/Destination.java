@@ -4,29 +4,15 @@ import androidx.car.app.model.CarIcon;
 import androidx.car.app.model.CarText;
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class Destination {
     private final CarText mAddress;
     private final CarIcon mImage;
     private final CarText mName;
 
-    public static final class Builder {
-    }
-
-    public CarText getName() {
-        return this.mName;
-    }
-
-    public CarText getAddress() {
-        return this.mAddress;
-    }
-
-    public CarIcon getImage() {
-        return this.mImage;
-    }
-
-    public String toString() {
-        return "[name: " + CarText.toShortString(this.mName) + ", address: " + CarText.toShortString(this.mAddress) + ", image: " + this.mImage + "]";
+    public Destination(a aVar) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -40,12 +26,24 @@ public final class Destination {
         return Objects.equals(this.mName, destination.mName) && Objects.equals(this.mAddress, destination.mAddress) && Objects.equals(this.mImage, destination.mImage);
     }
 
+    public CarText getAddress() {
+        return this.mAddress;
+    }
+
+    public CarIcon getImage() {
+        return this.mImage;
+    }
+
+    public CarText getName() {
+        return this.mName;
+    }
+
     public int hashCode() {
         return Objects.hash(this.mName, this.mAddress, this.mImage);
     }
 
-    Destination(Builder builder) {
-        throw null;
+    public String toString() {
+        return "[name: " + CarText.toShortString(this.mName) + ", address: " + CarText.toShortString(this.mAddress) + ", image: " + this.mImage + "]";
     }
 
     private Destination() {

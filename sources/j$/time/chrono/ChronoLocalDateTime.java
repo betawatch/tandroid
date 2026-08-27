@@ -7,18 +7,18 @@ import j$.time.temporal.Temporal;
 
 /* loaded from: classes2.dex */
 public interface ChronoLocalDateTime<D extends b> extends Temporal, j$.time.temporal.m, Comparable<ChronoLocalDateTime<?>> {
-    k b();
+    /* renamed from: C */
+    int compareTo(ChronoLocalDateTime chronoLocalDateTime);
 
-    j$.time.h c();
+    k a();
 
-    b d();
+    j$.time.h b();
 
-    ChronoZonedDateTime t(ZoneOffset zoneOffset);
+    b f();
+
+    ChronoZonedDateTime n(ZoneOffset zoneOffset);
 
     long toEpochSecond(ZoneOffset zoneOffset);
 
     Instant toInstant(ZoneOffset zoneOffset);
-
-    /* renamed from: z */
-    int compareTo(ChronoLocalDateTime chronoLocalDateTime);
 }

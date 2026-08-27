@@ -1,27 +1,59 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-public abstract /* synthetic */ class p2 {
-    public static final /* synthetic */ int[] a;
+import j$.util.Objects;
+import j$.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
 
-    static {
-        int[] iArr = new int[T2.values().length];
-        a = iArr;
-        try {
-            iArr[T2.REFERENCE.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+/* loaded from: classes2.dex */
+public final class p2 extends g2 {
+    @Override // j$.util.stream.e2
+    public final e2 e(long j10, long j11, IntFunction intFunction) {
+        if (j10 == 0 && j11 == this.c) {
+            return this;
         }
-        try {
-            a[T2.INT_VALUE.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
+        long count = this.a.count();
+        if (j10 >= count) {
+            return this.b.e(j10 - count, j11 - count, intFunction);
         }
-        try {
-            a[T2.LONG_VALUE.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
+        if (j11 > count) {
+            return t3.e0(w6.REFERENCE, this.a.e(j10, count, intFunction), this.b.e(0L, j11 - count, intFunction));
         }
-        try {
-            a[T2.DOUBLE_VALUE.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
+        return this.a.e(j10, j11, intFunction);
+    }
+
+    @Override // j$.util.stream.e2
+    public final Spliterator spliterator() {
+        return new g3(this);
+    }
+
+    @Override // j$.util.stream.e2
+    public final void f(Object[] objArr, int i10) {
+        Objects.requireNonNull(objArr);
+        e2 e2Var = this.a;
+        e2Var.f(objArr, i10);
+        this.b.f(objArr, i10 + ((int) e2Var.count()));
+    }
+
+    @Override // j$.util.stream.e2
+    public final Object[] g(IntFunction intFunction) {
+        long j10 = this.c;
+        if (j10 >= 2147483639) {
+            throw new IllegalArgumentException("Stream size exceeds max array size");
         }
+        Object[] objArr = (Object[]) intFunction.apply((int) j10);
+        f(objArr, 0);
+        return objArr;
+    }
+
+    @Override // j$.util.stream.e2
+    public final void forEach(Consumer consumer) {
+        this.a.forEach(consumer);
+        this.b.forEach(consumer);
+    }
+
+    public final String toString() {
+        long j10 = this.c;
+        return j10 < 32 ? String.format("ConcNode[%s.%s]", this.a, this.b) : String.format("ConcNode[size=%d]", Long.valueOf(j10));
     }
 }

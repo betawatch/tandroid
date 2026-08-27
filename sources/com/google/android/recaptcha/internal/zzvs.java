@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public enum zzvs implements zzsp {
     zza(0),
@@ -48,8 +49,8 @@ public enum zzvs implements zzsp {
 
     private final int zzS;
 
-    zzvs(int i) {
-        this.zzS = i;
+    zzvs(int i10) {
+        this.zzS = i10;
     }
 
     @Override // java.lang.Enum

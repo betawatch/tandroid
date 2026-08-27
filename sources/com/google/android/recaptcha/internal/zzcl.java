@@ -1,34 +1,33 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.CoroutineScope;
+import ad.p;
+import h7.k6;
+import id.c0;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzcl extends SuspendLambda implements Function2 {
-    zzcl(Continuation continuation) {
-        super(2, continuation);
+final class zzcl extends i implements p {
+    public zzcl(c cVar) {
+        super(2, cVar);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzcl(continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        return new zzcl(cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzcl) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzcl) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
-        IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        ResultKt.throwOnFailure(obj);
+        sc.a aVar = sc.a.a;
+        k6.b(obj);
         Thread.currentThread().setPriority(8);
-        return Unit.INSTANCE;
+        return pc.i.a;
     }
 }

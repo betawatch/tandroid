@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzce {
     public static final zzce zza = new zzce(0);
@@ -16,8 +17,8 @@ public final class zzce {
     public static final zzce zzl = new zzce(13);
     private final int zzm;
 
-    public zzce(int i) {
-        this.zzm = i;
+    public zzce(int i10) {
+        this.zzm = i10;
     }
 
     public final int zza() {

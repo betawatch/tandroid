@@ -2,63 +2,23 @@ package androidx.car.app.navigation.model;
 
 import androidx.car.app.model.ActionStrip;
 import androidx.car.app.model.CarColor;
-import androidx.car.app.model.Template;
 import androidx.car.app.model.Toggle;
+import androidx.car.app.model.x0;
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class NavigationTemplate implements Template {
+public final class NavigationTemplate implements x0 {
     private final ActionStrip mActionStrip;
     private final CarColor mBackgroundColor;
     private final TravelEstimate mDestinationTravelEstimate;
     private final ActionStrip mMapActionStrip;
-    private final NavigationInfo mNavigationInfo;
-    private final PanModeDelegate mPanModeDelegate;
+    private final f mNavigationInfo;
+    private final g mPanModeDelegate;
     private final Toggle mPanModeToggle;
 
-    public static final class Builder {
-    }
-
-    public interface NavigationInfo {
-    }
-
-    public ActionStrip getActionStrip() {
-        ActionStrip actionStrip = this.mActionStrip;
-        Objects.requireNonNull(actionStrip);
-        return actionStrip;
-    }
-
-    public ActionStrip getMapActionStrip() {
-        return this.mMapActionStrip;
-    }
-
-    @Deprecated
-    public Toggle getPanModeToggle() {
-        return this.mPanModeToggle;
-    }
-
-    public PanModeDelegate getPanModeDelegate() {
-        return this.mPanModeDelegate;
-    }
-
-    public NavigationInfo getNavigationInfo() {
-        return this.mNavigationInfo;
-    }
-
-    public CarColor getBackgroundColor() {
-        return this.mBackgroundColor;
-    }
-
-    public TravelEstimate getDestinationTravelEstimate() {
-        return this.mDestinationTravelEstimate;
-    }
-
-    public String toString() {
-        return "NavigationTemplate";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mNavigationInfo, this.mBackgroundColor, this.mDestinationTravelEstimate, this.mActionStrip, this.mMapActionStrip, this.mPanModeToggle, Boolean.valueOf(this.mPanModeDelegate == null));
+    public NavigationTemplate(e eVar) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -77,8 +37,43 @@ public final class NavigationTemplate implements Template {
         return false;
     }
 
-    NavigationTemplate(Builder builder) {
-        throw null;
+    public ActionStrip getActionStrip() {
+        ActionStrip actionStrip = this.mActionStrip;
+        Objects.requireNonNull(actionStrip);
+        return actionStrip;
+    }
+
+    public CarColor getBackgroundColor() {
+        return this.mBackgroundColor;
+    }
+
+    public TravelEstimate getDestinationTravelEstimate() {
+        return this.mDestinationTravelEstimate;
+    }
+
+    public ActionStrip getMapActionStrip() {
+        return this.mMapActionStrip;
+    }
+
+    public f getNavigationInfo() {
+        return this.mNavigationInfo;
+    }
+
+    public g getPanModeDelegate() {
+        return this.mPanModeDelegate;
+    }
+
+    @Deprecated
+    public Toggle getPanModeToggle() {
+        return this.mPanModeToggle;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mNavigationInfo, this.mBackgroundColor, this.mDestinationTravelEstimate, this.mActionStrip, this.mMapActionStrip, this.mPanModeToggle, Boolean.valueOf(this.mPanModeDelegate == null));
+    }
+
+    public String toString() {
+        return "NavigationTemplate";
     }
 
     private NavigationTemplate() {

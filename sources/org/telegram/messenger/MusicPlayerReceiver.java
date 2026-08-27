@@ -5,7 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.KeyEvent;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class MusicPlayerReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
@@ -20,7 +21,7 @@ public class MusicPlayerReceiver extends BroadcastReceiver {
                     MediaController.getInstance().playMessage(MediaController.getInstance().getPlayingMessageObject());
                     return;
                 } else {
-                    MediaController.getInstance().pauseMessage(MediaController.getInstance().getPlayingMessageObject());
+                    MediaController.getInstance().lambda$startAudioAgain$7(MediaController.getInstance().getPlayingMessageObject());
                     return;
                 }
             }
@@ -38,7 +39,7 @@ public class MusicPlayerReceiver extends BroadcastReceiver {
                 if (keyCode != 127) {
                     return;
                 }
-                MediaController.getInstance().pauseMessage(MediaController.getInstance().getPlayingMessageObject());
+                MediaController.getInstance().lambda$startAudioAgain$7(MediaController.getInstance().getPlayingMessageObject());
             }
         }
         String action = intent.getAction();
@@ -52,7 +53,7 @@ public class MusicPlayerReceiver extends BroadcastReceiver {
                 break;
             case "org.telegram.android.musicplayer.pause":
             case "android.media.AUDIO_BECOMING_NOISY":
-                MediaController.getInstance().pauseMessage(MediaController.getInstance().getPlayingMessageObject());
+                MediaController.getInstance().lambda$startAudioAgain$7(MediaController.getInstance().getPlayingMessageObject());
                 break;
             case "org.telegram.android.musicplayer.next":
                 MediaController.getInstance().playNextMessage();
@@ -64,11 +65,11 @@ public class MusicPlayerReceiver extends BroadcastReceiver {
                 MediaController.getInstance().playPreviousMessage();
                 break;
             case "org.telegram.android.musicplayer.shuffle":
-                if (SharedConfig.shuffleMusic) {
-                    MediaController.getInstance().setPlaybackOrderType(0);
+                if (!SharedConfig.shuffleMusic) {
+                    MediaController.getInstance().setPlaybackOrderType(2);
                     break;
                 } else {
-                    MediaController.getInstance().setPlaybackOrderType(2);
+                    MediaController.getInstance().setPlaybackOrderType(0);
                     break;
                 }
         }

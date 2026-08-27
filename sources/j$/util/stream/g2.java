@@ -1,18 +1,40 @@
 package j$.util.stream;
 
-import java.util.function.Consumer;
-
 /* loaded from: classes2.dex */
-public interface g2 extends Consumer {
-    boolean C();
+public abstract class g2 implements e2 {
+    public final e2 a;
+    public final e2 b;
+    public final long c;
 
-    void accept(double d);
+    @Override // j$.util.stream.e2
+    public final int h() {
+        return 2;
+    }
 
-    void accept(int i);
+    public g2(e2 e2Var, e2 e2Var2) {
+        this.a = e2Var;
+        this.b = e2Var2;
+        this.c = e2Var2.count() + e2Var.count();
+    }
 
-    void accept(long j);
+    @Override // j$.util.stream.e2
+    public final e2 a(int i10) {
+        if (i10 == 0) {
+            return this.a;
+        }
+        if (i10 == 1) {
+            return this.b;
+        }
+        throw new IndexOutOfBoundsException();
+    }
 
-    void x();
+    @Override // j$.util.stream.e2
+    public final long count() {
+        return this.c;
+    }
 
-    void y(long j);
+    @Override // j$.util.stream.e2
+    public /* bridge */ /* synthetic */ d2 a(int i10) {
+        return (d2) a(i10);
+    }
 }

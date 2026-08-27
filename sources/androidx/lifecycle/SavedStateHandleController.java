@@ -1,48 +1,33 @@
 package androidx.lifecycle;
 
-import androidx.lifecycle.Lifecycle;
-import androidx.savedstate.SavedStateRegistry;
-import kotlin.jvm.internal.Intrinsics;
-
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class SavedStateHandleController implements LifecycleEventObserver {
-    private final SavedStateHandle handle;
-    private boolean isAttached;
-    private final String key;
+public final class SavedStateHandleController implements r {
+    public final String a;
+    public final i0 b;
+    public boolean c;
 
-    public SavedStateHandleController(String key, SavedStateHandle handle) {
-        Intrinsics.checkNotNullParameter(key, "key");
-        Intrinsics.checkNotNullParameter(handle, "handle");
-        this.key = key;
-        this.handle = handle;
+    public SavedStateHandleController(String str, i0 i0Var) {
+        this.a = str;
+        this.b = i0Var;
     }
 
-    public final SavedStateHandle getHandle() {
-        return this.handle;
-    }
-
-    public final boolean isAttached() {
-        return this.isAttached;
-    }
-
-    public final void attachToLifecycle(SavedStateRegistry registry, Lifecycle lifecycle) {
-        Intrinsics.checkNotNullParameter(registry, "registry");
-        Intrinsics.checkNotNullParameter(lifecycle, "lifecycle");
-        if (this.isAttached) {
+    public final void c(o lifecycle, g2.e registry) {
+        kotlin.jvm.internal.j.e(registry, "registry");
+        kotlin.jvm.internal.j.e(lifecycle, "lifecycle");
+        if (this.c) {
             throw new IllegalStateException("Already attached to lifecycleOwner");
         }
-        this.isAttached = true;
-        lifecycle.addObserver(this);
-        registry.registerSavedStateProvider(this.key, this.handle.savedStateProvider());
+        this.c = true;
+        lifecycle.a(this);
+        registry.f(this.a, this.b.e);
     }
 
-    @Override // androidx.lifecycle.LifecycleEventObserver
-    public void onStateChanged(LifecycleOwner source, Lifecycle.Event event) {
-        Intrinsics.checkNotNullParameter(source, "source");
-        Intrinsics.checkNotNullParameter(event, "event");
-        if (event == Lifecycle.Event.ON_DESTROY) {
-            this.isAttached = false;
-            source.getLifecycle().removeObserver(this);
+    @Override // androidx.lifecycle.r
+    public final void d(t tVar, m mVar) {
+        if (mVar == m.ON_DESTROY) {
+            this.c = false;
+            tVar.m().b(this);
         }
     }
 }

@@ -1,29 +1,31 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+import a9.p;
+import s3.c;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class NewEnvironmentMacro extends NewCommandMacro {
-    public static void addNewEnvironment(String str, String str2, String str3, int i) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(str2);
-        sb.append(" #");
-        int i2 = i + 1;
-        sb.append(i2);
-        sb.append(" ");
-        sb.append(str3);
-        NewCommandMacro.addNewCommand(str + "@env", sb.toString(), i2);
+    public static void addNewEnvironment(String str, String str2, String str3, int i10) {
+        String l10 = c.l(str, "@env");
+        StringBuilder f10 = c.f(str2, " #");
+        int i11 = i10 + 1;
+        f10.append(i11);
+        f10.append(" ");
+        f10.append(str3);
+        NewCommandMacro.addNewCommand(l10, f10.toString(), i11);
     }
 
-    public static void addReNewEnvironment(String str, String str2, String str3, int i) {
+    public static void addReNewEnvironment(String str, String str2, String str3, int i10) {
         if (NewCommandMacro.macrocode.get(str + "@env") == null) {
-            throw new ParseException("Environment " + str + "is not defined ! Use newenvironment instead ...");
+            throw new ParseException(p.m("Environment ", str, "is not defined ! Use newenvironment instead ..."));
         }
-        StringBuilder sb = new StringBuilder();
-        sb.append(str2);
-        sb.append(" #");
-        int i2 = i + 1;
-        sb.append(i2);
-        sb.append(" ");
-        sb.append(str3);
-        NewCommandMacro.addReNewCommand(str + "@env", sb.toString(), i2);
+        String l10 = c.l(str, "@env");
+        StringBuilder f10 = c.f(str2, " #");
+        int i11 = i10 + 1;
+        f10.append(i11);
+        f10.append(" ");
+        f10.append(str3);
+        NewCommandMacro.addReNewCommand(l10, f10.toString(), i11);
     }
 }

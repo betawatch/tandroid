@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class BotInlineKeyboard {
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public enum BackgroundColor {
         NONE,
         PRIMARY,
@@ -14,7 +16,84 @@ public class BotInlineKeyboard {
         DANGER
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class Builder {
+        private final ArrayList<Button[]> buttons = new ArrayList<>();
+        private int separators;
+
+        public void addBotKeyboard(TLRPC.TL_replyInlineMarkup tL_replyInlineMarkup) {
+            for (int i10 = 0; i10 < tL_replyInlineMarkup.rows.size(); i10++) {
+                ArrayList<TL_keyboard.KeyboardInlineButton> arrayList = tL_replyInlineMarkup.rows.get(i10).buttons;
+                ButtonBot[] buttonBotArr = new ButtonBot[arrayList.size()];
+                for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                    buttonBotArr[i11] = new ButtonBot(arrayList.get(i11));
+                }
+                this.buttons.add(buttonBotArr);
+            }
+        }
+
+        public void addContinueThreadKeyboard() {
+            this.buttons.add(new Button[]{new ButtonCustom(4, R.string.BotForumContinueChat, 0)});
+        }
+
+        public void addGiftOfferKeyboard() {
+            this.buttons.add(new Button[]{new ButtonCustom(5, R.string.GiftOfferDecline, R.drawable.filled_bot_decline_24), new ButtonCustom(6, R.string.GiftOfferAccept, R.drawable.filled_bot_approve_24)});
+        }
+
+        public void addKeyboardSource(Source source) {
+            if (source == null) {
+                return;
+            }
+            int rowsCount = source.getRowsCount();
+            for (int i10 = 0; i10 < rowsCount; i10++) {
+                int columnsCount = source.getColumnsCount(i10);
+                Button[] buttonArr = new Button[columnsCount];
+                for (int i11 = 0; i11 < columnsCount; i11++) {
+                    buttonArr[i11] = source.getButton(i10, i11);
+                }
+                this.buttons.add(buttonArr);
+                if (source.hasSeparator(i10)) {
+                    addSeparator();
+                }
+            }
+        }
+
+        public void addSeparator() {
+            if (this.buttons.isEmpty()) {
+                return;
+            }
+            this.separators |= 1 << (this.buttons.size() - 1);
+        }
+
+        public void addSharingOfferKeyboard() {
+            this.buttons.add(new Button[]{new ButtonCustom(7, R.string.DisableSharingOfferDecline, R.drawable.filled_bot_decline_24), new ButtonCustom(8, R.string.DisableSharingOfferAccept, R.drawable.filled_bot_approve_24)});
+        }
+
+        public void addSuggestionKeyboard() {
+            this.buttons.add(new Button[]{new ButtonCustom(1, R.string.PostSuggestionsInlineDecline, R.drawable.filled_bot_decline_24), new ButtonCustom(2, R.string.PostSuggestionsInlineAccept, R.drawable.filled_bot_approve_24)});
+            this.buttons.add(new Button[]{new ButtonCustom(3, R.string.PostSuggestionsInlineEdit, R.drawable.filled_bot_suggest_24)});
+        }
+
+        public Source build() {
+            ArrayList<Button[]> arrayList = this.buttons;
+            return new KeyboardSourceArray((Button[][]) arrayList.toArray(new Button[arrayList.size()][]), this.separators);
+        }
+
+        public boolean isEmpty() {
+            return this.buttons.isEmpty();
+        }
+
+        public boolean isNotEmpty() {
+            return !this.buttons.isEmpty();
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static abstract class Button {
+        public BackgroundColor getColor() {
+            return BackgroundColor.NONE;
+        }
+
         public long getIconEmoji() {
             return 0L;
         }
@@ -24,22 +103,14 @@ public class BotInlineKeyboard {
         }
 
         public abstract String getText();
-
-        public BackgroundColor getColor() {
-            return BackgroundColor.NONE;
-        }
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class ButtonBot extends Button {
         public final TL_keyboard.KeyboardInlineButton button;
 
         public ButtonBot(TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
             this.button = keyboardInlineButton;
-        }
-
-        @Override // org.telegram.messenger.BotInlineKeyboard.Button
-        public String getText() {
-            return this.button.text;
         }
 
         @Override // org.telegram.messenger.BotInlineKeyboard.Button
@@ -67,8 +138,14 @@ public class BotInlineKeyboard {
             }
             return 0L;
         }
+
+        @Override // org.telegram.messenger.BotInlineKeyboard.Button
+        public String getText() {
+            return this.button.text;
+        }
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class ButtonCustom extends Button {
         public static final int GIFT_OFFER_ACCEPT = 6;
         public static final int GIFT_OFFER_DECLINE = 5;
@@ -82,53 +159,36 @@ public class BotInlineKeyboard {
         public final int id;
         public final int text;
 
-        public ButtonCustom(int i, int i2, int i3) {
-            this.id = i;
-            this.text = i2;
-            this.icon = i3;
-        }
-
-        @Override // org.telegram.messenger.BotInlineKeyboard.Button
-        public String getText() {
-            return LocaleController.getString(this.text);
+        public ButtonCustom(int i10, int i11, int i12) {
+            this.id = i10;
+            this.text = i11;
+            this.icon = i12;
         }
 
         @Override // org.telegram.messenger.BotInlineKeyboard.Button
         public int getIconRes() {
             return this.icon;
         }
-    }
 
-    public interface Source {
-        Button getButton(int i, int i2);
-
-        int getColumnsCount(int i);
-
-        int getRowsCount();
-
-        boolean hasSeparator(int i);
-
-        boolean isEmpty();
-
-        public abstract /* synthetic */ class -CC {
-            public static boolean $default$isEmpty(Source source) {
-                return source.getRowsCount() == 0;
-            }
+        @Override // org.telegram.messenger.BotInlineKeyboard.Button
+        public String getText() {
+            return LocaleController.getString(this.text);
         }
     }
 
-    private static class KeyboardSourceArray implements Source {
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class KeyboardSourceArray implements Source {
         private final Button[][] buttons;
         private final int separators;
 
         @Override // org.telegram.messenger.BotInlineKeyboard.Source
-        public /* synthetic */ boolean isEmpty() {
-            return Source.-CC.$default$isEmpty(this);
+        public Button getButton(int i10, int i11) {
+            return this.buttons[i10][i11];
         }
 
-        private KeyboardSourceArray(Button[][] buttonArr, int i) {
-            this.buttons = buttonArr;
-            this.separators = i;
+        @Override // org.telegram.messenger.BotInlineKeyboard.Source
+        public int getColumnsCount(int i10) {
+            return this.buttons[i10].length;
         }
 
         @Override // org.telegram.messenger.BotInlineKeyboard.Source
@@ -137,89 +197,31 @@ public class BotInlineKeyboard {
         }
 
         @Override // org.telegram.messenger.BotInlineKeyboard.Source
-        public int getColumnsCount(int i) {
-            return this.buttons[i].length;
+        public boolean hasSeparator(int i10) {
+            return ((1 << i10) & this.separators) != 0;
         }
 
         @Override // org.telegram.messenger.BotInlineKeyboard.Source
-        public Button getButton(int i, int i2) {
-            return this.buttons[i][i2];
+        public final /* synthetic */ boolean isEmpty() {
+            return m0.a(this);
         }
 
-        @Override // org.telegram.messenger.BotInlineKeyboard.Source
-        public boolean hasSeparator(int i) {
-            return ((1 << i) & this.separators) != 0;
+        private KeyboardSourceArray(Button[][] buttonArr, int i10) {
+            this.buttons = buttonArr;
+            this.separators = i10;
         }
     }
 
-    public static class Builder {
-        private final ArrayList<Button[]> buttons = new ArrayList<>();
-        private int separators;
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public interface Source {
+        Button getButton(int i10, int i11);
 
-        public void addBotKeyboard(TLRPC.TL_replyInlineMarkup tL_replyInlineMarkup) {
-            for (int i = 0; i < tL_replyInlineMarkup.rows.size(); i++) {
-                ArrayList<TL_keyboard.KeyboardInlineButton> arrayList = tL_replyInlineMarkup.rows.get(i).buttons;
-                ButtonBot[] buttonBotArr = new ButtonBot[arrayList.size()];
-                for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                    buttonBotArr[i2] = new ButtonBot(arrayList.get(i2));
-                }
-                this.buttons.add(buttonBotArr);
-            }
-        }
+        int getColumnsCount(int i10);
 
-        public void addSuggestionKeyboard() {
-            this.buttons.add(new Button[]{new ButtonCustom(1, R.string.PostSuggestionsInlineDecline, R.drawable.filled_bot_decline_24), new ButtonCustom(2, R.string.PostSuggestionsInlineAccept, R.drawable.filled_bot_approve_24)});
-            this.buttons.add(new Button[]{new ButtonCustom(3, R.string.PostSuggestionsInlineEdit, R.drawable.filled_bot_suggest_24)});
-        }
+        int getRowsCount();
 
-        public void addGiftOfferKeyboard() {
-            this.buttons.add(new Button[]{new ButtonCustom(5, R.string.GiftOfferDecline, R.drawable.filled_bot_decline_24), new ButtonCustom(6, R.string.GiftOfferAccept, R.drawable.filled_bot_approve_24)});
-        }
+        boolean hasSeparator(int i10);
 
-        public void addSharingOfferKeyboard() {
-            this.buttons.add(new Button[]{new ButtonCustom(7, R.string.DisableSharingOfferDecline, R.drawable.filled_bot_decline_24), new ButtonCustom(8, R.string.DisableSharingOfferAccept, R.drawable.filled_bot_approve_24)});
-        }
-
-        public void addContinueThreadKeyboard() {
-            this.buttons.add(new Button[]{new ButtonCustom(4, R.string.BotForumContinueChat, 0)});
-        }
-
-        public void addKeyboardSource(Source source) {
-            if (source == null) {
-                return;
-            }
-            int rowsCount = source.getRowsCount();
-            for (int i = 0; i < rowsCount; i++) {
-                int columnsCount = source.getColumnsCount(i);
-                Button[] buttonArr = new Button[columnsCount];
-                for (int i2 = 0; i2 < columnsCount; i2++) {
-                    buttonArr[i2] = source.getButton(i, i2);
-                }
-                this.buttons.add(buttonArr);
-                if (source.hasSeparator(i)) {
-                    addSeparator();
-                }
-            }
-        }
-
-        public void addSeparator() {
-            if (this.buttons.isEmpty()) {
-                return;
-            }
-            this.separators |= 1 << (this.buttons.size() - 1);
-        }
-
-        public boolean isEmpty() {
-            return this.buttons.isEmpty();
-        }
-
-        public boolean isNotEmpty() {
-            return !this.buttons.isEmpty();
-        }
-
-        public Source build() {
-            ArrayList<Button[]> arrayList = this.buttons;
-            return new KeyboardSourceArray((Button[][]) arrayList.toArray(new Button[arrayList.size()][]), this.separators);
-        }
+        boolean isEmpty();
     }
 }

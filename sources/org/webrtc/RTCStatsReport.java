@@ -2,42 +2,42 @@ package org.webrtc;
 
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class RTCStatsReport {
     private final Map<String, RTCStats> stats;
     private final long timestampUs;
 
-    public RTCStatsReport(long j, Map<String, RTCStats> map) {
-        this.timestampUs = j;
+    public RTCStatsReport(long j10, Map<String, RTCStats> map) {
+        this.timestampUs = j10;
         this.stats = map;
     }
 
-    public double getTimestampUs() {
-        return this.timestampUs;
+    private static RTCStatsReport create(long j10, Map map) {
+        return new RTCStatsReport(j10, map);
     }
 
     public Map<String, RTCStats> getStatsMap() {
         return this.stats;
     }
 
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("{ timestampUs: ");
-        sb.append(this.timestampUs);
-        sb.append(", stats: [\n");
-        boolean z = true;
-        for (RTCStats rTCStats : this.stats.values()) {
-            if (!z) {
-                sb.append(",\n");
-            }
-            sb.append(rTCStats);
-            z = false;
-        }
-        sb.append(" ] }");
-        return sb.toString();
+    public double getTimestampUs() {
+        return this.timestampUs;
     }
 
-    private static RTCStatsReport create(long j, Map map) {
-        return new RTCStatsReport(j, map);
+    public String toString() {
+        StringBuilder sb2 = new StringBuilder("{ timestampUs: ");
+        sb2.append(this.timestampUs);
+        sb2.append(", stats: [\n");
+        boolean z10 = true;
+        for (RTCStats rTCStats : this.stats.values()) {
+            if (!z10) {
+                sb2.append(",\n");
+            }
+            sb2.append(rTCStats);
+            z10 = false;
+        }
+        sb2.append(" ] }");
+        return sb2.toString();
     }
 }

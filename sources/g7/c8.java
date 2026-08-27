@@ -1,0 +1,32 @@
+package g7;
+
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Set;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
+public abstract class c8 {
+    public static boolean a(i7.d0 d0Var, Collection collection) {
+        collection.getClass();
+        if (collection instanceof i7.v) {
+            collection = ((i7.v) collection).zza();
+        }
+        boolean z10 = false;
+        if (!(collection instanceof Set) || collection.size() <= d0Var.size()) {
+            Iterator it = collection.iterator();
+            while (it.hasNext()) {
+                z10 |= d0Var.remove(it.next());
+            }
+            return z10;
+        }
+        Iterator<E> it2 = d0Var.iterator();
+        while (it2.hasNext()) {
+            if (collection.contains(it2.next())) {
+                it2.remove();
+                z10 = true;
+            }
+        }
+        return z10;
+    }
+}

@@ -2,20 +2,14 @@ package org.webrtc;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 class RefCountDelegate implements RefCounted {
     private final AtomicInteger refCount = new AtomicInteger(1);
     private final Runnable releaseCallback;
 
     public RefCountDelegate(Runnable runnable) {
         this.releaseCallback = runnable;
-    }
-
-    @Override // org.webrtc.RefCounted
-    public void retain() {
-        if (this.refCount.incrementAndGet() < 2) {
-            throw new IllegalStateException("retain() called on an object with refcount < 1");
-        }
     }
 
     @Override // org.webrtc.RefCounted
@@ -31,13 +25,20 @@ class RefCountDelegate implements RefCounted {
         runnable.run();
     }
 
-    boolean safeRetain() {
-        int i = this.refCount.get();
-        while (i != 0) {
-            if (this.refCount.weakCompareAndSet(i, i + 1)) {
+    @Override // org.webrtc.RefCounted
+    public void retain() {
+        if (this.refCount.incrementAndGet() < 2) {
+            throw new IllegalStateException("retain() called on an object with refcount < 1");
+        }
+    }
+
+    public boolean safeRetain() {
+        int i10 = this.refCount.get();
+        while (i10 != 0) {
+            if (this.refCount.weakCompareAndSet(i10, i10 + 1)) {
                 return true;
             }
-            i = this.refCount.get();
+            i10 = this.refCount.get();
         }
         return false;
     }

@@ -1,6 +1,9 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+import a9.p;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class AccentedAtom extends Atom {
     private boolean acc;
     private final SymbolAtom accent;
@@ -25,9 +28,66 @@ public class AccentedAtom extends Atom {
         this.acc = true;
     }
 
-    public AccentedAtom(Atom atom, Atom atom2, boolean z) {
+    @Override // org.scilab.forge.jlatexmath.Atom
+    public Box createBox(TeXEnvironment teXEnvironment) {
+        TeXFont teXFont = teXEnvironment.getTeXFont();
+        int style = teXEnvironment.getStyle();
+        Atom atom = this.base;
+        Box strutBox = atom == null ? new StrutBox(0.0f, 0.0f, 0.0f, 0.0f) : atom.createBox(teXEnvironment.crampStyle());
+        float width = strutBox.getWidth();
+        Atom atom2 = this.underbase;
+        float skew = atom2 instanceof CharSymbol ? teXFont.getSkew(((CharSymbol) atom2).getCharFont(teXFont), style) : 0.0f;
+        Char r62 = teXFont.getChar(this.accent.getName(), style);
+        while (teXFont.hasNextLarger(r62)) {
+            Char nextLarger = teXFont.getNextLarger(r62, style);
+            if (nextLarger.getWidth() > width) {
+                break;
+            }
+            r62 = nextLarger;
+        }
+        float f10 = -SpaceAtom.getFactor(5, teXEnvironment);
+        if (!this.acc) {
+            f10 = Math.min(strutBox.getHeight(), teXFont.getXHeight(style, r62.getFontCode()));
+        }
+        VerticalBox verticalBox = new VerticalBox();
+        float italic = r62.getItalic();
+        Box charBox = new CharBox(r62);
+        if (this.acc) {
+            SymbolAtom symbolAtom = this.accent;
+            if (this.changeSize) {
+                teXEnvironment = teXEnvironment.subStyle();
+            }
+            charBox = symbolAtom.createBox(teXEnvironment);
+        }
+        if (Math.abs(italic) > 1.0E-7f) {
+            HorizontalBox horizontalBox = new HorizontalBox(new StrutBox(-italic, 0.0f, 0.0f, 0.0f));
+            horizontalBox.add(charBox);
+            charBox = horizontalBox;
+        }
+        float width2 = (width - charBox.getWidth()) / 2.0f;
+        charBox.setShift(skew + (width2 > 0.0f ? width2 : 0.0f));
+        if (width2 < 0.0f) {
+            strutBox = new HorizontalBox(strutBox, charBox.getWidth(), 2);
+        }
+        verticalBox.add(charBox);
+        verticalBox.add(new StrutBox(0.0f, this.changeSize ? -f10 : -strutBox.getHeight(), 0.0f, 0.0f));
+        verticalBox.add(strutBox);
+        float depth = verticalBox.getDepth() + verticalBox.getHeight();
+        float depth2 = strutBox.getDepth();
+        verticalBox.setDepth(depth2);
+        verticalBox.setHeight(depth - depth2);
+        if (width2 >= 0.0f) {
+            return verticalBox;
+        }
+        HorizontalBox horizontalBox2 = new HorizontalBox(new StrutBox(width2, 0.0f, 0.0f, 0.0f));
+        horizontalBox2.add(verticalBox);
+        horizontalBox2.setWidth(width);
+        return horizontalBox2;
+    }
+
+    public AccentedAtom(Atom atom, Atom atom2, boolean z10) {
         this(atom, atom2);
-        this.changeSize = z;
+        this.changeSize = z10;
     }
 
     public AccentedAtom(Atom atom, String str) {
@@ -47,7 +107,7 @@ public class AccentedAtom extends Atom {
                 return;
             }
         }
-        throw new InvalidSymbolTypeException("The symbol with the name '" + str + "' is not defined as an accent (" + TeXSymbolParser.TYPE_ATTR + "='acc') in '" + TeXSymbolParser.RESOURCE_NAME + "'!");
+        throw new InvalidSymbolTypeException(p.m("The symbol with the name '", str, "' is not defined as an accent (type='acc') in 'TeXSymbols.xml'!"));
     }
 
     public AccentedAtom(Atom atom, TeXFormula teXFormula) {
@@ -55,76 +115,19 @@ public class AccentedAtom extends Atom {
         this.changeSize = true;
         this.base = null;
         this.underbase = null;
-        if (teXFormula == null) {
-            throw new InvalidTeXFormulaException("The accent TeXFormula can't be null!");
-        }
-        Atom atom2 = teXFormula.root;
-        if (atom2 instanceof SymbolAtom) {
-            SymbolAtom symbolAtom = (SymbolAtom) atom2;
-            this.accent = symbolAtom;
-            if (symbolAtom.type == 10) {
-                this.base = atom;
-                return;
+        if (teXFormula != null) {
+            Atom atom2 = teXFormula.root;
+            if (atom2 instanceof SymbolAtom) {
+                SymbolAtom symbolAtom = (SymbolAtom) atom2;
+                this.accent = symbolAtom;
+                if (symbolAtom.type == 10) {
+                    this.base = atom;
+                    return;
+                }
+                throw new InvalidSymbolTypeException("The accent TeXFormula represents a single symbol with the name '" + symbolAtom.getName() + "', but this symbol is not defined as an accent (type='acc') in 'TeXSymbols.xml'!");
             }
-            throw new InvalidSymbolTypeException("The accent TeXFormula represents a single symbol with the name '" + symbolAtom.getName() + "', but this symbol is not defined as an accent (" + TeXSymbolParser.TYPE_ATTR + "='acc') in '" + TeXSymbolParser.RESOURCE_NAME + "'!");
+            throw new InvalidTeXFormulaException("The accent TeXFormula does not represent a single symbol!");
         }
-        throw new InvalidTeXFormulaException("The accent TeXFormula does not represent a single symbol!");
-    }
-
-    @Override // org.scilab.forge.jlatexmath.Atom
-    public Box createBox(TeXEnvironment teXEnvironment) {
-        TeXFont teXFont = teXEnvironment.getTeXFont();
-        int style = teXEnvironment.getStyle();
-        Atom atom = this.base;
-        Box strutBox = atom == null ? new StrutBox(0.0f, 0.0f, 0.0f, 0.0f) : atom.createBox(teXEnvironment.crampStyle());
-        float width = strutBox.getWidth();
-        Atom atom2 = this.underbase;
-        float skew = atom2 instanceof CharSymbol ? teXFont.getSkew(((CharSymbol) atom2).getCharFont(teXFont), style) : 0.0f;
-        Char r6 = teXFont.getChar(this.accent.getName(), style);
-        while (teXFont.hasNextLarger(r6)) {
-            Char nextLarger = teXFont.getNextLarger(r6, style);
-            if (nextLarger.getWidth() > width) {
-                break;
-            }
-            r6 = nextLarger;
-        }
-        float f = -SpaceAtom.getFactor(5, teXEnvironment);
-        if (!this.acc) {
-            f = Math.min(strutBox.getHeight(), teXFont.getXHeight(style, r6.getFontCode()));
-        }
-        VerticalBox verticalBox = new VerticalBox();
-        float italic = r6.getItalic();
-        Box charBox = new CharBox(r6);
-        if (this.acc) {
-            SymbolAtom symbolAtom = this.accent;
-            if (this.changeSize) {
-                teXEnvironment = teXEnvironment.subStyle();
-            }
-            charBox = symbolAtom.createBox(teXEnvironment);
-        }
-        if (Math.abs(italic) > 1.0E-7f) {
-            HorizontalBox horizontalBox = new HorizontalBox(new StrutBox(-italic, 0.0f, 0.0f, 0.0f));
-            horizontalBox.add(charBox);
-            charBox = horizontalBox;
-        }
-        float width2 = (width - charBox.getWidth()) / 2.0f;
-        charBox.setShift(skew + (width2 > 0.0f ? width2 : 0.0f));
-        if (width2 < 0.0f) {
-            strutBox = new HorizontalBox(strutBox, charBox.getWidth(), 2);
-        }
-        verticalBox.add(charBox);
-        verticalBox.add(new StrutBox(0.0f, this.changeSize ? -f : -strutBox.getHeight(), 0.0f, 0.0f));
-        verticalBox.add(strutBox);
-        float height = verticalBox.getHeight() + verticalBox.getDepth();
-        float depth = strutBox.getDepth();
-        verticalBox.setDepth(depth);
-        verticalBox.setHeight(height - depth);
-        if (width2 >= 0.0f) {
-            return verticalBox;
-        }
-        HorizontalBox horizontalBox2 = new HorizontalBox(new StrutBox(width2, 0.0f, 0.0f, 0.0f));
-        horizontalBox2.add(verticalBox);
-        horizontalBox2.setWidth(width);
-        return horizontalBox2;
+        throw new InvalidTeXFormulaException("The accent TeXFormula can't be null!");
     }
 }

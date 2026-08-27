@@ -5,7 +5,8 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import ru.noties.jlatexmath.awt.Color;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class ColorAtom extends Atom implements Row {
     public static Map<String, Color> Colors = new HashMap();
     private final Color background;
@@ -22,40 +23,9 @@ public class ColorAtom extends Atom implements Row {
         this.color = color2;
     }
 
-    public ColorAtom(Color color, Color color2, ColorAtom colorAtom) {
-        this.elements = new RowAtom(colorAtom.elements);
-        this.background = color == null ? colorAtom.background : color;
-        this.color = color2 == null ? colorAtom.color : color2;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.Atom
-    public Box createBox(TeXEnvironment teXEnvironment) {
-        teXEnvironment.isColored = true;
-        TeXEnvironment copy = teXEnvironment.copy();
-        Color color = this.background;
-        if (color != null) {
-            copy.setBackground(color);
-        }
-        Color color2 = this.color;
-        if (color2 != null) {
-            copy.setColor(color2);
-        }
-        return this.elements.createBox(copy);
-    }
-
-    @Override // org.scilab.forge.jlatexmath.Atom
-    public int getLeftType() {
-        return this.elements.getLeftType();
-    }
-
-    @Override // org.scilab.forge.jlatexmath.Atom
-    public int getRightType() {
-        return this.elements.getRightType();
-    }
-
-    @Override // org.scilab.forge.jlatexmath.Row
-    public void setPreviousAtom(Dummy dummy) {
-        this.elements.setPreviousAtom(dummy);
+    private static Color convColor(float f10, float f11, float f12, float f13) {
+        float f14 = 1.0f - f13;
+        return new Color((1.0f - f10) * f14, (1.0f - f11) * f14, (1.0f - f12) * f14);
     }
 
     public static Color getColor(String str) {
@@ -76,10 +46,7 @@ public class ColorAtom extends Atom implements Row {
                             float parseFloat = Float.parseFloat(trim2);
                             float parseFloat2 = Float.parseFloat(trim3);
                             float parseFloat3 = Float.parseFloat(trim4);
-                            if (parseFloat == ((int) parseFloat) && parseFloat2 == ((int) parseFloat2) && parseFloat3 == ((int) parseFloat3) && trim2.indexOf(46) == -1 && trim3.indexOf(46) == -1 && trim4.indexOf(46) == -1) {
-                                return new Color((int) Math.min(255.0f, Math.max(0.0f, parseFloat)), (int) Math.min(255.0f, Math.max(0.0f, parseFloat2)), (int) Math.min(255.0f, Math.max(0.0f, parseFloat3)));
-                            }
-                            return new Color(Math.min(1.0f, Math.max(0.0f, parseFloat)), Math.min(1.0f, Math.max(0.0f, parseFloat2)), Math.min(1.0f, Math.max(0.0f, parseFloat3)));
+                            return (parseFloat == ((float) ((int) parseFloat)) && parseFloat2 == ((float) ((int) parseFloat2)) && parseFloat3 == ((float) ((int) parseFloat3)) && trim2.indexOf(46) == -1 && trim3.indexOf(46) == -1 && trim4.indexOf(46) == -1) ? new Color((int) Math.min(255.0f, Math.max(0.0f, parseFloat)), (int) Math.min(255.0f, Math.max(0.0f, parseFloat2)), (int) Math.min(255.0f, Math.max(0.0f, parseFloat3))) : new Color(Math.min(1.0f, Math.max(0.0f, parseFloat)), Math.min(1.0f, Math.max(0.0f, parseFloat2)), Math.min(1.0f, Math.max(0.0f, parseFloat3)));
                         } catch (NumberFormatException unused) {
                             return Color.black;
                         }
@@ -103,7 +70,7 @@ public class ColorAtom extends Atom implements Row {
                     } catch (NumberFormatException unused3) {
                     }
                 }
-                return Color.decode("#" + trim);
+                return Color.decode("#".concat(trim));
             }
         }
         return Color.black;
@@ -181,8 +148,39 @@ public class ColorAtom extends Atom implements Row {
         Colors.put("gray", convColor(0.0f, 0.0f, 0.0f, 0.5f));
     }
 
-    private static Color convColor(float f, float f2, float f3, float f4) {
-        float f5 = 1.0f - f4;
-        return new Color((1.0f - f) * f5, (1.0f - f2) * f5, f5 * (1.0f - f3));
+    @Override // org.scilab.forge.jlatexmath.Atom
+    public Box createBox(TeXEnvironment teXEnvironment) {
+        teXEnvironment.isColored = true;
+        TeXEnvironment copy = teXEnvironment.copy();
+        Color color = this.background;
+        if (color != null) {
+            copy.setBackground(color);
+        }
+        Color color2 = this.color;
+        if (color2 != null) {
+            copy.setColor(color2);
+        }
+        return this.elements.createBox(copy);
+    }
+
+    @Override // org.scilab.forge.jlatexmath.Atom
+    public int getLeftType() {
+        return this.elements.getLeftType();
+    }
+
+    @Override // org.scilab.forge.jlatexmath.Atom
+    public int getRightType() {
+        return this.elements.getRightType();
+    }
+
+    @Override // org.scilab.forge.jlatexmath.Row
+    public void setPreviousAtom(Dummy dummy) {
+        this.elements.setPreviousAtom(dummy);
+    }
+
+    public ColorAtom(Color color, Color color2, ColorAtom colorAtom) {
+        this.elements = new RowAtom(colorAtom.elements);
+        this.background = color == null ? colorAtom.background : color;
+        this.color = color2 == null ? colorAtom.color : color2;
     }
 }

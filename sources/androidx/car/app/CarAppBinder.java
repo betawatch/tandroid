@@ -2,170 +2,97 @@ package androidx.car.app;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import androidx.car.app.ICarApp;
-import androidx.car.app.serialization.Bundleable;
-import androidx.car.app.utils.RemoteUtils;
-import androidx.car.app.utils.ThreadUtils;
-import androidx.car.app.validation.HostValidator;
-import androidx.car.app.versioning.CarAppApiLevels;
-import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.o;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class CarAppBinder extends ICarApp.Stub {
-    private Session mCurrentSession;
+    private m mCurrentSession;
     private final SessionInfo mCurrentSessionInfo;
     private HandshakeInfo mHandshakeInfo;
-    private HostValidator mHostValidator;
-    private CarAppService mService;
+    private y.a mHostValidator;
+    private f mService;
 
-    private Lifecycle getCurrentLifecycle() {
-        return null;
-    }
-
-    Session getCurrentSession() {
-        return null;
-    }
-
-    void onAutoDriveEnabled() {
-    }
-
-    void onDestroyLifecycle() {
-    }
-
-    CarAppBinder(CarAppService carAppService, SessionInfo sessionInfo) {
+    public CarAppBinder(f fVar, SessionInfo sessionInfo) {
         this.mCurrentSessionInfo = sessionInfo;
     }
 
-    void destroy() {
+    private o getCurrentLifecycle() {
+        return null;
+    }
+
+    private y.a getHostValidator() {
+        Object obj = null;
+        obj.getClass();
+        return null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$getManager$7(String str, IOnDoneCallback iOnDoneCallback) {
+        throw null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public Object lambda$onAppCreate$0(ICarHost iCarHost, Configuration configuration, Intent intent) {
+        throw null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Object lambda$onAppPause$3() {
+        throw null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Object lambda$onAppResume$2() {
+        throw null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Object lambda$onAppStart$1() {
+        throw null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Object lambda$onAppStop$4() {
+        throw null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Object lambda$onConfigurationChanged$6(Configuration configuration) {
+        throw null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Object lambda$onNewIntent$5(Intent intent) {
+        throw null;
+    }
+
+    private void onConfigurationChangedInternal(m mVar, Configuration configuration) {
+        Handler handler = androidx.car.app.utils.j.a;
+        if (Looper.getMainLooper() != Looper.myLooper()) {
+            throw new IllegalStateException("Not running on main thread when it is required to");
+        }
+        if (Log.isLoggable("CarApp", 3)) {
+            Log.d("CarApp", "onCarConfigurationChanged configuration: " + configuration);
+        }
+        throw null;
+    }
+
+    private void onNewIntentInternal(m mVar, Intent intent) {
+        Handler handler = androidx.car.app.utils.j.a;
+        if (Looper.getMainLooper() != Looper.myLooper()) {
+            throw new IllegalStateException("Not running on main thread when it is required to");
+        }
+        throw null;
+    }
+
+    public void destroy() {
         onDestroyLifecycle();
         this.mHandshakeInfo = null;
-    }
-
-    @Override // androidx.car.app.ICarApp
-    public void onAppCreate(final ICarHost iCarHost, final Intent intent, final Configuration configuration, IOnDoneCallback iOnDoneCallback) {
-        if (Log.isLoggable("CarApp", 3)) {
-            Log.d("CarApp", "onAppCreate intent: " + intent);
-        }
-        RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onAppCreate", new RemoteUtils.HostCall() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda4
-            @Override // androidx.car.app.utils.RemoteUtils.HostCall
-            public final Object dispatch() {
-                return CarAppBinder.$r8$lambda$qV15wLbZchZqw7AYDWUTdB04thg(CarAppBinder.this, iCarHost, configuration, intent);
-            }
-        });
-        if (Log.isLoggable("CarApp", 3)) {
-            Log.d("CarApp", "onAppCreate completed");
-        }
-    }
-
-    public static /* synthetic */ Object $r8$lambda$qV15wLbZchZqw7AYDWUTdB04thg(CarAppBinder carAppBinder, ICarHost iCarHost, Configuration configuration, Intent intent) {
-        carAppBinder.getClass();
-        throw null;
-    }
-
-    @Override // androidx.car.app.ICarApp
-    public void onAppStart(IOnDoneCallback iOnDoneCallback) {
-        RemoteUtils.dispatchCallFromHost(getCurrentLifecycle(), iOnDoneCallback, "onAppStart", new RemoteUtils.HostCall() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda2
-            @Override // androidx.car.app.utils.RemoteUtils.HostCall
-            public final Object dispatch() {
-                return CarAppBinder.$r8$lambda$PVFAimZMMIOaPhkV65sW3A2TlPU(CarAppBinder.this);
-            }
-        });
-    }
-
-    public static /* synthetic */ Object $r8$lambda$PVFAimZMMIOaPhkV65sW3A2TlPU(CarAppBinder carAppBinder) {
-        carAppBinder.getClass();
-        throw null;
-    }
-
-    @Override // androidx.car.app.ICarApp
-    public void onAppResume(IOnDoneCallback iOnDoneCallback) {
-        RemoteUtils.dispatchCallFromHost(getCurrentLifecycle(), iOnDoneCallback, "onAppResume", new RemoteUtils.HostCall() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda7
-            @Override // androidx.car.app.utils.RemoteUtils.HostCall
-            public final Object dispatch() {
-                return CarAppBinder.$r8$lambda$7Uack6mc_KLNEQNXfnJY9SPsiFU(CarAppBinder.this);
-            }
-        });
-    }
-
-    public static /* synthetic */ Object $r8$lambda$7Uack6mc_KLNEQNXfnJY9SPsiFU(CarAppBinder carAppBinder) {
-        carAppBinder.getClass();
-        throw null;
-    }
-
-    @Override // androidx.car.app.ICarApp
-    public void onAppPause(IOnDoneCallback iOnDoneCallback) {
-        RemoteUtils.dispatchCallFromHost(getCurrentLifecycle(), iOnDoneCallback, "onAppPause", new RemoteUtils.HostCall() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda1
-            @Override // androidx.car.app.utils.RemoteUtils.HostCall
-            public final Object dispatch() {
-                return CarAppBinder.$r8$lambda$9yq-tiei5dqpkoINH-KvUxBxuvs(CarAppBinder.this);
-            }
-        });
-    }
-
-    public static /* synthetic */ Object $r8$lambda$9yq-tiei5dqpkoINH-KvUxBxuvs(CarAppBinder carAppBinder) {
-        carAppBinder.getClass();
-        throw null;
-    }
-
-    @Override // androidx.car.app.ICarApp
-    public void onAppStop(IOnDoneCallback iOnDoneCallback) {
-        RemoteUtils.dispatchCallFromHost(getCurrentLifecycle(), iOnDoneCallback, "onAppStop", new RemoteUtils.HostCall() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda3
-            @Override // androidx.car.app.utils.RemoteUtils.HostCall
-            public final Object dispatch() {
-                return CarAppBinder.$r8$lambda$-NmrdC46ynLALOfGH0FYY9n6M6o(CarAppBinder.this);
-            }
-        });
-    }
-
-    public static /* synthetic */ Object $r8$lambda$-NmrdC46ynLALOfGH0FYY9n6M6o(CarAppBinder carAppBinder) {
-        carAppBinder.getClass();
-        throw null;
-    }
-
-    @Override // androidx.car.app.ICarApp
-    public void onNewIntent(final Intent intent, IOnDoneCallback iOnDoneCallback) {
-        RemoteUtils.dispatchCallFromHost(getCurrentLifecycle(), iOnDoneCallback, "onNewIntent", new RemoteUtils.HostCall() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda6
-            @Override // androidx.car.app.utils.RemoteUtils.HostCall
-            public final Object dispatch() {
-                return CarAppBinder.$r8$lambda$r2-GCoVHE6N83Ffmv4fYzhYrccc(CarAppBinder.this, intent);
-            }
-        });
-    }
-
-    public static /* synthetic */ Object $r8$lambda$r2-GCoVHE6N83Ffmv4fYzhYrccc(CarAppBinder carAppBinder, Intent intent) {
-        carAppBinder.getClass();
-        throw null;
-    }
-
-    @Override // androidx.car.app.ICarApp
-    public void onConfigurationChanged(final Configuration configuration, IOnDoneCallback iOnDoneCallback) {
-        RemoteUtils.dispatchCallFromHost(getCurrentLifecycle(), iOnDoneCallback, "onConfigurationChanged", new RemoteUtils.HostCall() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda0
-            @Override // androidx.car.app.utils.RemoteUtils.HostCall
-            public final Object dispatch() {
-                return CarAppBinder.$r8$lambda$XEfwwvAnIshhGblecnxdG4sh6nQ(CarAppBinder.this, configuration);
-            }
-        });
-    }
-
-    public static /* synthetic */ Object $r8$lambda$XEfwwvAnIshhGblecnxdG4sh6nQ(CarAppBinder carAppBinder, Configuration configuration) {
-        carAppBinder.getClass();
-        throw null;
-    }
-
-    @Override // androidx.car.app.ICarApp
-    public void getManager(final String str, final IOnDoneCallback iOnDoneCallback) {
-        ThreadUtils.runOnMain(new Runnable() { // from class: androidx.car.app.CarAppBinder$$ExternalSyntheticLambda5
-            @Override // java.lang.Runnable
-            public final void run() {
-                CarAppBinder.$r8$lambda$IlVDu2UN1ozorozvq1aLAqao2a8(CarAppBinder.this, str, iOnDoneCallback);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$IlVDu2UN1ozorozvq1aLAqao2a8(CarAppBinder carAppBinder, String str, IOnDoneCallback iOnDoneCallback) {
-        carAppBinder.getClass();
-        throw null;
     }
 
     @Override // androidx.car.app.ICarApp
@@ -173,43 +100,92 @@ final class CarAppBinder extends ICarApp.Stub {
         throw null;
     }
 
-    @Override // androidx.car.app.ICarApp
-    public void onHandshakeCompleted(Bundleable bundleable, IOnDoneCallback iOnDoneCallback) {
-        throw null;
-    }
-
-    private HostValidator getHostValidator() {
-        Object obj = null;
-        obj.getClass();
+    public m getCurrentSession() {
         return null;
     }
 
-    private void onNewIntentInternal(Session session, Intent intent) {
-        ThreadUtils.checkMainThread();
-        throw null;
+    public SessionInfo getCurrentSessionInfo() {
+        return this.mCurrentSessionInfo;
     }
 
-    private void onConfigurationChangedInternal(Session session, Configuration configuration) {
-        ThreadUtils.checkMainThread();
+    public HandshakeInfo getHandshakeInfo() {
+        return this.mHandshakeInfo;
+    }
+
+    @Override // androidx.car.app.ICarApp
+    public void getManager(final String str, final IOnDoneCallback iOnDoneCallback) {
+        androidx.car.app.utils.j.a(new Runnable() { // from class: androidx.car.app.e
+            @Override // java.lang.Runnable
+            public final void run() {
+                CarAppBinder.this.lambda$getManager$7(str, iOnDoneCallback);
+            }
+        });
+    }
+
+    @Override // androidx.car.app.ICarApp
+    public void onAppCreate(final ICarHost iCarHost, final Intent intent, final Configuration configuration, IOnDoneCallback iOnDoneCallback) {
         if (Log.isLoggable("CarApp", 3)) {
-            Log.d("CarApp", "onCarConfigurationChanged configuration: " + configuration);
+            Log.d("CarApp", "onAppCreate intent: " + intent);
         }
+        androidx.car.app.utils.i.b(iOnDoneCallback, "onAppCreate", new androidx.car.app.utils.c() { // from class: androidx.car.app.d
+            @Override // androidx.car.app.utils.c
+            public final Object b() {
+                Object lambda$onAppCreate$0;
+                lambda$onAppCreate$0 = CarAppBinder.this.lambda$onAppCreate$0(iCarHost, configuration, intent);
+                return lambda$onAppCreate$0;
+            }
+        });
+        if (Log.isLoggable("CarApp", 3)) {
+            Log.d("CarApp", "onAppCreate completed");
+        }
+    }
+
+    @Override // androidx.car.app.ICarApp
+    public void onAppPause(IOnDoneCallback iOnDoneCallback) {
+        androidx.car.app.utils.i.c(getCurrentLifecycle(), iOnDoneCallback, "onAppPause", new c(this, 0));
+    }
+
+    @Override // androidx.car.app.ICarApp
+    public void onAppResume(IOnDoneCallback iOnDoneCallback) {
+        androidx.car.app.utils.i.c(getCurrentLifecycle(), iOnDoneCallback, "onAppResume", new c(this, 3));
+    }
+
+    @Override // androidx.car.app.ICarApp
+    public void onAppStart(IOnDoneCallback iOnDoneCallback) {
+        androidx.car.app.utils.i.c(getCurrentLifecycle(), iOnDoneCallback, "onAppStart", new c(this, 1));
+    }
+
+    @Override // androidx.car.app.ICarApp
+    public void onAppStop(IOnDoneCallback iOnDoneCallback) {
+        androidx.car.app.utils.i.c(getCurrentLifecycle(), iOnDoneCallback, "onAppStop", new c(this, 2));
+    }
+
+    @Override // androidx.car.app.ICarApp
+    public void onConfigurationChanged(Configuration configuration, IOnDoneCallback iOnDoneCallback) {
+        androidx.car.app.utils.i.c(getCurrentLifecycle(), iOnDoneCallback, "onConfigurationChanged", new b(0, this, configuration));
+    }
+
+    @Override // androidx.car.app.ICarApp
+    public void onHandshakeCompleted(w.b bVar, IOnDoneCallback iOnDoneCallback) {
         throw null;
     }
 
-    void setHandshakeInfo(HandshakeInfo handshakeInfo) {
+    @Override // androidx.car.app.ICarApp
+    public void onNewIntent(Intent intent, IOnDoneCallback iOnDoneCallback) {
+        androidx.car.app.utils.i.c(getCurrentLifecycle(), iOnDoneCallback, "onNewIntent", new b(1, this, intent));
+    }
+
+    public void setHandshakeInfo(HandshakeInfo handshakeInfo) {
         int hostCarAppApiLevel = handshakeInfo.getHostCarAppApiLevel();
-        if (!CarAppApiLevels.isValid(hostCarAppApiLevel)) {
-            throw new IllegalArgumentException("Invalid Car App API level received: " + hostCarAppApiLevel);
+        if (hostCarAppApiLevel < 1 || hostCarAppApiLevel > z.a.a()) {
+            throw new IllegalArgumentException(i0.a.k(hostCarAppApiLevel, "Invalid Car App API level received: "));
         }
         this.mHandshakeInfo = handshakeInfo;
     }
 
-    HandshakeInfo getHandshakeInfo() {
-        return this.mHandshakeInfo;
+    public void onAutoDriveEnabled() {
     }
 
-    SessionInfo getCurrentSessionInfo() {
-        return this.mCurrentSessionInfo;
+    public void onDestroyLifecycle() {
     }
 }

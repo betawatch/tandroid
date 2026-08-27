@@ -1,53 +1,37 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.ArrayDeque;
-import java.util.function.Consumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public final class e1 extends f1 {
-    @Override // j$.util.Spliterator
-    public final boolean tryAdvance(Consumer consumer) {
-        C0 a;
-        if (!c()) {
-            return false;
-        }
-        boolean tryAdvance = this.d.tryAdvance(consumer);
-        if (!tryAdvance) {
-            if (this.c == null && (a = f1.a(this.e)) != null) {
-                Spliterator spliterator = a.spliterator();
-                this.d = spliterator;
-                return spliterator.tryAdvance(consumer);
-            }
-            this.a = null;
-        }
-        return tryAdvance;
+public final class e1 extends h1 {
+    public final /* synthetic */ int s;
+    public final /* synthetic */ Object t;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ e1(a aVar, int i10, Object obj, int i11) {
+        super(aVar, i10);
+        this.s = i11;
+        this.t = obj;
     }
 
-    @Override // j$.util.Spliterator
-    public final void forEachRemaining(Consumer consumer) {
-        if (this.a == null) {
-            return;
+    @Override // j$.util.stream.a
+    public final j5 Q0(int i10, j5 j5Var) {
+        switch (this.s) {
+            case 0:
+                return new d1(this, j5Var);
+            case 1:
+                return new b1(this, j5Var, 5);
+            case 2:
+                return new w4(this, j5Var);
+            default:
+                return new l(this, j5Var, 5);
         }
-        if (this.d == null) {
-            Spliterator spliterator = this.c;
-            if (spliterator == null) {
-                ArrayDeque b = b();
-                while (true) {
-                    C0 a = f1.a(b);
-                    if (a != null) {
-                        a.forEach(consumer);
-                    } else {
-                        this.a = null;
-                        return;
-                    }
-                }
-            } else {
-                spliterator.forEachRemaining(consumer);
-            }
-        } else {
-            while (tryAdvance(consumer)) {
-            }
-        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e1(i1 i1Var, LongConsumer longConsumer) {
+        super(i1Var, 0);
+        this.s = 1;
+        this.t = longConsumer;
     }
 }

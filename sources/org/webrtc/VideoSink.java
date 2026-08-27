@@ -1,13 +1,8 @@
 package org.webrtc;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public interface VideoSink {
-
-    public abstract /* synthetic */ class -CC {
-        public static void $default$setParentSink(VideoSink videoSink, VideoSink videoSink2) {
-        }
-    }
-
     void onFrame(VideoFrame videoFrame);
 
     void setParentSink(VideoSink videoSink);

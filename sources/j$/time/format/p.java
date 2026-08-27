@@ -5,14 +5,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 /* loaded from: classes2.dex */
 public final class p {
     public static final a f = new a(0);
     public p a;
     public final p b;
-    public final ArrayList c;
+    public final List c;
     public final boolean d;
     public int e;
 
@@ -65,68 +67,65 @@ public final class p {
         this.d = true;
     }
 
-    public final void g(j$.time.temporal.o oVar, int i) {
+    public final void g(j$.time.temporal.o oVar, int i10) {
         Objects.requireNonNull(oVar, "field");
-        if (i < 1 || i > 19) {
-            throw new IllegalArgumentException("The width must be from 1 to 19 inclusive but was " + i);
+        if (i10 < 1 || i10 > 19) {
+            throw new IllegalArgumentException("The width must be from 1 to 19 inclusive but was " + i10);
         }
-        f(new i(oVar, i, i, x.NOT_NEGATIVE));
+        f(new i(oVar, i10, i10, x.NOT_NEGATIVE));
     }
 
-    public final void h(j$.time.temporal.o oVar, int i, int i2, x xVar) {
-        if (i == i2 && xVar == x.NOT_NEGATIVE) {
-            g(oVar, i2);
+    public final void h(j$.time.temporal.o oVar, int i10, int i11, x xVar) {
+        if (i10 == i11 && xVar == x.NOT_NEGATIVE) {
+            g(oVar, i11);
             return;
         }
         Objects.requireNonNull(oVar, "field");
         Objects.requireNonNull(xVar, "signStyle");
-        if (i < 1 || i > 19) {
-            throw new IllegalArgumentException("The minimum width must be from 1 to 19 inclusive but was " + i);
+        if (i10 < 1 || i10 > 19) {
+            throw new IllegalArgumentException("The minimum width must be from 1 to 19 inclusive but was " + i10);
         }
-        if (i2 < 1 || i2 > 19) {
-            throw new IllegalArgumentException("The maximum width must be from 1 to 19 inclusive but was " + i2);
+        if (i11 < 1 || i11 > 19) {
+            throw new IllegalArgumentException("The maximum width must be from 1 to 19 inclusive but was " + i11);
         }
-        if (i2 < i) {
-            throw new IllegalArgumentException("The maximum width must exceed or equal the minimum width but " + i2 + " < " + i);
+        if (i11 < i10) {
+            throw new IllegalArgumentException("The maximum width must exceed or equal the minimum width but " + i11 + " < " + i10);
         }
-        f(new i(oVar, i, i2, xVar));
+        f(new i(oVar, i10, i11, xVar));
     }
 
     public final void f(i iVar) {
-        i a;
+        i a2;
         p pVar = this.a;
-        int i = pVar.e;
-        if (i >= 0) {
-            i iVar2 = (i) pVar.c.get(i);
-            int i2 = iVar.b;
-            int i3 = iVar.c;
-            if (i2 == i3) {
-                if (iVar.d == x.NOT_NEGATIVE) {
-                    a = iVar2.b(i3);
-                    b(iVar.a());
-                    this.a.e = i;
-                    this.a.c.set(i, a);
-                    return;
-                }
-            }
-            a = iVar2.a();
-            this.a.e = b(iVar);
-            this.a.c.set(i, a);
+        int i10 = pVar.e;
+        if (i10 < 0) {
+            pVar.e = b(iVar);
             return;
         }
-        pVar.e = b(iVar);
+        i iVar2 = (i) ((ArrayList) pVar.c).get(i10);
+        int i11 = iVar.b;
+        int i12 = iVar.c;
+        if (i11 == i12 && iVar.d == x.NOT_NEGATIVE) {
+            a2 = iVar2.b(i12);
+            b(iVar.a());
+            this.a.e = i10;
+        } else {
+            a2 = iVar2.a();
+            this.a.e = b(iVar);
+        }
+        ((ArrayList) this.a.c).set(i10, a2);
     }
 
-    public final void e(j$.time.temporal.a aVar, HashMap hashMap) {
+    public final void e(j$.time.temporal.a aVar, Map map) {
         Objects.requireNonNull(aVar, "field");
-        Objects.requireNonNull(hashMap, "textLookup");
-        LinkedHashMap linkedHashMap = new LinkedHashMap(hashMap);
+        Objects.requireNonNull(map, "textLookup");
+        LinkedHashMap linkedHashMap = new LinkedHashMap(map);
         TextStyle textStyle = TextStyle.FULL;
         b(new m(aVar, textStyle, new b(new t(Collections.singletonMap(textStyle, linkedHashMap)))));
     }
 
-    public final void c(char c) {
-        b(new d(c));
+    public final void c(char c10) {
+        b(new d(c10));
     }
 
     public final void d(String str) {
@@ -161,7 +160,7 @@ public final class p {
         if (pVar.b == null) {
             throw new IllegalStateException("Cannot call optionalEnd() as there was no previous call to optionalStart()");
         }
-        if (pVar.c.size() > 0) {
+        if (((ArrayList) pVar.c).size() > 0) {
             p pVar2 = this.a;
             e eVar = new e(pVar2.c, pVar2.d);
             this.a = this.a.b;
@@ -175,22 +174,22 @@ public final class p {
         Objects.requireNonNull(fVar, "pp");
         p pVar = this.a;
         pVar.getClass();
-        pVar.c.add(fVar);
+        ((ArrayList) pVar.c).add(fVar);
         this.a.e = -1;
-        return r2.c.size() - 1;
+        return ((ArrayList) r2.c).size() - 1;
     }
 
-    public final DateTimeFormatter k(w wVar, j$.time.chrono.r rVar) {
-        return l(Locale.getDefault(), wVar, rVar);
+    public final DateTimeFormatter k(w wVar, j$.time.chrono.k kVar) {
+        return l(Locale.getDefault(), wVar, kVar);
     }
 
-    public final DateTimeFormatter l(Locale locale, w wVar, j$.time.chrono.r rVar) {
+    public final DateTimeFormatter l(Locale locale, w wVar, j$.time.chrono.k kVar) {
         Objects.requireNonNull(locale, "locale");
         while (this.a.b != null) {
             i();
         }
         e eVar = new e(this.c, false);
         v vVar = v.a;
-        return new DateTimeFormatter(eVar, locale, wVar, rVar);
+        return new DateTimeFormatter(eVar, locale, wVar, kVar);
     }
 }

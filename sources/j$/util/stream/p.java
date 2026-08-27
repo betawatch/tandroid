@@ -8,34 +8,34 @@ import java.util.function.DoubleToLongFunction;
 import java.util.function.DoubleUnaryOperator;
 
 /* loaded from: classes2.dex */
-public final class p extends Z1 {
+public final class p extends c5 {
     public final /* synthetic */ int b;
     public final /* synthetic */ a c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p(a aVar, g2 g2Var, int i) {
-        super(g2Var);
-        this.b = i;
+    public /* synthetic */ p(a aVar, j5 j5Var, int i10) {
+        super(j5Var);
+        this.b = i10;
         this.c = aVar;
     }
 
-    @Override // j$.util.stream.Z1, j$.util.stream.g2
-    public void y(long j) {
+    @Override // j$.util.stream.c5, j$.util.stream.j5
+    public void o(long j10) {
         switch (this.b) {
             case 4:
-                this.a.y(-1L);
+                this.a.o(-1L);
                 break;
             default:
-                super.y(j);
+                super.o(j10);
                 break;
         }
     }
 
-    @Override // j$.util.stream.d2, j$.util.stream.g2
+    @Override // j$.util.stream.g5, j$.util.stream.j5
     public final void accept(double d) {
         switch (this.b) {
             case 0:
-                this.a.accept((g2) ((DoubleFunction) ((q) this.c).n).apply(d));
+                this.a.accept((j5) ((DoubleFunction) ((q) this.c).t).apply(d));
                 return;
             case 1:
                 ((r) this.c).getClass();
@@ -58,7 +58,7 @@ public final class p extends Z1 {
                 doublePredicate.test(d);
                 throw null;
             default:
-                ((DoubleConsumer) ((v) this.c).n).accept(d);
+                ((DoubleConsumer) ((v) this.c).t).accept(d);
                 this.a.accept(d);
                 return;
         }

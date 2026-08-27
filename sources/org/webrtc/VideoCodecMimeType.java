@@ -2,7 +2,8 @@ package org.webrtc;
 
 import org.telegram.messenger.MediaController;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 enum VideoCodecMimeType {
     VP8("video/x-vnd.on2.vp8"),
     VP9("video/x-vnd.on2.vp9"),
@@ -16,7 +17,7 @@ enum VideoCodecMimeType {
         this.mimeType = str;
     }
 
-    String mimeType() {
+    public String mimeType() {
         return this.mimeType;
     }
 }

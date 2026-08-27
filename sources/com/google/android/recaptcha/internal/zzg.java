@@ -1,38 +1,39 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
+import pc.i;
+import rc.c;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public abstract class zzg {
     private boolean zza;
 
-    protected abstract Object zza(String str, Continuation continuation);
+    public abstract Object zza(String str, c cVar);
 
-    protected abstract Object zzb(String str, Continuation continuation);
+    public abstract Object zzb(String str, c cVar);
 
-    protected Object zzc(zzcg zzcgVar, Continuation continuation) {
-        return Unit.INSTANCE;
+    public Object zzc(zzcg zzcgVar, c cVar) {
+        return i.a;
     }
 
-    protected abstract Object zzd(zzxn zzxnVar, Continuation continuation);
+    public abstract Object zzd(zzxn zzxnVar, c cVar);
 
-    protected Object zze(String str, long j, Exception exc, Continuation continuation) {
-        return Unit.INSTANCE;
+    public Object zze(String str, long j10, Exception exc, c cVar) {
+        return i.a;
     }
 
-    protected Object zzf(Exception exc, Continuation continuation) {
+    public Object zzf(Exception exc, c cVar) {
         return zzh.zza(exc, new zzcg(zzce.zzb, zzcd.zzap, exc.getMessage(), null, 8, null));
-    }
-
-    protected void zzh(zzyg zzygVar) {
     }
 
     public final boolean zzi() {
         return this.zza;
     }
 
-    protected abstract int zzj();
+    public abstract int zzj();
 
-    protected abstract int zzk();
+    public abstract int zzk();
+
+    public void zzh(zzyg zzygVar) {
+    }
 }

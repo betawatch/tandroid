@@ -2,40 +2,16 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class PaneTemplate implements Template {
+public final class PaneTemplate implements x0 {
     private final ActionStrip mActionStrip;
     private final Action mHeaderAction;
     private final Pane mPane;
     private final CarText mTitle;
 
-    public static final class Builder {
-    }
-
-    public CarText getTitle() {
-        return this.mTitle;
-    }
-
-    public Action getHeaderAction() {
-        return this.mHeaderAction;
-    }
-
-    public ActionStrip getActionStrip() {
-        return this.mActionStrip;
-    }
-
-    public Pane getPane() {
-        Pane pane = this.mPane;
-        Objects.requireNonNull(pane);
-        return pane;
-    }
-
-    public String toString() {
-        return "PaneTemplate";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mTitle, this.mPane, this.mHeaderAction, this.mActionStrip);
+    public PaneTemplate(j0 j0Var) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -49,8 +25,30 @@ public final class PaneTemplate implements Template {
         return Objects.equals(this.mTitle, paneTemplate.mTitle) && Objects.equals(this.mPane, paneTemplate.mPane) && Objects.equals(this.mHeaderAction, paneTemplate.mHeaderAction) && Objects.equals(this.mActionStrip, paneTemplate.mActionStrip);
     }
 
-    PaneTemplate(Builder builder) {
-        throw null;
+    public ActionStrip getActionStrip() {
+        return this.mActionStrip;
+    }
+
+    public Action getHeaderAction() {
+        return this.mHeaderAction;
+    }
+
+    public Pane getPane() {
+        Pane pane = this.mPane;
+        Objects.requireNonNull(pane);
+        return pane;
+    }
+
+    public CarText getTitle() {
+        return this.mTitle;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mTitle, this.mPane, this.mHeaderAction, this.mActionStrip);
+    }
+
+    public String toString() {
+        return "PaneTemplate";
     }
 
     private PaneTemplate() {

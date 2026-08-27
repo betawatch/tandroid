@@ -4,27 +4,24 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class AppStartReceiver extends BroadcastReceiver {
-    @Override // android.content.BroadcastReceiver
-    public void onReceive(Context context, Intent intent) {
-        if (intent == null || !"android.intent.action.BOOT_COMPLETED".equals(intent.getAction())) {
-            return;
-        }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.AppStartReceiver$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                AppStartReceiver.$r8$lambda$7gvKcWEaIWxxezhCcVhOtGEPMng();
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$7gvKcWEaIWxxezhCcVhOtGEPMng() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$onReceive$0() {
         SharedConfig.loadConfig();
         if (SharedConfig.passcodeHash.length() > 0) {
             SharedConfig.appLocked = true;
             SharedConfig.saveConfig();
         }
         ApplicationLoader.startPushService();
+    }
+
+    @Override // android.content.BroadcastReceiver
+    public void onReceive(Context context, Intent intent) {
+        if (intent == null || !"android.intent.action.BOOT_COMPLETED".equals(intent.getAction())) {
+            return;
+        }
+        AndroidUtilities.runOnUIThread(new w1(2));
     }
 }

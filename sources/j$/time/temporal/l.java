@@ -2,13 +2,13 @@ package j$.time.temporal;
 
 /* loaded from: classes2.dex */
 public interface l {
-    boolean h(o oVar);
+    boolean e(o oVar);
 
-    int o(o oVar);
+    int j(o oVar);
 
-    s q(o oVar);
+    s l(o oVar);
 
-    Object r(j$.time.format.a aVar);
+    Object m(j$.time.format.a aVar);
 
-    long u(o oVar);
+    long y(o oVar);
 }

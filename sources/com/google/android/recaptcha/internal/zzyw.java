@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzyw extends zzsn implements zztt {
     private static final zzyw zzb;
@@ -16,27 +17,27 @@ public final class zzyw extends zzsn implements zztt {
     private zzyw() {
     }
 
-    static /* synthetic */ void zzM(zzyw zzywVar, float f) {
+    public static /* synthetic */ void zzM(zzyw zzywVar, float f10) {
         zzywVar.zze = 9;
-        zzywVar.zzf = Float.valueOf(f);
+        zzywVar.zzf = Float.valueOf(f10);
     }
 
-    static /* synthetic */ void zzN(zzyw zzywVar, int i) {
+    public static /* synthetic */ void zzN(zzyw zzywVar, int i10) {
         zzywVar.zze = 4;
-        zzywVar.zzf = Integer.valueOf(i);
+        zzywVar.zzf = Integer.valueOf(i10);
     }
 
-    static /* synthetic */ void zzO(zzyw zzywVar, int i) {
+    public static /* synthetic */ void zzO(zzyw zzywVar, int i10) {
         zzywVar.zze = 5;
-        zzywVar.zzf = Integer.valueOf(i);
+        zzywVar.zzf = Integer.valueOf(i10);
     }
 
-    static /* synthetic */ void zzP(zzyw zzywVar, long j) {
+    public static /* synthetic */ void zzP(zzyw zzywVar, long j10) {
         zzywVar.zze = 7;
-        zzywVar.zzf = Long.valueOf(j);
+        zzywVar.zzf = Long.valueOf(j10);
     }
 
-    static /* synthetic */ void zzQ(zzyw zzywVar, String str) {
+    public static /* synthetic */ void zzQ(zzyw zzywVar, String str) {
         str.getClass();
         zzywVar.zze = 11;
         zzywVar.zzf = str;
@@ -46,48 +47,48 @@ public final class zzyw extends zzsn implements zztt {
         return (zzyv) zzb.zzq();
     }
 
-    static /* synthetic */ void zzi(zzyw zzywVar, boolean z) {
+    public static /* synthetic */ void zzi(zzyw zzywVar, boolean z10) {
         zzywVar.zze = 1;
-        zzywVar.zzf = Boolean.valueOf(z);
+        zzywVar.zzf = Boolean.valueOf(z10);
     }
 
-    static /* synthetic */ void zzj(zzyw zzywVar, zzqm zzqmVar) {
+    public static /* synthetic */ void zzj(zzyw zzywVar, zzqm zzqmVar) {
         zzywVar.zze = 2;
         zzywVar.zzf = zzqmVar;
     }
 
-    static /* synthetic */ void zzk(zzyw zzywVar, String str) {
+    public static /* synthetic */ void zzk(zzyw zzywVar, String str) {
         str.getClass();
         zzywVar.zze = 3;
         zzywVar.zzf = str;
     }
 
-    static /* synthetic */ void zzl(zzyw zzywVar, double d) {
+    public static /* synthetic */ void zzl(zzyw zzywVar, double d) {
         zzywVar.zze = 10;
         zzywVar.zzf = Double.valueOf(d);
     }
 
     @Override // com.google.android.recaptcha.internal.zzsn
-    protected final Object zzh(int i, Object obj, Object obj2) {
+    public final Object zzh(int i10, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i2 = i - 1;
-        if (i2 == 0) {
+        int i11 = i10 - 1;
+        if (i11 == 0) {
             return (byte) 1;
         }
-        if (i2 == 2) {
+        if (i11 == 2) {
             return zzsn.zzF(zzb, "\u0000\u000b\u0001\u0000\u0001\u000b\u000b\u0000\u0000\u0000\u0001:\u0000\u0002=\u0000\u0003Ȼ\u0000\u0004B\u0000\u0005B\u0000\u0006>\u0000\u0007C\u0000\b6\u0000\t4\u0000\n3\u0000\u000bȻ\u0000", new Object[]{"zzf", "zze"});
         }
-        if (i2 == 3) {
+        if (i11 == 3) {
             return new zzyw();
         }
         zzyy zzyyVar = null;
-        if (i2 == 4) {
+        if (i11 == 4) {
             return new zzyv(zzyyVar);
         }
-        if (i2 == 5) {
+        if (i11 == 5) {
             return zzb;
         }
-        if (i2 != 6) {
+        if (i11 != 6) {
             throw null;
         }
         zzua zzuaVar2 = zzd;

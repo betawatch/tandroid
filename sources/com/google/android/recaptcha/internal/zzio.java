@@ -1,18 +1,16 @@
 package com.google.android.recaptcha.internal;
 
+import ad.p;
+import h7.k6;
+import id.c0;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.Boxing;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.CoroutineScope;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzio extends SuspendLambda implements Function2 {
+final class zzio extends i implements p {
     Object zza;
     Object zzb;
     int zzc;
@@ -21,28 +19,28 @@ final class zzio extends SuspendLambda implements Function2 {
     final /* synthetic */ String zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzio(zziz zzizVar, zzip zzipVar, String str, Continuation continuation) {
-        super(2, continuation);
+    public zzio(zziz zzizVar, zzip zzipVar, String str, c cVar) {
+        super(2, cVar);
         this.zzd = zzizVar;
         this.zze = zzipVar;
         this.zzf = str;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzio(this.zzd, this.zze, this.zzf, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        return new zzio(this.zzd, this.zze, this.zzf, cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzio) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzio) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:20:0x007a, code lost:
     
         if (r7 != r0) goto L20;
      */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -52,19 +50,19 @@ final class zzio extends SuspendLambda implements Function2 {
         Object zzg;
         zzzq zzzqVar;
         zzmf zzmfVar;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zzc;
+        sc.a aVar = sc.a.a;
+        int i10 = this.zzc;
         try {
-        } catch (Exception e) {
+        } catch (Exception e9) {
             zzip zzipVar = this.zze;
             zziz zzizVar = this.zzd;
             this.zza = null;
             this.zzb = null;
             this.zzc = 2;
-            zzh = zzipVar.zzh(e, zzizVar, this);
+            zzh = zzipVar.zzh(e9, zzizVar, this);
         }
-        if (i == 0) {
-            ResultKt.throwOnFailure(obj);
+        if (i10 == 0) {
+            k6.b(obj);
             zziz zzizVar2 = this.zzd;
             zzizVar2.zza = new zzcs();
             zzzq zzi = zzzq.zzi(zzpp.zzh().zzj(this.zzf));
@@ -78,22 +76,22 @@ final class zzio extends SuspendLambda implements Function2 {
             this.zzb = zzb;
             this.zzc = 1;
             zzg = zzipVar2.zzg(zzi2, zzizVar2, this);
-            if (zzg != coroutine_suspended) {
+            if (zzg != aVar) {
                 zzzqVar = zzi;
                 zzmfVar = zzb;
             }
-            return coroutine_suspended;
+            return aVar;
         }
-        if (i != 1) {
-            ResultKt.throwOnFailure(obj);
-            return Unit.INSTANCE;
+        if (i10 != 1) {
+            k6.b(obj);
+            return pc.i.a;
         }
         zzmfVar = (zzmf) this.zzb;
         zzzqVar = (zzzq) this.zza;
-        ResultKt.throwOnFailure(obj);
+        k6.b(obj);
         zzmfVar.zzf();
-        Boxing.boxLong(zzmfVar.zza(TimeUnit.MICROSECONDS));
+        new Long(zzmfVar.zza(TimeUnit.MICROSECONDS));
         zzzqVar.zzf();
-        return Unit.INSTANCE;
+        return pc.i.a;
     }
 }

@@ -16,22 +16,24 @@ public final class OffsetDateTime implements Temporal, j$.time.temporal.m, Compa
 
     @Override // java.lang.Comparable
     public final int compareTo(OffsetDateTime offsetDateTime) {
-        int i;
+        int compare;
         OffsetDateTime offsetDateTime2 = offsetDateTime;
-        ZoneOffset zoneOffset = offsetDateTime2.b;
-        ZoneOffset zoneOffset2 = this.b;
-        if (zoneOffset2.equals(zoneOffset)) {
-            i = toLocalDateTime().compareTo(offsetDateTime2.toLocalDateTime());
+        if (this.b.equals(offsetDateTime2.b)) {
+            compare = toLocalDateTime().compareTo(offsetDateTime2.toLocalDateTime());
         } else {
             LocalDateTime localDateTime = this.a;
+            ZoneOffset zoneOffset = this.b;
             localDateTime.getClass();
-            long w = j$.com.android.tools.r8.a.w(localDateTime, zoneOffset2);
+            long w10 = j$.com.android.tools.r8.a.w(localDateTime, zoneOffset);
             LocalDateTime localDateTime2 = offsetDateTime2.a;
+            ZoneOffset zoneOffset2 = offsetDateTime2.b;
             localDateTime2.getClass();
-            int compare = Long.compare(w, j$.com.android.tools.r8.a.w(localDateTime2, offsetDateTime2.b));
-            i = compare == 0 ? localDateTime.b.d - localDateTime2.b.d : compare;
+            compare = Long.compare(w10, j$.com.android.tools.r8.a.w(localDateTime2, zoneOffset2));
+            if (compare == 0) {
+                compare = this.a.b.d - offsetDateTime2.a.b.d;
+            }
         }
-        return i == 0 ? toLocalDateTime().compareTo(offsetDateTime2.toLocalDateTime()) : i;
+        return compare == 0 ? toLocalDateTime().compareTo(offsetDateTime2.toLocalDateTime()) : compare;
     }
 
     static {
@@ -45,7 +47,7 @@ public final class OffsetDateTime implements Temporal, j$.time.temporal.m, Compa
         new OffsetDateTime(localDateTime2, zoneOffset2);
     }
 
-    public static OffsetDateTime E(Instant instant, ZoneId zoneId) {
+    public static OffsetDateTime G(Instant instant, ZoneId zoneId) {
         Objects.requireNonNull(instant, "instant");
         Objects.requireNonNull(zoneId, "zone");
         ZoneOffset offset = zoneId.getRules().getOffset(instant);
@@ -64,23 +66,23 @@ public final class OffsetDateTime implements Temporal, j$.time.temporal.m, Compa
         } else {
             try {
                 ZoneOffset L = ZoneOffset.L(temporal);
-                LocalDate localDate = (LocalDate) temporal.r(j$.time.temporal.p.f);
-                h hVar = (h) temporal.r(j$.time.temporal.p.g);
+                LocalDate localDate = (LocalDate) temporal.m(j$.time.temporal.p.f);
+                h hVar = (h) temporal.m(j$.time.temporal.p.g);
                 if (localDate != null && hVar != null) {
                     temporal = new OffsetDateTime(LocalDateTime.J(localDate, hVar), L);
                 } else {
-                    temporal = E(Instant.H(temporal), L);
+                    temporal = G(Instant.H(temporal), L);
                 }
-            } catch (b e) {
-                throw new b("Unable to obtain OffsetDateTime from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e);
+            } catch (b e9) {
+                throw new b("Unable to obtain OffsetDateTime from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e9);
             }
         }
         if (qVar instanceof ChronoUnit) {
-            ZoneOffset zoneOffset = temporal.b;
-            ZoneOffset zoneOffset2 = this.b;
+            ZoneOffset zoneOffset = this.b;
+            boolean equals = zoneOffset.equals(temporal.b);
             OffsetDateTime offsetDateTime = temporal;
-            if (!zoneOffset2.equals(zoneOffset)) {
-                offsetDateTime = new OffsetDateTime(temporal.a.M(zoneOffset2.getTotalSeconds() - zoneOffset.getTotalSeconds()), zoneOffset2);
+            if (!equals) {
+                offsetDateTime = new OffsetDateTime(temporal.a.M(zoneOffset.getTotalSeconds() - temporal.b.getTotalSeconds()), zoneOffset);
             }
             return this.a.g(offsetDateTime.a, qVar);
         }
@@ -97,50 +99,50 @@ public final class OffsetDateTime implements Temporal, j$.time.temporal.m, Compa
     }
 
     @Override // j$.time.temporal.l
-    public final boolean h(j$.time.temporal.o oVar) {
+    public final boolean e(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             return true;
         }
-        return oVar != null && oVar.p(this);
+        return oVar != null && oVar.j(this);
     }
 
     @Override // j$.time.temporal.l
-    public final j$.time.temporal.s q(j$.time.temporal.o oVar) {
+    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             if (oVar != j$.time.temporal.a.INSTANT_SECONDS && oVar != j$.time.temporal.a.OFFSET_SECONDS) {
-                return this.a.q(oVar);
+                return this.a.l(oVar);
             }
             return ((j$.time.temporal.a) oVar).b;
         }
-        return oVar.r(this);
+        return oVar.k(this);
     }
 
     @Override // j$.time.temporal.l
-    public final int o(j$.time.temporal.o oVar) {
+    public final int j(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            int i = m.a[((j$.time.temporal.a) oVar).ordinal()];
-            if (i == 1) {
+            int i10 = m.a[((j$.time.temporal.a) oVar).ordinal()];
+            if (i10 == 1) {
                 throw new j$.time.temporal.r("Invalid field 'InstantSeconds' for get() method, use getLong() instead");
             }
-            if (i == 2) {
+            if (i10 == 2) {
                 return this.b.getTotalSeconds();
             }
-            return this.a.o(oVar);
+            return this.a.j(oVar);
         }
         return j$.time.temporal.p.a(this, oVar);
     }
 
     @Override // j$.time.temporal.l
-    public final long u(j$.time.temporal.o oVar) {
+    public final long y(j$.time.temporal.o oVar) {
         if (!(oVar instanceof j$.time.temporal.a)) {
-            return oVar.o(this);
+            return oVar.m(this);
         }
-        int i = m.a[((j$.time.temporal.a) oVar).ordinal()];
-        ZoneOffset zoneOffset = this.b;
+        int i10 = m.a[((j$.time.temporal.a) oVar).ordinal()];
+        if (i10 != 1) {
+            return i10 != 2 ? this.a.y(oVar) : this.b.getTotalSeconds();
+        }
         LocalDateTime localDateTime = this.a;
-        if (i != 1) {
-            return i != 2 ? localDateTime.u(oVar) : zoneOffset.getTotalSeconds();
-        }
+        ZoneOffset zoneOffset = this.b;
         localDateTime.getClass();
         return j$.com.android.tools.r8.a.w(localDateTime, zoneOffset);
     }
@@ -150,64 +152,57 @@ public final class OffsetDateTime implements Temporal, j$.time.temporal.m, Compa
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal p(LocalDate localDate) {
-        boolean b = c.b(localDate);
-        LocalDateTime localDateTime = this.a;
-        ZoneOffset zoneOffset = this.b;
-        if (b) {
-            return I(localDateTime.p(localDate), zoneOffset);
+    public final Temporal k(LocalDate localDate) {
+        if (c.b(localDate)) {
+            return I(this.a.k(localDate), this.b);
         }
         localDate.getClass();
         return (OffsetDateTime) j$.com.android.tools.r8.a.a(localDate, this);
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal e(long j, j$.time.temporal.o oVar) {
+    public final Temporal c(long j10, j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-            int i = m.a[aVar.ordinal()];
-            ZoneOffset zoneOffset = this.b;
-            LocalDateTime localDateTime = this.a;
-            if (i == 1) {
-                return E(Instant.I(j, localDateTime.b.d), zoneOffset);
+            int i10 = m.a[aVar.ordinal()];
+            if (i10 == 1) {
+                return G(Instant.I(j10, this.a.b.d), this.b);
             }
-            if (i == 2) {
-                return I(localDateTime, ZoneOffset.O(aVar.b.a(j, aVar)));
+            if (i10 == 2) {
+                return I(this.a, ZoneOffset.O(aVar.b.a(j10, aVar)));
             }
-            return I(localDateTime.e(j, oVar), zoneOffset);
+            return I(this.a.c(j10, oVar), this.b);
         }
-        return (OffsetDateTime) oVar.q(this, j);
+        return (OffsetDateTime) oVar.q(this, j10);
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: H, reason: merged with bridge method [inline-methods] */
-    public final OffsetDateTime f(long j, j$.time.temporal.q qVar) {
+    public final OffsetDateTime d(long j10, j$.time.temporal.q qVar) {
         if (qVar instanceof ChronoUnit) {
-            return I(this.a.f(j, qVar), this.b);
+            return I(this.a.d(j10, qVar), this.b);
         }
-        return (OffsetDateTime) qVar.l(this, j);
+        return (OffsetDateTime) qVar.j(this, j10);
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal l(long j, ChronoUnit chronoUnit) {
-        return j == Long.MIN_VALUE ? f(Long.MAX_VALUE, chronoUnit).f(1L, chronoUnit) : f(-j, chronoUnit);
+    public final Temporal w(long j10, ChronoUnit chronoUnit) {
+        return j10 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j10, chronoUnit);
     }
 
     @Override // j$.time.temporal.l
-    public final Object r(j$.time.format.a aVar) {
+    public final Object m(j$.time.format.a aVar) {
         if (aVar == j$.time.temporal.p.d || aVar == j$.time.temporal.p.e) {
             return this.b;
         }
         if (aVar == j$.time.temporal.p.a) {
             return null;
         }
-        j$.time.format.a aVar2 = j$.time.temporal.p.f;
-        LocalDateTime localDateTime = this.a;
-        if (aVar == aVar2) {
-            return localDateTime.a;
+        if (aVar == j$.time.temporal.p.f) {
+            return this.a.a;
         }
         if (aVar == j$.time.temporal.p.g) {
-            return localDateTime.b;
+            return this.a.b;
         }
         if (aVar == j$.time.temporal.p.b) {
             return j$.time.chrono.r.c;
@@ -219,10 +214,8 @@ public final class OffsetDateTime implements Temporal, j$.time.temporal.m, Compa
     }
 
     @Override // j$.time.temporal.m
-    public final Temporal x(Temporal temporal) {
-        j$.time.temporal.a aVar = j$.time.temporal.a.EPOCH_DAY;
-        LocalDateTime localDateTime = this.a;
-        return temporal.e(localDateTime.a.v(), aVar).e(localDateTime.b.R(), j$.time.temporal.a.NANO_OF_DAY).e(this.b.getTotalSeconds(), j$.time.temporal.a.OFFSET_SECONDS);
+    public final Temporal q(Temporal temporal) {
+        return temporal.c(this.a.a.z(), j$.time.temporal.a.EPOCH_DAY).c(this.a.b.R(), j$.time.temporal.a.NANO_OF_DAY).c(this.b.getTotalSeconds(), j$.time.temporal.a.OFFSET_SECONDS);
     }
 
     public final boolean equals(Object obj) {

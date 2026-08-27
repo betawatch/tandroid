@@ -4,87 +4,98 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.util.Log;
-import com.google.android.gms.dynamic.IObjectWrapper;
-import com.google.android.gms.dynamic.ObjectWrapper;
+import h7.h6;
+import h7.t8;
+import i6.a;
+import i6.b;
+import n2.r;
+import o6.f;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class FlagProviderImpl extends com.google.android.gms.flags.zzd {
-    private boolean zza = false;
-    private SharedPreferences zzb;
+public class FlagProviderImpl extends f {
+    public boolean a;
+    public SharedPreferences b;
 
-    @Override // com.google.android.gms.flags.zze
-    public boolean getBooleanFlagValue(String str, boolean z, int i) {
-        if (!this.zza) {
-            return z;
+    public FlagProviderImpl() {
+        attachInterface(this, "com.google.android.gms.flags.IFlagProvider");
+        this.a = false;
+    }
+
+    @Override // o6.g
+    public boolean getBooleanFlagValue(String str, boolean z10, int i10) {
+        if (!this.a) {
+            return z10;
         }
-        SharedPreferences sharedPreferences = this.zzb;
-        Boolean valueOf = Boolean.valueOf(z);
+        SharedPreferences sharedPreferences = this.b;
+        Boolean valueOf = Boolean.valueOf(z10);
         try {
-            valueOf = (Boolean) com.google.android.gms.internal.flags.zzd.zza(new zza(sharedPreferences, str, valueOf));
-        } catch (Exception e) {
-            String valueOf2 = String.valueOf(e.getMessage());
+            valueOf = (Boolean) t8.a(new r(sharedPreferences, str, valueOf, 4));
+        } catch (Exception e9) {
+            String valueOf2 = String.valueOf(e9.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
         }
         return valueOf.booleanValue();
     }
 
-    @Override // com.google.android.gms.flags.zze
-    public int getIntFlagValue(String str, int i, int i2) {
-        if (!this.zza) {
-            return i;
+    @Override // o6.g
+    public int getIntFlagValue(String str, int i10, int i11) {
+        if (!this.a) {
+            return i10;
         }
-        SharedPreferences sharedPreferences = this.zzb;
-        Integer valueOf = Integer.valueOf(i);
+        SharedPreferences sharedPreferences = this.b;
+        Integer valueOf = Integer.valueOf(i10);
         try {
-            valueOf = (Integer) com.google.android.gms.internal.flags.zzd.zza(new zzb(sharedPreferences, str, valueOf));
-        } catch (Exception e) {
-            String valueOf2 = String.valueOf(e.getMessage());
+            valueOf = (Integer) t8.a(new r(sharedPreferences, str, valueOf, 5));
+        } catch (Exception e9) {
+            String valueOf2 = String.valueOf(e9.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
         }
         return valueOf.intValue();
     }
 
-    @Override // com.google.android.gms.flags.zze
-    public long getLongFlagValue(String str, long j, int i) {
-        if (!this.zza) {
-            return j;
+    @Override // o6.g
+    public long getLongFlagValue(String str, long j10, int i10) {
+        if (!this.a) {
+            return j10;
         }
-        SharedPreferences sharedPreferences = this.zzb;
-        Long valueOf = Long.valueOf(j);
+        SharedPreferences sharedPreferences = this.b;
+        Long valueOf = Long.valueOf(j10);
         try {
-            valueOf = (Long) com.google.android.gms.internal.flags.zzd.zza(new zzc(sharedPreferences, str, valueOf));
-        } catch (Exception e) {
-            String valueOf2 = String.valueOf(e.getMessage());
+            valueOf = (Long) t8.a(new r(sharedPreferences, str, valueOf, 6));
+        } catch (Exception e9) {
+            String valueOf2 = String.valueOf(e9.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
         }
         return valueOf.longValue();
     }
 
-    @Override // com.google.android.gms.flags.zze
-    public String getStringFlagValue(String str, String str2, int i) {
-        if (this.zza) {
-            try {
-                return (String) com.google.android.gms.internal.flags.zzd.zza(new zzd(this.zzb, str, str2));
-            } catch (Exception e) {
-                String valueOf = String.valueOf(e.getMessage());
-                Log.w("FlagDataUtils", valueOf.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf) : new String("Flag value not available, returning default: "));
-            }
+    @Override // o6.g
+    public String getStringFlagValue(String str, String str2, int i10) {
+        if (!this.a) {
+            return str2;
         }
-        return str2;
+        try {
+            return (String) t8.a(new r(this.b, str, str2, 7));
+        } catch (Exception e9) {
+            String valueOf = String.valueOf(e9.getMessage());
+            Log.w("FlagDataUtils", valueOf.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf) : new String("Flag value not available, returning default: "));
+            return str2;
+        }
     }
 
-    @Override // com.google.android.gms.flags.zze
-    public void init(IObjectWrapper iObjectWrapper) {
-        Context context = (Context) ObjectWrapper.unwrap(iObjectWrapper);
-        if (this.zza) {
+    @Override // o6.g
+    public void init(a aVar) {
+        Context context = (Context) b.K0(aVar);
+        if (this.a) {
             return;
         }
         try {
-            this.zzb = zzf.zza(context.createPackageContext("com.google.android.gms", 0));
-            this.zza = true;
+            this.b = h6.a(context.createPackageContext("com.google.android.gms", 0));
+            this.a = true;
         } catch (PackageManager.NameNotFoundException unused) {
-        } catch (Exception e) {
-            String valueOf = String.valueOf(e.getMessage());
+        } catch (Exception e9) {
+            String valueOf = String.valueOf(e9.getMessage());
             Log.w("FlagProviderImpl", valueOf.length() != 0 ? "Could not retrieve sdk flags, continuing with defaults: ".concat(valueOf) : new String("Could not retrieve sdk flags, continuing with defaults: "));
         }
     }

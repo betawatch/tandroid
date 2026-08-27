@@ -1,17 +1,18 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zztj implements zztq {
     private final zztq[] zza;
 
-    zztj(zztq... zztqVarArr) {
+    public zztj(zztq... zztqVarArr) {
         this.zza = zztqVarArr;
     }
 
     @Override // com.google.android.recaptcha.internal.zztq
     public final zztp zzb(Class cls) {
-        for (int i = 0; i < 2; i++) {
-            zztq zztqVar = this.zza[i];
+        for (int i10 = 0; i10 < 2; i10++) {
+            zztq zztqVar = this.zza[i10];
             if (zztqVar.zzc(cls)) {
                 return zztqVar.zzb(cls);
             }
@@ -21,8 +22,8 @@ final class zztj implements zztq {
 
     @Override // com.google.android.recaptcha.internal.zztq
     public final boolean zzc(Class cls) {
-        for (int i = 0; i < 2; i++) {
-            if (this.zza[i].zzc(cls)) {
+        for (int i10 = 0; i10 < 2; i10++) {
+            if (this.zza[i10].zzc(cls)) {
                 return true;
             }
         }

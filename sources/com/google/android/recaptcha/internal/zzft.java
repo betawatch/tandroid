@@ -1,49 +1,48 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function1;
-import kotlinx.coroutines.TimeoutKt;
+import ad.l;
+import h7.k6;
+import id.f0;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzft extends SuspendLambda implements Function1 {
+final class zzft extends i implements l {
     int zza;
     final /* synthetic */ long zzb;
     final /* synthetic */ zzgb zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzft(long j, zzgb zzgbVar, Continuation continuation) {
-        super(1, continuation);
-        this.zzb = j;
+    public zzft(long j10, zzgb zzgbVar, c cVar) {
+        super(1, cVar);
+        this.zzb = j10;
         this.zzc = zzgbVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Continuation continuation) {
-        return new zzft(this.zzb, this.zzc, continuation);
+    @Override // tc.a
+    public final c create(c cVar) {
+        return new zzft(this.zzb, this.zzc, cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function1
+    @Override // ad.l
     public final /* bridge */ /* synthetic */ Object invoke(Object obj) {
-        return ((zzft) create((Continuation) obj)).invokeSuspend(Unit.INSTANCE);
+        return ((zzft) create((c) obj)).invokeSuspend(pc.i.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zza;
-        ResultKt.throwOnFailure(obj);
-        if (i == 0) {
-            long j = this.zzb;
+        sc.a aVar = sc.a.a;
+        int i10 = this.zza;
+        k6.b(obj);
+        if (i10 == 0) {
+            long j10 = this.zzb;
             zzfs zzfsVar = new zzfs(this.zzc, null);
             this.zza = 1;
-            if (TimeoutKt.withTimeout(j, zzfsVar, this) == coroutine_suspended) {
-                return coroutine_suspended;
+            if (f0.x(j10, zzfsVar, this) == aVar) {
+                return aVar;
             }
         }
-        return Unit.INSTANCE;
+        return pc.i.a;
     }
 }

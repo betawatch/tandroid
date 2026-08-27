@@ -1,73 +1,71 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.Boxing;
-import kotlin.jvm.functions.Function2;
+import ad.p;
+import h7.k6;
 import org.telegram.tgnet.TLObject;
+import pc.i;
+import rc.c;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzhj {
-    public static final Object zza(zzhh zzhhVar, Function2 function2, Continuation continuation) {
-        return function2.invoke(new zzhk(zzhhVar), continuation);
+    public static final Object zza(zzhh zzhhVar, p pVar, c cVar) {
+        return pVar.invoke(new zzhk(zzhhVar), cVar);
     }
 
+    /* JADX WARN: Can't wrap try/catch for region: R(9:0|1|(2:3|(6:5|6|7|(1:(1:10)(2:15|16))(3:17|18|(1:20))|11|12))|22|6|7|(0)(0)|11|12) */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0031  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x0023  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object zzb(zzhk zzhkVar, zzhf zzhfVar, Continuation continuation) {
+    public static final Object zzb(zzhk zzhkVar, zzhf zzhfVar, c cVar) {
         zzhi zzhiVar;
-        int i;
-        try {
-            if (continuation instanceof zzhi) {
-                zzhiVar = (zzhi) continuation;
-                int i2 = zzhiVar.zzb;
-                if ((i2 & TLObject.FLAG_31) != 0) {
-                    zzhiVar.zzb = i2 - TLObject.FLAG_31;
-                    Object obj = zzhiVar.zza;
-                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    i = zzhiVar.zzb;
-                    if (i != 0) {
-                        ResultKt.throwOnFailure(obj);
-                        zzhiVar.zzb = 1;
-                        if (zzhfVar.zza(zzhkVar, zzhiVar) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                    } else {
-                        if (i != 1) {
-                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                        }
-                        ResultKt.throwOnFailure(obj);
+        int i10;
+        if (cVar instanceof zzhi) {
+            zzhiVar = (zzhi) cVar;
+            int i11 = zzhiVar.zzb;
+            if ((i11 & TLObject.FLAG_31) != 0) {
+                zzhiVar.zzb = i11 - TLObject.FLAG_31;
+                Object obj = zzhiVar.zza;
+                Object obj2 = sc.a.a;
+                i10 = zzhiVar.zzb;
+                i iVar = i.a;
+                if (i10 != 0) {
+                    k6.b(obj);
+                    zzhiVar.zzb = 1;
+                    if (zzhfVar.zza(zzhkVar, zzhiVar) == obj2) {
+                        return obj2;
                     }
-                    return Unit.INSTANCE;
+                } else {
+                    if (i10 != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    k6.b(obj);
                 }
+                return iVar;
             }
-            if (i != 0) {
-            }
-            return Unit.INSTANCE;
-        } catch (Exception unused) {
-            return Unit.INSTANCE;
         }
-        zzhiVar = new zzhi(continuation);
-        Object obj2 = zzhiVar.zza;
-        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        i = zzhiVar.zzb;
+        zzhiVar = new zzhi(cVar);
+        Object obj3 = zzhiVar.zza;
+        Object obj22 = sc.a.a;
+        i10 = zzhiVar.zzb;
+        i iVar2 = i.a;
+        if (i10 != 0) {
+        }
+        return iVar2;
     }
 
-    public static final Object zzc(zzgr zzgrVar, zzhg zzhgVar, Continuation continuation) {
-        Object zza = zzhgVar.zza(zzgrVar.zza(), continuation);
-        return zza == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? zza : Unit.INSTANCE;
+    public static final Object zzc(zzgr zzgrVar, zzhg zzhgVar, c cVar) {
+        Object zza = zzhgVar.zza(zzgrVar.zza(), cVar);
+        return zza == sc.a.a ? zza : i.a;
     }
 
-    public static final Object zzd(int i, int i2, Function2 function2, Continuation continuation) {
-        return new zzhf(i, function2, Boxing.boxInt(i2));
+    public static final Object zzd(int i10, int i11, p pVar, c cVar) {
+        return new zzhf(i10, pVar, new Integer(i11));
     }
 
-    public static final Object zze(zzhk zzhkVar, int i, Function2 function2, Continuation continuation) {
-        return new zzhf(i, function2, null).zza(zzhkVar, continuation);
+    public static final Object zze(zzhk zzhkVar, int i10, p pVar, c cVar) {
+        return new zzhf(i10, pVar, null).zza(zzhkVar, cVar);
     }
 }

@@ -4,25 +4,20 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
+import m.t1;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class FitWindowsLinearLayout extends LinearLayout {
-    private FitWindowsViewGroup$OnFitSystemWindowsListener mListener;
-
     public FitWindowsLinearLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
     }
 
-    public void setOnFitSystemWindowsListener(FitWindowsViewGroup$OnFitSystemWindowsListener fitWindowsViewGroup$OnFitSystemWindowsListener) {
-        this.mListener = fitWindowsViewGroup$OnFitSystemWindowsListener;
+    @Override // android.view.View
+    public final boolean fitSystemWindows(Rect rect) {
+        return super.fitSystemWindows(rect);
     }
 
-    @Override // android.view.View
-    protected boolean fitSystemWindows(Rect rect) {
-        FitWindowsViewGroup$OnFitSystemWindowsListener fitWindowsViewGroup$OnFitSystemWindowsListener = this.mListener;
-        if (fitWindowsViewGroup$OnFitSystemWindowsListener != null) {
-            fitWindowsViewGroup$OnFitSystemWindowsListener.onFitSystemWindows(rect);
-        }
-        return super.fitSystemWindows(rect);
+    public void setOnFitSystemWindowsListener(t1 t1Var) {
     }
 }

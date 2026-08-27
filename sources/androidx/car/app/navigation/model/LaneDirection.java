@@ -2,6 +2,7 @@ package androidx.car.app.navigation.model;
 
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class LaneDirection {
     public static final int SHAPE_NORMAL_LEFT = 5;
@@ -17,24 +18,13 @@ public final class LaneDirection {
     private final boolean mIsRecommended;
     private final int mShape;
 
-    public static LaneDirection create(int i, boolean z) {
-        return new LaneDirection(i, z);
+    private LaneDirection(int i10, boolean z10) {
+        this.mShape = i10;
+        this.mIsRecommended = z10;
     }
 
-    public int getShape() {
-        return this.mShape;
-    }
-
-    public boolean isRecommended() {
-        return this.mIsRecommended;
-    }
-
-    public String toString() {
-        return "[shape: " + this.mShape + ", isRecommended: " + this.mIsRecommended + "]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(Integer.valueOf(this.mShape), Boolean.valueOf(this.mIsRecommended));
+    public static LaneDirection create(int i10, boolean z10) {
+        return new LaneDirection(i10, z10);
     }
 
     public boolean equals(Object obj) {
@@ -48,9 +38,20 @@ public final class LaneDirection {
         return this.mShape == laneDirection.mShape && this.mIsRecommended == laneDirection.mIsRecommended;
     }
 
-    private LaneDirection(int i, boolean z) {
-        this.mShape = i;
-        this.mIsRecommended = z;
+    public int getShape() {
+        return this.mShape;
+    }
+
+    public int hashCode() {
+        return Objects.hash(Integer.valueOf(this.mShape), Boolean.valueOf(this.mIsRecommended));
+    }
+
+    public boolean isRecommended() {
+        return this.mIsRecommended;
+    }
+
+    public String toString() {
+        return "[shape: " + this.mShape + ", isRecommended: " + this.mIsRecommended + "]";
     }
 
     private LaneDirection() {

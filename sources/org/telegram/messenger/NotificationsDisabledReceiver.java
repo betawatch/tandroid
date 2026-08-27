@@ -8,7 +8,8 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class NotificationsDisabledReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
@@ -39,7 +40,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
             }
             SharedPreferences notificationsSettings = AccountInstance.getInstance(intValue).getNotificationsSettings();
             boolean startsWith = split[1].startsWith("channel");
-            int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             if (startsWith) {
                 if (!stringExtra.equals(notificationsSettings.getString("channels", null))) {
                     return;
@@ -59,9 +60,9 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                 SharedPreferences.Editor edit = notificationsSettings.edit();
                 String globalNotificationsKey = NotificationsController.getGlobalNotificationsKey(0);
                 if (!booleanExtra) {
-                    i = 0;
+                    i10 = 0;
                 }
-                edit.putInt(globalNotificationsKey, i).commit();
+                edit.putInt(globalNotificationsKey, i10).commit();
                 AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(0);
             } else if (split[1].startsWith("private")) {
                 if (!stringExtra.equals(notificationsSettings.getString("private", null))) {
@@ -72,16 +73,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                 }
                 notificationsSettings.edit().putInt(NotificationsController.getGlobalNotificationsKey(1), booleanExtra ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0).commit();
                 AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(1);
-            } else if (split[1].startsWith("stories")) {
-                if (!stringExtra.equals(notificationsSettings.getString("stories", null))) {
-                    return;
-                }
-                if (BuildVars.LOGS_ENABLED) {
-                    FileLog.d("apply channel{stories} " + stringExtra + " state");
-                }
-                notificationsSettings.edit().putBoolean(NotificationsController.getGlobalNotificationsKey(3), !booleanExtra).commit();
-                AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(1);
-            } else {
+            } else if (!split[1].startsWith("stories")) {
                 long longValue = Utilities.parseLong(split[1]).longValue();
                 if (longValue == 0) {
                     return;
@@ -94,12 +86,21 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                     FileLog.d("apply channel{else} " + stringExtra + " state");
                 }
                 SharedPreferences.Editor edit2 = notificationsSettings.edit();
-                edit2.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + sharedPrefKey, booleanExtra ? 2 : 0);
+                edit2.putInt(s3.c.e(NotificationsSettingsFacade.PROPERTY_NOTIFY, sharedPrefKey), booleanExtra ? 2 : 0);
                 if (!booleanExtra) {
                     edit2.remove(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL + sharedPrefKey);
                 }
                 edit2.commit();
                 AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(longValue, 0L, true);
+            } else {
+                if (!stringExtra.equals(notificationsSettings.getString("stories", null))) {
+                    return;
+                }
+                if (BuildVars.LOGS_ENABLED) {
+                    FileLog.d("apply channel{stories} " + stringExtra + " state");
+                }
+                notificationsSettings.edit().putBoolean(NotificationsController.getGlobalNotificationsKey(3), !booleanExtra).commit();
+                AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(1);
             }
             AccountInstance.getInstance(intValue).getConnectionsManager().resumeNetworkMaybe();
         }

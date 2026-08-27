@@ -1,11 +1,12 @@
 package androidx.car.app.model.signin;
 
 import androidx.car.app.model.CarText;
-import androidx.car.app.model.signin.SignInTemplate;
 import j$.util.Objects;
+import u.c;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class PinSignInMethod implements SignInTemplate.SignInMethod {
+public final class PinSignInMethod implements c {
     private static final int MAX_PIN_LENGTH = 12;
     private final CarText mPinCode;
 
@@ -21,12 +22,6 @@ public final class PinSignInMethod implements SignInTemplate.SignInMethod {
         this.mPinCode = CarText.create(charSequence);
     }
 
-    public CarText getPinCode() {
-        CarText carText = this.mPinCode;
-        Objects.requireNonNull(carText);
-        return carText;
-    }
-
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -35,6 +30,12 @@ public final class PinSignInMethod implements SignInTemplate.SignInMethod {
             return Objects.equals(this.mPinCode, ((PinSignInMethod) obj).mPinCode);
         }
         return false;
+    }
+
+    public CarText getPinCode() {
+        CarText carText = this.mPinCode;
+        Objects.requireNonNull(carText);
+        return carText;
     }
 
     public int hashCode() {

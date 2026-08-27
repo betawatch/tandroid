@@ -19,10 +19,6 @@ import java.util.function.ToIntFunction;
 public final /* synthetic */ class n implements ObjDoubleConsumer, BiConsumer, DoubleFunction, ToDoubleFunction, IntFunction, DoubleBinaryOperator, Supplier, Predicate, ToIntFunction, IntBinaryOperator, ObjIntConsumer {
     public final /* synthetic */ int a;
 
-    public /* synthetic */ n(int i) {
-        this.a = i;
-    }
-
     public /* synthetic */ Predicate and(Predicate predicate) {
         switch (this.a) {
         }
@@ -47,19 +43,19 @@ public final /* synthetic */ class n implements ObjDoubleConsumer, BiConsumer, D
     }
 
     @Override // java.util.function.DoubleBinaryOperator
-    public double applyAsDouble(double d, double d2) {
-        return Math.max(d, d2);
+    public double applyAsDouble(double d, double d10) {
+        return Math.max(d, d10);
     }
 
     @Override // java.util.function.IntBinaryOperator
-    public int applyAsInt(int i, int i2) {
+    public int applyAsInt(int i10, int i11) {
         switch (this.a) {
             case 22:
-                return Math.min(i, i2);
+                return Math.min(i10, i11);
             case 25:
-                return i + i2;
+                return i10 + i11;
             default:
-                return Math.max(i, i2);
+                return Math.max(i10, i11);
         }
     }
 
@@ -79,15 +75,15 @@ public final /* synthetic */ class n implements ObjDoubleConsumer, BiConsumer, D
     public boolean test(Object obj) {
         switch (this.a) {
             case 10:
-                return ((j$.util.z) obj).a;
+                return ((j$.util.b0) obj).a;
             case 11:
             case 13:
             default:
                 return ((Optional) obj).isPresent();
             case 12:
-                return ((j$.util.A) obj).a;
+                return ((j$.util.c0) obj).a;
             case 14:
-                return ((j$.util.B) obj).a;
+                return ((j$.util.d0) obj).a;
         }
     }
 
@@ -112,7 +108,7 @@ public final /* synthetic */ class n implements ObjDoubleConsumer, BiConsumer, D
                 dArr2[2] = dArr2[2] + d;
                 break;
             case 2:
-                ((j$.util.u) obj).accept(d);
+                ((j$.util.w) obj).accept(d);
                 break;
         }
     }
@@ -128,28 +124,28 @@ public final /* synthetic */ class n implements ObjDoubleConsumer, BiConsumer, D
             case 8:
                 return new double[3];
             case 11:
-                return new D();
+                return new e0();
             case 13:
-                return new E();
+                return new f0();
             case 15:
-                return new F();
+                return new g0();
             case 17:
-                return new G();
+                return new h0();
             default:
                 return new long[2];
         }
     }
 
     @Override // java.util.function.ObjIntConsumer
-    public void accept(Object obj, int i) {
+    public void accept(Object obj, int i10) {
         switch (this.a) {
             case 23:
-                ((j$.util.v) obj).accept(i);
+                ((j$.util.x) obj).accept(i10);
                 break;
             default:
                 long[] jArr = (long[]) obj;
                 jArr[0] = jArr[0] + 1;
-                jArr[1] = jArr[1] + i;
+                jArr[1] = jArr[1] + i10;
                 break;
         }
     }
@@ -166,10 +162,10 @@ public final /* synthetic */ class n implements ObjDoubleConsumer, BiConsumer, D
                 dArr[3] = dArr[3] + dArr2[3];
                 break;
             case 3:
-                ((j$.util.u) obj).b((j$.util.u) obj2);
+                ((j$.util.w) obj).a((j$.util.w) obj2);
                 break;
             case 24:
-                ((j$.util.v) obj).b((j$.util.v) obj2);
+                ((j$.util.x) obj).a((j$.util.x) obj2);
                 break;
             default:
                 long[] jArr = (long[]) obj;
@@ -181,16 +177,16 @@ public final /* synthetic */ class n implements ObjDoubleConsumer, BiConsumer, D
     }
 
     @Override // java.util.function.IntFunction
-    public Object apply(int i) {
+    public Object apply(int i10) {
         switch (this.a) {
             case 6:
-                return new Double[i];
+                return new Double[i10];
             case 18:
-                return new Object[i];
+                return new Object[i10];
             case 19:
-                return new Integer[i];
+                return new Integer[i10];
             default:
-                return Integer.valueOf(i);
+                return Integer.valueOf(i10);
         }
     }
 }

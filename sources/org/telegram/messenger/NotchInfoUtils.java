@@ -6,15 +6,16 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.os.Build;
 import android.util.DisplayMetrics;
-import androidx.core.graphics.PathParser;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class NotchInfoUtils {
     private static final String BOTTOM_MARKER = "@bottom";
     private static final String DP_MARKER = "@dp";
     private static final String LEFT_MARKER = "@left";
     private static final String RIGHT_MARKER = "@right";
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static final class NotchInfo {
         public RectF bounds;
         public int gravity;
@@ -25,8 +26,8 @@ public class NotchInfoUtils {
     }
 
     public static NotchInfo getInfo(Context context) {
-        float f;
-        int i;
+        float f10;
+        int i10;
         if (Build.VERSION.SDK_INT < 28) {
             return null;
         }
@@ -39,47 +40,47 @@ public class NotchInfoUtils {
             }
             String trim = string.trim();
             DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-            int i2 = displayMetrics.widthPixels;
-            float f2 = displayMetrics.density;
+            int i11 = displayMetrics.widthPixels;
+            float f11 = displayMetrics.density;
             if (trim.endsWith(RIGHT_MARKER)) {
-                f = i2;
+                f10 = i11;
                 trim = trim.substring(0, trim.length() - 6).trim();
-                i = 5;
+                i10 = 5;
             } else if (trim.endsWith(LEFT_MARKER)) {
                 trim = trim.substring(0, trim.length() - 5).trim();
-                f = 0.0f;
-                i = 3;
+                f10 = 0.0f;
+                i10 = 3;
             } else {
-                f = i2 / 2.0f;
-                i = 17;
+                f10 = i11 / 2.0f;
+                i10 = 17;
             }
             boolean endsWith = trim.endsWith(DP_MARKER);
             if (endsWith) {
-                trim = trim.substring(0, trim.length() - 3);
+                trim = com.google.android.recaptcha.internal.a.n(trim, 3, 0);
             }
             if (trim.contains(BOTTOM_MARKER)) {
                 trim = trim.split(BOTTOM_MARKER, 2)[0].trim();
             }
             try {
-                PathParser.PathDataNode[] createNodesFromPathData = PathParser.createNodesFromPathData(trim);
+                i0.e[] c10 = g7.w7.c(trim);
                 Path path = new Path();
-                PathParser.PathDataNode.nodesToPath(createNodesFromPathData, path);
+                i0.e.b(c10, path);
                 Matrix matrix = new Matrix();
                 if (endsWith) {
-                    matrix.postScale(f2, f2);
+                    matrix.postScale(f11, f11);
                 }
-                matrix.postTranslate(f, 0.0f);
+                matrix.postTranslate(f10, 0.0f);
                 path.transform(matrix);
                 notchInfo.path = path;
                 RectF rectF = new RectF();
                 path.computeBounds(rectF, true);
                 notchInfo.bounds = rectF;
                 DisplayMetrics displayMetrics2 = context.getResources().getDisplayMetrics();
-                if (i != 17 && Math.abs(rectF.centerX() - (displayMetrics2.widthPixels / 2.0f)) <= AndroidUtilities.dp(2.0f)) {
-                    i = 17;
+                if (i10 != 17 && Math.abs(rectF.centerX() - (displayMetrics2.widthPixels / 2.0f)) <= AndroidUtilities.dp(2.0f)) {
+                    i10 = 17;
                 }
-                int i3 = (i != 17 || rectF.left >= ((float) displayMetrics2.widthPixels) / 4.0f) ? i : 3;
-                notchInfo.gravity = (i3 != 17 || rectF.right <= (((float) displayMetrics2.widthPixels) / 4.0f) * 3.0f) ? i3 : 5;
+                int i12 = (i10 != 17 || rectF.left >= ((float) displayMetrics2.widthPixels) / 4.0f) ? i10 : 3;
+                notchInfo.gravity = (i12 != 17 || rectF.right <= (((float) displayMetrics2.widthPixels) / 4.0f) * 3.0f) ? i12 : 5;
                 notchInfo.rawPath = trim;
                 notchInfo.isAccurate = trim.contains("C") || trim.contains("S") || trim.contains("Q");
                 notchInfo.isLikelyCircle = rectF.width() <= ((float) AndroidUtilities.dp(32.0f)) || rectF.width() <= rectF.height();

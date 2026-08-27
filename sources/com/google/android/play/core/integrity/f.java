@@ -3,13 +3,11 @@ package com.google.android.play.core.integrity;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 import java.util.Set;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class f extends StandardIntegrityManager.StandardIntegrityTokenRequest.Builder {
     private String a;
     private Set b;
-
-    f() {
-    }
 
     @Override // com.google.android.play.core.integrity.StandardIntegrityManager.StandardIntegrityTokenRequest.Builder
     public final StandardIntegrityManager.StandardIntegrityTokenRequest build() {

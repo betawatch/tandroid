@@ -2,23 +2,17 @@ package org.webrtc;
 
 import android.graphics.Matrix;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class VideoFrame implements RefCounted {
     private final Buffer buffer;
     private final int rotation;
     private final long timestampNs;
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface Buffer extends RefCounted {
-
-        public abstract /* synthetic */ class -CC {
-            public static int $default$getBufferType(Buffer buffer) {
-                return 0;
-            }
-        }
-
-        Buffer cropAndScale(int i, int i2, int i3, int i4, int i5, int i6);
+        Buffer cropAndScale(int i10, int i11, int i12, int i13, int i14, int i15);
 
         int getBufferType();
 
@@ -35,14 +29,8 @@ public class VideoFrame implements RefCounted {
         I420Buffer toI420();
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface I420Buffer extends Buffer {
-
-        public abstract /* synthetic */ class -CC {
-            public static int $default$getBufferType(I420Buffer i420Buffer) {
-                return 1;
-            }
-        }
-
         @Override // org.webrtc.VideoFrame.Buffer
         int getBufferType();
 
@@ -59,8 +47,26 @@ public class VideoFrame implements RefCounted {
         int getStrideY();
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface TextureBuffer extends Buffer {
-        TextureBuffer applyTransformMatrix(Matrix matrix, int i, int i2);
+
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public enum Type {
+            OES(36197),
+            RGB(3553);
+
+            private final int glTarget;
+
+            Type(int i10) {
+                this.glTarget = i10;
+            }
+
+            public int getGlTarget() {
+                return this.glTarget;
+            }
+        }
+
+        TextureBuffer applyTransformMatrix(Matrix matrix, int i10, int i11);
 
         int getTextureId();
 
@@ -71,43 +77,30 @@ public class VideoFrame implements RefCounted {
         int getUnscaledHeight();
 
         int getUnscaledWidth();
-
-        public enum Type {
-            OES(36197),
-            RGB(3553);
-
-            private final int glTarget;
-
-            Type(int i) {
-                this.glTarget = i;
-            }
-
-            public int getGlTarget() {
-                return this.glTarget;
-            }
-        }
-
-        public abstract /* synthetic */ class -CC {
-            public static TextureBuffer $default$applyTransformMatrix(TextureBuffer textureBuffer, Matrix matrix, int i, int i2) {
-                throw new UnsupportedOperationException("Not implemented");
-            }
-        }
     }
 
-    public VideoFrame(Buffer buffer, int i, long j) {
+    public VideoFrame(Buffer buffer, int i10, long j10) {
         if (buffer == null) {
             throw new IllegalArgumentException("buffer not allowed to be null");
         }
-        if (i % 90 != 0) {
+        if (i10 % 90 != 0) {
             throw new IllegalArgumentException("rotation must be a multiple of 90");
         }
         this.buffer = buffer;
-        this.rotation = i;
-        this.timestampNs = j;
+        this.rotation = i10;
+        this.timestampNs = j10;
     }
 
     public Buffer getBuffer() {
         return this.buffer;
+    }
+
+    public int getRotatedHeight() {
+        return this.rotation % 180 == 0 ? this.buffer.getHeight() : this.buffer.getWidth();
+    }
+
+    public int getRotatedWidth() {
+        return this.rotation % 180 == 0 ? this.buffer.getWidth() : this.buffer.getHeight();
     }
 
     public int getRotation() {
@@ -118,27 +111,13 @@ public class VideoFrame implements RefCounted {
         return this.timestampNs;
     }
 
-    public int getRotatedWidth() {
-        if (this.rotation % NotificationCenter.needDeleteDialog == 0) {
-            return this.buffer.getWidth();
-        }
-        return this.buffer.getHeight();
-    }
-
-    public int getRotatedHeight() {
-        if (this.rotation % NotificationCenter.needDeleteDialog == 0) {
-            return this.buffer.getHeight();
-        }
-        return this.buffer.getWidth();
+    @Override // org.webrtc.RefCounted
+    public void release() {
+        this.buffer.release();
     }
 
     @Override // org.webrtc.RefCounted
     public void retain() {
         this.buffer.retain();
-    }
-
-    @Override // org.webrtc.RefCounted
-    public void release() {
-        this.buffer.release();
     }
 }

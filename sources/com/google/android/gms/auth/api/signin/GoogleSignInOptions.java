@@ -4,72 +4,92 @@ import android.accounts.Account;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import com.google.android.gms.auth.api.signin.internal.GoogleSignInOptionsExtensionParcelable;
-import com.google.android.gms.auth.api.signin.internal.HashAccumulator;
-import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.Scope;
-import com.google.android.gms.common.internal.Preconditions;
+import com.google.android.gms.common.api.b;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import h7.r8;
+import j5.c;
+import j5.d;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
+import z5.a;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 @Deprecated
 /* loaded from: classes.dex */
-public class GoogleSignInOptions extends AbstractSafeParcelable implements Api.ApiOptions, ReflectedParcelable {
+public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
+    public static final Scope A;
+    public static final c B;
     public static final Parcelable.Creator<GoogleSignInOptions> CREATOR;
-    public static final GoogleSignInOptions DEFAULT_GAMES_SIGN_IN;
-    public static final GoogleSignInOptions DEFAULT_SIGN_IN;
-    public static final Scope zaa = new Scope("profile");
-    public static final Scope zab = new Scope("email");
-    public static final Scope zac = new Scope("openid");
-    public static final Scope zad;
-    public static final Scope zae;
-    private static final Comparator zag;
-    final int zaf;
-    private final ArrayList zah;
-    private Account zai;
-    private boolean zaj;
-    private final boolean zak;
-    private final boolean zal;
-    private String zam;
-    private String zan;
-    private ArrayList zao;
-    private String zap;
-    private Map zaq;
+    public static final GoogleSignInOptions v;
+    public static final Scope w;
+    public static final Scope x;
+    public static final Scope y;
+    public final int a;
+    public final ArrayList b;
+    public final Account c;
+    public final boolean d;
+    public final boolean e;
+    public final boolean f;
+    public final String h;
+    public final String n;
+    public final ArrayList r;
+    public final String s;
 
     static {
-        Scope scope = new Scope("https://www.googleapis.com/auth/games_lite");
-        zad = scope;
-        zae = new Scope("https://www.googleapis.com/auth/games");
-        Builder builder = new Builder();
-        builder.requestId();
-        builder.requestProfile();
-        DEFAULT_SIGN_IN = builder.build();
-        Builder builder2 = new Builder();
-        builder2.requestScopes(scope, new Scope[0]);
-        DEFAULT_GAMES_SIGN_IN = builder2.build();
-        CREATOR = new zae();
-        zag = new zac();
+        Scope scope = new Scope(1, "profile");
+        w = new Scope(1, "email");
+        Scope scope2 = new Scope(1, "openid");
+        x = scope2;
+        Scope scope3 = new Scope(1, "https://www.googleapis.com/auth/games_lite");
+        y = scope3;
+        A = new Scope(1, "https://www.googleapis.com/auth/games");
+        HashSet hashSet = new HashSet();
+        HashMap hashMap = new HashMap();
+        hashSet.add(scope2);
+        hashSet.add(scope);
+        if (hashSet.contains(A)) {
+            Scope scope4 = y;
+            if (hashSet.contains(scope4)) {
+                hashSet.remove(scope4);
+            }
+        }
+        v = new GoogleSignInOptions(3, new ArrayList(hashSet), null, false, false, false, null, null, hashMap, null);
+        HashSet hashSet2 = new HashSet();
+        HashMap hashMap2 = new HashMap();
+        hashSet2.add(scope3);
+        hashSet2.addAll(Arrays.asList(new Scope[0]));
+        if (hashSet2.contains(A)) {
+            Scope scope5 = y;
+            if (hashSet2.contains(scope5)) {
+                hashSet2.remove(scope5);
+            }
+        }
+        new GoogleSignInOptions(3, new ArrayList(hashSet2), null, false, false, false, null, null, hashMap2, null);
+        int i10 = 1;
+        CREATOR = new d(i10);
+        B = new c(i10);
     }
 
-    GoogleSignInOptions(int i, ArrayList arrayList, Account account, boolean z, boolean z2, boolean z3, String str, String str2, ArrayList arrayList2, String str3) {
-        this(i, arrayList, account, z, z2, z3, str, str2, zam(arrayList2), str3);
+    public GoogleSignInOptions(int i10, ArrayList arrayList, Account account, boolean z10, boolean z11, boolean z12, String str, String str2, HashMap hashMap, String str3) {
+        this.a = i10;
+        this.b = arrayList;
+        this.c = account;
+        this.d = z10;
+        this.e = z11;
+        this.f = z12;
+        this.h = str;
+        this.n = str2;
+        this.r = new ArrayList(hashMap.values());
+        this.s = str3;
     }
 
-    public static GoogleSignInOptions zab(String str) {
+    public static GoogleSignInOptions b(String str) {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
@@ -77,263 +97,100 @@ public class GoogleSignInOptions extends AbstractSafeParcelable implements Api.A
         HashSet hashSet = new HashSet();
         JSONArray jSONArray = jSONObject.getJSONArray("scopes");
         int length = jSONArray.length();
-        for (int i = 0; i < length; i++) {
-            hashSet.add(new Scope(jSONArray.getString(i)));
+        for (int i10 = 0; i10 < length; i10++) {
+            hashSet.add(new Scope(1, jSONArray.getString(i10)));
         }
         String optString = jSONObject.has("accountName") ? jSONObject.optString("accountName") : null;
-        return new GoogleSignInOptions(3, new ArrayList(hashSet), !TextUtils.isEmpty(optString) ? new Account(optString, "com.google") : null, jSONObject.getBoolean("idTokenRequested"), jSONObject.getBoolean("serverAuthRequested"), jSONObject.getBoolean("forceCodeForRefreshToken"), jSONObject.has("serverClientId") ? jSONObject.optString("serverClientId") : null, jSONObject.has("hostedDomain") ? jSONObject.optString("hostedDomain") : null, new HashMap(), (String) null);
+        return new GoogleSignInOptions(3, new ArrayList(hashSet), !TextUtils.isEmpty(optString) ? new Account(optString, "com.google") : null, jSONObject.getBoolean("idTokenRequested"), jSONObject.getBoolean("serverAuthRequested"), jSONObject.getBoolean("forceCodeForRefreshToken"), jSONObject.has("serverClientId") ? jSONObject.optString("serverClientId") : null, jSONObject.has("hostedDomain") ? jSONObject.optString("hostedDomain") : null, new HashMap(), null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static Map zam(List list) {
+    public static HashMap c(ArrayList arrayList) {
         HashMap hashMap = new HashMap();
-        if (list != null) {
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                GoogleSignInOptionsExtensionParcelable googleSignInOptionsExtensionParcelable = (GoogleSignInOptionsExtensionParcelable) it.next();
-                hashMap.put(Integer.valueOf(googleSignInOptionsExtensionParcelable.getType()), googleSignInOptionsExtensionParcelable);
+        if (arrayList != null) {
+            int size = arrayList.size();
+            int i10 = 0;
+            while (i10 < size) {
+                Object obj = arrayList.get(i10);
+                i10++;
+                k5.a aVar = (k5.a) obj;
+                hashMap.put(Integer.valueOf(aVar.b), aVar);
             }
         }
         return hashMap;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x0048, code lost:
-    
-        if (r1.equals(r4.getAccount()) != false) goto L22;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public boolean equals(Object obj) {
+    public final boolean equals(Object obj) {
+        String str = this.h;
+        ArrayList arrayList = this.b;
         if (obj == null) {
             return false;
         }
         try {
             GoogleSignInOptions googleSignInOptions = (GoogleSignInOptions) obj;
-            if (this.zao.isEmpty() && googleSignInOptions.zao.isEmpty() && this.zah.size() == googleSignInOptions.getScopes().size() && this.zah.containsAll(googleSignInOptions.getScopes())) {
-                Account account = this.zai;
-                if (account == null) {
-                    if (googleSignInOptions.getAccount() == null) {
+            ArrayList arrayList2 = googleSignInOptions.b;
+            String str2 = googleSignInOptions.h;
+            Account account = googleSignInOptions.c;
+            if (this.r.isEmpty() && googleSignInOptions.r.isEmpty() && arrayList.size() == new ArrayList(arrayList2).size() && arrayList.containsAll(new ArrayList(arrayList2))) {
+                Account account2 = this.c;
+                if (account2 == null) {
+                    if (account != null) {
+                        return false;
                     }
+                } else if (!account2.equals(account)) {
+                    return false;
                 }
-                if (TextUtils.isEmpty(this.zam)) {
-                    if (TextUtils.isEmpty(googleSignInOptions.getServerClientId())) {
+                if (TextUtils.isEmpty(str)) {
+                    if (!TextUtils.isEmpty(str2)) {
+                        return false;
                     }
-                } else if (!this.zam.equals(googleSignInOptions.getServerClientId())) {
+                } else if (!str.equals(str2)) {
+                    return false;
                 }
-                if (this.zal == googleSignInOptions.isForceCodeForRefreshToken() && this.zaj == googleSignInOptions.isIdTokenRequested() && this.zak == googleSignInOptions.isServerAuthCodeRequested()) {
-                    if (TextUtils.equals(this.zap, googleSignInOptions.getLogSessionId())) {
-                        return true;
-                    }
+                if (this.f == googleSignInOptions.f && this.d == googleSignInOptions.d && this.e == googleSignInOptions.e) {
+                    return TextUtils.equals(this.s, googleSignInOptions.s);
                 }
+                return false;
             }
+            return false;
         } catch (ClassCastException unused) {
+            return false;
         }
-        return false;
     }
 
-    public Account getAccount() {
-        return this.zai;
-    }
-
-    public ArrayList getExtensions() {
-        return this.zao;
-    }
-
-    public String getLogSessionId() {
-        return this.zap;
-    }
-
-    public ArrayList getScopes() {
-        return new ArrayList(this.zah);
-    }
-
-    public String getServerClientId() {
-        return this.zam;
-    }
-
-    public int hashCode() {
+    public final int hashCode() {
         ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = this.zah;
+        ArrayList arrayList2 = this.b;
         int size = arrayList2.size();
-        for (int i = 0; i < size; i++) {
-            arrayList.add(((Scope) arrayList2.get(i)).getScopeUri());
+        for (int i10 = 0; i10 < size; i10++) {
+            arrayList.add(((Scope) arrayList2.get(i10)).b);
         }
         Collections.sort(arrayList);
-        HashAccumulator hashAccumulator = new HashAccumulator();
-        hashAccumulator.addObject(arrayList);
-        hashAccumulator.addObject(this.zai);
-        hashAccumulator.addObject(this.zam);
-        hashAccumulator.zaa(this.zal);
-        hashAccumulator.zaa(this.zaj);
-        hashAccumulator.zaa(this.zak);
-        hashAccumulator.addObject(this.zap);
-        return hashAccumulator.hash();
-    }
-
-    public boolean isForceCodeForRefreshToken() {
-        return this.zal;
-    }
-
-    public boolean isIdTokenRequested() {
-        return this.zaj;
-    }
-
-    public boolean isServerAuthCodeRequested() {
-        return this.zak;
+        int hashCode = (arrayList.hashCode() + (1 * 31)) * 31;
+        Account account = this.c;
+        int hashCode2 = (hashCode + (account == null ? 0 : account.hashCode())) * 31;
+        String str = this.h;
+        int hashCode3 = (((((((hashCode2 + (str == null ? 0 : str.hashCode())) * 31) + (this.f ? 1 : 0)) * 31) + (this.d ? 1 : 0)) * 31) + (this.e ? 1 : 0)) * 31;
+        String str2 = this.s;
+        return hashCode3 + (str2 != null ? str2.hashCode() : 0);
     }
 
     @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        int i2 = this.zaf;
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeInt(parcel, 1, i2);
-        SafeParcelWriter.writeTypedList(parcel, 2, getScopes(), false);
-        SafeParcelWriter.writeParcelable(parcel, 3, getAccount(), i, false);
-        SafeParcelWriter.writeBoolean(parcel, 4, isIdTokenRequested());
-        SafeParcelWriter.writeBoolean(parcel, 5, isServerAuthCodeRequested());
-        SafeParcelWriter.writeBoolean(parcel, 6, isForceCodeForRefreshToken());
-        SafeParcelWriter.writeString(parcel, 7, getServerClientId(), false);
-        SafeParcelWriter.writeString(parcel, 8, this.zan, false);
-        SafeParcelWriter.writeTypedList(parcel, 9, getExtensions(), false);
-        SafeParcelWriter.writeString(parcel, 10, getLogSessionId(), false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
-    }
-
-    public final String zaf() {
-        JSONObject jSONObject = new JSONObject();
-        try {
-            JSONArray jSONArray = new JSONArray();
-            Collections.sort(this.zah, zag);
-            ArrayList arrayList = this.zah;
-            int size = arrayList.size();
-            int i = 0;
-            while (i < size) {
-                Object obj = arrayList.get(i);
-                i++;
-                jSONArray.put(((Scope) obj).getScopeUri());
-            }
-            jSONObject.put("scopes", jSONArray);
-            Account account = this.zai;
-            if (account != null) {
-                jSONObject.put("accountName", account.name);
-            }
-            jSONObject.put("idTokenRequested", this.zaj);
-            jSONObject.put("forceCodeForRefreshToken", this.zal);
-            jSONObject.put("serverAuthRequested", this.zak);
-            if (!TextUtils.isEmpty(this.zam)) {
-                jSONObject.put("serverClientId", this.zam);
-            }
-            if (!TextUtils.isEmpty(this.zan)) {
-                jSONObject.put("hostedDomain", this.zan);
-            }
-            return jSONObject.toString();
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public static final class Builder {
-        private Set zaa;
-        private boolean zab;
-        private boolean zac;
-        private boolean zad;
-        private String zae;
-        private Account zaf;
-        private String zag;
-        private Map zah;
-        private String zai;
-
-        public Builder() {
-            this.zaa = new HashSet();
-            this.zah = new HashMap();
-        }
-
-        private final String zaa(String str) {
-            Preconditions.checkNotEmpty(str);
-            String str2 = this.zae;
-            boolean z = true;
-            if (str2 != null && !str2.equals(str)) {
-                z = false;
-            }
-            Preconditions.checkArgument(z, "two different server client ids provided");
-            return str;
-        }
-
-        public GoogleSignInOptions build() {
-            if (this.zaa.contains(GoogleSignInOptions.zae)) {
-                Set set = this.zaa;
-                Scope scope = GoogleSignInOptions.zad;
-                if (set.contains(scope)) {
-                    this.zaa.remove(scope);
-                }
-            }
-            if (this.zad && (this.zaf == null || !this.zaa.isEmpty())) {
-                requestId();
-            }
-            return new GoogleSignInOptions(new ArrayList(this.zaa), this.zaf, this.zad, this.zab, this.zac, this.zae, this.zag, this.zah, this.zai);
-        }
-
-        public Builder requestEmail() {
-            this.zaa.add(GoogleSignInOptions.zab);
-            return this;
-        }
-
-        public Builder requestId() {
-            this.zaa.add(GoogleSignInOptions.zac);
-            return this;
-        }
-
-        public Builder requestIdToken(String str) {
-            this.zad = true;
-            zaa(str);
-            this.zae = str;
-            return this;
-        }
-
-        public Builder requestProfile() {
-            this.zaa.add(GoogleSignInOptions.zaa);
-            return this;
-        }
-
-        public Builder requestScopes(Scope scope, Scope... scopeArr) {
-            this.zaa.add(scope);
-            this.zaa.addAll(Arrays.asList(scopeArr));
-            return this;
-        }
-
-        public Builder setLogSessionId(String str) {
-            this.zai = str;
-            return this;
-        }
-
-        public Builder(GoogleSignInOptions googleSignInOptions) {
-            this.zaa = new HashSet();
-            this.zah = new HashMap();
-            Preconditions.checkNotNull(googleSignInOptions);
-            this.zaa = new HashSet(googleSignInOptions.zah);
-            this.zab = googleSignInOptions.zak;
-            this.zac = googleSignInOptions.zal;
-            this.zad = googleSignInOptions.zaj;
-            this.zae = googleSignInOptions.zam;
-            this.zaf = googleSignInOptions.zai;
-            this.zag = googleSignInOptions.zan;
-            this.zah = GoogleSignInOptions.zam(googleSignInOptions.zao);
-            this.zai = googleSignInOptions.zap;
-        }
-    }
-
-    private GoogleSignInOptions(int i, ArrayList arrayList, Account account, boolean z, boolean z2, boolean z3, String str, String str2, Map map, String str3) {
-        this.zaf = i;
-        this.zah = arrayList;
-        this.zai = account;
-        this.zaj = z;
-        this.zak = z2;
-        this.zal = z3;
-        this.zam = str;
-        this.zan = str2;
-        this.zao = new ArrayList(map.values());
-        this.zaq = map;
-        this.zap = str3;
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = r8.q(parcel, 20293);
+        r8.s(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        r8.p(parcel, 2, new ArrayList(this.b));
+        r8.k(parcel, 3, this.c, i10);
+        r8.s(parcel, 4, 4);
+        parcel.writeInt(this.d ? 1 : 0);
+        r8.s(parcel, 5, 4);
+        parcel.writeInt(this.e ? 1 : 0);
+        r8.s(parcel, 6, 4);
+        parcel.writeInt(this.f ? 1 : 0);
+        r8.l(parcel, 7, this.h);
+        r8.l(parcel, 8, this.n);
+        r8.p(parcel, 9, this.r);
+        r8.l(parcel, 10, this.s);
+        r8.r(parcel, q6);
     }
 }

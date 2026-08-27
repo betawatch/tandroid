@@ -1,6 +1,7 @@
 package org.telegram.messenger;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class AnimationNotificationsLocker {
     final int[] allowedNotifications;
     int currentAccount;
@@ -12,24 +13,21 @@ public class AnimationNotificationsLocker {
         this(null);
     }
 
-    public AnimationNotificationsLocker(int[] iArr) {
-        this.currentAccount = UserConfig.selectedAccount;
-        this.notificationsIndex = -1;
-        this.globalNotificationsIndex = -1;
-        this.allowedNotifications = iArr;
+    public void disable() {
+        this.disabled = true;
     }
 
     public void lock() {
         if (this.disabled) {
             return;
         }
-        int i = UserConfig.selectedAccount;
-        if (this.currentAccount != i) {
-            NotificationCenter.getInstance(i).onAnimationFinish(this.notificationsIndex);
+        int i10 = UserConfig.selectedAccount;
+        if (this.currentAccount != i10) {
+            NotificationCenter.getInstance(i10).onAnimationFinish(this.notificationsIndex);
             this.notificationsIndex = -1;
-            this.currentAccount = i;
+            this.currentAccount = i10;
         }
-        this.notificationsIndex = NotificationCenter.getInstance(i).setAnimationInProgress(this.notificationsIndex, this.allowedNotifications);
+        this.notificationsIndex = NotificationCenter.getInstance(i10).setAnimationInProgress(this.notificationsIndex, this.allowedNotifications);
         this.globalNotificationsIndex = NotificationCenter.getGlobalInstance().setAnimationInProgress(this.globalNotificationsIndex, this.allowedNotifications);
     }
 
@@ -41,7 +39,10 @@ public class AnimationNotificationsLocker {
         NotificationCenter.getGlobalInstance().onAnimationFinish(this.globalNotificationsIndex);
     }
 
-    public void disable() {
-        this.disabled = true;
+    public AnimationNotificationsLocker(int[] iArr) {
+        this.currentAccount = UserConfig.selectedAccount;
+        this.notificationsIndex = -1;
+        this.globalNotificationsIndex = -1;
+        this.allowedNotifications = iArr;
     }
 }

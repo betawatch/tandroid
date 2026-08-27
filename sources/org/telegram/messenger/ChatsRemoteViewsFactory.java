@@ -14,15 +14,12 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
-import androidx.collection.LongSparseArray;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.ForegroundColorSpanThemable;
-import org.telegram.ui.Components.Forum.ForumUtilities;
+import org.telegram.ui.Components.s00;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private AccountInstance accountInstance;
     private int appWidgetId;
@@ -31,51 +28,21 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private Context mContext;
     private Paint roundPaint;
     private ArrayList<Long> dids = new ArrayList<>();
-    private LongSparseArray dialogs = new LongSparseArray();
-    private LongSparseArray messageObjects = new LongSparseArray();
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public long getItemId(int i) {
-        return i;
-    }
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public RemoteViews getLoadingView() {
-        return null;
-    }
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public int getViewTypeCount() {
-        return 2;
-    }
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public boolean hasStableIds() {
-        return true;
-    }
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public void onDestroy() {
-    }
+    private a0.h dialogs = new a0.h();
+    private a0.h messageObjects = new a0.h();
 
     public ChatsRemoteViewsFactory(Context context, Intent intent) {
         this.mContext = context;
-        Theme.createDialogsResources(context);
+        org.telegram.ui.ActionBar.g6.R(context);
         this.appWidgetId = intent.getIntExtra("appWidgetId", 0);
         SharedPreferences sharedPreferences = context.getSharedPreferences("shortcut_widget", 0);
-        int i = sharedPreferences.getInt("account" + this.appWidgetId, -1);
-        if (i >= 0) {
-            this.accountInstance = AccountInstance.getInstance(i);
+        int i10 = sharedPreferences.getInt("account" + this.appWidgetId, -1);
+        if (i10 >= 0) {
+            this.accountInstance = AccountInstance.getInstance(i10);
         }
-        StringBuilder sb = new StringBuilder();
-        sb.append("deleted");
-        sb.append(this.appWidgetId);
-        this.deleted = sharedPreferences.getBoolean(sb.toString(), false) || this.accountInstance == null;
-    }
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public void onCreate() {
-        ApplicationLoader.postInitApplication();
+        StringBuilder sb2 = new StringBuilder("deleted");
+        sb2.append(this.appWidgetId);
+        this.deleted = sharedPreferences.getBoolean(sb2.toString(), false) || this.accountInstance == null;
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
@@ -86,72 +53,52 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         return this.dids.size() + 1;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(8:114|(1:116)(2:124|(1:126)(8:127|(1:129)(1:131)|130|118|119|120|96|97))|117|118|119|120|96|97) */
-    /* JADX WARN: Code restructure failed: missing block: B:122:0x03ee, code lost:
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public long getItemId(int i10) {
+        return i10;
+    }
+
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public RemoteViews getLoadingView() {
+        return null;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0299, code lost:
     
-        r0 = move-exception;
+        if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChannelMigrateFrom) != false) goto L110;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:123:0x03ef, code lost:
-    
-        org.telegram.messenger.FileLog.e(r0);
-        r10 = r10;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:234:0x0134, code lost:
-    
-        if (r13.local_id != 0) goto L53;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:235:0x0136, code lost:
-    
-        r14 = r13;
-        r13 = r12;
-        r12 = r0;
-        r0 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:244:0x0152, code lost:
-    
-        if (r13.local_id != 0) goto L53;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0297, code lost:
-    
-        if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChannelMigrateFrom) != false) goto L108;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:188:0x0545  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x024a  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0564  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x05bc  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x05ef  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x05c7  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x051c  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x024c  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x053b  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x059d  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x05d0  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x05a8  */
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public RemoteViews getViewAt(int i) {
+    public RemoteViews getViewAt(int i10) {
         TLRPC.Chat chat;
         String str;
         TLRPC.User user;
         TLRPC.FileLocation fileLocation;
         String str2;
         TLRPC.FileLocation fileLocation2;
-        char c;
+        TLRPC.ChatPhoto chatPhoto;
+        char c10;
         Bitmap decodeFile;
         MessageObject messageObject;
         TLRPC.Dialog dialog;
-        int i2;
-        int i3;
+        int i11;
+        int i12;
         TLRPC.Chat chat2;
         TLRPC.User user2;
         CharSequence charSequence;
-        String str3;
         SpannableStringBuilder valueOf;
-        int i4;
-        char c2;
-        String charSequence2;
-        char c3;
         SpannableStringBuilder spannableStringBuilder;
+        CharSequence charSequence2;
         CharSequence charSequence3;
-        CharSequence charSequence4;
-        AvatarDrawable avatarDrawable;
-        String formatName;
+        org.telegram.ui.Components.y8 y8Var;
         TLRPC.UserProfilePhoto userProfilePhoto;
         TLRPC.FileLocation fileLocation3;
         if (this.deleted) {
@@ -159,7 +106,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             remoteViews.setTextViewText(R.id.widget_deleted_text, LocaleController.getString(R.string.WidgetLoggedOff));
             return remoteViews;
         }
-        if (i >= this.dids.size()) {
+        if (i10 >= this.dids.size()) {
             RemoteViews remoteViews2 = new RemoteViews(this.mContext.getPackageName(), R.layout.widget_edititem);
             remoteViews2.setTextViewText(R.id.widget_edititem_text, LocaleController.getString(R.string.TapToEditWidget));
             Bundle bundle = new Bundle();
@@ -171,27 +118,19 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             remoteViews2.setOnClickFillInIntent(R.id.widget_edititem, intent);
             return remoteViews2;
         }
-        Long l = this.dids.get(i);
-        CharSequence charSequence5 = "";
-        if (DialogObject.isUserDialog(l.longValue())) {
-            user = this.accountInstance.getMessagesController().getUser(l);
+        Long l10 = this.dids.get(i10);
+        CharSequence charSequence4 = "";
+        if (DialogObject.isUserDialog(l10.longValue())) {
+            user = this.accountInstance.getMessagesController().getUser(l10);
             if (user != null) {
-                if (UserObject.isUserSelf(user)) {
-                    formatName = LocaleController.getString(R.string.SavedMessages);
-                } else if (UserObject.isReplyUser(user)) {
-                    formatName = LocaleController.getString(R.string.RepliesTitle);
-                } else if (UserObject.isDeleted(user)) {
-                    formatName = LocaleController.getString(R.string.HiddenName);
-                } else {
-                    formatName = ContactsController.formatName(user.first_name, user.last_name);
-                }
+                String string = UserObject.isUserSelf(user) ? LocaleController.getString(R.string.SavedMessages) : UserObject.isReplyUser(user) ? LocaleController.getString(R.string.RepliesTitle) : UserObject.isDeleted(user) ? LocaleController.getString(R.string.HiddenName) : ContactsController.formatName(user.first_name, user.last_name);
                 if (UserObject.isReplyUser(user) || UserObject.isUserSelf(user) || (userProfilePhoto = user.photo) == null || (fileLocation3 = userProfilePhoto.photo_small) == null || fileLocation3.volume_id == 0 || fileLocation3.local_id == 0) {
                     fileLocation = null;
-                    str = formatName;
+                    str = string;
                     chat = null;
                 } else {
                     fileLocation = fileLocation3;
-                    str = formatName;
+                    str = string;
                     chat = null;
                 }
             } else {
@@ -200,43 +139,33 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                 fileLocation = null;
             }
         } else {
-            TLRPC.Chat chat3 = this.accountInstance.getMessagesController().getChat(Long.valueOf(-l.longValue()));
-            if (chat3 == null) {
-                chat = chat3;
-                str = "";
-                user = null;
-                fileLocation = null;
-            } else if (ChatObject.isMonoForum(chat3)) {
-                str2 = ForumUtilities.getMonoForumTitle(this.accountInstance.getCurrentAccount(), chat3);
-                TLRPC.Chat chat4 = this.accountInstance.getMessagesController().getChat(Long.valueOf(chat3.linked_monoforum_id));
-                if (chat4 != null) {
-                    TLRPC.ChatPhoto chatPhoto = chat4.photo;
-                    if (chatPhoto != null) {
-                        fileLocation2 = chatPhoto.photo_small;
-                        if (fileLocation2 != null) {
-                            if (fileLocation2.volume_id != 0) {
-                            }
-                        }
+            TLRPC.Chat chat3 = this.accountInstance.getMessagesController().getChat(Long.valueOf(-l10.longValue()));
+            if (chat3 != null) {
+                if (ChatObject.isMonoForum(chat3)) {
+                    str2 = wf.c.i(chat3, this.accountInstance.getCurrentAccount(), false);
+                    TLRPC.Chat chat4 = this.accountInstance.getMessagesController().getChat(Long.valueOf(chat3.linked_monoforum_id));
+                    if (chat4 == null || (chatPhoto = chat4.photo) == null || (fileLocation2 = chatPhoto.photo_small) == null || fileLocation2.volume_id == 0 || fileLocation2.local_id == 0) {
+                        fileLocation2 = null;
+                    }
+                } else {
+                    str2 = chat3.title;
+                    TLRPC.ChatPhoto chatPhoto2 = chat3.photo;
+                    if (chatPhoto2 == null || (fileLocation2 = chatPhoto2.photo_small) == null || fileLocation2.volume_id == 0 || fileLocation2.local_id == 0) {
+                        fileLocation = null;
+                        str = str2;
+                        chat = chat3;
+                        user = null;
                     }
                 }
-                fileLocation = null;
+                fileLocation = fileLocation2;
                 str = str2;
                 chat = chat3;
                 user = null;
             } else {
-                str2 = chat3.title;
-                TLRPC.ChatPhoto chatPhoto2 = chat3.photo;
-                if (chatPhoto2 != null) {
-                    fileLocation2 = chatPhoto2.photo_small;
-                    if (fileLocation2 != null) {
-                        if (fileLocation2.volume_id != 0) {
-                        }
-                    }
-                }
-                fileLocation = null;
-                str = str2;
                 chat = chat3;
+                str = "";
                 user = null;
+                fileLocation = null;
             }
         }
         RemoteViews remoteViews3 = new RemoteViews(this.mContext.getPackageName(), R.layout.shortcut_widget_item);
@@ -246,23 +175,23 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                 decodeFile = BitmapFactory.decodeFile(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(fileLocation, true).toString());
             } catch (Throwable th) {
                 th = th;
-                c = 1;
+                c10 = 1;
                 FileLog.e(th);
-                messageObject = (MessageObject) this.messageObjects.get(l.longValue());
-                dialog = (TLRPC.Dialog) this.dialogs.get(l.longValue());
+                messageObject = (MessageObject) this.messageObjects.f(l10.longValue());
+                dialog = (TLRPC.Dialog) this.dialogs.f(l10.longValue());
                 if (messageObject != null) {
                 }
-                if (dialog == null) {
+                if (dialog != null) {
                 }
                 remoteViews3.setViewVisibility(R.id.shortcut_widget_item_badge, 8);
                 Bundle bundle2 = new Bundle();
-                if (DialogObject.isUserDialog(l.longValue())) {
+                if (DialogObject.isUserDialog(l10.longValue())) {
                 }
                 bundle2.putInt("currentAccount", this.accountInstance.getCurrentAccount());
                 Intent intent2 = new Intent();
                 intent2.putExtras(bundle2);
                 remoteViews3.setOnClickFillInIntent(R.id.shortcut_widget_item, intent2);
-                remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i == getCount() ? 8 : 0);
+                remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i10 == getCount() ? 8 : 0);
                 return remoteViews3;
             }
         } else {
@@ -274,19 +203,19 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         Canvas canvas = new Canvas(createBitmap);
         if (decodeFile == null) {
             if (user != null) {
-                avatarDrawable = new AvatarDrawable(user);
+                y8Var = new org.telegram.ui.Components.y8(0, user);
                 if (UserObject.isReplyUser(user)) {
-                    avatarDrawable.setAvatarType(12);
+                    y8Var.g(12);
                 } else if (UserObject.isUserSelf(user)) {
-                    avatarDrawable.setAvatarType(1);
+                    y8Var.g(1);
                 }
             } else {
-                avatarDrawable = new AvatarDrawable();
-                avatarDrawable.setInfo(this.accountInstance.getCurrentAccount(), chat);
+                y8Var = new org.telegram.ui.Components.y8((org.telegram.ui.ActionBar.c6) null);
+                y8Var.k(this.accountInstance.getCurrentAccount(), chat);
             }
-            avatarDrawable.setBounds(0, 0, dp, dp);
-            avatarDrawable.draw(canvas);
-            c = 1;
+            y8Var.setBounds(0, 0, dp, dp);
+            y8Var.draw(canvas);
+            c10 = 1;
         } else {
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
             BitmapShader bitmapShader = new BitmapShader(decodeFile, tileMode, tileMode);
@@ -298,7 +227,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             canvas.save();
             canvas.scale(width, width);
             this.roundPaint.setShader(bitmapShader);
-            c = 1;
+            c10 = 1;
             try {
                 this.bitmapRect.set(0.0f, 0.0f, decodeFile.getWidth(), decodeFile.getHeight());
                 canvas.drawRoundRect(this.bitmapRect, decodeFile.getWidth(), decodeFile.getHeight(), this.roundPaint);
@@ -306,28 +235,28 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             } catch (Throwable th2) {
                 th = th2;
                 FileLog.e(th);
-                messageObject = (MessageObject) this.messageObjects.get(l.longValue());
-                dialog = (TLRPC.Dialog) this.dialogs.get(l.longValue());
+                messageObject = (MessageObject) this.messageObjects.f(l10.longValue());
+                dialog = (TLRPC.Dialog) this.dialogs.f(l10.longValue());
                 if (messageObject != null) {
                 }
-                if (dialog == null) {
+                if (dialog != null) {
                 }
                 remoteViews3.setViewVisibility(R.id.shortcut_widget_item_badge, 8);
                 Bundle bundle22 = new Bundle();
-                if (DialogObject.isUserDialog(l.longValue())) {
+                if (DialogObject.isUserDialog(l10.longValue())) {
                 }
                 bundle22.putInt("currentAccount", this.accountInstance.getCurrentAccount());
                 Intent intent22 = new Intent();
                 intent22.putExtras(bundle22);
                 remoteViews3.setOnClickFillInIntent(R.id.shortcut_widget_item, intent22);
-                remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i == getCount() ? 8 : 0);
+                remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i10 == getCount() ? 8 : 0);
                 return remoteViews3;
             }
         }
         canvas.setBitmap(null);
         remoteViews3.setImageViewBitmap(R.id.shortcut_widget_item_avatar, createBitmap);
-        messageObject = (MessageObject) this.messageObjects.get(l.longValue());
-        dialog = (TLRPC.Dialog) this.dialogs.get(l.longValue());
+        messageObject = (MessageObject) this.messageObjects.f(l10.longValue());
+        dialog = (TLRPC.Dialog) this.dialogs.f(l10.longValue());
         if (messageObject != null) {
             long fromChatId = messageObject.getFromChatId();
             if (DialogObject.isUserDialog(fromChatId)) {
@@ -341,201 +270,197 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             if (messageObject.messageOwner instanceof TLRPC.TL_messageService) {
                 if (ChatObject.isChannel(chat)) {
                     TLRPC.MessageAction messageAction = messageObject.messageOwner.action;
-                    charSequence4 = charSequence5;
+                    charSequence3 = charSequence4;
                     if (!(messageAction instanceof TLRPC.TL_messageActionHistoryClear)) {
-                        charSequence4 = charSequence5;
+                        charSequence3 = charSequence4;
                     }
                     color = this.mContext.getResources().getColor(R.color.widget_action_text);
-                    charSequence3 = charSequence4;
+                    charSequence2 = charSequence3;
                 }
-                charSequence4 = messageObject.messageText;
+                charSequence3 = messageObject.messageText;
                 color = this.mContext.getResources().getColor(R.color.widget_action_text);
-                charSequence3 = charSequence4;
+                charSequence2 = charSequence3;
             } else {
-                String str4 = "📎 ";
-                if (chat != null && chat2 == null && (!ChatObject.isChannel(chat) || ChatObject.isMegagroup(chat))) {
-                    if (messageObject.isOutOwner()) {
-                        str3 = LocaleController.getString(R.string.FromYou);
-                    } else if (user2 != null) {
-                        str3 = UserObject.getFirstName(user2).replace("\n", "");
+                String str3 = "📎 ";
+                if (chat == null || chat2 != null || (ChatObject.isChannel(chat) && !ChatObject.isMegagroup(chat))) {
+                    TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
+                    if ((messageMedia instanceof TLRPC.TL_messageMediaPhoto) && (messageMedia.photo instanceof TLRPC.TL_photoEmpty) && messageMedia.ttl_seconds != 0) {
+                        charSequence2 = LocaleController.getString(R.string.AttachPhotoExpired);
+                    } else if ((messageMedia instanceof TLRPC.TL_messageMediaDocument) && (messageMedia.document instanceof TLRPC.TL_documentEmpty) && messageMedia.ttl_seconds != 0) {
+                        charSequence2 = LocaleController.getString(R.string.AttachVideoExpired);
+                    } else if (messageObject.caption != null) {
+                        if (messageObject.isVideo()) {
+                            str3 = "📹 ";
+                        } else if (messageObject.isVoice()) {
+                            str3 = "🎤 ";
+                        } else if (messageObject.isMusic()) {
+                            str3 = "🎧 ";
+                        } else if (messageObject.isPhoto()) {
+                            str3 = "🖼 ";
+                        }
+                        StringBuilder o10 = com.google.android.recaptcha.internal.a.o(str3);
+                        o10.append((Object) messageObject.caption);
+                        charSequence2 = o10.toString();
                     } else {
-                        str3 = "DELETED";
+                        if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
+                            charSequence = "📊 " + ((TLRPC.TL_messageMediaPoll) messageMedia).poll.question.text;
+                        } else if (messageMedia instanceof TLRPC.TL_messageMediaGame) {
+                            charSequence = "🎮 " + messageObject.messageOwner.media.game.title;
+                        } else if (messageObject.type == 14) {
+                            charSequence = i0.a.n("🎧 ", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle());
+                        } else {
+                            charSequence = messageObject.messageText;
+                            AndroidUtilities.highlightText(charSequence, messageObject.highlightedWords, (org.telegram.ui.ActionBar.c6) null);
+                        }
+                        CharSequence charSequence5 = charSequence;
+                        charSequence2 = charSequence5;
+                        if (messageObject.messageOwner.media != null) {
+                            charSequence2 = charSequence5;
+                            if (!messageObject.isMediaEmpty()) {
+                                color = this.mContext.getResources().getColor(R.color.widget_action_text);
+                                charSequence2 = charSequence5;
+                            }
+                        }
                     }
-                    String str5 = str3;
+                } else {
+                    String string2 = messageObject.isOutOwner() ? LocaleController.getString(R.string.FromYou) : user2 != null ? UserObject.getFirstName(user2).replace("\n", "") : "DELETED";
                     CharSequence charSequence6 = messageObject.caption;
                     try {
                         if (charSequence6 != null) {
                             String charSequence7 = charSequence6.toString();
                             if (charSequence7.length() > 150) {
-                                charSequence7 = charSequence7.substring(0, 150);
+                                charSequence7 = charSequence7.substring(0, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
                             }
                             if (messageObject.isVideo()) {
-                                str4 = "📹 ";
+                                str3 = "📹 ";
                             } else if (messageObject.isVoice()) {
-                                str4 = "🎤 ";
+                                str3 = "🎤 ";
                             } else if (messageObject.isMusic()) {
-                                str4 = "🎧 ";
+                                str3 = "🎧 ";
                             } else if (messageObject.isPhoto()) {
-                                str4 = "🖼 ";
+                                str3 = "🖼 ";
                             }
+                            StringBuilder o11 = com.google.android.recaptcha.internal.a.o(str3);
+                            o11.append(charSequence7.replace('\n', ' '));
+                            String sb2 = o11.toString();
                             Object[] objArr = new Object[2];
-                            objArr[0] = str4 + charSequence7.replace('\n', ' ');
-                            objArr[c] = str5;
+                            objArr[0] = sb2;
+                            objArr[c10] = string2;
                             valueOf = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr));
-                        } else if (messageObject.messageOwner.media != null && !messageObject.isMediaEmpty()) {
-                            color = this.mContext.getResources().getColor(R.color.widget_action_text);
-                            TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
-                            if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
-                                charSequence2 = String.format("📊 \u2068%s\u2069", ((TLRPC.TL_messageMediaPoll) messageMedia).poll.question.text);
-                            } else if (messageMedia instanceof TLRPC.TL_messageMediaGame) {
-                                charSequence2 = String.format("🎮 \u2068%s\u2069", messageMedia.game.title);
-                            } else {
-                                if (messageObject.type == 14) {
-                                    i4 = 2;
-                                    c2 = 1;
-                                    charSequence2 = String.format("🎧 \u2068%s - %s\u2069", messageObject.getMusicAuthor(), messageObject.getMusicTitle());
-                                } else {
-                                    i4 = 2;
-                                    c2 = 1;
-                                    charSequence2 = messageObject.messageText.toString();
+                        } else if (messageObject.messageOwner.media == null || messageObject.isMediaEmpty()) {
+                            String str4 = messageObject.messageOwner.message;
+                            if (str4 != null) {
+                                if (str4.length() > 150) {
+                                    str4 = str4.substring(0, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
                                 }
-                                c3 = '\n';
-                                Object[] objArr2 = new Object[i4];
-                                objArr2[0] = charSequence2.replace(c3, ' ');
-                                objArr2[c2] = str5;
-                                SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr2));
-                                valueOf2.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_attachMessage), str5.length() + 2, valueOf2.length(), 33);
-                                spannableStringBuilder = valueOf2;
-                                spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_nameMessage), 0, str5.length() + 1, 33);
-                                charSequence3 = spannableStringBuilder;
-                            }
-                            c3 = '\n';
-                            i4 = 2;
-                            c2 = 1;
-                            Object[] objArr22 = new Object[i4];
-                            objArr22[0] = charSequence2.replace(c3, ' ');
-                            objArr22[c2] = str5;
-                            SpannableStringBuilder valueOf22 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr22));
-                            valueOf22.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_attachMessage), str5.length() + 2, valueOf22.length(), 33);
-                            spannableStringBuilder = valueOf22;
-                            spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_nameMessage), 0, str5.length() + 1, 33);
-                            charSequence3 = spannableStringBuilder;
-                        } else {
-                            String str6 = messageObject.messageOwner.message;
-                            if (str6 != null) {
-                                if (str6.length() > 150) {
-                                    str6 = str6.substring(0, 150);
-                                }
-                                valueOf = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", str6.replace('\n', ' ').trim(), str5));
+                                Object[] objArr2 = new Object[2];
+                                objArr2[0] = str4.replace('\n', ' ').trim();
+                                objArr2[c10] = string2;
+                                valueOf = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr2));
                             } else {
                                 valueOf = SpannableStringBuilder.valueOf("");
                             }
+                        } else {
+                            color = this.mContext.getResources().getColor(R.color.widget_action_text);
+                            TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
+                            Object[] objArr3 = new Object[2];
+                            objArr3[0] = (messageMedia2 instanceof TLRPC.TL_messageMediaPoll ? a9.p.m("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069") : messageMedia2 instanceof TLRPC.TL_messageMediaGame ? a9.p.m("🎮 \u2068", messageMedia2.game.title, "\u2069") : messageObject.type == 14 ? org.telegram.ui.Cells.pa.j("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString()).replace('\n', ' ');
+                            objArr3[c10] = string2;
+                            SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr3));
+                            try {
+                                valueOf2.setSpan(new s00(org.telegram.ui.ActionBar.g6.o9, null), string2.length() + 2, valueOf2.length(), 33);
+                                spannableStringBuilder = valueOf2;
+                            } catch (Exception e9) {
+                                FileLog.e(e9);
+                                spannableStringBuilder = valueOf2;
+                            }
+                            spannableStringBuilder.setSpan(new s00(org.telegram.ui.ActionBar.g6.k9, null), 0, string2.length() + 1, 33);
+                            charSequence2 = spannableStringBuilder;
                         }
-                        spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_nameMessage), 0, str5.length() + 1, 33);
-                        charSequence3 = spannableStringBuilder;
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        charSequence3 = spannableStringBuilder;
+                        spannableStringBuilder.setSpan(new s00(org.telegram.ui.ActionBar.g6.k9, null), 0, string2.length() + 1, 33);
+                        charSequence2 = spannableStringBuilder;
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
+                        charSequence2 = spannableStringBuilder;
                     }
                     spannableStringBuilder = valueOf;
-                } else {
-                    TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
-                    if ((messageMedia2 instanceof TLRPC.TL_messageMediaPhoto) && (messageMedia2.photo instanceof TLRPC.TL_photoEmpty) && messageMedia2.ttl_seconds != 0) {
-                        charSequence3 = LocaleController.getString(R.string.AttachPhotoExpired);
-                    } else if ((messageMedia2 instanceof TLRPC.TL_messageMediaDocument) && (messageMedia2.document instanceof TLRPC.TL_documentEmpty) && messageMedia2.ttl_seconds != 0) {
-                        charSequence3 = LocaleController.getString(R.string.AttachVideoExpired);
-                    } else if (messageObject.caption != null) {
-                        if (messageObject.isVideo()) {
-                            str4 = "📹 ";
-                        } else if (messageObject.isVoice()) {
-                            str4 = "🎤 ";
-                        } else if (messageObject.isMusic()) {
-                            str4 = "🎧 ";
-                        } else if (messageObject.isPhoto()) {
-                            str4 = "🖼 ";
-                        }
-                        charSequence3 = str4 + ((Object) messageObject.caption);
-                    } else {
-                        if (messageMedia2 instanceof TLRPC.TL_messageMediaPoll) {
-                            charSequence = "📊 " + ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text;
-                        } else if (messageMedia2 instanceof TLRPC.TL_messageMediaGame) {
-                            charSequence = "🎮 " + messageObject.messageOwner.media.game.title;
-                        } else if (messageObject.type == 14) {
-                            charSequence = String.format("🎧 %s - %s", messageObject.getMusicAuthor(), messageObject.getMusicTitle());
-                        } else {
-                            charSequence = messageObject.messageText;
-                            AndroidUtilities.highlightText(charSequence, messageObject.highlightedWords, (Theme.ResourcesProvider) null);
-                        }
-                        CharSequence charSequence8 = charSequence;
-                        charSequence3 = charSequence8;
-                        if (messageObject.messageOwner.media != null) {
-                            charSequence3 = charSequence8;
-                            if (!messageObject.isMediaEmpty()) {
-                                color = this.mContext.getResources().getColor(R.color.widget_action_text);
-                                charSequence3 = charSequence8;
-                            }
-                        }
-                    }
                 }
             }
             remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, LocaleController.stringForMessageListDate(messageObject.messageOwner.date));
-            int i5 = R.id.shortcut_widget_item_message;
-            remoteViews3.setTextViewText(i5, charSequence3.toString());
-            remoteViews3.setTextColor(i5, color);
+            remoteViews3.setTextViewText(R.id.shortcut_widget_item_message, charSequence2.toString());
+            remoteViews3.setTextColor(R.id.shortcut_widget_item_message, color);
         } else {
-            if (dialog != null && (i2 = dialog.last_message_date) != 0) {
-                remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, LocaleController.stringForMessageListDate(i2));
-            } else {
+            if (dialog == null || (i11 = dialog.last_message_date) == 0) {
                 remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, "");
+            } else {
+                remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, LocaleController.stringForMessageListDate(i11));
             }
             remoteViews3.setTextViewText(R.id.shortcut_widget_item_message, "");
         }
-        if (dialog == null && (i3 = dialog.unread_count) > 0) {
-            int i6 = R.id.shortcut_widget_item_badge;
-            remoteViews3.setTextViewText(i6, String.format("%d", Integer.valueOf(i3)));
-            remoteViews3.setViewVisibility(i6, 0);
-            if (this.accountInstance.getMessagesController().isDialogMuted(dialog.id, 0L)) {
-                remoteViews3.setBoolean(i6, "setEnabled", false);
-                remoteViews3.setInt(i6, "setBackgroundResource", R.drawable.widget_badge_muted_background);
-            } else {
-                remoteViews3.setBoolean(i6, "setEnabled", true);
-                remoteViews3.setInt(i6, "setBackgroundResource", R.drawable.widget_badge_background);
-            }
-        } else {
+        if (dialog != null || (i12 = dialog.unread_count) <= 0) {
             remoteViews3.setViewVisibility(R.id.shortcut_widget_item_badge, 8);
+        } else {
+            remoteViews3.setTextViewText(R.id.shortcut_widget_item_badge, String.format("%d", Integer.valueOf(i12)));
+            remoteViews3.setViewVisibility(R.id.shortcut_widget_item_badge, 0);
+            if (this.accountInstance.getMessagesController().isDialogMuted(dialog.id, 0L)) {
+                remoteViews3.setBoolean(R.id.shortcut_widget_item_badge, "setEnabled", false);
+                remoteViews3.setInt(R.id.shortcut_widget_item_badge, "setBackgroundResource", R.drawable.widget_badge_muted_background);
+            } else {
+                remoteViews3.setBoolean(R.id.shortcut_widget_item_badge, "setEnabled", true);
+                remoteViews3.setInt(R.id.shortcut_widget_item_badge, "setBackgroundResource", R.drawable.widget_badge_background);
+            }
         }
         Bundle bundle222 = new Bundle();
-        if (DialogObject.isUserDialog(l.longValue())) {
-            bundle222.putLong("userId", l.longValue());
+        if (DialogObject.isUserDialog(l10.longValue())) {
+            bundle222.putLong("userId", l10.longValue());
         } else {
-            bundle222.putLong("chatId", -l.longValue());
+            bundle222.putLong("chatId", -l10.longValue());
         }
         bundle222.putInt("currentAccount", this.accountInstance.getCurrentAccount());
         Intent intent222 = new Intent();
         intent222.putExtras(bundle222);
         remoteViews3.setOnClickFillInIntent(R.id.shortcut_widget_item, intent222);
-        remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i == getCount() ? 8 : 0);
+        remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i10 == getCount() ? 8 : 0);
         return remoteViews3;
+    }
+
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public int getViewTypeCount() {
+        return 2;
+    }
+
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public boolean hasStableIds() {
+        return true;
+    }
+
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public void onCreate() {
+        ApplicationLoader.postInitApplication();
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
     public void onDataSetChanged() {
         this.dids.clear();
-        this.messageObjects.clear();
+        this.messageObjects.b();
         AccountInstance accountInstance = this.accountInstance;
         if (accountInstance == null || !accountInstance.getUserConfig().isClientActivated()) {
             return;
         }
         ArrayList<TLRPC.User> arrayList = new ArrayList<>();
         ArrayList<TLRPC.Chat> arrayList2 = new ArrayList<>();
-        LongSparseArray longSparseArray = new LongSparseArray();
-        this.accountInstance.getMessagesStorage().getWidgetDialogs(this.appWidgetId, 0, this.dids, this.dialogs, longSparseArray, arrayList, arrayList2);
+        a0.h hVar = new a0.h();
+        this.accountInstance.getMessagesStorage().getWidgetDialogs(this.appWidgetId, 0, this.dids, this.dialogs, hVar, arrayList, arrayList2);
         this.accountInstance.getMessagesController().putUsers(arrayList, true);
         this.accountInstance.getMessagesController().putChats(arrayList2, true);
-        this.messageObjects.clear();
-        int size = longSparseArray.size();
-        for (int i = 0; i < size; i++) {
-            this.messageObjects.put(longSparseArray.keyAt(i), new MessageObject(this.accountInstance.getCurrentAccount(), (TLRPC.Message) longSparseArray.valueAt(i), (LongSparseArray) null, (LongSparseArray) null, false, true));
+        this.messageObjects.b();
+        int m10 = hVar.m();
+        for (int i10 = 0; i10 < m10; i10++) {
+            this.messageObjects.k(new MessageObject(this.accountInstance.getCurrentAccount(), (TLRPC.Message) hVar.n(i10), (a0.h) null, (a0.h) null, false, true), hVar.j(i10));
         }
+    }
+
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public void onDestroy() {
     }
 }

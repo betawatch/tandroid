@@ -1,7 +1,8 @@
 package com.google.android.recaptcha;
 
-import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.f;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class RecaptchaException extends Exception {
     private final RecaptchaErrorCode errorCode;
@@ -21,7 +22,7 @@ public final class RecaptchaException extends Exception {
         return this.errorMessage;
     }
 
-    public /* synthetic */ RecaptchaException(RecaptchaErrorCode recaptchaErrorCode, String str, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(recaptchaErrorCode, (i & 2) != 0 ? recaptchaErrorCode.getErrorMessage() : str);
+    public /* synthetic */ RecaptchaException(RecaptchaErrorCode recaptchaErrorCode, String str, int i10, f fVar) {
+        this(recaptchaErrorCode, (i10 & 2) != 0 ? recaptchaErrorCode.getErrorMessage() : str);
     }
 }

@@ -8,80 +8,70 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
-import androidx.appcompat.R$attr;
-import androidx.appcompat.widget.AppCompatSeekBar;
-import org.telegram.messenger.NotificationCenter;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-class MediaRouteVolumeSlider extends AppCompatSeekBar {
-    private int mBackgroundColor;
-    private final float mDisabledAlpha;
-    private boolean mHideThumb;
-    private int mProgressAndThumbColor;
-    private Drawable mThumb;
+class MediaRouteVolumeSlider extends m.d0 {
+    public final float b;
+    public boolean c;
+    public Drawable d;
+    public int e;
+    public int f;
 
     public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R$attr.seekBarStyle);
+        super(context, attributeSet);
+        this.b = g7.b0.c(context);
     }
 
-    public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet, int i) {
-        super(context, attributeSet, i);
-        this.mDisabledAlpha = MediaRouterThemeHelper.getDisabledAlpha(context);
+    public final void a(int i10, int i11) {
+        if (this.e != i10) {
+            if (Color.alpha(i10) != 255) {
+                Log.e("MediaRouteVolumeSlider", "Volume slider progress and thumb color cannot be translucent: #" + Integer.toHexString(i10));
+            }
+            this.e = i10;
+        }
+        if (this.f != i11) {
+            if (Color.alpha(i11) != 255) {
+                Log.e("MediaRouteVolumeSlider", "Volume slider background color cannot be translucent: #" + Integer.toHexString(i11));
+            }
+            this.f = i11;
+        }
     }
 
-    @Override // androidx.appcompat.widget.AppCompatSeekBar, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
-    protected void drawableStateChanged() {
+    public final void b(boolean z10) {
+        if (this.c == z10) {
+            return;
+        }
+        this.c = z10;
+        super.setThumb(z10 ? null : this.d);
+    }
+
+    @Override // m.d0, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    public final void drawableStateChanged() {
         super.drawableStateChanged();
-        int i = isEnabled() ? NotificationCenter.didReceiveSmsCode : (int) (this.mDisabledAlpha * 255.0f);
-        Drawable drawable = this.mThumb;
-        int i2 = this.mProgressAndThumbColor;
+        int i10 = isEnabled() ? 255 : (int) (this.b * 255.0f);
+        Drawable drawable = this.d;
+        int i11 = this.e;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        drawable.setColorFilter(i2, mode);
-        this.mThumb.setAlpha(i);
+        drawable.setColorFilter(i11, mode);
+        this.d.setAlpha(i10);
         Drawable progressDrawable = getProgressDrawable();
         if (progressDrawable instanceof LayerDrawable) {
             LayerDrawable layerDrawable = (LayerDrawable) getProgressDrawable();
             Drawable findDrawableByLayerId = layerDrawable.findDrawableByLayerId(R.id.progress);
-            layerDrawable.findDrawableByLayerId(R.id.background).setColorFilter(this.mBackgroundColor, mode);
+            layerDrawable.findDrawableByLayerId(R.id.background).setColorFilter(this.f, mode);
             progressDrawable = findDrawableByLayerId;
         }
-        progressDrawable.setColorFilter(this.mProgressAndThumbColor, mode);
-        progressDrawable.setAlpha(i);
+        progressDrawable.setColorFilter(this.e, mode);
+        progressDrawable.setAlpha(i10);
     }
 
     @Override // android.widget.AbsSeekBar
-    public void setThumb(Drawable drawable) {
-        this.mThumb = drawable;
-        if (this.mHideThumb) {
+    public final void setThumb(Drawable drawable) {
+        this.d = drawable;
+        if (this.c) {
             drawable = null;
         }
         super.setThumb(drawable);
-    }
-
-    public void setHideThumb(boolean z) {
-        if (this.mHideThumb == z) {
-            return;
-        }
-        this.mHideThumb = z;
-        super.setThumb(z ? null : this.mThumb);
-    }
-
-    public void setColor(int i) {
-        setColor(i, i);
-    }
-
-    public void setColor(int i, int i2) {
-        if (this.mProgressAndThumbColor != i) {
-            if (Color.alpha(i) != 255) {
-                Log.e("MediaRouteVolumeSlider", "Volume slider progress and thumb color cannot be translucent: #" + Integer.toHexString(i));
-            }
-            this.mProgressAndThumbColor = i;
-        }
-        if (this.mBackgroundColor != i2) {
-            if (Color.alpha(i2) != 255) {
-                Log.e("MediaRouteVolumeSlider", "Volume slider background color cannot be translucent: #" + Integer.toHexString(i2));
-            }
-            this.mBackgroundColor = i2;
-        }
     }
 }

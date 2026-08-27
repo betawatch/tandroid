@@ -5,24 +5,25 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 abstract class zzpz extends AbstractList implements zzsu {
     private boolean zza;
 
-    zzpz(boolean z) {
-        this.zza = z;
+    public zzpz(boolean z10) {
+        this.zza = z10;
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public void add(int i, Object obj) {
+    public void add(int i10, Object obj) {
         zza();
-        super.add(i, obj);
+        super.add(i10, obj);
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final boolean addAll(int i, Collection collection) {
+    public final boolean addAll(int i10, Collection collection) {
         zza();
-        return super.addAll(i, collection);
+        return super.addAll(i10, collection);
     }
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -47,8 +48,8 @@ abstract class zzpz extends AbstractList implements zzsu {
         if (size != list.size()) {
             return false;
         }
-        for (int i = 0; i < size; i++) {
-            if (!get(i).equals(list.get(i))) {
+        for (int i10 = 0; i10 < size; i10++) {
+            if (!get(i10).equals(list.get(i10))) {
                 return false;
             }
         }
@@ -58,17 +59,17 @@ abstract class zzpz extends AbstractList implements zzsu {
     @Override // java.util.AbstractList, java.util.Collection, java.util.List
     public int hashCode() {
         int size = size();
-        int i = 1;
-        for (int i2 = 0; i2 < size; i2++) {
-            i = (i * 31) + get(i2).hashCode();
+        int i10 = 1;
+        for (int i11 = 0; i11 < size; i11++) {
+            i10 = (i10 * 31) + get(i11).hashCode();
         }
-        return i;
+        return i10;
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public Object remove(int i) {
+    public Object remove(int i10) {
         zza();
-        return super.remove(i);
+        return super.remove(i10);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -84,12 +85,12 @@ abstract class zzpz extends AbstractList implements zzsu {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public Object set(int i, Object obj) {
+    public Object set(int i10, Object obj) {
         zza();
-        return super.set(i, obj);
+        return super.set(i10, obj);
     }
 
-    protected final void zza() {
+    public final void zza() {
         if (!this.zza) {
             throw new UnsupportedOperationException();
         }

@@ -6,77 +6,25 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public interface IConversationCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$messaging$model$IConversationCallback".replace('$', '.');
-
-    public static class Default implements IConversationCallback {
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return null;
-        }
-
-        @Override // androidx.car.app.messaging.model.IConversationCallback
-        public void onMarkAsRead(IOnDoneCallback iOnDoneCallback) {
-        }
-
-        @Override // androidx.car.app.messaging.model.IConversationCallback
-        public void onTextReply(IOnDoneCallback iOnDoneCallback, String str) {
-        }
-    }
 
     void onMarkAsRead(IOnDoneCallback iOnDoneCallback);
 
     void onTextReply(IOnDoneCallback iOnDoneCallback, String str);
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static abstract class Stub extends Binder implements IConversationCallback {
         static final int TRANSACTION_onMarkAsRead = 2;
         static final int TRANSACTION_onTextReply = 3;
 
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return this;
-        }
-
-        public Stub() {
-            attachInterface(this, IConversationCallback.DESCRIPTOR);
-        }
-
-        public static IConversationCallback asInterface(IBinder iBinder) {
-            if (iBinder == null) {
-                return null;
-            }
-            IInterface queryLocalInterface = iBinder.queryLocalInterface(IConversationCallback.DESCRIPTOR);
-            if (queryLocalInterface != null && (queryLocalInterface instanceof IConversationCallback)) {
-                return (IConversationCallback) queryLocalInterface;
-            }
-            return new Proxy(iBinder);
-        }
-
-        @Override // android.os.Binder
-        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String str = IConversationCallback.DESCRIPTOR;
-            if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(str);
-            }
-            if (i == 1598968902) {
-                parcel2.writeString(str);
-                return true;
-            }
-            if (i == 2) {
-                onMarkAsRead(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
-            } else if (i == 3) {
-                onTextReply(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readString());
-            } else {
-                return super.onTransact(i, parcel, parcel2, i2);
-            }
-            return true;
-        }
-
-        private static class Proxy implements IConversationCallback {
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static class Proxy implements IConversationCallback {
             private IBinder mRemote;
 
-            Proxy(IBinder iBinder) {
+            public Proxy(IBinder iBinder) {
                 this.mRemote = iBinder;
             }
 
@@ -113,6 +61,60 @@ public interface IConversationCallback extends IInterface {
                     obtain.recycle();
                 }
             }
+        }
+
+        public Stub() {
+            attachInterface(this, IConversationCallback.DESCRIPTOR);
+        }
+
+        public static IConversationCallback asInterface(IBinder iBinder) {
+            if (iBinder == null) {
+                return null;
+            }
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(IConversationCallback.DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IConversationCallback)) ? new Proxy(iBinder) : (IConversationCallback) queryLocalInterface;
+        }
+
+        @Override // android.os.Binder
+        public boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+            String str = IConversationCallback.DESCRIPTOR;
+            if (i10 >= 1 && i10 <= 16777215) {
+                parcel.enforceInterface(str);
+            }
+            if (i10 == 1598968902) {
+                parcel2.writeString(str);
+                return true;
+            }
+            if (i10 == 2) {
+                onMarkAsRead(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
+            } else {
+                if (i10 != 3) {
+                    return super.onTransact(i10, parcel, parcel2, i11);
+                }
+                onTextReply(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readString());
+            }
+            return true;
+        }
+
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return this;
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class Default implements IConversationCallback {
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return null;
+        }
+
+        @Override // androidx.car.app.messaging.model.IConversationCallback
+        public void onMarkAsRead(IOnDoneCallback iOnDoneCallback) {
+        }
+
+        @Override // androidx.car.app.messaging.model.IConversationCallback
+        public void onTextReply(IOnDoneCallback iOnDoneCallback, String str) {
         }
     }
 }

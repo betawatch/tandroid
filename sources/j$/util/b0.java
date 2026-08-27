@@ -1,89 +1,46 @@
 package j$.util;
 
-import j$.util.Spliterator;
-import java.util.Comparator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
-
 /* loaded from: classes2.dex */
-public final /* synthetic */ class b0 implements Spliterator.OfPrimitive {
-    public final /* synthetic */ c0 a;
+public final class b0 {
+    public static final b0 c = new b0();
+    public final boolean a;
+    public final double b;
 
-    public /* synthetic */ b0(c0 c0Var) {
-        this.a = c0Var;
+    public b0() {
+        this.a = false;
+        this.b = Double.NaN;
     }
 
-    public static /* synthetic */ Spliterator.OfPrimitive a(c0 c0Var) {
-        if (c0Var == null) {
-            return null;
+    public b0(double d) {
+        this.a = true;
+        this.b = d;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return c0Var instanceof a0 ? ((a0) c0Var).a : c0Var instanceof T ? S.a((T) c0Var) : c0Var instanceof W ? V.a((W) c0Var) : c0Var instanceof Z ? Y.a((Z) c0Var) : new b0(c0Var);
-    }
-
-    @Override // java.util.Spliterator
-    public final /* synthetic */ int characteristics() {
-        return this.a.characteristics();
-    }
-
-    public final /* synthetic */ boolean equals(Object obj) {
-        c0 c0Var = this.a;
-        if (obj instanceof b0) {
-            obj = ((b0) obj).a;
+        if (!(obj instanceof b0)) {
+            return false;
         }
-        return c0Var.equals(obj);
+        b0 b0Var = (b0) obj;
+        boolean z10 = b0Var.a;
+        boolean z11 = this.a;
+        return (z11 && z10) ? Double.compare(this.b, b0Var.b) == 0 : z11 == z10;
     }
 
-    @Override // java.util.Spliterator
-    public final /* synthetic */ long estimateSize() {
-        return this.a.estimateSize();
+    public final int hashCode() {
+        if (!this.a) {
+            return 0;
+        }
+        long doubleToLongBits = Double.doubleToLongBits(this.b);
+        return (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
     }
 
-    @Override // java.util.Spliterator.OfPrimitive
-    public final /* synthetic */ void forEachRemaining(Object obj) {
-        this.a.forEachRemaining(obj);
-    }
-
-    @Override // java.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining(consumer);
-    }
-
-    @Override // java.util.Spliterator
-    public final /* synthetic */ Comparator getComparator() {
-        return this.a.getComparator();
-    }
-
-    @Override // java.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return this.a.getExactSizeIfKnown();
-    }
-
-    @Override // java.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return this.a.hasCharacteristics(i);
-    }
-
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
-    }
-
-    @Override // java.util.Spliterator.OfPrimitive
-    public final /* synthetic */ boolean tryAdvance(Object obj) {
-        return this.a.tryAdvance(obj);
-    }
-
-    @Override // java.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return this.a.tryAdvance(consumer);
-    }
-
-    @Override // java.util.Spliterator.OfPrimitive, java.util.Spliterator
-    public final /* synthetic */ Spliterator.OfPrimitive trySplit() {
-        return a(this.a.trySplit());
-    }
-
-    @Override // java.util.Spliterator.OfPrimitive, java.util.Spliterator
-    public final /* synthetic */ java.util.Spliterator trySplit() {
-        return Spliterator.Wrapper.convert(this.a.trySplit());
+    public final String toString() {
+        if (this.a) {
+            return "OptionalDouble[" + this.b + "]";
+        }
+        return "OptionalDouble.empty";
     }
 }

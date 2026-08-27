@@ -2,7 +2,6 @@ package j$.time.chrono;
 
 import j$.time.Instant;
 import j$.time.ZoneId;
-import j$.time.temporal.Temporal;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.Locale;
 
@@ -20,38 +19,38 @@ public abstract class a implements k {
         new Locale("ja", "JP", "JP");
     }
 
-    public static k l(a aVar, String str) {
-        String m;
-        k kVar = (k) a.putIfAbsent(str, aVar);
-        if (kVar == null && (m = aVar.m()) != null) {
-            b.putIfAbsent(m, aVar);
+    public static k j(k kVar, String str) {
+        String o10;
+        k kVar2 = (k) a.putIfAbsent(str, kVar);
+        if (kVar2 == null && (o10 = kVar.o()) != null) {
+            b.putIfAbsent(o10, kVar);
         }
-        return kVar;
+        return kVar2;
     }
 
     @Override // j$.time.chrono.k
-    public ChronoLocalDateTime s(Temporal temporal) {
+    public ChronoLocalDateTime B(j$.time.temporal.l lVar) {
         try {
-            return a(temporal).w(j$.time.h.I(temporal));
-        } catch (j$.time.b e) {
-            throw new j$.time.b("Unable to obtain ChronoLocalDateTime from TemporalAccessor: " + temporal.getClass(), e);
+            return x(lVar).A(j$.time.h.I(lVar));
+        } catch (j$.time.b e9) {
+            throw new j$.time.b("Unable to obtain ChronoLocalDateTime from TemporalAccessor: " + lVar.getClass(), e9);
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r5v6, types: [j$.time.chrono.ChronoZonedDateTime] */
     @Override // j$.time.chrono.k
-    public ChronoZonedDateTime n(Temporal temporal) {
+    public ChronoZonedDateTime p(j$.time.temporal.l lVar) {
         try {
-            ZoneId E = ZoneId.E(temporal);
+            ZoneId G = ZoneId.G(lVar);
             try {
-                temporal = A(Instant.H(temporal), E);
-                return temporal;
+                lVar = D(Instant.H(lVar), G);
+                return lVar;
             } catch (j$.time.b unused) {
-                return j.E(E, null, f.E(this, s(temporal)));
+                return j.G(G, null, f.G(this, B(lVar)));
             }
-        } catch (j$.time.b e) {
-            throw new j$.time.b("Unable to obtain ChronoZonedDateTime from TemporalAccessor: " + temporal.getClass(), e);
+        } catch (j$.time.b e9) {
+            throw new j$.time.b("Unable to obtain ChronoZonedDateTime from TemporalAccessor: " + lVar.getClass(), e9);
         }
     }
 

@@ -1,37 +1,40 @@
 package org.webrtc;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class MediaSource {
     private long nativeSource;
     private final RefCountDelegate refCountDelegate;
 
-    private static native State nativeGetState(long j);
-
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public enum State {
         INITIALIZING,
         LIVE,
         ENDED,
         MUTED;
 
-        static State fromNativeIndex(int i) {
-            return values()[i];
+        public static State fromNativeIndex(int i10) {
+            return values()[i10];
         }
     }
 
-    public MediaSource(final long j) {
-        this.refCountDelegate = new RefCountDelegate(new Runnable() { // from class: org.webrtc.MediaSource$$ExternalSyntheticLambda0
+    public MediaSource(final long j10) {
+        this.refCountDelegate = new RefCountDelegate(new Runnable() { // from class: org.webrtc.k
             @Override // java.lang.Runnable
             public final void run() {
-                JniCommon.nativeReleaseRef(j);
+                JniCommon.nativeReleaseRef(j10);
             }
         });
-        this.nativeSource = j;
+        this.nativeSource = j10;
     }
 
-    public State state() {
-        checkMediaSourceExists();
-        return nativeGetState(this.nativeSource);
+    private void checkMediaSourceExists() {
+        if (this.nativeSource == 0) {
+            throw new IllegalStateException("MediaSource has been disposed.");
+        }
     }
+
+    private static native State nativeGetState(long j10);
 
     public void dispose() {
         checkMediaSourceExists();
@@ -39,12 +42,12 @@ public class MediaSource {
         this.nativeSource = 0L;
     }
 
-    protected long getNativeMediaSource() {
+    public long getNativeMediaSource() {
         checkMediaSourceExists();
         return this.nativeSource;
     }
 
-    void runWithReference(Runnable runnable) {
+    public void runWithReference(Runnable runnable) {
         if (this.refCountDelegate.safeRetain()) {
             try {
                 runnable.run();
@@ -54,9 +57,8 @@ public class MediaSource {
         }
     }
 
-    private void checkMediaSourceExists() {
-        if (this.nativeSource == 0) {
-            throw new IllegalStateException("MediaSource has been disposed.");
-        }
+    public State state() {
+        checkMediaSourceExists();
+        return nativeGetState(this.nativeSource);
     }
 }

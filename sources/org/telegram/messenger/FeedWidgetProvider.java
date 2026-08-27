@@ -10,8 +10,32 @@ import android.widget.RemoteViews;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class FeedWidgetProvider extends AppWidgetProvider {
+    public static void updateWidget(Context context, AppWidgetManager appWidgetManager, int i10) {
+        Intent intent = new Intent(context, (Class<?>) FeedWidgetService.class);
+        intent.putExtra("appWidgetId", i10);
+        intent.setData(Uri.parse(intent.toUri(1)));
+        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.feed_widget_layout);
+        remoteViews.setRemoteAdapter(R.id.list_view, intent);
+        remoteViews.setEmptyView(R.id.list_view, R.id.empty_view);
+        Intent intent2 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+        intent2.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+        intent2.addFlags(67108864);
+        intent2.addCategory("android.intent.category.LAUNCHER");
+        remoteViews.setPendingIntentTemplate(R.id.list_view, PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent2, 167772160));
+        appWidgetManager.updateAppWidget(i10, remoteViews);
+    }
+
+    @Override // android.appwidget.AppWidgetProvider
+    public void onDeleted(Context context, int[] iArr) {
+        super.onDeleted(context, iArr);
+        for (int i10 = 0; i10 < iArr.length; i10++) {
+            context.getSharedPreferences("shortcut_widget", 0).edit().remove("account" + iArr[i10]).remove("dialogId" + iArr[i10]).commit();
+        }
+    }
+
     @Override // android.appwidget.AppWidgetProvider, android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
@@ -20,32 +44,8 @@ public class FeedWidgetProvider extends AppWidgetProvider {
     @Override // android.appwidget.AppWidgetProvider
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] iArr) {
         super.onUpdate(context, appWidgetManager, iArr);
-        for (int i : iArr) {
-            updateWidget(context, appWidgetManager, i);
+        for (int i10 : iArr) {
+            updateWidget(context, appWidgetManager, i10);
         }
-    }
-
-    @Override // android.appwidget.AppWidgetProvider
-    public void onDeleted(Context context, int[] iArr) {
-        super.onDeleted(context, iArr);
-        for (int i = 0; i < iArr.length; i++) {
-            context.getSharedPreferences("shortcut_widget", 0).edit().remove("account" + iArr[i]).remove("dialogId" + iArr[i]).commit();
-        }
-    }
-
-    public static void updateWidget(Context context, AppWidgetManager appWidgetManager, int i) {
-        Intent intent = new Intent(context, (Class<?>) FeedWidgetService.class);
-        intent.putExtra("appWidgetId", i);
-        intent.setData(Uri.parse(intent.toUri(1)));
-        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.feed_widget_layout);
-        int i2 = R.id.list_view;
-        remoteViews.setRemoteAdapter(i2, intent);
-        remoteViews.setEmptyView(i2, R.id.empty_view);
-        Intent intent2 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-        intent2.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-        intent2.addFlags(67108864);
-        intent2.addCategory("android.intent.category.LAUNCHER");
-        remoteViews.setPendingIntentTemplate(i2, PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent2, 167772160));
-        appWidgetManager.updateAppWidget(i, remoteViews);
     }
 }

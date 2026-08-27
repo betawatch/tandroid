@@ -8,13 +8,17 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 import androidx.car.app.IStartCarApp;
-import androidx.car.app.utils.RemoteUtils;
+import androidx.car.app.utils.i;
 import j$.util.Objects;
+import org.telegram.ui.di1;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class CarAppNotificationBroadcastReceiver extends BroadcastReceiver {
+    public static final /* synthetic */ int a = 0;
+
     @Override // android.content.BroadcastReceiver
-    public void onReceive(Context context, final Intent intent) {
+    public final void onReceive(Context context, Intent intent) {
         IBinder iBinder;
         ComponentName componentName = (ComponentName) intent.getParcelableExtra("androidx.car.app.notification.COMPONENT_EXTRA_KEY");
         intent.removeExtra("androidx.car.app.notification.COMPONENT_EXTRA_KEY");
@@ -28,21 +32,10 @@ public class CarAppNotificationBroadcastReceiver extends BroadcastReceiver {
         }
         if (iBinder == null) {
             Log.e("CarApp.NBR", "Notification intent missing expected extra: " + intent);
-            return;
+        } else {
+            IStartCarApp asInterface = IStartCarApp.Stub.asInterface(iBinder);
+            Objects.requireNonNull(asInterface);
+            i.d("startCarApp from notification", new di1(12, asInterface, intent));
         }
-        IStartCarApp asInterface = IStartCarApp.Stub.asInterface(iBinder);
-        Objects.requireNonNull(asInterface);
-        final IStartCarApp iStartCarApp = asInterface;
-        RemoteUtils.dispatchCallToHost("startCarApp from notification", new RemoteUtils.RemoteCall() { // from class: androidx.car.app.notification.CarAppNotificationBroadcastReceiver$$ExternalSyntheticLambda0
-            @Override // androidx.car.app.utils.RemoteUtils.RemoteCall
-            public final Object call() {
-                return CarAppNotificationBroadcastReceiver.$r8$lambda$q-h3KUTu1iDCbG2k9wImwtKNT7Q(IStartCarApp.this, intent);
-            }
-        });
-    }
-
-    public static /* synthetic */ Object $r8$lambda$q-h3KUTu1iDCbG2k9wImwtKNT7Q(IStartCarApp iStartCarApp, Intent intent) {
-        iStartCarApp.startCarApp(intent);
-        return null;
     }
 }

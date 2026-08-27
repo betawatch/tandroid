@@ -4,60 +4,61 @@ import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class HorizontalRule extends Box {
     private Color color;
     private float speShift;
+
+    public HorizontalRule(float f10, float f11, float f12) {
+        this.color = null;
+        this.speShift = 0.0f;
+        this.height = f10;
+        this.width = f11;
+        this.shift = f12;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.Box
+    public void draw(Graphics2D graphics2D, float f10, float f11) {
+        Color color = graphics2D.getColor();
+        Color color2 = this.color;
+        if (color2 != null) {
+            graphics2D.setColor(color2);
+        }
+        float f12 = this.speShift;
+        if (f12 == 0.0f) {
+            float f13 = this.height;
+            graphics2D.fill(new Rectangle2D.Float(f10, f11 - f13, this.width, f13));
+        } else {
+            float f14 = this.height;
+            graphics2D.fill(new Rectangle2D.Float(f10, (f11 - f14) + f12, this.width, f14));
+        }
+        graphics2D.setColor(color);
+    }
 
     @Override // org.scilab.forge.jlatexmath.Box
     public int getLastFontId() {
         return -1;
     }
 
-    public HorizontalRule(float f, float f2, float f3) {
+    public HorizontalRule(float f10, float f11, float f12, boolean z10) {
         this.color = null;
         this.speShift = 0.0f;
-        this.height = f;
-        this.width = f2;
-        this.shift = f3;
-    }
-
-    public HorizontalRule(float f, float f2, float f3, boolean z) {
-        this.color = null;
-        this.speShift = 0.0f;
-        this.height = f;
-        this.width = f2;
-        if (z) {
-            this.shift = f3;
+        this.height = f10;
+        this.width = f11;
+        if (z10) {
+            this.shift = f12;
         } else {
             this.shift = 0.0f;
-            this.speShift = f3;
+            this.speShift = f12;
         }
     }
 
-    public HorizontalRule(float f, float f2, float f3, Color color) {
+    public HorizontalRule(float f10, float f11, float f12, Color color) {
         this.speShift = 0.0f;
-        this.height = f;
-        this.width = f2;
+        this.height = f10;
+        this.width = f11;
         this.color = color;
-        this.shift = f3;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.Box
-    public void draw(Graphics2D graphics2D, float f, float f2) {
-        Color color = graphics2D.getColor();
-        Color color2 = this.color;
-        if (color2 != null) {
-            graphics2D.setColor(color2);
-        }
-        float f3 = this.speShift;
-        if (f3 == 0.0f) {
-            float f4 = this.height;
-            graphics2D.fill(new Rectangle2D.Float(f, f2 - f4, this.width, f4));
-        } else {
-            float f5 = this.height;
-            graphics2D.fill(new Rectangle2D.Float(f, (f2 - f5) + f3, this.width, f5));
-        }
-        graphics2D.setColor(color);
+        this.shift = f12;
     }
 }

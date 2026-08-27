@@ -1,0 +1,108 @@
+package vd;
+
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
+import rh.o2;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
+public final class b {
+    public final a a;
+    public o2 b;
+    public int c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+
+    public b(a aVar) {
+        this.a = aVar;
+    }
+
+    public final boolean a(MotionEvent motionEvent, View view) {
+        float x8 = motionEvent.getX();
+        float y10 = motionEvent.getY();
+        int action = motionEvent.getAction();
+        a aVar = this.a;
+        if (action == 0) {
+            b(view, x8, y10);
+            if (aVar.needClickAt(view, x8, y10)) {
+                this.c |= 1;
+                this.d = x8;
+                this.e = y10;
+                aVar.onClickTouchDown(view, x8, y10);
+                if (aVar.needLongPress(x8, y10) && view != null) {
+                    if (this.b != null) {
+                        throw new AssertionError();
+                    }
+                    this.c |= 2;
+                    o2 o2Var = new o2(5, this, view);
+                    this.b = o2Var;
+                    view.postDelayed(o2Var, aVar.getLongPressDuration());
+                    return true;
+                }
+            }
+        }
+        if (action == 1) {
+            int i10 = this.c;
+            if ((i10 & 1) != 0) {
+                if ((i10 & 4) != 0) {
+                    aVar.onLongPressFinish(view, x8, y10);
+                    this.c &= -5;
+                } else {
+                    aVar.onClickAt(view, x8, y10);
+                    if ((this.c & 256) == 0 && view != null) {
+                        view.playSoundEffect(0);
+                    }
+                }
+                b(view, x8, y10);
+                return true;
+            }
+        } else if (action != 2) {
+            if (action == 3 && (this.c & 1) != 0) {
+                b(view, x8, y10);
+                return true;
+            }
+        } else if ((this.c & 1) != 0) {
+            aVar.onClickTouchMove(view, x8, y10);
+            if ((this.c & 4) != 0) {
+                aVar.onLongPressMove(view, motionEvent, x8, y10, this.f, this.g);
+                return true;
+            }
+            if (aVar.needCancelTouchBySlopMove() && Math.max(Math.abs(this.d - x8), Math.abs(this.e - y10)) > ViewConfiguration.get(view.getContext()).getScaledTouchSlop() * 1.89f) {
+                b(view, x8, y10);
+                return true;
+            }
+        }
+        return (this.c & 1) != 0;
+    }
+
+    public final void b(View view, float f10, float f11) {
+        int i10 = this.c;
+        if ((i10 & 2) != 0) {
+            this.c = i10 & (-3);
+            o2 o2Var = this.b;
+            if (o2Var == null) {
+                throw new AssertionError();
+            }
+            view.removeCallbacks(o2Var);
+            this.b = null;
+        }
+        int i11 = this.c;
+        int i12 = i11 & 8;
+        a aVar = this.a;
+        if (i12 != 0) {
+            this.c = i11 & (-9);
+            aVar.onLongPressCancelled(view, f10, f11);
+        }
+        if ((this.c & 4) != 0) {
+            aVar.onLongPressFinish(view, f10, f11);
+            this.c &= -5;
+        }
+        if ((this.c & 1) != 0) {
+            aVar.onClickTouchUp(view, f10, f11);
+            this.c &= -2;
+        }
+    }
+}

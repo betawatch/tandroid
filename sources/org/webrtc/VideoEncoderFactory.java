@@ -1,23 +1,18 @@
 package org.webrtc;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public interface VideoEncoderFactory {
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface VideoEncoderSelector {
-
-        public abstract /* synthetic */ class -CC {
-            public static VideoCodecInfo $default$onResolutionChange(VideoEncoderSelector videoEncoderSelector, int i, int i2) {
-                return null;
-            }
-        }
-
-        VideoCodecInfo onAvailableBitrate(int i);
+        VideoCodecInfo onAvailableBitrate(int i10);
 
         void onCurrentEncoder(VideoCodecInfo videoCodecInfo);
 
         VideoCodecInfo onEncoderBroken();
 
-        VideoCodecInfo onResolutionChange(int i, int i2);
+        VideoCodecInfo onResolutionChange(int i10, int i11);
     }
 
     VideoEncoder createEncoder(VideoCodecInfo videoCodecInfo);
@@ -27,10 +22,4 @@ public interface VideoEncoderFactory {
     VideoCodecInfo[] getImplementations();
 
     VideoCodecInfo[] getSupportedCodecs();
-
-    public abstract /* synthetic */ class -CC {
-        public static VideoEncoderSelector $default$getEncoderSelector(VideoEncoderFactory videoEncoderFactory) {
-            return null;
-        }
-    }
 }

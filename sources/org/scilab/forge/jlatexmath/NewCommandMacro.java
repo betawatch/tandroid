@@ -1,25 +1,26 @@
 package org.scilab.forge.jlatexmath;
 
+import a9.p;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class NewCommandMacro {
     protected static HashMap<String, String> macrocode = new HashMap<>();
     protected static HashMap<String, String> macroreplacement = new HashMap<>();
 
-    public static void addNewCommand(String str, String str2, int i) {
+    public static void addNewCommand(String str, String str2, int i10) {
         macrocode.put(str, str2);
-        MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i));
+        MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i10));
     }
 
-    public static void addNewCommand(String str, String str2, int i, String str3) {
-        if (macrocode.get(str) != null) {
-            throw new ParseException("Command " + str + " already exists ! Use renewcommand instead ...");
+    public static void addReNewCommand(String str, String str2, int i10) {
+        if (macrocode.get(str) == null) {
+            throw new ParseException(p.m("Command ", str, " is not defined ! Use newcommand instead ..."));
         }
         macrocode.put(str, str2);
-        macroreplacement.put(str, str3);
-        MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i, 1.0f));
+        MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i10));
     }
 
     public static boolean isMacro(String str) {
@@ -31,38 +32,39 @@ public class NewCommandMacro {
         macroreplacement.clear();
     }
 
-    public static void addReNewCommand(String str, String str2, int i) {
-        if (macrocode.get(str) == null) {
-            throw new ParseException("Command " + str + " is not defined ! Use newcommand instead ...");
-        }
-        macrocode.put(str, str2);
-        MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i));
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:7:0x0040 A[LOOP:0: B:6:0x003e->B:7:0x0040, LOOP_END] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public String executeMacro(TeXParser teXParser, String[] strArr) {
-        int i = 0;
+        int i10 = 0;
         String str = macrocode.get(strArr[0]);
         int length = strArr.length;
-        int i2 = length - 11;
+        int i11 = length - 11;
         String str2 = strArr[length - 10];
-        if (str2 != null) {
-            str = str.replaceAll("#1", Matcher.quoteReplacement(str2));
-        } else {
+        if (str2 == null) {
             if (macroreplacement.get(strArr[0]) != null) {
                 str = str.replaceAll("#1", Matcher.quoteReplacement(macroreplacement.get(strArr[0])));
             }
-            for (int i3 = 1; i3 <= i2; i3++) {
-                str = str.replaceAll("#" + (i3 + i), Matcher.quoteReplacement(strArr[i3]));
+            for (int i12 = 1; i12 <= i11; i12++) {
+                str = str.replaceAll("#" + (i12 + i10), Matcher.quoteReplacement(strArr[i12]));
             }
             return str;
         }
-        i = 1;
-        while (i3 <= i2) {
+        str = str.replaceAll("#1", Matcher.quoteReplacement(str2));
+        i10 = 1;
+        while (i12 <= i11) {
         }
         return str;
+    }
+
+    public static void addNewCommand(String str, String str2, int i10, String str3) {
+        if (macrocode.get(str) == null) {
+            macrocode.put(str, str2);
+            macroreplacement.put(str, str3);
+            MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i10, 1.0f));
+            return;
+        }
+        throw new ParseException(p.m("Command ", str, " already exists ! Use renewcommand instead ..."));
     }
 }

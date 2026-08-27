@@ -3,7 +3,8 @@ package org.telegram.messenger;
 import android.view.Window;
 import java.util.HashMap;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class FlagSecureReason {
     private static HashMap<Window, Integer> currentSecureReasons;
     private final FlagSecureCondition condition;
@@ -11,6 +12,7 @@ public class FlagSecureReason {
     private boolean attached = false;
     private boolean value = false;
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface FlagSecureCondition {
         boolean run();
     }
@@ -20,36 +22,17 @@ public class FlagSecureReason {
         this.condition = flagSecureCondition;
     }
 
-    public void invalidate() {
-        FlagSecureCondition flagSecureCondition;
-        boolean z = this.attached && (flagSecureCondition = this.condition) != null && flagSecureCondition.run();
-        if (z != this.value) {
-            this.value = z;
-            update(z ? 1 : -1);
-        }
+    public static boolean isSecuredNow(Window window) {
+        HashMap<Window, Integer> hashMap = currentSecureReasons;
+        return (hashMap == null || hashMap.get(window) == null) ? false : true;
     }
 
-    public void attach() {
-        if (this.attached) {
-            return;
-        }
-        this.attached = true;
-        invalidate();
-    }
-
-    public void detach() {
-        if (this.attached) {
-            this.attached = false;
-            invalidate();
-        }
-    }
-
-    private void update(int i) {
+    private void update(int i10) {
         if (currentSecureReasons == null) {
             currentSecureReasons = new HashMap<>();
         }
         Integer num = currentSecureReasons.get(this.window);
-        int max = Math.max(0, (num == null ? 0 : num.intValue()) + i);
+        int max = Math.max(0, (num == null ? 0 : num.intValue()) + i10);
         if (max <= 0) {
             currentSecureReasons.remove(this.window);
         } else {
@@ -71,8 +54,27 @@ public class FlagSecureReason {
         }
     }
 
-    public static boolean isSecuredNow(Window window) {
-        HashMap<Window, Integer> hashMap = currentSecureReasons;
-        return (hashMap == null || hashMap.get(window) == null) ? false : true;
+    public void attach() {
+        if (this.attached) {
+            return;
+        }
+        this.attached = true;
+        invalidate();
+    }
+
+    public void detach() {
+        if (this.attached) {
+            this.attached = false;
+            invalidate();
+        }
+    }
+
+    public void invalidate() {
+        FlagSecureCondition flagSecureCondition;
+        boolean z10 = this.attached && (flagSecureCondition = this.condition) != null && flagSecureCondition.run();
+        if (z10 != this.value) {
+            this.value = z10;
+            update(z10 ? 1 : -1);
+        }
     }
 }

@@ -3,7 +3,8 @@ package org.scilab.forge.jlatexmath;
 import java.util.HashMap;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class SpaceAtom extends Atom {
     private static UnitConversion[] unitConversions;
     private static Map<String, Integer> units;
@@ -16,7 +17,8 @@ public class SpaceAtom extends Atom {
     private int wUnit;
     private float width;
 
-    private interface UnitConversion {
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public interface UnitConversion {
         float getPixelConversion(TeXEnvironment teXEnvironment);
     }
 
@@ -117,37 +119,29 @@ public class SpaceAtom extends Atom {
         this.blankSpace = true;
     }
 
-    public SpaceAtom(int i) {
-        this.blankSpace = true;
-        this.blankType = i;
-    }
-
-    public SpaceAtom(int i, float f, float f2, float f3) {
-        checkUnit(i);
-        this.wUnit = i;
-        this.hUnit = i;
-        this.dUnit = i;
-        this.width = f;
-        this.height = f2;
-        this.depth = f3;
-    }
-
-    public static void checkUnit(int i) {
-        if (i < 0 || i >= unitConversions.length) {
+    public static void checkUnit(int i10) {
+        if (i10 < 0 || i10 >= unitConversions.length) {
             throw new InvalidUnitException();
         }
     }
 
-    public SpaceAtom(int i, float f, int i2, float f2, int i3, float f3) {
-        checkUnit(i);
-        checkUnit(i2);
-        checkUnit(i3);
-        this.wUnit = i;
-        this.hUnit = i2;
-        this.dUnit = i3;
-        this.width = f;
-        this.height = f2;
-        this.depth = f3;
+    public static float getFactor(int i10, TeXEnvironment teXEnvironment) {
+        return unitConversions[i10].getPixelConversion(teXEnvironment);
+    }
+
+    public static float[] getLength(String str) {
+        if (str == null) {
+            return new float[]{2.0f, 0.0f};
+        }
+        int i10 = 0;
+        while (i10 < str.length() && !Character.isLetter(str.charAt(i10))) {
+            i10++;
+        }
+        try {
+            return new float[]{i10 != str.length() ? getUnit(str.substring(i10).toLowerCase()) : 2, Float.parseFloat(str.substring(0, i10))};
+        } catch (NumberFormatException unused) {
+            return new float[]{Float.NaN};
+        }
     }
 
     public static int getUnit(String str) {
@@ -158,48 +152,49 @@ public class SpaceAtom extends Atom {
         return num.intValue();
     }
 
-    public static float[] getLength(String str) {
-        if (str == null) {
-            return new float[]{2.0f, 0.0f};
-        }
-        int i = 0;
-        while (i < str.length() && !Character.isLetter(str.charAt(i))) {
-            i++;
-        }
-        try {
-            return new float[]{i != str.length() ? getUnit(str.substring(i).toLowerCase()) : 2, Float.parseFloat(str.substring(0, i))};
-        } catch (NumberFormatException unused) {
-            return new float[]{Float.NaN};
-        }
-    }
-
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
-        Box box;
-        if (this.blankSpace) {
-            int i = this.blankType;
-            if (i == 0) {
-                return new StrutBox(teXEnvironment.getSpace(), 0.0f, 0.0f, 0.0f);
-            }
-            if (i < 0) {
-                i = -i;
-            }
-            if (i == 1) {
-                box = Glue.get(7, 1, teXEnvironment);
-            } else if (i == 2) {
-                box = Glue.get(2, 1, teXEnvironment);
-            } else {
-                box = Glue.get(3, 1, teXEnvironment);
-            }
-            if (this.blankType < 0) {
-                box.negWidth();
-            }
-            return box;
+        if (!this.blankSpace) {
+            return new StrutBox(getFactor(this.wUnit, teXEnvironment) * this.width, getFactor(this.hUnit, teXEnvironment) * this.height, getFactor(this.dUnit, teXEnvironment) * this.depth, 0.0f);
         }
-        return new StrutBox(this.width * getFactor(this.wUnit, teXEnvironment), this.height * getFactor(this.hUnit, teXEnvironment), this.depth * getFactor(this.dUnit, teXEnvironment), 0.0f);
+        int i10 = this.blankType;
+        if (i10 == 0) {
+            return new StrutBox(teXEnvironment.getSpace(), 0.0f, 0.0f, 0.0f);
+        }
+        if (i10 < 0) {
+            i10 = -i10;
+        }
+        Box box = i10 == 1 ? Glue.get(7, 1, teXEnvironment) : i10 == 2 ? Glue.get(2, 1, teXEnvironment) : Glue.get(3, 1, teXEnvironment);
+        if (this.blankType < 0) {
+            box.negWidth();
+        }
+        return box;
     }
 
-    public static float getFactor(int i, TeXEnvironment teXEnvironment) {
-        return unitConversions[i].getPixelConversion(teXEnvironment);
+    public SpaceAtom(int i10) {
+        this.blankSpace = true;
+        this.blankType = i10;
+    }
+
+    public SpaceAtom(int i10, float f10, float f11, float f12) {
+        checkUnit(i10);
+        this.wUnit = i10;
+        this.hUnit = i10;
+        this.dUnit = i10;
+        this.width = f10;
+        this.height = f11;
+        this.depth = f12;
+    }
+
+    public SpaceAtom(int i10, float f10, int i11, float f11, int i12, float f12) {
+        checkUnit(i10);
+        checkUnit(i11);
+        checkUnit(i12);
+        this.wUnit = i10;
+        this.hUnit = i11;
+        this.dUnit = i12;
+        this.width = f10;
+        this.height = f11;
+        this.depth = f12;
     }
 }

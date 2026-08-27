@@ -1,18 +1,10 @@
 package androidx.lifecycle;
 
-import androidx.lifecycle.Lifecycle;
-import kotlin.jvm.internal.Intrinsics;
-
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class SingleGeneratedAdapterObserver implements LifecycleEventObserver {
-    public SingleGeneratedAdapterObserver(GeneratedAdapter generatedAdapter) {
-        Intrinsics.checkNotNullParameter(generatedAdapter, "generatedAdapter");
-    }
-
-    @Override // androidx.lifecycle.LifecycleEventObserver
-    public void onStateChanged(LifecycleOwner source, Lifecycle.Event event) {
-        Intrinsics.checkNotNullParameter(source, "source");
-        Intrinsics.checkNotNullParameter(event, "event");
+public final class SingleGeneratedAdapterObserver implements r {
+    @Override // androidx.lifecycle.r
+    public final void d(t tVar, m mVar) {
         throw null;
     }
 }

@@ -1,6 +1,7 @@
 package org.webrtc;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public enum VideoCodecStatus {
     TARGET_BITRATE_OVERSHOOT(5),
     REQUEST_SLI(2),
@@ -18,8 +19,8 @@ public enum VideoCodecStatus {
 
     private final int number;
 
-    VideoCodecStatus(int i) {
-        this.number = i;
+    VideoCodecStatus(int i10) {
+        this.number = i10;
     }
 
     public int getNumber() {

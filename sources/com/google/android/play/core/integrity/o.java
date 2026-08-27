@@ -1,8 +1,9 @@
 package com.google.android.play.core.integrity;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class o implements com.google.android.play.integrity.internal.ay {
-    @Override // com.google.android.play.integrity.internal.bd
+public final class o implements l8.n {
+    @Override // l8.q
     public final /* synthetic */ Object a() {
         return new j();
     }

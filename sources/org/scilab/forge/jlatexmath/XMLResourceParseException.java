@@ -1,6 +1,7 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class XMLResourceParseException extends ResourceParseException {
     private static final long serialVersionUID = 2091302779298293946L;
 
@@ -10,14 +11,14 @@ public class XMLResourceParseException extends ResourceParseException {
     */
     public XMLResourceParseException(String str, String str2, String str3, String str4) {
         super(r0.toString());
-        StringBuilder sb = new StringBuilder();
-        sb.append(str);
-        sb.append(": invalid <");
-        sb.append(str2);
-        sb.append(">-element found: attribute '");
-        sb.append(str3);
-        sb.append("' ");
-        sb.append(str4 == null ? "is required!" : str4);
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(str);
+        sb2.append(": invalid <");
+        sb2.append(str2);
+        sb2.append(">-element found: attribute '");
+        sb2.append(str3);
+        sb2.append("' ");
+        sb2.append(str4 == null ? "is required!" : str4);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -26,14 +27,14 @@ public class XMLResourceParseException extends ResourceParseException {
     */
     public XMLResourceParseException(String str, String str2, String str3, String str4, Throwable th) {
         super(r0.toString(), th);
-        StringBuilder sb = new StringBuilder();
-        sb.append(str);
-        sb.append(": invalid <");
-        sb.append(str2);
-        sb.append(">-element found: attribute '");
-        sb.append(str3);
-        sb.append("' ");
-        sb.append(str4 == null ? "is required!" : str4);
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(str);
+        sb2.append(": invalid <");
+        sb2.append(str2);
+        sb2.append(">-element found: attribute '");
+        sb2.append(str3);
+        sb2.append("' ");
+        sb2.append(str4 == null ? "is required!" : str4);
     }
 
     public XMLResourceParseException(String str, String str2) {

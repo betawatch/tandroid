@@ -1,25 +1,24 @@
 package com.google.android.recaptcha.internal;
 
+import id.c0;
+import id.f0;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.CoroutineScopeKt;
+import pc.i;
+import rc.c;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzip implements zzik {
-    private final CoroutineScope zza;
+    private final c0 zza;
     private final zzjb zzb;
     private final zzkt zzc;
     private final Map zzd;
 
-    public zzip(CoroutineScope coroutineScope, zzjb zzjbVar, zzkt zzktVar, Map map) {
-        this.zza = coroutineScope;
+    public zzip(c0 c0Var, zzjb zzjbVar, zzkt zzktVar, Map map) {
+        this.zza = c0Var;
         this.zzb = zzjbVar;
         this.zzc = zzktVar;
         this.zzd = map;
@@ -40,7 +39,7 @@ public final class zzip implements zzik {
         }
         zzb.zzf();
         long zza2 = zzb.zza(TimeUnit.MICROSECONDS);
-        int i = zzco.zza;
+        int i10 = zzco.zza;
         int zzk = zzzuVar.zzk();
         if (zzk == 1) {
             throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
@@ -49,19 +48,19 @@ public final class zzip implements zzik {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final Object zzg(List list, zziz zzizVar, Continuation continuation) {
-        Object coroutineScope = CoroutineScopeKt.coroutineScope(new zzim(zzizVar, list, this, null), continuation);
-        return coroutineScope == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? coroutineScope : Unit.INSTANCE;
+    public final Object zzg(List list, zziz zzizVar, c cVar) {
+        Object f10 = f0.f(new zzim(zzizVar, list, this, null), cVar);
+        return f10 == sc.a.a ? f10 : i.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final Object zzh(Exception exc, zziz zzizVar, Continuation continuation) {
-        Object coroutineScope = CoroutineScopeKt.coroutineScope(new zzin(exc, zzizVar, this, null), continuation);
-        return coroutineScope == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? coroutineScope : Unit.INSTANCE;
+    public final Object zzh(Exception exc, zziz zzizVar, c cVar) {
+        Object f10 = f0.f(new zzin(exc, zzizVar, this, null), cVar);
+        return f10 == sc.a.a ? f10 : i.a;
     }
 
     @Override // com.google.android.recaptcha.internal.zzik
     public final void zza(String str) {
-        BuildersKt__Builders_commonKt.launch$default(this.zza, null, null, new zzio(new zziz(this.zzb), this, str, null), 3, null);
+        f0.q(this.zza, new zzio(new zziz(this.zzb), this, str, null));
     }
 }

@@ -1,47 +1,46 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.CoroutineScope;
+import ad.l;
+import ad.p;
+import h7.k6;
+import id.c0;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzcw extends SuspendLambda implements Function2 {
+final class zzcw extends i implements p {
     int zza;
-    final /* synthetic */ Function1 zzb;
+    final /* synthetic */ l zzb;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzcw(int i, long j, long j2, double d, Function1 function1, Continuation continuation) {
-        super(2, continuation);
-        this.zzb = function1;
+    public zzcw(int i10, long j10, long j11, double d, l lVar, c cVar) {
+        super(2, cVar);
+        this.zzb = lVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzcw(20, 100L, 1000L, 2.0d, this.zzb, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        return new zzcw(20, 100L, 1000L, 2.0d, this.zzb, cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzcw) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzcw) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zza;
-        ResultKt.throwOnFailure(obj);
-        if (i != 0) {
+        sc.a aVar = sc.a.a;
+        int i10 = this.zza;
+        k6.b(obj);
+        if (i10 != 0) {
             return obj;
         }
-        Function1 function1 = this.zzb;
+        l lVar = this.zzb;
         zzcx zzcxVar = zzcx.zza;
         this.zza = 1;
-        Object zza = zzcxVar.zza(20, 100L, 1000L, 2.0d, function1, this);
-        return zza == coroutine_suspended ? coroutine_suspended : zza;
+        Object zza = zzcxVar.zza(20, 100L, 1000L, 2.0d, lVar, this);
+        return zza == aVar ? aVar : zza;
     }
 }

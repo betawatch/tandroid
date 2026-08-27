@@ -11,11 +11,13 @@ import android.content.SyncResult;
 import android.os.Bundle;
 import android.os.IBinder;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class ContactsSyncAdapterService extends Service {
     private static SyncAdapterImpl sSyncAdapter;
 
-    private static class SyncAdapterImpl extends AbstractThreadedSyncAdapter {
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class SyncAdapterImpl extends AbstractThreadedSyncAdapter {
         private Context mContext;
 
         public SyncAdapterImpl(Context context) {
@@ -27,15 +29,10 @@ public class ContactsSyncAdapterService extends Service {
         public void onPerformSync(Account account, Bundle bundle, String str, ContentProviderClient contentProviderClient, SyncResult syncResult) {
             try {
                 ContactsSyncAdapterService.performSync(this.mContext, account, bundle, str, contentProviderClient, syncResult);
-            } catch (OperationCanceledException e) {
-                FileLog.e(e);
+            } catch (OperationCanceledException e9) {
+                FileLog.e(e9);
             }
         }
-    }
-
-    @Override // android.app.Service
-    public IBinder onBind(Intent intent) {
-        return getSyncAdapter().getSyncAdapterBinder();
     }
 
     private SyncAdapterImpl getSyncAdapter() {
@@ -50,5 +47,10 @@ public class ContactsSyncAdapterService extends Service {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("performSync: " + account.toString());
         }
+    }
+
+    @Override // android.app.Service
+    public IBinder onBind(Intent intent) {
+        return getSyncAdapter().getSyncAdapterBinder();
     }
 }

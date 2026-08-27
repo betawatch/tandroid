@@ -32,63 +32,62 @@ public final class o extends n {
     /* JADX WARN: Type inference failed for: r0v3 */
     /* JADX WARN: Type inference failed for: r0v9 */
     @Override // j$.time.format.n, j$.time.format.f
-    public final boolean l(r rVar, StringBuilder sb) {
-        ?? r0;
+    public final boolean j(r rVar, StringBuilder sb2) {
+        ?? r02;
         String[] strArr;
         ZoneId zoneId = (ZoneId) rVar.b(j$.time.temporal.p.a);
         if (zoneId == null) {
             return false;
         }
-        String id = zoneId.getId();
+        String id2 = zoneId.getId();
         if (!(zoneId instanceof ZoneOffset)) {
-            j$.time.temporal.a aVar = j$.time.temporal.a.INSTANT_SECONDS;
             j$.time.temporal.l lVar = rVar.a;
             String str = null;
             Map map = null;
-            if (lVar.h(aVar)) {
-                r0 = zoneId.getRules().g(Instant.H(lVar));
+            if (lVar.e(j$.time.temporal.a.INSTANT_SECONDS)) {
+                r02 = zoneId.getRules().g(Instant.H(lVar));
             } else {
-                j$.time.temporal.a aVar2 = j$.time.temporal.a.EPOCH_DAY;
-                if (lVar.h(aVar2)) {
-                    j$.time.temporal.a aVar3 = j$.time.temporal.a.NANO_OF_DAY;
-                    if (lVar.h(aVar3)) {
-                        LocalDateTime J = LocalDateTime.J(LocalDate.R(lVar.u(aVar2)), j$.time.h.K(lVar.u(aVar3)));
+                j$.time.temporal.a aVar = j$.time.temporal.a.EPOCH_DAY;
+                if (lVar.e(aVar)) {
+                    j$.time.temporal.a aVar2 = j$.time.temporal.a.NANO_OF_DAY;
+                    if (lVar.e(aVar2)) {
+                        LocalDateTime J = LocalDateTime.J(LocalDate.R(lVar.y(aVar)), j$.time.h.K(lVar.y(aVar2)));
                         if (zoneId.getRules().e(J) == null) {
-                            r0 = zoneId.getRules().g(Instant.I(ZonedDateTime.H(J, zoneId, null).G(), r0.c().d));
+                            r02 = zoneId.getRules().g(Instant.I(ZonedDateTime.H(J, zoneId, null).F(), r0.b().d));
                         }
                     }
                 }
-                r0 = 2;
+                r02 = 2;
             }
             Locale locale = rVar.b.b;
             TextStyle textStyle = TextStyle.NARROW;
             TextStyle textStyle2 = this.c;
             if (textStyle2 != textStyle) {
                 ConcurrentHashMap concurrentHashMap = d;
-                SoftReference softReference = (SoftReference) concurrentHashMap.get(id);
+                SoftReference softReference = (SoftReference) concurrentHashMap.get(id2);
                 if (softReference == null || (map = (Map) softReference.get()) == null || (strArr = (String[]) map.get(locale)) == null) {
-                    TimeZone timeZone = TimeZone.getTimeZone(id);
-                    String[] strArr2 = {id, timeZone.getDisplayName(false, 1, locale), timeZone.getDisplayName(false, 0, locale), timeZone.getDisplayName(true, 1, locale), timeZone.getDisplayName(true, 0, locale), id, id};
+                    TimeZone timeZone = TimeZone.getTimeZone(id2);
+                    String[] strArr2 = {id2, timeZone.getDisplayName(false, 1, locale), timeZone.getDisplayName(false, 0, locale), timeZone.getDisplayName(true, 1, locale), timeZone.getDisplayName(true, 0, locale), id2, id2};
                     if (map == null) {
                         map = new ConcurrentHashMap();
                     }
                     map.put(locale, strArr2);
-                    concurrentHashMap.put(id, new SoftReference(map));
+                    concurrentHashMap.put(id2, new SoftReference(map));
                     strArr = strArr2;
                 }
-                if (r0 == 0) {
+                if (r02 == 0) {
                     str = strArr[textStyle2.a + 1];
-                } else if (r0 == 1) {
+                } else if (r02 == 1) {
                     str = strArr[textStyle2.a + 3];
                 } else {
                     str = strArr[textStyle2.a + 5];
                 }
             }
             if (str != null) {
-                id = str;
+                id2 = str;
             }
         }
-        sb.append(id);
+        sb2.append(id2);
         return true;
     }
 }

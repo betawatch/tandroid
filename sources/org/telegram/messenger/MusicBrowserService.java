@@ -6,9 +6,9 @@ import android.os.Process;
 import android.service.media.MediaBrowserService;
 import android.widget.Toast;
 import java.util.List;
-import org.telegram.messenger.TelegramMediaSession;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class MusicBrowserService extends MediaBrowserService {
     private static final String MEDIA_ID_ROOT = "__ROOT__";
 
@@ -25,31 +25,26 @@ public class MusicBrowserService extends MediaBrowserService {
     }
 
     @Override // android.service.media.MediaBrowserService
-    public MediaBrowserService.BrowserRoot onGetRoot(String str, int i, Bundle bundle) {
+    public MediaBrowserService.BrowserRoot onGetRoot(String str, int i10, Bundle bundle) {
         if (str == null) {
             return null;
         }
-        if ((1000 == i || Process.myUid() == i || PackageValidator.isKnownCaller(this, str, i)) && !TelegramMediaSession.getInstance(this).isPasscodeLocked()) {
+        if ((1000 == i10 || Process.myUid() == i10 || PackageValidator.isKnownCaller(this, str, i10)) && !TelegramMediaSession.getInstance(this).isPasscodeLocked()) {
             return new MediaBrowserService.BrowserRoot(MEDIA_ID_ROOT, TelegramMediaSession.getInstance(this).buildRootHints());
         }
         return null;
     }
 
     @Override // android.service.media.MediaBrowserService
-    public void onLoadChildren(String str, final MediaBrowserService.Result<List<MediaBrowser.MediaItem>> result) {
+    public void onLoadChildren(String str, MediaBrowserService.Result<List<MediaBrowser.MediaItem>> result) {
         TelegramMediaSession telegramMediaSession = TelegramMediaSession.getInstance(this);
-        if (telegramMediaSession.isPasscodeLocked()) {
+        if (!telegramMediaSession.isPasscodeLocked()) {
+            result.detach();
+            telegramMediaSession.loadBrowseChildren(str, new d(result, 9));
+        } else {
             Toast.makeText(getApplicationContext(), LocaleController.getString(R.string.EnterYourTelegramPasscode), 1).show();
             stopSelf();
             result.detach();
-        } else {
-            result.detach();
-            telegramMediaSession.loadBrowseChildren(str, new TelegramMediaSession.BrowseChildrenCallback() { // from class: org.telegram.messenger.MusicBrowserService$$ExternalSyntheticLambda0
-                @Override // org.telegram.messenger.TelegramMediaSession.BrowseChildrenCallback
-                public final void onResult(List list) {
-                    result.sendResult(list);
-                }
-            });
         }
     }
 }

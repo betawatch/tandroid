@@ -9,7 +9,7 @@ public final class c extends Charset {
     public static final c a;
 
     static {
-        int i = d.a;
+        int i10 = d.a;
         a = new c("ISO-8859-1", new String[]{"iso-ir-100", "ISO_8859-1", "latin1", "l1", "IBM819", "cp819", "csISOLatin1", "819", "IBM-819", "ISO8859_1", "ISO_8859-1:1987", "ISO_8859_1", "8859_1", "ISO8859-1"});
     }
 

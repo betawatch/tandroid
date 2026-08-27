@@ -6,14 +6,13 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Utilities;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class VoipAudioManager {
     private Boolean isSpeakerphoneOn;
 
-    private VoipAudioManager() {
-    }
-
-    private static final class InstanceHolder {
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static final class InstanceHolder {
         static final VoipAudioManager instance = new VoipAudioManager();
 
         private InstanceHolder() {
@@ -24,47 +23,35 @@ public class VoipAudioManager {
         return InstanceHolder.instance;
     }
 
-    public void setSpeakerphoneOn(final boolean z) {
-        this.isSpeakerphoneOn = Boolean.valueOf(z);
-        final AudioManager audioManager = getAudioManager();
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoipAudioManager$$ExternalSyntheticLambda1
-            @Override // java.lang.Runnable
-            public final void run() {
-                audioManager.setSpeakerphoneOn(z);
-            }
-        });
+    private AudioManager getAudioManager() {
+        return (AudioManager) ApplicationLoader.applicationContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$isBluetoothAndSpeakerOnAsync$1(Utilities.Callback2 callback2, boolean z10, boolean z11) {
+        callback2.run(Boolean.valueOf(z10), Boolean.valueOf(z11));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$isBluetoothAndSpeakerOnAsync$2(Utilities.Callback2 callback2) {
+        AudioManager audioManager = getAudioManager();
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.k(callback2, audioManager.isBluetoothScoOn(), audioManager.isSpeakerphoneOn(), 2));
+    }
+
+    public void isBluetoothAndSpeakerOnAsync(Utilities.Callback2<Boolean, Boolean> callback2) {
+        Utilities.globalQueue.postRunnable(new l0(1, this, callback2));
     }
 
     public boolean isSpeakerphoneOn() {
         Boolean bool = this.isSpeakerphoneOn;
-        if (bool == null) {
-            return getAudioManager().isSpeakerphoneOn();
-        }
-        return bool.booleanValue();
+        return bool == null ? getAudioManager().isSpeakerphoneOn() : bool.booleanValue();
     }
 
-    public void isBluetoothAndSpeakerOnAsync(final Utilities.Callback2<Boolean, Boolean> callback2) {
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoipAudioManager$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                VoipAudioManager.$r8$lambda$Gk-upENbEtcGx9B-_eS_5XMimzM(VoipAudioManager.this, callback2);
-            }
-        });
+    public void setSpeakerphoneOn(boolean z10) {
+        this.isSpeakerphoneOn = Boolean.valueOf(z10);
+        Utilities.globalQueue.postRunnable(new fh.f(21, getAudioManager(), z10));
     }
 
-    public static /* synthetic */ void $r8$lambda$Gk-upENbEtcGx9B-_eS_5XMimzM(VoipAudioManager voipAudioManager, final Utilities.Callback2 callback2) {
-        AudioManager audioManager = voipAudioManager.getAudioManager();
-        final boolean isBluetoothScoOn = audioManager.isBluetoothScoOn();
-        final boolean isSpeakerphoneOn = audioManager.isSpeakerphoneOn();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoipAudioManager$$ExternalSyntheticLambda2
-            @Override // java.lang.Runnable
-            public final void run() {
-                Utilities.Callback2.this.run(Boolean.valueOf(isBluetoothScoOn), Boolean.valueOf(isSpeakerphoneOn));
-            }
-        });
-    }
-
-    private AudioManager getAudioManager() {
-        return (AudioManager) ApplicationLoader.applicationContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+    private VoipAudioManager() {
     }
 }

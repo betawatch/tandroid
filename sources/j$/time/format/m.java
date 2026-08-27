@@ -2,47 +2,47 @@ package j$.time.format;
 
 /* loaded from: classes2.dex */
 public final class m implements f {
-    public final j$.time.temporal.a a;
+    public final j$.time.temporal.o a;
     public final TextStyle b;
     public final u c;
     public volatile i d;
 
-    public m(j$.time.temporal.a aVar, TextStyle textStyle, u uVar) {
-        this.a = aVar;
+    public m(j$.time.temporal.o oVar, TextStyle textStyle, u uVar) {
+        this.a = oVar;
         this.b = textStyle;
         this.c = uVar;
     }
 
     @Override // j$.time.format.f
-    public final boolean l(r rVar, StringBuilder sb) {
-        String b;
-        Long a = rVar.a(this.a);
-        if (a == null) {
+    public final boolean j(r rVar, StringBuilder sb2) {
+        String b10;
+        Long a2 = rVar.a(this.a);
+        if (a2 == null) {
             return false;
         }
-        j$.time.chrono.k kVar = (j$.time.chrono.k) rVar.a.r(j$.time.temporal.p.b);
+        j$.time.chrono.k kVar = (j$.time.chrono.k) rVar.a.m(j$.time.temporal.p.b);
         if (kVar == null || kVar == j$.time.chrono.r.c) {
-            b = this.c.b(this.a, a.longValue(), this.b, rVar.b.b);
+            b10 = this.c.b(this.a, a2.longValue(), this.b, rVar.b.b);
         } else {
-            b = this.c.a(kVar, this.a, a.longValue(), this.b, rVar.b.b);
+            b10 = this.c.a(kVar, this.a, a2.longValue(), this.b, rVar.b.b);
         }
-        if (b != null) {
-            sb.append(b);
+        if (b10 != null) {
+            sb2.append(b10);
             return true;
         }
         if (this.d == null) {
             this.d = new i(this.a, 1, 19, x.NORMAL);
         }
-        return this.d.l(rVar, sb);
+        return this.d.j(rVar, sb2);
     }
 
     public final String toString() {
         TextStyle textStyle = TextStyle.FULL;
-        j$.time.temporal.a aVar = this.a;
+        j$.time.temporal.o oVar = this.a;
         TextStyle textStyle2 = this.b;
         if (textStyle2 == textStyle) {
-            return "Text(" + aVar + ")";
+            return "Text(" + oVar + ")";
         }
-        return "Text(" + aVar + "," + textStyle2 + ")";
+        return "Text(" + oVar + "," + textStyle2 + ")";
     }
 }

@@ -1,37 +1,27 @@
 package com.google.mlkit.vision.label.internal;
 
-import com.google.android.gms.common.Feature;
-import com.google.android.gms.tasks.Task;
-import com.google.mlkit.common.sdkinternal.MLTask;
-import com.google.mlkit.common.sdkinternal.OptionalModuleUtils;
-import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.common.internal.MobileVisionBase;
-import com.google.mlkit.vision.label.ImageLabel;
-import com.google.mlkit.vision.label.ImageLabeler;
+import gb.a;
+import gb.b;
 import java.util.List;
 import java.util.concurrent.Executor;
+import v5.c;
+import za.e;
+import za.j;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class ImageLabelerImpl extends MobileVisionBase<List<ImageLabel>> implements ImageLabeler {
-    private final Feature zzb;
+public class ImageLabelerImpl extends MobileVisionBase<List<a>> implements b {
+    public final c f;
 
-    private ImageLabelerImpl(MLTask mLTask, Executor executor, Feature feature) {
-        super(mLTask, executor);
-        this.zzb = feature;
+    public ImageLabelerImpl(e eVar, Executor executor, c cVar) {
+        super(eVar, executor);
+        this.f = cVar;
     }
 
-    @Override // com.google.android.gms.common.api.OptionalModuleApi
-    public final Feature[] getOptionalFeatures() {
-        Feature feature = this.zzb;
-        return feature != null ? new Feature[]{feature} : OptionalModuleUtils.EMPTY_FEATURES;
-    }
-
-    public static ImageLabelerImpl newInstance(MLTask mLTask, Executor executor, Feature feature) {
-        return new ImageLabelerImpl(mLTask, executor, feature);
-    }
-
-    @Override // com.google.mlkit.vision.label.ImageLabeler
-    public final Task process(InputImage inputImage) {
-        return processBase(inputImage);
+    @Override // com.google.android.gms.common.api.n
+    public final c[] c() {
+        c cVar = this.f;
+        return cVar != null ? new c[]{cVar} : j.a;
     }
 }

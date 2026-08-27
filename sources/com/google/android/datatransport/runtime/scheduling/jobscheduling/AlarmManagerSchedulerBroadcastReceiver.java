@@ -1,34 +1,37 @@
 package com.google.android.datatransport.runtime.scheduling.jobscheduling;
 
+import ag.k0;
+import ag.l3;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Base64;
-import com.google.android.datatransport.runtime.TransportContext;
-import com.google.android.datatransport.runtime.TransportRuntime;
-import com.google.android.datatransport.runtime.util.PriorityMapping;
+import c3.g;
+import g3.a;
+import java.util.concurrent.Executor;
+import u2.b;
+import w2.i;
+import w2.q;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
-    public static /* synthetic */ void $r8$lambda$a3lqwlC30QrIt23aPM9gZcB4sXs() {
-    }
+    public static final /* synthetic */ int a = 0;
 
     @Override // android.content.BroadcastReceiver
-    public void onReceive(Context context, Intent intent) {
+    public final void onReceive(Context context, Intent intent) {
         String queryParameter = intent.getData().getQueryParameter("backendName");
         String queryParameter2 = intent.getData().getQueryParameter("extras");
         int intValue = Integer.valueOf(intent.getData().getQueryParameter("priority")).intValue();
-        int i = intent.getExtras().getInt("attemptNumber");
-        TransportRuntime.initialize(context);
-        TransportContext.Builder priority = TransportContext.builder().setBackendName(queryParameter).setPriority(PriorityMapping.valueOf(intValue));
+        int i10 = intent.getExtras().getInt("attemptNumber");
+        q.b(context);
+        b a2 = i.a();
+        a2.h(queryParameter);
+        a2.d = a.b(intValue);
         if (queryParameter2 != null) {
-            priority.setExtras(Base64.decode(queryParameter2, 0));
+            a2.c = Base64.decode(queryParameter2, 0);
         }
-        TransportRuntime.getInstance().getUploader().upload(priority.build(), i, new Runnable() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                AlarmManagerSchedulerBroadcastReceiver.$r8$lambda$a3lqwlC30QrIt23aPM9gZcB4sXs();
-            }
-        });
+        g gVar = q.a().d;
+        ((Executor) gVar.e).execute(new k0(gVar, a2.d(), i10, new l3(1), 1));
     }
 }

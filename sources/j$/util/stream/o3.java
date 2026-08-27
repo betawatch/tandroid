@@ -1,44 +1,35 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-public final class o3 extends r3 implements j$.util.T, DoubleConsumer {
-    public double f;
+public final class o3 extends p3 {
+    public final Object[] h;
 
-    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
-        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
+    public o3(Spliterator spliterator, t3 t3Var, Object[] objArr) {
+        super(spliterator, t3Var, objArr.length);
+        this.h = objArr;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.i(this, consumer);
+    public o3(o3 o3Var, Spliterator spliterator, long j10, long j11) {
+        super(o3Var, spliterator, j10, j11, o3Var.h.length);
+        this.h = o3Var.h;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.z(this, consumer);
+    @Override // j$.util.stream.p3
+    public final p3 a(Spliterator spliterator, long j10, long j11) {
+        return new o3(this, spliterator, j10, j11);
     }
 
-    @Override // j$.util.stream.u3
-    public final Spliterator c(Spliterator spliterator) {
-        return new o3((j$.util.T) spliterator, this);
-    }
-
-    @Override // j$.util.stream.r3
-    public final void e(Object obj) {
-        ((DoubleConsumer) obj).accept(this.f);
-    }
-
-    @Override // java.util.function.DoubleConsumer
-    public final void accept(double d) {
-        this.f = d;
-    }
-
-    @Override // j$.util.stream.r3
-    public final Y2 f(int i) {
-        return new V2(i);
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
+        int i10 = this.f;
+        if (i10 >= this.g) {
+            throw new IndexOutOfBoundsException(Integer.toString(this.f));
+        }
+        Object[] objArr = this.h;
+        this.f = i10 + 1;
+        objArr[i10] = obj;
     }
 }

@@ -18,21 +18,21 @@ import android.os.Handler;
 import android.os.PowerManager;
 import android.os.SystemClock;
 import android.view.ViewGroup;
-import com.google.android.gms.common.GooglePlayServicesUtil;
 import java.io.File;
 import java.util.Locale;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
 import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.Components.ForegroundDetector;
-import org.telegram.ui.Components.ItemOptions;
+import org.telegram.ui.Components.b70;
+import org.telegram.ui.Components.u00;
 import org.telegram.ui.IUpdateLayout;
-import org.telegram.ui.LauncherIconController;
+import org.telegram.ui.ta0;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class ApplicationLoader extends Application {
     public static volatile Context applicationContext = null;
     public static volatile Handler applicationHandler = null;
@@ -56,34 +56,370 @@ public class ApplicationLoader extends Application {
     private static PushListenerController.IPushListenerServiceProvider pushProvider;
     public static long startTime;
 
-    public void addItemOptions(ItemOptions itemOptions) {
+    public static void appCenterLog(Throwable th) {
+        applicationLoaderInstance.appCenterLogInternal(th);
     }
 
-    protected void appCenterLogInternal(Throwable th) {
+    public static void checkForUpdates() {
+        applicationLoaderInstance.checkForUpdatesInternal();
     }
 
-    public void cancelDownloadingUpdate() {
+    private boolean checkPlayServices() {
+        try {
+            AtomicBoolean atomicBoolean = v5.g.a;
+            return v5.g.b(this, 12451000) == 0;
+        } catch (Exception e9) {
+            FileLog.e(e9);
+            return true;
+        }
+    }
+
+    private static void ensureCurrentNetworkGet() {
+        long currentTimeMillis = System.currentTimeMillis();
+        ensureCurrentNetworkGet(currentTimeMillis - lastNetworkCheck > 5000);
+        lastNetworkCheck = currentTimeMillis;
+    }
+
+    public static String getApplicationId() {
+        return applicationLoaderInstance.onGetApplicationId();
+    }
+
+    public static int getAutodownloadNetworkType() {
+        int i10;
+        try {
+            ensureCurrentNetworkGet(false);
+        } catch (Exception e9) {
+            FileLog.e(e9);
+        }
+        if (currentNetworkInfo == null) {
+            return 0;
+        }
+        if (currentNetworkInfo.getType() != 1 && currentNetworkInfo.getType() != 9) {
+            return currentNetworkInfo.isRoaming() ? 2 : 0;
+        }
+        if (Build.VERSION.SDK_INT >= 24 && (((i10 = lastKnownNetworkType) == 0 || i10 == 1) && System.currentTimeMillis() - lastNetworkCheckTypeTime < 5000)) {
+            return lastKnownNetworkType;
+        }
+        if (connectivityManager.isActiveNetworkMetered()) {
+            lastKnownNetworkType = 0;
+        } else {
+            lastKnownNetworkType = 1;
+        }
+        lastNetworkCheckTypeTime = System.currentTimeMillis();
+        return lastKnownNetworkType;
+    }
+
+    public static int getCurrentNetworkType() {
+        if (isConnectedOrConnectingToWiFi()) {
+            return 1;
+        }
+        return isRoaming() ? 2 : 0;
+    }
+
+    public static File getFilesDirFixed() {
+        for (int i10 = 0; i10 < 10; i10++) {
+            File filesDir = applicationContext.getFilesDir();
+            if (filesDir != null) {
+                return filesDir;
+            }
+        }
+        try {
+            File file = new File(applicationContext.getApplicationInfo().dataDir, "files");
+            file.mkdirs();
+            return file;
+        } catch (Exception e9) {
+            FileLog.e(e9);
+            return new File("/data/data/org.telegram.messenger/files");
+        }
+    }
+
+    public static ILocationServiceProvider getLocationServiceProvider() {
+        if (locationServiceProvider == null) {
+            ILocationServiceProvider onCreateLocationServiceProvider = applicationLoaderInstance.onCreateLocationServiceProvider();
+            locationServiceProvider = onCreateLocationServiceProvider;
+            onCreateLocationServiceProvider.init(applicationContext);
+        }
+        return locationServiceProvider;
+    }
+
+    public static IMapsProvider getMapsProvider() {
+        if (mapsProvider == null) {
+            mapsProvider = applicationLoaderInstance.onCreateMapsProvider();
+        }
+        return mapsProvider;
+    }
+
+    public static PushListenerController.IPushListenerServiceProvider getPushProvider() {
+        if (pushProvider == null) {
+            pushProvider = applicationLoaderInstance.onCreatePushProvider();
+        }
+        return pushProvider;
+    }
+
+    private void initPushServices() {
+        AndroidUtilities.runOnUIThread(new w1(5), 1000L);
+    }
+
+    public static boolean isAndroidTestEnvironment() {
+        return applicationLoaderInstance.isAndroidTestEnv();
+    }
+
+    public static boolean isBetaBuild() {
+        return applicationLoaderInstance.isBeta();
+    }
+
+    public static boolean isConnectedOrConnectingToWiFi() {
+        try {
+            ensureCurrentNetworkGet(false);
+            if (currentNetworkInfo != null) {
+                if (currentNetworkInfo.getType() != 1) {
+                    if (currentNetworkInfo.getType() == 9) {
+                    }
+                }
+                NetworkInfo.State state = currentNetworkInfo.getState();
+                if (state != NetworkInfo.State.CONNECTED && state != NetworkInfo.State.CONNECTING) {
+                    if (state == NetworkInfo.State.SUSPENDED) {
+                    }
+                }
+                return true;
+            }
+        } catch (Exception e9) {
+            FileLog.e(e9);
+        }
+        return false;
+    }
+
+    public static boolean isConnectedToWiFi() {
+        try {
+            ensureCurrentNetworkGet(false);
+            if (currentNetworkInfo != null) {
+                if (currentNetworkInfo.getType() != 1) {
+                    if (currentNetworkInfo.getType() == 9) {
+                    }
+                }
+                if (currentNetworkInfo.getState() == NetworkInfo.State.CONNECTED) {
+                    return true;
+                }
+            }
+        } catch (Exception e9) {
+            FileLog.e(e9);
+        }
+        return false;
+    }
+
+    public static boolean isConnectionSlow() {
+        try {
+            ensureCurrentNetworkGet(false);
+            if (currentNetworkInfo != null && currentNetworkInfo.getType() == 0) {
+                int subtype = currentNetworkInfo.getSubtype();
+                if (subtype == 1 || subtype == 2 || subtype == 4 || subtype == 7 || subtype == 11) {
+                    return true;
+                }
+            }
+        } catch (Throwable unused) {
+        }
+        return false;
+    }
+
+    public static boolean isHuaweiStoreBuild() {
+        return applicationLoaderInstance.isHuaweiBuild();
+    }
+
+    public static boolean isNetworkOnline() {
+        boolean isNetworkOnlineRealtime = isNetworkOnlineRealtime();
+        if (BuildVars.DEBUG_PRIVATE_VERSION && isNetworkOnlineRealtime != isNetworkOnlineFast()) {
+            FileLog.d("network online mismatch");
+        }
+        return isNetworkOnlineRealtime;
+    }
+
+    public static boolean isNetworkOnlineFast() {
+        try {
+            ensureCurrentNetworkGet(false);
+            if (currentNetworkInfo != null && !currentNetworkInfo.isConnectedOrConnecting() && !currentNetworkInfo.isAvailable()) {
+                NetworkInfo networkInfo = connectivityManager.getNetworkInfo(0);
+                if (networkInfo != null && networkInfo.isConnectedOrConnecting()) {
+                    return true;
+                }
+                NetworkInfo networkInfo2 = connectivityManager.getNetworkInfo(1);
+                if (networkInfo2 != null) {
+                    if (networkInfo2.isConnectedOrConnecting()) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            return true;
+        } catch (Exception e9) {
+            FileLog.e(e9);
+            return true;
+        }
+    }
+
+    public static boolean isNetworkOnlineRealtime() {
+        try {
+            ConnectivityManager connectivityManager2 = (ConnectivityManager) applicationContext.getSystemService("connectivity");
+            NetworkInfo activeNetworkInfo = connectivityManager2.getActiveNetworkInfo();
+            if (activeNetworkInfo == null || (!activeNetworkInfo.isConnectedOrConnecting() && !activeNetworkInfo.isAvailable())) {
+                NetworkInfo networkInfo = connectivityManager2.getNetworkInfo(0);
+                if (networkInfo != null && networkInfo.isConnectedOrConnecting()) {
+                    return true;
+                }
+                NetworkInfo networkInfo2 = connectivityManager2.getNetworkInfo(1);
+                if (networkInfo2 != null) {
+                    if (networkInfo2.isConnectedOrConnecting()) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            return true;
+        } catch (Exception e9) {
+            FileLog.e(e9);
+            return true;
+        }
+    }
+
+    public static boolean isRoaming() {
+        try {
+            ensureCurrentNetworkGet(false);
+            if (currentNetworkInfo != null) {
+                if (currentNetworkInfo.isRoaming()) {
+                    return true;
+                }
+            }
+            return false;
+        } catch (Exception e9) {
+            FileLog.e(e9);
+            return false;
+        }
+    }
+
+    public static boolean isStandaloneBuild() {
+        return applicationLoaderInstance.isStandalone();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$initPushServices$0() {
+        if (getPushProvider().hasServices()) {
+            getPushProvider().onRequestPushToken();
+            return;
+        }
+        if (BuildVars.LOGS_ENABLED) {
+            FileLog.d("No valid " + getPushProvider().getLogTitle() + " APK found.");
+        }
+        SharedConfig.pushStringStatus = "__NO_GOOGLE_PLAY_SERVICES__";
+        PushListenerController.sendRegistrationToServer(getPushProvider().getPushType(), null);
+    }
+
+    public static void logDualCamera(boolean z10, boolean z11) {
+        applicationLoaderInstance.logDualCameraInternal(z10, z11);
+    }
+
+    public static void postInitApplication() {
+        if (applicationInited || applicationContext == null) {
+            return;
+        }
+        applicationInited = true;
+        NativeLoader.initNativeLibs(applicationContext);
+        try {
+            LocaleController.getInstance();
+        } catch (Exception e9) {
+            e9.printStackTrace();
+        }
+        try {
+            connectivityManager = (ConnectivityManager) applicationContext.getSystemService("connectivity");
+            applicationContext.registerReceiver(new BroadcastReceiver() { // from class: org.telegram.messenger.ApplicationLoader.1
+                @Override // android.content.BroadcastReceiver
+                public void onReceive(Context context, Intent intent) {
+                    try {
+                        ApplicationLoader.currentNetworkInfo = ApplicationLoader.connectivityManager.getActiveNetworkInfo();
+                    } catch (Throwable unused) {
+                    }
+                    boolean isConnectionSlow = ApplicationLoader.isConnectionSlow();
+                    for (int i10 = 0; i10 < 4; i10++) {
+                        ConnectionsManager.getInstance(i10).checkConnection();
+                        FileLoader.getInstance(i10).onNetworkChanged(isConnectionSlow);
+                    }
+                }
+            }, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+        } catch (Exception e10) {
+            e10.printStackTrace();
+        }
+        try {
+            IntentFilter intentFilter = new IntentFilter("android.intent.action.SCREEN_ON");
+            intentFilter.addAction("android.intent.action.SCREEN_OFF");
+            applicationContext.registerReceiver(new ScreenReceiver(), intentFilter);
+        } catch (Exception e11) {
+            e11.printStackTrace();
+        }
+        try {
+            isScreenOn = ((PowerManager) applicationContext.getSystemService("power")).isScreenOn();
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.d("screen state = " + isScreenOn);
+            }
+        } catch (Exception e12) {
+            e12.printStackTrace();
+        }
+        SharedConfig.loadConfig();
+        SharedPrefsHelper.init(applicationContext);
+        for (int i10 = 0; i10 < 4; i10++) {
+            UserConfig.getInstance(i10).loadConfig();
+            MessagesController.getInstance(i10);
+            if (i10 == 0) {
+                SharedConfig.pushStringStatus = "__FIREBASE_GENERATING_SINCE_" + ConnectionsManager.getInstance(i10).getCurrentTime() + "__";
+            } else {
+                ConnectionsManager.getInstance(i10);
+            }
+            TLRPC.User currentUser = UserConfig.getInstance(i10).getCurrentUser();
+            if (currentUser != null) {
+                MessagesController.getInstance(i10).putUser(currentUser, true);
+                SendMessagesHelper.getInstance(i10).checkUnsentMessages();
+            }
+        }
+        ((ApplicationLoader) applicationContext).initPushServices();
+        if (BuildVars.LOGS_ENABLED) {
+            FileLog.d("app initied");
+        }
+        MediaController.getInstance();
+        for (int i11 = 0; i11 < 4; i11++) {
+            ContactsController.getInstance(i11).checkAppAccount();
+            DownloadController.getInstance(i11);
+        }
+        BillingController.getInstance().lambda$onBillingServiceDisconnected$13();
+    }
+
+    public static void startAppCenter(Activity activity) {
+        applicationLoaderInstance.startAppCenterInternal(activity);
+    }
+
+    public static void startPushService() {
+        SharedPreferences globalNotificationsSettings = MessagesController.getGlobalNotificationsSettings();
+        if (!(globalNotificationsSettings.contains("pushService") ? globalNotificationsSettings.getBoolean("pushService", true) : MessagesController.getMainSettings(UserConfig.selectedAccount).getBoolean("keepAliveService", false))) {
+            applicationContext.stopService(new Intent(applicationContext, (Class<?>) NotificationsService.class));
+        } else {
+            try {
+                applicationContext.startService(new Intent(applicationContext, (Class<?>) NotificationsService.class));
+            } catch (Throwable unused) {
+            }
+        }
+    }
+
+    @Override // android.content.ContextWrapper
+    public void attachBaseContext(Context context) {
+        super.attachBaseContext(context);
     }
 
     public boolean checkApkInstallPermissions(Context context) {
         return false;
     }
 
-    protected void checkForUpdatesInternal() {
-    }
-
-    public boolean checkRequestPermissionResult(int i, String[] strArr, int[] iArr) {
+    public boolean checkRequestPermissionResult(int i10, String[] strArr, int[] iArr) {
         return false;
     }
 
-    public void checkUpdate(boolean z, Runnable runnable) {
-    }
-
-    public boolean consumePush(int i, JSONObject jSONObject) {
+    public boolean consumePush(int i10, JSONObject jSONObject) {
         return false;
-    }
-
-    public void downloadUpdate() {
     }
 
     public File getDownloadedUpdateFile() {
@@ -98,11 +434,11 @@ public class ApplicationLoader extends Application {
         return null;
     }
 
-    protected boolean isAndroidTestEnv() {
+    public boolean isAndroidTestEnv() {
         return false;
     }
 
-    protected boolean isBeta() {
+    public boolean isBeta() {
         return false;
     }
 
@@ -114,26 +450,126 @@ public class ApplicationLoader extends Application {
         return false;
     }
 
-    protected boolean isHuaweiBuild() {
+    public boolean isHuaweiBuild() {
         return false;
     }
 
-    protected boolean isStandalone() {
+    public boolean isStandalone() {
         return false;
     }
 
-    protected void logDualCameraInternal(boolean z, boolean z2) {
+    @Override // android.app.Application, android.content.ComponentCallbacks
+    public void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        try {
+            LocaleController.getInstance().onDeviceConfigurationChange(configuration);
+            AndroidUtilities.checkDisplaySize(applicationContext, configuration);
+            VideoCapturerDevice.checkScreenCapturerSize();
+            AndroidUtilities.resetTabletFlag();
+        } catch (Exception e9) {
+            e9.printStackTrace();
+        }
     }
 
-    protected String onGetApplicationId() {
+    @Override // android.app.Application
+    public void onCreate() {
+        String str;
+        applicationLoaderInstance = this;
+        try {
+            applicationContext = getApplicationContext();
+        } catch (Throwable unused) {
+        }
+        super.onCreate();
+        String helloWorld = AndroidUtilities.getHelloWorld();
+        int i10 = 0;
+        if (BuildVars.LOGS_ENABLED) {
+            FileLog.d(helloWorld);
+            StringBuilder sb2 = new StringBuilder("app start time = ");
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            startTime = elapsedRealtime;
+            i0.a.y(sb2, elapsedRealtime);
+            try {
+                PackageInfo packageInfo = applicationContext.getPackageManager().getPackageInfo(applicationContext.getPackageName(), 0);
+                int i11 = packageInfo.versionCode % 10;
+                if (i11 == 1 || i11 == 2) {
+                    str = "store bundled " + Build.CPU_ABI + " " + Build.CPU_ABI2;
+                } else if (isStandaloneBuild()) {
+                    str = "direct " + Build.CPU_ABI + " " + Build.CPU_ABI2;
+                } else {
+                    str = "universal " + Build.CPU_ABI + " " + Build.CPU_ABI2;
+                }
+                Locale locale = Locale.US;
+                FileLog.d("buildVersion = ".concat("v" + packageInfo.versionName + " (" + (packageInfo.versionCode / 10) + "[" + (packageInfo.versionCode % 10) + "]) " + str));
+            } catch (Exception e9) {
+                FileLog.e(e9);
+            }
+            StringBuilder sb3 = new StringBuilder("device = manufacturer=");
+            sb3.append(Build.MANUFACTURER);
+            sb3.append(", device=");
+            sb3.append(Build.DEVICE);
+            sb3.append(", model=");
+            sb3.append(Build.MODEL);
+            sb3.append(", product=");
+            org.telegram.ui.Cells.pa.v(Build.PRODUCT, sb3);
+        }
+        if (applicationContext == null) {
+            applicationContext = getApplicationContext();
+        }
+        NativeLoader.initNativeLibs(applicationContext);
+        try {
+            ConnectionsManager.native_setJava(false);
+            new u00(this) { // from class: org.telegram.messenger.ApplicationLoader.2
+                @Override // org.telegram.ui.Components.u00, android.app.Application.ActivityLifecycleCallbacks
+                public void onActivityStarted(Activity activity) {
+                    boolean isBackground = isBackground();
+                    super.onActivityStarted(activity);
+                    if (isBackground) {
+                        ApplicationLoader.ensureCurrentNetworkGet(true);
+                    }
+                }
+            };
+            new ANRDetector(new w1(3));
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.d("load libs time = " + (SystemClock.elapsedRealtime() - startTime));
+            }
+            applicationHandler = new Handler(applicationContext.getMainLooper());
+            AndroidUtilities.runOnUIThread(new w1(4));
+            ta0[] values = ta0.values();
+            int length = values.length;
+            while (true) {
+                if (i10 >= length) {
+                    h7.g6.b(ta0.h);
+                    break;
+                } else if (h7.g6.a(values[i10])) {
+                    break;
+                } else {
+                    i10++;
+                }
+            }
+            ProxyRotationController.init();
+        } catch (UnsatisfiedLinkError unused2) {
+            throw new RuntimeException("can't load native libraries " + Build.CPU_ABI + " lookup folder " + NativeLoader.getAbiFolder());
+        }
+    }
+
+    public ILocationServiceProvider onCreateLocationServiceProvider() {
+        return new GoogleLocationProvider();
+    }
+
+    public IMapsProvider onCreateMapsProvider() {
+        return new GoogleMapsProvider();
+    }
+
+    public PushListenerController.IPushListenerServiceProvider onCreatePushProvider() {
+        return PushListenerController.GooglePushListenerServiceProvider.INSTANCE;
+    }
+
+    public String onGetApplicationId() {
         return null;
     }
 
     public boolean onPause() {
         return false;
-    }
-
-    public void onResume() {
     }
 
     public boolean onSuggestionClick(String str) {
@@ -148,336 +584,29 @@ public class ApplicationLoader extends Application {
         return false;
     }
 
-    public BaseFragment openSettings(int i) {
+    public org.telegram.ui.ActionBar.n2 openSettings(int i10) {
         return null;
     }
 
-    public TLRPC.Update parseTLUpdate(int i) {
+    public TLRPC.Update parseTLUpdate(int i10) {
         return null;
     }
 
-    public void processUpdate(int i, TLRPC.Update update) {
-    }
-
-    public boolean showCustomUpdateAppPopup(Context context, BetaUpdate betaUpdate, int i) {
+    public boolean showCustomUpdateAppPopup(Context context, BetaUpdate betaUpdate, int i10) {
         return false;
     }
 
-    public boolean showUpdateAppPopup(Context context, TLRPC.TL_help_appUpdate tL_help_appUpdate, int i) {
+    public boolean showUpdateAppPopup(Context context, TLRPC.TL_help_appUpdate tL_help_appUpdate, int i10) {
         return false;
-    }
-
-    protected void startAppCenterInternal(Activity activity) {
     }
 
     public IUpdateLayout takeUpdateLayout(Activity activity, ViewGroup viewGroup) {
         return null;
     }
 
-    @Override // android.content.ContextWrapper
-    protected void attachBaseContext(Context context) {
-        super.attachBaseContext(context);
-    }
-
-    public static ILocationServiceProvider getLocationServiceProvider() {
-        if (locationServiceProvider == null) {
-            ILocationServiceProvider onCreateLocationServiceProvider = applicationLoaderInstance.onCreateLocationServiceProvider();
-            locationServiceProvider = onCreateLocationServiceProvider;
-            onCreateLocationServiceProvider.init(applicationContext);
-        }
-        return locationServiceProvider;
-    }
-
-    protected ILocationServiceProvider onCreateLocationServiceProvider() {
-        return new GoogleLocationProvider();
-    }
-
-    public static IMapsProvider getMapsProvider() {
-        if (mapsProvider == null) {
-            mapsProvider = applicationLoaderInstance.onCreateMapsProvider();
-        }
-        return mapsProvider;
-    }
-
-    protected IMapsProvider onCreateMapsProvider() {
-        return new GoogleMapsProvider();
-    }
-
-    public static PushListenerController.IPushListenerServiceProvider getPushProvider() {
-        if (pushProvider == null) {
-            pushProvider = applicationLoaderInstance.onCreatePushProvider();
-        }
-        return pushProvider;
-    }
-
-    protected PushListenerController.IPushListenerServiceProvider onCreatePushProvider() {
-        return PushListenerController.GooglePushListenerServiceProvider.INSTANCE;
-    }
-
-    public static String getApplicationId() {
-        return applicationLoaderInstance.onGetApplicationId();
-    }
-
-    public static boolean isHuaweiStoreBuild() {
-        return applicationLoaderInstance.isHuaweiBuild();
-    }
-
-    public static boolean isStandaloneBuild() {
-        return applicationLoaderInstance.isStandalone();
-    }
-
-    public static boolean isBetaBuild() {
-        return applicationLoaderInstance.isBeta();
-    }
-
-    public static boolean isAndroidTestEnvironment() {
-        return applicationLoaderInstance.isAndroidTestEnv();
-    }
-
-    public static File getFilesDirFixed() {
-        for (int i = 0; i < 10; i++) {
-            File filesDir = applicationContext.getFilesDir();
-            if (filesDir != null) {
-                return filesDir;
-            }
-        }
-        try {
-            File file = new File(applicationContext.getApplicationInfo().dataDir, "files");
-            file.mkdirs();
-            return file;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return new File("/data/data/org.telegram.messenger/files");
-        }
-    }
-
-    public static File getFilesDirFixed(String str) {
-        try {
-            File file = new File(getFilesDirFixed(), str);
-            file.mkdirs();
-            return file;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return null;
-        }
-    }
-
-    public static void postInitApplication() {
-        if (applicationInited || applicationContext == null) {
-            return;
-        }
-        applicationInited = true;
-        NativeLoader.initNativeLibs(applicationContext);
-        try {
-            LocaleController.getInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        try {
-            connectivityManager = (ConnectivityManager) applicationContext.getSystemService("connectivity");
-            applicationContext.registerReceiver(new BroadcastReceiver() { // from class: org.telegram.messenger.ApplicationLoader.1
-                @Override // android.content.BroadcastReceiver
-                public void onReceive(Context context, Intent intent) {
-                    try {
-                        ApplicationLoader.currentNetworkInfo = ApplicationLoader.connectivityManager.getActiveNetworkInfo();
-                    } catch (Throwable unused) {
-                    }
-                    boolean isConnectionSlow = ApplicationLoader.isConnectionSlow();
-                    for (int i = 0; i < 4; i++) {
-                        ConnectionsManager.getInstance(i).checkConnection();
-                        FileLoader.getInstance(i).onNetworkChanged(isConnectionSlow);
-                    }
-                }
-            }, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
-        } catch (Exception e2) {
-            e2.printStackTrace();
-        }
-        try {
-            IntentFilter intentFilter = new IntentFilter("android.intent.action.SCREEN_ON");
-            intentFilter.addAction("android.intent.action.SCREEN_OFF");
-            applicationContext.registerReceiver(new ScreenReceiver(), intentFilter);
-        } catch (Exception e3) {
-            e3.printStackTrace();
-        }
-        try {
-            isScreenOn = ((PowerManager) applicationContext.getSystemService("power")).isScreenOn();
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.d("screen state = " + isScreenOn);
-            }
-        } catch (Exception e4) {
-            e4.printStackTrace();
-        }
-        SharedConfig.loadConfig();
-        SharedPrefsHelper.init(applicationContext);
-        for (int i = 0; i < 4; i++) {
-            UserConfig.getInstance(i).loadConfig();
-            MessagesController.getInstance(i);
-            if (i == 0) {
-                SharedConfig.pushStringStatus = "__FIREBASE_GENERATING_SINCE_" + ConnectionsManager.getInstance(i).getCurrentTime() + "__";
-            } else {
-                ConnectionsManager.getInstance(i);
-            }
-            TLRPC.User currentUser = UserConfig.getInstance(i).getCurrentUser();
-            if (currentUser != null) {
-                MessagesController.getInstance(i).putUser(currentUser, true);
-                SendMessagesHelper.getInstance(i).checkUnsentMessages();
-            }
-        }
-        ((ApplicationLoader) applicationContext).initPushServices();
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("app initied");
-        }
-        MediaController.getInstance();
-        for (int i2 = 0; i2 < 4; i2++) {
-            ContactsController.getInstance(i2).checkAppAccount();
-            DownloadController.getInstance(i2);
-        }
-        BillingController.getInstance().startConnection();
-    }
-
-    @Override // android.app.Application
-    public void onCreate() {
-        String str;
-        applicationLoaderInstance = this;
-        try {
-            applicationContext = getApplicationContext();
-        } catch (Throwable unused) {
-        }
-        super.onCreate();
-        String helloWorld = AndroidUtilities.getHelloWorld();
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d(helloWorld);
-            StringBuilder sb = new StringBuilder();
-            sb.append("app start time = ");
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            startTime = elapsedRealtime;
-            sb.append(elapsedRealtime);
-            FileLog.d(sb.toString());
-            try {
-                PackageInfo packageInfo = applicationContext.getPackageManager().getPackageInfo(applicationContext.getPackageName(), 0);
-                int i = packageInfo.versionCode % 10;
-                if (i == 1 || i == 2) {
-                    str = "store bundled " + Build.CPU_ABI + " " + Build.CPU_ABI2;
-                } else if (isStandaloneBuild()) {
-                    str = "direct " + Build.CPU_ABI + " " + Build.CPU_ABI2;
-                } else {
-                    str = "universal " + Build.CPU_ABI + " " + Build.CPU_ABI2;
-                }
-                FileLog.d("buildVersion = " + String.format(Locale.US, "v%s (%d[%d]) %s", packageInfo.versionName, Integer.valueOf(packageInfo.versionCode / 10), Integer.valueOf(packageInfo.versionCode % 10), str));
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-            FileLog.d("device = manufacturer=" + Build.MANUFACTURER + ", device=" + Build.DEVICE + ", model=" + Build.MODEL + ", product=" + Build.PRODUCT);
-        }
-        if (applicationContext == null) {
-            applicationContext = getApplicationContext();
-        }
-        NativeLoader.initNativeLibs(applicationContext);
-        try {
-            ConnectionsManager.native_setJava(false);
-            new ForegroundDetector(this) { // from class: org.telegram.messenger.ApplicationLoader.2
-                @Override // org.telegram.ui.Components.ForegroundDetector, android.app.Application.ActivityLifecycleCallbacks
-                public void onActivityStarted(Activity activity) {
-                    boolean isBackground = isBackground();
-                    super.onActivityStarted(activity);
-                    if (isBackground) {
-                        ApplicationLoader.ensureCurrentNetworkGet(true);
-                    }
-                }
-            };
-            new ANRDetector(new Runnable() { // from class: org.telegram.messenger.ApplicationLoader$$ExternalSyntheticLambda1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    FileLog.dumpANR();
-                }
-            });
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.d("load libs time = " + (SystemClock.elapsedRealtime() - startTime));
-            }
-            applicationHandler = new Handler(applicationContext.getMainLooper());
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ApplicationLoader$$ExternalSyntheticLambda2
-                @Override // java.lang.Runnable
-                public final void run() {
-                    ApplicationLoader.startPushService();
-                }
-            });
-            LauncherIconController.tryFixLauncherIconIfNeeded();
-            ProxyRotationController.init();
-        } catch (UnsatisfiedLinkError unused2) {
-            throw new RuntimeException("can't load native libraries " + Build.CPU_ABI + " lookup folder " + NativeLoader.getAbiFolder());
-        }
-    }
-
-    public static void startPushService() {
-        boolean z;
-        SharedPreferences globalNotificationsSettings = MessagesController.getGlobalNotificationsSettings();
-        if (globalNotificationsSettings.contains("pushService")) {
-            z = globalNotificationsSettings.getBoolean("pushService", true);
-        } else {
-            z = MessagesController.getMainSettings(UserConfig.selectedAccount).getBoolean("keepAliveService", false);
-        }
-        if (z) {
-            try {
-                applicationContext.startService(new Intent(applicationContext, (Class<?>) NotificationsService.class));
-            } catch (Throwable unused) {
-            }
-        } else {
-            applicationContext.stopService(new Intent(applicationContext, (Class<?>) NotificationsService.class));
-        }
-    }
-
-    @Override // android.app.Application, android.content.ComponentCallbacks
-    public void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        try {
-            LocaleController.getInstance().onDeviceConfigurationChange(configuration);
-            AndroidUtilities.checkDisplaySize(applicationContext, configuration);
-            VideoCapturerDevice.checkScreenCapturerSize();
-            AndroidUtilities.resetTabletFlag();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void initPushServices() {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ApplicationLoader$$ExternalSyntheticLambda3
-            @Override // java.lang.Runnable
-            public final void run() {
-                ApplicationLoader.$r8$lambda$EdRXsD8RsitwzrcDYxwbFEKwcLo();
-            }
-        }, 1000L);
-    }
-
-    public static /* synthetic */ void $r8$lambda$EdRXsD8RsitwzrcDYxwbFEKwcLo() {
-        if (getPushProvider().hasServices()) {
-            getPushProvider().onRequestPushToken();
-            return;
-        }
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("No valid " + getPushProvider().getLogTitle() + " APK found.");
-        }
-        SharedConfig.pushStringStatus = "__NO_GOOGLE_PLAY_SERVICES__";
-        PushListenerController.sendRegistrationToServer(getPushProvider().getPushType(), null);
-    }
-
-    private boolean checkPlayServices() {
-        try {
-            return GooglePlayServicesUtil.isGooglePlayServicesAvailable(this) == 0;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return true;
-        }
-    }
-
-    private static void ensureCurrentNetworkGet() {
-        long currentTimeMillis = System.currentTimeMillis();
-        ensureCurrentNetworkGet(currentTimeMillis - lastNetworkCheck > 5000);
-        lastNetworkCheck = currentTimeMillis;
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
-    public static void ensureCurrentNetworkGet(boolean z) {
-        if (z || currentNetworkInfo == null) {
+    public static void ensureCurrentNetworkGet(boolean z10) {
+        if (z10 || currentNetworkInfo == null) {
             try {
                 if (connectivityManager == null) {
                     connectivityManager = (ConnectivityManager) applicationContext.getSystemService("connectivity");
@@ -503,174 +632,44 @@ public class ApplicationLoader extends Application {
         }
     }
 
-    public static boolean isRoaming() {
+    public static File getFilesDirFixed(String str) {
         try {
-            ensureCurrentNetworkGet(false);
-            if (currentNetworkInfo != null) {
-                if (currentNetworkInfo.isRoaming()) {
-                    return true;
-                }
-            }
-            return false;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return false;
+            File file = new File(getFilesDirFixed(), str);
+            file.mkdirs();
+            return file;
+        } catch (Exception e9) {
+            FileLog.e(e9);
+            return null;
         }
     }
 
-    public static boolean isConnectedOrConnectingToWiFi() {
-        try {
-            ensureCurrentNetworkGet(false);
-            if (currentNetworkInfo != null) {
-                if (currentNetworkInfo.getType() != 1) {
-                    if (currentNetworkInfo.getType() == 9) {
-                    }
-                }
-                NetworkInfo.State state = currentNetworkInfo.getState();
-                if (state != NetworkInfo.State.CONNECTED && state != NetworkInfo.State.CONNECTING) {
-                    if (state == NetworkInfo.State.SUSPENDED) {
-                    }
-                }
-                return true;
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        return false;
+    public void cancelDownloadingUpdate() {
     }
 
-    public static boolean isConnectedToWiFi() {
-        try {
-            ensureCurrentNetworkGet(false);
-            if (currentNetworkInfo != null) {
-                if (currentNetworkInfo.getType() != 1) {
-                    if (currentNetworkInfo.getType() == 9) {
-                    }
-                }
-                if (currentNetworkInfo.getState() == NetworkInfo.State.CONNECTED) {
-                    return true;
-                }
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        return false;
+    public void checkForUpdatesInternal() {
     }
 
-    public static boolean isConnectionSlow() {
-        try {
-            ensureCurrentNetworkGet(false);
-            if (currentNetworkInfo != null && currentNetworkInfo.getType() == 0) {
-                int subtype = currentNetworkInfo.getSubtype();
-                if (subtype == 1 || subtype == 2 || subtype == 4 || subtype == 7 || subtype == 11) {
-                    return true;
-                }
-            }
-        } catch (Throwable unused) {
-        }
-        return false;
+    public void downloadUpdate() {
     }
 
-    public static int getAutodownloadNetworkType() {
-        int i;
-        try {
-            ensureCurrentNetworkGet(false);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        if (currentNetworkInfo == null) {
-            return 0;
-        }
-        if (currentNetworkInfo.getType() != 1 && currentNetworkInfo.getType() != 9) {
-            return currentNetworkInfo.isRoaming() ? 2 : 0;
-        }
-        if (Build.VERSION.SDK_INT >= 24 && (((i = lastKnownNetworkType) == 0 || i == 1) && System.currentTimeMillis() - lastNetworkCheckTypeTime < 5000)) {
-            return lastKnownNetworkType;
-        }
-        if (connectivityManager.isActiveNetworkMetered()) {
-            lastKnownNetworkType = 0;
-        } else {
-            lastKnownNetworkType = 1;
-        }
-        lastNetworkCheckTypeTime = System.currentTimeMillis();
-        return lastKnownNetworkType;
+    public void onResume() {
     }
 
-    public static int getCurrentNetworkType() {
-        if (isConnectedOrConnectingToWiFi()) {
-            return 1;
-        }
-        return isRoaming() ? 2 : 0;
+    public void addItemOptions(b70 b70Var) {
     }
 
-    public static boolean isNetworkOnlineFast() {
-        try {
-            ensureCurrentNetworkGet(false);
-            if (currentNetworkInfo != null && !currentNetworkInfo.isConnectedOrConnecting() && !currentNetworkInfo.isAvailable()) {
-                NetworkInfo networkInfo = connectivityManager.getNetworkInfo(0);
-                if (networkInfo != null && networkInfo.isConnectedOrConnecting()) {
-                    return true;
-                }
-                NetworkInfo networkInfo2 = connectivityManager.getNetworkInfo(1);
-                if (networkInfo2 != null) {
-                    if (networkInfo2.isConnectedOrConnecting()) {
-                        return true;
-                    }
-                }
-                return false;
-            }
-            return true;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return true;
-        }
+    public void appCenterLogInternal(Throwable th) {
     }
 
-    public static boolean isNetworkOnlineRealtime() {
-        try {
-            ConnectivityManager connectivityManager2 = (ConnectivityManager) applicationContext.getSystemService("connectivity");
-            NetworkInfo activeNetworkInfo = connectivityManager2.getActiveNetworkInfo();
-            if (activeNetworkInfo == null || (!activeNetworkInfo.isConnectedOrConnecting() && !activeNetworkInfo.isAvailable())) {
-                NetworkInfo networkInfo = connectivityManager2.getNetworkInfo(0);
-                if (networkInfo != null && networkInfo.isConnectedOrConnecting()) {
-                    return true;
-                }
-                NetworkInfo networkInfo2 = connectivityManager2.getNetworkInfo(1);
-                if (networkInfo2 != null) {
-                    if (networkInfo2.isConnectedOrConnecting()) {
-                        return true;
-                    }
-                }
-                return false;
-            }
-            return true;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return true;
-        }
+    public void startAppCenterInternal(Activity activity) {
     }
 
-    public static boolean isNetworkOnline() {
-        boolean isNetworkOnlineRealtime = isNetworkOnlineRealtime();
-        if (BuildVars.DEBUG_PRIVATE_VERSION && isNetworkOnlineRealtime != isNetworkOnlineFast()) {
-            FileLog.d("network online mismatch");
-        }
-        return isNetworkOnlineRealtime;
+    public void checkUpdate(boolean z10, Runnable runnable) {
     }
 
-    public static void startAppCenter(Activity activity) {
-        applicationLoaderInstance.startAppCenterInternal(activity);
+    public void logDualCameraInternal(boolean z10, boolean z11) {
     }
 
-    public static void checkForUpdates() {
-        applicationLoaderInstance.checkForUpdatesInternal();
-    }
-
-    public static void appCenterLog(Throwable th) {
-        applicationLoaderInstance.appCenterLogInternal(th);
-    }
-
-    public static void logDualCamera(boolean z, boolean z2) {
-        applicationLoaderInstance.logDualCameraInternal(z, z2);
+    public void processUpdate(int i10, TLRPC.Update update) {
     }
 }

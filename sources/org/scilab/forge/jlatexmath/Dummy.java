@@ -1,6 +1,7 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class Dummy {
     private Atom el;
     private boolean textSymbol = false;
@@ -8,37 +9,6 @@ public class Dummy {
 
     public Dummy(Atom atom) {
         this.el = atom;
-    }
-
-    public void setType(int i) {
-        this.type = i;
-    }
-
-    public int getType() {
-        return this.type;
-    }
-
-    public int getLeftType() {
-        int i = this.type;
-        return i >= 0 ? i : this.el.getLeftType();
-    }
-
-    public int getRightType() {
-        int i = this.type;
-        return i >= 0 ? i : this.el.getRightType();
-    }
-
-    public boolean isCharSymbol() {
-        return this.el instanceof CharSymbol;
-    }
-
-    public boolean isCharInMathMode() {
-        Atom atom = this.el;
-        return (atom instanceof CharAtom) && ((CharAtom) atom).isMathMode();
-    }
-
-    public CharFont getCharFont(TeXFont teXFont) {
-        return ((CharSymbol) this.el).getCharFont(teXFont);
     }
 
     public void changeAtom(FixedCharAtom fixedCharAtom) {
@@ -58,12 +28,39 @@ public class Dummy {
         return createBox;
     }
 
-    public void markAsTextSymbol() {
-        this.textSymbol = true;
+    public CharFont getCharFont(TeXFont teXFont) {
+        return ((CharSymbol) this.el).getCharFont(teXFont);
+    }
+
+    public int getLeftType() {
+        int i10 = this.type;
+        return i10 >= 0 ? i10 : this.el.getLeftType();
+    }
+
+    public int getRightType() {
+        int i10 = this.type;
+        return i10 >= 0 ? i10 : this.el.getRightType();
+    }
+
+    public int getType() {
+        return this.type;
+    }
+
+    public boolean isCharInMathMode() {
+        Atom atom = this.el;
+        return (atom instanceof CharAtom) && ((CharAtom) atom).isMathMode();
+    }
+
+    public boolean isCharSymbol() {
+        return this.el instanceof CharSymbol;
     }
 
     public boolean isKern() {
         return this.el instanceof SpaceAtom;
+    }
+
+    public void markAsTextSymbol() {
+        this.textSymbol = true;
     }
 
     public void setPreviousAtom(Dummy dummy) {
@@ -71,5 +68,9 @@ public class Dummy {
         if (cloneable instanceof Row) {
             ((Row) cloneable).setPreviousAtom(dummy);
         }
+    }
+
+    public void setType(int i10) {
+        this.type = i10;
     }
 }

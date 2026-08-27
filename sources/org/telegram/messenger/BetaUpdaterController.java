@@ -8,9 +8,9 @@ import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.HttpGetFileTask;
-import org.telegram.ui.web.HttpGetTask;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class BetaUpdaterController {
     private static final long CHECK_INTERVAL = 1200000;
     private static final long CHECK_INTERVAL_PAUSED = 86400000;
@@ -27,12 +27,29 @@ public class BetaUpdaterController {
     private String version;
     private int versionCode;
     private boolean firstCheck = true;
-    private final Runnable scheduledUpdateCheck = new Runnable() { // from class: org.telegram.messenger.BetaUpdaterController$$ExternalSyntheticLambda4
-        @Override // java.lang.Runnable
-        public final void run() {
-            BetaUpdaterController.this.checkForUpdate(false, null);
+    private final Runnable scheduledUpdateCheck = new u(this, 1);
+
+    public BetaUpdaterController() {
+        load();
+    }
+
+    private String getCurrentVersion() {
+        try {
+            return ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionName;
+        } catch (Exception e9) {
+            FileLog.e(e9);
+            return "";
         }
-    };
+    }
+
+    private int getCurrentVersionCode() {
+        try {
+            return ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode;
+        } catch (Exception e9) {
+            FileLog.e(e9);
+            return 0;
+        }
+    }
 
     public static BetaUpdaterController getInstance() {
         if (instance == null) {
@@ -41,12 +58,176 @@ public class BetaUpdaterController {
         return instance;
     }
 
-    public BetaUpdaterController() {
-        load();
-    }
-
     private SharedPreferences getSharedPreferences() {
         return ApplicationLoader.applicationContext.getSharedPreferences("beta", 0);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x00c7 A[Catch: Exception -> 0x0034, TryCatch #1 {Exception -> 0x0034, blocks: (B:3:0x0003, B:5:0x0029, B:7:0x002f, B:10:0x0069, B:12:0x006d, B:14:0x0071, B:16:0x0077, B:18:0x007b, B:19:0x00ba, B:21:0x00c7, B:22:0x00d2, B:25:0x00e4, B:27:0x00e9, B:30:0x00ed, B:32:0x00f1, B:34:0x00f5, B:37:0x00fc, B:40:0x0104, B:44:0x00fa, B:48:0x0080, B:50:0x0088, B:55:0x0094, B:56:0x0097, B:58:0x00a3, B:60:0x00a9, B:61:0x00b2, B:62:0x0037, B:64:0x0041, B:66:0x0047, B:68:0x004f, B:73:0x005b, B:74:0x005e, B:70:0x0056, B:52:0x008f), top: B:2:0x0003, inners: #0, #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00dd  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00e9 A[Catch: Exception -> 0x0034, TryCatch #1 {Exception -> 0x0034, blocks: (B:3:0x0003, B:5:0x0029, B:7:0x002f, B:10:0x0069, B:12:0x006d, B:14:0x0071, B:16:0x0077, B:18:0x007b, B:19:0x00ba, B:21:0x00c7, B:22:0x00d2, B:25:0x00e4, B:27:0x00e9, B:30:0x00ed, B:32:0x00f1, B:34:0x00f5, B:37:0x00fc, B:40:0x0104, B:44:0x00fa, B:48:0x0080, B:50:0x0088, B:55:0x0094, B:56:0x0097, B:58:0x00a3, B:60:0x00a9, B:61:0x00b2, B:62:0x0037, B:64:0x0041, B:66:0x0047, B:68:0x004f, B:73:0x005b, B:74:0x005e, B:70:0x0056, B:52:0x008f), top: B:2:0x0003, inners: #0, #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00ed A[Catch: Exception -> 0x0034, TryCatch #1 {Exception -> 0x0034, blocks: (B:3:0x0003, B:5:0x0029, B:7:0x002f, B:10:0x0069, B:12:0x006d, B:14:0x0071, B:16:0x0077, B:18:0x007b, B:19:0x00ba, B:21:0x00c7, B:22:0x00d2, B:25:0x00e4, B:27:0x00e9, B:30:0x00ed, B:32:0x00f1, B:34:0x00f5, B:37:0x00fc, B:40:0x0104, B:44:0x00fa, B:48:0x0080, B:50:0x0088, B:55:0x0094, B:56:0x0097, B:58:0x00a3, B:60:0x00a9, B:61:0x00b2, B:62:0x0037, B:64:0x0041, B:66:0x0047, B:68:0x004f, B:73:0x005b, B:74:0x005e, B:70:0x0056, B:52:0x008f), top: B:2:0x0003, inners: #0, #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0088 A[Catch: Exception -> 0x0034, TRY_LEAVE, TryCatch #1 {Exception -> 0x0034, blocks: (B:3:0x0003, B:5:0x0029, B:7:0x002f, B:10:0x0069, B:12:0x006d, B:14:0x0071, B:16:0x0077, B:18:0x007b, B:19:0x00ba, B:21:0x00c7, B:22:0x00d2, B:25:0x00e4, B:27:0x00e9, B:30:0x00ed, B:32:0x00f1, B:34:0x00f5, B:37:0x00fc, B:40:0x0104, B:44:0x00fa, B:48:0x0080, B:50:0x0088, B:55:0x0094, B:56:0x0097, B:58:0x00a3, B:60:0x00a9, B:61:0x00b2, B:62:0x0037, B:64:0x0041, B:66:0x0047, B:68:0x004f, B:73:0x005b, B:74:0x005e, B:70:0x0056, B:52:0x008f), top: B:2:0x0003, inners: #0, #2 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public /* synthetic */ void lambda$checkForUpdate$1(String str, Runnable runnable) {
+        String str2;
+        this.checkingForUpdate = false;
+        try {
+            JSONObject jSONObject = new JSONObject(str);
+            String string = jSONObject.getString("version");
+            int i10 = jSONObject.getInt("version_code");
+            String string2 = jSONObject.getString("file_url");
+            String optString = jSONObject.optString("changelog", null);
+            int i11 = this.versionCode;
+            String str3 = this.version;
+            if (str3 != null) {
+                if (SharedConfig.versionBiggerOrEqual(string, str3) && i10 > this.versionCode) {
+                }
+                str2 = this.version;
+                if (str2 == null && this.versionCode != 0 && SharedConfig.versionBiggerOrEqual(str2, string) && this.versionCode == i10) {
+                    this.fileUrl = string2;
+                    this.changelog = optString;
+                } else {
+                    if (!TextUtils.isEmpty(this.path)) {
+                        try {
+                            new File(this.path).delete();
+                        } catch (Exception e9) {
+                            FileLog.e(e9);
+                        }
+                    }
+                    this.path = null;
+                    if (SharedConfig.versionBiggerOrEqual(getCurrentVersion(), string) || getCurrentVersionCode() >= i10) {
+                        this.version = null;
+                        this.versionCode = 0;
+                        this.fileUrl = null;
+                        this.changelog = null;
+                    } else {
+                        this.version = string;
+                        this.versionCode = i10;
+                        this.fileUrl = string2;
+                        this.changelog = optString;
+                    }
+                }
+                this.lastCheck = System.currentTimeMillis();
+                save();
+                if (this.versionCode != i11) {
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateAvailable, new Object[0]);
+                }
+                AndroidUtilities.cancelRunOnUIThread(this.scheduledUpdateCheck);
+                AndroidUtilities.runOnUIThread(this.scheduledUpdateCheck, BuildVars.DEBUG_PRIVATE_VERSION ? CHECK_INTERVAL_PRIVATE : CHECK_INTERVAL);
+                if (runnable != null) {
+                    runnable.run();
+                    return;
+                }
+                if (this.versionCode == i11 || ApplicationLoader.mainInterfacePaused) {
+                    return;
+                }
+                Context context = LaunchActivity.C1;
+                if (context == null) {
+                    context = ApplicationLoader.applicationContext;
+                }
+                BetaUpdate update = getUpdate();
+                if (context == null || update == null) {
+                    return;
+                }
+                ApplicationLoader.applicationLoaderInstance.showCustomUpdateAppPopup(context, update, UserConfig.selectedAccount);
+                return;
+            }
+            if (SharedConfig.versionBiggerOrEqual(string, getCurrentVersion()) && i10 > getCurrentVersionCode()) {
+                if (!TextUtils.isEmpty(this.path)) {
+                    try {
+                        new File(this.path).delete();
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
+                    }
+                }
+                this.path = null;
+                this.version = string;
+                this.versionCode = i10;
+                this.fileUrl = string2;
+                this.changelog = optString;
+                this.lastCheck = System.currentTimeMillis();
+                save();
+                if (this.versionCode != i11) {
+                }
+                AndroidUtilities.cancelRunOnUIThread(this.scheduledUpdateCheck);
+                AndroidUtilities.runOnUIThread(this.scheduledUpdateCheck, BuildVars.DEBUG_PRIVATE_VERSION ? CHECK_INTERVAL_PRIVATE : CHECK_INTERVAL);
+                if (runnable != null) {
+                }
+            }
+            str2 = this.version;
+            if (str2 == null) {
+            }
+            if (!TextUtils.isEmpty(this.path)) {
+            }
+            this.path = null;
+            if (SharedConfig.versionBiggerOrEqual(getCurrentVersion(), string)) {
+            }
+            this.version = null;
+            this.versionCode = 0;
+            this.fileUrl = null;
+            this.changelog = null;
+            this.lastCheck = System.currentTimeMillis();
+            save();
+            if (this.versionCode != i11) {
+            }
+            AndroidUtilities.cancelRunOnUIThread(this.scheduledUpdateCheck);
+            AndroidUtilities.runOnUIThread(this.scheduledUpdateCheck, BuildVars.DEBUG_PRIVATE_VERSION ? CHECK_INTERVAL_PRIVATE : CHECK_INTERVAL);
+            if (runnable != null) {
+            }
+        } catch (Exception e11) {
+            FileLog.e("Failed to check for beta update at null received: " + str, e11);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$checkForUpdate$2(Runnable runnable, String str) {
+        AndroidUtilities.runOnUIThread(new f0(this, str, runnable, 6));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$downloadUpdate$3() {
+        downloadUpdate(true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$downloadUpdate$4(File file) {
+        if (file == null) {
+            this.downloading = false;
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateAvailable, new Object[0]);
+            return;
+        }
+        if (!TextUtils.isEmpty(this.path)) {
+            try {
+                new File(this.path).delete();
+            } catch (Exception e9) {
+                FileLog.e(e9);
+            }
+        }
+        this.path = file.getAbsolutePath();
+        save();
+        this.downloadingProgress = 1.0f;
+        this.downloading = false;
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateAvailable, new Object[0]);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$downloadUpdate$5(File file) {
+        AndroidUtilities.runOnUIThread(new e3(11, this, file));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$downloadUpdate$6(Float f10) {
+        this.downloadingProgress = f10.floatValue();
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateLoading, new Object[0]);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0() {
+        checkForUpdate(false, null);
     }
 
     private void load() {
@@ -78,34 +259,45 @@ public class BetaUpdaterController {
         } else {
             edit.putString("changelog", this.changelog);
         }
-        int i = this.versionCode;
-        if (i == 0) {
+        int i10 = this.versionCode;
+        if (i10 == 0) {
             edit.remove("versionCode");
         } else {
-            edit.putInt("versionCode", i);
+            edit.putInt("versionCode", i10);
         }
         if (TextUtils.isEmpty(this.path)) {
             edit.remove("path");
         } else {
             edit.putString("path", this.path);
         }
-        long j = this.lastCheck;
-        if (j == 0) {
+        long j10 = this.lastCheck;
+        if (j10 == 0) {
             edit.remove("lastCheck");
         } else {
-            edit.putLong("lastCheck", j);
+            edit.putLong("lastCheck", j10);
         }
         edit.apply();
     }
 
-    public void checkForUpdate(boolean z, final Runnable runnable) {
+    public void cancelDownloadingUpdate() {
+        if (this.downloading) {
+            HttpGetFileTask httpGetFileTask = this.downloadingTask;
+            if (httpGetFileTask != null) {
+                httpGetFileTask.cancel(false);
+            }
+            this.downloading = false;
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateAvailable, new Object[0]);
+        }
+    }
+
+    public void checkForUpdate(boolean z10, Runnable runnable) {
         if (this.checkingForUpdate) {
             return;
         }
         if (this.firstCheck) {
-            z = true;
+            z10 = true;
         }
-        if (!z) {
+        if (!z10) {
             if (System.currentTimeMillis() - this.lastCheck < (ApplicationLoader.mainInterfacePaused ? CHECK_INTERVAL_PAUSED : BuildVars.DEBUG_PRIVATE_VERSION ? CHECK_INTERVAL_PRIVATE : CHECK_INTERVAL)) {
                 if (runnable != null) {
                     runnable.run();
@@ -116,244 +308,11 @@ public class BetaUpdaterController {
         }
         this.checkingForUpdate = true;
         this.firstCheck = false;
-        new HttpGetTask(new Utilities.Callback() { // from class: org.telegram.messenger.BetaUpdaterController$$ExternalSyntheticLambda6
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                BetaUpdaterController.$r8$lambda$zmJCbdiPRh9mZUyBhIkpFLCyoBs(BetaUpdaterController.this, runnable, (String) obj);
-            }
-        }).execute("null");
-    }
-
-    public static /* synthetic */ void $r8$lambda$zmJCbdiPRh9mZUyBhIkpFLCyoBs(final BetaUpdaterController betaUpdaterController, final Runnable runnable, final String str) {
-        betaUpdaterController.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.BetaUpdaterController$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                BetaUpdaterController.$r8$lambda$fsz3n_NR6ZdjRTY4e6l-YYhKrkM(BetaUpdaterController.this, str, runnable);
-            }
-        });
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:21:0x00c7 A[Catch: Exception -> 0x0034, TryCatch #1 {Exception -> 0x0034, blocks: (B:3:0x0003, B:5:0x0029, B:7:0x002f, B:10:0x0069, B:12:0x006d, B:14:0x0071, B:16:0x0077, B:18:0x007b, B:19:0x00ba, B:21:0x00c7, B:22:0x00d2, B:25:0x00e4, B:27:0x00e9, B:30:0x00ed, B:32:0x00f1, B:34:0x00f5, B:37:0x00fc, B:40:0x0104, B:44:0x00fa, B:48:0x0080, B:50:0x0088, B:55:0x0094, B:56:0x0097, B:58:0x00a3, B:60:0x00a9, B:61:0x00b2, B:62:0x0037, B:64:0x0041, B:66:0x0047, B:68:0x004f, B:73:0x005b, B:74:0x005e, B:70:0x0056, B:52:0x008f), top: B:2:0x0003, inners: #0, #2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00dd  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00e9 A[Catch: Exception -> 0x0034, TryCatch #1 {Exception -> 0x0034, blocks: (B:3:0x0003, B:5:0x0029, B:7:0x002f, B:10:0x0069, B:12:0x006d, B:14:0x0071, B:16:0x0077, B:18:0x007b, B:19:0x00ba, B:21:0x00c7, B:22:0x00d2, B:25:0x00e4, B:27:0x00e9, B:30:0x00ed, B:32:0x00f1, B:34:0x00f5, B:37:0x00fc, B:40:0x0104, B:44:0x00fa, B:48:0x0080, B:50:0x0088, B:55:0x0094, B:56:0x0097, B:58:0x00a3, B:60:0x00a9, B:61:0x00b2, B:62:0x0037, B:64:0x0041, B:66:0x0047, B:68:0x004f, B:73:0x005b, B:74:0x005e, B:70:0x0056, B:52:0x008f), top: B:2:0x0003, inners: #0, #2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00ed A[Catch: Exception -> 0x0034, TryCatch #1 {Exception -> 0x0034, blocks: (B:3:0x0003, B:5:0x0029, B:7:0x002f, B:10:0x0069, B:12:0x006d, B:14:0x0071, B:16:0x0077, B:18:0x007b, B:19:0x00ba, B:21:0x00c7, B:22:0x00d2, B:25:0x00e4, B:27:0x00e9, B:30:0x00ed, B:32:0x00f1, B:34:0x00f5, B:37:0x00fc, B:40:0x0104, B:44:0x00fa, B:48:0x0080, B:50:0x0088, B:55:0x0094, B:56:0x0097, B:58:0x00a3, B:60:0x00a9, B:61:0x00b2, B:62:0x0037, B:64:0x0041, B:66:0x0047, B:68:0x004f, B:73:0x005b, B:74:0x005e, B:70:0x0056, B:52:0x008f), top: B:2:0x0003, inners: #0, #2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0088 A[Catch: Exception -> 0x0034, TRY_LEAVE, TryCatch #1 {Exception -> 0x0034, blocks: (B:3:0x0003, B:5:0x0029, B:7:0x002f, B:10:0x0069, B:12:0x006d, B:14:0x0071, B:16:0x0077, B:18:0x007b, B:19:0x00ba, B:21:0x00c7, B:22:0x00d2, B:25:0x00e4, B:27:0x00e9, B:30:0x00ed, B:32:0x00f1, B:34:0x00f5, B:37:0x00fc, B:40:0x0104, B:44:0x00fa, B:48:0x0080, B:50:0x0088, B:55:0x0094, B:56:0x0097, B:58:0x00a3, B:60:0x00a9, B:61:0x00b2, B:62:0x0037, B:64:0x0041, B:66:0x0047, B:68:0x004f, B:73:0x005b, B:74:0x005e, B:70:0x0056, B:52:0x008f), top: B:2:0x0003, inners: #0, #2 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static /* synthetic */ void $r8$lambda$fsz3n_NR6ZdjRTY4e6l-YYhKrkM(BetaUpdaterController betaUpdaterController, String str, Runnable runnable) {
-        String str2;
-        betaUpdaterController.checkingForUpdate = false;
-        try {
-            JSONObject jSONObject = new JSONObject(str);
-            String string = jSONObject.getString("version");
-            int i = jSONObject.getInt("version_code");
-            String string2 = jSONObject.getString("file_url");
-            String optString = jSONObject.optString("changelog", null);
-            int i2 = betaUpdaterController.versionCode;
-            String str3 = betaUpdaterController.version;
-            if (str3 != null) {
-                if (SharedConfig.versionBiggerOrEqual(string, str3) && i > betaUpdaterController.versionCode) {
-                }
-                str2 = betaUpdaterController.version;
-                if (str2 == null && betaUpdaterController.versionCode != 0 && SharedConfig.versionBiggerOrEqual(str2, string) && betaUpdaterController.versionCode == i) {
-                    betaUpdaterController.fileUrl = string2;
-                    betaUpdaterController.changelog = optString;
-                } else {
-                    if (!TextUtils.isEmpty(betaUpdaterController.path)) {
-                        try {
-                            new File(betaUpdaterController.path).delete();
-                        } catch (Exception e) {
-                            FileLog.e(e);
-                        }
-                    }
-                    betaUpdaterController.path = null;
-                    if (!SharedConfig.versionBiggerOrEqual(betaUpdaterController.getCurrentVersion(), string) && betaUpdaterController.getCurrentVersionCode() < i) {
-                        betaUpdaterController.version = string;
-                        betaUpdaterController.versionCode = i;
-                        betaUpdaterController.fileUrl = string2;
-                        betaUpdaterController.changelog = optString;
-                    } else {
-                        betaUpdaterController.version = null;
-                        betaUpdaterController.versionCode = 0;
-                        betaUpdaterController.fileUrl = null;
-                        betaUpdaterController.changelog = null;
-                    }
-                }
-                betaUpdaterController.lastCheck = System.currentTimeMillis();
-                betaUpdaterController.save();
-                if (betaUpdaterController.versionCode != i2) {
-                    NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.appUpdateAvailable, new Object[0]);
-                }
-                AndroidUtilities.cancelRunOnUIThread(betaUpdaterController.scheduledUpdateCheck);
-                AndroidUtilities.runOnUIThread(betaUpdaterController.scheduledUpdateCheck, BuildVars.DEBUG_PRIVATE_VERSION ? CHECK_INTERVAL_PRIVATE : CHECK_INTERVAL);
-                if (runnable != null) {
-                    runnable.run();
-                    return;
-                }
-                if (betaUpdaterController.versionCode == i2 || ApplicationLoader.mainInterfacePaused) {
-                    return;
-                }
-                Context context = LaunchActivity.instance;
-                if (context == null) {
-                    context = ApplicationLoader.applicationContext;
-                }
-                BetaUpdate update = betaUpdaterController.getUpdate();
-                if (context == null || update == null) {
-                    return;
-                }
-                ApplicationLoader.applicationLoaderInstance.showCustomUpdateAppPopup(context, update, UserConfig.selectedAccount);
-                return;
-            }
-            if (SharedConfig.versionBiggerOrEqual(string, betaUpdaterController.getCurrentVersion()) && i > betaUpdaterController.getCurrentVersionCode()) {
-                if (!TextUtils.isEmpty(betaUpdaterController.path)) {
-                    try {
-                        new File(betaUpdaterController.path).delete();
-                    } catch (Exception e2) {
-                        FileLog.e(e2);
-                    }
-                }
-                betaUpdaterController.path = null;
-                betaUpdaterController.version = string;
-                betaUpdaterController.versionCode = i;
-                betaUpdaterController.fileUrl = string2;
-                betaUpdaterController.changelog = optString;
-                betaUpdaterController.lastCheck = System.currentTimeMillis();
-                betaUpdaterController.save();
-                if (betaUpdaterController.versionCode != i2) {
-                }
-                AndroidUtilities.cancelRunOnUIThread(betaUpdaterController.scheduledUpdateCheck);
-                AndroidUtilities.runOnUIThread(betaUpdaterController.scheduledUpdateCheck, BuildVars.DEBUG_PRIVATE_VERSION ? CHECK_INTERVAL_PRIVATE : CHECK_INTERVAL);
-                if (runnable != null) {
-                }
-            }
-            str2 = betaUpdaterController.version;
-            if (str2 == null) {
-            }
-            if (!TextUtils.isEmpty(betaUpdaterController.path)) {
-            }
-            betaUpdaterController.path = null;
-            if (!SharedConfig.versionBiggerOrEqual(betaUpdaterController.getCurrentVersion(), string)) {
-            }
-            betaUpdaterController.version = null;
-            betaUpdaterController.versionCode = 0;
-            betaUpdaterController.fileUrl = null;
-            betaUpdaterController.changelog = null;
-            betaUpdaterController.lastCheck = System.currentTimeMillis();
-            betaUpdaterController.save();
-            if (betaUpdaterController.versionCode != i2) {
-            }
-            AndroidUtilities.cancelRunOnUIThread(betaUpdaterController.scheduledUpdateCheck);
-            AndroidUtilities.runOnUIThread(betaUpdaterController.scheduledUpdateCheck, BuildVars.DEBUG_PRIVATE_VERSION ? CHECK_INTERVAL_PRIVATE : CHECK_INTERVAL);
-            if (runnable != null) {
-            }
-        } catch (Exception e3) {
-            FileLog.e("Failed to check for beta update at null received: " + str, e3);
-        }
-    }
-
-    public BetaUpdate getUpdate() {
-        int i;
-        String str = this.version;
-        if (str == null || (i = this.versionCode) == 0) {
-            return null;
-        }
-        return new BetaUpdate(str, i, this.changelog);
+        new org.telegram.ui.web.f1(new w(0, this, runnable)).execute(BuildConfig.BETA_URL);
     }
 
     public void downloadUpdate() {
         downloadUpdate(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void downloadUpdate(boolean z) {
-        if (this.downloading || !TextUtils.isEmpty(this.path)) {
-            return;
-        }
-        this.downloading = true;
-        this.downloadingProgress = 0.0f;
-        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.appUpdateLoading, new Object[0]);
-        if (!TextUtils.isEmpty(this.fileUrl)) {
-            HttpGetFileTask overrideExtension = new HttpGetFileTask(new Utilities.Callback() { // from class: org.telegram.messenger.BetaUpdaterController$$ExternalSyntheticLambda2
-                @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    BetaUpdaterController.$r8$lambda$r-WrbCAumhAkPQje3pEdS8p0L_M(BetaUpdaterController.this, (File) obj);
-                }
-            }, new Utilities.Callback() { // from class: org.telegram.messenger.BetaUpdaterController$$ExternalSyntheticLambda3
-                @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    BetaUpdaterController.$r8$lambda$y2Q4LVbQ8eFUoryuszvKafy_Ogk(BetaUpdaterController.this, (Float) obj);
-                }
-            }).setOverrideExtension("apk");
-            this.downloadingTask = overrideExtension;
-            overrideExtension.execute(this.fileUrl);
-        } else if (!z) {
-            checkForUpdate(true, new Runnable() { // from class: org.telegram.messenger.BetaUpdaterController$$ExternalSyntheticLambda1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    BetaUpdaterController.this.downloadUpdate(true);
-                }
-            });
-        } else {
-            this.downloading = false;
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$r-WrbCAumhAkPQje3pEdS8p0L_M(final BetaUpdaterController betaUpdaterController, final File file) {
-        betaUpdaterController.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.BetaUpdaterController$$ExternalSyntheticLambda5
-            @Override // java.lang.Runnable
-            public final void run() {
-                BetaUpdaterController.$r8$lambda$7jnCGEmKSto-s3SMukfEyKvZNu8(BetaUpdaterController.this, file);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$7jnCGEmKSto-s3SMukfEyKvZNu8(BetaUpdaterController betaUpdaterController, File file) {
-        if (file != null) {
-            if (!TextUtils.isEmpty(betaUpdaterController.path)) {
-                try {
-                    new File(betaUpdaterController.path).delete();
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-            }
-            betaUpdaterController.path = file.getAbsolutePath();
-            betaUpdaterController.save();
-            betaUpdaterController.downloadingProgress = 1.0f;
-            betaUpdaterController.downloading = false;
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.appUpdateAvailable, new Object[0]);
-            return;
-        }
-        betaUpdaterController.downloading = false;
-        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.appUpdateAvailable, new Object[0]);
-    }
-
-    public static /* synthetic */ void $r8$lambda$y2Q4LVbQ8eFUoryuszvKafy_Ogk(BetaUpdaterController betaUpdaterController, Float f) {
-        betaUpdaterController.getClass();
-        betaUpdaterController.downloadingProgress = f.floatValue();
-        NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.appUpdateLoading, new Object[0]);
-    }
-
-    public void cancelDownloadingUpdate() {
-        if (this.downloading) {
-            HttpGetFileTask httpGetFileTask = this.downloadingTask;
-            if (httpGetFileTask != null) {
-                httpGetFileTask.cancel(false);
-            }
-            this.downloading = false;
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.appUpdateAvailable, new Object[0]);
-        }
-    }
-
-    public boolean isDownloading() {
-        return this.downloading;
-    }
-
-    public float getDownloadingProgress() {
-        return this.downloadingProgress;
     }
 
     public File getDownloadedFile() {
@@ -369,21 +328,79 @@ public class BetaUpdaterController {
         return null;
     }
 
-    private String getCurrentVersion() {
-        try {
-            return ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionName;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return "";
-        }
+    public float getDownloadingProgress() {
+        return this.downloadingProgress;
     }
 
-    private int getCurrentVersionCode() {
-        try {
-            return ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return 0;
+    public BetaUpdate getUpdate() {
+        int i10;
+        String str = this.version;
+        if (str == null || (i10 = this.versionCode) == 0) {
+            return null;
         }
+        return new BetaUpdate(str, i10, this.changelog);
+    }
+
+    public boolean isDownloading() {
+        return this.downloading;
+    }
+
+    private void downloadUpdate(boolean z10) {
+        if (this.downloading || !TextUtils.isEmpty(this.path)) {
+            return;
+        }
+        this.downloading = true;
+        this.downloadingProgress = 0.0f;
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateLoading, new Object[0]);
+        if (TextUtils.isEmpty(this.fileUrl)) {
+            if (z10) {
+                this.downloading = false;
+                return;
+            } else {
+                checkForUpdate(true, new u(this, 0));
+                return;
+            }
+        }
+        final int i10 = 0;
+        final int i11 = 1;
+        HttpGetFileTask overrideExtension = new HttpGetFileTask(new Utilities.Callback(this) { // from class: org.telegram.messenger.v
+            public final /* synthetic */ BetaUpdaterController b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                switch (i10) {
+                    case 0:
+                        this.b.lambda$downloadUpdate$5((File) obj);
+                        break;
+                    default:
+                        this.b.lambda$downloadUpdate$6((Float) obj);
+                        break;
+                }
+            }
+        }, new Utilities.Callback(this) { // from class: org.telegram.messenger.v
+            public final /* synthetic */ BetaUpdaterController b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                switch (i11) {
+                    case 0:
+                        this.b.lambda$downloadUpdate$5((File) obj);
+                        break;
+                    default:
+                        this.b.lambda$downloadUpdate$6((Float) obj);
+                        break;
+                }
+            }
+        }).setOverrideExtension("apk");
+        this.downloadingTask = overrideExtension;
+        overrideExtension.execute(this.fileUrl);
     }
 }

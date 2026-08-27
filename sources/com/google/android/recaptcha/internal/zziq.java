@@ -1,11 +1,14 @@
 package com.google.android.recaptcha.internal;
 
+import h7.q6;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
-import kotlin.collections.CollectionsKt;
-import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.StringsKt;
+import kotlin.jvm.internal.j;
+import qc.g;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zziq {
     private Set zza;
@@ -14,7 +17,24 @@ public final class zziq {
     private int zzd;
 
     private static final boolean zzc(String str, Set set) {
-        Iterator it = StringsKt.split$default(str, new char[]{'.'}, false, 0, 6, null).iterator();
+        List list;
+        j.e(str, "<this>");
+        String valueOf = String.valueOf(new char[]{'.'}[0]);
+        int d = gd.j.d(0, str, valueOf, false);
+        if (d != -1) {
+            ArrayList arrayList = new ArrayList(10);
+            int i10 = 0;
+            do {
+                arrayList.add(str.subSequence(i10, d).toString());
+                i10 = valueOf.length() + d;
+                d = gd.j.d(i10, str, valueOf, false);
+            } while (d != -1);
+            arrayList.add(str.subSequence(i10, str.length()).toString());
+            list = arrayList;
+        } else {
+            list = q6.a(str.toString());
+        }
+        Iterator it = list.iterator();
         String str2 = "";
         while (it.hasNext()) {
             String concat = str2.concat(String.valueOf((String) it.next()));
@@ -27,8 +47,8 @@ public final class zziq {
     }
 
     public final void zza(zzxg zzxgVar) {
-        this.zza = CollectionsKt.toSet(zzxgVar.zzf().zzi());
-        this.zzb = CollectionsKt.toSet(zzxgVar.zzg().zzi());
+        this.zza = g.p(zzxgVar.zzf().zzi());
+        this.zzb = g.p(zzxgVar.zzg().zzi());
     }
 
     public final boolean zzb(String str) {
@@ -40,12 +60,11 @@ public final class zziq {
             this.zzd++;
             return true;
         }
-        Intrinsics.checkNotNull(set, "null cannot be cast to non-null type kotlin.collections.Set<kotlin.String>");
         if (set.isEmpty()) {
             return true;
         }
         Set set2 = this.zzb;
-        Intrinsics.checkNotNull(set2, "null cannot be cast to non-null type kotlin.collections.Set<kotlin.String>");
+        j.c(set2, "null cannot be cast to non-null type kotlin.collections.Set<kotlin.String>");
         if (zzc(str, set2)) {
             return false;
         }

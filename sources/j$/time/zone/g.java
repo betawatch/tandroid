@@ -2,13 +2,14 @@ package j$.time.zone;
 
 import java.security.PrivilegedAction;
 import java.util.ArrayList;
+import java.util.List;
 
 /* loaded from: classes2.dex */
 public final class g implements PrivilegedAction {
-    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ List a;
 
-    public g(ArrayList arrayList) {
-        this.a = arrayList;
+    public g(List list) {
+        this.a = list;
     }
 
     @Override // java.security.PrivilegedAction
@@ -18,10 +19,10 @@ public final class g implements PrivilegedAction {
             try {
                 h hVar = (h) h.class.cast(Class.forName(property, true, h.class.getClassLoader()).newInstance());
                 h.b(hVar);
-                this.a.add(hVar);
+                ((ArrayList) this.a).add(hVar);
                 return null;
-            } catch (Exception e) {
-                throw new Error(e);
+            } catch (Exception e9) {
+                throw new Error(e9);
             }
         }
         h.b(new h());

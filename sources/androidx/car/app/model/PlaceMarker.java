@@ -2,6 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class PlaceMarker {
     private static final int MAX_LABEL_LENGTH = 3;
@@ -12,7 +13,23 @@ public final class PlaceMarker {
     private final int mIconType;
     private final CarText mLabel;
 
-    public static final class Builder {
+    public PlaceMarker(m0 m0Var) {
+        throw null;
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof PlaceMarker)) {
+            return false;
+        }
+        PlaceMarker placeMarker = (PlaceMarker) obj;
+        return Objects.equals(this.mIcon, placeMarker.mIcon) && Objects.equals(this.mLabel, placeMarker.mLabel) && Objects.equals(this.mColor, placeMarker.mColor) && this.mIconType == placeMarker.mIconType;
+    }
+
+    public CarColor getColor() {
+        return this.mColor;
     }
 
     public CarIcon getIcon() {
@@ -27,14 +44,13 @@ public final class PlaceMarker {
         return this.mLabel;
     }
 
-    public CarColor getColor() {
-        return this.mColor;
+    public int hashCode() {
+        return Objects.hash(this.mIcon, this.mLabel, this.mColor, Integer.valueOf(this.mIconType));
     }
 
     public String toString() {
         String shortString;
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
+        StringBuilder sb2 = new StringBuilder("[");
         CarIcon carIcon = this.mIcon;
         if (carIcon != null) {
             shortString = carIcon.toString();
@@ -42,28 +58,7 @@ public final class PlaceMarker {
             CarText carText = this.mLabel;
             shortString = carText != null ? CarText.toShortString(carText) : super.toString();
         }
-        sb.append(shortString);
-        sb.append("]");
-        return sb.toString();
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mIcon, this.mLabel, this.mColor, Integer.valueOf(this.mIconType));
-    }
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof PlaceMarker)) {
-            return false;
-        }
-        PlaceMarker placeMarker = (PlaceMarker) obj;
-        return Objects.equals(this.mIcon, placeMarker.mIcon) && Objects.equals(this.mLabel, placeMarker.mLabel) && Objects.equals(this.mColor, placeMarker.mColor) && this.mIconType == placeMarker.mIconType;
-    }
-
-    PlaceMarker(Builder builder) {
-        throw null;
+        return a9.p.p(sb2, shortString, "]");
     }
 
     private PlaceMarker() {

@@ -1,95 +1,104 @@
 package com.google.android.exoplayer2.ext.ffmpeg;
 
+import a5.n;
 import android.os.Handler;
-import com.google.android.exoplayer2.Format;
-import com.google.android.exoplayer2.Renderer;
-import com.google.android.exoplayer2.audio.AudioProcessor;
-import com.google.android.exoplayer2.audio.AudioRendererEventListener;
-import com.google.android.exoplayer2.audio.AudioSink;
-import com.google.android.exoplayer2.audio.DecoderAudioRenderer;
-import com.google.android.exoplayer2.audio.DefaultAudioSink;
-import com.google.android.exoplayer2.decoder.CryptoConfig;
-import com.google.android.exoplayer2.util.Assertions;
-import com.google.android.exoplayer2.util.MimeTypes;
-import com.google.android.exoplayer2.util.TraceUtil;
-import com.google.android.exoplayer2.util.Util;
+import d5.g0;
+import d5.q;
+import h3.s0;
+import h3.t0;
+import j3.b0;
+import j3.j;
+import j3.o;
+import j3.t;
+import k3.b;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class FfmpegAudioRenderer extends DecoderAudioRenderer {
+public final class FfmpegAudioRenderer extends b0 {
     private static final int DEFAULT_INPUT_BUFFER_SIZE = 5760;
     private static final int NUM_BUFFERS = 16;
     private static final String TAG = "FfmpegAudioRenderer";
 
-    @Override // com.google.android.exoplayer2.BaseRenderer, com.google.android.exoplayer2.Renderer
-    public /* bridge */ /* synthetic */ void setPlaybackSpeed(float f, float f2) {
-        Renderer.-CC.$default$setPlaybackSpeed(this, f, f2);
-    }
-
-    @Override // com.google.android.exoplayer2.BaseRenderer, com.google.android.exoplayer2.RendererCapabilities
-    public int supportsMixedMimeTypeAdaptation() {
-        return 8;
-    }
-
     public FfmpegAudioRenderer() {
-        this((Handler) null, (AudioRendererEventListener) null, new AudioProcessor[0]);
+        this((Handler) null, (o) null, new j[0]);
     }
 
-    public FfmpegAudioRenderer(Handler handler, AudioRendererEventListener audioRendererEventListener, AudioProcessor... audioProcessorArr) {
-        this(handler, audioRendererEventListener, new DefaultAudioSink.Builder().setAudioProcessors(audioProcessorArr).build());
+    private boolean shouldOutputFloat(t0 t0Var) {
+        if (!sinkSupportsFormat(t0Var, 2)) {
+            return true;
+        }
+        if (getSinkFormatSupport(g0.v(4, t0Var.O, t0Var.P)) != 2) {
+            return false;
+        }
+        return !"audio/ac3".equals(t0Var.B);
     }
 
-    public FfmpegAudioRenderer(Handler handler, AudioRendererEventListener audioRendererEventListener, AudioSink audioSink) {
-        super(handler, audioRendererEventListener, audioSink);
+    private boolean sinkSupportsFormat(t0 t0Var, int i10) {
+        return sinkSupportsFormat(g0.v(i10, t0Var.O, t0Var.P));
     }
 
-    @Override // com.google.android.exoplayer2.Renderer, com.google.android.exoplayer2.RendererCapabilities
+    @Override // h3.e, h3.h2
     public String getName() {
         return TAG;
     }
 
-    @Override // com.google.android.exoplayer2.audio.DecoderAudioRenderer
-    protected int supportsFormatInternal(Format format) {
-        String str = (String) Assertions.checkNotNull(format.sampleMimeType);
-        if (!FfmpegLibrary.isAvailable() || !MimeTypes.isAudio(str)) {
+    @Override // j3.b0
+    public int supportsFormatInternal(t0 t0Var) {
+        String str = t0Var.B;
+        str.getClass();
+        if (!FfmpegLibrary.isAvailable() || !q.h(str)) {
             return 0;
         }
         if (!FfmpegLibrary.supportsFormat(str)) {
             return 1;
         }
-        if (sinkSupportsFormat(format, 2) || sinkSupportsFormat(format, 4)) {
-            return format.cryptoType != 0 ? 2 : 4;
+        if (sinkSupportsFormat(t0Var, 2) || sinkSupportsFormat(t0Var, 4)) {
+            return t0Var.W != 0 ? 2 : 4;
         }
         return 1;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.exoplayer2.audio.DecoderAudioRenderer
-    public FfmpegAudioDecoder createDecoder(Format format, CryptoConfig cryptoConfig) {
-        TraceUtil.beginSection("createFfmpegAudioDecoder");
-        int i = format.maxInputSize;
-        FfmpegAudioDecoder ffmpegAudioDecoder = new FfmpegAudioDecoder(format, 16, 16, i != -1 ? i : DEFAULT_INPUT_BUFFER_SIZE, shouldOutputFloat(format));
-        TraceUtil.endSection();
+    @Override // h3.e, h3.h2
+    public int supportsMixedMimeTypeAdaptation() {
+        return 8;
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public FfmpegAudioRenderer(Handler handler, o oVar, j... jVarArr) {
+        this(handler, oVar, r0.e());
+        n nVar = new n(25);
+        jVarArr.getClass();
+        nVar.c = new n(jVarArr);
+    }
+
+    @Override // j3.b0
+    public FfmpegAudioDecoder createDecoder(t0 t0Var, b bVar) {
+        d5.a.c("createFfmpegAudioDecoder");
+        int i10 = t0Var.C;
+        FfmpegAudioDecoder ffmpegAudioDecoder = new FfmpegAudioDecoder(t0Var, 16, 16, i10 != -1 ? i10 : DEFAULT_INPUT_BUFFER_SIZE, shouldOutputFloat(t0Var));
+        d5.a.q();
         return ffmpegAudioDecoder;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.exoplayer2.audio.DecoderAudioRenderer
-    public Format getOutputFormat(FfmpegAudioDecoder ffmpegAudioDecoder) {
-        Assertions.checkNotNull(ffmpegAudioDecoder);
-        return new Format.Builder().setSampleMimeType("audio/raw").setChannelCount(ffmpegAudioDecoder.getChannelCount()).setSampleRate(ffmpegAudioDecoder.getSampleRate()).setPcmEncoding(ffmpegAudioDecoder.getEncoding()).build();
+    @Override // j3.b0
+    public t0 getOutputFormat(FfmpegAudioDecoder ffmpegAudioDecoder) {
+        ffmpegAudioDecoder.getClass();
+        s0 s0Var = new s0();
+        s0Var.o = "audio/raw";
+        s0Var.B = ffmpegAudioDecoder.getChannelCount();
+        s0Var.C = ffmpegAudioDecoder.getSampleRate();
+        s0Var.D = ffmpegAudioDecoder.getEncoding();
+        return new t0(s0Var);
     }
 
-    private boolean sinkSupportsFormat(Format format, int i) {
-        return sinkSupportsFormat(Util.getPcmFormat(i, format.channelCount, format.sampleRate));
+    public FfmpegAudioRenderer(Handler handler, o oVar, t tVar) {
+        super(handler, oVar, tVar);
     }
 
-    private boolean shouldOutputFloat(Format format) {
-        if (!sinkSupportsFormat(format, 2)) {
-            return true;
-        }
-        if (getSinkFormatSupport(Util.getPcmFormat(4, format.channelCount, format.sampleRate)) != 2) {
-            return false;
-        }
-        return !"audio/ac3".equals(format.sampleMimeType);
+    @Override // h3.e
+    public /* bridge */ /* synthetic */ void setPlaybackSpeed(float f10, float f11) {
     }
 }

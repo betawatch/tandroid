@@ -1,39 +1,16 @@
 package androidx.car.app.model;
 
-import androidx.car.app.utils.CollectionUtils;
 import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class ActionStrip {
     private final List<Action> mActions;
 
-    public static final class Builder {
-    }
-
-    public List<Action> getActions() {
-        return CollectionUtils.emptyIfNull(this.mActions);
-    }
-
-    public Action getFirstActionOfType(int i) {
-        for (Action action : this.mActions) {
-            if (action instanceof Action) {
-                Action action2 = action;
-                if (action2.getType() == i) {
-                    return action2;
-                }
-            }
-        }
-        return null;
-    }
-
-    public String toString() {
-        return "[action count: " + this.mActions.size() + "]";
-    }
-
-    public int hashCode() {
-        return Objects.hashCode(this.mActions);
+    public ActionStrip(b bVar) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -46,8 +23,29 @@ public final class ActionStrip {
         return false;
     }
 
-    ActionStrip(Builder builder) {
-        throw null;
+    public List<Action> getActions() {
+        List<Action> list = this.mActions;
+        return list != null ? list : Collections.EMPTY_LIST;
+    }
+
+    public Action getFirstActionOfType(int i10) {
+        for (Action action : this.mActions) {
+            if (action instanceof Action) {
+                Action action2 = action;
+                if (action2.getType() == i10) {
+                    return action2;
+                }
+            }
+        }
+        return null;
+    }
+
+    public int hashCode() {
+        return Objects.hashCode(this.mActions);
+    }
+
+    public String toString() {
+        return "[action count: " + this.mActions.size() + "]";
     }
 
     private ActionStrip() {

@@ -2,38 +2,15 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class Toggle {
     private final boolean mIsChecked;
     private final boolean mIsEnabled;
-    private final OnCheckedChangeDelegate mOnCheckedChangeDelegate;
+    private final z mOnCheckedChangeDelegate;
 
-    public static final class Builder {
-    }
-
-    public interface OnCheckedChangeListener {
-    }
-
-    public boolean isChecked() {
-        return this.mIsChecked;
-    }
-
-    public boolean isEnabled() {
-        return this.mIsEnabled;
-    }
-
-    public OnCheckedChangeDelegate getOnCheckedChangeDelegate() {
-        OnCheckedChangeDelegate onCheckedChangeDelegate = this.mOnCheckedChangeDelegate;
-        Objects.requireNonNull(onCheckedChangeDelegate);
-        return onCheckedChangeDelegate;
-    }
-
-    public String toString() {
-        return "[ isChecked: " + this.mIsChecked + ", isEnabled: " + this.mIsEnabled + "]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.mIsChecked), Boolean.valueOf(this.mIsEnabled));
+    public Toggle(y0 y0Var) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -47,8 +24,26 @@ public final class Toggle {
         return this.mIsChecked == toggle.mIsChecked && this.mIsEnabled == toggle.mIsEnabled;
     }
 
-    Toggle(Builder builder) {
-        throw null;
+    public z getOnCheckedChangeDelegate() {
+        z zVar = this.mOnCheckedChangeDelegate;
+        Objects.requireNonNull(zVar);
+        return zVar;
+    }
+
+    public int hashCode() {
+        return Objects.hash(Boolean.valueOf(this.mIsChecked), Boolean.valueOf(this.mIsEnabled));
+    }
+
+    public boolean isChecked() {
+        return this.mIsChecked;
+    }
+
+    public boolean isEnabled() {
+        return this.mIsEnabled;
+    }
+
+    public String toString() {
+        return "[ isChecked: " + this.mIsChecked + ", isEnabled: " + this.mIsEnabled + "]";
     }
 
     private Toggle() {

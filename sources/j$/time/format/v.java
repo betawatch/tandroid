@@ -1,14 +1,13 @@
 package j$.time.format;
 
 import j$.util.concurrent.ConcurrentHashMap;
-import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes2.dex */
 public final class v {
     public static final v a = new v();
 
     public final int hashCode() {
-        return NotificationCenter.themeUploadedToServer;
+        return 182;
     }
 
     static {
@@ -16,14 +15,7 @@ public final class v {
     }
 
     public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof v)) {
-            return false;
-        }
-        ((v) obj).getClass();
-        return true;
+        return this == obj || (obj instanceof v);
     }
 
     public final String toString() {

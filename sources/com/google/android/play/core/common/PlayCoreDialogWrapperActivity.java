@@ -7,25 +7,19 @@ import android.content.IntentSender;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class PlayCoreDialogWrapperActivity extends Activity {
-    private ResultReceiver zza;
-
-    private final void zza() {
-        ResultReceiver resultReceiver = this.zza;
-        if (resultReceiver != null) {
-            resultReceiver.send(3, new Bundle());
-        }
-    }
+    public ResultReceiver a;
 
     @Override // android.app.Activity
-    protected final void onActivityResult(int i, int i2, Intent intent) {
+    public final void onActivityResult(int i10, int i11, Intent intent) {
         ResultReceiver resultReceiver;
-        super.onActivityResult(i, i2, intent);
-        if (i == 0 && (resultReceiver = this.zza) != null) {
-            if (i2 == -1) {
+        super.onActivityResult(i10, i11, intent);
+        if (i10 == 0 && (resultReceiver = this.a) != null) {
+            if (i11 == -1) {
                 resultReceiver.send(1, new Bundle());
-            } else if (i2 == 0) {
+            } else if (i11 == 0) {
                 resultReceiver.send(2, new Bundle());
             }
         }
@@ -33,8 +27,9 @@ public class PlayCoreDialogWrapperActivity extends Activity {
     }
 
     @Override // android.app.Activity
-    protected final void onCreate(Bundle bundle) {
+    public final void onCreate(Bundle bundle) {
         Intent intent;
+        PlayCoreDialogWrapperActivity playCoreDialogWrapperActivity;
         int intExtra = getIntent().getIntExtra("window_flags", 0);
         if (intExtra != 0) {
             getWindow().getDecorView().setSystemUiVisibility(intExtra);
@@ -46,30 +41,38 @@ public class PlayCoreDialogWrapperActivity extends Activity {
         }
         super.onCreate(bundle);
         if (bundle != null) {
-            this.zza = (ResultReceiver) bundle.getParcelable("result_receiver");
+            this.a = (ResultReceiver) bundle.getParcelable("result_receiver");
             return;
         }
-        this.zza = (ResultReceiver) getIntent().getParcelableExtra("result_receiver");
+        this.a = (ResultReceiver) getIntent().getParcelableExtra("result_receiver");
         Bundle extras = getIntent().getExtras();
         PendingIntent pendingIntent = extras != null ? (PendingIntent) extras.get("confirmation_intent") : null;
         if (extras == null || pendingIntent == null) {
-            zza();
-            finish();
-        } else {
-            try {
-                try {
-                    startIntentSenderForResult(pendingIntent.getIntentSender(), 0, intent, 0, 0, 0);
-                } catch (IntentSender.SendIntentException unused) {
-                    zza();
-                    finish();
-                }
-            } catch (IntentSender.SendIntentException unused2) {
+            ResultReceiver resultReceiver = this.a;
+            if (resultReceiver != null) {
+                resultReceiver.send(3, new Bundle());
             }
+            finish();
+            return;
+        }
+        try {
+            playCoreDialogWrapperActivity = this;
+        } catch (IntentSender.SendIntentException unused) {
+            playCoreDialogWrapperActivity = this;
+        }
+        try {
+            playCoreDialogWrapperActivity.startIntentSenderForResult(pendingIntent.getIntentSender(), 0, intent, 0, 0, 0);
+        } catch (IntentSender.SendIntentException unused2) {
+            ResultReceiver resultReceiver2 = playCoreDialogWrapperActivity.a;
+            if (resultReceiver2 != null) {
+                resultReceiver2.send(3, new Bundle());
+            }
+            finish();
         }
     }
 
     @Override // android.app.Activity
-    protected final void onSaveInstanceState(Bundle bundle) {
-        bundle.putParcelable("result_receiver", this.zza);
+    public final void onSaveInstanceState(Bundle bundle) {
+        bundle.putParcelable("result_receiver", this.a);
     }
 }

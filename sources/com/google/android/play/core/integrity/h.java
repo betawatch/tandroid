@@ -3,12 +3,13 @@ package com.google.android.play.core.integrity;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 import java.util.Set;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class h extends StandardIntegrityManager.StandardIntegrityTokenRequest {
     private final String a;
     private final Set b;
 
-    /* synthetic */ h(String str, Set set, g gVar) {
+    public /* synthetic */ h(String str, Set set, g gVar) {
         this.a = str;
         this.b = set;
     }
@@ -29,6 +30,11 @@ final class h extends StandardIntegrityManager.StandardIntegrityTokenRequest {
         return false;
     }
 
+    public final int hashCode() {
+        String str = this.a;
+        return (((str == null ? 0 : str.hashCode()) ^ 1000003) * 1000003) ^ this.b.hashCode();
+    }
+
     @Override // com.google.android.play.core.integrity.StandardIntegrityManager.StandardIntegrityTokenRequest
     public final String requestHash() {
         return this.a;
@@ -41,10 +47,5 @@ final class h extends StandardIntegrityManager.StandardIntegrityTokenRequest {
     @Override // com.google.android.play.core.integrity.StandardIntegrityManager.StandardIntegrityTokenRequest
     public final Set<Integer> verdictOptOut() {
         return this.b;
-    }
-
-    public final int hashCode() {
-        String str = this.a;
-        return (((str == null ? 0 : str.hashCode()) ^ 1000003) * 1000003) ^ this.b.hashCode();
     }
 }

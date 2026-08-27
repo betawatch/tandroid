@@ -1,21 +1,22 @@
 package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
+import id.c0;
+import id.f0;
 import java.util.Arrays;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CoroutineScope;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzis {
     private final WebView zza;
-    private final CoroutineScope zzb;
+    private final c0 zzb;
 
-    public zzis(WebView webView, CoroutineScope coroutineScope) {
+    public zzis(WebView webView, c0 c0Var) {
         this.zza = webView;
-        this.zzb = coroutineScope;
+        this.zzb = c0Var;
     }
 
     public final void zzb(String str, String... strArr) {
-        BuildersKt__Builders_commonKt.launch$default(this.zzb, null, null, new zzir((String[]) Arrays.copyOf(strArr, strArr.length), this, str, null), 3, null);
+        f0.q(this.zzb, new zzir((String[]) Arrays.copyOf(strArr, strArr.length), this, str, null));
     }
 }

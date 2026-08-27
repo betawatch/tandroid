@@ -3,31 +3,30 @@ package com.google.android.recaptcha.internal;
 import android.os.Build;
 import dalvik.system.VMStack;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zznv extends zznr {
     private static final boolean zza = zza.zza();
     private static final boolean zzb;
     private static final zznq zzc;
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     final class zza {
-        zza() {
-        }
-
-        static boolean zza() {
+        public static boolean zza() {
             return zznv.zzt();
         }
     }
 
     static {
         String str = Build.FINGERPRINT;
-        boolean z = true;
+        boolean z10 = true;
         if (str != null && !"robolectric".equals(str)) {
-            z = false;
+            z10 = false;
         }
-        zzb = z;
+        zzb = z10;
         zzc = new zznq() { // from class: com.google.android.recaptcha.internal.zznv.1
             @Override // com.google.android.recaptcha.internal.zznq
-            public zzmw zza(Class<?> cls, int i) {
+            public zzmw zza(Class<?> cls, int i10) {
                 return zzmw.zza;
             }
 
@@ -50,11 +49,11 @@ public final class zznv extends zznr {
         };
     }
 
-    static Class<?> zzp() {
+    public static Class<?> zzp() {
         return VMStack.getStackClass2();
     }
 
-    static String zzq() {
+    public static String zzq() {
         try {
             return VMStack.getStackClass2().getName();
         } catch (Throwable unused) {
@@ -62,7 +61,7 @@ public final class zznv extends zznr {
         }
     }
 
-    static boolean zzt() {
+    public static boolean zzt() {
         try {
             Class.forName("dalvik.system.VMStack").getMethod("getStackClass2", null);
             return zza.class.getName().equals(zzq());
@@ -72,22 +71,22 @@ public final class zznv extends zznr {
     }
 
     @Override // com.google.android.recaptcha.internal.zznr
-    protected zznb zze(String str) {
+    public zznb zze(String str) {
         return zznz.zzb(str);
     }
 
     @Override // com.google.android.recaptcha.internal.zznr
-    protected zznq zzh() {
+    public zznq zzh() {
         return zzc;
     }
 
     @Override // com.google.android.recaptcha.internal.zznr
-    protected zzof zzj() {
+    public zzof zzj() {
         return zzoa.zzb();
     }
 
     @Override // com.google.android.recaptcha.internal.zznr
-    protected String zzm() {
+    public String zzm() {
         return "platform: Android";
     }
 }

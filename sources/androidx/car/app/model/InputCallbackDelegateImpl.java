@@ -1,87 +1,73 @@
 package androidx.car.app.model;
 
 import android.os.RemoteException;
-import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import androidx.car.app.IOnDoneCallback;
-import androidx.car.app.OnDoneCallback;
 import androidx.car.app.model.IInputCallback;
-import androidx.car.app.model.InputCallbackDelegateImpl;
-import androidx.car.app.utils.RemoteUtils;
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class InputCallbackDelegateImpl implements InputCallbackDelegate {
+public class InputCallbackDelegateImpl implements o {
     private final IInputCallback mCallback;
 
-    public void sendInputSubmitted(String str, OnDoneCallback onDoneCallback) {
-        try {
-            IInputCallback iInputCallback = this.mCallback;
-            Objects.requireNonNull(iInputCallback);
-            iInputCallback.onInputSubmitted(str, RemoteUtils.createOnDoneCallbackStub(onDoneCallback));
-        } catch (RemoteException e) {
-            throw new RuntimeException(e);
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class OnInputCallbackStub extends IInputCallback.Stub {
+        private final n mCallback;
+
+        public OnInputCallbackStub(n nVar) {
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ Object lambda$onInputSubmitted$0(String str) {
+            throw null;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ Object lambda$onInputTextChanged$1(String str) {
+            throw null;
+        }
+
+        @Override // androidx.car.app.model.IInputCallback
+        public void onInputSubmitted(String str, IOnDoneCallback iOnDoneCallback) {
+            androidx.car.app.utils.i.b(iOnDoneCallback, "onInputSubmitted", new p(this, str, 1));
+        }
+
+        @Override // androidx.car.app.model.IInputCallback
+        public void onInputTextChanged(String str, IOnDoneCallback iOnDoneCallback) {
+            androidx.car.app.utils.i.b(iOnDoneCallback, "onInputTextChanged", new p(this, str, 0));
         }
     }
 
-    public void sendInputTextChanged(String str, OnDoneCallback onDoneCallback) {
+    private InputCallbackDelegateImpl(n nVar) {
+        this.mCallback = new OnInputCallbackStub(nVar);
+    }
+
+    public static o create(n nVar) {
+        Objects.requireNonNull(nVar);
+        throw new ClassCastException();
+    }
+
+    public void sendInputSubmitted(String str, androidx.car.app.j jVar) {
         try {
             IInputCallback iInputCallback = this.mCallback;
             Objects.requireNonNull(iInputCallback);
-            iInputCallback.onInputTextChanged(str, RemoteUtils.createOnDoneCallbackStub(onDoneCallback));
-        } catch (RemoteException e) {
-            throw new RuntimeException(e);
+            iInputCallback.onInputSubmitted(str, androidx.car.app.utils.i.a());
+        } catch (RemoteException e9) {
+            throw new RuntimeException(e9);
         }
     }
 
-    public static InputCallbackDelegate create(InputCallback inputCallback) {
-        Objects.requireNonNull(inputCallback);
-        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(inputCallback);
-        return new InputCallbackDelegateImpl(null);
-    }
-
-    private InputCallbackDelegateImpl(InputCallback inputCallback) {
-        this.mCallback = new OnInputCallbackStub(inputCallback);
+    public void sendInputTextChanged(String str, androidx.car.app.j jVar) {
+        try {
+            IInputCallback iInputCallback = this.mCallback;
+            Objects.requireNonNull(iInputCallback);
+            iInputCallback.onInputTextChanged(str, androidx.car.app.utils.i.a());
+        } catch (RemoteException e9) {
+            throw new RuntimeException(e9);
+        }
     }
 
     private InputCallbackDelegateImpl() {
         this.mCallback = null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    static class OnInputCallbackStub extends IInputCallback.Stub {
-        private final InputCallback mCallback;
-
-        OnInputCallbackStub(InputCallback inputCallback) {
-        }
-
-        @Override // androidx.car.app.model.IInputCallback
-        public void onInputSubmitted(final String str, IOnDoneCallback iOnDoneCallback) {
-            RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onInputSubmitted", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.InputCallbackDelegateImpl$OnInputCallbackStub$$ExternalSyntheticLambda1
-                @Override // androidx.car.app.utils.RemoteUtils.HostCall
-                public final Object dispatch() {
-                    return InputCallbackDelegateImpl.OnInputCallbackStub.$r8$lambda$N58f7Tz5aHCUixbEqJYdd2mIpbI(InputCallbackDelegateImpl.OnInputCallbackStub.this, str);
-                }
-            });
-        }
-
-        public static /* synthetic */ Object $r8$lambda$N58f7Tz5aHCUixbEqJYdd2mIpbI(OnInputCallbackStub onInputCallbackStub, String str) {
-            onInputCallbackStub.getClass();
-            throw null;
-        }
-
-        @Override // androidx.car.app.model.IInputCallback
-        public void onInputTextChanged(final String str, IOnDoneCallback iOnDoneCallback) {
-            RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onInputTextChanged", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.InputCallbackDelegateImpl$OnInputCallbackStub$$ExternalSyntheticLambda0
-                @Override // androidx.car.app.utils.RemoteUtils.HostCall
-                public final Object dispatch() {
-                    return InputCallbackDelegateImpl.OnInputCallbackStub.$r8$lambda$g_2c3vvJ8FsmK7acrkLVEWJpcwE(InputCallbackDelegateImpl.OnInputCallbackStub.this, str);
-                }
-            });
-        }
-
-        public static /* synthetic */ Object $r8$lambda$g_2c3vvJ8FsmK7acrkLVEWJpcwE(OnInputCallbackStub onInputCallbackStub, String str) {
-            onInputCallbackStub.getClass();
-            throw null;
-        }
     }
 }

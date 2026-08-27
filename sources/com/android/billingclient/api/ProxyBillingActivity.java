@@ -6,206 +6,217 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
 import android.os.ResultReceiver;
-import com.android.billingclient.api.BillingResult;
-import com.google.android.gms.internal.play_billing.zzc;
-import com.google.android.gms.internal.play_billing.zzie;
-import com.google.android.gms.internal.play_billing.zzil;
+import com.google.android.gms.internal.play_billing.l3;
+import com.google.android.gms.internal.play_billing.u;
+import j3.a;
+import n2.g;
+import n2.y;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class ProxyBillingActivity extends Activity {
-    private int activityCode;
-    private long billingClientTransactionId;
-    private ResultReceiver inAppMessageResultReceiver;
-    private boolean isFlowFromFirstPartyClient;
-    private boolean sendCancelledBroadcastIfFinished;
-    private boolean wasServiceAutoReconnected;
+    public ResultReceiver a;
+    public boolean b;
+    public boolean c;
+    public int d;
+    public long e;
+    public boolean f;
 
-    private zzie getReasonForNullData(int i) {
-        return i != -1 ? i != 0 ? i != 3 ? i != 4 ? i != 5 ? zzie.zzbm : zzie.zzbn : zzie.zzbl : zzie.zzbk : zzie.zzbj : zzie.zzbi;
+    public final Intent a(int i10, long j10) {
+        Intent b10 = b();
+        b10.putExtra("RESPONSE_CODE", 6);
+        b10.putExtra("DEBUG_MESSAGE", "An internal error occurred.");
+        a a2 = g.a();
+        a2.a = 6;
+        a2.c = "An internal error occurred.";
+        g a3 = a2.a();
+        int i11 = y.a;
+        b10.putExtra("FAILURE_LOGGING_PAYLOAD", y.b(i10, 2, a3, null, l3.b).a());
+        b10.putExtra("INTENT_SOURCE", "LAUNCH_BILLING_FLOW");
+        b10.putExtra("billingClientTransactionId", j10);
+        b10.putExtra("wasServiceAutoReconnected", this.f);
+        return b10;
     }
 
-    private Intent makeAlternativeBillingIntent(String str) {
-        Intent intent = new Intent("com.android.vending.billing.ALTERNATIVE_BILLING");
-        intent.setPackage(getApplicationContext().getPackageName());
-        intent.putExtra("ALTERNATIVE_BILLING_USER_CHOICE_DATA", str);
-        return intent;
-    }
-
-    private Intent makePurchaseUpdatedIntentWithInternalErrorReason(zzie zzieVar, long j) {
-        Intent makePurchasesUpdatedIntent = makePurchasesUpdatedIntent();
-        makePurchasesUpdatedIntent.putExtra("RESPONSE_CODE", 6);
-        makePurchasesUpdatedIntent.putExtra("DEBUG_MESSAGE", "An internal error occurred.");
-        BillingResult.Builder newBuilder = BillingResult.newBuilder();
-        newBuilder.setResponseCode(6);
-        newBuilder.setDebugMessage("An internal error occurred.");
-        BillingResult build = newBuilder.build();
-        int i = zzcg.$r8$clinit;
-        makePurchasesUpdatedIntent.putExtra("FAILURE_LOGGING_PAYLOAD", zzcg.zzb(zzieVar, 2, build, null, zzil.zza).zzM());
-        makePurchasesUpdatedIntent.putExtra("INTENT_SOURCE", "LAUNCH_BILLING_FLOW");
-        makePurchasesUpdatedIntent.putExtra("billingClientTransactionId", j);
-        makePurchasesUpdatedIntent.putExtra("wasServiceAutoReconnected", this.wasServiceAutoReconnected);
-        return makePurchasesUpdatedIntent;
-    }
-
-    private Intent makePurchasesUpdatedIntent() {
+    public final Intent b() {
         Intent intent = new Intent("com.android.vending.billing.LOCAL_BROADCAST_PURCHASES_UPDATED");
         intent.setPackage(getApplicationContext().getPackageName());
         return intent;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x006f  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00dd  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00b8  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0034  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x011b  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00df  */
     @Override // android.app.Activity
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    protected void onActivityResult(int i, int i2, Intent intent) {
-        Intent makePurchaseUpdatedIntentWithInternalErrorReason;
-        super.onActivityResult(i, i2, intent);
-        if (i == 100 || i == 110) {
-            int responseCode = zzc.zzh(intent, "ProxyBillingActivity").getResponseCode();
-            int i3 = -1;
-            if (i2 == -1) {
-                if (responseCode != 0) {
-                    i2 = -1;
-                }
-                if (intent != null) {
-                    zzc.zzn("ProxyBillingActivity", "Got null data with resultCode " + i3 + "!");
-                    makePurchaseUpdatedIntentWithInternalErrorReason = makePurchaseUpdatedIntentWithInternalErrorReason(getReasonForNullData(i3), this.billingClientTransactionId);
-                } else if (intent.getExtras() != null) {
-                    String string = intent.getExtras().getString("ALTERNATIVE_BILLING_USER_CHOICE_DATA");
-                    if (string != null) {
-                        makePurchaseUpdatedIntentWithInternalErrorReason = makeAlternativeBillingIntent(string);
-                        makePurchaseUpdatedIntentWithInternalErrorReason.putExtra("INTENT_SOURCE", "LAUNCH_BILLING_FLOW");
-                    } else {
-                        makePurchaseUpdatedIntentWithInternalErrorReason = makePurchasesUpdatedIntent();
-                        makePurchaseUpdatedIntentWithInternalErrorReason.putExtras(intent.getExtras());
-                        makePurchaseUpdatedIntentWithInternalErrorReason.putExtra("INTENT_SOURCE", "LAUNCH_BILLING_FLOW");
-                    }
-                    makePurchaseUpdatedIntentWithInternalErrorReason.putExtra("billingClientTransactionId", this.billingClientTransactionId);
-                    makePurchaseUpdatedIntentWithInternalErrorReason.putExtra("wasServiceAutoReconnected", this.wasServiceAutoReconnected);
+    public final void onActivityResult(int i10, int i11, Intent intent) {
+        Intent a2;
+        int i12;
+        ResultReceiver resultReceiver;
+        super.onActivityResult(i10, i11, intent);
+        if (i10 == 100 || i10 == 110) {
+            int i13 = u.e("ProxyBillingActivity", intent).a;
+            if (i11 == -1) {
+                if (i13 != 0) {
+                    i11 = -1;
                 } else {
-                    zzc.zzn("ProxyBillingActivity", "Got null bundle!");
-                    makePurchaseUpdatedIntentWithInternalErrorReason = makePurchaseUpdatedIntentWithInternalErrorReason(zzie.zzv, this.billingClientTransactionId);
+                    i11 = -1;
+                    if (intent != null) {
+                        u.h("ProxyBillingActivity", "Got null data with resultCode " + i11 + "!");
+                        a2 = a(i11 != -1 ? i11 != 0 ? i11 != 3 ? i11 != 4 ? i11 != 5 ? 117 : 118 : 116 : 115 : 114 : 113, this.e);
+                    } else if (intent.getExtras() != null) {
+                        String string = intent.getExtras().getString("ALTERNATIVE_BILLING_USER_CHOICE_DATA");
+                        if (string != null) {
+                            a2 = new Intent("com.android.vending.billing.ALTERNATIVE_BILLING");
+                            a2.setPackage(getApplicationContext().getPackageName());
+                            a2.putExtra("ALTERNATIVE_BILLING_USER_CHOICE_DATA", string);
+                            a2.putExtra("INTENT_SOURCE", "LAUNCH_BILLING_FLOW");
+                        } else {
+                            Intent b10 = b();
+                            b10.putExtras(intent.getExtras());
+                            b10.putExtra("INTENT_SOURCE", "LAUNCH_BILLING_FLOW");
+                            a2 = b10;
+                        }
+                        a2.putExtra("billingClientTransactionId", this.e);
+                        a2.putExtra("wasServiceAutoReconnected", this.f);
+                    } else {
+                        u.h("ProxyBillingActivity", "Got null bundle!");
+                        a2 = a(22, this.e);
+                    }
+                    if (i10 == 110) {
+                        a2.putExtra("IS_FIRST_PARTY_PURCHASE", true);
+                    }
+                    sendBroadcast(a2);
                 }
-                if (i == 110) {
-                    makePurchaseUpdatedIntentWithInternalErrorReason.putExtra("IS_FIRST_PARTY_PURCHASE", true);
-                }
-                sendBroadcast(makePurchaseUpdatedIntentWithInternalErrorReason);
             }
-            zzc.zzn("ProxyBillingActivity", "Activity finished with resultCode " + i2 + " and billing's responseCode: " + responseCode);
-            i3 = i2;
+            u.h("ProxyBillingActivity", "Activity finished with resultCode " + i11 + " and billing's responseCode: " + i13);
             if (intent != null) {
             }
-            if (i == 110) {
+            if (i10 == 110) {
             }
-            sendBroadcast(makePurchaseUpdatedIntentWithInternalErrorReason);
-        } else if (i == 101) {
-            int zza = zzc.zza(intent, "ProxyBillingActivity");
-            ResultReceiver resultReceiver = this.inAppMessageResultReceiver;
+            sendBroadcast(a2);
+        } else if (i10 == 101) {
+            if (intent == null) {
+                u.h("ProxyBillingActivity", "Got null intent!");
+            } else {
+                int i14 = u.a;
+                Bundle extras = intent.getExtras();
+                if (extras == null) {
+                    u.h("ProxyBillingActivity", "Unexpected null bundle received!");
+                } else {
+                    i12 = extras.getInt("IN_APP_MESSAGE_RESPONSE_CODE", 0);
+                    resultReceiver = this.a;
+                    if (resultReceiver != null) {
+                        resultReceiver.send(i12, intent == null ? null : intent.getExtras());
+                    }
+                }
+            }
+            i12 = 0;
+            resultReceiver = this.a;
             if (resultReceiver != null) {
-                resultReceiver.send(zza, intent == null ? null : intent.getExtras());
             }
         } else {
-            zzc.zzn("ProxyBillingActivity", "Got onActivityResult with wrong requestCode: " + i + "; skipping...");
+            u.h("ProxyBillingActivity", "Got onActivityResult with wrong requestCode: " + i10 + "; skipping...");
         }
-        this.sendCancelledBroadcastIfFinished = false;
+        this.b = false;
         finish();
     }
 
     @Override // android.app.Activity
-    protected void onCreate(Bundle bundle) {
+    public final void onCreate(Bundle bundle) {
         PendingIntent pendingIntent;
         super.onCreate(bundle);
         if (bundle != null) {
-            zzc.zzm("ProxyBillingActivity", "Launching Play Store billing flow from savedInstanceState");
-            this.sendCancelledBroadcastIfFinished = bundle.getBoolean("send_cancelled_broadcast_if_finished", false);
+            u.g("ProxyBillingActivity", "Launching Play Store billing flow from savedInstanceState");
+            this.b = bundle.getBoolean("send_cancelled_broadcast_if_finished", false);
             if (bundle.containsKey("in_app_message_result_receiver")) {
-                this.inAppMessageResultReceiver = (ResultReceiver) bundle.getParcelable("in_app_message_result_receiver");
+                this.a = (ResultReceiver) bundle.getParcelable("in_app_message_result_receiver");
             }
-            this.isFlowFromFirstPartyClient = bundle.getBoolean("IS_FLOW_FROM_FIRST_PARTY_CLIENT", false);
-            this.activityCode = bundle.getInt("activity_code", 100);
+            this.c = bundle.getBoolean("IS_FLOW_FROM_FIRST_PARTY_CLIENT", false);
+            this.d = bundle.getInt("activity_code", 100);
             if (bundle.containsKey("billingClientTransactionId")) {
-                this.billingClientTransactionId = bundle.getLong("billingClientTransactionId");
+                this.e = bundle.getLong("billingClientTransactionId");
             }
             if (bundle.containsKey("wasServiceAutoReconnected")) {
-                this.wasServiceAutoReconnected = bundle.getBoolean("wasServiceAutoReconnected");
+                this.f = bundle.getBoolean("wasServiceAutoReconnected");
                 return;
             }
             return;
         }
-        zzc.zzm("ProxyBillingActivity", "Launching Play Store billing flow");
-        this.activityCode = 100;
+        u.g("ProxyBillingActivity", "Launching Play Store billing flow");
+        this.d = 100;
         if (getIntent().hasExtra("BUY_INTENT")) {
             pendingIntent = (PendingIntent) getIntent().getParcelableExtra("BUY_INTENT");
             if (getIntent().hasExtra("IS_FLOW_FROM_FIRST_PARTY_CLIENT") && getIntent().getBooleanExtra("IS_FLOW_FROM_FIRST_PARTY_CLIENT", false)) {
-                this.isFlowFromFirstPartyClient = true;
-                this.activityCode = 110;
+                this.c = true;
+                this.d = 110;
             }
         } else if (getIntent().hasExtra("IN_APP_MESSAGE_INTENT")) {
             pendingIntent = (PendingIntent) getIntent().getParcelableExtra("IN_APP_MESSAGE_INTENT");
-            this.inAppMessageResultReceiver = (ResultReceiver) getIntent().getParcelableExtra("in_app_message_result_receiver");
-            this.activityCode = 101;
+            this.a = (ResultReceiver) getIntent().getParcelableExtra("in_app_message_result_receiver");
+            this.d = 101;
         } else {
             pendingIntent = null;
         }
         if (getIntent().hasExtra("billingClientTransactionId")) {
-            this.billingClientTransactionId = getIntent().getLongExtra("billingClientTransactionId", 0L);
+            this.e = getIntent().getLongExtra("billingClientTransactionId", 0L);
         }
         if (getIntent().hasExtra("wasServiceAutoReconnected")) {
-            this.wasServiceAutoReconnected = getIntent().getBooleanExtra("wasServiceAutoReconnected", false);
+            this.f = getIntent().getBooleanExtra("wasServiceAutoReconnected", false);
         }
         try {
-            this.sendCancelledBroadcastIfFinished = true;
-            startIntentSenderForResult(pendingIntent.getIntentSender(), this.activityCode, new Intent(), 0, 0, 0);
-        } catch (IntentSender.SendIntentException e) {
-            zzc.zzo("ProxyBillingActivity", "Got exception while trying to start a purchase flow.", e);
-            ResultReceiver resultReceiver = this.inAppMessageResultReceiver;
+            this.b = true;
+            startIntentSenderForResult(pendingIntent.getIntentSender(), this.d, new Intent(), 0, 0, 0);
+        } catch (IntentSender.SendIntentException e9) {
+            u.i("ProxyBillingActivity", "Got exception while trying to start a purchase flow.", e9);
+            ResultReceiver resultReceiver = this.a;
             if (resultReceiver != null) {
                 resultReceiver.send(0, null);
             } else {
-                Intent makePurchaseUpdatedIntentWithInternalErrorReason = makePurchaseUpdatedIntentWithInternalErrorReason(zzie.zzbG, this.billingClientTransactionId);
-                if (this.isFlowFromFirstPartyClient) {
-                    makePurchaseUpdatedIntentWithInternalErrorReason.putExtra("IS_FIRST_PARTY_PURCHASE", true);
+                Intent a2 = a(137, this.e);
+                if (this.c) {
+                    a2.putExtra("IS_FIRST_PARTY_PURCHASE", true);
                 }
-                sendBroadcast(makePurchaseUpdatedIntentWithInternalErrorReason);
+                sendBroadcast(a2);
             }
-            this.sendCancelledBroadcastIfFinished = false;
+            this.b = false;
             finish();
         }
     }
 
     @Override // android.app.Activity
-    protected void onDestroy() {
+    public final void onDestroy() {
         super.onDestroy();
-        if (isFinishing() && this.sendCancelledBroadcastIfFinished) {
-            Intent makePurchasesUpdatedIntent = makePurchasesUpdatedIntent();
-            makePurchasesUpdatedIntent.putExtra("RESPONSE_CODE", 1);
-            makePurchasesUpdatedIntent.putExtra("DEBUG_MESSAGE", "Billing dialog closed.");
-            if (this.isFlowFromFirstPartyClient) {
-                makePurchasesUpdatedIntent.putExtra("IS_FIRST_PARTY_PURCHASE", true);
+        if (isFinishing() && this.b) {
+            Intent b10 = b();
+            b10.putExtra("RESPONSE_CODE", 1);
+            b10.putExtra("DEBUG_MESSAGE", "Billing dialog closed.");
+            if (this.c) {
+                b10.putExtra("IS_FIRST_PARTY_PURCHASE", true);
             }
-            int i = this.activityCode;
-            if (i == 110 || i == 100) {
-                makePurchasesUpdatedIntent.putExtra("INTENT_SOURCE", "LAUNCH_BILLING_FLOW");
-                makePurchasesUpdatedIntent.putExtra("billingClientTransactionId", this.billingClientTransactionId);
+            int i10 = this.d;
+            if (i10 == 110 || i10 == 100) {
+                b10.putExtra("INTENT_SOURCE", "LAUNCH_BILLING_FLOW");
+                b10.putExtra("billingClientTransactionId", this.e);
             }
-            sendBroadcast(makePurchasesUpdatedIntent);
+            sendBroadcast(b10);
         }
     }
 
     @Override // android.app.Activity
-    protected void onSaveInstanceState(Bundle bundle) {
+    public final void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
-        ResultReceiver resultReceiver = this.inAppMessageResultReceiver;
+        ResultReceiver resultReceiver = this.a;
         if (resultReceiver != null) {
             bundle.putParcelable("in_app_message_result_receiver", resultReceiver);
         }
-        bundle.putBoolean("send_cancelled_broadcast_if_finished", this.sendCancelledBroadcastIfFinished);
-        bundle.putBoolean("IS_FLOW_FROM_FIRST_PARTY_CLIENT", this.isFlowFromFirstPartyClient);
-        bundle.putInt("activity_code", this.activityCode);
-        bundle.putLong("billingClientTransactionId", this.billingClientTransactionId);
-        bundle.putBoolean("wasServiceAutoReconnected", this.wasServiceAutoReconnected);
+        bundle.putBoolean("send_cancelled_broadcast_if_finished", this.b);
+        bundle.putBoolean("IS_FLOW_FROM_FIRST_PARTY_CLIENT", this.c);
+        bundle.putInt("activity_code", this.d);
+        bundle.putLong("billingClientTransactionId", this.e);
+        bundle.putBoolean("wasServiceAutoReconnected", this.f);
     }
 }

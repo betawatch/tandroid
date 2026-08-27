@@ -2,7 +2,9 @@ package androidx.car.app.hardware.info;
 
 import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
+import s.c;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class EnergyLevel {
     private final CarValue<Float> mBatteryPercent;
@@ -12,48 +14,9 @@ public final class EnergyLevel {
     private final CarValue<Integer> mFuelVolumeDisplayUnit;
     private final CarValue<Float> mRangeRemainingMeters;
 
-    public CarValue<Float> getBatteryPercent() {
-        CarValue<Float> carValue = this.mBatteryPercent;
-        Objects.requireNonNull(carValue);
-        return carValue;
-    }
-
-    public CarValue<Float> getFuelPercent() {
-        CarValue<Float> carValue = this.mFuelPercent;
-        Objects.requireNonNull(carValue);
-        return carValue;
-    }
-
-    public CarValue<Boolean> getEnergyIsLow() {
-        CarValue<Boolean> carValue = this.mEnergyIsLow;
-        Objects.requireNonNull(carValue);
-        return carValue;
-    }
-
-    public CarValue<Float> getRangeRemainingMeters() {
-        CarValue<Float> carValue = this.mRangeRemainingMeters;
-        Objects.requireNonNull(carValue);
-        return carValue;
-    }
-
-    public CarValue<Integer> getDistanceDisplayUnit() {
-        CarValue<Integer> carValue = this.mDistanceDisplayUnit;
-        Objects.requireNonNull(carValue);
-        return carValue;
-    }
-
-    public CarValue<Integer> getFuelVolumeDisplayUnit() {
-        CarValue<Integer> carValue = this.mFuelVolumeDisplayUnit;
-        Objects.requireNonNull(carValue);
-        return carValue;
-    }
-
-    public String toString() {
-        return "[ battery percent: " + this.mBatteryPercent + ", fuel percent: " + this.mFuelPercent + ", energyIsLow: " + this.mEnergyIsLow + ", range remaining: " + getRangeRemainingMeters() + ", distance display unit: " + this.mDistanceDisplayUnit + ", fuel volume display unit: " + this.mFuelVolumeDisplayUnit + "]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mBatteryPercent, this.mFuelPercent, this.mEnergyIsLow, getRangeRemainingMeters(), this.mDistanceDisplayUnit, this.mFuelVolumeDisplayUnit);
+    public EnergyLevel(c cVar) {
+        cVar.getClass();
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -67,25 +30,48 @@ public final class EnergyLevel {
         return Objects.equals(this.mBatteryPercent, energyLevel.mBatteryPercent) && Objects.equals(this.mFuelPercent, energyLevel.mFuelPercent) && Objects.equals(this.mEnergyIsLow, energyLevel.mEnergyIsLow) && Objects.equals(getRangeRemainingMeters(), energyLevel.getRangeRemainingMeters()) && Objects.equals(this.mDistanceDisplayUnit, energyLevel.mDistanceDisplayUnit) && Objects.equals(this.mFuelVolumeDisplayUnit, energyLevel.mFuelVolumeDisplayUnit);
     }
 
-    EnergyLevel(Builder builder) {
-        CarValue<Float> carValue = builder.mBatteryPercent;
+    public CarValue<Float> getBatteryPercent() {
+        CarValue<Float> carValue = this.mBatteryPercent;
         Objects.requireNonNull(carValue);
-        this.mBatteryPercent = carValue;
-        CarValue<Float> carValue2 = builder.mFuelPercent;
-        Objects.requireNonNull(carValue2);
-        this.mFuelPercent = carValue2;
-        CarValue<Boolean> carValue3 = builder.mEnergyIsLow;
-        Objects.requireNonNull(carValue3);
-        this.mEnergyIsLow = carValue3;
-        CarValue<Float> carValue4 = builder.mRangeRemainingMeters;
-        Objects.requireNonNull(carValue4);
-        this.mRangeRemainingMeters = carValue4;
-        CarValue<Integer> carValue5 = builder.mDistanceDisplayUnit;
-        Objects.requireNonNull(carValue5);
-        this.mDistanceDisplayUnit = carValue5;
-        CarValue<Integer> carValue6 = builder.mFuelVolumeDisplayUnit;
-        Objects.requireNonNull(carValue6);
-        this.mFuelVolumeDisplayUnit = carValue6;
+        return carValue;
+    }
+
+    public CarValue<Integer> getDistanceDisplayUnit() {
+        CarValue<Integer> carValue = this.mDistanceDisplayUnit;
+        Objects.requireNonNull(carValue);
+        return carValue;
+    }
+
+    public CarValue<Boolean> getEnergyIsLow() {
+        CarValue<Boolean> carValue = this.mEnergyIsLow;
+        Objects.requireNonNull(carValue);
+        return carValue;
+    }
+
+    public CarValue<Float> getFuelPercent() {
+        CarValue<Float> carValue = this.mFuelPercent;
+        Objects.requireNonNull(carValue);
+        return carValue;
+    }
+
+    public CarValue<Integer> getFuelVolumeDisplayUnit() {
+        CarValue<Integer> carValue = this.mFuelVolumeDisplayUnit;
+        Objects.requireNonNull(carValue);
+        return carValue;
+    }
+
+    public CarValue<Float> getRangeRemainingMeters() {
+        CarValue<Float> carValue = this.mRangeRemainingMeters;
+        Objects.requireNonNull(carValue);
+        return carValue;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mBatteryPercent, this.mFuelPercent, this.mEnergyIsLow, getRangeRemainingMeters(), this.mDistanceDisplayUnit, this.mFuelVolumeDisplayUnit);
+    }
+
+    public String toString() {
+        return "[ battery percent: " + this.mBatteryPercent + ", fuel percent: " + this.mFuelPercent + ", energyIsLow: " + this.mEnergyIsLow + ", range remaining: " + getRangeRemainingMeters() + ", distance display unit: " + this.mDistanceDisplayUnit + ", fuel volume display unit: " + this.mFuelVolumeDisplayUnit + "]";
     }
 
     private EnergyLevel() {
@@ -97,29 +83,5 @@ public final class EnergyLevel {
         CarValue<Integer> carValue2 = CarValue.UNKNOWN_INTEGER;
         this.mDistanceDisplayUnit = carValue2;
         this.mFuelVolumeDisplayUnit = carValue2;
-    }
-
-    public static final class Builder {
-        CarValue mBatteryPercent;
-        CarValue mDistanceDisplayUnit;
-        CarValue mEnergyIsLow;
-        CarValue mFuelPercent;
-        CarValue mFuelVolumeDisplayUnit;
-        CarValue mRangeRemainingMeters;
-
-        public Builder() {
-            CarValue<Float> carValue = CarValue.UNKNOWN_FLOAT;
-            this.mBatteryPercent = carValue;
-            this.mFuelPercent = carValue;
-            this.mEnergyIsLow = CarValue.UNKNOWN_BOOLEAN;
-            this.mRangeRemainingMeters = carValue;
-            CarValue<Integer> carValue2 = CarValue.UNKNOWN_INTEGER;
-            this.mDistanceDisplayUnit = carValue2;
-            this.mFuelVolumeDisplayUnit = carValue2;
-        }
-
-        public EnergyLevel build() {
-            return new EnergyLevel(this);
-        }
     }
 }

@@ -5,9 +5,26 @@ import org.json.JSONObject;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class VoIPServerConfig {
     private static JSONObject config = new JSONObject();
+
+    public static boolean getBoolean(String str, boolean z10) {
+        return config.optBoolean(str, z10);
+    }
+
+    public static double getDouble(String str, double d) {
+        return config.optDouble(str, d);
+    }
+
+    public static int getInt(String str, int i10) {
+        return config.optInt(str, i10);
+    }
+
+    public static String getString(String str, String str2) {
+        return config.optString(str, str2);
+    }
 
     private static native void nativeSetConfig(String str);
 
@@ -15,26 +32,10 @@ public class VoIPServerConfig {
         try {
             config = new JSONObject(str);
             nativeSetConfig(str);
-        } catch (JSONException e) {
+        } catch (JSONException e9) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("Error parsing VoIP config", e);
+                FileLog.e("Error parsing VoIP config", e9);
             }
         }
-    }
-
-    public static int getInt(String str, int i) {
-        return config.optInt(str, i);
-    }
-
-    public static double getDouble(String str, double d) {
-        return config.optDouble(str, d);
-    }
-
-    public static String getString(String str, String str2) {
-        return config.optString(str, str2);
-    }
-
-    public static boolean getBoolean(String str, boolean z) {
-        return config.optBoolean(str, z);
     }
 }

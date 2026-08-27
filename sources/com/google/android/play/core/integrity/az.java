@@ -5,23 +5,24 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class az implements StandardIntegrityManager {
     private final bn a;
     private final bt b;
 
-    az(bn bnVar, bt btVar) {
+    public az(bn bnVar, bt btVar) {
         this.a = bnVar;
         this.b = btVar;
     }
 
-    final /* synthetic */ Task a(StandardIntegrityManager.PrepareIntegrityTokenRequest prepareIntegrityTokenRequest, Long l) {
-        final long b = prepareIntegrityTokenRequest.b();
-        final long longValue = l.longValue();
+    public final /* synthetic */ Task a(StandardIntegrityManager.PrepareIntegrityTokenRequest prepareIntegrityTokenRequest, Long l10) {
+        final long b10 = prepareIntegrityTokenRequest.b();
+        final long longValue = l10.longValue();
         prepareIntegrityTokenRequest.a();
         final bt btVar = this.b;
-        final int i = 0;
-        return Tasks.forResult(new StandardIntegrityManager.StandardIntegrityTokenProvider(b, longValue, i) { // from class: com.google.android.play.core.integrity.bs
+        final int i10 = 0;
+        return Tasks.forResult(new StandardIntegrityManager.StandardIntegrityTokenProvider(b10, longValue, i10) { // from class: com.google.android.play.core.integrity.bs
             public final /* synthetic */ long b;
             public final /* synthetic */ long c;
 
@@ -34,9 +35,9 @@ final class az implements StandardIntegrityManager {
 
     @Override // com.google.android.play.core.integrity.StandardIntegrityManager
     public final Task<StandardIntegrityManager.StandardIntegrityTokenProvider> prepareIntegrityToken(final StandardIntegrityManager.PrepareIntegrityTokenRequest prepareIntegrityTokenRequest) {
-        long b = prepareIntegrityTokenRequest.b();
+        long b10 = prepareIntegrityTokenRequest.b();
         prepareIntegrityTokenRequest.a();
-        return this.a.e(b, 0).onSuccessTask(new SuccessContinuation() { // from class: com.google.android.play.core.integrity.ay
+        return this.a.e(b10, 0).onSuccessTask(new SuccessContinuation() { // from class: com.google.android.play.core.integrity.ay
             @Override // com.google.android.gms.tasks.SuccessContinuation
             public final Task then(Object obj) {
                 return az.this.a(prepareIntegrityTokenRequest, (Long) obj);

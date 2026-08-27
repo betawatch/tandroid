@@ -1,59 +1,58 @@
 package com.google.android.recaptcha.internal;
 
+import ad.p;
 import com.google.android.recaptcha.RecaptchaAction;
-import kotlin.Result;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.CoroutineScope;
+import h7.k6;
+import id.c0;
+import pc.f;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzen extends SuspendLambda implements Function2 {
+final class zzen extends i implements p {
     int zza;
     final /* synthetic */ zzeq zzb;
     final /* synthetic */ RecaptchaAction zzc;
     final /* synthetic */ long zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzen(zzeq zzeqVar, RecaptchaAction recaptchaAction, long j, Continuation continuation) {
-        super(2, continuation);
+    public zzen(zzeq zzeqVar, RecaptchaAction recaptchaAction, long j10, c cVar) {
+        super(2, cVar);
         this.zzb = zzeqVar;
         this.zzc = recaptchaAction;
-        this.zzd = j;
+        this.zzd = j10;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzen(this.zzb, this.zzc, this.zzd, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        return new zzen(this.zzb, this.zzc, this.zzd, cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzen) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzen) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
         Object zze;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zza;
-        ResultKt.throwOnFailure(obj);
-        if (i != 0) {
-            zze = ((Result) obj).unbox-impl();
+        sc.a aVar = sc.a.a;
+        int i10 = this.zza;
+        k6.b(obj);
+        if (i10 != 0) {
+            zze = ((f) obj).a;
         } else {
             zzeq zzeqVar = this.zzb;
             RecaptchaAction recaptchaAction = this.zzc;
-            long j = this.zzd;
+            long j10 = this.zzd;
             this.zza = 1;
-            zze = zzeqVar.zze(recaptchaAction, j, this);
-            if (zze == coroutine_suspended) {
-                return coroutine_suspended;
+            zze = zzeqVar.zze(recaptchaAction, j10, this);
+            if (zze == aVar) {
+                return aVar;
             }
         }
-        ResultKt.throwOnFailure(zze);
+        k6.b(zze);
         return zze;
     }
 }

@@ -1,16 +1,15 @@
 package com.google.android.recaptcha.internal;
 
+import ad.p;
+import h7.k6;
+import id.c0;
 import java.util.List;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.CoroutineScope;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzae extends SuspendLambda implements Function2 {
+final class zzae extends i implements p {
     Object zza;
     int zzb;
     final /* synthetic */ zzhk zzc;
@@ -19,46 +18,46 @@ final class zzae extends SuspendLambda implements Function2 {
     final /* synthetic */ List zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzae(zzhk zzhkVar, zzar zzarVar, String str, List list, Continuation continuation) {
-        super(2, continuation);
+    public zzae(zzhk zzhkVar, zzar zzarVar, String str, List list, c cVar) {
+        super(2, cVar);
         this.zzc = zzhkVar;
         this.zzd = zzarVar;
         this.zze = str;
         this.zzf = list;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzae(this.zzc, this.zzd, this.zze, this.zzf, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        return new zzae(this.zzc, this.zzd, this.zze, this.zzf, cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzae) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzae) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0036, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0034, code lost:
     
         if (r5 == r0) goto L14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0043, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0041, code lost:
     
         return r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0028, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0026, code lost:
     
         if (r5 != r0) goto L9;
      */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zzb;
-        if (i == 0) {
-            ResultKt.throwOnFailure(obj);
+        sc.a aVar = sc.a.a;
+        int i10 = this.zzb;
+        if (i10 == 0) {
+            k6.b(obj);
             zzhkVar = this.zzc;
             zzar zzarVar = this.zzd;
             String str = this.zze;
@@ -66,13 +65,13 @@ final class zzae extends SuspendLambda implements Function2 {
             this.zzb = 1;
             obj = zzarVar.zzc(str, this);
         } else {
-            if (i != 1) {
-                ResultKt.throwOnFailure(obj);
+            if (i10 != 1) {
+                k6.b(obj);
                 this.zzf.add((zzat) obj);
-                return Unit.INSTANCE;
+                return pc.i.a;
             }
             zzhkVar = (zzhk) this.zza;
-            ResultKt.throwOnFailure(obj);
+            k6.b(obj);
         }
         this.zza = null;
         this.zzb = 2;

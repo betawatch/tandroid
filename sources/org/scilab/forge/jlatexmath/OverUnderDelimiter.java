@@ -1,6 +1,7 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class OverUnderDelimiter extends Atom {
     private final Atom base;
     private final SpaceAtom kern;
@@ -8,21 +9,22 @@ public class OverUnderDelimiter extends Atom {
     private Atom script;
     private final SymbolAtom symbol;
 
-    public OverUnderDelimiter(Atom atom, Atom atom2, SymbolAtom symbolAtom, int i, float f, boolean z) {
+    public OverUnderDelimiter(Atom atom, Atom atom2, SymbolAtom symbolAtom, int i10, float f10, boolean z10) {
         this.type = 7;
         this.base = atom;
         this.script = atom2;
         this.symbol = symbolAtom;
-        this.kern = new SpaceAtom(i, 0.0f, f, 0.0f);
-        this.over = z;
+        this.kern = new SpaceAtom(i10, 0.0f, f10, 0.0f);
+        this.over = z10;
+    }
+
+    private static float getMaxWidth(Box box, Box box2, Box box3) {
+        float max = Math.max(box.getWidth(), box2.getDepth() + box2.getHeight());
+        return box3 != null ? Math.max(max, box3.getWidth()) : max;
     }
 
     public void addScript(Atom atom) {
         this.script = atom;
-    }
-
-    public boolean isOver() {
-        return this.over;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
@@ -41,8 +43,7 @@ public class OverUnderDelimiter extends Atom {
         return new OverUnderBox(maxWidth - strutBox.getWidth() > 1.0E-7f ? new HorizontalBox(strutBox, maxWidth, 2) : strutBox, new VerticalBox(create, maxWidth, 2), (box == null || maxWidth - box.getWidth() <= 1.0E-7f) ? box : new HorizontalBox(box, maxWidth, 2), this.kern.createBox(teXEnvironment).getHeight(), this.over);
     }
 
-    private static float getMaxWidth(Box box, Box box2, Box box3) {
-        float max = Math.max(box.getWidth(), box2.getHeight() + box2.getDepth());
-        return box3 != null ? Math.max(max, box3.getWidth()) : max;
+    public boolean isOver() {
+        return this.over;
     }
 }

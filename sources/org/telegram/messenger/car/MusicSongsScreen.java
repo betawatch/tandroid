@@ -1,53 +1,48 @@
 package org.telegram.messenger.car;
 
-import androidx.car.app.Screen;
-import androidx.lifecycle.DefaultLifecycleObserver;
-import androidx.lifecycle.LifecycleOwner;
-import kotlin.jvm.internal.Intrinsics;
+import androidx.car.app.l;
+import androidx.lifecycle.e;
+import androidx.lifecycle.t;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
-public class MusicSongsScreen extends Screen implements DefaultLifecycleObserver, NotificationCenter.NotificationCenterDelegate {
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public /* synthetic */ void onCreate(LifecycleOwner lifecycleOwner) {
-        Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
-    }
-
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public /* synthetic */ void onDestroy(LifecycleOwner lifecycleOwner) {
-        Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
-    }
-
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public /* synthetic */ void onStart(LifecycleOwner lifecycleOwner) {
-        Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
-    }
-
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public /* synthetic */ void onStop(LifecycleOwner lifecycleOwner) {
-        Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
-    }
-
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public void onResume(LifecycleOwner lifecycleOwner) {
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
+public class MusicSongsScreen extends l implements e, NotificationCenter.NotificationCenterDelegate {
+    @Override // androidx.lifecycle.e
+    public final void a(t tVar) {
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.messagePlayingDidStart);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.messagePlayingPlayStateChanged);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.activeAccountChanged);
     }
 
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public void onPause(LifecycleOwner lifecycleOwner) {
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 != NotificationCenter.activeAccountChanged) {
+            throw null;
+        }
+        throw null;
+    }
+
+    @Override // androidx.lifecycle.e
+    public final void e(t tVar) {
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.messagePlayingDidStart);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.messagePlayingPlayStateChanged);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.activeAccountChanged);
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == NotificationCenter.activeAccountChanged) {
-            getScreenManager();
-            throw null;
-        }
-        invalidate();
+    @Override // androidx.lifecycle.e
+    public final /* synthetic */ void b(t tVar) {
+    }
+
+    @Override // androidx.lifecycle.e
+    public final /* synthetic */ void f(t tVar) {
+    }
+
+    @Override // androidx.lifecycle.e
+    public final /* synthetic */ void h(t tVar) {
+    }
+
+    @Override // androidx.lifecycle.e
+    public final /* synthetic */ void i(t tVar) {
     }
 }

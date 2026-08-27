@@ -1,39 +1,29 @@
 package com.google.android.recaptcha.internal;
 
 import android.app.Application;
-import com.google.android.gms.common.GoogleApiAvailabilityLight;
 import com.google.android.play.core.integrity.StandardIntegrityException;
-import com.google.android.play.core.integrity.model.StandardIntegrityErrorCode;
+import h7.j6;
 import java.nio.charset.StandardCharsets;
-import kotlin.Lazy;
-import kotlin.LazyKt;
-import kotlin.coroutines.Continuation;
-import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.f;
+import pc.c;
+import pc.g;
+import v5.e;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzba implements zzar {
     private final zzbo zza;
     private final zzda zzb;
     private boolean zzc;
     private String zzd;
-    private final Lazy zze;
+    private final c zze;
 
-    /* JADX WARN: Multi-variable type inference failed */
     public zzba() {
-        this(null, 0 == true ? 1 : 0, 3, 0 == true ? 1 : 0);
-    }
-
-    public zzba(zzbo zzboVar, zzda zzdaVar) {
-        this.zza = zzboVar;
-        this.zzb = zzdaVar;
-        this.zzc = true;
-        this.zzd = "";
-        int i = zzby.zza;
-        this.zze = LazyKt.lazy(zzaz.zza);
+        this(null, null, 3, null);
     }
 
     public static final /* synthetic */ Application zzb(zzba zzbaVar) {
-        return (Application) zzbaVar.zze.getValue();
+        return (Application) ((g) zzbaVar.zze).a();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -53,30 +43,30 @@ public final class zzba implements zzar {
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzc(String str, Continuation continuation) {
-        return zzam.zza(this, str, continuation);
+    public final /* synthetic */ Object zzc(String str, rc.c cVar) {
+        return zzam.zza(this, str, cVar);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzd(zzxp zzxpVar, Continuation continuation) {
+    public final /* synthetic */ Object zzd(zzxp zzxpVar, rc.c cVar) {
         Object zzd;
-        zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), continuation);
+        zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), cVar);
         return zzd;
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zze(String str, Continuation continuation) {
+    public final Object zze(String str, rc.c cVar) {
         return new zzhg(new zzax(this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zzf(zzxp zzxpVar, Continuation continuation) {
+    public final Object zzf(zzxp zzxpVar, rc.c cVar) {
         return new zzhg(new zzay(this, zzxpVar, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zzg(Exception exc, Continuation continuation) {
-        int i;
+    public final Object zzg(Exception exc, rc.c cVar) {
+        int i10;
         Throwable cause = exc.getCause();
         if (cause != null) {
             exc = cause;
@@ -84,63 +74,63 @@ public final class zzba implements zzar {
         if (exc instanceof StandardIntegrityException) {
             int errorCode = ((StandardIntegrityException) exc).getErrorCode();
             if (errorCode == -100) {
-                i = 44;
+                i10 = 44;
             } else if (errorCode == -12) {
-                i = 39;
+                i10 = 39;
             } else if (errorCode == -3) {
-                i = 30;
+                i10 = 30;
             } else if (errorCode == -2) {
-                i = 29;
+                i10 = 29;
             } else if (errorCode != -1) {
                 switch (errorCode) {
-                    case StandardIntegrityErrorCode.INTEGRITY_TOKEN_PROVIDER_INVALID /* -19 */:
-                        i = 54;
+                    case -19:
+                        i10 = 54;
                         break;
-                    case StandardIntegrityErrorCode.CLIENT_TRANSIENT_ERROR /* -18 */:
-                        i = 53;
+                    case -18:
+                        i10 = 53;
                         break;
                     case -17:
-                        i = 52;
+                        i10 = 52;
                         break;
                     case -16:
-                        i = 43;
+                        i10 = 43;
                         break;
                     case -15:
-                        i = 42;
+                        i10 = 42;
                         break;
                     case -14:
-                        i = 41;
+                        i10 = 41;
                         break;
                     default:
                         switch (errorCode) {
                             case -9:
-                                i = 36;
+                                i10 = 36;
                                 break;
                             case -8:
-                                i = 35;
+                                i10 = 35;
                                 break;
                             case -7:
-                                i = 34;
+                                i10 = 34;
                                 break;
                             case -6:
-                                i = 33;
+                                i10 = 33;
                                 break;
                             case -5:
-                                i = 32;
+                                i10 = 32;
                                 break;
                             default:
-                                i = 2;
+                                i10 = 2;
                                 break;
                         }
                 }
             } else {
-                i = 28;
+                i10 = 28;
             }
         } else {
-            i = 45;
+            i10 = 45;
         }
         zzys zzf = zzyt.zzf();
-        zzf.zzq(i);
+        zzf.zzq(i10);
         zzf.zzr(15);
         return zzas.zza(this, (zzyt) zzf.zzk());
     }
@@ -155,11 +145,20 @@ public final class zzba implements zzar {
         return this.zzc;
     }
 
-    public final void zzo(boolean z) {
+    public final void zzo(boolean z10) {
         this.zzc = false;
     }
 
-    public /* synthetic */ zzba(zzbo zzboVar, zzda zzdaVar, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(new zzbo(28800000L), new zzcz(GoogleApiAvailabilityLight.getInstance()));
+    public zzba(zzbo zzboVar, zzda zzdaVar) {
+        this.zza = zzboVar;
+        this.zzb = zzdaVar;
+        this.zzc = true;
+        this.zzd = "";
+        int i10 = zzby.zza;
+        this.zze = j6.a(zzaz.zza);
+    }
+
+    public zzba(zzbo zzboVar, zzda zzdaVar, int i10, f fVar) {
+        this(new zzbo(28800000L), new zzcz(e.b));
     }
 }

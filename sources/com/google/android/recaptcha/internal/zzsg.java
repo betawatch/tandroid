@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzsg implements zztq {
     private static final zzsg zza = new zzsg();
@@ -18,8 +19,8 @@ final class zzsg implements zztq {
         }
         try {
             return (zztp) zzsn.zzu(cls.asSubclass(zzsn.class)).zzh(3, null, null);
-        } catch (Exception e) {
-            throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e);
+        } catch (Exception e9) {
+            throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e9);
         }
     }
 

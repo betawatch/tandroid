@@ -17,14 +17,11 @@ public final class o implements Temporal, j$.time.temporal.m, Comparable, Serial
     @Override // java.lang.Comparable
     public final int compareTo(Object obj) {
         o oVar = (o) obj;
-        boolean equals = this.b.equals(oVar.b);
-        h hVar = this.a;
-        h hVar2 = oVar.a;
-        if (equals) {
-            return hVar.compareTo(hVar2);
+        if (this.b.equals(oVar.b)) {
+            return this.a.compareTo(oVar.a);
         }
         int compare = Long.compare(H(), oVar.H());
-        return compare == 0 ? hVar.compareTo(hVar2) : compare;
+        return compare == 0 ? this.a.compareTo(oVar.a) : compare;
     }
 
     static {
@@ -46,8 +43,8 @@ public final class o implements Temporal, j$.time.temporal.m, Comparable, Serial
         } else {
             try {
                 oVar = new o(h.I(temporal), ZoneOffset.L(temporal));
-            } catch (b e) {
-                throw new b("Unable to obtain OffsetTime from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e);
+            } catch (b e9) {
+                throw new b("Unable to obtain OffsetTime from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e9);
             }
         }
         if (qVar instanceof ChronoUnit) {
@@ -84,12 +81,12 @@ public final class o implements Temporal, j$.time.temporal.m, Comparable, Serial
     }
 
     @Override // j$.time.temporal.l
-    public final boolean h(j$.time.temporal.o oVar) {
-        return oVar instanceof j$.time.temporal.a ? ((j$.time.temporal.a) oVar).E() || oVar == j$.time.temporal.a.OFFSET_SECONDS : oVar != null && oVar.p(this);
+    public final boolean e(j$.time.temporal.o oVar) {
+        return oVar instanceof j$.time.temporal.a ? ((j$.time.temporal.a) oVar).y() || oVar == j$.time.temporal.a.OFFSET_SECONDS : oVar != null && oVar.j(this);
     }
 
     @Override // j$.time.temporal.l
-    public final j$.time.temporal.s q(j$.time.temporal.o oVar) {
+    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             if (oVar != j$.time.temporal.a.OFFSET_SECONDS) {
                 h hVar = this.a;
@@ -98,61 +95,59 @@ public final class o implements Temporal, j$.time.temporal.m, Comparable, Serial
             }
             return ((j$.time.temporal.a) oVar).b;
         }
-        return oVar.r(this);
+        return oVar.k(this);
     }
 
     @Override // j$.time.temporal.l
-    public final int o(j$.time.temporal.o oVar) {
+    public final int j(j$.time.temporal.o oVar) {
         return j$.time.temporal.p.a(this, oVar);
     }
 
     @Override // j$.time.temporal.l
-    public final long u(j$.time.temporal.o oVar) {
+    public final long y(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             if (oVar == j$.time.temporal.a.OFFSET_SECONDS) {
                 return this.b.getTotalSeconds();
             }
-            return this.a.u(oVar);
+            return this.a.y(oVar);
         }
-        return oVar.o(this);
+        return oVar.m(this);
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal p(LocalDate localDate) {
+    public final Temporal k(LocalDate localDate) {
         localDate.getClass();
         return (o) j$.com.android.tools.r8.a.a(localDate, this);
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal e(long j, j$.time.temporal.o oVar) {
+    public final Temporal c(long j10, j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            j$.time.temporal.a aVar = j$.time.temporal.a.OFFSET_SECONDS;
-            h hVar = this.a;
-            if (oVar == aVar) {
-                j$.time.temporal.a aVar2 = (j$.time.temporal.a) oVar;
-                return I(hVar, ZoneOffset.O(aVar2.b.a(j, aVar2)));
+            if (oVar == j$.time.temporal.a.OFFSET_SECONDS) {
+                j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
+                return I(this.a, ZoneOffset.O(aVar.b.a(j10, aVar)));
             }
-            return I(hVar.e(j, oVar), this.b);
+            return I(this.a.c(j10, oVar), this.b);
         }
-        return (o) oVar.q(this, j);
+        return (o) oVar.q(this, j10);
     }
 
     @Override // j$.time.temporal.Temporal
-    /* renamed from: E, reason: merged with bridge method [inline-methods] */
-    public final o f(long j, j$.time.temporal.q qVar) {
+    /* renamed from: G, reason: merged with bridge method [inline-methods] */
+    public final o d(long j10, j$.time.temporal.q qVar) {
         if (qVar instanceof ChronoUnit) {
-            return I(this.a.f(j, qVar), this.b);
+            return I(this.a.d(j10, qVar), this.b);
         }
-        return (o) qVar.l(this, j);
+        return (o) qVar.j(this, j10);
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal l(long j, ChronoUnit chronoUnit) {
-        return j == Long.MIN_VALUE ? f(Long.MAX_VALUE, chronoUnit).f(1L, chronoUnit) : f(-j, chronoUnit);
+    public final Temporal w(long j10, ChronoUnit chronoUnit) {
+        return j10 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j10, chronoUnit);
     }
 
     @Override // j$.time.temporal.l
-    public final Object r(j$.time.format.a aVar) {
+    public final Object m(j$.time.format.a aVar) {
         if (aVar == j$.time.temporal.p.d || aVar == j$.time.temporal.p.e) {
             return this.b;
         }
@@ -169,8 +164,8 @@ public final class o implements Temporal, j$.time.temporal.m, Comparable, Serial
     }
 
     @Override // j$.time.temporal.m
-    public final Temporal x(Temporal temporal) {
-        return temporal.e(this.a.R(), j$.time.temporal.a.NANO_OF_DAY).e(this.b.getTotalSeconds(), j$.time.temporal.a.OFFSET_SECONDS);
+    public final Temporal q(Temporal temporal) {
+        return temporal.c(this.a.R(), j$.time.temporal.a.NANO_OF_DAY).c(this.b.getTotalSeconds(), j$.time.temporal.a.OFFSET_SECONDS);
     }
 
     public final long H() {

@@ -2,36 +2,17 @@ package androidx.car.app.navigation.model;
 
 import androidx.car.app.model.CarIcon;
 import androidx.car.app.model.CarText;
-import androidx.car.app.navigation.model.NavigationTemplate;
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class MessageInfo implements NavigationTemplate.NavigationInfo {
+public final class MessageInfo implements f {
     private final CarIcon mImage;
     private final CarText mText;
     private final CarText mTitle;
 
-    public static final class Builder {
-    }
-
-    public CarText getTitle() {
-        return this.mTitle;
-    }
-
-    public CarText getText() {
-        return this.mText;
-    }
-
-    public CarIcon getImage() {
-        return this.mImage;
-    }
-
-    public String toString() {
-        return "MessageInfo";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mTitle, this.mText, this.mImage);
+    public MessageInfo(d dVar) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -45,8 +26,24 @@ public final class MessageInfo implements NavigationTemplate.NavigationInfo {
         return Objects.equals(this.mTitle, messageInfo.mTitle) && Objects.equals(this.mText, messageInfo.mText) && Objects.equals(this.mImage, messageInfo.mImage);
     }
 
-    MessageInfo(Builder builder) {
-        throw null;
+    public CarIcon getImage() {
+        return this.mImage;
+    }
+
+    public CarText getText() {
+        return this.mText;
+    }
+
+    public CarText getTitle() {
+        return this.mTitle;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mTitle, this.mText, this.mImage);
+    }
+
+    public String toString() {
+        return "MessageInfo";
     }
 
     private MessageInfo() {

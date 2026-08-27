@@ -1,29 +1,27 @@
 package org.scilab.forge.jlatexmath;
 
-import org.telegram.messenger.NotificationCenter;
+import androidx.car.app.hardware.common.CarZone;
+import androidx.car.app.navigation.model.Maneuver;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 class PredefMacroInfo extends MacroInfo {
     private int id;
 
-    public PredefMacroInfo(int i, int i2, int i3) {
-        super(i2, i3);
-        this.id = i;
+    public PredefMacroInfo(int i10, int i11, int i12) {
+        super(i11, i12);
+        this.id = i10;
     }
 
-    public PredefMacroInfo(int i, int i2) {
-        super(i2);
-        this.id = i;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.MacroInfo
-    public Object invoke(TeXParser teXParser, String[] strArr) {
-        return invokeID(this.id, teXParser, strArr);
-    }
-
-    private static final Object invokeID(int i, TeXParser teXParser, String[] strArr) {
+    private static final Object invokeID(int i10, TeXParser teXParser, String[] strArr) {
         try {
-            switch (i) {
+            switch (i10) {
                 case 0:
                     return PredefMacros.newcommand_macro(teXParser, strArr);
                 case 1:
@@ -79,9 +77,9 @@ class PredefMacroInfo extends MacroInfo {
                     return PredefMacros.textstyle_macros(teXParser, strArr);
                 case 29:
                     return PredefMacros.textstyle_macros(teXParser, strArr);
-                case 30:
+                case MessageObject.TYPE_GIFT_STARS /* 30 */:
                     return PredefMacros.textstyle_macros(teXParser, strArr);
-                case 31:
+                case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
                     return PredefMacros.mathit_macro(teXParser, strArr);
                 case 32:
                     return PredefMacros.it_macro(teXParser, strArr);
@@ -97,20 +95,20 @@ class PredefMacroInfo extends MacroInfo {
                     return PredefMacros.sf_macro(teXParser, strArr);
                 case 38:
                     return PredefMacros.mathtt_macro(teXParser, strArr);
-                case 39:
+                case Maneuver.TYPE_DESTINATION /* 39 */:
                     return PredefMacros.tt_macro(teXParser, strArr);
-                case 40:
-                case 41:
-                case 42:
-                case 43:
-                case 44:
-                case 45:
+                case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
+                case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
+                case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
+                case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
+                case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
+                case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
                     return PredefMacros.textstyle_macros(teXParser, strArr);
-                case 46:
-                case 47:
+                case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
+                case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                 case 48:
-                case 49:
-                case 50:
+                case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
+                case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
                 case 51:
                 case 52:
                 case 53:
@@ -130,7 +128,7 @@ class PredefMacroInfo extends MacroInfo {
                 case 62:
                 case 63:
                 case 64:
-                case 65:
+                case VoIPService.CALL_MIN_LAYER /* 65 */:
                 case 66:
                 case 67:
                 case 68:
@@ -181,7 +179,7 @@ class PredefMacroInfo extends MacroInfo {
                     return PredefMacros.sqrt_macro(teXParser, strArr);
                 case 95:
                     return PredefMacros.overline_macro(teXParser, strArr);
-                case 96:
+                case CarZone.CAR_ZONE_COLUMN_PASSENGER /* 96 */:
                     return PredefMacros.underline_macro(teXParser, strArr);
                 case 97:
                     return PredefMacros.mathop_macro(teXParser, strArr);
@@ -243,305 +241,315 @@ class PredefMacroInfo extends MacroInfo {
                     return PredefMacros.alignedatATATenv_macro(teXParser, strArr);
                 case 126:
                     return PredefMacros.multlineATATenv_macro(teXParser, strArr);
-                case NotificationCenter.needDeleteBusinessLink /* 127 */:
+                case 127:
                     return PredefMacros.gatherATATenv_macro(teXParser, strArr);
                 case 128:
                     return PredefMacros.gatheredATATenv_macro(teXParser, strArr);
-                case NotificationCenter.messageTranslating /* 129 */:
+                case 129:
                     return PredefMacros.shoveright_macro(teXParser, strArr);
-                case NotificationCenter.dialogIsTranslatable /* 130 */:
+                case 130:
                     return PredefMacros.shoveleft_macro(teXParser, strArr);
-                case NotificationCenter.dialogTranslate /* 131 */:
+                case 131:
                     return PredefMacros.backslashcr_macro(teXParser, strArr);
-                case NotificationCenter.didGenerateFingerprintKeyPair /* 132 */:
+                case 132:
                     return PredefMacros.newenvironment_macro(teXParser, strArr);
-                case NotificationCenter.walletPendingTransactionsChanged /* 133 */:
+                case 133:
                     return PredefMacros.renewenvironment_macro(teXParser, strArr);
-                case NotificationCenter.walletSyncProgressChanged /* 134 */:
+                case 134:
                     return PredefMacros.makeatletter_macro(teXParser, strArr);
-                case NotificationCenter.httpFileDidLoad /* 135 */:
+                case 135:
                     return PredefMacros.makeatother_macro(teXParser, strArr);
-                case NotificationCenter.httpFileDidFailedLoad /* 136 */:
-                case NotificationCenter.didUpdateConnectionState /* 137 */:
+                case 136:
+                case 137:
                     return PredefMacros.fbox_macro(teXParser, strArr);
-                case NotificationCenter.fileUploaded /* 138 */:
+                case 138:
                     return PredefMacros.stackrel_macro(teXParser, strArr);
-                case NotificationCenter.fileUploadFailed /* 139 */:
+                case 139:
                     return PredefMacros.stackbin_macro(teXParser, strArr);
-                case NotificationCenter.fileUploadProgressChanged /* 140 */:
+                case 140:
                     return PredefMacros.accentset_macro(teXParser, strArr);
-                case NotificationCenter.fileLoadProgressChanged /* 141 */:
+                case 141:
                     return PredefMacros.underaccent_macro(teXParser, strArr);
-                case NotificationCenter.fileLoaded /* 142 */:
+                case 142:
                     return PredefMacros.undertilde_macro(teXParser, strArr);
-                case NotificationCenter.fileLoadFailed /* 143 */:
+                case 143:
                     return PredefMacros.overset_macro(teXParser, strArr);
-                case NotificationCenter.filePreparingStarted /* 144 */:
+                case 144:
                     return PredefMacros.Braket_macro(teXParser, strArr);
-                case NotificationCenter.fileNewChunkAvailable /* 145 */:
+                case 145:
                     return PredefMacros.Set_macro(teXParser, strArr);
-                case NotificationCenter.filePreparingFailed /* 146 */:
+                case 146:
                     return PredefMacros.underset_macro(teXParser, strArr);
-                case NotificationCenter.dialogsUnreadCounterChanged /* 147 */:
+                case 147:
                     return PredefMacros.boldsymbol_macro(teXParser, strArr);
-                case NotificationCenter.messagePlayingProgressDidChanged /* 148 */:
+                case 148:
                     return PredefMacros.LaTeX_macro(teXParser, strArr);
-                case NotificationCenter.messagePlayingDidReset /* 149 */:
+                case 149:
                     return PredefMacros.GeoGebra_macro(teXParser, strArr);
-                case 150:
+                case ImageReceiver.DEFAULT_CROSSFADE_DURATION /* 150 */:
                     return PredefMacros.big_macro(teXParser, strArr);
-                case NotificationCenter.messagePlayingDidStart /* 151 */:
+                case 151:
                     return PredefMacros.Big_macro(teXParser, strArr);
-                case NotificationCenter.messagePlayingDidSeek /* 152 */:
+                case 152:
                     return PredefMacros.bigg_macro(teXParser, strArr);
-                case NotificationCenter.messagePlayingGoingToStop /* 153 */:
+                case 153:
                     return PredefMacros.Bigg_macro(teXParser, strArr);
-                case NotificationCenter.recordProgressChanged /* 154 */:
+                case 154:
                     return PredefMacros.bigl_macro(teXParser, strArr);
-                case NotificationCenter.recordStarted /* 155 */:
+                case 155:
                     return PredefMacros.Bigl_macro(teXParser, strArr);
-                case NotificationCenter.recordStartError /* 156 */:
+                case 156:
                     return PredefMacros.biggl_macro(teXParser, strArr);
-                case NotificationCenter.recordStopped /* 157 */:
+                case 157:
                     return PredefMacros.Biggl_macro(teXParser, strArr);
-                case NotificationCenter.recordPaused /* 158 */:
+                case 158:
                     return PredefMacros.bigr_macro(teXParser, strArr);
-                case NotificationCenter.recordResumed /* 159 */:
+                case 159:
                     return PredefMacros.Bigr_macro(teXParser, strArr);
-                case NotificationCenter.screenshotTook /* 160 */:
+                case 160:
                     return PredefMacros.biggr_macro(teXParser, strArr);
-                case NotificationCenter.albumsDidLoad /* 161 */:
+                case 161:
                     return PredefMacros.Biggr_macro(teXParser, strArr);
-                case NotificationCenter.audioDidSent /* 162 */:
+                case 162:
                     return PredefMacros.displaystyle_macro(teXParser, strArr);
-                case NotificationCenter.audioRecordTooShort /* 163 */:
+                case 163:
                     return PredefMacros.textstyle_macro(teXParser, strArr);
-                case NotificationCenter.audioRouteChanged /* 164 */:
+                case 164:
                     return PredefMacros.scriptstyle_macro(teXParser, strArr);
-                case NotificationCenter.didStartedCall /* 165 */:
+                case 165:
                     return PredefMacros.scriptscriptstyle_macro(teXParser, strArr);
-                case NotificationCenter.groupCallUpdated /* 166 */:
+                case 166:
                     return PredefMacros.sideset_macro(teXParser, strArr);
-                case NotificationCenter.storyGroupCallUpdated /* 167 */:
+                case 167:
                     return PredefMacros.prescript_macro(teXParser, strArr);
-                case NotificationCenter.groupCallSpeakingUsersUpdated /* 168 */:
+                case 168:
                     return PredefMacros.rotatebox_macro(teXParser, strArr);
-                case NotificationCenter.groupCallScreencastStateChanged /* 169 */:
+                case 169:
                     return PredefMacros.reflectbox_macro(teXParser, strArr);
-                case NotificationCenter.activeGroupCallsUpdated /* 170 */:
+                case 170:
                     return PredefMacros.scalebox_macro(teXParser, strArr);
-                case NotificationCenter.applyGroupCallVisibleParticipants /* 171 */:
+                case 171:
                     return PredefMacros.resizebox_macro(teXParser, strArr);
-                case NotificationCenter.groupCallTypingsUpdated /* 172 */:
+                case 172:
                     return PredefMacros.raisebox_macro(teXParser, strArr);
-                case NotificationCenter.didEndCall /* 173 */:
+                case 173:
                     return PredefMacros.shadowbox_macro(teXParser, strArr);
-                case NotificationCenter.closeInCallActivity /* 174 */:
+                case 174:
                     return PredefMacros.ovalbox_macro(teXParser, strArr);
-                case NotificationCenter.groupCallVisibilityChanged /* 175 */:
+                case 175:
                     return PredefMacros.doublebox_macro(teXParser, strArr);
-                case NotificationCenter.liveStoryUpdated /* 176 */:
+                case 176:
                     return PredefMacros.phantom_macro(teXParser, strArr);
-                case 177:
+                case MessagesStorage.LAST_DB_VERSION /* 177 */:
                     return PredefMacros.hphantom_macro(teXParser, strArr);
-                case NotificationCenter.appDidLogout /* 178 */:
+                case 178:
                     return PredefMacros.vphantom_macro(teXParser, strArr);
-                case NotificationCenter.configLoaded /* 179 */:
+                case 179:
                     return PredefMacros.spATbreve_macro(teXParser, strArr);
-                case NotificationCenter.needDeleteDialog /* 180 */:
+                case 180:
                     return PredefMacros.spAThat_macro(teXParser, strArr);
-                case NotificationCenter.newEmojiSuggestionsAvailable /* 181 */:
+                case 181:
                     return PredefMacros.definecolor_macro(teXParser, strArr);
-                case NotificationCenter.themeUploadedToServer /* 182 */:
+                case 182:
                     return PredefMacros.textcolor_macro(teXParser, strArr);
-                case NotificationCenter.themeUploadError /* 183 */:
+                case 183:
                     return PredefMacros.fgcolor_macro(teXParser, strArr);
-                case NotificationCenter.dialogFiltersUpdated /* 184 */:
+                case 184:
                     return PredefMacros.bgcolor_macro(teXParser, strArr);
-                case NotificationCenter.filterSettingsUpdated /* 185 */:
+                case 185:
                     return PredefMacros.colorbox_macro(teXParser, strArr);
-                case NotificationCenter.suggestedFiltersLoaded /* 186 */:
+                case 186:
                     return PredefMacros.fcolorbox_macro(teXParser, strArr);
-                case NotificationCenter.updateBotMenuButton /* 187 */:
+                case 187:
                     return PredefMacros.cedilla_macro(teXParser, strArr);
-                case NotificationCenter.giftsToUserSent /* 188 */:
+                case 188:
                     return PredefMacros.IJ_macro(teXParser, strArr);
-                case NotificationCenter.didStartedMultiGiftsSelector /* 189 */:
+                case 189:
                     return PredefMacros.IJ_macro(teXParser, strArr);
-                case NotificationCenter.boostedChannelByUser /* 190 */:
+                case 190:
                     return PredefMacros.TStroke_macro(teXParser, strArr);
-                case NotificationCenter.boostByChannelCreated /* 191 */:
+                case 191:
                     return PredefMacros.TStroke_macro(teXParser, strArr);
-                case NotificationCenter.didUpdatePremiumGiftStickers /* 192 */:
+                case 192:
                     return PredefMacros.LCaron_macro(teXParser, strArr);
-                case NotificationCenter.didUpdateTonGiftStickers /* 193 */:
+                case 193:
                     return PredefMacros.tcaron_macro(teXParser, strArr);
-                case NotificationCenter.didUpdatePremiumGiftFieldIcon /* 194 */:
+                case 194:
                     return PredefMacros.LCaron_macro(teXParser, strArr);
-                case NotificationCenter.storiesEnabledUpdate /* 195 */:
+                case 195:
                     return PredefMacros.ogonek_macro(teXParser, strArr);
-                case NotificationCenter.storiesBlocklistUpdate /* 196 */:
+                case 196:
                     return PredefMacros.cong_macro(teXParser, strArr);
-                case NotificationCenter.storiesLimitUpdate /* 197 */:
+                case 197:
                     return PredefMacros.doteq_macro(teXParser, strArr);
-                case NotificationCenter.storiesSendAsUpdate /* 198 */:
+                case 198:
                     return PredefMacros.jlmDynamic_macro(teXParser, strArr);
-                case NotificationCenter.unconfirmedAuthUpdate /* 199 */:
+                case 199:
                     return PredefMacros.jlmExternalFont_macro(teXParser, strArr);
-                case NotificationCenter.dialogPhotosUpdate /* 200 */:
+                case 200:
                     return PredefMacros.jlmText_macro(teXParser, strArr);
-                case NotificationCenter.channelRecommendationsLoaded /* 201 */:
+                case 201:
                     return PredefMacros.jlmTextit_macro(teXParser, strArr);
-                case NotificationCenter.savedMessagesDialogsUpdate /* 202 */:
+                case 202:
                     return PredefMacros.jlmTextbf_macro(teXParser, strArr);
-                case 203:
+                case VoIPService.ID_INCOMING_CALL_PRENOTIFICATION /* 203 */:
                     return PredefMacros.jlmTextitbf_macro(teXParser, strArr);
-                case NotificationCenter.userIsPremiumBlockedUpadted /* 204 */:
+                case 204:
                     return PredefMacros.DeclareMathSizes_macro(teXParser, strArr);
-                case NotificationCenter.storyAlbumsCollectionsUpdate /* 205 */:
+                case 205:
                     return PredefMacros.magnification_macro(teXParser, strArr);
-                case NotificationCenter.savedMessagesForwarded /* 206 */:
+                case 206:
                     return PredefMacros.hline_macro(teXParser, strArr);
-                case NotificationCenter.emojiKeywordsLoaded /* 207 */:
-                case NotificationCenter.smsJobStatusUpdate /* 208 */:
-                case NotificationCenter.storyQualityUpdate /* 209 */:
-                case NotificationCenter.openBoostForUsersDialog /* 210 */:
-                case NotificationCenter.groupRestrictionsUnlockedByBoosts /* 211 */:
-                case NotificationCenter.chatWasBoostedByUser /* 212 */:
-                case NotificationCenter.groupPackUpdated /* 213 */:
-                case NotificationCenter.timezonesUpdated /* 214 */:
-                case NotificationCenter.customStickerCreated /* 215 */:
-                case NotificationCenter.premiumFloodWaitReceived /* 216 */:
+                case 207:
+                case 208:
+                case 209:
+                case 210:
+                case 211:
+                case 212:
+                case 213:
+                case 214:
+                case 215:
+                case 216:
                     return PredefMacros.size_macros(teXParser, strArr);
-                case NotificationCenter.availableEffectsUpdate /* 217 */:
+                case 217:
                     return PredefMacros.jlatexmathcumsup_macro(teXParser, strArr);
-                case NotificationCenter.starOptionsLoaded /* 218 */:
+                case 218:
                     return PredefMacros.jlatexmathcumsub_macro(teXParser, strArr);
-                case NotificationCenter.starGiftOptionsLoaded /* 219 */:
+                case 219:
                     return PredefMacros.hstrok_macro(teXParser, strArr);
-                case NotificationCenter.starGiveawayOptionsLoaded /* 220 */:
+                case 220:
                     return PredefMacros.Hstrok_macro(teXParser, strArr);
-                case NotificationCenter.starBalanceUpdated /* 221 */:
+                case 221:
                     return PredefMacros.dstrok_macro(teXParser, strArr);
-                case NotificationCenter.starTransactionsLoaded /* 222 */:
+                case 222:
                     return PredefMacros.Dstrok_macro(teXParser, strArr);
-                case NotificationCenter.starSubscriptionsLoaded /* 223 */:
+                case 223:
                     return PredefMacros.dotminus_macro(teXParser, strArr);
-                case NotificationCenter.factCheckLoaded /* 224 */:
+                case 224:
                     return PredefMacros.ratio_macro(teXParser, strArr);
-                case NotificationCenter.botStarsUpdated /* 225 */:
+                case 225:
                     return PredefMacros.smallfrowneq_macro(teXParser, strArr);
-                case NotificationCenter.botStarsTransactionsLoaded /* 226 */:
+                case 226:
                     return PredefMacros.geoprop_macro(teXParser, strArr);
-                case NotificationCenter.channelStarsUpdated /* 227 */:
+                case 227:
                     return PredefMacros.minuscolon_macro(teXParser, strArr);
-                case NotificationCenter.updateAllMessages /* 228 */:
+                case 228:
                     return PredefMacros.minuscoloncolon_macro(teXParser, strArr);
-                case 229:
+                case TLRPC.LAYER /* 229 */:
                     return PredefMacros.simcolon_macro(teXParser, strArr);
-                case NotificationCenter.starUserGiftsLoaded /* 230 */:
+                case 230:
                     return PredefMacros.simcoloncolon_macro(teXParser, strArr);
-                case NotificationCenter.starUserGiftCollectionsLoaded /* 231 */:
+                case 231:
                     return PredefMacros.approxcolon_macro(teXParser, strArr);
-                case NotificationCenter.starGiftSoldOut /* 232 */:
+                case 232:
                     return PredefMacros.approxcoloncolon_macro(teXParser, strArr);
-                case NotificationCenter.updateStories /* 233 */:
+                case 233:
                     return PredefMacros.coloncolon_macro(teXParser, strArr);
-                case NotificationCenter.botDownloadsUpdate /* 234 */:
+                case 234:
                     return PredefMacros.equalscolon_macro(teXParser, strArr);
-                case NotificationCenter.channelSuggestedBotsUpdate /* 235 */:
+                case 235:
                     return PredefMacros.equalscoloncolon_macro(teXParser, strArr);
-                case NotificationCenter.channelConnectedBotsUpdate /* 236 */:
+                case 236:
                     return PredefMacros.colonminus_macro(teXParser, strArr);
-                case NotificationCenter.adminedChannelsLoaded /* 237 */:
+                case 237:
                     return PredefMacros.coloncolonminus_macro(teXParser, strArr);
-                case NotificationCenter.messagesFeeUpdated /* 238 */:
+                case 238:
                     return PredefMacros.colonequals_macro(teXParser, strArr);
-                case NotificationCenter.commonChatsLoaded /* 239 */:
+                case 239:
                     return PredefMacros.coloncolonequals_macro(teXParser, strArr);
-                case NotificationCenter.appConfigUpdated /* 240 */:
+                case 240:
                     return PredefMacros.colonsim_macro(teXParser, strArr);
-                case NotificationCenter.activeAuctionsUpdated /* 241 */:
+                case 241:
                     return PredefMacros.coloncolonsim_macro(teXParser, strArr);
-                case NotificationCenter.conferenceEmojiUpdated /* 242 */:
+                case 242:
                     return PredefMacros.colonapprox_macro(teXParser, strArr);
-                case NotificationCenter.contentSettingsLoaded /* 243 */:
+                case 243:
                     return PredefMacros.coloncolonapprox_macro(teXParser, strArr);
-                case NotificationCenter.musicListLoaded /* 244 */:
+                case 244:
                     return PredefMacros.kern_macro(teXParser, strArr);
-                case NotificationCenter.musicIdsLoaded /* 245 */:
+                case 245:
                     return PredefMacros.char_macro(teXParser, strArr);
-                case NotificationCenter.profileMusicUpdated /* 246 */:
-                case NotificationCenter.updatedChatRanks /* 247 */:
+                case 246:
+                case 247:
                     return PredefMacros.romannumeral_macro(teXParser, strArr);
-                case NotificationCenter.joinedGroup /* 248 */:
+                case 248:
                     return PredefMacros.textcircled_macro(teXParser, strArr);
-                case NotificationCenter.loadedAiComposeTones /* 249 */:
+                case 249:
                     return PredefMacros.textsc_macro(teXParser, strArr);
-                case 250:
+                case MediaDataController.MAX_LINKS_COUNT /* 250 */:
                     return PredefMacros.sc_macro(teXParser, strArr);
-                case NotificationCenter.activeAccountChanged /* 251 */:
-                case NotificationCenter.pushMessagesUpdated /* 252 */:
-                case NotificationCenter.wallpapersDidLoad /* 253 */:
-                case NotificationCenter.wallpapersNeedReload /* 254 */:
-                case NotificationCenter.didReceiveSmsCode /* 255 */:
+                case 251:
+                case 252:
+                case 253:
+                case 254:
+                case 255:
                 case 256:
-                case NotificationCenter.emojiLoaded /* 257 */:
-                case NotificationCenter.invalidateMotionBackground /* 258 */:
-                case NotificationCenter.closeOtherAppActivities /* 259 */:
-                case NotificationCenter.cameraInitied /* 260 */:
+                case 257:
+                case 258:
+                case 259:
+                case 260:
                     return PredefMacros.muskip_macros(teXParser, strArr);
-                case NotificationCenter.didReplacedPhotoInMemCache /* 261 */:
+                case 261:
                     return PredefMacros.quad_macro(teXParser, strArr);
-                case NotificationCenter.didSetNewTheme /* 262 */:
+                case 262:
                     return PredefMacros.surd_macro(teXParser, strArr);
-                case NotificationCenter.themeListUpdated /* 263 */:
+                case 263:
                     return PredefMacros.iint_macro(teXParser, strArr);
-                case NotificationCenter.didApplyNewTheme /* 264 */:
+                case 264:
                     return PredefMacros.iiint_macro(teXParser, strArr);
-                case NotificationCenter.themeAccentListUpdated /* 265 */:
+                case 265:
                     return PredefMacros.iiiint_macro(teXParser, strArr);
-                case NotificationCenter.needCheckSystemBarColors /* 266 */:
+                case 266:
                     return PredefMacros.idotsint_macro(teXParser, strArr);
-                case NotificationCenter.needShareTheme /* 267 */:
+                case 267:
                     return PredefMacros.int_macro(teXParser, strArr);
-                case NotificationCenter.needSetDayNightTheme /* 268 */:
+                case 268:
                     return PredefMacros.oint_macro(teXParser, strArr);
-                case NotificationCenter.goingToPreviewTheme /* 269 */:
+                case 269:
                     return PredefMacros.lmoustache_macro(teXParser, strArr);
-                case NotificationCenter.locationPermissionGranted /* 270 */:
+                case 270:
                     return PredefMacros.rmoustache_macro(teXParser, strArr);
-                case NotificationCenter.locationPermissionDenied /* 271 */:
+                case 271:
                     return PredefMacros.insertBreakMark_macro(teXParser, strArr);
-                case NotificationCenter.reloadInterface /* 272 */:
+                case 272:
                     return PredefMacros.jlmXML_macro(teXParser, strArr);
-                case NotificationCenter.suggestedLangpack /* 273 */:
+                case 273:
                     return PredefMacros.above_macro(teXParser, strArr);
-                case NotificationCenter.didSetNewWallpapper /* 274 */:
+                case 274:
                     return PredefMacros.abovewithdelims_macro(teXParser, strArr);
-                case NotificationCenter.proxySettingsChanged /* 275 */:
+                case 275:
                     return PredefMacros.st_macro(teXParser, strArr);
-                case NotificationCenter.proxyCheckDone /* 276 */:
+                case 276:
                     return PredefMacros.fcscore_macro(teXParser, strArr);
-                case NotificationCenter.proxyChangedByRotation /* 277 */:
+                case 277:
                     return PredefMacros.textstyle_macros(teXParser, strArr);
-                case NotificationCenter.liveLocationsChanged /* 278 */:
+                case 278:
                     return PredefMacros.qquad_macro(teXParser, strArr);
-                case NotificationCenter.newLocationAvailable /* 279 */:
+                case 279:
                     return PredefMacros.longdiv_macro(teXParser, strArr);
-                case NotificationCenter.liveLocationsCacheChanged /* 280 */:
+                case 280:
                     return PredefMacros.questeq_macro(teXParser, strArr);
-                case NotificationCenter.notificationsCountUpdated /* 281 */:
+                case 281:
                     return PredefMacros.bangle_macro(teXParser, strArr);
-                case NotificationCenter.playerDidStartPlaying /* 282 */:
+                case 282:
                     return PredefMacros.brace_macro(teXParser, strArr);
-                case NotificationCenter.closeSearchByActiveAction /* 283 */:
+                case 283:
                     return PredefMacros.brack_macro(teXParser, strArr);
                 default:
                     return null;
             }
-        } catch (Exception e) {
-            throw new ParseException("Problem with command " + strArr[0] + " at position " + teXParser.getLine() + ":" + teXParser.getCol() + "\n" + e.getMessage());
+        } catch (Exception e9) {
+            throw new ParseException("Problem with command " + strArr[0] + " at position " + teXParser.getLine() + ":" + teXParser.getCol() + "\n" + e9.getMessage());
         }
+    }
+
+    @Override // org.scilab.forge.jlatexmath.MacroInfo
+    public Object invoke(TeXParser teXParser, String[] strArr) {
+        return invokeID(this.id, teXParser, strArr);
+    }
+
+    public PredefMacroInfo(int i10, int i11) {
+        super(i11);
+        this.id = i10;
     }
 }

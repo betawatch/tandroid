@@ -1,14 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.ResultKt;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.Ref$LongRef;
-import kotlin.ranges.RangesKt;
-import kotlinx.coroutines.TimeoutKt;
+import ad.l;
+import h7.k6;
+import id.f0;
+import kotlin.jvm.internal.p;
 import org.telegram.tgnet.TLObject;
+import rc.c;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzcx {
     public static final zzcx zza = new zzcx();
@@ -16,277 +15,287 @@ public final class zzcx {
     private zzcx() {
     }
 
-    public static final Object zzc(long j, int i, long j2, long j3, double d, Function1 function1, Continuation continuation) {
-        return TimeoutKt.withTimeout(j, new zzcw(20, 100L, 1000L, 2.0d, function1, null), continuation);
+    public static final Object zzc(long j10, int i10, long j11, long j12, double d, l lVar, c cVar) {
+        return f0.x(j10, new zzcw(20, 100L, 1000L, 2.0d, lVar, null), cVar);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x00c4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x00c5, code lost:
     
-        if (kotlinx.coroutines.DelayKt.delay(r5, r1) != r3) goto L18;
+        if (id.f0.g(r5, r1) != r3) goto L18;
      */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00cf  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0086 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x002b  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x00c4 -> B:17:0x004f). Please report as a decompilation issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0084 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00af  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:34:0x00c5 -> B:17:0x004d). Please report as a decompilation issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zza(int i, long j, long j2, double d, Function1 function1, Continuation continuation) {
+    public final Object zza(int i10, long j10, long j11, double d, l lVar, c cVar) {
         zzcu zzcuVar;
-        int i2;
-        double d2;
-        Ref$LongRef ref$LongRef;
+        int i11;
+        double d10;
+        p pVar;
         zzcu zzcuVar2;
-        int i3;
-        int i4;
-        long j3;
-        Function1 function12;
-        Function1 function13;
-        Ref$LongRef ref$LongRef2;
-        long j4;
-        double d3;
-        int i5;
-        int i6;
-        if (continuation instanceof zzcu) {
-            zzcuVar = (zzcu) continuation;
-            int i7 = zzcuVar.zzh;
-            if ((i7 & TLObject.FLAG_31) != 0) {
-                zzcuVar.zzh = i7 - TLObject.FLAG_31;
+        int i12;
+        int i13;
+        long j12;
+        l lVar2;
+        l lVar3;
+        p pVar2;
+        long j13;
+        double d11;
+        int i14;
+        int i15;
+        long j14;
+        if (cVar instanceof zzcu) {
+            zzcuVar = (zzcu) cVar;
+            int i16 = zzcuVar.zzh;
+            if ((i16 & TLObject.FLAG_31) != 0) {
+                zzcuVar.zzh = i16 - TLObject.FLAG_31;
                 Object obj = zzcuVar.zzf;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i2 = zzcuVar.zzh;
-                if (i2 != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    Ref$LongRef ref$LongRef3 = new Ref$LongRef();
-                    ref$LongRef3.element = j;
-                    d2 = d;
-                    ref$LongRef = ref$LongRef3;
+                sc.a aVar = sc.a.a;
+                i11 = zzcuVar.zzh;
+                if (i11 != 0) {
+                    k6.b(obj);
+                    p pVar3 = new p();
+                    pVar3.a = j10;
+                    d10 = d;
+                    pVar = pVar3;
                     zzcuVar2 = zzcuVar;
-                    i3 = i - 1;
-                    i4 = 0;
-                    j3 = j2;
-                    function12 = function1;
-                    if (i4 >= i3) {
+                    i12 = i10 - 1;
+                    i13 = 0;
+                    j12 = j11;
+                    lVar2 = lVar;
+                    if (i13 >= i12) {
                     }
-                    return coroutine_suspended;
+                    return aVar;
                 }
-                if (i2 != 1) {
-                    if (i2 != 2) {
-                        if (i2 != 3) {
+                if (i11 != 1) {
+                    if (i11 != 2) {
+                        if (i11 != 3) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        ResultKt.throwOnFailure(obj);
+                        k6.b(obj);
                         return obj;
                     }
-                    i6 = zzcuVar.zze;
-                    i5 = zzcuVar.zzd;
-                    d3 = zzcuVar.zzb;
-                    j4 = zzcuVar.zza;
-                    ref$LongRef2 = zzcuVar.zzi;
-                    function13 = (Function1) zzcuVar.zzc;
-                    ResultKt.throwOnFailure(obj);
+                    i15 = zzcuVar.zze;
+                    i14 = zzcuVar.zzd;
+                    d11 = zzcuVar.zzb;
+                    j13 = zzcuVar.zza;
+                    pVar2 = zzcuVar.zzi;
+                    lVar3 = (l) zzcuVar.zzc;
+                    k6.b(obj);
                     zzcu zzcuVar3 = zzcuVar;
-                    int i8 = i6;
-                    int i9 = i5;
-                    d2 = d3;
-                    ref$LongRef = ref$LongRef2;
-                    function12 = function13;
-                    i4 = i8 + 1;
-                    j3 = j4;
+                    int i17 = i15;
+                    int i18 = i14;
+                    d10 = d11;
+                    pVar = pVar2;
+                    lVar2 = lVar3;
+                    i13 = i17 + 1;
+                    j12 = j13;
                     zzcuVar2 = zzcuVar3;
-                    i3 = i9;
-                    if (i4 >= i3) {
+                    i12 = i18;
+                    if (i13 >= i12) {
                         try {
                         } catch (Exception unused) {
-                            function13 = function12;
-                            i6 = i4;
-                            ref$LongRef2 = ref$LongRef;
-                            d3 = d2;
-                            i5 = i3;
+                            lVar3 = lVar2;
+                            i15 = i13;
+                            pVar2 = pVar;
+                            d11 = d10;
+                            i14 = i12;
                             zzcuVar = zzcuVar2;
-                            j4 = j3;
-                            long coerceAtMost = RangesKt.coerceAtMost((long) (ref$LongRef2.element * d3), j4);
-                            ref$LongRef2.element = coerceAtMost;
-                            zzcuVar.zzc = function13;
-                            zzcuVar.zzi = ref$LongRef2;
-                            zzcuVar.zza = j4;
-                            zzcuVar.zzb = d3;
-                            zzcuVar.zzd = i5;
-                            zzcuVar.zze = i6;
+                            j13 = j12;
+                            j14 = (long) (pVar2.a * d11);
+                            if (j14 > j13) {
+                                j14 = j13;
+                            }
+                            pVar2.a = j14;
+                            zzcuVar.zzc = lVar3;
+                            zzcuVar.zzi = pVar2;
+                            zzcuVar.zza = j13;
+                            zzcuVar.zzb = d11;
+                            zzcuVar.zzd = i14;
+                            zzcuVar.zze = i15;
                             zzcuVar.zzh = 2;
                         }
-                        zzcuVar2.zzc = function12;
-                        zzcuVar2.zzi = ref$LongRef;
-                        zzcuVar2.zza = j3;
-                        zzcuVar2.zzb = d2;
-                        zzcuVar2.zzd = i3;
-                        zzcuVar2.zze = i4;
+                        zzcuVar2.zzc = lVar2;
+                        zzcuVar2.zzi = pVar;
+                        zzcuVar2.zza = j12;
+                        zzcuVar2.zzb = d10;
+                        zzcuVar2.zzd = i12;
+                        zzcuVar2.zze = i13;
                         zzcuVar2.zzh = 1;
-                        Object invoke = function12.invoke(zzcuVar2);
-                        if (invoke != coroutine_suspended) {
+                        Object invoke = lVar2.invoke(zzcuVar2);
+                        if (invoke != aVar) {
                             return invoke;
                         }
                     } else {
                         zzcuVar2.zzc = null;
                         zzcuVar2.zzi = null;
                         zzcuVar2.zzh = 3;
-                        Object invoke2 = function12.invoke(zzcuVar2);
-                        if (invoke2 != coroutine_suspended) {
+                        Object invoke2 = lVar2.invoke(zzcuVar2);
+                        if (invoke2 != aVar) {
                             return invoke2;
                         }
                     }
-                    return coroutine_suspended;
+                    return aVar;
                 }
-                i6 = zzcuVar.zze;
-                i5 = zzcuVar.zzd;
-                d3 = zzcuVar.zzb;
-                j4 = zzcuVar.zza;
-                ref$LongRef2 = zzcuVar.zzi;
-                function13 = (Function1) zzcuVar.zzc;
+                i15 = zzcuVar.zze;
+                i14 = zzcuVar.zzd;
+                d11 = zzcuVar.zzb;
+                j13 = zzcuVar.zza;
+                pVar2 = zzcuVar.zzi;
+                lVar3 = (l) zzcuVar.zzc;
                 try {
-                    ResultKt.throwOnFailure(obj);
+                    k6.b(obj);
                     return obj;
                 } catch (Exception unused2) {
-                    long coerceAtMost2 = RangesKt.coerceAtMost((long) (ref$LongRef2.element * d3), j4);
-                    ref$LongRef2.element = coerceAtMost2;
-                    zzcuVar.zzc = function13;
-                    zzcuVar.zzi = ref$LongRef2;
-                    zzcuVar.zza = j4;
-                    zzcuVar.zzb = d3;
-                    zzcuVar.zzd = i5;
-                    zzcuVar.zze = i6;
+                    j14 = (long) (pVar2.a * d11);
+                    if (j14 > j13) {
+                    }
+                    pVar2.a = j14;
+                    zzcuVar.zzc = lVar3;
+                    zzcuVar.zzi = pVar2;
+                    zzcuVar.zza = j13;
+                    zzcuVar.zzb = d11;
+                    zzcuVar.zzd = i14;
+                    zzcuVar.zze = i15;
                     zzcuVar.zzh = 2;
                 }
             }
         }
-        zzcuVar = new zzcu(this, continuation);
+        zzcuVar = new zzcu(this, cVar);
         Object obj2 = zzcuVar.zzf;
-        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        i2 = zzcuVar.zzh;
-        if (i2 != 0) {
+        sc.a aVar2 = sc.a.a;
+        i11 = zzcuVar.zzh;
+        if (i11 != 0) {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x00af, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x00ae, code lost:
     
-        if (kotlinx.coroutines.DelayKt.delay(r7, r1) != r3) goto L13;
+        if (id.f0.g(r7, r1) != r3) goto L13;
      */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0083 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00b2 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0097  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00b3  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x002a  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:24:0x00af -> B:11:0x003f). Please report as a decompilation issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0081 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00b1 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0095  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0028  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x00ae -> B:11:0x003d). Please report as a decompilation issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzb(Function1 function1, long j, long j2, double d, Function1 function12, Continuation continuation) {
+    public final Object zzb(l lVar, long j10, long j11, double d, l lVar2, c cVar) {
         zzcv zzcvVar;
-        int i;
-        long j3;
-        long j4;
-        double d2;
-        Function1 function13;
+        int i10;
+        long j12;
+        long j13;
+        double d10;
+        l lVar3;
         zzcv zzcvVar2;
-        Function1 function14;
-        Function1 function15;
-        long j5;
-        double d3;
-        Exception e;
-        if (continuation instanceof zzcv) {
-            zzcvVar = (zzcv) continuation;
-            int i2 = zzcvVar.zzh;
-            if ((i2 & TLObject.FLAG_31) != 0) {
-                zzcvVar.zzh = i2 - TLObject.FLAG_31;
+        l lVar4;
+        l lVar5;
+        long j14;
+        double d11;
+        Exception e9;
+        if (cVar instanceof zzcv) {
+            zzcvVar = (zzcv) cVar;
+            int i11 = zzcvVar.zzh;
+            if ((i11 & TLObject.FLAG_31) != 0) {
+                zzcvVar.zzh = i11 - TLObject.FLAG_31;
                 Object obj = zzcvVar.zzf;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = zzcvVar.zzh;
-                if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    j3 = j;
-                    j4 = j2;
-                    d2 = d;
-                    function13 = function12;
+                sc.a aVar = sc.a.a;
+                i10 = zzcvVar.zzh;
+                if (i10 != 0) {
+                    k6.b(obj);
+                    j12 = j10;
+                    j13 = j11;
+                    d10 = d;
+                    lVar3 = lVar2;
                     zzcvVar2 = zzcvVar;
-                    function14 = function1;
-                    zzcvVar2.zza = function14;
-                    zzcvVar2.zzb = function13;
-                    zzcvVar2.zzc = j4;
-                    zzcvVar2.zze = d2;
-                    zzcvVar2.zzd = j3;
+                    lVar4 = lVar;
+                    zzcvVar2.zza = lVar4;
+                    zzcvVar2.zzb = lVar3;
+                    zzcvVar2.zzc = j13;
+                    zzcvVar2.zze = d10;
+                    zzcvVar2.zzd = j12;
                     zzcvVar2.zzh = 1;
-                    Object invoke = function13.invoke(zzcvVar2);
-                    if (invoke != coroutine_suspended) {
+                    Object invoke = lVar3.invoke(zzcvVar2);
+                    if (invoke != aVar) {
                     }
                 } else {
-                    if (i != 1) {
-                        if (i != 2) {
+                    if (i10 != 1) {
+                        if (i10 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        j3 = zzcvVar.zzd;
-                        d3 = zzcvVar.zze;
-                        j5 = zzcvVar.zzc;
-                        function13 = (Function1) zzcvVar.zzb;
-                        function15 = (Function1) zzcvVar.zza;
-                        ResultKt.throwOnFailure(obj);
-                        Function1 function16 = function15;
+                        j12 = zzcvVar.zzd;
+                        d11 = zzcvVar.zze;
+                        j14 = zzcvVar.zzc;
+                        lVar3 = (l) zzcvVar.zzb;
+                        lVar5 = (l) zzcvVar.zza;
+                        k6.b(obj);
+                        l lVar6 = lVar5;
                         zzcvVar2 = zzcvVar;
-                        function14 = function16;
-                        long j6 = j5;
-                        d2 = d3;
-                        j4 = j6;
+                        lVar4 = lVar6;
+                        long j15 = j14;
+                        d10 = d11;
+                        j13 = j15;
                         try {
-                        } catch (Exception e2) {
-                            e = e2;
+                        } catch (Exception e10) {
+                            e9 = e10;
                             zzcv zzcvVar3 = zzcvVar2;
-                            function15 = function14;
+                            lVar5 = lVar4;
                             zzcvVar = zzcvVar3;
-                            double d4 = d2;
-                            j5 = j4;
-                            d3 = d4;
-                            if (((Boolean) function15.invoke(e)).booleanValue()) {
+                            double d12 = d10;
+                            j14 = j13;
+                            d11 = d12;
+                            if (((Boolean) lVar5.invoke(e9)).booleanValue()) {
                             }
                         }
-                        zzcvVar2.zza = function14;
-                        zzcvVar2.zzb = function13;
-                        zzcvVar2.zzc = j4;
-                        zzcvVar2.zze = d2;
-                        zzcvVar2.zzd = j3;
+                        zzcvVar2.zza = lVar4;
+                        zzcvVar2.zzb = lVar3;
+                        zzcvVar2.zzc = j13;
+                        zzcvVar2.zze = d10;
+                        zzcvVar2.zzd = j12;
                         zzcvVar2.zzh = 1;
-                        Object invoke2 = function13.invoke(zzcvVar2);
-                        return invoke2 != coroutine_suspended ? coroutine_suspended : invoke2;
+                        Object invoke2 = lVar3.invoke(zzcvVar2);
+                        return invoke2 != aVar ? aVar : invoke2;
                     }
-                    j3 = zzcvVar.zzd;
-                    d3 = zzcvVar.zze;
-                    j5 = zzcvVar.zzc;
-                    function13 = (Function1) zzcvVar.zzb;
-                    function15 = (Function1) zzcvVar.zza;
+                    j12 = zzcvVar.zzd;
+                    d11 = zzcvVar.zze;
+                    j14 = zzcvVar.zzc;
+                    lVar3 = (l) zzcvVar.zzb;
+                    lVar5 = (l) zzcvVar.zza;
                     try {
-                        ResultKt.throwOnFailure(obj);
+                        k6.b(obj);
                         return obj;
-                    } catch (Exception e3) {
-                        e = e3;
-                        if (((Boolean) function15.invoke(e)).booleanValue()) {
-                            throw e;
+                    } catch (Exception e11) {
+                        e9 = e11;
+                        if (((Boolean) lVar5.invoke(e9)).booleanValue()) {
+                            throw e9;
                         }
-                        j3 = RangesKt.coerceAtMost((long) (j3 * d3), j5);
-                        zzcvVar.zza = function15;
-                        zzcvVar.zzb = function13;
-                        zzcvVar.zzc = j5;
-                        zzcvVar.zze = d3;
-                        zzcvVar.zzd = j3;
+                        j12 = (long) (j12 * d11);
+                        if (j12 > j14) {
+                            j12 = j14;
+                        }
+                        zzcvVar.zza = lVar5;
+                        zzcvVar.zzb = lVar3;
+                        zzcvVar.zzc = j14;
+                        zzcvVar.zze = d11;
+                        zzcvVar.zzd = j12;
                         zzcvVar.zzh = 2;
                     }
                 }
             }
         }
-        zzcvVar = new zzcv(this, continuation);
+        zzcvVar = new zzcv(this, cVar);
         Object obj2 = zzcvVar.zzf;
-        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        i = zzcvVar.zzh;
-        if (i != 0) {
+        sc.a aVar2 = sc.a.a;
+        i10 = zzcvVar.zzh;
+        if (i10 != 0) {
         }
     }
 }

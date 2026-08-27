@@ -1,0 +1,15 @@
+package r5;
+
+import android.os.IBinder;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
+public final class f extends c7.a {
+    public f(IBinder iBinder) {
+        super(iBinder, "com.google.android.gms.cast.internal.ICastDeviceController", 1);
+    }
+
+    public final void U0() {
+        R0(M0(), 1);
+    }
+}

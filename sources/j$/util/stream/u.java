@@ -4,56 +4,56 @@ import j$.util.Objects;
 import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-public final class u extends Z1 {
+public final class u extends c5 {
     public boolean b;
-    public final j$.util.C c;
+    public final j$.util.e0 c;
     public final /* synthetic */ v d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u(v vVar, g2 g2Var) {
-        super(g2Var);
+    public u(v vVar, j5 j5Var) {
+        super(j5Var);
         this.d = vVar;
-        g2 g2Var2 = this.a;
-        Objects.requireNonNull(g2Var2);
-        this.c = new j$.util.C(g2Var2, 1);
+        j5 j5Var2 = this.a;
+        Objects.requireNonNull(j5Var2);
+        this.c = new j$.util.e0(j5Var2, 1);
     }
 
-    @Override // j$.util.stream.Z1, j$.util.stream.g2
-    public final void y(long j) {
-        this.a.y(-1L);
+    @Override // j$.util.stream.c5, j$.util.stream.j5
+    public final void o(long j10) {
+        this.a.o(-1L);
     }
 
-    @Override // j$.util.stream.d2, j$.util.stream.g2
+    @Override // j$.util.stream.g5, j$.util.stream.j5
     public final void accept(double d) {
-        B b = (B) ((j$.time.t) this.d.n).apply(d);
-        if (b != null) {
+        c0 c0Var = (c0) ((j$.time.t) this.d.t).apply(d);
+        if (c0Var != null) {
             try {
-                boolean z = this.b;
-                j$.util.C c = this.c;
-                if (!z) {
-                    b.sequential().forEach(c);
+                boolean z10 = this.b;
+                j$.util.e0 e0Var = this.c;
+                if (!z10) {
+                    c0Var.sequential().forEach(e0Var);
                 } else {
-                    j$.util.T spliterator = b.sequential().spliterator();
-                    while (!this.a.C() && spliterator.tryAdvance((DoubleConsumer) c)) {
+                    j$.util.u0 spliterator = c0Var.sequential().spliterator();
+                    while (!this.a.q() && spliterator.tryAdvance((DoubleConsumer) e0Var)) {
                     }
                 }
             } catch (Throwable th) {
                 try {
-                    b.close();
+                    c0Var.close();
                 } catch (Throwable th2) {
                     th.addSuppressed(th2);
                 }
                 throw th;
             }
         }
-        if (b != null) {
-            b.close();
+        if (c0Var != null) {
+            c0Var.close();
         }
     }
 
-    @Override // j$.util.stream.Z1, j$.util.stream.g2
-    public final boolean C() {
+    @Override // j$.util.stream.c5, j$.util.stream.j5
+    public final boolean q() {
         this.b = true;
-        return this.a.C();
+        return this.a.q();
     }
 }

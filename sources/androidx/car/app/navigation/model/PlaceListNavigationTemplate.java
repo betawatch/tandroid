@@ -5,12 +5,13 @@ import androidx.car.app.model.ActionStrip;
 import androidx.car.app.model.CarText;
 import androidx.car.app.model.Header;
 import androidx.car.app.model.ItemList;
-import androidx.car.app.model.OnContentRefreshDelegate;
-import androidx.car.app.model.Template;
+import androidx.car.app.model.d0;
+import androidx.car.app.model.x0;
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class PlaceListNavigationTemplate implements Template {
+public final class PlaceListNavigationTemplate implements x0 {
     private final ActionStrip mActionStrip;
     private final Header mHeader;
 
@@ -19,59 +20,14 @@ public final class PlaceListNavigationTemplate implements Template {
     private final boolean mIsLoading;
     private final ItemList mItemList;
     private final ActionStrip mMapActionStrip;
-    private final OnContentRefreshDelegate mOnContentRefreshDelegate;
-    private final PanModeDelegate mPanModeDelegate;
+    private final d0 mOnContentRefreshDelegate;
+    private final g mPanModeDelegate;
 
     @Deprecated
     private final CarText mTitle;
 
-    public static final class Builder {
-    }
-
-    @Deprecated
-    public CarText getTitle() {
-        return this.mTitle;
-    }
-
-    public Header getHeader() {
-        return this.mHeader;
-    }
-
-    @Deprecated
-    public Action getHeaderAction() {
-        return this.mHeaderAction;
-    }
-
-    public ActionStrip getActionStrip() {
-        return this.mActionStrip;
-    }
-
-    public ActionStrip getMapActionStrip() {
-        return this.mMapActionStrip;
-    }
-
-    public PanModeDelegate getPanModeDelegate() {
-        return this.mPanModeDelegate;
-    }
-
-    public boolean isLoading() {
-        return this.mIsLoading;
-    }
-
-    public ItemList getItemList() {
-        return this.mItemList;
-    }
-
-    public OnContentRefreshDelegate getOnContentRefreshDelegate() {
-        return this.mOnContentRefreshDelegate;
-    }
-
-    public String toString() {
-        return "PlaceListNavigationTemplate";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mTitle, Boolean.valueOf(this.mIsLoading), this.mItemList, this.mHeaderAction, this.mActionStrip, this.mMapActionStrip, Boolean.valueOf(this.mPanModeDelegate == null), Boolean.valueOf(this.mOnContentRefreshDelegate == null), this.mHeader);
+    public PlaceListNavigationTemplate(j jVar) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -92,8 +48,50 @@ public final class PlaceListNavigationTemplate implements Template {
         return false;
     }
 
-    PlaceListNavigationTemplate(Builder builder) {
-        throw null;
+    public ActionStrip getActionStrip() {
+        return this.mActionStrip;
+    }
+
+    public Header getHeader() {
+        return this.mHeader;
+    }
+
+    @Deprecated
+    public Action getHeaderAction() {
+        return this.mHeaderAction;
+    }
+
+    public ItemList getItemList() {
+        return this.mItemList;
+    }
+
+    public ActionStrip getMapActionStrip() {
+        return this.mMapActionStrip;
+    }
+
+    public d0 getOnContentRefreshDelegate() {
+        return this.mOnContentRefreshDelegate;
+    }
+
+    public g getPanModeDelegate() {
+        return this.mPanModeDelegate;
+    }
+
+    @Deprecated
+    public CarText getTitle() {
+        return this.mTitle;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mTitle, Boolean.valueOf(this.mIsLoading), this.mItemList, this.mHeaderAction, this.mActionStrip, this.mMapActionStrip, Boolean.valueOf(this.mPanModeDelegate == null), Boolean.valueOf(this.mOnContentRefreshDelegate == null), this.mHeader);
+    }
+
+    public boolean isLoading() {
+        return this.mIsLoading;
+    }
+
+    public String toString() {
+        return "PlaceListNavigationTemplate";
     }
 
     private PlaceListNavigationTemplate() {

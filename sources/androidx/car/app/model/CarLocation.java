@@ -3,34 +3,19 @@ package androidx.car.app.model;
 import android.location.Location;
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class CarLocation {
     private final double mLat;
     private final double mLng;
 
-    public static CarLocation create(double d, double d2) {
-        return new CarLocation(d, d2);
+    private CarLocation(double d, double d10) {
+        this.mLat = d;
+        this.mLng = d10;
     }
 
-    public static CarLocation create(Location location) {
-        Objects.requireNonNull(location);
-        return create(location.getLatitude(), location.getLongitude());
-    }
-
-    public double getLatitude() {
-        return this.mLat;
-    }
-
-    public double getLongitude() {
-        return this.mLng;
-    }
-
-    public String toString() {
-        return "[" + getLatitude() + ", " + getLongitude() + "]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(Double.valueOf(this.mLat), Double.valueOf(this.mLng));
+    public static CarLocation create(double d, double d10) {
+        return new CarLocation(d, d10);
     }
 
     public boolean equals(Object obj) {
@@ -44,9 +29,25 @@ public final class CarLocation {
         return Double.doubleToLongBits(this.mLat) == Double.doubleToLongBits(carLocation.mLat) && Double.doubleToLongBits(this.mLng) == Double.doubleToLongBits(carLocation.mLng);
     }
 
-    private CarLocation(double d, double d2) {
-        this.mLat = d;
-        this.mLng = d2;
+    public double getLatitude() {
+        return this.mLat;
+    }
+
+    public double getLongitude() {
+        return this.mLng;
+    }
+
+    public int hashCode() {
+        return Objects.hash(Double.valueOf(this.mLat), Double.valueOf(this.mLng));
+    }
+
+    public String toString() {
+        return "[" + getLatitude() + ", " + getLongitude() + "]";
+    }
+
+    public static CarLocation create(Location location) {
+        Objects.requireNonNull(location);
+        return create(location.getLatitude(), location.getLongitude());
     }
 
     private CarLocation() {

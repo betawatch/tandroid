@@ -2,9 +2,9 @@ package com.google.android.recaptcha.internal;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import kotlin.UInt;
-import kotlin.collections.CollectionsKt;
+import qc.g;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzkv implements zzkt {
     private final zzku zza;
@@ -19,16 +19,16 @@ public final class zzkv implements zzkt {
             throw new zzdm(3, 17, null);
         }
         try {
-            long zza = this.zza.zza(CollectionsKt.toLongArray(list));
+            long zza = this.zza.zza(g.n(list));
             zzkqVar = zzkr.zza;
             zzkr zzkrVar = new zzkr(zza, 255L, zzkqVar);
-            StringBuilder sb = new StringBuilder(str.length());
-            for (int i = 0; i < str.length(); i++) {
-                sb.append((char) UInt.constructor-impl(UInt.constructor-impl(str.charAt(i)) ^ UInt.constructor-impl((int) zzkrVar.zza())));
+            StringBuilder sb2 = new StringBuilder(str.length());
+            for (int i10 = 0; i10 < str.length(); i10++) {
+                sb2.append((char) (str.charAt(i10) ^ ((int) zzkrVar.zza())));
             }
-            return zzzo.zzg(zzpp.zzh().zzj(sb.toString()));
-        } catch (Exception e) {
-            throw new zzdm(3, 18, e);
+            return zzzo.zzg(zzpp.zzh().zzj(sb2.toString()));
+        } catch (Exception e9) {
+            throw new zzdm(3, 18, e9);
         }
     }
 
@@ -38,7 +38,7 @@ public final class zzkv implements zzkt {
         zzzo zzb2 = zzb(zzzqVar.zzj(), zzzqVar.zzk());
         zzb.zzf();
         long zza = zzb.zza(TimeUnit.MICROSECONDS);
-        int i = zzco.zza;
+        int i10 = zzco.zza;
         zzco.zza(zzcp.zza.zza(), zza);
         return zzb2;
     }

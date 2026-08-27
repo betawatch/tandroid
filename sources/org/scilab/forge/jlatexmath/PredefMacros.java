@@ -1,5 +1,7 @@
 package org.scilab.forge.jlatexmath;
 
+import a9.p;
+import com.google.android.recaptcha.internal.a;
 import java.lang.Character;
 import java.util.Map;
 import java.util.StringTokenizer;
@@ -8,8 +10,10 @@ import org.scilab.forge.jlatexmath.dynamic.DynamicAtom;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.RichMessageLayout;
 import ru.noties.jlatexmath.awt.Color;
+import s3.c;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class PredefMacros {
     static {
         NewEnvironmentMacro.addNewEnvironment("array", "\\array@@env{#1}{", "}", 1);
@@ -73,309 +77,114 @@ public class PredefMacros {
         NewCommandMacro.addNewCommand("Join", "\\mathop{\\rlap{\\ltimes}\\rtimes}", 0);
     }
 
-    public static final Atom fcscore_macro(TeXParser teXParser, String[] strArr) {
-        int parseInt = Integer.parseInt(strArr[1]);
-        if (parseInt > 4096) {
-            parseInt = 4096;
-        }
-        if (parseInt > 5) {
-            int i = parseInt / 5;
-            int i2 = parseInt % 5;
-            RowAtom rowAtom = new RowAtom();
-            for (int i3 = 0; i3 < i; i3++) {
-                rowAtom.add(new FcscoreAtom(5));
-            }
-            rowAtom.add(new FcscoreAtom(i2));
-            return rowAtom;
-        }
-        return new FcscoreAtom(parseInt);
+    public static final Atom Big_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
+        return !(atom instanceof SymbolAtom) ? atom : new BigDelimiterAtom((SymbolAtom) atom, 2);
     }
 
-    public static final Atom longdiv_macro(TeXParser teXParser, String[] strArr) {
-        try {
-            long longValue = Long.valueOf(strArr[1]).longValue();
-            long longValue2 = Long.valueOf(strArr[2]).longValue();
-            if (longValue2 == 0) {
-                throw new ParseException("Divisor must not be 0");
-            }
-            if (longValue > 1000000000 || longValue < -1000000000 || longValue2 > 1000000000 || longValue2 < -1000000000) {
-                throw new ParseException("Operands are too large for longdiv");
-            }
-            return new LongdivAtom(longValue2, longValue);
-        } catch (NumberFormatException unused) {
-            throw new ParseException("Divisor and dividend must be integer numbers");
-        }
+    public static final Atom Bigg_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
+        return !(atom instanceof SymbolAtom) ? atom : new BigDelimiterAtom((SymbolAtom) atom, 4);
     }
 
-    public static final Atom st_macro(TeXParser teXParser, String[] strArr) {
-        return new StrikeThroughAtom(new TeXFormula(teXParser, strArr[1], false).root);
+    public static final Atom Biggl_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
+        if (!(atom instanceof SymbolAtom)) {
+            return atom;
+        }
+        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 4);
+        bigDelimiterAtom.type = 4;
+        return bigDelimiterAtom;
+    }
+
+    public static final Atom Biggr_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
+        if (!(atom instanceof SymbolAtom)) {
+            return atom;
+        }
+        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 4);
+        bigDelimiterAtom.type = 5;
+        return bigDelimiterAtom;
+    }
+
+    public static final Atom Bigl_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
+        if (!(atom instanceof SymbolAtom)) {
+            return atom;
+        }
+        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 2);
+        bigDelimiterAtom.type = 4;
+        return bigDelimiterAtom;
+    }
+
+    public static final Atom Bigr_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
+        if (!(atom instanceof SymbolAtom)) {
+            return atom;
+        }
+        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 2);
+        bigDelimiterAtom.type = 5;
+        return bigDelimiterAtom;
     }
 
     public static final Atom Braket_macro(TeXParser teXParser, String[] strArr) {
-        return new TeXFormula(teXParser, "\\left\\langle " + strArr[1].replaceAll("\\|", "\\\\middle\\\\vert ") + "\\right\\rangle").root;
+        return new TeXFormula(teXParser, p.m("\\left\\langle ", strArr[1].replaceAll("\\|", "\\\\middle\\\\vert "), "\\right\\rangle")).root;
+    }
+
+    public static final Atom DeclareMathSizes_macro(TeXParser teXParser, String[] strArr) {
+        DefaultTeXFont.setMathSizes(Float.parseFloat(strArr[1]), Float.parseFloat(strArr[2]), Float.parseFloat(strArr[3]), Float.parseFloat(strArr[4]));
+        return null;
+    }
+
+    public static final Atom Dstrok_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(new SpaceAtom(1, -0.1f, 0.0f, 0.0f));
+        rowAtom.add(SymbolAtom.get("bar"));
+        VRowAtom vRowAtom = new VRowAtom(new LapedAtom(rowAtom, 'r'));
+        vRowAtom.setRaise(1, -0.55f);
+        RowAtom rowAtom2 = new RowAtom(vRowAtom);
+        rowAtom2.add(new RomanAtom(new CharAtom('D', teXParser.formula.textStyle)));
+        return rowAtom2;
+    }
+
+    public static final Atom GeoGebra_macro(TeXParser teXParser, String[] strArr) {
+        TeXFormula teXFormula = new TeXFormula("\\mathbb{G}\\mathsf{e}");
+        teXFormula.add(new GeoGebraLogoAtom());
+        teXFormula.add("\\mathsf{Gebra}");
+        return new ColorAtom(teXFormula.root, (Color) null, new Color(102, 102, 102));
+    }
+
+    public static final Atom Hstrok_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(new SpaceAtom(1, 0.28f, 0.0f, 0.0f));
+        rowAtom.add(SymbolAtom.get("textendash"));
+        VRowAtom vRowAtom = new VRowAtom(new LapedAtom(rowAtom, 'r'));
+        vRowAtom.setRaise(1, 0.55f);
+        RowAtom rowAtom2 = new RowAtom(vRowAtom);
+        rowAtom2.add(new RomanAtom(new CharAtom('H', teXParser.formula.textStyle)));
+        return rowAtom2;
+    }
+
+    public static final Atom IJ_macro(TeXParser teXParser, String[] strArr) {
+        return new IJAtom(strArr[0].charAt(0) == 'I');
+    }
+
+    public static final Atom LCaron_macro(TeXParser teXParser, String[] strArr) {
+        return new LCaronAtom(strArr[0].charAt(0) == 'L');
+    }
+
+    public static final Atom LaTeX_macro(TeXParser teXParser, String[] strArr) {
+        return new LaTeXAtom();
     }
 
     public static final Atom Set_macro(TeXParser teXParser, String[] strArr) {
-        return new TeXFormula(teXParser, "\\left\\{" + strArr[1].replaceFirst("\\|", "\\\\middle\\\\vert ") + "\\right\\}").root;
+        return new TeXFormula(teXParser, p.m("\\left\\{", strArr[1].replaceFirst("\\|", "\\\\middle\\\\vert "), "\\right\\}")).root;
     }
 
-    public static final Atom spATbreve_macro(TeXParser teXParser, String[] strArr) {
-        VRowAtom vRowAtom = new VRowAtom(new TeXFormula("\\displaystyle\\!\\breve{}").root);
-        vRowAtom.setRaise(1, 0.6f);
-        return new SmashedAtom(vRowAtom, null);
+    public static final Atom TStroke_macro(TeXParser teXParser, String[] strArr) {
+        return new TStrokeAtom(strArr[0].charAt(0) == 'T');
     }
 
-    public static final Atom spAThat_macro(TeXParser teXParser, String[] strArr) {
-        VRowAtom vRowAtom = new VRowAtom(new TeXFormula("\\displaystyle\\widehat{}").root);
-        vRowAtom.setRaise(1, 0.6f);
-        return new SmashedAtom(vRowAtom, null);
-    }
-
-    public static final Atom hvspace_macro(TeXParser teXParser, String[] strArr) {
-        int i = 0;
-        while (i < strArr[1].length() && !Character.isLetter(strArr[1].charAt(i))) {
-            i++;
-        }
-        try {
-            float parseFloat = Float.parseFloat(strArr[1].substring(0, i));
-            int unit = i != strArr[1].length() ? SpaceAtom.getUnit(strArr[1].substring(i).toLowerCase()) : 3;
-            if (unit != -1) {
-                return strArr[0].charAt(0) == 'h' ? new SpaceAtom(unit, parseFloat, 0.0f, 0.0f) : new SpaceAtom(unit, 0.0f, parseFloat, 0.0f);
-            }
-            throw new ParseException("Unknown unit \"" + strArr[1].substring(i) + "\" !");
-        } catch (NumberFormatException e) {
-            throw new ParseException(e.toString());
-        }
-    }
-
-    public static final Atom clrlap_macro(TeXParser teXParser, String[] strArr) {
-        return new LapedAtom(new TeXFormula(teXParser, strArr[1]).root, strArr[0].charAt(0));
-    }
-
-    public static final Atom mathclrlap_macro(TeXParser teXParser, String[] strArr) {
-        return new LapedAtom(new TeXFormula(teXParser, strArr[1]).root, strArr[0].charAt(4));
-    }
-
-    public static final Atom includegraphics_macro(TeXParser teXParser, String[] strArr) {
-        return new GraphicsAtom(strArr[1], strArr[2]);
-    }
-
-    public static final Atom rule_macro(TeXParser teXParser, String[] strArr) {
-        float[] length = SpaceAtom.getLength(strArr[1]);
-        if (length.length == 1) {
-            throw new ParseException("Error in getting width in \\rule command !");
-        }
-        float[] length2 = SpaceAtom.getLength(strArr[2]);
-        if (length2.length == 1) {
-            throw new ParseException("Error in getting height in \\rule command !");
-        }
-        float[] length3 = SpaceAtom.getLength(strArr[3]);
-        if (length3.length == 1) {
-            throw new ParseException("Error in getting raise in \\rule command !");
-        }
-        return new RuleAtom((int) length[0], length[1], (int) length2[0], length2[1], (int) length3[0], -length3[1]);
-    }
-
-    public static final Atom cfrac_macro(TeXParser teXParser, String[] strArr) {
-        int i;
-        Atom atom;
-        if ("r".equals(strArr[3])) {
-            i = 1;
-        } else {
-            i = "l".equals(strArr[3]) ? 0 : 2;
-        }
-        TeXFormula teXFormula = new TeXFormula(teXParser, strArr[1], false);
-        TeXFormula teXFormula2 = new TeXFormula(teXParser, strArr[2], false);
-        Atom atom2 = teXFormula.root;
-        if (atom2 == null || (atom = teXFormula2.root) == null) {
-            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
-        }
-        FractionAtom fractionAtom = new FractionAtom(atom2, atom, true, i, 2);
-        RowAtom rowAtom = new RowAtom();
-        rowAtom.add(new StyleAtom(0, fractionAtom));
-        return rowAtom;
-    }
-
-    public static final Atom frac_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom;
-        TeXFormula teXFormula = new TeXFormula(teXParser, strArr[1], false);
-        TeXFormula teXFormula2 = new TeXFormula(teXParser, strArr[2], false);
-        Atom atom2 = teXFormula.root;
-        if (atom2 == null || (atom = teXFormula2.root) == null) {
-            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
-        }
-        return new FractionAtom(atom2, atom, true);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public static final Atom sfrac_macro(TeXParser teXParser, String[] strArr) {
-        float f;
-        float f2;
-        double d;
-        double d2;
-        float f3;
-        SymbolAtom symbolAtom;
-        TeXFormula teXFormula = new TeXFormula(teXParser, strArr[1], false);
-        TeXFormula teXFormula2 = new TeXFormula(teXParser, strArr[2], false);
-        if (teXFormula.root == null || teXFormula2.root == null) {
-            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
-        }
-        SymbolAtom symbolAtom2 = SymbolAtom.get("slash");
-        if (teXParser.isMathMode()) {
-            f = -0.13f;
-            f2 = -0.065f;
-            d = 0.75d;
-            d2 = 0.75d;
-            f3 = 0.45f;
-            symbolAtom = symbolAtom2;
-        } else {
-            VRowAtom vRowAtom = new VRowAtom(new ScaleAtom(SymbolAtom.get("textfractionsolidus"), 1.25d, 0.65d));
-            vRowAtom.setRaise(1, 0.4f);
-            f = -0.24f;
-            d = 0.6d;
-            d2 = 0.5d;
-            f3 = 0.75f;
-            f2 = -0.24f;
-            symbolAtom = vRowAtom;
-        }
-        VRowAtom vRowAtom2 = new VRowAtom(new ScaleAtom(teXFormula.root, d, d2));
-        vRowAtom2.setRaise(1, f3);
-        RowAtom rowAtom = new RowAtom(vRowAtom2);
-        rowAtom.add(new SpaceAtom(0, f, 0.0f, 0.0f));
-        rowAtom.add(symbolAtom);
-        rowAtom.add(new SpaceAtom(0, f2, 0.0f, 0.0f));
-        rowAtom.add(new ScaleAtom(teXFormula2.root, d, d2));
-        return rowAtom;
-    }
-
-    public static final Atom genfrac_macro(TeXParser teXParser, String[] strArr) {
-        boolean z;
-        Atom atom;
-        Atom atom2 = new TeXFormula(teXParser, strArr[1], false).root;
-        SymbolAtom symbolAtom = atom2 instanceof SymbolAtom ? (SymbolAtom) atom2 : null;
-        Atom atom3 = new TeXFormula(teXParser, strArr[2], false).root;
-        SymbolAtom symbolAtom2 = atom3 instanceof SymbolAtom ? (SymbolAtom) atom3 : null;
-        float[] length = SpaceAtom.getLength(strArr[3]);
-        String str = strArr[3];
-        if (str == null || str.length() == 0 || length.length == 1) {
-            length = new float[]{0.0f, 0.0f};
-            z = false;
-        } else {
-            z = true;
-        }
-        int parseInt = strArr[4].length() != 0 ? Integer.parseInt(strArr[4]) : 0;
-        TeXFormula teXFormula = new TeXFormula(teXParser, strArr[5], false);
-        TeXFormula teXFormula2 = new TeXFormula(teXParser, strArr[6], false);
-        Atom atom4 = teXFormula.root;
-        if (atom4 == null || (atom = teXFormula2.root) == null) {
-            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
-        }
-        FractionAtom fractionAtom = new FractionAtom(atom4, atom, z, (int) length[0], length[1]);
-        RowAtom rowAtom = new RowAtom();
-        rowAtom.add(new StyleAtom(parseInt * 2, new FencedAtom(fractionAtom, symbolAtom, symbolAtom2)));
-        return rowAtom;
-    }
-
-    public static final Atom over_macro(TeXParser teXParser, String[] strArr) {
-        Atom formulaAtom = teXParser.getFormulaAtom();
-        Atom atom = new TeXFormula(teXParser, teXParser.getOverArgument(), false).root;
-        if (formulaAtom == null || atom == null) {
-            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
-        }
-        return new FractionAtom(formulaAtom, atom, true);
-    }
-
-    public static final Atom overwithdelims_macro(TeXParser teXParser, String[] strArr) {
-        Atom formulaAtom = teXParser.getFormulaAtom();
-        Atom atom = new TeXFormula(teXParser, teXParser.getOverArgument(), false).root;
-        if (formulaAtom == null || atom == null) {
-            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
-        }
-        Atom atom2 = new TeXFormula(teXParser, strArr[1], false).root;
-        if (atom2 instanceof BigDelimiterAtom) {
-            atom2 = ((BigDelimiterAtom) atom2).delim;
-        }
-        Atom atom3 = new TeXFormula(teXParser, strArr[2], false).root;
-        if (atom3 instanceof BigDelimiterAtom) {
-            atom3 = ((BigDelimiterAtom) atom3).delim;
-        }
-        if ((atom2 instanceof SymbolAtom) && (atom3 instanceof SymbolAtom)) {
-            return new FencedAtom(new FractionAtom(formulaAtom, atom, true), (SymbolAtom) atom2, (SymbolAtom) atom3);
-        }
-        RowAtom rowAtom = new RowAtom();
-        rowAtom.add(atom2);
-        rowAtom.add(new FractionAtom(formulaAtom, atom, true));
-        rowAtom.add(atom3);
-        return rowAtom;
-    }
-
-    public static final Atom atop_macro(TeXParser teXParser, String[] strArr) {
-        Atom formulaAtom = teXParser.getFormulaAtom();
-        Atom atom = new TeXFormula(teXParser, teXParser.getOverArgument(), false).root;
-        if (formulaAtom == null || atom == null) {
-            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
-        }
-        return new FractionAtom(formulaAtom, atom, false);
-    }
-
-    public static final Atom atopwithdelims_macro(TeXParser teXParser, String[] strArr) {
-        Atom formulaAtom = teXParser.getFormulaAtom();
-        Atom atom = new TeXFormula(teXParser, teXParser.getOverArgument(), false).root;
-        if (formulaAtom == null || atom == null) {
-            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
-        }
-        Atom atom2 = new TeXFormula(teXParser, strArr[1], false).root;
-        if (atom2 instanceof BigDelimiterAtom) {
-            atom2 = ((BigDelimiterAtom) atom2).delim;
-        }
-        Atom atom3 = new TeXFormula(teXParser, strArr[2], false).root;
-        if (atom3 instanceof BigDelimiterAtom) {
-            atom3 = ((BigDelimiterAtom) atom3).delim;
-        }
-        if ((atom2 instanceof SymbolAtom) && (atom3 instanceof SymbolAtom)) {
-            return new FencedAtom(new FractionAtom(formulaAtom, atom, false), (SymbolAtom) atom2, (SymbolAtom) atom3);
-        }
-        RowAtom rowAtom = new RowAtom();
-        rowAtom.add(atom2);
-        rowAtom.add(new FractionAtom(formulaAtom, atom, false));
-        rowAtom.add(atom3);
-        return rowAtom;
-    }
-
-    public static final Atom choose_macro(TeXParser teXParser, String[] strArr) {
-        return choose_brackets("lbrack", "rbrack", teXParser, strArr);
-    }
-
-    public static final Atom brack_macro(TeXParser teXParser, String[] strArr) {
-        return choose_brackets("lsqbrack", "rsqbrack", teXParser, strArr);
-    }
-
-    public static final Atom bangle_macro(TeXParser teXParser, String[] strArr) {
-        return choose_brackets("langle", "rangle", teXParser, strArr);
-    }
-
-    public static final Atom brace_macro(TeXParser teXParser, String[] strArr) {
-        return choose_brackets("lbrace", "rbrace", teXParser, strArr);
-    }
-
-    public static final Atom choose_brackets(String str, String str2, TeXParser teXParser, String[] strArr) {
-        Atom formulaAtom = teXParser.getFormulaAtom();
-        Atom atom = new TeXFormula(teXParser, teXParser.getOverArgument(), false).root;
-        if (formulaAtom == null || atom == null) {
-            throw new ParseException("Both numerator and denominator of choose can't be empty!");
-        }
-        return new FencedAtom(new FractionAtom(formulaAtom, atom, false), new SymbolAtom(str, 4, true), new SymbolAtom(str2, 5, true));
-    }
-
-    public static final Atom binom_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom;
-        TeXFormula teXFormula = new TeXFormula(teXParser, strArr[1], false);
-        TeXFormula teXFormula2 = new TeXFormula(teXParser, strArr[2], false);
-        Atom atom2 = teXFormula.root;
-        if (atom2 == null || (atom = teXFormula2.root) == null) {
-            throw new ParseException("Both binomial coefficients must be not empty !!");
-        }
-        return new FencedAtom(new FractionAtom(atom2, atom, false), new SymbolAtom("lbrack", 4, true), new SymbolAtom("rbrack", 5, true));
+    public static final Atom T_macro(TeXParser teXParser, String[] strArr) {
+        return new RotateAtom(new TeXFormula(teXParser, strArr[1]).root, 180.0d, "origin=cc");
     }
 
     public static final Atom above_macro(TeXParser teXParser, String[] strArr) {
@@ -419,6 +228,1472 @@ public class PredefMacros {
         return rowAtom;
     }
 
+    public static final Atom accent_macro(TeXParser teXParser, String[] strArr) {
+        return new AccentedAtom(new TeXFormula(teXParser, strArr[2], false).root, new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom accent_macros(TeXParser teXParser, String[] strArr) {
+        return new AccentedAtom(new TeXFormula(teXParser, strArr[1], false).root, strArr[0]);
+    }
+
+    public static final Atom accentbis_macros(TeXParser teXParser, String[] strArr) {
+        String str;
+        char charAt = strArr[0].charAt(0);
+        if (charAt == '\"') {
+            str = "ddot";
+        } else if (charAt == '\'') {
+            str = "acute";
+        } else if (charAt == '.') {
+            str = "dot";
+        } else if (charAt == '=') {
+            str = "bar";
+        } else if (charAt == 'H') {
+            str = "doubleacute";
+        } else if (charAt == 'U') {
+            str = "cyrbreve";
+        } else if (charAt == '^') {
+            str = "hat";
+        } else if (charAt == '`') {
+            str = "grave";
+        } else if (charAt == 'r') {
+            str = "mathring";
+        } else if (charAt != '~') {
+            switch (charAt) {
+                case 't':
+                    str = "tie";
+                    break;
+                case 'u':
+                    str = "breve";
+                    break;
+                case 'v':
+                    str = "check";
+                    break;
+                default:
+                    str = "";
+                    break;
+            }
+        } else {
+            str = "tilde";
+        }
+        return new AccentedAtom(new TeXFormula(teXParser, strArr[1], false).root, str);
+    }
+
+    public static final Atom accentset_macro(TeXParser teXParser, String[] strArr) {
+        return new AccentedAtom(new TeXFormula(teXParser, strArr[2], false).root, new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom alignATATenv_macro(TeXParser teXParser, String[] strArr) {
+        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
+        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
+        arrayOfAtoms.checkDimensions();
+        return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, 2);
+    }
+
+    public static final Atom alignatATATenv_macro(TeXParser teXParser, String[] strArr) {
+        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
+        new TeXParser(teXParser.getIsPartial(), strArr[2], arrayOfAtoms, false).parse();
+        arrayOfAtoms.checkDimensions();
+        if (arrayOfAtoms.col == Integer.parseInt(strArr[1]) * 2) {
+            return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, 3);
+        }
+        throw new ParseException("Bad number of equations in alignat environment !");
+    }
+
+    public static final Atom alignedATATenv_macro(TeXParser teXParser, String[] strArr) {
+        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
+        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
+        arrayOfAtoms.checkDimensions();
+        return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, 6);
+    }
+
+    public static final Atom alignedatATATenv_macro(TeXParser teXParser, String[] strArr) {
+        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
+        new TeXParser(teXParser.getIsPartial(), strArr[2], arrayOfAtoms, false).parse();
+        arrayOfAtoms.checkDimensions();
+        if (arrayOfAtoms.col == Integer.parseInt(strArr[1]) * 2) {
+            return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, 7);
+        }
+        throw new ParseException("Bad number of equations in alignedat environment !");
+    }
+
+    public static final Atom approxcolon_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(SymbolAtom.get("approx"));
+        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
+        rowAtom.add(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom approxcoloncolon_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(SymbolAtom.get("approx"));
+        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
+        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
+        rowAtom.add(underOverAtom);
+        rowAtom.add(underOverAtom);
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom arrayATATenv_macro(TeXParser teXParser, String[] strArr) {
+        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
+        new TeXParser(teXParser.getIsPartial(), strArr[2], arrayOfAtoms, false).parse();
+        arrayOfAtoms.checkDimensions();
+        return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, strArr[1], true);
+    }
+
+    public static final Atom atop_macro(TeXParser teXParser, String[] strArr) {
+        Atom formulaAtom = teXParser.getFormulaAtom();
+        Atom atom = new TeXFormula(teXParser, teXParser.getOverArgument(), false).root;
+        if (formulaAtom == null || atom == null) {
+            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
+        }
+        return new FractionAtom(formulaAtom, atom, false);
+    }
+
+    public static final Atom atopwithdelims_macro(TeXParser teXParser, String[] strArr) {
+        Atom formulaAtom = teXParser.getFormulaAtom();
+        Atom atom = new TeXFormula(teXParser, teXParser.getOverArgument(), false).root;
+        if (formulaAtom == null || atom == null) {
+            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
+        }
+        Atom atom2 = new TeXFormula(teXParser, strArr[1], false).root;
+        if (atom2 instanceof BigDelimiterAtom) {
+            atom2 = ((BigDelimiterAtom) atom2).delim;
+        }
+        Atom atom3 = new TeXFormula(teXParser, strArr[2], false).root;
+        if (atom3 instanceof BigDelimiterAtom) {
+            atom3 = ((BigDelimiterAtom) atom3).delim;
+        }
+        if ((atom2 instanceof SymbolAtom) && (atom3 instanceof SymbolAtom)) {
+            return new FencedAtom(new FractionAtom(formulaAtom, atom, false), (SymbolAtom) atom2, (SymbolAtom) atom3);
+        }
+        RowAtom rowAtom = new RowAtom();
+        rowAtom.add(atom2);
+        rowAtom.add(new FractionAtom(formulaAtom, atom, false));
+        rowAtom.add(atom3);
+        return rowAtom;
+    }
+
+    public static final Atom backslashcr_macro(TeXParser teXParser, String[] strArr) {
+        return cr_macro(teXParser, strArr);
+    }
+
+    public static final Atom bangle_macro(TeXParser teXParser, String[] strArr) {
+        return choose_brackets("langle", "rangle", teXParser, strArr);
+    }
+
+    public static final Atom bf_macro(TeXParser teXParser, String[] strArr) {
+        return new BoldAtom(new RomanAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root));
+    }
+
+    public static final Atom bgcolor_macro(TeXParser teXParser, String[] strArr) {
+        try {
+            return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, ColorAtom.getColor(strArr[1]), (Color) null);
+        } catch (NumberFormatException e9) {
+            throw new ParseException(e9.toString());
+        }
+    }
+
+    public static final Atom big_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
+        return !(atom instanceof SymbolAtom) ? atom : new BigDelimiterAtom((SymbolAtom) atom, 1);
+    }
+
+    public static final Atom bigg_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
+        return !(atom instanceof SymbolAtom) ? atom : new BigDelimiterAtom((SymbolAtom) atom, 3);
+    }
+
+    public static final Atom biggl_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
+        if (!(atom instanceof SymbolAtom)) {
+            return atom;
+        }
+        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 3);
+        bigDelimiterAtom.type = 4;
+        return bigDelimiterAtom;
+    }
+
+    public static final Atom biggr_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
+        if (!(atom instanceof SymbolAtom)) {
+            return atom;
+        }
+        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 3);
+        bigDelimiterAtom.type = 5;
+        return bigDelimiterAtom;
+    }
+
+    public static final Atom bigl_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
+        if (!(atom instanceof SymbolAtom)) {
+            return atom;
+        }
+        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 1);
+        bigDelimiterAtom.type = 4;
+        return bigDelimiterAtom;
+    }
+
+    public static final Atom bigr_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
+        if (!(atom instanceof SymbolAtom)) {
+            return atom;
+        }
+        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 1);
+        bigDelimiterAtom.type = 5;
+        return bigDelimiterAtom;
+    }
+
+    public static final Atom binom_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom;
+        TeXFormula teXFormula = new TeXFormula(teXParser, strArr[1], false);
+        TeXFormula teXFormula2 = new TeXFormula(teXParser, strArr[2], false);
+        Atom atom2 = teXFormula.root;
+        if (atom2 == null || (atom = teXFormula2.root) == null) {
+            throw new ParseException("Both binomial coefficients must be not empty !!");
+        }
+        return new FencedAtom(new FractionAtom(atom2, atom, false), new SymbolAtom("lbrack", 4, true), new SymbolAtom("rbrack", 5, true));
+    }
+
+    public static final Atom boldsymbol_macro(TeXParser teXParser, String[] strArr) {
+        return new BoldAtom(new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom brace_macro(TeXParser teXParser, String[] strArr) {
+        return choose_brackets("lbrace", "rbrace", teXParser, strArr);
+    }
+
+    public static final Atom brack_macro(TeXParser teXParser, String[] strArr) {
+        return choose_brackets("lsqbrack", "rsqbrack", teXParser, strArr);
+    }
+
+    public static final Atom cedilla_macro(TeXParser teXParser, String[] strArr) {
+        return new CedillaAtom(new TeXFormula(teXParser, strArr[1]).root);
+    }
+
+    public static final Atom cfrac_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom;
+        int i10 = "r".equals(strArr[3]) ? 1 : "l".equals(strArr[3]) ? 0 : 2;
+        TeXFormula teXFormula = new TeXFormula(teXParser, strArr[1], false);
+        TeXFormula teXFormula2 = new TeXFormula(teXParser, strArr[2], false);
+        Atom atom2 = teXFormula.root;
+        if (atom2 == null || (atom = teXFormula2.root) == null) {
+            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
+        }
+        FractionAtom fractionAtom = new FractionAtom(atom2, atom, true, i10, 2);
+        RowAtom rowAtom = new RowAtom();
+        rowAtom.add(new StyleAtom(0, fractionAtom));
+        return rowAtom;
+    }
+
+    public static final Atom char_macro(TeXParser teXParser, String[] strArr) {
+        String str = strArr[1];
+        int i10 = 16;
+        if (str.startsWith("0x") || str.startsWith("0X")) {
+            str = str.substring(2);
+        } else if (str.startsWith("x") || str.startsWith("X")) {
+            str = str.substring(1);
+        } else if (str.startsWith("0")) {
+            str = str.substring(1);
+            i10 = 8;
+        } else {
+            i10 = 10;
+        }
+        return teXParser.convertCharacter((char) Integer.parseInt(str, i10), true);
+    }
+
+    public static final Atom choose_brackets(String str, String str2, TeXParser teXParser, String[] strArr) {
+        Atom formulaAtom = teXParser.getFormulaAtom();
+        Atom atom = new TeXFormula(teXParser, teXParser.getOverArgument(), false).root;
+        if (formulaAtom == null || atom == null) {
+            throw new ParseException("Both numerator and denominator of choose can't be empty!");
+        }
+        return new FencedAtom(new FractionAtom(formulaAtom, atom, false), new SymbolAtom(str, 4, true), new SymbolAtom(str2, 5, true));
+    }
+
+    public static final Atom choose_macro(TeXParser teXParser, String[] strArr) {
+        return choose_brackets("lbrack", "rbrack", teXParser, strArr);
+    }
+
+    public static final Atom clrlap_macro(TeXParser teXParser, String[] strArr) {
+        return new LapedAtom(new TeXFormula(teXParser, strArr[1]).root, strArr[0].charAt(0));
+    }
+
+    public static final Atom colonapprox_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
+        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
+        rowAtom.add(SymbolAtom.get("approx"));
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom coloncolon_macro(TeXParser teXParser, String[] strArr) {
+        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
+        RowAtom rowAtom = new RowAtom(underOverAtom);
+        rowAtom.add(underOverAtom);
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom coloncolonapprox_macro(TeXParser teXParser, String[] strArr) {
+        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
+        RowAtom rowAtom = new RowAtom(underOverAtom);
+        rowAtom.add(underOverAtom);
+        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
+        rowAtom.add(SymbolAtom.get("approx"));
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom coloncolonequals_macro(TeXParser teXParser, String[] strArr) {
+        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
+        RowAtom rowAtom = new RowAtom(underOverAtom);
+        rowAtom.add(underOverAtom);
+        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
+        rowAtom.add(SymbolAtom.get("equals"));
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom coloncolonminus_macro(TeXParser teXParser, String[] strArr) {
+        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
+        RowAtom rowAtom = new RowAtom(underOverAtom);
+        rowAtom.add(underOverAtom);
+        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
+        rowAtom.add(SymbolAtom.get("minus"));
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom coloncolonsim_macro(TeXParser teXParser, String[] strArr) {
+        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
+        RowAtom rowAtom = new RowAtom(underOverAtom);
+        rowAtom.add(underOverAtom);
+        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
+        rowAtom.add(SymbolAtom.get("sim"));
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom colonequals_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
+        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
+        rowAtom.add(SymbolAtom.get("equals"));
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom colonminus_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
+        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
+        rowAtom.add(SymbolAtom.get("minus"));
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom colonsim_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
+        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
+        rowAtom.add(SymbolAtom.get("sim"));
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom colorbox_macro(TeXParser teXParser, String[] strArr) {
+        Color color = ColorAtom.getColor(strArr[1]);
+        return new FBoxAtom(new TeXFormula(teXParser, strArr[2]).root, color, color);
+    }
+
+    public static final Atom cong_macro(TeXParser teXParser, String[] strArr) {
+        VRowAtom vRowAtom = new VRowAtom(SymbolAtom.get("equals"));
+        vRowAtom.add(new SpaceAtom(5, 0.0f, 1.5f, 0.0f));
+        vRowAtom.add(SymbolAtom.get("sim"));
+        vRowAtom.setRaise(5, -1.0f);
+        return new TypedAtom(3, 3, vRowAtom);
+    }
+
+    public static final Atom cr_macro(TeXParser teXParser, String[] strArr) {
+        if (teXParser.isArrayMode()) {
+            teXParser.addRow();
+            return null;
+        }
+        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
+        arrayOfAtoms.add(teXParser.formula.root);
+        arrayOfAtoms.addRow();
+        new TeXParser(teXParser.getIsPartial(), teXParser.getStringFromCurrentPos(), arrayOfAtoms, false, teXParser.isIgnoreWhiteSpace()).parse();
+        arrayOfAtoms.checkDimensions();
+        teXParser.finish();
+        teXParser.formula.root = arrayOfAtoms.getAsVRow();
+        return null;
+    }
+
+    public static final Atom ddots_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(7, 7, new DdotsAtom());
+    }
+
+    public static final Atom definecolor_macro(TeXParser teXParser, String[] strArr) {
+        Color color;
+        if ("gray".equals(strArr[2])) {
+            float parseFloat = Float.parseFloat(strArr[3]);
+            color = new Color(parseFloat, parseFloat, parseFloat);
+        } else if ("rgb".equals(strArr[2])) {
+            StringTokenizer stringTokenizer = new StringTokenizer(strArr[3], ";,");
+            if (stringTokenizer.countTokens() != 3) {
+                throw new ParseException("The color definition must have three components !");
+            }
+            color = new Color(Float.parseFloat(stringTokenizer.nextToken().trim()), Float.parseFloat(stringTokenizer.nextToken().trim()), Float.parseFloat(stringTokenizer.nextToken().trim()));
+        } else {
+            if (!"cmyk".equals(strArr[2])) {
+                throw new ParseException("The color model is incorrect !");
+            }
+            StringTokenizer stringTokenizer2 = new StringTokenizer(strArr[3], ",;");
+            if (stringTokenizer2.countTokens() != 4) {
+                throw new ParseException("The color definition must have four components !");
+            }
+            float[] fArr = new float[4];
+            for (int i10 = 0; i10 < 4; i10++) {
+                fArr[i10] = Float.parseFloat(stringTokenizer2.nextToken().trim());
+            }
+            float f10 = 1.0f - fArr[3];
+            color = new Color((1.0f - fArr[0]) * f10, (1.0f - fArr[1]) * f10, (1.0f - fArr[2]) * f10);
+        }
+        ColorAtom.Colors.put(strArr[1], color);
+        return null;
+    }
+
+    public static final Atom displaystyle_macro(TeXParser teXParser, String[] strArr) {
+        return new StyleAtom(0, new TeXFormula(teXParser, teXParser.getOverArgument(), false).root);
+    }
+
+    public static final Atom doteq_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(3, 3, new UnderOverAtom(SymbolAtom.get("equals"), SymbolAtom.get("ldotp"), 5, 3.7f, false, true));
+    }
+
+    public static final Atom dotminus_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(2, 2, new UnderOverAtom(SymbolAtom.get("minus"), SymbolAtom.get("normaldot"), 5, -3.3f, false, true));
+    }
+
+    public static final Atom doublebox_macro(TeXParser teXParser, String[] strArr) {
+        return new DoubleFramedAtom(new TeXFormula(teXParser, strArr[1]).root);
+    }
+
+    public static final Atom dstrok_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(new SpaceAtom(1, 0.25f, 0.0f, 0.0f));
+        rowAtom.add(SymbolAtom.get("bar"));
+        VRowAtom vRowAtom = new VRowAtom(new LapedAtom(rowAtom, 'r'));
+        vRowAtom.setRaise(1, -0.1f);
+        RowAtom rowAtom2 = new RowAtom(vRowAtom);
+        rowAtom2.add(new RomanAtom(new CharAtom('d', teXParser.formula.textStyle)));
+        return rowAtom2;
+    }
+
+    public static final Atom equalscolon_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(SymbolAtom.get("equals"));
+        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
+        rowAtom.add(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom equalscoloncolon_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(SymbolAtom.get("equals"));
+        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
+        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
+        rowAtom.add(underOverAtom);
+        rowAtom.add(underOverAtom);
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom fbox_macro(TeXParser teXParser, String[] strArr) {
+        return new FBoxAtom(new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom fcolorbox_macro(TeXParser teXParser, String[] strArr) {
+        return new FBoxAtom(new TeXFormula(teXParser, strArr[3]).root, ColorAtom.getColor(strArr[2]), ColorAtom.getColor(strArr[1]));
+    }
+
+    public static final Atom fcscore_macro(TeXParser teXParser, String[] strArr) {
+        int parseInt = Integer.parseInt(strArr[1]);
+        if (parseInt > 4096) {
+            parseInt = 4096;
+        }
+        if (parseInt <= 5) {
+            return new FcscoreAtom(parseInt);
+        }
+        int i10 = parseInt / 5;
+        int i11 = parseInt % 5;
+        RowAtom rowAtom = new RowAtom();
+        for (int i12 = 0; i12 < i10; i12++) {
+            rowAtom.add(new FcscoreAtom(5));
+        }
+        rowAtom.add(new FcscoreAtom(i11));
+        return rowAtom;
+    }
+
+    public static final Atom fgcolor_macro(TeXParser teXParser, String[] strArr) {
+        try {
+            return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, (Color) null, ColorAtom.getColor(strArr[1]));
+        } catch (NumberFormatException e9) {
+            throw new ParseException(e9.toString());
+        }
+    }
+
+    public static final Atom flalignATATenv_macro(TeXParser teXParser, String[] strArr) {
+        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
+        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
+        arrayOfAtoms.checkDimensions();
+        return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, 4);
+    }
+
+    public static final Atom frac_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom;
+        TeXFormula teXFormula = new TeXFormula(teXParser, strArr[1], false);
+        TeXFormula teXFormula2 = new TeXFormula(teXParser, strArr[2], false);
+        Atom atom2 = teXFormula.root;
+        if (atom2 == null || (atom = teXFormula2.root) == null) {
+            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
+        }
+        return new FractionAtom(atom2, atom, true);
+    }
+
+    public static final Atom gatherATATenv_macro(TeXParser teXParser, String[] strArr) {
+        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
+        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
+        arrayOfAtoms.checkDimensions();
+        int i10 = arrayOfAtoms.col;
+        if (i10 > 1) {
+            throw new ParseException("Character '&' is only available in array mode !");
+        }
+        if (i10 == 0) {
+            return null;
+        }
+        return new MultlineAtom(teXParser.getIsPartial(), arrayOfAtoms, 1);
+    }
+
+    public static final Atom gatheredATATenv_macro(TeXParser teXParser, String[] strArr) {
+        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
+        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
+        arrayOfAtoms.checkDimensions();
+        int i10 = arrayOfAtoms.col;
+        if (i10 > 1) {
+            throw new ParseException("Character '&' is only available in array mode !");
+        }
+        if (i10 == 0) {
+            return null;
+        }
+        return new MultlineAtom(teXParser.getIsPartial(), arrayOfAtoms, 2);
+    }
+
+    public static final Atom genfrac_macro(TeXParser teXParser, String[] strArr) {
+        boolean z10;
+        Atom atom;
+        Atom atom2 = new TeXFormula(teXParser, strArr[1], false).root;
+        SymbolAtom symbolAtom = atom2 instanceof SymbolAtom ? (SymbolAtom) atom2 : null;
+        Atom atom3 = new TeXFormula(teXParser, strArr[2], false).root;
+        SymbolAtom symbolAtom2 = atom3 instanceof SymbolAtom ? (SymbolAtom) atom3 : null;
+        float[] length = SpaceAtom.getLength(strArr[3]);
+        String str = strArr[3];
+        if (str == null || str.length() == 0 || length.length == 1) {
+            length = new float[]{0.0f, 0.0f};
+            z10 = false;
+        } else {
+            z10 = true;
+        }
+        int parseInt = strArr[4].length() != 0 ? Integer.parseInt(strArr[4]) : 0;
+        TeXFormula teXFormula = new TeXFormula(teXParser, strArr[5], false);
+        TeXFormula teXFormula2 = new TeXFormula(teXParser, strArr[6], false);
+        Atom atom4 = teXFormula.root;
+        if (atom4 == null || (atom = teXFormula2.root) == null) {
+            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
+        }
+        FractionAtom fractionAtom = new FractionAtom(atom4, atom, z10, (int) length[0], length[1]);
+        RowAtom rowAtom = new RowAtom();
+        rowAtom.add(new StyleAtom(parseInt * 2, new FencedAtom(fractionAtom, symbolAtom, symbolAtom2)));
+        return rowAtom;
+    }
+
+    public static final Atom geoprop_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(SymbolAtom.get("normaldot"));
+        rowAtom.add(new SpaceAtom(5, 4.0f, 0.0f, 0.0f));
+        rowAtom.add(SymbolAtom.get("normaldot"));
+        return new TypedAtom(3, 3, new UnderOverAtom(SymbolAtom.get("minus"), rowAtom, 5, -3.4f, false, rowAtom, 5, -3.4f, false));
+    }
+
+    public static final Atom grkaccent_macro(TeXParser teXParser, String[] strArr) {
+        return new AccentedAtom(new TeXFormula(teXParser, strArr[2], false).root, new TeXFormula(teXParser, strArr[1], false).root, false);
+    }
+
+    public static final Atom hdotsfor_macro(TeXParser teXParser, String[] strArr) {
+        int i10 = 1;
+        int parseInt = Integer.parseInt(strArr[1]);
+        if (parseInt >= 1) {
+            i10 = 4096;
+            if (parseInt <= 4096) {
+                i10 = parseInt;
+            }
+        }
+        String str = strArr[2];
+        teXParser.addAtom(new HdotsforAtom(i10, str != null ? Float.parseFloat(str) : 1.0f));
+        ((ArrayOfAtoms) teXParser.formula).addCol(i10);
+        return null;
+    }
+
+    public static final Atom hline_macro(TeXParser teXParser, String[] strArr) {
+        if (teXParser.isArrayMode()) {
+            return new HlineAtom();
+        }
+        throw new ParseException("The macro \\hline is only available in array mode !");
+    }
+
+    public static final Atom hphantom_macro(TeXParser teXParser, String[] strArr) {
+        return new PhantomAtom(new TeXFormula(teXParser, strArr[1], false).root, true, false, false);
+    }
+
+    public static final Atom hstrok_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(new SpaceAtom(1, -0.1f, 0.0f, 0.0f));
+        rowAtom.add(SymbolAtom.get("bar"));
+        VRowAtom vRowAtom = new VRowAtom(new LapedAtom(rowAtom, 'r'));
+        vRowAtom.setRaise(1, -0.1f);
+        RowAtom rowAtom2 = new RowAtom(vRowAtom);
+        rowAtom2.add(new RomanAtom(new CharAtom('h', teXParser.formula.textStyle)));
+        return rowAtom2;
+    }
+
+    public static final Atom hvspace_macro(TeXParser teXParser, String[] strArr) {
+        int i10 = 0;
+        while (i10 < strArr[1].length() && !Character.isLetter(strArr[1].charAt(i10))) {
+            i10++;
+        }
+        try {
+            float parseFloat = Float.parseFloat(strArr[1].substring(0, i10));
+            int unit = i10 != strArr[1].length() ? SpaceAtom.getUnit(strArr[1].substring(i10).toLowerCase()) : 3;
+            if (unit != -1) {
+                return strArr[0].charAt(0) == 'h' ? new SpaceAtom(unit, parseFloat, 0.0f, 0.0f) : new SpaceAtom(unit, 0.0f, parseFloat, 0.0f);
+            }
+            throw new ParseException("Unknown unit \"" + strArr[1].substring(i10) + "\" !");
+        } catch (NumberFormatException e9) {
+            throw new ParseException(e9.toString());
+        }
+    }
+
+    public static final Atom iddots_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(7, 7, new IddotsAtom());
+    }
+
+    public static final Atom idotsint_macro(TeXParser teXParser, String[] strArr) {
+        Atom clone = SymbolAtom.get("int").clone();
+        clone.type_limits = 1;
+        RowAtom rowAtom = new RowAtom(clone);
+        rowAtom.add(new SpaceAtom(5, -1.0f, 0.0f, 0.0f));
+        SymbolAtom symbolAtom = SymbolAtom.get("cdotp");
+        RowAtom rowAtom2 = new RowAtom(symbolAtom);
+        rowAtom2.add(symbolAtom);
+        rowAtom2.add(symbolAtom);
+        rowAtom.add(new TypedAtom(7, 7, rowAtom2));
+        rowAtom.add(new SpaceAtom(5, -1.0f, 0.0f, 0.0f));
+        rowAtom.add(clone);
+        rowAtom.lookAtLastAtom = true;
+        return new TypedAtom(1, 1, rowAtom);
+    }
+
+    public static final Atom iiiint_macro(TeXParser teXParser, String[] strArr) {
+        Atom clone = SymbolAtom.get("int").clone();
+        clone.type_limits = 1;
+        RowAtom rowAtom = new RowAtom(clone);
+        rowAtom.add(new SpaceAtom(5, -6.0f, 0.0f, 0.0f));
+        rowAtom.add(clone);
+        rowAtom.add(new SpaceAtom(5, -6.0f, 0.0f, 0.0f));
+        rowAtom.add(clone);
+        rowAtom.add(new SpaceAtom(5, -6.0f, 0.0f, 0.0f));
+        rowAtom.add(clone);
+        rowAtom.lookAtLastAtom = true;
+        return new TypedAtom(1, 1, rowAtom);
+    }
+
+    public static final Atom iiint_macro(TeXParser teXParser, String[] strArr) {
+        Atom clone = SymbolAtom.get("int").clone();
+        clone.type_limits = 1;
+        RowAtom rowAtom = new RowAtom(clone);
+        rowAtom.add(new SpaceAtom(5, -6.0f, 0.0f, 0.0f));
+        rowAtom.add(clone);
+        rowAtom.add(new SpaceAtom(5, -6.0f, 0.0f, 0.0f));
+        rowAtom.add(clone);
+        rowAtom.lookAtLastAtom = true;
+        return new TypedAtom(1, 1, rowAtom);
+    }
+
+    public static final Atom iint_macro(TeXParser teXParser, String[] strArr) {
+        Atom clone = SymbolAtom.get("int").clone();
+        clone.type_limits = 1;
+        RowAtom rowAtom = new RowAtom(clone);
+        rowAtom.add(new SpaceAtom(5, -6.0f, 0.0f, 0.0f));
+        rowAtom.add(clone);
+        rowAtom.lookAtLastAtom = true;
+        return new TypedAtom(1, 1, rowAtom);
+    }
+
+    public static final Atom includegraphics_macro(TeXParser teXParser, String[] strArr) {
+        return new GraphicsAtom(strArr[1], strArr[2]);
+    }
+
+    public static final Atom insertBreakMark_macro(TeXParser teXParser, String[] strArr) {
+        return new BreakMarkAtom();
+    }
+
+    public static final Atom int_macro(TeXParser teXParser, String[] strArr) {
+        Atom clone = SymbolAtom.get("int").clone();
+        clone.type_limits = 1;
+        return clone;
+    }
+
+    public static final Atom intertext_macro(TeXParser teXParser, String[] strArr) {
+        if (!teXParser.isArrayMode()) {
+            throw new ParseException("Bad environment for \\intertext command !");
+        }
+        RomanAtom romanAtom = new RomanAtom(new TeXFormula(teXParser, strArr[1].replaceAll("\\^\\{\\\\prime\\}", "'").replaceAll("\\^\\{\\\\prime\\\\prime\\}", "''"), "mathnormal", false, false).root);
+        romanAtom.type = 11;
+        teXParser.addAtom(romanAtom);
+        teXParser.addRow();
+        return null;
+    }
+
+    public static final Atom it_macro(TeXParser teXParser, String[] strArr) {
+        return new ItAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root);
+    }
+
+    public static final Atom jlatexmathcumsub_macro(TeXParser teXParser, String[] strArr) {
+        return new CumulativeScriptsAtom(teXParser.getLastAtom(), new TeXFormula(teXParser, strArr[1]).root, null);
+    }
+
+    public static final Atom jlatexmathcumsup_macro(TeXParser teXParser, String[] strArr) {
+        return new CumulativeScriptsAtom(teXParser.getLastAtom(), null, new TeXFormula(teXParser, strArr[1]).root);
+    }
+
+    public static final Atom jlmDynamic_macro(TeXParser teXParser, String[] strArr) {
+        if (DynamicAtom.hasAnExternalConverterFactory()) {
+            return new DynamicAtom(strArr[1], strArr[2]);
+        }
+        throw new ParseException("No ExternalConverterFactory set !");
+    }
+
+    public static final Atom jlmExternalFont_macro(TeXParser teXParser, String[] strArr) {
+        JavaFontRenderingBox.setFont(strArr[1]);
+        return null;
+    }
+
+    public static final Atom jlmText_macro(TeXParser teXParser, String[] strArr) {
+        return new JavaFontRenderingAtom(strArr[1], 0);
+    }
+
+    public static final Atom jlmTextbf_macro(TeXParser teXParser, String[] strArr) {
+        return new JavaFontRenderingAtom(strArr[1], 1);
+    }
+
+    public static final Atom jlmTextit_macro(TeXParser teXParser, String[] strArr) {
+        return new JavaFontRenderingAtom(strArr[1], 2);
+    }
+
+    public static final Atom jlmTextitbf_macro(TeXParser teXParser, String[] strArr) {
+        return new JavaFontRenderingAtom(strArr[1], 3);
+    }
+
+    public static final Atom jlmXML_macro(TeXParser teXParser, String[] strArr) {
+        Map<String, String> map = teXParser.formula.jlmXMLMap;
+        String str = strArr[1];
+        StringBuffer stringBuffer = new StringBuffer();
+        while (true) {
+            int indexOf = str.indexOf("$");
+            if (indexOf == -1) {
+                stringBuffer.append(str);
+                return new TeXFormula(teXParser, stringBuffer.toString()).root;
+            }
+            if (indexOf < str.length() - 1) {
+                int i10 = indexOf;
+                do {
+                    i10++;
+                    if (i10 >= str.length()) {
+                        break;
+                    }
+                } while (Character.isLetter(str.charAt(i10)));
+                String str2 = map.get(str.substring(indexOf + 1, i10));
+                if (str2 != null) {
+                    stringBuffer.append(str.substring(0, indexOf));
+                    stringBuffer.append(str2);
+                } else {
+                    stringBuffer.append(str.substring(0, i10));
+                }
+                str = str.substring(i10);
+            } else {
+                stringBuffer.append(str);
+                str = "";
+            }
+        }
+    }
+
+    public static final Atom joinrel_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(3, 3, new SpaceAtom(5, -2.6f, 0.0f, 0.0f));
+    }
+
+    public static final Atom kern_macro(TeXParser teXParser, String[] strArr) {
+        float[] length = SpaceAtom.getLength(strArr[1]);
+        if (length.length != 1) {
+            return new SpaceAtom((int) length[0], length[1], 0.0f, 0.0f);
+        }
+        throw new ParseException("Error in getting kern in \\kern command !");
+    }
+
+    public static final Atom left_macro(TeXParser teXParser, String[] strArr) {
+        String group = teXParser.getGroup("\\left", "\\right");
+        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
+        if (atom instanceof BigDelimiterAtom) {
+            atom = ((BigDelimiterAtom) atom).delim;
+        }
+        Atom argument = teXParser.getArgument();
+        if (argument instanceof BigDelimiterAtom) {
+            argument = ((BigDelimiterAtom) argument).delim;
+        }
+        if ((atom instanceof SymbolAtom) && (argument instanceof SymbolAtom)) {
+            TeXFormula teXFormula = new TeXFormula(teXParser, group, false);
+            return new FencedAtom(teXFormula.root, (SymbolAtom) atom, teXFormula.middle, (SymbolAtom) argument);
+        }
+        RowAtom rowAtom = new RowAtom();
+        rowAtom.add(atom);
+        rowAtom.add(new TeXFormula(teXParser, group, false).root);
+        rowAtom.add(argument);
+        return rowAtom;
+    }
+
+    public static final Atom leftbracket_macro(TeXParser teXParser, String[] strArr) {
+        return new MathAtom(new TeXFormula(teXParser, teXParser.getGroup("\\[", "\\]"), false).root, 0);
+    }
+
+    public static final Atom leftparenthesis_macro(TeXParser teXParser, String[] strArr) {
+        return new MathAtom(new TeXFormula(teXParser, teXParser.getGroup("\\(", "\\)"), false).root, 2);
+    }
+
+    public static final Atom limits_macro(TeXParser teXParser, String[] strArr) {
+        Atom lastAtom = teXParser.getLastAtom();
+        lastAtom.type_limits = 2;
+        return lastAtom.clone();
+    }
+
+    public static final Atom lmoustache_macro(TeXParser teXParser, String[] strArr) {
+        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) SymbolAtom.get("lmoustache").clone(), 1);
+        bigDelimiterAtom.type = 4;
+        return bigDelimiterAtom;
+    }
+
+    public static final Atom longdiv_macro(TeXParser teXParser, String[] strArr) {
+        try {
+            long longValue = Long.valueOf(strArr[1]).longValue();
+            long longValue2 = Long.valueOf(strArr[2]).longValue();
+            if (longValue2 == 0) {
+                throw new ParseException("Divisor must not be 0");
+            }
+            if (longValue > 1000000000 || longValue < -1000000000 || longValue2 > 1000000000 || longValue2 < -1000000000) {
+                throw new ParseException("Operands are too large for longdiv");
+            }
+            return new LongdivAtom(longValue2, longValue);
+        } catch (NumberFormatException unused) {
+            throw new ParseException("Divisor and dividend must be integer numbers");
+        }
+    }
+
+    public static final Atom magnification_macro(TeXParser teXParser, String[] strArr) {
+        DefaultTeXFont.setMagnification(Float.parseFloat(strArr[1]));
+        return null;
+    }
+
+    public static final Atom makeatletter_macro(TeXParser teXParser, String[] strArr) {
+        teXParser.makeAtLetter();
+        return null;
+    }
+
+    public static final Atom makeatother_macro(TeXParser teXParser, String[] strArr) {
+        teXParser.makeAtOther();
+        return null;
+    }
+
+    public static final Atom mathbf_macro(TeXParser teXParser, String[] strArr) {
+        return new BoldAtom(new RomanAtom(new TeXFormula(teXParser, strArr[1], false).root));
+    }
+
+    public static final Atom mathbin_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(2, 2, new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom mathclose_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(5, 5, new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom mathclrlap_macro(TeXParser teXParser, String[] strArr) {
+        return new LapedAtom(new TeXFormula(teXParser, strArr[1]).root, strArr[0].charAt(4));
+    }
+
+    public static final Atom mathinner_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(7, 7, new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom mathit_macro(TeXParser teXParser, String[] strArr) {
+        return new ItAtom(new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom mathop_macro(TeXParser teXParser, String[] strArr) {
+        TypedAtom typedAtom = new TypedAtom(1, 1, new TeXFormula(teXParser, strArr[1], false).root);
+        typedAtom.type_limits = 0;
+        return typedAtom;
+    }
+
+    public static final Atom mathopen_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(4, 4, new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom mathord_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(0, 0, new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom mathpunct_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(6, 6, new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom mathrel_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(3, 3, new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom mathrm_macro(TeXParser teXParser, String[] strArr) {
+        return new RomanAtom(new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom mathsf_macro(TeXParser teXParser, String[] strArr) {
+        return new SsAtom(new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom mathtt_macro(TeXParser teXParser, String[] strArr) {
+        return new TtAtom(new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom matrixATATenv_macro(TeXParser teXParser, String[] strArr) {
+        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
+        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
+        arrayOfAtoms.checkDimensions();
+        return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, 1);
+    }
+
+    public static final Atom mbox_macro(TeXParser teXParser, String[] strArr) {
+        return new StyleAtom(2, new RomanAtom(new TeXFormula(teXParser, strArr[1], "mathnormal", false, false).root));
+    }
+
+    public static final Atom middle_macro(TeXParser teXParser, String[] strArr) {
+        return new MiddleAtom(new TeXFormula(teXParser, strArr[1]).root);
+    }
+
+    public static final Atom minuscolon_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(SymbolAtom.get("minus"));
+        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
+        rowAtom.add(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom minuscoloncolon_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(SymbolAtom.get("minus"));
+        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
+        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
+        rowAtom.add(underOverAtom);
+        rowAtom.add(underOverAtom);
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom multicolumn_macro(TeXParser teXParser, String[] strArr) {
+        int parseInt = Integer.parseInt(strArr[1]);
+        if (parseInt > 4096) {
+            parseInt = 4096;
+        }
+        teXParser.addAtom(new MulticolumnAtom(parseInt, strArr[2], new TeXFormula(teXParser, strArr[3]).root));
+        ((ArrayOfAtoms) teXParser.formula).addCol(parseInt);
+        return null;
+    }
+
+    public static final Atom multlineATATenv_macro(TeXParser teXParser, String[] strArr) {
+        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
+        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
+        arrayOfAtoms.checkDimensions();
+        int i10 = arrayOfAtoms.col;
+        if (i10 > 1) {
+            throw new ParseException("Character '&' is only available in array mode !");
+        }
+        if (i10 == 0) {
+            return null;
+        }
+        return new MultlineAtom(teXParser.getIsPartial(), arrayOfAtoms, 0);
+    }
+
+    public static final Atom muskip_macros(TeXParser teXParser, String[] strArr) {
+        int i10 = 0;
+        if (!strArr[0].equals(",")) {
+            if (!strArr[0].equals(":")) {
+                if (!strArr[0].equals(";")) {
+                    if (!strArr[0].equals("thinspace")) {
+                        if (!strArr[0].equals("medspace")) {
+                            if (!strArr[0].equals("thickspace")) {
+                                if (strArr[0].equals("!") || strArr[0].equals("negthinspace")) {
+                                    i10 = -1;
+                                } else if (strArr[0].equals("negmedspace")) {
+                                    i10 = -2;
+                                } else if (strArr[0].equals("negthickspace")) {
+                                    i10 = -3;
+                                }
+                                return new SpaceAtom(i10);
+                            }
+                        }
+                    }
+                }
+                i10 = 3;
+                return new SpaceAtom(i10);
+            }
+            i10 = 2;
+            return new SpaceAtom(i10);
+        }
+        i10 = 1;
+        return new SpaceAtom(i10);
+    }
+
+    public static final Atom nbsp_macro(TeXParser teXParser, String[] strArr) {
+        return new SpaceAtom();
+    }
+
+    public static final Atom newcommand_macro(TeXParser teXParser, String[] strArr) {
+        String str = strArr[1];
+        if (!teXParser.isValidName(str)) {
+            throw new ParseException(c.e("Invalid name for the command :", str));
+        }
+        String str2 = strArr[3];
+        Integer num = str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2));
+        if (strArr[4] == null) {
+            NewCommandMacro.addNewCommand(str.substring(1), strArr[2], num.intValue());
+            return null;
+        }
+        NewCommandMacro.addNewCommand(str.substring(1), strArr[2], num.intValue(), strArr[4]);
+        return null;
+    }
+
+    public static final Atom newenvironment_macro(TeXParser teXParser, String[] strArr) {
+        String str = strArr[4];
+        NewEnvironmentMacro.addNewEnvironment(strArr[1], strArr[2], strArr[3], str == null ? 0 : Integer.parseInt(str));
+        return null;
+    }
+
+    public static final Atom nolimits_macro(TeXParser teXParser, String[] strArr) {
+        Atom lastAtom = teXParser.getLastAtom();
+        lastAtom.type_limits = 1;
+        return lastAtom.clone();
+    }
+
+    public static final Atom normal_macro(TeXParser teXParser, String[] strArr) {
+        Atom lastAtom = teXParser.getLastAtom();
+        lastAtom.type_limits = 0;
+        return lastAtom.clone();
+    }
+
+    public static final Atom ogonek_macro(TeXParser teXParser, String[] strArr) {
+        return new OgonekAtom(new TeXFormula(teXParser, strArr[1]).root);
+    }
+
+    public static final Atom oint_macro(TeXParser teXParser, String[] strArr) {
+        Atom clone = SymbolAtom.get("oint").clone();
+        clone.type_limits = 1;
+        return clone;
+    }
+
+    public static final Atom ovalbox_macro(TeXParser teXParser, String[] strArr) {
+        return new OvalAtom(new TeXFormula(teXParser, strArr[1]).root);
+    }
+
+    public static final Atom over_macro(TeXParser teXParser, String[] strArr) {
+        Atom formulaAtom = teXParser.getFormulaAtom();
+        Atom atom = new TeXFormula(teXParser, teXParser.getOverArgument(), false).root;
+        if (formulaAtom == null || atom == null) {
+            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
+        }
+        return new FractionAtom(formulaAtom, atom, true);
+    }
+
+    public static final Atom overbrace_macro(TeXParser teXParser, String[] strArr) {
+        return new OverUnderDelimiter(new TeXFormula(teXParser, strArr[1], false).root, null, SymbolAtom.get("lbrace"), 1, 0.0f, true);
+    }
+
+    public static final Atom overbrack_macro(TeXParser teXParser, String[] strArr) {
+        return new OverUnderDelimiter(new TeXFormula(teXParser, strArr[1], false).root, null, SymbolAtom.get("lsqbrack"), 1, 0.0f, true);
+    }
+
+    public static final Atom overleftarrow_macro(TeXParser teXParser, String[] strArr) {
+        return new UnderOverArrowAtom(new TeXFormula(teXParser, strArr[1], false).root, true, true);
+    }
+
+    public static final Atom overleftrightarrow_macro(TeXParser teXParser, String[] strArr) {
+        return new UnderOverArrowAtom(new TeXFormula(teXParser, strArr[1], false).root, true);
+    }
+
+    public static final Atom overline_macro(TeXParser teXParser, String[] strArr) {
+        return new OverlinedAtom(new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom overparen_macro(TeXParser teXParser, String[] strArr) {
+        return new OverUnderDelimiter(new TeXFormula(teXParser, strArr[1], false).root, null, SymbolAtom.get("lbrack"), 1, 0.0f, true);
+    }
+
+    public static final Atom overrightarrow_macro(TeXParser teXParser, String[] strArr) {
+        return new UnderOverArrowAtom(new TeXFormula(teXParser, strArr[1], false).root, false, true);
+    }
+
+    public static final Atom overset_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(3, 3, new UnderOverAtom(new TeXFormula(teXParser, strArr[2], false).root, new TeXFormula(teXParser, strArr[1], false).root, 5, 2.5f, true, true));
+    }
+
+    public static final Atom overwithdelims_macro(TeXParser teXParser, String[] strArr) {
+        Atom formulaAtom = teXParser.getFormulaAtom();
+        Atom atom = new TeXFormula(teXParser, teXParser.getOverArgument(), false).root;
+        if (formulaAtom == null || atom == null) {
+            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
+        }
+        Atom atom2 = new TeXFormula(teXParser, strArr[1], false).root;
+        if (atom2 instanceof BigDelimiterAtom) {
+            atom2 = ((BigDelimiterAtom) atom2).delim;
+        }
+        Atom atom3 = new TeXFormula(teXParser, strArr[2], false).root;
+        if (atom3 instanceof BigDelimiterAtom) {
+            atom3 = ((BigDelimiterAtom) atom3).delim;
+        }
+        if ((atom2 instanceof SymbolAtom) && (atom3 instanceof SymbolAtom)) {
+            return new FencedAtom(new FractionAtom(formulaAtom, atom, true), (SymbolAtom) atom2, (SymbolAtom) atom3);
+        }
+        RowAtom rowAtom = new RowAtom();
+        rowAtom.add(atom2);
+        rowAtom.add(new FractionAtom(formulaAtom, atom, true));
+        rowAtom.add(atom3);
+        return rowAtom;
+    }
+
+    public static final Atom phantom_macro(TeXParser teXParser, String[] strArr) {
+        return new PhantomAtom(new TeXFormula(teXParser, strArr[1], false).root, true, true, true);
+    }
+
+    public static final Atom prescript_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[3]).root;
+        teXParser.addAtom(new ScriptsAtom(new PhantomAtom(atom, false, true, true), new TeXFormula(teXParser, strArr[2]).root, new TeXFormula(teXParser, strArr[1]).root, false));
+        teXParser.addAtom(new SpaceAtom(5, -0.3f, 0.0f, 0.0f));
+        return new TypedAtom(0, 0, atom);
+    }
+
+    public static final Atom qquad_macro(TeXParser teXParser, String[] strArr) {
+        return new SpaceAtom(0, 2.0f, 0.0f, 0.0f);
+    }
+
+    public static final Atom quad_macro(TeXParser teXParser, String[] strArr) {
+        return new SpaceAtom(0, 1.0f, 0.0f, 0.0f);
+    }
+
+    public static final Atom questeq_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(3, 3, new UnderOverAtom(SymbolAtom.get(TeXFormula.symbolMappings[61]), new ScaleAtom(SymbolAtom.get(TeXFormula.symbolMappings[63]), 0.75d), 5, 2.5f, true, true));
+    }
+
+    public static final Atom raisebox_macro(TeXParser teXParser, String[] strArr) {
+        float[] length = SpaceAtom.getLength(strArr[1]);
+        if (length.length == 1) {
+            throw new ParseException("Error in getting raise in \\raisebox command !");
+        }
+        float[] length2 = SpaceAtom.getLength(strArr[3]);
+        float[] length3 = SpaceAtom.getLength(strArr[4]);
+        if (length2.length == 1 || length2[1] == 0.0f) {
+            length2 = new float[]{-1.0f, 0.0f};
+        }
+        if (length3.length == 1 || length3[1] == 0.0f) {
+            length3 = new float[]{-1.0f, 0.0f};
+        }
+        return new RaiseAtom(new TeXFormula(teXParser, strArr[2]).root, (int) length[0], length[1], (int) length2[0], length2[1], (int) length3[0], length3[1]);
+    }
+
+    public static final Atom ratio_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(3, 3, new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
+    }
+
+    public static final Atom reflectbox_macro(TeXParser teXParser, String[] strArr) {
+        return new ReflectAtom(new TeXFormula(teXParser, strArr[1]).root);
+    }
+
+    public static final Atom renewcommand_macro(TeXParser teXParser, String[] strArr) {
+        String str = strArr[1];
+        if (!teXParser.isValidName(str)) {
+            throw new ParseException(c.e("Invalid name for the command :", str));
+        }
+        String str2 = strArr[3];
+        NewCommandMacro.addReNewCommand(str.substring(1), strArr[2], (str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2))).intValue());
+        return null;
+    }
+
+    public static final Atom renewenvironment_macro(TeXParser teXParser, String[] strArr) {
+        String str = strArr[4];
+        NewEnvironmentMacro.addReNewEnvironment(strArr[1], strArr[2], strArr[3], str == null ? 0 : Integer.parseInt(str));
+        return null;
+    }
+
+    public static final Atom resizebox_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[3]).root;
+        boolean z10 = true;
+        String str = strArr[1];
+        String str2 = strArr[2];
+        if (!str.equals("!") && !strArr[2].equals("!")) {
+            z10 = false;
+        }
+        return new ResizeAtom(atom, str, str2, z10);
+    }
+
+    public static final Atom rm_macro(TeXParser teXParser, String[] strArr) {
+        return new RomanAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root);
+    }
+
+    public static final Atom rmoustache_macro(TeXParser teXParser, String[] strArr) {
+        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) SymbolAtom.get("rmoustache").clone(), 1);
+        bigDelimiterAtom.type = 5;
+        return bigDelimiterAtom;
+    }
+
+    public static final Atom romannumeral_macro(TeXParser teXParser, String[] strArr) {
+        int[] iArr = {MediaDataController.MAX_STYLE_RUNS_COUNT, RichMessageLayout.PART_MAX_HEIGHT_DP, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] strArr2 = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        int parseInt = Integer.parseInt(strArr[1].trim());
+        if (parseInt > 4000000) {
+            parseInt = 4000000;
+        }
+        String str = "";
+        for (int i10 = 0; i10 < 13; i10++) {
+            while (parseInt >= iArr[i10]) {
+                StringBuilder o10 = a.o(str);
+                o10.append(strArr2[i10]);
+                str = o10.toString();
+                parseInt -= iArr[i10];
+            }
+        }
+        if (strArr[0].charAt(0) == 'r') {
+            str = str.toLowerCase();
+        }
+        return new TeXFormula(str, false).root;
+    }
+
+    public static final Atom rotatebox_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[2]).root;
+        String str = strArr[1];
+        return new RotateAtom(atom, str == null ? 0.0d : Double.parseDouble(str), strArr[3]);
+    }
+
+    public static final Atom rule_macro(TeXParser teXParser, String[] strArr) {
+        float[] length = SpaceAtom.getLength(strArr[1]);
+        if (length.length == 1) {
+            throw new ParseException("Error in getting width in \\rule command !");
+        }
+        float[] length2 = SpaceAtom.getLength(strArr[2]);
+        if (length2.length == 1) {
+            throw new ParseException("Error in getting height in \\rule command !");
+        }
+        float[] length3 = SpaceAtom.getLength(strArr[3]);
+        if (length3.length != 1) {
+            return new RuleAtom((int) length[0], length[1], (int) length2[0], length2[1], (int) length3[0], -length3[1]);
+        }
+        throw new ParseException("Error in getting raise in \\rule command !");
+    }
+
+    public static final Atom sc_macro(TeXParser teXParser, String[] strArr) {
+        return new SmallCapAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root);
+    }
+
+    public static final Atom scalebox_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[2]).root;
+        double parseDouble = Double.parseDouble(strArr[1]);
+        String str = strArr[3];
+        return new ScaleAtom(atom, parseDouble, str == null ? Double.parseDouble(strArr[1]) : Double.parseDouble(str));
+    }
+
+    public static final Atom scriptscriptstyle_macro(TeXParser teXParser, String[] strArr) {
+        return new StyleAtom(6, new TeXFormula(teXParser, teXParser.getOverArgument(), false).root);
+    }
+
+    public static final Atom scriptstyle_macro(TeXParser teXParser, String[] strArr) {
+        return new StyleAtom(4, new TeXFormula(teXParser, teXParser.getOverArgument(), false).root);
+    }
+
+    public static final Atom sf_macro(TeXParser teXParser, String[] strArr) {
+        return new SsAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static final Atom sfrac_macro(TeXParser teXParser, String[] strArr) {
+        float f10;
+        float f11;
+        double d;
+        double d10;
+        float f12;
+        SymbolAtom symbolAtom;
+        TeXFormula teXFormula = new TeXFormula(teXParser, strArr[1], false);
+        TeXFormula teXFormula2 = new TeXFormula(teXParser, strArr[2], false);
+        if (teXFormula.root == null || teXFormula2.root == null) {
+            throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
+        }
+        SymbolAtom symbolAtom2 = SymbolAtom.get("slash");
+        if (teXParser.isMathMode()) {
+            f10 = -0.13f;
+            f11 = -0.065f;
+            d = 0.75d;
+            d10 = 0.75d;
+            f12 = 0.45f;
+            symbolAtom = symbolAtom2;
+        } else {
+            VRowAtom vRowAtom = new VRowAtom(new ScaleAtom(SymbolAtom.get("textfractionsolidus"), 1.25d, 0.65d));
+            vRowAtom.setRaise(1, 0.4f);
+            f10 = -0.24f;
+            d = 0.6d;
+            d10 = 0.5d;
+            f12 = 0.75f;
+            f11 = -0.24f;
+            symbolAtom = vRowAtom;
+        }
+        VRowAtom vRowAtom2 = new VRowAtom(new ScaleAtom(teXFormula.root, d, d10));
+        vRowAtom2.setRaise(1, f12);
+        RowAtom rowAtom = new RowAtom(vRowAtom2);
+        rowAtom.add(new SpaceAtom(0, f10, 0.0f, 0.0f));
+        rowAtom.add(symbolAtom);
+        rowAtom.add(new SpaceAtom(0, f11, 0.0f, 0.0f));
+        rowAtom.add(new ScaleAtom(teXFormula2.root, d, d10));
+        return rowAtom;
+    }
+
+    public static final Atom shadowbox_macro(TeXParser teXParser, String[] strArr) {
+        return new ShadowAtom(new TeXFormula(teXParser, strArr[1]).root);
+    }
+
+    public static final Atom shoveleft_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[1]).root;
+        atom.alignment = 0;
+        return atom;
+    }
+
+    public static final Atom shoveright_macro(TeXParser teXParser, String[] strArr) {
+        Atom atom = new TeXFormula(teXParser, strArr[1]).root;
+        atom.alignment = 1;
+        return atom;
+    }
+
+    public static final Atom sideset_macro(TeXParser teXParser, String[] strArr) {
+        TeXFormula teXFormula = new TeXFormula();
+        teXFormula.add(new PhantomAtom(new TeXFormula(teXParser, strArr[3]).root, false, true, true));
+        teXFormula.append(teXParser.getIsPartial(), strArr[1]);
+        teXFormula.add(new SpaceAtom(5, -0.3f, 0.0f, 0.0f));
+        teXFormula.append(teXParser.getIsPartial(), strArr[3] + "\\nolimits" + strArr[2]);
+        return new TypedAtom(0, 0, teXFormula.root);
+    }
+
+    public static final Atom simcolon_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(SymbolAtom.get("sim"));
+        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
+        rowAtom.add(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom simcoloncolon_macro(TeXParser teXParser, String[] strArr) {
+        RowAtom rowAtom = new RowAtom(SymbolAtom.get("sim"));
+        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
+        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
+        rowAtom.add(underOverAtom);
+        rowAtom.add(underOverAtom);
+        return new TypedAtom(3, 3, rowAtom);
+    }
+
+    public static final Atom size_macros(TeXParser teXParser, String[] strArr) {
+        float f10;
+        if ("tiny".equals(strArr[0])) {
+            f10 = 0.5f;
+        } else if ("scriptsize".equals(strArr[0])) {
+            f10 = 0.7f;
+        } else if ("footnotesize".equals(strArr[0])) {
+            f10 = 0.8f;
+        } else if ("small".equals(strArr[0])) {
+            f10 = 0.9f;
+        } else {
+            if (!"normalsize".equals(strArr[0])) {
+                if ("large".equals(strArr[0])) {
+                    f10 = 1.2f;
+                } else if ("Large".equals(strArr[0])) {
+                    f10 = 1.4f;
+                } else if ("LARGE".equals(strArr[0])) {
+                    f10 = 1.8f;
+                } else if ("huge".equals(strArr[0])) {
+                    f10 = 2.0f;
+                } else if ("Huge".equals(strArr[0])) {
+                    f10 = 2.5f;
+                }
+            }
+            f10 = 1.0f;
+        }
+        return new MonoScaleAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root, f10);
+    }
+
+    public static final Atom smallfrowneq_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(3, 3, new UnderOverAtom(SymbolAtom.get("equals"), SymbolAtom.get("smallfrown"), 5, -2.0f, true, true));
+    }
+
+    public static final Atom smallmatrixATATenv_macro(TeXParser teXParser, String[] strArr) {
+        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
+        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
+        arrayOfAtoms.checkDimensions();
+        return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, 5);
+    }
+
+    public static final Atom smash_macro(TeXParser teXParser, String[] strArr) {
+        return new SmashedAtom(new TeXFormula(teXParser, strArr[1], false).root, strArr[2]);
+    }
+
+    public static final Atom spATbreve_macro(TeXParser teXParser, String[] strArr) {
+        VRowAtom vRowAtom = new VRowAtom(new TeXFormula("\\displaystyle\\!\\breve{}").root);
+        vRowAtom.setRaise(1, 0.6f);
+        return new SmashedAtom(vRowAtom, null);
+    }
+
+    public static final Atom spAThat_macro(TeXParser teXParser, String[] strArr) {
+        VRowAtom vRowAtom = new VRowAtom(new TeXFormula("\\displaystyle\\widehat{}").root);
+        vRowAtom.setRaise(1, 0.6f);
+        return new SmashedAtom(vRowAtom, null);
+    }
+
+    public static final Atom sqrt_macro(TeXParser teXParser, String[] strArr) {
+        return strArr[2] == null ? new NthRoot(new TeXFormula(teXParser, strArr[1], false).root, null) : new NthRoot(new TeXFormula(teXParser, strArr[1], false).root, new TeXFormula(teXParser, strArr[2], false).root);
+    }
+
+    public static final Atom st_macro(TeXParser teXParser, String[] strArr) {
+        return new StrikeThroughAtom(new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom stackbin_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(2, 2, new UnderOverAtom(new TeXFormula(teXParser, strArr[2], false).root, new TeXFormula(teXParser, strArr[3], false).root, 5, 0.5f, true, new TeXFormula(teXParser, strArr[1], false).root, 5, 2.5f, true));
+    }
+
+    public static final Atom stackrel_macro(TeXParser teXParser, String[] strArr) {
+        return new TypedAtom(3, 3, new UnderOverAtom(new TeXFormula(teXParser, strArr[2], false).root, new TeXFormula(teXParser, strArr[3], false).root, 5, 0.5f, true, new TeXFormula(teXParser, strArr[1], false).root, 5, 2.5f, true));
+    }
+
+    public static final Atom surd_macro(TeXParser teXParser, String[] strArr) {
+        return new VCenteredAtom(SymbolAtom.get("surdsign"));
+    }
+
+    public static final Atom tcaron_macro(TeXParser teXParser, String[] strArr) {
+        return new tcaronAtom();
+    }
+
+    public static final Atom text_macro(TeXParser teXParser, String[] strArr) {
+        return new RomanAtom(new TeXFormula(teXParser, strArr[1], "mathnormal", false, false).root);
+    }
+
+    public static final Atom textcircled_macro(TeXParser teXParser, String[] strArr) {
+        return new TextCircledAtom(new RomanAtom(new TeXFormula(teXParser, strArr[1]).root));
+    }
+
+    public static final Atom textcolor_macro(TeXParser teXParser, String[] strArr) {
+        return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, (Color) null, ColorAtom.getColor(strArr[1]));
+    }
+
+    public static final Atom textsc_macro(TeXParser teXParser, String[] strArr) {
+        return new SmallCapAtom(new TeXFormula(teXParser, strArr[1], false).root);
+    }
+
+    public static final Atom textstyle_macro(TeXParser teXParser, String[] strArr) {
+        return new StyleAtom(2, new TeXFormula(teXParser, teXParser.getOverArgument(), false).root);
+    }
+
     public static final Atom textstyle_macros(TeXParser teXParser, String[] strArr) {
         String str = strArr[0];
         if ("frak".equals(str)) {
@@ -446,121 +1721,20 @@ public class PredefMacros {
         return new TextStyleAtom(atom, str);
     }
 
-    public static final Atom mbox_macro(TeXParser teXParser, String[] strArr) {
-        return new StyleAtom(2, new RomanAtom(new TeXFormula(teXParser, strArr[1], "mathnormal", false, false).root));
+    public static final Atom tt_macro(TeXParser teXParser, String[] strArr) {
+        return new TtAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root);
     }
 
-    public static final Atom text_macro(TeXParser teXParser, String[] strArr) {
-        return new RomanAtom(new TeXFormula(teXParser, strArr[1], "mathnormal", false, false).root);
+    public static final Atom underaccent_macro(TeXParser teXParser, String[] strArr) {
+        return new UnderOverAtom(new TeXFormula(teXParser, strArr[2], false).root, new TeXFormula(teXParser, strArr[1], false).root, 5, 0.3f, true, false);
     }
 
-    public static final Atom underscore_macro(TeXParser teXParser, String[] strArr) {
-        return new UnderscoreAtom();
+    public static final Atom underbrace_macro(TeXParser teXParser, String[] strArr) {
+        return new OverUnderDelimiter(new TeXFormula(teXParser, strArr[1], false).root, null, SymbolAtom.get("rbrace"), 1, 0.0f, false);
     }
 
-    public static final Atom accent_macros(TeXParser teXParser, String[] strArr) {
-        return new AccentedAtom(new TeXFormula(teXParser, strArr[1], false).root, strArr[0]);
-    }
-
-    public static final Atom grkaccent_macro(TeXParser teXParser, String[] strArr) {
-        return new AccentedAtom(new TeXFormula(teXParser, strArr[2], false).root, new TeXFormula(teXParser, strArr[1], false).root, false);
-    }
-
-    public static final Atom accent_macro(TeXParser teXParser, String[] strArr) {
-        return new AccentedAtom(new TeXFormula(teXParser, strArr[2], false).root, new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom accentbis_macros(TeXParser teXParser, String[] strArr) {
-        String str;
-        char charAt = strArr[0].charAt(0);
-        if (charAt == '\"') {
-            str = "ddot";
-        } else if (charAt == '\'') {
-            str = "acute";
-        } else if (charAt == '.') {
-            str = "dot";
-        } else if (charAt == '=') {
-            str = "bar";
-        } else if (charAt == 'H') {
-            str = "doubleacute";
-        } else if (charAt == 'U') {
-            str = "cyrbreve";
-        } else if (charAt == '^') {
-            str = "hat";
-        } else if (charAt == '`') {
-            str = "grave";
-        } else if (charAt == 'r') {
-            str = "mathring";
-        } else if (charAt == '~') {
-            str = "tilde";
-        } else {
-            switch (charAt) {
-                case 't':
-                    str = "tie";
-                    break;
-                case 'u':
-                    str = "breve";
-                    break;
-                case 'v':
-                    str = "check";
-                    break;
-                default:
-                    str = "";
-                    break;
-            }
-        }
-        return new AccentedAtom(new TeXFormula(teXParser, strArr[1], false).root, str);
-    }
-
-    public static final Atom cedilla_macro(TeXParser teXParser, String[] strArr) {
-        return new CedillaAtom(new TeXFormula(teXParser, strArr[1]).root);
-    }
-
-    public static final Atom IJ_macro(TeXParser teXParser, String[] strArr) {
-        return new IJAtom(strArr[0].charAt(0) == 'I');
-    }
-
-    public static final Atom TStroke_macro(TeXParser teXParser, String[] strArr) {
-        return new TStrokeAtom(strArr[0].charAt(0) == 'T');
-    }
-
-    public static final Atom LCaron_macro(TeXParser teXParser, String[] strArr) {
-        return new LCaronAtom(strArr[0].charAt(0) == 'L');
-    }
-
-    public static final Atom tcaron_macro(TeXParser teXParser, String[] strArr) {
-        return new tcaronAtom();
-    }
-
-    public static final Atom ogonek_macro(TeXParser teXParser, String[] strArr) {
-        return new OgonekAtom(new TeXFormula(teXParser, strArr[1]).root);
-    }
-
-    public static final Atom nbsp_macro(TeXParser teXParser, String[] strArr) {
-        return new SpaceAtom();
-    }
-
-    public static final Atom sqrt_macro(TeXParser teXParser, String[] strArr) {
-        if (strArr[2] == null) {
-            return new NthRoot(new TeXFormula(teXParser, strArr[1], false).root, null);
-        }
-        return new NthRoot(new TeXFormula(teXParser, strArr[1], false).root, new TeXFormula(teXParser, strArr[2], false).root);
-    }
-
-    public static final Atom overrightarrow_macro(TeXParser teXParser, String[] strArr) {
-        return new UnderOverArrowAtom(new TeXFormula(teXParser, strArr[1], false).root, false, true);
-    }
-
-    public static final Atom overleftarrow_macro(TeXParser teXParser, String[] strArr) {
-        return new UnderOverArrowAtom(new TeXFormula(teXParser, strArr[1], false).root, true, true);
-    }
-
-    public static final Atom overleftrightarrow_macro(TeXParser teXParser, String[] strArr) {
-        return new UnderOverArrowAtom(new TeXFormula(teXParser, strArr[1], false).root, true);
-    }
-
-    public static final Atom underrightarrow_macro(TeXParser teXParser, String[] strArr) {
-        return new UnderOverArrowAtom(new TeXFormula(teXParser, strArr[1], false).root, false, false);
+    public static final Atom underbrack_macro(TeXParser teXParser, String[] strArr) {
+        return new OverUnderDelimiter(new TeXFormula(teXParser, strArr[1], false).root, null, SymbolAtom.get("rsqbrack"), 1, 0.0f, false);
     }
 
     public static final Atom underleftarrow_macro(TeXParser teXParser, String[] strArr) {
@@ -571,426 +1745,24 @@ public class PredefMacros {
         return new UnderOverArrowAtom(new TeXFormula(teXParser, strArr[1], false).root, false);
     }
 
-    public static final Atom xleftarrow_macro(TeXParser teXParser, String[] strArr) {
-        return new XArrowAtom(new TeXFormula(teXParser, strArr[1], false).root, new TeXFormula(teXParser, strArr[2]).root, true);
-    }
-
-    public static final Atom xrightarrow_macro(TeXParser teXParser, String[] strArr) {
-        return new XArrowAtom(new TeXFormula(teXParser, strArr[1], false).root, new TeXFormula(teXParser, strArr[2]).root, false);
-    }
-
-    public static final Atom sideset_macro(TeXParser teXParser, String[] strArr) {
-        TeXFormula teXFormula = new TeXFormula();
-        teXFormula.add(new PhantomAtom(new TeXFormula(teXParser, strArr[3]).root, false, true, true));
-        teXFormula.append(teXParser.getIsPartial(), strArr[1]);
-        teXFormula.add(new SpaceAtom(5, -0.3f, 0.0f, 0.0f));
-        teXFormula.append(teXParser.getIsPartial(), strArr[3] + "\\nolimits" + strArr[2]);
-        return new TypedAtom(0, 0, teXFormula.root);
-    }
-
-    public static final Atom prescript_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[3]).root;
-        teXParser.addAtom(new ScriptsAtom(new PhantomAtom(atom, false, true, true), new TeXFormula(teXParser, strArr[2]).root, new TeXFormula(teXParser, strArr[1]).root, false));
-        teXParser.addAtom(new SpaceAtom(5, -0.3f, 0.0f, 0.0f));
-        return new TypedAtom(0, 0, atom);
-    }
-
-    public static final Atom underbrace_macro(TeXParser teXParser, String[] strArr) {
-        return new OverUnderDelimiter(new TeXFormula(teXParser, strArr[1], false).root, null, SymbolAtom.get("rbrace"), 1, 0.0f, false);
-    }
-
-    public static final Atom overbrace_macro(TeXParser teXParser, String[] strArr) {
-        return new OverUnderDelimiter(new TeXFormula(teXParser, strArr[1], false).root, null, SymbolAtom.get("lbrace"), 1, 0.0f, true);
-    }
-
-    public static final Atom underbrack_macro(TeXParser teXParser, String[] strArr) {
-        return new OverUnderDelimiter(new TeXFormula(teXParser, strArr[1], false).root, null, SymbolAtom.get("rsqbrack"), 1, 0.0f, false);
-    }
-
-    public static final Atom overbrack_macro(TeXParser teXParser, String[] strArr) {
-        return new OverUnderDelimiter(new TeXFormula(teXParser, strArr[1], false).root, null, SymbolAtom.get("lsqbrack"), 1, 0.0f, true);
+    public static final Atom underline_macro(TeXParser teXParser, String[] strArr) {
+        return new UnderlinedAtom(new TeXFormula(teXParser, strArr[1], false).root);
     }
 
     public static final Atom underparen_macro(TeXParser teXParser, String[] strArr) {
         return new OverUnderDelimiter(new TeXFormula(teXParser, strArr[1], false).root, null, SymbolAtom.get("rbrack"), 1, 0.0f, false);
     }
 
-    public static final Atom overparen_macro(TeXParser teXParser, String[] strArr) {
-        return new OverUnderDelimiter(new TeXFormula(teXParser, strArr[1], false).root, null, SymbolAtom.get("lbrack"), 1, 0.0f, true);
+    public static final Atom underrightarrow_macro(TeXParser teXParser, String[] strArr) {
+        return new UnderOverArrowAtom(new TeXFormula(teXParser, strArr[1], false).root, false, false);
     }
 
-    public static final Atom overline_macro(TeXParser teXParser, String[] strArr) {
-        return new OverlinedAtom(new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom underline_macro(TeXParser teXParser, String[] strArr) {
-        return new UnderlinedAtom(new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom mathop_macro(TeXParser teXParser, String[] strArr) {
-        TypedAtom typedAtom = new TypedAtom(1, 1, new TeXFormula(teXParser, strArr[1], false).root);
-        typedAtom.type_limits = 0;
-        return typedAtom;
-    }
-
-    public static final Atom mathpunct_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(6, 6, new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom mathord_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(0, 0, new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom mathrel_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(3, 3, new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom mathinner_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(7, 7, new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom mathbin_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(2, 2, new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom mathopen_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(4, 4, new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom mathclose_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(5, 5, new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom joinrel_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(3, 3, new SpaceAtom(5, -2.6f, 0.0f, 0.0f));
-    }
-
-    public static final Atom smash_macro(TeXParser teXParser, String[] strArr) {
-        return new SmashedAtom(new TeXFormula(teXParser, strArr[1], false).root, strArr[2]);
-    }
-
-    public static final Atom vdots_macro(TeXParser teXParser, String[] strArr) {
-        return new VdotsAtom();
-    }
-
-    public static final Atom ddots_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(7, 7, new DdotsAtom());
-    }
-
-    public static final Atom iddots_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(7, 7, new IddotsAtom());
-    }
-
-    public static final Atom nolimits_macro(TeXParser teXParser, String[] strArr) {
-        Atom lastAtom = teXParser.getLastAtom();
-        lastAtom.type_limits = 1;
-        return lastAtom.clone();
-    }
-
-    public static final Atom limits_macro(TeXParser teXParser, String[] strArr) {
-        Atom lastAtom = teXParser.getLastAtom();
-        lastAtom.type_limits = 2;
-        return lastAtom.clone();
-    }
-
-    public static final Atom normal_macro(TeXParser teXParser, String[] strArr) {
-        Atom lastAtom = teXParser.getLastAtom();
-        lastAtom.type_limits = 0;
-        return lastAtom.clone();
-    }
-
-    public static final Atom left_macro(TeXParser teXParser, String[] strArr) {
-        String group = teXParser.getGroup("\\left", "\\right");
-        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
-        if (atom instanceof BigDelimiterAtom) {
-            atom = ((BigDelimiterAtom) atom).delim;
-        }
-        Atom argument = teXParser.getArgument();
-        if (argument instanceof BigDelimiterAtom) {
-            argument = ((BigDelimiterAtom) argument).delim;
-        }
-        if ((atom instanceof SymbolAtom) && (argument instanceof SymbolAtom)) {
-            TeXFormula teXFormula = new TeXFormula(teXParser, group, false);
-            return new FencedAtom(teXFormula.root, (SymbolAtom) atom, teXFormula.middle, (SymbolAtom) argument);
-        }
-        RowAtom rowAtom = new RowAtom();
-        rowAtom.add(atom);
-        rowAtom.add(new TeXFormula(teXParser, group, false).root);
-        rowAtom.add(argument);
-        return rowAtom;
-    }
-
-    public static final Atom leftparenthesis_macro(TeXParser teXParser, String[] strArr) {
-        return new MathAtom(new TeXFormula(teXParser, teXParser.getGroup("\\(", "\\)"), false).root, 2);
-    }
-
-    public static final Atom leftbracket_macro(TeXParser teXParser, String[] strArr) {
-        return new MathAtom(new TeXFormula(teXParser, teXParser.getGroup("\\[", "\\]"), false).root, 0);
-    }
-
-    public static final Atom middle_macro(TeXParser teXParser, String[] strArr) {
-        return new MiddleAtom(new TeXFormula(teXParser, strArr[1]).root);
-    }
-
-    public static final Atom cr_macro(TeXParser teXParser, String[] strArr) {
-        if (teXParser.isArrayMode()) {
-            teXParser.addRow();
-            return null;
-        }
-        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
-        arrayOfAtoms.add(teXParser.formula.root);
-        arrayOfAtoms.addRow();
-        new TeXParser(teXParser.getIsPartial(), teXParser.getStringFromCurrentPos(), arrayOfAtoms, false, teXParser.isIgnoreWhiteSpace()).parse();
-        arrayOfAtoms.checkDimensions();
-        teXParser.finish();
-        teXParser.formula.root = arrayOfAtoms.getAsVRow();
-        return null;
-    }
-
-    public static final Atom backslashcr_macro(TeXParser teXParser, String[] strArr) {
-        return cr_macro(teXParser, strArr);
-    }
-
-    public static final Atom intertext_macro(TeXParser teXParser, String[] strArr) {
-        if (!teXParser.isArrayMode()) {
-            throw new ParseException("Bad environment for \\intertext command !");
-        }
-        RomanAtom romanAtom = new RomanAtom(new TeXFormula(teXParser, strArr[1].replaceAll("\\^\\{\\\\prime\\}", "'").replaceAll("\\^\\{\\\\prime\\\\prime\\}", "''"), "mathnormal", false, false).root);
-        romanAtom.type = 11;
-        teXParser.addAtom(romanAtom);
-        teXParser.addRow();
-        return null;
-    }
-
-    public static final Atom smallmatrixATATenv_macro(TeXParser teXParser, String[] strArr) {
-        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
-        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
-        arrayOfAtoms.checkDimensions();
-        return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, 5);
-    }
-
-    public static final Atom matrixATATenv_macro(TeXParser teXParser, String[] strArr) {
-        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
-        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
-        arrayOfAtoms.checkDimensions();
-        return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, 1);
-    }
-
-    public static final Atom multicolumn_macro(TeXParser teXParser, String[] strArr) {
-        int parseInt = Integer.parseInt(strArr[1]);
-        if (parseInt > 4096) {
-            parseInt = 4096;
-        }
-        teXParser.addAtom(new MulticolumnAtom(parseInt, strArr[2], new TeXFormula(teXParser, strArr[3]).root));
-        ((ArrayOfAtoms) teXParser.formula).addCol(parseInt);
-        return null;
-    }
-
-    public static final Atom hdotsfor_macro(TeXParser teXParser, String[] strArr) {
-        int i = 1;
-        int parseInt = Integer.parseInt(strArr[1]);
-        if (parseInt >= 1) {
-            i = 4096;
-            if (parseInt <= 4096) {
-                i = parseInt;
-            }
-        }
-        String str = strArr[2];
-        teXParser.addAtom(new HdotsforAtom(i, str != null ? Float.parseFloat(str) : 1.0f));
-        ((ArrayOfAtoms) teXParser.formula).addCol(i);
-        return null;
-    }
-
-    public static final Atom arrayATATenv_macro(TeXParser teXParser, String[] strArr) {
-        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
-        new TeXParser(teXParser.getIsPartial(), strArr[2], arrayOfAtoms, false).parse();
-        arrayOfAtoms.checkDimensions();
-        return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, strArr[1], true);
-    }
-
-    public static final Atom alignATATenv_macro(TeXParser teXParser, String[] strArr) {
-        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
-        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
-        arrayOfAtoms.checkDimensions();
-        return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, 2);
-    }
-
-    public static final Atom flalignATATenv_macro(TeXParser teXParser, String[] strArr) {
-        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
-        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
-        arrayOfAtoms.checkDimensions();
-        return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, 4);
-    }
-
-    public static final Atom alignatATATenv_macro(TeXParser teXParser, String[] strArr) {
-        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
-        new TeXParser(teXParser.getIsPartial(), strArr[2], arrayOfAtoms, false).parse();
-        arrayOfAtoms.checkDimensions();
-        if (arrayOfAtoms.col != Integer.parseInt(strArr[1]) * 2) {
-            throw new ParseException("Bad number of equations in alignat environment !");
-        }
-        return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, 3);
-    }
-
-    public static final Atom alignedATATenv_macro(TeXParser teXParser, String[] strArr) {
-        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
-        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
-        arrayOfAtoms.checkDimensions();
-        return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, 6);
-    }
-
-    public static final Atom alignedatATATenv_macro(TeXParser teXParser, String[] strArr) {
-        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
-        new TeXParser(teXParser.getIsPartial(), strArr[2], arrayOfAtoms, false).parse();
-        arrayOfAtoms.checkDimensions();
-        if (arrayOfAtoms.col != Integer.parseInt(strArr[1]) * 2) {
-            throw new ParseException("Bad number of equations in alignedat environment !");
-        }
-        return new MatrixAtom(teXParser.getIsPartial(), arrayOfAtoms, 7);
-    }
-
-    public static final Atom multlineATATenv_macro(TeXParser teXParser, String[] strArr) {
-        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
-        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
-        arrayOfAtoms.checkDimensions();
-        int i = arrayOfAtoms.col;
-        if (i > 1) {
-            throw new ParseException("Character '&' is only available in array mode !");
-        }
-        if (i == 0) {
-            return null;
-        }
-        return new MultlineAtom(teXParser.getIsPartial(), arrayOfAtoms, 0);
-    }
-
-    public static final Atom gatherATATenv_macro(TeXParser teXParser, String[] strArr) {
-        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
-        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
-        arrayOfAtoms.checkDimensions();
-        int i = arrayOfAtoms.col;
-        if (i > 1) {
-            throw new ParseException("Character '&' is only available in array mode !");
-        }
-        if (i == 0) {
-            return null;
-        }
-        return new MultlineAtom(teXParser.getIsPartial(), arrayOfAtoms, 1);
-    }
-
-    public static final Atom gatheredATATenv_macro(TeXParser teXParser, String[] strArr) {
-        ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
-        new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
-        arrayOfAtoms.checkDimensions();
-        int i = arrayOfAtoms.col;
-        if (i > 1) {
-            throw new ParseException("Character '&' is only available in array mode !");
-        }
-        if (i == 0) {
-            return null;
-        }
-        return new MultlineAtom(teXParser.getIsPartial(), arrayOfAtoms, 2);
-    }
-
-    public static final Atom shoveright_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[1]).root;
-        atom.alignment = 1;
-        return atom;
-    }
-
-    public static final Atom shoveleft_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[1]).root;
-        atom.alignment = 0;
-        return atom;
-    }
-
-    public static final Atom newcommand_macro(TeXParser teXParser, String[] strArr) {
-        Integer valueOf;
-        String str = strArr[1];
-        if (!teXParser.isValidName(str)) {
-            throw new ParseException("Invalid name for the command :" + str);
-        }
-        String str2 = strArr[3];
-        if (str2 == null) {
-            valueOf = new Integer(0);
-        } else {
-            valueOf = Integer.valueOf(Integer.parseInt(str2));
-        }
-        if (strArr[4] == null) {
-            NewCommandMacro.addNewCommand(str.substring(1), strArr[2], valueOf.intValue());
-            return null;
-        }
-        NewCommandMacro.addNewCommand(str.substring(1), strArr[2], valueOf.intValue(), strArr[4]);
-        return null;
-    }
-
-    public static final Atom renewcommand_macro(TeXParser teXParser, String[] strArr) {
-        Integer valueOf;
-        String str = strArr[1];
-        if (!teXParser.isValidName(str)) {
-            throw new ParseException("Invalid name for the command :" + str);
-        }
-        String str2 = strArr[3];
-        if (str2 == null) {
-            valueOf = new Integer(0);
-        } else {
-            valueOf = Integer.valueOf(Integer.parseInt(str2));
-        }
-        NewCommandMacro.addReNewCommand(str.substring(1), strArr[2], valueOf.intValue());
-        return null;
-    }
-
-    public static final Atom makeatletter_macro(TeXParser teXParser, String[] strArr) {
-        teXParser.makeAtLetter();
-        return null;
-    }
-
-    public static final Atom makeatother_macro(TeXParser teXParser, String[] strArr) {
-        teXParser.makeAtOther();
-        return null;
-    }
-
-    public static final Atom newenvironment_macro(TeXParser teXParser, String[] strArr) {
-        String str = strArr[4];
-        NewEnvironmentMacro.addNewEnvironment(strArr[1], strArr[2], strArr[3], str == null ? 0 : Integer.parseInt(str));
-        return null;
-    }
-
-    public static final Atom renewenvironment_macro(TeXParser teXParser, String[] strArr) {
-        String str = strArr[4];
-        NewEnvironmentMacro.addReNewEnvironment(strArr[1], strArr[2], strArr[3], str == null ? 0 : Integer.parseInt(str));
-        return null;
-    }
-
-    public static final Atom fbox_macro(TeXParser teXParser, String[] strArr) {
-        return new FBoxAtom(new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom questeq_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(3, 3, new UnderOverAtom(SymbolAtom.get(TeXFormula.symbolMappings[61]), new ScaleAtom(SymbolAtom.get(TeXFormula.symbolMappings[63]), 0.75d), 5, 2.5f, true, true));
-    }
-
-    public static final Atom stackrel_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(3, 3, new UnderOverAtom(new TeXFormula(teXParser, strArr[2], false).root, new TeXFormula(teXParser, strArr[3], false).root, 5, 0.5f, true, new TeXFormula(teXParser, strArr[1], false).root, 5, 2.5f, true));
-    }
-
-    public static final Atom stackbin_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(2, 2, new UnderOverAtom(new TeXFormula(teXParser, strArr[2], false).root, new TeXFormula(teXParser, strArr[3], false).root, 5, 0.5f, true, new TeXFormula(teXParser, strArr[1], false).root, 5, 2.5f, true));
-    }
-
-    public static final Atom overset_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(3, 3, new UnderOverAtom(new TeXFormula(teXParser, strArr[2], false).root, new TeXFormula(teXParser, strArr[1], false).root, 5, 2.5f, true, true));
+    public static final Atom underscore_macro(TeXParser teXParser, String[] strArr) {
+        return new UnderscoreAtom();
     }
 
     public static final Atom underset_macro(TeXParser teXParser, String[] strArr) {
         return new TypedAtom(3, 3, new UnderOverAtom(new TeXFormula(teXParser, strArr[2], false).root, new TeXFormula(teXParser, strArr[1], false).root, 5, 0.5f, true, false));
-    }
-
-    public static final Atom accentset_macro(TeXParser teXParser, String[] strArr) {
-        return new AccentedAtom(new TeXFormula(teXParser, strArr[2], false).root, new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom underaccent_macro(TeXParser teXParser, String[] strArr) {
-        return new UnderOverAtom(new TeXFormula(teXParser, strArr[2], false).root, new TeXFormula(teXParser, strArr[1], false).root, 5, 0.3f, true, false);
     }
 
     public static final Atom undertilde_macro(TeXParser teXParser, String[] strArr) {
@@ -998,804 +1770,19 @@ public class PredefMacros {
         return new UnderOverAtom(atom, new AccentedAtom(new PhantomAtom(atom, true, false, false), "widetilde"), 5, 0.3f, true, false);
     }
 
-    public static final Atom boldsymbol_macro(TeXParser teXParser, String[] strArr) {
-        return new BoldAtom(new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom mathrm_macro(TeXParser teXParser, String[] strArr) {
-        return new RomanAtom(new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom rm_macro(TeXParser teXParser, String[] strArr) {
-        return new RomanAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root);
-    }
-
-    public static final Atom mathbf_macro(TeXParser teXParser, String[] strArr) {
-        return new BoldAtom(new RomanAtom(new TeXFormula(teXParser, strArr[1], false).root));
-    }
-
-    public static final Atom bf_macro(TeXParser teXParser, String[] strArr) {
-        return new BoldAtom(new RomanAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root));
-    }
-
-    public static final Atom mathtt_macro(TeXParser teXParser, String[] strArr) {
-        return new TtAtom(new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom tt_macro(TeXParser teXParser, String[] strArr) {
-        return new TtAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root);
-    }
-
-    public static final Atom mathit_macro(TeXParser teXParser, String[] strArr) {
-        return new ItAtom(new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom it_macro(TeXParser teXParser, String[] strArr) {
-        return new ItAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root);
-    }
-
-    public static final Atom mathsf_macro(TeXParser teXParser, String[] strArr) {
-        return new SsAtom(new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom sf_macro(TeXParser teXParser, String[] strArr) {
-        return new SsAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root);
-    }
-
-    public static final Atom LaTeX_macro(TeXParser teXParser, String[] strArr) {
-        return new LaTeXAtom();
-    }
-
-    public static final Atom GeoGebra_macro(TeXParser teXParser, String[] strArr) {
-        TeXFormula teXFormula = new TeXFormula("\\mathbb{G}\\mathsf{e}");
-        teXFormula.add(new GeoGebraLogoAtom());
-        teXFormula.add("\\mathsf{Gebra}");
-        return new ColorAtom(teXFormula.root, (Color) null, new Color(102, 102, 102));
-    }
-
-    public static final Atom hphantom_macro(TeXParser teXParser, String[] strArr) {
-        return new PhantomAtom(new TeXFormula(teXParser, strArr[1], false).root, true, false, false);
+    public static final Atom vdots_macro(TeXParser teXParser, String[] strArr) {
+        return new VdotsAtom();
     }
 
     public static final Atom vphantom_macro(TeXParser teXParser, String[] strArr) {
         return new PhantomAtom(new TeXFormula(teXParser, strArr[1], false).root, false, true, true);
     }
 
-    public static final Atom phantom_macro(TeXParser teXParser, String[] strArr) {
-        return new PhantomAtom(new TeXFormula(teXParser, strArr[1], false).root, true, true, true);
+    public static final Atom xleftarrow_macro(TeXParser teXParser, String[] strArr) {
+        return new XArrowAtom(new TeXFormula(teXParser, strArr[1], false).root, new TeXFormula(teXParser, strArr[2]).root, true);
     }
 
-    public static final Atom big_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
-        return !(atom instanceof SymbolAtom) ? atom : new BigDelimiterAtom((SymbolAtom) atom, 1);
-    }
-
-    public static final Atom Big_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
-        return !(atom instanceof SymbolAtom) ? atom : new BigDelimiterAtom((SymbolAtom) atom, 2);
-    }
-
-    public static final Atom bigg_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
-        return !(atom instanceof SymbolAtom) ? atom : new BigDelimiterAtom((SymbolAtom) atom, 3);
-    }
-
-    public static final Atom Bigg_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
-        return !(atom instanceof SymbolAtom) ? atom : new BigDelimiterAtom((SymbolAtom) atom, 4);
-    }
-
-    public static final Atom bigl_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
-        if (!(atom instanceof SymbolAtom)) {
-            return atom;
-        }
-        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 1);
-        bigDelimiterAtom.type = 4;
-        return bigDelimiterAtom;
-    }
-
-    public static final Atom Bigl_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
-        if (!(atom instanceof SymbolAtom)) {
-            return atom;
-        }
-        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 2);
-        bigDelimiterAtom.type = 4;
-        return bigDelimiterAtom;
-    }
-
-    public static final Atom biggl_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
-        if (!(atom instanceof SymbolAtom)) {
-            return atom;
-        }
-        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 3);
-        bigDelimiterAtom.type = 4;
-        return bigDelimiterAtom;
-    }
-
-    public static final Atom Biggl_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
-        if (!(atom instanceof SymbolAtom)) {
-            return atom;
-        }
-        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 4);
-        bigDelimiterAtom.type = 4;
-        return bigDelimiterAtom;
-    }
-
-    public static final Atom bigr_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
-        if (!(atom instanceof SymbolAtom)) {
-            return atom;
-        }
-        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 1);
-        bigDelimiterAtom.type = 5;
-        return bigDelimiterAtom;
-    }
-
-    public static final Atom Bigr_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
-        if (!(atom instanceof SymbolAtom)) {
-            return atom;
-        }
-        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 2);
-        bigDelimiterAtom.type = 5;
-        return bigDelimiterAtom;
-    }
-
-    public static final Atom biggr_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
-        if (!(atom instanceof SymbolAtom)) {
-            return atom;
-        }
-        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 3);
-        bigDelimiterAtom.type = 5;
-        return bigDelimiterAtom;
-    }
-
-    public static final Atom Biggr_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[1], false).root;
-        if (!(atom instanceof SymbolAtom)) {
-            return atom;
-        }
-        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) atom, 4);
-        bigDelimiterAtom.type = 5;
-        return bigDelimiterAtom;
-    }
-
-    public static final Atom displaystyle_macro(TeXParser teXParser, String[] strArr) {
-        return new StyleAtom(0, new TeXFormula(teXParser, teXParser.getOverArgument(), false).root);
-    }
-
-    public static final Atom scriptstyle_macro(TeXParser teXParser, String[] strArr) {
-        return new StyleAtom(4, new TeXFormula(teXParser, teXParser.getOverArgument(), false).root);
-    }
-
-    public static final Atom textstyle_macro(TeXParser teXParser, String[] strArr) {
-        return new StyleAtom(2, new TeXFormula(teXParser, teXParser.getOverArgument(), false).root);
-    }
-
-    public static final Atom scriptscriptstyle_macro(TeXParser teXParser, String[] strArr) {
-        return new StyleAtom(6, new TeXFormula(teXParser, teXParser.getOverArgument(), false).root);
-    }
-
-    public static final Atom rotatebox_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[2]).root;
-        String str = strArr[1];
-        return new RotateAtom(atom, str == null ? 0.0d : Double.parseDouble(str), strArr[3]);
-    }
-
-    public static final Atom reflectbox_macro(TeXParser teXParser, String[] strArr) {
-        return new ReflectAtom(new TeXFormula(teXParser, strArr[1]).root);
-    }
-
-    public static final Atom scalebox_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[2]).root;
-        double parseDouble = Double.parseDouble(strArr[1]);
-        String str = strArr[3];
-        return new ScaleAtom(atom, parseDouble, str == null ? Double.parseDouble(strArr[1]) : Double.parseDouble(str));
-    }
-
-    public static final Atom resizebox_macro(TeXParser teXParser, String[] strArr) {
-        Atom atom = new TeXFormula(teXParser, strArr[3]).root;
-        boolean z = true;
-        String str = strArr[1];
-        String str2 = strArr[2];
-        if (!str.equals("!") && !strArr[2].equals("!")) {
-            z = false;
-        }
-        return new ResizeAtom(atom, str, str2, z);
-    }
-
-    public static final Atom raisebox_macro(TeXParser teXParser, String[] strArr) {
-        float[] length = SpaceAtom.getLength(strArr[1]);
-        if (length.length == 1) {
-            throw new ParseException("Error in getting raise in \\raisebox command !");
-        }
-        float[] length2 = SpaceAtom.getLength(strArr[3]);
-        float[] length3 = SpaceAtom.getLength(strArr[4]);
-        if (length2.length == 1 || length2[1] == 0.0f) {
-            length2 = new float[]{-1.0f, 0.0f};
-        }
-        if (length3.length == 1 || length3[1] == 0.0f) {
-            length3 = new float[]{-1.0f, 0.0f};
-        }
-        return new RaiseAtom(new TeXFormula(teXParser, strArr[2]).root, (int) length[0], length[1], (int) length2[0], length2[1], (int) length3[0], length3[1]);
-    }
-
-    public static final Atom shadowbox_macro(TeXParser teXParser, String[] strArr) {
-        return new ShadowAtom(new TeXFormula(teXParser, strArr[1]).root);
-    }
-
-    public static final Atom ovalbox_macro(TeXParser teXParser, String[] strArr) {
-        return new OvalAtom(new TeXFormula(teXParser, strArr[1]).root);
-    }
-
-    public static final Atom doublebox_macro(TeXParser teXParser, String[] strArr) {
-        return new DoubleFramedAtom(new TeXFormula(teXParser, strArr[1]).root);
-    }
-
-    public static final Atom definecolor_macro(TeXParser teXParser, String[] strArr) {
-        Color color;
-        if ("gray".equals(strArr[2])) {
-            float parseFloat = Float.parseFloat(strArr[3]);
-            color = new Color(parseFloat, parseFloat, parseFloat);
-        } else if ("rgb".equals(strArr[2])) {
-            StringTokenizer stringTokenizer = new StringTokenizer(strArr[3], ";,");
-            if (stringTokenizer.countTokens() != 3) {
-                throw new ParseException("The color definition must have three components !");
-            }
-            color = new Color(Float.parseFloat(stringTokenizer.nextToken().trim()), Float.parseFloat(stringTokenizer.nextToken().trim()), Float.parseFloat(stringTokenizer.nextToken().trim()));
-        } else if ("cmyk".equals(strArr[2])) {
-            StringTokenizer stringTokenizer2 = new StringTokenizer(strArr[3], ",;");
-            if (stringTokenizer2.countTokens() != 4) {
-                throw new ParseException("The color definition must have four components !");
-            }
-            float[] fArr = new float[4];
-            for (int i = 0; i < 4; i++) {
-                fArr[i] = Float.parseFloat(stringTokenizer2.nextToken().trim());
-            }
-            float f = 1.0f - fArr[3];
-            color = new Color((1.0f - fArr[0]) * f, (1.0f - fArr[1]) * f, f * (1.0f - fArr[2]));
-        } else {
-            throw new ParseException("The color model is incorrect !");
-        }
-        ColorAtom.Colors.put(strArr[1], color);
-        return null;
-    }
-
-    public static final Atom fgcolor_macro(TeXParser teXParser, String[] strArr) {
-        try {
-            return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, (Color) null, ColorAtom.getColor(strArr[1]));
-        } catch (NumberFormatException e) {
-            throw new ParseException(e.toString());
-        }
-    }
-
-    public static final Atom bgcolor_macro(TeXParser teXParser, String[] strArr) {
-        try {
-            return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, ColorAtom.getColor(strArr[1]), (Color) null);
-        } catch (NumberFormatException e) {
-            throw new ParseException(e.toString());
-        }
-    }
-
-    public static final Atom textcolor_macro(TeXParser teXParser, String[] strArr) {
-        return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, (Color) null, ColorAtom.getColor(strArr[1]));
-    }
-
-    public static final Atom colorbox_macro(TeXParser teXParser, String[] strArr) {
-        Color color = ColorAtom.getColor(strArr[1]);
-        return new FBoxAtom(new TeXFormula(teXParser, strArr[2]).root, color, color);
-    }
-
-    public static final Atom fcolorbox_macro(TeXParser teXParser, String[] strArr) {
-        return new FBoxAtom(new TeXFormula(teXParser, strArr[3]).root, ColorAtom.getColor(strArr[2]), ColorAtom.getColor(strArr[1]));
-    }
-
-    public static final Atom cong_macro(TeXParser teXParser, String[] strArr) {
-        VRowAtom vRowAtom = new VRowAtom(SymbolAtom.get("equals"));
-        vRowAtom.add(new SpaceAtom(5, 0.0f, 1.5f, 0.0f));
-        vRowAtom.add(SymbolAtom.get("sim"));
-        vRowAtom.setRaise(5, -1.0f);
-        return new TypedAtom(3, 3, vRowAtom);
-    }
-
-    public static final Atom doteq_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(3, 3, new UnderOverAtom(SymbolAtom.get("equals"), SymbolAtom.get("ldotp"), 5, 3.7f, false, true));
-    }
-
-    public static final Atom jlmDynamic_macro(TeXParser teXParser, String[] strArr) {
-        if (DynamicAtom.hasAnExternalConverterFactory()) {
-            return new DynamicAtom(strArr[1], strArr[2]);
-        }
-        throw new ParseException("No ExternalConverterFactory set !");
-    }
-
-    public static final Atom jlmExternalFont_macro(TeXParser teXParser, String[] strArr) {
-        JavaFontRenderingBox.setFont(strArr[1]);
-        return null;
-    }
-
-    public static final Atom jlmText_macro(TeXParser teXParser, String[] strArr) {
-        return new JavaFontRenderingAtom(strArr[1], 0);
-    }
-
-    public static final Atom jlmTextit_macro(TeXParser teXParser, String[] strArr) {
-        return new JavaFontRenderingAtom(strArr[1], 2);
-    }
-
-    public static final Atom jlmTextbf_macro(TeXParser teXParser, String[] strArr) {
-        return new JavaFontRenderingAtom(strArr[1], 1);
-    }
-
-    public static final Atom jlmTextitbf_macro(TeXParser teXParser, String[] strArr) {
-        return new JavaFontRenderingAtom(strArr[1], 3);
-    }
-
-    public static final Atom DeclareMathSizes_macro(TeXParser teXParser, String[] strArr) {
-        DefaultTeXFont.setMathSizes(Float.parseFloat(strArr[1]), Float.parseFloat(strArr[2]), Float.parseFloat(strArr[3]), Float.parseFloat(strArr[4]));
-        return null;
-    }
-
-    public static final Atom magnification_macro(TeXParser teXParser, String[] strArr) {
-        DefaultTeXFont.setMagnification(Float.parseFloat(strArr[1]));
-        return null;
-    }
-
-    public static final Atom hline_macro(TeXParser teXParser, String[] strArr) {
-        if (!teXParser.isArrayMode()) {
-            throw new ParseException("The macro \\hline is only available in array mode !");
-        }
-        return new HlineAtom();
-    }
-
-    public static final Atom size_macros(TeXParser teXParser, String[] strArr) {
-        float f;
-        if ("tiny".equals(strArr[0])) {
-            f = 0.5f;
-        } else if ("scriptsize".equals(strArr[0])) {
-            f = 0.7f;
-        } else if ("footnotesize".equals(strArr[0])) {
-            f = 0.8f;
-        } else if ("small".equals(strArr[0])) {
-            f = 0.9f;
-        } else {
-            if (!"normalsize".equals(strArr[0])) {
-                if ("large".equals(strArr[0])) {
-                    f = 1.2f;
-                } else if ("Large".equals(strArr[0])) {
-                    f = 1.4f;
-                } else if ("LARGE".equals(strArr[0])) {
-                    f = 1.8f;
-                } else if ("huge".equals(strArr[0])) {
-                    f = 2.0f;
-                } else if ("Huge".equals(strArr[0])) {
-                    f = 2.5f;
-                }
-            }
-            f = 1.0f;
-        }
-        return new MonoScaleAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root, f);
-    }
-
-    public static final Atom jlatexmathcumsup_macro(TeXParser teXParser, String[] strArr) {
-        return new CumulativeScriptsAtom(teXParser.getLastAtom(), null, new TeXFormula(teXParser, strArr[1]).root);
-    }
-
-    public static final Atom jlatexmathcumsub_macro(TeXParser teXParser, String[] strArr) {
-        return new CumulativeScriptsAtom(teXParser.getLastAtom(), new TeXFormula(teXParser, strArr[1]).root, null);
-    }
-
-    public static final Atom dotminus_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(2, 2, new UnderOverAtom(SymbolAtom.get("minus"), SymbolAtom.get("normaldot"), 5, -3.3f, false, true));
-    }
-
-    public static final Atom ratio_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(3, 3, new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
-    }
-
-    public static final Atom geoprop_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(SymbolAtom.get("normaldot"));
-        rowAtom.add(new SpaceAtom(5, 4.0f, 0.0f, 0.0f));
-        rowAtom.add(SymbolAtom.get("normaldot"));
-        return new TypedAtom(3, 3, new UnderOverAtom(SymbolAtom.get("minus"), rowAtom, 5, -3.4f, false, rowAtom, 5, -3.4f, false));
-    }
-
-    public static final Atom minuscolon_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(SymbolAtom.get("minus"));
-        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
-        rowAtom.add(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom minuscoloncolon_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(SymbolAtom.get("minus"));
-        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
-        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
-        rowAtom.add(underOverAtom);
-        rowAtom.add(underOverAtom);
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom simcolon_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(SymbolAtom.get("sim"));
-        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
-        rowAtom.add(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom simcoloncolon_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(SymbolAtom.get("sim"));
-        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
-        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
-        rowAtom.add(underOverAtom);
-        rowAtom.add(underOverAtom);
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom approxcolon_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(SymbolAtom.get("approx"));
-        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
-        rowAtom.add(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom approxcoloncolon_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(SymbolAtom.get("approx"));
-        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
-        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
-        rowAtom.add(underOverAtom);
-        rowAtom.add(underOverAtom);
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom equalscolon_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(SymbolAtom.get("equals"));
-        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
-        rowAtom.add(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom equalscoloncolon_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(SymbolAtom.get("equals"));
-        rowAtom.add(new SpaceAtom(0, -0.095f, 0.0f, 0.0f));
-        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
-        rowAtom.add(underOverAtom);
-        rowAtom.add(underOverAtom);
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom colonminus_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
-        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
-        rowAtom.add(SymbolAtom.get("minus"));
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom coloncolonminus_macro(TeXParser teXParser, String[] strArr) {
-        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
-        RowAtom rowAtom = new RowAtom(underOverAtom);
-        rowAtom.add(underOverAtom);
-        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
-        rowAtom.add(SymbolAtom.get("minus"));
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom colonequals_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
-        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
-        rowAtom.add(SymbolAtom.get("equals"));
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom coloncolonequals_macro(TeXParser teXParser, String[] strArr) {
-        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
-        RowAtom rowAtom = new RowAtom(underOverAtom);
-        rowAtom.add(underOverAtom);
-        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
-        rowAtom.add(SymbolAtom.get("equals"));
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom coloncolon_macro(TeXParser teXParser, String[] strArr) {
-        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
-        RowAtom rowAtom = new RowAtom(underOverAtom);
-        rowAtom.add(underOverAtom);
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom colonsim_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
-        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
-        rowAtom.add(SymbolAtom.get("sim"));
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom coloncolonsim_macro(TeXParser teXParser, String[] strArr) {
-        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
-        RowAtom rowAtom = new RowAtom(underOverAtom);
-        rowAtom.add(underOverAtom);
-        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
-        rowAtom.add(SymbolAtom.get("sim"));
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom colonapprox_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true));
-        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
-        rowAtom.add(SymbolAtom.get("approx"));
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom coloncolonapprox_macro(TeXParser teXParser, String[] strArr) {
-        UnderOverAtom underOverAtom = new UnderOverAtom(SymbolAtom.get("normaldot"), SymbolAtom.get("normaldot"), 5, 5.2f, false, true);
-        RowAtom rowAtom = new RowAtom(underOverAtom);
-        rowAtom.add(underOverAtom);
-        rowAtom.add(new SpaceAtom(0, -0.32f, 0.0f, 0.0f));
-        rowAtom.add(SymbolAtom.get("approx"));
-        return new TypedAtom(3, 3, rowAtom);
-    }
-
-    public static final Atom smallfrowneq_macro(TeXParser teXParser, String[] strArr) {
-        return new TypedAtom(3, 3, new UnderOverAtom(SymbolAtom.get("equals"), SymbolAtom.get("smallfrown"), 5, -2.0f, true, true));
-    }
-
-    public static final Atom hstrok_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(new SpaceAtom(1, -0.1f, 0.0f, 0.0f));
-        rowAtom.add(SymbolAtom.get("bar"));
-        VRowAtom vRowAtom = new VRowAtom(new LapedAtom(rowAtom, 'r'));
-        vRowAtom.setRaise(1, -0.1f);
-        RowAtom rowAtom2 = new RowAtom(vRowAtom);
-        rowAtom2.add(new RomanAtom(new CharAtom('h', teXParser.formula.textStyle)));
-        return rowAtom2;
-    }
-
-    public static final Atom Hstrok_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(new SpaceAtom(1, 0.28f, 0.0f, 0.0f));
-        rowAtom.add(SymbolAtom.get("textendash"));
-        VRowAtom vRowAtom = new VRowAtom(new LapedAtom(rowAtom, 'r'));
-        vRowAtom.setRaise(1, 0.55f);
-        RowAtom rowAtom2 = new RowAtom(vRowAtom);
-        rowAtom2.add(new RomanAtom(new CharAtom('H', teXParser.formula.textStyle)));
-        return rowAtom2;
-    }
-
-    public static final Atom dstrok_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(new SpaceAtom(1, 0.25f, 0.0f, 0.0f));
-        rowAtom.add(SymbolAtom.get("bar"));
-        VRowAtom vRowAtom = new VRowAtom(new LapedAtom(rowAtom, 'r'));
-        vRowAtom.setRaise(1, -0.1f);
-        RowAtom rowAtom2 = new RowAtom(vRowAtom);
-        rowAtom2.add(new RomanAtom(new CharAtom('d', teXParser.formula.textStyle)));
-        return rowAtom2;
-    }
-
-    public static final Atom Dstrok_macro(TeXParser teXParser, String[] strArr) {
-        RowAtom rowAtom = new RowAtom(new SpaceAtom(1, -0.1f, 0.0f, 0.0f));
-        rowAtom.add(SymbolAtom.get("bar"));
-        VRowAtom vRowAtom = new VRowAtom(new LapedAtom(rowAtom, 'r'));
-        vRowAtom.setRaise(1, -0.55f);
-        RowAtom rowAtom2 = new RowAtom(vRowAtom);
-        rowAtom2.add(new RomanAtom(new CharAtom('D', teXParser.formula.textStyle)));
-        return rowAtom2;
-    }
-
-    public static final Atom kern_macro(TeXParser teXParser, String[] strArr) {
-        float[] length = SpaceAtom.getLength(strArr[1]);
-        if (length.length == 1) {
-            throw new ParseException("Error in getting kern in \\kern command !");
-        }
-        return new SpaceAtom((int) length[0], length[1], 0.0f, 0.0f);
-    }
-
-    public static final Atom char_macro(TeXParser teXParser, String[] strArr) {
-        String str = strArr[1];
-        int i = 16;
-        if (str.startsWith("0x") || str.startsWith("0X")) {
-            str = str.substring(2);
-        } else if (str.startsWith("x") || str.startsWith("X")) {
-            str = str.substring(1);
-        } else if (str.startsWith("0")) {
-            str = str.substring(1);
-            i = 8;
-        } else {
-            i = 10;
-        }
-        return teXParser.convertCharacter((char) Integer.parseInt(str, i), true);
-    }
-
-    public static final Atom T_macro(TeXParser teXParser, String[] strArr) {
-        return new RotateAtom(new TeXFormula(teXParser, strArr[1]).root, 180.0d, "origin=cc");
-    }
-
-    public static final Atom romannumeral_macro(TeXParser teXParser, String[] strArr) {
-        int[] iArr = {MediaDataController.MAX_STYLE_RUNS_COUNT, RichMessageLayout.PART_MAX_HEIGHT_DP, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
-        String[] strArr2 = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
-        int parseInt = Integer.parseInt(strArr[1].trim());
-        if (parseInt > 4000000) {
-            parseInt = 4000000;
-        }
-        String str = "";
-        for (int i = 0; i < 13; i++) {
-            while (parseInt >= iArr[i]) {
-                str = str + strArr2[i];
-                parseInt -= iArr[i];
-            }
-        }
-        if (strArr[0].charAt(0) == 'r') {
-            str = str.toLowerCase();
-        }
-        return new TeXFormula(str, false).root;
-    }
-
-    public static final Atom textcircled_macro(TeXParser teXParser, String[] strArr) {
-        return new TextCircledAtom(new RomanAtom(new TeXFormula(teXParser, strArr[1]).root));
-    }
-
-    public static final Atom textsc_macro(TeXParser teXParser, String[] strArr) {
-        return new SmallCapAtom(new TeXFormula(teXParser, strArr[1], false).root);
-    }
-
-    public static final Atom sc_macro(TeXParser teXParser, String[] strArr) {
-        return new SmallCapAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root);
-    }
-
-    public static final Atom quad_macro(TeXParser teXParser, String[] strArr) {
-        return new SpaceAtom(0, 1.0f, 0.0f, 0.0f);
-    }
-
-    public static final Atom qquad_macro(TeXParser teXParser, String[] strArr) {
-        return new SpaceAtom(0, 2.0f, 0.0f, 0.0f);
-    }
-
-    public static final Atom muskip_macros(TeXParser teXParser, String[] strArr) {
-        int i = 0;
-        if (!strArr[0].equals(",")) {
-            if (!strArr[0].equals(":")) {
-                if (!strArr[0].equals(";")) {
-                    if (!strArr[0].equals("thinspace")) {
-                        if (!strArr[0].equals("medspace")) {
-                            if (!strArr[0].equals("thickspace")) {
-                                if (strArr[0].equals("!") || strArr[0].equals("negthinspace")) {
-                                    i = -1;
-                                } else if (strArr[0].equals("negmedspace")) {
-                                    i = -2;
-                                } else if (strArr[0].equals("negthickspace")) {
-                                    i = -3;
-                                }
-                                return new SpaceAtom(i);
-                            }
-                        }
-                    }
-                }
-                i = 3;
-                return new SpaceAtom(i);
-            }
-            i = 2;
-            return new SpaceAtom(i);
-        }
-        i = 1;
-        return new SpaceAtom(i);
-    }
-
-    public static final Atom surd_macro(TeXParser teXParser, String[] strArr) {
-        return new VCenteredAtom(SymbolAtom.get("surdsign"));
-    }
-
-    public static final Atom int_macro(TeXParser teXParser, String[] strArr) {
-        Atom clone = SymbolAtom.get("int").clone();
-        clone.type_limits = 1;
-        return clone;
-    }
-
-    public static final Atom oint_macro(TeXParser teXParser, String[] strArr) {
-        Atom clone = SymbolAtom.get("oint").clone();
-        clone.type_limits = 1;
-        return clone;
-    }
-
-    public static final Atom iint_macro(TeXParser teXParser, String[] strArr) {
-        Atom clone = SymbolAtom.get("int").clone();
-        clone.type_limits = 1;
-        RowAtom rowAtom = new RowAtom(clone);
-        rowAtom.add(new SpaceAtom(5, -6.0f, 0.0f, 0.0f));
-        rowAtom.add(clone);
-        rowAtom.lookAtLastAtom = true;
-        return new TypedAtom(1, 1, rowAtom);
-    }
-
-    public static final Atom iiint_macro(TeXParser teXParser, String[] strArr) {
-        Atom clone = SymbolAtom.get("int").clone();
-        clone.type_limits = 1;
-        RowAtom rowAtom = new RowAtom(clone);
-        rowAtom.add(new SpaceAtom(5, -6.0f, 0.0f, 0.0f));
-        rowAtom.add(clone);
-        rowAtom.add(new SpaceAtom(5, -6.0f, 0.0f, 0.0f));
-        rowAtom.add(clone);
-        rowAtom.lookAtLastAtom = true;
-        return new TypedAtom(1, 1, rowAtom);
-    }
-
-    public static final Atom iiiint_macro(TeXParser teXParser, String[] strArr) {
-        Atom clone = SymbolAtom.get("int").clone();
-        clone.type_limits = 1;
-        RowAtom rowAtom = new RowAtom(clone);
-        rowAtom.add(new SpaceAtom(5, -6.0f, 0.0f, 0.0f));
-        rowAtom.add(clone);
-        rowAtom.add(new SpaceAtom(5, -6.0f, 0.0f, 0.0f));
-        rowAtom.add(clone);
-        rowAtom.add(new SpaceAtom(5, -6.0f, 0.0f, 0.0f));
-        rowAtom.add(clone);
-        rowAtom.lookAtLastAtom = true;
-        return new TypedAtom(1, 1, rowAtom);
-    }
-
-    public static final Atom idotsint_macro(TeXParser teXParser, String[] strArr) {
-        Atom clone = SymbolAtom.get("int").clone();
-        clone.type_limits = 1;
-        RowAtom rowAtom = new RowAtom(clone);
-        rowAtom.add(new SpaceAtom(5, -1.0f, 0.0f, 0.0f));
-        SymbolAtom symbolAtom = SymbolAtom.get("cdotp");
-        RowAtom rowAtom2 = new RowAtom(symbolAtom);
-        rowAtom2.add(symbolAtom);
-        rowAtom2.add(symbolAtom);
-        rowAtom.add(new TypedAtom(7, 7, rowAtom2));
-        rowAtom.add(new SpaceAtom(5, -1.0f, 0.0f, 0.0f));
-        rowAtom.add(clone);
-        rowAtom.lookAtLastAtom = true;
-        return new TypedAtom(1, 1, rowAtom);
-    }
-
-    public static final Atom lmoustache_macro(TeXParser teXParser, String[] strArr) {
-        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) SymbolAtom.get("lmoustache").clone(), 1);
-        bigDelimiterAtom.type = 4;
-        return bigDelimiterAtom;
-    }
-
-    public static final Atom rmoustache_macro(TeXParser teXParser, String[] strArr) {
-        BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom((SymbolAtom) SymbolAtom.get("rmoustache").clone(), 1);
-        bigDelimiterAtom.type = 5;
-        return bigDelimiterAtom;
-    }
-
-    public static final Atom insertBreakMark_macro(TeXParser teXParser, String[] strArr) {
-        return new BreakMarkAtom();
-    }
-
-    public static final Atom jlmXML_macro(TeXParser teXParser, String[] strArr) {
-        Map<String, String> map = teXParser.formula.jlmXMLMap;
-        String str = strArr[1];
-        StringBuffer stringBuffer = new StringBuffer();
-        while (true) {
-            int indexOf = str.indexOf("$");
-            if (indexOf != -1) {
-                if (indexOf < str.length() - 1) {
-                    int i = indexOf;
-                    do {
-                        i++;
-                        if (i >= str.length()) {
-                            break;
-                        }
-                    } while (Character.isLetter(str.charAt(i)));
-                    String str2 = map.get(str.substring(indexOf + 1, i));
-                    if (str2 != null) {
-                        stringBuffer.append(str.substring(0, indexOf));
-                        stringBuffer.append(str2);
-                    } else {
-                        stringBuffer.append(str.substring(0, i));
-                    }
-                    str = str.substring(i);
-                } else {
-                    stringBuffer.append(str);
-                    str = "";
-                }
-            } else {
-                stringBuffer.append(str);
-                return new TeXFormula(teXParser, stringBuffer.toString()).root;
-            }
-        }
+    public static final Atom xrightarrow_macro(TeXParser teXParser, String[] strArr) {
+        return new XArrowAtom(new TeXFormula(teXParser, strArr[1], false).root, new TeXFormula(teXParser, strArr[2]).root, false);
     }
 }

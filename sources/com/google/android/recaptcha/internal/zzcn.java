@@ -1,8 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.comparisons.ComparisonsKt;
-import kotlin.text.StringsKt;
+import a9.p;
+import gd.j;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzcn implements Comparable {
     private int zza;
@@ -10,13 +11,18 @@ public final class zzcn implements Comparable {
     private long zzc;
 
     public final String toString() {
-        return "avgExecutionTime: " + StringsKt.padEnd$default(String.valueOf(this.zzb / this.zza), 10, (char) 0, 2, null) + " us| maxExecutionTime: " + StringsKt.padEnd$default(String.valueOf(this.zzc), 10, (char) 0, 2, null) + " us| totalTime: " + StringsKt.padEnd$default(String.valueOf(this.zzb), 10, (char) 0, 2, null) + " us| #Usages: " + StringsKt.padEnd$default(String.valueOf(this.zza), 5, (char) 0, 2, null);
+        return p.n(j.f(10, String.valueOf(this.zzb)), " us| #Usages: ", j.f(5, String.valueOf(this.zza)), i0.a.p("avgExecutionTime: ", j.f(10, String.valueOf(this.zzb / this.zza)), " us| maxExecutionTime: ", j.f(10, String.valueOf(this.zzc)), " us| totalTime: "));
     }
 
     @Override // java.lang.Comparable
     /* renamed from: zza, reason: merged with bridge method [inline-methods] */
     public final int compareTo(zzcn zzcnVar) {
-        return ComparisonsKt.compareValues(Long.valueOf(this.zzb), Long.valueOf(zzcnVar.zzb));
+        Long valueOf = Long.valueOf(this.zzb);
+        Long valueOf2 = Long.valueOf(zzcnVar.zzb);
+        if (valueOf == valueOf2) {
+            return 0;
+        }
+        return valueOf.compareTo(valueOf2);
     }
 
     public final int zzb() {
@@ -31,15 +37,15 @@ public final class zzcn implements Comparable {
         return this.zzb;
     }
 
-    public final void zze(long j) {
-        this.zzc = j;
+    public final void zze(long j10) {
+        this.zzc = j10;
     }
 
-    public final void zzf(long j) {
-        this.zzb = j;
+    public final void zzf(long j10) {
+        this.zzb = j10;
     }
 
-    public final void zzg(int i) {
-        this.zza = i;
+    public final void zzg(int i10) {
+        this.zza = i10;
     }
 }

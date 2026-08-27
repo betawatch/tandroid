@@ -1,0 +1,20 @@
+package gh;
+
+import android.content.Context;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
+public final class c extends FrameLayout {
+    public static final /* synthetic */ int c = 0;
+    public final org.telegram.ui.ActionBar.c6 a;
+    public final int b;
+
+    public c(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context);
+        this.b = i10;
+        this.a = c6Var;
+        setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f));
+    }
+}

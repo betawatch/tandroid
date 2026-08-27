@@ -2,30 +2,20 @@ package com.google.android.gms.cast.framework.internal.featurehighlight;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 class InnerZoneDrawable extends Drawable {
-    private final Paint zza;
-    private final Paint zzb;
-    private final int zze;
-    private float zzf;
-    private float zzg;
-    private float zzh;
-    private float zzi;
-    private float zzj;
-    private float zzk;
+    public float a;
+    public float b;
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        float f = this.zzk;
-        if (f > 0.0f) {
-            float f2 = this.zzf * this.zzj;
-            this.zzb.setAlpha((int) (this.zze * f));
-            canvas.drawCircle(this.zzh, this.zzi, f2, this.zzb);
+        if (this.b > 0.0f) {
+            throw null;
         }
-        canvas.drawCircle(this.zzh, this.zzi, this.zzf * this.zzg, this.zza);
+        canvas.drawCircle(0.0f, 0.0f, this.a * 0.0f, null);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -34,29 +24,26 @@ class InnerZoneDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        this.zza.setAlpha(i);
-        invalidateSelf();
+    public final void setAlpha(int i10) {
+        throw null;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
-        this.zza.setColorFilter(colorFilter);
+        throw null;
+    }
+
+    public void setPulseAlpha(float f10) {
+        this.b = f10;
         invalidateSelf();
     }
 
-    public void setPulseAlpha(float f) {
-        this.zzk = f;
+    public void setPulseScale(float f10) {
         invalidateSelf();
     }
 
-    public void setPulseScale(float f) {
-        this.zzj = f;
-        invalidateSelf();
-    }
-
-    public void setScale(float f) {
-        this.zzg = f;
+    public void setScale(float f10) {
+        this.a = f10;
         invalidateSelf();
     }
 }

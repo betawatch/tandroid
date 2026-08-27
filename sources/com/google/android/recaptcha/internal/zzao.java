@@ -1,78 +1,76 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.Boxing;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
+import ad.p;
+import h7.k6;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzao extends SuspendLambda implements Function2 {
+final class zzao extends i implements p {
     int zza;
     final /* synthetic */ zzar zzb;
     final /* synthetic */ String zzc;
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzao(zzar zzarVar, String str, Continuation continuation) {
-        super(2, continuation);
+    public zzao(zzar zzarVar, String str, c cVar) {
+        super(2, cVar);
         this.zzb = zzarVar;
         this.zzc = str;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        zzao zzaoVar = new zzao(this.zzb, this.zzc, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        zzao zzaoVar = new zzao(this.zzb, this.zzc, cVar);
         zzaoVar.zzd = obj;
         return zzaoVar;
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzao) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzao) create((zzhk) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x003b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x003a, code lost:
     
         if (r8 != r0) goto L13;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x004b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x004a, code lost:
     
         return r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0049, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0048, code lost:
     
         if (r8 != r0) goto L18;
      */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zza;
+        sc.a aVar = sc.a.a;
+        int i10 = this.zza;
         try {
-        } catch (Exception e) {
+        } catch (Exception e9) {
             zzar zzarVar = this.zzb;
             this.zza = 2;
-            obj = zzarVar.zzg(e, this);
+            obj = zzarVar.zzg(e9, this);
         }
-        if (i == 0) {
-            ResultKt.throwOnFailure(obj);
+        if (i10 == 0) {
+            k6.b(obj);
             zzhk zzhkVar = (zzhk) this.zzd;
             zzar zzarVar2 = this.zzb;
             int zza = zzarVar2.zza();
             zzan zzanVar = new zzan(zzarVar2, this.zzc, null);
             this.zza = 1;
-            obj = new zzhf(37, zzanVar, Boxing.boxInt(zza)).zza(zzhkVar, this);
+            obj = new zzhf(37, zzanVar, new Integer(zza)).zza(zzhkVar, this);
         } else {
-            if (i != 1) {
-                ResultKt.throwOnFailure(obj);
+            if (i10 != 1) {
+                k6.b(obj);
                 return (zzat) obj;
             }
-            ResultKt.throwOnFailure(obj);
+            k6.b(obj);
         }
         return (zzat) obj;
     }

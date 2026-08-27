@@ -1,18 +1,17 @@
 package com.google.android.recaptcha.internal;
 
+import ad.p;
+import h7.k6;
+import id.c0;
 import java.util.Iterator;
 import java.util.List;
-import kotlin.Result;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.CoroutineScope;
+import pc.f;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzah extends SuspendLambda implements Function2 {
+final class zzah extends i implements p {
     Object zza;
     Object zzb;
     Object zzc;
@@ -22,26 +21,26 @@ final class zzah extends SuspendLambda implements Function2 {
     final /* synthetic */ zzhk zzg;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzah(zzxn zzxnVar, zzaj zzajVar, zzhk zzhkVar, Continuation continuation) {
-        super(2, continuation);
+    public zzah(zzxn zzxnVar, zzaj zzajVar, zzhk zzhkVar, c cVar) {
+        super(2, cVar);
         this.zze = zzxnVar;
         this.zzf = zzajVar;
         this.zzg = zzhkVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzah(this.zze, this.zzf, this.zzg, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        return new zzah(this.zze, this.zzf, this.zzg, cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzah) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzah) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00be  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x00be -> B:5:0x008c). Please report as a decompilation issue!!! */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00b2  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x00b2 -> B:5:0x0080). Please report as a decompilation issue!!! */
+    @Override // tc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -52,47 +51,44 @@ final class zzah extends SuspendLambda implements Function2 {
         zzxp zzxpVar;
         Iterator it2;
         zzhk zzhkVar;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zzd;
-        if (i == 0) {
-            ResultKt.throwOnFailure(obj);
+        sc.a aVar = sc.a.a;
+        int i10 = this.zzd;
+        if (i10 == 0) {
+            k6.b(obj);
             zzxn zzxnVar = this.zze;
             if (!zzxnVar.zzU()) {
-                Result.Companion companion = Result.Companion;
-                return Result.box-impl(Result.constructor-impl(ResultKt.createFailure(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null))));
+                return new f(k6.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
             }
             zzk = zzxnVar.zzk();
             if (zzk.zzi().zzn()) {
-                Result.Companion companion2 = Result.Companion;
-                return Result.box-impl(Result.constructor-impl(ResultKt.createFailure(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null))));
+                return new f(k6.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
             }
             zzaj zzajVar = this.zzf;
             zzajVar.zzb = zzk.zzi();
             list = zzajVar.zza;
             it = list.iterator();
         } else {
-            if (i == 1) {
+            if (i10 == 1) {
                 zzhkVar = (zzhk) this.zzc;
                 it2 = (Iterator) this.zzb;
                 zzxpVar = (zzxp) this.zza;
-                ResultKt.throwOnFailure(obj);
+                k6.b(obj);
                 this.zza = zzxpVar;
                 this.zzb = it2;
                 this.zzc = null;
                 this.zzd = 2;
-                if (zzhj.zzb(zzhkVar, (zzhf) obj, this) != coroutine_suspended) {
+                if (zzhj.zzb(zzhkVar, (zzhf) obj, this) != aVar) {
                     it = it2;
                     zzk = zzxpVar;
                 }
-                return coroutine_suspended;
+                return aVar;
             }
             it = (Iterator) this.zzb;
             zzk = (zzxp) this.zza;
-            ResultKt.throwOnFailure(obj);
+            k6.b(obj);
         }
         if (!it.hasNext()) {
-            Result.Companion companion3 = Result.Companion;
-            return Result.box-impl(Result.constructor-impl(Unit.INSTANCE));
+            return new f(pc.i.a);
         }
         zzar zzarVar = (zzar) it.next();
         zzhk zzhkVar2 = this.zzg;
@@ -101,7 +97,7 @@ final class zzah extends SuspendLambda implements Function2 {
         this.zzc = zzhkVar2;
         this.zzd = 1;
         obj = zzarVar.zzd(zzk, this);
-        if (obj != coroutine_suspended) {
+        if (obj != aVar) {
             zzxp zzxpVar2 = zzk;
             it2 = it;
             zzhkVar = zzhkVar2;
@@ -110,9 +106,9 @@ final class zzah extends SuspendLambda implements Function2 {
             this.zzb = it2;
             this.zzc = null;
             this.zzd = 2;
-            if (zzhj.zzb(zzhkVar, (zzhf) obj, this) != coroutine_suspended) {
+            if (zzhj.zzb(zzhkVar, (zzhf) obj, this) != aVar) {
             }
         }
-        return coroutine_suspended;
+        return aVar;
     }
 }

@@ -4,17 +4,19 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.telephony.TelephonyManager;
-import org.telegram.PhoneFormat.PhoneFormat;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class CallReceiver extends BroadcastReceiver {
-    @Override // android.content.BroadcastReceiver
-    public void onReceive(Context context, Intent intent) {
-        if (intent.getAction().equals("android.intent.action.PHONE_STATE") && TelephonyManager.EXTRA_STATE_RINGING.equals(intent.getStringExtra("state"))) {
-            String stripExceptNumbers = PhoneFormat.stripExceptNumbers(intent.getStringExtra("incoming_number"));
-            SharedConfig.getPreferences().edit().putString("last_call_phone_number", stripExceptNumbers).putLong("last_call_time", System.currentTimeMillis()).apply();
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.didReceiveCall, stripExceptNumbers);
+    public static void checkLastReceivedCall() {
+        String lastReceivedCall = getLastReceivedCall();
+        if (lastReceivedCall != null) {
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didReceiveCall, lastReceivedCall);
         }
+    }
+
+    public static void clearLastCall() {
+        SharedConfig.getPreferences().edit().remove("last_call_phone_number").remove("last_call_time").apply();
     }
 
     public static String getLastReceivedCall() {
@@ -28,14 +30,12 @@ public class CallReceiver extends BroadcastReceiver {
         return null;
     }
 
-    public static void checkLastReceivedCall() {
-        String lastReceivedCall = getLastReceivedCall();
-        if (lastReceivedCall != null) {
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.didReceiveCall, lastReceivedCall);
+    @Override // android.content.BroadcastReceiver
+    public void onReceive(Context context, Intent intent) {
+        if (intent.getAction().equals("android.intent.action.PHONE_STATE") && TelephonyManager.EXTRA_STATE_RINGING.equals(intent.getStringExtra("state"))) {
+            String d = oe.b.d(intent.getStringExtra("incoming_number"), false);
+            SharedConfig.getPreferences().edit().putString("last_call_phone_number", d).putLong("last_call_time", System.currentTimeMillis()).apply();
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didReceiveCall, d);
         }
-    }
-
-    public static void clearLastCall() {
-        SharedConfig.getPreferences().edit().remove("last_call_phone_number").remove("last_call_time").apply();
     }
 }

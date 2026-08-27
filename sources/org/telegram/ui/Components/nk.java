@@ -1,0 +1,34 @@
+package org.telegram.ui.Components;
+
+import android.content.Context;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes3.dex */
+public final class nk extends pf.i0 {
+    public final /* synthetic */ tk J;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nk(tk tkVar, Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
+        super(context, c6Var, z10, false);
+        this.J = tkVar;
+    }
+
+    @Override // f2.q0
+    public final void l() {
+        tk tkVar = this.J;
+        nk nkVar = tkVar.N;
+        org.telegram.ui.ActionBar.v0 v0Var = tkVar.A;
+        if (v0Var != null) {
+            v0Var.setShowSearchProgress(nkVar.F);
+        }
+        TextView textView = tkVar.y;
+        if (textView != null) {
+            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, nkVar.x)));
+        }
+        super.l();
+    }
+}

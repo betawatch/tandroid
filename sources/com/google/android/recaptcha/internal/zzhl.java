@@ -1,14 +1,16 @@
 package com.google.android.recaptcha.internal;
 
+import h7.i8;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.SocketTimeoutException;
 import java.net.UnknownServiceException;
-import kotlin.io.ByteStreamsKt;
-import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.j;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzhl {
     private final HttpURLConnection zza;
@@ -20,24 +22,24 @@ public final class zzhl {
     private final InputStream zzf() {
         try {
             return this.zza.getInputStream();
-        } catch (UnknownServiceException e) {
-            throw new zzcg(zzce.zzc, zzcd.zzaf, e.getMessage(), null, 8, null);
-        } catch (IOException e2) {
-            throw new zzcg(zzce.zzc, zzcd.zzae, e2.getMessage(), null, 8, null);
-        } catch (Exception e3) {
-            throw new zzcg(zzce.zzc, zzcd.zzak, e3.getMessage(), null, 8, null);
+        } catch (UnknownServiceException e9) {
+            throw new zzcg(zzce.zzc, zzcd.zzaf, e9.getMessage(), null, 8, null);
+        } catch (IOException e10) {
+            throw new zzcg(zzce.zzc, zzcd.zzae, e10.getMessage(), null, 8, null);
+        } catch (Exception e11) {
+            throw new zzcg(zzce.zzc, zzcd.zzak, e11.getMessage(), null, 8, null);
         }
     }
 
     private final OutputStream zzg() {
         try {
             return this.zza.getOutputStream();
-        } catch (UnknownServiceException e) {
-            throw new zzcg(zzce.zzc, zzcd.zzaf, e.getMessage(), null, 8, null);
-        } catch (IOException e2) {
-            throw new zzcg(zzce.zzc, zzcd.zzae, e2.getMessage(), null, 8, null);
-        } catch (Exception e3) {
-            throw new zzcg(zzce.zzc, zzcd.zzak, e3.getMessage(), null, 8, null);
+        } catch (UnknownServiceException e9) {
+            throw new zzcg(zzce.zzc, zzcd.zzaf, e9.getMessage(), null, 8, null);
+        } catch (IOException e10) {
+            throw new zzcg(zzce.zzc, zzcd.zzae, e10.getMessage(), null, 8, null);
+        } catch (Exception e11) {
+            throw new zzcg(zzce.zzc, zzcd.zzak, e11.getMessage(), null, 8, null);
         }
     }
 
@@ -56,24 +58,41 @@ public final class zzhl {
                 }
                 throw new zzcg(zzce.zzi, zzcd.zzJ, null, null, 12, null);
             }
-            byte[] readBytes = ByteStreamsKt.readBytes(zzf());
-            if (readBytes.length == 0) {
+            InputStream zzf = zzf();
+            j.e(zzf, "<this>");
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(Math.max(8192, zzf.available()));
+            i8.a(zzf, byteArrayOutputStream);
+            byte[] byteArray = byteArrayOutputStream.toByteArray();
+            j.d(byteArray, "toByteArray(...)");
+            if (byteArray.length == 0) {
                 throw new zzcg(zzce.zzc, zzcd.zzaw, null, null, 12, null);
             }
             try {
-                Object zzb = zztsVar.zzD().zzb(readBytes);
-                Intrinsics.checkNotNull(zzb, "null cannot be cast to non-null type T of com.google.android.libraries.abuse.recaptcha.network.CaptchaFeConnection.getResponse");
+                Object zzb = zztsVar.zzD().zzb(byteArray);
+                j.c(zzb, "null cannot be cast to non-null type T of com.google.android.libraries.abuse.recaptcha.network.CaptchaFeConnection.getResponse");
                 return (zzts) zzb;
-            } catch (Exception e) {
-                throw new zzcg(zzce.zzc, zzcd.zzG, e.getMessage(), null, 8, null);
+            } catch (Exception e9) {
+                throw new zzcg(zzce.zzc, zzcd.zzG, e9.getMessage(), null, 8, null);
             }
-        } catch (Exception e2) {
-            throw new zzcg(zzce.zzc, zzcd.zzah, e2.getMessage(), null, 8, null);
+        } catch (Exception e10) {
+            throw new zzcg(zzce.zzc, zzcd.zzah, e10.getMessage(), null, 8, null);
         }
     }
 
     public final HttpURLConnection zzb() {
         return this.zza;
+    }
+
+    public final void zzc() {
+        try {
+            this.zza.connect();
+        } catch (SocketTimeoutException e9) {
+            throw new zzcg(zzce.zzc, zzcd.zzac, e9.getMessage(), null, 8, null);
+        } catch (IOException e10) {
+            throw new zzcg(zzce.zzc, zzcd.zzad, e10.getMessage(), null, 8, null);
+        } catch (Exception e11) {
+            throw new zzcg(zzce.zzc, zzcd.zzaj, e11.getMessage(), null, 8, null);
+        }
     }
 
     public final void zzd() {
@@ -83,24 +102,12 @@ public final class zzhl {
     public final void zze(byte[] bArr) {
         try {
             zzg().write(bArr);
-        } catch (zzcg e) {
-            throw e;
-        } catch (IOException e2) {
-            throw new zzcg(zzce.zzc, zzcd.zzag, e2.getMessage(), null, 8, null);
-        } catch (Exception e3) {
-            throw new zzcg(zzce.zzc, zzcd.zzal, e3.getMessage(), null, 8, null);
-        }
-    }
-
-    public final void zzc() {
-        try {
-            this.zza.connect();
-        } catch (SocketTimeoutException e) {
-            throw new zzcg(zzce.zzc, zzcd.zzac, e.getMessage(), null, 8, null);
-        } catch (IOException e2) {
-            throw new zzcg(zzce.zzc, zzcd.zzad, e2.getMessage(), null, 8, null);
-        } catch (Exception e3) {
-            throw new zzcg(zzce.zzc, zzcd.zzaj, e3.getMessage(), null, 8, null);
+        } catch (zzcg e9) {
+            throw e9;
+        } catch (IOException e10) {
+            throw new zzcg(zzce.zzc, zzcd.zzag, e10.getMessage(), null, 8, null);
+        } catch (Exception e11) {
+            throw new zzcg(zzce.zzc, zzcd.zzal, e11.getMessage(), null, 8, null);
         }
     }
 }

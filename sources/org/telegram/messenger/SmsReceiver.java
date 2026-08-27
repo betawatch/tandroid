@@ -8,8 +8,14 @@ import android.text.TextUtils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class SmsReceiver extends BroadcastReceiver {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$onReceive$0(String str) {
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didReceiveSmsCode, str);
+    }
+
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
         String str;
@@ -31,17 +37,12 @@ public class SmsReceiver extends BroadcastReceiver {
             }
             Matcher matcher = Pattern.compile("[0-9\\-]+").matcher(str);
             if (matcher.find()) {
-                final String replace = matcher.group(0).replace("-", "");
+                String replace = matcher.group(0).replace("-", "");
                 if (replace.length() >= 3) {
                     if (string != null) {
                         sharedPreferences.edit().putString("sms_hash_code", string + "|" + replace).commit();
                     }
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SmsReceiver$$ExternalSyntheticLambda0
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.didReceiveSmsCode, replace);
-                        }
-                    });
+                    AndroidUtilities.runOnUIThread(new u1(replace, 5));
                 }
             }
         } catch (Throwable th) {

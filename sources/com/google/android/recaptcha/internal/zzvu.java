@@ -2,6 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.util.Iterator;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzvu extends zzsn implements zztt {
     private static final zzvu zzb;
@@ -23,12 +24,12 @@ public final class zzvu extends zzsn implements zztt {
     private zzvu() {
     }
 
-    static /* synthetic */ void zzM(zzvu zzvuVar, String str) {
+    public static /* synthetic */ void zzM(zzvu zzvuVar, String str) {
         str.getClass();
         zzvuVar.zzf = str;
     }
 
-    static /* synthetic */ void zzN(zzvu zzvuVar, String str) {
+    public static /* synthetic */ void zzN(zzvu zzvuVar, String str) {
         str.getClass();
         zzvuVar.zzi = str;
     }
@@ -37,7 +38,7 @@ public final class zzvu extends zzsn implements zztt {
         return (zzvr) zzb.zzq();
     }
 
-    static /* synthetic */ void zzi(zzvu zzvuVar, Iterable iterable) {
+    public static /* synthetic */ void zzi(zzvu zzvuVar, Iterable iterable) {
         zzss zzssVar = zzvuVar.zzk;
         if (!zzssVar.zzc()) {
             zzvuVar.zzk = zzsn.zzz(zzssVar);
@@ -48,37 +49,37 @@ public final class zzvu extends zzsn implements zztt {
         }
     }
 
-    static /* synthetic */ void zzk(zzvu zzvuVar, String str) {
+    public static /* synthetic */ void zzk(zzvu zzvuVar, String str) {
         str.getClass();
         zzvuVar.zzj = str;
     }
 
-    static /* synthetic */ void zzl(zzvu zzvuVar, String str) {
+    public static /* synthetic */ void zzl(zzvu zzvuVar, String str) {
         str.getClass();
         zzvuVar.zzh = str;
     }
 
     @Override // com.google.android.recaptcha.internal.zzsn
-    protected final Object zzh(int i, Object obj, Object obj2) {
+    public final Object zzh(int i10, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i2 = i - 1;
-        if (i2 == 0) {
+        int i11 = i10 - 1;
+        if (i11 == 0) {
             return (byte) 1;
         }
-        if (i2 == 2) {
+        if (i11 == 2) {
             return zzsn.zzF(zzb, "\u0000\u0007\u0000\u0000\u0001\u0007\u0007\u0000\u0001\u0000\u0001\u0004\u0002Ȉ\u0003Ȉ\u0004Ȉ\u0005Ȉ\u0006Ȉ\u0007,", new Object[]{"zze", "zzf", "zzg", "zzh", "zzi", "zzj", "zzk"});
         }
-        if (i2 == 3) {
+        if (i11 == 3) {
             return new zzvu();
         }
         zzvt zzvtVar = null;
-        if (i2 == 4) {
+        if (i11 == 4) {
             return new zzvr(zzvtVar);
         }
-        if (i2 == 5) {
+        if (i11 == 5) {
             return zzb;
         }
-        if (i2 != 6) {
+        if (i11 != 6) {
             throw null;
         }
         zzua zzuaVar2 = zzd;

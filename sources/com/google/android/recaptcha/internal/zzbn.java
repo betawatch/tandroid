@@ -1,18 +1,16 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CompletableDeferredKt;
-import kotlinx.coroutines.sync.Mutex;
+import ad.p;
+import h7.k6;
+import id.f0;
+import kotlin.jvm.internal.j;
+import rc.c;
+import rd.d;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzbn extends SuspendLambda implements Function2 {
+final class zzbn extends i implements p {
     Object zza;
     Object zzb;
     int zzc;
@@ -20,96 +18,98 @@ final class zzbn extends SuspendLambda implements Function2 {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzbn(zzbo zzboVar, Continuation continuation) {
-        super(2, continuation);
+    public zzbn(zzbo zzboVar, c cVar) {
+        super(2, cVar);
         this.zzd = zzboVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        zzbn zzbnVar = new zzbn(this.zzd, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        zzbn zzbnVar = new zzbn(this.zzd, cVar);
         zzbnVar.zze = obj;
         return zzbnVar;
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbn) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzbn) create((zzhk) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x00a6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0049, code lost:
     
-        if (((com.google.android.recaptcha.internal.zzhg) r13).zza(r1, r12) != r0) goto L25;
+        if (r6 != r0) goto L28;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0047, code lost:
-    
-        if (r5.lock(null, r12) != r0) goto L30;
-     */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /* JADX WARN: Removed duplicated region for block: B:11:0x00a4 A[RETURN] */
+    @Override // tc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
         zzbo zzboVar;
-        Mutex mutex;
+        rd.a aVar;
+        Object obj2;
         zzbp zzbpVar;
         zzhk zzhkVar2;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zzc;
+        sc.a aVar2 = sc.a.a;
+        int i10 = this.zzc;
+        pc.i iVar = pc.i.a;
         try {
-            if (i == 0) {
-                ResultKt.throwOnFailure(obj);
+            if (i10 == 0) {
+                k6.b(obj);
                 zzhkVar = (zzhk) this.zze;
                 zzboVar = this.zzd;
-                mutex = zzboVar.zzf;
+                aVar = zzboVar.zzf;
                 this.zze = zzhkVar;
-                this.zza = mutex;
+                this.zza = aVar;
                 this.zzb = zzboVar;
                 this.zzc = 1;
-            } else if (i == 1) {
-                zzboVar = (zzbo) this.zzb;
-                mutex = (Mutex) this.zza;
-                zzhk zzhkVar3 = (zzhk) this.zze;
-                ResultKt.throwOnFailure(obj);
-                zzhkVar = zzhkVar3;
+                d dVar = (d) aVar;
+                Object d = dVar.d(this);
+                obj2 = dVar;
             } else {
-                if (i != 2) {
-                    ResultKt.throwOnFailure(obj);
-                    return Unit.INSTANCE;
+                if (i10 != 1) {
+                    if (i10 != 2) {
+                        k6.b(obj);
+                        return iVar;
+                    }
+                    zzhkVar2 = (zzhk) this.zze;
+                    k6.b(obj);
+                    this.zze = null;
+                    this.zzc = 3;
+                    return ((zzhg) obj).zza(zzhkVar2, this) != aVar2 ? aVar2 : iVar;
                 }
-                zzhkVar2 = (zzhk) this.zze;
-                ResultKt.throwOnFailure(obj);
-                this.zze = null;
-                this.zzc = 3;
+                zzboVar = (zzbo) this.zzb;
+                Object obj3 = (rd.a) this.zza;
+                zzhk zzhkVar3 = (zzhk) this.zze;
+                k6.b(obj);
+                zzhkVar = zzhkVar3;
+                obj2 = obj3;
             }
             zzbpVar = zzboVar.zzc;
-            if (!Intrinsics.areEqual(zzbpVar, zzbp.zza)) {
-                Unit unit = Unit.INSTANCE;
-                mutex.unlock(null);
-                return unit;
+            if (!j.a(zzbpVar, zzbp.zza)) {
+                return iVar;
             }
             zzboVar.zzc = zzbp.zzb;
-            Unit unit2 = Unit.INSTANCE;
-            mutex.unlock(null);
+            ((d) obj2).e(null);
             zzbo zzboVar2 = this.zzd;
-            zzboVar2.zza = CompletableDeferredKt.CompletableDeferred$default(null, 1, null);
-            BuildersKt__Builders_commonKt.launch$default(zzbo.zzb(zzboVar2).zzc(), null, null, new zzbm(zzhkVar, zzboVar2, null), 3, null);
+            zzboVar2.zza = f0.a();
+            f0.q(zzbo.zzb(zzboVar2).zzc(), new zzbm(zzhkVar, zzboVar2, null));
             this.zze = zzhkVar;
             this.zza = null;
             this.zzb = null;
             this.zzc = 2;
             zzhg zzhgVar = new zzhg(new zzbj(zzboVar2, null));
-            if (zzhgVar != coroutine_suspended) {
+            if (zzhgVar != aVar2) {
                 zzhkVar2 = zzhkVar;
                 obj = zzhgVar;
                 this.zze = null;
                 this.zzc = 3;
+                if (((zzhg) obj).zza(zzhkVar2, this) != aVar2) {
+                }
             }
-            return coroutine_suspended;
-        } catch (Throwable th) {
-            mutex.unlock(null);
-            throw th;
+        } finally {
+            ((d) obj2).e(null);
         }
     }
 }

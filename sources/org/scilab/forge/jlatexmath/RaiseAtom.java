@@ -1,6 +1,7 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class RaiseAtom extends Atom {
     private Atom base;
     private float d;
@@ -10,14 +11,37 @@ public class RaiseAtom extends Atom {
     private float r;
     private int runit;
 
-    public RaiseAtom(Atom atom, int i, float f, int i2, float f2, int i3, float f3) {
+    public RaiseAtom(Atom atom, int i10, float f10, int i11, float f11, int i12, float f12) {
         this.base = atom;
-        this.runit = i;
-        this.r = f;
-        this.hunit = i2;
-        this.h = f2;
-        this.dunit = i3;
-        this.d = f3;
+        this.runit = i10;
+        this.r = f10;
+        this.hunit = i11;
+        this.h = f11;
+        this.dunit = i12;
+        this.d = f12;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.Atom
+    public Box createBox(TeXEnvironment teXEnvironment) {
+        Box createBox = this.base.createBox(teXEnvironment);
+        int i10 = this.runit;
+        if (i10 == -1) {
+            createBox.setShift(0.0f);
+        } else {
+            createBox.setShift(SpaceAtom.getFactor(i10, teXEnvironment) * (-this.r));
+        }
+        if (this.hunit == -1) {
+            return createBox;
+        }
+        HorizontalBox horizontalBox = new HorizontalBox(createBox);
+        horizontalBox.setHeight(SpaceAtom.getFactor(this.hunit, teXEnvironment) * this.h);
+        int i11 = this.dunit;
+        if (i11 == -1) {
+            horizontalBox.setDepth(0.0f);
+            return horizontalBox;
+        }
+        horizontalBox.setDepth(SpaceAtom.getFactor(i11, teXEnvironment) * this.d);
+        return horizontalBox;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
@@ -28,28 +52,5 @@ public class RaiseAtom extends Atom {
     @Override // org.scilab.forge.jlatexmath.Atom
     public int getRightType() {
         return this.base.getRightType();
-    }
-
-    @Override // org.scilab.forge.jlatexmath.Atom
-    public Box createBox(TeXEnvironment teXEnvironment) {
-        Box createBox = this.base.createBox(teXEnvironment);
-        int i = this.runit;
-        if (i == -1) {
-            createBox.setShift(0.0f);
-        } else {
-            createBox.setShift((-this.r) * SpaceAtom.getFactor(i, teXEnvironment));
-        }
-        if (this.hunit == -1) {
-            return createBox;
-        }
-        HorizontalBox horizontalBox = new HorizontalBox(createBox);
-        horizontalBox.setHeight(this.h * SpaceAtom.getFactor(this.hunit, teXEnvironment));
-        int i2 = this.dunit;
-        if (i2 == -1) {
-            horizontalBox.setDepth(0.0f);
-            return horizontalBox;
-        }
-        horizontalBox.setDepth(this.d * SpaceAtom.getFactor(i2, teXEnvironment));
-        return horizontalBox;
     }
 }

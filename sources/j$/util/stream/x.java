@@ -3,74 +3,31 @@ package j$.util.stream;
 import j$.util.Spliterator;
 
 /* loaded from: classes2.dex */
-public abstract class x extends y {
-    public final /* synthetic */ int l;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ x(a aVar, int i, int i2) {
-        super(aVar, i);
-        this.l = i2;
-    }
-
+public abstract class x extends z {
     @Override // j$.util.stream.a
-    public final boolean L() {
-        switch (this.l) {
-            case 0:
-                return true;
-            default:
-                return false;
-        }
+    public final boolean P0() {
+        return true;
     }
 
     @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final B sequential() {
-        switch (this.l) {
-            case 0:
-                this.a.k = false;
-                break;
-            default:
-                this.a.k = false;
-                break;
-        }
+    public final c0 sequential() {
+        this.h.r = false;
         return this;
     }
 
     @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final B parallel() {
-        switch (this.l) {
-            case 0:
-                this.a.k = true;
-                break;
-            default:
-                this.a.k = true;
-                break;
-        }
+    public final c0 parallel() {
+        this.h.r = true;
         return this;
     }
 
     @Override // j$.util.stream.BaseStream
     public final BaseStream unordered() {
-        switch (this.l) {
-            case 0:
-                if (!S2.ORDERED.q(this.f)) {
-                    break;
-                } else {
-                    break;
-                }
-            default:
-                if (!S2.ORDERED.q(this.f)) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return new r(this, S2.r, 1);
+        return !v6.ORDERED.m(this.m) ? this : new r(this, v6.r, 1);
     }
 
     @Override // j$.util.stream.a, j$.util.stream.BaseStream
     public final /* bridge */ /* synthetic */ Spliterator spliterator() {
-        switch (this.l) {
-        }
         return spliterator();
     }
 }

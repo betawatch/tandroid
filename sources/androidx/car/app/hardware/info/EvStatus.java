@@ -2,30 +2,18 @@ package androidx.car.app.hardware.info;
 
 import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
+import s.e;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class EvStatus {
     private final CarValue<Boolean> mEvChargePortConnected;
     private final CarValue<Boolean> mEvChargePortOpen;
 
-    public CarValue<Boolean> getEvChargePortOpen() {
-        CarValue<Boolean> carValue = this.mEvChargePortOpen;
-        Objects.requireNonNull(carValue);
-        return carValue;
-    }
-
-    public CarValue<Boolean> getEvChargePortConnected() {
-        CarValue<Boolean> carValue = this.mEvChargePortConnected;
-        Objects.requireNonNull(carValue);
-        return carValue;
-    }
-
-    public String toString() {
-        return "[ EV charge port open: " + this.mEvChargePortOpen + ", EV charge port connected: " + this.mEvChargePortConnected + "]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mEvChargePortOpen, this.mEvChargePortConnected);
+    public EvStatus(e eVar) {
+        eVar.getClass();
+        this.mEvChargePortConnected = null;
+        this.mEvChargePortOpen = null;
     }
 
     public boolean equals(Object obj) {
@@ -39,29 +27,29 @@ public class EvStatus {
         return Objects.equals(this.mEvChargePortConnected, evStatus.mEvChargePortConnected) && Objects.equals(this.mEvChargePortOpen, evStatus.mEvChargePortOpen);
     }
 
-    EvStatus(Builder builder) {
-        this.mEvChargePortConnected = builder.mEvChargePortConnected;
-        this.mEvChargePortOpen = builder.mEvChargePortOpen;
+    public CarValue<Boolean> getEvChargePortConnected() {
+        CarValue<Boolean> carValue = this.mEvChargePortConnected;
+        Objects.requireNonNull(carValue);
+        return carValue;
+    }
+
+    public CarValue<Boolean> getEvChargePortOpen() {
+        CarValue<Boolean> carValue = this.mEvChargePortOpen;
+        Objects.requireNonNull(carValue);
+        return carValue;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mEvChargePortOpen, this.mEvChargePortConnected);
+    }
+
+    public String toString() {
+        return "[ EV charge port open: " + this.mEvChargePortOpen + ", EV charge port connected: " + this.mEvChargePortConnected + "]";
     }
 
     private EvStatus() {
         CarValue<Boolean> carValue = CarValue.UNKNOWN_BOOLEAN;
         this.mEvChargePortOpen = carValue;
         this.mEvChargePortConnected = carValue;
-    }
-
-    public static final class Builder {
-        CarValue mEvChargePortConnected;
-        CarValue mEvChargePortOpen;
-
-        public Builder() {
-            CarValue<Boolean> carValue = CarValue.UNKNOWN_BOOLEAN;
-            this.mEvChargePortOpen = carValue;
-            this.mEvChargePortConnected = carValue;
-        }
-
-        public EvStatus build() {
-            return new EvStatus(this);
-        }
     }
 }

@@ -2,6 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.math.BigInteger;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzkr {
     private static final zzkq zza;
@@ -13,9 +14,9 @@ public final class zzkr {
         zza = new zzkq(11L, 20919936621L ^ pow, (long) Math.pow(2.0d, 48.0d));
     }
 
-    public zzkr(long j, long j2, zzkq zzkqVar) {
+    public zzkr(long j10, long j11, zzkq zzkqVar) {
         this.zzb = zzkqVar;
-        this.zzc = Math.abs(j);
+        this.zzc = Math.abs(j10);
     }
 
     public final long zza() {

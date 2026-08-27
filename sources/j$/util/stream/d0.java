@@ -1,37 +1,39 @@
 package j$.util.stream;
 
-import java.util.function.LongConsumer;
+import j$.util.Spliterator;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-public final class d0 extends f0 {
-    public final /* synthetic */ int m;
-    public final /* synthetic */ Object n;
+public final class d0 implements b8 {
+    public final int a;
+    public final Object b;
+    public final Predicate c;
+    public final Supplier d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ d0(a aVar, int i, Object obj, int i2) {
-        super(aVar, i, 1);
-        this.m = i2;
-        this.n = obj;
+    public d0(boolean z10, w6 w6Var, Object obj, Predicate predicate, Supplier supplier) {
+        this.a = (z10 ? 0 : v6.r) | v6.u;
+        this.b = obj;
+        this.c = predicate;
+        this.d = supplier;
     }
 
-    @Override // j$.util.stream.a
-    public final g2 M(int i, g2 g2Var) {
-        switch (this.m) {
-            case 0:
-                return new c0(this, g2Var);
-            case 1:
-                return new a0(this, g2Var, 5);
-            case 2:
-                return new U1(this, g2Var);
-            default:
-                return new l(this, g2Var, 5);
-        }
+    @Override // j$.util.stream.b8
+    public final int v() {
+        return this.a;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d0(g0 g0Var, LongConsumer longConsumer) {
-        super(g0Var, 0, 1);
-        this.m = 1;
-        this.n = longConsumer;
+    @Override // j$.util.stream.b8
+    public final Object f(a aVar, Spliterator spliterator) {
+        c8 c8Var = (c8) this.d.get();
+        aVar.F0(spliterator, c8Var);
+        Object obj = c8Var.get();
+        return obj != null ? obj : this.b;
+    }
+
+    @Override // j$.util.stream.b8
+    public final Object i(t3 t3Var, Spliterator spliterator) {
+        a aVar = (a) t3Var;
+        return new j0(this, v6.ORDERED.m(aVar.m), aVar, spliterator).invoke();
     }
 }

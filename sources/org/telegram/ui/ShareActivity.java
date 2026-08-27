@@ -1,8 +1,6 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -19,14 +17,15 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ShareAlert;
 
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes3.dex */
 public class ShareActivity extends Activity {
-    private Dialog visibleDialog;
+    public static final /* synthetic */ int b = 0;
+    public org.telegram.ui.Components.sp0 a;
 
     @Override // android.app.Activity
-    protected void onCreate(Bundle bundle) {
+    public final void onCreate(Bundle bundle) {
         ApplicationLoader.postInitApplication();
         AndroidUtilities.checkDisplaySize(this, getResources().getConfiguration());
         AndroidUtilities.setPreferredMaxRefreshRate(getWindow());
@@ -65,41 +64,29 @@ public class ShareActivity extends Activity {
         MessageObject messageObject = new MessageObject(UserConfig.selectedAccount, TLdeserialize, false, true);
         messageObject.messageOwner.with_my_score = true;
         try {
-            ShareAlert createShareAlert = ShareAlert.createShareAlert(this, messageObject, null, false, string2, false);
-            this.visibleDialog = createShareAlert;
-            createShareAlert.setCanceledOnTouchOutside(true);
-            this.visibleDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ShareActivity$$ExternalSyntheticLambda0
-                @Override // android.content.DialogInterface.OnDismissListener
-                public final void onDismiss(DialogInterface dialogInterface) {
-                    ShareActivity.$r8$lambda$4KdOU0rHbabAC8AjuUf4d8KX8Hg(ShareActivity.this, dialogInterface);
-                }
-            });
-            this.visibleDialog.show();
-        } catch (Exception e) {
-            FileLog.e(e);
+            org.telegram.ui.Components.sp0 N0 = org.telegram.ui.Components.sp0.N0(this, messageObject, null, false, string2);
+            this.a = N0;
+            N0.setCanceledOnTouchOutside(true);
+            this.a.setOnDismissListener(new s5(this, 16));
+            this.a.show();
+        } catch (Exception e9) {
+            FileLog.e(e9);
             finish();
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$4KdOU0rHbabAC8AjuUf4d8KX8Hg(ShareActivity shareActivity, DialogInterface dialogInterface) {
-        if (!shareActivity.isFinishing()) {
-            shareActivity.finish();
-        }
-        shareActivity.visibleDialog = null;
-    }
-
     @Override // android.app.Activity
-    public void onPause() {
+    public final void onPause() {
         super.onPause();
         try {
-            Dialog dialog = this.visibleDialog;
-            if (dialog == null || !dialog.isShowing()) {
+            org.telegram.ui.Components.sp0 sp0Var = this.a;
+            if (sp0Var == null || !sp0Var.isShowing()) {
                 return;
             }
-            this.visibleDialog.dismiss();
-            this.visibleDialog = null;
-        } catch (Exception e) {
-            FileLog.e(e);
+            this.a.dismiss();
+            this.a = null;
+        } catch (Exception e9) {
+            FileLog.e(e9);
         }
     }
 }

@@ -2,9 +2,9 @@ package j$.time;
 
 import j$.time.zone.ZoneRules;
 import j$.util.Objects;
+import java.io.DataOutput;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutput;
 
 /* loaded from: classes2.dex */
 public final class u extends ZoneId {
@@ -13,22 +13,22 @@ public final class u extends ZoneId {
     public final String b;
     public final transient ZoneRules c;
 
-    public static u L(String str, boolean z) {
+    public static u L(String str, boolean z10) {
         ZoneRules zoneRules;
         Objects.requireNonNull(str, "zoneId");
         int length = str.length();
         if (length >= 2) {
-            for (int i = 0; i < length; i++) {
-                char charAt = str.charAt(i);
-                if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && ((charAt != '/' || i == 0) && ((charAt < '0' || charAt > '9' || i == 0) && ((charAt != '~' || i == 0) && ((charAt != '.' || i == 0) && ((charAt != '_' || i == 0) && ((charAt != '+' || i == 0) && (charAt != '-' || i == 0))))))))) {
+            for (int i10 = 0; i10 < length; i10++) {
+                char charAt = str.charAt(i10);
+                if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && ((charAt != '/' || i10 == 0) && ((charAt < '0' || charAt > '9' || i10 == 0) && ((charAt != '~' || i10 == 0) && ((charAt != '.' || i10 == 0) && ((charAt != '_' || i10 == 0) && ((charAt != '+' || i10 == 0) && (charAt != '-' || i10 == 0))))))))) {
                     throw new b("Invalid ID for region-based ZoneId, invalid format: ".concat(str));
                 }
             }
             try {
                 zoneRules = j$.time.zone.h.a(str);
-            } catch (j$.time.zone.f e) {
-                if (z) {
-                    throw e;
+            } catch (j$.time.zone.f e9) {
+                if (z10) {
+                    throw e9;
                 }
                 zoneRules = null;
             }
@@ -62,8 +62,8 @@ public final class u extends ZoneId {
     }
 
     @Override // j$.time.ZoneId
-    public final void K(ObjectOutput objectOutput) {
-        objectOutput.writeByte(7);
-        objectOutput.writeUTF(this.b);
+    public final void K(DataOutput dataOutput) {
+        dataOutput.writeByte(7);
+        dataOutput.writeUTF(this.b);
     }
 }

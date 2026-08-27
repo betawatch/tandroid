@@ -1,12 +1,14 @@
 package com.google.android.recaptcha.internal;
 
+import a9.p;
 import java.nio.charset.Charset;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 class zzqk extends zzqj {
     protected final byte[] zza;
 
-    zzqk(byte[] bArr) {
+    public zzqk(byte[] bArr) {
         super(null);
         bArr.getClass();
         this.zza = bArr;
@@ -37,34 +39,34 @@ class zzqk extends zzqj {
             throw new IllegalArgumentException("Length too large: " + zzd + zzd());
         }
         if (zzd > zzqkVar.zzd()) {
-            throw new IllegalArgumentException("Ran off end of other: 0, " + zzd + ", " + zzqkVar.zzd());
+            throw new IllegalArgumentException(p.j(zzd, zzqkVar.zzd(), "Ran off end of other: 0, ", ", "));
         }
         byte[] bArr = this.zza;
         byte[] bArr2 = zzqkVar.zza;
         zzqkVar.zzc();
-        int i = 0;
-        int i2 = 0;
-        while (i < zzd) {
-            if (bArr[i] != bArr2[i2]) {
+        int i10 = 0;
+        int i11 = 0;
+        while (i10 < zzd) {
+            if (bArr[i10] != bArr2[i11]) {
                 return false;
             }
-            i++;
-            i2++;
+            i10++;
+            i11++;
         }
         return true;
     }
 
     @Override // com.google.android.recaptcha.internal.zzqm
-    public byte zza(int i) {
-        return this.zza[i];
+    public byte zza(int i10) {
+        return this.zza[i10];
     }
 
     @Override // com.google.android.recaptcha.internal.zzqm
-    byte zzb(int i) {
-        return this.zza[i];
+    public byte zzb(int i10) {
+        return this.zza[i10];
     }
 
-    protected int zzc() {
+    public int zzc() {
         return 0;
     }
 
@@ -74,28 +76,28 @@ class zzqk extends zzqj {
     }
 
     @Override // com.google.android.recaptcha.internal.zzqm
-    protected void zze(byte[] bArr, int i, int i2, int i3) {
-        System.arraycopy(this.zza, 0, bArr, 0, i3);
+    public void zze(byte[] bArr, int i10, int i11, int i12) {
+        System.arraycopy(this.zza, 0, bArr, 0, i12);
     }
 
     @Override // com.google.android.recaptcha.internal.zzqm
-    protected final int zzf(int i, int i2, int i3) {
-        return zzsv.zzb(i, this.zza, 0, i3);
+    public final int zzf(int i10, int i11, int i12) {
+        return zzsv.zzb(i10, this.zza, 0, i12);
     }
 
     @Override // com.google.android.recaptcha.internal.zzqm
-    public final zzqm zzg(int i, int i2) {
-        int zzj = zzqm.zzj(0, i2, zzd());
+    public final zzqm zzg(int i10, int i11) {
+        int zzj = zzqm.zzj(0, i11, zzd());
         return zzj == 0 ? zzqm.zzb : new zzqh(this.zza, 0, zzj);
     }
 
     @Override // com.google.android.recaptcha.internal.zzqm
-    protected final String zzh(Charset charset) {
+    public final String zzh(Charset charset) {
         return new String(this.zza, 0, zzd(), charset);
     }
 
     @Override // com.google.android.recaptcha.internal.zzqm
-    final void zzi(zzqe zzqeVar) {
+    public final void zzi(zzqe zzqeVar) {
         ((zzqs) zzqeVar).zzc(this.zza, 0, zzd());
     }
 }

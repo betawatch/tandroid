@@ -6,101 +6,37 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class LruCache<T> {
     private final LinkedHashMap<String, T> map;
     private final LinkedHashMap<String, ArrayList<String>> mapFilters;
     private int maxSize;
     private int size;
 
-    protected void entryRemoved(boolean z, String str, T t, T t2) {
-    }
-
-    protected int sizeOf(String str, T t) {
-        return 1;
-    }
-
-    public LruCache(int i) {
-        if (i <= 0) {
+    public LruCache(int i10) {
+        if (i10 <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
-        this.maxSize = i;
+        this.maxSize = i10;
         this.map = new LinkedHashMap<>(0, 0.75f, true);
         this.mapFilters = new LinkedHashMap<>();
     }
 
-    public final T get(String str) {
-        if (str == null) {
-            throw new NullPointerException("key == null");
+    private int safeSizeOf(String str, T t10) {
+        int sizeOf = sizeOf(str, t10);
+        if (sizeOf >= 0) {
+            return sizeOf;
         }
-        synchronized (this) {
-            try {
-                T t = this.map.get(str);
-                if (t != null) {
-                    return t;
-                }
-                return null;
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
+        throw new IllegalStateException("Negative size: " + str + "=" + t10);
     }
 
-    public ArrayList<String> getFilterKeys(String str) {
-        ArrayList<String> arrayList = this.mapFilters.get(str);
-        if (arrayList != null) {
-            return new ArrayList<>(arrayList);
-        }
-        return null;
-    }
-
-    public void moveToFront(String str) {
-        T remove = this.map.remove(str);
-        if (remove != null) {
-            this.map.put(str, remove);
-        }
-    }
-
-    public T put(String str, T t) {
-        T put;
-        if (str == null || t == null) {
-            throw new NullPointerException("key == null || value == null");
-        }
-        synchronized (this) {
-            try {
-                this.size += safeSizeOf(str, t);
-                put = this.map.put(str, t);
-                if (put != null) {
-                    this.size -= safeSizeOf(str, put);
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        String[] split = str.split("@");
-        if (split.length > 1) {
-            ArrayList<String> arrayList = this.mapFilters.get(split[0]);
-            if (arrayList == null) {
-                arrayList = new ArrayList<>();
-                this.mapFilters.put(split[0], arrayList);
-            }
-            if (!arrayList.contains(split[1])) {
-                arrayList.add(split[1]);
-            }
-        }
-        if (put != null) {
-            entryRemoved(false, str, put, t);
-        }
-        trimToSize(this.maxSize, str);
-        return put;
-    }
-
-    private void trimToSize(int i, String str) {
+    private void trimToSize(int i10, String str) {
         ArrayList<String> arrayList;
         synchronized (this) {
             try {
                 Iterator<Map.Entry<String, T>> it = this.map.entrySet().iterator();
-                while (it.hasNext() && this.size > i && !this.map.isEmpty()) {
+                while (it.hasNext() && this.size > i10 && !this.map.isEmpty()) {
                     Map.Entry<String, T> next = it.next();
                     String key = next.getKey();
                     if (str == null || !str.equals(key)) {
@@ -120,6 +56,88 @@ public class LruCache<T> {
             } finally {
             }
         }
+    }
+
+    public boolean contains(String str) {
+        return this.map.containsKey(str);
+    }
+
+    public final synchronized Set<Map.Entry<String, T>> entrySet() {
+        return this.map.entrySet();
+    }
+
+    public final void evictAll() {
+        trimToSize(-1, null);
+    }
+
+    public final T get(String str) {
+        if (str == null) {
+            throw new NullPointerException("key == null");
+        }
+        synchronized (this) {
+            try {
+                T t10 = this.map.get(str);
+                if (t10 != null) {
+                    return t10;
+                }
+                return null;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    public ArrayList<String> getFilterKeys(String str) {
+        ArrayList<String> arrayList = this.mapFilters.get(str);
+        if (arrayList != null) {
+            return new ArrayList<>(arrayList);
+        }
+        return null;
+    }
+
+    public final synchronized int maxSize() {
+        return this.maxSize;
+    }
+
+    public void moveToFront(String str) {
+        T remove = this.map.remove(str);
+        if (remove != null) {
+            this.map.put(str, remove);
+        }
+    }
+
+    public T put(String str, T t10) {
+        T put;
+        if (str == null || t10 == null) {
+            throw new NullPointerException("key == null || value == null");
+        }
+        synchronized (this) {
+            try {
+                this.size += safeSizeOf(str, t10);
+                put = this.map.put(str, t10);
+                if (put != null) {
+                    this.size -= safeSizeOf(str, put);
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        String[] split = str.split("@");
+        if (split.length > 1) {
+            ArrayList<String> arrayList = this.mapFilters.get(split[0]);
+            if (arrayList == null) {
+                arrayList = new ArrayList<>();
+                this.mapFilters.put(split[0], arrayList);
+            }
+            if (!arrayList.contains(split[1])) {
+                arrayList.add(split[1]);
+            }
+        }
+        if (put != null) {
+            entryRemoved(false, str, put, t10);
+        }
+        trimToSize(this.maxSize, str);
+        return put;
     }
 
     public final T remove(String str) {
@@ -151,31 +169,14 @@ public class LruCache<T> {
         return remove;
     }
 
-    public boolean contains(String str) {
-        return this.map.containsKey(str);
-    }
-
-    private int safeSizeOf(String str, T t) {
-        int sizeOf = sizeOf(str, t);
-        if (sizeOf >= 0) {
-            return sizeOf;
-        }
-        throw new IllegalStateException("Negative size: " + str + "=" + t);
-    }
-
-    public final void evictAll() {
-        trimToSize(-1, null);
-    }
-
     public final synchronized int size() {
         return this.size;
     }
 
-    public final synchronized int maxSize() {
-        return this.maxSize;
+    public int sizeOf(String str, T t10) {
+        return 1;
     }
 
-    public final synchronized Set<Map.Entry<String, T>> entrySet() {
-        return this.map.entrySet();
+    public void entryRemoved(boolean z10, String str, T t10, T t11) {
     }
 }

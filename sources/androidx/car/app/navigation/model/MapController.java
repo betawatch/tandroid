@@ -3,33 +3,14 @@ package androidx.car.app.navigation.model;
 import androidx.car.app.model.ActionStrip;
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class MapController {
     private final ActionStrip mMapActionStrip;
-    private final PanModeDelegate mPanModeDelegate;
+    private final g mPanModeDelegate;
 
-    public static final class Builder {
-    }
-
-    MapController(Builder builder) {
+    public MapController(b bVar) {
         throw null;
-    }
-
-    private MapController() {
-        this.mPanModeDelegate = null;
-        this.mMapActionStrip = null;
-    }
-
-    public ActionStrip getMapActionStrip() {
-        return this.mMapActionStrip;
-    }
-
-    public PanModeDelegate getPanModeDelegate() {
-        return this.mPanModeDelegate;
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mPanModeDelegate, this.mMapActionStrip);
     }
 
     public boolean equals(Object obj) {
@@ -41,5 +22,22 @@ public final class MapController {
         }
         MapController mapController = (MapController) obj;
         return Boolean.valueOf(this.mPanModeDelegate == null).equals(Boolean.valueOf(mapController.mPanModeDelegate == null)) && Objects.equals(this.mMapActionStrip, mapController.mMapActionStrip);
+    }
+
+    public ActionStrip getMapActionStrip() {
+        return this.mMapActionStrip;
+    }
+
+    public g getPanModeDelegate() {
+        return this.mPanModeDelegate;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mPanModeDelegate, this.mMapActionStrip);
+    }
+
+    private MapController() {
+        this.mPanModeDelegate = null;
+        this.mMapActionStrip = null;
     }
 }

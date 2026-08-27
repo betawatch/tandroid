@@ -16,8 +16,14 @@ public final class f implements ChronoLocalDateTime, Temporal, j$.time.temporal.
     public final transient b a;
     public final transient j$.time.h b;
 
+    @Override // java.lang.Comparable
+    /* renamed from: C */
+    public final /* synthetic */ int compareTo(ChronoLocalDateTime chronoLocalDateTime) {
+        return j$.com.android.tools.r8.a.f(this, chronoLocalDateTime);
+    }
+
     @Override // j$.time.temporal.l
-    public final /* synthetic */ Object r(j$.time.format.a aVar) {
+    public final /* synthetic */ Object m(j$.time.format.a aVar) {
         return j$.com.android.tools.r8.a.t(this, aVar);
     }
 
@@ -31,28 +37,12 @@ public final class f implements ChronoLocalDateTime, Temporal, j$.time.temporal.
         return j$.com.android.tools.r8.a.y(this, zoneOffset);
     }
 
-    @Override // java.lang.Comparable
-    /* renamed from: z */
-    public final /* synthetic */ int compareTo(ChronoLocalDateTime chronoLocalDateTime) {
-        return j$.com.android.tools.r8.a.f(this, chronoLocalDateTime);
-    }
-
-    public static f E(k kVar, Temporal temporal) {
+    public static f G(k kVar, Temporal temporal) {
         f fVar = (f) temporal;
-        if (kVar.equals(fVar.a.b())) {
+        if (kVar.equals(fVar.a.a())) {
             return fVar;
         }
-        throw new ClassCastException("Chronology mismatch, required: " + kVar.getId() + ", actual: " + fVar.a.b().getId());
-    }
-
-    @Override // j$.time.chrono.ChronoLocalDateTime
-    public final k b() {
-        return this.a.b();
-    }
-
-    @Override // j$.time.temporal.Temporal
-    public final Temporal l(long j, ChronoUnit chronoUnit) {
-        return E(this.a.b(), j$.time.temporal.p.b(this, j, chronoUnit));
+        throw new ClassCastException("Chronology mismatch, required: " + kVar.getId() + ", actual: " + fVar.a.a().getId());
     }
 
     public f(b bVar, j$.time.h hVar) {
@@ -64,195 +54,196 @@ public final class f implements ChronoLocalDateTime, Temporal, j$.time.temporal.
 
     public final f K(Temporal temporal, j$.time.h hVar) {
         b bVar = this.a;
-        return (bVar == temporal && this.b == hVar) ? this : new f(d.E(bVar.b(), temporal), hVar);
+        return (bVar == temporal && this.b == hVar) ? this : new f(d.G(bVar.a(), temporal), hVar);
     }
 
     @Override // j$.time.chrono.ChronoLocalDateTime
-    public final b d() {
+    public final k a() {
+        return this.a.a();
+    }
+
+    @Override // j$.time.chrono.ChronoLocalDateTime
+    public final b f() {
         return this.a;
     }
 
+    public final int hashCode() {
+        return this.a.hashCode() ^ this.b.hashCode();
+    }
+
+    public final String toString() {
+        return this.a.toString() + "T" + this.b.toString();
+    }
+
+    @Override // j$.time.temporal.Temporal
+    public final Temporal w(long j10, ChronoUnit chronoUnit) {
+        return G(this.a.a(), j$.time.temporal.p.b(this, j10, chronoUnit));
+    }
+
     @Override // j$.time.chrono.ChronoLocalDateTime
-    public final j$.time.h c() {
+    public final j$.time.h b() {
         return this.b;
     }
 
     @Override // j$.time.temporal.l
-    public final boolean h(j$.time.temporal.o oVar) {
+    public final boolean e(j$.time.temporal.o oVar) {
         if (!(oVar instanceof j$.time.temporal.a)) {
-            return oVar != null && oVar.p(this);
+            return oVar != null && oVar.j(this);
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        return aVar.u() || aVar.E();
+        return aVar.isDateBased() || aVar.y();
     }
 
     @Override // j$.time.temporal.l
-    public final j$.time.temporal.s q(j$.time.temporal.o oVar) {
+    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            if (!((j$.time.temporal.a) oVar).E()) {
-                return this.a.q(oVar);
+            if (!((j$.time.temporal.a) oVar).y()) {
+                return this.a.l(oVar);
             }
             j$.time.h hVar = this.b;
             hVar.getClass();
             return j$.time.temporal.p.d(hVar, oVar);
         }
-        return oVar.r(this);
+        return oVar.k(this);
     }
 
     @Override // j$.time.temporal.l
-    public final int o(j$.time.temporal.o oVar) {
+    public final int j(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            return ((j$.time.temporal.a) oVar).E() ? this.b.o(oVar) : this.a.o(oVar);
+            return ((j$.time.temporal.a) oVar).y() ? this.b.j(oVar) : this.a.j(oVar);
         }
-        return q(oVar).a(u(oVar), oVar);
+        return l(oVar).a(y(oVar), oVar);
     }
 
     @Override // j$.time.temporal.l
-    public final long u(j$.time.temporal.o oVar) {
+    public final long y(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            return ((j$.time.temporal.a) oVar).E() ? this.b.u(oVar) : this.a.u(oVar);
+            return ((j$.time.temporal.a) oVar).y() ? this.b.y(oVar) : this.a.y(oVar);
         }
-        return oVar.o(this);
+        return oVar.m(this);
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal p(LocalDate localDate) {
+    public final Temporal k(LocalDate localDate) {
         if (j$.time.c.b(localDate)) {
             return K(localDate, this.b);
         }
-        k b = this.a.b();
+        k a2 = this.a.a();
         localDate.getClass();
-        return E(b, (f) j$.com.android.tools.r8.a.a(localDate, this));
+        return G(a2, (f) j$.com.android.tools.r8.a.a(localDate, this));
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: J, reason: merged with bridge method [inline-methods] */
-    public final f e(long j, j$.time.temporal.o oVar) {
-        boolean z = oVar instanceof j$.time.temporal.a;
-        b bVar = this.a;
-        if (z) {
-            boolean E = ((j$.time.temporal.a) oVar).E();
-            j$.time.h hVar = this.b;
-            if (E) {
-                return K(bVar, hVar.e(j, oVar));
+    public final f c(long j10, j$.time.temporal.o oVar) {
+        if (oVar instanceof j$.time.temporal.a) {
+            if (((j$.time.temporal.a) oVar).y()) {
+                return K(this.a, this.b.c(j10, oVar));
             }
-            return K(bVar.e(j, oVar), hVar);
+            return K(this.a.c(j10, oVar), this.b);
         }
-        return E(bVar.b(), oVar.q(this, j));
+        return G(this.a.a(), oVar.q(this, j10));
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: H, reason: merged with bridge method [inline-methods] */
-    public final f f(long j, j$.time.temporal.q qVar) {
-        boolean z = qVar instanceof ChronoUnit;
-        b bVar = this.a;
-        if (z) {
-            int i = e.a[((ChronoUnit) qVar).ordinal()];
-            j$.time.h hVar = this.b;
-            switch (i) {
-                case 1:
-                    return I(this.a, 0L, 0L, 0L, j);
-                case 2:
-                    f K = K(bVar.f(j / 86400000000L, (j$.time.temporal.q) ChronoUnit.DAYS), hVar);
-                    return K.I(K.a, 0L, 0L, 0L, (j % 86400000000L) * 1000);
-                case 3:
-                    f K2 = K(bVar.f(j / 86400000, (j$.time.temporal.q) ChronoUnit.DAYS), hVar);
-                    return K2.I(K2.a, 0L, 0L, 0L, (j % 86400000) * 1000000);
-                case 4:
-                    return I(this.a, 0L, 0L, j, 0L);
-                case 5:
-                    return I(this.a, 0L, j, 0L, 0L);
-                case 6:
-                    return I(this.a, j, 0L, 0L, 0L);
-                case 7:
-                    f K3 = K(bVar.f(j / 256, (j$.time.temporal.q) ChronoUnit.DAYS), hVar);
-                    return K3.I(K3.a, (j % 256) * 12, 0L, 0L, 0L);
-                default:
-                    return K(bVar.f(j, qVar), hVar);
-            }
+    public final f d(long j10, j$.time.temporal.q qVar) {
+        if (!(qVar instanceof ChronoUnit)) {
+            return G(this.a.a(), qVar.j(this, j10));
         }
-        return E(bVar.b(), qVar.l(this, j));
+        switch (e.a[((ChronoUnit) qVar).ordinal()]) {
+            case 1:
+                return I(this.a, 0L, 0L, 0L, j10);
+            case 2:
+                f K = K(this.a.d(j10 / 86400000000L, (j$.time.temporal.q) ChronoUnit.DAYS), this.b);
+                return K.I(K.a, 0L, 0L, 0L, (j10 % 86400000000L) * 1000);
+            case 3:
+                f K2 = K(this.a.d(j10 / 86400000, (j$.time.temporal.q) ChronoUnit.DAYS), this.b);
+                return K2.I(K2.a, 0L, 0L, 0L, (j10 % 86400000) * 1000000);
+            case 4:
+                return I(this.a, 0L, 0L, j10, 0L);
+            case 5:
+                return I(this.a, 0L, j10, 0L, 0L);
+            case 6:
+                return I(this.a, j10, 0L, 0L, 0L);
+            case 7:
+                f K3 = K(this.a.d(j10 / 256, (j$.time.temporal.q) ChronoUnit.DAYS), this.b);
+                return K3.I(K3.a, (j10 % 256) * 12, 0L, 0L, 0L);
+            default:
+                return K(this.a.d(j10, qVar), this.b);
+        }
     }
 
-    public final f I(b bVar, long j, long j2, long j3, long j4) {
-        long j5 = j | j2 | j3 | j4;
-        j$.time.h hVar = this.b;
-        if (j5 == 0) {
-            return K(bVar, hVar);
+    public final f I(b bVar, long j10, long j11, long j12, long j13) {
+        if ((j10 | j11 | j12 | j13) == 0) {
+            return K(bVar, this.b);
         }
-        long j6 = j2 / 1440;
-        long j7 = j / 24;
-        long j8 = (j2 % 1440) * 60000000000L;
-        long j9 = ((j % 24) * 3600000000000L) + j8 + ((j3 % 86400) * 1000000000) + (j4 % 86400000000000L);
-        long R = hVar.R();
-        long j10 = j9 + R;
-        long S = j$.com.android.tools.r8.a.S(j10, 86400000000000L) + j7 + j6 + (j3 / 86400) + (j4 / 86400000000000L);
-        long R2 = j$.com.android.tools.r8.a.R(j10, 86400000000000L);
-        if (R2 != R) {
-            hVar = j$.time.h.K(R2);
-        }
-        return K(bVar.f(S, (j$.time.temporal.q) ChronoUnit.DAYS), hVar);
+        long j14 = j10 / 24;
+        long j15 = ((j10 % 24) * 3600000000000L) + ((j11 % 1440) * 60000000000L) + ((j12 % 86400) * 1000000000) + (j13 % 86400000000000L);
+        long R = this.b.R();
+        long j16 = j15 + R;
+        long S = j$.com.android.tools.r8.a.S(j16, 86400000000000L) + j14 + (j11 / 1440) + (j12 / 86400) + (j13 / 86400000000000L);
+        long R2 = j$.com.android.tools.r8.a.R(j16, 86400000000000L);
+        return K(bVar.d(S, (j$.time.temporal.q) ChronoUnit.DAYS), R2 == R ? this.b : j$.time.h.K(R2));
     }
 
     @Override // j$.time.chrono.ChronoLocalDateTime
-    public final ChronoZonedDateTime t(ZoneOffset zoneOffset) {
-        return j.E(zoneOffset, null, this);
+    public final ChronoZonedDateTime n(ZoneOffset zoneOffset) {
+        return j.G(zoneOffset, null, this);
     }
 
     @Override // j$.time.temporal.Temporal
     public final long g(Temporal temporal, j$.time.temporal.q qVar) {
         Objects.requireNonNull(temporal, "endExclusive");
-        b bVar = this.a;
-        ChronoLocalDateTime s = bVar.b().s(temporal);
+        ChronoLocalDateTime B = this.a.a().B(temporal);
         if (!(qVar instanceof ChronoUnit)) {
             Objects.requireNonNull(qVar, "unit");
-            return qVar.between(this, s);
+            return qVar.between(this, B);
         }
-        ChronoUnit chronoUnit = ChronoUnit.DAYS;
-        boolean z = ((ChronoUnit) qVar).compareTo(chronoUnit) < 0;
-        j$.time.h hVar = this.b;
-        if (!z) {
-            b d = s.d();
-            if (s.c().compareTo(hVar) < 0) {
-                d = d.l(1L, chronoUnit);
+        ChronoUnit chronoUnit = (ChronoUnit) qVar;
+        ChronoUnit chronoUnit2 = ChronoUnit.DAYS;
+        if (chronoUnit.compareTo(chronoUnit2) >= 0) {
+            b f10 = B.f();
+            if (B.b().compareTo(this.b) < 0) {
+                f10 = f10.w(1L, chronoUnit2);
             }
-            return bVar.g(d, qVar);
+            return this.a.g(f10, qVar);
         }
         j$.time.temporal.a aVar = j$.time.temporal.a.EPOCH_DAY;
-        long u = s.u(aVar) - bVar.u(aVar);
-        switch (e.a[((ChronoUnit) qVar).ordinal()]) {
+        long y10 = B.y(aVar) - this.a.y(aVar);
+        switch (e.a[chronoUnit.ordinal()]) {
             case 1:
-                u = j$.com.android.tools.r8.a.T(u, 86400000000000L);
+                y10 = j$.com.android.tools.r8.a.T(y10, 86400000000000L);
                 break;
             case 2:
-                u = j$.com.android.tools.r8.a.T(u, 86400000000L);
+                y10 = j$.com.android.tools.r8.a.T(y10, 86400000000L);
                 break;
             case 3:
-                u = j$.com.android.tools.r8.a.T(u, 86400000L);
+                y10 = j$.com.android.tools.r8.a.T(y10, 86400000L);
                 break;
             case 4:
-                u = j$.com.android.tools.r8.a.T(u, 86400);
+                y10 = j$.com.android.tools.r8.a.T(y10, 86400);
                 break;
             case 5:
-                u = j$.com.android.tools.r8.a.T(u, 1440);
+                y10 = j$.com.android.tools.r8.a.T(y10, 1440);
                 break;
             case 6:
-                u = j$.com.android.tools.r8.a.T(u, 24);
+                y10 = j$.com.android.tools.r8.a.T(y10, 24);
                 break;
             case 7:
-                u = j$.com.android.tools.r8.a.T(u, 2);
+                y10 = j$.com.android.tools.r8.a.T(y10, 2);
                 break;
         }
-        return j$.com.android.tools.r8.a.O(u, hVar.g(s.c(), qVar));
+        return j$.com.android.tools.r8.a.O(y10, this.b.g(B.b(), qVar));
     }
 
     @Override // j$.time.temporal.m
-    public final Temporal x(Temporal temporal) {
-        return temporal.e(d().v(), j$.time.temporal.a.EPOCH_DAY).e(c().R(), j$.time.temporal.a.NANO_OF_DAY);
+    public final Temporal q(Temporal temporal) {
+        return temporal.c(f().z(), j$.time.temporal.a.EPOCH_DAY).c(b().R(), j$.time.temporal.a.NANO_OF_DAY);
     }
 
     private Object writeReplace() {
-        return new D((byte) 2, this);
+        return new d0((byte) 2, this);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
@@ -264,13 +255,5 @@ public final class f implements ChronoLocalDateTime, Temporal, j$.time.temporal.
             return true;
         }
         return (obj instanceof ChronoLocalDateTime) && j$.com.android.tools.r8.a.f(this, (ChronoLocalDateTime) obj) == 0;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode() ^ this.b.hashCode();
-    }
-
-    public final String toString() {
-        return this.a.toString() + "T" + this.b.toString();
     }
 }

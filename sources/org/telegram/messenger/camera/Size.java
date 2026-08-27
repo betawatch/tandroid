@@ -1,21 +1,33 @@
 package org.telegram.messenger.camera;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public final class Size {
     public final int mHeight;
     public final int mWidth;
 
-    public Size(int i, int i2) {
-        this.mWidth = i;
-        this.mHeight = i2;
+    public Size(int i10, int i11) {
+        this.mWidth = i10;
+        this.mHeight = i11;
     }
 
-    public int getWidth() {
-        return this.mWidth;
+    private static NumberFormatException invalidSize(String str) {
+        throw new NumberFormatException(a9.p.m("Invalid Size: \"", str, "\""));
     }
 
-    public int getHeight() {
-        return this.mHeight;
+    public static Size parseSize(String str) {
+        int indexOf = str.indexOf(42);
+        if (indexOf < 0) {
+            indexOf = str.indexOf(120);
+        }
+        if (indexOf < 0) {
+            throw invalidSize(str);
+        }
+        try {
+            return new Size(Integer.parseInt(str.substring(0, indexOf)), Integer.parseInt(str.substring(indexOf + 1)));
+        } catch (NumberFormatException unused) {
+            throw invalidSize(str);
+        }
     }
 
     public boolean equals(Object obj) {
@@ -34,32 +46,21 @@ public final class Size {
         return false;
     }
 
-    public String toString() {
-        return this.mWidth + "x" + this.mHeight;
+    public int getHeight() {
+        return this.mHeight;
     }
 
-    private static NumberFormatException invalidSize(String str) {
-        throw new NumberFormatException("Invalid Size: \"" + str + "\"");
-    }
-
-    public static Size parseSize(String str) {
-        int indexOf = str.indexOf(42);
-        if (indexOf < 0) {
-            indexOf = str.indexOf(120);
-        }
-        if (indexOf < 0) {
-            throw invalidSize(str);
-        }
-        try {
-            return new Size(Integer.parseInt(str.substring(0, indexOf)), Integer.parseInt(str.substring(indexOf + 1)));
-        } catch (NumberFormatException unused) {
-            throw invalidSize(str);
-        }
+    public int getWidth() {
+        return this.mWidth;
     }
 
     public int hashCode() {
-        int i = this.mHeight;
-        int i2 = this.mWidth;
-        return i ^ ((i2 >>> 16) | (i2 << 16));
+        int i10 = this.mHeight;
+        int i11 = this.mWidth;
+        return i10 ^ ((i11 >>> 16) | (i11 << 16));
+    }
+
+    public String toString() {
+        return this.mWidth + "x" + this.mHeight;
     }
 }

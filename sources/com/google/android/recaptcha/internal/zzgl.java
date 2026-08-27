@@ -1,9 +1,10 @@
 package com.google.android.recaptcha.internal;
 
+import h7.j6;
 import java.util.UUID;
-import kotlin.Lazy;
-import kotlin.LazyKt;
+import pc.g;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzgl {
     public static final /* synthetic */ int zza = 0;
@@ -14,26 +15,26 @@ public final class zzgl {
     }
 
     public static final void zzb(zzwk zzwkVar, String str, zzwa zzwaVar) {
-        int i = zzby.zza;
-        Lazy lazy = LazyKt.lazy(zzgi.zza);
-        Lazy lazy2 = LazyKt.lazy(zzgj.zza);
+        int i10 = zzby.zza;
+        g a2 = j6.a(zzgi.zza);
+        g a3 = j6.a(zzgj.zza);
         if (zzwaVar != null) {
             zzwkVar.zzt(zzwaVar);
         }
-        for (zzca zzcaVar : ((zzcc) LazyKt.lazy(zzgk.zza).getValue()).zza()) {
+        for (zzca zzcaVar : ((zzcc) j6.a(zzgk.zza).a()).zza()) {
             zzwkVar.zzq(0);
         }
         if (zzwkVar.zzz()) {
-            int i2 = zzco.zza;
+            int i11 = zzco.zza;
             zzco.zza(zzwkVar.zze() + 20000, zzwkVar.zzf() * 1000);
         } else {
-            int i3 = zzco.zza;
+            int i12 = zzco.zza;
             int zzD = zzwkVar.zzD();
             zzco.zza(zzwl.zza(zzD) + 10000, zzwkVar.zzf() * 1000);
         }
-        zzwkVar.zzv(((zzgh) lazy.getValue()).zza(str));
+        zzwkVar.zzv(((zzgh) a2.a()).zza(str));
         zzzl zzi = zzzm.zzi();
         zzi.zze(zzwkVar);
-        ((zzgs) lazy2.getValue()).zza((zzzm) zzi.zzk());
+        ((zzgs) a3.a()).zza((zzzm) zzi.zzk());
     }
 }

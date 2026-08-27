@@ -3,14 +3,12 @@ package com.google.android.gms.tasks;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzr {
     private final Object zza = new Object();
     private Queue zzb;
     private boolean zzc;
-
-    zzr() {
-    }
 
     public final void zza(zzq zzqVar) {
         synchronized (this.zza) {

@@ -15,24 +15,24 @@ public abstract class p {
     public static s d(l lVar, o oVar) {
         if (!(oVar instanceof a)) {
             Objects.requireNonNull(oVar, "field");
-            return oVar.r(lVar);
+            return oVar.k(lVar);
         }
-        if (lVar.h(oVar)) {
+        if (lVar.e(oVar)) {
             return ((a) oVar).b;
         }
         throw new r(j$.time.c.a("Unsupported field: ", oVar));
     }
 
     public static int a(l lVar, o oVar) {
-        s q = lVar.q(oVar);
-        if (q.a < -2147483648L || q.d > 2147483647L) {
+        s l10 = lVar.l(oVar);
+        if (l10.a < -2147483648L || l10.d > 2147483647L) {
             throw new r("Invalid field " + oVar + " for get() method, use getLong() instead");
         }
-        long u = lVar.u(oVar);
-        if (q.d(u)) {
-            return (int) u;
+        long y10 = lVar.y(oVar);
+        if (l10.d(y10)) {
+            return (int) y10;
         }
-        throw new j$.time.b("Invalid value for " + oVar + " (valid values " + q + "): " + u);
+        throw new j$.time.b("Invalid value for " + oVar + " (valid values " + l10 + "): " + y10);
     }
 
     public static Object c(l lVar, j$.time.format.a aVar) {
@@ -42,14 +42,14 @@ public abstract class p {
         return aVar.a(lVar);
     }
 
-    public static Temporal b(Temporal temporal, long j, q qVar) {
-        long j2;
-        if (j == Long.MIN_VALUE) {
-            temporal = temporal.f(Long.MAX_VALUE, qVar);
-            j2 = 1;
+    public static Temporal b(Temporal temporal, long j10, q qVar) {
+        long j11;
+        if (j10 == Long.MIN_VALUE) {
+            temporal = temporal.d(Long.MAX_VALUE, qVar);
+            j11 = 1;
         } else {
-            j2 = -j;
+            j11 = -j10;
         }
-        return temporal.f(j2, qVar);
+        return temporal.d(j11, qVar);
     }
 }

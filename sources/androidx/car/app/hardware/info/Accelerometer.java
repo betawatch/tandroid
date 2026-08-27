@@ -4,20 +4,14 @@ import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
 import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class Accelerometer {
     private final CarValue<List<Float>> mForces;
 
-    public CarValue<List<Float>> getForces() {
-        return this.mForces;
-    }
-
-    public String toString() {
-        return "[ forces: " + this.mForces + " ]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mForces);
+    public Accelerometer(CarValue<List<Float>> carValue) {
+        Objects.requireNonNull(carValue);
+        this.mForces = carValue;
     }
 
     public boolean equals(Object obj) {
@@ -30,9 +24,16 @@ public final class Accelerometer {
         return false;
     }
 
-    public Accelerometer(CarValue<List<Float>> carValue) {
-        Objects.requireNonNull(carValue);
-        this.mForces = carValue;
+    public CarValue<List<Float>> getForces() {
+        return this.mForces;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mForces);
+    }
+
+    public String toString() {
+        return "[ forces: " + this.mForces + " ]";
     }
 
     private Accelerometer() {

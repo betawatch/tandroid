@@ -1,62 +1,63 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public interface TeXFont {
     public static final int NO_FONT = -1;
 
     TeXFont copy();
 
-    TeXFont deriveFont(float f);
+    TeXFont deriveFont(float f10);
 
-    float getAxisHeight(int i);
+    float getAxisHeight(int i10);
 
-    float getBigOpSpacing1(int i);
+    float getBigOpSpacing1(int i10);
 
-    float getBigOpSpacing2(int i);
+    float getBigOpSpacing2(int i10);
 
-    float getBigOpSpacing3(int i);
+    float getBigOpSpacing3(int i10);
 
-    float getBigOpSpacing4(int i);
+    float getBigOpSpacing4(int i10);
 
-    float getBigOpSpacing5(int i);
+    float getBigOpSpacing5(int i10);
 
     boolean getBold();
 
-    Char getChar(char c, String str, int i);
+    Char getChar(char c10, String str, int i10);
 
-    Char getChar(String str, int i);
+    Char getChar(String str, int i10);
 
-    Char getChar(CharFont charFont, int i);
+    Char getChar(CharFont charFont, int i10);
 
-    Char getDefaultChar(char c, int i);
+    Char getDefaultChar(char c10, int i10);
 
-    float getDefaultRuleThickness(int i);
+    float getDefaultRuleThickness(int i10);
 
-    float getDenom1(int i);
+    float getDenom1(int i10);
 
-    float getDenom2(int i);
+    float getDenom2(int i10);
 
-    float getEM(int i);
+    float getEM(int i10);
 
-    Extension getExtension(Char r1, int i);
+    Extension getExtension(Char r12, int i10);
 
     boolean getIt();
 
-    float getKern(CharFont charFont, CharFont charFont2, int i);
+    float getKern(CharFont charFont, CharFont charFont2, int i10);
 
     CharFont getLigature(CharFont charFont, CharFont charFont2);
 
     int getMuFontId();
 
-    Char getNextLarger(Char r1, int i);
+    Char getNextLarger(Char r12, int i10);
 
-    float getNum1(int i);
+    float getNum1(int i10);
 
-    float getNum2(int i);
+    float getNum2(int i10);
 
-    float getNum3(int i);
+    float getNum3(int i10);
 
-    float getQuad(int i, int i2);
+    float getQuad(int i10, int i11);
 
     boolean getRoman();
 
@@ -64,45 +65,45 @@ public interface TeXFont {
 
     float getSize();
 
-    float getSkew(CharFont charFont, int i);
+    float getSkew(CharFont charFont, int i10);
 
-    float getSpace(int i);
+    float getSpace(int i10);
 
     boolean getSs();
 
-    float getSub1(int i);
+    float getSub1(int i10);
 
-    float getSub2(int i);
+    float getSub2(int i10);
 
-    float getSubDrop(int i);
+    float getSubDrop(int i10);
 
-    float getSup1(int i);
+    float getSup1(int i10);
 
-    float getSup2(int i);
+    float getSup2(int i10);
 
-    float getSup3(int i);
+    float getSup3(int i10);
 
-    float getSupDrop(int i);
+    float getSupDrop(int i10);
 
     boolean getTt();
 
-    float getXHeight(int i, int i2);
+    float getXHeight(int i10, int i11);
 
-    boolean hasNextLarger(Char r1);
+    boolean hasNextLarger(Char r12);
 
-    boolean hasSpace(int i);
+    boolean hasSpace(int i10);
 
-    boolean isExtensionChar(Char r1);
+    boolean isExtensionChar(Char r12);
 
-    TeXFont scaleFont(float f);
+    TeXFont scaleFont(float f10);
 
-    void setBold(boolean z);
+    void setBold(boolean z10);
 
-    void setIt(boolean z);
+    void setIt(boolean z10);
 
-    void setRoman(boolean z);
+    void setRoman(boolean z10);
 
-    void setSs(boolean z);
+    void setSs(boolean z10);
 
-    void setTt(boolean z);
+    void setTt(boolean z10);
 }

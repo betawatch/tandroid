@@ -13,11 +13,13 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.IBinder;
 import android.os.PowerManager;
+import i0.a;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.FileLog;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public abstract class JobIntentService extends Service {
     static final boolean DEBUG = false;
     static final String TAG = "JobIntentService";
@@ -31,65 +33,53 @@ public abstract class JobIntentService extends Service {
     boolean mStopped = false;
     boolean mDestroyed = false;
 
-    interface CompatJobEngine {
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public final class CommandProcessor extends AsyncTask<Void, Void, Void> {
+        public CommandProcessor() {
+        }
+
+        @Override // android.os.AsyncTask
+        public Void doInBackground(Void... voidArr) {
+            while (true) {
+                GenericWorkItem dequeueWork = JobIntentService.this.dequeueWork();
+                if (dequeueWork == null) {
+                    return null;
+                }
+                JobIntentService.this.onHandleWork(dequeueWork.getIntent());
+                try {
+                    dequeueWork.complete();
+                } catch (Throwable unused) {
+                }
+            }
+        }
+
+        @Override // android.os.AsyncTask
+        public void onCancelled(Void r12) {
+            JobIntentService.this.processorFinished();
+        }
+
+        @Override // android.os.AsyncTask
+        public void onPostExecute(Void r12) {
+            JobIntentService.this.processorFinished();
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public interface CompatJobEngine {
         IBinder compatGetBinder();
 
         GenericWorkItem dequeueWork();
     }
 
-    interface GenericWorkItem {
-        void complete();
-
-        Intent getIntent();
-    }
-
-    protected abstract void onHandleWork(Intent intent);
-
-    public boolean onStopCurrentWork() {
-        return true;
-    }
-
-    static abstract class WorkEnqueuer {
-        final ComponentName mComponentName;
-        boolean mHasJobId;
-        int mJobId;
-
-        abstract void enqueueWork(Intent intent);
-
-        public void serviceProcessingFinished() {
-        }
-
-        public void serviceProcessingStarted() {
-        }
-
-        public void serviceStartReceived() {
-        }
-
-        WorkEnqueuer(Context context, ComponentName componentName) {
-            this.mComponentName = componentName;
-        }
-
-        void ensureJobId(int i) {
-            if (!this.mHasJobId) {
-                this.mHasJobId = true;
-                this.mJobId = i;
-            } else {
-                if (this.mJobId == i) {
-                    return;
-                }
-                throw new IllegalArgumentException("Given job ID " + i + " is different than previous " + this.mJobId);
-            }
-        }
-    }
-
-    static final class CompatWorkEnqueuer extends WorkEnqueuer {
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static final class CompatWorkEnqueuer extends WorkEnqueuer {
         private final Context mContext;
         private final PowerManager.WakeLock mLaunchWakeLock;
         boolean mLaunchingService;
         private final PowerManager.WakeLock mRunWakeLock;
         boolean mServiceProcessing;
 
-        CompatWorkEnqueuer(Context context, ComponentName componentName) {
+        public CompatWorkEnqueuer(Context context, ComponentName componentName) {
             super(context, componentName);
             this.mContext = context.getApplicationContext();
             PowerManager powerManager = (PowerManager) context.getSystemService("power");
@@ -102,7 +92,7 @@ public abstract class JobIntentService extends Service {
         }
 
         @Override // org.telegram.messenger.support.JobIntentService.WorkEnqueuer
-        void enqueueWork(Intent intent) {
+        public void enqueueWork(Intent intent) {
             Intent intent2 = new Intent(intent);
             intent2.setComponent(this.mComponentName);
             if (this.mContext.startService(intent2) != null) {
@@ -122,9 +112,19 @@ public abstract class JobIntentService extends Service {
         }
 
         @Override // org.telegram.messenger.support.JobIntentService.WorkEnqueuer
-        public void serviceStartReceived() {
+        public void serviceProcessingFinished() {
             synchronized (this) {
-                this.mLaunchingService = false;
+                try {
+                    if (this.mServiceProcessing) {
+                        if (this.mLaunchingService) {
+                            this.mLaunchWakeLock.acquire(60000L);
+                        }
+                        this.mServiceProcessing = false;
+                        this.mRunWakeLock.release();
+                    }
+                } catch (Throwable th) {
+                    throw th;
+                }
             }
         }
 
@@ -149,42 +149,55 @@ public abstract class JobIntentService extends Service {
         }
 
         @Override // org.telegram.messenger.support.JobIntentService.WorkEnqueuer
-        public void serviceProcessingFinished() {
+        public void serviceStartReceived() {
             synchronized (this) {
-                try {
-                    if (this.mServiceProcessing) {
-                        if (this.mLaunchingService) {
-                            this.mLaunchWakeLock.acquire(60000L);
-                        }
-                        this.mServiceProcessing = false;
-                        this.mRunWakeLock.release();
-                    }
-                } catch (Throwable th) {
-                    throw th;
-                }
+                this.mLaunchingService = false;
             }
         }
     }
 
-    static final class JobServiceEngineImpl extends JobServiceEngine implements CompatJobEngine {
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public final class CompatWorkItem implements GenericWorkItem {
+        final Intent mIntent;
+        final int mStartId;
+
+        public CompatWorkItem(Intent intent, int i10) {
+            this.mIntent = intent;
+            this.mStartId = i10;
+        }
+
+        @Override // org.telegram.messenger.support.JobIntentService.GenericWorkItem
+        public void complete() {
+            JobIntentService.this.stopSelf(this.mStartId);
+        }
+
+        @Override // org.telegram.messenger.support.JobIntentService.GenericWorkItem
+        public Intent getIntent() {
+            return this.mIntent;
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public interface GenericWorkItem {
+        void complete();
+
+        Intent getIntent();
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static final class JobServiceEngineImpl extends JobServiceEngine implements CompatJobEngine {
         static final boolean DEBUG = false;
         static final String TAG = "JobServiceEngineImpl";
         final Object mLock;
         JobParameters mParams;
         final JobIntentService mService;
 
-        final class WrapperWorkItem implements GenericWorkItem {
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public final class WrapperWorkItem implements GenericWorkItem {
             final JobWorkItem mJobWork;
 
-            WrapperWorkItem(JobWorkItem jobWorkItem) {
+            public WrapperWorkItem(JobWorkItem jobWorkItem) {
                 this.mJobWork = jobWorkItem;
-            }
-
-            @Override // org.telegram.messenger.support.JobIntentService.GenericWorkItem
-            public Intent getIntent() {
-                Intent intent;
-                intent = this.mJobWork.getIntent();
-                return intent;
             }
 
             @Override // org.telegram.messenger.support.JobIntentService.GenericWorkItem
@@ -200,9 +213,14 @@ public abstract class JobIntentService extends Service {
                     }
                 }
             }
+
+            @Override // org.telegram.messenger.support.JobIntentService.GenericWorkItem
+            public Intent getIntent() {
+                return this.mJobWork.getIntent();
+            }
         }
 
-        JobServiceEngineImpl(JobIntentService jobIntentService) {
+        public JobServiceEngineImpl(JobIntentService jobIntentService) {
             super(jobIntentService);
             this.mLock = new Object();
             this.mService = jobIntentService;
@@ -210,9 +228,28 @@ public abstract class JobIntentService extends Service {
 
         @Override // org.telegram.messenger.support.JobIntentService.CompatJobEngine
         public IBinder compatGetBinder() {
-            IBinder binder;
-            binder = getBinder();
-            return binder;
+            return getBinder();
+        }
+
+        @Override // org.telegram.messenger.support.JobIntentService.CompatJobEngine
+        public GenericWorkItem dequeueWork() {
+            JobWorkItem jobWorkItem;
+            synchronized (this.mLock) {
+                JobParameters jobParameters = this.mParams;
+                if (jobParameters == null) {
+                    return null;
+                }
+                try {
+                    jobWorkItem = jobParameters.dequeueWork();
+                } catch (Throwable unused) {
+                    jobWorkItem = null;
+                }
+                if (jobWorkItem == null) {
+                    return null;
+                }
+                jobWorkItem.getIntent().setExtrasClassLoader(this.mService.getClassLoader());
+                return new WrapperWorkItem(jobWorkItem);
+            }
         }
 
         @Override // android.app.job.JobServiceEngine
@@ -230,98 +267,23 @@ public abstract class JobIntentService extends Service {
             }
             return doStopCurrentWork;
         }
-
-        @Override // org.telegram.messenger.support.JobIntentService.CompatJobEngine
-        public GenericWorkItem dequeueWork() {
-            JobWorkItem jobWorkItem;
-            Intent intent;
-            synchronized (this.mLock) {
-                JobParameters jobParameters = this.mParams;
-                if (jobParameters == null) {
-                    return null;
-                }
-                try {
-                    jobWorkItem = jobParameters.dequeueWork();
-                } catch (Throwable unused) {
-                    jobWorkItem = null;
-                }
-                if (jobWorkItem == null) {
-                    return null;
-                }
-                intent = jobWorkItem.getIntent();
-                intent.setExtrasClassLoader(this.mService.getClassLoader());
-                return new WrapperWorkItem(jobWorkItem);
-            }
-        }
     }
 
-    static final class JobWorkEnqueuer extends WorkEnqueuer {
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static final class JobWorkEnqueuer extends WorkEnqueuer {
         private final JobInfo mJobInfo;
         private final JobScheduler mJobScheduler;
 
-        JobWorkEnqueuer(Context context, ComponentName componentName, int i) {
+        public JobWorkEnqueuer(Context context, ComponentName componentName, int i10) {
             super(context, componentName);
-            ensureJobId(i);
-            this.mJobInfo = new JobInfo.Builder(i, this.mComponentName).setOverrideDeadline(0L).setRequiredNetworkType(1).build();
+            ensureJobId(i10);
+            this.mJobInfo = new JobInfo.Builder(i10, this.mComponentName).setOverrideDeadline(0L).setRequiredNetworkType(1).build();
             this.mJobScheduler = (JobScheduler) context.getApplicationContext().getSystemService("jobscheduler");
         }
 
         @Override // org.telegram.messenger.support.JobIntentService.WorkEnqueuer
-        void enqueueWork(Intent intent) {
-            this.mJobScheduler.enqueue(this.mJobInfo, JobIntentService$JobWorkEnqueuer$$ExternalSyntheticApiModelOutline1.m(intent));
-        }
-    }
-
-    final class CompatWorkItem implements GenericWorkItem {
-        final Intent mIntent;
-        final int mStartId;
-
-        CompatWorkItem(Intent intent, int i) {
-            this.mIntent = intent;
-            this.mStartId = i;
-        }
-
-        @Override // org.telegram.messenger.support.JobIntentService.GenericWorkItem
-        public Intent getIntent() {
-            return this.mIntent;
-        }
-
-        @Override // org.telegram.messenger.support.JobIntentService.GenericWorkItem
-        public void complete() {
-            JobIntentService.this.stopSelf(this.mStartId);
-        }
-    }
-
-    final class CommandProcessor extends AsyncTask<Void, Void, Void> {
-        CommandProcessor() {
-        }
-
-        /* JADX INFO: Access modifiers changed from: protected */
-        @Override // android.os.AsyncTask
-        public Void doInBackground(Void... voidArr) {
-            while (true) {
-                GenericWorkItem dequeueWork = JobIntentService.this.dequeueWork();
-                if (dequeueWork == null) {
-                    return null;
-                }
-                JobIntentService.this.onHandleWork(dequeueWork.getIntent());
-                try {
-                    dequeueWork.complete();
-                } catch (Throwable unused) {
-                }
-            }
-        }
-
-        /* JADX INFO: Access modifiers changed from: protected */
-        @Override // android.os.AsyncTask
-        public void onCancelled(Void r1) {
-            JobIntentService.this.processorFinished();
-        }
-
-        /* JADX INFO: Access modifiers changed from: protected */
-        @Override // android.os.AsyncTask
-        public void onPostExecute(Void r1) {
-            JobIntentService.this.processorFinished();
+        public void enqueueWork(Intent intent) {
+            this.mJobScheduler.enqueue(this.mJobInfo, new JobWorkItem(intent));
         }
     }
 
@@ -331,6 +293,79 @@ public abstract class JobIntentService extends Service {
         } else {
             this.mCompatQueue = new ArrayList<>();
         }
+    }
+
+    public static void enqueueWork(Context context, Class cls, int i10, Intent intent) {
+        enqueueWork(context, new ComponentName(context, (Class<?>) cls), i10, intent);
+    }
+
+    public static WorkEnqueuer getWorkEnqueuer(Context context, ComponentName componentName, boolean z10, int i10) {
+        WorkEnqueuer compatWorkEnqueuer;
+        HashMap<ComponentName, WorkEnqueuer> hashMap = sClassWorkEnqueuer;
+        WorkEnqueuer workEnqueuer = hashMap.get(componentName);
+        if (workEnqueuer != null) {
+            return workEnqueuer;
+        }
+        if (Build.VERSION.SDK_INT < 26) {
+            compatWorkEnqueuer = new CompatWorkEnqueuer(context, componentName);
+        } else {
+            if (!z10) {
+                throw new IllegalArgumentException("Can't be here without a job id");
+            }
+            compatWorkEnqueuer = new JobWorkEnqueuer(context, componentName, i10);
+        }
+        hashMap.put(componentName, compatWorkEnqueuer);
+        return compatWorkEnqueuer;
+    }
+
+    public GenericWorkItem dequeueWork() {
+        CompatJobEngine compatJobEngine = this.mJobImpl;
+        if (compatJobEngine != null) {
+            return compatJobEngine.dequeueWork();
+        }
+        synchronized (this.mCompatQueue) {
+            try {
+                if (this.mCompatQueue.size() <= 0) {
+                    return null;
+                }
+                return this.mCompatQueue.remove(0);
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    public boolean doStopCurrentWork() {
+        CommandProcessor commandProcessor = this.mCurProcessor;
+        if (commandProcessor != null) {
+            commandProcessor.cancel(this.mInterruptIfStopped);
+        }
+        this.mStopped = true;
+        return onStopCurrentWork();
+    }
+
+    public void ensureProcessorRunningLocked(boolean z10) {
+        if (this.mCurProcessor == null) {
+            this.mCurProcessor = new CommandProcessor();
+            WorkEnqueuer workEnqueuer = this.mCompatWorkEnqueuer;
+            if (workEnqueuer != null && z10) {
+                workEnqueuer.serviceProcessingStarted();
+            }
+            this.mCurProcessor.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0]);
+        }
+    }
+
+    public boolean isStopped() {
+        return this.mStopped;
+    }
+
+    @Override // android.app.Service
+    public IBinder onBind(Intent intent) {
+        CompatJobEngine compatJobEngine = this.mJobImpl;
+        if (compatJobEngine != null) {
+            return compatJobEngine.compatGetBinder();
+        }
+        return null;
     }
 
     @Override // android.app.Service
@@ -346,32 +381,6 @@ public abstract class JobIntentService extends Service {
     }
 
     @Override // android.app.Service
-    public int onStartCommand(Intent intent, int i, int i2) {
-        if (this.mCompatQueue == null) {
-            return 2;
-        }
-        this.mCompatWorkEnqueuer.serviceStartReceived();
-        synchronized (this.mCompatQueue) {
-            ArrayList<CompatWorkItem> arrayList = this.mCompatQueue;
-            if (intent == null) {
-                intent = new Intent();
-            }
-            arrayList.add(new CompatWorkItem(intent, i2));
-            ensureProcessorRunningLocked(true);
-        }
-        return 3;
-    }
-
-    @Override // android.app.Service
-    public IBinder onBind(Intent intent) {
-        CompatJobEngine compatJobEngine = this.mJobImpl;
-        if (compatJobEngine != null) {
-            return compatJobEngine.compatGetBinder();
-        }
-        return null;
-    }
-
-    @Override // android.app.Service
     public void onDestroy() {
         super.onDestroy();
         ArrayList<CompatWorkItem> arrayList = this.mCompatQueue;
@@ -383,69 +392,30 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    public static void enqueueWork(Context context, Class cls, int i, Intent intent) {
-        enqueueWork(context, new ComponentName(context, (Class<?>) cls), i, intent);
-    }
+    public abstract void onHandleWork(Intent intent);
 
-    public static void enqueueWork(Context context, ComponentName componentName, int i, Intent intent) {
-        if (intent == null) {
-            throw new IllegalArgumentException("work must not be null");
+    @Override // android.app.Service
+    public int onStartCommand(Intent intent, int i10, int i11) {
+        if (this.mCompatQueue == null) {
+            return 2;
         }
-        synchronized (sLock) {
-            WorkEnqueuer workEnqueuer = getWorkEnqueuer(context, componentName, true, i);
-            workEnqueuer.ensureJobId(i);
-            workEnqueuer.enqueueWork(intent);
-        }
-    }
-
-    static WorkEnqueuer getWorkEnqueuer(Context context, ComponentName componentName, boolean z, int i) {
-        WorkEnqueuer compatWorkEnqueuer;
-        HashMap<ComponentName, WorkEnqueuer> hashMap = sClassWorkEnqueuer;
-        WorkEnqueuer workEnqueuer = hashMap.get(componentName);
-        if (workEnqueuer != null) {
-            return workEnqueuer;
-        }
-        if (Build.VERSION.SDK_INT < 26) {
-            compatWorkEnqueuer = new CompatWorkEnqueuer(context, componentName);
-        } else {
-            if (!z) {
-                throw new IllegalArgumentException("Can't be here without a job id");
+        this.mCompatWorkEnqueuer.serviceStartReceived();
+        synchronized (this.mCompatQueue) {
+            ArrayList<CompatWorkItem> arrayList = this.mCompatQueue;
+            if (intent == null) {
+                intent = new Intent();
             }
-            compatWorkEnqueuer = new JobWorkEnqueuer(context, componentName, i);
+            arrayList.add(new CompatWorkItem(intent, i11));
+            ensureProcessorRunningLocked(true);
         }
-        hashMap.put(componentName, compatWorkEnqueuer);
-        return compatWorkEnqueuer;
+        return 3;
     }
 
-    public void setInterruptIfStopped(boolean z) {
-        this.mInterruptIfStopped = z;
+    public boolean onStopCurrentWork() {
+        return true;
     }
 
-    public boolean isStopped() {
-        return this.mStopped;
-    }
-
-    boolean doStopCurrentWork() {
-        CommandProcessor commandProcessor = this.mCurProcessor;
-        if (commandProcessor != null) {
-            commandProcessor.cancel(this.mInterruptIfStopped);
-        }
-        this.mStopped = true;
-        return onStopCurrentWork();
-    }
-
-    void ensureProcessorRunningLocked(boolean z) {
-        if (this.mCurProcessor == null) {
-            this.mCurProcessor = new CommandProcessor();
-            WorkEnqueuer workEnqueuer = this.mCompatWorkEnqueuer;
-            if (workEnqueuer != null && z) {
-                workEnqueuer.serviceProcessingStarted();
-            }
-            this.mCurProcessor.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0]);
-        }
-    }
-
-    void processorFinished() {
+    public void processorFinished() {
         ArrayList<CompatWorkItem> arrayList = this.mCompatQueue;
         if (arrayList != null) {
             synchronized (arrayList) {
@@ -464,20 +434,54 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    GenericWorkItem dequeueWork() {
-        CompatJobEngine compatJobEngine = this.mJobImpl;
-        if (compatJobEngine != null) {
-            return compatJobEngine.dequeueWork();
+    public void setInterruptIfStopped(boolean z10) {
+        this.mInterruptIfStopped = z10;
+    }
+
+    public static void enqueueWork(Context context, ComponentName componentName, int i10, Intent intent) {
+        if (intent == null) {
+            throw new IllegalArgumentException("work must not be null");
         }
-        synchronized (this.mCompatQueue) {
-            try {
-                if (this.mCompatQueue.size() <= 0) {
-                    return null;
+        synchronized (sLock) {
+            WorkEnqueuer workEnqueuer = getWorkEnqueuer(context, componentName, true, i10);
+            workEnqueuer.ensureJobId(i10);
+            workEnqueuer.enqueueWork(intent);
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static abstract class WorkEnqueuer {
+        final ComponentName mComponentName;
+        boolean mHasJobId;
+        int mJobId;
+
+        public WorkEnqueuer(Context context, ComponentName componentName) {
+            this.mComponentName = componentName;
+        }
+
+        public abstract void enqueueWork(Intent intent);
+
+        public void ensureJobId(int i10) {
+            if (!this.mHasJobId) {
+                this.mHasJobId = true;
+                this.mJobId = i10;
+            } else {
+                if (this.mJobId == i10) {
+                    return;
                 }
-                return this.mCompatQueue.remove(0);
-            } catch (Throwable th) {
-                throw th;
+                StringBuilder o10 = a.o(i10, "Given job ID ", " is different than previous ");
+                o10.append(this.mJobId);
+                throw new IllegalArgumentException(o10.toString());
             }
+        }
+
+        public void serviceProcessingFinished() {
+        }
+
+        public void serviceProcessingStarted() {
+        }
+
+        public void serviceStartReceived() {
         }
     }
 }

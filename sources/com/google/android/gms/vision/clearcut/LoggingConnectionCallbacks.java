@@ -1,23 +1,25 @@
 package com.google.android.gms.vision.clearcut;
 
 import android.os.Bundle;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.k;
+import com.google.android.gms.common.api.l;
+import v5.a;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class LoggingConnectionCallbacks implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
-    @Override // com.google.android.gms.common.api.internal.ConnectionCallbacks
+public class LoggingConnectionCallbacks implements k, l {
+    @Override // com.google.android.gms.common.api.k
     public void onConnected(Bundle bundle) {
         throw new NoSuchMethodError();
     }
 
-    @Override // com.google.android.gms.common.api.internal.ConnectionCallbacks
-    public void onConnectionSuspended(int i) {
+    @Override // com.google.android.gms.common.api.l
+    public void onConnectionFailed(a aVar) {
         throw new NoSuchMethodError();
     }
 
-    @Override // com.google.android.gms.common.api.internal.OnConnectionFailedListener
-    public void onConnectionFailed(ConnectionResult connectionResult) {
+    @Override // com.google.android.gms.common.api.k
+    public void onConnectionSuspended(int i10) {
         throw new NoSuchMethodError();
     }
 }

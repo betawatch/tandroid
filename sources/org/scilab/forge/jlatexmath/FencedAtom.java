@@ -2,7 +2,8 @@ package org.scilab.forge.jlatexmath;
 
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class FencedAtom extends Atom {
     private static final int DELIMITER_FACTOR = 901;
     private static final float DELIMITER_SHORTFALL = 5.0f;
@@ -11,40 +12,13 @@ public class FencedAtom extends Atom {
     private final List<MiddleAtom> middle;
     private SymbolAtom right;
 
-    @Override // org.scilab.forge.jlatexmath.Atom
-    public int getLeftType() {
-        return 7;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.Atom
-    public int getRightType() {
-        return 7;
-    }
-
     public FencedAtom(Atom atom, SymbolAtom symbolAtom, SymbolAtom symbolAtom2) {
         this(atom, symbolAtom, null, symbolAtom2);
     }
 
-    public FencedAtom(Atom atom, SymbolAtom symbolAtom, List<MiddleAtom> list, SymbolAtom symbolAtom2) {
-        this.left = null;
-        this.right = null;
-        if (atom == null) {
-            this.base = new RowAtom();
-        } else {
-            this.base = atom;
-        }
-        if (symbolAtom == null || !symbolAtom.getName().equals("normaldot")) {
-            this.left = symbolAtom;
-        }
-        if (symbolAtom2 == null || !symbolAtom2.getName().equals("normaldot")) {
-            this.right = symbolAtom2;
-        }
-        this.middle = list;
-    }
-
-    private static void center(Box box, float f) {
+    private static void center(Box box, float f10) {
         float height = box.getHeight();
-        box.setShift((-(((box.getDepth() + height) / 2.0f) - height)) - f);
+        box.setShift((-(((box.getDepth() + height) / 2.0f) - height)) - f10);
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
@@ -57,8 +31,8 @@ public class FencedAtom extends Atom {
         float max2 = Math.max((max / 500.0f) * 901.0f, (max * 2.0f) - factor);
         HorizontalBox horizontalBox = new HorizontalBox();
         if (this.middle != null) {
-            for (int i = 0; i < this.middle.size(); i++) {
-                MiddleAtom middleAtom = this.middle.get(i);
+            for (int i10 = 0; i10 < this.middle.size(); i10++) {
+                MiddleAtom middleAtom = this.middle.get(i10);
                 Atom atom = middleAtom.base;
                 if (atom instanceof SymbolAtom) {
                     Box create = DelimiterFactory.create(((SymbolAtom) atom).getName(), teXEnvironment, max2);
@@ -92,5 +66,32 @@ public class FencedAtom extends Atom {
             horizontalBox.add(create3);
         }
         return horizontalBox;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.Atom
+    public int getLeftType() {
+        return 7;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.Atom
+    public int getRightType() {
+        return 7;
+    }
+
+    public FencedAtom(Atom atom, SymbolAtom symbolAtom, List<MiddleAtom> list, SymbolAtom symbolAtom2) {
+        this.left = null;
+        this.right = null;
+        if (atom == null) {
+            this.base = new RowAtom();
+        } else {
+            this.base = atom;
+        }
+        if (symbolAtom == null || !symbolAtom.getName().equals("normaldot")) {
+            this.left = symbolAtom;
+        }
+        if (symbolAtom2 == null || !symbolAtom2.getName().equals("normaldot")) {
+            this.right = symbolAtom2;
+        }
+        this.middle = list;
     }
 }

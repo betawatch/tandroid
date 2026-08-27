@@ -1,92 +1,95 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.Result;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
+import ad.p;
+import h7.k6;
+import pc.f;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzll extends SuspendLambda implements Function2 {
+final class zzll extends i implements p {
     int zza;
     final /* synthetic */ zzxn zzb;
     final /* synthetic */ zzly zzc;
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzll(zzxn zzxnVar, zzly zzlyVar, Continuation continuation) {
-        super(2, continuation);
+    public zzll(zzxn zzxnVar, zzly zzlyVar, c cVar) {
+        super(2, cVar);
         this.zzb = zzxnVar;
         this.zzc = zzlyVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        zzll zzllVar = new zzll(this.zzb, this.zzc, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        zzll zzllVar = new zzll(this.zzb, this.zzc, cVar);
         zzllVar.zzd = obj;
         return zzllVar;
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzll) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzll) create((zzhk) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0056, code lost:
-    
-        if (((com.google.android.recaptcha.internal.zzhg) r8).zza(r1, r7) == r0) goto L27;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0048, code lost:
-    
-        if (r8 != r0) goto L18;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0070, code lost:
-    
-        if (r8.zzc(r1, r7) != r0) goto L24;
-     */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /* JADX WARN: Removed duplicated region for block: B:13:? A[RETURN, SYNTHETIC] */
+    @Override // tc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        Object obj2;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zza;
-        if (i == 0) {
-            ResultKt.throwOnFailure(obj);
-            zzhkVar = (zzhk) this.zzd;
-            zzxn zzxnVar = this.zzb;
-            if (zzxnVar.zzV() && zzxnVar.zzT() && zzxnVar.zzS()) {
-                zzly zzlyVar = this.zzc;
-                zzlyVar.zze = zzxnVar;
-                this.zzd = zzhkVar;
-                this.zza = 2;
-                obj = zzly.zzu(zzlyVar, this);
-            } else {
-                zzdj zzn = this.zzc.zzn();
-                zzmc zzmcVar = zzmc.zzd;
-                this.zza = 1;
+        Object a2;
+        sc.a aVar = sc.a.a;
+        int i10 = this.zza;
+        if (i10 != 0) {
+            if (i10 == 1) {
+                k6.b(obj);
+                a2 = k6.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
+                return new f(a2);
             }
-            return coroutine_suspended;
+            if (i10 != 2) {
+                k6.b(obj);
+                a2 = pc.i.a;
+                return new f(a2);
+            }
+            zzhkVar = (zzhk) this.zzd;
+            k6.b(obj);
+            this.zzd = null;
+            this.zza = 3;
+            if (((zzhg) obj).zza(zzhkVar, this) == aVar) {
+                return aVar;
+            }
+            a2 = pc.i.a;
+            return new f(a2);
         }
-        if (i == 1) {
-            ResultKt.throwOnFailure(obj);
-            Result.Companion companion = Result.Companion;
-            obj2 = Result.constructor-impl(ResultKt.createFailure(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null)));
-            return Result.box-impl(obj2);
-        }
-        if (i != 2) {
-            ResultKt.throwOnFailure(obj);
-            Result.Companion companion2 = Result.Companion;
-            obj2 = Result.constructor-impl(Unit.INSTANCE);
-            return Result.box-impl(obj2);
-        }
+        k6.b(obj);
         zzhkVar = (zzhk) this.zzd;
-        ResultKt.throwOnFailure(obj);
+        zzxn zzxnVar = this.zzb;
+        if (!zzxnVar.zzV() || !zzxnVar.zzT() || !zzxnVar.zzS()) {
+            zzdj zzn = this.zzc.zzn();
+            zzmc zzmcVar = zzmc.zzd;
+            this.zza = 1;
+            if (zzn.zzc(zzmcVar, this) == aVar) {
+                return aVar;
+            }
+            a2 = k6.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
+            return new f(a2);
+        }
+        zzly zzlyVar = this.zzc;
+        zzlyVar.zze = zzxnVar;
+        this.zzd = zzhkVar;
+        this.zza = 2;
+        obj = zzly.zzu(zzlyVar, this);
+        if (obj == aVar) {
+            return aVar;
+        }
         this.zzd = null;
         this.zza = 3;
+        if (((zzhg) obj).zza(zzhkVar, this) == aVar) {
+        }
+        a2 = pc.i.a;
+        return new f(a2);
     }
 }

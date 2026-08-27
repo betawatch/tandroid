@@ -2,15 +2,15 @@ package j$.time.temporal;
 
 /* loaded from: classes2.dex */
 public interface o {
+    boolean isDateBased();
+
+    boolean j(l lVar);
+
+    s k(l lVar);
+
     s l();
 
-    long o(l lVar);
+    long m(l lVar);
 
-    boolean p(l lVar);
-
-    Temporal q(Temporal temporal, long j);
-
-    s r(l lVar);
-
-    boolean u();
+    Temporal q(Temporal temporal, long j10);
 }

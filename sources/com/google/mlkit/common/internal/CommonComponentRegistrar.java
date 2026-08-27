@@ -1,72 +1,57 @@
 package com.google.mlkit.common.internal;
 
-import com.google.android.gms.internal.mlkit_common.zzaf;
-import com.google.firebase.components.Component;
-import com.google.firebase.components.ComponentContainer;
-import com.google.firebase.components.ComponentFactory;
 import com.google.firebase.components.ComponentRegistrar;
-import com.google.firebase.components.Dependency;
-import com.google.mlkit.common.model.CustomRemoteModel;
-import com.google.mlkit.common.model.RemoteModelManager;
-import com.google.mlkit.common.sdkinternal.Cleaner;
-import com.google.mlkit.common.sdkinternal.CloseGuard$Factory;
-import com.google.mlkit.common.sdkinternal.ExecutorSelector;
-import com.google.mlkit.common.sdkinternal.MlKitContext;
-import com.google.mlkit.common.sdkinternal.MlKitThreadPool;
-import com.google.mlkit.common.sdkinternal.SharedPrefManager;
-import com.google.mlkit.common.sdkinternal.model.ModelFileHelper;
+import e7.v;
+import g7.r6;
 import java.util.List;
+import ug.b;
+import w9.d;
+import ya.c;
+import z8.a;
+import z8.i;
+import za.g;
+import za.h;
+import za.k;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class CommonComponentRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        return zzaf.zzi(SharedPrefManager.COMPONENT, Component.builder(ModelFileHelper.class).add(Dependency.required(MlKitContext.class)).factory(new ComponentFactory() { // from class: com.google.mlkit.common.internal.zza
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                return new ModelFileHelper((MlKitContext) componentContainer.get(MlKitContext.class));
-            }
-        }).build(), Component.builder(MlKitThreadPool.class).factory(new ComponentFactory() { // from class: com.google.mlkit.common.internal.zzb
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                return new MlKitThreadPool();
-            }
-        }).build(), Component.builder(RemoteModelManager.class).add(Dependency.setOf(RemoteModelManager.RemoteModelManagerRegistration.class)).factory(new ComponentFactory() { // from class: com.google.mlkit.common.internal.zzc
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                return new RemoteModelManager(componentContainer.setOf(RemoteModelManager.RemoteModelManagerRegistration.class));
-            }
-        }).build(), Component.builder(ExecutorSelector.class).add(Dependency.requiredProvider(MlKitThreadPool.class)).factory(new ComponentFactory() { // from class: com.google.mlkit.common.internal.zzd
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                return new ExecutorSelector(componentContainer.getProvider(MlKitThreadPool.class));
-            }
-        }).build(), Component.builder(Cleaner.class).factory(new ComponentFactory() { // from class: com.google.mlkit.common.internal.zze
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                return Cleaner.create();
-            }
-        }).build(), Component.builder(CloseGuard$Factory.class).add(Dependency.required(Cleaner.class)).factory(new ComponentFactory() { // from class: com.google.mlkit.common.internal.zzf
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                return new Object((Cleaner) componentContainer.get(Cleaner.class)) { // from class: com.google.mlkit.common.sdkinternal.CloseGuard$Factory
-                    private final Cleaner zza;
-
-                    {
-                        this.zza = r1;
-                    }
-                };
-            }
-        }).build(), Component.builder(com.google.mlkit.common.internal.model.zzg.class).add(Dependency.required(MlKitContext.class)).factory(new ComponentFactory() { // from class: com.google.mlkit.common.internal.zzg
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                return new com.google.mlkit.common.internal.model.zzg((MlKitContext) componentContainer.get(MlKitContext.class));
-            }
-        }).build(), Component.intoSetBuilder(RemoteModelManager.RemoteModelManagerRegistration.class).add(Dependency.requiredProvider(com.google.mlkit.common.internal.model.zzg.class)).factory(new ComponentFactory() { // from class: com.google.mlkit.common.internal.zzh
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                return new RemoteModelManager.RemoteModelManagerRegistration(CustomRemoteModel.class, componentContainer.getProvider(com.google.mlkit.common.internal.model.zzg.class));
-            }
-        }).build());
+        b a2 = a.a(ab.a.class);
+        a2.a(i.a(g.class));
+        a2.f = new ab.a(24);
+        a b10 = a2.b();
+        b a3 = a.a(h.class);
+        a3.f = new v(24);
+        a b11 = a3.b();
+        b a10 = a.a(c.class);
+        a10.a(new i(2, 0, ya.b.class));
+        a10.f = new d(24);
+        a b12 = a10.b();
+        b a11 = a.a(za.d.class);
+        a11.a(new i(1, 1, h.class));
+        a11.f = new xa.a(24);
+        a b13 = a11.b();
+        b a12 = a.a(za.a.class);
+        a12.f = new za.b(24);
+        a b14 = a12.b();
+        b a13 = a.a(za.b.class);
+        a13.a(i.a(za.a.class));
+        a13.f = new ab.a(25);
+        a b15 = a13.b();
+        b a14 = a.a(xa.a.class);
+        a14.a(i.a(g.class));
+        a14.f = new v(25);
+        a b16 = a14.b();
+        b a15 = a.a(ya.b.class);
+        a15.b = 1;
+        a15.a(new i(1, 1, xa.a.class));
+        a15.f = new d(25);
+        a b17 = a15.b();
+        e7.b bVar = e7.d.b;
+        Object[] objArr = {k.b, b10, b11, b12, b13, b14, b15, b16, b17};
+        r6.a(9, objArr);
+        return new e7.g(9, objArr);
     }
 }

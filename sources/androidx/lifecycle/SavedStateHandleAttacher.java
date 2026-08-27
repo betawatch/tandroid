@@ -1,25 +1,21 @@
 package androidx.lifecycle;
 
-import androidx.lifecycle.Lifecycle;
-import kotlin.jvm.internal.Intrinsics;
-
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class SavedStateHandleAttacher implements LifecycleEventObserver {
-    private final SavedStateHandlesProvider provider;
+public final class SavedStateHandleAttacher implements r {
+    public final l0 a;
 
-    public SavedStateHandleAttacher(SavedStateHandlesProvider provider) {
-        Intrinsics.checkNotNullParameter(provider, "provider");
-        this.provider = provider;
+    public SavedStateHandleAttacher(l0 l0Var) {
+        this.a = l0Var;
     }
 
-    @Override // androidx.lifecycle.LifecycleEventObserver
-    public void onStateChanged(LifecycleOwner source, Lifecycle.Event event) {
-        Intrinsics.checkNotNullParameter(source, "source");
-        Intrinsics.checkNotNullParameter(event, "event");
-        if (event != Lifecycle.Event.ON_CREATE) {
-            throw new IllegalStateException(("Next event must be ON_CREATE, it was " + event).toString());
+    @Override // androidx.lifecycle.r
+    public final void d(t tVar, m mVar) {
+        if (mVar == m.ON_CREATE) {
+            tVar.m().b(this);
+            this.a.b();
+        } else {
+            throw new IllegalStateException(("Next event must be ON_CREATE, it was " + mVar).toString());
         }
-        source.getLifecycle().removeObserver(this);
-        this.provider.performRestore();
     }
 }

@@ -1,17 +1,15 @@
 package com.google.android.recaptcha.internal;
 
+import a9.p;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzmf {
     private boolean zza;
     private long zzb;
     private long zzc;
-
-    zzmf() {
-        int i = zzmi.zzb;
-    }
 
     public static zzmf zzb() {
         zzmf zzmfVar = new zzmf();
@@ -76,7 +74,7 @@ public final class zzmf {
             default:
                 throw new AssertionError();
         }
-        return format + " " + str;
+        return p.w(format, " ", str);
     }
 
     public final long zza(TimeUnit timeUnit) {
@@ -100,7 +98,7 @@ public final class zzmf {
         long nanoTime = System.nanoTime();
         zzmd.zze(this.zza, "This stopwatch is already stopped.");
         this.zza = false;
-        this.zzb += nanoTime - this.zzc;
+        this.zzb = (nanoTime - this.zzc) + this.zzb;
         return this;
     }
 }

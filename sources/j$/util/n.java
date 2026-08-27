@@ -1,92 +1,138 @@
 package j$.util;
 
-import java.util.Comparator;
-import java.util.ListIterator;
-import java.util.RandomAccess;
-import java.util.function.UnaryOperator;
+import j$.util.Collection;
+import j$.util.Spliterator;
+import j$.util.stream.Stream;
+import java.io.Serializable;
+import java.util.Iterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 /* loaded from: classes2.dex */
-public class n extends l implements java.util.List, List {
-    private static final long serialVersionUID = -283967356065247728L;
-    public final java.util.List b;
+public class n implements java.util.Collection, Serializable, Collection {
+    private static final long serialVersionUID = 1820017752578914078L;
+    public final java.util.Collection a;
 
-    public n(java.util.List list) {
-        super(list);
-        this.b = list;
+    @Override // java.util.Collection
+    public final /* synthetic */ Stream parallelStream() {
+        return Stream.Wrapper.convert(parallelStream());
     }
 
-    @Override // java.util.Collection, java.util.List
-    public final boolean equals(Object obj) {
-        return obj == this || this.b.equals(obj);
+    @Override // java.util.Collection, java.lang.Iterable
+    public final /* synthetic */ java.util.Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(spliterator());
     }
 
-    @Override // java.util.Collection, java.util.List
-    public final int hashCode() {
-        return this.b.hashCode();
+    @Override // java.util.Collection
+    public final /* synthetic */ java.util.stream.Stream stream() {
+        return Stream.Wrapper.convert(stream());
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        return this.b.get(i);
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
+        Object[] array;
+        array = toArray((Object[]) intFunction.apply(0));
+        return array;
     }
 
-    @Override // java.util.List
-    public final Object set(int i, Object obj) {
+    public n(java.util.Collection collection) {
+        collection.getClass();
+        this.a = collection;
+    }
+
+    @Override // java.util.Collection
+    public final int size() {
+        return this.a.size();
+    }
+
+    @Override // java.util.Collection
+    public final boolean isEmpty() {
+        return this.a.isEmpty();
+    }
+
+    @Override // java.util.Collection
+    public boolean contains(Object obj) {
+        return this.a.contains(obj);
+    }
+
+    @Override // java.util.Collection
+    public Object[] toArray() {
+        return this.a.toArray();
+    }
+
+    @Override // java.util.Collection
+    public Object[] toArray(Object[] objArr) {
+        return this.a.toArray(objArr);
+    }
+
+    public final String toString() {
+        return this.a.toString();
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable
+    public Iterator iterator() {
+        return new m(this);
+    }
+
+    @Override // java.util.Collection
+    public final boolean add(Object obj) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.List
-    public final void add(int i, Object obj) {
+    @Override // java.util.Collection
+    public final boolean remove(Object obj) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.List
-    public final Object remove(int i) {
+    @Override // java.util.Collection
+    public boolean containsAll(java.util.Collection collection) {
+        return this.a.containsAll(collection);
+    }
+
+    @Override // java.util.Collection
+    public final boolean addAll(java.util.Collection collection) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.List
-    public final int indexOf(Object obj) {
-        return this.b.indexOf(obj);
-    }
-
-    @Override // java.util.List
-    public final int lastIndexOf(Object obj) {
-        return this.b.lastIndexOf(obj);
-    }
-
-    @Override // java.util.List
-    public final boolean addAll(int i, java.util.Collection collection) {
+    @Override // java.util.Collection
+    public final boolean removeAll(java.util.Collection collection) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.List, j$.util.List
-    public final void replaceAll(UnaryOperator unaryOperator) {
+    @Override // java.util.Collection
+    public final boolean retainAll(java.util.Collection collection) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.List, j$.util.List
-    public final void sort(Comparator comparator) {
+    @Override // java.util.Collection
+    public final void clear() {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.List
-    public final ListIterator listIterator() {
-        return new m(this, 0);
+    @Override // java.lang.Iterable, j$.util.Collection
+    public void forEach(Consumer consumer) {
+        Collection.-EL.a(this.a, consumer);
     }
 
-    @Override // java.util.List
-    public final ListIterator listIterator(int i) {
-        return new m(this, i);
+    @Override // java.util.Collection, j$.util.Collection
+    public final boolean removeIf(Predicate predicate) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.List
-    public java.util.List subList(int i, int i2) {
-        return new n(this.b.subList(i, i2));
+    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
+    public Spliterator spliterator() {
+        return Collection.-EL.c(this.a);
     }
 
-    private Object readResolve() {
-        java.util.List list = this.b;
-        return list instanceof RandomAccess ? new s(list) : this;
+    @Override // java.util.Collection, j$.util.Collection
+    public j$.util.stream.Stream stream() {
+        return Collection.-EL.stream(this.a);
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public j$.util.stream.Stream parallelStream() {
+        return Collection.-EL.b(this.a);
     }
 }

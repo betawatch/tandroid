@@ -1,13 +1,14 @@
 package com.google.android.datatransport.cct;
 
-import com.google.android.datatransport.runtime.backends.BackendFactory;
-import com.google.android.datatransport.runtime.backends.CreationContext;
-import com.google.android.datatransport.runtime.backends.TransportBackend;
+import x2.b;
+import x2.c;
+import x2.e;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class CctBackendFactory implements BackendFactory {
-    @Override // com.google.android.datatransport.runtime.backends.BackendFactory
-    public TransportBackend create(CreationContext creationContext) {
-        return new CctTransportBackend(creationContext.getApplicationContext(), creationContext.getWallClock(), creationContext.getMonotonicClock());
+public class CctBackendFactory {
+    public e create(c cVar) {
+        b bVar = (b) cVar;
+        return new u2.c(bVar.a, bVar.b, bVar.c);
     }
 }

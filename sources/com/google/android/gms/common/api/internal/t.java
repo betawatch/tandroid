@@ -1,0 +1,9 @@
+package com.google.android.gms.common.api.internal;
+
+import com.google.android.gms.common.api.Status;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
+public interface t {
+    Exception a(Status status);
+}

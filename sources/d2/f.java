@@ -1,0 +1,68 @@
+package d2;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
+public final class f {
+    public static final f d;
+    public static final f e;
+    public static final f f;
+    public static final f g;
+    public static final f h;
+    public static final f i;
+    public final float[] a = {0.0f, 0.5f, 1.0f};
+    public final float[] b = {0.0f, 0.5f, 1.0f};
+    public final float[] c = {0.24f, 0.52f, 0.24f};
+
+    static {
+        f fVar = new f();
+        d = fVar;
+        float[] fArr = fVar.b;
+        fArr[0] = 0.55f;
+        fArr[1] = 0.74f;
+        float[] fArr2 = fVar.a;
+        fArr2[0] = 0.35f;
+        fArr2[1] = 1.0f;
+        f fVar2 = new f();
+        e = fVar2;
+        float[] fArr3 = fVar2.b;
+        fArr3[0] = 0.3f;
+        fArr3[1] = 0.5f;
+        fArr3[2] = 0.7f;
+        float[] fArr4 = fVar2.a;
+        fArr4[0] = 0.35f;
+        fArr4[1] = 1.0f;
+        f fVar3 = new f();
+        f = fVar3;
+        float[] fArr5 = fVar3.b;
+        fArr5[1] = 0.26f;
+        fArr5[2] = 0.45f;
+        float[] fArr6 = fVar3.a;
+        fArr6[0] = 0.35f;
+        fArr6[1] = 1.0f;
+        f fVar4 = new f();
+        g = fVar4;
+        float[] fArr7 = fVar4.b;
+        fArr7[0] = 0.55f;
+        fArr7[1] = 0.74f;
+        float[] fArr8 = fVar4.a;
+        fArr8[1] = 0.3f;
+        fArr8[2] = 0.4f;
+        f fVar5 = new f();
+        h = fVar5;
+        float[] fArr9 = fVar5.b;
+        fArr9[0] = 0.3f;
+        fArr9[1] = 0.5f;
+        fArr9[2] = 0.7f;
+        float[] fArr10 = fVar5.a;
+        fArr10[1] = 0.3f;
+        fArr10[2] = 0.4f;
+        f fVar6 = new f();
+        i = fVar6;
+        float[] fArr11 = fVar6.b;
+        fArr11[1] = 0.26f;
+        fArr11[2] = 0.45f;
+        float[] fArr12 = fVar6.a;
+        fArr12[1] = 0.3f;
+        fArr12[2] = 0.4f;
+    }
+}

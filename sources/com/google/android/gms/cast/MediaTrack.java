@@ -3,141 +3,91 @@ package com.google.android.gms.cast;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import com.google.android.gms.cast.internal.CastUtils;
-import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-import com.google.android.gms.common.util.JsonUtils;
+import f6.c;
+import h7.r8;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import m5.w;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import z5.a;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class MediaTrack extends AbstractSafeParcelable implements ReflectedParcelable {
-    public static final Parcelable.Creator<MediaTrack> CREATOR = new zzcn();
-    String zza;
-    private final long zzb;
-    private final int zzc;
-    private String zzd;
-    private String zze;
-    private final String zzf;
-    private final String zzg;
-    private final int zzh;
-    private final List zzi;
-    private final JSONObject zzj;
+public final class MediaTrack extends a implements ReflectedParcelable {
+    public static final Parcelable.Creator<MediaTrack> CREATOR = new w(16);
+    public final long a;
+    public final int b;
+    public final String c;
+    public final String d;
+    public final String e;
+    public final String f;
+    public final int h;
+    public final List n;
+    public String r;
+    public final JSONObject s;
 
-    MediaTrack(long j, int i, String str, String str2, String str3, String str4, int i2, List list, JSONObject jSONObject) {
-        this.zzb = j;
-        this.zzc = i;
-        this.zzd = str;
-        this.zze = str2;
-        this.zzf = str3;
-        this.zzg = str4;
-        this.zzh = i2;
-        this.zzi = list;
-        this.zzj = jSONObject;
+    public MediaTrack(long j10, int i10, String str, String str2, String str3, String str4, int i11, List list, JSONObject jSONObject) {
+        this.a = j10;
+        this.b = i10;
+        this.c = str;
+        this.d = str2;
+        this.e = str3;
+        this.f = str4;
+        this.h = i11;
+        this.n = list;
+        this.s = jSONObject;
     }
 
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof MediaTrack)) {
-            return false;
-        }
-        MediaTrack mediaTrack = (MediaTrack) obj;
-        JSONObject jSONObject = this.zzj;
-        boolean z = jSONObject == null;
-        JSONObject jSONObject2 = mediaTrack.zzj;
-        if (z != (jSONObject2 == null)) {
-            return false;
-        }
-        return (jSONObject == null || jSONObject2 == null || JsonUtils.areJsonValuesEquivalent(jSONObject, jSONObject2)) && this.zzb == mediaTrack.zzb && this.zzc == mediaTrack.zzc && CastUtils.zze(this.zzd, mediaTrack.zzd) && CastUtils.zze(this.zze, mediaTrack.zze) && CastUtils.zze(this.zzf, mediaTrack.zzf) && CastUtils.zze(this.zzg, mediaTrack.zzg) && this.zzh == mediaTrack.zzh && CastUtils.zze(this.zzi, mediaTrack.zzi);
-    }
-
-    public String getContentId() {
-        return this.zzd;
-    }
-
-    public String getContentType() {
-        return this.zze;
-    }
-
-    public long getId() {
-        return this.zzb;
-    }
-
-    public String getLanguage() {
-        return this.zzg;
-    }
-
-    public String getName() {
-        return this.zzf;
-    }
-
-    public List getRoles() {
-        return this.zzi;
-    }
-
-    public int getSubtype() {
-        return this.zzh;
-    }
-
-    public int getType() {
-        return this.zzc;
-    }
-
-    public int hashCode() {
-        return Objects.hashCode(Long.valueOf(this.zzb), Integer.valueOf(this.zzc), this.zzd, this.zze, this.zzf, this.zzg, Integer.valueOf(this.zzh), this.zzi, String.valueOf(this.zzj));
-    }
-
-    public final JSONObject zza() {
+    public final JSONObject b() {
+        String str = this.f;
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("trackId", this.zzb);
-            int i = this.zzc;
-            if (i == 1) {
+            jSONObject.put("trackId", this.a);
+            int i10 = this.b;
+            if (i10 == 1) {
                 jSONObject.put(TeXSymbolParser.TYPE_ATTR, "TEXT");
-            } else if (i == 2) {
+            } else if (i10 == 2) {
                 jSONObject.put(TeXSymbolParser.TYPE_ATTR, "AUDIO");
-            } else if (i == 3) {
+            } else if (i10 == 3) {
                 jSONObject.put(TeXSymbolParser.TYPE_ATTR, "VIDEO");
             }
-            String str = this.zzd;
-            if (str != null) {
-                jSONObject.put("trackContentId", str);
-            }
-            String str2 = this.zze;
+            String str2 = this.c;
             if (str2 != null) {
-                jSONObject.put("trackContentType", str2);
+                jSONObject.put("trackContentId", str2);
             }
-            String str3 = this.zzf;
+            String str3 = this.d;
             if (str3 != null) {
-                jSONObject.put("name", str3);
+                jSONObject.put("trackContentType", str3);
             }
-            if (!TextUtils.isEmpty(this.zzg)) {
-                jSONObject.put("language", this.zzg);
+            String str4 = this.e;
+            if (str4 != null) {
+                jSONObject.put("name", str4);
             }
-            int i2 = this.zzh;
-            if (i2 == 1) {
+            if (!TextUtils.isEmpty(str)) {
+                jSONObject.put("language", str);
+            }
+            int i11 = this.h;
+            if (i11 == 1) {
                 jSONObject.put("subtype", "SUBTITLES");
-            } else if (i2 == 2) {
+            } else if (i11 == 2) {
                 jSONObject.put("subtype", "CAPTIONS");
-            } else if (i2 == 3) {
+            } else if (i11 == 3) {
                 jSONObject.put("subtype", "DESCRIPTIONS");
-            } else if (i2 == 4) {
+            } else if (i11 == 4) {
                 jSONObject.put("subtype", "CHAPTERS");
-            } else if (i2 == 5) {
+            } else if (i11 == 5) {
                 jSONObject.put("subtype", "METADATA");
             }
-            if (this.zzi != null) {
-                jSONObject.put("roles", new JSONArray((Collection) this.zzi));
+            List list = this.n;
+            if (list != null) {
+                jSONObject.put("roles", new JSONArray((Collection) list));
             }
-            JSONObject jSONObject2 = this.zzj;
+            JSONObject jSONObject2 = this.s;
             if (jSONObject2 != null) {
                 jSONObject.put("customData", jSONObject2);
             }
@@ -146,20 +96,44 @@ public final class MediaTrack extends AbstractSafeParcelable implements Reflecte
         return jSONObject;
     }
 
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof MediaTrack)) {
+            return false;
+        }
+        MediaTrack mediaTrack = (MediaTrack) obj;
+        JSONObject jSONObject = this.s;
+        boolean z10 = jSONObject == null;
+        JSONObject jSONObject2 = mediaTrack.s;
+        if (z10 != (jSONObject2 == null)) {
+            return false;
+        }
+        return (jSONObject == null || jSONObject2 == null || c.a(jSONObject, jSONObject2)) && this.a == mediaTrack.a && this.b == mediaTrack.b && r5.a.d(this.c, mediaTrack.c) && r5.a.d(this.d, mediaTrack.d) && r5.a.d(this.e, mediaTrack.e) && r5.a.d(this.f, mediaTrack.f) && this.h == mediaTrack.h && r5.a.d(this.n, mediaTrack.n);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), this.c, this.d, this.e, this.f, Integer.valueOf(this.h), this.n, String.valueOf(this.s)});
+    }
+
     @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        JSONObject jSONObject = this.zzj;
-        this.zza = jSONObject == null ? null : jSONObject.toString();
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeLong(parcel, 2, getId());
-        SafeParcelWriter.writeInt(parcel, 3, getType());
-        SafeParcelWriter.writeString(parcel, 4, getContentId(), false);
-        SafeParcelWriter.writeString(parcel, 5, getContentType(), false);
-        SafeParcelWriter.writeString(parcel, 6, getName(), false);
-        SafeParcelWriter.writeString(parcel, 7, getLanguage(), false);
-        SafeParcelWriter.writeInt(parcel, 8, getSubtype());
-        SafeParcelWriter.writeStringList(parcel, 9, getRoles(), false);
-        SafeParcelWriter.writeString(parcel, 10, this.zza, false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        JSONObject jSONObject = this.s;
+        this.r = jSONObject == null ? null : jSONObject.toString();
+        int q6 = r8.q(parcel, 20293);
+        r8.s(parcel, 2, 8);
+        parcel.writeLong(this.a);
+        r8.s(parcel, 3, 4);
+        parcel.writeInt(this.b);
+        r8.l(parcel, 4, this.c);
+        r8.l(parcel, 5, this.d);
+        r8.l(parcel, 6, this.e);
+        r8.l(parcel, 7, this.f);
+        r8.s(parcel, 8, 4);
+        parcel.writeInt(this.h);
+        r8.n(parcel, 9, this.n);
+        r8.l(parcel, 10, this.r);
+        r8.r(parcel, q6);
     }
 }

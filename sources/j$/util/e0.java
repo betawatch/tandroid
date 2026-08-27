@@ -1,44 +1,34 @@
 package j$.util;
 
-import j$.util.function.Consumer$-CC;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import j$.util.stream.j5;
 import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-public final class e0 implements Iterator, Consumer {
-    public boolean a = false;
-    public Object b;
-    public final /* synthetic */ Spliterator c;
+public final /* synthetic */ class e0 implements DoubleConsumer {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Consumer b;
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    public /* synthetic */ e0(Consumer consumer, int i10) {
+        this.a = i10;
+        this.b = consumer;
     }
 
-    public e0(Spliterator spliterator) {
-        this.c = spliterator;
-    }
-
-    @Override // java.util.function.Consumer
-    public final void accept(Object obj) {
-        this.a = true;
-        this.b = obj;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        if (!this.a) {
-            this.c.tryAdvance(this);
+    @Override // java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        switch (this.a) {
+            case 0:
+                this.b.accept(Double.valueOf(d));
+                break;
+            default:
+                ((j5) this.b).accept(d);
+                break;
         }
-        return this.a;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        if (!this.a && !hasNext()) {
-            throw new NoSuchElementException();
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        switch (this.a) {
         }
-        this.a = false;
-        return this.b;
+        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
     }
 }

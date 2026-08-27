@@ -22,9 +22,8 @@ import android.provider.Settings;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
-import com.google.android.gms.cast.framework.media.internal.zzo$$ExternalSyntheticApiModelOutline2;
-import com.google.android.search.verification.client.SearchActionVerificationClientService$$ExternalSyntheticApiModelOutline2;
 import java.util.ArrayList;
+import nh.j2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
@@ -36,19 +35,18 @@ import org.telegram.messenger.NotificationsSettingsFacade;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.XiaomiUtilities;
-import org.telegram.messenger.voip.VoIPServiceState;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.PermissionRequest;
+import org.telegram.ui.Components.pd0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.VoIPFragment;
 import org.telegram.ui.VoIPPermissionActivity;
+import org.telegram.ui.lh1;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class VoIPPreNotificationService {
     public static State currentState;
     public static TL_phone.PhoneCall pendingCall;
@@ -57,15 +55,48 @@ public class VoIPPreNotificationService {
     private static final Object sync = new Object();
     private static Vibrator vibrator;
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static final class State implements VoIPServiceState {
         private final TL_phone.PhoneCall call;
         private final int currentAccount;
         private boolean destroyed;
         private final long userId;
 
+        public State(int i10, long j10, TL_phone.PhoneCall phoneCall) {
+            this.currentAccount = i10;
+            this.userId = j10;
+            this.call = phoneCall;
+        }
+
         @Override // org.telegram.messenger.voip.VoIPServiceState
-        public /* synthetic */ long getCallDuration() {
-            return VoIPServiceState.-CC.$default$getCallDuration(this);
+        public void acceptIncomingCall() {
+            VoIPPreNotificationService.answer(ApplicationLoader.applicationContext);
+        }
+
+        @Override // org.telegram.messenger.voip.VoIPServiceState
+        public void declineIncomingCall() {
+            VoIPPreNotificationService.decline(ApplicationLoader.applicationContext, 1);
+        }
+
+        public void destroy() {
+            if (this.destroyed) {
+                return;
+            }
+            this.destroyed = true;
+            lh1 lh1Var = lh1.j1;
+            if (lh1Var != null) {
+                lh1Var.onStateChanged(getCallState());
+            }
+        }
+
+        @Override // org.telegram.messenger.voip.VoIPServiceState
+        public final /* synthetic */ long getCallDuration() {
+            return v0.a(this);
+        }
+
+        @Override // org.telegram.messenger.voip.VoIPServiceState
+        public int getCallState() {
+            return this.destroyed ? 11 : 15;
         }
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
@@ -79,34 +110,13 @@ public class VoIPPreNotificationService {
         }
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
-        public boolean isConference() {
-            return false;
-        }
-
-        @Override // org.telegram.messenger.voip.VoIPServiceState
-        public boolean isOutgoing() {
-            return false;
-        }
-
-        public State(int i, long j, TL_phone.PhoneCall phoneCall) {
-            this.currentAccount = i;
-            this.userId = j;
-            this.call = phoneCall;
+        public TL_phone.PhoneCall getPrivateCall() {
+            return this.call;
         }
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
         public TLRPC.User getUser() {
             return MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.userId));
-        }
-
-        @Override // org.telegram.messenger.voip.VoIPServiceState
-        public int getCallState() {
-            return this.destroyed ? 11 : 15;
-        }
-
-        @Override // org.telegram.messenger.voip.VoIPServiceState
-        public TL_phone.PhoneCall getPrivateCall() {
-            return this.call;
         }
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
@@ -119,365 +129,22 @@ public class VoIPPreNotificationService {
         }
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
-        public void acceptIncomingCall() {
-            VoIPPreNotificationService.answer(ApplicationLoader.applicationContext);
+        public boolean isConference() {
+            return false;
         }
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
-        public void declineIncomingCall() {
-            VoIPPreNotificationService.decline(ApplicationLoader.applicationContext, 1);
+        public boolean isOutgoing() {
+            return false;
         }
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
         public void stopRinging() {
             VoIPPreNotificationService.stopRinging();
         }
-
-        public void destroy() {
-            if (this.destroyed) {
-                return;
-            }
-            this.destroyed = true;
-            if (VoIPFragment.getInstance() != null) {
-                VoIPFragment.getInstance().onStateChanged(getCallState());
-            }
-        }
     }
 
-    public static State getState() {
-        return currentState;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00ed  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0279  */
-    /* JADX WARN: Type inference failed for: r12v2 */
-    /* JADX WARN: Type inference failed for: r12v6 */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private static Notification makeNotification(Context context, int i, long j, long j2, boolean z) {
-        NotificationChannel notificationChannel;
-        NotificationChannel notificationChannel2;
-        NotificationChannel notificationChannel3;
-        boolean z2;
-        int i2;
-        int i3;
-        int i4;
-        String formatName;
-        Person.Builder name;
-        Icon createWithAdaptiveBitmap;
-        Person.Builder icon;
-        Person build;
-        Notification.CallStyle forIncomingCall;
-        int importance;
-        Uri sound;
-        String id;
-        String id2;
-        if (Build.VERSION.SDK_INT < 33) {
-            return null;
-        }
-        TLRPC.User user = MessagesController.getInstance(i).getUser(Long.valueOf(j));
-        NotificationManager notificationManager = (NotificationManager) context.getSystemService("notification");
-        Intent action = new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip");
-        Notification.Builder contentIntent = new Notification.Builder(context).setContentTitle(LocaleController.getString(z ? R.string.VoipInVideoCallBranding : R.string.VoipInCallBranding)).setSmallIcon(R.drawable.call).setContentIntent(PendingIntent.getActivity(context, 0, action, 301989888));
-        SharedPreferences globalNotificationsSettings = MessagesController.getGlobalNotificationsSettings();
-        int i5 = globalNotificationsSettings.getInt("calls_notification_channel", 0);
-        notificationChannel = notificationManager.getNotificationChannel("incoming_calls2" + i5);
-        if (notificationChannel != null) {
-            id2 = notificationChannel.getId();
-            notificationManager.deleteNotificationChannel(id2);
-        }
-        notificationChannel2 = notificationManager.getNotificationChannel("incoming_calls3" + i5);
-        if (notificationChannel2 != null) {
-            id = notificationChannel2.getId();
-            notificationManager.deleteNotificationChannel(id);
-        }
-        notificationChannel3 = notificationManager.getNotificationChannel("incoming_calls4" + i5);
-        if (notificationChannel3 != null) {
-            importance = notificationChannel3.getImportance();
-            if (importance >= 4) {
-                sound = notificationChannel3.getSound();
-                if (sound == null) {
-                    z2 = false;
-                    if (z2) {
-                        AudioAttributes build2 = new AudioAttributes.Builder().setContentType(4).setLegacyStreamType(2).setUsage(2).build();
-                        SearchActionVerificationClientService$$ExternalSyntheticApiModelOutline2.m();
-                        NotificationChannel m = zzo$$ExternalSyntheticApiModelOutline2.m("incoming_calls4" + i5, LocaleController.getString(R.string.IncomingCallsSystemSetting), 4);
-                        try {
-                            m.setSound(null, build2);
-                        } catch (Exception e) {
-                            FileLog.e(e);
-                        }
-                        m.setDescription(LocaleController.getString(R.string.IncomingCallsSystemSettingDescription));
-                        m.enableVibration(false);
-                        m.enableLights(false);
-                        m.setBypassDnd(true);
-                        try {
-                            notificationManager.createNotificationChannel(m);
-                        } catch (Exception e2) {
-                            FileLog.e(e2);
-                            return null;
-                        }
-                    }
-                    contentIntent.setChannelId("incoming_calls4" + i5);
-                    Intent intent = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
-                    intent.setAction(context.getPackageName() + ".DECLINE_CALL");
-                    intent.putExtra("call_id", j2);
-                    String string = LocaleController.getString(R.string.VoipDeclineCall);
-                    i2 = Build.VERSION.SDK_INT;
-                    if (i2 >= 24 || i2 >= 31) {
-                        i3 = 0;
-                    } else {
-                        SpannableString spannableString = new SpannableString(string);
-                        i3 = 0;
-                        spannableString.setSpan(new ForegroundColorSpan(-769226), 0, spannableString.length(), 0);
-                    }
-                    PendingIntent broadcast = PendingIntent.getBroadcast(context, i3, intent, 301989888);
-                    Intent intent2 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
-                    intent2.setAction(context.getPackageName() + ".ANSWER_CALL");
-                    intent2.putExtra("call_id", j2);
-                    String string2 = LocaleController.getString(R.string.VoipAnswerCall);
-                    if (i2 >= 24 || i2 >= 31) {
-                        i4 = 0;
-                    } else {
-                        SpannableString spannableString2 = new SpannableString(string2);
-                        i4 = 0;
-                        spannableString2.setSpan(new ForegroundColorSpan(-16733696), 0, spannableString2.length(), 0);
-                    }
-                    PendingIntent activity = PendingIntent.getActivity(context, i4, new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip_answer"), 301989888);
-                    contentIntent.setPriority(2);
-                    contentIntent.setShowWhen(i4);
-                    contentIntent.setColor(-13851168);
-                    contentIntent.setVibrate(new long[i4]);
-                    contentIntent.setCategory("call");
-                    contentIntent.setFullScreenIntent(PendingIntent.getActivity(context, i4, action, 33554432), true);
-                    if (user != null && !TextUtils.isEmpty(user.phone)) {
-                        contentIntent.addPerson("tel:" + user.phone);
-                    }
-                    Intent intent3 = new Intent(ApplicationLoader.applicationContext, (Class<?>) VoIPActionsReceiver.class);
-                    intent3.setAction(context.getPackageName() + ".HIDE_CALL");
-                    contentIntent.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, intent3, 167772160));
-                    Bitmap roundAvatarBitmap = VoIPService.getRoundAvatarBitmap(context, i, user);
-                    formatName = ContactsController.formatName(user);
-                    if (TextUtils.isEmpty(formatName)) {
-                        formatName = "___";
-                    }
-                    name = VoIPGroupNotification$$ExternalSyntheticApiModelOutline7.m().setName(formatName);
-                    createWithAdaptiveBitmap = Icon.createWithAdaptiveBitmap(roundAvatarBitmap);
-                    icon = name.setIcon(createWithAdaptiveBitmap);
-                    build = icon.build();
-                    forIncomingCall = Notification.CallStyle.forIncomingCall(build, broadcast, activity);
-                    contentIntent.setStyle(forIncomingCall);
-                    return contentIntent.build();
-                }
-            }
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.d("User messed up the notification channel; deleting it and creating a proper one");
-            }
-            notificationManager.deleteNotificationChannel("incoming_calls4" + i5);
-            i5++;
-            globalNotificationsSettings.edit().putInt("calls_notification_channel", i5).commit();
-        }
-        z2 = true;
-        if (z2) {
-        }
-        contentIntent.setChannelId("incoming_calls4" + i5);
-        Intent intent4 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
-        intent4.setAction(context.getPackageName() + ".DECLINE_CALL");
-        intent4.putExtra("call_id", j2);
-        String string3 = LocaleController.getString(R.string.VoipDeclineCall);
-        i2 = Build.VERSION.SDK_INT;
-        if (i2 >= 24) {
-        }
-        i3 = 0;
-        PendingIntent broadcast2 = PendingIntent.getBroadcast(context, i3, intent4, 301989888);
-        Intent intent22 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
-        intent22.setAction(context.getPackageName() + ".ANSWER_CALL");
-        intent22.putExtra("call_id", j2);
-        String string22 = LocaleController.getString(R.string.VoipAnswerCall);
-        if (i2 >= 24) {
-        }
-        i4 = 0;
-        PendingIntent activity2 = PendingIntent.getActivity(context, i4, new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip_answer"), 301989888);
-        contentIntent.setPriority(2);
-        contentIntent.setShowWhen(i4);
-        contentIntent.setColor(-13851168);
-        contentIntent.setVibrate(new long[i4]);
-        contentIntent.setCategory("call");
-        contentIntent.setFullScreenIntent(PendingIntent.getActivity(context, i4, action, 33554432), true);
-        if (user != null) {
-            contentIntent.addPerson("tel:" + user.phone);
-        }
-        Intent intent32 = new Intent(ApplicationLoader.applicationContext, (Class<?>) VoIPActionsReceiver.class);
-        intent32.setAction(context.getPackageName() + ".HIDE_CALL");
-        contentIntent.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, intent32, 167772160));
-        Bitmap roundAvatarBitmap2 = VoIPService.getRoundAvatarBitmap(context, i, user);
-        formatName = ContactsController.formatName(user);
-        if (TextUtils.isEmpty(formatName)) {
-        }
-        name = VoIPGroupNotification$$ExternalSyntheticApiModelOutline7.m().setName(formatName);
-        createWithAdaptiveBitmap = Icon.createWithAdaptiveBitmap(roundAvatarBitmap2);
-        icon = name.setIcon(createWithAdaptiveBitmap);
-        build = icon.build();
-        forIncomingCall = Notification.CallStyle.forIncomingCall(build, broadcast2, activity2);
-        contentIntent.setStyle(forIncomingCall);
-        return contentIntent.build();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00f4 A[Catch: all -> 0x002e, TryCatch #0 {all -> 0x002e, Exception -> 0x0081, blocks: (B:11:0x0028, B:13:0x002c, B:16:0x0031, B:18:0x0047, B:21:0x0053, B:23:0x006a, B:25:0x008b, B:27:0x00a9, B:28:0x00dd, B:30:0x00f4, B:34:0x0116, B:36:0x011c, B:38:0x012a, B:41:0x0141, B:42:0x0150, B:49:0x0124, B:51:0x010a, B:53:0x0090, B:55:0x0094, B:57:0x009e, B:58:0x00a4, B:59:0x0083, B:62:0x00d1, B:64:0x00d8, B:65:0x004d), top: B:10:0x0028 }] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0137  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x013a  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x010a A[Catch: all -> 0x002e, TryCatch #0 {all -> 0x002e, Exception -> 0x0081, blocks: (B:11:0x0028, B:13:0x002c, B:16:0x0031, B:18:0x0047, B:21:0x0053, B:23:0x006a, B:25:0x008b, B:27:0x00a9, B:28:0x00dd, B:30:0x00f4, B:34:0x0116, B:36:0x011c, B:38:0x012a, B:41:0x0141, B:42:0x0150, B:49:0x0124, B:51:0x010a, B:53:0x0090, B:55:0x0094, B:57:0x009e, B:58:0x00a4, B:59:0x0083, B:62:0x00d1, B:64:0x00d8, B:65:0x004d), top: B:10:0x0028 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static void startRinging(Context context, int i, long j) {
-        int i2;
-        String string;
-        Uri parse;
-        boolean z;
-        SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i);
-        AudioManager audioManager = (AudioManager) context.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        boolean z2 = audioManager.getRingerMode() != 0;
-        boolean isWiredHeadsetOn = audioManager.isWiredHeadsetOn();
-        if (z2 && ringtonePlayer == null) {
-            synchronized (sync) {
-                try {
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    MediaPlayer mediaPlayer = ringtonePlayer;
-                    if (mediaPlayer != null) {
-                        mediaPlayer.release();
-                        ringtonePlayer = null;
-                    }
-                } finally {
-                }
-                if (ringtonePlayer != null) {
-                    return;
-                }
-                MediaPlayer mediaPlayer2 = new MediaPlayer();
-                ringtonePlayer = mediaPlayer2;
-                mediaPlayer2.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda1
-                    @Override // android.media.MediaPlayer.OnPreparedListener
-                    public final void onPrepared(MediaPlayer mediaPlayer3) {
-                        VoIPPreNotificationService.$r8$lambda$8xuOUE_SZMGh3Mddxb6Oo8iQDH4(mediaPlayer3);
-                    }
-                });
-                ringtonePlayer.setLooping(true);
-                if (isWiredHeadsetOn) {
-                    ringtonePlayer.setAudioStreamType(0);
-                } else {
-                    ringtonePlayer.setAudioStreamType(2);
-                }
-                if (notificationsSettings.getBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + j, false)) {
-                    string = notificationsSettings.getString("ringtone_path_" + j, null);
-                } else {
-                    string = notificationsSettings.getString("CallsRingtonePath", null);
-                }
-                if (string == null) {
-                    parse = RingtoneManager.getDefaultUri(1);
-                } else {
-                    Uri uri = Settings.System.DEFAULT_RINGTONE_URI;
-                    if (uri != null && string.equalsIgnoreCase(uri.getPath())) {
-                        parse = RingtoneManager.getDefaultUri(1);
-                    } else {
-                        parse = Uri.parse(string);
-                        z = false;
-                        FileLog.d("start ringtone with " + z + " " + parse);
-                        ringtonePlayer.setDataSource(context, parse);
-                        ringtonePlayer.prepareAsync();
-                        if (!notificationsSettings.getBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + j, false)) {
-                            i2 = notificationsSettings.getInt("calls_vibrate_" + j, 0);
-                        } else {
-                            i2 = notificationsSettings.getInt("vibrate_calls", 0);
-                        }
-                        if ((i2 != 2 && i2 != 4 && (audioManager.getRingerMode() == 1 || audioManager.getRingerMode() == 2)) || (i2 == 4 && audioManager.getRingerMode() == 1)) {
-                            Vibrator vibrator2 = (Vibrator) context.getSystemService("vibrator");
-                            vibrator = vibrator2;
-                            vibrator2.vibrate(new long[]{0, i2 == 1 ? 350L : i2 == 3 ? 1400L : 700L, 500}, 0);
-                        }
-                    }
-                }
-                z = true;
-                FileLog.d("start ringtone with " + z + " " + parse);
-                ringtonePlayer.setDataSource(context, parse);
-                ringtonePlayer.prepareAsync();
-                if (!notificationsSettings.getBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + j, false)) {
-                }
-                if (i2 != 2) {
-                    Vibrator vibrator22 = (Vibrator) context.getSystemService("vibrator");
-                    vibrator = vibrator22;
-                    vibrator22.vibrate(new long[]{0, i2 == 1 ? 350L : i2 == 3 ? 1400L : 700L, 500}, 0);
-                }
-                Vibrator vibrator222 = (Vibrator) context.getSystemService("vibrator");
-                vibrator = vibrator222;
-                vibrator222.vibrate(new long[]{0, i2 == 1 ? 350L : i2 == 3 ? 1400L : 700L, 500}, 0);
-            }
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$8xuOUE_SZMGh3Mddxb6Oo8iQDH4(MediaPlayer mediaPlayer) {
-        try {
-            ringtonePlayer.start();
-        } catch (Throwable th) {
-            FileLog.e(th);
-        }
-    }
-
-    public static void stopRinging() {
-        synchronized (sync) {
-            try {
-                MediaPlayer mediaPlayer = ringtonePlayer;
-                if (mediaPlayer != null) {
-                    mediaPlayer.stop();
-                    ringtonePlayer.release();
-                    ringtonePlayer = null;
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        Vibrator vibrator2 = vibrator;
-        if (vibrator2 != null) {
-            vibrator2.cancel();
-            vibrator = null;
-        }
-    }
-
-    public static void show(final Context context, final Intent intent, final TL_phone.PhoneCall phoneCall) {
-        FileLog.d("VoIPPreNotification.show()");
-        if (phoneCall == null || intent == null) {
-            dismiss(context, false);
-            FileLog.d("VoIPPreNotification.show(): call or intent is null");
-            return;
-        }
-        TL_phone.PhoneCall phoneCall2 = pendingCall;
-        if (phoneCall2 == null || phoneCall2.id != phoneCall.id) {
-            dismiss(context, false);
-            pendingVoIP = intent;
-            pendingCall = phoneCall;
-            final int intExtra = intent.getIntExtra("account", UserConfig.selectedAccount);
-            final long longExtra = intent.getLongExtra("user_id", 0L);
-            final boolean z = phoneCall.video;
-            currentState = new State(intExtra, longExtra, phoneCall);
-            acknowledge(context, intExtra, phoneCall, new Runnable() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    VoIPPreNotificationService.$r8$lambda$lDZeK9o170qagGUvU23zy7BTSdM(intent, phoneCall, context, intExtra, longExtra, z);
-                }
-            });
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$lDZeK9o170qagGUvU23zy7BTSdM(Intent intent, TL_phone.PhoneCall phoneCall, Context context, int i, long j, boolean z) {
-        pendingVoIP = intent;
-        pendingCall = phoneCall;
-        ((NotificationManager) context.getSystemService("notification")).notify(203, makeNotification(context, i, j, phoneCall.id, z));
-        startRinging(context, i, j);
-    }
-
-    private static void acknowledge(final Context context, int i, TL_phone.PhoneCall phoneCall, final Runnable runnable) {
+    private static void acknowledge(Context context, int i10, TL_phone.PhoneCall phoneCall, Runnable runnable) {
         if (phoneCall instanceof TL_phone.TL_phoneCallDiscarded) {
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.w("Call " + phoneCall.id + " was discarded before the voip pre notification started, stopping");
@@ -491,38 +158,121 @@ public class VoIPPreNotificationService {
             }
             return;
         }
-        if (XiaomiUtilities.isMIUI() && !XiaomiUtilities.isCustomPermissionGranted(XiaomiUtilities.OP_SHOW_WHEN_LOCKED) && ((KeyguardManager) context.getSystemService("keyguard")).inKeyguardRestrictedInputMode()) {
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("MIUI: no permission to show when locked but the screen is locked. ¯\\_(ツ)_/¯");
-            }
-            pendingVoIP = null;
-            pendingCall = null;
-            State state2 = currentState;
-            if (state2 != null) {
-                state2.destroy();
-                return;
-            }
+        if (!XiaomiUtilities.isMIUI() || XiaomiUtilities.isCustomPermissionGranted(XiaomiUtilities.OP_SHOW_WHEN_LOCKED) || !((KeyguardManager) context.getSystemService("keyguard")).inKeyguardRestrictedInputMode()) {
+            TL_phone.receivedCall receivedcall = new TL_phone.receivedCall();
+            TLRPC.TL_inputPhoneCall tL_inputPhoneCall = new TLRPC.TL_inputPhoneCall();
+            receivedcall.peer = tL_inputPhoneCall;
+            tL_inputPhoneCall.id = phoneCall.id;
+            tL_inputPhoneCall.access_hash = phoneCall.access_hash;
+            ConnectionsManager.getInstance(i10).sendRequest(receivedcall, new cg.g0(20, context, runnable), 2);
             return;
         }
-        TL_phone.receivedCall receivedcall = new TL_phone.receivedCall();
-        TLRPC.TL_inputPhoneCall tL_inputPhoneCall = new TLRPC.TL_inputPhoneCall();
-        receivedcall.peer = tL_inputPhoneCall;
-        tL_inputPhoneCall.id = phoneCall.id;
-        tL_inputPhoneCall.access_hash = phoneCall.access_hash;
-        ConnectionsManager.getInstance(i).sendRequest(receivedcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda3
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        VoIPPreNotificationService.$r8$lambda$FKGlbdAziKn85Rug4hrUyX7sDaA(TLObject.this, tL_error, r3, r4);
-                    }
-                });
-            }
-        }, 2);
+        if (BuildVars.LOGS_ENABLED) {
+            FileLog.e("MIUI: no permission to show when locked but the screen is locked. ¯\\_(ツ)_/¯");
+        }
+        pendingVoIP = null;
+        pendingCall = null;
+        State state2 = currentState;
+        if (state2 != null) {
+            state2.destroy();
+        }
     }
 
-    public static /* synthetic */ void $r8$lambda$FKGlbdAziKn85Rug4hrUyX7sDaA(TLObject tLObject, TLRPC.TL_error tL_error, Context context, Runnable runnable) {
+    public static void answer(Context context) {
+        FileLog.d("VoIPPreNotification.answer()");
+        Intent intent = pendingVoIP;
+        if (intent == null) {
+            FileLog.d("VoIPPreNotification.answer(): pending intent is not found");
+            return;
+        }
+        currentState = null;
+        intent.getIntExtra("account", UserConfig.selectedAccount);
+        if (VoIPService.getSharedInstance() != null) {
+            VoIPService.getSharedInstance().acceptIncomingCall();
+        } else {
+            pendingVoIP.putExtra("openFragment", true);
+            if (!pd0.f("android.permission.RECORD_AUDIO") || (isVideo() && !pd0.f("android.permission.CAMERA"))) {
+                try {
+                    PendingIntent.getActivity(context, 0, new Intent(context, (Class<?>) VoIPPermissionActivity.class).addFlags(TLObject.FLAG_28), 1107296256).send();
+                    return;
+                } catch (Exception e9) {
+                    if (BuildVars.LOGS_ENABLED) {
+                        FileLog.e("Error starting permission activity", e9);
+                        return;
+                    }
+                    return;
+                }
+            }
+            if (Build.VERSION.SDK_INT >= 26) {
+                context.startForegroundService(pendingVoIP);
+            } else {
+                context.startService(pendingVoIP);
+            }
+            pendingVoIP = null;
+        }
+        dismiss(context, true);
+    }
+
+    public static void decline(Context context, int i10) {
+        FileLog.d("VoIPPreNotification.decline(" + i10 + ")");
+        Intent intent = pendingVoIP;
+        if (intent == null || pendingCall == null) {
+            FileLog.d("VoIPPreNotification.decline(" + i10 + "): pending intent or call is not found");
+            return;
+        }
+        int intExtra = intent.getIntExtra("account", UserConfig.selectedAccount);
+        TL_phone.discardCall discardcall = new TL_phone.discardCall();
+        TLRPC.TL_inputPhoneCall tL_inputPhoneCall = new TLRPC.TL_inputPhoneCall();
+        discardcall.peer = tL_inputPhoneCall;
+        TL_phone.PhoneCall phoneCall = pendingCall;
+        tL_inputPhoneCall.access_hash = phoneCall.access_hash;
+        tL_inputPhoneCall.id = phoneCall.id;
+        discardcall.duration = 0;
+        discardcall.connection_id = 0L;
+        if (i10 == 2) {
+            discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonDisconnect();
+        } else if (i10 == 3) {
+            discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonMissed();
+        } else if (i10 != 4) {
+            discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonHangup();
+        } else {
+            discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonBusy();
+        }
+        FileLog.e("discardCall " + discardcall.reason);
+        ConnectionsManager.getInstance(intExtra).sendRequest(discardcall, new j2(intExtra, 2), 2);
+        dismiss(context, false);
+    }
+
+    public static void dismiss(Context context, boolean z10) {
+        FileLog.d("VoIPPreNotification.dismiss()");
+        pendingVoIP = null;
+        pendingCall = null;
+        State state = currentState;
+        if (state != null) {
+            state.destroy();
+        }
+        ((NotificationManager) context.getSystemService("notification")).cancel(VoIPService.ID_INCOMING_CALL_PRENOTIFICATION);
+        stopRinging();
+        if (z10) {
+            return;
+        }
+        for (int i10 = 0; i10 < 4; i10++) {
+            MessagesController.getInstance(i10).ignoreSetOnline = false;
+        }
+        AndroidUtilities.runOnUIThread(new i(2));
+    }
+
+    public static State getState() {
+        return currentState;
+    }
+
+    public static boolean isVideo() {
+        Intent intent = pendingVoIP;
+        return intent != null && intent.getBooleanExtra(MediaStreamTrack.VIDEO_TRACK_KIND, false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$acknowledge$2(TLObject tLObject, TLRPC.TL_error tL_error, Context context, Runnable runnable) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.w("(VoIPPreNotification) receivedCall response = " + tLObject);
         }
@@ -543,6 +293,206 @@ public class VoIPPreNotificationService {
             state.destroy();
         }
         dismiss(context, false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$acknowledge$3(Context context, Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new k(tLObject, tL_error, context, runnable, 2));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$decline$4(int i10, TLObject tLObject, TLRPC.TL_error tL_error) {
+        if (tL_error != null) {
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.e("(VoIPPreNotification) error on phone.discardCall: " + tL_error);
+                return;
+            }
+            return;
+        }
+        if (tLObject instanceof TLRPC.TL_updates) {
+            MessagesController.getInstance(i10).processUpdates((TLRPC.TL_updates) tLObject, false);
+        }
+        if (BuildVars.LOGS_ENABLED) {
+            FileLog.d("(VoIPPreNotification) phone.discardCall " + tLObject);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static void lambda$dismiss$5() {
+        LaunchActivity launchActivity = LaunchActivity.C1;
+        if (launchActivity != null && launchActivity.d1 && VoIPService.getSharedInstance() == null) {
+            launchActivity.d1 = false;
+            lh1 lh1Var = lh1.j1;
+            if (lh1Var != null) {
+                lh1Var.n();
+            }
+            launchActivity.moveTaskToBack(true);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$show$1(Intent intent, TL_phone.PhoneCall phoneCall, Context context, int i10, long j10, boolean z10) {
+        pendingVoIP = intent;
+        pendingCall = phoneCall;
+        ((NotificationManager) context.getSystemService("notification")).notify(VoIPService.ID_INCOMING_CALL_PRENOTIFICATION, makeNotification(context, i10, j10, phoneCall.id, z10));
+        startRinging(context, i10, j10);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$startRinging$0(MediaPlayer mediaPlayer) {
+        try {
+            ringtonePlayer.start();
+        } catch (Throwable th) {
+            FileLog.e(th);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00e2  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0265  */
+    /* JADX WARN: Type inference failed for: r10v3 */
+    /* JADX WARN: Type inference failed for: r10v7 */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private static Notification makeNotification(Context context, int i10, long j10, long j11, boolean z10) {
+        boolean z11;
+        int i11;
+        int i12;
+        int i13;
+        String formatName;
+        if (Build.VERSION.SDK_INT < 33) {
+            return null;
+        }
+        TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j10));
+        NotificationManager notificationManager = (NotificationManager) context.getSystemService("notification");
+        Intent action = new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip");
+        Notification.Builder contentIntent = new Notification.Builder(context).setContentTitle(LocaleController.getString(z10 ? R.string.VoipInVideoCallBranding : R.string.VoipInCallBranding)).setSmallIcon(R.drawable.call).setContentIntent(PendingIntent.getActivity(context, 0, action, 301989888));
+        SharedPreferences globalNotificationsSettings = MessagesController.getGlobalNotificationsSettings();
+        int i14 = globalNotificationsSettings.getInt("calls_notification_channel", 0);
+        NotificationChannel notificationChannel = notificationManager.getNotificationChannel("incoming_calls2" + i14);
+        if (notificationChannel != null) {
+            notificationManager.deleteNotificationChannel(notificationChannel.getId());
+        }
+        NotificationChannel notificationChannel2 = notificationManager.getNotificationChannel("incoming_calls3" + i14);
+        if (notificationChannel2 != null) {
+            notificationManager.deleteNotificationChannel(notificationChannel2.getId());
+        }
+        NotificationChannel notificationChannel3 = notificationManager.getNotificationChannel("incoming_calls4" + i14);
+        if (notificationChannel3 != null) {
+            if (notificationChannel3.getImportance() >= 4 && notificationChannel3.getSound() == null) {
+                z11 = false;
+                if (z11) {
+                    AudioAttributes build = new AudioAttributes.Builder().setContentType(4).setLegacyStreamType(2).setUsage(2).build();
+                    NotificationChannel notificationChannel4 = new NotificationChannel("incoming_calls4" + i14, LocaleController.getString(R.string.IncomingCallsSystemSetting), 4);
+                    try {
+                        notificationChannel4.setSound(null, build);
+                    } catch (Exception e9) {
+                        FileLog.e(e9);
+                    }
+                    notificationChannel4.setDescription(LocaleController.getString(R.string.IncomingCallsSystemSettingDescription));
+                    notificationChannel4.enableVibration(false);
+                    notificationChannel4.enableLights(false);
+                    notificationChannel4.setBypassDnd(true);
+                    try {
+                        notificationManager.createNotificationChannel(notificationChannel4);
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
+                        return null;
+                    }
+                }
+                contentIntent.setChannelId("incoming_calls4" + i14);
+                Intent intent = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
+                intent.setAction(context.getPackageName() + ".DECLINE_CALL");
+                intent.putExtra("call_id", j11);
+                String string = LocaleController.getString(R.string.VoipDeclineCall);
+                i11 = Build.VERSION.SDK_INT;
+                if (i11 >= 24 || i11 >= 31) {
+                    i12 = 0;
+                } else {
+                    SpannableString spannableString = new SpannableString(string);
+                    i12 = 0;
+                    spannableString.setSpan(new ForegroundColorSpan(-769226), 0, spannableString.length(), 0);
+                }
+                PendingIntent broadcast = PendingIntent.getBroadcast(context, i12, intent, 301989888);
+                Intent intent2 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
+                intent2.setAction(context.getPackageName() + ".ANSWER_CALL");
+                intent2.putExtra("call_id", j11);
+                String string2 = LocaleController.getString(R.string.VoipAnswerCall);
+                if (i11 >= 24 || i11 >= 31) {
+                    i13 = 0;
+                } else {
+                    SpannableString spannableString2 = new SpannableString(string2);
+                    i13 = 0;
+                    spannableString2.setSpan(new ForegroundColorSpan(-16733696), 0, spannableString2.length(), 0);
+                }
+                PendingIntent activity = PendingIntent.getActivity(context, i13, new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip_answer"), 301989888);
+                contentIntent.setPriority(2);
+                contentIntent.setShowWhen(i13);
+                contentIntent.setColor(-13851168);
+                contentIntent.setVibrate(new long[i13]);
+                contentIntent.setCategory("call");
+                contentIntent.setFullScreenIntent(PendingIntent.getActivity(context, i13, action, 33554432), true);
+                if (user != null && !TextUtils.isEmpty(user.phone)) {
+                    contentIntent.addPerson("tel:" + user.phone);
+                }
+                Intent intent3 = new Intent(ApplicationLoader.applicationContext, (Class<?>) VoIPActionsReceiver.class);
+                intent3.setAction(context.getPackageName() + ".HIDE_CALL");
+                contentIntent.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, intent3, 167772160));
+                Bitmap roundAvatarBitmap = VoIPService.getRoundAvatarBitmap(context, i10, user);
+                formatName = ContactsController.formatName(user);
+                if (TextUtils.isEmpty(formatName)) {
+                    formatName = "___";
+                }
+                contentIntent.setStyle(Notification.CallStyle.forIncomingCall(new Person.Builder().setName(formatName).setIcon(Icon.createWithAdaptiveBitmap(roundAvatarBitmap)).build(), broadcast, activity));
+                return contentIntent.build();
+            }
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.d("User messed up the notification channel; deleting it and creating a proper one");
+            }
+            notificationManager.deleteNotificationChannel("incoming_calls4" + i14);
+            i14++;
+            globalNotificationsSettings.edit().putInt("calls_notification_channel", i14).commit();
+        }
+        z11 = true;
+        if (z11) {
+        }
+        contentIntent.setChannelId("incoming_calls4" + i14);
+        Intent intent4 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
+        intent4.setAction(context.getPackageName() + ".DECLINE_CALL");
+        intent4.putExtra("call_id", j11);
+        String string3 = LocaleController.getString(R.string.VoipDeclineCall);
+        i11 = Build.VERSION.SDK_INT;
+        if (i11 >= 24) {
+        }
+        i12 = 0;
+        PendingIntent broadcast2 = PendingIntent.getBroadcast(context, i12, intent4, 301989888);
+        Intent intent22 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
+        intent22.setAction(context.getPackageName() + ".ANSWER_CALL");
+        intent22.putExtra("call_id", j11);
+        String string22 = LocaleController.getString(R.string.VoipAnswerCall);
+        if (i11 >= 24) {
+        }
+        i13 = 0;
+        PendingIntent activity2 = PendingIntent.getActivity(context, i13, new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip_answer"), 301989888);
+        contentIntent.setPriority(2);
+        contentIntent.setShowWhen(i13);
+        contentIntent.setColor(-13851168);
+        contentIntent.setVibrate(new long[i13]);
+        contentIntent.setCategory("call");
+        contentIntent.setFullScreenIntent(PendingIntent.getActivity(context, i13, action, 33554432), true);
+        if (user != null) {
+            contentIntent.addPerson("tel:" + user.phone);
+        }
+        Intent intent32 = new Intent(ApplicationLoader.applicationContext, (Class<?>) VoIPActionsReceiver.class);
+        intent32.setAction(context.getPackageName() + ".HIDE_CALL");
+        contentIntent.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, intent32, 167772160));
+        Bitmap roundAvatarBitmap2 = VoIPService.getRoundAvatarBitmap(context, i10, user);
+        formatName = ContactsController.formatName(user);
+        if (TextUtils.isEmpty(formatName)) {
+        }
+        contentIntent.setStyle(Notification.CallStyle.forIncomingCall(new Person.Builder().setName(formatName).setIcon(Icon.createWithAdaptiveBitmap(roundAvatarBitmap2)).build(), broadcast2, activity2));
+        return contentIntent.build();
     }
 
     public static boolean open(Context context) {
@@ -566,130 +516,134 @@ public class VoIPPreNotificationService {
         return true;
     }
 
-    public static boolean isVideo() {
-        Intent intent = pendingVoIP;
-        return intent != null && intent.getBooleanExtra(MediaStreamTrack.VIDEO_TRACK_KIND, false);
-    }
-
-    public static void answer(Context context) {
-        FileLog.d("VoIPPreNotification.answer()");
-        Intent intent = pendingVoIP;
-        if (intent == null) {
-            FileLog.d("VoIPPreNotification.answer(): pending intent is not found");
+    public static void show(final Context context, final Intent intent, final TL_phone.PhoneCall phoneCall) {
+        FileLog.d("VoIPPreNotification.show()");
+        if (phoneCall == null || intent == null) {
+            dismiss(context, false);
+            FileLog.d("VoIPPreNotification.show(): call or intent is null");
             return;
         }
-        currentState = null;
-        intent.getIntExtra("account", UserConfig.selectedAccount);
-        if (VoIPService.getSharedInstance() != null) {
-            VoIPService.getSharedInstance().acceptIncomingCall();
-        } else {
-            pendingVoIP.putExtra("openFragment", true);
-            if (!PermissionRequest.hasPermission("android.permission.RECORD_AUDIO") || (isVideo() && !PermissionRequest.hasPermission("android.permission.CAMERA"))) {
+        TL_phone.PhoneCall phoneCall2 = pendingCall;
+        if (phoneCall2 == null || phoneCall2.id != phoneCall.id) {
+            dismiss(context, false);
+            pendingVoIP = intent;
+            pendingCall = phoneCall;
+            final int intExtra = intent.getIntExtra("account", UserConfig.selectedAccount);
+            final long longExtra = intent.getLongExtra("user_id", 0L);
+            final boolean z10 = phoneCall.video;
+            currentState = new State(intExtra, longExtra, phoneCall);
+            acknowledge(context, intExtra, phoneCall, new Runnable() { // from class: org.telegram.messenger.voip.o
+                @Override // java.lang.Runnable
+                public final void run() {
+                    VoIPPreNotificationService.lambda$show$1(intent, phoneCall, context, intExtra, longExtra, z10);
+                }
+            });
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00e9 A[Catch: all -> 0x0038, TryCatch #0 {all -> 0x0038, Exception -> 0x0081, blocks: (B:11:0x0032, B:13:0x0036, B:16:0x003b, B:18:0x0052, B:21:0x005e, B:23:0x0070, B:25:0x008b, B:27:0x00a9, B:28:0x00d7, B:30:0x00e9, B:34:0x0106, B:36:0x010c, B:38:0x011a, B:41:0x0132, B:42:0x0141, B:49:0x0114, B:51:0x00fa, B:53:0x0091, B:55:0x0095, B:57:0x009f, B:58:0x00a4, B:59:0x0083, B:62:0x00cb, B:64:0x00d2, B:65:0x0058), top: B:10:0x0032 }] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0128  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x012b  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00fa A[Catch: all -> 0x0038, TryCatch #0 {all -> 0x0038, Exception -> 0x0081, blocks: (B:11:0x0032, B:13:0x0036, B:16:0x003b, B:18:0x0052, B:21:0x005e, B:23:0x0070, B:25:0x008b, B:27:0x00a9, B:28:0x00d7, B:30:0x00e9, B:34:0x0106, B:36:0x010c, B:38:0x011a, B:41:0x0132, B:42:0x0141, B:49:0x0114, B:51:0x00fa, B:53:0x0091, B:55:0x0095, B:57:0x009f, B:58:0x00a4, B:59:0x0083, B:62:0x00cb, B:64:0x00d2, B:65:0x0058), top: B:10:0x0032 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void startRinging(Context context, int i10, long j10) {
+        int i11;
+        String string;
+        Uri parse;
+        boolean z10;
+        SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i10);
+        AudioManager audioManager = (AudioManager) context.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+        boolean z11 = audioManager.getRingerMode() != 0;
+        boolean isWiredHeadsetOn = audioManager.isWiredHeadsetOn();
+        if (z11 && ringtonePlayer == null) {
+            synchronized (sync) {
                 try {
-                    PendingIntent.getActivity(context, 0, new Intent(context, (Class<?>) VoIPPermissionActivity.class).addFlags(TLObject.FLAG_28), 1107296256).send();
-                    return;
-                } catch (Exception e) {
-                    if (BuildVars.LOGS_ENABLED) {
-                        FileLog.e("Error starting permission activity", e);
-                        return;
+                } catch (Exception e9) {
+                    FileLog.e(e9);
+                    MediaPlayer mediaPlayer = ringtonePlayer;
+                    if (mediaPlayer != null) {
+                        mediaPlayer.release();
+                        ringtonePlayer = null;
                     }
+                } finally {
+                }
+                if (ringtonePlayer != null) {
                     return;
                 }
+                MediaPlayer mediaPlayer2 = new MediaPlayer();
+                ringtonePlayer = mediaPlayer2;
+                mediaPlayer2.setOnPreparedListener(new p());
+                ringtonePlayer.setLooping(true);
+                if (isWiredHeadsetOn) {
+                    ringtonePlayer.setAudioStreamType(0);
+                } else {
+                    ringtonePlayer.setAudioStreamType(2);
+                }
+                if (notificationsSettings.getBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + j10, false)) {
+                    string = notificationsSettings.getString("ringtone_path_" + j10, null);
+                } else {
+                    string = notificationsSettings.getString("CallsRingtonePath", null);
+                }
+                if (string == null) {
+                    parse = RingtoneManager.getDefaultUri(1);
+                } else {
+                    Uri uri = Settings.System.DEFAULT_RINGTONE_URI;
+                    if (uri == null || !string.equalsIgnoreCase(uri.getPath())) {
+                        parse = Uri.parse(string);
+                        z10 = false;
+                        FileLog.d("start ringtone with " + z10 + " " + parse);
+                        ringtonePlayer.setDataSource(context, parse);
+                        ringtonePlayer.prepareAsync();
+                        if (notificationsSettings.getBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + j10, false)) {
+                            i11 = notificationsSettings.getInt("vibrate_calls", 0);
+                        } else {
+                            i11 = notificationsSettings.getInt("calls_vibrate_" + j10, 0);
+                        }
+                        if ((i11 != 2 && i11 != 4 && (audioManager.getRingerMode() == 1 || audioManager.getRingerMode() == 2)) || (i11 == 4 && audioManager.getRingerMode() == 1)) {
+                            Vibrator vibrator2 = (Vibrator) context.getSystemService("vibrator");
+                            vibrator = vibrator2;
+                            vibrator2.vibrate(new long[]{0, i11 == 1 ? 350L : i11 == 3 ? 1400L : 700L, 500}, 0);
+                        }
+                    }
+                    parse = RingtoneManager.getDefaultUri(1);
+                }
+                z10 = true;
+                FileLog.d("start ringtone with " + z10 + " " + parse);
+                ringtonePlayer.setDataSource(context, parse);
+                ringtonePlayer.prepareAsync();
+                if (notificationsSettings.getBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + j10, false)) {
+                }
+                if (i11 != 2) {
+                    Vibrator vibrator22 = (Vibrator) context.getSystemService("vibrator");
+                    vibrator = vibrator22;
+                    vibrator22.vibrate(new long[]{0, i11 == 1 ? 350L : i11 == 3 ? 1400L : 700L, 500}, 0);
+                }
+                Vibrator vibrator222 = (Vibrator) context.getSystemService("vibrator");
+                vibrator = vibrator222;
+                vibrator222.vibrate(new long[]{0, i11 == 1 ? 350L : i11 == 3 ? 1400L : 700L, 500}, 0);
             }
-            if (Build.VERSION.SDK_INT >= 26) {
-                context.startForegroundService(pendingVoIP);
-            } else {
-                context.startService(pendingVoIP);
-            }
-            pendingVoIP = null;
-        }
-        dismiss(context, true);
-    }
-
-    public static void decline(Context context, int i) {
-        FileLog.d("VoIPPreNotification.decline(" + i + ")");
-        Intent intent = pendingVoIP;
-        if (intent == null || pendingCall == null) {
-            FileLog.d("VoIPPreNotification.decline(" + i + "): pending intent or call is not found");
-            return;
-        }
-        final int intExtra = intent.getIntExtra("account", UserConfig.selectedAccount);
-        TL_phone.discardCall discardcall = new TL_phone.discardCall();
-        TLRPC.TL_inputPhoneCall tL_inputPhoneCall = new TLRPC.TL_inputPhoneCall();
-        discardcall.peer = tL_inputPhoneCall;
-        TL_phone.PhoneCall phoneCall = pendingCall;
-        tL_inputPhoneCall.access_hash = phoneCall.access_hash;
-        tL_inputPhoneCall.id = phoneCall.id;
-        discardcall.duration = 0;
-        discardcall.connection_id = 0L;
-        if (i == 2) {
-            discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonDisconnect();
-        } else if (i == 3) {
-            discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonMissed();
-        } else if (i == 4) {
-            discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonBusy();
-        } else {
-            discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonHangup();
-        }
-        FileLog.e("discardCall " + discardcall.reason);
-        ConnectionsManager.getInstance(intExtra).sendRequest(discardcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda4
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                VoIPPreNotificationService.$r8$lambda$-xd9f9h0l8PWlBVsXRSKf-IBo_k(intExtra, tLObject, tL_error);
-            }
-        }, 2);
-        dismiss(context, false);
-    }
-
-    public static /* synthetic */ void $r8$lambda$-xd9f9h0l8PWlBVsXRSKf-IBo_k(int i, TLObject tLObject, TLRPC.TL_error tL_error) {
-        if (tL_error != null) {
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("(VoIPPreNotification) error on phone.discardCall: " + tL_error);
-                return;
-            }
-            return;
-        }
-        if (tLObject instanceof TLRPC.TL_updates) {
-            MessagesController.getInstance(i).processUpdates((TLRPC.TL_updates) tLObject, false);
-        }
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("(VoIPPreNotification) phone.discardCall " + tLObject);
         }
     }
 
-    public static void dismiss(Context context, boolean z) {
-        FileLog.d("VoIPPreNotification.dismiss()");
-        pendingVoIP = null;
-        pendingCall = null;
-        State state = currentState;
-        if (state != null) {
-            state.destroy();
-        }
-        ((NotificationManager) context.getSystemService("notification")).cancel(203);
-        stopRinging();
-        if (z) {
-            return;
-        }
-        for (int i = 0; i < 4; i++) {
-            MessagesController.getInstance(i).ignoreSetOnline = false;
-        }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda5
-            @Override // java.lang.Runnable
-            public final void run() {
-                VoIPPreNotificationService.$r8$lambda$_XVfSiPmqqB3fzeto3OEFrjZsNA();
+    public static void stopRinging() {
+        synchronized (sync) {
+            try {
+                MediaPlayer mediaPlayer = ringtonePlayer;
+                if (mediaPlayer != null) {
+                    mediaPlayer.stop();
+                    ringtonePlayer.release();
+                    ringtonePlayer = null;
+                }
+            } catch (Throwable th) {
+                throw th;
             }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$_XVfSiPmqqB3fzeto3OEFrjZsNA() {
-        LaunchActivity launchActivity = LaunchActivity.instance;
-        if (launchActivity != null && launchActivity.voipLaunchedInBackground && VoIPService.getSharedInstance() == null) {
-            launchActivity.voipLaunchedInBackground = false;
-            VoIPFragment voIPFragment = VoIPFragment.getInstance();
-            if (voIPFragment != null) {
-                voIPFragment.finish();
-            }
-            launchActivity.moveTaskToBack(true);
+        }
+        Vibrator vibrator2 = vibrator;
+        if (vibrator2 != null) {
+            vibrator2.cancel();
+            vibrator = null;
         }
     }
 }

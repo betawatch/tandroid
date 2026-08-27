@@ -1,12 +1,14 @@
 package org.webrtc;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class StatsReport {
     public final String id;
     public final double timestamp;
     public final String type;
     public final Value[] values;
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class Value {
         public final String name;
         public final String value;
@@ -17,7 +19,10 @@ public class StatsReport {
         }
 
         public String toString() {
-            return "[" + this.name + ": " + this.value + "]";
+            StringBuilder sb2 = new StringBuilder("[");
+            sb2.append(this.name);
+            sb2.append(": ");
+            return a9.p.p(sb2, this.value, "]");
         }
     }
 
@@ -29,24 +34,22 @@ public class StatsReport {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("id: ");
-        sb.append(this.id);
-        sb.append(", type: ");
-        sb.append(this.type);
-        sb.append(", timestamp: ");
-        sb.append(this.timestamp);
-        sb.append(", values: ");
-        int i = 0;
+        StringBuilder sb2 = new StringBuilder("id: ");
+        sb2.append(this.id);
+        sb2.append(", type: ");
+        sb2.append(this.type);
+        sb2.append(", timestamp: ");
+        sb2.append(this.timestamp);
+        sb2.append(", values: ");
+        int i10 = 0;
         while (true) {
             Value[] valueArr = this.values;
-            if (i < valueArr.length) {
-                sb.append(valueArr[i].toString());
-                sb.append(", ");
-                i++;
-            } else {
-                return sb.toString();
+            if (i10 >= valueArr.length) {
+                return sb2.toString();
             }
+            sb2.append(valueArr[i10].toString());
+            sb2.append(", ");
+            i10++;
         }
     }
 }

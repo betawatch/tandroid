@@ -1,75 +1,29 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer$-CC;
-import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
-import java.util.function.ObjDoubleConsumer;
-import java.util.function.Supplier;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-public final class z1 extends N1 implements M1, d2 {
-    public final /* synthetic */ Supplier b;
-    public final /* synthetic */ ObjDoubleConsumer c;
-    public final /* synthetic */ o d;
+public final /* synthetic */ class z1 implements IntConsumer {
+    public final /* synthetic */ int a;
 
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ boolean C() {
-        return false;
+    public /* synthetic */ z1(int i10) {
+        this.a = i10;
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void E(Double d) {
-        r1.e(this, d);
+    private final void accept$j$$util$stream$Node$OfInt$$ExternalSyntheticLambda0(int i10) {
     }
 
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ void accept(int i) {
-        r1.k();
-        throw null;
+    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfInt$$ExternalSyntheticLambda0(int i10) {
     }
 
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ void accept(long j) {
-        r1.l();
-        throw null;
+    @Override // java.util.function.IntConsumer
+    public final void accept(int i10) {
+        int i11 = this.a;
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void s(Object obj) {
-        E((Double) obj);
-    }
-
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
-    }
-
-    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
-        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
-    }
-
-    @Override // j$.util.stream.g2
-    public final /* synthetic */ void x() {
-    }
-
-    @Override // j$.util.stream.M1
-    public final void n(M1 m1) {
-        this.a = this.d.apply(this.a, ((z1) m1).a);
-    }
-
-    @Override // j$.util.stream.g2
-    public final void y(long j) {
-        this.a = this.b.get();
-    }
-
-    @Override // j$.util.stream.g2
-    public final void accept(double d) {
-        this.c.accept(this.a, d);
-    }
-
-    public z1(Supplier supplier, ObjDoubleConsumer objDoubleConsumer, o oVar) {
-        this.b = supplier;
-        this.c = objDoubleConsumer;
-        this.d = oVar;
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        switch (this.a) {
+        }
+        return j$.com.android.tools.r8.a.c(this, intConsumer);
     }
 }

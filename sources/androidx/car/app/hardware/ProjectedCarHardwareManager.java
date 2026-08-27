@@ -1,36 +1,29 @@
 package androidx.car.app.hardware;
 
-import androidx.car.app.CarContext;
-import androidx.car.app.HostDispatcher;
-import androidx.car.app.hardware.CarHardwareManager;
-import androidx.car.app.hardware.climate.CarClimate;
-import androidx.car.app.hardware.common.CarHardwareHostDispatcher;
-import androidx.car.app.hardware.info.CarInfo;
-import androidx.car.app.hardware.info.CarSensors;
-import androidx.car.app.hardware.info.ProjectedCarInfo;
-import androidx.car.app.hardware.info.ProjectedCarSensors;
+import q.a;
+import s.b;
+import s.h;
+import s.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class ProjectedCarHardwareManager implements CarHardwareManager {
-    private final ProjectedCarInfo mVehicleInfo;
-    private final ProjectedCarSensors mVehicleSensors;
+public class ProjectedCarHardwareManager {
+    private final h mVehicleInfo;
+    private final i mVehicleSensors;
 
-    public /* bridge */ /* synthetic */ CarClimate getCarClimate() {
-        CarHardwareManager.-CC.$default$getCarClimate(this);
-        return null;
+    public ProjectedCarHardwareManager(androidx.car.app.h hVar, androidx.car.app.i iVar) {
+        throw null;
     }
 
-    public CarInfo getCarInfo() {
+    public a getCarClimate() {
+        throw new UnsupportedOperationException();
+    }
+
+    public s.a getCarInfo() {
         return this.mVehicleInfo;
     }
 
-    public CarSensors getCarSensors() {
+    public b getCarSensors() {
         return this.mVehicleSensors;
-    }
-
-    public ProjectedCarHardwareManager(CarContext carContext, HostDispatcher hostDispatcher) {
-        CarHardwareHostDispatcher carHardwareHostDispatcher = new CarHardwareHostDispatcher(hostDispatcher);
-        this.mVehicleInfo = new ProjectedCarInfo(carHardwareHostDispatcher);
-        this.mVehicleSensors = new ProjectedCarSensors(carHardwareHostDispatcher);
     }
 }

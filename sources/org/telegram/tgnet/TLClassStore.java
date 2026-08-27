@@ -4,6 +4,7 @@ import android.util.SparseArray;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLRPC;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes3.dex */
 public class TLClassStore {
     static TLClassStore store;
@@ -41,12 +42,12 @@ public class TLClassStore {
         return store;
     }
 
-    public TLObject TLdeserialize(NativeByteBuffer nativeByteBuffer, int i, boolean z) {
-        Class cls = this.classStore.get(i);
+    public TLObject TLdeserialize(NativeByteBuffer nativeByteBuffer, int i10, boolean z10) {
+        Class cls = this.classStore.get(i10);
         if (cls != null) {
             try {
                 TLObject tLObject = (TLObject) cls.newInstance();
-                tLObject.readParams(nativeByteBuffer, z);
+                tLObject.readParams(nativeByteBuffer, z10);
                 return tLObject;
             } catch (Throwable th) {
                 FileLog.e(th);

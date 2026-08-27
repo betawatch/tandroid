@@ -2,30 +2,38 @@ package com.android.billingclient.api;
 
 import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class Purchase {
-    private final String zza;
-    private final String zzb;
-    private final JSONObject zzc;
+public final class Purchase {
+    public final String a;
+    public final String b;
+    public final JSONObject c;
 
     public Purchase(String str, String str2) {
-        this.zza = str;
-        this.zzb = str2;
-        this.zzc = new JSONObject(str);
+        this.a = str;
+        this.b = str2;
+        this.c = new JSONObject(str);
     }
 
-    private final ArrayList zza() {
+    public final String a() {
+        String optString = this.c.optString("orderId");
+        if (TextUtils.isEmpty(optString)) {
+            return null;
+        }
+        return optString;
+    }
+
+    public final ArrayList b() {
         ArrayList arrayList = new ArrayList();
-        JSONObject jSONObject = this.zzc;
+        JSONObject jSONObject = this.c;
         if (jSONObject.has("productIds")) {
             JSONArray optJSONArray = jSONObject.optJSONArray("productIds");
             if (optJSONArray != null) {
-                for (int i = 0; i < optJSONArray.length(); i++) {
-                    arrayList.add(optJSONArray.optString(i));
+                for (int i10 = 0; i10 < optJSONArray.length(); i10++) {
+                    arrayList.add(optJSONArray.optString(i10));
                 }
             }
         } else if (jSONObject.has("productId")) {
@@ -34,7 +42,12 @@ public class Purchase {
         return arrayList;
     }
 
-    public boolean equals(Object obj) {
+    public final String c() {
+        JSONObject jSONObject = this.c;
+        return jSONObject.optString("token", jSONObject.optString("purchaseToken"));
+    }
+
+    public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
@@ -42,57 +55,14 @@ public class Purchase {
             return false;
         }
         Purchase purchase = (Purchase) obj;
-        return TextUtils.equals(this.zza, purchase.getOriginalJson()) && TextUtils.equals(this.zzb, purchase.getSignature());
+        return TextUtils.equals(this.a, purchase.a) && TextUtils.equals(this.b, purchase.b);
     }
 
-    public AccountIdentifiers getAccountIdentifiers() {
-        JSONObject jSONObject = this.zzc;
-        String optString = jSONObject.optString("obfuscatedAccountId");
-        String optString2 = jSONObject.optString("obfuscatedProfileId");
-        if (optString == null && optString2 == null) {
-            return null;
-        }
-        return new AccountIdentifiers(optString, optString2);
+    public final int hashCode() {
+        return this.a.hashCode();
     }
 
-    public String getOrderId() {
-        String optString = this.zzc.optString("orderId");
-        if (TextUtils.isEmpty(optString)) {
-            return null;
-        }
-        return optString;
-    }
-
-    public String getOriginalJson() {
-        return this.zza;
-    }
-
-    public List getProducts() {
-        return zza();
-    }
-
-    public int getPurchaseState() {
-        return this.zzc.optInt("purchaseState", 1) != 4 ? 1 : 2;
-    }
-
-    public String getPurchaseToken() {
-        JSONObject jSONObject = this.zzc;
-        return jSONObject.optString("token", jSONObject.optString("purchaseToken"));
-    }
-
-    public String getSignature() {
-        return this.zzb;
-    }
-
-    public int hashCode() {
-        return this.zza.hashCode();
-    }
-
-    public boolean isAcknowledged() {
-        return this.zzc.optBoolean("acknowledged", true);
-    }
-
-    public String toString() {
-        return "Purchase. Json: ".concat(String.valueOf(this.zza));
+    public final String toString() {
+        return "Purchase. Json: ".concat(String.valueOf(this.a));
     }
 }

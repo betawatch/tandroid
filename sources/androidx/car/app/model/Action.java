@@ -2,6 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class Action {
     public static final int FLAG_DEFAULT = 4;
@@ -14,7 +15,7 @@ public final class Action {
     private final int mFlags;
     private final CarIcon mIcon;
     private final boolean mIsEnabled;
-    private final OnClickDelegate mOnClickDelegate;
+    private final b0 mOnClickDelegate;
     private final CarText mTitle;
     private final int mType;
     public static final Action APP_ICON = new Action(65538);
@@ -25,54 +26,28 @@ public final class Action {
     public static final int TYPE_PAN = 65540;
     public static final Action PAN = new Action(TYPE_PAN);
 
-    public static final class Builder {
+    private Action(int i10) {
+        if (i10 == 1) {
+            throw new IllegalArgumentException("Standard action constructor used with non standard type");
+        }
+        this.mTitle = null;
+        this.mIcon = null;
+        this.mBackgroundColor = CarColor.DEFAULT;
+        this.mOnClickDelegate = null;
+        this.mType = i10;
+        this.mFlags = 0;
+        this.mIsEnabled = true;
     }
 
-    static boolean isStandardActionType(int i) {
-        return (i & 65536) != 0;
+    public static boolean isStandardActionType(int i10) {
+        return (i10 & 65536) != 0;
     }
 
-    public CarText getTitle() {
-        return this.mTitle;
-    }
-
-    public CarIcon getIcon() {
-        return this.mIcon;
-    }
-
-    public CarColor getBackgroundColor() {
-        return this.mBackgroundColor;
-    }
-
-    public int getType() {
-        return this.mType;
-    }
-
-    public int getFlags() {
-        return this.mFlags;
-    }
-
-    public boolean isStandard() {
-        return isStandardActionType(this.mType);
-    }
-
-    public OnClickDelegate getOnClickDelegate() {
-        return this.mOnClickDelegate;
-    }
-
-    public boolean isEnabled() {
-        return this.mIsEnabled;
-    }
-
-    public String toString() {
-        return "[type: " + typeToString(this.mType) + ", icon: " + this.mIcon + ", bkg: " + this.mBackgroundColor + ", isEnabled: " + this.mIsEnabled + "]";
-    }
-
-    public static String typeToString(int i) {
-        if (i == 1) {
+    public static String typeToString(int i10) {
+        if (i10 == 1) {
             return "CUSTOM";
         }
-        switch (i) {
+        switch (i10) {
             case 65538:
                 return "APP_ICON";
             case TYPE_BACK /* 65539 */:
@@ -84,37 +59,6 @@ public final class Action {
             default:
                 return "<unknown>";
         }
-    }
-
-    private Action(int i) {
-        if (i == 1) {
-            throw new IllegalArgumentException("Standard action constructor used with non standard type");
-        }
-        this.mTitle = null;
-        this.mIcon = null;
-        this.mBackgroundColor = CarColor.DEFAULT;
-        this.mOnClickDelegate = null;
-        this.mType = i;
-        this.mFlags = 0;
-        this.mIsEnabled = true;
-    }
-
-    Action(Builder builder) {
-        throw null;
-    }
-
-    private Action() {
-        this.mTitle = null;
-        this.mIcon = null;
-        this.mBackgroundColor = CarColor.DEFAULT;
-        this.mOnClickDelegate = null;
-        this.mType = 1;
-        this.mFlags = 0;
-        this.mIsEnabled = true;
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mTitle, Integer.valueOf(this.mType), Boolean.valueOf(this.mOnClickDelegate == null), Boolean.valueOf(this.mIcon == null), Boolean.valueOf(this.mIsEnabled));
     }
 
     public boolean equals(Object obj) {
@@ -131,5 +75,59 @@ public final class Action {
             }
         }
         return false;
+    }
+
+    public CarColor getBackgroundColor() {
+        return this.mBackgroundColor;
+    }
+
+    public int getFlags() {
+        return this.mFlags;
+    }
+
+    public CarIcon getIcon() {
+        return this.mIcon;
+    }
+
+    public b0 getOnClickDelegate() {
+        return this.mOnClickDelegate;
+    }
+
+    public CarText getTitle() {
+        return this.mTitle;
+    }
+
+    public int getType() {
+        return this.mType;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mTitle, Integer.valueOf(this.mType), Boolean.valueOf(this.mOnClickDelegate == null), Boolean.valueOf(this.mIcon == null), Boolean.valueOf(this.mIsEnabled));
+    }
+
+    public boolean isEnabled() {
+        return this.mIsEnabled;
+    }
+
+    public boolean isStandard() {
+        return isStandardActionType(this.mType);
+    }
+
+    public String toString() {
+        return "[type: " + typeToString(this.mType) + ", icon: " + this.mIcon + ", bkg: " + this.mBackgroundColor + ", isEnabled: " + this.mIsEnabled + "]";
+    }
+
+    public Action(a aVar) {
+        throw null;
+    }
+
+    private Action() {
+        this.mTitle = null;
+        this.mIcon = null;
+        this.mBackgroundColor = CarColor.DEFAULT;
+        this.mOnClickDelegate = null;
+        this.mType = 1;
+        this.mFlags = 0;
+        this.mIsEnabled = true;
     }
 }

@@ -16,22 +16,22 @@ public final class x implements l, Serializable {
     public final transient String c;
 
     @Override // j$.time.temporal.l
-    public final /* synthetic */ boolean h(j$.time.temporal.o oVar) {
+    public final /* synthetic */ boolean e(j$.time.temporal.o oVar) {
         return j$.com.android.tools.r8.a.r(this, oVar);
     }
 
     @Override // j$.time.temporal.l
-    public final /* synthetic */ int o(j$.time.temporal.o oVar) {
-        return j$.com.android.tools.r8.a.m(this, (j$.time.temporal.a) oVar);
+    public final /* synthetic */ int j(j$.time.temporal.o oVar) {
+        return j$.com.android.tools.r8.a.m(this, oVar);
     }
 
     @Override // j$.time.temporal.l
-    public final /* synthetic */ Object r(j$.time.format.a aVar) {
+    public final /* synthetic */ Object m(j$.time.format.a aVar) {
         return j$.com.android.tools.r8.a.v(this, aVar);
     }
 
     @Override // j$.time.temporal.l
-    public final /* synthetic */ long u(j$.time.temporal.o oVar) {
+    public final /* synthetic */ long y(j$.time.temporal.o oVar) {
         return j$.com.android.tools.r8.a.o(this, oVar);
     }
 
@@ -41,42 +41,41 @@ public final class x implements l, Serializable {
         e = new x[]{xVar, new x(0, LocalDate.of(1912, 7, 30), "Taisho"), new x(1, LocalDate.of(1926, 12, 25), "Showa"), new x(2, LocalDate.of(1989, 1, 8), "Heisei"), new x(3, LocalDate.of(2019, 5, 1), "Reiwa")};
     }
 
-    public final x m() {
+    public final x p() {
         if (this == e[r0.length - 1]) {
             return null;
         }
-        return n(this.a + 1);
+        return s(this.a + 1);
     }
 
-    public x(int i, LocalDate localDate, String str) {
-        this.a = i;
+    public x(int i10, LocalDate localDate, String str) {
+        this.a = i10;
         this.b = localDate;
         this.c = str;
     }
 
-    public static x n(int i) {
-        int i2 = i + 1;
-        if (i2 >= 0) {
+    public static x s(int i10) {
+        int i11 = i10 + 1;
+        if (i11 >= 0) {
             x[] xVarArr = e;
-            if (i2 < xVarArr.length) {
-                return xVarArr[i2];
+            if (i11 < xVarArr.length) {
+                return xVarArr[i11];
             }
         }
-        throw new j$.time.b("Invalid era: " + i);
+        throw new j$.time.b("Invalid era: " + i10);
     }
 
     @Override // j$.time.temporal.m
-    public final Temporal x(Temporal temporal) {
-        return temporal.e(getValue(), j$.time.temporal.a.ERA);
+    public final Temporal q(Temporal temporal) {
+        return temporal.c(getValue(), j$.time.temporal.a.ERA);
     }
 
-    public static x a(LocalDate localDate) {
+    public static x o(LocalDate localDate) {
         if (localDate.N(w.d)) {
             throw new j$.time.b("JapaneseDate before Meiji 6 are not supported");
         }
-        x[] xVarArr = e;
-        for (int length = xVarArr.length - 1; length >= 0; length--) {
-            x xVar = xVarArr[length];
+        for (int length = e.length - 1; length >= 0; length--) {
+            x xVar = e[length];
             if (localDate.compareTo(xVar.b) >= 0) {
                 return xVar;
             }
@@ -90,12 +89,12 @@ public final class x implements l, Serializable {
     }
 
     @Override // j$.time.temporal.l
-    public final j$.time.temporal.s q(j$.time.temporal.o oVar) {
+    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
         j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
         if (oVar != aVar) {
             return j$.time.temporal.p.d(this, oVar);
         }
-        return u.c.y(aVar);
+        return u.c.s(aVar);
     }
 
     public final String toString() {
@@ -107,6 +106,6 @@ public final class x implements l, Serializable {
     }
 
     private Object writeReplace() {
-        return new D((byte) 5, this);
+        return new d0((byte) 5, this);
     }
 }

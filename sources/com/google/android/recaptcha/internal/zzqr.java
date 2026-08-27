@@ -3,6 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzqr implements zzuf {
     private final zzqq zza;
@@ -17,7 +18,7 @@ final class zzqr implements zzuf {
     }
 
     private final void zzP(Object obj, zzug zzugVar, zzry zzryVar) {
-        int i = this.zzc;
+        int i10 = this.zzc;
         this.zzc = ((this.zzb >>> 3) << 3) | 4;
         try {
             zzugVar.zzh(obj, this, zzryVar);
@@ -26,7 +27,7 @@ final class zzqr implements zzuf {
                 throw new zzsx("Failed to parse the message.");
             }
         } finally {
-            this.zzc = i;
+            this.zzc = i10;
         }
     }
 
@@ -42,26 +43,26 @@ final class zzqr implements zzuf {
         zzqqVar.zzA(zze);
     }
 
-    private final void zzR(int i) {
-        if (this.zza.zzd() != i) {
+    private final void zzR(int i10) {
+        if (this.zza.zzd() != i10) {
             throw new zzsx("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
         }
     }
 
-    private final void zzS(int i) {
-        if ((this.zzb & 7) != i) {
+    private final void zzS(int i10) {
+        if ((this.zzb & 7) != i10) {
             throw new zzsw("Protocol message tag had invalid wire type.");
         }
     }
 
-    private static final void zzT(int i) {
-        if ((i & 3) != 0) {
+    private static final void zzT(int i10) {
+        if ((i10 & 3) != 0) {
             throw new zzsx("Failed to parse the message.");
         }
     }
 
-    private static final void zzU(int i) {
-        if ((i & 7) != 0) {
+    private static final void zzU(int i10) {
+        if ((i10 & 7) != 0) {
             throw new zzsx("Failed to parse the message.");
         }
     }
@@ -74,12 +75,12 @@ final class zzqr implements zzuf {
     @Override // com.google.android.recaptcha.internal.zzuf
     public final void zzA(List list) {
         int zzm;
-        int i;
+        int i10;
         if (list instanceof zzth) {
             zzth zzthVar = (zzth) list;
-            int i2 = this.zzb & 7;
-            if (i2 != 1) {
-                if (i2 != 2) {
+            int i11 = this.zzb & 7;
+            if (i11 != 1) {
+                if (i11 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar = this.zza;
@@ -97,13 +98,13 @@ final class zzqr implements zzuf {
                 if (zzqqVar2.zzC()) {
                     return;
                 } else {
-                    i = zzqqVar2.zzm();
+                    i10 = zzqqVar2.zzm();
                 }
-            } while (i == this.zzb);
+            } while (i10 == this.zzb);
         } else {
-            int i3 = this.zzb & 7;
-            if (i3 != 1) {
-                if (i3 != 2) {
+            int i12 = this.zzb & 7;
+            if (i12 != 1) {
+                if (i12 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -124,19 +125,19 @@ final class zzqr implements zzuf {
                     zzm = zzqqVar4.zzm();
                 }
             } while (zzm == this.zzb);
-            i = zzm;
+            i10 = zzm;
         }
-        this.zzd = i;
+        this.zzd = i10;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
     public final void zzB(List list) {
         int zzm;
-        int i;
+        int i10;
         if (list instanceof zzsf) {
             zzsf zzsfVar = (zzsf) list;
-            int i2 = this.zzb & 7;
-            if (i2 == 2) {
+            int i11 = this.zzb & 7;
+            if (i11 == 2) {
                 zzqq zzqqVar = this.zza;
                 int zzn = zzqqVar.zzn();
                 zzT(zzn);
@@ -146,7 +147,7 @@ final class zzqr implements zzuf {
                 } while (zzqqVar.zzd() < zzd);
                 return;
             }
-            if (i2 != 5) {
+            if (i11 != 5) {
                 throw new zzsw("Protocol message tag had invalid wire type.");
             }
             do {
@@ -155,12 +156,12 @@ final class zzqr implements zzuf {
                 if (zzqqVar2.zzC()) {
                     return;
                 } else {
-                    i = zzqqVar2.zzm();
+                    i10 = zzqqVar2.zzm();
                 }
-            } while (i == this.zzb);
+            } while (i10 == this.zzb);
         } else {
-            int i3 = this.zzb & 7;
-            if (i3 == 2) {
+            int i12 = this.zzb & 7;
+            if (i12 == 2) {
                 zzqq zzqqVar3 = this.zza;
                 int zzn2 = zzqqVar3.zzn();
                 zzT(zzn2);
@@ -170,7 +171,7 @@ final class zzqr implements zzuf {
                 } while (zzqqVar3.zzd() < zzd2);
                 return;
             }
-            if (i3 != 5) {
+            if (i12 != 5) {
                 throw new zzsw("Protocol message tag had invalid wire type.");
             }
             do {
@@ -182,17 +183,17 @@ final class zzqr implements zzuf {
                     zzm = zzqqVar4.zzm();
                 }
             } while (zzm == this.zzb);
-            i = zzm;
+            i10 = zzm;
         }
-        this.zzd = i;
+        this.zzd = i10;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
     @Deprecated
     public final void zzC(List list, zzug zzugVar, zzry zzryVar) {
         int zzm;
-        int i = this.zzb;
-        if ((i & 7) != 3) {
+        int i10 = this.zzb;
+        if ((i10 & 7) != 3) {
             throw new zzsw("Protocol message tag had invalid wire type.");
         }
         do {
@@ -206,19 +207,19 @@ final class zzqr implements zzuf {
             } else {
                 zzm = zzqqVar.zzm();
             }
-        } while (zzm == i);
+        } while (zzm == i10);
         this.zzd = zzm;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
     public final void zzD(List list) {
         int zzm;
-        int i;
+        int i10;
         if (list instanceof zzso) {
             zzso zzsoVar = (zzso) list;
-            int i2 = this.zzb & 7;
-            if (i2 != 0) {
-                if (i2 != 2) {
+            int i11 = this.zzb & 7;
+            if (i11 != 0) {
+                if (i11 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar = this.zza;
@@ -235,13 +236,13 @@ final class zzqr implements zzuf {
                 if (zzqqVar2.zzC()) {
                     return;
                 } else {
-                    i = zzqqVar2.zzm();
+                    i10 = zzqqVar2.zzm();
                 }
-            } while (i == this.zzb);
+            } while (i10 == this.zzb);
         } else {
-            int i3 = this.zzb & 7;
-            if (i3 != 0) {
-                if (i3 != 2) {
+            int i12 = this.zzb & 7;
+            if (i12 != 0) {
+                if (i12 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -261,20 +262,20 @@ final class zzqr implements zzuf {
                     zzm = zzqqVar4.zzm();
                 }
             } while (zzm == this.zzb);
-            i = zzm;
+            i10 = zzm;
         }
-        this.zzd = i;
+        this.zzd = i10;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
     public final void zzE(List list) {
         int zzm;
-        int i;
+        int i10;
         if (list instanceof zzth) {
             zzth zzthVar = (zzth) list;
-            int i2 = this.zzb & 7;
-            if (i2 != 0) {
-                if (i2 != 2) {
+            int i11 = this.zzb & 7;
+            if (i11 != 0) {
+                if (i11 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar = this.zza;
@@ -291,13 +292,13 @@ final class zzqr implements zzuf {
                 if (zzqqVar2.zzC()) {
                     return;
                 } else {
-                    i = zzqqVar2.zzm();
+                    i10 = zzqqVar2.zzm();
                 }
-            } while (i == this.zzb);
+            } while (i10 == this.zzb);
         } else {
-            int i3 = this.zzb & 7;
-            if (i3 != 0) {
-                if (i3 != 2) {
+            int i12 = this.zzb & 7;
+            if (i12 != 0) {
+                if (i12 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -317,16 +318,16 @@ final class zzqr implements zzuf {
                     zzm = zzqqVar4.zzm();
                 }
             } while (zzm == this.zzb);
-            i = zzm;
+            i10 = zzm;
         }
-        this.zzd = i;
+        this.zzd = i10;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
     public final void zzF(List list, zzug zzugVar, zzry zzryVar) {
         int zzm;
-        int i = this.zzb;
-        if ((i & 7) != 2) {
+        int i10 = this.zzb;
+        if ((i10 & 7) != 2) {
             throw new zzsw("Protocol message tag had invalid wire type.");
         }
         do {
@@ -340,18 +341,18 @@ final class zzqr implements zzuf {
             } else {
                 zzm = zzqqVar.zzm();
             }
-        } while (zzm == i);
+        } while (zzm == i10);
         this.zzd = zzm;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
     public final void zzG(List list) {
         int zzm;
-        int i;
+        int i10;
         if (list instanceof zzso) {
             zzso zzsoVar = (zzso) list;
-            int i2 = this.zzb & 7;
-            if (i2 == 2) {
+            int i11 = this.zzb & 7;
+            if (i11 == 2) {
                 zzqq zzqqVar = this.zza;
                 int zzn = zzqqVar.zzn();
                 zzT(zzn);
@@ -361,7 +362,7 @@ final class zzqr implements zzuf {
                 } while (zzqqVar.zzd() < zzd);
                 return;
             }
-            if (i2 != 5) {
+            if (i11 != 5) {
                 throw new zzsw("Protocol message tag had invalid wire type.");
             }
             do {
@@ -370,12 +371,12 @@ final class zzqr implements zzuf {
                 if (zzqqVar2.zzC()) {
                     return;
                 } else {
-                    i = zzqqVar2.zzm();
+                    i10 = zzqqVar2.zzm();
                 }
-            } while (i == this.zzb);
+            } while (i10 == this.zzb);
         } else {
-            int i3 = this.zzb & 7;
-            if (i3 == 2) {
+            int i12 = this.zzb & 7;
+            if (i12 == 2) {
                 zzqq zzqqVar3 = this.zza;
                 int zzn2 = zzqqVar3.zzn();
                 zzT(zzn2);
@@ -385,7 +386,7 @@ final class zzqr implements zzuf {
                 } while (zzqqVar3.zzd() < zzd2);
                 return;
             }
-            if (i3 != 5) {
+            if (i12 != 5) {
                 throw new zzsw("Protocol message tag had invalid wire type.");
             }
             do {
@@ -397,20 +398,20 @@ final class zzqr implements zzuf {
                     zzm = zzqqVar4.zzm();
                 }
             } while (zzm == this.zzb);
-            i = zzm;
+            i10 = zzm;
         }
-        this.zzd = i;
+        this.zzd = i10;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
     public final void zzH(List list) {
         int zzm;
-        int i;
+        int i10;
         if (list instanceof zzth) {
             zzth zzthVar = (zzth) list;
-            int i2 = this.zzb & 7;
-            if (i2 != 1) {
-                if (i2 != 2) {
+            int i11 = this.zzb & 7;
+            if (i11 != 1) {
+                if (i11 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar = this.zza;
@@ -428,13 +429,13 @@ final class zzqr implements zzuf {
                 if (zzqqVar2.zzC()) {
                     return;
                 } else {
-                    i = zzqqVar2.zzm();
+                    i10 = zzqqVar2.zzm();
                 }
-            } while (i == this.zzb);
+            } while (i10 == this.zzb);
         } else {
-            int i3 = this.zzb & 7;
-            if (i3 != 1) {
-                if (i3 != 2) {
+            int i12 = this.zzb & 7;
+            if (i12 != 1) {
+                if (i12 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -455,20 +456,20 @@ final class zzqr implements zzuf {
                     zzm = zzqqVar4.zzm();
                 }
             } while (zzm == this.zzb);
-            i = zzm;
+            i10 = zzm;
         }
-        this.zzd = i;
+        this.zzd = i10;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
     public final void zzI(List list) {
         int zzm;
-        int i;
+        int i10;
         if (list instanceof zzso) {
             zzso zzsoVar = (zzso) list;
-            int i2 = this.zzb & 7;
-            if (i2 != 0) {
-                if (i2 != 2) {
+            int i11 = this.zzb & 7;
+            if (i11 != 0) {
+                if (i11 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar = this.zza;
@@ -485,13 +486,13 @@ final class zzqr implements zzuf {
                 if (zzqqVar2.zzC()) {
                     return;
                 } else {
-                    i = zzqqVar2.zzm();
+                    i10 = zzqqVar2.zzm();
                 }
-            } while (i == this.zzb);
+            } while (i10 == this.zzb);
         } else {
-            int i3 = this.zzb & 7;
-            if (i3 != 0) {
-                if (i3 != 2) {
+            int i12 = this.zzb & 7;
+            if (i12 != 0) {
+                if (i12 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -511,20 +512,20 @@ final class zzqr implements zzuf {
                     zzm = zzqqVar4.zzm();
                 }
             } while (zzm == this.zzb);
-            i = zzm;
+            i10 = zzm;
         }
-        this.zzd = i;
+        this.zzd = i10;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
     public final void zzJ(List list) {
         int zzm;
-        int i;
+        int i10;
         if (list instanceof zzth) {
             zzth zzthVar = (zzth) list;
-            int i2 = this.zzb & 7;
-            if (i2 != 0) {
-                if (i2 != 2) {
+            int i11 = this.zzb & 7;
+            if (i11 != 0) {
+                if (i11 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar = this.zza;
@@ -541,13 +542,13 @@ final class zzqr implements zzuf {
                 if (zzqqVar2.zzC()) {
                     return;
                 } else {
-                    i = zzqqVar2.zzm();
+                    i10 = zzqqVar2.zzm();
                 }
-            } while (i == this.zzb);
+            } while (i10 == this.zzb);
         } else {
-            int i3 = this.zzb & 7;
-            if (i3 != 0) {
-                if (i3 != 2) {
+            int i12 = this.zzb & 7;
+            if (i12 != 0) {
+                if (i12 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -567,18 +568,18 @@ final class zzqr implements zzuf {
                     zzm = zzqqVar4.zzm();
                 }
             } while (zzm == this.zzb);
-            i = zzm;
+            i10 = zzm;
         }
-        this.zzd = i;
+        this.zzd = i10;
     }
 
-    public final void zzK(List list, boolean z) {
+    public final void zzK(List list, boolean z10) {
         int zzm;
-        int i;
+        int i10;
         if ((this.zzb & 7) != 2) {
             throw new zzsw("Protocol message tag had invalid wire type.");
         }
-        if ((list instanceof zzte) && !z) {
+        if ((list instanceof zzte) && !z10) {
             zzte zzteVar = (zzte) list;
             do {
                 zzp();
@@ -587,12 +588,12 @@ final class zzqr implements zzuf {
                 if (zzqqVar.zzC()) {
                     return;
                 } else {
-                    i = zzqqVar.zzm();
+                    i10 = zzqqVar.zzm();
                 }
-            } while (i == this.zzb);
+            } while (i10 == this.zzb);
         } else {
             do {
-                list.add(z ? zzs() : zzr());
+                list.add(z10 ? zzs() : zzr());
                 zzqq zzqqVar2 = this.zza;
                 if (zzqqVar2.zzC()) {
                     return;
@@ -600,20 +601,20 @@ final class zzqr implements zzuf {
                     zzm = zzqqVar2.zzm();
                 }
             } while (zzm == this.zzb);
-            i = zzm;
+            i10 = zzm;
         }
-        this.zzd = i;
+        this.zzd = i10;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
     public final void zzL(List list) {
         int zzm;
-        int i;
+        int i10;
         if (list instanceof zzso) {
             zzso zzsoVar = (zzso) list;
-            int i2 = this.zzb & 7;
-            if (i2 != 0) {
-                if (i2 != 2) {
+            int i11 = this.zzb & 7;
+            if (i11 != 0) {
+                if (i11 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar = this.zza;
@@ -630,13 +631,13 @@ final class zzqr implements zzuf {
                 if (zzqqVar2.zzC()) {
                     return;
                 } else {
-                    i = zzqqVar2.zzm();
+                    i10 = zzqqVar2.zzm();
                 }
-            } while (i == this.zzb);
+            } while (i10 == this.zzb);
         } else {
-            int i3 = this.zzb & 7;
-            if (i3 != 0) {
-                if (i3 != 2) {
+            int i12 = this.zzb & 7;
+            if (i12 != 0) {
+                if (i12 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -656,20 +657,20 @@ final class zzqr implements zzuf {
                     zzm = zzqqVar4.zzm();
                 }
             } while (zzm == this.zzb);
-            i = zzm;
+            i10 = zzm;
         }
-        this.zzd = i;
+        this.zzd = i10;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
     public final void zzM(List list) {
         int zzm;
-        int i;
+        int i10;
         if (list instanceof zzth) {
             zzth zzthVar = (zzth) list;
-            int i2 = this.zzb & 7;
-            if (i2 != 0) {
-                if (i2 != 2) {
+            int i11 = this.zzb & 7;
+            if (i11 != 0) {
+                if (i11 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar = this.zza;
@@ -686,13 +687,13 @@ final class zzqr implements zzuf {
                 if (zzqqVar2.zzC()) {
                     return;
                 } else {
-                    i = zzqqVar2.zzm();
+                    i10 = zzqqVar2.zzm();
                 }
-            } while (i == this.zzb);
+            } while (i10 == this.zzb);
         } else {
-            int i3 = this.zzb & 7;
-            if (i3 != 0) {
-                if (i3 != 2) {
+            int i12 = this.zzb & 7;
+            if (i12 != 0) {
+                if (i12 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -712,9 +713,9 @@ final class zzqr implements zzuf {
                     zzm = zzqqVar4.zzm();
                 }
             } while (zzm == this.zzb);
-            i = zzm;
+            i10 = zzm;
         }
-        this.zzd = i;
+        this.zzd = i10;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
@@ -725,12 +726,12 @@ final class zzqr implements zzuf {
 
     @Override // com.google.android.recaptcha.internal.zzuf
     public final boolean zzO() {
-        int i;
+        int i10;
         zzqq zzqqVar = this.zza;
-        if (zzqqVar.zzC() || (i = this.zzb) == this.zzc) {
+        if (zzqqVar.zzC() || (i10 = this.zzb) == this.zzc) {
             return false;
         }
-        return zzqqVar.zzE(i);
+        return zzqqVar.zzE(i10);
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
@@ -747,15 +748,15 @@ final class zzqr implements zzuf {
 
     @Override // com.google.android.recaptcha.internal.zzuf
     public final int zzc() {
-        int i = this.zzd;
-        if (i != 0) {
-            this.zzb = i;
+        int i10 = this.zzd;
+        if (i10 != 0) {
+            this.zzb = i10;
             this.zzd = 0;
         } else {
-            i = this.zza.zzm();
-            this.zzb = i;
+            i10 = this.zza.zzm();
+            this.zzb = i10;
         }
-        return (i == 0 || i == this.zzc) ? ConnectionsManager.DEFAULT_DATACENTER_ID : i >>> 3;
+        return (i10 == 0 || i10 == this.zzc) ? ConnectionsManager.DEFAULT_DATACENTER_ID : i10 >>> 3;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
@@ -862,12 +863,12 @@ final class zzqr implements zzuf {
     @Override // com.google.android.recaptcha.internal.zzuf
     public final void zzv(List list) {
         int zzm;
-        int i;
+        int i10;
         if (list instanceof zzqd) {
             zzqd zzqdVar = (zzqd) list;
-            int i2 = this.zzb & 7;
-            if (i2 != 0) {
-                if (i2 != 2) {
+            int i11 = this.zzb & 7;
+            if (i11 != 0) {
+                if (i11 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar = this.zza;
@@ -884,13 +885,13 @@ final class zzqr implements zzuf {
                 if (zzqqVar2.zzC()) {
                     return;
                 } else {
-                    i = zzqqVar2.zzm();
+                    i10 = zzqqVar2.zzm();
                 }
-            } while (i == this.zzb);
+            } while (i10 == this.zzb);
         } else {
-            int i3 = this.zzb & 7;
-            if (i3 != 0) {
-                if (i3 != 2) {
+            int i12 = this.zzb & 7;
+            if (i12 != 0) {
+                if (i12 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -910,9 +911,9 @@ final class zzqr implements zzuf {
                     zzm = zzqqVar4.zzm();
                 }
             } while (zzm == this.zzb);
-            i = zzm;
+            i10 = zzm;
         }
-        this.zzd = i;
+        this.zzd = i10;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
@@ -936,12 +937,12 @@ final class zzqr implements zzuf {
     @Override // com.google.android.recaptcha.internal.zzuf
     public final void zzx(List list) {
         int zzm;
-        int i;
+        int i10;
         if (list instanceof zzrs) {
             zzrs zzrsVar = (zzrs) list;
-            int i2 = this.zzb & 7;
-            if (i2 != 1) {
-                if (i2 != 2) {
+            int i11 = this.zzb & 7;
+            if (i11 != 1) {
+                if (i11 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar = this.zza;
@@ -959,13 +960,13 @@ final class zzqr implements zzuf {
                 if (zzqqVar2.zzC()) {
                     return;
                 } else {
-                    i = zzqqVar2.zzm();
+                    i10 = zzqqVar2.zzm();
                 }
-            } while (i == this.zzb);
+            } while (i10 == this.zzb);
         } else {
-            int i3 = this.zzb & 7;
-            if (i3 != 1) {
-                if (i3 != 2) {
+            int i12 = this.zzb & 7;
+            if (i12 != 1) {
+                if (i12 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -986,20 +987,20 @@ final class zzqr implements zzuf {
                     zzm = zzqqVar4.zzm();
                 }
             } while (zzm == this.zzb);
-            i = zzm;
+            i10 = zzm;
         }
-        this.zzd = i;
+        this.zzd = i10;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
     public final void zzy(List list) {
         int zzm;
-        int i;
+        int i10;
         if (list instanceof zzso) {
             zzso zzsoVar = (zzso) list;
-            int i2 = this.zzb & 7;
-            if (i2 != 0) {
-                if (i2 != 2) {
+            int i11 = this.zzb & 7;
+            if (i11 != 0) {
+                if (i11 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar = this.zza;
@@ -1016,13 +1017,13 @@ final class zzqr implements zzuf {
                 if (zzqqVar2.zzC()) {
                     return;
                 } else {
-                    i = zzqqVar2.zzm();
+                    i10 = zzqqVar2.zzm();
                 }
-            } while (i == this.zzb);
+            } while (i10 == this.zzb);
         } else {
-            int i3 = this.zzb & 7;
-            if (i3 != 0) {
-                if (i3 != 2) {
+            int i12 = this.zzb & 7;
+            if (i12 != 0) {
+                if (i12 != 2) {
                     throw new zzsw("Protocol message tag had invalid wire type.");
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -1042,19 +1043,19 @@ final class zzqr implements zzuf {
                     zzm = zzqqVar4.zzm();
                 }
             } while (zzm == this.zzb);
-            i = zzm;
+            i10 = zzm;
         }
-        this.zzd = i;
+        this.zzd = i10;
     }
 
     @Override // com.google.android.recaptcha.internal.zzuf
     public final void zzz(List list) {
         int zzm;
-        int i;
+        int i10;
         if (list instanceof zzso) {
             zzso zzsoVar = (zzso) list;
-            int i2 = this.zzb & 7;
-            if (i2 == 2) {
+            int i11 = this.zzb & 7;
+            if (i11 == 2) {
                 zzqq zzqqVar = this.zza;
                 int zzn = zzqqVar.zzn();
                 zzT(zzn);
@@ -1064,7 +1065,7 @@ final class zzqr implements zzuf {
                 } while (zzqqVar.zzd() < zzd);
                 return;
             }
-            if (i2 != 5) {
+            if (i11 != 5) {
                 throw new zzsw("Protocol message tag had invalid wire type.");
             }
             do {
@@ -1073,12 +1074,12 @@ final class zzqr implements zzuf {
                 if (zzqqVar2.zzC()) {
                     return;
                 } else {
-                    i = zzqqVar2.zzm();
+                    i10 = zzqqVar2.zzm();
                 }
-            } while (i == this.zzb);
+            } while (i10 == this.zzb);
         } else {
-            int i3 = this.zzb & 7;
-            if (i3 == 2) {
+            int i12 = this.zzb & 7;
+            if (i12 == 2) {
                 zzqq zzqqVar3 = this.zza;
                 int zzn2 = zzqqVar3.zzn();
                 zzT(zzn2);
@@ -1088,7 +1089,7 @@ final class zzqr implements zzuf {
                 } while (zzqqVar3.zzd() < zzd2);
                 return;
             }
-            if (i3 != 5) {
+            if (i12 != 5) {
                 throw new zzsw("Protocol message tag had invalid wire type.");
             }
             do {
@@ -1100,8 +1101,8 @@ final class zzqr implements zzuf {
                     zzm = zzqqVar4.zzm();
                 }
             } while (zzm == this.zzb);
-            i = zzm;
+            i10 = zzm;
         }
-        this.zzd = i;
+        this.zzd = i10;
     }
 }

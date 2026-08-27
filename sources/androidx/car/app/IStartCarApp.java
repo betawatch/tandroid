@@ -5,70 +5,23 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import android.os.Parcelable;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public interface IStartCarApp extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$IStartCarApp".replace('$', '.');
 
-    public static class Default implements IStartCarApp {
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return null;
-        }
-
-        @Override // androidx.car.app.IStartCarApp
-        public void startCarApp(Intent intent) {
-        }
-    }
-
     void startCarApp(Intent intent);
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static abstract class Stub extends Binder implements IStartCarApp {
         static final int TRANSACTION_startCarApp = 2;
 
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return this;
-        }
-
-        public Stub() {
-            attachInterface(this, IStartCarApp.DESCRIPTOR);
-        }
-
-        public static IStartCarApp asInterface(IBinder iBinder) {
-            if (iBinder == null) {
-                return null;
-            }
-            IInterface queryLocalInterface = iBinder.queryLocalInterface(IStartCarApp.DESCRIPTOR);
-            if (queryLocalInterface != null && (queryLocalInterface instanceof IStartCarApp)) {
-                return (IStartCarApp) queryLocalInterface;
-            }
-            return new Proxy(iBinder);
-        }
-
-        @Override // android.os.Binder
-        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String str = IStartCarApp.DESCRIPTOR;
-            if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(str);
-            }
-            if (i == 1598968902) {
-                parcel2.writeString(str);
-                return true;
-            }
-            if (i == 2) {
-                startCarApp((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR));
-                parcel2.writeNoException();
-                return true;
-            }
-            return super.onTransact(i, parcel, parcel2, i2);
-        }
-
-        private static class Proxy implements IStartCarApp {
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static class Proxy implements IStartCarApp {
             private IBinder mRemote;
 
-            Proxy(IBinder iBinder) {
+            public Proxy(IBinder iBinder) {
                 this.mRemote = iBinder;
             }
 
@@ -87,7 +40,12 @@ public interface IStartCarApp extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IStartCarApp.DESCRIPTOR);
-                    _Parcel.writeTypedObject(obtain, intent, 0);
+                    if (intent != null) {
+                        obtain.writeInt(1);
+                        intent.writeToParcel(obtain, 0);
+                    } else {
+                        obtain.writeInt(0);
+                    }
                     this.mRemote.transact(2, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
@@ -96,25 +54,52 @@ public interface IStartCarApp extends IInterface {
                 }
             }
         }
+
+        public Stub() {
+            attachInterface(this, IStartCarApp.DESCRIPTOR);
+        }
+
+        public static IStartCarApp asInterface(IBinder iBinder) {
+            if (iBinder == null) {
+                return null;
+            }
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(IStartCarApp.DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IStartCarApp)) ? new Proxy(iBinder) : (IStartCarApp) queryLocalInterface;
+        }
+
+        @Override // android.os.Binder
+        public boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+            String str = IStartCarApp.DESCRIPTOR;
+            if (i10 >= 1 && i10 <= 16777215) {
+                parcel.enforceInterface(str);
+            }
+            if (i10 == 1598968902) {
+                parcel2.writeString(str);
+                return true;
+            }
+            if (i10 != 2) {
+                return super.onTransact(i10, parcel, parcel2, i11);
+            }
+            startCarApp((Intent) (parcel.readInt() != 0 ? Intent.CREATOR.createFromParcel(parcel) : null));
+            parcel2.writeNoException();
+            return true;
+        }
+
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return this;
+        }
     }
 
-    public static class _Parcel {
-        /* JADX INFO: Access modifiers changed from: private */
-        public static Object readTypedObject(Parcel parcel, Parcelable.Creator creator) {
-            if (parcel.readInt() != 0) {
-                return creator.createFromParcel(parcel);
-            }
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class Default implements IStartCarApp {
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
             return null;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static void writeTypedObject(Parcel parcel, Parcelable parcelable, int i) {
-            if (parcelable != null) {
-                parcel.writeInt(1);
-                parcelable.writeToParcel(parcel, i);
-            } else {
-                parcel.writeInt(0);
-            }
+        @Override // androidx.car.app.IStartCarApp
+        public void startCarApp(Intent intent) {
         }
     }
 }

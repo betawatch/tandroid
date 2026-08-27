@@ -3,12 +3,13 @@ package com.google.android.recaptcha.internal;
 import com.google.android.recaptcha.internal.zzsh;
 import com.google.android.recaptcha.internal.zzsn;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class zzsh<MessageType extends zzsn<MessageType, BuilderType>, BuilderType extends zzsh<MessageType, BuilderType>> extends zzpv<MessageType, BuilderType> {
     protected zzsn zza;
     private final zzsn zzb;
 
-    protected zzsh(MessageType messagetype) {
+    public zzsh(MessageType messagetype) {
         this.zzb = messagetype;
         if (messagetype.zzL()) {
             throw new IllegalArgumentException("Default instance must be immutable.");
@@ -21,7 +22,7 @@ public class zzsh<MessageType extends zzsn<MessageType, BuilderType>, BuilderTyp
     }
 
     @Override // com.google.android.recaptcha.internal.zzpv
-    protected final /* synthetic */ zzpv zzb(zzpw zzpwVar) {
+    public final /* synthetic */ zzpv zzb(zzpw zzpwVar) {
         zzh((zzsn) zzpwVar);
         return this;
     }
@@ -69,14 +70,14 @@ public class zzsh<MessageType extends zzsn<MessageType, BuilderType>, BuilderTyp
         return this.zzb;
     }
 
-    protected final void zzn() {
+    public final void zzn() {
         if (this.zza.zzL()) {
             return;
         }
         zzo();
     }
 
-    protected void zzo() {
+    public void zzo() {
         zzsn zzv = this.zzb.zzv();
         zze(zzv, this.zza);
         this.zza = zzv;

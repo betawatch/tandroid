@@ -2,46 +2,19 @@ package androidx.car.app.navigation.model;
 
 import androidx.car.app.model.CarIcon;
 import androidx.car.app.model.Distance;
-import androidx.car.app.navigation.model.NavigationTemplate;
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class RoutingInfo implements NavigationTemplate.NavigationInfo {
+public final class RoutingInfo implements f {
     private final Distance mCurrentDistance;
     private final Step mCurrentStep;
     private final boolean mIsLoading;
     private final CarIcon mJunctionImage;
     private final Step mNextStep;
 
-    public static final class Builder {
-    }
-
-    public boolean isLoading() {
-        return this.mIsLoading;
-    }
-
-    public Step getCurrentStep() {
-        return this.mCurrentStep;
-    }
-
-    public Distance getCurrentDistance() {
-        return this.mCurrentDistance;
-    }
-
-    public Step getNextStep() {
-        return this.mNextStep;
-    }
-
-    public CarIcon getJunctionImage() {
-        return this.mJunctionImage;
-    }
-
-    public String toString() {
-        return "RoutingInfo";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mCurrentStep, this.mCurrentDistance, this.mNextStep, this.mJunctionImage, Boolean.valueOf(this.mIsLoading));
+    public RoutingInfo(l lVar) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -55,8 +28,32 @@ public final class RoutingInfo implements NavigationTemplate.NavigationInfo {
         return this.mIsLoading == routingInfo.mIsLoading && Objects.equals(this.mCurrentStep, routingInfo.mCurrentStep) && Objects.equals(this.mCurrentDistance, routingInfo.mCurrentDistance) && Objects.equals(this.mNextStep, routingInfo.mNextStep) && Objects.equals(this.mJunctionImage, routingInfo.mJunctionImage);
     }
 
-    RoutingInfo(Builder builder) {
-        throw null;
+    public Distance getCurrentDistance() {
+        return this.mCurrentDistance;
+    }
+
+    public Step getCurrentStep() {
+        return this.mCurrentStep;
+    }
+
+    public CarIcon getJunctionImage() {
+        return this.mJunctionImage;
+    }
+
+    public Step getNextStep() {
+        return this.mNextStep;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mCurrentStep, this.mCurrentDistance, this.mNextStep, this.mJunctionImage, Boolean.valueOf(this.mIsLoading));
+    }
+
+    public boolean isLoading() {
+        return this.mIsLoading;
+    }
+
+    public String toString() {
+        return "RoutingInfo";
     }
 
     private RoutingInfo() {

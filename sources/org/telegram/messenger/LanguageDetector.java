@@ -1,49 +1,66 @@
 package org.telegram.messenger;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.mlkit.common.sdkinternal.MlKitContext;
-import com.google.mlkit.nl.languageid.LanguageIdentification;
-import org.telegram.messenger.LanguageDetector;
+import android.content.Context;
+import com.google.android.gms.tasks.TaskExecutors;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class LanguageDetector {
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface ExceptionCallback {
         void run(Exception exc);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface StringCallback {
         void run(String str);
-    }
-
-    public static boolean hasSupport() {
-        return true;
     }
 
     public static void detectLanguage(String str, StringCallback stringCallback, ExceptionCallback exceptionCallback) {
         detectLanguage(str, stringCallback, exceptionCallback, false);
     }
 
-    public static void detectLanguage(String str, final StringCallback stringCallback, final ExceptionCallback exceptionCallback, boolean z) {
-        if (z) {
+    public static boolean hasSupport() {
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$detectLanguage$0(StringCallback stringCallback, String str) {
+        if (stringCallback != null) {
+            stringCallback.run(str);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$detectLanguage$1(ExceptionCallback exceptionCallback, Exception exc) {
+        if (exceptionCallback != null) {
+            exceptionCallback.run(exc);
+        }
+    }
+
+    public static void detectLanguage(String str, StringCallback stringCallback, ExceptionCallback exceptionCallback, boolean z10) {
+        if (z10) {
             try {
-                MlKitContext.zza(ApplicationLoader.applicationContext);
-            } catch (IllegalStateException e) {
-                if (!z) {
+                Context context = ApplicationLoader.applicationContext;
+                synchronized (za.g.b) {
+                    za.g.d(context, TaskExecutors.MAIN_THREAD);
+                }
+            } catch (IllegalStateException e9) {
+                if (!z10) {
                     detectLanguage(str, stringCallback, exceptionCallback, true);
                     return;
                 }
                 if (exceptionCallback != null) {
-                    exceptionCallback.run(e);
+                    exceptionCallback.run(e9);
                 }
-                FileLog.e((Throwable) e, false);
+                FileLog.e((Throwable) e9, false);
                 return;
-            } catch (Exception e2) {
+            } catch (Exception e10) {
                 if (exceptionCallback != null) {
-                    exceptionCallback.run(e2);
+                    exceptionCallback.run(e10);
                 }
-                FileLog.e(e2);
+                FileLog.e(e10);
                 return;
             } catch (Throwable th) {
                 if (exceptionCallback != null) {
@@ -53,28 +70,6 @@ public class LanguageDetector {
                 return;
             }
         }
-        LanguageIdentification.getClient().identifyLanguage(str).addOnSuccessListener(new OnSuccessListener() { // from class: org.telegram.messenger.LanguageDetector$$ExternalSyntheticLambda0
-            @Override // com.google.android.gms.tasks.OnSuccessListener
-            public final void onSuccess(Object obj) {
-                LanguageDetector.$r8$lambda$A9hSaUSYsiHXwXl3Wg4NimNwdkM(LanguageDetector.StringCallback.this, (String) obj);
-            }
-        }).addOnFailureListener(new OnFailureListener() { // from class: org.telegram.messenger.LanguageDetector$$ExternalSyntheticLambda1
-            @Override // com.google.android.gms.tasks.OnFailureListener
-            public final void onFailure(Exception exc) {
-                LanguageDetector.$r8$lambda$AoS_Dilvh2Sr5L6lsNQg9lI_0nY(LanguageDetector.ExceptionCallback.this, exc);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$A9hSaUSYsiHXwXl3Wg4NimNwdkM(StringCallback stringCallback, String str) {
-        if (stringCallback != null) {
-            stringCallback.run(str);
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$AoS_Dilvh2Sr5L6lsNQg9lI_0nY(ExceptionCallback exceptionCallback, Exception exc) {
-        if (exceptionCallback != null) {
-            exceptionCallback.run(exc);
-        }
+        g7.g0.a().g(str).addOnSuccessListener(new d(stringCallback, 6)).addOnFailureListener(new d(exceptionCallback, 7));
     }
 }

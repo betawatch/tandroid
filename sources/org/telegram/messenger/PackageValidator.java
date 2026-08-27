@@ -6,12 +6,10 @@ import android.os.Process;
 import java.util.HashSet;
 import java.util.Set;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public final class PackageValidator {
     private static final Set<String> KNOWN_PACKAGES;
-
-    private PackageValidator() {
-    }
 
     static {
         HashSet hashSet = new HashSet();
@@ -28,17 +26,10 @@ public final class PackageValidator {
         hashSet.add("com.google.android.bluetooth");
     }
 
-    public static boolean isKnownCaller(Context context, String str, int i) {
-        if (str == null) {
-            return false;
-        }
-        if (i == 1000 || i == Process.myUid() || KNOWN_PACKAGES.contains(str)) {
-            return true;
-        }
-        return hasPermission(context, str, i);
+    private PackageValidator() {
     }
 
-    private static boolean hasPermission(Context context, String str, int i) {
+    private static boolean hasPermission(Context context, String str, int i10) {
         PackageManager packageManager = context.getPackageManager();
         try {
             if (packageManager.checkPermission("android.permission.MEDIA_CONTENT_CONTROL", str) == 0) {
@@ -48,5 +39,15 @@ public final class PackageValidator {
         } catch (Throwable unused) {
             return false;
         }
+    }
+
+    public static boolean isKnownCaller(Context context, String str, int i10) {
+        if (str == null) {
+            return false;
+        }
+        if (i10 == 1000 || i10 == Process.myUid() || KNOWN_PACKAGES.contains(str)) {
+            return true;
+        }
+        return hasPermission(context, str, i10);
     }
 }

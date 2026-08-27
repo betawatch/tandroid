@@ -1,43 +1,77 @@
 package j$.util.stream;
 
+import j$.util.DesugarArrays;
+import j$.util.Spliterator;
+import java.util.Arrays;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+
 /* loaded from: classes2.dex */
-public final class h2 extends c2 {
-    public long b;
-    public long c;
-    public final /* synthetic */ i2 d;
+public class h2 implements e2 {
+    public final Object[] a;
+    public int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h2(i2 i2Var, g2 g2Var) {
-        super(g2Var);
-        this.d = i2Var;
-        this.b = i2Var.m;
-        long j = i2Var.n;
-        this.c = j < 0 ? Long.MAX_VALUE : j;
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
+        return t3.V(this, j10, j11, intFunction);
     }
 
-    @Override // j$.util.stream.c2, j$.util.stream.g2
-    public final void y(long j) {
-        this.a.y(r1.x(j, this.d.m, this.c));
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ int h() {
+        return 0;
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void s(Object obj) {
-        long j = this.b;
-        if (j == 0) {
-            long j2 = this.c;
-            if (j2 > 0) {
-                this.c = j2 - 1;
-                this.a.s((g2) obj);
-                return;
-            }
-            return;
+    @Override // j$.util.stream.e2
+    public final e2 a(int i10) {
+        throw new IndexOutOfBoundsException();
+    }
+
+    public h2(long j10, IntFunction intFunction) {
+        if (j10 >= 2147483639) {
+            throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.b = j - 1;
+        this.a = (Object[]) intFunction.apply((int) j10);
+        this.b = 0;
     }
 
-    @Override // j$.util.stream.c2, j$.util.stream.g2
-    public final boolean C() {
-        return this.c == 0 || this.a.C();
+    public h2(Object[] objArr) {
+        this.a = objArr;
+        this.b = objArr.length;
+    }
+
+    @Override // j$.util.stream.e2
+    public final Spliterator spliterator() {
+        return DesugarArrays.a(this.a, 0, this.b);
+    }
+
+    @Override // j$.util.stream.e2
+    public final void f(Object[] objArr, int i10) {
+        System.arraycopy(this.a, 0, objArr, i10, this.b);
+    }
+
+    @Override // j$.util.stream.e2
+    public final Object[] g(IntFunction intFunction) {
+        Object[] objArr = this.a;
+        if (objArr.length == this.b) {
+            return objArr;
+        }
+        throw new IllegalStateException();
+    }
+
+    @Override // j$.util.stream.e2
+    public final long count() {
+        return this.b;
+    }
+
+    @Override // j$.util.stream.e2
+    public final void forEach(Consumer consumer) {
+        for (int i10 = 0; i10 < this.b; i10++) {
+            consumer.x(this.a[i10]);
+        }
+    }
+
+    public String toString() {
+        Object[] objArr = this.a;
+        return String.format("ArrayNode[%d][%s]", Integer.valueOf(objArr.length - this.b), Arrays.toString(objArr));
     }
 }

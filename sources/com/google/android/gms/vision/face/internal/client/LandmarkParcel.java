@@ -2,31 +2,37 @@ package com.google.android.gms.vision.face.internal.client;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import f4.e;
+import h7.r8;
+import z5.a;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class LandmarkParcel extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<LandmarkParcel> CREATOR = new zzm();
-    public final float zza;
-    public final float zzb;
-    public final int zzc;
-    private final int zzd;
+public final class LandmarkParcel extends a {
+    public static final Parcelable.Creator<LandmarkParcel> CREATOR = new e(4);
+    public final int a;
+    public final float b;
+    public final float c;
+    public final int d;
 
-    public LandmarkParcel(int i, float f, float f2, int i2) {
-        this.zzd = i;
-        this.zza = f;
-        this.zzb = f2;
-        this.zzc = i2;
+    public LandmarkParcel(int i10, float f10, float f11, int i11) {
+        this.a = i10;
+        this.b = f10;
+        this.c = f11;
+        this.d = i11;
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeInt(parcel, 1, this.zzd);
-        SafeParcelWriter.writeFloat(parcel, 2, this.zza);
-        SafeParcelWriter.writeFloat(parcel, 3, this.zzb);
-        SafeParcelWriter.writeInt(parcel, 4, this.zzc);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = r8.q(parcel, 20293);
+        r8.s(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        r8.s(parcel, 2, 4);
+        parcel.writeFloat(this.b);
+        r8.s(parcel, 3, 4);
+        parcel.writeFloat(this.c);
+        r8.s(parcel, 4, 4);
+        parcel.writeInt(this.d);
+        r8.r(parcel, q6);
     }
 }

@@ -2,6 +2,7 @@ package com.google.android.play.core.integrity;
 
 import android.content.Context;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class q implements x {
     private Context a;
@@ -10,18 +11,21 @@ final class q implements x {
         throw null;
     }
 
-    /* synthetic */ q(p pVar) {
-    }
-
-    @Override // com.google.android.play.core.integrity.x
-    public final s b() {
-        com.google.android.play.integrity.internal.ba.a(this.a, Context.class);
-        return new s(this.a, null);
-    }
-
     public final q a(Context context) {
         context.getClass();
         this.a = context;
         return this;
+    }
+
+    @Override // com.google.android.play.core.integrity.x
+    public final s b() {
+        Context context = this.a;
+        if (context != null) {
+            return new s(context, null);
+        }
+        throw new IllegalStateException(String.valueOf(Context.class.getCanonicalName()).concat(" must be set"));
+    }
+
+    public /* synthetic */ q(p pVar) {
     }
 }

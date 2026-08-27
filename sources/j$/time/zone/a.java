@@ -1,122 +1,120 @@
 package j$.time.zone;
 
 import j$.time.ZoneOffset;
+import java.io.DataInput;
+import java.io.DataOutput;
 import java.io.Externalizable;
 import java.io.InvalidClassException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
-import java.io.Serializable;
 import java.io.StreamCorruptedException;
 import java.util.TimeZone;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.RichMessageLayout;
 
 /* loaded from: classes2.dex */
 public final class a implements Externalizable {
     private static final long serialVersionUID = -8885321777449118786L;
     public byte a;
-    public Serializable b;
+    public Object b;
 
     public a() {
     }
 
-    public a(byte b, Serializable serializable) {
-        this.a = b;
-        this.b = serializable;
+    public a(byte b10, Object obj) {
+        this.a = b10;
+        this.b = obj;
     }
 
     @Override // java.io.Externalizable
     public final void writeExternal(ObjectOutput objectOutput) {
-        byte b = this.a;
-        Serializable serializable = this.b;
-        objectOutput.writeByte(b);
-        if (b != 1) {
-            if (b == 2) {
-                b bVar = (b) serializable;
+        byte b10 = this.a;
+        Object obj = this.b;
+        objectOutput.writeByte(b10);
+        if (b10 != 1) {
+            if (b10 == 2) {
+                b bVar = (b) obj;
                 c(bVar.a, objectOutput);
                 d(bVar.c, objectOutput);
                 d(bVar.d, objectOutput);
                 return;
             }
-            if (b == 3) {
-                ((e) serializable).writeExternal(objectOutput);
+            if (b10 == 3) {
+                ((e) obj).b(objectOutput);
                 return;
             } else {
-                if (b != 100) {
+                if (b10 != 100) {
                     throw new InvalidClassException("Unknown serialized type");
                 }
-                objectOutput.writeUTF(((ZoneRules) serializable).g.getID());
+                objectOutput.writeUTF(((ZoneRules) obj).g.getID());
                 return;
             }
         }
-        ZoneRules zoneRules = (ZoneRules) serializable;
-        long[] jArr = zoneRules.a;
-        objectOutput.writeInt(jArr.length);
-        for (long j : jArr) {
-            c(j, objectOutput);
+        ZoneRules zoneRules = (ZoneRules) obj;
+        objectOutput.writeInt(zoneRules.a.length);
+        for (long j10 : zoneRules.a) {
+            c(j10, objectOutput);
         }
         for (ZoneOffset zoneOffset : zoneRules.b) {
             d(zoneOffset, objectOutput);
         }
-        long[] jArr2 = zoneRules.c;
-        objectOutput.writeInt(jArr2.length);
-        for (long j2 : jArr2) {
-            c(j2, objectOutput);
+        objectOutput.writeInt(zoneRules.c.length);
+        for (long j11 : zoneRules.c) {
+            c(j11, objectOutput);
         }
         for (ZoneOffset zoneOffset2 : zoneRules.e) {
             d(zoneOffset2, objectOutput);
         }
-        e[] eVarArr = zoneRules.f;
-        objectOutput.writeByte(eVarArr.length);
-        for (e eVar : eVarArr) {
-            eVar.writeExternal(objectOutput);
+        objectOutput.writeByte(zoneRules.f.length);
+        for (e eVar : zoneRules.f) {
+            eVar.b(objectOutput);
         }
     }
 
     @Override // java.io.Externalizable
     public final void readExternal(ObjectInput objectInput) {
-        Serializable zoneRules;
+        Object zoneRules;
         byte readByte = objectInput.readByte();
         this.a = readByte;
         if (readByte == 1) {
-            int readInt = objectInput.readInt();
             long[] jArr = ZoneRules.i;
+            int readInt = objectInput.readInt();
             long[] jArr2 = readInt == 0 ? jArr : new long[readInt];
-            for (int i = 0; i < readInt; i++) {
-                jArr2[i] = a(objectInput);
+            for (int i10 = 0; i10 < readInt; i10++) {
+                jArr2[i10] = a(objectInput);
             }
-            int i2 = readInt + 1;
-            ZoneOffset[] zoneOffsetArr = new ZoneOffset[i2];
-            for (int i3 = 0; i3 < i2; i3++) {
-                zoneOffsetArr[i3] = b(objectInput);
+            int i11 = readInt + 1;
+            ZoneOffset[] zoneOffsetArr = new ZoneOffset[i11];
+            for (int i12 = 0; i12 < i11; i12++) {
+                zoneOffsetArr[i12] = b(objectInput);
             }
             int readInt2 = objectInput.readInt();
             if (readInt2 != 0) {
                 jArr = new long[readInt2];
             }
             long[] jArr3 = jArr;
-            for (int i4 = 0; i4 < readInt2; i4++) {
-                jArr3[i4] = a(objectInput);
+            for (int i13 = 0; i13 < readInt2; i13++) {
+                jArr3[i13] = a(objectInput);
             }
-            int i5 = readInt2 + 1;
-            ZoneOffset[] zoneOffsetArr2 = new ZoneOffset[i5];
-            for (int i6 = 0; i6 < i5; i6++) {
-                zoneOffsetArr2[i6] = b(objectInput);
+            int i14 = readInt2 + 1;
+            ZoneOffset[] zoneOffsetArr2 = new ZoneOffset[i14];
+            for (int i15 = 0; i15 < i14; i15++) {
+                zoneOffsetArr2[i15] = b(objectInput);
             }
             int readByte2 = objectInput.readByte();
             e[] eVarArr = readByte2 == 0 ? ZoneRules.j : new e[readByte2];
-            for (int i7 = 0; i7 < readByte2; i7++) {
-                eVarArr[i7] = e.a(objectInput);
+            for (int i16 = 0; i16 < readByte2; i16++) {
+                eVarArr[i16] = e.a(objectInput);
             }
             zoneRules = new ZoneRules(jArr2, zoneOffsetArr, jArr3, zoneOffsetArr2, eVarArr);
         } else if (readByte == 2) {
-            long a = a(objectInput);
-            ZoneOffset b = b(objectInput);
-            ZoneOffset b2 = b(objectInput);
-            if (b.equals(b2)) {
+            int i17 = b.e;
+            long a2 = a(objectInput);
+            ZoneOffset b10 = b(objectInput);
+            ZoneOffset b11 = b(objectInput);
+            if (b10.equals(b11)) {
                 throw new IllegalArgumentException("Offsets must not be equal");
             }
-            zoneRules = new b(a, b, b2);
+            zoneRules = new b(a2, b10, b11);
         } else if (readByte == 3) {
             zoneRules = e.a(objectInput);
         } else {
@@ -132,36 +130,36 @@ public final class a implements Externalizable {
         return this.b;
     }
 
-    public static void d(ZoneOffset zoneOffset, ObjectOutput objectOutput) {
+    public static void d(ZoneOffset zoneOffset, DataOutput dataOutput) {
         int totalSeconds = zoneOffset.getTotalSeconds();
-        int i = totalSeconds % RichMessageLayout.PART_MAX_HEIGHT_DP == 0 ? totalSeconds / RichMessageLayout.PART_MAX_HEIGHT_DP : NotificationCenter.needDeleteBusinessLink;
-        objectOutput.writeByte(i);
-        if (i == 127) {
-            objectOutput.writeInt(totalSeconds);
+        int i10 = totalSeconds % RichMessageLayout.PART_MAX_HEIGHT_DP == 0 ? totalSeconds / RichMessageLayout.PART_MAX_HEIGHT_DP : 127;
+        dataOutput.writeByte(i10);
+        if (i10 == 127) {
+            dataOutput.writeInt(totalSeconds);
         }
     }
 
-    public static ZoneOffset b(ObjectInput objectInput) {
-        byte readByte = objectInput.readByte();
-        return readByte == Byte.MAX_VALUE ? ZoneOffset.O(objectInput.readInt()) : ZoneOffset.O(readByte * 900);
+    public static ZoneOffset b(DataInput dataInput) {
+        byte readByte = dataInput.readByte();
+        return readByte == Byte.MAX_VALUE ? ZoneOffset.O(dataInput.readInt()) : ZoneOffset.O(readByte * 900);
     }
 
-    public static void c(long j, ObjectOutput objectOutput) {
-        if (j >= -4575744000L && j < 10413792000L && j % 900 == 0) {
-            int i = (int) ((j + 4575744000L) / 900);
-            objectOutput.writeByte((i >>> 16) & NotificationCenter.didReceiveSmsCode);
-            objectOutput.writeByte((i >>> 8) & NotificationCenter.didReceiveSmsCode);
-            objectOutput.writeByte(i & NotificationCenter.didReceiveSmsCode);
+    public static void c(long j10, DataOutput dataOutput) {
+        if (j10 >= -4575744000L && j10 < 10413792000L && j10 % 900 == 0) {
+            int i10 = (int) ((j10 + 4575744000L) / 900);
+            dataOutput.writeByte((i10 >>> 16) & 255);
+            dataOutput.writeByte((i10 >>> 8) & 255);
+            dataOutput.writeByte(i10 & 255);
             return;
         }
-        objectOutput.writeByte(NotificationCenter.didReceiveSmsCode);
-        objectOutput.writeLong(j);
+        dataOutput.writeByte(255);
+        dataOutput.writeLong(j10);
     }
 
-    public static long a(ObjectInput objectInput) {
-        if ((objectInput.readByte() & 255) == 255) {
-            return objectInput.readLong();
+    public static long a(DataInput dataInput) {
+        if ((dataInput.readByte() & 255) == 255) {
+            return dataInput.readLong();
         }
-        return ((((r0 << 16) + ((objectInput.readByte() & 255) << 8)) + (objectInput.readByte() & 255)) * 900) - 4575744000L;
+        return ((((r0 << 16) + ((dataInput.readByte() & 255) << 8)) + (dataInput.readByte() & 255)) * 900) - 4575744000L;
     }
 }

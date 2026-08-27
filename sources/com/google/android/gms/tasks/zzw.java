@@ -1,10 +1,11 @@
 package com.google.android.gms.tasks;
 
 import android.app.Activity;
-import com.google.android.gms.common.internal.Preconditions;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
+import y5.l;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzw<TResult> extends Task<TResult> {
     private final Object zza = new Object();
@@ -14,11 +15,8 @@ final class zzw<TResult> extends Task<TResult> {
     private Object zze;
     private Exception zzf;
 
-    zzw() {
-    }
-
     private final void zzf() {
-        Preconditions.checkState(this.zzc, "Task is not yet complete");
+        l.j("Task is not yet complete", this.zzc);
     }
 
     private final void zzg() {
@@ -126,26 +124,26 @@ final class zzw<TResult> extends Task<TResult> {
 
     @Override // com.google.android.gms.tasks.Task
     public final boolean isComplete() {
-        boolean z;
+        boolean z10;
         synchronized (this.zza) {
-            z = this.zzc;
+            z10 = this.zzc;
         }
-        return z;
+        return z10;
     }
 
     @Override // com.google.android.gms.tasks.Task
     public final boolean isSuccessful() {
-        boolean z;
+        boolean z10;
         synchronized (this.zza) {
             try {
-                z = false;
+                z10 = false;
                 if (this.zzc && !this.zzd && this.zzf == null) {
-                    z = true;
+                    z10 = true;
                 }
             } finally {
             }
         }
-        return z;
+        return z10;
     }
 
     @Override // com.google.android.gms.tasks.Task
@@ -158,7 +156,7 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     public final void zza(Exception exc) {
-        Preconditions.checkNotNull(exc, "Exception must not be null");
+        l.i(exc, "Exception must not be null");
         synchronized (this.zza) {
             zzh();
             this.zzc = true;
@@ -193,7 +191,7 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     public final boolean zzd(Exception exc) {
-        Preconditions.checkNotNull(exc, "Exception must not be null");
+        l.i(exc, "Exception must not be null");
         synchronized (this.zza) {
             try {
                 if (this.zzc) {
@@ -296,6 +294,13 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     @Override // com.google.android.gms.tasks.Task
+    public final Task<TResult> addOnCompleteListener(Executor executor, OnCompleteListener<TResult> onCompleteListener) {
+        this.zzb.zza(new zzj(executor, onCompleteListener));
+        zzi();
+        return this;
+    }
+
+    @Override // com.google.android.gms.tasks.Task
     public final <X extends Throwable> TResult getResult(Class<X> cls) {
         TResult tresult;
         synchronized (this.zza) {
@@ -317,12 +322,5 @@ final class zzw<TResult> extends Task<TResult> {
             }
         }
         return tresult;
-    }
-
-    @Override // com.google.android.gms.tasks.Task
-    public final Task<TResult> addOnCompleteListener(Executor executor, OnCompleteListener<TResult> onCompleteListener) {
-        this.zzb.zza(new zzj(executor, onCompleteListener));
-        zzi();
-        return this;
     }
 }

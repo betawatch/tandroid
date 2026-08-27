@@ -1,76 +1,35 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-public abstract class f0 extends g0 {
-    public final /* synthetic */ int l;
+public final class f0 extends i0 implements h5 {
+    public static final d0 c;
+    public static final d0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f0(a aVar, int i, int i2) {
-        super(aVar, i);
-        this.l = i2;
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return j$.com.android.tools.r8.a.c(this, intConsumer);
     }
 
-    @Override // j$.util.stream.a
-    public final boolean L() {
-        switch (this.l) {
-            case 0:
-                return true;
-            default:
-                return false;
-        }
+    @Override // j$.util.stream.i0, j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
+    public final void accept(int i10) {
+        x(Integer.valueOf(i10));
     }
 
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final LongStream sequential() {
-        switch (this.l) {
-            case 0:
-                this.a.k = false;
-                break;
-            default:
-                this.a.k = false;
-                break;
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        if (this.a) {
+            return new j$.util.c0(((Integer) this.b).intValue());
         }
-        return this;
+        return null;
     }
 
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final LongStream parallel() {
-        switch (this.l) {
-            case 0:
-                this.a.k = true;
-                break;
-            default:
-                this.a.k = true;
-                break;
-        }
-        return this;
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream unordered() {
-        switch (this.l) {
-            case 0:
-                if (!S2.ORDERED.q(this.f)) {
-                    break;
-                } else {
-                    break;
-                }
-            default:
-                if (!S2.ORDERED.q(this.f)) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return new t(this, S2.r, 4);
-    }
-
-    @Override // j$.util.stream.a, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
-        switch (this.l) {
-        }
-        return spliterator();
+    static {
+        w6 w6Var = w6.INT_VALUE;
+        n nVar = new n(12);
+        n nVar2 = new n(13);
+        j$.util.c0 c0Var = j$.util.c0.c;
+        c = new d0(true, w6Var, c0Var, nVar, nVar2);
+        d = new d0(false, w6Var, c0Var, new n(12), new n(13));
     }
 }

@@ -4,7 +4,9 @@ import android.app.PendingIntent;
 import androidx.car.app.model.CarIcon;
 import androidx.car.app.model.CarText;
 import j$.util.Objects;
+import x.a;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class Suggestion {
     private final PendingIntent mAction;
@@ -13,31 +15,8 @@ public final class Suggestion {
     private final CarText mSubtitle;
     private final CarText mTitle;
 
-    public static final class Builder {
-    }
-
-    public String getIdentifier() {
-        return this.mIdentifier;
-    }
-
-    public CarText getTitle() {
-        return this.mTitle;
-    }
-
-    public CarText getSubtitle() {
-        return this.mSubtitle;
-    }
-
-    public CarIcon getIcon() {
-        return this.mIcon;
-    }
-
-    public PendingIntent getAction() {
-        return this.mAction;
-    }
-
-    public String toString() {
-        return "[id: " + this.mIdentifier + ", title: " + CarText.toShortString(this.mTitle) + ", subtitle: " + CarText.toShortString(this.mSubtitle) + ", pendingIntent: " + this.mAction + ", icon: " + this.mIcon + "]";
+    public Suggestion(a aVar) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -51,12 +30,32 @@ public final class Suggestion {
         return Objects.equals(this.mIdentifier, suggestion.mIdentifier) && Objects.equals(this.mTitle, suggestion.mTitle) && Objects.equals(this.mSubtitle, suggestion.mSubtitle) && Objects.equals(this.mAction, suggestion.mAction) && Objects.equals(this.mIcon, suggestion.mIcon);
     }
 
+    public PendingIntent getAction() {
+        return this.mAction;
+    }
+
+    public CarIcon getIcon() {
+        return this.mIcon;
+    }
+
+    public String getIdentifier() {
+        return this.mIdentifier;
+    }
+
+    public CarText getSubtitle() {
+        return this.mSubtitle;
+    }
+
+    public CarText getTitle() {
+        return this.mTitle;
+    }
+
     public int hashCode() {
         return Objects.hash(this.mIdentifier, this.mTitle, this.mSubtitle, this.mIcon, this.mAction);
     }
 
-    Suggestion(Builder builder) {
-        throw null;
+    public String toString() {
+        return "[id: " + this.mIdentifier + ", title: " + CarText.toShortString(this.mTitle) + ", subtitle: " + CarText.toShortString(this.mSubtitle) + ", pendingIntent: " + this.mAction + ", icon: " + this.mIcon + "]";
     }
 
     private Suggestion() {

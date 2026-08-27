@@ -1,8 +1,8 @@
 package org.telegram.messenger;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public final class BuildConfig {
-    public static final String APP_CENTER_HASH = "null";
     public static final String BETA_URL = "null";
     public static final String BUILD_TYPE = "HA_public";
     public static final String BUILD_VERSION_STRING = "12.10.2";

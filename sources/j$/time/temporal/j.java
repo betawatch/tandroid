@@ -12,7 +12,7 @@ public enum j implements o {
     public final transient long c;
 
     @Override // j$.time.temporal.o
-    public final boolean u() {
+    public final boolean isDateBased() {
         return true;
     }
 
@@ -20,10 +20,10 @@ public enum j implements o {
         ChronoUnit chronoUnit = ChronoUnit.NANOS;
     }
 
-    j(String str, long j) {
+    j(String str, long j10) {
         this.a = str;
-        this.b = s.e((-365243219162L) + j, 365241780471L + j);
-        this.c = j;
+        this.b = s.e((-365243219162L) + j10, 365241780471L + j10);
+        this.c = j10;
     }
 
     @Override // j$.time.temporal.o
@@ -32,29 +32,29 @@ public enum j implements o {
     }
 
     @Override // j$.time.temporal.o
-    public final boolean p(l lVar) {
-        return lVar.h(a.EPOCH_DAY);
+    public final Temporal q(Temporal temporal, long j10) {
+        if (!this.b.d(j10)) {
+            throw new j$.time.b("Invalid value: " + this.a + " " + j10);
+        }
+        return temporal.c(j$.com.android.tools.r8.a.U(j10, this.c), a.EPOCH_DAY);
     }
 
     @Override // j$.time.temporal.o
-    public final s r(l lVar) {
-        if (lVar.h(a.EPOCH_DAY)) {
+    public final boolean j(l lVar) {
+        return lVar.e(a.EPOCH_DAY);
+    }
+
+    @Override // j$.time.temporal.o
+    public final s k(l lVar) {
+        if (lVar.e(a.EPOCH_DAY)) {
             return this.b;
         }
         throw new j$.time.b("Unsupported field: " + this);
     }
 
     @Override // j$.time.temporal.o
-    public final long o(l lVar) {
-        return lVar.u(a.EPOCH_DAY) + this.c;
-    }
-
-    @Override // j$.time.temporal.o
-    public final Temporal q(Temporal temporal, long j) {
-        if (!this.b.d(j)) {
-            throw new j$.time.b("Invalid value: " + this.a + " " + j);
-        }
-        return temporal.e(j$.com.android.tools.r8.a.U(j, this.c), a.EPOCH_DAY);
+    public final long m(l lVar) {
+        return lVar.y(a.EPOCH_DAY) + this.c;
     }
 
     @Override // java.lang.Enum

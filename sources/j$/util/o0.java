@@ -1,100 +1,66 @@
 package j$.util;
 
-import java.util.Comparator;
+import java.util.PrimitiveIterator;
 import java.util.function.Consumer;
-import java.util.function.IntConsumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public final class o0 implements W {
-    public final int[] a;
-    public int b;
-    public final int c;
-    public final int d;
+public final /* synthetic */ class o0 implements PrimitiveIterator.OfLong {
+    public final /* synthetic */ p0 a;
 
-    @Override // j$.util.Spliterator
+    public /* synthetic */ o0(p0 p0Var) {
+        this.a = p0Var;
+    }
+
+    public final /* synthetic */ boolean equals(Object obj) {
+        p0 p0Var = this.a;
+        if (obj instanceof o0) {
+            obj = ((o0) obj).a;
+        }
+        return p0Var.equals(obj);
+    }
+
+    @Override // java.util.PrimitiveIterator
+    public final /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
+        this.a.forEachRemaining((Object) longConsumer);
+    }
+
+    @Override // java.util.PrimitiveIterator.OfLong, java.util.Iterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.j(this, consumer);
+        this.a.forEachRemaining(consumer);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.n(this);
+    @Override // java.util.PrimitiveIterator.OfLong
+    public final /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
+        this.a.forEachRemaining(longConsumer);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.com.android.tools.r8.a.p(this, i);
+    @Override // java.util.Iterator
+    public final /* synthetic */ boolean hasNext() {
+        return this.a.hasNext();
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.A(this, consumer);
+    public final /* synthetic */ int hashCode() {
+        return this.a.hashCode();
     }
 
-    public o0(int[] iArr, int i, int i2, int i3) {
-        this.a = iArr;
-        this.b = i;
-        this.c = i2;
-        this.d = i3 | 16448;
+    @Override // java.util.PrimitiveIterator.OfLong, java.util.Iterator
+    public final /* synthetic */ Long next() {
+        return this.a.next();
     }
 
-    @Override // j$.util.c0, j$.util.Spliterator
-    public final W trySplit() {
-        int i = this.b;
-        int i2 = (this.c + i) >>> 1;
-        if (i >= i2) {
-            return null;
-        }
-        this.b = i2;
-        return new o0(this.a, i, i2, this.d);
+    @Override // java.util.PrimitiveIterator.OfLong, java.util.Iterator
+    public final /* synthetic */ Object next() {
+        return this.a.next();
     }
 
-    @Override // j$.util.c0
-    public final void forEachRemaining(IntConsumer intConsumer) {
-        int i;
-        intConsumer.getClass();
-        int[] iArr = this.a;
-        int length = iArr.length;
-        int i2 = this.c;
-        if (length < i2 || (i = this.b) < 0) {
-            return;
-        }
-        this.b = i2;
-        if (i < i2) {
-            do {
-                intConsumer.accept(iArr[i]);
-                i++;
-            } while (i < i2);
-        }
+    @Override // java.util.PrimitiveIterator.OfLong
+    public final /* synthetic */ long nextLong() {
+        return this.a.nextLong();
     }
 
-    @Override // j$.util.c0
-    public final boolean tryAdvance(IntConsumer intConsumer) {
-        intConsumer.getClass();
-        int i = this.b;
-        if (i < 0 || i >= this.c) {
-            return false;
-        }
-        this.b = i + 1;
-        intConsumer.accept(this.a[i]);
-        return true;
-    }
-
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        return this.c - this.b;
-    }
-
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return this.d;
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        if (j$.com.android.tools.r8.a.p(this, 4)) {
-            return null;
-        }
-        throw new IllegalStateException();
+    @Override // java.util.Iterator
+    public final /* synthetic */ void remove() {
+        this.a.remove();
     }
 }

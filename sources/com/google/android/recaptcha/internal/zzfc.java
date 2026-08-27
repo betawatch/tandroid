@@ -1,15 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.CoroutineScope;
+import ad.p;
+import h7.k6;
+import id.c0;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzfc extends SuspendLambda implements Function2 {
+final class zzfc extends i implements p {
     Object zza;
     int zzb;
     final /* synthetic */ zzhk zzc;
@@ -18,60 +17,60 @@ final class zzfc extends SuspendLambda implements Function2 {
     final /* synthetic */ long zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzfc(zzhk zzhkVar, zzfp zzfpVar, zzxn zzxnVar, long j, Continuation continuation) {
-        super(2, continuation);
+    public zzfc(zzhk zzhkVar, zzfp zzfpVar, zzxn zzxnVar, long j10, c cVar) {
+        super(2, cVar);
         this.zzc = zzhkVar;
         this.zzd = zzfpVar;
         this.zze = zzxnVar;
-        this.zzf = j;
+        this.zzf = j10;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzfc(this.zzc, this.zzd, this.zze, this.zzf, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        return new zzfc(this.zzc, this.zzd, this.zze, this.zzf, cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfc) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzfc) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x003f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x003d, code lost:
     
         if (((com.google.android.recaptcha.internal.zzhg) r10).zza(r1, r9) == r0) goto L14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0045, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0043, code lost:
     
         return r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0031, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x002f, code lost:
     
         if (r10 != r0) goto L9;
      */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zzb;
-        if (i == 0) {
-            ResultKt.throwOnFailure(obj);
+        sc.a aVar = sc.a.a;
+        int i10 = this.zzb;
+        if (i10 == 0) {
+            k6.b(obj);
             zzhkVar = this.zzc;
             zzfp zzfpVar = this.zzd;
             zzxn zzxnVar = this.zze;
-            long j = this.zzf;
+            long j10 = this.zzf;
             this.zza = zzhkVar;
             this.zzb = 1;
-            obj = new zzhg(new zzfb(zzfpVar, zzxnVar, j, null));
+            obj = new zzhg(new zzfb(zzfpVar, zzxnVar, j10, null));
         } else {
-            if (i != 1) {
-                ResultKt.throwOnFailure(obj);
-                return Unit.INSTANCE;
+            if (i10 != 1) {
+                k6.b(obj);
+                return pc.i.a;
             }
             zzhkVar = (zzhk) this.zza;
-            ResultKt.throwOnFailure(obj);
+            k6.b(obj);
         }
         this.zza = null;
         this.zzb = 2;

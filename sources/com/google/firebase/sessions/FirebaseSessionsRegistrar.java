@@ -1,182 +1,169 @@
 package com.google.firebase.sessions;
 
 import android.content.Context;
-import com.google.android.datatransport.TransportFactory;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.annotations.concurrent.Background;
-import com.google.firebase.annotations.concurrent.Blocking;
-import com.google.firebase.components.Component;
-import com.google.firebase.components.ComponentContainer;
-import com.google.firebase.components.ComponentFactory;
 import com.google.firebase.components.ComponentRegistrar;
-import com.google.firebase.components.Dependency;
-import com.google.firebase.components.Qualified;
-import com.google.firebase.inject.Provider;
-import com.google.firebase.installations.FirebaseInstallationsApi;
-import com.google.firebase.platforminfo.LibraryVersionComponent;
-import com.google.firebase.sessions.settings.SessionsSettings;
+import g7.i7;
+import ia.d0;
+import ia.h0;
+import ia.l;
+import ia.l0;
+import ia.n;
+import ia.n0;
+import ia.p;
+import ia.r0;
+import ia.s0;
+import ia.u;
+import id.a0;
 import java.util.List;
-import kotlin.collections.CollectionsKt;
-import kotlin.coroutines.CoroutineContext;
-import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.CoroutineDispatcher;
+import kotlin.jvm.internal.j;
+import t2.f;
+import t8.h;
+import v8.a;
+import v8.b;
+import z8.i;
+import z8.q;
+import z9.d;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
 
     @Deprecated
     private static final String LIBRARY_NAME = "fire-sessions";
-    private static final Companion Companion = new Companion(null);
+    private static final p Companion = new p();
 
     @Deprecated
-    private static final Qualified firebaseApp = Qualified.unqualified(FirebaseApp.class);
+    private static final q firebaseApp = q.a(h.class);
 
     @Deprecated
-    private static final Qualified firebaseInstallationsApi = Qualified.unqualified(FirebaseInstallationsApi.class);
+    private static final q firebaseInstallationsApi = q.a(d.class);
 
     @Deprecated
-    private static final Qualified backgroundDispatcher = Qualified.qualified(Background.class, CoroutineDispatcher.class);
+    private static final q backgroundDispatcher = new q(a.class, a0.class);
 
     @Deprecated
-    private static final Qualified blockingDispatcher = Qualified.qualified(Blocking.class, CoroutineDispatcher.class);
+    private static final q blockingDispatcher = new q(b.class, a0.class);
 
     @Deprecated
-    private static final Qualified transportFactory = Qualified.unqualified(TransportFactory.class);
+    private static final q transportFactory = q.a(f.class);
 
     @Deprecated
-    private static final Qualified sessionFirelogPublisher = Qualified.unqualified(SessionFirelogPublisher.class);
+    private static final q sessionFirelogPublisher = q.a(h0.class);
 
     @Deprecated
-    private static final Qualified sessionGenerator = Qualified.unqualified(SessionGenerator.class);
+    private static final q sessionGenerator = q.a(n0.class);
 
     @Deprecated
-    private static final Qualified sessionsSettings = Qualified.unqualified(SessionsSettings.class);
+    private static final q sessionsSettings = q.a(ka.h.class);
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final n getComponents$lambda-0(z8.b bVar) {
+        Object b10 = bVar.b(firebaseApp);
+        j.d(b10, "container[firebaseApp]");
+        Object b11 = bVar.b(sessionsSettings);
+        j.d(b11, "container[sessionsSettings]");
+        Object b12 = bVar.b(backgroundDispatcher);
+        j.d(b12, "container[backgroundDispatcher]");
+        return new n((h) b10, (ka.h) b11, (rc.h) b12);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final n0 getComponents$lambda-1(z8.b bVar) {
+        return new n0();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final h0 getComponents$lambda-2(z8.b bVar) {
+        Object b10 = bVar.b(firebaseApp);
+        j.d(b10, "container[firebaseApp]");
+        Object b11 = bVar.b(firebaseInstallationsApi);
+        j.d(b11, "container[firebaseInstallationsApi]");
+        Object b12 = bVar.b(sessionsSettings);
+        j.d(b12, "container[sessionsSettings]");
+        y9.b d = bVar.d(transportFactory);
+        j.d(d, "container.getProvider(transportFactory)");
+        ae.b bVar2 = new ae.b(d, 19);
+        Object b13 = bVar.b(backgroundDispatcher);
+        j.d(b13, "container[backgroundDispatcher]");
+        return new l0((h) b10, (d) b11, (ka.h) b12, bVar2, (rc.h) b13);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final ka.h getComponents$lambda-3(z8.b bVar) {
+        Object b10 = bVar.b(firebaseApp);
+        j.d(b10, "container[firebaseApp]");
+        Object b11 = bVar.b(blockingDispatcher);
+        j.d(b11, "container[blockingDispatcher]");
+        Object b12 = bVar.b(backgroundDispatcher);
+        j.d(b12, "container[backgroundDispatcher]");
+        Object b13 = bVar.b(firebaseInstallationsApi);
+        j.d(b13, "container[firebaseInstallationsApi]");
+        return new ka.h((h) b10, (rc.h) b11, (rc.h) b12, (d) b13);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final u getComponents$lambda-4(z8.b bVar) {
+        h hVar = (h) bVar.b(firebaseApp);
+        hVar.a();
+        Context context = hVar.a;
+        j.d(context, "container[firebaseApp].applicationContext");
+        Object b10 = bVar.b(backgroundDispatcher);
+        j.d(b10, "container[backgroundDispatcher]");
+        return new d0(context, (rc.h) b10);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final r0 getComponents$lambda-5(z8.b bVar) {
+        Object b10 = bVar.b(firebaseApp);
+        j.d(b10, "container[firebaseApp]");
+        return new s0((h) b10);
+    }
 
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List<Component> getComponents() {
-        Component.Builder name = Component.builder(FirebaseSessions.class).name(LIBRARY_NAME);
-        Qualified qualified = firebaseApp;
-        Component.Builder add = name.add(Dependency.required(qualified));
-        Qualified qualified2 = sessionsSettings;
-        Component.Builder add2 = add.add(Dependency.required(qualified2));
-        Qualified qualified3 = backgroundDispatcher;
-        Component build = add2.add(Dependency.required(qualified3)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda0
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                FirebaseSessions firebaseSessions;
-                firebaseSessions = FirebaseSessionsRegistrar.getComponents$lambda-0(componentContainer);
-                return firebaseSessions;
-            }
-        }).eagerInDefaultApp().build();
-        Component build2 = Component.builder(SessionGenerator.class).name("session-generator").factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda1
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                SessionGenerator sessionGenerator2;
-                sessionGenerator2 = FirebaseSessionsRegistrar.getComponents$lambda-1(componentContainer);
-                return sessionGenerator2;
-            }
-        }).build();
-        Component.Builder add3 = Component.builder(SessionFirelogPublisher.class).name("session-publisher").add(Dependency.required(qualified));
-        Qualified qualified4 = firebaseInstallationsApi;
-        return CollectionsKt.listOf((Object[]) new Component[]{build, build2, add3.add(Dependency.required(qualified4)).add(Dependency.required(qualified2)).add(Dependency.requiredProvider(transportFactory)).add(Dependency.required(qualified3)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda2
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                SessionFirelogPublisher sessionFirelogPublisher2;
-                sessionFirelogPublisher2 = FirebaseSessionsRegistrar.getComponents$lambda-2(componentContainer);
-                return sessionFirelogPublisher2;
-            }
-        }).build(), Component.builder(SessionsSettings.class).name("sessions-settings").add(Dependency.required(qualified)).add(Dependency.required(blockingDispatcher)).add(Dependency.required(qualified3)).add(Dependency.required(qualified4)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda3
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                SessionsSettings sessionsSettings2;
-                sessionsSettings2 = FirebaseSessionsRegistrar.getComponents$lambda-3(componentContainer);
-                return sessionsSettings2;
-            }
-        }).build(), Component.builder(SessionDatastore.class).name("sessions-datastore").add(Dependency.required(qualified)).add(Dependency.required(qualified3)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda4
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                SessionDatastore sessionDatastore;
-                sessionDatastore = FirebaseSessionsRegistrar.getComponents$lambda-4(componentContainer);
-                return sessionDatastore;
-            }
-        }).build(), Component.builder(SessionLifecycleServiceBinder.class).name("sessions-service-binder").add(Dependency.required(qualified)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda5
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                SessionLifecycleServiceBinder sessionLifecycleServiceBinder;
-                sessionLifecycleServiceBinder = FirebaseSessionsRegistrar.getComponents$lambda-5(componentContainer);
-                return sessionLifecycleServiceBinder;
-            }
-        }).build(), LibraryVersionComponent.create(LIBRARY_NAME, "1.2.0")});
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final FirebaseSessions getComponents$lambda-0(ComponentContainer componentContainer) {
-        Object obj = componentContainer.get(firebaseApp);
-        Intrinsics.checkNotNullExpressionValue(obj, "container[firebaseApp]");
-        Object obj2 = componentContainer.get(sessionsSettings);
-        Intrinsics.checkNotNullExpressionValue(obj2, "container[sessionsSettings]");
-        Object obj3 = componentContainer.get(backgroundDispatcher);
-        Intrinsics.checkNotNullExpressionValue(obj3, "container[backgroundDispatcher]");
-        return new FirebaseSessions((FirebaseApp) obj, (SessionsSettings) obj2, (CoroutineContext) obj3);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final SessionGenerator getComponents$lambda-1(ComponentContainer componentContainer) {
-        return new SessionGenerator(WallClock.INSTANCE, null, 2, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final SessionFirelogPublisher getComponents$lambda-2(ComponentContainer componentContainer) {
-        Object obj = componentContainer.get(firebaseApp);
-        Intrinsics.checkNotNullExpressionValue(obj, "container[firebaseApp]");
-        Object obj2 = componentContainer.get(firebaseInstallationsApi);
-        Intrinsics.checkNotNullExpressionValue(obj2, "container[firebaseInstallationsApi]");
-        Object obj3 = componentContainer.get(sessionsSettings);
-        Intrinsics.checkNotNullExpressionValue(obj3, "container[sessionsSettings]");
-        Provider provider = componentContainer.getProvider(transportFactory);
-        Intrinsics.checkNotNullExpressionValue(provider, "container.getProvider(transportFactory)");
-        EventGDTLogger eventGDTLogger = new EventGDTLogger(provider);
-        Object obj4 = componentContainer.get(backgroundDispatcher);
-        Intrinsics.checkNotNullExpressionValue(obj4, "container[backgroundDispatcher]");
-        return new SessionFirelogPublisherImpl((FirebaseApp) obj, (FirebaseInstallationsApi) obj2, (SessionsSettings) obj3, eventGDTLogger, (CoroutineContext) obj4);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final SessionsSettings getComponents$lambda-3(ComponentContainer componentContainer) {
-        Object obj = componentContainer.get(firebaseApp);
-        Intrinsics.checkNotNullExpressionValue(obj, "container[firebaseApp]");
-        Object obj2 = componentContainer.get(blockingDispatcher);
-        Intrinsics.checkNotNullExpressionValue(obj2, "container[blockingDispatcher]");
-        Object obj3 = componentContainer.get(backgroundDispatcher);
-        Intrinsics.checkNotNullExpressionValue(obj3, "container[backgroundDispatcher]");
-        Object obj4 = componentContainer.get(firebaseInstallationsApi);
-        Intrinsics.checkNotNullExpressionValue(obj4, "container[firebaseInstallationsApi]");
-        return new SessionsSettings((FirebaseApp) obj, (CoroutineContext) obj2, (CoroutineContext) obj3, (FirebaseInstallationsApi) obj4);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final SessionDatastore getComponents$lambda-4(ComponentContainer componentContainer) {
-        Context applicationContext = ((FirebaseApp) componentContainer.get(firebaseApp)).getApplicationContext();
-        Intrinsics.checkNotNullExpressionValue(applicationContext, "container[firebaseApp].applicationContext");
-        Object obj = componentContainer.get(backgroundDispatcher);
-        Intrinsics.checkNotNullExpressionValue(obj, "container[backgroundDispatcher]");
-        return new SessionDatastoreImpl(applicationContext, (CoroutineContext) obj);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final SessionLifecycleServiceBinder getComponents$lambda-5(ComponentContainer componentContainer) {
-        Object obj = componentContainer.get(firebaseApp);
-        Intrinsics.checkNotNullExpressionValue(obj, "container[firebaseApp]");
-        return new SessionLifecycleServiceBinderImpl((FirebaseApp) obj);
-    }
-
-    private static final class Companion {
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-
-        private Companion() {
-        }
+    public List<z8.a> getComponents() {
+        ug.b a2 = z8.a.a(n.class);
+        a2.c = LIBRARY_NAME;
+        q qVar = firebaseApp;
+        a2.a(i.b(qVar));
+        q qVar2 = sessionsSettings;
+        a2.a(i.b(qVar2));
+        q qVar3 = backgroundDispatcher;
+        a2.a(i.b(qVar3));
+        a2.f = new l(1);
+        a2.c(2);
+        z8.a b10 = a2.b();
+        ug.b a3 = z8.a.a(n0.class);
+        a3.c = "session-generator";
+        a3.f = new l(2);
+        z8.a b11 = a3.b();
+        ug.b a10 = z8.a.a(h0.class);
+        a10.c = "session-publisher";
+        a10.a(new i(qVar, 1, 0));
+        q qVar4 = firebaseInstallationsApi;
+        a10.a(i.b(qVar4));
+        a10.a(new i(qVar2, 1, 0));
+        a10.a(new i(transportFactory, 1, 1));
+        a10.a(new i(qVar3, 1, 0));
+        a10.f = new l(3);
+        z8.a b12 = a10.b();
+        ug.b a11 = z8.a.a(ka.h.class);
+        a11.c = "sessions-settings";
+        a11.a(new i(qVar, 1, 0));
+        a11.a(i.b(blockingDispatcher));
+        a11.a(new i(qVar3, 1, 0));
+        a11.a(new i(qVar4, 1, 0));
+        a11.f = new l(4);
+        z8.a b13 = a11.b();
+        ug.b a12 = z8.a.a(u.class);
+        a12.c = "sessions-datastore";
+        a12.a(new i(qVar, 1, 0));
+        a12.a(new i(qVar3, 1, 0));
+        a12.f = new l(5);
+        z8.a b14 = a12.b();
+        ug.b a13 = z8.a.a(r0.class);
+        a13.c = "sessions-service-binder";
+        a13.a(new i(qVar, 1, 0));
+        a13.f = new l(6);
+        return qc.h.c(b10, b11, b12, b13, b14, a13.b(), i7.a(LIBRARY_NAME, "1.2.0"));
     }
 }

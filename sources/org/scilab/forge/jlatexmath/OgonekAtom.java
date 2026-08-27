@@ -1,6 +1,7 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class OgonekAtom extends Atom {
     private Atom base;
 
@@ -14,9 +15,9 @@ public class OgonekAtom extends Atom {
         Box createBox = this.base.createBox(teXEnvironment);
         VerticalBox verticalBox = new VerticalBox();
         verticalBox.add(createBox);
-        Char r8 = teXEnvironment.getTeXFont().getChar("ogonek", teXEnvironment.getStyle());
-        float italic = r8.getItalic();
-        CharBox charBox = new CharBox(r8);
+        Char r82 = teXEnvironment.getTeXFont().getChar("ogonek", teXEnvironment.getStyle());
+        float italic = r82.getItalic();
+        CharBox charBox = new CharBox(r82);
         if (Math.abs(italic) > 1.0E-7f) {
             box = new HorizontalBox(new StrutBox(-italic, 0.0f, 0.0f, 0.0f));
             box.add(charBox);
@@ -26,9 +27,9 @@ public class OgonekAtom extends Atom {
         HorizontalBox horizontalBox = new HorizontalBox(box, createBox.getWidth(), 1);
         verticalBox.add(new StrutBox(0.0f, -charBox.getHeight(), 0.0f, 0.0f));
         verticalBox.add(horizontalBox);
-        float height = verticalBox.getHeight() + verticalBox.getDepth();
+        float depth = verticalBox.getDepth() + verticalBox.getHeight();
         verticalBox.setHeight(createBox.getHeight());
-        verticalBox.setDepth(height - createBox.getHeight());
+        verticalBox.setDepth(depth - createBox.getHeight());
         return verticalBox;
     }
 }

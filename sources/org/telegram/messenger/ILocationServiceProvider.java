@@ -3,9 +3,9 @@ package org.telegram.messenger;
 import android.content.Context;
 import android.location.Location;
 import android.os.Bundle;
-import androidx.core.util.Consumer;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public interface ILocationServiceProvider {
     public static final int PRIORITY_BALANCED_POWER_ACCURACY = 1;
     public static final int PRIORITY_HIGH_ACCURACY = 0;
@@ -15,39 +15,44 @@ public interface ILocationServiceProvider {
     public static final int STATUS_SETTINGS_CHANGE_UNAVAILABLE = 2;
     public static final int STATUS_SUCCESS = 0;
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface IAPIConnectionCallbacks {
         void onConnected(Bundle bundle);
 
-        void onConnectionSuspended(int i);
+        void onConnectionSuspended(int i10);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface IAPIOnConnectionFailedListener {
         void onConnectionFailed();
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface ILocationListener {
         void onLocationChanged(Location location);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface ILocationRequest {
-        void setFastestInterval(long j);
+        void setFastestInterval(long j10);
 
-        void setInterval(long j);
+        void setInterval(long j10);
 
-        void setPriority(int i);
+        void setPriority(int i10);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface IMapApiClient {
         void connect();
 
         void disconnect();
     }
 
-    void checkLocationSettings(ILocationRequest iLocationRequest, Consumer consumer);
+    void checkLocationSettings(ILocationRequest iLocationRequest, q0.a aVar);
 
     boolean checkServices();
 
-    void getLastLocation(Consumer consumer);
+    void getLastLocation(q0.a aVar);
 
     void init(Context context);
 

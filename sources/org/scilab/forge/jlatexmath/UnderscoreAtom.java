@@ -1,6 +1,7 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class UnderscoreAtom extends Atom {
     public static SpaceAtom w = new SpaceAtom(0, 0.7f, 0.0f, 0.0f);
     public static SpaceAtom s = new SpaceAtom(0, 0.06f, 0.0f, 0.0f);

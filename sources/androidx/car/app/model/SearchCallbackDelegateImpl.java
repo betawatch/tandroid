@@ -2,84 +2,71 @@ package androidx.car.app.model;
 
 import android.os.RemoteException;
 import androidx.car.app.IOnDoneCallback;
-import androidx.car.app.OnDoneCallback;
 import androidx.car.app.model.ISearchCallback;
-import androidx.car.app.model.SearchCallbackDelegateImpl;
-import androidx.car.app.model.SearchTemplate;
-import androidx.car.app.utils.RemoteUtils;
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class SearchCallbackDelegateImpl implements SearchCallbackDelegate {
+public class SearchCallbackDelegateImpl implements o0 {
     private final ISearchCallback mStubCallback;
 
-    public void sendSearchTextChanged(String str, OnDoneCallback onDoneCallback) {
-        try {
-            ISearchCallback iSearchCallback = this.mStubCallback;
-            Objects.requireNonNull(iSearchCallback);
-            iSearchCallback.onSearchTextChanged(str, RemoteUtils.createOnDoneCallbackStub(onDoneCallback));
-        } catch (RemoteException e) {
-            throw new RuntimeException(e);
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class SearchCallbackStub extends ISearchCallback.Stub {
+        private final r0 mCallback;
+
+        public SearchCallbackStub(r0 r0Var) {
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ Object lambda$onSearchSubmitted$1(String str) {
+            throw null;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ Object lambda$onSearchTextChanged$0(String str) {
+            throw null;
+        }
+
+        @Override // androidx.car.app.model.ISearchCallback
+        public void onSearchSubmitted(String str, IOnDoneCallback iOnDoneCallback) {
+            androidx.car.app.utils.i.b(iOnDoneCallback, "onSearchSubmitted", new p0(this, str, 0));
+        }
+
+        @Override // androidx.car.app.model.ISearchCallback
+        public void onSearchTextChanged(String str, IOnDoneCallback iOnDoneCallback) {
+            androidx.car.app.utils.i.b(iOnDoneCallback, "onSearchTextChanged", new p0(this, str, 1));
         }
     }
 
-    public void sendSearchSubmitted(String str, OnDoneCallback onDoneCallback) {
+    private SearchCallbackDelegateImpl(r0 r0Var) {
+        this.mStubCallback = new SearchCallbackStub(r0Var);
+    }
+
+    public static o0 create(r0 r0Var) {
+        return new SearchCallbackDelegateImpl(r0Var);
+    }
+
+    public void sendSearchSubmitted(String str, androidx.car.app.j jVar) {
         try {
             ISearchCallback iSearchCallback = this.mStubCallback;
             Objects.requireNonNull(iSearchCallback);
-            iSearchCallback.onSearchSubmitted(str, RemoteUtils.createOnDoneCallbackStub(onDoneCallback));
-        } catch (RemoteException e) {
-            throw new RuntimeException(e);
+            iSearchCallback.onSearchSubmitted(str, androidx.car.app.utils.i.a());
+        } catch (RemoteException e9) {
+            throw new RuntimeException(e9);
         }
     }
 
-    private SearchCallbackDelegateImpl(SearchTemplate.SearchCallback searchCallback) {
-        this.mStubCallback = new SearchCallbackStub(searchCallback);
+    public void sendSearchTextChanged(String str, androidx.car.app.j jVar) {
+        try {
+            ISearchCallback iSearchCallback = this.mStubCallback;
+            Objects.requireNonNull(iSearchCallback);
+            iSearchCallback.onSearchTextChanged(str, androidx.car.app.utils.i.a());
+        } catch (RemoteException e9) {
+            throw new RuntimeException(e9);
+        }
     }
 
     private SearchCallbackDelegateImpl() {
         this.mStubCallback = null;
-    }
-
-    static SearchCallbackDelegate create(SearchTemplate.SearchCallback searchCallback) {
-        return new SearchCallbackDelegateImpl(searchCallback);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    static class SearchCallbackStub extends ISearchCallback.Stub {
-        private final SearchTemplate.SearchCallback mCallback;
-
-        SearchCallbackStub(SearchTemplate.SearchCallback searchCallback) {
-        }
-
-        @Override // androidx.car.app.model.ISearchCallback
-        public void onSearchTextChanged(final String str, IOnDoneCallback iOnDoneCallback) {
-            RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onSearchTextChanged", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.SearchCallbackDelegateImpl$SearchCallbackStub$$ExternalSyntheticLambda1
-                @Override // androidx.car.app.utils.RemoteUtils.HostCall
-                public final Object dispatch() {
-                    return SearchCallbackDelegateImpl.SearchCallbackStub.$r8$lambda$RqmlWNPg55YHdmSVQQAEDPV549Q(SearchCallbackDelegateImpl.SearchCallbackStub.this, str);
-                }
-            });
-        }
-
-        public static /* synthetic */ Object $r8$lambda$RqmlWNPg55YHdmSVQQAEDPV549Q(SearchCallbackStub searchCallbackStub, String str) {
-            searchCallbackStub.getClass();
-            throw null;
-        }
-
-        @Override // androidx.car.app.model.ISearchCallback
-        public void onSearchSubmitted(final String str, IOnDoneCallback iOnDoneCallback) {
-            RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onSearchSubmitted", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.SearchCallbackDelegateImpl$SearchCallbackStub$$ExternalSyntheticLambda0
-                @Override // androidx.car.app.utils.RemoteUtils.HostCall
-                public final Object dispatch() {
-                    return SearchCallbackDelegateImpl.SearchCallbackStub.$r8$lambda$dx39ga_t255O8OhkV41BCLGktgU(SearchCallbackDelegateImpl.SearchCallbackStub.this, str);
-                }
-            });
-        }
-
-        public static /* synthetic */ Object $r8$lambda$dx39ga_t255O8OhkV41BCLGktgU(SearchCallbackStub searchCallbackStub, String str) {
-            searchCallbackStub.getClass();
-            throw null;
-        }
     }
 }

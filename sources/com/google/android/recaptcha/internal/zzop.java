@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzop extends AbstractMap {
     private static final Comparator zza = new zzom();
@@ -16,7 +17,7 @@ final class zzop extends AbstractMap {
     private Integer zze = null;
     private String zzf = null;
 
-    zzop(List list) {
+    public zzop(List list) {
         Iterator it = list.iterator();
         if (it.hasNext()) {
             zzol.zza((zzol) it.next());

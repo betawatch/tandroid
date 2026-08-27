@@ -3,7 +3,9 @@ package androidx.car.app.hardware.info;
 import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
 import java.util.List;
+import s.d;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class EnergyProfile {
     public static final int EVCONNECTOR_TYPE_CHADEMO = 3;
@@ -35,24 +37,9 @@ public final class EnergyProfile {
     private final CarValue<List<Integer>> mEvConnectorTypes;
     private final CarValue<List<Integer>> mFuelTypes;
 
-    public CarValue<List<Integer>> getEvConnectorTypes() {
-        CarValue<List<Integer>> carValue = this.mEvConnectorTypes;
-        Objects.requireNonNull(carValue);
-        return carValue;
-    }
-
-    public CarValue<List<Integer>> getFuelTypes() {
-        CarValue<List<Integer>> carValue = this.mFuelTypes;
-        Objects.requireNonNull(carValue);
-        return carValue;
-    }
-
-    public String toString() {
-        return "[ evConnectorTypes: " + this.mEvConnectorTypes + ", fuelTypes: " + this.mFuelTypes + "]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mEvConnectorTypes, this.mFuelTypes);
+    public EnergyProfile(d dVar) {
+        dVar.getClass();
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -66,33 +53,29 @@ public final class EnergyProfile {
         return Objects.equals(this.mEvConnectorTypes, energyProfile.mEvConnectorTypes) && Objects.equals(this.mFuelTypes, energyProfile.mFuelTypes);
     }
 
-    EnergyProfile(Builder builder) {
-        CarValue<List<Integer>> carValue = builder.mEvConnectorTypes;
+    public CarValue<List<Integer>> getEvConnectorTypes() {
+        CarValue<List<Integer>> carValue = this.mEvConnectorTypes;
         Objects.requireNonNull(carValue);
-        this.mEvConnectorTypes = carValue;
-        CarValue<List<Integer>> carValue2 = builder.mFuelTypes;
-        Objects.requireNonNull(carValue2);
-        this.mFuelTypes = carValue2;
+        return carValue;
+    }
+
+    public CarValue<List<Integer>> getFuelTypes() {
+        CarValue<List<Integer>> carValue = this.mFuelTypes;
+        Objects.requireNonNull(carValue);
+        return carValue;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mEvConnectorTypes, this.mFuelTypes);
+    }
+
+    public String toString() {
+        return "[ evConnectorTypes: " + this.mEvConnectorTypes + ", fuelTypes: " + this.mFuelTypes + "]";
     }
 
     private EnergyProfile() {
         CarValue<List<Integer>> carValue = CarValue.UNKNOWN_INTEGER_LIST;
         this.mEvConnectorTypes = carValue;
         this.mFuelTypes = carValue;
-    }
-
-    public static final class Builder {
-        CarValue mEvConnectorTypes;
-        CarValue mFuelTypes;
-
-        public Builder() {
-            CarValue<List<Integer>> carValue = CarValue.UNKNOWN_INTEGER_LIST;
-            this.mEvConnectorTypes = carValue;
-            this.mFuelTypes = carValue;
-        }
-
-        public EnergyProfile build() {
-            return new EnergyProfile(this);
-        }
     }
 }

@@ -4,20 +4,14 @@ import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
 import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class Gyroscope {
     private final CarValue<List<Float>> mRotations;
 
-    public CarValue<List<Float>> getRotations() {
-        return this.mRotations;
-    }
-
-    public String toString() {
-        return "[ rotations: " + this.mRotations + " ]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mRotations);
+    public Gyroscope(CarValue<List<Float>> carValue) {
+        Objects.requireNonNull(carValue);
+        this.mRotations = carValue;
     }
 
     public boolean equals(Object obj) {
@@ -30,9 +24,16 @@ public final class Gyroscope {
         return false;
     }
 
-    public Gyroscope(CarValue<List<Float>> carValue) {
-        Objects.requireNonNull(carValue);
-        this.mRotations = carValue;
+    public CarValue<List<Float>> getRotations() {
+        return this.mRotations;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mRotations);
+    }
+
+    public String toString() {
+        return "[ rotations: " + this.mRotations + " ]";
     }
 
     private Gyroscope() {

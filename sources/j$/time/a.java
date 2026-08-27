@@ -19,10 +19,10 @@ public final class a extends j$.com.android.tools.r8.a implements Serializable {
     }
 
     public final boolean equals(Object obj) {
-        if (!(obj instanceof a)) {
-            return false;
+        if (obj instanceof a) {
+            return this.a.equals(((a) obj).a);
         }
-        return this.a.equals(((a) obj).a);
+        return false;
     }
 
     public final int hashCode() {

@@ -1,84 +1,50 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public abstract class n3 {
-    public final long a;
-    public final long b;
-    public Spliterator c;
-    public long d;
-    public long e;
+public final class n3 extends p3 implements i5 {
+    public final long[] h;
 
-    public abstract Spliterator a(Spliterator spliterator, long j, long j2, long j3, long j4);
-
-    public n3(Spliterator spliterator, long j, long j2, long j3, long j4) {
-        this.c = spliterator;
-        this.a = j;
-        this.b = j2;
-        this.d = j3;
-        this.e = j4;
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void x(Object obj) {
+        x((Long) obj);
     }
 
-    public final Spliterator trySplit() {
-        long j = this.e;
-        if (this.a >= j || this.d >= j) {
-            return null;
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.d(this, longConsumer);
+    }
+
+    @Override // j$.util.stream.i5
+    public final /* synthetic */ void x(Long l10) {
+        t3.H(this, l10);
+    }
+
+    public n3(Spliterator spliterator, t3 t3Var, long[] jArr) {
+        super(spliterator, t3Var, jArr.length);
+        this.h = jArr;
+    }
+
+    public n3(n3 n3Var, Spliterator spliterator, long j10, long j11) {
+        super(n3Var, spliterator, j10, j11, n3Var.h.length);
+        this.h = n3Var.h;
+    }
+
+    @Override // j$.util.stream.p3
+    public final p3 a(Spliterator spliterator, long j10, long j11) {
+        return new n3(this, spliterator, j10, j11);
+    }
+
+    @Override // j$.util.stream.p3, j$.util.stream.j5
+    public final void accept(long j10) {
+        int i10 = this.f;
+        if (i10 >= this.g) {
+            throw new IndexOutOfBoundsException(Integer.toString(this.f));
         }
-        while (true) {
-            Spliterator trySplit = this.c.trySplit();
-            if (trySplit == null) {
-                return null;
-            }
-            long estimateSize = trySplit.estimateSize() + this.d;
-            long min = Math.min(estimateSize, this.b);
-            long j2 = this.a;
-            if (j2 >= min) {
-                this.d = min;
-            } else {
-                long j3 = this.b;
-                if (min >= j3) {
-                    this.c = trySplit;
-                    this.e = min;
-                } else {
-                    long j4 = this.d;
-                    if (j4 >= j2 && estimateSize <= j3) {
-                        this.d = min;
-                        return trySplit;
-                    }
-                    this.d = min;
-                    return a(trySplit, j2, j3, j4, min);
-                }
-            }
-        }
-    }
-
-    public final long estimateSize() {
-        long j = this.e;
-        long j2 = this.a;
-        if (j2 < j) {
-            return j - Math.max(j2, this.d);
-        }
-        return 0L;
-    }
-
-    public final int characteristics() {
-        return this.c.characteristics();
-    }
-
-    public /* bridge */ /* synthetic */ j$.util.c0 trySplit() {
-        return (j$.util.c0) trySplit();
-    }
-
-    public /* bridge */ /* synthetic */ j$.util.W trySplit() {
-        return (j$.util.W) trySplit();
-    }
-
-    public /* bridge */ /* synthetic */ j$.util.Z trySplit() {
-        return (j$.util.Z) trySplit();
-    }
-
-    public /* bridge */ /* synthetic */ j$.util.T trySplit() {
-        return (j$.util.T) trySplit();
+        long[] jArr = this.h;
+        this.f = i10 + 1;
+        jArr[i10] = j10;
     }
 }

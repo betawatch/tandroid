@@ -8,10 +8,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.telegram.ui.Cells.pa;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 import ru.noties.jlatexmath.awt.Font;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class DefaultTeXFont implements TeXFont {
     protected static final int BOT = 3;
     protected static final int CAPITALS = 1;
@@ -65,36 +67,363 @@ public class DefaultTeXFont implements TeXFont {
         throw new XMLResourceParseException(DefaultTeXFontParser.RESOURCE_NAME, DefaultTeXFontParser.GEN_SET_EL, DefaultTeXFontParser.MUFONTID_ATTR, "contains an unknown font id!");
     }
 
-    public DefaultTeXFont(float f) {
+    public DefaultTeXFont(float f10) {
         this.factor = 1.0f;
         this.isBold = false;
         this.isRoman = false;
         this.isSs = false;
         this.isTt = false;
         this.isIt = false;
-        this.size = f;
+        this.size = f10;
     }
 
-    public DefaultTeXFont(float f, boolean z, boolean z2, boolean z3, boolean z4, boolean z5) {
-        this(f, 1.0f, z, z2, z3, z4, z5);
-    }
-
-    public DefaultTeXFont(float f, float f2, boolean z, boolean z2, boolean z3, boolean z4, boolean z5) {
-        this.size = f;
-        this.factor = f2;
-        this.isBold = z;
-        this.isRoman = z2;
-        this.isSs = z3;
-        this.isTt = z4;
-        this.isIt = z5;
+    public static void addAlphabet(Character.UnicodeBlock unicodeBlock, String str) {
+        String j10 = pa.j("fonts/", str, "/language_", str, ".xml");
+        String j11 = pa.j("fonts/", str, "/symbols_", str, ".xml");
+        String j12 = pa.j("fonts/", str, "/mappings_", str, ".xml");
+        try {
+            addAlphabet(unicodeBlock, JLatexMathAndroid.getResourceAsStream(j10), j10, JLatexMathAndroid.getResourceAsStream(j11), j11, JLatexMathAndroid.getResourceAsStream(j12), j12);
+        } catch (FontAlreadyLoadedException unused) {
+        }
     }
 
     public static void addTeXFontDescription(String str) {
         try {
             addTeXFontDescription(new FileInputStream(str), str);
-        } catch (FileNotFoundException e) {
-            throw new ResourceParseException(str, e);
+        } catch (FileNotFoundException e9) {
+            throw new ResourceParseException(str, e9);
         }
+    }
+
+    public static void enableMagnification(boolean z10) {
+        magnificationEnable = z10;
+    }
+
+    private Char getChar(char c10, CharFont[] charFontArr, int i10) {
+        char c11;
+        int i11;
+        if (c10 >= '0' && c10 <= '9') {
+            i11 = c10 - '0';
+            c11 = 0;
+        } else if (c10 >= 'a' && c10 <= 'z') {
+            i11 = c10 - 'a';
+            c11 = 2;
+        } else if (c10 < 'A' || c10 > 'Z') {
+            c11 = 3;
+            i11 = c10;
+        } else {
+            i11 = c10 - 'A';
+            c11 = 1;
+        }
+        CharFont charFont = charFontArr[c11];
+        return charFont == null ? getDefaultChar(c10, i10) : getChar(new CharFont((char) (charFont.c + i11), charFont.fontId), i10);
+    }
+
+    private Metrics getMetrics(CharFont charFont, float f10) {
+        float[] metrics = fontInfo[charFont.fontId].getMetrics(charFont.c);
+        return new Metrics(metrics[0], metrics[1], metrics[2], metrics[3], f10 * TeXFormula.PIXELS_PER_POINT, f10);
+    }
+
+    private static float getParameter(String str) {
+        Float f10 = parameters.get(str);
+        if (f10 == null) {
+            return 0.0f;
+        }
+        return f10.floatValue();
+    }
+
+    public static float getSizeFactor(int i10) {
+        if (i10 < 2) {
+            return 1.0f;
+        }
+        return i10 < 4 ? generalSettings.get("textfactor").floatValue() : i10 < 6 ? generalSettings.get("scriptfactor").floatValue() : generalSettings.get("scriptscriptfactor").floatValue();
+    }
+
+    public static void registerAlphabet(AlphabetRegistration alphabetRegistration) {
+        for (Character.UnicodeBlock unicodeBlock : alphabetRegistration.getUnicodeBlock()) {
+            registeredAlphabets.put(unicodeBlock, alphabetRegistration);
+        }
+    }
+
+    public static void setMagnification(float f10) {
+        if (magnificationEnable) {
+            TeXIcon.magFactor = f10 / 1000.0f;
+        }
+    }
+
+    public static void setMathSizes(float f10, float f11, float f12, float f13) {
+        if (magnificationEnable) {
+            generalSettings.put("scriptfactor", Float.valueOf(Math.abs(f12 / f10)));
+            generalSettings.put("scriptscriptfactor", Float.valueOf(Math.abs(f13 / f10)));
+            generalSettings.put("textfactor", Float.valueOf(Math.abs(f11 / f10)));
+            TeXIcon.defaultSize = Math.abs(f10);
+        }
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public TeXFont copy() {
+        return new DefaultTeXFont(this.size, this.factor, this.isBold, this.isRoman, this.isSs, this.isTt, this.isIt);
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public TeXFont deriveFont(float f10) {
+        return new DefaultTeXFont(f10, this.factor, this.isBold, this.isRoman, this.isSs, this.isTt, this.isIt);
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getAxisHeight(int i10) {
+        return getSizeFactor(i10) * getParameter("axisheight") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getBigOpSpacing1(int i10) {
+        return getSizeFactor(i10) * getParameter("bigopspacing1") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getBigOpSpacing2(int i10) {
+        return getSizeFactor(i10) * getParameter("bigopspacing2") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getBigOpSpacing3(int i10) {
+        return getSizeFactor(i10) * getParameter("bigopspacing3") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getBigOpSpacing4(int i10) {
+        return getSizeFactor(i10) * getParameter("bigopspacing4") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getBigOpSpacing5(int i10) {
+        return getSizeFactor(i10) * getParameter("bigopspacing5") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public boolean getBold() {
+        return this.isBold;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public Char getDefaultChar(char c10, int i10) {
+        return (c10 < '0' || c10 > '9') ? (c10 < 'a' || c10 > 'z') ? getChar(c10, defaultTextStyleMappings[1], i10) : getChar(c10, defaultTextStyleMappings[2], i10) : getChar(c10, defaultTextStyleMappings[0], i10);
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getDefaultRuleThickness(int i10) {
+        return getSizeFactor(i10) * getParameter("defaultrulethickness") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getDenom1(int i10) {
+        return getSizeFactor(i10) * getParameter("denom1") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getDenom2(int i10) {
+        return getSizeFactor(i10) * getParameter("denom2") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getEM(int i10) {
+        return getSizeFactor(i10) * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public Extension getExtension(Char r10, int i10) {
+        Font font = r10.getFont();
+        int fontCode = r10.getFontCode();
+        float sizeFactor = getSizeFactor(i10);
+        int[] extension = fontInfo[fontCode].getExtension(r10.getChar());
+        Char[] charArr = new Char[extension.length];
+        for (int i11 = 0; i11 < extension.length; i11++) {
+            int i12 = extension[i11];
+            if (i12 == -1) {
+                charArr[i11] = null;
+            } else {
+                charArr[i11] = new Char((char) i12, font, fontCode, getMetrics(new CharFont((char) i12, fontCode), sizeFactor));
+            }
+        }
+        return new Extension(charArr[0], charArr[1], charArr[2], charArr[3]);
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public boolean getIt() {
+        return this.isIt;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getKern(CharFont charFont, CharFont charFont2, int i10) {
+        int i11 = charFont.fontId;
+        if (i11 == charFont2.fontId) {
+            return fontInfo[i11].getKern(charFont.c, charFont2.c, getSizeFactor(i10) * TeXFormula.PIXELS_PER_POINT);
+        }
+        return 0.0f;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public CharFont getLigature(CharFont charFont, CharFont charFont2) {
+        int i10 = charFont.fontId;
+        if (i10 == charFont2.fontId) {
+            return fontInfo[i10].getLigature(charFont.c, charFont2.c);
+        }
+        return null;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public int getMuFontId() {
+        return generalSettings.get(DefaultTeXFontParser.MUFONTID_ATTR).intValue();
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public Char getNextLarger(Char r52, int i10) {
+        CharFont nextLarger = fontInfo[r52.getFontCode()].getNextLarger(r52.getChar());
+        return new Char(nextLarger.c, fontInfo[nextLarger.fontId].getFont(), nextLarger.fontId, getMetrics(nextLarger, getSizeFactor(i10)));
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getNum1(int i10) {
+        return getSizeFactor(i10) * getParameter("num1") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getNum2(int i10) {
+        return getSizeFactor(i10) * getParameter("num2") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getNum3(int i10) {
+        return getSizeFactor(i10) * getParameter("num3") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getQuad(int i10, int i11) {
+        return fontInfo[i11].getQuad(getSizeFactor(i10) * TeXFormula.PIXELS_PER_POINT);
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public boolean getRoman() {
+        return this.isRoman;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getScaleFactor() {
+        return this.factor;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getSize() {
+        return this.size;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getSkew(CharFont charFont, int i10) {
+        char skewChar = fontInfo[charFont.fontId].getSkewChar();
+        if (skewChar == 65535) {
+            return 0.0f;
+        }
+        return getKern(charFont, new CharFont(skewChar, charFont.fontId), i10);
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getSpace(int i10) {
+        return fontInfo[generalSettings.get(DefaultTeXFontParser.SPACEFONTID_ATTR).intValue()].getSpace(getSizeFactor(i10) * TeXFormula.PIXELS_PER_POINT);
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public boolean getSs() {
+        return this.isSs;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getSub1(int i10) {
+        return getSizeFactor(i10) * getParameter("sub1") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getSub2(int i10) {
+        return getSizeFactor(i10) * getParameter("sub2") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getSubDrop(int i10) {
+        return getSizeFactor(i10) * getParameter("subdrop") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getSup1(int i10) {
+        return getSizeFactor(i10) * getParameter("sup1") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getSup2(int i10) {
+        return getSizeFactor(i10) * getParameter("sup2") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getSup3(int i10) {
+        return getSizeFactor(i10) * getParameter("sup3") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getSupDrop(int i10) {
+        return getSizeFactor(i10) * getParameter("supdrop") * TeXFormula.PIXELS_PER_POINT;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public boolean getTt() {
+        return this.isTt;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public float getXHeight(int i10, int i11) {
+        return fontInfo[i11].getXHeight(getSizeFactor(i10) * TeXFormula.PIXELS_PER_POINT);
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public boolean hasNextLarger(Char r32) {
+        return fontInfo[r32.getFontCode()].getNextLarger(r32.getChar()) != null;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public boolean hasSpace(int i10) {
+        return fontInfo[i10].hasSpace();
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public boolean isExtensionChar(Char r32) {
+        return fontInfo[r32.getFontCode()].getExtension(r32.getChar()) != null;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public TeXFont scaleFont(float f10) {
+        return new DefaultTeXFont(this.size, f10, this.isBold, this.isRoman, this.isSs, this.isTt, this.isIt);
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public void setBold(boolean z10) {
+        this.isBold = z10;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public void setIt(boolean z10) {
+        this.isIt = z10;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public void setRoman(boolean z10) {
+        this.isRoman = z10;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public void setSs(boolean z10) {
+        this.isSs = z10;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public void setTt(boolean z10) {
+        this.isTt = z10;
     }
 
     public static void addTeXFontDescription(InputStream inputStream, String str) {
@@ -104,12 +433,69 @@ public class DefaultTeXFont implements TeXFont {
         symbolMappings.putAll(defaultTeXFontParser.parseSymbolMappings());
     }
 
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public Char getChar(char c10, String str, int i10) {
+        CharFont[] charFontArr = textStyleMappings.get(str);
+        if (charFontArr != null) {
+            return getChar(c10, charFontArr, i10);
+        }
+        throw new TextStyleMappingNotFoundException(str);
+    }
+
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public Char getChar(CharFont charFont, int i10) {
+        float sizeFactor = getSizeFactor(i10);
+        boolean z10 = this.isBold;
+        int i11 = z10 ? charFont.boldFontId : charFont.fontId;
+        FontInfo fontInfo2 = fontInfo[i11];
+        if (z10 && charFont.fontId == charFont.boldFontId) {
+            i11 = fontInfo2.getBoldId();
+            fontInfo2 = fontInfo[i11];
+            charFont = new CharFont(charFont.c, i11, i10);
+        }
+        if (this.isRoman) {
+            i11 = fontInfo2.getRomanId();
+            fontInfo2 = fontInfo[i11];
+            charFont = new CharFont(charFont.c, i11, i10);
+        }
+        if (this.isSs) {
+            i11 = fontInfo2.getSsId();
+            fontInfo2 = fontInfo[i11];
+            charFont = new CharFont(charFont.c, i11, i10);
+        }
+        if (this.isTt) {
+            i11 = fontInfo2.getTtId();
+            fontInfo2 = fontInfo[i11];
+            charFont = new CharFont(charFont.c, i11, i10);
+        }
+        if (this.isIt) {
+            i11 = fontInfo2.getItId();
+            fontInfo2 = fontInfo[i11];
+            charFont = new CharFont(charFont.c, i11, i10);
+        }
+        return new Char(charFont.c, fontInfo2.getFont(), i11, getMetrics(charFont, this.factor * sizeFactor));
+    }
+
     public static void addTeXFontDescription(Object obj, InputStream inputStream, String str) {
         DefaultTeXFontParser defaultTeXFontParser = new DefaultTeXFontParser(obj, inputStream, str);
         fontInfo = defaultTeXFontParser.parseFontDescriptions(fontInfo);
         defaultTeXFontParser.parseExtraPath();
         textStyleMappings.putAll(defaultTeXFontParser.parseTextStyleMappings());
         symbolMappings.putAll(defaultTeXFontParser.parseSymbolMappings());
+    }
+
+    public DefaultTeXFont(float f10, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
+        this(f10, 1.0f, z10, z11, z12, z13, z14);
+    }
+
+    public DefaultTeXFont(float f10, float f11, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
+        this.size = f10;
+        this.factor = f11;
+        this.isBold = z10;
+        this.isRoman = z11;
+        this.isSs = z12;
+        this.isTt = z13;
+        this.isIt = z14;
     }
 
     public static void addAlphabet(Character.UnicodeBlock unicodeBlock, InputStream inputStream, String str, InputStream inputStream2, String str2, InputStream inputStream3, String str3) {
@@ -122,12 +508,21 @@ public class DefaultTeXFont implements TeXFont {
         loadedAlphabets.add(unicodeBlock);
     }
 
-    public static void addAlphabet(Object obj, Character.UnicodeBlock[] unicodeBlockArr, String str) {
-        boolean z = false;
-        for (int i = 0; !z && i < unicodeBlockArr.length; i++) {
-            z = loadedAlphabets.contains(unicodeBlockArr[i]) || z;
+    @Override // org.scilab.forge.jlatexmath.TeXFont
+    public Char getChar(String str, int i10) {
+        CharFont charFont = symbolMappings.get(str);
+        if (charFont != null) {
+            return getChar(charFont, i10);
         }
-        if (z) {
+        throw new SymbolMappingNotFoundException(str);
+    }
+
+    public static void addAlphabet(Object obj, Character.UnicodeBlock[] unicodeBlockArr, String str) {
+        boolean z10 = false;
+        for (int i10 = 0; !z10 && i10 < unicodeBlockArr.length; i10++) {
+            z10 = loadedAlphabets.contains(unicodeBlockArr[i10]) || z10;
+        }
+        if (z10) {
             return;
         }
         TeXParser.isLoading = true;
@@ -138,422 +533,14 @@ public class DefaultTeXFont implements TeXFont {
         TeXParser.isLoading = false;
     }
 
-    public static void addAlphabet(Character.UnicodeBlock unicodeBlock, String str) {
-        String str2 = "fonts/" + str + "/language_" + str + ".xml";
-        String str3 = "fonts/" + str + "/symbols_" + str + ".xml";
-        String str4 = "fonts/" + str + "/mappings_" + str + ".xml";
-        try {
-            addAlphabet(unicodeBlock, JLatexMathAndroid.getResourceAsStream(str2), str2, JLatexMathAndroid.getResourceAsStream(str3), str3, JLatexMathAndroid.getResourceAsStream(str4), str4);
-        } catch (FontAlreadyLoadedException unused) {
-        }
-    }
-
     public static void addAlphabet(AlphabetRegistration alphabetRegistration) {
         if (alphabetRegistration != null) {
             try {
                 addAlphabet(alphabetRegistration.getPackage(), alphabetRegistration.getUnicodeBlock(), alphabetRegistration.getTeXFontFileName());
-            } catch (AlphabetRegistrationException e) {
-                System.err.println(e.toString());
+            } catch (AlphabetRegistrationException e9) {
+                System.err.println(e9.toString());
             } catch (FontAlreadyLoadedException unused) {
             }
         }
-    }
-
-    public static void registerAlphabet(AlphabetRegistration alphabetRegistration) {
-        for (Character.UnicodeBlock unicodeBlock : alphabetRegistration.getUnicodeBlock()) {
-            registeredAlphabets.put(unicodeBlock, alphabetRegistration);
-        }
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public TeXFont copy() {
-        return new DefaultTeXFont(this.size, this.factor, this.isBold, this.isRoman, this.isSs, this.isTt, this.isIt);
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public TeXFont deriveFont(float f) {
-        return new DefaultTeXFont(f, this.factor, this.isBold, this.isRoman, this.isSs, this.isTt, this.isIt);
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public TeXFont scaleFont(float f) {
-        return new DefaultTeXFont(this.size, f, this.isBold, this.isRoman, this.isSs, this.isTt, this.isIt);
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getScaleFactor() {
-        return this.factor;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getAxisHeight(int i) {
-        return getParameter("axisheight") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getBigOpSpacing1(int i) {
-        return getParameter("bigopspacing1") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getBigOpSpacing2(int i) {
-        return getParameter("bigopspacing2") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getBigOpSpacing3(int i) {
-        return getParameter("bigopspacing3") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getBigOpSpacing4(int i) {
-        return getParameter("bigopspacing4") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getBigOpSpacing5(int i) {
-        return getParameter("bigopspacing5") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    private Char getChar(char c, CharFont[] charFontArr, int i) {
-        char c2;
-        int i2;
-        if (c >= '0' && c <= '9') {
-            i2 = c - '0';
-            c2 = 0;
-        } else if (c >= 'a' && c <= 'z') {
-            i2 = c - 'a';
-            c2 = 2;
-        } else if (c < 'A' || c > 'Z') {
-            c2 = 3;
-            i2 = c;
-        } else {
-            i2 = c - 'A';
-            c2 = 1;
-        }
-        CharFont charFont = charFontArr[c2];
-        if (charFont == null) {
-            return getDefaultChar(c, i);
-        }
-        return getChar(new CharFont((char) (charFont.c + i2), charFont.fontId), i);
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public Char getChar(char c, String str, int i) {
-        CharFont[] charFontArr = textStyleMappings.get(str);
-        if (charFontArr == null) {
-            throw new TextStyleMappingNotFoundException(str);
-        }
-        return getChar(c, charFontArr, i);
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public Char getChar(CharFont charFont, int i) {
-        float sizeFactor = getSizeFactor(i);
-        boolean z = this.isBold;
-        int i2 = z ? charFont.boldFontId : charFont.fontId;
-        FontInfo fontInfo2 = fontInfo[i2];
-        if (z && charFont.fontId == charFont.boldFontId) {
-            i2 = fontInfo2.getBoldId();
-            fontInfo2 = fontInfo[i2];
-            charFont = new CharFont(charFont.c, i2, i);
-        }
-        if (this.isRoman) {
-            i2 = fontInfo2.getRomanId();
-            fontInfo2 = fontInfo[i2];
-            charFont = new CharFont(charFont.c, i2, i);
-        }
-        if (this.isSs) {
-            i2 = fontInfo2.getSsId();
-            fontInfo2 = fontInfo[i2];
-            charFont = new CharFont(charFont.c, i2, i);
-        }
-        if (this.isTt) {
-            i2 = fontInfo2.getTtId();
-            fontInfo2 = fontInfo[i2];
-            charFont = new CharFont(charFont.c, i2, i);
-        }
-        if (this.isIt) {
-            i2 = fontInfo2.getItId();
-            fontInfo2 = fontInfo[i2];
-            charFont = new CharFont(charFont.c, i2, i);
-        }
-        return new Char(charFont.c, fontInfo2.getFont(), i2, getMetrics(charFont, this.factor * sizeFactor));
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public Char getChar(String str, int i) {
-        CharFont charFont = symbolMappings.get(str);
-        if (charFont == null) {
-            throw new SymbolMappingNotFoundException(str);
-        }
-        return getChar(charFont, i);
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public Char getDefaultChar(char c, int i) {
-        if (c >= '0' && c <= '9') {
-            return getChar(c, defaultTextStyleMappings[0], i);
-        }
-        if (c >= 'a' && c <= 'z') {
-            return getChar(c, defaultTextStyleMappings[2], i);
-        }
-        return getChar(c, defaultTextStyleMappings[1], i);
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getDefaultRuleThickness(int i) {
-        return getParameter("defaultrulethickness") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getDenom1(int i) {
-        return getParameter("denom1") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getDenom2(int i) {
-        return getParameter("denom2") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public Extension getExtension(Char r10, int i) {
-        Font font = r10.getFont();
-        int fontCode = r10.getFontCode();
-        float sizeFactor = getSizeFactor(i);
-        int[] extension = fontInfo[fontCode].getExtension(r10.getChar());
-        Char[] charArr = new Char[extension.length];
-        for (int i2 = 0; i2 < extension.length; i2++) {
-            int i3 = extension[i2];
-            if (i3 == -1) {
-                charArr[i2] = null;
-            } else {
-                charArr[i2] = new Char((char) i3, font, fontCode, getMetrics(new CharFont((char) i3, fontCode), sizeFactor));
-            }
-        }
-        return new Extension(charArr[0], charArr[1], charArr[2], charArr[3]);
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getKern(CharFont charFont, CharFont charFont2, int i) {
-        int i2 = charFont.fontId;
-        if (i2 == charFont2.fontId) {
-            return fontInfo[i2].getKern(charFont.c, charFont2.c, getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT);
-        }
-        return 0.0f;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public CharFont getLigature(CharFont charFont, CharFont charFont2) {
-        int i = charFont.fontId;
-        if (i == charFont2.fontId) {
-            return fontInfo[i].getLigature(charFont.c, charFont2.c);
-        }
-        return null;
-    }
-
-    private Metrics getMetrics(CharFont charFont, float f) {
-        float[] metrics = fontInfo[charFont.fontId].getMetrics(charFont.c);
-        return new Metrics(metrics[0], metrics[1], metrics[2], metrics[3], f * TeXFormula.PIXELS_PER_POINT, f);
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public int getMuFontId() {
-        return generalSettings.get(DefaultTeXFontParser.MUFONTID_ATTR).intValue();
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public Char getNextLarger(Char r5, int i) {
-        CharFont nextLarger = fontInfo[r5.getFontCode()].getNextLarger(r5.getChar());
-        return new Char(nextLarger.c, fontInfo[nextLarger.fontId].getFont(), nextLarger.fontId, getMetrics(nextLarger, getSizeFactor(i)));
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getNum1(int i) {
-        return getParameter("num1") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getNum2(int i) {
-        return getParameter("num2") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getNum3(int i) {
-        return getParameter("num3") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getQuad(int i, int i2) {
-        return fontInfo[i2].getQuad(getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT);
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getSize() {
-        return this.size;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getSkew(CharFont charFont, int i) {
-        char skewChar = fontInfo[charFont.fontId].getSkewChar();
-        if (skewChar == 65535) {
-            return 0.0f;
-        }
-        return getKern(charFont, new CharFont(skewChar, charFont.fontId), i);
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getSpace(int i) {
-        return fontInfo[generalSettings.get(DefaultTeXFontParser.SPACEFONTID_ATTR).intValue()].getSpace(getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT);
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getSub1(int i) {
-        return getParameter("sub1") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getSub2(int i) {
-        return getParameter("sub2") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getSubDrop(int i) {
-        return getParameter("subdrop") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getSup1(int i) {
-        return getParameter("sup1") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getSup2(int i) {
-        return getParameter("sup2") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getSup3(int i) {
-        return getParameter("sup3") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getSupDrop(int i) {
-        return getParameter("supdrop") * getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getXHeight(int i, int i2) {
-        return fontInfo[i2].getXHeight(getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT);
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public float getEM(int i) {
-        return getSizeFactor(i) * TeXFormula.PIXELS_PER_POINT;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public boolean hasNextLarger(Char r3) {
-        return fontInfo[r3.getFontCode()].getNextLarger(r3.getChar()) != null;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public void setBold(boolean z) {
-        this.isBold = z;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public boolean getBold() {
-        return this.isBold;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public void setRoman(boolean z) {
-        this.isRoman = z;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public boolean getRoman() {
-        return this.isRoman;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public void setTt(boolean z) {
-        this.isTt = z;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public boolean getTt() {
-        return this.isTt;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public void setIt(boolean z) {
-        this.isIt = z;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public boolean getIt() {
-        return this.isIt;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public void setSs(boolean z) {
-        this.isSs = z;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public boolean getSs() {
-        return this.isSs;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public boolean hasSpace(int i) {
-        return fontInfo[i].hasSpace();
-    }
-
-    @Override // org.scilab.forge.jlatexmath.TeXFont
-    public boolean isExtensionChar(Char r3) {
-        return fontInfo[r3.getFontCode()].getExtension(r3.getChar()) != null;
-    }
-
-    public static void setMathSizes(float f, float f2, float f3, float f4) {
-        if (magnificationEnable) {
-            generalSettings.put("scriptfactor", Float.valueOf(Math.abs(f3 / f)));
-            generalSettings.put("scriptscriptfactor", Float.valueOf(Math.abs(f4 / f)));
-            generalSettings.put("textfactor", Float.valueOf(Math.abs(f2 / f)));
-            TeXIcon.defaultSize = Math.abs(f);
-        }
-    }
-
-    public static void setMagnification(float f) {
-        if (magnificationEnable) {
-            TeXIcon.magFactor = f / 1000.0f;
-        }
-    }
-
-    public static void enableMagnification(boolean z) {
-        magnificationEnable = z;
-    }
-
-    private static float getParameter(String str) {
-        Float f = parameters.get(str);
-        if (f == null) {
-            return 0.0f;
-        }
-        return f.floatValue();
-    }
-
-    public static float getSizeFactor(int i) {
-        if (i < 2) {
-            return 1.0f;
-        }
-        if (i < 4) {
-            return generalSettings.get("textfactor").floatValue();
-        }
-        if (i < 6) {
-            return generalSettings.get("scriptfactor").floatValue();
-        }
-        return generalSettings.get("scriptscriptfactor").floatValue();
     }
 }

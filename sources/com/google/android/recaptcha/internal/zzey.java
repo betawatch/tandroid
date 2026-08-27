@@ -1,47 +1,46 @@
 package com.google.android.recaptcha.internal;
 
+import ad.p;
 import android.app.Application;
 import android.os.Build;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.CoroutineScope;
+import h7.k6;
+import id.c0;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzey extends SuspendLambda implements Function2 {
+final class zzey extends i implements p {
     int zza;
     final /* synthetic */ zzfp zzb;
     final /* synthetic */ zzhk zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzey(zzfp zzfpVar, zzhk zzhkVar, Continuation continuation) {
-        super(2, continuation);
+    public zzey(zzfp zzfpVar, zzhk zzhkVar, c cVar) {
+        super(2, cVar);
         this.zzb = zzfpVar;
         this.zzc = zzhkVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzey(this.zzb, this.zzc, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        return new zzey(this.zzb, this.zzc, cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzey) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzey) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
         String str;
         Application zzs;
         Application zzs2;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zza;
-        ResultKt.throwOnFailure(obj);
-        if (i != 0) {
+        sc.a aVar = sc.a.a;
+        int i10 = this.zza;
+        k6.b(obj);
+        if (i10 != 0) {
             return obj;
         }
         zzfp zzfpVar = this.zzb;
@@ -52,7 +51,7 @@ final class zzey extends SuspendLambda implements Function2 {
         zzci zze = zzfp.zze(zzfpVar);
         zzda zzh = zzfp.zzh(zzfpVar);
         zzs2 = zzfpVar.zzs();
-        int i2 = Build.VERSION.SDK_INT;
+        int i11 = Build.VERSION.SDK_INT;
         String zza2 = zze.zza();
         zzzc zzf = zzzd.zzf();
         zzf.zzw(str);
@@ -60,7 +59,7 @@ final class zzey extends SuspendLambda implements Function2 {
         zzf.zzx(zzh.zzd(zzs2));
         zzf.zzu("18.7.1");
         zzf.zzv(zza);
-        zzf.zzs(String.valueOf(i2));
+        zzf.zzs(String.valueOf(i11));
         zzf.zzr(zza2);
         zzf.zzf(zzh.zzb(zzs2));
         zzf.zzq(zzh.zzc(zzs2));
@@ -74,6 +73,6 @@ final class zzey extends SuspendLambda implements Function2 {
         String zzb = zzfp.zzg(zzfpVar).zzb();
         this.zza = 1;
         Object zzc = zzi.zzc(zzb, zzzdVar2, this);
-        return zzc == coroutine_suspended ? coroutine_suspended : zzc;
+        return zzc == aVar ? aVar : zzc;
     }
 }

@@ -8,6 +8,7 @@ import java.io.Serializable;
 
 /* loaded from: classes2.dex */
 public final class b implements Comparable, Serializable {
+    public static final /* synthetic */ int e = 0;
     private static final long serialVersionUID = -6946044323557704546L;
     public final long a;
     public final LocalDateTime b;
@@ -27,9 +28,9 @@ public final class b implements Comparable, Serializable {
         this.d = zoneOffset2;
     }
 
-    public b(long j, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
-        this.a = j;
-        this.b = LocalDateTime.K(j, 0, zoneOffset);
+    public b(long j10, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
+        this.a = j10;
+        this.b = LocalDateTime.K(j10, 0, zoneOffset);
         this.c = zoneOffset;
         this.d = zoneOffset2;
     }
@@ -42,7 +43,7 @@ public final class b implements Comparable, Serializable {
         return new a((byte) 2, this);
     }
 
-    public final boolean l() {
+    public final boolean j() {
         return this.d.getTotalSeconds() > this.c.getTotalSeconds();
     }
 
@@ -64,14 +65,14 @@ public final class b implements Comparable, Serializable {
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("Transition[");
-        sb.append(l() ? "Gap" : "Overlap");
-        sb.append(" at ");
-        sb.append(this.b);
-        sb.append(this.c);
-        sb.append(" to ");
-        sb.append(this.d);
-        sb.append(']');
-        return sb.toString();
+        StringBuilder sb2 = new StringBuilder("Transition[");
+        sb2.append(j() ? "Gap" : "Overlap");
+        sb2.append(" at ");
+        sb2.append(this.b);
+        sb2.append(this.c);
+        sb2.append(" to ");
+        sb2.append(this.d);
+        sb2.append(']');
+        return sb2.toString();
     }
 }

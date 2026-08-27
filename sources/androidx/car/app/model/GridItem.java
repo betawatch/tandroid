@@ -2,55 +2,21 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class GridItem implements Item {
+public final class GridItem implements q {
     public static final int IMAGE_TYPE_ICON = 1;
     public static final int IMAGE_TYPE_LARGE = 2;
     private final Badge mBadge;
     private final CarIcon mImage;
     private final int mImageType;
     private final boolean mIsLoading;
-    private final OnClickDelegate mOnClickDelegate;
+    private final b0 mOnClickDelegate;
     private final CarText mText;
     private final CarText mTitle;
 
-    public static final class Builder {
-    }
-
-    public boolean isLoading() {
-        return this.mIsLoading;
-    }
-
-    public CarText getTitle() {
-        return this.mTitle;
-    }
-
-    public CarText getText() {
-        return this.mText;
-    }
-
-    public CarIcon getImage() {
-        return this.mImage;
-    }
-
-    public int getImageType() {
-        return this.mImageType;
-    }
-
-    public OnClickDelegate getOnClickDelegate() {
-        return this.mOnClickDelegate;
-    }
-
-    public Badge getBadge() {
-        return this.mBadge;
-    }
-
-    public String toString() {
-        return "[title: " + CarText.toShortString(this.mTitle) + ", text: " + CarText.toShortString(this.mText) + ", image: " + this.mImage + ", isLoading: " + this.mIsLoading + ", badge: " + this.mBadge + "]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.mIsLoading), this.mTitle, this.mImage, Integer.valueOf(this.mImageType), Boolean.valueOf(this.mOnClickDelegate == null), this.mBadge);
+    public GridItem(k kVar) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -69,8 +35,40 @@ public final class GridItem implements Item {
         return false;
     }
 
-    GridItem(Builder builder) {
-        throw null;
+    public Badge getBadge() {
+        return this.mBadge;
+    }
+
+    public CarIcon getImage() {
+        return this.mImage;
+    }
+
+    public int getImageType() {
+        return this.mImageType;
+    }
+
+    public b0 getOnClickDelegate() {
+        return this.mOnClickDelegate;
+    }
+
+    public CarText getText() {
+        return this.mText;
+    }
+
+    public CarText getTitle() {
+        return this.mTitle;
+    }
+
+    public int hashCode() {
+        return Objects.hash(Boolean.valueOf(this.mIsLoading), this.mTitle, this.mImage, Integer.valueOf(this.mImageType), Boolean.valueOf(this.mOnClickDelegate == null), this.mBadge);
+    }
+
+    public boolean isLoading() {
+        return this.mIsLoading;
+    }
+
+    public String toString() {
+        return "[title: " + CarText.toShortString(this.mTitle) + ", text: " + CarText.toShortString(this.mText) + ", image: " + this.mImage + ", isLoading: " + this.mIsLoading + ", badge: " + this.mBadge + "]";
     }
 
     private GridItem() {

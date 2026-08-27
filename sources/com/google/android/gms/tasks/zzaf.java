@@ -2,6 +2,7 @@ package com.google.android.gms.tasks;
 
 import java.util.concurrent.ExecutionException;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzaf<T> implements zzae<T> {
     private final Object zza = new Object();
@@ -13,8 +14,8 @@ final class zzaf<T> implements zzae<T> {
     private Exception zzg;
     private boolean zzh;
 
-    public zzaf(int i, zzw zzwVar) {
-        this.zzb = i;
+    public zzaf(int i10, zzw zzwVar) {
+        this.zzb = i10;
         this.zzc = zzwVar;
     }
 
@@ -52,7 +53,7 @@ final class zzaf<T> implements zzae<T> {
     }
 
     @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(T t) {
+    public final void onSuccess(T t10) {
         synchronized (this.zza) {
             this.zzd++;
             zza();

@@ -4,20 +4,14 @@ import androidx.car.app.hardware.common.CarValue;
 import j$.util.Objects;
 import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class Compass {
     private final CarValue<List<Float>> mOrientations;
 
-    public CarValue<List<Float>> getOrientations() {
-        return this.mOrientations;
-    }
-
-    public String toString() {
-        return "[ orientations: " + this.mOrientations + " ]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mOrientations);
+    public Compass(CarValue<List<Float>> carValue) {
+        Objects.requireNonNull(carValue);
+        this.mOrientations = carValue;
     }
 
     public boolean equals(Object obj) {
@@ -30,9 +24,16 @@ public final class Compass {
         return false;
     }
 
-    public Compass(CarValue<List<Float>> carValue) {
-        Objects.requireNonNull(carValue);
-        this.mOrientations = carValue;
+    public CarValue<List<Float>> getOrientations() {
+        return this.mOrientations;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mOrientations);
+    }
+
+    public String toString() {
+        return "[ orientations: " + this.mOrientations + " ]";
     }
 
     private Compass() {

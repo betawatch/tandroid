@@ -4,24 +4,22 @@ import android.text.TextUtils;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 class VLog {
     public static native void d(String str);
 
     public static native void e(String str);
+
+    public static void e(Throwable th) {
+        e(null, th);
+    }
 
     public static native void i(String str);
 
     public static native void v(String str);
 
     public static native void w(String str);
-
-    VLog() {
-    }
-
-    public static void e(Throwable th) {
-        e(null, th);
-    }
 
     public static void e(String str, Throwable th) {
         StringWriter stringWriter = new StringWriter();

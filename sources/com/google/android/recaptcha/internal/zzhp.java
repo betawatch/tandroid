@@ -1,22 +1,24 @@
 package com.google.android.recaptcha.internal;
 
+import h7.j6;
 import java.io.InputStreamReader;
+import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
-import kotlin.Lazy;
-import kotlin.LazyKt;
-import kotlin.io.TextStreamsKt;
-import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.j;
+import pc.c;
+import pc.g;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzhp implements zzhn {
-    private final Lazy zza;
+    private final c zza;
 
     public zzhp() {
-        int i = zzby.zza;
-        this.zza = LazyKt.lazy(zzho.zza);
+        int i10 = zzby.zza;
+        this.zza = j6.a(zzho.zza);
     }
 
     @Override // com.google.android.recaptcha.internal.zzhn
@@ -24,28 +26,28 @@ public final class zzhp implements zzhn {
         zzhl zzhlVar = null;
         try {
             try {
-                zzhlVar = ((zzhm) this.zza.getValue()).zza(str);
+                zzhlVar = ((zzhm) ((g) this.zza).a()).zza(str);
                 zzhlVar.zzc();
                 zzhlVar.zze(zzzdVar.zzd());
                 zzts zza = zzhlVar.zza(zzxn.zzj());
-                Intrinsics.checkNotNull(zza);
+                j.b(zza);
                 zzxn zzxnVar = (zzxn) zza;
                 zzhlVar.zzd();
                 return zzxnVar;
-            } catch (zzcg e) {
+            } catch (zzcg e9) {
                 if (zzhlVar == null) {
-                    throw e;
+                    throw e9;
                 }
-                if (!Intrinsics.areEqual(e.zza(), zzcd.zzax)) {
-                    throw e;
+                if (!j.a(e9.zza(), zzcd.zzax)) {
+                    throw e9;
                 }
                 try {
                     throw zzcf.zza(zzzj.zzg(zzhlVar.zzb().getErrorStream()).zzi());
-                } catch (Exception e2) {
-                    throw new zzcg(zzce.zzc, zzcd.zzG, e2.getMessage(), null, 8, null);
+                } catch (Exception e10) {
+                    throw new zzcg(zzce.zzc, zzcd.zzG, e10.getMessage(), null, 8, null);
                 }
-            } catch (Exception e3) {
-                throw new zzcg(zzce.zzc, zzcd.zzF, e3.getMessage(), null, 8, null);
+            } catch (Exception e11) {
+                throw new zzcg(zzce.zzc, zzcd.zzF, e11.getMessage(), null, 8, null);
             }
         } finally {
         }
@@ -56,7 +58,7 @@ public final class zzhp implements zzhn {
         try {
             try {
                 URLConnection openConnection = new URL(str).openConnection();
-                Intrinsics.checkNotNull(openConnection, "null cannot be cast to non-null type java.net.HttpURLConnection");
+                j.c(openConnection, "null cannot be cast to non-null type java.net.HttpURLConnection");
                 HttpURLConnection httpURLConnection = (HttpURLConnection) openConnection;
                 httpURLConnection.setRequestMethod("GET");
                 httpURLConnection.setDoInput(true);
@@ -67,7 +69,15 @@ public final class zzhp implements zzhn {
                     throw new zzcg(zzce.zzc, new zzcd(httpURLConnection.getResponseCode()), null, null, 12, null);
                 }
                 try {
-                    return TextStreamsKt.readText(Intrinsics.areEqual("gzip", httpURLConnection.getContentEncoding()) ? new InputStreamReader(new GZIPInputStream(httpURLConnection.getInputStream())) : new InputStreamReader(httpURLConnection.getInputStream()));
+                    InputStreamReader inputStreamReader = "gzip".equals(httpURLConnection.getContentEncoding()) ? new InputStreamReader(new GZIPInputStream(httpURLConnection.getInputStream())) : new InputStreamReader(httpURLConnection.getInputStream());
+                    StringWriter stringWriter = new StringWriter();
+                    char[] cArr = new char[8192];
+                    for (int read = inputStreamReader.read(cArr); read >= 0; read = inputStreamReader.read(cArr)) {
+                        stringWriter.write(cArr, 0, read);
+                    }
+                    String stringWriter2 = stringWriter.toString();
+                    j.d(stringWriter2, "toString(...)");
+                    return stringWriter2;
                 } catch (Exception unused) {
                     throw new zzcg(zzce.zzc, zzcd.zzP, null, null, 12, null);
                 }

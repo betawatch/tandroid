@@ -7,7 +7,8 @@ import org.scilab.forge.jlatexmath.StrutBox;
 import org.scilab.forge.jlatexmath.TeXEnvironment;
 import org.scilab.forge.jlatexmath.TeXFormula;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class DynamicAtom extends Atom {
     private static ExternalConverterFactory ecFactory;
     private ExternalConverter converter;
@@ -36,19 +37,6 @@ public class DynamicAtom extends Atom {
         ecFactory = externalConverterFactory;
     }
 
-    public boolean getInsertMode() {
-        return this.insert;
-    }
-
-    public Atom getAtom() {
-        if (!this.refreshed) {
-            this.formula.setLaTeX(this.converter.getLaTeXString(this.externalCode));
-            this.refreshed = true;
-        }
-        Atom atom = this.formula.root;
-        return atom == null ? new EmptyAtom() : atom;
-    }
-
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
         ExternalConverter externalConverter = this.converter;
@@ -64,5 +52,18 @@ public class DynamicAtom extends Atom {
             }
         }
         return new StrutBox(0.0f, 0.0f, 0.0f, 0.0f);
+    }
+
+    public Atom getAtom() {
+        if (!this.refreshed) {
+            this.formula.setLaTeX(this.converter.getLaTeXString(this.externalCode));
+            this.refreshed = true;
+        }
+        Atom atom = this.formula.root;
+        return atom == null ? new EmptyAtom() : atom;
+    }
+
+    public boolean getInsertMode() {
+        return this.insert;
     }
 }

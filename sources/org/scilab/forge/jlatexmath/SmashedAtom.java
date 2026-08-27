@@ -1,6 +1,7 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class SmashedAtom extends Atom {
     private Atom at;
     private boolean d;
@@ -17,12 +18,6 @@ public class SmashedAtom extends Atom {
         }
     }
 
-    public SmashedAtom(Atom atom) {
-        this.h = true;
-        this.d = true;
-        this.at = atom;
-    }
-
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
         Box createBox = this.at.createBox(teXEnvironment);
@@ -33,5 +28,11 @@ public class SmashedAtom extends Atom {
             createBox.setDepth(0.0f);
         }
         return createBox;
+    }
+
+    public SmashedAtom(Atom atom) {
+        this.h = true;
+        this.d = true;
+        this.at = atom;
     }
 }

@@ -2,7 +2,6 @@ package j$.time;
 
 import j$.time.temporal.ChronoUnit;
 import j$.time.temporal.Temporal;
-import org.telegram.messenger.NotificationCenter;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
@@ -60,11 +59,11 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
         a = values();
     }
 
-    public static j J(int i) {
-        if (i < 1 || i > 12) {
-            throw new b("Invalid value for MonthOfYear: " + i);
+    public static j J(int i10) {
+        if (i10 < 1 || i10 > 12) {
+            throw new b("Invalid value for MonthOfYear: " + i10);
         }
-        return a[i - 1];
+        return a[i10 - 1];
     }
 
     public final int getValue() {
@@ -72,12 +71,12 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
     }
 
     @Override // j$.time.temporal.l
-    public final boolean h(j$.time.temporal.o oVar) {
-        return oVar instanceof j$.time.temporal.a ? oVar == j$.time.temporal.a.MONTH_OF_YEAR : oVar != null && oVar.p(this);
+    public final boolean e(j$.time.temporal.o oVar) {
+        return oVar instanceof j$.time.temporal.a ? oVar == j$.time.temporal.a.MONTH_OF_YEAR : oVar != null && oVar.j(this);
     }
 
     @Override // j$.time.temporal.l
-    public final j$.time.temporal.s q(j$.time.temporal.o oVar) {
+    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
         if (oVar == j$.time.temporal.a.MONTH_OF_YEAR) {
             return oVar.l();
         }
@@ -85,7 +84,7 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
     }
 
     @Override // j$.time.temporal.l
-    public final int o(j$.time.temporal.o oVar) {
+    public final int j(j$.time.temporal.o oVar) {
         if (oVar == j$.time.temporal.a.MONTH_OF_YEAR) {
             return getValue();
         }
@@ -93,60 +92,60 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
     }
 
     @Override // j$.time.temporal.l
-    public final long u(j$.time.temporal.o oVar) {
+    public final long y(j$.time.temporal.o oVar) {
         if (oVar == j$.time.temporal.a.MONTH_OF_YEAR) {
             return getValue();
         }
         if (oVar instanceof j$.time.temporal.a) {
             throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
         }
-        return oVar.o(this);
+        return oVar.m(this);
     }
 
-    public final int H(boolean z) {
-        int i = i.a[ordinal()];
-        return i != 1 ? (i == 2 || i == 3 || i == 4 || i == 5) ? 30 : 31 : z ? 29 : 28;
+    public final int H(boolean z10) {
+        int i10 = i.a[ordinal()];
+        return i10 != 1 ? (i10 == 2 || i10 == 3 || i10 == 4 || i10 == 5) ? 30 : 31 : z10 ? 29 : 28;
     }
 
     public final int I() {
-        int i = i.a[ordinal()];
-        if (i != 1) {
-            return (i == 2 || i == 3 || i == 4 || i == 5) ? 30 : 31;
+        int i10 = i.a[ordinal()];
+        if (i10 != 1) {
+            return (i10 == 2 || i10 == 3 || i10 == 4 || i10 == 5) ? 30 : 31;
         }
         return 29;
     }
 
-    public final int E(boolean z) {
+    public final int G(boolean z10) {
         switch (i.a[ordinal()]) {
             case 1:
                 return 32;
             case 2:
-                return (z ? 1 : 0) + 91;
+                return (z10 ? 1 : 0) + 91;
             case 3:
-                return (z ? 1 : 0) + NotificationCenter.messagePlayingDidSeek;
+                return (z10 ? 1 : 0) + 152;
             case 4:
-                return (z ? 1 : 0) + NotificationCenter.musicListLoaded;
+                return (z10 ? 1 : 0) + 244;
             case 5:
-                return (z ? 1 : 0) + NotificationCenter.onUserRingtonesUpdated;
+                return (z10 ? 1 : 0) + 305;
             case 6:
                 return 1;
             case 7:
-                return (z ? 1 : 0) + 60;
+                return (z10 ? 1 : 0) + 60;
             case 8:
-                return (z ? 1 : 0) + 121;
+                return (z10 ? 1 : 0) + 121;
             case 9:
-                return (z ? 1 : 0) + NotificationCenter.themeUploadedToServer;
+                return (z10 ? 1 : 0) + 182;
             case 10:
-                return (z ? 1 : 0) + NotificationCenter.groupPackUpdated;
+                return (z10 ? 1 : 0) + 213;
             case 11:
-                return (z ? 1 : 0) + NotificationCenter.didSetNewWallpapper;
+                return (z10 ? 1 : 0) + 274;
             default:
-                return (z ? 1 : 0) + NotificationCenter.translationModelDownloaded;
+                return (z10 ? 1 : 0) + 335;
         }
     }
 
     @Override // j$.time.temporal.l
-    public final Object r(j$.time.format.a aVar) {
+    public final Object m(j$.time.format.a aVar) {
         if (aVar == j$.time.temporal.p.b) {
             return j$.time.chrono.r.c;
         }
@@ -157,10 +156,10 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
     }
 
     @Override // j$.time.temporal.m
-    public final Temporal x(Temporal temporal) {
+    public final Temporal q(Temporal temporal) {
         if (!j$.com.android.tools.r8.a.N(temporal).equals(j$.time.chrono.r.c)) {
             throw new b("Adjustment only supported on ISO date-time");
         }
-        return temporal.e(getValue(), j$.time.temporal.a.MONTH_OF_YEAR);
+        return temporal.c(getValue(), j$.time.temporal.a.MONTH_OF_YEAR);
     }
 }

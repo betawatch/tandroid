@@ -1,21 +1,19 @@
 package com.google.android.play.core.integrity;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class b extends bq {
     private String a;
     private y b;
 
-    b() {
-    }
-
     @Override // com.google.android.play.core.integrity.bq
-    final bq a(y yVar) {
+    public final bq a(y yVar) {
         this.b = yVar;
         return this;
     }
 
     @Override // com.google.android.play.core.integrity.bq
-    final bq b(String str) {
+    public final bq b(String str) {
         if (str == null) {
             throw new NullPointerException("Null token");
         }
@@ -24,19 +22,19 @@ final class b extends bq {
     }
 
     @Override // com.google.android.play.core.integrity.bq
-    final br c() {
+    public final br c() {
         y yVar;
         String str = this.a;
         if (str != null && (yVar = this.b) != null) {
             return new br(str, yVar);
         }
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb2 = new StringBuilder();
         if (this.a == null) {
-            sb.append(" token");
+            sb2.append(" token");
         }
         if (this.b == null) {
-            sb.append(" integrityDialogWrapper");
+            sb2.append(" integrityDialogWrapper");
         }
-        throw new IllegalStateException("Missing required properties:".concat(sb.toString()));
+        throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
     }
 }

@@ -1,27 +1,31 @@
 package com.google.android.recaptcha.internal;
 
 import android.os.Build;
+import java.util.LinkedHashMap;
 import java.util.Map;
-import kotlin.TuplesKt;
-import kotlin.collections.MapsKt;
+import pc.d;
+import qc.r;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzlz {
     public static final Map zza() {
-        Map mutableMapOf = MapsKt.mutableMapOf(TuplesKt.to(-4, zzcd.zzo), TuplesKt.to(-12, zzcd.zzp), TuplesKt.to(-6, zzcd.zzk), TuplesKt.to(-11, zzcd.zzm), TuplesKt.to(-13, zzcd.zzq), TuplesKt.to(-14, zzcd.zzr), TuplesKt.to(-2, zzcd.zzl), TuplesKt.to(-7, zzcd.zzs), TuplesKt.to(-5, zzcd.zzt), TuplesKt.to(-9, zzcd.zzu), TuplesKt.to(-8, zzcd.zzE), TuplesKt.to(-15, zzcd.zzn), TuplesKt.to(-1, zzcd.zzv), TuplesKt.to(-3, zzcd.zzx), TuplesKt.to(-10, zzcd.zzy));
-        int i = Build.VERSION.SDK_INT;
-        if (i >= 26) {
-            mutableMapOf.put(-16, zzcd.zzw);
+        d[] dVarArr = {new d(-4, zzcd.zzo), new d(-12, zzcd.zzp), new d(-6, zzcd.zzk), new d(-11, zzcd.zzm), new d(-13, zzcd.zzq), new d(-14, zzcd.zzr), new d(-2, zzcd.zzl), new d(-7, zzcd.zzs), new d(-5, zzcd.zzt), new d(-9, zzcd.zzu), new d(-8, zzcd.zzE), new d(-15, zzcd.zzn), new d(-1, zzcd.zzv), new d(-3, zzcd.zzx), new d(-10, zzcd.zzy)};
+        LinkedHashMap linkedHashMap = new LinkedHashMap(r.a(15));
+        r.c(linkedHashMap, dVarArr);
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 26) {
+            linkedHashMap.put(-16, zzcd.zzw);
         }
-        if (i >= 27) {
-            mutableMapOf.put(1, zzcd.zzA);
-            mutableMapOf.put(2, zzcd.zzB);
-            mutableMapOf.put(0, zzcd.zzC);
-            mutableMapOf.put(3, zzcd.zzD);
+        if (i10 >= 27) {
+            linkedHashMap.put(1, zzcd.zzA);
+            linkedHashMap.put(2, zzcd.zzB);
+            linkedHashMap.put(0, zzcd.zzC);
+            linkedHashMap.put(3, zzcd.zzD);
         }
-        if (i >= 29) {
-            mutableMapOf.put(4, zzcd.zzz);
+        if (i10 >= 29) {
+            linkedHashMap.put(4, zzcd.zzz);
         }
-        return mutableMapOf;
+        return linkedHashMap;
     }
 }

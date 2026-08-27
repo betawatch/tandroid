@@ -5,69 +5,31 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import android.os.Parcelable;
 import androidx.car.app.IOnDoneCallback;
-import androidx.car.app.serialization.Bundleable;
+import g7.r;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public interface ISurfaceCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$ISurfaceCallback".replace('$', '.');
 
-    public static class Default implements ISurfaceCallback {
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return null;
-        }
+    void onClick(float f10, float f11);
 
-        @Override // androidx.car.app.ISurfaceCallback
-        public void onClick(float f, float f2) {
-        }
+    void onFling(float f10, float f11);
 
-        @Override // androidx.car.app.ISurfaceCallback
-        public void onFling(float f, float f2) {
-        }
+    void onScale(float f10, float f11, float f12);
 
-        @Override // androidx.car.app.ISurfaceCallback
-        public void onScale(float f, float f2, float f3) {
-        }
-
-        @Override // androidx.car.app.ISurfaceCallback
-        public void onScroll(float f, float f2) {
-        }
-
-        @Override // androidx.car.app.ISurfaceCallback
-        public void onStableAreaChanged(Rect rect, IOnDoneCallback iOnDoneCallback) {
-        }
-
-        @Override // androidx.car.app.ISurfaceCallback
-        public void onSurfaceAvailable(Bundleable bundleable, IOnDoneCallback iOnDoneCallback) {
-        }
-
-        @Override // androidx.car.app.ISurfaceCallback
-        public void onSurfaceDestroyed(Bundleable bundleable, IOnDoneCallback iOnDoneCallback) {
-        }
-
-        @Override // androidx.car.app.ISurfaceCallback
-        public void onVisibleAreaChanged(Rect rect, IOnDoneCallback iOnDoneCallback) {
-        }
-    }
-
-    void onClick(float f, float f2);
-
-    void onFling(float f, float f2);
-
-    void onScale(float f, float f2, float f3);
-
-    void onScroll(float f, float f2);
+    void onScroll(float f10, float f11);
 
     void onStableAreaChanged(Rect rect, IOnDoneCallback iOnDoneCallback);
 
-    void onSurfaceAvailable(Bundleable bundleable, IOnDoneCallback iOnDoneCallback);
+    void onSurfaceAvailable(w.b bVar, IOnDoneCallback iOnDoneCallback);
 
-    void onSurfaceDestroyed(Bundleable bundleable, IOnDoneCallback iOnDoneCallback);
+    void onSurfaceDestroyed(w.b bVar, IOnDoneCallback iOnDoneCallback);
 
     void onVisibleAreaChanged(Rect rect, IOnDoneCallback iOnDoneCallback);
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static abstract class Stub extends Binder implements ISurfaceCallback {
         static final int TRANSACTION_onClick = 9;
         static final int TRANSACTION_onFling = 7;
@@ -78,9 +40,127 @@ public interface ISurfaceCallback extends IInterface {
         static final int TRANSACTION_onSurfaceDestroyed = 5;
         static final int TRANSACTION_onVisibleAreaChanged = 3;
 
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return this;
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static class Proxy implements ISurfaceCallback {
+            private IBinder mRemote;
+
+            public Proxy(IBinder iBinder) {
+                this.mRemote = iBinder;
+            }
+
+            @Override // android.os.IInterface
+            public IBinder asBinder() {
+                return this.mRemote;
+            }
+
+            public String getInterfaceDescriptor() {
+                return ISurfaceCallback.DESCRIPTOR;
+            }
+
+            @Override // androidx.car.app.ISurfaceCallback
+            public void onClick(float f10, float f11) {
+                Parcel obtain = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
+                    obtain.writeFloat(f10);
+                    obtain.writeFloat(f11);
+                    this.mRemote.transact(9, obtain, null, 1);
+                } finally {
+                    obtain.recycle();
+                }
+            }
+
+            @Override // androidx.car.app.ISurfaceCallback
+            public void onFling(float f10, float f11) {
+                Parcel obtain = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
+                    obtain.writeFloat(f10);
+                    obtain.writeFloat(f11);
+                    this.mRemote.transact(7, obtain, null, 1);
+                } finally {
+                    obtain.recycle();
+                }
+            }
+
+            @Override // androidx.car.app.ISurfaceCallback
+            public void onScale(float f10, float f11, float f12) {
+                Parcel obtain = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
+                    obtain.writeFloat(f10);
+                    obtain.writeFloat(f11);
+                    obtain.writeFloat(f12);
+                    this.mRemote.transact(8, obtain, null, 1);
+                } finally {
+                    obtain.recycle();
+                }
+            }
+
+            @Override // androidx.car.app.ISurfaceCallback
+            public void onScroll(float f10, float f11) {
+                Parcel obtain = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
+                    obtain.writeFloat(f10);
+                    obtain.writeFloat(f11);
+                    this.mRemote.transact(6, obtain, null, 1);
+                } finally {
+                    obtain.recycle();
+                }
+            }
+
+            @Override // androidx.car.app.ISurfaceCallback
+            public void onStableAreaChanged(Rect rect, IOnDoneCallback iOnDoneCallback) {
+                Parcel obtain = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
+                    r.a(obtain, rect);
+                    obtain.writeStrongInterface(iOnDoneCallback);
+                    this.mRemote.transact(4, obtain, null, 1);
+                } finally {
+                    obtain.recycle();
+                }
+            }
+
+            @Override // androidx.car.app.ISurfaceCallback
+            public void onSurfaceAvailable(w.b bVar, IOnDoneCallback iOnDoneCallback) {
+                Parcel obtain = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
+                    r.a(obtain, bVar);
+                    obtain.writeStrongInterface(iOnDoneCallback);
+                    this.mRemote.transact(2, obtain, null, 1);
+                } finally {
+                    obtain.recycle();
+                }
+            }
+
+            @Override // androidx.car.app.ISurfaceCallback
+            public void onSurfaceDestroyed(w.b bVar, IOnDoneCallback iOnDoneCallback) {
+                Parcel obtain = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
+                    r.a(obtain, bVar);
+                    obtain.writeStrongInterface(iOnDoneCallback);
+                    this.mRemote.transact(5, obtain, null, 1);
+                } finally {
+                    obtain.recycle();
+                }
+            }
+
+            @Override // androidx.car.app.ISurfaceCallback
+            public void onVisibleAreaChanged(Rect rect, IOnDoneCallback iOnDoneCallback) {
+                Parcel obtain = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
+                    r.a(obtain, rect);
+                    obtain.writeStrongInterface(iOnDoneCallback);
+                    this.mRemote.transact(3, obtain, null, 1);
+                } finally {
+                    obtain.recycle();
+                }
+            }
         }
 
         public Stub() {
@@ -92,34 +172,31 @@ public interface ISurfaceCallback extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface(ISurfaceCallback.DESCRIPTOR);
-            if (queryLocalInterface != null && (queryLocalInterface instanceof ISurfaceCallback)) {
-                return (ISurfaceCallback) queryLocalInterface;
-            }
-            return new Proxy(iBinder);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof ISurfaceCallback)) ? new Proxy(iBinder) : (ISurfaceCallback) queryLocalInterface;
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
+        public boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
             String str = ISurfaceCallback.DESCRIPTOR;
-            if (i >= 1 && i <= 16777215) {
+            if (i10 >= 1 && i10 <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i == 1598968902) {
+            if (i10 == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            switch (i) {
+            switch (i10) {
                 case 2:
-                    onSurfaceAvailable((Bundleable) _Parcel.readTypedObject(parcel, Bundleable.CREATOR), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
+                    onSurfaceAvailable((w.b) (parcel.readInt() != 0 ? w.b.CREATOR.createFromParcel(parcel) : null), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
                 case 3:
-                    onVisibleAreaChanged((Rect) _Parcel.readTypedObject(parcel, Rect.CREATOR), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
+                    onVisibleAreaChanged((Rect) (parcel.readInt() != 0 ? Rect.CREATOR.createFromParcel(parcel) : null), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
                 case 4:
-                    onStableAreaChanged((Rect) _Parcel.readTypedObject(parcel, Rect.CREATOR), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
+                    onStableAreaChanged((Rect) (parcel.readInt() != 0 ? Rect.CREATOR.createFromParcel(parcel) : null), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
                 case 5:
-                    onSurfaceDestroyed((Bundleable) _Parcel.readTypedObject(parcel, Bundleable.CREATOR), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
+                    onSurfaceDestroyed((w.b) (parcel.readInt() != 0 ? w.b.CREATOR.createFromParcel(parcel) : null), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
                 case 6:
                     onScroll(parcel.readFloat(), parcel.readFloat());
@@ -134,150 +211,53 @@ public interface ISurfaceCallback extends IInterface {
                     onClick(parcel.readFloat(), parcel.readFloat());
                     return true;
                 default:
-                    return super.onTransact(i, parcel, parcel2, i2);
+                    return super.onTransact(i10, parcel, parcel2, i11);
             }
         }
 
-        private static class Proxy implements ISurfaceCallback {
-            private IBinder mRemote;
-
-            Proxy(IBinder iBinder) {
-                this.mRemote = iBinder;
-            }
-
-            @Override // android.os.IInterface
-            public IBinder asBinder() {
-                return this.mRemote;
-            }
-
-            public String getInterfaceDescriptor() {
-                return ISurfaceCallback.DESCRIPTOR;
-            }
-
-            @Override // androidx.car.app.ISurfaceCallback
-            public void onSurfaceAvailable(Bundleable bundleable, IOnDoneCallback iOnDoneCallback) {
-                Parcel obtain = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
-                    _Parcel.writeTypedObject(obtain, bundleable, 0);
-                    obtain.writeStrongInterface(iOnDoneCallback);
-                    this.mRemote.transact(2, obtain, null, 1);
-                } finally {
-                    obtain.recycle();
-                }
-            }
-
-            @Override // androidx.car.app.ISurfaceCallback
-            public void onVisibleAreaChanged(Rect rect, IOnDoneCallback iOnDoneCallback) {
-                Parcel obtain = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
-                    _Parcel.writeTypedObject(obtain, rect, 0);
-                    obtain.writeStrongInterface(iOnDoneCallback);
-                    this.mRemote.transact(3, obtain, null, 1);
-                } finally {
-                    obtain.recycle();
-                }
-            }
-
-            @Override // androidx.car.app.ISurfaceCallback
-            public void onStableAreaChanged(Rect rect, IOnDoneCallback iOnDoneCallback) {
-                Parcel obtain = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
-                    _Parcel.writeTypedObject(obtain, rect, 0);
-                    obtain.writeStrongInterface(iOnDoneCallback);
-                    this.mRemote.transact(4, obtain, null, 1);
-                } finally {
-                    obtain.recycle();
-                }
-            }
-
-            @Override // androidx.car.app.ISurfaceCallback
-            public void onSurfaceDestroyed(Bundleable bundleable, IOnDoneCallback iOnDoneCallback) {
-                Parcel obtain = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
-                    _Parcel.writeTypedObject(obtain, bundleable, 0);
-                    obtain.writeStrongInterface(iOnDoneCallback);
-                    this.mRemote.transact(5, obtain, null, 1);
-                } finally {
-                    obtain.recycle();
-                }
-            }
-
-            @Override // androidx.car.app.ISurfaceCallback
-            public void onScroll(float f, float f2) {
-                Parcel obtain = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
-                    obtain.writeFloat(f);
-                    obtain.writeFloat(f2);
-                    this.mRemote.transact(6, obtain, null, 1);
-                } finally {
-                    obtain.recycle();
-                }
-            }
-
-            @Override // androidx.car.app.ISurfaceCallback
-            public void onFling(float f, float f2) {
-                Parcel obtain = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
-                    obtain.writeFloat(f);
-                    obtain.writeFloat(f2);
-                    this.mRemote.transact(7, obtain, null, 1);
-                } finally {
-                    obtain.recycle();
-                }
-            }
-
-            @Override // androidx.car.app.ISurfaceCallback
-            public void onScale(float f, float f2, float f3) {
-                Parcel obtain = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
-                    obtain.writeFloat(f);
-                    obtain.writeFloat(f2);
-                    obtain.writeFloat(f3);
-                    this.mRemote.transact(8, obtain, null, 1);
-                } finally {
-                    obtain.recycle();
-                }
-            }
-
-            @Override // androidx.car.app.ISurfaceCallback
-            public void onClick(float f, float f2) {
-                Parcel obtain = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
-                    obtain.writeFloat(f);
-                    obtain.writeFloat(f2);
-                    this.mRemote.transact(9, obtain, null, 1);
-                } finally {
-                    obtain.recycle();
-                }
-            }
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return this;
         }
     }
 
-    public static class _Parcel {
-        /* JADX INFO: Access modifiers changed from: private */
-        public static Object readTypedObject(Parcel parcel, Parcelable.Creator creator) {
-            if (parcel.readInt() != 0) {
-                return creator.createFromParcel(parcel);
-            }
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class Default implements ISurfaceCallback {
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
             return null;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static void writeTypedObject(Parcel parcel, Parcelable parcelable, int i) {
-            if (parcelable != null) {
-                parcel.writeInt(1);
-                parcelable.writeToParcel(parcel, i);
-            } else {
-                parcel.writeInt(0);
-            }
+        @Override // androidx.car.app.ISurfaceCallback
+        public void onClick(float f10, float f11) {
+        }
+
+        @Override // androidx.car.app.ISurfaceCallback
+        public void onFling(float f10, float f11) {
+        }
+
+        @Override // androidx.car.app.ISurfaceCallback
+        public void onScroll(float f10, float f11) {
+        }
+
+        @Override // androidx.car.app.ISurfaceCallback
+        public void onStableAreaChanged(Rect rect, IOnDoneCallback iOnDoneCallback) {
+        }
+
+        @Override // androidx.car.app.ISurfaceCallback
+        public void onSurfaceAvailable(w.b bVar, IOnDoneCallback iOnDoneCallback) {
+        }
+
+        @Override // androidx.car.app.ISurfaceCallback
+        public void onSurfaceDestroyed(w.b bVar, IOnDoneCallback iOnDoneCallback) {
+        }
+
+        @Override // androidx.car.app.ISurfaceCallback
+        public void onVisibleAreaChanged(Rect rect, IOnDoneCallback iOnDoneCallback) {
+        }
+
+        @Override // androidx.car.app.ISurfaceCallback
+        public void onScale(float f10, float f11, float f12) {
         }
     }
 }

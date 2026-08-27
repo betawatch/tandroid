@@ -1,70 +1,23 @@
 package androidx.car.app.model;
 
-import androidx.car.app.utils.CollectionUtils;
 import j$.util.Objects;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class TemplateWrapper {
     private int mCurrentTaskStep;
     private String mId;
     private boolean mIsRefresh;
-    private Template mTemplate;
+    private x0 mTemplate;
     private List<TemplateInfo> mTemplateInfoForScreenStack;
 
-    public static TemplateWrapper wrap(Template template) {
-        return wrap(template, createRandomId());
-    }
-
-    public static TemplateWrapper wrap(Template template, String str) {
-        Objects.requireNonNull(template);
-        Objects.requireNonNull(str);
-        return new TemplateWrapper(template, str);
-    }
-
-    public Template getTemplate() {
-        Template template = this.mTemplate;
-        Objects.requireNonNull(template);
-        return template;
-    }
-
-    public String getId() {
-        String str = this.mId;
-        Objects.requireNonNull(str);
-        return str;
-    }
-
-    public void setTemplateInfosForScreenStack(List<TemplateInfo> list) {
-        this.mTemplateInfoForScreenStack = list;
-    }
-
-    public List<TemplateInfo> getTemplateInfosForScreenStack() {
-        return CollectionUtils.emptyIfNull(this.mTemplateInfoForScreenStack);
-    }
-
-    public int getCurrentTaskStep() {
-        return this.mCurrentTaskStep;
-    }
-
-    public void setCurrentTaskStep(int i) {
-        this.mCurrentTaskStep = i;
-    }
-
-    public void setRefresh(boolean z) {
-        this.mIsRefresh = z;
-    }
-
-    public boolean isRefresh() {
-        return this.mIsRefresh;
-    }
-
-    public void setTemplate(Template template) {
-        this.mTemplate = template;
-    }
-
-    public void setId(String str) {
+    private TemplateWrapper(x0 x0Var, String str) {
+        this.mTemplateInfoForScreenStack = new ArrayList();
+        this.mTemplate = x0Var;
         this.mId = str;
     }
 
@@ -79,23 +32,75 @@ public final class TemplateWrapper {
         return wrap;
     }
 
-    public String toString() {
-        return "[template: " + this.mTemplate + ", ID: " + this.mId + "]";
+    private static String createRandomId() {
+        return UUID.randomUUID().toString();
     }
 
-    private TemplateWrapper(Template template, String str) {
-        this.mTemplateInfoForScreenStack = new ArrayList();
-        this.mTemplate = template;
+    public static TemplateWrapper wrap(x0 x0Var) {
+        return wrap(x0Var, createRandomId());
+    }
+
+    public int getCurrentTaskStep() {
+        return this.mCurrentTaskStep;
+    }
+
+    public String getId() {
+        String str = this.mId;
+        Objects.requireNonNull(str);
+        return str;
+    }
+
+    public x0 getTemplate() {
+        x0 x0Var = this.mTemplate;
+        Objects.requireNonNull(x0Var);
+        return x0Var;
+    }
+
+    public List<TemplateInfo> getTemplateInfosForScreenStack() {
+        List<TemplateInfo> list = this.mTemplateInfoForScreenStack;
+        return list != null ? list : Collections.EMPTY_LIST;
+    }
+
+    public boolean isRefresh() {
+        return this.mIsRefresh;
+    }
+
+    public void setCurrentTaskStep(int i10) {
+        this.mCurrentTaskStep = i10;
+    }
+
+    public void setId(String str) {
         this.mId = str;
+    }
+
+    public void setRefresh(boolean z10) {
+        this.mIsRefresh = z10;
+    }
+
+    public void setTemplate(x0 x0Var) {
+        this.mTemplate = x0Var;
+    }
+
+    public void setTemplateInfosForScreenStack(List<TemplateInfo> list) {
+        this.mTemplateInfoForScreenStack = list;
+    }
+
+    public String toString() {
+        StringBuilder sb2 = new StringBuilder("[template: ");
+        sb2.append(this.mTemplate);
+        sb2.append(", ID: ");
+        return a9.p.p(sb2, this.mId, "]");
+    }
+
+    public static TemplateWrapper wrap(x0 x0Var, String str) {
+        Objects.requireNonNull(x0Var);
+        Objects.requireNonNull(str);
+        return new TemplateWrapper(x0Var, str);
     }
 
     private TemplateWrapper() {
         this.mTemplateInfoForScreenStack = new ArrayList();
         this.mTemplate = null;
         this.mId = "";
-    }
-
-    private static String createRandomId() {
-        return UUID.randomUUID().toString();
     }
 }

@@ -1,22 +1,37 @@
 package com.google.android.recaptcha.internal;
 
+import a9.p;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzqh extends zzqk {
     private final int zzc;
 
-    zzqh(byte[] bArr, int i, int i2) {
+    public zzqh(byte[] bArr, int i10, int i11) {
         super(bArr);
-        zzqm.zzj(0, i2, bArr.length);
-        this.zzc = i2;
+        zzqm.zzj(0, i11, bArr.length);
+        this.zzc = i11;
     }
 
     @Override // com.google.android.recaptcha.internal.zzqk, com.google.android.recaptcha.internal.zzqm
-    final byte zzb(int i) {
-        return ((zzqk) this).zza[i];
+    public final byte zza(int i10) {
+        int i11 = this.zzc;
+        if (((i11 - (i10 + 1)) | i10) >= 0) {
+            return ((zzqk) this).zza[i10];
+        }
+        if (i10 < 0) {
+            throw new ArrayIndexOutOfBoundsException(i0.a.k(i10, "Index < 0: "));
+        }
+        throw new ArrayIndexOutOfBoundsException(p.j(i10, i11, "Index > length: ", ", "));
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzqk, com.google.android.recaptcha.internal.zzqm
+    public final byte zzb(int i10) {
+        return ((zzqk) this).zza[i10];
     }
 
     @Override // com.google.android.recaptcha.internal.zzqk
-    protected final int zzc() {
+    public final int zzc() {
         return 0;
     }
 
@@ -26,19 +41,7 @@ final class zzqh extends zzqk {
     }
 
     @Override // com.google.android.recaptcha.internal.zzqk, com.google.android.recaptcha.internal.zzqm
-    protected final void zze(byte[] bArr, int i, int i2, int i3) {
-        System.arraycopy(((zzqk) this).zza, 0, bArr, 0, i3);
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzqk, com.google.android.recaptcha.internal.zzqm
-    public final byte zza(int i) {
-        int i2 = this.zzc;
-        if (((i2 - (i + 1)) | i) >= 0) {
-            return ((zzqk) this).zza[i];
-        }
-        if (i < 0) {
-            throw new ArrayIndexOutOfBoundsException("Index < 0: " + i);
-        }
-        throw new ArrayIndexOutOfBoundsException("Index > length: " + i + ", " + i2);
+    public final void zze(byte[] bArr, int i10, int i11, int i12) {
+        System.arraycopy(((zzqk) this).zza, 0, bArr, 0, i12);
     }
 }

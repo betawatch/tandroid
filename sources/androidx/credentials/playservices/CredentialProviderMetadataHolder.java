@@ -1,23 +1,19 @@
 package androidx.credentials.playservices;
 
+import a1.a;
 import android.app.Service;
 import android.content.Intent;
-import android.os.Binder;
 import android.os.IBinder;
-import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.j;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class CredentialProviderMetadataHolder extends Service {
-    private final LocalBinder binder = new LocalBinder();
-
-    public final class LocalBinder extends Binder {
-        public LocalBinder() {
-        }
-    }
+    public final a a = new a();
 
     @Override // android.app.Service
-    public IBinder onBind(Intent intent) {
-        Intrinsics.checkNotNullParameter(intent, "intent");
-        return this.binder;
+    public final IBinder onBind(Intent intent) {
+        j.e(intent, "intent");
+        return this.a;
     }
 }

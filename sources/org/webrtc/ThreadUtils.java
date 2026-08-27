@@ -7,13 +7,26 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class ThreadUtils {
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public class 1CaughtException {
+        Exception e;
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public class 1Result {
+        public V value;
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface BlockingOperation {
         void run();
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class ThreadChecker {
         private Thread thread = Thread.currentThread();
 
@@ -31,44 +44,112 @@ public class ThreadUtils {
         }
     }
 
+    public static void awaitUninterruptibly(final CountDownLatch countDownLatch) {
+        executeUninterruptibly(new BlockingOperation() { // from class: org.webrtc.ThreadUtils.2
+            @Override // org.webrtc.ThreadUtils.BlockingOperation
+            public void run() {
+                countDownLatch.await();
+            }
+        });
+    }
+
     public static void checkIsOnMainThread() {
         if (Thread.currentThread() != Looper.getMainLooper().getThread()) {
             throw new IllegalStateException("Not on main thread!");
         }
     }
 
+    public static StackTraceElement[] concatStackTraces(StackTraceElement[] stackTraceElementArr, StackTraceElement[] stackTraceElementArr2) {
+        StackTraceElement[] stackTraceElementArr3 = new StackTraceElement[stackTraceElementArr.length + stackTraceElementArr2.length];
+        System.arraycopy(stackTraceElementArr, 0, stackTraceElementArr3, 0, stackTraceElementArr.length);
+        System.arraycopy(stackTraceElementArr2, 0, stackTraceElementArr3, stackTraceElementArr.length, stackTraceElementArr2.length);
+        return stackTraceElementArr3;
+    }
+
     public static void executeUninterruptibly(BlockingOperation blockingOperation) {
-        boolean z = false;
+        boolean z10 = false;
         while (true) {
             try {
                 blockingOperation.run();
                 break;
             } catch (InterruptedException unused) {
-                z = true;
+                z10 = true;
             }
         }
-        if (z) {
+        if (z10) {
             Thread.currentThread().interrupt();
         }
     }
 
-    public static boolean joinUninterruptibly(Thread thread, long j) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        boolean z = false;
-        long j2 = j;
-        while (j2 > 0) {
+    public static <V> V invokeAtFrontUninterruptibly(Handler handler, final Callable<V> callable) {
+        if (handler.getLooper().getThread() == Thread.currentThread()) {
             try {
-                thread.join(j2);
-                break;
-            } catch (InterruptedException unused) {
-                j2 = j - (SystemClock.elapsedRealtime() - elapsedRealtime);
-                z = true;
+                return callable.call();
+            } catch (Exception e9) {
+                throw new RuntimeException(e9);
             }
         }
-        if (z) {
+        final 1Result r02 = new 1Result();
+        final 1CaughtException r12 = new 1CaughtException();
+        final CountDownLatch countDownLatch = new CountDownLatch(1);
+        handler.post(new Runnable() { // from class: org.webrtc.ThreadUtils.3
+            /* JADX WARN: Type inference failed for: r1v2, types: [V, java.lang.Object] */
+            @Override // java.lang.Runnable
+            public void run() {
+                try {
+                    1Result.this.value = callable.call();
+                } catch (Exception e10) {
+                    r12.e = e10;
+                }
+                countDownLatch.countDown();
+            }
+        });
+        awaitUninterruptibly(countDownLatch);
+        if (r12.e == null) {
+            return r02.value;
+        }
+        RuntimeException runtimeException = new RuntimeException(r12.e);
+        runtimeException.setStackTrace(concatStackTraces(r12.e.getStackTrace(), runtimeException.getStackTrace()));
+        throw runtimeException;
+    }
+
+    public static boolean joinUninterruptibly(Thread thread, long j10) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        boolean z10 = false;
+        long j11 = j10;
+        while (j11 > 0) {
+            try {
+                thread.join(j11);
+                break;
+            } catch (InterruptedException unused) {
+                j11 = j10 - (SystemClock.elapsedRealtime() - elapsedRealtime);
+                z10 = true;
+            }
+        }
+        if (z10) {
             Thread.currentThread().interrupt();
         }
         return !thread.isAlive();
+    }
+
+    public static boolean awaitUninterruptibly(CountDownLatch countDownLatch, long j10) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        boolean z10 = false;
+        long j11 = j10;
+        boolean z11 = false;
+        do {
+            try {
+                z10 = countDownLatch.await(j11, TimeUnit.MILLISECONDS);
+                break;
+            } catch (InterruptedException unused) {
+                j11 = j10 - (SystemClock.elapsedRealtime() - elapsedRealtime);
+                z11 = true;
+            }
+        } while (j11 > 0);
+        if (z11) {
+            Thread.currentThread().interrupt();
+        }
+        return z10;
     }
 
     public static void joinUninterruptibly(final Thread thread) {
@@ -80,81 +161,6 @@ public class ThreadUtils {
         });
     }
 
-    public static void awaitUninterruptibly(final CountDownLatch countDownLatch) {
-        executeUninterruptibly(new BlockingOperation() { // from class: org.webrtc.ThreadUtils.2
-            @Override // org.webrtc.ThreadUtils.BlockingOperation
-            public void run() {
-                countDownLatch.await();
-            }
-        });
-    }
-
-    public static boolean awaitUninterruptibly(CountDownLatch countDownLatch, long j) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        boolean z = false;
-        long j2 = j;
-        boolean z2 = false;
-        do {
-            try {
-                z = countDownLatch.await(j2, TimeUnit.MILLISECONDS);
-                break;
-            } catch (InterruptedException unused) {
-                j2 = j - (SystemClock.elapsedRealtime() - elapsedRealtime);
-                z2 = true;
-            }
-        } while (j2 > 0);
-        if (z2) {
-            Thread.currentThread().interrupt();
-        }
-        return z;
-    }
-
-    public static <V> V invokeAtFrontUninterruptibly(Handler handler, final Callable<V> callable) {
-        if (handler.getLooper().getThread() == Thread.currentThread()) {
-            try {
-                return callable.call();
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        }
-        final 1Result r0 = new 1Result();
-        final 1CaughtException r1 = new 1CaughtException();
-        final CountDownLatch countDownLatch = new CountDownLatch(1);
-        handler.post(new Runnable() { // from class: org.webrtc.ThreadUtils.3
-            /* JADX WARN: Type inference failed for: r1v2, types: [V, java.lang.Object] */
-            @Override // java.lang.Runnable
-            public void run() {
-                try {
-                    1Result.this.value = callable.call();
-                } catch (Exception e2) {
-                    r1.e = e2;
-                }
-                countDownLatch.countDown();
-            }
-        });
-        awaitUninterruptibly(countDownLatch);
-        if (r1.e != null) {
-            RuntimeException runtimeException = new RuntimeException(r1.e);
-            runtimeException.setStackTrace(concatStackTraces(r1.e.getStackTrace(), runtimeException.getStackTrace()));
-            throw runtimeException;
-        }
-        return r0.value;
-    }
-
-    class 1CaughtException {
-        Exception e;
-
-        1CaughtException() {
-        }
-    }
-
-    class 1Result {
-        public V value;
-
-        1Result() {
-        }
-    }
-
     public static void invokeAtFrontUninterruptibly(Handler handler, final Runnable runnable) {
         invokeAtFrontUninterruptibly(handler, new Callable<Void>() { // from class: org.webrtc.ThreadUtils.4
             @Override // java.util.concurrent.Callable
@@ -163,12 +169,5 @@ public class ThreadUtils {
                 return null;
             }
         });
-    }
-
-    static StackTraceElement[] concatStackTraces(StackTraceElement[] stackTraceElementArr, StackTraceElement[] stackTraceElementArr2) {
-        StackTraceElement[] stackTraceElementArr3 = new StackTraceElement[stackTraceElementArr.length + stackTraceElementArr2.length];
-        System.arraycopy(stackTraceElementArr, 0, stackTraceElementArr3, 0, stackTraceElementArr.length);
-        System.arraycopy(stackTraceElementArr2, 0, stackTraceElementArr3, stackTraceElementArr.length, stackTraceElementArr2.length);
-        return stackTraceElementArr3;
     }
 }

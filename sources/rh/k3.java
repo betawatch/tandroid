@@ -1,0 +1,11 @@
+package rh;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
+public final class k3 {
+    public final /* synthetic */ p3 a;
+
+    public k3(p3 p3Var) {
+        this.a = p3Var;
+    }
+}

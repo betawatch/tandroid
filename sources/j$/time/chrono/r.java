@@ -5,7 +5,6 @@ import j$.time.LocalDate;
 import j$.time.LocalDateTime;
 import j$.time.ZoneId;
 import j$.time.ZonedDateTime;
-import j$.time.temporal.Temporal;
 import j$.util.Objects;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
@@ -17,14 +16,14 @@ public final class r extends a implements Serializable {
     private static final long serialVersionUID = -1440403870442975015L;
 
     @Override // j$.time.chrono.k
-    public final l C(int i) {
-        if (i == 0) {
+    public final l u(int i10) {
+        if (i10 == 0) {
             return s.BCE;
         }
-        if (i == 1) {
+        if (i10 == 1) {
             return s.CE;
         }
-        throw new j$.time.b("Invalid era: " + i);
+        throw new j$.time.b("Invalid era: " + i10);
     }
 
     @Override // j$.time.chrono.k
@@ -33,12 +32,12 @@ public final class r extends a implements Serializable {
     }
 
     @Override // j$.time.chrono.k
-    public final String m() {
+    public final String o() {
         return "iso8601";
     }
 
     @Override // j$.time.chrono.k
-    public final b a(j$.time.temporal.l lVar) {
+    public final b x(j$.time.temporal.l lVar) {
         return LocalDate.I(lVar);
     }
 
@@ -46,31 +45,31 @@ public final class r extends a implements Serializable {
     }
 
     @Override // j$.time.chrono.a, j$.time.chrono.k
-    public final ChronoLocalDateTime s(Temporal temporal) {
-        return LocalDateTime.H(temporal);
+    public final ChronoLocalDateTime B(j$.time.temporal.l lVar) {
+        return LocalDateTime.H(lVar);
     }
 
     @Override // j$.time.chrono.a, j$.time.chrono.k
-    public final ChronoZonedDateTime n(Temporal temporal) {
-        return ZonedDateTime.E(temporal);
+    public final ChronoZonedDateTime p(j$.time.temporal.l lVar) {
+        return ZonedDateTime.G(lVar);
     }
 
     @Override // j$.time.chrono.k
-    public final ChronoZonedDateTime A(Instant instant, ZoneId zoneId) {
+    public final ChronoZonedDateTime D(Instant instant, ZoneId zoneId) {
         Objects.requireNonNull(instant, "instant");
         Objects.requireNonNull(zoneId, "zone");
-        return ZonedDateTime.x(instant.a, instant.b, zoneId);
+        return ZonedDateTime.q(instant.a, instant.b, zoneId);
     }
 
-    public static boolean o(long j) {
-        if ((3 & j) == 0) {
-            return j % 100 != 0 || j % 400 == 0;
+    public static boolean k(long j10) {
+        if ((3 & j10) == 0) {
+            return j10 % 100 != 0 || j10 % 400 == 0;
         }
         return false;
     }
 
     @Override // j$.time.chrono.k
-    public final j$.time.temporal.s y(j$.time.temporal.a aVar) {
+    public final j$.time.temporal.s s(j$.time.temporal.a aVar) {
         return aVar.b;
     }
 
@@ -79,6 +78,6 @@ public final class r extends a implements Serializable {
     }
 
     public Object writeReplace() {
-        return new D((byte) 1, this);
+        return new d0((byte) 1, this);
     }
 }

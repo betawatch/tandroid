@@ -3,6 +3,7 @@ package androidx.car.app.model;
 import androidx.core.graphics.drawable.IconCompat;
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class CarIcon {
     public static final int TYPE_ALERT = 4;
@@ -24,35 +25,32 @@ public final class CarIcon {
     public static final CarIcon PAN = forStandardType(7);
     public static final CarIcon COMPOSE_MESSAGE = forStandardType(8);
 
-    public IconCompat getIcon() {
-        return this.mIcon;
+    public CarIcon(IconCompat iconCompat, CarColor carColor, int i10) {
+        this.mType = i10;
+        this.mIcon = iconCompat;
+        this.mTint = carColor;
     }
 
-    public CarColor getTint() {
-        return this.mTint;
+    private static CarIcon forStandardType(int i10) {
+        return forStandardType(i10, CarColor.DEFAULT);
     }
 
-    public int getType() {
-        return this.mType;
-    }
-
-    public String toString() {
-        return "[type: " + typeToString(this.mType) + ", tint: " + this.mTint + "]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(Integer.valueOf(this.mType), this.mTint, iconCompatHash());
-    }
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    private boolean iconCompatEquals(IconCompat iconCompat) {
+        int i10;
+        IconCompat iconCompat2 = this.mIcon;
+        if (iconCompat2 == null) {
+            return iconCompat == null;
         }
-        if (!(obj instanceof CarIcon)) {
+        if (iconCompat == null || (i10 = iconCompat2.i()) != iconCompat.i()) {
             return false;
         }
-        CarIcon carIcon = (CarIcon) obj;
-        return this.mType == carIcon.mType && Objects.equals(this.mTint, carIcon.mTint) && iconCompatEquals(carIcon.mIcon);
+        if (i10 == 2) {
+            return Objects.equals(this.mIcon.h(), iconCompat.h()) && this.mIcon.g() == iconCompat.g();
+        }
+        if (i10 == 4) {
+            return Objects.equals(this.mIcon.j(), iconCompat.j());
+        }
+        return true;
     }
 
     private Object iconCompatHash() {
@@ -60,44 +58,15 @@ public final class CarIcon {
         if (iconCompat == null) {
             return null;
         }
-        int type = iconCompat.getType();
-        if (type != 2) {
-            if (type == 4) {
-                return this.mIcon.getUri();
-            }
-            return Integer.valueOf(type);
+        int i10 = iconCompat.i();
+        if (i10 != 2) {
+            return i10 == 4 ? this.mIcon.j() : Integer.valueOf(i10);
         }
-        return this.mIcon.getResPackage() + this.mIcon.getResId();
+        return this.mIcon.h() + this.mIcon.g();
     }
 
-    private boolean iconCompatEquals(IconCompat iconCompat) {
-        int type;
-        IconCompat iconCompat2 = this.mIcon;
-        if (iconCompat2 == null) {
-            return iconCompat == null;
-        }
-        if (iconCompat == null || (type = iconCompat2.getType()) != iconCompat.getType()) {
-            return false;
-        }
-        if (type == 2) {
-            return Objects.equals(this.mIcon.getResPackage(), iconCompat.getResPackage()) && this.mIcon.getResId() == iconCompat.getResId();
-        }
-        if (type == 4) {
-            return Objects.equals(this.mIcon.getUri(), iconCompat.getUri());
-        }
-        return true;
-    }
-
-    private static CarIcon forStandardType(int i) {
-        return forStandardType(i, CarColor.DEFAULT);
-    }
-
-    private static CarIcon forStandardType(int i, CarColor carColor) {
-        return new CarIcon(null, carColor, i);
-    }
-
-    private static String typeToString(int i) {
-        switch (i) {
+    private static String typeToString(int i10) {
+        switch (i10) {
             case 1:
                 return "CUSTOM";
             case 2:
@@ -118,10 +87,39 @@ public final class CarIcon {
         }
     }
 
-    CarIcon(IconCompat iconCompat, CarColor carColor, int i) {
-        this.mType = i;
-        this.mIcon = iconCompat;
-        this.mTint = carColor;
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof CarIcon)) {
+            return false;
+        }
+        CarIcon carIcon = (CarIcon) obj;
+        return this.mType == carIcon.mType && Objects.equals(this.mTint, carIcon.mTint) && iconCompatEquals(carIcon.mIcon);
+    }
+
+    public IconCompat getIcon() {
+        return this.mIcon;
+    }
+
+    public CarColor getTint() {
+        return this.mTint;
+    }
+
+    public int getType() {
+        return this.mType;
+    }
+
+    public int hashCode() {
+        return Objects.hash(Integer.valueOf(this.mType), this.mTint, iconCompatHash());
+    }
+
+    public String toString() {
+        return "[type: " + typeToString(this.mType) + ", tint: " + this.mTint + "]";
+    }
+
+    private static CarIcon forStandardType(int i10, CarColor carColor) {
+        return new CarIcon(null, carColor, i10);
     }
 
     private CarIcon() {

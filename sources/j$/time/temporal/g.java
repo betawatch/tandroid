@@ -2,7 +2,6 @@ package j$.time.temporal;
 
 import j$.time.DayOfWeek;
 import j$.time.LocalDate;
-import org.telegram.messenger.NotificationCenter;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
@@ -16,7 +15,7 @@ public abstract class g implements o {
     public static final /* synthetic */ g[] b;
 
     @Override // j$.time.temporal.o
-    public final boolean u() {
+    public final boolean isDateBased() {
         return true;
     }
 
@@ -36,8 +35,8 @@ public abstract class g implements o {
             }
 
             @Override // j$.time.temporal.o
-            public final boolean p(l lVar) {
-                if (!lVar.h(a.DAY_OF_YEAR) || !lVar.h(a.MONTH_OF_YEAR) || !lVar.h(a.YEAR)) {
+            public final boolean j(l lVar) {
+                if (!lVar.e(a.DAY_OF_YEAR) || !lVar.e(a.MONTH_OF_YEAR) || !lVar.e(a.YEAR)) {
                     return false;
                 }
                 g gVar2 = i.a;
@@ -45,45 +44,44 @@ public abstract class g implements o {
             }
 
             @Override // j$.time.temporal.o
-            public final s r(l lVar) {
-                if (!p(lVar)) {
+            public final s k(l lVar) {
+                if (!j(lVar)) {
                     throw new r("Unsupported field: DayOfQuarter");
                 }
-                long u = lVar.u(g.QUARTER_OF_YEAR);
-                if (u == 1) {
-                    long u2 = lVar.u(a.YEAR);
+                long y10 = lVar.y(g.QUARTER_OF_YEAR);
+                if (y10 == 1) {
+                    long y11 = lVar.y(a.YEAR);
                     j$.time.chrono.r.c.getClass();
-                    return j$.time.chrono.r.o(u2) ? s.e(1L, 91L) : s.e(1L, 90L);
+                    return j$.time.chrono.r.k(y11) ? s.e(1L, 91L) : s.e(1L, 90L);
                 }
-                if (u == 2) {
+                if (y10 == 2) {
                     return s.e(1L, 91L);
                 }
-                if (u == 3 || u == 4) {
+                if (y10 == 3 || y10 == 4) {
                     return s.e(1L, 92L);
                 }
                 return l();
             }
 
             @Override // j$.time.temporal.o
-            public final long o(l lVar) {
-                if (!p(lVar)) {
+            public final long m(l lVar) {
+                if (!j(lVar)) {
                     throw new r("Unsupported field: DayOfQuarter");
                 }
-                int o = lVar.o(a.DAY_OF_YEAR);
-                int o2 = lVar.o(a.MONTH_OF_YEAR);
-                long u = lVar.u(a.YEAR);
-                int[] iArr = g.a;
-                int i = (o2 - 1) / 3;
+                int j10 = lVar.j(a.DAY_OF_YEAR);
+                int j11 = lVar.j(a.MONTH_OF_YEAR);
+                long y10 = lVar.y(a.YEAR);
+                int i10 = (j11 - 1) / 3;
                 j$.time.chrono.r.c.getClass();
-                return o - iArr[i + (j$.time.chrono.r.o(u) ? 4 : 0)];
+                return j10 - g.a[i10 + (j$.time.chrono.r.k(y10) ? 4 : 0)];
             }
 
             @Override // j$.time.temporal.o
-            public final Temporal q(Temporal temporal, long j) {
-                long o = o(temporal);
-                l().b(j, this);
+            public final Temporal q(Temporal temporal, long j10) {
+                long m10 = m(temporal);
+                l().b(j10, this);
                 a aVar = a.DAY_OF_YEAR;
-                return temporal.e((j - o) + temporal.u(aVar), aVar);
+                return temporal.c((j10 - m10) + temporal.y(aVar), aVar);
             }
 
             @Override // java.lang.Enum
@@ -99,8 +97,8 @@ public abstract class g implements o {
             }
 
             @Override // j$.time.temporal.o
-            public final boolean p(l lVar) {
-                if (!lVar.h(a.MONTH_OF_YEAR)) {
+            public final boolean j(l lVar) {
+                if (!lVar.e(a.MONTH_OF_YEAR)) {
                     return false;
                 }
                 g gVar3 = i.a;
@@ -108,27 +106,27 @@ public abstract class g implements o {
             }
 
             @Override // j$.time.temporal.o
-            public final long o(l lVar) {
-                if (!p(lVar)) {
+            public final long m(l lVar) {
+                if (!j(lVar)) {
                     throw new r("Unsupported field: QuarterOfYear");
                 }
-                return (lVar.u(a.MONTH_OF_YEAR) + 2) / 3;
+                return (lVar.y(a.MONTH_OF_YEAR) + 2) / 3;
             }
 
             @Override // j$.time.temporal.o
-            public final s r(l lVar) {
-                if (!p(lVar)) {
+            public final s k(l lVar) {
+                if (!j(lVar)) {
                     throw new r("Unsupported field: QuarterOfYear");
                 }
                 return l();
             }
 
             @Override // j$.time.temporal.o
-            public final Temporal q(Temporal temporal, long j) {
-                long o = o(temporal);
-                l().b(j, this);
+            public final Temporal q(Temporal temporal, long j10) {
+                long m10 = m(temporal);
+                l().b(j10, this);
                 a aVar = a.MONTH_OF_YEAR;
-                return temporal.e(((j - o) * 3) + temporal.u(aVar), aVar);
+                return temporal.c(((j10 - m10) * 3) + temporal.y(aVar), aVar);
             }
 
             @Override // java.lang.Enum
@@ -144,8 +142,8 @@ public abstract class g implements o {
             }
 
             @Override // j$.time.temporal.o
-            public final boolean p(l lVar) {
-                if (!lVar.h(a.EPOCH_DAY)) {
+            public final boolean j(l lVar) {
+                if (!lVar.e(a.EPOCH_DAY)) {
                     return false;
                 }
                 g gVar4 = i.a;
@@ -153,25 +151,25 @@ public abstract class g implements o {
             }
 
             @Override // j$.time.temporal.o
-            public final s r(l lVar) {
-                if (!p(lVar)) {
+            public final s k(l lVar) {
+                if (!j(lVar)) {
                     throw new r("Unsupported field: WeekOfWeekBasedYear");
                 }
-                return s.e(1L, g.H(g.E(LocalDate.I(lVar))));
+                return s.e(1L, g.G(g.y(LocalDate.I(lVar))));
             }
 
             @Override // j$.time.temporal.o
-            public final long o(l lVar) {
-                if (!p(lVar)) {
+            public final long m(l lVar) {
+                if (!j(lVar)) {
                     throw new r("Unsupported field: WeekOfWeekBasedYear");
                 }
-                return g.x(LocalDate.I(lVar));
+                return g.w(LocalDate.I(lVar));
             }
 
             @Override // j$.time.temporal.o
-            public final Temporal q(Temporal temporal, long j) {
-                l().b(j, this);
-                return temporal.f(j$.com.android.tools.r8.a.U(j, o(temporal)), ChronoUnit.WEEKS);
+            public final Temporal q(Temporal temporal, long j10) {
+                l().b(j10, this);
+                return temporal.d(j$.com.android.tools.r8.a.U(j10, m(temporal)), ChronoUnit.WEEKS);
             }
 
             @Override // java.lang.Enum
@@ -187,8 +185,8 @@ public abstract class g implements o {
             }
 
             @Override // j$.time.temporal.o
-            public final boolean p(l lVar) {
-                if (!lVar.h(a.EPOCH_DAY)) {
+            public final boolean j(l lVar) {
+                if (!lVar.e(a.EPOCH_DAY)) {
                     return false;
                 }
                 g gVar5 = i.a;
@@ -196,34 +194,34 @@ public abstract class g implements o {
             }
 
             @Override // j$.time.temporal.o
-            public final long o(l lVar) {
-                if (p(lVar)) {
-                    return g.E(LocalDate.I(lVar));
+            public final long m(l lVar) {
+                if (j(lVar)) {
+                    return g.y(LocalDate.I(lVar));
                 }
                 throw new r("Unsupported field: WeekBasedYear");
             }
 
             @Override // j$.time.temporal.o
-            public final s r(l lVar) {
-                if (!p(lVar)) {
+            public final s k(l lVar) {
+                if (!j(lVar)) {
                     throw new r("Unsupported field: WeekBasedYear");
                 }
                 return l();
             }
 
             @Override // j$.time.temporal.o
-            public final Temporal q(Temporal temporal, long j) {
-                if (!p(temporal)) {
+            public final Temporal q(Temporal temporal, long j10) {
+                if (!j(temporal)) {
                     throw new r("Unsupported field: WeekBasedYear");
                 }
-                int a2 = a.YEAR.b.a(j, g.WEEK_BASED_YEAR);
+                int a2 = a.YEAR.b.a(j10, g.WEEK_BASED_YEAR);
                 LocalDate I = LocalDate.I(temporal);
-                int o = I.o(a.DAY_OF_WEEK);
-                int x = g.x(I);
-                if (x == 53 && g.H(a2) == 52) {
-                    x = 52;
+                int j11 = I.j(a.DAY_OF_WEEK);
+                int w10 = g.w(I);
+                if (w10 == 53 && g.G(a2) == 52) {
+                    w10 = 52;
                 }
-                return temporal.p(LocalDate.of(a2, 1, 4).plusDays(((x - 1) * 7) + (o - r6.o(r0))));
+                return temporal.k(LocalDate.of(a2, 1, 4).plusDays(((w10 - 1) * 7) + (j11 - r6.j(r0))));
             }
 
             @Override // java.lang.Enum
@@ -233,37 +231,37 @@ public abstract class g implements o {
         };
         WEEK_BASED_YEAR = gVar4;
         b = new g[]{gVar, gVar2, gVar3, gVar4};
-        a = new int[]{0, 90, NotificationCenter.newEmojiSuggestionsAvailable, NotificationCenter.suggestedLangpack, 0, 91, NotificationCenter.themeUploadedToServer, NotificationCenter.didSetNewWallpapper};
+        a = new int[]{0, 90, 181, 273, 0, 91, 182, 274};
     }
 
-    public static int H(int i) {
-        LocalDate of = LocalDate.of(i, 1, 1);
-        if (of.K() != DayOfWeek.THURSDAY) {
-            return (of.K() == DayOfWeek.WEDNESDAY && of.O()) ? 53 : 52;
+    public static int G(int i10) {
+        LocalDate of2 = LocalDate.of(i10, 1, 1);
+        if (of2.K() != DayOfWeek.THURSDAY) {
+            return (of2.K() == DayOfWeek.WEDNESDAY && of2.O()) ? 53 : 52;
         }
         return 53;
     }
 
-    public static int x(LocalDate localDate) {
+    public static int w(LocalDate localDate) {
         int ordinal = localDate.K().ordinal();
         int L = localDate.L() - 1;
-        int i = (3 - ordinal) + L;
-        int i2 = i - ((i / 7) * 7);
-        int i3 = i2 - 3;
-        if (i3 < -3) {
-            i3 = i2 + 4;
+        int i10 = (3 - ordinal) + L;
+        int i11 = i10 - ((i10 / 7) * 7);
+        int i12 = i11 - 3;
+        if (i12 < -3) {
+            i12 = i11 + 4;
         }
-        if (L < i3) {
-            return (int) s.e(1L, H(E(localDate.X(NotificationCenter.needDeleteDialog).U(-1L)))).d;
+        if (L < i12) {
+            return (int) s.e(1L, G(y(localDate.X(180).U(-1L)))).d;
         }
-        int i4 = ((L - i3) / 7) + 1;
-        if (i4 != 53 || i3 == -3 || (i3 == -2 && localDate.O())) {
-            return i4;
+        int i13 = ((L - i12) / 7) + 1;
+        if (i13 != 53 || i12 == -3 || (i12 == -2 && localDate.O())) {
+            return i13;
         }
         return 1;
     }
 
-    public static int E(LocalDate localDate) {
+    public static int y(LocalDate localDate) {
         int year = localDate.getYear();
         int L = localDate.L();
         if (L <= 3) {

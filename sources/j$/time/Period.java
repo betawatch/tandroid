@@ -21,8 +21,8 @@ public final class Period implements Serializable {
         Pattern.compile("([-+]?)P(?:([-+]?[0-9]+)Y)?(?:([-+]?[0-9]+)M)?(?:([-+]?[0-9]+)W)?(?:([-+]?[0-9]+)D)?", 2);
         Object[] objArr = {ChronoUnit.YEARS, ChronoUnit.MONTHS, ChronoUnit.DAYS};
         ArrayList arrayList = new ArrayList(3);
-        for (int i = 0; i < 3; i++) {
-            arrayList.add(Objects.requireNonNull(objArr[i]));
+        for (int i10 = 0; i10 < 3; i10++) {
+            arrayList.add(Objects.requireNonNull(objArr[i10]));
         }
         Collections.unmodifiableList(arrayList);
     }
@@ -31,27 +31,27 @@ public final class Period implements Serializable {
         localDate.getClass();
         LocalDate I = LocalDate.I(localDate2);
         long M = I.M() - localDate.M();
-        int i = I.c - localDate.c;
-        if (M > 0 && i < 0) {
+        int i10 = I.c - localDate.c;
+        if (M > 0 && i10 < 0) {
             M--;
-            i = (int) (I.v() - localDate.T(M).v());
-        } else if (M < 0 && i > 0) {
+            i10 = (int) (I.z() - localDate.T(M).z());
+        } else if (M < 0 && i10 > 0) {
             M++;
-            i -= I.P();
+            i10 -= I.P();
         }
-        long j = M / 12;
-        int i2 = (int) (M % 12);
-        int i3 = (int) j;
-        if (j == i3) {
-            return ((i3 | i2) | i) == 0 ? d : new Period(i3, i2, i);
+        long j10 = M / 12;
+        int i11 = (int) (M % 12);
+        int i12 = (int) j10;
+        if (j10 == i12) {
+            return ((i12 | i11) | i10) == 0 ? d : new Period(i12, i11, i10);
         }
         throw new ArithmeticException();
     }
 
-    public Period(int i, int i2, int i3) {
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
+    public Period(int i10, int i11, int i12) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
     }
 
     public int getYears() {
@@ -79,23 +79,23 @@ public final class Period implements Serializable {
         if (this == d) {
             return "P0D";
         }
-        StringBuilder sb = new StringBuilder("P");
-        int i = this.a;
-        if (i != 0) {
-            sb.append(i);
-            sb.append('Y');
+        StringBuilder sb2 = new StringBuilder("P");
+        int i10 = this.a;
+        if (i10 != 0) {
+            sb2.append(i10);
+            sb2.append('Y');
         }
-        int i2 = this.b;
-        if (i2 != 0) {
-            sb.append(i2);
-            sb.append('M');
+        int i11 = this.b;
+        if (i11 != 0) {
+            sb2.append(i11);
+            sb2.append('M');
         }
-        int i3 = this.c;
-        if (i3 != 0) {
-            sb.append(i3);
-            sb.append('D');
+        int i12 = this.c;
+        if (i12 != 0) {
+            sb2.append(i12);
+            sb2.append('D');
         }
-        return sb.toString();
+        return sb2.toString();
     }
 
     private Object writeReplace() {

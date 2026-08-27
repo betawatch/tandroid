@@ -1,8 +1,9 @@
 package org.telegram.tgnet;
 
-import me.vkryl.core.BitwiseUtils;
+import h7.a8;
 import org.telegram.tgnet.Vector;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes3.dex */
 public class TLObject {
     public static final int FLAG_0 = 1;
@@ -38,7 +39,6 @@ public class TLObject {
     public static final int FLAG_8 = 256;
     public static final int FLAG_9 = 512;
     private static final ThreadLocal<NativeByteBuffer> sizeCalculator = new ThreadLocal<NativeByteBuffer>() { // from class: org.telegram.tgnet.TLObject.1
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.lang.ThreadLocal
         public NativeByteBuffer initialValue() {
             return new NativeByteBuffer(true);
@@ -47,25 +47,35 @@ public class TLObject {
     public boolean disableFree = false;
     public int networkType;
 
-    public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+    public static <T extends TLObject> T TLdeserialize(Class<T> cls, T t10, InputSerializedData inputSerializedData, int i10, boolean z10) {
+        if (t10 == null) {
+            TLParseException.doThrowOrLog(inputSerializedData, cls.getName(), i10, z10);
+            return null;
+        }
+        t10.readParams(inputSerializedData, z10);
+        return t10;
+    }
+
+    public static <T extends TLObject> T deepCopy(T t10, Vector.TLDeserializer<T> tLDeserializer) {
+        if (t10 == null) {
+            return null;
+        }
+        SerializedData serializedData = new SerializedData(t10.getObjectSize());
+        t10.serializeToStream(serializedData);
+        SerializedData serializedData2 = new SerializedData(serializedData.toByteArray());
+        return tLDeserializer.deserialize(serializedData2, serializedData2.readInt32(false), false);
+    }
+
+    public static boolean hasFlag(int i10, int i11) {
+        return a8.a(i10, i11);
+    }
+
+    public static int setFlag(int i10, int i11, boolean z10) {
+        return a8.b(i10, i11, z10);
+    }
+
+    public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i10, boolean z10) {
         return null;
-    }
-
-    public void freeResources() {
-    }
-
-    public void readParams(InputSerializedData inputSerializedData, boolean z) {
-    }
-
-    public void serializeToStream(OutputSerializedData outputSerializedData) {
-    }
-
-    public static int setFlag(int i, int i2, boolean z) {
-        return BitwiseUtils.setFlag(i, i2, z);
-    }
-
-    public static boolean hasFlag(int i, int i2) {
-        return BitwiseUtils.hasFlag(i, i2);
     }
 
     public int getObjectSize() {
@@ -76,22 +86,12 @@ public class TLObject {
         return nativeByteBuffer.length();
     }
 
-    protected static <T extends TLObject> T TLdeserialize(Class<T> cls, T t, InputSerializedData inputSerializedData, int i, boolean z) {
-        if (t == null) {
-            TLParseException.doThrowOrLog(inputSerializedData, cls.getName(), i, z);
-            return null;
-        }
-        t.readParams(inputSerializedData, z);
-        return t;
+    public void freeResources() {
     }
 
-    public static <T extends TLObject> T deepCopy(T t, Vector.TLDeserializer<T> tLDeserializer) {
-        if (t == null) {
-            return null;
-        }
-        SerializedData serializedData = new SerializedData(t.getObjectSize());
-        t.serializeToStream(serializedData);
-        SerializedData serializedData2 = new SerializedData(serializedData.toByteArray());
-        return tLDeserializer.deserialize(serializedData2, serializedData2.readInt32(false), false);
+    public void serializeToStream(OutputSerializedData outputSerializedData) {
+    }
+
+    public void readParams(InputSerializedData inputSerializedData, boolean z10) {
     }
 }

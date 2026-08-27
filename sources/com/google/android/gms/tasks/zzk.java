@@ -1,13 +1,14 @@
 package com.google.android.gms.tasks;
 
-import com.google.android.gms.common.internal.Preconditions;
+import y5.l;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzk implements Runnable {
     final /* synthetic */ Task zza;
     final /* synthetic */ zzl zzb;
 
-    zzk(zzl zzlVar, Task task) {
+    public zzk(zzl zzlVar, Task task) {
         this.zzb = zzlVar;
         this.zza = task;
     }
@@ -24,7 +25,9 @@ final class zzk implements Runnable {
                 onFailureListener = zzlVar.zzc;
                 if (onFailureListener != null) {
                     onFailureListener2 = zzlVar.zzc;
-                    onFailureListener2.onFailure((Exception) Preconditions.checkNotNull(this.zza.getException()));
+                    Exception exception = this.zza.getException();
+                    l.h(exception);
+                    onFailureListener2.onFailure(exception);
                 }
             } catch (Throwable th) {
                 throw th;

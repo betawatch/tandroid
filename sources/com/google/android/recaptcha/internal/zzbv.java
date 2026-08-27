@@ -1,31 +1,32 @@
 package com.google.android.recaptcha.internal;
 
+import ad.l;
 import com.google.android.gms.tasks.CancellationTokenSource;
 import com.google.android.gms.tasks.RuntimeExecutionException;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import id.i0;
 import java.util.concurrent.CancellationException;
-import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
-import kotlinx.coroutines.Deferred;
+import pc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzbv {
-    public static final Task zza(final Deferred deferred) {
+    public static final Task zza(final i0 i0Var) {
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource(new CancellationTokenSource().getToken());
-        deferred.invokeOnCompletion(new Function1() { // from class: com.google.android.recaptcha.internal.zzbu
-            @Override // kotlin.jvm.functions.Function1
+        i0Var.invokeOnCompletion(new l() { // from class: com.google.android.recaptcha.internal.zzbu
+            @Override // ad.l
             public final Object invoke(Object obj) {
                 Throwable th = (Throwable) obj;
-                boolean z = th instanceof CancellationException;
+                boolean z10 = th instanceof CancellationException;
                 TaskCompletionSource taskCompletionSource2 = TaskCompletionSource.this;
-                if (z) {
+                if (z10) {
                     taskCompletionSource2.setException((Exception) th);
                 } else {
-                    Deferred deferred2 = deferred;
-                    Throwable completionExceptionOrNull = deferred2.getCompletionExceptionOrNull();
+                    i0 i0Var2 = i0Var;
+                    Throwable completionExceptionOrNull = i0Var2.getCompletionExceptionOrNull();
                     if (completionExceptionOrNull == null) {
-                        taskCompletionSource2.setResult(deferred2.getCompleted());
+                        taskCompletionSource2.setResult(i0Var2.getCompleted());
                     } else {
                         Exception exc = completionExceptionOrNull instanceof Exception ? (Exception) completionExceptionOrNull : null;
                         if (exc == null) {
@@ -34,7 +35,7 @@ public final class zzbv {
                         taskCompletionSource2.setException(exc);
                     }
                 }
-                return Unit.INSTANCE;
+                return i.a;
             }
         });
         return taskCompletionSource.getTask();

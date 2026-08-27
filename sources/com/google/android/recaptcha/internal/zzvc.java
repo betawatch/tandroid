@@ -7,9 +7,9 @@ import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import libcore.io.Memory;
-import org.telegram.messenger.NotificationCenter;
 import sun.misc.Unsafe;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzvc {
     static final long zza;
@@ -21,18 +21,18 @@ final class zzvc {
     private static final boolean zzg;
     private static final boolean zzh;
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x011a  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x012b  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x011e  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0130  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x006d  */
     static {
-        boolean z;
+        boolean z10;
         zzvb zzvbVar;
-        boolean z2;
+        boolean z11;
         Field zzB;
         zzvb zzvbVar2;
         Unsafe zzg2 = zzg();
         zzc = zzg2;
-        int i = zzqa.zza;
+        int i10 = zzqa.zza;
         zzd = Memory.class;
         Class<?> cls = Long.TYPE;
         boolean zzv = zzv(cls);
@@ -57,8 +57,8 @@ final class zzvc {
                 zzh(th);
             }
             if (zzB() != null) {
-                z = true;
-                zzg = z;
+                z10 = true;
+                zzg = z10;
                 zzvbVar = zzf;
                 if (zzvbVar != null) {
                     try {
@@ -72,11 +72,11 @@ final class zzvc {
                         cls4.getMethod("putLong", Object.class, cls, cls);
                         cls4.getMethod("getObject", Object.class, cls);
                         cls4.getMethod("putObject", Object.class, cls, Object.class);
-                        z2 = true;
+                        z11 = true;
                     } catch (Throwable th2) {
                         zzh(th2);
                     }
-                    zzh = z2;
+                    zzh = z11;
                     zza = zzz(byte[].class);
                     zzz(boolean[].class);
                     zzA(boolean[].class);
@@ -96,8 +96,8 @@ final class zzvc {
                     }
                     zzb = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
                 }
-                z2 = false;
-                zzh = z2;
+                z11 = false;
+                zzh = z11;
                 zza = zzz(byte[].class);
                 zzz(boolean[].class);
                 zzA(boolean[].class);
@@ -118,13 +118,13 @@ final class zzvc {
                 zzb = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
             }
         }
-        z = false;
-        zzg = z;
+        z10 = false;
+        zzg = z10;
         zzvbVar = zzf;
         if (zzvbVar != null) {
         }
-        z2 = false;
-        zzh = z2;
+        z11 = false;
+        zzh = z11;
         zza = zzz(byte[].class);
         zzz(boolean[].class);
         zzA(boolean[].class);
@@ -155,7 +155,7 @@ final class zzvc {
     }
 
     private static Field zzB() {
-        int i = zzqa.zza;
+        int i10 = zzqa.zza;
         Field zzC = zzC(Buffer.class, "effectiveDirectAddress");
         if (zzC != null) {
             return zzC;
@@ -176,51 +176,51 @@ final class zzvc {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void zzD(Object obj, long j, byte b) {
+    public static void zzD(Object obj, long j10, byte b10) {
         Unsafe unsafe = zzf.zza;
-        long j2 = (-4) & j;
-        int i = unsafe.getInt(obj, j2);
-        int i2 = ((~((int) j)) & 3) << 3;
-        unsafe.putInt(obj, j2, ((255 & b) << i2) | (i & (~(NotificationCenter.didReceiveSmsCode << i2))));
+        long j11 = (-4) & j10;
+        int i10 = unsafe.getInt(obj, j11);
+        int i11 = ((~((int) j10)) & 3) << 3;
+        unsafe.putInt(obj, j11, ((255 & b10) << i11) | (i10 & (~(255 << i11))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void zzE(Object obj, long j, byte b) {
+    public static void zzE(Object obj, long j10, byte b10) {
         Unsafe unsafe = zzf.zza;
-        long j2 = (-4) & j;
-        int i = (((int) j) & 3) << 3;
-        unsafe.putInt(obj, j2, ((255 & b) << i) | (unsafe.getInt(obj, j2) & (~(NotificationCenter.didReceiveSmsCode << i))));
+        long j11 = (-4) & j10;
+        int i10 = (((int) j10) & 3) << 3;
+        unsafe.putInt(obj, j11, ((255 & b10) << i10) | (unsafe.getInt(obj, j11) & (~(255 << i10))));
     }
 
-    static double zza(Object obj, long j) {
-        return zzf.zza(obj, j);
+    public static double zza(Object obj, long j10) {
+        return zzf.zza(obj, j10);
     }
 
-    static float zzb(Object obj, long j) {
-        return zzf.zzb(obj, j);
+    public static float zzb(Object obj, long j10) {
+        return zzf.zzb(obj, j10);
     }
 
-    static int zzc(Object obj, long j) {
-        return zzf.zza.getInt(obj, j);
+    public static int zzc(Object obj, long j10) {
+        return zzf.zza.getInt(obj, j10);
     }
 
-    static long zzd(Object obj, long j) {
-        return zzf.zza.getLong(obj, j);
+    public static long zzd(Object obj, long j10) {
+        return zzf.zza.getLong(obj, j10);
     }
 
-    static Object zze(Class cls) {
+    public static Object zze(Class cls) {
         try {
             return zzc.allocateInstance(cls);
-        } catch (InstantiationException e) {
-            throw new IllegalStateException(e);
+        } catch (InstantiationException e9) {
+            throw new IllegalStateException(e9);
         }
     }
 
-    static Object zzf(Object obj, long j) {
-        return zzf.zza.getObject(obj, j);
+    public static Object zzf(Object obj, long j10) {
+        return zzf.zza.getObject(obj, j10);
     }
 
-    static Unsafe zzg() {
+    public static Unsafe zzg() {
         try {
             return (Unsafe) AccessController.doPrivileged(new zzuy());
         } catch (Throwable unused) {
@@ -228,49 +228,49 @@ final class zzvc {
         }
     }
 
-    static /* bridge */ /* synthetic */ void zzh(Throwable th) {
+    public static /* bridge */ /* synthetic */ void zzh(Throwable th) {
         Logger.getLogger(zzvc.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th.toString()));
     }
 
-    static void zzm(Object obj, long j, boolean z) {
-        zzf.zzc(obj, j, z);
+    public static void zzm(Object obj, long j10, boolean z10) {
+        zzf.zzc(obj, j10, z10);
     }
 
-    static void zzn(byte[] bArr, long j, byte b) {
-        zzf.zzd(bArr, zza + j, b);
+    public static void zzn(byte[] bArr, long j10, byte b10) {
+        zzf.zzd(bArr, zza + j10, b10);
     }
 
-    static void zzo(Object obj, long j, double d) {
-        zzf.zze(obj, j, d);
+    public static void zzo(Object obj, long j10, double d) {
+        zzf.zze(obj, j10, d);
     }
 
-    static void zzp(Object obj, long j, float f) {
-        zzf.zzf(obj, j, f);
+    public static void zzp(Object obj, long j10, float f10) {
+        zzf.zzf(obj, j10, f10);
     }
 
-    static void zzq(Object obj, long j, int i) {
-        zzf.zza.putInt(obj, j, i);
+    public static void zzq(Object obj, long j10, int i10) {
+        zzf.zza.putInt(obj, j10, i10);
     }
 
-    static void zzr(Object obj, long j, long j2) {
-        zzf.zza.putLong(obj, j, j2);
+    public static void zzr(Object obj, long j10, long j11) {
+        zzf.zza.putLong(obj, j10, j11);
     }
 
-    static void zzs(Object obj, long j, Object obj2) {
-        zzf.zza.putObject(obj, j, obj2);
+    public static void zzs(Object obj, long j10, Object obj2) {
+        zzf.zza.putObject(obj, j10, obj2);
     }
 
-    static /* bridge */ /* synthetic */ boolean zzt(Object obj, long j) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3))) & NotificationCenter.didReceiveSmsCode)) != 0;
+    public static /* bridge */ /* synthetic */ boolean zzt(Object obj, long j10) {
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & 255)) != 0;
     }
 
-    static /* bridge */ /* synthetic */ boolean zzu(Object obj, long j) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) ((j & 3) << 3))) & NotificationCenter.didReceiveSmsCode)) != 0;
+    public static /* bridge */ /* synthetic */ boolean zzu(Object obj, long j10) {
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & 255)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    static boolean zzv(Class cls) {
-        int i = zzqa.zza;
+    public static boolean zzv(Class cls) {
+        int i10 = zzqa.zza;
         try {
             Class cls2 = zzd;
             Class cls3 = Boolean.TYPE;
@@ -289,15 +289,15 @@ final class zzvc {
         }
     }
 
-    static boolean zzw(Object obj, long j) {
-        return zzf.zzg(obj, j);
+    public static boolean zzw(Object obj, long j10) {
+        return zzf.zzg(obj, j10);
     }
 
-    static boolean zzx() {
+    public static boolean zzx() {
         return zzh;
     }
 
-    static boolean zzy() {
+    public static boolean zzy() {
         return zzg;
     }
 

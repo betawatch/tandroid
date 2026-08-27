@@ -5,7 +5,8 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 import ru.noties.jlatexmath.awt.Graphics2D;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 class VerticalBox extends Box {
     private float leftMostPos;
     private float rightMostPos;
@@ -15,25 +16,17 @@ class VerticalBox extends Box {
         this.rightMostPos = -3.4028235E38f;
     }
 
-    public VerticalBox(Box box, float f, int i) {
-        this();
-        add(box);
-        if (i == 2) {
-            float f2 = f / 2.0f;
-            StrutBox strutBox = new StrutBox(0.0f, f2, 0.0f, 0.0f);
-            super.add(0, strutBox);
-            this.height += f2;
-            this.depth += f2;
-            super.add(strutBox);
-            return;
+    private void recalculateWidth(Box box) {
+        this.leftMostPos = Math.min(this.leftMostPos, box.shift);
+        float f10 = this.rightMostPos;
+        float f11 = box.shift;
+        float f12 = box.width;
+        if (f12 <= 0.0f) {
+            f12 = 0.0f;
         }
-        if (i == 3) {
-            this.depth += f;
-            super.add(new StrutBox(0.0f, f, 0.0f, 0.0f));
-        } else if (i == 4) {
-            this.height += f;
-            super.add(0, new StrutBox(0.0f, f, 0.0f, 0.0f));
-        }
+        float max = Math.max(f10, f11 + f12);
+        this.rightMostPos = max;
+        this.width = max - this.leftMostPos;
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
@@ -43,67 +36,75 @@ class VerticalBox extends Box {
             this.height = box.height;
             this.depth = box.depth;
         } else {
-            this.depth += box.height + box.depth;
-        }
-        recalculateWidth(box);
-    }
-
-    public final void add(Box box, float f) {
-        if (this.children.size() >= 1) {
-            add(new StrutBox(0.0f, f, 0.0f, 0.0f));
-        }
-        add(box);
-    }
-
-    private void recalculateWidth(Box box) {
-        this.leftMostPos = Math.min(this.leftMostPos, box.shift);
-        float f = this.rightMostPos;
-        float f2 = box.shift;
-        float f3 = box.width;
-        if (f3 <= 0.0f) {
-            f3 = 0.0f;
-        }
-        float max = Math.max(f, f2 + f3);
-        this.rightMostPos = max;
-        this.width = max - this.leftMostPos;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.Box
-    public void add(int i, Box box) {
-        super.add(i, box);
-        if (i == 0) {
-            this.depth += box.depth + this.height;
-            this.height = box.height;
-        } else {
-            this.depth += box.height + box.depth;
+            this.depth = box.height + box.depth + this.depth;
         }
         recalculateWidth(box);
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
-    public void draw(Graphics2D graphics2D, float f, float f2) {
-        float f3 = f2 - this.height;
+    public void draw(Graphics2D graphics2D, float f10, float f11) {
+        float f12 = f11 - this.height;
         Iterator<Box> it = this.children.iterator();
         while (it.hasNext()) {
             Box next = it.next();
-            float height = f3 + next.getHeight();
-            next.draw(graphics2D, (next.getShift() + f) - this.leftMostPos, height);
-            f3 = height + next.getDepth();
+            float height = next.getHeight() + f12;
+            next.draw(graphics2D, (next.getShift() + f10) - this.leftMostPos, height);
+            f12 = next.getDepth() + height;
         }
-    }
-
-    public int getSize() {
-        return this.children.size();
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
     public int getLastFontId() {
         LinkedList<Box> linkedList = this.children;
         ListIterator<Box> listIterator = linkedList.listIterator(linkedList.size());
-        int i = -1;
-        while (i == -1 && listIterator.hasPrevious()) {
-            i = listIterator.previous().getLastFontId();
+        int i10 = -1;
+        while (i10 == -1 && listIterator.hasPrevious()) {
+            i10 = listIterator.previous().getLastFontId();
         }
-        return i;
+        return i10;
+    }
+
+    public int getSize() {
+        return this.children.size();
+    }
+
+    public VerticalBox(Box box, float f10, int i10) {
+        this();
+        add(box);
+        if (i10 == 2) {
+            float f11 = f10 / 2.0f;
+            StrutBox strutBox = new StrutBox(0.0f, f11, 0.0f, 0.0f);
+            super.add(0, strutBox);
+            this.height += f11;
+            this.depth += f11;
+            super.add(strutBox);
+            return;
+        }
+        if (i10 == 3) {
+            this.depth += f10;
+            super.add(new StrutBox(0.0f, f10, 0.0f, 0.0f));
+        } else if (i10 == 4) {
+            this.height += f10;
+            super.add(0, new StrutBox(0.0f, f10, 0.0f, 0.0f));
+        }
+    }
+
+    public final void add(Box box, float f10) {
+        if (this.children.size() >= 1) {
+            add(new StrutBox(0.0f, f10, 0.0f, 0.0f));
+        }
+        add(box);
+    }
+
+    @Override // org.scilab.forge.jlatexmath.Box
+    public void add(int i10, Box box) {
+        super.add(i10, box);
+        if (i10 == 0) {
+            this.depth = box.depth + this.height + this.depth;
+            this.height = box.height;
+        } else {
+            this.depth = box.height + box.depth + this.depth;
+        }
+        recalculateWidth(box);
     }
 }

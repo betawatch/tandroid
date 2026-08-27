@@ -1,219 +1,93 @@
 package com.android.billingclient.api;
 
 import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
+import android.content.IntentSender;
 import android.os.Bundle;
 import android.os.ResultReceiver;
-import androidx.activity.ComponentActivity;
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.IntentSenderRequest;
-import androidx.activity.result.contract.ActivityResultContract;
-import com.google.android.gms.internal.play_billing.zzc;
-import com.google.android.gms.internal.play_billing.zzie;
-import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.jvm.internal.Intrinsics;
+import androidx.activity.l;
+import androidx.activity.result.c;
+import androidx.activity.result.g;
+import androidx.fragment.app.e0;
+import com.google.android.gms.internal.play_billing.u;
+import kotlin.jvm.internal.j;
+import m5.o;
+import n2.b0;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class ProxyBillingActivityV2 extends ComponentActivity {
-    private ActivityResultLauncher zza;
-    private ActivityResultLauncher zzb;
-    private ActivityResultLauncher zzc;
-    private ResultReceiver zzd;
-    private ResultReceiver zze;
-    private ResultReceiver zzf;
+public class ProxyBillingActivityV2 extends l {
+    public c F;
+    public c G;
+    public c H;
+    public ResultReceiver I;
+    public ResultReceiver J;
+    public ResultReceiver K;
 
-    @Override // androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
-    protected final void onCreate(Bundle bundle) {
+    @Override // androidx.activity.l, e0.h, android.app.Activity
+    public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.zza = registerForActivityResult(new ActivityResultContract() { // from class: androidx.activity.result.contract.ActivityResultContracts$StartIntentSenderForResult
-            public static final Companion Companion = new Companion(null);
-
-            public static final class Companion {
-                public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-                    this();
-                }
-
-                private Companion() {
-                }
-            }
-
-            @Override // androidx.activity.result.contract.ActivityResultContract
-            public Intent createIntent(Context context, IntentSenderRequest input) {
-                Intrinsics.checkNotNullParameter(context, "context");
-                Intrinsics.checkNotNullParameter(input, "input");
-                Intent putExtra = new Intent("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST").putExtra("androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST", input);
-                Intrinsics.checkNotNullExpressionValue(putExtra, "Intent(ACTION_INTENT_SEN…NT_SENDER_REQUEST, input)");
-                return putExtra;
-            }
-
-            @Override // androidx.activity.result.contract.ActivityResultContract
-            public ActivityResult parseResult(int i, Intent intent) {
-                return new ActivityResult(i, intent);
-            }
-        }, new ActivityResultCallback() { // from class: com.android.billingclient.api.zzct
-            @Override // androidx.activity.result.ActivityResultCallback
-            public final void onActivityResult(Object obj) {
-                ProxyBillingActivityV2.this.zza((ActivityResult) obj);
-            }
-        });
-        this.zzb = registerForActivityResult(new ActivityResultContract() { // from class: androidx.activity.result.contract.ActivityResultContracts$StartIntentSenderForResult
-            public static final Companion Companion = new Companion(null);
-
-            public static final class Companion {
-                public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-                    this();
-                }
-
-                private Companion() {
-                }
-            }
-
-            @Override // androidx.activity.result.contract.ActivityResultContract
-            public Intent createIntent(Context context, IntentSenderRequest input) {
-                Intrinsics.checkNotNullParameter(context, "context");
-                Intrinsics.checkNotNullParameter(input, "input");
-                Intent putExtra = new Intent("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST").putExtra("androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST", input);
-                Intrinsics.checkNotNullExpressionValue(putExtra, "Intent(ACTION_INTENT_SEN…NT_SENDER_REQUEST, input)");
-                return putExtra;
-            }
-
-            @Override // androidx.activity.result.contract.ActivityResultContract
-            public ActivityResult parseResult(int i, Intent intent) {
-                return new ActivityResult(i, intent);
-            }
-        }, new ActivityResultCallback() { // from class: com.android.billingclient.api.zzcu
-            @Override // androidx.activity.result.ActivityResultCallback
-            public final void onActivityResult(Object obj) {
-                ProxyBillingActivityV2.this.zzb((ActivityResult) obj);
-            }
-        });
-        this.zzc = registerForActivityResult(new ActivityResultContract() { // from class: androidx.activity.result.contract.ActivityResultContracts$StartIntentSenderForResult
-            public static final Companion Companion = new Companion(null);
-
-            public static final class Companion {
-                public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-                    this();
-                }
-
-                private Companion() {
-                }
-            }
-
-            @Override // androidx.activity.result.contract.ActivityResultContract
-            public Intent createIntent(Context context, IntentSenderRequest input) {
-                Intrinsics.checkNotNullParameter(context, "context");
-                Intrinsics.checkNotNullParameter(input, "input");
-                Intent putExtra = new Intent("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST").putExtra("androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST", input);
-                Intrinsics.checkNotNullExpressionValue(putExtra, "Intent(ACTION_INTENT_SEN…NT_SENDER_REQUEST, input)");
-                return putExtra;
-            }
-
-            @Override // androidx.activity.result.contract.ActivityResultContract
-            public ActivityResult parseResult(int i, Intent intent) {
-                return new ActivityResult(i, intent);
-            }
-        }, new ActivityResultCallback() { // from class: com.android.billingclient.api.zzcv
-            @Override // androidx.activity.result.ActivityResultCallback
-            public final void onActivityResult(Object obj) {
-                ProxyBillingActivityV2.this.zzc((ActivityResult) obj);
-            }
-        });
+        this.F = r(new o(this, 1), new e0(3));
+        this.G = r(new b0(this, 0), new e0(3));
+        this.H = r(new ga.c(this, 28), new e0(3));
         if (bundle != null) {
             if (bundle.containsKey("alternative_billing_only_dialog_result_receiver")) {
-                this.zzd = (ResultReceiver) bundle.getParcelable("alternative_billing_only_dialog_result_receiver");
+                this.I = (ResultReceiver) bundle.getParcelable("alternative_billing_only_dialog_result_receiver");
             }
             if (bundle.containsKey("external_payment_dialog_result_receiver")) {
-                this.zze = (ResultReceiver) bundle.getParcelable("external_payment_dialog_result_receiver");
+                this.J = (ResultReceiver) bundle.getParcelable("external_payment_dialog_result_receiver");
             }
             if (bundle.containsKey("external_offer_flow_result_receiver")) {
-                this.zzf = (ResultReceiver) bundle.getParcelable("external_offer_flow_result_receiver");
+                this.K = (ResultReceiver) bundle.getParcelable("external_offer_flow_result_receiver");
                 return;
             }
             return;
         }
-        zzc.zzm("ProxyBillingActivityV2", "Launching Play Store billing dialog");
+        u.g("ProxyBillingActivityV2", "Launching Play Store billing dialog");
         if (getIntent().hasExtra("ALTERNATIVE_BILLING_ONLY_DIALOG_INTENT")) {
             PendingIntent pendingIntent = (PendingIntent) getIntent().getParcelableExtra("ALTERNATIVE_BILLING_ONLY_DIALOG_INTENT");
-            this.zzd = (ResultReceiver) getIntent().getParcelableExtra("alternative_billing_only_dialog_result_receiver");
-            this.zza.launch(new IntentSenderRequest.Builder(pendingIntent).build());
-        } else if (getIntent().hasExtra("external_payment_dialog_pending_intent")) {
+            this.I = (ResultReceiver) getIntent().getParcelableExtra("alternative_billing_only_dialog_result_receiver");
+            c cVar = this.F;
+            j.e(pendingIntent, "pendingIntent");
+            IntentSender intentSender = pendingIntent.getIntentSender();
+            j.d(intentSender, "pendingIntent.intentSender");
+            cVar.a(new g(intentSender, null, 0, 0));
+            return;
+        }
+        if (getIntent().hasExtra("external_payment_dialog_pending_intent")) {
             PendingIntent pendingIntent2 = (PendingIntent) getIntent().getParcelableExtra("external_payment_dialog_pending_intent");
-            this.zze = (ResultReceiver) getIntent().getParcelableExtra("external_payment_dialog_result_receiver");
-            this.zzb.launch(new IntentSenderRequest.Builder(pendingIntent2).build());
-        } else if (getIntent().hasExtra("external_offer_flow_pending_intent")) {
+            this.J = (ResultReceiver) getIntent().getParcelableExtra("external_payment_dialog_result_receiver");
+            c cVar2 = this.G;
+            j.e(pendingIntent2, "pendingIntent");
+            IntentSender intentSender2 = pendingIntent2.getIntentSender();
+            j.d(intentSender2, "pendingIntent.intentSender");
+            cVar2.a(new g(intentSender2, null, 0, 0));
+            return;
+        }
+        if (getIntent().hasExtra("external_offer_flow_pending_intent")) {
             PendingIntent pendingIntent3 = (PendingIntent) getIntent().getParcelableExtra("external_offer_flow_pending_intent");
-            this.zzf = (ResultReceiver) getIntent().getParcelableExtra("external_offer_flow_result_receiver");
-            this.zzc.launch(new IntentSenderRequest.Builder(pendingIntent3).build());
+            this.K = (ResultReceiver) getIntent().getParcelableExtra("external_offer_flow_result_receiver");
+            c cVar3 = this.H;
+            j.e(pendingIntent3, "pendingIntent");
+            IntentSender intentSender3 = pendingIntent3.getIntentSender();
+            j.d(intentSender3, "pendingIntent.intentSender");
+            cVar3.a(new g(intentSender3, null, 0, 0));
         }
     }
 
-    @Override // androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
-    protected final void onSaveInstanceState(Bundle bundle) {
+    @Override // androidx.activity.l, e0.h, android.app.Activity
+    public final void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
-        ResultReceiver resultReceiver = this.zzd;
+        ResultReceiver resultReceiver = this.I;
         if (resultReceiver != null) {
             bundle.putParcelable("alternative_billing_only_dialog_result_receiver", resultReceiver);
         }
-        ResultReceiver resultReceiver2 = this.zze;
+        ResultReceiver resultReceiver2 = this.J;
         if (resultReceiver2 != null) {
             bundle.putParcelable("external_payment_dialog_result_receiver", resultReceiver2);
         }
-        ResultReceiver resultReceiver3 = this.zzf;
+        ResultReceiver resultReceiver3 = this.K;
         if (resultReceiver3 != null) {
             bundle.putParcelable("external_offer_flow_result_receiver", resultReceiver3);
         }
-    }
-
-    final void zza(ActivityResult activityResult) {
-        Intent data = activityResult.getData();
-        int responseCode = zzc.zzh(data, "ProxyBillingActivityV2").getResponseCode();
-        ResultReceiver resultReceiver = this.zzd;
-        if (resultReceiver != null) {
-            resultReceiver.send(responseCode, data == null ? null : data.getExtras());
-        }
-        if (activityResult.getResultCode() != -1 || responseCode != 0) {
-            zzc.zzn("ProxyBillingActivityV2", "Alternative billing only dialog finished with resultCode " + activityResult.getResultCode() + " and billing's responseCode: " + responseCode);
-        }
-        finish();
-    }
-
-    final void zzb(ActivityResult activityResult) {
-        Intent data = activityResult.getData();
-        int responseCode = zzc.zzh(data, "ProxyBillingActivityV2").getResponseCode();
-        ResultReceiver resultReceiver = this.zze;
-        if (resultReceiver != null) {
-            resultReceiver.send(responseCode, data == null ? null : data.getExtras());
-        }
-        if (activityResult.getResultCode() != -1 || responseCode != 0) {
-            zzc.zzn("ProxyBillingActivityV2", String.format("External offer dialog finished with resultCode: %s and billing's responseCode: %s", Integer.valueOf(activityResult.getResultCode()), Integer.valueOf(responseCode)));
-        }
-        finish();
-    }
-
-    final void zzc(ActivityResult activityResult) {
-        Intent data = activityResult.getData();
-        Bundle extras = data == null ? null : data.getExtras();
-        if (activityResult.getResultCode() != -1) {
-            if (extras == null) {
-                extras = new Bundle();
-            }
-            zzc.zzn("ProxyBillingActivityV2", String.format("External offer flow finished with resultCode: %s", Integer.valueOf(activityResult.getResultCode())));
-            extras.putInt("INTERNAL_LOG_ERROR_REASON", zzie.zzbv.zza());
-            extras.putString("INTERNAL_LOG_ERROR_ADDITIONAL_DETAILS", String.format("External offer flow finished with error resultCode: %s", Integer.valueOf(activityResult.getResultCode())));
-        }
-        int responseCode = zzc.zzh(data, "ProxyBillingActivityV2").getResponseCode();
-        ResultReceiver resultReceiver = this.zzf;
-        if (resultReceiver != null) {
-            resultReceiver.send(responseCode, extras);
-        } else {
-            zzc.zzn("ProxyBillingActivityV2", "External offer flow result receiver is null");
-        }
-        if (responseCode != 0) {
-            zzc.zzn("ProxyBillingActivityV2", String.format("External offer flow finished with billing responseCode: %s", Integer.valueOf(responseCode)));
-        }
-        finish();
     }
 }

@@ -20,8 +20,8 @@ public final class f extends p implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.com.android.tools.r8.a.p(this, i);
+    public final /* synthetic */ boolean hasCharacteristics(int i10) {
+        return j$.com.android.tools.r8.a.p(this, i10);
     }
 
     @Override // j$.util.Spliterator
@@ -29,36 +29,36 @@ public final class f extends p implements Spliterator {
         throw new IllegalStateException();
     }
 
-    public f(l[] lVarArr, int i, int i2, int i3, long j, ConcurrentHashMap concurrentHashMap) {
-        super(lVarArr, i, i2, i3);
+    public f(l[] lVarArr, int i10, int i11, int i12, long j10, ConcurrentHashMap concurrentHashMap) {
+        super(lVarArr, i10, i11, i12);
         this.i = concurrentHashMap;
-        this.j = j;
+        this.j = j10;
     }
 
     @Override // j$.util.Spliterator
     public final Spliterator trySplit() {
-        int i = this.f;
-        int i2 = this.g;
-        int i3 = (i + i2) >>> 1;
-        if (i3 <= i) {
+        int i10 = this.f;
+        int i11 = this.g;
+        int i12 = (i10 + i11) >>> 1;
+        if (i12 <= i10) {
             return null;
         }
         l[] lVarArr = this.a;
-        this.g = i3;
-        long j = this.j >>> 1;
-        this.j = j;
-        return new f(lVarArr, this.h, i3, i2, j, this.i);
+        this.g = i12;
+        long j10 = this.j >>> 1;
+        this.j = j10;
+        return new f(lVarArr, this.h, i12, i11, j10, this.i);
     }
 
     @Override // j$.util.Spliterator
     public final void forEachRemaining(Consumer consumer) {
         consumer.getClass();
         while (true) {
-            l a = a();
-            if (a == null) {
+            l a2 = a();
+            if (a2 == null) {
                 return;
             } else {
-                consumer.s(new k(a.b, a.c, this.i));
+                consumer.x(new k(a2.b, a2.c, this.i));
             }
         }
     }
@@ -66,11 +66,11 @@ public final class f extends p implements Spliterator {
     @Override // j$.util.Spliterator
     public final boolean tryAdvance(Consumer consumer) {
         consumer.getClass();
-        l a = a();
-        if (a == null) {
+        l a2 = a();
+        if (a2 == null) {
             return false;
         }
-        consumer.s(new k(a.b, a.c, this.i));
+        consumer.x(new k(a2.b, a2.c, this.i));
         return true;
     }
 

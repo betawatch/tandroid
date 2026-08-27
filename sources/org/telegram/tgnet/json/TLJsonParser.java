@@ -6,18 +6,72 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.TableLayout;
+import org.telegram.ui.Components.iy0;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes3.dex */
 public class TLJsonParser {
     private final JSONObject jsonObject;
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface Deserializable {
         void deserializeFromJson(TLJsonParser tLJsonParser);
     }
 
     public TLJsonParser(JSONObject jSONObject) {
         this.jsonObject = jSONObject;
+    }
+
+    private static <T extends Deserializable> T parse(TLJsonParser tLJsonParser, Utilities.CallbackReturn<TLJsonParser, T> callbackReturn) {
+        try {
+            return callbackReturn.run(tLJsonParser);
+        } catch (Exception e9) {
+            FileLog.e(e9);
+            return null;
+        }
+    }
+
+    private boolean parseBoolean(Object obj, boolean z10) {
+        try {
+            return obj instanceof Boolean ? ((Boolean) obj).booleanValue() : obj instanceof String ? Boolean.parseBoolean((String) obj) : z10;
+        } catch (Exception e9) {
+            FileLog.e(e9);
+            return z10;
+        }
+    }
+
+    private int parseInt32(Object obj, int i10) {
+        try {
+            return obj instanceof Number ? ((Number) obj).intValue() : obj instanceof String ? Integer.parseInt((String) obj, 10) : i10;
+        } catch (Exception e9) {
+            FileLog.e(e9);
+            return i10;
+        }
+    }
+
+    private long parseInt64(Object obj, long j10) {
+        try {
+            return obj instanceof Number ? ((Number) obj).intValue() : obj instanceof String ? Long.parseLong((String) obj, 10) : j10;
+        } catch (Exception e9) {
+            FileLog.e(e9);
+            return j10;
+        }
+    }
+
+    private String parseString(Object obj, String str) {
+        return obj instanceof String ? (String) obj : str;
+    }
+
+    public boolean readBoolean(String str, boolean z10) {
+        return parseBoolean(this.jsonObject.opt(str), z10);
+    }
+
+    public int readInt32(String str, int i10) {
+        return parseInt32(this.jsonObject.opt(str), i10);
+    }
+
+    public long readInt64(String str, int i10) {
+        return parseInt64(this.jsonObject.opt(str), i10);
     }
 
     public <T extends Deserializable> T readObject(String str, Utilities.CallbackReturn<TLJsonParser, T> callbackReturn) {
@@ -28,97 +82,30 @@ public class TLJsonParser {
         return null;
     }
 
-    public <T extends Deserializable> ArrayList<T> readVector(String str, Utilities.CallbackReturn<TLJsonParser, T> callbackReturn) {
-        TableLayout.Assoc assoc = (ArrayList<T>) new ArrayList();
-        JSONArray optJSONArray = this.jsonObject.optJSONArray(str);
-        if (optJSONArray != null) {
-            int length = optJSONArray.length();
-            for (int i = 0; i < length; i++) {
-                try {
-                    Deserializable parse = parse(new TLJsonParser(optJSONArray.getJSONObject(i)), callbackReturn);
-                    if (parse != null) {
-                        assoc.add(parse);
-                    }
-                } catch (JSONException e) {
-                    FileLog.e(e);
-                }
-            }
-        }
-        return assoc;
-    }
-
-    public int readInt32(String str, int i) {
-        return parseInt32(this.jsonObject.opt(str), i);
-    }
-
-    public long readInt64(String str, int i) {
-        return parseInt64(this.jsonObject.opt(str), i);
-    }
-
     public String readString(String str) {
         return readString(str, null);
     }
 
+    public <T extends Deserializable> ArrayList<T> readVector(String str, Utilities.CallbackReturn<TLJsonParser, T> callbackReturn) {
+        iy0 iy0Var = (ArrayList<T>) new ArrayList();
+        JSONArray optJSONArray = this.jsonObject.optJSONArray(str);
+        if (optJSONArray != null) {
+            int length = optJSONArray.length();
+            for (int i10 = 0; i10 < length; i10++) {
+                try {
+                    Deserializable parse = parse(new TLJsonParser(optJSONArray.getJSONObject(i10)), callbackReturn);
+                    if (parse != null) {
+                        iy0Var.add(parse);
+                    }
+                } catch (JSONException e9) {
+                    FileLog.e(e9);
+                }
+            }
+        }
+        return iy0Var;
+    }
+
     public String readString(String str, String str2) {
         return parseString(this.jsonObject.opt(str), str2);
-    }
-
-    public boolean readBoolean(String str, boolean z) {
-        return parseBoolean(this.jsonObject.opt(str), z);
-    }
-
-    private String parseString(Object obj, String str) {
-        return obj instanceof String ? (String) obj : str;
-    }
-
-    private boolean parseBoolean(Object obj, boolean z) {
-        try {
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        if (obj instanceof Boolean) {
-            return ((Boolean) obj).booleanValue();
-        }
-        if (obj instanceof String) {
-            return Boolean.parseBoolean((String) obj);
-        }
-        return z;
-    }
-
-    private long parseInt64(Object obj, long j) {
-        try {
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        if (obj instanceof Number) {
-            return ((Number) obj).intValue();
-        }
-        if (obj instanceof String) {
-            return Long.parseLong((String) obj, 10);
-        }
-        return j;
-    }
-
-    private int parseInt32(Object obj, int i) {
-        try {
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        if (obj instanceof Number) {
-            return ((Number) obj).intValue();
-        }
-        if (obj instanceof String) {
-            return Integer.parseInt((String) obj, 10);
-        }
-        return i;
-    }
-
-    private static <T extends Deserializable> T parse(TLJsonParser tLJsonParser, Utilities.CallbackReturn<TLJsonParser, T> callbackReturn) {
-        try {
-            return callbackReturn.run(tLJsonParser);
-        } catch (Exception e) {
-            FileLog.e(e);
-            return null;
-        }
     }
 }

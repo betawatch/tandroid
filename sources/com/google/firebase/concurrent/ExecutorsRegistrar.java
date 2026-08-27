@@ -1,126 +1,86 @@
 package com.google.firebase.concurrent;
 
+import a9.a;
+import a9.h;
+import a9.l;
 import android.os.Build;
 import android.os.StrictMode;
-import com.google.firebase.annotations.concurrent.Background;
-import com.google.firebase.annotations.concurrent.Blocking;
-import com.google.firebase.annotations.concurrent.Lightweight;
-import com.google.firebase.annotations.concurrent.UiThread;
-import com.google.firebase.components.Component;
-import com.google.firebase.components.ComponentContainer;
-import com.google.firebase.components.ComponentFactory;
 import com.google.firebase.components.ComponentRegistrar;
-import com.google.firebase.components.Lazy;
-import com.google.firebase.components.Qualified;
-import com.google.firebase.inject.Provider;
+import h7.v8;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ThreadFactory;
+import v8.b;
+import v8.c;
+import v8.d;
+import z8.m;
+import z8.q;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class ExecutorsRegistrar implements ComponentRegistrar {
-    static final Lazy BG_EXECUTOR = new Lazy(new Provider() { // from class: com.google.firebase.concurrent.ExecutorsRegistrar$$ExternalSyntheticLambda2
-        @Override // com.google.firebase.inject.Provider
-        public final Object get() {
-            ScheduledExecutorService scheduled;
-            scheduled = ExecutorsRegistrar.scheduled(Executors.newFixedThreadPool(4, ExecutorsRegistrar.factory("Firebase Background", 10, ExecutorsRegistrar.bgPolicy())));
-            return scheduled;
-        }
-    });
-    static final Lazy LITE_EXECUTOR = new Lazy(new Provider() { // from class: com.google.firebase.concurrent.ExecutorsRegistrar$$ExternalSyntheticLambda3
-        @Override // com.google.firebase.inject.Provider
-        public final Object get() {
-            ScheduledExecutorService scheduled;
-            scheduled = ExecutorsRegistrar.scheduled(Executors.newFixedThreadPool(Math.max(2, Runtime.getRuntime().availableProcessors()), ExecutorsRegistrar.factory("Firebase Lite", 0, ExecutorsRegistrar.litePolicy())));
-            return scheduled;
-        }
-    });
-    static final Lazy BLOCKING_EXECUTOR = new Lazy(new Provider() { // from class: com.google.firebase.concurrent.ExecutorsRegistrar$$ExternalSyntheticLambda4
-        @Override // com.google.firebase.inject.Provider
-        public final Object get() {
-            ScheduledExecutorService scheduled;
-            scheduled = ExecutorsRegistrar.scheduled(Executors.newCachedThreadPool(ExecutorsRegistrar.factory("Firebase Blocking", 11)));
-            return scheduled;
-        }
-    });
-    static final Lazy SCHEDULER = new Lazy(new Provider() { // from class: com.google.firebase.concurrent.ExecutorsRegistrar$$ExternalSyntheticLambda5
-        @Override // com.google.firebase.inject.Provider
-        public final Object get() {
-            ScheduledExecutorService newSingleThreadScheduledExecutor;
-            newSingleThreadScheduledExecutor = Executors.newSingleThreadScheduledExecutor(ExecutorsRegistrar.factory("Firebase Scheduler", 0));
-            return newSingleThreadScheduledExecutor;
-        }
-    });
+    public static final m a = new m(new l(0));
+    public static final m b = new m(new l(1));
+    public static final m c = new m(new l(2));
+    public static final m d = new m(new l(3));
 
-    @Override // com.google.firebase.components.ComponentRegistrar
-    public List getComponents() {
-        return Arrays.asList(Component.builder(Qualified.qualified(Background.class, ScheduledExecutorService.class), Qualified.qualified(Background.class, ExecutorService.class), Qualified.qualified(Background.class, Executor.class)).factory(new ComponentFactory() { // from class: com.google.firebase.concurrent.ExecutorsRegistrar$$ExternalSyntheticLambda6
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                return ExecutorsRegistrar.$r8$lambda$oK_dgAjsJ4YgUN9Bhr7JxEecTHE(componentContainer);
-            }
-        }).build(), Component.builder(Qualified.qualified(Blocking.class, ScheduledExecutorService.class), Qualified.qualified(Blocking.class, ExecutorService.class), Qualified.qualified(Blocking.class, Executor.class)).factory(new ComponentFactory() { // from class: com.google.firebase.concurrent.ExecutorsRegistrar$$ExternalSyntheticLambda7
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                return ExecutorsRegistrar.$r8$lambda$cIc-1kmvOGchekIoFcI-gGfoNXQ(componentContainer);
-            }
-        }).build(), Component.builder(Qualified.qualified(Lightweight.class, ScheduledExecutorService.class), Qualified.qualified(Lightweight.class, ExecutorService.class), Qualified.qualified(Lightweight.class, Executor.class)).factory(new ComponentFactory() { // from class: com.google.firebase.concurrent.ExecutorsRegistrar$$ExternalSyntheticLambda8
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                return ExecutorsRegistrar.$r8$lambda$BlSh1XUzVcreyn-V23Qag7S-0sc(componentContainer);
-            }
-        }).build(), Component.builder(Qualified.qualified(UiThread.class, Executor.class)).factory(new ComponentFactory() { // from class: com.google.firebase.concurrent.ExecutorsRegistrar$$ExternalSyntheticLambda9
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                Executor executor;
-                executor = UiExecutor.INSTANCE;
-                return executor;
-            }
-        }).build());
-    }
-
-    public static /* synthetic */ ScheduledExecutorService $r8$lambda$oK_dgAjsJ4YgUN9Bhr7JxEecTHE(ComponentContainer componentContainer) {
-        return (ScheduledExecutorService) BG_EXECUTOR.get();
-    }
-
-    public static /* synthetic */ ScheduledExecutorService $r8$lambda$cIc-1kmvOGchekIoFcI-gGfoNXQ(ComponentContainer componentContainer) {
-        return (ScheduledExecutorService) BLOCKING_EXECUTOR.get();
-    }
-
-    public static /* synthetic */ ScheduledExecutorService $r8$lambda$BlSh1XUzVcreyn-V23Qag7S-0sc(ComponentContainer componentContainer) {
-        return (ScheduledExecutorService) LITE_EXECUTOR.get();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static ScheduledExecutorService scheduled(ExecutorService executorService) {
-        return new DelegatingScheduledExecutorService(executorService, (ScheduledExecutorService) SCHEDULER.get());
-    }
-
-    private static ThreadFactory factory(String str, int i) {
-        return new CustomThreadFactory(str, i, null);
-    }
-
-    private static ThreadFactory factory(String str, int i, StrictMode.ThreadPolicy threadPolicy) {
-        return new CustomThreadFactory(str, i, threadPolicy);
-    }
-
-    private static StrictMode.ThreadPolicy bgPolicy() {
+    public static h a() {
         StrictMode.ThreadPolicy.Builder detectNetwork = new StrictMode.ThreadPolicy.Builder().detectNetwork();
-        int i = Build.VERSION.SDK_INT;
-        if (i >= 23) {
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 23) {
             detectNetwork.detectResourceMismatches();
-            if (i >= 26) {
+            if (i10 >= 26) {
                 detectNetwork.detectUnbufferedIo();
             }
         }
-        return detectNetwork.penaltyLog().build();
+        return new h(Executors.newFixedThreadPool(4, new a("Firebase Background", 10, detectNetwork.penaltyLog().build())), (ScheduledExecutorService) d.get());
     }
 
-    private static StrictMode.ThreadPolicy litePolicy() {
-        return new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build();
+    @Override // com.google.firebase.components.ComponentRegistrar
+    public final List getComponents() {
+        q qVar = new q(v8.a.class, ScheduledExecutorService.class);
+        int i10 = 2;
+        int i11 = 0;
+        int i12 = 1;
+        q[] qVarArr = {new q(v8.a.class, ExecutorService.class), new q(v8.a.class, Executor.class)};
+        HashSet hashSet = new HashSet();
+        HashSet hashSet2 = new HashSet();
+        HashSet hashSet3 = new HashSet();
+        hashSet.add(qVar);
+        for (q qVar2 : qVarArr) {
+            v8.a(qVar2, "Null interface");
+        }
+        Collections.addAll(hashSet, qVarArr);
+        z8.a aVar = new z8.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new a9.m(i11), hashSet3);
+        q qVar3 = new q(b.class, ScheduledExecutorService.class);
+        q[] qVarArr2 = {new q(b.class, ExecutorService.class), new q(b.class, Executor.class)};
+        HashSet hashSet4 = new HashSet();
+        HashSet hashSet5 = new HashSet();
+        HashSet hashSet6 = new HashSet();
+        hashSet4.add(qVar3);
+        for (q qVar4 : qVarArr2) {
+            v8.a(qVar4, "Null interface");
+        }
+        Collections.addAll(hashSet4, qVarArr2);
+        z8.a aVar2 = new z8.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new a9.m(i12), hashSet6);
+        q qVar5 = new q(c.class, ScheduledExecutorService.class);
+        q[] qVarArr3 = {new q(c.class, ExecutorService.class), new q(c.class, Executor.class)};
+        HashSet hashSet7 = new HashSet();
+        HashSet hashSet8 = new HashSet();
+        HashSet hashSet9 = new HashSet();
+        hashSet7.add(qVar5);
+        for (q qVar6 : qVarArr3) {
+            v8.a(qVar6, "Null interface");
+        }
+        Collections.addAll(hashSet7, qVarArr3);
+        z8.a aVar3 = new z8.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new a9.m(i10), hashSet9);
+        ug.b b10 = z8.a.b(new q(d.class, Executor.class));
+        b10.f = new a9.m(3);
+        return Arrays.asList(aVar, aVar2, aVar3, b10.b());
     }
 }

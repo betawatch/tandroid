@@ -1,14 +1,16 @@
 package com.google.android.recaptcha.internal;
 
+import a9.p;
 import java.util.Map;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzuk implements Map.Entry, Comparable {
     final /* synthetic */ zzuo zza;
     private final Comparable zzb;
     private Object zzc;
 
-    zzuk(zzuo zzuoVar, Comparable comparable, Object obj) {
+    public zzuk(zzuo zzuoVar, Comparable comparable, Object obj) {
         this.zza = zzuoVar;
         this.zzb = comparable;
         this.zzc = obj;
@@ -62,7 +64,7 @@ final class zzuk implements Map.Entry, Comparable {
     }
 
     public final String toString() {
-        return String.valueOf(this.zzb) + "=" + String.valueOf(this.zzc);
+        return p.w(String.valueOf(this.zzb), "=", String.valueOf(this.zzc));
     }
 
     public final Comparable zza() {

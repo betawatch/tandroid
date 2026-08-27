@@ -6,7 +6,8 @@ import java.io.RandomAccessFile;
 import org.telegram.messenger.SecureDocumentKey;
 import org.telegram.messenger.Utilities;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class EncryptedFileInputStream extends FileInputStream {
     private static final int MODE_CBC = 1;
     private static final int MODE_CTR = 0;
@@ -26,59 +27,59 @@ public class EncryptedFileInputStream extends FileInputStream {
         randomAccessFile.close();
     }
 
-    public EncryptedFileInputStream(File file, SecureDocumentKey secureDocumentKey) {
-        super(file);
-        byte[] bArr = new byte[32];
-        this.key = bArr;
-        this.iv = new byte[16];
-        this.currentMode = 1;
-        System.arraycopy(secureDocumentKey.file_key, 0, bArr, 0, 32);
-        byte[] bArr2 = secureDocumentKey.file_iv;
-        byte[] bArr3 = this.iv;
-        System.arraycopy(bArr2, 0, bArr3, 0, bArr3.length);
+    public static void decryptBytesWithKeyFile(byte[] bArr, int i10, int i11, SecureDocumentKey secureDocumentKey) {
+        Utilities.aesCbcEncryptionByteArraySafe(bArr, secureDocumentKey.file_key, secureDocumentKey.file_iv, i10, i11, 0, 0);
     }
 
     @Override // java.io.FileInputStream, java.io.InputStream
-    public int read(byte[] bArr, int i, int i2) {
-        int i3;
+    public int read(byte[] bArr, int i10, int i11) {
+        int i12;
         if (this.currentMode == 1 && this.fileOffset == 0) {
             super.read(new byte[32], 0, 32);
-            Utilities.aesCbcEncryptionByteArraySafe(bArr, this.key, this.iv, i, i2, this.fileOffset, 0);
+            Utilities.aesCbcEncryptionByteArraySafe(bArr, this.key, this.iv, i10, i11, this.fileOffset, 0);
             this.fileOffset += 32;
             skip((r10[0] & 255) - 32);
         }
-        int read = super.read(bArr, i, i2);
-        int i4 = this.currentMode;
-        if (i4 == 1) {
-            i3 = i2;
-            Utilities.aesCbcEncryptionByteArraySafe(bArr, this.key, this.iv, i, i3, this.fileOffset, 0);
+        int read = super.read(bArr, i10, i11);
+        int i13 = this.currentMode;
+        if (i13 == 1) {
+            i12 = i11;
+            Utilities.aesCbcEncryptionByteArraySafe(bArr, this.key, this.iv, i10, i12, this.fileOffset, 0);
         } else {
-            i3 = i2;
-            if (i4 == 0) {
-                Utilities.aesCtrDecryptionByteArray(bArr, this.key, this.iv, i, i3, this.fileOffset);
+            i12 = i11;
+            if (i13 == 0) {
+                Utilities.aesCtrDecryptionByteArray(bArr, this.key, this.iv, i10, i12, this.fileOffset);
             }
         }
-        this.fileOffset += i3;
+        this.fileOffset += i12;
         return read;
     }
 
     @Override // java.io.FileInputStream, java.io.InputStream
-    public long skip(long j) {
-        this.fileOffset = (int) (this.fileOffset + j);
-        return super.skip(j);
+    public long skip(long j10) {
+        this.fileOffset = (int) (this.fileOffset + j10);
+        return super.skip(j10);
     }
 
-    public static void decryptBytesWithKeyFile(byte[] bArr, int i, int i2, SecureDocumentKey secureDocumentKey) {
-        Utilities.aesCbcEncryptionByteArraySafe(bArr, secureDocumentKey.file_key, secureDocumentKey.file_iv, i, i2, 0, 0);
-    }
-
-    public static void decryptBytesWithKeyFile(byte[] bArr, int i, int i2, File file) {
+    public static void decryptBytesWithKeyFile(byte[] bArr, int i10, int i11, File file) {
         byte[] bArr2 = new byte[32];
         byte[] bArr3 = new byte[16];
         RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
         randomAccessFile.read(bArr2, 0, 32);
         randomAccessFile.read(bArr3, 0, 16);
         randomAccessFile.close();
-        Utilities.aesCtrDecryptionByteArray(bArr, bArr2, bArr3, i, i2, 0);
+        Utilities.aesCtrDecryptionByteArray(bArr, bArr2, bArr3, i10, i11, 0);
+    }
+
+    public EncryptedFileInputStream(File file, SecureDocumentKey secureDocumentKey) {
+        super(file);
+        byte[] bArr = new byte[32];
+        this.key = bArr;
+        this.iv = new byte[16];
+        this.currentMode = 1;
+        System.arraycopy(secureDocumentKey.file_key, 0, bArr, 0, bArr.length);
+        byte[] bArr2 = secureDocumentKey.file_iv;
+        byte[] bArr3 = this.iv;
+        System.arraycopy(bArr2, 0, bArr3, 0, bArr3.length);
     }
 }

@@ -1,10 +1,11 @@
 package org.telegram.messenger.video;
 
-import com.googlecode.mp4parser.h264.read.CAVLCReader;
 import java.io.InputStream;
 import java.lang.reflect.Array;
+import n2.v;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class SequenceParameterSetRbsp {
     public int bit_depth_chroma_minus8;
     public int bit_depth_luma_minus8;
@@ -21,186 +22,204 @@ public class SequenceParameterSetRbsp {
     public boolean sps_temporal_id_nesting_flag;
 
     public SequenceParameterSetRbsp(InputStream inputStream) {
-        CAVLCReader cAVLCReader = new CAVLCReader(inputStream);
-        cAVLCReader.readNBit(4, "sps_video_parameter_set_id");
-        this.sps_max_sub_layers_minus1 = (int) cAVLCReader.readNBit(3, "sps_max_sub_layers_minus1");
-        cAVLCReader.readBool("sps_temporal_id_nesting_flag");
-        profile_tier_level(this.sps_max_sub_layers_minus1, cAVLCReader);
-        cAVLCReader.readUE("sps_seq_parameter_set_id");
-        int readUE = cAVLCReader.readUE("chroma_format_idc");
-        this.chroma_format_idc = readUE;
-        if (readUE == 3) {
-            cAVLCReader.read1Bit();
+        yb.a aVar = new yb.a();
+        v vVar = new v((char) 0, 11);
+        vVar.c = new char[50];
+        aVar.e = vVar;
+        aVar.a = inputStream;
+        aVar.b = inputStream.read();
+        aVar.c = inputStream.read();
+        aVar.d(4, "sps_video_parameter_set_id");
+        this.sps_max_sub_layers_minus1 = (int) aVar.d(3, "sps_max_sub_layers_minus1");
+        aVar.b("sps_temporal_id_nesting_flag");
+        profile_tier_level(this.sps_max_sub_layers_minus1, aVar);
+        aVar.e("sps_seq_parameter_set_id");
+        int e9 = aVar.e("chroma_format_idc");
+        this.chroma_format_idc = e9;
+        if (e9 == 3) {
+            aVar.a();
         }
-        this.pic_width_in_luma_samples = cAVLCReader.readUE("pic_width_in_luma_samples");
-        this.pic_height_in_luma_samples = cAVLCReader.readUE("pic_width_in_luma_samples");
-        if (cAVLCReader.readBool("conformance_window_flag")) {
-            cAVLCReader.readUE("conf_win_left_offset");
-            cAVLCReader.readUE("conf_win_right_offset");
-            cAVLCReader.readUE("conf_win_top_offset");
-            cAVLCReader.readUE("conf_win_bottom_offset");
+        this.pic_width_in_luma_samples = aVar.e("pic_width_in_luma_samples");
+        this.pic_height_in_luma_samples = aVar.e("pic_width_in_luma_samples");
+        if (aVar.b("conformance_window_flag")) {
+            aVar.e("conf_win_left_offset");
+            aVar.e("conf_win_right_offset");
+            aVar.e("conf_win_top_offset");
+            aVar.e("conf_win_bottom_offset");
         }
-        this.bit_depth_luma_minus8 = cAVLCReader.readUE("bit_depth_luma_minus8");
-        this.bit_depth_chroma_minus8 = cAVLCReader.readUE("bit_depth_chroma_minus8");
-        int readUE2 = cAVLCReader.readUE("log2_max_pic_order_cnt_lsb_minus4");
-        boolean readBool = cAVLCReader.readBool("sps_sub_layer_ordering_info_present_flag");
-        int i = this.sps_max_sub_layers_minus1;
-        int i2 = (i - (readBool ? 0 : i)) + 1;
-        int[] iArr = new int[i2];
-        int[] iArr2 = new int[i2];
-        int[] iArr3 = new int[i2];
-        for (i = readBool ? 0 : i; i <= this.sps_max_sub_layers_minus1; i++) {
-            iArr[i] = cAVLCReader.readUE("sps_max_dec_pic_buffering_minus1[" + i + "]");
-            iArr2[i] = cAVLCReader.readUE("sps_max_num_reorder_pics[" + i + "]");
-            iArr3[i] = cAVLCReader.readUE("sps_max_latency_increase_plus1[" + i + "]");
+        this.bit_depth_luma_minus8 = aVar.e("bit_depth_luma_minus8");
+        this.bit_depth_chroma_minus8 = aVar.e("bit_depth_chroma_minus8");
+        int e10 = aVar.e("log2_max_pic_order_cnt_lsb_minus4");
+        boolean b10 = aVar.b("sps_sub_layer_ordering_info_present_flag");
+        int i10 = this.sps_max_sub_layers_minus1;
+        int i11 = (i10 - (b10 ? 0 : i10)) + 1;
+        int[] iArr = new int[i11];
+        int[] iArr2 = new int[i11];
+        int[] iArr3 = new int[i11];
+        for (i10 = b10 ? 0 : i10; i10 <= this.sps_max_sub_layers_minus1; i10++) {
+            iArr[i10] = aVar.e("sps_max_dec_pic_buffering_minus1[" + i10 + "]");
+            iArr2[i10] = aVar.e("sps_max_num_reorder_pics[" + i10 + "]");
+            iArr3[i10] = aVar.e("sps_max_latency_increase_plus1[" + i10 + "]");
         }
-        cAVLCReader.readUE("log2_min_luma_coding_block_size_minus3");
-        cAVLCReader.readUE("log2_diff_max_min_luma_coding_block_size");
-        cAVLCReader.readUE("log2_min_transform_block_size_minus2");
-        cAVLCReader.readUE("log2_diff_max_min_transform_block_size");
-        cAVLCReader.readUE("max_transform_hierarchy_depth_inter");
-        cAVLCReader.readUE("max_transform_hierarchy_depth_intra");
-        if (cAVLCReader.readBool("scaling_list_enabled_flag") && cAVLCReader.readBool("sps_scaling_list_data_present_flag")) {
-            skip_scaling_list_data(cAVLCReader);
+        aVar.e("log2_min_luma_coding_block_size_minus3");
+        aVar.e("log2_diff_max_min_luma_coding_block_size");
+        aVar.e("log2_min_transform_block_size_minus2");
+        aVar.e("log2_diff_max_min_transform_block_size");
+        aVar.e("max_transform_hierarchy_depth_inter");
+        aVar.e("max_transform_hierarchy_depth_intra");
+        if (aVar.b("scaling_list_enabled_flag") && aVar.b("sps_scaling_list_data_present_flag")) {
+            skip_scaling_list_data(aVar);
         }
-        cAVLCReader.readBool("amp_enabled_flag");
-        cAVLCReader.readBool("sample_adaptive_offset_enabled_flag");
-        if (cAVLCReader.readBool("pcm_enabled_flag")) {
-            cAVLCReader.readNBit(4, "pcm_sample_bit_depth_luma_minus1");
-            cAVLCReader.readNBit(4, "pcm_sample_bit_depth_chroma_minus1");
-            cAVLCReader.readUE("log2_min_pcm_luma_coding_block_size_minus3");
-            cAVLCReader.readUE("log2_diff_max_min_pcm_luma_coding_block_size");
-            cAVLCReader.readBool("pcm_loop_filter_disabled_flag");
+        aVar.b("amp_enabled_flag");
+        aVar.b("sample_adaptive_offset_enabled_flag");
+        if (aVar.b("pcm_enabled_flag")) {
+            aVar.d(4, "pcm_sample_bit_depth_luma_minus1");
+            aVar.d(4, "pcm_sample_bit_depth_chroma_minus1");
+            aVar.e("log2_min_pcm_luma_coding_block_size_minus3");
+            aVar.e("log2_diff_max_min_pcm_luma_coding_block_size");
+            aVar.b("pcm_loop_filter_disabled_flag");
         }
-        parse_short_term_ref_pic_sets(cAVLCReader.readUE("num_short_term_ref_pic_sets"), cAVLCReader);
-        if (cAVLCReader.readBool("long_term_ref_pics_present_flag")) {
-            int readUE3 = cAVLCReader.readUE("num_long_term_ref_pics_sps");
-            int[] iArr4 = new int[readUE3];
-            boolean[] zArr = new boolean[readUE3];
-            for (int i3 = 0; i3 < readUE3; i3++) {
-                iArr4[i3] = cAVLCReader.readU(readUE2 + 4, "lt_ref_pic_poc_lsb_sps[" + i3 + "]");
-                zArr[i3] = cAVLCReader.readBool("used_by_curr_pic_lt_sps_flag[" + i3 + "]");
+        parse_short_term_ref_pic_sets(aVar.e("num_short_term_ref_pic_sets"), aVar);
+        if (aVar.b("long_term_ref_pics_present_flag")) {
+            int e11 = aVar.e("num_long_term_ref_pics_sps");
+            int[] iArr4 = new int[e11];
+            boolean[] zArr = new boolean[e11];
+            for (int i12 = 0; i12 < e11; i12++) {
+                iArr4[i12] = (int) aVar.d(e10 + 4, "lt_ref_pic_poc_lsb_sps[" + i12 + "]");
+                zArr[i12] = aVar.b("used_by_curr_pic_lt_sps_flag[" + i12 + "]");
             }
         }
-        cAVLCReader.readBool("sps_temporal_mvp_enabled_flag");
-        cAVLCReader.readBool("strong_intra_smoothing_enabled_flag");
+        aVar.b("sps_temporal_mvp_enabled_flag");
+        aVar.b("strong_intra_smoothing_enabled_flag");
     }
 
-    private void parse_short_term_ref_pic_sets(int i, CAVLCReader cAVLCReader) {
-        long[] jArr = new long[i];
-        for (int i2 = 0; i2 < i; i2++) {
-            if (i2 != 0 && cAVLCReader.readBool()) {
-                cAVLCReader.readBool("delta_rps_sign");
-                cAVLCReader.readUE("abs_delta_rps_minus1");
-                jArr[i2] = 0;
-                for (int i3 = 0; i3 <= jArr[i2 - 1]; i3++) {
-                    boolean readBool = cAVLCReader.readBool();
-                    boolean readBool2 = !readBool ? cAVLCReader.readBool() : false;
-                    if (readBool || readBool2) {
-                        jArr[i2] = jArr[i2] + 1;
-                    }
+    private void parse_short_term_ref_pic_sets(int i10, yb.a aVar) {
+        long[] jArr = new long[i10];
+        for (int i11 = 0; i11 < i10; i11++) {
+            if (i11 == 0 || aVar.a() != 1) {
+                long e9 = aVar.e("num_positive_pics") + aVar.e("num_negative_pics");
+                jArr[i11] = e9;
+                for (long j10 = 0; j10 < e9; j10++) {
+                    aVar.e("delta_poc_s0/1_minus1");
+                    aVar.b("used_by_curr_pic_s0/1_flag");
                 }
             } else {
-                long readUE = cAVLCReader.readUE("num_negative_pics") + cAVLCReader.readUE("num_positive_pics");
-                jArr[i2] = readUE;
-                for (long j = 0; j < readUE; j++) {
-                    cAVLCReader.readUE("delta_poc_s0/1_minus1");
-                    cAVLCReader.readBool("used_by_curr_pic_s0/1_flag");
-                }
-            }
-        }
-    }
-
-    private static void skip_scaling_list_data(CAVLCReader cAVLCReader) {
-        int i = 0;
-        while (i < 4) {
-            int i2 = 0;
-            while (true) {
-                if (i2 < (i == 3 ? 2 : 6)) {
-                    if (cAVLCReader.readBool()) {
-                        cAVLCReader.readUE("scaling_list_pred_matrix_id_delta");
-                    } else {
-                        int min = Math.min(64, 1 << ((i << 1) + 4));
-                        if (i > 1) {
-                            cAVLCReader.readUE("scaling_list_dc_coef_minus8");
-                        }
-                        for (int i3 = 0; i3 < min; i3++) {
-                            cAVLCReader.readUE("scaling_list_delta_coef");
-                        }
+                aVar.b("delta_rps_sign");
+                aVar.e("abs_delta_rps_minus1");
+                jArr[i11] = 0;
+                for (int i12 = 0; i12 <= jArr[i11 - 1]; i12++) {
+                    boolean z10 = aVar.a() == 1;
+                    boolean z11 = !z10 && aVar.a() == 1;
+                    if (z10 || z11) {
+                        jArr[i11] = jArr[i11] + 1;
                     }
-                    i2++;
                 }
             }
-            i++;
         }
     }
 
-    private void profile_tier_level(int i, CAVLCReader cAVLCReader) {
+    private void profile_tier_level(int i10, yb.a aVar) {
         boolean[] zArr;
         int[] iArr;
-        int i2 = i;
-        this.general_profile_space = cAVLCReader.readU(2, "general_profile_space");
-        this.general_tier_flag = cAVLCReader.readBool("general_tier_flag");
-        this.general_profile_idc = cAVLCReader.readU(5, "general_profile_idc");
-        this.general_profile_compatibility_flags = cAVLCReader.readNBit(32);
-        this.general_constraint_indicator_flags = cAVLCReader.readNBit(48);
-        this.general_level_idc = (byte) cAVLCReader.readByte();
-        boolean[] zArr2 = new boolean[i2];
-        boolean[] zArr3 = new boolean[i2];
-        for (int i3 = 0; i3 < i2; i3++) {
-            zArr2[i3] = cAVLCReader.readBool("sub_layer_profile_present_flag[" + i3 + "]");
-            zArr3[i3] = cAVLCReader.readBool("sub_layer_level_present_flag[" + i3 + "]");
+        boolean[] zArr2;
+        long[] jArr;
+        int i11 = i10;
+        long d = aVar.d(2, "general_profile_space");
+        InputStream inputStream = aVar.a;
+        this.general_profile_space = (int) d;
+        this.general_tier_flag = aVar.b("general_tier_flag");
+        this.general_profile_idc = (int) aVar.d(5, "general_profile_idc");
+        this.general_profile_compatibility_flags = aVar.c(32);
+        this.general_constraint_indicator_flags = aVar.c(48);
+        if (aVar.d > 0) {
+            aVar.b = aVar.c;
+            aVar.c = inputStream.read();
+            aVar.d = 0;
         }
-        if (i2 > 0) {
+        int i12 = aVar.b;
+        aVar.b = aVar.c;
+        aVar.c = inputStream.read();
+        aVar.d = 0;
+        this.general_level_idc = (byte) i12;
+        boolean[] zArr3 = new boolean[i11];
+        boolean[] zArr4 = new boolean[i11];
+        for (int i13 = 0; i13 < i11; i13++) {
+            zArr3[i13] = aVar.b("sub_layer_profile_present_flag[" + i13 + "]");
+            zArr4[i13] = aVar.b("sub_layer_level_present_flag[" + i13 + "]");
+        }
+        if (i11 > 0) {
             int[] iArr2 = new int[8];
-            for (int i4 = i2; i4 < 8; i4++) {
-                iArr2[i4] = cAVLCReader.readU(2, "reserved_zero_2bits[" + i4 + "]");
+            for (int i14 = i11; i14 < 8; i14++) {
+                iArr2[i14] = (int) aVar.d(2, "reserved_zero_2bits[" + i14 + "]");
             }
         }
-        int[] iArr3 = new int[i2];
-        boolean[] zArr4 = new boolean[i2];
-        int[] iArr4 = new int[i2];
-        boolean[][] zArr5 = (boolean[][]) Array.newInstance((Class<?>) Boolean.TYPE, i2, 32);
-        boolean[] zArr6 = new boolean[i2];
-        boolean[] zArr7 = new boolean[i2];
-        boolean[] zArr8 = new boolean[i2];
-        boolean[] zArr9 = new boolean[i2];
-        long[] jArr = new long[i2];
-        int[] iArr5 = new int[i2];
-        int i5 = 0;
-        while (i5 < i2) {
-            if (zArr2[i5]) {
-                StringBuilder sb = new StringBuilder();
-                zArr = zArr9;
-                sb.append("sub_layer_profile_space[");
-                sb.append(i5);
-                sb.append("]");
-                iArr3[i5] = cAVLCReader.readU(2, sb.toString());
-                zArr4[i5] = cAVLCReader.readBool("sub_layer_tier_flag[" + i5 + "]");
-                iArr4[i5] = cAVLCReader.readU(5, "sub_layer_profile_idc[" + i5 + "]");
-                int i6 = 0;
-                while (i6 < 32) {
-                    zArr5[i5][i6] = cAVLCReader.readBool("sub_layer_profile_compatibility_flag[" + i5 + "][" + i6 + "]");
-                    i6++;
-                    iArr5 = iArr5;
+        int[] iArr3 = new int[i11];
+        boolean[] zArr5 = new boolean[i11];
+        int[] iArr4 = new int[i11];
+        boolean[][] zArr6 = (boolean[][]) Array.newInstance((Class<?>) Boolean.TYPE, i11, 32);
+        boolean[] zArr7 = new boolean[i11];
+        boolean[] zArr8 = new boolean[i11];
+        boolean[] zArr9 = new boolean[i11];
+        boolean[] zArr10 = new boolean[i11];
+        long[] jArr2 = new long[i11];
+        int[] iArr5 = new int[i11];
+        int i15 = 0;
+        while (i15 < i11) {
+            if (zArr3[i15]) {
+                zArr = zArr3;
+                iArr = iArr5;
+                zArr2 = zArr10;
+                iArr3[i15] = (int) aVar.d(2, "sub_layer_profile_space[" + i15 + "]");
+                zArr5[i15] = aVar.b("sub_layer_tier_flag[" + i15 + "]");
+                jArr = jArr2;
+                iArr4[i15] = (int) aVar.d(5, "sub_layer_profile_idc[" + i15 + "]");
+                for (int i16 = 0; i16 < 32; i16++) {
+                    zArr6[i15][i16] = aVar.b("sub_layer_profile_compatibility_flag[" + i15 + "][" + i16 + "]");
                 }
-                iArr = iArr5;
-                zArr6[i5] = cAVLCReader.readBool("sub_layer_progressive_source_flag[" + i5 + "]");
-                zArr7[i5] = cAVLCReader.readBool("sub_layer_interlaced_source_flag[" + i5 + "]");
-                zArr8[i5] = cAVLCReader.readBool("sub_layer_non_packed_constraint_flag[" + i5 + "]");
-                zArr[i5] = cAVLCReader.readBool("sub_layer_frame_only_constraint_flag[" + i5 + "]");
-                jArr[i5] = cAVLCReader.readNBit(44);
+                zArr7[i15] = aVar.b("sub_layer_progressive_source_flag[" + i15 + "]");
+                zArr8[i15] = aVar.b("sub_layer_interlaced_source_flag[" + i15 + "]");
+                zArr9[i15] = aVar.b("sub_layer_non_packed_constraint_flag[" + i15 + "]");
+                zArr2[i15] = aVar.b("sub_layer_frame_only_constraint_flag[" + i15 + "]");
+                jArr[i15] = aVar.c(44);
             } else {
-                zArr = zArr9;
+                zArr = zArr3;
                 iArr = iArr5;
+                zArr2 = zArr10;
+                jArr = jArr2;
             }
-            if (zArr3[i5]) {
-                iArr[i5] = cAVLCReader.readU(8, "sub_layer_level_idc[" + i5 + "]");
+            if (zArr4[i15]) {
+                iArr[i15] = (int) aVar.d(8, "sub_layer_level_idc[" + i15 + "]");
             }
-            i5++;
-            i2 = i;
-            zArr9 = zArr;
+            i15++;
+            i11 = i10;
+            jArr2 = jArr;
+            zArr10 = zArr2;
+            zArr3 = zArr;
             iArr5 = iArr;
+        }
+    }
+
+    private static void skip_scaling_list_data(yb.a aVar) {
+        int i10 = 0;
+        while (i10 < 4) {
+            int i11 = 0;
+            while (true) {
+                if (i11 < (i10 == 3 ? 2 : 6)) {
+                    if (aVar.a() == 1) {
+                        aVar.e("scaling_list_pred_matrix_id_delta");
+                    } else {
+                        int min = Math.min(64, 1 << ((i10 << 1) + 4));
+                        if (i10 > 1) {
+                            aVar.e("scaling_list_dc_coef_minus8");
+                        }
+                        for (int i12 = 0; i12 < min; i12++) {
+                            aVar.e("scaling_list_delta_coef");
+                        }
+                    }
+                    i11++;
+                }
+            }
+            i10++;
         }
     }
 }

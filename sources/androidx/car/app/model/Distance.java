@@ -3,6 +3,7 @@ package androidx.car.app.model;
 import j$.util.Objects;
 import java.util.Locale;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class Distance {
     public static final int UNIT_FEET = 6;
@@ -15,52 +16,20 @@ public final class Distance {
     private final double mDisplayDistance;
     private final int mDisplayUnit;
 
-    public static Distance create(double d, int i) {
-        if (d < 0.0d) {
-            throw new IllegalArgumentException("displayDistance must be a positive value");
-        }
-        return new Distance(d, i);
-    }
-
-    public double getDisplayDistance() {
-        return this.mDisplayDistance;
-    }
-
-    public int getDisplayUnit() {
-        return this.mDisplayUnit;
-    }
-
-    public String toString() {
-        return String.format(Locale.US, "%.04f%s", Double.valueOf(this.mDisplayDistance), unitToString(this.mDisplayUnit));
-    }
-
-    public int hashCode() {
-        return Objects.hash(Double.valueOf(this.mDisplayDistance), Integer.valueOf(this.mDisplayUnit));
-    }
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof Distance)) {
-            return false;
-        }
-        Distance distance = (Distance) obj;
-        return this.mDisplayUnit == distance.mDisplayUnit && this.mDisplayDistance == distance.mDisplayDistance;
-    }
-
-    private Distance(double d, int i) {
+    private Distance(double d, int i10) {
         this.mDisplayDistance = d;
-        this.mDisplayUnit = i;
+        this.mDisplayUnit = i10;
     }
 
-    private Distance() {
-        this.mDisplayDistance = 0.0d;
-        this.mDisplayUnit = 1;
+    public static Distance create(double d, int i10) {
+        if (d >= 0.0d) {
+            return new Distance(d, i10);
+        }
+        throw new IllegalArgumentException("displayDistance must be a positive value");
     }
 
-    private static String unitToString(int i) {
-        switch (i) {
+    private static String unitToString(int i10) {
+        switch (i10) {
             case 1:
                 return "m";
             case 2:
@@ -78,5 +47,37 @@ public final class Distance {
             default:
                 return "?";
         }
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Distance)) {
+            return false;
+        }
+        Distance distance = (Distance) obj;
+        return this.mDisplayUnit == distance.mDisplayUnit && this.mDisplayDistance == distance.mDisplayDistance;
+    }
+
+    public double getDisplayDistance() {
+        return this.mDisplayDistance;
+    }
+
+    public int getDisplayUnit() {
+        return this.mDisplayUnit;
+    }
+
+    public int hashCode() {
+        return Objects.hash(Double.valueOf(this.mDisplayDistance), Integer.valueOf(this.mDisplayUnit));
+    }
+
+    public String toString() {
+        return String.format(Locale.US, "%.04f%s", Double.valueOf(this.mDisplayDistance), unitToString(this.mDisplayUnit));
+    }
+
+    private Distance() {
+        this.mDisplayDistance = 0.0d;
+        this.mDisplayUnit = 1;
     }
 }

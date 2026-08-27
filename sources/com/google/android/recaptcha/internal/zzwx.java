@@ -1,19 +1,10 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzwx extends zzsh implements zztt {
     private zzwx() {
         throw null;
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzwx(zzwy zzwyVar) {
-        super(r1);
-        zzwz zzwzVar;
-        zzwzVar = zzwz.zzb;
     }
 
     public final zzwx zze(zzvu zzvuVar) {
@@ -38,5 +29,15 @@ public final class zzwx extends zzsh implements zztt {
         zzn();
         zzwz.zzl((zzwz) this.zza, str);
         return this;
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public /* synthetic */ zzwx(zzwy zzwyVar) {
+        super(r1);
+        zzwz zzwzVar;
+        zzwzVar = zzwz.zzb;
     }
 }

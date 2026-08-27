@@ -8,10 +8,10 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes3.dex */
 public class NativeByteBuffer extends AbstractSerializedData {
     private static final ThreadLocal<LinkedList<NativeByteBuffer>> addressWrappers = new ThreadLocal<LinkedList<NativeByteBuffer>>() { // from class: org.telegram.tgnet.NativeByteBuffer.1
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.lang.ThreadLocal
         public LinkedList<NativeByteBuffer> initialValue() {
             return new LinkedList<>();
@@ -23,34 +23,33 @@ public class NativeByteBuffer extends AbstractSerializedData {
     private int len;
     public boolean reused = true;
 
-    public static native long native_getFreeBuffer(int i);
-
-    public static native ByteBuffer native_getJavaByteBuffer(long j);
-
-    public static native int native_limit(long j);
-
-    public static native int native_position(long j);
-
-    public static native void native_reuse(long j);
-
-    public int getIntFromByte(byte b) {
-        return b >= 0 ? b : b + 256;
+    private NativeByteBuffer(int i10, boolean z10) {
     }
 
-    public static NativeByteBuffer wrap(long j) {
-        if (j == 0) {
+    public static native long native_getFreeBuffer(int i10);
+
+    public static native ByteBuffer native_getJavaByteBuffer(long j10);
+
+    public static native int native_limit(long j10);
+
+    public static native int native_position(long j10);
+
+    public static native void native_reuse(long j10);
+
+    public static NativeByteBuffer wrap(long j10) {
+        if (j10 == 0) {
             return null;
         }
         NativeByteBuffer poll = addressWrappers.get().poll();
         if (poll == null) {
             poll = new NativeByteBuffer(0, true);
         }
-        poll.address = j;
+        poll.address = j10;
         poll.reused = false;
-        ByteBuffer native_getJavaByteBuffer = native_getJavaByteBuffer(j);
+        ByteBuffer native_getJavaByteBuffer = native_getJavaByteBuffer(j10);
         poll.buffer = native_getJavaByteBuffer;
-        native_getJavaByteBuffer.limit(native_limit(j));
-        int native_position = native_position(j);
+        native_getJavaByteBuffer.limit(native_limit(j10));
+        int native_position = native_position(j10);
         if (native_position <= poll.buffer.limit()) {
             poll.buffer.position(native_position);
         }
@@ -58,52 +57,303 @@ public class NativeByteBuffer extends AbstractSerializedData {
         return poll;
     }
 
-    private NativeByteBuffer(int i, boolean z) {
+    public int capacity() {
+        return this.buffer.capacity();
     }
 
-    public NativeByteBuffer(int i) {
-        if (i >= 0) {
-            long native_getFreeBuffer = native_getFreeBuffer(i);
-            this.address = native_getFreeBuffer;
-            if (native_getFreeBuffer != 0) {
-                ByteBuffer native_getJavaByteBuffer = native_getJavaByteBuffer(native_getFreeBuffer);
-                this.buffer = native_getJavaByteBuffer;
-                native_getJavaByteBuffer.position(0);
-                this.buffer.limit(i);
-                this.buffer.order(ByteOrder.LITTLE_ENDIAN);
-                return;
-            }
-            return;
+    public void compact() {
+        this.buffer.compact();
+    }
+
+    public void finalize() {
+        if (!this.reused) {
+            reuse();
         }
-        throw new Exception("invalid NativeByteBuffer size");
+        super.finalize();
     }
 
-    public NativeByteBuffer(boolean z) {
-        this.justCalc = z;
+    public int getIntFromByte(byte b10) {
+        return b10 >= 0 ? b10 : b10 + 256;
     }
 
-    public int position() {
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData, org.telegram.tgnet.OutputSerializedData
+    public int getPosition() {
         return this.buffer.position();
     }
 
-    public void position(int i) {
-        this.buffer.position(i);
+    public boolean hasRemaining() {
+        return this.buffer.hasRemaining();
     }
 
-    public int capacity() {
-        return this.buffer.capacity();
+    public String hex() {
+        try {
+            return Utilities.bytesToHex(readData(Math.min(limit(), 1024), true));
+        } catch (Exception e9) {
+            FileLog.e(e9);
+            return "<err>";
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
+    public int length() {
+        return !this.justCalc ? this.buffer.position() : this.len;
     }
 
     public int limit() {
         return this.buffer.limit();
     }
 
-    public void limit(int i) {
-        this.buffer.limit(i);
+    public int position() {
+        return this.buffer.position();
     }
 
     public void put(ByteBuffer byteBuffer) {
         this.buffer.put(byteBuffer);
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
+    public boolean readBool(boolean z10) {
+        int readInt32 = readInt32(z10);
+        if (readInt32 == -1720552011) {
+            return true;
+        }
+        if (readInt32 == -1132882121) {
+            return false;
+        }
+        if (z10) {
+            throw new RuntimeException("Not bool value!");
+        }
+        if (BuildVars.LOGS_ENABLED) {
+            FileLog.e("Not bool value!");
+        }
+        return false;
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
+    public byte readByte(boolean z10) {
+        try {
+            return this.buffer.get();
+        } catch (Exception e9) {
+            if (z10) {
+                throw new RuntimeException("read byte error", e9);
+            }
+            if (!BuildVars.LOGS_ENABLED) {
+                return (byte) 0;
+            }
+            FileLog.e("read byte error");
+            FileLog.e(e9);
+            return (byte) 0;
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
+    public byte[] readByteArray(boolean z10) {
+        int i10;
+        try {
+            int intFromByte = getIntFromByte(this.buffer.get());
+            if (intFromByte >= 254) {
+                intFromByte = getIntFromByte(this.buffer.get()) | (getIntFromByte(this.buffer.get()) << 8) | (getIntFromByte(this.buffer.get()) << 16);
+                i10 = 4;
+            } else {
+                i10 = 1;
+            }
+            if (intFromByte > remaining() || intFromByte < 0) {
+                throw new RuntimeException("byte array size too big");
+            }
+            byte[] bArr = new byte[intFromByte];
+            this.buffer.get(bArr);
+            while ((intFromByte + i10) % 4 != 0) {
+                this.buffer.get();
+                i10++;
+            }
+            return bArr;
+        } catch (Exception e9) {
+            if (z10) {
+                throw new RuntimeException("read byte array error", e9);
+            }
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.e("read byte array error");
+                FileLog.e(e9);
+            }
+            return new byte[0];
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
+    public NativeByteBuffer readByteBuffer(boolean z10) {
+        int i10;
+        try {
+            int intFromByte = getIntFromByte(this.buffer.get());
+            if (intFromByte >= 254) {
+                intFromByte = getIntFromByte(this.buffer.get()) | (getIntFromByte(this.buffer.get()) << 8) | (getIntFromByte(this.buffer.get()) << 16);
+                i10 = 4;
+            } else {
+                i10 = 1;
+            }
+            if (intFromByte > remaining() || intFromByte < 0) {
+                throw new RuntimeException("byte array size too big");
+            }
+            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(intFromByte);
+            int limit = this.buffer.limit();
+            ByteBuffer byteBuffer = this.buffer;
+            byteBuffer.limit(byteBuffer.position() + intFromByte);
+            nativeByteBuffer.buffer.put(this.buffer);
+            this.buffer.limit(limit);
+            nativeByteBuffer.buffer.position(0);
+            while ((intFromByte + i10) % 4 != 0) {
+                this.buffer.get();
+                i10++;
+            }
+            return nativeByteBuffer;
+        } catch (Exception e9) {
+            if (z10) {
+                throw new RuntimeException("read byte array error", e9);
+            }
+            if (!BuildVars.LOGS_ENABLED) {
+                return null;
+            }
+            FileLog.e("read byte array error");
+            FileLog.e(e9);
+            return null;
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
+    public void readBytes(byte[] bArr, boolean z10) {
+        try {
+            this.buffer.get(bArr);
+        } catch (Exception e9) {
+            if (z10) {
+                throw new RuntimeException("read raw error", e9);
+            }
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.e("read raw error");
+                FileLog.e(e9);
+            }
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
+    public byte[] readData(int i10, boolean z10) {
+        byte[] bArr = new byte[i10];
+        readBytes(bArr, z10);
+        return bArr;
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
+    public double readDouble(boolean z10) {
+        try {
+            return Double.longBitsToDouble(readInt64(z10));
+        } catch (Exception e9) {
+            if (z10) {
+                throw new RuntimeException("read double error", e9);
+            }
+            if (!BuildVars.LOGS_ENABLED) {
+                return 0.0d;
+            }
+            FileLog.e("read double error");
+            FileLog.e(e9);
+            return 0.0d;
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
+    public float readFloat(boolean z10) {
+        try {
+            return Float.intBitsToFloat(this.buffer.getInt());
+        } catch (Exception e9) {
+            if (z10) {
+                throw new RuntimeException("read float error", e9);
+            }
+            if (!BuildVars.LOGS_ENABLED) {
+                return 0.0f;
+            }
+            FileLog.e("read float error");
+            FileLog.e(e9);
+            return 0.0f;
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
+    public int readInt32(boolean z10) {
+        try {
+            return this.buffer.getInt();
+        } catch (Exception e9) {
+            if (z10) {
+                throw new RuntimeException("read int32 error", e9);
+            }
+            if (!BuildVars.LOGS_ENABLED) {
+                return 0;
+            }
+            FileLog.e("read int32 error");
+            FileLog.e(e9);
+            return 0;
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
+    public long readInt64(boolean z10) {
+        try {
+            return this.buffer.getLong();
+        } catch (Exception e9) {
+            if (z10) {
+                throw new RuntimeException("read int64 error", e9);
+            }
+            if (!BuildVars.LOGS_ENABLED) {
+                return 0L;
+            }
+            FileLog.e("read int64 error");
+            FileLog.e(e9);
+            return 0L;
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
+    public String readString(boolean z10) {
+        int i10;
+        int position = getPosition();
+        try {
+            int intFromByte = getIntFromByte(this.buffer.get());
+            if (intFromByte >= 254) {
+                intFromByte = getIntFromByte(this.buffer.get()) | (getIntFromByte(this.buffer.get()) << 8) | (getIntFromByte(this.buffer.get()) << 16);
+                i10 = 4;
+            } else {
+                i10 = 1;
+            }
+            if (intFromByte > remaining() || intFromByte < 0) {
+                throw new RuntimeException("string size too big");
+            }
+            byte[] bArr = new byte[intFromByte];
+            this.buffer.get(bArr);
+            while ((intFromByte + i10) % 4 != 0) {
+                this.buffer.get();
+                i10++;
+            }
+            return new String(bArr, "UTF-8");
+        } catch (Exception e9) {
+            if (z10) {
+                throw new RuntimeException("read string error", e9);
+            }
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.e("read string error");
+                FileLog.e(e9);
+            }
+            position(position);
+            return "";
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
+    public int remaining() {
+        return this.buffer.remaining();
+    }
+
+    public void reuse() {
+        if (this.address != 0) {
+            addressWrappers.get().add(this);
+            this.reused = true;
+            native_reuse(this.address);
+        }
     }
 
     public void rewind() {
@@ -114,67 +364,24 @@ public class NativeByteBuffer extends AbstractSerializedData {
         }
     }
 
-    public void compact() {
-        this.buffer.compact();
-    }
-
-    public boolean hasRemaining() {
-        return this.buffer.hasRemaining();
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeInt32(int i) {
-        try {
-            if (!this.justCalc) {
-                this.buffer.putInt(i);
-            } else {
-                this.len += 4;
-            }
-        } catch (Exception e) {
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("write int32 error");
-                FileLog.e(e);
-            }
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData, org.telegram.tgnet.OutputSerializedData
+    public void skip(int i10) {
+        if (i10 == 0) {
+            return;
+        }
+        if (this.justCalc) {
+            this.len += i10;
+        } else {
+            ByteBuffer byteBuffer = this.buffer;
+            byteBuffer.position(byteBuffer.position() + i10);
         }
     }
 
     @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeInt64(long j) {
-        try {
-            if (!this.justCalc) {
-                this.buffer.putLong(j);
-            } else {
-                this.len += 8;
-            }
-        } catch (Exception e) {
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("write int64 error");
-                FileLog.e(e);
-            }
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeFloat(float f) {
-        try {
-            if (!this.justCalc) {
-                this.buffer.putInt(Float.floatToIntBits(f));
-            } else {
-                this.len += 4;
-            }
-        } catch (Exception e) {
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("write float error");
-                FileLog.e(e);
-            }
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeBool(boolean z) {
+    public void writeBool(boolean z10) {
         if (this.justCalc) {
             this.len += 4;
-        } else if (z) {
+        } else if (z10) {
             writeInt32(TLRPC.TL_boolTrue.constructor);
         } else {
             writeInt32(TLRPC.TL_boolFalse.constructor);
@@ -182,159 +389,43 @@ public class NativeByteBuffer extends AbstractSerializedData {
     }
 
     @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeBytes(byte[] bArr) {
-        try {
-            if (!this.justCalc) {
-                this.buffer.put(bArr);
-            } else {
-                this.len += bArr.length;
-            }
-        } catch (Exception e) {
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("write raw error");
-                FileLog.e(e);
-            }
-        }
+    public void writeByte(int i10) {
+        writeByte((byte) i10);
     }
 
     @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeBytes(byte[] bArr, int i, int i2) {
+    public void writeByteArray(byte[] bArr, int i10, int i11) {
         try {
-            if (!this.justCalc) {
-                this.buffer.put(bArr, i, i2);
-            } else {
-                this.len += i2;
-            }
-        } catch (Exception e) {
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("write raw error");
-                FileLog.e(e);
-            }
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeByte(int i) {
-        writeByte((byte) i);
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeByte(byte b) {
-        try {
-            if (!this.justCalc) {
-                this.buffer.put(b);
-            } else {
-                this.len++;
-            }
-        } catch (Exception e) {
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("write byte error");
-                FileLog.e(e);
-            }
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeString(String str) {
-        if (str == null) {
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("write string null");
-                FileLog.e(new Throwable());
-            }
-            str = "";
-        }
-        try {
-            writeByteArray(str.getBytes("UTF-8"));
-        } catch (Exception e) {
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("write string error");
-                FileLog.e(e);
-            }
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeByteArray(byte[] bArr, int i, int i2) {
-        try {
-            if (i2 <= 253) {
+            if (i11 <= 253) {
                 if (this.justCalc) {
                     this.len++;
                 } else {
-                    this.buffer.put((byte) i2);
+                    this.buffer.put((byte) i11);
                 }
             } else if (this.justCalc) {
                 this.len += 4;
             } else {
                 this.buffer.put((byte) -2);
-                this.buffer.put((byte) i2);
-                this.buffer.put((byte) (i2 >> 8));
-                this.buffer.put((byte) (i2 >> 16));
+                this.buffer.put((byte) i11);
+                this.buffer.put((byte) (i11 >> 8));
+                this.buffer.put((byte) (i11 >> 16));
             }
             if (this.justCalc) {
-                this.len += i2;
+                this.len += i11;
             } else {
-                this.buffer.put(bArr, i, i2);
+                this.buffer.put(bArr, i10, i11);
             }
-            for (int i3 = i2 <= 253 ? 1 : 4; (i2 + i3) % 4 != 0; i3++) {
+            for (int i12 = i11 <= 253 ? 1 : 4; (i11 + i12) % 4 != 0; i12++) {
                 if (this.justCalc) {
                     this.len++;
                 } else {
                     this.buffer.put((byte) 0);
                 }
             }
-        } catch (Exception e) {
+        } catch (Exception e9) {
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.e("write byte array error");
-                FileLog.e(e);
-            }
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeByteArray(byte[] bArr) {
-        try {
-            if (bArr.length <= 253) {
-                if (this.justCalc) {
-                    this.len++;
-                } else {
-                    this.buffer.put((byte) bArr.length);
-                }
-            } else if (this.justCalc) {
-                this.len += 4;
-            } else {
-                this.buffer.put((byte) -2);
-                this.buffer.put((byte) bArr.length);
-                this.buffer.put((byte) (bArr.length >> 8));
-                this.buffer.put((byte) (bArr.length >> 16));
-            }
-            if (this.justCalc) {
-                this.len += bArr.length;
-            } else {
-                this.buffer.put(bArr);
-            }
-            for (int i = bArr.length <= 253 ? 1 : 4; (bArr.length + i) % 4 != 0; i++) {
-                if (this.justCalc) {
-                    this.len++;
-                } else {
-                    this.buffer.put((byte) 0);
-                }
-            }
-        } catch (Exception e) {
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("write byte array error");
-                FileLog.e(e);
-            }
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeDouble(double d) {
-        try {
-            writeInt64(Double.doubleToRawLongBits(d));
-        } catch (Exception e) {
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("write double error");
-                FileLog.e(e);
+                FileLog.e(e9);
             }
         }
     }
@@ -363,325 +454,233 @@ public class NativeByteBuffer extends AbstractSerializedData {
                 nativeByteBuffer.rewind();
                 this.buffer.put(nativeByteBuffer.buffer);
             }
-            for (int i = limit <= 253 ? 1 : 4; (limit + i) % 4 != 0; i++) {
+            for (int i10 = limit <= 253 ? 1 : 4; (limit + i10) % 4 != 0; i10++) {
                 if (this.justCalc) {
                     this.len++;
                 } else {
                     this.buffer.put((byte) 0);
                 }
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e9) {
+            FileLog.e(e9);
         }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
+    public void writeBytes(byte[] bArr) {
+        try {
+            if (this.justCalc) {
+                this.len += bArr.length;
+            } else {
+                this.buffer.put(bArr);
+            }
+        } catch (Exception e9) {
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.e("write raw error");
+                FileLog.e(e9);
+            }
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
+    public void writeDouble(double d) {
+        try {
+            writeInt64(Double.doubleToRawLongBits(d));
+        } catch (Exception e9) {
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.e("write double error");
+                FileLog.e(e9);
+            }
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
+    public void writeFloat(float f10) {
+        try {
+            if (this.justCalc) {
+                this.len += 4;
+            } else {
+                this.buffer.putInt(Float.floatToIntBits(f10));
+            }
+        } catch (Exception e9) {
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.e("write float error");
+                FileLog.e(e9);
+            }
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
+    public void writeInt32(int i10) {
+        try {
+            if (this.justCalc) {
+                this.len += 4;
+            } else {
+                this.buffer.putInt(i10);
+            }
+        } catch (Exception e9) {
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.e("write int32 error");
+                FileLog.e(e9);
+            }
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
+    public void writeInt64(long j10) {
+        try {
+            if (this.justCalc) {
+                this.len += 8;
+            } else {
+                this.buffer.putLong(j10);
+            }
+        } catch (Exception e9) {
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.e("write int64 error");
+                FileLog.e(e9);
+            }
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
+    public void writeString(String str) {
+        if (str == null) {
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.e("write string null");
+                FileLog.e(new Throwable());
+            }
+            str = "";
+        }
+        try {
+            writeByteArray(str.getBytes("UTF-8"));
+        } catch (Exception e9) {
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.e("write string error");
+                FileLog.e(e9);
+            }
+        }
+    }
+
+    public void limit(int i10) {
+        this.buffer.limit(i10);
+    }
+
+    public void position(int i10) {
+        this.buffer.position(i10);
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
+    public void writeByte(byte b10) {
+        try {
+            if (this.justCalc) {
+                this.len++;
+            } else {
+                this.buffer.put(b10);
+            }
+        } catch (Exception e9) {
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.e("write byte error");
+                FileLog.e(e9);
+            }
+        }
+    }
+
+    public NativeByteBuffer(int i10) {
+        if (i10 >= 0) {
+            long native_getFreeBuffer = native_getFreeBuffer(i10);
+            this.address = native_getFreeBuffer;
+            if (native_getFreeBuffer != 0) {
+                ByteBuffer native_getJavaByteBuffer = native_getJavaByteBuffer(native_getFreeBuffer);
+                this.buffer = native_getJavaByteBuffer;
+                native_getJavaByteBuffer.position(0);
+                this.buffer.limit(i10);
+                this.buffer.order(ByteOrder.LITTLE_ENDIAN);
+                return;
+            }
+            return;
+        }
+        throw new Exception("invalid NativeByteBuffer size");
+    }
+
+    public void readBytes(byte[] bArr, int i10, int i11, boolean z10) {
+        try {
+            this.buffer.get(bArr, i10, i11);
+        } catch (Exception e9) {
+            if (!z10) {
+                if (BuildVars.LOGS_ENABLED) {
+                    FileLog.e("read raw error");
+                    FileLog.e(e9);
+                    return;
+                }
+                return;
+            }
+            throw new RuntimeException("read raw error", e9);
+        }
+    }
+
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
+    public void writeBytes(byte[] bArr, int i10, int i11) {
+        try {
+            if (!this.justCalc) {
+                this.buffer.put(bArr, i10, i11);
+            } else {
+                this.len += i11;
+            }
+        } catch (Exception e9) {
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.e("write raw error");
+                FileLog.e(e9);
+            }
+        }
+    }
+
+    public NativeByteBuffer(boolean z10) {
+        this.justCalc = z10;
     }
 
     public void writeBytes(NativeByteBuffer nativeByteBuffer) {
         if (this.justCalc) {
-            this.len += nativeByteBuffer.limit();
+            this.len = nativeByteBuffer.limit() + this.len;
         } else {
             nativeByteBuffer.rewind();
             this.buffer.put(nativeByteBuffer.buffer);
         }
     }
 
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
-    public int length() {
-        if (!this.justCalc) {
-            return this.buffer.position();
-        }
-        return this.len;
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void skip(int i) {
-        if (i == 0) {
-            return;
-        }
-        if (!this.justCalc) {
-            ByteBuffer byteBuffer = this.buffer;
-            byteBuffer.position(byteBuffer.position() + i);
-        } else {
-            this.len += i;
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData, org.telegram.tgnet.OutputSerializedData
-    public int getPosition() {
-        return this.buffer.position();
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
-    public byte readByte(boolean z) {
+    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
+    public void writeByteArray(byte[] bArr) {
         try {
-            return this.buffer.get();
-        } catch (Exception e) {
-            if (z) {
-                throw new RuntimeException("read byte error", e);
-            }
-            if (!BuildVars.LOGS_ENABLED) {
-                return (byte) 0;
-            }
-            FileLog.e("read byte error");
-            FileLog.e(e);
-            return (byte) 0;
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
-    public int readInt32(boolean z) {
-        try {
-            return this.buffer.getInt();
-        } catch (Exception e) {
-            if (z) {
-                throw new RuntimeException("read int32 error", e);
-            }
-            if (!BuildVars.LOGS_ENABLED) {
-                return 0;
-            }
-            FileLog.e("read int32 error");
-            FileLog.e(e);
-            return 0;
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
-    public float readFloat(boolean z) {
-        try {
-            return Float.intBitsToFloat(this.buffer.getInt());
-        } catch (Exception e) {
-            if (z) {
-                throw new RuntimeException("read float error", e);
-            }
-            if (!BuildVars.LOGS_ENABLED) {
-                return 0.0f;
-            }
-            FileLog.e("read float error");
-            FileLog.e(e);
-            return 0.0f;
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
-    public boolean readBool(boolean z) {
-        int readInt32 = readInt32(z);
-        if (readInt32 == -1720552011) {
-            return true;
-        }
-        if (readInt32 == -1132882121) {
-            return false;
-        }
-        if (z) {
-            throw new RuntimeException("Not bool value!");
-        }
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.e("Not bool value!");
-        }
-        return false;
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
-    public long readInt64(boolean z) {
-        try {
-            return this.buffer.getLong();
-        } catch (Exception e) {
-            if (z) {
-                throw new RuntimeException("read int64 error", e);
-            }
-            if (!BuildVars.LOGS_ENABLED) {
-                return 0L;
-            }
-            FileLog.e("read int64 error");
-            FileLog.e(e);
-            return 0L;
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
-    public void readBytes(byte[] bArr, boolean z) {
-        try {
-            this.buffer.get(bArr);
-        } catch (Exception e) {
-            if (z) {
-                throw new RuntimeException("read raw error", e);
-            }
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("read raw error");
-                FileLog.e(e);
-            }
-        }
-    }
-
-    public void readBytes(byte[] bArr, int i, int i2, boolean z) {
-        try {
-            this.buffer.get(bArr, i, i2);
-        } catch (Exception e) {
-            if (z) {
-                throw new RuntimeException("read raw error", e);
-            }
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("read raw error");
-                FileLog.e(e);
-            }
-        }
-    }
-
-    public String hex() {
-        try {
-            return Utilities.bytesToHex(readData(Math.min(limit(), 1024), true));
-        } catch (Exception e) {
-            FileLog.e(e);
-            return "<err>";
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
-    public byte[] readData(int i, boolean z) {
-        byte[] bArr = new byte[i];
-        readBytes(bArr, z);
-        return bArr;
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
-    public String readString(boolean z) {
-        int i;
-        int position = getPosition();
-        try {
-            int intFromByte = getIntFromByte(this.buffer.get());
-            if (intFromByte >= 254) {
-                intFromByte = getIntFromByte(this.buffer.get()) | (getIntFromByte(this.buffer.get()) << 8) | (getIntFromByte(this.buffer.get()) << 16);
-                i = 4;
+            if (bArr.length <= 253) {
+                if (this.justCalc) {
+                    this.len++;
+                } else {
+                    this.buffer.put((byte) bArr.length);
+                }
+            } else if (this.justCalc) {
+                this.len += 4;
             } else {
-                i = 1;
+                this.buffer.put((byte) -2);
+                this.buffer.put((byte) bArr.length);
+                this.buffer.put((byte) (bArr.length >> 8));
+                this.buffer.put((byte) (bArr.length >> 16));
             }
-            if (intFromByte > remaining() || intFromByte < 0) {
-                throw new RuntimeException("string size too big");
-            }
-            byte[] bArr = new byte[intFromByte];
-            this.buffer.get(bArr);
-            while ((intFromByte + i) % 4 != 0) {
-                this.buffer.get();
-                i++;
-            }
-            return new String(bArr, "UTF-8");
-        } catch (Exception e) {
-            if (z) {
-                throw new RuntimeException("read string error", e);
-            }
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("read string error");
-                FileLog.e(e);
-            }
-            position(position);
-            return "";
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
-    public byte[] readByteArray(boolean z) {
-        int i;
-        try {
-            int intFromByte = getIntFromByte(this.buffer.get());
-            if (intFromByte >= 254) {
-                intFromByte = getIntFromByte(this.buffer.get()) | (getIntFromByte(this.buffer.get()) << 8) | (getIntFromByte(this.buffer.get()) << 16);
-                i = 4;
+            if (this.justCalc) {
+                this.len += bArr.length;
             } else {
-                i = 1;
+                this.buffer.put(bArr);
             }
-            if (intFromByte > remaining() || intFromByte < 0) {
-                throw new RuntimeException("byte array size too big");
+            for (int i10 = bArr.length <= 253 ? 1 : 4; (bArr.length + i10) % 4 != 0; i10++) {
+                if (this.justCalc) {
+                    this.len++;
+                } else {
+                    this.buffer.put((byte) 0);
+                }
             }
-            byte[] bArr = new byte[intFromByte];
-            this.buffer.get(bArr);
-            while ((intFromByte + i) % 4 != 0) {
-                this.buffer.get();
-                i++;
-            }
-            return bArr;
-        } catch (Exception e) {
-            if (z) {
-                throw new RuntimeException("read byte array error", e);
-            }
+        } catch (Exception e9) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("read byte array error");
-                FileLog.e(e);
+                FileLog.e("write byte array error");
+                FileLog.e(e9);
             }
-            return new byte[0];
         }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
-    public NativeByteBuffer readByteBuffer(boolean z) {
-        int i;
-        try {
-            int intFromByte = getIntFromByte(this.buffer.get());
-            if (intFromByte >= 254) {
-                intFromByte = getIntFromByte(this.buffer.get()) | (getIntFromByte(this.buffer.get()) << 8) | (getIntFromByte(this.buffer.get()) << 16);
-                i = 4;
-            } else {
-                i = 1;
-            }
-            if (intFromByte > remaining() || intFromByte < 0) {
-                throw new RuntimeException("byte array size too big");
-            }
-            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(intFromByte);
-            int limit = this.buffer.limit();
-            ByteBuffer byteBuffer = this.buffer;
-            byteBuffer.limit(byteBuffer.position() + intFromByte);
-            nativeByteBuffer.buffer.put(this.buffer);
-            this.buffer.limit(limit);
-            nativeByteBuffer.buffer.position(0);
-            while ((intFromByte + i) % 4 != 0) {
-                this.buffer.get();
-                i++;
-            }
-            return nativeByteBuffer;
-        } catch (Exception e) {
-            if (z) {
-                throw new RuntimeException("read byte array error", e);
-            }
-            if (!BuildVars.LOGS_ENABLED) {
-                return null;
-            }
-            FileLog.e("read byte array error");
-            FileLog.e(e);
-            return null;
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
-    public double readDouble(boolean z) {
-        try {
-            return Double.longBitsToDouble(readInt64(z));
-        } catch (Exception e) {
-            if (z) {
-                throw new RuntimeException("read double error", e);
-            }
-            if (!BuildVars.LOGS_ENABLED) {
-                return 0.0d;
-            }
-            FileLog.e("read double error");
-            FileLog.e(e);
-            return 0.0d;
-        }
-    }
-
-    public void reuse() {
-        if (this.address != 0) {
-            addressWrappers.get().add(this);
-            this.reused = true;
-            native_reuse(this.address);
-        }
-    }
-
-    @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
-    public int remaining() {
-        return this.buffer.remaining();
-    }
-
-    protected void finalize() {
-        if (!this.reused) {
-            reuse();
-        }
-        super.finalize();
     }
 }

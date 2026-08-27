@@ -5,68 +5,22 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public interface IOnRequestPermissionsListener extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$IOnRequestPermissionsListener".replace('$', '.');
 
-    public static class Default implements IOnRequestPermissionsListener {
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return null;
-        }
-
-        @Override // androidx.car.app.IOnRequestPermissionsListener
-        public void onRequestPermissionsResult(String[] strArr, String[] strArr2) {
-        }
-    }
-
     void onRequestPermissionsResult(String[] strArr, String[] strArr2);
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static abstract class Stub extends Binder implements IOnRequestPermissionsListener {
         static final int TRANSACTION_onRequestPermissionsResult = 2;
 
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return this;
-        }
-
-        public Stub() {
-            attachInterface(this, IOnRequestPermissionsListener.DESCRIPTOR);
-        }
-
-        public static IOnRequestPermissionsListener asInterface(IBinder iBinder) {
-            if (iBinder == null) {
-                return null;
-            }
-            IInterface queryLocalInterface = iBinder.queryLocalInterface(IOnRequestPermissionsListener.DESCRIPTOR);
-            if (queryLocalInterface != null && (queryLocalInterface instanceof IOnRequestPermissionsListener)) {
-                return (IOnRequestPermissionsListener) queryLocalInterface;
-            }
-            return new Proxy(iBinder);
-        }
-
-        @Override // android.os.Binder
-        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String str = IOnRequestPermissionsListener.DESCRIPTOR;
-            if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(str);
-            }
-            if (i == 1598968902) {
-                parcel2.writeString(str);
-                return true;
-            }
-            if (i == 2) {
-                onRequestPermissionsResult(parcel.createStringArray(), parcel.createStringArray());
-                parcel2.writeNoException();
-                return true;
-            }
-            return super.onTransact(i, parcel, parcel2, i2);
-        }
-
-        private static class Proxy implements IOnRequestPermissionsListener {
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static class Proxy implements IOnRequestPermissionsListener {
             private IBinder mRemote;
 
-            Proxy(IBinder iBinder) {
+            public Proxy(IBinder iBinder) {
                 this.mRemote = iBinder;
             }
 
@@ -94,6 +48,53 @@ public interface IOnRequestPermissionsListener extends IInterface {
                     obtain.recycle();
                 }
             }
+        }
+
+        public Stub() {
+            attachInterface(this, IOnRequestPermissionsListener.DESCRIPTOR);
+        }
+
+        public static IOnRequestPermissionsListener asInterface(IBinder iBinder) {
+            if (iBinder == null) {
+                return null;
+            }
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(IOnRequestPermissionsListener.DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IOnRequestPermissionsListener)) ? new Proxy(iBinder) : (IOnRequestPermissionsListener) queryLocalInterface;
+        }
+
+        @Override // android.os.Binder
+        public boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+            String str = IOnRequestPermissionsListener.DESCRIPTOR;
+            if (i10 >= 1 && i10 <= 16777215) {
+                parcel.enforceInterface(str);
+            }
+            if (i10 == 1598968902) {
+                parcel2.writeString(str);
+                return true;
+            }
+            if (i10 != 2) {
+                return super.onTransact(i10, parcel, parcel2, i11);
+            }
+            onRequestPermissionsResult(parcel.createStringArray(), parcel.createStringArray());
+            parcel2.writeNoException();
+            return true;
+        }
+
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return this;
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class Default implements IOnRequestPermissionsListener {
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return null;
+        }
+
+        @Override // androidx.car.app.IOnRequestPermissionsListener
+        public void onRequestPermissionsResult(String[] strArr, String[] strArr2) {
         }
     }
 }

@@ -2,41 +2,31 @@ package androidx.versionedparcelable;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import h5.h;
+import l2.c;
+import l2.d;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class ParcelImpl implements Parcelable {
-    public static final Parcelable.Creator<ParcelImpl> CREATOR = new Parcelable.Creator() { // from class: androidx.versionedparcelable.ParcelImpl.1
-        @Override // android.os.Parcelable.Creator
-        public ParcelImpl createFromParcel(Parcel parcel) {
-            return new ParcelImpl(parcel);
-        }
+    public static final Parcelable.Creator<ParcelImpl> CREATOR = new h(19);
+    public final d a;
 
-        @Override // android.os.Parcelable.Creator
-        public ParcelImpl[] newArray(int i) {
-            return new ParcelImpl[i];
-        }
-    };
-    private final VersionedParcelable mParcel;
+    public ParcelImpl(d dVar) {
+        this.a = dVar;
+    }
 
     @Override // android.os.Parcelable
-    public int describeContents() {
+    public final int describeContents() {
         return 0;
     }
 
-    public ParcelImpl(VersionedParcelable versionedParcelable) {
-        this.mParcel = versionedParcelable;
-    }
-
-    protected ParcelImpl(Parcel parcel) {
-        this.mParcel = new VersionedParcelParcel(parcel).readVersionedParcelable();
-    }
-
-    public VersionedParcelable getVersionedParcel() {
-        return this.mParcel;
-    }
-
     @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        new VersionedParcelParcel(parcel).writeVersionedParcelable(this.mParcel);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        new c(parcel).l(this.a);
+    }
+
+    public ParcelImpl(Parcel parcel) {
+        this.a = new c(parcel).h();
     }
 }

@@ -1,14 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import kotlinx.coroutines.CoroutineScope;
+import id.c0;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public interface zzcr {
-    CoroutineScope zza();
+    c0 zza();
 
-    CoroutineScope zzb();
+    c0 zzb();
 
-    CoroutineScope zzc();
+    c0 zzc();
 
-    CoroutineScope zzd();
+    c0 zzd();
 }

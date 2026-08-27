@@ -4,58 +4,60 @@ import android.os.Handler;
 import android.os.Looper;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public final class ContactsLoadingObserver {
     private final Callback callback;
     private final ContactsController contactsController;
     private final int currentAccount;
     private final Handler handler;
     private final NotificationCenter notificationCenter;
-    private final NotificationCenter.NotificationCenterDelegate observer = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.ContactsLoadingObserver$$ExternalSyntheticLambda0
-        @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-        public final void didReceivedNotification(int i, int i2, Object[] objArr) {
-            ContactsLoadingObserver.$r8$lambda$U2XpPtohMROBuh2rWH3LHh87PCE(ContactsLoadingObserver.this, i, i2, objArr);
-        }
-    };
+    private final NotificationCenter.NotificationCenterDelegate observer = new x1(this, 0);
     private final Runnable releaseRunnable;
     private boolean released;
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface Callback {
-        void onResult(boolean z);
-    }
-
-    public static void observe(Callback callback, long j) {
-        new ContactsLoadingObserver(callback).start(j);
-    }
-
-    public static /* synthetic */ void $r8$lambda$U2XpPtohMROBuh2rWH3LHh87PCE(ContactsLoadingObserver contactsLoadingObserver, int i, int i2, Object[] objArr) {
-        contactsLoadingObserver.getClass();
-        if (i == NotificationCenter.contactsDidLoad) {
-            contactsLoadingObserver.onContactsLoadingStateUpdated(i2, false);
-        }
+        void onResult(boolean z10);
     }
 
     private ContactsLoadingObserver(Callback callback) {
         this.callback = callback;
-        int i = UserConfig.selectedAccount;
-        this.currentAccount = i;
-        this.releaseRunnable = new Runnable() { // from class: org.telegram.messenger.ContactsLoadingObserver$$ExternalSyntheticLambda1
-            @Override // java.lang.Runnable
-            public final void run() {
-                r0.onContactsLoadingStateUpdated(ContactsLoadingObserver.this.currentAccount, true);
-            }
-        };
-        this.contactsController = ContactsController.getInstance(i);
-        this.notificationCenter = NotificationCenter.getInstance(i);
+        int i10 = UserConfig.selectedAccount;
+        this.currentAccount = i10;
+        this.releaseRunnable = new d1(this, 17);
+        this.contactsController = ContactsController.getInstance(i10);
+        this.notificationCenter = NotificationCenter.getInstance(i10);
         this.handler = new Handler(Looper.myLooper());
     }
 
-    public void start(long j) {
-        if (onContactsLoadingStateUpdated(this.currentAccount, false)) {
-            return;
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0(int i10, int i11, Object[] objArr) {
+        if (i10 == NotificationCenter.contactsDidLoad) {
+            onContactsLoadingStateUpdated(i11, false);
         }
-        this.notificationCenter.addObserver(this.observer, NotificationCenter.contactsDidLoad);
-        this.handler.postDelayed(this.releaseRunnable, j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1() {
+        onContactsLoadingStateUpdated(this.currentAccount, true);
+    }
+
+    public static void observe(Callback callback, long j10) {
+        new ContactsLoadingObserver(callback).start(j10);
+    }
+
+    private boolean onContactsLoadingStateUpdated(int i10, boolean z10) {
+        if (this.released) {
+            return false;
+        }
+        boolean z11 = this.contactsController.contactsLoaded;
+        if (!z11 && !z10) {
+            return false;
+        }
+        release();
+        this.callback.onResult(z11);
+        return true;
     }
 
     public void release() {
@@ -73,17 +75,11 @@ public final class ContactsLoadingObserver {
         this.released = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public boolean onContactsLoadingStateUpdated(int i, boolean z) {
-        if (this.released) {
-            return false;
+    public void start(long j10) {
+        if (onContactsLoadingStateUpdated(this.currentAccount, false)) {
+            return;
         }
-        boolean z2 = this.contactsController.contactsLoaded;
-        if (!z2 && !z) {
-            return false;
-        }
-        release();
-        this.callback.onResult(z2);
-        return true;
+        this.notificationCenter.addObserver(this.observer, NotificationCenter.contactsDidLoad);
+        this.handler.postDelayed(this.releaseRunnable, j10);
     }
 }

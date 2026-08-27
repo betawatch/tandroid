@@ -2,15 +2,16 @@ package com.google.android.play.core.integrity;
 
 import android.os.Build;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class ao extends IntegrityTokenRequest {
     private final String a;
     private final Long b;
     private final Object c = null;
 
-    /* synthetic */ ao(String str, Long l, Object obj, an anVar) {
+    public /* synthetic */ ao(String str, Long l10, Object obj, an anVar) {
         this.a = str;
-        this.b = l;
+        this.b = l10;
     }
 
     private static boolean a() {
@@ -23,36 +24,27 @@ final class ao extends IntegrityTokenRequest {
     }
 
     public final boolean equals(Object obj) {
-        boolean z;
-        Long l;
+        boolean z10;
+        Long l10;
         if (obj == this) {
             return true;
         }
         if (obj instanceof IntegrityTokenRequest) {
             IntegrityTokenRequest integrityTokenRequest = (IntegrityTokenRequest) obj;
-            if (this.a.equals(integrityTokenRequest.nonce()) && ((l = this.b) != null ? l.equals(integrityTokenRequest.cloudProjectNumber()) : integrityTokenRequest.cloudProjectNumber() == null)) {
-                z = true;
-                if ((obj instanceof ao) || !a()) {
-                    return z;
-                }
-                ao aoVar = (ao) obj;
-                if (!z) {
-                    return false;
-                }
-                Object obj2 = aoVar.c;
-                return true;
+            if (this.a.equals(integrityTokenRequest.nonce()) && ((l10 = this.b) != null ? l10.equals(integrityTokenRequest.cloudProjectNumber()) : integrityTokenRequest.cloudProjectNumber() == null)) {
+                z10 = true;
+                return ((obj instanceof ao) || !a()) ? z10 : z10;
             }
         }
-        z = false;
+        z10 = false;
         if (obj instanceof ao) {
         }
-        return z;
     }
 
     public final int hashCode() {
         int hashCode = this.a.hashCode() ^ 1000003;
-        Long l = this.b;
-        int hashCode2 = (hashCode * 1000003) ^ (l == null ? 0 : l.hashCode());
+        Long l10 = this.b;
+        int hashCode2 = (hashCode * 1000003) ^ (l10 == null ? 0 : l10.hashCode());
         return a() ? hashCode2 * 1000003 : hashCode2;
     }
 

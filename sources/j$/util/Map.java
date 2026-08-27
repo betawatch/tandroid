@@ -9,25 +9,25 @@ import java.util.function.Function;
 
 /* loaded from: classes2.dex */
 public interface Map<K, V> {
-    V compute(K k, BiFunction<? super K, ? super V, ? extends V> biFunction);
+    V compute(K k10, BiFunction<? super K, ? super V, ? extends V> biFunction);
 
-    V computeIfAbsent(K k, Function<? super K, ? extends V> function);
+    V computeIfAbsent(K k10, Function<? super K, ? extends V> function);
 
-    V computeIfPresent(K k, BiFunction<? super K, ? super V, ? extends V> biFunction);
+    V computeIfPresent(K k10, BiFunction<? super K, ? super V, ? extends V> biFunction);
 
     void forEach(BiConsumer<? super K, ? super V> biConsumer);
 
     V getOrDefault(Object obj, V v);
 
-    V merge(K k, V v, BiFunction<? super V, ? super V, ? extends V> biFunction);
+    V merge(K k10, V v, BiFunction<? super V, ? super V, ? extends V> biFunction);
 
-    V putIfAbsent(K k, V v);
+    V putIfAbsent(K k10, V v);
 
     boolean remove(Object obj, Object obj2);
 
-    V replace(K k, V v);
+    V replace(K k10, V v);
 
-    boolean replace(K k, V v, V v2);
+    boolean replace(K k10, V v, V v4);
 
     void replaceAll(BiFunction<? super K, ? super V, ? extends V> biFunction);
 
@@ -101,8 +101,8 @@ public interface Map<K, V> {
             for (Map.Entry<K, V> entry : map.entrySet()) {
                 try {
                     biConsumer.accept(entry.getKey(), entry.getValue());
-                } catch (IllegalStateException e) {
-                    throw new ConcurrentModificationException(e);
+                } catch (IllegalStateException e9) {
+                    throw new ConcurrentModificationException(e9);
                 }
             }
         }
@@ -114,11 +114,11 @@ public interface Map<K, V> {
                 try {
                     try {
                         entry.setValue(biFunction.apply(entry.getKey(), entry.getValue()));
-                    } catch (IllegalStateException e) {
-                        throw new ConcurrentModificationException(e);
+                    } catch (IllegalStateException e9) {
+                        throw new ConcurrentModificationException(e9);
                     }
-                } catch (IllegalStateException e2) {
-                    throw new ConcurrentModificationException(e2);
+                } catch (IllegalStateException e10) {
+                    throw new ConcurrentModificationException(e10);
                 }
             }
         }

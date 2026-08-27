@@ -1,21 +1,29 @@
 package androidx.lifecycle;
 
-import androidx.lifecycle.ClassesInfoCache;
-import androidx.lifecycle.Lifecycle;
+import java.util.HashMap;
+import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 @Deprecated
 /* loaded from: classes.dex */
-class ReflectiveGenericLifecycleObserver implements LifecycleEventObserver {
-    private final ClassesInfoCache.CallbackInfo mInfo;
-    private final Object mWrapped;
+class ReflectiveGenericLifecycleObserver implements r {
+    public final s a;
+    public final b b;
 
-    ReflectiveGenericLifecycleObserver(Object obj) {
-        this.mWrapped = obj;
-        this.mInfo = ClassesInfoCache.sInstance.getInfo(obj.getClass());
+    public ReflectiveGenericLifecycleObserver(s sVar) {
+        this.a = sVar;
+        d dVar = d.c;
+        Class<?> cls = sVar.getClass();
+        b bVar = (b) dVar.a.get(cls);
+        this.b = bVar == null ? dVar.a(cls, null) : bVar;
     }
 
-    @Override // androidx.lifecycle.LifecycleEventObserver
-    public void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
-        this.mInfo.invokeCallbacks(lifecycleOwner, event, this.mWrapped);
+    @Override // androidx.lifecycle.r
+    public final void d(t tVar, m mVar) {
+        HashMap hashMap = this.b.a;
+        List list = (List) hashMap.get(mVar);
+        s sVar = this.a;
+        b.a(list, tVar, mVar, sVar);
+        b.a((List) hashMap.get(m.ON_ANY), tVar, mVar, sVar);
     }
 }

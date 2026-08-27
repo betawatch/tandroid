@@ -20,44 +20,43 @@ public final class g implements Serializable {
     static {
         Object[] objArr = {ChronoUnit.YEARS, ChronoUnit.MONTHS, ChronoUnit.DAYS};
         ArrayList arrayList = new ArrayList(3);
-        for (int i = 0; i < 3; i++) {
-            arrayList.add(Objects.requireNonNull(objArr[i]));
+        for (int i10 = 0; i10 < 3; i10++) {
+            arrayList.add(Objects.requireNonNull(objArr[i10]));
         }
         Collections.unmodifiableList(arrayList);
     }
 
-    public g(k kVar, int i, int i2, int i3) {
+    public g(k kVar, int i10, int i11, int i12) {
         Objects.requireNonNull(kVar, "chrono");
         this.a = kVar;
-        this.b = i;
-        this.c = i2;
-        this.d = i3;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
     }
 
     public final String toString() {
-        k kVar = this.a;
-        int i = this.d;
-        int i2 = this.c;
-        int i3 = this.b;
-        if (i3 == 0 && i2 == 0 && i == 0) {
-            return kVar.toString() + " P0D";
+        if (this.b == 0 && this.c == 0 && this.d == 0) {
+            return this.a.toString() + " P0D";
         }
-        StringBuilder sb = new StringBuilder();
-        sb.append(kVar.toString());
-        sb.append(" P");
-        if (i3 != 0) {
-            sb.append(i3);
-            sb.append('Y');
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(this.a.toString());
+        sb2.append(" P");
+        int i10 = this.b;
+        if (i10 != 0) {
+            sb2.append(i10);
+            sb2.append('Y');
         }
-        if (i2 != 0) {
-            sb.append(i2);
-            sb.append('M');
+        int i11 = this.c;
+        if (i11 != 0) {
+            sb2.append(i11);
+            sb2.append('M');
         }
-        if (i != 0) {
-            sb.append(i);
-            sb.append('D');
+        int i12 = this.d;
+        if (i12 != 0) {
+            sb2.append(i12);
+            sb2.append('D');
         }
-        return sb.toString();
+        return sb2.toString();
     }
 
     public final boolean equals(Object obj) {
@@ -74,11 +73,11 @@ public final class g implements Serializable {
     }
 
     public final int hashCode() {
-        return this.a.hashCode() ^ (Integer.rotateLeft(this.d, 16) + (Integer.rotateLeft(this.c, 8) + this.b));
+        return (Integer.rotateLeft(this.d, 16) + (Integer.rotateLeft(this.c, 8) + this.b)) ^ this.a.hashCode();
     }
 
     public Object writeReplace() {
-        return new D((byte) 9, this);
+        return new d0((byte) 9, this);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {

@@ -2,175 +2,155 @@ package org.telegram.ui.Components;
 
 import android.graphics.Bitmap;
 import android.os.Trace;
-import java.util.Map;
+import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* loaded from: classes5.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes3.dex */
 public final class RLottieNative {
-    private final int[] mMetaData;
-    private long mNativePtr;
-    private final AtomicBoolean mRecycled = new AtomicBoolean(false);
+    public final int[] a;
+    public long b;
+    public final AtomicBoolean c = new AtomicBoolean(false);
 
-    private static native long nCreate(String str, String str2, int i, int i2, int[] iArr, boolean z, int[] iArr2, boolean z2, int i3, String[] strArr, int[] iArr3);
+    public RLottieNative(long j10, int[] iArr) {
+        this.b = j10;
+        this.a = iArr;
+    }
+
+    public static RLottieNative a(String str, String str2, int i10, int i11, int[] iArr, boolean z10, int[] iArr2, boolean z11, int i12, HashMap hashMap) {
+        String[] strArr;
+        int[] iArr3;
+        String str3;
+        int i13;
+        int i14;
+        boolean z12;
+        int[] iArr4;
+        boolean z13;
+        int i15;
+        String str4;
+        int[] iArr5 = new int[3];
+        Trace.beginSection("RLottieNative#create");
+        if (hashMap == null) {
+            strArr = null;
+        } else {
+            try {
+                strArr = (String[]) hashMap.keySet().toArray(new String[0]);
+            } catch (Throwable th) {
+                Trace.endSection();
+                throw th;
+            }
+        }
+        if (hashMap == null) {
+            iArr3 = null;
+            str4 = str;
+            str3 = str2;
+            i13 = i10;
+            i14 = i11;
+            z12 = z10;
+            iArr4 = iArr2;
+            z13 = z11;
+            i15 = i12;
+        } else {
+            int[] iArr6 = new int[strArr.length];
+            for (int i16 = 0; i16 < strArr.length; i16++) {
+                iArr6[i16] = ((Integer) hashMap.get(strArr[i16])).intValue();
+            }
+            iArr3 = iArr6;
+            str3 = str2;
+            i13 = i10;
+            i14 = i11;
+            z12 = z10;
+            iArr4 = iArr2;
+            z13 = z11;
+            i15 = i12;
+            str4 = str;
+        }
+        long nCreate = nCreate(str4, str3, i13, i14, iArr5, z12, iArr4, z13, i15, strArr, iArr3);
+        Trace.endSection();
+        if (nCreate == 0) {
+            return null;
+        }
+        if (iArr != null && iArr.length == 3) {
+            System.arraycopy(iArr5, 0, iArr, 0, 3);
+        }
+        return new RLottieNative(nCreate, iArr5);
+    }
+
+    public static RLottieNative b(String str, String str2, int[] iArr, int[] iArr2, HashMap hashMap) {
+        int[] iArr3;
+        if (str != null && !str.isEmpty()) {
+            int[] iArr4 = new int[3];
+            String[] strArr = hashMap == null ? null : (String[]) hashMap.keySet().toArray(new String[0]);
+            if (hashMap == null) {
+                iArr3 = null;
+            } else {
+                int[] iArr5 = new int[strArr.length];
+                for (int i10 = 0; i10 < strArr.length; i10++) {
+                    iArr5[i10] = ((Integer) hashMap.get(strArr[i10])).intValue();
+                }
+                iArr3 = iArr5;
+            }
+            Trace.beginSection("RLottieNative#createWithJson");
+            try {
+                long nCreateWithJson = nCreateWithJson(str, str2, iArr4, iArr2, strArr, iArr3);
+                Trace.endSection();
+                if (nCreateWithJson != 0) {
+                    if (iArr != null && iArr.length == 3) {
+                        System.arraycopy(iArr4, 0, iArr, 0, 3);
+                    }
+                    return new RLottieNative(nCreateWithJson, iArr4);
+                }
+            } catch (Throwable th) {
+                Trace.endSection();
+                throw th;
+            }
+        }
+        return null;
+    }
+
+    private static native long nCreate(String str, String str2, int i10, int i11, int[] iArr, boolean z10, int[] iArr2, boolean z11, int i12, String[] strArr, int[] iArr3);
 
     private static native long nCreateWithJson(String str, String str2, int[] iArr, int[] iArr2, String[] strArr, int[] iArr3);
 
-    private static native void nDestroy(long j);
+    private static native void nDestroy(long j10);
 
-    private static native int nGetFrame(long j, int i, Bitmap bitmap, boolean z);
+    private static native int nGetFrame(long j10, int i10, Bitmap bitmap, boolean z10);
 
-    private RLottieNative(long j, int[] iArr) {
-        this.mNativePtr = j;
-        this.mMetaData = iArr;
-    }
-
-    public static RLottieNative createFromFile(String str, String str2, int i, int i2, boolean z, int[] iArr, boolean z2, int i3) {
-        return createFromFile(str, str2, i, i2, null, z, iArr, z2, i3, null);
-    }
-
-    public static RLottieNative createFromFile(String str, String str2, int i, int i2, int[] iArr, boolean z, int[] iArr2, boolean z2, int i3, Map map) {
-        int[] iArr3 = new int[3];
-        long create = create(str, str2, i, i2, iArr3, z, iArr2, z2, i3, map);
-        if (create == 0) {
-            return null;
+    public final int c(int i10, Bitmap bitmap, boolean z10) {
+        if (this.c.get()) {
+            throw new IllegalStateException("Called method on a recycled RLottie instance");
         }
-        if (iArr != null && iArr.length == 3) {
-            System.arraycopy(iArr3, 0, iArr, 0, 3);
+        long j10 = this.b;
+        Trace.beginSection("RLottieNative#getFrame");
+        try {
+            return nGetFrame(j10, i10, bitmap, z10);
+        } finally {
+            Trace.endSection();
         }
-        return new RLottieNative(create, iArr3);
     }
 
-    public static RLottieNative createFromRawJson(String str, String str2, int[] iArr) {
-        return createFromRawJson(str, str2, null, iArr);
-    }
-
-    public static RLottieNative createFromRawJson(String str, String str2, int[] iArr, int[] iArr2) {
-        return createFromRawJson(str, str2, iArr, iArr2, null);
-    }
-
-    public static RLottieNative createFromRawJson(String str, String str2, int[] iArr, int[] iArr2, Map map) {
-        if (str == null || str.isEmpty()) {
-            return null;
-        }
-        int[] iArr3 = new int[3];
-        String[] strArr = map == null ? null : (String[]) map.keySet().toArray(new String[0]);
-        long createWithJson = createWithJson(str, str2, iArr3, iArr2, strArr, map == null ? null : layerNamesToColors(strArr, map));
-        if (createWithJson == 0) {
-            return null;
-        }
-        if (iArr != null && iArr.length == 3) {
-            System.arraycopy(iArr3, 0, iArr, 0, 3);
-        }
-        return new RLottieNative(createWithJson, iArr3);
-    }
-
-    public int getFrame(int i, Bitmap bitmap, boolean z) {
-        checkNotRecycled();
-        return getFrame(this.mNativePtr, i, bitmap, z);
-    }
-
-    public int getFrameCount() {
-        return this.mMetaData[0];
-    }
-
-    public int getFps() {
-        return this.mMetaData[1];
-    }
-
-    public void recycle() {
-        if (this.mRecycled.compareAndSet(false, true)) {
-            long j = this.mNativePtr;
-            this.mNativePtr = 0L;
-            if (j != 0) {
-                destroy(j);
+    public final void d() {
+        if (this.c.compareAndSet(false, true)) {
+            long j10 = this.b;
+            this.b = 0L;
+            if (j10 != 0) {
+                Trace.beginSection("RLottieNative#destroy");
+                try {
+                    nDestroy(j10);
+                } finally {
+                    Trace.endSection();
+                }
             }
         }
     }
 
-    protected void finalize() {
+    public final void finalize() {
         try {
-            if (!this.mRecycled.get()) {
-                recycle();
+            if (!this.c.get()) {
+                d();
             }
         } finally {
             super.finalize();
         }
-    }
-
-    private void checkNotRecycled() {
-        if (this.mRecycled.get()) {
-            throw new IllegalStateException("Called method on a recycled RLottie instance");
-        }
-    }
-
-    private static long create(String str, String str2, int i, int i2, int[] iArr, boolean z, int[] iArr2, boolean z2, int i3, Map map) {
-        String[] strArr;
-        Trace.beginSection("RLottieNative#create");
-        if (map == null) {
-            strArr = null;
-        } else {
-            try {
-                strArr = (String[]) map.keySet().toArray(new String[0]);
-            } finally {
-                Trace.endSection();
-            }
-        }
-        return nCreate(str, str2, i, i2, iArr, z, iArr2, z2, i3, strArr, map != null ? layerNamesToColors(strArr, map) : null);
-    }
-
-    private static long createWithJson(String str, String str2, int[] iArr, int[] iArr2, String[] strArr, int[] iArr3) {
-        Trace.beginSection("RLottieNative#createWithJson");
-        try {
-            return nCreateWithJson(str, str2, iArr, iArr2, strArr, iArr3);
-        } finally {
-            Trace.endSection();
-        }
-    }
-
-    public static int getFrame(long j, int i, Bitmap bitmap, boolean z) {
-        Trace.beginSection("RLottieNative#getFrame");
-        try {
-            return nGetFrame(j, i, bitmap, z);
-        } finally {
-            Trace.endSection();
-        }
-    }
-
-    private static int[] layerNamesToColors(String[] strArr, Map map) {
-        int[] iArr = new int[strArr.length];
-        for (int i = 0; i < strArr.length; i++) {
-            iArr[i] = ((Integer) map.get(strArr[i])).intValue();
-        }
-        return iArr;
-    }
-
-    public static void destroy(long j) {
-        Trace.beginSection("RLottieNative#destroy");
-        try {
-            nDestroy(j);
-        } finally {
-            Trace.endSection();
-        }
-    }
-
-    public static long getFramesCount(String str, String str2) {
-        RLottieNative createFromFile = createFromFile(str, str2, 0, 0, false, null, false, 0);
-        if (createFromFile == null) {
-            return 0L;
-        }
-        int frameCount = createFromFile.getFrameCount();
-        createFromFile.recycle();
-        return frameCount;
-    }
-
-    public static double getDuration(String str, String str2) {
-        RLottieNative createFromFile = createFromFile(str, str2, 0, 0, false, null, false, 0);
-        if (createFromFile == null) {
-            return 0.0d;
-        }
-        int frameCount = createFromFile.getFrameCount();
-        int fps = createFromFile.getFps();
-        createFromFile.recycle();
-        return frameCount / fps;
     }
 }

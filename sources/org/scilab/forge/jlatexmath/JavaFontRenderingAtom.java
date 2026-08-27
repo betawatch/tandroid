@@ -3,20 +3,16 @@ package org.scilab.forge.jlatexmath;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import ru.noties.jlatexmath.awt.Font;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class JavaFontRenderingAtom extends Atom {
     private TeXFormula.FontInfos fontInfos;
     private String str;
     private int type;
 
-    public JavaFontRenderingAtom(String str, int i) {
+    public JavaFontRenderingAtom(String str, int i10) {
         this.str = str;
-        this.type = i;
-    }
-
-    public JavaFontRenderingAtom(String str, TeXFormula.FontInfos fontInfos) {
-        this(str, 0);
-        this.fontInfos = fontInfos;
+        this.type = i10;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
@@ -28,8 +24,8 @@ public class JavaFontRenderingAtom extends Atom {
             return new JavaFontRenderingBox(this.str, this.type, DefaultTeXFont.getSizeFactor(teXEnvironment.getStyle()));
         }
         DefaultTeXFont defaultTeXFont = (DefaultTeXFont) teXEnvironment.getTeXFont();
-        int i = (defaultTeXFont.isIt ? 2 : 0) | (defaultTeXFont.isBold ? 1 : 0);
-        boolean z = defaultTeXFont.isRoman;
+        int i10 = (defaultTeXFont.isIt ? 2 : 0) | (defaultTeXFont.isBold ? 1 : 0);
+        boolean z10 = defaultTeXFont.isRoman;
         if (defaultTeXFont.isSs) {
             TeXFormula.FontInfos fontInfos = this.fontInfos;
             String str = fontInfos.sansserif;
@@ -51,6 +47,11 @@ public class JavaFontRenderingAtom extends Atom {
                 font3 = font;
             }
         }
-        return new JavaFontRenderingBox(this.str, i, DefaultTeXFont.getSizeFactor(teXEnvironment.getStyle()), font3, z);
+        return new JavaFontRenderingBox(this.str, i10, DefaultTeXFont.getSizeFactor(teXEnvironment.getStyle()), font3, z10);
+    }
+
+    public JavaFontRenderingAtom(String str, TeXFormula.FontInfos fontInfos) {
+        this(str, 0);
+        this.fontInfos = fontInfos;
     }
 }

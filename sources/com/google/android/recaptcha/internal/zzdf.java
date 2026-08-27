@@ -2,29 +2,30 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import kotlinx.coroutines.CompletableDeferred;
-import kotlinx.coroutines.CompletableDeferredKt;
-import kotlinx.coroutines.Deferred;
-import kotlinx.coroutines.Job;
+import id.f0;
+import id.i0;
+import id.s;
+import id.t;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzdf {
-    public static final Deferred zza(Task task) {
-        final CompletableDeferred CompletableDeferred$default = CompletableDeferredKt.CompletableDeferred$default(null, 1, null);
+    public static final i0 zza(Task task) {
+        final t a2 = f0.a();
         task.addOnCompleteListener(zzdd.zza, new OnCompleteListener() { // from class: com.google.android.recaptcha.internal.zzdc
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task2) {
-                CompletableDeferred completableDeferred = CompletableDeferred.this;
+                s sVar = s.this;
                 Exception exception = task2.getException();
                 if (exception != null) {
-                    completableDeferred.completeExceptionally(exception);
+                    ((t) sVar).L(exception);
                 } else if (task2.isCanceled()) {
-                    Job.DefaultImpls.cancel$default(completableDeferred, null, 1, null);
+                    sVar.cancel(null);
                 } else {
-                    completableDeferred.complete(task2.getResult());
+                    ((t) sVar).A(task2.getResult());
                 }
             }
         });
-        return new zzde(CompletableDeferred$default);
+        return new zzde(a2);
     }
 }

@@ -2,12 +2,13 @@ package com.google.android.recaptcha.internal;
 
 import java.util.Iterator;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzmo implements Iterator {
     boolean zza = true;
     final /* synthetic */ Iterator zzb;
 
-    zzmo(zzmp zzmpVar, Iterator it) {
+    public zzmo(zzmp zzmpVar, Iterator it) {
         this.zzb = it;
     }
 

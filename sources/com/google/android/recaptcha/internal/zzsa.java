@@ -2,18 +2,16 @@ package com.google.android.recaptcha.internal;
 
 import java.util.Map;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzsa extends zzrz {
-    zzsa() {
-    }
-
     @Override // com.google.android.recaptcha.internal.zzrz
-    final void zza(Object obj) {
+    public final void zza(Object obj) {
         ((zzsk) obj).zzb.zzg();
     }
 
     @Override // com.google.android.recaptcha.internal.zzrz
-    final void zzb(zzvi zzviVar, Map.Entry entry) {
+    public final void zzb(zzvi zzviVar, Map.Entry entry) {
         zzsl zzslVar = (zzsl) entry.getKey();
         zzvg zzvgVar = zzvg.zza;
         switch (zzslVar.zzb.ordinal()) {

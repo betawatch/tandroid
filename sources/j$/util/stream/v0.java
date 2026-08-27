@@ -1,29 +1,59 @@
 package j$.util.stream;
 
-import java.util.function.DoubleConsumer;
+import j$.util.Objects;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class v0 implements DoubleConsumer {
-    public final /* synthetic */ int a;
+public final class v0 extends d5 {
+    public boolean b;
+    public final j$.util.i0 c;
+    public final /* synthetic */ t0 d;
 
-    public /* synthetic */ v0(int i) {
-        this.a = i;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v0(t0 t0Var, j5 j5Var) {
+        super(j5Var);
+        this.d = t0Var;
+        j5 j5Var2 = this.a;
+        Objects.requireNonNull(j5Var2);
+        this.c = new j$.util.i0(j5Var2, 1);
     }
 
-    private final void accept$j$$util$stream$Node$OfDouble$$ExternalSyntheticLambda0(double d) {
+    @Override // j$.util.stream.d5, j$.util.stream.j5
+    public final void o(long j10) {
+        this.a.o(-1L);
     }
 
-    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfDouble$$ExternalSyntheticLambda0(double d) {
-    }
-
-    @Override // java.util.function.DoubleConsumer
-    public final void accept(double d) {
-        int i = this.a;
-    }
-
-    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
-        switch (this.a) {
+    @Override // j$.util.stream.h5, java.util.function.IntConsumer
+    public final void accept(int i10) {
+        IntStream intStream = (IntStream) ((k0) this.d.t).apply(i10);
+        if (intStream != null) {
+            try {
+                boolean z10 = this.b;
+                j$.util.i0 i0Var = this.c;
+                if (!z10) {
+                    intStream.sequential().forEach(i0Var);
+                } else {
+                    j$.util.x0 spliterator = intStream.sequential().spliterator();
+                    while (!this.a.q() && spliterator.tryAdvance((IntConsumer) i0Var)) {
+                    }
+                }
+            } catch (Throwable th) {
+                try {
+                    intStream.close();
+                } catch (Throwable th2) {
+                    th.addSuppressed(th2);
+                }
+                throw th;
+            }
         }
-        return j$.com.android.tools.r8.a.b(this, doubleConsumer);
+        if (intStream != null) {
+            intStream.close();
+        }
+    }
+
+    @Override // j$.util.stream.d5, j$.util.stream.j5
+    public final boolean q() {
+        this.b = true;
+        return this.a.q();
     }
 }

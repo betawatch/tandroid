@@ -3,6 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzsv {
     static final Charset zza;
@@ -18,18 +19,18 @@ public final class zzsv {
         zzqq.zzH(bArr, 0, 0, false);
     }
 
-    public static int zza(boolean z) {
-        return z ? 1231 : 1237;
+    public static int zza(boolean z10) {
+        return z10 ? 1231 : 1237;
     }
 
-    static int zzb(int i, byte[] bArr, int i2, int i3) {
-        for (int i4 = 0; i4 < i3; i4++) {
-            i = (i * 31) + bArr[i4];
+    public static int zzb(int i10, byte[] bArr, int i11, int i12) {
+        for (int i13 = 0; i13 < i12; i13++) {
+            i10 = (i10 * 31) + bArr[i13];
         }
-        return i;
+        return i10;
     }
 
-    static Object zzc(Object obj, String str) {
+    public static Object zzc(Object obj, String str) {
         if (obj != null) {
             return obj;
         }

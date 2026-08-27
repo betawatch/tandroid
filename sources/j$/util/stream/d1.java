@@ -1,79 +1,59 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.ArrayDeque;
-import java.util.function.DoubleConsumer;
-import java.util.function.IntConsumer;
+import j$.util.Objects;
 import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public abstract class d1 extends f1 implements j$.util.c0 {
-    @Override // j$.util.c0
-    public final boolean tryAdvance(Object obj) {
-        B0 b0;
-        if (!c()) {
-            return false;
-        }
-        boolean tryAdvance = ((j$.util.c0) this.d).tryAdvance(obj);
-        if (!tryAdvance) {
-            if (this.c == null && (b0 = (B0) f1.a(this.e)) != null) {
-                j$.util.c0 spliterator = b0.spliterator();
-                this.d = spliterator;
-                return spliterator.tryAdvance(obj);
-            }
-            this.a = null;
-        }
-        return tryAdvance;
+public final class d1 extends e5 {
+    public boolean b;
+    public final j$.util.m0 c;
+    public final /* synthetic */ e1 d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d1(e1 e1Var, j5 j5Var) {
+        super(j5Var);
+        this.d = e1Var;
+        j5 j5Var2 = this.a;
+        Objects.requireNonNull(j5Var2);
+        this.c = new j$.util.m0(j5Var2, 1);
     }
 
-    @Override // j$.util.c0
-    public final void forEachRemaining(Object obj) {
-        if (this.a == null) {
-            return;
-        }
-        if (this.d == null) {
-            Spliterator spliterator = this.c;
-            if (spliterator == null) {
-                ArrayDeque b = b();
-                while (true) {
-                    B0 b0 = (B0) f1.a(b);
-                    if (b0 != null) {
-                        b0.e(obj);
-                    } else {
-                        this.a = null;
-                        return;
+    @Override // j$.util.stream.e5, j$.util.stream.j5
+    public final void o(long j10) {
+        this.a.o(-1L);
+    }
+
+    @Override // j$.util.stream.i5, j$.util.stream.j5
+    public final void accept(long j10) {
+        LongStream longStream = (LongStream) ((j$.time.t) this.d.t).apply(j10);
+        if (longStream != null) {
+            try {
+                boolean z10 = this.b;
+                j$.util.m0 m0Var = this.c;
+                if (!z10) {
+                    longStream.sequential().forEach(m0Var);
+                } else {
+                    j$.util.a1 spliterator = longStream.sequential().spliterator();
+                    while (!this.a.q() && spliterator.tryAdvance((LongConsumer) m0Var)) {
                     }
                 }
-            } else {
-                ((j$.util.c0) spliterator).forEachRemaining(obj);
+            } catch (Throwable th) {
+                try {
+                    longStream.close();
+                } catch (Throwable th2) {
+                    th.addSuppressed(th2);
+                }
+                throw th;
             }
-        } else {
-            while (tryAdvance(obj)) {
-            }
+        }
+        if (longStream != null) {
+            longStream.close();
         }
     }
 
-    public /* bridge */ /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
-        forEachRemaining((Object) intConsumer);
-    }
-
-    public /* bridge */ /* synthetic */ boolean tryAdvance(IntConsumer intConsumer) {
-        return tryAdvance((Object) intConsumer);
-    }
-
-    public /* bridge */ /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
-        forEachRemaining((Object) longConsumer);
-    }
-
-    public /* bridge */ /* synthetic */ boolean tryAdvance(LongConsumer longConsumer) {
-        return tryAdvance((Object) longConsumer);
-    }
-
-    public /* bridge */ /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
-        forEachRemaining((Object) doubleConsumer);
-    }
-
-    public /* bridge */ /* synthetic */ boolean tryAdvance(DoubleConsumer doubleConsumer) {
-        return tryAdvance((Object) doubleConsumer);
+    @Override // j$.util.stream.e5, j$.util.stream.j5
+    public final boolean q() {
+        this.b = true;
+        return this.a.q();
     }
 }

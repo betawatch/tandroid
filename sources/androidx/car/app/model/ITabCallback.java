@@ -6,67 +6,22 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public interface ITabCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$model$ITabCallback".replace('$', '.');
 
-    public static class Default implements ITabCallback {
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return null;
-        }
-
-        @Override // androidx.car.app.model.ITabCallback
-        public void onTabSelected(String str, IOnDoneCallback iOnDoneCallback) {
-        }
-    }
-
     void onTabSelected(String str, IOnDoneCallback iOnDoneCallback);
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static abstract class Stub extends Binder implements ITabCallback {
         static final int TRANSACTION_onTabSelected = 2;
 
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return this;
-        }
-
-        public Stub() {
-            attachInterface(this, ITabCallback.DESCRIPTOR);
-        }
-
-        public static ITabCallback asInterface(IBinder iBinder) {
-            if (iBinder == null) {
-                return null;
-            }
-            IInterface queryLocalInterface = iBinder.queryLocalInterface(ITabCallback.DESCRIPTOR);
-            if (queryLocalInterface != null && (queryLocalInterface instanceof ITabCallback)) {
-                return (ITabCallback) queryLocalInterface;
-            }
-            return new Proxy(iBinder);
-        }
-
-        @Override // android.os.Binder
-        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String str = ITabCallback.DESCRIPTOR;
-            if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(str);
-            }
-            if (i == 1598968902) {
-                parcel2.writeString(str);
-                return true;
-            }
-            if (i == 2) {
-                onTabSelected(parcel.readString(), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
-                return true;
-            }
-            return super.onTransact(i, parcel, parcel2, i2);
-        }
-
-        private static class Proxy implements ITabCallback {
+        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        public static class Proxy implements ITabCallback {
             private IBinder mRemote;
 
-            Proxy(IBinder iBinder) {
+            public Proxy(IBinder iBinder) {
                 this.mRemote = iBinder;
             }
 
@@ -91,6 +46,52 @@ public interface ITabCallback extends IInterface {
                     obtain.recycle();
                 }
             }
+        }
+
+        public Stub() {
+            attachInterface(this, ITabCallback.DESCRIPTOR);
+        }
+
+        public static ITabCallback asInterface(IBinder iBinder) {
+            if (iBinder == null) {
+                return null;
+            }
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(ITabCallback.DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof ITabCallback)) ? new Proxy(iBinder) : (ITabCallback) queryLocalInterface;
+        }
+
+        @Override // android.os.Binder
+        public boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+            String str = ITabCallback.DESCRIPTOR;
+            if (i10 >= 1 && i10 <= 16777215) {
+                parcel.enforceInterface(str);
+            }
+            if (i10 == 1598968902) {
+                parcel2.writeString(str);
+                return true;
+            }
+            if (i10 != 2) {
+                return super.onTransact(i10, parcel, parcel2, i11);
+            }
+            onTabSelected(parcel.readString(), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
+            return true;
+        }
+
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return this;
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class Default implements ITabCallback {
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return null;
+        }
+
+        @Override // androidx.car.app.model.ITabCallback
+        public void onTabSelected(String str, IOnDoneCallback iOnDoneCallback) {
         }
     }
 }

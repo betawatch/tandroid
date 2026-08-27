@@ -1,45 +1,44 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
+import ad.p;
+import h7.k6;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzhy extends SuspendLambda implements Function2 {
+final class zzhy extends i implements p {
     final /* synthetic */ zzib zza;
     final /* synthetic */ String zzb;
     final /* synthetic */ String zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzhy(zzib zzibVar, String str, String str2, Continuation continuation) {
-        super(2, continuation);
+    public zzhy(zzib zzibVar, String str, String str2, c cVar) {
+        super(2, cVar);
         this.zza = zzibVar;
         this.zzb = str;
         this.zzc = str2;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzhy(this.zza, this.zzb, this.zzc, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        return new zzhy(this.zza, this.zzb, this.zzc, cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzhy) create((zzgr) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzhy) create((zzgr) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
-        IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        ResultKt.throwOnFailure(obj);
+        sc.a aVar = sc.a.a;
+        k6.b(obj);
         try {
             zzib.zza(this.zza).zzc(this.zzb, this.zzc);
-            return Unit.INSTANCE;
-        } catch (Exception e) {
-            throw new zzcg(zzce.zzk, zzcd.zzT, e.getMessage(), null, 8, null);
+            return pc.i.a;
+        } catch (Exception e9) {
+            throw new zzcg(zzce.zzk, zzcd.zzT, e9.getMessage(), null, 8, null);
         }
     }
 }

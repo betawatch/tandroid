@@ -7,7 +7,8 @@ import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CaptureRequest;
 import java.util.ArrayList;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class CameraInfo {
     protected Camera camera;
     public CameraCaptureSession cameraCaptureSession;
@@ -19,25 +20,25 @@ public class CameraInfo {
     protected ArrayList<Size> pictureSizes = new ArrayList<>();
     protected ArrayList<Size> previewSizes = new ArrayList<>();
 
-    public CameraInfo(int i, int i2) {
-        this.cameraId = i;
-        this.frontCamera = i2;
-    }
-
-    public int getCameraId() {
-        return this.cameraId;
+    public CameraInfo(int i10, int i11) {
+        this.cameraId = i10;
+        this.frontCamera = i11;
     }
 
     private Camera getCamera() {
         return this.camera;
     }
 
-    public ArrayList<Size> getPreviewSizes() {
-        return this.previewSizes;
+    public int getCameraId() {
+        return this.cameraId;
     }
 
     public ArrayList<Size> getPictureSizes() {
         return this.pictureSizes;
+    }
+
+    public ArrayList<Size> getPreviewSizes() {
+        return this.previewSizes;
     }
 
     public boolean isFrontface() {

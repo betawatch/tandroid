@@ -7,7 +7,7 @@ import java.util.concurrent.ForkJoinPool;
 /* loaded from: classes2.dex */
 public abstract class d extends CountedCompleter {
     public static final int g = ForkJoinPool.getCommonPoolParallelism() << 2;
-    public final a a;
+    public final t3 a;
     public Spliterator b;
     public long c;
     public d d;
@@ -18,9 +18,9 @@ public abstract class d extends CountedCompleter {
 
     public abstract d c(Spliterator spliterator);
 
-    public d(a aVar, Spliterator spliterator) {
+    public d(t3 t3Var, Spliterator spliterator) {
         super(null);
-        this.a = aVar;
+        this.a = t3Var;
         this.b = spliterator;
         this.c = 0L;
     }
@@ -32,10 +32,10 @@ public abstract class d extends CountedCompleter {
         this.c = dVar.c;
     }
 
-    public static long e(long j) {
-        long j2 = j / g;
-        if (j2 > 0) {
-            return j2;
+    public static long e(long j10) {
+        long j11 = j10 / g;
+        if (j11 > 0) {
+            return j11;
         }
         return 1L;
     }
@@ -65,28 +65,28 @@ public abstract class d extends CountedCompleter {
         Spliterator trySplit;
         Spliterator spliterator = this.b;
         long estimateSize = spliterator.estimateSize();
-        long j = this.c;
-        if (j == 0) {
-            j = e(estimateSize);
-            this.c = j;
+        long j10 = this.c;
+        if (j10 == 0) {
+            j10 = e(estimateSize);
+            this.c = j10;
         }
-        boolean z = false;
+        boolean z10 = false;
         d dVar = this;
-        while (estimateSize > j && (trySplit = spliterator.trySplit()) != null) {
-            d c = dVar.c(trySplit);
-            dVar.d = c;
-            d c2 = dVar.c(spliterator);
-            dVar.e = c2;
+        while (estimateSize > j10 && (trySplit = spliterator.trySplit()) != null) {
+            d c10 = dVar.c(trySplit);
+            dVar.d = c10;
+            d c11 = dVar.c(spliterator);
+            dVar.e = c11;
             dVar.setPendingCount(1);
-            if (z) {
+            if (z10) {
                 spliterator = trySplit;
-                dVar = c;
-                c = c2;
+                dVar = c10;
+                c10 = c11;
             } else {
-                dVar = c2;
+                dVar = c11;
             }
-            z = !z;
-            c.fork();
+            z10 = !z10;
+            c10.fork();
             estimateSize = spliterator.estimateSize();
         }
         dVar.d(dVar.a());

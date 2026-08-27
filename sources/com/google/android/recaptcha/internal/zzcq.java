@@ -1,16 +1,19 @@
 package com.google.android.recaptcha.internal;
 
 import android.content.Context;
+import dd.b;
+import dd.c;
+import gd.j;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
-import kotlin.collections.CharIterator;
-import kotlin.collections.CollectionsKt;
-import kotlin.jvm.internal.Intrinsics;
-import kotlin.ranges.CharRange;
-import kotlin.text.StringsKt;
+import java.util.NoSuchElementException;
+import qc.g;
+import qc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzcq implements zzbt {
     private final Context zza;
@@ -36,16 +39,16 @@ public final class zzcq implements zzbt {
             File[] listFiles = this.zza.getCacheDir().listFiles();
             if (listFiles != null) {
                 ArrayList arrayList = new ArrayList();
-                int i = 0;
+                int i10 = 0;
                 for (File file : listFiles) {
-                    if (StringsKt.startsWith$default(file.getName(), this.zzb, false, 2, null)) {
+                    if (j.h(file.getName(), this.zzb)) {
                         arrayList.add(file);
                     }
                 }
                 int size = arrayList.size();
-                while (i < size) {
-                    Object obj = arrayList.get(i);
-                    i++;
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
                     ((File) obj).delete();
                 }
             }
@@ -55,18 +58,34 @@ public final class zzcq implements zzbt {
 
     @Override // com.google.android.recaptcha.internal.zzbt
     public final void zzc(String str, String str2) {
-        CharRange charRange = new CharRange('A', 'z');
-        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(charRange, 10));
-        Iterator it = charRange.iterator();
-        while (it.hasNext()) {
-            arrayList.add(Character.valueOf(((CharIterator) it).nextChar()));
+        c cVar = new c('A', 'z');
+        ArrayList arrayList = new ArrayList(i.d(cVar));
+        Iterator it = cVar.iterator();
+        while (true) {
+            b bVar = (b) it;
+            boolean z10 = bVar.d;
+            if (!z10) {
+                ArrayList o10 = g.o(arrayList);
+                Collections.shuffle(o10);
+                String h = g.h(o10.subList(0, 8), "", null, null, null, 62);
+                Context context = this.zza;
+                String str3 = this.zzb;
+                File file = new File(context.getCacheDir(), str3.concat(String.valueOf(h)));
+                zzdl.zzb(file, String.valueOf(str2).getBytes(StandardCharsets.UTF_8));
+                file.renameTo(new File(context.getCacheDir(), str3.concat(String.valueOf(str))));
+                return;
+            }
+            int i10 = bVar.e;
+            if (i10 != bVar.c) {
+                bVar.e = bVar.b + i10;
+            } else {
+                if (!z10) {
+                    throw new NoSuchElementException();
+                }
+                bVar.d = false;
+            }
+            arrayList.add(Character.valueOf((char) i10));
         }
-        String joinToString$default = CollectionsKt.joinToString$default(CollectionsKt.shuffled(arrayList).subList(0, 8), "", null, null, 0, null, null, 62, null);
-        Context context = this.zza;
-        String str3 = this.zzb;
-        File file = new File(context.getCacheDir(), str3.concat(String.valueOf(joinToString$default)));
-        zzdl.zzb(file, String.valueOf(str2).getBytes(StandardCharsets.UTF_8));
-        file.renameTo(new File(context.getCacheDir(), str3.concat(String.valueOf(str))));
     }
 
     @Override // com.google.android.recaptcha.internal.zzbt
@@ -77,17 +96,17 @@ public final class zzcq implements zzbt {
             file = null;
             if (listFiles != null) {
                 int length = listFiles.length;
-                int i = 0;
+                int i10 = 0;
                 while (true) {
-                    if (i >= length) {
+                    if (i10 >= length) {
                         break;
                     }
-                    File file2 = listFiles[i];
-                    if (Intrinsics.areEqual(file2.getName(), this.zzb + str)) {
+                    File file2 = listFiles[i10];
+                    if (kotlin.jvm.internal.j.a(file2.getName(), this.zzb + str)) {
                         file = file2;
                         break;
                     }
-                    i++;
+                    i10++;
                 }
             }
         } catch (Exception unused) {

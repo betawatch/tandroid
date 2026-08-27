@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzwa extends zzsn implements zztt {
     private static final zzwa zzb;
@@ -21,7 +22,7 @@ public final class zzwa extends zzsn implements zztt {
     private zzwa() {
     }
 
-    static /* synthetic */ void zzO(zzwa zzwaVar, String str) {
+    public static /* synthetic */ void zzO(zzwa zzwaVar, String str) {
         str.getClass();
         zzwaVar.zze = str;
     }
@@ -38,31 +39,27 @@ public final class zzwa extends zzsn implements zztt {
         return this.zzg;
     }
 
-    public final String zzk() {
-        return this.zze;
-    }
-
     @Override // com.google.android.recaptcha.internal.zzsn
-    protected final Object zzh(int i, Object obj, Object obj2) {
+    public final Object zzh(int i10, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i2 = i - 1;
-        if (i2 == 0) {
+        int i11 = i10 - 1;
+        if (i11 == 0) {
             return (byte) 1;
         }
-        if (i2 == 2) {
+        if (i11 == 2) {
             return zzsn.zzF(zzb, "\u0000\u0007\u0000\u0000\u0001\u0007\u0007\u0000\u0000\u0000\u0001Ȉ\u0002\u0004\u0003Ȉ\u0004\u0004\u0005Ȉ\u0006Ȉ\u0007\u0004", new Object[]{"zze", "zzg", "zzi", "zzj", "zzf", "zzh", "zzk"});
         }
-        if (i2 == 3) {
+        if (i11 == 3) {
             return new zzwa();
         }
         zzvz zzvzVar = null;
-        if (i2 == 4) {
+        if (i11 == 4) {
             return new zzvy(zzvzVar);
         }
-        if (i2 == 5) {
+        if (i11 == 5) {
             return zzb;
         }
-        if (i2 != 6) {
+        if (i11 != 6) {
             throw null;
         }
         zzua zzuaVar2 = zzd;
@@ -81,5 +78,9 @@ public final class zzwa extends zzsn implements zztt {
             }
         }
         return zzuaVar;
+    }
+
+    public final String zzk() {
+        return this.zze;
     }
 }

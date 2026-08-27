@@ -1,14 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
+import ad.p;
+import h7.k6;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzec extends SuspendLambda implements Function2 {
+final class zzec extends i implements p {
     int zza;
     final /* synthetic */ zzeh zzb;
     final /* synthetic */ String zzc;
@@ -19,49 +18,49 @@ final class zzec extends SuspendLambda implements Function2 {
     private /* synthetic */ Object zzh;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzec(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j, zzhh zzhhVar, Continuation continuation) {
-        super(2, continuation);
+    public zzec(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j10, zzhh zzhhVar, c cVar) {
+        super(2, cVar);
         this.zzb = zzehVar;
         this.zzc = str;
         this.zzd = zzdwVar;
         this.zze = zzdqVar;
-        this.zzf = j;
+        this.zzf = j10;
         this.zzg = zzhhVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        zzec zzecVar = new zzec(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        zzec zzecVar = new zzec(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, cVar);
         zzecVar.zzh = obj;
         return zzecVar;
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzec) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzec) create((zzhk) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        sc.a aVar = sc.a.a;
         try {
             if (this.zza != 0) {
-                ResultKt.throwOnFailure(obj);
+                k6.b(obj);
             } else {
-                ResultKt.throwOnFailure(obj);
+                k6.b(obj);
                 zzhk zzhkVar = (zzhk) this.zzh;
                 zzeb zzebVar = new zzeb(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, null);
                 this.zza = 1;
                 obj = zzhj.zze(zzhkVar, 6, zzebVar, this);
-                if (obj == coroutine_suspended) {
-                    return coroutine_suspended;
+                if (obj == aVar) {
+                    return aVar;
                 }
             }
             return (zzeq) obj;
-        } catch (zzcg e) {
-            throw e.zzc();
-        } catch (Exception e2) {
-            throw new zzcg(zzce.zzb, zzcd.zza, e2.getMessage(), null, 8, null).zzc();
+        } catch (zzcg e9) {
+            throw e9.zzc();
+        } catch (Exception e10) {
+            throw new zzcg(zzce.zzb, zzcd.zza, e10.getMessage(), null, 8, null).zzc();
         }
     }
 }

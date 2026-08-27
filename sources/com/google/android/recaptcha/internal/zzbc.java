@@ -1,22 +1,22 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import org.telegram.tgnet.TLObject;
+import tc.c;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzbc extends ContinuationImpl {
+final class zzbc extends c {
     /* synthetic */ Object zza;
     final /* synthetic */ zzbo zzb;
     int zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzbc(zzbo zzboVar, Continuation continuation) {
-        super(continuation);
+    public zzbc(zzbo zzboVar, rc.c cVar) {
+        super(cVar);
         this.zzb = zzboVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     public final Object invokeSuspend(Object obj) {
         Object zzl;
         this.zza = obj;

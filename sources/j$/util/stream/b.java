@@ -11,8 +11,8 @@ public abstract class b extends d {
 
     public abstract Object h();
 
-    public b(a aVar, Spliterator spliterator) {
-        super(aVar, spliterator);
+    public b(t3 t3Var, Spliterator spliterator) {
+        super(t3Var, spliterator);
         this.h = new AtomicReference(null);
     }
 
@@ -27,36 +27,36 @@ public abstract class b extends d {
         Spliterator trySplit;
         Spliterator spliterator = this.b;
         long estimateSize = spliterator.estimateSize();
-        long j = this.c;
-        if (j == 0) {
-            j = d.e(estimateSize);
-            this.c = j;
+        long j10 = this.c;
+        if (j10 == 0) {
+            j10 = d.e(estimateSize);
+            this.c = j10;
         }
         AtomicReference atomicReference = this.h;
-        boolean z = false;
+        boolean z10 = false;
         b bVar = this;
         while (true) {
             obj = atomicReference.get();
             if (obj != null) {
                 break;
             }
-            boolean z2 = bVar.i;
-            if (!z2) {
+            boolean z11 = bVar.i;
+            if (!z11) {
                 CountedCompleter<?> completer = bVar.getCompleter();
                 while (true) {
                     b bVar2 = (b) ((d) completer);
-                    if (z2 || bVar2 == null) {
+                    if (z11 || bVar2 == null) {
                         break;
                     }
-                    z2 = bVar2.i;
+                    z11 = bVar2.i;
                     completer = bVar2.getCompleter();
                 }
             }
-            if (z2) {
+            if (z11) {
                 obj = bVar.h();
                 break;
             }
-            if (estimateSize <= j || (trySplit = spliterator.trySplit()) == null) {
+            if (estimateSize <= j10 || (trySplit = spliterator.trySplit()) == null) {
                 break;
             }
             b bVar3 = (b) bVar.c(trySplit);
@@ -64,14 +64,14 @@ public abstract class b extends d {
             b bVar4 = (b) bVar.c(spliterator);
             bVar.e = bVar4;
             bVar.setPendingCount(1);
-            if (z) {
+            if (z10) {
                 spliterator = trySplit;
                 bVar = bVar3;
                 bVar3 = bVar4;
             } else {
                 bVar = bVar4;
             }
-            z = !z;
+            z10 = !z10;
             bVar3.fork();
             estimateSize = spliterator.estimateSize();
         }

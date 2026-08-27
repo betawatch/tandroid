@@ -28,62 +28,62 @@ public final class r implements Temporal, j$.time.temporal.m, Comparable, Serial
         pVar.l(Locale.getDefault(), w.SMART, null);
     }
 
-    public static r E(int i) {
-        j$.time.temporal.a.YEAR.x(i);
-        return new r(i);
+    public static r G(int i10) {
+        j$.time.temporal.a.YEAR.w(i10);
+        return new r(i10);
     }
 
     @Override // j$.time.temporal.Temporal
     public final long g(Temporal temporal, j$.time.temporal.q qVar) {
-        r E;
+        r G;
         if (temporal instanceof r) {
-            E = (r) temporal;
+            G = (r) temporal;
         } else {
             Objects.requireNonNull(temporal, "temporal");
             try {
                 if (!j$.time.chrono.r.c.equals(j$.com.android.tools.r8.a.N(temporal))) {
                     temporal = LocalDate.I(temporal);
                 }
-                E = E(temporal.o(j$.time.temporal.a.YEAR));
-            } catch (b e) {
-                throw new b("Unable to obtain Year from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e);
+                G = G(temporal.j(j$.time.temporal.a.YEAR));
+            } catch (b e9) {
+                throw new b("Unable to obtain Year from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e9);
             }
         }
         if (qVar instanceof ChronoUnit) {
-            long j = E.a - this.a;
-            int i = q.b[((ChronoUnit) qVar).ordinal()];
-            if (i == 1) {
-                return j;
+            long j10 = G.a - this.a;
+            int i10 = q.b[((ChronoUnit) qVar).ordinal()];
+            if (i10 == 1) {
+                return j10;
             }
-            if (i == 2) {
-                return j / 10;
+            if (i10 == 2) {
+                return j10 / 10;
             }
-            if (i == 3) {
-                return j / 100;
+            if (i10 == 3) {
+                return j10 / 100;
             }
-            if (i == 4) {
-                return j / 1000;
+            if (i10 == 4) {
+                return j10 / 1000;
             }
-            if (i == 5) {
+            if (i10 == 5) {
                 j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-                return E.u(aVar) - u(aVar);
+                return G.y(aVar) - y(aVar);
             }
             throw new j$.time.temporal.r("Unsupported unit: " + qVar);
         }
-        return qVar.between(this, E);
+        return qVar.between(this, G);
     }
 
-    public r(int i) {
-        this.a = i;
-    }
-
-    @Override // j$.time.temporal.l
-    public final boolean h(j$.time.temporal.o oVar) {
-        return oVar instanceof j$.time.temporal.a ? oVar == j$.time.temporal.a.YEAR || oVar == j$.time.temporal.a.YEAR_OF_ERA || oVar == j$.time.temporal.a.ERA : oVar != null && oVar.p(this);
+    public r(int i10) {
+        this.a = i10;
     }
 
     @Override // j$.time.temporal.l
-    public final j$.time.temporal.s q(j$.time.temporal.o oVar) {
+    public final boolean e(j$.time.temporal.o oVar) {
+        return oVar instanceof j$.time.temporal.a ? oVar == j$.time.temporal.a.YEAR || oVar == j$.time.temporal.a.YEAR_OF_ERA || oVar == j$.time.temporal.a.ERA : oVar != null && oVar.j(this);
+    }
+
+    @Override // j$.time.temporal.l
+    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
         if (oVar == j$.time.temporal.a.YEAR_OF_ERA) {
             return j$.time.temporal.s.e(1L, this.a <= 0 ? 1000000000L : 999999999L);
         }
@@ -91,104 +91,103 @@ public final class r implements Temporal, j$.time.temporal.m, Comparable, Serial
     }
 
     @Override // j$.time.temporal.l
-    public final int o(j$.time.temporal.o oVar) {
-        return q(oVar).a(u(oVar), oVar);
+    public final int j(j$.time.temporal.o oVar) {
+        return l(oVar).a(y(oVar), oVar);
     }
 
     @Override // j$.time.temporal.l
-    public final long u(j$.time.temporal.o oVar) {
+    public final long y(j$.time.temporal.o oVar) {
         if (!(oVar instanceof j$.time.temporal.a)) {
-            return oVar.o(this);
+            return oVar.m(this);
         }
-        int i = q.a[((j$.time.temporal.a) oVar).ordinal()];
-        int i2 = this.a;
-        if (i == 1) {
-            if (i2 < 1) {
-                i2 = 1 - i2;
+        int i10 = q.a[((j$.time.temporal.a) oVar).ordinal()];
+        if (i10 == 1) {
+            int i11 = this.a;
+            if (i11 < 1) {
+                i11 = 1 - i11;
             }
-            return i2;
+            return i11;
         }
-        if (i == 2) {
-            return i2;
+        if (i10 == 2) {
+            return this.a;
         }
-        if (i == 3) {
-            return i2 < 1 ? 0 : 1;
+        if (i10 == 3) {
+            return this.a < 1 ? 0 : 1;
         }
         throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal p(LocalDate localDate) {
+    public final Temporal k(LocalDate localDate) {
         localDate.getClass();
         return (r) j$.com.android.tools.r8.a.a(localDate, this);
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: J, reason: merged with bridge method [inline-methods] */
-    public final r e(long j, j$.time.temporal.o oVar) {
+    public final r c(long j10, j$.time.temporal.o oVar) {
         if (!(oVar instanceof j$.time.temporal.a)) {
-            return (r) oVar.q(this, j);
+            return (r) oVar.q(this, j10);
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        aVar.x(j);
-        int i = q.a[aVar.ordinal()];
-        int i2 = this.a;
-        if (i == 1) {
-            if (i2 < 1) {
-                j = 1 - j;
+        aVar.w(j10);
+        int i10 = q.a[aVar.ordinal()];
+        if (i10 == 1) {
+            if (this.a < 1) {
+                j10 = 1 - j10;
             }
-            return E((int) j);
+            return G((int) j10);
         }
-        if (i == 2) {
-            return E((int) j);
+        if (i10 == 2) {
+            return G((int) j10);
         }
-        if (i == 3) {
-            return u(j$.time.temporal.a.ERA) == j ? this : E(1 - i2);
+        if (i10 == 3) {
+            return y(j$.time.temporal.a.ERA) == j10 ? this : G(1 - this.a);
         }
         throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: H, reason: merged with bridge method [inline-methods] */
-    public final r f(long j, j$.time.temporal.q qVar) {
+    public final r d(long j10, j$.time.temporal.q qVar) {
         if (!(qVar instanceof ChronoUnit)) {
-            return (r) qVar.l(this, j);
+            return (r) qVar.j(this, j10);
         }
-        int i = q.b[((ChronoUnit) qVar).ordinal()];
-        if (i == 1) {
-            return I(j);
+        int i10 = q.b[((ChronoUnit) qVar).ordinal()];
+        if (i10 == 1) {
+            return I(j10);
         }
-        if (i == 2) {
-            return I(j$.com.android.tools.r8.a.T(j, 10));
+        if (i10 == 2) {
+            return I(j$.com.android.tools.r8.a.T(j10, 10));
         }
-        if (i == 3) {
-            return I(j$.com.android.tools.r8.a.T(j, 100));
+        if (i10 == 3) {
+            return I(j$.com.android.tools.r8.a.T(j10, 100));
         }
-        if (i == 4) {
-            return I(j$.com.android.tools.r8.a.T(j, MediaDataController.MAX_STYLE_RUNS_COUNT));
+        if (i10 == 4) {
+            return I(j$.com.android.tools.r8.a.T(j10, MediaDataController.MAX_STYLE_RUNS_COUNT));
         }
-        if (i == 5) {
+        if (i10 == 5) {
             j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-            return e(j$.com.android.tools.r8.a.O(u(aVar), j), aVar);
+            return c(j$.com.android.tools.r8.a.O(y(aVar), j10), aVar);
         }
         throw new j$.time.temporal.r("Unsupported unit: " + qVar);
     }
 
-    public final r I(long j) {
-        if (j == 0) {
+    public final r I(long j10) {
+        if (j10 == 0) {
             return this;
         }
         j$.time.temporal.a aVar = j$.time.temporal.a.YEAR;
-        return E(aVar.b.a(this.a + j, aVar));
+        return G(aVar.b.a(this.a + j10, aVar));
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal l(long j, ChronoUnit chronoUnit) {
-        return j == Long.MIN_VALUE ? f(Long.MAX_VALUE, chronoUnit).f(1L, chronoUnit) : f(-j, chronoUnit);
+    public final Temporal w(long j10, ChronoUnit chronoUnit) {
+        return j10 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j10, chronoUnit);
     }
 
     @Override // j$.time.temporal.l
-    public final Object r(j$.time.format.a aVar) {
+    public final Object m(j$.time.format.a aVar) {
         if (aVar == j$.time.temporal.p.b) {
             return j$.time.chrono.r.c;
         }
@@ -199,23 +198,18 @@ public final class r implements Temporal, j$.time.temporal.m, Comparable, Serial
     }
 
     @Override // j$.time.temporal.m
-    public final Temporal x(Temporal temporal) {
+    public final Temporal q(Temporal temporal) {
         if (!j$.com.android.tools.r8.a.N(temporal).equals(j$.time.chrono.r.c)) {
             throw new b("Adjustment only supported on ISO date-time");
         }
-        return temporal.e(this.a, j$.time.temporal.a.YEAR);
+        return temporal.c(this.a, j$.time.temporal.a.YEAR);
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj instanceof r) {
-            if (this.a == ((r) obj).a) {
-                return true;
-            }
-        }
-        return false;
+        return (obj instanceof r) && this.a == ((r) obj).a;
     }
 
     public final int hashCode() {

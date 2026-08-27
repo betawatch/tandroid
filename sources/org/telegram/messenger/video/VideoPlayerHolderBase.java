@@ -8,18 +8,19 @@ import android.os.Build;
 import android.view.Surface;
 import android.view.SurfaceView;
 import android.view.TextureView;
-import com.google.android.exoplayer2.analytics.AnalyticsListener;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FileStreamLoadOperation;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.video.VideoPlayerHolderBase;
+import org.telegram.messenger.t8;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.VideoPlayer;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.m61;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class VideoPlayerHolderBase {
     private boolean allowMultipleInstances;
     boolean audioDisabled;
@@ -48,24 +49,24 @@ public class VideoPlayerHolderBase {
     private SurfaceView surfaceView;
     private TextureView textureView;
     public Uri uri;
-    VideoPlayer videoPlayer;
+    m61 videoPlayer;
     final DispatchQueue dispatchQueue = Utilities.getOrCreatePlayerQueue();
     Runnable progressRunnable = new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase.1
         @Override // java.lang.Runnable
         public void run() {
             VideoPlayerHolderBase videoPlayerHolderBase = VideoPlayerHolderBase.this;
-            VideoPlayer videoPlayer = videoPlayerHolderBase.videoPlayer;
-            if (videoPlayer != null) {
+            m61 m61Var = videoPlayerHolderBase.videoPlayer;
+            if (m61Var != null) {
                 if (videoPlayerHolderBase.lastState == 4) {
                     videoPlayerHolderBase.progress = 1.0f;
                 } else {
-                    videoPlayerHolderBase.currentPosition = videoPlayer.getCurrentPosition();
+                    videoPlayerHolderBase.currentPosition = m61Var.o();
                     VideoPlayerHolderBase videoPlayerHolderBase2 = VideoPlayerHolderBase.this;
-                    videoPlayerHolderBase2.playerDuration = videoPlayerHolderBase2.videoPlayer.getDuration();
+                    videoPlayerHolderBase2.playerDuration = videoPlayerHolderBase2.videoPlayer.q();
                 }
                 VideoPlayerHolderBase videoPlayerHolderBase3 = VideoPlayerHolderBase.this;
-                int i = videoPlayerHolderBase3.lastState;
-                if (i == 3 || i == 2) {
+                int i10 = videoPlayerHolderBase3.lastState;
+                if (i10 == 3 || i10 == 2) {
                     videoPlayerHolderBase3.dispatchQueue.cancelRunnable(videoPlayerHolderBase3.progressRunnable);
                     VideoPlayerHolderBase videoPlayerHolderBase4 = VideoPlayerHolderBase.this;
                     videoPlayerHolderBase4.dispatchQueue.postRunnable(videoPlayerHolderBase4.progressRunnable, 16L);
@@ -79,325 +80,35 @@ public class VideoPlayerHolderBase {
     private long lastBetterSeek = -1;
     public float currentSeek = 0.0f;
     public volatile float currentSeekThread = 0.0f;
-    private final Runnable betterSeek = new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda0
-        @Override // java.lang.Runnable
-        public final void run() {
-            VideoPlayerHolderBase.this.getClass();
-        }
-    };
-    private final Runnable updateSeek = new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda1
-        @Override // java.lang.Runnable
-        public final void run() {
-            VideoPlayerHolderBase.$r8$lambda$Eyl2V-q94jm7XI2XxR7-O08EAf4(VideoPlayerHolderBase.this);
-        }
-    };
+    private final Runnable betterSeek = new j(this, 0);
+    private final Runnable updateSeek = new j(this, 2);
 
-    public boolean needRepeat() {
-        return false;
-    }
-
-    public void onRenderedFirstFrame() {
-    }
-
-    public void onStateChanged(boolean z, int i) {
-    }
-
-    protected void onVideoSizeChanged(int i, int i2, int i3, float f) {
-    }
-
-    static /* synthetic */ int access$010(VideoPlayerHolderBase videoPlayerHolderBase) {
-        int i = videoPlayerHolderBase.triesCount;
-        videoPlayerHolderBase.triesCount = i - 1;
-        return i;
-    }
-
-    public VideoPlayerHolderBase with(SurfaceView surfaceView) {
-        this.surfaceView = surfaceView;
-        this.textureView = null;
-        this.surface = null;
-        return this;
-    }
-
-    public VideoPlayerHolderBase with(TextureView textureView) {
-        this.surfaceView = null;
-        this.textureView = textureView;
-        this.surface = null;
-        return this;
-    }
-
-    public VideoPlayerHolderBase with(Surface surface) {
-        this.surfaceView = null;
-        this.textureView = null;
-        this.surface = surface;
-        return this;
-    }
-
-    public void preparePlayer(final Uri uri, final boolean z, final float f) {
-        this.audioDisabled = z;
-        this.currentAccount = this.currentAccount;
-        this.contentUri = uri;
-        this.paused = true;
-        Runnable runnable = this.initRunnable;
-        if (runnable != null) {
-            this.dispatchQueue.cancelRunnable(runnable);
-        }
-        DispatchQueue dispatchQueue = this.dispatchQueue;
-        Runnable runnable2 = new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda13
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoPlayerHolderBase.$r8$lambda$Gnh0RpH4cmuNKyptc6j3tIoF3oU(VideoPlayerHolderBase.this, z, f, uri);
-            }
-        };
-        this.initRunnable = runnable2;
-        dispatchQueue.postRunnable(runnable2);
-    }
-
-    public static /* synthetic */ void $r8$lambda$Gnh0RpH4cmuNKyptc6j3tIoF3oU(VideoPlayerHolderBase videoPlayerHolderBase, boolean z, float f, Uri uri) {
-        if (videoPlayerHolderBase.released) {
-            return;
-        }
-        videoPlayerHolderBase.ensurePlayerCreated(z);
-        videoPlayerHolderBase.videoPlayer.setPlaybackSpeed(f);
-        FileLog.d("videoplayerholderbase.preparePlayer(): preparePlayer new player as preload uri=" + uri);
-        videoPlayerHolderBase.videoPlayer.preparePlayer(uri, "other", 0, 0L);
-        videoPlayerHolderBase.videoPlayer.setPlayWhenReady(false);
-        videoPlayerHolderBase.videoPlayer.setWorkerQueue(videoPlayerHolderBase.dispatchQueue);
-    }
-
-    public void start(final boolean z, final boolean z2, final Uri uri, final long j, final boolean z3, final float f) {
-        this.startTime = System.currentTimeMillis();
-        this.audioDisabled = z3;
-        this.paused = z2;
-        this.triesCount = 3;
-        if (j > 0) {
-            this.currentPosition = j;
-        }
-        DispatchQueue dispatchQueue = this.dispatchQueue;
-        Runnable runnable = new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda2
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoPlayerHolderBase.$r8$lambda$hE10YIYy_9c8ezKIjdaoegZXcb4(VideoPlayerHolderBase.this, z3, f, uri, z2, z, j);
-            }
-        };
-        this.initRunnable = runnable;
-        dispatchQueue.postRunnable(runnable);
-    }
-
-    public static /* synthetic */ void $r8$lambda$hE10YIYy_9c8ezKIjdaoegZXcb4(final VideoPlayerHolderBase videoPlayerHolderBase, boolean z, float f, Uri uri, boolean z2, boolean z3, long j) {
-        if (videoPlayerHolderBase.released) {
-            FileLog.d("videoplayerholderbase returned from start: released");
-            return;
-        }
-        if (videoPlayerHolderBase.videoPlayer == null) {
-            videoPlayerHolderBase.ensurePlayerCreated(z);
-            videoPlayerHolderBase.videoPlayer.setPlaybackSpeed(f);
-            FileLog.d("videoplayerholderbase.start(): preparePlayer new player uri=" + uri);
-            videoPlayerHolderBase.videoPlayer.preparePlayer(uri, "other");
-            videoPlayerHolderBase.videoPlayer.setWorkerQueue(videoPlayerHolderBase.dispatchQueue);
-            if (!z2) {
-                Surface surface = videoPlayerHolderBase.surface;
-                if (surface != null) {
-                    videoPlayerHolderBase.videoPlayer.setSurface(surface);
-                } else {
-                    SurfaceView surfaceView = videoPlayerHolderBase.surfaceView;
-                    if (surfaceView != null) {
-                        videoPlayerHolderBase.videoPlayer.setSurfaceView(surfaceView);
-                    } else {
-                        videoPlayerHolderBase.videoPlayer.setTextureView(videoPlayerHolderBase.textureView);
-                    }
-                }
-                videoPlayerHolderBase.videoPlayer.setPlayWhenReady(true);
-            } else if (z3) {
-                Surface surface2 = videoPlayerHolderBase.surface;
-                if (surface2 != null) {
-                    videoPlayerHolderBase.videoPlayer.setSurface(surface2);
-                } else {
-                    SurfaceView surfaceView2 = videoPlayerHolderBase.surfaceView;
-                    if (surfaceView2 != null) {
-                        videoPlayerHolderBase.videoPlayer.setSurfaceView(surfaceView2);
-                    } else {
-                        videoPlayerHolderBase.videoPlayer.setTextureView(videoPlayerHolderBase.textureView);
-                    }
-                }
-                videoPlayerHolderBase.videoPlayer.setPlayWhenReady(false);
-            }
-        } else {
-            FileLog.d("videoplayerholderbase.start(): player already exist");
-            if (!z2) {
-                Surface surface3 = videoPlayerHolderBase.surface;
-                if (surface3 != null) {
-                    videoPlayerHolderBase.videoPlayer.setSurface(surface3);
-                } else {
-                    SurfaceView surfaceView3 = videoPlayerHolderBase.surfaceView;
-                    if (surfaceView3 != null) {
-                        videoPlayerHolderBase.videoPlayer.setSurfaceView(surfaceView3);
-                    } else {
-                        videoPlayerHolderBase.videoPlayer.setTextureView(videoPlayerHolderBase.textureView);
-                    }
-                }
-                videoPlayerHolderBase.videoPlayer.play();
-            } else if (z3) {
-                Surface surface4 = videoPlayerHolderBase.surface;
-                if (surface4 != null) {
-                    videoPlayerHolderBase.videoPlayer.setSurface(surface4);
-                } else {
-                    SurfaceView surfaceView4 = videoPlayerHolderBase.surfaceView;
-                    if (surfaceView4 != null) {
-                        videoPlayerHolderBase.videoPlayer.setSurfaceView(surfaceView4);
-                    } else {
-                        videoPlayerHolderBase.videoPlayer.setTextureView(videoPlayerHolderBase.textureView);
-                    }
-                }
-                videoPlayerHolderBase.videoPlayer.setPlayWhenReady(false);
-            }
-        }
-        if (j > 0) {
-            videoPlayerHolderBase.videoPlayer.seekTo(j);
-        }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda12
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoPlayerHolderBase.this.initRunnable = null;
-            }
-        });
-    }
-
-    public void allowMultipleInstances(boolean z) {
-        this.allowMultipleInstances = z;
-    }
-
-    private void ensurePlayerCreated(boolean z) {
-        VideoPlayer videoPlayer = this.videoPlayer;
-        if (videoPlayer != null) {
-            videoPlayer.releasePlayer(true);
-        }
-        VideoPlayer videoPlayer2 = new VideoPlayer(false, z);
-        this.videoPlayer = videoPlayer2;
-        videoPlayer2.allowMultipleInstances = this.allowMultipleInstances;
-        videoPlayer2.setDelegate(new 2());
-        this.videoPlayer.setIsStory();
-    }
-
-    class 2 implements VideoPlayer.VideoPlayerDelegate {
-        @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-        public /* bridge */ /* synthetic */ void onRenderedFirstFrame(AnalyticsListener.EventTime eventTime) {
-            VideoPlayer.VideoPlayerDelegate.-CC.$default$onRenderedFirstFrame(this, eventTime);
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public class 2 implements j61 {
+        public 2() {
         }
 
-        @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-        public /* bridge */ /* synthetic */ void onSeekFinished(AnalyticsListener.EventTime eventTime) {
-            VideoPlayer.VideoPlayerDelegate.-CC.$default$onSeekFinished(this, eventTime);
-        }
-
-        @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-        public /* bridge */ /* synthetic */ void onSeekStarted(AnalyticsListener.EventTime eventTime) {
-            VideoPlayer.VideoPlayerDelegate.-CC.$default$onSeekStarted(this, eventTime);
-        }
-
-        @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-        public /* bridge */ /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-            return VideoPlayer.VideoPlayerDelegate.-CC.$default$onSurfaceDestroyed(this, surfaceTexture);
-        }
-
-        @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-        public /* bridge */ /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-            VideoPlayer.VideoPlayerDelegate.-CC.$default$onSurfaceTextureUpdated(this, surfaceTexture);
-        }
-
-        2() {
-        }
-
-        @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-        public void onStateChanged(boolean z, int i) {
-            VideoPlayerHolderBase videoPlayerHolderBase = VideoPlayerHolderBase.this;
-            videoPlayerHolderBase.lastState = i;
-            videoPlayerHolderBase.currentPosition = videoPlayerHolderBase.videoPlayer.getCurrentPosition();
-            VideoPlayerHolderBase videoPlayerHolderBase2 = VideoPlayerHolderBase.this;
-            videoPlayerHolderBase2.playerDuration = videoPlayerHolderBase2.videoPlayer.getDuration();
-            if (i == 3 || i == 2) {
-                VideoPlayerHolderBase videoPlayerHolderBase3 = VideoPlayerHolderBase.this;
-                videoPlayerHolderBase3.dispatchQueue.cancelRunnable(videoPlayerHolderBase3.progressRunnable);
-                VideoPlayerHolderBase videoPlayerHolderBase4 = VideoPlayerHolderBase.this;
-                videoPlayerHolderBase4.dispatchQueue.postRunnable(videoPlayerHolderBase4.progressRunnable);
-            } else if (i == 4) {
-                if (VideoPlayerHolderBase.this.needRepeat()) {
-                    VideoPlayerHolderBase videoPlayerHolderBase5 = VideoPlayerHolderBase.this;
-                    videoPlayerHolderBase5.progress = 0.0f;
-                    videoPlayerHolderBase5.videoPlayer.seekTo(0L);
-                    VideoPlayerHolderBase.this.videoPlayer.play();
-                } else {
-                    VideoPlayerHolderBase.this.progress = 1.0f;
-                }
-            }
-            VideoPlayerHolderBase.this.onStateChanged(z, i);
-        }
-
-        @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-        public void onError(VideoPlayer videoPlayer, Exception exc) {
-            FileLog.e(exc);
-            final long currentPosition = VideoPlayerHolderBase.this.getCurrentPosition();
-            VideoPlayerHolderBase.access$010(VideoPlayerHolderBase.this);
-            if (VideoPlayerHolderBase.this.triesCount > 0) {
-                VideoPlayerHolderBase videoPlayerHolderBase = VideoPlayerHolderBase.this;
-                DispatchQueue dispatchQueue = videoPlayerHolderBase.dispatchQueue;
-                Runnable runnable = new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$2$$ExternalSyntheticLambda1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        VideoPlayerHolderBase.2.$r8$lambda$NeEfwsiV2l5cT4YJXZLLGYlWK-Q(VideoPlayerHolderBase.2.this, currentPosition);
-                    }
-                };
-                videoPlayerHolderBase.initRunnable = runnable;
-                dispatchQueue.postRunnable(runnable);
-                return;
-            }
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$2$$ExternalSyntheticLambda2
-                @Override // java.lang.Runnable
-                public final void run() {
-                    VideoPlayerHolderBase.2.$r8$lambda$J-laAh_r0EMYD5KXDDi8JKiqT5c(VideoPlayerHolderBase.2.this);
-                }
-            });
-        }
-
-        public static /* synthetic */ void $r8$lambda$NeEfwsiV2l5cT4YJXZLLGYlWK-Q(2 r3, long j) {
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onError$0(long j10) {
             VideoPlayerHolderBase videoPlayerHolderBase;
             Uri uri;
             if (VideoPlayerHolderBase.this.released || (uri = (videoPlayerHolderBase = VideoPlayerHolderBase.this).uri) == null) {
                 return;
             }
-            videoPlayerHolderBase.videoPlayer.preparePlayer(uri, "other");
-            VideoPlayerHolderBase.this.videoPlayer.seekTo(j);
+            videoPlayerHolderBase.videoPlayer.E(uri, "other");
+            VideoPlayerHolderBase.this.videoPlayer.L(j10);
         }
 
-        public static /* synthetic */ void $r8$lambda$J-laAh_r0EMYD5KXDDi8JKiqT5c(2 r1) {
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onError$1() {
             if (VideoPlayerHolderBase.this.onErrorListener != null) {
                 VideoPlayerHolderBase.this.onErrorListener.run();
                 VideoPlayerHolderBase.this.onErrorListener = null;
             }
         }
 
-        @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-        public void onVideoSizeChanged(int i, int i2, int i3, float f) {
-            VideoPlayerHolderBase.this.onVideoSizeChanged(i, i2, i3, f);
-        }
-
-        @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-        public void onRenderedFirstFrame() {
-            long j;
-            Runnable runnable = new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$2$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    VideoPlayerHolderBase.2.$r8$lambda$IiCThXiJXTNIgoP29o6e-MwLd88(VideoPlayerHolderBase.2.this);
-                }
-            };
-            if (VideoPlayerHolderBase.this.surface != null) {
-                j = 0;
-            } else {
-                j = VideoPlayerHolderBase.this.surfaceView == null ? 16L : 32L;
-            }
-            AndroidUtilities.runOnUIThread(runnable, j);
-        }
-
-        public static /* synthetic */ void $r8$lambda$IiCThXiJXTNIgoP29o6e-MwLd88(2 r1) {
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onRenderedFirstFrame$2() {
             if (VideoPlayerHolderBase.this.released) {
                 return;
             }
@@ -407,56 +118,437 @@ public class VideoPlayerHolderBase {
                 VideoPlayerHolderBase.this.onReadyListener = null;
             }
         }
-    }
 
-    public void setOnReadyListener(Runnable runnable) {
-        this.onReadyListener = runnable;
-    }
-
-    public void setOnErrorListener(Runnable runnable) {
-        this.onErrorListener = runnable;
-    }
-
-    public boolean release(final Runnable runnable) {
-        final TLRPC.Document document = this.document;
-        if (document != null && FileStreamLoadOperation.getStreamPrioriy(document) != 0) {
-            FileStreamLoadOperation.setPriorityForDocument(document, 0);
-            FileLoader.getInstance(this.currentAccount).changePriority(0, document, null, null, null, null, null);
-        }
-        this.released = true;
-        this.dispatchQueue.cancelRunnable(this.initRunnable);
-        this.dispatchQueue.cancelRunnable(this.progressRunnable);
-        this.initRunnable = null;
-        this.dispatchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoPlayerHolderBase.$r8$lambda$g6FW80RBqHlVAFWmkAcsL1pNedA(VideoPlayerHolderBase.this, document, runnable);
+        @Override // org.telegram.ui.Components.j61
+        public void onError(m61 m61Var, Exception exc) {
+            FileLog.e(exc);
+            long currentPosition = VideoPlayerHolderBase.this.getCurrentPosition();
+            VideoPlayerHolderBase.access$010(VideoPlayerHolderBase.this);
+            if (VideoPlayerHolderBase.this.triesCount <= 0) {
+                AndroidUtilities.runOnUIThread(new o(this, 1));
+                return;
             }
-        });
-        Bitmap bitmap = this.playerStubBitmap;
-        if (bitmap != null) {
-            AndroidUtilities.recycleBitmap(bitmap);
-            this.playerStubBitmap = null;
+            VideoPlayerHolderBase videoPlayerHolderBase = VideoPlayerHolderBase.this;
+            DispatchQueue dispatchQueue = videoPlayerHolderBase.dispatchQueue;
+            p pVar = new p(this, currentPosition, 0);
+            videoPlayerHolderBase.initRunnable = pVar;
+            dispatchQueue.postRunnable(pVar);
         }
-        return true;
+
+        @Override // org.telegram.ui.Components.j61
+        public /* bridge */ /* synthetic */ void onRenderedFirstFrame(i3.a aVar) {
+        }
+
+        @Override // org.telegram.ui.Components.j61
+        public void onStateChanged(boolean z10, int i10) {
+            VideoPlayerHolderBase videoPlayerHolderBase = VideoPlayerHolderBase.this;
+            videoPlayerHolderBase.lastState = i10;
+            videoPlayerHolderBase.currentPosition = videoPlayerHolderBase.videoPlayer.o();
+            VideoPlayerHolderBase videoPlayerHolderBase2 = VideoPlayerHolderBase.this;
+            videoPlayerHolderBase2.playerDuration = videoPlayerHolderBase2.videoPlayer.q();
+            if (i10 == 3 || i10 == 2) {
+                VideoPlayerHolderBase videoPlayerHolderBase3 = VideoPlayerHolderBase.this;
+                videoPlayerHolderBase3.dispatchQueue.cancelRunnable(videoPlayerHolderBase3.progressRunnable);
+                VideoPlayerHolderBase videoPlayerHolderBase4 = VideoPlayerHolderBase.this;
+                videoPlayerHolderBase4.dispatchQueue.postRunnable(videoPlayerHolderBase4.progressRunnable);
+            } else if (i10 == 4) {
+                if (VideoPlayerHolderBase.this.needRepeat()) {
+                    VideoPlayerHolderBase videoPlayerHolderBase5 = VideoPlayerHolderBase.this;
+                    videoPlayerHolderBase5.progress = 0.0f;
+                    videoPlayerHolderBase5.videoPlayer.L(0L);
+                    VideoPlayerHolderBase.this.videoPlayer.D();
+                } else {
+                    VideoPlayerHolderBase.this.progress = 1.0f;
+                }
+            }
+            VideoPlayerHolderBase.this.onStateChanged(z10, i10);
+        }
+
+        @Override // org.telegram.ui.Components.j61
+        public /* bridge */ /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+            return false;
+        }
+
+        @Override // org.telegram.ui.Components.j61
+        public void onVideoSizeChanged(int i10, int i11, int i12, float f10) {
+            VideoPlayerHolderBase.this.onVideoSizeChanged(i10, i11, i12, f10);
+        }
+
+        @Override // org.telegram.ui.Components.j61
+        public void onRenderedFirstFrame() {
+            AndroidUtilities.runOnUIThread(new o(this, 0), VideoPlayerHolderBase.this.surface != null ? 0L : VideoPlayerHolderBase.this.surfaceView == null ? 16L : 32L);
+        }
+
+        @Override // org.telegram.ui.Components.j61
+        public /* bridge */ /* synthetic */ void onSeekFinished(i3.a aVar) {
+        }
+
+        @Override // org.telegram.ui.Components.j61
+        public /* bridge */ /* synthetic */ void onSeekStarted(i3.a aVar) {
+        }
+
+        @Override // org.telegram.ui.Components.j61
+        public /* bridge */ /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        }
     }
 
-    public static /* synthetic */ void $r8$lambda$g6FW80RBqHlVAFWmkAcsL1pNedA(VideoPlayerHolderBase videoPlayerHolderBase, TLRPC.Document document, Runnable runnable) {
-        VideoPlayer videoPlayer = videoPlayerHolderBase.videoPlayer;
-        if (videoPlayer != null) {
-            videoPlayer.setSurface(null);
-            videoPlayerHolderBase.videoPlayer.setTextureView(null);
-            videoPlayerHolderBase.videoPlayer.setSurfaceView(null);
-            videoPlayerHolderBase.videoPlayer.releasePlayer(false);
+    public static /* synthetic */ int access$010(VideoPlayerHolderBase videoPlayerHolderBase) {
+        int i10 = videoPlayerHolderBase.triesCount;
+        videoPlayerHolderBase.triesCount = i10 - 1;
+        return i10;
+    }
+
+    private void ensurePlayerCreated(boolean z10) {
+        m61 m61Var = this.videoPlayer;
+        if (m61Var != null) {
+            m61Var.I();
+        }
+        m61 m61Var2 = new m61(false, z10);
+        this.videoPlayer = m61Var2;
+        m61Var2.y = this.allowMultipleInstances;
+        m61Var2.F = new 2();
+        this.videoPlayer.c = true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loopBack$9() {
+        m61 m61Var = this.videoPlayer;
+        if (m61Var != null) {
+            m61Var.L(0L);
+        }
+        this.progress = 0.0f;
+        this.currentPosition = 0L;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$14() {
+        if (this.videoPlayer == null) {
+            return;
+        }
+        long j10 = (long) (this.currentSeekThread * this.duration);
+        if (this.lastSeek <= -1) {
+            this.lastSeek = j10;
+        }
+        if (Math.abs(j10 - this.lastSeek) >= (this.firstSeek ? 350 : 40)) {
+            this.firstSeek = false;
+            this.lastBetterSeek = j10;
+            this.dispatchQueue.cancelRunnable(this.betterSeek);
+            this.dispatchQueue.postRunnable(this.betterSeek, 300L);
+            m61 m61Var = this.videoPlayer;
+            this.lastSeek = j10;
+            m61Var.M(j10, true);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$pause$4() {
+        m61 m61Var = this.videoPlayer;
+        if (m61Var != null) {
+            m61Var.C();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$play$6() {
+        m61 m61Var = this.videoPlayer;
+        if (m61Var != null) {
+            Surface surface = this.surface;
+            if (surface != null) {
+                m61Var.U(surface);
+            } else {
+                SurfaceView surfaceView = this.surfaceView;
+                if (surfaceView != null) {
+                    m61Var.V(surfaceView);
+                } else {
+                    m61Var.W(this.textureView);
+                }
+            }
+            long j10 = this.pendingSeekTo;
+            if (j10 > 0) {
+                this.videoPlayer.L(j10);
+                this.pendingSeekTo = 0L;
+            }
+            this.videoPlayer.Q(true);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$play$7(float f10) {
+        m61 m61Var = this.videoPlayer;
+        if (m61Var != null) {
+            Surface surface = this.surface;
+            if (surface != null) {
+                m61Var.U(surface);
+            } else {
+                SurfaceView surfaceView = this.surfaceView;
+                if (surfaceView != null) {
+                    m61Var.V(surfaceView);
+                } else {
+                    m61Var.W(this.textureView);
+                }
+            }
+            long j10 = this.pendingSeekTo;
+            if (j10 > 0) {
+                this.videoPlayer.L(j10);
+                this.pendingSeekTo = 0L;
+            }
+            this.videoPlayer.R(f10);
+            this.videoPlayer.Q(true);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void lambda$preparePlayer$0(boolean z10, float f10, Uri uri) {
+        if (this.released) {
+            return;
+        }
+        ensurePlayerCreated(z10);
+        this.videoPlayer.R(f10);
+        FileLog.d("videoplayerholderbase.preparePlayer(): preparePlayer new player as preload uri=" + uri);
+        this.videoPlayer.F(uri, "other", 0L);
+        this.videoPlayer.Q(false);
+        m61 m61Var = this.videoPlayer;
+        DispatchQueue dispatchQueue = this.dispatchQueue;
+        m61Var.b = dispatchQueue;
+        m61Var.d.l0 = dispatchQueue;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$release$3(TLRPC.Document document, Runnable runnable) {
+        m61 m61Var = this.videoPlayer;
+        if (m61Var != null) {
+            m61Var.U(null);
+            this.videoPlayer.W(null);
+            this.videoPlayer.V(null);
+            this.videoPlayer.I();
         }
         if (document != null) {
-            FileLoader.getInstance(videoPlayerHolderBase.currentAccount).cancelLoadFile(document);
+            FileLoader.getInstance(this.currentAccount).cancelLoadFile(document);
         }
         if (runnable != null) {
             AndroidUtilities.runOnUIThread(runnable);
         }
-        videoPlayerHolderBase.videoPlayer = null;
-        videoPlayerHolderBase.dispatchQueue.cancelRunnable(videoPlayerHolderBase.progressRunnable);
+        this.videoPlayer = null;
+        this.dispatchQueue.cancelRunnable(this.progressRunnable);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$seekTo$11(long j10) {
+        m61 m61Var = this.videoPlayer;
+        if (m61Var == null) {
+            this.pendingSeekTo = j10;
+        } else {
+            m61Var.L(j10);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$seekTo$12(long j10, boolean z10, Runnable runnable) {
+        m61 m61Var = this.videoPlayer;
+        if (m61Var == null) {
+            this.pendingSeekTo = j10;
+        } else {
+            m61Var.N(j10, z10, runnable);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void lambda$setAudioEnabled$8(boolean z10, boolean z11) {
+        m61 m61Var = this.videoPlayer;
+        if (m61Var == null) {
+            return;
+        }
+        boolean z12 = m61Var.z();
+        if (z10) {
+            m61 m61Var2 = this.videoPlayer;
+            if (m61Var2.X) {
+                m61Var2.C();
+                long o10 = this.videoPlayer.o();
+                this.videoPlayer.I();
+                this.videoPlayer = null;
+                ensurePlayerCreated(this.audioDisabled);
+                Uri uri = this.uri;
+                if (uri == null) {
+                    uri = this.contentUri;
+                }
+                FileLog.d("videoplayerholderbase.setAudioEnabled(): repreparePlayer as audio track is enabled back uri=" + uri);
+                this.videoPlayer.E(uri, "other");
+                m61 m61Var3 = this.videoPlayer;
+                DispatchQueue dispatchQueue = this.dispatchQueue;
+                m61Var3.b = dispatchQueue;
+                m61Var3.d.l0 = dispatchQueue;
+                if (!z11) {
+                    Surface surface = this.surface;
+                    if (surface != null) {
+                        m61Var3.U(surface);
+                    } else {
+                        SurfaceView surfaceView = this.surfaceView;
+                        if (surfaceView != null) {
+                            m61Var3.V(surfaceView);
+                        } else {
+                            m61Var3.W(this.textureView);
+                        }
+                    }
+                }
+                this.videoPlayer.L(o10 + 50);
+                if (!z12 || z11) {
+                    this.videoPlayer.Q(false);
+                    this.videoPlayer.C();
+                    return;
+                } else {
+                    this.videoPlayer.Q(true);
+                    this.videoPlayer.D();
+                    return;
+                }
+            }
+        }
+        this.videoPlayer.X(z10 ? 1.0f : 0.0f);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setSpeed$5(float f10) {
+        m61 m61Var = this.videoPlayer;
+        if (m61Var != null) {
+            m61Var.R(f10);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setVolume$10(float f10) {
+        m61 m61Var = this.videoPlayer;
+        if (m61Var != null) {
+            m61Var.X(f10);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$start$1() {
+        this.initRunnable = null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void lambda$start$2(boolean z10, float f10, Uri uri, boolean z11, boolean z12, long j10) {
+        if (this.released) {
+            FileLog.d("videoplayerholderbase returned from start: released");
+            return;
+        }
+        if (this.videoPlayer == null) {
+            ensurePlayerCreated(z10);
+            this.videoPlayer.R(f10);
+            FileLog.d("videoplayerholderbase.start(): preparePlayer new player uri=" + uri);
+            this.videoPlayer.E(uri, "other");
+            m61 m61Var = this.videoPlayer;
+            DispatchQueue dispatchQueue = this.dispatchQueue;
+            m61Var.b = dispatchQueue;
+            m61Var.d.l0 = dispatchQueue;
+            if (!z11) {
+                Surface surface = this.surface;
+                if (surface != null) {
+                    m61Var.U(surface);
+                } else {
+                    SurfaceView surfaceView = this.surfaceView;
+                    if (surfaceView != null) {
+                        m61Var.V(surfaceView);
+                    } else {
+                        m61Var.W(this.textureView);
+                    }
+                }
+                this.videoPlayer.Q(true);
+            } else if (z12) {
+                Surface surface2 = this.surface;
+                if (surface2 != null) {
+                    m61Var.U(surface2);
+                } else {
+                    SurfaceView surfaceView2 = this.surfaceView;
+                    if (surfaceView2 != null) {
+                        m61Var.V(surfaceView2);
+                    } else {
+                        m61Var.W(this.textureView);
+                    }
+                }
+                this.videoPlayer.Q(false);
+            }
+        } else {
+            FileLog.d("videoplayerholderbase.start(): player already exist");
+            if (!z11) {
+                Surface surface3 = this.surface;
+                if (surface3 != null) {
+                    this.videoPlayer.U(surface3);
+                } else {
+                    SurfaceView surfaceView3 = this.surfaceView;
+                    if (surfaceView3 != null) {
+                        this.videoPlayer.V(surfaceView3);
+                    } else {
+                        this.videoPlayer.W(this.textureView);
+                    }
+                }
+                this.videoPlayer.D();
+            } else if (z12) {
+                Surface surface4 = this.surface;
+                if (surface4 != null) {
+                    this.videoPlayer.U(surface4);
+                } else {
+                    SurfaceView surfaceView4 = this.surfaceView;
+                    if (surfaceView4 != null) {
+                        this.videoPlayer.V(surfaceView4);
+                    } else {
+                        this.videoPlayer.W(this.textureView);
+                    }
+                }
+                this.videoPlayer.Q(false);
+            }
+        }
+        if (j10 > 0) {
+            this.videoPlayer.L(j10);
+        }
+        AndroidUtilities.runOnUIThread(new j(this, 1));
+    }
+
+    public void allowMultipleInstances(boolean z10) {
+        this.allowMultipleInstances = z10;
+    }
+
+    public long getCurrentPosition() {
+        return this.currentPosition;
+    }
+
+    public Uri getCurrentUri() {
+        return this.contentUri;
+    }
+
+    public long getDuration() {
+        return this.playerDuration;
+    }
+
+    public float getPlaybackProgress(long j10) {
+        if (this.lastState == 4) {
+            this.progress = 1.0f;
+        } else {
+            this.progress = j10 != 0 ? this.currentPosition / j10 : this.currentPosition / this.playerDuration;
+            if (!this.seeking) {
+                this.currentSeek = this.progress;
+                this.lastSeek = this.currentPosition;
+            }
+        }
+        return this.progress;
+    }
+
+    public boolean isBuffering() {
+        return !this.released && this.lastState == 2;
+    }
+
+    public boolean isPlaying() {
+        return !this.paused;
+    }
+
+    public void loopBack() {
+        this.progress = 0.0f;
+        this.lastState = 1;
+        this.dispatchQueue.postRunnable(new j(this, 5));
+    }
+
+    public boolean needRepeat() {
+        return false;
     }
 
     public void pause() {
@@ -465,19 +557,34 @@ public class VideoPlayerHolderBase {
         }
         this.paused = true;
         prepareStub();
-        this.dispatchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda4
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoPlayerHolderBase.$r8$lambda$5pHCvmGDVEjs0kz60XQ2YRe1v2o(VideoPlayerHolderBase.this);
-            }
-        });
+        this.dispatchQueue.postRunnable(new j(this, 4));
     }
 
-    public static /* synthetic */ void $r8$lambda$5pHCvmGDVEjs0kz60XQ2YRe1v2o(VideoPlayerHolderBase videoPlayerHolderBase) {
-        VideoPlayer videoPlayer = videoPlayerHolderBase.videoPlayer;
-        if (videoPlayer != null) {
-            videoPlayer.pause();
+    public void play() {
+        if (!this.released && this.paused) {
+            this.paused = false;
+            this.dispatchQueue.postRunnable(new j(this, 3));
         }
+    }
+
+    public void preparePlayer(final Uri uri, final boolean z10, final float f10) {
+        this.audioDisabled = z10;
+        this.currentAccount = this.currentAccount;
+        this.contentUri = uri;
+        this.paused = true;
+        Runnable runnable = this.initRunnable;
+        if (runnable != null) {
+            this.dispatchQueue.cancelRunnable(runnable);
+        }
+        DispatchQueue dispatchQueue = this.dispatchQueue;
+        Runnable runnable2 = new Runnable() { // from class: org.telegram.messenger.video.m
+            @Override // java.lang.Runnable
+            public final void run() {
+                VideoPlayerHolderBase.this.lambda$preparePlayer$0(z10, f10, uri);
+            }
+        };
+        this.initRunnable = runnable2;
+        dispatchQueue.postRunnable(runnable2);
     }
 
     public void prepareStub() {
@@ -497,312 +604,147 @@ public class VideoPlayerHolderBase {
         }
     }
 
-    public void setSpeed(final float f) {
-        if (this.released) {
+    public boolean release(Runnable runnable) {
+        TLRPC.Document document = this.document;
+        if (document != null && FileStreamLoadOperation.getStreamPrioriy(document) != 0) {
+            FileStreamLoadOperation.setPriorityForDocument(document, 0);
+            FileLoader.getInstance(this.currentAccount).changePriority(0, document, null, null, null, null, null);
+        }
+        this.released = true;
+        this.dispatchQueue.cancelRunnable(this.initRunnable);
+        this.dispatchQueue.cancelRunnable(this.progressRunnable);
+        this.initRunnable = null;
+        this.dispatchQueue.postRunnable(new j3.m(this, document, runnable, 26));
+        Bitmap bitmap = this.playerStubBitmap;
+        if (bitmap != null) {
+            AndroidUtilities.recycleBitmap(bitmap);
+            this.playerStubBitmap = null;
+        }
+        return true;
+    }
+
+    public float seek(float f10, long j10) {
+        if (this.videoPlayer == null) {
+            return this.currentSeek;
+        }
+        this.duration = j10;
+        float clamp = Utilities.clamp(this.currentSeek + f10, 1.0f, 0.0f);
+        this.currentSeek = clamp;
+        this.currentSeekThread = clamp;
+        this.dispatchQueue.cancelRunnable(this.updateSeek);
+        this.dispatchQueue.postRunnable(this.updateSeek);
+        return this.currentSeek;
+    }
+
+    public void seekTo(long j10) {
+        this.dispatchQueue.postRunnable(new p(this, j10, 1));
+    }
+
+    public void setAudioEnabled(boolean z10, boolean z11) {
+        boolean z12 = !z10;
+        if (this.audioDisabled == z12) {
             return;
         }
-        this.dispatchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda11
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoPlayerHolderBase.$r8$lambda$AGQrprKht5FKAPdMwG7vIHssO4E(VideoPlayerHolderBase.this, f);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$AGQrprKht5FKAPdMwG7vIHssO4E(VideoPlayerHolderBase videoPlayerHolderBase, float f) {
-        VideoPlayer videoPlayer = videoPlayerHolderBase.videoPlayer;
-        if (videoPlayer != null) {
-            videoPlayer.setPlaybackSpeed(f);
-        }
-    }
-
-    public void play() {
-        if (!this.released && this.paused) {
-            this.paused = false;
-            this.dispatchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda3
-                @Override // java.lang.Runnable
-                public final void run() {
-                    VideoPlayerHolderBase.$r8$lambda$-sYTElh4T8Kel46C28Glw-D7YSk(VideoPlayerHolderBase.this);
-                }
-            });
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$-sYTElh4T8Kel46C28Glw-D7YSk(VideoPlayerHolderBase videoPlayerHolderBase) {
-        VideoPlayer videoPlayer = videoPlayerHolderBase.videoPlayer;
-        if (videoPlayer != null) {
-            Surface surface = videoPlayerHolderBase.surface;
-            if (surface != null) {
-                videoPlayer.setSurface(surface);
-            } else {
-                SurfaceView surfaceView = videoPlayerHolderBase.surfaceView;
-                if (surfaceView != null) {
-                    videoPlayer.setSurfaceView(surfaceView);
-                } else {
-                    videoPlayer.setTextureView(videoPlayerHolderBase.textureView);
-                }
-            }
-            long j = videoPlayerHolderBase.pendingSeekTo;
-            if (j > 0) {
-                videoPlayerHolderBase.videoPlayer.seekTo(j);
-                videoPlayerHolderBase.pendingSeekTo = 0L;
-            }
-            videoPlayerHolderBase.videoPlayer.setPlayWhenReady(true);
-        }
-    }
-
-    public void play(final float f) {
-        if (!this.released && this.paused) {
-            this.paused = false;
-            this.dispatchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda14
-                @Override // java.lang.Runnable
-                public final void run() {
-                    VideoPlayerHolderBase.$r8$lambda$k5V7ZO-g0_niWDNXjuh8AbQyCaE(VideoPlayerHolderBase.this, f);
-                }
-            });
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$k5V7ZO-g0_niWDNXjuh8AbQyCaE(VideoPlayerHolderBase videoPlayerHolderBase, float f) {
-        VideoPlayer videoPlayer = videoPlayerHolderBase.videoPlayer;
-        if (videoPlayer != null) {
-            Surface surface = videoPlayerHolderBase.surface;
-            if (surface != null) {
-                videoPlayer.setSurface(surface);
-            } else {
-                SurfaceView surfaceView = videoPlayerHolderBase.surfaceView;
-                if (surfaceView != null) {
-                    videoPlayer.setSurfaceView(surfaceView);
-                } else {
-                    videoPlayer.setTextureView(videoPlayerHolderBase.textureView);
-                }
-            }
-            long j = videoPlayerHolderBase.pendingSeekTo;
-            if (j > 0) {
-                videoPlayerHolderBase.videoPlayer.seekTo(j);
-                videoPlayerHolderBase.pendingSeekTo = 0L;
-            }
-            videoPlayerHolderBase.videoPlayer.setPlaybackSpeed(f);
-            videoPlayerHolderBase.videoPlayer.setPlayWhenReady(true);
-        }
-    }
-
-    public void setAudioEnabled(final boolean z, final boolean z2) {
-        boolean z3 = !z;
-        if (this.audioDisabled == z3) {
-            return;
-        }
-        this.audioDisabled = z3;
+        this.audioDisabled = z12;
         this.triesCount = 3;
-        this.dispatchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda10
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoPlayerHolderBase.$r8$lambda$B1OqUlFM1Azo2Zp7enzeQZUa_2U(VideoPlayerHolderBase.this, z, z2);
-            }
-        });
+        this.dispatchQueue.postRunnable(new k(this, z10, z11, 0));
     }
 
-    public static /* synthetic */ void $r8$lambda$B1OqUlFM1Azo2Zp7enzeQZUa_2U(VideoPlayerHolderBase videoPlayerHolderBase, boolean z, boolean z2) {
-        VideoPlayer videoPlayer = videoPlayerHolderBase.videoPlayer;
-        if (videoPlayer == null) {
-            return;
-        }
-        boolean isPlaying = videoPlayer.isPlaying();
-        if (z && !videoPlayerHolderBase.videoPlayer.createdWithAudioTrack()) {
-            videoPlayerHolderBase.videoPlayer.pause();
-            long currentPosition = videoPlayerHolderBase.videoPlayer.getCurrentPosition();
-            videoPlayerHolderBase.videoPlayer.releasePlayer(false);
-            videoPlayerHolderBase.videoPlayer = null;
-            videoPlayerHolderBase.ensurePlayerCreated(videoPlayerHolderBase.audioDisabled);
-            Uri uri = videoPlayerHolderBase.uri;
-            if (uri == null) {
-                uri = videoPlayerHolderBase.contentUri;
-            }
-            FileLog.d("videoplayerholderbase.setAudioEnabled(): repreparePlayer as audio track is enabled back uri=" + uri);
-            videoPlayerHolderBase.videoPlayer.preparePlayer(uri, "other");
-            videoPlayerHolderBase.videoPlayer.setWorkerQueue(videoPlayerHolderBase.dispatchQueue);
-            if (!z2) {
-                Surface surface = videoPlayerHolderBase.surface;
-                if (surface != null) {
-                    videoPlayerHolderBase.videoPlayer.setSurface(surface);
-                } else {
-                    SurfaceView surfaceView = videoPlayerHolderBase.surfaceView;
-                    if (surfaceView != null) {
-                        videoPlayerHolderBase.videoPlayer.setSurfaceView(surfaceView);
-                    } else {
-                        videoPlayerHolderBase.videoPlayer.setTextureView(videoPlayerHolderBase.textureView);
-                    }
-                }
-            }
-            videoPlayerHolderBase.videoPlayer.seekTo(currentPosition + 50);
-            if (isPlaying && !z2) {
-                videoPlayerHolderBase.videoPlayer.setPlayWhenReady(true);
-                videoPlayerHolderBase.videoPlayer.play();
-                return;
-            } else {
-                videoPlayerHolderBase.videoPlayer.setPlayWhenReady(false);
-                videoPlayerHolderBase.videoPlayer.pause();
-                return;
-            }
-        }
-        videoPlayerHolderBase.videoPlayer.setVolume(z ? 1.0f : 0.0f);
+    public void setOnErrorListener(Runnable runnable) {
+        this.onErrorListener = runnable;
     }
 
-    public float getPlaybackProgress(long j) {
-        float f;
-        if (this.lastState == 4) {
-            this.progress = 1.0f;
-        } else {
-            if (j != 0) {
-                f = this.currentPosition / j;
-            } else {
-                f = this.currentPosition / this.playerDuration;
-            }
-            this.progress = f;
-            if (!this.seeking) {
-                this.currentSeek = this.progress;
-                this.lastSeek = this.currentPosition;
-            }
-        }
-        return this.progress;
-    }
-
-    public void loopBack() {
-        this.progress = 0.0f;
-        this.lastState = 1;
-        this.dispatchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda7
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoPlayerHolderBase.$r8$lambda$vhcK6anMbCiIdornxk5k-hyXYGY(VideoPlayerHolderBase.this);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$vhcK6anMbCiIdornxk5k-hyXYGY(VideoPlayerHolderBase videoPlayerHolderBase) {
-        VideoPlayer videoPlayer = videoPlayerHolderBase.videoPlayer;
-        if (videoPlayer != null) {
-            videoPlayer.seekTo(0L);
-        }
-        videoPlayerHolderBase.progress = 0.0f;
-        videoPlayerHolderBase.currentPosition = 0L;
-    }
-
-    public void setVolume(final float f) {
-        this.dispatchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda5
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoPlayerHolderBase.$r8$lambda$1JmyPfX7O1I-YAjA91aL_F2SolA(VideoPlayerHolderBase.this, f);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$1JmyPfX7O1I-YAjA91aL_F2SolA(VideoPlayerHolderBase videoPlayerHolderBase, float f) {
-        VideoPlayer videoPlayer = videoPlayerHolderBase.videoPlayer;
-        if (videoPlayer != null) {
-            videoPlayer.setVolume(f);
-        }
-    }
-
-    public boolean isBuffering() {
-        return !this.released && this.lastState == 2;
-    }
-
-    public long getCurrentPosition() {
-        return this.currentPosition;
-    }
-
-    public long getDuration() {
-        return this.playerDuration;
-    }
-
-    public boolean isPlaying() {
-        return !this.paused;
-    }
-
-    public void seekTo(final long j) {
-        this.dispatchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda6
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoPlayerHolderBase.$r8$lambda$V8uLnehJLNonS-5NQRMCLtIDLQ0(VideoPlayerHolderBase.this, j);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$V8uLnehJLNonS-5NQRMCLtIDLQ0(VideoPlayerHolderBase videoPlayerHolderBase, long j) {
-        VideoPlayer videoPlayer = videoPlayerHolderBase.videoPlayer;
-        if (videoPlayer == null) {
-            videoPlayerHolderBase.pendingSeekTo = j;
-        } else {
-            videoPlayer.seekTo(j);
-        }
-    }
-
-    public void seekTo(final long j, final boolean z, final Runnable runnable) {
-        this.dispatchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda9
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoPlayerHolderBase.$r8$lambda$JpoS-D8UdUavBi_IGlKF50fL1qs(VideoPlayerHolderBase.this, j, z, runnable);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$JpoS-D8UdUavBi_IGlKF50fL1qs(VideoPlayerHolderBase videoPlayerHolderBase, long j, boolean z, Runnable runnable) {
-        VideoPlayer videoPlayer = videoPlayerHolderBase.videoPlayer;
-        if (videoPlayer == null) {
-            videoPlayerHolderBase.pendingSeekTo = j;
-        } else {
-            videoPlayer.seekTo(j, z, runnable);
-        }
-    }
-
-    public Uri getCurrentUri() {
-        return this.contentUri;
+    public void setOnReadyListener(Runnable runnable) {
+        this.onReadyListener = runnable;
     }
 
     public void setOnSeekUpdate(Runnable runnable) {
         this.onSeekUpdate = runnable;
     }
 
-    public static /* synthetic */ void $r8$lambda$Eyl2V-q94jm7XI2XxR7-O08EAf4(VideoPlayerHolderBase videoPlayerHolderBase) {
-        if (videoPlayerHolderBase.videoPlayer == null) {
-            return;
-        }
-        long j = (long) (videoPlayerHolderBase.currentSeekThread * videoPlayerHolderBase.duration);
-        if (videoPlayerHolderBase.lastSeek <= -1) {
-            videoPlayerHolderBase.lastSeek = j;
-        }
-        if (Math.abs(j - videoPlayerHolderBase.lastSeek) >= (videoPlayerHolderBase.firstSeek ? 350 : 40)) {
-            videoPlayerHolderBase.firstSeek = false;
-            videoPlayerHolderBase.lastBetterSeek = j;
-            videoPlayerHolderBase.dispatchQueue.cancelRunnable(videoPlayerHolderBase.betterSeek);
-            videoPlayerHolderBase.dispatchQueue.postRunnable(videoPlayerHolderBase.betterSeek, 300L);
-            VideoPlayer videoPlayer = videoPlayerHolderBase.videoPlayer;
-            videoPlayerHolderBase.lastSeek = j;
-            videoPlayer.seekTo(j, true);
-        }
-    }
-
-    public void setSeeking(boolean z) {
-        if (z && !this.seeking) {
+    public void setSeeking(boolean z10) {
+        if (z10 && !this.seeking) {
             this.firstSeek = true;
         }
-        this.seeking = z;
-        if (z) {
+        this.seeking = z10;
+        if (z10) {
             return;
         }
         this.dispatchQueue.cancelRunnable(this.betterSeek);
     }
 
-    public float seek(float f, long j) {
-        if (this.videoPlayer == null) {
-            return this.currentSeek;
+    public void setSpeed(float f10) {
+        if (this.released) {
+            return;
         }
-        this.duration = j;
-        float clamp = Utilities.clamp(this.currentSeek + f, 1.0f, 0.0f);
-        this.currentSeek = clamp;
-        this.currentSeekThread = clamp;
-        this.dispatchQueue.cancelRunnable(this.updateSeek);
-        this.dispatchQueue.postRunnable(this.updateSeek);
-        return this.currentSeek;
+        this.dispatchQueue.postRunnable(new l(this, f10, 0));
+    }
+
+    public void setVolume(float f10) {
+        this.dispatchQueue.postRunnable(new l(this, f10, 2));
+    }
+
+    public void start(final boolean z10, final boolean z11, final Uri uri, final long j10, final boolean z12, final float f10) {
+        this.startTime = System.currentTimeMillis();
+        this.audioDisabled = z12;
+        this.paused = z11;
+        this.triesCount = 3;
+        if (j10 > 0) {
+            this.currentPosition = j10;
+        }
+        DispatchQueue dispatchQueue = this.dispatchQueue;
+        Runnable runnable = new Runnable() { // from class: org.telegram.messenger.video.n
+            @Override // java.lang.Runnable
+            public final void run() {
+                VideoPlayerHolderBase.this.lambda$start$2(z12, f10, uri, z11, z10, j10);
+            }
+        };
+        this.initRunnable = runnable;
+        dispatchQueue.postRunnable(runnable);
+    }
+
+    public VideoPlayerHolderBase with(SurfaceView surfaceView) {
+        this.surfaceView = surfaceView;
+        this.textureView = null;
+        this.surface = null;
+        return this;
+    }
+
+    public void seekTo(long j10, boolean z10, Runnable runnable) {
+        this.dispatchQueue.postRunnable(new t8(this, j10, z10, runnable));
+    }
+
+    public VideoPlayerHolderBase with(TextureView textureView) {
+        this.surfaceView = null;
+        this.textureView = textureView;
+        this.surface = null;
+        return this;
+    }
+
+    public void play(float f10) {
+        if (!this.released && this.paused) {
+            this.paused = false;
+            this.dispatchQueue.postRunnable(new l(this, f10, 1));
+        }
+    }
+
+    public VideoPlayerHolderBase with(Surface surface) {
+        this.surfaceView = null;
+        this.textureView = null;
+        this.surface = surface;
+        return this;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$13() {
+    }
+
+    public void onRenderedFirstFrame() {
+    }
+
+    public void onStateChanged(boolean z10, int i10) {
+    }
+
+    public void onVideoSizeChanged(int i10, int i11, int i12, float f10) {
     }
 }

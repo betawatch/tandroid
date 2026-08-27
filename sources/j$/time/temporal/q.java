@@ -4,5 +4,5 @@ package j$.time.temporal;
 public interface q {
     long between(Temporal temporal, Temporal temporal2);
 
-    Temporal l(Temporal temporal, long j);
+    Temporal j(Temporal temporal, long j10);
 }

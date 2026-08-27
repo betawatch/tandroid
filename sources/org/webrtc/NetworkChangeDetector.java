@@ -2,9 +2,11 @@ package org.webrtc;
 
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public interface NetworkChangeDetector {
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public enum ConnectionType {
         CONNECTION_UNKNOWN,
         CONNECTION_ETHERNET,
@@ -19,24 +21,7 @@ public interface NetworkChangeDetector {
         CONNECTION_NONE
     }
 
-    public interface Observer {
-        void onConnectionTypeChanged(ConnectionType connectionType);
-
-        void onNetworkConnect(NetworkInformation networkInformation);
-
-        void onNetworkDisconnect(long j);
-
-        void onNetworkPreference(List<ConnectionType> list, int i);
-    }
-
-    void destroy();
-
-    List<NetworkInformation> getActiveNetworkList();
-
-    ConnectionType getCurrentConnectionType();
-
-    boolean supportNetworkCallback();
-
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class IPAddress {
         public final byte[] address;
 
@@ -49,6 +34,7 @@ public interface NetworkChangeDetector {
         }
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class NetworkInformation {
         public final long handle;
         public final IPAddress[] ipAddresses;
@@ -56,32 +42,51 @@ public interface NetworkChangeDetector {
         public final ConnectionType type;
         public final ConnectionType underlyingTypeForVpn;
 
-        public NetworkInformation(String str, ConnectionType connectionType, ConnectionType connectionType2, long j, IPAddress[] iPAddressArr) {
+        public NetworkInformation(String str, ConnectionType connectionType, ConnectionType connectionType2, long j10, IPAddress[] iPAddressArr) {
             this.name = str;
             this.type = connectionType;
             this.underlyingTypeForVpn = connectionType2;
-            this.handle = j;
+            this.handle = j10;
             this.ipAddresses = iPAddressArr;
-        }
-
-        private IPAddress[] getIpAddresses() {
-            return this.ipAddresses;
         }
 
         private ConnectionType getConnectionType() {
             return this.type;
         }
 
-        private ConnectionType getUnderlyingConnectionTypeForVpn() {
-            return this.underlyingTypeForVpn;
-        }
-
         private long getHandle() {
             return this.handle;
+        }
+
+        private IPAddress[] getIpAddresses() {
+            return this.ipAddresses;
         }
 
         private String getName() {
             return this.name;
         }
+
+        private ConnectionType getUnderlyingConnectionTypeForVpn() {
+            return this.underlyingTypeForVpn;
+        }
     }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public interface Observer {
+        void onConnectionTypeChanged(ConnectionType connectionType);
+
+        void onNetworkConnect(NetworkInformation networkInformation);
+
+        void onNetworkDisconnect(long j10);
+
+        void onNetworkPreference(List<ConnectionType> list, int i10);
+    }
+
+    void destroy();
+
+    List<NetworkInformation> getActiveNetworkList();
+
+    ConnectionType getCurrentConnectionType();
+
+    boolean supportNetworkCallback();
 }

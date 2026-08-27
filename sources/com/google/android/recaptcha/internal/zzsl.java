@@ -1,12 +1,13 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzsl implements zzsc {
     final int zza;
     final zzvg zzb;
 
-    zzsl(zzsq zzsqVar, int i, zzvg zzvgVar, boolean z, boolean z2) {
-        this.zza = i;
+    public zzsl(zzsq zzsqVar, int i10, zzvg zzvgVar, boolean z10, boolean z11) {
+        this.zza = i10;
         this.zzb = zzvgVar;
     }
 

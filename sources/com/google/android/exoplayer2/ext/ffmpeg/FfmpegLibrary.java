@@ -1,14 +1,22 @@
 package com.google.android.exoplayer2.ext.ffmpeg;
 
-import com.google.android.exoplayer2.ExoPlayerLibraryInfo;
-import com.google.android.exoplayer2.util.Log;
+import h3.r0;
 import org.telegram.messenger.NativeLoader;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class FfmpegLibrary {
     private static final String TAG = "FfmpegLibrary";
     private static int inputBufferPaddingSize;
     private static String version;
+
+    static {
+        r0.a("goog.exo.ffmpeg");
+        inputBufferPaddingSize = -1;
+    }
+
+    private FfmpegLibrary() {
+    }
 
     private static native int ffmpegGetInputBufferPaddingSize();
 
@@ -16,54 +24,7 @@ public final class FfmpegLibrary {
 
     private static native boolean ffmpegHasDecoder(String str);
 
-    public static void setLibraries(String... strArr) {
-    }
-
-    static {
-        ExoPlayerLibraryInfo.registerModule("goog.exo.ffmpeg");
-        inputBufferPaddingSize = -1;
-    }
-
-    private FfmpegLibrary() {
-    }
-
-    public static boolean isAvailable() {
-        return NativeLoader.loaded();
-    }
-
-    public static String getVersion() {
-        if (!isAvailable()) {
-            return null;
-        }
-        if (version == null) {
-            version = ffmpegGetVersion();
-        }
-        return version;
-    }
-
-    public static int getInputBufferPaddingSize() {
-        if (!isAvailable()) {
-            return -1;
-        }
-        if (inputBufferPaddingSize == -1) {
-            inputBufferPaddingSize = ffmpegGetInputBufferPaddingSize();
-        }
-        return inputBufferPaddingSize;
-    }
-
-    public static boolean supportsFormat(String str) {
-        String codecName;
-        if (!isAvailable() || (codecName = getCodecName(str)) == null) {
-            return false;
-        }
-        if (ffmpegHasDecoder(codecName)) {
-            return true;
-        }
-        Log.w(TAG, "No " + codecName + " decoder available. Check the FFmpeg build configuration.");
-        return false;
-    }
-
-    static String getCodecName(String str) {
+    public static String getCodecName(String str) {
         str.getClass();
         switch (str) {
             case "audio/eac3-joc":
@@ -101,5 +62,44 @@ public final class FfmpegLibrary {
             default:
                 return null;
         }
+    }
+
+    public static int getInputBufferPaddingSize() {
+        if (!isAvailable()) {
+            return -1;
+        }
+        if (inputBufferPaddingSize == -1) {
+            inputBufferPaddingSize = ffmpegGetInputBufferPaddingSize();
+        }
+        return inputBufferPaddingSize;
+    }
+
+    public static String getVersion() {
+        if (!isAvailable()) {
+            return null;
+        }
+        if (version == null) {
+            version = ffmpegGetVersion();
+        }
+        return version;
+    }
+
+    public static boolean isAvailable() {
+        return NativeLoader.loaded();
+    }
+
+    public static boolean supportsFormat(String str) {
+        String codecName;
+        if (!isAvailable() || (codecName = getCodecName(str)) == null) {
+            return false;
+        }
+        if (ffmpegHasDecoder(codecName)) {
+            return true;
+        }
+        d5.a.K(TAG, "No " + codecName + " decoder available. Check the FFmpeg build configuration.");
+        return false;
+    }
+
+    public static void setLibraries(String... strArr) {
     }
 }

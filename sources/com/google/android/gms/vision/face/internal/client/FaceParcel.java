@@ -2,68 +2,83 @@ package com.google.android.gms.vision.face.internal.client;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import f4.e;
+import h7.r8;
+import z5.a;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class FaceParcel extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<FaceParcel> CREATOR = new zzd();
-    public final int zza;
-    public final float zzb;
-    public final float zzc;
-    public final float zzd;
-    public final float zze;
-    public final float zzf;
-    public final float zzg;
-    public final float zzh;
-    public final LandmarkParcel[] zzi;
-    public final float zzj;
-    public final float zzk;
-    public final float zzl;
-    public final zza[] zzm;
-    public final float zzn;
-    private final int zzo;
+public class FaceParcel extends a {
+    public static final Parcelable.Creator<FaceParcel> CREATOR = new e(2);
+    public final float A;
+    public final int a;
+    public final int b;
+    public final float c;
+    public final float d;
+    public final float e;
+    public final float f;
+    public final float h;
+    public final float n;
+    public final float r;
+    public final LandmarkParcel[] s;
+    public final float v;
+    public final float w;
+    public final float x;
+    public final f8.a[] y;
 
-    public FaceParcel(int i, int i2, float f, float f2, float f3, float f4, float f5, float f6, float f7, LandmarkParcel[] landmarkParcelArr, float f8, float f9, float f10, zza[] zzaVarArr, float f11) {
-        this.zzo = i;
-        this.zza = i2;
-        this.zzb = f;
-        this.zzc = f2;
-        this.zzd = f3;
-        this.zze = f4;
-        this.zzf = f5;
-        this.zzg = f6;
-        this.zzh = f7;
-        this.zzi = landmarkParcelArr;
-        this.zzj = f8;
-        this.zzk = f9;
-        this.zzl = f10;
-        this.zzm = zzaVarArr;
-        this.zzn = f11;
-    }
-
-    public FaceParcel(int i, int i2, float f, float f2, float f3, float f4, float f5, float f6, LandmarkParcel[] landmarkParcelArr, float f7, float f8, float f9) {
-        this(i, i2, f, f2, f3, f4, f5, f6, 0.0f, landmarkParcelArr, f7, f8, f9, new zza[0], -1.0f);
+    public FaceParcel(int i10, int i11, float f10, float f11, float f12, float f13, float f14, float f15, float f16, LandmarkParcel[] landmarkParcelArr, float f17, float f18, float f19, f8.a[] aVarArr, float f20) {
+        this.a = i10;
+        this.b = i11;
+        this.c = f10;
+        this.d = f11;
+        this.e = f12;
+        this.f = f13;
+        this.h = f14;
+        this.n = f15;
+        this.r = f16;
+        this.s = landmarkParcelArr;
+        this.v = f17;
+        this.w = f18;
+        this.x = f19;
+        this.y = aVarArr;
+        this.A = f20;
     }
 
     @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeInt(parcel, 1, this.zzo);
-        SafeParcelWriter.writeInt(parcel, 2, this.zza);
-        SafeParcelWriter.writeFloat(parcel, 3, this.zzb);
-        SafeParcelWriter.writeFloat(parcel, 4, this.zzc);
-        SafeParcelWriter.writeFloat(parcel, 5, this.zzd);
-        SafeParcelWriter.writeFloat(parcel, 6, this.zze);
-        SafeParcelWriter.writeFloat(parcel, 7, this.zzf);
-        SafeParcelWriter.writeFloat(parcel, 8, this.zzg);
-        SafeParcelWriter.writeTypedArray(parcel, 9, this.zzi, i, false);
-        SafeParcelWriter.writeFloat(parcel, 10, this.zzj);
-        SafeParcelWriter.writeFloat(parcel, 11, this.zzk);
-        SafeParcelWriter.writeFloat(parcel, 12, this.zzl);
-        SafeParcelWriter.writeTypedArray(parcel, 13, this.zzm, i, false);
-        SafeParcelWriter.writeFloat(parcel, 14, this.zzh);
-        SafeParcelWriter.writeFloat(parcel, 15, this.zzn);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = r8.q(parcel, 20293);
+        r8.s(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        r8.s(parcel, 2, 4);
+        parcel.writeInt(this.b);
+        r8.s(parcel, 3, 4);
+        parcel.writeFloat(this.c);
+        r8.s(parcel, 4, 4);
+        parcel.writeFloat(this.d);
+        r8.s(parcel, 5, 4);
+        parcel.writeFloat(this.e);
+        r8.s(parcel, 6, 4);
+        parcel.writeFloat(this.f);
+        r8.s(parcel, 7, 4);
+        parcel.writeFloat(this.h);
+        r8.s(parcel, 8, 4);
+        parcel.writeFloat(this.n);
+        r8.o(parcel, 9, this.s, i10);
+        r8.s(parcel, 10, 4);
+        parcel.writeFloat(this.v);
+        r8.s(parcel, 11, 4);
+        parcel.writeFloat(this.w);
+        r8.s(parcel, 12, 4);
+        parcel.writeFloat(this.x);
+        r8.o(parcel, 13, this.y, i10);
+        r8.s(parcel, 14, 4);
+        parcel.writeFloat(this.r);
+        r8.s(parcel, 15, 4);
+        parcel.writeFloat(this.A);
+        r8.r(parcel, q6);
+    }
+
+    public FaceParcel(int i10, int i11, float f10, float f11, float f12, float f13, float f14, float f15, LandmarkParcel[] landmarkParcelArr, float f16, float f17, float f18) {
+        this(i10, i11, f10, f11, f12, f13, f14, f15, 0.0f, landmarkParcelArr, f16, f17, f18, new f8.a[0], -1.0f);
     }
 }

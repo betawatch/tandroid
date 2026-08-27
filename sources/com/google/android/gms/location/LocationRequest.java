@@ -1,376 +1,276 @@
 package com.google.android.gms.location;
 
-import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
 import android.os.WorkSource;
-import com.google.android.gms.common.internal.Objects;
-import com.google.android.gms.common.internal.Preconditions;
+import android.util.Log;
+import c7.k;
+import c7.q;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-import com.google.android.gms.common.util.WorkSourceUtil;
-import com.google.android.gms.internal.location.zzd;
-import com.google.android.gms.internal.location.zzdj;
-import org.telegram.tgnet.ConnectionsManager;
+import f6.f;
+import h7.r8;
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import r6.l;
+import z5.a;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class LocationRequest extends AbstractSafeParcelable implements ReflectedParcelable {
-    public static final Parcelable.Creator<LocationRequest> CREATOR = new zzx();
-    private int zza;
-    private long zzb;
-    private long zzc;
-    private long zzd;
-    private long zze;
-    private int zzf;
-    private float zzg;
-    private boolean zzh;
-    private long zzi;
-    private final int zzj;
-    private final int zzk;
-    private final String zzl;
-    private final boolean zzm;
-    private final WorkSource zzn;
-    private final zzd zzo;
+public final class LocationRequest extends a implements ReflectedParcelable {
+    public static final Parcelable.Creator<LocationRequest> CREATOR = new l(12);
+    public final k A;
+    public int a;
+    public long b;
+    public long c;
+    public final long d;
+    public final long e;
+    public final int f;
+    public final float h;
+    public final boolean n;
+    public long r;
+    public final int s;
+    public final int v;
+    public final String w;
+    public final boolean x;
+    public final WorkSource y;
 
-    public static LocationRequest create() {
-        return new LocationRequest(102, 3600000L, 600000L, 0L, Long.MAX_VALUE, Long.MAX_VALUE, ConnectionsManager.DEFAULT_DATACENTER_ID, 0.0f, true, 3600000L, 0, 0, null, false, new WorkSource(), null);
+    public LocationRequest(int i10, long j10, long j11, long j12, long j13, long j14, int i11, float f10, boolean z10, long j15, int i12, int i13, String str, boolean z11, WorkSource workSource, k kVar) {
+        this.a = i10;
+        this.b = j10;
+        this.c = j11;
+        this.d = j12;
+        this.e = j13 == Long.MAX_VALUE ? j14 : Math.min(Math.max(1L, j13 - SystemClock.elapsedRealtime()), j14);
+        this.f = i11;
+        this.h = f10;
+        this.n = z10;
+        this.r = j15 != -1 ? j15 : j10;
+        this.s = i12;
+        this.v = i13;
+        this.w = str;
+        this.x = z11;
+        this.y = workSource;
+        this.A = kVar;
     }
 
-    private static String zzf(long j) {
-        return j == Long.MAX_VALUE ? "∞" : zzdj.zza(j);
+    public static String c(long j10) {
+        String sb2;
+        if (j10 == Long.MAX_VALUE) {
+            return "∞";
+        }
+        StringBuilder sb3 = q.a;
+        synchronized (sb3) {
+            sb3.setLength(0);
+            q.a(sb3, j10);
+            sb2 = sb3.toString();
+        }
+        return sb2;
     }
 
-    public boolean equals(Object obj) {
-        if (obj instanceof LocationRequest) {
-            LocationRequest locationRequest = (LocationRequest) obj;
-            if (this.zza == locationRequest.zza && ((isPassive() || this.zzb == locationRequest.zzb) && this.zzc == locationRequest.zzc && isBatched() == locationRequest.isBatched() && ((!isBatched() || this.zzd == locationRequest.zzd) && this.zze == locationRequest.zze && this.zzf == locationRequest.zzf && this.zzg == locationRequest.zzg && this.zzh == locationRequest.zzh && this.zzj == locationRequest.zzj && this.zzk == locationRequest.zzk && this.zzm == locationRequest.zzm && this.zzn.equals(locationRequest.zzn) && Objects.equal(this.zzl, locationRequest.zzl) && Objects.equal(this.zzo, locationRequest.zzo)))) {
-                return true;
-            }
+    public final boolean b() {
+        long j10 = this.d;
+        return j10 > 0 && (j10 >> 1) >= this.b;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof LocationRequest)) {
+            return false;
+        }
+        LocationRequest locationRequest = (LocationRequest) obj;
+        int i10 = this.a;
+        if (i10 != locationRequest.a) {
+            return false;
+        }
+        if ((i10 == 105 || this.b == locationRequest.b) && this.c == locationRequest.c && b() == locationRequest.b()) {
+            return (!b() || this.d == locationRequest.d) && this.e == locationRequest.e && this.f == locationRequest.f && this.h == locationRequest.h && this.n == locationRequest.n && this.s == locationRequest.s && this.v == locationRequest.v && this.x == locationRequest.x && this.y.equals(locationRequest.y) && y5.l.l(this.w, locationRequest.w) && y5.l.l(this.A, locationRequest.A);
         }
         return false;
     }
 
-    public long getDurationMillis() {
-        return this.zze;
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), Long.valueOf(this.b), Long.valueOf(this.c), this.y});
     }
 
-    public int getGranularity() {
-        return this.zzj;
-    }
-
-    public long getIntervalMillis() {
-        return this.zzb;
-    }
-
-    public long getMaxUpdateAgeMillis() {
-        return this.zzi;
-    }
-
-    public long getMaxUpdateDelayMillis() {
-        return this.zzd;
-    }
-
-    public int getMaxUpdates() {
-        return this.zzf;
-    }
-
-    public float getMinUpdateDistanceMeters() {
-        return this.zzg;
-    }
-
-    public long getMinUpdateIntervalMillis() {
-        return this.zzc;
-    }
-
-    public int getPriority() {
-        return this.zza;
-    }
-
-    public int hashCode() {
-        return Objects.hashCode(Integer.valueOf(this.zza), Long.valueOf(this.zzb), Long.valueOf(this.zzc), this.zzn);
-    }
-
-    public boolean isBatched() {
-        long j = this.zzd;
-        return j > 0 && (j >> 1) >= this.zzb;
-    }
-
-    public boolean isPassive() {
-        return this.zza == 105;
-    }
-
-    public boolean isWaitForAccurateLocation() {
-        return this.zzh;
-    }
-
-    public LocationRequest setFastestInterval(long j) {
-        Preconditions.checkArgument(j >= 0, "illegal fastest interval: %d", Long.valueOf(j));
-        this.zzc = j;
-        return this;
-    }
-
-    public LocationRequest setInterval(long j) {
-        Preconditions.checkArgument(j >= 0, "intervalMillis must be greater than or equal to 0");
-        long j2 = this.zzc;
-        long j3 = this.zzb;
-        if (j2 == j3 / 6) {
-            this.zzc = j / 6;
-        }
-        if (this.zzi == j3) {
-            this.zzi = j;
-        }
-        this.zzb = j;
-        return this;
-    }
-
-    public LocationRequest setPriority(int i) {
-        zzae.zza(i);
-        this.zza = i;
-        return this;
-    }
-
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Request[");
-        if (isPassive()) {
-            sb.append(zzae.zzb(this.zza));
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x014c  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0156  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String toString() {
+        k kVar;
+        int intValue;
+        String str;
+        String str2;
+        StringBuilder o10 = com.google.android.recaptcha.internal.a.o("Request[");
+        int i10 = this.a;
+        if (i10 == 105) {
+            o10.append(r7.k.a(i10));
         } else {
-            sb.append("@");
-            if (isBatched()) {
-                zzdj.zzb(this.zzb, sb);
-                sb.append("/");
-                zzdj.zzb(this.zzd, sb);
+            o10.append("@");
+            if (b()) {
+                q.a(o10, this.b);
+                o10.append("/");
+                q.a(o10, this.d);
             } else {
-                zzdj.zzb(this.zzb, sb);
+                q.a(o10, this.b);
             }
-            sb.append(" ");
-            sb.append(zzae.zzb(this.zza));
+            o10.append(" ");
+            o10.append(r7.k.a(this.a));
         }
-        if (isPassive() || this.zzc != this.zzb) {
-            sb.append(", minUpdateInterval=");
-            sb.append(zzf(this.zzc));
+        if (this.a == 105 || this.c != this.b) {
+            o10.append(", minUpdateInterval=");
+            o10.append(c(this.c));
         }
-        if (this.zzg > 0.0d) {
-            sb.append(", minUpdateDistance=");
-            sb.append(this.zzg);
+        float f10 = this.h;
+        if (f10 > 0.0d) {
+            o10.append(", minUpdateDistance=");
+            o10.append(f10);
         }
-        if (!isPassive() ? this.zzi != this.zzb : this.zzi != Long.MAX_VALUE) {
-            sb.append(", maxUpdateAge=");
-            sb.append(zzf(this.zzi));
+        if (this.a != 105 ? this.r != this.b : this.r != Long.MAX_VALUE) {
+            o10.append(", maxUpdateAge=");
+            o10.append(c(this.r));
         }
-        if (this.zze != Long.MAX_VALUE) {
-            sb.append(", duration=");
-            zzdj.zzb(this.zze, sb);
+        long j10 = this.e;
+        if (j10 != Long.MAX_VALUE) {
+            o10.append(", duration=");
+            q.a(o10, j10);
         }
-        if (this.zzf != Integer.MAX_VALUE) {
-            sb.append(", maxUpdates=");
-            sb.append(this.zzf);
+        int i11 = this.f;
+        if (i11 != Integer.MAX_VALUE) {
+            o10.append(", maxUpdates=");
+            o10.append(i11);
         }
-        if (this.zzk != 0) {
-            sb.append(", ");
-            sb.append(zzai.zza(this.zzk));
+        boolean z10 = true;
+        int i12 = this.v;
+        if (i12 != 0) {
+            o10.append(", ");
+            if (i12 == 0) {
+                str2 = "THROTTLE_BACKGROUND";
+            } else if (i12 == 1) {
+                str2 = "THROTTLE_ALWAYS";
+            } else {
+                if (i12 != 2) {
+                    throw new IllegalArgumentException();
+                }
+                str2 = "THROTTLE_NEVER";
+            }
+            o10.append(str2);
         }
-        if (this.zzj != 0) {
-            sb.append(", ");
-            sb.append(zzo.zzb(this.zzj));
+        int i13 = this.s;
+        if (i13 != 0) {
+            o10.append(", ");
+            if (i13 == 0) {
+                str = "GRANULARITY_PERMISSION_LEVEL";
+            } else if (i13 == 1) {
+                str = "GRANULARITY_COARSE";
+            } else {
+                if (i13 != 2) {
+                    throw new IllegalArgumentException();
+                }
+                str = "GRANULARITY_FINE";
+            }
+            o10.append(str);
         }
-        if (this.zzh) {
-            sb.append(", waitForAccurateLocation");
+        if (this.n) {
+            o10.append(", waitForAccurateLocation");
         }
-        if (this.zzm) {
-            sb.append(", bypass");
+        if (this.x) {
+            o10.append(", bypass");
         }
-        if (this.zzl != null) {
-            sb.append(", moduleId=");
-            sb.append(this.zzl);
+        String str3 = this.w;
+        if (str3 != null) {
+            o10.append(", moduleId=");
+            o10.append(str3);
         }
-        if (!WorkSourceUtil.isEmpty(this.zzn)) {
-            sb.append(", ");
-            sb.append(this.zzn);
+        Method method = f.d;
+        WorkSource workSource = this.y;
+        if (method != null) {
+            try {
+                Object invoke = method.invoke(workSource, null);
+                y5.l.h(invoke);
+                z10 = ((Boolean) invoke).booleanValue();
+            } catch (Exception e9) {
+                Log.e("WorkSourceUtil", "Unable to check WorkSource emptiness", e9);
+            }
+            if (!z10) {
+                o10.append(", ");
+                o10.append(workSource);
+            }
+            kVar = this.A;
+            if (kVar != null) {
+                o10.append(", impersonation=");
+                o10.append(kVar);
+            }
+            o10.append(']');
+            return o10.toString();
         }
-        if (this.zzo != null) {
-            sb.append(", impersonation=");
-            sb.append(this.zzo);
+        Method method2 = f.c;
+        if (method2 != null) {
+            try {
+                Object invoke2 = method2.invoke(workSource, null);
+                y5.l.h(invoke2);
+                intValue = ((Integer) invoke2).intValue();
+            } catch (Exception e10) {
+                Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e10);
+            }
+            if (intValue != 0) {
+                z10 = false;
+            }
+            if (!z10) {
+            }
+            kVar = this.A;
+            if (kVar != null) {
+            }
+            o10.append(']');
+            return o10.toString();
         }
-        sb.append(']');
-        return sb.toString();
+        intValue = 0;
+        if (intValue != 0) {
+        }
+        if (!z10) {
+        }
+        kVar = this.A;
+        if (kVar != null) {
+        }
+        o10.append(']');
+        return o10.toString();
     }
 
     @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeInt(parcel, 1, getPriority());
-        SafeParcelWriter.writeLong(parcel, 2, getIntervalMillis());
-        SafeParcelWriter.writeLong(parcel, 3, getMinUpdateIntervalMillis());
-        SafeParcelWriter.writeInt(parcel, 6, getMaxUpdates());
-        SafeParcelWriter.writeFloat(parcel, 7, getMinUpdateDistanceMeters());
-        SafeParcelWriter.writeLong(parcel, 8, getMaxUpdateDelayMillis());
-        SafeParcelWriter.writeBoolean(parcel, 9, isWaitForAccurateLocation());
-        SafeParcelWriter.writeLong(parcel, 10, getDurationMillis());
-        SafeParcelWriter.writeLong(parcel, 11, getMaxUpdateAgeMillis());
-        SafeParcelWriter.writeInt(parcel, 12, getGranularity());
-        SafeParcelWriter.writeInt(parcel, 13, this.zzk);
-        SafeParcelWriter.writeString(parcel, 14, this.zzl, false);
-        SafeParcelWriter.writeBoolean(parcel, 15, this.zzm);
-        SafeParcelWriter.writeParcelable(parcel, 16, this.zzn, i, false);
-        SafeParcelWriter.writeParcelable(parcel, 17, this.zzo, i, false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
-    }
-
-    public final int zza() {
-        return this.zzk;
-    }
-
-    public final WorkSource zzb() {
-        return this.zzn;
-    }
-
-    public final zzd zzc() {
-        return this.zzo;
-    }
-
-    public final String zzd() {
-        return this.zzl;
-    }
-
-    public final boolean zze() {
-        return this.zzm;
-    }
-
-    LocationRequest(int i, long j, long j2, long j3, long j4, long j5, int i2, float f, boolean z, long j6, int i3, int i4, String str, boolean z2, WorkSource workSource, zzd zzdVar) {
-        this.zza = i;
-        this.zzb = j;
-        this.zzc = j2;
-        this.zzd = j3;
-        this.zze = j4 == Long.MAX_VALUE ? j5 : Math.min(Math.max(1L, j4 - SystemClock.elapsedRealtime()), j5);
-        this.zzf = i2;
-        this.zzg = f;
-        this.zzh = z;
-        this.zzi = j6 != -1 ? j6 : j;
-        this.zzj = i3;
-        this.zzk = i4;
-        this.zzl = str;
-        this.zzm = z2;
-        this.zzn = workSource;
-        this.zzo = zzdVar;
-    }
-
-    public static final class Builder {
-        private int zza;
-        private long zzb;
-        private long zzc;
-        private long zzd;
-        private long zze;
-        private int zzf;
-        private float zzg;
-        private boolean zzh;
-        private long zzi;
-        private int zzj;
-        private int zzk;
-        private String zzl;
-        private boolean zzm;
-        private WorkSource zzn;
-        private zzd zzo;
-
-        public LocationRequest build() {
-            int i = this.zza;
-            long j = this.zzb;
-            long j2 = this.zzc;
-            if (j2 == -1) {
-                j2 = j;
-            } else if (i != 105) {
-                j2 = Math.min(j2, j);
-            }
-            long max = Math.max(this.zzd, this.zzb);
-            long j3 = this.zze;
-            int i2 = this.zzf;
-            float f = this.zzg;
-            boolean z = this.zzh;
-            long j4 = this.zzi;
-            if (j4 == -1) {
-                j4 = this.zzb;
-            }
-            return new LocationRequest(i, j, j2, max, Long.MAX_VALUE, j3, i2, f, z, j4, this.zzj, this.zzk, this.zzl, this.zzm, new WorkSource(this.zzn), this.zzo);
-        }
-
-        public Builder setGranularity(int i) {
-            zzo.zza(i);
-            this.zzj = i;
-            return this;
-        }
-
-        public Builder setMaxUpdateAgeMillis(long j) {
-            boolean z = true;
-            if (j != -1 && j < 0) {
-                z = false;
-            }
-            Preconditions.checkArgument(z, "maxUpdateAgeMillis must be greater than or equal to 0, or IMPLICIT_MAX_UPDATE_AGE");
-            this.zzi = j;
-            return this;
-        }
-
-        public Builder setWaitForAccurateLocation(boolean z) {
-            this.zzh = z;
-            return this;
-        }
-
-        public final Builder zza(boolean z) {
-            this.zzm = z;
-            return this;
-        }
-
-        public final Builder zzb(String str) {
-            if (Build.VERSION.SDK_INT < 30) {
-                this.zzl = str;
-            }
-            return this;
-        }
-
-        public final Builder zzc(int i) {
-            int i2;
-            boolean z;
-            if (i == 0 || i == 1) {
-                i2 = i;
-            } else {
-                i2 = 2;
-                if (i != 2) {
-                    i2 = i;
-                    z = false;
-                    Preconditions.checkArgument(z, "throttle behavior %d must be a ThrottleBehavior.THROTTLE_* constant", Integer.valueOf(i));
-                    this.zzk = i2;
-                    return this;
-                }
-                i = 2;
-            }
-            z = true;
-            Preconditions.checkArgument(z, "throttle behavior %d must be a ThrottleBehavior.THROTTLE_* constant", Integer.valueOf(i));
-            this.zzk = i2;
-            return this;
-        }
-
-        public final Builder zzd(WorkSource workSource) {
-            this.zzn = workSource;
-            return this;
-        }
-
-        public Builder(LocationRequest locationRequest) {
-            this.zza = locationRequest.getPriority();
-            this.zzb = locationRequest.getIntervalMillis();
-            this.zzc = locationRequest.getMinUpdateIntervalMillis();
-            this.zzd = locationRequest.getMaxUpdateDelayMillis();
-            this.zze = locationRequest.getDurationMillis();
-            this.zzf = locationRequest.getMaxUpdates();
-            this.zzg = locationRequest.getMinUpdateDistanceMeters();
-            this.zzh = locationRequest.isWaitForAccurateLocation();
-            this.zzi = locationRequest.getMaxUpdateAgeMillis();
-            this.zzj = locationRequest.getGranularity();
-            this.zzk = locationRequest.zza();
-            this.zzl = locationRequest.zzd();
-            this.zzm = locationRequest.zze();
-            this.zzn = locationRequest.zzb();
-            this.zzo = locationRequest.zzc();
-        }
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = r8.q(parcel, 20293);
+        int i11 = this.a;
+        r8.s(parcel, 1, 4);
+        parcel.writeInt(i11);
+        long j10 = this.b;
+        r8.s(parcel, 2, 8);
+        parcel.writeLong(j10);
+        long j11 = this.c;
+        r8.s(parcel, 3, 8);
+        parcel.writeLong(j11);
+        r8.s(parcel, 6, 4);
+        parcel.writeInt(this.f);
+        r8.s(parcel, 7, 4);
+        parcel.writeFloat(this.h);
+        r8.s(parcel, 8, 8);
+        parcel.writeLong(this.d);
+        r8.s(parcel, 9, 4);
+        parcel.writeInt(this.n ? 1 : 0);
+        r8.s(parcel, 10, 8);
+        parcel.writeLong(this.e);
+        long j12 = this.r;
+        r8.s(parcel, 11, 8);
+        parcel.writeLong(j12);
+        r8.s(parcel, 12, 4);
+        parcel.writeInt(this.s);
+        r8.s(parcel, 13, 4);
+        parcel.writeInt(this.v);
+        r8.l(parcel, 14, this.w);
+        r8.s(parcel, 15, 4);
+        parcel.writeInt(this.x ? 1 : 0);
+        r8.k(parcel, 16, this.y, i10);
+        r8.k(parcel, 17, this.A, i10);
+        r8.r(parcel, q6);
     }
 }

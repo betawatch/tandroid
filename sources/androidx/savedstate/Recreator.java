@@ -1,102 +1,90 @@
 package androidx.savedstate;
 
+import a9.p;
 import android.os.Bundle;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleEventObserver;
-import androidx.lifecycle.LifecycleOwner;
-import androidx.savedstate.SavedStateRegistry;
+import androidx.lifecycle.j0;
+import androidx.lifecycle.m;
+import androidx.lifecycle.p0;
+import androidx.lifecycle.r;
+import androidx.lifecycle.t;
+import androidx.lifecycle.t0;
+import androidx.lifecycle.u0;
+import g2.c;
+import g2.e;
+import g2.f;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.jvm.internal.Intrinsics;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import kotlin.jvm.internal.j;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class Recreator implements LifecycleEventObserver {
-    public static final Companion Companion = new Companion(null);
-    private final SavedStateRegistryOwner owner;
+public final class Recreator implements r {
+    public final f a;
 
-    public Recreator(SavedStateRegistryOwner owner) {
-        Intrinsics.checkNotNullParameter(owner, "owner");
-        this.owner = owner;
+    public Recreator(f fVar) {
+        this.a = fVar;
     }
 
-    @Override // androidx.lifecycle.LifecycleEventObserver
-    public void onStateChanged(LifecycleOwner source, Lifecycle.Event event) {
-        Intrinsics.checkNotNullParameter(source, "source");
-        Intrinsics.checkNotNullParameter(event, "event");
-        if (event != Lifecycle.Event.ON_CREATE) {
+    @Override // androidx.lifecycle.r
+    public final void d(t tVar, m mVar) {
+        if (mVar != m.ON_CREATE) {
             throw new AssertionError("Next event must be ON_CREATE");
         }
-        source.getLifecycle().removeObserver(this);
-        Bundle consumeRestoredStateForKey = this.owner.getSavedStateRegistry().consumeRestoredStateForKey("androidx.savedstate.Restarter");
-        if (consumeRestoredStateForKey == null) {
+        tVar.m().b(this);
+        f fVar = this.a;
+        Bundle c10 = fVar.g().c("androidx.savedstate.Restarter");
+        if (c10 == null) {
             return;
         }
-        ArrayList<String> stringArrayList = consumeRestoredStateForKey.getStringArrayList("classes_to_restore");
+        ArrayList<String> stringArrayList = c10.getStringArrayList("classes_to_restore");
         if (stringArrayList == null) {
             throw new IllegalStateException("Bundle with restored state for the component \"androidx.savedstate.Restarter\" must contain list of strings by the key \"classes_to_restore\"");
         }
         int size = stringArrayList.size();
-        int i = 0;
-        while (i < size) {
-            String str = stringArrayList.get(i);
-            i++;
-            reflectiveNew(str);
-        }
-    }
-
-    private final void reflectiveNew(String str) {
-        try {
-            Class<? extends U> asSubclass = Class.forName(str, false, Recreator.class.getClassLoader()).asSubclass(SavedStateRegistry.AutoRecreated.class);
-            Intrinsics.checkNotNullExpressionValue(asSubclass, "{\n                Class.…class.java)\n            }");
+        int i10 = 0;
+        while (i10 < size) {
+            String str = stringArrayList.get(i10);
+            i10++;
+            String str2 = str;
             try {
-                Constructor declaredConstructor = asSubclass.getDeclaredConstructor(null);
-                declaredConstructor.setAccessible(true);
+                Class<? extends U> asSubclass = Class.forName(str2, false, Recreator.class.getClassLoader()).asSubclass(c.class);
+                j.d(asSubclass, "{\n                Class.…class.java)\n            }");
                 try {
-                    Object newInstance = declaredConstructor.newInstance(null);
-                    Intrinsics.checkNotNullExpressionValue(newInstance, "{\n                constr…wInstance()\n            }");
-                    ((SavedStateRegistry.AutoRecreated) newInstance).onRecreated(this.owner);
-                } catch (Exception e) {
-                    throw new RuntimeException("Failed to instantiate " + str, e);
+                    Constructor declaredConstructor = asSubclass.getDeclaredConstructor(null);
+                    declaredConstructor.setAccessible(true);
+                    try {
+                        Object newInstance = declaredConstructor.newInstance(null);
+                        j.d(newInstance, "{\n                constr…wInstance()\n            }");
+                        if (!(fVar instanceof u0)) {
+                            throw new IllegalStateException("Internal error: OnRecreation should be registered only on components that implement ViewModelStoreOwner");
+                        }
+                        t0 f10 = ((u0) fVar).f();
+                        e g10 = fVar.g();
+                        f10.getClass();
+                        LinkedHashMap linkedHashMap = f10.a;
+                        Iterator it = new HashSet(linkedHashMap.keySet()).iterator();
+                        while (it.hasNext()) {
+                            String key = (String) it.next();
+                            j.e(key, "key");
+                            p0 p0Var = (p0) linkedHashMap.get(key);
+                            j.b(p0Var);
+                            j0.a(p0Var, g10, fVar.m());
+                        }
+                        if (!new HashSet(linkedHashMap.keySet()).isEmpty()) {
+                            g10.g();
+                        }
+                    } catch (Exception e9) {
+                        throw new RuntimeException(s3.c.e("Failed to instantiate ", str2), e9);
+                    }
+                } catch (NoSuchMethodException e10) {
+                    throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e10);
                 }
-            } catch (NoSuchMethodException e2) {
-                throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e2);
+            } catch (ClassNotFoundException e11) {
+                throw new RuntimeException(p.m("Class ", str2, " wasn't found"), e11);
             }
-        } catch (ClassNotFoundException e3) {
-            throw new RuntimeException("Class " + str + " wasn't found", e3);
-        }
-    }
-
-    public static final class SavedStateProvider implements SavedStateRegistry.SavedStateProvider {
-        private final Set classes;
-
-        public SavedStateProvider(SavedStateRegistry registry) {
-            Intrinsics.checkNotNullParameter(registry, "registry");
-            this.classes = new LinkedHashSet();
-            registry.registerSavedStateProvider("androidx.savedstate.Restarter", this);
-        }
-
-        @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
-        public Bundle saveState() {
-            Bundle bundle = new Bundle();
-            bundle.putStringArrayList("classes_to_restore", new ArrayList<>(this.classes));
-            return bundle;
-        }
-
-        public final void add(String className) {
-            Intrinsics.checkNotNullParameter(className, "className");
-            this.classes.add(className);
-        }
-    }
-
-    public static final class Companion {
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-
-        private Companion() {
         }
     }
 }

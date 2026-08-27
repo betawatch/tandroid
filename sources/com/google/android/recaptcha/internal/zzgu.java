@@ -1,9 +1,10 @@
 package com.google.android.recaptcha.internal;
 
+import h7.j6;
+import id.f0;
 import java.util.TimerTask;
-import kotlin.LazyKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzgu extends TimerTask {
     final /* synthetic */ zzgz zza;
@@ -15,8 +16,8 @@ public final class zzgu extends TimerTask {
     @Override // java.util.TimerTask, java.lang.Runnable
     public final void run() {
         try {
-            int i = zzby.zza;
-            BuildersKt__Builders_commonKt.launch$default(((zzcr) LazyKt.lazy(zzgw.zza).getValue()).zza(), null, null, new zzgv(this.zza, null), 3, null);
+            int i10 = zzby.zza;
+            f0.q(((zzcr) j6.a(zzgw.zza).a()).zza(), new zzgv(this.zza, null));
         } catch (Exception unused) {
         }
     }

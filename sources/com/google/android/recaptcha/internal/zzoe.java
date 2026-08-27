@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Level;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzoe extends zzns {
     public static final /* synthetic */ int zza = 0;
@@ -20,18 +21,18 @@ public final class zzoe extends zzns {
         zzd = new zzob(null);
     }
 
-    /* synthetic */ zzoe(String str, String str2, boolean z, int i, Level level, Set set, zznl zznlVar, zzod zzodVar) {
+    public /* synthetic */ zzoe(String str, String str2, boolean z10, int i10, Level level, Set set, zznl zznlVar, zzod zzodVar) {
         super(str2);
         if (str2.length() > 23) {
-            int i2 = -1;
+            int i11 = -1;
             for (int length = str2.length() - 1; length >= 0; length--) {
                 char charAt = str2.charAt(length);
                 if (charAt == '.' || charAt == '$') {
-                    i2 = length;
+                    i11 = length;
                     break;
                 }
             }
-            str2 = str2.substring(i2 + 1);
+            str2 = str2.substring(i11 + 1);
         }
         String concat = "".concat(String.valueOf(str2));
         concat.substring(0, Math.min(concat.length(), 23));

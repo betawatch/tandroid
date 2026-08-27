@@ -2,67 +2,61 @@ package androidx.car.app.model;
 
 import android.os.RemoteException;
 import androidx.car.app.IOnDoneCallback;
-import androidx.car.app.OnDoneCallback;
 import androidx.car.app.model.IOnClickListener;
-import androidx.car.app.model.OnClickDelegateImpl;
-import androidx.car.app.utils.RemoteUtils;
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class OnClickDelegateImpl implements OnClickDelegate {
+public class OnClickDelegateImpl implements b0 {
     private final boolean mIsParkedOnly;
     private final IOnClickListener mListener;
 
-    @Override // androidx.car.app.model.OnClickDelegate
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class OnClickListenerStub extends IOnClickListener.Stub {
+        private final c0 mOnClickListener;
+
+        public OnClickListenerStub(c0 c0Var) {
+            this.mOnClickListener = c0Var;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ Object lambda$onClick$0() {
+            this.mOnClickListener.onClick();
+            return null;
+        }
+
+        @Override // androidx.car.app.model.IOnClickListener
+        public void onClick(IOnDoneCallback iOnDoneCallback) {
+            androidx.car.app.utils.i.b(iOnDoneCallback, "onClick", new f(this, 1));
+        }
+    }
+
+    private OnClickDelegateImpl(c0 c0Var, boolean z10) {
+        this.mListener = new OnClickListenerStub(c0Var);
+        this.mIsParkedOnly = z10;
+    }
+
+    public static b0 create(c0 c0Var) {
+        return new OnClickDelegateImpl(c0Var, c0Var instanceof ParkedOnlyOnClickListener);
+    }
+
+    @Override // androidx.car.app.model.b0
     public boolean isParkedOnly() {
         return this.mIsParkedOnly;
     }
 
-    public void sendClick(OnDoneCallback onDoneCallback) {
+    public void sendClick(androidx.car.app.j jVar) {
         try {
             IOnClickListener iOnClickListener = this.mListener;
             Objects.requireNonNull(iOnClickListener);
-            iOnClickListener.onClick(RemoteUtils.createOnDoneCallbackStub(onDoneCallback));
-        } catch (RemoteException e) {
-            throw new RuntimeException(e);
+            iOnClickListener.onClick(androidx.car.app.utils.i.a());
+        } catch (RemoteException e9) {
+            throw new RuntimeException(e9);
         }
-    }
-
-    static OnClickDelegate create(OnClickListener onClickListener) {
-        return new OnClickDelegateImpl(onClickListener, onClickListener instanceof ParkedOnlyOnClickListener);
-    }
-
-    private OnClickDelegateImpl(OnClickListener onClickListener, boolean z) {
-        this.mListener = new OnClickListenerStub(onClickListener);
-        this.mIsParkedOnly = z;
     }
 
     private OnClickDelegateImpl() {
         this.mListener = null;
         this.mIsParkedOnly = false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    static class OnClickListenerStub extends IOnClickListener.Stub {
-        private final OnClickListener mOnClickListener;
-
-        OnClickListenerStub(OnClickListener onClickListener) {
-            this.mOnClickListener = onClickListener;
-        }
-
-        @Override // androidx.car.app.model.IOnClickListener
-        public void onClick(IOnDoneCallback iOnDoneCallback) {
-            RemoteUtils.dispatchCallFromHost(iOnDoneCallback, "onClick", new RemoteUtils.HostCall() { // from class: androidx.car.app.model.OnClickDelegateImpl$OnClickListenerStub$$ExternalSyntheticLambda0
-                @Override // androidx.car.app.utils.RemoteUtils.HostCall
-                public final Object dispatch() {
-                    return OnClickDelegateImpl.OnClickListenerStub.$r8$lambda$XNCP4ktZ0-uqZhJZBLJ1aOuuP5k(OnClickDelegateImpl.OnClickListenerStub.this);
-                }
-            });
-        }
-
-        public static /* synthetic */ Object $r8$lambda$XNCP4ktZ0-uqZhJZBLJ1aOuuP5k(OnClickListenerStub onClickListenerStub) {
-            onClickListenerStub.mOnClickListener.onClick();
-            return null;
-        }
     }
 }

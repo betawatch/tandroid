@@ -2,7 +2,8 @@ package org.scilab.forge.jlatexmath;
 
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class RotateAtom extends Atom {
     private double angle;
     private Atom base;
@@ -18,6 +19,14 @@ public class RotateAtom extends Atom {
         this.base = atom;
         this.angle = Double.parseDouble(str);
         this.option = RotateBox.getOrigin(str2);
+    }
+
+    @Override // org.scilab.forge.jlatexmath.Atom
+    public Box createBox(TeXEnvironment teXEnvironment) {
+        if (this.option != -1) {
+            return new RotateBox(this.base.createBox(teXEnvironment), this.angle, this.option);
+        }
+        return new RotateBox(this.base.createBox(teXEnvironment), this.angle, SpaceAtom.getFactor(this.xunit, teXEnvironment) * this.x, SpaceAtom.getFactor(this.yunit, teXEnvironment) * this.y);
     }
 
     public RotateAtom(Atom atom, double d, String str) {
@@ -46,13 +55,5 @@ public class RotateAtom extends Atom {
             this.yunit = 3;
             this.y = 0.0f;
         }
-    }
-
-    @Override // org.scilab.forge.jlatexmath.Atom
-    public Box createBox(TeXEnvironment teXEnvironment) {
-        if (this.option != -1) {
-            return new RotateBox(this.base.createBox(teXEnvironment), this.angle, this.option);
-        }
-        return new RotateBox(this.base.createBox(teXEnvironment), this.angle, this.x * SpaceAtom.getFactor(this.xunit, teXEnvironment), this.y * SpaceAtom.getFactor(this.yunit, teXEnvironment));
     }
 }

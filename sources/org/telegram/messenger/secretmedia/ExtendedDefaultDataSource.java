@@ -2,92 +2,195 @@ package org.telegram.messenger.secretmedia;
 
 import android.content.Context;
 import android.net.Uri;
+import android.text.TextUtils;
 import android.util.LongSparseArray;
-import com.google.android.exoplayer2.upstream.AssetDataSource;
-import com.google.android.exoplayer2.upstream.ContentDataSource;
-import com.google.android.exoplayer2.upstream.DataSchemeDataSource;
-import com.google.android.exoplayer2.upstream.DataSource;
-import com.google.android.exoplayer2.upstream.DataSpec;
-import com.google.android.exoplayer2.upstream.DefaultHttpDataSource;
-import com.google.android.exoplayer2.upstream.FileDataSource;
 import com.google.android.exoplayer2.upstream.RawResourceDataSource;
-import com.google.android.exoplayer2.upstream.TransferListener;
-import com.google.android.exoplayer2.util.Assertions;
-import com.google.android.exoplayer2.util.Log;
-import com.google.android.exoplayer2.util.Util;
+import com.google.android.exoplayer2.upstream.c;
+import com.google.android.exoplayer2.upstream.d0;
+import com.google.android.exoplayer2.upstream.i;
+import com.google.android.exoplayer2.upstream.k;
+import com.google.android.exoplayer2.upstream.m;
+import com.google.android.exoplayer2.upstream.q;
+import com.google.android.exoplayer2.upstream.y0;
+import com.google.android.exoplayer2.upstream.z;
+import d5.a;
+import d5.g0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.FileStreamLoadOperation;
 
-/* loaded from: classes3.dex */
-public final class ExtendedDefaultDataSource implements DataSource {
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
+public final class ExtendedDefaultDataSource implements m {
     private static final String SCHEME_ASSET = "asset";
     private static final String SCHEME_CONTENT = "content";
     private static final String SCHEME_RAW = "rawresource";
     private static final String SCHEME_RTMP = "rtmp";
     private static final String TAG = "ExtendedDefaultDataSource";
-    private DataSource assetDataSource;
-    private final DataSource baseDataSource;
-    private DataSource contentDataSource;
+    private m assetDataSource;
+    private final m baseDataSource;
+    private m contentDataSource;
     private final Context context;
-    private DataSource dataSchemeDataSource;
-    private DataSource dataSource;
-    private DataSource encryptedFileDataSource;
-    private DataSource fileDataSource;
+    private m dataSchemeDataSource;
+    private m dataSource;
+    private m encryptedFileDataSource;
+    private m fileDataSource;
     private final LongSparseArray<Uri> mtprotoUris;
-    private DataSource rawResourceDataSource;
-    private DataSource rtmpDataSource;
+    private m rawResourceDataSource;
+    private m rtmpDataSource;
     private FileStreamLoadOperation streamLoadOperation;
-    private final List<TransferListener> transferListeners;
+    private final List<y0> transferListeners;
 
-    public ExtendedDefaultDataSource(Context context, String str, boolean z) {
-        this(context, str, 8000, 8000, z);
+    public ExtendedDefaultDataSource(Context context, String str, boolean z10) {
+        this(context, str, 8000, 8000, z10);
     }
 
-    public ExtendedDefaultDataSource(Context context, String str, int i, int i2, boolean z) {
-        this(context, new DefaultHttpDataSource(str, i, i2, z, null), (LongSparseArray<Uri>) null);
-    }
-
-    public ExtendedDefaultDataSource(Context context, DataSource dataSource, LongSparseArray<Uri> longSparseArray) {
-        this.context = context.getApplicationContext();
-        this.baseDataSource = (DataSource) Assertions.checkNotNull(dataSource);
-        this.transferListeners = new ArrayList();
-        this.mtprotoUris = longSparseArray;
-    }
-
-    @Deprecated
-    public ExtendedDefaultDataSource(Context context, TransferListener transferListener, DataSource dataSource, LongSparseArray<Uri> longSparseArray) {
-        this(context, dataSource, longSparseArray);
-        if (transferListener != null) {
-            this.transferListeners.add(transferListener);
-            dataSource.addTransferListener(transferListener);
+    private void addListenersToDataSource(m mVar) {
+        for (int i10 = 0; i10 < this.transferListeners.size(); i10++) {
+            mVar.addTransferListener(this.transferListeners.get(i10));
         }
     }
 
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public void addTransferListener(TransferListener transferListener) {
-        this.baseDataSource.addTransferListener(transferListener);
-        this.transferListeners.add(transferListener);
-        maybeAddListenerToDataSource(this.fileDataSource, transferListener);
-        maybeAddListenerToDataSource(this.assetDataSource, transferListener);
-        maybeAddListenerToDataSource(this.contentDataSource, transferListener);
-        maybeAddListenerToDataSource(this.rtmpDataSource, transferListener);
-        maybeAddListenerToDataSource(this.dataSchemeDataSource, transferListener);
-        maybeAddListenerToDataSource(this.rawResourceDataSource, transferListener);
+    private m getAssetDataSource() {
+        if (this.assetDataSource == null) {
+            c cVar = new c(this.context);
+            this.assetDataSource = cVar;
+            addListenersToDataSource(cVar);
+        }
+        return this.assetDataSource;
     }
 
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public long open(DataSpec dataSpec) {
-        Assertions.checkState(this.dataSource == null);
-        Uri uri = dataSpec.uri;
+    private m getContentDataSource() {
+        if (this.contentDataSource == null) {
+            i iVar = new i(this.context);
+            this.contentDataSource = iVar;
+            addListenersToDataSource(iVar);
+        }
+        return this.contentDataSource;
+    }
+
+    private m getDataSchemeDataSource() {
+        if (this.dataSchemeDataSource == null) {
+            k kVar = new k(false);
+            this.dataSchemeDataSource = kVar;
+            addListenersToDataSource(kVar);
+        }
+        return this.dataSchemeDataSource;
+    }
+
+    private m getEncryptedFileDataSource() {
+        if (this.encryptedFileDataSource == null) {
+            EncryptedFileDataSource encryptedFileDataSource = new EncryptedFileDataSource();
+            this.encryptedFileDataSource = encryptedFileDataSource;
+            addListenersToDataSource(encryptedFileDataSource);
+        }
+        return this.encryptedFileDataSource;
+    }
+
+    private m getFileDataSource() {
+        if (this.fileDataSource == null) {
+            d0 d0Var = new d0(false);
+            this.fileDataSource = d0Var;
+            addListenersToDataSource(d0Var);
+        }
+        return this.fileDataSource;
+    }
+
+    private m getRawResourceDataSource() {
+        if (this.rawResourceDataSource == null) {
+            RawResourceDataSource rawResourceDataSource = new RawResourceDataSource(this.context);
+            this.rawResourceDataSource = rawResourceDataSource;
+            addListenersToDataSource(rawResourceDataSource);
+        }
+        return this.rawResourceDataSource;
+    }
+
+    private m getRtmpDataSource() {
+        if (this.rtmpDataSource == null) {
+            try {
+                m mVar = (m) Class.forName("com.google.android.exoplayer2.ext.rtmp.RtmpDataSource").getConstructor(null).newInstance(null);
+                this.rtmpDataSource = mVar;
+                addListenersToDataSource(mVar);
+            } catch (ClassNotFoundException unused) {
+                a.K(TAG, "Attempting to play RTMP stream without depending on the RTMP extension");
+            } catch (Exception e9) {
+                throw new RuntimeException("Error instantiating RTMP extension", e9);
+            }
+            if (this.rtmpDataSource == null) {
+                this.rtmpDataSource = this.baseDataSource;
+            }
+        }
+        return this.rtmpDataSource;
+    }
+
+    private m getStreamDataSource() {
+        if (this.streamLoadOperation == null) {
+            FileStreamLoadOperation fileStreamLoadOperation = new FileStreamLoadOperation();
+            this.streamLoadOperation = fileStreamLoadOperation;
+            addListenersToDataSource(fileStreamLoadOperation);
+        }
+        return this.streamLoadOperation;
+    }
+
+    private void maybeAddListenerToDataSource(m mVar, y0 y0Var) {
+        if (mVar != null) {
+            mVar.addTransferListener(y0Var);
+        }
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.m
+    public void addTransferListener(y0 y0Var) {
+        this.baseDataSource.addTransferListener(y0Var);
+        this.transferListeners.add(y0Var);
+        maybeAddListenerToDataSource(this.fileDataSource, y0Var);
+        maybeAddListenerToDataSource(this.assetDataSource, y0Var);
+        maybeAddListenerToDataSource(this.contentDataSource, y0Var);
+        maybeAddListenerToDataSource(this.rtmpDataSource, y0Var);
+        maybeAddListenerToDataSource(this.dataSchemeDataSource, y0Var);
+        maybeAddListenerToDataSource(this.rawResourceDataSource, y0Var);
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.m
+    public void close() {
+        m mVar = this.dataSource;
+        if (mVar != null) {
+            try {
+                mVar.close();
+            } finally {
+                this.dataSource = null;
+            }
+        }
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.m
+    public Map<String, List<String>> getResponseHeaders() {
+        m mVar = this.dataSource;
+        return mVar == null ? Collections.EMPTY_MAP : mVar.getResponseHeaders();
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.m
+    public Uri getUri() {
+        m mVar = this.dataSource;
+        if (mVar == null) {
+            return null;
+        }
+        return mVar.getUri();
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.m
+    public long open(q qVar) {
+        a.i(this.dataSource == null);
+        Uri uri = qVar.a;
         if ("mtproto".equals(uri.getScheme())) {
-            uri = this.mtprotoUris.get(Long.parseLong(dataSpec.uri.toString().substring(8)));
-            dataSpec.uri = uri;
+            uri = this.mtprotoUris.get(Long.parseLong(qVar.a.toString().substring(8)));
+            qVar.a = uri;
         }
         String scheme = uri.getScheme();
-        if (Util.isLocalFileUri(uri)) {
+        int i10 = g0.a;
+        String scheme2 = uri.getScheme();
+        if (TextUtils.isEmpty(scheme2) || "file".equals(scheme2)) {
             String path = uri.getPath();
             if (path != null && path.startsWith("/android_asset/")) {
                 this.dataSource = getAssetDataSource();
@@ -111,131 +214,34 @@ public final class ExtendedDefaultDataSource implements DataSource {
         } else {
             this.dataSource = this.baseDataSource;
         }
-        return this.dataSource.open(dataSpec);
+        return this.dataSource.open(qVar);
     }
 
-    @Override // com.google.android.exoplayer2.upstream.DataReader
-    public int read(byte[] bArr, int i, int i2) {
-        return ((DataSource) Assertions.checkNotNull(this.dataSource)).read(bArr, i, i2);
+    @Override // com.google.android.exoplayer2.upstream.j
+    public int read(byte[] bArr, int i10, int i11) {
+        m mVar = this.dataSource;
+        mVar.getClass();
+        return mVar.read(bArr, i10, i11);
     }
 
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public Uri getUri() {
-        DataSource dataSource = this.dataSource;
-        if (dataSource == null) {
-            return null;
-        }
-        return dataSource.getUri();
+    public ExtendedDefaultDataSource(Context context, String str, int i10, int i11, boolean z10) {
+        this(context, new z(str, i10, i11, z10, null, 0), (LongSparseArray<Uri>) null);
     }
 
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public Map<String, List<String>> getResponseHeaders() {
-        DataSource dataSource = this.dataSource;
-        return dataSource == null ? Collections.EMPTY_MAP : dataSource.getResponseHeaders();
+    public ExtendedDefaultDataSource(Context context, m mVar, LongSparseArray<Uri> longSparseArray) {
+        this.context = context.getApplicationContext();
+        mVar.getClass();
+        this.baseDataSource = mVar;
+        this.transferListeners = new ArrayList();
+        this.mtprotoUris = longSparseArray;
     }
 
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public void close() {
-        DataSource dataSource = this.dataSource;
-        if (dataSource != null) {
-            try {
-                dataSource.close();
-            } finally {
-                this.dataSource = null;
-            }
-        }
-    }
-
-    private DataSource getFileDataSource() {
-        if (this.fileDataSource == null) {
-            FileDataSource fileDataSource = new FileDataSource();
-            this.fileDataSource = fileDataSource;
-            addListenersToDataSource(fileDataSource);
-        }
-        return this.fileDataSource;
-    }
-
-    private DataSource getAssetDataSource() {
-        if (this.assetDataSource == null) {
-            AssetDataSource assetDataSource = new AssetDataSource(this.context);
-            this.assetDataSource = assetDataSource;
-            addListenersToDataSource(assetDataSource);
-        }
-        return this.assetDataSource;
-    }
-
-    private DataSource getEncryptedFileDataSource() {
-        if (this.encryptedFileDataSource == null) {
-            EncryptedFileDataSource encryptedFileDataSource = new EncryptedFileDataSource();
-            this.encryptedFileDataSource = encryptedFileDataSource;
-            addListenersToDataSource(encryptedFileDataSource);
-        }
-        return this.encryptedFileDataSource;
-    }
-
-    private DataSource getStreamDataSource() {
-        if (this.streamLoadOperation == null) {
-            FileStreamLoadOperation fileStreamLoadOperation = new FileStreamLoadOperation();
-            this.streamLoadOperation = fileStreamLoadOperation;
-            addListenersToDataSource(fileStreamLoadOperation);
-        }
-        return this.streamLoadOperation;
-    }
-
-    private DataSource getContentDataSource() {
-        if (this.contentDataSource == null) {
-            ContentDataSource contentDataSource = new ContentDataSource(this.context);
-            this.contentDataSource = contentDataSource;
-            addListenersToDataSource(contentDataSource);
-        }
-        return this.contentDataSource;
-    }
-
-    private DataSource getRtmpDataSource() {
-        if (this.rtmpDataSource == null) {
-            try {
-                DataSource dataSource = (DataSource) Class.forName("com.google.android.exoplayer2.ext.rtmp.RtmpDataSource").getConstructor(null).newInstance(null);
-                this.rtmpDataSource = dataSource;
-                addListenersToDataSource(dataSource);
-            } catch (ClassNotFoundException unused) {
-                Log.w(TAG, "Attempting to play RTMP stream without depending on the RTMP extension");
-            } catch (Exception e) {
-                throw new RuntimeException("Error instantiating RTMP extension", e);
-            }
-            if (this.rtmpDataSource == null) {
-                this.rtmpDataSource = this.baseDataSource;
-            }
-        }
-        return this.rtmpDataSource;
-    }
-
-    private DataSource getDataSchemeDataSource() {
-        if (this.dataSchemeDataSource == null) {
-            DataSchemeDataSource dataSchemeDataSource = new DataSchemeDataSource();
-            this.dataSchemeDataSource = dataSchemeDataSource;
-            addListenersToDataSource(dataSchemeDataSource);
-        }
-        return this.dataSchemeDataSource;
-    }
-
-    private DataSource getRawResourceDataSource() {
-        if (this.rawResourceDataSource == null) {
-            RawResourceDataSource rawResourceDataSource = new RawResourceDataSource(this.context);
-            this.rawResourceDataSource = rawResourceDataSource;
-            addListenersToDataSource(rawResourceDataSource);
-        }
-        return this.rawResourceDataSource;
-    }
-
-    private void addListenersToDataSource(DataSource dataSource) {
-        for (int i = 0; i < this.transferListeners.size(); i++) {
-            dataSource.addTransferListener(this.transferListeners.get(i));
-        }
-    }
-
-    private void maybeAddListenerToDataSource(DataSource dataSource, TransferListener transferListener) {
-        if (dataSource != null) {
-            dataSource.addTransferListener(transferListener);
+    @Deprecated
+    public ExtendedDefaultDataSource(Context context, y0 y0Var, m mVar, LongSparseArray<Uri> longSparseArray) {
+        this(context, mVar, longSparseArray);
+        if (y0Var != null) {
+            this.transferListeners.add(y0Var);
+            mVar.addTransferListener(y0Var);
         }
     }
 }

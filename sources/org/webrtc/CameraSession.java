@@ -1,20 +1,17 @@
 package org.webrtc;
 
-import android.content.Context;
-import android.graphics.Matrix;
-import android.view.WindowManager;
-import org.telegram.messenger.NotificationCenter;
-import org.webrtc.VideoFrame;
-
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 interface CameraSession {
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface CreateSessionCallback {
         void onDone(CameraSession cameraSession);
 
         void onFailure(FailureType failureType, String str);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface Events {
         void onCameraClosed(CameraSession cameraSession);
 
@@ -27,37 +24,11 @@ interface CameraSession {
         void onFrameCaptured(CameraSession cameraSession, VideoFrame videoFrame);
     }
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public enum FailureType {
         ERROR,
         DISCONNECTED
     }
 
     void stop();
-
-    public abstract /* synthetic */ class -CC {
-        public static int getDeviceOrientation(Context context) {
-            int rotation = ((WindowManager) context.getSystemService("window")).getDefaultDisplay().getRotation();
-            if (rotation == 1) {
-                return 90;
-            }
-            if (rotation == 2) {
-                return NotificationCenter.needDeleteDialog;
-            }
-            if (rotation != 3) {
-                return 0;
-            }
-            return NotificationCenter.locationPermissionGranted;
-        }
-
-        public static VideoFrame.TextureBuffer createTextureBufferWithModifiedTransformMatrix(TextureBufferImpl textureBufferImpl, boolean z, int i) {
-            Matrix matrix = new Matrix();
-            matrix.preTranslate(0.5f, 0.5f);
-            if (z) {
-                matrix.preScale(-1.0f, 1.0f);
-            }
-            matrix.preRotate(i);
-            matrix.preTranslate(-0.5f, -0.5f);
-            return textureBufferImpl.applyTransformMatrix(matrix, textureBufferImpl.getWidth(), textureBufferImpl.getHeight());
-        }
-    }
 }

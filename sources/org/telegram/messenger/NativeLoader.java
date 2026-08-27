@@ -9,7 +9,8 @@ import java.io.InputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class NativeLoader {
     private static final String LIB_NAME = "tmessages.49";
     private static final String LIB_SO_NAME = "libtmessages.49.so";
@@ -17,6 +18,37 @@ public class NativeLoader {
     private static final String LOCALE_LIB_SO_NAME = "libtmessages.49loc.so";
     public static StringBuilder log = new StringBuilder();
     private static volatile boolean nativeLoaded = false;
+
+    public static String getAbiFolder() {
+        String str = "mips";
+        String str2 = "armeabi";
+        try {
+            String str3 = Build.CPU_ABI;
+            if (str3.equalsIgnoreCase("x86_64")) {
+                str = "x86_64";
+            } else if (str3.equalsIgnoreCase("arm64-v8a")) {
+                str = "arm64-v8a";
+            } else if (str3.equalsIgnoreCase("armeabi-v7a")) {
+                str = "armeabi-v7a";
+            } else {
+                if (!str3.equalsIgnoreCase("armeabi")) {
+                    if (str3.equalsIgnoreCase("x86")) {
+                        str = "x86";
+                    } else if (!str3.equalsIgnoreCase("mips")) {
+                        if (BuildVars.LOGS_ENABLED) {
+                            FileLog.e("Unsupported arch: " + str3);
+                        }
+                    }
+                }
+                str = "armeabi";
+            }
+            str2 = str;
+        } catch (Exception e9) {
+            FileLog.e(e9);
+        }
+        String property = System.getProperty("os.arch");
+        return (property == null || !property.contains("686")) ? str2 : "x86";
+    }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0036 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:5:0x0022  */
@@ -47,240 +79,198 @@ public class NativeLoader {
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x00db A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:71:? A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x00d1 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r2v0 */
-    /* JADX WARN: Type inference failed for: r2v1, types: [java.util.zip.ZipFile] */
-    /* JADX WARN: Type inference failed for: r2v2 */
-    /* JADX WARN: Type inference failed for: r2v3, types: [java.util.zip.ZipFile] */
-    /* JADX WARN: Type inference failed for: r2v6 */
-    /* JADX WARN: Type inference failed for: r2v7 */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private static boolean loadFromZip(Context context, File file, File file2, String str) {
-        InputStream inputStream;
-        ?? r2;
-        ?? r22;
-        ZipFile zipFile;
-        try {
-            for (File file3 : file.listFiles()) {
-                file3.delete();
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        InputStream inputStream2 = null;
-        try {
-            zipFile = new ZipFile(context.getApplicationInfo().sourceDir);
-        } catch (Exception e2) {
-            e = e2;
-            r2 = 0;
-        } catch (Throwable th) {
-            th = th;
-            inputStream = null;
-            r22 = inputStream2;
-            inputStream2 = inputStream;
-            if (inputStream2 != null) {
-            }
-            if (r22 != 0) {
-            }
-        }
-        try {
-            ZipEntry entry = zipFile.getEntry("lib/" + str + "/" + LIB_SO_NAME);
-            if (entry == null) {
-                throw new Exception("Unable to find file in apk:lib/" + str + "/" + LIB_NAME);
-            }
-            InputStream inputStream3 = zipFile.getInputStream(entry);
-            FileOutputStream fileOutputStream = new FileOutputStream(file2);
-            byte[] bArr = new byte[4096];
-            while (true) {
-                int read = inputStream3.read(bArr);
-                if (read <= 0) {
-                    break;
-                }
-                Thread.yield();
-                fileOutputStream.write(bArr, 0, read);
-            }
-            fileOutputStream.close();
-            file2.setReadable(true, false);
-            file2.setExecutable(true, false);
-            file2.setWritable(true);
-            try {
-                System.load(file2.getAbsolutePath());
-                nativeLoaded = true;
-            } catch (Error e3) {
-                FileLog.e(e3);
-            }
-            try {
-                inputStream3.close();
-            } catch (Exception e4) {
-                FileLog.e(e4);
-            }
-            try {
-                zipFile.close();
-            } catch (Exception e5) {
-                FileLog.e(e5);
-            }
-            return true;
-        } catch (Exception e6) {
-            e = e6;
-            r2 = zipFile;
-            try {
-                FileLog.e(e);
-                if (0 != 0) {
-                    try {
-                        inputStream2.close();
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
-                    }
-                }
-                if (r2 != 0) {
-                    try {
-                        r2.close();
-                    } catch (Exception e8) {
-                        FileLog.e(e8);
-                    }
-                }
-                return false;
-            } catch (Throwable th2) {
-                th = th2;
-                inputStream = null;
-                inputStream2 = r2;
-                r22 = inputStream2;
-                inputStream2 = inputStream;
-                if (inputStream2 != null) {
-                    try {
-                        inputStream2.close();
-                    } catch (Exception e9) {
-                        FileLog.e(e9);
-                    }
-                }
-                if (r22 != 0) {
-                    try {
-                        r22.close();
-                        throw th;
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
-                        throw th;
-                    }
-                }
-                throw th;
-            }
-        } catch (Throwable th3) {
-            th = th3;
-            r22 = zipFile;
-            if (inputStream2 != null) {
-            }
-            if (r22 != 0) {
-            }
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x00b0, code lost:
-    
-        if (loadFromZip(r8, r3, r4, r2) != false) goto L39;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x007d A[Catch: all -> 0x001d, TryCatch #3 {all -> 0x001d, blocks: (B:8:0x000a, B:10:0x0016, B:16:0x0021, B:31:0x0052, B:33:0x0056, B:34:0x005e, B:18:0x0079, B:20:0x007d, B:21:0x00ac, B:38:0x0069), top: B:7:0x000a, outer: #4, inners: #1, #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0083 A[Catch: all -> 0x0020, TryCatch #0 {all -> 0x0020, blocks: (B:11:0x000e, B:13:0x001a, B:27:0x0027, B:36:0x0058, B:38:0x005c, B:39:0x0064, B:29:0x007f, B:31:0x0083, B:32:0x00a8, B:44:0x006f), top: B:10:0x000e, outer: #2, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00af A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static synchronized void initNativeLibs(Context context) {
         synchronized (NativeLoader.class) {
-            if (!nativeLoaded) {
+            if (nativeLoaded) {
+                return;
+            }
+            try {
                 try {
-                    try {
-                        System.loadLibrary(LIB_NAME);
-                        nativeLoaded = true;
-                        if (BuildVars.LOGS_ENABLED) {
-                            FileLog.d("loaded normal lib");
-                        }
-                    } catch (Error e) {
-                        FileLog.e(e);
-                        StringBuilder sb = log;
-                        sb.append("128: ");
-                        sb.append(e);
-                        sb.append("\n");
-                        String abiFolder = getAbiFolder();
-                        File file = new File(context.getFilesDir(), "lib");
-                        file.mkdirs();
-                        File file2 = new File(file, LOCALE_LIB_SO_NAME);
-                        if (file2.exists()) {
-                            try {
-                                if (BuildVars.LOGS_ENABLED) {
-                                    FileLog.d("Load local lib");
-                                }
-                                System.load(file2.getAbsolutePath());
-                                nativeLoaded = true;
-                            } catch (Error e2) {
-                                StringBuilder sb2 = log;
-                                sb2.append(e2);
-                                sb2.append("\n");
-                                FileLog.e(e2);
-                                file2.delete();
-                                if (BuildVars.LOGS_ENABLED) {
-                                }
-                            }
-                        }
-                        if (BuildVars.LOGS_ENABLED) {
-                            FileLog.e("Library not found, arch = " + abiFolder);
-                            StringBuilder sb3 = log;
-                            sb3.append("Library not found, arch = " + abiFolder);
-                            sb3.append("\n");
-                        }
+                    System.loadLibrary(LIB_NAME);
+                    nativeLoaded = true;
+                    if (BuildVars.LOGS_ENABLED) {
+                        FileLog.d("loaded normal lib");
                     }
                 } catch (Throwable th) {
                     th.printStackTrace();
-                    StringBuilder sb4 = log;
-                    sb4.append("176: ");
-                    sb4.append(th);
-                    sb4.append("\n");
+                    StringBuilder sb2 = log;
+                    sb2.append("176: ");
+                    sb2.append(th);
+                    sb2.append("\n");
                     try {
                         System.loadLibrary(LIB_NAME);
                         nativeLoaded = true;
-                    } catch (Error e3) {
-                        FileLog.e(e3);
-                        StringBuilder sb5 = log;
-                        sb5.append("184: ");
-                        sb5.append(e3);
-                        sb5.append("\n");
+                    } catch (Error e9) {
+                        FileLog.e(e9);
+                        StringBuilder sb3 = log;
+                        sb3.append("184: ");
+                        sb3.append(e9);
+                        sb3.append("\n");
                     }
                 }
+            } catch (Error e10) {
+                FileLog.e(e10);
+                StringBuilder sb4 = log;
+                sb4.append("128: ");
+                sb4.append(e10);
+                sb4.append("\n");
+                String abiFolder = getAbiFolder();
+                File file = new File(context.getFilesDir(), "lib");
+                file.mkdirs();
+                File file2 = new File(file, LOCALE_LIB_SO_NAME);
+                if (file2.exists()) {
+                    try {
+                        if (BuildVars.LOGS_ENABLED) {
+                            FileLog.d("Load local lib");
+                        }
+                        System.load(file2.getAbsolutePath());
+                        nativeLoaded = true;
+                        return;
+                    } catch (Error e11) {
+                        StringBuilder sb5 = log;
+                        sb5.append(e11);
+                        sb5.append("\n");
+                        FileLog.e(e11);
+                        file2.delete();
+                        if (BuildVars.LOGS_ENABLED) {
+                            FileLog.e("Library not found, arch = " + abiFolder);
+                            StringBuilder sb6 = log;
+                            sb6.append("Library not found, arch = " + abiFolder);
+                            sb6.append("\n");
+                        }
+                        if (loadFromZip(context, file, file2, abiFolder)) {
+                            return;
+                        }
+                        System.loadLibrary(LIB_NAME);
+                        nativeLoaded = true;
+                    }
+                }
+                if (BuildVars.LOGS_ENABLED) {
+                }
+                if (loadFromZip(context, file, file2, abiFolder)) {
+                }
+                System.loadLibrary(LIB_NAME);
+                nativeLoaded = true;
             }
         }
     }
 
-    public static String getAbiFolder() {
-        String str;
-        String str2 = "mips";
-        String str3 = "armeabi";
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x00d6 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:68:? A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00cc A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private static boolean loadFromZip(Context context, File file, File file2, String str) {
+        ZipFile zipFile;
+        ZipFile zipFile2;
+        int length;
         try {
-            str = Build.CPU_ABI;
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        if (str.equalsIgnoreCase("x86_64")) {
-            str2 = "x86_64";
-        } else if (str.equalsIgnoreCase("arm64-v8a")) {
-            str2 = "arm64-v8a";
-        } else if (str.equalsIgnoreCase("armeabi-v7a")) {
-            str2 = "armeabi-v7a";
-        } else if (str.equalsIgnoreCase("armeabi")) {
-            str2 = "armeabi";
-        } else if (str.equalsIgnoreCase("x86")) {
-            str2 = "x86";
-        } else if (!str.equalsIgnoreCase("mips")) {
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("Unsupported arch: " + str);
+            File[] listFiles = file.listFiles();
+            length = listFiles.length;
+            for (File file3 : listFiles) {
+                file3.delete();
             }
-            String property = System.getProperty("os.arch");
-            return (property == null && property.contains("686")) ? "x86" : str3;
+        } catch (Exception e9) {
+            FileLog.e(e9);
         }
-        str3 = str2;
-        String property2 = System.getProperty("os.arch");
-        if (property2 == null) {
+        InputStream inputStream = null;
+        try {
+            try {
+                zipFile2 = new ZipFile(context.getApplicationInfo().sourceDir);
+                try {
+                    ZipEntry entry = zipFile2.getEntry("lib/" + str + "/" + LIB_SO_NAME);
+                    if (entry == null) {
+                        throw new Exception("Unable to find file in apk:lib/" + str + "/" + LIB_NAME);
+                    }
+                    InputStream inputStream2 = zipFile2.getInputStream(entry);
+                    FileOutputStream fileOutputStream = new FileOutputStream(file2);
+                    byte[] bArr = new byte[4096];
+                    while (true) {
+                        int read = inputStream2.read(bArr);
+                        if (read <= 0) {
+                            break;
+                        }
+                        Thread.yield();
+                        fileOutputStream.write(bArr, 0, read);
+                    }
+                    fileOutputStream.close();
+                    file2.setReadable(true, false);
+                    file2.setExecutable(true, false);
+                    file2.setWritable(true);
+                    try {
+                        System.load(file2.getAbsolutePath());
+                        nativeLoaded = true;
+                    } catch (Error e10) {
+                        FileLog.e(e10);
+                    }
+                    try {
+                        inputStream2.close();
+                    } catch (Exception e11) {
+                        FileLog.e(e11);
+                    }
+                    try {
+                        zipFile2.close();
+                    } catch (Exception e12) {
+                        FileLog.e(e12);
+                    }
+                    return true;
+                } catch (Exception e13) {
+                    e = e13;
+                    FileLog.e(e);
+                    if (0 != 0) {
+                        try {
+                            inputStream.close();
+                        } catch (Exception e14) {
+                            FileLog.e(e14);
+                        }
+                    }
+                    if (zipFile2 != null) {
+                        try {
+                            zipFile2.close();
+                        } catch (Exception e15) {
+                            FileLog.e(e15);
+                        }
+                    }
+                    return false;
+                }
+            } catch (Throwable th) {
+                th = th;
+                zipFile = length;
+                if (0 != 0) {
+                    try {
+                        inputStream.close();
+                    } catch (Exception e16) {
+                        FileLog.e(e16);
+                    }
+                }
+                if (zipFile != null) {
+                    throw th;
+                }
+                try {
+                    zipFile.close();
+                    throw th;
+                } catch (Exception e17) {
+                    FileLog.e(e17);
+                    throw th;
+                }
+            }
+        } catch (Exception e18) {
+            e = e18;
+            zipFile2 = null;
+        } catch (Throwable th2) {
+            th = th2;
+            zipFile = null;
+            if (0 != 0) {
+            }
+            if (zipFile != null) {
+            }
         }
     }
 

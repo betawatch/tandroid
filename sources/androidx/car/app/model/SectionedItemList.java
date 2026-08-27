@@ -1,45 +1,33 @@
 package androidx.car.app.model;
 
-import androidx.car.app.model.constraints.CarTextConstraints;
+import androidx.car.app.model.CarText;
 import j$.util.Objects;
+import java.util.Iterator;
+import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class SectionedItemList {
     private final CarText mHeader;
     private final ItemList mItemList;
 
+    private SectionedItemList(ItemList itemList, CarText carText) {
+        this.mItemList = itemList;
+        this.mHeader = carText;
+    }
+
     public static SectionedItemList create(ItemList itemList, CharSequence charSequence) {
         Objects.requireNonNull(charSequence);
         CarText create = CarText.create(charSequence);
-        CarTextConstraints.TEXT_ONLY.validateOrThrow(create);
+        t.c cVar = t.c.b;
+        cVar.getClass();
+        cVar.a(create.getSpans());
+        Iterator<List<CarText.SpanWrapper>> it = create.getSpansForVariants().iterator();
+        while (it.hasNext()) {
+            cVar.a(it.next());
+        }
         Objects.requireNonNull(itemList);
         return new SectionedItemList(itemList, create);
-    }
-
-    public ItemList getItemList() {
-        ItemList itemList = this.mItemList;
-        Objects.requireNonNull(itemList);
-        return itemList;
-    }
-
-    public CarText getHeader() {
-        CarText carText = this.mHeader;
-        Objects.requireNonNull(carText);
-        return carText;
-    }
-
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[ items: ");
-        sb.append(this.mItemList);
-        sb.append(", has header: ");
-        sb.append(this.mHeader != null);
-        sb.append("]");
-        return sb.toString();
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mItemList, this.mHeader);
     }
 
     public boolean equals(Object obj) {
@@ -53,9 +41,29 @@ public final class SectionedItemList {
         return Objects.equals(this.mItemList, sectionedItemList.mItemList) && Objects.equals(this.mHeader, sectionedItemList.mHeader);
     }
 
-    private SectionedItemList(ItemList itemList, CarText carText) {
-        this.mItemList = itemList;
-        this.mHeader = carText;
+    public CarText getHeader() {
+        CarText carText = this.mHeader;
+        Objects.requireNonNull(carText);
+        return carText;
+    }
+
+    public ItemList getItemList() {
+        ItemList itemList = this.mItemList;
+        Objects.requireNonNull(itemList);
+        return itemList;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mItemList, this.mHeader);
+    }
+
+    public String toString() {
+        StringBuilder sb2 = new StringBuilder("[ items: ");
+        sb2.append(this.mItemList);
+        sb2.append(", has header: ");
+        sb2.append(this.mHeader != null);
+        sb2.append("]");
+        return sb2.toString();
     }
 
     private SectionedItemList() {

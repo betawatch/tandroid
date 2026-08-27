@@ -17,73 +17,67 @@ public final class j implements f {
     public j(String str, String str2) {
         Objects.requireNonNull(str, "pattern");
         Objects.requireNonNull(str2, "noOffsetText");
-        int i = 0;
-        while (true) {
-            String[] strArr = d;
-            if (i < 22) {
-                if (strArr[i].equals(str)) {
-                    this.b = i;
-                    this.c = i % 11;
-                    this.a = str2;
-                    return;
-                }
-                i++;
-            } else {
-                throw new IllegalArgumentException("Invalid zone offset pattern: ".concat(str));
+        for (int i10 = 0; i10 < 22; i10++) {
+            if (d[i10].equals(str)) {
+                this.b = i10;
+                this.c = i10 % 11;
+                this.a = str2;
+                return;
             }
         }
+        throw new IllegalArgumentException("Invalid zone offset pattern: ".concat(str));
     }
 
     @Override // j$.time.format.f
-    public final boolean l(r rVar, StringBuilder sb) {
-        Long a = rVar.a(j$.time.temporal.a.OFFSET_SECONDS);
-        boolean z = false;
-        if (a == null) {
+    public final boolean j(r rVar, StringBuilder sb2) {
+        Long a2 = rVar.a(j$.time.temporal.a.OFFSET_SECONDS);
+        boolean z10 = false;
+        if (a2 == null) {
             return false;
         }
-        long longValue = a.longValue();
-        int i = (int) longValue;
-        if (longValue != i) {
+        long longValue = a2.longValue();
+        int i10 = (int) longValue;
+        if (longValue != i10) {
             throw new ArithmeticException();
         }
         String str = this.a;
-        if (i == 0) {
-            sb.append(str);
+        if (i10 == 0) {
+            sb2.append(str);
             return true;
         }
-        int abs = Math.abs((i / 3600) % 100);
-        int abs2 = Math.abs((i / 60) % 60);
-        int abs3 = Math.abs(i % 60);
-        int length = sb.length();
-        sb.append(i < 0 ? "-" : "+");
+        int abs = Math.abs((i10 / 3600) % 100);
+        int abs2 = Math.abs((i10 / 60) % 60);
+        int abs3 = Math.abs(i10 % 60);
+        int length = sb2.length();
+        sb2.append(i10 < 0 ? "-" : "+");
         if (this.b >= 11 && abs < 10) {
-            sb.append((char) (abs + 48));
+            sb2.append((char) (abs + 48));
         } else {
-            a(false, abs, sb);
+            a(false, abs, sb2);
         }
-        int i2 = this.c;
-        if ((i2 >= 3 && i2 <= 8) || ((i2 >= 9 && abs3 > 0) || (i2 >= 1 && abs2 > 0))) {
-            a(i2 > 0 && i2 % 2 == 0, abs2, sb);
+        int i11 = this.c;
+        if ((i11 >= 3 && i11 <= 8) || ((i11 >= 9 && abs3 > 0) || (i11 >= 1 && abs2 > 0))) {
+            a(i11 > 0 && i11 % 2 == 0, abs2, sb2);
             abs += abs2;
-            if (i2 == 7 || i2 == 8 || (i2 >= 5 && abs3 > 0)) {
-                if (i2 > 0 && i2 % 2 == 0) {
-                    z = true;
+            if (i11 == 7 || i11 == 8 || (i11 >= 5 && abs3 > 0)) {
+                if (i11 > 0 && i11 % 2 == 0) {
+                    z10 = true;
                 }
-                a(z, abs3, sb);
+                a(z10, abs3, sb2);
                 abs += abs3;
             }
         }
         if (abs == 0) {
-            sb.setLength(length);
-            sb.append(str);
+            sb2.setLength(length);
+            sb2.append(str);
         }
         return true;
     }
 
-    public static void a(boolean z, int i, StringBuilder sb) {
-        sb.append(z ? ":" : "");
-        sb.append((char) ((i / 10) + 48));
-        sb.append((char) ((i % 10) + 48));
+    public static void a(boolean z10, int i10, StringBuilder sb2) {
+        sb2.append(z10 ? ":" : "");
+        sb2.append((char) ((i10 / 10) + 48));
+        sb2.append((char) ((i10 % 10) + 48));
     }
 
     public final String toString() {

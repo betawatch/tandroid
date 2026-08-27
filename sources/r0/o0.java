@@ -1,0 +1,13 @@
+package r0;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
+public abstract class o0 implements n0 {
+    @Override // r0.n0
+    public void a() {
+    }
+
+    @Override // r0.n0
+    public void b() {
+    }
+}

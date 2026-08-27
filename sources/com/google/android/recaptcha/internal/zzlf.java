@@ -1,93 +1,92 @@
 package com.google.android.recaptcha.internal;
 
+import ad.p;
 import android.webkit.WebView;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.CoroutineScope;
+import h7.k6;
+import id.c0;
+import rc.c;
+import tc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-final class zzlf extends SuspendLambda implements Function2 {
+final class zzlf extends i implements p {
     Object zza;
     int zzb;
     final /* synthetic */ zzly zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzlf(zzly zzlyVar, Continuation continuation) {
-        super(2, continuation);
+    public zzlf(zzly zzlyVar, c cVar) {
+        super(2, cVar);
         this.zzc = zzlyVar;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzlf(this.zzc, continuation);
+    @Override // tc.a
+    public final c create(Object obj, c cVar) {
+        return new zzlf(this.zzc, cVar);
     }
 
-    @Override // kotlin.jvm.functions.Function2
+    @Override // ad.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlf) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzlf) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x006c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x006a, code lost:
     
         ((android.webkit.WebView) r7).setWebViewClient(new com.google.android.recaptcha.internal.zzle(r6.zzc));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x007a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0078, code lost:
     
-        return kotlin.Unit.INSTANCE;
+        return pc.i.a;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0055, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0053, code lost:
     
         if (r7 != r0) goto L17;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x003f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x003d, code lost:
     
         if (r7 != r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x002e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x002c, code lost:
     
         if (r7 != r0) goto L13;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x0014, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x0012, code lost:
     
         if (r1 != 3) goto L20;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:7:0x0057, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:7:0x0055, code lost:
     
         r1 = r6.zzc;
         ((android.webkit.WebView) r7).addJavascriptInterface(r1.zzr(), "RN");
         r6.zzb = 4;
         r7 = r1.zzv(r6);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0069, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0067, code lost:
     
         if (r7 != r0) goto L20;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x007b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0079, code lost:
     
         return r0;
      */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Override // tc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zzb;
-        if (i == 0) {
-            ResultKt.throwOnFailure(obj);
+        sc.a aVar = sc.a.a;
+        int i10 = this.zzb;
+        if (i10 == 0) {
+            k6.b(obj);
             zzly zzlyVar = this.zzc;
             this.zzb = 1;
             obj = zzlyVar.zzv(this);
-        } else if (i == 1) {
-            ResultKt.throwOnFailure(obj);
-        } else if (i != 2) {
-            ResultKt.throwOnFailure(obj);
+        } else if (i10 == 1) {
+            k6.b(obj);
+        } else if (i10 != 2) {
+            k6.b(obj);
         } else {
-            ResultKt.throwOnFailure(obj);
+            k6.b(obj);
             ((WebView) obj).getSettings().setJavaScriptEnabled(true);
             zzly zzlyVar2 = this.zzc;
             this.zza = null;

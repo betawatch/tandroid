@@ -1,19 +1,10 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzyn extends zzsh implements zztt {
     private zzyn() {
         throw null;
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzyn(zzyp zzypVar) {
-        super(r1);
-        zzyo zzyoVar;
-        zzyoVar = zzyo.zzb;
     }
 
     public final zzyn zze(Iterable iterable) {
@@ -32,5 +23,15 @@ public final class zzyn extends zzsh implements zztt {
         zzn();
         zzyo.zzk((zzyo) this.zza, str);
         return this;
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public /* synthetic */ zzyn(zzyp zzypVar) {
+        super(r1);
+        zzyo zzyoVar;
+        zzyoVar = zzyo.zzb;
     }
 }

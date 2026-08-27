@@ -18,19 +18,35 @@ import java.util.Enumeration;
 import java.util.Iterator;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class JNIUtilities {
-    public static int getMaxVideoResolution() {
-        return NotificationCenter.onDatabaseReset;
+    public static String[] getCarrierInfo() {
+        String str;
+        String str2;
+        TelephonyManager telephonyManager = (TelephonyManager) ApplicationLoader.applicationContext.getSystemService("phone");
+        if (Build.VERSION.SDK_INT >= 24) {
+            telephonyManager = telephonyManager.createForSubscriptionId(SubscriptionManager.getDefaultDataSubscriptionId());
+        }
+        if (TextUtils.isEmpty(telephonyManager.getNetworkOperatorName())) {
+            return null;
+        }
+        String networkOperator = telephonyManager.getNetworkOperator();
+        if (networkOperator == null || networkOperator.length() <= 3) {
+            str = "";
+            str2 = "";
+        } else {
+            str = networkOperator.substring(0, 3);
+            str2 = networkOperator.substring(3);
+        }
+        return new String[]{telephonyManager.getNetworkOperatorName(), telephonyManager.getNetworkCountryIso().toUpperCase(), str, str2};
     }
 
     public static String getCurrentNetworkInterfaceName() {
-        Network activeNetwork;
         LinkProperties linkProperties;
         ConnectivityManager connectivityManager = (ConnectivityManager) ApplicationLoader.applicationContext.getSystemService("connectivity");
-        activeNetwork = connectivityManager.getActiveNetwork();
+        Network activeNetwork = connectivityManager.getActiveNetwork();
         if (activeNetwork == null || (linkProperties = connectivityManager.getLinkProperties(activeNetwork)) == null) {
             return null;
         }
@@ -38,12 +54,11 @@ public class JNIUtilities {
     }
 
     public static String[] getLocalNetworkAddressesAndInterfaceName() {
-        Network activeNetwork;
         LinkProperties linkProperties;
         ConnectivityManager connectivityManager = (ConnectivityManager) ApplicationLoader.applicationContext.getSystemService("connectivity");
         String str = null;
         if (Build.VERSION.SDK_INT >= 23) {
-            activeNetwork = connectivityManager.getActiveNetwork();
+            Network activeNetwork = connectivityManager.getActiveNetwork();
             if (activeNetwork == null || (linkProperties = connectivityManager.getLinkProperties(activeNetwork)) == null) {
                 return null;
             }
@@ -86,33 +101,18 @@ public class JNIUtilities {
                 }
             }
             return null;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e9) {
+            FileLog.e(e9);
             return null;
         }
     }
 
-    public static String[] getCarrierInfo() {
-        String str;
-        String str2;
-        int defaultDataSubscriptionId;
-        TelephonyManager telephonyManager = (TelephonyManager) ApplicationLoader.applicationContext.getSystemService("phone");
-        if (Build.VERSION.SDK_INT >= 24) {
-            defaultDataSubscriptionId = SubscriptionManager.getDefaultDataSubscriptionId();
-            telephonyManager = telephonyManager.createForSubscriptionId(defaultDataSubscriptionId);
-        }
-        if (TextUtils.isEmpty(telephonyManager.getNetworkOperatorName())) {
-            return null;
-        }
-        String networkOperator = telephonyManager.getNetworkOperator();
-        if (networkOperator != null && networkOperator.length() > 3) {
-            str = networkOperator.substring(0, 3);
-            str2 = networkOperator.substring(3);
-        } else {
-            str = "";
-            str2 = "";
-        }
-        return new String[]{telephonyManager.getNetworkOperatorName(), telephonyManager.getNetworkCountryIso().toUpperCase(), str, str2};
+    public static int getMaxVideoResolution() {
+        return 320;
+    }
+
+    public static String getSupportedVideoCodecs() {
+        return "";
     }
 
     public static int[] getWifiInfo() {
@@ -122,9 +122,5 @@ public class JNIUtilities {
         } catch (Exception unused) {
             return null;
         }
-    }
-
-    public static String getSupportedVideoCodecs() {
-        return "";
     }
 }

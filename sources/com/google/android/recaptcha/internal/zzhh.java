@@ -2,15 +2,16 @@ package com.google.android.recaptcha.internal;
 
 import java.util.UUID;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzhh {
     private final String zza;
     private final String zzb = UUID.randomUUID().toString();
     private final int zzc;
 
-    public zzhh(String str, int i) {
+    public zzhh(String str, int i10) {
         this.zza = str;
-        this.zzc = i;
+        this.zzc = i10;
     }
 
     public final String zza() {

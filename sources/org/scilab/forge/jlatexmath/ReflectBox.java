@@ -2,7 +2,8 @@ package org.scilab.forge.jlatexmath;
 
 import ru.noties.jlatexmath.awt.Graphics2D;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class ReflectBox extends Box {
     private Box box;
 
@@ -15,13 +16,13 @@ public class ReflectBox extends Box {
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
-    public void draw(Graphics2D graphics2D, float f, float f2) {
-        drawDebug(graphics2D, f, f2);
-        graphics2D.translate(f, f2);
+    public void draw(Graphics2D graphics2D, float f10, float f11) {
+        drawDebug(graphics2D, f10, f11);
+        graphics2D.translate(f10, f11);
         graphics2D.scale(-1.0d, 1.0d);
         this.box.draw(graphics2D, -this.width, 0.0f);
         graphics2D.scale(-1.0d, 1.0d);
-        graphics2D.translate(-f, -f2);
+        graphics2D.translate(-f10, -f11);
     }
 
     @Override // org.scilab.forge.jlatexmath.Box

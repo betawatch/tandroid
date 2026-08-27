@@ -5,12 +5,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
-import com.google.android.gms.cast.internal.CastUtils;
-import com.google.android.gms.cast.internal.zzy;
-import com.google.android.gms.cast.internal.zzz;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import h7.r8;
 import j$.util.DesugarCollections;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -18,60 +14,65 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+import m5.w;
+import org.telegram.ui.Cells.pa;
+import r5.y;
+import z5.a;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class CastDevice extends AbstractSafeParcelable implements ReflectedParcelable {
-    public static final Parcelable.Creator<CastDevice> CREATOR = new zzs();
-    final String zza;
-    private final String zzb;
-    private InetAddress zzc;
-    private final String zzd;
-    private final String zze;
-    private final String zzf;
-    private final int zzg;
-    private final List zzh;
-    private final int zzi;
-    private final int zzj;
-    private final String zzk;
-    private final String zzl;
-    private final int zzm;
-    private final String zzn;
-    private final byte[] zzo;
-    private final String zzp;
-    private final boolean zzq;
-    private final zzz zzr;
-    private final Integer zzs;
+public class CastDevice extends a implements ReflectedParcelable {
+    public static final Parcelable.Creator<CastDevice> CREATOR = new w(22);
+    public final byte[] A;
+    public final String B;
+    public final boolean C;
+    public final y D;
+    public final Integer E;
+    public final String a;
+    public final String b;
+    public final InetAddress c;
+    public final String d;
+    public final String e;
+    public final String f;
+    public final int h;
+    public final List n;
+    public final int r;
+    public final int s;
+    public final String v;
+    public final String w;
+    public final int x;
+    public final String y;
 
-    CastDevice(String str, String str2, String str3, String str4, String str5, int i, List list, int i2, int i3, String str6, String str7, int i4, String str8, byte[] bArr, String str9, boolean z, zzz zzzVar, Integer num) {
-        this.zzb = zzd(str);
-        String zzd = zzd(str2);
-        this.zza = zzd;
-        if (!TextUtils.isEmpty(zzd)) {
+    public CastDevice(String str, String str2, String str3, String str4, String str5, int i10, ArrayList arrayList, int i11, int i12, String str6, String str7, int i13, String str8, byte[] bArr, String str9, boolean z10, y yVar, Integer num) {
+        this.a = str == null ? "" : str;
+        str2 = str2 == null ? "" : str2;
+        this.b = str2;
+        if (!TextUtils.isEmpty(str2)) {
             try {
-                this.zzc = InetAddress.getByName(zzd);
-            } catch (UnknownHostException e) {
-                Log.i("CastDevice", "Unable to convert host address (" + this.zza + ") to ipaddress: " + e.getMessage());
+                this.c = InetAddress.getByName(str2);
+            } catch (UnknownHostException e9) {
+                Log.i("CastDevice", "Unable to convert host address (" + this.b + ") to ipaddress: " + e9.getMessage());
             }
         }
-        this.zzd = zzd(str3);
-        this.zze = zzd(str4);
-        this.zzf = zzd(str5);
-        this.zzg = i;
-        this.zzh = list == null ? new ArrayList() : list;
-        this.zzi = i2;
-        this.zzj = i3;
-        this.zzk = zzd(str6);
-        this.zzl = str7;
-        this.zzm = i4;
-        this.zzn = str8;
-        this.zzo = bArr;
-        this.zzp = str9;
-        this.zzq = z;
-        this.zzr = zzzVar;
-        this.zzs = num;
+        this.d = str3 == null ? "" : str3;
+        this.e = str4 == null ? "" : str4;
+        this.f = str5 == null ? "" : str5;
+        this.h = i10;
+        this.n = arrayList == null ? new ArrayList() : arrayList;
+        this.r = i11;
+        this.s = i12;
+        this.v = str6 == null ? "" : str6;
+        this.w = str7;
+        this.x = i13;
+        this.y = str8;
+        this.A = bArr;
+        this.B = str9;
+        this.C = z10;
+        this.D = yVar;
+        this.E = num;
     }
 
-    public static CastDevice getFromBundle(Bundle bundle) {
+    public static CastDevice b(Bundle bundle) {
         ClassLoader classLoader;
         if (bundle == null || (classLoader = CastDevice.class.getClassLoader()) == null) {
             return null;
@@ -80,11 +81,20 @@ public class CastDevice extends AbstractSafeParcelable implements ReflectedParce
         return (CastDevice) bundle.getParcelable("com.google.android.gms.cast.EXTRA_CAST_DEVICE");
     }
 
-    private static String zzd(String str) {
-        return str == null ? "" : str;
+    public final boolean c(int i10) {
+        return (this.r & i10) == i10;
     }
 
-    public boolean equals(Object obj) {
+    public final y d() {
+        y yVar = this.D;
+        if (yVar == null) {
+            return (c(32) || c(64)) ? new y(1, false, false) : yVar;
+        }
+        return yVar;
+    }
+
+    public final boolean equals(Object obj) {
+        int i10;
         byte[] bArr;
         if (obj == this) {
             return true;
@@ -93,104 +103,67 @@ public class CastDevice extends AbstractSafeParcelable implements ReflectedParce
             return false;
         }
         CastDevice castDevice = (CastDevice) obj;
-        String str = this.zzb;
-        return str == null ? castDevice.zzb == null : CastUtils.zze(str, castDevice.zzb) && CastUtils.zze(this.zzc, castDevice.zzc) && CastUtils.zze(this.zze, castDevice.zze) && CastUtils.zze(this.zzd, castDevice.zzd) && CastUtils.zze(this.zzf, castDevice.zzf) && this.zzg == castDevice.zzg && CastUtils.zze(this.zzh, castDevice.zzh) && this.zzi == castDevice.zzi && this.zzj == castDevice.zzj && CastUtils.zze(this.zzk, castDevice.zzk) && CastUtils.zze(Integer.valueOf(this.zzm), Integer.valueOf(castDevice.zzm)) && CastUtils.zze(this.zzn, castDevice.zzn) && CastUtils.zze(this.zzl, castDevice.zzl) && CastUtils.zze(this.zzf, castDevice.getDeviceVersion()) && this.zzg == castDevice.getServicePort() && (((bArr = this.zzo) == null && castDevice.zzo == null) || Arrays.equals(bArr, castDevice.zzo)) && CastUtils.zze(this.zzp, castDevice.zzp) && this.zzq == castDevice.zzq && CastUtils.zze(zzb(), castDevice.zzb());
+        byte[] bArr2 = castDevice.A;
+        int i11 = castDevice.h;
+        String str = castDevice.f;
+        String str2 = castDevice.a;
+        String str3 = this.a;
+        if (str3 == null) {
+            return str2 == null;
+        }
+        if (r5.a.d(str3, str2) && r5.a.d(this.c, castDevice.c) && r5.a.d(this.e, castDevice.e) && r5.a.d(this.d, castDevice.d)) {
+            String str4 = this.f;
+            if (r5.a.d(str4, str) && (i10 = this.h) == i11 && r5.a.d(this.n, castDevice.n) && this.r == castDevice.r && this.s == castDevice.s && r5.a.d(this.v, castDevice.v) && r5.a.d(Integer.valueOf(this.x), Integer.valueOf(castDevice.x)) && r5.a.d(this.y, castDevice.y) && r5.a.d(this.w, castDevice.w) && r5.a.d(str4, str) && i10 == i11 && ((((bArr = this.A) == null && bArr2 == null) || Arrays.equals(bArr, bArr2)) && r5.a.d(this.B, castDevice.B) && this.C == castDevice.C && r5.a.d(d(), castDevice.d()))) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public String getDeviceId() {
-        return this.zzb.startsWith("__cast_nearby__") ? this.zzb.substring(16) : this.zzb;
-    }
-
-    public String getDeviceVersion() {
-        return this.zzf;
-    }
-
-    public String getFriendlyName() {
-        return this.zzd;
-    }
-
-    public List getIcons() {
-        return DesugarCollections.unmodifiableList(this.zzh);
-    }
-
-    public String getModelName() {
-        return this.zze;
-    }
-
-    public int getServicePort() {
-        return this.zzg;
-    }
-
-    public boolean hasCapability(int i) {
-        return (this.zzi & i) == i;
-    }
-
-    public int hashCode() {
-        String str = this.zzb;
+    public final int hashCode() {
+        String str = this.a;
         if (str == null) {
             return 0;
         }
         return str.hashCode();
     }
 
-    public void putInBundle(Bundle bundle) {
-        if (bundle == null) {
-            return;
-        }
-        bundle.putParcelable("com.google.android.gms.cast.EXTRA_CAST_DEVICE", this);
-    }
-
-    public String toString() {
-        String str = this.zzd;
+    public final String toString() {
         Locale locale = Locale.ROOT;
+        String str = this.d;
         if (!TextUtils.isEmpty(str)) {
             int length = str.length();
             str = length <= 2 ? length == 2 ? "xx" : "x" : String.format(locale, "%c%d%c", Character.valueOf(str.charAt(0)), Integer.valueOf(length - 2), Character.valueOf(str.charAt(length - 1)));
         }
-        return String.format(locale, "\"%s\" (%s)", str, this.zzb);
+        return pa.j("\"", str, "\" (", this.a, ")");
     }
 
     @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        String str = this.zzb;
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeString(parcel, 2, str, false);
-        SafeParcelWriter.writeString(parcel, 3, this.zza, false);
-        SafeParcelWriter.writeString(parcel, 4, getFriendlyName(), false);
-        SafeParcelWriter.writeString(parcel, 5, getModelName(), false);
-        SafeParcelWriter.writeString(parcel, 6, getDeviceVersion(), false);
-        SafeParcelWriter.writeInt(parcel, 7, getServicePort());
-        SafeParcelWriter.writeTypedList(parcel, 8, getIcons(), false);
-        SafeParcelWriter.writeInt(parcel, 9, this.zzi);
-        SafeParcelWriter.writeInt(parcel, 10, this.zzj);
-        SafeParcelWriter.writeString(parcel, 11, this.zzk, false);
-        SafeParcelWriter.writeString(parcel, 12, this.zzl, false);
-        SafeParcelWriter.writeInt(parcel, 13, this.zzm);
-        SafeParcelWriter.writeString(parcel, 14, this.zzn, false);
-        SafeParcelWriter.writeByteArray(parcel, 15, this.zzo, false);
-        SafeParcelWriter.writeString(parcel, 16, this.zzp, false);
-        SafeParcelWriter.writeBoolean(parcel, 17, this.zzq);
-        SafeParcelWriter.writeParcelable(parcel, 18, zzb(), i, false);
-        SafeParcelWriter.writeIntegerObject(parcel, 19, this.zzs, false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
-    }
-
-    public final int zza() {
-        return this.zzi;
-    }
-
-    public final zzz zzb() {
-        if (this.zzr == null) {
-            boolean hasCapability = hasCapability(32);
-            boolean hasCapability2 = hasCapability(64);
-            if (hasCapability || hasCapability2) {
-                return zzy.zza(1);
-            }
-        }
-        return this.zzr;
-    }
-
-    public final String zzc() {
-        return this.zzl;
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = r8.q(parcel, 20293);
+        r8.l(parcel, 2, this.a);
+        r8.l(parcel, 3, this.b);
+        r8.l(parcel, 4, this.d);
+        r8.l(parcel, 5, this.e);
+        r8.l(parcel, 6, this.f);
+        r8.s(parcel, 7, 4);
+        parcel.writeInt(this.h);
+        r8.p(parcel, 8, DesugarCollections.unmodifiableList(this.n));
+        r8.s(parcel, 9, 4);
+        parcel.writeInt(this.r);
+        r8.s(parcel, 10, 4);
+        parcel.writeInt(this.s);
+        r8.l(parcel, 11, this.v);
+        r8.l(parcel, 12, this.w);
+        r8.s(parcel, 13, 4);
+        parcel.writeInt(this.x);
+        r8.l(parcel, 14, this.y);
+        r8.c(parcel, 15, this.A);
+        r8.l(parcel, 16, this.B);
+        r8.s(parcel, 17, 4);
+        parcel.writeInt(this.C ? 1 : 0);
+        r8.k(parcel, 18, d(), i10);
+        r8.i(parcel, 19, this.E);
+        r8.r(parcel, q6);
     }
 }

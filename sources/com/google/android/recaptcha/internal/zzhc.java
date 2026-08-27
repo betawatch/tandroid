@@ -2,30 +2,34 @@ package com.google.android.recaptcha.internal;
 
 import android.net.TrafficStats;
 import android.webkit.URLUtil;
+import androidx.car.app.navigation.model.Maneuver;
+import h7.j6;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
-import kotlin.Lazy;
-import kotlin.LazyKt;
-import kotlin.collections.CollectionsKt;
-import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.j;
+import org.telegram.messenger.MessageObject;
+import pc.c;
+import pc.g;
+import qc.h;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzhc implements zzha {
-    private final Lazy zza;
+    private final c zza;
 
     public zzhc() {
-        int i = zzby.zza;
-        this.zza = LazyKt.lazy(zzhb.zza);
+        int i10 = zzby.zza;
+        this.zza = j6.a(zzhb.zza);
     }
 
     private static final void zzb(byte[] bArr) {
         for (zzwn zzwnVar : zzwq.zzk(bArr).zzl()) {
             String str = "INIT_TOTAL";
-            List listOf = CollectionsKt.listOf((Object[]) new String[]{"INIT_TOTAL", "EXECUTE_TOTAL"});
+            List c10 = h.c("INIT_TOTAL", "EXECUTE_TOTAL");
             switch (zzwnVar.zzaa()) {
                 case 2:
                     str = "UNKNOWN";
@@ -110,10 +114,10 @@ public final class zzhc implements zzha {
                 case 29:
                     str = "POST_EXECUTE";
                     break;
-                case 30:
+                case MessageObject.TYPE_GIFT_STARS /* 30 */:
                     str = "SIGNAL_MANAGER_INITIALIZATION";
                     break;
-                case 31:
+                case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
                     str = "SIGNAL_MANAGER_COLLECT_SIGNALS";
                     break;
                 case 32:
@@ -137,47 +141,47 @@ public final class zzhc implements zzha {
                 case 38:
                     str = "PIA_WARMUP";
                     break;
-                case 39:
+                case Maneuver.TYPE_DESTINATION /* 39 */:
                     str = "GMSCORE_ENGINE_INITIALIZATION";
                     break;
-                case 40:
+                case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
                     str = "GMSCORE_ENGINE_SIGNAL_COLLECTION";
                     break;
-                case 41:
+                case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
                     str = "INIT_ATTEMPT";
                     break;
-                case 42:
+                case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
                     str = "WEBVIEW_INITIALIZATION";
                     break;
-                case 43:
+                case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
                     str = "ORCAS_ENGINE_INITIALIZATION";
                     break;
-                case 44:
+                case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
                     str = "ORCAS_ENGINE_SIGNAL_COLLECTION";
                     break;
-                case 45:
+                case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
                     str = "INIT_CLIENT_REUSE";
                     break;
-                case 46:
+                case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
                     str = "ORCAS_SIGNAL_COLLECTION";
                     break;
-                case 47:
+                case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                     str = "ORCAS_SIGNAL_INITIALIZATION";
                     break;
                 case 48:
                     str = "FETCH_TOKEN_ATTEMPT";
                     break;
-                case 49:
+                case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
                     str = "ORCAS_FETCH_VERIFICATION_KEY";
                     break;
-                case 50:
+                case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
                     str = "ORCAS_VALIDATE_SIGNATURE";
                     break;
                 default:
                     str = "UNRECOGNIZED";
                     break;
             }
-            if (listOf.contains(str) && zzwnVar.zzY()) {
+            if (c10.contains(str) && zzwnVar.zzY()) {
                 zzwnVar.zzN();
                 zzwnVar.zzO();
                 zzwnVar.zzaa();
@@ -199,17 +203,17 @@ public final class zzhc implements zzha {
         try {
             TrafficStats.setThreadStatsTag((int) Thread.currentThread().getId());
             zzb(bArr);
-            String zzc = ((zzcy) this.zza.getValue()).zzc();
+            String zzc = ((zzcy) ((g) this.zza).a()).zzc();
             if (URLUtil.isHttpUrl(zzc)) {
                 URLConnection openConnection = new URL(zzc).openConnection();
-                Intrinsics.checkNotNull(openConnection, "null cannot be cast to non-null type java.net.HttpURLConnection");
+                j.c(openConnection, "null cannot be cast to non-null type java.net.HttpURLConnection");
                 httpURLConnection = (HttpURLConnection) openConnection;
             } else {
                 if (!URLUtil.isHttpsUrl(zzc)) {
                     throw new MalformedURLException("Recaptcha server url only allows using Http or Https.");
                 }
                 URLConnection openConnection2 = new URL(zzc).openConnection();
-                Intrinsics.checkNotNull(openConnection2, "null cannot be cast to non-null type javax.net.ssl.HttpsURLConnection");
+                j.c(openConnection2, "null cannot be cast to non-null type javax.net.ssl.HttpsURLConnection");
                 httpURLConnection = (HttpsURLConnection) openConnection2;
             }
             httpURLConnection.setRequestMethod("POST");
@@ -218,8 +222,8 @@ public final class zzhc implements zzha {
             httpURLConnection.connect();
             httpURLConnection.getOutputStream().write(bArr);
             return httpURLConnection.getResponseCode() == 200;
-        } catch (Exception e) {
-            e.getMessage();
+        } catch (Exception e9) {
+            e9.getMessage();
             return false;
         }
     }

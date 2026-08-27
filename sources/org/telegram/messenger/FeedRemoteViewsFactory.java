@@ -18,7 +18,8 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 class FeedRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, NotificationCenter.NotificationCenterDelegate {
     private AccountInstance accountInstance;
     private int classGuid;
@@ -27,9 +28,43 @@ class FeedRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, N
     private ArrayList<MessageObject> messages = new ArrayList<>();
     private CountDownLatch countDownLatch = new CountDownLatch(1);
 
+    public FeedRemoteViewsFactory(Context context, Intent intent) {
+        this.mContext = context;
+        int intExtra = intent.getIntExtra("appWidgetId", 0);
+        SharedPreferences sharedPreferences = context.getSharedPreferences("shortcut_widget", 0);
+        int i10 = sharedPreferences.getInt("account" + intExtra, -1);
+        if (i10 >= 0) {
+            this.dialogId = sharedPreferences.getLong("dialogId" + intExtra, 0L);
+            this.accountInstance = AccountInstance.getInstance(i10);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onDataSetChanged$0() {
+        this.accountInstance.getNotificationCenter().addObserver(this, NotificationCenter.messagesDidLoad);
+        if (this.classGuid == 0) {
+            this.classGuid = ConnectionsManager.generateClassGuid();
+        }
+        this.accountInstance.getMessagesController().loadMessages(this.dialogId, 0L, false, 20, 0, 0, true, 0, this.classGuid, 0, 0, 0, 0L, 0, 1, false);
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.messagesDidLoad && ((Integer) objArr[10]).intValue() == this.classGuid) {
+            this.messages.clear();
+            this.messages.addAll((ArrayList) objArr[2]);
+            this.countDownLatch.countDown();
+        }
+    }
+
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public long getItemId(int i) {
-        return i;
+    public int getCount() {
+        return this.messages.size();
+    }
+
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public long getItemId(int i10) {
+        return i10;
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
@@ -38,63 +73,17 @@ class FeedRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, N
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public int getViewTypeCount() {
-        return 1;
-    }
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public boolean hasStableIds() {
-        return true;
-    }
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public void onDestroy() {
-    }
-
-    public FeedRemoteViewsFactory(Context context, Intent intent) {
-        this.mContext = context;
-        int intExtra = intent.getIntExtra("appWidgetId", 0);
-        SharedPreferences sharedPreferences = context.getSharedPreferences("shortcut_widget", 0);
-        int i = sharedPreferences.getInt("account" + intExtra, -1);
-        if (i >= 0) {
-            this.dialogId = sharedPreferences.getLong("dialogId" + intExtra, 0L);
-            this.accountInstance = AccountInstance.getInstance(i);
-        }
-    }
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public void onCreate() {
-        ApplicationLoader.postInitApplication();
-    }
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public int getCount() {
-        return this.messages.size();
-    }
-
-    protected void grantUriAccessToWidget(Context context, Uri uri) {
-        Intent intent = new Intent("android.intent.action.MAIN");
-        intent.addCategory("android.intent.category.HOME");
-        Iterator<ResolveInfo> it = context.getPackageManager().queryIntentActivities(intent, 65536).iterator();
-        while (it.hasNext()) {
-            context.grantUriPermission(it.next().activityInfo.packageName, uri, 1);
-        }
-    }
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public RemoteViews getViewAt(int i) {
-        MessageObject messageObject = this.messages.get(i);
+    public RemoteViews getViewAt(int i10) {
+        MessageObject messageObject = this.messages.get(i10);
         RemoteViews remoteViews = new RemoteViews(this.mContext.getPackageName(), R.layout.feed_widget_item);
         if (messageObject.type == 0) {
-            int i2 = R.id.feed_widget_item_text;
-            remoteViews.setTextViewText(i2, messageObject.messageText);
-            remoteViews.setViewVisibility(i2, 0);
+            remoteViews.setTextViewText(R.id.feed_widget_item_text, messageObject.messageText);
+            remoteViews.setViewVisibility(R.id.feed_widget_item_text, 0);
         } else if (TextUtils.isEmpty(messageObject.caption)) {
             remoteViews.setViewVisibility(R.id.feed_widget_item_text, 8);
         } else {
-            int i3 = R.id.feed_widget_item_text;
-            remoteViews.setTextViewText(i3, messageObject.caption);
-            remoteViews.setViewVisibility(i3, 0);
+            remoteViews.setTextViewText(R.id.feed_widget_item_text, messageObject.caption);
+            remoteViews.setViewVisibility(R.id.feed_widget_item_text, 0);
         }
         ArrayList<TLRPC.PhotoSize> arrayList = messageObject.photoThumbs;
         if (arrayList == null || arrayList.isEmpty()) {
@@ -102,11 +91,10 @@ class FeedRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, N
         } else {
             File pathToAttach = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, AndroidUtilities.getPhotoSize()));
             if (pathToAttach.exists()) {
-                int i4 = R.id.feed_widget_item_image;
-                remoteViews.setViewVisibility(i4, 0);
-                Uri uriForFile = FileProvider.getUriForFile(this.mContext, ApplicationLoader.getApplicationId() + ".provider", pathToAttach);
-                grantUriAccessToWidget(this.mContext, uriForFile);
-                remoteViews.setImageViewUri(i4, uriForFile);
+                remoteViews.setViewVisibility(R.id.feed_widget_item_image, 0);
+                Uri d = FileProvider.d(this.mContext, ApplicationLoader.getApplicationId() + ".provider", pathToAttach);
+                grantUriAccessToWidget(this.mContext, d);
+                remoteViews.setImageViewUri(R.id.feed_widget_item_image, d);
             } else {
                 remoteViews.setViewVisibility(R.id.feed_widget_item_image, 8);
             }
@@ -122,39 +110,45 @@ class FeedRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, N
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public int getViewTypeCount() {
+        return 1;
+    }
+
+    public void grantUriAccessToWidget(Context context, Uri uri) {
+        Intent intent = new Intent("android.intent.action.MAIN");
+        intent.addCategory("android.intent.category.HOME");
+        Iterator<ResolveInfo> it = context.getPackageManager().queryIntentActivities(intent, 65536).iterator();
+        while (it.hasNext()) {
+            context.grantUriPermission(it.next().activityInfo.packageName, uri, 1);
+        }
+    }
+
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public boolean hasStableIds() {
+        return true;
+    }
+
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public void onCreate() {
+        ApplicationLoader.postInitApplication();
+    }
+
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
     public void onDataSetChanged() {
         AccountInstance accountInstance = this.accountInstance;
         if (accountInstance == null || !accountInstance.getUserConfig().isClientActivated()) {
             this.messages.clear();
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.FeedRemoteViewsFactory$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                FeedRemoteViewsFactory.$r8$lambda$xDSQDzYXaikYM_m7VQOCMfhrlVE(FeedRemoteViewsFactory.this);
-            }
-        });
+        AndroidUtilities.runOnUIThread(new d1(this, 1));
         try {
             this.countDownLatch.await();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e9) {
+            FileLog.e(e9);
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$xDSQDzYXaikYM_m7VQOCMfhrlVE(FeedRemoteViewsFactory feedRemoteViewsFactory) {
-        feedRemoteViewsFactory.accountInstance.getNotificationCenter().addObserver(feedRemoteViewsFactory, NotificationCenter.messagesDidLoad);
-        if (feedRemoteViewsFactory.classGuid == 0) {
-            feedRemoteViewsFactory.classGuid = ConnectionsManager.generateClassGuid();
-        }
-        feedRemoteViewsFactory.accountInstance.getMessagesController().loadMessages(feedRemoteViewsFactory.dialogId, 0L, false, 20, 0, 0, true, 0, feedRemoteViewsFactory.classGuid, 0, 0, 0, 0L, 0, 1, false);
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == NotificationCenter.messagesDidLoad && ((Integer) objArr[10]).intValue() == this.classGuid) {
-            this.messages.clear();
-            this.messages.addAll((ArrayList) objArr[2]);
-            this.countDownLatch.countDown();
-        }
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public void onDestroy() {
     }
 }

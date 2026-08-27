@@ -1,11 +1,11 @@
 package androidx.car.app.navigation.model;
 
 import androidx.car.app.model.CarText;
-import androidx.car.app.utils.CollectionUtils;
 import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class Trip {
     private final CarText mCurrentRoad;
@@ -15,39 +15,8 @@ public final class Trip {
     private final List<TravelEstimate> mStepTravelEstimates;
     private final List<Step> mSteps;
 
-    public static final class Builder {
-    }
-
-    public boolean isLoading() {
-        return this.mIsLoading;
-    }
-
-    public List<Destination> getDestinations() {
-        return CollectionUtils.emptyIfNull(this.mDestinations);
-    }
-
-    public List<Step> getSteps() {
-        return CollectionUtils.emptyIfNull(this.mSteps);
-    }
-
-    public List<TravelEstimate> getDestinationTravelEstimates() {
-        return CollectionUtils.emptyIfNull(this.mDestinationTravelEstimates);
-    }
-
-    public List<TravelEstimate> getStepTravelEstimates() {
-        return CollectionUtils.emptyIfNull(this.mStepTravelEstimates);
-    }
-
-    public CarText getCurrentRoad() {
-        return this.mCurrentRoad;
-    }
-
-    public String toString() {
-        return "[ destinations : " + this.mDestinations.toString() + ", steps: " + this.mSteps.toString() + ", dest estimates: " + this.mDestinationTravelEstimates.toString() + ", step estimates: " + this.mStepTravelEstimates.toString() + ", road: " + CarText.toShortString(this.mCurrentRoad) + ", isLoading: " + this.mIsLoading + "]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mDestinations, this.mSteps, this.mDestinationTravelEstimates, this.mStepTravelEstimates, this.mCurrentRoad);
+    public Trip(n nVar) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -61,8 +30,40 @@ public final class Trip {
         return Objects.equals(this.mDestinations, trip.mDestinations) && Objects.equals(this.mSteps, trip.mSteps) && Objects.equals(this.mDestinationTravelEstimates, trip.mDestinationTravelEstimates) && Objects.equals(this.mStepTravelEstimates, trip.mStepTravelEstimates) && Objects.equals(this.mCurrentRoad, trip.mCurrentRoad) && Boolean.valueOf(this.mIsLoading).equals(Boolean.valueOf(trip.mIsLoading));
     }
 
-    Trip(Builder builder) {
-        throw null;
+    public CarText getCurrentRoad() {
+        return this.mCurrentRoad;
+    }
+
+    public List<TravelEstimate> getDestinationTravelEstimates() {
+        List<TravelEstimate> list = this.mDestinationTravelEstimates;
+        return list != null ? list : Collections.EMPTY_LIST;
+    }
+
+    public List<Destination> getDestinations() {
+        List<Destination> list = this.mDestinations;
+        return list != null ? list : Collections.EMPTY_LIST;
+    }
+
+    public List<TravelEstimate> getStepTravelEstimates() {
+        List<TravelEstimate> list = this.mStepTravelEstimates;
+        return list != null ? list : Collections.EMPTY_LIST;
+    }
+
+    public List<Step> getSteps() {
+        List<Step> list = this.mSteps;
+        return list != null ? list : Collections.EMPTY_LIST;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mDestinations, this.mSteps, this.mDestinationTravelEstimates, this.mStepTravelEstimates, this.mCurrentRoad);
+    }
+
+    public boolean isLoading() {
+        return this.mIsLoading;
+    }
+
+    public String toString() {
+        return "[ destinations : " + this.mDestinations.toString() + ", steps: " + this.mSteps.toString() + ", dest estimates: " + this.mDestinationTravelEstimates.toString() + ", step estimates: " + this.mStepTravelEstimates.toString() + ", road: " + CarText.toShortString(this.mCurrentRoad) + ", isLoading: " + this.mIsLoading + "]";
     }
 
     private Trip() {

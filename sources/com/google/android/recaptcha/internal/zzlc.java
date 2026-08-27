@@ -2,14 +2,15 @@ package com.google.android.recaptcha.internal;
 
 import android.content.Context;
 import java.util.Map;
-import kotlin.TuplesKt;
-import kotlin.collections.MapsKt;
 import org.webrtc.MediaStreamTrack;
+import pc.d;
+import qc.r;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzlc implements zzlb {
     private final Context zza;
-    private final Map zzb = MapsKt.mapOf(TuplesKt.to(2, "activity"), TuplesKt.to(3, "phone"), TuplesKt.to(4, "input_method"), TuplesKt.to(5, MediaStreamTrack.AUDIO_TRACK_KIND));
+    private final Map zzb = r.b(new d(2, "activity"), new d(3, "phone"), new d(4, "input_method"), new d(5, MediaStreamTrack.AUDIO_TRACK_KIND));
 
     public zzlc(Context context) {
         this.zza = context;

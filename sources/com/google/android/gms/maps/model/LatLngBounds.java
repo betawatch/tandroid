@@ -2,64 +2,31 @@ package com.google.android.gms.maps.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.internal.Objects;
-import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import h7.r8;
+import java.util.Arrays;
+import r6.l;
+import w3.b0;
+import z5.a;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class LatLngBounds extends AbstractSafeParcelable implements ReflectedParcelable {
-    public static final Parcelable.Creator<LatLngBounds> CREATOR = new zzf();
-    public final LatLng northeast;
-    public final LatLng southwest;
-
-    public static final class Builder {
-        private double zza = Double.POSITIVE_INFINITY;
-        private double zzb = Double.NEGATIVE_INFINITY;
-        private double zzc = Double.NaN;
-        private double zzd = Double.NaN;
-
-        public LatLngBounds build() {
-            Preconditions.checkState(!Double.isNaN(this.zzc), "no included points");
-            return new LatLngBounds(new LatLng(this.zza, this.zzc), new LatLng(this.zzb, this.zzd));
-        }
-
-        public Builder include(LatLng latLng) {
-            Preconditions.checkNotNull(latLng, "point must not be null");
-            this.zza = Math.min(this.zza, latLng.latitude);
-            this.zzb = Math.max(this.zzb, latLng.latitude);
-            double d = latLng.longitude;
-            if (Double.isNaN(this.zzc)) {
-                this.zzc = d;
-                this.zzd = d;
-                return this;
-            }
-            double d2 = this.zzc;
-            double d3 = this.zzd;
-            if (d2 > d3 ? !(d2 <= d || d <= d3) : !(d2 <= d && d <= d3)) {
-                Parcelable.Creator<LatLngBounds> creator = LatLngBounds.CREATOR;
-                if (((d2 - d) + 360.0d) % 360.0d < ((d - d3) + 360.0d) % 360.0d) {
-                    this.zzc = d;
-                    return this;
-                }
-                this.zzd = d;
-            }
-            return this;
-        }
-    }
+public final class LatLngBounds extends a implements ReflectedParcelable {
+    public static final Parcelable.Creator<LatLngBounds> CREATOR = new l(20);
+    public final LatLng a;
+    public final LatLng b;
 
     public LatLngBounds(LatLng latLng, LatLng latLng2) {
-        Preconditions.checkNotNull(latLng, "southwest must not be null.");
-        Preconditions.checkNotNull(latLng2, "northeast must not be null.");
-        double d = latLng2.latitude;
-        double d2 = latLng.latitude;
-        Preconditions.checkArgument(d >= d2, "southern latitude exceeds northern latitude (%s > %s)", Double.valueOf(d2), Double.valueOf(latLng2.latitude));
-        this.southwest = latLng;
-        this.northeast = latLng2;
+        y5.l.i(latLng, "southwest must not be null.");
+        y5.l.i(latLng2, "northeast must not be null.");
+        double d = latLng2.a;
+        double d10 = latLng.a;
+        y5.l.c(d >= d10, "southern latitude exceeds northern latitude (%s > %s)", Double.valueOf(d10), Double.valueOf(d));
+        this.a = latLng;
+        this.b = latLng2;
     }
 
-    public boolean equals(Object obj) {
+    public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
@@ -67,35 +34,25 @@ public final class LatLngBounds extends AbstractSafeParcelable implements Reflec
             return false;
         }
         LatLngBounds latLngBounds = (LatLngBounds) obj;
-        return this.southwest.equals(latLngBounds.southwest) && this.northeast.equals(latLngBounds.northeast);
+        return this.a.equals(latLngBounds.a) && this.b.equals(latLngBounds.b);
     }
 
-    public LatLng getCenter() {
-        LatLng latLng = this.southwest;
-        double d = latLng.latitude;
-        LatLng latLng2 = this.northeast;
-        double d2 = (d + latLng2.latitude) / 2.0d;
-        double d3 = latLng2.longitude;
-        double d4 = latLng.longitude;
-        if (d4 > d3) {
-            d3 += 360.0d;
-        }
-        return new LatLng(d2, (d3 + d4) / 2.0d);
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b});
     }
 
-    public int hashCode() {
-        return Objects.hashCode(this.southwest, this.northeast);
-    }
-
-    public String toString() {
-        return Objects.toStringHelper(this).add("southwest", this.southwest).add("northeast", this.northeast).toString();
+    public final String toString() {
+        b0 b0Var = new b0(this);
+        b0Var.e(this.a, "southwest");
+        b0Var.e(this.b, "northeast");
+        return b0Var.toString();
     }
 
     @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeParcelable(parcel, 2, this.southwest, i, false);
-        SafeParcelWriter.writeParcelable(parcel, 3, this.northeast, i, false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = r8.q(parcel, 20293);
+        r8.k(parcel, 2, this.a, i10);
+        r8.k(parcel, 3, this.b, i10);
+        r8.r(parcel, q6);
     }
 }

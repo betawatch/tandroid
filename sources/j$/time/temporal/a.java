@@ -45,7 +45,7 @@ public enum a implements o {
         this.b = sVar;
     }
 
-    a(String str, s sVar, int i) {
+    a(String str, s sVar, int i10) {
         this.a = str;
         this.b = sVar;
     }
@@ -55,37 +55,37 @@ public enum a implements o {
         return this.b;
     }
 
+    public final void w(long j10) {
+        this.b.b(j10, this);
+    }
+
     @Override // j$.time.temporal.o
-    public final boolean u() {
+    public final boolean isDateBased() {
         return ordinal() >= DAY_OF_WEEK.ordinal() && ordinal() <= ERA.ordinal();
     }
 
-    public final boolean E() {
+    public final boolean y() {
         return ordinal() < DAY_OF_WEEK.ordinal();
     }
 
-    public final void x(long j) {
-        this.b.b(j, this);
+    @Override // j$.time.temporal.o
+    public final boolean j(l lVar) {
+        return lVar.e(this);
     }
 
     @Override // j$.time.temporal.o
-    public final boolean p(l lVar) {
-        return lVar.h(this);
+    public final s k(l lVar) {
+        return lVar.l(this);
     }
 
     @Override // j$.time.temporal.o
-    public final s r(l lVar) {
-        return lVar.q(this);
+    public final long m(l lVar) {
+        return lVar.y(this);
     }
 
     @Override // j$.time.temporal.o
-    public final long o(l lVar) {
-        return lVar.u(this);
-    }
-
-    @Override // j$.time.temporal.o
-    public final Temporal q(Temporal temporal, long j) {
-        return temporal.e(j, this);
+    public final Temporal q(Temporal temporal, long j10) {
+        return temporal.c(j10, this);
     }
 
     @Override // java.lang.Enum

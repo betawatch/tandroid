@@ -1,13 +1,14 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzrx {
     private final Object zza;
     private final int zzb;
 
-    zzrx(Object obj, int i) {
+    public zzrx(Object obj, int i10) {
         this.zza = obj;
-        this.zzb = i;
+        this.zzb = i10;
     }
 
     public final boolean equals(Object obj) {

@@ -1,14 +1,15 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzoi extends zzof {
     private static final zzof zza = new zzoi();
 
-    zzoi() {
+    public zzoi() {
         new zzog(null);
     }
 
-    static final zzof zzb() {
+    public static final zzof zzb() {
         return zza;
     }
 

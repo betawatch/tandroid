@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzpj extends zzoz implements Serializable {
     private final MessageDigest zza;
@@ -11,7 +12,7 @@ final class zzpj extends zzoz implements Serializable {
     private final boolean zzc;
     private final String zzd;
 
-    zzpj(String str, String str2) {
+    public zzpj(String str, String str2) {
         MessageDigest zzc = zzc("SHA-256");
         this.zza = zzc;
         this.zzb = zzc.getDigestLength();
@@ -22,8 +23,8 @@ final class zzpj extends zzoz implements Serializable {
     private static MessageDigest zzc(String str) {
         try {
             return MessageDigest.getInstance(str);
-        } catch (NoSuchAlgorithmException e) {
-            throw new AssertionError(e);
+        } catch (NoSuchAlgorithmException e9) {
+            throw new AssertionError(e9);
         }
     }
 

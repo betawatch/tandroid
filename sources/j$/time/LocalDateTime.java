@@ -29,12 +29,12 @@ public final class LocalDateTime implements Temporal, j$.time.temporal.m, Chrono
     }
 
     @Override // j$.time.chrono.ChronoLocalDateTime
-    public final j$.time.chrono.k b() {
-        return ((LocalDate) d()).b();
+    public final j$.time.chrono.k a() {
+        return ((LocalDate) f()).a();
     }
 
     @Override // j$.time.chrono.ChronoLocalDateTime
-    public final ChronoZonedDateTime t(ZoneOffset zoneOffset) {
+    public final ChronoZonedDateTime n(ZoneOffset zoneOffset) {
         return ZonedDateTime.H(this, zoneOffset, null);
     }
 
@@ -45,31 +45,31 @@ public final class LocalDateTime implements Temporal, j$.time.temporal.m, Chrono
     }
 
     @Override // j$.time.temporal.m
-    public final Temporal x(Temporal temporal) {
-        return temporal.e(((LocalDate) d()).v(), j$.time.temporal.a.EPOCH_DAY).e(c().R(), j$.time.temporal.a.NANO_OF_DAY);
+    public final Temporal q(Temporal temporal) {
+        return temporal.c(((LocalDate) f()).z(), j$.time.temporal.a.EPOCH_DAY).c(b().R(), j$.time.temporal.a.NANO_OF_DAY);
     }
 
-    public static LocalDateTime K(long j, int i, ZoneOffset zoneOffset) {
+    public static LocalDateTime K(long j10, int i10, ZoneOffset zoneOffset) {
         Objects.requireNonNull(zoneOffset, "offset");
-        long j2 = i;
-        j$.time.temporal.a.NANO_OF_SECOND.x(j2);
-        return new LocalDateTime(LocalDate.R(j$.com.android.tools.r8.a.S(j + zoneOffset.getTotalSeconds(), 86400)), h.K((((int) j$.com.android.tools.r8.a.R(r5, r7)) * 1000000000) + j2));
+        long j11 = i10;
+        j$.time.temporal.a.NANO_OF_SECOND.w(j11);
+        return new LocalDateTime(LocalDate.R(j$.com.android.tools.r8.a.S(j10 + zoneOffset.getTotalSeconds(), 86400)), h.K((((int) j$.com.android.tools.r8.a.R(r5, r7)) * 1000000000) + j11));
     }
 
-    public static LocalDateTime H(Temporal temporal) {
-        if (temporal instanceof LocalDateTime) {
-            return (LocalDateTime) temporal;
+    public static LocalDateTime H(j$.time.temporal.l lVar) {
+        if (lVar instanceof LocalDateTime) {
+            return (LocalDateTime) lVar;
         }
-        if (temporal instanceof ZonedDateTime) {
-            return ((ZonedDateTime) temporal).B();
+        if (lVar instanceof ZonedDateTime) {
+            return ((ZonedDateTime) lVar).r();
         }
-        if (temporal instanceof OffsetDateTime) {
-            return ((OffsetDateTime) temporal).toLocalDateTime();
+        if (lVar instanceof OffsetDateTime) {
+            return ((OffsetDateTime) lVar).toLocalDateTime();
         }
         try {
-            return new LocalDateTime(LocalDate.I(temporal), h.I(temporal));
-        } catch (b e) {
-            throw new b("Unable to obtain LocalDateTime from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e);
+            return new LocalDateTime(LocalDate.I(lVar), h.I(lVar));
+        } catch (b e9) {
+            throw new b("Unable to obtain LocalDateTime from TemporalAccessor: " + lVar + " of type " + lVar.getClass().getName(), e9);
         }
     }
 
@@ -78,235 +78,239 @@ public final class LocalDateTime implements Temporal, j$.time.temporal.m, Chrono
         this.b = hVar;
     }
 
-    public final LocalDateTime Q(LocalDate localDate, h hVar) {
+    public final LocalDateTime P(LocalDate localDate, h hVar) {
         return (this.a == localDate && this.b == hVar) ? this : new LocalDateTime(localDate, hVar);
     }
 
     @Override // j$.time.temporal.l
-    public final boolean h(j$.time.temporal.o oVar) {
+    public final boolean e(j$.time.temporal.o oVar) {
         if (!(oVar instanceof j$.time.temporal.a)) {
-            return oVar != null && oVar.p(this);
+            return oVar != null && oVar.j(this);
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        return aVar.u() || aVar.E();
+        return aVar.isDateBased() || aVar.y();
     }
 
     @Override // j$.time.temporal.l
-    public final j$.time.temporal.s q(j$.time.temporal.o oVar) {
+    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            if (((j$.time.temporal.a) oVar).E()) {
+            if (((j$.time.temporal.a) oVar).y()) {
                 h hVar = this.b;
                 hVar.getClass();
                 return j$.time.temporal.p.d(hVar, oVar);
             }
-            return this.a.q(oVar);
+            return this.a.l(oVar);
         }
-        return oVar.r(this);
+        return oVar.k(this);
     }
 
     @Override // j$.time.temporal.l
-    public final int o(j$.time.temporal.o oVar) {
+    public final int j(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            return ((j$.time.temporal.a) oVar).E() ? this.b.o(oVar) : this.a.o(oVar);
+            return ((j$.time.temporal.a) oVar).y() ? this.b.j(oVar) : this.a.j(oVar);
         }
         return j$.time.temporal.p.a(this, oVar);
     }
 
     @Override // j$.time.temporal.l
-    public final long u(j$.time.temporal.o oVar) {
+    public final long y(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            return ((j$.time.temporal.a) oVar).E() ? this.b.u(oVar) : this.a.u(oVar);
+            return ((j$.time.temporal.a) oVar).y() ? this.b.y(oVar) : this.a.y(oVar);
         }
-        return oVar.o(this);
-    }
-
-    public final int E(LocalDateTime localDateTime) {
-        int E = this.a.E(localDateTime.a);
-        return E == 0 ? this.b.compareTo(localDateTime.b) : E;
+        return oVar.m(this);
     }
 
     @Override // j$.time.chrono.ChronoLocalDateTime
-    public final j$.time.chrono.b d() {
+    public final j$.time.chrono.b f() {
         return this.a;
     }
 
     @Override // j$.time.chrono.ChronoLocalDateTime
-    public final h c() {
+    public final h b() {
         return this.b;
     }
 
     @Override // j$.time.temporal.Temporal
-    /* renamed from: P, reason: merged with bridge method [inline-methods] */
-    public final LocalDateTime p(LocalDate localDate) {
-        if (c.b(localDate)) {
-            return Q(localDate, this.b);
+    /* renamed from: Q, reason: merged with bridge method [inline-methods] */
+    public final LocalDateTime k(j$.time.temporal.m mVar) {
+        if (mVar instanceof LocalDate) {
+            return P((LocalDate) mVar, this.b);
         }
-        localDate.getClass();
-        return (LocalDateTime) j$.com.android.tools.r8.a.a(localDate, this);
+        if (mVar instanceof h) {
+            return P(this.a, (h) mVar);
+        }
+        if (mVar instanceof LocalDateTime) {
+            return (LocalDateTime) mVar;
+        }
+        return (LocalDateTime) mVar.q(this);
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: O, reason: merged with bridge method [inline-methods] */
-    public final LocalDateTime e(long j, j$.time.temporal.o oVar) {
+    public final LocalDateTime c(long j10, j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            boolean E = ((j$.time.temporal.a) oVar).E();
-            h hVar = this.b;
-            LocalDate localDate = this.a;
-            if (E) {
-                return Q(localDate, hVar.e(j, oVar));
+            if (((j$.time.temporal.a) oVar).y()) {
+                return P(this.a, this.b.c(j10, oVar));
             }
-            return Q(localDate.e(j, oVar), hVar);
+            return P(this.a.c(j10, oVar), this.b);
         }
-        return (LocalDateTime) oVar.q(this, j);
+        return (LocalDateTime) oVar.q(this, j10);
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: L, reason: merged with bridge method [inline-methods] */
-    public final LocalDateTime f(long j, j$.time.temporal.q qVar) {
-        if (qVar instanceof ChronoUnit) {
-            int i = f.a[((ChronoUnit) qVar).ordinal()];
-            h hVar = this.b;
-            LocalDate localDate = this.a;
-            switch (i) {
-                case 1:
-                    return N(this.a, 0L, 0L, 0L, j);
-                case 2:
-                    LocalDateTime Q = Q(localDate.plusDays(j / 86400000000L), hVar);
-                    return Q.N(Q.a, 0L, 0L, 0L, (j % 86400000000L) * 1000);
-                case 3:
-                    LocalDateTime Q2 = Q(localDate.plusDays(j / 86400000), hVar);
-                    return Q2.N(Q2.a, 0L, 0L, 0L, (j % 86400000) * 1000000);
-                case 4:
-                    return M(j);
-                case 5:
-                    return N(this.a, 0L, j, 0L, 0L);
-                case 6:
-                    return N(this.a, j, 0L, 0L, 0L);
-                case 7:
-                    LocalDateTime Q3 = Q(localDate.plusDays(j / 256), hVar);
-                    return Q3.N(Q3.a, (j % 256) * 12, 0L, 0L, 0L);
-                default:
-                    return Q(localDate.f(j, qVar), hVar);
-            }
+    public final LocalDateTime d(long j10, j$.time.temporal.q qVar) {
+        if (!(qVar instanceof ChronoUnit)) {
+            return (LocalDateTime) qVar.j(this, j10);
         }
-        return (LocalDateTime) qVar.l(this, j);
+        switch (f.a[((ChronoUnit) qVar).ordinal()]) {
+            case 1:
+                return N(this.a, 0L, 0L, 0L, j10);
+            case 2:
+                LocalDateTime P = P(this.a.plusDays(j10 / 86400000000L), this.b);
+                return P.N(P.a, 0L, 0L, 0L, (j10 % 86400000000L) * 1000);
+            case 3:
+                LocalDateTime P2 = P(this.a.plusDays(j10 / 86400000), this.b);
+                return P2.N(P2.a, 0L, 0L, 0L, (j10 % 86400000) * 1000000);
+            case 4:
+                return M(j10);
+            case 5:
+                return N(this.a, 0L, j10, 0L, 0L);
+            case 6:
+                return N(this.a, j10, 0L, 0L, 0L);
+            case 7:
+                LocalDateTime P3 = P(this.a.plusDays(j10 / 256), this.b);
+                return P3.N(P3.a, (j10 % 256) * 12, 0L, 0L, 0L);
+            default:
+                return P(this.a.d(j10, qVar), this.b);
+        }
     }
 
-    public final LocalDateTime M(long j) {
-        return N(this.a, 0L, 0L, j, 0L);
+    public final LocalDateTime M(long j10) {
+        return N(this.a, 0L, 0L, j10, 0L);
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal l(long j, ChronoUnit chronoUnit) {
-        return j == Long.MIN_VALUE ? f(Long.MAX_VALUE, chronoUnit).f(1L, chronoUnit) : f(-j, chronoUnit);
+    public final Temporal w(long j10, ChronoUnit chronoUnit) {
+        return j10 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j10, chronoUnit);
     }
 
-    public final LocalDateTime N(LocalDate localDate, long j, long j2, long j3, long j4) {
-        long j5 = j | j2 | j3 | j4;
-        h hVar = this.b;
-        if (j5 == 0) {
-            return Q(localDate, hVar);
+    public final LocalDateTime N(LocalDate localDate, long j10, long j11, long j12, long j13) {
+        if ((j10 | j11 | j12 | j13) == 0) {
+            return P(localDate, this.b);
         }
-        long j6 = j / 24;
-        long j7 = j6 + (j2 / 1440) + (j3 / 86400) + (j4 / 86400000000000L);
-        long j8 = 1;
-        long j9 = ((j % 24) * 3600000000000L) + ((j2 % 1440) * 60000000000L) + ((j3 % 86400) * 1000000000) + (j4 % 86400000000000L);
-        long R = hVar.R();
-        long j10 = (j9 * j8) + R;
-        long S = j$.com.android.tools.r8.a.S(j10, 86400000000000L) + (j7 * j8);
-        long R2 = j$.com.android.tools.r8.a.R(j10, 86400000000000L);
-        if (R2 != R) {
-            hVar = h.K(R2);
-        }
-        return Q(localDate.plusDays(S), hVar);
+        long j14 = 1;
+        long R = this.b.R();
+        long j15 = ((((j10 % 24) * 3600000000000L) + ((j11 % 1440) * 60000000000L) + ((j12 % 86400) * 1000000000) + (j13 % 86400000000000L)) * j14) + R;
+        long S = j$.com.android.tools.r8.a.S(j15, 86400000000000L) + (((j10 / 24) + (j11 / 1440) + (j12 / 86400) + (j13 / 86400000000000L)) * j14);
+        long R2 = j$.com.android.tools.r8.a.R(j15, 86400000000000L);
+        return P(localDate.plusDays(S), R2 == R ? this.b : h.K(R2));
     }
 
     @Override // j$.time.temporal.l
-    public final Object r(j$.time.format.a aVar) {
+    public final Object m(j$.time.format.a aVar) {
         if (aVar == j$.time.temporal.p.f) {
             return this.a;
         }
         return j$.com.android.tools.r8.a.t(this, aVar);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x00be, code lost:
+    
+        if (r0.G(r1) > 0) goto L33;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x00e4, code lost:
+    
+        if (r0.N(r8.a) == false) goto L41;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x00ee, code lost:
+    
+        if (r9.b.compareTo(r8.b) <= 0) goto L41;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x00f0, code lost:
+    
+        r0 = r0.plusDays(1);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x00fa, code lost:
+    
+        return r8.a.g(r0, r10);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x00d5, code lost:
+    
+        if (r9.b.compareTo(r8.b) >= 0) goto L36;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x00d7, code lost:
+    
+        r0 = r0.plusDays(-1);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x00cb, code lost:
+    
+        if (r0.z() > r1.z()) goto L33;
+     */
     @Override // j$.time.temporal.Temporal
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final long g(Temporal temporal, j$.time.temporal.q qVar) {
-        LocalDate localDate;
-        long j;
-        long j2;
+        long j10;
+        long j11;
         LocalDateTime H = H(temporal);
         if (!(qVar instanceof ChronoUnit)) {
             return qVar.between(this, H);
         }
-        boolean z = ((ChronoUnit) qVar).compareTo(ChronoUnit.DAYS) < 0;
-        h hVar = this.b;
-        LocalDate localDate2 = this.a;
-        if (!z) {
-            LocalDate localDate3 = H.a;
+        ChronoUnit chronoUnit = (ChronoUnit) qVar;
+        if (chronoUnit.compareTo(ChronoUnit.DAYS) < 0) {
+            LocalDate localDate = this.a;
+            LocalDate localDate2 = H.a;
+            localDate.getClass();
+            long z10 = localDate2.z() - localDate.z();
+            if (z10 == 0) {
+                return this.b.g(H.b, qVar);
+            }
+            long R = H.b.R() - this.b.R();
+            if (z10 > 0) {
+                j10 = z10 - 1;
+                j11 = R + 86400000000000L;
+            } else {
+                j10 = z10 + 1;
+                j11 = R - 86400000000000L;
+            }
+            switch (f.a[chronoUnit.ordinal()]) {
+                case 1:
+                    j10 = j$.com.android.tools.r8.a.T(j10, 86400000000000L);
+                    break;
+                case 2:
+                    j10 = j$.com.android.tools.r8.a.T(j10, 86400000000L);
+                    j11 /= 1000;
+                    break;
+                case 3:
+                    j10 = j$.com.android.tools.r8.a.T(j10, 86400000L);
+                    j11 /= 1000000;
+                    break;
+                case 4:
+                    j10 = j$.com.android.tools.r8.a.T(j10, 86400);
+                    j11 /= 1000000000;
+                    break;
+                case 5:
+                    j10 = j$.com.android.tools.r8.a.T(j10, 1440);
+                    j11 /= 60000000000L;
+                    break;
+                case 6:
+                    j10 = j$.com.android.tools.r8.a.T(j10, 24);
+                    j11 /= 3600000000000L;
+                    break;
+                case 7:
+                    j10 = j$.com.android.tools.r8.a.T(j10, 2);
+                    j11 /= 43200000000000L;
+                    break;
+            }
+            return j$.com.android.tools.r8.a.O(j10, j11);
+        }
+        LocalDate localDate3 = H.a;
+        LocalDate localDate4 = this.a;
+        if (localDate4 != null) {
             localDate3.getClass();
-            boolean z2 = localDate2 != null;
-            h hVar2 = H.b;
-            if (!z2 ? localDate3.v() > localDate2.v() : localDate3.E(localDate2) > 0) {
-                if (hVar2.compareTo(hVar) < 0) {
-                    localDate = localDate3.plusDays(-1L);
-                    return localDate2.g(localDate, qVar);
-                }
-            }
-            boolean N = localDate3.N(localDate2);
-            localDate = localDate3;
-            if (N) {
-                localDate = localDate3;
-                if (hVar2.compareTo(hVar) > 0) {
-                    localDate = localDate3.plusDays(1L);
-                }
-            }
-            return localDate2.g(localDate, qVar);
         }
-        LocalDate localDate4 = H.a;
-        localDate2.getClass();
-        long v = localDate4.v() - localDate2.v();
-        h hVar3 = H.b;
-        if (v == 0) {
-            return hVar.g(hVar3, qVar);
-        }
-        long R = hVar3.R() - hVar.R();
-        if (v > 0) {
-            j = v - 1;
-            j2 = R + 86400000000000L;
-        } else {
-            j = v + 1;
-            j2 = R - 86400000000000L;
-        }
-        switch (f.a[((ChronoUnit) qVar).ordinal()]) {
-            case 1:
-                j = j$.com.android.tools.r8.a.T(j, 86400000000000L);
-                break;
-            case 2:
-                j = j$.com.android.tools.r8.a.T(j, 86400000000L);
-                j2 /= 1000;
-                break;
-            case 3:
-                j = j$.com.android.tools.r8.a.T(j, 86400000L);
-                j2 /= 1000000;
-                break;
-            case 4:
-                j = j$.com.android.tools.r8.a.T(j, 86400);
-                j2 /= 1000000000;
-                break;
-            case 5:
-                j = j$.com.android.tools.r8.a.T(j, 1440);
-                j2 /= 60000000000L;
-                break;
-            case 6:
-                j = j$.com.android.tools.r8.a.T(j, 24);
-                j2 /= 3600000000000L;
-                break;
-            case 7:
-                j = j$.com.android.tools.r8.a.T(j, 2);
-                j2 /= 43200000000000L;
-                break;
-        }
-        return j$.com.android.tools.r8.a.O(j, j2);
     }
 
     public String format(DateTimeFormatter dateTimeFormatter) {
@@ -315,22 +319,27 @@ public final class LocalDateTime implements Temporal, j$.time.temporal.m, Chrono
     }
 
     @Override // java.lang.Comparable
-    /* renamed from: z, reason: merged with bridge method [inline-methods] */
+    /* renamed from: C, reason: merged with bridge method [inline-methods] */
     public final int compareTo(ChronoLocalDateTime chronoLocalDateTime) {
         if (chronoLocalDateTime instanceof LocalDateTime) {
-            return E((LocalDateTime) chronoLocalDateTime);
+            return G((LocalDateTime) chronoLocalDateTime);
         }
         return j$.com.android.tools.r8.a.f(this, chronoLocalDateTime);
     }
 
+    public final int G(LocalDateTime localDateTime) {
+        int G = this.a.G(localDateTime.a);
+        return G == 0 ? this.b.compareTo(localDateTime.b) : G;
+    }
+
     public final boolean I(ChronoLocalDateTime chronoLocalDateTime) {
         if (chronoLocalDateTime instanceof LocalDateTime) {
-            return E((LocalDateTime) chronoLocalDateTime) < 0;
+            return G((LocalDateTime) chronoLocalDateTime) < 0;
         }
-        long v = this.a.v();
-        long v2 = chronoLocalDateTime.d().v();
-        if (v >= v2) {
-            return v == v2 && this.b.R() < chronoLocalDateTime.c().R();
+        long z10 = this.a.z();
+        long z11 = chronoLocalDateTime.f().z();
+        if (z10 >= z11) {
+            return z10 == z11 && this.b.R() < chronoLocalDateTime.b().R();
         }
         return true;
     }

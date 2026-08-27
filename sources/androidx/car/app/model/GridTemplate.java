@@ -4,8 +4,9 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class GridTemplate implements Template {
+public final class GridTemplate implements x0 {
     public static final int ITEM_IMAGE_SHAPE_CIRCLE = 2;
     public static final int ITEM_IMAGE_SHAPE_UNSET = 1;
     public static final int ITEM_SIZE_LARGE = 4;
@@ -20,47 +21,8 @@ public final class GridTemplate implements Template {
     private final ItemList mSingleList;
     private final CarText mTitle;
 
-    public static final class Builder {
-    }
-
-    public CarText getTitle() {
-        return this.mTitle;
-    }
-
-    public Action getHeaderAction() {
-        return this.mHeaderAction;
-    }
-
-    public ActionStrip getActionStrip() {
-        return this.mActionStrip;
-    }
-
-    public boolean isLoading() {
-        return this.mIsLoading;
-    }
-
-    public ItemList getSingleList() {
-        return this.mSingleList;
-    }
-
-    public List<Action> getActions() {
-        return this.mActions;
-    }
-
-    public int getItemSize() {
-        return this.mItemSize;
-    }
-
-    public int getItemImageShape() {
-        return this.mItemImageShape;
-    }
-
-    public String toString() {
-        return "GridTemplate";
-    }
-
-    public int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.mIsLoading), this.mTitle, this.mHeaderAction, this.mSingleList, this.mActionStrip, Integer.valueOf(this.mItemSize), Integer.valueOf(this.mItemImageShape));
+    public GridTemplate(l lVar) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -74,8 +36,44 @@ public final class GridTemplate implements Template {
         return this.mIsLoading == gridTemplate.mIsLoading && Objects.equals(this.mTitle, gridTemplate.mTitle) && Objects.equals(this.mHeaderAction, gridTemplate.mHeaderAction) && Objects.equals(this.mSingleList, gridTemplate.mSingleList) && Objects.equals(this.mActionStrip, gridTemplate.mActionStrip) && Objects.equals(this.mActions, gridTemplate.mActions) && this.mItemSize == gridTemplate.mItemSize && this.mItemImageShape == gridTemplate.mItemImageShape;
     }
 
-    GridTemplate(Builder builder) {
-        throw null;
+    public ActionStrip getActionStrip() {
+        return this.mActionStrip;
+    }
+
+    public List<Action> getActions() {
+        return this.mActions;
+    }
+
+    public Action getHeaderAction() {
+        return this.mHeaderAction;
+    }
+
+    public int getItemImageShape() {
+        return this.mItemImageShape;
+    }
+
+    public int getItemSize() {
+        return this.mItemSize;
+    }
+
+    public ItemList getSingleList() {
+        return this.mSingleList;
+    }
+
+    public CarText getTitle() {
+        return this.mTitle;
+    }
+
+    public int hashCode() {
+        return Objects.hash(Boolean.valueOf(this.mIsLoading), this.mTitle, this.mHeaderAction, this.mSingleList, this.mActionStrip, Integer.valueOf(this.mItemSize), Integer.valueOf(this.mItemImageShape));
+    }
+
+    public boolean isLoading() {
+        return this.mIsLoading;
+    }
+
+    public String toString() {
+        return "GridTemplate";
     }
 
     private GridTemplate() {

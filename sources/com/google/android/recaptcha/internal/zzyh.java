@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzyh extends zzsh implements zztt {
     private zzyh() {
@@ -10,7 +11,7 @@ public final class zzyh extends zzsh implements zztt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    /* synthetic */ zzyh(zzyj zzyjVar) {
+    public /* synthetic */ zzyh(zzyj zzyjVar) {
         super(r1);
         zzyi zzyiVar;
         zzyiVar = zzyi.zzb;

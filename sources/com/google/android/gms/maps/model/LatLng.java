@@ -3,25 +3,27 @@ package com.google.android.gms.maps.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import h7.r8;
+import r6.l;
+import z5.a;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class LatLng extends AbstractSafeParcelable implements ReflectedParcelable {
-    public static final Parcelable.Creator<LatLng> CREATOR = new zzg();
-    public final double latitude;
-    public final double longitude;
+public final class LatLng extends a implements ReflectedParcelable {
+    public static final Parcelable.Creator<LatLng> CREATOR = new l(21);
+    public final double a;
+    public final double b;
 
-    public LatLng(double d, double d2) {
-        if (d2 < -180.0d || d2 >= 180.0d) {
-            this.longitude = ((((d2 - 180.0d) % 360.0d) + 360.0d) % 360.0d) - 180.0d;
+    public LatLng(double d, double d10) {
+        if (d10 < -180.0d || d10 >= 180.0d) {
+            this.b = ((((d10 - 180.0d) % 360.0d) + 360.0d) % 360.0d) - 180.0d;
         } else {
-            this.longitude = d2;
+            this.b = d10;
         }
-        this.latitude = Math.max(-90.0d, Math.min(90.0d, d));
+        this.a = Math.max(-90.0d, Math.min(90.0d, d));
     }
 
-    public boolean equals(Object obj) {
+    public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
@@ -29,24 +31,26 @@ public final class LatLng extends AbstractSafeParcelable implements ReflectedPar
             return false;
         }
         LatLng latLng = (LatLng) obj;
-        return Double.doubleToLongBits(this.latitude) == Double.doubleToLongBits(latLng.latitude) && Double.doubleToLongBits(this.longitude) == Double.doubleToLongBits(latLng.longitude);
+        return Double.doubleToLongBits(this.a) == Double.doubleToLongBits(latLng.a) && Double.doubleToLongBits(this.b) == Double.doubleToLongBits(latLng.b);
     }
 
-    public int hashCode() {
-        long doubleToLongBits = Double.doubleToLongBits(this.latitude);
-        long doubleToLongBits2 = Double.doubleToLongBits(this.longitude);
+    public final int hashCode() {
+        long doubleToLongBits = Double.doubleToLongBits(this.a);
+        long doubleToLongBits2 = Double.doubleToLongBits(this.b);
         return ((((int) (doubleToLongBits ^ (doubleToLongBits >>> 32))) + 31) * 31) + ((int) (doubleToLongBits2 ^ (doubleToLongBits2 >>> 32)));
     }
 
-    public String toString() {
-        return "lat/lng: (" + this.latitude + "," + this.longitude + ")";
+    public final String toString() {
+        return "lat/lng: (" + this.a + "," + this.b + ")";
     }
 
     @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeDouble(parcel, 2, this.latitude);
-        SafeParcelWriter.writeDouble(parcel, 3, this.longitude);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = r8.q(parcel, 20293);
+        r8.s(parcel, 2, 8);
+        parcel.writeDouble(this.a);
+        r8.s(parcel, 3, 8);
+        parcel.writeDouble(this.b);
+        r8.r(parcel, q6);
     }
 }

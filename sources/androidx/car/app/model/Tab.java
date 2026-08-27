@@ -2,6 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class Tab {
     private static final String EMPTY_TAB_CONTENT_ID = "EMPTY_TAB_CONTENT_ID";
@@ -9,13 +10,19 @@ public final class Tab {
     private final CarIcon mIcon;
     private final CarText mTitle;
 
-    public static final class Builder {
+    public Tab(s0 s0Var) {
+        throw null;
     }
 
-    public CarText getTitle() {
-        CarText carText = this.mTitle;
-        Objects.requireNonNull(carText);
-        return carText;
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Tab)) {
+            return false;
+        }
+        Tab tab = (Tab) obj;
+        return Objects.equals(this.mTitle, tab.mTitle) && Objects.equals(this.mContentId, tab.mContentId) && Objects.equals(this.mIcon, tab.mIcon);
     }
 
     public String getContentId() {
@@ -30,27 +37,18 @@ public final class Tab {
         return carIcon;
     }
 
-    public String toString() {
-        return "[title: " + CarText.toShortString(this.mTitle) + ", contentId: " + this.mContentId + ", icon: " + this.mIcon + "]";
+    public CarText getTitle() {
+        CarText carText = this.mTitle;
+        Objects.requireNonNull(carText);
+        return carText;
     }
 
     public int hashCode() {
         return Objects.hash(this.mTitle, this.mContentId, this.mIcon);
     }
 
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof Tab)) {
-            return false;
-        }
-        Tab tab = (Tab) obj;
-        return Objects.equals(this.mTitle, tab.mTitle) && Objects.equals(this.mContentId, tab.mContentId) && Objects.equals(this.mIcon, tab.mIcon);
-    }
-
-    Tab(Builder builder) {
-        throw null;
+    public String toString() {
+        return "[title: " + CarText.toShortString(this.mTitle) + ", contentId: " + this.mContentId + ", icon: " + this.mIcon + "]";
     }
 
     private Tab() {

@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import androidx.activity.OnBackPressedDispatcher$$ExternalSyntheticNonNull0;
+import ad.p;
 import java.lang.reflect.Proxy;
-import kotlin.Unit;
-import kotlin.jvm.functions.Function2;
+import pc.i;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzjo implements zzjt {
     public static final zzjo zza = new zzjo();
@@ -13,8 +13,8 @@ public final class zzjo implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i, final zziz zzizVar, zzzt... zzztVarArr) {
-        final int i2;
+    public final void zza(int i10, final zziz zzizVar, zzzt... zzztVarArr) {
+        final int i11;
         int length = zzztVarArr.length;
         if (length != 4 && length != 5) {
             throw new zzdm(4, 3, null);
@@ -28,7 +28,7 @@ public final class zzjo implements zzjt {
             throw new zzdm(4, 5, null);
         }
         Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
-        if (true != OnBackPressedDispatcher$$ExternalSyntheticNonNull0.m(zza3)) {
+        if (zza3 == null) {
             zza3 = null;
         }
         if (zza3 == null) {
@@ -53,30 +53,30 @@ public final class zzjo implements zzjt {
             if (num == null) {
                 throw new zzdm(4, 5, null);
             }
-            i2 = num.intValue();
+            i11 = num.intValue();
         } else {
-            i2 = -1;
+            i11 = -1;
         }
         try {
             if (zza3 instanceof String) {
                 zza3 = zzizVar.zzh().zza((String) zza3);
             }
             Class zza8 = zziy.zza(zza3);
-            zzizVar.zzc().zze(i, Proxy.newProxyInstance(zza8.getClassLoader(), new Class[]{zza8}, new zziu(new Function2() { // from class: com.google.android.recaptcha.internal.zzjn
-                @Override // kotlin.jvm.functions.Function2
+            zzizVar.zzc().zze(i10, Proxy.newProxyInstance(zza8.getClassLoader(), new Class[]{zza8}, new zziu(new p() { // from class: com.google.android.recaptcha.internal.zzjn
+                @Override // ad.p
                 public final Object invoke(Object obj, Object obj2) {
                     zziz zzizVar2 = zziz.this;
                     Object[] objArr = (Object[]) obj;
                     zzizVar2.zzi().zzb(str, (String) obj2);
-                    int i3 = i2;
-                    if (i3 != -1) {
-                        zzizVar2.zzc().zze(i3, objArr);
+                    int i12 = i11;
+                    if (i12 != -1) {
+                        zzizVar2.zzc().zze(i12, objArr);
                     }
-                    return Unit.INSTANCE;
+                    return i.a;
                 }
             }, zza5, zza6)));
-        } catch (Exception e) {
-            throw new zzdm(6, 20, e);
+        } catch (Exception e9) {
+            throw new zzdm(6, 20, e9);
         }
     }
 }

@@ -1,42 +1,38 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+
 /* loaded from: classes2.dex */
-public final class n2 extends Z1 {
-    public long b;
-    public long c;
-    public final /* synthetic */ o2 d;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(o2 o2Var, g2 g2Var) {
-        super(g2Var);
-        this.d = o2Var;
-        this.b = o2Var.m;
-        long j = o2Var.n;
-        this.c = j < 0 ? Long.MAX_VALUE : j;
+public final class n2 extends o2 implements c2 {
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
+        return t3.U(this, j10, j11);
     }
 
-    @Override // j$.util.stream.Z1, j$.util.stream.g2
-    public final void y(long j) {
-        this.a.y(r1.x(j, this.d.m, this.c));
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ void forEach(Consumer consumer) {
+        t3.R(this, consumer);
     }
 
-    @Override // j$.util.stream.d2, j$.util.stream.g2
-    public final void accept(double d) {
-        long j = this.b;
-        if (j == 0) {
-            long j2 = this.c;
-            if (j2 > 0) {
-                this.c = j2 - 1;
-                this.a.accept(d);
-                return;
-            }
-            return;
-        }
-        this.b = j - 1;
+    @Override // j$.util.stream.e2
+    public final /* synthetic */ void f(Object[] objArr, int i10) {
+        t3.O(this, (Long[]) objArr, i10);
     }
 
-    @Override // j$.util.stream.Z1, j$.util.stream.g2
-    public final boolean C() {
-        return this.c == 0 || this.a.C();
+    @Override // j$.util.stream.d2
+    public final Object newArray(int i10) {
+        return new long[i10];
+    }
+
+    @Override // j$.util.stream.e2
+    public final Spliterator spliterator() {
+        return new e3(this);
+    }
+
+    @Override // j$.util.stream.e2
+    public final j$.util.d1 spliterator() {
+        return new e3(this);
     }
 }

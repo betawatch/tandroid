@@ -1,60 +1,50 @@
 package org.telegram.messenger.car;
 
-import androidx.car.app.Screen;
-import androidx.lifecycle.DefaultLifecycleObserver;
-import androidx.lifecycle.LifecycleOwner;
-import kotlin.jvm.internal.Intrinsics;
+import androidx.car.app.l;
+import androidx.lifecycle.e;
+import androidx.lifecycle.t;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
 
-/* loaded from: classes3.dex */
-public class HomeScreen extends Screen implements DefaultLifecycleObserver, NotificationCenter.NotificationCenterDelegate {
-    private String activeTabId;
-    private int currentAccount;
-    private boolean musicLoadKicked;
-
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public /* synthetic */ void onCreate(LifecycleOwner lifecycleOwner) {
-        Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
-    }
-
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public /* synthetic */ void onDestroy(LifecycleOwner lifecycleOwner) {
-        Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
-    }
-
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public /* synthetic */ void onStart(LifecycleOwner lifecycleOwner) {
-        Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
-    }
-
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public /* synthetic */ void onStop(LifecycleOwner lifecycleOwner) {
-        Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
-    }
-
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public void onResume(LifecycleOwner lifecycleOwner) {
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
+public class HomeScreen extends l implements e, NotificationCenter.NotificationCenterDelegate {
+    @Override // androidx.lifecycle.e
+    public final void a(t tVar) {
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.pushMessagesUpdated);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.notificationsCountUpdated);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.activeAccountChanged);
     }
 
-    @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public void onPause(LifecycleOwner lifecycleOwner) {
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.activeAccountChanged) {
+            throw null;
+        }
+        if ((i10 == NotificationCenter.pushMessagesUpdated || i10 == NotificationCenter.notificationsCountUpdated) && "tab_notifications".equals(null)) {
+            throw null;
+        }
+    }
+
+    @Override // androidx.lifecycle.e
+    public final void e(t tVar) {
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.pushMessagesUpdated);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.notificationsCountUpdated);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.activeAccountChanged);
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == NotificationCenter.activeAccountChanged) {
-            this.currentAccount = UserConfig.selectedAccount;
-            this.musicLoadKicked = false;
-            invalidate();
-        } else if ((i == NotificationCenter.pushMessagesUpdated || i == NotificationCenter.notificationsCountUpdated) && "tab_notifications".equals(this.activeTabId)) {
-            invalidate();
-        }
+    @Override // androidx.lifecycle.e
+    public final /* synthetic */ void b(t tVar) {
+    }
+
+    @Override // androidx.lifecycle.e
+    public final /* synthetic */ void f(t tVar) {
+    }
+
+    @Override // androidx.lifecycle.e
+    public final /* synthetic */ void h(t tVar) {
+    }
+
+    @Override // androidx.lifecycle.e
+    public final /* synthetic */ void i(t tVar) {
     }
 }

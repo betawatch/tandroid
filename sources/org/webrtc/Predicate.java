@@ -1,55 +1,26 @@
 package org.webrtc;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public interface Predicate<T> {
-    Predicate<T> and(Predicate<? super T> predicate);
 
-    Predicate<T> negate();
-
-    Predicate<T> or(Predicate<? super T> predicate);
-
-    boolean test(T t);
-
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public abstract /* synthetic */ class -CC {
-        public static Predicate $default$or(final Predicate predicate, final Predicate predicate2) {
-            return new Predicate() { // from class: org.webrtc.Predicate.1
-                @Override // org.webrtc.Predicate
-                public /* synthetic */ Predicate and(Predicate predicate3) {
-                    return -CC.$default$and(this, predicate3);
-                }
-
-                @Override // org.webrtc.Predicate
-                public /* synthetic */ Predicate negate() {
-                    return -CC.$default$negate(this);
-                }
-
-                @Override // org.webrtc.Predicate
-                public /* synthetic */ Predicate or(Predicate predicate3) {
-                    return -CC.$default$or(this, predicate3);
-                }
-
-                @Override // org.webrtc.Predicate
-                public boolean test(Object obj) {
-                    return Predicate.this.test(obj) || predicate2.test(obj);
-                }
-            };
-        }
-
-        public static Predicate $default$and(final Predicate predicate, final Predicate predicate2) {
+        public static Predicate a(final Predicate predicate, final Predicate predicate2) {
             return new Predicate() { // from class: org.webrtc.Predicate.2
                 @Override // org.webrtc.Predicate
-                public /* synthetic */ Predicate and(Predicate predicate3) {
-                    return -CC.$default$and(this, predicate3);
+                public final /* synthetic */ Predicate and(Predicate predicate3) {
+                    return -CC.a(this, predicate3);
                 }
 
                 @Override // org.webrtc.Predicate
-                public /* synthetic */ Predicate negate() {
-                    return -CC.$default$negate(this);
+                public final /* synthetic */ Predicate negate() {
+                    return -CC.b(this);
                 }
 
                 @Override // org.webrtc.Predicate
-                public /* synthetic */ Predicate or(Predicate predicate3) {
-                    return -CC.$default$or(this, predicate3);
+                public final /* synthetic */ Predicate or(Predicate predicate3) {
+                    return -CC.c(this, predicate3);
                 }
 
                 @Override // org.webrtc.Predicate
@@ -59,21 +30,21 @@ public interface Predicate<T> {
             };
         }
 
-        public static Predicate $default$negate(final Predicate predicate) {
+        public static Predicate b(final Predicate predicate) {
             return new Predicate() { // from class: org.webrtc.Predicate.3
                 @Override // org.webrtc.Predicate
-                public /* synthetic */ Predicate and(Predicate predicate2) {
-                    return -CC.$default$and(this, predicate2);
+                public final /* synthetic */ Predicate and(Predicate predicate2) {
+                    return -CC.a(this, predicate2);
                 }
 
                 @Override // org.webrtc.Predicate
-                public /* synthetic */ Predicate negate() {
-                    return -CC.$default$negate(this);
+                public final /* synthetic */ Predicate negate() {
+                    return -CC.b(this);
                 }
 
                 @Override // org.webrtc.Predicate
-                public /* synthetic */ Predicate or(Predicate predicate2) {
-                    return -CC.$default$or(this, predicate2);
+                public final /* synthetic */ Predicate or(Predicate predicate2) {
+                    return -CC.c(this, predicate2);
                 }
 
                 @Override // org.webrtc.Predicate
@@ -82,5 +53,37 @@ public interface Predicate<T> {
                 }
             };
         }
+
+        public static Predicate c(final Predicate predicate, final Predicate predicate2) {
+            return new Predicate() { // from class: org.webrtc.Predicate.1
+                @Override // org.webrtc.Predicate
+                public final /* synthetic */ Predicate and(Predicate predicate3) {
+                    return -CC.a(this, predicate3);
+                }
+
+                @Override // org.webrtc.Predicate
+                public final /* synthetic */ Predicate negate() {
+                    return -CC.b(this);
+                }
+
+                @Override // org.webrtc.Predicate
+                public final /* synthetic */ Predicate or(Predicate predicate3) {
+                    return -CC.c(this, predicate3);
+                }
+
+                @Override // org.webrtc.Predicate
+                public boolean test(Object obj) {
+                    return Predicate.this.test(obj) || predicate2.test(obj);
+                }
+            };
+        }
     }
+
+    Predicate<T> and(Predicate<? super T> predicate);
+
+    Predicate<T> negate();
+
+    Predicate<T> or(Predicate<? super T> predicate);
+
+    boolean test(T t10);
 }

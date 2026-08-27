@@ -1,6 +1,7 @@
 package j$.util.stream;
 
 import java.util.HashSet;
+import java.util.Set;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -9,49 +10,49 @@ import java.util.function.ToIntFunction;
 import java.util.function.ToLongFunction;
 
 /* loaded from: classes2.dex */
-public final class l extends c2 {
+public final class l extends f5 {
     public final /* synthetic */ int b;
     public Object c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ l(a aVar, g2 g2Var, int i) {
-        super(g2Var);
-        this.b = i;
+    public /* synthetic */ l(a aVar, j5 j5Var, int i10) {
+        super(j5Var);
+        this.b = i10;
         this.c = aVar;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ l(g2 g2Var) {
-        super(g2Var);
+    public /* synthetic */ l(j5 j5Var) {
+        super(j5Var);
         this.b = 0;
     }
 
-    @Override // j$.util.stream.c2, j$.util.stream.g2
-    public void x() {
+    @Override // j$.util.stream.f5, j$.util.stream.j5
+    public void end() {
         switch (this.b) {
             case 0:
                 this.c = null;
-                this.a.x();
+                this.a.end();
                 break;
             default:
-                super.x();
+                super.end();
                 break;
         }
     }
 
-    @Override // j$.util.stream.c2, j$.util.stream.g2
-    public void y(long j) {
+    @Override // j$.util.stream.f5, j$.util.stream.j5
+    public void o(long j10) {
         switch (this.b) {
             case 0:
                 this.c = new HashSet();
-                this.a.y(-1L);
+                this.a.o(-1L);
                 break;
             case 1:
             default:
-                super.y(j);
+                super.o(j10);
                 break;
             case 2:
-                this.a.y(-1L);
+                this.a.o(-1L);
                 break;
         }
     }
@@ -60,33 +61,33 @@ public final class l extends c2 {
     public final void accept(Object obj) {
         switch (this.b) {
             case 0:
-                if (!((HashSet) this.c).contains(obj)) {
-                    ((HashSet) this.c).add(obj);
-                    this.a.accept((g2) obj);
+                if (!((Set) this.c).contains(obj)) {
+                    ((Set) this.c).add(obj);
+                    this.a.accept((j5) obj);
                     break;
                 }
                 break;
             case 1:
-                ((Consumer) ((q) this.c).n).accept(obj);
-                this.a.accept((g2) obj);
+                ((Consumer) ((q) this.c).t).accept(obj);
+                this.a.accept((j5) obj);
                 break;
             case 2:
-                if (((Predicate) ((q) this.c).n).test(obj)) {
-                    this.a.accept((g2) obj);
+                if (((Predicate) ((q) this.c).t).test(obj)) {
+                    this.a.accept((j5) obj);
                     break;
                 }
                 break;
             case 3:
-                this.a.accept((g2) ((Function) ((q) this.c).n).apply(obj));
+                this.a.accept((j5) ((Function) ((q) this.c).t).apply(obj));
                 break;
             case 4:
-                this.a.accept(((ToIntFunction) ((T) this.c).n).applyAsInt(obj));
+                this.a.accept(((ToIntFunction) ((t0) this.c).t).applyAsInt(obj));
                 break;
             case 5:
-                this.a.accept(((ToLongFunction) ((d0) this.c).n).applyAsLong(obj));
+                this.a.accept(((ToLongFunction) ((e1) this.c).t).applyAsLong(obj));
                 break;
             default:
-                this.a.accept(((ToDoubleFunction) ((v) this.c).n).applyAsDouble(obj));
+                this.a.accept(((ToDoubleFunction) ((v) this.c).t).applyAsDouble(obj));
                 break;
         }
     }

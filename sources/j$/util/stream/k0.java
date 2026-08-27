@@ -1,29 +1,31 @@
 package j$.util.stream;
 
-import java.util.function.Predicate;
+import j$.util.stream.IntStream;
+import java.util.function.IntFunction;
+import java.util.function.LongFunction;
 
 /* loaded from: classes2.dex */
-public final class k0 extends o0 {
-    public final /* synthetic */ p0 c;
-    public final /* synthetic */ Predicate d;
+public final class k0 implements IntFunction, LongFunction {
+    public IntFunction a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k0(p0 p0Var, Predicate predicate) {
-        super(p0Var);
-        this.c = p0Var;
-        this.d = predicate;
+    @Override // java.util.function.IntFunction
+    public Object apply(int i10) {
+        Object apply = this.a.apply(i10);
+        if (apply == null) {
+            return null;
+        }
+        if (apply instanceof IntStream) {
+            return IntStream.Wrapper.convert((IntStream) apply);
+        }
+        if (apply instanceof java.util.stream.IntStream) {
+            return IntStream.VivifiedWrapper.convert((java.util.stream.IntStream) apply);
+        }
+        j$.util.g.a(apply.getClass(), "java.util.stream.IntStream");
+        throw null;
     }
 
-    @Override // java.util.function.Consumer
-    public final void accept(Object obj) {
-        if (this.a) {
-            return;
-        }
-        boolean test = this.d.test(obj);
-        p0 p0Var = this.c;
-        if (test == p0Var.a) {
-            this.a = true;
-            this.b = p0Var.b;
-        }
+    @Override // java.util.function.LongFunction
+    public Object apply(long j10) {
+        return t3.Y(j10, this.a);
     }
 }

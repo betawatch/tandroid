@@ -1,63 +1,21 @@
 package androidx.car.app.model;
 
-import androidx.car.app.utils.CollectionUtils;
 import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class TabTemplate implements Template {
+public class TabTemplate implements x0 {
     private final String mActiveTabContentId;
     private final Action mHeaderAction;
     private final boolean mIsLoading;
-    private final TabCallbackDelegate mTabCallbackDelegate;
+    private final t0 mTabCallbackDelegate;
     private final TabContents mTabContents;
     private final List<Tab> mTabs;
 
-    public static final class Builder {
-    }
-
-    public interface TabCallback {
-    }
-
-    public Action getHeaderAction() {
-        Action action = this.mHeaderAction;
-        Objects.requireNonNull(action);
-        return action;
-    }
-
-    public boolean isLoading() {
-        return this.mIsLoading;
-    }
-
-    public List<Tab> getTabs() {
-        return CollectionUtils.emptyIfNull(this.mTabs);
-    }
-
-    public TabContents getTabContents() {
-        TabContents tabContents = this.mTabContents;
-        Objects.requireNonNull(tabContents);
-        return tabContents;
-    }
-
-    public TabCallbackDelegate getTabCallbackDelegate() {
-        TabCallbackDelegate tabCallbackDelegate = this.mTabCallbackDelegate;
-        Objects.requireNonNull(tabCallbackDelegate);
-        return tabCallbackDelegate;
-    }
-
-    public String getActiveTabContentId() {
-        String str = this.mActiveTabContentId;
-        Objects.requireNonNull(str);
-        return str;
-    }
-
-    public String toString() {
-        return "TabTemplate";
-    }
-
-    public int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.mIsLoading), this.mHeaderAction, this.mTabs, this.mTabContents, this.mActiveTabContentId);
+    public TabTemplate(v0 v0Var) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -71,8 +29,45 @@ public class TabTemplate implements Template {
         return this.mIsLoading == tabTemplate.mIsLoading && Objects.equals(this.mHeaderAction, tabTemplate.mHeaderAction) && Objects.equals(this.mTabs, tabTemplate.mTabs) && Objects.equals(this.mTabContents, tabTemplate.mTabContents) && Objects.equals(this.mActiveTabContentId, tabTemplate.getActiveTabContentId());
     }
 
-    TabTemplate(Builder builder) {
-        throw null;
+    public String getActiveTabContentId() {
+        String str = this.mActiveTabContentId;
+        Objects.requireNonNull(str);
+        return str;
+    }
+
+    public Action getHeaderAction() {
+        Action action = this.mHeaderAction;
+        Objects.requireNonNull(action);
+        return action;
+    }
+
+    public t0 getTabCallbackDelegate() {
+        t0 t0Var = this.mTabCallbackDelegate;
+        Objects.requireNonNull(t0Var);
+        return t0Var;
+    }
+
+    public TabContents getTabContents() {
+        TabContents tabContents = this.mTabContents;
+        Objects.requireNonNull(tabContents);
+        return tabContents;
+    }
+
+    public List<Tab> getTabs() {
+        List<Tab> list = this.mTabs;
+        return list != null ? list : Collections.EMPTY_LIST;
+    }
+
+    public int hashCode() {
+        return Objects.hash(Boolean.valueOf(this.mIsLoading), this.mHeaderAction, this.mTabs, this.mTabContents, this.mActiveTabContentId);
+    }
+
+    public boolean isLoading() {
+        return this.mIsLoading;
+    }
+
+    public String toString() {
+        return "TabTemplate";
     }
 
     private TabTemplate() {

@@ -1,46 +1,46 @@
 package androidx.car.app.media;
 
 import android.util.Log;
-import androidx.car.app.CarContext;
+import androidx.car.app.h;
 import java.io.IOException;
 import java.io.InputStream;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public class ProjectedCarAudioRecord extends CarAudioRecord {
+public class ProjectedCarAudioRecord extends b {
     private InputStream mInputStream;
 
-    public ProjectedCarAudioRecord(CarContext carContext) {
-        super(carContext);
+    public ProjectedCarAudioRecord(h hVar) {
     }
 
-    protected void startRecordingInternal(OpenMicrophoneResponse openMicrophoneResponse) {
+    @Override // androidx.car.app.media.b
+    public int readInternal(byte[] bArr, int i10, int i11) {
+        InputStream inputStream = this.mInputStream;
+        if (inputStream == null) {
+            return -1;
+        }
+        try {
+            return inputStream.read(bArr, i10, i11);
+        } catch (IOException unused) {
+            stopRecording();
+            return -1;
+        }
+    }
+
+    public void startRecordingInternal(OpenMicrophoneResponse openMicrophoneResponse) {
         this.mInputStream = openMicrophoneResponse.getCarMicrophoneInputStream();
     }
 
-    @Override // androidx.car.app.media.CarAudioRecord
-    protected void stopRecordingInternal() {
+    @Override // androidx.car.app.media.b
+    public void stopRecordingInternal() {
         try {
             InputStream inputStream = this.mInputStream;
             if (inputStream != null) {
                 inputStream.close();
                 this.mInputStream = null;
             }
-        } catch (IOException e) {
-            Log.e("CarApp", "Exception closing microphone pipe", e);
-        }
-    }
-
-    @Override // androidx.car.app.media.CarAudioRecord
-    protected int readInternal(byte[] bArr, int i, int i2) {
-        InputStream inputStream = this.mInputStream;
-        if (inputStream == null) {
-            return -1;
-        }
-        try {
-            return inputStream.read(bArr, i, i2);
-        } catch (IOException unused) {
-            stopRecording();
-            return -1;
+        } catch (IOException e9) {
+            Log.e("CarApp", "Exception closing microphone pipe", e9);
         }
     }
 }

@@ -3,16 +3,13 @@ package com.google.android.recaptcha.internal;
 import java.util.Iterator;
 import java.util.Map;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzul implements Iterator {
     final /* synthetic */ zzuo zza;
     private int zzb = -1;
     private boolean zzc;
     private Iterator zzd;
-
-    /* synthetic */ zzul(zzuo zzuoVar, zzun zzunVar) {
-        this.zza = zzuoVar;
-    }
 
     private final Iterator zza() {
         Map map;
@@ -25,12 +22,12 @@ final class zzul implements Iterator {
 
     @Override // java.util.Iterator
     public final boolean hasNext() {
-        int i;
+        int i10;
         Map map;
-        int i2 = this.zzb + 1;
+        int i11 = this.zzb + 1;
         zzuo zzuoVar = this.zza;
-        i = zzuoVar.zzb;
-        if (i2 < i) {
+        i10 = zzuoVar.zzb;
+        if (i11 < i10) {
             return true;
         }
         map = zzuoVar.zzc;
@@ -39,36 +36,36 @@ final class zzul implements Iterator {
 
     @Override // java.util.Iterator
     public final /* bridge */ /* synthetic */ Object next() {
-        int i;
+        int i10;
         Object[] objArr;
         this.zzc = true;
-        int i2 = this.zzb + 1;
-        this.zzb = i2;
+        int i11 = this.zzb + 1;
+        this.zzb = i11;
         zzuo zzuoVar = this.zza;
-        i = zzuoVar.zzb;
-        if (i2 >= i) {
+        i10 = zzuoVar.zzb;
+        if (i11 >= i10) {
             return (Map.Entry) zza().next();
         }
         objArr = zzuoVar.zza;
-        return (zzuk) objArr[i2];
+        return (zzuk) objArr[i11];
     }
 
     @Override // java.util.Iterator
     public final void remove() {
-        int i;
+        int i10;
         if (!this.zzc) {
             throw new IllegalStateException("remove() was called before next()");
         }
         this.zzc = false;
         zzuo zzuoVar = this.zza;
         zzuoVar.zzo();
-        int i2 = this.zzb;
-        i = zzuoVar.zzb;
-        if (i2 >= i) {
+        int i11 = this.zzb;
+        i10 = zzuoVar.zzb;
+        if (i11 >= i10) {
             zza().remove();
         } else {
-            this.zzb = i2 - 1;
-            zzuoVar.zzm(i2);
+            this.zzb = i11 - 1;
+            zzuoVar.zzm(i11);
         }
     }
 }

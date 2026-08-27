@@ -1,12 +1,12 @@
 package j$.util.concurrent;
 
-import j$.util.W;
+import j$.util.x0;
 import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-public final class x implements W {
+public final class x implements x0 {
     public long a;
     public final long b;
     public final int c;
@@ -28,8 +28,8 @@ public final class x implements W {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.com.android.tools.r8.a.p(this, i);
+    public final /* synthetic */ boolean hasCharacteristics(int i10) {
+        return j$.com.android.tools.r8.a.p(this, i10);
     }
 
     @Override // j$.util.Spliterator
@@ -42,23 +42,23 @@ public final class x implements W {
         throw new IllegalStateException();
     }
 
-    public x(long j, long j2, int i, int i2) {
-        this.a = j;
-        this.b = j2;
-        this.c = i;
-        this.d = i2;
+    public x(long j10, long j11, int i10, int i11) {
+        this.a = j10;
+        this.b = j11;
+        this.c = i10;
+        this.d = i11;
     }
 
-    @Override // j$.util.c0, j$.util.Spliterator
+    @Override // j$.util.x0, j$.util.d1, j$.util.Spliterator
     /* renamed from: a, reason: merged with bridge method [inline-methods] */
     public final x trySplit() {
-        long j = this.a;
-        long j2 = (this.b + j) >>> 1;
-        if (j2 <= j) {
+        long j10 = this.a;
+        long j11 = (this.b + j10) >>> 1;
+        if (j11 <= j10) {
             return null;
         }
-        this.a = j2;
-        return new x(j, j2, this.c, this.d);
+        this.a = j11;
+        return new x(j10, j11, this.c, this.d);
     }
 
     @Override // j$.util.Spliterator
@@ -66,30 +66,30 @@ public final class x implements W {
         return this.b - this.a;
     }
 
-    @Override // j$.util.c0
+    @Override // j$.util.d1
     public final boolean tryAdvance(IntConsumer intConsumer) {
         intConsumer.getClass();
-        long j = this.a;
-        if (j >= this.b) {
+        long j10 = this.a;
+        if (j10 >= this.b) {
             return false;
         }
         intConsumer.accept(ThreadLocalRandom.current().b(this.c, this.d));
-        this.a = j + 1;
+        this.a = j10 + 1;
         return true;
     }
 
-    @Override // j$.util.c0
+    @Override // j$.util.d1
     public final void forEachRemaining(IntConsumer intConsumer) {
         intConsumer.getClass();
-        long j = this.a;
-        long j2 = this.b;
-        if (j < j2) {
-            this.a = j2;
+        long j10 = this.a;
+        long j11 = this.b;
+        if (j10 < j11) {
+            this.a = j11;
             ThreadLocalRandom current = ThreadLocalRandom.current();
             do {
                 intConsumer.accept(current.b(this.c, this.d));
-                j++;
-            } while (j < j2);
+                j10++;
+            } while (j10 < j11);
         }
     }
 }

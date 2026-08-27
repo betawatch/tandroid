@@ -3,96 +3,92 @@ package j$.time.format;
 /* loaded from: classes2.dex */
 public class i implements f {
     public static final long[] f = {0, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000L};
-    public final Enum a;
+    public final j$.time.temporal.o a;
     public final int b;
     public final int c;
     public final x d;
     public final int e;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public i(j$.time.temporal.o oVar, int i, int i2, x xVar) {
-        this.a = (Enum) oVar;
-        this.b = i;
-        this.c = i2;
+    public i(j$.time.temporal.o oVar, int i10, int i11, x xVar) {
+        this.a = oVar;
+        this.b = i10;
+        this.c = i11;
         this.d = xVar;
         this.e = 0;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public i(j$.time.temporal.o oVar, int i, int i2, x xVar, int i3) {
-        this.a = (Enum) oVar;
-        this.b = i;
-        this.c = i2;
+    public i(j$.time.temporal.o oVar, int i10, int i11, x xVar, int i12) {
+        this.a = oVar;
+        this.b = i10;
+        this.c = i11;
         this.d = xVar;
-        this.e = i3;
+        this.e = i12;
     }
 
-    /* JADX WARN: Type inference failed for: r3v0, types: [j$.time.temporal.o, java.lang.Enum] */
     public i a() {
-        return this.e == -1 ? this : new i(this.a, this.b, this.c, this.d, -1);
+        if (this.e == -1) {
+            return this;
+        }
+        return new i(this.a, this.b, this.c, this.d, -1);
     }
 
-    /* JADX WARN: Type inference failed for: r1v1, types: [j$.time.temporal.o, java.lang.Enum] */
-    public i b(int i) {
-        int i2 = this.e + i;
-        return new i(this.a, this.b, this.c, this.d, i2);
+    public i b(int i10) {
+        return new i(this.a, this.b, this.c, this.d, this.e + i10);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v0, types: [j$.time.temporal.o, java.lang.Enum, java.lang.Object] */
     @Override // j$.time.format.f
-    public boolean l(r rVar, StringBuilder sb) {
-        ?? r0 = this.a;
-        Long a = rVar.a(r0);
-        if (a == null) {
+    public boolean j(r rVar, StringBuilder sb2) {
+        j$.time.temporal.o oVar = this.a;
+        Long a2 = rVar.a(oVar);
+        if (a2 == null) {
             return false;
         }
-        long longValue = a.longValue();
+        long longValue = a2.longValue();
         v vVar = rVar.b.c;
-        String l = longValue == Long.MIN_VALUE ? "9223372036854775808" : Long.toString(Math.abs(longValue));
-        int length = l.length();
-        int i = this.c;
-        if (length > i) {
-            throw new j$.time.b("Field " + ((Object) r0) + " cannot be printed as the value " + longValue + " exceeds the maximum print width of " + i);
+        String l10 = longValue == Long.MIN_VALUE ? "9223372036854775808" : Long.toString(Math.abs(longValue));
+        int length = l10.length();
+        int i10 = this.c;
+        if (length > i10) {
+            throw new j$.time.b("Field " + oVar + " cannot be printed as the value " + longValue + " exceeds the maximum print width of " + i10);
         }
         vVar.getClass();
-        int i2 = this.b;
+        int i11 = this.b;
         x xVar = this.d;
         if (longValue >= 0) {
-            int i3 = c.a[xVar.ordinal()];
-            if (i3 != 1) {
-                if (i3 == 2) {
-                    sb.append('+');
+            int i12 = c.a[xVar.ordinal()];
+            if (i12 != 1) {
+                if (i12 == 2) {
+                    sb2.append('+');
                 }
-            } else if (i2 < 19 && longValue >= f[i2]) {
-                sb.append('+');
+            } else if (i11 < 19 && longValue >= f[i11]) {
+                sb2.append('+');
             }
         } else {
-            int i4 = c.a[xVar.ordinal()];
-            if (i4 == 1 || i4 == 2 || i4 == 3) {
-                sb.append('-');
-            } else if (i4 == 4) {
-                throw new j$.time.b("Field " + ((Object) r0) + " cannot be printed as the value " + longValue + " cannot be negative according to the SignStyle");
+            int i13 = c.a[xVar.ordinal()];
+            if (i13 == 1 || i13 == 2 || i13 == 3) {
+                sb2.append('-');
+            } else if (i13 == 4) {
+                throw new j$.time.b("Field " + oVar + " cannot be printed as the value " + longValue + " cannot be negative according to the SignStyle");
             }
         }
-        for (int i5 = 0; i5 < i2 - l.length(); i5++) {
-            sb.append('0');
+        for (int i14 = 0; i14 < i11 - l10.length(); i14++) {
+            sb2.append('0');
         }
-        sb.append(l);
+        sb2.append(l10);
         return true;
     }
 
     public String toString() {
-        Enum r0 = this.a;
-        int i = this.c;
+        int i10 = this.c;
+        j$.time.temporal.o oVar = this.a;
         x xVar = this.d;
-        int i2 = this.b;
-        if (i2 == 1 && i == 19 && xVar == x.NORMAL) {
-            return "Value(" + r0 + ")";
+        int i11 = this.b;
+        if (i11 == 1 && i10 == 19 && xVar == x.NORMAL) {
+            return "Value(" + oVar + ")";
         }
-        if (i2 == i && xVar == x.NOT_NEGATIVE) {
-            return "Value(" + r0 + "," + i2 + ")";
+        if (i11 == i10 && xVar == x.NOT_NEGATIVE) {
+            return "Value(" + oVar + "," + i11 + ")";
         }
-        return "Value(" + r0 + "," + i2 + "," + i + "," + xVar + ")";
+        return "Value(" + oVar + "," + i11 + "," + i10 + "," + xVar + ")";
     }
 }

@@ -1,11 +1,13 @@
 package com.google.android.recaptcha.internal;
 
+import a9.p;
 import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
     private static final boolean[] zza;
@@ -18,44 +20,44 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
         new zzqd(zArr, 0, false);
     }
 
-    zzqd() {
+    public zzqd() {
         this(zza, 0, true);
     }
 
-    private static int zzg(int i) {
-        return Math.max(((i * 3) / 2) + 1, 10);
+    private static int zzg(int i10) {
+        return Math.max(((i10 * 3) / 2) + 1, 10);
     }
 
-    private final String zzh(int i) {
-        return "Index:" + i + ", Size:" + this.zzc;
+    private final String zzh(int i10) {
+        return p.j(i10, this.zzc, "Index:", ", Size:");
     }
 
-    private final void zzi(int i) {
-        if (i < 0 || i >= this.zzc) {
-            throw new IndexOutOfBoundsException(zzh(i));
+    private final void zzi(int i10) {
+        if (i10 < 0 || i10 >= this.zzc) {
+            throw new IndexOutOfBoundsException(zzh(i10));
         }
     }
 
     @Override // com.google.android.recaptcha.internal.zzpz, java.util.AbstractList, java.util.List
-    public final /* synthetic */ void add(int i, Object obj) {
-        int i2;
+    public final /* synthetic */ void add(int i10, Object obj) {
+        int i11;
         boolean booleanValue = ((Boolean) obj).booleanValue();
         zza();
-        if (i < 0 || i > (i2 = this.zzc)) {
-            throw new IndexOutOfBoundsException(zzh(i));
+        if (i10 < 0 || i10 > (i11 = this.zzc)) {
+            throw new IndexOutOfBoundsException(zzh(i10));
         }
-        int i3 = i + 1;
+        int i12 = i10 + 1;
         boolean[] zArr = this.zzb;
         int length = zArr.length;
-        if (i2 < length) {
-            System.arraycopy(zArr, i, zArr, i3, i2 - i);
+        if (i11 < length) {
+            System.arraycopy(zArr, i10, zArr, i12, i11 - i10);
         } else {
             boolean[] zArr2 = new boolean[zzg(length)];
-            System.arraycopy(this.zzb, 0, zArr2, 0, i);
-            System.arraycopy(this.zzb, i, zArr2, i3, this.zzc - i);
+            System.arraycopy(this.zzb, 0, zArr2, 0, i10);
+            System.arraycopy(this.zzb, i10, zArr2, i12, this.zzc - i10);
             this.zzb = zArr2;
         }
-        this.zzb[i] = booleanValue;
+        this.zzb[i10] = booleanValue;
         this.zzc++;
         ((AbstractList) this).modCount++;
     }
@@ -69,21 +71,21 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
             return super.addAll(collection);
         }
         zzqd zzqdVar = (zzqd) collection;
-        int i = zzqdVar.zzc;
-        if (i == 0) {
+        int i10 = zzqdVar.zzc;
+        if (i10 == 0) {
             return false;
         }
-        int i2 = this.zzc;
-        if (ConnectionsManager.DEFAULT_DATACENTER_ID - i2 < i) {
+        int i11 = this.zzc;
+        if (ConnectionsManager.DEFAULT_DATACENTER_ID - i11 < i10) {
             throw new OutOfMemoryError();
         }
-        int i3 = i2 + i;
+        int i12 = i11 + i10;
         boolean[] zArr = this.zzb;
-        if (i3 > zArr.length) {
-            this.zzb = Arrays.copyOf(zArr, i3);
+        if (i12 > zArr.length) {
+            this.zzb = Arrays.copyOf(zArr, i12);
         }
         System.arraycopy(zzqdVar.zzb, 0, this.zzb, this.zzc, zzqdVar.zzc);
-        this.zzc = i3;
+        this.zzc = i12;
         ((AbstractList) this).modCount++;
         return true;
     }
@@ -106,8 +108,8 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
             return false;
         }
         boolean[] zArr = zzqdVar.zzb;
-        for (int i = 0; i < this.zzc; i++) {
-            if (this.zzb[i] != zArr[i]) {
+        for (int i10 = 0; i10 < this.zzc; i10++) {
+            if (this.zzb[i10] != zArr[i10]) {
                 return false;
             }
         }
@@ -115,18 +117,18 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ Object get(int i) {
-        zzi(i);
-        return Boolean.valueOf(this.zzb[i]);
+    public final /* synthetic */ Object get(int i10) {
+        zzi(i10);
+        return Boolean.valueOf(this.zzb[i10]);
     }
 
     @Override // com.google.android.recaptcha.internal.zzpz, java.util.AbstractList, java.util.Collection, java.util.List
     public final int hashCode() {
-        int i = 1;
-        for (int i2 = 0; i2 < this.zzc; i2++) {
-            i = (i * 31) + zzsv.zza(this.zzb[i2]);
+        int i10 = 1;
+        for (int i11 = 0; i11 < this.zzc; i11++) {
+            i10 = (i10 * 31) + zzsv.zza(this.zzb[i11]);
         }
-        return i;
+        return i10;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -135,50 +137,50 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
             return -1;
         }
         boolean booleanValue = ((Boolean) obj).booleanValue();
-        int i = this.zzc;
-        for (int i2 = 0; i2 < i; i2++) {
-            if (this.zzb[i2] == booleanValue) {
-                return i2;
+        int i10 = this.zzc;
+        for (int i11 = 0; i11 < i10; i11++) {
+            if (this.zzb[i11] == booleanValue) {
+                return i11;
             }
         }
         return -1;
     }
 
     @Override // com.google.android.recaptcha.internal.zzpz, java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object remove(int i) {
+    public final /* bridge */ /* synthetic */ Object remove(int i10) {
         zza();
-        zzi(i);
+        zzi(i10);
         boolean[] zArr = this.zzb;
-        boolean z = zArr[i];
-        if (i < this.zzc - 1) {
-            System.arraycopy(zArr, i + 1, zArr, i, (r2 - i) - 1);
+        boolean z10 = zArr[i10];
+        if (i10 < this.zzc - 1) {
+            System.arraycopy(zArr, i10 + 1, zArr, i10, (r2 - i10) - 1);
         }
         this.zzc--;
         ((AbstractList) this).modCount++;
-        return Boolean.valueOf(z);
+        return Boolean.valueOf(z10);
     }
 
     @Override // java.util.AbstractList
-    protected final void removeRange(int i, int i2) {
+    public final void removeRange(int i10, int i11) {
         zza();
-        if (i2 < i) {
+        if (i11 < i10) {
             throw new IndexOutOfBoundsException("toIndex < fromIndex");
         }
         boolean[] zArr = this.zzb;
-        System.arraycopy(zArr, i2, zArr, i, this.zzc - i2);
-        this.zzc -= i2 - i;
+        System.arraycopy(zArr, i11, zArr, i10, this.zzc - i11);
+        this.zzc -= i11 - i10;
         ((AbstractList) this).modCount++;
     }
 
     @Override // com.google.android.recaptcha.internal.zzpz, java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object set(int i, Object obj) {
+    public final /* bridge */ /* synthetic */ Object set(int i10, Object obj) {
         boolean booleanValue = ((Boolean) obj).booleanValue();
         zza();
-        zzi(i);
+        zzi(i10);
         boolean[] zArr = this.zzb;
-        boolean z = zArr[i];
-        zArr[i] = booleanValue;
-        return Boolean.valueOf(z);
+        boolean z10 = zArr[i10];
+        zArr[i10] = booleanValue;
+        return Boolean.valueOf(z10);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -187,37 +189,37 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsu
-    public final /* bridge */ /* synthetic */ zzsu zzd(int i) {
-        if (i >= this.zzc) {
-            return new zzqd(i == 0 ? zza : Arrays.copyOf(this.zzb, i), this.zzc, true);
+    public final /* bridge */ /* synthetic */ zzsu zzd(int i10) {
+        if (i10 >= this.zzc) {
+            return new zzqd(i10 == 0 ? zza : Arrays.copyOf(this.zzb, i10), this.zzc, true);
         }
         throw new IllegalArgumentException();
     }
 
-    public final void zze(boolean z) {
+    public final void zze(boolean z10) {
         zza();
-        int i = this.zzc;
+        int i10 = this.zzc;
         int length = this.zzb.length;
-        if (i == length) {
+        if (i10 == length) {
             boolean[] zArr = new boolean[zzg(length)];
             System.arraycopy(this.zzb, 0, zArr, 0, this.zzc);
             this.zzb = zArr;
         }
         boolean[] zArr2 = this.zzb;
-        int i2 = this.zzc;
-        this.zzc = i2 + 1;
-        zArr2[i2] = z;
+        int i11 = this.zzc;
+        this.zzc = i11 + 1;
+        zArr2[i11] = z10;
     }
 
-    public final boolean zzf(int i) {
-        zzi(i);
-        return this.zzb[i];
+    public final boolean zzf(int i10) {
+        zzi(i10);
+        return this.zzb[i10];
     }
 
-    private zzqd(boolean[] zArr, int i, boolean z) {
-        super(z);
+    private zzqd(boolean[] zArr, int i10, boolean z10) {
+        super(z10);
         this.zzb = zArr;
-        this.zzc = i;
+        this.zzc = i10;
     }
 
     @Override // com.google.android.recaptcha.internal.zzpz, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List

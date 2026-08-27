@@ -5,34 +5,35 @@ import j$.time.ZoneOffset;
 import j$.time.c;
 import j$.time.chrono.ChronoLocalDateTime;
 import j$.time.chrono.ChronoZonedDateTime;
-import j$.time.chrono.F;
+import j$.time.chrono.f0;
 import j$.time.chrono.h;
 import j$.time.chrono.k;
 import j$.time.chrono.n;
 import j$.time.chrono.r;
 import j$.time.chrono.u;
+import j$.time.chrono.z;
 import j$.time.temporal.ChronoUnit;
 import j$.time.temporal.Temporal;
 import j$.time.temporal.o;
 import j$.time.temporal.p;
-import j$.util.A;
-import j$.util.B;
-import j$.util.C;
-import j$.util.G;
-import j$.util.K;
 import j$.util.Objects;
 import j$.util.Spliterator;
-import j$.util.T;
-import j$.util.W;
-import j$.util.Z;
+import j$.util.a1;
+import j$.util.b0;
+import j$.util.c0;
 import j$.util.concurrent.ConcurrentHashMap;
 import j$.util.concurrent.l;
+import j$.util.d0;
+import j$.util.e0;
 import j$.util.function.b;
 import j$.util.function.d;
 import j$.util.function.e;
-import j$.util.t0;
-import j$.util.w;
-import j$.util.z;
+import j$.util.i0;
+import j$.util.m0;
+import j$.util.u0;
+import j$.util.u1;
+import j$.util.x0;
+import j$.util.y;
 import java.text.SimpleDateFormat;
 import java.util.AbstractMap;
 import java.util.Arrays;
@@ -54,74 +55,75 @@ import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
 import java.util.function.IntConsumer;
 import java.util.function.LongConsumer;
+import org.telegram.messenger.BuildConfig;
 import sun.misc.Unsafe;
 
 /* loaded from: classes2.dex */
 public abstract /* synthetic */ class a {
-    public static /* synthetic */ long O(long j, long j2) {
-        long j3 = j + j2;
-        if (((j2 ^ j) < 0) || ((j ^ j3) >= 0)) {
-            return j3;
+    public static /* synthetic */ long O(long j10, long j11) {
+        long j12 = j10 + j11;
+        if (((j11 ^ j10) < 0) || ((j10 ^ j12) >= 0)) {
+            return j12;
         }
         throw new ArithmeticException();
     }
 
-    public static /* synthetic */ AbstractMap.SimpleImmutableEntry P(String str, String str2) {
-        return new AbstractMap.SimpleImmutableEntry(Objects.requireNonNull(str), Objects.requireNonNull(str2));
+    public static /* synthetic */ Map.Entry P(Object obj, Object obj2) {
+        return new AbstractMap.SimpleImmutableEntry(Objects.requireNonNull(obj), Objects.requireNonNull(obj2));
     }
 
-    public static /* synthetic */ boolean Q(Unsafe unsafe, Object obj, long j, l lVar) {
+    public static /* synthetic */ boolean Q(Unsafe unsafe, Object obj, long j10, l lVar) {
         while (true) {
             Unsafe unsafe2 = unsafe;
             Object obj2 = obj;
-            long j2 = j;
+            long j11 = j10;
             l lVar2 = lVar;
-            if (unsafe2.compareAndSwapObject(obj2, j2, (Object) null, lVar2)) {
+            if (unsafe2.compareAndSwapObject(obj2, j11, (Object) null, lVar2)) {
                 return true;
             }
-            if (unsafe2.getObject(obj2, j2) != null) {
+            if (unsafe2.getObject(obj2, j11) != null) {
                 return false;
             }
             unsafe = unsafe2;
             obj = obj2;
-            j = j2;
+            j10 = j11;
             lVar = lVar2;
         }
     }
 
-    public static /* synthetic */ long R(long j, long j2) {
-        long j3 = j % j2;
-        if (j3 == 0) {
+    public static /* synthetic */ long R(long j10, long j11) {
+        long j12 = j10 % j11;
+        if (j12 == 0) {
             return 0L;
         }
-        return (((j ^ j2) >> 63) | 1) > 0 ? j3 : j3 + j2;
+        return (((j10 ^ j11) >> 63) | 1) > 0 ? j12 : j12 + j11;
     }
 
-    public static /* synthetic */ long S(long j, long j2) {
-        long j3 = j / j2;
-        return (j - (j2 * j3) != 0 && (((j ^ j2) >> 63) | 1) < 0) ? j3 - 1 : j3;
+    public static /* synthetic */ long S(long j10, long j11) {
+        long j12 = j10 / j11;
+        return (j10 - (j11 * j12) != 0 && (((j10 ^ j11) >> 63) | 1) < 0) ? j12 - 1 : j12;
     }
 
-    public static /* synthetic */ long T(long j, long j2) {
-        int numberOfLeadingZeros = Long.numberOfLeadingZeros(~j2) + Long.numberOfLeadingZeros(j2) + Long.numberOfLeadingZeros(~j) + Long.numberOfLeadingZeros(j);
+    public static /* synthetic */ long T(long j10, long j11) {
+        int numberOfLeadingZeros = Long.numberOfLeadingZeros(~j11) + Long.numberOfLeadingZeros(j11) + Long.numberOfLeadingZeros(~j10) + Long.numberOfLeadingZeros(j10);
         if (numberOfLeadingZeros > 65) {
-            return j * j2;
+            return j10 * j11;
         }
         if (numberOfLeadingZeros >= 64) {
-            if ((j >= 0) | (j2 != Long.MIN_VALUE)) {
-                long j3 = j * j2;
-                if (j == 0 || j3 / j == j2) {
-                    return j3;
+            if ((j10 >= 0) | (j11 != Long.MIN_VALUE)) {
+                long j12 = j10 * j11;
+                if (j10 == 0 || j12 / j10 == j11) {
+                    return j12;
                 }
             }
         }
         throw new ArithmeticException();
     }
 
-    public static /* synthetic */ long U(long j, long j2) {
-        long j3 = j - j2;
-        if (((j2 ^ j) >= 0) || ((j ^ j3) >= 0)) {
-            return j3;
+    public static /* synthetic */ long U(long j10, long j11) {
+        long j12 = j10 - j11;
+        if (((j11 ^ j10) >= 0) || ((j10 ^ j12) >= 0)) {
+            return j12;
         }
         throw new ArithmeticException();
     }
@@ -146,42 +148,14 @@ public abstract /* synthetic */ class a {
         return j$.util.Optional.empty();
     }
 
-    public static OptionalDouble J(z zVar) {
-        if (zVar == null) {
-            return null;
-        }
-        boolean z = zVar.a;
-        if (!z) {
-            return OptionalDouble.empty();
-        }
-        if (z) {
-            return OptionalDouble.of(zVar.b);
-        }
-        throw new NoSuchElementException("No value present");
-    }
-
-    public static z F(OptionalDouble optionalDouble) {
+    public static b0 F(OptionalDouble optionalDouble) {
         if (optionalDouble == null) {
             return null;
         }
         if (!optionalDouble.isPresent()) {
-            return z.c;
+            return b0.c;
         }
-        return new z(optionalDouble.getAsDouble());
-    }
-
-    public static OptionalLong L(B b) {
-        if (b == null) {
-            return null;
-        }
-        boolean z = b.a;
-        if (!z) {
-            return OptionalLong.empty();
-        }
-        if (z) {
-            return OptionalLong.of(b.b);
-        }
-        throw new NoSuchElementException("No value present");
+        return new b0(optionalDouble.getAsDouble());
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [j$.util.function.b] */
@@ -209,9 +183,9 @@ public abstract /* synthetic */ class a {
             }
 
             @Override // java.util.function.IntConsumer
-            public final void accept(int i) {
-                IntConsumer.this.accept(i);
-                intConsumer2.accept(i);
+            public final void accept(int i10) {
+                IntConsumer.this.accept(i10);
+                intConsumer2.accept(i10);
             }
         };
     }
@@ -225,55 +199,41 @@ public abstract /* synthetic */ class a {
             }
 
             @Override // java.util.function.LongConsumer
-            public final void accept(long j) {
-                LongConsumer.this.accept(j);
-                longConsumer2.accept(j);
+            public final void accept(long j10) {
+                LongConsumer.this.accept(j10);
+                longConsumer2.accept(j10);
             }
         };
     }
 
-    public static B H(OptionalLong optionalLong) {
+    public static d0 H(OptionalLong optionalLong) {
         if (optionalLong == null) {
             return null;
         }
         if (!optionalLong.isPresent()) {
-            return B.c;
+            return d0.c;
         }
-        return new B(optionalLong.getAsLong());
+        return new d0(optionalLong.getAsLong());
     }
 
-    public static String D(long j, String str, Locale locale) {
+    public static String D(long j10, String str, Locale locale) {
         TimeZone timeZone = TimeZone.getTimeZone("UTC");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(str, locale);
         simpleDateFormat.setTimeZone(timeZone);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeZone(timeZone);
-        calendar.set(0, (int) j, 0, 0, 0, 0);
+        calendar.set(0, (int) j10, 0, 0, 0, 0);
         return simpleDateFormat.format(calendar.getTime());
     }
 
-    public static OptionalInt K(A a) {
-        if (a == null) {
-            return null;
-        }
-        boolean z = a.a;
-        if (!z) {
-            return OptionalInt.empty();
-        }
-        if (z) {
-            return OptionalInt.of(a.b);
-        }
-        throw new NoSuchElementException("No value present");
-    }
-
-    public static A G(OptionalInt optionalInt) {
+    public static c0 G(OptionalInt optionalInt) {
         if (optionalInt == null) {
             return null;
         }
         if (!optionalInt.isPresent()) {
-            return A.c;
+            return c0.c;
         }
-        return new A(optionalInt.getAsInt());
+        return new c0(optionalInt.getAsInt());
     }
 
     public static void h(ConcurrentMap concurrentMap, BiConsumer biConsumer) {
@@ -289,9 +249,9 @@ public abstract /* synthetic */ class a {
     public static String V(Object obj, Object obj2) {
         String str;
         String obj3;
-        String str2 = "null";
+        String str2 = BuildConfig.BETA_URL;
         if (obj == null || (str = obj.toString()) == null) {
-            str = "null";
+            str = BuildConfig.BETA_URL;
         }
         int length = str.length();
         if (obj2 != null && (obj3 = obj2.toString()) != null) {
@@ -305,19 +265,19 @@ public abstract /* synthetic */ class a {
         return new String(cArr);
     }
 
-    public static String C(long j, String str, Locale locale) {
+    public static String C(long j10, String str, Locale locale) {
         TimeZone timeZone = TimeZone.getTimeZone("UTC");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(str, locale);
         simpleDateFormat.setTimeZone(timeZone);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeZone(timeZone);
-        calendar.set(2016, 1, (int) j, 0, 0, 0);
+        calendar.set(2016, 1, (int) j10, 0, 0, 0);
         return simpleDateFormat.format(calendar.getTime());
     }
 
     public static void M(Iterator it, Consumer consumer) {
-        if (it instanceof w) {
-            ((w) it).forEachRemaining(consumer);
+        if (it instanceof y) {
+            ((y) it).forEachRemaining(consumer);
             return;
         }
         Objects.requireNonNull(consumer);
@@ -326,13 +286,55 @@ public abstract /* synthetic */ class a {
         }
     }
 
+    public static OptionalDouble J(b0 b0Var) {
+        if (b0Var == null) {
+            return null;
+        }
+        boolean z10 = b0Var.a;
+        if (!z10) {
+            return OptionalDouble.empty();
+        }
+        if (z10) {
+            return OptionalDouble.of(b0Var.b);
+        }
+        throw new NoSuchElementException("No value present");
+    }
+
+    public static OptionalInt K(c0 c0Var) {
+        if (c0Var == null) {
+            return null;
+        }
+        boolean z10 = c0Var.a;
+        if (!z10) {
+            return OptionalInt.empty();
+        }
+        if (z10) {
+            return OptionalInt.of(c0Var.b);
+        }
+        throw new NoSuchElementException("No value present");
+    }
+
+    public static OptionalLong L(d0 d0Var) {
+        if (d0Var == null) {
+            return null;
+        }
+        boolean z10 = d0Var.a;
+        if (!z10) {
+            return OptionalLong.empty();
+        }
+        if (z10) {
+            return OptionalLong.of(d0Var.b);
+        }
+        throw new NoSuchElementException("No value present");
+    }
+
     public static boolean r(j$.time.chrono.l lVar, o oVar) {
-        return oVar instanceof j$.time.temporal.a ? oVar == j$.time.temporal.a.ERA : oVar != null && oVar.p(lVar);
+        return oVar instanceof j$.time.temporal.a ? oVar == j$.time.temporal.a.ERA : oVar != null && oVar.j(lVar);
     }
 
     public static k N(j$.time.temporal.l lVar) {
         Objects.requireNonNull(lVar, "temporal");
-        Object obj = (k) lVar.r(p.b);
+        Object obj = (k) lVar.m(p.b);
         r rVar = r.c;
         if (obj == null) {
             obj = Objects.requireNonNull(rVar, "defaultObj");
@@ -342,23 +344,23 @@ public abstract /* synthetic */ class a {
 
     public static int l(ChronoZonedDateTime chronoZonedDateTime, o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            int i = h.a[((j$.time.temporal.a) oVar).ordinal()];
-            if (i == 1) {
+            int i10 = h.a[((j$.time.temporal.a) oVar).ordinal()];
+            if (i10 == 1) {
                 throw new j$.time.temporal.r("Invalid field 'InstantSeconds' for get() method, use getLong() instead");
             }
-            if (i == 2) {
-                return chronoZonedDateTime.i().getTotalSeconds();
+            if (i10 == 2) {
+                return chronoZonedDateTime.h().getTotalSeconds();
             }
-            return chronoZonedDateTime.B().o(oVar);
+            return chronoZonedDateTime.r().j(oVar);
         }
         return p.a(chronoZonedDateTime, oVar);
     }
 
-    public static int m(j$.time.chrono.l lVar, j$.time.temporal.a aVar) {
-        if (aVar == j$.time.temporal.a.ERA) {
+    public static int m(j$.time.chrono.l lVar, o oVar) {
+        if (oVar == j$.time.temporal.a.ERA) {
             return lVar.getValue();
         }
-        return p.a(lVar, aVar);
+        return p.a(lVar, oVar);
     }
 
     public static long o(j$.time.chrono.l lVar, o oVar) {
@@ -368,7 +370,7 @@ public abstract /* synthetic */ class a {
         if (oVar instanceof j$.time.temporal.a) {
             throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
         }
-        return oVar.o(lVar);
+        return oVar.m(lVar);
     }
 
     public static k W(String str) {
@@ -387,28 +389,33 @@ public abstract /* synthetic */ class a {
                 Iterator it = ServiceLoader.load(k.class).iterator();
                 while (it.hasNext()) {
                     k kVar2 = (k) it.next();
-                    if (str.equals(kVar2.getId()) || str.equals(kVar2.m())) {
+                    if (str.equals(kVar2.getId()) || str.equals(kVar2.o())) {
                         return kVar2;
                     }
                 }
                 throw new j$.time.b("Unknown chronology: " + str);
             }
             n nVar = n.l;
-            j$.time.chrono.a.l(nVar, nVar.getId());
+            nVar.getClass();
+            j$.time.chrono.a.j(nVar, "Hijrah-umalqura");
             u uVar = u.c;
-            j$.time.chrono.a.l(uVar, uVar.getId());
-            j$.time.chrono.z zVar = j$.time.chrono.z.c;
-            j$.time.chrono.a.l(zVar, zVar.getId());
-            F f = F.c;
-            j$.time.chrono.a.l(f, f.getId());
+            uVar.getClass();
+            j$.time.chrono.a.j(uVar, "Japanese");
+            z zVar = z.c;
+            zVar.getClass();
+            j$.time.chrono.a.j(zVar, "Minguo");
+            f0 f0Var = f0.c;
+            f0Var.getClass();
+            j$.time.chrono.a.j(f0Var, "ThaiBuddhist");
             try {
                 for (j$.time.chrono.a aVar : Arrays.asList(new j$.time.chrono.a[0])) {
                     if (!aVar.getId().equals("ISO")) {
-                        j$.time.chrono.a.l(aVar, aVar.getId());
+                        j$.time.chrono.a.j(aVar, aVar.getId());
                     }
                 }
                 r rVar = r.c;
-                j$.time.chrono.a.l(rVar, rVar.getId());
+                rVar.getClass();
+                j$.time.chrono.a.j(rVar, "ISO");
             } catch (Throwable th) {
                 throw new ServiceConfigurationError(th.getMessage(), th);
             }
@@ -427,10 +434,10 @@ public abstract /* synthetic */ class a {
             return null;
         }
         if (aVar == p.g) {
-            return chronoLocalDateTime.c();
+            return chronoLocalDateTime.b();
         }
         if (aVar == p.b) {
-            return chronoLocalDateTime.b();
+            return chronoLocalDateTime.a();
         }
         if (aVar == p.c) {
             return ChronoUnit.NANOS;
@@ -440,9 +447,9 @@ public abstract /* synthetic */ class a {
 
     public static boolean q(j$.time.chrono.b bVar, o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            return ((j$.time.temporal.a) oVar).u();
+            return ((j$.time.temporal.a) oVar).isDateBased();
         }
-        return oVar != null && oVar.p(bVar);
+        return oVar != null && oVar.j(bVar);
     }
 
     public static long n(Spliterator spliterator) {
@@ -452,17 +459,17 @@ public abstract /* synthetic */ class a {
         return spliterator.estimateSize();
     }
 
-    public static boolean p(Spliterator spliterator, int i) {
-        return (spliterator.characteristics() & i) == i;
+    public static boolean p(Spliterator spliterator, int i10) {
+        return (spliterator.characteristics() & i10) == i10;
     }
 
     public static Instant y(ChronoLocalDateTime chronoLocalDateTime, ZoneOffset zoneOffset) {
-        return Instant.I(chronoLocalDateTime.toEpochSecond(zoneOffset), chronoLocalDateTime.c().d);
+        return Instant.I(chronoLocalDateTime.toEpochSecond(zoneOffset), chronoLocalDateTime.b().d);
     }
 
     public static long w(ChronoLocalDateTime chronoLocalDateTime, ZoneOffset zoneOffset) {
         Objects.requireNonNull(zoneOffset, "offset");
-        return ((chronoLocalDateTime.d().v() * 86400) + chronoLocalDateTime.c().S()) - zoneOffset.getTotalSeconds();
+        return ((chronoLocalDateTime.f().z() * 86400) + chronoLocalDateTime.b().S()) - zoneOffset.getTotalSeconds();
     }
 
     public static Object u(ChronoZonedDateTime chronoZonedDateTime, j$.time.format.a aVar) {
@@ -470,13 +477,13 @@ public abstract /* synthetic */ class a {
             return chronoZonedDateTime.getZone();
         }
         if (aVar == p.d) {
-            return chronoZonedDateTime.i();
+            return chronoZonedDateTime.h();
         }
         if (aVar == p.g) {
-            return chronoZonedDateTime.c();
+            return chronoZonedDateTime.b();
         }
         if (aVar == p.b) {
-            return chronoZonedDateTime.b();
+            return chronoZonedDateTime.a();
         }
         if (aVar == p.c) {
             return ChronoUnit.NANOS;
@@ -485,8 +492,8 @@ public abstract /* synthetic */ class a {
     }
 
     public static int f(ChronoLocalDateTime chronoLocalDateTime, ChronoLocalDateTime chronoLocalDateTime2) {
-        int compareTo = chronoLocalDateTime.d().compareTo(chronoLocalDateTime2.d());
-        return (compareTo == 0 && (compareTo = chronoLocalDateTime.c().compareTo(chronoLocalDateTime2.c())) == 0) ? ((j$.time.chrono.a) chronoLocalDateTime.b()).getId().compareTo(chronoLocalDateTime2.b().getId()) : compareTo;
+        int compareTo = chronoLocalDateTime.f().compareTo(chronoLocalDateTime2.f());
+        return (compareTo == 0 && (compareTo = chronoLocalDateTime.b().compareTo(chronoLocalDateTime2.b())) == 0) ? ((j$.time.chrono.a) chronoLocalDateTime.a()).getId().compareTo(chronoLocalDateTime2.a().getId()) : compareTo;
     }
 
     public static Object s(j$.time.chrono.b bVar, j$.time.format.a aVar) {
@@ -494,7 +501,7 @@ public abstract /* synthetic */ class a {
             return null;
         }
         if (aVar == p.b) {
-            return bVar.b();
+            return bVar.a();
         }
         if (aVar == p.c) {
             return ChronoUnit.DAYS;
@@ -503,98 +510,98 @@ public abstract /* synthetic */ class a {
     }
 
     public static Temporal a(j$.time.chrono.b bVar, Temporal temporal) {
-        return temporal.e(bVar.v(), j$.time.temporal.a.EPOCH_DAY);
+        return temporal.c(bVar.z(), j$.time.temporal.a.EPOCH_DAY);
     }
 
     public static long x(ChronoZonedDateTime chronoZonedDateTime) {
-        return ((chronoZonedDateTime.d().v() * 86400) + chronoZonedDateTime.c().S()) - chronoZonedDateTime.i().getTotalSeconds();
+        return ((chronoZonedDateTime.f().z() * 86400) + chronoZonedDateTime.b().S()) - chronoZonedDateTime.h().getTotalSeconds();
     }
 
     public static int g(ChronoZonedDateTime chronoZonedDateTime, ChronoZonedDateTime chronoZonedDateTime2) {
-        int compare = Long.compare(chronoZonedDateTime.G(), chronoZonedDateTime2.G());
-        return (compare == 0 && (compare = chronoZonedDateTime.c().d - chronoZonedDateTime2.c().d) == 0 && (compare = chronoZonedDateTime.B().z(chronoZonedDateTime2.B())) == 0 && (compare = chronoZonedDateTime.getZone().getId().compareTo(chronoZonedDateTime2.getZone().getId())) == 0) ? ((j$.time.chrono.a) chronoZonedDateTime.b()).getId().compareTo(chronoZonedDateTime2.b().getId()) : compare;
+        int compare = Long.compare(chronoZonedDateTime.F(), chronoZonedDateTime2.F());
+        return (compare == 0 && (compare = chronoZonedDateTime.b().d - chronoZonedDateTime2.b().d) == 0 && (compare = chronoZonedDateTime.r().C(chronoZonedDateTime2.r())) == 0 && (compare = chronoZonedDateTime.getZone().getId().compareTo(chronoZonedDateTime2.getZone().getId())) == 0) ? ((j$.time.chrono.a) chronoZonedDateTime.a()).getId().compareTo(chronoZonedDateTime2.a().getId()) : compare;
     }
 
-    public static boolean A(W w, Consumer consumer) {
+    public static boolean A(x0 x0Var, Consumer consumer) {
         if (consumer instanceof IntConsumer) {
-            return w.tryAdvance((IntConsumer) consumer);
+            return x0Var.tryAdvance((IntConsumer) consumer);
         }
-        if (t0.a) {
-            t0.a(w.getClass(), "{0} calling Spliterator.OfInt.tryAdvance((IntConsumer) action::accept)");
+        if (u1.a) {
+            u1.a(x0Var.getClass(), "{0} calling Spliterator.OfInt.tryAdvance((IntConsumer) action::accept)");
             throw null;
         }
         Objects.requireNonNull(consumer);
-        return w.tryAdvance((IntConsumer) new G(consumer, 0));
+        return x0Var.tryAdvance((IntConsumer) new i0(consumer, 0));
     }
 
-    public static void j(W w, Consumer consumer) {
+    public static void j(x0 x0Var, Consumer consumer) {
         if (consumer instanceof IntConsumer) {
-            w.forEachRemaining((IntConsumer) consumer);
+            x0Var.forEachRemaining((IntConsumer) consumer);
         } else {
-            if (t0.a) {
-                t0.a(w.getClass(), "{0} calling Spliterator.OfInt.forEachRemaining((IntConsumer) action::accept)");
+            if (u1.a) {
+                u1.a(x0Var.getClass(), "{0} calling Spliterator.OfInt.forEachRemaining((IntConsumer) action::accept)");
                 throw null;
             }
             Objects.requireNonNull(consumer);
-            w.forEachRemaining((IntConsumer) new G(consumer, 0));
+            x0Var.forEachRemaining((IntConsumer) new i0(consumer, 0));
         }
     }
 
     public static int e(j$.time.chrono.b bVar, j$.time.chrono.b bVar2) {
-        int compare = Long.compare(bVar.v(), bVar2.v());
+        int compare = Long.compare(bVar.z(), bVar2.z());
         if (compare != 0) {
             return compare;
         }
-        return ((j$.time.chrono.a) bVar.b()).getId().compareTo(bVar2.b().getId());
+        return ((j$.time.chrono.a) bVar.a()).getId().compareTo(bVar2.a().getId());
     }
 
-    public static boolean B(Z z, Consumer consumer) {
+    public static boolean B(a1 a1Var, Consumer consumer) {
         if (consumer instanceof LongConsumer) {
-            return z.tryAdvance((LongConsumer) consumer);
+            return a1Var.tryAdvance((LongConsumer) consumer);
         }
-        if (t0.a) {
-            t0.a(z.getClass(), "{0} calling Spliterator.OfLong.tryAdvance((LongConsumer) action::accept)");
+        if (u1.a) {
+            u1.a(a1Var.getClass(), "{0} calling Spliterator.OfLong.tryAdvance((LongConsumer) action::accept)");
             throw null;
         }
         Objects.requireNonNull(consumer);
-        return z.tryAdvance((LongConsumer) new K(consumer, 0));
+        return a1Var.tryAdvance((LongConsumer) new m0(consumer, 0));
     }
 
-    public static void k(Z z, Consumer consumer) {
+    public static void k(a1 a1Var, Consumer consumer) {
         if (consumer instanceof LongConsumer) {
-            z.forEachRemaining((LongConsumer) consumer);
+            a1Var.forEachRemaining((LongConsumer) consumer);
         } else {
-            if (t0.a) {
-                t0.a(z.getClass(), "{0} calling Spliterator.OfLong.forEachRemaining((LongConsumer) action::accept)");
+            if (u1.a) {
+                u1.a(a1Var.getClass(), "{0} calling Spliterator.OfLong.forEachRemaining((LongConsumer) action::accept)");
                 throw null;
             }
             Objects.requireNonNull(consumer);
-            z.forEachRemaining((LongConsumer) new K(consumer, 0));
+            a1Var.forEachRemaining((LongConsumer) new m0(consumer, 0));
         }
     }
 
-    public static boolean z(T t, Consumer consumer) {
+    public static boolean z(u0 u0Var, Consumer consumer) {
         if (consumer instanceof DoubleConsumer) {
-            return t.tryAdvance((DoubleConsumer) consumer);
+            return u0Var.tryAdvance((DoubleConsumer) consumer);
         }
-        if (t0.a) {
-            t0.a(t.getClass(), "{0} calling Spliterator.OfDouble.tryAdvance((DoubleConsumer) action::accept)");
+        if (u1.a) {
+            u1.a(u0Var.getClass(), "{0} calling Spliterator.OfDouble.tryAdvance((DoubleConsumer) action::accept)");
             throw null;
         }
         Objects.requireNonNull(consumer);
-        return t.tryAdvance((DoubleConsumer) new C(consumer, 0));
+        return u0Var.tryAdvance((DoubleConsumer) new e0(consumer, 0));
     }
 
-    public static void i(T t, Consumer consumer) {
+    public static void i(u0 u0Var, Consumer consumer) {
         if (consumer instanceof DoubleConsumer) {
-            t.forEachRemaining((DoubleConsumer) consumer);
+            u0Var.forEachRemaining((DoubleConsumer) consumer);
         } else {
-            if (t0.a) {
-                t0.a(t.getClass(), "{0} calling Spliterator.OfDouble.forEachRemaining((DoubleConsumer) action::accept)");
+            if (u1.a) {
+                u1.a(u0Var.getClass(), "{0} calling Spliterator.OfDouble.forEachRemaining((DoubleConsumer) action::accept)");
                 throw null;
             }
             Objects.requireNonNull(consumer);
-            t.forEachRemaining((DoubleConsumer) new C(consumer, 0));
+            u0Var.forEachRemaining((DoubleConsumer) new e0(consumer, 0));
         }
     }
 

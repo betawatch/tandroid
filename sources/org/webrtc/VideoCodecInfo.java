@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class VideoCodecInfo {
     public static final String H264_CONSTRAINED_BASELINE_3_1 = "42e01f";
     public static final String H264_CONSTRAINED_HIGH_3_1 = "640c1f";
@@ -26,13 +27,6 @@ public class VideoCodecInfo {
         this.params = map;
     }
 
-    @Deprecated
-    public VideoCodecInfo(int i, String str, Map<String, String> map) {
-        this.payload = i;
-        this.name = str;
-        this.params = map;
-    }
-
     public boolean equals(Object obj) {
         if (obj == null) {
             return false;
@@ -47,6 +41,14 @@ public class VideoCodecInfo {
         return this.name.equalsIgnoreCase(videoCodecInfo.name) && this.params.equals(videoCodecInfo.params);
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public Map getParams() {
+        return this.params;
+    }
+
     public int hashCode() {
         return Arrays.hashCode(new Object[]{this.name.toUpperCase(Locale.ROOT), this.params});
     }
@@ -55,11 +57,10 @@ public class VideoCodecInfo {
         return "VideoCodec{" + this.name + " " + this.params + "}";
     }
 
-    String getName() {
-        return this.name;
-    }
-
-    Map getParams() {
-        return this.params;
+    @Deprecated
+    public VideoCodecInfo(int i10, String str, Map<String, String> map) {
+        this.payload = i10;
+        this.name = str;
+        this.params = map;
     }
 }

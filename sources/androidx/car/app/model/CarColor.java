@@ -2,6 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class CarColor {
     public static final int TYPE_BLUE = 6;
@@ -23,47 +24,22 @@ public final class CarColor {
     public static final CarColor BLUE = create(6);
     public static final CarColor YELLOW = create(7);
 
-    public static CarColor createCustom(int i, int i2) {
-        return new CarColor(0, i, i2);
+    private CarColor() {
+        this.mType = 1;
+        this.mColor = 0;
+        this.mColorDark = 0;
     }
 
-    public int getType() {
-        return this.mType;
+    private static CarColor create(int i10) {
+        return new CarColor(i10, 0, 0);
     }
 
-    public int getColor() {
-        return this.mColor;
+    public static CarColor createCustom(int i10, int i11) {
+        return new CarColor(0, i10, i11);
     }
 
-    public int getColorDark() {
-        return this.mColorDark;
-    }
-
-    public String toString() {
-        return "[type: " + typeToString(this.mType) + ", color: " + this.mColor + ", dark: " + this.mColorDark + "]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(Integer.valueOf(this.mType), Integer.valueOf(this.mColor), Integer.valueOf(this.mColorDark));
-    }
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof CarColor)) {
-            return false;
-        }
-        CarColor carColor = (CarColor) obj;
-        return this.mColor == carColor.mColor && this.mColorDark == carColor.mColorDark && this.mType == carColor.mType;
-    }
-
-    private static CarColor create(int i) {
-        return new CarColor(i, 0, 0);
-    }
-
-    private static String typeToString(int i) {
-        switch (i) {
+    private static String typeToString(int i10) {
+        switch (i10) {
             case 0:
                 return "CUSTOM";
             case 1:
@@ -85,15 +61,45 @@ public final class CarColor {
         }
     }
 
-    private CarColor() {
-        this.mType = 1;
-        this.mColor = 0;
-        this.mColorDark = 0;
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof CarColor)) {
+            return false;
+        }
+        CarColor carColor = (CarColor) obj;
+        return this.mColor == carColor.mColor && this.mColorDark == carColor.mColorDark && this.mType == carColor.mType;
     }
 
-    private CarColor(int i, int i2, int i3) {
-        this.mType = i;
-        this.mColor = i2;
-        this.mColorDark = i3;
+    public int getColor() {
+        return this.mColor;
+    }
+
+    public int getColorDark() {
+        return this.mColorDark;
+    }
+
+    public int getType() {
+        return this.mType;
+    }
+
+    public int hashCode() {
+        return Objects.hash(Integer.valueOf(this.mType), Integer.valueOf(this.mColor), Integer.valueOf(this.mColorDark));
+    }
+
+    public String toString() {
+        StringBuilder sb2 = new StringBuilder("[type: ");
+        sb2.append(typeToString(this.mType));
+        sb2.append(", color: ");
+        sb2.append(this.mColor);
+        sb2.append(", dark: ");
+        return a9.p.k(this.mColorDark, "]", sb2);
+    }
+
+    private CarColor(int i10, int i11, int i12) {
+        this.mType = i10;
+        this.mColor = i11;
+        this.mColorDark = i12;
     }
 }

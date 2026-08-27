@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class zztd {
     protected volatile zzts zza;
@@ -72,7 +73,7 @@ public class zztd {
         return zztsVar2;
     }
 
-    protected final void zzd(zzts zztsVar) {
+    public final void zzd(zzts zztsVar) {
         if (this.zza != null) {
             return;
         }

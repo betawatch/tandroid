@@ -4,15 +4,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public interface VoIPServiceState {
-
-    public abstract /* synthetic */ class -CC {
-        public static long $default$getCallDuration(VoIPServiceState voIPServiceState) {
-            return 0L;
-        }
-    }
-
     void acceptIncomingCall();
 
     void declineIncomingCall();

@@ -4,97 +4,68 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
 import com.google.firebase.components.ComponentRegistrar;
-import com.google.firebase.heartbeatinfo.DefaultHeartBeatController;
-import com.google.firebase.platforminfo.DefaultUserAgentPublisher;
-import com.google.firebase.platforminfo.KotlinDetector;
-import com.google.firebase.platforminfo.LibraryVersionComponent;
+import f9.z;
+import g7.i7;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executor;
+import t8.h;
+import ug.b;
+import w9.c;
+import w9.d;
+import w9.e;
+import w9.f;
+import z8.a;
+import z8.i;
+import z8.q;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class FirebaseCommonRegistrar implements ComponentRegistrar {
+    public static /* synthetic */ String a(Context context) {
+        ApplicationInfo applicationInfo = context.getApplicationInfo();
+        return (applicationInfo == null || Build.VERSION.SDK_INT < 24) ? "" : String.valueOf(applicationInfo.minSdkVersion);
+    }
+
+    public static String b(String str) {
+        return str.replace(' ', '_').replace('/', '_');
+    }
+
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List getComponents() {
+    public final List getComponents() {
+        String str;
         ArrayList arrayList = new ArrayList();
-        arrayList.add(DefaultUserAgentPublisher.component());
-        arrayList.add(DefaultHeartBeatController.component());
-        arrayList.add(LibraryVersionComponent.create("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
-        arrayList.add(LibraryVersionComponent.create("fire-core", "20.4.2"));
-        arrayList.add(LibraryVersionComponent.create("device-name", safeValue(Build.PRODUCT)));
-        arrayList.add(LibraryVersionComponent.create("device-model", safeValue(Build.DEVICE)));
-        arrayList.add(LibraryVersionComponent.create("device-brand", safeValue(Build.BRAND)));
-        arrayList.add(LibraryVersionComponent.fromContext("android-target-sdk", new LibraryVersionComponent.VersionExtractor() { // from class: com.google.firebase.FirebaseCommonRegistrar$$ExternalSyntheticLambda1
-            @Override // com.google.firebase.platforminfo.LibraryVersionComponent.VersionExtractor
-            public final String extract(Object obj) {
-                return FirebaseCommonRegistrar.$r8$lambda$JRfXgWruDOlX8_YsmPkDH9kjxAM((Context) obj);
-            }
-        }));
-        arrayList.add(LibraryVersionComponent.fromContext("android-min-sdk", new LibraryVersionComponent.VersionExtractor() { // from class: com.google.firebase.FirebaseCommonRegistrar$$ExternalSyntheticLambda2
-            @Override // com.google.firebase.platforminfo.LibraryVersionComponent.VersionExtractor
-            public final String extract(Object obj) {
-                return FirebaseCommonRegistrar.$r8$lambda$6KbLzjDGzlo31N3xe2HtYAtvoWM((Context) obj);
-            }
-        }));
-        arrayList.add(LibraryVersionComponent.fromContext("android-platform", new LibraryVersionComponent.VersionExtractor() { // from class: com.google.firebase.FirebaseCommonRegistrar$$ExternalSyntheticLambda3
-            @Override // com.google.firebase.platforminfo.LibraryVersionComponent.VersionExtractor
-            public final String extract(Object obj) {
-                return FirebaseCommonRegistrar.$r8$lambda$i32xAjD3ZPnT8CWh_N09uYXbvXY((Context) obj);
-            }
-        }));
-        arrayList.add(LibraryVersionComponent.fromContext("android-installer", new LibraryVersionComponent.VersionExtractor() { // from class: com.google.firebase.FirebaseCommonRegistrar$$ExternalSyntheticLambda4
-            @Override // com.google.firebase.platforminfo.LibraryVersionComponent.VersionExtractor
-            public final String extract(Object obj) {
-                return FirebaseCommonRegistrar.$r8$lambda$4HU-LsSJXjiWd9yqSIuIvr69gmw((Context) obj);
-            }
-        }));
-        String detectVersion = KotlinDetector.detectVersion();
-        if (detectVersion != null) {
-            arrayList.add(LibraryVersionComponent.create("kotlin", detectVersion));
+        b a2 = a.a(ga.b.class);
+        a2.a(new i(2, 0, ga.a.class));
+        a2.f = new z(7);
+        arrayList.add(a2.b());
+        q qVar = new q(v8.a.class, Executor.class);
+        b bVar = new b(c.class, new Class[]{e.class, f.class});
+        bVar.a(i.a(Context.class));
+        bVar.a(i.a(h.class));
+        bVar.a(new i(2, 0, d.class));
+        bVar.a(new i(1, 1, ga.b.class));
+        bVar.a(new i(qVar, 1, 0));
+        bVar.f = new t0.c(qVar, 4);
+        arrayList.add(bVar.b());
+        arrayList.add(i7.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
+        arrayList.add(i7.a("fire-core", "20.4.2"));
+        arrayList.add(i7.a("device-name", b(Build.PRODUCT)));
+        arrayList.add(i7.a("device-model", b(Build.DEVICE)));
+        arrayList.add(i7.a("device-brand", b(Build.BRAND)));
+        arrayList.add(i7.b("android-target-sdk", new r4.a(26)));
+        arrayList.add(i7.b("android-min-sdk", new r4.a(27)));
+        arrayList.add(i7.b("android-platform", new r4.a(28)));
+        arrayList.add(i7.b("android-installer", new r4.a(29)));
+        try {
+            pc.b.b.getClass();
+            str = "2.1.20";
+        } catch (NoClassDefFoundError unused) {
+            str = null;
+        }
+        if (str != null) {
+            arrayList.add(i7.a("kotlin", str));
         }
         return arrayList;
-    }
-
-    public static /* synthetic */ String $r8$lambda$JRfXgWruDOlX8_YsmPkDH9kjxAM(Context context) {
-        ApplicationInfo applicationInfo = context.getApplicationInfo();
-        if (applicationInfo != null) {
-            return String.valueOf(applicationInfo.targetSdkVersion);
-        }
-        return "";
-    }
-
-    public static /* synthetic */ String $r8$lambda$6KbLzjDGzlo31N3xe2HtYAtvoWM(Context context) {
-        int i;
-        ApplicationInfo applicationInfo = context.getApplicationInfo();
-        if (applicationInfo != null && Build.VERSION.SDK_INT >= 24) {
-            i = applicationInfo.minSdkVersion;
-            return String.valueOf(i);
-        }
-        return "";
-    }
-
-    public static /* synthetic */ String $r8$lambda$i32xAjD3ZPnT8CWh_N09uYXbvXY(Context context) {
-        int i = Build.VERSION.SDK_INT;
-        if (context.getPackageManager().hasSystemFeature("android.hardware.type.television")) {
-            return "tv";
-        }
-        if (context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
-            return "watch";
-        }
-        if (i >= 23 && context.getPackageManager().hasSystemFeature("android.hardware.type.automotive")) {
-            return "auto";
-        }
-        if (i >= 26 && context.getPackageManager().hasSystemFeature("android.hardware.type.embedded")) {
-            return "embedded";
-        }
-        return "";
-    }
-
-    public static /* synthetic */ String $r8$lambda$4HU-LsSJXjiWd9yqSIuIvr69gmw(Context context) {
-        String installerPackageName = context.getPackageManager().getInstallerPackageName(context.getPackageName());
-        return installerPackageName != null ? safeValue(installerPackageName) : "";
-    }
-
-    private static String safeValue(String str) {
-        return str.replace(' ', '_').replace('/', '_');
     }
 }

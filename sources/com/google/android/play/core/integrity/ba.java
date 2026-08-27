@@ -1,18 +1,19 @@
 package com.google.android.play.core.integrity;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class ba implements com.google.android.play.integrity.internal.ay {
-    private final com.google.android.play.integrity.internal.bd a;
-    private final com.google.android.play.integrity.internal.bd b;
+public final class ba implements l8.n {
+    private final l8.q a;
+    private final l8.q b;
 
-    public ba(com.google.android.play.integrity.internal.bd bdVar, com.google.android.play.integrity.internal.bd bdVar2) {
-        this.a = bdVar;
-        this.b = bdVar2;
+    public ba(l8.q qVar, l8.q qVar2) {
+        this.a = qVar;
+        this.b = qVar2;
     }
 
-    @Override // com.google.android.play.integrity.internal.bd
+    @Override // l8.q
     public final /* bridge */ /* synthetic */ Object a() {
-        com.google.android.play.integrity.internal.bd bdVar = this.b;
-        return new az((bn) this.a.a(), (bt) bdVar.a());
+        l8.q qVar = this.b;
+        return new az((bn) this.a.a(), (bt) qVar.a());
     }
 }

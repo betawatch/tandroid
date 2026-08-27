@@ -7,6 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zztm extends LinkedHashMap {
     private static final zztm zza;
@@ -34,7 +35,6 @@ public final class zztm extends LinkedHashMap {
             return obj.hashCode();
         }
         byte[] bArr = (byte[]) obj;
-        byte[] bArr2 = zzsv.zzb;
         int length = bArr.length;
         int zzb = zzsv.zzb(length, bArr, 0, length);
         if (zzb == 0) {
@@ -90,12 +90,12 @@ public final class zztm extends LinkedHashMap {
     @Override // java.util.AbstractMap, java.util.Map
     public final int hashCode() {
         Iterator it = entrySet().iterator();
-        int i = 0;
+        int i10 = 0;
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            i += zzf(entry.getValue()) ^ zzf(entry.getKey());
+            i10 += zzf(entry.getValue()) ^ zzf(entry.getKey());
         }
-        return i;
+        return i10;
     }
 
     @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map

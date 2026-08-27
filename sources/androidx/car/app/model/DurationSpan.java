@@ -1,31 +1,18 @@
 package androidx.car.app.model;
 
 import j$.time.Duration;
-import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class DurationSpan extends CarSpan {
     private final long mDurationSeconds;
 
-    public static DurationSpan create(long j) {
-        return new DurationSpan(j);
+    public DurationSpan(long j10) {
+        this.mDurationSeconds = j10;
     }
 
-    public static DurationSpan create(Duration duration) {
-        return Api26Impl.create(duration);
-    }
-
-    public long getDurationSeconds() {
-        return this.mDurationSeconds;
-    }
-
-    public String toString() {
-        return "[seconds: " + this.mDurationSeconds + "]";
-    }
-
-    public int hashCode() {
-        long j = this.mDurationSeconds;
-        return (int) (j ^ (j >>> 32));
+    public static DurationSpan create(long j10) {
+        return new DurationSpan(j10);
     }
 
     public boolean equals(Object obj) {
@@ -35,18 +22,24 @@ public final class DurationSpan extends CarSpan {
         return (obj instanceof DurationSpan) && this.mDurationSeconds == ((DurationSpan) obj).mDurationSeconds;
     }
 
-    DurationSpan(long j) {
-        this.mDurationSeconds = j;
+    public long getDurationSeconds() {
+        return this.mDurationSeconds;
+    }
+
+    public int hashCode() {
+        long j10 = this.mDurationSeconds;
+        return (int) (j10 ^ (j10 >>> 32));
+    }
+
+    public String toString() {
+        return a9.p.o(new StringBuilder("[seconds: "), this.mDurationSeconds, "]");
+    }
+
+    public static DurationSpan create(Duration duration) {
+        return j.a(duration);
     }
 
     private DurationSpan() {
         this.mDurationSeconds = 0L;
-    }
-
-    private static final class Api26Impl {
-        public static DurationSpan create(Duration duration) {
-            Objects.requireNonNull(duration);
-            return new DurationSpan(duration.getSeconds());
-        }
     }
 }

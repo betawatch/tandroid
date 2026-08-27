@@ -3,7 +3,8 @@ package org.webrtc;
 import java.util.HashMap;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 class H264Utils {
     public static VideoCodecInfo DEFAULT_H264_BASELINE_PROFILE_CODEC = new VideoCodecInfo("H264", getDefaultH264Params(false));
     public static VideoCodecInfo DEFAULT_H264_HIGH_PROFILE_CODEC = new VideoCodecInfo("H264", getDefaultH264Params(true));
@@ -16,26 +17,17 @@ class H264Utils {
     public static final String H264_PROFILE_CONSTRAINED_BASELINE = "42e0";
     public static final String H264_PROFILE_CONSTRAINED_HIGH = "640c";
 
-    private static native boolean nativeIsSameH264Profile(Map<String, String> map, Map<String, String> map2);
-
-    H264Utils() {
-    }
-
-    public static Map<String, String> getDefaultH264Params(boolean z) {
-        String str;
+    public static Map<String, String> getDefaultH264Params(boolean z10) {
         HashMap hashMap = new HashMap();
         hashMap.put("level-asymmetry-allowed", "1");
         hashMap.put("packetization-mode", "1");
-        if (z) {
-            str = "640c1f";
-        } else {
-            str = "42e01f";
-        }
-        hashMap.put("profile-level-id", str);
+        hashMap.put("profile-level-id", z10 ? "640c1f" : "42e01f");
         return hashMap;
     }
 
     public static boolean isSameH264Profile(Map<String, String> map, Map<String, String> map2) {
         return nativeIsSameH264Profile(map, map2);
     }
+
+    private static native boolean nativeIsSameH264Profile(Map<String, String> map, Map<String, String> map2);
 }

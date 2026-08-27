@@ -21,7 +21,7 @@ public final /* synthetic */ class i implements java.util.stream.Collector {
 
     @Override // java.util.stream.Collector
     public final /* synthetic */ Set characteristics() {
-        return r1.N(this.a.characteristics());
+        return t3.q0(this.a.characteristics());
     }
 
     @Override // java.util.stream.Collector

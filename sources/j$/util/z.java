@@ -1,45 +1,49 @@
 package j$.util;
 
+import java.util.function.IntConsumer;
+import java.util.function.LongConsumer;
+
 /* loaded from: classes2.dex */
-public final class z {
-    public static final z c = new z();
-    public final boolean a;
-    public final double b;
+public final class z implements LongConsumer, IntConsumer {
+    private long count;
+    private long sum;
+    private long min = Long.MAX_VALUE;
+    private long max = Long.MIN_VALUE;
 
-    public z() {
-        this.a = false;
-        this.b = Double.NaN;
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return j$.com.android.tools.r8.a.c(this, intConsumer);
     }
 
-    public z(double d) {
-        this.a = true;
-        this.b = d;
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.d(this, longConsumer);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof z)) {
-            return false;
-        }
-        z zVar = (z) obj;
-        boolean z = this.a;
-        return (z && zVar.a) ? Double.compare(this.b, zVar.b) == 0 : z == zVar.a;
+    @Override // java.util.function.IntConsumer
+    public final void accept(int i10) {
+        accept(i10);
     }
 
-    public final int hashCode() {
-        if (!this.a) {
-            return 0;
-        }
-        long doubleToLongBits = Double.doubleToLongBits(this.b);
-        return (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+    @Override // java.util.function.LongConsumer
+    public final void accept(long j10) {
+        this.count++;
+        this.sum += j10;
+        this.min = Math.min(this.min, j10);
+        this.max = Math.max(this.max, j10);
+    }
+
+    public final void a(z zVar) {
+        this.count += zVar.count;
+        this.sum += zVar.sum;
+        this.min = Math.min(this.min, zVar.min);
+        this.max = Math.max(this.max, zVar.max);
     }
 
     public final String toString() {
-        if (this.a) {
-            return "OptionalDouble[" + this.b + "]";
-        }
-        return "OptionalDouble.empty";
+        String simpleName = z.class.getSimpleName();
+        Long valueOf = Long.valueOf(this.count);
+        Long valueOf2 = Long.valueOf(this.sum);
+        Long valueOf3 = Long.valueOf(this.min);
+        long j10 = this.count;
+        return String.format("%s{count=%d, sum=%d, min=%d, average=%f, max=%d}", simpleName, valueOf, valueOf2, valueOf3, Double.valueOf(j10 > 0 ? this.sum / j10 : 0.0d), Long.valueOf(this.max));
     }
 }

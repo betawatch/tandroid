@@ -2,7 +2,8 @@ package ru.noties.jlatexmath.awt.geom;
 
 import android.graphics.Canvas;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public class AffineTransform implements Cloneable {
     private final Canvas canvas;
     private final AffineTransform parent;
@@ -12,34 +13,17 @@ public class AffineTransform implements Cloneable {
     private float translateX;
     private float translateY;
 
-    public static AffineTransform create(Canvas canvas) {
-        return new AffineTransform(null, canvas);
-    }
-
     private AffineTransform(AffineTransform affineTransform, Canvas canvas) {
         this.parent = affineTransform;
         this.canvas = canvas;
     }
 
-    public AffineTransform save() {
-        AffineTransform affineTransform = new AffineTransform(this, this.canvas);
-        affineTransform.setScale(this.scaleX, this.scaleY);
-        affineTransform.setTranslate(this.translateX, this.translateY);
-        affineTransform.save = this.canvas.save();
-        return affineTransform;
+    public static AffineTransform create(Canvas canvas) {
+        return new AffineTransform(null, canvas);
     }
 
-    public AffineTransform restore() {
-        int i = this.save;
-        if (i != -1) {
-            this.canvas.restoreToCount(i);
-            this.save = -1;
-        }
-        AffineTransform affineTransform = this.parent;
-        if (affineTransform != null) {
-            return affineTransform;
-        }
-        throw new IllegalStateException("Cannot restore root transform instance");
+    public Canvas getCanvas() {
+        return this.canvas;
     }
 
     public double getScaleX() {
@@ -50,28 +34,45 @@ public class AffineTransform implements Cloneable {
         return this.scaleY;
     }
 
-    public void scale(double d, double d2) {
-        setScale(d, d2);
-        this.canvas.scale((float) d, (float) d2);
+    public AffineTransform restore() {
+        int i10 = this.save;
+        if (i10 != -1) {
+            this.canvas.restoreToCount(i10);
+            this.save = -1;
+        }
+        AffineTransform affineTransform = this.parent;
+        if (affineTransform != null) {
+            return affineTransform;
+        }
+        throw new IllegalStateException("Cannot restore root transform instance");
     }
 
-    public void translate(float f, float f2) {
-        this.canvas.translate(f, f2);
-        setTranslate(f, f2);
+    public AffineTransform save() {
+        AffineTransform affineTransform = new AffineTransform(this, this.canvas);
+        affineTransform.setScale(this.scaleX, this.scaleY);
+        affineTransform.setTranslate(this.translateX, this.translateY);
+        affineTransform.save = this.canvas.save();
+        return affineTransform;
     }
 
-    public void setScale(double d, double d2) {
+    public void scale(double d, double d10) {
+        setScale(d, d10);
+        this.canvas.scale((float) d, (float) d10);
+    }
+
+    public void setScale(double d, double d10) {
         this.scaleX = d;
-        this.scaleY = d2;
+        this.scaleY = d10;
     }
 
-    public void setTranslate(float f, float f2) {
-        this.translateX = f;
-        this.translateY = f2;
+    public void setTranslate(float f10, float f11) {
+        this.translateX = f10;
+        this.translateY = f11;
     }
 
-    public Canvas getCanvas() {
-        return this.canvas;
+    public void translate(float f10, float f11) {
+        this.canvas.translate(f10, f11);
+        setTranslate(f10, f11);
     }
 
     public float translateX() {

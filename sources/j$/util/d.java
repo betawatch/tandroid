@@ -1,72 +1,33 @@
 package j$.util;
 
+import java.io.Serializable;
 import java.util.Comparator;
 import java.util.function.Function;
-import java.util.function.ToDoubleFunction;
-import java.util.function.ToIntFunction;
-import java.util.function.ToLongFunction;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* loaded from: classes2.dex */
-public final class d implements Comparator {
-    public static final d INSTANCE;
-    public static final /* synthetic */ d[] a;
+public final /* synthetic */ class d implements Comparator, Serializable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Comparator b;
+    public final /* synthetic */ Object c;
 
-    public static d valueOf(String str) {
-        return (d) Enum.valueOf(d.class, str);
-    }
-
-    public static d[] values() {
-        return (d[]) a.clone();
+    public /* synthetic */ d(Comparator comparator, Object obj, int i10) {
+        this.a = i10;
+        this.b = comparator;
+        this.c = obj;
     }
 
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
-        return ((Comparable) obj).compareTo((Comparable) obj2);
-    }
-
-    static {
-        d dVar = new d("INSTANCE", 0);
-        INSTANCE = dVar;
-        a = new d[]{dVar};
-    }
-
-    @Override // java.util.Comparator
-    public final Comparator reversed() {
-        return Comparator$-CC.reverseOrder();
-    }
-
-    @Override // java.util.Comparator
-    public final Comparator thenComparing(Comparator comparator) {
-        Objects.requireNonNull(comparator);
-        return new c(this, comparator, 0);
-    }
-
-    @Override // java.util.Comparator
-    public final Comparator thenComparing(Function function) {
-        return Comparator$-EL.a(this, Comparator$-CC.comparing(function));
-    }
-
-    @Override // java.util.Comparator
-    public final Comparator thenComparingInt(ToIntFunction toIntFunction) {
-        return Comparator$-EL.a(this, Comparator$-CC.comparingInt(toIntFunction));
-    }
-
-    @Override // java.util.Comparator
-    public final Comparator thenComparingLong(ToLongFunction toLongFunction) {
-        return Comparator$-EL.a(this, Comparator$-CC.comparingLong(toLongFunction));
-    }
-
-    @Override // java.util.Comparator
-    public final Comparator thenComparingDouble(ToDoubleFunction toDoubleFunction) {
-        return Comparator$-EL.a(this, Comparator$-CC.comparingDouble(toDoubleFunction));
-    }
-
-    @Override // java.util.Comparator
-    public final Comparator thenComparing(Function function, Comparator comparator) {
-        Objects.requireNonNull(function);
-        Objects.requireNonNull(comparator);
-        return Comparator$-EL.a(this, new c(comparator, function, 1));
+        switch (this.a) {
+            case 0:
+                Comparator comparator = this.b;
+                Comparator comparator2 = (Comparator) this.c;
+                int compare = comparator.compare(obj, obj2);
+                return compare != 0 ? compare : comparator2.compare(obj, obj2);
+            default:
+                Comparator comparator3 = this.b;
+                Function function = (Function) this.c;
+                return comparator3.compare(function.apply(obj), function.apply(obj2));
+        }
     }
 }

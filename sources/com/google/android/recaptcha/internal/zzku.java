@@ -1,16 +1,34 @@
 package com.google.android.recaptcha.internal;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import kotlin.collections.ArraysKt;
-import kotlin.collections.CollectionsKt;
+import kotlin.jvm.internal.j;
+import qc.f;
+import qc.m;
+import qc.o;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzku {
-    private List zza = CollectionsKt.emptyList();
+    private List zza = o.a;
 
     public final long zza(long[] jArr) {
-        Iterator it = CollectionsKt.plus(this.zza, ArraysKt.toList(jArr)).iterator();
+        ArrayList arrayList;
+        List list = this.zza;
+        List g10 = f.g(jArr);
+        j.e(list, "<this>");
+        if (g10 instanceof Collection) {
+            List list2 = g10;
+            arrayList = new ArrayList(list2.size() + list.size());
+            arrayList.addAll(list);
+            arrayList.addAll(list2);
+        } else {
+            arrayList = new ArrayList(list);
+            m.e(arrayList, g10);
+        }
+        Iterator it = arrayList.iterator();
         if (!it.hasNext()) {
             throw new UnsupportedOperationException("Empty collection can't be reduced.");
         }
@@ -22,6 +40,6 @@ public final class zzku {
     }
 
     public final void zzb(long[] jArr) {
-        this.zza = ArraysKt.toList(jArr);
+        this.zza = f.g(jArr);
     }
 }

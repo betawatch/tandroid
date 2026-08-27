@@ -1,10 +1,11 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class DelimiterMappingNotFoundException extends JMathTeXException {
     private static final long serialVersionUID = 273456491396361682L;
 
-    protected DelimiterMappingNotFoundException(char c) {
-        super("No mapping found for the character '" + c + "'! Insert a <" + TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL + ">-element in '" + TeXFormulaSettingsParser.RESOURCE_NAME + "'.");
+    public DelimiterMappingNotFoundException(char c10) {
+        super("No mapping found for the character '" + c10 + "'! Insert a <Map>-element in 'TeXFormulaSettings.xml'.");
     }
 }

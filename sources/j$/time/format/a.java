@@ -7,8 +7,9 @@ import j$.util.Objects;
 import j$.util.function.BiConsumer$-CC;
 import j$.util.function.BiFunction$-CC;
 import j$.util.function.Function$-CC;
-import j$.util.r0;
+import j$.util.s1;
 import j$.util.stream.Collectors;
+import j$.util.z;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -27,8 +28,8 @@ import java.util.function.Supplier;
 public final /* synthetic */ class a implements IntFunction, Supplier, BiConsumer, BinaryOperator, Function, DoubleBinaryOperator {
     public final /* synthetic */ int a;
 
-    public /* synthetic */ a(int i) {
-        this.a = i;
+    public /* synthetic */ a(int i10) {
+        this.a = i10;
     }
 
     public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
@@ -74,13 +75,13 @@ public final /* synthetic */ class a implements IntFunction, Supplier, BiConsume
                 Set set = Collectors.a;
                 return obj;
             default:
-                return ((r0) obj).toString();
+                return ((s1) obj).toString();
         }
     }
 
     @Override // java.util.function.DoubleBinaryOperator
-    public double applyAsDouble(double d, double d2) {
-        return Math.min(d, d2);
+    public double applyAsDouble(double d, double d10) {
+        return Math.min(d, d10);
     }
 
     public /* synthetic */ Function compose(Function function) {
@@ -103,15 +104,15 @@ public final /* synthetic */ class a implements IntFunction, Supplier, BiConsume
                 list.addAll((List) obj2);
                 return list;
             case 21:
-                r0 r0Var = (r0) obj;
-                r0 r0Var2 = (r0) obj2;
-                r0Var.getClass();
-                Objects.requireNonNull(r0Var2);
-                if (r0Var2.d != null) {
-                    r0Var2.b();
-                    r0Var.a(r0Var2.d[0]);
+                s1 s1Var = (s1) obj;
+                s1 s1Var2 = (s1) obj2;
+                s1Var.getClass();
+                Objects.requireNonNull(s1Var2);
+                if (s1Var2.d != null) {
+                    s1Var2.b();
+                    s1Var.a(s1Var2.d[0]);
                 }
-                return r0Var;
+                return s1Var;
             default:
                 Set set3 = (Set) obj;
                 Set set4 = (Set) obj2;
@@ -138,7 +139,7 @@ public final /* synthetic */ class a implements IntFunction, Supplier, BiConsume
                 ((Set) obj).add(obj2);
                 break;
             case 20:
-                ((r0) obj).a((CharSequence) obj2);
+                ((s1) obj).a((CharSequence) obj2);
                 break;
             case 25:
                 ((LinkedHashSet) obj).add(obj2);
@@ -159,36 +160,36 @@ public final /* synthetic */ class a implements IntFunction, Supplier, BiConsume
     public Object a(j$.time.temporal.l lVar) {
         switch (this.a) {
             case 0:
-                ZoneId zoneId = (ZoneId) lVar.r(j$.time.temporal.p.a);
+                ZoneId zoneId = (ZoneId) lVar.m(j$.time.temporal.p.a);
                 if (zoneId == null || (zoneId instanceof ZoneOffset)) {
                     return null;
                 }
                 return zoneId;
             case 1:
-                return (ZoneId) lVar.r(j$.time.temporal.p.a);
+                return (ZoneId) lVar.m(j$.time.temporal.p.a);
             case 2:
-                return (j$.time.chrono.k) lVar.r(j$.time.temporal.p.b);
+                return (j$.time.chrono.k) lVar.m(j$.time.temporal.p.b);
             case 3:
-                return (j$.time.temporal.q) lVar.r(j$.time.temporal.p.c);
+                return (j$.time.temporal.q) lVar.m(j$.time.temporal.p.c);
             case 4:
                 j$.time.temporal.a aVar = j$.time.temporal.a.OFFSET_SECONDS;
-                if (lVar.h(aVar)) {
-                    return ZoneOffset.O(lVar.o(aVar));
+                if (lVar.e(aVar)) {
+                    return ZoneOffset.O(lVar.j(aVar));
                 }
                 return null;
             case 5:
-                ZoneId zoneId2 = (ZoneId) lVar.r(j$.time.temporal.p.a);
-                return zoneId2 != null ? zoneId2 : (ZoneId) lVar.r(j$.time.temporal.p.d);
+                ZoneId zoneId2 = (ZoneId) lVar.m(j$.time.temporal.p.a);
+                return zoneId2 != null ? zoneId2 : (ZoneId) lVar.m(j$.time.temporal.p.d);
             case 6:
                 j$.time.temporal.a aVar2 = j$.time.temporal.a.EPOCH_DAY;
-                if (lVar.h(aVar2)) {
-                    return LocalDate.R(lVar.u(aVar2));
+                if (lVar.e(aVar2)) {
+                    return LocalDate.R(lVar.y(aVar2));
                 }
                 return null;
             default:
                 j$.time.temporal.a aVar3 = j$.time.temporal.a.NANO_OF_DAY;
-                if (lVar.h(aVar3)) {
-                    return j$.time.h.K(lVar.u(aVar3));
+                if (lVar.e(aVar3)) {
+                    return j$.time.h.K(lVar.y(aVar3));
                 }
                 return null;
         }
@@ -219,15 +220,15 @@ public final /* synthetic */ class a implements IntFunction, Supplier, BiConsume
     public Object get() {
         switch (this.a) {
             case 9:
-                return new j$.util.u();
+                return new j$.util.w();
             case 12:
                 return new ArrayList();
             case 14:
-                return new j$.util.v();
+                return new j$.util.x();
             case 15:
                 return new HashSet();
             case 17:
-                return new j$.util.x();
+                return new z();
             case 24:
                 return new LinkedHashSet();
             default:
@@ -236,7 +237,7 @@ public final /* synthetic */ class a implements IntFunction, Supplier, BiConsume
     }
 
     @Override // java.util.function.IntFunction
-    public Object apply(int i) {
-        return new Object[i];
+    public Object apply(int i10) {
+        return new Object[i10];
     }
 }

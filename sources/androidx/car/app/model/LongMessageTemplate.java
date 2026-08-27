@@ -1,49 +1,20 @@
 package androidx.car.app.model;
 
-import androidx.car.app.utils.CollectionUtils;
 import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class LongMessageTemplate implements Template {
+public final class LongMessageTemplate implements x0 {
     private final List<Action> mActionList;
     private final ActionStrip mActionStrip;
     private final Action mHeaderAction;
     private final CarText mMessage;
     private final CarText mTitle;
 
-    public static final class Builder {
-    }
-
-    public CarText getTitle() {
-        return this.mTitle;
-    }
-
-    public Action getHeaderAction() {
-        return this.mHeaderAction;
-    }
-
-    public ActionStrip getActionStrip() {
-        return this.mActionStrip;
-    }
-
-    public CarText getMessage() {
-        CarText carText = this.mMessage;
-        Objects.requireNonNull(carText);
-        return carText;
-    }
-
-    public List<Action> getActions() {
-        return CollectionUtils.emptyIfNull(this.mActionList);
-    }
-
-    public String toString() {
-        return "LongMessageTemplate";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mTitle, this.mMessage, this.mHeaderAction, this.mActionList, this.mActionStrip);
+    public LongMessageTemplate(w wVar) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -57,8 +28,35 @@ public final class LongMessageTemplate implements Template {
         return Objects.equals(this.mTitle, longMessageTemplate.mTitle) && Objects.equals(this.mMessage, longMessageTemplate.mMessage) && Objects.equals(this.mHeaderAction, longMessageTemplate.mHeaderAction) && Objects.equals(this.mActionList, longMessageTemplate.mActionList) && Objects.equals(this.mActionStrip, longMessageTemplate.mActionStrip);
     }
 
-    LongMessageTemplate(Builder builder) {
-        throw null;
+    public ActionStrip getActionStrip() {
+        return this.mActionStrip;
+    }
+
+    public List<Action> getActions() {
+        List<Action> list = this.mActionList;
+        return list != null ? list : Collections.EMPTY_LIST;
+    }
+
+    public Action getHeaderAction() {
+        return this.mHeaderAction;
+    }
+
+    public CarText getMessage() {
+        CarText carText = this.mMessage;
+        Objects.requireNonNull(carText);
+        return carText;
+    }
+
+    public CarText getTitle() {
+        return this.mTitle;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mTitle, this.mMessage, this.mHeaderAction, this.mActionList, this.mActionStrip);
+    }
+
+    public String toString() {
+        return "LongMessageTemplate";
     }
 
     private LongMessageTemplate() {

@@ -10,7 +10,7 @@ public final class q implements j$.time.temporal.l {
     public final /* synthetic */ ZoneId d;
 
     @Override // j$.time.temporal.l
-    public final /* synthetic */ int o(j$.time.temporal.o oVar) {
+    public final /* synthetic */ int j(j$.time.temporal.o oVar) {
         return j$.time.temporal.p.a(this, oVar);
     }
 
@@ -22,34 +22,34 @@ public final class q implements j$.time.temporal.l {
     }
 
     @Override // j$.time.temporal.l
-    public final boolean h(j$.time.temporal.o oVar) {
+    public final boolean e(j$.time.temporal.o oVar) {
         j$.time.chrono.b bVar = this.a;
-        if (bVar != null && oVar.u()) {
-            return bVar.h(oVar);
+        if (bVar != null && oVar.isDateBased()) {
+            return bVar.e(oVar);
         }
-        return this.b.h(oVar);
+        return this.b.e(oVar);
     }
 
     @Override // j$.time.temporal.l
-    public final j$.time.temporal.s q(j$.time.temporal.o oVar) {
+    public final j$.time.temporal.s l(j$.time.temporal.o oVar) {
         j$.time.chrono.b bVar = this.a;
-        if (bVar != null && oVar.u()) {
-            return bVar.q(oVar);
+        if (bVar != null && oVar.isDateBased()) {
+            return bVar.l(oVar);
         }
-        return this.b.q(oVar);
+        return this.b.l(oVar);
     }
 
     @Override // j$.time.temporal.l
-    public final long u(j$.time.temporal.o oVar) {
+    public final long y(j$.time.temporal.o oVar) {
         j$.time.chrono.b bVar = this.a;
-        if (bVar != null && oVar.u()) {
-            return bVar.u(oVar);
+        if (bVar != null && oVar.isDateBased()) {
+            return bVar.y(oVar);
         }
-        return this.b.u(oVar);
+        return this.b.y(oVar);
     }
 
     @Override // j$.time.temporal.l
-    public final Object r(a aVar) {
+    public final Object m(a aVar) {
         if (aVar == j$.time.temporal.p.b) {
             return this.c;
         }
@@ -57,7 +57,7 @@ public final class q implements j$.time.temporal.l {
             return this.d;
         }
         if (aVar == j$.time.temporal.p.c) {
-            return this.b.r(aVar);
+            return this.b.m(aVar);
         }
         return aVar.a(this);
     }

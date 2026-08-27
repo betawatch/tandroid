@@ -82,11 +82,11 @@ public final class i extends b implements Set, j$.util.Set {
     @Override // java.util.Collection, java.util.Set
     public final int hashCode() {
         Object it = iterator();
-        int i = 0;
+        int i10 = 0;
         while (((a) it).hasNext()) {
-            i += ((h) it).next().hashCode();
+            i10 += ((h) it).next().hashCode();
         }
-        return i;
+        return i10;
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -104,10 +104,10 @@ public final class i extends b implements Set, j$.util.Set {
     @Override // java.util.Collection, java.lang.Iterable, java.util.Set, j$.util.Collection
     public final j$.util.Spliterator spliterator() {
         ConcurrentHashMap concurrentHashMap = this.a;
-        long j = concurrentHashMap.j();
+        long j10 = concurrentHashMap.j();
         l[] lVarArr = concurrentHashMap.a;
         int length = lVarArr == null ? 0 : lVarArr.length;
-        return new j(lVarArr, length, 0, length, j < 0 ? 0L : j, 0);
+        return new j(lVarArr, length, 0, length, j10 < 0 ? 0L : j10, 0);
     }
 
     @Override // java.lang.Iterable, j$.util.Collection
@@ -119,11 +119,11 @@ public final class i extends b implements Set, j$.util.Set {
         }
         p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
         while (true) {
-            l a = pVar.a();
-            if (a == null) {
+            l a2 = pVar.a();
+            if (a2 == null) {
                 return;
             } else {
-                consumer.s(a.b);
+                consumer.x(a2.b);
             }
         }
     }

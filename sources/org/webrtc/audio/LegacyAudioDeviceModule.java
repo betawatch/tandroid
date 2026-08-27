@@ -1,9 +1,8 @@
 package org.webrtc.audio;
 
-import org.webrtc.audio.AudioDeviceModule;
-
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LegacyAudioDeviceModule implements AudioDeviceModule {
     @Override // org.webrtc.audio.AudioDeviceModule
     public long getNativeAudioDeviceModulePointer() {
@@ -11,26 +10,26 @@ public class LegacyAudioDeviceModule implements AudioDeviceModule {
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule
+    public void setMicrophoneMute(boolean z10) {
+        org.webrtc.voiceengine.WebRtcAudioRecord.setMicrophoneMute(z10);
+    }
+
+    @Override // org.webrtc.audio.AudioDeviceModule
+    public final /* synthetic */ boolean setNoiseSuppressorEnabled(boolean z10) {
+        return a.a(this, z10);
+    }
+
+    @Override // org.webrtc.audio.AudioDeviceModule
+    public final /* synthetic */ boolean setPreferredMicrophoneFieldDimension(float f10) {
+        return a.b(this, f10);
+    }
+
+    @Override // org.webrtc.audio.AudioDeviceModule
+    public void setSpeakerMute(boolean z10) {
+        org.webrtc.voiceengine.WebRtcAudioTrack.setSpeakerMute(z10);
+    }
+
+    @Override // org.webrtc.audio.AudioDeviceModule
     public void release() {
-    }
-
-    @Override // org.webrtc.audio.AudioDeviceModule
-    public /* synthetic */ boolean setNoiseSuppressorEnabled(boolean z) {
-        return AudioDeviceModule.-CC.$default$setNoiseSuppressorEnabled(this, z);
-    }
-
-    @Override // org.webrtc.audio.AudioDeviceModule
-    public /* synthetic */ boolean setPreferredMicrophoneFieldDimension(float f) {
-        return AudioDeviceModule.-CC.$default$setPreferredMicrophoneFieldDimension(this, f);
-    }
-
-    @Override // org.webrtc.audio.AudioDeviceModule
-    public void setSpeakerMute(boolean z) {
-        org.webrtc.voiceengine.WebRtcAudioTrack.setSpeakerMute(z);
-    }
-
-    @Override // org.webrtc.audio.AudioDeviceModule
-    public void setMicrophoneMute(boolean z) {
-        org.webrtc.voiceengine.WebRtcAudioRecord.setMicrophoneMute(z);
     }
 }

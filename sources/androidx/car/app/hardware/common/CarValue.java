@@ -4,6 +4,7 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class CarValue<T> {
     public static final int STATUS_SUCCESS = 1;
@@ -23,39 +24,19 @@ public final class CarValue<T> {
     public static final CarValue<List<Float>> UNKNOWN_FLOAT_LIST = unknown();
     public static final CarValue<List<Integer>> UNKNOWN_INTEGER_LIST = unknown();
 
+    public CarValue(T t10, long j10, int i10) {
+        this.mValue = t10;
+        this.mTimestampMillis = j10;
+        this.mStatus = i10;
+        this.mCarZones = Collections.singletonList(CarZone.CAR_ZONE_GLOBAL);
+    }
+
     private static <T> CarValue<T> unimplemented() {
         return new CarValue<>(null, 0L, 2);
     }
 
     private static <T> CarValue<T> unknown() {
         return new CarValue<>(null, 0L, 0);
-    }
-
-    public T getValue() {
-        return this.mValue;
-    }
-
-    public long getTimestampMillis() {
-        return this.mTimestampMillis;
-    }
-
-    public int getStatus() {
-        return this.mStatus;
-    }
-
-    public List<CarZone> getCarZones() {
-        if (this.mStatus == 2) {
-            return Collections.EMPTY_LIST;
-        }
-        return this.mCarZones;
-    }
-
-    public String toString() {
-        return "[value: " + this.mValue + ", timestamp: " + this.mTimestampMillis + ", Status: " + this.mStatus + ", CarZones: " + this.mCarZones + "]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mValue, Long.valueOf(this.mTimestampMillis), Integer.valueOf(this.mStatus), this.mCarZones);
     }
 
     public boolean equals(Object obj) {
@@ -69,17 +50,34 @@ public final class CarValue<T> {
         return Objects.equals(this.mValue, carValue.mValue) && this.mTimestampMillis == carValue.mTimestampMillis && this.mStatus == carValue.mStatus && Objects.equals(this.mCarZones, carValue.mCarZones);
     }
 
-    public CarValue(T t, long j, int i) {
-        this.mValue = t;
-        this.mTimestampMillis = j;
-        this.mStatus = i;
-        this.mCarZones = Collections.singletonList(CarZone.CAR_ZONE_GLOBAL);
+    public List<CarZone> getCarZones() {
+        return this.mStatus == 2 ? Collections.EMPTY_LIST : this.mCarZones;
     }
 
-    public CarValue(T t, long j, int i, List<CarZone> list) {
-        this.mValue = t;
-        this.mTimestampMillis = j;
-        this.mStatus = i;
+    public int getStatus() {
+        return this.mStatus;
+    }
+
+    public long getTimestampMillis() {
+        return this.mTimestampMillis;
+    }
+
+    public T getValue() {
+        return this.mValue;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mValue, Long.valueOf(this.mTimestampMillis), Integer.valueOf(this.mStatus), this.mCarZones);
+    }
+
+    public String toString() {
+        return "[value: " + this.mValue + ", timestamp: " + this.mTimestampMillis + ", Status: " + this.mStatus + ", CarZones: " + this.mCarZones + "]";
+    }
+
+    public CarValue(T t10, long j10, int i10, List<CarZone> list) {
+        this.mValue = t10;
+        this.mTimestampMillis = j10;
+        this.mStatus = i10;
         this.mCarZones = list;
     }
 

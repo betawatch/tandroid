@@ -12,19 +12,18 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.utils.tlutils.TlUtils;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.TypingDotsDrawable;
-import org.telegram.ui.MultiLayoutTypingAnimator;
+import org.telegram.ui.Components.cq;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.gj0;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class BotForumHelper extends BaseController {
     private static volatile BotForumHelper[] Instance = new BotForumHelper[4];
     private final DialogTopicIdKeyMap<BotDraftMessage> botTextDraftsByRandomIds;
@@ -32,359 +31,45 @@ public class BotForumHelper extends BaseController {
     private final LongSparseArray<List<MessagesStorage.IntCallback>> pendingBotTopics;
     private final SharedPreferences preferences;
 
-    public enum SteamingSendButtonState {
-        NO_STREAMING,
-        BLOCKING,
-        STOP
-    }
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class BotDraftAnimationsPool {
+        private final DialogTopicIdKeyMap<gj0> animators = new DialogTopicIdKeyMap<>();
+        private final SparseIntArray ids = new SparseIntArray();
 
-    public static /* synthetic */ void $r8$lambda$CUr1I72kng9ZLBLRHOP8WOL6_aM(TLRPC.Bool bool, TLRPC.TL_error tL_error) {
-    }
+        public void bind(int i10, int i11) {
+            this.ids.put(i11, i10);
+        }
 
-    private MessageObject createDraftMessage(long j, int i, long j2, int i2, TLRPC.TL_textWithEntities tL_textWithEntities) {
-        TLRPC.TL_message tL_message = new TLRPC.TL_message();
-        tL_message.dialog_id = j;
-        tL_message.peer_id = getMessagesController().getPeer(j);
-        tL_message.from_id = getMessagesController().getPeer(j);
-        tL_message.local_id = i2;
-        tL_message.id = i2;
-        tL_message.random_id = j2;
-        tL_message.message = tL_textWithEntities.text;
-        tL_message.entities = tL_textWithEntities.entities;
-        tL_message.flags |= 128;
-        tL_message.date = getConnectionsManager().getCurrentTime();
-        TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
-        tL_message.reply_to = tL_messageReplyHeader;
-        tL_message.flags |= 16;
-        tL_messageReplyHeader.forum_topic = true;
-        tL_messageReplyHeader.reply_to_top_id = i;
-        tL_messageReplyHeader.flags |= 2;
-        tL_message.media = new TLRPC.TL_messageMediaEmpty();
-        tL_message.flags |= 512;
-        MessageObject messageObject = new MessageObject(this.currentAccount, tL_message, false, true);
-        messageObject.isBotPendingDraft = true;
-        messageObject.resetLayout();
-        return messageObject;
-    }
+        public gj0 getAnimator(long j10, int i10, boolean z10) {
+            if (i10 > 0) {
+                i10 = this.ids.get(i10, 0);
+            }
+            if (i10 == 0) {
+                return null;
+            }
+            long j11 = i10;
+            gj0 gj0Var = this.animators.get(j10, 0L, j11);
+            if (gj0Var != null || !z10) {
+                return gj0Var;
+            }
+            gj0 gj0Var2 = new gj0();
+            this.animators.put(j10, 0L, j11, gj0Var2);
+            return gj0Var2;
+        }
 
-    private MessageObject createDraftMessage(long j, int i, long j2, int i2, TL_iv.RichMessage richMessage) {
-        TLRPC.TL_message tL_message = new TLRPC.TL_message();
-        tL_message.dialog_id = j;
-        tL_message.peer_id = getMessagesController().getPeer(j);
-        tL_message.from_id = getMessagesController().getPeer(j);
-        tL_message.local_id = i2;
-        tL_message.id = i2;
-        tL_message.random_id = j2;
-        tL_message.message = "";
-        tL_message.flags |= 8192;
-        tL_message.rich_message = richMessage;
-        tL_message.date = getConnectionsManager().getCurrentTime();
-        TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
-        tL_message.reply_to = tL_messageReplyHeader;
-        tL_message.flags |= 16;
-        tL_messageReplyHeader.forum_topic = true;
-        tL_messageReplyHeader.reply_to_top_id = i;
-        tL_messageReplyHeader.flags |= 2;
-        tL_message.media = new TLRPC.TL_messageMediaEmpty();
-        tL_message.flags |= 512;
-        MessageObject messageObject = new MessageObject(this.currentAccount, tL_message, false, true);
-        messageObject.isBotPendingDraft = true;
-        messageObject.resetLayout();
-        return messageObject;
-    }
-
-    public void onBotForumDraftUpdate(long j, int i, TLRPC.TL_sendMessageTextDraftAction tL_sendMessageTextDraftAction) {
-        onBotForumDraftUpdate(j, i, tL_sendMessageTextDraftAction.random_id, tL_sendMessageTextDraftAction.text, tL_sendMessageTextDraftAction.can_stop, tL_sendMessageTextDraftAction.keep_on_stop);
-    }
-
-    public void onBotForumDraftUpdate(long j, int i, TLRPC.TL_sendMessageRichMessageDraftAction tL_sendMessageRichMessageDraftAction) {
-        onBotForumDraftUpdate(j, i, tL_sendMessageRichMessageDraftAction.random_id, tL_sendMessageRichMessageDraftAction.rich_message, tL_sendMessageRichMessageDraftAction.can_stop, tL_sendMessageRichMessageDraftAction.keep_on_stop);
-    }
-
-    private void onBotForumDraftUpdate(final long j, final int i, final long j2, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z, boolean z2) {
-        long[] jArr;
-        BotDraftMessage botDraftMessage;
-        BotForumHelper botForumHelper = this;
-        FileLog.d("[BotForum] onDraftNewDraft " + j + " " + i + " " + j2);
-        long j3 = (long) i;
-        if (botForumHelper.botTextDraftsByRandomIdsBlocklist.get(j, j3, j2) != null) {
-            FileLog.d("[BotForum] onDraftNewDraft ignore " + j + " " + i + " " + j2);
-            return;
-        }
-        LongSparseArray<BotDraftMessage> longSparseArray = botForumHelper.botTextDraftsByRandomIds.get(j, j3);
-        if (longSparseArray == null || longSparseArray.size() <= 0) {
-            jArr = null;
-        } else {
-            jArr = new long[longSparseArray.size()];
-            int size = longSparseArray.size();
-            for (int i2 = 0; i2 < size; i2++) {
-                jArr[i2] = longSparseArray.keyAt(i2);
+        public void removeAnimator(long j10, int i10) {
+            if (i10 > 0) {
+                i10 = this.ids.get(i10, 0);
             }
-        }
-        long[] jArr2 = jArr;
-        BotDraftMessage botDraftMessage2 = botForumHelper.botTextDraftsByRandomIds.get(j, j3, j2);
-        if (botDraftMessage2 == null) {
-            botDraftMessage = new BotDraftMessage(j, i, j2, botForumHelper.getUserConfig().getNewMessageId());
-            botForumHelper.botTextDraftsByRandomIds.put(j, j3, j2, botDraftMessage);
-        } else {
-            botDraftMessage = botDraftMessage2;
-        }
-        botDraftMessage.keepOnStop = z2;
-        botDraftMessage.canStop = z;
-        if (jArr2 != null) {
-            int length = jArr2.length;
-            int i3 = 0;
-            while (i3 < length) {
-                long j4 = jArr2[i3];
-                if (j4 != j2) {
-                    BotDraftMessage botDraftMessage3 = longSparseArray.get(j4);
-                    if (botDraftMessage3.selfDestruct != null) {
-                        AndroidUtilities.cancelRunOnUIThread(botDraftMessage3.selfDestruct);
-                    }
-                    botForumHelper.onBotForumDraftTimeout(j, i, j4);
-                }
-                i3++;
-                botForumHelper = this;
+            if (i10 == 0) {
+                return;
             }
-        }
-        boolean z3 = botDraftMessage.messageObject == null;
-        if (botDraftMessage.selfDestruct != null) {
-            AndroidUtilities.cancelRunOnUIThread(botDraftMessage.selfDestruct);
-        }
-        botDraftMessage.selfDestruct = new Runnable() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda4
-            @Override // java.lang.Runnable
-            public final void run() {
-                BotForumHelper.this.onBotForumDraftTimeout(j, i, j2);
-            }
-        };
-        botDraftMessage.text = tL_textWithEntities;
-        botDraftMessage.messageObject = createDraftMessage(j, i, j2, botDraftMessage.localMessageId, tL_textWithEntities);
-        AndroidUtilities.runOnUIThread(botDraftMessage.selfDestruct, getAppGlobalConfig().messageTypingDraftTtl.get(TimeUnit.MILLISECONDS));
-        getNotificationCenter().postNotificationName(NotificationCenter.botForumDraftUpdate, new BotForumTextDraftUpdateNotification(j, j3, botDraftMessage.messageObject, z3));
-    }
-
-    private void onBotForumDraftUpdate(final long j, final int i, final long j2, TL_iv.RichMessage richMessage, boolean z, boolean z2) {
-        long[] jArr;
-        BotDraftMessage botDraftMessage;
-        BotForumHelper botForumHelper = this;
-        FileLog.d("[BotForum] onDraftNewDraft (rich_message) " + j + " " + i + " " + j2);
-        long j3 = (long) i;
-        if (botForumHelper.botTextDraftsByRandomIdsBlocklist.get(j, j3, j2) != null) {
-            FileLog.d("[BotForum] onDraftNewDraft (rich_message) ignore " + j + " " + i + " " + j2);
-            return;
-        }
-        LongSparseArray<BotDraftMessage> longSparseArray = botForumHelper.botTextDraftsByRandomIds.get(j, j3);
-        if (longSparseArray == null || longSparseArray.size() <= 0) {
-            jArr = null;
-        } else {
-            jArr = new long[longSparseArray.size()];
-            int size = longSparseArray.size();
-            for (int i2 = 0; i2 < size; i2++) {
-                jArr[i2] = longSparseArray.keyAt(i2);
-            }
-        }
-        long[] jArr2 = jArr;
-        BotDraftMessage botDraftMessage2 = botForumHelper.botTextDraftsByRandomIds.get(j, j3, j2);
-        if (botDraftMessage2 == null) {
-            botDraftMessage = new BotDraftMessage(j, i, j2, botForumHelper.getUserConfig().getNewMessageId());
-            botForumHelper.botTextDraftsByRandomIds.put(j, j3, j2, botDraftMessage);
-        } else {
-            botDraftMessage = botDraftMessage2;
-        }
-        botDraftMessage.keepOnStop = z2;
-        botDraftMessage.canStop = z;
-        if (jArr2 != null) {
-            int length = jArr2.length;
-            int i3 = 0;
-            while (i3 < length) {
-                long j4 = jArr2[i3];
-                if (j4 != j2) {
-                    BotDraftMessage botDraftMessage3 = longSparseArray.get(j4);
-                    if (botDraftMessage3.selfDestruct != null) {
-                        AndroidUtilities.cancelRunOnUIThread(botDraftMessage3.selfDestruct);
-                    }
-                    botForumHelper.onBotForumDraftTimeout(j, i, j4);
-                }
-                i3++;
-                botForumHelper = this;
-            }
-        }
-        boolean z3 = botDraftMessage.messageObject == null;
-        if (botDraftMessage.selfDestruct != null) {
-            AndroidUtilities.cancelRunOnUIThread(botDraftMessage.selfDestruct);
-        }
-        botDraftMessage.selfDestruct = new Runnable() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda1
-            @Override // java.lang.Runnable
-            public final void run() {
-                BotForumHelper.this.onBotForumDraftTimeout(j, i, j2);
-            }
-        };
-        botDraftMessage.richMessage = richMessage;
-        botDraftMessage.messageObject = createDraftMessage(j, i, j2, botDraftMessage.localMessageId, richMessage);
-        AndroidUtilities.runOnUIThread(botDraftMessage.selfDestruct, getAppGlobalConfig().messageTypingDraftTtl.get(TimeUnit.MILLISECONDS));
-        getNotificationCenter().postNotificationName(NotificationCenter.botForumDraftUpdate, new BotForumTextDraftUpdateNotification(j, j3, botDraftMessage.messageObject, z3));
-    }
-
-    public SteamingSendButtonState getStreamingSendButtonState(long j, int i) {
-        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j, i);
-        if (longSparseArray != null && longSparseArray.size() > 0) {
-            int size = longSparseArray.size();
-            BotDraftMessage botDraftMessage = null;
-            for (int i2 = 0; i2 < size; i2++) {
-                botDraftMessage = longSparseArray.valueAt(i2);
-                if (!botDraftMessage.removed) {
-                    break;
-                }
-            }
-            if (botDraftMessage == null || botDraftMessage.removed) {
-                return SteamingSendButtonState.NO_STREAMING;
-            }
-            if (botDraftMessage.canStop) {
-                return SteamingSendButtonState.STOP;
-            }
-            return SteamingSendButtonState.BLOCKING;
-        }
-        return SteamingSendButtonState.NO_STREAMING;
-    }
-
-    public void stopStreaming(long j, long j2) {
-        long j3;
-        long j4;
-        long j5;
-        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j, j2);
-        if (longSparseArray == null || longSparseArray.size() <= 0) {
-            return;
-        }
-        int size = longSparseArray.size();
-        BotDraftMessage botDraftMessage = null;
-        long j6 = 0;
-        for (int i = 0; i < size; i++) {
-            j6 = longSparseArray.keyAt(i);
-            botDraftMessage = longSparseArray.valueAt(i);
-            if (!botDraftMessage.removed) {
-                break;
-            }
-        }
-        long j7 = j6;
-        BotDraftMessage botDraftMessage2 = botDraftMessage;
-        if (botDraftMessage2 == null || botDraftMessage2.removed) {
-            return;
-        }
-        if (botDraftMessage2.selfDestruct != null) {
-            AndroidUtilities.cancelRunOnUIThread(botDraftMessage2.selfDestruct);
-        }
-        this.botTextDraftsByRandomIdsBlocklist.put(j, j2, j7, new Object());
-        if (!botDraftMessage2.keepOnStop) {
-            j3 = j;
-            j4 = j2;
-            this.botTextDraftsByRandomIds.remove(j3, j4, j7);
-            j5 = j7;
-            getNotificationCenter().postNotificationName(NotificationCenter.botForumDraftDelete, new BotForumTextDraftDeleteNotification(j3, j4, botDraftMessage2.localMessageId));
-        } else {
-            botDraftMessage2.removed = true;
-            j3 = j;
-            j4 = j2;
-            j5 = j7;
-        }
-        TLRPC.TL_sendMessageStopDraftAction tL_sendMessageStopDraftAction = new TLRPC.TL_sendMessageStopDraftAction();
-        tL_sendMessageStopDraftAction.random_id = j5;
-        TLRPC.TL_messages_setTyping tL_messages_setTyping = new TLRPC.TL_messages_setTyping();
-        tL_messages_setTyping.peer = getMessagesController().getInputPeer(j3);
-        tL_messages_setTyping.action = tL_sendMessageStopDraftAction;
-        if (j4 != 0) {
-            tL_messages_setTyping.flags |= 1;
-            tL_messages_setTyping.top_msg_id = (int) j4;
-        }
-        getConnectionsManager().sendRequestTyped(tL_messages_setTyping, new Utilities.Callback2() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda5
-            @Override // org.telegram.messenger.Utilities.Callback2
-            public final void run(Object obj, Object obj2) {
-                BotForumHelper.$r8$lambda$CUr1I72kng9ZLBLRHOP8WOL6_aM((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
-            }
-        });
-    }
-
-    public boolean hasBotForumDrafts(long j, int i) {
-        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j, i);
-        if (longSparseArray != null && longSparseArray.size() > 0) {
-            int size = longSparseArray.size();
-            for (int i2 = 0; i2 < size; i2++) {
-                if (!longSparseArray.valueAt(i2).removed) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public void removeAllMarkedAsRemovedMessages(long j, int i) {
-        long j2 = i;
-        long j3 = j;
-        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j3, j2);
-        if (longSparseArray == null) {
-            return;
-        }
-        int size = longSparseArray.size();
-        int i2 = 0;
-        while (i2 < size) {
-            BotDraftMessage valueAt = longSparseArray.valueAt(i2);
-            if (valueAt.removed) {
-                getNotificationCenter().postNotificationName(NotificationCenter.botForumDraftDelete, new BotForumTextDraftDeleteNotification(j3, j2, valueAt.localMessageId));
-                this.botTextDraftsByRandomIds.remove(j, j2, valueAt.randomId);
-                i2--;
-                size--;
-            }
-            i2++;
-            j3 = j;
+            this.animators.remove(j10, 0L, i10);
         }
     }
 
-    public MessageObject onBotForumDraftCheckNewMessages(long j, int i, int i2, String str) {
-        BotDraftMessage botDraftMessage;
-        removeAllMarkedAsRemovedMessages(j, i);
-        long j2 = i;
-        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j, j2);
-        if (longSparseArray == null) {
-            return null;
-        }
-        int i3 = 0;
-        BotDraftMessage botDraftMessage2 = null;
-        while (true) {
-            if (i3 >= longSparseArray.size()) {
-                botDraftMessage = botDraftMessage2;
-                break;
-            }
-            BotDraftMessage valueAt = longSparseArray.valueAt(i3);
-            if (botDraftMessage2 == null) {
-                botDraftMessage2 = valueAt;
-            }
-            if (str != null && valueAt.text != null && str.startsWith(valueAt.text.text)) {
-                botDraftMessage = valueAt;
-                break;
-            }
-            i3++;
-        }
-        if (botDraftMessage == null) {
-            return null;
-        }
-        if (botDraftMessage.selfDestruct != null) {
-            AndroidUtilities.cancelRunOnUIThread(botDraftMessage.selfDestruct);
-        }
-        this.botTextDraftsByRandomIds.remove(j, j2, botDraftMessage.randomId);
-        FileLog.d("[BotForum] onDraftNewMessage " + j + " " + i);
-        return botDraftMessage.messageObject;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void onBotForumDraftTimeout(long j, int i, long j2) {
-        long j3 = i;
-        BotDraftMessage remove = this.botTextDraftsByRandomIds.remove(j, j3, j2);
-        if (remove == null) {
-            return;
-        }
-        getNotificationCenter().postNotificationName(NotificationCenter.botForumDraftDelete, new BotForumTextDraftDeleteNotification(j, j3, remove.localMessageId));
-    }
-
-    private static class BotDraftMessage {
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class BotDraftMessage {
         private boolean canStop;
         private boolean keepOnStop;
         public final int localMessageId;
@@ -397,85 +82,262 @@ public class BotForumHelper extends BaseController {
         public final int topicId;
         public final long userId;
 
-        private BotDraftMessage(long j, int i, long j2, int i2) {
-            this.userId = j;
-            this.topicId = i;
-            this.randomId = j2;
-            this.localMessageId = i2;
+        private BotDraftMessage(long j10, int i10, long j11, int i11) {
+            this.userId = j10;
+            this.topicId = i10;
+            this.randomId = j11;
+            this.localMessageId = i11;
         }
     }
 
-    public boolean beforeSendingFinalRequest(TLObject tLObject, MessageObject messageObject, Runnable runnable) {
-        return beforeSendingFinalRequest(tLObject, Collections.singletonList(messageObject), runnable);
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class BotForumTextDraftDeleteNotification {
+        public final long botTopicId;
+        public final long botUserId;
+        public final int messageId;
+
+        public BotForumTextDraftDeleteNotification(long j10, long j11, int i10) {
+            this.botUserId = j10;
+            this.botTopicId = j11;
+            this.messageId = i10;
+        }
     }
 
-    public boolean beforeSendingFinalRequest(final TLObject tLObject, List<MessageObject> list, final Runnable runnable) {
-        if (list != null && !list.isEmpty()) {
-            TLRPC.InputPeer inputPeerFromSendMessageRequest = TlUtils.getInputPeerFromSendMessageRequest(tLObject);
-            final long peerDialogId = DialogObject.getPeerDialogId(inputPeerFromSendMessageRequest);
-            if (inputPeerFromSendMessageRequest == null || peerDialogId <= 0 || !UserObject.isBotForumWithEditableTopics(getMessagesController().getUser(Long.valueOf(peerDialogId)))) {
-                return true;
-            }
-            final long[] jArr = new long[list.size()];
-            for (int i = 0; i < list.size(); i++) {
-                jArr[i] = list.get(i).getId();
-            }
-            long orCalculateRandomIdFromSendMessageRequest = TlUtils.getOrCalculateRandomIdFromSendMessageRequest(tLObject);
-            if (TlUtils.getInputReplyToFromSendMessageRequest(tLObject) instanceof TLRPC.TL_inputReplyToMessage) {
-                return true;
-            }
-            if ((tLObject instanceof TLRPC.TL_messages_forwardMessages) && ((TLRPC.TL_messages_forwardMessages) tLObject).top_msg_id != 0) {
-                return true;
-            }
-            String messageFromSendMessageRequest = TlUtils.getMessageFromSendMessageRequest(tLObject);
-            long nextRandomId = orCalculateRandomIdFromSendMessageRequest != 0 ? ~orCalculateRandomIdFromSendMessageRequest : getSendMessagesHelper().getNextRandomId();
-            if (!TextUtils.isEmpty(messageFromSendMessageRequest)) {
-                if (messageFromSendMessageRequest.length() > 16) {
-                    messageFromSendMessageRequest = messageFromSendMessageRequest.substring(0, 16) + "...";
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class BotForumTextDraftUpdateNotification {
+        public final long botTopicId;
+        public final long botUserId;
+        public final boolean isNew;
+        public final MessageObject messageObject;
+
+        public BotForumTextDraftUpdateNotification(long j10, long j11, MessageObject messageObject, boolean z10) {
+            this.botUserId = j10;
+            this.botTopicId = j11;
+            this.messageObject = messageObject;
+            this.isNew = z10;
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class BotForumTopicCreateNotification {
+        public final long dialogId;
+        public final int topicId;
+
+        public BotForumTopicCreateNotification(long j10, int i10) {
+            this.dialogId = j10;
+            this.topicId = i10;
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public enum SteamingSendButtonState {
+        NO_STREAMING,
+        BLOCKING,
+        STOP
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class TypingBotSpan extends cq {
+        public TypingBotSpan(l41 l41Var, int i10) {
+            super(i10, l41Var);
+        }
+    }
+
+    private BotForumHelper(int i10) {
+        super(i10);
+        this.botTextDraftsByRandomIds = new DialogTopicIdKeyMap<>();
+        this.botTextDraftsByRandomIdsBlocklist = new DialogTopicIdKeyMap<>();
+        this.pendingBotTopics = new LongSparseArray<>();
+        this.preferences = ApplicationLoader.applicationContext.getSharedPreferences("bot_drafts" + i10, 0);
+    }
+
+    public static CharSequence applyTypingAnimationSpan(CharSequence charSequence) {
+        TypingBotSpan[] typingBotSpanArr;
+        if ((charSequence instanceof Spannable) && (typingBotSpanArr = (TypingBotSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), TypingBotSpan.class)) != null && typingBotSpanArr.length > 0) {
+            return charSequence;
+        }
+        SpannableStringBuilder spannableStringBuilder = charSequence instanceof SpannableStringBuilder ? (SpannableStringBuilder) charSequence : new SpannableStringBuilder(charSequence);
+        l41 l41Var = new l41(true);
+        l41Var.b(-1);
+        l41Var.d();
+        TypingBotSpan typingBotSpan = new TypingBotSpan(l41Var, 1);
+        typingBotSpan.setColorKey(org.telegram.ui.ActionBar.g6.ec);
+        typingBotSpan.setTopOffset(-AndroidUtilities.dp(10.0f));
+        spannableStringBuilder.append((CharSequence) " _");
+        spannableStringBuilder.setSpan(typingBotSpan, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+        return spannableStringBuilder;
+    }
+
+    private MessageObject createDraftMessage(long j10, int i10, long j11, int i11, TLRPC.TL_textWithEntities tL_textWithEntities) {
+        TLRPC.TL_message tL_message = new TLRPC.TL_message();
+        tL_message.dialog_id = j10;
+        tL_message.peer_id = getMessagesController().getPeer(j10);
+        tL_message.from_id = getMessagesController().getPeer(j10);
+        tL_message.local_id = i11;
+        tL_message.id = i11;
+        tL_message.random_id = j11;
+        tL_message.message = tL_textWithEntities.text;
+        tL_message.entities = tL_textWithEntities.entities;
+        tL_message.flags |= 128;
+        tL_message.date = getConnectionsManager().getCurrentTime();
+        TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
+        tL_message.reply_to = tL_messageReplyHeader;
+        tL_message.flags |= 16;
+        tL_messageReplyHeader.forum_topic = true;
+        tL_messageReplyHeader.reply_to_top_id = i10;
+        tL_messageReplyHeader.flags |= 2;
+        tL_message.media = new TLRPC.TL_messageMediaEmpty();
+        tL_message.flags |= 512;
+        MessageObject messageObject = new MessageObject(this.currentAccount, tL_message, false, true);
+        messageObject.isBotPendingDraft = true;
+        messageObject.resetLayout();
+        return messageObject;
+    }
+
+    public static BotForumHelper getInstance(int i10) {
+        BotForumHelper botForumHelper;
+        BotForumHelper botForumHelper2 = Instance[i10];
+        if (botForumHelper2 != null) {
+            return botForumHelper2;
+        }
+        synchronized (BotForumHelper.class) {
+            try {
+                botForumHelper = Instance[i10];
+                if (botForumHelper == null) {
+                    BotForumHelper[] botForumHelperArr = Instance;
+                    BotForumHelper botForumHelper3 = new BotForumHelper(i10);
+                    botForumHelperArr[i10] = botForumHelper3;
+                    botForumHelper = botForumHelper3;
                 }
-            } else {
-                messageFromSendMessageRequest = LocaleController.getString(R.string.TopicsTitleMedia);
+            } catch (Throwable th) {
+                throw th;
             }
-            performSendBotTopicCreate(inputPeerFromSendMessageRequest, messageFromSendMessageRequest, nextRandomId, new MessagesStorage.IntCallback() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda0
-                @Override // org.telegram.messenger.MessagesStorage.IntCallback
-                public final void run(int i2) {
-                    BotForumHelper.$r8$lambda$fjBjvuf9e0_7lKAB3FWVihLzUtk(BotForumHelper.this, tLObject, jArr, peerDialogId, runnable, i2);
-                }
-            });
-            return false;
         }
-        return true;
+        return botForumHelper;
     }
 
-    public static /* synthetic */ void $r8$lambda$fjBjvuf9e0_7lKAB3FWVihLzUtk(final BotForumHelper botForumHelper, TLObject tLObject, final long[] jArr, final long j, final Runnable runnable, final int i) {
-        botForumHelper.getClass();
-        if (tLObject instanceof TLRPC.TL_messages_forwardMessages) {
-            TLRPC.TL_messages_forwardMessages tL_messages_forwardMessages = (TLRPC.TL_messages_forwardMessages) tLObject;
-            tL_messages_forwardMessages.top_msg_id = i;
-            tL_messages_forwardMessages.flags |= 512;
-        } else {
-            TLRPC.TL_inputReplyToMessage tL_inputReplyToMessage = new TLRPC.TL_inputReplyToMessage();
-            tL_inputReplyToMessage.reply_to_msg_id = i;
-            TlUtils.setInputReplyToFromSendMessageRequest(tLObject, tL_inputReplyToMessage);
+    public static boolean isBotForum(int i10, long j10) {
+        if (j10 > 0) {
+            return UserObject.isBotForum(MessagesController.getInstance(i10).getUser(Long.valueOf(j10)));
         }
-        botForumHelper.getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2
-            @Override // java.lang.Runnable
-            public final void run() {
-                BotForumHelper.$r8$lambda$dcG75N4I2jK59bkB2xEoaTCZl3o(BotForumHelper.this, jArr, j, i, runnable);
-            }
-        });
+        MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
+        return false;
     }
 
-    public static /* synthetic */ void $r8$lambda$dcG75N4I2jK59bkB2xEoaTCZl3o(BotForumHelper botForumHelper, long[] jArr, long j, int i, Runnable runnable) {
-        botForumHelper.getClass();
-        for (long j2 : jArr) {
-            botForumHelper.getMessagesStorage().updateMessageTopicId(j, j2, i);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$beforeSendingFinalRequest$3(long[] jArr, long j10, int i10, Runnable runnable) {
+        for (long j11 : jArr) {
+            getMessagesStorage().updateMessageTopicId(j10, j11, i10);
         }
         AndroidUtilities.runOnUIThread(runnable);
     }
 
-    private void performSendBotTopicCreate(TLRPC.InputPeer inputPeer, final String str, long j, MessagesStorage.IntCallback intCallback) {
-        final long peerDialogId = DialogObject.getPeerDialogId(inputPeer);
+    /* JADX INFO: Access modifiers changed from: private */
+    public void lambda$beforeSendingFinalRequest$4(TLObject tLObject, long[] jArr, long j10, Runnable runnable, int i10) {
+        boolean z10 = tLObject instanceof TLRPC.TL_messages_forwardMessages;
+        if (z10) {
+            TLRPC.TL_messages_forwardMessages tL_messages_forwardMessages = (TLRPC.TL_messages_forwardMessages) tLObject;
+            tL_messages_forwardMessages.top_msg_id = i10;
+            tL_messages_forwardMessages.flags |= 512;
+        } else {
+            TLRPC.TL_inputReplyToMessage tL_inputReplyToMessage = new TLRPC.TL_inputReplyToMessage();
+            tL_inputReplyToMessage.reply_to_msg_id = i10;
+            if (tLObject instanceof TLRPC.TL_messages_sendMessage) {
+                TLRPC.TL_messages_sendMessage tL_messages_sendMessage = (TLRPC.TL_messages_sendMessage) tLObject;
+                tL_messages_sendMessage.reply_to = tL_inputReplyToMessage;
+                tL_messages_sendMessage.flags |= 1;
+            } else if (tLObject instanceof TLRPC.TL_messages_sendMedia) {
+                TLRPC.TL_messages_sendMedia tL_messages_sendMedia = (TLRPC.TL_messages_sendMedia) tLObject;
+                tL_messages_sendMedia.reply_to = tL_inputReplyToMessage;
+                tL_messages_sendMedia.flags |= 1;
+            } else if (tLObject instanceof TL_ephemeral.TL_sendMessage) {
+                TL_ephemeral.TL_sendMessage tL_sendMessage = (TL_ephemeral.TL_sendMessage) tLObject;
+                tL_sendMessage.reply_to = tL_inputReplyToMessage;
+                tL_sendMessage.flags |= 32;
+            } else if (tLObject instanceof TLRPC.TL_messages_sendInlineBotResult) {
+                TLRPC.TL_messages_sendInlineBotResult tL_messages_sendInlineBotResult = (TLRPC.TL_messages_sendInlineBotResult) tLObject;
+                tL_messages_sendInlineBotResult.reply_to = tL_inputReplyToMessage;
+                tL_messages_sendInlineBotResult.flags |= 1;
+            } else if (z10) {
+                TLRPC.TL_messages_forwardMessages tL_messages_forwardMessages2 = (TLRPC.TL_messages_forwardMessages) tLObject;
+                tL_messages_forwardMessages2.reply_to = tL_inputReplyToMessage;
+                tL_messages_forwardMessages2.flags |= 1;
+            } else if (tLObject instanceof TLRPC.TL_messages_sendMultiMedia) {
+                TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia = (TLRPC.TL_messages_sendMultiMedia) tLObject;
+                tL_messages_sendMultiMedia.reply_to = tL_inputReplyToMessage;
+                tL_messages_sendMultiMedia.flags |= 1;
+            }
+        }
+        getMessagesStorage().getStorageQueue().postRunnable(new gh.a0(this, jArr, j10, i10, runnable));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$performSendBotTopicCreate$5(long j10, String str, TLRPC.Updates updates, TLRPC.TL_error tL_error) {
+        TL_update.TL_updateMessageID tL_updateMessageID;
+        if (updates == null) {
+            performSendBotTopicCreateComplete(j10, -1);
+            return;
+        }
+        getMessagesController().processUpdates(updates, false);
+        ArrayList<TLRPC.Update> arrayList = updates.updates;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (true) {
+            if (i10 >= size) {
+                tL_updateMessageID = null;
+                break;
+            }
+            TLRPC.Update update = arrayList.get(i10);
+            i10++;
+            TLRPC.Update update2 = update;
+            if (update2 instanceof TL_update.TL_updateMessageID) {
+                tL_updateMessageID = (TL_update.TL_updateMessageID) update2;
+                break;
+            }
+        }
+        if (tL_updateMessageID == null) {
+            performSendBotTopicCreateComplete(j10, -1);
+            return;
+        }
+        TLRPC.TL_forumTopic tL_forumTopic = new TLRPC.TL_forumTopic();
+        TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
+        TLRPC.TL_messageActionTopicCreate tL_messageActionTopicCreate = new TLRPC.TL_messageActionTopicCreate();
+        tL_messageActionTopicCreate.title = str;
+        tL_messageService.action = tL_messageActionTopicCreate;
+        tL_messageService.peer_id = getMessagesController().getPeer(j10);
+        tL_messageService.dialog_id = j10;
+        tL_messageService.id = tL_updateMessageID.id;
+        tL_messageService.date = (int) (System.currentTimeMillis() / 1000);
+        int i11 = tL_updateMessageID.id;
+        tL_forumTopic.id = i11;
+        tL_forumTopic.my = true;
+        tL_forumTopic.flags |= 2;
+        tL_forumTopic.topicStartMessage = tL_messageService;
+        tL_forumTopic.title = str;
+        tL_forumTopic.top_message = i11;
+        tL_forumTopic.topMessage = tL_messageService;
+        tL_forumTopic.from_id = getMessagesController().getPeer(getUserConfig().clientUserId);
+        tL_forumTopic.notify_settings = new TLRPC.TL_peerNotifySettings();
+        tL_forumTopic.icon_color = 0;
+        tL_forumTopic.title_missing = true;
+        getMessagesController().getTopicsController().onTopicCreated(j10, tL_forumTopic, true);
+        performSendBotTopicCreateComplete(j10, tL_updateMessageID.id);
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.botForumTopicDidCreate, new BotForumTopicCreateNotification(j10, tL_updateMessageID.id));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onBotForumDraftTimeout, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
+    public void lambda$onBotForumDraftUpdate$1(long j10, int i10, long j11) {
+        long j12 = i10;
+        BotDraftMessage remove = this.botTextDraftsByRandomIds.remove(j10, j12, j11);
+        if (remove == null) {
+            return;
+        }
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.botForumDraftDelete, new BotForumTextDraftDeleteNotification(j10, j12, remove.localMessageId));
+    }
+
+    private void performSendBotTopicCreate(TLRPC.InputPeer inputPeer, String str, long j10, MessagesStorage.IntCallback intCallback) {
+        long peerDialogId = DialogObject.getPeerDialogId(inputPeer);
         List<MessagesStorage.IntCallback> list = this.pendingBotTopics.get(peerDialogId);
         if (list != null) {
             list.add(intCallback);
@@ -488,279 +350,496 @@ public class BotForumHelper extends BaseController {
         tL_messages_createForumTopic.title = TextUtils.isEmpty(str) ? "#New Chat" : str;
         tL_messages_createForumTopic.title_missing = true;
         tL_messages_createForumTopic.peer = inputPeer;
-        tL_messages_createForumTopic.random_id = j;
-        getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda3
-            @Override // org.telegram.messenger.Utilities.Callback2
-            public final void run(Object obj, Object obj2) {
-                BotForumHelper.$r8$lambda$BNFiiZDUX9EcxYRrHTTH6ljSovk(BotForumHelper.this, peerDialogId, str, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
-            }
-        });
+        tL_messages_createForumTopic.random_id = j10;
+        getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new a(), new lh(this, peerDialogId, str));
     }
 
-    public static /* synthetic */ void $r8$lambda$BNFiiZDUX9EcxYRrHTTH6ljSovk(BotForumHelper botForumHelper, long j, String str, TLRPC.Updates updates, TLRPC.TL_error tL_error) {
-        TL_update.TL_updateMessageID tL_updateMessageID;
-        if (updates == null) {
-            botForumHelper.performSendBotTopicCreateComplete(j, -1);
-            return;
-        }
-        botForumHelper.getMessagesController().processUpdates(updates, false);
-        ArrayList<TLRPC.Update> arrayList = updates.updates;
-        int size = arrayList.size();
-        int i = 0;
-        while (true) {
-            if (i >= size) {
-                tL_updateMessageID = null;
-                break;
-            }
-            TLRPC.Update update = arrayList.get(i);
-            i++;
-            TLRPC.Update update2 = update;
-            if (update2 instanceof TL_update.TL_updateMessageID) {
-                tL_updateMessageID = (TL_update.TL_updateMessageID) update2;
-                break;
-            }
-        }
-        if (tL_updateMessageID == null) {
-            botForumHelper.performSendBotTopicCreateComplete(j, -1);
-            return;
-        }
-        TLRPC.TL_forumTopic tL_forumTopic = new TLRPC.TL_forumTopic();
-        TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
-        TLRPC.TL_messageActionTopicCreate tL_messageActionTopicCreate = new TLRPC.TL_messageActionTopicCreate();
-        tL_messageActionTopicCreate.title = str;
-        tL_messageService.action = tL_messageActionTopicCreate;
-        tL_messageService.peer_id = botForumHelper.getMessagesController().getPeer(j);
-        tL_messageService.dialog_id = j;
-        tL_messageService.id = tL_updateMessageID.id;
-        tL_messageService.date = (int) (System.currentTimeMillis() / 1000);
-        int i2 = tL_updateMessageID.id;
-        tL_forumTopic.id = i2;
-        tL_forumTopic.my = true;
-        tL_forumTopic.flags |= 2;
-        tL_forumTopic.topicStartMessage = tL_messageService;
-        tL_forumTopic.title = str;
-        tL_forumTopic.top_message = i2;
-        tL_forumTopic.topMessage = tL_messageService;
-        tL_forumTopic.from_id = botForumHelper.getMessagesController().getPeer(botForumHelper.getUserConfig().clientUserId);
-        tL_forumTopic.notify_settings = new TLRPC.TL_peerNotifySettings();
-        tL_forumTopic.icon_color = 0;
-        tL_forumTopic.title_missing = true;
-        botForumHelper.getMessagesController().getTopicsController().onTopicCreated(j, tL_forumTopic, true);
-        botForumHelper.performSendBotTopicCreateComplete(j, tL_updateMessageID.id);
-        botForumHelper.getNotificationCenter().postNotificationName(NotificationCenter.botForumTopicDidCreate, new BotForumTopicCreateNotification(j, tL_updateMessageID.id));
-    }
-
-    private void performSendBotTopicCreateComplete(long j, int i) {
-        List<MessagesStorage.IntCallback> list = this.pendingBotTopics.get(j);
+    private void performSendBotTopicCreateComplete(long j10, int i10) {
+        List<MessagesStorage.IntCallback> list = this.pendingBotTopics.get(j10);
         if (list != null) {
-            this.pendingBotTopics.remove(j);
+            this.pendingBotTopics.remove(j10);
             Iterator<MessagesStorage.IntCallback> it = list.iterator();
             while (it.hasNext()) {
-                it.next().run(i);
+                it.next().run(i10);
             }
         }
     }
 
-    public static class BotForumTopicCreateNotification {
-        public final long dialogId;
-        public final int topicId;
-
-        public BotForumTopicCreateNotification(long j, int i) {
-            this.dialogId = j;
-            this.topicId = i;
-        }
+    public boolean beforeSendingFinalRequest(TLObject tLObject, MessageObject messageObject, Runnable runnable) {
+        return beforeSendingFinalRequest(tLObject, Collections.singletonList(messageObject), runnable);
     }
 
-    public static class BotForumTextDraftUpdateNotification {
-        public final long botTopicId;
-        public final long botUserId;
-        public final boolean isNew;
-        public final MessageObject messageObject;
-
-        public BotForumTextDraftUpdateNotification(long j, long j2, MessageObject messageObject, boolean z) {
-            this.botUserId = j;
-            this.botTopicId = j2;
-            this.messageObject = messageObject;
-            this.isNew = z;
+    public SteamingSendButtonState getStreamingSendButtonState(long j10, int i10) {
+        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j10, i10);
+        if (longSparseArray == null || longSparseArray.size() <= 0) {
+            return SteamingSendButtonState.NO_STREAMING;
         }
+        int size = longSparseArray.size();
+        BotDraftMessage botDraftMessage = null;
+        for (int i11 = 0; i11 < size; i11++) {
+            botDraftMessage = longSparseArray.valueAt(i11);
+            if (!botDraftMessage.removed) {
+                break;
+            }
+        }
+        return (botDraftMessage == null || botDraftMessage.removed) ? SteamingSendButtonState.NO_STREAMING : botDraftMessage.canStop ? SteamingSendButtonState.STOP : SteamingSendButtonState.BLOCKING;
     }
 
-    public static class BotForumTextDraftDeleteNotification {
-        public final long botTopicId;
-        public final long botUserId;
-        public final int messageId;
-
-        public BotForumTextDraftDeleteNotification(long j, long j2, int i) {
-            this.botUserId = j;
-            this.botTopicId = j2;
-            this.messageId = i;
+    public boolean hasBotForumDrafts(long j10, int i10) {
+        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j10, i10);
+        if (longSparseArray != null && longSparseArray.size() > 0) {
+            int size = longSparseArray.size();
+            for (int i11 = 0; i11 < size; i11++) {
+                if (!longSparseArray.valueAt(i11).removed) {
+                    return true;
+                }
+            }
         }
-    }
-
-    public static boolean isBotForum(int i, long j) {
-        if (j > 0) {
-            return UserObject.isBotForum(MessagesController.getInstance(i).getUser(Long.valueOf(j)));
-        }
-        MessagesController.getInstance(i).getChat(Long.valueOf(-j));
         return false;
     }
 
-    public void saveIsStreamingTopic(long j, long j2, boolean z) {
-        this.preferences.edit().putBoolean(j + "_" + j2, z).apply();
+    public boolean isStreamingTopic(long j10, long j11) {
+        return this.preferences.getBoolean(j10 + "_" + j11, false);
     }
 
-    public boolean isStreamingTopic(long j, long j2) {
-        return this.preferences.getBoolean(j + "_" + j2, false);
+    public MessageObject onBotForumDraftCheckNewMessages(long j10, int i10, int i11, String str) {
+        BotDraftMessage botDraftMessage;
+        removeAllMarkedAsRemovedMessages(j10, i10);
+        long j11 = i10;
+        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j10, j11);
+        if (longSparseArray == null) {
+            return null;
+        }
+        int i12 = 0;
+        BotDraftMessage botDraftMessage2 = null;
+        while (true) {
+            if (i12 >= longSparseArray.size()) {
+                botDraftMessage = botDraftMessage2;
+                break;
+            }
+            BotDraftMessage valueAt = longSparseArray.valueAt(i12);
+            if (botDraftMessage2 == null) {
+                botDraftMessage2 = valueAt;
+            }
+            if (str != null && valueAt.text != null && str.startsWith(valueAt.text.text)) {
+                botDraftMessage = valueAt;
+                break;
+            }
+            i12++;
+        }
+        if (botDraftMessage == null) {
+            return null;
+        }
+        if (botDraftMessage.selfDestruct != null) {
+            AndroidUtilities.cancelRunOnUIThread(botDraftMessage.selfDestruct);
+        }
+        this.botTextDraftsByRandomIds.remove(j10, j11, botDraftMessage.randomId);
+        FileLog.d("[BotForum] onDraftNewMessage " + j10 + " " + i10);
+        return botDraftMessage.messageObject;
     }
 
-    private BotForumHelper(int i) {
-        super(i);
-        this.botTextDraftsByRandomIds = new DialogTopicIdKeyMap<>();
-        this.botTextDraftsByRandomIdsBlocklist = new DialogTopicIdKeyMap<>();
-        this.pendingBotTopics = new LongSparseArray<>();
-        this.preferences = ApplicationLoader.applicationContext.getSharedPreferences("bot_drafts" + i, 0);
+    public void onBotForumDraftUpdate(long j10, int i10, TLRPC.TL_sendMessageTextDraftAction tL_sendMessageTextDraftAction) {
+        onBotForumDraftUpdate(j10, i10, tL_sendMessageTextDraftAction.random_id, tL_sendMessageTextDraftAction.text, tL_sendMessageTextDraftAction.can_stop, tL_sendMessageTextDraftAction.keep_on_stop);
     }
 
-    public static BotForumHelper getInstance(int i) {
-        BotForumHelper botForumHelper;
-        BotForumHelper botForumHelper2 = Instance[i];
-        if (botForumHelper2 != null) {
-            return botForumHelper2;
+    public void removeAllMarkedAsRemovedMessages(long j10, int i10) {
+        long j11 = i10;
+        long j12 = j10;
+        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j12, j11);
+        if (longSparseArray == null) {
+            return;
         }
-        synchronized (BotForumHelper.class) {
-            try {
-                botForumHelper = Instance[i];
-                if (botForumHelper == null) {
-                    BotForumHelper[] botForumHelperArr = Instance;
-                    BotForumHelper botForumHelper3 = new BotForumHelper(i);
-                    botForumHelperArr[i] = botForumHelper3;
-                    botForumHelper = botForumHelper3;
-                }
-            } catch (Throwable th) {
-                throw th;
+        int size = longSparseArray.size();
+        int i11 = 0;
+        while (i11 < size) {
+            BotDraftMessage valueAt = longSparseArray.valueAt(i11);
+            if (valueAt.removed) {
+                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.botForumDraftDelete, new BotForumTextDraftDeleteNotification(j12, j11, valueAt.localMessageId));
+                this.botTextDraftsByRandomIds.remove(j10, j11, valueAt.randomId);
+                i11--;
+                size--;
             }
-        }
-        return botForumHelper;
-    }
-
-    public static class BotDraftAnimationsPool {
-        private final DialogTopicIdKeyMap<MultiLayoutTypingAnimator> animators = new DialogTopicIdKeyMap<>();
-        private final SparseIntArray ids = new SparseIntArray();
-
-        public MultiLayoutTypingAnimator getAnimator(long j, int i, boolean z) {
-            if (i > 0) {
-                i = this.ids.get(i, 0);
-            }
-            if (i == 0) {
-                return null;
-            }
-            long j2 = i;
-            MultiLayoutTypingAnimator multiLayoutTypingAnimator = this.animators.get(j, 0L, j2);
-            if (multiLayoutTypingAnimator != null || !z) {
-                return multiLayoutTypingAnimator;
-            }
-            MultiLayoutTypingAnimator multiLayoutTypingAnimator2 = new MultiLayoutTypingAnimator();
-            this.animators.put(j, 0L, j2, multiLayoutTypingAnimator2);
-            return multiLayoutTypingAnimator2;
-        }
-
-        public void bind(int i, int i2) {
-            this.ids.put(i2, i);
-        }
-
-        public void removeAnimator(long j, int i) {
-            if (i > 0) {
-                i = this.ids.get(i, 0);
-            }
-            if (i == 0) {
-                return;
-            }
-            this.animators.remove(j, 0L, i);
+            i11++;
+            j12 = j10;
         }
     }
 
+    public void saveIsStreamingTopic(long j10, long j11, boolean z10) {
+        this.preferences.edit().putBoolean(j10 + "_" + j11, z10).apply();
+    }
+
+    public void stopStreaming(long j10, long j11) {
+        long j12;
+        long j13;
+        long j14;
+        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j10, j11);
+        if (longSparseArray == null || longSparseArray.size() <= 0) {
+            return;
+        }
+        int size = longSparseArray.size();
+        int i10 = 0;
+        BotDraftMessage botDraftMessage = null;
+        long j15 = 0;
+        for (int i11 = 0; i11 < size; i11++) {
+            j15 = longSparseArray.keyAt(i11);
+            botDraftMessage = longSparseArray.valueAt(i11);
+            if (!botDraftMessage.removed) {
+                break;
+            }
+        }
+        long j16 = j15;
+        BotDraftMessage botDraftMessage2 = botDraftMessage;
+        if (botDraftMessage2 == null || botDraftMessage2.removed) {
+            return;
+        }
+        if (botDraftMessage2.selfDestruct != null) {
+            AndroidUtilities.cancelRunOnUIThread(botDraftMessage2.selfDestruct);
+        }
+        this.botTextDraftsByRandomIdsBlocklist.put(j10, j11, j16, new Object());
+        if (botDraftMessage2.keepOnStop) {
+            botDraftMessage2.removed = true;
+            j12 = j10;
+            j13 = j11;
+            j14 = j16;
+        } else {
+            j12 = j10;
+            j13 = j11;
+            this.botTextDraftsByRandomIds.remove(j12, j13, j16);
+            j14 = j16;
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.botForumDraftDelete, new BotForumTextDraftDeleteNotification(j12, j13, botDraftMessage2.localMessageId));
+        }
+        TLRPC.TL_sendMessageStopDraftAction tL_sendMessageStopDraftAction = new TLRPC.TL_sendMessageStopDraftAction();
+        tL_sendMessageStopDraftAction.random_id = j14;
+        TLRPC.TL_messages_setTyping tL_messages_setTyping = new TLRPC.TL_messages_setTyping();
+        tL_messages_setTyping.peer = getMessagesController().getInputPeer(j12);
+        tL_messages_setTyping.action = tL_sendMessageStopDraftAction;
+        if (j13 != 0) {
+            tL_messages_setTyping.flags |= 1;
+            tL_messages_setTyping.top_msg_id = (int) j13;
+        }
+        getConnectionsManager().sendRequestTyped(tL_messages_setTyping, new k0(i10));
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class DialogTopicIdKeyMap<T> {
         private final LongSparseArray<LongSparseArray<LongSparseArray<T>>> map = new LongSparseArray<>();
 
-        public LongSparseArray<T> get(long j, long j2) {
-            LongSparseArray<LongSparseArray<T>> longSparseArray = this.map.get(j);
+        public LongSparseArray<T> get(long j10, long j11) {
+            LongSparseArray<LongSparseArray<T>> longSparseArray = this.map.get(j10);
             if (longSparseArray == null) {
                 return null;
             }
-            return longSparseArray.get(j2);
+            return longSparseArray.get(j11);
         }
 
-        public T get(long j, long j2, long j3) {
-            LongSparseArray<T> longSparseArray = get(j, j2);
-            if (longSparseArray == null) {
-                return null;
-            }
-            return longSparseArray.get(j3);
-        }
-
-        public T put(long j, long j2, long j3, T t) {
-            LongSparseArray<LongSparseArray<T>> longSparseArray = this.map.get(j);
+        public T put(long j10, long j11, long j12, T t10) {
+            LongSparseArray<LongSparseArray<T>> longSparseArray = this.map.get(j10);
             if (longSparseArray == null) {
                 longSparseArray = new LongSparseArray<>();
-                this.map.put(j, longSparseArray);
+                this.map.put(j10, longSparseArray);
             }
-            LongSparseArray<T> longSparseArray2 = longSparseArray.get(j2);
+            LongSparseArray<T> longSparseArray2 = longSparseArray.get(j11);
             if (longSparseArray2 == null) {
                 longSparseArray2 = new LongSparseArray<>();
-                longSparseArray.put(j2, longSparseArray2);
+                longSparseArray.put(j11, longSparseArray2);
             }
-            T t2 = longSparseArray2.get(j3);
-            longSparseArray2.put(j3, t);
-            return t2;
+            T t11 = longSparseArray2.get(j12);
+            longSparseArray2.put(j12, t10);
+            return t11;
         }
 
-        public LongSparseArray<T> removeAll(long j, long j2) {
-            LongSparseArray<LongSparseArray<T>> longSparseArray = this.map.get(j);
+        public T remove(long j10, long j11, long j12) {
+            LongSparseArray<T> longSparseArray;
+            LongSparseArray<LongSparseArray<T>> longSparseArray2 = this.map.get(j10);
+            if (longSparseArray2 == null || (longSparseArray = longSparseArray2.get(j11)) == null) {
+                return null;
+            }
+            T t10 = longSparseArray.get(j12);
+            longSparseArray.remove(j12);
+            return t10;
+        }
+
+        public LongSparseArray<T> removeAll(long j10, long j11) {
+            LongSparseArray<LongSparseArray<T>> longSparseArray = this.map.get(j10);
             if (longSparseArray == null) {
                 return null;
             }
-            LongSparseArray<T> longSparseArray2 = longSparseArray.get(j2);
-            longSparseArray.remove(j2);
+            LongSparseArray<T> longSparseArray2 = longSparseArray.get(j11);
+            longSparseArray.remove(j11);
             return longSparseArray2;
         }
 
-        public T remove(long j, long j2, long j3) {
-            LongSparseArray<T> longSparseArray;
-            LongSparseArray<LongSparseArray<T>> longSparseArray2 = this.map.get(j);
-            if (longSparseArray2 == null || (longSparseArray = longSparseArray2.get(j2)) == null) {
+        public T get(long j10, long j11, long j12) {
+            LongSparseArray<T> longSparseArray = get(j10, j11);
+            if (longSparseArray == null) {
                 return null;
             }
-            T t = longSparseArray.get(j3);
-            longSparseArray.remove(j3);
-            return t;
+            return longSparseArray.get(j12);
         }
     }
 
-    public static CharSequence applyTypingAnimationSpan(CharSequence charSequence) {
-        SpannableStringBuilder spannableStringBuilder;
-        TypingBotSpan[] typingBotSpanArr;
-        if ((charSequence instanceof Spannable) && (typingBotSpanArr = (TypingBotSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), TypingBotSpan.class)) != null && typingBotSpanArr.length > 0) {
-            return charSequence;
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0100  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x013f  */
+    /* JADX WARN: Removed duplicated region for block: B:66:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0106  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public boolean beforeSendingFinalRequest(final TLObject tLObject, List<MessageObject> list, final Runnable runnable) {
+        TLRPC.InputPeer inputPeer;
+        TLRPC.InputPeer inputPeer2;
+        long j10;
+        long j11;
+        String str;
+        if (list == null || list.isEmpty()) {
+            return true;
         }
-        if (charSequence instanceof SpannableStringBuilder) {
-            spannableStringBuilder = (SpannableStringBuilder) charSequence;
+        boolean z10 = tLObject instanceof TLRPC.TL_messages_sendMessage;
+        if (z10) {
+            inputPeer2 = ((TLRPC.TL_messages_sendMessage) tLObject).peer;
+        } else if (tLObject instanceof TLRPC.TL_messages_sendMedia) {
+            inputPeer2 = ((TLRPC.TL_messages_sendMedia) tLObject).peer;
+        } else if (tLObject instanceof TL_ephemeral.TL_sendMessage) {
+            inputPeer2 = ((TL_ephemeral.TL_sendMessage) tLObject).peer;
+        } else if (tLObject instanceof TLRPC.TL_messages_sendInlineBotResult) {
+            inputPeer2 = ((TLRPC.TL_messages_sendInlineBotResult) tLObject).peer;
+        } else if (tLObject instanceof TLRPC.TL_messages_forwardMessages) {
+            inputPeer2 = ((TLRPC.TL_messages_forwardMessages) tLObject).to_peer;
+        } else if (tLObject instanceof TLRPC.TL_messages_sendMultiMedia) {
+            inputPeer2 = ((TLRPC.TL_messages_sendMultiMedia) tLObject).peer;
         } else {
-            spannableStringBuilder = new SpannableStringBuilder(charSequence);
+            inputPeer = null;
+            long peerDialogId = DialogObject.getPeerDialogId(inputPeer);
+            if (inputPeer != null || peerDialogId <= 0 || !UserObject.isBotForumWithEditableTopics(getMessagesController().getUser(Long.valueOf(peerDialogId)))) {
+                return true;
+            }
+            final long[] jArr = new long[list.size()];
+            for (int i10 = 0; i10 < list.size(); i10++) {
+                jArr[i10] = list.get(i10).getId();
+            }
+            if (z10) {
+                j11 = ((TLRPC.TL_messages_sendMessage) tLObject).random_id;
+            } else if (tLObject instanceof TLRPC.TL_messages_sendMedia) {
+                j11 = ((TLRPC.TL_messages_sendMedia) tLObject).random_id;
+            } else if (tLObject instanceof TL_ephemeral.TL_sendMessage) {
+                j11 = ((TL_ephemeral.TL_sendMessage) tLObject).random_id;
+            } else if (tLObject instanceof TLRPC.TL_messages_sendInlineBotResult) {
+                j11 = ((TLRPC.TL_messages_sendInlineBotResult) tLObject).random_id;
+            } else {
+                if (!(tLObject instanceof TLRPC.TL_messages_forwardMessages)) {
+                    j10 = peerDialogId;
+                    if (tLObject instanceof TLRPC.TL_messages_sendMultiMedia) {
+                        ArrayList<TLRPC.TL_inputSingleMedia> arrayList = ((TLRPC.TL_messages_sendMultiMedia) tLObject).multi_media;
+                        int size = arrayList.size();
+                        j11 = 0;
+                        int i11 = 0;
+                        while (i11 < size) {
+                            TLRPC.TL_inputSingleMedia tL_inputSingleMedia = arrayList.get(i11);
+                            i11++;
+                            j11 = MediaDataController.calcHash(j11, tL_inputSingleMedia.random_id);
+                        }
+                    } else {
+                        j11 = 0;
+                    }
+                    if (!((!z10 ? ((TLRPC.TL_messages_sendMessage) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendMedia ? ((TLRPC.TL_messages_sendMedia) tLObject).reply_to : tLObject instanceof TL_ephemeral.TL_sendMessage ? ((TL_ephemeral.TL_sendMessage) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendInlineBotResult ? ((TLRPC.TL_messages_sendInlineBotResult) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_forwardMessages ? ((TLRPC.TL_messages_forwardMessages) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendMultiMedia ? ((TLRPC.TL_messages_sendMultiMedia) tLObject).reply_to : null) instanceof TLRPC.TL_inputReplyToMessage)) {
+                        return true;
+                    }
+                    if ((tLObject instanceof TLRPC.TL_messages_forwardMessages) && ((TLRPC.TL_messages_forwardMessages) tLObject).top_msg_id != 0) {
+                        return true;
+                    }
+                    if (z10) {
+                        str = ((TLRPC.TL_messages_sendMessage) tLObject).message;
+                    } else if (tLObject instanceof TLRPC.TL_messages_sendMedia) {
+                        str = ((TLRPC.TL_messages_sendMedia) tLObject).message;
+                    } else if (tLObject instanceof TL_ephemeral.TL_sendMessage) {
+                        str = ((TL_ephemeral.TL_sendMessage) tLObject).message;
+                    } else {
+                        if (tLObject instanceof TLRPC.TL_messages_sendMultiMedia) {
+                            ArrayList<TLRPC.TL_inputSingleMedia> arrayList2 = ((TLRPC.TL_messages_sendMultiMedia) tLObject).multi_media;
+                            int size2 = arrayList2.size();
+                            int i12 = 0;
+                            while (i12 < size2) {
+                                TLRPC.TL_inputSingleMedia tL_inputSingleMedia2 = arrayList2.get(i12);
+                                i12++;
+                                TLRPC.TL_inputSingleMedia tL_inputSingleMedia3 = tL_inputSingleMedia2;
+                                if (!TextUtils.isEmpty(tL_inputSingleMedia3.message)) {
+                                    str = tL_inputSingleMedia3.message;
+                                    break;
+                                }
+                            }
+                        }
+                        str = null;
+                    }
+                    long nextRandomId = j11 != 0 ? ~j11 : getSendMessagesHelper().getNextRandomId();
+                    if (TextUtils.isEmpty(str)) {
+                        str = LocaleController.getString(R.string.TopicsTitleMedia);
+                    } else if (str.length() > 16) {
+                        str = str.substring(0, 16) + "...";
+                    }
+                    final long j12 = j10;
+                    performSendBotTopicCreate(inputPeer, str, nextRandomId, new MessagesStorage.IntCallback() { // from class: org.telegram.messenger.i0
+                        @Override // org.telegram.messenger.MessagesStorage.IntCallback
+                        public final void run(int i13) {
+                            BotForumHelper.this.lambda$beforeSendingFinalRequest$4(tLObject, jArr, j12, runnable, i13);
+                        }
+                    });
+                    return false;
+                }
+                ArrayList<Long> arrayList3 = ((TLRPC.TL_messages_forwardMessages) tLObject).random_id;
+                int size3 = arrayList3.size();
+                j11 = 0;
+                int i13 = 0;
+                while (i13 < size3) {
+                    Long l10 = arrayList3.get(i13);
+                    i13++;
+                    j11 = MediaDataController.calcHash(j11, l10.longValue());
+                    peerDialogId = peerDialogId;
+                }
+            }
+            j10 = peerDialogId;
+            if (!((!z10 ? ((TLRPC.TL_messages_sendMessage) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendMedia ? ((TLRPC.TL_messages_sendMedia) tLObject).reply_to : tLObject instanceof TL_ephemeral.TL_sendMessage ? ((TL_ephemeral.TL_sendMessage) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendInlineBotResult ? ((TLRPC.TL_messages_sendInlineBotResult) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_forwardMessages ? ((TLRPC.TL_messages_forwardMessages) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendMultiMedia ? ((TLRPC.TL_messages_sendMultiMedia) tLObject).reply_to : null) instanceof TLRPC.TL_inputReplyToMessage)) {
+            }
         }
-        TypingDotsDrawable typingDotsDrawable = new TypingDotsDrawable(true);
-        typingDotsDrawable.setColor(-1);
-        typingDotsDrawable.start();
-        TypingBotSpan typingBotSpan = new TypingBotSpan(typingDotsDrawable, 1);
-        typingBotSpan.setColorKey(Theme.key_chat_messageTextIn);
-        typingBotSpan.setTopOffset(-AndroidUtilities.dp(10.0f));
-        spannableStringBuilder.append((CharSequence) " _");
-        spannableStringBuilder.setSpan(typingBotSpan, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-        return spannableStringBuilder;
+        inputPeer = inputPeer2;
+        long peerDialogId2 = DialogObject.getPeerDialogId(inputPeer);
+        return inputPeer != null ? true : true;
     }
 
-    private static class TypingBotSpan extends ColoredImageSpan {
-        public TypingBotSpan(TypingDotsDrawable typingDotsDrawable, int i) {
-            super(typingDotsDrawable, i);
+    public void onBotForumDraftUpdate(long j10, int i10, TLRPC.TL_sendMessageRichMessageDraftAction tL_sendMessageRichMessageDraftAction) {
+        onBotForumDraftUpdate(j10, i10, tL_sendMessageRichMessageDraftAction.random_id, tL_sendMessageRichMessageDraftAction.rich_message, tL_sendMessageRichMessageDraftAction.can_stop, tL_sendMessageRichMessageDraftAction.keep_on_stop);
+    }
+
+    private void onBotForumDraftUpdate(long j10, int i10, long j11, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10, boolean z11) {
+        long[] jArr;
+        BotDraftMessage botDraftMessage;
+        FileLog.d("[BotForum] onDraftNewDraft " + j10 + " " + i10 + " " + j11);
+        long j12 = (long) i10;
+        if (this.botTextDraftsByRandomIdsBlocklist.get(j10, j12, j11) != null) {
+            FileLog.d("[BotForum] onDraftNewDraft ignore " + j10 + " " + i10 + " " + j11);
+            return;
         }
+        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j10, j12);
+        if (longSparseArray == null || longSparseArray.size() <= 0) {
+            jArr = null;
+        } else {
+            jArr = new long[longSparseArray.size()];
+            int size = longSparseArray.size();
+            for (int i11 = 0; i11 < size; i11++) {
+                jArr[i11] = longSparseArray.keyAt(i11);
+            }
+        }
+        long[] jArr2 = jArr;
+        BotDraftMessage botDraftMessage2 = this.botTextDraftsByRandomIds.get(j10, j12, j11);
+        if (botDraftMessage2 == null) {
+            BotDraftMessage botDraftMessage3 = new BotDraftMessage(j10, i10, j11, getUserConfig().getNewMessageId());
+            this.botTextDraftsByRandomIds.put(j10, j12, j11, botDraftMessage3);
+            botDraftMessage = botDraftMessage3;
+        } else {
+            botDraftMessage = botDraftMessage2;
+        }
+        botDraftMessage.keepOnStop = z11;
+        botDraftMessage.canStop = z10;
+        if (jArr2 != null) {
+            for (long j13 : jArr2) {
+                if (j13 != j11) {
+                    BotDraftMessage botDraftMessage4 = longSparseArray.get(j13);
+                    if (botDraftMessage4.selfDestruct != null) {
+                        AndroidUtilities.cancelRunOnUIThread(botDraftMessage4.selfDestruct);
+                    }
+                    lambda$onBotForumDraftUpdate$1(j10, i10, j13);
+                }
+            }
+        }
+        boolean z12 = botDraftMessage.messageObject == null;
+        if (botDraftMessage.selfDestruct != null) {
+            AndroidUtilities.cancelRunOnUIThread(botDraftMessage.selfDestruct);
+        }
+        botDraftMessage.selfDestruct = new j0(this, j10, i10, j11, 1);
+        botDraftMessage.text = tL_textWithEntities;
+        botDraftMessage.messageObject = createDraftMessage(j10, i10, j11, botDraftMessage.localMessageId, tL_textWithEntities);
+        AndroidUtilities.runOnUIThread(botDraftMessage.selfDestruct, getAppGlobalConfig().messageTypingDraftTtl.get(TimeUnit.MILLISECONDS));
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.botForumDraftUpdate, new BotForumTextDraftUpdateNotification(j10, j12, botDraftMessage.messageObject, z12));
+    }
+
+    private MessageObject createDraftMessage(long j10, int i10, long j11, int i11, TL_iv.RichMessage richMessage) {
+        TLRPC.TL_message tL_message = new TLRPC.TL_message();
+        tL_message.dialog_id = j10;
+        tL_message.peer_id = getMessagesController().getPeer(j10);
+        tL_message.from_id = getMessagesController().getPeer(j10);
+        tL_message.local_id = i11;
+        tL_message.id = i11;
+        tL_message.random_id = j11;
+        tL_message.message = "";
+        tL_message.flags |= 8192;
+        tL_message.rich_message = richMessage;
+        tL_message.date = getConnectionsManager().getCurrentTime();
+        TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
+        tL_message.reply_to = tL_messageReplyHeader;
+        tL_message.flags |= 16;
+        tL_messageReplyHeader.forum_topic = true;
+        tL_messageReplyHeader.reply_to_top_id = i10;
+        tL_messageReplyHeader.flags |= 2;
+        tL_message.media = new TLRPC.TL_messageMediaEmpty();
+        tL_message.flags |= 512;
+        MessageObject messageObject = new MessageObject(this.currentAccount, tL_message, false, true);
+        messageObject.isBotPendingDraft = true;
+        messageObject.resetLayout();
+        return messageObject;
+    }
+
+    private void onBotForumDraftUpdate(long j10, int i10, long j11, TL_iv.RichMessage richMessage, boolean z10, boolean z11) {
+        long[] jArr;
+        BotDraftMessage botDraftMessage;
+        FileLog.d("[BotForum] onDraftNewDraft (rich_message) " + j10 + " " + i10 + " " + j11);
+        long j12 = (long) i10;
+        if (this.botTextDraftsByRandomIdsBlocklist.get(j10, j12, j11) != null) {
+            FileLog.d("[BotForum] onDraftNewDraft (rich_message) ignore " + j10 + " " + i10 + " " + j11);
+            return;
+        }
+        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j10, j12);
+        if (longSparseArray == null || longSparseArray.size() <= 0) {
+            jArr = null;
+        } else {
+            jArr = new long[longSparseArray.size()];
+            int size = longSparseArray.size();
+            for (int i11 = 0; i11 < size; i11++) {
+                jArr[i11] = longSparseArray.keyAt(i11);
+            }
+        }
+        long[] jArr2 = jArr;
+        BotDraftMessage botDraftMessage2 = this.botTextDraftsByRandomIds.get(j10, j12, j11);
+        if (botDraftMessage2 == null) {
+            BotDraftMessage botDraftMessage3 = new BotDraftMessage(j10, i10, j11, getUserConfig().getNewMessageId());
+            this.botTextDraftsByRandomIds.put(j10, j12, j11, botDraftMessage3);
+            botDraftMessage = botDraftMessage3;
+        } else {
+            botDraftMessage = botDraftMessage2;
+        }
+        botDraftMessage.keepOnStop = z11;
+        botDraftMessage.canStop = z10;
+        if (jArr2 != null) {
+            for (long j13 : jArr2) {
+                if (j13 != j11) {
+                    BotDraftMessage botDraftMessage4 = longSparseArray.get(j13);
+                    if (botDraftMessage4.selfDestruct != null) {
+                        AndroidUtilities.cancelRunOnUIThread(botDraftMessage4.selfDestruct);
+                    }
+                    lambda$onBotForumDraftUpdate$1(j10, i10, j13);
+                }
+            }
+        }
+        boolean z12 = botDraftMessage.messageObject == null;
+        if (botDraftMessage.selfDestruct != null) {
+            AndroidUtilities.cancelRunOnUIThread(botDraftMessage.selfDestruct);
+        }
+        botDraftMessage.selfDestruct = new j0(this, j10, i10, j11, 0);
+        botDraftMessage.richMessage = richMessage;
+        botDraftMessage.messageObject = createDraftMessage(j10, i10, j11, botDraftMessage.localMessageId, richMessage);
+        AndroidUtilities.runOnUIThread(botDraftMessage.selfDestruct, getAppGlobalConfig().messageTypingDraftTtl.get(TimeUnit.MILLISECONDS));
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.botForumDraftUpdate, new BotForumTextDraftUpdateNotification(j10, j12, botDraftMessage.messageObject, z12));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$stopStreaming$2(TLRPC.Bool bool, TLRPC.TL_error tL_error) {
     }
 }

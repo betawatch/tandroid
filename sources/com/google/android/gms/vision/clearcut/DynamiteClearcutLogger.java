@@ -1,27 +1,48 @@
 package com.google.android.gms.vision.clearcut;
 
 import android.content.Context;
-import com.google.android.gms.internal.vision.zze;
-import com.google.android.gms.internal.vision.zzfi$zzo;
-import com.google.android.gms.internal.vision.zzi;
-import com.google.android.gms.vision.L;
+import android.util.Log;
+import androidx.activity.g;
+import com.google.android.gms.internal.vision.f0;
+import d8.a;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public class DynamiteClearcutLogger {
-    private static final ExecutorService zza = zze.zza().zza(2, zzi.zza);
-    private zzb zzb = new zzb(0.03333333333333333d);
+    private static final ExecutorService zza;
+    private a zzb = new a();
     private VisionClearcutLogger zzc;
+
+    static {
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2, 2, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), Executors.defaultThreadFactory());
+        threadPoolExecutor.allowCoreThreadTimeOut(true);
+        zza = Executors.unconfigurableExecutorService(threadPoolExecutor);
+    }
 
     public DynamiteClearcutLogger(Context context) {
         this.zzc = new VisionClearcutLogger(context);
     }
 
-    public final void zza(int i, zzfi$zzo zzfi_zzo) {
-        if (i == 3 && !this.zzb.zza()) {
-            L.v("Skipping image analysis log due to rate limiting", new Object[0]);
-        } else {
-            zza.execute(new zza(this, i, zzfi_zzo));
+    public final void zza(int i10, f0 f0Var) {
+        if (i10 == 3) {
+            a aVar = this.zzb;
+            synchronized (aVar.b) {
+                long currentTimeMillis = System.currentTimeMillis();
+                if (aVar.c + aVar.a > currentTimeMillis) {
+                    if (Log.isLoggable("Vision", 2)) {
+                        Log.v("Vision", "Skipping image analysis log due to rate limiting");
+                        return;
+                    }
+                    return;
+                }
+                aVar.c = currentTimeMillis;
+            }
         }
+        zza.execute(new g(this, i10, f0Var, 4));
     }
 }

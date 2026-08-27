@@ -1,6 +1,7 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class MulticolumnAtom extends Atom {
     protected int afterVlines;
     protected int align;
@@ -11,14 +12,70 @@ public class MulticolumnAtom extends Atom {
     protected int row;
     protected float w = 0.0f;
 
-    public MulticolumnAtom(int i, String str, Atom atom) {
-        this.n = i < 1 ? 1 : i;
+    public MulticolumnAtom(int i10, String str, Atom atom) {
+        this.n = i10 < 1 ? 1 : i10;
         this.cols = atom;
         this.align = parseAlign(str);
     }
 
-    public void setWidth(float f) {
-        this.w = f;
+    private int parseAlign(String str) {
+        int length = str.length();
+        int i10 = 0;
+        int i11 = 2;
+        boolean z10 = true;
+        while (i10 < length) {
+            char charAt = str.charAt(i10);
+            if (charAt == 'c') {
+                i11 = 2;
+            } else if (charAt == 'l') {
+                i11 = 0;
+            } else if (charAt != 'r') {
+                if (charAt == '|') {
+                    if (z10) {
+                        this.beforeVlines = 1;
+                    } else {
+                        this.afterVlines = 1;
+                    }
+                    while (true) {
+                        int i12 = i10 + 1;
+                        if (i12 >= length) {
+                            i10 = i12;
+                            break;
+                        }
+                        if (str.charAt(i12) != '|') {
+                            break;
+                        }
+                        if (z10) {
+                            this.beforeVlines++;
+                        } else {
+                            this.afterVlines++;
+                        }
+                        i10 = i12;
+                    }
+                }
+                i10++;
+            } else {
+                i11 = 1;
+            }
+            z10 = false;
+            i10++;
+        }
+        return i11;
+    }
+
+    @Override // org.scilab.forge.jlatexmath.Atom
+    public Box createBox(TeXEnvironment teXEnvironment) {
+        Box createBox = this.w == 0.0f ? this.cols.createBox(teXEnvironment) : new HorizontalBox(this.cols.createBox(teXEnvironment), this.w, this.align);
+        createBox.type = 12;
+        return createBox;
+    }
+
+    public int getCol() {
+        return this.col;
+    }
+
+    public int getRow() {
+        return this.row;
     }
 
     public int getSkipped() {
@@ -29,73 +86,12 @@ public class MulticolumnAtom extends Atom {
         return this.afterVlines != 0;
     }
 
-    public void setRowColumn(int i, int i2) {
-        this.row = i;
-        this.col = i2;
+    public void setRowColumn(int i10, int i11) {
+        this.row = i10;
+        this.col = i11;
     }
 
-    public int getRow() {
-        return this.row;
-    }
-
-    public int getCol() {
-        return this.col;
-    }
-
-    private int parseAlign(String str) {
-        int length = str.length();
-        int i = 0;
-        int i2 = 2;
-        boolean z = true;
-        while (i < length) {
-            char charAt = str.charAt(i);
-            if (charAt == 'c') {
-                i2 = 2;
-            } else if (charAt == 'l') {
-                i2 = 0;
-            } else if (charAt != 'r') {
-                if (charAt == '|') {
-                    if (z) {
-                        this.beforeVlines = 1;
-                    } else {
-                        this.afterVlines = 1;
-                    }
-                    while (true) {
-                        int i3 = i + 1;
-                        if (i3 >= length) {
-                            i = i3;
-                            break;
-                        }
-                        if (str.charAt(i3) != '|') {
-                            break;
-                        }
-                        if (z) {
-                            this.beforeVlines++;
-                        } else {
-                            this.afterVlines++;
-                        }
-                        i = i3;
-                    }
-                }
-                i++;
-            } else {
-                i2 = 1;
-            }
-            z = false;
-            i++;
-        }
-        return i2;
-    }
-
-    @Override // org.scilab.forge.jlatexmath.Atom
-    public Box createBox(TeXEnvironment teXEnvironment) {
-        Box horizontalBox;
-        if (this.w == 0.0f) {
-            horizontalBox = this.cols.createBox(teXEnvironment);
-        } else {
-            horizontalBox = new HorizontalBox(this.cols.createBox(teXEnvironment), this.w, this.align);
-        }
-        horizontalBox.type = 12;
-        return horizontalBox;
+    public void setWidth(float f10) {
+        this.w = f10;
     }
 }

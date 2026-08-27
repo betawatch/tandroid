@@ -6,65 +6,37 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.AnimationDrawable;
 import android.util.AttributeSet;
 import android.view.View;
-import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.core.content.ContextCompat;
-import androidx.mediarouter.R$drawable;
-import androidx.mediarouter.R$string;
+import org.telegram.messenger.beta.R;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-class MediaRouteExpandCollapseButton extends AppCompatImageButton {
-    final AnimationDrawable mCollapseAnimationDrawable;
-    final String mCollapseGroupDescription;
-    final AnimationDrawable mExpandAnimationDrawable;
-    final String mExpandGroupDescription;
-    boolean mIsGroupExpanded;
-    View.OnClickListener mListener;
+class MediaRouteExpandCollapseButton extends m.v {
+    public final AnimationDrawable d;
+    public final AnimationDrawable e;
+    public final String f;
+    public final String h;
+    public boolean n;
+    public View.OnClickListener r;
 
     public MediaRouteExpandCollapseButton(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 0);
-    }
-
-    public MediaRouteExpandCollapseButton(Context context, AttributeSet attributeSet, int i) {
-        super(context, attributeSet, i);
-        AnimationDrawable animationDrawable = (AnimationDrawable) ContextCompat.getDrawable(context, R$drawable.mr_group_expand);
-        this.mExpandAnimationDrawable = animationDrawable;
-        AnimationDrawable animationDrawable2 = (AnimationDrawable) ContextCompat.getDrawable(context, R$drawable.mr_group_collapse);
-        this.mCollapseAnimationDrawable = animationDrawable2;
-        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(MediaRouterThemeHelper.getControllerColor(context, i), PorterDuff.Mode.SRC_IN);
+        super(context, attributeSet, 0);
+        AnimationDrawable animationDrawable = (AnimationDrawable) context.getDrawable(R.drawable.mr_group_expand);
+        this.d = animationDrawable;
+        AnimationDrawable animationDrawable2 = (AnimationDrawable) context.getDrawable(R.drawable.mr_group_collapse);
+        this.e = animationDrawable2;
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(g7.b0.b(context), PorterDuff.Mode.SRC_IN);
         animationDrawable.setColorFilter(porterDuffColorFilter);
         animationDrawable2.setColorFilter(porterDuffColorFilter);
-        String string = context.getString(R$string.mr_controller_expand_group);
-        this.mExpandGroupDescription = string;
-        this.mCollapseGroupDescription = context.getString(R$string.mr_controller_collapse_group);
+        String string = context.getString(R.string.mr_controller_expand_group);
+        this.f = string;
+        this.h = context.getString(R.string.mr_controller_collapse_group);
         setImageDrawable(animationDrawable.getFrame(0));
         setContentDescription(string);
-        super.setOnClickListener(new View.OnClickListener() { // from class: androidx.mediarouter.app.MediaRouteExpandCollapseButton.1
-            @Override // android.view.View.OnClickListener
-            public void onClick(View view) {
-                MediaRouteExpandCollapseButton mediaRouteExpandCollapseButton = MediaRouteExpandCollapseButton.this;
-                boolean z = mediaRouteExpandCollapseButton.mIsGroupExpanded;
-                mediaRouteExpandCollapseButton.mIsGroupExpanded = !z;
-                if (!z) {
-                    mediaRouteExpandCollapseButton.setImageDrawable(mediaRouteExpandCollapseButton.mExpandAnimationDrawable);
-                    MediaRouteExpandCollapseButton.this.mExpandAnimationDrawable.start();
-                    MediaRouteExpandCollapseButton mediaRouteExpandCollapseButton2 = MediaRouteExpandCollapseButton.this;
-                    mediaRouteExpandCollapseButton2.setContentDescription(mediaRouteExpandCollapseButton2.mCollapseGroupDescription);
-                } else {
-                    mediaRouteExpandCollapseButton.setImageDrawable(mediaRouteExpandCollapseButton.mCollapseAnimationDrawable);
-                    MediaRouteExpandCollapseButton.this.mCollapseAnimationDrawable.start();
-                    MediaRouteExpandCollapseButton mediaRouteExpandCollapseButton3 = MediaRouteExpandCollapseButton.this;
-                    mediaRouteExpandCollapseButton3.setContentDescription(mediaRouteExpandCollapseButton3.mExpandGroupDescription);
-                }
-                View.OnClickListener onClickListener = MediaRouteExpandCollapseButton.this.mListener;
-                if (onClickListener != null) {
-                    onClickListener.onClick(view);
-                }
-            }
-        });
+        super.setOnClickListener(new f0(this, 1));
     }
 
     @Override // android.view.View
-    public void setOnClickListener(View.OnClickListener onClickListener) {
-        this.mListener = onClickListener;
+    public final void setOnClickListener(View.OnClickListener onClickListener) {
+        this.r = onClickListener;
     }
 }

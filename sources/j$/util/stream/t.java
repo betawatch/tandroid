@@ -1,30 +1,30 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-public final class t extends f0 {
-    public final /* synthetic */ int m;
+public final class t extends h1 {
+    public final /* synthetic */ int s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ t(a aVar, int i, int i2) {
-        super(aVar, i, 1);
-        this.m = i2;
+    public /* synthetic */ t(a aVar, int i10, int i11) {
+        super(aVar, i10);
+        this.s = i11;
     }
 
     @Override // j$.util.stream.a
-    public final g2 M(int i, g2 g2Var) {
-        switch (this.m) {
+    public final j5 Q0(int i10, j5 j5Var) {
+        switch (this.s) {
             case 0:
-                return new p(this, g2Var, 3);
+                return new p(this, j5Var, 3);
             case 1:
-                return new U(0, g2Var);
+                return new u0(0, j5Var);
             case 2:
-                return new S(this, g2Var, 3);
+                return new s0(this, j5Var, 3);
             case 3:
-                return new a0(this, g2Var, 1);
+                return new b1(this, j5Var, 1);
             case 4:
-                return g2Var;
+                return j5Var;
             default:
-                return new a0(this, g2Var, 4);
+                return new b1(this, j5Var, 4);
         }
     }
 }

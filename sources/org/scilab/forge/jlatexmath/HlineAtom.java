@@ -1,17 +1,10 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class HlineAtom extends Atom {
     private float shift;
     private float width;
-
-    public void setWidth(float f) {
-        this.width = f;
-    }
-
-    public void setShift(float f) {
-        this.shift = f;
-    }
 
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
@@ -20,5 +13,13 @@ public class HlineAtom extends Atom {
         verticalBox.add(horizontalRule);
         verticalBox.type = 13;
         return verticalBox;
+    }
+
+    public void setShift(float f10) {
+        this.shift = f10;
+    }
+
+    public void setWidth(float f10) {
+        this.width = f10;
     }
 }

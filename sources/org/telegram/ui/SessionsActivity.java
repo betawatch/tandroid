@@ -1,1711 +1,1097 @@
 package org.telegram.ui;
 
+import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.os.Build;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import android.util.Base64;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Business.BusinessChatbotController;
-import org.telegram.ui.Business.ChatbotSheet;
-import org.telegram.ui.CameraScanActivity;
-import org.telegram.ui.Cells.CheckBoxCell;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.RadioColorCell;
-import org.telegram.ui.Cells.SessionCell;
-import org.telegram.ui.Cells.TextCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Cells.TextSettingsCell;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EmptyTextProgressView;
-import org.telegram.ui.Components.FlickerLoadingView;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.URLSpanNoUnderline;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.voip.CellFlickerDrawable;
-import org.telegram.ui.SessionBottomSheet;
-import org.telegram.ui.SessionsActivity;
 
-/* loaded from: classes4.dex */
-public class SessionsActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
-    private int botSessionsEndRow;
-    private int botSessionsStartRow;
-    private TLRPC.TL_authorization currentSession;
-    private int currentSessionRow;
-    private int currentSessionSectionRow;
-    private int currentType;
-    private Delegate delegate;
-    private EmptyTextProgressView emptyView;
-    private boolean fragmentOpened;
-    private FlickerLoadingView globalFlickerLoadingView;
-    private boolean highlightLinkDesktopDevice;
-    private ListAdapter listAdapter;
-    private RecyclerListView listView;
-    private boolean loading;
-    private int noOtherSessionsRow;
-    private int otherSessionsEndRow;
-    private int otherSessionsSectionRow;
-    private int otherSessionsStartRow;
-    private int otherSessionsTerminateDetail;
-    private int passwordSessionsDetailRow;
-    private int passwordSessionsEndRow;
-    private int passwordSessionsSectionRow;
-    private int passwordSessionsStartRow;
-    private int qrCodeDividerRow;
-    private int qrCodeRow;
-    private int rowCount;
-    private int terminateAllSessionsDetailRow;
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes3.dex */
+public class SessionsActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
+    public int A;
+    public int B;
+    public int C;
+    public int D;
+    public int E;
+    public int F;
+    public int G;
+    public int H;
+    public int I;
+    public int J;
+    public int K;
+    public int L;
+    public int M;
+    public int N;
+    public int O;
+    public int P;
+    public int Q;
+    public int R;
+    public boolean S;
+    public boolean T;
+    public xw0 U;
+    public j71 a;
+    public a60 b;
+    public org.telegram.ui.Components.az c;
+    public org.telegram.ui.Components.h00 d;
+    public final ArrayList e;
+    public final ArrayList f;
+    public ArrayList h;
+    public TLRPC.TL_authorization n;
+    public boolean r;
+    public f71 s;
     private int terminateAllSessionsRow;
-    private int ttlDays;
-    private int ttlDivideRow;
-    private int ttlHeaderRow;
     private int ttlRow;
-    private UndoView undoView;
-    private ArrayList sessions = new ArrayList();
-    private ArrayList passwordSessions = new ArrayList();
-    private ArrayList bots = new ArrayList();
-    private int repeatLoad = 0;
-    private final int VIEW_TYPE_TEXT = 0;
-    private final int VIEW_TYPE_INFO = 1;
-    private final int VIEW_TYPE_HEADER = 2;
-    private final int VIEW_TYPE_SESSION = 4;
-    private final int VIEW_TYPE_SCANQR = 5;
-    private final int VIEW_TYPE_SETTINGS = 6;
+    public int v;
+    public final int w;
+    public int x;
+    public int y;
 
-    public interface Delegate {
-        void sessionsLoaded();
+    public SessionsActivity(int i10) {
+        super(null);
+        this.e = new ArrayList();
+        this.f = new ArrayList();
+        this.h = new ArrayList();
+        this.R = 0;
+        this.w = i10;
     }
 
-    public static /* synthetic */ void $r8$lambda$AhgtNho1OL9OHdHASrvDKSbBPok(TLObject tLObject, TLRPC.TL_error tL_error) {
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    public SessionsActivity(int i) {
-        this.currentType = i;
-    }
-
-    public SessionsActivity setHighlightLinkDesktopDevice() {
-        this.highlightLinkDesktopDevice = true;
-        return this;
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onFragmentCreate() {
-        super.onFragmentCreate();
-        updateRows();
-        loadSessions(false);
-        if (this.currentType == 0) {
-            BusinessChatbotController.getInstance(this.currentAccount).load(new Utilities.Callback() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda2
-                @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    SessionsActivity.$r8$lambda$IBF1Elu9be8CTDU2bcV9Zcw2ZbY(SessionsActivity.this, (TL_account.connectedBots) obj);
-                }
-            });
-        }
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.newSessionReceived);
-        return true;
-    }
-
-    public static /* synthetic */ void $r8$lambda$IBF1Elu9be8CTDU2bcV9Zcw2ZbY(SessionsActivity sessionsActivity, TL_account.connectedBots connectedbots) {
-        sessionsActivity.getClass();
-        if (connectedbots == null) {
-            return;
-        }
-        sessionsActivity.bots = connectedbots.connected_bots;
-        if (sessionsActivity.listAdapter != null) {
-            sessionsActivity.updateRows();
-            sessionsActivity.listAdapter.notifyDataSetChanged();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.newSessionReceived);
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onTransitionAnimationEnd(boolean z, boolean z2) {
-        super.onTransitionAnimationEnd(z, z2);
-        if (!z || z2) {
-            return;
-        }
-        this.fragmentOpened = true;
-        for (int i = 0; i < this.listView.getChildCount(); i++) {
-            View childAt = this.listView.getChildAt(i);
-            if (childAt instanceof ScanQRCodeView) {
-                ((ScanQRCodeView) childAt).buttonTextView.invalidate();
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public View createView(Context context) {
-        FlickerLoadingView flickerLoadingView = new FlickerLoadingView(context);
-        this.globalFlickerLoadingView = flickerLoadingView;
-        int i = 1;
-        flickerLoadingView.setIsSingleCell(true);
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        if (this.currentType == 0) {
-            this.actionBar.setTitle(LocaleController.getString(R.string.Devices));
-        } else {
-            this.actionBar.setTitle(LocaleController.getString(R.string.WebSessionsTitle));
-        }
-        this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.SessionsActivity.1
-            @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i2) {
-                if (i2 == -1) {
-                    SessionsActivity.this.finishFragment();
-                }
-            }
-        });
-        INavigationLayout iNavigationLayout = this.parentLayout;
-        if (iNavigationLayout != null && iNavigationLayout.isRightLayout()) {
-            this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
-        }
-        this.listAdapter = new ListAdapter(context);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
-        EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context);
-        this.emptyView = emptyTextProgressView;
-        emptyTextProgressView.showProgress();
-        frameLayout.addView(this.emptyView, LayoutHelper.createFrame(-1, -1, 17));
-        RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.SessionsActivity.2
-            @Override // org.telegram.ui.Components.RecyclerListView
-            public Integer getSelectorColor(int i2) {
-                if (i2 == SessionsActivity.this.terminateAllSessionsRow) {
-                    return Integer.valueOf(Theme.multAlpha(getThemedColor(Theme.key_text_RedRegular), 0.1f));
-                }
-                return Integer.valueOf(getThemedColor(Theme.key_listSelector));
-            }
-        };
-        this.listView = recyclerListView;
-        recyclerListView.setSections();
-        this.actionBar.setAdaptiveBackground(this.listView);
-        this.listView.setLayoutManager(new LinearLayoutManager(context, i, false) { // from class: org.telegram.ui.SessionsActivity.3
-            @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
-            public boolean supportsPredictiveItemAnimations() {
-                return true;
-            }
-        });
-        this.listView.setVerticalScrollBarEnabled(false);
-        this.listView.setEmptyView(this.emptyView);
-        this.listView.setAnimateEmptyView(true, 0);
-        frameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1.0f));
-        this.listView.setAdapter(this.listAdapter);
-        DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
-        defaultItemAnimator.setDurations(150L);
-        CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.DEFAULT;
-        defaultItemAnimator.setMoveInterpolator(cubicBezierInterpolator);
-        defaultItemAnimator.setTranslationInterpolator(cubicBezierInterpolator);
-        this.listView.setItemAnimator(defaultItemAnimator);
-        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda3
-            @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i2) {
-                SessionsActivity.$r8$lambda$78JpZAudOU98f8HbqlhnDgzUZNA(SessionsActivity.this, view, i2);
-            }
-        });
-        if (this.currentType == 0) {
-            4 r1 = new 4(context);
-            this.undoView = r1;
-            frameLayout.addView(r1, LayoutHelper.createFrame(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
-        }
-        updateRows();
-        return this.fragmentView;
-    }
-
-    public static /* synthetic */ void $r8$lambda$78JpZAudOU98f8HbqlhnDgzUZNA(final SessionsActivity sessionsActivity, View view, final int i) {
+    public static void U(SessionsActivity sessionsActivity, int i10) {
         CharSequence charSequence;
         TLRPC.TL_authorization tL_authorization;
+        boolean z10;
+        int i11;
+        int i12;
+        boolean z11;
         ArrayList arrayList;
         String string;
-        boolean z = false;
-        if (i == sessionsActivity.ttlRow) {
+        ArrayList arrayList2 = sessionsActivity.e;
+        int i13 = sessionsActivity.w;
+        int i14 = 22;
+        int i15 = 6;
+        float f10 = 4.0f;
+        int i16 = 1;
+        if (i10 == sessionsActivity.ttlRow) {
             if (sessionsActivity.getParentActivity() == null) {
                 return;
             }
-            int i2 = sessionsActivity.ttlDays;
-            int i3 = i2 <= 7 ? 0 : i2 <= 93 ? 1 : i2 <= 183 ? 2 : 3;
-            final AlertDialog.Builder builder = new AlertDialog.Builder(sessionsActivity.getParentActivity());
-            builder.setTitle(LocaleController.getString(R.string.SessionsSelfDestruct));
+            int i17 = sessionsActivity.v;
+            int i18 = i17 <= 7 ? 0 : i17 <= 93 ? 1 : i17 <= 183 ? 2 : 3;
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(sessionsActivity.getParentActivity());
+            String string2 = LocaleController.getString(R.string.SessionsSelfDestruct);
+            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+            b2Var.N = string2;
             String[] strArr = {LocaleController.formatPluralString("Weeks", 1, new Object[0]), LocaleController.formatPluralString("Months", 3, new Object[0]), LocaleController.formatPluralString("Months", 6, new Object[0]), LocaleController.formatPluralString("Years", 1, new Object[0])};
             LinearLayout linearLayout = new LinearLayout(sessionsActivity.getParentActivity());
             linearLayout.setOrientation(1);
-            builder.setView(linearLayout);
-            int i4 = 0;
-            while (i4 < 4) {
-                RadioColorCell radioColorCell = new RadioColorCell(sessionsActivity.getParentActivity());
-                radioColorCell.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-                radioColorCell.setTag(Integer.valueOf(i4));
-                radioColorCell.setCheckColor(Theme.getColor(Theme.key_radioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
-                radioColorCell.setTextAndValue(strArr[i4], i3 == i4);
-                linearLayout.addView(radioColorCell);
-                radioColorCell.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector), 2));
-                radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda5
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view2) {
-                        SessionsActivity.$r8$lambda$g0klfYoU065KGsspZpucYGmsMD4(SessionsActivity.this, builder, view2);
-                    }
-                });
-                i4++;
+            alertDialog$Builder.n(linearLayout);
+            int i19 = 0;
+            while (i19 < 4) {
+                org.telegram.ui.Cells.h6 h6Var = new org.telegram.ui.Cells.h6(sessionsActivity.getParentActivity(), null);
+                h6Var.setPadding(AndroidUtilities.dp(f10), 0, AndroidUtilities.dp(4.0f), 0);
+                h6Var.setTag(Integer.valueOf(i19));
+                h6Var.a(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.g7, false), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.E5, false));
+                h6Var.b(strArr[i19], i18 == i19);
+                linearLayout.addView(h6Var);
+                h6Var.setBackground(org.telegram.ui.ActionBar.g6.f0(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.i6, false), 2, -1));
+                h6Var.setOnClickListener(new u70(i14, sessionsActivity, alertDialog$Builder));
+                i19++;
+                f10 = 4.0f;
             }
-            builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
-            sessionsActivity.showDialog(builder.create());
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+            sessionsActivity.showDialog(b2Var);
             return;
         }
-        if (i == sessionsActivity.terminateAllSessionsRow) {
+        if (i10 == sessionsActivity.terminateAllSessionsRow) {
             if (sessionsActivity.getParentActivity() == null) {
                 return;
             }
-            ArrayList arrayList2 = sessionsActivity.bots;
-            if (arrayList2 != null && !arrayList2.isEmpty()) {
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                ArrayList arrayList3 = sessionsActivity.bots;
-                int size = arrayList3.size();
-                int i5 = 0;
-                while (i5 < size) {
-                    Object obj = arrayList3.get(i5);
-                    i5++;
-                    TLRPC.User user = MessagesController.getInstance(sessionsActivity.currentAccount).getUser(Long.valueOf(((TL_account.TL_connectedBot) obj).bot_id));
-                    if (user != null) {
-                        String publicUsername = UserObject.getPublicUsername(user);
-                        if (!TextUtils.isEmpty(publicUsername)) {
-                            if (spannableStringBuilder.length() > 0) {
-                                spannableStringBuilder.append((CharSequence) ", ");
-                            }
-                            SpannableStringBuilder append = new SpannableStringBuilder("@").append((CharSequence) publicUsername);
-                            append.setSpan(new URLSpanNoUnderline("https://t.me/" + publicUsername), 0, append.length(), 33);
-                            spannableStringBuilder.append((CharSequence) append);
-                        } else {
-                            spannableStringBuilder.append((CharSequence) UserObject.getUserName(user));
-                        }
-                    }
-                }
-                AlertsCreator.showAlertWithCheckbox(sessionsActivity.getContext(), LocaleController.getString(R.string.AreYouSureSessionsTitle), LocaleController.getString(R.string.AreYouSureSessions), LocaleController.formatSpannable(R.string.AlsoTerminateChatbot, spannableStringBuilder), LocaleController.getString(R.string.Terminate), new Utilities.Callback() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda6
-                    @Override // org.telegram.messenger.Utilities.Callback
-                    public final void run(Object obj2) {
-                        SessionsActivity.$r8$lambda$YCayGkBIsv-Hc-O1NgG8ngMwJnc(SessionsActivity.this, (Boolean) obj2);
-                    }
-                }, sessionsActivity.resourceProvider);
-                return;
-            }
-            AlertDialog.Builder builder2 = new AlertDialog.Builder(sessionsActivity.getParentActivity());
-            if (sessionsActivity.currentType == 0) {
-                builder2.setMessage(LocaleController.getString(R.string.AreYouSureSessions));
-                builder2.setTitle(LocaleController.getString(R.string.AreYouSureSessionsTitle));
-                string = LocaleController.getString(R.string.Terminate);
-            } else {
-                builder2.setMessage(LocaleController.getString(R.string.AreYouSureWebSessions));
-                builder2.setTitle(LocaleController.getString(R.string.TerminateWebSessionsTitle));
-                string = LocaleController.getString(R.string.Disconnect);
-            }
-            builder2.setPositiveButton(string, new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda7
-                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                public final void onClick(AlertDialog alertDialog, int i6) {
-                    SessionsActivity.$r8$lambda$vrZmgMYLSLpuqI05mFu5iYKMOS8(SessionsActivity.this, alertDialog, i6);
-                }
-            });
-            builder2.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
-            AlertDialog create = builder2.create();
-            sessionsActivity.showDialog(create);
-            TextView textView = (TextView) create.getButton(-1);
-            if (textView != null) {
-                textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
-                return;
-            }
-            return;
-        }
-        if (i >= sessionsActivity.botSessionsStartRow && i < sessionsActivity.botSessionsEndRow) {
-            if (sessionsActivity.getParentActivity() == null || (arrayList = sessionsActivity.bots) == null || arrayList.isEmpty()) {
-                return;
-            }
-            final int i6 = i - sessionsActivity.botSessionsStartRow;
-            new ChatbotSheet(sessionsActivity.getContext(), (TL_account.TL_connectedBot) sessionsActivity.bots.get(i6), new Runnable() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda8
-                @Override // java.lang.Runnable
-                public final void run() {
-                    SessionsActivity.$r8$lambda$5eaK8GTcbpXudi-k1kjWEg5wIfw(SessionsActivity.this, i6);
-                }
-            }, sessionsActivity.resourceProvider).show();
-            return;
-        }
-        if (((i < sessionsActivity.otherSessionsStartRow || i >= sessionsActivity.otherSessionsEndRow) && ((i < sessionsActivity.passwordSessionsStartRow || i >= sessionsActivity.passwordSessionsEndRow) && i != sessionsActivity.currentSessionRow)) || sessionsActivity.getParentActivity() == null) {
-            return;
-        }
-        if (sessionsActivity.currentType == 0) {
-            if (i == sessionsActivity.currentSessionRow) {
-                tL_authorization = sessionsActivity.currentSession;
-                z = true;
-            } else {
-                int i7 = sessionsActivity.otherSessionsStartRow;
-                if (i >= i7 && i < sessionsActivity.otherSessionsEndRow) {
-                    tL_authorization = (TLRPC.TL_authorization) sessionsActivity.sessions.get(i - i7);
+            ArrayList arrayList3 = sessionsActivity.h;
+            if (arrayList3 == null || arrayList3.isEmpty()) {
+                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(sessionsActivity.getParentActivity());
+                org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder2.a;
+                if (i13 == 0) {
+                    b2Var2.P = LocaleController.getString(R.string.AreYouSureSessions);
+                    b2Var2.N = LocaleController.getString(R.string.AreYouSureSessionsTitle);
+                    string = LocaleController.getString(R.string.Terminate);
                 } else {
-                    tL_authorization = (TLRPC.TL_authorization) sessionsActivity.passwordSessions.get(i - sessionsActivity.passwordSessionsStartRow);
+                    b2Var2.P = LocaleController.getString(R.string.AreYouSureWebSessions);
+                    b2Var2.N = LocaleController.getString(R.string.TerminateWebSessionsTitle);
+                    string = LocaleController.getString(R.string.Disconnect);
                 }
-            }
-            sessionsActivity.showSessionBottomSheet(tL_authorization, z);
-            return;
-        }
-        AlertDialog.Builder builder3 = new AlertDialog.Builder(sessionsActivity.getParentActivity());
-        final boolean[] zArr = new boolean[1];
-        if (sessionsActivity.currentType == 0) {
-            builder3.setMessage(LocaleController.getString(R.string.TerminateSessionText));
-            builder3.setTitle(LocaleController.getString(R.string.AreYouSureSessionTitle));
-            charSequence = LocaleController.getString(R.string.Terminate);
-        } else {
-            TLRPC.TL_webAuthorization tL_webAuthorization = (TLRPC.TL_webAuthorization) sessionsActivity.sessions.get(i - sessionsActivity.otherSessionsStartRow);
-            builder3.setMessage(LocaleController.formatString("TerminateWebSessionText", R.string.TerminateWebSessionText, tL_webAuthorization.domain));
-            builder3.setTitle(LocaleController.getString(R.string.TerminateWebSessionTitle));
-            CharSequence string2 = LocaleController.getString(R.string.Disconnect);
-            FrameLayout frameLayout = new FrameLayout(sessionsActivity.getParentActivity());
-            TLRPC.User user2 = MessagesController.getInstance(sessionsActivity.currentAccount).getUser(Long.valueOf(tL_webAuthorization.bot_id));
-            String firstName = user2 != null ? UserObject.getFirstName(user2) : "";
-            CheckBoxCell checkBoxCell = new CheckBoxCell(sessionsActivity.getParentActivity(), 1);
-            checkBoxCell.setBackgroundDrawable(Theme.getSelectorDrawable(false));
-            checkBoxCell.setText(LocaleController.formatString("TerminateWebSessionStop", R.string.TerminateWebSessionStop, firstName), "", false, false);
-            checkBoxCell.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(8.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(8.0f) : AndroidUtilities.dp(16.0f), 0);
-            frameLayout.addView(checkBoxCell, LayoutHelper.createFrame(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
-            checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda9
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
-                    SessionsActivity.$r8$lambda$O3ZsR5U5cx1wND7e9x-jT5KaQpE(zArr, view2);
+                alertDialog$Builder2.k(string, new e71(sessionsActivity, i16));
+                alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), null);
+                sessionsActivity.showDialog(b2Var2);
+                TextView textView = (TextView) b2Var2.d(-1);
+                if (textView != null) {
+                    textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.q7, false));
+                    return;
                 }
-            });
-            builder3.setCustomViewOffset(16);
-            builder3.setView(frameLayout);
-            charSequence = string2;
-        }
-        builder3.setPositiveButton(charSequence, new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda10
-            @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-            public final void onClick(AlertDialog alertDialog, int i8) {
-                SessionsActivity.$r8$lambda$xXEfA1E_wpAf-opQP6DtohvFVH4(SessionsActivity.this, i, zArr, alertDialog, i8);
+                return;
             }
-        });
-        builder3.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
-        AlertDialog create2 = builder3.create();
-        sessionsActivity.showDialog(create2);
-        TextView textView2 = (TextView) create2.getButton(-1);
-        if (textView2 != null) {
-            textView2.setTextColor(Theme.getColor(Theme.key_text_RedBold));
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$g0klfYoU065KGsspZpucYGmsMD4(SessionsActivity sessionsActivity, AlertDialog.Builder builder, View view) {
-        int i;
-        sessionsActivity.getClass();
-        builder.getDismissRunnable().run();
-        Integer num = (Integer) view.getTag();
-        if (num.intValue() == 0) {
-            i = 7;
-        } else if (num.intValue() == 1) {
-            i = 90;
-        } else if (num.intValue() == 2) {
-            i = NotificationCenter.themeUploadError;
-        } else {
-            i = num.intValue() == 3 ? 365 : 0;
-        }
-        TL_account.setAuthorizationTTL setauthorizationttl = new TL_account.setAuthorizationTTL();
-        setauthorizationttl.authorization_ttl_days = i;
-        sessionsActivity.ttlDays = i;
-        ListAdapter listAdapter = sessionsActivity.listAdapter;
-        if (listAdapter != null) {
-            listAdapter.notifyDataSetChanged();
-        }
-        sessionsActivity.getConnectionsManager().sendRequest(setauthorizationttl, new RequestDelegate() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda13
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                SessionsActivity.$r8$lambda$AhgtNho1OL9OHdHASrvDKSbBPok(tLObject, tL_error);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$YCayGkBIsv-Hc-O1NgG8ngMwJnc(final SessionsActivity sessionsActivity, Boolean bool) {
-        ArrayList arrayList;
-        if (bool != null) {
-            sessionsActivity.getClass();
-            if (bool.booleanValue() && (arrayList = sessionsActivity.bots) != null && !arrayList.isEmpty()) {
-                TL_account.updateConnectedBot updateconnectedbot = new TL_account.updateConnectedBot();
-                updateconnectedbot.bot = MessagesController.getInstance(sessionsActivity.currentAccount).getInputUser(((TL_account.TL_connectedBot) sessionsActivity.bots.get(0)).bot_id);
-                updateconnectedbot.deleted = true;
-                updateconnectedbot.recipients = new TL_account.TL_inputBusinessBotRecipients();
-                ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(updateconnectedbot, new RequestDelegate() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda14
-                    @Override // org.telegram.tgnet.RequestDelegate
-                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        SessionsActivity.$r8$lambda$CVsC6Q08I36E00fDEUfyfZAidrI(SessionsActivity.this, tLObject, tL_error);
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+            ArrayList arrayList4 = sessionsActivity.h;
+            int size = arrayList4.size();
+            int i20 = 0;
+            while (i20 < size) {
+                Object obj = arrayList4.get(i20);
+                i20++;
+                TLRPC.User user = MessagesController.getInstance(sessionsActivity.currentAccount).getUser(Long.valueOf(((TL_account.TL_connectedBot) obj).bot_id));
+                if (user != null) {
+                    String publicUsername = UserObject.getPublicUsername(user);
+                    if (TextUtils.isEmpty(publicUsername)) {
+                        spannableStringBuilder.append((CharSequence) UserObject.getUserName(user));
+                    } else {
+                        if (spannableStringBuilder.length() > 0) {
+                            spannableStringBuilder.append((CharSequence) ", ");
+                        }
+                        SpannableStringBuilder append = new SpannableStringBuilder("@").append((CharSequence) publicUsername);
+                        append.setSpan(new org.telegram.ui.Components.r41(s3.c.e("https://t.me/", publicUsername), (org.telegram.ui.Components.xz0) null), 0, append.length(), 33);
+                        spannableStringBuilder.append((CharSequence) append);
                     }
-                });
-            }
-        }
-        ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(new TLRPC.TL_auth_resetAuthorizations(), new RequestDelegate() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda15
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                SessionsActivity.$r8$lambda$kRbqheY0kN2mnHIBLvmjBOpy5Qs(SessionsActivity.this, tLObject, tL_error);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$CVsC6Q08I36E00fDEUfyfZAidrI(final SessionsActivity sessionsActivity, TLObject tLObject, TLRPC.TL_error tL_error) {
-        sessionsActivity.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda27
-            @Override // java.lang.Runnable
-            public final void run() {
-                BusinessChatbotController.getInstance(SessionsActivity.this.currentAccount).invalidate(true);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$kRbqheY0kN2mnHIBLvmjBOpy5Qs(final SessionsActivity sessionsActivity, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        sessionsActivity.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda24
-            @Override // java.lang.Runnable
-            public final void run() {
-                SessionsActivity.$r8$lambda$2EYEkgrpj1N3OOV-A5ko3940wVo(SessionsActivity.this, tL_error, tLObject);
-            }
-        });
-        for (int i = 0; i < 4; i++) {
-            UserConfig userConfig = UserConfig.getInstance(i);
-            if (userConfig.isClientActivated()) {
-                userConfig.registeredForPush = false;
-                userConfig.saveConfig(false);
-                MessagesController.getInstance(i).registerForPush(SharedConfig.pushType, SharedConfig.pushString);
-                ConnectionsManager.getInstance(i).setUserId(userConfig.getClientUserId());
-            }
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$2EYEkgrpj1N3OOV-A5ko3940wVo(SessionsActivity sessionsActivity, TLRPC.TL_error tL_error, TLObject tLObject) {
-        if (sessionsActivity.getParentActivity() != null && tL_error == null && (tLObject instanceof TLRPC.TL_boolTrue)) {
-            BulletinFactory.of(sessionsActivity).createSimpleBulletin(R.raw.contact_check, LocaleController.getString(R.string.AllSessionsTerminated)).show();
-            sessionsActivity.loadSessions(false);
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$vrZmgMYLSLpuqI05mFu5iYKMOS8(final SessionsActivity sessionsActivity, AlertDialog alertDialog, int i) {
-        if (sessionsActivity.currentType == 0) {
-            ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(new TLRPC.TL_auth_resetAuthorizations(), new RequestDelegate() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda16
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    SessionsActivity.$r8$lambda$yle1ERH9e1XaYQIG2L2qPkQRVPk(SessionsActivity.this, tLObject, tL_error);
                 }
-            });
-        } else {
-            ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(new TL_account.resetWebAuthorizations(), new RequestDelegate() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda17
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    SessionsActivity.$r8$lambda$EEHjetqthyyQMMsKv09Vf5lz3wY(SessionsActivity.this, tLObject, tL_error);
-                }
-            });
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$yle1ERH9e1XaYQIG2L2qPkQRVPk(final SessionsActivity sessionsActivity, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        sessionsActivity.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda26
-            @Override // java.lang.Runnable
-            public final void run() {
-                SessionsActivity.$r8$lambda$r932Gbi0DsQO8udz8FlyPnROMEE(SessionsActivity.this, tL_error, tLObject);
             }
-        });
-        for (int i = 0; i < 4; i++) {
-            UserConfig userConfig = UserConfig.getInstance(i);
-            if (userConfig.isClientActivated()) {
-                userConfig.registeredForPush = false;
-                userConfig.saveConfig(false);
-                MessagesController.getInstance(i).registerForPush(SharedConfig.pushType, SharedConfig.pushString);
-                ConnectionsManager.getInstance(i).setUserId(userConfig.getClientUserId());
-            }
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$r932Gbi0DsQO8udz8FlyPnROMEE(SessionsActivity sessionsActivity, TLRPC.TL_error tL_error, TLObject tLObject) {
-        if (sessionsActivity.getParentActivity() != null && tL_error == null && (tLObject instanceof TLRPC.TL_boolTrue)) {
-            BulletinFactory.of(sessionsActivity).createSimpleBulletin(R.raw.contact_check, LocaleController.getString(R.string.AllSessionsTerminated)).show();
-            sessionsActivity.loadSessions(false);
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$EEHjetqthyyQMMsKv09Vf5lz3wY(final SessionsActivity sessionsActivity, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        sessionsActivity.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda23
-            @Override // java.lang.Runnable
-            public final void run() {
-                SessionsActivity.$r8$lambda$d7fgKgP4LwZ4jhOM_DNHWkGjPIU(SessionsActivity.this, tL_error, tLObject);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$d7fgKgP4LwZ4jhOM_DNHWkGjPIU(SessionsActivity sessionsActivity, TLRPC.TL_error tL_error, TLObject tLObject) {
-        if (sessionsActivity.getParentActivity() == null) {
+            org.telegram.ui.Components.y4.i0(sessionsActivity.getParentActivity(), LocaleController.getString(R.string.AreYouSureSessionsTitle), LocaleController.getString(R.string.AreYouSureSessions), LocaleController.formatSpannable(R.string.AlsoTerminateChatbot, spannableStringBuilder), LocaleController.getString(R.string.Terminate), new d71(sessionsActivity, i16), sessionsActivity.resourceProvider, false);
             return;
         }
-        if (tL_error == null && (tLObject instanceof TLRPC.TL_boolTrue)) {
-            BulletinFactory.of(sessionsActivity).createSimpleBulletin(R.raw.contact_check, LocaleController.getString(R.string.AllWebSessionsTerminated)).show();
-        } else {
-            BulletinFactory.of(sessionsActivity).createSimpleBulletin(R.raw.error, LocaleController.getString(R.string.UnknownError)).show();
-        }
-        sessionsActivity.loadSessions(false);
-    }
-
-    public static /* synthetic */ void $r8$lambda$5eaK8GTcbpXudi-k1kjWEg5wIfw(SessionsActivity sessionsActivity, int i) {
-        sessionsActivity.bots.remove(i);
-        sessionsActivity.updateRows();
-        ListAdapter listAdapter = sessionsActivity.listAdapter;
-        if (listAdapter != null) {
-            listAdapter.notifyDataSetChanged();
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$O3ZsR5U5cx1wND7e9x-jT5KaQpE(boolean[] zArr, View view) {
-        if (view.isEnabled()) {
-            boolean z = !zArr[0];
-            zArr[0] = z;
-            ((CheckBoxCell) view).setChecked(z, true);
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$xXEfA1E_wpAf-opQP6DtohvFVH4(final SessionsActivity sessionsActivity, int i, boolean[] zArr, AlertDialog alertDialog, int i2) {
-        final TLRPC.TL_authorization tL_authorization;
-        if (sessionsActivity.getParentActivity() == null) {
+        if (i10 >= sessionsActivity.I && i10 < sessionsActivity.J) {
+            if (sessionsActivity.getParentActivity() == null || (arrayList = sessionsActivity.h) == null || arrayList.isEmpty()) {
+                return;
+            }
+            int i21 = i10 - sessionsActivity.I;
+            new qf.g0(sessionsActivity.getParentActivity(), (TL_account.TL_connectedBot) sessionsActivity.h.get(i21), new org.telegram.ui.Components.xl(sessionsActivity, i21, 24), sessionsActivity.resourceProvider).show();
             return;
         }
-        final AlertDialog alertDialog2 = new AlertDialog(sessionsActivity.getParentActivity(), 3);
-        alertDialog2.setCanCancel(false);
-        alertDialog2.show();
-        if (sessionsActivity.currentType == 0) {
-            int i3 = sessionsActivity.otherSessionsStartRow;
-            if (i >= i3 && i < sessionsActivity.otherSessionsEndRow) {
-                tL_authorization = (TLRPC.TL_authorization) sessionsActivity.sessions.get(i - i3);
+        if (((i10 < sessionsActivity.G || i10 >= sessionsActivity.H) && ((i10 < sessionsActivity.C || i10 >= sessionsActivity.D) && i10 != sessionsActivity.y)) || sessionsActivity.getParentActivity() == null) {
+            return;
+        }
+        if (i13 != 0) {
+            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(sessionsActivity.getParentActivity());
+            boolean[] zArr = new boolean[1];
+            org.telegram.ui.ActionBar.b2 b2Var3 = alertDialog$Builder3.a;
+            if (i13 == 0) {
+                b2Var3.P = LocaleController.getString(R.string.TerminateSessionText);
+                b2Var3.N = LocaleController.getString(R.string.AreYouSureSessionTitle);
+                charSequence = LocaleController.getString(R.string.Terminate);
             } else {
-                tL_authorization = (TLRPC.TL_authorization) sessionsActivity.passwordSessions.get(i - sessionsActivity.passwordSessionsStartRow);
+                TLRPC.TL_webAuthorization tL_webAuthorization = (TLRPC.TL_webAuthorization) arrayList2.get(i10 - sessionsActivity.G);
+                b2Var3.P = LocaleController.formatString("TerminateWebSessionText", R.string.TerminateWebSessionText, tL_webAuthorization.domain);
+                b2Var3.N = LocaleController.getString(R.string.TerminateWebSessionTitle);
+                CharSequence string3 = LocaleController.getString(R.string.Disconnect);
+                FrameLayout frameLayout = new FrameLayout(sessionsActivity.getParentActivity());
+                TLRPC.User user2 = MessagesController.getInstance(sessionsActivity.currentAccount).getUser(Long.valueOf(tL_webAuthorization.bot_id));
+                String firstName = user2 != null ? UserObject.getFirstName(user2) : "";
+                org.telegram.ui.Cells.y1 y1Var = new org.telegram.ui.Cells.y1(sessionsActivity.getParentActivity(), 1);
+                y1Var.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.K0(false));
+                y1Var.e(LocaleController.formatString("TerminateWebSessionStop", R.string.TerminateWebSessionStop, firstName), "", false, false, false);
+                y1Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(8.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(8.0f) : AndroidUtilities.dp(16.0f), 0);
+                frameLayout.addView(y1Var, h7.z5.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+                y1Var.setOnClickListener(new m8(i15, zArr));
+                b2Var3.C = 16;
+                alertDialog$Builder3.n(frameLayout);
+                charSequence = string3;
             }
+            alertDialog$Builder3.k(charSequence, new c3.d(sessionsActivity, i10, zArr, 13));
+            alertDialog$Builder3.h(LocaleController.getString(R.string.Cancel), null);
+            sessionsActivity.showDialog(b2Var3);
+            TextView textView2 = (TextView) b2Var3.d(-1);
+            if (textView2 != null) {
+                textView2.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.q7, false));
+                return;
+            }
+            return;
+        }
+        if (i10 == sessionsActivity.y) {
+            tL_authorization = sessionsActivity.n;
+            z10 = true;
+        } else {
+            int i22 = sessionsActivity.G;
+            tL_authorization = (i10 < i22 || i10 >= sessionsActivity.H) ? (TLRPC.TL_authorization) sessionsActivity.f.get(i10 - sessionsActivity.C) : (TLRPC.TL_authorization) arrayList2.get(i10 - i22);
+            z10 = false;
+        }
+        if (tL_authorization == null) {
+            return;
+        }
+        g71 g71Var = new g71(sessionsActivity);
+        x61 x61Var = new x61(sessionsActivity.getParentActivity(), false);
+        x61Var.setOpenNoDelay(true);
+        Activity parentActivity = sessionsActivity.getParentActivity();
+        x61Var.b = tL_authorization;
+        x61Var.c = sessionsActivity;
+        x61Var.fixNavigationBar();
+        LinearLayout linearLayout2 = new LinearLayout(parentActivity);
+        linearLayout2.setOrientation(1);
+        linearLayout2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        org.telegram.ui.Components.ri0 ri0Var = new org.telegram.ui.Components.ri0(parentActivity);
+        x61Var.d = ri0Var;
+        ri0Var.setOnClickListener(new o61(x61Var));
+        ri0Var.setScaleType(ImageView.ScaleType.CENTER);
+        linearLayout2.addView(ri0Var, h7.z5.t(70, 70, 1, 0, 16, 0, 0));
+        TextView textView3 = new TextView(parentActivity);
+        org.telegram.ui.Cells.pa.m(20.0f, 2, textView3);
+        org.telegram.ui.Cells.pa.s(org.telegram.ui.ActionBar.g6.G6, null, false, textView3, 17);
+        linearLayout2.addView(textView3, h7.z5.t(-1, -2, 1, 21, 12, 21, 0));
+        TextView textView4 = new TextView(parentActivity);
+        textView4.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.y6, false));
+        textView4.setTextSize(2, 13.0f);
+        textView4.setGravity(17);
+        linearLayout2.addView(textView4, h7.z5.t(-1, -2, 1, 21, 4, 21, 21));
+        textView4.setText((tL_authorization.flags & 1) != 0 ? LocaleController.getString(R.string.Online) : LocaleController.formatDateTime(tL_authorization.date_active, true));
+        StringBuilder sb2 = new StringBuilder();
+        if (tL_authorization.device_model.length() != 0) {
+            sb2.append(tL_authorization.device_model);
+        }
+        if (sb2.length() == 0) {
+            if (tL_authorization.platform.length() != 0) {
+                sb2.append(tL_authorization.platform);
+            }
+            if (tL_authorization.system_version.length() != 0) {
+                if (tL_authorization.platform.length() != 0) {
+                    sb2.append(" ");
+                }
+                sb2.append(tL_authorization.system_version);
+            }
+        }
+        textView3.setText(sb2);
+        String lowerCase = tL_authorization.platform.toLowerCase();
+        if (lowerCase.isEmpty()) {
+            lowerCase = tL_authorization.system_version.toLowerCase();
+        }
+        String lowerCase2 = tL_authorization.device_model.toLowerCase();
+        if (lowerCase2.contains("safari")) {
+            i11 = R.raw.safari_30;
+            i12 = org.telegram.ui.ActionBar.g6.U7;
+        } else if (lowerCase2.contains("edge")) {
+            i11 = R.raw.edge_30;
+            i12 = org.telegram.ui.ActionBar.g6.U7;
+        } else if (lowerCase2.contains("chrome")) {
+            i11 = R.raw.chrome_30;
+            i12 = org.telegram.ui.ActionBar.g6.U7;
+        } else if (lowerCase2.contains("firefox")) {
+            i11 = R.raw.firefox_30;
+            i12 = org.telegram.ui.ActionBar.g6.O7;
+        } else if (lowerCase2.contains("opera") || lowerCase2.contains("firefox") || lowerCase2.contains("vivaldi")) {
+            i11 = lowerCase2.contains("opera") ? R.drawable.device_web_opera : lowerCase2.contains("firefox") ? R.drawable.device_web_firefox : R.drawable.device_web_other;
+            i12 = org.telegram.ui.ActionBar.g6.U7;
+            i16 = 0;
+        } else {
+            if (lowerCase.contains("ubuntu")) {
+                i11 = R.raw.ubuntu_30;
+                i12 = org.telegram.ui.ActionBar.g6.T7;
+            } else if (lowerCase.contains("linux")) {
+                i11 = R.raw.linux_30;
+                i12 = org.telegram.ui.ActionBar.g6.T7;
+            } else if (lowerCase.contains("ios")) {
+                i11 = lowerCase2.contains("ipad") ? R.raw.ipad_30 : R.raw.iphone_30;
+                i12 = org.telegram.ui.ActionBar.g6.T7;
+            } else if (lowerCase.contains("windows")) {
+                i11 = R.raw.windows_30;
+                i12 = org.telegram.ui.ActionBar.g6.S7;
+            } else if (lowerCase.contains("macos")) {
+                i11 = R.raw.mac_30;
+                i12 = org.telegram.ui.ActionBar.g6.S7;
+            } else if (lowerCase.contains("android")) {
+                i11 = R.raw.android_30;
+                i12 = org.telegram.ui.ActionBar.g6.R7;
+            } else if (tL_authorization.app_name.toLowerCase().contains("desktop")) {
+                i11 = R.raw.windows_30;
+                i12 = org.telegram.ui.ActionBar.g6.S7;
+            } else {
+                i11 = R.raw.chrome_30;
+                i12 = org.telegram.ui.ActionBar.g6.U7;
+            }
+            i16 = 1;
+        }
+        ri0Var.setBackground(org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(42.0f), org.telegram.ui.ActionBar.g6.w0(null, i12, false)));
+        if (i16 != 0) {
+            ri0Var.f(i11, 50, 50, new int[]{0, org.telegram.ui.ActionBar.g6.w0(null, i12, false)});
+        } else {
+            ri0Var.setImageDrawable(x61Var.getContext().getDrawable(i11));
+        }
+        w61 w61Var = new w61(parentActivity, false);
+        StringBuilder sb3 = new StringBuilder();
+        sb3.append(tL_authorization.app_name);
+        sb3.append(" ");
+        sb3.append(tL_authorization.app_version);
+        w61Var.b.setText(sb3);
+        Drawable mutate = parentActivity.getDrawable(R.drawable.menu_devices).mutate();
+        int i23 = org.telegram.ui.ActionBar.g6.m6;
+        int w02 = org.telegram.ui.ActionBar.g6.w0(null, i23, false);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        mutate.setColorFilter(new PorterDuffColorFilter(w02, mode));
+        w61Var.a.setImageDrawable(mutate);
+        w61Var.c.setText(LocaleController.getString(R.string.Application));
+        linearLayout2.addView(w61Var);
+        if (tL_authorization.country.length() != 0) {
+            w61 w61Var2 = new w61(parentActivity, false);
+            w61Var2.b.setText(tL_authorization.country);
+            Drawable mutate2 = parentActivity.getDrawable(R.drawable.msg_location).mutate();
+            mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(null, i23, false), mode));
+            w61Var2.a.setImageDrawable(mutate2);
+            w61Var2.c.setText(LocaleController.getString(R.string.Location));
+            w61Var2.setOnClickListener(new p61(x61Var, tL_authorization));
+            w61Var2.setOnLongClickListener(new q61(x61Var, tL_authorization));
+            w61Var2.setBackground(org.telegram.ui.ActionBar.g6.f0(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.i6, false), 2, -1));
+            linearLayout2.addView(w61Var2);
+            w61Var.e = true;
+            w61Var = w61Var2;
+        }
+        if (tL_authorization.ip.length() != 0) {
+            w61 w61Var3 = new w61(parentActivity, false);
+            w61Var3.b.setText(tL_authorization.ip);
+            Drawable mutate3 = parentActivity.getDrawable(R.drawable.msg_language).mutate();
+            mutate3.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(null, i23, false), mode));
+            w61Var3.a.setImageDrawable(mutate3);
+            w61Var3.c.setText(LocaleController.getString(R.string.IpAddress));
+            w61Var3.setOnClickListener(new r61(x61Var, tL_authorization));
+            w61Var3.setOnLongClickListener(new s61(x61Var, tL_authorization));
+            w61Var3.setBackground(org.telegram.ui.ActionBar.g6.f0(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.i6, false), 2, -1));
+            linearLayout2.addView(w61Var3);
+            z11 = true;
+            w61Var.e = true;
+            w61Var = w61Var3;
+        } else {
+            z11 = true;
+        }
+        int i24 = tL_authorization.api_id;
+        if (i24 != 2040 && i24 != 2496) {
+            w61 w61Var4 = new w61(parentActivity, z11);
+            w61Var4.b.setText(LocaleController.getString(R.string.AcceptSecretChats));
+            Drawable mutate4 = parentActivity.getDrawable(R.drawable.msg_secret).mutate();
+            mutate4.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(null, i23, false), mode));
+            w61Var4.a.setImageDrawable(mutate4);
+            w61Var4.d.c(!tL_authorization.encrypted_requests_disabled, false);
+            w61Var4.setBackground(org.telegram.ui.ActionBar.g6.f0(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.i6, false), 7, -1));
+            w61Var4.setOnClickListener(new t61(x61Var, w61Var4, tL_authorization));
+            w61Var.e = true;
+            w61Var4.c.setText(LocaleController.getString(R.string.AcceptSecretChatsDescription));
+            linearLayout2.addView(w61Var4);
+            w61Var = w61Var4;
+        }
+        if (tL_authorization.api_id != 22) {
+            w61 w61Var5 = new w61(parentActivity, true);
+            w61Var5.b.setText(LocaleController.getString(R.string.AcceptCalls));
+            Drawable mutate5 = parentActivity.getDrawable(R.drawable.msg_calls).mutate();
+            mutate5.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(null, i23, false), mode));
+            w61Var5.a.setImageDrawable(mutate5);
+            w61Var5.d.c(!tL_authorization.call_requests_disabled, false);
+            w61Var5.setBackground(org.telegram.ui.ActionBar.g6.f0(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.i6, false), 7, -1));
+            w61Var5.setOnClickListener(new u61(x61Var, w61Var5, tL_authorization));
+            w61Var.e = true;
+            w61Var5.c.setText(LocaleController.getString(R.string.AcceptCallsChatsDescription));
+            linearLayout2.addView(w61Var5);
+        }
+        if (!z10) {
+            TextView textView5 = new TextView(parentActivity);
+            textView5.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+            textView5.setGravity(17);
+            textView5.setTextSize(1, 14.0f);
+            textView5.setTypeface(AndroidUtilities.bold());
+            textView5.setText(LocaleController.getString(R.string.TerminateSession));
+            textView5.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.Sh, false));
+            int dp = AndroidUtilities.dp(24.0f);
+            int w03 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.ka, false);
+            int k10 = i0.b.k(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.d6, false), 120);
+            textView5.setBackground(org.telegram.ui.ActionBar.g6.i0(dp, dp, dp, dp, w03, k10, k10));
+            linearLayout2.addView(textView5, h7.z5.d(-1, 48.0f, 0, 16.0f, 15.0f, 16.0f, 16.0f));
+            textView5.setOnClickListener(new v61(x61Var, g71Var, tL_authorization, sessionsActivity));
+        }
+        ScrollView scrollView = new ScrollView(parentActivity);
+        scrollView.addView(linearLayout2);
+        x61Var.setCustomView(scrollView);
+        x61Var.show();
+    }
+
+    public static /* synthetic */ void V(SessionsActivity sessionsActivity, Boolean bool) {
+        ArrayList arrayList;
+        if (bool != null && bool.booleanValue() && (arrayList = sessionsActivity.h) != null && !arrayList.isEmpty()) {
+            TL_account.updateConnectedBot updateconnectedbot = new TL_account.updateConnectedBot();
+            updateconnectedbot.bot = MessagesController.getInstance(sessionsActivity.currentAccount).getInputUser(((TL_account.TL_connectedBot) sessionsActivity.h.get(0)).bot_id);
+            updateconnectedbot.deleted = true;
+            updateconnectedbot.recipients = new TL_account.TL_inputBusinessBotRecipients();
+            ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(updateconnectedbot, new a71(sessionsActivity, 0));
+        }
+        ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(new TLRPC.TL_auth_resetAuthorizations(), new a71(sessionsActivity, 1));
+    }
+
+    public static /* synthetic */ void W(SessionsActivity sessionsActivity) {
+        if (sessionsActivity.w == 0) {
+            ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(new TLRPC.TL_auth_resetAuthorizations(), new a71(sessionsActivity, 2));
+        } else {
+            ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(new TL_account.resetWebAuthorizations(), new a71(sessionsActivity, 3));
+        }
+    }
+
+    public static void X(SessionsActivity sessionsActivity, int i10, boolean[] zArr) {
+        ArrayList arrayList = sessionsActivity.e;
+        if (sessionsActivity.getParentActivity() == null) {
+            return;
+        }
+        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(sessionsActivity.getParentActivity(), 3, null);
+        b2Var.c0 = false;
+        b2Var.show();
+        if (sessionsActivity.w == 0) {
+            int i11 = sessionsActivity.G;
+            TLRPC.TL_authorization tL_authorization = (i10 < i11 || i10 >= sessionsActivity.H) ? (TLRPC.TL_authorization) sessionsActivity.f.get(i10 - sessionsActivity.C) : (TLRPC.TL_authorization) arrayList.get(i10 - i11);
             TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
             resetauthorization.hash = tL_authorization.hash;
-            ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(resetauthorization, new RequestDelegate() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda20
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    SessionsActivity.$r8$lambda$l_MO9xpmXhLA4SvDQH0Ee-mcRmw(SessionsActivity.this, alertDialog2, tL_authorization, tLObject, tL_error);
-                }
-            });
+            ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(resetauthorization, new lr0(sessionsActivity, b2Var, tL_authorization, 8));
             return;
         }
-        final TLRPC.TL_webAuthorization tL_webAuthorization = (TLRPC.TL_webAuthorization) sessionsActivity.sessions.get(i - sessionsActivity.otherSessionsStartRow);
+        TLRPC.TL_webAuthorization tL_webAuthorization = (TLRPC.TL_webAuthorization) arrayList.get(i10 - sessionsActivity.G);
         TL_account.resetWebAuthorization resetwebauthorization = new TL_account.resetWebAuthorization();
         resetwebauthorization.hash = tL_webAuthorization.hash;
-        ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(resetwebauthorization, new RequestDelegate() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda21
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                SessionsActivity.$r8$lambda$Smld1K1H4PqbHlWux80LD-ciayY(SessionsActivity.this, alertDialog2, tL_webAuthorization, tLObject, tL_error);
-            }
-        });
+        ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(resetwebauthorization, new lr0(sessionsActivity, b2Var, tL_webAuthorization, 9));
         if (zArr[0]) {
             MessagesController.getInstance(sessionsActivity.currentAccount).blockPeer(tL_webAuthorization.bot_id);
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$l_MO9xpmXhLA4SvDQH0Ee-mcRmw(final SessionsActivity sessionsActivity, final AlertDialog alertDialog, final TLRPC.TL_authorization tL_authorization, TLObject tLObject, final TLRPC.TL_error tL_error) {
-        sessionsActivity.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda25
-            @Override // java.lang.Runnable
-            public final void run() {
-                SessionsActivity.$r8$lambda$-aTa-TEdDfJ5TePF11oHy878WoY(SessionsActivity.this, alertDialog, tL_error, tL_authorization);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$-aTa-TEdDfJ5TePF11oHy878WoY(SessionsActivity sessionsActivity, AlertDialog alertDialog, TLRPC.TL_error tL_error, TLRPC.TL_authorization tL_authorization) {
-        sessionsActivity.getClass();
-        try {
-            alertDialog.dismiss();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
+    public static /* synthetic */ void Y(SessionsActivity sessionsActivity, TLRPC.TL_error tL_error, TLObject tLObject, boolean z10) {
+        ArrayList arrayList = sessionsActivity.e;
+        sessionsActivity.r = false;
         if (tL_error == null) {
-            sessionsActivity.sessions.remove(tL_authorization);
-            sessionsActivity.passwordSessions.remove(tL_authorization);
-            sessionsActivity.updateRows();
-            ListAdapter listAdapter = sessionsActivity.listAdapter;
-            if (listAdapter != null) {
-                listAdapter.notifyDataSetChanged();
+            arrayList.clear();
+            TL_account.webAuthorizations webauthorizations = (TL_account.webAuthorizations) tLObject;
+            MessagesController.getInstance(sessionsActivity.currentAccount).putUsers(webauthorizations.users, false);
+            arrayList.addAll(webauthorizations.authorizations);
+            sessionsActivity.m0();
+        }
+        j71 j71Var = sessionsActivity.a;
+        if (j71Var != null) {
+            j71Var.l();
+        }
+        xw0 xw0Var = sessionsActivity.U;
+        if (xw0Var != null) {
+            xw0Var.a();
+        }
+        int i10 = sessionsActivity.R;
+        if (i10 > 0) {
+            int i11 = i10 - 1;
+            sessionsActivity.R = i11;
+            if (i11 > 0) {
+                AndroidUtilities.runOnUIThread(new b71(sessionsActivity, z10, 0), 2500L);
             }
         }
     }
 
-    public static /* synthetic */ void $r8$lambda$Smld1K1H4PqbHlWux80LD-ciayY(final SessionsActivity sessionsActivity, final AlertDialog alertDialog, final TLRPC.TL_webAuthorization tL_webAuthorization, TLObject tLObject, final TLRPC.TL_error tL_error) {
-        sessionsActivity.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda22
-            @Override // java.lang.Runnable
-            public final void run() {
-                SessionsActivity.$r8$lambda$K9l-45CWB3uZtrul-WPDBqYL3xc(SessionsActivity.this, alertDialog, tL_error, tL_webAuthorization);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$K9l-45CWB3uZtrul-WPDBqYL3xc(SessionsActivity sessionsActivity, AlertDialog alertDialog, TLRPC.TL_error tL_error, TLRPC.TL_webAuthorization tL_webAuthorization) {
-        sessionsActivity.getClass();
-        try {
-            alertDialog.dismiss();
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        org.telegram.ui.Components.h00 h00Var = new org.telegram.ui.Components.h00(context, null);
+        this.d = h00Var;
+        int i10 = 1;
+        h00Var.setIsSingleCell(true);
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        int i11 = this.w;
+        if (i11 == 0) {
+            this.actionBar.setTitle(LocaleController.getString(R.string.Devices));
+        } else {
+            this.actionBar.setTitle(LocaleController.getString(R.string.WebSessionsTitle));
         }
-        if (tL_error == null) {
-            sessionsActivity.sessions.remove(tL_webAuthorization);
-            sessionsActivity.updateRows();
-            ListAdapter listAdapter = sessionsActivity.listAdapter;
-            if (listAdapter != null) {
-                listAdapter.notifyDataSetChanged();
-            }
+        this.actionBar.setActionBarMenuOnItemClick(new pb0(this, 25));
+        org.telegram.ui.ActionBar.b5 b5Var = this.parentLayout;
+        if (b5Var != null && ((ActionBarLayout) b5Var).J0) {
+            this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
         }
-    }
-
-    class 4 extends UndoView {
-        4(Context context) {
-            super(context);
+        this.a = new j71(this, context);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.fragmentView = frameLayout;
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.a7, false));
+        org.telegram.ui.Components.az azVar = new org.telegram.ui.Components.az(context, null);
+        this.c = azVar;
+        azVar.b();
+        frameLayout.addView(this.c, h7.z5.e(-1, -1, 17));
+        a60 a60Var = new a60(this, context);
+        this.b = a60Var;
+        a60Var.p1();
+        this.actionBar.setAdaptiveBackground(this.b);
+        this.b.setLayoutManager(new j(i10, false, 16));
+        this.b.setVerticalScrollBarEnabled(false);
+        this.b.setEmptyView(this.c);
+        a60 a60Var2 = this.b;
+        a60Var2.U1 = true;
+        a60Var2.V1 = 0;
+        frameLayout.addView(a60Var2, h7.z5.c(-1.0f, -1));
+        this.b.setAdapter(this.a);
+        f2.l lVar = new f2.l();
+        lVar.n(150L);
+        org.telegram.ui.Components.er erVar = org.telegram.ui.Components.er.f;
+        lVar.i = erVar;
+        lVar.o = erVar;
+        this.b.setItemAnimator(lVar);
+        this.b.setOnItemClickListener(new b21(this, 4));
+        if (i11 == 0) {
+            f71 f71Var = new f71(this, context);
+            this.s = f71Var;
+            frameLayout.addView(f71Var, h7.z5.d(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
         }
-
-        @Override // org.telegram.ui.Components.UndoView
-        public void hide(boolean z, int i) {
-            if (!z && getCurrentInfoObject() != null) {
-                final TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
-                TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
-                resetauthorization.hash = tL_authorization.hash;
-                ConnectionsManager.getInstance(((BaseFragment) SessionsActivity.this).currentAccount).sendRequest(resetauthorization, new RequestDelegate() { // from class: org.telegram.ui.SessionsActivity$4$$ExternalSyntheticLambda0
-                    @Override // org.telegram.tgnet.RequestDelegate
-                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        SessionsActivity.4.$r8$lambda$zYE32NLLj2NJBNkvyHwmOSRBX3s(SessionsActivity.4.this, tL_authorization, tLObject, tL_error);
-                    }
-                });
-            }
-            super.hide(z, i);
-        }
-
-        public static /* synthetic */ void $r8$lambda$zYE32NLLj2NJBNkvyHwmOSRBX3s(final 4 r0, final TLRPC.TL_authorization tL_authorization, TLObject tLObject, final TLRPC.TL_error tL_error) {
-            r0.getClass();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$4$$ExternalSyntheticLambda1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    SessionsActivity.4.$r8$lambda$_5TDtjAlYsSy9-pIiD6jBIKNGUs(SessionsActivity.4.this, tL_error, tL_authorization);
-                }
-            });
-        }
-
-        public static /* synthetic */ void $r8$lambda$_5TDtjAlYsSy9-pIiD6jBIKNGUs(4 r0, TLRPC.TL_error tL_error, TLRPC.TL_authorization tL_authorization) {
-            if (tL_error != null) {
-                r0.getClass();
-                return;
-            }
-            SessionsActivity.this.sessions.remove(tL_authorization);
-            SessionsActivity.this.passwordSessions.remove(tL_authorization);
-            SessionsActivity.this.updateRows();
-            if (SessionsActivity.this.listAdapter != null) {
-                SessionsActivity.this.listAdapter.notifyDataSetChanged();
-            }
-            SessionsActivity.this.loadSessions(true);
-        }
-    }
-
-    class 5 implements SessionBottomSheet.Callback {
-        5() {
-        }
-
-        @Override // org.telegram.ui.SessionBottomSheet.Callback
-        public void onSessionTerminated(final TLRPC.TL_authorization tL_authorization) {
-            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
-            resetauthorization.hash = tL_authorization.hash;
-            ConnectionsManager.getInstance(((BaseFragment) SessionsActivity.this).currentAccount).sendRequest(resetauthorization, new RequestDelegate() { // from class: org.telegram.ui.SessionsActivity$5$$ExternalSyntheticLambda0
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    SessionsActivity.5.$r8$lambda$rjHLO1p7JSvxJQv_29-acB3WYQQ(SessionsActivity.5.this, tL_authorization, tLObject, tL_error);
-                }
-            });
-        }
-
-        public static /* synthetic */ void $r8$lambda$rjHLO1p7JSvxJQv_29-acB3WYQQ(final 5 r0, final TLRPC.TL_authorization tL_authorization, TLObject tLObject, final TLRPC.TL_error tL_error) {
-            r0.getClass();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$5$$ExternalSyntheticLambda1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    SessionsActivity.5.$r8$lambda$DfBUDdOwS-vLSxQ_bqR_54QYDMM(SessionsActivity.5.this, tL_error, tL_authorization);
-                }
-            });
-        }
-
-        public static /* synthetic */ void $r8$lambda$DfBUDdOwS-vLSxQ_bqR_54QYDMM(5 r0, TLRPC.TL_error tL_error, TLRPC.TL_authorization tL_authorization) {
-            if (tL_error != null) {
-                r0.getClass();
-                return;
-            }
-            SessionsActivity.this.sessions.remove(tL_authorization);
-            SessionsActivity.this.passwordSessions.remove(tL_authorization);
-            SessionsActivity.this.updateRows();
-            if (SessionsActivity.this.listAdapter != null) {
-                SessionsActivity.this.listAdapter.notifyDataSetChanged();
-            }
-        }
-    }
-
-    private void showSessionBottomSheet(TLRPC.TL_authorization tL_authorization, boolean z) {
-        if (tL_authorization == null) {
-            return;
-        }
-        new SessionBottomSheet(this, tL_authorization, z, new 5()).show();
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onPause() {
-        super.onPause();
-        UndoView undoView = this.undoView;
-        if (undoView != null) {
-            undoView.hide(true, 0);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onBecomeFullyHidden() {
-        UndoView undoView = this.undoView;
-        if (undoView != null) {
-            undoView.hide(true, 0);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onResume() {
-        super.onResume();
-        ListAdapter listAdapter = this.listAdapter;
-        if (listAdapter != null) {
-            listAdapter.notifyDataSetChanged();
-        }
+        m0();
+        return this.fragmentView;
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == NotificationCenter.newSessionReceived) {
-            loadSessions(true);
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.newSessionReceived) {
+            k0(true);
         }
     }
 
-    public void loadSessions(final boolean z) {
-        if (this.loading) {
-            return;
-        }
-        if (!z) {
-            this.loading = true;
-        }
-        if (this.currentType == 0) {
-            ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getAuthorizations(), new RequestDelegate() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda0
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    SessionsActivity.$r8$lambda$6fMKKTzQViGVkaHwQ4O3iPwbI_Y(SessionsActivity.this, z, tLObject, tL_error);
-                }
-            }), this.classGuid);
-        } else {
-            ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getWebAuthorizations(), new RequestDelegate() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda1
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    SessionsActivity.$r8$lambda$wYNOvh2I10YF2alQtGnA-_HACIY(SessionsActivity.this, z, tLObject, tL_error);
-                }
-            }), this.classGuid);
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$6fMKKTzQViGVkaHwQ4O3iPwbI_Y(final SessionsActivity sessionsActivity, final boolean z, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        sessionsActivity.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda11
-            @Override // java.lang.Runnable
-            public final void run() {
-                SessionsActivity.$r8$lambda$P_nMNuAz-eV5OWSsL07VTFySGFk(SessionsActivity.this, tL_error, tLObject, z);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$P_nMNuAz-eV5OWSsL07VTFySGFk(final SessionsActivity sessionsActivity, TLRPC.TL_error tL_error, TLObject tLObject, final boolean z) {
-        sessionsActivity.loading = false;
-        ListAdapter listAdapter = sessionsActivity.listAdapter;
-        if (listAdapter != null) {
-            listAdapter.getItemCount();
-        }
-        if (tL_error == null) {
-            sessionsActivity.sessions.clear();
-            sessionsActivity.passwordSessions.clear();
-            TL_account.authorizations authorizationsVar = (TL_account.authorizations) tLObject;
-            int size = authorizationsVar.authorizations.size();
-            for (int i = 0; i < size; i++) {
-                TLRPC.TL_authorization tL_authorization = authorizationsVar.authorizations.get(i);
-                if ((tL_authorization.flags & 1) != 0) {
-                    sessionsActivity.currentSession = tL_authorization;
-                } else if (tL_authorization.password_pending) {
-                    sessionsActivity.passwordSessions.add(tL_authorization);
-                } else {
-                    sessionsActivity.sessions.add(tL_authorization);
-                }
-            }
-            sessionsActivity.ttlDays = authorizationsVar.authorization_ttl_days;
-            sessionsActivity.updateRows();
-            Delegate delegate = sessionsActivity.delegate;
-            if (delegate != null) {
-                delegate.sessionsLoaded();
-            }
-        }
-        ListAdapter listAdapter2 = sessionsActivity.listAdapter;
-        if (listAdapter2 != null) {
-            listAdapter2.notifyDataSetChanged();
-        }
-        Delegate delegate2 = sessionsActivity.delegate;
-        if (delegate2 != null) {
-            delegate2.sessionsLoaded();
-        }
-        int i2 = sessionsActivity.repeatLoad;
-        if (i2 > 0) {
-            int i3 = i2 - 1;
-            sessionsActivity.repeatLoad = i3;
-            if (i3 > 0) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda19
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        SessionsActivity.this.loadSessions(z);
-                    }
-                }, 2500L);
-            }
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$wYNOvh2I10YF2alQtGnA-_HACIY(final SessionsActivity sessionsActivity, final boolean z, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        sessionsActivity.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda12
-            @Override // java.lang.Runnable
-            public final void run() {
-                SessionsActivity.$r8$lambda$ySfCVk5sBqnBSEveD0jYJyBwL6E(SessionsActivity.this, tL_error, tLObject, z);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$ySfCVk5sBqnBSEveD0jYJyBwL6E(final SessionsActivity sessionsActivity, TLRPC.TL_error tL_error, TLObject tLObject, final boolean z) {
-        sessionsActivity.loading = false;
-        if (tL_error == null) {
-            sessionsActivity.sessions.clear();
-            TL_account.webAuthorizations webauthorizations = (TL_account.webAuthorizations) tLObject;
-            MessagesController.getInstance(sessionsActivity.currentAccount).putUsers(webauthorizations.users, false);
-            sessionsActivity.sessions.addAll(webauthorizations.authorizations);
-            sessionsActivity.updateRows();
-        }
-        ListAdapter listAdapter = sessionsActivity.listAdapter;
-        if (listAdapter != null) {
-            listAdapter.notifyDataSetChanged();
-        }
-        Delegate delegate = sessionsActivity.delegate;
-        if (delegate != null) {
-            delegate.sessionsLoaded();
-        }
-        int i = sessionsActivity.repeatLoad;
-        if (i > 0) {
-            int i2 = i - 1;
-            sessionsActivity.repeatLoad = i2;
-            if (i2 > 0) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda18
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        SessionsActivity.this.loadSessions(z);
-                    }
-                }, 2500L);
-            }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void updateRows() {
-        this.rowCount = 0;
-        this.currentSessionSectionRow = -1;
-        this.currentSessionRow = -1;
-        this.terminateAllSessionsRow = -1;
-        this.terminateAllSessionsDetailRow = -1;
-        this.passwordSessionsSectionRow = -1;
-        this.passwordSessionsStartRow = -1;
-        this.passwordSessionsEndRow = -1;
-        this.passwordSessionsDetailRow = -1;
-        this.otherSessionsSectionRow = -1;
-        this.otherSessionsStartRow = -1;
-        this.otherSessionsEndRow = -1;
-        this.botSessionsStartRow = -1;
-        this.botSessionsEndRow = -1;
-        this.otherSessionsTerminateDetail = -1;
-        this.noOtherSessionsRow = -1;
-        this.qrCodeRow = -1;
-        this.qrCodeDividerRow = -1;
-        this.ttlHeaderRow = -1;
-        this.ttlRow = -1;
-        this.ttlDivideRow = -1;
-        if (this.currentType == 0 && getMessagesController().qrLoginCamera) {
-            int i = this.rowCount;
-            this.qrCodeRow = i;
-            this.rowCount = i + 2;
-            this.qrCodeDividerRow = i + 1;
-        }
-        if (this.loading) {
-            if (this.currentType == 0) {
-                int i2 = this.rowCount;
-                this.currentSessionSectionRow = i2;
-                this.rowCount = i2 + 2;
-                this.currentSessionRow = i2 + 1;
-                return;
-            }
-            return;
-        }
-        if (this.currentSession != null) {
-            int i3 = this.rowCount;
-            this.currentSessionSectionRow = i3;
-            this.rowCount = i3 + 2;
-            this.currentSessionRow = i3 + 1;
-        }
-        if (!this.passwordSessions.isEmpty() || !this.sessions.isEmpty()) {
-            int i4 = this.rowCount;
-            this.terminateAllSessionsRow = i4;
-            this.rowCount = i4 + 2;
-            this.terminateAllSessionsDetailRow = i4 + 1;
-            this.noOtherSessionsRow = -1;
-        } else {
-            this.terminateAllSessionsRow = -1;
-            this.terminateAllSessionsDetailRow = -1;
-            if (this.currentType == 1 || this.currentSession != null) {
-                int i5 = this.rowCount;
-                this.rowCount = i5 + 1;
-                this.noOtherSessionsRow = i5;
-            } else {
-                this.noOtherSessionsRow = -1;
-            }
-        }
-        if (!this.passwordSessions.isEmpty()) {
-            int i6 = this.rowCount;
-            int i7 = i6 + 1;
-            this.rowCount = i7;
-            this.passwordSessionsSectionRow = i6;
-            this.passwordSessionsStartRow = i7;
-            int size = i7 + this.passwordSessions.size();
-            this.passwordSessionsEndRow = size;
-            this.rowCount = size + 1;
-            this.passwordSessionsDetailRow = size;
-        }
-        if (!this.sessions.isEmpty()) {
-            int i8 = this.rowCount;
-            this.rowCount = i8 + 1;
-            this.otherSessionsSectionRow = i8;
-            ArrayList arrayList = this.bots;
-            if (arrayList != null && !arrayList.isEmpty()) {
-                int i9 = this.rowCount;
-                this.botSessionsStartRow = i9;
-                int size2 = i9 + this.bots.size();
-                this.rowCount = size2;
-                this.botSessionsEndRow = size2;
-            }
-            int i10 = this.rowCount;
-            this.otherSessionsStartRow = i10;
-            this.otherSessionsEndRow = i10 + this.sessions.size();
-            int size3 = this.rowCount + this.sessions.size();
-            this.rowCount = size3 + 1;
-            this.otherSessionsTerminateDetail = size3;
-        } else {
-            ArrayList arrayList2 = this.bots;
-            if (arrayList2 != null && !arrayList2.isEmpty()) {
-                int i11 = this.rowCount;
-                int i12 = i11 + 1;
-                this.rowCount = i12;
-                this.otherSessionsSectionRow = i11;
-                this.botSessionsStartRow = i12;
-                int size4 = i12 + this.bots.size();
-                this.botSessionsEndRow = size4;
-                this.rowCount = size4 + 1;
-                this.otherSessionsTerminateDetail = size4;
-            }
-        }
-        if (this.ttlDays > 0) {
-            int i13 = this.rowCount;
-            this.ttlHeaderRow = i13;
-            this.ttlRow = i13 + 1;
-            this.rowCount = i13 + 3;
-            this.ttlDivideRow = i13 + 2;
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    class ListAdapter extends RecyclerListView.SelectionAdapter {
-        private Context mContext;
-
-        public ListAdapter(Context context) {
-            this.mContext = context;
-            setHasStableIds(true);
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
-        public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
-            int adapterPosition = viewHolder.getAdapterPosition();
-            if (adapterPosition == SessionsActivity.this.terminateAllSessionsRow) {
-                return true;
-            }
-            if (adapterPosition >= SessionsActivity.this.otherSessionsStartRow && adapterPosition < SessionsActivity.this.otherSessionsEndRow) {
-                return true;
-            }
-            if (adapterPosition < SessionsActivity.this.botSessionsStartRow || adapterPosition >= SessionsActivity.this.botSessionsEndRow) {
-                return (adapterPosition >= SessionsActivity.this.passwordSessionsStartRow && adapterPosition < SessionsActivity.this.passwordSessionsEndRow) || adapterPosition == SessionsActivity.this.currentSessionRow || adapterPosition == SessionsActivity.this.ttlRow;
-            }
-            return true;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemCount() {
-            return SessionsActivity.this.rowCount;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            View textCell;
-            if (i == 0) {
-                textCell = new TextCell(this.mContext);
-            } else if (i == 1) {
-                textCell = new TextInfoPrivacyCell(this.mContext);
-            } else if (i == 2) {
-                textCell = new HeaderCell(this.mContext);
-            } else if (i == 5) {
-                textCell = SessionsActivity.this.new ScanQRCodeView(this.mContext);
-            } else if (i == 6) {
-                textCell = new TextSettingsCell(this.mContext);
-            } else {
-                textCell = new SessionCell(this.mContext, SessionsActivity.this.currentType);
-            }
-            return new RecyclerListView.Holder(textCell);
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-            int itemViewType = viewHolder.getItemViewType();
-            if (itemViewType == 0) {
-                TextCell textCell = (TextCell) viewHolder.itemView;
-                if (i != SessionsActivity.this.terminateAllSessionsRow) {
-                    if (i == SessionsActivity.this.qrCodeRow) {
-                        int i2 = Theme.key_windowBackgroundWhiteBlueText4;
-                        textCell.setColors(i2, i2);
-                        textCell.setTag(Integer.valueOf(i2));
-                        textCell.setTextAndIcon(LocaleController.getString(R.string.AuthAnotherClient), R.drawable.msg_qrcode, !SessionsActivity.this.sessions.isEmpty());
-                        return;
-                    }
-                    return;
-                }
-                int i3 = Theme.key_text_RedRegular;
-                textCell.setColors(i3, i3);
-                textCell.setTag(Integer.valueOf(i3));
-                if (SessionsActivity.this.currentType == 0) {
-                    textCell.setTextAndIcon((CharSequence) LocaleController.getString(R.string.TerminateAllSessions), R.drawable.msg_block2, false);
-                    return;
-                } else {
-                    textCell.setTextAndIcon((CharSequence) LocaleController.getString(R.string.TerminateAllWebSessions), R.drawable.msg_block2, false);
-                    return;
-                }
-            }
-            if (itemViewType == 1) {
-                TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
-                textInfoPrivacyCell.setFixedSize(0);
-                if (i == SessionsActivity.this.terminateAllSessionsDetailRow) {
-                    if (SessionsActivity.this.currentType == 0) {
-                        textInfoPrivacyCell.setText(LocaleController.getString(R.string.ClearOtherSessionsHelp));
-                        return;
-                    } else {
-                        textInfoPrivacyCell.setText(LocaleController.getString(R.string.ClearOtherWebSessionsHelp));
-                        return;
-                    }
-                }
-                if (i == SessionsActivity.this.otherSessionsTerminateDetail) {
-                    if (SessionsActivity.this.currentType == 0) {
-                        if (SessionsActivity.this.sessions.isEmpty()) {
-                            textInfoPrivacyCell.setText("");
-                            return;
-                        } else {
-                            textInfoPrivacyCell.setText(LocaleController.getString(R.string.SessionsListInfo));
-                            return;
-                        }
-                    }
-                    textInfoPrivacyCell.setText(LocaleController.getString(R.string.TerminateWebSessionInfo));
-                    return;
-                }
-                if (i != SessionsActivity.this.passwordSessionsDetailRow) {
-                    if (i == SessionsActivity.this.qrCodeDividerRow || i == SessionsActivity.this.ttlDivideRow || i == SessionsActivity.this.noOtherSessionsRow) {
-                        textInfoPrivacyCell.setText("");
-                        textInfoPrivacyCell.setFixedSize(12);
-                        return;
-                    }
-                    return;
-                }
-                textInfoPrivacyCell.setText(LocaleController.getString(R.string.LoginAttemptsInfo));
-                return;
-            }
-            if (itemViewType == 2) {
-                HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
-                if (i != SessionsActivity.this.currentSessionSectionRow) {
-                    if (i == SessionsActivity.this.otherSessionsSectionRow) {
-                        if (SessionsActivity.this.currentType == 0) {
-                            headerCell.setText(LocaleController.getString(R.string.OtherSessions));
-                            return;
-                        } else {
-                            headerCell.setText(LocaleController.getString(R.string.OtherWebSessions));
-                            return;
-                        }
-                    }
-                    if (i != SessionsActivity.this.passwordSessionsSectionRow) {
-                        if (i == SessionsActivity.this.ttlHeaderRow) {
-                            headerCell.setText(LocaleController.getString(R.string.TerminateOldSessionHeader));
-                            return;
-                        }
-                        return;
-                    }
-                    headerCell.setText(LocaleController.getString(R.string.LoginAttempts));
-                    return;
-                }
-                headerCell.setText(LocaleController.getString(R.string.CurrentSession));
-                return;
-            }
-            if (itemViewType != 5) {
-                if (itemViewType == 6) {
-                    ((TextSettingsCell) viewHolder.itemView).setTextAndValue(LocaleController.getString(R.string.IfInactiveFor), (SessionsActivity.this.ttlDays <= 30 || SessionsActivity.this.ttlDays > 183) ? SessionsActivity.this.ttlDays == 365 ? LocaleController.formatPluralString("Years", SessionsActivity.this.ttlDays / 365, new Object[0]) : LocaleController.formatPluralString("Weeks", SessionsActivity.this.ttlDays / 7, new Object[0]) : LocaleController.formatPluralString("Months", SessionsActivity.this.ttlDays / 30, new Object[0]), true, false);
-                    return;
-                }
-                SessionCell sessionCell = (SessionCell) viewHolder.itemView;
-                if (i == SessionsActivity.this.currentSessionRow) {
-                    if (SessionsActivity.this.currentSession == null) {
-                        sessionCell.showStub(SessionsActivity.this.globalFlickerLoadingView);
-                        return;
-                    } else {
-                        sessionCell.setSession(SessionsActivity.this.currentSession, (SessionsActivity.this.sessions.isEmpty() && SessionsActivity.this.passwordSessions.isEmpty() && SessionsActivity.this.qrCodeRow == -1) ? false : true);
-                        return;
-                    }
-                }
-                if (i < SessionsActivity.this.otherSessionsStartRow || i >= SessionsActivity.this.otherSessionsEndRow) {
-                    if (i < SessionsActivity.this.botSessionsStartRow || i >= SessionsActivity.this.botSessionsEndRow) {
-                        if (i < SessionsActivity.this.passwordSessionsStartRow || i >= SessionsActivity.this.passwordSessionsEndRow) {
-                            return;
-                        }
-                        sessionCell.setSession((TLObject) SessionsActivity.this.passwordSessions.get(i - SessionsActivity.this.passwordSessionsStartRow), i != SessionsActivity.this.passwordSessionsEndRow - 1);
-                        return;
-                    }
-                    int i4 = i - SessionsActivity.this.botSessionsStartRow;
-                    if (SessionsActivity.this.bots == null || i4 < 0 || i4 >= SessionsActivity.this.bots.size()) {
-                        return;
-                    }
-                    TL_account.TL_connectedBot tL_connectedBot = (TL_account.TL_connectedBot) SessionsActivity.this.bots.get(i4);
-                    if (i != SessionsActivity.this.botSessionsEndRow - 1 && i != SessionsActivity.this.otherSessionsEndRow - 1) {
-                        r1 = true;
-                    }
-                    sessionCell.setSession(tL_connectedBot, r1);
-                    return;
-                }
-                sessionCell.setSession((TLObject) SessionsActivity.this.sessions.get(i - SessionsActivity.this.otherSessionsStartRow), i != SessionsActivity.this.otherSessionsEndRow - 1);
-            }
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public long getItemId(int i) {
-            int hash;
-            if (i == SessionsActivity.this.terminateAllSessionsRow) {
-                hash = Objects.hash(0, 0);
-            } else if (i == SessionsActivity.this.terminateAllSessionsDetailRow) {
-                hash = Objects.hash(0, 1);
-            } else if (i == SessionsActivity.this.otherSessionsTerminateDetail) {
-                hash = Objects.hash(0, 2);
-            } else if (i == SessionsActivity.this.passwordSessionsDetailRow) {
-                hash = Objects.hash(0, 3);
-            } else if (i == SessionsActivity.this.qrCodeDividerRow) {
-                hash = Objects.hash(0, 4);
-            } else if (i == SessionsActivity.this.ttlDivideRow) {
-                hash = Objects.hash(0, 5);
-            } else if (i == SessionsActivity.this.noOtherSessionsRow) {
-                hash = Objects.hash(0, 6);
-            } else if (i == SessionsActivity.this.currentSessionSectionRow) {
-                hash = Objects.hash(0, 7);
-            } else if (i == SessionsActivity.this.otherSessionsSectionRow) {
-                hash = Objects.hash(0, 8);
-            } else if (i == SessionsActivity.this.passwordSessionsSectionRow) {
-                hash = Objects.hash(0, 9);
-            } else if (i == SessionsActivity.this.ttlHeaderRow) {
-                hash = Objects.hash(0, 10);
-            } else if (i == SessionsActivity.this.currentSessionRow) {
-                hash = Objects.hash(0, 11);
-            } else if (i < SessionsActivity.this.otherSessionsStartRow || i >= SessionsActivity.this.otherSessionsEndRow) {
-                if (i < SessionsActivity.this.botSessionsStartRow || i >= SessionsActivity.this.botSessionsEndRow) {
-                    if (i < SessionsActivity.this.passwordSessionsStartRow || i >= SessionsActivity.this.passwordSessionsEndRow) {
-                        if (i == SessionsActivity.this.qrCodeRow) {
-                            hash = Objects.hash(0, 12);
-                        } else {
-                            if (i == SessionsActivity.this.ttlRow) {
-                                hash = Objects.hash(0, 13);
-                            }
-                            hash = Objects.hash(0, -1);
-                        }
-                    } else {
-                        TLObject tLObject = (TLObject) SessionsActivity.this.passwordSessions.get(i - SessionsActivity.this.passwordSessionsStartRow);
-                        if (tLObject instanceof TLRPC.TL_authorization) {
-                            hash = Objects.hash(2, Long.valueOf(((TLRPC.TL_authorization) tLObject).hash));
-                        } else {
-                            if (tLObject instanceof TLRPC.TL_webAuthorization) {
-                                hash = Objects.hash(2, Long.valueOf(((TLRPC.TL_webAuthorization) tLObject).hash));
-                            }
-                            hash = Objects.hash(0, -1);
-                        }
-                    }
-                } else {
-                    hash = Objects.hash(3, Long.valueOf(((TL_account.TL_connectedBot) SessionsActivity.this.bots.get(i - SessionsActivity.this.botSessionsStartRow)).bot_id));
-                }
-            } else {
-                TLObject tLObject2 = (TLObject) SessionsActivity.this.sessions.get(i - SessionsActivity.this.otherSessionsStartRow);
-                if (tLObject2 instanceof TLRPC.TL_authorization) {
-                    hash = Objects.hash(1, Long.valueOf(((TLRPC.TL_authorization) tLObject2).hash));
-                } else {
-                    if (tLObject2 instanceof TLRPC.TL_webAuthorization) {
-                        hash = Objects.hash(1, Long.valueOf(((TLRPC.TL_webAuthorization) tLObject2).hash));
-                    }
-                    hash = Objects.hash(0, -1);
-                }
-            }
-            return hash;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemViewType(int i) {
-            if (i == SessionsActivity.this.terminateAllSessionsRow) {
-                return 0;
-            }
-            if (i == SessionsActivity.this.terminateAllSessionsDetailRow || i == SessionsActivity.this.otherSessionsTerminateDetail || i == SessionsActivity.this.passwordSessionsDetailRow || i == SessionsActivity.this.qrCodeDividerRow || i == SessionsActivity.this.ttlDivideRow || i == SessionsActivity.this.noOtherSessionsRow) {
-                return 1;
-            }
-            if (i == SessionsActivity.this.currentSessionSectionRow || i == SessionsActivity.this.otherSessionsSectionRow || i == SessionsActivity.this.passwordSessionsSectionRow || i == SessionsActivity.this.ttlHeaderRow) {
-                return 2;
-            }
-            if (i == SessionsActivity.this.currentSessionRow) {
-                return 4;
-            }
-            if (i >= SessionsActivity.this.otherSessionsStartRow && i < SessionsActivity.this.otherSessionsEndRow) {
-                return 4;
-            }
-            if (i >= SessionsActivity.this.botSessionsStartRow && i < SessionsActivity.this.botSessionsEndRow) {
-                return 4;
-            }
-            if (i >= SessionsActivity.this.passwordSessionsStartRow && i < SessionsActivity.this.passwordSessionsEndRow) {
-                return 4;
-            }
-            if (i == SessionsActivity.this.qrCodeRow) {
-                return 5;
-            }
-            return i == SessionsActivity.this.ttlRow ? 6 : 0;
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    class ScanQRCodeView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-        TextView buttonTextView;
-        CellFlickerDrawable flickerDrawable;
-        BackupImageView imageView;
-        TextView textView;
-
-        public ScanQRCodeView(Context context) {
-            super(context);
-            this.flickerDrawable = new CellFlickerDrawable();
-            BackupImageView backupImageView = new BackupImageView(context);
-            this.imageView = backupImageView;
-            addView(backupImageView, LayoutHelper.createFrame(120, 120.0f, 1, 0.0f, 16.0f, 0.0f, 0.0f));
-            CellFlickerDrawable cellFlickerDrawable = this.flickerDrawable;
-            cellFlickerDrawable.repeatEnabled = false;
-            cellFlickerDrawable.animationSpeedScale = 1.2f;
-            this.imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SessionsActivity.ScanQRCodeView.1
-                @Override // android.view.View.OnClickListener
-                public void onClick(View view) {
-                    if (ScanQRCodeView.this.imageView.getImageReceiver().getLottieAnimation() == null || ScanQRCodeView.this.imageView.getImageReceiver().getLottieAnimation().isRunning()) {
-                        return;
-                    }
-                    ScanQRCodeView.this.imageView.getImageReceiver().getLottieAnimation().setCurrentFrame(0, false);
-                    ScanQRCodeView.this.imageView.getImageReceiver().getLottieAnimation().restart();
-                }
-            });
-            int i = Theme.key_windowBackgroundWhiteBlackText;
-            Theme.getColor(i);
-            int i2 = Theme.key_windowBackgroundWhite;
-            Theme.getColor(i2);
-            int i3 = Theme.key_featuredStickers_addButton;
-            Theme.getColor(i3);
-            Theme.getColor(i2);
-            LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
-            this.textView = linksTextView;
-            addView(linksTextView, LayoutHelper.createFrame(-1, -2.0f, 0, 36.0f, 152.0f, 36.0f, 0.0f));
-            this.textView.setGravity(1);
-            this.textView.setTextColor(Theme.getColor(i));
-            this.textView.setTextSize(1, 15.0f);
-            this.textView.setLinkTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText));
-            this.textView.setHighlightColor(Theme.getColor(Theme.key_windowBackgroundWhiteLinkSelection));
-            String string = LocaleController.getString(R.string.AuthAnotherClientInfo4);
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
-            int indexOf = string.indexOf(42);
-            int i4 = indexOf + 1;
-            int indexOf2 = string.indexOf(42, i4);
-            if (indexOf != -1 && indexOf2 != -1 && indexOf != indexOf2) {
-                this.textView.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-                spannableStringBuilder.replace(indexOf2, indexOf2 + 1, (CharSequence) "");
-                spannableStringBuilder.replace(indexOf, i4, (CharSequence) "");
-                spannableStringBuilder.setSpan(new URLSpanNoUnderline(LocaleController.getString(R.string.AuthAnotherClientDownloadClientUrl)), indexOf, indexOf2 - 1, 33);
-            }
-            String spannableStringBuilder2 = spannableStringBuilder.toString();
-            int indexOf3 = spannableStringBuilder2.indexOf(42);
-            int i5 = indexOf3 + 1;
-            int indexOf4 = spannableStringBuilder2.indexOf(42, i5);
-            if (indexOf3 != -1 && indexOf4 != -1 && indexOf3 != indexOf4) {
-                this.textView.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-                spannableStringBuilder.replace(indexOf4, indexOf4 + 1, (CharSequence) "");
-                spannableStringBuilder.replace(indexOf3, i5, (CharSequence) "");
-                spannableStringBuilder.setSpan(new URLSpanNoUnderline(LocaleController.getString(R.string.AuthAnotherWebClientUrl)), indexOf3, indexOf4 - 1, 33);
-            }
-            this.textView.setText(spannableStringBuilder);
-            TextView textView = new TextView(context) { // from class: org.telegram.ui.SessionsActivity.ScanQRCodeView.2
-                @Override // android.view.View
-                public void draw(Canvas canvas) {
-                    super.draw(canvas);
-                    ScanQRCodeView scanQRCodeView = ScanQRCodeView.this;
-                    if (scanQRCodeView.flickerDrawable.progress <= 1.0f && SessionsActivity.this.highlightLinkDesktopDevice && SessionsActivity.this.fragmentOpened) {
-                        RectF rectF = AndroidUtilities.rectTmp;
-                        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                        ScanQRCodeView.this.flickerDrawable.setParentWidth(getMeasuredWidth());
-                        ScanQRCodeView.this.flickerDrawable.draw(canvas, rectF, AndroidUtilities.dp(8.0f), null);
-                        invalidate();
-                    }
-                }
-            };
-            this.buttonTextView = textView;
-            textView.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-            this.buttonTextView.setGravity(17);
-            this.buttonTextView.setTextSize(1, 14.0f);
-            this.buttonTextView.setTypeface(AndroidUtilities.bold());
-            SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
-            spannableStringBuilder3.append((CharSequence) ".  ").append((CharSequence) LocaleController.getString(R.string.LinkDesktopDevice));
-            spannableStringBuilder3.setSpan(new ColoredImageSpan(ContextCompat.getDrawable(getContext(), R.drawable.msg_mini_qr)), 0, 1, 0);
-            this.buttonTextView.setText(spannableStringBuilder3);
-            this.buttonTextView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
-            this.buttonTextView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(24.0f), Theme.getColor(i3), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
-            this.buttonTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SessionsActivity$ScanQRCodeView$$ExternalSyntheticLambda0
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    SessionsActivity.ScanQRCodeView.$r8$lambda$eLvJn1_TkxtwWC1qarIj8lVD8XE(SessionsActivity.ScanQRCodeView.this, view);
-                }
-            });
-            addView(this.buttonTextView, LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 15.0f, 16.0f, 16.0f));
-            setSticker();
-        }
-
-        public static /* synthetic */ void $r8$lambda$eLvJn1_TkxtwWC1qarIj8lVD8XE(ScanQRCodeView scanQRCodeView, View view) {
-            int checkSelfPermission;
-            if (SessionsActivity.this.getParentActivity() == null) {
-                return;
-            }
-            if (Build.VERSION.SDK_INT >= 23) {
-                checkSelfPermission = SessionsActivity.this.getParentActivity().checkSelfPermission("android.permission.CAMERA");
-                if (checkSelfPermission != 0) {
-                    SessionsActivity.this.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);
-                    return;
-                }
-            }
-            SessionsActivity.this.openCameraScanActivity();
-        }
-
-        @Override // android.widget.FrameLayout, android.view.View
-        protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(276.0f), TLObject.FLAG_30));
-        }
-
-        @Override // android.view.ViewGroup, android.view.View
-        protected void onAttachedToWindow() {
-            super.onAttachedToWindow();
-            setSticker();
-            NotificationCenter.getInstance(((BaseFragment) SessionsActivity.this).currentAccount).addObserver(this, NotificationCenter.diceStickersDidLoad);
-        }
-
-        @Override // android.view.ViewGroup, android.view.View
-        protected void onDetachedFromWindow() {
-            super.onDetachedFromWindow();
-            NotificationCenter.getInstance(((BaseFragment) SessionsActivity.this).currentAccount).removeObserver(this, NotificationCenter.diceStickersDidLoad);
-        }
-
-        @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-        public void didReceivedNotification(int i, int i2, Object... objArr) {
-            if (i == NotificationCenter.diceStickersDidLoad && AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME.equals((String) objArr[0])) {
-                setSticker();
-            }
-        }
-
-        private void setSticker() {
-            TLRPC.TL_messages_stickerSet stickerSetByName = MediaDataController.getInstance(((BaseFragment) SessionsActivity.this).currentAccount).getStickerSetByName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
-            if (stickerSetByName == null) {
-                stickerSetByName = MediaDataController.getInstance(((BaseFragment) SessionsActivity.this).currentAccount).getStickerSetByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
-            }
-            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = stickerSetByName;
-            TLRPC.Document document = (tL_messages_stickerSet == null || tL_messages_stickerSet.documents.size() <= 6) ? null : tL_messages_stickerSet.documents.get(6);
-            SvgHelper.SvgDrawable svgThumb = document != null ? DocumentObject.getSvgThumb(document.thumbs, Theme.key_emptyListPlaceholder, 0.2f) : null;
-            if (svgThumb != null) {
-                svgThumb.overrideWidthAndHeight(512, 512);
-            }
-            if (document == null) {
-                MediaDataController.getInstance(((BaseFragment) SessionsActivity.this).currentAccount).loadStickersByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME, false, tL_messages_stickerSet == null);
-            } else {
-                this.imageView.setImage(ImageLocation.getForDocument(document), "130_130", "tgs", svgThumb, tL_messages_stickerSet);
-                this.imageView.getImageReceiver().setAutoRepeat(2);
-            }
-        }
-    }
-
-    class 6 implements CameraScanActivity.CameraScanActivityDelegate {
-        private TLObject response = null;
-        private TLRPC.TL_error error = null;
-
-        @Override // org.telegram.ui.CameraScanActivity.CameraScanActivityDelegate
-        public /* synthetic */ void didFindMrzInfo(MrzRecognizer.Result result) {
-            CameraScanActivity.CameraScanActivityDelegate.-CC.$default$didFindMrzInfo(this, result);
-        }
-
-        @Override // org.telegram.ui.CameraScanActivity.CameraScanActivityDelegate
-        public /* synthetic */ String getSubtitleText() {
-            return CameraScanActivity.CameraScanActivityDelegate.-CC.$default$getSubtitleText(this);
-        }
-
-        @Override // org.telegram.ui.CameraScanActivity.CameraScanActivityDelegate
-        public /* synthetic */ void onDismiss() {
-            CameraScanActivity.CameraScanActivityDelegate.-CC.$default$onDismiss(this);
-        }
-
-        6() {
-        }
-
-        @Override // org.telegram.ui.CameraScanActivity.CameraScanActivityDelegate
-        public void didFindQr(String str) {
-            TLObject tLObject = this.response;
-            if (tLObject instanceof TLRPC.TL_authorization) {
-                TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
-                if (tL_authorization.password_pending) {
-                    SessionsActivity.this.passwordSessions.add(0, tL_authorization);
-                    SessionsActivity.this.repeatLoad = 4;
-                    SessionsActivity.this.loadSessions(false);
-                } else {
-                    SessionsActivity.this.sessions.add(0, tL_authorization);
-                }
-                SessionsActivity.this.updateRows();
-                SessionsActivity.this.listAdapter.notifyDataSetChanged();
-                SessionsActivity.this.undoView.showWithAction(0L, 11, this.response);
-                return;
-            }
-            if (this.error != null) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$6$$ExternalSyntheticLambda1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        SessionsActivity.6.$r8$lambda$qDwY831U5fLLLpxYTVfGCvAQl5g(SessionsActivity.6.this);
-                    }
-                });
-            }
-        }
-
-        public static /* synthetic */ void $r8$lambda$qDwY831U5fLLLpxYTVfGCvAQl5g(6 r2) {
-            String str;
-            String str2 = r2.error.text;
-            if (str2 != null && str2.equals("AUTH_TOKEN_EXCEPTION")) {
-                str = LocaleController.getString(R.string.AccountAlreadyLoggedIn);
-            } else {
-                str = LocaleController.getString(R.string.ErrorOccurred) + "\n" + r2.error.text;
-            }
-            AlertsCreator.showSimpleAlert(SessionsActivity.this, LocaleController.getString(R.string.AuthAnotherClient), str);
-        }
-
-        @Override // org.telegram.ui.CameraScanActivity.CameraScanActivityDelegate
-        public boolean processQr(final String str, final Runnable runnable) {
-            this.response = null;
-            this.error = null;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$6$$ExternalSyntheticLambda2
-                @Override // java.lang.Runnable
-                public final void run() {
-                    SessionsActivity.6.$r8$lambda$NybtU01kvfJ7Wg_ClSzFwhNGlLY(SessionsActivity.6.this, str, runnable);
-                }
-            }, 750L);
-            return true;
-        }
-
-        public static /* synthetic */ void $r8$lambda$NybtU01kvfJ7Wg_ClSzFwhNGlLY(final 6 r2, String str, final Runnable runnable) {
-            r2.getClass();
-            try {
-                byte[] decode = Base64.decode(str.substring(17).replaceAll("\\/", "_").replaceAll("\\+", "-"), 8);
-                TLRPC.TL_auth_acceptLoginToken tL_auth_acceptLoginToken = new TLRPC.TL_auth_acceptLoginToken();
-                tL_auth_acceptLoginToken.token = decode;
-                SessionsActivity.this.getConnectionsManager().sendRequest(tL_auth_acceptLoginToken, new RequestDelegate() { // from class: org.telegram.ui.SessionsActivity$6$$ExternalSyntheticLambda3
-                    @Override // org.telegram.tgnet.RequestDelegate
-                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        SessionsActivity.6.$r8$lambda$bwh6JfNRdRQ9Rq_69cd73kJmnHw(SessionsActivity.6.this, runnable, tLObject, tL_error);
-                    }
-                });
-            } catch (Exception e) {
-                FileLog.e("Failed to pass qr code auth", e);
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$6$$ExternalSyntheticLambda4
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        AlertsCreator.showSimpleAlert(SessionsActivity.this, LocaleController.getString(R.string.AuthAnotherClient), LocaleController.getString(R.string.ErrorOccurred));
-                    }
-                });
-                runnable.run();
-            }
-        }
-
-        public static /* synthetic */ void $r8$lambda$bwh6JfNRdRQ9Rq_69cd73kJmnHw(final 6 r1, final Runnable runnable, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-            r1.getClass();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SessionsActivity$6$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    SessionsActivity.6.$r8$lambda$wd6YK3O-lS1R75FSJvtK51sZHdk(SessionsActivity.6.this, tLObject, tL_error, runnable);
-                }
-            });
-        }
-
-        public static /* synthetic */ void $r8$lambda$wd6YK3O-lS1R75FSJvtK51sZHdk(6 r0, TLObject tLObject, TLRPC.TL_error tL_error, Runnable runnable) {
-            r0.response = tLObject;
-            r0.error = tL_error;
-            runnable.run();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void openCameraScanActivity() {
-        CameraScanActivity.showAsSheet((BaseFragment) this, false, 2, (CameraScanActivity.CameraScanActivityDelegate) new 6());
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public ArrayList getThemeDescriptions() {
+    @Override // org.telegram.ui.ActionBar.n2
+    public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, HeaderCell.class, SessionCell.class}, null, null, null, Theme.key_windowBackgroundWhite));
-        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, Theme.key_actionBarDefault));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
-        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_PROGRESSBAR, null, null, null, null, Theme.key_progressCircle));
-        int i = Theme.key_text_RedRegular;
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueText4));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader));
-        int i2 = Theme.key_windowBackgroundWhiteBlackText;
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{SessionCell.class}, new String[]{"nameTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i2));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CHECKTAG, new Class[]{SessionCell.class}, new String[]{"onlineTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText));
-        int i3 = Theme.key_windowBackgroundWhiteGrayText3;
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CHECKTAG, new Class[]{SessionCell.class}, new String[]{"onlineTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{SessionCell.class}, new String[]{"detailTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i2));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{SessionCell.class}, new String[]{"detailExTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3));
-        arrayList.add(new ThemeDescription(this.undoView, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, Theme.key_undo_background));
-        arrayList.add(new ThemeDescription(this.undoView, 0, new Class[]{UndoView.class}, new String[]{"undoImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i));
-        arrayList.add(new ThemeDescription(this.undoView, 0, new Class[]{UndoView.class}, new String[]{"undoTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i));
-        int i4 = Theme.key_undo_infoColor;
-        arrayList.add(new ThemeDescription(this.undoView, 0, new Class[]{UndoView.class}, new String[]{"infoTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4));
-        arrayList.add(new ThemeDescription(this.undoView, 0, new Class[]{UndoView.class}, new String[]{"textPaint"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4));
-        arrayList.add(new ThemeDescription(this.undoView, 0, new Class[]{UndoView.class}, new String[]{"progressPaint"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4));
-        arrayList.add(new ThemeDescription(this.undoView, ThemeDescription.FLAG_IMAGECOLOR, new Class[]{UndoView.class}, new String[]{"leftImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 16, new Class[]{org.telegram.ui.Cells.x9.class, org.telegram.ui.Cells.j4.class, org.telegram.ui.Cells.q6.class}, null, null, null, org.telegram.ui.ActionBar.g6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.g6.a7));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 32768, null, null, null, null, org.telegram.ui.ActionBar.g6.s8));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.g6.v8));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.g6.A8));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.g6.t8));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 4096, null, null, null, null, org.telegram.ui.ActionBar.g6.i6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{View.class}, org.telegram.ui.ActionBar.g6.k0, null, null, org.telegram.ui.ActionBar.g6.d7));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.c, 2048, null, null, null, null, org.telegram.ui.ActionBar.g6.h6));
+        int i10 = org.telegram.ui.ActionBar.g6.p7;
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 262148, new Class[]{org.telegram.ui.Cells.x9.class}, new String[]{"textView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 262148, new Class[]{org.telegram.ui.Cells.x9.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.q6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 32, new Class[]{org.telegram.ui.Cells.x8.class}, null, null, null, org.telegram.ui.ActionBar.g6.b7));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{org.telegram.ui.Cells.x8.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.B6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{org.telegram.ui.Cells.j4.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.L6));
+        int i11 = org.telegram.ui.ActionBar.g6.G6;
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{org.telegram.ui.Cells.q6.class}, new String[]{"nameTextView"}, null, null, -1, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 262144, new Class[]{org.telegram.ui.Cells.q6.class}, new String[]{"onlineTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.I6));
+        int i12 = org.telegram.ui.ActionBar.g6.A6;
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 262144, new Class[]{org.telegram.ui.Cells.q6.class}, new String[]{"onlineTextView"}, null, null, -1, null, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{org.telegram.ui.Cells.q6.class}, new String[]{"detailTextView"}, null, null, -1, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{org.telegram.ui.Cells.q6.class}, new String[]{"detailExTextView"}, null, null, -1, null, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.s, 32, null, null, null, null, org.telegram.ui.ActionBar.g6.Fi));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.s, 0, new Class[]{UndoView.class}, new String[]{"undoImageView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.s, 0, new Class[]{UndoView.class}, new String[]{"undoTextView"}, null, null, -1, null, i10));
+        int i13 = org.telegram.ui.ActionBar.g6.Hi;
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.s, 0, new Class[]{UndoView.class}, new String[]{"infoTextView"}, null, null, -1, null, i13));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.s, 0, new Class[]{UndoView.class}, new String[]{"textPaint"}, null, null, -1, null, i13));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.s, 0, new Class[]{UndoView.class}, new String[]{"progressPaint"}, null, null, -1, null, i13));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.s, 8, new Class[]{UndoView.class}, new String[]{"leftImageView"}, null, null, -1, null, i13));
         return arrayList;
     }
 
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onRequestPermissionsResultFragment(int i, String[] strArr, int[] iArr) {
-        if (getParentActivity() != null && i == 34) {
-            if (iArr.length > 0 && iArr[0] == 0) {
-                openCameraScanActivity();
-            } else {
-                new AlertDialog.Builder(getParentActivity()).setMessage(AndroidUtilities.replaceTags(LocaleController.getString(R.string.QRCodePermissionNoCameraWithHint))).setPositiveButton(LocaleController.getString(R.string.PermissionOpenSettings), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.SessionsActivity$$ExternalSyntheticLambda4
-                    @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                    public final void onClick(AlertDialog alertDialog, int i2) {
-                        SessionsActivity.$r8$lambda$V5Wo9TTwqdV2mz2Vzu05RgC9nUY(SessionsActivity.this, alertDialog, i2);
-                    }
-                }).setNegativeButton(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null).setTopAnimation(R.raw.permission_request_camera, 72, false, Theme.getColor(Theme.key_dialogTopBackground)).show();
-            }
-        }
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
     }
 
-    public static /* synthetic */ void $r8$lambda$V5Wo9TTwqdV2mz2Vzu05RgC9nUY(SessionsActivity sessionsActivity, AlertDialog alertDialog, int i) {
-        sessionsActivity.getClass();
-        try {
-            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-            sessionsActivity.getParentActivity().startActivity(intent);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    public int getSessionsCount() {
-        if (this.sessions.size() == 0 && this.loading) {
+    public final int j0() {
+        ArrayList arrayList = this.e;
+        if (arrayList.size() == 0 && this.r) {
             return 0;
         }
-        return this.sessions.size() + (this.currentType == 0 ? 1 : 0);
+        return arrayList.size() + (this.w == 0 ? 1 : 0);
     }
 
-    public void setDelegate(Delegate delegate) {
-        this.delegate = delegate;
+    public final void k0(final boolean z10) {
+        if (this.r) {
+            return;
+        }
+        if (!z10) {
+            this.r = true;
+        }
+        if (this.w == 0) {
+            final int i10 = 0;
+            ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getAuthorizations(), new RequestDelegate(this) { // from class: org.telegram.ui.y61
+                public final /* synthetic */ SessionsActivity b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // org.telegram.tgnet.RequestDelegate
+                public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+                    switch (i10) {
+                        case 0:
+                            final int i11 = 0;
+                            final SessionsActivity sessionsActivity = this.b;
+                            final boolean z11 = z10;
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.z61
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    switch (i11) {
+                                        case 0:
+                                            SessionsActivity sessionsActivity2 = sessionsActivity;
+                                            ArrayList arrayList = sessionsActivity2.f;
+                                            ArrayList arrayList2 = sessionsActivity2.e;
+                                            sessionsActivity2.r = false;
+                                            if (tL_error == null) {
+                                                arrayList2.clear();
+                                                arrayList.clear();
+                                                TL_account.authorizations authorizationsVar = (TL_account.authorizations) tLObject;
+                                                int size = authorizationsVar.authorizations.size();
+                                                for (int i12 = 0; i12 < size; i12++) {
+                                                    TLRPC.TL_authorization tL_authorization = authorizationsVar.authorizations.get(i12);
+                                                    if ((tL_authorization.flags & 1) != 0) {
+                                                        sessionsActivity2.n = tL_authorization;
+                                                    } else if (tL_authorization.password_pending) {
+                                                        arrayList.add(tL_authorization);
+                                                    } else {
+                                                        arrayList2.add(tL_authorization);
+                                                    }
+                                                }
+                                                sessionsActivity2.v = authorizationsVar.authorization_ttl_days;
+                                                sessionsActivity2.m0();
+                                                xw0 xw0Var = sessionsActivity2.U;
+                                                if (xw0Var != null) {
+                                                    xw0Var.a();
+                                                }
+                                            }
+                                            j71 j71Var = sessionsActivity2.a;
+                                            if (j71Var != null) {
+                                                j71Var.l();
+                                            }
+                                            xw0 xw0Var2 = sessionsActivity2.U;
+                                            if (xw0Var2 != null) {
+                                                xw0Var2.a();
+                                            }
+                                            int i13 = sessionsActivity2.R;
+                                            if (i13 > 0) {
+                                                int i14 = i13 - 1;
+                                                sessionsActivity2.R = i14;
+                                                if (i14 > 0) {
+                                                    AndroidUtilities.runOnUIThread(new b71(sessionsActivity2, z11, 1), 2500L);
+                                                    break;
+                                                }
+                                            }
+                                            break;
+                                        default:
+                                            SessionsActivity.Y(sessionsActivity, tL_error, tLObject, z11);
+                                            break;
+                                    }
+                                }
+                            });
+                            break;
+                        default:
+                            final int i12 = 1;
+                            final SessionsActivity sessionsActivity2 = this.b;
+                            final boolean z12 = z10;
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.z61
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    switch (i12) {
+                                        case 0:
+                                            SessionsActivity sessionsActivity22 = sessionsActivity2;
+                                            ArrayList arrayList = sessionsActivity22.f;
+                                            ArrayList arrayList2 = sessionsActivity22.e;
+                                            sessionsActivity22.r = false;
+                                            if (tL_error == null) {
+                                                arrayList2.clear();
+                                                arrayList.clear();
+                                                TL_account.authorizations authorizationsVar = (TL_account.authorizations) tLObject;
+                                                int size = authorizationsVar.authorizations.size();
+                                                for (int i122 = 0; i122 < size; i122++) {
+                                                    TLRPC.TL_authorization tL_authorization = authorizationsVar.authorizations.get(i122);
+                                                    if ((tL_authorization.flags & 1) != 0) {
+                                                        sessionsActivity22.n = tL_authorization;
+                                                    } else if (tL_authorization.password_pending) {
+                                                        arrayList.add(tL_authorization);
+                                                    } else {
+                                                        arrayList2.add(tL_authorization);
+                                                    }
+                                                }
+                                                sessionsActivity22.v = authorizationsVar.authorization_ttl_days;
+                                                sessionsActivity22.m0();
+                                                xw0 xw0Var = sessionsActivity22.U;
+                                                if (xw0Var != null) {
+                                                    xw0Var.a();
+                                                }
+                                            }
+                                            j71 j71Var = sessionsActivity22.a;
+                                            if (j71Var != null) {
+                                                j71Var.l();
+                                            }
+                                            xw0 xw0Var2 = sessionsActivity22.U;
+                                            if (xw0Var2 != null) {
+                                                xw0Var2.a();
+                                            }
+                                            int i13 = sessionsActivity22.R;
+                                            if (i13 > 0) {
+                                                int i14 = i13 - 1;
+                                                sessionsActivity22.R = i14;
+                                                if (i14 > 0) {
+                                                    AndroidUtilities.runOnUIThread(new b71(sessionsActivity22, z12, 1), 2500L);
+                                                    break;
+                                                }
+                                            }
+                                            break;
+                                        default:
+                                            SessionsActivity.Y(sessionsActivity2, tL_error, tLObject, z12);
+                                            break;
+                                    }
+                                }
+                            });
+                            break;
+                    }
+                }
+            }), this.classGuid);
+            return;
+        }
+        final int i11 = 1;
+        ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getWebAuthorizations(), new RequestDelegate(this) { // from class: org.telegram.ui.y61
+            public final /* synthetic */ SessionsActivity b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.tgnet.RequestDelegate
+            public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+                switch (i11) {
+                    case 0:
+                        final int i112 = 0;
+                        final SessionsActivity sessionsActivity = this.b;
+                        final boolean z11 = z10;
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.z61
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i112) {
+                                    case 0:
+                                        SessionsActivity sessionsActivity22 = sessionsActivity;
+                                        ArrayList arrayList = sessionsActivity22.f;
+                                        ArrayList arrayList2 = sessionsActivity22.e;
+                                        sessionsActivity22.r = false;
+                                        if (tL_error == null) {
+                                            arrayList2.clear();
+                                            arrayList.clear();
+                                            TL_account.authorizations authorizationsVar = (TL_account.authorizations) tLObject;
+                                            int size = authorizationsVar.authorizations.size();
+                                            for (int i122 = 0; i122 < size; i122++) {
+                                                TLRPC.TL_authorization tL_authorization = authorizationsVar.authorizations.get(i122);
+                                                if ((tL_authorization.flags & 1) != 0) {
+                                                    sessionsActivity22.n = tL_authorization;
+                                                } else if (tL_authorization.password_pending) {
+                                                    arrayList.add(tL_authorization);
+                                                } else {
+                                                    arrayList2.add(tL_authorization);
+                                                }
+                                            }
+                                            sessionsActivity22.v = authorizationsVar.authorization_ttl_days;
+                                            sessionsActivity22.m0();
+                                            xw0 xw0Var = sessionsActivity22.U;
+                                            if (xw0Var != null) {
+                                                xw0Var.a();
+                                            }
+                                        }
+                                        j71 j71Var = sessionsActivity22.a;
+                                        if (j71Var != null) {
+                                            j71Var.l();
+                                        }
+                                        xw0 xw0Var2 = sessionsActivity22.U;
+                                        if (xw0Var2 != null) {
+                                            xw0Var2.a();
+                                        }
+                                        int i13 = sessionsActivity22.R;
+                                        if (i13 > 0) {
+                                            int i14 = i13 - 1;
+                                            sessionsActivity22.R = i14;
+                                            if (i14 > 0) {
+                                                AndroidUtilities.runOnUIThread(new b71(sessionsActivity22, z11, 1), 2500L);
+                                                break;
+                                            }
+                                        }
+                                        break;
+                                    default:
+                                        SessionsActivity.Y(sessionsActivity, tL_error, tLObject, z11);
+                                        break;
+                                }
+                            }
+                        });
+                        break;
+                    default:
+                        final int i12 = 1;
+                        final SessionsActivity sessionsActivity2 = this.b;
+                        final boolean z12 = z10;
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.z61
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i12) {
+                                    case 0:
+                                        SessionsActivity sessionsActivity22 = sessionsActivity2;
+                                        ArrayList arrayList = sessionsActivity22.f;
+                                        ArrayList arrayList2 = sessionsActivity22.e;
+                                        sessionsActivity22.r = false;
+                                        if (tL_error == null) {
+                                            arrayList2.clear();
+                                            arrayList.clear();
+                                            TL_account.authorizations authorizationsVar = (TL_account.authorizations) tLObject;
+                                            int size = authorizationsVar.authorizations.size();
+                                            for (int i122 = 0; i122 < size; i122++) {
+                                                TLRPC.TL_authorization tL_authorization = authorizationsVar.authorizations.get(i122);
+                                                if ((tL_authorization.flags & 1) != 0) {
+                                                    sessionsActivity22.n = tL_authorization;
+                                                } else if (tL_authorization.password_pending) {
+                                                    arrayList.add(tL_authorization);
+                                                } else {
+                                                    arrayList2.add(tL_authorization);
+                                                }
+                                            }
+                                            sessionsActivity22.v = authorizationsVar.authorization_ttl_days;
+                                            sessionsActivity22.m0();
+                                            xw0 xw0Var = sessionsActivity22.U;
+                                            if (xw0Var != null) {
+                                                xw0Var.a();
+                                            }
+                                        }
+                                        j71 j71Var = sessionsActivity22.a;
+                                        if (j71Var != null) {
+                                            j71Var.l();
+                                        }
+                                        xw0 xw0Var2 = sessionsActivity22.U;
+                                        if (xw0Var2 != null) {
+                                            xw0Var2.a();
+                                        }
+                                        int i13 = sessionsActivity22.R;
+                                        if (i13 > 0) {
+                                            int i14 = i13 - 1;
+                                            sessionsActivity22.R = i14;
+                                            if (i14 > 0) {
+                                                AndroidUtilities.runOnUIThread(new b71(sessionsActivity22, z12, 1), 2500L);
+                                                break;
+                                            }
+                                        }
+                                        break;
+                                    default:
+                                        SessionsActivity.Y(sessionsActivity2, tL_error, tLObject, z12);
+                                        break;
+                                }
+                            }
+                        });
+                        break;
+                }
+            }
+        }), this.classGuid);
     }
 
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onInsets(int i, int i2, int i3, int i4) {
-        this.listView.setPadding(0, 0, 0, i4);
-        this.listView.setClipToPadding(false);
-        UndoView undoView = this.undoView;
-        if (undoView != null) {
-            undoView.setTranslationY(-i4);
+    public final void l0() {
+        this.S = true;
+    }
+
+    public final void m0() {
+        this.O = 0;
+        this.x = -1;
+        this.y = -1;
+        this.terminateAllSessionsRow = -1;
+        this.A = -1;
+        this.B = -1;
+        this.C = -1;
+        this.D = -1;
+        this.E = -1;
+        this.F = -1;
+        this.G = -1;
+        this.H = -1;
+        this.I = -1;
+        this.J = -1;
+        this.K = -1;
+        this.L = -1;
+        this.M = -1;
+        this.N = -1;
+        this.P = -1;
+        this.ttlRow = -1;
+        this.Q = -1;
+        int i10 = this.w;
+        if (i10 == 0 && getMessagesController().qrLoginCamera) {
+            int i11 = this.O;
+            this.M = i11;
+            this.O = i11 + 2;
+            this.N = i11 + 1;
+        }
+        if (this.r) {
+            if (i10 == 0) {
+                int i12 = this.O;
+                this.x = i12;
+                this.O = i12 + 2;
+                this.y = i12 + 1;
+                return;
+            }
+            return;
+        }
+        if (this.n != null) {
+            int i13 = this.O;
+            this.x = i13;
+            this.O = i13 + 2;
+            this.y = i13 + 1;
+        }
+        ArrayList arrayList = this.f;
+        boolean isEmpty = arrayList.isEmpty();
+        ArrayList arrayList2 = this.e;
+        if (isEmpty && arrayList2.isEmpty()) {
+            this.terminateAllSessionsRow = -1;
+            this.A = -1;
+            if (i10 == 1 || this.n != null) {
+                int i14 = this.O;
+                this.O = i14 + 1;
+                this.L = i14;
+            } else {
+                this.L = -1;
+            }
+        } else {
+            int i15 = this.O;
+            this.terminateAllSessionsRow = i15;
+            this.O = i15 + 2;
+            this.A = i15 + 1;
+            this.L = -1;
+        }
+        if (!arrayList.isEmpty()) {
+            int i16 = this.O;
+            int i17 = i16 + 1;
+            this.O = i17;
+            this.B = i16;
+            this.C = i17;
+            int size = arrayList.size() + i17;
+            this.D = size;
+            this.O = size + 1;
+            this.E = size;
+        }
+        if (arrayList2.isEmpty()) {
+            ArrayList arrayList3 = this.h;
+            if (arrayList3 != null && !arrayList3.isEmpty()) {
+                int i18 = this.O;
+                int i19 = i18 + 1;
+                this.O = i19;
+                this.F = i18;
+                this.I = i19;
+                int size2 = this.h.size() + i19;
+                this.J = size2;
+                this.O = size2 + 1;
+                this.K = size2;
+            }
+        } else {
+            int i20 = this.O;
+            this.O = i20 + 1;
+            this.F = i20;
+            ArrayList arrayList4 = this.h;
+            if (arrayList4 != null && !arrayList4.isEmpty()) {
+                int i21 = this.O;
+                this.I = i21;
+                int size3 = this.h.size() + i21;
+                this.O = size3;
+                this.J = size3;
+            }
+            int i22 = this.O;
+            this.G = i22;
+            this.H = arrayList2.size() + i22;
+            int size4 = arrayList2.size() + this.O;
+            this.O = size4 + 1;
+            this.K = size4;
+        }
+        if (this.v > 0) {
+            int i23 = this.O;
+            this.P = i23;
+            this.ttlRow = i23 + 1;
+            this.O = i23 + 3;
+            this.Q = i23 + 2;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onBecomeFullyHidden() {
+        f71 f71Var = this.s;
+        if (f71Var != null) {
+            f71Var.e(0, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean onFragmentCreate() {
+        super.onFragmentCreate();
+        m0();
+        k0(false);
+        if (this.w == 0) {
+            qf.h.a(this.currentAccount).c(new d71(this, 0));
+        }
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.newSessionReceived);
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.newSessionReceived);
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onInsets(int i10, int i11, int i12, int i13) {
+        this.b.setPadding(0, 0, 0, i13);
+        this.b.setClipToPadding(false);
+        f71 f71Var = this.s;
+        if (f71Var != null) {
+            f71Var.setTranslationY(-i13);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onPause() {
+        super.onPause();
+        f71 f71Var = this.s;
+        if (f71Var != null) {
+            f71Var.e(0, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onRequestPermissionsResultFragment(int i10, String[] strArr, int[] iArr) {
+        if (getParentActivity() != null && i10 == 34) {
+            if (iArr.length > 0 && iArr[0] == 0) {
+                t9.e0(getParentActivity(), 2, new i71(this));
+                return;
+            }
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
+            alertDialog$Builder.a.P = AndroidUtilities.replaceTags(LocaleController.getString(R.string.QRCodePermissionNoCameraWithHint));
+            alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new e71(this, 0));
+            alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
+            alertDialog$Builder.m(R.raw.permission_request_camera, 72, org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.L5, false), null);
+            alertDialog$Builder.o();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onResume() {
+        super.onResume();
+        j71 j71Var = this.a;
+        if (j71Var != null) {
+            j71Var.l();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        super.onTransitionAnimationEnd(z10, z11);
+        if (!z10 || z11) {
+            return;
+        }
+        this.T = true;
+        for (int i10 = 0; i10 < this.b.getChildCount(); i10++) {
+            View childAt = this.b.getChildAt(i10);
+            if (childAt instanceof k71) {
+                ((k71) childAt).b.invalidate();
+            }
         }
     }
 }

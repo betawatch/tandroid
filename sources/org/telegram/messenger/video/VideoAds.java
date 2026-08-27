@@ -1,5 +1,6 @@
 package org.telegram.messenger.video;
 
+import ag.g2;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -18,9 +19,15 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import gh.a4;
+import gh.f3;
+import h7.z5;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.HashMap;
+import jh.h0;
+import lh.k7;
+import nh.x1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
@@ -29,46 +36,46 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.browser.Browser;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.SimpleTextView;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
-import org.telegram.ui.Components.Text;
-import org.telegram.ui.DarkBlueThemeResourcesProvider;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.f1;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h5;
+import org.telegram.ui.ActionBar.k1;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.b70;
+import org.telegram.ui.Components.c70;
+import org.telegram.ui.Components.cb;
+import org.telegram.ui.Components.ec;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.i6;
+import org.telegram.ui.Components.jb;
+import org.telegram.ui.Components.mc;
+import org.telegram.ui.Components.n9;
+import org.telegram.ui.Components.p80;
+import org.telegram.ui.Components.pz0;
+import org.telegram.ui.Components.y5;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ReportBottomSheet;
-import org.telegram.ui.RevenueSharingAdsInfoBottomSheet;
+import org.telegram.ui.x21;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class VideoAds {
     private static HashMap<VideoAdsLocation, VideoAds> cached = new HashMap<>();
     private int between_delay;
-    private Bulletin bulletin;
-    private BulletinFactory bulletinFactory;
+    private ec bulletin;
+    private mc bulletinFactory;
     private long bulletinShowTime;
     private final int currentAccount;
     private long currentBulletinPassedTime;
-    private ItemOptions currentMenu;
+    private b70 currentMenu;
     private float currentMenuTranslationY;
     private final long dialogId;
     private boolean lastPopupShown;
@@ -77,7 +84,7 @@ public class VideoAds {
     private boolean loading;
     private final int msg_id;
     private Runnable onPopupCallback;
-    private PremiumFeatureBottomSheet premiumSheet;
+    private g2 premiumSheet;
     private int requestId;
     private int start_delay;
     public boolean videoWasPlaying;
@@ -85,20 +92,206 @@ public class VideoAds {
     private long waitingTimeSince;
     private final ArrayList<TLRPC.TL_sponsoredMessage> ads = new ArrayList<>();
     private boolean first = true;
-    private final Runnable showRunnable = new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda12
-        @Override // java.lang.Runnable
-        public final void run() {
-            VideoAds.this.show();
-        }
-    };
+    private final Runnable showRunnable = new d(this, 0);
 
-    private static class VideoAdsLocation {
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class AdLayout extends cb {
+        public final ImageView buttonView;
+        public final n9 imageView;
+        private final LinearLayout linearLayout;
+        public final p80 subtitleTextView;
+        public final h5 titleTextView;
+
+        public AdLayout(Context context, c6 c6Var) {
+            super(context, c6Var);
+            setBackground(getThemedColor(g6.Fi));
+            n9 n9Var = new n9(context);
+            this.imageView = n9Var;
+            n9Var.setRoundRadius(AndroidUtilities.dp(48.0f));
+            addView(n9Var, z5.i(36.0f, 36.0f, 8388627, 9.0f, 0.0f, 0.0f, 0.0f));
+            int themedColor = getThemedColor(g6.Hi);
+            int themedColor2 = getThemedColor(g6.Gi);
+            LinearLayout linearLayout = new LinearLayout(context);
+            this.linearLayout = linearLayout;
+            linearLayout.setOrientation(1);
+            addView(linearLayout, z5.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 54.0f, 8.0f));
+            h5 h5Var = new h5(context);
+            this.titleTextView = h5Var;
+            h5Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+            h5Var.setTextColor(themedColor);
+            h5Var.setTextSize(14);
+            h5Var.setTypeface(AndroidUtilities.bold());
+            linearLayout.addView(h5Var);
+            p80 p80Var = new p80(context, null);
+            this.subtitleTextView = p80Var;
+            p80Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+            p80Var.setTextColor(themedColor);
+            p80Var.setLinkTextColor(themedColor2);
+            p80Var.setTypeface(Typeface.SANS_SERIF);
+            p80Var.setTextSize(1, 13.0f);
+            linearLayout.addView(p80Var);
+            ImageView imageView = new ImageView(context);
+            this.buttonView = imageView;
+            imageView.setScaleType(ImageView.ScaleType.CENTER);
+            imageView.setBackground(g6.f0(g6.l1(0.15f, getThemedColor(g6.Oh)), 7, -1));
+            addView(imageView, z5.i(32.0f, 32.0f, 8388629, 0.0f, 0.0f, 11.0f, 0.0f));
+        }
+
+        @Override // org.telegram.ui.Components.jb
+        public CharSequence getAccessibilityText() {
+            return ((Object) this.titleTextView.getText()) + ".\n" + ((Object) this.subtitleTextView.getText());
+        }
+
+        public void hideImage() {
+            this.imageView.setVisibility(8);
+            this.linearLayout.setLayoutParams(z5.i(-2.0f, -2.0f, 8388627, 10.0f, 8.0f, 54.0f, 8.0f));
+        }
+
+        @Override // org.telegram.ui.Components.jb
+        public void onShow() {
+            super.onShow();
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class CloseDrawable extends Drawable {
+        private int alpha;
+        private final long max_display_duration;
+        private final long min_display_duration;
+        private long minusTime;
+        private final Paint paint;
+        private final View parentView;
+        private boolean paused;
+        private long pausedTime;
+        private final y5 showCrossAnimated;
+        private final y5 showTimerAnimated;
+        private final long startTime;
+        private final i6 timer;
+        private final y5 timerScaleAnimated;
+
+        public CloseDrawable(View view, int i10, int i11, long j10) {
+            i6 i6Var = new i6(false, true, true, false);
+            this.timer = i6Var;
+            Paint paint = new Paint(1);
+            this.paint = paint;
+            this.paused = false;
+            this.alpha = 255;
+            this.parentView = view;
+            this.startTime = System.currentTimeMillis() - j10;
+            this.min_display_duration = i10 * 1000;
+            this.max_display_duration = i11 * 1000;
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeCap(Paint.Cap.ROUND);
+            paint.setStrokeJoin(Paint.Join.ROUND);
+            paint.setColor(-1);
+            i6Var.setCallback(view);
+            i6Var.b = 17;
+            i6Var.t(AndroidUtilities.dp(12.0f));
+            i6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
+            i6Var.G = AndroidUtilities.displaySize.x;
+            i6Var.r(-1);
+            er erVar = er.h;
+            this.showCrossAnimated = new y5(view, 0L, 420L, erVar);
+            this.showTimerAnimated = new y5(view, 0L, 420L, erVar);
+            this.timerScaleAnimated = new y5(view, 0L, 420L, erVar);
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void draw(Canvas canvas) {
+            float centerX = getBounds().centerX();
+            float centerY = getBounds().centerY();
+            long currentTimeMillis = ((this.paused ? this.pausedTime : System.currentTimeMillis()) - this.minusTime) - this.startTime;
+            long max = Math.max(0L, this.min_display_duration - currentTimeMillis);
+            long j10 = this.min_display_duration;
+            float f10 = max / j10;
+            float e9 = this.showTimerAnimated.e(currentTimeMillis < j10);
+            String str = "" + ((int) Math.ceil(max / 1000.0d));
+            float d = this.timerScaleAnimated.d(str.length() >= 3 ? 0.825f : str.length() >= 2 ? 0.875f : 1.0f, false);
+            canvas.save();
+            canvas.scale(d, d, centerX, centerY);
+            this.timer.q(str, true, true);
+            this.timer.l(centerX - 1.0f, centerY - 1.0f, centerX + 1.0f, centerY + 1.0f);
+            i6 i6Var = this.timer;
+            i6Var.w = (int) (this.alpha * e9);
+            i6Var.draw(canvas);
+            canvas.restore();
+            this.paint.setAlpha((int) (this.alpha * e9));
+            this.paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(centerX - AndroidUtilities.dp(9.0f), centerY - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f) + centerX, AndroidUtilities.dp(9.0f) + centerY);
+            canvas.drawArc(rectF, -90.0f, f10 * (-360.0f), false, this.paint);
+            float e10 = this.showCrossAnimated.e((1.0f - f10) * 360.0f > 75.0f);
+            float lerp = AndroidUtilities.lerp(centerX, AndroidUtilities.dp(8.0f) + centerX, e9);
+            float lerp2 = AndroidUtilities.lerp(centerY, centerY - AndroidUtilities.dp(8.0f), e9);
+            float lerp3 = AndroidUtilities.lerp(0.35f, 1.0f, e10) * AndroidUtilities.lerp(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(3.0f), e9);
+            this.paint.setAlpha((int) (this.alpha * e10));
+            float f11 = lerp - lerp3;
+            float f12 = lerp2 - lerp3;
+            float f13 = lerp + lerp3;
+            float f14 = lerp3 + lerp2;
+            canvas.drawLine(f11, f12, f13, f14, this.paint);
+            canvas.drawLine(f11, f14, f13, f12, this.paint);
+            if (e9 > 0.0f) {
+                this.parentView.invalidate();
+            }
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public int getIntrinsicHeight() {
+            return AndroidUtilities.dp(24.0f);
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public int getIntrinsicWidth() {
+            return AndroidUtilities.dp(24.0f);
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public int getOpacity() {
+            return -2;
+        }
+
+        public boolean isCrossAvailable() {
+            return (this.paused ? this.pausedTime : System.currentTimeMillis() - this.minusTime) - this.startTime > this.min_display_duration;
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void setAlpha(int i10) {
+            this.alpha = i10;
+        }
+
+        public void setColor(int i10) {
+            this.timer.r(i10);
+            this.paint.setColor(i10);
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void setColorFilter(ColorFilter colorFilter) {
+            this.timer.setColorFilter(colorFilter);
+            this.paint.setColorFilter(colorFilter);
+        }
+
+        public void setPaused(boolean z10) {
+            if (this.paused == z10) {
+                return;
+            }
+            this.paused = z10;
+            if (z10) {
+                this.pausedTime = System.currentTimeMillis();
+            } else {
+                this.minusTime += System.currentTimeMillis() - this.pausedTime;
+            }
+        }
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class VideoAdsLocation {
         int currentAccount;
         long dialogId;
 
-        public VideoAdsLocation(int i, long j) {
-            this.currentAccount = i;
-            this.dialogId = j;
+        public VideoAdsLocation(int i10, long j10) {
+            this.currentAccount = i10;
+            this.dialogId = j10;
         }
 
         public boolean equals(Object obj) {
@@ -119,38 +312,13 @@ public class VideoAds {
         }
     }
 
-    public static void dropCache() {
-        cached.clear();
-    }
-
-    public static VideoAds make(int i, long j, int i2, BulletinFactory bulletinFactory) {
-        BulletinFactory bulletinFactory2;
-        VideoAdsLocation videoAdsLocation = new VideoAdsLocation(i, j);
-        VideoAds videoAds = cached.get(videoAdsLocation);
-        if (videoAds == null || ((videoAds.msg_id != i2 || System.currentTimeMillis() - videoAds.lastTime > 180000) && videoAds.ads.isEmpty())) {
-            HashMap<VideoAdsLocation, VideoAds> hashMap = cached;
-            bulletinFactory2 = bulletinFactory;
-            VideoAds videoAds2 = new VideoAds(i, j, i2, bulletinFactory2);
-            hashMap.put(videoAdsLocation, videoAds2);
-            videoAds = videoAds2;
-        } else {
-            bulletinFactory2 = bulletinFactory;
-        }
-        videoAds.init(bulletinFactory2);
-        return videoAds;
-    }
-
-    private VideoAds(int i, long j, int i2, BulletinFactory bulletinFactory) {
+    private VideoAds(int i10, long j10, int i11, mc mcVar) {
         this.lastTime = 0L;
-        this.currentAccount = i;
-        this.dialogId = j;
-        this.msg_id = i2;
+        this.currentAccount = i10;
+        this.dialogId = j10;
+        this.msg_id = i11;
         this.lastTime = System.currentTimeMillis();
-        init(bulletinFactory);
-    }
-
-    public void setPauseOnPopupCallback(Runnable runnable) {
-        this.onPopupCallback = runnable;
+        init(mcVar);
     }
 
     private void checkPopupShownCallback() {
@@ -163,17 +331,12 @@ public class VideoAds {
         }
     }
 
-    public boolean isPopupShown() {
-        ItemOptions itemOptions = this.currentMenu;
-        if (itemOptions != null && itemOptions.isShown()) {
-            return true;
-        }
-        PremiumFeatureBottomSheet premiumFeatureBottomSheet = this.premiumSheet;
-        return premiumFeatureBottomSheet != null && premiumFeatureBottomSheet.isShown();
+    public static void dropCache() {
+        cached.clear();
     }
 
-    private void init(BulletinFactory bulletinFactory) {
-        this.bulletinFactory = bulletinFactory;
+    private void init(mc mcVar) {
+        this.bulletinFactory = mcVar;
         if (this.currentBulletinPassedTime <= 0) {
             this.lastTime = System.currentTimeMillis();
             if (this.waitingPaused) {
@@ -181,10 +344,479 @@ public class VideoAds {
             }
             this.first = true;
         }
-        if (!this.loaded) {
-            load();
-        } else {
+        if (this.loaded) {
             schedule();
+        } else {
+            load();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$load$0(TLObject tLObject) {
+        if (this.loading) {
+            if (tLObject instanceof TLRPC.TL_messages_sponsoredMessages) {
+                TLRPC.TL_messages_sponsoredMessages tL_messages_sponsoredMessages = (TLRPC.TL_messages_sponsoredMessages) tLObject;
+                MessagesController.getInstance(this.currentAccount).putUsers(tL_messages_sponsoredMessages.users, false);
+                MessagesController.getInstance(this.currentAccount).putChats(tL_messages_sponsoredMessages.chats, false);
+                this.ads.addAll(tL_messages_sponsoredMessages.messages);
+                this.start_delay = tL_messages_sponsoredMessages.start_delay;
+                this.between_delay = tL_messages_sponsoredMessages.between_delay;
+            }
+            this.loaded = true;
+            this.loading = false;
+            schedule();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$load$1(TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new k7(20, this, tLObject));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$show$10(TLRPC.TL_sponsoredMessage tL_sponsoredMessage, View view) {
+        AndroidUtilities.addToClipboard(tL_sponsoredMessage.additional_info);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$show$12(b70 b70Var) {
+        if (!UserConfig.getInstance(this.currentAccount).isPremium()) {
+            showPremium();
+            return;
+        }
+        b70Var.u();
+        ec ecVar = this.bulletin;
+        if (ecVar != null) {
+            ecVar.i(true);
+            this.bulletin.b();
+        }
+        this.bulletinFactory.c(LocaleController.getString(R.string.AdHidden)).j();
+        MessagesController.getInstance(this.currentAccount).disableAds(true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void lambda$show$14(Context context, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, b70 b70Var) {
+        int i10 = this.currentAccount;
+        long j10 = this.dialogId;
+        mc mcVar = this.bulletinFactory;
+        h0 h0Var = new h0();
+        int i11 = 1;
+        d dVar = new d(this, i11);
+        Objects.requireNonNull(b70Var);
+        a aVar = new a(b70Var, i11);
+        int i12 = x21.v;
+        if (context == null) {
+            return;
+        }
+        TLRPC.TL_messages_reportSponsoredMessage tL_messages_reportSponsoredMessage = new TLRPC.TL_messages_reportSponsoredMessage();
+        byte[] bArr = tL_sponsoredMessage.random_id;
+        tL_messages_reportSponsoredMessage.random_id = bArr;
+        tL_messages_reportSponsoredMessage.option = new byte[0];
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_reportSponsoredMessage, new c70(context, h0Var, j10, bArr, aVar, mcVar, dVar, i10));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$show$15(b70 b70Var) {
+        if (!UserConfig.getInstance(this.currentAccount).isPremium()) {
+            showPremium();
+            return;
+        }
+        b70Var.u();
+        ec ecVar = this.bulletin;
+        if (ecVar != null) {
+            ecVar.i(true);
+            this.bulletin.b();
+        }
+        this.bulletinFactory.c(LocaleController.getString(R.string.AdHidden)).j();
+        MessagesController.getInstance(this.currentAccount).disableAds(true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$show$16(Utilities.Callback callback) {
+        callback.run(Boolean.FALSE);
+        this.currentMenu = null;
+        checkPopupShownCallback();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0071, code lost:
+    
+        if (r4.startsWith("https://" + org.telegram.messenger.MessagesController.getInstance(r19.currentAccount).linkPrefix) == false) goto L23;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0288  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x02d9  */
+    /* JADX WARN: Removed duplicated region for block: B:36:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void lambda$show$17(ec ecVar, final TLRPC.TL_sponsoredMessage tL_sponsoredMessage, Context context, c6 c6Var, AdLayout adLayout, Utilities.Callback callback, View view) {
+        ViewGroup viewGroup;
+        Context context2;
+        final b70 b70Var;
+        int i10;
+        ec ecVar2 = this.bulletin;
+        if (ecVar2 == null || ecVar2 != ecVar) {
+            return;
+        }
+        try {
+            viewGroup = (ViewGroup) ecVar2.e.getParent().getParent();
+        } catch (Exception unused) {
+            viewGroup = null;
+        }
+        if (viewGroup == null) {
+            return;
+        }
+        h0 h0Var = new h0();
+        final b70 b70Var2 = new b70(viewGroup, h0Var, this.bulletin.e, true, false, false);
+        b70Var2.H = true;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = b70Var2.D;
+        actionBarPopupWindow$ActionBarPopupWindowLayout.c = true;
+        actionBarPopupWindow$ActionBarPopupWindowLayout.d = true;
+        b70Var2.I = true;
+        b70Var2.s = 0;
+        b70Var2.t = false;
+        b70Var2.J = false;
+        if (tL_sponsoredMessage.sponsor_info == null && tL_sponsoredMessage.additional_info == null) {
+            String str = tL_sponsoredMessage.url;
+            if (str != null) {
+            }
+            context2 = context;
+            b70Var = b70Var2;
+            if (!UserConfig.getInstance(this.currentAccount).isPremium() && !MessagesController.getInstance(this.currentAccount).premiumFeaturesBlocked() && !tL_sponsoredMessage.can_report) {
+                final int i11 = 1;
+                b70Var.c(R.drawable.msg_block2, LocaleController.getString(R.string.HideAd), new Runnable(this) { // from class: org.telegram.messenger.video.c
+                    public final /* synthetic */ VideoAds b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                this.b.lambda$show$15(b70Var);
+                                break;
+                            default:
+                                this.b.lambda$show$12(b70Var);
+                                break;
+                        }
+                    }
+                }, false);
+            }
+            if (tL_sponsoredMessage.can_report) {
+                b70Var.c(R.drawable.msg_info, LocaleController.getString(R.string.AboutRevenueSharingAds), new k7(22, context2, h0Var), false);
+                Context context3 = context2;
+                b70 b70Var3 = b70Var;
+                b70Var = b70Var3;
+                b70Var.c(R.drawable.msg_block2, LocaleController.getString(R.string.ReportAd), new androidx.car.app.utils.b(this, context3, tL_sponsoredMessage, b70Var3, 23), false);
+                if (!MessagesController.getInstance(this.currentAccount).premiumFeaturesBlocked()) {
+                    b70Var.k();
+                    final int i12 = 0;
+                    b70Var.c(R.drawable.msg_cancel, LocaleController.getString(R.string.RemoveAds), new Runnable(this) { // from class: org.telegram.messenger.video.c
+                        public final /* synthetic */ VideoAds b;
+
+                        {
+                            this.b = this;
+                        }
+
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i12) {
+                                case 0:
+                                    this.b.lambda$show$15(b70Var);
+                                    break;
+                                default:
+                                    this.b.lambda$show$12(b70Var);
+                                    break;
+                            }
+                        }
+                    }, false);
+                }
+            }
+            if (b70Var.x() > 0) {
+                return;
+            }
+            this.currentMenu = b70Var;
+            this.currentMenuTranslationY = adLayout.getTranslationY();
+            callback.run(Boolean.TRUE);
+            b70Var.p = new k7(21, this, callback);
+            b70Var.Z();
+            checkPopupShownCallback();
+            return;
+        }
+        b70 J = b70Var2.J();
+        f1 f1Var = new f1(0, context, h0Var, true, false);
+        context2 = context;
+        f1Var.setItemHeight(44);
+        f1Var.g(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back, null);
+        f1Var.getTextView().setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
+        final int i13 = 2;
+        f1Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.i
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                switch (i13) {
+                    case 0:
+                        VideoAds.lambda$show$9((TLRPC.TL_sponsoredMessage) b70Var2, view2);
+                        break;
+                    case 1:
+                        VideoAds.lambda$show$10((TLRPC.TL_sponsoredMessage) b70Var2, view2);
+                        break;
+                    default:
+                        ((b70) b70Var2).s();
+                        break;
+                }
+            }
+        });
+        J.r(f1Var, z5.n(-1, -2));
+        J.r(new k1(context2, h0Var), z5.n(-1, 8));
+        ArrayList arrayList = new ArrayList();
+        String str2 = tL_sponsoredMessage.url;
+        if (str2 == null || TextUtils.equals(AndroidUtilities.getHostAuthority(str2), MessagesController.getInstance(this.currentAccount).linkPrefix)) {
+            b70Var = b70Var2;
+        } else {
+            TextView textView = new TextView(context2);
+            textView.setTextColor(h0Var.N0(g6.gc));
+            textView.setTextSize(1, 14.0f);
+            textView.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
+            textView.setMaxWidth(AndroidUtilities.dp(300.0f));
+            Uri parse = Uri.parse(tL_sponsoredMessage.url);
+            textView.setText(we.e.v(parse, null, null, we.e.a(parse.getHost()), null));
+            textView.setBackground(g6.Y(h0Var.N0(g6.I5), 0, tL_sponsoredMessage.additional_info == null ? 6 : 0));
+            b70Var = b70Var2;
+            textView.setOnClickListener(new a4(this, b70Var, tL_sponsoredMessage, context2, 5));
+            textView.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.messenger.video.h
+                @Override // android.view.View.OnLongClickListener
+                public final boolean onLongClick(View view2) {
+                    boolean lambda$show$8;
+                    lambda$show$8 = VideoAds.lambda$show$8(TLRPC.TL_sponsoredMessage.this, view2);
+                    return lambda$show$8;
+                }
+            });
+            arrayList.add(textView);
+        }
+        if (tL_sponsoredMessage.sponsor_info != null) {
+            TextView textView2 = new TextView(context2);
+            textView2.setTextColor(h0Var.N0(g6.E8));
+            textView2.setTextSize(1, 14.0f);
+            textView2.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
+            textView2.setMaxWidth(AndroidUtilities.dp(300.0f));
+            textView2.setText(tL_sponsoredMessage.sponsor_info);
+            textView2.setBackground(g6.Y(h0Var.N0(g6.I5), 0, tL_sponsoredMessage.additional_info == null ? 6 : 0));
+            final int i14 = 0;
+            textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.i
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view2) {
+                    switch (i14) {
+                        case 0:
+                            VideoAds.lambda$show$9((TLRPC.TL_sponsoredMessage) tL_sponsoredMessage, view2);
+                            break;
+                        case 1:
+                            VideoAds.lambda$show$10((TLRPC.TL_sponsoredMessage) tL_sponsoredMessage, view2);
+                            break;
+                        default:
+                            ((b70) tL_sponsoredMessage).s();
+                            break;
+                    }
+                }
+            });
+            arrayList.add(textView2);
+        }
+        if (tL_sponsoredMessage.additional_info != null) {
+            TextView textView3 = new TextView(context2);
+            textView3.setTextColor(h0Var.N0(g6.E8));
+            textView3.setTextSize(1, 14.0f);
+            textView3.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
+            textView3.setMaxWidth(AndroidUtilities.dp(300.0f));
+            textView3.setText(tL_sponsoredMessage.additional_info);
+            textView3.setBackground(g6.Y(g6.v0(g6.I5, c6Var), 0, 6));
+            final int i15 = 1;
+            textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.i
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view2) {
+                    switch (i15) {
+                        case 0:
+                            VideoAds.lambda$show$9((TLRPC.TL_sponsoredMessage) tL_sponsoredMessage, view2);
+                            break;
+                        case 1:
+                            VideoAds.lambda$show$10((TLRPC.TL_sponsoredMessage) tL_sponsoredMessage, view2);
+                            break;
+                        default:
+                            ((b70) tL_sponsoredMessage).s();
+                            break;
+                    }
+                }
+            });
+            arrayList.add(textView3);
+        }
+        for (int i16 = 0; i16 < arrayList.size(); i16++) {
+            View view2 = (View) arrayList.get(i16);
+            if (i16 > 0) {
+                FrameLayout frameLayout = new FrameLayout(context2);
+                frameLayout.setBackgroundColor(h0Var.N0(g6.d7));
+                i10 = -1;
+                LinearLayout.LayoutParams n10 = z5.n(-1, 1);
+                n10.height = 1;
+                J.r(frameLayout, n10);
+            } else {
+                i10 = -1;
+            }
+            J.r(view2, z5.n(i10, -2));
+        }
+        b70Var.c(R.drawable.msg_channel, LocaleController.getString(R.string.SponsoredMessageSponsorReportable), new f3(b70Var, J, 2), false);
+        if (!UserConfig.getInstance(this.currentAccount).isPremium()) {
+            final int i112 = 1;
+            b70Var.c(R.drawable.msg_block2, LocaleController.getString(R.string.HideAd), new Runnable(this) { // from class: org.telegram.messenger.video.c
+                public final /* synthetic */ VideoAds b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    switch (i112) {
+                        case 0:
+                            this.b.lambda$show$15(b70Var);
+                            break;
+                        default:
+                            this.b.lambda$show$12(b70Var);
+                            break;
+                    }
+                }
+            }, false);
+        }
+        if (tL_sponsoredMessage.can_report) {
+        }
+        if (b70Var.x() > 0) {
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$show$18(TLRPC.TL_sponsoredMessage tL_sponsoredMessage, View view) {
+        logSponsoredClicked(tL_sponsoredMessage);
+        we.e.r(view.getContext(), Uri.parse(tL_sponsoredMessage.url), true, false, false, null, null, false, MessagesController.getInstance(UserConfig.selectedAccount).sponsoredLinksInappAllow, false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$show$2(CloseDrawable closeDrawable, View view) {
+        if (closeDrawable.isCrossAvailable()) {
+            ec ecVar = this.bulletin;
+            if (ecVar != null) {
+                ecVar.b();
+                return;
+            }
+            return;
+        }
+        if (!UserConfig.getInstance(this.currentAccount).isPremium()) {
+            showPremium();
+            return;
+        }
+        ec ecVar2 = this.bulletin;
+        if (ecVar2 != null) {
+            ecVar2.b();
+            this.bulletin = null;
+        }
+        MessagesController.getInstance(this.currentAccount).disableAds(true);
+        this.bulletinFactory.c(LocaleController.getString(R.string.AdHidden)).j();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void lambda$show$3(ec ecVar, TLRPC.TL_sponsoredMessage tL_sponsoredMessage) {
+        ec ecVar2 = this.bulletin;
+        if (ecVar2 == null || ecVar2 != ecVar) {
+            return;
+        }
+        ecVar2.j = (tL_sponsoredMessage.max_display_duration - tL_sponsoredMessage.min_display_duration) * MediaDataController.MAX_STYLE_RUNS_COUNT;
+        ecVar2.i(true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void lambda$show$4(ec ecVar, boolean[] zArr, CloseDrawable closeDrawable, long[] jArr, Runnable runnable, long[] jArr2, long j10, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, Boolean bool) {
+        ec ecVar2 = this.bulletin;
+        if (ecVar2 == null || ecVar2 != ecVar || bool.booleanValue() == zArr[0]) {
+            return;
+        }
+        boolean booleanValue = bool.booleanValue();
+        zArr[0] = booleanValue;
+        closeDrawable.setPaused(booleanValue);
+        if (zArr[0]) {
+            this.bulletin.i(false);
+            jArr[0] = System.currentTimeMillis();
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            return;
+        }
+        AndroidUtilities.cancelRunOnUIThread(runnable);
+        jArr2[0] = (System.currentTimeMillis() - jArr[0]) + jArr2[0];
+        long currentTimeMillis = (System.currentTimeMillis() - j10) - jArr2[0];
+        long j11 = (tL_sponsoredMessage.min_display_duration * 1000) - currentTimeMillis;
+        long j12 = (tL_sponsoredMessage.max_display_duration * 1000) - currentTimeMillis;
+        if (j12 <= 0) {
+            ec ecVar3 = this.bulletin;
+            if (ecVar3 != null) {
+                ecVar3.b();
+                this.bulletin = null;
+                return;
+            }
+            return;
+        }
+        if (j11 > 0) {
+            AndroidUtilities.runOnUIThread(runnable, j11);
+            return;
+        }
+        ec ecVar4 = this.bulletin;
+        ecVar4.j = (int) j12;
+        ecVar4.i(true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$show$5(ec ecVar, boolean[] zArr) {
+        ec ecVar2 = this.bulletin;
+        if (ecVar2 == null || ecVar2 != ecVar || zArr[0]) {
+            return;
+        }
+        zArr[0] = true;
+        b70 b70Var = this.currentMenu;
+        if (b70Var != null) {
+            b70Var.u();
+            this.currentMenu = null;
+        }
+        this.bulletin = null;
+        this.currentBulletinPassedTime = 0L;
+        this.lastTime = System.currentTimeMillis();
+        if (this.waitingPaused) {
+            this.waitingTimeSince = System.currentTimeMillis();
+        }
+        if (!this.ads.isEmpty()) {
+            this.ads.remove(0);
+        }
+        this.first = false;
+        schedule();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$show$7(b70 b70Var, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, Context context, View view) {
+        b70Var.u();
+        logSponsoredClicked(tL_sponsoredMessage);
+        we.e.r(context, Uri.parse(tL_sponsoredMessage.url), true, false, false, null, null, false, MessagesController.getInstance(this.currentAccount).sponsoredLinksInappAllow, false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ boolean lambda$show$8(TLRPC.TL_sponsoredMessage tL_sponsoredMessage, View view) {
+        AndroidUtilities.addToClipboard(tL_sponsoredMessage.url);
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$show$9(TLRPC.TL_sponsoredMessage tL_sponsoredMessage, View view) {
+        AndroidUtilities.addToClipboard(tL_sponsoredMessage.sponsor_info);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$showPremium$19(g2 g2Var) {
+        if (g2Var == this.premiumSheet) {
+            this.premiumSheet = null;
+            checkPopupShownCallback();
         }
     }
 
@@ -200,38 +832,29 @@ public class VideoAds {
         tL_messages_getSponsoredMessages.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.dialogId);
         tL_messages_getSponsoredMessages.flags = 1 | tL_messages_getSponsoredMessages.flags;
         tL_messages_getSponsoredMessages.msg_id = this.msg_id;
-        this.requestId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getSponsoredMessages, new RequestDelegate() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda22
+        this.requestId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getSponsoredMessages, new RequestDelegate() { // from class: org.telegram.messenger.video.g
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                VideoAds.$r8$lambda$H_qjD4knkr5WW4hG0ed6arb_1Ug(VideoAds.this, tLObject, tL_error);
+                VideoAds.this.lambda$load$1(tLObject, tL_error);
             }
         });
     }
 
-    public static /* synthetic */ void $r8$lambda$H_qjD4knkr5WW4hG0ed6arb_1Ug(final VideoAds videoAds, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        videoAds.getClass();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda21
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoAds.$r8$lambda$LAxqWQUNqASahqYd6LcnJqbkI9Y(VideoAds.this, tLObject);
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$LAxqWQUNqASahqYd6LcnJqbkI9Y(VideoAds videoAds, TLObject tLObject) {
-        if (videoAds.loading) {
-            if (tLObject instanceof TLRPC.TL_messages_sponsoredMessages) {
-                TLRPC.TL_messages_sponsoredMessages tL_messages_sponsoredMessages = (TLRPC.TL_messages_sponsoredMessages) tLObject;
-                MessagesController.getInstance(videoAds.currentAccount).putUsers(tL_messages_sponsoredMessages.users, false);
-                MessagesController.getInstance(videoAds.currentAccount).putChats(tL_messages_sponsoredMessages.chats, false);
-                videoAds.ads.addAll(tL_messages_sponsoredMessages.messages);
-                videoAds.start_delay = tL_messages_sponsoredMessages.start_delay;
-                videoAds.between_delay = tL_messages_sponsoredMessages.between_delay;
-            }
-            videoAds.loaded = true;
-            videoAds.loading = false;
-            videoAds.schedule();
+    public static VideoAds make(int i10, long j10, int i11, mc mcVar) {
+        mc mcVar2;
+        VideoAdsLocation videoAdsLocation = new VideoAdsLocation(i10, j10);
+        VideoAds videoAds = cached.get(videoAdsLocation);
+        if (videoAds == null || ((videoAds.msg_id != i11 || System.currentTimeMillis() - videoAds.lastTime > 180000) && videoAds.ads.isEmpty())) {
+            HashMap<VideoAdsLocation, VideoAds> hashMap = cached;
+            mcVar2 = mcVar;
+            VideoAds videoAds2 = new VideoAds(i10, j10, i11, mcVar2);
+            hashMap.put(videoAdsLocation, videoAds2);
+            videoAds = videoAds2;
+        } else {
+            mcVar2 = mcVar;
         }
+        videoAds.init(mcVar2);
+        return videoAds;
     }
 
     private void schedule() {
@@ -242,22 +865,6 @@ public class VideoAds {
         AndroidUtilities.runOnUIThread(this.showRunnable, Math.max(0L, ((this.first ? this.start_delay : this.between_delay) * 1000) - (System.currentTimeMillis() - this.lastTime)));
     }
 
-    public void setWaitingPaused(boolean z) {
-        if (this.waitingPaused == z) {
-            return;
-        }
-        this.waitingPaused = z;
-        AndroidUtilities.cancelRunOnUIThread(this.showRunnable);
-        if (z) {
-            this.waitingTimeSince = System.currentTimeMillis();
-            return;
-        }
-        this.lastTime += System.currentTimeMillis() - this.waitingTimeSince;
-        if (this.bulletin == null) {
-            schedule();
-        }
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public void show() {
         if (this.ads.isEmpty()) {
@@ -266,777 +873,119 @@ public class VideoAds {
         final TLRPC.TL_sponsoredMessage tL_sponsoredMessage = this.ads.get(0);
         final long currentTimeMillis = System.currentTimeMillis() - this.currentBulletinPassedTime;
         this.bulletinShowTime = currentTimeMillis;
-        Bulletin bulletin = this.bulletin;
-        if (bulletin != null) {
-            bulletin.hide();
+        ec ecVar = this.bulletin;
+        if (ecVar != null) {
+            ecVar.b();
             this.bulletin = null;
         }
-        final Context context = this.bulletinFactory.getContext();
-        final Theme.ResourcesProvider resourcesProvider = this.bulletinFactory.getResourcesProvider();
-        final AdLayout adLayout = new AdLayout(context, resourcesProvider) { // from class: org.telegram.messenger.video.VideoAds.1
-            @Override // org.telegram.ui.Components.Bulletin.Layout
+        Context W = this.bulletinFactory.W();
+        c6 c6Var = this.bulletinFactory.c;
+        AdLayout adLayout = new AdLayout(W, c6Var) { // from class: org.telegram.messenger.video.VideoAds.1
+            @Override // org.telegram.ui.Components.jb
             public void updatePosition() {
                 super.updatePosition();
                 if (VideoAds.this.currentMenu != null) {
-                    VideoAds.this.currentMenu.setTranslationY(getTranslationY() - VideoAds.this.currentMenuTranslationY);
+                    VideoAds.this.currentMenu.X(getTranslationY() - VideoAds.this.currentMenuTranslationY);
                 }
             }
         };
-        adLayout.titleTextView.setText(tL_sponsoredMessage.title);
-        SimpleTextView simpleTextView = adLayout.titleTextView;
-        Context context2 = this.bulletinFactory.getContext();
-        int i = Theme.key_featuredStickers_addButton;
-        simpleTextView.setRightDrawable(new AdOptionsDrawable(context2, Theme.getColor(i, this.bulletinFactory.getResourcesProvider())));
+        adLayout.titleTextView.k(tL_sponsoredMessage.title);
+        h5 h5Var = adLayout.titleTextView;
+        Context W2 = this.bulletinFactory.W();
+        int i10 = g6.Oh;
+        h5Var.i(new AdOptionsDrawable(W2, g6.v0(i10, this.bulletinFactory.c)));
         adLayout.subtitleTextView.setText(tL_sponsoredMessage.message);
         TLRPC.MessageMedia messageMedia = tL_sponsoredMessage.media;
         if (messageMedia != null) {
             TLRPC.Document document = messageMedia.document;
             if (document != null) {
-                adLayout.imageView.setImage(ImageLocation.getForDocument(tL_sponsoredMessage.media.document), "48_48", ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 48), tL_sponsoredMessage.media.document), "48_48", (String) null, 0L, 0, (Object) null);
+                adLayout.imageView.k(ImageLocation.getForDocument(tL_sponsoredMessage.media.document), "48_48", ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 48), tL_sponsoredMessage.media.document), "48_48", 0L, null, null, 0);
             } else {
                 TLRPC.Photo photo = messageMedia.photo;
                 if (photo != null) {
                     TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 48, true, null, true);
-                    adLayout.imageView.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, tL_sponsoredMessage.media.photo), "48_48", ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(tL_sponsoredMessage.media.photo.sizes, 48, true, closestPhotoSizeWithSize, false), tL_sponsoredMessage.media.photo), "48_48", (String) null, 0L, 0, (Object) null);
+                    adLayout.imageView.k(ImageLocation.getForPhoto(closestPhotoSizeWithSize, tL_sponsoredMessage.media.photo), "48_48", ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(tL_sponsoredMessage.media.photo.sizes, 48, true, closestPhotoSizeWithSize, false), tL_sponsoredMessage.media.photo), "48_48", 0L, null, null, 0);
                 }
             }
         } else {
             TLRPC.Photo photo2 = tL_sponsoredMessage.photo;
             if (photo2 != null) {
                 TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, 48, true, null, true);
-                adLayout.imageView.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize2, tL_sponsoredMessage.photo), "48_48", ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(tL_sponsoredMessage.photo.sizes, 48, true, closestPhotoSizeWithSize2, false), tL_sponsoredMessage.photo), "48_48", (String) null, 0L, 0, (Object) null);
+                adLayout.imageView.k(ImageLocation.getForPhoto(closestPhotoSizeWithSize2, tL_sponsoredMessage.photo), "48_48", ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(tL_sponsoredMessage.photo.sizes, 48, true, closestPhotoSizeWithSize2, false), tL_sponsoredMessage.photo), "48_48", 0L, null, null, 0);
             } else {
                 adLayout.hideImage();
             }
         }
         final CloseDrawable closeDrawable = new CloseDrawable(adLayout.buttonView, tL_sponsoredMessage.min_display_duration, tL_sponsoredMessage.max_display_duration, this.currentBulletinPassedTime);
-        closeDrawable.setColor(Theme.getColor(i, this.bulletinFactory.getResourcesProvider()));
+        closeDrawable.setColor(g6.v0(i10, this.bulletinFactory.c));
         adLayout.buttonView.setImageDrawable(closeDrawable);
-        adLayout.buttonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda15
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                VideoAds.$r8$lambda$YyNck-zykbVgqqi_z-Q3lSuxQdY(VideoAds.this, closeDrawable, view);
-            }
-        });
-        final Bulletin create = this.bulletinFactory.create(adLayout, tL_sponsoredMessage.max_display_duration * MediaDataController.MAX_STYLE_RUNS_COUNT);
-        this.bulletin = create;
-        create.setCanHideOnShow = false;
-        create.setCanHide(false);
-        final Runnable runnable = new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda16
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoAds.$r8$lambda$hbb6V9uq1nw7voaE-GbIp2QC3II(VideoAds.this, create, tL_sponsoredMessage);
-            }
-        };
+        adLayout.buttonView.setOnClickListener(new x1(2, this, closeDrawable));
+        final ec b10 = this.bulletinFactory.b(adLayout, tL_sponsoredMessage.max_display_duration * MediaDataController.MAX_STYLE_RUNS_COUNT);
+        this.bulletin = b10;
+        b10.u = false;
+        b10.i(false);
+        final j3.m mVar = new j3.m(this, b10, tL_sponsoredMessage, 24);
         final long[] jArr = new long[1];
         final long[] jArr2 = new long[1];
         final boolean[] zArr = new boolean[1];
-        final Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda17
+        Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.messenger.video.e
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                VideoAds.$r8$lambda$EHCCn9A6jHy8lzZ29HEOCMdIG1c(VideoAds.this, create, zArr, closeDrawable, jArr2, runnable, jArr, currentTimeMillis, tL_sponsoredMessage, (Boolean) obj);
+                VideoAds.this.lambda$show$4(b10, zArr, closeDrawable, jArr2, mVar, jArr, currentTimeMillis, tL_sponsoredMessage, (Boolean) obj);
             }
         };
-        AndroidUtilities.runOnUIThread(runnable, tL_sponsoredMessage.min_display_duration * 1000);
-        final boolean[] zArr2 = new boolean[1];
-        Bulletin bulletin2 = this.bulletin;
-        bulletin2.hideAfterBottomSheet = false;
-        bulletin2.setOnHideListener(new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda18
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoAds.$r8$lambda$ge71Y8Q-mhdygbWpyyn5DVpz7XY(VideoAds.this, create, zArr2);
-            }
-        });
-        adLayout.titleTextView.setRightDrawableOnClick(new View.OnClickListener() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda19
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                VideoAds.$r8$lambda$yNwrCL9AhGpB_dtI8isiV-_NRsQ(VideoAds.this, create, tL_sponsoredMessage, context, resourcesProvider, adLayout, callback, view);
-            }
-        });
-        this.bulletin.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda20
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                VideoAds.$r8$lambda$gIoe4VZPcAc8CzhrvkQ38-fZyzg(VideoAds.this, tL_sponsoredMessage, view);
-            }
-        });
-        this.bulletin.show();
+        AndroidUtilities.runOnUIThread(mVar, tL_sponsoredMessage.min_display_duration * 1000);
+        ec ecVar2 = this.bulletin;
+        ecVar2.r = false;
+        ecVar2.v = new j3.m(this, b10, new boolean[1], 25);
+        adLayout.titleTextView.setRightDrawableOnClick(new f(this, b10, tL_sponsoredMessage, W, c6Var, adLayout, callback, 0));
+        ec ecVar3 = this.bulletin;
+        x1 x1Var = new x1(3, this, tL_sponsoredMessage);
+        jb jbVar = ecVar3.e;
+        if (jbVar != null) {
+            jbVar.setOnClickListener(x1Var);
+        }
+        this.bulletin.j();
         logSponsoredShown(tL_sponsoredMessage);
-    }
-
-    public static /* synthetic */ void $r8$lambda$YyNck-zykbVgqqi_z-Q3lSuxQdY(VideoAds videoAds, CloseDrawable closeDrawable, View view) {
-        videoAds.getClass();
-        if (closeDrawable.isCrossAvailable()) {
-            Bulletin bulletin = videoAds.bulletin;
-            if (bulletin != null) {
-                bulletin.hide();
-                return;
-            }
-            return;
-        }
-        if (UserConfig.getInstance(videoAds.currentAccount).isPremium()) {
-            Bulletin bulletin2 = videoAds.bulletin;
-            if (bulletin2 != null) {
-                bulletin2.hide();
-                videoAds.bulletin = null;
-            }
-            MessagesController.getInstance(videoAds.currentAccount).disableAds(true);
-            videoAds.bulletinFactory.createAdReportedBulletin(LocaleController.getString(R.string.AdHidden)).show();
-            return;
-        }
-        videoAds.showPremium();
-    }
-
-    public static /* synthetic */ void $r8$lambda$hbb6V9uq1nw7voaE-GbIp2QC3II(VideoAds videoAds, Bulletin bulletin, TLRPC.TL_sponsoredMessage tL_sponsoredMessage) {
-        Bulletin bulletin2 = videoAds.bulletin;
-        if (bulletin2 == null || bulletin2 != bulletin) {
-            return;
-        }
-        bulletin2.setDuration((tL_sponsoredMessage.max_display_duration - tL_sponsoredMessage.min_display_duration) * MediaDataController.MAX_STYLE_RUNS_COUNT);
-        videoAds.bulletin.setCanHide(true);
-    }
-
-    public static /* synthetic */ void $r8$lambda$EHCCn9A6jHy8lzZ29HEOCMdIG1c(VideoAds videoAds, Bulletin bulletin, boolean[] zArr, CloseDrawable closeDrawable, long[] jArr, Runnable runnable, long[] jArr2, long j, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, Boolean bool) {
-        Bulletin bulletin2 = videoAds.bulletin;
-        if (bulletin2 == null || bulletin2 != bulletin || bool.booleanValue() == zArr[0]) {
-            return;
-        }
-        boolean booleanValue = bool.booleanValue();
-        zArr[0] = booleanValue;
-        closeDrawable.setPaused(booleanValue);
-        if (zArr[0]) {
-            videoAds.bulletin.setCanHide(false);
-            jArr[0] = System.currentTimeMillis();
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            return;
-        }
-        AndroidUtilities.cancelRunOnUIThread(runnable);
-        jArr2[0] = jArr2[0] + (System.currentTimeMillis() - jArr[0]);
-        long currentTimeMillis = (System.currentTimeMillis() - j) - jArr2[0];
-        long j2 = (tL_sponsoredMessage.min_display_duration * 1000) - currentTimeMillis;
-        long j3 = (tL_sponsoredMessage.max_display_duration * 1000) - currentTimeMillis;
-        if (j3 <= 0) {
-            Bulletin bulletin3 = videoAds.bulletin;
-            if (bulletin3 != null) {
-                bulletin3.hide();
-                videoAds.bulletin = null;
-                return;
-            }
-            return;
-        }
-        if (j2 <= 0) {
-            videoAds.bulletin.setDuration((int) j3);
-            videoAds.bulletin.setCanHide(true);
-        } else {
-            AndroidUtilities.runOnUIThread(runnable, j2);
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$ge71Y8Q-mhdygbWpyyn5DVpz7XY(VideoAds videoAds, Bulletin bulletin, boolean[] zArr) {
-        Bulletin bulletin2 = videoAds.bulletin;
-        if (bulletin2 == null || bulletin2 != bulletin || zArr[0]) {
-            return;
-        }
-        zArr[0] = true;
-        ItemOptions itemOptions = videoAds.currentMenu;
-        if (itemOptions != null) {
-            itemOptions.dismiss();
-            videoAds.currentMenu = null;
-        }
-        videoAds.bulletin = null;
-        videoAds.currentBulletinPassedTime = 0L;
-        videoAds.lastTime = System.currentTimeMillis();
-        if (videoAds.waitingPaused) {
-            videoAds.waitingTimeSince = System.currentTimeMillis();
-        }
-        if (!videoAds.ads.isEmpty()) {
-            videoAds.ads.remove(0);
-        }
-        videoAds.first = false;
-        videoAds.schedule();
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0071, code lost:
-    
-        if (r7.startsWith("https://" + org.telegram.messenger.MessagesController.getInstance(r18.currentAccount).linkPrefix) == false) goto L21;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x026c  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x02b2  */
-    /* JADX WARN: Removed duplicated region for block: B:34:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static /* synthetic */ void $r8$lambda$yNwrCL9AhGpB_dtI8isiV-_NRsQ(final VideoAds videoAds, Bulletin bulletin, final TLRPC.TL_sponsoredMessage tL_sponsoredMessage, final Context context, Theme.ResourcesProvider resourcesProvider, AdLayout adLayout, final Utilities.Callback callback, View view) {
-        ViewGroup viewGroup;
-        int i;
-        Bulletin bulletin2 = videoAds.bulletin;
-        if (bulletin2 == null || bulletin2 != bulletin) {
-            return;
-        }
-        try {
-            viewGroup = (ViewGroup) bulletin2.getLayout().getParent().getParent();
-        } catch (Exception unused) {
-            viewGroup = null;
-        }
-        if (viewGroup == null) {
-            return;
-        }
-        final DarkBlueThemeResourcesProvider darkBlueThemeResourcesProvider = new DarkBlueThemeResourcesProvider();
-        final ItemOptions makeOptions = ItemOptions.makeOptions(viewGroup, darkBlueThemeResourcesProvider, videoAds.bulletin.getLayout(), true, false);
-        makeOptions.setSwipebackGravity(true, true);
-        makeOptions.setScaleOut(true);
-        makeOptions.setDimAlpha(0);
-        makeOptions.setDrawScrim(false);
-        makeOptions.setDismissWithButtons(false);
-        if (tL_sponsoredMessage.sponsor_info == null && tL_sponsoredMessage.additional_info == null) {
-            String str = tL_sponsoredMessage.url;
-            if (str != null) {
-            }
-            if (!UserConfig.getInstance(videoAds.currentAccount).isPremium() && !MessagesController.getInstance(videoAds.currentAccount).premiumFeaturesBlocked() && !tL_sponsoredMessage.can_report) {
-                makeOptions.add(R.drawable.msg_block2, LocaleController.getString(R.string.HideAd), new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda8
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        VideoAds.$r8$lambda$u_IlIXB8wvcIdVdHdTPwrZcxPSs(VideoAds.this, makeOptions);
-                    }
-                });
-            }
-            if (tL_sponsoredMessage.can_report) {
-                makeOptions.add(R.drawable.msg_info, LocaleController.getString(R.string.AboutRevenueSharingAds), new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda9
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        RevenueSharingAdsInfoBottomSheet.showAlert(context, null, false, darkBlueThemeResourcesProvider);
-                    }
-                });
-                makeOptions.add(R.drawable.msg_block2, LocaleController.getString(R.string.ReportAd), new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda10
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        VideoAds.$r8$lambda$FUs1Rq0tJzP7m5XZrSlar6r0ERY(VideoAds.this, context, tL_sponsoredMessage, makeOptions);
-                    }
-                });
-                if (!MessagesController.getInstance(videoAds.currentAccount).premiumFeaturesBlocked()) {
-                    makeOptions.addGap();
-                    makeOptions.add(R.drawable.msg_cancel, LocaleController.getString(R.string.RemoveAds), new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda11
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            VideoAds.$r8$lambda$Ta2CuFEbF150NkRtGS90341eGUA(VideoAds.this, makeOptions);
-                        }
-                    });
-                }
-            }
-            if (makeOptions.getItemsCount() > 0) {
-                return;
-            }
-            videoAds.currentMenu = makeOptions;
-            videoAds.currentMenuTranslationY = adLayout.getTranslationY();
-            callback.run(Boolean.TRUE);
-            makeOptions.setOnDismiss(new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda2
-                @Override // java.lang.Runnable
-                public final void run() {
-                    VideoAds.$r8$lambda$kHamZasQa2SemdyW_3KTDyBqmdA(VideoAds.this, callback);
-                }
-            });
-            makeOptions.show();
-            videoAds.checkPopupShownCallback();
-            return;
-        }
-        final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-        ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(context, true, false, (Theme.ResourcesProvider) darkBlueThemeResourcesProvider);
-        actionBarMenuSubItem.setItemHeight(44);
-        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back);
-        actionBarMenuSubItem.getTextView().setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
-        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda1
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                ItemOptions.this.closeSwipeback();
-            }
-        });
-        makeSwipeback.addView(actionBarMenuSubItem, LayoutHelper.createLinear(-1, -2));
-        makeSwipeback.addView(new ActionBarPopupWindow.GapView(context, darkBlueThemeResourcesProvider), LayoutHelper.createLinear(-1, 8));
-        ArrayList arrayList = new ArrayList();
-        String str2 = tL_sponsoredMessage.url;
-        if (str2 != null && !TextUtils.equals(AndroidUtilities.getHostAuthority(str2), MessagesController.getInstance(videoAds.currentAccount).linkPrefix)) {
-            TextView textView = new TextView(context);
-            textView.setTextColor(Theme.getColor(Theme.key_chat_messageLinkIn, darkBlueThemeResourcesProvider));
-            textView.setTextSize(1, 14.0f);
-            textView.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
-            textView.setMaxWidth(AndroidUtilities.dp(300.0f));
-            Uri parse = Uri.parse(tL_sponsoredMessage.url);
-            textView.setText(Browser.replaceHostname(parse, Browser.IDN_toUnicode(parse.getHost()), null));
-            textView.setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_dialogButtonSelector, darkBlueThemeResourcesProvider), 0, tL_sponsoredMessage.additional_info == null ? 6 : 0));
-            textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda3
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
-                    VideoAds.$r8$lambda$G_GJCdUKrDe7QgUTnOkZ99td2Fs(VideoAds.this, makeOptions, tL_sponsoredMessage, context, view2);
-                }
-            });
-            textView.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda4
-                @Override // android.view.View.OnLongClickListener
-                public final boolean onLongClick(View view2) {
-                    return VideoAds.$r8$lambda$iVe8i2C8j2Ec5WZfQBkwOCfuyHY(TLRPC.TL_sponsoredMessage.this, view2);
-                }
-            });
-            arrayList.add(textView);
-        }
-        if (tL_sponsoredMessage.sponsor_info != null) {
-            TextView textView2 = new TextView(context);
-            textView2.setTextColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, darkBlueThemeResourcesProvider));
-            textView2.setTextSize(1, 14.0f);
-            textView2.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
-            textView2.setMaxWidth(AndroidUtilities.dp(300.0f));
-            textView2.setText(tL_sponsoredMessage.sponsor_info);
-            textView2.setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_dialogButtonSelector, darkBlueThemeResourcesProvider), 0, tL_sponsoredMessage.additional_info == null ? 6 : 0));
-            textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda5
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
-                    AndroidUtilities.addToClipboard(TLRPC.TL_sponsoredMessage.this.sponsor_info);
-                }
-            });
-            arrayList.add(textView2);
-        }
-        if (tL_sponsoredMessage.additional_info != null) {
-            TextView textView3 = new TextView(context);
-            textView3.setTextColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, darkBlueThemeResourcesProvider));
-            textView3.setTextSize(1, 14.0f);
-            textView3.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
-            textView3.setMaxWidth(AndroidUtilities.dp(300.0f));
-            textView3.setText(tL_sponsoredMessage.additional_info);
-            textView3.setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_dialogButtonSelector, resourcesProvider), 0, 6));
-            textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda6
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
-                    AndroidUtilities.addToClipboard(TLRPC.TL_sponsoredMessage.this.additional_info);
-                }
-            });
-            arrayList.add(textView3);
-        }
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            View view2 = (View) arrayList.get(i2);
-            if (i2 > 0) {
-                FrameLayout frameLayout = new FrameLayout(context);
-                frameLayout.setBackgroundColor(Theme.getColor(Theme.key_divider, darkBlueThemeResourcesProvider));
-                i = -1;
-                LinearLayout.LayoutParams createLinear = LayoutHelper.createLinear(-1, 1);
-                createLinear.height = 1;
-                makeSwipeback.addView(frameLayout, createLinear);
-            } else {
-                i = -1;
-            }
-            makeSwipeback.addView(view2, LayoutHelper.createLinear(i, -2));
-        }
-        makeOptions.add(R.drawable.msg_channel, LocaleController.getString(R.string.SponsoredMessageSponsorReportable), new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda7
-            @Override // java.lang.Runnable
-            public final void run() {
-                ItemOptions.this.openSwipeback(makeSwipeback);
-            }
-        });
-        if (!UserConfig.getInstance(videoAds.currentAccount).isPremium()) {
-            makeOptions.add(R.drawable.msg_block2, LocaleController.getString(R.string.HideAd), new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda8
-                @Override // java.lang.Runnable
-                public final void run() {
-                    VideoAds.$r8$lambda$u_IlIXB8wvcIdVdHdTPwrZcxPSs(VideoAds.this, makeOptions);
-                }
-            });
-        }
-        if (tL_sponsoredMessage.can_report) {
-        }
-        if (makeOptions.getItemsCount() > 0) {
-        }
-    }
-
-    public static /* synthetic */ void $r8$lambda$G_GJCdUKrDe7QgUTnOkZ99td2Fs(VideoAds videoAds, ItemOptions itemOptions, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, Context context, View view) {
-        videoAds.getClass();
-        itemOptions.dismiss();
-        videoAds.logSponsoredClicked(tL_sponsoredMessage);
-        Browser.openUrl(context, Uri.parse(tL_sponsoredMessage.url), true, false, false, null, null, false, MessagesController.getInstance(videoAds.currentAccount).sponsoredLinksInappAllow, false);
-    }
-
-    public static /* synthetic */ boolean $r8$lambda$iVe8i2C8j2Ec5WZfQBkwOCfuyHY(TLRPC.TL_sponsoredMessage tL_sponsoredMessage, View view) {
-        AndroidUtilities.addToClipboard(tL_sponsoredMessage.url);
-        return true;
-    }
-
-    public static /* synthetic */ void $r8$lambda$u_IlIXB8wvcIdVdHdTPwrZcxPSs(VideoAds videoAds, ItemOptions itemOptions) {
-        if (UserConfig.getInstance(videoAds.currentAccount).isPremium()) {
-            itemOptions.dismiss();
-            Bulletin bulletin = videoAds.bulletin;
-            if (bulletin != null) {
-                bulletin.setCanHide(true);
-                videoAds.bulletin.hide();
-            }
-            videoAds.bulletinFactory.createAdReportedBulletin(LocaleController.getString(R.string.AdHidden)).show();
-            MessagesController.getInstance(videoAds.currentAccount).disableAds(true);
-            return;
-        }
-        videoAds.showPremium();
-    }
-
-    public static /* synthetic */ void $r8$lambda$FUs1Rq0tJzP7m5XZrSlar6r0ERY(final VideoAds videoAds, Context context, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, final ItemOptions itemOptions) {
-        int i = videoAds.currentAccount;
-        long j = videoAds.dialogId;
-        BulletinFactory bulletinFactory = videoAds.bulletinFactory;
-        DarkBlueThemeResourcesProvider darkBlueThemeResourcesProvider = new DarkBlueThemeResourcesProvider();
-        Runnable runnable = new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda13
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoAds.this.showPremium();
-            }
-        };
-        Objects.requireNonNull(itemOptions);
-        ReportBottomSheet.openSponsored(i, context, j, tL_sponsoredMessage, bulletinFactory, darkBlueThemeResourcesProvider, runnable, new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda14
-            @Override // java.lang.Runnable
-            public final void run() {
-                ItemOptions.this.dismiss();
-            }
-        });
-    }
-
-    public static /* synthetic */ void $r8$lambda$Ta2CuFEbF150NkRtGS90341eGUA(VideoAds videoAds, ItemOptions itemOptions) {
-        if (UserConfig.getInstance(videoAds.currentAccount).isPremium()) {
-            itemOptions.dismiss();
-            Bulletin bulletin = videoAds.bulletin;
-            if (bulletin != null) {
-                bulletin.setCanHide(true);
-                videoAds.bulletin.hide();
-            }
-            videoAds.bulletinFactory.createAdReportedBulletin(LocaleController.getString(R.string.AdHidden)).show();
-            MessagesController.getInstance(videoAds.currentAccount).disableAds(true);
-            return;
-        }
-        videoAds.showPremium();
-    }
-
-    public static /* synthetic */ void $r8$lambda$kHamZasQa2SemdyW_3KTDyBqmdA(VideoAds videoAds, Utilities.Callback callback) {
-        videoAds.getClass();
-        callback.run(Boolean.FALSE);
-        videoAds.currentMenu = null;
-        videoAds.checkPopupShownCallback();
-    }
-
-    public static /* synthetic */ void $r8$lambda$gIoe4VZPcAc8CzhrvkQ38-fZyzg(VideoAds videoAds, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, View view) {
-        videoAds.logSponsoredClicked(tL_sponsoredMessage);
-        Browser.openUrl(view.getContext(), Uri.parse(tL_sponsoredMessage.url), true, false, false, null, null, false, MessagesController.getInstance(UserConfig.selectedAccount).sponsoredLinksInappAllow, false);
-    }
-
-    public void stop() {
-        if (this.bulletin != null) {
-            this.currentBulletinPassedTime = System.currentTimeMillis() - this.bulletinShowTime;
-            if (!this.ads.isEmpty()) {
-                if (this.currentBulletinPassedTime > this.ads.get(0).min_display_duration * 1000) {
-                    this.currentBulletinPassedTime = 0L;
-                    this.ads.remove(0);
-                    this.first = false;
-                }
-            }
-            this.bulletin.hide();
-            this.bulletin = null;
-        } else {
-            this.currentBulletinPassedTime = 0L;
-        }
-        ItemOptions itemOptions = this.currentMenu;
-        if (itemOptions != null) {
-            itemOptions.dismiss();
-            this.currentMenu = null;
-        }
-        this.bulletin = null;
-        if (this.loading) {
-            ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.requestId, true);
-            this.requestId = 0;
-            this.loading = false;
-        }
-        AndroidUtilities.cancelRunOnUIThread(this.showRunnable);
-        setWaitingPaused(true);
-    }
-
-    public static class AdOptionsDrawable extends Drawable {
-        public final int color;
-        public final Drawable icon;
-        public final Paint backgroundPaint = new Paint(1);
-        public final Text text = new Text(LocaleController.getString(R.string.SponsoredMessageAd), 11.0f, AndroidUtilities.bold());
-        private float alpha = 1.0f;
-
-        @Override // android.graphics.drawable.Drawable
-        public int getOpacity() {
-            return -2;
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public void setColorFilter(ColorFilter colorFilter) {
-        }
-
-        public AdOptionsDrawable(Context context, int i) {
-            this.color = i;
-            Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_other).mutate();
-            this.icon = mutate;
-            mutate.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public void draw(Canvas canvas) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(getBounds());
-            rectF.left += AndroidUtilities.dp(4.0f);
-            this.backgroundPaint.setColor(Theme.multAlpha(this.color, this.alpha * 0.2f));
-            canvas.drawRoundRect(rectF, rectF.height(), rectF.height(), this.backgroundPaint);
-            this.text.draw(canvas, rectF.left + AndroidUtilities.dp(5.0f), rectF.centerY(), this.color, this.alpha);
-            this.icon.setBounds(getBounds().right - AndroidUtilities.dp(12.99f), getBounds().centerY() - AndroidUtilities.dp(5.665f), getBounds().right - AndroidUtilities.dp(1.66f), getBounds().centerY() + AndroidUtilities.dp(5.665f));
-            this.icon.setAlpha((int) (this.alpha * 255.0f));
-            this.icon.draw(canvas);
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public void setAlpha(int i) {
-            this.alpha = i / 255.0f;
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public int getIntrinsicHeight() {
-            return AndroidUtilities.dp(16.0f);
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public int getIntrinsicWidth() {
-            return (int) (AndroidUtilities.dp(4.0f) + this.text.getWidth() + AndroidUtilities.dp(18.0f));
-        }
-    }
-
-    public static class CloseDrawable extends Drawable {
-        private int alpha;
-        private final long max_display_duration;
-        private final long min_display_duration;
-        private long minusTime;
-        private final Paint paint;
-        private final View parentView;
-        private boolean paused;
-        private long pausedTime;
-        private final AnimatedFloat showCrossAnimated;
-        private final AnimatedFloat showTimerAnimated;
-        private final long startTime;
-        private final AnimatedTextView.AnimatedTextDrawable timer;
-        private final AnimatedFloat timerScaleAnimated;
-
-        @Override // android.graphics.drawable.Drawable
-        public int getOpacity() {
-            return -2;
-        }
-
-        public CloseDrawable(View view, int i, int i2, long j) {
-            AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = new AnimatedTextView.AnimatedTextDrawable(false, true, true);
-            this.timer = animatedTextDrawable;
-            Paint paint = new Paint(1);
-            this.paint = paint;
-            this.paused = false;
-            this.alpha = NotificationCenter.didReceiveSmsCode;
-            this.parentView = view;
-            this.startTime = System.currentTimeMillis() - j;
-            this.min_display_duration = i * 1000;
-            this.max_display_duration = i2 * 1000;
-            paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeCap(Paint.Cap.ROUND);
-            paint.setStrokeJoin(Paint.Join.ROUND);
-            paint.setColor(-1);
-            animatedTextDrawable.setCallback(view);
-            animatedTextDrawable.setGravity(17);
-            animatedTextDrawable.setTextSize(AndroidUtilities.dp(12.0f));
-            animatedTextDrawable.setTypeface(AndroidUtilities.getTypeface("fonts/num.otf"));
-            animatedTextDrawable.setOverrideFullWidth(AndroidUtilities.displaySize.x);
-            animatedTextDrawable.setTextColor(-1);
-            CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
-            this.showCrossAnimated = new AnimatedFloat(view, 0L, 420L, cubicBezierInterpolator);
-            this.showTimerAnimated = new AnimatedFloat(view, 0L, 420L, cubicBezierInterpolator);
-            this.timerScaleAnimated = new AnimatedFloat(view, 0L, 420L, cubicBezierInterpolator);
-        }
-
-        public boolean isCrossAvailable() {
-            return (this.paused ? this.pausedTime : System.currentTimeMillis() - this.minusTime) - this.startTime > this.min_display_duration;
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public void draw(Canvas canvas) {
-            float centerX = getBounds().centerX();
-            float centerY = getBounds().centerY();
-            long currentTimeMillis = ((this.paused ? this.pausedTime : System.currentTimeMillis()) - this.minusTime) - this.startTime;
-            long max = Math.max(0L, this.min_display_duration - currentTimeMillis);
-            long j = this.min_display_duration;
-            float f = max / j;
-            float f2 = this.showTimerAnimated.set(currentTimeMillis < j);
-            String str = "" + ((int) Math.ceil(max / 1000.0d));
-            float f3 = this.timerScaleAnimated.set(str.length() >= 3 ? 0.825f : str.length() >= 2 ? 0.875f : 1.0f);
-            canvas.save();
-            canvas.scale(f3, f3, centerX, centerY);
-            this.timer.setText(str);
-            this.timer.setBounds(centerX - 1.0f, centerY - 1.0f, centerX + 1.0f, centerY + 1.0f);
-            this.timer.setAlpha((int) (this.alpha * f2));
-            this.timer.draw(canvas);
-            canvas.restore();
-            this.paint.setAlpha((int) (this.alpha * f2));
-            this.paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(centerX - AndroidUtilities.dp(9.0f), centerY - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f) + centerX, AndroidUtilities.dp(9.0f) + centerY);
-            canvas.drawArc(rectF, -90.0f, f * (-360.0f), false, this.paint);
-            float f4 = this.showCrossAnimated.set((1.0f - f) * 360.0f > 75.0f);
-            float lerp = AndroidUtilities.lerp(centerX, AndroidUtilities.dp(8.0f) + centerX, f2);
-            float lerp2 = AndroidUtilities.lerp(centerY, centerY - AndroidUtilities.dp(8.0f), f2);
-            float lerp3 = AndroidUtilities.lerp(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(3.0f), f2) * AndroidUtilities.lerp(0.35f, 1.0f, f4);
-            this.paint.setAlpha((int) (this.alpha * f4));
-            float f5 = lerp - lerp3;
-            float f6 = lerp2 - lerp3;
-            float f7 = lerp + lerp3;
-            float f8 = lerp2 + lerp3;
-            canvas.drawLine(f5, f6, f7, f8, this.paint);
-            canvas.drawLine(f5, f8, f7, f6, this.paint);
-            if (f2 > 0.0f) {
-                this.parentView.invalidate();
-            }
-        }
-
-        public void setPaused(boolean z) {
-            if (this.paused == z) {
-                return;
-            }
-            this.paused = z;
-            if (z) {
-                this.pausedTime = System.currentTimeMillis();
-            } else {
-                this.minusTime += System.currentTimeMillis() - this.pausedTime;
-            }
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public void setAlpha(int i) {
-            this.alpha = i;
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public void setColorFilter(ColorFilter colorFilter) {
-            this.timer.setColorFilter(colorFilter);
-            this.paint.setColorFilter(colorFilter);
-        }
-
-        public void setColor(int i) {
-            this.timer.setTextColor(i);
-            this.paint.setColor(i);
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public int getIntrinsicWidth() {
-            return AndroidUtilities.dp(24.0f);
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public int getIntrinsicHeight() {
-            return AndroidUtilities.dp(24.0f);
-        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void showPremium() {
-        PremiumFeatureBottomSheet premiumFeatureBottomSheet = this.premiumSheet;
-        if (premiumFeatureBottomSheet != null) {
-            premiumFeatureBottomSheet.dismiss();
+        g2 g2Var = this.premiumSheet;
+        if (g2Var != null) {
+            g2Var.dismiss();
             this.premiumSheet = null;
         }
-        final PremiumFeatureBottomSheet premiumFeatureBottomSheet2 = new PremiumFeatureBottomSheet(new BaseFragment() { // from class: org.telegram.messenger.video.VideoAds.2
-            @Override // org.telegram.ui.ActionBar.BaseFragment
+        g2 g2Var2 = new g2(new n2() { // from class: org.telegram.messenger.video.VideoAds.2
+            @Override // org.telegram.ui.ActionBar.n2
+            public Context getContext() {
+                return AndroidUtilities.findActivity(LaunchActivity.C1);
+            }
+
+            @Override // org.telegram.ui.ActionBar.n2
             public int getCurrentAccount() {
                 return VideoAds.this.currentAccount;
             }
 
-            @Override // org.telegram.ui.ActionBar.BaseFragment
-            public Context getContext() {
-                return AndroidUtilities.findActivity(LaunchActivity.instance);
-            }
-
-            @Override // org.telegram.ui.ActionBar.BaseFragment
+            @Override // org.telegram.ui.ActionBar.n2
             public Activity getParentActivity() {
                 Activity findActivity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
-                return findActivity == null ? LaunchActivity.instance : findActivity;
+                return findActivity == null ? LaunchActivity.C1 : findActivity;
             }
         }, 3, true);
-        this.premiumSheet = premiumFeatureBottomSheet2;
-        premiumFeatureBottomSheet2.setOnDismissListener(new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                VideoAds.$r8$lambda$ytWz13xqwNa1zFKqyU1VKNNERUk(VideoAds.this, premiumFeatureBottomSheet2);
-            }
-        });
-        premiumFeatureBottomSheet2.show();
+        this.premiumSheet = g2Var2;
+        g2Var2.setOnDismissListener(new k7(19, this, g2Var2));
+        g2Var2.show();
         checkPopupShownCallback();
     }
 
-    public static /* synthetic */ void $r8$lambda$ytWz13xqwNa1zFKqyU1VKNNERUk(VideoAds videoAds, PremiumFeatureBottomSheet premiumFeatureBottomSheet) {
-        if (premiumFeatureBottomSheet == videoAds.premiumSheet) {
-            videoAds.premiumSheet = null;
-            videoAds.checkPopupShownCallback();
+    public boolean isPopupShown() {
+        b70 b70Var = this.currentMenu;
+        if (b70Var != null && b70Var.D()) {
+            return true;
         }
-    }
-
-    public static class AdLayout extends Bulletin.ButtonLayout {
-        public final ImageView buttonView;
-        public final BackupImageView imageView;
-        private final LinearLayout linearLayout;
-        public final LinkSpanDrawable.LinksTextView subtitleTextView;
-        public final SimpleTextView titleTextView;
-
-        public AdLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
-            super(context, resourcesProvider);
-            setBackground(getThemedColor(Theme.key_undo_background));
-            BackupImageView backupImageView = new BackupImageView(context);
-            this.imageView = backupImageView;
-            backupImageView.setRoundRadius(AndroidUtilities.dp(48.0f));
-            addView(backupImageView, LayoutHelper.createFrameRelatively(36.0f, 36.0f, 8388627, 9.0f, 0.0f, 0.0f, 0.0f));
-            int themedColor = getThemedColor(Theme.key_undo_infoColor);
-            int themedColor2 = getThemedColor(Theme.key_undo_cancelColor);
-            LinearLayout linearLayout = new LinearLayout(context);
-            this.linearLayout = linearLayout;
-            linearLayout.setOrientation(1);
-            addView(linearLayout, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 54.0f, 8.0f));
-            SimpleTextView simpleTextView = new SimpleTextView(context);
-            this.titleTextView = simpleTextView;
-            simpleTextView.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-            simpleTextView.setTextColor(themedColor);
-            simpleTextView.setTextSize(14);
-            simpleTextView.setTypeface(AndroidUtilities.bold());
-            linearLayout.addView(simpleTextView);
-            LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
-            this.subtitleTextView = linksTextView;
-            linksTextView.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-            linksTextView.setTextColor(themedColor);
-            linksTextView.setLinkTextColor(themedColor2);
-            linksTextView.setTypeface(Typeface.SANS_SERIF);
-            linksTextView.setTextSize(1, 13.0f);
-            linearLayout.addView(linksTextView);
-            ImageView imageView = new ImageView(context);
-            this.buttonView = imageView;
-            imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setBackground(Theme.createSelectorDrawable(Theme.multAlpha(getThemedColor(Theme.key_featuredStickers_addButton), 0.15f), 7));
-            addView(imageView, LayoutHelper.createFrameRelatively(32.0f, 32.0f, 8388629, 0.0f, 0.0f, 11.0f, 0.0f));
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout
-        protected void onShow() {
-            super.onShow();
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout
-        public CharSequence getAccessibilityText() {
-            return ((Object) this.titleTextView.getText()) + ".\n" + ((Object) this.subtitleTextView.getText());
-        }
-
-        public void hideImage() {
-            this.imageView.setVisibility(8);
-            this.linearLayout.setLayoutParams(LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 10.0f, 8.0f, 54.0f, 8.0f));
-        }
-    }
-
-    public void logSponsoredShown(TLRPC.TL_sponsoredMessage tL_sponsoredMessage) {
-        if (tL_sponsoredMessage == null) {
-            return;
-        }
-        TLRPC.TL_messages_viewSponsoredMessage tL_messages_viewSponsoredMessage = new TLRPC.TL_messages_viewSponsoredMessage();
-        tL_messages_viewSponsoredMessage.random_id = tL_sponsoredMessage.random_id;
-        if (BuildVars.DEBUG_PRIVATE_VERSION) {
-            return;
-        }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_viewSponsoredMessage, null);
+        g2 g2Var = this.premiumSheet;
+        return g2Var != null && g2Var.isShown();
     }
 
     public void logSponsoredClicked(TLRPC.TL_sponsoredMessage tL_sponsoredMessage) {
@@ -1051,5 +1000,120 @@ public class VideoAds {
             return;
         }
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_clickSponsoredMessage, null);
+    }
+
+    public void logSponsoredShown(TLRPC.TL_sponsoredMessage tL_sponsoredMessage) {
+        if (tL_sponsoredMessage == null) {
+            return;
+        }
+        TLRPC.TL_messages_viewSponsoredMessage tL_messages_viewSponsoredMessage = new TLRPC.TL_messages_viewSponsoredMessage();
+        tL_messages_viewSponsoredMessage.random_id = tL_sponsoredMessage.random_id;
+        if (BuildVars.DEBUG_PRIVATE_VERSION) {
+            return;
+        }
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_viewSponsoredMessage, null);
+    }
+
+    public void setPauseOnPopupCallback(Runnable runnable) {
+        this.onPopupCallback = runnable;
+    }
+
+    public void setWaitingPaused(boolean z10) {
+        if (this.waitingPaused == z10) {
+            return;
+        }
+        this.waitingPaused = z10;
+        AndroidUtilities.cancelRunOnUIThread(this.showRunnable);
+        if (z10) {
+            this.waitingTimeSince = System.currentTimeMillis();
+            return;
+        }
+        this.lastTime += System.currentTimeMillis() - this.waitingTimeSince;
+        if (this.bulletin == null) {
+            schedule();
+        }
+    }
+
+    public void stop() {
+        if (this.bulletin != null) {
+            this.currentBulletinPassedTime = System.currentTimeMillis() - this.bulletinShowTime;
+            if (!this.ads.isEmpty()) {
+                if (this.currentBulletinPassedTime > this.ads.get(0).min_display_duration * 1000) {
+                    this.currentBulletinPassedTime = 0L;
+                    this.ads.remove(0);
+                    this.first = false;
+                }
+            }
+            this.bulletin.b();
+            this.bulletin = null;
+        } else {
+            this.currentBulletinPassedTime = 0L;
+        }
+        b70 b70Var = this.currentMenu;
+        if (b70Var != null) {
+            b70Var.u();
+            this.currentMenu = null;
+        }
+        this.bulletin = null;
+        if (this.loading) {
+            ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.requestId, true);
+            this.requestId = 0;
+            this.loading = false;
+        }
+        AndroidUtilities.cancelRunOnUIThread(this.showRunnable);
+        setWaitingPaused(true);
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public static class AdOptionsDrawable extends Drawable {
+        public final int color;
+        public final Drawable icon;
+        public final Paint backgroundPaint = new Paint(1);
+        public final pz0 text = new pz0(LocaleController.getString(R.string.SponsoredMessageAd), 11.0f, AndroidUtilities.bold());
+        private float alpha = 1.0f;
+
+        public AdOptionsDrawable(Context context, int i10) {
+            this.color = i10;
+            Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_other).mutate();
+            this.icon = mutate;
+            mutate.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void draw(Canvas canvas) {
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(getBounds());
+            rectF.left += AndroidUtilities.dp(4.0f);
+            this.backgroundPaint.setColor(g6.l1(this.alpha * 0.2f, this.color));
+            canvas.drawRoundRect(rectF, rectF.height(), rectF.height(), this.backgroundPaint);
+            this.text.c(rectF.left + AndroidUtilities.dp(5.0f), rectF.centerY(), this.alpha, this.color, canvas);
+            this.icon.setBounds(getBounds().right - AndroidUtilities.dp(12.99f), getBounds().centerY() - AndroidUtilities.dp(5.665f), getBounds().right - AndroidUtilities.dp(1.66f), AndroidUtilities.dp(5.665f) + getBounds().centerY());
+            this.icon.setAlpha((int) (this.alpha * 255.0f));
+            this.icon.draw(canvas);
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public int getIntrinsicHeight() {
+            return AndroidUtilities.dp(16.0f);
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public int getIntrinsicWidth() {
+            return (int) (this.text.l() + AndroidUtilities.dp(4.0f) + AndroidUtilities.dp(18.0f));
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public int getOpacity() {
+            return -2;
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void setAlpha(int i10) {
+            this.alpha = i10 / 255.0f;
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void setColorFilter(ColorFilter colorFilter) {
+        }
     }
 }

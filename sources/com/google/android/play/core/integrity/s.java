@@ -2,30 +2,34 @@ package com.google.android.play.core.integrity;
 
 import android.content.Context;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 final class s {
-    private final com.google.android.play.integrity.internal.bb a;
-    private final com.google.android.play.integrity.internal.bb b;
-    private final com.google.android.play.integrity.internal.bb c;
-    private final com.google.android.play.integrity.internal.bb d;
-    private final com.google.android.play.integrity.internal.bb e;
+    private final l8.p a;
+    private final l8.p b;
+    private final l8.p c;
+    private final l8.p d;
+    private final l8.p e;
 
-    /* synthetic */ s(Context context, r rVar) {
+    public s(Context context, r rVar) {
         ad adVar;
         m mVar;
         m mVar2;
-        com.google.android.play.integrity.internal.ay b = com.google.android.play.integrity.internal.az.b(context);
-        this.a = b;
+        if (context == null) {
+            throw new NullPointerException("instance cannot be null");
+        }
+        l3.b bVar = new l3.b(context);
+        this.a = bVar;
         adVar = ac.a;
-        com.google.android.play.integrity.internal.bb b2 = com.google.android.play.integrity.internal.ax.b(adVar);
-        this.b = b2;
+        l8.m b10 = l8.m.b(adVar);
+        this.b = b10;
         mVar = l.a;
-        au auVar = new au(b, mVar);
+        au auVar = new au(bVar, mVar);
         this.c = auVar;
         mVar2 = l.a;
-        com.google.android.play.integrity.internal.bb b3 = com.google.android.play.integrity.internal.ax.b(new al(b, b2, auVar, mVar2));
-        this.d = b3;
-        this.e = com.google.android.play.integrity.internal.ax.b(new ab(b3));
+        l8.m b11 = l8.m.b(new al(bVar, b10, auVar, mVar2));
+        this.d = b11;
+        this.e = l8.m.b(new ab(b11));
     }
 
     public final IntegrityManager a() {

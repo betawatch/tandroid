@@ -2,30 +2,14 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class Place {
     private final CarLocation mLocation;
     private final PlaceMarker mMarker;
 
-    public static final class Builder {
-    }
-
-    public PlaceMarker getMarker() {
-        return this.mMarker;
-    }
-
-    public CarLocation getLocation() {
-        CarLocation carLocation = this.mLocation;
-        Objects.requireNonNull(carLocation);
-        return carLocation;
-    }
-
-    public String toString() {
-        return "[ location: " + this.mLocation + ", marker: " + this.mMarker + "]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(this.mLocation, this.mMarker);
+    public Place(k0 k0Var) {
+        throw null;
     }
 
     public boolean equals(Object obj) {
@@ -39,8 +23,22 @@ public final class Place {
         return Objects.equals(this.mLocation, place.mLocation) && Objects.equals(this.mMarker, place.mMarker);
     }
 
-    Place(Builder builder) {
-        throw null;
+    public CarLocation getLocation() {
+        CarLocation carLocation = this.mLocation;
+        Objects.requireNonNull(carLocation);
+        return carLocation;
+    }
+
+    public PlaceMarker getMarker() {
+        return this.mMarker;
+    }
+
+    public int hashCode() {
+        return Objects.hash(this.mLocation, this.mMarker);
+    }
+
+    public String toString() {
+        return "[ location: " + this.mLocation + ", marker: " + this.mMarker + "]";
     }
 
     private Place() {

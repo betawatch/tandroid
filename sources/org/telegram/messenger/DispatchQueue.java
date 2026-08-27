@@ -7,7 +7,8 @@ import android.os.Process;
 import android.os.SystemClock;
 import java.util.concurrent.CountDownLatch;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class DispatchQueue extends Thread {
     private static final int THREAD_PRIORITY_DEFAULT = -1000;
     private static int indexPointer;
@@ -17,57 +18,22 @@ public class DispatchQueue extends Thread {
     private CountDownLatch syncLatch;
     private int threadPriority;
 
-    public void handleMessage(Message message) {
-    }
-
     public DispatchQueue(String str) {
         this(str, true);
     }
 
-    public DispatchQueue(String str, boolean z) {
-        this.handler = null;
-        this.syncLatch = new CountDownLatch(1);
-        int i = indexPointer;
-        indexPointer = i + 1;
-        this.index = i;
-        this.threadPriority = THREAD_PRIORITY_DEFAULT;
-        setName(str);
-        if (z) {
-            start();
-        }
-    }
-
-    public DispatchQueue(String str, boolean z, int i) {
-        this.handler = null;
-        this.syncLatch = new CountDownLatch(1);
-        int i2 = indexPointer;
-        indexPointer = i2 + 1;
-        this.index = i2;
-        this.threadPriority = i;
-        setName(str);
-        if (z) {
-            start();
-        }
-    }
-
-    public void sendMessage(Message message, int i) {
-        try {
-            this.syncLatch.await();
-            if (i <= 0) {
-                this.handler.sendMessage(message);
-            } else {
-                this.handler.sendMessageDelayed(message, i);
-            }
-        } catch (Exception unused) {
-        }
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ boolean lambda$run$0(Message message) {
+        handleMessage(message);
+        return true;
     }
 
     public void cancelRunnable(Runnable runnable) {
         try {
             this.syncLatch.await();
             this.handler.removeCallbacks(runnable);
-        } catch (Exception e) {
-            FileLog.e((Throwable) e, false);
+        } catch (Exception e9) {
+            FileLog.e((Throwable) e9, false);
         }
     }
 
@@ -77,9 +43,30 @@ public class DispatchQueue extends Thread {
             for (Runnable runnable : runnableArr) {
                 this.handler.removeCallbacks(runnable);
             }
-        } catch (Exception e) {
-            FileLog.e((Throwable) e, false);
+        } catch (Exception e9) {
+            FileLog.e((Throwable) e9, false);
         }
+    }
+
+    public void cleanupQueue() {
+        try {
+            this.syncLatch.await();
+            this.handler.removeCallbacksAndMessages(null);
+        } catch (Exception e9) {
+            FileLog.e((Throwable) e9, false);
+        }
+    }
+
+    public Handler getHandler() {
+        return this.handler;
+    }
+
+    public long getLastTaskTime() {
+        return this.lastTaskTime;
+    }
+
+    public boolean isReady() {
+        return this.syncLatch.getCount() == 0;
     }
 
     public boolean postRunnable(Runnable runnable) {
@@ -90,35 +77,10 @@ public class DispatchQueue extends Thread {
     public boolean postToFrontRunnable(Runnable runnable) {
         try {
             this.syncLatch.await();
-        } catch (Exception e) {
-            FileLog.e((Throwable) e, false);
+        } catch (Exception e9) {
+            FileLog.e((Throwable) e9, false);
         }
         return this.handler.postAtFrontOfQueue(runnable);
-    }
-
-    public boolean postRunnable(Runnable runnable, long j) {
-        try {
-            this.syncLatch.await();
-        } catch (Exception e) {
-            FileLog.e((Throwable) e, false);
-        }
-        if (j <= 0) {
-            return this.handler.post(runnable);
-        }
-        return this.handler.postDelayed(runnable, j);
-    }
-
-    public void cleanupQueue() {
-        try {
-            this.syncLatch.await();
-            this.handler.removeCallbacksAndMessages(null);
-        } catch (Exception e) {
-            FileLog.e((Throwable) e, false);
-        }
-    }
-
-    public long getLastTaskTime() {
-        return this.lastTaskTime;
     }
 
     public void recycle() {
@@ -128,30 +90,65 @@ public class DispatchQueue extends Thread {
     @Override // java.lang.Thread, java.lang.Runnable
     public void run() {
         Looper.prepare();
-        this.handler = new Handler(Looper.myLooper(), new Handler.Callback() { // from class: org.telegram.messenger.DispatchQueue$$ExternalSyntheticLambda0
-            @Override // android.os.Handler.Callback
-            public final boolean handleMessage(Message message) {
-                return DispatchQueue.$r8$lambda$dDxIPiVp7GAX-22bRxD0uMTa364(DispatchQueue.this, message);
-            }
-        });
+        this.handler = new Handler(Looper.myLooper(), new z1(this, 0));
         this.syncLatch.countDown();
-        int i = this.threadPriority;
-        if (i != THREAD_PRIORITY_DEFAULT) {
-            Process.setThreadPriority(i);
+        int i10 = this.threadPriority;
+        if (i10 != THREAD_PRIORITY_DEFAULT) {
+            Process.setThreadPriority(i10);
         }
         Looper.loop();
     }
 
-    public static /* synthetic */ boolean $r8$lambda$dDxIPiVp7GAX-22bRxD0uMTa364(DispatchQueue dispatchQueue, Message message) {
-        dispatchQueue.handleMessage(message);
-        return true;
+    public void sendMessage(Message message, int i10) {
+        try {
+            this.syncLatch.await();
+            if (i10 <= 0) {
+                this.handler.sendMessage(message);
+            } else {
+                this.handler.sendMessageDelayed(message, i10);
+            }
+        } catch (Exception unused) {
+        }
     }
 
-    public boolean isReady() {
-        return this.syncLatch.getCount() == 0;
+    public DispatchQueue(String str, boolean z10) {
+        this.handler = null;
+        this.syncLatch = new CountDownLatch(1);
+        int i10 = indexPointer;
+        indexPointer = i10 + 1;
+        this.index = i10;
+        this.threadPriority = THREAD_PRIORITY_DEFAULT;
+        setName(str);
+        if (z10) {
+            start();
+        }
     }
 
-    public Handler getHandler() {
-        return this.handler;
+    public boolean postRunnable(Runnable runnable, long j10) {
+        try {
+            this.syncLatch.await();
+        } catch (Exception e9) {
+            FileLog.e((Throwable) e9, false);
+        }
+        if (j10 <= 0) {
+            return this.handler.post(runnable);
+        }
+        return this.handler.postDelayed(runnable, j10);
+    }
+
+    public DispatchQueue(String str, boolean z10, int i10) {
+        this.handler = null;
+        this.syncLatch = new CountDownLatch(1);
+        int i11 = indexPointer;
+        indexPointer = i11 + 1;
+        this.index = i11;
+        this.threadPriority = i10;
+        setName(str);
+        if (z10) {
+            start();
+        }
+    }
+
+    public void handleMessage(Message message) {
     }
 }

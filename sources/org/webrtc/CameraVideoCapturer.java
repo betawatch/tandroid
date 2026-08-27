@@ -2,9 +2,11 @@ package org.webrtc;
 
 import android.media.MediaRecorder;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes4.dex */
 public interface CameraVideoCapturer extends VideoCapturer {
 
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public interface CameraEventsHandler {
         void onCameraClosed();
 
@@ -19,39 +21,7 @@ public interface CameraVideoCapturer extends VideoCapturer {
         void onFirstFrameAvailable();
     }
 
-    public interface CameraSwitchHandler {
-        void onCameraSwitchDone(boolean z);
-
-        void onCameraSwitchError(String str);
-    }
-
-    @Deprecated
-    public interface MediaRecorderHandler {
-        void onMediaRecorderError(String str);
-
-        void onMediaRecorderSuccess();
-    }
-
-    @Deprecated
-    void addMediaRecorderToCamera(MediaRecorder mediaRecorder, MediaRecorderHandler mediaRecorderHandler);
-
-    @Deprecated
-    void removeMediaRecorderFromCamera(MediaRecorderHandler mediaRecorderHandler);
-
-    void switchCamera(CameraSwitchHandler cameraSwitchHandler);
-
-    void switchCamera(CameraSwitchHandler cameraSwitchHandler, String str);
-
-    public abstract /* synthetic */ class -CC {
-        public static void $default$addMediaRecorderToCamera(CameraVideoCapturer cameraVideoCapturer, MediaRecorder mediaRecorder, MediaRecorderHandler mediaRecorderHandler) {
-            throw new UnsupportedOperationException("Deprecated and not implemented.");
-        }
-
-        public static void $default$removeMediaRecorderFromCamera(CameraVideoCapturer cameraVideoCapturer, MediaRecorderHandler mediaRecorderHandler) {
-            throw new UnsupportedOperationException("Deprecated and not implemented.");
-        }
-    }
-
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
     public static class CameraStatistics {
         private static final int CAMERA_FREEZE_REPORT_TIMOUT_MS = 4000;
         private static final int CAMERA_OBSERVER_PERIOD_MS = 2000;
@@ -62,20 +32,12 @@ public interface CameraVideoCapturer extends VideoCapturer {
         private int freezePeriodCount;
         private final SurfaceTextureHelper surfaceTextureHelper;
 
-        static /* synthetic */ int access$104(CameraStatistics cameraStatistics) {
-            int i = cameraStatistics.freezePeriodCount + 1;
-            cameraStatistics.freezePeriodCount = i;
-            return i;
-        }
-
         public CameraStatistics(SurfaceTextureHelper surfaceTextureHelper, CameraEventsHandler cameraEventsHandler) {
             Runnable runnable = new Runnable() { // from class: org.webrtc.CameraVideoCapturer.CameraStatistics.1
                 @Override // java.lang.Runnable
                 public void run() {
                     Logging.d(CameraStatistics.TAG, "Camera fps: " + Math.round((CameraStatistics.this.frameCount * 1000.0f) / 2000.0f) + ".");
-                    if (CameraStatistics.this.frameCount != 0) {
-                        CameraStatistics.this.freezePeriodCount = 0;
-                    } else {
+                    if (CameraStatistics.this.frameCount == 0) {
                         CameraStatistics.access$104(CameraStatistics.this);
                         if (CameraStatistics.this.freezePeriodCount * CameraStatistics.CAMERA_OBSERVER_PERIOD_MS >= CameraStatistics.CAMERA_FREEZE_REPORT_TIMOUT_MS && CameraStatistics.this.eventsHandler != null) {
                             Logging.e(CameraStatistics.TAG, "Camera freezed.");
@@ -87,6 +49,8 @@ public interface CameraVideoCapturer extends VideoCapturer {
                                 return;
                             }
                         }
+                    } else {
+                        CameraStatistics.this.freezePeriodCount = 0;
                     }
                     CameraStatistics.this.frameCount = 0;
                     CameraStatistics.this.surfaceTextureHelper.getHandler().postDelayed(this, 2000L);
@@ -101,6 +65,12 @@ public interface CameraVideoCapturer extends VideoCapturer {
             this.frameCount = 0;
             this.freezePeriodCount = 0;
             surfaceTextureHelper.getHandler().postDelayed(runnable, 2000L);
+        }
+
+        public static /* synthetic */ int access$104(CameraStatistics cameraStatistics) {
+            int i10 = cameraStatistics.freezePeriodCount + 1;
+            cameraStatistics.freezePeriodCount = i10;
+            return i10;
         }
 
         private void checkThread() {
@@ -118,4 +88,29 @@ public interface CameraVideoCapturer extends VideoCapturer {
             this.surfaceTextureHelper.getHandler().removeCallbacks(this.cameraObserver);
         }
     }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    public interface CameraSwitchHandler {
+        void onCameraSwitchDone(boolean z10);
+
+        void onCameraSwitchError(String str);
+    }
+
+    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    @Deprecated
+    public interface MediaRecorderHandler {
+        void onMediaRecorderError(String str);
+
+        void onMediaRecorderSuccess();
+    }
+
+    @Deprecated
+    void addMediaRecorderToCamera(MediaRecorder mediaRecorder, MediaRecorderHandler mediaRecorderHandler);
+
+    @Deprecated
+    void removeMediaRecorderFromCamera(MediaRecorderHandler mediaRecorderHandler);
+
+    void switchCamera(CameraSwitchHandler cameraSwitchHandler);
+
+    void switchCamera(CameraSwitchHandler cameraSwitchHandler, String str);
 }

@@ -42,10 +42,10 @@ public final class Collectors {
     }
 
     public static void a(double[] dArr, double d) {
-        double d2 = d - dArr[1];
-        double d3 = dArr[0];
-        double d4 = d3 + d2;
-        dArr[1] = (d4 - d3) - d2;
-        dArr[0] = d4;
+        double d10 = d - dArr[1];
+        double d11 = dArr[0];
+        double d12 = d11 + d10;
+        dArr[1] = (d12 - d11) - d10;
+        dArr[0] = d12;
     }
 }

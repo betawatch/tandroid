@@ -1,91 +1,91 @@
 package org.telegram.messenger;
 
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.Paint.PersistColorPalette;
 
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class BaseController {
     protected final int currentAccount;
     private AccountInstance parentAccountInstance;
 
-    public BaseController(int i) {
-        this.parentAccountInstance = AccountInstance.getInstance(i);
-        this.currentAccount = i;
+    public BaseController(int i10) {
+        this.parentAccountInstance = AccountInstance.getInstance(i10);
+        this.currentAccount = i10;
     }
 
-    protected final AccountInstance getAccountInstance() {
+    public final AccountInstance getAccountInstance() {
         return this.parentAccountInstance;
     }
 
-    protected final AppGlobalConfig getAppGlobalConfig() {
+    public final AppGlobalConfig getAppGlobalConfig() {
         return getMessagesController().config;
     }
 
-    protected final MessagesController getMessagesController() {
-        return this.parentAccountInstance.getMessagesController();
-    }
-
-    protected final ContactsController getContactsController() {
-        return this.parentAccountInstance.getContactsController();
-    }
-
-    protected final PersistColorPalette getColorPalette() {
+    public final yf.r0 getColorPalette() {
         return this.parentAccountInstance.getColorPalette();
     }
 
-    protected final MediaDataController getMediaDataController() {
-        return this.parentAccountInstance.getMediaDataController();
-    }
-
-    protected final ConnectionsManager getConnectionsManager() {
+    public final ConnectionsManager getConnectionsManager() {
         return this.parentAccountInstance.getConnectionsManager();
     }
 
-    protected final LocationController getLocationController() {
-        return this.parentAccountInstance.getLocationController();
+    public final ContactsController getContactsController() {
+        return this.parentAccountInstance.getContactsController();
     }
 
-    protected final NotificationsController getNotificationsController() {
-        return this.parentAccountInstance.getNotificationsController();
-    }
-
-    protected final NotificationCenter getNotificationCenter() {
-        return this.parentAccountInstance.getNotificationCenter();
-    }
-
-    protected final UserConfig getUserConfig() {
-        return this.parentAccountInstance.getUserConfig();
-    }
-
-    protected final MessagesStorage getMessagesStorage() {
-        return this.parentAccountInstance.getMessagesStorage();
-    }
-
-    protected final DownloadController getDownloadController() {
+    public final DownloadController getDownloadController() {
         return this.parentAccountInstance.getDownloadController();
     }
 
-    protected final SendMessagesHelper getSendMessagesHelper() {
-        return this.parentAccountInstance.getSendMessagesHelper();
-    }
-
-    protected final SecretChatHelper getSecretChatHelper() {
-        return this.parentAccountInstance.getSecretChatHelper();
-    }
-
-    protected final StatsController getStatsController() {
-        return this.parentAccountInstance.getStatsController();
-    }
-
-    protected final FileLoader getFileLoader() {
+    public final FileLoader getFileLoader() {
         return this.parentAccountInstance.getFileLoader();
     }
 
-    protected final FileRefController getFileRefController() {
+    public final FileRefController getFileRefController() {
         return this.parentAccountInstance.getFileRefController();
     }
 
-    protected final MemberRequestsController getMemberRequestsController() {
+    public final LocationController getLocationController() {
+        return this.parentAccountInstance.getLocationController();
+    }
+
+    public final MediaDataController getMediaDataController() {
+        return this.parentAccountInstance.getMediaDataController();
+    }
+
+    public final MemberRequestsController getMemberRequestsController() {
         return this.parentAccountInstance.getMemberRequestsController();
+    }
+
+    public final MessagesController getMessagesController() {
+        return this.parentAccountInstance.getMessagesController();
+    }
+
+    public final MessagesStorage getMessagesStorage() {
+        return this.parentAccountInstance.getMessagesStorage();
+    }
+
+    public final NotificationCenter getNotificationCenter() {
+        return this.parentAccountInstance.getNotificationCenter();
+    }
+
+    public final NotificationsController getNotificationsController() {
+        return this.parentAccountInstance.getNotificationsController();
+    }
+
+    public final SecretChatHelper getSecretChatHelper() {
+        return this.parentAccountInstance.getSecretChatHelper();
+    }
+
+    public final SendMessagesHelper getSendMessagesHelper() {
+        return this.parentAccountInstance.getSendMessagesHelper();
+    }
+
+    public final StatsController getStatsController() {
+        return this.parentAccountInstance.getStatsController();
+    }
+
+    public final UserConfig getUserConfig() {
+        return this.parentAccountInstance.getUserConfig();
     }
 }

@@ -1,73 +1,49 @@
 package j$.util.stream;
 
-import java.util.concurrent.CountedCompleter;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-public class q1 extends CountedCompleter {
-    public final C0 a;
-    public final int b;
-    public final /* synthetic */ int c;
-    public final Object d;
+public abstract class q1 implements j5 {
+    public boolean a;
+    public boolean b;
 
-    public q1(C0 c0, Object obj, int i) {
-        this.c = i;
-        this.a = c0;
-        this.b = 0;
-        this.d = obj;
+    @Override // j$.util.stream.j5
+    public /* synthetic */ void accept(double d) {
+        t3.C();
+        throw null;
     }
 
-    public q1(q1 q1Var, C0 c0, int i, byte b) {
-        super(q1Var);
-        this.a = c0;
-        this.b = i;
+    @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
+    public /* synthetic */ void accept(int i10) {
+        t3.J();
+        throw null;
     }
 
-    @Override // java.util.concurrent.CountedCompleter
-    public final void compute() {
-        q1 q1Var = this;
-        while (q1Var.a.i() != 0) {
-            q1Var.setPendingCount(q1Var.a.i() - 1);
-            int i = 0;
-            int i2 = 0;
-            while (i < q1Var.a.i() - 1) {
-                q1 a = q1Var.a(i, q1Var.b + i2);
-                i2 = (int) (a.a.count() + i2);
-                a.fork();
-                i++;
-            }
-            q1Var = q1Var.a(i, q1Var.b + i2);
-        }
-        switch (q1Var.c) {
-            case 0:
-                ((B0) q1Var.a).j(q1Var.b, q1Var.d);
-                break;
-            default:
-                q1Var.a.g((Object[]) q1Var.d, q1Var.b);
-                break;
-        }
-        q1Var.propagateCompletion();
+    @Override // j$.util.stream.j5
+    public /* synthetic */ void accept(long j10) {
+        t3.K();
+        throw null;
     }
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public q1(q1 q1Var, C0 c0, int i) {
-        this(q1Var, c0, i, (byte) 0);
-        this.c = 1;
-        this.d = (Object[]) q1Var.d;
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    public final q1 a(int i, int i2) {
-        switch (this.c) {
-            case 0:
-                return new q1(this, ((B0) this.a).b(i), i2);
-            default:
-                return new q1(this, this.a.b(i), i2);
-        }
+    @Override // j$.util.stream.j5
+    public final /* synthetic */ void end() {
     }
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public q1(q1 q1Var, B0 b0, int i) {
-        this(q1Var, b0, i, (byte) 0);
-        this.c = 0;
-        this.d = q1Var.d;
+    @Override // j$.util.stream.j5
+    public final /* synthetic */ void o(long j10) {
+    }
+
+    public q1(r1 r1Var) {
+        this.b = !r1Var.b;
+    }
+
+    @Override // j$.util.stream.j5
+    public final boolean q() {
+        return this.a;
     }
 }

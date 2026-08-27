@@ -1,12 +1,13 @@
 package androidx.car.app.model.signin;
 
 import androidx.car.app.model.Action;
-import androidx.car.app.model.OnClickDelegate;
-import androidx.car.app.model.signin.SignInTemplate;
+import androidx.car.app.model.b0;
 import j$.util.Objects;
+import u.c;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
-public final class ProviderSignInMethod implements SignInTemplate.SignInMethod {
+public final class ProviderSignInMethod implements c {
     private final Action mAction;
 
     public ProviderSignInMethod(Action action) {
@@ -14,22 +15,12 @@ public final class ProviderSignInMethod implements SignInTemplate.SignInMethod {
         if (action.getType() != 1) {
             throw new IllegalArgumentException("The action must not be a standard action");
         }
-        OnClickDelegate onClickDelegate = action.getOnClickDelegate();
+        b0 onClickDelegate = action.getOnClickDelegate();
         Objects.requireNonNull(onClickDelegate);
         if (!onClickDelegate.isParkedOnly()) {
             throw new IllegalArgumentException("The action must use a ParkedOnlyOnClickListener");
         }
         this.mAction = action;
-    }
-
-    public Action getAction() {
-        Action action = this.mAction;
-        Objects.requireNonNull(action);
-        return action;
-    }
-
-    public String toString() {
-        return "[action:" + this.mAction + "]";
     }
 
     public boolean equals(Object obj) {
@@ -42,8 +33,18 @@ public final class ProviderSignInMethod implements SignInTemplate.SignInMethod {
         return false;
     }
 
+    public Action getAction() {
+        Action action = this.mAction;
+        Objects.requireNonNull(action);
+        return action;
+    }
+
     public int hashCode() {
         return Objects.hash(this.mAction);
+    }
+
+    public String toString() {
+        return "[action:" + this.mAction + "]";
     }
 
     private ProviderSignInMethod() {

@@ -1,9 +1,9 @@
 package androidx.car.app.navigation.model;
 
 import androidx.car.app.model.CarIcon;
-import androidx.car.app.model.constraints.CarIconConstraints;
 import j$.util.Objects;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class Maneuver {
     public static final int TYPE_DEPART = 1;
@@ -60,44 +60,28 @@ public final class Maneuver {
     private final int mRoundaboutExitNumber;
     private final int mType;
 
-    static boolean isExitNumberRequired(int i) {
-        return i == 32 || i == 34;
+    public Maneuver(int i10, int i11, int i12, CarIcon carIcon) {
+        this.mType = i10;
+        this.mRoundaboutExitNumber = i11;
+        this.mRoundaboutExitAngle = i12;
+        t.b.b.a(carIcon);
+        this.mIcon = carIcon;
     }
 
-    static boolean isValidType(int i) {
-        return i >= 0 && i <= 50;
+    public static boolean isExitNumberRequired(int i10) {
+        return i10 == 32 || i10 == 34;
     }
 
-    static boolean isValidTypeWithExitAngle(int i) {
-        return i == 33 || i == 35;
+    public static boolean isValidType(int i10) {
+        return i10 >= 0 && i10 <= 50;
     }
 
-    static boolean isValidTypeWithExitNumber(int i) {
-        return i == 32 || i == 34 || i == 33 || i == 35;
+    public static boolean isValidTypeWithExitAngle(int i10) {
+        return i10 == 33 || i10 == 35;
     }
 
-    public int getType() {
-        return this.mType;
-    }
-
-    public int getRoundaboutExitNumber() {
-        return this.mRoundaboutExitNumber;
-    }
-
-    public int getRoundaboutExitAngle() {
-        return this.mRoundaboutExitAngle;
-    }
-
-    public CarIcon getIcon() {
-        return this.mIcon;
-    }
-
-    public String toString() {
-        return "[type: " + this.mType + ", exit #: " + this.mRoundaboutExitNumber + ", exit angle: " + this.mRoundaboutExitAngle + ", icon: " + this.mIcon + "]";
-    }
-
-    public int hashCode() {
-        return Objects.hash(Integer.valueOf(this.mType), Integer.valueOf(this.mRoundaboutExitNumber), Integer.valueOf(this.mRoundaboutExitAngle), this.mIcon);
+    public static boolean isValidTypeWithExitNumber(int i10) {
+        return i10 == 32 || i10 == 34 || i10 == 33 || i10 == 35;
     }
 
     public boolean equals(Object obj) {
@@ -111,12 +95,28 @@ public final class Maneuver {
         return this.mType == maneuver.mType && this.mRoundaboutExitNumber == maneuver.mRoundaboutExitNumber && this.mRoundaboutExitAngle == maneuver.mRoundaboutExitAngle && Objects.equals(this.mIcon, maneuver.mIcon);
     }
 
-    Maneuver(int i, int i2, int i3, CarIcon carIcon) {
-        this.mType = i;
-        this.mRoundaboutExitNumber = i2;
-        this.mRoundaboutExitAngle = i3;
-        CarIconConstraints.DEFAULT.validateOrThrow(carIcon);
-        this.mIcon = carIcon;
+    public CarIcon getIcon() {
+        return this.mIcon;
+    }
+
+    public int getRoundaboutExitAngle() {
+        return this.mRoundaboutExitAngle;
+    }
+
+    public int getRoundaboutExitNumber() {
+        return this.mRoundaboutExitNumber;
+    }
+
+    public int getType() {
+        return this.mType;
+    }
+
+    public int hashCode() {
+        return Objects.hash(Integer.valueOf(this.mType), Integer.valueOf(this.mRoundaboutExitNumber), Integer.valueOf(this.mRoundaboutExitAngle), this.mIcon);
+    }
+
+    public String toString() {
+        return "[type: " + this.mType + ", exit #: " + this.mRoundaboutExitNumber + ", exit angle: " + this.mRoundaboutExitAngle + ", icon: " + this.mIcon + "]";
     }
 
     private Maneuver() {

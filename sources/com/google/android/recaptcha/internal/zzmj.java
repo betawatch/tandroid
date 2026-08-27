@@ -5,26 +5,49 @@ import java.util.ArrayDeque;
 import java.util.Collection;
 import java.util.Queue;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzmj extends zzmn implements Serializable {
     final int zza;
     private final Queue zzb;
 
-    public static zzmj zza(int i) {
-        return new zzmj(i);
+    private zzmj(int i10) {
+        if (i10 < 0) {
+            throw new IllegalArgumentException(zzmg.zza("maxSize (%s) must >= 0", Integer.valueOf(i10)));
+        }
+        this.zzb = new ArrayDeque(i10);
+        this.zza = i10;
+    }
+
+    public static zzmj zza(int i10) {
+        return new zzmj(i10);
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzml, java.util.Collection, java.util.Queue
+    public final boolean add(Object obj) {
+        obj.getClass();
+        int i10 = this.zza;
+        if (i10 == 0) {
+            return true;
+        }
+        if (size() == i10) {
+            this.zzb.remove();
+        }
+        this.zzb.add(obj);
+        return true;
     }
 
     @Override // com.google.android.recaptcha.internal.zzml, java.util.Collection
     public final boolean addAll(Collection collection) {
         int size = collection.size();
-        int i = this.zza;
-        if (size < i) {
+        int i10 = this.zza;
+        if (size < i10) {
             return zzmq.zza(this, collection.iterator());
         }
         clear();
-        int i2 = size - i;
-        zzmd.zzb(i2 >= 0, "number to skip cannot be negative");
-        return zzmq.zza(this, new zzmp(collection, i2).iterator());
+        int i11 = size - i10;
+        zzmd.zzb(i11 >= 0, "number to skip cannot be negative");
+        return zzmq.zza(this, new zzmp(collection, i11).iterator());
     }
 
     @Override // com.google.android.recaptcha.internal.zzmn, java.util.Queue
@@ -34,39 +57,17 @@ public final class zzmj extends zzmn implements Serializable {
     }
 
     @Override // com.google.android.recaptcha.internal.zzml, com.google.android.recaptcha.internal.zzmm
-    protected final /* synthetic */ Object zzb() {
+    public final /* synthetic */ Object zzb() {
         return this.zzb;
     }
 
     @Override // com.google.android.recaptcha.internal.zzmn, com.google.android.recaptcha.internal.zzml
-    protected final /* synthetic */ Collection zzc() {
+    public final /* synthetic */ Collection zzc() {
         return this.zzb;
     }
 
     @Override // com.google.android.recaptcha.internal.zzmn
-    protected final Queue zzd() {
+    public final Queue zzd() {
         return this.zzb;
-    }
-
-    private zzmj(int i) {
-        if (i < 0) {
-            throw new IllegalArgumentException(zzmg.zza("maxSize (%s) must >= 0", Integer.valueOf(i)));
-        }
-        this.zzb = new ArrayDeque(i);
-        this.zza = i;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzml, java.util.Collection, java.util.Queue
-    public final boolean add(Object obj) {
-        obj.getClass();
-        int i = this.zza;
-        if (i == 0) {
-            return true;
-        }
-        if (size() == i) {
-            this.zzb.remove();
-        }
-        this.zzb.add(obj);
-        return true;
     }
 }

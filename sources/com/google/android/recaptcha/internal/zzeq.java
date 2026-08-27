@@ -4,36 +4,39 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.recaptcha.RecaptchaAction;
 import com.google.android.recaptcha.RecaptchaClient;
 import com.google.android.recaptcha.RecaptchaTasksClient;
-import kotlin.Lazy;
-import kotlin.LazyKt;
-import kotlin.Result;
-import kotlin.ResultKt;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.text.Regex;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.Deferred;
+import gd.c;
+import h7.j6;
+import h7.k6;
+import id.f0;
+import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
+import pc.f;
+import pc.g;
 
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
 /* loaded from: classes.dex */
 public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
-    private static final Regex zza = new Regex("^[a-zA-Z0-9/_]{1,100}$");
+    private static final c zza = new c();
     private final zzdw zzb;
     private final String zzc;
     private final zzhh zzd;
-    private final Lazy zze;
+    private final pc.c zze;
 
     public zzeq(zzdw zzdwVar, String str, zzhh zzhhVar) {
         this.zzb = zzdwVar;
         this.zzc = str;
         this.zzd = zzhhVar;
-        int i = zzby.zza;
-        this.zze = LazyKt.lazy(zzep.zza);
+        int i10 = zzby.zza;
+        this.zze = j6.a(zzep.zza);
     }
 
-    public static final /* synthetic */ void zzd(zzeq zzeqVar, long j, RecaptchaAction recaptchaAction) {
-        zzcg zzcgVar = !zza.matches(recaptchaAction.getAction()) ? new zzcg(zzce.zzg, zzcd.zzh, null, null, 12, null) : null;
-        if (j < 5000) {
+    public static final void zzd(zzeq zzeqVar, long j10, RecaptchaAction recaptchaAction) {
+        c cVar = zza;
+        String input = recaptchaAction.getAction();
+        cVar.getClass();
+        j.e(input, "input");
+        zzcg zzcgVar = !cVar.a.matcher(input).matches() ? new zzcg(zzce.zzg, zzcd.zzh, null, null, 12, null) : null;
+        if (j10 < 5000) {
             zzcgVar = new zzcg(zzce.zzb, zzcd.zzI, null, null, 12, null);
         }
         if (zzcgVar != null) {
@@ -42,130 +45,128 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0031  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x002f  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zze(RecaptchaAction recaptchaAction, long j, Continuation continuation) {
+    public final Object zze(RecaptchaAction recaptchaAction, long j10, rc.c cVar) {
         zzek zzekVar;
-        int i;
-        if (continuation instanceof zzek) {
-            zzekVar = (zzek) continuation;
-            int i2 = zzekVar.zzc;
-            if ((i2 & TLObject.FLAG_31) != 0) {
-                zzekVar.zzc = i2 - TLObject.FLAG_31;
+        int i10;
+        if (cVar instanceof zzek) {
+            zzekVar = (zzek) cVar;
+            int i11 = zzekVar.zzc;
+            if ((i11 & TLObject.FLAG_31) != 0) {
+                zzekVar.zzc = i11 - TLObject.FLAG_31;
                 Object obj = zzekVar.zza;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = zzekVar.zzc;
-                if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
+                sc.a aVar = sc.a.a;
+                i10 = zzekVar.zzc;
+                if (i10 != 0) {
+                    k6.b(obj);
                     zzhh zzhhVar = this.zzd;
-                    zzem zzemVar = new zzem(this, j, recaptchaAction, null);
+                    zzem zzemVar = new zzem(this, j10, recaptchaAction, null);
                     zzekVar.zzc = 1;
                     obj = zzemVar.invoke(zzhhVar, zzekVar);
-                    if (obj == coroutine_suspended) {
-                        return coroutine_suspended;
+                    if (obj == aVar) {
+                        return aVar;
                     }
                 } else {
-                    if (i != 1) {
+                    if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    ResultKt.throwOnFailure(obj);
+                    k6.b(obj);
                 }
-                return ((Result) obj).unbox-impl();
+                return ((f) obj).a;
             }
         }
-        zzekVar = new zzek(this, continuation);
+        zzekVar = new zzek(this, cVar);
         Object obj2 = zzekVar.zza;
-        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        i = zzekVar.zzc;
-        if (i != 0) {
+        sc.a aVar2 = sc.a.a;
+        i10 = zzekVar.zzc;
+        if (i10 != 0) {
         }
-        return ((Result) obj2).unbox-impl();
+        return ((f) obj2).a;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0037  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0033  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
     @Override // com.google.android.recaptcha.RecaptchaClient
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object execute-0E7RQCE(RecaptchaAction recaptchaAction, long j, Continuation continuation) {
+    public final Object execute-0E7RQCE(RecaptchaAction recaptchaAction, long j10, rc.c cVar) {
         zzei zzeiVar;
-        int i;
-        if (continuation instanceof zzei) {
-            zzeiVar = (zzei) continuation;
-            int i2 = zzeiVar.zzc;
-            if ((i2 & TLObject.FLAG_31) != 0) {
-                zzeiVar.zzc = i2 - TLObject.FLAG_31;
+        int i10;
+        if (cVar instanceof zzei) {
+            zzeiVar = (zzei) cVar;
+            int i11 = zzeiVar.zzc;
+            if ((i11 & TLObject.FLAG_31) != 0) {
+                zzeiVar.zzc = i11 - TLObject.FLAG_31;
                 Object obj = zzeiVar.zza;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = zzeiVar.zzc;
-                if (i == 0) {
-                    if (i != 1) {
+                Object obj2 = sc.a.a;
+                i10 = zzeiVar.zzc;
+                if (i10 == 0) {
+                    if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    ResultKt.throwOnFailure(obj);
-                    return ((Result) obj).unbox-impl();
+                    k6.b(obj);
+                    return ((f) obj).a;
                 }
-                ResultKt.throwOnFailure(obj);
+                k6.b(obj);
                 zzeiVar.zzc = 1;
-                Object zze = zze(recaptchaAction, j, zzeiVar);
-                return zze == coroutine_suspended ? coroutine_suspended : zze;
+                Object zze = zze(recaptchaAction, j10, zzeiVar);
+                return zze == obj2 ? obj2 : zze;
             }
         }
-        zzeiVar = new zzei(this, continuation);
-        Object obj2 = zzeiVar.zza;
-        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        i = zzeiVar.zzc;
-        if (i == 0) {
+        zzeiVar = new zzei(this, cVar);
+        Object obj3 = zzeiVar.zza;
+        Object obj22 = sc.a.a;
+        i10 = zzeiVar.zzc;
+        if (i10 == 0) {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0037  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0033  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
     @Override // com.google.android.recaptcha.RecaptchaClient
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object execute-gIAlu-s(RecaptchaAction recaptchaAction, Continuation continuation) {
+    public final Object execute-gIAlu-s(RecaptchaAction recaptchaAction, rc.c cVar) {
         zzej zzejVar;
-        int i;
-        if (continuation instanceof zzej) {
-            zzejVar = (zzej) continuation;
-            int i2 = zzejVar.zzc;
-            if ((i2 & TLObject.FLAG_31) != 0) {
-                zzejVar.zzc = i2 - TLObject.FLAG_31;
+        int i10;
+        if (cVar instanceof zzej) {
+            zzejVar = (zzej) cVar;
+            int i11 = zzejVar.zzc;
+            if ((i11 & TLObject.FLAG_31) != 0) {
+                zzejVar.zzc = i11 - TLObject.FLAG_31;
                 Object obj = zzejVar.zza;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = zzejVar.zzc;
-                if (i == 0) {
-                    if (i != 1) {
+                Object obj2 = sc.a.a;
+                i10 = zzejVar.zzc;
+                if (i10 == 0) {
+                    if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    ResultKt.throwOnFailure(obj);
-                    return ((Result) obj).unbox-impl();
+                    k6.b(obj);
+                    return ((f) obj).a;
                 }
-                ResultKt.throwOnFailure(obj);
+                k6.b(obj);
                 zzejVar.zzc = 1;
-                Object obj2 = execute-0E7RQCE(recaptchaAction, 10000L, zzejVar);
-                return obj2 == coroutine_suspended ? coroutine_suspended : obj2;
+                Object obj3 = execute-0E7RQCE(recaptchaAction, 10000L, zzejVar);
+                return obj3 == obj2 ? obj2 : obj3;
             }
         }
-        zzejVar = new zzej(this, continuation);
-        Object obj3 = zzejVar.zza;
-        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        i = zzejVar.zzc;
-        if (i == 0) {
+        zzejVar = new zzej(this, cVar);
+        Object obj4 = zzejVar.zza;
+        Object obj22 = sc.a.a;
+        i10 = zzejVar.zzc;
+        if (i10 == 0) {
         }
     }
 
     @Override // com.google.android.recaptcha.RecaptchaTasksClient
     public final Task<String> executeTask(RecaptchaAction recaptchaAction) {
-        Deferred async$default;
-        async$default = BuildersKt__Builders_commonKt.async$default(((zzcr) this.zze.getValue()).zzb(), null, null, new zzen(this, recaptchaAction, 10000L, null), 3, null);
-        return zzbv.zza(async$default);
+        return zzbv.zza(f0.c(((zzcr) ((g) this.zze).a()).zzb(), new zzen(this, recaptchaAction, 10000L, null)));
     }
 
     public final String zzc() {
@@ -173,9 +174,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
     }
 
     @Override // com.google.android.recaptcha.RecaptchaTasksClient
-    public final Task<String> executeTask(RecaptchaAction recaptchaAction, long j) {
-        Deferred async$default;
-        async$default = BuildersKt__Builders_commonKt.async$default(((zzcr) this.zze.getValue()).zzb(), null, null, new zzen(this, recaptchaAction, j, null), 3, null);
-        return zzbv.zza(async$default);
+    public final Task<String> executeTask(RecaptchaAction recaptchaAction, long j10) {
+        return zzbv.zza(f0.c(((zzcr) ((g) this.zze).a()).zzb(), new zzen(this, recaptchaAction, j10, null)));
     }
 }

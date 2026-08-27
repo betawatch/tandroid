@@ -1,10 +1,13 @@
 package org.scilab.forge.jlatexmath;
 
-/* loaded from: classes3.dex */
+import a9.p;
+
+/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* loaded from: classes.dex */
 public class SymbolNotFoundException extends JMathTeXException {
     private static final long serialVersionUID = -3005021333407670912L;
 
-    protected SymbolNotFoundException(String str) {
-        super("There's no symbol with the name '" + str + "' defined in '" + TeXSymbolParser.RESOURCE_NAME + "'!");
+    public SymbolNotFoundException(String str) {
+        super(p.m("There's no symbol with the name '", str, "' defined in 'TeXSymbols.xml'!"));
     }
 }
