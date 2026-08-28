@@ -1,13 +1,13 @@
 package v2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c implements r9.d {
+public final class c implements q9.d {
     public static final c a = new c();
-    public static final r9.c b = r9.c.c("logRequest");
+    public static final q9.c b = q9.c.c("logRequest");
 
-    @Override // r9.a
+    @Override // q9.a
     public final void a(Object obj, Object obj2) {
-        ((r9.e) obj2).a(b, ((i) ((o) obj)).a);
+        ((q9.e) obj2).g(b, ((i) ((o) obj)).a);
     }
 }

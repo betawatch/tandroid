@@ -99,29 +99,29 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
     @Override // j$.time.chrono.b, j$.time.temporal.Temporal
     public final long g(Temporal temporal, j$.time.temporal.q qVar) {
         Objects.requireNonNull(temporal, "endExclusive");
-        b x8 = a().x(temporal);
+        b x10 = a().x(temporal);
         if (!(qVar instanceof ChronoUnit)) {
             Objects.requireNonNull(qVar, "unit");
-            return qVar.between(this, x8);
+            return qVar.between(this, x10);
         }
         switch (c.a[((ChronoUnit) qVar).ordinal()]) {
             case 1:
-                return x8.z() - z();
+                return x10.z() - z();
             case 2:
-                return (x8.z() - z()) / 7;
+                return (x10.z() - z()) / 7;
             case 3:
-                return I(x8);
+                return I(x10);
             case 4:
-                return I(x8) / 12;
+                return I(x10) / 12;
             case 5:
-                return I(x8) / 120;
+                return I(x10) / 120;
             case 6:
-                return I(x8) / 1200;
+                return I(x10) / 1200;
             case 7:
-                return I(x8) / 12000;
+                return I(x10) / 12000;
             case 8:
                 j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-                return x8.y(aVar) - y(aVar);
+                return x10.y(aVar) - y(aVar);
             default:
                 throw new j$.time.temporal.r("Unsupported unit: " + qVar);
         }

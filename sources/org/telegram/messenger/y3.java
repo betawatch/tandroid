@@ -1,32 +1,38 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class y3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+import org.telegram.messenger.GiftAuctionController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ y3(int i10, boolean z10) {
-        this.a = i10;
-        this.b = z10;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class y3 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+
+    public /* synthetic */ y3(BaseController baseController, Object obj, Object obj2, Object obj3, int i9) {
+        this.a = i9;
+        this.b = baseController;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        boolean z10 = this.b;
-        switch (i10) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        switch (this.a) {
             case 0:
-                FingerprintController.generateNewKey(z10);
+                ((GiftAuctionController) this.b).lambda$sendBid$9((Utilities.Callback2) this.c, (GiftAuctionController.AuctionInternal) this.d, (TLRPC.TL_payments_getPaymentForm) this.e, (TLRPC.PaymentForm) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                FingerprintController.lambda$generateNewKey$0(z10);
-                break;
-            case 2:
-                LiteMode.lambda$onPowerSaverApplied$0(z10);
+                ((MediaDataController) this.b).lambda$searchStickers$247((MediaDataController.SearchStickersKey) this.c, (MediaDataController.SearchStickersResult) this.d, (Utilities.Callback) this.e, (TLRPC.messages_FoundStickers) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewTheme, Boolean.FALSE, Boolean.valueOf(z10));
+                ((MediaDataController) this.b).lambda$getStickerSet$38((String) this.c, (Utilities.Callback) this.d, (TLRPC.InputStickerSet) this.e, (Boolean) obj, (TLRPC.TL_messages_stickerSet) obj2);
                 break;
         }
     }

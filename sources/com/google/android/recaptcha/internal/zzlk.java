@@ -1,16 +1,17 @@
 package com.google.android.recaptcha.internal;
 
-import ad.p;
-import h7.k6;
-import id.f0;
-import id.s;
-import id.t;
+import g7.y5;
+import hd.f0;
+import hd.s;
+import hd.t;
 import java.util.Map;
-import pc.f;
-import rc.c;
-import tc.i;
+import oc.f;
+import qc.c;
+import rc.a;
+import sc.i;
+import zc.p;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class zzlk extends i implements p {
     int zza;
@@ -25,21 +26,21 @@ final class zzlk extends i implements p {
         this.zzc = str;
     }
 
-    @Override // tc.a
+    @Override // sc.a
     public final c create(Object obj, c cVar) {
         zzlk zzlkVar = new zzlk(this.zzb, this.zzc, cVar);
         zzlkVar.zzd = obj;
         return zzlkVar;
     }
 
-    @Override // ad.p
+    @Override // zc.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlk) create((zzhk) obj, (c) obj2)).invokeSuspend(pc.i.a);
+        return ((zzlk) create((zzhk) obj, (c) obj2)).invokeSuspend(oc.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:22:0x00c6, code lost:
     
-        if (((id.t) r2).h(r16) == r0) goto L45;
+        if (((hd.t) r2).h(r16) == r0) goto L45;
      */
     /* JADX WARN: Code restructure failed: missing block: B:25:0x00b4, code lost:
     
@@ -57,7 +58,7 @@ final class zzlk extends i implements p {
     
         if (r7 != r0) goto L20;
      */
-    @Override // tc.a
+    @Override // sc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -71,11 +72,11 @@ final class zzlk extends i implements p {
         Map map2;
         zzcr zzD;
         Object h;
-        sc.a aVar = sc.a.a;
-        int i10 = this.zza;
+        a aVar = a.a;
+        int i9 = this.zza;
         try {
-        } catch (Exception e9) {
-            zzcg zza3 = zzh.zza(e9, new zzcg(zzce.zzb, zzcd.zzW, e9.getMessage(), null, 8, null));
+        } catch (Exception e10) {
+            zzcg zza3 = zzh.zza(e10, new zzcg(zzce.zzb, zzcd.zzW, e10.getMessage(), null, 8, null));
             zzly zzlyVar = this.zzb;
             String str = this.zzc;
             map = zzlyVar.zzd;
@@ -83,23 +84,23 @@ final class zzlk extends i implements p {
             if (sVar != null) {
                 ((t) sVar).L(zza3);
             }
-            a2 = k6.a(zza3);
+            a2 = y5.a(zza3);
         }
-        if (i10 == 0) {
-            k6.b(obj);
+        if (i9 == 0) {
+            y5.b(obj);
             zzhkVar = (zzhk) this.zzd;
             zzdj zzn = this.zzb.zzn();
             zzmc zzmcVar = zzmc.zzd;
             this.zzd = zzhkVar;
             this.zza = 1;
             zza = zzn.zza(zzmcVar, this);
-        } else if (i10 == 1) {
+        } else if (i9 == 1) {
             zzhkVar = (zzhk) this.zzd;
-            k6.b(obj);
+            y5.b(obj);
             zza = obj;
-        } else if (i10 == 2) {
+        } else if (i9 == 2) {
             zzhkVar = (zzhk) this.zzd;
-            k6.b(obj);
+            y5.b(obj);
             zza2 = obj;
             if (!((Boolean) zza2).booleanValue()) {
                 zzly zzlyVar2 = this.zzb;
@@ -110,16 +111,16 @@ final class zzlk extends i implements p {
             s zzz = this.zzb.zzz();
             this.zzd = null;
             this.zza = 5;
-        } else if (i10 == 3) {
+        } else if (i9 == 3) {
             zzhkVar = (zzhk) this.zzd;
-            k6.b(obj);
+            y5.b(obj);
             zzu = obj;
             this.zzd = null;
             this.zza = 4;
         } else {
-            if (i10 != 4) {
-                if (i10 != 5) {
-                    k6.b(obj);
+            if (i9 != 4) {
+                if (i9 != 5) {
+                    y5.b(obj);
                     h = obj;
                     zzxx zzxxVar = (zzxx) h;
                     zzxw zzf = zzxx.zzf();
@@ -134,7 +135,7 @@ final class zzlk extends i implements p {
                     a2 = zzf.zzk();
                     return new f(a2);
                 }
-                k6.b(obj);
+                y5.b(obj);
                 t a3 = f0.a();
                 zzly zzlyVar3 = this.zzb;
                 map2 = zzlyVar3.zzd;
@@ -164,13 +165,13 @@ final class zzlk extends i implements p {
                 a2 = zzf5.zzk();
                 return new f(a2);
             }
-            k6.b(obj);
+            y5.b(obj);
             s zzz2 = this.zzb.zzz();
             this.zzd = null;
             this.zza = 5;
         }
         if (((Boolean) zza).booleanValue()) {
-            return new f(k6.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null)));
+            return new f(y5.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null)));
         }
         zzdj zzn2 = this.zzb.zzn();
         zzmc zzmcVar2 = zzmc.zzc;

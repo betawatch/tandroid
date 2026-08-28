@@ -3,33 +3,34 @@ package p4;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.SystemClock;
-import com.google.android.exoplayer2.upstream.e0;
 import com.google.android.exoplayer2.upstream.k0;
 import com.google.android.exoplayer2.upstream.l0;
 import com.google.android.exoplayer2.upstream.n0;
 import com.google.android.exoplayer2.upstream.p0;
 import com.google.android.exoplayer2.upstream.q0;
 import com.google.android.exoplayer2.upstream.t0;
+import d5.f0;
 import h3.s0;
 import h3.t1;
-import j4.g0;
+import j4.h0;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import n5.e0;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.j70;
+import org.telegram.ui.fk0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class c implements l0 {
-    public static final j70 A = new j70(19);
-    public final m5.o a;
+    public static final fk0 A = new fk0(14);
+    public final e0 a;
     public final q b;
-    public final ab.a c;
-    public g0 f;
+    public final v9.d c;
+    public h0 f;
     public q0 h;
     public Handler n;
     public o4.m r;
@@ -41,10 +42,10 @@ public final class c implements l0 {
     public final HashMap d = new HashMap();
     public long y = -9223372036854775807L;
 
-    public c(m5.o oVar, ab.a aVar, q qVar) {
-        this.a = oVar;
+    public c(e0 e0Var, v9.d dVar, q qVar) {
+        this.a = e0Var;
         this.b = qVar;
-        this.c = aVar;
+        this.c = dVar;
     }
 
     public final j a(Uri uri, boolean z10) {
@@ -52,12 +53,12 @@ public final class c implements l0 {
         j jVar = ((b) hashMap.get(uri)).d;
         if (jVar != null && z10 && !uri.equals(this.v)) {
             List list = this.s.e;
-            int i10 = 0;
+            int i9 = 0;
             while (true) {
-                if (i10 >= list.size()) {
+                if (i9 >= list.size()) {
                     break;
                 }
-                if (uri.equals(((l) list.get(i10)).a)) {
+                if (uri.equals(((l) list.get(i9)).a)) {
                     j jVar2 = this.w;
                     if (jVar2 == null || !jVar2.o) {
                         this.v = uri;
@@ -72,7 +73,7 @@ public final class c implements l0 {
                         return jVar;
                     }
                 } else {
-                    i10++;
+                    i9++;
                 }
             }
         }
@@ -82,38 +83,38 @@ public final class c implements l0 {
     public final Uri b(Uri uri) {
         f fVar;
         j jVar = this.w;
-        if (jVar == null || !jVar.v.e || (fVar = (f) ((p8.q0) jVar.t).get(uri)) == null) {
+        if (jVar == null || !jVar.v.e || (fVar = (f) ((o8.q0) jVar.t).get(uri)) == null) {
             return uri;
         }
         Uri.Builder buildUpon = uri.buildUpon();
         buildUpon.appendQueryParameter("_HLS_msn", String.valueOf(fVar.b));
-        int i10 = fVar.c;
-        if (i10 != -1) {
-            buildUpon.appendQueryParameter("_HLS_part", String.valueOf(i10));
+        int i9 = fVar.c;
+        if (i9 != -1) {
+            buildUpon.appendQueryParameter("_HLS_part", String.valueOf(i9));
         }
         return buildUpon.build();
     }
 
     public final boolean c(Uri uri) {
-        int i10;
+        int i9;
         b bVar = (b) this.d.get(uri);
         if (bVar.d == null) {
             return false;
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        long max = Math.max(30000L, d5.g0.S(bVar.d.u));
+        long max = Math.max(30000L, f0.S(bVar.d.u));
         j jVar = bVar.d;
-        return jVar.o || (i10 = jVar.d) == 2 || i10 == 1 || bVar.e + max > elapsedRealtime;
+        return jVar.o || (i9 = jVar.d) == 2 || i9 == 1 || bVar.e + max > elapsedRealtime;
     }
 
     @Override // com.google.android.exoplayer2.upstream.l0
-    public final void d(n0 n0Var, long j10, long j11, boolean z10) {
+    public final void e(n0 n0Var, long j10, long j11, boolean z10) {
         t0 t0Var = (t0) n0Var;
         long j12 = t0Var.a;
         Uri uri = t0Var.d.c;
-        j4.p pVar = new j4.p();
+        j4.q qVar = new j4.q();
         this.c.getClass();
-        this.f.d(pVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        this.f.d(qVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:23:0x0054  */
@@ -123,35 +124,35 @@ public final class c implements l0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final k0 h(n0 n0Var, IOException iOException, int i10) {
+    public final k0 h(n0 n0Var, IOException iOException, int i9) {
         long j10;
         t0 t0Var = (t0) n0Var;
         long j11 = t0Var.a;
         Uri uri = t0Var.d.c;
-        j4.p pVar = new j4.p();
-        int i11 = t0Var.c;
+        j4.q qVar = new j4.q();
+        int i10 = t0Var.c;
         this.c.getClass();
-        if (!(iOException instanceof t1) && !(iOException instanceof FileNotFoundException) && !(iOException instanceof e0) && !(iOException instanceof p0)) {
-            int i12 = com.google.android.exoplayer2.upstream.n.b;
+        if (!(iOException instanceof t1) && !(iOException instanceof FileNotFoundException) && !(iOException instanceof com.google.android.exoplayer2.upstream.e0) && !(iOException instanceof p0)) {
+            int i11 = com.google.android.exoplayer2.upstream.n.b;
             for (Throwable th = iOException; th != null; th = th.getCause()) {
                 if (!(th instanceof com.google.android.exoplayer2.upstream.n) || ((com.google.android.exoplayer2.upstream.n) th).a != 2008) {
                 }
             }
-            j10 = Math.min((i10 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
+            j10 = Math.min((i9 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
             boolean z10 = j10 == -9223372036854775807L;
-            this.f.i(pVar, i11, iOException, z10);
+            this.f.i(qVar, i10, iOException, z10);
             return !z10 ? q0.f : new k0(0, j10, false);
         }
         j10 = -9223372036854775807L;
         if (j10 == -9223372036854775807L) {
         }
-        this.f.i(pVar, i11, iOException, z10);
+        this.f.i(qVar, i10, iOException, z10);
         if (!z10) {
         }
     }
 
     @Override // com.google.android.exoplayer2.upstream.l0
-    public final void l(n0 n0Var, long j10, long j11) {
+    public final void m(n0 n0Var, long j10, long j11) {
         m mVar;
         t0 t0Var = (t0) n0Var;
         n nVar = (n) t0Var.f;
@@ -174,19 +175,19 @@ public final class c implements l0 {
         this.e.add(new a(this));
         List list2 = mVar.d;
         int size = list2.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            Uri uri = (Uri) list2.get(i10);
+        for (int i9 = 0; i9 < size; i9++) {
+            Uri uri = (Uri) list2.get(i9);
             this.d.put(uri, new b(this, uri));
         }
         Uri uri2 = t0Var.d.c;
-        j4.p pVar = new j4.p();
+        j4.q qVar = new j4.q();
         b bVar = (b) this.d.get(this.v);
         if (z10) {
-            bVar.e((j) nVar);
+            bVar.d((j) nVar);
         } else {
             bVar.c(bVar.a);
         }
         this.c.getClass();
-        this.f.f(pVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        this.f.f(qVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 }

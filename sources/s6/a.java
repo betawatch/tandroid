@@ -1,18 +1,20 @@
 package s6;
 
-import android.os.IInterface;
 import com.google.android.gms.common.api.Status;
-import r6.m;
-import r6.r;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import f7.h5;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public interface a extends IInterface {
-    void U(Status status, r6.e eVar);
+public final class a extends com.google.android.gms.common.api.internal.i {
+    public final /* synthetic */ TaskCompletionSource b;
 
-    void h(Status status, m mVar);
+    public a(TaskCompletionSource taskCompletionSource) {
+        this.b = taskCompletionSource;
+    }
 
-    void q(Status status, r6.b bVar);
-
-    void u0(Status status, r rVar);
+    @Override // com.google.android.gms.common.api.internal.j
+    public final void D(Status status) {
+        h5.a(status, null, this.b);
+    }
 }

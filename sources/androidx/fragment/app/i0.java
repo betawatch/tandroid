@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i0 implements g0 {
     public final /* synthetic */ j0 a;
@@ -22,19 +22,19 @@ public final class i0 implements g0 {
         if (j0.K(2)) {
             Log.v("FragmentManager", "FragmentManager has the following pending actions inside of prepareBackStackState: " + j0Var.a);
         }
-        int i10 = 0;
+        int i9 = 0;
         if (j0Var.d.isEmpty()) {
             Log.i("FragmentManager", "Ignoring call to start back stack pop because the back stack is empty.");
             U = false;
         } else {
-            a aVar = (a) i0.a.i(1, j0Var.d);
+            a aVar = (a) j3.r0.j(1, j0Var.d);
             j0Var.h = aVar;
             ArrayList arrayList4 = aVar.a;
             int size = arrayList4.size();
-            int i11 = 0;
-            while (i11 < size) {
-                Object obj = arrayList4.get(i11);
-                i11++;
+            int i10 = 0;
+            while (i10 < size) {
+                Object obj = arrayList4.get(i10);
+                i10++;
                 s sVar = ((q0) obj).b;
                 if (sVar != null) {
                     sVar.x = true;
@@ -46,16 +46,16 @@ public final class i0 implements g0 {
             ((Boolean) arrayList2.get(arrayList.size() - 1)).getClass();
             LinkedHashSet linkedHashSet = new LinkedHashSet();
             int size2 = arrayList.size();
-            int i12 = 0;
-            while (i12 < size2) {
-                Object obj2 = arrayList.get(i12);
-                i12++;
+            int i11 = 0;
+            while (i11 < size2) {
+                Object obj2 = arrayList.get(i11);
+                i11++;
                 linkedHashSet.addAll(j0.F((a) obj2));
             }
             int size3 = arrayList3.size();
-            while (i10 < size3) {
-                Object obj3 = arrayList3.get(i10);
-                i10++;
+            while (i9 < size3) {
+                Object obj3 = arrayList3.get(i9);
+                i9++;
                 if (obj3 != null) {
                     throw new ClassCastException();
                 }

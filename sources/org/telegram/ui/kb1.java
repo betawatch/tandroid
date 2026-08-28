@@ -1,67 +1,86 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class kb1 extends FrameLayout {
+public final class kb1 extends f2.d1 {
     public final /* synthetic */ int a;
-    public final RectF b;
-    public final /* synthetic */ nc1 c;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kb1(nc1 nc1Var, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.c = nc1Var;
-                super(context);
-                this.b = new RectF();
+    public /* synthetic */ kb1(Object obj, int i9) {
+        this.a = i9;
+        this.b = obj;
+    }
+
+    @Override // f2.d1
+    public void a(RecyclerView recyclerView, int i9) {
+        switch (this.a) {
+            case 0:
+                if (i9 == 0) {
+                    ((oc1) this.b).n0 = false;
+                    break;
+                }
                 break;
-            default:
-                this.c = nc1Var;
-                this.b = new RectF();
+            case 1:
+                if (i9 == 1) {
+                    AndroidUtilities.hideKeyboard(((kd1) this.b).getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
+            case 3:
+                if (i9 == 1) {
+                    AndroidUtilities.hideKeyboard(((UsersSelectActivity) this.b).c);
+                    break;
+                }
+                break;
+            case 4:
+                WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) this.b;
+                if (i9 == 1) {
+                    AndroidUtilities.hideKeyboard(wallpapersListActivity.getParentActivity().getCurrentFocus());
+                }
+                wallpapersListActivity.f0 = i9 != 0;
                 break;
         }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
+    @Override // f2.d1
+    public void b(RecyclerView recyclerView, int i9, int i10) {
         switch (this.a) {
             case 0:
-                float measuredWidth = getMeasuredWidth();
-                float measuredHeight = getMeasuredHeight();
-                RectF rectF = this.b;
-                rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-                nc1 nc1Var = this.c;
-                kb1 kb1Var = nc1Var.z0;
-                cc1 cc1Var = nc1Var.t0;
-                mb1 mb1Var = nc1Var.a;
-                org.telegram.ui.ActionBar.g6.s(kb1Var, cc1Var, mb1Var);
-                canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, mb1Var.N("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.g6.a1()) {
-                    canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, mb1Var.N("paintChatActionBackgroundDarken"));
-                    break;
+                oc1 oc1Var = (oc1) this.b;
+                oc1Var.q0.f1();
+                oc1Var.n0 = true;
+                break;
+            case 2:
+                re1 re1Var = (re1) this.b;
+                if (re1Var.i0 && re1Var.R.N0() + 5 >= re1Var.g0) {
+                    re1Var.J(re1Var.U);
+                }
+                we1 we1Var = re1Var.p0;
+                if (we1Var.o0) {
+                    if (i9 != 0 || i10 != 0) {
+                        AndroidUtilities.hideKeyboard(we1Var.l0.getSearchField());
+                        break;
+                    }
                 }
                 break;
-            default:
-                float measuredWidth2 = getMeasuredWidth();
-                float measuredHeight2 = getMeasuredHeight();
-                RectF rectF2 = this.b;
-                rectF2.set(0.0f, 0.0f, measuredWidth2, measuredHeight2);
-                nc1 nc1Var2 = this.c;
-                kb1 kb1Var2 = nc1Var2.A0;
-                cc1 cc1Var2 = nc1Var2.t0;
-                mb1 mb1Var2 = nc1Var2.a;
-                org.telegram.ui.ActionBar.g6.s(kb1Var2, cc1Var2, mb1Var2);
-                canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, mb1Var2.N("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.g6.a1()) {
-                    canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, mb1Var2.N("paintChatActionBackgroundDarken"));
-                    break;
+            case 4:
+                WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) this.b;
+                if (wallpapersListActivity.D.getAdapter() == wallpapersListActivity.F) {
+                    int L0 = wallpapersListActivity.G.L0();
+                    int abs = L0 == -1 ? 0 : Math.abs(wallpapersListActivity.G.N0() - L0) + 1;
+                    if (abs > 0) {
+                        int B = wallpapersListActivity.G.B();
+                        if (abs != 0 && L0 + abs > B - 2) {
+                            bi1 bi1Var = wallpapersListActivity.F;
+                            if (!bi1Var.f && bi1Var.s == 0) {
+                                bi1Var.F(bi1Var.h, bi1Var.r, true);
+                                break;
+                            }
+                        }
+                    }
                 }
                 break;
         }

@@ -1,8 +1,8 @@
 package n4;
 
-import d5.g0;
+import d5.f0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i {
     public final String a;
@@ -27,7 +27,7 @@ public final class i {
             return false;
         }
         i iVar = (i) obj;
-        return g0.a(this.a, iVar.a) && g0.a(this.b, iVar.b) && g0.a(this.c, iVar.c) && g0.a(this.d, iVar.d) && g0.a(this.e, iVar.e);
+        return f0.a(this.a, iVar.a) && f0.a(this.b, iVar.b) && f0.a(this.c, iVar.c) && f0.a(this.d, iVar.d) && f0.a(this.e, iVar.e);
     }
 
     public final int hashCode() {

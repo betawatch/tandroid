@@ -1,9 +1,10 @@
 package k3;
 
-import d5.g0;
+import d5.f0;
+import j3.r0;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class f {
     public int a;
@@ -20,29 +21,29 @@ public final class f {
     public int l;
 
     public final String toString() {
-        int i10 = this.a;
-        int i11 = this.b;
-        int i12 = this.c;
-        int i13 = this.d;
-        int i14 = this.e;
-        int i15 = this.f;
-        int i16 = this.g;
-        int i17 = this.h;
-        int i18 = this.i;
-        int i19 = this.j;
+        int i9 = this.a;
+        int i10 = this.b;
+        int i11 = this.c;
+        int i12 = this.d;
+        int i13 = this.e;
+        int i14 = this.f;
+        int i15 = this.g;
+        int i16 = this.h;
+        int i17 = this.i;
+        int i18 = this.j;
         long j10 = this.k;
-        int i20 = this.l;
-        int i21 = g0.a;
+        int i19 = this.l;
+        int i20 = f0.a;
         Locale locale = Locale.US;
-        StringBuilder p6 = com.google.android.recaptcha.internal.a.p("DecoderCounters {\n decoderInits=", i10, ",\n decoderReleases=", i11, "\n queuedInputBuffers=");
-        i0.a.x(p6, i12, "\n skippedInputBuffers=", i13, "\n renderedOutputBuffers=");
-        i0.a.x(p6, i14, "\n skippedOutputBuffers=", i15, "\n droppedBuffers=");
-        i0.a.x(p6, i16, "\n droppedInputBuffers=", i17, "\n maxConsecutiveDroppedBuffers=");
-        i0.a.x(p6, i18, "\n droppedToKeyframeEvents=", i19, "\n totalVideoFrameProcessingOffsetUs=");
-        p6.append(j10);
-        p6.append("\n videoFrameProcessingOffsetCount=");
-        p6.append(i20);
-        p6.append("\n}");
-        return p6.toString();
+        StringBuilder o6 = e2.c.o("DecoderCounters {\n decoderInits=", i9, ",\n decoderReleases=", i10, "\n queuedInputBuffers=");
+        r0.y(o6, i11, "\n skippedInputBuffers=", i12, "\n renderedOutputBuffers=");
+        r0.y(o6, i13, "\n skippedOutputBuffers=", i14, "\n droppedBuffers=");
+        r0.y(o6, i15, "\n droppedInputBuffers=", i16, "\n maxConsecutiveDroppedBuffers=");
+        r0.y(o6, i17, "\n droppedToKeyframeEvents=", i18, "\n totalVideoFrameProcessingOffsetUs=");
+        o6.append(j10);
+        o6.append("\n videoFrameProcessingOffsetCount=");
+        o6.append(i19);
+        o6.append("\n}");
+        return o6.toString();
     }
 }

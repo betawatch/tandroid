@@ -1,16 +1,66 @@
 package md;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes.dex */
-public final class d implements rc.c {
-    public static final d a = new d();
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-    @Override // rc.c
-    public final rc.h getContext() {
-        return rc.i.a;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public abstract class d {
+    public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(d.class, Object.class, "_next$volatile");
+    public static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(d.class, Object.class, "_prev$volatile");
+    private volatile /* synthetic */ Object _next$volatile;
+    private volatile /* synthetic */ Object _prev$volatile;
+
+    public d(t tVar) {
+        this._prev$volatile = tVar;
     }
 
-    @Override // rc.c
-    public final void resumeWith(Object obj) {
+    public final void b() {
+        b.set(this, null);
+    }
+
+    public final d c() {
+        Object obj = a.get(this);
+        if (obj == a.b) {
+            return null;
+        }
+        return (d) obj;
+    }
+
+    public abstract boolean d();
+
+    public final void e() {
+        d c10;
+        if (c() == null) {
+            return;
+        }
+        while (true) {
+            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = b;
+            d dVar = (d) atomicReferenceFieldUpdater.get(this);
+            while (dVar != null && dVar.d()) {
+                dVar = (d) atomicReferenceFieldUpdater.get(dVar);
+            }
+            d c11 = c();
+            kotlin.jvm.internal.i.b(c11);
+            while (c11.d() && (c10 = c11.c()) != null) {
+                c11 = c10;
+            }
+            while (true) {
+                Object obj = atomicReferenceFieldUpdater.get(c11);
+                d dVar2 = ((d) obj) == null ? null : dVar;
+                while (!atomicReferenceFieldUpdater.compareAndSet(c11, obj, dVar2)) {
+                    if (atomicReferenceFieldUpdater.get(c11) != obj) {
+                        break;
+                    }
+                }
+            }
+            if (dVar != null) {
+                a.set(dVar, c11);
+            }
+            if (!c11.d() || c11.c() == null) {
+                if (dVar == null || !dVar.d()) {
+                    return;
+                }
+            }
+        }
     }
 }

@@ -1,19 +1,20 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class e51 extends k51 {
-    public final /* synthetic */ f51 b3;
+public final class e51 extends f2.m0 {
+    public final /* synthetic */ i51 I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e51(f51 f51Var, f51 f51Var2, d dVar, c51 c51Var, c51 c51Var2) {
-        super(f51Var2, dVar, c51Var, c51Var2);
-        this.b3 = f51Var;
+    public e51(i51 i51Var, int i9) {
+        super(i9, false);
+        this.I = i51Var;
     }
 
-    @Override // org.telegram.ui.Components.zk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.b3.b = -1;
+    @Override // f2.m0
+    public final int W0(f2.n1 n1Var) {
+        return this.I.W2 ? AndroidUtilities.displaySize.y : super.W0(n1Var);
     }
 }

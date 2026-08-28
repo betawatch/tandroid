@@ -1,7 +1,7 @@
 package org.telegram.messenger.voip;
 
 import android.text.TextUtils;
-import gh.d1;
+import fh.f1;
 import java.io.File;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
@@ -16,13 +16,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.voip.e2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class VoIPDebugToSend {
     private final int currentAccount;
     private final HashMap<Long, Data> pending = new HashMap<>();
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public final class Data {
         long access_hash;
         long callId;
@@ -33,8 +33,8 @@ public class VoIPDebugToSend {
         }
     }
 
-    public VoIPDebugToSend(int i10) {
-        this.currentAccount = i10;
+    public VoIPDebugToSend(int i9) {
+        this.currentAccount = i9;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -50,7 +50,7 @@ public class VoIPDebugToSend {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$done$1(File file, TL_phone.saveCallDebug savecalldebug) {
-        FileLoader.getInstance(this.currentAccount).uploadFile(file.getAbsolutePath(), new d1(24, this, savecalldebug));
+        FileLoader.getInstance(this.currentAccount).uploadFile(file.getAbsolutePath(), new f1(24, this, savecalldebug));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -68,7 +68,7 @@ public class VoIPDebugToSend {
         if (!(tLObject instanceof TLRPC.TL_boolFalse) || TextUtils.isEmpty(data.logPath)) {
             return;
         }
-        Utilities.searchQueue.postRunnable(new k(this, data, new File(a9.p.p(new StringBuilder(), data.logPath, ".gzip")), savecalldebug, 0));
+        Utilities.searchQueue.postRunnable(new k(this, data, new File(aa.d.r(new StringBuilder(), data.logPath, ".gzip")), savecalldebug, 0));
     }
 
     public void done(long j10, boolean z10) {
@@ -91,8 +91,8 @@ public class VoIPDebugToSend {
         if (TextUtils.isEmpty(finalState.debugLog)) {
             try {
                 finalState.debugLog = VoIPService.getStringFromFile(e2.e("" + j10, true));
-            } catch (Exception e9) {
-                e9.printStackTrace();
+            } catch (Exception e10) {
+                e10.printStackTrace();
             }
         }
         Data data = new Data();

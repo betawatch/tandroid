@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class ResizeAtom extends Atom {
     private Atom base;
@@ -35,35 +35,35 @@ public class ResizeAtom extends Atom {
         float factor;
         float f10;
         double d;
+        double d9;
         double d10;
-        double d11;
         Box createBox = this.base.createBox(teXEnvironment);
-        int i10 = this.wunit;
-        if (i10 == -1 && this.hunit == -1) {
+        int i9 = this.wunit;
+        if (i9 == -1 && this.hunit == -1) {
             return createBox;
         }
-        if (i10 == -1 || this.hunit == -1) {
-            if (i10 == -1 || this.hunit != -1) {
+        if (i9 == -1 || this.hunit == -1) {
+            if (i9 == -1 || this.hunit != -1) {
                 factor = SpaceAtom.getFactor(this.hunit, teXEnvironment) * this.h;
                 f10 = createBox.height;
             } else {
-                factor = SpaceAtom.getFactor(i10, teXEnvironment) * this.w;
+                factor = SpaceAtom.getFactor(i9, teXEnvironment) * this.w;
                 f10 = createBox.width;
             }
             d = factor / f10;
         } else {
-            double factor2 = (SpaceAtom.getFactor(i10, teXEnvironment) * this.w) / createBox.width;
+            double factor2 = (SpaceAtom.getFactor(i9, teXEnvironment) * this.w) / createBox.width;
             double factor3 = (SpaceAtom.getFactor(this.hunit, teXEnvironment) * this.h) / createBox.height;
             if (!this.keepaspectratio) {
-                d10 = factor3;
-                d11 = factor2;
-                return new ScaleBox(createBox, d11, d10);
+                d9 = factor3;
+                d10 = factor2;
+                return new ScaleBox(createBox, d10, d9);
             }
             d = Math.min(factor2, factor3);
         }
-        d11 = d;
-        d10 = d11;
-        return new ScaleBox(createBox, d11, d10);
+        d10 = d;
+        d9 = d10;
+        return new ScaleBox(createBox, d10, d9);
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom

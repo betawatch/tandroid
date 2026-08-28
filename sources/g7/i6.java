@@ -1,55 +1,31 @@
 package g7;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.l80;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class i6 {
-    public static byte[] a(ArrayDeque arrayDeque, int i10) {
-        if (arrayDeque.isEmpty()) {
-            return new byte[0];
+    public static l80 a(Context context, float f10, int i9, boolean z10, org.telegram.ui.ActionBar.b6 b6Var) {
+        int i10 = org.telegram.ui.ActionBar.f6.gc;
+        l80 l80Var = new l80(context, null);
+        l80Var.setTextSize(1, f10);
+        l80Var.setTextColor(org.telegram.ui.ActionBar.f6.v0(i9, b6Var));
+        l80Var.setLinkTextColor(org.telegram.ui.ActionBar.f6.v0(i10, b6Var));
+        if (z10) {
+            l80Var.setTypeface(AndroidUtilities.bold());
         }
-        byte[] bArr = (byte[]) arrayDeque.remove();
-        if (bArr.length == i10) {
-            return bArr;
-        }
-        int length = i10 - bArr.length;
-        byte[] copyOf = Arrays.copyOf(bArr, i10);
-        while (length > 0) {
-            byte[] bArr2 = (byte[]) arrayDeque.remove();
-            int min = Math.min(length, bArr2.length);
-            System.arraycopy(bArr2, 0, copyOf, i10 - length, min);
-            length -= min;
-        }
-        return copyOf;
+        return l80Var;
     }
 
-    public static byte[] b(com.google.firebase.messaging.d dVar) {
-        ArrayDeque arrayDeque = new ArrayDeque(20);
-        int min = Math.min(8192, Math.max(128, Integer.highestOneBit(0) * 2));
-        int i10 = 0;
-        while (i10 < 2147483639) {
-            int min2 = Math.min(min, 2147483639 - i10);
-            byte[] bArr = new byte[min2];
-            arrayDeque.add(bArr);
-            int i11 = 0;
-            while (i11 < min2) {
-                int read = dVar.read(bArr, i11, min2 - i11);
-                if (read == -1) {
-                    return a(arrayDeque, i10);
-                }
-                i11 += read;
-                i10 += read;
-            }
-            long j10 = min * (min < 4096 ? 4 : 2);
-            min = j10 > 2147483647L ? ConnectionsManager.DEFAULT_DATACENTER_ID : j10 < -2147483648L ? TLObject.FLAG_31 : (int) j10;
+    public static TextView b(Context context, float f10, int i9, boolean z10, org.telegram.ui.ActionBar.b6 b6Var) {
+        TextView g10 = org.telegram.messenger.l0.g(context, 1, f10);
+        g10.setTextColor(org.telegram.ui.ActionBar.f6.v0(i9, b6Var));
+        if (z10) {
+            g10.setTypeface(AndroidUtilities.bold());
         }
-        if (dVar.read() == -1) {
-            return a(arrayDeque, 2147483639);
-        }
-        throw new OutOfMemoryError("input is too large to fit in a byte array");
+        return g10;
     }
 }

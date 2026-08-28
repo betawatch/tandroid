@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class UserConfig extends BaseController {
     private static volatile UserConfig[] Instance = new UserConfig[4];
@@ -80,8 +80,8 @@ public class UserConfig extends BaseController {
     LongSparseArray<SaveToGallerySettingsHelper.DialogException> userSaveGalleryExceptions;
     public int webappRatingLoadTime;
 
-    public UserConfig(int i10) {
-        super(i10);
+    public UserConfig(int i9) {
+        super(i9);
         this.sync = new Object();
         this.lastSendMessageId = -210000;
         this.lastBroadcastId = -1;
@@ -100,8 +100,29 @@ public class UserConfig extends BaseController {
 
     private void checkPremiumSelf(TLRPC.User user, final TLRPC.User user2) {
         if (user != null && user2 != null && user.premium != user2.premium) {
-            final int i10 = 0;
-            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.pl
+            final int i9 = 0;
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.kl
+                public final /* synthetic */ UserConfig b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    switch (i9) {
+                        case 0:
+                            this.b.lambda$checkPremiumSelf$1(user2);
+                            break;
+                        default:
+                            this.b.lambda$checkPremiumSelf$2(user2);
+                            break;
+                    }
+                }
+            });
+        } else if (user == null) {
+            final int i10 = 1;
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.kl
                 public final /* synthetic */ UserConfig b;
 
                 {
@@ -120,53 +141,32 @@ public class UserConfig extends BaseController {
                     }
                 }
             });
-        } else if (user == null) {
-            final int i11 = 1;
-            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.pl
-                public final /* synthetic */ UserConfig b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i11) {
-                        case 0:
-                            this.b.lambda$checkPremiumSelf$1(user2);
-                            break;
-                        default:
-                            this.b.lambda$checkPremiumSelf$2(user2);
-                            break;
-                    }
-                }
-            });
         }
     }
 
     public static int getActivatedAccountsCount() {
-        int i10 = 0;
-        for (int i11 = 0; i11 < 4; i11++) {
-            if (AccountInstance.getInstance(i11).getUserConfig().isClientActivated()) {
-                i10++;
+        int i9 = 0;
+        for (int i10 = 0; i10 < 4; i10++) {
+            if (AccountInstance.getInstance(i10).getUserConfig().isClientActivated()) {
+                i9++;
             }
         }
-        return i10;
+        return i9;
     }
 
-    public static UserConfig getInstance(int i10) {
+    public static UserConfig getInstance(int i9) {
         UserConfig userConfig;
-        UserConfig userConfig2 = Instance[i10];
+        UserConfig userConfig2 = Instance[i9];
         if (userConfig2 != null) {
             return userConfig2;
         }
         synchronized (UserConfig.class) {
             try {
-                userConfig = Instance[i10];
+                userConfig = Instance[i9];
                 if (userConfig == null) {
                     UserConfig[] userConfigArr = Instance;
-                    UserConfig userConfig3 = new UserConfig(i10);
-                    userConfigArr[i10] = userConfig3;
+                    UserConfig userConfig3 = new UserConfig(i9);
+                    userConfigArr[i9] = userConfig3;
                     userConfig = userConfig3;
                 }
             } catch (Throwable th) {
@@ -181,28 +181,28 @@ public class UserConfig extends BaseController {
     }
 
     public static int getProductionAccount() {
-        int i10 = -1;
-        while (i10 < 4) {
-            int i11 = i10 < 0 ? selectedAccount : i10;
-            if (getInstance(i11).isClientActivated() && !ConnectionsManager.getInstance(i11).isTestBackend()) {
-                return i11;
+        int i9 = -1;
+        while (i9 < 4) {
+            int i10 = i9 < 0 ? selectedAccount : i9;
+            if (getInstance(i10).isClientActivated() && !ConnectionsManager.getInstance(i10).isTestBackend()) {
+                return i10;
             }
-            i10++;
+            i9++;
         }
         return selectedAccount;
     }
 
     public static boolean hasPremiumOnAccounts() {
-        for (int i10 = 0; i10 < 4; i10++) {
-            if (AccountInstance.getInstance(i10).getUserConfig().isClientActivated() && AccountInstance.getInstance(i10).getUserConfig().getUserConfig().isPremium()) {
+        for (int i9 = 0; i9 < 4; i9++) {
+            if (AccountInstance.getInstance(i9).getUserConfig().isClientActivated() && AccountInstance.getInstance(i9).getUserConfig().getUserConfig().isPremium()) {
                 return true;
             }
         }
         return false;
     }
 
-    public static boolean isValidAccount(int i10) {
-        return i10 >= 0 && i10 < 4 && getInstance(i10).isClientActivated();
+    public static boolean isValidAccount(int i9) {
+        return i9 >= 0 && i9 < 4 && getInstance(i9).isClientActivated();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -212,7 +212,7 @@ public class UserConfig extends BaseController {
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.premiumStatusChangedGlobal, new Object[0]);
         getMediaDataController().loadPremiumPromo(false);
         getMediaDataController().loadReactions(false, null);
-        jh.s6 storiesController = getMessagesController().getStoriesController();
+        ih.v6 storiesController = getMessagesController().getStoriesController();
         storiesController.R = false;
         storiesController.S = null;
     }
@@ -236,7 +236,7 @@ public class UserConfig extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadGlobalTTl$4(TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new sg(15, this, tLObject));
+        AndroidUtilities.runOnUIThread(new og(15, this, tLObject));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -316,8 +316,8 @@ public class UserConfig extends BaseController {
                             serializedData3.cleanup();
                         }
                         edit.apply();
-                    } catch (Exception e9) {
-                        FileLog.e(e9);
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
                     }
                 } catch (Throwable th) {
                     throw th;
@@ -334,7 +334,7 @@ public class UserConfig extends BaseController {
 
     public void clearConfig() {
         getPreferences().edit().clear().apply();
-        int i10 = 0;
+        int i9 = 0;
         this.sharingMyLocationUntil = 0;
         this.lastMyLocationShareTime = 0;
         this.currentUser = null;
@@ -370,13 +370,13 @@ public class UserConfig extends BaseController {
         this.lastHintsSyncTime = ((int) (System.currentTimeMillis() / 1000)) - 90000;
         resetSavedPassword();
         while (true) {
-            if (i10 >= 4) {
+            if (i9 >= 4) {
                 SharedConfig.clearConfig();
                 break;
-            } else if (AccountInstance.getInstance(i10).getUserConfig().isClientActivated()) {
+            } else if (AccountInstance.getInstance(i9).getUserConfig().isClientActivated()) {
                 break;
             } else {
-                i10++;
+                i9++;
             }
         }
         saveConfig(true);
@@ -432,26 +432,26 @@ public class UserConfig extends BaseController {
         return user;
     }
 
-    public long[] getDialogLoadOffsets(int i10) {
+    public long[] getDialogLoadOffsets(int i9) {
         SharedPreferences preferences = getPreferences();
         StringBuilder sb2 = new StringBuilder("2dialogsLoadOffsetId");
-        sb2.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        int i11 = preferences.getInt(sb2.toString(), this.hasValidDialogLoadIds ? 0 : -1);
+        sb2.append(i9 == 0 ? "" : Integer.valueOf(i9));
+        int i10 = preferences.getInt(sb2.toString(), this.hasValidDialogLoadIds ? 0 : -1);
         StringBuilder sb3 = new StringBuilder("2dialogsLoadOffsetDate");
-        sb3.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        int i12 = preferences.getInt(sb3.toString(), this.hasValidDialogLoadIds ? 0 : -1);
+        sb3.append(i9 == 0 ? "" : Integer.valueOf(i9));
+        int i11 = preferences.getInt(sb3.toString(), this.hasValidDialogLoadIds ? 0 : -1);
         StringBuilder sb4 = new StringBuilder("2dialogsLoadOffsetUserId");
-        sb4.append(i10 == 0 ? "" : Integer.valueOf(i10));
+        sb4.append(i9 == 0 ? "" : Integer.valueOf(i9));
         long prefIntOrLong = AndroidUtilities.getPrefIntOrLong(preferences, sb4.toString(), this.hasValidDialogLoadIds ? 0L : -1L);
         StringBuilder sb5 = new StringBuilder("2dialogsLoadOffsetChatId");
-        sb5.append(i10 == 0 ? "" : Integer.valueOf(i10));
+        sb5.append(i9 == 0 ? "" : Integer.valueOf(i9));
         long prefIntOrLong2 = AndroidUtilities.getPrefIntOrLong(preferences, sb5.toString(), this.hasValidDialogLoadIds ? 0L : -1L);
         StringBuilder sb6 = new StringBuilder("2dialogsLoadOffsetChannelId");
-        sb6.append(i10 == 0 ? "" : Integer.valueOf(i10));
+        sb6.append(i9 == 0 ? "" : Integer.valueOf(i9));
         long prefIntOrLong3 = AndroidUtilities.getPrefIntOrLong(preferences, sb6.toString(), this.hasValidDialogLoadIds ? 0L : -1L);
         StringBuilder sb7 = new StringBuilder("2dialogsLoadOffsetAccess");
-        sb7.append(i10 != 0 ? Integer.valueOf(i10) : "");
-        return new long[]{i11, i12, prefIntOrLong, prefIntOrLong2, prefIntOrLong3, preferences.getLong(sb7.toString(), this.hasValidDialogLoadIds ? 0L : -1L)};
+        sb7.append(i9 != 0 ? Integer.valueOf(i9) : "");
+        return new long[]{i10, i11, prefIntOrLong, prefIntOrLong2, prefIntOrLong3, preferences.getLong(sb7.toString(), this.hasValidDialogLoadIds ? 0L : -1L)};
     }
 
     public Long getEmojiStatus() {
@@ -463,12 +463,12 @@ public class UserConfig extends BaseController {
     }
 
     public int getNewMessageId() {
-        int i10;
+        int i9;
         synchronized (this.sync) {
-            i10 = this.lastSendMessageId;
-            this.lastSendMessageId = i10 - 1;
+            i9 = this.lastSendMessageId;
+            this.lastSendMessageId = i9 - 1;
         }
-        return i10;
+        return i9;
     }
 
     public SharedPreferences getPreferences() {
@@ -478,20 +478,20 @@ public class UserConfig extends BaseController {
         return ApplicationLoader.applicationContext.getSharedPreferences("userconfig" + this.currentAccount, 0);
     }
 
-    public LongSparseArray<SaveToGallerySettingsHelper.DialogException> getSaveGalleryExceptions(int i10) {
-        if (i10 == 1) {
+    public LongSparseArray<SaveToGallerySettingsHelper.DialogException> getSaveGalleryExceptions(int i9) {
+        if (i9 == 1) {
             if (this.userSaveGalleryExceptions == null) {
                 this.userSaveGalleryExceptions = SaveToGallerySettingsHelper.loadExceptions(ApplicationLoader.applicationContext.getSharedPreferences(SaveToGallerySettingsHelper.USERS_PREF_NAME + "_" + this.currentAccount, 0));
             }
             return this.userSaveGalleryExceptions;
         }
-        if (i10 == 2) {
+        if (i9 == 2) {
             if (this.groupsSaveGalleryExceptions == null) {
                 this.groupsSaveGalleryExceptions = SaveToGallerySettingsHelper.loadExceptions(ApplicationLoader.applicationContext.getSharedPreferences(SaveToGallerySettingsHelper.GROUPS_PREF_NAME + "_" + this.currentAccount, 0));
             }
             return this.groupsSaveGalleryExceptions;
         }
-        if (i10 != 4) {
+        if (i9 != 4) {
             return null;
         }
         if (this.chanelSaveGalleryExceptions == null) {
@@ -500,10 +500,10 @@ public class UserConfig extends BaseController {
         return this.chanelSaveGalleryExceptions;
     }
 
-    public int getTotalDialogsCount(int i10) {
+    public int getTotalDialogsCount(int i9) {
         SharedPreferences preferences = getPreferences();
         StringBuilder sb2 = new StringBuilder("2totalDialogsLoadCount");
-        sb2.append(i10 == 0 ? "" : Integer.valueOf(i10));
+        sb2.append(i9 == 0 ? "" : Integer.valueOf(i9));
         return preferences.getInt(sb2.toString(), 0);
     }
 
@@ -519,8 +519,8 @@ public class UserConfig extends BaseController {
         return this.configLoaded;
     }
 
-    public boolean isPinnedDialogsLoaded(int i10) {
-        return getPreferences().getBoolean("2pinnedDialogsLoaded" + i10, false);
+    public boolean isPinnedDialogsLoaded(int i9) {
+        return getPreferences().getBoolean("2pinnedDialogsLoaded" + i9, false);
     }
 
     public boolean isPremium() {
@@ -547,7 +547,7 @@ public class UserConfig extends BaseController {
     */
     public void loadConfig() {
         boolean z10;
-        int i10;
+        int i9;
         String string;
         String string2;
         TLRPC.User user;
@@ -601,9 +601,9 @@ public class UserConfig extends BaseController {
                         this.unacceptedTermsOfService = TLRPC.TL_help_termsOfService.TLdeserialize(serializedData, serializedData.readInt32(false), false);
                         serializedData.cleanup();
                     }
-                    i10 = preferences.getInt("6migrateOffsetId", 0);
-                    this.migrateOffsetId = i10;
-                    if (i10 != -1) {
+                    i9 = preferences.getInt("6migrateOffsetId", 0);
+                    this.migrateOffsetId = i9;
+                    if (i9 != -1) {
                         this.migrateOffsetDate = preferences.getInt("6migrateOffsetDate", 0);
                         this.migrateOffsetUserId = AndroidUtilities.getPrefIntOrLong(preferences, "6migrateOffsetUserId", 0L);
                         this.migrateOffsetChatId = AndroidUtilities.getPrefIntOrLong(preferences, "6migrateOffsetChatId", 0L);
@@ -644,9 +644,9 @@ public class UserConfig extends BaseController {
                     this.unacceptedTermsOfService = TLRPC.TL_help_termsOfService.TLdeserialize(serializedData4, serializedData4.readInt32(false), false);
                     serializedData4.cleanup();
                 }
-                i10 = preferences.getInt("6migrateOffsetId", 0);
-                this.migrateOffsetId = i10;
-                if (i10 != -1) {
+                i9 = preferences.getInt("6migrateOffsetId", 0);
+                this.migrateOffsetId = i9;
+                if (i9 != -1) {
                 }
                 string = preferences.getString("tmpPassword", null);
                 if (string != null) {
@@ -691,7 +691,7 @@ public class UserConfig extends BaseController {
     }
 
     public void saveConfig(boolean z10) {
-        NotificationCenter.getInstance(this.currentAccount).doOnIdle(new fh.f(17, this, z10));
+        NotificationCenter.getInstance(this.currentAccount).doOnIdle(new eh.f(17, this, z10));
     }
 
     public void savePassword(byte[] bArr, byte[] bArr2) {
@@ -709,36 +709,36 @@ public class UserConfig extends BaseController {
         }
     }
 
-    public void setDialogsLoadOffset(int i10, int i11, int i12, long j10, long j11, long j12, long j13) {
+    public void setDialogsLoadOffset(int i9, int i10, int i11, long j10, long j11, long j12, long j13) {
         SharedPreferences.Editor edit = getPreferences().edit();
         StringBuilder sb2 = new StringBuilder("2dialogsLoadOffsetId");
-        sb2.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        edit.putInt(sb2.toString(), i11);
+        sb2.append(i9 == 0 ? "" : Integer.valueOf(i9));
+        edit.putInt(sb2.toString(), i10);
         StringBuilder sb3 = new StringBuilder("2dialogsLoadOffsetDate");
-        sb3.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        edit.putInt(sb3.toString(), i12);
+        sb3.append(i9 == 0 ? "" : Integer.valueOf(i9));
+        edit.putInt(sb3.toString(), i11);
         StringBuilder sb4 = new StringBuilder("2dialogsLoadOffsetUserId");
-        sb4.append(i10 == 0 ? "" : Integer.valueOf(i10));
+        sb4.append(i9 == 0 ? "" : Integer.valueOf(i9));
         edit.putLong(sb4.toString(), j10);
         StringBuilder sb5 = new StringBuilder("2dialogsLoadOffsetChatId");
-        sb5.append(i10 == 0 ? "" : Integer.valueOf(i10));
+        sb5.append(i9 == 0 ? "" : Integer.valueOf(i9));
         edit.putLong(sb5.toString(), j11);
         StringBuilder sb6 = new StringBuilder("2dialogsLoadOffsetChannelId");
-        sb6.append(i10 == 0 ? "" : Integer.valueOf(i10));
+        sb6.append(i9 == 0 ? "" : Integer.valueOf(i9));
         edit.putLong(sb6.toString(), j12);
         StringBuilder sb7 = new StringBuilder("2dialogsLoadOffsetAccess");
-        sb7.append(i10 != 0 ? Integer.valueOf(i10) : "");
+        sb7.append(i9 != 0 ? Integer.valueOf(i9) : "");
         edit.putLong(sb7.toString(), j13);
         edit.putBoolean("hasValidDialogLoadIds", true);
         edit.commit();
     }
 
-    public void setGlobalTtl(int i10) {
-        this.globalTtl = i10;
+    public void setGlobalTtl(int i9) {
+        this.globalTtl = i9;
     }
 
-    public void setPinnedDialogsLoaded(int i10, boolean z10) {
-        getPreferences().edit().putBoolean("2pinnedDialogsLoaded" + i10, z10).commit();
+    public void setPinnedDialogsLoaded(int i9, boolean z10) {
+        getPreferences().edit().putBoolean("2pinnedDialogsLoaded" + i9, z10).commit();
     }
 
     public void setShowCallsTab(boolean z10) {
@@ -748,25 +748,25 @@ public class UserConfig extends BaseController {
         }
     }
 
-    public void setTotalDialogsCount(int i10, int i11) {
+    public void setTotalDialogsCount(int i9, int i10) {
         SharedPreferences.Editor edit = getPreferences().edit();
         StringBuilder sb2 = new StringBuilder("2totalDialogsLoadCount");
-        sb2.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        edit.putInt(sb2.toString(), i11).commit();
+        sb2.append(i9 == 0 ? "" : Integer.valueOf(i9));
+        edit.putInt(sb2.toString(), i10).commit();
     }
 
-    public void updateSaveGalleryExceptions(int i10, LongSparseArray<SaveToGallerySettingsHelper.DialogException> longSparseArray) {
-        if (i10 == 1) {
+    public void updateSaveGalleryExceptions(int i9, LongSparseArray<SaveToGallerySettingsHelper.DialogException> longSparseArray) {
+        if (i9 == 1) {
             this.userSaveGalleryExceptions = longSparseArray;
             SaveToGallerySettingsHelper.saveExceptions(ApplicationLoader.applicationContext.getSharedPreferences(SaveToGallerySettingsHelper.USERS_PREF_NAME + "_" + this.currentAccount, 0), this.userSaveGalleryExceptions);
             return;
         }
-        if (i10 == 2) {
+        if (i9 == 2) {
             this.groupsSaveGalleryExceptions = longSparseArray;
             SaveToGallerySettingsHelper.saveExceptions(ApplicationLoader.applicationContext.getSharedPreferences(SaveToGallerySettingsHelper.GROUPS_PREF_NAME + "_" + this.currentAccount, 0), this.groupsSaveGalleryExceptions);
             return;
         }
-        if (i10 == 4) {
+        if (i9 == 4) {
             this.chanelSaveGalleryExceptions = longSparseArray;
             SaveToGallerySettingsHelper.saveExceptions(ApplicationLoader.applicationContext.getSharedPreferences(SaveToGallerySettingsHelper.CHANNELS_PREF_NAME + "_" + this.currentAccount, 0), this.chanelSaveGalleryExceptions);
         }

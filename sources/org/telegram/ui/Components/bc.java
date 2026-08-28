@@ -2,67 +2,47 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class bc extends cb {
-    public final ri0 a;
-    public final p80 b;
-    public final p80 c;
-    public final LinearLayout d;
-    public final int e;
+public final class bc extends eb {
+    public final o9 a;
+    public final l80 b;
+    public final l80 c;
 
-    public bc(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        int i10 = org.telegram.ui.ActionBar.g6.Hi;
-        this.e = getThemedColor(i10);
-        setBackground(getThemedColor(org.telegram.ui.ActionBar.g6.Fi));
-        ri0 ri0Var = new ri0(context);
-        this.a = ri0Var;
-        ri0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(ri0Var, h7.z5.h(56.0f, 48.0f, 8388627));
-        int themedColor = getThemedColor(i10);
-        int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.g6.Gi);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.d = linearLayout;
-        linearLayout.setOrientation(1);
-        addView(linearLayout, h7.z5.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
-        p80 p80Var = new p80(context, null);
-        this.b = p80Var;
-        p80Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        p80Var.setTextColor(themedColor);
-        p80Var.setTextSize(1, 14.0f);
-        p80Var.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(p80Var);
-        p80 p80Var2 = new p80(context, null);
-        this.c = p80Var2;
-        p80Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        p80Var2.setTextColor(themedColor);
-        p80Var2.setLinkTextColor(themedColor2);
-        p80Var2.setTypeface(Typeface.SANS_SERIF);
-        p80Var2.setTextSize(1, 13.0f);
-        linearLayout.addView(p80Var2);
+    public bc(Context context, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(context, b6Var);
+        int i9 = org.telegram.ui.ActionBar.f6.Hi;
+        getThemedColor(i9);
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.f6.Fi));
+        o9 o9Var = new o9(context);
+        this.a = o9Var;
+        addView(o9Var, g7.e6.i(32.0f, 32.0f, 8388627, 12.0f, 0.0f, 12.0f, 0.0f));
+        int themedColor = getThemedColor(i9);
+        int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.f6.Gi);
+        LinearLayout f10 = org.telegram.messenger.ll.f(context, 1);
+        addView(f10, g7.e6.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
+        l80 l80Var = new l80(context, null);
+        this.b = l80Var;
+        l80Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        l80Var.setTextColor(themedColor);
+        l80Var.setTextSize(1, 14.0f);
+        l80Var.setTypeface(AndroidUtilities.bold());
+        f10.addView(l80Var);
+        l80 l80Var2 = new l80(context, null);
+        this.c = l80Var2;
+        l80Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        l80Var2.setTextColor(themedColor);
+        l80Var2.setLinkTextColor(themedColor2);
+        l80Var2.setTypeface(Typeface.SANS_SERIF);
+        l80Var2.setTextSize(1, 13.0f);
+        f10.addView(l80Var2);
     }
 
-    public final void c(int i10, int i11, int i12, String... strArr) {
-        ri0 ri0Var = this.a;
-        ri0Var.f(i10, i11, i12, null);
-        for (String str : strArr) {
-            ri0Var.h(this.e, str);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.jb
+    @Override // org.telegram.ui.Components.lb
     public CharSequence getAccessibilityText() {
         return ((Object) this.b.getText()) + ".\n" + ((Object) this.c.getText());
-    }
-
-    @Override // org.telegram.ui.Components.jb
-    public final void onShow() {
-        super.onShow();
-        this.a.d();
     }
 }

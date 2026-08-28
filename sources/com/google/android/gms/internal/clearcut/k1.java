@@ -15,8 +15,8 @@ public abstract class k1 {
         return this.a.objectFieldOffset(field);
     }
 
-    public final void b(long j10, Object obj, int i10) {
-        this.a.putInt(obj, j10, i10);
+    public final void b(long j10, Object obj, int i9) {
+        this.a.putInt(obj, j10, i9);
     }
 
     public abstract void c(Object obj, long j10, double d);

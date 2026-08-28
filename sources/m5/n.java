@@ -3,8 +3,8 @@ package m5;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import h7.f7;
-import h7.r8;
+import g7.e7;
+import g7.p8;
 import j$.util.DesugarCollections;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -14,10 +14,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class n extends z5.a {
-    public static final Parcelable.Creator<n> CREATOR = new w(13);
+public final class n extends y5.a {
+    public static final Parcelable.Creator<n> CREATOR = new v(13);
     public String a;
     public String b;
     public int c;
@@ -74,7 +74,7 @@ public final class n extends z5.a {
             if (mVar != null) {
                 jSONObject.put("containerMetadata", mVar.b());
             }
-            String b10 = f7.b(Integer.valueOf(this.f));
+            String b10 = e7.b(Integer.valueOf(this.f));
             if (b10 != null) {
                 jSONObject.put("repeatMode", b10);
             }
@@ -83,14 +83,14 @@ public final class n extends z5.a {
                 JSONArray jSONArray = new JSONArray();
                 Iterator it = this.h.iterator();
                 while (it.hasNext()) {
-                    jSONArray.put(((p) it.next()).c());
+                    jSONArray.put(((o) it.next()).c());
                 }
                 jSONObject.put("items", jSONArray);
             }
             jSONObject.put("startIndex", this.n);
             long j10 = this.r;
             if (j10 != -1) {
-                Pattern pattern = r5.a.a;
+                Pattern pattern = q5.a.a;
                 jSONObject.put("startTime", j10 / 1000.0d);
             }
             jSONObject.put("shuffle", this.s);
@@ -107,7 +107,7 @@ public final class n extends z5.a {
             return false;
         }
         n nVar = (n) obj;
-        return TextUtils.equals(this.a, nVar.a) && TextUtils.equals(this.b, nVar.b) && this.c == nVar.c && TextUtils.equals(this.d, nVar.d) && y5.l.l(this.e, nVar.e) && this.f == nVar.f && y5.l.l(this.h, nVar.h) && this.n == nVar.n && this.r == nVar.r && this.s == nVar.s;
+        return TextUtils.equals(this.a, nVar.a) && TextUtils.equals(this.b, nVar.b) && this.c == nVar.c && TextUtils.equals(this.d, nVar.d) && x5.l.l(this.e, nVar.e) && this.f == nVar.f && x5.l.l(this.h, nVar.h) && this.n == nVar.n && this.r == nVar.r && this.s == nVar.s;
     }
 
     public final int hashCode() {
@@ -115,29 +115,29 @@ public final class n extends z5.a {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.l(parcel, 2, this.a);
-        r8.l(parcel, 3, this.b);
-        int i11 = this.c;
-        r8.s(parcel, 4, 4);
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.l(parcel, 2, this.a);
+        p8.l(parcel, 3, this.b);
+        int i10 = this.c;
+        p8.s(parcel, 4, 4);
+        parcel.writeInt(i10);
+        p8.l(parcel, 5, this.d);
+        p8.k(parcel, 6, this.e, i9);
+        int i11 = this.f;
+        p8.s(parcel, 7, 4);
         parcel.writeInt(i11);
-        r8.l(parcel, 5, this.d);
-        r8.k(parcel, 6, this.e, i10);
-        int i12 = this.f;
-        r8.s(parcel, 7, 4);
-        parcel.writeInt(i12);
         List list = this.h;
-        r8.p(parcel, 8, list == null ? null : DesugarCollections.unmodifiableList(list));
-        int i13 = this.n;
-        r8.s(parcel, 9, 4);
-        parcel.writeInt(i13);
+        p8.p(parcel, 8, list == null ? null : DesugarCollections.unmodifiableList(list));
+        int i12 = this.n;
+        p8.s(parcel, 9, 4);
+        parcel.writeInt(i12);
         long j10 = this.r;
-        r8.s(parcel, 10, 8);
+        p8.s(parcel, 10, 8);
         parcel.writeLong(j10);
         boolean z10 = this.s;
-        r8.s(parcel, 11, 4);
+        p8.s(parcel, 11, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        r8.r(parcel, q6);
+        p8.r(parcel, q10);
     }
 }

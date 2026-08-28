@@ -10,7 +10,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class RadialProgressView extends View {
     public float A;
@@ -76,9 +76,9 @@ public class RadialProgressView extends View {
                     float f13 = this.A;
                     float f14 = f12 - f13;
                     if (f14 > 0.0f) {
-                        int i10 = (int) (this.B + j10);
-                        this.B = i10;
-                        float f15 = i10;
+                        int i9 = (int) (this.B + j10);
+                        this.B = i9;
+                        float f15 = i9;
                         if (f15 >= 200.0f) {
                             this.A = f12;
                             this.C = f12;
@@ -172,11 +172,11 @@ public class RadialProgressView extends View {
         super.setAlpha(f10);
         if (this.h) {
             Drawable background = getBackground();
-            int i10 = (int) (f10 * 255.0f);
+            int i9 = (int) (f10 * 255.0f);
             if (background != null) {
-                background.setAlpha(i10);
+                background.setAlpha(i9);
             }
-            this.w.setAlpha(i10);
+            this.w.setAlpha(i9);
         }
     }
 
@@ -193,13 +193,13 @@ public class RadialProgressView extends View {
         this.B = 0;
     }
 
-    public void setProgressColor(int i10) {
-        this.r = i10;
-        this.w.setColor(i10);
+    public void setProgressColor(int i9) {
+        this.r = i9;
+        this.w.setColor(i9);
     }
 
-    public void setSize(int i10) {
-        this.x = i10;
+    public void setSize(int i9) {
+        this.x = i9;
         invalidate();
     }
 
@@ -211,12 +211,12 @@ public class RadialProgressView extends View {
         this.h = z10;
     }
 
-    public RadialProgressView(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+    public RadialProgressView(Context context, org.telegram.ui.ActionBar.b6 b6Var) {
         super(context);
         this.f = new RectF();
         this.F = true;
         this.x = AndroidUtilities.dp(40.0f);
-        this.r = org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.h6, c6Var);
+        this.r = org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.h6, b6Var);
         this.s = new DecelerateInterpolator();
         this.v = new AccelerateInterpolator();
         Paint paint = new Paint(1);

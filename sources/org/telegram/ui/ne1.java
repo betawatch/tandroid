@@ -1,28 +1,12 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ne1 extends xf.a {
-    public final TLRPC.TL_forumTopic c;
+public final class ne1 {
+    public final int a;
+    public int b;
 
-    public ne1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
-        super(i10, true);
-        this.c = tL_forumTopic;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && ne1.class == obj.getClass()) {
-            ne1 ne1Var = (ne1) obj;
-            int i10 = this.a;
-            if (i10 == ne1Var.a && i10 == 0 && this.c.id == ne1Var.c.id) {
-                return true;
-            }
-        }
-        return false;
+    public ne1(int i9) {
+        this.a = i9;
     }
 }

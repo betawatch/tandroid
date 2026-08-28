@@ -6,166 +6,55 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class s5 extends Drawable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public Object d;
+    public final RectF a = new RectF();
+    public final /* synthetic */ View b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Paint e;
 
-    public s5(int i10, int i11, Drawable drawable) {
-        this.b = i10;
-        this.c = i11;
-        this.d = drawable;
+    public s5(View view, View view2, int i9, Paint paint) {
+        this.b = view;
+        this.c = view2;
+        this.d = i9;
+        this.e = paint;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        int i10;
-        switch (this.a) {
-            case 0:
-                Rect bounds = getBounds();
-                canvas.drawCircle(bounds.centerX(), bounds.centerY(), this.c / 2.0f, (Paint) this.d);
-                break;
-            case 1:
-                Rect bounds2 = getBounds();
-                int i11 = this.c;
-                int i12 = this.b;
-                if (i12 != 7) {
-                    if (i12 == 1 || i12 == 6) {
-                        if (i11 <= 0) {
-                            i11 = AndroidUtilities.dp(20.0f);
-                        }
-                        i10 = i11;
-                    } else {
-                        i10 = i12 == 3 ? Math.max(bounds2.width(), bounds2.height()) / 2 : (int) Math.ceil(Math.sqrt(((bounds2.top - bounds2.centerY()) * (bounds2.top - bounds2.centerY())) + ((bounds2.left - bounds2.centerX()) * (bounds2.left - bounds2.centerX()))));
-                    }
-                    canvas.drawCircle(bounds2.centerX(), bounds2.centerY(), i10, g6.z);
-                    break;
-                } else {
-                    if (((RectF) this.d) == null) {
-                        this.d = new RectF();
-                    }
-                    ((RectF) this.d).set(bounds2);
-                    float dp = i11 <= 0 ? AndroidUtilities.dp(6.0f) : i11;
-                    canvas.drawRoundRect((RectF) this.d, dp, dp, g6.z);
-                    break;
-                }
-                break;
-            default:
-                ((Drawable) this.d).draw(canvas);
-                break;
+        Rect bounds = getBounds();
+        float f10 = bounds.left;
+        float f11 = bounds.top;
+        float f12 = bounds.right;
+        float f13 = bounds.bottom;
+        RectF rectF = this.a;
+        rectF.set(f10, f11, f12, f13);
+        f6.s(this.b, this.c, null);
+        float f14 = this.d;
+        Paint paint = this.e;
+        if (paint == null) {
+            paint = f6.S0("paintChatActionBackground");
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getAlpha() {
-        switch (this.a) {
-            case 2:
-                return ((Drawable) this.d).getAlpha();
-            default:
-                return super.getAlpha();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        switch (this.a) {
-            case 0:
-                return this.c + this.b;
-            default:
-                return super.getIntrinsicHeight();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        switch (this.a) {
-            case 0:
-                return this.c + this.b;
-            default:
-                return super.getIntrinsicWidth();
+        canvas.drawRoundRect(rectF, f14, f14, paint);
+        if (f6.a1()) {
+            canvas.drawRoundRect(rectF, f14, f14, f6.S0("paintChatActionBackgroundDarken"));
         }
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getOpacity() {
-        switch (this.a) {
-            case 0:
-                return -2;
-            case 1:
-                return 0;
-            default:
-                return ((Drawable) this.d).getOpacity();
-        }
+        return -2;
     }
 
     @Override // android.graphics.drawable.Drawable
-    public void onBoundsChange(Rect rect) {
-        switch (this.a) {
-            case 2:
-                super.onBoundsChange(rect);
-                int width = rect.width();
-                int i10 = this.b;
-                int i11 = (width - i10) / 2;
-                int height = rect.height();
-                int i12 = this.c;
-                int i13 = (height - i12) / 2;
-                ((Drawable) this.d).setBounds(i11, i13, i10 + i11, i12 + i13);
-                break;
-            default:
-                super.onBoundsChange(rect);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        switch (this.a) {
-            case 0:
-                ((Paint) this.d).setAlpha(i10);
-                break;
-            case 1:
-                break;
-            default:
-                ((Drawable) this.d).setAlpha(i10);
-                break;
-        }
+    public final void setAlpha(int i9) {
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
-        switch (this.a) {
-            case 0:
-                ((Paint) this.d).setColorFilter(colorFilter);
-                break;
-        }
-    }
-
-    public s5(int i10, int i11, int i12) {
-        this.b = i10;
-        this.c = i12;
-        Paint paint = new Paint(1);
-        this.d = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(i10);
-        paint.setColor(i11);
-    }
-
-    public s5(int i10, int i11) {
-        this.b = i10;
-        this.c = i11;
-    }
-
-    private final void a(int i10) {
-    }
-
-    private final void b(ColorFilter colorFilter) {
-    }
-
-    private final void c(ColorFilter colorFilter) {
     }
 }

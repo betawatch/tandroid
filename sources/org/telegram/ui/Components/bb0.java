@@ -1,138 +1,132 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.view.MotionEvent;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class bb0 extends Drawable {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public Object c;
-    public Object d;
-    public Object e;
+public final class bb0 extends View {
+    public final i6 a;
+    public final xa0 b;
+    public boolean c;
+    public boolean d;
+    public final String e;
+    public final String f;
+    public final int h;
 
-    public bb0(int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.c = new Paint(1);
-                Paint paint = new Paint(1);
-                this.d = paint;
-                this.e = new Matrix();
-                paint.setStyle(Paint.Style.STROKE);
-                paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(28.0f), new int[]{1308622847, 0, 452984831}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.CLAMP));
-                break;
+    public bb0(Context context, int i9, String str, int i10, String str2, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(context);
+        this.c = true;
+        this.e = str;
+        this.f = str2;
+        setBackground(org.telegram.ui.ActionBar.f6.f0(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.i6, b6Var), 2, -1));
+        i6 i6Var = new i6(true, true, true, false);
+        this.a = i6Var;
+        i6Var.k(0.35f, 300L, gr.h);
+        i6Var.t(AndroidUtilities.dp(16.0f));
+        i6Var.r(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.E8, b6Var));
+        i6Var.setCallback(this);
+        i6Var.n(!LocaleController.isRTL);
+        if (LocaleController.isRTL) {
+            i6Var.b = 5;
         }
+        float dp = AndroidUtilities.dp(77.0f);
+        TextPaint textPaint = i6Var.a;
+        int max = (int) (Math.max(textPaint.measureText(str), textPaint.measureText(str2)) + dp);
+        this.h = max;
+        i6Var.G = max;
+        xa0 xa0Var = new xa0(0);
+        mi0 mi0Var = new mi0(i9, AndroidUtilities.dp(24.0f), j3.r0.l(i9, ""), AndroidUtilities.dp(24.0f));
+        xa0Var.c = mi0Var;
+        mi0Var.r0 = this;
+        mi0Var.H(true);
+        mi0Var.h = true;
+        mi0Var.I(0);
+        mi0 mi0Var2 = new mi0(i10, AndroidUtilities.dp(24.0f), j3.r0.l(i10, ""), AndroidUtilities.dp(24.0f));
+        xa0Var.d = mi0Var2;
+        mi0Var2.r0 = this;
+        mi0Var2.H(true);
+        mi0Var2.h = true;
+        mi0Var2.I(0);
+        xa0Var.e = mi0Var;
+        this.b = xa0Var;
+        xa0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.F8, b6Var), PorterDuff.Mode.SRC_IN));
     }
 
-    public void b(int i10, int i11) {
-        ((Paint) this.c).setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(28.0f), new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                oi0 oi0Var = (oi0) this.d;
-                oi0 oi0Var2 = (oi0) this.c;
-                Rect rect = AndroidUtilities.rectTmp2;
-                rect.set(getBounds().centerX() - AndroidUtilities.dp(12.0f), getBounds().centerY() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + getBounds().centerX(), AndroidUtilities.dp(12.0f) + getBounds().centerY());
-                if (((oi0) this.e).y()) {
-                    oi0 oi0Var3 = (oi0) this.e;
-                    boolean z10 = this.b;
-                    if (oi0Var3 != (z10 ? oi0Var2 : oi0Var)) {
-                        if (z10) {
-                            oi0Var = oi0Var2;
-                        }
-                        this.e = oi0Var;
-                        oi0Var.K(oi0Var.e[0] - 1);
-                    }
+    public final void a(boolean z10, boolean z11) {
+        if (this.c || z10 != this.d) {
+            this.d = z10;
+            String str = z10 ? this.e : this.f;
+            boolean z12 = z11 && !LocaleController.isRTL;
+            i6 i6Var = this.a;
+            i6Var.q(str, z12, true);
+            xa0 xa0Var = this.b;
+            mi0 mi0Var = (mi0) xa0Var.d;
+            mi0 mi0Var2 = (mi0) xa0Var.c;
+            xa0Var.b = z10;
+            if (z11) {
+                xa0Var.e = z10 ? mi0Var2 : mi0Var;
+                mi0Var2.K(0);
+                mi0Var.K(0);
+                ((mi0) xa0Var.e).start();
+            } else {
+                if (z10) {
+                    mi0Var = mi0Var2;
                 }
-                ((oi0) this.e).setBounds(rect);
-                ((oi0) this.e).draw(canvas);
-                break;
-            default:
-                Paint paint = (Paint) this.d;
-                float dp = AndroidUtilities.dp(10.0f);
-                RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(getBounds());
-                Matrix matrix = (Matrix) this.e;
-                matrix.reset();
-                matrix.postTranslate(rectF.left, rectF.top);
-                canvas.drawRoundRect(rectF, dp, dp, (Paint) this.c);
-                if (this.b) {
-                    float dp2 = AndroidUtilities.dp(1.0f);
-                    paint.setStrokeWidth(dp2);
-                    matrix.reset();
-                    matrix.postTranslate(rectF.left, rectF.top);
-                    float f10 = dp2 / 2.0f;
-                    rectF.inset(f10, f10);
-                    canvas.drawRoundRect(rectF, dp, dp, paint);
-                    break;
-                }
-                break;
+                xa0Var.e = mi0Var;
+                mi0Var.K(mi0Var.e[0] - 1);
+            }
+            this.c = false;
+            setContentDescription(i6Var.g);
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        switch (this.a) {
-            case 0:
-                return AndroidUtilities.dp(24.0f);
-            default:
-                return super.getIntrinsicHeight();
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        boolean z10 = LocaleController.isRTL;
+        i6 i6Var = this.a;
+        xa0 xa0Var = this.b;
+        if (z10) {
+            xa0Var.setBounds(getMeasuredWidth() - AndroidUtilities.dp(41.0f), org.telegram.messenger.ll.y(24.0f, getMeasuredHeight(), 2), getMeasuredWidth() - AndroidUtilities.dp(17.0f), (AndroidUtilities.dp(24.0f) + getMeasuredHeight()) / 2);
+            i6Var.setBounds(0, 0, getMeasuredWidth() - AndroidUtilities.dp(59.0f), getMeasuredHeight());
+        } else {
+            xa0Var.setBounds(AndroidUtilities.dp(17.0f), org.telegram.messenger.ll.y(24.0f, getMeasuredHeight(), 2), AndroidUtilities.dp(41.0f), (AndroidUtilities.dp(24.0f) + getMeasuredHeight()) / 2);
+            i6Var.setBounds(AndroidUtilities.dp(59.0f), 0, getMeasuredWidth(), getMeasuredHeight());
         }
+        i6Var.draw(canvas);
+        xa0Var.draw(canvas);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        switch (this.a) {
-            case 0:
-                return AndroidUtilities.dp(24.0f);
-            default:
-                return super.getIntrinsicWidth();
+    public boolean getState() {
+        return this.d;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i9, int i10) {
+        int mode = View.MeasureSpec.getMode(i9);
+        int i11 = this.h;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(mode == 1073741824 ? Math.max(View.MeasureSpec.getSize(i9), i11) : Math.min(View.MeasureSpec.getSize(i9), i11), mode), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (getVisibility() != 0 || getAlpha() < 0.5f) {
+            return false;
         }
+        return super.onTouchEvent(motionEvent);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-        }
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        switch (this.a) {
-            case 0:
-                ((oi0) this.c).setAlpha(i10);
-                ((oi0) this.d).setAlpha(i10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        switch (this.a) {
-            case 0:
-                ((oi0) this.c).setColorFilter(colorFilter);
-                ((oi0) this.d).setColorFilter(colorFilter);
-                break;
-        }
-    }
-
-    private final void a(int i10) {
-    }
-
-    private final void c(ColorFilter colorFilter) {
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.a || super.verifyDrawable(drawable);
     }
 }

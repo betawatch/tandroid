@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import ad.p;
 import java.lang.reflect.Proxy;
-import pc.i;
+import oc.i;
+import zc.p;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzjo implements zzjt {
     public static final zzjo zza = new zzjo();
@@ -13,8 +13,8 @@ public final class zzjo implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i10, final zziz zzizVar, zzzt... zzztVarArr) {
-        final int i11;
+    public final void zza(int i9, final zziz zzizVar, zzzt... zzztVarArr) {
+        final int i10;
         int length = zzztVarArr.length;
         if (length != 4 && length != 5) {
             throw new zzdm(4, 3, null);
@@ -53,30 +53,30 @@ public final class zzjo implements zzjt {
             if (num == null) {
                 throw new zzdm(4, 5, null);
             }
-            i11 = num.intValue();
+            i10 = num.intValue();
         } else {
-            i11 = -1;
+            i10 = -1;
         }
         try {
             if (zza3 instanceof String) {
                 zza3 = zzizVar.zzh().zza((String) zza3);
             }
             Class zza8 = zziy.zza(zza3);
-            zzizVar.zzc().zze(i10, Proxy.newProxyInstance(zza8.getClassLoader(), new Class[]{zza8}, new zziu(new p() { // from class: com.google.android.recaptcha.internal.zzjn
-                @Override // ad.p
+            zzizVar.zzc().zze(i9, Proxy.newProxyInstance(zza8.getClassLoader(), new Class[]{zza8}, new zziu(new p() { // from class: com.google.android.recaptcha.internal.zzjn
+                @Override // zc.p
                 public final Object invoke(Object obj, Object obj2) {
                     zziz zzizVar2 = zziz.this;
                     Object[] objArr = (Object[]) obj;
                     zzizVar2.zzi().zzb(str, (String) obj2);
-                    int i12 = i11;
-                    if (i12 != -1) {
-                        zzizVar2.zzc().zze(i12, objArr);
+                    int i11 = i10;
+                    if (i11 != -1) {
+                        zzizVar2.zzc().zze(i11, objArr);
                     }
                     return i.a;
                 }
             }, zza5, zza6)));
-        } catch (Exception e9) {
-            throw new zzdm(6, 20, e9);
+        } catch (Exception e10) {
+            throw new zzdm(6, 20, e10);
         }
     }
 }

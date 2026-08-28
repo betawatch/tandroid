@@ -1,26 +1,26 @@
 package h3;
 
-import java.util.List;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d0 implements d5.k {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ List b;
-
-    public /* synthetic */ d0(i3.a aVar, List list) {
-        this.b = list;
-    }
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ e5.z b;
 
     @Override // d5.k
     public final void invoke(Object obj) {
         switch (this.a) {
             case 0:
-                ((a2) obj).onCues(this.b);
+                ((a2) obj).onVideoSizeChanged(this.b);
                 break;
             default:
-                ((i3.b) obj).getClass();
+                e5.z zVar = this.b;
+                ((i3.b) obj).d(zVar);
+                int i9 = zVar.a;
                 break;
         }
+    }
+
+    public /* synthetic */ d0(i3.a aVar, e5.z zVar) {
+        this.b = zVar;
     }
 }

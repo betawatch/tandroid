@@ -11,7 +11,7 @@ import android.view.ViewParent;
 import java.lang.ref.WeakReference;
 import m.v3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class ViewStubCompat extends View {
     public int a;
@@ -20,15 +20,7 @@ public final class ViewStubCompat extends View {
     public LayoutInflater d;
 
     public ViewStubCompat(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, 0);
-        this.a = 0;
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.A, 0, 0);
-        this.b = obtainStyledAttributes.getResourceId(2, -1);
-        this.a = obtainStyledAttributes.getResourceId(1, 0);
-        setId(obtainStyledAttributes.getResourceId(0, -1));
-        obtainStyledAttributes.recycle();
-        setVisibility(8);
-        setWillNotDraw(true);
+        this(context, attributeSet, 0);
     }
 
     public final View a() {
@@ -45,9 +37,9 @@ public final class ViewStubCompat extends View {
             layoutInflater = LayoutInflater.from(getContext());
         }
         View inflate = layoutInflater.inflate(this.a, viewGroup, false);
-        int i10 = this.b;
-        if (i10 != -1) {
-            inflate.setId(i10);
+        int i9 = this.b;
+        if (i9 != -1) {
+            inflate.setId(i9);
         }
         int indexOfChild = viewGroup.indexOfChild(this);
         viewGroup.removeViewInLayout(this);
@@ -74,37 +66,49 @@ public final class ViewStubCompat extends View {
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
+    public final void onMeasure(int i9, int i10) {
         setMeasuredDimension(0, 0);
     }
 
-    public void setInflatedId(int i10) {
-        this.b = i10;
+    public void setInflatedId(int i9) {
+        this.b = i9;
     }
 
     public void setLayoutInflater(LayoutInflater layoutInflater) {
         this.d = layoutInflater;
     }
 
-    public void setLayoutResource(int i10) {
-        this.a = i10;
+    public void setLayoutResource(int i9) {
+        this.a = i9;
     }
 
     @Override // android.view.View
-    public void setVisibility(int i10) {
+    public void setVisibility(int i9) {
         WeakReference weakReference = this.c;
         if (weakReference != null) {
             View view = (View) weakReference.get();
             if (view == null) {
                 throw new IllegalStateException("setVisibility called on un-referenced view");
             }
-            view.setVisibility(i10);
+            view.setVisibility(i9);
             return;
         }
-        super.setVisibility(i10);
-        if (i10 == 0 || i10 == 4) {
+        super.setVisibility(i9);
+        if (i9 == 0 || i9 == 4) {
             a();
         }
+    }
+
+    public ViewStubCompat(Context context, AttributeSet attributeSet, int i9) {
+        super(context, attributeSet, i9);
+        this.a = 0;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.A, i9, 0);
+        this.b = obtainStyledAttributes.getResourceId(2, -1);
+        this.a = obtainStyledAttributes.getResourceId(1, 0);
+        setId(obtainStyledAttributes.getResourceId(0, -1));
+        obtainStyledAttributes.recycle();
+        setVisibility(8);
+        setWillNotDraw(true);
     }
 
     @Override // android.view.View

@@ -1,34 +1,52 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class px {
-    public final TLRPC.StickerSetCovered a;
-    public final TLRPC.TL_messages_stickerSet b;
-    public final TLRPC.StickerSet c;
-    public final ArrayList d;
-    public final TLRPC.Document e;
+public final class px extends m2.a implements ic0 {
+    public final /* synthetic */ wy c;
 
-    public px(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, ArrayList arrayList) {
-        TLRPC.Document document = null;
-        this.a = null;
-        this.b = tL_messages_stickerSet;
-        this.c = tL_messages_stickerSet.set;
-        this.d = arrayList;
-        if (arrayList != null && !arrayList.isEmpty()) {
-            document = (TLRPC.Document) arrayList.get(0);
-        }
-        this.e = document;
+    public px(wy wyVar) {
+        this.c = wyVar;
     }
 
-    public px(TLRPC.StickerSetCovered stickerSetCovered, ArrayList arrayList) {
-        this.a = stickerSetCovered;
-        this.b = null;
-        this.c = stickerSetCovered.set;
-        this.d = arrayList;
-        this.e = arrayList.isEmpty() ? null : (TLRPC.Document) arrayList.get(0);
+    @Override // m2.a
+    public final void a(m2.g gVar, Object obj) {
+        gVar.removeView((View) obj);
+    }
+
+    @Override // m2.a
+    public final int b() {
+        return this.c.e.size();
+    }
+
+    @Override // m2.a
+    public final CharSequence d(int i9) {
+        if (i9 == 0) {
+            return LocaleController.getString(R.string.Emoji);
+        }
+        if (i9 == 1) {
+            return LocaleController.getString(R.string.AccDescrGIFs);
+        }
+        if (i9 != 2) {
+            return null;
+        }
+        return LocaleController.getString(R.string.AccDescrStickers);
+    }
+
+    @Override // m2.a
+    public final Object e(m2.g gVar, int i9) {
+        FrameLayout frameLayout = ((sy) this.c.e.get(i9)).b;
+        gVar.addView(frameLayout);
+        return frameLayout;
+    }
+
+    @Override // m2.a
+    public final boolean f(View view, Object obj) {
+        return view == obj;
     }
 }

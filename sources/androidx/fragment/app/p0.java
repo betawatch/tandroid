@@ -13,16 +13,16 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class p0 {
-    public final xe.b a;
+    public final we.b a;
     public final com.google.firebase.messaging.t b;
     public final s c;
     public boolean d = false;
     public int e = -1;
 
-    public p0(xe.b bVar, com.google.firebase.messaging.t tVar, s sVar) {
+    public p0(we.b bVar, com.google.firebase.messaging.t tVar, s sVar) {
         this.a = bVar;
         this.b = tVar;
         this.c = sVar;
@@ -80,7 +80,7 @@ public final class p0 {
                 StringBuilder sb2 = new StringBuilder("Fragment ");
                 sb2.append(sVar);
                 sb2.append(" declared target fragment ");
-                throw new IllegalStateException(a9.p.p(sb2, sVar.n, " that does not belong to this FragmentManager!"));
+                throw new IllegalStateException(aa.d.r(sb2, sVar.n, " that does not belong to this FragmentManager!"));
             }
         }
         if (p0Var != null) {
@@ -89,14 +89,14 @@ public final class p0 {
         j0 j0Var = sVar.F;
         sVar.G = j0Var.w;
         sVar.I = j0Var.y;
-        xe.b bVar = this.a;
+        we.b bVar = this.a;
         bVar.t(sVar, false);
         ArrayList arrayList = sVar.d0;
         int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
+        int i9 = 0;
+        while (i9 < size) {
+            Object obj = arrayList.get(i9);
+            i9++;
             ((q) obj).a();
         }
         arrayList.clear();
@@ -127,29 +127,30 @@ public final class p0 {
         if (sVar.F == null) {
             return sVar.a;
         }
-        int i10 = this.e;
+        int i9 = this.e;
         int ordinal = sVar.Y.ordinal();
+        int i10 = 0;
         if (ordinal == 1) {
-            i10 = Math.min(i10, 0);
+            i9 = Math.min(i9, 0);
         } else if (ordinal == 2) {
-            i10 = Math.min(i10, 1);
+            i9 = Math.min(i9, 1);
         } else if (ordinal == 3) {
-            i10 = Math.min(i10, 5);
+            i9 = Math.min(i9, 5);
         } else if (ordinal != 4) {
-            i10 = Math.min(i10, -1);
+            i9 = Math.min(i9, -1);
         }
         if (sVar.y) {
-            i10 = sVar.A ? Math.max(this.e, 2) : this.e < 4 ? Math.min(i10, sVar.a) : Math.min(i10, 1);
+            i9 = sVar.A ? Math.max(this.e, 2) : this.e < 4 ? Math.min(i9, sVar.a) : Math.min(i9, 1);
         }
         if (sVar.B && sVar.R == null) {
-            i10 = Math.min(i10, 4);
+            i9 = Math.min(i9, 4);
         }
         if (!sVar.v) {
-            i10 = Math.min(i10, 1);
+            i9 = Math.min(i9, 1);
         }
         ViewGroup viewGroup = sVar.R;
         if (viewGroup != null) {
-            kotlin.jvm.internal.j.d(sVar.p().I(), "fragmentManager.specialEffectsControllerFactory");
+            kotlin.jvm.internal.i.d(sVar.p().I(), "fragmentManager.specialEffectsControllerFactory");
             Object tag = viewGroup.getTag(R.id.special_effects_controller_view_tag);
             if (tag instanceof l) {
                 lVar = (l) tag;
@@ -169,39 +170,38 @@ public final class p0 {
                 obj2 = arrayList.get(i11);
                 i11++;
                 ((u0) obj2).getClass();
-                if (kotlin.jvm.internal.j.a(null, sVar)) {
+                if (kotlin.jvm.internal.i.a(null, sVar)) {
                     break;
                 }
             }
             ArrayList arrayList2 = lVar.c;
             int size2 = arrayList2.size();
-            int i12 = 0;
             while (true) {
-                if (i12 >= size2) {
+                if (i10 >= size2) {
                     break;
                 }
-                Object obj3 = arrayList2.get(i12);
-                i12++;
+                Object obj3 = arrayList2.get(i10);
+                i10++;
                 ((u0) obj3).getClass();
-                if (kotlin.jvm.internal.j.a(null, sVar)) {
+                if (kotlin.jvm.internal.i.a(null, sVar)) {
                     obj = obj3;
                     break;
                 }
             }
         }
         if (sVar.w) {
-            i10 = sVar.v() ? Math.min(i10, 1) : Math.min(i10, -1);
+            i9 = sVar.v() ? Math.min(i9, 1) : Math.min(i9, -1);
         }
         if (sVar.S && sVar.a < 5) {
-            i10 = Math.min(i10, 4);
+            i9 = Math.min(i9, 4);
         }
         if (sVar.x) {
-            i10 = Math.max(i10, 3);
+            i9 = Math.max(i9, 3);
         }
         if (j0.K(2)) {
-            Log.v("FragmentManager", "computeExpectedState() of " + i10 + " for " + sVar);
+            Log.v("FragmentManager", "computeExpectedState() of " + i9 + " for " + sVar);
         }
-        return i10;
+        return i9;
     }
 
     public final void d() {
@@ -227,7 +227,7 @@ public final class p0 {
             k0Var.u(1);
             return;
         }
-        xe.b bVar = this.a;
+        we.b bVar = this.a;
         bVar.u(sVar, false);
         sVar.H.R();
         sVar.a = 1;
@@ -267,12 +267,12 @@ public final class p0 {
         if (viewGroup2 != null) {
             viewGroup = viewGroup2;
         } else {
-            int i10 = sVar.K;
-            if (i10 != 0) {
-                if (i10 == -1) {
+            int i9 = sVar.K;
+            if (i9 != 0) {
+                if (i9 == -1) {
                     throw new IllegalArgumentException("Cannot create fragment " + sVar + " for a container view with no id");
                 }
-                viewGroup = (ViewGroup) sVar.F.x.b(i10);
+                viewGroup = (ViewGroup) sVar.F.x.b(i9);
                 if (viewGroup == null) {
                     if (!sVar.C && !sVar.B) {
                         try {
@@ -302,7 +302,7 @@ public final class p0 {
             Log.d("FragmentManager", "movefrom CREATED: " + sVar);
         }
         boolean z10 = true;
-        int i10 = 0;
+        int i9 = 0;
         boolean z11 = sVar.w && !sVar.v();
         com.google.firebase.messaging.t tVar = this.b;
         if (z11) {
@@ -324,7 +324,7 @@ public final class p0 {
             z10 = ((m0) tVar.e).h;
         } else {
             v vVar = uVar.b;
-            if (com.google.android.recaptcha.internal.a.u(vVar)) {
+            if (e2.c.v(vVar)) {
                 z10 = true ^ vVar.isChangingConfigurations();
             }
         }
@@ -343,9 +343,9 @@ public final class p0 {
         this.a.q(sVar, false);
         ArrayList s10 = tVar.s();
         int size = s10.size();
-        while (i10 < size) {
-            Object obj = s10.get(i10);
-            i10++;
+        while (i9 < size) {
+            Object obj = s10.get(i9);
+            i9++;
             p0 p0Var = (p0) obj;
             if (p0Var != null) {
                 s sVar2 = p0Var.c;
@@ -376,10 +376,10 @@ public final class p0 {
         if (!sVar.Q) {
             throw new w0("Fragment " + sVar + " did not call through to super.onDestroyView()");
         }
-        a0.l lVar = ((w1.b) new a5.n(sVar.f(), w1.b.f).l(w1.b.class)).d;
-        int i10 = lVar.c;
-        for (int i11 = 0; i11 < i10; i11++) {
-            ((w1.a) lVar.b[i11]).k();
+        a0.l lVar = ((w1.b) new a5.m(sVar.f(), w1.b.f).n(w1.b.class)).d;
+        int i9 = lVar.c;
+        for (int i10 = 0; i10 < i9; i10++) {
+            ((w1.a) lVar.b[i10]).k();
         }
         sVar.D = false;
         this.a.z(sVar, false);
@@ -450,9 +450,9 @@ public final class p0 {
             boolean z11 = false;
             while (true) {
                 int c10 = c();
-                int i10 = sVar.a;
-                if (c10 == i10) {
-                    if (!z11 && i10 == -1 && sVar.w && !sVar.v()) {
+                int i9 = sVar.a;
+                if (c10 == i9) {
+                    if (!z11 && i9 == -1 && sVar.w && !sVar.v()) {
                         if (j0.K(3)) {
                             Log.d("FragmentManager", "Cleaning up state of never attached fragment: " + sVar);
                         }
@@ -474,8 +474,8 @@ public final class p0 {
                     this.d = false;
                     return;
                 }
-                if (c10 <= i10) {
-                    switch (i10 - 1) {
+                if (c10 <= i9) {
+                    switch (i9 - 1) {
                         case -1:
                             h();
                             break;
@@ -507,7 +507,7 @@ public final class p0 {
                             break;
                     }
                 } else {
-                    switch (i10 + 1) {
+                    switch (i9 + 1) {
                         case 0:
                             b();
                             break;
@@ -584,8 +584,8 @@ public final class p0 {
                 return;
             }
             sVar.S = true;
-        } catch (BadParcelableException e9) {
-            throw new IllegalStateException("Failed to restore view hierarchy state for fragment " + sVar, e9);
+        } catch (BadParcelableException e10) {
+            throw new IllegalStateException("Failed to restore view hierarchy state for fragment " + sVar, e10);
         }
     }
 
@@ -667,7 +667,7 @@ public final class p0 {
         throw new w0("Fragment " + sVar + " did not call through to super.onStop()");
     }
 
-    public p0(xe.b bVar, com.google.firebase.messaging.t tVar, ClassLoader classLoader, c0 c0Var, Bundle bundle) {
+    public p0(we.b bVar, com.google.firebase.messaging.t tVar, ClassLoader classLoader, c0 c0Var, Bundle bundle) {
         this.a = bVar;
         this.b = tVar;
         o0 o0Var = (o0) bundle.getParcelable("state");
@@ -699,7 +699,7 @@ public final class p0 {
         }
     }
 
-    public p0(xe.b bVar, com.google.firebase.messaging.t tVar, s sVar, Bundle bundle) {
+    public p0(we.b bVar, com.google.firebase.messaging.t tVar, s sVar, Bundle bundle) {
         this.a = bVar;
         this.b = tVar;
         this.c = sVar;

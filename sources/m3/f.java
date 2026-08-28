@@ -1,9 +1,9 @@
 package m3;
 
-import d5.g0;
+import d5.f0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class f implements t {
     public final int a;
@@ -35,15 +35,15 @@ public final class f implements t {
     @Override // m3.t
     public final s h(long j10) {
         long[] jArr = this.e;
-        int e9 = g0.e(jArr, j10, true);
-        long j11 = jArr[e9];
+        int e10 = f0.e(jArr, j10, true);
+        long j11 = jArr[e10];
         long[] jArr2 = this.c;
-        u uVar = new u(j11, jArr2[e9]);
-        if (j11 >= j10 || e9 == this.a - 1) {
+        u uVar = new u(j11, jArr2[e10]);
+        if (j11 >= j10 || e10 == this.a - 1) {
             return new s(uVar, uVar);
         }
-        int i10 = e9 + 1;
-        return new s(uVar, new u(jArr[i10], jArr2[i10]));
+        int i9 = e10 + 1;
+        return new s(uVar, new u(jArr[i9], jArr2[i9]));
     }
 
     @Override // m3.t

@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import java.util.ArrayList;
-import org.telegram.ui.Components.f11;
+import org.telegram.ui.Components.y11;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class n1 {
     public final com.google.firebase.messaging.m a;
@@ -61,10 +61,10 @@ public final class n1 {
     public final void c() {
         ArrayList arrayList = this.m;
         int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
+        int i9 = 0;
+        while (i9 < size) {
+            Object obj = arrayList.get(i9);
+            i9++;
             ((View) obj).invalidate();
         }
     }
@@ -82,7 +82,7 @@ public final class n1 {
             this.i = z10;
         } else {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
-            final int i10 = 0;
+            final int i9 = 0;
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.voip.m1
                 public final /* synthetic */ n1 b;
 
@@ -92,15 +92,15 @@ public final class n1 {
 
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    switch (i10) {
+                    switch (i9) {
                         case 0:
                             n1 n1Var = this.b;
                             n1Var.getClass();
                             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                            int i11 = (int) (35.0f * floatValue);
-                            n1Var.l.setAlpha(i11);
+                            int i10 = (int) (35.0f * floatValue);
+                            n1Var.l.setAlpha(i10);
                             n1Var.k.setAlpha((int) (floatValue * 102.0f));
-                            n1Var.j.setAlpha(i11);
+                            n1Var.j.setAlpha(i10);
                             n1Var.c();
                             break;
                         default:
@@ -116,10 +116,10 @@ public final class n1 {
             });
             ofFloat.setInterpolator(new LinearInterpolator());
             ofFloat.setDuration(80L);
-            ofFloat.addListener(new f11(this, 14));
+            ofFloat.addListener(new y11(this, 12));
             ofFloat.start();
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-            final int i11 = 1;
+            final int i10 = 1;
             ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.voip.m1
                 public final /* synthetic */ n1 b;
 
@@ -129,15 +129,15 @@ public final class n1 {
 
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    switch (i11) {
+                    switch (i10) {
                         case 0:
                             n1 n1Var = this.b;
                             n1Var.getClass();
                             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                            int i112 = (int) (35.0f * floatValue);
-                            n1Var.l.setAlpha(i112);
+                            int i102 = (int) (35.0f * floatValue);
+                            n1Var.l.setAlpha(i102);
                             n1Var.k.setAlpha((int) (floatValue * 102.0f));
-                            n1Var.j.setAlpha(i112);
+                            n1Var.j.setAlpha(i102);
                             n1Var.c();
                             break;
                         default:

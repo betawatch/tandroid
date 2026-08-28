@@ -3,14 +3,14 @@ package org.telegram.ui.ActionBar;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ KeyEvent.Callback b;
 
-    public /* synthetic */ x(KeyEvent.Callback callback, int i10) {
-        this.a = i10;
+    public /* synthetic */ x(KeyEvent.Callback callback, int i9) {
+        this.a = i9;
         this.b = callback;
     }
 
@@ -20,27 +20,27 @@ public final /* synthetic */ class x implements View.OnClickListener {
             case 0:
                 z zVar = (z) this.b;
                 k kVar = zVar.b;
-                v0 v0Var = (v0) view;
-                if (!v0Var.q()) {
-                    if (!v0Var.C) {
+                w0 w0Var = (w0) view;
+                if (!w0Var.q()) {
+                    if (!w0Var.C) {
                         zVar.o(((Integer) view.getTag()).intValue());
                         break;
                     } else {
-                        kVar.w(v0Var.L(true));
+                        kVar.v(w0Var.L(true));
                         break;
                     }
                 } else if (kVar.q0.a()) {
-                    v0Var.M(null, null);
+                    w0Var.M(null, null);
                     break;
                 }
                 break;
             case 1:
-                ((f2) this.b).dismiss();
+                ((g2) this.b).dismiss();
                 break;
             default:
-                e3 e3Var = (e3) this.b;
-                e3Var.getClass();
-                e3Var.dismissWithButtonClick(((Integer) view.getTag()).intValue());
+                f3 f3Var = (f3) this.b;
+                f3Var.getClass();
+                f3Var.dismissWithButtonClick(((Integer) view.getTag()).intValue());
                 break;
         }
     }

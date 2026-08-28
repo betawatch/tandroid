@@ -1,38 +1,35 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a50 implements Runnable {
+public final /* synthetic */ class a50 implements org.telegram.ui.Components.q5 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b50 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ a50(b50 b50Var, int i10) {
-        this.a = i10;
-        this.b = b50Var;
+    public /* synthetic */ a50(Object obj, int i9) {
+        this.a = i9;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.Components.q5
+    public final void invalidate() {
         switch (this.a) {
             case 0:
-                b50 b50Var = this.b;
-                ag.s0 s0Var = b50Var.b;
-                if (s0Var != null) {
-                    s0Var.setVisibility(0);
-                }
-                AndroidUtilities.runOnUIThread(new a50(b50Var, 2), 16L);
-                break;
-            case 1:
-                ag.s0 s0Var2 = this.b.b;
-                if (s0Var2 != null) {
-                    s0Var2.setVisibility(4);
-                    break;
+                Iterator it = ((b50) this.b).i.iterator();
+                while (it.hasNext()) {
+                    ((View) it.next()).invalidate();
                 }
                 break;
             default:
-                super/*android.app.Dialog*/.dismiss();
+                k51 k51Var = (k51) this.b;
+                k51Var.getClass();
+                if (!hg.h0.b && k51Var.getParent() != null) {
+                    ((View) k51Var.getParent()).invalidate();
+                    break;
+                }
                 break;
         }
     }

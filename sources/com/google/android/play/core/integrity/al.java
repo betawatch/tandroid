@@ -1,23 +1,23 @@
 package com.google.android.play.core.integrity;
 
 import android.content.Context;
-import l8.f0;
+import k8.g0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class al implements l8.n {
-    private final l8.q a;
-    private final l8.q b;
-    private final l8.q c;
+public final class al implements k8.n {
+    private final k8.r a;
+    private final k8.r b;
+    private final k8.r c;
 
-    public al(l8.q qVar, l8.q qVar2, l8.q qVar3, l8.q qVar4) {
-        this.a = qVar;
-        this.b = qVar2;
-        this.c = qVar3;
+    public al(k8.r rVar, k8.r rVar2, k8.r rVar3, k8.r rVar4) {
+        this.a = rVar;
+        this.b = rVar2;
+        this.c = rVar3;
     }
 
-    @Override // l8.q
+    @Override // k8.r
     public final /* bridge */ /* synthetic */ Object a() {
-        return new aj((Context) this.a.a(), (f0) this.b.a(), ((au) this.c).a(), new i());
+        return new aj((Context) this.a.a(), (g0) this.b.a(), ((au) this.c).a(), new i());
     }
 }

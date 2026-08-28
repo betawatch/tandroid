@@ -1,46 +1,41 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.view.MotionEvent;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class e41 implements cx0 {
-    public final /* synthetic */ TLRPC.InputStickerSet a;
-    public final /* synthetic */ j41 b;
+public abstract class e41 {
+    public String[] a = new String[0];
 
-    public e41(j41 j41Var, TLRPC.InputStickerSet inputStickerSet) {
-        this.b = j41Var;
-        this.a = inputStickerSet;
+    public boolean a() {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.cx0
-    public final void a() {
-        j41 j41Var = this.b;
-        f2.q0 adapter = j41Var.n.getAdapter();
-        i41 i41Var = j41Var.s;
-        TLRPC.InputStickerSet inputStickerSet = this.a;
-        int i10 = 0;
-        if (adapter == i41Var) {
-            while (i10 < i41Var.e.size()) {
-                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) i41Var.e.get(i10);
-                if (stickerSetCovered.set.id == inputStickerSet.id) {
-                    i41Var.F(stickerSetCovered, null);
-                    return;
-                }
-                i10++;
-            }
-            return;
-        }
-        pf.l1 l1Var = j41Var.v;
-        ArrayList arrayList = l1Var.A;
-        while (i10 < arrayList.size()) {
-            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i10);
-            if (stickerSetCovered2.set.id == inputStickerSet.id) {
-                l1Var.F(stickerSetCovered2, null);
-                return;
-            }
-            i10++;
-        }
+    public String[] b() {
+        return this.a;
+    }
+
+    public boolean c() {
+        return false;
+    }
+
+    public boolean d(x31 x31Var, MotionEvent motionEvent) {
+        return false;
+    }
+
+    public boolean e(x31 x31Var, j jVar, MotionEvent motionEvent) {
+        return false;
+    }
+
+    public abstract void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10);
+
+    public abstract void h(TLRPC.StickerSetCovered stickerSetCovered);
+
+    public void i(String[] strArr) {
+        this.a = strArr;
+    }
+
+    public void f(TLRPC.Document document, Object obj, boolean z10, int i9) {
     }
 }

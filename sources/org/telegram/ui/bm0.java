@@ -1,161 +1,73 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.SecureDocument;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class bm0 implements om0 {
-    public final /* synthetic */ TLRPC.SecureValueType a;
+public final class bm0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ xm0 d;
+    public final /* synthetic */ wm0 c;
 
-    public bm0(xm0 xm0Var, TLRPC.SecureValueType secureValueType, boolean z10, int i10) {
-        this.d = xm0Var;
-        this.a = secureValueType;
+    public /* synthetic */ bm0(wm0 wm0Var, boolean z10, int i9) {
+        this.a = i9;
+        this.c = wm0Var;
         this.b = z10;
-        this.c = i10;
     }
 
-    public static void a(bm0 bm0Var, SecureDocument secureDocument, TLRPC.TL_secureFile tL_secureFile) {
-        bm0Var.getClass();
-        File pathToAttach = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(secureDocument);
-        String str = secureDocument.secureFile.dc_id + "_" + secureDocument.secureFile.id;
-        File pathToAttach2 = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(tL_secureFile);
-        String str2 = tL_secureFile.dc_id + "_" + tL_secureFile.id;
-        pathToAttach.renameTo(pathToAttach2);
-        ImageLoader.getInstance().replaceImageInCache(str, str2, null, false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                wm0 wm0Var = this.c;
+                AnimatorSet animatorSet = wm0Var.I;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    wm0Var.I = null;
+                    break;
+                }
+                break;
+            default:
+                wm0 wm0Var2 = this.c;
+                AnimatorSet animatorSet2 = wm0Var2.I;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    wm0Var2.I = null;
+                    break;
+                }
+                break;
+        }
     }
 
-    public static TLRPC.InputSecureFile b(SecureDocument secureDocument) {
-        if (secureDocument.inputFile == null) {
-            TLRPC.TL_inputSecureFile tL_inputSecureFile = new TLRPC.TL_inputSecureFile();
-            TLRPC.TL_secureFile tL_secureFile = secureDocument.secureFile;
-            tL_inputSecureFile.id = tL_secureFile.id;
-            tL_inputSecureFile.access_hash = tL_secureFile.access_hash;
-            return tL_inputSecureFile;
-        }
-        TLRPC.TL_inputSecureFileUploaded tL_inputSecureFileUploaded = new TLRPC.TL_inputSecureFileUploaded();
-        TLRPC.TL_inputFile tL_inputFile = secureDocument.inputFile;
-        tL_inputSecureFileUploaded.id = tL_inputFile.id;
-        tL_inputSecureFileUploaded.parts = tL_inputFile.parts;
-        tL_inputSecureFileUploaded.md5_checksum = tL_inputFile.md5_checksum;
-        tL_inputSecureFileUploaded.file_hash = secureDocument.fileHash;
-        tL_inputSecureFileUploaded.secret = secureDocument.fileSecret;
-        return tL_inputSecureFileUploaded;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void c(TLRPC.TL_secureRequiredType tL_secureRequiredType, String str, String str2, TLRPC.TL_secureRequiredType tL_secureRequiredType2, String str3, ArrayList arrayList, SecureDocument secureDocument, ArrayList arrayList2, SecureDocument secureDocument2, SecureDocument secureDocument3, Runnable runnable, i6 i6Var) {
-        TLRPC.TL_inputSecureValue tL_inputSecureValue;
-        TLRPC.TL_securePlainPhone tL_securePlainPhone;
-        TLRPC.TL_inputSecureValue tL_inputSecureValue2;
-        int i10;
-        boolean isEmpty = TextUtils.isEmpty(str2);
-        xm0 xm0Var = this.d;
-        if (!isEmpty) {
-            tL_inputSecureValue = new TLRPC.TL_inputSecureValue();
-            tL_inputSecureValue.type = tL_secureRequiredType.type;
-            tL_inputSecureValue.flags |= 1;
-            af.h k12 = xm0Var.k1(AndroidUtilities.getStringBytes(str2));
-            TLRPC.TL_secureData tL_secureData = new TLRPC.TL_secureData();
-            tL_inputSecureValue.data = tL_secureData;
-            tL_secureData.data = (byte[]) k12.c;
-            tL_secureData.data_hash = (byte[]) k12.d;
-            tL_secureData.secret = (byte[]) k12.a;
-        } else if (TextUtils.isEmpty(str)) {
-            tL_inputSecureValue = null;
-        } else {
-            TLRPC.SecureValueType secureValueType = this.a;
-            if (secureValueType instanceof TLRPC.TL_secureValueTypeEmail) {
-                TLRPC.TL_securePlainEmail tL_securePlainEmail = new TLRPC.TL_securePlainEmail();
-                tL_securePlainEmail.email = str;
-                tL_securePlainPhone = tL_securePlainEmail;
-            } else {
-                if (!(secureValueType instanceof TLRPC.TL_secureValueTypePhone)) {
-                    return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                wm0 wm0Var = this.c;
+                AnimatorSet animatorSet = wm0Var.I;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    if (!this.b) {
+                        wm0Var.J.setVisibility(4);
+                        break;
+                    } else {
+                        wm0Var.H.getContentView().setVisibility(4);
+                        break;
+                    }
                 }
-                TLRPC.TL_securePlainPhone tL_securePlainPhone2 = new TLRPC.TL_securePlainPhone();
-                tL_securePlainPhone2.phone = str;
-                tL_securePlainPhone = tL_securePlainPhone2;
-            }
-            TLRPC.TL_inputSecureValue tL_inputSecureValue3 = new TLRPC.TL_inputSecureValue();
-            tL_inputSecureValue3.type = tL_secureRequiredType.type;
-            tL_inputSecureValue3.flags |= 32;
-            tL_inputSecureValue3.plain_data = tL_securePlainPhone;
-            tL_inputSecureValue = tL_inputSecureValue3;
-        }
-        boolean z10 = this.b;
-        if (!z10 && tL_inputSecureValue == null) {
-            if (i6Var != null) {
-                i6Var.S(null, null);
-                return;
-            }
-            return;
-        }
-        if (tL_secureRequiredType2 != null) {
-            TLRPC.TL_inputSecureValue tL_inputSecureValue4 = new TLRPC.TL_inputSecureValue();
-            tL_inputSecureValue4.type = tL_secureRequiredType2.type;
-            if (!TextUtils.isEmpty(str3)) {
-                tL_inputSecureValue4.flags |= 1;
-                af.h k13 = xm0Var.k1(AndroidUtilities.getStringBytes(str3));
-                TLRPC.TL_secureData tL_secureData2 = new TLRPC.TL_secureData();
-                tL_inputSecureValue4.data = tL_secureData2;
-                tL_secureData2.data = (byte[]) k13.c;
-                tL_secureData2.data_hash = (byte[]) k13.d;
-                tL_secureData2.secret = (byte[]) k13.a;
-            }
-            if (secureDocument2 != null) {
-                tL_inputSecureValue4.front_side = b(secureDocument2);
-                tL_inputSecureValue4.flags |= 2;
-            }
-            if (secureDocument3 != null) {
-                tL_inputSecureValue4.reverse_side = b(secureDocument3);
-                tL_inputSecureValue4.flags |= 4;
-            }
-            if (secureDocument != null) {
-                tL_inputSecureValue4.selfie = b(secureDocument);
-                tL_inputSecureValue4.flags |= 8;
-            }
-            if (arrayList2 != null && !arrayList2.isEmpty()) {
-                tL_inputSecureValue4.flags |= 64;
-                int size = arrayList2.size();
-                for (int i11 = 0; i11 < size; i11++) {
-                    tL_inputSecureValue4.translation.add(b((SecureDocument) arrayList2.get(i11)));
+                break;
+            default:
+                wm0 wm0Var2 = this.c;
+                AnimatorSet animatorSet2 = wm0Var2.I;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    if (!this.b) {
+                        wm0Var2.L.setVisibility(4);
+                        break;
+                    } else {
+                        wm0Var2.K.setVisibility(4);
+                        break;
+                    }
                 }
-            }
-            if (arrayList != null && !arrayList.isEmpty()) {
-                tL_inputSecureValue4.flags |= 16;
-                int size2 = arrayList.size();
-                for (int i12 = 0; i12 < size2; i12++) {
-                    tL_inputSecureValue4.files.add(b((SecureDocument) arrayList.get(i12)));
-                }
-            }
-            if (!z10) {
-                tL_inputSecureValue2 = tL_inputSecureValue4;
-                TL_account.saveSecureValue savesecurevalue = new TL_account.saveSecureValue();
-                savesecurevalue.value = tL_inputSecureValue;
-                savesecurevalue.secure_secret_id = xm0Var.X0;
-                i10 = ((org.telegram.ui.ActionBar.n2) xm0Var).currentAccount;
-                ConnectionsManager.getInstance(i10).sendRequest(savesecurevalue, new am0(this, i6Var, str, savesecurevalue, tL_secureRequiredType2, tL_secureRequiredType, arrayList, secureDocument, secureDocument2, secureDocument3, arrayList2, str2, str3, runnable, this, tL_inputSecureValue2));
-            }
-            tL_inputSecureValue = tL_inputSecureValue4;
+                break;
         }
-        tL_inputSecureValue2 = null;
-        TL_account.saveSecureValue savesecurevalue2 = new TL_account.saveSecureValue();
-        savesecurevalue2.value = tL_inputSecureValue;
-        savesecurevalue2.secure_secret_id = xm0Var.X0;
-        i10 = ((org.telegram.ui.ActionBar.n2) xm0Var).currentAccount;
-        ConnectionsManager.getInstance(i10).sendRequest(savesecurevalue2, new am0(this, i6Var, str, savesecurevalue2, tL_secureRequiredType2, tL_secureRequiredType, arrayList, secureDocument, secureDocument2, secureDocument3, arrayList2, str2, str3, runnable, this, tL_inputSecureValue2));
     }
 }

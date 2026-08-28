@@ -1,104 +1,106 @@
 package androidx.mediarouter.app;
 
-import android.app.PendingIntent;
-import android.content.Context;
-import android.support.v4.media.session.PlaybackStateCompat;
-import android.util.Log;
+import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
 import android.view.View;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityManager;
-import org.telegram.messenger.beta.R;
+import android.view.ViewTreeObserver;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.AnimationSet;
+import android.view.animation.TranslateAnimation;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class p implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u b;
+public final class p implements ViewTreeObserver.OnGlobalLayoutListener {
+    public final /* synthetic */ Map a;
+    public final /* synthetic */ Map b;
+    public final /* synthetic */ v c;
 
-    public /* synthetic */ p(u uVar, int i10) {
-        this.a = i10;
-        this.b = uVar;
+    public p(v vVar, HashMap hashMap, HashMap hashMap2) {
+        this.c = vVar;
+        this.a = hashMap;
+        this.b = hashMap2;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10;
-        PlaybackStateCompat playbackStateCompat;
-        PendingIntent sessionActivity;
-        switch (this.a) {
-            case 0:
-                u uVar = this.b;
-                Context context = uVar.s;
-                AccessibilityManager accessibilityManager = uVar.z0;
-                int id2 = view.getId();
-                if (id2 != 16908313 && id2 != 16908314) {
-                    if (id2 != R.id.mr_control_playback_ctrl) {
-                        if (id2 == R.id.mr_close) {
-                            uVar.dismiss();
-                            break;
-                        }
-                    } else {
-                        android.support.v4.media.session.p pVar = uVar.e0;
-                        if (pVar != null && (playbackStateCompat = uVar.g0) != null) {
-                            int i11 = 0;
-                            i10 = playbackStateCompat.a != 3 ? 0 : 1;
-                            if (i10 != 0 && (playbackStateCompat.e & 514) != 0) {
-                                pVar.c().a.pause();
-                                i11 = R.string.mr_controller_pause;
-                            } else if (i10 != 0 && (playbackStateCompat.e & 1) != 0) {
-                                pVar.c().a.stop();
-                                i11 = R.string.mr_controller_stop;
-                            } else if (i10 == 0 && (playbackStateCompat.e & 516) != 0) {
-                                pVar.c().a.play();
-                                i11 = R.string.mr_controller_play;
-                            }
-                            if (accessibilityManager != null && accessibilityManager.isEnabled() && i11 != 0) {
-                                AccessibilityEvent obtain = AccessibilityEvent.obtain(16384);
-                                obtain.setPackageName(context.getPackageName());
-                                obtain.setClassName(p.class.getName());
-                                obtain.getText().add(context.getString(i11));
-                                accessibilityManager.sendAccessibilityEvent(obtain);
-                                break;
-                            }
-                        }
-                    }
-                } else {
-                    if (uVar.r.g()) {
-                        c2.b0 b0Var = uVar.h;
-                        i10 = id2 == 16908313 ? 2 : 1;
-                        b0Var.getClass();
-                        c2.b0.j(i10);
-                    }
-                    uVar.dismiss();
-                    break;
-                }
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
+        Map map;
+        Map map2;
+        q0 q0Var;
+        c2.a0 a0Var;
+        v vVar = this.c;
+        vVar.Q.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+        HashSet hashSet = vVar.T;
+        if (hashSet == null || vVar.U == null) {
+            return;
+        }
+        int size = hashSet.size() - vVar.U.size();
+        l lVar = new l(vVar, 1);
+        int firstVisiblePosition = vVar.Q.getFirstVisiblePosition();
+        int i9 = 0;
+        boolean z10 = false;
+        while (true) {
+            int childCount = vVar.Q.getChildCount();
+            map = this.a;
+            map2 = this.b;
+            if (i9 >= childCount) {
                 break;
-            case 1:
-                u uVar2 = this.b;
-                boolean z10 = uVar2.q0;
-                uVar2.q0 = !z10;
-                if (!z10) {
-                    uVar2.Q.setVisibility(0);
-                }
-                uVar2.w0 = uVar2.q0 ? uVar2.x0 : uVar2.y0;
-                uVar2.t(true);
-                break;
-            case 2:
-                this.b.dismiss();
-                break;
-            default:
-                u uVar3 = this.b;
-                android.support.v4.media.session.p pVar2 = uVar3.e0;
-                if (pVar2 != null && (sessionActivity = pVar2.a.a.getSessionActivity()) != null) {
-                    try {
-                        sessionActivity.send();
-                        uVar3.dismiss();
-                        break;
-                    } catch (PendingIntent.CanceledException unused) {
-                        Log.e("MediaRouteCtrlDialog", sessionActivity + " was not sent, it had been canceled.");
-                    }
-                }
-                break;
+            }
+            View childAt = vVar.Q.getChildAt(i9);
+            c2.a0 a0Var2 = (c2.a0) vVar.R.getItem(firstVisiblePosition + i9);
+            Rect rect = (Rect) map.get(a0Var2);
+            int top = childAt.getTop();
+            int i10 = rect != null ? rect.top : (vVar.a0 * size) + top;
+            AnimationSet animationSet = new AnimationSet(true);
+            HashSet hashSet2 = vVar.T;
+            if (hashSet2 == null || !hashSet2.contains(a0Var2)) {
+                a0Var = a0Var2;
+            } else {
+                AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.0f);
+                a0Var = a0Var2;
+                alphaAnimation.setDuration(vVar.u0);
+                animationSet.addAnimation(alphaAnimation);
+                i10 = top;
+            }
+            TranslateAnimation translateAnimation = new TranslateAnimation(0.0f, 0.0f, i10 - top, 0.0f);
+            translateAnimation.setDuration(vVar.t0);
+            animationSet.addAnimation(translateAnimation);
+            animationSet.setFillAfter(true);
+            animationSet.setFillEnabled(true);
+            animationSet.setInterpolator(vVar.w0);
+            if (!z10) {
+                animationSet.setAnimationListener(lVar);
+                z10 = true;
+            }
+            childAt.clearAnimation();
+            childAt.startAnimation(animationSet);
+            c2.a0 a0Var3 = a0Var;
+            map.remove(a0Var3);
+            map2.remove(a0Var3);
+            i9++;
+        }
+        for (Map.Entry entry : map2.entrySet()) {
+            c2.a0 a0Var4 = (c2.a0) entry.getKey();
+            BitmapDrawable bitmapDrawable = (BitmapDrawable) entry.getValue();
+            Rect rect2 = (Rect) map.get(a0Var4);
+            if (vVar.U.contains(a0Var4)) {
+                q0Var = new q0(bitmapDrawable, rect2);
+                q0Var.h = 0.0f;
+                q0Var.e = vVar.v0;
+                q0Var.d = vVar.w0;
+            } else {
+                int i11 = vVar.a0 * size;
+                q0 q0Var2 = new q0(bitmapDrawable, rect2);
+                q0Var2.g = i11;
+                q0Var2.e = vVar.t0;
+                q0Var2.d = vVar.w0;
+                q0Var2.l = new we.b(5, vVar, a0Var4);
+                vVar.V.add(a0Var4);
+                q0Var = q0Var2;
+            }
+            vVar.Q.a.add(q0Var);
         }
     }
 }

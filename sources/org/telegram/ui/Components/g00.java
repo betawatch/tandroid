@@ -1,130 +1,77 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.TextPaint;
-import android.view.View;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class g00 extends View {
-    public int A;
-    public RectF B;
-    public float C;
-    public ValueAnimator D;
-    public boolean a;
-    public boolean b;
-    public boolean c;
-    public String d;
-    public TextPaint e;
-    public Paint f;
-    public Paint h;
-    public Paint n;
-    public int r;
-    public int s;
-    public int v;
-    public int w;
-    public int x;
-    public int y;
+public final /* synthetic */ class g00 implements Utilities.Callback {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b5 b;
+    public final /* synthetic */ org.telegram.ui.df c;
 
-    public final void a(boolean z10, boolean z11) {
-        this.b = z10;
-        if (!this.a || !z11) {
-            this.C = z10 ? 1.0f : 0.0f;
-            return;
-        }
-        ValueAnimator valueAnimator = this.D;
-        if (valueAnimator != null) {
-            valueAnimator.removeAllListeners();
-            this.D.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.C, z10 ? 1.0f : 0.0f);
-        this.D = ofFloat;
-        ofFloat.addUpdateListener(new e6(this, 24));
-        this.D.setDuration(300L);
-        this.D.start();
+    public /* synthetic */ g00(org.telegram.ui.ActionBar.b5 b5Var, org.telegram.ui.df dfVar) {
+        this.b = b5Var;
+        this.c = dfVar;
     }
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        float f10;
-        Canvas canvas2;
-        int i10 = this.w;
-        RectF rectF = this.B;
-        Paint paint = this.h;
-        Paint paint2 = this.n;
-        Paint paint3 = this.f;
-        TextPaint textPaint = this.e;
-        super.draw(canvas);
-        float f11 = this.C;
-        if (f11 <= 0.5f) {
-            f10 = f11 / 0.5f;
-            paint3.setColor(Color.rgb(Color.red(this.r) + ((int) ((Color.red(this.s) - Color.red(this.r)) * f10)), Color.green(this.r) + ((int) ((Color.green(this.s) - Color.green(this.r)) * f10)), Color.blue(this.r) + ((int) ((Color.blue(this.s) - Color.blue(this.r)) * f10))));
-            textPaint.setColor(Color.rgb(Color.red(this.s) + ((int) ((Color.red(this.v) - Color.red(this.s)) * f10)), Color.green(this.s) + ((int) ((Color.green(this.v) - Color.green(this.s)) * f10)), Color.blue(this.s) + ((int) ((Color.blue(this.v) - Color.blue(this.s)) * f10))));
-        } else {
-            textPaint.setColor(this.v);
-            paint3.setColor(this.s);
-            f10 = 1.0f;
-        }
-        int measuredHeight = getMeasuredHeight() >> 1;
-        paint.setColor(this.s);
-        canvas.drawRoundRect(rectF, i10 / 2.0f, i10 / 2.0f, paint3);
-        canvas.drawRoundRect(rectF, i10 / 2.0f, i10 / 2.0f, paint);
-        String str = this.d;
-        if (str != null) {
-            canvas.drawText(str, (f10 * this.y) + (getMeasuredWidth() >> 1), (textPaint.getTextSize() * 0.35f) + measuredHeight, textPaint);
-        }
-        float f12 = 2.0f - (this.C / 0.5f);
-        canvas.save();
-        canvas.scale(0.9f, 0.9f, AndroidUtilities.dpf2(7.0f), measuredHeight);
-        canvas.translate(AndroidUtilities.dp(12.0f), measuredHeight - AndroidUtilities.dp(9.0f));
-        if (this.C > 0.5f) {
-            paint2.setColor(this.v);
-            float f13 = 1.0f - f12;
-            canvas2 = canvas;
-            canvas2.drawLine(AndroidUtilities.dpf2(7.0f), (int) AndroidUtilities.dpf2(13.0f), (int) (AndroidUtilities.dpf2(7.0f) - (AndroidUtilities.dp(4.0f) * f13)), (int) (AndroidUtilities.dpf2(13.0f) - (AndroidUtilities.dp(4.0f) * f13)), paint2);
-            canvas2.drawLine((int) AndroidUtilities.dpf2(7.0f), (int) AndroidUtilities.dpf2(13.0f), (int) ((AndroidUtilities.dp(8.0f) * f13) + AndroidUtilities.dpf2(7.0f)), (int) (AndroidUtilities.dpf2(13.0f) - (AndroidUtilities.dp(8.0f) * f13)), paint2);
-        } else {
-            canvas2 = canvas;
-        }
-        canvas2.restore();
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a = true;
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a = false;
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        Paint paint = this.h;
-        RectF rectF = this.B;
-        int i12 = this.A;
-        String str = this.d;
-        setMeasuredDimension((i12 * 2) + (str == null ? 0 : (int) this.e.measureText(str)) + (this.x << 1), AndroidUtilities.dp(4.0f) + this.w);
-        if (getMeasuredWidth() != 0) {
-            rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-            rectF.inset((paint.getStrokeWidth() / 2.0f) + i12, (paint.getStrokeWidth() / 2.0f) + i12);
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0045  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0058  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x003e  */
+    @Override // org.telegram.messenger.Utilities.Callback
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run(Object obj) {
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                this.c.run(this.b.getLastFragment());
+                break;
+            default:
+                Integer num = (Integer) obj;
+                List fragmentStack = this.b.getFragmentStack();
+                boolean z11 = true;
+                org.telegram.ui.ActionBar.o2 o2Var = null;
+                for (int size = fragmentStack.size() - 1; size >= 0; size--) {
+                    o2Var = (org.telegram.ui.ActionBar.o2) fragmentStack.get(size);
+                    if (!(o2Var instanceof org.telegram.ui.dy) && !(o2Var instanceof org.telegram.ui.ng0)) {
+                        if (z11) {
+                            o2Var.finishFragment();
+                            z11 = false;
+                        } else {
+                            o2Var.removeSelfFromStack();
+                        }
+                    }
+                    org.telegram.ui.ActionBar.o2 o2Var2 = o2Var;
+                    org.telegram.ui.ActionBar.o2 o2Var3 = !(o2Var2 instanceof org.telegram.ui.ng0) ? ((org.telegram.ui.ng0) o2Var2).F : o2Var2;
+                    z10 = o2Var3 instanceof org.telegram.ui.dy;
+                    org.telegram.ui.df dfVar = this.c;
+                    if (z10) {
+                        dfVar.run(o2Var2);
+                        break;
+                    } else {
+                        org.telegram.ui.dy dyVar = (org.telegram.ui.dy) o2Var3;
+                        dyVar.K3();
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.k6(dyVar, num, dfVar, o2Var2, 22), 80L);
+                        break;
+                    }
+                }
+                org.telegram.ui.ActionBar.o2 o2Var22 = o2Var;
+                if (!(o2Var22 instanceof org.telegram.ui.ng0)) {
+                }
+                z10 = o2Var3 instanceof org.telegram.ui.dy;
+                org.telegram.ui.df dfVar2 = this.c;
+                if (z10) {
+                }
+                break;
         }
     }
 
-    public void setChecked(boolean z10) {
-        a(z10, true);
-    }
-
-    public void setText(String str) {
-        this.d = str;
-        requestLayout();
+    public /* synthetic */ g00(org.telegram.ui.df dfVar, org.telegram.ui.ActionBar.b5 b5Var) {
+        this.c = dfVar;
+        this.b = b5Var;
     }
 }

@@ -1,31 +1,32 @@
 package a9;
 
-import android.os.StrictMode;
-import java.util.Locale;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicLong;
+import android.os.Bundle;
+import android.util.Log;
+import d7.u;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a implements ThreadFactory {
-    public static final ThreadFactory e = Executors.defaultThreadFactory();
-    public final AtomicLong a = new AtomicLong();
-    public final String b;
-    public final int c;
-    public final StrictMode.ThreadPolicy d;
+public final /* synthetic */ class a implements c9.a {
+    public final /* synthetic */ c a;
 
-    public a(String str, int i10, StrictMode.ThreadPolicy threadPolicy) {
-        this.b = str;
-        this.c = i10;
-        this.d = threadPolicy;
+    public /* synthetic */ a(c cVar) {
+        this.a = cVar;
     }
 
-    @Override // java.util.concurrent.ThreadFactory
-    public final Thread newThread(Runnable runnable) {
-        Thread newThread = e.newThread(new a1.e(2, this, runnable));
-        Locale locale = Locale.ROOT;
-        newThread.setName(this.b + " Thread #" + this.a.getAndIncrement());
-        return newThread;
+    @Override // c9.a
+    public void V1(Bundle bundle) {
+        ((u) this.a.b).V1(bundle);
+    }
+
+    public void a(b bVar) {
+        c cVar = this.a;
+        synchronized (cVar) {
+            ((ArrayList) cVar.a).add(bVar);
+            ((v9.d) cVar.c).getClass();
+            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                Log.d("FirebaseCrashlytics", "Could not register handler for breadcrumbs events.", null);
+            }
+        }
     }
 }

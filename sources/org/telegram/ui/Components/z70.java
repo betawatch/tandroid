@@ -1,132 +1,35 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class z70 extends View {
-    public static DecelerateInterpolator v;
-    public static Paint w;
-    public long a;
-    public float b;
-    public float c;
-    public long d;
-    public float e;
-    public float f;
-    public int h;
-    public int n;
-    public final RectF r;
-    public org.telegram.ui.Components.voip.h s;
+public final class z70 extends rp0 {
+    public final /* synthetic */ e80 X0;
 
-    public z70(Context context) {
-        super(context);
-        this.f = 1.0f;
-        this.r = new RectF();
-        if (v == null) {
-            v = new DecelerateInterpolator();
-            Paint paint = new Paint(1);
-            w = paint;
-            paint.setStrokeCap(Paint.Cap.ROUND);
-            w.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z70(e80 e80Var, Context context, String str, String str2, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(context, null, str, false, str2, false, b6Var);
+        this.X0 = e80Var;
     }
 
-    public final void a(float f10, boolean z10) {
+    @Override // org.telegram.ui.Components.rp0
+    public final void R0(a0.h hVar, int i9, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        String formatString;
         if (z10) {
-            this.c = this.e;
-        } else {
-            this.e = f10;
-            this.c = f10;
-        }
-        if (f10 != 1.0f) {
-            this.f = 1.0f;
-        }
-        this.b = f10;
-        this.d = 0L;
-        this.a = System.currentTimeMillis();
-        invalidate();
-    }
-
-    public float getCurrentProgress() {
-        return this.b;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10 = this.h;
-        RectF rectF = this.r;
-        if (i10 != 0 && this.e != 1.0f) {
-            w.setColor(i10);
-            w.setAlpha((int) (this.f * 255.0f));
-            getWidth();
-            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-            canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, w);
-        }
-        w.setColor(this.n);
-        w.setAlpha((int) (this.f * 255.0f));
-        rectF.set(0.0f, 0.0f, getWidth() * this.e, getHeight());
-        canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, w);
-        if (this.f > 0.0f) {
-            if (this.s == null) {
-                org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h(160, 0);
-                this.s = hVar;
-                hVar.k = false;
-                hVar.n = 0.8f;
-                hVar.m = 1.2f;
+            if (hVar == null || hVar.m() != 1) {
+                formatString = LocaleController.formatString(R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", i9, new Object[0]));
+            } else {
+                long j10 = ((TLRPC.Dialog) hVar.n(0)).id;
+                formatString = (j10 == 0 || j10 == UserConfig.getInstance(this.currentAccount).getClientUserId()) ? LocaleController.getString(R.string.InvLinkToSavedMessages) : LocaleController.formatString(R.string.InvLinkToUser, MessagesController.getInstance(this.currentAccount).getPeerName(j10, true));
             }
-            this.s.f = getMeasuredWidth();
-            this.s.a(getHeight() / 2.0f, canvas, rectF, null);
-            invalidate();
+            this.X0.e(R.raw.forward, AndroidUtilities.replaceTags(formatString));
         }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j10 = currentTimeMillis - this.a;
-        this.a = currentTimeMillis;
-        float f10 = this.e;
-        if (f10 != 1.0f) {
-            float f11 = this.b;
-            if (f10 != f11) {
-                float f12 = this.c;
-                float f13 = f11 - f12;
-                if (f13 > 0.0f) {
-                    long j11 = this.d + j10;
-                    this.d = j11;
-                    if (j11 >= 300) {
-                        this.e = f11;
-                        this.c = f11;
-                        this.d = 0L;
-                    } else {
-                        this.e = (v.getInterpolation(j11 / 300.0f) * f13) + f12;
-                    }
-                }
-                invalidate();
-            }
-        }
-        float f14 = this.e;
-        if (f14 < 1.0f || f14 != 1.0f) {
-            return;
-        }
-        float f15 = this.f;
-        if (f15 != 0.0f) {
-            float f16 = f15 - (j10 / 200.0f);
-            this.f = f16;
-            if (f16 <= 0.0f) {
-                this.f = 0.0f;
-            }
-            invalidate();
-        }
-    }
-
-    public void setBackColor(int i10) {
-        this.h = i10;
-    }
-
-    public void setProgressColor(int i10) {
-        this.n = i10;
     }
 }

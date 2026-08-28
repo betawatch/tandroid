@@ -7,7 +7,7 @@ import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.Stroke;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class Box {
     public static boolean DEBUG = false;
@@ -31,9 +31,9 @@ public abstract class Box {
     }
 
     private static void countBoxAllocation() {
-        int i10 = boxBudgetUsed + 1;
-        boxBudgetUsed = i10;
-        if (i10 > MAX_BOX_BUDGET) {
+        int i9 = boxBudgetUsed + 1;
+        boxBudgetUsed = i9;
+        if (i9 > MAX_BOX_BUDGET) {
             throw new ParseException("Formula is too large to lay out!");
         }
     }
@@ -177,9 +177,9 @@ public abstract class Box {
         this.background = color2;
     }
 
-    public void add(int i10, Box box) {
+    public void add(int i9, Box box) {
         countBoxAllocation();
-        this.children.add(i10, box);
+        this.children.add(i9, box);
         box.parent = this;
         box.elderParent = this.elderParent;
     }

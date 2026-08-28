@@ -10,7 +10,7 @@ import android.graphics.PorterDuff;
 import android.graphics.Shader;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class m {
     public static final Matrix p = new Matrix();
@@ -45,10 +45,10 @@ public final class m {
         this.b = new Path();
     }
 
-    public final void a(j jVar, Matrix matrix, Canvas canvas, int i10, int i11) {
-        int i12;
+    public final void a(j jVar, Matrix matrix, Canvas canvas, int i9, int i10) {
+        int i11;
         float f10;
-        int i13;
+        int i12;
         float f11;
         Matrix matrix2 = jVar.a;
         ArrayList arrayList = jVar.b;
@@ -57,15 +57,15 @@ public final class m {
         matrix3.preConcat(jVar.j);
         canvas.save();
         char c10 = 0;
-        int i14 = 0;
-        while (i14 < arrayList.size()) {
-            k kVar = (k) arrayList.get(i14);
+        int i13 = 0;
+        while (i13 < arrayList.size()) {
+            k kVar = (k) arrayList.get(i13);
             if (kVar instanceof j) {
-                a((j) kVar, matrix3, canvas, i10, i11);
+                a((j) kVar, matrix3, canvas, i9, i10);
             } else if (kVar instanceof l) {
                 l lVar = (l) kVar;
-                float f12 = i10 / this.j;
-                float f13 = i11 / this.k;
+                float f12 = i9 / this.j;
+                float f13 = i10 / this.k;
                 float min = Math.min(f12, f13);
                 Matrix matrix4 = this.c;
                 matrix4.set(matrix3);
@@ -73,7 +73,7 @@ public final class m {
                 float[] fArr = {0.0f, 1.0f, 1.0f, 0.0f};
                 matrix3.mapVectors(fArr);
                 float hypot = (float) Math.hypot(fArr[c10], fArr[1]);
-                i12 = i14;
+                i11 = i13;
                 float hypot2 = (float) Math.hypot(fArr[2], fArr[3]);
                 float f14 = (fArr[0] * fArr[3]) - (fArr[1] * fArr[2]);
                 float max = Math.max(hypot, hypot2);
@@ -81,9 +81,9 @@ public final class m {
                 if (abs != 0.0f) {
                     Path path = this.a;
                     path.reset();
-                    i0.e[] eVarArr = lVar.a;
-                    if (eVarArr != null) {
-                        i0.e.b(eVarArr, path);
+                    i0.d[] dVarArr = lVar.a;
+                    if (dVarArr != null) {
+                        i0.d.b(dVarArr, path);
                     }
                     Path path2 = this.b;
                     path2.reset();
@@ -117,18 +117,18 @@ public final class m {
                             path.rLineTo(f10, f10);
                         }
                         path2.addPath(path, matrix4);
-                        b6.a aVar = iVar.f;
+                        a6.a aVar = iVar.f;
                         if (((Shader) aVar.b) == null && aVar.c == 0) {
-                            i13 = 16777215;
+                            i12 = 16777215;
                             f11 = 255.0f;
                         } else {
                             if (this.e == null) {
-                                i13 = 16777215;
+                                i12 = 16777215;
                                 Paint paint = new Paint(1);
                                 this.e = paint;
                                 paint.setStyle(Paint.Style.FILL);
                             } else {
-                                i13 = 16777215;
+                                i12 = 16777215;
                             }
                             Paint paint2 = this.e;
                             Shader shader = (Shader) aVar.b;
@@ -140,17 +140,17 @@ public final class m {
                             } else {
                                 paint2.setShader(null);
                                 paint2.setAlpha(255);
-                                int i15 = aVar.c;
+                                int i14 = aVar.c;
                                 float f21 = iVar.h;
                                 PorterDuff.Mode mode = p.s;
                                 f11 = 255.0f;
-                                paint2.setColor((i15 & i13) | (((int) (Color.alpha(i15) * f21)) << 24));
+                                paint2.setColor((i14 & i12) | (((int) (Color.alpha(i14) * f21)) << 24));
                             }
                             paint2.setColorFilter(null);
                             path2.setFillType(iVar.c == 0 ? Path.FillType.WINDING : Path.FillType.EVEN_ODD);
                             canvas.drawPath(path2, paint2);
                         }
-                        b6.a aVar2 = iVar.d;
+                        a6.a aVar2 = iVar.d;
                         if (((Shader) aVar2.b) != null || aVar2.c != 0) {
                             if (this.d == null) {
                                 Paint paint3 = new Paint(1);
@@ -175,10 +175,10 @@ public final class m {
                             } else {
                                 paint4.setShader(null);
                                 paint4.setAlpha(255);
-                                int i16 = aVar2.c;
+                                int i15 = aVar2.c;
                                 float f22 = iVar.g;
                                 PorterDuff.Mode mode2 = p.s;
-                                paint4.setColor((i16 & i13) | (((int) (Color.alpha(i16) * f22)) << 24));
+                                paint4.setColor((i15 & i12) | (((int) (Color.alpha(i15) * f22)) << 24));
                             }
                             paint4.setColorFilter(null);
                             paint4.setStrokeWidth(iVar.e * min * abs);
@@ -186,11 +186,11 @@ public final class m {
                         }
                     }
                 }
-                i14 = i12 + 1;
+                i13 = i11 + 1;
                 c10 = 0;
             }
-            i12 = i14;
-            i14 = i12 + 1;
+            i11 = i13;
+            i13 = i11 + 1;
             c10 = 0;
         }
         canvas.restore();
@@ -208,8 +208,8 @@ public final class m {
         setRootAlpha((int) (f10 * 255.0f));
     }
 
-    public void setRootAlpha(int i10) {
-        this.l = i10;
+    public void setRootAlpha(int i9) {
+        this.l = i9;
     }
 
     public m(m mVar) {

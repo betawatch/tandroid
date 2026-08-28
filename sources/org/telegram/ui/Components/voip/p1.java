@@ -3,7 +3,7 @@ package org.telegram.ui.Components.voip;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class p1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -11,21 +11,21 @@ public final class p1 extends AnimatorListenerAdapter {
     public final /* synthetic */ float c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ p1(Object obj, float f10, float f11, int i10) {
-        this.a = i10;
+    public /* synthetic */ p1(Object obj, float f10, float f11, int i9) {
+        this.a = i9;
         this.d = obj;
         this.b = f10;
         this.c = f11;
     }
 
     public void a() {
-        ud.c cVar = (ud.c) this.d;
+        td.c cVar = (td.c) this.d;
         if (cVar.g) {
             cVar.d(this.b + this.c, 1.0f);
             if (cVar.g) {
                 cVar.g = false;
             }
-            cVar.b.A(cVar.e, cVar.a);
+            cVar.b.B(cVar.e, cVar.a);
         }
     }
 
@@ -62,7 +62,7 @@ public final class p1 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 1:
-                ((ud.c) this.d).getClass();
+                ((td.c) this.d).getClass();
                 break;
             default:
                 super.onAnimationStart(animator);

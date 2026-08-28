@@ -1,19 +1,32 @@
 package h7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes.dex */
-public final class w0 implements r9.d {
-    public static final w0 a = new w0();
+import java.util.Arrays;
 
-    static {
-        com.google.android.recaptcha.internal.a.t(com.google.android.recaptcha.internal.a.r(d.class, com.google.android.recaptcha.internal.a.j(4, com.google.android.recaptcha.internal.a.r(d.class, com.google.android.recaptcha.internal.a.j(3, com.google.android.recaptcha.internal.a.r(d.class, com.google.android.recaptcha.internal.a.j(2, com.google.android.recaptcha.internal.a.r(d.class, new a(1)))))))));
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public final class w0 {
+    public final s7 a;
+    public final Boolean b;
+    public final m8 c;
+
+    public /* synthetic */ w0(a5.m mVar) {
+        this.a = (s7) mVar.b;
+        this.b = (Boolean) mVar.c;
+        this.c = (m8) mVar.d;
     }
 
-    @Override // r9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        throw null;
+        if (!(obj instanceof w0)) {
+            return false;
+        }
+        w0 w0Var = (w0) obj;
+        return x5.l.l(this.a, w0Var.a) && x5.l.l(this.b, w0Var.b) && x5.l.l(null, null) && x5.l.l(this.c, w0Var.c);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, null, this.c});
     }
 }

@@ -11,12 +11,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.j80;
-import org.telegram.ui.Components.t80;
-import org.telegram.ui.ig0;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.f80;
+import org.telegram.ui.Components.p80;
+import org.telegram.ui.fg0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class m2 extends TextView {
     public final /* synthetic */ int a = 0;
@@ -43,27 +43,27 @@ public class m2 extends TextView {
 
     public void c() {
         CharSequence text;
-        t80 t80Var = (t80) this.c;
+        p80 p80Var = (p80) this.c;
         Layout layout = getLayout();
         if (layout == null || (text = layout.getText()) == null) {
             return;
         }
-        j80 j80Var = new j80(0);
+        f80 f80Var = new f80(0);
         float dp = AndroidUtilities.dp(3.0f);
         float dp2 = AndroidUtilities.dp(6.0f);
-        j80Var.q = dp;
-        j80Var.r = dp2;
+        f80Var.q = dp;
+        f80Var.r = dp2;
         int length = text.length();
-        j80Var.d(layout, 0, 0.0f);
-        layout.getSelectionPath(0, length, j80Var);
+        f80Var.d(layout, 0, 0.0f);
+        layout.getSelectionPath(0, length, f80Var);
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(j80Var.s, j80Var.u, j80Var.t, j80Var.v);
+        rectF.set(f80Var.s, f80Var.u, f80Var.t, f80Var.v);
         ((org.telegram.ui.Cells.z) this.b).setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        t80Var.x = j80Var;
-        t80Var.j(4.0f);
-        int themedColor = ((ig0) this.d).getThemedColor(g6.Ld);
-        t80Var.f(g6.l1(0.85f, themedColor), g6.l1(2.0f, themedColor), g6.l1(3.5f, themedColor), g6.l1(6.0f, themedColor));
-        t80Var.k();
+        p80Var.x = f80Var;
+        p80Var.j(4.0f);
+        int themedColor = ((fg0) this.d).getThemedColor(f6.Ld);
+        p80Var.f(f6.l1(0.85f, themedColor), f6.l1(2.0f, themedColor), f6.l1(3.5f, themedColor), f6.l1(6.0f, themedColor));
+        p80Var.k();
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -73,17 +73,17 @@ public class m2 extends TextView {
             case 0:
                 RectF rectF = (RectF) this.b;
                 rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                float x8 = ((View) getParent()).getX() + getX();
+                float x10 = ((View) getParent()).getX() + getX();
                 o2 o2Var = (o2) this.d;
-                float x10 = ((View) o2Var.getParent()).getX() + o2Var.getX() + x8;
+                float x11 = ((View) o2Var.getParent()).getX() + o2Var.getX() + x10;
                 float y10 = ((View) o2Var.getParent()).getY() + o2Var.getY() + ((View) getParent()).getY() + getY();
                 n1 n1Var = (n1) this.c;
-                n1Var.d(x10, y10);
+                n1Var.d(x11, y10);
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), n1Var.b());
                 super.onDraw(canvas);
                 break;
             default:
-                t80 t80Var = (t80) this.c;
+                p80 p80Var = (p80) this.c;
                 canvas.save();
                 if ((getGravity() & 16) == 0 || getLayout() == null) {
                     paddingTop = getPaddingTop();
@@ -94,10 +94,10 @@ public class m2 extends TextView {
                 ((org.telegram.ui.Cells.z) this.b).draw(canvas);
                 canvas.restore();
                 super.onDraw(canvas);
-                if (a() || t80Var.c()) {
+                if (a() || p80Var.c()) {
                     canvas.save();
                     canvas.translate(getPaddingLeft(), paddingTop);
-                    t80Var.draw(canvas);
+                    p80Var.draw(canvas);
                     canvas.restore();
                     invalidate();
                     break;
@@ -107,14 +107,14 @@ public class m2 extends TextView {
     }
 
     @Override // android.widget.TextView, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+    public void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
         switch (this.a) {
             case 1:
-                super.onLayout(z10, i10, i11, i12, i13);
+                super.onLayout(z10, i9, i10, i11, i12);
                 c();
                 break;
             default:
-                super.onLayout(z10, i10, i11, i12, i13);
+                super.onLayout(z10, i9, i10, i11, i12);
                 break;
         }
     }
@@ -159,15 +159,15 @@ public class m2 extends TextView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m2(ig0 ig0Var, Context context) {
+    public m2(fg0 fg0Var, Context context) {
         super(context);
-        this.d = ig0Var;
-        org.telegram.ui.Cells.z f02 = g6.f0(g6.l1(0.1f, g6.w0(null, g6.I6, false)), 7, -1);
+        this.d = fg0Var;
+        org.telegram.ui.Cells.z f02 = f6.f0(f6.l1(0.1f, f6.w0(null, f6.I6, false)), 7, -1);
         this.b = f02;
-        t80 t80Var = new t80();
-        this.c = t80Var;
+        p80 p80Var = new p80();
+        this.c = p80Var;
         f02.setCallback(this);
-        t80Var.C = true;
-        t80Var.u = 0.8f;
+        p80Var.C = true;
+        p80Var.u = 0.8f;
     }
 }

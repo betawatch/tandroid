@@ -12,7 +12,7 @@ public interface b1 {
 
     int e(z zVar);
 
-    void f(Object obj, byte[] bArr, int i10, int i11, m mVar);
+    void f(Object obj, byte[] bArr, int i9, int i10, m mVar);
 
     boolean g(Object obj);
 }

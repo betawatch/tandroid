@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class zzpc {
     private static final char[] zza = "0123456789abcdef".toCharArray();
@@ -21,11 +21,11 @@ public abstract class zzpc {
             return zza();
         }
         byte[] zze = zze();
-        int i10 = zze[0] & 255;
-        for (int i11 = 1; i11 < zze.length; i11++) {
-            i10 |= (zze[i11] & 255) << (i11 * 8);
+        int i9 = zze[0] & 255;
+        for (int i10 = 1; i10 < zze.length; i10++) {
+            i9 |= (zze[i10] & 255) << (i10 * 8);
         }
-        return i10;
+        return i9;
     }
 
     public final String toString() {

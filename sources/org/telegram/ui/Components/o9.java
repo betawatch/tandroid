@@ -1,128 +1,339 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Path;
 import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class o9 extends Drawable implements Drawable.Callback {
-    public static int[] s;
-    public final Context a;
-    public final i6 b;
-    public Drawable c;
-    public Drawable d;
-    public int e;
-    public int f;
-    public int h;
-    public int n;
-    public int r;
+public class o9 extends View {
+    public Path A;
+    public ColorMatrixColorFilter B;
+    public ImageReceiver a;
+    public ImageReceiver b;
+    public int c;
+    public int d;
+    public k5 e;
+    public ColorFilter f;
+    public z8 h;
+    public boolean n;
+    public boolean r;
+    public boolean s;
+    public boolean v;
+    public boolean w;
+    public ValueAnimator x;
+    public nz0 y;
 
     public o9(Context context) {
-        this.a = context;
-        i6 i6Var = new i6(false, false, false, false);
-        this.b = i6Var;
-        i6Var.u(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
-        i6Var.k(0.2f, 160L, er.h);
-        i6Var.t(AndroidUtilities.dp(10.0f));
-        i6Var.b = 17;
-        i6Var.setCallback(this);
-        i6Var.N = true;
-        if (s != null) {
+        super(context);
+        this.c = -1;
+        this.d = -1;
+        this.w = true;
+        ImageReceiver c10 = c();
+        this.a = c10;
+        c10.setCrossfadeByScale(0.0f);
+        this.a.setAllowLoadingOnAttachedOnly(true);
+        this.a.setDelegate(new s(this, 14));
+    }
+
+    public final void a() {
+        Bitmap bitmap;
+        if (!this.r || this.b.getBitmap() != null || this.a.getBitmap() == null || (bitmap = this.a.getBitmap()) == null || bitmap.isRecycled()) {
             return;
         }
-        s = new int[]{R.drawable.profile_level1_inner, R.drawable.profile_level1_outer, R.drawable.profile_level2_inner, R.drawable.profile_level2_outer, R.drawable.profile_level3_inner, R.drawable.profile_level3_outer, R.drawable.profile_level4_inner, R.drawable.profile_level4_outer, R.drawable.profile_level5_inner, R.drawable.profile_level5_outer, R.drawable.profile_level6_inner, R.drawable.profile_level6_outer, R.drawable.profile_level7_inner, R.drawable.profile_level7_outer, R.drawable.profile_level8_inner, R.drawable.profile_level8_outer, R.drawable.profile_level9_inner, R.drawable.profile_level9_outer, R.drawable.profile_level10_inner, R.drawable.profile_level10_outer, R.drawable.profile_level20_inner, R.drawable.profile_level20_outer, R.drawable.profile_level30_inner, R.drawable.profile_level30_outer, R.drawable.profile_level40_inner, R.drawable.profile_level40_outer, R.drawable.profile_level50_inner, R.drawable.profile_level50_outer, R.drawable.profile_level60_inner, R.drawable.profile_level60_outer, R.drawable.profile_level70_inner, R.drawable.profile_level70_outer, R.drawable.profile_level80_inner, R.drawable.profile_level80_outer, R.drawable.profile_level90_inner, R.drawable.profile_level90_outer, R.drawable.profile_level_minus_inner, R.drawable.profile_level_minus_outer};
+        this.b.setImageBitmap(Utilities.stackBlurBitmapMax(bitmap));
+        invalidate();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Drawable drawable = this.d;
-        if (drawable == null || this.c == null) {
+    public final void b() {
+        this.a.clearImage();
+    }
+
+    public ImageReceiver c() {
+        return new ImageReceiver(this);
+    }
+
+    public final void d() {
+        if (this.r) {
+            if (this.b.getBitmap() != null && !this.b.getBitmap().isRecycled()) {
+                this.b.getBitmap().recycle();
+            }
+            this.b.setImageBitmap((Bitmap) null);
+            a();
+        }
+    }
+
+    public final void e(TLObject tLObject, z8 z8Var) {
+        this.a.setForUserOrChat(tLObject, z8Var);
+        d();
+    }
+
+    public final void f(String str, String str2, Drawable drawable) {
+        m(ImageLocation.getForPath(str), str2, null, null, drawable, null, 0, null);
+    }
+
+    public k5 getAnimatedEmojiDrawable() {
+        return this.e;
+    }
+
+    public z8 getAvatarDrawable() {
+        if (this.h == null) {
+            this.h = new z8((org.telegram.ui.ActionBar.b6) null);
+        }
+        return this.h;
+    }
+
+    public ImageReceiver getImageReceiver() {
+        return this.a;
+    }
+
+    public int[] getRoundRadius() {
+        return this.a.getRoundRadius();
+    }
+
+    public final void h(ImageLocation imageLocation, String str, Drawable drawable, Object obj) {
+        m(imageLocation, str, null, null, drawable, null, 0, obj);
+    }
+
+    public final void i(ImageLocation imageLocation, String str, String str2, Drawable drawable, Object obj) {
+        m(imageLocation, str, null, null, drawable, str2, 0, obj);
+    }
+
+    public final void j(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, int i9, Object obj) {
+        m(imageLocation, str, imageLocation2, str2, null, null, i9, obj);
+    }
+
+    public final void k(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, long j10, String str3, Object obj, int i9) {
+        this.a.setImage(imageLocation, str, imageLocation2, str2, null, j10, str3, obj, i9);
+        d();
+    }
+
+    public final void l(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, Drawable drawable, Object obj) {
+        this.a.setImage(imageLocation, str, imageLocation2, str2, null, null, drawable, 0L, null, obj, 1);
+        d();
+    }
+
+    public final void m(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, Drawable drawable, String str3, int i9, Object obj) {
+        this.a.setImage(imageLocation, str, imageLocation2, str2, drawable, i9, str3, obj, 0);
+        d();
+    }
+
+    public final void n(ImageLocation imageLocation, String str, Drawable drawable, Object obj) {
+        m(imageLocation, str, null, null, drawable, null, 0, obj);
+    }
+
+    public final void o(u51 u51Var, ImageLocation imageLocation, String str, ImageLocation imageLocation2, ImageLocation imageLocation3, String str2, int i9, String str3) {
+        if (u51Var != null) {
+            this.a.setImageBitmap(u51Var);
+        } else {
+            this.a.setImage(imageLocation, str, imageLocation2, null, imageLocation3, str2, null, i9, null, str3, 1);
+        }
+        d();
+    }
+
+    @Override // android.view.View
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.n = true;
+        if (this.w) {
+            this.a.onAttachedToWindow();
+        }
+        if (this.s) {
+            this.b.onAttachedToWindow();
+        }
+        k5 k5Var = this.e;
+        if (k5Var != null) {
+            k5Var.a(this);
+        }
+    }
+
+    @Override // android.view.View
+    public void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.n = false;
+        if (this.w) {
+            this.a.onDetachedFromWindow();
+        }
+        if (this.s) {
+            this.b.onDetachedFromWindow();
+        }
+        k5 k5Var = this.e;
+        if (k5Var != null) {
+            k5Var.o(this);
+        }
+    }
+
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        int i9;
+        ColorFilter colorFilter;
+        k5 k5Var = this.e;
+        ImageReceiver imageReceiver = k5Var != null ? k5Var.k : this.a;
+        if (imageReceiver == null) {
             return;
         }
-        drawable.draw(canvas);
-        this.c.draw(canvas);
-        canvas.save();
-        canvas.translate(getBounds().exactCenterX(), getBounds().exactCenterY());
-        this.b.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        Drawable drawable = this.c;
-        if (drawable != null) {
-            drawable.setBounds(getBounds());
+        if (k5Var != null && (colorFilter = this.f) != null) {
+            k5Var.setColorFilter(colorFilter);
         }
-        Drawable drawable2 = this.d;
-        if (drawable2 != null) {
-            drawable2.setBounds(getBounds());
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
-        scheduleSelf(runnable, j10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        int k10 = i0.b.k(this.e, i10);
-        if (this.e != k10) {
-            this.e = k10;
-            Drawable drawable = this.c;
-            if (drawable != null) {
-                drawable.setColorFilter(k10, PorterDuff.Mode.MULTIPLY);
-                invalidateSelf();
+        int i10 = this.c;
+        if (i10 == -1 || (i9 = this.d) == -1) {
+            imageReceiver.setImageCoords(0.0f, 0.0f, getWidth(), getHeight());
+            if (this.s) {
+                this.b.setImageCoords(0.0f, 0.0f, getWidth(), getHeight());
+            }
+        } else if (this.v) {
+            imageReceiver.setImageCoords(0.0f, 0.0f, i10, i9);
+            if (this.s) {
+                this.b.setImageCoords(0.0f, 0.0f, this.c, this.d);
+            }
+        } else {
+            float width = (getWidth() - this.c) / 2;
+            int height = getHeight();
+            imageReceiver.setImageCoords(width, (height - r3) / 2, this.c, this.d);
+            if (this.s) {
+                ImageReceiver imageReceiver2 = this.b;
+                float width2 = (getWidth() - this.c) / 2;
+                int height2 = getHeight();
+                imageReceiver2.setImageCoords(width2, (height2 - r4) / 2, this.c, this.d);
             }
         }
-        int k11 = i0.b.k(this.f, i10);
-        if (this.f != k11) {
-            this.f = k11;
-            if (this.c != null) {
-                this.d.setColorFilter(k11, PorterDuff.Mode.MULTIPLY);
-                invalidateSelf();
+        imageReceiver.draw(canvas);
+        if (this.s) {
+            this.b.draw(canvas);
+        }
+    }
+
+    public final void p(int i9, int i10, boolean z10) {
+        this.a.setOrientation(i9, i10, true);
+    }
+
+    public final void q(int i9, boolean z10) {
+        this.a.setOrientation(0, true);
+    }
+
+    public final void r(int i9, int i10, int i11, int i12) {
+        this.a.setRoundRadius(i9, i10, i11, i12);
+        if (this.s) {
+            this.b.setRoundRadius(i9, i10, i11, i12);
+        }
+        invalidate();
+    }
+
+    public final void s(int i9, int i10) {
+        this.c = i9;
+        this.d = i10;
+        invalidate();
+    }
+
+    public void setAnimatedEmojiDrawable(k5 k5Var) {
+        k5 k5Var2 = this.e;
+        if (k5Var2 == k5Var) {
+            return;
+        }
+        if (this.n && k5Var2 != null) {
+            k5Var2.o(this);
+        }
+        this.e = k5Var;
+        if (this.n && k5Var != null) {
+            k5Var.a(this);
+        }
+        invalidate();
+    }
+
+    public void setAspectFit(boolean z10) {
+        this.a.setAspectFit(z10);
+    }
+
+    public void setBlurAllowed(boolean z10) {
+        if (this.n) {
+            throw new IllegalStateException("You should call setBlurAllowed(...) only when detached!");
+        }
+        this.s = z10;
+        if (z10) {
+            this.b = new ImageReceiver();
+        }
+    }
+
+    public void setBlurredText(CharSequence charSequence) {
+        if (TextUtils.isEmpty(charSequence)) {
+            this.y = null;
+            return;
+        }
+        this.y = new nz0(charSequence, 16.5f, AndroidUtilities.bold());
+        if (this.B == null) {
+            ColorMatrix colorMatrix = new ColorMatrix();
+            colorMatrix.setSaturation(1.2f);
+            AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, -0.2f);
+            this.B = new ColorMatrixColorFilter(colorMatrix);
+        }
+    }
+
+    public void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+    }
+
+    public void setEmojiColorFilter(ColorFilter colorFilter) {
+        this.f = colorFilter;
+        invalidate();
+    }
+
+    public void setHasBlur(boolean z10) {
+        if (z10 && !this.s) {
+            throw new IllegalStateException("You should call setBlurAllowed(...) before calling setHasBlur(true)!");
+        }
+        this.r = z10;
+        if (!z10) {
+            if (this.b.getBitmap() != null && !this.b.getBitmap().isRecycled()) {
+                this.b.getBitmap().recycle();
             }
+            this.b.setImageBitmap((Bitmap) null);
         }
-        int k12 = i0.b.k(this.h, i10);
-        if (this.h != k12) {
-            this.h = k12;
-            this.b.s(k12, false);
-            invalidateSelf();
-        }
+        a();
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        unscheduleSelf(runnable);
+    public void setImageBitmap(Bitmap bitmap) {
+        this.a.setImageBitmap(bitmap);
+        d();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public void setImageDrawable(Drawable drawable) {
+        this.a.setImageBitmap(drawable);
+        d();
+    }
+
+    public void setImageResource(int i9) {
+        this.a.setImageBitmap(getResources().getDrawable(i9));
+        invalidate();
+        d();
+    }
+
+    public void setLayerNum(int i9) {
+        this.a.setLayerNum(i9);
+    }
+
+    public void setRoundRadius(int i9) {
+        this.a.setRoundRadius(i9);
+        if (this.s) {
+            this.b.setRoundRadius(i9);
+        }
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.a.getDrawable() || drawable == this.a.getImageDrawable() || super.verifyDrawable(drawable);
     }
 }

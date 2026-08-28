@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public interface n2 {
     boolean a(Object obj);
@@ -13,7 +13,7 @@ public interface n2 {
 
     void e(f1 f1Var, f1 f1Var2);
 
-    void f(Object obj, byte[] bArr, int i10, int i11, com.google.android.gms.internal.clearcut.m mVar);
+    void f(Object obj, byte[] bArr, int i9, int i10, com.google.android.gms.internal.clearcut.m mVar);
 
     boolean g(f1 f1Var, f1 f1Var2);
 

@@ -1,6 +1,5 @@
 package k5;
 
-import a9.p;
 import android.accounts.Account;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -18,7 +17,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b {
     public static final ReentrantLock c = new ReentrantLock();
@@ -31,7 +30,7 @@ public final class b {
     }
 
     public static b a(Context context) {
-        y5.l.h(context);
+        x5.l.h(context);
         ReentrantLock reentrantLock = c;
         reentrantLock.lock();
         try {
@@ -48,15 +47,15 @@ public final class b {
     }
 
     public static final String f(String str, String str2) {
-        return p.w(str, ":", str2);
+        return aa.d.z(str, ":", str2);
     }
 
     public final GoogleSignInAccount b() {
-        String d10;
-        String d11 = d("defaultGoogleSignInAccount");
-        if (!TextUtils.isEmpty(d11) && (d10 = d(f("googleSignInAccount", d11))) != null) {
+        String d9;
+        String d10 = d("defaultGoogleSignInAccount");
+        if (!TextUtils.isEmpty(d10) && (d9 = d(f("googleSignInAccount", d10))) != null) {
             try {
-                return GoogleSignInAccount.b(d10);
+                return GoogleSignInAccount.b(d9);
             } catch (JSONException unused) {
             }
         }
@@ -64,8 +63,8 @@ public final class b {
     }
 
     public final void c(GoogleSignInAccount googleSignInAccount, GoogleSignInOptions googleSignInOptions) {
-        y5.l.h(googleSignInAccount);
-        y5.l.h(googleSignInOptions);
+        x5.l.h(googleSignInAccount);
+        x5.l.h(googleSignInOptions);
         String str = googleSignInAccount.r;
         e("defaultGoogleSignInAccount", str);
         String f10 = f("googleSignInAccount", str);
@@ -109,7 +108,7 @@ public final class b {
             List list = googleSignInAccount.s;
             Scope[] scopeArr = (Scope[]) list.toArray(new Scope[list.size()]);
             Arrays.sort(scopeArr, j5.c.b);
-            int i10 = 0;
+            int i9 = 0;
             for (Scope scope : scopeArr) {
                 jSONArray.put(scope.b);
             }
@@ -125,9 +124,9 @@ public final class b {
                 JSONArray jSONArray2 = new JSONArray();
                 Collections.sort(arrayList, GoogleSignInOptions.B);
                 int size = arrayList.size();
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
+                while (i9 < size) {
+                    Object obj = arrayList.get(i9);
+                    i9++;
                     jSONArray2.put(((Scope) obj).b);
                 }
                 jSONObject2.put("scopes", jSONArray2);
@@ -145,11 +144,11 @@ public final class b {
                     jSONObject2.put("hostedDomain", str9);
                 }
                 e(f11, jSONObject2.toString());
-            } catch (JSONException e9) {
-                throw new RuntimeException(e9);
+            } catch (JSONException e10) {
+                throw new RuntimeException(e10);
             }
-        } catch (JSONException e10) {
-            throw new RuntimeException(e10);
+        } catch (JSONException e11) {
+            throw new RuntimeException(e11);
         }
     }
 

@@ -1,26 +1,53 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public interface ei {
-    void F();
+public final class ei extends fi {
+    public int b;
+    public final /* synthetic */ ki c;
 
-    void I(Object obj);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ei(ki kiVar, Context context) {
+        super(context);
+        org.telegram.ui.ActionBar.b6 b6Var;
+        this.c = kiVar;
+        setWillNotDraw(false);
+        setFocusable(true);
+        b6Var = ((org.telegram.ui.ActionBar.f3) kiVar).resourcesProvider;
+        wg.b bVar = new wg.b(context);
+        bVar.d = b6Var;
+        bVar.M = true;
+        TextView textView = bVar.a;
+        textView.setTextSize(1, 11.0f);
+        textView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
+        bVar.a(false);
+        bVar.b.setLayoutParams(g7.e6.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
+        bVar.w = org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.cl, b6Var);
+        bVar.s = org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.al, b6Var);
+        bVar.v = org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.bl, b6Var);
+        bVar.f();
+        this.a = bVar;
+        addView(bVar, g7.e6.c(-1.0f, -1));
+    }
 
-    boolean N0();
+    public final void a(int i9, String str, wg.a aVar) {
+        this.a.setText(str);
+        this.a.setTabAnimation(aVar);
+        this.b = i9;
+    }
 
-    void P0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11);
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
 
-    void g0(TLRPC.User user);
-
-    void n0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11);
-
-    boolean s();
-
-    void w();
-
-    void y(sg sgVar);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.e(((long) this.b) == this.c.S0, false);
+    }
 }

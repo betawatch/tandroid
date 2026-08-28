@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.Map;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class t0 implements n0 {
     public final long a;
@@ -15,15 +15,15 @@ public final class t0 implements n0 {
     public final s0 e;
     public volatile Object f;
 
-    public t0(m mVar, Uri uri, int i10, s0 s0Var) {
+    public t0(m mVar, Uri uri, int i9, s0 s0Var) {
         Map map = Collections.EMPTY_MAP;
         d5.a.k(uri, "The uri must be set.");
         q qVar = new q(uri, 1, null, map, 0L, -1L, null, 1);
         this.d = new x0(mVar);
         this.b = qVar;
-        this.c = i10;
+        this.c = i9;
         this.e = s0Var;
-        this.a = j4.p.a.getAndIncrement();
+        this.a = j4.q.a.getAndIncrement();
     }
 
     @Override // com.google.android.exoplayer2.upstream.n0
@@ -34,13 +34,13 @@ public final class t0 implements n0 {
             oVar.a();
             Uri uri = this.d.a.getUri();
             uri.getClass();
-            this.f = this.e.e(uri, oVar);
+            this.f = this.e.D(uri, oVar);
             try {
                 oVar.close();
             } catch (IOException unused) {
             }
         } finally {
-            int i10 = d5.g0.a;
+            int i9 = d5.f0.a;
             try {
                 oVar.close();
             } catch (IOException unused2) {
@@ -49,6 +49,6 @@ public final class t0 implements n0 {
     }
 
     @Override // com.google.android.exoplayer2.upstream.n0
-    public final void l() {
+    public final void K() {
     }
 }

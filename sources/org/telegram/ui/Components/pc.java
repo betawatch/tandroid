@@ -1,70 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.SpannableString;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class pc extends ReplacementSpan {
-    public final org.telegram.ui.ActionBar.c6 a;
-    public final Paint b = new Paint(1);
-    public final pz0 c;
-    public final Runnable d;
-    public nc e;
-    public Integer f;
+public class pc {
+    public View a;
+    public final float b;
+    public final float c;
+    public final float d;
+    public long e;
+    public Runnable f;
+    public ValueAnimator g;
+    public boolean h;
+    public float i;
 
-    public pc(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.c6 c6Var) {
-        this.a = c6Var;
-        this.d = runnable;
-        this.c = new pz0(charSequence, 12.0f, null);
+    public pc(View view) {
+        this(view, 1.0f, 5.0f);
     }
 
-    public static SpannableString b(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.c6 c6Var, Integer num) {
-        SpannableString spannableString = new SpannableString("btn");
-        pc pcVar = new pc(charSequence, runnable, c6Var);
-        spannableString.setSpan(pcVar, 0, spannableString.length(), 33);
-        pcVar.f = num;
-        return spannableString;
+    public final float a(float f10) {
+        return e2.c.z(1.0f, this.i, f10, 1.0f - f10);
     }
 
-    public final int a() {
-        return (int) (this.c.c + AndroidUtilities.dp(14.0f));
-    }
-
-    public final void c(oc ocVar, boolean z10) {
-        if (this.e == null) {
-            this.e = new nc(ocVar);
+    public void b() {
+        View view = this.a;
+        if (view != null) {
+            view.invalidate();
         }
-        this.e.c(z10);
+        Runnable runnable = this.f;
+        if (runnable != null) {
+            runnable.run();
+        }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
-        float dpf2 = AndroidUtilities.dpf2(17.0f);
-        float f11 = (i12 + i14) / 2.0f;
-        RectF rectF = AndroidUtilities.rectTmp;
-        float f12 = dpf2 / 2.0f;
-        rectF.set(f10, f11 - f12, a() + f10, f11 + f12);
-        nc ncVar = this.e;
-        float a2 = ncVar == null ? 1.0f : ncVar.a(0.025f);
-        canvas.save();
-        canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
-        Integer num = this.f;
-        int intValue = num != null ? num.intValue() : org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.Oh, this.a);
-        int l1 = org.telegram.ui.ActionBar.g6.l1(0.15f, intValue);
-        Paint paint2 = this.b;
-        paint2.setColor(l1);
-        canvas.drawRoundRect(rectF, f12, f12, paint2);
-        this.c.c(f10 + AndroidUtilities.dp(7.0f), f11, 1.0f, intValue, canvas);
-        canvas.restore();
+    public final void c(boolean z10) {
+        if (this.h != z10) {
+            this.h = z10;
+            ValueAnimator valueAnimator = this.g;
+            this.g = null;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.i, z10 ? 1.0f : 0.0f);
+            this.g = ofFloat;
+            ofFloat.addUpdateListener(new e6(this, 7));
+            this.g.addListener(new u9(1, this, z10));
+            if (this.h) {
+                this.g.setInterpolator(gr.f);
+                this.g.setDuration((long) (this.b * 60.0f));
+                this.g.setStartDelay(0L);
+            } else {
+                this.g.setInterpolator(new OvershootInterpolator(this.d));
+                this.g.setDuration((long) (this.c * 350.0f));
+                this.g.setStartDelay(this.e);
+            }
+            this.g.start();
+        }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return a();
+    public pc(View view, float f10, float f11) {
+        this.e = 0L;
+        this.a = view;
+        this.c = f10;
+        this.b = f10;
+        this.d = f11;
+    }
+
+    public pc(kh.e6 e6Var) {
+        this.e = 0L;
+        this.a = e6Var;
+        this.b = 1.5f;
+        this.c = 1.0f;
+        this.d = 2.0f;
     }
 }

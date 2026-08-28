@@ -1,79 +1,18 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class j1 extends LinearLayout {
+public final class j1 implements ViewTreeObserver.OnScrollChangedListener {
     public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j1(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, Context context) {
-        super(context);
+    public j1(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
         this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (!(view instanceof k1) || this.a.J == null) {
-            return super.drawChild(canvas, view, j10);
-        }
-        return false;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        j1 j1Var = this;
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = j1Var.a;
-        if (actionBarPopupWindow$ActionBarPopupWindowLayout.K) {
-            actionBarPopupWindow$ActionBarPopupWindowLayout.A = -1000000;
-            actionBarPopupWindow$ActionBarPopupWindowLayout.B = -1000000;
-            int childCount = j1Var.getChildCount();
-            ArrayList arrayList = null;
-            int i12 = 0;
-            int i13 = 0;
-            int i14 = 0;
-            while (i12 < childCount) {
-                View childAt = j1Var.getChildAt(i12);
-                if (childAt.getVisibility() != 8) {
-                    Object tag = childAt.getTag(R.id.width_tag);
-                    Object tag2 = childAt.getTag(R.id.object_tag);
-                    Object tag3 = childAt.getTag(R.id.fit_width_tag);
-                    if (tag != null) {
-                        childAt.getLayoutParams().width = -2;
-                    }
-                    j1Var.measureChildWithMargins(childAt, i10, 0, i11, 0);
-                    if (tag3 == null) {
-                        boolean z10 = tag instanceof Integer;
-                        if (!z10 && tag2 == null) {
-                            i13 = Math.max(i13, childAt.getMeasuredWidth());
-                        } else if (z10) {
-                            i14 = Math.max(((Integer) tag).intValue(), childAt.getMeasuredWidth());
-                            actionBarPopupWindow$ActionBarPopupWindowLayout.A = childAt.getMeasuredHeight();
-                            actionBarPopupWindow$ActionBarPopupWindowLayout.B = AndroidUtilities.dp(6.0f) + actionBarPopupWindow$ActionBarPopupWindowLayout.A;
-                        }
-                    }
-                    if (arrayList == null) {
-                        arrayList = new ArrayList();
-                    }
-                    arrayList.add(childAt);
-                }
-                i12++;
-                j1Var = this;
-            }
-            if (arrayList != null) {
-                int size = arrayList.size();
-                for (int i15 = 0; i15 < size; i15++) {
-                    ((View) arrayList.get(i15)).getLayoutParams().width = Math.max(i13, i14);
-                }
-            }
-        }
-        super.onMeasure(i10, i11);
+    @Override // android.view.ViewTreeObserver.OnScrollChangedListener
+    public final void onScrollChanged() {
+        this.a.invalidate();
     }
 }

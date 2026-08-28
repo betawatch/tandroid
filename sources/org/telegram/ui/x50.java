@@ -1,44 +1,26 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class x50 extends f2.q {
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ y50 c;
+public final class x50 extends zf.j0 {
+    public final /* synthetic */ y50 S0;
 
-    public x50(y50 y50Var, ArrayList arrayList) {
-        this.c = y50Var;
-        this.b = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x50(y50 y50Var, y50 y50Var2, Activity activity, int i9, int i10, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(i9, i10, activity, y50Var2, b6Var);
+        this.S0 = y50Var;
     }
 
-    @Override // f2.q
-    public final boolean a(int i10, int i11) {
-        return true;
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
+    public final void dismiss() {
+        super.dismiss();
+        this.S0.x0 = false;
     }
 
-    @Override // f2.q
-    public final boolean b(int i10, int i11) {
-        ArrayList arrayList = this.b;
-        if (i10 >= arrayList.size()) {
-            return false;
-        }
-        y50 y50Var = this.c;
-        if (i11 < y50Var.e.size()) {
-            return ((ChatObject.VideoParticipant) arrayList.get(i10)).equals(y50Var.e.get(i11));
-        }
-        return false;
-    }
-
-    @Override // f2.q
-    public final int d() {
-        return this.c.e.size();
-    }
-
-    @Override // f2.q
-    public final int e() {
-        return this.b.size();
+    @Override // org.telegram.ui.ActionBar.f3
+    public final void onOpenAnimationEnd() {
+        this.S0.x0 = false;
     }
 }

@@ -1,100 +1,125 @@
 package oh;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import g7.e6;
+import j3.r0;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.Components.mc;
-import org.telegram.ui.Components.n41;
+import org.telegram.messenger.ll;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.w5;
+import org.telegram.ui.Components.xa0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o b;
+public final class i extends LinearLayout implements w5 {
+    public final b6 a;
+    public final xa0 b;
+    public final FrameLayout c;
+    public final ImageView d;
+    public final TextView e;
+    public final TextView f;
+    public final boolean h;
+    public boolean n;
 
-    public /* synthetic */ i(o oVar, int i10) {
-        this.a = i10;
-        this.b = oVar;
+    public i(Context context, b6 b6Var, boolean z10) {
+        super(context);
+        this.a = b6Var;
+        this.h = z10;
+        setOrientation(0);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        xa0 xa0Var = new xa0(1);
+        this.b = xa0Var;
+        frameLayout.setBackground(xa0Var);
+        ImageView imageView = new ImageView(context);
+        this.d = imageView;
+        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        frameLayout.addView(imageView, e6.e(24, 24, 17));
+        LinearLayout f10 = ll.f(context, 1);
+        TextView textView = new TextView(context);
+        this.e = textView;
+        textView.setTextSize(1, 16.0f);
+        TextView h = r0.h(f10, textView, e6.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        this.f = h;
+        h.setGravity(17);
+        h.setMinWidth(AndroidUtilities.dp(20.66f));
+        h.setPadding(AndroidUtilities.dp(6.33f), 0, AndroidUtilities.dp(6.33f), 0);
+        h.setTextSize(1, 16.0f);
+        if (LocaleController.isRTL) {
+            addView(h, e6.j(13.33f, 0.0f));
+            addView(f10, e6.p(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
+            addView(frameLayout, e6.t(28, 28, 21, 0, 0, z10 ? 9 : 14, 0));
+        } else {
+            addView(frameLayout, e6.t(28, 28, 19, z10 ? 9 : 14, 0, 0, 0));
+            addView(f10, e6.p(0, -2, 1.0f, 23, z10 ? 12 : 16, 0, 20, 0));
+            addView(h, e6.j(0.0f, 13.33f));
+        }
+        d();
+        setUnreadMode(true);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        ArrayList<TL_communities.CommunityPeer> arrayList;
-        switch (this.a) {
-            case 0:
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                o oVar = this.b;
-                oVar.getClass();
-                if (tL_error != null) {
-                    mc.a0(oVar).d0(tL_error, false);
-                    break;
-                }
-                break;
-            default:
-                ArrayList arrayList2 = (ArrayList) obj;
-                o oVar2 = this.b;
-                n nVar = oVar2.r;
-                n41 n41Var = new n41(-4);
-                n41Var.d = 140;
-                n41Var.c = nVar;
-                n41Var.z = -1;
-                arrayList2.add(n41Var);
-                int i10 = 0;
-                if (ChatObject.canUserDoAdminAction(oVar2.D, 1)) {
-                    n41 c10 = n41.c(141, R.drawable.outline_profile_photo, LocaleController.getString(ChatObject.hasPhoto(oVar2.D) ? R.string.CommunitySettingsChangePhoto : R.string.CommunitySettingsSetPhoto));
-                    c10.q = true;
-                    arrayList2.add(c10);
-                    arrayList2.add(n41.D(2, AndroidUtilities.dp(14.0f)));
-                    arrayList2.add(n41.s(0, LocaleController.getString(R.string.CommunitySectionCommunityName)));
-                    arrayList2.add(n41.j(7, oVar2.n));
-                    arrayList2.add(n41.D(1, AndroidUtilities.dp(14.0f)));
-                }
-                if (ChatObject.canBlockUsers(oVar2.D)) {
-                    arrayList2.add(n41.s(3, LocaleController.getString(R.string.CommunitySectionWhoCanAddChats)));
-                    n41 x8 = n41.x(ImageReceiver.DEFAULT_CROSSFADE_DURATION, LocaleController.getString(R.string.CommunityWhoCanAddChatsAllMembers), LocaleController.getString(R.string.CommunityWhoCanAddChatsAllMembersInfo));
-                    x8.K(oVar2.h);
-                    arrayList2.add(x8);
-                    n41 x10 = n41.x(151, LocaleController.getString(R.string.CommunityWhoCanAddChatsOnlyAdmins), LocaleController.getString(R.string.CommunityWhoCanAddChatsOnlyAdminsInfo));
-                    x10.K(!oVar2.h);
-                    arrayList2.add(x10);
-                    arrayList2.add(n41.D(4, AndroidUtilities.dp(14.0f)));
-                }
-                if (ChatObject.hasAdminRights(oVar2.D)) {
-                    int i11 = R.drawable.msg_admins;
-                    String string = LocaleController.getString(R.string.CommunityAdministrators);
-                    TLRPC.ChatFull chatFull = oVar2.E;
-                    arrayList2.add(n41.d(142, i11, string, chatFull != null ? Integer.toString(chatFull.admins_count) : ""));
-                    int i12 = R.drawable.community_requests_outline_24;
-                    String string2 = LocaleController.getString(R.string.CommunityPendingRequests);
-                    TLRPC.ChatFull chatFull2 = oVar2.E;
-                    arrayList2.add(n41.d(143, i12, string2, chatFull2 != null ? Integer.toString(chatFull2.requests_pending) : ""));
-                    int i13 = R.drawable.msg_user_remove;
-                    String string3 = LocaleController.getString(R.string.CommunityRemovedUsers);
-                    TLRPC.ChatFull chatFull3 = oVar2.E;
-                    arrayList2.add(n41.d(144, i13, string3, chatFull3 != null ? Integer.toString(chatFull3.kicked_count) : ""));
-                }
-                arrayList2.add(n41.D(5, AndroidUtilities.dp(14.0f)));
-                n41 c11 = n41.c(146, R.drawable.msg_groups_create, LocaleController.getString(R.string.CommunityMenuAddChat));
-                c11.q = true;
-                arrayList2.add(c11);
-                TLRPC.ChatFull chatFull4 = oVar2.E;
-                if (chatFull4 != null && (arrayList = chatFull4.linked_peers) != null) {
-                    int size = arrayList.size();
-                    while (i10 < size) {
-                        TL_communities.CommunityPeer communityPeer = arrayList.get(i10);
-                        i10++;
-                        arrayList2.add(n41.v(oVar2.getMessagesController().getUserOrChat(DialogObject.getPeerDialogId(communityPeer.peer))));
-                    }
-                    break;
-                }
-                break;
+    public final void a(int i9, int i10, int i11, CharSequence charSequence, CharSequence charSequence2, boolean z10) {
+        this.c.setVisibility(i11 != 0 ? 0 : 8);
+        this.e.setTranslationX(i11 == 0 ? AndroidUtilities.dp(2.0f) : 0.0f);
+        this.b.b(i9, i10);
+        this.d.setImageResource(i11);
+        setTitle(charSequence);
+        setValue(charSequence2);
+        setUnreadMode(z10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.w5
+    public final void d() {
+        int i9 = f6.G6;
+        b6 b6Var = this.a;
+        this.e.setTextColor(f6.v0(i9, b6Var));
+        int v02 = f6.v0(this.n ? f6.W8 : f6.n6, b6Var);
+        TextView textView = this.f;
+        textView.setTextColor(v02);
+        textView.setBackground(this.n ? f6.b0(AndroidUtilities.dp(10.33f), f6.v0(f6.U8, b6Var)) : null);
+        this.b.b = b6Var != null ? b6Var.a() : f6.I.q();
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.h ? 44.0f : 50.0f), TLObject.FLAG_30));
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.e.setText(charSequence);
+    }
+
+    public void setUnreadMode(boolean z10) {
+        if (this.n != z10) {
+            this.n = z10;
+            float f10 = z10 ? 13.0f : 16.0f;
+            TextView textView = this.f;
+            textView.setTextSize(1, f10);
+            textView.setTypeface(z10 ? AndroidUtilities.bold() : null);
+            int i9 = z10 ? f6.W8 : f6.n6;
+            b6 b6Var = this.a;
+            textView.setTextColor(f6.v0(i9, b6Var));
+            textView.setBackground(z10 ? f6.b0(AndroidUtilities.dp(10.33f), f6.v0(f6.U8, b6Var)) : null);
         }
+    }
+
+    public void setValue(CharSequence charSequence) {
+        int i9 = !TextUtils.isEmpty(charSequence) ? 0 : 8;
+        TextView textView = this.f;
+        textView.setVisibility(i9);
+        textView.setText(charSequence);
     }
 }

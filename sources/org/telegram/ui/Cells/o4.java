@@ -1,20 +1,44 @@
 package org.telegram.ui.Cells;
 
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class o4 extends FrameLayout {
-    public TextView a;
+public interface o4 {
+    boolean a();
 
-    public void setCellHeight(int i10) {
-        setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.dp(54.0f), i10));
-    }
+    void c(boolean z10, boolean z11);
 
-    public void setLetter(String str) {
-        this.a.setText(str.toUpperCase());
-    }
+    void f(TLRPC.ReactionCount reactionCount, boolean z10, float f10, float f11);
+
+    float getAlpha();
+
+    float getCheckBoxTranslation();
+
+    float getDeltaBottom();
+
+    int getHeight();
+
+    int getMeasuredHeight();
+
+    MessageObject getMessageObject();
+
+    float getPivotX();
+
+    float getScaleX();
+
+    float getScaleY();
+
+    float getSlidingOffsetX();
+
+    float getX();
+
+    float getY();
+
+    boolean h();
+
+    boolean i();
+
+    boolean j();
 }

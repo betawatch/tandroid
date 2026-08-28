@@ -2,24 +2,24 @@ package e4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import d5.g0;
+import d5.f0;
 import h3.g1;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class a extends j {
-    public static final Parcelable.Creator<a> CREATOR = new c8.o(14);
+    public static final Parcelable.Creator<a> CREATOR = new c.c(6);
     public final String b;
     public final String c;
     public final int d;
     public final byte[] e;
 
-    public a(int i10, String str, String str2, byte[] bArr) {
+    public a(int i9, String str, String str2, byte[] bArr) {
         super("APIC");
         this.b = str;
         this.c = str2;
-        this.d = i10;
+        this.d = i9;
         this.e = bArr;
     }
 
@@ -29,7 +29,7 @@ public final class a extends j {
         }
         if (obj != null && a.class == obj.getClass()) {
             a aVar = (a) obj;
-            if (this.d == aVar.d && g0.a(this.b, aVar.b) && g0.a(this.c, aVar.c) && Arrays.equals(this.e, aVar.e)) {
+            if (this.d == aVar.d && f0.a(this.b, aVar.b) && f0.a(this.c, aVar.c) && Arrays.equals(this.e, aVar.e)) {
                 return true;
             }
         }
@@ -37,9 +37,9 @@ public final class a extends j {
     }
 
     public final int hashCode() {
-        int i10 = (527 + this.d) * 31;
+        int i9 = (527 + this.d) * 31;
         String str = this.b;
-        int hashCode = (i10 + (str != null ? str.hashCode() : 0)) * 31;
+        int hashCode = (i9 + (str != null ? str.hashCode() : 0)) * 31;
         String str2 = this.c;
         return Arrays.hashCode(this.e) + ((hashCode + (str2 != null ? str2.hashCode() : 0)) * 31);
     }
@@ -55,7 +55,7 @@ public final class a extends j {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeString(this.b);
         parcel.writeString(this.c);
         parcel.writeInt(this.d);
@@ -65,7 +65,7 @@ public final class a extends j {
     public a(Parcel parcel) {
         super("APIC");
         String readString = parcel.readString();
-        int i10 = g0.a;
+        int i9 = f0.a;
         this.b = readString;
         this.c = parcel.readString();
         this.d = parcel.readInt();

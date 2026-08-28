@@ -1,58 +1,19 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ka0 implements MessagesController.MessagesLoadedCallback {
-    public final /* synthetic */ a30 a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Bundle c;
-    public final /* synthetic */ TLRPC.ChatInvite d;
-    public final /* synthetic */ LaunchActivity e;
+public final class ka0 implements View.OnLayoutChangeListener {
+    public boolean a;
 
-    public ka0(LaunchActivity launchActivity, a30 a30Var, boolean[] zArr, Bundle bundle, TLRPC.ChatInvite chatInvite) {
-        this.e = launchActivity;
-        this.a = a30Var;
-        this.b = zArr;
-        this.c = bundle;
-        this.d = chatInvite;
-    }
-
-    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
-    public final void onError() {
-        LaunchActivity launchActivity = this.e;
-        if (!launchActivity.isFinishing()) {
-            org.telegram.ui.Components.y4.u0((org.telegram.ui.ActionBar.n2) i0.a.i(1, launchActivity.Z), null, LocaleController.getString(R.string.JoinToGroupErrorNotExist), null);
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i9, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+        boolean z10 = i12 - i10 > i11 - i9;
+        if (z10 != this.a) {
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.hc(this, 26));
+            this.a = z10;
         }
-        try {
-            this.a.run();
-        } catch (Exception e9) {
-            FileLog.e(e9);
-        }
-    }
-
-    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
-    public final void onMessagesLoaded(boolean z10) {
-        try {
-            this.a.run();
-        } catch (Exception e9) {
-            FileLog.e(e9);
-        }
-        if (this.b[0]) {
-            return;
-        }
-        rn rnVar = new rn(this.c);
-        TLRPC.ChatInvite chatInvite = this.d;
-        if (chatInvite instanceof TLRPC.TL_chatInvitePeek) {
-            rnVar.G5 = chatInvite;
-        }
-        ((ActionBarLayout) this.e.O()).P(rnVar);
     }
 }

@@ -1,25 +1,50 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.ChatObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ee1 extends org.telegram.ui.Components.p60 {
-    public final /* synthetic */ long w0;
-    public final /* synthetic */ ge1 x0;
+public final class ee1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ we1 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ee1(ge1 ge1Var, Context context, int i10, a0.h hVar, long j10, org.telegram.ui.ActionBar.n2 n2Var, long j11) {
-        super(context, i10, hVar, j10, n2Var, null);
-        this.x0 = ge1Var;
-        this.w0 = j11;
+    public /* synthetic */ ee1(we1 we1Var, boolean z10, int i9) {
+        this.a = i9;
+        this.c = we1Var;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.p60
-    public final boolean X() {
-        TLRPC.Chat chat = this.x0.b.getMessagesController().getChat(Long.valueOf(this.w0));
-        return chat != null && ChatObject.canUserDoAdminAction(chat, 3);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i9;
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                boolean z10 = this.b;
+                float f10 = z10 ? 1.0f : 0.0f;
+                we1 we1Var = this.c;
+                we1Var.S0(f10);
+                if (!z10) {
+                    Activity parentActivity = we1Var.getParentActivity();
+                    i9 = ((org.telegram.ui.ActionBar.o2) we1Var).classGuid;
+                    AndroidUtilities.setAdjustResizeToNothing(parentActivity, i9);
+                    we1Var.n0.setVisibility(8);
+                    we1Var.Q0(true);
+                    break;
+                } else {
+                    we1Var.m0.setVisibility(8);
+                    break;
+                }
+            default:
+                if (!this.b) {
+                    this.c.k0.setVisibility(8);
+                    break;
+                }
+                break;
+        }
     }
 }

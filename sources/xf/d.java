@@ -1,38 +1,41 @@
 package xf;
 
-import android.graphics.Canvas;
-import org.telegram.ui.Cells.a8;
-import org.telegram.ui.Components.zk0;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public abstract class d extends zk0 {
-    public boolean T2;
-
-    @Override // org.telegram.ui.Components.zk0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        this.T2 = false;
-        for (int i10 = 0; i10 < getChildCount(); i10++) {
-            if (getChildAt(i10) instanceof c) {
-                c cVar = (c) getChildAt(i10);
-                canvas.save();
-                canvas.translate(cVar.getX(), cVar.getY());
-                a8 a8Var = (a8) cVar;
-                if (a8Var.H) {
-                    a8Var.b(canvas, this);
-                }
-                canvas.restore();
-            }
-        }
-        super.dispatchDraw(canvas);
+public final class d extends m {
+    @Override // xf.m
+    public final float a() {
+        return 1.0f;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        if (this.T2) {
-            return;
+    @Override // xf.m
+    public final float d() {
+        return 1.0f;
+    }
+
+    @Override // xf.m
+    public final int e() {
+        return R.raw.photo_eraser;
+    }
+
+    @Override // xf.m
+    public final float g() {
+        return 0.35f;
+    }
+
+    @Override // xf.m
+    public final String i(int i9) {
+        if (i9 == 0) {
+            return "blitWithMaskEraser";
         }
-        super.invalidate();
-        this.T2 = true;
+        if (i9 == 1) {
+            return "compositeWithMaskEraser";
+        }
+        if (i9 != 2) {
+            return null;
+        }
+        return "brush";
     }
 }

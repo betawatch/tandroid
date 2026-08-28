@@ -3,7 +3,7 @@ package org.telegram.messenger.voip;
 import org.telegram.messenger.voip.Instance;
 import org.telegram.messenger.voip.NativeInstance;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements NativeInstance.AudioLevelsCallback, Instance.OnStateUpdatedListener, Instance.OnSignalBarsUpdatedListener, Instance.OnSignalingDataListener, Instance.OnRemoteMediaStateUpdatedListener {
     public final /* synthetic */ VoIPService a;
@@ -13,13 +13,13 @@ public final /* synthetic */ class g0 implements NativeInstance.AudioLevelsCallb
     }
 
     @Override // org.telegram.messenger.voip.Instance.OnRemoteMediaStateUpdatedListener
-    public void onMediaStateUpdated(int i10, int i11) {
-        this.a.lambda$initiateActualEncryptedCall$87(i10, i11);
+    public void onMediaStateUpdated(int i9, int i10) {
+        this.a.lambda$initiateActualEncryptedCall$87(i9, i10);
     }
 
     @Override // org.telegram.messenger.voip.Instance.OnSignalBarsUpdatedListener
-    public void onSignalBarsUpdated(int i10) {
-        this.a.onSignalBarCountChanged(i10);
+    public void onSignalBarsUpdated(int i9) {
+        this.a.onSignalBarCountChanged(i9);
     }
 
     @Override // org.telegram.messenger.voip.Instance.OnSignalingDataListener
@@ -28,8 +28,8 @@ public final /* synthetic */ class g0 implements NativeInstance.AudioLevelsCallb
     }
 
     @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
-    public void onStateUpdated(int i10, boolean z10) {
-        this.a.onConnectionStateChanged(i10, z10);
+    public void onStateUpdated(int i9, boolean z10) {
+        this.a.onConnectionStateChanged(i9, z10);
     }
 
     @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback

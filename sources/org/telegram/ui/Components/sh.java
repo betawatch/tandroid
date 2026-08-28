@@ -1,37 +1,108 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.text.style.ImageSpan;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class sh implements bj {
-    public final /* synthetic */ gi a;
+public final class sh implements TextWatcher {
+    public boolean a;
+    public boolean b;
+    public final /* synthetic */ ki c;
 
-    public sh(gi giVar) {
-        this.a = giVar;
+    public sh(ki kiVar) {
+        this.c = kiVar;
     }
 
-    @Override // org.telegram.ui.Components.bj
-    public final void b(TLRPC.User user, boolean z10, int i10, long j10) {
-        org.telegram.ui.rn rnVar = (org.telegram.ui.rn) this.a.b0;
-        if (rnVar.f7()) {
-            SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(user, rnVar.P5, rnVar.j5, rnVar.T3, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z10, i10, 0);
-            of2.sendMessageChatArguments = rnVar.C8();
-            of2.effect_id = 0L;
-            of2.invert_media = false;
-            of2.payStars = j10;
-            of2.monoForumPeer = rnVar.N8();
-            of2.suggestionParams = rnVar.c5;
-            rnVar.getSendMessagesHelper().sendMessage(of2);
-            rnVar.y6();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10;
+        int i9;
+        ki kiVar = this.c;
+        j6 j6Var = kiVar.v;
+        qh qhVar = kiVar.A0;
+        j6 j6Var2 = kiVar.s;
+        if (this.b != TextUtils.isEmpty(editable)) {
+            ci ciVar = kiVar.u0;
+            if (ciVar != null) {
+                ciVar.A(ciVar.getSelectedItemsCount());
+            }
+            this.b = !this.b;
+        }
+        boolean z11 = false;
+        if (this.a) {
+            for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                editable.removeSpan(imageSpan);
+            }
+            Emoji.replaceEmoji(editable, qhVar.getEditText().getPaint().getFontMetricsInt(), false);
+            this.a = false;
+        }
+        int codePointCount = Character.codePointCount(editable, 0, editable.length());
+        kiVar.H = codePointCount;
+        kiVar.e.a(codePointCount > 0, true);
+        int i10 = kiVar.G;
+        if (i10 <= 0 || (i9 = i10 - kiVar.H) > 100) {
+            j6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.xp(this, 10));
+            j6Var.setAlpha(0.0f);
+            z10 = true;
+        } else {
+            if (i9 < -9999) {
+                i9 = -9999;
+            }
+            long j10 = i9;
+            j6Var2.c(LocaleController.formatNumber(j10, ','), j6Var2.getVisibility() == 0, true);
+            if (j6Var2.getVisibility() != 0) {
+                j6Var2.setVisibility(0);
+                j6Var2.setAlpha(0.0f);
+                j6Var2.setScaleX(0.5f);
+                j6Var2.setScaleY(0.5f);
+            }
+            j6Var2.animate().setListener(null).cancel();
+            j6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
+            if (i9 < 0) {
+                j6Var2.setTextColor(kiVar.getThemedColor(org.telegram.ui.ActionBar.f6.p7));
+                z10 = false;
+            } else {
+                j6Var2.setTextColor(kiVar.getThemedColor(org.telegram.ui.ActionBar.f6.y6));
+                z10 = true;
+            }
+            j6Var.c(LocaleController.formatNumber(j10, ','), false, true);
+            j6Var.setAlpha(1.0f);
+        }
+        if (kiVar.Q0 != z10) {
+            kiVar.Q0 = z10;
+            kiVar.E0.invalidate();
+        }
+        if (!kiVar.Y) {
+            if (qhVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(qhVar.getText().toString().trim())) {
+                z11 = true;
+            }
+            kiVar.M1(z11);
+        }
+        kiVar.d1(true);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
+        if (i11 - i10 >= 1) {
+            this.a = true;
+        }
+        ki kiVar = this.c;
+        if (kiVar.x2 == null) {
+            ki.P(kiVar);
+        }
+        if (kiVar.x2.getAdapter() != null) {
+            kiVar.x2.setReversed(false);
+            kiVar.x2.getAdapter().U(charSequence, kiVar.A0.getEditText().getSelectionStart(), null, false, false);
+            kiVar.U1();
         }
     }
 
-    @Override // org.telegram.ui.Components.bj
-    public final void c(ArrayList arrayList, String str, boolean z10, int i10, long j10, boolean z11) {
-        ((org.telegram.ui.rn) this.a.b0).db(arrayList, str, z10, i10, j10, z11);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
     }
 }

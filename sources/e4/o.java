@@ -2,12 +2,13 @@ package e4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import d5.g0;
+import d5.f0;
+import j3.r0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class o extends j {
-    public static final Parcelable.Creator<o> CREATOR = new c8.o(24);
+    public static final Parcelable.Creator<o> CREATOR = new c.c(16);
     public final String b;
     public final String c;
 
@@ -23,7 +24,7 @@ public final class o extends j {
         }
         if (obj != null && o.class == obj.getClass()) {
             o oVar = (o) obj;
-            if (this.a.equals(oVar.a) && g0.a(this.b, oVar.b) && g0.a(this.c, oVar.c)) {
+            if (this.a.equals(oVar.a) && f0.a(this.b, oVar.b) && f0.a(this.c, oVar.c)) {
                 return true;
             }
         }
@@ -31,9 +32,9 @@ public final class o extends j {
     }
 
     public final int hashCode() {
-        int g10 = i0.a.g(527, 31, this.a);
+        int f10 = r0.f(527, 31, this.a);
         String str = this.b;
-        int hashCode = (g10 + (str != null ? str.hashCode() : 0)) * 31;
+        int hashCode = (f10 + (str != null ? str.hashCode() : 0)) * 31;
         String str2 = this.c;
         return hashCode + (str2 != null ? str2.hashCode() : 0);
     }
@@ -44,7 +45,7 @@ public final class o extends j {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeString(this.a);
         parcel.writeString(this.b);
         parcel.writeString(this.c);
@@ -57,7 +58,7 @@ public final class o extends j {
     public o(Parcel parcel) {
         super(r0);
         String readString = parcel.readString();
-        int i10 = g0.a;
+        int i9 = f0.a;
         this.b = parcel.readString();
         this.c = parcel.readString();
     }

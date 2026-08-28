@@ -1,46 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class u20 extends FrameLayout {
-    public final /* synthetic */ z20 a;
+public final class u20 extends m2.a {
+    public final /* synthetic */ v20 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u20(z20 z20Var, Context context) {
-        super(context);
-        this.a = z20Var;
+    public u20(v20 v20Var) {
+        this.c = v20Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        z20.m(this.a);
+    @Override // m2.a
+    public final void a(m2.g gVar, Object obj) {
+        gVar.removeView((View) obj);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        boolean z10 = View.MeasureSpec.getSize(i10) > View.MeasureSpec.getSize(i11);
-        z20 z20Var = this.a;
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) z20Var.c.getLayoutParams();
-        if (z10) {
-            int dp = AndroidUtilities.dp(80.0f);
-            marginLayoutParams.leftMargin = dp;
-            marginLayoutParams.rightMargin = dp;
+    @Override // m2.a
+    public final int b() {
+        return this.c.e.length;
+    }
+
+    @Override // m2.a
+    public final Object e(m2.g gVar, int i9) {
+        t20 t20Var = new t20(this, this.c.getContext(), i9, 0);
+        t20Var.setOnClickListener(new gh.z0(this, i9, 9));
+        t20Var.setFocusable(true);
+        t20Var.setTag(Integer.valueOf(i9));
+        t20Var.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
+        t20Var.setScaleType(ImageView.ScaleType.FIT_XY);
+        t20Var.setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.dp(200.0f), -1));
+        if (i9 == 0) {
+            t20Var.setContentDescription(LocaleController.getString(R.string.VoipRecordAudio));
+        } else if (i9 == 1) {
+            t20Var.setContentDescription(LocaleController.getString(R.string.VoipRecordPortrait));
         } else {
-            int dp2 = AndroidUtilities.dp(16.0f);
-            marginLayoutParams.leftMargin = dp2;
-            marginLayoutParams.rightMargin = dp2;
+            t20Var.setContentDescription(LocaleController.getString(R.string.VoipRecordLandscape));
         }
-        int x8 = org.telegram.messenger.rl.x(200.0f, View.MeasureSpec.getSize(i10), 2);
-        z20Var.b.setPadding(x8, 0, x8, 0);
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(370.0f), TLObject.FLAG_30));
-        measureChildWithMargins(z20Var.d, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30), 0);
+        SvgHelper.SvgDrawable drawable = SvgHelper.getDrawable(AndroidUtilities.readRes(i9 == 0 ? R.raw.record_audio : i9 == 1 ? R.raw.record_video_p : R.raw.record_video_l));
+        drawable.setAspectFill(false);
+        t20Var.setImageDrawable(drawable);
+        if (t20Var.getParent() != null) {
+            ((ViewGroup) t20Var.getParent()).removeView(t20Var);
+        }
+        gVar.addView(t20Var, 0);
+        return t20Var;
+    }
+
+    @Override // m2.a
+    public final boolean f(View view, Object obj) {
+        return view.equals(obj);
+    }
+
+    @Override // m2.a
+    public final void h(int i9) {
     }
 }

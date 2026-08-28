@@ -7,15 +7,15 @@ import androidx.appcompat.widget.ActionBarContextView;
 import com.google.firebase.messaging.t;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class d extends a implements l.j {
+public final class d extends a implements l.i {
     public Context c;
     public ActionBarContextView d;
-    public xe.b e;
+    public we.b e;
     public WeakReference f;
     public boolean h;
-    public l.l n;
+    public l.k n;
 
     @Override // k.a
     public final void a() {
@@ -23,7 +23,7 @@ public final class d extends a implements l.j {
             return;
         }
         this.h = true;
-        this.e.J(this);
+        this.e.H(this);
     }
 
     @Override // k.a
@@ -36,7 +36,7 @@ public final class d extends a implements l.j {
     }
 
     @Override // k.a
-    public final l.l c() {
+    public final l.k c() {
         return this.n;
     }
 
@@ -57,7 +57,7 @@ public final class d extends a implements l.j {
 
     @Override // k.a
     public final void g() {
-        this.e.K(this, this.n);
+        this.e.I(this, this.n);
     }
 
     @Override // k.a
@@ -72,12 +72,17 @@ public final class d extends a implements l.j {
     }
 
     @Override // k.a
-    public final void j(int i10) {
-        l(this.c.getString(i10));
+    public final void j(int i9) {
+        k(this.c.getString(i9));
     }
 
-    @Override // l.j
-    public final void k(l.l lVar) {
+    @Override // k.a
+    public final void k(CharSequence charSequence) {
+        this.d.setSubtitle(charSequence);
+    }
+
+    @Override // l.i
+    public final void l(l.k kVar) {
         g();
         m.i iVar = this.d.d;
         if (iVar != null) {
@@ -86,13 +91,8 @@ public final class d extends a implements l.j {
     }
 
     @Override // k.a
-    public final void l(CharSequence charSequence) {
-        this.d.setSubtitle(charSequence);
-    }
-
-    @Override // k.a
-    public final void m(int i10) {
-        n(this.c.getString(i10));
+    public final void m(int i9) {
+        n(this.c.getString(i9));
     }
 
     @Override // k.a
@@ -106,8 +106,8 @@ public final class d extends a implements l.j {
         this.d.setTitleOptional(z10);
     }
 
-    @Override // l.j
-    public final boolean t(l.l lVar, MenuItem menuItem) {
+    @Override // l.i
+    public final boolean r(l.k kVar, MenuItem menuItem) {
         return ((t) this.e.b).F(this, menuItem);
     }
 }

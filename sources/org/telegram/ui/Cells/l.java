@@ -14,22 +14,22 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class l extends FrameLayout {
     public final org.telegram.ui.Components.i6 a;
     public final Paint b;
-    public final gf.q c;
+    public final ff.q c;
     public final Drawable d;
     public final int e;
     public int f;
 
-    public l(Context context, int i10) {
+    public l(Context context, int i9) {
         super(context);
         Paint paint = new Paint(1);
         this.b = paint;
-        this.c = new gf.q(new ea(this, 1));
-        this.e = i10;
+        this.c = new ff.q(new ia(this, 1));
+        this.e = i9;
         this.d = context.getResources().getDrawable(R.drawable.filled_gift_sell_24).mutate();
         org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(false, false, false, false);
         this.a = i6Var;
@@ -42,10 +42,10 @@ public final class l extends FrameLayout {
         paint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(72.0f), 0.0f, new int[]{-13460514, -10042885}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
     }
 
-    public final void a(int i10) {
-        this.f = i10;
+    public final void a(int i9) {
+        this.f = i9;
         if (isAttachedToWindow()) {
-            long max = Math.max(0, i10 - ConnectionsManager.getInstance(this.e).getCurrentTime());
+            long max = Math.max(0, i9 - ConnectionsManager.getInstance(this.e).getCurrentTime());
             this.c.a(max);
             b(max);
         }
@@ -95,7 +95,7 @@ public final class l extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
+    public final void onMeasure(int i9, int i10) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(172), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28), TLObject.FLAG_30));
     }
 

@@ -1,33 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w11 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y11 b;
+public final class w11 {
+    public static final w11 a;
+    public static final w11 b;
+    public static final w11 c;
+    public static final /* synthetic */ w11[] d;
 
-    public /* synthetic */ w11(y11 y11Var, int i10) {
-        this.a = i10;
-        this.b = y11Var;
+    static {
+        w11 w11Var = new w11("TOP", 0);
+        a = w11Var;
+        w11 w11Var2 = new w11("LEFT", 1);
+        b = w11Var2;
+        w11 w11Var3 = new w11("BOTTOM", 2);
+        c = w11Var3;
+        d = new w11[]{w11Var, w11Var2, w11Var3};
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                jh.a3 a3Var = this.b.f;
-                a3Var.setScaleX(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                a3Var.setScaleY(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                a3Var.invalidate();
-                break;
-            default:
-                y11 y11Var = this.b;
-                y11Var.getClass();
-                y11Var.B = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                y11Var.h();
-                break;
-        }
+    public static w11 valueOf(String str) {
+        return (w11) Enum.valueOf(w11.class, str);
+    }
+
+    public static w11[] values() {
+        return (w11[]) d.clone();
     }
 }

@@ -19,40 +19,40 @@ public final class x0 extends k {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final void add(int i10, Object obj) {
+    public final void add(int i9, Object obj) {
         i();
-        this.b.add(i10, obj);
+        this.b.add(i9, obj);
         ((AbstractList) this).modCount++;
     }
 
     @Override // com.google.android.gms.internal.clearcut.c0
-    public final c0 d(int i10) {
+    public final c0 d(int i9) {
         ArrayList arrayList = this.b;
-        if (i10 < arrayList.size()) {
+        if (i9 < arrayList.size()) {
             throw new IllegalArgumentException();
         }
-        ArrayList arrayList2 = new ArrayList(i10);
+        ArrayList arrayList2 = new ArrayList(i9);
         arrayList2.addAll(arrayList);
         return new x0(arrayList2);
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i10) {
-        return this.b.get(i10);
+    public final Object get(int i9) {
+        return this.b.get(i9);
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object remove(int i10) {
+    public final Object remove(int i9) {
         i();
-        Object remove = this.b.remove(i10);
+        Object remove = this.b.remove(i9);
         ((AbstractList) this).modCount++;
         return remove;
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i10, Object obj) {
+    public final Object set(int i9, Object obj) {
         i();
-        Object obj2 = this.b.set(i10, obj);
+        Object obj2 = this.b.set(i9, obj);
         ((AbstractList) this).modCount++;
         return obj2;
     }

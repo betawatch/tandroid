@@ -1,57 +1,15 @@
 package r4;
 
-import java.nio.ByteBuffer;
-import org.telegram.tgnet.TLObject;
+import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class f extends k3.m implements h {
-    public final String a;
+public interface f {
+    int b(long j10);
 
-    public f(String str) {
-        super(new k[2], new l[2]);
-        this.a = str;
-        setInitialInputBufferSize(1024);
-    }
+    long h(int i9);
 
-    public abstract g c(int i10, boolean z10, byte[] bArr);
+    List m(long j10);
 
-    @Override // k3.m
-    public final k3.i createInputBuffer() {
-        return new k();
-    }
-
-    @Override // k3.m
-    public final k3.k createOutputBuffer() {
-        return new e(this, 1);
-    }
-
-    @Override // k3.m
-    public final k3.g createUnexpectedDecodeException(Throwable th) {
-        return new i("Unexpected decode error", th);
-    }
-
-    @Override // k3.m
-    public final k3.g decode(k3.i iVar, k3.k kVar, boolean z10) {
-        k kVar2 = (k) iVar;
-        l lVar = (l) kVar;
-        try {
-            ByteBuffer byteBuffer = kVar2.b;
-            byteBuffer.getClass();
-            lVar.a(kVar2.d, c(byteBuffer.limit(), z10, byteBuffer.array()), kVar2.n);
-            lVar.clearFlag(TLObject.FLAG_31);
-            return null;
-        } catch (i e9) {
-            return e9;
-        }
-    }
-
-    @Override // k3.e
-    public final String getName() {
-        return this.a;
-    }
-
-    @Override // r4.h
-    public final void a(long j10) {
-    }
+    int r();
 }

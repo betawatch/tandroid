@@ -2,61 +2,69 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.os.Bundle;
+import android.text.TextPaint;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class na1 extends View {
-    public static final /* synthetic */ int c = 0;
-    public final Paint a;
-    public int[] b;
+public final class na1 extends FrameLayout {
+    public final org.telegram.ui.Components.pn0 a;
+    public final int b;
+    public final TextPaint c;
+    public final /* synthetic */ ThemeActivity d;
 
-    public na1(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public na1(ThemeActivity themeActivity, Context context) {
         super(context);
-        this.a = new Paint(1);
-        this.b = new int[7];
+        this.d = themeActivity;
+        this.b = 17;
+        setWillNotDraw(false);
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        textPaint.setTextSize(AndroidUtilities.dp(16.0f));
+        org.telegram.ui.Components.pn0 pn0Var = new org.telegram.ui.Components.pn0(context);
+        this.a = pn0Var;
+        pn0Var.setReportChanges(true);
+        pn0Var.setSeparatorsCount(18);
+        pn0Var.setDelegate(new fv0(this, 3));
+        pn0Var.setImportantForAccessibility(2);
+        addView(pn0Var, g7.e6.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.a.invalidate();
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        float measuredWidth = getMeasuredWidth() * 0.5f;
-        float measuredHeight = getMeasuredHeight() * 0.5f;
-        float dp = AndroidUtilities.dp(5.0f);
-        float dp2 = AndroidUtilities.dp(20.0f) - dp;
-        Paint.Style style = Paint.Style.FILL;
-        Paint paint = this.a;
-        paint.setStyle(style);
-        int i10 = 0;
-        paint.setColor(this.b[0]);
-        canvas.drawCircle(measuredWidth, measuredHeight, dp, paint);
-        double d = 0.0d;
-        while (i10 < 6) {
-            float sin = (((float) Math.sin(d)) * dp2) + measuredWidth;
-            float cos = measuredHeight - (((float) Math.cos(d)) * dp2);
-            i10++;
-            paint.setColor(this.b[i10]);
-            canvas.drawCircle(sin, cos, dp, paint);
-            d += 1.0471975511965976d;
-        }
+        int w02 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.I6, false);
+        TextPaint textPaint = this.c;
+        textPaint.setColor(w02);
+        canvas.drawText("" + SharedConfig.bubbleRadius, getMeasuredWidth() - AndroidUtilities.dp(39.0f), AndroidUtilities.dp(28.0f), textPaint);
     }
 
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setText(LocaleController.getString("ColorPickerMainColor", R.string.ColorPickerMainColor));
-        accessibilityNodeInfo.setClassName(Button.class.getName());
-        accessibilityNodeInfo.setEnabled(true);
+        this.a.getSeekBarAccessibilityDelegate().e(this, accessibilityNodeInfo);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), i10);
+        this.a.setProgress(SharedConfig.bubbleRadius / this.b);
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30));
+    public final boolean performAccessibilityAction(int i9, Bundle bundle) {
+        return super.performAccessibilityAction(i9, bundle) || this.a.getSeekBarAccessibilityDelegate().g(this, i9, bundle);
     }
 }

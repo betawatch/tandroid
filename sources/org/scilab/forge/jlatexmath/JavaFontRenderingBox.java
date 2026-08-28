@@ -5,16 +5,16 @@ import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.font.TextLayout;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class JavaFontRenderingBox extends Box {
     private static Font font = new Font("Serif", 0, 10);
     private float size;
     private TextLayout text;
 
-    public JavaFontRenderingBox(String str, int i10, float f10, Font font2, boolean z10) {
+    public JavaFontRenderingBox(String str, int i9, float f10, Font font2, boolean z10) {
         this.size = f10;
-        TextLayout textLayout = new TextLayout(str, font2.deriveFont(i10), null);
+        TextLayout textLayout = new TextLayout(str, font2.deriveFont(i9), null);
         this.text = textLayout;
         Rectangle2D bounds = textLayout.getBounds();
         this.height = ((-bounds.getY()) * f10) / 10.0f;
@@ -43,7 +43,7 @@ public class JavaFontRenderingBox extends Box {
         return 0;
     }
 
-    public JavaFontRenderingBox(String str, int i10, float f10) {
-        this(str, i10, f10, font, true);
+    public JavaFontRenderingBox(String str, int i9, float f10) {
+        this(str, i9, f10, font, true);
     }
 }

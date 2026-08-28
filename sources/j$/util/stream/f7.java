@@ -9,8 +9,8 @@ public final /* synthetic */ class f7 implements g5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ DoubleConsumer b;
 
-    public /* synthetic */ f7(DoubleConsumer doubleConsumer, int i10) {
-        this.a = i10;
+    public /* synthetic */ f7(DoubleConsumer doubleConsumer, int i9) {
+        this.a = i9;
         this.b = doubleConsumer;
     }
 
@@ -51,7 +51,7 @@ public final /* synthetic */ class f7 implements g5 {
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i10) {
+    public final /* synthetic */ void accept(int i9) {
         switch (this.a) {
             case 0:
                 t3.J();
@@ -101,12 +101,12 @@ public final /* synthetic */ class f7 implements g5 {
 
     @Override // j$.util.stream.j5
     public final /* synthetic */ void end() {
-        int i10 = this.a;
+        int i9 = this.a;
     }
 
     @Override // j$.util.stream.j5
     public final /* synthetic */ void o(long j10) {
-        int i10 = this.a;
+        int i9 = this.a;
     }
 
     @Override // j$.util.stream.j5

@@ -2,15 +2,17 @@ package c4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import d5.g0;
+import c.c;
+import d5.f0;
 import h3.g1;
 import h3.t0;
+import j3.r0;
 import z3.b;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class a implements b {
-    public static final Parcelable.Creator<a> CREATOR = new w.a(24);
+    public static final Parcelable.Creator<a> CREATOR = new c(2);
     public final String a;
     public final String b;
 
@@ -48,7 +50,7 @@ public class a implements b {
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + i0.a.g(527, 31, this.a);
+        return this.b.hashCode() + r0.f(527, 31, this.a);
     }
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
@@ -114,14 +116,14 @@ public class a implements b {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeString(this.a);
         parcel.writeString(this.b);
     }
 
     public a(Parcel parcel) {
         String readString = parcel.readString();
-        int i10 = g0.a;
+        int i9 = f0.a;
         this.a = readString;
         this.b = parcel.readString();
     }

@@ -1,18 +1,19 @@
 package h3;
 
+import fh.y5;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class u1 extends g2 {
     public static final String d;
-    public static final f9.z e;
+    public static final y5 e;
     public final float c;
 
     static {
-        int i10 = d5.g0.a;
+        int i9 = d5.f0.a;
         d = Integer.toString(1, 36);
-        e = new f9.z(25);
+        e = new y5(21);
     }
 
     public u1() {

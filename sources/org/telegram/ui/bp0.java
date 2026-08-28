@@ -1,41 +1,50 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
+import android.text.Editable;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bp0 implements org.telegram.ui.Components.x4, org.telegram.ui.ActionBar.l1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jp0 b;
+public final class bp0 implements yp0 {
+    public final /* synthetic */ HashMap a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ ip0 c;
 
-    public /* synthetic */ bp0(jp0 jp0Var, int i10) {
-        this.a = i10;
-        this.b = jp0Var;
+    public bp0(ip0 ip0Var, HashMap hashMap, ArrayList arrayList) {
+        this.c = ip0Var;
+        this.a = hashMap;
+        this.b = arrayList;
     }
 
-    @Override // org.telegram.ui.Components.x4
-    public void I(int i10, int i11, boolean z10) {
-        switch (this.a) {
-            case 0:
-                jp0 jp0Var = this.b;
-                jp0Var.V(jp0Var.b, jp0Var.c, z10, i10);
-                jp0Var.finishFragment();
-                break;
-            default:
-                jp0 jp0Var2 = this.b;
-                jp0Var2.V(jp0Var2.b, jp0Var2.c, z10, i10);
-                jp0Var2.finishFragment();
-                break;
-        }
+    @Override // org.telegram.ui.yp0
+    public final void b(Editable editable) {
+        ip0 ip0Var = this.c;
+        org.telegram.ui.Components.ut utVar = ip0Var.I;
+        ip0Var.a = editable;
+        utVar.setText(editable);
     }
 
-    @Override // org.telegram.ui.ActionBar.l1
-    public void k(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.n1 n1Var;
-        jp0 jp0Var = this.b;
-        jp0Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var = jp0Var.E) != null && n1Var.isShowing()) {
-            jp0Var.E.d(true);
+    @Override // org.telegram.ui.yp0
+    public final /* synthetic */ boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.yp0
+    public final void i(int i9, boolean z10, boolean z11) {
+        ip0 ip0Var = this.c;
+        ip0Var.removeSelfFromStack();
+        if (z10) {
+            return;
         }
+        ip0Var.U(this.a, this.b, z11, i9);
+    }
+
+    @Override // org.telegram.ui.yp0
+    public final void a() {
+    }
+
+    @Override // org.telegram.ui.yp0
+    public final /* synthetic */ void h() {
     }
 }

@@ -1,22 +1,39 @@
 package gh;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.ag1;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements ud.b, gf.p {
-    public final /* synthetic */ v a;
+public final /* synthetic */ class g implements org.telegram.ui.ActionBar.b2, Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ r a;
 
-    @Override // gf.p
-    public void g(long j10) {
-        v vVar = this.a;
-        vVar.b0(j10, vVar.s0);
+    public /* synthetic */ g(r rVar) {
+        this.a = rVar;
     }
 
-    @Override // ud.b
-    public void o(int i10, float f10, float f11, ud.c cVar) {
-        this.a.a0();
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
+        r rVar = this.a;
+        rVar.getClass();
+        rVar.presentFragment(new ag1(6, null));
     }
 
-    @Override // ud.b
-    public /* synthetic */ void A(float f10, int i10) {
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).intValue();
+        ((Float) obj4).floatValue();
+        ((Float) obj5).floatValue();
+        this.a.getClass();
+        return Boolean.FALSE;
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        r.V(this.a, (l41) obj);
     }
 }

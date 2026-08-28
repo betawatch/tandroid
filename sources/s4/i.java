@@ -1,15 +1,14 @@
 package s4;
 
-import d5.g0;
+import d5.f0;
 import java.util.ArrayDeque;
 import java.util.PriorityQueue;
-import lh.p;
+import kh.p;
 import r4.k;
-import r4.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class i implements r4.h {
+public abstract class i implements r4.g {
     public final ArrayDeque a = new ArrayDeque();
     public final ArrayDeque b;
     public final PriorityQueue c;
@@ -18,11 +17,11 @@ public abstract class i implements r4.h {
     public long f;
 
     public i() {
-        for (int i10 = 0; i10 < 10; i10++) {
+        for (int i9 = 0; i9 < 10; i9++) {
             this.a.add(new g());
         }
         this.b = new ArrayDeque();
-        for (int i11 = 0; i11 < 2; i11++) {
+        for (int i10 = 0; i10 < 2; i10++) {
             ArrayDeque arrayDeque = this.b;
             p pVar = new p(this, 29);
             h hVar = new h();
@@ -32,18 +31,18 @@ public abstract class i implements r4.h {
         this.c = new PriorityQueue();
     }
 
-    @Override // r4.h
+    @Override // r4.g
     public final void a(long j10) {
         this.e = j10;
     }
 
-    public abstract a5.b b();
+    public abstract j b();
 
     public abstract void c(g gVar);
 
     @Override // k3.e
     /* renamed from: d, reason: merged with bridge method [inline-methods] */
-    public l dequeueOutputBuffer() {
+    public k dequeueOutputBuffer() {
         ArrayDeque arrayDeque = this.b;
         if (arrayDeque.isEmpty()) {
             return null;
@@ -54,7 +53,7 @@ public abstract class i implements r4.h {
                 return null;
             }
             g gVar = (g) priorityQueue.peek();
-            int i10 = g0.a;
+            int i9 = f0.a;
             if (gVar.d > this.e) {
                 return null;
             }
@@ -62,20 +61,20 @@ public abstract class i implements r4.h {
             boolean isEndOfStream = gVar2.isEndOfStream();
             ArrayDeque arrayDeque2 = this.a;
             if (isEndOfStream) {
-                l lVar = (l) arrayDeque.pollFirst();
-                lVar.addFlag(4);
+                k kVar = (k) arrayDeque.pollFirst();
+                kVar.addFlag(4);
                 gVar2.clear();
                 arrayDeque2.add(gVar2);
-                return lVar;
+                return kVar;
             }
             c(gVar2);
             if (e()) {
-                a5.b b10 = b();
-                l lVar2 = (l) arrayDeque.pollFirst();
-                lVar2.a(gVar2.d, b10, Long.MAX_VALUE);
+                j b10 = b();
+                k kVar2 = (k) arrayDeque.pollFirst();
+                kVar2.a(gVar2.d, b10, Long.MAX_VALUE);
                 gVar2.clear();
                 arrayDeque2.add(gVar2);
-                return lVar2;
+                return kVar2;
             }
             gVar2.clear();
             arrayDeque2.add(gVar2);
@@ -109,7 +108,7 @@ public abstract class i implements r4.h {
                 break;
             }
             g gVar = (g) priorityQueue.poll();
-            int i10 = g0.a;
+            int i9 = f0.a;
             gVar.clear();
             arrayDeque.add(gVar);
         }
@@ -123,9 +122,9 @@ public abstract class i implements r4.h {
 
     @Override // k3.e
     public final void queueInputBuffer(Object obj) {
-        k kVar = (k) obj;
-        d5.a.f(kVar == this.d);
-        g gVar = (g) kVar;
+        r4.j jVar = (r4.j) obj;
+        d5.a.f(jVar == this.d);
+        g gVar = (g) jVar;
         if (gVar.isDecodeOnly()) {
             gVar.clear();
             this.a.add(gVar);

@@ -9,7 +9,7 @@ import android.widget.ListAdapter;
 import android.widget.SpinnerAdapter;
 import android.widget.ThemedSpinnerAdapter;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class k0 implements ListAdapter, SpinnerAdapter {
     public final SpinnerAdapter a;
@@ -45,40 +45,40 @@ public final class k0 implements ListAdapter, SpinnerAdapter {
     }
 
     @Override // android.widget.SpinnerAdapter
-    public final View getDropDownView(int i10, View view, ViewGroup viewGroup) {
+    public final View getDropDownView(int i9, View view, ViewGroup viewGroup) {
         SpinnerAdapter spinnerAdapter = this.a;
         if (spinnerAdapter == null) {
             return null;
         }
-        return spinnerAdapter.getDropDownView(i10, view, viewGroup);
+        return spinnerAdapter.getDropDownView(i9, view, viewGroup);
     }
 
     @Override // android.widget.Adapter
-    public final Object getItem(int i10) {
+    public final Object getItem(int i9) {
         SpinnerAdapter spinnerAdapter = this.a;
         if (spinnerAdapter == null) {
             return null;
         }
-        return spinnerAdapter.getItem(i10);
+        return spinnerAdapter.getItem(i9);
     }
 
     @Override // android.widget.Adapter
-    public final long getItemId(int i10) {
+    public final long getItemId(int i9) {
         SpinnerAdapter spinnerAdapter = this.a;
         if (spinnerAdapter == null) {
             return -1L;
         }
-        return spinnerAdapter.getItemId(i10);
+        return spinnerAdapter.getItemId(i9);
     }
 
     @Override // android.widget.Adapter
-    public final int getItemViewType(int i10) {
+    public final int getItemViewType(int i9) {
         return 0;
     }
 
     @Override // android.widget.Adapter
-    public final View getView(int i10, View view, ViewGroup viewGroup) {
-        return getDropDownView(i10, view, viewGroup);
+    public final View getView(int i9, View view, ViewGroup viewGroup) {
+        return getDropDownView(i9, view, viewGroup);
     }
 
     @Override // android.widget.Adapter
@@ -98,10 +98,10 @@ public final class k0 implements ListAdapter, SpinnerAdapter {
     }
 
     @Override // android.widget.ListAdapter
-    public final boolean isEnabled(int i10) {
+    public final boolean isEnabled(int i9) {
         ListAdapter listAdapter = this.b;
         if (listAdapter != null) {
-            return listAdapter.isEnabled(i10);
+            return listAdapter.isEnabled(i9);
         }
         return true;
     }

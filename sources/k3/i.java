@@ -3,7 +3,7 @@ package k3;
 import h3.r0;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class i extends a {
     public final d a = new d();
@@ -18,38 +18,38 @@ public class i extends a {
         r0.a("goog.exo.decoder");
     }
 
-    public i(int i10, int i11) {
-        this.f = i10;
-        this.h = i11;
+    public i(int i9, int i10) {
+        this.f = i9;
+        this.h = i10;
     }
 
-    public final ByteBuffer a(int i10) {
-        int i11 = this.f;
-        if (i11 == 1) {
-            return ByteBuffer.allocate(i10);
+    public final ByteBuffer a(int i9) {
+        int i10 = this.f;
+        if (i10 == 1) {
+            return ByteBuffer.allocate(i9);
         }
-        if (i11 == 2) {
-            return ByteBuffer.allocateDirect(i10);
+        if (i10 == 2) {
+            return ByteBuffer.allocateDirect(i9);
         }
         ByteBuffer byteBuffer = this.b;
-        throw new h("Buffer too small (" + (byteBuffer == null ? 0 : byteBuffer.capacity()) + " < " + i10 + ")");
+        throw new h("Buffer too small (" + (byteBuffer == null ? 0 : byteBuffer.capacity()) + " < " + i9 + ")");
     }
 
-    public final void b(int i10) {
-        int i11 = i10 + this.h;
+    public final void c(int i9) {
+        int i10 = i9 + this.h;
         ByteBuffer byteBuffer = this.b;
         if (byteBuffer == null) {
-            this.b = a(i11);
+            this.b = a(i10);
             return;
         }
         int capacity = byteBuffer.capacity();
         int position = byteBuffer.position();
-        int i12 = i11 + position;
-        if (capacity >= i12) {
+        int i11 = i10 + position;
+        if (capacity >= i11) {
             this.b = byteBuffer;
             return;
         }
-        ByteBuffer a2 = a(i12);
+        ByteBuffer a2 = a(i11);
         a2.order(byteBuffer.order());
         if (position > 0) {
             byteBuffer.flip();

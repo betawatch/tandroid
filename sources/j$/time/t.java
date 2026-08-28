@@ -38,12 +38,12 @@ public final class t implements j$.time.temporal.l, Consumer, Predicate, Supplie
     public final /* synthetic */ int a;
     public Object b;
 
-    public /* synthetic */ t(int i10) {
-        this.a = i10;
+    public /* synthetic */ t(int i9) {
+        this.a = i9;
     }
 
-    public /* synthetic */ t(int i10, Object obj) {
-        this.a = i10;
+    public /* synthetic */ t(int i9, Object obj) {
+        this.a = i9;
         this.b = obj;
     }
 

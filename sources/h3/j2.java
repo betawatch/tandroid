@@ -1,6 +1,6 @@
 package h3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class j2 {
     public static final j2 c;
@@ -35,7 +35,7 @@ public final class j2 {
         if (j14 == 0 && j13 == 0) {
             return j10;
         }
-        int i10 = d5.g0.a;
+        int i9 = d5.f0.a;
         long j15 = j10 - j14;
         if (((j14 ^ j10) & (j10 ^ j15)) < 0) {
             j15 = Long.MIN_VALUE;

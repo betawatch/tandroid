@@ -1,37 +1,27 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class zi0 extends gg.l {
-    public boolean F;
-    public final /* synthetic */ dj0 G;
+public final class zi0 extends kh.d {
+    public final /* synthetic */ bj0 d0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zi0(dj0 dj0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        this.G = dj0Var;
+    public zi0(bj0 bj0Var, Context context, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(context, b6Var, true);
+        this.d0 = bj0Var;
     }
 
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        int dp = AndroidUtilities.dp(64.0f) + getMeasuredHeight();
-        dj0 dj0Var = this.G;
-        dj0Var.h0 = dp;
-        dj0Var.g0.G();
-        if (this.F != dj0Var.isKeyboardVisible()) {
-            boolean isKeyboardVisible = dj0Var.isKeyboardVisible();
-            this.F = isKeyboardVisible;
-            if (isKeyboardVisible) {
-                org.telegram.ui.Components.zk0 zk0Var = dj0Var.d;
-                sh.n nVar = new sh.n(dj0Var.getContext(), 2, 0.6f);
-                nVar.a = 1;
-                nVar.p = AndroidUtilities.dp(36.0f);
-                zk0Var.getLayoutManager().w0(nVar);
-            }
+    @Override // kh.d
+    public final float a(float f10, float f11) {
+        bj0 bj0Var = this.d0;
+        boolean z10 = bj0Var.j0 == 0.0f;
+        bj0Var.j0 = f10;
+        if (z10) {
+            bj0Var.k0 = new bg.z2(bj0Var, 2);
+            bj0Var.R(false);
         }
+        return f10;
     }
 }

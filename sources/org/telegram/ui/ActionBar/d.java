@@ -3,9 +3,9 @@ package org.telegram.ui.ActionBar;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import org.telegram.ui.Components.zu0;
+import org.telegram.ui.Components.xu0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class d extends z {
     public final /* synthetic */ k h;
@@ -35,18 +35,18 @@ public final class d extends z {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        zu0 zu0Var = this.h.F0;
-        if (zu0Var != null) {
-            zu0Var.P.add(this);
+        xu0 xu0Var = this.h.F0;
+        if (xu0Var != null) {
+            xu0Var.P.add(this);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        zu0 zu0Var = this.h.F0;
-        if (zu0Var != null) {
-            zu0Var.P.remove(this);
+        xu0 xu0Var = this.h.F0;
+        if (xu0Var != null) {
+            xu0Var.P.remove(this);
         }
     }
 
@@ -62,12 +62,12 @@ public final class d extends z {
     }
 
     @Override // android.view.View
-    public final void setBackgroundColor(int i10) {
+    public final void setBackgroundColor(int i9) {
         k kVar = this.h;
-        kVar.w = i10;
+        kVar.w = i9;
         if (kVar.G0) {
             return;
         }
-        super.setBackgroundColor(i10);
+        super.setBackgroundColor(i9);
     }
 }

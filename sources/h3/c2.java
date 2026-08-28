@@ -3,10 +3,10 @@ package h3;
 import android.os.Looper;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public interface c2 {
-    s2 A();
+    r2 A();
 
     Looper B();
 
@@ -24,7 +24,7 @@ public interface c2 {
 
     long d();
 
-    void e(int i10);
+    void e(int i9);
 
     y1 f();
 
@@ -46,7 +46,7 @@ public interface c2 {
 
     int m();
 
-    void n(int i10, int i11);
+    void n(int i9, int i10);
 
     void o(boolean z10);
 
@@ -56,7 +56,7 @@ public interface c2 {
 
     void r(a2 a2Var);
 
-    void s(int i10, List list);
+    void s(int i9, List list);
 
     void setPlaybackParameters(x1 x1Var);
 
@@ -64,7 +64,7 @@ public interface c2 {
 
     long t();
 
-    u2 u();
+    t2 u();
 
     n v();
 
@@ -72,7 +72,7 @@ public interface c2 {
 
     int x();
 
-    void y(int i10, int i11, int i12);
+    void y(int i9, int i10, int i11);
 
     int z();
 }

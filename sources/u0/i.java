@@ -15,7 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i implements ActionMode.Callback {
     public final ActionMode.Callback a;
@@ -87,9 +87,9 @@ public final class i implements ActionMode.Callback {
                     arrayList.add(resolveInfo);
                 }
             }
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                ResolveInfo resolveInfo2 = (ResolveInfo) arrayList.get(i10);
-                MenuItem add = menu.add(0, 0, i10 + 100, resolveInfo2.loadLabel(packageManager));
+            for (int i9 = 0; i9 < arrayList.size(); i9++) {
+                ResolveInfo resolveInfo2 = (ResolveInfo) arrayList.get(i9);
+                MenuItem add = menu.add(0, 0, i9 + 100, resolveInfo2.loadLabel(packageManager));
                 Intent putExtra = new Intent().setAction("android.intent.action.PROCESS_TEXT").setType("text/plain").putExtra("android.intent.extra.PROCESS_TEXT_READONLY", !((textView instanceof Editable) && textView.onCheckIsTextEditor() && textView.isEnabled()));
                 ActivityInfo activityInfo2 = resolveInfo2.activityInfo;
                 add.setIntent(putExtra.setClassName(activityInfo2.packageName, activityInfo2.name)).setShowAsAction(1);

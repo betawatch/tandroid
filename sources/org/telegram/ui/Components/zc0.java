@@ -1,47 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class zc0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ lh.w8 b;
+public final class zc0 extends yc0 {
+    public final /* synthetic */ ad0 U;
 
-    public /* synthetic */ zc0(lh.w8 w8Var, int i10) {
-        this.a = i10;
-        this.b = w8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zc0(ad0 ad0Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.U = ad0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                lh.w8 w8Var = this.b;
-                AnimatorSet animatorSet = (AnimatorSet) w8Var.e;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    w8Var.e = null;
-                    break;
-                }
-                break;
-            case 1:
-                lh.w8 w8Var2 = this.b;
-                AnimatorSet animatorSet2 = (AnimatorSet) w8Var2.e;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    w8Var2.e = null;
-                    break;
-                }
-                break;
-            default:
-                lh.w8 w8Var3 = this.b;
-                AnimatorSet animatorSet3 = (AnimatorSet) w8Var3.e;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    w8Var3.e = null;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.yc0
+    public final void f(float f10) {
+        LaunchActivity launchActivity = LaunchActivity.C1;
+        if (launchActivity == null) {
+            return;
         }
+        org.telegram.ui.ActionBar.x3 x3Var = launchActivity.v0;
+        x3Var.setScaleX(AndroidUtilities.lerp(1.0f, 1.25f, f10));
+        x3Var.setScaleY(AndroidUtilities.lerp(1.0f, 1.25f, f10));
+    }
+
+    @Override // org.telegram.ui.Components.yc0
+    public final void h() {
+        super/*android.app.Dialog*/.dismiss();
+        LaunchActivity launchActivity = LaunchActivity.C1;
+        if (launchActivity == null) {
+            return;
+        }
+        org.telegram.ui.ActionBar.x3 x3Var = launchActivity.v0;
+        x3Var.setScaleX(1.0f);
+        x3Var.setScaleY(1.0f);
     }
 }

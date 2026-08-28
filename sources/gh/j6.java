@@ -1,29 +1,45 @@
 package gh;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.DialogInterface;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class j6 extends View {
-    public final /* synthetic */ TL_stars.StarGift a;
-    public final /* synthetic */ float b;
+public final /* synthetic */ class j6 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback2 b;
+    public final /* synthetic */ boolean[] c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j6(Context context, TL_stars.StarGift starGift, float f10) {
-        super(context);
-        this.a = starGift;
-        this.b = f10;
+    public /* synthetic */ j6(Utilities.Callback2 callback2, boolean[] zArr, int i9) {
+        this.a = i9;
+        this.b = callback2;
+        this.c = zArr;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        if (this.a == null) {
-            super.onMeasure(i10, i11);
-        } else {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (View.MeasureSpec.getSize(i10) * this.b), TLObject.FLAG_30), i11);
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                Utilities.Callback2 callback2 = this.b;
+                if (callback2 != null && !this.c[0]) {
+                    callback2.run(0L, Boolean.FALSE);
+                    break;
+                }
+                break;
+            case 1:
+                Utilities.Callback2 callback22 = this.b;
+                if (callback22 != null && !this.c[0]) {
+                    callback22.run(Boolean.FALSE, null);
+                    break;
+                }
+                break;
+            default:
+                Utilities.Callback2 callback23 = this.b;
+                if (callback23 != null && !this.c[0]) {
+                    callback23.run(Boolean.FALSE, null);
+                    break;
+                }
+                break;
         }
     }
 }

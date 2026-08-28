@@ -1,11 +1,11 @@
 package v3;
 
-import d5.g0;
-import d5.z;
+import d5.f0;
+import d5.y;
+import g7.t;
 import h3.t0;
 import h3.t1;
-import h7.t;
-import j4.u0;
+import j4.v0;
 import java.util.Arrays;
 import m3.k;
 import m3.l;
@@ -13,7 +13,7 @@ import m3.m;
 import m3.n;
 import m3.w;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class d implements k {
     public m a;
@@ -25,24 +25,24 @@ public final class d implements k {
         f fVar = new f();
         if (fVar.a(lVar, true) && (fVar.a & 2) == 2) {
             int min = Math.min(fVar.e, 8);
-            z zVar = new z(min);
-            lVar.b(0, min, zVar.a);
-            zVar.C(0);
-            if (zVar.a() >= 5 && zVar.r() == 127 && zVar.s() == 1179402563) {
+            y yVar = new y(min);
+            lVar.c(0, min, yVar.a);
+            yVar.C(0);
+            if (yVar.a() >= 5 && yVar.r() == 127 && yVar.s() == 1179402563) {
                 this.b = new c();
                 return true;
             }
-            zVar.C(0);
+            yVar.C(0);
             try {
-                z10 = t.c(1, zVar, true);
+                z10 = t.c(1, yVar, true);
             } catch (t1 unused) {
                 z10 = false;
             }
             if (z10) {
                 this.b = new j();
             } else {
-                zVar.C(0);
-                if (h.e(zVar, h.o)) {
+                yVar.C(0);
+                if (h.e(yVar, h.o)) {
                     this.b = new h();
                 }
             }
@@ -58,8 +58,8 @@ public final class d implements k {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final int b(l lVar, n nVar) {
-        z zVar;
-        int i10;
+        y yVar;
+        int i9;
         byte[] bArr;
         d5.a.j(this.a);
         if (this.b == null) {
@@ -69,28 +69,28 @@ public final class d implements k {
             ((m3.h) lVar).f = 0;
         }
         if (!this.c) {
-            w C = this.a.C(0, 1);
-            this.a.A();
+            w I = this.a.I(0, 1);
+            this.a.B();
             i iVar = this.b;
             iVar.c = this.a;
-            iVar.b = C;
+            iVar.b = I;
             iVar.d(true);
             this.c = true;
         }
         i iVar2 = this.b;
         e eVar = iVar2.a;
         d5.a.j(iVar2.b);
-        int i11 = g0.a;
-        int i12 = iVar2.h;
+        int i10 = f0.a;
+        int i11 = iVar2.h;
         long j10 = -1;
-        if (i12 != 0) {
-            if (i12 == 1) {
-                ((m3.h) lVar).t((int) iVar2.f);
+        if (i11 != 0) {
+            if (i11 == 1) {
+                ((m3.h) lVar).u((int) iVar2.f);
                 iVar2.h = 2;
                 return 0;
             }
-            if (i12 != 2) {
-                if (i12 == 3) {
+            if (i11 != 2) {
+                if (i11 == 3) {
                     return -1;
                 }
                 throw new IllegalStateException();
@@ -104,9 +104,9 @@ public final class d implements k {
                 iVar2.a(-(b10 + 2));
             }
             if (!iVar2.l) {
-                m3.t l10 = iVar2.d.l();
-                d5.a.j(l10);
-                iVar2.c.n(l10);
+                m3.t D = iVar2.d.D();
+                d5.a.j(D);
+                iVar2.c.y(D);
                 iVar2.l = true;
             }
             if (iVar2.k <= 0 && !eVar.b(lVar)) {
@@ -114,13 +114,13 @@ public final class d implements k {
                 return -1;
             }
             iVar2.k = 0L;
-            z zVar2 = eVar.b;
-            long b11 = iVar2.b(zVar2);
+            y yVar2 = eVar.b;
+            long b11 = iVar2.b(yVar2);
             if (b11 >= 0) {
                 long j11 = iVar2.g;
                 if (j11 + b11 >= iVar2.e) {
-                    iVar2.b.a(zVar2.c, zVar2);
-                    iVar2.b.e((j11 * 1000000) / iVar2.i, 1, zVar2.c, 0, null);
+                    iVar2.b.a(yVar2.c, yVar2);
+                    iVar2.b.e((j11 * 1000000) / iVar2.i, 1, yVar2.c, 0, null);
                     iVar2.e = -1L;
                 }
             }
@@ -129,7 +129,7 @@ public final class d implements k {
         }
         while (true) {
             boolean b12 = eVar.b(lVar);
-            z zVar3 = eVar.b;
+            y yVar3 = eVar.b;
             if (!b12) {
                 iVar2.h = 3;
                 return -1;
@@ -138,7 +138,7 @@ public final class d implements k {
             long j13 = j10;
             long j14 = iVar2.f;
             iVar2.k = j12 - j14;
-            if (iVar2.c(zVar3, j14, iVar2.j)) {
+            if (iVar2.c(yVar3, j14, iVar2.j)) {
                 iVar2.f = ((m3.h) lVar).d;
                 j10 = j13;
             } else {
@@ -148,9 +148,9 @@ public final class d implements k {
                     iVar2.b.c(t0Var);
                     iVar2.m = true;
                 }
-                u0 u0Var = (u0) iVar2.j.c;
-                if (u0Var != null) {
-                    iVar2.d = u0Var;
+                v0 v0Var = (v0) iVar2.j.c;
+                if (v0Var != null) {
+                    iVar2.d = v0Var;
                 } else {
                     long j15 = ((m3.h) lVar).c;
                     if (j15 != j13) {
@@ -159,23 +159,23 @@ public final class d implements k {
                         long j16 = iVar2.f;
                         long j17 = fVar.d + fVar.e;
                         long j18 = fVar.b;
-                        zVar = zVar3;
-                        i10 = 2;
+                        yVar = yVar3;
+                        i9 = 2;
                         iVar2.d = new b(iVar2, j16, j15, j17, j18, z10);
-                        iVar2.h = i10;
-                        bArr = zVar.a;
+                        iVar2.h = i9;
+                        bArr = yVar.a;
                         if (bArr.length != 65025) {
                             return 0;
                         }
-                        zVar.A(zVar.c, Arrays.copyOf(bArr, Math.max(65025, zVar.c)));
+                        yVar.A(yVar.c, Arrays.copyOf(bArr, Math.max(65025, yVar.c)));
                         return 0;
                     }
-                    iVar2.d = new za.b(22);
+                    iVar2.d = new ya.b(22);
                 }
-                zVar = zVar3;
-                i10 = 2;
-                iVar2.h = i10;
-                bArr = zVar.a;
+                yVar = yVar3;
+                i9 = 2;
+                iVar2.h = i9;
+                bArr = yVar.a;
                 if (bArr.length != 65025) {
                 }
             }
@@ -218,8 +218,8 @@ public final class d implements k {
                 long j12 = (iVar.i * j11) / 1000000;
                 iVar.e = j12;
                 g gVar = iVar.d;
-                int i10 = g0.a;
-                gVar.A(j12);
+                int i9 = f0.a;
+                gVar.O(j12);
                 iVar.h = 2;
             }
         }

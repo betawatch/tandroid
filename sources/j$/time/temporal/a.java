@@ -45,7 +45,7 @@ public enum a implements o {
         this.b = sVar;
     }
 
-    a(String str, s sVar, int i10) {
+    a(String str, s sVar, int i9) {
         this.a = str;
         this.b = sVar;
     }

@@ -5,48 +5,48 @@ import androidx.recyclerview.widget.RecyclerView;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ax extends xy {
-    public final /* synthetic */ yy d;
+public final class ax extends vy {
+    public final /* synthetic */ wy d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ax(yy yyVar) {
-        super(yyVar, 1);
-        this.d = yyVar;
+    public ax(wy wyVar) {
+        super(wyVar, 1);
+        this.d = wyVar;
     }
 
-    @Override // org.telegram.ui.Components.xy, f2.b1
-    public final void a(RecyclerView recyclerView, int i10) {
-        if (i10 == 0) {
+    @Override // org.telegram.ui.Components.vy, f2.d1
+    public final void a(RecyclerView recyclerView, int i9) {
+        if (i9 == 0) {
             this.d.b0 = false;
         }
-        super.a(recyclerView, i10);
+        super.a(recyclerView, i9);
     }
 
-    @Override // org.telegram.ui.Components.xy, f2.b1
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        jg.e eVar;
-        yy yyVar = this.d;
-        wx wxVar = yyVar.O;
-        xw xwVar = yyVar.M;
-        yyVar.W(xwVar.I0());
-        if (Build.VERSION.SDK_INT >= 31 && (eVar = yyVar.f2) != null) {
-            eVar.f(i10, i11);
-            yyVar.D();
+    @Override // org.telegram.ui.Components.vy, f2.d1
+    public final void b(RecyclerView recyclerView, int i9, int i10) {
+        ig.e eVar;
+        wy wyVar = this.d;
+        vx vxVar = wyVar.O;
+        xw xwVar = wyVar.M;
+        wyVar.V(xwVar.I0());
+        if (Build.VERSION.SDK_INT >= 31 && (eVar = wyVar.f2) != null) {
+            eVar.f(i9, i10);
+            wyVar.C();
         }
-        super.b(recyclerView, i10, i11);
-        if (wxVar == null || yyVar.L.getAdapter() != wxVar) {
+        super.b(recyclerView, i9, i10);
+        if (vxVar == null || wyVar.L.getAdapter() != vxVar) {
             return;
         }
-        wx wxVar2 = wxVar.x.a;
-        if (wxVar2.B.R.B || wxVar2.A) {
+        vx vxVar2 = vxVar.x.a;
+        if (vxVar2.B.R.B || vxVar2.A) {
             return;
         }
-        if (xwVar.N0() + 20 > wxVar.h()) {
-            vx vxVar = wxVar.x;
-            Objects.requireNonNull(vxVar);
-            AndroidUtilities.runOnUIThread(new dw(vxVar, 1));
+        if (xwVar.N0() + 20 > vxVar.h()) {
+            ux uxVar = vxVar.x;
+            Objects.requireNonNull(uxVar);
+            AndroidUtilities.runOnUIThread(new ew(uxVar, 1));
         }
     }
 }

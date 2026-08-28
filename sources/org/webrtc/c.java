@@ -5,16 +5,16 @@ import android.graphics.Matrix;
 import android.view.WindowManager;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
 public abstract /* synthetic */ class c {
-    public static VideoFrame.TextureBuffer a(TextureBufferImpl textureBufferImpl, boolean z10, int i10) {
+    public static VideoFrame.TextureBuffer a(TextureBufferImpl textureBufferImpl, boolean z10, int i9) {
         Matrix matrix = new Matrix();
         matrix.preTranslate(0.5f, 0.5f);
         if (z10) {
             matrix.preScale(-1.0f, 1.0f);
         }
-        matrix.preRotate(i10);
+        matrix.preRotate(i9);
         matrix.preTranslate(-0.5f, -0.5f);
         return textureBufferImpl.applyTransformMatrix(matrix, textureBufferImpl.getWidth(), textureBufferImpl.getHeight());
     }

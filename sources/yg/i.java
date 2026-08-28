@@ -1,205 +1,100 @@
 package yg;
 
-import android.view.View;
-import lh.n6;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import g7.z7;
+import j3.r0;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.ui.ActionBar.p1;
-import r0.m1;
-import ud.k;
-import ud.l;
-import w3.b0;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class i implements g, f, d {
-    public View A;
-    public int B;
-    public int C;
-    public final ud.c a;
-    public final Runnable h;
-    public boolean n;
-    public m1 r;
-    public int v;
-    public int w;
-    public e y;
-    public final k b = new k(0.0f);
-    public final l c = new l();
-    public final l d = new l();
-    public final AnimationNotificationsLocker e = new AnimationNotificationsLocker();
-    public final c f = new c(new n6(this, 23));
-    public int s = 1;
-    public final h x = new h(this, 0);
-
-    public i(Runnable runnable) {
-        this.h = runnable;
-        this.a = new ud.c(0, new b0(this, runnable), p1.w, 250L);
-    }
-
-    @Override // yg.d
-    public final void L() {
-        View view = this.A;
-        if (view != null) {
-            view.postOnAnimation(new h(this, 1));
+public abstract class i {
+    public static int a(MessageObject messageObject) {
+        if (messageObject.type != 17) {
+            return 0;
         }
-    }
-
-    @Override // yg.d
-    public final View N() {
-        return this.A;
-    }
-
-    public final void a() {
-        boolean z10 = this.a.g;
-        boolean z11 = this.n;
-        AnimationNotificationsLocker animationNotificationsLocker = this.e;
-        if (!z11 && z10) {
-            this.n = true;
-            animationNotificationsLocker.lock();
+        TLRPC.Message message = messageObject.messageOwner;
+        int i9 = messageObject.currentAccount;
+        TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) MessageObject.getMedia(message, TLRPC.TL_messageMediaPoll.class);
+        if (tL_messageMediaPoll == null) {
+            return 0;
         }
-        if (!this.n || z10) {
-            return;
-        }
-        this.n = false;
-        animationNotificationsLocker.unlock();
-    }
-
-    public final float b() {
-        e eVar = this.y;
-        l lVar = this.d;
-        return (eVar == null || this.C <= 0) ? lVar.d.a : Math.max(this.B, lVar.d.a);
-    }
-
-    public final float c() {
-        e eVar = this.y;
-        l lVar = this.c;
-        return (eVar == null || this.C <= 0) ? lVar.d.a : Math.max(this.B, lVar.d.a);
-    }
-
-    public final int d() {
-        return (this.y == null || this.C <= 0) ? Math.max(e(527).d, this.v) : Math.max(this.B, Math.max(e(527).d, this.v));
-    }
-
-    public final i0.c e(int i10) {
-        m1 m1Var = this.r;
-        return m1Var != null ? m1Var.a.f(i10) : i0.c.e;
-    }
-
-    public final void f(int i10) {
-        if (this.v == i10 && this.s == 0) {
-            return;
-        }
-        AndroidUtilities.cancelRunOnUIThread(this.x);
-        this.w = Math.max(this.v, i10);
-        this.v = i10;
-        this.s = 0;
-        i(this.r);
-    }
-
-    public final void g(int i10) {
-        if (i10 > 0) {
-            f(i10 + AndroidUtilities.navigationBarHeight);
-        } else {
-            h(true);
-        }
-    }
-
-    public final void h(boolean z10) {
-        if (this.v == 0) {
-            return;
-        }
-        h hVar = this.x;
-        AndroidUtilities.cancelRunOnUIThread(hVar);
-        this.s = z10 ? 3 : 2;
-        i(this.r);
-        if (z10) {
-            AndroidUtilities.runOnUIThread(hVar, 1000L);
-        }
-    }
-
-    public final void i(m1 m1Var) {
-        j(m1Var, this.r != null);
-    }
-
-    public final void j(m1 m1Var, boolean z10) {
-        int i10;
-        ud.c cVar;
-        this.r = m1Var;
-        i0.c cVar2 = i0.c.e;
-        i0.c g10 = m1Var != null ? m1Var.a.g(647) : cVar2;
-        if (m1Var != null) {
-            cVar2 = m1Var.a.f(8);
-        }
-        c cVar3 = this.f;
-        b bVar = cVar3.c;
-        boolean z11 = cVar2.d > 0;
-        b bVar2 = !z10 ? z11 ? b.d : b.a : z11 ? b.c : b.b;
-        if (bVar != bVar2) {
-            cVar3.a(bVar2, false);
-        }
-        int i11 = this.s;
-        if (i11 == 2) {
-            this.v = 0;
-        }
-        if (i11 == 3 && cVar2.d > 0) {
-            this.v = 0;
-        }
-        i0.c a2 = i0.c.a(cVar2, i0.c.b(0, 0, 0, this.v));
-        int i12 = a2.c;
-        int i13 = a2.b;
-        int i14 = a2.a;
-        int i15 = a2.d;
-        i0.c a3 = i0.c.a(g10, a2);
-        int i16 = a3.d;
-        int i17 = a3.c;
-        int i18 = a3.b;
-        int i19 = a3.a;
-        Runnable runnable = this.h;
-        ud.c cVar4 = this.a;
-        l lVar = this.d;
-        l lVar2 = this.c;
-        k kVar = this.b;
-        if (z10) {
-            if (kVar.b(i15 > 0 ? 1.0f : 0.0f)) {
-                i10 = i17;
-                cVar = cVar4;
-            } else {
-                cVar = cVar4;
-                i10 = i17;
-                if (!lVar2.b(i19, i18, i17, i16) && !lVar.b(i14, i13, i12, i15)) {
-                    if (bVar != bVar2) {
-                        runnable.run();
-                    }
+        TLRPC.Poll poll = tL_messageMediaPoll.poll;
+        int i10 = poll.closed ? 8 : 0;
+        if (poll.subscribers_only) {
+            TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
+            TLRPC.Chat chat = MessagesController.getInstance(i9).getChat(Long.valueOf(-(messageFwdHeader != null ? DialogObject.getPeerDialogId(messageFwdHeader.from_id) : messageObject.getDialogId())));
+            if (chat != null) {
+                if (chat.left || chat.kicked) {
+                    i10 |= 1;
+                }
+                TLRPC.MessageFwdHeader messageFwdHeader2 = message.fwd_from;
+                if ((messageFwdHeader2 != null ? messageFwdHeader2.date : message.date) - chat.date < 86400) {
+                    i10 |= 2;
                 }
             }
-            cVar.b();
-            kVar.c(false);
-            lVar2.c(false);
-            lVar.c(false);
-            kVar.c = i15 > 0 ? 1.0f : 0.0f;
-            lVar2.e(i19, i18, i10, i16);
-            lVar.e(i14, i13, i12, i15);
-            ud.c cVar5 = cVar;
-            cVar5.c(0.0f);
-            cVar5.a(1.0f);
-        } else {
-            cVar4.b();
-            kVar.d(i15 > 0 ? 1.0f : 0.0f);
-            lVar2.d(i19, i18, i17, i16);
-            lVar.d(i14, i13, i12, i15);
-            runnable.run();
         }
-        a();
+        ArrayList<String> arrayList = tL_messageMediaPoll.poll.countries_iso2;
+        if (arrayList != null && !arrayList.isEmpty()) {
+            if (!tL_messageMediaPoll.poll.countries_iso2.contains(MessagesController.getInstance(i9).config.phoneCountryIso2.get())) {
+                return i10 | 4;
+            }
+        }
+        return i10;
     }
 
-    @Override // yg.d
-    public final void k(m1 m1Var) {
-        this.B = m1Var.a.f(8).d;
-        this.h.run();
-    }
-
-    @Override // yg.d
-    public final void u() {
-        this.C++;
+    public static SpannableStringBuilder b(MessageObject messageObject, int i9) {
+        if (messageObject.type != 17) {
+            return null;
+        }
+        TLRPC.Message message = messageObject.messageOwner;
+        int i10 = messageObject.currentAccount;
+        TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) MessageObject.getMedia(message, TLRPC.TL_messageMediaPoll.class);
+        if (tL_messageMediaPoll == null) {
+            return null;
+        }
+        if (!z7.a(i9, 4)) {
+            if (z7.a(i9, 1)) {
+                TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
+                return AndroidUtilities.replaceTags(LocaleController.formatString(R.string.PollV2ToastOnlySubscribersCanVote, DialogObject.getShortName(MessagesController.getInstance(i10).getChat(Long.valueOf(-(messageFwdHeader != null ? DialogObject.getPeerDialogId(messageFwdHeader.from_id) : messageObject.getDialogId()))))));
+            }
+            if (z7.a(i9, 2)) {
+                return AndroidUtilities.replaceTags(LocaleController.getString(R.string.PollV2ToastOnlySubscribersJoined24hCanVote));
+            }
+            return null;
+        }
+        ArrayList arrayList = new ArrayList(tL_messageMediaPoll.poll.countries_iso2.size());
+        ArrayList<String> arrayList2 = tL_messageMediaPoll.poll.countries_iso2;
+        int size = arrayList2.size();
+        int i11 = 0;
+        while (i11 < size) {
+            String str = arrayList2.get(i11);
+            i11++;
+            String str2 = str;
+            String countryName = LocaleController.getCountryName(str2);
+            if (!TextUtils.isEmpty(countryName)) {
+                str2 = countryName;
+            }
+            arrayList.add(str2);
+        }
+        boolean z10 = tL_messageMediaPoll.poll.subscribers_only;
+        if (arrayList.size() == 1) {
+            return AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.PollV2ToastOnlySubscribersFromCountriesCanVoteOne : R.string.PollV2ToastOnlyUsersFromCountriesCanVoteOne, arrayList.get(0)));
+        }
+        StringBuffer stringBuffer = new StringBuffer();
+        for (int i12 = 0; i12 < arrayList.size() - 1; i12++) {
+            if (stringBuffer.length() > 0) {
+                stringBuffer.append(", ");
+            }
+            stringBuffer.append((String) arrayList.get(i12));
+        }
+        return AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.PollV2ToastOnlySubscribersFromCountriesCanVoteOther : R.string.PollV2ToastOnlyUsersFromCountriesCanVoteOther, stringBuffer, r0.j(1, arrayList)));
     }
 }

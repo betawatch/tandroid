@@ -1,69 +1,22 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ml extends st0 {
-    public final /* synthetic */ MessageObject a;
-    public final /* synthetic */ MediaController.PhotoEntry b;
-    public final /* synthetic */ rn c;
+public final class ml extends kh.x3 {
+    public final /* synthetic */ qn H0;
 
-    public ml(rn rnVar, MessageObject messageObject, MediaController.PhotoEntry photoEntry) {
-        this.c = rnVar;
-        this.a = messageObject;
-        this.b = photoEntry;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ml(qn qnVar, Activity activity) {
+        super(activity, 3);
+        this.H0 = qnVar;
     }
 
-    @Override // org.telegram.ui.st0, org.telegram.ui.au0
-    public final cu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        return rn.A1(this.c, this.a, null, i10, z10, true);
-    }
-
-    @Override // org.telegram.ui.st0, org.telegram.ui.au0
-    public final boolean O() {
-        rn rnVar = this.c;
-        if (rnVar.U == null || !rnVar.x9()) {
-            return false;
-        }
-        rnVar.U.P();
-        return true;
-    }
-
-    @Override // org.telegram.ui.st0, org.telegram.ui.au0
-    public final MessageObject U() {
-        MessageObject messageObject = this.c.l5;
-        MessageObject messageObject2 = this.a;
-        if (messageObject == messageObject2) {
-            return messageObject2;
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.st0, org.telegram.ui.au0
-    public final void e(CharSequence charSequence) {
-        this.c.U.e1(charSequence, false);
-    }
-
-    @Override // org.telegram.ui.st0, org.telegram.ui.au0
-    public final boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.st0, org.telegram.ui.au0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        rn rnVar = this.c;
-        if (rnVar.l5 != this.a) {
-            return;
-        }
-        MediaController.PhotoEntry photoEntry = this.b;
-        if (photoEntry.isCropped || photoEntry.isPainted || photoEntry.isFiltered || videoEditedInfo != null) {
-            rnVar.s(photoEntry, videoEditedInfo, z10, i11, 0, z11, 0L);
-        } else {
-            rnVar.U.d0();
-        }
+    @Override // android.view.View
+    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
+        super.onLayout(z10, i9, i10, i11, i12);
+        setTranslationY(((-getTop()) - AndroidUtilities.dp(120.0f)) + this.H0.y1);
     }
 }

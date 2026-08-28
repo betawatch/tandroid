@@ -5,7 +5,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class az implements StandardIntegrityManager {
     private final bn a;
@@ -21,8 +21,8 @@ final class az implements StandardIntegrityManager {
         final long longValue = l10.longValue();
         prepareIntegrityTokenRequest.a();
         final bt btVar = this.b;
-        final int i10 = 0;
-        return Tasks.forResult(new StandardIntegrityManager.StandardIntegrityTokenProvider(b10, longValue, i10) { // from class: com.google.android.play.core.integrity.bs
+        final int i9 = 0;
+        return Tasks.forResult(new StandardIntegrityManager.StandardIntegrityTokenProvider(b10, longValue, i9) { // from class: com.google.android.play.core.integrity.bs
             public final /* synthetic */ long b;
             public final /* synthetic */ long c;
 

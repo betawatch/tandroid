@@ -14,14 +14,14 @@ import com.google.android.exoplayer2.upstream.q;
 import com.google.android.exoplayer2.upstream.y0;
 import com.google.android.exoplayer2.upstream.z;
 import d5.a;
-import d5.g0;
+import d5.f0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.FileStreamLoadOperation;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class ExtendedDefaultDataSource implements m {
     private static final String SCHEME_ASSET = "asset";
@@ -48,8 +48,8 @@ public final class ExtendedDefaultDataSource implements m {
     }
 
     private void addListenersToDataSource(m mVar) {
-        for (int i10 = 0; i10 < this.transferListeners.size(); i10++) {
-            mVar.addTransferListener(this.transferListeners.get(i10));
+        for (int i9 = 0; i9 < this.transferListeners.size(); i9++) {
+            mVar.addTransferListener(this.transferListeners.get(i9));
         }
     }
 
@@ -115,8 +115,8 @@ public final class ExtendedDefaultDataSource implements m {
                 addListenersToDataSource(mVar);
             } catch (ClassNotFoundException unused) {
                 a.K(TAG, "Attempting to play RTMP stream without depending on the RTMP extension");
-            } catch (Exception e9) {
-                throw new RuntimeException("Error instantiating RTMP extension", e9);
+            } catch (Exception e10) {
+                throw new RuntimeException("Error instantiating RTMP extension", e10);
             }
             if (this.rtmpDataSource == null) {
                 this.rtmpDataSource = this.baseDataSource;
@@ -188,7 +188,7 @@ public final class ExtendedDefaultDataSource implements m {
             qVar.a = uri;
         }
         String scheme = uri.getScheme();
-        int i10 = g0.a;
+        int i9 = f0.a;
         String scheme2 = uri.getScheme();
         if (TextUtils.isEmpty(scheme2) || "file".equals(scheme2)) {
             String path = uri.getPath();
@@ -218,14 +218,14 @@ public final class ExtendedDefaultDataSource implements m {
     }
 
     @Override // com.google.android.exoplayer2.upstream.j
-    public int read(byte[] bArr, int i10, int i11) {
+    public int read(byte[] bArr, int i9, int i10) {
         m mVar = this.dataSource;
         mVar.getClass();
-        return mVar.read(bArr, i10, i11);
+        return mVar.read(bArr, i9, i10);
     }
 
-    public ExtendedDefaultDataSource(Context context, String str, int i10, int i11, boolean z10) {
-        this(context, new z(str, i10, i11, z10, null, 0), (LongSparseArray<Uri>) null);
+    public ExtendedDefaultDataSource(Context context, String str, int i9, int i10, boolean z10) {
+        this(context, new z(str, i9, i10, z10, null, 0), (LongSparseArray<Uri>) null);
     }
 
     public ExtendedDefaultDataSource(Context context, m mVar, LongSparseArray<Uri> longSparseArray) {

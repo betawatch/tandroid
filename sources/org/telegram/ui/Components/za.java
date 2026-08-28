@@ -1,53 +1,114 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Rect;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class za extends FrameLayout {
-    public final /* synthetic */ ab a;
+    public final lb a;
+    public final Rect b;
+    public final GestureDetector c;
+    public boolean d;
+    public boolean e;
+    public float f;
+    public float h;
+    public float n;
+    public boolean r;
+    public boolean s;
+    public boolean v;
+    public boolean w;
+    public final /* synthetic */ FrameLayout x;
+    public final /* synthetic */ gc y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public za(ab abVar, Context context) {
-        super(context);
-        this.a = abVar;
+    public za(gc gcVar, lb lbVar, FrameLayout frameLayout) {
+        super(lbVar.getContext());
+        this.y = gcVar;
+        this.x = frameLayout;
+        this.b = new Rect();
+        this.a = lbVar;
+        GestureDetector gestureDetector = new GestureDetector(lbVar.getContext(), new vb(this, lbVar));
+        this.c = gestureDetector;
+        gestureDetector.setIsLongpressEnabled(false);
+        addView(lbVar);
     }
 
-    @Override // android.view.ViewGroup
-    public final void addView(View view) {
-        super.addView(view);
-        this.a.show();
-    }
-
-    public WindowManager.LayoutParams getLayout() {
-        return this.a.b;
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewManager
-    public final void removeView(View view) {
-        ab abVar = this.a;
-        super.removeView(view);
-        try {
-            abVar.dismiss();
-        } catch (Exception unused) {
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x011f  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        View.OnClickListener onClickListener;
+        boolean z10 = this.e;
+        lb lbVar = this.a;
+        if (!z10) {
+            float x10 = motionEvent.getX();
+            float y10 = motionEvent.getY();
+            Rect rect = this.b;
+            lbVar.getHitRect(rect);
+            if (!rect.contains((int) x10, (int) y10)) {
+                return false;
+            }
         }
-        ec.h(abVar.a);
-    }
-
-    public void setTouchable(boolean z10) {
-        ab abVar = this.a;
-        WindowManager.LayoutParams layoutParams = abVar.b;
-        if (layoutParams == null) {
-            return;
+        this.c.onTouchEvent(motionEvent);
+        int actionMasked = motionEvent.getActionMasked();
+        FrameLayout frameLayout = this.x;
+        gc gcVar = this.y;
+        if (actionMasked == 0) {
+            if (!this.e && !this.s) {
+                lbVar.animate().cancel();
+                this.n = 0.0f;
+                this.h = 0.0f;
+                this.r = false;
+                this.f = lbVar.getTranslationX();
+                System.currentTimeMillis();
+                gc gcVar2 = lbVar.bulletin;
+                this.d = gcVar2 == null || gcVar2.m;
+                this.e = true;
+                gcVar.i(false);
+                if (frameLayout.getParent() != null) {
+                    frameLayout.getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                if (lbVar.onClickListener != null) {
+                    lbVar.setPressed(true);
+                    return true;
+                }
+            }
+        } else if ((actionMasked == 1 || actionMasked == 3) && this.e) {
+            if (!this.s) {
+                if (Math.abs(this.f) > lbVar.getWidth() / 3.0f) {
+                    float signum = Math.signum(this.f) * lbVar.getWidth();
+                    float f10 = this.f;
+                    lbVar.animate().translationX(signum).alpha(((f10 > 0.0f ? 1 : (f10 == 0.0f ? 0 : -1)) < 0 && this.v) || ((f10 > 0.0f ? 1 : (f10 == 0.0f ? 0 : -1)) > 0 && this.w) ? 0.0f : 1.0f).setDuration(200L).setInterpolator(AndroidUtilities.accelerateInterpolator).withEndAction(new org.telegram.ui.d0(this, signum, 1)).start();
+                    this.e = false;
+                    gcVar.i(true);
+                    if (frameLayout.getParent() != null) {
+                        frameLayout.getParent().requestDisallowInterceptTouchEvent(false);
+                    }
+                    if (lbVar.onClickListener != null) {
+                        lbVar.setPressed(false);
+                    }
+                } else {
+                    lbVar.animate().translationX(0.0f).alpha(1.0f).setDuration(200L).start();
+                }
+            }
+            if (actionMasked == 1 && lbVar.isPressed() && (onClickListener = lbVar.onClickListener) != null && !this.r) {
+                onClickListener.onClick(lbVar);
+            }
+            this.e = false;
+            gcVar.i(true);
+            if (frameLayout.getParent() != null) {
+            }
+            if (lbVar.onClickListener != null) {
+            }
         }
-        if (z10) {
-            layoutParams.flags &= -17;
-        } else {
-            layoutParams.flags |= 16;
-        }
-        abVar.getWindow().setAttributes(abVar.b);
+        return true;
     }
 }

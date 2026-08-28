@@ -11,7 +11,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.voip.e2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class VoIPPendingCall {
     private AccountInstance accountInstance;
@@ -27,8 +27,8 @@ public final class VoIPPendingCall {
     private VoIPPendingCall(Activity activity, long j10, boolean z10, long j11, AccountInstance accountInstance) {
         NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.voip.n
             @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-            public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
-                VoIPPendingCall.this.lambda$new$0(i10, i11, objArr);
+            public final void didReceivedNotification(int i9, int i10, Object[] objArr) {
+                VoIPPendingCall.this.lambda$new$0(i9, i10, objArr);
             }
         };
         this.observer = notificationCenterDelegate;
@@ -58,8 +58,8 @@ public final class VoIPPendingCall {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(int i10, int i11, Object[] objArr) {
-        if (i10 == NotificationCenter.didUpdateConnectionState) {
+    public /* synthetic */ void lambda$new$0(int i9, int i10, Object[] objArr) {
+        if (i9 == NotificationCenter.didUpdateConnectionState) {
             onConnectionStateUpdated(false);
         }
     }

@@ -1,26 +1,48 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class b60 extends ag.i1 {
-    public final /* synthetic */ c60 S0;
+public final /* synthetic */ class b60 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k60 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b60(c60 c60Var, c60 c60Var2, Activity activity, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(i10, i11, activity, c60Var2, c6Var);
-        this.S0 = c60Var;
+    public /* synthetic */ b60(k60 k60Var, int i9) {
+        this.a = i9;
+        this.b = k60Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        this.S0.x0 = false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.e3
-    public final void onOpenAnimationEnd() {
-        this.S0.x0 = false;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                k60 k60Var = this.b;
+                k60Var.f.r.clearFocus();
+                k60Var.f.r.requestFocus();
+                AndroidUtilities.showKeyboard(k60Var.f.r);
+                break;
+            case 1:
+                this.b.n0();
+                break;
+            case 2:
+                k60 k60Var2 = this.b;
+                k60Var2.m0(k60Var2.k0());
+                break;
+            case 3:
+                k60 k60Var3 = this.b;
+                k60Var3.m0(k60Var3.k0());
+                break;
+            default:
+                k60 k60Var4 = this.b;
+                k60Var4.T = null;
+                k60Var4.V.b();
+                k60Var4.h.b();
+                k60Var4.j0();
+                k60Var4.q0();
+                k60Var4.r0();
+                break;
+        }
     }
 }

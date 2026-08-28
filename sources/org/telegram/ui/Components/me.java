@@ -1,39 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.ImageView;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class me extends ImageView {
-    public float a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final class me extends qg {
+    public final Rect x;
+    public final /* synthetic */ ChatActivityEnterView y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public me(ChatActivityEnterView chatActivityEnterView, Context context) {
-        super(context);
-        this.b = chatActivityEnterView;
+    public me(ChatActivityEnterView chatActivityEnterView, Activity activity) {
+        super(activity, 24);
+        this.y = chatActivityEnterView;
+        this.x = new Rect();
     }
 
     @Override // android.view.View
-    public final float getTranslationX() {
-        return this.a;
-    }
-
-    @Override // android.view.View
-    public final void setTranslationX(float f10) {
-        this.a = f10;
-        float dp = AndroidUtilities.dp(-44.0f) + this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        float f11 = dp + chatActivityEnterView.y + chatActivityEnterView.x;
-        oe oeVar = chatActivityEnterView.F1;
-        float dp2 = AndroidUtilities.dp((oeVar == null || oeVar.getVisibility() != 0) ? 0.0f : -44.0f);
-        oe oeVar2 = chatActivityEnterView.F1;
-        float alpha = (dp2 * (oeVar2 == null ? 0.0f : oeVar2.getAlpha())) + f11;
-        oe oeVar3 = chatActivityEnterView.s1;
-        float dp3 = AndroidUtilities.dp((oeVar3 == null || oeVar3.getVisibility() != 0) ? 0.0f : -44.0f);
-        oe oeVar4 = chatActivityEnterView.s1;
-        super.setTranslationX((dp3 * (oeVar4 != null ? oeVar4.getAlpha() : 0.0f)) + alpha);
+    public final void draw(Canvas canvas) {
+        ChatActivityEnterView chatActivityEnterView = this.y;
+        if (!chatActivityEnterView.W0) {
+            super.draw(canvas);
+            return;
+        }
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        Rect rect = this.x;
+        rect.set(0, 0, measuredWidth, measuredHeight);
+        rect.inset(AndroidUtilities.dp(7.5f), AndroidUtilities.dp(7.5f));
+        Drawable drawable = getCurrentState() == og.b ? chatActivityEnterView.J3 : chatActivityEnterView.I3;
+        drawable.setBounds(rect);
+        drawable.draw(canvas);
     }
 }

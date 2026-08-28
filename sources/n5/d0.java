@@ -2,23 +2,24 @@ package n5;
 
 import android.util.Log;
 import android.util.SparseIntArray;
-import com.google.android.gms.internal.cast.g3;
-import com.google.android.gms.internal.cast.m4;
-import com.google.android.gms.internal.cast.r2;
-import com.google.android.gms.internal.cast.t6;
+import com.google.android.gms.internal.cast.h3;
+import com.google.android.gms.internal.cast.o4;
+import com.google.android.gms.internal.cast.s2;
+import com.google.android.gms.internal.cast.v6;
+import j3.r0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class d0 extends o5.g {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ d0(Object obj, int i10) {
-        this.a = i10;
+    public /* synthetic */ d0(Object obj, int i9) {
+        this.a = i9;
         this.b = obj;
     }
 
@@ -63,9 +64,9 @@ public final class d0 extends o5.g {
         switch (this.a) {
             case 1:
                 o5.c cVar = (o5.c) this.b;
-                long e9 = cVar.e();
-                if (e9 != cVar.b) {
-                    cVar.b = e9;
+                long e10 = cVar.e();
+                if (e10 != cVar.b) {
+                    cVar.b = e10;
                     cVar.c();
                     if (cVar.b != 0) {
                         cVar.d();
@@ -80,20 +81,20 @@ public final class d0 extends o5.g {
     }
 
     @Override // o5.g
-    public void h(String str, long j10, int i10, long j11, long j12) {
+    public void h(String str, long j10, int i9, long j11, long j12) {
         switch (this.a) {
             case 0:
-                m4 m4Var = ((c) this.b).l;
-                if (m4Var != null) {
-                    t6 F = m4Var.a.F();
-                    r2 r2Var = new r2(str);
-                    r2Var.b = j10;
-                    r2Var.c = i10;
-                    r2Var.d = j11;
-                    r2Var.e = j12;
-                    g3 g3Var = new g3(r2Var);
-                    g3Var.f = F.h;
-                    F.d.add(g3Var);
+                o4 o4Var = ((c) this.b).l;
+                if (o4Var != null) {
+                    v6 E = o4Var.a.E();
+                    s2 s2Var = new s2(str);
+                    s2Var.b = j10;
+                    s2Var.c = i9;
+                    s2Var.d = j11;
+                    s2Var.e = j12;
+                    h3 h3Var = new h3(s2Var);
+                    h3Var.f = E.h;
+                    E.d.add(h3Var);
                     break;
                 }
                 break;
@@ -105,7 +106,7 @@ public final class d0 extends o5.g {
         switch (this.a) {
             case 1:
                 o5.c cVar = (o5.c) this.b;
-                ArrayList c10 = r5.a.c(iArr);
+                ArrayList c10 = q5.a.c(iArr);
                 if (!cVar.d.equals(c10)) {
                     cVar.h();
                     cVar.f.evictAll();
@@ -121,21 +122,21 @@ public final class d0 extends o5.g {
     }
 
     @Override // o5.g
-    public void j(int[] iArr, int i10) {
-        int i11;
+    public void j(int[] iArr, int i9) {
+        int i10;
         switch (this.a) {
             case 1:
-                if (i10 == 0) {
-                    i11 = ((o5.c) this.b).d.size();
+                if (i9 == 0) {
+                    i10 = ((o5.c) this.b).d.size();
                 } else {
-                    i11 = ((o5.c) this.b).e.get(i10, -1);
-                    if (i11 == -1) {
+                    i10 = ((o5.c) this.b).e.get(i9, -1);
+                    if (i10 == -1) {
                         ((o5.c) this.b).d();
                         return;
                     }
                 }
                 ((o5.c) this.b).h();
-                ((o5.c) this.b).d.addAll(i11, r5.a.c(iArr));
+                ((o5.c) this.b).d.addAll(i10, q5.a.c(iArr));
                 o5.c.b((o5.c) this.b);
                 o5.c cVar = (o5.c) this.b;
                 synchronized (cVar.m) {
@@ -155,7 +156,7 @@ public final class d0 extends o5.g {
     }
 
     @Override // o5.g
-    public void k(m5.p[] pVarArr) {
+    public void k(m5.o[] oVarArr) {
         switch (this.a) {
             case 1:
                 HashSet hashSet = new HashSet();
@@ -163,32 +164,32 @@ public final class d0 extends o5.g {
                 SparseIntArray sparseIntArray = cVar.e;
                 ArrayList arrayList = cVar.g;
                 arrayList.clear();
-                int i10 = 0;
-                for (m5.p pVar : pVarArr) {
-                    int i11 = pVar.b;
-                    cVar.f.put(Integer.valueOf(i11), pVar);
-                    int i12 = sparseIntArray.get(i11, -1);
-                    if (i12 == -1) {
+                int i9 = 0;
+                for (m5.o oVar : oVarArr) {
+                    int i10 = oVar.b;
+                    cVar.f.put(Integer.valueOf(i10), oVar);
+                    int i11 = sparseIntArray.get(i10, -1);
+                    if (i11 == -1) {
                         cVar.d();
                         break;
                     } else {
-                        hashSet.add(Integer.valueOf(i12));
+                        hashSet.add(Integer.valueOf(i11));
                     }
                 }
                 int size = arrayList.size();
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    int i13 = sparseIntArray.get(((Integer) obj).intValue(), -1);
-                    if (i13 != -1) {
-                        hashSet.add(Integer.valueOf(i13));
+                while (i9 < size) {
+                    Object obj = arrayList.get(i9);
+                    i9++;
+                    int i12 = sparseIntArray.get(((Integer) obj).intValue(), -1);
+                    if (i12 != -1) {
+                        hashSet.add(Integer.valueOf(i12));
                     }
                 }
                 arrayList.clear();
                 ArrayList arrayList2 = new ArrayList(hashSet);
                 Collections.sort(arrayList2);
                 cVar.h();
-                r5.a.e(arrayList2);
+                q5.a.e(arrayList2);
                 o5.c.a(cVar);
                 cVar.f();
                 break;
@@ -200,15 +201,15 @@ public final class d0 extends o5.g {
         switch (this.a) {
             case 1:
                 ArrayList arrayList = new ArrayList();
-                for (int i10 : iArr) {
-                    ((o5.c) this.b).f.remove(Integer.valueOf(i10));
-                    int i11 = ((o5.c) this.b).e.get(i10, -1);
-                    if (i11 == -1) {
+                for (int i9 : iArr) {
+                    ((o5.c) this.b).f.remove(Integer.valueOf(i9));
+                    int i10 = ((o5.c) this.b).e.get(i9, -1);
+                    if (i10 == -1) {
                         ((o5.c) this.b).d();
                         return;
                     } else {
-                        ((o5.c) this.b).e.delete(i10);
-                        arrayList.add(Integer.valueOf(i11));
+                        ((o5.c) this.b).e.delete(i9);
+                        arrayList.add(Integer.valueOf(i10));
                     }
                 }
                 if (arrayList.isEmpty()) {
@@ -216,10 +217,10 @@ public final class d0 extends o5.g {
                 }
                 Collections.sort(arrayList);
                 ((o5.c) this.b).h();
-                ((o5.c) this.b).d.removeAll(r5.a.c(iArr));
+                ((o5.c) this.b).d.removeAll(q5.a.c(iArr));
                 o5.c.b((o5.c) this.b);
                 o5.c cVar = (o5.c) this.b;
-                r5.a.e(arrayList);
+                q5.a.e(arrayList);
                 synchronized (cVar.m) {
                     Iterator it = cVar.m.iterator();
                     if (it.hasNext()) {
@@ -237,30 +238,30 @@ public final class d0 extends o5.g {
     }
 
     @Override // o5.g
-    public void m(ArrayList arrayList, ArrayList arrayList2, int i10) {
+    public void m(ArrayList arrayList, ArrayList arrayList2, int i9) {
         switch (this.a) {
             case 1:
                 ArrayList arrayList3 = new ArrayList();
-                int i11 = 0;
-                if (i10 == 0) {
+                int i10 = 0;
+                if (i9 == 0) {
                     ((o5.c) this.b).d.size();
                 } else if (arrayList2.isEmpty()) {
-                    r5.b bVar = ((o5.c) this.b).a;
+                    q5.b bVar = ((o5.c) this.b).a;
                     Log.w(bVar.a, bVar.d("Received a Queue Reordered message with an empty reordered items IDs list.", new Object[0]));
-                } else if (((o5.c) this.b).e.get(i10, -1) == -1) {
+                } else if (((o5.c) this.b).e.get(i9, -1) == -1) {
                     o5.c cVar = (o5.c) this.b;
                     cVar.e.get(((Integer) arrayList2.get(0)).intValue(), -1);
                 }
                 int size = arrayList2.size();
-                while (i11 < size) {
-                    Object obj = arrayList2.get(i11);
-                    i11++;
-                    int i12 = ((o5.c) this.b).e.get(((Integer) obj).intValue(), -1);
-                    if (i12 == -1) {
+                while (i10 < size) {
+                    Object obj = arrayList2.get(i10);
+                    i10++;
+                    int i11 = ((o5.c) this.b).e.get(((Integer) obj).intValue(), -1);
+                    if (i11 == -1) {
                         ((o5.c) this.b).d();
                         return;
                     }
-                    arrayList3.add(Integer.valueOf(i12));
+                    arrayList3.add(Integer.valueOf(i11));
                 }
                 ((o5.c) this.b).h();
                 o5.c cVar2 = (o5.c) this.b;
@@ -289,21 +290,21 @@ public final class d0 extends o5.g {
             case 1:
                 o5.c cVar = (o5.c) this.b;
                 ArrayList arrayList = new ArrayList();
-                int i10 = 0;
-                while (i10 < iArr.length) {
-                    int i11 = iArr[i10];
-                    cVar.f.remove(Integer.valueOf(i11));
-                    int i12 = cVar.e.get(i11, -1);
-                    if (i12 == -1) {
+                int i9 = 0;
+                while (i9 < iArr.length) {
+                    int i10 = iArr[i9];
+                    cVar.f.remove(Integer.valueOf(i10));
+                    int i11 = cVar.e.get(i10, -1);
+                    if (i11 == -1) {
                         cVar.d();
                         break;
                     } else {
-                        i10 = i0.a.f(i12, i10, 1, arrayList);
+                        i9 = r0.e(i11, i9, 1, arrayList);
                     }
                 }
                 Collections.sort(arrayList);
                 cVar.h();
-                r5.a.e(arrayList);
+                q5.a.e(arrayList);
                 o5.c.a(cVar);
                 cVar.f();
                 break;

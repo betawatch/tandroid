@@ -4,73 +4,73 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class g extends c7.a {
-    public final n5.r U0(n5.b bVar, i6.a aVar, n5.k kVar) {
-        n5.r pVar;
+public final class g extends b7.a {
+    public final n5.q U0(n5.b bVar, h6.a aVar, n5.j jVar) {
+        n5.q oVar;
         Parcel M0 = M0();
-        t.c(M0, bVar);
-        t.d(M0, aVar);
-        t.d(M0, kVar);
+        u.c(M0, bVar);
+        u.d(M0, aVar);
+        u.d(M0, jVar);
         Parcel O0 = O0(M0, 3);
         IBinder readStrongBinder = O0.readStrongBinder();
-        int i10 = n5.q.b;
+        int i9 = n5.p.b;
         if (readStrongBinder == null) {
-            pVar = null;
+            oVar = null;
         } else {
             IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.ICastSession");
-            pVar = queryLocalInterface instanceof n5.r ? (n5.r) queryLocalInterface : new n5.p(readStrongBinder, "com.google.android.gms.cast.framework.ICastSession", 1);
+            oVar = queryLocalInterface instanceof n5.q ? (n5.q) queryLocalInterface : new n5.o(readStrongBinder, "com.google.android.gms.cast.framework.ICastSession", 2);
         }
         O0.recycle();
-        return pVar;
+        return oVar;
     }
 
-    public final n5.v V0(i6.b bVar, i6.a aVar, i6.a aVar2) {
-        n5.v tVar;
+    public final n5.u V0(h6.b bVar, h6.a aVar, h6.a aVar2) {
+        n5.u sVar;
         Parcel M0 = M0();
-        t.d(M0, bVar);
-        t.d(M0, aVar);
-        t.d(M0, aVar2);
+        u.d(M0, bVar);
+        u.d(M0, aVar);
+        u.d(M0, aVar2);
         Parcel O0 = O0(M0, 5);
         IBinder readStrongBinder = O0.readStrongBinder();
-        int i10 = n5.u.b;
+        int i9 = n5.t.b;
         if (readStrongBinder == null) {
-            tVar = null;
+            sVar = null;
         } else {
             IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.IReconnectionService");
-            tVar = queryLocalInterface instanceof n5.v ? (n5.v) queryLocalInterface : new n5.t(readStrongBinder, "com.google.android.gms.cast.framework.IReconnectionService", 1);
+            sVar = queryLocalInterface instanceof n5.u ? (n5.u) queryLocalInterface : new n5.s(readStrongBinder, "com.google.android.gms.cast.framework.IReconnectionService", 2);
         }
         O0.recycle();
-        return tVar;
+        return sVar;
     }
 
-    public final n5.y W0(String str, String str2, n5.k kVar) {
-        n5.y wVar;
+    public final n5.x W0(String str, String str2, n5.j jVar) {
+        n5.x vVar;
         Parcel M0 = M0();
         M0.writeString(str);
         M0.writeString(str2);
-        t.d(M0, kVar);
+        u.d(M0, jVar);
         Parcel O0 = O0(M0, 2);
         IBinder readStrongBinder = O0.readStrongBinder();
-        int i10 = n5.x.b;
+        int i9 = n5.w.b;
         if (readStrongBinder == null) {
-            wVar = null;
+            vVar = null;
         } else {
             IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.ISession");
-            wVar = queryLocalInterface instanceof n5.y ? (n5.y) queryLocalInterface : new n5.w(readStrongBinder, "com.google.android.gms.cast.framework.ISession", 1);
+            vVar = queryLocalInterface instanceof n5.x ? (n5.x) queryLocalInterface : new n5.v(readStrongBinder, "com.google.android.gms.cast.framework.ISession", 2);
         }
         O0.recycle();
-        return wVar;
+        return vVar;
     }
 
-    public final p5.e X0(i6.b bVar, n5.k kVar, int i10, int i11) {
+    public final p5.e X0(h6.b bVar, n5.j jVar, int i9, int i10) {
         p5.e cVar;
         Parcel M0 = M0();
-        t.d(M0, bVar);
-        t.d(M0, kVar);
+        u.d(M0, bVar);
+        u.d(M0, jVar);
+        M0.writeInt(i9);
         M0.writeInt(i10);
-        M0.writeInt(i11);
         M0.writeInt(0);
         M0.writeLong(2097152L);
         M0.writeInt(5);
@@ -78,25 +78,25 @@ public final class g extends c7.a {
         M0.writeInt(10000);
         Parcel O0 = O0(M0, 6);
         IBinder readStrongBinder = O0.readStrongBinder();
-        int i12 = p5.d.b;
+        int i11 = p5.d.b;
         if (readStrongBinder == null) {
             cVar = null;
         } else {
             IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.media.internal.IFetchBitmapTask");
-            cVar = queryLocalInterface instanceof p5.e ? (p5.e) queryLocalInterface : new p5.c(readStrongBinder, "com.google.android.gms.cast.framework.media.internal.IFetchBitmapTask", 1);
+            cVar = queryLocalInterface instanceof p5.e ? (p5.e) queryLocalInterface : new p5.c(readStrongBinder, "com.google.android.gms.cast.framework.media.internal.IFetchBitmapTask", 2);
         }
         O0.recycle();
         return cVar;
     }
 
-    public final p5.e Y0(i6.b bVar, i6.b bVar2, n5.k kVar, int i10, int i11) {
+    public final p5.e Y0(h6.b bVar, h6.b bVar2, n5.j jVar, int i9, int i10) {
         p5.e cVar;
         Parcel M0 = M0();
-        t.d(M0, bVar);
-        t.d(M0, bVar2);
-        t.d(M0, kVar);
+        u.d(M0, bVar);
+        u.d(M0, bVar2);
+        u.d(M0, jVar);
+        M0.writeInt(i9);
         M0.writeInt(i10);
-        M0.writeInt(i11);
         M0.writeInt(0);
         M0.writeLong(2097152L);
         M0.writeInt(5);
@@ -104,12 +104,12 @@ public final class g extends c7.a {
         M0.writeInt(10000);
         Parcel O0 = O0(M0, 7);
         IBinder readStrongBinder = O0.readStrongBinder();
-        int i12 = p5.d.b;
+        int i11 = p5.d.b;
         if (readStrongBinder == null) {
             cVar = null;
         } else {
             IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.media.internal.IFetchBitmapTask");
-            cVar = queryLocalInterface instanceof p5.e ? (p5.e) queryLocalInterface : new p5.c(readStrongBinder, "com.google.android.gms.cast.framework.media.internal.IFetchBitmapTask", 1);
+            cVar = queryLocalInterface instanceof p5.e ? (p5.e) queryLocalInterface : new p5.c(readStrongBinder, "com.google.android.gms.cast.framework.media.internal.IFetchBitmapTask", 2);
         }
         O0.recycle();
         return cVar;

@@ -2,10 +2,10 @@ package j3;
 
 import android.media.AudioAttributes;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class d {
-    public static void a(AudioAttributes.Builder builder, int i10) {
-        builder.setSpatializationBehavior(i10);
+    public static void a(AudioAttributes.Builder builder, int i9) {
+        builder.setSpatializationBehavior(i9);
     }
 }

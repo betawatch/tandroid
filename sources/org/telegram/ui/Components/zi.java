@@ -1,75 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class zi extends dz {
-    public final /* synthetic */ int U;
-    public final /* synthetic */ yh V;
+public final /* synthetic */ class zi implements ok0, fj {
+    public final /* synthetic */ pj a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zi(yh yhVar, int i10, zk0 zk0Var, int i11) {
-        super(i10, 0, zk0Var);
-        this.U = i11;
-        this.V = yhVar;
+    public /* synthetic */ zi(pj pjVar) {
+        this.a = pjVar;
     }
 
-    @Override // f2.x0
-    public int[] t(View view, Rect rect) {
-        switch (this.U) {
-            case 3:
-                int C = this.n - C();
-                int top = (view.getTop() + rect.top) - view.getScrollY();
-                int height = rect.height() + top;
-                int min = Math.min(0, top);
-                int max = Math.max(0, height - C);
-                if (min == 0) {
-                    min = Math.min(top, max);
-                }
-                return new int[]{0, min};
-            default:
-                return super.t(view, rect);
+    @Override // org.telegram.ui.Components.ok0
+    public boolean a(int i9, View view) {
+        Object O;
+        pj pjVar = this.a;
+        f2.r0 adapter = pjVar.s.getAdapter();
+        lj ljVar = pjVar.B;
+        if (adapter == ljVar) {
+            O = ljVar.E(i9);
+        } else {
+            ij ijVar = pjVar.A;
+            O = ijVar.O(ijVar.S(i9), ijVar.Q(i9));
         }
-    }
-
-    @Override // f2.k0, f2.x0
-    public final void v0(RecyclerView recyclerView, f2.l1 l1Var, int i10) {
-        switch (this.U) {
-            case 0:
-                yi yiVar = new yi(this, recyclerView.getContext());
-                yiVar.a = i10;
-                w0(yiVar);
-                break;
-            case 1:
-                rj rjVar = new rj(this, recyclerView.getContext());
-                rjVar.a = i10;
-                w0(rjVar);
-                break;
-            case 2:
-                lk lkVar = new lk(this, recyclerView.getContext());
-                lkVar.a = i10;
-                w0(lkVar);
-                break;
-            case 3:
-                wm wmVar = new wm(this, recyclerView.getContext());
-                wmVar.a = i10;
-                w0(wmVar);
-                break;
-            default:
-                qf.a0 a0Var = new qf.a0(this, recyclerView.getContext());
-                a0Var.a = i10;
-                w0(a0Var);
-                break;
+        if (O == null) {
+            return false;
         }
+        pjVar.K((oj) view, O);
+        return true;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zi(tk tkVar, hh.f1 f1Var) {
-        super(0, 0, f1Var);
-        this.U = 2;
-        this.V = tkVar;
+    @Override // org.telegram.ui.Components.fj
+    public void b(TLRPC.User user, boolean z10, int i9, long j10) {
+        pj pjVar = this.a;
+        pjVar.b.dismiss(true);
+        pjVar.F.b(user, z10, i9, j10);
+    }
+
+    @Override // org.telegram.ui.Components.fj
+    public /* synthetic */ void c(ArrayList arrayList, String str, boolean z10, int i9, long j10, boolean z11) {
     }
 }

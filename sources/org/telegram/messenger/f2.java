@@ -1,35 +1,102 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ MessagesStorage b;
 
-    public /* synthetic */ f2(Utilities.Callback callback, ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.b = callback;
-        this.c = arrayList;
+    public /* synthetic */ f2(MessagesStorage messagesStorage, int i9) {
+        this.a = i9;
+        this.b = messagesStorage;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.run(this.c);
+                FactCheckController.lambda$clearExpiredInDatabase$7(this.b);
                 break;
             case 1:
-                this.b.run(this.c);
+                this.b.lambda$saveDialogFilter$73();
                 break;
             case 2:
-                MediaDataController.lambda$loadStickers$92(this.b, this.c);
+                this.b.lambda$clearLocalDatabase$43();
+                break;
+            case 3:
+                this.b.lambda$fixNotificationSettings$9();
+                break;
+            case 4:
+                this.b.lambda$getWallpapers$81();
+                break;
+            case 5:
+                this.b.lambda$loadUnreadMessages$77();
+                break;
+            case 6:
+                this.b.lambda$updateMutedDialogsFiltersCounters$36();
+                break;
+            case 7:
+                this.b.lambda$openDatabase$1();
+                break;
+            case 8:
+                this.b.lambda$openDatabase$2();
+                break;
+            case 9:
+                this.b.lambda$updateFiltersReadCounter$119();
+                break;
+            case 10:
+                this.b.lambda$clearLocalDatabase$44();
+                break;
+            case 11:
+                this.b.lambda$checkSQLException$8();
+                break;
+            case 12:
+                this.b.lambda$fullReset$62();
+                break;
+            case 13:
+                this.b.lambda$new$0();
+                break;
+            case 14:
+                this.b.lambda$resetAllUnreadCounters$250();
+                break;
+            case 15:
+                this.b.lambda$reset$61();
+                break;
+            case 16:
+                this.b.lambda$updateDbToLastVersion$3();
+                break;
+            case 17:
+                this.b.lambda$updateDbToLastVersion$4();
+                break;
+            case 18:
+                this.b.lambda$deleteDialog$89();
+                break;
+            case 19:
+                this.b.lambda$loadDialogFilters$67();
+                break;
+            case 20:
+                this.b.lambda$clearSentMedia$163();
+                break;
+            case 21:
+                this.b.lambda$fullReset$63();
+                break;
+            case 22:
+                this.b.lambda$loadPendingTasks$33();
+                break;
+            case 23:
+                this.b.lambda$deleteAllStoryPushMessages$40();
+                break;
+            case 24:
+                this.b.lambda$cleanup$5();
+                break;
+            case 25:
+                this.b.lambda$deleteAllStoryReactionPushMessages$41();
+                break;
+            case 26:
+                this.b.lambda$getContacts$151();
                 break;
             default:
-                this.b.run(this.c);
+                this.b.lambda$broadcastQuickRepliesMessagesChange$223();
                 break;
         }
     }

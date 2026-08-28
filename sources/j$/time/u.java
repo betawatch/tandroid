@@ -18,17 +18,17 @@ public final class u extends ZoneId {
         Objects.requireNonNull(str, "zoneId");
         int length = str.length();
         if (length >= 2) {
-            for (int i10 = 0; i10 < length; i10++) {
-                char charAt = str.charAt(i10);
-                if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && ((charAt != '/' || i10 == 0) && ((charAt < '0' || charAt > '9' || i10 == 0) && ((charAt != '~' || i10 == 0) && ((charAt != '.' || i10 == 0) && ((charAt != '_' || i10 == 0) && ((charAt != '+' || i10 == 0) && (charAt != '-' || i10 == 0))))))))) {
+            for (int i9 = 0; i9 < length; i9++) {
+                char charAt = str.charAt(i9);
+                if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && ((charAt != '/' || i9 == 0) && ((charAt < '0' || charAt > '9' || i9 == 0) && ((charAt != '~' || i9 == 0) && ((charAt != '.' || i9 == 0) && ((charAt != '_' || i9 == 0) && ((charAt != '+' || i9 == 0) && (charAt != '-' || i9 == 0))))))))) {
                     throw new b("Invalid ID for region-based ZoneId, invalid format: ".concat(str));
                 }
             }
             try {
                 zoneRules = j$.time.zone.h.a(str);
-            } catch (j$.time.zone.f e9) {
+            } catch (j$.time.zone.f e10) {
                 if (z10) {
-                    throw e9;
+                    throw e10;
                 }
                 zoneRules = null;
             }

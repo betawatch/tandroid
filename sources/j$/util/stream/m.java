@@ -55,12 +55,12 @@ public final class m extends z4 {
     }
 
     @Override // j$.util.stream.a
-    public final j5 Q0(int i10, j5 j5Var) {
+    public final j5 Q0(int i9, j5 j5Var) {
         Objects.requireNonNull(j5Var);
-        if (v6.DISTINCT.m(i10)) {
+        if (v6.DISTINCT.m(i9)) {
             return j5Var;
         }
-        if (v6.SORTED.m(i10)) {
+        if (v6.SORTED.m(i9)) {
             return new k(j5Var);
         }
         return new l(j5Var);

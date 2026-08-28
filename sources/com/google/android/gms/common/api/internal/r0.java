@@ -5,7 +5,7 @@ import android.os.IInterface;
 import android.util.Log;
 import java.util.Set;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class r0 implements Runnable {
     public final /* synthetic */ int a;
@@ -20,11 +20,11 @@ public final class r0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        y5.h hVar;
-        y5.h hVar2 = null;
+        x5.h hVar;
+        x5.h hVar2 = null;
         switch (this.a) {
             case 0:
-                v5.a aVar = (v5.a) this.b;
+                u5.a aVar = (u5.a) this.b;
                 s0 s0Var = (s0) this.c;
                 com.google.android.gms.common.api.c cVar = s0Var.a;
                 p0 p0Var = (p0) s0Var.f.s.get(s0Var.b);
@@ -34,18 +34,18 @@ public final class r0 implements Runnable {
                         break;
                     } else {
                         s0Var.e = true;
-                        if (!cVar.o()) {
+                        if (!cVar.p()) {
                             try {
-                                cVar.i(null, cVar.b());
+                                cVar.c(null, cVar.b());
                                 break;
-                            } catch (SecurityException e9) {
-                                Log.e("GoogleApiManager", "Failed to get service from broker. ", e9);
-                                cVar.c("Failed to get service from broker.");
-                                p0Var.m(new v5.a(10), null);
+                            } catch (SecurityException e10) {
+                                Log.e("GoogleApiManager", "Failed to get service from broker. ", e10);
+                                cVar.d("Failed to get service from broker.");
+                                p0Var.m(new u5.a(10), null);
                                 return;
                             }
                         } else if (s0Var.e && (hVar = s0Var.c) != null) {
-                            cVar.i(hVar, s0Var.d);
+                            cVar.c(hVar, s0Var.d);
                             break;
                         }
                     }
@@ -62,12 +62,12 @@ public final class r0 implements Runnable {
                 break;
             default:
                 d1 d1Var = (d1) this.c;
-                z7.h hVar3 = (z7.h) this.b;
-                v5.a aVar2 = hVar3.b;
+                y7.h hVar3 = (y7.h) this.b;
+                u5.a aVar2 = hVar3.b;
                 if (aVar2.c()) {
-                    y5.v vVar = hVar3.c;
-                    y5.l.h(vVar);
-                    v5.a aVar3 = vVar.c;
+                    x5.v vVar = hVar3.c;
+                    x5.l.h(vVar);
+                    u5.a aVar3 = vVar.c;
                     if (!aVar3.c()) {
                         Log.wtf("SignInCoordinator", "Sign-in succeeded with resolve account failure: ".concat(String.valueOf(aVar3)), new Exception());
                         d1Var.j.b(aVar3);
@@ -77,20 +77,20 @@ public final class r0 implements Runnable {
                         s0 s0Var2 = d1Var.j;
                         IBinder iBinder = vVar.b;
                         if (iBinder != null) {
-                            int i10 = y5.a.b;
+                            int i9 = x5.a.b;
                             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IAccountAccessor");
-                            hVar2 = queryLocalInterface instanceof y5.h ? (y5.h) queryLocalInterface : new y5.l0(iBinder, "com.google.android.gms.common.internal.IAccountAccessor", 11);
+                            hVar2 = queryLocalInterface instanceof x5.h ? (x5.h) queryLocalInterface : new x5.l0(iBinder, "com.google.android.gms.common.internal.IAccountAccessor", 11);
                         }
                         Set set = d1Var.e;
                         s0Var2.getClass();
                         if (hVar2 == null || set == null) {
                             Log.wtf("GoogleApiManager", "Received null response from onSignInSuccess", new Exception());
-                            s0Var2.b(new v5.a(4));
+                            s0Var2.b(new u5.a(4));
                         } else {
                             s0Var2.c = hVar2;
                             s0Var2.d = set;
                             if (s0Var2.e) {
-                                s0Var2.a.i(hVar2, set);
+                                s0Var2.a.c(hVar2, set);
                             }
                         }
                     }
@@ -102,8 +102,8 @@ public final class r0 implements Runnable {
         }
     }
 
-    public /* synthetic */ r0(Object obj, z5.a aVar, int i10) {
-        this.a = i10;
+    public /* synthetic */ r0(Object obj, y5.a aVar, int i9) {
+        this.a = i9;
         this.c = obj;
         this.b = aVar;
     }

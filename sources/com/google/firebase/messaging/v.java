@@ -9,7 +9,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class v implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final class v implements Runnable {
 
     public v(FirebaseMessaging firebaseMessaging, long j10) {
         this.a = 0;
-        this.e = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new f9.v("firebase-iid-executor"));
+        this.e = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new e9.v("firebase-iid-executor"));
         this.d = firebaseMessaging;
         this.b = j10;
         PowerManager.WakeLock newWakeLock = ((PowerManager) firebaseMessaging.b.getSystemService("power")).newWakeLock(1, "fiid-sync");
@@ -45,16 +45,16 @@ public final class v implements Runnable {
             }
             Log.d("FirebaseMessaging", "Token successfully retrieved");
             return true;
-        } catch (IOException e9) {
-            String message = e9.getMessage();
+        } catch (IOException e10) {
+            String message = e10.getMessage();
             if (!"SERVICE_NOT_AVAILABLE".equals(message) && !"INTERNAL_SERVER_ERROR".equals(message) && !"InternalServerError".equals(message)) {
-                if (e9.getMessage() != null) {
-                    throw e9;
+                if (e10.getMessage() != null) {
+                    throw e10;
                 }
                 Log.w("FirebaseMessaging", "Token retrieval failed without exception message. Will retry token retrieval");
                 return false;
             }
-            Log.w("FirebaseMessaging", "Token retrieval failed: " + e9.getMessage() + ". Will retry token retrieval");
+            Log.w("FirebaseMessaging", "Token retrieval failed: " + e10.getMessage() + ". Will retry token retrieval");
             return false;
         } catch (SecurityException unused) {
             Log.w("FirebaseMessaging", "Token retrieval failed with SecurityException. Will retry token retrieval");
@@ -92,15 +92,15 @@ public final class v implements Runnable {
                                 return;
                             }
                         } else {
-                            androidx.mediarouter.app.f fVar = new androidx.mediarouter.app.f();
-                            fVar.b = this;
-                            fVar.a();
+                            androidx.mediarouter.app.h hVar = new androidx.mediarouter.app.h();
+                            hVar.b = this;
+                            hVar.a();
                             if (!t.v().x(firebaseMessaging.b)) {
                                 return;
                             }
                         }
-                    } catch (IOException e9) {
-                        Log.e("FirebaseMessaging", "Topic sync or token retrieval failed on hard failure exceptions: " + e9.getMessage() + ". Won't retry the operation.");
+                    } catch (IOException e10) {
+                        Log.e("FirebaseMessaging", "Topic sync or token retrieval failed on hard failure exceptions: " + e10.getMessage() + ". Won't retry the operation.");
                         firebaseMessaging.e(false);
                         if (!t.v().x(firebaseMessaging.b)) {
                             return;
@@ -115,12 +115,12 @@ public final class v implements Runnable {
                     throw th;
                 }
             default:
-                f9.o oVar = (f9.o) this.e;
-                f9.s sVar = oVar.n;
+                e9.o oVar = (e9.o) this.e;
+                e9.s sVar = oVar.n;
                 if (sVar == null || !sVar.e.get()) {
                     long j10 = this.b / 1000;
-                    String e10 = oVar.e();
-                    if (e10 == null) {
+                    String e11 = oVar.e();
+                    if (e11 == null) {
                         Log.w("FirebaseCrashlytics", "Tried to write a non-fatal exception while no session was open.", null);
                         return;
                     }
@@ -128,18 +128,18 @@ public final class v implements Runnable {
                     Throwable th2 = (Throwable) this.c;
                     Thread thread = (Thread) this.d;
                     mVar.getClass();
-                    String concat = "Persisting non-fatal event for session ".concat(e10);
+                    String concat = "Persisting non-fatal event for session ".concat(e11);
                     if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                         Log.v("FirebaseCrashlytics", concat, null);
                     }
-                    mVar.t(th2, thread, e10, "error", j10, false);
+                    mVar.t(th2, thread, e11, "error", j10, false);
                     return;
                 }
                 return;
         }
     }
 
-    public v(f9.o oVar, long j10, Throwable th, Thread thread) {
+    public v(e9.o oVar, long j10, Throwable th, Thread thread) {
         this.a = 1;
         this.e = oVar;
         this.b = j10;

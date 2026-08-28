@@ -1,67 +1,141 @@
 package r5;
 
-import android.os.SystemClock;
+import aa.d;
 import android.text.TextUtils;
-import java.util.AbstractCollection;
-import java.util.ArrayList;
+import android.util.Log;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Iterator;
-import java.util.Random;
-import java.util.regex.Pattern;
+import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+import q5.b;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static final Pattern a = Pattern.compile("urn:x-cast:[-A-Za-z0-9_]+(\\.[-A-Za-z0-9_]+)*");
-    public static final Random b = new Random(SystemClock.elapsedRealtime());
+    public static final b a = new b("MetadataUtils", null);
+    public static final String[] b;
+    public static final String c;
 
-    public static String a(String str, JSONObject jSONObject) {
-        if (jSONObject == null || !jSONObject.has(str)) {
+    static {
+        String[] strArr = {"Z", "+hh", "+hhmm", "+hh:mm"};
+        b = strArr;
+        c = "yyyyMMdd'T'HHmmss".concat(String.valueOf(strArr[0]));
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0043  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00e9  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00fc  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static Calendar a(String str) {
+        String substring;
+        String substring2;
+        String str2;
+        boolean isEmpty = TextUtils.isEmpty(str);
+        b bVar = a;
+        if (isEmpty) {
+            bVar.b("Input string is empty or null", new Object[0]);
             return null;
         }
-        return jSONObject.optString(str);
-    }
-
-    public static void b(String str) {
         if (TextUtils.isEmpty(str)) {
-            throw new IllegalArgumentException("Namespace cannot be null or empty");
+            bVar.b("Input string is empty or null", new Object[0]);
+        } else {
+            try {
+                substring = str.substring(0, 8);
+            } catch (IndexOutOfBoundsException e10) {
+                Log.e(bVar.a, bVar.d("Error extracting the date", new Object[0]), e10);
+            }
+            if (!TextUtils.isEmpty(substring)) {
+                bVar.b("Invalid date format", new Object[0]);
+                return null;
+            }
+            try {
+                if (TextUtils.isEmpty(str)) {
+                    bVar.b("string is empty or null", new Object[0]);
+                } else {
+                    int indexOf = str.indexOf(84);
+                    int i9 = indexOf + 1;
+                    if (indexOf == 8) {
+                        try {
+                            substring2 = str.substring(i9);
+                            if (substring2.length() != 6) {
+                                char charAt = substring2.charAt(6);
+                                String[] strArr = b;
+                                if (charAt == '+' || charAt == '-') {
+                                    int length = substring2.length();
+                                    if (length == strArr[1].length() + 6 || length == strArr[2].length() + 6 || length == strArr[3].length() + 6) {
+                                        substring2 = substring2.replaceAll("([\\+\\-]\\d\\d):(\\d\\d)", "$1$2");
+                                    }
+                                } else if (charAt == 'Z' && substring2.length() == strArr[0].length() + 6) {
+                                    substring2 = String.valueOf(substring2.substring(0, substring2.length() - 1)).concat("+0000");
+                                }
+                            }
+                        } catch (IndexOutOfBoundsException e11) {
+                            Log.e(bVar.a, bVar.d("Error extracting the time substring: %s", new Object[0]), e11);
+                        }
+                        if (TextUtils.isEmpty(substring2)) {
+                            substring = d.z(substring, "T", substring2);
+                            str2 = substring2.length() == 6 ? "yyyyMMdd'T'HHmmss" : c;
+                        } else {
+                            str2 = "yyyyMMdd";
+                        }
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.setTime(new SimpleDateFormat(str2).parse(substring));
+                        return calendar;
+                    }
+                    bVar.b("T delimeter is not found", new Object[0]);
+                }
+                calendar.setTime(new SimpleDateFormat(str2).parse(substring));
+                return calendar;
+            } catch (ParseException e12) {
+                Log.e(bVar.a, bVar.d("Error parsing string", new Object[0]), e12);
+                return null;
+            }
+            substring2 = null;
+            if (TextUtils.isEmpty(substring2)) {
+            }
+            Calendar calendar2 = Calendar.getInstance();
         }
-        if (str.length() > 128) {
-            throw new IllegalArgumentException("Invalid namespace length");
-        }
-        if (!str.startsWith("urn:x-cast:")) {
-            throw new IllegalArgumentException("Namespace must begin with the prefix \"urn:x-cast:\"");
-        }
-        if (str.length() == 11) {
-            throw new IllegalArgumentException("Namespace must begin with the prefix \"urn:x-cast:\" and have non-empty suffix");
+        substring = null;
+        if (!TextUtils.isEmpty(substring)) {
         }
     }
 
-    public static ArrayList c(int[] iArr) {
-        ArrayList arrayList = new ArrayList();
-        int length = iArr.length;
-        int i10 = 0;
-        while (i10 < length) {
-            i10 = i0.a.f(iArr[i10], i10, 1, arrayList);
-        }
-        return arrayList;
-    }
-
-    public static boolean d(Object obj, Object obj2) {
-        if (obj == null && obj2 == null) {
-            return true;
-        }
-        return (obj == null || obj2 == null || !obj.equals(obj2)) ? false : true;
-    }
-
-    public static int[] e(AbstractCollection abstractCollection) {
-        int[] iArr = new int[abstractCollection.size()];
-        Iterator it = abstractCollection.iterator();
-        int i10 = 0;
+    public static JSONArray b(List list) {
+        list.getClass();
+        JSONArray jSONArray = new JSONArray();
+        Iterator it = list.iterator();
         while (it.hasNext()) {
-            iArr[i10] = ((Integer) it.next()).intValue();
-            i10++;
+            w5.a aVar = (w5.a) it.next();
+            aVar.getClass();
+            JSONObject jSONObject = new JSONObject();
+            try {
+                jSONObject.put("url", aVar.b.toString());
+                jSONObject.put("width", aVar.c);
+                jSONObject.put("height", aVar.d);
+            } catch (JSONException unused) {
+            }
+            jSONArray.put(jSONObject);
         }
-        return iArr;
+        return jSONArray;
+    }
+
+    public static void c(List list, JSONArray jSONArray) {
+        try {
+            list.clear();
+            for (int i9 = 0; i9 < jSONArray.length(); i9++) {
+                try {
+                    list.add(new w5.a(jSONArray.getJSONObject(i9)));
+                } catch (IllegalArgumentException unused) {
+                }
+            }
+        } catch (JSONException unused2) {
+        }
     }
 }

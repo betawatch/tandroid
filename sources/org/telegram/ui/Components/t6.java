@@ -4,63 +4,63 @@ import android.view.View;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t6 implements org.telegram.ui.ActionBar.r0, rk0 {
+public final /* synthetic */ class t6 implements org.telegram.ui.ActionBar.s0, ok0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b8 b;
+    public final /* synthetic */ c8 b;
 
-    public /* synthetic */ t6(b8 b8Var, int i10) {
-        this.a = i10;
-        this.b = b8Var;
+    public /* synthetic */ t6(c8 c8Var, int i9) {
+        this.a = i9;
+        this.b = c8Var;
     }
 
-    @Override // org.telegram.ui.Components.rk0
-    public boolean a(int i10, View view) {
+    @Override // org.telegram.ui.Components.ok0
+    public boolean a(int i9, View view) {
         boolean z10 = view instanceof org.telegram.ui.Cells.x;
-        b8 b8Var = this.b;
+        c8 c8Var = this.b;
         if (!z10) {
-            b8Var.getClass();
+            c8Var.getClass();
             return false;
         }
-        if (b8Var.s0()) {
+        if (c8Var.r0()) {
             return false;
         }
         org.telegram.ui.Cells.x xVar = (org.telegram.ui.Cells.x) view;
-        b8Var.B0(xVar, xVar.getMessageObject());
+        c8Var.A0(xVar, xVar.getMessageObject());
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.r0
-    public void h(int i10) {
+    @Override // org.telegram.ui.ActionBar.s0
+    public void i(int i9) {
         switch (this.a) {
             case 0:
-                b8 b8Var = this.b;
-                b8Var.getClass();
-                if (i10 >= 0) {
-                    float[] fArr = b8.Q0;
-                    if (i10 < 6) {
-                        MediaController.getInstance().setPlaybackSpeed(true, fArr[i10]);
-                        b8Var.F0(true);
+                c8 c8Var = this.b;
+                c8Var.getClass();
+                if (i9 >= 0) {
+                    float[] fArr = c8.Q0;
+                    if (i9 < 6) {
+                        MediaController.getInstance().setPlaybackSpeed(true, fArr[i9]);
+                        c8Var.E0(true);
                         break;
                     }
                 }
                 break;
             case 1:
-                b8 b8Var2 = this.b;
-                if (i10 == 1 || i10 == 2) {
+                c8 c8Var2 = this.b;
+                if (i9 == 1 || i9 == 2) {
                     boolean z10 = SharedConfig.playOrderReversed;
-                    if ((z10 && i10 == 1) || (SharedConfig.shuffleMusic && i10 == 2)) {
+                    if ((z10 && i9 == 1) || (SharedConfig.shuffleMusic && i9 == 2)) {
                         MediaController.getInstance().setPlaybackOrderType(0);
                     } else {
-                        MediaController.getInstance().setPlaybackOrderType(i10);
+                        MediaController.getInstance().setPlaybackOrderType(i9);
                     }
-                    b8Var2.s.l();
+                    c8Var2.s.l();
                     if (z10 != SharedConfig.playOrderReversed) {
-                        b8Var2.n.B0();
-                        b8Var2.w0(false);
+                        c8Var2.n.B0();
+                        c8Var2.v0(false);
                     }
-                } else if (i10 == 4) {
+                } else if (i9 == 4) {
                     if (SharedConfig.repeatMode == 1) {
                         SharedConfig.setRepeatMode(0);
                     } else {
@@ -71,10 +71,10 @@ public final /* synthetic */ class t6 implements org.telegram.ui.ActionBar.r0, r
                 } else {
                     SharedConfig.setRepeatMode(2);
                 }
-                b8Var2.H0();
+                c8Var2.G0();
                 break;
             default:
-                this.b.t0(i10);
+                this.b.s0(i9);
                 break;
         }
     }

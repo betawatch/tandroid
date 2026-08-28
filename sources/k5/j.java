@@ -3,10 +3,10 @@ package k5;
 import android.os.IInterface;
 import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public interface j extends IInterface {
     void W(Status status);
 
-    void i0(Status status);
+    void e0(Status status);
 }

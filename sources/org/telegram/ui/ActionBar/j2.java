@@ -1,37 +1,118 @@
 package org.telegram.ui.ActionBar;
 
+import android.app.Activity;
 import android.app.Dialog;
-import android.view.View;
-import org.telegram.ui.Components.mc;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public interface j2 {
-    boolean attachedToParent();
+public final class j2 extends f3 {
+    public final /* synthetic */ m2 b;
+    public final /* synthetic */ b5[] c;
+    public final /* synthetic */ o2 d;
+    public final /* synthetic */ f3[] e;
 
-    void dismiss();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j2(Activity activity, b6 b6Var, m2 m2Var, b5[] b5VarArr, o2 o2Var, f3[] f3VarArr) {
+        super(activity, b6Var, true, false);
+        this.b = m2Var;
+        this.c = b5VarArr;
+        this.d = o2Var;
+        this.e = f3VarArr;
+        boolean z10 = m2Var != null && m2Var.e;
+        this.occupyNavigationBar = z10;
+        this.drawNavigationBar = !z10;
+        b5VarArr[0].setFragmentStack(new ArrayList());
+        ((ActionBarLayout) b5VarArr[0]).c(-1, o2Var);
+        ((ActionBarLayout) b5VarArr[0]).c0();
+        ViewGroup view = b5VarArr[0].getView();
+        int i9 = this.backgroundPaddingLeft;
+        view.setPadding(i9, 0, i9, 0);
+        this.containerView = b5VarArr[0].getView();
+        setApplyBottomPadding(false);
+        setOnDismissListener(new bg.j(6, o2Var, m2Var));
+    }
 
-    void dismiss(boolean z10);
+    @Override // org.telegram.ui.ActionBar.f3
+    public final boolean canDismissWithSwipe() {
+        return false;
+    }
 
-    mc getBulletinFactory();
+    @Override // org.telegram.ui.ActionBar.f3
+    public final boolean canSwipeToBack(MotionEvent motionEvent) {
+        b5[] b5VarArr;
+        b5 b5Var;
+        m2 m2Var = this.b;
+        return m2Var != null && m2Var.a && (b5Var = (b5VarArr = this.c)[0]) != null && b5Var.getFragmentStack().size() <= 1 && (b5VarArr[0].getFragmentStack().size() != 1 || ((o2) b5VarArr[0].getFragmentStack().get(0)).isSwipeBackEnabled(motionEvent));
+    }
 
-    int getNavigationBarColor(int i10);
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
+    public final void dismiss() {
+        m2 m2Var;
+        Runnable runnable;
+        if (!isDismissed() && (m2Var = this.b) != null && (runnable = m2Var.d) != null) {
+            runnable.run();
+        }
+        super.dismiss();
+        ArrayList arrayList = LaunchActivity.C1.L;
+        b5[] b5VarArr = this.c;
+        arrayList.remove(b5VarArr[0]);
+        b5VarArr[0] = null;
+    }
 
-    View getWindowView();
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    public final void onBackPressed() {
+        b5[] b5VarArr = this.c;
+        b5 b5Var = b5VarArr[0];
+        if (b5Var == null || b5Var.getFragmentStack().size() <= 1) {
+            super.onBackPressed();
+        } else {
+            ((ActionBarLayout) b5VarArr[0]).G();
+        }
+    }
 
-    boolean isAttachedLightStatusBar();
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        b5 b5Var = this.c[0];
+        f3[] f3VarArr = this.e;
+        b5Var.setWindow(f3VarArr[0].getWindow());
+        o2 o2Var = this.d;
+        m2 m2Var = this.b;
+        if (m2Var == null || !m2Var.e) {
+            fixNavigationBar(f6.v0(f6.i5, o2Var.getResourceProvider()));
+        } else {
+            AndroidUtilities.setLightNavigationBar((Dialog) f3VarArr[0], true);
+        }
+        AndroidUtilities.setLightStatusBar(this, o2Var.isLightStatusBar());
+        o2Var.onBottomSheetCreated();
+    }
 
-    boolean isFullyVisible();
+    @Override // org.telegram.ui.ActionBar.f3
+    public final void onInsetsChanged() {
+        b5 b5Var = this.c[0];
+        if (b5Var != null) {
+            for (o2 o2Var : b5Var.getFragmentStack()) {
+                if (o2Var.getFragmentView() != null) {
+                    o2Var.getFragmentView().requestLayout();
+                }
+            }
+        }
+    }
 
-    boolean isShown();
-
-    boolean onAttachedBackPressed();
-
-    void setKeyboardHeightFromParent(int i10);
-
-    void setLastVisible(boolean z10);
-
-    void setOnDismissListener(Runnable runnable);
-
-    boolean showDialog(Dialog dialog);
+    @Override // org.telegram.ui.ActionBar.f3
+    public final void onOpenAnimationEnd() {
+        Runnable runnable;
+        this.d.onTransitionAnimationEnd(true, false);
+        m2 m2Var = this.b;
+        if (m2Var == null || (runnable = m2Var.c) == null) {
+            return;
+        }
+        runnable.run();
+    }
 }

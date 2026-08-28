@@ -1,36 +1,46 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class xi extends org.telegram.ui.ActionBar.n1 {
-    public final /* synthetic */ rn o;
+public final class xi extends lg.b {
+    public final /* synthetic */ int n;
+    public final /* synthetic */ qn r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xi(rn rnVar, vi viVar) {
-        super(viVar, -2, -2);
-        this.o = rnVar;
+    public /* synthetic */ xi(qn qnVar, org.telegram.ui.ActionBar.b6 b6Var, int i9, int i10) {
+        super(i9, b6Var);
+        this.n = i10;
+        this.r = qnVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        rn rnVar = this.o;
-        if (rnVar.M8 != this) {
-            return;
+    @Override // lg.b, lg.a
+    public final int k() {
+        int i9;
+        int i10;
+        switch (this.n) {
+            case 0:
+                qn qnVar = this.r;
+                i9 = ((org.telegram.ui.ActionBar.o2) qnVar).currentAccount;
+                if (!mg.c.c(i9, qnVar.aa)) {
+                    break;
+                } else if (qnVar.aa != null && !org.telegram.ui.ActionBar.f6.I.q()) {
+                    break;
+                } else {
+                    break;
+                }
+                break;
+            default:
+                qn qnVar2 = this.r;
+                i10 = ((org.telegram.ui.ActionBar.o2) qnVar2).currentAccount;
+                if (!mg.c.c(i10, qnVar2.aa)) {
+                    break;
+                } else if (qnVar2.aa != null && !org.telegram.ui.ActionBar.f6.I.q()) {
+                    break;
+                } else {
+                    break;
+                }
+                break;
         }
-        rnVar.M8 = null;
-        rnVar.P8 = null;
-        rnVar.O8 = null;
-        rnVar.v0.R = true;
-        if (rnVar.N8) {
-            rnVar.g8(false, true, 0.0f);
-        } else {
-            rnVar.N8 = true;
-        }
-        ck ckVar = rnVar.U;
-        if (ckVar == null || ckVar.getEditField() == null) {
-            return;
-        }
-        rnVar.U.getEditField().setAllowDrawCursor(true);
+        return this.d;
     }
 }

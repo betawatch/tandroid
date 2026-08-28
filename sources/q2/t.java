@@ -1,17 +1,17 @@
 package q2;
 
-import h7.w8;
+import g7.u8;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class t extends c {
-    public static final /* synthetic */ ae.b h;
-    public static final /* synthetic */ ae.b n;
+    public static final /* synthetic */ zd.b h;
+    public static final /* synthetic */ zd.b n;
     public long[] f;
 
     static {
-        ae.a aVar = new ae.a(t.class, "StaticChunkOffsetBox.java");
+        zd.a aVar = new zd.a(t.class, "StaticChunkOffsetBox.java");
         h = aVar.e(aVar.d("getChunkOffsets", "com.coremedia.iso.boxes.StaticChunkOffsetBox", "", "", "[J"));
         n = aVar.e(aVar.d("setChunkOffsets", "com.coremedia.iso.boxes.StaticChunkOffsetBox", "[J", "chunkOffsets", "void"));
     }
@@ -19,10 +19,10 @@ public final class t extends c {
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
-        int a2 = w8.a(p2.b.i(byteBuffer));
+        int a2 = u8.a(p2.b.i(byteBuffer));
         this.f = new long[a2];
-        for (int i10 = 0; i10 < a2; i10++) {
-            this.f[i10] = p2.b.i(byteBuffer);
+        for (int i9 = 0; i9 < a2; i9++) {
+            this.f[i9] = p2.b.i(byteBuffer);
         }
     }
 

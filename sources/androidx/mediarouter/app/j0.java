@@ -8,9 +8,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class j0 extends g0 {
+public final class j0 extends h0 {
     public final int A;
     public final /* synthetic */ n0 B;
     public final TextView z;

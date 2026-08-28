@@ -9,19 +9,19 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 class PredefMacroInfo extends MacroInfo {
     private int id;
 
-    public PredefMacroInfo(int i10, int i11, int i12) {
-        super(i11, i12);
-        this.id = i10;
+    public PredefMacroInfo(int i9, int i10, int i11) {
+        super(i10, i11);
+        this.id = i9;
     }
 
-    private static final Object invokeID(int i10, TeXParser teXParser, String[] strArr) {
+    private static final Object invokeID(int i9, TeXParser teXParser, String[] strArr) {
         try {
-            switch (i10) {
+            switch (i9) {
                 case 0:
                     return PredefMacros.newcommand_macro(teXParser, strArr);
                 case 1:
@@ -538,8 +538,8 @@ class PredefMacroInfo extends MacroInfo {
                 default:
                     return null;
             }
-        } catch (Exception e9) {
-            throw new ParseException("Problem with command " + strArr[0] + " at position " + teXParser.getLine() + ":" + teXParser.getCol() + "\n" + e9.getMessage());
+        } catch (Exception e10) {
+            throw new ParseException("Problem with command " + strArr[0] + " at position " + teXParser.getLine() + ":" + teXParser.getCol() + "\n" + e10.getMessage());
         }
     }
 
@@ -548,8 +548,8 @@ class PredefMacroInfo extends MacroInfo {
         return invokeID(this.id, teXParser, strArr);
     }
 
-    public PredefMacroInfo(int i10, int i11) {
-        super(i11);
-        this.id = i10;
+    public PredefMacroInfo(int i9, int i10) {
+        super(i10);
+        this.id = i9;
     }
 }

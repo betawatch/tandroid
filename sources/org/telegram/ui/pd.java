@@ -1,17 +1,17 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pd implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ fe b;
-    public final /* synthetic */ q91 c;
+    public final /* synthetic */ s91 c;
     public final /* synthetic */ TwoStepVerificationActivity d;
 
-    public /* synthetic */ pd(fe feVar, q91 q91Var, TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
-        this.a = i10;
+    public /* synthetic */ pd(fe feVar, s91 s91Var, TwoStepVerificationActivity twoStepVerificationActivity, int i9) {
+        this.a = i9;
         this.b = feVar;
-        this.c = q91Var;
+        this.c = s91Var;
         this.d = twoStepVerificationActivity;
     }
 

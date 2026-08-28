@@ -1,33 +1,26 @@
 package lb;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.util.ArrayList;
+import java.util.List;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class d {
-    public final int a;
-    public final int b;
+public final class d {
+    public final String a;
+    public final List b;
+    public final String c;
+    public Integer d;
+    public za.a e;
+    public final int f;
+    public final int g;
+    public final int h;
 
-    public d(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
-    }
-
-    public abstract byte[] a();
-
-    public abstract byte[] b(int i10, byte[] bArr);
-
-    public final String toString() {
-        int i10 = this.a;
-        byte[] bArr = new byte[i10];
-        int i11 = this.b;
-        StringBuilder sb2 = new StringBuilder((i10 + 1) * i11);
-        for (int i12 = 0; i12 < i11; i12++) {
-            bArr = b(i12, bArr);
-            for (int i13 = 0; i13 < i10; i13++) {
-                int i14 = bArr[i13] & 255;
-                sb2.append(i14 < 64 ? '#' : i14 < 128 ? '+' : i14 < 192 ? '.' : ' ');
-            }
-            sb2.append('\n');
-        }
-        return sb2.toString();
+    public d(byte[] bArr, String str, ArrayList arrayList, String str2, int i9, int i10, int i11) {
+        this.a = str;
+        this.b = arrayList;
+        this.c = str2;
+        this.f = i10;
+        this.g = i9;
+        this.h = i11;
     }
 }

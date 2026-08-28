@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-import g7.y5;
+import f7.z5;
 import j$.util.Objects;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
@@ -13,7 +13,7 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -76,8 +76,8 @@ public final class w0 extends l0 implements g0 {
                     try {
                         obj = t0Var.get();
                         break;
-                    } catch (Error e9) {
-                        e = e9;
+                    } catch (Error e10) {
+                        e = e10;
                         return new e0(e);
                     }
                 } catch (InterruptedException unused) {
@@ -88,13 +88,13 @@ public final class w0 extends l0 implements g0 {
                     }
                     throw th2;
                 }
-            } catch (Error | Exception e10) {
-                e = e10;
+            } catch (Error | Exception e11) {
+                e = e11;
                 return new e0(e);
-            } catch (CancellationException e11) {
-                return !isCancelled ? new e0(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(t0Var)), e11)) : new b0(e11, false);
-            } catch (ExecutionException e12) {
-                return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var)), e12), false) : new e0(e12.getCause());
+            } catch (CancellationException e12) {
+                return !isCancelled ? new e0(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(t0Var)), e12)) : new b0(e12, false);
+            } catch (ExecutionException e13) {
+                return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var)), e13), false) : new e0(e13.getCause());
             }
         }
         if (z10) {
@@ -164,8 +164,8 @@ public final class w0 extends l0 implements g0 {
     public static void j(Runnable runnable, Executor executor) {
         try {
             executor.execute(runnable);
-        } catch (Exception e9) {
-            l0.e.a().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", i0.a.n("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e9);
+        } catch (Exception e10) {
+            l0.e.a().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", j3.r0.o("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e10);
         }
     }
 
@@ -256,15 +256,15 @@ public final class w0 extends l0 implements g0 {
         if (t0Var == null) {
             return null;
         }
-        String m10 = a9.p.m("inputFuture=[", t0Var.toString(), "]");
+        String o6 = aa.d.o("inputFuture=[", t0Var.toString(), "]");
         if (scheduledFuture == null) {
-            return m10;
+            return o6;
         }
         long delay = scheduledFuture.getDelay(TimeUnit.MILLISECONDS);
         if (delay <= 0) {
-            return m10;
+            return o6;
         }
-        return m10 + ", remaining delay=[" + delay + " ms]";
+        return o6 + ", remaining delay=[" + delay + " ms]";
     }
 
     @Override // java.util.concurrent.Future
@@ -282,9 +282,9 @@ public final class w0 extends l0 implements g0 {
         if (k0Var2 != k0Var) {
             k0 k0Var3 = new k0();
             do {
-                y5 y5Var = l0.h;
-                y5Var.c(k0Var3, k0Var2);
-                if (y5Var.g(this, k0Var2, k0Var3)) {
+                z5 z5Var = l0.h;
+                z5Var.c(k0Var3, k0Var2);
+                if (z5Var.g(this, k0Var2, k0Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -322,14 +322,14 @@ public final class w0 extends l0 implements g0 {
             } catch (CancellationException unused2) {
                 sb2.append("CANCELLED");
                 return;
-            } catch (ExecutionException e9) {
+            } catch (ExecutionException e10) {
                 sb2.append("FAILURE, cause=[");
-                sb2.append(e9.getCause());
+                sb2.append(e10.getCause());
                 sb2.append("]");
                 return;
-            } catch (Exception e10) {
+            } catch (Exception e11) {
                 sb2.append("UNKNOWN, cause=[");
-                sb2.append(e10.getClass());
+                sb2.append(e11.getClass());
                 sb2.append(" thrown from get()]");
                 return;
             }
@@ -455,9 +455,9 @@ public final class w0 extends l0 implements g0 {
                 if (k0Var2 != k0Var) {
                     k0 k0Var3 = new k0();
                     while (true) {
-                        y5 y5Var = l0.h;
-                        y5Var.c(k0Var3, k0Var2);
-                        if (y5Var.g(this, k0Var2, k0Var3)) {
+                        z5 z5Var = l0.h;
+                        z5Var.c(k0Var3, k0Var2);
+                        if (z5Var.g(this, k0Var2, k0Var3)) {
                             j11 = j12;
                             while (true) {
                                 LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
@@ -527,7 +527,7 @@ public final class w0 extends l0 implements g0 {
                         if (isDone()) {
                             throw new TimeoutException(str.concat(" but future completed as timeout expired"));
                         }
-                        throw new TimeoutException(a9.p.w(str, " for ", w0Var));
+                        throw new TimeoutException(aa.d.z(str, " for ", w0Var));
                     }
                 }
                 Object obj5 = this.a;

@@ -1,13 +1,13 @@
 package w3;
 
-import d5.g0;
+import d5.f0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class v {
     public final /* synthetic */ int a;
-    public final d5.f0 b;
-    public final d5.z c;
+    public final d5.e0 b;
+    public final d5.y c;
     public boolean d;
     public boolean e;
     public boolean f;
@@ -15,38 +15,38 @@ public final class v {
     public long h;
     public long i;
 
-    public v(int i10) {
-        this.a = i10;
-        switch (i10) {
+    public v(int i9) {
+        this.a = i9;
+        switch (i9) {
             case 1:
-                this.b = new d5.f0(0L);
+                this.b = new d5.e0(0L);
                 this.g = -9223372036854775807L;
                 this.h = -9223372036854775807L;
                 this.i = -9223372036854775807L;
-                this.c = new d5.z();
+                this.c = new d5.y();
                 break;
             default:
-                this.b = new d5.f0(0L);
+                this.b = new d5.e0(0L);
                 this.g = -9223372036854775807L;
                 this.h = -9223372036854775807L;
                 this.i = -9223372036854775807L;
-                this.c = new d5.z();
+                this.c = new d5.y();
                 break;
         }
     }
 
-    public static int b(int i10, byte[] bArr) {
-        return (bArr[i10 + 3] & 255) | ((bArr[i10] & 255) << 24) | ((bArr[i10 + 1] & 255) << 16) | ((bArr[i10 + 2] & 255) << 8);
+    public static int b(int i9, byte[] bArr) {
+        return (bArr[i9 + 3] & 255) | ((bArr[i9] & 255) << 24) | ((bArr[i9 + 1] & 255) << 16) | ((bArr[i9 + 2] & 255) << 8);
     }
 
-    public static long c(d5.z zVar) {
-        int i10 = zVar.b;
-        if (zVar.a() < 9) {
+    public static long c(d5.y yVar) {
+        int i9 = yVar.b;
+        if (yVar.a() < 9) {
             return -9223372036854775807L;
         }
         byte[] bArr = new byte[9];
-        zVar.c(0, 9, bArr);
-        zVar.C(i10);
+        yVar.c(0, 9, bArr);
+        yVar.C(i9);
         byte b10 = bArr[0];
         if ((b10 & 196) == 68) {
             byte b11 = bArr[2];
@@ -65,20 +65,20 @@ public final class v {
     public final void a(m3.l lVar) {
         switch (this.a) {
             case 0:
-                byte[] bArr = g0.f;
-                d5.z zVar = this.c;
-                zVar.getClass();
-                zVar.A(bArr.length, bArr);
+                byte[] bArr = f0.f;
+                d5.y yVar = this.c;
+                yVar.getClass();
+                yVar.A(bArr.length, bArr);
                 this.d = true;
-                lVar.q();
+                lVar.t();
                 break;
             default:
-                byte[] bArr2 = g0.f;
-                d5.z zVar2 = this.c;
-                zVar2.getClass();
-                zVar2.A(bArr2.length, bArr2);
+                byte[] bArr2 = f0.f;
+                d5.y yVar2 = this.c;
+                yVar2.getClass();
+                yVar2.A(bArr2.length, bArr2);
                 this.d = true;
-                lVar.q();
+                lVar.t();
                 break;
         }
     }

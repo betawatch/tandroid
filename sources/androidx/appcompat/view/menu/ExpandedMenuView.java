@@ -7,40 +7,30 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import j9.a;
-import l.a0;
+import j4.c;
+import l.j;
 import l.k;
-import l.l;
-import l.n;
+import l.m;
+import l.z;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class ExpandedMenuView extends ListView implements k, a0, AdapterView.OnItemClickListener {
+public final class ExpandedMenuView extends ListView implements j, z, AdapterView.OnItemClickListener {
     public static final int[] b = {R.attr.background, R.attr.divider};
-    public l a;
+    public k a;
 
     public ExpandedMenuView(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet);
-        setOnItemClickListener(this);
-        a G = a.G(context, attributeSet, b, R.attr.listViewStyle);
-        TypedArray typedArray = (TypedArray) G.c;
-        if (typedArray.hasValue(0)) {
-            setBackgroundDrawable(G.y(0));
-        }
-        if (typedArray.hasValue(1)) {
-            setDivider(G.y(1));
-        }
-        G.I();
+        this(context, attributeSet, R.attr.listViewStyle);
     }
 
-    @Override // l.k
-    public final boolean a(n nVar) {
-        return this.a.q(nVar, null, 0);
+    @Override // l.j
+    public final boolean a(m mVar) {
+        return this.a.q(mVar, null, 0);
     }
 
-    @Override // l.a0
-    public final void b(l lVar) {
-        this.a = lVar;
+    @Override // l.z
+    public final void b(k kVar) {
+        this.a = kVar;
     }
 
     public int getWindowAnimations() {
@@ -54,7 +44,21 @@ public final class ExpandedMenuView extends ListView implements k, a0, AdapterVi
     }
 
     @Override // android.widget.AdapterView.OnItemClickListener
-    public final void onItemClick(AdapterView adapterView, View view, int i10, long j10) {
-        a((n) getAdapter().getItem(i10));
+    public final void onItemClick(AdapterView adapterView, View view, int i9, long j10) {
+        a((m) getAdapter().getItem(i9));
+    }
+
+    public ExpandedMenuView(Context context, AttributeSet attributeSet, int i9) {
+        super(context, attributeSet);
+        setOnItemClickListener(this);
+        c E = c.E(context, attributeSet, b, i9);
+        TypedArray typedArray = (TypedArray) E.c;
+        if (typedArray.hasValue(0)) {
+            setBackgroundDrawable(E.w(0));
+        }
+        if (typedArray.hasValue(1)) {
+            setDivider(E.w(1));
+        }
+        E.G();
     }
 }

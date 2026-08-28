@@ -1,215 +1,110 @@
 package fh;
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import h7.z5;
-import java.util.ArrayList;
-import java.util.List;
+import gh.oa;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.a9;
-import org.telegram.ui.oe;
+import org.telegram.ui.Components.eq;
+import org.telegram.ui.Components.pi0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes3.dex */
-public final class e {
-    public final n2 a;
-    public final TLRPC.Chat b;
-    public final int c;
-    public FrameLayout d;
-    public b e;
-    public LinearLayout f;
-    public TextView g;
-    public ImageView h;
-    public c i;
-    public TLRPC.ChatFull j;
-    public int k;
-    public int l = -1;
-    public d m;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public final class e extends FrameLayout {
+    public final kh.d a;
+    public final org.telegram.ui.Components.j6 b;
+    public final org.telegram.ui.Components.j6 c;
+    public final GiftAuctionController.Auction d;
+    public final Paint e;
+    public final ff.q f;
+    public final eq h;
+    public final eq[] n;
 
-    public e(TLRPC.Chat chat, n2 n2Var) {
-        this.a = n2Var;
-        this.b = chat;
-        this.c = n2Var.getCurrentAccount();
+    public e(Context context, GiftAuctionController.Auction auction) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.e = paint;
+        this.f = new ff.q(new a1.c(this, 25));
+        this.h = new eq(R.drawable.filled_gift_sell_24, 0);
+        this.n = new eq[1];
+        this.d = auction;
+        setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f));
+        paint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, 0.0f, TLObject.FLAG_29);
+        paint.setColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.d6, false));
+        kh.d dVar = new kh.d(context, null, true);
+        this.a = dVar;
+        dVar.d.o(false, true, true);
+        pi0 pi0Var = new pi0(context);
+        org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(context, false, false, false);
+        this.b = j6Var;
+        j6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        j6Var.setTypeface(AndroidUtilities.bold());
+        j6Var.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.G6, false));
+        org.telegram.ui.Components.j6 j6Var2 = new org.telegram.ui.Components.j6(context, false, false, false);
+        this.c = j6Var2;
+        j6Var2.setTextSize(AndroidUtilities.dp(12.0f));
+        TLRPC.Document document = auction.gift.sticker;
+        if (document != null) {
+            pi0Var.g(44, 44, document);
+        }
+        addView(j6Var, g7.e6.d(-1, 18.0f, 51, 64.0f, 15.0f, 15.0f, 0.0f));
+        addView(j6Var2, g7.e6.d(-1, 17.0f, 51, 64.0f, 34.0f, 15.0f, 0.0f));
+        addView(pi0Var, g7.e6.d(44, 44.0f, 51, 14.0f, 11.0f, 0.0f, 0.0f));
+        addView(dVar, g7.e6.d(-1, 44.0f, 80, 15.0f, 0.0f, 15.0f, 15.0f));
+        b(false);
     }
 
-    public final void a(boolean z10, boolean z11) {
-        if (z10 == (this.d.getVisibility() == 0)) {
-            return;
+    public final void a(long j10, boolean z10) {
+        String formatDurationNoHours = AndroidUtilities.formatDurationNoHours((int) j10, false);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
+        spannableStringBuilder.setSpan(this.h, 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.append((CharSequence) "  ");
+        spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.Gift2ActiveAuctionsActiveRaiseBid));
+        spannableStringBuilder.append((CharSequence) "  ");
+        spannableStringBuilder.append((CharSequence) formatDurationNoHours);
+        this.a.g(spannableStringBuilder, z10, true);
+    }
+
+    public final void b(boolean z10) {
+        GiftAuctionController.Auction auction = this.d;
+        if (auction.auctionStateActive != null) {
+            this.b.c(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveRound, LocaleController.formatNumber(r1.current_round, ','), LocaleController.formatNumber(auction.auctionStateActive.total_rounds, ',')), z10, true);
         }
-        if (z10) {
-            int i10 = this.l;
-            n2 n2Var = this.a;
-            TLRPC.Chat chat = this.b;
-            if (i10 == -1 && chat != null) {
-                this.l = n2Var.getMessagesController().getChatPendingRequestsOnClosed(chat.id);
-            }
-            int i11 = this.k;
-            int i12 = this.l;
-            if (i11 == i12) {
-                return;
-            }
-            if (i12 != 0 && chat != null) {
-                n2Var.getMessagesController().setChatPendingRequestsOnClose(chat.id, 0);
-            }
-        }
-        d dVar = this.m;
-        if (dVar != null) {
-            dVar.e(z10, z11);
+        String n10 = j3.r0.n(auction.auctionUserState.bid_amount, ',', new StringBuilder("⭐️"));
+        boolean isOutbid = auction.getBidStatus().isOutbid();
+        eq[] eqVarArr = this.n;
+        org.telegram.ui.Components.j6 j6Var = this.c;
+        if (isOutbid) {
+            j6Var.c(oa.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, n10)), 0.66f, eqVarArr), z10, true);
+            j6Var.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.q7, false));
+        } else {
+            j6Var.c(oa.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, n10, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, eqVarArr), z10, true);
+            j6Var.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.G6, false));
         }
     }
 
-    public final void b(ArrayList arrayList) {
-        arrayList.add(new i6(this.g, 4, null, null, null, null, g6.fe));
-        arrayList.add(new i6(this.h, 8, null, null, null, null, g6.de));
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.drawRoundRect(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f), getMeasuredWidth() - AndroidUtilities.dp(14.0f), getMeasuredHeight() - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.e);
+        super.dispatchDraw(canvas);
     }
 
-    public final FrameLayout c() {
-        if (this.d == null) {
-            n2 n2Var = this.a;
-            FrameLayout frameLayout = new FrameLayout(n2Var.getParentActivity());
-            this.d = frameLayout;
-            frameLayout.setBackground(g6.K0(false));
-            final int i10 = 0;
-            this.d.setOnClickListener(new View.OnClickListener(this) { // from class: fh.a
-                public final /* synthetic */ e b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    switch (i10) {
-                        case 0:
-                            e eVar = this.b;
-                            n2 n2Var2 = eVar.a;
-                            if (eVar.i == null) {
-                                eVar.i = new c(eVar, n2Var2, eVar.b.id);
-                            }
-                            n2Var2.showDialog(eVar.i);
-                            break;
-                        default:
-                            e eVar2 = this.b;
-                            eVar2.a.getMessagesController().setChatPendingRequestsOnClose(eVar2.b.id, eVar2.k);
-                            eVar2.l = eVar2.k;
-                            eVar2.a(false, true);
-                            break;
-                    }
-                }
-            });
-            LinearLayout linearLayout = new LinearLayout(n2Var.getParentActivity());
-            this.f = linearLayout;
-            linearLayout.setOrientation(0);
-            this.d.addView(this.f, z5.d(-1, -1.0f, 48, 0.0f, 0.0f, 100.0f, 0.0f));
-            int i11 = 0;
-            b bVar = new b(i11, n2Var.getParentActivity(), false);
-            this.e = bVar;
-            bVar.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
-            a9 a9Var = this.e.a;
-            for (int i12 = 0; i12 < a9Var.c.length; i12++) {
-                a9Var.l(0, null, 0);
-            }
-            this.f.addView(this.e, z5.d(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
-            TextView textView = new TextView(n2Var.getParentActivity());
-            this.g = textView;
-            textView.setEllipsize(TextUtils.TruncateAt.END);
-            this.g.setGravity(16);
-            this.g.setSingleLine();
-            this.g.setText((CharSequence) null);
-            this.g.setTextColor(n2Var.getThemedColor(g6.fe));
-            this.g.setTypeface(AndroidUtilities.bold());
-            this.f.addView(this.g, z5.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
-            ImageView imageView = new ImageView(n2Var.getParentActivity());
-            this.h = imageView;
-            imageView.setBackground(g6.f0(n2Var.getThemedColor(g6.x7) & 436207615, 1, AndroidUtilities.dp(14.0f)));
-            this.h.setColorFilter(new PorterDuffColorFilter(n2Var.getThemedColor(g6.de), PorterDuff.Mode.MULTIPLY));
-            this.h.setContentDescription(LocaleController.getString(R.string.Close));
-            this.h.setImageResource(R.drawable.miniplayer_close);
-            this.h.setScaleType(ImageView.ScaleType.CENTER);
-            final int i13 = 1;
-            this.h.setOnClickListener(new View.OnClickListener(this) { // from class: fh.a
-                public final /* synthetic */ e b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    switch (i13) {
-                        case 0:
-                            e eVar = this.b;
-                            n2 n2Var2 = eVar.a;
-                            if (eVar.i == null) {
-                                eVar.i = new c(eVar, n2Var2, eVar.b.id);
-                            }
-                            n2Var2.showDialog(eVar.i);
-                            break;
-                        default:
-                            e eVar2 = this.b;
-                            eVar2.a.getMessagesController().setChatPendingRequestsOnClose(eVar2.b.id, eVar2.k);
-                            eVar2.l = eVar2.k;
-                            eVar2.a(false, true);
-                            break;
-                    }
-                }
-            });
-            this.d.addView(this.h, z5.d(36, -1.0f, 53, 0.0f, 0.0f, 4.0f, 0.0f));
-            TLRPC.ChatFull chatFull = this.j;
-            if (chatFull != null) {
-                e(chatFull.requests_pending, chatFull.recent_requesters, false);
-            }
-        }
-        return this.d;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.f.b();
     }
 
-    public final void d(oe oeVar) {
-        this.m = oeVar;
-    }
-
-    public final void e(int i10, List list, boolean z10) {
-        if (this.d == null) {
-            return;
-        }
-        n2 n2Var = this.a;
-        if (i10 <= 0) {
-            TLRPC.Chat chat = this.b;
-            if (chat != null) {
-                n2Var.getMessagesController().setChatPendingRequestsOnClose(chat.id, 0);
-                this.l = 0;
-            }
-            a(false, z10);
-            this.k = 0;
-            return;
-        }
-        if (this.k != i10) {
-            this.k = i10;
-            this.g.setText(LocaleController.formatPluralString("JoinUsersRequests", i10, new Object[0]));
-            a(true, z10);
-            if (list == null || list.isEmpty()) {
-                return;
-            }
-            int min = Math.min(3, list.size());
-            for (int i11 = 0; i11 < min; i11++) {
-                TLRPC.User user = n2Var.getMessagesController().getUser((Long) list.get(i11));
-                if (user != null) {
-                    this.e.b(i11, user, this.c);
-                }
-            }
-            this.e.setCount(min);
-            this.e.a(true);
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(146), TLObject.FLAG_30));
     }
 }

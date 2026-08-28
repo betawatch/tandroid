@@ -1,11 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes3.dex */
-public final class mn {
-    public final /* synthetic */ pn a;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public mn(pn pnVar) {
-        this.a = pnVar;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes3.dex */
+public final class mn extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Components.jb0 a;
+
+    public mn(org.telegram.ui.Components.jb0 jb0Var) {
+        this.a = jb0Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        super.onAnimationEnd(animator);
+        this.a.s(1.0f);
     }
 }

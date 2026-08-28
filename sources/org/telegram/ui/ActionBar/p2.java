@@ -1,39 +1,59 @@
 package org.telegram.ui.ActionBar;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p2 implements Runnable {
+public final /* synthetic */ class p2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e3 b;
+    public final /* synthetic */ f3 b;
 
-    public /* synthetic */ p2(e3 e3Var, int i10) {
-        this.a = i10;
-        this.b = e3Var;
+    public /* synthetic */ p2(f3 f3Var, int i9) {
+        this.a = i9;
+        this.b = f3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                e3 e3Var = this.b;
-                AndroidUtilities.removeFromParent(e3Var.container);
-                e3Var.attachedFragment.getLayoutContainer().addView(e3Var.container);
+                f3 f3Var = this.b;
+                f3Var.getClass();
+                f3Var.navigationBarAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d3 d3Var = f3Var.container;
+                if (d3Var != null) {
+                    d3Var.invalidate();
+                    break;
+                }
                 break;
             case 1:
-                this.b.dismiss();
+                f3 f3Var2 = this.b;
+                f3Var2.getClass();
+                f3Var2.navigationBarAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d3 d3Var2 = f3Var2.container;
+                if (d3Var2 != null) {
+                    d3Var2.invalidate();
+                    break;
+                }
+                break;
+            case 2:
+                this.b.onContainerViewTranslation();
+                break;
+            case 3:
+                this.b.onContainerViewTranslation();
+                break;
+            case 4:
+                this.b.onContainerViewTranslation();
+                break;
+            case 5:
+                f3.j(this.b, valueAnimator);
+                break;
+            case 6:
+                this.b.onContainerViewTranslation();
                 break;
             default:
-                e3 e3Var2 = this.b;
-                e3Var2.getClass();
-                try {
-                    e3Var2.dismissInternal();
-                    break;
-                } catch (Exception e9) {
-                    FileLog.e(e9);
-                }
+                f3.i(this.b, valueAnimator);
+                break;
         }
     }
 }

@@ -8,10 +8,10 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationUtils;
 import java.util.WeakHashMap;
 import m.s1;
-import org.telegram.ui.Components.mu0;
+import org.telegram.ui.Components.ju0;
 import r0.j0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class d implements View.OnTouchListener {
     public static final int D = ViewConfiguration.getTapTimeout();
@@ -21,7 +21,7 @@ public final class d implements View.OnTouchListener {
     public final a a;
     public final AccelerateInterpolator b;
     public final s1 c;
-    public mu0 d;
+    public ju0 d;
     public final float[] e;
     public final float[] f;
     public final int h;
@@ -80,10 +80,10 @@ public final class d implements View.OnTouchListener {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final float a(float f10, float f11, float f12, int i10) {
+    public final float a(float f10, float f11, float f12, int i9) {
         float f13;
         float interpolation;
-        float b10 = b(this.e[i10] * f11, 0.0f, this.f[i10]);
+        float b10 = b(this.e[i9] * f11, 0.0f, this.f[i9]);
         float c10 = c(f11 - f10, b10) - c(f10, b10);
         AccelerateInterpolator accelerateInterpolator = this.b;
         if (c10 < 0.0f) {
@@ -94,9 +94,9 @@ public final class d implements View.OnTouchListener {
                 if (f13 != 0.0f) {
                     return 0.0f;
                 }
-                float f14 = this.r[i10];
-                float f15 = this.s[i10];
-                float f16 = this.v[i10];
+                float f14 = this.r[i9];
+                float f15 = this.s[i9];
+                float f16 = this.v[i9];
                 float f17 = f14 * f12;
                 return f13 > 0.0f ? b(f13 * f17, f15, f16) : -b((-f13) * f17, f15, f16);
             }
@@ -109,17 +109,17 @@ public final class d implements View.OnTouchListener {
 
     public final float c(float f10, float f11) {
         if (f11 != 0.0f) {
-            int i10 = this.h;
-            if (i10 == 0 || i10 == 1) {
+            int i9 = this.h;
+            if (i9 == 0 || i9 == 1) {
                 if (f10 < f11) {
                     if (f10 >= 0.0f) {
                         return 1.0f - (f10 / f11);
                     }
-                    if (this.A && i10 == 1) {
+                    if (this.A && i9 == 1) {
                         return 1.0f;
                     }
                 }
-            } else if (i10 == 2 && f10 < 0.0f) {
+            } else if (i9 == 2 && f10 < 0.0f) {
                 return f10 / (-f11);
             }
         }
@@ -127,21 +127,21 @@ public final class d implements View.OnTouchListener {
     }
 
     public final void d() {
-        int i10 = 0;
+        int i9 = 0;
         if (this.x) {
             this.A = false;
             return;
         }
         long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
         a aVar = this.a;
-        int i11 = (int) (currentAnimationTimeMillis - aVar.e);
-        int i12 = aVar.b;
-        if (i11 > i12) {
-            i10 = i12;
-        } else if (i11 >= 0) {
-            i10 = i11;
+        int i10 = (int) (currentAnimationTimeMillis - aVar.e);
+        int i11 = aVar.b;
+        if (i10 > i11) {
+            i9 = i11;
+        } else if (i10 >= 0) {
+            i9 = i10;
         }
-        aVar.i = i10;
+        aVar.i = i9;
         aVar.h = aVar.a(currentAnimationTimeMillis);
         aVar.g = currentAnimationTimeMillis;
     }
@@ -156,8 +156,8 @@ public final class d implements View.OnTouchListener {
         if (abs != 0 && (count = (s1Var = this.C).getCount()) != 0) {
             int childCount = s1Var.getChildCount();
             int firstVisiblePosition = s1Var.getFirstVisiblePosition();
-            int i10 = firstVisiblePosition + childCount;
-            if (abs <= 0 ? !(abs >= 0 || (firstVisiblePosition <= 0 && s1Var.getChildAt(0).getTop() >= 0)) : !(i10 >= count && s1Var.getChildAt(childCount - 1).getBottom() <= s1Var.getHeight())) {
+            int i9 = firstVisiblePosition + childCount;
+            if (abs <= 0 ? !(abs >= 0 || (firstVisiblePosition <= 0 && s1Var.getChildAt(0).getTop() >= 0)) : !(i9 >= count && s1Var.getChildAt(childCount - 1).getBottom() <= s1Var.getHeight())) {
                 return true;
             }
         }
@@ -173,7 +173,7 @@ public final class d implements View.OnTouchListener {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouch(View view, MotionEvent motionEvent) {
-        int i10;
+        int i9;
         if (this.B) {
             int actionMasked = motionEvent.getActionMasked();
             if (actionMasked != 0) {
@@ -186,27 +186,27 @@ public final class d implements View.OnTouchListener {
             }
             this.y = true;
             this.w = false;
-            float x8 = motionEvent.getX();
+            float x10 = motionEvent.getX();
             float width = view.getWidth();
             s1 s1Var = this.c;
-            float a2 = a(x8, width, s1Var.getWidth(), 0);
+            float a2 = a(x10, width, s1Var.getWidth(), 0);
             float a3 = a(motionEvent.getY(), view.getHeight(), s1Var.getHeight(), 1);
             a aVar = this.a;
             aVar.c = a2;
             aVar.d = a3;
             if (!this.A && e()) {
                 if (this.d == null) {
-                    this.d = new mu0(this, 7);
+                    this.d = new ju0(this, 8);
                 }
                 this.A = true;
                 this.x = true;
-                if (this.w || (i10 = this.n) <= 0) {
+                if (this.w || (i9 = this.n) <= 0) {
                     this.d.run();
                 } else {
-                    mu0 mu0Var = this.d;
-                    long j10 = i10;
+                    ju0 ju0Var = this.d;
+                    long j10 = i9;
                     WeakHashMap weakHashMap = j0.a;
-                    s1Var.postOnAnimationDelayed(mu0Var, j10);
+                    s1Var.postOnAnimationDelayed(ju0Var, j10);
                 }
                 this.w = true;
             }

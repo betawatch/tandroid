@@ -2,43 +2,35 @@ package org.telegram.messenger;
 
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ MediaController.MediaLoader b;
 
-    public /* synthetic */ r6(int i10, int i11, String str) {
-        this.a = 3;
-        this.b = i10;
-        this.c = i11;
-        this.d = str;
+    public /* synthetic */ r6(MediaController.MediaLoader mediaLoader, int i9) {
+        this.a = i9;
+        this.b = mediaLoader;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaController.8) this.d).lambda$onStateChanged$0(this.b, this.c);
+                this.b.lambda$start$1();
                 break;
             case 1:
-                ((MediaDataController) this.d).lambda$processLoadedStickers$106(this.b, this.c);
+                this.b.lambda$start$2();
                 break;
             case 2:
-                ((NotificationsController) this.d).lambda$deleteNotificationChannelGlobal$43(this.b, this.c);
+                this.b.lambda$copyFile$8();
+                break;
+            case 3:
+                this.b.lambda$checkIfFinished$3();
                 break;
             default:
-                PushListenerController.lambda$sendRegistrationToServer$0(this.b, this.c, (String) this.d);
+                this.b.lambda$checkIfFinished$4();
                 break;
         }
-    }
-
-    public /* synthetic */ r6(Object obj, int i10, int i11, int i12) {
-        this.a = i12;
-        this.d = obj;
-        this.b = i10;
-        this.c = i11;
     }
 }

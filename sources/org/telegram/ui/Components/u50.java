@@ -1,34 +1,78 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class u50 extends ClickableSpan {
-    public final /* synthetic */ org.telegram.ui.ActionBar.e3[] a;
-    public final /* synthetic */ TLRPC.TL_chatInviteImporter b;
+public final class u50 implements d80 {
+    public final /* synthetic */ v50 a;
 
-    public u50(org.telegram.ui.ActionBar.e3[] e3VarArr, TLRPC.TL_chatInviteImporter tL_chatInviteImporter) {
-        this.a = e3VarArr;
-        this.b = tL_chatInviteImporter;
+    public u50(v50 v50Var) {
+        this.a = v50Var;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.a[0].dismiss();
-        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-        if (U != null) {
-            U.presentFragment(ProfileActivity.m4(this.b.user_id));
+    @Override // org.telegram.ui.Components.d80
+    public final void b() {
+        a60 a60Var = this.a.c;
+        org.telegram.ui.ActionBar.o2 o2Var = a60Var.Q;
+        if (o2Var instanceof org.telegram.ui.hh0) {
+            org.telegram.ui.hh0 hh0Var = (org.telegram.ui.hh0) o2Var;
+            TLRPC.TL_chatInviteExported tL_chatInviteExported = a60Var.b;
+            org.telegram.ui.bb0 bb0Var = new org.telegram.ui.bb0(1, hh0Var.n);
+            bb0Var.P = hh0Var.o0;
+            bb0Var.X(tL_chatInviteExported);
+            hh0Var.presentFragment(bb0Var);
+        } else {
+            org.telegram.ui.bb0 bb0Var2 = new org.telegram.ui.bb0(1, a60Var.c0);
+            bb0Var2.X(a60Var.b);
+            bb0Var2.P = new t50(this);
+            a60Var.Q.presentFragment(bb0Var2);
         }
+        a60Var.dismiss();
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
+    @Override // org.telegram.ui.Components.d80
+    public final void c() {
+        int i9;
+        int i10;
+        a60 a60Var = this.a.c;
+        org.telegram.ui.ActionBar.o2 o2Var = a60Var.Q;
+        if (o2Var instanceof org.telegram.ui.hh0) {
+            ((org.telegram.ui.hh0) o2Var).d0(a60Var.b);
+        } else {
+            TLRPC.TL_messages_editExportedChatInvite tL_messages_editExportedChatInvite = new TLRPC.TL_messages_editExportedChatInvite();
+            tL_messages_editExportedChatInvite.link = a60Var.b.link;
+            tL_messages_editExportedChatInvite.revoked = true;
+            i9 = ((org.telegram.ui.ActionBar.f3) a60Var).currentAccount;
+            tL_messages_editExportedChatInvite.peer = MessagesController.getInstance(i9).getInputPeer(-a60Var.c0);
+            i10 = ((org.telegram.ui.ActionBar.f3) a60Var).currentAccount;
+            ConnectionsManager.getInstance(i10).sendRequest(tL_messages_editExportedChatInvite, new s50(this, 0));
+        }
+        a60Var.dismiss();
+    }
+
+    @Override // org.telegram.ui.Components.d80
+    public final void k() {
+        int i9;
+        int i10;
+        a60 a60Var = this.a.c;
+        org.telegram.ui.ActionBar.o2 o2Var = a60Var.Q;
+        if (o2Var instanceof org.telegram.ui.hh0) {
+            ((org.telegram.ui.hh0) o2Var).a0(a60Var.b);
+        } else {
+            TLRPC.TL_messages_deleteExportedChatInvite tL_messages_deleteExportedChatInvite = new TLRPC.TL_messages_deleteExportedChatInvite();
+            tL_messages_deleteExportedChatInvite.link = a60Var.b.link;
+            i9 = ((org.telegram.ui.ActionBar.f3) a60Var).currentAccount;
+            tL_messages_deleteExportedChatInvite.peer = MessagesController.getInstance(i9).getInputPeer(-a60Var.c0);
+            i10 = ((org.telegram.ui.ActionBar.f3) a60Var).currentAccount;
+            ConnectionsManager.getInstance(i10).sendRequest(tL_messages_deleteExportedChatInvite, new s50(this, 1));
+        }
+        a60Var.dismiss();
+    }
+
+    @Override // org.telegram.ui.Components.d80
+    public final /* synthetic */ void j() {
     }
 }

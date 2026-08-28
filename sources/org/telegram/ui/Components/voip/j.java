@@ -13,9 +13,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.f6;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class j extends View {
     public org.telegram.ui.Cells.z a;
@@ -90,9 +90,9 @@ public final class j extends View {
     public final void onDraw(Canvas canvas) {
         float width = getWidth() / 2.0f;
         float height = getHeight() / 2.0f;
-        int i10 = this.n;
+        int i9 = this.n;
         Paint paint = this.b;
-        paint.setColor(i10);
+        paint.setColor(i9);
         float width2 = getWidth();
         float height2 = getHeight();
         RectF rectF = this.e;
@@ -103,17 +103,17 @@ public final class j extends View {
         drawable.setBounds((int) (width - (drawable.getIntrinsicWidth() / 2.0f)), (int) (height - (drawable.getIntrinsicHeight() / 2)), (int) ((drawable.getIntrinsicWidth() / 2) + width), (int) ((drawable.getIntrinsicHeight() / 2) + height));
         drawable.setAlpha(this.s);
         drawable.draw(canvas);
-        int i11 = this.v;
+        int i10 = this.v;
         Paint paint2 = this.c;
-        paint2.setAlpha(i11);
-        int i12 = (this.v / 255) * 38;
+        paint2.setAlpha(i10);
+        int i11 = (this.v / 255) * 38;
         Paint paint3 = this.d;
-        paint3.setAlpha(i12);
+        paint3.setAlpha(i11);
         String str = this.h;
         canvas.drawText(str, width, AndroidUtilities.dp(6.0f) + height, paint2);
         canvas.drawText(str, width, height + AndroidUtilities.dp(6.0f), paint3);
         if (this.a == null) {
-            org.telegram.ui.Cells.z Y = g6.Y(g6.w0(null, g6.i6, false), 8, 8);
+            org.telegram.ui.Cells.z Y = f6.Y(f6.w0(null, f6.i6, false), 8, 8);
             this.a = Y;
             Y.setCallback(this);
         }

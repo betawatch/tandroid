@@ -6,7 +6,7 @@ import j$.util.stream.IntStream;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class h6 implements CharSequence {
     public final CharSequence[] a;
@@ -19,44 +19,44 @@ public final class h6 implements CharSequence {
             return;
         }
         this.b = charSequence.length();
-        int i10 = 0;
-        for (int i11 = 0; i11 < this.b; i11++) {
-            if (charSequence.charAt(i11) == ' ') {
-                i10++;
+        int i9 = 0;
+        for (int i10 = 0; i10 < this.b; i10++) {
+            if (charSequence.charAt(i10) == ' ') {
+                i9++;
             }
         }
-        this.a = new CharSequence[i10 + 1];
+        this.a = new CharSequence[i9 + 1];
+        int i11 = 0;
         int i12 = 0;
         int i13 = 0;
-        int i14 = 0;
         while (true) {
-            int i15 = this.b;
-            if (i12 > i15) {
+            int i14 = this.b;
+            if (i11 > i14) {
                 return;
             }
-            if (i12 == i15 || charSequence.charAt(i12) == ' ') {
-                int i16 = i13 + 1;
-                this.a[i13] = charSequence.subSequence(i14, (i12 < this.b ? 1 : 0) + i12);
-                i14 = i12 + 1;
-                i13 = i16;
+            if (i11 == i14 || charSequence.charAt(i11) == ' ') {
+                int i15 = i12 + 1;
+                this.a[i12] = charSequence.subSequence(i13, (i11 < this.b ? 1 : 0) + i11);
+                i13 = i11 + 1;
+                i12 = i15;
             }
-            i12++;
+            i11++;
         }
     }
 
     @Override // java.lang.CharSequence
-    public final char charAt(int i10) {
-        int i11 = 0;
+    public final char charAt(int i9) {
+        int i10 = 0;
         while (true) {
             CharSequence[] charSequenceArr = this.a;
-            if (i11 >= charSequenceArr.length) {
+            if (i10 >= charSequenceArr.length) {
                 return (char) 0;
             }
-            if (i10 < charSequenceArr[i11].length()) {
-                return charSequenceArr[i11].charAt(i10);
+            if (i9 < charSequenceArr[i10].length()) {
+                return charSequenceArr[i10].charAt(i9);
             }
-            i10 -= charSequenceArr[i11].length();
-            i11++;
+            i9 -= charSequenceArr[i10].length();
+            i10++;
         }
     }
 
@@ -76,21 +76,21 @@ public final class h6 implements CharSequence {
     }
 
     @Override // java.lang.CharSequence
-    public final CharSequence subSequence(int i10, int i11) {
-        return TextUtils.concat((CharSequence[]) Arrays.copyOfRange(this.a, i10, i11));
+    public final CharSequence subSequence(int i9, int i10) {
+        return TextUtils.concat((CharSequence[]) Arrays.copyOfRange(this.a, i9, i10));
     }
 
     @Override // java.lang.CharSequence
     public final String toString() {
         StringBuilder sb2 = new StringBuilder();
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             CharSequence[] charSequenceArr = this.a;
-            if (i10 >= charSequenceArr.length) {
+            if (i9 >= charSequenceArr.length) {
                 return sb2.toString();
             }
-            sb2.append(charSequenceArr[i10]);
-            i10++;
+            sb2.append(charSequenceArr[i9]);
+            i9++;
         }
     }
 

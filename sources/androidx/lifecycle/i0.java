@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i0 {
     public static final Class[] f = {Boolean.TYPE, boolean[].class, Double.TYPE, double[].class, Integer.TYPE, int[].class, Long.TYPE, long[].class, String.class, String[].class, Binder.class, Bundle.class, Byte.TYPE, byte[].class, Character.TYPE, char[].class, CharSequence.class, CharSequence[].class, ArrayList.class, Float.TYPE, float[].class, Parcelable.class, Parcelable[].class, Serializable.class, Short.TYPE, short[].class, SparseArray.class, Size.class, SizeF.class};
@@ -40,21 +40,21 @@ public final class i0 {
         Map map;
         LinkedHashMap linkedHashMap = i0Var.a;
         LinkedHashMap linkedHashMap2 = i0Var.b;
-        kotlin.jvm.internal.j.e(linkedHashMap2, "<this>");
+        kotlin.jvm.internal.i.e(linkedHashMap2, "<this>");
         int size = linkedHashMap2.size();
         if (size == 0) {
-            map = qc.p.a;
+            map = pc.p.a;
         } else if (size != 1) {
             map = new LinkedHashMap(linkedHashMap2);
         } else {
-            kotlin.jvm.internal.j.e(linkedHashMap2, "<this>");
+            kotlin.jvm.internal.i.e(linkedHashMap2, "<this>");
             Map.Entry entry = (Map.Entry) linkedHashMap2.entrySet().iterator().next();
             map = Collections.singletonMap(entry.getKey(), entry.getValue());
-            kotlin.jvm.internal.j.d(map, "with(...)");
+            kotlin.jvm.internal.i.d(map, "with(...)");
         }
         Iterator it = map.entrySet().iterator();
         while (true) {
-            int i10 = 0;
+            int i9 = 0;
             if (!it.hasNext()) {
                 Set<String> keySet = linkedHashMap.keySet();
                 ArrayList arrayList = new ArrayList(keySet.size());
@@ -63,10 +63,10 @@ public final class i0 {
                     arrayList.add(str);
                     arrayList2.add(linkedHashMap.get(str));
                 }
-                pc.d[] dVarArr = {new pc.d("keys", arrayList), new pc.d("values", arrayList2)};
+                oc.d[] dVarArr = {new oc.d("keys", arrayList), new oc.d("values", arrayList2)};
                 Bundle bundle = new Bundle(2);
-                while (i10 < 2) {
-                    pc.d dVar = dVarArr[i10];
+                while (i9 < 2) {
+                    oc.d dVar = dVarArr[i9];
                     String str2 = (String) dVar.a;
                     Object obj = dVar.b;
                     if (obj == null) {
@@ -111,7 +111,7 @@ public final class i0 {
                         bundle.putShortArray(str2, (short[]) obj);
                     } else if (obj instanceof Object[]) {
                         Class<?> componentType = obj.getClass().getComponentType();
-                        kotlin.jvm.internal.j.b(componentType);
+                        kotlin.jvm.internal.i.b(componentType);
                         if (Parcelable.class.isAssignableFrom(componentType)) {
                             bundle.putParcelableArray(str2, (Parcelable[]) obj);
                         } else if (String.class.isAssignableFrom(componentType)) {
@@ -136,20 +136,20 @@ public final class i0 {
                         }
                         bundle.putSizeF(str2, (SizeF) obj);
                     }
-                    i10++;
+                    i9++;
                 }
                 return bundle;
             }
             Map.Entry entry2 = (Map.Entry) it.next();
             String key = (String) entry2.getKey();
             Bundle a2 = ((g2.d) entry2.getValue()).a();
-            kotlin.jvm.internal.j.e(key, "key");
+            kotlin.jvm.internal.i.e(key, "key");
             if (a2 != null) {
-                while (i10 < 29) {
-                    Class cls = f[i10];
-                    kotlin.jvm.internal.j.b(cls);
+                while (i9 < 29) {
+                    Class cls = f[i9];
+                    kotlin.jvm.internal.i.b(cls);
                     if (!cls.isInstance(a2)) {
-                        i10++;
+                        i9++;
                     }
                 }
                 throw new IllegalArgumentException("Can't put value with type " + a2.getClass() + " into saved state");
@@ -161,9 +161,9 @@ public final class i0 {
             } else {
                 linkedHashMap.put(key, a2);
             }
-            ld.k kVar = (ld.k) i0Var.d.get(key);
+            kd.k kVar = (kd.k) i0Var.d.get(key);
             if (kVar != null) {
-                ((ld.m) kVar).d(a2);
+                ((kd.m) kVar).d(a2);
             }
         }
     }

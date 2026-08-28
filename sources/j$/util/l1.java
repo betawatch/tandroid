@@ -17,8 +17,8 @@ public final class l1 extends j$.com.android.tools.r8.a implements u0 {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.p(this, i10);
+    public final /* synthetic */ boolean hasCharacteristics(int i9) {
+        return j$.com.android.tools.r8.a.p(this, i9);
     }
 
     @Override // j$.util.Spliterator

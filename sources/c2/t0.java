@@ -1,32 +1,11 @@
 package c2;
 
-import android.os.Handler;
-import android.os.Looper;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public class t0 extends Handler {
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t0(Looper looper, int i10) {
-        super(looper);
-        switch (i10) {
-            case 4:
-                super(looper);
-                Looper.getMainLooper();
-                break;
-            case 5:
-            default:
-                Looper.getMainLooper();
-                break;
-            case 6:
-                super(looper);
-                Looper.getMainLooper();
-                break;
-        }
-    }
+public interface t0 {
+    void a(s0 s0Var);
 
-    public t0(Looper looper, Handler.Callback callback) {
-        super(looper, callback);
-        Looper.getMainLooper();
-    }
+    int b();
+
+    void c();
 }

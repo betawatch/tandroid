@@ -1,38 +1,33 @@
 package h7;
 
-import java.util.Iterator;
-import java.util.Set;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class sa extends j9 implements Set {
-    public transient ra b;
+public final class sa extends y5.a {
+    public static final Parcelable.Creator<sa> CREATOR = new s5(2);
+    public final String a;
+    public final float b;
+    public final String c;
+    public final int d;
 
-    @Override // java.util.Collection, java.util.Set
-    public final boolean equals(Object obj) {
-        if (obj == this || obj == this) {
-            return true;
-        }
-        if (obj instanceof Set) {
-            Set set = (Set) obj;
-            try {
-                if (size() == set.size()) {
-                    return containsAll(set);
-                }
-            } catch (ClassCastException | NullPointerException unused) {
-            }
-        }
-        return false;
+    public sa(float f10, int i9, String str, String str2) {
+        this.a = str;
+        this.b = f10;
+        this.c = str2;
+        this.d = i9;
     }
 
-    @Override // java.util.Collection, java.util.Set
-    public final int hashCode() {
-        Iterator it = iterator();
-        int i10 = 0;
-        while (it.hasNext()) {
-            Object next = it.next();
-            i10 += next != null ? next.hashCode() : 0;
-        }
-        return i10;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = g7.p8.q(parcel, 20293);
+        g7.p8.l(parcel, 1, this.a);
+        g7.p8.s(parcel, 2, 4);
+        parcel.writeFloat(this.b);
+        g7.p8.l(parcel, 3, this.c);
+        g7.p8.s(parcel, 4, 4);
+        parcel.writeInt(this.d);
+        g7.p8.r(parcel, q10);
     }
 }

@@ -7,7 +7,7 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class c {
     public final TextPaint a;
@@ -15,14 +15,14 @@ public final class c {
     public final int c;
     public final int d;
 
-    public c(TextPaint textPaint, TextDirectionHeuristic textDirectionHeuristic, int i10, int i11) {
+    public c(TextPaint textPaint, TextDirectionHeuristic textDirectionHeuristic, int i9, int i10) {
         if (Build.VERSION.SDK_INT >= 29) {
-            new PrecomputedText.Params.Builder(textPaint).setBreakStrategy(i10).setHyphenationFrequency(i11).setTextDirection(textDirectionHeuristic).build();
+            new PrecomputedText.Params.Builder(textPaint).setBreakStrategy(i9).setHyphenationFrequency(i10).setTextDirection(textDirectionHeuristic).build();
         }
         this.a = textPaint;
         this.b = textDirectionHeuristic;
-        this.c = i10;
-        this.d = i11;
+        this.c = i9;
+        this.d = i10;
     }
 
     public final boolean equals(Object obj) {
@@ -33,8 +33,8 @@ public final class c {
             return false;
         }
         c cVar = (c) obj;
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 23 && (this.c != cVar.c || this.d != cVar.d)) {
+        int i9 = Build.VERSION.SDK_INT;
+        if (i9 >= 23 && (this.c != cVar.c || this.d != cVar.d)) {
             return false;
         }
         TextPaint textPaint = this.a;
@@ -43,7 +43,7 @@ public final class c {
         if (textSize != textPaint2.getTextSize() || textPaint.getTextScaleX() != textPaint2.getTextScaleX() || textPaint.getTextSkewX() != textPaint2.getTextSkewX() || textPaint.getLetterSpacing() != textPaint2.getLetterSpacing() || !TextUtils.equals(textPaint.getFontFeatureSettings(), textPaint2.getFontFeatureSettings()) || textPaint.getFlags() != textPaint2.getFlags()) {
             return false;
         }
-        if (i10 >= 24) {
+        if (i9 >= 24) {
             if (!textPaint.getTextLocales().equals(textPaint2.getTextLocales())) {
                 return false;
             }
@@ -61,12 +61,12 @@ public final class c {
     }
 
     public final int hashCode() {
-        int i10 = Build.VERSION.SDK_INT;
+        int i9 = Build.VERSION.SDK_INT;
         TextDirectionHeuristic textDirectionHeuristic = this.b;
-        int i11 = this.d;
-        int i12 = this.c;
+        int i10 = this.d;
+        int i11 = this.c;
         TextPaint textPaint = this.a;
-        return i10 >= 24 ? Objects.hash(Float.valueOf(textPaint.getTextSize()), Float.valueOf(textPaint.getTextScaleX()), Float.valueOf(textPaint.getTextSkewX()), Float.valueOf(textPaint.getLetterSpacing()), Integer.valueOf(textPaint.getFlags()), textPaint.getTextLocales(), textPaint.getTypeface(), Boolean.valueOf(textPaint.isElegantTextHeight()), textDirectionHeuristic, Integer.valueOf(i12), Integer.valueOf(i11)) : Objects.hash(Float.valueOf(textPaint.getTextSize()), Float.valueOf(textPaint.getTextScaleX()), Float.valueOf(textPaint.getTextSkewX()), Float.valueOf(textPaint.getLetterSpacing()), Integer.valueOf(textPaint.getFlags()), textPaint.getTextLocale(), textPaint.getTypeface(), Boolean.valueOf(textPaint.isElegantTextHeight()), textDirectionHeuristic, Integer.valueOf(i12), Integer.valueOf(i11));
+        return i9 >= 24 ? Objects.hash(Float.valueOf(textPaint.getTextSize()), Float.valueOf(textPaint.getTextScaleX()), Float.valueOf(textPaint.getTextSkewX()), Float.valueOf(textPaint.getLetterSpacing()), Integer.valueOf(textPaint.getFlags()), textPaint.getTextLocales(), textPaint.getTypeface(), Boolean.valueOf(textPaint.isElegantTextHeight()), textDirectionHeuristic, Integer.valueOf(i11), Integer.valueOf(i10)) : Objects.hash(Float.valueOf(textPaint.getTextSize()), Float.valueOf(textPaint.getTextScaleX()), Float.valueOf(textPaint.getTextSkewX()), Float.valueOf(textPaint.getLetterSpacing()), Integer.valueOf(textPaint.getFlags()), textPaint.getTextLocale(), textPaint.getTypeface(), Boolean.valueOf(textPaint.isElegantTextHeight()), textDirectionHeuristic, Integer.valueOf(i11), Integer.valueOf(i10));
     }
 
     public final String toString() {
@@ -77,16 +77,16 @@ public final class c {
         sb2.append(sb3.toString());
         sb2.append(", textScaleX=" + textPaint.getTextScaleX());
         sb2.append(", textSkewX=" + textPaint.getTextSkewX());
-        int i10 = Build.VERSION.SDK_INT;
+        int i9 = Build.VERSION.SDK_INT;
         sb2.append(", letterSpacing=" + textPaint.getLetterSpacing());
         sb2.append(", elegantTextHeight=" + textPaint.isElegantTextHeight());
-        if (i10 >= 24) {
+        if (i9 >= 24) {
             sb2.append(", textLocale=" + textPaint.getTextLocales());
         } else {
             sb2.append(", textLocale=" + textPaint.getTextLocale());
         }
         sb2.append(", typeface=" + textPaint.getTypeface());
-        if (i10 >= 26) {
+        if (i9 >= 26) {
             sb2.append(", variationSettings=" + textPaint.getFontVariationSettings());
         }
         sb2.append(", textDir=" + this.b);

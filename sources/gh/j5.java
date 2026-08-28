@@ -1,150 +1,205 @@
 package gh;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.n41;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.Components.j41;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j5 implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ String[] b;
-    public final /* synthetic */ w5 c;
-    public final /* synthetic */ ArrayList d;
+public final class j5 extends View {
+    public final /* synthetic */ int a = 2;
+    public final Paint b;
+    public final Object c;
+    public final Object d;
+    public final Object e;
 
-    public /* synthetic */ j5(String[] strArr, w5 w5Var, ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.b = strArr;
-        this.c = w5Var;
-        this.d = arrayList;
+    public j5(Activity activity, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(activity);
+        this.c = new td.a(this, gr.h, 380L);
+        this.b = new Paint(1);
+        this.d = b6Var;
+        j41 j41Var = new j41(true);
+        this.e = j41Var;
+        j41Var.setCallback(this);
+        j41Var.b(-1);
+        j41Var.i = true;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        String str;
-        String str2;
-        String str3;
-        int i10 = this.a;
-        String str4 = " ";
-        ArrayList arrayList = this.d;
-        w5 w5Var = this.c;
-        String[] strArr = this.b;
-        switch (i10) {
+    @Override // android.view.View
+    public void onAttachedToWindow() {
+        switch (this.a) {
             case 0:
-                ArrayList arrayList2 = (ArrayList) obj;
-                String lowerCase = strArr[0].toLowerCase();
-                String translitSafe = AndroidUtilities.translitSafe(lowerCase);
-                i5 i5Var = w5Var.c;
-                boolean isEmpty = i5Var.j.isEmpty();
-                int size = arrayList.size();
-                int i11 = 0;
-                while (i11 < size) {
-                    Object obj3 = arrayList.get(i11);
-                    i11++;
-                    TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj3;
-                    boolean contains = i5Var.j.contains(Long.valueOf(stargiftattributemodel.document.id));
-                    boolean z10 = !contains;
-                    if (TextUtils.isEmpty(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(translitSafe) || org.telegram.messenger.y1.x(" ", lowerCase, stargiftattributemodel.name.toLowerCase()) || org.telegram.messenger.y1.x(" ", translitSafe, stargiftattributemodel.name.toLowerCase())) {
-                        Integer num = (Integer) i5Var.m.get(Long.valueOf(stargiftattributemodel.document.id));
-                        int intValue = num == null ? 0 : num.intValue();
-                        int i12 = c5.a;
-                        n41 J = n41.J(c5.class);
-                        J.G = stargiftattributemodel;
-                        J.l = lowerCase;
-                        J.z = intValue;
-                        if (!TextUtils.isEmpty(lowerCase)) {
-                            z10 = (isEmpty || contains) ? false : true;
-                        }
-                        J.K(z10);
-                        arrayList2.add(J);
-                    }
-                }
-                if (arrayList2.isEmpty()) {
-                    arrayList2.add(x4.a(LocaleController.getString(R.string.Gift2ResaleFiltersModelEmpty)));
-                    break;
-                }
+                super.onAttachedToWindow();
+                ((ImageReceiver) this.c).onAttachedToWindow();
+                ((ImageReceiver) this.d).onAttachedToWindow();
                 break;
             case 1:
-                ArrayList arrayList3 = (ArrayList) obj;
-                String lowerCase2 = strArr[0].toLowerCase();
-                String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-                i5 i5Var2 = w5Var.c;
-                boolean isEmpty2 = i5Var2.k.isEmpty();
-                int size2 = arrayList.size();
-                int i13 = 0;
-                while (i13 < size2) {
-                    Object obj4 = arrayList.get(i13);
-                    i13++;
-                    TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj4;
-                    boolean contains2 = i5Var2.k.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                    boolean z11 = !contains2;
-                    if (TextUtils.isEmpty(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(translitSafe2)) {
-                        str2 = str;
-                    } else {
-                        str2 = str;
-                        str = (org.telegram.messenger.y1.x(str2, lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || org.telegram.messenger.y1.x(str2, translitSafe2, stargiftattributebackdrop.name.toLowerCase())) ? " " : str2;
-                    }
-                    Integer num2 = (Integer) i5Var2.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                    int intValue2 = num2 == null ? 0 : num2.intValue();
-                    int i14 = v4.a;
-                    n41 J2 = n41.J(v4.class);
-                    J2.G = stargiftattributebackdrop;
-                    J2.l = lowerCase2;
-                    J2.z = intValue2;
-                    if (!TextUtils.isEmpty(lowerCase2)) {
-                        z11 = (isEmpty2 || contains2) ? false : true;
-                    }
-                    J2.K(z11);
-                    arrayList3.add(J2);
-                }
-                if (arrayList3.isEmpty()) {
-                    arrayList3.add(x4.a(LocaleController.getString(R.string.Gift2ResaleFiltersBackdropEmpty)));
-                    break;
-                }
+            default:
+                super.onAttachedToWindow();
+                break;
+            case 2:
+                super.onAttachedToWindow();
+                ((j41) this.e).d();
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.a) {
+            case 0:
+                super.onDetachedFromWindow();
+                ((ImageReceiver) this.c).onDetachedFromWindow();
+                ((ImageReceiver) this.d).onDetachedFromWindow();
+                break;
+            case 1:
+            default:
+                super.onDetachedFromWindow();
+                break;
+            case 2:
+                super.onDetachedFromWindow();
+                ((j41) this.e).e();
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                int width = (getWidth() / 2) - (AndroidUtilities.dp(156.0f) / 2);
+                int height = (getHeight() / 2) - AndroidUtilities.dp(30.0f);
+                ImageReceiver imageReceiver = (ImageReceiver) this.c;
+                float f10 = height;
+                imageReceiver.setImageCoords(width, f10, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f));
+                imageReceiver.draw(canvas);
+                canvas.save();
+                canvas.translate((getWidth() / 2.0f) - (AndroidUtilities.dp(6.166f) / 2.0f), getHeight() / 2.0f);
+                canvas.drawPath((Path) this.e, this.b);
+                canvas.restore();
+                ImageReceiver imageReceiver2 = (ImageReceiver) this.d;
+                imageReceiver2.setImageCoords(AndroidUtilities.dp(96.0f) + width, f10, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f));
+                imageReceiver2.draw(canvas);
+                break;
+            case 1:
+                super.onDraw(canvas);
+                RectF rectF = (RectF) this.e;
+                rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, this.b);
+                rectF.inset(AndroidUtilities.dp(1.33f), AndroidUtilities.dp(1.33f));
+                canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, (Paint) this.d);
+                rectF.inset(AndroidUtilities.dpf2(4.67f), AndroidUtilities.dpf2(9.066f));
+                canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, (Paint) this.c);
                 break;
             default:
-                ArrayList arrayList4 = (ArrayList) obj;
-                String lowerCase3 = strArr[0].toLowerCase();
-                String translitSafe3 = AndroidUtilities.translitSafe(lowerCase3);
-                i5 i5Var3 = w5Var.c;
-                boolean isEmpty3 = i5Var3.l.isEmpty();
-                int size3 = arrayList.size();
-                int i15 = 0;
-                while (i15 < size3) {
-                    Object obj5 = arrayList.get(i15);
-                    i15++;
-                    TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj5;
-                    boolean contains3 = i5Var3.l.contains(Long.valueOf(stargiftattributepattern.document.id));
-                    boolean z12 = !contains3;
-                    if (TextUtils.isEmpty(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(translitSafe3) || org.telegram.messenger.y1.x(str4, lowerCase3, stargiftattributepattern.name.toLowerCase()) || org.telegram.messenger.y1.x(str4, translitSafe3, stargiftattributepattern.name.toLowerCase())) {
-                        str3 = str4;
-                        Integer num3 = (Integer) i5Var3.o.get(Long.valueOf(stargiftattributepattern.document.id));
-                        int intValue3 = num3 == null ? 0 : num3.intValue();
-                        int i16 = f5.a;
-                        n41 J3 = n41.J(f5.class);
-                        J3.G = stargiftattributepattern;
-                        J3.l = lowerCase3;
-                        J3.z = intValue3;
-                        if (!TextUtils.isEmpty(lowerCase3)) {
-                            z12 = (isEmpty3 || contains3) ? false : true;
-                        }
-                        J3.K(z12);
-                        arrayList4.add(J3);
-                    } else {
-                        str3 = str4;
-                    }
-                    str4 = str3;
+                float width2 = getWidth() / 2.0f;
+                float height2 = getHeight() / 2.0f;
+                super.onDraw(canvas);
+                int v02 = org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.Yd, (org.telegram.ui.ActionBar.b6) this.d);
+                Paint paint = this.b;
+                paint.setColor(v02);
+                canvas.drawCircle(width2, height2, AndroidUtilities.dp(19.0f), paint);
+                float f11 = ((td.a) this.c).e;
+                float f12 = 1.0f - f11;
+                if (f12 > 0.0f) {
+                    ff.s.b(canvas, (j41) this.e, f12 * 1.35f);
+                    invalidate();
                 }
-                if (arrayList4.isEmpty()) {
-                    arrayList4.add(x4.a(LocaleController.getString(R.string.Gift2ResaleFiltersSymbolEmpty)));
+                if (f11 > 0.0f) {
+                    float dp = AndroidUtilities.dp(6.666f) * f11;
+                    float dp2 = AndroidUtilities.dp(2.666f) * f11;
+                    canvas.drawRoundRect(width2 - dp, height2 - dp, width2 + dp, height2 + dp, dp2, dp2, org.telegram.ui.ActionBar.f6.l0(-1));
                     break;
                 }
                 break;
         }
+    }
+
+    @Override // android.view.View
+    public void onMeasure(int i9, int i10) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i9, i10);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onSizeChanged(int i9, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 2:
+                super.onSizeChanged(i9, i10, i11, i12);
+                ff.s.d((j41) this.e, i9 / 2.0f, i10 / 2.0f, 17);
+                break;
+            default:
+                super.onSizeChanged(i9, i10, i11, i12);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public boolean verifyDrawable(Drawable drawable) {
+        switch (this.a) {
+            case 2:
+                return super.verifyDrawable(drawable) || (drawable == ((j41) this.e) && !((td.a) this.c).f);
+            default:
+                return super.verifyDrawable(drawable);
+        }
+    }
+
+    public j5(Context context, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Paint paint2 = new Paint(1);
+        this.c = paint2;
+        Paint paint3 = new Paint(1);
+        this.d = paint3;
+        this.e = new RectF();
+        paint2.setColor(-1);
+        paint.setColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.d6, b6Var));
+        paint3.setColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.wj, b6Var));
+    }
+
+    public j5(Context context, TLObject tLObject, TLObject tLObject2) {
+        super(context);
+        Path path = new Path();
+        this.e = path;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        org.telegram.ui.Components.z8 z8Var = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.b6) null);
+        z8Var.p(tLObject);
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.c = imageReceiver;
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(30.0f));
+        imageReceiver.setForUserOrChat(tLObject, z8Var);
+        org.telegram.ui.Components.z8 z8Var2 = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.b6) null);
+        z8Var2.p(tLObject2);
+        ImageReceiver imageReceiver2 = new ImageReceiver(this);
+        this.d = imageReceiver2;
+        imageReceiver2.setRoundRadius(AndroidUtilities.dp(30.0f));
+        imageReceiver2.setForUserOrChat(tLObject2, z8Var2);
+        paint.setColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.E6, false));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        path.rewind();
+        path.moveTo(0.0f, -AndroidUtilities.dp(8.0f));
+        path.lineTo(AndroidUtilities.dp(6.166f), 0.0f);
+        path.lineTo(0.0f, AndroidUtilities.dp(8.0f));
     }
 }

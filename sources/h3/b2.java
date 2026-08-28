@@ -2,7 +2,7 @@ package h3;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b2 implements g {
     public final Object a;
@@ -16,7 +16,7 @@ public final class b2 implements g {
     public final int r;
 
     static {
-        int i10 = d5.g0.a;
+        int i9 = d5.f0.a;
         Integer.toString(0, 36);
         Integer.toString(1, 36);
         Integer.toString(2, 36);
@@ -26,16 +26,16 @@ public final class b2 implements g {
         Integer.toString(6, 36);
     }
 
-    public b2(Object obj, int i10, f1 f1Var, Object obj2, int i11, long j10, long j11, int i12, int i13) {
+    public b2(Object obj, int i9, f1 f1Var, Object obj2, int i10, long j10, long j11, int i11, int i12) {
         this.a = obj;
-        this.b = i10;
+        this.b = i9;
         this.c = f1Var;
         this.d = obj2;
-        this.e = i11;
+        this.e = i10;
         this.f = j10;
         this.h = j11;
-        this.n = i12;
-        this.r = i13;
+        this.n = i11;
+        this.r = i12;
     }
 
     public final boolean equals(Object obj) {
@@ -44,7 +44,7 @@ public final class b2 implements g {
         }
         if (obj != null && b2.class == obj.getClass()) {
             b2 b2Var = (b2) obj;
-            if (this.b == b2Var.b && this.e == b2Var.e && this.f == b2Var.f && this.h == b2Var.h && this.n == b2Var.n && this.r == b2Var.r && h7.e0.a(this.a, b2Var.a) && h7.e0.a(this.d, b2Var.d) && h7.e0.a(this.c, b2Var.c)) {
+            if (this.b == b2Var.b && this.e == b2Var.e && this.f == b2Var.f && this.h == b2Var.h && this.n == b2Var.n && this.r == b2Var.r && g7.c0.a(this.a, b2Var.a) && g7.c0.a(this.d, b2Var.d) && g7.c0.a(this.c, b2Var.c)) {
                 return true;
             }
         }

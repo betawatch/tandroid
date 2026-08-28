@@ -1,37 +1,31 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LanguageDetector;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class tk implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TranslateController b;
-    public final /* synthetic */ Utilities.Callback4 c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ String f;
-    public final /* synthetic */ long g;
+public final /* synthetic */ class tk implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
+    public final /* synthetic */ TranslateController a;
+    public final /* synthetic */ MessageObject b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ tk(TranslateController translateController, Utilities.Callback4 callback4, boolean z10, int i10, String str, long j10, int i11) {
-        this.a = i11;
-        this.b = translateController;
-        this.c = callback4;
-        this.d = z10;
-        this.e = i10;
-        this.f = str;
-        this.g = j10;
+    public /* synthetic */ tk(TranslateController translateController, MessageObject messageObject, long j10, int i9) {
+        this.a = translateController;
+        this.b = messageObject;
+        this.c = j10;
+        this.d = i9;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$pushToTranslate$21(this.c, this.d, this.e, this.f, this.g, (String) obj, (Boolean) obj2);
-                break;
-            default:
-                this.b.lambda$pushToTranslate$20(this.c, this.d, this.e, this.f, this.g, (String) obj, (Boolean) obj2);
-                break;
-        }
+    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
+    public void run(Exception exc) {
+        this.a.lambda$checkLanguage$15(this.b, this.c, this.d, exc);
+    }
+
+    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+    public void run(String str) {
+        long j10 = this.c;
+        int i9 = this.d;
+        this.a.lambda$checkLanguage$13(this.b, j10, i9, str);
     }
 }

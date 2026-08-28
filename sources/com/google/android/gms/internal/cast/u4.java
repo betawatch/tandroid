@@ -1,35 +1,106 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.util.AbstractList;
+import java.util.Collection;
+import java.util.List;
+import java.util.RandomAccess;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class u4 extends v4 {
-    public final int d;
+public abstract class u4 extends AbstractList implements k5 {
+    public boolean a;
 
-    public u4(byte[] bArr) {
-        super(bArr);
-        v4.p(bArr.length);
-        this.d = 47;
+    public u4(boolean z10) {
+        this.a = z10;
     }
 
-    @Override // com.google.android.gms.internal.cast.v4
-    public final byte i(int i10) {
-        int i11 = this.d;
-        if (((i11 - (i10 + 1)) | i10) >= 0) {
-            return this.b[i10];
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean add(Object obj) {
+        i();
+        return super.add(obj);
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public boolean addAll(int i9, Collection collection) {
+        i();
+        return super.addAll(i9, collection);
+    }
+
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public void clear() {
+        i();
+        super.clear();
+    }
+
+    @Override // java.util.AbstractList, java.util.Collection, java.util.List
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        if (i10 < 0) {
-            throw new ArrayIndexOutOfBoundsException(i0.a.k(i10, "Index < 0: "));
+        if (!(obj instanceof List)) {
+            return false;
         }
-        throw new ArrayIndexOutOfBoundsException(a9.p.j(i10, i11, "Index > length: ", ", "));
+        if (!(obj instanceof RandomAccess)) {
+            return super.equals(obj);
+        }
+        List list = (List) obj;
+        int size = size();
+        if (size != list.size()) {
+            return false;
+        }
+        for (int i9 = 0; i9 < size; i9++) {
+            if (!get(i9).equals(list.get(i9))) {
+                return false;
+            }
+        }
+        return true;
     }
 
-    @Override // com.google.android.gms.internal.cast.v4
-    public final byte n(int i10) {
-        return this.b[i10];
+    @Override // java.util.AbstractList, java.util.Collection, java.util.List
+    public int hashCode() {
+        int size = size();
+        int i9 = 1;
+        for (int i10 = 0; i10 < size; i10++) {
+            i9 = (i9 * 31) + get(i10).hashCode();
+        }
+        return i9;
     }
 
-    @Override // com.google.android.gms.internal.cast.v4
-    public final int o() {
-        return this.d;
+    public final void i() {
+        if (!this.a) {
+            throw new UnsupportedOperationException();
+        }
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public abstract Object remove(int i9);
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean remove(Object obj) {
+        i();
+        int indexOf = indexOf(obj);
+        if (indexOf == -1) {
+            return false;
+        }
+        remove(indexOf);
+        return true;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean removeAll(Collection collection) {
+        i();
+        return super.removeAll(collection);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean retainAll(Collection collection) {
+        i();
+        return super.retainAll(collection);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean addAll(Collection collection) {
+        i();
+        return super.addAll(collection);
     }
 }

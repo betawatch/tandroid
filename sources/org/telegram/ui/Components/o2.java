@@ -4,48 +4,48 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o2 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
 
-    public /* synthetic */ o2(int i10) {
-        this.a = i10;
+    public /* synthetic */ o2(int i9) {
+        this.a = i9;
     }
 
     @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+    public final boolean onEditorAction(TextView textView, int i9, KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
                 AndroidUtilities.hideKeyboard(textView);
                 break;
             case 1:
-                if (i10 == 6) {
+                if (i9 == 6) {
                     AndroidUtilities.hideKeyboard(textView);
                     break;
                 }
                 break;
             case 2:
-                if (i10 == 6) {
+                if (i9 == 6) {
                     AndroidUtilities.hideKeyboard(textView);
                     break;
                 }
                 break;
             case 3:
-                if (i10 == 6) {
+                if (i9 == 6) {
                     AndroidUtilities.hideKeyboard(textView);
                     break;
                 }
                 break;
             case 4:
-                if (i10 == 6) {
+                if (i9 == 6) {
                     textView.clearFocus();
                     AndroidUtilities.hideKeyboard(textView);
                     break;
                 }
                 break;
             default:
-                if (i10 == 6) {
+                if (i9 == 6) {
                     textView.clearFocus();
                     AndroidUtilities.hideKeyboard(textView);
                     break;

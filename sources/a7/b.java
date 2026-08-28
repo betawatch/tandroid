@@ -1,37 +1,30 @@
 package a7;
 
-import android.os.IBinder;
-import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b extends y5.g {
-    @Override // y5.g
-    public final boolean C() {
-        return true;
+public abstract class b {
+    public static final /* synthetic */ int a = 0;
+
+    static {
+        b.class.getClassLoader();
     }
 
-    @Override // y5.g, com.google.android.gms.common.api.c
-    public final int k() {
-        return 12600000;
-    }
-
-    @Override // y5.g
-    public final /* bridge */ /* synthetic */ IInterface q(IBinder iBinder) {
-        if (iBinder == null) {
+    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() == 0) {
             return null;
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.appdatasearch.internal.ILightweightAppDataSearch");
-        return queryLocalInterface instanceof a ? (a) queryLocalInterface : new a(iBinder);
+        return (Parcelable) creator.createFromParcel(parcel);
     }
 
-    @Override // y5.g
-    public final String v() {
-        return "com.google.android.gms.appdatasearch.internal.ILightweightAppDataSearch";
-    }
-
-    @Override // y5.g
-    public final String w() {
-        return "com.google.android.gms.icing.LIGHTWEIGHT_INDEX_SERVICE";
+    public static void b(Parcel parcel, Parcelable parcelable) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, 0);
+        }
     }
 }

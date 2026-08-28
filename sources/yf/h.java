@@ -1,28 +1,33 @@
 package yf;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class h extends l {
-    @Override // yf.m
-    public final int e() {
-        return R.drawable.msg_msgbubble;
-    }
+public interface h {
+    void B(boolean z10);
 
-    @Override // yf.l
-    public final int m() {
-        return R.drawable.msg_msgbubble2;
-    }
+    void C();
 
-    @Override // yf.l
-    public final String n() {
-        return LocaleController.getString(R.string.PaintBubble);
-    }
+    int[] b(j jVar);
 
-    @Override // yf.l
-    public final int o() {
-        return 3;
-    }
+    void g(boolean z10);
+
+    void h(boolean z10);
+
+    void j();
+
+    boolean k(j jVar);
+
+    void l();
+
+    void o(boolean z10);
+
+    boolean r();
+
+    boolean s();
+
+    void v(float f10, float f11, float[] fArr);
+
+    void w(j jVar);
+
+    void y();
 }

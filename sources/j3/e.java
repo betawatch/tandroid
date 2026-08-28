@@ -1,6 +1,6 @@
 package j3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class e implements h3.g {
     public static final e h = new e(0, 0, 1, 1, 0);
@@ -9,10 +9,10 @@ public final class e implements h3.g {
     public final int c;
     public final int d;
     public final int e;
-    public a9.i f;
+    public android.support.v4.media.c f;
 
     static {
-        int i10 = d5.g0.a;
+        int i9 = d5.f0.a;
         Integer.toString(0, 36);
         Integer.toString(1, 36);
         Integer.toString(2, 36);
@@ -20,17 +20,17 @@ public final class e implements h3.g {
         Integer.toString(4, 36);
     }
 
-    public e(int i10, int i11, int i12, int i13, int i14) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = i14;
+    public e(int i9, int i10, int i11, int i12, int i13) {
+        this.a = i9;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
     }
 
-    public final a9.i a() {
+    public final android.support.v4.media.c a() {
         if (this.f == null) {
-            this.f = new a9.i(this);
+            this.f = new android.support.v4.media.c(this);
         }
         return this.f;
     }

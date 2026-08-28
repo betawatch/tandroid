@@ -1,70 +1,133 @@
 package f2;
 
 import android.view.View;
-import java.util.List;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.Arrays;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i0 {
-    public boolean a;
+    public final /* synthetic */ int a = 0;
     public int b;
-    public int c;
-    public int d;
+    public boolean c;
+    public boolean d;
     public int e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public int j;
-    public List k;
-    public boolean l;
+    public Object f;
 
-    public final void a(View view) {
-        int b10;
-        int size = this.k.size();
-        View view2 = null;
-        int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        for (int i11 = 0; i11 < size; i11++) {
-            View view3 = ((o1) this.k.get(i11)).a;
-            y0 y0Var = (y0) view3.getLayoutParams();
-            if (view3 != view && !y0Var.a.j() && (b10 = (y0Var.b() - this.d) * this.e) >= 0 && b10 < i10) {
-                view2 = view3;
-                if (b10 == 0) {
-                    break;
-                } else {
-                    i10 = b10;
-                }
+    public /* synthetic */ i0() {
+    }
+
+    public void a(int i9, int i10, byte[] bArr) {
+        if (this.c) {
+            int i11 = i10 - i9;
+            byte[] bArr2 = (byte[]) this.f;
+            int length = bArr2.length;
+            int i12 = this.e;
+            if (length < i12 + i11) {
+                this.f = Arrays.copyOf(bArr2, (i12 + i11) * 2);
             }
+            System.arraycopy(bArr, i9, (byte[]) this.f, this.e, i11);
+            this.e += i11;
         }
-        if (view2 == null) {
-            this.d = -1;
+    }
+
+    public void b() {
+        this.e = this.c ? ((androidx.emoji2.text.f) this.f).f() : ((androidx.emoji2.text.f) this.f).j();
+    }
+
+    public void c(int i9, View view) {
+        if (this.c) {
+            int a2 = ((androidx.emoji2.text.f) this.f).a(view);
+            androidx.emoji2.text.f fVar = (androidx.emoji2.text.f) this.f;
+            this.e = (Integer.MIN_VALUE == fVar.a ? 0 : fVar.k() - fVar.a) + a2;
         } else {
-            this.d = ((y0) view2.getLayoutParams()).b();
+            this.e = ((androidx.emoji2.text.f) this.f).d(view);
         }
+        this.b = i9;
     }
 
-    public final boolean b(l1 l1Var) {
-        int i10 = this.d;
-        return i10 >= 0 && i10 < l1Var.b();
-    }
-
-    public final View c(e1 e1Var) {
-        List list = this.k;
-        if (list == null) {
-            View view = e1Var.j(this.d, Long.MAX_VALUE).a;
-            this.d += this.e;
-            return view;
+    public void d(int i9, View view) {
+        androidx.emoji2.text.f fVar = (androidx.emoji2.text.f) this.f;
+        int k10 = Integer.MIN_VALUE == fVar.a ? 0 : fVar.k() - fVar.a;
+        if (k10 >= 0) {
+            c(i9, view);
+            return;
         }
-        int size = list.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            View view2 = ((o1) this.k.get(i10)).a;
-            y0 y0Var = (y0) view2.getLayoutParams();
-            if (!y0Var.a.j() && this.d == y0Var.b()) {
-                a(view2);
-                return view2;
+        this.b = i9;
+        if (!this.c) {
+            int d = ((androidx.emoji2.text.f) this.f).d(view);
+            int j10 = d - ((androidx.emoji2.text.f) this.f).j();
+            this.e = d;
+            if (j10 > 0) {
+                int f10 = (((androidx.emoji2.text.f) this.f).f() - Math.min(0, (((androidx.emoji2.text.f) this.f).f() - k10) - ((androidx.emoji2.text.f) this.f).a(view))) - (((androidx.emoji2.text.f) this.f).b(view) + d);
+                if (f10 < 0) {
+                    this.e -= Math.min(j10, -f10);
+                    return;
+                }
+                return;
+            }
+            return;
+        }
+        int f11 = (((androidx.emoji2.text.f) this.f).f() - k10) - ((androidx.emoji2.text.f) this.f).a(view);
+        this.e = ((androidx.emoji2.text.f) this.f).f() - f11;
+        if (f11 > 0) {
+            int b10 = this.e - ((androidx.emoji2.text.f) this.f).b(view);
+            int j11 = ((androidx.emoji2.text.f) this.f).j();
+            int min = b10 - (Math.min(((androidx.emoji2.text.f) this.f).d(view) - j11, 0) + j11);
+            if (min < 0) {
+                this.e = Math.min(f11, -min) + this.e;
             }
         }
-        return null;
+    }
+
+    public boolean e(int i9) {
+        if (!this.c) {
+            return false;
+        }
+        this.e -= i9;
+        this.c = false;
+        this.d = true;
+        return true;
+    }
+
+    public final void f() {
+        switch (this.a) {
+            case 0:
+                this.b = -1;
+                this.e = TLObject.FLAG_31;
+                this.c = false;
+                this.d = false;
+                break;
+            default:
+                this.c = false;
+                this.d = false;
+                break;
+        }
+    }
+
+    public void g(int i9) {
+        d5.a.i(!this.c);
+        boolean z10 = i9 == this.b;
+        this.c = z10;
+        if (z10) {
+            this.e = 3;
+            this.d = false;
+        }
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 0:
+                return "AnchorInfo{mPosition=" + this.b + ", mCoordinate=" + this.e + ", mLayoutFromEnd=" + this.c + ", mValid=" + this.d + '}';
+            default:
+                return super.toString();
+        }
+    }
+
+    public i0(int i9) {
+        this.b = i9;
+        byte[] bArr = new byte[131];
+        this.f = bArr;
+        bArr[2] = 1;
     }
 }

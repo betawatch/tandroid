@@ -1,58 +1,26 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ys implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kt b;
+public final class ys extends org.telegram.ui.ActionBar.o1 {
+    public final /* synthetic */ dt o;
 
-    public /* synthetic */ ys(kt ktVar, int i10) {
-        this.a = i10;
-        this.b = ktVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ys(dt dtVar, ViewGroup viewGroup) {
+        super(viewGroup, -2, -2);
+        this.o = dtVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                kt ktVar = this.b;
-                ktVar.K = false;
-                ktVar.z.invalidate();
-                ktVar.n();
-                break;
-            case 1:
-                kt ktVar2 = this.b;
-                Activity activity = ktVar2.w;
-                if (activity instanceof LaunchActivity) {
-                    LaunchActivity launchActivity = (LaunchActivity) activity;
-                    if (launchActivity.O() != null && launchActivity.O().getLastFragment() != null) {
-                        launchActivity.O().getLastFragment().dismissCurrentDialog();
-                    }
-                    launchActivity.p0(new PremiumPreviewFragment(0, PremiumPreviewFragment.l0(5)));
-                }
-                ktVar2.K = false;
-                ktVar2.z.invalidate();
-                ktVar2.n();
-                break;
-            case 2:
-                kt ktVar3 = this.b;
-                ht htVar = ktVar3.l;
-                if (htVar != null) {
-                    htVar.J();
-                }
-                ktVar3.p();
-                break;
-            default:
-                kt ktVar4 = this.b;
-                ht htVar2 = ktVar4.l;
-                if (htVar2 != null) {
-                    htVar2.q();
-                }
-                ktVar4.p();
-                break;
+    @Override // org.telegram.ui.ActionBar.o1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        ht htVar = this.o.a;
+        htVar.k = null;
+        htVar.K = false;
+        if (htVar.R) {
+            htVar.n();
         }
     }
 }

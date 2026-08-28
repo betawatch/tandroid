@@ -13,38 +13,49 @@ import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.xh1;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.yh1;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ro implements ei {
-    public final /* synthetic */ ap a;
+public final class ro implements ii {
+    public final /* synthetic */ ki a;
+    public final /* synthetic */ TL_stories.TL_premium_boostsStatus b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b6 c;
+    public final /* synthetic */ org.telegram.ui.g d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ org.telegram.ui.w3 f;
+    public final /* synthetic */ org.telegram.ui.xc h;
 
-    public ro(ap apVar) {
-        this.a = apVar;
+    public ro(ki kiVar, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, org.telegram.ui.ActionBar.b6 b6Var, org.telegram.ui.g gVar, long j10, org.telegram.ui.w3 w3Var, org.telegram.ui.xc xcVar) {
+        this.a = kiVar;
+        this.b = tL_premium_boostsStatus;
+        this.c = b6Var;
+        this.d = gVar;
+        this.e = j10;
+        this.f = w3Var;
+        this.h = xcVar;
     }
 
-    @Override // org.telegram.ui.Components.ei
-    public final void I(Object obj) {
-        oo ooVar = new oo(obj, null, true, 3);
-        ap apVar = this.a;
-        ooVar.R1 = apVar.b0;
-        ooVar.c1(apVar.v.a());
-        ooVar.E1 = new qo(this, 1);
-        ap.r(apVar, ooVar);
+    @Override // org.telegram.ui.Components.ii
+    public final void A(Object obj) {
+        qo qoVar = new qo(obj, null, true, 1);
+        qoVar.R1 = this.b;
+        qoVar.a.a = this.c;
+        qoVar.l1 = this.d;
+        qoVar.c1(this.e);
+        qoVar.E1 = new po(this.a, this.f, 1);
+        org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
+        m2Var.a = true;
+        m2Var.e = true;
+        this.h.showAsSheet(qoVar, m2Var);
     }
 
-    @Override // org.telegram.ui.Components.ei
-    public final boolean N0() {
-        System.currentTimeMillis();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ei
-    public final void n0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
-        ap apVar = this.a;
+    @Override // org.telegram.ui.Components.ii
+    public final void L(int i9, boolean z10, boolean z11, int i10, int i11, long j10, boolean z12, boolean z13, long j11) {
+        ki kiVar = this.a;
         try {
-            HashMap<Object, Object> selectedPhotos = apVar.U.f0.getSelectedPhotos();
+            HashMap<Object, Object> selectedPhotos = kiVar.f0.getSelectedPhotos();
             if (selectedPhotos.isEmpty()) {
                 return;
             }
@@ -58,43 +69,55 @@ public final class ro implements ei {
                 Point realScreenSize = AndroidUtilities.getRealScreenSize();
                 Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
                 loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-                oo ooVar = new oo(new xh1(file, file, ""), loadBitmap, false, 2);
-                ooVar.R1 = apVar.b0;
-                ooVar.B1 = false;
-                ooVar.A1 = false;
-                ooVar.j1 = 0.2f;
-                ooVar.c1(apVar.v.a());
-                ooVar.E1 = new qo(this, 0);
-                ap.r(apVar, ooVar);
+                qo qoVar = new qo(new yh1(file, file, ""), loadBitmap, false, 0);
+                qoVar.R1 = this.b;
+                qoVar.a.a = this.c;
+                qoVar.l1 = this.d;
+                qoVar.B1 = false;
+                qoVar.A1 = false;
+                qoVar.j1 = 0.2f;
+                qoVar.c1(this.e);
+                qoVar.E1 = new po(kiVar, this.f, 0);
+                org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
+                m2Var.a = true;
+                m2Var.e = true;
+                this.h.showAsSheet(qoVar, m2Var);
+                kiVar.dismiss();
             }
         } catch (Throwable th) {
             FileLog.e(th);
         }
     }
 
-    @Override // org.telegram.ui.Components.ei
-    public final /* synthetic */ boolean s() {
+    @Override // org.telegram.ui.Components.ii
+    public final /* synthetic */ boolean j() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ei
-    public final void y(sg sgVar) {
-        sgVar.run();
+    @Override // org.telegram.ui.Components.ii
+    public final void t(wg wgVar) {
+        wgVar.run();
     }
 
-    @Override // org.telegram.ui.Components.ei
-    public final /* synthetic */ void F() {
+    @Override // org.telegram.ui.Components.ii
+    public final boolean t0() {
+        System.currentTimeMillis();
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.ei
-    public final /* synthetic */ void g0(TLRPC.User user) {
+    @Override // org.telegram.ui.Components.ii
+    public final /* synthetic */ void E(TLRPC.User user) {
     }
 
-    @Override // org.telegram.ui.Components.ei
-    public final /* synthetic */ void w() {
+    @Override // org.telegram.ui.Components.ii
+    public final /* synthetic */ void o() {
     }
 
-    @Override // org.telegram.ui.Components.ei
-    public final /* synthetic */ void P0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
+    @Override // org.telegram.ui.Components.ii
+    public final /* synthetic */ void u() {
+    }
+
+    @Override // org.telegram.ui.Components.ii
+    public final /* synthetic */ void v0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i9, int i10, long j10, boolean z11, long j11) {
     }
 }

@@ -1,29 +1,30 @@
 package g;
 
 import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
+import android.view.ContextThemeWrapper;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c implements AdapterView.OnItemClickListener {
-    public final /* synthetic */ f a;
-    public final /* synthetic */ d b;
+public final class c {
+    public final ContextThemeWrapper a;
+    public final LayoutInflater b;
+    public Drawable c;
+    public CharSequence d;
+    public View e;
+    public CharSequence f;
+    public androidx.biometric.x g;
+    public l.l h;
+    public Object i;
+    public DialogInterface.OnClickListener j;
+    public View k;
+    public boolean l;
+    public int m = -1;
 
-    public c(d dVar, f fVar) {
-        this.b = dVar;
-        this.a = fVar;
-    }
-
-    @Override // android.widget.AdapterView.OnItemClickListener
-    public final void onItemClick(AdapterView adapterView, View view, int i10, long j10) {
-        d dVar = this.b;
-        DialogInterface.OnClickListener onClickListener = dVar.j;
-        f fVar = this.a;
-        onClickListener.onClick(fVar.b, i10);
-        if (dVar.l) {
-            return;
-        }
-        fVar.b.dismiss();
+    public c(ContextThemeWrapper contextThemeWrapper) {
+        this.a = contextThemeWrapper;
+        this.b = (LayoutInflater) contextThemeWrapper.getSystemService("layout_inflater");
     }
 }

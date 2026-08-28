@@ -9,22 +9,27 @@ import android.text.TextUtils;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class g extends Binder implements b {
     public static final /* synthetic */ int b = 0;
     public final WeakReference a;
 
-    public g(androidx.mediarouter.app.r rVar) {
+    public g(androidx.mediarouter.app.s sVar) {
         attachInterface(this, "android.support.v4.media.session.IMediaControllerCallback");
-        this.a = new WeakReference(rVar);
+        this.a = new WeakReference(sVar);
+    }
+
+    @Override // android.support.v4.media.session.b
+    public final void B(List list) {
+        throw new AssertionError();
     }
 
     @Override // android.support.v4.media.session.b
     public final void C0(PlaybackStateCompat playbackStateCompat) {
-        androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) this.a.get();
-        if (rVar != null) {
-            rVar.e(2, playbackStateCompat, null);
+        androidx.mediarouter.app.s sVar = (androidx.mediarouter.app.s) this.a.get();
+        if (sVar != null) {
+            sVar.e(2, playbackStateCompat, null);
         }
     }
 
@@ -34,48 +39,56 @@ public final class g extends Binder implements b {
     }
 
     @Override // android.support.v4.media.session.b
-    public final void c0(CharSequence charSequence) {
+    public final void Z(CharSequence charSequence) {
         throw new AssertionError();
     }
 
     @Override // android.support.v4.media.session.b
-    public final void f0() {
+    public final void b0() {
         throw new AssertionError();
     }
 
     @Override // android.support.v4.media.session.b
-    public final void h0(MediaMetadataCompat mediaMetadataCompat) {
+    public final void d0(MediaMetadataCompat mediaMetadataCompat) {
         throw new AssertionError();
     }
 
     @Override // android.support.v4.media.session.b
-    public final void onRepeatModeChanged(int i10) {
-        androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) this.a.get();
-        if (rVar != null) {
-            rVar.e(9, Integer.valueOf(i10), null);
+    public final void l0(int i9) {
+        androidx.mediarouter.app.s sVar = (androidx.mediarouter.app.s) this.a.get();
+        if (sVar != null) {
+            sVar.e(12, Integer.valueOf(i9), null);
+        }
+    }
+
+    @Override // android.support.v4.media.session.b
+    public final void onRepeatModeChanged(int i9) {
+        androidx.mediarouter.app.s sVar = (androidx.mediarouter.app.s) this.a.get();
+        if (sVar != null) {
+            sVar.e(9, Integer.valueOf(i9), null);
         }
     }
 
     @Override // android.os.Binder
-    public final boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
-        if (i10 == 1598968902) {
+    public final boolean onTransact(int i9, Parcel parcel, Parcel parcel2, int i10) {
+        if (i9 == 1598968902) {
             parcel2.writeString("android.support.v4.media.session.IMediaControllerCallback");
             return true;
         }
         WeakReference weakReference = this.a;
-        switch (i10) {
+        switch (i9) {
             case 1:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
                 String readString = parcel.readString();
                 Bundle bundle = parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null;
-                androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) weakReference.get();
-                if (rVar != null) {
-                    rVar.e(1, readString, bundle);
+                androidx.mediarouter.app.s sVar = (androidx.mediarouter.app.s) weakReference.get();
+                if (sVar != null) {
+                    sVar.e(1, readString, bundle);
                 }
                 return true;
             case 2:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
-                f0();
+                b0();
                 return true;
             case 3:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
@@ -83,19 +96,19 @@ public final class g extends Binder implements b {
                 return true;
             case 4:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
-                h0(parcel.readInt() != 0 ? MediaMetadataCompat.CREATOR.createFromParcel(parcel) : null);
+                d0(parcel.readInt() != 0 ? MediaMetadataCompat.CREATOR.createFromParcel(parcel) : null);
                 return true;
             case 5:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
-                z(parcel.createTypedArrayList(MediaSessionCompat$QueueItem.CREATOR));
+                B(parcel.createTypedArrayList(MediaSessionCompat$QueueItem.CREATOR));
                 return true;
             case 6:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
-                c0(parcel.readInt() != 0 ? (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null);
+                Z(parcel.readInt() != 0 ? (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null);
                 return true;
             case 7:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
-                v(parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
+                w(parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                 return true;
             case 8:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
@@ -112,44 +125,31 @@ public final class g extends Binder implements b {
             case 11:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
                 boolean z10 = parcel.readInt() != 0;
-                androidx.mediarouter.app.r rVar2 = (androidx.mediarouter.app.r) weakReference.get();
-                if (rVar2 != null) {
-                    rVar2.e(11, Boolean.valueOf(z10), null);
+                androidx.mediarouter.app.s sVar2 = (androidx.mediarouter.app.s) weakReference.get();
+                if (sVar2 != null) {
+                    sVar2.e(11, Boolean.valueOf(z10), null);
                     return true;
                 }
                 return true;
             case 12:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
-                q0(parcel.readInt());
+                l0(parcel.readInt());
                 return true;
             case 13:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
-                androidx.mediarouter.app.r rVar3 = (androidx.mediarouter.app.r) weakReference.get();
-                if (rVar3 != null) {
-                    rVar3.e(13, null, null);
+                androidx.mediarouter.app.s sVar3 = (androidx.mediarouter.app.s) weakReference.get();
+                if (sVar3 != null) {
+                    sVar3.e(13, null, null);
                     return true;
                 }
                 return true;
             default:
-                return super.onTransact(i10, parcel, parcel2, i11);
+                return super.onTransact(i9, parcel, parcel2, i10);
         }
     }
 
     @Override // android.support.v4.media.session.b
-    public final void q0(int i10) {
-        androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) this.a.get();
-        if (rVar != null) {
-            rVar.e(12, Integer.valueOf(i10), null);
-        }
-    }
-
-    @Override // android.support.v4.media.session.b
-    public final void v(Bundle bundle) {
-        throw new AssertionError();
-    }
-
-    @Override // android.support.v4.media.session.b
-    public final void z(List list) {
+    public final void w(Bundle bundle) {
         throw new AssertionError();
     }
 

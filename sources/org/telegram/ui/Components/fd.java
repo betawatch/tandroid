@@ -1,45 +1,72 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.StickersActivity;
-import org.telegram.ui.ThemeActivity;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fd implements Runnable {
+public final /* synthetic */ class fd implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ fd(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
-        this.a = i10;
-        this.b = n2Var;
+    public /* synthetic */ fd(ChatActivityEnterView chatActivityEnterView, int i9) {
+        this.a = i9;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        org.telegram.ui.ActionBar.n2 n2Var = this.b;
-        switch (i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int i9 = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        switch (i9) {
             case 0:
-                int i11 = ChatActivityEnterView.i5;
-                if (n2Var == null) {
-                    if (n2Var.getContext() instanceof LaunchActivity) {
-                        ((LaunchActivity) n2Var.getContext()).p0(new PremiumPreviewFragment(0, null));
-                        break;
-                    }
-                } else {
-                    new ag.g2(n2Var, 11, false).show();
+                qe qeVar = chatActivityEnterView.E1;
+                if (qeVar != null) {
+                    qeVar.setTranslationX(qeVar.a);
                     break;
                 }
                 break;
             case 1:
-                n2Var.presentFragment(new StickersActivity(0, null));
+                qe qeVar2 = chatActivityEnterView.E1;
+                if (qeVar2 != null) {
+                    qeVar2.setTranslationX(qeVar2.a);
+                    break;
+                }
+                break;
+            case 2:
+                chatActivityEnterView.h1.invalidate();
+                break;
+            case 3:
+                chatActivityEnterView.h1.invalidate();
+                break;
+            case 4:
+                int i10 = ChatActivityEnterView.i5;
+                chatActivityEnterView.s0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                uf ufVar = chatActivityEnterView.Q0;
+                if (ufVar != null) {
+                    ufVar.Z();
+                    break;
+                }
+                break;
+            case 5:
+                chatActivityEnterView.E1.setTranslationX(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 6:
+                int i11 = ChatActivityEnterView.i5;
+                chatActivityEnterView.I1.setTransformToSeekbar(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                if (!chatActivityEnterView.Y0) {
+                    chatActivityEnterView.d1.setAlpha(chatActivityEnterView.I1.getTransformToSeekbarProgressStep3());
+                    chatActivityEnterView.d1.invalidate();
+                }
+                chatActivityEnterView.w0();
                 break;
             default:
-                ThemeActivity themeActivity = new ThemeActivity(0);
-                themeActivity.P0 = true;
-                n2Var.presentFragment(themeActivity);
+                int i12 = ChatActivityEnterView.i5;
+                chatActivityEnterView.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                chatActivityEnterView.r1.setScaleX(AndroidUtilities.lerp(0.6f, 1.0f, floatValue));
+                chatActivityEnterView.r1.setScaleY(AndroidUtilities.lerp(0.6f, 1.0f, floatValue));
+                chatActivityEnterView.r1.setAlpha(floatValue);
                 break;
         }
     }

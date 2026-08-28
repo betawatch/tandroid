@@ -1,29 +1,39 @@
 package org.telegram.messenger.video;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.messenger.voip.VoipAudioManager;
+import org.telegram.ui.Components.wy;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ VideoPlayerHolderBase b;
-    public final /* synthetic */ float c;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ l(VideoPlayerHolderBase videoPlayerHolderBase, float f10, int i10) {
-        this.a = i10;
-        this.b = videoPlayerHolderBase;
-        this.c = f10;
+    public /* synthetic */ l(Object obj, boolean z10, boolean z11, int i9) {
+        this.a = i9;
+        this.d = obj;
+        this.b = z10;
+        this.c = z11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$setSpeed$5(this.c);
+                ((VideoPlayerHolderBase) this.d).lambda$setAudioEnabled$8(this.b, this.c);
                 break;
             case 1:
-                this.b.lambda$play$7(this.c);
+                ((NativeInstance) this.d).lambda$onNetworkStateUpdated$0(this.b, this.c);
+                break;
+            case 2:
+                VoipAudioManager.lambda$isBluetoothAndSpeakerOnAsync$1((Utilities.Callback2) this.d, this.b, this.c);
                 break;
             default:
-                this.b.lambda$setVolume$10(this.c);
+                ((wy) this.d).Q(false, this.b, this.c);
                 break;
         }
     }

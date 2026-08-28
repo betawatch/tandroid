@@ -1,27 +1,27 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class o51 extends org.telegram.ui.Components.gw0 {
-    public final /* synthetic */ p51 v3;
+public final /* synthetic */ class o51 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fh.s b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o51(p51 p51Var, Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, i10, c6Var);
-        this.v3 = p51Var;
+    public /* synthetic */ o51(fh.s sVar, int i9) {
+        this.a = i9;
+        this.b = sVar;
     }
 
-    @Override // org.telegram.ui.Components.gw0
-    public final boolean A1() {
-        return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) || this.v3.y.S == 4;
-    }
-
-    @Override // org.telegram.ui.Components.gw0
-    public final void E1(int i10) {
-        super.E1(i10);
-        this.v3.e(false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.showKeyboard(((s41) this.b.d).h);
+                break;
+            default:
+                this.b.requestFocus();
+                break;
+        }
     }
 }

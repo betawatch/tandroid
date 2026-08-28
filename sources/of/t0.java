@@ -1,0 +1,56 @@
+package of;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class t0 implements RequestDelegate {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ Serializable d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Serializable f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
+
+    public /* synthetic */ t0(ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, SendMessagesHelper.DelayedMessage delayedMessage, SendMessagesHelper sendMessagesHelper, TLObject tLObject, boolean z10) {
+        this.c = sendMessagesHelper;
+        this.d = arrayList;
+        this.e = tLObject;
+        this.f = arrayList2;
+        this.g = arrayList3;
+        this.h = delayedMessage;
+        this.b = z10;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new u0((f1) this.c, (String) this.d, this.b, tLObject, (TLRPC.User) this.g, (String) this.e, (MessagesStorage) this.h, (String) this.f));
+                break;
+            default:
+                ((SendMessagesHelper) this.c).lambda$performSendMessageRequestMulti$74((ArrayList) this.d, (TLObject) this.e, (ArrayList) this.f, (ArrayList) this.g, (SendMessagesHelper.DelayedMessage) this.h, this.b, tLObject, tL_error);
+                break;
+        }
+    }
+
+    public /* synthetic */ t0(f1 f1Var, String str, boolean z10, TLRPC.User user, String str2, MessagesStorage messagesStorage, String str3) {
+        this.c = f1Var;
+        this.d = str;
+        this.b = z10;
+        this.g = user;
+        this.e = str2;
+        this.h = messagesStorage;
+        this.f = str3;
+    }
+}

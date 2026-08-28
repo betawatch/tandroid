@@ -2,21 +2,19 @@ package m5;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import h7.r8;
+import g7.p8;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class x extends z5.a {
-    public static final Parcelable.Creator<x> CREATOR = new w(2);
-    public final float a;
-    public final float b;
-    public final float c;
+public final class x extends y5.a {
+    public static final Parcelable.Creator<x> CREATOR = new v(3);
+    public final w a;
+    public final w b;
 
-    public x(float f10, float f11, float f12) {
-        this.a = f10;
-        this.b = f11;
-        this.c = f12;
+    public x(w wVar, w wVar2) {
+        this.a = wVar;
+        this.b = wVar2;
     }
 
     public final boolean equals(Object obj) {
@@ -27,22 +25,18 @@ public final class x extends z5.a {
             return false;
         }
         x xVar = (x) obj;
-        return this.a == xVar.a && this.b == xVar.b && this.c == xVar.c;
+        return q5.a.d(this.a, xVar.a) && q5.a.d(this.b, xVar.b);
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Float.valueOf(this.a), Float.valueOf(this.b), Float.valueOf(this.c)});
+        return Arrays.hashCode(new Object[]{this.a, this.b});
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.s(parcel, 2, 4);
-        parcel.writeFloat(this.a);
-        r8.s(parcel, 3, 4);
-        parcel.writeFloat(this.b);
-        r8.s(parcel, 4, 4);
-        parcel.writeFloat(this.c);
-        r8.r(parcel, q6);
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.k(parcel, 2, this.a, i9);
+        p8.k(parcel, 3, this.b, i9);
+        p8.r(parcel, q10);
     }
 }

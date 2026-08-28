@@ -3,7 +3,7 @@ package org.telegram.ui.Components.voip;
 import android.content.Context;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class q2 extends TextureViewRenderer {
     public final /* synthetic */ r2 a;
@@ -21,7 +21,7 @@ public final class q2 extends TextureViewRenderer {
     }
 
     @Override // android.view.TextureView, android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
+    public final void onSizeChanged(int i9, int i10, int i11, int i12) {
+        super.onSizeChanged(i9, i10, i11, i12);
     }
 }

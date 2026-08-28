@@ -1,493 +1,343 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.lang.reflect.Field;
+import java.nio.Buffer;
+import java.nio.ByteOrder;
+import java.security.AccessController;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import sun.misc.Unsafe;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class s1 extends r0 {
-    public final /* synthetic */ int c;
+public abstract class s1 {
+    public static final Logger a = Logger.getLogger(s1.class.getName());
+    public static final Unsafe b;
+    public static final Class c;
+    public static final r1 d;
+    public static final boolean e;
+    public static final boolean f;
+    public static final long g;
+    public static final boolean h;
 
-    public static int m(long j10, byte[] bArr, int i10, int i11) {
-        if (i11 == 0) {
-            r0 r0Var = u1.a;
-            if (i10 > -12) {
-                return -1;
+    /* JADX WARN: Removed duplicated region for block: B:15:0x010b  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0252  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0262  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0264  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0110 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    static {
+        Class<?> cls;
+        boolean z10;
+        Unsafe unsafe;
+        boolean z11;
+        Class<?> cls2;
+        Field d9;
+        r1 r1Var;
+        Unsafe i9 = i();
+        b = i9;
+        c = c.a;
+        Class<?> cls3 = Long.TYPE;
+        boolean e10 = e(cls3);
+        Class<?> cls4 = Integer.TYPE;
+        boolean e11 = e(cls4);
+        r1 r1Var2 = null;
+        if (i9 != null) {
+            if (!c.a()) {
+                r1Var2 = new q1(i9);
+            } else if (e10) {
+                r1Var2 = new p1(i9, 1);
+            } else if (e11) {
+                r1Var2 = new p1(i9, 0);
             }
-            return i10;
         }
-        if (i11 == 1) {
-            return u1.c(i10, r1.f(j10, bArr));
-        }
-        if (i11 == 2) {
-            return u1.d(i10, r1.f(j10, bArr), r1.f(j10 + 1, bArr));
-        }
-        throw new AssertionError();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:13:0x003a  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00ff  */
-    @Override // androidx.datastore.preferences.protobuf.r0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final String e(int i10, int i11, byte[] bArr) {
-        switch (this.c) {
-            case 0:
-                if ((i10 | i11 | ((bArr.length - i10) - i11)) < 0) {
-                    throw new ArrayIndexOutOfBoundsException(String.format("buffer length=%d, index=%d, size=%d", Integer.valueOf(bArr.length), Integer.valueOf(i10), Integer.valueOf(i11)));
+        d = r1Var2;
+        Class<?> cls5 = Byte.TYPE;
+        if (i9 != null) {
+            try {
+                cls = i9.getClass();
+                cls.getMethod("objectFieldOffset", Field.class);
+                cls.getMethod("getLong", Object.class, cls3);
+            } catch (Throwable th) {
+                a.log(Level.WARNING, "platform method missing - proto runtime falling back to safer methods: " + th);
+            }
+            if (d() != null) {
+                if (!c.a()) {
+                    cls.getMethod("getByte", cls3);
+                    cls.getMethod("putByte", cls3, cls5);
+                    cls.getMethod("getInt", cls3);
+                    cls.getMethod("putInt", cls3, cls4);
+                    cls.getMethod("getLong", cls3);
+                    cls.getMethod("putLong", cls3, cls3);
+                    cls.getMethod("copyMemory", cls3, cls3, cls3);
+                    cls.getMethod("copyMemory", Object.class, cls3, Object.class, cls3, cls3);
                 }
-                int i12 = i10 + i11;
-                char[] cArr = new char[i11];
-                int i13 = i10;
-                int i14 = 0;
-                while (i13 < i12) {
-                    byte b10 = bArr[i13];
-                    if (b10 < 0) {
-                        int i15 = i14;
-                        while (i13 < i12) {
-                            int i16 = i13 + 1;
-                            byte b11 = bArr[i13];
-                            if (b11 >= 0) {
-                                int i17 = i15 + 1;
-                                cArr[i15] = (char) b11;
-                                while (i16 < i12) {
-                                    byte b12 = bArr[i16];
-                                    if (b12 >= 0) {
-                                        i16++;
-                                        cArr[i17] = (char) b12;
-                                        i17++;
-                                    } else {
-                                        i15 = i17;
-                                        i13 = i16;
-                                    }
-                                }
-                                i15 = i17;
-                                i13 = i16;
-                            } else if (b11 < -32) {
-                                if (i16 >= i12) {
-                                    throw b0.a();
-                                }
-                                i13 += 2;
-                                r0.b(b11, bArr[i16], cArr, i15);
-                                i15++;
-                            } else if (b11 < -16) {
-                                if (i16 >= i12 - 1) {
-                                    throw b0.a();
-                                }
-                                int i18 = i13 + 2;
-                                i13 += 3;
-                                r0.c(b11, bArr[i16], bArr[i18], cArr, i15);
-                                i15++;
-                            } else {
-                                if (i16 >= i12 - 2) {
-                                    throw b0.a();
-                                }
-                                byte b13 = bArr[i16];
-                                int i19 = i13 + 3;
-                                byte b14 = bArr[i13 + 2];
-                                i13 += 4;
-                                r0.a(b11, b13, b14, bArr[i19], cArr, i15);
-                                i15 += 2;
-                            }
-                        }
-                        return new String(cArr, 0, i15);
-                    }
-                    i13++;
-                    cArr[i14] = (char) b10;
-                    i14++;
-                }
-                int i152 = i14;
-                while (i13 < i12) {
-                }
-                return new String(cArr, 0, i152);
-            default:
-                if ((i10 | i11 | ((bArr.length - i10) - i11)) < 0) {
-                    throw new ArrayIndexOutOfBoundsException(String.format("buffer length=%d, index=%d, size=%d", Integer.valueOf(bArr.length), Integer.valueOf(i10), Integer.valueOf(i11)));
-                }
-                int i20 = i10 + i11;
-                char[] cArr2 = new char[i11];
-                int i21 = i10;
-                int i22 = 0;
-                while (i21 < i20) {
-                    byte f10 = r1.f(i21, bArr);
-                    if (f10 < 0) {
-                        int i23 = i22;
-                        while (i21 < i20) {
-                            int i24 = i21 + 1;
-                            byte f11 = r1.f(i21, bArr);
-                            if (f11 >= 0) {
-                                int i25 = i23 + 1;
-                                cArr2[i23] = (char) f11;
-                                while (i24 < i20) {
-                                    byte f12 = r1.f(i24, bArr);
-                                    if (f12 >= 0) {
-                                        i24++;
-                                        cArr2[i25] = (char) f12;
-                                        i25++;
-                                    } else {
-                                        i23 = i25;
-                                        i21 = i24;
-                                    }
-                                }
-                                i23 = i25;
-                                i21 = i24;
-                            } else if (f11 < -32) {
-                                if (i24 >= i20) {
-                                    throw b0.a();
-                                }
-                                i21 += 2;
-                                r0.b(f11, r1.f(i24, bArr), cArr2, i23);
-                                i23++;
-                            } else if (f11 < -16) {
-                                if (i24 >= i20 - 1) {
-                                    throw b0.a();
-                                }
-                                int i26 = i21 + 2;
-                                i21 += 3;
-                                r0.c(f11, r1.f(i24, bArr), r1.f(i26, bArr), cArr2, i23);
-                                i23++;
-                            } else {
-                                if (i24 >= i20 - 2) {
-                                    throw b0.a();
-                                }
-                                byte f13 = r1.f(i24, bArr);
-                                int i27 = i21 + 3;
-                                byte f14 = r1.f(i21 + 2, bArr);
-                                i21 += 4;
-                                r0.a(f11, f13, f14, r1.f(i27, bArr), cArr2, i23);
-                                i23 += 2;
-                            }
-                        }
-                        return new String(cArr2, 0, i23);
-                    }
-                    i21++;
-                    cArr2[i22] = (char) f10;
-                    i22++;
-                }
-                int i232 = i22;
-                while (i21 < i20) {
-                }
-                return new String(cArr2, 0, i232);
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:79:?, code lost:
-    
-        return r27 + r5;
-     */
-    @Override // androidx.datastore.preferences.protobuf.r0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int f(String str, byte[] bArr, int i10, int i11) {
-        int i12;
-        int i13;
-        char charAt;
-        long j10;
-        long j11;
-        long j12;
-        int i14;
-        char charAt2;
-        switch (this.c) {
-            case 0:
-                int length = str.length();
-                int i15 = i11 + i10;
-                int i16 = 0;
-                while (i16 < length && (i13 = i16 + i10) < i15 && (charAt = str.charAt(i16)) < 128) {
-                    bArr[i13] = (byte) charAt;
-                    i16++;
-                }
-                int i17 = i10 + i16;
-                while (i16 < length) {
-                    char charAt3 = str.charAt(i16);
-                    if (charAt3 < 128 && i17 < i15) {
-                        bArr[i17] = (byte) charAt3;
-                        i17++;
-                    } else if (charAt3 < 2048 && i17 <= i15 - 2) {
-                        int i18 = i17 + 1;
-                        bArr[i17] = (byte) ((charAt3 >>> 6) | 960);
-                        i17 += 2;
-                        bArr[i18] = (byte) ((charAt3 & '?') | 128);
-                    } else {
-                        if ((charAt3 >= 55296 && 57343 >= charAt3) || i17 > i15 - 3) {
-                            if (i17 > i15 - 4) {
-                                if (55296 <= charAt3 && charAt3 <= 57343 && ((i12 = i16 + 1) == str.length() || !Character.isSurrogatePair(charAt3, str.charAt(i12)))) {
-                                    throw new t1(i16, length);
-                                }
-                                throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt3 + " at index " + i17);
-                            }
-                            int i19 = i16 + 1;
-                            if (i19 != str.length()) {
-                                char charAt4 = str.charAt(i19);
-                                if (Character.isSurrogatePair(charAt3, charAt4)) {
-                                    int codePoint = Character.toCodePoint(charAt3, charAt4);
-                                    bArr[i17] = (byte) ((codePoint >>> 18) | 240);
-                                    bArr[i17 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
-                                    int i20 = i17 + 3;
-                                    bArr[i17 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
-                                    i17 += 4;
-                                    bArr[i20] = (byte) ((codePoint & 63) | 128);
-                                    i16 = i19;
-                                } else {
-                                    i16 = i19;
-                                }
-                            }
-                            throw new t1(i16 - 1, length);
-                        }
-                        bArr[i17] = (byte) ((charAt3 >>> '\f') | 480);
-                        int i21 = i17 + 2;
-                        bArr[i17 + 1] = (byte) (((charAt3 >>> 6) & 63) | 128);
-                        i17 += 3;
-                        bArr[i21] = (byte) ((charAt3 & '?') | 128);
-                    }
-                    i16++;
-                }
-                return i17;
-            default:
-                long j13 = i10;
-                long j14 = i11 + j13;
-                int length2 = str.length();
-                if (length2 > i11 || bArr.length - i11 < i10) {
-                    throw new ArrayIndexOutOfBoundsException("Failed writing " + str.charAt(length2 - 1) + " at index " + (i10 + i11));
-                }
-                int i22 = 0;
-                while (true) {
-                    j10 = 1;
-                    if (i22 < length2 && (charAt2 = str.charAt(i22)) < 128) {
-                        r1.j(bArr, j13, (byte) charAt2);
-                        i22++;
-                        j13 = 1 + j13;
-                    }
-                }
-                if (i22 != length2) {
-                    while (i22 < length2) {
-                        char charAt5 = str.charAt(i22);
-                        if (charAt5 < 128 && j13 < j14) {
-                            r1.j(bArr, j13, (byte) charAt5);
-                            j12 = j14;
-                            j11 = j10;
-                            j13 += j10;
-                        } else if (charAt5 >= 2048 || j13 > j14 - 2) {
-                            j11 = j10;
-                            if ((charAt5 >= 55296 && 57343 >= charAt5) || j13 > j14 - 3) {
-                                j12 = j14;
-                                if (j13 > j12 - 4) {
-                                    if (55296 <= charAt5 && charAt5 <= 57343 && ((i14 = i22 + 1) == length2 || !Character.isSurrogatePair(charAt5, str.charAt(i14)))) {
-                                        throw new t1(i22, length2);
-                                    }
-                                    throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt5 + " at index " + j13);
-                                }
-                                int i23 = i22 + 1;
-                                if (i23 != length2) {
-                                    char charAt6 = str.charAt(i23);
-                                    if (Character.isSurrogatePair(charAt5, charAt6)) {
-                                        int codePoint2 = Character.toCodePoint(charAt5, charAt6);
-                                        r1.j(bArr, j13, (byte) ((codePoint2 >>> 18) | 240));
-                                        r1.j(bArr, j13 + j11, (byte) (((codePoint2 >>> 12) & 63) | 128));
-                                        long j15 = j13 + 3;
-                                        r1.j(bArr, j13 + 2, (byte) (((codePoint2 >>> 6) & 63) | 128));
-                                        j13 += 4;
-                                        r1.j(bArr, j15, (byte) ((codePoint2 & 63) | 128));
-                                        i22 = i23;
-                                    } else {
-                                        i22 = i23;
-                                    }
-                                }
-                                throw new t1(i22 - 1, length2);
-                            }
-                            r1.j(bArr, j13, (byte) ((charAt5 >>> '\f') | 480));
-                            j12 = j14;
-                            long j16 = j13 + 2;
-                            r1.j(bArr, j13 + j11, (byte) (((charAt5 >>> 6) & 63) | 128));
-                            j13 += 3;
-                            r1.j(bArr, j16, (byte) ((charAt5 & '?') | 128));
-                        } else {
-                            j11 = j10;
-                            long j17 = j13 + j11;
-                            r1.j(bArr, j13, (byte) ((charAt5 >>> 6) | 960));
-                            j13 += 2;
-                            r1.j(bArr, j17, (byte) ((charAt5 & '?') | 128));
-                            j12 = j14;
-                        }
-                        i22++;
-                        j10 = j11;
-                        j14 = j12;
-                    }
-                }
-                return (int) j13;
-        }
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.r0
-    public final int i(int i10, int i11, byte[] bArr) {
-        long j10;
-        int i12;
-        int i13 = i10;
-        byte b10 = -96;
-        byte b11 = -62;
-        switch (this.c) {
-            case 0:
-                while (i13 < i11 && bArr[i13] >= 0) {
-                    i13++;
-                }
-                if (i13 < i11) {
-                    while (i13 < i11) {
-                        int i14 = i13 + 1;
-                        byte b12 = bArr[i13];
-                        if (b12 >= 0) {
-                            i13 = i14;
-                        } else if (b12 < -32) {
-                            if (i14 >= i11) {
-                                return b12;
-                            }
-                            if (b12 < -62) {
-                                return -1;
-                            }
-                            i13 += 2;
-                            if (bArr[i14] > -65) {
-                                return -1;
-                            }
-                        } else if (b12 < -16) {
-                            if (i14 >= i11 - 1) {
-                                return u1.a(i14, i11, bArr);
-                            }
-                            int i15 = i13 + 2;
-                            byte b13 = bArr[i14];
-                            if (b13 > -65) {
-                                return -1;
-                            }
-                            if (b12 == -32 && b13 < -96) {
-                                return -1;
-                            }
-                            if (b12 == -19 && b13 >= -96) {
-                                return -1;
-                            }
-                            i13 += 3;
-                            if (bArr[i15] > -65) {
-                                return -1;
-                            }
-                        } else {
-                            if (i14 >= i11 - 2) {
-                                return u1.a(i14, i11, bArr);
-                            }
-                            int i16 = i13 + 2;
-                            byte b14 = bArr[i14];
-                            if (b14 > -65 || (((b14 + 112) + (b12 << 28)) >> 30) != 0) {
-                                return -1;
-                            }
-                            int i17 = i13 + 3;
-                            if (bArr[i16] > -65) {
-                                return -1;
-                            }
-                            i13 += 4;
-                            if (bArr[i17] > -65) {
-                                return -1;
-                            }
-                        }
-                    }
-                }
-                return 0;
-            default:
-                int i18 = 2;
-                if ((i13 | i11 | (bArr.length - i11)) < 0) {
-                    throw new ArrayIndexOutOfBoundsException(String.format("Array length=%d, index=%d, limit=%d", Integer.valueOf(bArr.length), Integer.valueOf(i13), Integer.valueOf(i11)));
-                }
-                long j11 = i13;
-                int i19 = (int) (i11 - j11);
-                if (i19 < 16) {
-                    j10 = j11;
-                    i12 = 0;
+                z10 = true;
+                e = z10;
+                unsafe = b;
+                if (unsafe != null) {
+                    z11 = false;
                 } else {
-                    j10 = j11;
-                    i12 = 0;
-                    long j12 = j10;
-                    while (true) {
-                        if (i12 < i19) {
-                            long j13 = j12 + 1;
-                            if (r1.f(j12, bArr) >= 0) {
-                                i12++;
-                                j12 = j13;
+                    try {
+                        cls2 = unsafe.getClass();
+                        cls2.getMethod("objectFieldOffset", Field.class);
+                        cls2.getMethod("arrayBaseOffset", Class.class);
+                        cls2.getMethod("arrayIndexScale", Class.class);
+                        cls2.getMethod("getInt", Object.class, cls3);
+                        cls2.getMethod("putInt", Object.class, cls3, cls4);
+                        cls2.getMethod("getLong", Object.class, cls3);
+                        cls2.getMethod("putLong", Object.class, cls3, cls3);
+                        Class<?>[] clsArr = new Class[2];
+                        clsArr[0] = Object.class;
+                        try {
+                            clsArr[1] = cls3;
+                            cls2.getMethod("getObject", clsArr);
+                            Class<?>[] clsArr2 = new Class[3];
+                            clsArr2[0] = Object.class;
+                            clsArr2[1] = cls3;
+                            clsArr2[2] = Object.class;
+                            cls2.getMethod("putObject", clsArr2);
+                        } catch (Throwable th2) {
+                            th = th2;
+                            a.log(Level.WARNING, "platform method missing - proto runtime falling back to safer methods: " + th);
+                            z11 = false;
+                            f = z11;
+                            g = b(byte[].class);
+                            b(boolean[].class);
+                            c(boolean[].class);
+                            b(int[].class);
+                            c(int[].class);
+                            b(long[].class);
+                            c(long[].class);
+                            b(float[].class);
+                            c(float[].class);
+                            b(double[].class);
+                            c(double[].class);
+                            b(Object[].class);
+                            c(Object[].class);
+                            d9 = d();
+                            if (d9 != null) {
                             }
-                        } else {
-                            i12 = i19;
+                            h = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
                         }
+                    } catch (Throwable th3) {
+                        th = th3;
                     }
+                    if (!c.a()) {
+                        Class<?>[] clsArr3 = new Class[2];
+                        clsArr3[0] = Object.class;
+                        clsArr3[1] = cls3;
+                        cls2.getMethod("getByte", clsArr3);
+                        Class<?>[] clsArr4 = new Class[3];
+                        clsArr4[0] = Object.class;
+                        clsArr4[1] = cls3;
+                        clsArr4[2] = cls5;
+                        cls2.getMethod("putByte", clsArr4);
+                        Class<?>[] clsArr5 = new Class[2];
+                        clsArr5[0] = Object.class;
+                        clsArr5[1] = cls3;
+                        cls2.getMethod("getBoolean", clsArr5);
+                        Class<?>[] clsArr6 = new Class[3];
+                        clsArr6[0] = Object.class;
+                        clsArr6[1] = cls3;
+                        clsArr6[2] = Boolean.TYPE;
+                        cls2.getMethod("putBoolean", clsArr6);
+                        Class<?>[] clsArr7 = new Class[2];
+                        clsArr7[0] = Object.class;
+                        clsArr7[1] = cls3;
+                        cls2.getMethod("getFloat", clsArr7);
+                        Class<?>[] clsArr8 = new Class[3];
+                        clsArr8[0] = Object.class;
+                        clsArr8[1] = cls3;
+                        clsArr8[2] = Float.TYPE;
+                        cls2.getMethod("putFloat", clsArr8);
+                        Class<?>[] clsArr9 = new Class[2];
+                        clsArr9[0] = Object.class;
+                        clsArr9[1] = cls3;
+                        cls2.getMethod("getDouble", clsArr9);
+                        cls2.getMethod("putDouble", Object.class, cls3, Double.TYPE);
+                        z11 = true;
+                        f = z11;
+                        g = b(byte[].class);
+                        b(boolean[].class);
+                        c(boolean[].class);
+                        b(int[].class);
+                        c(int[].class);
+                        b(long[].class);
+                        c(long[].class);
+                        b(float[].class);
+                        c(float[].class);
+                        b(double[].class);
+                        c(double[].class);
+                        b(Object[].class);
+                        c(Object[].class);
+                        d9 = d();
+                        if (d9 != null && (r1Var = d) != null) {
+                            r1Var.j(d9);
+                        }
+                        h = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
+                    }
+                    z11 = true;
                 }
-                int i20 = i19 - i12;
-                long j14 = j10 + i12;
-                while (true) {
-                    byte b15 = 0;
-                    while (true) {
-                        if (i20 > 0) {
-                            long j15 = j14 + 1;
-                            b15 = r1.f(j14, bArr);
-                            if (b15 >= 0) {
-                                i20--;
-                                j14 = j15;
-                            } else {
-                                j14 = j15;
-                            }
-                        }
-                    }
-                    if (i20 == 0) {
-                        return 0;
-                    }
-                    int i21 = i20 - 1;
-                    if (b15 < -32) {
-                        if (i21 == 0) {
-                            return b15;
-                        }
-                        i20 -= 2;
-                        if (b15 < b11) {
-                            return -1;
-                        }
-                        long j16 = j14 + 1;
-                        if (r1.f(j14, bArr) > -65) {
-                            return -1;
-                        }
-                        j14 = j16;
-                    } else if (b15 < -16) {
-                        if (i21 < i18) {
-                            return m(j14, bArr, b15, i21);
-                        }
-                        i20 -= 3;
-                        long j17 = j14 + 1;
-                        byte f10 = r1.f(j14, bArr);
-                        if (f10 > -65) {
-                            return -1;
-                        }
-                        if (b15 == -32 && f10 < b10) {
-                            return -1;
-                        }
-                        if (b15 == -19 && f10 >= b10) {
-                            return -1;
-                        }
-                        j14 += 2;
-                        if (r1.f(j17, bArr) > -65) {
-                            return -1;
-                        }
-                    } else {
-                        if (i21 < 3) {
-                            return m(j14, bArr, b15, i21);
-                        }
-                        i20 -= 4;
-                        long j18 = j14 + 1;
-                        byte f11 = r1.f(j14, bArr);
-                        if (f11 > -65 || (((f11 + 112) + (b15 << 28)) >> 30) != 0) {
-                            return -1;
-                        }
-                        long j19 = j14 + 2;
-                        if (r1.f(j18, bArr) > -65) {
-                            return -1;
-                        }
-                        j14 += 3;
-                        if (r1.f(j19, bArr) > -65) {
-                            return -1;
-                        }
-                    }
-                    b10 = -96;
-                    b11 = -62;
-                    i18 = 2;
+                f = z11;
+                g = b(byte[].class);
+                b(boolean[].class);
+                c(boolean[].class);
+                b(int[].class);
+                c(int[].class);
+                b(long[].class);
+                c(long[].class);
+                b(float[].class);
+                c(float[].class);
+                b(double[].class);
+                c(double[].class);
+                b(Object[].class);
+                c(Object[].class);
+                d9 = d();
+                if (d9 != null) {
+                    r1Var.j(d9);
                 }
-                break;
+                h = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
+            }
         }
+        z10 = false;
+        e = z10;
+        unsafe = b;
+        if (unsafe != null) {
+        }
+        f = z11;
+        g = b(byte[].class);
+        b(boolean[].class);
+        c(boolean[].class);
+        b(int[].class);
+        c(int[].class);
+        b(long[].class);
+        c(long[].class);
+        b(float[].class);
+        c(float[].class);
+        b(double[].class);
+        c(double[].class);
+        b(Object[].class);
+        c(Object[].class);
+        d9 = d();
+        if (d9 != null) {
+        }
+        h = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
+    }
+
+    public static Object a(Class cls) {
+        try {
+            return b.allocateInstance(cls);
+        } catch (InstantiationException e10) {
+            throw new IllegalStateException(e10);
+        }
+    }
+
+    public static int b(Class cls) {
+        if (f) {
+            return d.a(cls);
+        }
+        return -1;
+    }
+
+    public static void c(Class cls) {
+        if (f) {
+            d.b(cls);
+        }
+    }
+
+    public static Field d() {
+        Field field;
+        Field field2;
+        if (c.a()) {
+            try {
+                field2 = Buffer.class.getDeclaredField("effectiveDirectAddress");
+            } catch (Throwable unused) {
+                field2 = null;
+            }
+            if (field2 != null) {
+                return field2;
+            }
+        }
+        try {
+            field = Buffer.class.getDeclaredField("address");
+        } catch (Throwable unused2) {
+            field = null;
+        }
+        if (field == null || field.getType() != Long.TYPE) {
+            return null;
+        }
+        return field;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static boolean e(Class cls) {
+        if (!c.a()) {
+            return false;
+        }
+        try {
+            Class cls2 = c;
+            Class cls3 = Boolean.TYPE;
+            cls2.getMethod("peekLong", cls, cls3);
+            cls2.getMethod("pokeLong", cls, Long.TYPE, cls3);
+            Class cls4 = Integer.TYPE;
+            cls2.getMethod("pokeInt", cls, cls4, cls3);
+            cls2.getMethod("peekInt", cls, cls3);
+            cls2.getMethod("pokeByte", cls, Byte.TYPE);
+            cls2.getMethod("peekByte", cls);
+            cls2.getMethod("pokeByteArray", cls, byte[].class, cls4, cls4);
+            cls2.getMethod("peekByteArray", cls, byte[].class, cls4, cls4);
+            return true;
+        } catch (Throwable unused) {
+            return false;
+        }
+    }
+
+    public static byte f(long j10, byte[] bArr) {
+        return d.d(bArr, g + j10);
+    }
+
+    public static byte g(Object obj, long j10) {
+        return (byte) ((d.g(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & 255);
+    }
+
+    public static byte h(Object obj, long j10) {
+        return (byte) ((d.g(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & 255);
+    }
+
+    public static Unsafe i() {
+        try {
+            return (Unsafe) AccessController.doPrivileged(new o1());
+        } catch (Throwable unused) {
+            return null;
+        }
+    }
+
+    public static void j(byte[] bArr, long j10, byte b10) {
+        d.l(bArr, g + j10, b10);
+    }
+
+    public static void k(Object obj, long j10, byte b10) {
+        long j11 = (-4) & j10;
+        int g10 = d.g(obj, j11);
+        int i9 = ((~((int) j10)) & 3) << 3;
+        m(j11, obj, ((255 & b10) << i9) | (g10 & (~(255 << i9))));
+    }
+
+    public static void l(Object obj, long j10, byte b10) {
+        long j11 = (-4) & j10;
+        int i9 = (((int) j10) & 3) << 3;
+        m(j11, obj, ((255 & b10) << i9) | (d.g(obj, j11) & (~(255 << i9))));
+    }
+
+    public static void m(long j10, Object obj, int i9) {
+        d.o(j10, obj, i9);
+    }
+
+    public static void n(Object obj, long j10, long j11) {
+        d.p(obj, j10, j11);
+    }
+
+    public static void o(Object obj, long j10, Object obj2) {
+        d.q(obj, j10, obj2);
     }
 }

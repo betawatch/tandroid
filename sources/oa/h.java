@@ -1,63 +1,103 @@
 package oa;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import j$.util.Objects;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class h extends Number {
-    public final String a;
+public final class h extends la.u {
+    public static final e c = new e();
+    public final g a;
+    public final ArrayList b;
 
-    public h(String str) {
-        this.a = str;
-    }
-
-    @Override // java.lang.Number
-    public final double doubleValue() {
-        return Double.parseDouble(this.a);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public h(g gVar) {
+        ArrayList arrayList = new ArrayList();
+        this.b = arrayList;
+        Objects.requireNonNull(gVar);
+        this.a = gVar;
+        Locale locale = Locale.US;
+        arrayList.add(DateFormat.getDateTimeInstance(2, 2, locale));
+        if (!Locale.getDefault().equals(locale)) {
+            arrayList.add(DateFormat.getDateTimeInstance(2, 2));
         }
-        if (obj instanceof h) {
-            return this.a.equals(((h) obj).a);
+        if (na.h.a >= 9) {
+            arrayList.add(new SimpleDateFormat(aa.d.z("MMM d, yyyy", " ", "h:mm:ss a"), locale));
         }
-        return false;
     }
 
-    @Override // java.lang.Number
-    public final float floatValue() {
-        return Float.parseFloat(this.a);
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    @Override // java.lang.Number
-    public final int intValue() {
-        String str = this.a;
-        try {
+    @Override // la.u
+    public final Object read(ta.a aVar) {
+        Date b10;
+        if (aVar.x() == 9) {
+            aVar.t();
+            return null;
+        }
+        String v = aVar.v();
+        synchronized (this.b) {
             try {
-                return Integer.parseInt(str);
-            } catch (NumberFormatException unused) {
-                return (int) Long.parseLong(str);
+                ArrayList arrayList = this.b;
+                int size = arrayList.size();
+                int i9 = 0;
+                while (true) {
+                    if (i9 >= size) {
+                        try {
+                            b10 = pa.a.b(v, new ParsePosition(0));
+                            break;
+                        } catch (ParseException e10) {
+                            StringBuilder t10 = aa.d.t("Failed parsing '", v, "' as Date; at path ");
+                            t10.append(aVar.j());
+                            throw new la.j(t10.toString(), e10);
+                        }
+                    }
+                    Object obj = arrayList.get(i9);
+                    i9++;
+                    DateFormat dateFormat = (DateFormat) obj;
+                    TimeZone timeZone = dateFormat.getTimeZone();
+                    try {
+                        try {
+                            b10 = dateFormat.parse(v);
+                            break;
+                        } finally {
+                            dateFormat.setTimeZone(timeZone);
+                        }
+                    } catch (ParseException unused) {
+                        dateFormat.setTimeZone(timeZone);
+                    }
+                }
+            } catch (Throwable th) {
+                throw th;
             }
-        } catch (NumberFormatException unused2) {
-            return d.i(str).intValue();
         }
-    }
-
-    @Override // java.lang.Number
-    public final long longValue() {
-        String str = this.a;
-        try {
-            return Long.parseLong(str);
-        } catch (NumberFormatException unused) {
-            return d.i(str).longValue();
-        }
+        return this.a.a(b10);
     }
 
     public final String toString() {
-        return this.a;
+        DateFormat dateFormat = (DateFormat) this.b.get(0);
+        if (dateFormat instanceof SimpleDateFormat) {
+            return "DefaultDateTypeAdapter(" + ((SimpleDateFormat) dateFormat).toPattern() + ')';
+        }
+        return "DefaultDateTypeAdapter(" + dateFormat.getClass().getSimpleName() + ')';
+    }
+
+    @Override // la.u
+    public final void write(ta.c cVar, Object obj) {
+        String format;
+        Date date = (Date) obj;
+        if (date == null) {
+            cVar.i();
+            return;
+        }
+        DateFormat dateFormat = (DateFormat) this.b.get(0);
+        synchronized (this.b) {
+            format = dateFormat.format(date);
+        }
+        cVar.r(format);
     }
 }

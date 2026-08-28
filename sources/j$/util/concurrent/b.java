@@ -49,24 +49,24 @@ public abstract class b implements Collection, Serializable {
         if (j10 > 2147483639) {
             throw new OutOfMemoryError("Required array size too large");
         }
-        int i10 = (int) j10;
-        Object[] objArr = new Object[i10];
+        int i9 = (int) j10;
+        Object[] objArr = new Object[i9];
         Iterator it = iterator();
-        int i11 = 0;
+        int i10 = 0;
         while (it.hasNext()) {
             Object next = it.next();
-            if (i11 == i10) {
-                if (i10 >= 2147483639) {
+            if (i10 == i9) {
+                if (i9 >= 2147483639) {
                     throw new OutOfMemoryError("Required array size too large");
                 }
-                int i12 = i10 < 1073741819 ? (i10 >>> 1) + 1 + i10 : 2147483639;
-                objArr = Arrays.copyOf(objArr, i12);
-                i10 = i12;
+                int i11 = i9 < 1073741819 ? (i9 >>> 1) + 1 + i9 : 2147483639;
+                objArr = Arrays.copyOf(objArr, i11);
+                i9 = i11;
             }
-            objArr[i11] = next;
-            i11++;
+            objArr[i10] = next;
+            i10++;
         }
-        return i11 == i10 ? objArr : Arrays.copyOf(objArr, i11);
+        return i10 == i9 ? objArr : Arrays.copyOf(objArr, i10);
     }
 
     @Override // java.util.Collection
@@ -78,28 +78,28 @@ public abstract class b implements Collection, Serializable {
         if (j10 > 2147483639) {
             throw new OutOfMemoryError("Required array size too large");
         }
-        int i10 = (int) j10;
-        Object[] objArr2 = objArr.length >= i10 ? objArr : (Object[]) Array.newInstance(objArr.getClass().getComponentType(), i10);
+        int i9 = (int) j10;
+        Object[] objArr2 = objArr.length >= i9 ? objArr : (Object[]) Array.newInstance(objArr.getClass().getComponentType(), i9);
         int length = objArr2.length;
         Iterator it = iterator();
-        int i11 = 0;
+        int i10 = 0;
         while (it.hasNext()) {
             Object next = it.next();
-            if (i11 == length) {
+            if (i10 == length) {
                 if (length >= 2147483639) {
                     throw new OutOfMemoryError("Required array size too large");
                 }
-                int i12 = length < 1073741819 ? (length >>> 1) + 1 + length : 2147483639;
-                objArr2 = Arrays.copyOf(objArr2, i12);
-                length = i12;
+                int i11 = length < 1073741819 ? (length >>> 1) + 1 + length : 2147483639;
+                objArr2 = Arrays.copyOf(objArr2, i11);
+                length = i11;
             }
-            objArr2[i11] = next;
-            i11++;
+            objArr2[i10] = next;
+            i10++;
         }
-        if (objArr != objArr2 || i11 >= length) {
-            return i11 == length ? objArr2 : Arrays.copyOf(objArr2, i11);
+        if (objArr != objArr2 || i10 >= length) {
+            return i10 == length ? objArr2 : Arrays.copyOf(objArr2, i10);
         }
-        objArr2[i11] = null;
+        objArr2[i10] = null;
         return objArr2;
     }
 

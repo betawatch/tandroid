@@ -1,51 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
+import android.util.SparseArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class z31 extends zk0 {
-    public final /* synthetic */ g41 T2;
-    public final /* synthetic */ j41 U2;
+public final class z31 extends f2.x {
+    public final /* synthetic */ h41 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z31(j41 j41Var, Context context, g41 g41Var) {
-        super(context, null);
-        this.U2 = j41Var;
-        this.T2 = g41Var;
+    public z31(h41 h41Var) {
+        this.c = h41Var;
     }
 
-    @Override // org.telegram.ui.Components.zk0
-    public final boolean E0(float f10) {
-        return f10 >= ((float) (AndroidUtilities.dp(58.0f) + this.U2.A));
-    }
-
-    @Override // org.telegram.ui.Components.zk0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        this.U2.B = true;
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.zk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return super.onInterceptTouchEvent(motionEvent) || this.T2.d(this, motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.zk0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.U2.H != null) {
-            return false;
+    @Override // f2.x
+    public final int i(int i9) {
+        h41 h41Var = this.c;
+        f2.r0 adapter = h41Var.n.getAdapter();
+        g41 g41Var = h41Var.s;
+        if (adapter == g41Var) {
+            if ((g41Var.d.get(i9) instanceof Integer) || i9 >= g41Var.w) {
+                return g41Var.v;
+            }
+            return 1;
         }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.zk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.U2.D) {
-            return;
+        of.y1 y1Var = h41Var.v;
+        SparseArray sparseArray = y1Var.s;
+        if (i9 == y1Var.y || !(sparseArray.get(i9) == null || (sparseArray.get(i9) instanceof TLRPC.Document))) {
+            return y1Var.e.a();
         }
-        super.requestLayout();
+        return 1;
     }
 }

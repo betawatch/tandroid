@@ -1,32 +1,21 @@
 package x7;
 
-import android.os.Parcel;
-import android.os.ParcelFileDescriptor;
-import android.os.Parcelable;
-import com.google.android.gms.common.data.DataHolder;
-import h7.r8;
+import b7.d;
+import com.google.android.gms.common.api.Scope;
+import com.google.android.gms.common.api.e;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b extends z5.a {
-    public static final Parcelable.Creator<b> CREATOR = new w7.f(9);
-    public String a;
-    public DataHolder b;
-    public ParcelFileDescriptor c;
-    public long d;
-    public byte[] e;
+public abstract class b {
+    public static final d a;
+    public static final e b;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.l(parcel, 2, this.a);
-        r8.k(parcel, 3, this.b, i10);
-        r8.k(parcel, 4, this.c, i10);
-        long j10 = this.d;
-        r8.s(parcel, 5, 8);
-        parcel.writeLong(j10);
-        r8.c(parcel, 6, this.e);
-        r8.r(parcel, q6);
-        this.c = null;
+    static {
+        com.google.android.gms.common.api.d dVar = new com.google.android.gms.common.api.d();
+        d dVar2 = new d(16);
+        a = dVar2;
+        new Scope(1, "profile");
+        new Scope(1, "email");
+        b = new e("SignIn.API", dVar2, dVar);
     }
 }

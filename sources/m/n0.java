@@ -8,7 +8,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ListAdapter;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class n0 extends e2 implements p0 {
     public CharSequence O;
@@ -39,12 +39,12 @@ public final class n0 extends e2 implements p0 {
     }
 
     @Override // m.p0
-    public final void l(int i10) {
-        this.R = i10;
+    public final void l(int i9) {
+        this.R = i9;
     }
 
     @Override // m.p0
-    public final void m(int i10, int i11) {
+    public final void m(int i9, int i10) {
         ViewTreeObserver viewTreeObserver;
         y yVar = this.K;
         boolean isShowing = yVar.isShowing();
@@ -53,8 +53,8 @@ public final class n0 extends e2 implements p0 {
         g();
         s1 s1Var = this.c;
         s1Var.setChoiceMode(1);
-        h0.d(s1Var, i10);
-        h0.c(s1Var, i11);
+        h0.d(s1Var, i9);
+        h0.c(s1Var, i10);
         q0 q0Var = this.S;
         int selectedItemPosition = q0Var.getSelectedItemPosition();
         s1 s1Var2 = this.c;
@@ -68,9 +68,9 @@ public final class n0 extends e2 implements p0 {
         if (isShowing || (viewTreeObserver = q0Var.getViewTreeObserver()) == null) {
             return;
         }
-        l.d dVar = new l.d(this, 3);
-        viewTreeObserver.addOnGlobalLayoutListener(dVar);
-        yVar.setOnDismissListener(new m0(this, dVar));
+        androidx.mediarouter.app.k kVar = new androidx.mediarouter.app.k(this, 4);
+        viewTreeObserver.addOnGlobalLayoutListener(kVar);
+        yVar.setOnDismissListener(new m0(this, kVar));
     }
 
     @Override // m.e2, m.p0
@@ -80,35 +80,35 @@ public final class n0 extends e2 implements p0 {
     }
 
     public final void r() {
-        int i10;
+        int i9;
         q0 q0Var = this.S;
         Rect rect = q0Var.n;
         y yVar = this.K;
         Drawable background = yVar.getBackground();
         if (background != null) {
             background.getPadding(rect);
-            i10 = w3.a(q0Var) ? rect.right : -rect.left;
+            i9 = w3.a(q0Var) ? rect.right : -rect.left;
         } else {
-            i10 = 0;
+            i9 = 0;
             rect.right = 0;
             rect.left = 0;
         }
         int paddingLeft = q0Var.getPaddingLeft();
         int paddingRight = q0Var.getPaddingRight();
         int width = q0Var.getWidth();
-        int i11 = q0Var.h;
-        if (i11 == -2) {
+        int i10 = q0Var.h;
+        if (i10 == -2) {
             int a2 = q0Var.a(this.P, yVar.getBackground());
-            int i12 = (q0Var.getContext().getResources().getDisplayMetrics().widthPixels - rect.left) - rect.right;
-            if (a2 > i12) {
-                a2 = i12;
+            int i11 = (q0Var.getContext().getResources().getDisplayMetrics().widthPixels - rect.left) - rect.right;
+            if (a2 > i11) {
+                a2 = i11;
             }
             q(Math.max(a2, (width - paddingLeft) - paddingRight));
-        } else if (i11 == -1) {
+        } else if (i10 == -1) {
             q((width - paddingLeft) - paddingRight);
         } else {
-            q(i11);
+            q(i10);
         }
-        this.f = w3.a(q0Var) ? (((width - paddingRight) - this.e) - this.R) + i10 : paddingLeft + this.R + i10;
+        this.f = w3.a(q0Var) ? (((width - paddingRight) - this.e) - this.R) + i9 : paddingLeft + this.R + i9;
     }
 }

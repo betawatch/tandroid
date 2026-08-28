@@ -1,16 +1,33 @@
 package gh;
 
-import android.view.MotionEvent;
-import org.telegram.ui.Components.p80;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class p1 extends p80 {
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (getAlpha() < 0.95f) {
-            return false;
+public final /* synthetic */ class p1 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback b;
+
+    public /* synthetic */ p1(int i9, Utilities.Callback callback) {
+        this.a = i9;
+        this.b = callback;
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                this.b.run((TL_stars.StarGift) obj);
+                break;
+            default:
+                Boolean bool = (Boolean) obj;
+                Utilities.Callback callback = this.b;
+                if (callback != null) {
+                    callback.run(bool);
+                    break;
+                }
+                break;
         }
-        return super.dispatchTouchEvent(motionEvent);
     }
 }

@@ -1,27 +1,27 @@
 package m3;
 
-import d5.f0;
+import d5.e0;
 import java.util.ArrayList;
 import java.util.Collections;
-import p8.l0;
-import p8.z;
-import w3.c0;
+import o8.l0;
+import o8.z;
+import w3.b0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i {
     public static final int[] b = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14};
-    public static final g5.b c = new g5.b(new ia.l(26));
-    public static final g5.b d = new g5.b(new ia.l(27));
+    public static final g5.b c = new g5.b(new i3.i(20));
+    public static final g5.b d = new g5.b(new i3.i(21));
     public final l0 a;
 
     public i() {
-        p8.x xVar = z.b;
+        o8.x xVar = z.b;
         this.a = l0.e;
     }
 
-    public final void a(int i10, ArrayList arrayList) {
-        switch (i10) {
+    public final void a(int i9, ArrayList arrayList) {
+        switch (i9) {
             case 0:
                 arrayList.add(new w3.a());
                 break;
@@ -47,14 +47,14 @@ public final class i {
                 arrayList.add(new q3.b());
                 break;
             case 6:
-                arrayList.add(new s3.e(0));
+                arrayList.add(new s3.d(0));
                 break;
             case 7:
                 arrayList.add(new t3.d(1));
                 break;
             case 8:
                 arrayList.add(new u3.i(0, null, Collections.EMPTY_LIST, null));
-                arrayList.add(new u3.m(0));
+                arrayList.add(new u3.l(0));
                 break;
             case 9:
                 arrayList.add(new v3.d());
@@ -63,7 +63,7 @@ public final class i {
                 arrayList.add(new w3.x());
                 break;
             case 11:
-                arrayList.add(new c0(1, new f0(0L), new o0.i(0, this.a)));
+                arrayList.add(new b0(1, new e0(0L), new o0.h(0, this.a)));
                 break;
             case 12:
                 x3.c cVar = new x3.c();

@@ -1,116 +1,119 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.CornerPathEffect;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import android.app.Application;
+import android.os.Bundle;
+import android.os.SystemClock;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class r00 extends Drawable {
-    public final Drawable a;
-    public final Path b;
-    public boolean c = true;
-    public final Paint d;
-    public final Paint e;
+public abstract class r00 implements Application.ActivityLifecycleCallbacks {
+    private static r00 Instance;
+    private int refs;
+    private boolean wasInBackground = true;
+    private long enterBackgroundTime = 0;
+    private CopyOnWriteArrayList<q00> listeners = new CopyOnWriteArrayList<>();
 
-    public r00(Context context, int i10, int i11) {
-        this.a = context.getResources().getDrawable(i10);
-        if (i11 < 0) {
-            this.b = null;
-            this.d = null;
-            this.e = null;
-            return;
+    public r00(Application application) {
+        Instance = this;
+        application.registerActivityLifecycleCallbacks(this);
+    }
+
+    public static r00 getInstance() {
+        return Instance;
+    }
+
+    public void addListener(q00 q00Var) {
+        this.listeners.add(q00Var);
+    }
+
+    public boolean isBackground() {
+        return this.refs == 0;
+    }
+
+    public boolean isForeground() {
+        return this.refs > 0;
+    }
+
+    public boolean isWasInBackground(boolean z10) {
+        if (z10 && SystemClock.elapsedRealtime() - this.enterBackgroundTime < 200) {
+            this.wasInBackground = false;
         }
-        this.b = new Path();
-        Paint paint = new Paint(1);
-        this.d = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(-16777216);
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        paint.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(1.0f)));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        Paint paint2 = new Paint(1);
-        this.e = paint2;
-        paint2.setStyle(Paint.Style.FILL);
-        int[] iArr = org.telegram.ui.ActionBar.g6.r8;
-        paint2.setColor(org.telegram.ui.ActionBar.g6.w0(null, iArr[i11 % iArr.length], false));
-        paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(1.0f)));
+        return this.wasInBackground;
     }
 
-    public final int a(float f10) {
-        return AndroidUtilities.lerp(getBounds().left, getBounds().right, f10);
-    }
-
-    public final int b(float f10) {
-        return AndroidUtilities.lerp(getBounds().top, getBounds().bottom, f10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Drawable drawable = this.a;
-        Path path = this.b;
-        if (path == null) {
-            drawable.setBounds(getBounds());
-            drawable.draw(canvas);
-            return;
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityStarted(Activity activity) {
+        int i9 = this.refs + 1;
+        this.refs = i9;
+        if (i9 == 1) {
+            if (SystemClock.elapsedRealtime() - this.enterBackgroundTime < 200) {
+                this.wasInBackground = false;
+            }
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.d("switch to foreground");
+            }
+            Iterator<q00> it = this.listeners.iterator();
+            while (it.hasNext()) {
+                try {
+                    it.next().onBecameForeground();
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                }
+            }
         }
-        canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, 255);
-        drawable.setBounds(getBounds());
-        drawable.draw(canvas);
-        boolean z10 = this.c;
-        Paint paint = this.d;
-        if (z10) {
-            path.rewind();
-            path.moveTo(a(0.4871f), b(0.6025f));
-            path.lineTo(a(0.8974f), b(0.6025f));
-            path.lineTo(a(1.0f), b(0.7564f));
-            path.lineTo(a(0.8974f), b(0.9102f));
-            path.lineTo(a(0.4871f), b(0.9102f));
-            path.close();
-            this.c = false;
-            paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityStopped(Activity activity) {
+        int i9 = this.refs - 1;
+        this.refs = i9;
+        if (i9 == 0) {
+            this.enterBackgroundTime = SystemClock.elapsedRealtime();
+            this.wasInBackground = true;
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.d("switch to background");
+            }
+            Iterator<q00> it = this.listeners.iterator();
+            while (it.hasNext()) {
+                try {
+                    it.next().onBecameBackground();
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                }
+            }
         }
-        canvas.drawPath(path, paint);
-        canvas.drawPath(path, this.e);
-        canvas.restore();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.a.getIntrinsicHeight();
+    public void removeListener(q00 q00Var) {
+        this.listeners.remove(q00Var);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.a.getIntrinsicWidth();
+    public void resetBackgroundVar() {
+        this.wasInBackground = false;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return this.a.getOpacity();
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityDestroyed(Activity activity) {
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityPaused(Activity activity) {
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setBounds(int i10, int i11, int i12, int i13) {
-        super.setBounds(i10, i11, i12, i13);
-        this.c = true;
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityResumed(Activity activity) {
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityCreated(Activity activity, Bundle bundle) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
     }
 }

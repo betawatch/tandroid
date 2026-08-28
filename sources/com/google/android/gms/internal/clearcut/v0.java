@@ -12,24 +12,24 @@ public final class v0 extends com.google.android.gms.common.api.j {
     public static int k = 1;
 
     public v0(Context context, com.google.android.gms.common.api.i iVar) {
-        super(context, i8.j.a, i8.i.a, iVar);
+        super(context, h8.j.a, h8.i.a, iVar);
     }
 
     public Intent f() {
         int h = h();
-        int i10 = h - 1;
+        int i9 = h - 1;
         if (h == 0) {
             throw null;
         }
         com.google.android.gms.common.api.b bVar = this.d;
         Context context = this.a;
-        if (i10 == 2) {
+        if (i9 == 2) {
             k5.h.a.e("getFallbackSignInIntent()", new Object[0]);
             Intent a2 = k5.h.a(context, (GoogleSignInOptions) bVar);
             a2.setAction("com.google.android.gms.auth.APPAUTH_SIGN_IN");
             return a2;
         }
-        if (i10 == 3) {
+        if (i9 == 3) {
             return k5.h.a(context, (GoogleSignInOptions) bVar);
         }
         k5.h.a.e("getNoImplementationSignInIntent()", new Object[0]);
@@ -53,31 +53,31 @@ public final class v0 extends com.google.android.gms.common.api.j {
             t0Var.b.d(1, gVar);
             basePendingResult = gVar;
         }
-        return y5.l.n(basePendingResult, new xa.a(26));
+        return x5.l.n(basePendingResult, new za.a(25));
     }
 
     public synchronized int h() {
-        int i10;
+        int i9;
         try {
-            i10 = k;
-            if (i10 == 1) {
+            i9 = k;
+            if (i9 == 1) {
                 Context context = this.a;
-                v5.d dVar = v5.d.d;
+                u5.d dVar = u5.d.d;
                 int d = dVar.d(context, 12451000);
                 if (d == 0) {
-                    i10 = 4;
+                    i9 = 4;
                     k = 4;
-                } else if (dVar.b(context, null, d) != null || j6.e.a(context, "com.google.android.gms.auth.api.fallback") == 0) {
-                    i10 = 2;
+                } else if (dVar.b(context, null, d) != null || i6.e.a(context, "com.google.android.gms.auth.api.fallback") == 0) {
+                    i9 = 2;
                     k = 2;
                 } else {
-                    i10 = 3;
+                    i9 = 3;
                     k = 3;
                 }
             }
         } catch (Throwable th) {
             throw th;
         }
-        return i10;
+        return i9;
     }
 }

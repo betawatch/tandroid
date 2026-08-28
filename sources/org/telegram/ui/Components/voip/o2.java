@@ -8,11 +8,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.rl;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.ls;
+import org.telegram.messenger.ll;
+import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class o2 extends FrameLayout {
     public TextView[] a;
@@ -32,9 +31,9 @@ public final class o2 extends FrameLayout {
         this.f = true;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.h = ofFloat;
-        ofFloat.addUpdateListener(new ag.t2(15, view2, view));
-        this.h.addListener(new ls(this, view, view2, runnable, 2));
-        this.h.setDuration(250L).setInterpolator(er.f);
+        ofFloat.addUpdateListener(new f2.g(14, view2, view));
+        this.h.addListener(new of.h0((FrameLayout) this, view, view2, (Object) runnable, 3));
+        this.h.setDuration(250L).setInterpolator(gr.f);
         this.h.start();
     }
 
@@ -76,7 +75,7 @@ public final class o2 extends FrameLayout {
                 return;
             }
             textViewArr[1].setText(str);
-            a(textViewArr[0], textViewArr[1], new nh.f0(this, 16));
+            a(textViewArr[0], textViewArr[1], new mh.m2(this, 10));
         }
     }
 
@@ -86,7 +85,7 @@ public final class o2 extends FrameLayout {
             if (frameLayout.getVisibility() == 8) {
                 return;
             }
-            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(er.f).setListener(new n2(this, 1)).setDuration(300L).start();
+            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(gr.f).setListener(new n2(this, 1)).setDuration(300L).start();
         } else {
             if (frameLayout.getVisibility() == 0) {
                 return;
@@ -96,7 +95,7 @@ public final class o2 extends FrameLayout {
             frameLayout.setScaleY(0.6f);
             frameLayout.setScaleX(0.6f);
             frameLayout.animate().setListener(null).cancel();
-            rl.o(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), er.k, 300L);
+            ll.r(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), gr.k, 300L);
         }
     }
 
@@ -150,7 +149,7 @@ public final class o2 extends FrameLayout {
         s2Var.setVisibility(0);
     }
 
-    public void setSignalBarCount(int i10) {
-        this.d.setSignalBarCount(i10);
+    public void setSignalBarCount(int i9) {
+        this.d.setSignalBarCount(i9);
     }
 }

@@ -1,70 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public abstract class zs0 extends FrameLayout {
-    public c2.x A;
-    public int B;
-    public zp0 C;
-    public lg0 D;
-    public boolean E;
-    public int F;
-    public boolean G;
-    public float H;
-    public long a;
-    public boolean b;
-    public ObjectAnimator c;
-    public f2.l d;
-    public f2.d1 e;
-    public f2.d1 f;
-    public er0 h;
-    public jg.k n;
-    public ys0 r;
-    public gr0 s;
-    public nr0 v;
-    public pr0 w;
-    public cr0 x;
-    public mr0 y;
+public final class zs0 extends org.telegram.ui.Cells.h7 {
+    public final /* synthetic */ int h0;
+    public final /* synthetic */ vk0 i0;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        zp0 zp0Var = this.C;
-        if (zp0Var == null || zp0Var.getVisibility() != 0) {
-            return;
-        }
-        ik0 fastScroll = this.h.getFastScroll();
-        if (fastScroll != null) {
-            float dp = AndroidUtilities.dp(36.0f) + fastScroll.getScrollBarY();
-            if (this.B == 9) {
-                dp += AndroidUtilities.dp(64.0f);
-            }
-            int i10 = this.B;
-            if (i10 == 8 || hu0.w0(i10)) {
-                dp += AndroidUtilities.dp(42.0f);
-            }
-            float measuredWidth = (getMeasuredWidth() - this.C.getMeasuredWidth()) - AndroidUtilities.dp(16.0f);
-            this.C.setPivotX(r2.getMeasuredWidth());
-            this.C.setPivotY(0.0f);
-            this.C.setTranslationX(measuredWidth);
-            this.C.setTranslationY(dp);
-        }
-        if (fastScroll.getProgress() > 0.85f) {
-            hu0.q(this, null, false);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ zs0(vk0 vk0Var, Context context, org.telegram.ui.ActionBar.b6 b6Var, int i9) {
+        super(context, 0, b6Var);
+        this.h0 = i9;
+        this.i0 = vk0Var;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (view == this.r) {
-            return true;
+    @Override // org.telegram.ui.Cells.h7
+    public final boolean d(MessageObject messageObject) {
+        switch (this.h0) {
+            case 0:
+                at0 at0Var = (at0) this.i0;
+                if (!messageObject.isVoice() && !messageObject.isRoundVideo()) {
+                    if (messageObject.isMusic()) {
+                        return MediaController.getInstance().setPlaylist(at0Var.d, messageObject, at0Var.v.Y0);
+                    }
+                    return false;
+                }
+                boolean playMessage = MediaController.getInstance().playMessage(messageObject);
+                MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? at0Var.d : null, false);
+                if (messageObject.isRoundVideo()) {
+                    MediaController.getInstance().setCurrentVideoVisible(false);
+                }
+                return playMessage;
+            default:
+                rt0 rt0Var = (rt0) this.i0;
+                int i9 = rt0Var.d;
+                eu0 eu0Var = rt0Var.f;
+                if (messageObject.isVoice() || messageObject.isRoundVideo()) {
+                    boolean playMessage2 = MediaController.getInstance().playMessage(messageObject);
+                    MediaController.getInstance().setVoiceMessagesPlaylist(playMessage2 ? eu0Var.p1[i9].a : null, false);
+                    return playMessage2;
+                }
+                if (messageObject.isMusic()) {
+                    return MediaController.getInstance().setPlaylist(eu0Var.p1[i9].a, messageObject, eu0Var.Y0);
+                }
+                return false;
         }
-        return super.drawChild(canvas, view, j10);
     }
 }

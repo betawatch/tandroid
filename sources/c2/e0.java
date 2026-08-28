@@ -1,22 +1,18 @@
 package c2;
 
+import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class e0 {
-    public final int a;
-    public final boolean b;
-    public final boolean c;
-    public final boolean d;
-    public final Bundle e;
+    public int a = 1;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public Bundle e;
 
-    public e0(d0 d0Var) {
-        this.a = d0Var.a;
-        this.b = d0Var.b;
-        this.c = d0Var.c;
-        this.d = d0Var.d;
-        Bundle bundle = d0Var.e;
-        this.e = bundle == null ? Bundle.EMPTY : new Bundle(bundle);
+    public e0() {
+        this.b = Build.VERSION.SDK_INT >= 30;
     }
 }

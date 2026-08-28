@@ -1,67 +1,30 @@
 package gh;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.MotionEvent;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.cq;
-import org.telegram.ui.Components.o71;
-import org.telegram.ui.Components.p71;
-import org.telegram.ui.Components.wq0;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class x2 extends p71 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 P;
-    public final /* synthetic */ wq0 Q;
+public final /* synthetic */ class x2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k5 b;
+    public final /* synthetic */ TLRPC.TL_payments_paymentResult c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x2(wq0 wq0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var) {
-        super(context, null);
-        this.Q = wq0Var;
-        this.P = n2Var;
+    public /* synthetic */ x2(k5 k5Var, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i9) {
+        this.a = i9;
+        this.b = k5Var;
+        this.c = tL_payments_paymentResult;
     }
 
-    @Override // org.telegram.ui.Components.p71
-    public final void h() {
-        wq0 wq0Var = this.Q;
-        o71 o71Var = wq0Var.n;
-        if (!wq0Var.b() || o71Var == null) {
-            return;
-        }
-        if (wq0Var.F == null) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.y1.i(R.string.Gift2NewCollection, new StringBuilder("+ ")));
-            cq cqVar = new cq(R.drawable.poll_add_plus, 0);
-            cqVar.spaceScaleX = 0.8f;
-            spannableStringBuilder.setSpan(cqVar, 0, 1, 33);
-            wq0Var.F = spannableStringBuilder;
-        }
-        o71Var.a(-1, wq0Var.F);
-    }
-
-    @Override // org.telegram.ui.Components.p71
-    public final boolean i(MotionEvent motionEvent) {
-        return !this.Q.g();
-    }
-
-    @Override // org.telegram.ui.Components.p71
-    public final void w(boolean z10) {
-        wq0 wq0Var = this.Q;
-        wq0Var.l();
-        org.telegram.ui.ActionBar.n2 n2Var = this.P;
-        if (n2Var instanceof ProfileActivity) {
-            ((ProfileActivity) n2Var).R();
-        }
-        wq0Var.o();
-    }
-
-    @Override // org.telegram.ui.Components.p71
-    public final void z(int i10) {
-        this.Q.l();
-        org.telegram.ui.ActionBar.n2 n2Var = this.P;
-        if (n2Var instanceof ProfileActivity) {
-            ((ProfileActivity) n2Var).R();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                MessagesController.getInstance(this.b.currentAccount).processUpdates(this.c.updates, false);
+                break;
+            default:
+                MessagesController.getInstance(this.b.currentAccount).processUpdates(this.c.updates, false);
+                break;
         }
     }
 }

@@ -1,88 +1,78 @@
 package gh;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.wq0;
-import org.telegram.ui.Components.zq0;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class z2 extends Drawable {
+public final /* synthetic */ class z2 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final ShapeDrawable b;
-    public final Rect c;
+    public final /* synthetic */ k5 b;
 
-    public z2(wq0 wq0Var) {
-        this.a = 0;
-        this.b = org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), 0);
-        this.c = new Rect();
+    public /* synthetic */ z2(k5 k5Var, int i9) {
+        this.a = i9;
+        this.b = k5Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        TLRPC.Message message;
         switch (this.a) {
             case 0:
-                Rect bounds = getBounds();
-                Rect rect = this.c;
-                rect.set(bounds);
-                rect.inset(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(8.0f));
-                ShapeDrawable shapeDrawable = this.b;
-                shapeDrawable.setBounds(rect);
-                shapeDrawable.draw(canvas);
+                k5 k5Var = this.b;
+                k5Var.getClass();
+                if (((Boolean) obj).booleanValue()) {
+                    k5Var.skipDismissAnimation();
+                }
+                k5Var.dismiss();
+                break;
+            case 1:
+                TL_stars.starGiftUpgradePreview stargiftupgradepreview = (TL_stars.starGiftUpgradePreview) obj;
+                k5 k5Var2 = this.b;
+                k5Var2.getClass();
+                if (stargiftupgradepreview != null) {
+                    k5Var2.d1 = stargiftupgradepreview.sample_attributes;
+                    k5Var2.e1 = stargiftupgradepreview.prices;
+                    k5Var2.f1 = stargiftupgradepreview.next_prices;
+                    k5Var2.b2();
+                    break;
+                }
+                break;
+            case 2:
+                this.b.dismiss(((Boolean) obj).booleanValue());
                 break;
             default:
-                Rect bounds2 = getBounds();
-                Rect rect2 = this.c;
-                rect2.set(bounds2);
-                rect2.inset(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(8.0f));
-                ShapeDrawable shapeDrawable2 = this.b;
-                shapeDrawable2.setBounds(rect2);
-                shapeDrawable2.draw(canvas);
+                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
+                k5 k5Var3 = this.b;
+                k5Var3.G0 = false;
+                k5Var3.H0 = true;
+                if (savedStarGift != null) {
+                    k5Var3.b1 = Boolean.valueOf(savedStarGift.unsaved);
+                    MessageObject messageObject = k5Var3.A0;
+                    if (messageObject != null && (message = messageObject.messageOwner) != null) {
+                        TLRPC.MessageAction messageAction = message.action;
+                        if (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) {
+                            TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique = (TLRPC.TL_messageActionStarGiftUnique) messageAction;
+                            boolean z10 = tL_messageActionStarGiftUnique.saved;
+                            boolean z11 = !savedStarGift.unsaved;
+                            if (z10 != z11) {
+                                tL_messageActionStarGiftUnique.saved = z11;
+                            }
+                        } else if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
+                            TLRPC.TL_messageActionStarGift tL_messageActionStarGift = (TLRPC.TL_messageActionStarGift) messageAction;
+                            boolean z12 = tL_messageActionStarGift.saved;
+                            boolean z13 = !savedStarGift.unsaved;
+                            if (z12 != z13) {
+                                tL_messageActionStarGift.saved = z13;
+                            }
+                        }
+                        k5Var3.i2(messageObject, null);
+                        break;
+                    }
+                }
                 break;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-        }
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.setAlpha(i10);
-                break;
-            default:
-                this.b.setAlpha(i10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        int i10 = this.a;
-    }
-
-    public z2(zq0 zq0Var) {
-        this.a = 1;
-        int dp = AndroidUtilities.dp(16.0f);
-        int dp2 = AndroidUtilities.dp(16.0f);
-        int i10 = org.telegram.ui.ActionBar.g6.d6;
-        org.telegram.ui.ActionBar.c6 c6Var = zq0Var.c;
-        this.b = org.telegram.ui.ActionBar.g6.c0(dp, dp2, org.telegram.ui.ActionBar.g6.v(org.telegram.ui.ActionBar.g6.v0(i10, c6Var), org.telegram.ui.ActionBar.g6.l1(0.04f, org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.G6, c6Var))));
-        this.c = new Rect();
-    }
-
-    private final void a(ColorFilter colorFilter) {
-    }
-
-    private final void b(ColorFilter colorFilter) {
     }
 }

@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import h7.j6;
+import g7.x5;
 import java.util.UUID;
-import pc.g;
+import oc.g;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzgl {
     public static final /* synthetic */ int zza = 0;
@@ -15,20 +15,20 @@ public final class zzgl {
     }
 
     public static final void zzb(zzwk zzwkVar, String str, zzwa zzwaVar) {
-        int i10 = zzby.zza;
-        g a2 = j6.a(zzgi.zza);
-        g a3 = j6.a(zzgj.zza);
+        int i9 = zzby.zza;
+        g a2 = x5.a(zzgi.zza);
+        g a3 = x5.a(zzgj.zza);
         if (zzwaVar != null) {
             zzwkVar.zzt(zzwaVar);
         }
-        for (zzca zzcaVar : ((zzcc) j6.a(zzgk.zza).a()).zza()) {
+        for (zzca zzcaVar : ((zzcc) x5.a(zzgk.zza).a()).zza()) {
             zzwkVar.zzq(0);
         }
         if (zzwkVar.zzz()) {
-            int i11 = zzco.zza;
+            int i10 = zzco.zza;
             zzco.zza(zzwkVar.zze() + 20000, zzwkVar.zzf() * 1000);
         } else {
-            int i12 = zzco.zza;
+            int i11 = zzco.zza;
             int zzD = zzwkVar.zzD();
             zzco.zza(zzwl.zza(zzD) + 10000, zzwkVar.zzf() * 1000);
         }

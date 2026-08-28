@@ -1,20 +1,16 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.RectF;
+import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.pz0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ta {
-    public final pz0 a;
-    public pz0 b;
-    public final boolean c;
-    public final RectF d = new RectF();
-
-    public ta(CharSequence charSequence, CharSequence charSequence2, boolean z10) {
-        this.a = new pz0(charSequence, 12.0f, null);
-        this.b = new pz0(charSequence2, 12.0f, AndroidUtilities.bold());
-        this.c = z10;
+public final class ta extends org.telegram.ui.Components.j5 {
+    @Override // org.telegram.ui.Components.j5, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(0.0f, AndroidUtilities.dp(1.0f));
+        super.draw(canvas);
+        canvas.restore();
     }
 }

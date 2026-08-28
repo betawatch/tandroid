@@ -7,7 +7,7 @@ import android.media.AudioManager;
 import android.os.Handler;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class d {
     public final AudioManager a;
@@ -32,9 +32,9 @@ public final class d {
         if (this.e == 0) {
             return;
         }
-        int i10 = d5.g0.a;
+        int i9 = d5.f0.a;
         AudioManager audioManager = this.a;
-        if (i10 >= 26) {
+        if (i9 >= 26) {
             AudioFocusRequest audioFocusRequest = this.h;
             if (audioFocusRequest != null) {
                 audioManager.abandonAudioFocusRequest(audioFocusRequest);
@@ -54,26 +54,26 @@ public final class d {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b(j3.e eVar) {
-        int i10;
-        if (d5.g0.a(this.d, eVar)) {
+        int i9;
+        if (d5.f0.a(this.d, eVar)) {
             return;
         }
         this.d = eVar;
         if (eVar != null) {
-            int i11 = eVar.c;
-            i10 = 3;
-            switch (i11) {
+            int i10 = eVar.c;
+            i9 = 3;
+            switch (i10) {
                 case 0:
                     d5.a.K("AudioFocusManager", "Specify a proper usage in the audio attributes for audio focus handling. Using AUDIOFOCUS_GAIN by default.");
-                    i10 = 1;
+                    i9 = 1;
                     break;
                 case 1:
                 case 14:
-                    i10 = 1;
+                    i9 = 1;
                     break;
                 case 2:
                 case 4:
-                    i10 = 2;
+                    i9 = 2;
                     break;
                 case 3:
                     break;
@@ -90,30 +90,30 @@ public final class d {
                     break;
                 case 15:
                 default:
-                    com.google.android.recaptcha.internal.a.s(i11, "Unidentified audio usage: ", "AudioFocusManager");
+                    e2.c.t(i10, "Unidentified audio usage: ", "AudioFocusManager");
                     break;
                 case 16:
-                    if (d5.g0.a >= 19) {
-                        i10 = 4;
+                    if (d5.f0.a >= 19) {
+                        i9 = 4;
                         break;
                     }
-                    i10 = 2;
+                    i9 = 2;
                     break;
             }
-            this.f = i10;
-            d5.a.e("Automatic handling of audio focus is only available for USAGE_MEDIA and USAGE_GAME.", i10 != 1 || i10 == 0);
+            this.f = i9;
+            d5.a.e("Automatic handling of audio focus is only available for USAGE_MEDIA and USAGE_GAME.", i9 != 1 || i9 == 0);
         }
-        i10 = 0;
-        this.f = i10;
-        d5.a.e("Automatic handling of audio focus is only available for USAGE_MEDIA and USAGE_GAME.", i10 != 1 || i10 == 0);
+        i9 = 0;
+        this.f = i9;
+        d5.a.e("Automatic handling of audio focus is only available for USAGE_MEDIA and USAGE_GAME.", i9 != 1 || i9 == 0);
     }
 
-    public final void c(int i10) {
-        if (this.e == i10) {
+    public final void c(int i9) {
+        if (this.e == i9) {
             return;
         }
-        this.e = i10;
-        float f10 = i10 == 3 ? 0.2f : 1.0f;
+        this.e = i9;
+        float f10 = i9 == 3 ? 0.2f : 1.0f;
         if (this.g == f10) {
             return;
         }
@@ -125,18 +125,18 @@ public final class d {
         }
     }
 
-    public final int d(int i10, boolean z10) {
+    public final int d(int i9, boolean z10) {
         int requestAudioFocus;
-        if (i10 == 1 || this.f != 1) {
+        if (i9 == 1 || this.f != 1) {
             a();
             return z10 ? 1 : -1;
         }
         if (z10) {
             if (this.e != 1) {
-                int i11 = d5.g0.a;
+                int i10 = d5.f0.a;
                 AudioManager audioManager = this.a;
                 c cVar = this.b;
-                if (i11 >= 26) {
+                if (i10 >= 26) {
                     AudioFocusRequest audioFocusRequest = this.h;
                     if (audioFocusRequest == null) {
                         AudioFocusRequest.Builder builder = audioFocusRequest == null ? new AudioFocusRequest.Builder(this.f) : new AudioFocusRequest.Builder(this.h);
@@ -149,7 +149,7 @@ public final class d {
                 } else {
                     j3.e eVar2 = this.d;
                     eVar2.getClass();
-                    requestAudioFocus = audioManager.requestAudioFocus(cVar, d5.g0.y(eVar2.c), this.f);
+                    requestAudioFocus = audioManager.requestAudioFocus(cVar, d5.f0.y(eVar2.c), this.f);
                 }
                 if (requestAudioFocus == 1) {
                     c(1);

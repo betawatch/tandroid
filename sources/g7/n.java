@@ -1,34 +1,13 @@
 package g7;
 
-import android.content.Context;
-import android.util.Log;
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class n {
-    public static String a(Context context, int i10) {
-        if (context == null) {
-            return "";
-        }
-        if (i10 == 1) {
-            return context.getString(R.string.fingerprint_error_hw_not_available);
-        }
-        if (i10 != 7) {
-            switch (i10) {
-                case 9:
-                    break;
-                case 10:
-                    return context.getString(R.string.fingerprint_error_user_canceled);
-                case 11:
-                    return context.getString(R.string.fingerprint_error_no_fingerprints);
-                case 12:
-                    return context.getString(R.string.fingerprint_error_hw_not_present);
-                default:
-                    Log.e("BiometricUtils", "Unknown error code: " + i10);
-                    return context.getString(R.string.default_error_msg);
-            }
-        }
-        return context.getString(R.string.fingerprint_error_lockout);
+    public static float a(float f10, float f11, float f12) {
+        return f10 < f11 ? f11 : f10 > f12 ? f12 : f10;
+    }
+
+    public static int b(int i9, int i10, int i11) {
+        return i9 < i10 ? i10 : i9 > i11 ? i11 : i9;
     }
 }

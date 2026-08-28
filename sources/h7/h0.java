@@ -1,14 +1,7 @@
 package h7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* JADX WARN: Method from annotation default annotation not found: zzb */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class h0 {
-    public static void a(ad.p pVar, id.a aVar, id.a aVar2) {
-        try {
-            nd.a.g(pc.i.a, h7.b(h7.a(pVar, aVar, aVar2)));
-        } catch (Throwable th) {
-            aVar2.resumeWith(k6.a(th));
-            throw th;
-        }
-    }
+public @interface h0 {
 }

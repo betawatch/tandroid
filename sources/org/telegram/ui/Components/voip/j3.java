@@ -5,15 +5,15 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import h7.z5;
+import g7.e6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.f11;
-import org.telegram.ui.Components.fk0;
-import org.telegram.ui.Components.oi0;
+import org.telegram.ui.Components.mi0;
+import org.telegram.ui.Components.su0;
+import org.telegram.ui.Components.y11;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class j3 extends FrameLayout {
     public final n1 a;
@@ -29,56 +29,56 @@ public final class j3 extends FrameLayout {
         setWillNotDraw(true);
         i3 i3Var = new i3(activity, n1Var);
         this.b = i3Var;
-        addView(i3Var, z5.a(53.5f, 53.5f, 1));
+        addView(i3Var, e6.a(53.5f, 53.5f, 1));
         TextView textView = new TextView(activity);
         this.d = textView;
         textView.setGravity(1);
         textView.setTextSize(1, 11.0f);
         textView.setTextColor(-1);
         textView.setImportantForAccessibility(2);
-        addView(textView, z5.d(-1, -2.0f, 0, 0.0f, 58.0f, 0.0f, 2.0f));
+        addView(textView, e6.d(-1, -2.0f, 0, 0.0f, 58.0f, 0.0f, 2.0f));
         TextView textView2 = new TextView(activity);
         this.e = textView2;
         textView2.setGravity(1);
         textView2.setTextSize(1, 11.0f);
         textView2.setTextColor(-1);
         textView2.setImportantForAccessibility(2);
-        addView(textView2, z5.d(-1, -2.0f, 0, 0.0f, 58.0f, 0.0f, 2.0f));
+        addView(textView2, e6.d(-1, -2.0f, 0, 0.0f, 58.0f, 0.0f, 2.0f));
         textView.setVisibility(8);
         textView2.setVisibility(8);
     }
 
-    public final void a(int i10) {
-        this.b.a = new oi0(R.raw.bt_to_speaker, "" + R.raw.bt_to_speaker, i10, i10, true, null);
-        this.b.b = new oi0(R.raw.bt_to_speaker, "" + R.raw.bt_to_speaker, i10, i10, true, null);
+    public final void a(int i9) {
+        this.b.a = new mi0(R.raw.bt_to_speaker, "" + R.raw.bt_to_speaker, i9, i9, true, null);
+        this.b.b = new mi0(R.raw.bt_to_speaker, "" + R.raw.bt_to_speaker, i9, i9, true, null);
         this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
     }
 
-    public final void b(int i10, int i11, int i12, boolean z10) {
+    public final void b(int i9, int i10, int i11, boolean z10) {
         i3 i3Var = new i3(getContext(), this.a);
-        if (i10 == R.raw.camera_flip2) {
-            oi0 oi0Var = new oi0(i10, i0.a.k(i10, ""), i11, i11, true, null);
-            i3Var.c = oi0Var;
-            oi0Var.r0 = i3Var;
+        if (i9 == R.raw.camera_flip2) {
+            mi0 mi0Var = new mi0(i9, j3.r0.l(i9, ""), i10, i10, true, null);
+            i3Var.c = mi0Var;
+            mi0Var.r0 = i3Var;
         } else {
-            i3Var.a = new oi0(i10, i0.a.k(i10, ""), i11, i11, true, null);
-            oi0 oi0Var2 = new oi0(i10, i0.a.k(i10, ""), i11, i11, true, null);
-            i3Var.b = oi0Var2;
-            oi0Var2.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
+            i3Var.a = new mi0(i9, j3.r0.l(i9, ""), i10, i10, true, null);
+            mi0 mi0Var2 = new mi0(i9, j3.r0.l(i9, ""), i10, i10, true, null);
+            i3Var.b = mi0Var2;
+            mi0Var2.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
         }
-        i3Var.a(i12, z10, false);
+        i3Var.a(i11, z10, false);
         i3Var.setAlpha(0.0f);
         i3Var.setOnBtnClickedListener(this.b.x);
-        addView(i3Var, z5.a(53.5f, 53.5f, 1));
+        addView(i3Var, e6.a(53.5f, 53.5f, 1));
         i3 i3Var2 = this.b;
         this.b = i3Var;
         i3Var.animate().alpha(1.0f).setDuration(250L).start();
-        i3Var2.animate().alpha(0.0f).setDuration(250L).setListener(new fk0(5, this, i3Var2)).start();
+        i3Var2.animate().alpha(0.0f).setDuration(250L).setListener(new su0(3, this, i3Var2)).start();
     }
 
-    public final void c(int i10) {
-        this.b.a = new oi0(R.raw.speaker_to_bt, "" + R.raw.speaker_to_bt, i10, i10, true, null);
-        this.b.b = new oi0(R.raw.speaker_to_bt, "" + R.raw.speaker_to_bt, i10, i10, true, null);
+    public final void c(int i9) {
+        this.b.a = new mi0(R.raw.speaker_to_bt, "" + R.raw.speaker_to_bt, i9, i9, true, null);
+        this.b.b = new mi0(R.raw.speaker_to_bt, "" + R.raw.speaker_to_bt, i9, i9, true, null);
         this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
     }
 
@@ -90,15 +90,15 @@ public final class j3 extends FrameLayout {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void d(int i10, boolean z10, boolean z11) {
+    public final void d(int i9, boolean z10, boolean z11) {
         String str;
-        int i11;
+        int i10;
         String string;
         TextView textView;
         int visibility;
         TextView textView2;
         boolean z12;
-        if (this.c == i10 && z10 == this.b.v) {
+        if (this.c == i9 && z10 == this.b.v) {
             if (getVisibility() != 0) {
                 setVisibility(0);
                 return;
@@ -109,14 +109,14 @@ public final class j3 extends FrameLayout {
             setVisibility(0);
         }
         int dp = AndroidUtilities.dp(53.5f);
-        int b10 = m1.j.b(i10);
+        int b10 = m1.j.b(i9);
         boolean z13 = true;
         if (b10 == 0) {
             str = "";
-            i11 = 1;
+            i10 = 1;
             if (this.c != 1) {
-                this.b.a = new oi0(R.raw.call_mute, str + R.raw.call_mute, dp, dp, true, null);
-                this.b.b = new oi0(R.raw.call_mute, str + R.raw.call_mute, dp, dp, true, null);
+                this.b.a = new mi0(R.raw.call_mute, str + R.raw.call_mute, dp, dp, true, null);
+                this.b.b = new mi0(R.raw.call_mute, str + R.raw.call_mute, dp, dp, true, null);
                 this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
                 i3 i3Var = this.b;
                 i3Var.b.r0 = i3Var;
@@ -124,49 +124,49 @@ public final class j3 extends FrameLayout {
         } else if (b10 != 1) {
             if (b10 != 2) {
                 if (b10 == 3) {
-                    int i12 = this.c;
-                    if (i12 == 5) {
+                    int i11 = this.c;
+                    if (i11 == 5) {
                         i3 i3Var2 = this.b;
                         z12 = z10 == i3Var2.v;
-                        oi0 oi0Var = z10 ? i3Var2.b : i3Var2.a;
-                        oi0Var.r0 = i3Var2;
-                        oi0Var.q0 = new e3(this, dp, 1);
-                        oi0Var.start();
+                        mi0 mi0Var = z10 ? i3Var2.b : i3Var2.a;
+                        mi0Var.r0 = i3Var2;
+                        mi0Var.q0 = new e3(this, dp, 1);
+                        mi0Var.start();
                         str = "";
                         z13 = z12;
-                        i11 = 1;
-                    } else if (i12 == 2) {
-                        b(R.raw.bt_to_speaker, dp, i10, z10);
+                        i10 = 1;
+                    } else if (i11 == 2) {
+                        b(R.raw.bt_to_speaker, dp, i9, z10);
                         str = "";
-                        i11 = 1;
-                    } else if (i12 != 4) {
+                        i10 = 1;
+                    } else if (i11 != 4) {
                         a(dp);
                     }
                 } else if (b10 == 4) {
-                    int i13 = this.c;
-                    if (i13 == 4) {
+                    int i12 = this.c;
+                    if (i12 == 4) {
                         i3 i3Var3 = this.b;
                         z12 = z10 == i3Var3.v;
-                        oi0 oi0Var2 = z10 ? i3Var3.b : i3Var3.a;
-                        oi0Var2.r0 = i3Var3;
-                        oi0Var2.q0 = new e3(this, dp, 0);
-                        oi0Var2.start();
+                        mi0 mi0Var2 = z10 ? i3Var3.b : i3Var3.a;
+                        mi0Var2.r0 = i3Var3;
+                        mi0Var2.q0 = new e3(this, dp, 0);
+                        mi0Var2.start();
                         str = "";
                         z13 = z12;
-                        i11 = 1;
-                    } else if (i13 == 2) {
-                        b(R.raw.speaker_to_bt, dp, i10, z10);
+                        i10 = 1;
+                    } else if (i12 == 2) {
+                        b(R.raw.speaker_to_bt, dp, i9, z10);
                         str = "";
-                        i11 = 1;
-                    } else if (i13 != 5) {
+                        i10 = 1;
+                    } else if (i12 != 5) {
                         c(dp);
                     }
                 }
                 if (!z13) {
-                    this.b.a(i10, z10, (this.c == 0 || z11) ? false : true);
+                    this.b.a(i9, z10, (this.c == 0 || z11) ? false : true);
                 }
-                int b11 = m1.j.b(i10);
-                string = b11 != 0 ? b11 != i11 ? b11 != 2 ? b11 != 3 ? b11 != 4 ? str : LocaleController.getString(R.string.VoipSpeaker) : LocaleController.getString(R.string.VoipAudioRoutingBluetooth) : z10 ? LocaleController.getString(R.string.VoipStartVideo) : LocaleController.getString(R.string.VoipStopVideo) : LocaleController.getString(R.string.VoipFlip) : z10 ? LocaleController.getString(R.string.VoipUnmute) : LocaleController.getString(R.string.VoipMute);
+                int b11 = m1.j.b(i9);
+                string = b11 != 0 ? b11 != i10 ? b11 != 2 ? b11 != 3 ? b11 != 4 ? str : LocaleController.getString(R.string.VoipSpeaker) : LocaleController.getString(R.string.VoipAudioRoutingBluetooth) : z10 ? LocaleController.getString(R.string.VoipStartVideo) : LocaleController.getString(R.string.VoipStopVideo) : LocaleController.getString(R.string.VoipFlip) : z10 ? LocaleController.getString(R.string.VoipUnmute) : LocaleController.getString(R.string.VoipMute);
                 setContentDescription(string);
                 textView = this.d;
                 visibility = textView.getVisibility();
@@ -176,36 +176,36 @@ public final class j3 extends FrameLayout {
                     textView.setText(string);
                     textView2.setText(string);
                 } else if (textView2.getText().equals(string) || !textView.getText().equals(string)) {
-                    textView.animate().alpha(0.0f).translationY(-AndroidUtilities.dp(4.0f)).setDuration(140L).setListener(new fk0(4, this, string)).start();
+                    textView.animate().alpha(0.0f).translationY(-AndroidUtilities.dp(4.0f)).setDuration(140L).setListener(new su0(2, this, string)).start();
                     textView2.setText(string);
                     textView2.setVisibility(0);
                     textView2.setAlpha(0.0f);
                     textView2.setTranslationY(AndroidUtilities.dp(5.0f));
-                    textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new f11(this, 20)).start();
+                    textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new y11(this, 18)).start();
                 }
-                this.c = i10;
+                this.c = i9;
             }
             if (this.c != 3) {
                 str = "";
-                i11 = 1;
-                this.b.a = new oi0(R.raw.video_stop, "" + R.raw.video_stop, dp, dp, true, null);
-                this.b.b = new oi0(R.raw.video_stop, str + R.raw.video_stop, dp, dp, true, null);
+                i10 = 1;
+                this.b.a = new mi0(R.raw.video_stop, "" + R.raw.video_stop, dp, dp, true, null);
+                this.b.b = new mi0(R.raw.video_stop, str + R.raw.video_stop, dp, dp, true, null);
                 this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
                 i3 i3Var4 = this.b;
                 i3Var4.b.r0 = i3Var4;
             }
             str = "";
-            i11 = 1;
+            i10 = 1;
         } else {
             str = "";
-            i11 = 1;
-            int i14 = this.c;
-            if (i14 == 5 || i14 == 4) {
-                b(R.raw.camera_flip2, dp, i10, z10);
+            i10 = 1;
+            int i13 = this.c;
+            if (i13 == 5 || i13 == 4) {
+                b(R.raw.camera_flip2, dp, i9, z10);
                 z13 = true;
                 if (!z13) {
                 }
-                int b112 = m1.j.b(i10);
+                int b112 = m1.j.b(i9);
                 if (b112 != 0) {
                 }
                 setContentDescription(string);
@@ -216,16 +216,16 @@ public final class j3 extends FrameLayout {
                 }
                 if (textView2.getText().equals(string)) {
                 }
-                textView.animate().alpha(0.0f).translationY(-AndroidUtilities.dp(4.0f)).setDuration(140L).setListener(new fk0(4, this, string)).start();
+                textView.animate().alpha(0.0f).translationY(-AndroidUtilities.dp(4.0f)).setDuration(140L).setListener(new su0(2, this, string)).start();
                 textView2.setText(string);
                 textView2.setVisibility(0);
                 textView2.setAlpha(0.0f);
                 textView2.setTranslationY(AndroidUtilities.dp(5.0f));
-                textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new f11(this, 20)).start();
-                this.c = i10;
+                textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new y11(this, 18)).start();
+                this.c = i9;
             }
-            if (i14 != 2) {
-                this.b.c = new oi0(R.raw.camera_flip2, str + R.raw.camera_flip2, dp, dp, true, null);
+            if (i13 != 2) {
+                this.b.c = new mi0(R.raw.camera_flip2, str + R.raw.camera_flip2, dp, dp, true, null);
                 i3 i3Var5 = this.b;
                 i3Var5.c.r0 = i3Var5;
             }
@@ -233,7 +233,7 @@ public final class j3 extends FrameLayout {
         z13 = false;
         if (!z13) {
         }
-        int b1122 = m1.j.b(i10);
+        int b1122 = m1.j.b(i9);
         if (b1122 != 0) {
         }
         setContentDescription(string);
@@ -244,13 +244,13 @@ public final class j3 extends FrameLayout {
         }
         if (textView2.getText().equals(string)) {
         }
-        textView.animate().alpha(0.0f).translationY(-AndroidUtilities.dp(4.0f)).setDuration(140L).setListener(new fk0(4, this, string)).start();
+        textView.animate().alpha(0.0f).translationY(-AndroidUtilities.dp(4.0f)).setDuration(140L).setListener(new su0(2, this, string)).start();
         textView2.setText(string);
         textView2.setVisibility(0);
         textView2.setAlpha(0.0f);
         textView2.setTranslationY(AndroidUtilities.dp(5.0f));
-        textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new f11(this, 20)).start();
-        this.c = i10;
+        textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new y11(this, 18)).start();
+        this.c = i9;
     }
 
     public void setOnBtnClickedListener(h3 h3Var) {

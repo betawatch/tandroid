@@ -1,65 +1,65 @@
 package fh;
 
 import android.content.Context;
+import android.text.SpannableStringBuilder;
 import android.view.View;
+import gh.oa;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.b9;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.GiftAuctionController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.i41;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.wk0;
+import org.telegram.ui.Components.wy0;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes3.dex */
-public final class b extends b9 {
-    public final /* synthetic */ int e;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public final class b extends k41 {
+    public static final /* synthetic */ int a = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b(int i10, Context context, boolean z10) {
-        super(context, z10);
-        this.e = i10;
+    static {
+        k41.setup(new b());
     }
 
-    @Override // android.view.View
-    public void invalidate() {
-        switch (this.e) {
-            case 1:
-                if (!jh.t.c) {
-                    super.invalidate();
-                    break;
-                } else {
-                    jh.t.b.add(this);
-                    break;
-                }
-            default:
-                super.invalidate();
-                break;
-        }
+    @Override // org.telegram.ui.Components.k41
+    public final void bindView(View view, l41 l41Var, boolean z10, z41 z41Var, i51 i51Var) {
+        c cVar = (c) view;
+        GiftAuctionController.Auction auction = (GiftAuctionController.Auction) l41Var.H;
+        TL_stars.TL_StarGiftAuctionAcquiredGift tL_StarGiftAuctionAcquiredGift = (TL_stars.TL_StarGiftAuctionAcquiredGift) l41Var.G;
+        View.OnClickListener onClickListener = l41Var.D;
+        int i9 = c.c;
+        cVar.removeAllViews();
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
+        spannableStringBuilder.setSpan(new org.telegram.ui.Components.t5(auction.giftDocumentId, org.telegram.ui.ActionBar.f6.s2.getFontMetricsInt()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.append(' ');
+        spannableStringBuilder.append((CharSequence) LocaleController.formatString(R.string.Gift2AuctionsAcquiredRound2, auction.gift.title, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.gift_num), Integer.valueOf(tL_StarGiftAuctionAcquiredGift.round)));
+        spannableStringBuilder.setSpan(new i41(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
+        spannableStringBuilder2.append((CharSequence) oa.X0(false, j3.r0.n(tL_StarGiftAuctionAcquiredGift.bid_amount, ',', new StringBuilder("⭐️")), 0.75f, null));
+        String formatString = LocaleController.formatString(R.string.Gift2AuctionsAcquiredTop, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.pos));
+        wy0 wy0Var = new wy0(cVar.getContext(), cVar.a);
+        wy0Var.a(spannableStringBuilder).setFilled(true);
+        wy0Var.k(LocaleController.getString(R.string.Gift2AuctionsAcquiredRecipient), cVar.b, DialogObject.getPeerDialogId(tL_StarGiftAuctionAcquiredGift.peer), new e5.u(4, cVar, onClickListener));
+        wy0Var.f(tL_StarGiftAuctionAcquiredGift.date, LocaleController.getString(R.string.Gift2AuctionsAcquiredDate));
+        wy0Var.e(LocaleController.getString(R.string.Gift2AuctionsAcquiredAcceptedBid), spannableStringBuilder2, formatString, null, null);
+        cVar.addView(wy0Var, g7.e6.c(-2.0f, -1));
     }
 
-    @Override // org.telegram.ui.Components.b9, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.e) {
-            case 0:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.a.n == 0 ? 0 : i0.a.e(r4, 1, 20, 24)), TLObject.FLAG_30), i11);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
+    @Override // org.telegram.ui.Components.k41
+    public final View createView(Context context, wk0 wk0Var, int i9, int i10, org.telegram.ui.ActionBar.b6 b6Var) {
+        c cVar = new c(context, i9, b6Var);
+        cVar.setLayoutParams(g7.e6.c(-2.0f, -1));
+        return cVar;
     }
 
-    @Override // android.view.View
-    public void invalidate(int i10, int i11, int i12, int i13) {
-        switch (this.e) {
-            case 1:
-                if (jh.t.c) {
-                    jh.t.b.add(this);
-                    break;
-                } else {
-                    super.invalidate(i10, i11, i12, i13);
-                    break;
-                }
-            default:
-                super.invalidate(i10, i11, i12, i13);
-                break;
-        }
+    @Override // org.telegram.ui.Components.k41
+    public final boolean isClickable() {
+        return false;
     }
 }

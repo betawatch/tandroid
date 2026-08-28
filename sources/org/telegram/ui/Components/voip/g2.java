@@ -7,13 +7,13 @@ import android.text.TextUtils;
 import android.transition.TransitionSet;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import h7.z5;
+import g7.e6;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.tv0;
+import org.telegram.ui.Components.rv0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class g2 extends LinearLayout {
     public HashMap a;
@@ -26,31 +26,31 @@ public final class g2 extends LinearLayout {
     public n1 n;
     public TextPaint r;
 
-    public final void a(int i10, String str, String str2) {
+    public final void a(int i9, String str, String str2) {
         HashMap hashMap = this.a;
         if (hashMap.get(str2) != null) {
             return;
         }
-        f2 f2Var = new f2(getContext(), this.n, i10);
+        f2 f2Var = new f2(getContext(), this.n, i9);
         f2Var.a = str2;
         int dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp(120.0f);
         TextView textView = f2Var.c;
-        StaticLayout c10 = tv0.c(str, textView.getPaint(), dp, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, dp, 10, true);
+        StaticLayout c10 = rv0.c(str, textView.getPaint(), dp, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, dp, 10, true);
         if (c10 != null) {
             dp = 0;
-            for (int i11 = 0; i11 < c10.getLineCount(); i11++) {
-                dp = (int) Math.max(dp, Math.ceil(c10.getLineWidth(i11)));
+            for (int i10 = 0; i10 < c10.getLineCount(); i10++) {
+                dp = (int) Math.max(dp, Math.ceil(c10.getLineWidth(i10)));
             }
         }
         textView.setMaxWidth(dp);
         textView.setText(str);
-        f2Var.b.setImageResource(i10);
+        f2Var.b.setImageResource(i9);
         hashMap.put(str2, f2Var);
         if (this.e) {
             this.b.add(f2Var);
         } else {
             this.f = true;
-            addView(f2Var, z5.t(-2, -2, 1, 4, 0, 0, 4));
+            addView(f2Var, e6.t(-2, -2, 1, 4, 0, 0, 4));
         }
     }
 
@@ -76,7 +76,7 @@ public final class g2 extends LinearLayout {
 
     public int getChildsHight() {
         int childCount = getChildCount();
-        return org.telegram.messenger.y1.D(32.0f, childCount, childCount > 0 ? AndroidUtilities.dp(16.0f) : 0);
+        return org.telegram.messenger.l0.D(32.0f, childCount, childCount > 0 ? AndroidUtilities.dp(16.0f) : 0);
     }
 
     public void setOnViewsUpdated(Runnable runnable) {

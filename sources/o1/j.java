@@ -5,13 +5,13 @@ import android.util.AndroidRuntimeException;
 import android.view.Choreographer;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class j extends h {
     public k u;
     public float v;
 
-    public j(hb.a aVar) {
+    public j(gb.a aVar) {
         super(aVar);
         this.u = null;
         this.v = Float.MAX_VALUE;
@@ -55,10 +55,10 @@ public final class j extends h {
         ArrayList arrayList = bVar.b;
         if (arrayList.size() == 0) {
             if (bVar.d == null) {
-                bVar.d = new j9.a(bVar.c);
+                bVar.d = new j4.c(bVar.c);
             }
-            j9.a aVar = bVar.d;
-            ((Choreographer) aVar.c).postFrameCallback((a) aVar.d);
+            j4.c cVar = bVar.d;
+            ((Choreographer) cVar.c).postFrameCallback((a) cVar.d);
         }
         if (arrayList.contains(this)) {
             return;

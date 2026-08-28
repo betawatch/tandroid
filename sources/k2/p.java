@@ -16,13 +16,13 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
-import g7.k8;
-import g7.w7;
+import f7.i8;
+import f7.q8;
 import java.util.ArrayDeque;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class p extends g {
     public static final PorterDuff.Mode s = PorterDuff.Mode.SRC_IN;
@@ -101,7 +101,7 @@ public final class p extends g {
         }
         int save = canvas.save();
         canvas.translate(rect.left, rect.top);
-        if (isAutoMirrored() && k8.a(this) == 1) {
+        if (isAutoMirrored() && q8.a(this) == 1) {
             canvas.translate(rect.width(), 0.0f);
             canvas.scale(-1.0f, 1.0f);
         }
@@ -332,12 +332,12 @@ public final class p extends g {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    public final void setAlpha(int i9) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            drawable.setAlpha(i10);
-        } else if (this.b.b.getRootAlpha() != i10) {
-            this.b.b.setRootAlpha(i10);
+            drawable.setAlpha(i9);
+        } else if (this.b.b.getRootAlpha() != i9) {
+            this.b.b.setRootAlpha(i9);
             invalidateSelf();
         }
     }
@@ -364,12 +364,12 @@ public final class p extends g {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setTint(int i10) {
+    public final void setTint(int i9) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            k8.c(i10, drawable);
+            q8.c(i9, drawable);
         } else {
-            setTintList(ColorStateList.valueOf(i10));
+            setTintList(ColorStateList.valueOf(i9));
         }
     }
 
@@ -421,7 +421,7 @@ public final class p extends g {
 
     @Override // android.graphics.drawable.Drawable
     public final void inflate(Resources resources, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
-        int i10;
+        int i9;
         Paint.Cap cap;
         Paint.Join join;
         Drawable drawable = this.a;
@@ -434,13 +434,13 @@ public final class p extends g {
         TypedArray f10 = h0.b.f(resources, theme, attributeSet, a.a);
         n nVar2 = this.b;
         m mVar = nVar2.b;
-        int i11 = !h0.b.c(xmlPullParser, "tintMode") ? -1 : f10.getInt(6, -1);
+        int i10 = !h0.b.c(xmlPullParser, "tintMode") ? -1 : f10.getInt(6, -1);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        if (i11 == 3) {
+        if (i10 == 3) {
             mode = PorterDuff.Mode.SRC_OVER;
-        } else if (i11 != 5) {
-            if (i11 != 9) {
-                switch (i11) {
+        } else if (i10 != 5) {
+            if (i10 != 9) {
+                switch (i10) {
                     case 14:
                         mode = PorterDuff.Mode.MULTIPLY;
                         break;
@@ -460,11 +460,11 @@ public final class p extends g {
         if (xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "tint") != null) {
             TypedValue typedValue = new TypedValue();
             f10.getValue(1, typedValue);
-            int i12 = typedValue.type;
-            if (i12 == 2) {
+            int i11 = typedValue.type;
+            if (i11 == 2) {
                 throw new UnsupportedOperationException("Failed to resolve attribute at index 1: " + typedValue);
             }
-            if (i12 >= 28 && i12 <= 31) {
+            if (i11 >= 28 && i11 <= 31) {
                 colorStateList = ColorStateList.valueOf(typedValue.data);
             } else {
                 Resources resources2 = f10.getResources();
@@ -472,8 +472,8 @@ public final class p extends g {
                 ThreadLocal threadLocal = h0.c.a;
                 try {
                     colorStateList = h0.c.a(resources2, resources2.getXml(resourceId), theme);
-                } catch (Exception e9) {
-                    Log.e("CSLCompat", "Failed to inflate ColorStateList.", e9);
+                } catch (Exception e10) {
+                    Log.e("CSLCompat", "Failed to inflate ColorStateList.", e10);
                 }
             }
         }
@@ -529,11 +529,11 @@ public final class p extends g {
                 int eventType = xmlPullParser.getEventType();
                 int depth = xmlPullParser.getDepth() + 1;
                 boolean z11 = true;
-                for (int i13 = 1; eventType != i13 && (xmlPullParser.getDepth() >= depth || eventType != 3); i13 = 1) {
+                for (int i12 = 1; eventType != i12 && (xmlPullParser.getDepth() >= depth || eventType != 3); i12 = 1) {
                     if (eventType == 2) {
                         String name = xmlPullParser.getName();
                         j jVar2 = (j) arrayDeque.peek();
-                        i10 = depth;
+                        i9 = depth;
                         if ("path".equals(name)) {
                             i iVar = new i();
                             iVar.e = 0.0f;
@@ -555,7 +555,7 @@ public final class p extends g {
                                 }
                                 String string3 = f13.getString(2);
                                 if (string3 != null) {
-                                    iVar.a = w7.c(string3);
+                                    iVar.a = i8.c(string3);
                                 }
                                 iVar.f = h0.b.a(f13, xmlPullParser, theme, "fillColor", 1);
                                 float f14 = iVar.h;
@@ -563,22 +563,22 @@ public final class p extends g {
                                     f14 = f13.getFloat(12, f14);
                                 }
                                 iVar.h = f14;
-                                int i14 = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "strokeLineCap") != null ? f13.getInt(8, -1) : -1;
+                                int i13 = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "strokeLineCap") != null ? f13.getInt(8, -1) : -1;
                                 Paint.Cap cap3 = iVar.l;
-                                if (i14 == 0) {
+                                if (i13 == 0) {
                                     cap = cap2;
-                                } else if (i14 != 1) {
-                                    cap = i14 != 2 ? cap3 : Paint.Cap.SQUARE;
+                                } else if (i13 != 1) {
+                                    cap = i13 != 2 ? cap3 : Paint.Cap.SQUARE;
                                 } else {
                                     cap = Paint.Cap.ROUND;
                                 }
                                 iVar.l = cap;
-                                int i15 = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "strokeLineJoin") != null ? f13.getInt(9, -1) : -1;
+                                int i14 = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "strokeLineJoin") != null ? f13.getInt(9, -1) : -1;
                                 Paint.Join join3 = iVar.m;
-                                if (i15 == 0) {
+                                if (i14 == 0) {
                                     join = join2;
-                                } else if (i15 != 1) {
-                                    join = i15 != 2 ? join3 : Paint.Join.BEVEL;
+                                } else if (i14 != 1) {
+                                    join = i14 != 2 ? join3 : Paint.Join.BEVEL;
                                 } else {
                                     join = Paint.Join.ROUND;
                                 }
@@ -614,11 +614,11 @@ public final class p extends g {
                                     f20 = f13.getFloat(5, f20);
                                 }
                                 iVar.i = f20;
-                                int i16 = iVar.c;
+                                int i15 = iVar.c;
                                 if (xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "fillType") != null) {
-                                    i16 = f13.getInt(13, i16);
+                                    i15 = f13.getInt(13, i15);
                                 }
-                                iVar.c = i16;
+                                iVar.c = i15;
                             }
                             f13.recycle();
                             jVar2.b.add(iVar);
@@ -637,7 +637,7 @@ public final class p extends g {
                                 }
                                 String string5 = f21.getString(1);
                                 if (string5 != null) {
-                                    hVar.a = w7.c(string5);
+                                    hVar.a = i8.c(string5);
                                 }
                                 hVar.c = !h0.b.c(xmlPullParser, "fillType") ? 0 : f21.getInt(2, 0);
                                 f21.recycle();
@@ -691,13 +691,13 @@ public final class p extends g {
                             nVar3.a = nVar3.a;
                         }
                     } else {
-                        i10 = depth;
+                        i9 = depth;
                         if (eventType == 3 && "group".equals(xmlPullParser.getName())) {
                             arrayDeque.pop();
                         }
                     }
                     eventType = xmlPullParser.next();
-                    depth = i10;
+                    depth = i9;
                 }
                 if (!z11) {
                     this.c = a(nVar.c, nVar.d);

@@ -6,12 +6,12 @@ import h3.t1;
 import java.util.Collections;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class s implements h {
     public final String a;
-    public final d5.z b;
-    public final d5.y c;
+    public final d5.y b;
+    public final d5.x c;
     public m3.w d;
     public String e;
     public t0 f;
@@ -33,10 +33,10 @@ public final class s implements h {
 
     public s(String str) {
         this.a = str;
-        d5.z zVar = new d5.z(1024);
-        this.b = zVar;
-        byte[] bArr = zVar.a;
-        this.c = new d5.y(bArr, bArr.length);
+        d5.y yVar = new d5.y(1024);
+        this.b = yVar;
+        byte[] bArr = yVar.a;
+        this.c = new d5.x(bArr, bArr.length);
         this.k = -9223372036854775807L;
     }
 
@@ -48,68 +48,68 @@ public final class s implements h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(d5.z zVar) {
-        int i10;
+    public final void g(d5.y yVar) {
+        int i9;
         boolean h;
         d5.a.j(this.d);
-        while (zVar.a() > 0) {
-            int i11 = this.g;
-            if (i11 != 0) {
-                if (i11 != 1) {
-                    d5.z zVar2 = this.b;
-                    d5.y yVar = this.c;
-                    if (i11 == 2) {
-                        int r10 = ((this.j & (-225)) << 8) | zVar.r();
+        while (yVar.a() > 0) {
+            int i10 = this.g;
+            if (i10 != 0) {
+                if (i10 != 1) {
+                    d5.y yVar2 = this.b;
+                    d5.x xVar = this.c;
+                    if (i10 == 2) {
+                        int r10 = ((this.j & (-225)) << 8) | yVar.r();
                         this.i = r10;
-                        if (r10 > zVar2.a.length) {
-                            zVar2.z(r10);
-                            byte[] bArr = zVar2.a;
-                            yVar.getClass();
-                            yVar.n(bArr.length, bArr);
+                        if (r10 > yVar2.a.length) {
+                            yVar2.z(r10);
+                            byte[] bArr = yVar2.a;
+                            xVar.getClass();
+                            xVar.n(bArr.length, bArr);
                         }
                         this.h = 0;
                         this.g = 3;
                     } else {
-                        if (i11 != 3) {
+                        if (i10 != 3) {
                             throw new IllegalStateException();
                         }
-                        int min = Math.min(zVar.a(), this.i - this.h);
-                        zVar.c(this.h, min, yVar.b);
-                        int i12 = this.h + min;
-                        this.h = i12;
-                        if (i12 == this.i) {
-                            yVar.p(0);
-                            if (!yVar.h()) {
+                        int min = Math.min(yVar.a(), this.i - this.h);
+                        yVar.c(this.h, min, xVar.b);
+                        int i11 = this.h + min;
+                        this.h = i11;
+                        if (i11 == this.i) {
+                            xVar.p(0);
+                            if (!xVar.h()) {
                                 this.l = true;
-                                int i13 = yVar.i(1);
-                                int i14 = i13 == 1 ? yVar.i(1) : 0;
-                                this.m = i14;
-                                if (i14 != 0) {
+                                int i12 = xVar.i(1);
+                                int i13 = i12 == 1 ? xVar.i(1) : 0;
+                                this.m = i13;
+                                if (i13 != 0) {
                                     throw t1.a(null, null);
                                 }
-                                if (i13 == 1) {
-                                    yVar.i((yVar.i(2) + 1) * 8);
+                                if (i12 == 1) {
+                                    xVar.i((xVar.i(2) + 1) * 8);
                                 }
-                                if (!yVar.h()) {
+                                if (!xVar.h()) {
                                     throw t1.a(null, null);
                                 }
-                                this.n = yVar.i(6);
-                                int i15 = yVar.i(4);
-                                int i16 = yVar.i(3);
-                                if (i15 != 0 || i16 != 0) {
+                                this.n = xVar.i(6);
+                                int i14 = xVar.i(4);
+                                int i15 = xVar.i(3);
+                                if (i14 != 0 || i15 != 0) {
                                     throw t1.a(null, null);
                                 }
-                                if (i13 == 0) {
-                                    int g10 = yVar.g();
-                                    int b10 = yVar.b();
-                                    j3.a h10 = j3.b.h(yVar, true);
+                                if (i12 == 0) {
+                                    int g10 = xVar.g();
+                                    int b10 = xVar.b();
+                                    j3.a h10 = j3.b.h(xVar, true);
                                     this.u = h10.c;
                                     this.r = h10.a;
                                     this.t = h10.b;
-                                    int b11 = b10 - yVar.b();
-                                    yVar.p(g10);
+                                    int b11 = b10 - xVar.b();
+                                    xVar.p(g10);
                                     byte[] bArr2 = new byte[(b11 + 7) / 8];
-                                    yVar.j(b11, bArr2);
+                                    xVar.j(b11, bArr2);
                                     s0 s0Var = new s0();
                                     s0Var.a = this.e;
                                     s0Var.o = MediaController.AUDIO_MIME_TYPE;
@@ -125,42 +125,42 @@ public final class s implements h {
                                         this.d.c(t0Var);
                                     }
                                 } else {
-                                    int b12 = yVar.b();
-                                    j3.a h11 = j3.b.h(yVar, true);
+                                    int b12 = xVar.b();
+                                    j3.a h11 = j3.b.h(xVar, true);
                                     this.u = h11.c;
                                     this.r = h11.a;
                                     this.t = h11.b;
-                                    yVar.s(yVar.i((yVar.i(2) + 1) * 8) - (b12 - yVar.b()));
+                                    xVar.s(xVar.i((xVar.i(2) + 1) * 8) - (b12 - xVar.b()));
                                 }
-                                int i17 = yVar.i(3);
-                                this.o = i17;
-                                if (i17 == 0) {
-                                    yVar.s(8);
-                                } else if (i17 == 1) {
-                                    yVar.s(9);
-                                } else if (i17 == 3 || i17 == 4 || i17 == 5) {
-                                    yVar.s(6);
+                                int i16 = xVar.i(3);
+                                this.o = i16;
+                                if (i16 == 0) {
+                                    xVar.s(8);
+                                } else if (i16 == 1) {
+                                    xVar.s(9);
+                                } else if (i16 == 3 || i16 == 4 || i16 == 5) {
+                                    xVar.s(6);
                                 } else {
-                                    if (i17 != 6 && i17 != 7) {
+                                    if (i16 != 6 && i16 != 7) {
                                         throw new IllegalStateException();
                                     }
-                                    yVar.s(1);
+                                    xVar.s(1);
                                 }
-                                boolean h12 = yVar.h();
+                                boolean h12 = xVar.h();
                                 this.p = h12;
                                 this.q = 0L;
                                 if (h12) {
-                                    if (i13 == 1) {
-                                        this.q = yVar.i((yVar.i(2) + 1) * 8);
+                                    if (i12 == 1) {
+                                        this.q = xVar.i((xVar.i(2) + 1) * 8);
                                     } else {
                                         do {
-                                            h = yVar.h();
-                                            this.q = (this.q << 8) + yVar.i(8);
+                                            h = xVar.h();
+                                            this.q = (this.q << 8) + xVar.i(8);
                                         } while (h);
                                     }
                                 }
-                                if (yVar.h()) {
-                                    yVar.s(8);
+                                if (xVar.h()) {
+                                    xVar.s(8);
                                 }
                             }
                             if (this.m != 0) {
@@ -172,26 +172,26 @@ public final class s implements h {
                             if (this.o != 0) {
                                 throw t1.a(null, null);
                             }
-                            int i18 = 0;
+                            int i17 = 0;
                             do {
-                                i10 = yVar.i(8);
-                                i18 += i10;
-                            } while (i10 == 255);
-                            int g11 = yVar.g();
+                                i9 = xVar.i(8);
+                                i17 += i9;
+                            } while (i9 == 255);
+                            int g11 = xVar.g();
                             if ((g11 & 7) == 0) {
-                                zVar2.C(g11 >> 3);
+                                yVar2.C(g11 >> 3);
                             } else {
-                                yVar.j(i18 * 8, zVar2.a);
-                                zVar2.C(0);
+                                xVar.j(i17 * 8, yVar2.a);
+                                yVar2.C(0);
                             }
-                            this.d.a(i18, zVar2);
+                            this.d.a(i17, yVar2);
                             long j10 = this.k;
                             if (j10 != -9223372036854775807L) {
-                                this.d.e(j10, 1, i18, 0, null);
+                                this.d.e(j10, 1, i17, 0, null);
                                 this.k += this.s;
                             }
                             if (this.p) {
-                                yVar.s((int) this.q);
+                                xVar.s((int) this.q);
                             }
                             this.g = 0;
                         } else {
@@ -199,7 +199,7 @@ public final class s implements h {
                         }
                     }
                 } else {
-                    int r11 = zVar.r();
+                    int r11 = yVar.r();
                     if ((r11 & 224) == 224) {
                         this.j = r11;
                         this.g = 2;
@@ -207,36 +207,36 @@ public final class s implements h {
                         this.g = 0;
                     }
                 }
-            } else if (zVar.r() == 86) {
+            } else if (yVar.r() == 86) {
                 this.g = 1;
             }
         }
     }
 
     @Override // w3.h
-    public final void c() {
+    public final void h() {
         this.g = 0;
         this.k = -9223372036854775807L;
         this.l = false;
     }
 
     @Override // w3.h
-    public final void e(m3.m mVar, e0 e0Var) {
-        e0Var.a();
-        e0Var.b();
-        this.d = mVar.C(e0Var.d, 1);
-        e0Var.b();
-        this.e = e0Var.e;
+    public final void j(m3.m mVar, d0 d0Var) {
+        d0Var.a();
+        d0Var.b();
+        this.d = mVar.I(d0Var.d, 1);
+        d0Var.b();
+        this.e = d0Var.e;
     }
 
     @Override // w3.h
-    public final void f(int i10, long j10) {
+    public final void k(int i9, long j10) {
         if (j10 != -9223372036854775807L) {
             this.k = j10;
         }
     }
 
     @Override // w3.h
-    public final void d() {
+    public final void i() {
     }
 }

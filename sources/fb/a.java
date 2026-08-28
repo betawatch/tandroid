@@ -1,28 +1,64 @@
 package fb;
 
-import af.h;
-import android.util.Log;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.mlkit.vision.common.internal.MobileVisionBase;
+import a5.m;
+import java.util.Arrays;
+import x5.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a implements OnFailureListener, z8.d {
-    public static final a a = new a();
-    public static final /* synthetic */ a b = new a();
-    public static final /* synthetic */ a c = new a();
+public final class a {
+    public final String a;
+    public final float b;
+    public final int c;
+    public final String d;
 
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception exc) {
-        c9.b bVar = MobileVisionBase.e;
-        if (Log.isLoggable(bVar.b, 6)) {
-            String str = bVar.c;
-            Log.e("MobileVisionBase", str != null ? str.concat("Error preloading model resource") : "Error preloading model resource", exc);
-        }
+    public a(float f10, int i9, String str, String str2) {
+        int i10 = i7.b.a;
+        this.a = str == null ? "" : str;
+        this.b = f10;
+        this.c = i9;
+        this.d = str2;
     }
 
-    @Override // z8.d
-    public Object u0(h hVar) {
-        return new c(hVar.y(b.class));
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof a)) {
+            return false;
+        }
+        a aVar = (a) obj;
+        return l.l(this.a, aVar.a) && Float.compare(this.b, aVar.b) == 0 && this.c == aVar.c && l.l(this.d, aVar.d);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, Float.valueOf(this.b), Integer.valueOf(this.c), this.d});
+    }
+
+    public final String toString() {
+        m mVar = new m(a.class.getSimpleName(), 26);
+        m mVar2 = new m(25, false);
+        ((m) mVar.d).d = mVar2;
+        mVar.d = mVar2;
+        mVar2.c = this.a;
+        mVar2.b = "text";
+        String valueOf = String.valueOf(this.b);
+        boolean z10 = false;
+        i7.a aVar = new i7.a(25, z10);
+        ((m) mVar.d).d = aVar;
+        mVar.d = aVar;
+        aVar.c = valueOf;
+        aVar.b = "confidence";
+        String valueOf2 = String.valueOf(this.c);
+        i7.a aVar2 = new i7.a(25, z10);
+        ((m) mVar.d).d = aVar2;
+        aVar2.c = valueOf2;
+        aVar2.b = "index";
+        m mVar3 = new m(25, z10);
+        aVar2.d = mVar3;
+        mVar.d = mVar3;
+        mVar3.c = this.d;
+        mVar3.b = "mid";
+        return mVar.toString();
     }
 }

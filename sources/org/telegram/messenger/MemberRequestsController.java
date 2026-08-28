@@ -7,30 +7,30 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class MemberRequestsController extends BaseController {
     private static final MemberRequestsController[] instances = new MemberRequestsController[4];
     private final LongSparseArray<TLRPC.TL_messages_chatInviteImporters> firstImportersCache;
 
-    public MemberRequestsController(int i10) {
-        super(i10);
+    public MemberRequestsController(int i9) {
+        super(i9);
         this.firstImportersCache = new LongSparseArray<>();
     }
 
-    public static MemberRequestsController getInstance(int i10) {
+    public static MemberRequestsController getInstance(int i9) {
         MemberRequestsController memberRequestsController;
         MemberRequestsController[] memberRequestsControllerArr = instances;
-        MemberRequestsController memberRequestsController2 = memberRequestsControllerArr[i10];
+        MemberRequestsController memberRequestsController2 = memberRequestsControllerArr[i9];
         if (memberRequestsController2 != null) {
             return memberRequestsController2;
         }
         synchronized (MemberRequestsController.class) {
             try {
-                memberRequestsController = memberRequestsControllerArr[i10];
+                memberRequestsController = memberRequestsControllerArr[i9];
                 if (memberRequestsController == null) {
-                    memberRequestsController = new MemberRequestsController(i10);
-                    memberRequestsControllerArr[i10] = memberRequestsController;
+                    memberRequestsController = new MemberRequestsController(i9);
+                    memberRequestsControllerArr[i9] = memberRequestsController;
                 }
             } catch (Throwable th) {
                 throw th;
@@ -52,7 +52,7 @@ public class MemberRequestsController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$getImporters$1(TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z10, long j10, RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new sk(j10, this, requestDelegate, tLObject, tL_chatInviteImporter, tL_error, z10));
+        AndroidUtilities.runOnUIThread(new nk(j10, this, requestDelegate, tLObject, tL_chatInviteImporter, tL_error, z10));
     }
 
     public TLRPC.TL_messages_chatInviteImporters getCachedImporters(long j10) {
@@ -75,7 +75,7 @@ public class MemberRequestsController extends BaseController {
             tL_messages_getChatInviteImporters.offset_user = getMessagesController().getInputUser(longSparseArray.get(tL_chatInviteImporter.user_id));
             tL_messages_getChatInviteImporters.offset_date = tL_chatInviteImporter.date;
         }
-        return getConnectionsManager().sendRequest(tL_messages_getChatInviteImporters, new oa(this, tL_chatInviteImporter, isEmpty, j10, requestDelegate, 3));
+        return getConnectionsManager().sendRequest(tL_messages_getChatInviteImporters, new ka(this, tL_chatInviteImporter, isEmpty, j10, requestDelegate, 3));
     }
 
     public void onPendingRequestsUpdated(TL_update.TL_updatePendingJoinRequests tL_updatePendingJoinRequests) {
@@ -88,9 +88,9 @@ public class MemberRequestsController extends BaseController {
             chatFull.flags |= 131072;
             getMessagesStorage().updateChatInfo(chatFull, false);
             NotificationCenter notificationCenter = getNotificationCenter();
-            int i10 = NotificationCenter.chatInfoDidLoad;
+            int i9 = NotificationCenter.chatInfoDidLoad;
             Boolean bool = Boolean.FALSE;
-            notificationCenter.lambda$postNotificationNameOnUIThread$1(i10, chatFull, 0, bool, bool);
+            notificationCenter.lambda$postNotificationNameOnUIThread$1(i9, chatFull, 0, bool, bool);
         }
     }
 }

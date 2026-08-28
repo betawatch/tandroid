@@ -1,6 +1,6 @@
 package c2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i extends r {
     public final String a;
@@ -12,22 +12,22 @@ public final class i extends r {
     }
 
     @Override // c2.r
-    public final void f(int i10) {
+    public final void f(int i9) {
         h hVar;
         String str = this.a;
         if (str == null || (hVar = this.b) == null) {
             return;
         }
-        hVar.q(i10, str);
+        hVar.q(i9, str);
     }
 
     @Override // c2.r
-    public final void i(int i10) {
+    public final void i(int i9) {
         h hVar;
         String str = this.a;
         if (str == null || (hVar = this.b) == null) {
             return;
         }
-        hVar.r(i10, str);
+        hVar.r(i9, str);
     }
 }

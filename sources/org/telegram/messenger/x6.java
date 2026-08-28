@@ -1,40 +1,45 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x6 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
-    public final /* synthetic */ SharedPreferences e;
-    public final /* synthetic */ boolean[] f;
+    public final /* synthetic */ TLRPC.messages_Messages c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ ArrayList f;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int n;
+    public final /* synthetic */ boolean r;
+    public final /* synthetic */ int s;
+    public final /* synthetic */ int v;
 
-    public /* synthetic */ x6(MediaDataController mediaDataController, TLRPC.TL_error tL_error, TLObject tLObject, SharedPreferences sharedPreferences, boolean[] zArr, int i10) {
-        this.a = i10;
+    public /* synthetic */ x6(MediaDataController mediaDataController, TLRPC.messages_Messages messages_messages, int i9, long j10, ArrayList arrayList, int i10, int i11, boolean z10, int i12, int i13, int i14) {
+        this.a = i14;
         this.b = mediaDataController;
-        this.c = tL_error;
-        this.d = tLObject;
-        this.e = sharedPreferences;
-        this.f = zArr;
+        this.c = messages_messages;
+        this.d = i9;
+        this.e = j10;
+        this.f = arrayList;
+        this.h = i10;
+        this.n = i11;
+        this.r = z10;
+        this.s = i12;
+        this.v = i13;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                SharedPreferences sharedPreferences = this.e;
-                boolean[] zArr = this.f;
-                this.b.lambda$loadRecentAndTopReactions$237(this.c, this.d, sharedPreferences, zArr);
+                this.b.lambda$processLoadedMedia$133(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.v);
                 break;
             default:
-                SharedPreferences sharedPreferences2 = this.e;
-                boolean[] zArr2 = this.f;
-                this.b.lambda$loadRecentAndTopReactions$235(this.c, this.d, sharedPreferences2, zArr2);
+                this.b.lambda$processLoadedMedia$134(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.v);
                 break;
         }
     }

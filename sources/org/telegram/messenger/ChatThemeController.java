@@ -29,9 +29,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.un;
+import org.telegram.ui.tn;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class ChatThemeController extends BaseController {
     public static final int THEME_LIST_WITH_DEFAULT = 1;
@@ -41,7 +41,7 @@ public class ChatThemeController extends BaseController {
     private static final ChatThemeController[] instances = new ChatThemeController[4];
     private final Map<String, org.telegram.ui.ActionBar.b4> allChatGiftThemes;
     private List<org.telegram.ui.ActionBar.b4> allChatThemes;
-    private final LongSparseArray<of.b> dialogEmoticonsMap;
+    private final LongSparseArray<nf.b> dialogEmoticonsMap;
     private final ThemeList giftsThemeList;
     private volatile long lastReloadTimeMs;
     private final long reloadTimeoutMs;
@@ -50,7 +50,7 @@ public class ChatThemeController extends BaseController {
     private final Map<String, Long> usedGiftThemesBySlug;
     private final Map<Long, String> usedGiftThemesByUsers;
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class ThemeList {
         private boolean completed;
         private long hash;
@@ -62,8 +62,8 @@ public class ChatThemeController extends BaseController {
         }
     }
 
-    private ChatThemeController(int i10) {
-        super(i10);
+    private ChatThemeController(int i9) {
+        super(i9);
         this.reloadTimeoutMs = 7200000L;
         this.themeIdWallpaperThumbMap = new HashMap<>();
         this.allChatGiftThemes = new HashMap();
@@ -83,7 +83,7 @@ public class ChatThemeController extends BaseController {
             if (str != null) {
                 return TextUtils.equals(wallPaper2.uploadingImage, str);
             }
-            if (wallPaper.id == wallPaper2.id && TextUtils.equals(un.e(wallPaper.settings), un.e(wallPaper2.settings)) && TextUtils.equals(getWallpaperEmoticon(wallPaper), getWallpaperEmoticon(wallPaper2))) {
+            if (wallPaper.id == wallPaper2.id && TextUtils.equals(tn.e(wallPaper.settings), tn.e(wallPaper2.settings)) && TextUtils.equals(getWallpaperEmoticon(wallPaper), getWallpaperEmoticon(wallPaper2))) {
                 return true;
             }
         }
@@ -92,10 +92,10 @@ public class ChatThemeController extends BaseController {
 
     private List<org.telegram.ui.ActionBar.b4> getAllChatThemesFromPrefs() {
         SharedPreferences sharedPreferences = getSharedPreferences();
-        int i10 = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
-        ArrayList arrayList = new ArrayList(i10);
-        for (int i11 = 0; i11 < i10; i11++) {
-            SerializedData serializedData = new SerializedData(Utilities.hexToBytes(sharedPreferences.getString("theme_" + i11, "")));
+        int i9 = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
+        ArrayList arrayList = new ArrayList(i9);
+        for (int i10 = 0; i10 < i9; i10++) {
+            SerializedData serializedData = new SerializedData(Utilities.hexToBytes(sharedPreferences.getString("theme_" + i10, "")));
             try {
                 TLRPC.TL_theme TLdeserialize = TLRPC.Theme.TLdeserialize(serializedData, serializedData.readInt32(true), true);
                 if (TLdeserialize != null) {
@@ -112,19 +112,19 @@ public class ChatThemeController extends BaseController {
         return ApplicationLoader.applicationContext.getSharedPreferences("chatthemeconfig_emoji", 0);
     }
 
-    public static ChatThemeController getInstance(int i10) {
+    public static ChatThemeController getInstance(int i9) {
         ChatThemeController chatThemeController;
         ChatThemeController[] chatThemeControllerArr = instances;
-        ChatThemeController chatThemeController2 = chatThemeControllerArr[i10];
+        ChatThemeController chatThemeController2 = chatThemeControllerArr[i9];
         if (chatThemeController2 != null) {
             return chatThemeController2;
         }
         synchronized (ChatThemeController.class) {
             try {
-                chatThemeController = chatThemeControllerArr[i10];
+                chatThemeController = chatThemeControllerArr[i9];
                 if (chatThemeController == null) {
-                    chatThemeController = new ChatThemeController(i10);
-                    chatThemeControllerArr[i10] = chatThemeController;
+                    chatThemeController = new ChatThemeController(i9);
+                    chatThemeControllerArr[i9] = chatThemeController;
                 }
             } catch (Throwable th) {
                 throw th;
@@ -147,7 +147,7 @@ public class ChatThemeController extends BaseController {
         if (this.themesHash == 0) {
             resultCallback.onComplete(null);
         } else {
-            chatThemeQueue.postRunnable(new e3(14, getPatternFile(j10), resultCallback));
+            chatThemeQueue.postRunnable(new c3(14, getPatternFile(j10), resultCallback));
         }
     }
 
@@ -166,11 +166,11 @@ public class ChatThemeController extends BaseController {
         try {
             this.themesHash = sharedPreferences.getLong("hash", 0L);
             this.lastReloadTimeMs = sharedPreferences.getLong("lastReload", 0L);
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
         this.allChatThemes = getAllChatThemesFromPrefs();
-        getMessagesStorage().loadGiftChatTheme(new z0(this, 0));
+        getMessagesStorage().loadGiftChatTheme(new a1(this, 0));
         preloadSticker("❌");
         if (this.allChatThemes.isEmpty()) {
             return;
@@ -193,11 +193,11 @@ public class ChatThemeController extends BaseController {
             if (file.exists()) {
                 bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
             }
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
         if (resultCallback != null) {
-            AndroidUtilities.runOnUIThread(new e3(15, resultCallback, bitmap));
+            AndroidUtilities.runOnUIThread(new c3(15, resultCallback, bitmap));
         }
     }
 
@@ -215,7 +215,7 @@ public class ChatThemeController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public static void lambda$loadWallpaperBitmap$9(Utilities.Callback callback, Bitmap bitmap) {
         if (bitmap != null) {
-            callback.run(new mf.a(bitmap, 0, null));
+            callback.run(new lf.a(bitmap, 0, null));
         } else {
             callback.run(null);
         }
@@ -237,24 +237,24 @@ public class ChatThemeController extends BaseController {
                         GZIPInputStream gZIPInputStream = new GZIPInputStream(fileInputStream);
                         try {
                             ArrayList arrayList2 = new ArrayList(1);
-                            bitmap = h7.a0.d(gZIPInputStream, arrayList2);
+                            bitmap = g7.y.d(gZIPInputStream, arrayList2);
                             try {
                                 int size = arrayList2.size();
                                 arrayList = null;
-                                int i10 = 0;
-                                while (i10 < size) {
+                                int i9 = 0;
+                                while (i9 < size) {
                                     try {
-                                        Object obj = arrayList2.get(i10);
-                                        i10++;
+                                        Object obj = arrayList2.get(i9);
+                                        i9++;
                                         String str = (String) obj;
                                         if (str.startsWith("patterns = ")) {
                                             byte[] hexToBytes = Utilities.hexToBytes(str.substring(11));
                                             int length = hexToBytes.length / 52;
                                             SerializedData serializedData = new SerializedData(hexToBytes);
                                             ArrayList arrayList3 = new ArrayList(length);
-                                            for (int i11 = 0; i11 < length; i11++) {
+                                            for (int i10 = 0; i10 < length; i10++) {
                                                 try {
-                                                    arrayList3.add(mf.c.a(serializedData));
+                                                    arrayList3.add(lf.c.a(serializedData));
                                                 } catch (Throwable th) {
                                                     th = th;
                                                     arrayList = arrayList3;
@@ -300,19 +300,19 @@ public class ChatThemeController extends BaseController {
                     fileInputStream.close();
                     throw th;
                 }
-            } catch (Exception e9) {
-                e = e9;
+            } catch (Exception e10) {
+                e = e10;
                 FileLog.e(e);
-                AndroidUtilities.runOnUIThread(new e3(18, callback, bitmap != null ? new mf.a(bitmap, 1, arrayList) : null));
+                AndroidUtilities.runOnUIThread(new c3(18, callback, bitmap != null ? new lf.a(bitmap, 1, arrayList) : null));
             }
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e11) {
+            e = e11;
             bitmap = null;
             arrayList = null;
             FileLog.e(e);
-            AndroidUtilities.runOnUIThread(new e3(18, callback, bitmap != null ? new mf.a(bitmap, 1, arrayList) : null));
+            AndroidUtilities.runOnUIThread(new c3(18, callback, bitmap != null ? new lf.a(bitmap, 1, arrayList) : null));
         }
-        AndroidUtilities.runOnUIThread(new e3(18, callback, bitmap != null ? new mf.a(bitmap, 1, arrayList) : null));
+        AndroidUtilities.runOnUIThread(new c3(18, callback, bitmap != null ? new lf.a(bitmap, 1, arrayList) : null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -330,9 +330,9 @@ public class ChatThemeController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processUpdate$14(TLRPC.ChatFull chatFull) {
         NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
-        int i10 = NotificationCenter.chatInfoDidLoad;
+        int i9 = NotificationCenter.chatInfoDidLoad;
         Boolean bool = Boolean.FALSE;
-        notificationCenter.lambda$postNotificationNameOnUIThread$1(i10, chatFull, 0, bool, bool);
+        notificationCenter.lambda$postNotificationNameOnUIThread$1(i9, chatFull, 0, bool, bool);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -360,12 +360,12 @@ public class ChatThemeController extends BaseController {
             edit.putLong("lastReload", this.lastReloadTimeMs);
             edit.putInt(NotificationBadge.NewHtcHomeBadger.COUNT, tL_themes.themes.size());
             ArrayList arrayList = new ArrayList(tL_themes.themes.size());
-            for (int i10 = 0; i10 < tL_themes.themes.size(); i10++) {
-                TLRPC.TL_theme tL_theme = tL_themes.themes.get(i10);
+            for (int i9 = 0; i9 < tL_themes.themes.size(); i9++) {
+                TLRPC.TL_theme tL_theme = tL_themes.themes.get(i9);
                 Emoji.preloadEmoji(tL_theme.emoticon);
                 SerializedData serializedData = new SerializedData(tL_theme.getObjectSize());
                 tL_theme.serializeToStream(serializedData);
-                edit.putString("theme_" + i10, Utilities.bytesToHex(serializedData.toByteArray()));
+                edit.putString("theme_" + i9, Utilities.bytesToHex(serializedData.toByteArray()));
                 org.telegram.ui.ActionBar.b4 b4Var = new org.telegram.ui.ActionBar.b4(this.currentAccount, tL_theme);
                 b4Var.p(0, null);
                 b4Var.p(1, null);
@@ -377,10 +377,10 @@ public class ChatThemeController extends BaseController {
             list = arrayList;
         } else {
             if (!(themes instanceof TL_account.TL_themesNotModified)) {
-                AndroidUtilities.runOnUIThread(new y0(resultCallback, tL_error, 0));
+                AndroidUtilities.runOnUIThread(new z0(resultCallback, tL_error, 0));
                 list = null;
                 if (z11) {
-                    AndroidUtilities.runOnUIThread(new qj(this, list, resultCallback, z10, 3));
+                    AndroidUtilities.runOnUIThread(new mj(this, list, resultCallback, z10, 3));
                     return;
                 }
                 return;
@@ -413,7 +413,7 @@ public class ChatThemeController extends BaseController {
             }
             org.telegram.ui.ActionBar.b4 b4Var = (org.telegram.ui.ActionBar.b4) it.next();
             Map<String, org.telegram.ui.ActionBar.b4> map = this.allChatGiftThemes;
-            of.b bVar = b4Var.c;
+            nf.b bVar = b4Var.c;
             if (bVar != null && (str = bVar.b) == null) {
                 str = bVar.a;
             }
@@ -437,13 +437,13 @@ public class ChatThemeController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$requestNextChatThemes$21(ResultCallback resultCallback, TL_account.ChatThemes chatThemes, TLRPC.TL_error tL_error) {
         if (tL_error != null) {
-            AndroidUtilities.runOnUIThread(new y0(resultCallback, tL_error, 1));
+            AndroidUtilities.runOnUIThread(new z0(resultCallback, tL_error, 1));
             return;
         }
         ArrayList arrayList = new ArrayList();
         if (!(chatThemes instanceof TL_account.Tl_chatThemes)) {
             if (chatThemes instanceof TL_account.TL_chatThemesNotModified) {
-                AndroidUtilities.runOnUIThread(new e3(19, this, resultCallback));
+                AndroidUtilities.runOnUIThread(new c3(19, this, resultCallback));
                 return;
             }
             return;
@@ -455,25 +455,25 @@ public class ChatThemeController extends BaseController {
         getMessagesController().putChats(tl_chatThemes.chats, false);
         ArrayList<TLRPC.ChatTheme> arrayList2 = tl_chatThemes.themes;
         int size = arrayList2.size();
-        int i10 = 0;
-        while (i10 < size) {
-            TLRPC.ChatTheme chatTheme = arrayList2.get(i10);
-            i10++;
+        int i9 = 0;
+        while (i9 < size) {
+            TLRPC.ChatTheme chatTheme = arrayList2.get(i9);
+            i9++;
             TLRPC.ChatTheme chatTheme2 = chatTheme;
             if (chatTheme2 instanceof TLRPC.TL_chatThemeUniqueGift) {
                 arrayList.add((TLRPC.TL_chatThemeUniqueGift) chatTheme2);
             }
         }
         ArrayList arrayList3 = new ArrayList(arrayList.size());
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            org.telegram.ui.ActionBar.b4 b4Var = new org.telegram.ui.ActionBar.b4(this.currentAccount, (TLRPC.TL_chatThemeUniqueGift) arrayList.get(i11));
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            org.telegram.ui.ActionBar.b4 b4Var = new org.telegram.ui.ActionBar.b4(this.currentAccount, (TLRPC.TL_chatThemeUniqueGift) arrayList.get(i10));
             b4Var.p(0, null);
             b4Var.p(1, null);
             b4Var.o(0, null);
             b4Var.o(1, null);
             arrayList3.add(b4Var);
         }
-        AndroidUtilities.runOnUIThread(new c5(this, tl_chatThemes, arrayList3, arrayList, resultCallback, 3));
+        AndroidUtilities.runOnUIThread(new a5(this, tl_chatThemes, arrayList3, arrayList, resultCallback, 3));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -482,8 +482,8 @@ public class ChatThemeController extends BaseController {
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             bitmap.compress(Bitmap.CompressFormat.PNG, 87, fileOutputStream);
             fileOutputStream.close();
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
     }
 
@@ -505,7 +505,7 @@ public class ChatThemeController extends BaseController {
                             SerializedData serializedData = new SerializedData(list.size() * 52);
                             Iterator it = list.iterator();
                             while (it.hasNext()) {
-                                mf.c cVar = (mf.c) it.next();
+                                lf.c cVar = (lf.c) it.next();
                                 RectF rectF = cVar.a;
                                 serializedData.writeFloat(rectF.left);
                                 serializedData.writeFloat(rectF.top);
@@ -513,17 +513,17 @@ public class ChatThemeController extends BaseController {
                                 serializedData.writeFloat(rectF.height());
                                 float[] fArr = new float[9];
                                 cVar.b.getValues(fArr);
-                                for (int i10 = 0; i10 < 9; i10++) {
-                                    serializedData.writeFloat(fArr[i10]);
+                                for (int i9 = 0; i9 < 9; i9++) {
+                                    serializedData.writeFloat(fArr[i9]);
                                 }
                             }
                             singletonList = Collections.singletonList("patterns = " + Utilities.bytesToHex(serializedData.toByteArray()));
                             serializedData.cleanup();
                             if (bitmap.getConfig() != Bitmap.Config.ALPHA_8) {
-                                h7.a0.e(bitmap, gZIPOutputStream, singletonList);
+                                g7.y.e(bitmap, gZIPOutputStream, singletonList);
                             } else {
                                 Bitmap extractAlpha = bitmap.extractAlpha();
-                                h7.a0.e(extractAlpha, gZIPOutputStream, singletonList);
+                                g7.y.e(extractAlpha, gZIPOutputStream, singletonList);
                                 extractAlpha.recycle();
                             }
                             gZIPOutputStream.close();
@@ -539,8 +539,8 @@ public class ChatThemeController extends BaseController {
                 fileOutputStream.close();
             } finally {
             }
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
     }
 
@@ -571,13 +571,13 @@ public class ChatThemeController extends BaseController {
             } else if (chatFull != null) {
                 wallPaper = chatFull.wallpaper;
             }
-            int i10 = 0;
+            int i9 = 0;
             while (true) {
-                if (i10 >= updates.updates.size()) {
+                if (i9 >= updates.updates.size()) {
                     break;
                 }
-                if (updates.updates.get(i10) instanceof TL_update.TL_updateNewMessage) {
-                    TLRPC.MessageAction messageAction = ((TL_update.TL_updateNewMessage) updates.updates.get(i10)).message.action;
+                if (updates.updates.get(i9) instanceof TL_update.TL_updateNewMessage) {
+                    TLRPC.MessageAction messageAction = ((TL_update.TL_updateNewMessage) updates.updates.get(i9)).message.action;
                     if (messageAction instanceof TLRPC.TL_messageActionSetChatWallPaper) {
                         if (z10) {
                             TLRPC.TL_messageActionSetChatWallPaper tL_messageActionSetChatWallPaper = (TLRPC.TL_messageActionSetChatWallPaper) messageAction;
@@ -599,14 +599,14 @@ public class ChatThemeController extends BaseController {
                                 saveChatWallpaper(j10, wallPaper3);
                                 getMessagesStorage().updateChatInfo(chatFull, false);
                                 NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
-                                int i11 = NotificationCenter.chatInfoDidLoad;
+                                int i10 = NotificationCenter.chatInfoDidLoad;
                                 Boolean bool = Boolean.FALSE;
-                                notificationCenter.lambda$postNotificationNameOnUIThread$1(i11, chatFull, 0, bool, bool);
+                                notificationCenter.lambda$postNotificationNameOnUIThread$1(i10, chatFull, 0, bool, bool);
                             }
                         }
                     }
                 }
-                i10++;
+                i9++;
             }
             MessagesController.getInstance(this.currentAccount).processUpdateArray(updates.updates, updates.users, updates.chats, false, updates.date);
             if (runnable != null) {
@@ -618,13 +618,13 @@ public class ChatThemeController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setWallpaperToPeer$17(long j10, boolean z10, String str, Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new jd(this, tLObject, j10, z10, str, runnable));
+        AndroidUtilities.runOnUIThread(new fd(this, tLObject, j10, z10, str, runnable));
     }
 
-    private void loadWallpaperPatternBitmap(long j10, Utilities.Callback<mf.a> callback) {
+    private void loadWallpaperPatternBitmap(long j10, Utilities.Callback<lf.a> callback) {
         File filesDirFixed = ApplicationLoader.getFilesDirFixed("rasterized/wallpaper");
         Locale locale = Locale.US;
-        chatThemeQueue.postRunnable(new e3(17, new File(filesDirFixed, com.google.android.recaptcha.internal.a.m(j10, "pattern_", ".pgm.gz")), callback));
+        chatThemeQueue.postRunnable(new c3(17, new File(filesDirFixed, aa.d.n(j10, "pattern_", ".pgm.gz")), callback));
     }
 
     private void preloadSticker(String str) {
@@ -645,18 +645,18 @@ public class ChatThemeController extends BaseController {
             ConnectionsManager connectionsManager = getConnectionsManager();
             DispatchQueue dispatchQueue = chatThemeQueue;
             Objects.requireNonNull(dispatchQueue);
-            connectionsManager.sendRequestTyped(tl_getUniqueGiftChatThemes, new b1(dispatchQueue), new c1(0, this, resultCallback));
+            connectionsManager.sendRequestTyped(tl_getUniqueGiftChatThemes, new c1(dispatchQueue), new d1(0, this, resultCallback));
         }
     }
 
     private void saveWallpaperBitmap(Bitmap bitmap, long j10) {
-        chatThemeQueue.postRunnable(new e3(20, getPatternFile(j10), bitmap));
+        chatThemeQueue.postRunnable(new c3(20, getPatternFile(j10), bitmap));
     }
 
-    private void saveWallpaperPatternBitmap(Bitmap bitmap, List<mf.c> list, long j10) {
+    private void saveWallpaperPatternBitmap(Bitmap bitmap, List<lf.c> list, long j10) {
         File filesDirFixed = ApplicationLoader.getFilesDirFixed("rasterized/wallpaper");
         Locale locale = Locale.US;
-        chatThemeQueue.postRunnable(new f0(new File(filesDirFixed, com.google.android.recaptcha.internal.a.m(j10, "pattern_", ".pgm.gz")), list, bitmap, 11));
+        chatThemeQueue.postRunnable(new f0(new File(filesDirFixed, aa.d.n(j10, "pattern_", ".pgm.gz")), list, bitmap, 11));
     }
 
     private void setGiftThemeUser(String str, long j10) {
@@ -720,17 +720,17 @@ public class ChatThemeController extends BaseController {
     }
 
     public org.telegram.ui.ActionBar.b4 getDialogTheme(long j10) {
-        of.b bVar;
-        of.b bVar2 = this.dialogEmoticonsMap.get(j10);
+        nf.b bVar;
+        nf.b bVar2 = this.dialogEmoticonsMap.get(j10);
         if (bVar2 == null) {
             String string = getEmojiSharedPreferences().getString("chatTheme_" + this.currentAccount + "_" + j10, null);
             if (string != null) {
                 if (string.startsWith("gift_")) {
-                    bVar = new of.b(null, string.substring(5));
+                    bVar = new nf.b(null, string.substring(5));
                 } else if (string.startsWith("emoticon_")) {
-                    bVar = new of.b(string.substring(9), null);
+                    bVar = new nf.b(string.substring(9), null);
                 } else if (!TextUtils.isEmpty(string)) {
-                    bVar = new of.b(string, null);
+                    bVar = new nf.b(string, null);
                 }
                 bVar2 = bVar;
                 this.dialogEmoticonsMap.put(j10, bVar2);
@@ -765,11 +765,11 @@ public class ChatThemeController extends BaseController {
         return null;
     }
 
-    public List<org.telegram.ui.ActionBar.b4> getEmojiThemes(int i10) {
+    public List<org.telegram.ui.ActionBar.b4> getEmojiThemes(int i9) {
         List<org.telegram.ui.ActionBar.b4> list;
-        boolean hasFlag = TLObject.hasFlag(i10, 1);
-        boolean hasFlag2 = TLObject.hasFlag(i10, 2);
-        boolean hasFlag3 = TLObject.hasFlag(i10, 4);
+        boolean hasFlag = TLObject.hasFlag(i9, 1);
+        boolean hasFlag2 = TLObject.hasFlag(i9, 2);
+        boolean hasFlag3 = TLObject.hasFlag(i9, 4);
         ArrayList arrayList = new ArrayList();
         if (hasFlag3 && this.giftsThemeList.themes != null) {
             arrayList.addAll(this.giftsThemeList.themes);
@@ -777,11 +777,11 @@ public class ChatThemeController extends BaseController {
         if (hasFlag2 && (list = this.allChatThemes) != null) {
             arrayList.addAll(list);
         }
-        int i11 = 0;
+        int i10 = 0;
         if (hasFlag && (arrayList.isEmpty() || !((org.telegram.ui.ActionBar.b4) arrayList.get(0)).a)) {
             org.telegram.ui.ActionBar.b4 b4Var = new org.telegram.ui.ActionBar.b4(this.currentAccount);
             b4Var.e = "❌";
-            b4Var.c = of.b.d("❌");
+            b4Var.c = nf.b.d("❌");
             b4Var.d = TLRPC.ChatTheme.ofEmoticon("❌");
             b4Var.a = true;
             org.telegram.ui.ActionBar.a4 a4Var = new org.telegram.ui.ActionBar.a4();
@@ -793,9 +793,9 @@ public class ChatThemeController extends BaseController {
             arrayList.add(0, b4Var);
         }
         int size = arrayList.size();
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
             ((org.telegram.ui.ActionBar.b4) obj).l();
         }
         return arrayList;
@@ -809,7 +809,7 @@ public class ChatThemeController extends BaseController {
         return 0L;
     }
 
-    public org.telegram.ui.ActionBar.b4 getTheme(of.b bVar) {
+    public org.telegram.ui.ActionBar.b4 getTheme(nf.b bVar) {
         if (bVar == null) {
             return null;
         }
@@ -842,18 +842,18 @@ public class ChatThemeController extends BaseController {
         requestNextChatThemes(resultCallback);
     }
 
-    public void loadWallpaperBitmap(long j10, int i10, Utilities.Callback<mf.a> callback) {
-        if (i10 == 0) {
+    public void loadWallpaperBitmap(long j10, int i9, Utilities.Callback<lf.a> callback) {
+        if (i9 == 0) {
             getWallpaperBitmap(j10, new d(callback, 2));
-        } else if (i10 == 1) {
+        } else if (i9 == 1) {
             loadWallpaperPatternBitmap(j10, callback);
         }
     }
 
     public void preloadAllWallpaperImages(boolean z10) {
         for (org.telegram.ui.ActionBar.b4 b4Var : this.allChatThemes) {
-            long i10 = b4Var.i(z10 ? 1 : 0);
-            if (i10 != 0 && !getPatternFile(i10).exists()) {
+            long i9 = b4Var.i(z10 ? 1 : 0);
+            if (i9 != 0 && !getPatternFile(i9).exists()) {
                 b4Var.o(z10 ? 1 : 0, null);
             }
         }
@@ -861,8 +861,8 @@ public class ChatThemeController extends BaseController {
 
     public void preloadAllWallpaperThumbs(boolean z10) {
         for (org.telegram.ui.ActionBar.b4 b4Var : this.allChatThemes) {
-            long i10 = b4Var.i(z10 ? 1 : 0);
-            if (i10 != 0 && !this.themeIdWallpaperThumbMap.containsKey(Long.valueOf(i10))) {
+            long i9 = b4Var.i(z10 ? 1 : 0);
+            if (i9 != 0 && !this.themeIdWallpaperThumbMap.containsKey(Long.valueOf(i9))) {
                 b4Var.p(z10 ? 1 : 0, new d(this, 3));
             }
         }
@@ -884,7 +884,7 @@ public class ChatThemeController extends BaseController {
             }
             getMessagesStorage().updateChatInfo(chatFull, false);
             saveChatWallpaper(j10, chatFull.wallpaper);
-            AndroidUtilities.runOnUIThread(new e3(16, this, chatFull));
+            AndroidUtilities.runOnUIThread(new c3(16, this, chatFull));
             return;
         }
         TLRPC.UserFull userFull = getMessagesController().getUserFull(tL_updatePeerWallpaper.peer.user_id);
@@ -903,7 +903,7 @@ public class ChatThemeController extends BaseController {
         }
         getMessagesStorage().updateUserInfo(userFull, false);
         saveChatWallpaper(j11, userFull.wallpaper);
-        AndroidUtilities.runOnUIThread(new c4(this, j11, userFull, 3));
+        AndroidUtilities.runOnUIThread(new a4(this, j11, userFull, 3));
     }
 
     public void putThemeIfNeeded(TLRPC.ChatTheme chatTheme) {
@@ -931,7 +931,7 @@ public class ChatThemeController extends BaseController {
             ConnectionsManager connectionsManager = getConnectionsManager();
             DispatchQueue dispatchQueue = chatThemeQueue;
             Objects.requireNonNull(dispatchQueue);
-            connectionsManager.sendRequestTyped(getchatthemes, new b1(dispatchQueue), new Utilities.Callback2() { // from class: org.telegram.messenger.a1
+            connectionsManager.sendRequestTyped(getchatthemes, new c1(dispatchQueue), new Utilities.Callback2() { // from class: org.telegram.messenger.b1
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     ChatThemeController.this.lambda$requestAllChatThemes$3(resultCallback, z10, (TL_account.Themes) obj, (TLRPC.TL_error) obj2);
@@ -945,7 +945,7 @@ public class ChatThemeController extends BaseController {
         resultCallback.onComplete(getEmojiThemes((z10 ? 1 : 0) | 2));
     }
 
-    public void requestChatTheme(final of.b bVar, final ResultCallback<org.telegram.ui.ActionBar.b4> resultCallback) {
+    public void requestChatTheme(final nf.b bVar, final ResultCallback<org.telegram.ui.ActionBar.b4> resultCallback) {
         if (bVar != null) {
             String str = bVar.b;
             if (!bVar.b()) {
@@ -1004,10 +1004,10 @@ public class ChatThemeController extends BaseController {
     }
 
     public void setDialogTheme(long j10, TLRPC.ChatTheme chatTheme, boolean z10) {
-        setDialogTheme(j10, of.b.c(chatTheme), chatTheme, z10);
+        setDialogTheme(j10, nf.b.c(chatTheme), chatTheme, z10);
     }
 
-    public int setWallpaperToPeer(long j10, String str, org.telegram.ui.ActionBar.z5 z5Var, MessageObject messageObject, Runnable runnable) {
+    public int setWallpaperToPeer(long j10, String str, org.telegram.ui.ActionBar.y5 y5Var, MessageObject messageObject, Runnable runnable) {
         boolean z10;
         TLRPC.ChatFull chatFull;
         TLRPC.UserFull userFull;
@@ -1018,10 +1018,10 @@ public class ChatThemeController extends BaseController {
         } else {
             tL_messages_setChatWallPaper.peer = MessagesController.getInputPeer(MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10)));
         }
-        tL_messages_setChatWallPaper.for_both = z5Var.o;
+        tL_messages_setChatWallPaper.for_both = y5Var.o;
         if (messageObject == null || !(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionSetChatWallPaper)) {
             tL_messages_setChatWallPaper.flags |= 1;
-            tL_messages_setChatWallPaper.wallpaper = MessagesController.getInputWallpaper(z5Var);
+            tL_messages_setChatWallPaper.wallpaper = MessagesController.getInputWallpaper(y5Var);
             z10 = true;
         } else {
             tL_messages_setChatWallPaper.flags |= 2;
@@ -1040,14 +1040,14 @@ public class ChatThemeController extends BaseController {
             tL_wallPaper.document = wallPaper.document;
             TLRPC.TL_wallPaperSettings tL_wallPaperSettings = new TLRPC.TL_wallPaperSettings();
             tL_wallPaper.settings = tL_wallPaperSettings;
-            tL_wallPaperSettings.intensity = (int) (z5Var.k * 100.0f);
-            tL_wallPaperSettings.motion = z5Var.j;
-            tL_wallPaperSettings.blur = z5Var.i;
-            tL_wallPaperSettings.background_color = z5Var.d;
-            tL_wallPaperSettings.second_background_color = z5Var.e;
-            tL_wallPaperSettings.third_background_color = z5Var.f;
-            tL_wallPaperSettings.fourth_background_color = z5Var.g;
-            tL_wallPaperSettings.rotation = z5Var.h;
+            tL_wallPaperSettings.intensity = (int) (y5Var.k * 100.0f);
+            tL_wallPaperSettings.motion = y5Var.j;
+            tL_wallPaperSettings.blur = y5Var.i;
+            tL_wallPaperSettings.background_color = y5Var.d;
+            tL_wallPaperSettings.second_background_color = y5Var.e;
+            tL_wallPaperSettings.third_background_color = y5Var.f;
+            tL_wallPaperSettings.fourth_background_color = y5Var.g;
+            tL_wallPaperSettings.rotation = y5Var.h;
             tL_wallPaper.uploadingImage = str;
             TLRPC.WallPaper wallPaper2 = userFull != null ? userFull.wallpaper : chatFull != null ? chatFull.wallpaper : null;
             if (wallPaper2 != null && (str2 = wallPaper2.uploadingImage) != null && str2.equals(str)) {
@@ -1060,7 +1060,7 @@ public class ChatThemeController extends BaseController {
             TLRPC.ChatFull chatFull2 = chatFull;
             tL_wallPaper2.id = wallPaper3.id;
             tL_wallPaper2.document = wallPaper3.document;
-            int i10 = wallPaper3.flags;
+            int i9 = wallPaper3.flags;
             tL_wallPaper2.creator = wallPaper3.creator;
             tL_wallPaper2.dark = wallPaper3.dark;
             tL_wallPaper2.isDefault = wallPaper3.isDefault;
@@ -1068,7 +1068,7 @@ public class ChatThemeController extends BaseController {
             tL_wallPaper2.access_hash = wallPaper3.access_hash;
             tL_wallPaper2.stripedThumb = wallPaper3.stripedThumb;
             tL_wallPaper2.settings = tL_wallPaper.settings;
-            tL_wallPaper2.flags = i10 | 4;
+            tL_wallPaper2.flags = i9 | 4;
             z10 = false;
             if (userFull != null) {
                 userFull.wallpaper = tL_wallPaper2;
@@ -1080,22 +1080,22 @@ public class ChatThemeController extends BaseController {
                 chatFull2.flags2 |= 128;
                 getMessagesStorage().updateChatInfo(chatFull2, false);
                 NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
-                int i11 = NotificationCenter.chatInfoDidLoad;
+                int i10 = NotificationCenter.chatInfoDidLoad;
                 Boolean bool = Boolean.FALSE;
-                notificationCenter.lambda$postNotificationNameOnUIThread$1(i11, chatFull2, 0, bool, bool);
+                notificationCenter.lambda$postNotificationNameOnUIThread$1(i10, chatFull2, 0, bool, bool);
             }
             if (runnable != null) {
                 runnable.run();
             }
         }
         tL_messages_setChatWallPaper.flags |= 4;
-        tL_messages_setChatWallPaper.settings = MessagesController.getWallpaperSetting(z5Var);
-        return ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_setChatWallPaper, new oa(this, j10, z10, str, runnable));
+        tL_messages_setChatWallPaper.settings = MessagesController.getWallpaperSetting(y5Var);
+        return ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_setChatWallPaper, new ka(this, j10, z10, str, runnable));
     }
 
     public void clearWallpaper(long j10, boolean z10, boolean z11) {
         TLRPC.TL_messages_setChatWallPaper tL_messages_setChatWallPaper = new TLRPC.TL_messages_setChatWallPaper();
-        int i10 = 1;
+        int i9 = 1;
         if (j10 >= 0) {
             tL_messages_setChatWallPaper.peer = MessagesController.getInputPeer(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j10)));
             tL_messages_setChatWallPaper.revert = z11;
@@ -1123,25 +1123,25 @@ public class ChatThemeController extends BaseController {
             saveChatWallpaper(j10, null);
             if (z10) {
                 NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
-                int i11 = NotificationCenter.chatInfoDidLoad;
+                int i10 = NotificationCenter.chatInfoDidLoad;
                 Boolean bool = Boolean.FALSE;
-                notificationCenter.lambda$postNotificationNameOnUIThread$1(i11, chatFull, 0, bool, bool);
+                notificationCenter.lambda$postNotificationNameOnUIThread$1(i10, chatFull, 0, bool, bool);
             }
         }
-        getConnectionsManager().sendRequest(tL_messages_setChatWallPaper, new e5(i10));
+        getConnectionsManager().sendRequest(tL_messages_setChatWallPaper, new c5(i9));
     }
 
-    public void saveWallpaperBitmap(mf.a aVar, long j10) {
+    public void saveWallpaperBitmap(lf.a aVar, long j10) {
         Bitmap bitmap = aVar.b;
-        int i10 = aVar.a;
-        if (i10 == 0) {
+        int i9 = aVar.a;
+        if (i9 == 0) {
             saveWallpaperBitmap(bitmap, j10);
-        } else if (i10 == 1) {
+        } else if (i9 == 1) {
             saveWallpaperPatternBitmap(bitmap, aVar.c, j10);
         }
     }
 
-    public void setDialogTheme(long j10, of.b bVar) {
+    public void setDialogTheme(long j10, nf.b bVar) {
         setDialogTheme(j10, bVar, null, true);
     }
 
@@ -1151,10 +1151,10 @@ public class ChatThemeController extends BaseController {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private void setDialogTheme(long j10, of.b bVar, TLRPC.ChatTheme chatTheme, boolean z10) {
+    private void setDialogTheme(long j10, nf.b bVar, TLRPC.ChatTheme chatTheme, boolean z10) {
         String str;
         TLRPC.Tl_inputChatThemeEmpty tl_inputChatThemeEmpty;
-        if (of.b.a(this.dialogEmoticonsMap.get(j10), bVar)) {
+        if (nf.b.a(this.dialogEmoticonsMap.get(j10), bVar)) {
             return;
         }
         if (bVar == null) {
@@ -1199,7 +1199,7 @@ public class ChatThemeController extends BaseController {
                     tl_inputChatThemeEmpty = tl_inputChatTheme;
                     tL_messages_setChatTheme.theme = tl_inputChatThemeEmpty;
                     tL_messages_setChatTheme.peer = getMessagesController().getInputPeer(j10);
-                    getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new le(this, 2));
+                    getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new he(this, 2));
                     return;
                 }
             }
@@ -1211,14 +1211,14 @@ public class ChatThemeController extends BaseController {
                     tl_inputChatThemeEmpty = tl_inputChatThemeUniqueGift;
                     tL_messages_setChatTheme.theme = tl_inputChatThemeEmpty;
                     tL_messages_setChatTheme.peer = getMessagesController().getInputPeer(j10);
-                    getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new le(this, 2));
+                    getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new he(this, 2));
                     return;
                 }
             }
             tl_inputChatThemeEmpty = new TLRPC.Tl_inputChatThemeEmpty();
             tL_messages_setChatTheme.theme = tl_inputChatThemeEmpty;
             tL_messages_setChatTheme.peer = getMessagesController().getInputPeer(j10);
-            getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new le(this, 2));
+            getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new he(this, 2));
             return;
         }
         str = null;

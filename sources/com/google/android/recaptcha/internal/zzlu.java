@@ -1,12 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import ad.p;
-import h7.k6;
-import id.f0;
-import rc.c;
-import tc.i;
+import g7.y5;
+import hd.f0;
+import qc.c;
+import rc.a;
+import sc.i;
+import zc.p;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class zzlu extends i implements p {
     int zza;
@@ -19,28 +20,28 @@ final class zzlu extends i implements p {
         this.zzb = zzlyVar;
     }
 
-    @Override // tc.a
+    @Override // sc.a
     public final c create(Object obj, c cVar) {
         zzlu zzluVar = new zzlu(this.zzb, cVar);
         zzluVar.zzc = obj;
         return zzluVar;
     }
 
-    @Override // ad.p
+    @Override // zc.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlu) create((zzhk) obj, (c) obj2)).invokeSuspend(pc.i.a);
+        return ((zzlu) create((zzhk) obj, (c) obj2)).invokeSuspend(oc.i.a);
     }
 
-    @Override // tc.a
+    @Override // sc.a
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
         zzhk zzhkVar2;
         zzcr zzD;
-        sc.a aVar = sc.a.a;
-        int i10 = this.zza;
-        pc.i iVar = pc.i.a;
-        if (i10 == 0) {
-            k6.b(obj);
+        a aVar = a.a;
+        int i9 = this.zza;
+        oc.i iVar = oc.i.a;
+        if (i9 == 0) {
+            y5.b(obj);
             zzhk zzhkVar3 = (zzhk) this.zzc;
             zzdj zzn = this.zzb.zzn();
             zzmc[] zzmcVarArr = {zzmc.zzd, zzmc.zzc, zzmc.zzb};
@@ -53,9 +54,9 @@ final class zzlu extends i implements p {
             }
             return aVar;
         }
-        if (i10 != 1) {
+        if (i9 != 1) {
             zzhkVar2 = (zzhk) this.zzc;
-            k6.b(obj);
+            y5.b(obj);
             zzly zzlyVar = this.zzb;
             zzlyVar.zza = f0.a();
             zzD = zzlyVar.zzD();
@@ -63,7 +64,7 @@ final class zzlu extends i implements p {
             return iVar;
         }
         zzhkVar = (zzhk) this.zzc;
-        k6.b(obj);
+        y5.b(obj);
         if (((Boolean) obj).booleanValue()) {
             return iVar;
         }

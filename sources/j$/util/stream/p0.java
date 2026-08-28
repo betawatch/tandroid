@@ -13,7 +13,7 @@ public abstract class p0 implements b8, c8 {
         throw null;
     }
 
-    public /* synthetic */ void accept(int i10) {
+    public /* synthetic */ void accept(int i9) {
         t3.J();
         throw null;
     }

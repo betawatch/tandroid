@@ -54,9 +54,9 @@ public final class j implements ChronoZonedDateTime, Serializable {
         if (f10.size() == 1) {
             zoneOffset = (ZoneOffset) f10.get(0);
         } else if (f10.size() == 0) {
-            j$.time.zone.b e9 = rules.e(H);
-            fVar = fVar.I(fVar.a, 0L, 0L, Duration.j(e9.d.getTotalSeconds() - e9.c.getTotalSeconds(), 0).getSeconds(), 0L);
-            zoneOffset = e9.d;
+            j$.time.zone.b e10 = rules.e(H);
+            fVar = fVar.I(fVar.a, 0L, 0L, Duration.j(e10.d.getTotalSeconds() - e10.c.getTotalSeconds(), 0).getSeconds(), 0L);
+            zoneOffset = e10.d;
         } else {
             if (zoneOffset == null || !f10.contains(zoneOffset)) {
                 zoneOffset = (ZoneOffset) f10.get(0);
@@ -95,11 +95,11 @@ public final class j implements ChronoZonedDateTime, Serializable {
     @Override // j$.time.temporal.l
     public final long y(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            int i10 = h.a[((j$.time.temporal.a) oVar).ordinal()];
-            if (i10 == 1) {
+            int i9 = h.a[((j$.time.temporal.a) oVar).ordinal()];
+            if (i9 == 1) {
                 return F();
             }
-            if (i10 == 2) {
+            if (i9 == 2) {
                 return h().getTotalSeconds();
             }
             return ((f) r()).y(oVar);
@@ -188,11 +188,11 @@ public final class j implements ChronoZonedDateTime, Serializable {
             return q(a(), oVar.q(this, j10));
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        int i10 = i.a[aVar.ordinal()];
-        if (i10 == 1) {
+        int i9 = i.a[aVar.ordinal()];
+        if (i9 == 1) {
             return d(j10 - j$.com.android.tools.r8.a.x(this), ChronoUnit.SECONDS);
         }
-        if (i10 != 2) {
+        if (i9 != 2) {
             return G(this.c, this.b, this.a.c(j10, oVar));
         }
         ZoneOffset O = ZoneOffset.O(aVar.b.a(j10, aVar));

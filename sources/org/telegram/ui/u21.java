@@ -1,26 +1,34 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.Editable;
-import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class u21 extends org.telegram.ui.Cells.g3 {
-    public final /* synthetic */ w21 x;
+public final /* synthetic */ class u21 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x21 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u21(w21 w21Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, "", true, false, 1024, c6Var);
-        this.x = w21Var;
+    public /* synthetic */ u21(x21 x21Var, int i9) {
+        this.a = i9;
+        this.b = x21Var;
     }
 
-    @Override // org.telegram.ui.Cells.g3
-    public final void b(Editable editable) {
-        w21 w21Var = this.x;
-        lh.d dVar = w21Var.s;
-        if (dVar != null) {
-            dVar.setEnabled(w21Var.d.optional || !TextUtils.isEmpty(w21Var.n.getText()));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                x21 x21Var = this.b;
+                y21 y21Var = x21Var.v;
+                if (x21Var.a != 0) {
+                    y21Var.onBackPressed();
+                    break;
+                } else {
+                    y21Var.dismiss();
+                    break;
+                }
+            default:
+                AndroidUtilities.showKeyboard(this.b.n.b);
+                break;
         }
     }
 }

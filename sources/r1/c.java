@@ -1,6 +1,5 @@
 package r1;
 
-import a9.p;
 import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,7 +7,7 @@ import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class c {
     public final int a;
@@ -16,8 +15,8 @@ public final class c {
     public final long c;
     public final byte[] d;
 
-    public c(int i10, int i11, byte[] bArr) {
-        this(-1L, bArr, i10, i11);
+    public c(int i9, int i10, byte[] bArr) {
+        this(-1L, bArr, i9, i10);
     }
 
     public static c a(long j10, ByteOrder byteOrder) {
@@ -38,10 +37,10 @@ public final class c {
         return new c(5, 1, wrap.array());
     }
 
-    public static c c(int i10, ByteOrder byteOrder) {
+    public static c c(int i9, ByteOrder byteOrder) {
         ByteBuffer wrap = ByteBuffer.wrap(new byte[g.F[3]]);
         wrap.order(byteOrder);
-        wrap.putShort((short) new int[]{i10}[0]);
+        wrap.putShort((short) new int[]{i9}[0]);
         return new c(3, 1, wrap.array());
     }
 
@@ -117,13 +116,13 @@ public final class c {
             return (String) g10;
         }
         StringBuilder sb2 = new StringBuilder();
-        int i10 = 0;
+        int i9 = 0;
         if (g10 instanceof long[]) {
             long[] jArr = (long[]) g10;
-            while (i10 < jArr.length) {
-                sb2.append(jArr[i10]);
-                i10++;
-                if (i10 != jArr.length) {
+            while (i9 < jArr.length) {
+                sb2.append(jArr[i9]);
+                i9++;
+                if (i9 != jArr.length) {
                     sb2.append(",");
                 }
             }
@@ -131,10 +130,10 @@ public final class c {
         }
         if (g10 instanceof int[]) {
             int[] iArr = (int[]) g10;
-            while (i10 < iArr.length) {
-                sb2.append(iArr[i10]);
-                i10++;
-                if (i10 != iArr.length) {
+            while (i9 < iArr.length) {
+                sb2.append(iArr[i9]);
+                i9++;
+                if (i9 != iArr.length) {
                     sb2.append(",");
                 }
             }
@@ -142,10 +141,10 @@ public final class c {
         }
         if (g10 instanceof double[]) {
             double[] dArr = (double[]) g10;
-            while (i10 < dArr.length) {
-                sb2.append(dArr[i10]);
-                i10++;
-                if (i10 != dArr.length) {
+            while (i9 < dArr.length) {
+                sb2.append(dArr[i9]);
+                i9++;
+                if (i9 != dArr.length) {
                     sb2.append(",");
                 }
             }
@@ -155,12 +154,12 @@ public final class c {
             return null;
         }
         e[] eVarArr = (e[]) g10;
-        while (i10 < eVarArr.length) {
-            sb2.append(eVarArr[i10].a);
+        while (i9 < eVarArr.length) {
+            sb2.append(eVarArr[i9].a);
             sb2.append('/');
-            sb2.append(eVarArr[i10].b);
-            i10++;
-            if (i10 != eVarArr.length) {
+            sb2.append(eVarArr[i9].b);
+            i9++;
+            if (i9 != eVarArr.length) {
                 sb2.append(",");
             }
         }
@@ -196,10 +195,10 @@ public final class c {
                 bVar = new b(bArr);
                 try {
                     bVar.b = byteOrder;
-                    int i10 = this.a;
-                    int i11 = 0;
-                    int i12 = this.b;
-                    switch (i10) {
+                    int i9 = this.a;
+                    int i10 = 0;
+                    int i11 = this.b;
+                    switch (i9) {
                         case 1:
                         case 6:
                             if (bArr.length == 1 && (b10 = bArr[0]) >= 0 && b10 <= 1) {
@@ -207,8 +206,8 @@ public final class c {
                                 try {
                                     bVar.close();
                                     return str2;
-                                } catch (IOException e9) {
-                                    Log.e("ExifInterface", "IOException occurred while closing InputStream", e9);
+                                } catch (IOException e10) {
+                                    Log.e("ExifInterface", "IOException occurred while closing InputStream", e10);
                                     return str2;
                                 }
                             }
@@ -217,20 +216,20 @@ public final class c {
                             break;
                         case 2:
                         case 7:
-                            if (i12 >= g.G.length) {
-                                int i13 = 0;
+                            if (i11 >= g.G.length) {
+                                int i12 = 0;
                                 while (true) {
                                     byte[] bArr2 = g.G;
-                                    if (i13 >= bArr2.length) {
-                                        i11 = bArr2.length;
-                                    } else if (bArr[i13] == bArr2[i13]) {
-                                        i13++;
+                                    if (i12 >= bArr2.length) {
+                                        i10 = bArr2.length;
+                                    } else if (bArr[i12] == bArr2[i12]) {
+                                        i12++;
                                     }
                                 }
                             }
                             StringBuilder sb2 = new StringBuilder();
-                            while (i11 < i12) {
-                                byte b11 = bArr[i11];
+                            while (i10 < i11) {
+                                byte b11 = bArr[i10];
                                 if (b11 == 0) {
                                     str = sb2.toString();
                                     break;
@@ -240,82 +239,82 @@ public final class c {
                                     } else {
                                         sb2.append('?');
                                     }
-                                    i11++;
+                                    i10++;
                                 }
                             }
                             str = sb2.toString();
                         case 3:
-                            str = new int[i12];
-                            while (i11 < i12) {
-                                str[i11] = bVar.readUnsignedShort();
-                                i11++;
+                            str = new int[i11];
+                            while (i10 < i11) {
+                                str[i10] = bVar.readUnsignedShort();
+                                i10++;
                             }
                         case 4:
-                            str = new long[i12];
-                            while (i11 < i12) {
-                                str[i11] = bVar.readInt() & 4294967295L;
-                                i11++;
+                            str = new long[i11];
+                            while (i10 < i11) {
+                                str[i10] = bVar.readInt() & 4294967295L;
+                                i10++;
                             }
                         case 5:
-                            str = new e[i12];
-                            while (i11 < i12) {
-                                str[i11] = new e(bVar.readInt() & 4294967295L, bVar.readInt() & 4294967295L);
-                                i11++;
+                            str = new e[i11];
+                            while (i10 < i11) {
+                                str[i10] = new e(bVar.readInt() & 4294967295L, bVar.readInt() & 4294967295L);
+                                i10++;
                             }
                         case 8:
-                            str = new int[i12];
-                            while (i11 < i12) {
-                                str[i11] = bVar.readShort();
-                                i11++;
+                            str = new int[i11];
+                            while (i10 < i11) {
+                                str[i10] = bVar.readShort();
+                                i10++;
                             }
                         case 9:
-                            str = new int[i12];
-                            while (i11 < i12) {
-                                str[i11] = bVar.readInt();
-                                i11++;
+                            str = new int[i11];
+                            while (i10 < i11) {
+                                str[i10] = bVar.readInt();
+                                i10++;
                             }
                         case 10:
-                            str = new e[i12];
-                            while (i11 < i12) {
-                                str[i11] = new e(bVar.readInt(), bVar.readInt());
-                                i11++;
+                            str = new e[i11];
+                            while (i10 < i11) {
+                                str[i10] = new e(bVar.readInt(), bVar.readInt());
+                                i10++;
                             }
                         case 11:
-                            str = new double[i12];
-                            while (i11 < i12) {
-                                str[i11] = bVar.readFloat();
-                                i11++;
+                            str = new double[i11];
+                            while (i10 < i11) {
+                                str[i10] = bVar.readFloat();
+                                i10++;
                             }
                         case 12:
-                            str = new double[i12];
-                            while (i11 < i12) {
-                                str[i11] = bVar.readDouble();
-                                i11++;
+                            str = new double[i11];
+                            while (i10 < i11) {
+                                str[i10] = bVar.readDouble();
+                                i10++;
                             }
                         default:
                             try {
                                 bVar.close();
                                 return null;
-                            } catch (IOException e10) {
-                                Log.e("ExifInterface", "IOException occurred while closing InputStream", e10);
+                            } catch (IOException e11) {
+                                Log.e("ExifInterface", "IOException occurred while closing InputStream", e11);
                                 return null;
                             }
                     }
                     try {
                         bVar.close();
                         return str;
-                    } catch (IOException e11) {
-                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e11);
+                    } catch (IOException e12) {
+                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e12);
                         return str;
                     }
-                } catch (IOException e12) {
-                    e = e12;
+                } catch (IOException e13) {
+                    e = e13;
                     Log.w("ExifInterface", "IOException occurred during reading a value", e);
                     if (bVar != null) {
                         try {
                             bVar.close();
-                        } catch (IOException e13) {
-                            Log.e("ExifInterface", "IOException occurred while closing InputStream", e13);
+                        } catch (IOException e14) {
+                            Log.e("ExifInterface", "IOException occurred while closing InputStream", e14);
                         }
                     }
                     return null;
@@ -326,14 +325,14 @@ public final class c {
                 if (inputStream2 != null) {
                     try {
                         inputStream2.close();
-                    } catch (IOException e14) {
-                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e14);
+                    } catch (IOException e15) {
+                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e15);
                     }
                 }
                 throw th;
             }
-        } catch (IOException e15) {
-            e = e15;
+        } catch (IOException e16) {
+            e = e16;
             bVar = null;
         } catch (Throwable th2) {
             th = th2;
@@ -347,12 +346,12 @@ public final class c {
         StringBuilder sb2 = new StringBuilder("(");
         sb2.append(g.E[this.a]);
         sb2.append(", data length:");
-        return p.k(this.d.length, ")", sb2);
+        return aa.d.l(this.d.length, ")", sb2);
     }
 
-    public c(long j10, byte[] bArr, int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    public c(long j10, byte[] bArr, int i9, int i10) {
+        this.a = i9;
+        this.b = i10;
         this.c = j10;
         this.d = bArr;
     }

@@ -1,29 +1,24 @@
 package g7;
 
-import java.util.Map;
+import android.os.Bundle;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j implements r9.d {
-    public static final /* synthetic */ j b = new j(0);
-    public static final /* synthetic */ j c = new j(1);
-    public final /* synthetic */ int a;
-
-    public /* synthetic */ j(int i10) {
-        this.a = i10;
-    }
-
-    @Override // r9.a
-    public final void a(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                Map.Entry entry = (Map.Entry) obj;
-                r9.e eVar = (r9.e) obj2;
-                eVar.a(k.g, entry.getKey());
-                eVar.a(k.h, entry.getValue());
-                return;
-            default:
-                throw new r9.b("Couldn't find encoder for type ".concat(String.valueOf(obj.getClass().getCanonicalName())));
+public abstract class j {
+    public static final ArrayList a(ArrayList arrayList) {
+        ArrayList arrayList2 = new ArrayList();
+        int size = arrayList.size();
+        int i9 = 0;
+        while (i9 < size) {
+            Object obj = arrayList.get(i9);
+            i9++;
+            k8.t tVar = (k8.t) obj;
+            Bundle bundle = new Bundle();
+            bundle.putInt("event_type", tVar.a);
+            bundle.putLong("event_timestamp", tVar.b);
+            arrayList2.add(bundle);
         }
+        return arrayList2;
     }
 }

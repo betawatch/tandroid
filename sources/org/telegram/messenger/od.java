@@ -1,94 +1,95 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
+import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class od implements RequestDelegate {
+public final /* synthetic */ class od implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ int g;
-    public final /* synthetic */ long h;
-    public final /* synthetic */ long i;
-    public final /* synthetic */ int j;
-    public final /* synthetic */ int k;
-    public final /* synthetic */ int l;
-    public final /* synthetic */ int m;
-    public final /* synthetic */ int n;
-    public final /* synthetic */ long o;
-    public final /* synthetic */ int p;
-    public final /* synthetic */ boolean q;
-    public final /* synthetic */ int r;
-    public final /* synthetic */ boolean s;
-    public final /* synthetic */ boolean t;
-    public final /* synthetic */ TLObject u;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ od(MessagesController messagesController, int i10, int i11, int i12, int i13, int i14, long j10, long j11, int i15, int i16, int i17, int i18, int i19, long j12, int i20, boolean z10, int i21, boolean z11, boolean z12, TLRPC.TL_messages_getReplies tL_messages_getReplies) {
-        this.a = 1;
-        this.b = messagesController;
-        this.c = i10;
-        this.d = i11;
-        this.e = i12;
-        this.f = i13;
-        this.g = i14;
-        this.h = j10;
-        this.i = j11;
-        this.j = i15;
-        this.k = i16;
-        this.l = i17;
-        this.m = i18;
-        this.n = i19;
-        this.o = j12;
-        this.p = i20;
-        this.q = z10;
-        this.r = i21;
-        this.s = z11;
-        this.t = z12;
-        this.u = tL_messages_getReplies;
+    public /* synthetic */ od(MessagesController messagesController, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.o2 o2Var, TLRPC.TL_channels_editAdmin tL_channels_editAdmin, boolean z10, boolean z11) {
+        this.a = 0;
+        this.d = messagesController;
+        this.e = tL_error;
+        this.f = o2Var;
+        this.h = tL_channels_editAdmin;
+        this.b = z10;
+        this.c = z11;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i9 = this.a;
+        Object obj = this.h;
+        Object obj2 = this.f;
+        Object obj3 = this.e;
+        Object obj4 = this.d;
+        switch (i9) {
             case 0:
-                this.b.lambda$loadMessagesInternal$178(this.h, this.c, this.d, this.e, this.i, this.f, this.g, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q, this.r, this.s, this.t, (TLRPC.TL_messages_getSavedHistory) this.u, tLObject, tL_error);
+                ((MessagesController) obj4).lambda$setUserAdminRole$101((TLRPC.TL_error) obj3, (org.telegram.ui.ActionBar.o2) obj2, (TLRPC.TL_channels_editAdmin) obj, this.b, this.c);
                 break;
             case 1:
-                this.b.lambda$loadMessagesInternal$180(this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q, this.r, this.s, this.t, (TLRPC.TL_messages_getReplies) this.u, tLObject, tL_error);
+                ((NotificationsController) obj4).lambda$processNewMessages$27((ArrayList) obj3, (ArrayList) obj2, this.b, this.c, (CountDownLatch) obj);
+                break;
+            case 2:
+                ActionBarLayout actionBarLayout = (ActionBarLayout) obj4;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj3;
+                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) obj2;
+                org.telegram.ui.ActionBar.o2 o2Var2 = (org.telegram.ui.ActionBar.o2) obj;
+                if (this.b) {
+                    actionBarLayout.h = true;
+                    actionBarLayout.F = actionBarPopupWindow$ActionBarPopupWindowLayout;
+                    actionBarLayout.T = false;
+                    actionBarLayout.s.setScaleX(1.0f);
+                    actionBarLayout.s.setScaleY(1.0f);
+                } else {
+                    Drawable drawable = ActionBarLayout.l1;
+                    actionBarLayout.T(o2Var, this.c);
+                    actionBarLayout.s.setTranslationX(0.0f);
+                }
+                if (o2Var != null) {
+                    o2Var.onTransitionAnimationEnd(false, false);
+                }
+                o2Var2.onTransitionAnimationEnd(true, false);
+                o2Var2.onBecomeFullyVisible();
                 break;
             default:
-                this.b.lambda$loadMessagesInternal$185(this.h, this.c, this.d, this.e, this.i, this.f, this.g, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q, this.r, this.s, this.t, (TLRPC.TL_messages_getHistory) this.u, tLObject, tL_error);
+                TwoStepVerificationActivity.Z((TwoStepVerificationActivity) obj4, (TLRPC.TL_error) obj3, (TLObject) obj2, this.b, this.c, (Runnable) obj);
                 break;
         }
     }
 
-    public /* synthetic */ od(MessagesController messagesController, long j10, int i10, int i11, int i12, long j11, int i13, int i14, int i15, int i16, int i17, int i18, int i19, long j12, int i20, boolean z10, int i21, boolean z11, boolean z12, TLObject tLObject, int i22) {
-        this.a = i22;
-        this.b = messagesController;
-        this.h = j10;
-        this.c = i10;
-        this.d = i11;
-        this.e = i12;
-        this.i = j11;
-        this.f = i13;
-        this.g = i14;
-        this.j = i15;
-        this.k = i16;
-        this.l = i17;
-        this.m = i18;
-        this.n = i19;
-        this.o = j12;
-        this.p = i20;
-        this.q = z10;
-        this.r = i21;
-        this.s = z11;
-        this.t = z12;
-        this.u = tLObject;
+    public /* synthetic */ od(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, Object obj2, boolean z10, boolean z11, Object obj3, int i9) {
+        this.a = i9;
+        this.d = notificationCenterDelegate;
+        this.e = obj;
+        this.f = obj2;
+        this.b = z10;
+        this.c = z11;
+        this.h = obj3;
+    }
+
+    public /* synthetic */ od(ActionBarLayout actionBarLayout, boolean z10, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, boolean z11, org.telegram.ui.ActionBar.o2 o2Var, org.telegram.ui.ActionBar.o2 o2Var2) {
+        this.a = 2;
+        this.d = actionBarLayout;
+        this.b = z10;
+        this.e = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.c = z11;
+        this.f = o2Var;
+        this.h = o2Var2;
     }
 }

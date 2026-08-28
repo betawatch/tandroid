@@ -1,19 +1,19 @@
 package a0;
 
-import androidx.datastore.preferences.protobuf.d1;
-import androidx.datastore.preferences.protobuf.h1;
+import androidx.datastore.preferences.protobuf.e1;
+import androidx.datastore.preferences.protobuf.i1;
 import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class a extends AbstractSet {
     public final /* synthetic */ int a;
     public final /* synthetic */ Map b;
 
-    public /* synthetic */ a(Map map, int i10) {
-        this.a = i10;
+    public /* synthetic */ a(Map map, int i9) {
+        this.a = i9;
         this.b = map;
     }
 
@@ -25,7 +25,7 @@ public class a extends AbstractSet {
                 if (contains(entry)) {
                     return false;
                 }
-                ((d1) this.b).f((Comparable) entry.getKey(), entry.getValue());
+                ((e1) this.b).f((Comparable) entry.getKey(), entry.getValue());
                 return true;
             default:
                 return super.add(obj);
@@ -36,7 +36,7 @@ public class a extends AbstractSet {
     public void clear() {
         switch (this.a) {
             case 1:
-                ((d1) this.b).clear();
+                ((e1) this.b).clear();
                 break;
             default:
                 super.clear();
@@ -49,7 +49,7 @@ public class a extends AbstractSet {
         switch (this.a) {
             case 1:
                 Map.Entry entry = (Map.Entry) obj;
-                Object obj2 = ((d1) this.b).get(entry.getKey());
+                Object obj2 = ((e1) this.b).get(entry.getKey());
                 Object value = entry.getValue();
                 return obj2 == value || (obj2 != null && obj2.equals(value));
             default:
@@ -63,7 +63,7 @@ public class a extends AbstractSet {
             case 0:
                 return new d((f) this.b);
             default:
-                return new h1((d1) this.b);
+                return new i1((e1) this.b);
         }
     }
 
@@ -75,7 +75,7 @@ public class a extends AbstractSet {
                 if (!contains(entry)) {
                     return false;
                 }
-                ((d1) this.b).remove(entry.getKey());
+                ((e1) this.b).remove(entry.getKey());
                 return true;
             default:
                 return super.remove(obj);
@@ -88,7 +88,7 @@ public class a extends AbstractSet {
             case 0:
                 return ((f) this.b).c;
             default:
-                return ((d1) this.b).size();
+                return ((e1) this.b).size();
         }
     }
 }

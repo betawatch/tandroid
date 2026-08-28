@@ -3,7 +3,7 @@ package m5;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import h7.r8;
+import g7.p8;
 import j$.util.DesugarCollections;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -12,10 +12,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class m extends z5.a {
-    public static final Parcelable.Creator<m> CREATOR = new w(12);
+public final class m extends y5.a {
+    public static final Parcelable.Creator<m> CREATOR = new v(12);
     public int a;
     public String b;
     public List c;
@@ -25,10 +25,10 @@ public final class m extends z5.a {
     public final JSONObject b() {
         JSONObject jSONObject = new JSONObject();
         try {
-            int i10 = this.a;
-            if (i10 == 0) {
+            int i9 = this.a;
+            if (i9 == 0) {
                 jSONObject.put("containerType", "GENERIC_CONTAINER");
-            } else if (i10 == 1) {
+            } else if (i9 == 1) {
                 jSONObject.put("containerType", "AUDIOBOOK_CONTAINER");
             }
             if (!TextUtils.isEmpty(this.b)) {
@@ -45,7 +45,7 @@ public final class m extends z5.a {
             }
             List list2 = this.d;
             if (list2 != null && !list2.isEmpty()) {
-                jSONObject.put("containerImages", s5.a.b(this.d));
+                jSONObject.put("containerImages", r5.a.b(this.d));
             }
             jSONObject.put("containerDuration", this.e);
         } catch (JSONException unused) {
@@ -61,7 +61,7 @@ public final class m extends z5.a {
             return false;
         }
         m mVar = (m) obj;
-        return this.a == mVar.a && TextUtils.equals(this.b, mVar.b) && y5.l.l(this.c, mVar.c) && y5.l.l(this.d, mVar.d) && this.e == mVar.e;
+        return this.a == mVar.a && TextUtils.equals(this.b, mVar.b) && x5.l.l(this.c, mVar.c) && x5.l.l(this.d, mVar.d) && this.e == mVar.e;
     }
 
     public final int hashCode() {
@@ -69,19 +69,19 @@ public final class m extends z5.a {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        int i11 = this.a;
-        r8.s(parcel, 2, 4);
-        parcel.writeInt(i11);
-        r8.l(parcel, 3, this.b);
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        int i10 = this.a;
+        p8.s(parcel, 2, 4);
+        parcel.writeInt(i10);
+        p8.l(parcel, 3, this.b);
         List list = this.c;
-        r8.p(parcel, 4, list == null ? null : DesugarCollections.unmodifiableList(list));
+        p8.p(parcel, 4, list == null ? null : DesugarCollections.unmodifiableList(list));
         List list2 = this.d;
-        r8.p(parcel, 5, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
+        p8.p(parcel, 5, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
         double d = this.e;
-        r8.s(parcel, 6, 8);
+        p8.s(parcel, 6, 8);
         parcel.writeDouble(d);
-        r8.r(parcel, q6);
+        p8.r(parcel, q10);
     }
 }

@@ -12,7 +12,7 @@ import android.support.v4.media.MediaMetadataCompat;
 import android.util.Log;
 import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class p {
     public final h a;
@@ -48,8 +48,8 @@ public final class p {
         if (mediaSessionCompat$Token.a() != null) {
             try {
                 return mediaSessionCompat$Token.a().b();
-            } catch (RemoteException e9) {
-                Log.e("MediaControllerCompat", "Dead object in getPlaybackState.", e9);
+            } catch (RemoteException e10) {
+                Log.e("MediaControllerCompat", "Dead object in getPlaybackState.", e10);
             }
         }
         PlaybackState playbackState = hVar.a.getPlaybackState();
@@ -61,52 +61,52 @@ public final class p {
 
     public final l c() {
         MediaController.TransportControls transportControls = this.a.a.getTransportControls();
-        int i10 = Build.VERSION.SDK_INT;
-        return i10 >= 29 ? new o(transportControls) : i10 >= 24 ? new n(transportControls) : i10 >= 23 ? new m(transportControls) : new l(transportControls);
+        int i9 = Build.VERSION.SDK_INT;
+        return i9 >= 29 ? new o(transportControls) : i9 >= 24 ? new n(transportControls) : i9 >= 23 ? new m(transportControls) : new l(transportControls);
     }
 
-    public final void d(androidx.mediarouter.app.r rVar) {
-        if (rVar == null) {
+    public final void d(androidx.mediarouter.app.s sVar) {
+        if (sVar == null) {
             throw new IllegalArgumentException("callback must not be null");
         }
-        if (this.b.putIfAbsent(rVar, Boolean.TRUE) != null) {
+        if (this.b.putIfAbsent(sVar, Boolean.TRUE) != null) {
             Log.w("MediaControllerCompat", "the callback has already been registered");
             return;
         }
         Handler handler = new Handler();
-        rVar.f(handler);
+        sVar.f(handler);
         h hVar = this.a;
-        hVar.a.registerCallback(rVar.a, handler);
+        hVar.a.registerCallback(sVar.a, handler);
         synchronized (hVar.b) {
             if (hVar.e.a() != null) {
-                g gVar = new g(rVar);
-                hVar.d.put(rVar, gVar);
-                rVar.c = gVar;
+                g gVar = new g(sVar);
+                hVar.d.put(sVar, gVar);
+                sVar.c = gVar;
                 try {
-                    hVar.e.a().j(gVar);
-                    rVar.e(13, null, null);
-                } catch (RemoteException e9) {
-                    Log.e("MediaControllerCompat", "Dead object in registerCallback.", e9);
+                    hVar.e.a().k(gVar);
+                    sVar.e(13, null, null);
+                } catch (RemoteException e10) {
+                    Log.e("MediaControllerCompat", "Dead object in registerCallback.", e10);
                 }
             } else {
-                rVar.c = null;
-                hVar.c.add(rVar);
+                sVar.c = null;
+                hVar.c.add(sVar);
             }
         }
     }
 
-    public final void e(androidx.mediarouter.app.r rVar) {
-        if (rVar == null) {
+    public final void e(androidx.mediarouter.app.s sVar) {
+        if (sVar == null) {
             throw new IllegalArgumentException("callback must not be null");
         }
-        if (this.b.remove(rVar) == null) {
+        if (this.b.remove(sVar) == null) {
             Log.w("MediaControllerCompat", "the callback has never been registered");
             return;
         }
         try {
-            this.a.b(rVar);
+            this.a.b(sVar);
         } finally {
-            rVar.f(null);
+            sVar.f(null);
         }
     }
 

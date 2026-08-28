@@ -1,94 +1,94 @@
 package m1;
 
-import androidx.datastore.preferences.protobuf.a1;
-import androidx.datastore.preferences.protobuf.b0;
+import androidx.datastore.preferences.protobuf.a0;
 import androidx.datastore.preferences.protobuf.b1;
+import androidx.datastore.preferences.protobuf.c0;
+import androidx.datastore.preferences.protobuf.c1;
 import androidx.datastore.preferences.protobuf.n;
-import androidx.datastore.preferences.protobuf.n0;
-import androidx.datastore.preferences.protobuf.u;
+import androidx.datastore.preferences.protobuf.o0;
 import androidx.datastore.preferences.protobuf.v;
 import androidx.datastore.preferences.protobuf.w;
-import androidx.datastore.preferences.protobuf.w0;
-import androidx.datastore.preferences.protobuf.y0;
-import androidx.datastore.preferences.protobuf.z;
+import androidx.datastore.preferences.protobuf.x;
+import androidx.datastore.preferences.protobuf.x0;
+import androidx.datastore.preferences.protobuf.z0;
 import j$.util.DesugarCollections;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Map;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class f extends w {
+public final class f extends x {
     private static final f DEFAULT_INSTANCE;
-    private static volatile w0 PARSER = null;
+    private static volatile x0 PARSER = null;
     public static final int PREFERENCES_FIELD_NUMBER = 1;
-    private n0 preferences_ = n0.b;
+    private o0 preferences_ = o0.b;
 
     static {
         f fVar = new f();
         DEFAULT_INSTANCE = fVar;
-        w.h(f.class, fVar);
+        x.h(f.class, fVar);
     }
 
-    public static n0 i(f fVar) {
-        n0 n0Var = fVar.preferences_;
-        if (!n0Var.a) {
-            fVar.preferences_ = n0Var.b();
+    public static o0 i(f fVar) {
+        o0 o0Var = fVar.preferences_;
+        if (!o0Var.a) {
+            fVar.preferences_ = o0Var.b();
         }
         return fVar.preferences_;
     }
 
     public static d k() {
-        return (d) ((u) DEFAULT_INSTANCE.d(5));
+        return (d) ((v) DEFAULT_INSTANCE.d(5));
     }
 
     public static f l(FileInputStream fileInputStream) {
         f fVar = DEFAULT_INSTANCE;
         androidx.datastore.preferences.protobuf.h hVar = new androidx.datastore.preferences.protobuf.h(fileInputStream);
         n a2 = n.a();
-        w wVar = (w) fVar.d(4);
+        x xVar = (x) fVar.d(4);
         try {
-            y0 y0Var = y0.c;
-            y0Var.getClass();
-            b1 a3 = y0Var.a(wVar.getClass());
+            z0 z0Var = z0.c;
+            z0Var.getClass();
+            c1 a3 = z0Var.a(xVar.getClass());
             androidx.datastore.preferences.protobuf.i iVar = hVar.b;
             if (iVar == null) {
                 iVar = new androidx.datastore.preferences.protobuf.i();
                 iVar.c = 0;
-                Charset charset = z.a;
+                Charset charset = a0.a;
                 iVar.d = hVar;
                 hVar.b = iVar;
             }
-            a3.i(wVar, iVar, a2);
-            a3.c(wVar);
-            if (wVar.g()) {
-                return (f) wVar;
+            a3.i(xVar, iVar, a2);
+            a3.c(xVar);
+            if (xVar.g()) {
+                return (f) xVar;
             }
-            throw new b0(new a7.c().getMessage());
-        } catch (IOException e9) {
-            if (e9.getCause() instanceof b0) {
-                throw ((b0) e9.getCause());
+            throw new c0(new androidx.car.app.j().getMessage());
+        } catch (IOException e10) {
+            if (e10.getCause() instanceof c0) {
+                throw ((c0) e10.getCause());
             }
-            throw new b0(e9.getMessage());
-        } catch (RuntimeException e10) {
-            if (e10.getCause() instanceof b0) {
-                throw ((b0) e10.getCause());
+            throw new c0(e10.getMessage());
+        } catch (RuntimeException e11) {
+            if (e11.getCause() instanceof c0) {
+                throw ((c0) e11.getCause());
             }
-            throw e10;
+            throw e11;
         }
     }
 
-    @Override // androidx.datastore.preferences.protobuf.w
-    public final Object d(int i10) {
-        w0 w0Var;
-        switch (j.b(i10)) {
+    @Override // androidx.datastore.preferences.protobuf.x
+    public final Object d(int i9) {
+        x0 x0Var;
+        switch (j.b(i9)) {
             case 0:
                 return (byte) 1;
             case 1:
                 return null;
             case 2:
-                return new a1(DEFAULT_INSTANCE, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u00012", new Object[]{"preferences_", e.a});
+                return new b1(DEFAULT_INSTANCE, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u00012", new Object[]{"preferences_", e.a});
             case 3:
                 return new f();
             case 4:
@@ -96,22 +96,22 @@ public final class f extends w {
             case 5:
                 return DEFAULT_INSTANCE;
             case 6:
-                w0 w0Var2 = PARSER;
-                if (w0Var2 != null) {
-                    return w0Var2;
+                x0 x0Var2 = PARSER;
+                if (x0Var2 != null) {
+                    return x0Var2;
                 }
                 synchronized (f.class) {
                     try {
-                        w0Var = PARSER;
-                        if (w0Var == null) {
-                            w0Var = new v();
-                            PARSER = w0Var;
+                        x0Var = PARSER;
+                        if (x0Var == null) {
+                            x0Var = new w();
+                            PARSER = x0Var;
                         }
                     } catch (Throwable th) {
                         throw th;
                     }
                 }
-                return w0Var;
+                return x0Var;
             default:
                 throw new UnsupportedOperationException();
         }

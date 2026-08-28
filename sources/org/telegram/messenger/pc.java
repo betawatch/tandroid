@@ -1,26 +1,31 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class pc implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Runnable[] c;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-    public /* synthetic */ pc(boolean[] zArr, Runnable[] runnableArr, int i10) {
-        this.a = i10;
-        this.b = zArr;
-        this.c = runnableArr;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class pc implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController b;
+
+    public /* synthetic */ pc(MessagesController messagesController, int i9) {
+        this.a = i9;
+        this.b = messagesController;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                MessagesController.lambda$ensureMessagesLoaded$461(this.b, this.c);
+                this.b.lambda$loadAppConfig$33((TLRPC.TL_help_appConfig) obj);
+                break;
+            case 1:
+                this.b.lambda$loadWebBrowserConfig$511((TL_account.TL_webBrowserSettings) obj);
                 break;
             default:
-                PasskeysController.lambda$login$12(this.b, this.c);
+                this.b.lambda$getAvailableEffects$496((TLRPC.messages_AvailableEffects) obj);
                 break;
         }
     }

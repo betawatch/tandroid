@@ -1,58 +1,12 @@
 package bf;
 
-import android.app.PictureInPictureParams;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.os.Build;
-import android.util.Rational;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class c {
-    public final Rect a = new Rect();
-    public final Point b = new Point();
-
-    public final PictureInPictureParams.Builder a() {
-        int i10;
-        PictureInPictureParams.Builder builder = new PictureInPictureParams.Builder();
-        Point point = this.b;
-        int i11 = point.x;
-        if (i11 <= 0 || (i10 = point.y) <= 0) {
-            builder.setAspectRatio(null);
-            if (Build.VERSION.SDK_INT >= 33) {
-                builder.setExpandedAspectRatio(null);
-            }
-        } else {
-            double d = i11 / i10;
-            Rational rational = d < 0.45d ? new Rational(45, 100) : d > 2.35d ? new Rational(235, 100) : new Rational(point.x, point.y);
-            builder.setAspectRatio(rational);
-            if (Build.VERSION.SDK_INT >= 33) {
-                builder.setExpandedAspectRatio(rational);
-            }
-        }
-        Rect rect = this.a;
-        if (rect.isEmpty()) {
-            builder.setSourceRectHint(null);
-            return builder;
-        }
-        builder.setSourceRectHint(rect);
-        return builder;
-    }
-
-    public final boolean b() {
-        if (this.a.isEmpty()) {
-            return false;
-        }
-        Point point = this.b;
-        return point.x > 0 && point.y > 0;
-    }
-
-    public final boolean c(int i10, int i11) {
-        Point point = this.b;
-        if (point.x == i10 && point.y == i11) {
-            return false;
-        }
-        point.set(i10, i11);
-        return true;
-    }
+    public TLRPC.Document a;
+    public String b;
+    public int c;
+    public boolean d;
 }

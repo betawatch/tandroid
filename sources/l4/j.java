@@ -2,10 +2,10 @@ package l4;
 
 import com.google.android.exoplayer2.upstream.q;
 import com.google.android.exoplayer2.upstream.x0;
-import g7.l0;
+import f7.f5;
 import h3.t0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class j extends e {
     public final d s;
@@ -13,9 +13,14 @@ public final class j extends e {
     public long w;
     public volatile boolean x;
 
-    public j(com.google.android.exoplayer2.upstream.m mVar, q qVar, t0 t0Var, int i10, Object obj, d dVar) {
-        super(mVar, qVar, 2, t0Var, i10, obj, -9223372036854775807L, -9223372036854775807L);
+    public j(com.google.android.exoplayer2.upstream.m mVar, q qVar, t0 t0Var, int i9, Object obj, d dVar) {
+        super(mVar, qVar, 2, t0Var, i9, obj, -9223372036854775807L, -9223372036854775807L);
         this.s = dVar;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.n0
+    public final void K() {
+        this.x = true;
     }
 
     @Override // com.google.android.exoplayer2.upstream.n0
@@ -43,12 +48,7 @@ public final class j extends e {
                 }
             }
         } finally {
-            l0.a(this.r);
+            f5.a(this.r);
         }
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.n0
-    public final void l() {
-        this.x = true;
     }
 }

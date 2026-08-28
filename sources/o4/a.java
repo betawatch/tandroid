@@ -12,7 +12,7 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class a implements com.google.android.exoplayer2.upstream.m {
     public final com.google.android.exoplayer2.upstream.m a;
@@ -60,18 +60,18 @@ public final class a implements com.google.android.exoplayer2.upstream.m {
                 this.d = new CipherInputStream(oVar, cipher);
                 oVar.a();
                 return -1L;
-            } catch (InvalidAlgorithmParameterException | InvalidKeyException e9) {
-                throw new RuntimeException(e9);
+            } catch (InvalidAlgorithmParameterException | InvalidKeyException e10) {
+                throw new RuntimeException(e10);
             }
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException e10) {
-            throw new RuntimeException(e10);
+        } catch (NoSuchAlgorithmException | NoSuchPaddingException e11) {
+            throw new RuntimeException(e11);
         }
     }
 
     @Override // com.google.android.exoplayer2.upstream.j
-    public final int read(byte[] bArr, int i10, int i11) {
+    public final int read(byte[] bArr, int i9, int i10) {
         this.d.getClass();
-        int read = this.d.read(bArr, i10, i11);
+        int read = this.d.read(bArr, i9, i10);
         if (read < 0) {
             return -1;
         }

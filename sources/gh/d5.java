@@ -2,36 +2,41 @@ package gh;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class d5 extends org.telegram.ui.ActionBar.f1 {
-    public final int H;
-    public long I;
-    public b5 J;
+public final class d5 extends org.telegram.ui.Components.o9 {
+    public final /* synthetic */ int C;
 
-    public d5(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(0, context, c6Var, false, false);
-        this.H = i10;
-        setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-        c(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.E8, c6Var), org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.F8, c6Var));
-        setIconColor(-1);
-        this.c.setTranslationX(AndroidUtilities.dp(2.0f));
-        this.c.setScaleX(1.2f);
-        this.c.setScaleY(1.2f);
-        a(2);
-        setBackground(null);
-        this.c.addOnAttachStateChangeListener(new bf.b(this, 2));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ d5(Context context, int i9) {
+        super(context);
+        this.C = i9;
     }
 
-    @Override // org.telegram.ui.ActionBar.f1, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
-            size = AndroidUtilities.dp(250.0f);
+    @Override // android.view.View
+    public void onMeasure(int i9, int i10) {
+        switch (this.C) {
+            case 1:
+                int size = View.MeasureSpec.getSize(i9);
+                setMeasuredDimension(size, size);
+                break;
+            default:
+                super.onMeasure(i9, i10);
+                break;
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i11);
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f10) {
+        switch (this.C) {
+            case 0:
+                super.setAlpha(f10);
+                setVisibility(f10 > 0.0f ? 0 : 4);
+                break;
+            default:
+                super.setAlpha(f10);
+                break;
+        }
     }
 }

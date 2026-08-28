@@ -1,76 +1,50 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.ImageView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dg implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class dg implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ qn b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ dg(Object obj, float f10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = f10;
+    public /* synthetic */ dg(qn qnVar, String str, int i9) {
+        this.a = i9;
+        this.b = qnVar;
+        this.c = str;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        Boolean bool = (Boolean) obj;
+        Boolean bool2 = (Boolean) obj2;
         switch (this.a) {
             case 0:
-                rn rnVar = (rn) this.c;
-                rnVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rnVar.D8 = floatValue;
-                rnVar.H8 = floatValue / this.b;
-                View view = rnVar.fragmentView;
-                if (view != null) {
-                    view.invalidate();
+                if (bool.booleanValue()) {
+                    boolean booleanValue = bool2.booleanValue();
+                    qn qnVar = this.b;
+                    String str = this.c;
+                    if (booleanValue) {
+                        qnVar.getMessagesController().addWebBrowserException(str, false);
+                    }
+                    qnVar.getParentActivity();
+                    ve.e.n(str);
                     break;
                 }
                 break;
-            case 1:
-                ArrayList arrayList = (ArrayList) this.c;
-                float floatValue2 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    View view2 = (View) arrayList.get(i10);
-                    if (view2 != null) {
-                        view2.setTranslationY(this.b * floatValue2);
-                    }
-                }
-                break;
-            case 2:
-                ((org.telegram.ui.Components.in) this.c).A.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                break;
-            case 3:
-                ((yu0) this.c).N.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                break;
             default:
-                d11 d11Var = (d11) this.c;
-                d11Var.getClass();
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float lerp = AndroidUtilities.lerp(0.0f, this.b, floatValue3);
-                d11Var.a.setTranslationX(lerp);
-                d11Var.b.setTranslationX(lerp);
-                ImageView imageView = d11Var.c;
-                imageView.setTranslationX(lerp);
-                org.telegram.ui.Components.bp bpVar = d11Var.f;
-                bpVar.setTranslationX((LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : -AndroidUtilities.dp(32.0f)) + lerp);
-                float f10 = (floatValue3 * 0.5f) + 0.5f;
-                bpVar.setScaleX(f10);
-                bpVar.setScaleY(f10);
-                bpVar.setAlpha(floatValue3);
-                float f11 = 1.0f - floatValue3;
-                float f12 = (f11 * 0.5f) + 0.5f;
-                imageView.setScaleX(f12);
-                imageView.setScaleY(f12);
-                imageView.setAlpha(f11);
+                qn qnVar2 = this.b;
+                qnVar2.getClass();
+                if (bool.booleanValue()) {
+                    boolean booleanValue2 = bool2.booleanValue();
+                    String str2 = this.c;
+                    if (booleanValue2) {
+                        qnVar2.getMessagesController().addWebBrowserException(str2, true);
+                    }
+                    ve.e.m(qnVar2.getParentActivity(), str2, false, null);
+                    break;
+                }
                 break;
         }
     }

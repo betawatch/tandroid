@@ -1,15 +1,15 @@
 package com.googlecode.mp4parser;
 
-import h7.w8;
+import g7.u8;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class a implements q2.b {
     static final /* synthetic */ boolean $assertionsDisabled = false;
-    private static zb.c LOG = zb.c.a(a.class);
+    private static yb.c LOG = yb.c.a(a.class);
     private ByteBuffer content;
     long contentStartPosition;
     f dataSource;
@@ -43,16 +43,16 @@ public abstract class a implements q2.b {
     }
 
     public final boolean b() {
-        int i10 = "uuid".equals(getType()) ? 24 : 8;
+        int i9 = "uuid".equals(getType()) ? 24 : 8;
         if (!this.isRead) {
-            return this.memMapSize + ((long) i10) < 4294967296L;
+            return this.memMapSize + ((long) i9) < 4294967296L;
         }
         if (!this.isParsed) {
-            return ((long) (this.content.limit() + i10)) < 4294967296L;
+            return ((long) (this.content.limit() + i9)) < 4294967296L;
         }
         long contentSize = getContentSize();
         ByteBuffer byteBuffer = this.deadBytes;
-        return (contentSize + ((long) (byteBuffer != null ? byteBuffer.limit() : 0))) + ((long) i10) < 4294967296L;
+        return (contentSize + ((long) (byteBuffer != null ? byteBuffer.limit() : 0))) + ((long) i9) < 4294967296L;
     }
 
     public final synchronized void c() {
@@ -61,8 +61,8 @@ public abstract class a implements q2.b {
                 try {
                     LOG.b("mem mapping " + getType());
                     throw null;
-                } catch (IOException e9) {
-                    throw new RuntimeException(e9);
+                } catch (IOException e10) {
+                    throw new RuntimeException(e10);
                 }
             }
         } catch (Throwable th) {
@@ -85,7 +85,7 @@ public abstract class a implements q2.b {
             writableByteChannel.write((ByteBuffer) this.content.position(0));
             return;
         }
-        ByteBuffer allocate3 = ByteBuffer.allocate(w8.a(getSize()));
+        ByteBuffer allocate3 = ByteBuffer.allocate(u8.a(getSize()));
         a(allocate3);
         getContent(allocate3);
         ByteBuffer byteBuffer = this.deadBytes;
@@ -112,7 +112,7 @@ public abstract class a implements q2.b {
     }
 
     public String getPath() {
-        return zb.e.a(this, "");
+        return yb.e.a(this, "");
     }
 
     @Override // q2.b

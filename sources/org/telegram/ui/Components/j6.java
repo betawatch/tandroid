@@ -14,7 +14,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class j6 extends View {
     public boolean a;
@@ -34,7 +34,7 @@ public class j6 extends View {
         i6 i6Var = new i6(z10, z11, z12, false);
         this.c = i6Var;
         i6Var.setCallback(this);
-        i6Var.C = new bg(this, 8);
+        i6Var.C = new fg(this, 8);
     }
 
     public final void a() {
@@ -62,10 +62,10 @@ public class j6 extends View {
                 return;
             }
         }
-        int e9 = (int) i6Var.e();
+        int e10 = (int) i6Var.e();
         i6Var.setBounds(getPaddingLeft(), getPaddingTop(), this.d - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
         i6Var.q(charSequence, z12, z11);
-        float f10 = e9;
+        float f10 = e10;
         if (f10 < i6Var.e() || !(z12 || f10 == i6Var.e())) {
             requestLayout();
         }
@@ -134,21 +134,21 @@ public class j6 extends View {
     }
 
     @Override // android.view.View
-    public void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        int i12 = this.e;
-        if (i12 > 0) {
-            size = Math.min(size, i12);
+    public void onMeasure(int i9, int i10) {
+        int size = View.MeasureSpec.getSize(i9);
+        int size2 = View.MeasureSpec.getSize(i10);
+        int i11 = this.e;
+        if (i11 > 0) {
+            size = Math.min(size, i11);
         }
-        int i13 = this.d;
+        int i12 = this.d;
         i6 i6Var = this.c;
-        if (i13 != size && getLayoutParams().width != 0) {
+        if (i12 != size && getLayoutParams().width != 0) {
             i6Var.setBounds(getPaddingLeft(), getPaddingTop(), size - getPaddingRight(), size2 - getPaddingBottom());
             i6Var.q(i6Var.g, false, true);
         }
         this.d = size;
-        if (this.n && View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
+        if (this.n && View.MeasureSpec.getMode(i9) == Integer.MIN_VALUE) {
             size = getPaddingRight() + getPaddingLeft() + ((int) Math.ceil(i6Var.e()));
         }
         setMeasuredDimension(size, size2);
@@ -162,15 +162,15 @@ public class j6 extends View {
         this.c.n(z10);
     }
 
-    public void setEmojiCacheType(int i10) {
-        this.c.l = i10;
+    public void setEmojiCacheType(int i9) {
+        this.c.l = i9;
     }
 
-    public void setEmojiColor(int i10) {
+    public void setEmojiColor(int i9) {
         i6 i6Var = this.c;
-        if (i6Var.T != i10) {
-            i6Var.T = i10;
-            i6Var.U = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
+        if (i6Var.T != i9) {
+            i6Var.T = i9;
+            i6Var.U = new PorterDuffColorFilter(i9, PorterDuff.Mode.SRC_IN);
         }
         invalidate();
     }
@@ -180,8 +180,8 @@ public class j6 extends View {
         invalidate();
     }
 
-    public void setGravity(int i10) {
-        this.c.b = i10;
+    public void setGravity(int i9) {
+        this.c.b = i9;
     }
 
     public void setHideBackgroundIfEmpty(boolean z10) {
@@ -196,8 +196,8 @@ public class j6 extends View {
         this.c.M = z10;
     }
 
-    public void setMaxWidth(int i10) {
-        this.e = i10;
+    public void setMaxWidth(int i9) {
+        this.e = i9;
     }
 
     public void setOnWidthUpdatedListener(Runnable runnable) {
@@ -223,8 +223,8 @@ public class j6 extends View {
         c(charSequence, true, true);
     }
 
-    public void setTextColor(int i10) {
-        this.c.r(i10);
+    public void setTextColor(int i9) {
+        this.c.r(i9);
         invalidate();
     }
 

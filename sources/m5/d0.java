@@ -4,17 +4,17 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ e0 b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ d0(e0 e0Var, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ d0(e0 e0Var, int i9, int i10) {
+        this.a = i10;
         this.b = e0Var;
-        this.c = i10;
+        this.c = i9;
     }
 
     private final void a() {
@@ -30,21 +30,21 @@ public final /* synthetic */ class d0 implements Runnable {
         f0Var.z = null;
         f0 f0Var2 = e0Var.b;
         f0Var2.F = 1;
-        int i10 = this.c;
+        int i9 = this.c;
         synchronized (f0Var2.E) {
             try {
                 Iterator it = e0Var.b.E.iterator();
                 while (it.hasNext()) {
-                    n5.r rVar = ((n5.j) it.next()).a.e;
-                    if (rVar != null) {
+                    n5.q qVar = ((n5.i) it.next()).a.e;
+                    if (qVar != null) {
                         try {
-                            v5.a aVar = new v5.a(i10);
-                            n5.p pVar = (n5.p) rVar;
-                            Parcel M0 = pVar.M0();
-                            com.google.android.gms.internal.cast.t.c(M0, aVar);
-                            pVar.Q0(M0, 3);
-                        } catch (RemoteException e9) {
-                            n5.c.m.a(e9, "Unable to call %s on %s.", "onDisconnected", n5.r.class.getSimpleName());
+                            u5.a aVar = new u5.a(i9);
+                            n5.o oVar = (n5.o) qVar;
+                            Parcel M0 = oVar.M0();
+                            com.google.android.gms.internal.cast.u.c(M0, aVar);
+                            oVar.Q0(M0, 3);
+                        } catch (RemoteException e10) {
+                            n5.c.m.a(e10, "Unable to call %s on %s.", "onDisconnected", n5.q.class.getSimpleName());
                         }
                     }
                 }
@@ -54,16 +54,16 @@ public final /* synthetic */ class d0 implements Runnable {
         }
         e0Var.b.h();
         f0 f0Var3 = e0Var.b;
-        com.google.android.gms.common.api.internal.n nVar = a9.i.N(f0Var3.f, f0Var3.k, "castDeviceControllerListenerKey").c;
-        y5.l.i(nVar, "Key must not be null");
+        com.google.android.gms.common.api.internal.n nVar = fa.c.D(f0Var3.f, f0Var3.k, "castDeviceControllerListenerKey").c;
+        x5.l.i(nVar, "Key must not be null");
         f0Var3.c(nVar, 8415);
     }
 
     private final void b() {
         Iterator it;
         e0 e0Var = this.b;
-        int i10 = this.c;
-        if (i10 == 0) {
+        int i9 = this.c;
+        if (i9 == 0) {
             f0 f0Var = e0Var.b;
             f0Var.F = 2;
             f0Var.m = true;
@@ -72,7 +72,7 @@ public final /* synthetic */ class d0 implements Runnable {
                 try {
                     Iterator it2 = e0Var.b.E.iterator();
                     while (it2.hasNext()) {
-                        ((n5.j) it2.next()).a();
+                        ((n5.i) it2.next()).a();
                     }
                 } finally {
                 }
@@ -84,18 +84,18 @@ public final /* synthetic */ class d0 implements Runnable {
         synchronized (f0Var2.E) {
             try {
                 it = e0Var.b.E.iterator();
-            } catch (RemoteException e9) {
-                n5.c.m.a(e9, "Unable to call %s on %s.", "onConnectionFailed", n5.r.class.getSimpleName());
+            } catch (RemoteException e10) {
+                n5.c.m.a(e10, "Unable to call %s on %s.", "onConnectionFailed", n5.q.class.getSimpleName());
             } finally {
             }
             while (it.hasNext()) {
-                n5.r rVar = ((n5.j) it.next()).a.e;
-                if (rVar != null) {
-                    v5.a aVar = new v5.a(i10);
-                    n5.p pVar = (n5.p) rVar;
-                    Parcel M0 = pVar.M0();
-                    com.google.android.gms.internal.cast.t.c(M0, aVar);
-                    pVar.Q0(M0, 3);
+                n5.q qVar = ((n5.i) it.next()).a.e;
+                if (qVar != null) {
+                    u5.a aVar = new u5.a(i9);
+                    n5.o oVar = (n5.o) qVar;
+                    Parcel M0 = oVar.M0();
+                    com.google.android.gms.internal.cast.u.c(M0, aVar);
+                    oVar.Q0(M0, 3);
                 }
             }
         }
@@ -118,20 +118,20 @@ public final /* synthetic */ class d0 implements Runnable {
                 e0 e0Var = this.b;
                 f0 f0Var = e0Var.b;
                 f0Var.F = 3;
-                int i10 = this.c;
+                int i9 = this.c;
                 synchronized (f0Var.E) {
                     try {
                         Iterator it = e0Var.b.E.iterator();
                         while (it.hasNext()) {
-                            n5.r rVar = ((n5.j) it.next()).a.e;
-                            if (rVar != null) {
+                            n5.q qVar = ((n5.i) it.next()).a.e;
+                            if (qVar != null) {
                                 try {
-                                    n5.p pVar = (n5.p) rVar;
-                                    Parcel M0 = pVar.M0();
-                                    M0.writeInt(i10);
-                                    pVar.Q0(M0, 2);
-                                } catch (RemoteException e9) {
-                                    n5.c.m.a(e9, "Unable to call %s on %s.", "onConnectionSuspended", n5.r.class.getSimpleName());
+                                    n5.o oVar = (n5.o) qVar;
+                                    Parcel M0 = oVar.M0();
+                                    M0.writeInt(i9);
+                                    oVar.Q0(M0, 2);
+                                } catch (RemoteException e10) {
+                                    n5.c.m.a(e10, "Unable to call %s on %s.", "onConnectionSuspended", n5.q.class.getSimpleName());
                                 }
                             }
                         }

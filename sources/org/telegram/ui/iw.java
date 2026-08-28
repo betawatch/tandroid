@@ -1,33 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class iw extends org.telegram.ui.Components.os {
-    public final /* synthetic */ fy E;
+public final class iw implements q60 {
+    public final /* synthetic */ dy a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iw(cy cyVar, fy fyVar) {
-        super(cyVar);
-        this.E = fyVar;
+    public iw(dy dyVar) {
+        this.a = dyVar;
     }
 
-    @Override // f2.r1
-    public final void y() {
-        fy fyVar = this.E;
-        if (fyVar.c.L0() == 0) {
-            View m10 = fyVar.c.m(0);
-            if (m10 != null) {
-                m10.invalidate();
-            }
-            if (fyVar.v == 2) {
-                fyVar.v = 1;
-            }
-            nw nwVar = fyVar.n;
-            if (nwVar != null) {
-                nwVar.b();
-            }
+    @Override // org.telegram.ui.q60
+    public final void a(r60 r60Var, long j10) {
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(MessagesStorage.TopicKey.of(-j10, 0L));
+        dy dyVar = this.a;
+        wx wxVar = dyVar.y2;
+        if (dyVar.x2) {
+            dyVar.removeSelfFromStack();
         }
+        wxVar.v(dyVar, arrayList, null, true, dyVar.F2, dyVar.G2, dyVar.H2, null);
     }
 }

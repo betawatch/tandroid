@@ -1,22 +1,9 @@
 package org.telegram.ui.Components;
 
-import java.nio.ByteBuffer;
-import org.telegram.messenger.FourierTransform;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class l61 {
-    public final ByteBuffer c;
-    public long e;
-    public final /* synthetic */ m61 f;
-    public final FourierTransform.FFT a = new FourierTransform.FFT(1024, 48000.0f);
-    public final float[] b = new float[1024];
-    public int d = 0;
+public interface l61 {
+    void b(float f10);
 
-    public l61(m61 m61Var) {
-        this.f = m61Var;
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(8192);
-        this.c = allocateDirect;
-        allocateDirect.position(0);
-    }
+    void e(float f10);
 }

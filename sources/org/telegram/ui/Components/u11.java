@@ -1,41 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class u11 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ d21 b;
+public final class u11 extends k41 {
+    public static final /* synthetic */ int a = 0;
 
-    public u11(d21 d21Var, boolean z10) {
-        this.b = d21Var;
-        this.a = z10;
+    static {
+        k41.setup(new u11());
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        d21 d21Var = this.b;
-        long j10 = d21Var.c;
-        if (d21Var.Q == animator) {
-            boolean z10 = this.a;
-            d21Var.N = z10 ? 1.0f : 0.0f;
-            d21Var.n();
-            d21Var.O = false;
-            d21Var.A.setImageResource(d21Var.L ? R.drawable.menu_sidebar_top : R.drawable.menu_sidebar_bottom);
-            d21Var.Q = null;
-            MessagesController.getInstance(d21Var.b).getMainSettings().edit().putBoolean(a9.p.l(j10, "topicssidetabs"), d21Var.M).putBoolean(a9.p.l(j10, "topicssidetabsb"), d21Var.L).apply();
-            Boolean bool = d21Var.P;
-            if (bool != null && z10 != bool.booleanValue()) {
-                boolean booleanValue = d21Var.P.booleanValue();
-                d21Var.P = null;
-                d21Var.d(booleanValue);
+    @Override // org.telegram.ui.Components.k41
+    public final void bindView(View view, l41 l41Var, boolean z10, z41 z41Var, i51 i51Var) {
+        v11 v11Var = (v11) view;
+        boolean z11 = false;
+        if (l41Var.r) {
+            v11Var.f();
+        } else {
+            Object obj = l41Var.G;
+            if (obj == null) {
+                if (l41Var.d == -2) {
+                    v11Var.c();
+                } else {
+                    v11Var.d((l41Var.y & 1) != 0, l41Var.q, l41Var.e);
+                }
+            } else if (obj instanceof TLRPC.TL_forumTopic) {
+                if (l41Var.I) {
+                    v11Var.b(l41Var.x, (TLRPC.TL_forumTopic) obj, l41Var.e);
+                } else {
+                    v11Var.g(l41Var.x, (TLRPC.TL_forumTopic) obj, l41Var.e);
+                }
             }
-            AndroidUtilities.runOnUIThread(new up0(this, 19));
         }
+        v11Var.H = g7.z7.a(l41Var.y, 8) ? AndroidUtilities.dp(10.0f) : 0;
+        if (i51Var != null && i51Var.Y2 && v11Var.s) {
+            z11 = true;
+        }
+        v11Var.setReorder(z11);
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final View createView(Context context, wk0 wk0Var, int i9, int i10, org.telegram.ui.ActionBar.b6 b6Var) {
+        return new v11(context, i9, b6Var);
     }
 }

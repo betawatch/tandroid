@@ -1,21 +1,245 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.os.Bundle;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.text.style.ImageSpan;
+import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class qb0 extends org.telegram.ui.Cells.x8 {
-    @Override // org.telegram.ui.Cells.x8, android.view.View
+public final class qb0 extends FrameLayout {
+    public final org.telegram.ui.Components.q9 a;
+    public final SpannableStringBuilder b;
+    public final org.telegram.ui.Cells.w1 c;
+    public final TextView d;
+    public final org.telegram.ui.Cells.w1 e;
+    public final TextView f;
+    public final org.telegram.ui.Components.pn0 h;
+    public final ob0 n;
+    public boolean r;
+    public float s;
+    public ValueAnimator v;
+    public float w;
+    public ValueAnimator x;
+    public final /* synthetic */ sb0 y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qb0(sb0 sb0Var, Context context) {
+        super(context);
+        this.y = sb0Var;
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setGravity(LocaleController.isRTL ? 5 : 3);
+        linearLayout.setImportantForAccessibility(4);
+        TextView textView = new TextView(context);
+        boolean z10 = true;
+        j3.r0.u(15.0f, 1, textView);
+        int i9 = org.telegram.ui.ActionBar.f6.L6;
+        boolean z11 = false;
+        textView.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, i9, false));
+        textView.setGravity(LocaleController.isRTL ? 5 : 3);
+        textView.setText(LocaleController.getString("LiteBatteryTitle"));
+        linearLayout.addView(textView, g7.e6.q(-2, -2, 16));
+        org.telegram.ui.Cells.w1 w1Var = new org.telegram.ui.Cells.w1(context, z10, z11, z11);
+        w1Var.v = org.telegram.ui.ActionBar.f6.b0(AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.f6.l1(0.15f, org.telegram.ui.ActionBar.f6.w0(null, i9, false)));
+        this.c = w1Var;
+        w1Var.setTypeface(AndroidUtilities.bold());
+        w1Var.setPadding(AndroidUtilities.dp(5.33f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(5.33f), AndroidUtilities.dp(2.0f));
+        w1Var.setTextSize(AndroidUtilities.dp(12.0f));
+        w1Var.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, i9, false));
+        linearLayout.addView(w1Var, g7.e6.t(-2, 17, 16, 6, 1, 0, 0));
+        addView(linearLayout, g7.e6.d(-1, -2.0f, 55, 21.0f, 17.0f, 21.0f, 0.0f));
+        org.telegram.ui.Components.pn0 pn0Var = new org.telegram.ui.Components.pn0(context, null, true);
+        this.h = pn0Var;
+        pn0Var.setReportChanges(true);
+        pn0Var.setDelegate(new g(this, 23));
+        pn0Var.setProgress(LiteMode.getPowerSaverLevel() / 100.0f);
+        pn0Var.setImportantForAccessibility(2);
+        addView(pn0Var, g7.e6.d(-1, 44.0f, 48, 6.0f, 68.0f, 6.0f, 0.0f));
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setImportantForAccessibility(4);
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 13.0f);
+        int i10 = org.telegram.ui.ActionBar.f6.y6;
+        j3.r0.w(i10, null, false, textView2, 3);
+        textView2.setText(LocaleController.getString(R.string.LiteBatteryDisabled));
+        frameLayout.addView(textView2, g7.e6.e(-2, -2, 19));
+        org.telegram.ui.Cells.w1 w1Var2 = new org.telegram.ui.Cells.w1(this, context);
+        this.e = w1Var2;
+        w1Var2.b(0.45f, 240L, org.telegram.ui.Components.gr.h);
+        w1Var2.setGravity(1);
+        w1Var2.setTextSize(AndroidUtilities.dp(13.0f));
+        w1Var2.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.n6, false));
+        frameLayout.addView(w1Var2, g7.e6.e(-2, -2, 17));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("b");
+        this.b = spannableStringBuilder;
+        org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9();
+        this.a = q9Var;
+        q9Var.a = w1Var2.getPaint();
+        q9Var.f = AndroidUtilities.dp(1.5f);
+        q9Var.setBounds(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(-20.0f), AndroidUtilities.dp(23.0f), 0);
+        spannableStringBuilder.setSpan(new ImageSpan(q9Var, 0), 0, spannableStringBuilder.length(), 33);
+        TextView textView3 = new TextView(context);
+        this.f = textView3;
+        textView3.setTextSize(1, 13.0f);
+        j3.r0.w(i10, null, false, textView3, 5);
+        textView3.setText(LocaleController.getString(R.string.LiteBatteryEnabled));
+        frameLayout.addView(textView3, g7.e6.e(-2, -2, 21));
+        addView(frameLayout, g7.e6.d(-1, -2.0f, 55, 21.0f, 52.0f, 21.0f, 0.0f));
+        this.n = new ob0(this);
+        a();
+    }
+
+    public final void a() {
+        int powerSaverLevel = LiteMode.getPowerSaverLevel();
+        org.telegram.ui.Cells.w1 w1Var = this.e;
+        w1Var.a();
+        final int i9 = 0;
+        final int i10 = 1;
+        if (powerSaverLevel <= 0) {
+            w1Var.c(LocaleController.getString(R.string.LiteBatteryAlwaysDisabled), !LocaleController.isRTL, true);
+        } else if (powerSaverLevel >= 100) {
+            w1Var.c(LocaleController.getString(R.string.LiteBatteryAlwaysEnabled), !LocaleController.isRTL, true);
+        } else {
+            float f10 = powerSaverLevel;
+            this.a.a(f10 / 100.0f, true);
+            w1Var.c(AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.LiteBatteryWhenBelow), TextUtils.concat(String.format("%d%% ", Integer.valueOf(Math.round(f10))), this.b)), !LocaleController.isRTL, true);
+        }
+        String upperCase = LocaleController.getString(LiteMode.isPowerSaverApplied() ? R.string.LiteBatteryEnabled : R.string.LiteBatteryDisabled).toUpperCase();
+        org.telegram.ui.Cells.w1 w1Var2 = this.c;
+        w1Var2.setText(upperCase);
+        boolean z10 = powerSaverLevel > 0 && powerSaverLevel < 100;
+        if (z10 != this.r) {
+            this.r = z10;
+            w1Var2.clearAnimation();
+            org.telegram.messenger.ll.r(w1Var2.animate().alpha(z10 ? 1.0f : 0.0f), org.telegram.ui.Components.gr.h, 220L);
+        }
+        float f11 = powerSaverLevel >= 100 ? 1.0f : 0.0f;
+        if (this.s != f11) {
+            this.s = f11;
+            ValueAnimator valueAnimator = this.v;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.v = null;
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.s, f11);
+            this.v = ofFloat;
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.nb0
+                public final /* synthetic */ qb0 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                    switch (i9) {
+                        case 0:
+                            qb0 qb0Var = this.b;
+                            TextView textView = qb0Var.f;
+                            int w02 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.y6, false);
+                            int w03 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.n6, false);
+                            float floatValue = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
+                            qb0Var.s = floatValue;
+                            textView.setTextColor(i0.a.d(floatValue, w02, w03));
+                            break;
+                        default:
+                            qb0 qb0Var2 = this.b;
+                            TextView textView2 = qb0Var2.d;
+                            int w04 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.y6, false);
+                            int w05 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.n6, false);
+                            float floatValue2 = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
+                            qb0Var2.w = floatValue2;
+                            textView2.setTextColor(i0.a.d(floatValue2, w04, w05));
+                            break;
+                    }
+                }
+            });
+            this.v.addListener(new pb0(this, f11, 0));
+            this.v.setInterpolator(org.telegram.ui.Components.gr.h);
+            this.v.setDuration(320L);
+            this.v.start();
+        }
+        float f12 = powerSaverLevel <= 0 ? 1.0f : 0.0f;
+        if (this.w != f12) {
+            this.w = f12;
+            ValueAnimator valueAnimator2 = this.x;
+            if (valueAnimator2 != null) {
+                valueAnimator2.cancel();
+                this.x = null;
+            }
+            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.w, f12);
+            this.x = ofFloat2;
+            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.nb0
+                public final /* synthetic */ qb0 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator22) {
+                    switch (i10) {
+                        case 0:
+                            qb0 qb0Var = this.b;
+                            TextView textView = qb0Var.f;
+                            int w02 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.y6, false);
+                            int w03 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.n6, false);
+                            float floatValue = ((Float) valueAnimator22.getAnimatedValue()).floatValue();
+                            qb0Var.s = floatValue;
+                            textView.setTextColor(i0.a.d(floatValue, w02, w03));
+                            break;
+                        default:
+                            qb0 qb0Var2 = this.b;
+                            TextView textView2 = qb0Var2.d;
+                            int w04 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.y6, false);
+                            int w05 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.n6, false);
+                            float floatValue2 = ((Float) valueAnimator22.getAnimatedValue()).floatValue();
+                            qb0Var2.w = floatValue2;
+                            textView2.setTextColor(i0.a.d(floatValue2, w04, w05));
+                            break;
+                    }
+                }
+            });
+            this.x.addListener(new pb0(this, f12, 1));
+            this.x.setInterpolator(org.telegram.ui.Components.gr.h);
+            this.x.setDuration(320L);
+            this.x.start();
+        }
+    }
+
+    @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setEnabled(true);
+        this.n.onInitializeAccessibilityNodeInfo(this, accessibilityNodeInfo);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(112.0f), TLObject.FLAG_30));
     }
 
     @Override // android.view.View
     public final void onPopulateAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
         super.onPopulateAccessibilityEvent(accessibilityEvent);
-        accessibilityEvent.setContentDescription(getTextView().getText());
-        setContentDescription(getTextView().getText());
+        this.n.onPopulateAccessibilityEvent(this, accessibilityEvent);
+    }
+
+    @Override // android.view.View
+    public final boolean performAccessibilityAction(int i9, Bundle bundle) {
+        return this.n.performAccessibilityAction(this, i9, bundle);
     }
 }

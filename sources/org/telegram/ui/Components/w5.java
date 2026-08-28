@@ -1,24 +1,24 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w5 implements gf.j {
+public final /* synthetic */ class w5 implements ff.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ w5(Object obj, int i10) {
-        this.a = i10;
+    public /* synthetic */ w5(Object obj, int i9) {
+        this.a = i9;
         this.b = obj;
     }
 
-    @Override // gf.j
+    @Override // ff.j
     public final void doFrame(long j10) {
         switch (this.a) {
             case 0:
                 x5 x5Var = (x5) this.b;
-                int i10 = x5Var.M0 + 1;
-                x5Var.M0 = i10;
-                if (i10 > 10) {
+                int i9 = x5Var.M0 + 1;
+                x5Var.M0 = i9;
+                if (i9 > 10) {
                     x5Var.N0 = true;
                 }
                 x5Var.i();
@@ -30,11 +30,11 @@ public final /* synthetic */ class w5 implements gf.j {
                 break;
             case 1:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.b;
-                int i11 = EditTextBoldCursor.a;
+                int i10 = EditTextBoldCursor.a;
                 editTextBoldCursor.invalidate();
                 break;
             default:
-                oi0.g((oi0) this.b);
+                mi0.g((mi0) this.b);
                 break;
         }
     }

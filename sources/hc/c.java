@@ -1,37 +1,27 @@
 package hc;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
+import ie.p;
+import java.util.regex.Pattern;
+import mc.h;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c implements Iterable {
-    public final HashMap a = new HashMap();
-    public final ArrayList b = new ArrayList();
+public final class c extends h {
+    public static final Pattern e = Pattern.compile("(\\${2})([\\s\\S]+?)\\1");
 
-    public c(HashMap hashMap) {
-        String str = (String) hashMap.get("cookie");
-        if (str != null) {
-            for (String str2 : str.split(";")) {
-                String[] split = str2.trim().split("=");
-                if (split.length == 2) {
-                    this.a.put(split[0], split[1]);
-                }
-            }
+    @Override // mc.h
+    public final p b() {
+        String a2 = a(e);
+        if (a2 == null) {
+            return null;
         }
+        d dVar = new d();
+        dVar.g = e2.c.m(a2, 2, 2);
+        return dVar;
     }
 
-    public final void i() {
-        Iterator it = this.b.iterator();
-        if (it.hasNext()) {
-            it.next().getClass();
-            throw new ClassCastException();
-        }
-    }
-
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return this.a.keySet().iterator();
+    @Override // mc.h
+    public final char d() {
+        return '$';
     }
 }

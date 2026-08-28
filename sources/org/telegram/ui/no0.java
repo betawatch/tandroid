@@ -1,60 +1,73 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class no0 extends org.telegram.ui.Components.zk0 {
-    public final /* synthetic */ int T2;
-    public final /* synthetic */ vo0 U2;
+public final /* synthetic */ class no0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ oo0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public no0(vo0 vo0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
-        super(context, c6Var);
-        this.U2 = vo0Var;
-        this.T2 = i10;
+    public /* synthetic */ no0(oo0 oo0Var, int i9) {
+        this.a = i9;
+        this.b = oo0Var;
     }
 
-    @Override // org.telegram.ui.Components.zk0
-    public final Integer W0(int i10) {
-        vo0 vo0Var = this.U2;
-        if ((i10 < vo0Var.P || i10 >= vo0Var.Q) && (i10 < vo0Var.R || i10 >= vo0Var.S)) {
-            return super.W0(i10);
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i9;
+        yo0 yo0Var;
+        uo0 uo0Var;
+        switch (this.a) {
+            case 0:
+                Integer num = (Integer) obj;
+                oo0 oo0Var = this.b;
+                uo0 uo0Var2 = oo0Var.e;
+                TL_stars.StarGift starGift = num.intValue() == 0 ? null : (TL_stars.StarGift) uo0Var2.D.get(num);
+                uo0Var2.B = starGift;
+                zo0 zo0Var = uo0Var2.f0;
+                if (starGift == null) {
+                    fh.p5 p5Var = uo0Var2.A;
+                    if (p5Var != null) {
+                        p5Var.f();
+                        uo0Var2.A = null;
+                    }
+                } else {
+                    fh.p5 p5Var2 = uo0Var2.A;
+                    if (p5Var2 == null || p5Var2.b != starGift.id) {
+                        i9 = ((org.telegram.ui.ActionBar.o2) zo0Var).currentAccount;
+                        fh.p5 p5Var3 = new fh.p5(uo0Var2.B.id, i9, new no0(oo0Var, 2));
+                        uo0Var2.A = p5Var3;
+                        p5Var3.g(false);
+                    }
+                }
+                uo0Var2.e();
+                (zo0Var.y.getCurrentPosition() == 1 ? zo0Var.h : zo0Var.f).e();
+                break;
+            case 1:
+                uo0 uo0Var3 = this.b.e;
+                uo0Var3.n = ((Integer) obj).intValue();
+                uo0Var3.s = null;
+                uo0Var3.v = null;
+                uo0Var3.y = null;
+                uo0Var3.i(true);
+                uo0Var3.h();
+                uo0Var3.f();
+                to0 to0Var = uo0Var3.x;
+                if (to0Var != null) {
+                    to0Var.invalidate();
+                }
+                zo0 zo0Var2 = uo0Var3.f0;
+                uo0 uo0Var4 = zo0Var2.h;
+                if (uo0Var4 != null && (yo0Var = uo0Var4.a) != null && (uo0Var = zo0Var2.f) != null) {
+                    yo0Var.a(uo0Var.n);
+                    break;
+                }
+                break;
+            default:
+                this.b.e.e();
+                break;
         }
-        return 0;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        O0(canvas, this.U2.P, Math.max(r0.S, r0.Q) - 1, org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.d6, this.l2), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        super.onDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.zk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        vo0 vo0Var = this.U2;
-        ap0 ap0Var = vo0Var.f0;
-        vo0.a(vo0Var);
-        if (vo0Var.B != null) {
-            if (vo0Var.A == null || !vo0Var.c()) {
-                return;
-            }
-            vo0Var.A.g(false);
-            return;
-        }
-        hh.m7 m7Var = this.T2 == 1 ? ap0Var.c : ap0Var.b;
-        if (m7Var == null || !vo0Var.c()) {
-            return;
-        }
-        m7Var.a();
-    }
-
-    @Override // org.telegram.ui.Components.zk0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        vo0.a(this.U2);
     }
 }

@@ -10,13 +10,13 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-final class OverlayListView extends ListView {
+public final class OverlayListView extends ListView {
     public final ArrayList a;
 
-    public OverlayListView(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet);
+    public OverlayListView(Context context) {
+        super(context);
         this.a = new ArrayList();
     }
 
@@ -42,11 +42,11 @@ final class OverlayListView extends ListView {
                     float max = q0Var.j ? Math.max(0.0f, Math.min(1.0f, (drawingTime - q0Var.i) / q0Var.e)) : 0.0f;
                     Interpolator interpolator = q0Var.d;
                     float interpolation = interpolator == null ? max : interpolator.getInterpolation(max);
-                    int i10 = (int) (q0Var.g * interpolation);
+                    int i9 = (int) (q0Var.g * interpolation);
                     Rect rect2 = q0Var.f;
-                    rect.top = rect2.top + i10;
-                    rect.bottom = rect2.bottom + i10;
-                    float z11 = com.google.android.recaptcha.internal.a.z(q0Var.h, 1.0f, interpolation, 1.0f);
+                    rect.top = rect2.top + i9;
+                    rect.bottom = rect2.bottom + i9;
+                    float z11 = e2.c.z(q0Var.h, 1.0f, interpolation, 1.0f);
                     q0Var.b = z11;
                     if (bitmapDrawable2 != null) {
                         bitmapDrawable2.setAlpha((int) (z11 * 255.0f));
@@ -54,11 +54,11 @@ final class OverlayListView extends ListView {
                     }
                     if (q0Var.j && max >= 1.0f) {
                         q0Var.k = true;
-                        xe.b bVar = q0Var.l;
+                        we.b bVar = q0Var.l;
                         if (bVar != null) {
-                            u uVar = (u) bVar.c;
-                            uVar.V.remove((c2.z) bVar.b);
-                            uVar.R.notifyDataSetChanged();
+                            v vVar = (v) bVar.c;
+                            vVar.V.remove((c2.a0) bVar.b);
+                            vVar.R.notifyDataSetChanged();
                         }
                     }
                     z10 = !q0Var.k;
@@ -68,5 +68,15 @@ final class OverlayListView extends ListView {
                 }
             }
         }
+    }
+
+    public OverlayListView(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet);
+        this.a = new ArrayList();
+    }
+
+    public OverlayListView(Context context, AttributeSet attributeSet, int i9) {
+        super(context, attributeSet, i9);
+        this.a = new ArrayList();
     }
 }

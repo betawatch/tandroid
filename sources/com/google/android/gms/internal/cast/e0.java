@@ -1,76 +1,139 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import j$.lang.Iterable$-CC;
+import j$.util.Collection;
+import j$.util.Spliterator;
+import j$.util.Spliterators;
+import j$.util.stream.Stream;
+import java.io.Serializable;
+import java.util.AbstractCollection;
+import java.util.Arrays;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class e0 extends c7.w implements ListIterator {
-    public final int b;
-    public int c;
-    public final g0 d;
+public abstract class e0 extends AbstractCollection implements Serializable, Collection {
+    public static final Object[] a = new Object[0];
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e0(g0 g0Var, int i10) {
-        super(1);
-        int size = g0Var.size();
-        g7.k5.b(i10, size);
-        this.b = size;
-        this.c = i10;
-        this.d = g0Var;
-    }
-
-    public final Object a(int i10) {
-        return this.d.get(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean add(Object obj) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.c;
-        this.c = i10 + 1;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.c - 1;
-        this.c = i10;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean addAll(java.util.Collection collection) {
         throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final void clear() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.lang.Iterable, j$.util.Collection
+    public /* synthetic */ void forEach(Consumer consumer) {
+        Iterable$-CC.$default$forEach(this, consumer);
+    }
+
+    public abstract int i(Object[] objArr);
+
+    public int n() {
+        throw new UnsupportedOperationException();
+    }
+
+    public int o() {
+        throw new UnsupportedOperationException();
+    }
+
+    public Object[] p() {
+        return null;
+    }
+
+    @Override // java.util.Collection
+    public /* synthetic */ Stream parallelStream() {
+        return Stream.Wrapper.convert(parallelStream());
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean removeAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ boolean removeIf(Predicate predicate) {
+        return Collection.-CC.$default$removeIf(this, predicate);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean retainAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable
+    public /* synthetic */ Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(spliterator());
+    }
+
+    @Override // java.util.Collection
+    public /* synthetic */ java.util.stream.Stream stream() {
+        return Stream.Wrapper.convert(stream());
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ Object[] toArray(IntFunction intFunction) {
+        Object[] array;
+        array = toArray((Object[]) intFunction.apply(0));
+        return array;
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ j$.util.stream.Stream parallelStream() {
+        return Collection.-CC.$default$parallelStream(this);
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
+    public final j$.util.Spliterator spliterator() {
+        return Spliterators.spliterator(this, 1296);
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ j$.util.stream.Stream stream() {
+        return Collection.-CC.$default$stream(this);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray() {
+        return toArray(a);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        objArr.getClass();
+        int size = size();
+        int length = objArr.length;
+        if (length < size) {
+            Object[] p6 = p();
+            if (p6 == null) {
+                if (length != 0) {
+                    objArr = Arrays.copyOf(objArr, 0);
+                }
+                objArr = Arrays.copyOf(objArr, size);
+            } else {
+                return Arrays.copyOfRange(p6, o(), n(), objArr.getClass());
+            }
+        } else if (length > size) {
+            objArr[size] = null;
+        }
+        i(objArr);
+        return objArr;
     }
 }

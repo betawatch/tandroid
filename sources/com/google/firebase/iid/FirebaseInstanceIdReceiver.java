@@ -10,26 +10,26 @@ import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.i;
-import f9.v;
-import g7.n6;
+import e9.v;
+import f7.o6;
 import java.lang.ref.SoftReference;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import u5.j;
-import u5.k;
+import t5.k;
+import t5.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
     public static SoftReference a;
 
     public static int a(Context context, Intent intent) {
-        int i10;
+        int i9;
         Task c10;
-        int i11 = 500;
+        int i10 = 500;
         if (intent.getExtras() == null) {
             return 500;
         }
@@ -51,24 +51,24 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
                 bundle.putInt("google.product_id", valueOf.intValue());
             }
             bundle.putBoolean("supports_message_handled", true);
-            k b10 = k.b(context);
+            l b10 = l.b(context);
             synchronized (b10) {
-                i10 = b10.a;
-                b10.a = i10 + 1;
+                i9 = b10.a;
+                b10.a = i9 + 1;
             }
-            c10 = b10.c(new j(i10, 2, bundle, 0));
+            c10 = b10.c(new k(i9, 2, bundle, 0));
         }
         try {
-            i11 = ((Integer) Tasks.await(new i(context).b(intent))).intValue();
-        } catch (InterruptedException | ExecutionException e9) {
-            Log.e("FirebaseMessaging", "Failed to send message to service.", e9);
+            i10 = ((Integer) Tasks.await(new i(context).b(intent))).intValue();
+        } catch (InterruptedException | ExecutionException e10) {
+            Log.e("FirebaseMessaging", "Failed to send message to service.", e10);
         }
         try {
             Tasks.await(c10, TimeUnit.SECONDS.toMillis(1L), TimeUnit.MILLISECONDS);
-        } catch (InterruptedException | ExecutionException | TimeoutException e10) {
-            Log.w("CloudMessagingReceiver", "Message ack failed: ".concat(e10.toString()));
+        } catch (InterruptedException | ExecutionException | TimeoutException e11) {
+            Log.w("CloudMessagingReceiver", "Message ack failed: ".concat(e11.toString()));
         }
-        return i11;
+        return i10;
     }
 
     public static int b(Intent intent) {
@@ -92,10 +92,10 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
             return 500;
         }
         Intent putExtras = new Intent("com.google.firebase.messaging.NOTIFICATION_DISMISS").putExtras(extras);
-        if (!n6.b(putExtras)) {
+        if (!o6.b(putExtras)) {
             return -1;
         }
-        n6.a("_nd", putExtras.getExtras());
+        o6.a("_nd", putExtras.getExtras());
         return -1;
     }
 

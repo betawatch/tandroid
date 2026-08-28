@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class zzux extends zzuv {
     @Override // com.google.android.recaptcha.internal.zzuv
@@ -28,28 +28,28 @@ final class zzux extends zzuv {
     }
 
     @Override // com.google.android.recaptcha.internal.zzuv
-    public final /* bridge */ /* synthetic */ void zzd(Object obj, int i10, int i11) {
-        ((zzuw) obj).zzj((i10 << 3) | 5, Integer.valueOf(i11));
+    public final /* bridge */ /* synthetic */ void zzd(Object obj, int i9, int i10) {
+        ((zzuw) obj).zzj((i9 << 3) | 5, Integer.valueOf(i10));
     }
 
     @Override // com.google.android.recaptcha.internal.zzuv
-    public final /* bridge */ /* synthetic */ void zze(Object obj, int i10, long j10) {
-        ((zzuw) obj).zzj((i10 << 3) | 1, Long.valueOf(j10));
+    public final /* bridge */ /* synthetic */ void zze(Object obj, int i9, long j10) {
+        ((zzuw) obj).zzj((i9 << 3) | 1, Long.valueOf(j10));
     }
 
     @Override // com.google.android.recaptcha.internal.zzuv
-    public final /* bridge */ /* synthetic */ void zzf(Object obj, int i10, Object obj2) {
-        ((zzuw) obj).zzj((i10 << 3) | 3, (zzuw) obj2);
+    public final /* bridge */ /* synthetic */ void zzf(Object obj, int i9, Object obj2) {
+        ((zzuw) obj).zzj((i9 << 3) | 3, (zzuw) obj2);
     }
 
     @Override // com.google.android.recaptcha.internal.zzuv
-    public final /* bridge */ /* synthetic */ void zzg(Object obj, int i10, zzqm zzqmVar) {
-        ((zzuw) obj).zzj((i10 << 3) | 2, zzqmVar);
+    public final /* bridge */ /* synthetic */ void zzg(Object obj, int i9, zzqm zzqmVar) {
+        ((zzuw) obj).zzj((i9 << 3) | 2, zzqmVar);
     }
 
     @Override // com.google.android.recaptcha.internal.zzuv
-    public final /* bridge */ /* synthetic */ void zzh(Object obj, int i10, long j10) {
-        ((zzuw) obj).zzj(i10 << 3, Long.valueOf(j10));
+    public final /* bridge */ /* synthetic */ void zzh(Object obj, int i9, long j10) {
+        ((zzuw) obj).zzj(i9 << 3, Long.valueOf(j10));
     }
 
     @Override // com.google.android.recaptcha.internal.zzuv

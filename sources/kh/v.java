@@ -1,510 +1,253 @@
 package kh;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.os.Build;
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.util.LongSparseArray;
-import android.view.View;
-import android.widget.FrameLayout;
-import h3.x;
-import h7.z5;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
-import jh.b6;
-import jh.r6;
-import jh.s6;
-import lh.z7;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.y1;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Cells.o7;
-import org.telegram.ui.Components.cq;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.gi;
-import org.telegram.ui.Components.o71;
-import org.telegram.ui.Components.vq0;
-import org.telegram.ui.Components.zk0;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.Components.ib0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public abstract class v extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    public static LongSparseArray A;
-    public static LongSparseArray B;
-    public final n2 a;
-    public final int b;
-    public final c6 c;
-    public final long d;
-    public final b6 e;
-    public final ArrayList f;
-    public final ArrayList h;
-    public final a n;
-    public final o71 r;
-    public Boolean s;
-    public int v;
-    public float w;
-    public ValueAnimator x;
-    public int y;
+public final class v extends Drawable {
+    public final /* synthetic */ int a = 1;
+    public final Path b;
+    public final Paint c;
+    public final Paint d;
+    public final Paint e;
+    public boolean f;
+    public final Object g;
 
-    public v(Context context, n2 n2Var, long j10) {
-        super(context);
-        this.f = new ArrayList();
-        this.h = new ArrayList();
-        this.s = null;
-        this.v = AndroidUtilities.displaySize.y;
-        this.y = Utilities.clamp(SharedConfig.storiesColumnsCount, 6, 2);
-        this.a = n2Var;
-        int currentAccount = n2Var.getCurrentAccount();
-        this.b = currentAccount;
-        c6 resourceProvider = n2Var.getResourceProvider();
-        this.c = resourceProvider;
-        this.d = j10;
-        setBackgroundColor(g6.v(g6.v0(g6.d6, resourceProvider), g6.l1(0.04f, g6.v0(g6.G6, resourceProvider))));
-        if (B == null) {
-            B = new LongSparseArray();
-        }
-        long j11 = currentAccount;
-        LongSparseArray longSparseArray = (LongSparseArray) B.get(j11);
-        if (longSparseArray == null) {
-            LongSparseArray longSparseArray2 = B;
-            LongSparseArray longSparseArray3 = new LongSparseArray();
-            longSparseArray2.put(j11, longSparseArray3);
-            longSparseArray = longSparseArray3;
-        }
-        b6 b6Var = (b6) longSparseArray.get(j10);
-        if (b6Var == null) {
-            b6 b6Var2 = new b6(currentAccount, j10, "", null);
-            longSparseArray.put(j10, b6Var2);
-            b6Var = b6Var2;
-        }
-        this.e = b6Var;
-        vq0 vq0Var = (vq0) this;
-        a aVar = new a(vq0Var, context);
-        this.n = aVar;
-        aVar.setAllowDisallowInterceptTouch(true);
-        aVar.setAdapter(new b(vq0Var, context));
-        addView(aVar, z5.e(-1, -1, 119));
-        o71 n10 = aVar.n(9, true);
-        this.r = n10;
-        n10.r = 12;
-        n10.setPreTabClick(new x(vq0Var, 28));
-        addView(n10, z5.e(-1, 42, 48));
-        i(false);
+    public v() {
+        Path path = new Path();
+        this.b = path;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        Paint paint3 = new Paint(1);
+        this.e = paint3;
+        this.g = new org.telegram.ui.Components.y5(new ib0(this, 1), 320L, gr.h, 0);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setColor(-1);
+        paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dpf2(2.0f)));
+        paint2.setColor(-1);
+        paint3.setStyle(style);
+        paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        path.moveTo(-AndroidUtilities.dpf2(3.75f), -AndroidUtilities.dpf2(5.4166f));
+        path.lineTo(AndroidUtilities.dpf2(3.75f), 0.0f);
+        path.lineTo(-AndroidUtilities.dpf2(3.75f), AndroidUtilities.dpf2(5.4166f));
+        path.close();
     }
 
-    public final void a(String str) {
-        n2 n2Var = this.a;
-        if (n2Var == null || n2Var.getParentActivity() == null) {
-            return;
-        }
-        gi giVar = new gi(n2Var.getParentActivity(), this.a, false, false, false, this.c);
-        giVar.J1(1, false);
-        giVar.P0 = true;
-        giVar.O0 = false;
-        giVar.f1.setText(LocaleController.getString(R.string.ChoosePhotoOrVideo));
-        giVar.f0.f0();
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 == 21 || i10 == 22) {
-            AndroidUtilities.hideKeyboard(n2Var.getFragmentView().findFocus());
-        }
-        giVar.V1 = new d(this, giVar, str);
-        giVar.r1();
-        giVar.show();
-    }
-
-    public final void b(String str) {
-        b6 b6Var;
-        TLRPC.MessageMedia messageMedia;
-        if (TextUtils.isEmpty(str)) {
-            return;
-        }
-        this.e.G.remove(str);
-        this.h.remove(str);
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.f;
-            if (i10 >= arrayList.size()) {
-                b6Var = null;
-                break;
-            }
-            b6Var = (b6) arrayList.get(i10);
-            if (b6Var != null && TextUtils.equals(b6Var.E, str)) {
-                break;
-            } else {
-                i10++;
-            }
-        }
-        if (b6Var != null) {
-            ArrayList arrayList2 = b6Var.i;
-            TL_bots.deletePreviewMedia deletepreviewmedia = new TL_bots.deletePreviewMedia();
-            int i11 = this.b;
-            deletepreviewmedia.bot = MessagesController.getInstance(i11).getInputUser(this.d);
-            deletepreviewmedia.lang_code = str;
-            for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-                TL_stories.StoryItem storyItem = ((MessageObject) arrayList2.get(i12)).storyItem;
-                if (storyItem != null && (messageMedia = storyItem.media) != null) {
-                    deletepreviewmedia.media.add(MessagesController.toInputMedia(messageMedia));
-                }
-            }
-            ConnectionsManager.getInstance(i11).sendRequest(deletepreviewmedia, null);
-        }
-        i(true);
-        this.r.d(-1, 0);
-    }
-
-    public abstract boolean c(MessageObject messageObject);
-
-    public final boolean d() {
-        b6 b6Var;
-        View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof r) || (b6Var = ((r) currentView).a) == null) {
-            return true;
-        }
-        ArrayList arrayList = b6Var.i;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            if (!c((MessageObject) arrayList.get(i10))) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12 = NotificationCenter.storiesListUpdated;
-        a aVar = this.n;
-        int i13 = 0;
-        if (i10 != i12) {
-            if (i10 == NotificationCenter.storiesUpdated) {
-                i(true);
-                View[] viewPages = aVar.getViewPages();
-                int length = viewPages.length;
-                while (i13 < length) {
-                    View view = viewPages[i13];
-                    if (view instanceof r) {
-                        ((r) view).v.l();
-                    }
-                    i13++;
-                }
-                return;
-            }
-            return;
-        }
-        Object obj = objArr[0];
-        b6 b6Var = this.e;
-        if (obj == b6Var) {
-            i(true);
-            View[] viewPages2 = aVar.getViewPages();
-            int length2 = viewPages2.length;
-            while (i13 < length2) {
-                View view2 = viewPages2[i13];
-                if (view2 instanceof r) {
-                    r rVar = (r) view2;
-                    if (rVar.a == b6Var) {
-                        rVar.v.l();
-                    }
-                }
-                i13++;
-            }
-            return;
-        }
-        if (this.f.indexOf(obj) >= 0) {
-            View[] viewPages3 = aVar.getViewPages();
-            for (View view3 : viewPages3) {
-                if (view3 instanceof r) {
-                    r rVar2 = (r) view3;
-                    if (rVar2.a == objArr[0]) {
-                        rVar2.v.l();
-                    }
-                }
-            }
-        }
-    }
-
-    public abstract boolean e(MessageObject messageObject);
-
-    public final void f() {
-        b6 b6Var;
-        View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof r) || (b6Var = ((r) currentView).a) == null) {
-            return;
-        }
-        ArrayList arrayList = b6Var.i;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            if (!c((MessageObject) arrayList.get(i10))) {
-                e((MessageObject) arrayList.get(i10));
-            }
-        }
-    }
-
-    public abstract boolean g(MessageObject messageObject);
-
-    public String getBotPreviewsSubtitle() {
-        int i10;
-        int i11;
-        TLRPC.MessageMedia messageMedia;
-        StringBuilder sb2 = new StringBuilder();
-        View currentView = this.n.getCurrentView();
-        if (currentView instanceof r) {
-            b6 b6Var = ((r) currentView).a;
-            if (b6Var != null) {
-                ArrayList arrayList = b6Var.i;
-                i10 = 0;
-                i11 = 0;
-                for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                    MessageObject messageObject = (MessageObject) arrayList.get(i12);
-                    TL_stories.StoryItem storyItem = messageObject.storyItem;
-                    if (storyItem != null && (messageMedia = storyItem.media) != null) {
-                        if (MessageObject.isVideoDocument(messageMedia.document)) {
-                            i11++;
-                        } else if (messageObject.storyItem.media.photo != null) {
-                            i10++;
-                        }
-                    }
-                }
-            } else {
-                i10 = 0;
-                i11 = 0;
-            }
-            if (i10 == 0 && i11 == 0) {
-                return LocaleController.getString(R.string.BotPreviewEmpty);
-            }
-            if (i10 > 0) {
-                sb2.append(LocaleController.formatPluralString("Images", i10, new Object[0]));
-            }
-            if (i11 > 0) {
-                if (sb2.length() > 0) {
-                    sb2.append(", ");
-                }
-                sb2.append(LocaleController.formatPluralString("Videos", i11, new Object[0]));
-            }
-        }
-        return sb2.toString();
-    }
-
-    public String getCurrentLang() {
-        View view;
-        b6 b6Var;
-        a aVar = this.n;
-        View[] viewPages = aVar.getViewPages();
-        if (Math.abs(aVar.getCurrentPosition() - aVar.getPositionAnimated()) >= 0.5f || (view = viewPages[1]) == null) {
-            view = viewPages[0];
-        }
-        if (!(view instanceof r) || (b6Var = ((r) view).a) == null) {
-            return null;
-        }
-        return b6Var.E;
-    }
-
-    public b6 getCurrentList() {
-        b6 b6Var;
-        View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof r) || (b6Var = ((r) currentView).a) == null) {
-            return null;
-        }
-        return b6Var;
-    }
-
-    public zk0 getCurrentListView() {
-        View currentView = this.n.getCurrentView();
-        if (currentView instanceof r) {
-            return ((r) currentView).f;
-        }
-        return null;
-    }
-
-    public int getItemsCount() {
-        b6 b6Var;
-        View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof r) || (b6Var = ((r) currentView).a) == null) {
-            return 0;
-        }
-        return b6Var.i.size();
-    }
-
-    public int getStartedTrackingX() {
-        return 0;
-    }
-
-    public final void h() {
-        b6 b6Var;
-        View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof r) || (b6Var = ((r) currentView).a) == null) {
-            return;
-        }
-        ArrayList arrayList = b6Var.i;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            if (c((MessageObject) arrayList.get(i10))) {
-                g((MessageObject) arrayList.get(i10));
-            }
-        }
-    }
-
-    public final void i(boolean z10) {
-        b6 b6Var;
-        z7 z7Var;
-        ArrayList arrayList = new ArrayList(this.e.G);
-        ArrayList arrayList2 = this.h;
-        int size = arrayList2.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList2.get(i10);
-            i10++;
-            String str = (String) obj;
-            if (!arrayList.contains(str)) {
-                arrayList.add(str);
-            }
-        }
-        s6 storiesController = MessagesController.getInstance(this.b).getStoriesController();
-        long j10 = this.d;
-        ArrayList E = storiesController.E(j10);
-        if (E != null) {
-            int size2 = E.size();
-            int i11 = 0;
-            while (i11 < size2) {
-                Object obj2 = E.get(i11);
-                i11++;
-                r6 r6Var = (r6) obj2;
-                if (r6Var != null && (z7Var = r6Var.c) != null && z7Var.J0 == j10 && !TextUtils.isEmpty(z7Var.K0) && !arrayList.contains(z7Var.K0)) {
-                    arrayList.add(z7Var.K0);
-                }
-            }
-        }
-        ArrayList arrayList3 = this.f;
-        ArrayList arrayList4 = new ArrayList(arrayList3);
-        arrayList3.clear();
-        int size3 = arrayList.size();
-        int i12 = 0;
-        while (i12 < size3) {
-            Object obj3 = arrayList.get(i12);
-            i12++;
-            String str2 = (String) obj3;
-            int i13 = 0;
-            while (true) {
-                if (i13 >= arrayList4.size()) {
-                    b6Var = null;
-                    break;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                boolean z10 = this.f;
+                if (z10) {
+                    canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, 255, 31);
                 } else {
-                    if (TextUtils.equals(((b6) arrayList4.get(i13)).E, str2)) {
-                        b6Var = (b6) arrayList4.get(i13);
-                        break;
+                    canvas.save();
+                }
+                canvas.translate(getBounds().centerX(), getBounds().centerY());
+                canvas.drawPath(this.b, this.c);
+                if (z10) {
+                    canvas.drawLine(-AndroidUtilities.dp(8.66f), -AndroidUtilities.dp(8.66f), AndroidUtilities.dp(8.66f), AndroidUtilities.dp(8.66f), this.d);
+                    canvas.drawLine(-AndroidUtilities.dp(8.66f), -AndroidUtilities.dp(8.66f), AndroidUtilities.dp(8.66f), AndroidUtilities.dp(8.66f), this.e);
+                }
+                canvas.restore();
+                break;
+            default:
+                float dpf2 = AndroidUtilities.dpf2(1.66f);
+                Paint paint = this.c;
+                paint.setStrokeWidth(dpf2);
+                float dpf22 = AndroidUtilities.dpf2(3.32f);
+                Paint paint2 = this.e;
+                paint2.setStrokeWidth(dpf22);
+                float e10 = ((org.telegram.ui.Components.y5) this.g).e(this.f);
+                float centerX = getBounds().centerX();
+                float centerY = getBounds().centerY();
+                float dpf23 = AndroidUtilities.dpf2(10.66f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(centerX - dpf23, centerY - dpf23, centerX + dpf23, dpf23 + centerY);
+                canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(8.33f), AndroidUtilities.dpf2(8.33f), paint);
+                if (e10 > 0.0f) {
+                    canvas.saveLayerAlpha(rectF, 255, 31);
+                } else {
+                    canvas.save();
+                }
+                canvas.save();
+                canvas.translate(AndroidUtilities.dpf2(1.0f) + centerX, centerY - AndroidUtilities.dpf2(0.5f));
+                canvas.drawPath(this.b, this.d);
+                canvas.restore();
+                if (e10 > 0.0f) {
+                    if (this.f) {
+                        canvas.drawLine(centerX - AndroidUtilities.dpf2(8.33f), centerY - AndroidUtilities.dpf2(8.33f), (centerX - AndroidUtilities.dpf2(8.33f)) + (AndroidUtilities.dpf2(16.66f) * e10), (centerY - AndroidUtilities.dpf2(8.33f)) + (AndroidUtilities.dpf2(16.66f) * e10), paint2);
+                        canvas.drawLine(centerX - AndroidUtilities.dpf2(8.33f), centerY - AndroidUtilities.dpf2(8.33f), (AndroidUtilities.dpf2(16.66f) * e10) + (centerX - AndroidUtilities.dpf2(8.33f)), (AndroidUtilities.dpf2(16.66f) * e10) + (centerY - AndroidUtilities.dpf2(8.33f)), paint);
+                    } else {
+                        canvas.drawLine(AndroidUtilities.dpf2(8.33f) + centerX, AndroidUtilities.dpf2(8.33f) + centerY, (AndroidUtilities.dpf2(8.33f) + centerX) - (AndroidUtilities.dpf2(16.66f) * e10), (AndroidUtilities.dpf2(8.33f) + centerY) - (AndroidUtilities.dpf2(16.66f) * e10), paint2);
+                        canvas.drawLine(AndroidUtilities.dpf2(8.33f) + centerX, AndroidUtilities.dpf2(8.33f) + centerY, (AndroidUtilities.dpf2(8.33f) + centerX) - (AndroidUtilities.dpf2(16.66f) * e10), (AndroidUtilities.dpf2(8.33f) + centerY) - (AndroidUtilities.dpf2(16.66f) * e10), paint);
                     }
-                    i13++;
                 }
-            }
-            if (b6Var == null) {
-                b6 b6Var2 = new b6(this.b, this.d, str2, null);
-                b6Var2.H(null);
-                b6Var = b6Var2;
-            }
-            arrayList3.add(b6Var);
-        }
-        a aVar = this.n;
-        aVar.o(true);
-        SpannableString spannableString = new SpannableString(y1.i(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
-        cq cqVar = new cq(R.drawable.msg_filled_plus, 0);
-        cqVar.setScale(0.9f, 0.9f);
-        cqVar.spaceScaleX = 0.85f;
-        spannableString.setSpan(cqVar, 0, 1, 33);
-        o71 o71Var = this.r;
-        o71Var.a(-1, spannableString);
-        o71Var.x.l();
-        boolean z11 = arrayList3.size() + 1 > 1;
-        Boolean bool = this.s;
-        if (bool == null || bool.booleanValue() != z11) {
-            ValueAnimator valueAnimator = this.x;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.s = Boolean.valueOf(z11);
-            if (!z10) {
-                this.w = z11 ? 1.0f : 0.0f;
-                o71Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
-                aVar.setTranslationY(AndroidUtilities.dp(z11 ? 42.0f : 0.0f));
-                return;
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.w, z11 ? 1.0f : 0.0f);
-            this.x = ofFloat;
-            ofFloat.addUpdateListener(new ag.u(this, 27));
-            this.x.addListener(new ag.x(7, this, z11));
-            this.x.setDuration(320L);
-            this.x.setInterpolator(er.h);
-            this.x.start();
+                canvas.restore();
+                break;
         }
     }
 
-    public final void j() {
-        View currentView = this.n.getCurrentView();
-        if (currentView instanceof r) {
-            r rVar = (r) currentView;
-            j jVar = rVar.f;
-            for (int i10 = 0; i10 < jVar.getChildCount(); i10++) {
-                View childAt = jVar.getChildAt(i10);
-                if (childAt instanceof o7) {
-                    o7 o7Var = (o7) childAt;
-                    o7Var.i(rVar.S.c(o7Var.getMessageObject()), true);
-                }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        switch (this.a) {
+            case 0:
+                return AndroidUtilities.dp(32.0f);
+            default:
+                return AndroidUtilities.dp(24.0f);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        switch (this.a) {
+            case 0:
+                return AndroidUtilities.dp(32.0f);
+            default:
+                return AndroidUtilities.dp(24.0f);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+        }
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i9) {
+        switch (this.a) {
+            case 0:
+                this.c.setAlpha(i9);
+                break;
+            default:
+                this.c.setAlpha(i9);
+                this.d.setAlpha(i9);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        switch (this.a) {
+            case 0:
+                this.c.setColorFilter(colorFilter);
+                break;
+            default:
+                this.d.setColorFilter(colorFilter);
+                this.c.setColorFilter(colorFilter);
+                break;
+        }
+    }
+
+    public v(u uVar, boolean z10) {
+        u uVar2 = uVar;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = new Paint(1);
+        this.e = new Paint(1);
+        Path path = new Path();
+        this.b = path;
+        this.g = new float[8];
+        this.f = z10;
+        paint.setColor(-1);
+        float dpf2 = AndroidUtilities.dpf2(13.333333f);
+        float dpf22 = AndroidUtilities.dpf2(18.666666f);
+        float dpf23 = AndroidUtilities.dpf2(3.0f);
+        float dpf24 = AndroidUtilities.dpf2(10.0f);
+        float dpf25 = AndroidUtilities.dpf2(15.333333f);
+        float dpf26 = AndroidUtilities.dpf2(1.0f);
+        float dpf27 = AndroidUtilities.dpf2(1.33f);
+        path.setFillType(Path.FillType.EVEN_ODD);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((-dpf2) / 2.0f, (-dpf22) / 2.0f, dpf2 / 2.0f, dpf22 / 2.0f);
+        path.addRoundRect(rectF, dpf23, dpf23, Path.Direction.CW);
+        ArrayList arrayList = uVar2.e;
+        int i9 = uVar2.c;
+        int size = arrayList.size();
+        int i10 = 0;
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            int i12 = i11 + 1;
+            t tVar = (t) obj;
+            int[] iArr = uVar2.d;
+            int i13 = tVar.c;
+            int i14 = tVar.b;
+            int i15 = iArr[i13];
+            int i16 = i15 - 1;
+            float max = (dpf24 - (Math.max(i10, i16) * dpf27)) / i15;
+            int i17 = i9 - 1;
+            float max2 = (dpf25 - (Math.max(i10, i17) * dpf27)) / i9;
+            RectF rectF2 = AndroidUtilities.rectTmp;
+            ArrayList arrayList2 = arrayList;
+            float f10 = (-dpf24) / 2.0f;
+            int i18 = i9;
+            float f11 = i14;
+            float f12 = (max * f11) + f10;
+            float f13 = f11 * dpf27;
+            int i19 = size;
+            float f14 = (-dpf25) / 2.0f;
+            float f15 = dpf24;
+            float f16 = i13;
+            float f17 = (max2 * f16) + f14;
+            float f18 = f16 * dpf27;
+            float f19 = dpf25;
+            float f20 = f18 + f17;
+            float f21 = dpf26;
+            rectF2.set(f13 + f12, f20, aa.d.w(max, i14 + 1, f10, f13), aa.d.w(max2, i13 + 1, f14, f18));
+            float[] fArr = (float[]) this.g;
+            float f22 = 0.0f;
+            float f23 = (i14 == 0 && i13 == 0) ? f21 : 0.0f;
+            fArr[1] = f23;
+            fArr[0] = f23;
+            float f24 = (i14 == i16 && i13 == 0) ? f21 : 0.0f;
+            fArr[3] = f24;
+            fArr[2] = f24;
+            float f25 = (i14 == i16 && i13 == i17) ? f21 : 0.0f;
+            fArr[5] = f25;
+            fArr[4] = f25;
+            if (i14 == 0 && i13 == i17) {
+                f22 = f21;
             }
+            fArr[7] = f22;
+            fArr[6] = f22;
+            this.b.addRoundRect(rectF2, fArr, Path.Direction.CW);
+            uVar2 = uVar;
+            arrayList = arrayList2;
+            i9 = i18;
+            i11 = i12;
+            size = i19;
+            dpf24 = f15;
+            dpf26 = f21;
+            dpf25 = f19;
+            i10 = 0;
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (A == null) {
-            A = new LongSparseArray();
-        }
-        LongSparseArray longSparseArray = A;
-        int i10 = this.b;
-        LongSparseArray longSparseArray2 = (LongSparseArray) longSparseArray.get(i10);
-        if (longSparseArray2 == null) {
-            LongSparseArray longSparseArray3 = new LongSparseArray();
-            A.put(i10, longSparseArray3);
-            longSparseArray2 = longSparseArray3;
-        }
-        longSparseArray2.put(this.d, this);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.storiesListUpdated);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.storiesUpdated);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        if (A == null) {
-            A = new LongSparseArray();
-        }
-        LongSparseArray longSparseArray = A;
-        int i10 = this.b;
-        LongSparseArray longSparseArray2 = (LongSparseArray) longSparseArray.get(i10);
-        if (longSparseArray2 != null) {
-            longSparseArray2.remove(this.d);
-        }
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.storiesListUpdated);
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.storiesUpdated);
-    }
-
-    public void setVisibleHeight(int i10) {
-        this.v = i10;
-        View[] viewPages = this.n.getViewPages();
-        if (viewPages != null) {
-            for (View view : viewPages) {
-                if (view instanceof r) {
-                    ((r) view).setVisibleHeight(i10);
-                }
-            }
-        }
+        Paint paint2 = this.d;
+        Paint.Style style = Paint.Style.STROKE;
+        paint2.setStyle(style);
+        this.d.setStrokeWidth(AndroidUtilities.dp(3.33f));
+        this.d.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        this.e.setStyle(style);
+        this.e.setStrokeWidth(AndroidUtilities.dp(1.33f));
+        this.e.setColor(-1);
+        this.e.setStrokeCap(Paint.Cap.ROUND);
+        this.e.setStrokeJoin(Paint.Join.ROUND);
     }
 }

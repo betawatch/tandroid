@@ -1,20 +1,20 @@
 package k1;
 
-import h7.k6;
+import g7.y5;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class s {
-    public final /* synthetic */ rd.a a;
-    public final /* synthetic */ kotlin.jvm.internal.o b;
-    public final /* synthetic */ kotlin.jvm.internal.q c;
+    public final /* synthetic */ qd.a a;
+    public final /* synthetic */ kotlin.jvm.internal.n b;
+    public final /* synthetic */ kotlin.jvm.internal.p c;
     public final /* synthetic */ z d;
 
-    public s(rd.a aVar, kotlin.jvm.internal.o oVar, kotlin.jvm.internal.q qVar, z zVar) {
+    public s(qd.a aVar, kotlin.jvm.internal.n nVar, kotlin.jvm.internal.p pVar, z zVar) {
         this.a = aVar;
-        this.b = oVar;
-        this.c = qVar;
+        this.b = nVar;
+        this.c = pVar;
         this.d = zVar;
     }
 
@@ -25,149 +25,149 @@ public final class s {
     /* JADX WARN: Removed duplicated region for block: B:45:0x00d8 A[Catch: all -> 0x00d5, TRY_ENTER, TryCatch #1 {all -> 0x00d5, blocks: (B:40:0x0092, B:42:0x0096, B:45:0x00d8, B:46:0x00df), top: B:39:0x0092 }] */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0070  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0024  */
-    /* JADX WARN: Type inference failed for: r7v2, types: [rd.a] */
+    /* JADX WARN: Type inference failed for: r7v2, types: [qd.a] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object a(e eVar, tc.c cVar) {
+    public final Object a(e eVar, sc.c cVar) {
         r rVar;
-        int i10;
+        int i9;
         z zVar;
-        rd.d dVar;
-        kotlin.jvm.internal.o oVar;
-        kotlin.jvm.internal.q qVar;
-        ad.p pVar;
-        rd.a aVar;
-        rd.a aVar2;
+        qd.d dVar;
+        kotlin.jvm.internal.n nVar;
+        kotlin.jvm.internal.p pVar;
+        zc.p pVar2;
+        qd.a aVar;
+        qd.a aVar2;
         z zVar2;
         Object obj;
-        kotlin.jvm.internal.q qVar2;
+        kotlin.jvm.internal.p pVar3;
         try {
             if (cVar instanceof r) {
                 rVar = (r) cVar;
-                int i11 = rVar.n;
-                if ((i11 & TLObject.FLAG_31) != 0) {
-                    rVar.n = i11 - TLObject.FLAG_31;
+                int i10 = rVar.n;
+                if ((i10 & TLObject.FLAG_31) != 0) {
+                    rVar.n = i10 - TLObject.FLAG_31;
                     Object obj2 = rVar.f;
-                    sc.a aVar3 = sc.a.a;
-                    i10 = rVar.n;
-                    if (i10 != 0) {
-                        k6.b(obj2);
+                    rc.a aVar3 = rc.a.a;
+                    i9 = rVar.n;
+                    if (i9 != 0) {
+                        y5.b(obj2);
                         rVar.a = eVar;
-                        rd.a aVar4 = this.a;
+                        qd.a aVar4 = this.a;
                         rVar.b = aVar4;
-                        kotlin.jvm.internal.o oVar2 = this.b;
-                        rVar.c = oVar2;
-                        kotlin.jvm.internal.q qVar3 = this.c;
-                        rVar.d = qVar3;
+                        kotlin.jvm.internal.n nVar2 = this.b;
+                        rVar.c = nVar2;
+                        kotlin.jvm.internal.p pVar4 = this.c;
+                        rVar.d = pVar4;
                         zVar = this.d;
                         rVar.e = zVar;
                         rVar.n = 1;
-                        dVar = (rd.d) aVar4;
+                        dVar = (qd.d) aVar4;
                         if (dVar.d(rVar) != aVar3) {
-                            oVar = oVar2;
-                            qVar = qVar3;
-                            pVar = eVar;
+                            nVar = nVar2;
+                            pVar = pVar4;
+                            pVar2 = eVar;
                         }
                         return aVar3;
                     }
-                    if (i10 != 1) {
-                        if (i10 != 2) {
-                            if (i10 != 3) {
+                    if (i9 != 1) {
+                        if (i9 != 2) {
+                            if (i9 != 3) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
                             obj = rVar.c;
-                            qVar2 = (kotlin.jvm.internal.q) rVar.b;
-                            aVar = (rd.a) rVar.a;
+                            pVar3 = (kotlin.jvm.internal.p) rVar.b;
+                            aVar = (qd.a) rVar.a;
                             try {
-                                k6.b(obj2);
-                                qVar2.a = obj;
-                                qVar = qVar2;
-                                Object obj3 = qVar.a;
-                                ((rd.d) aVar).e(null);
+                                y5.b(obj2);
+                                pVar3.a = obj;
+                                pVar = pVar3;
+                                Object obj3 = pVar.a;
+                                ((qd.d) aVar).e(null);
                                 return obj3;
                             } catch (Throwable th) {
                                 th = th;
-                                ((rd.d) aVar).e(null);
+                                ((qd.d) aVar).e(null);
                                 throw th;
                             }
                         }
                         zVar2 = (z) rVar.c;
-                        qVar = (kotlin.jvm.internal.q) rVar.b;
-                        aVar2 = (rd.a) rVar.a;
+                        pVar = (kotlin.jvm.internal.p) rVar.b;
+                        aVar2 = (qd.a) rVar.a;
                         try {
-                            k6.b(obj2);
-                            if (!kotlin.jvm.internal.j.a(obj2, qVar.a)) {
+                            y5.b(obj2);
+                            if (!kotlin.jvm.internal.i.a(obj2, pVar.a)) {
                                 aVar = aVar2;
-                                Object obj32 = qVar.a;
-                                ((rd.d) aVar).e(null);
+                                Object obj32 = pVar.a;
+                                ((qd.d) aVar).e(null);
                                 return obj32;
                             }
                             rVar.a = aVar2;
-                            rVar.b = qVar;
+                            rVar.b = pVar;
                             rVar.c = obj2;
                             rVar.n = 3;
                             if (zVar2.j(obj2, rVar) != aVar3) {
                                 obj = obj2;
-                                qVar2 = qVar;
+                                pVar3 = pVar;
                                 aVar = aVar2;
-                                qVar2.a = obj;
-                                qVar = qVar2;
-                                Object obj322 = qVar.a;
-                                ((rd.d) aVar).e(null);
+                                pVar3.a = obj;
+                                pVar = pVar3;
+                                Object obj322 = pVar.a;
+                                ((qd.d) aVar).e(null);
                                 return obj322;
                             }
                             return aVar3;
                         } catch (Throwable th2) {
                             th = th2;
                             aVar = aVar2;
-                            ((rd.d) aVar).e(null);
+                            ((qd.d) aVar).e(null);
                             throw th;
                         }
                     }
                     z zVar3 = rVar.e;
-                    qVar = rVar.d;
-                    oVar = (kotlin.jvm.internal.o) rVar.c;
-                    ?? r72 = (rd.a) rVar.b;
-                    ad.p pVar2 = (ad.p) rVar.a;
-                    k6.b(obj2);
+                    pVar = rVar.d;
+                    nVar = (kotlin.jvm.internal.n) rVar.c;
+                    ?? r72 = (qd.a) rVar.b;
+                    zc.p pVar5 = (zc.p) rVar.a;
+                    y5.b(obj2);
                     zVar = zVar3;
-                    pVar = pVar2;
+                    pVar2 = pVar5;
                     dVar = r72;
-                    if (!oVar.a) {
+                    if (!nVar.a) {
                         throw new IllegalStateException("InitializerApi.updateData should not be called after initialization is complete.");
                     }
-                    Object obj4 = qVar.a;
+                    Object obj4 = pVar.a;
                     rVar.a = dVar;
-                    rVar.b = qVar;
+                    rVar.b = pVar;
                     rVar.c = zVar;
                     rVar.d = null;
                     rVar.e = null;
                     rVar.n = 2;
-                    Object invoke = pVar.invoke(obj4, rVar);
+                    Object invoke = pVar2.invoke(obj4, rVar);
                     if (invoke != aVar3) {
                         aVar2 = dVar;
                         obj2 = invoke;
                         zVar2 = zVar;
-                        if (!kotlin.jvm.internal.j.a(obj2, qVar.a)) {
+                        if (!kotlin.jvm.internal.i.a(obj2, pVar.a)) {
                         }
                     }
                     return aVar3;
                 }
             }
-            if (!oVar.a) {
+            if (!nVar.a) {
             }
         } catch (Throwable th3) {
             th = th3;
             aVar = dVar;
-            ((rd.d) aVar).e(null);
+            ((qd.d) aVar).e(null);
             throw th;
         }
         rVar = new r(this, cVar);
         Object obj22 = rVar.f;
-        sc.a aVar32 = sc.a.a;
-        i10 = rVar.n;
-        if (i10 != 0) {
+        rc.a aVar32 = rc.a.a;
+        i9 = rVar.n;
+        if (i9 != 0) {
         }
     }
 }

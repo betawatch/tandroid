@@ -1,29 +1,29 @@
 package fb;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Set;
-import y5.l;
+import java.util.Arrays;
+import x5.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c {
-    public final HashMap a = new HashMap();
+public abstract class c {
+    public final float a;
 
-    public c(Set set) {
-        HashMap hashMap = new HashMap();
-        Iterator it = set.iterator();
-        while (it.hasNext()) {
-            b bVar = (b) it.next();
-            bVar.getClass();
-            if (this.a.containsKey(hb.b.class)) {
-                Integer num = (Integer) hashMap.get(hb.b.class);
-                l.h(num);
-                if (num.intValue() <= 0) {
-                }
-            }
-            this.a.put(hb.b.class, bVar.a);
-            hashMap.put(hb.b.class, 0);
+    public c(gb.a aVar) {
+        this.a = aVar.a;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
+        if (!(obj instanceof c)) {
+            return false;
+        }
+        c cVar = (c) obj;
+        return getClass().equals(cVar.getClass()) && Float.compare(this.a, cVar.a) == 0 && l.l(null, null);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{getClass(), Float.valueOf(this.a), null});
     }
 }

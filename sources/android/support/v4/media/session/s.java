@@ -14,7 +14,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import androidx.versionedparcelable.ParcelImpl;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class s extends MediaSession.Callback {
     public final /* synthetic */ t a;
@@ -24,17 +24,17 @@ public final class s extends MediaSession.Callback {
     }
 
     public static void b(w wVar) {
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 28) {
+        int i9 = Build.VERSION.SDK_INT;
+        if (i9 >= 28) {
             return;
         }
         MediaSession mediaSession = wVar.a;
         String str = null;
-        if (i10 >= 24) {
+        if (i9 >= 24) {
             try {
                 str = (String) mediaSession.getClass().getMethod("getCallingPackage", null).invoke(mediaSession, null);
-            } catch (Exception e9) {
-                Log.e("MediaSessionCompat", "Cannot execute MediaSession.getCallingPackage()", e9);
+            } catch (Exception e10) {
+                Log.e("MediaSessionCompat", "Cannot execute MediaSession.getCallingPackage()", e10);
             }
         }
         if (TextUtils.isEmpty(str)) {
@@ -87,8 +87,8 @@ public final class s extends MediaSession.Callback {
             } else if (!str.equals("android.support.v4.media.session.command.REMOVE_QUEUE_ITEM_AT")) {
                 this.a.onCommand(str, bundle, resultReceiver);
             } else if (a2.g != null) {
-                int i10 = bundle.getInt("android.support.v4.media.session.command.ARGUMENT_INDEX", -1);
-                MediaSessionCompat$QueueItem mediaSessionCompat$QueueItem = (i10 < 0 || i10 >= a2.g.size()) ? null : (MediaSessionCompat$QueueItem) a2.g.get(i10);
+                int i9 = bundle.getInt("android.support.v4.media.session.command.ARGUMENT_INDEX", -1);
+                MediaSessionCompat$QueueItem mediaSessionCompat$QueueItem = (i9 < 0 || i9 >= a2.g.size()) ? null : (MediaSessionCompat$QueueItem) a2.g.get(i9);
                 if (mediaSessionCompat$QueueItem != null) {
                     this.a.onRemoveQueueItem(mediaSessionCompat$QueueItem.a);
                 }

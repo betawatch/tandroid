@@ -1,31 +1,31 @@
 package org.scilab.forge.jlatexmath;
 
-import a9.p;
-import s3.c;
+import aa.d;
+import ta.b;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class NewEnvironmentMacro extends NewCommandMacro {
-    public static void addNewEnvironment(String str, String str2, String str3, int i10) {
-        String l10 = c.l(str, "@env");
-        StringBuilder f10 = c.f(str2, " #");
-        int i11 = i10 + 1;
-        f10.append(i11);
-        f10.append(" ");
-        f10.append(str3);
-        NewCommandMacro.addNewCommand(l10, f10.toString(), i11);
+    public static void addNewEnvironment(String str, String str2, String str3, int i9) {
+        String j10 = b.j(str, "@env");
+        StringBuilder e10 = b.e(str2, " #");
+        int i10 = i9 + 1;
+        e10.append(i10);
+        e10.append(" ");
+        e10.append(str3);
+        NewCommandMacro.addNewCommand(j10, e10.toString(), i10);
     }
 
-    public static void addReNewEnvironment(String str, String str2, String str3, int i10) {
+    public static void addReNewEnvironment(String str, String str2, String str3, int i9) {
         if (NewCommandMacro.macrocode.get(str + "@env") == null) {
-            throw new ParseException(p.m("Environment ", str, "is not defined ! Use newenvironment instead ..."));
+            throw new ParseException(d.o("Environment ", str, "is not defined ! Use newenvironment instead ..."));
         }
-        String l10 = c.l(str, "@env");
-        StringBuilder f10 = c.f(str2, " #");
-        int i11 = i10 + 1;
-        f10.append(i11);
-        f10.append(" ");
-        f10.append(str3);
-        NewCommandMacro.addReNewCommand(l10, f10.toString(), i11);
+        String j10 = b.j(str, "@env");
+        StringBuilder e10 = b.e(str2, " #");
+        int i10 = i9 + 1;
+        e10.append(i10);
+        e10.append(" ");
+        e10.append(str3);
+        NewCommandMacro.addReNewCommand(j10, e10.toString(), i10);
     }
 }

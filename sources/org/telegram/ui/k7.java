@@ -1,64 +1,70 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.view.ViewGroup;
+import java.io.File;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class k7 extends FrameLayout {
-    public final org.telegram.ui.Components.bp a;
-    public final FrameLayout b;
-    public final TextView c;
-    public boolean d;
-    public int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ g7 h;
+public final class k7 extends f7 {
+    public final ArrayList n;
+    public final /* synthetic */ r7 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k7(g7 g7Var, Context context, int i10) {
-        super(context);
-        this.f = i10;
-        this.h = g7Var;
-        org.telegram.ui.Components.bp bpVar = new org.telegram.ui.Components.bp(context, 21, null);
-        this.a = bpVar;
-        bpVar.setDrawBackgroundAsArc(14);
-        bpVar.b(org.telegram.ui.ActionBar.g6.i7, org.telegram.ui.ActionBar.g6.g7, org.telegram.ui.ActionBar.g6.k7);
-        View view = new View(getContext());
-        view.setOnClickListener(new a(this, 8));
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.b = frameLayout;
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 16.0f);
-        textView.setGravity(5);
-        textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.n6, false));
-        if (LocaleController.isRTL) {
-            addView(bpVar, h7.z5.d(24, 24.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
-            addView(view, h7.z5.d(40, 40.0f, 21, 0.0f, 0.0f, 0.0f, 0.0f));
-            addView(frameLayout, h7.z5.d(-1, -2.0f, 0, 90.0f, 0.0f, 40.0f, 0.0f));
-            addView(textView, h7.z5.d(69, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
-            return;
-        }
-        addView(bpVar, h7.z5.d(24, 24.0f, 19, 18.0f, 0.0f, 0.0f, 0.0f));
-        addView(view, h7.z5.d(40, 40.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(frameLayout, h7.z5.d(-1, -2.0f, 0, 48.0f, 0.0f, 90.0f, 0.0f));
-        addView(textView, h7.z5.d(69, -2.0f, 21, 0.0f, 0.0f, 21.0f, 0.0f));
+    public k7(r7 r7Var) {
+        super(r7Var, 2);
+        this.r = r7Var;
+        this.n = new ArrayList();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.d) {
-            if (LocaleController.isRTL) {
-                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(48.0f), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.g6.k0);
-            } else {
-                canvas.drawLine(getMeasuredWidth() - AndroidUtilities.dp(90.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.g6.k0);
+    @Override // org.telegram.ui.f7, org.telegram.ui.e7
+    public final void F() {
+        super.F();
+        ArrayList arrayList = this.n;
+        arrayList.clear();
+        int i9 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.e;
+            if (i9 >= arrayList2.size()) {
+                return;
             }
+            arrayList.add(new MediaController.PhotoEntry(0, 0, 0L, ((l7) arrayList2.get(i9)).d.a.getPath(), 0, ((l7) arrayList2.get(i9)).d.d == 1, 0, 0, 0L));
+            i9++;
         }
+    }
+
+    @Override // f2.r0
+    public final void v(f2.q1 q1Var, int i9) {
+        View view = q1Var.a;
+        j7 j7Var = (j7) view;
+        org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) j7Var.b.getChildAt(0);
+        ArrayList arrayList = this.e;
+        hh.a aVar = ((l7) arrayList.get(i9)).d;
+        boolean z10 = aVar == view.getTag();
+        boolean z11 = i9 != arrayList.size() - 1;
+        view.setTag(aVar);
+        File file = aVar.a;
+        i7Var.d(z11, aVar.h == 5 ? LocaleController.getString(R.string.AttachRound) : file.getName(), 0, LocaleController.formatDateAudio(file.lastModified() / 1000, true), Utilities.getExtension(file.getName()), null);
+        if (!z10) {
+            i7Var.setPhoto(file.getPath());
+        }
+        i7Var.getImageView().setRoundRadius(AndroidUtilities.dp(aVar.h == 5 ? 20.0f : 4.0f));
+        j7Var.d = z11;
+        j7Var.c.setText(AndroidUtilities.formatFileSize(aVar.c));
+        j7Var.a.a(this.r.f.j.contains(aVar), z10);
+    }
+
+    @Override // f2.r0
+    public final f2.q1 x(ViewGroup viewGroup, int i9) {
+        j7 j7Var = new j7(this, viewGroup.getContext(), 0);
+        j7Var.e = 2;
+        j7Var.b.addView(new org.telegram.ui.Cells.i7(viewGroup.getContext(), 3, null));
+        return new org.telegram.ui.Components.ik0(j7Var);
     }
 }

@@ -1,61 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.web.HttpGetFileTask;
+import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ e3 b;
+    public final /* synthetic */ View c;
 
-    public /* synthetic */ e0(Object obj, float f10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = f10;
+    public /* synthetic */ e0(View view, e3 e3Var) {
+        this.c = view;
+        this.b = e3Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                m4 m4Var = (m4) this.c;
-                m4Var.d0.I.c(this.b, true);
-                break;
-            case 1:
-                org.telegram.ui.Components.xa xaVar = (org.telegram.ui.Components.xa) this.c;
-                if (xaVar.a.getTranslationX() == this.b) {
-                    xaVar.y.b();
-                    break;
-                }
-                break;
-            case 2:
-                org.telegram.ui.Components.voip.x0 x0Var = (org.telegram.ui.Components.voip.x0) this.c;
-                float f10 = this.b;
-                eh1 eh1Var = x0Var.c;
-                if (f10 > 0.0f) {
-                    int i10 = eh1Var.w;
-                    if (i10 < 2) {
-                        eh1Var.c(i10 + 1, true);
-                    }
-                } else {
-                    int i11 = eh1Var.w;
-                    if (i11 > 0) {
-                        eh1Var.c(i11 - 1, true);
-                    }
-                }
-                x0Var.b = false;
-                break;
-            case 3:
-                ((r70) this.c).f.e.smoothScrollTo(0, (int) this.b);
-                break;
-            case 4:
-                ApplicationLoader.applicationContext.getSharedPreferences("media_saved_pos", 0).edit().putFloat((String) this.c, this.b).commit();
+                e3 e3Var = this.b;
+                View view = this.c;
+                view.post(new e0(e3Var, view));
                 break;
             default:
-                ((HttpGetFileTask) this.c).lambda$doInBackground$0(this.b);
+                e3 e3Var2 = this.b;
+                e3Var2.E.clear();
+                e3Var2.G.set(null);
+                this.c.invalidate();
                 break;
         }
+    }
+
+    public /* synthetic */ e0(e3 e3Var, View view) {
+        this.b = e3Var;
+        this.c = view;
     }
 }

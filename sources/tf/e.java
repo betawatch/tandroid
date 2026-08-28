@@ -1,332 +1,337 @@
 package tf;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.transition.ChangeBounds;
-import android.transition.Fade;
-import android.transition.TransitionManager;
-import android.transition.TransitionSet;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.os.Build;
+import android.text.TextPaint;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import com.google.firebase.messaging.t;
-import h7.z5;
-import hh.oa;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Locale;
+import g7.e6;
+import kh.d5;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.mu0;
-import org.telegram.ui.Components.s5;
-import org.telegram.ui.fe;
-import org.telegram.ui.zb1;
+import org.telegram.messenger.ll;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.f6;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public class e extends FrameLayout {
-    public boolean A;
-    public boolean B;
-    public boolean C;
-    public Drawable D;
-    public z E;
-    public final c6 F;
-    public final mu0 G;
-    public DecimalFormat H;
-    public boolean a;
-    public final LinearLayout b;
-    public t[] c;
-    public final TextView d;
-    public final TextView e;
-    public final ImageView f;
-    public final RadialProgressView h;
-    public final SimpleDateFormat n;
-    public final SimpleDateFormat r;
-    public final SimpleDateFormat s;
-    public final SimpleDateFormat v;
-    public final SimpleDateFormat w;
-    public boolean x;
-    public boolean y;
+public final class e extends FrameLayout {
+    public final Paint a;
+    public final Paint b;
+    public final ImageView c;
+    public final ImageView d;
+    public final ImageView e;
+    public String f;
+    public final TextPaint h;
+    public float n;
+    public final RectF r;
+    public float s;
+    public d v;
 
-    public e(Context context, c6 c6Var) {
+    public e(Context context) {
         super(context);
-        this.n = new SimpleDateFormat("E, ");
-        this.r = new SimpleDateFormat("MMM dd");
-        this.s = new SimpleDateFormat("d MMM yyyy");
-        this.v = new SimpleDateFormat("d MMM");
-        this.w = new SimpleDateFormat(" HH:mm");
-        this.C = true;
-        this.G = new mu0(this, 6);
-        this.F = c6Var;
-        setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        LinearLayout linearLayout = new LinearLayout(getContext());
-        this.b = linearLayout;
-        linearLayout.setOrientation(1);
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        TextView textView2 = new TextView(context);
-        this.e = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTypeface(AndroidUtilities.bold());
+        this.r = new RectF(0.0f, 0.0f, 0.0f, 0.0f);
+        Paint paint = new Paint();
+        this.a = paint;
+        Paint.Style style = Paint.Style.FILL;
+        paint.setStyle(style);
+        paint.setColor(-1);
+        paint.setAlpha(255);
+        paint.setAntiAlias(true);
+        Paint paint2 = new Paint();
+        this.b = paint2;
+        paint2.setStyle(style);
+        paint2.setColor(-11420173);
+        paint2.setAlpha(255);
+        paint2.setAntiAlias(true);
         ImageView imageView = new ImageView(context);
-        this.f = imageView;
-        imageView.setImageResource(R.drawable.ic_chevron_right_black_18dp);
-        RadialProgressView radialProgressView = new RadialProgressView(context, null);
-        this.h = radialProgressView;
-        radialProgressView.setSize(AndroidUtilities.dp(12.0f));
-        radialProgressView.setStrokeWidth(AndroidUtilities.dp(0.5f));
-        radialProgressView.setVisibility(8);
-        addView(linearLayout, z5.d(-2, -2.0f, 0, 0.0f, 22.0f, 0.0f, 0.0f));
-        addView(textView, z5.d(-2, -2.0f, 8388611, 4.0f, 0.0f, 4.0f, 0.0f));
-        addView(textView2, z5.d(-2, -2.0f, 8388613, 4.0f, 0.0f, 4.0f, 0.0f));
-        addView(imageView, z5.d(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
-        addView(radialProgressView, z5.d(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
-        b();
+        this.e = imageView;
+        imageView.setImageResource(R.drawable.msg_photo_flip);
+        imageView.setBackgroundDrawable(f6.f0(1090519039, 1, -1));
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        final int i9 = 0;
+        imageView.setOnClickListener(new View.OnClickListener(this) { // from class: tf.c
+            public final /* synthetic */ e b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i9) {
+                    case 0:
+                        e eVar = this.b;
+                        d dVar = eVar.v;
+                        if (dVar != null) {
+                            eVar.setMirrored(dVar.a());
+                            break;
+                        }
+                        break;
+                    case 1:
+                        d dVar2 = this.b.v;
+                        if (dVar2 != null) {
+                            dVar2.b();
+                            break;
+                        }
+                        break;
+                    default:
+                        e eVar2 = this.b;
+                        d dVar3 = eVar2.v;
+                        if (dVar3 != null) {
+                            eVar2.setRotated(dVar3.d());
+                            break;
+                        }
+                        break;
+                }
+            }
+        });
+        imageView.setOnLongClickListener(new d5(this, 5));
+        imageView.setContentDescription(LocaleController.getString(R.string.AccDescrMirror));
+        addView(imageView, e6.e(70, 64, 19));
+        ImageView imageView2 = new ImageView(context);
+        this.c = imageView2;
+        imageView2.setImageResource(R.drawable.msg_photo_cropfix);
+        imageView2.setBackgroundDrawable(f6.f0(1090519039, 1, -1));
+        imageView2.setScaleType(scaleType);
+        final int i10 = 1;
+        imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: tf.c
+            public final /* synthetic */ e b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i10) {
+                    case 0:
+                        e eVar = this.b;
+                        d dVar = eVar.v;
+                        if (dVar != null) {
+                            eVar.setMirrored(dVar.a());
+                            break;
+                        }
+                        break;
+                    case 1:
+                        d dVar2 = this.b.v;
+                        if (dVar2 != null) {
+                            dVar2.b();
+                            break;
+                        }
+                        break;
+                    default:
+                        e eVar2 = this.b;
+                        d dVar3 = eVar2.v;
+                        if (dVar3 != null) {
+                            eVar2.setRotated(dVar3.d());
+                            break;
+                        }
+                        break;
+                }
+            }
+        });
+        imageView2.setVisibility(8);
+        imageView2.setContentDescription(LocaleController.getString(R.string.AccDescrAspectRatio));
+        addView(imageView2, e6.e(70, 64, 19));
+        ImageView imageView3 = new ImageView(context);
+        this.d = imageView3;
+        imageView3.setImageResource(R.drawable.msg_photo_rotate);
+        imageView3.setBackgroundDrawable(f6.f0(1090519039, 1, -1));
+        imageView3.setScaleType(scaleType);
+        final int i11 = 2;
+        imageView3.setOnClickListener(new View.OnClickListener(this) { // from class: tf.c
+            public final /* synthetic */ e b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i11) {
+                    case 0:
+                        e eVar = this.b;
+                        d dVar = eVar.v;
+                        if (dVar != null) {
+                            eVar.setMirrored(dVar.a());
+                            break;
+                        }
+                        break;
+                    case 1:
+                        d dVar2 = this.b.v;
+                        if (dVar2 != null) {
+                            dVar2.b();
+                            break;
+                        }
+                        break;
+                    default:
+                        e eVar2 = this.b;
+                        d dVar3 = eVar2.v;
+                        if (dVar3 != null) {
+                            eVar2.setRotated(dVar3.d());
+                            break;
+                        }
+                        break;
+                }
+            }
+        });
+        imageView3.setContentDescription(LocaleController.getString(R.string.AccDescrRotate));
+        addView(imageView3, e6.e(70, 64, 21));
+        TextPaint textPaint = new TextPaint(1);
+        this.h = textPaint;
+        textPaint.setColor(-1);
+        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
+        setWillNotDraw(false);
+        b(0.0f);
     }
 
-    public static String a(String str) {
-        if (str.length() <= 0) {
-            return str;
-        }
-        return Character.toUpperCase(str.charAt(0)) + str.substring(1);
-    }
-
-    public void b() {
-        int i10 = g6.j5;
-        c6 c6Var = this.F;
-        this.d.setTextColor(g6.v0(i10, c6Var));
-        this.e.setTextColor(g6.v0(i10, c6Var));
-        int i11 = g6.gj;
-        this.f.setColorFilter(g6.v0(i11, c6Var));
-        this.h.setProgressColor(g6.v0(i11, c6Var));
-        this.D = getContext().getResources().getDrawable(R.drawable.stats_tooltip).mutate();
-        int dp = AndroidUtilities.dp(4.0f);
-        this.E = g6.i0(dp, dp, dp, dp, g6.v0(g6.h5, c6Var), g6.v0(g6.i6, c6Var), -16777216);
-        dq dqVar = new dq(this.D, this.E, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-        dqVar.w = true;
-        setBackground(dqVar);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0260  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x02be  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x02c1  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0277  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void c(int i10, long j10, ArrayList arrayList, boolean z10, int i11, float f10) {
-        int i12;
-        CharSequence charSequence;
-        int i13;
-        int i14;
-        int i15;
-        int length = this.c.length;
-        int i16 = 2;
-        int i17 = 1;
-        int i18 = 0;
+    public final void a(Canvas canvas, int i9, float f10, int i10, int i11, boolean z10, Paint paint) {
+        int dp = (int) ((i10 / 2.0f) - AndroidUtilities.dp(70.0f));
+        int cos = (i10 / 2) + ((int) (Math.cos(Math.toRadians(90.0f - ((i9 * 5) + f10))) * dp));
+        float abs = Math.abs(r8) / dp;
+        int min = Math.min(255, Math.max(0, (int) ((1.0f - (abs * abs)) * 255.0f)));
         if (z10) {
-            TransitionSet transitionSet = new TransitionSet();
-            transitionSet.addTransition(new Fade(2).setDuration(150L)).addTransition(new ChangeBounds().setDuration(150L)).addTransition(new Fade(1).setDuration(150L));
-            transitionSet.setOrdering(0);
-            TransitionManager.beginDelayedTransition(this, transitionSet);
+            paint = this.b;
         }
-        boolean z11 = this.a;
-        TextView textView = this.d;
-        if (z11) {
-            textView.setText(String.format(Locale.ENGLISH, "%02d:00", Long.valueOf(j10)));
+        Paint paint2 = paint;
+        paint2.setAlpha(min);
+        int i12 = z10 ? 4 : 2;
+        int dp2 = AndroidUtilities.dp(z10 ? 16.0f : 12.0f);
+        int i13 = i12 / 2;
+        canvas.drawRect(cos - i13, (i11 - dp2) / 2, cos + i13, (i11 + dp2) / 2, paint2);
+    }
+
+    public final void b(float f10) {
+        this.n = f10;
+        if (Math.abs(f10) < 0.099d) {
+            f10 = Math.abs(f10);
+        }
+        this.f = String.format("%.1fº", Float.valueOf(f10));
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public float getRotation() {
+        return this.n;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int width = getWidth();
+        int height = getHeight();
+        float f10 = ((-this.n) * 2.0f) % 5.0f;
+        int floor = (int) Math.floor(r0 / 5.0f);
+        int i9 = 0;
+        while (true) {
+            Paint paint = this.b;
+            if (i9 >= 16) {
+                Canvas canvas2 = canvas;
+                paint.setAlpha(255);
+                float dp = (width - AndroidUtilities.dp(2.5f)) / 2;
+                RectF rectF = this.r;
+                rectF.left = dp;
+                rectF.top = ll.y(22.0f, height, 2);
+                rectF.right = (AndroidUtilities.dp(2.5f) + width) / 2;
+                rectF.bottom = (AndroidUtilities.dp(22.0f) + height) / 2;
+                canvas2.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint);
+                String str = this.f;
+                TextPaint textPaint = this.h;
+                canvas2.drawText(this.f, (width - textPaint.measureText(str)) / 2.0f, AndroidUtilities.dp(14.0f), textPaint);
+                return;
+            }
+            Paint paint2 = this.a;
+            Canvas canvas3 = canvas;
+            a(canvas3, i9, f10, width, height, i9 == floor || (i9 == 0 && floor == -1), (i9 < floor || (i9 == 0 && f10 < 0.0f)) ? paint : paint2);
+            int i10 = i9;
+            if (i10 != 0) {
+                int i11 = -i10;
+                a(canvas3, i11, f10, width, height, i11 == floor + 1, i11 > floor ? paint : paint2);
+            }
+            i9 = i10 + 1;
+            canvas = canvas3;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i9), AndroidUtilities.dp(400.0f)), TLObject.FLAG_30), i10);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        float x10 = motionEvent.getX();
+        if (actionMasked == 0) {
+            this.s = x10;
+            d dVar = this.v;
+            if (dVar != null) {
+                dVar.e();
+                return true;
+            }
         } else {
-            if (this.x) {
-                textView.setText(this.v.format(new Date(j10)) + " — " + this.s.format(new Date(604800000 + j10)));
-            } else {
-                Date date = new Date(j10);
-                boolean z12 = this.y;
-                SimpleDateFormat simpleDateFormat = this.r;
-                textView.setText(z12 ? a(simpleDateFormat.format(date)) : a(this.n.format(date)) + a(simpleDateFormat.format(date)));
+            if (actionMasked == 1 || actionMasked == 3) {
+                d dVar2 = this.v;
+                if (dVar2 != null) {
+                    dVar2.c();
+                }
+                AndroidUtilities.makeAccessibilityAnnouncement(String.format("%.1f°", Float.valueOf(this.n)));
+                return true;
             }
-            if (this.y) {
-                this.e.setText(this.w.format(Long.valueOf(j10)));
+            if (actionMasked == 2) {
+                float max = Math.max(-45.0f, Math.min(45.0f, this.n + ((float) ((((this.s - x10) / AndroidUtilities.density) / 3.141592653589793d) / 1.649999976158142d))));
+                if (Build.VERSION.SDK_INT >= 27) {
+                    try {
+                        if ((Math.abs(max - 45.0f) < 0.001f && Math.abs(this.n - 45.0f) >= 0.001f) || (Math.abs(max - (-45.0f)) < 0.001f && Math.abs(this.n - (-45.0f)) >= 0.001f)) {
+                            performHapticFeedback(3, 1);
+                        } else if (Math.floor(this.n / 2.5f) != Math.floor(max / 2.5f)) {
+                            AndroidUtilities.vibrateCursor(this);
+                        }
+                    } catch (Exception unused) {
+                    }
+                }
+                if (Math.abs(max - this.n) > 0.001d) {
+                    if (Math.abs(max) < 0.05d) {
+                        max = 0.0f;
+                    }
+                    b(max);
+                    d dVar3 = this.v;
+                    if (dVar3 != null) {
+                        dVar3.f(this.n);
+                    }
+                    this.s = x10;
+                }
             }
         }
-        long j11 = 0;
-        for (int i19 = 0; i19 < arrayList.size(); i19++) {
-            if (((f) arrayList.get(i19)).n) {
-                j11 += ((f) arrayList.get(i19)).a.a[i10];
-            }
-        }
-        int i20 = 0;
-        while (i20 < length) {
-            t tVar = this.c[i20];
-            int i21 = i20 % 2;
-            f fVar = (f) arrayList.get((i11 == i17 || i11 == i16) ? i20 / 2 : i20);
-            boolean z13 = fVar.n;
-            sf.a aVar = fVar.a;
-            if (z13) {
-                LinearLayout linearLayout = (LinearLayout) tVar.e;
-                s5 s5Var = (s5) tVar.b;
-                TextView textView2 = (TextView) tVar.d;
-                TextView textView3 = (TextView) tVar.c;
-                if (linearLayout.getMeasuredHeight() == 0) {
-                    linearLayout.requestLayout();
-                }
-                linearLayout.setVisibility(i18);
-                int i22 = i20;
-                long j12 = aVar.a[i10];
-                if (i11 == i17) {
-                    if (i21 == 0) {
-                        if (this.H == null) {
-                            DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
-                            decimalFormatSymbols.setDecimalSeparator('.');
-                            DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);
-                            this.H = decimalFormat;
-                            decimalFormat.setMinimumFractionDigits(2);
-                            i15 = 6;
-                            this.H.setMaximumFractionDigits(6);
-                            this.H.setGroupingUsed(false);
-                        } else {
-                            i15 = 6;
-                        }
-                        DecimalFormat decimalFormat2 = this.H;
-                        if (j12 > 1000000000) {
-                            i15 = 2;
-                        }
-                        decimalFormat2.setMaximumFractionDigits(i15);
-                        charSequence = fe.f0("TON " + this.H.format(j12 / 1.0E9d), s5Var.getPaint(), 0.82f, 0.0f, false);
-                    } else {
-                        charSequence = "≈" + BillingController.getInstance().formatCurrency((long) (j12 / f10), "USD");
-                    }
-                } else if (i11 != 2) {
-                    float f11 = j12;
-                    if (j12 < 10000) {
-                        i12 = 1;
-                        charSequence = String.format("%d", Long.valueOf(j12));
-                    } else {
-                        i12 = 1;
-                        int i23 = 0;
-                        while (f11 >= 1000.0f && i23 < AndroidUtilities.numbersSignatureArray.length - 1) {
-                            f11 /= 1000.0f;
-                            i23++;
-                        }
-                        charSequence = String.format("%.2f", Float.valueOf(f11)) + AndroidUtilities.numbersSignatureArray[i23];
-                    }
-                    s5Var.setText(charSequence);
-                    if (i11 != i12) {
-                        int i24 = i21 == 0 ? R.string.ChartInTON : R.string.ChartInUSD;
-                        Object[] objArr = new Object[i12];
-                        objArr[0] = aVar.d;
-                        textView3.setText(LocaleController.formatString(i24, objArr));
-                    } else if (i11 == 2) {
-                        textView3.setText(oa.X0(false, LocaleController.formatString(i21 == 0 ? R.string.ChartInXTR : R.string.ChartInUSD, aVar.d), 0.7f, null));
-                    } else {
-                        textView3.setText(aVar.d);
-                    }
-                    i13 = aVar.g;
-                    c6 c6Var = this.F;
-                    if (i13 >= 0 || !g6.c1(i13)) {
-                        s5Var.setTextColor(!g6.A0().q() ? aVar.i : aVar.h);
-                    } else {
-                        s5Var.setTextColor(g6.v0(aVar.g, c6Var));
-                    }
-                    int i25 = g6.j5;
-                    textView3.setTextColor(g6.v0(i25, c6Var));
-                    if (this.A || textView2 == null) {
-                        i14 = i22;
-                    } else {
-                        textView2.setVisibility(0);
-                        textView2.setTextColor(g6.v0(i25, c6Var));
-                        i14 = i22;
-                        float f12 = ((f) arrayList.get(i14)).a.a[i10] / j11;
-                        if (f12 >= 0.1f || f12 == 0.0f) {
-                            Locale locale = Locale.ENGLISH;
-                            textView2.setText(Math.round(f12 * 100.0f) + "%");
-                        } else {
-                            textView2.setText(String.format(Locale.ENGLISH, "%.1f%s", Float.valueOf(f12 * 100.0f), "%"));
-                        }
-                        i20 = i14 + 1;
-                        i16 = 2;
-                        i17 = 1;
-                        i18 = 0;
-                    }
-                } else if (i21 == 0) {
-                    charSequence = oa.X0(false, i0.a.m(j12, ' ', new StringBuilder("XTR ")), 0.7f, null);
-                } else {
-                    charSequence = "≈" + BillingController.getInstance().formatCurrency((long) (j12 / f10), "USD");
-                }
-                i12 = 1;
-                s5Var.setText(charSequence);
-                if (i11 != i12) {
-                }
-                i13 = aVar.g;
-                c6 c6Var2 = this.F;
-                if (i13 >= 0) {
-                }
-                s5Var.setTextColor(!g6.A0().q() ? aVar.i : aVar.h);
-                int i252 = g6.j5;
-                textView3.setTextColor(g6.v0(i252, c6Var2));
-                if (this.A) {
-                }
-                i14 = i22;
-            } else {
-                ((LinearLayout) tVar.e).setVisibility(8);
-                i14 = i20;
-            }
-            i20 = i14 + 1;
-            i16 = 2;
-            i17 = 1;
-            i18 = 0;
-        }
-        boolean z14 = this.B;
-        ImageView imageView = this.f;
-        if (z14) {
-            this.C = j11 > 0;
-            imageView.setVisibility(j11 > 0 ? 0 : 8);
-        } else {
-            this.C = false;
-            imageView.setVisibility(8);
-        }
+        return true;
     }
 
-    public final void d(boolean z10, boolean z11) {
-        mu0 mu0Var = this.G;
-        if (z10) {
-            AndroidUtilities.runOnUIThread(mu0Var, 300L);
-            return;
-        }
-        AndroidUtilities.cancelRunOnUIThread(mu0Var);
-        RadialProgressView radialProgressView = this.h;
-        if (z11) {
-            radialProgressView.setVisibility(8);
-            return;
-        }
-        this.f.animate().setDuration(80L).alpha(1.0f).start();
-        if (radialProgressView.getVisibility() == 0) {
-            radialProgressView.animate().setDuration(80L).alpha(0.0f).setListener(new zb1(this, 9)).start();
-        }
+    public void setAspectLock(boolean z10) {
+        this.c.setColorFilter(z10 ? new PorterDuffColorFilter(-11420173, PorterDuff.Mode.MULTIPLY) : null);
     }
 
-    public void setSize(int i10) {
-        LinearLayout linearLayout = this.b;
-        linearLayout.removeAllViews();
-        this.c = new t[i10];
-        for (int i11 = 0; i11 < i10; i11++) {
-            this.c[i11] = new t(this);
-            linearLayout.addView((LinearLayout) this.c[i11].e);
-        }
+    public void setListener(d dVar) {
+        this.v = dVar;
     }
 
-    public void setUseWeek(boolean z10) {
-        this.x = z10;
+    public void setMirrored(boolean z10) {
+        this.e.setColorFilter(z10 ? new PorterDuffColorFilter(f6.w0(null, f6.zf, false), PorterDuff.Mode.MULTIPLY) : null);
+    }
+
+    public void setRotated(boolean z10) {
+        this.d.setColorFilter(z10 ? new PorterDuffColorFilter(f6.w0(null, f6.zf, false), PorterDuff.Mode.MULTIPLY) : null);
+    }
+
+    public void setFreeform(boolean z10) {
     }
 }

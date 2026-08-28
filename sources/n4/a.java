@@ -4,7 +4,7 @@ import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class a {
     public final int a;
@@ -14,9 +14,9 @@ public final class a {
     public final List e;
     public final List f;
 
-    public a(int i10, int i11, ArrayList arrayList, List list, List list2, List list3) {
-        this.a = i10;
-        this.b = i11;
+    public a(int i9, int i10, ArrayList arrayList, List list, List list2, List list3) {
+        this.a = i9;
+        this.b = i10;
         this.c = DesugarCollections.unmodifiableList(arrayList);
         this.d = DesugarCollections.unmodifiableList(list);
         this.e = DesugarCollections.unmodifiableList(list2);

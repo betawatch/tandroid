@@ -1,27 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class yi0 extends zk0 {
-    public final /* synthetic */ gj0 T2;
+public final class yi0 extends f2.d1 {
+    public final /* synthetic */ f2.m0 a;
+    public final /* synthetic */ ej0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yi0(gj0 gj0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        this.T2 = gj0Var;
+    public yi0(ej0 ej0Var, f2.m0 m0Var) {
+        this.b = ej0Var;
+        this.a = m0Var;
     }
 
-    @Override // org.telegram.ui.Components.zk0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        gj0 gj0Var = this.T2;
-        ga0 ga0Var = gj0Var.F;
-        if (ga0Var != null) {
-            ga0Var.measure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), 0));
+    @Override // f2.d1
+    public final void b(RecyclerView recyclerView, int i9, int i10) {
+        int loadCount;
+        ej0 ej0Var = this.b;
+        if (ej0Var.w && ej0Var.x && !ej0Var.v) {
+            int N0 = this.a.N0();
+            int h = ej0Var.f.h() - 1;
+            loadCount = ej0Var.getLoadCount();
+            if (N0 >= h - loadCount) {
+                ej0Var.c();
+            }
         }
-        super.onMeasure(i10, i11);
-        gj0Var.j();
     }
 }

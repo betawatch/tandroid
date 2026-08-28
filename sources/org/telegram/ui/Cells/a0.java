@@ -4,13 +4,13 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.wu0;
+import org.telegram.ui.Components.uu0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public abstract class a0 extends ViewGroup implements wu0 {
+public abstract class a0 extends ViewGroup implements uu0 {
     public boolean a;
-    public androidx.emoji2.text.j b;
+    public androidx.emoji2.text.i b;
     public int c;
     public m.i3 d;
     public Runnable e;
@@ -28,23 +28,23 @@ public abstract class a0 extends ViewGroup implements wu0 {
 
     public static float n(Drawable drawable, float f10, float f11, float f12) {
         float intrinsicWidth = (drawable.getIntrinsicWidth() * f12) / drawable.getIntrinsicHeight();
-        int i10 = (int) f10;
-        int i11 = (int) f11;
-        drawable.setBounds(i10, i11, ((int) intrinsicWidth) + i10, ((int) f12) + i11);
+        int i9 = (int) f10;
+        int i10 = (int) f11;
+        drawable.setBounds(i9, i10, ((int) intrinsicWidth) + i9, ((int) f12) + i10);
         return intrinsicWidth;
     }
 
-    public static void p(int i10, int i11, Drawable drawable) {
-        drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
+    public static void o(int i9, int i10, Drawable drawable) {
+        drawable.setBounds(i9, i10, drawable.getIntrinsicWidth() + i9, drawable.getIntrinsicHeight() + i10);
     }
 
-    public static void q(Drawable drawable, float f10, float f11) {
-        int i10 = (int) f10;
-        int i11 = (int) f11;
-        drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
+    public static void p(Drawable drawable, float f10, float f11) {
+        int i9 = (int) f10;
+        int i10 = (int) f11;
+        drawable.setBounds(i9, i10, drawable.getIntrinsicWidth() + i9, drawable.getIntrinsicHeight() + i10);
     }
 
-    @Override // org.telegram.ui.Components.wu0
+    @Override // org.telegram.ui.Components.uu0
     public final void g(Runnable runnable) {
         this.e = runnable;
     }
@@ -73,9 +73,9 @@ public abstract class a0 extends ViewGroup implements wu0 {
 
     public final void k() {
         this.a = false;
-        androidx.emoji2.text.j jVar = this.b;
-        if (jVar != null) {
-            removeCallbacks(jVar);
+        androidx.emoji2.text.i iVar = this.b;
+        if (iVar != null) {
+            removeCallbacks(iVar);
         }
         m.i3 i3Var = this.d;
         if (i3Var != null) {
@@ -91,7 +91,7 @@ public abstract class a0 extends ViewGroup implements wu0 {
         return true;
     }
 
-    public final void r() {
+    public final void q() {
         if (this.a) {
             return;
         }

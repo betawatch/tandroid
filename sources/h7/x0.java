@@ -1,19 +1,15 @@
 package h7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class x0 implements r9.d {
-    public static final x0 a = new x0();
+public final class x0 {
+    public final w0 a;
+    public final Integer b;
+    public final f7 c;
 
-    static {
-        com.google.android.recaptcha.internal.a.t(com.google.android.recaptcha.internal.a.r(d.class, com.google.android.recaptcha.internal.a.j(3, com.google.android.recaptcha.internal.a.r(d.class, com.google.android.recaptcha.internal.a.j(2, com.google.android.recaptcha.internal.a.r(d.class, new a(1)))))));
-    }
-
-    @Override // r9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public /* synthetic */ x0(a5.m mVar) {
+        this.a = (w0) mVar.b;
+        this.b = (Integer) mVar.c;
+        this.c = (f7) mVar.d;
     }
 }

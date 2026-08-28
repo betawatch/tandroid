@@ -1,19 +1,28 @@
 package h7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class o1 implements r9.d {
-    public static final o1 a = new o1();
-
-    static {
-        com.google.android.recaptcha.internal.a.t(com.google.android.recaptcha.internal.a.r(d.class, com.google.android.recaptcha.internal.a.j(4, com.google.android.recaptcha.internal.a.r(d.class, com.google.android.recaptcha.internal.a.j(3, com.google.android.recaptcha.internal.a.r(d.class, com.google.android.recaptcha.internal.a.j(2, com.google.android.recaptcha.internal.a.r(d.class, new a(1)))))))));
-    }
-
-    @Override // r9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public final class o1 extends b7.a implements q3 {
+    public final r0 U0(h6.b bVar, s6 s6Var) {
+        r0 r0Var;
+        Parcel M0 = M0();
+        int i9 = c0.a;
+        M0.writeStrongBinder(bVar);
+        M0.writeInt(1);
+        s6Var.writeToParcel(M0, 0);
+        Parcel O0 = O0(M0, 1);
+        IBinder readStrongBinder = O0.readStrongBinder();
+        if (readStrongBinder == null) {
+            r0Var = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.vision.label.internal.client.INativeImageLabeler");
+            r0Var = queryLocalInterface instanceof r0 ? (r0) queryLocalInterface : new r0(readStrongBinder, "com.google.android.gms.vision.label.internal.client.INativeImageLabeler", 5);
         }
-        throw null;
+        O0.recycle();
+        return r0Var;
     }
 }

@@ -1,26 +1,19 @@
 package g7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class j5 {
-    public static String a(String str) {
-        int length = str.length();
-        int i10 = 0;
-        while (i10 < length) {
-            char charAt = str.charAt(i10);
-            if (charAt >= 'a' && charAt <= 'z') {
-                char[] charArray = str.toCharArray();
-                while (i10 < length) {
-                    char c10 = charArray[i10];
-                    if (c10 >= 'a' && c10 <= 'z') {
-                        charArray[i10] = (char) (c10 ^ ' ');
-                    }
-                    i10++;
-                }
-                return String.valueOf(charArray);
-            }
-            i10++;
+public final class j5 implements q9.d {
+    public static final j5 a = new j5();
+
+    static {
+        e2.c.u(e2.c.r(d.class, e2.c.i(5, e2.c.r(d.class, e2.c.i(4, e2.c.r(d.class, e2.c.i(3, e2.c.r(d.class, e2.c.i(2, e2.c.r(d.class, new a(1)))))))))));
+    }
+
+    @Override // q9.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return str;
+        throw null;
     }
 }

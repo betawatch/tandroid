@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.ext.mediasession;
 
+import aa.d;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.session.MediaSession;
@@ -19,21 +20,20 @@ import android.support.v4.media.session.d0;
 import android.support.v4.media.session.p;
 import android.support.v4.media.session.t;
 import android.util.Pair;
-import b5.y;
+import b5.z;
 import d5.f;
+import d5.f0;
 import d5.g;
-import d5.g0;
-import e5.x;
 import h3.a2;
 import h3.b2;
 import h3.c2;
 import h3.f1;
 import h3.h1;
 import h3.m;
+import h3.q2;
 import h3.r0;
 import h3.r2;
-import h3.s2;
-import h3.u2;
+import h3.t2;
 import h3.v1;
 import h3.x1;
 import h3.y1;
@@ -48,10 +48,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
-import r4.d;
-import z3.c;
+import r4.c;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class MediaSessionConnector {
     public static final long ALL_PLAYBACK_ACTIONS = 6554447;
@@ -85,19 +84,19 @@ public final class MediaSessionConnector {
     private QueueNavigator queueNavigator;
     private RatingCallback ratingCallback;
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface CaptionCallback extends CommandReceiver {
         boolean hasCaptions(c2 c2Var);
 
         void onSetCaptioningEnabled(c2 c2Var, boolean z10);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface CommandReceiver {
         boolean onCommand(c2 c2Var, String str, Bundle bundle, ResultReceiver resultReceiver);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class ComponentListener extends t implements a2 {
         private int currentMediaItemIndex;
         private int currentWindowCount;
@@ -115,12 +114,12 @@ public final class MediaSessionConnector {
         @Override // android.support.v4.media.session.t
         public void onCommand(String str, Bundle bundle, ResultReceiver resultReceiver) {
             if (MediaSessionConnector.this.player != null) {
-                for (int i10 = 0; i10 < MediaSessionConnector.this.commandReceivers.size(); i10++) {
-                    if (((CommandReceiver) MediaSessionConnector.this.commandReceivers.get(i10)).onCommand(MediaSessionConnector.this.player, str, bundle, resultReceiver)) {
+                for (int i9 = 0; i9 < MediaSessionConnector.this.commandReceivers.size(); i9++) {
+                    if (((CommandReceiver) MediaSessionConnector.this.commandReceivers.get(i9)).onCommand(MediaSessionConnector.this.player, str, bundle, resultReceiver)) {
                         return;
                     }
                 }
-                for (int i11 = 0; i11 < MediaSessionConnector.this.customCommandReceivers.size() && !((CommandReceiver) MediaSessionConnector.this.customCommandReceivers.get(i11)).onCommand(MediaSessionConnector.this.player, str, bundle, resultReceiver); i11++) {
+                for (int i10 = 0; i10 < MediaSessionConnector.this.customCommandReceivers.size() && !((CommandReceiver) MediaSessionConnector.this.customCommandReceivers.get(i10)).onCommand(MediaSessionConnector.this.player, str, bundle, resultReceiver); i10++) {
                 }
             }
         }
@@ -168,28 +167,28 @@ public final class MediaSessionConnector {
                 z11 = false;
             }
             if (gVar2.a.get(0)) {
-                int o10 = c2Var.A().o();
-                int x8 = c2Var.x();
+                int o6 = c2Var.A().o();
+                int x10 = c2Var.x();
                 if (MediaSessionConnector.this.queueNavigator != null) {
                     MediaSessionConnector.this.queueNavigator.onTimelineChanged(c2Var);
-                } else if (this.currentWindowCount == o10) {
+                } else if (this.currentWindowCount == o6) {
                 }
                 z11 = true;
-                this.currentWindowCount = o10;
+                this.currentWindowCount = o6;
                 z10 = true;
             }
             this.currentMediaItemIndex = c2Var.x();
             int[] iArr = {4, 5, 7, 8, 12};
-            int i10 = 0;
+            int i9 = 0;
             while (true) {
-                if (i10 >= 5) {
+                if (i9 >= 5) {
                     break;
                 }
-                if (gVar2.a.get(iArr[i10])) {
+                if (gVar2.a.get(iArr[i9])) {
                     z11 = true;
                     break;
                 }
-                i10++;
+                i9++;
             }
             if (gVar2.a.get(new int[]{9}[0])) {
                 MediaSessionConnector.this.invalidateMediaSessionQueue();
@@ -207,7 +206,7 @@ public final class MediaSessionConnector {
         @Override // android.support.v4.media.session.t
         public void onFastForward() {
             if (MediaSessionConnector.this.canDispatchPlaybackAction(64L)) {
-                b8.a aVar = (b8.a) MediaSessionConnector.this.player;
+                a8.a aVar = (a8.a) MediaSessionConnector.this.player;
                 long D = aVar.D() + aVar.p();
                 long duration = aVar.getDuration();
                 if (duration != -9223372036854775807L) {
@@ -225,7 +224,7 @@ public final class MediaSessionConnector {
         @Override // android.support.v4.media.session.t
         public void onPause() {
             if (MediaSessionConnector.this.canDispatchPlaybackAction(2L)) {
-                ((b8.a) MediaSessionConnector.this.player).o(false);
+                ((a8.a) MediaSessionConnector.this.player).o(false);
             }
         }
 
@@ -244,7 +243,7 @@ public final class MediaSessionConnector {
                 }
                 c2 c2Var = MediaSessionConnector.this.player;
                 c2Var.getClass();
-                ((b8.a) c2Var).o(true);
+                ((a8.a) c2Var).o(true);
             }
         }
 
@@ -271,7 +270,7 @@ public final class MediaSessionConnector {
 
         @Override // h3.a2
         @Deprecated
-        public /* bridge */ /* synthetic */ void onPositionDiscontinuity(int i10) {
+        public /* bridge */ /* synthetic */ void onPositionDiscontinuity(int i9) {
         }
 
         @Override // android.support.v4.media.session.t
@@ -312,7 +311,7 @@ public final class MediaSessionConnector {
         @Override // android.support.v4.media.session.t
         public void onRewind() {
             if (MediaSessionConnector.this.canDispatchPlaybackAction(8L)) {
-                b8.a aVar = (b8.a) MediaSessionConnector.this.player;
+                a8.a aVar = (a8.a) MediaSessionConnector.this.player;
                 long D = aVar.D() + (-aVar.E());
                 long duration = aVar.getDuration();
                 if (duration != -9223372036854775807L) {
@@ -353,24 +352,24 @@ public final class MediaSessionConnector {
         }
 
         @Override // android.support.v4.media.session.t
-        public void onSetRepeatMode(int i10) {
+        public void onSetRepeatMode(int i9) {
             if (MediaSessionConnector.this.canDispatchPlaybackAction(262144L)) {
-                int i11 = 1;
-                if (i10 != 1) {
-                    i11 = 2;
-                    if (i10 != 2 && i10 != 3) {
-                        i11 = 0;
+                int i10 = 1;
+                if (i9 != 1) {
+                    i10 = 2;
+                    if (i9 != 2 && i9 != 3) {
+                        i10 = 0;
                     }
                 }
-                MediaSessionConnector.this.player.e(i11);
+                MediaSessionConnector.this.player.e(i10);
             }
         }
 
         @Override // android.support.v4.media.session.t
-        public void onSetShuffleMode(int i10) {
+        public void onSetShuffleMode(int i9) {
             if (MediaSessionConnector.this.canDispatchPlaybackAction(2097152L)) {
                 boolean z10 = true;
-                if (i10 != 1 && i10 != 2) {
+                if (i9 != 1 && i9 != 2) {
                     z10 = false;
                 }
                 MediaSessionConnector.this.player.i(z10);
@@ -403,23 +402,23 @@ public final class MediaSessionConnector {
             if (MediaSessionConnector.this.canDispatchPlaybackAction(1L)) {
                 MediaSessionConnector.this.player.stop();
                 if (MediaSessionConnector.this.clearMediaItemsOnStop) {
-                    ((b8.a) MediaSessionConnector.this.player).n(0, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    ((a8.a) MediaSessionConnector.this.player).n(0, ConnectionsManager.DEFAULT_DATACENTER_ID);
                 }
             }
         }
 
         @Override // h3.a2
-        public /* bridge */ /* synthetic */ void onCues(d dVar) {
+        public /* bridge */ /* synthetic */ void onCues(c cVar) {
         }
 
         @Override // h3.a2
-        public /* bridge */ /* synthetic */ void onPositionDiscontinuity(b2 b2Var, b2 b2Var2, int i10) {
+        public /* bridge */ /* synthetic */ void onPositionDiscontinuity(b2 b2Var, b2 b2Var2, int i9) {
         }
 
         @Override // android.support.v4.media.session.t
-        public void onAddQueueItem(MediaDescriptionCompat mediaDescriptionCompat, int i10) {
+        public void onAddQueueItem(MediaDescriptionCompat mediaDescriptionCompat, int i9) {
             if (MediaSessionConnector.this.canDispatchQueueEdit()) {
-                MediaSessionConnector.this.queueEditor.onAddQueueItem(MediaSessionConnector.this.player, mediaDescriptionCompat, i10);
+                MediaSessionConnector.this.queueEditor.onAddQueueItem(MediaSessionConnector.this.player, mediaDescriptionCompat, i9);
             }
         }
 
@@ -443,7 +442,7 @@ public final class MediaSessionConnector {
         public /* bridge */ /* synthetic */ void onAudioAttributesChanged(e eVar) {
         }
 
-        public /* bridge */ /* synthetic */ void onAudioSessionIdChanged(int i10) {
+        public /* bridge */ /* synthetic */ void onAudioSessionIdChanged(int i9) {
         }
 
         @Override // h3.a2
@@ -475,7 +474,7 @@ public final class MediaSessionConnector {
         }
 
         @Override // h3.a2
-        public /* bridge */ /* synthetic */ void onMetadata(c cVar) {
+        public /* bridge */ /* synthetic */ void onMetadata(z3.c cVar) {
         }
 
         @Override // h3.a2
@@ -483,11 +482,11 @@ public final class MediaSessionConnector {
         }
 
         @Override // h3.a2
-        public /* bridge */ /* synthetic */ void onPlaybackStateChanged(int i10) {
+        public /* bridge */ /* synthetic */ void onPlaybackStateChanged(int i9) {
         }
 
         @Override // h3.a2
-        public /* bridge */ /* synthetic */ void onPlaybackSuppressionReasonChanged(int i10) {
+        public /* bridge */ /* synthetic */ void onPlaybackSuppressionReasonChanged(int i9) {
         }
 
         @Override // h3.a2
@@ -502,7 +501,7 @@ public final class MediaSessionConnector {
         }
 
         @Override // h3.a2
-        public /* bridge */ /* synthetic */ void onRepeatModeChanged(int i10) {
+        public /* bridge */ /* synthetic */ void onRepeatModeChanged(int i9) {
         }
 
         public /* bridge */ /* synthetic */ void onSeekBackIncrementChanged(long j10) {
@@ -519,15 +518,15 @@ public final class MediaSessionConnector {
         public /* bridge */ /* synthetic */ void onSkipSilenceEnabledChanged(boolean z10) {
         }
 
-        public /* bridge */ /* synthetic */ void onTrackSelectionParametersChanged(y yVar) {
+        public /* bridge */ /* synthetic */ void onTrackSelectionParametersChanged(z zVar) {
         }
 
         @Override // h3.a2
-        public /* bridge */ /* synthetic */ void onTracksChanged(u2 u2Var) {
+        public /* bridge */ /* synthetic */ void onTracksChanged(t2 t2Var) {
         }
 
         @Override // h3.a2
-        public /* bridge */ /* synthetic */ void onVideoSizeChanged(x xVar) {
+        public /* bridge */ /* synthetic */ void onVideoSizeChanged(e5.z zVar) {
         }
 
         @Override // h3.a2
@@ -535,39 +534,39 @@ public final class MediaSessionConnector {
         }
 
         @Override // h3.a2
-        public /* bridge */ /* synthetic */ void onDeviceVolumeChanged(int i10, boolean z10) {
+        public /* bridge */ /* synthetic */ void onDeviceVolumeChanged(int i9, boolean z10) {
         }
 
         @Override // h3.a2
-        public /* bridge */ /* synthetic */ void onMediaItemTransition(f1 f1Var, int i10) {
+        public /* bridge */ /* synthetic */ void onMediaItemTransition(f1 f1Var, int i9) {
         }
 
         @Override // h3.a2
-        public /* bridge */ /* synthetic */ void onPlayWhenReadyChanged(boolean z10, int i10) {
+        public /* bridge */ /* synthetic */ void onPlayWhenReadyChanged(boolean z10, int i9) {
         }
 
         @Override // h3.a2
         @Deprecated
-        public /* bridge */ /* synthetic */ void onPlayerStateChanged(boolean z10, int i10) {
+        public /* bridge */ /* synthetic */ void onPlayerStateChanged(boolean z10, int i9) {
         }
 
         @Override // h3.a2
-        public /* bridge */ /* synthetic */ void onSurfaceSizeChanged(int i10, int i11) {
+        public /* bridge */ /* synthetic */ void onSurfaceSizeChanged(int i9, int i10) {
         }
 
         @Override // h3.a2
-        public /* bridge */ /* synthetic */ void onTimelineChanged(s2 s2Var, int i10) {
+        public /* bridge */ /* synthetic */ void onTimelineChanged(r2 r2Var, int i9) {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface CustomActionProvider {
         PlaybackStateCompat.CustomAction getCustomAction(c2 c2Var);
 
         void onCustomAction(c2 c2Var, String str, Bundle bundle);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class DefaultMediaMetadataProvider implements MediaMetadataProvider {
         private final p mediaController;
         private final String metadataExtrasPrefix;
@@ -583,124 +582,121 @@ public final class MediaSessionConnector {
             if (c2Var.A().p()) {
                 return MediaSessionConnector.METADATA_EMPTY;
             }
-            android.support.v4.media.c cVar = new android.support.v4.media.c();
+            android.support.v4.media.c cVar = new android.support.v4.media.c(0);
+            Bundle bundle = (Bundle) cVar.b;
             if (c2Var.c()) {
-                cVar.d(1L, "android.media.metadata.ADVERTISEMENT");
+                cVar.O(1L, "android.media.metadata.ADVERTISEMENT");
             }
-            cVar.d((((b8.a) c2Var).I() || c2Var.getDuration() == -9223372036854775807L) ? -1L : c2Var.getDuration(), "android.media.metadata.DURATION");
+            cVar.O((((a8.a) c2Var).I() || c2Var.getDuration() == -9223372036854775807L) ? -1L : c2Var.getDuration(), "android.media.metadata.DURATION");
             long j10 = this.mediaController.b().s;
             if (j10 != -1) {
                 List<MediaSession.QueueItem> queue = this.mediaController.a.a.getQueue();
                 ArrayList a2 = queue != null ? MediaSessionCompat$QueueItem.a(queue) : null;
-                int i10 = 0;
+                int i9 = 0;
                 while (true) {
-                    if (a2 == null || i10 >= a2.size()) {
+                    if (a2 == null || i9 >= a2.size()) {
                         break;
                     }
-                    MediaSessionCompat$QueueItem mediaSessionCompat$QueueItem = (MediaSessionCompat$QueueItem) a2.get(i10);
+                    MediaSessionCompat$QueueItem mediaSessionCompat$QueueItem = (MediaSessionCompat$QueueItem) a2.get(i9);
                     if (mediaSessionCompat$QueueItem.b == j10) {
                         MediaDescriptionCompat mediaDescriptionCompat = mediaSessionCompat$QueueItem.a;
-                        Bundle bundle = mediaDescriptionCompat.h;
-                        if (bundle != null) {
-                            for (String str : bundle.keySet()) {
-                                Object obj2 = bundle.get(str);
+                        Bundle bundle2 = mediaDescriptionCompat.h;
+                        if (bundle2 != null) {
+                            for (String str : bundle2.keySet()) {
+                                Object obj2 = bundle2.get(str);
                                 if (obj2 instanceof String) {
-                                    cVar.e(a9.p.p(new StringBuilder(), this.metadataExtrasPrefix, str), (String) obj2);
-                                } else {
-                                    boolean z10 = obj2 instanceof CharSequence;
-                                    Bundle bundle2 = cVar.a;
-                                    if (z10) {
-                                        String p6 = a9.p.p(new StringBuilder(), this.metadataExtrasPrefix, str);
-                                        CharSequence charSequence = (CharSequence) obj2;
-                                        a0.f fVar = MediaMetadataCompat.d;
-                                        if (fVar.containsKey(p6) && ((Integer) fVar.get(p6)).intValue() != 1) {
-                                            throw new IllegalArgumentException(a9.p.m("The ", p6, " key cannot be used to put a CharSequence"));
-                                        }
-                                        bundle2.putCharSequence(p6, charSequence);
-                                    } else if (obj2 instanceof Long) {
-                                        cVar.d(((Long) obj2).longValue(), a9.p.p(new StringBuilder(), this.metadataExtrasPrefix, str));
-                                    } else if (obj2 instanceof Integer) {
-                                        cVar.d(((Integer) obj2).intValue(), a9.p.p(new StringBuilder(), this.metadataExtrasPrefix, str));
-                                    } else if (obj2 instanceof Bitmap) {
-                                        cVar.c(a9.p.p(new StringBuilder(), this.metadataExtrasPrefix, str), (Bitmap) obj2);
-                                    } else if (obj2 instanceof RatingCompat) {
-                                        String p9 = a9.p.p(new StringBuilder(), this.metadataExtrasPrefix, str);
-                                        RatingCompat ratingCompat = (RatingCompat) obj2;
-                                        a0.f fVar2 = MediaMetadataCompat.d;
-                                        if (fVar2.containsKey(p9) && ((Integer) fVar2.get(p9)).intValue() != 3) {
-                                            throw new IllegalArgumentException(a9.p.m("The ", p9, " key cannot be used to put a Rating"));
-                                        }
-                                        int i11 = ratingCompat.a;
-                                        if (ratingCompat.c == null) {
-                                            if (ratingCompat.d()) {
-                                                switch (i11) {
-                                                    case 1:
-                                                        ratingCompat.c = android.support.v4.media.d.g(ratingCompat.c());
-                                                        break;
-                                                    case 2:
-                                                        ratingCompat.c = android.support.v4.media.d.j(ratingCompat.e());
-                                                        break;
-                                                    case 3:
-                                                    case 4:
-                                                    case 5:
-                                                        ratingCompat.c = android.support.v4.media.d.i(i11, ratingCompat.b());
-                                                        break;
-                                                    case 6:
-                                                        ratingCompat.c = android.support.v4.media.d.h(ratingCompat.a());
-                                                        break;
-                                                    default:
-                                                        obj = null;
-                                                        break;
-                                                }
-                                                bundle2.putParcelable(p9, (Parcelable) obj);
-                                            } else {
-                                                ratingCompat.c = android.support.v4.media.d.k(i11);
-                                            }
-                                        }
-                                        obj = ratingCompat.c;
-                                        bundle2.putParcelable(p9, (Parcelable) obj);
-                                    } else {
-                                        continue;
+                                    cVar.P(d.r(new StringBuilder(), this.metadataExtrasPrefix, str), (String) obj2);
+                                } else if (obj2 instanceof CharSequence) {
+                                    String r10 = d.r(new StringBuilder(), this.metadataExtrasPrefix, str);
+                                    CharSequence charSequence = (CharSequence) obj2;
+                                    a0.f fVar = MediaMetadataCompat.d;
+                                    if (fVar.containsKey(r10) && ((Integer) fVar.get(r10)).intValue() != 1) {
+                                        throw new IllegalArgumentException(d.o("The ", r10, " key cannot be used to put a CharSequence"));
                                     }
+                                    bundle.putCharSequence(r10, charSequence);
+                                } else if (obj2 instanceof Long) {
+                                    cVar.O(((Long) obj2).longValue(), d.r(new StringBuilder(), this.metadataExtrasPrefix, str));
+                                } else if (obj2 instanceof Integer) {
+                                    cVar.O(((Integer) obj2).intValue(), d.r(new StringBuilder(), this.metadataExtrasPrefix, str));
+                                } else if (obj2 instanceof Bitmap) {
+                                    cVar.N(d.r(new StringBuilder(), this.metadataExtrasPrefix, str), (Bitmap) obj2);
+                                } else if (obj2 instanceof RatingCompat) {
+                                    String r11 = d.r(new StringBuilder(), this.metadataExtrasPrefix, str);
+                                    RatingCompat ratingCompat = (RatingCompat) obj2;
+                                    a0.f fVar2 = MediaMetadataCompat.d;
+                                    if (fVar2.containsKey(r11) && ((Integer) fVar2.get(r11)).intValue() != 3) {
+                                        throw new IllegalArgumentException(d.o("The ", r11, " key cannot be used to put a Rating"));
+                                    }
+                                    int i10 = ratingCompat.a;
+                                    if (ratingCompat.c == null) {
+                                        if (ratingCompat.d()) {
+                                            switch (i10) {
+                                                case 1:
+                                                    ratingCompat.c = android.support.v4.media.d.g(ratingCompat.c());
+                                                    break;
+                                                case 2:
+                                                    ratingCompat.c = android.support.v4.media.d.j(ratingCompat.e());
+                                                    break;
+                                                case 3:
+                                                case 4:
+                                                case 5:
+                                                    ratingCompat.c = android.support.v4.media.d.i(i10, ratingCompat.b());
+                                                    break;
+                                                case 6:
+                                                    ratingCompat.c = android.support.v4.media.d.h(ratingCompat.a());
+                                                    break;
+                                                default:
+                                                    obj = null;
+                                                    break;
+                                            }
+                                            bundle.putParcelable(r11, (Parcelable) obj);
+                                        } else {
+                                            ratingCompat.c = android.support.v4.media.d.k(i10);
+                                        }
+                                    }
+                                    obj = ratingCompat.c;
+                                    bundle.putParcelable(r11, (Parcelable) obj);
+                                } else {
+                                    continue;
                                 }
                             }
                         }
                         CharSequence charSequence2 = mediaDescriptionCompat.b;
                         if (charSequence2 != null) {
                             String valueOf = String.valueOf(charSequence2);
-                            cVar.e("android.media.metadata.TITLE", valueOf);
-                            cVar.e("android.media.metadata.DISPLAY_TITLE", valueOf);
+                            cVar.P("android.media.metadata.TITLE", valueOf);
+                            cVar.P("android.media.metadata.DISPLAY_TITLE", valueOf);
                         }
                         CharSequence charSequence3 = mediaDescriptionCompat.c;
                         if (charSequence3 != null) {
-                            cVar.e("android.media.metadata.DISPLAY_SUBTITLE", String.valueOf(charSequence3));
+                            cVar.P("android.media.metadata.DISPLAY_SUBTITLE", String.valueOf(charSequence3));
                         }
                         CharSequence charSequence4 = mediaDescriptionCompat.d;
                         if (charSequence4 != null) {
-                            cVar.e("android.media.metadata.DISPLAY_DESCRIPTION", String.valueOf(charSequence4));
+                            cVar.P("android.media.metadata.DISPLAY_DESCRIPTION", String.valueOf(charSequence4));
                         }
                         Bitmap bitmap = mediaDescriptionCompat.e;
                         if (bitmap != null) {
-                            cVar.c("android.media.metadata.DISPLAY_ICON", bitmap);
+                            cVar.N("android.media.metadata.DISPLAY_ICON", bitmap);
                         }
                         Uri uri = mediaDescriptionCompat.f;
                         if (uri != null) {
-                            cVar.e("android.media.metadata.DISPLAY_ICON_URI", String.valueOf(uri));
+                            cVar.P("android.media.metadata.DISPLAY_ICON_URI", String.valueOf(uri));
                         }
                         String str2 = mediaDescriptionCompat.a;
                         if (str2 != null) {
-                            cVar.e("android.media.metadata.MEDIA_ID", str2);
+                            cVar.P("android.media.metadata.MEDIA_ID", str2);
                         }
                         Uri uri2 = mediaDescriptionCompat.n;
                         if (uri2 != null) {
-                            cVar.e("android.media.metadata.MEDIA_URI", String.valueOf(uri2));
+                            cVar.P("android.media.metadata.MEDIA_URI", String.valueOf(uri2));
                         }
                     } else {
-                        i10++;
+                        i9++;
                     }
                 }
             }
-            return cVar.a();
+            return cVar.B();
         }
 
         @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.MediaMetadataProvider
@@ -709,24 +705,24 @@ public final class MediaSessionConnector {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface MediaButtonEventHandler {
         boolean onMediaButtonEvent(c2 c2Var, Intent intent);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface MediaMetadataProvider {
         MediaMetadataCompat getMetadata(c2 c2Var);
 
         boolean sameAs(MediaMetadataCompat mediaMetadataCompat, MediaMetadataCompat mediaMetadataCompat2);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PlaybackActions {
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface PlaybackPreparer extends CommandReceiver {
         public static final long ACTIONS = 257024;
 
@@ -741,16 +737,16 @@ public final class MediaSessionConnector {
         void onPrepareFromUri(Uri uri, boolean z10, Bundle bundle);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface QueueEditor extends CommandReceiver {
         void onAddQueueItem(c2 c2Var, MediaDescriptionCompat mediaDescriptionCompat);
 
-        void onAddQueueItem(c2 c2Var, MediaDescriptionCompat mediaDescriptionCompat, int i10);
+        void onAddQueueItem(c2 c2Var, MediaDescriptionCompat mediaDescriptionCompat, int i9);
 
         void onRemoveQueueItem(c2 c2Var, MediaDescriptionCompat mediaDescriptionCompat);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface QueueNavigator extends CommandReceiver {
         public static final long ACTIONS = 4144;
 
@@ -769,7 +765,7 @@ public final class MediaSessionConnector {
         void onTimelineChanged(c2 c2Var);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface RatingCallback extends CommandReceiver {
         void onSetRating(c2 c2Var, RatingCompat ratingCompat);
 
@@ -783,7 +779,7 @@ public final class MediaSessionConnector {
 
     public MediaSessionConnector(d0 d0Var) {
         this.mediaSession = d0Var;
-        int i10 = g0.a;
+        int i9 = f0.a;
         Looper myLooper = Looper.myLooper();
         myLooper = myLooper == null ? Looper.getMainLooper() : myLooper;
         this.looper = myLooper;
@@ -802,7 +798,7 @@ public final class MediaSessionConnector {
 
     private long buildPlaybackActions(c2 c2Var) {
         boolean z10;
-        b8.a aVar = (b8.a) c2Var;
+        a8.a aVar = (a8.a) c2Var;
         boolean H = aVar.H(5);
         boolean H2 = aVar.H(11);
         boolean H3 = aVar.H(12);
@@ -892,14 +888,14 @@ public final class MediaSessionConnector {
         return (j10 & queueNavigator.getSupportedQueueNavigatorActions(c2Var)) != 0 || this.dispatchUnsupportedActionsEnabled;
     }
 
-    private int getMediaSessionPlaybackState(int i10, boolean z10) {
-        if (i10 == 2) {
+    private int getMediaSessionPlaybackState(int i9, boolean z10) {
+        if (i9 == 2) {
             return z10 ? 6 : 2;
         }
-        if (i10 == 3) {
+        if (i9 == 3) {
             return z10 ? 3 : 2;
         }
-        if (i10 != 4) {
+        if (i9 != 4) {
             return this.mapIdleToStopped ? 1 : 0;
         }
         return 1;
@@ -913,8 +909,8 @@ public final class MediaSessionConnector {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void seekTo(c2 c2Var, int i10, long j10) {
-        ((b8.a) c2Var).O(j10, i10, 10, false);
+    public void seekTo(c2 c2Var, int i9, long j10) {
+        ((a8.a) c2Var).O(j10, i9, 10, false);
     }
 
     private void unregisterCommandReceiver(CommandReceiver commandReceiver) {
@@ -938,7 +934,7 @@ public final class MediaSessionConnector {
         ArrayList arrayList = new ArrayList();
         c2 c2Var = this.player;
         CharSequence charSequence = null;
-        int i10 = 0;
+        int i9 = 0;
         if (c2Var == null) {
             long buildPrepareActions = buildPrepareActions();
             long elapsedRealtime = SystemClock.elapsedRealtime();
@@ -960,7 +956,7 @@ public final class MediaSessionConnector {
         int mediaSessionPlaybackState = (c2Var.v() == null && this.customError == null) ? getMediaSessionPlaybackState(c2Var.b(), c2Var.h()) : 7;
         Pair<Integer, CharSequence> pair = this.customError;
         if (pair != null) {
-            i10 = ((Integer) pair.first).intValue();
+            i9 = ((Integer) pair.first).intValue();
             charSequence = (CharSequence) this.customError.second;
             Bundle bundle2 = this.customErrorExtras;
             if (bundle2 != null) {
@@ -971,10 +967,10 @@ public final class MediaSessionConnector {
         long activeQueueItemId = queueNavigator != null ? queueNavigator.getActiveQueueItemId(c2Var) : -1L;
         float f10 = c2Var.getPlaybackParameters().a;
         bundle.putFloat(EXTRAS_SPEED, f10);
-        b8.a aVar = (b8.a) c2Var;
+        a8.a aVar = (a8.a) c2Var;
         float f11 = aVar.K() ? f10 : 0.0f;
-        s2 A = aVar.A();
-        f1 f1Var = A.p() ? null : A.m(aVar.x(), (r2) aVar.a, 0L).c;
+        r2 A = aVar.A();
+        f1 f1Var = A.p() ? null : A.m(aVar.x(), (q2) aVar.a, 0L).c;
         if (f1Var != null) {
             String str = f1Var.a;
             if (!"".equals(str)) {
@@ -988,7 +984,7 @@ public final class MediaSessionConnector {
         int g10 = c2Var.g();
         this.mediaSession.h(g10 == 1 ? 1 : g10 == 2 ? 2 : 0);
         this.mediaSession.i(c2Var.C() ? 1 : 0);
-        this.mediaSession.f(new PlaybackStateCompat(mediaSessionPlaybackState, D, t10, f11, buildPlaybackActions, i10, charSequence, elapsedRealtime2, arrayList, activeQueueItemId, bundle));
+        this.mediaSession.f(new PlaybackStateCompat(mediaSessionPlaybackState, D, t10, f11, buildPlaybackActions, i9, charSequence, elapsedRealtime2, arrayList, activeQueueItemId, bundle));
     }
 
     public final void invalidateMediaSessionQueue() {
@@ -1127,12 +1123,12 @@ public final class MediaSessionConnector {
         }
     }
 
-    public void setCustomErrorMessage(CharSequence charSequence, int i10) {
-        setCustomErrorMessage(charSequence, i10, null);
+    public void setCustomErrorMessage(CharSequence charSequence, int i9) {
+        setCustomErrorMessage(charSequence, i9, null);
     }
 
-    public void setCustomErrorMessage(CharSequence charSequence, int i10, Bundle bundle) {
-        this.customError = charSequence == null ? null : new Pair<>(Integer.valueOf(i10), charSequence);
+    public void setCustomErrorMessage(CharSequence charSequence, int i9, Bundle bundle) {
+        this.customError = charSequence == null ? null : new Pair<>(Integer.valueOf(i9), charSequence);
         if (charSequence == null) {
             bundle = null;
         }

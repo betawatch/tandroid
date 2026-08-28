@@ -12,17 +12,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class i5 extends Drawable implements q5 {
-    public hh.bb A;
+    public gh.bb A;
     public Integer B;
     public int C;
     public PorterDuffColorFilter D;
     public int E;
     public int F;
     public final Rect G;
-    public final bg H;
+    public final fg H;
     public boolean a;
     public final int b;
     public final OvershootInterpolator c;
@@ -30,7 +30,7 @@ public class i5 extends Drawable implements q5 {
     public final y5 e;
     public final Drawable[] f;
     public View h;
-    public org.telegram.ui.a61 n;
+    public org.telegram.ui.b61 n;
     public final boolean r;
     public final int s;
     public int v;
@@ -38,8 +38,8 @@ public class i5 extends Drawable implements q5 {
     public Integer x;
     public boolean y;
 
-    public i5(int i10, View view) {
-        this(i10, 7, view, false);
+    public i5(int i9, View view) {
+        this(i9, 7, view, false);
     }
 
     public final void a() {
@@ -88,37 +88,37 @@ public class i5 extends Drawable implements q5 {
         Rect rect = this.G;
         rect.set(bounds);
         rect.offset(this.E, this.F);
-        float e9 = this.e.e(this.y);
-        bg bgVar = this.H;
-        if (e9 > 0.0f) {
-            hh.bb bbVar = this.A;
+        float e10 = this.e.e(this.y);
+        fg fgVar = this.H;
+        if (e10 > 0.0f) {
+            gh.bb bbVar = this.A;
             bbVar.c.set(rect);
             bbVar.e();
             this.A.d();
-            hh.bb bbVar2 = this.A;
+            gh.bb bbVar2 = this.A;
             Integer num = this.B;
-            bbVar2.a(canvas, org.telegram.ui.ActionBar.g6.l1(e9, num == null ? -1 : num.intValue()));
-            gf.k.d().a(15, bgVar);
+            bbVar2.a(canvas, org.telegram.ui.ActionBar.f6.l1(e10, num == null ? -1 : num.intValue()));
+            ff.k.d().a(15, fgVar);
         } else {
-            gf.k.d().g(bgVar);
+            ff.k.d().g(fgVar);
         }
         Drawable[] drawableArr = this.f;
         Drawable drawable = drawableArr[1];
-        int i10 = this.s;
+        int i9 = this.s;
         if (drawable != null && d < 1.0f) {
             drawable.setAlpha((int) ((1.0f - d) * this.v));
-            int intrinsicWidth = drawableArr[1].getIntrinsicWidth() < 0 ? i10 : drawableArr[1].getIntrinsicWidth();
-            int intrinsicHeight = drawableArr[1].getIntrinsicHeight() < 0 ? i10 : drawableArr[1].getIntrinsicHeight();
+            int intrinsicWidth = drawableArr[1].getIntrinsicWidth() < 0 ? i9 : drawableArr[1].getIntrinsicWidth();
+            int intrinsicHeight = drawableArr[1].getIntrinsicHeight() < 0 ? i9 : drawableArr[1].getIntrinsicHeight();
             Drawable drawable2 = drawableArr[1];
             if (drawable2 instanceof k5) {
                 drawable2.setBounds(rect);
             } else if (this.a) {
-                int i11 = intrinsicWidth / 2;
-                int i12 = intrinsicHeight / 2;
-                drawable2.setBounds(rect.centerX() - i11, rect.centerY() - i12, rect.centerX() + i11, rect.centerY() + i12);
+                int i10 = intrinsicWidth / 2;
+                int i11 = intrinsicHeight / 2;
+                drawable2.setBounds(rect.centerX() - i10, rect.centerY() - i11, rect.centerX() + i10, rect.centerY() + i11);
             } else {
-                int i13 = intrinsicHeight / 2;
-                drawable2.setBounds(rect.left, rect.centerY() - i13, rect.left + intrinsicWidth, rect.centerY() + i13);
+                int i12 = intrinsicHeight / 2;
+                drawable2.setBounds(rect.left, rect.centerY() - i12, rect.left + intrinsicWidth, rect.centerY() + i12);
             }
             drawableArr[1].setColorFilter(this.D);
             drawableArr[1].draw(canvas);
@@ -126,17 +126,17 @@ public class i5 extends Drawable implements q5 {
         }
         if (drawableArr[0] != null) {
             canvas.save();
-            int intrinsicWidth2 = drawableArr[0].getIntrinsicWidth() < 0 ? i10 : drawableArr[0].getIntrinsicWidth();
+            int intrinsicWidth2 = drawableArr[0].getIntrinsicWidth() < 0 ? i9 : drawableArr[0].getIntrinsicWidth();
             if (drawableArr[0].getIntrinsicHeight() >= 0) {
-                i10 = drawableArr[0].getIntrinsicHeight();
+                i9 = drawableArr[0].getIntrinsicHeight();
             }
             Drawable drawable3 = drawableArr[0];
             boolean z10 = drawable3 instanceof k5;
             OvershootInterpolator overshootInterpolator = this.c;
             if (z10) {
-                jh.y2 y2Var = ((k5) drawable3).k;
-                if (y2Var != null) {
-                    y2Var.setRoundRadius(AndroidUtilities.dp(4.0f));
+                ih.z2 z2Var = ((k5) drawable3).k;
+                if (z2Var != null) {
+                    z2Var.setRoundRadius(AndroidUtilities.dp(4.0f));
                 }
                 if (d < 1.0f) {
                     float interpolation = overshootInterpolator.getInterpolation(d);
@@ -148,16 +148,16 @@ public class i5 extends Drawable implements q5 {
                     float interpolation2 = overshootInterpolator.getInterpolation(d);
                     canvas.scale(interpolation2, interpolation2, rect.centerX(), rect.centerY());
                 }
-                int i14 = intrinsicWidth2 / 2;
-                int i15 = i10 / 2;
-                drawableArr[0].setBounds(rect.centerX() - i14, rect.centerY() - i15, rect.centerX() + i14, rect.centerY() + i15);
+                int i13 = intrinsicWidth2 / 2;
+                int i14 = i9 / 2;
+                drawableArr[0].setBounds(rect.centerX() - i13, rect.centerY() - i14, rect.centerX() + i13, rect.centerY() + i14);
             } else {
                 if (d < 1.0f) {
                     float interpolation3 = overshootInterpolator.getInterpolation(d);
                     canvas.scale(interpolation3, interpolation3, (intrinsicWidth2 / 2.0f) + rect.left, rect.centerY());
                 }
-                int i16 = i10 / 2;
-                drawableArr[0].setBounds(rect.left, rect.centerY() - i16, rect.left + intrinsicWidth2, rect.centerY() + i16);
+                int i15 = i9 / 2;
+                drawableArr[0].setBounds(rect.left, rect.centerY() - i15, rect.left + intrinsicWidth2, rect.centerY() + i15);
             }
             drawableArr[0].setAlpha(this.v);
             drawableArr[0].setColorFilter(this.D);
@@ -176,13 +176,13 @@ public class i5 extends Drawable implements q5 {
 
     public final void f() {
         k5 k5Var;
-        jh.y2 y2Var;
+        ih.z2 z2Var;
         Drawable drawable = this.f[0];
-        if (!(drawable instanceof k5) || (y2Var = (k5Var = (k5) drawable).k) == null) {
+        if (!(drawable instanceof k5) || (z2Var = (k5Var = (k5) drawable).k) == null) {
             return;
         }
-        k5Var.w(y2Var);
-        y2Var.startAnimation();
+        k5Var.w(z2Var);
+        z2Var.startAnimation();
     }
 
     public final void g(Drawable drawable, boolean z10) {
@@ -235,7 +235,7 @@ public class i5 extends Drawable implements q5 {
         return -2;
     }
 
-    public final void h(TLRPC.Document document, int i10, boolean z10) {
+    public final void h(TLRPC.Document document, int i9, boolean z10) {
         Drawable[] drawableArr = this.f;
         Drawable drawable = drawableArr[0];
         if ((drawable instanceof k5) && document != null && ((k5) drawable).i() == document.id) {
@@ -254,7 +254,7 @@ public class i5 extends Drawable implements q5 {
             drawableArr[1] = drawableArr[0];
             if (document != null) {
                 Integer num = this.x;
-                k5 m10 = k5.m(num != null ? num.intValue() : UserConfig.selectedAccount, i10, document);
+                k5 m10 = k5.m(num != null ? num.intValue() : UserConfig.selectedAccount, i9, document);
                 drawableArr[0] = m10;
                 if (this.w) {
                     m10.b(this);
@@ -270,7 +270,7 @@ public class i5 extends Drawable implements q5 {
             }
             if (document != null) {
                 Integer num2 = this.x;
-                drawableArr[0] = k5.m(num2 != null ? num2.intValue() : UserConfig.selectedAccount, i10, document);
+                drawableArr[0] = k5.m(num2 != null ? num2.intValue() : UserConfig.selectedAccount, i9, document);
             } else {
                 drawableArr[0] = null;
             }
@@ -298,9 +298,9 @@ public class i5 extends Drawable implements q5 {
                 this.h.invalidate();
             }
         }
-        org.telegram.ui.a61 a61Var = this.n;
-        if (a61Var != null) {
-            a61Var.invalidate();
+        org.telegram.ui.b61 b61Var = this.n;
+        if (b61Var != null) {
+            b61Var.invalidate();
         }
         invalidateSelf();
     }
@@ -311,7 +311,7 @@ public class i5 extends Drawable implements q5 {
         if ((drawable instanceof k5) && ((k5) drawable).i() == j10) {
             return false;
         }
-        int i10 = this.b;
+        int i9 = this.b;
         y5 y5Var = this.d;
         if (z10) {
             y5Var.d(0.0f, true);
@@ -324,7 +324,7 @@ public class i5 extends Drawable implements q5 {
             }
             drawableArr[1] = drawableArr[0];
             Integer num = this.x;
-            k5 n10 = k5.n(num != null ? num.intValue() : UserConfig.selectedAccount, j10, null, i10);
+            k5 n10 = k5.n(num != null ? num.intValue() : UserConfig.selectedAccount, j10, null, i9);
             drawableArr[0] = n10;
             if (this.w) {
                 n10.b(this);
@@ -336,7 +336,7 @@ public class i5 extends Drawable implements q5 {
                 b();
             }
             Integer num2 = this.x;
-            drawableArr[0] = k5.n(num2 != null ? num2.intValue() : UserConfig.selectedAccount, j10, null, i10);
+            drawableArr[0] = k5.n(num2 != null ? num2.intValue() : UserConfig.selectedAccount, j10, null, i9);
             if (z11) {
                 a();
             }
@@ -382,7 +382,7 @@ public class i5 extends Drawable implements q5 {
         }
         if (z11) {
             if (this.A == null) {
-                this.A = new hh.bb(1, 8);
+                this.A = new gh.bb(1, 8);
             }
             this.y = z10;
             invalidate();
@@ -390,7 +390,7 @@ public class i5 extends Drawable implements q5 {
         }
         this.y = z10;
         if (z10 && this.A == null) {
-            this.A = new hh.bb(1, 8);
+            this.A = new gh.bb(1, 8);
         } else if (!z10 && this.A != null) {
             this.A = null;
         }
@@ -399,31 +399,31 @@ public class i5 extends Drawable implements q5 {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.v = i10;
+    public final void setAlpha(int i9) {
+        this.v = i9;
     }
 
-    public i5(View view, int i10, boolean z10) {
-        this(i10, 7, view, z10);
+    public i5(View view, int i9, boolean z10) {
+        this(i9, 7, view, z10);
     }
 
-    public i5(int i10, int i11, View view, boolean z10) {
+    public i5(int i9, int i10, View view, boolean z10) {
         this.a = false;
         this.c = new OvershootInterpolator(2.0f);
-        er erVar = er.g;
-        y5 y5Var = new y5((View) null, 300L, erVar);
+        gr grVar = gr.g;
+        y5 y5Var = new y5((View) null, 300L, grVar);
         this.d = y5Var;
-        y5 y5Var2 = new y5((View) null, 300L, erVar);
+        y5 y5Var2 = new y5((View) null, 300L, grVar);
         this.e = y5Var2;
         this.f = new Drawable[2];
         this.v = 255;
         this.G = new Rect();
-        this.H = new bg(this, 6);
+        this.H = new fg(this, 6);
         y5Var.a = view;
         this.h = view;
         y5Var2.a = view;
-        this.s = i10;
-        this.b = i11;
+        this.s = i9;
+        this.b = i10;
         this.r = z10;
     }
 

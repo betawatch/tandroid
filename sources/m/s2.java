@@ -4,14 +4,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.appcompat.widget.SearchView;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class s2 implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ ViewGroup b;
 
-    public /* synthetic */ s2(ViewGroup viewGroup, int i10) {
-        this.a = i10;
+    public /* synthetic */ s2(ViewGroup viewGroup, int i9) {
+        this.a = i9;
         this.b = viewGroup;
     }
 
@@ -27,20 +27,20 @@ public final class s2 implements View.OnFocusChangeListener {
                 }
                 break;
             case 1:
-                org.telegram.ui.Cells.d3 d3Var = (org.telegram.ui.Cells.d3) this.b;
-                d3Var.h = z10;
-                if (d3Var.f) {
-                    d3Var.c();
+                org.telegram.ui.Cells.g3 g3Var = (org.telegram.ui.Cells.g3) this.b;
+                g3Var.h = z10;
+                if (g3Var.f) {
+                    g3Var.c();
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.Cells.g3 g3Var = (org.telegram.ui.Cells.g3) this.b;
-                g3Var.n = z10;
-                if (g3Var.f) {
-                    g3Var.c();
+                org.telegram.ui.Cells.j3 j3Var = (org.telegram.ui.Cells.j3) this.b;
+                j3Var.n = z10;
+                if (j3Var.f) {
+                    j3Var.c();
                 }
-                g3Var.a(z10);
+                j3Var.a(z10);
                 break;
         }
     }

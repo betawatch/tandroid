@@ -10,15 +10,15 @@ import android.transition.TransitionValues;
 import android.util.Property;
 import android.view.View;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.f11;
+import org.telegram.ui.Components.y11;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class i extends ChangeBounds {
     public final /* synthetic */ int a;
 
-    public /* synthetic */ i(int i10) {
-        this.a = i10;
+    public /* synthetic */ i(int i9) {
+        this.a = i9;
     }
 
     @Override // android.transition.ChangeBounds, android.transition.Transition
@@ -36,14 +36,14 @@ public final class i extends ChangeBounds {
                 super.captureEndValues(transitionValues);
                 View view2 = transitionValues.view;
                 if (view2 instanceof org.telegram.ui.Components.voip.j) {
-                    int i10 = ((org.telegram.ui.Components.voip.j) view2).n;
-                    int i11 = ((org.telegram.ui.Components.voip.j) view2).r;
-                    int i12 = ((org.telegram.ui.Components.voip.j) view2).s;
-                    int i13 = ((org.telegram.ui.Components.voip.j) view2).v;
-                    transitionValues.values.put("back_color_end_close", Integer.valueOf(i10));
-                    transitionValues.values.put("round_end_close", Integer.valueOf(i11));
-                    transitionValues.values.put("decline_call_alpha_end_close", Integer.valueOf(i12));
-                    transitionValues.values.put("close_text_alpha_end_close", Integer.valueOf(i13));
+                    int i9 = ((org.telegram.ui.Components.voip.j) view2).n;
+                    int i10 = ((org.telegram.ui.Components.voip.j) view2).r;
+                    int i11 = ((org.telegram.ui.Components.voip.j) view2).s;
+                    int i12 = ((org.telegram.ui.Components.voip.j) view2).v;
+                    transitionValues.values.put("back_color_end_close", Integer.valueOf(i9));
+                    transitionValues.values.put("round_end_close", Integer.valueOf(i10));
+                    transitionValues.values.put("decline_call_alpha_end_close", Integer.valueOf(i11));
+                    transitionValues.values.put("close_text_alpha_end_close", Integer.valueOf(i12));
                     break;
                 }
                 break;
@@ -65,14 +65,14 @@ public final class i extends ChangeBounds {
                 super.captureStartValues(transitionValues);
                 View view2 = transitionValues.view;
                 if (view2 instanceof org.telegram.ui.Components.voip.j) {
-                    int i10 = ((org.telegram.ui.Components.voip.j) view2).n;
-                    int i11 = ((org.telegram.ui.Components.voip.j) view2).r;
-                    int i12 = ((org.telegram.ui.Components.voip.j) view2).s;
-                    int i13 = ((org.telegram.ui.Components.voip.j) view2).v;
-                    transitionValues.values.put("back_color_end_close", Integer.valueOf(i10));
-                    transitionValues.values.put("round_end_close", Integer.valueOf(i11));
-                    transitionValues.values.put("decline_call_alpha_end_close", Integer.valueOf(i12));
-                    transitionValues.values.put("close_text_alpha_end_close", Integer.valueOf(i13));
+                    int i9 = ((org.telegram.ui.Components.voip.j) view2).n;
+                    int i10 = ((org.telegram.ui.Components.voip.j) view2).r;
+                    int i11 = ((org.telegram.ui.Components.voip.j) view2).s;
+                    int i12 = ((org.telegram.ui.Components.voip.j) view2).v;
+                    transitionValues.values.put("back_color_end_close", Integer.valueOf(i9));
+                    transitionValues.values.put("round_end_close", Integer.valueOf(i10));
+                    transitionValues.values.put("decline_call_alpha_end_close", Integer.valueOf(i11));
+                    transitionValues.values.put("close_text_alpha_end_close", Integer.valueOf(i12));
                     break;
                 }
                 break;
@@ -81,8 +81,8 @@ public final class i extends ChangeBounds {
 
     @Override // android.transition.ChangeBounds, android.transition.Transition
     public final Animator createAnimator(ViewGroup viewGroup, final TransitionValues transitionValues, TransitionValues transitionValues2) {
-        final int i10 = 1;
-        final int i11 = 0;
+        final int i9 = 1;
+        final int i10 = 0;
         switch (this.a) {
             case 0:
                 if (transitionValues != null && (transitionValues.view instanceof h5)) {
@@ -125,7 +125,7 @@ public final class i extends ChangeBounds {
                     valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.i
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                            switch (i11) {
+                            switch (i10) {
                                 case 0:
                                     ((j) transitionValues.view).n = ((Integer) valueAnimator2.getAnimatedValue()).intValue();
                                     break;
@@ -146,7 +146,7 @@ public final class i extends ChangeBounds {
                     ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.i
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                            switch (i10) {
+                            switch (i9) {
                                 case 0:
                                     ((j) transitionValues.view).n = ((Integer) valueAnimator2.getAnimatedValue()).intValue();
                                     break;
@@ -164,8 +164,30 @@ public final class i extends ChangeBounds {
                     });
                     animatorSet2.playTogether(ofInt);
                     ValueAnimator ofInt2 = ValueAnimator.ofInt(num5.intValue(), num6.intValue(), num6.intValue(), num6.intValue(), num6.intValue(), num6.intValue(), num6.intValue());
-                    final int i12 = 2;
+                    final int i11 = 2;
                     ofInt2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.i
+                        @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                        public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                            switch (i11) {
+                                case 0:
+                                    ((j) transitionValues.view).n = ((Integer) valueAnimator2.getAnimatedValue()).intValue();
+                                    break;
+                                case 1:
+                                    ((j) transitionValues.view).r = ((Integer) valueAnimator2.getAnimatedValue()).intValue();
+                                    break;
+                                case 2:
+                                    ((j) transitionValues.view).s = ((Integer) valueAnimator2.getAnimatedValue()).intValue();
+                                    break;
+                                default:
+                                    ((j) transitionValues.view).v = ((Integer) valueAnimator2.getAnimatedValue()).intValue();
+                                    break;
+                            }
+                        }
+                    });
+                    animatorSet2.playTogether(ofInt2);
+                    ValueAnimator ofInt3 = ValueAnimator.ofInt(num7.intValue(), num7.intValue(), (int) (num8.intValue() * 0.25f), (int) (num8.intValue() * 0.5f), (int) (num8.intValue() * 0.75f), num8.intValue());
+                    final int i12 = 3;
+                    ofInt3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.i
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                             switch (i12) {
@@ -184,30 +206,8 @@ public final class i extends ChangeBounds {
                             }
                         }
                     });
-                    animatorSet2.playTogether(ofInt2);
-                    ValueAnimator ofInt3 = ValueAnimator.ofInt(num7.intValue(), num7.intValue(), (int) (num8.intValue() * 0.25f), (int) (num8.intValue() * 0.5f), (int) (num8.intValue() * 0.75f), num8.intValue());
-                    final int i13 = 3;
-                    ofInt3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.i
-                        @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                        public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                            switch (i13) {
-                                case 0:
-                                    ((j) transitionValues.view).n = ((Integer) valueAnimator2.getAnimatedValue()).intValue();
-                                    break;
-                                case 1:
-                                    ((j) transitionValues.view).r = ((Integer) valueAnimator2.getAnimatedValue()).intValue();
-                                    break;
-                                case 2:
-                                    ((j) transitionValues.view).s = ((Integer) valueAnimator2.getAnimatedValue()).intValue();
-                                    break;
-                                default:
-                                    ((j) transitionValues.view).v = ((Integer) valueAnimator2.getAnimatedValue()).intValue();
-                                    break;
-                            }
-                        }
-                    });
                     animatorSet2.playTogether(ofInt3);
-                    animatorSet2.addListener(new f11(transitionValues, 10));
+                    animatorSet2.addListener(new y11(transitionValues, 8));
                     break;
                 } else {
                     break;

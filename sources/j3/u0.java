@@ -2,9 +2,9 @@ package j3;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class u0 extends y {
+public final class u0 extends x {
     public int i;
     public int j;
     public boolean k;
@@ -13,11 +13,11 @@ public final class u0 extends y {
     public int n;
     public long o;
 
-    @Override // j3.y, j3.j
+    @Override // j3.x, j3.j
     public final ByteBuffer a() {
-        int i10;
-        if (super.d() && (i10 = this.n) > 0) {
-            j(i10).put(this.m, 0, this.n).flip();
+        int i9;
+        if (super.d() && (i9 = this.n) > 0) {
+            j(i9).put(this.m, 0, this.n).flip();
             this.n = 0;
         }
         return super.a();
@@ -27,42 +27,42 @@ public final class u0 extends y {
     public final void b(ByteBuffer byteBuffer) {
         int position = byteBuffer.position();
         int limit = byteBuffer.limit();
-        int i10 = limit - position;
-        if (i10 == 0) {
+        int i9 = limit - position;
+        if (i9 == 0) {
             return;
         }
-        int min = Math.min(i10, this.l);
+        int min = Math.min(i9, this.l);
         this.o += min / this.b.d;
         this.l -= min;
         byteBuffer.position(position + min);
         if (this.l > 0) {
             return;
         }
-        int i11 = i10 - min;
-        int length = (this.n + i11) - this.m.length;
+        int i10 = i9 - min;
+        int length = (this.n + i10) - this.m.length;
         ByteBuffer j10 = j(length);
-        int h = d5.g0.h(length, 0, this.n);
+        int h = d5.f0.h(length, 0, this.n);
         j10.put(this.m, 0, h);
-        int h10 = d5.g0.h(length - h, 0, i11);
+        int h10 = d5.f0.h(length - h, 0, i10);
         byteBuffer.limit(byteBuffer.position() + h10);
         j10.put(byteBuffer);
         byteBuffer.limit(limit);
-        int i12 = i11 - h10;
-        int i13 = this.n - h;
-        this.n = i13;
+        int i11 = i10 - h10;
+        int i12 = this.n - h;
+        this.n = i12;
         byte[] bArr = this.m;
-        System.arraycopy(bArr, h, bArr, 0, i13);
-        byteBuffer.get(this.m, this.n, i12);
-        this.n += i12;
+        System.arraycopy(bArr, h, bArr, 0, i12);
+        byteBuffer.get(this.m, this.n, i11);
+        this.n += i11;
         j10.flip();
     }
 
-    @Override // j3.y, j3.j
+    @Override // j3.x, j3.j
     public final boolean d() {
         return super.d() && this.n == 0;
     }
 
-    @Override // j3.y
+    @Override // j3.x
     public final h f(h hVar) {
         if (hVar.c != 2) {
             throw new i(hVar);
@@ -71,19 +71,19 @@ public final class u0 extends y {
         return (this.i == 0 && this.j == 0) ? h.e : hVar;
     }
 
-    @Override // j3.y
+    @Override // j3.x
     public final void g() {
         if (this.k) {
             this.k = false;
-            int i10 = this.j;
-            int i11 = this.b.d;
-            this.m = new byte[i10 * i11];
-            this.l = this.i * i11;
+            int i9 = this.j;
+            int i10 = this.b.d;
+            this.m = new byte[i9 * i10];
+            this.l = this.i * i10;
         }
         this.n = 0;
     }
 
-    @Override // j3.y
+    @Override // j3.x
     public final void h() {
         if (this.k) {
             if (this.n > 0) {
@@ -93,8 +93,8 @@ public final class u0 extends y {
         }
     }
 
-    @Override // j3.y
+    @Override // j3.x
     public final void i() {
-        this.m = d5.g0.f;
+        this.m = d5.f0.f;
     }
 }

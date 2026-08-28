@@ -9,7 +9,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class tw0 extends ClickableSpan {
     public final /* synthetic */ String a;
@@ -22,19 +22,19 @@ public final class tw0 extends ClickableSpan {
 
     @Override // android.text.style.ClickableSpan
     public final void onClick(View view) {
-        org.telegram.ui.Components.ec b10;
+        org.telegram.ui.Components.gc b10;
         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", this.a));
-        org.telegram.ui.Components.mc a02 = org.telegram.ui.Components.mc.a0(this.b.d);
+        org.telegram.ui.Components.oc a02 = org.telegram.ui.Components.oc.a0(this.b.d);
         String string = LocaleController.getString(R.string.LinkCopied);
-        org.telegram.ui.ActionBar.c6 resourceProvider = this.b.d.getResourceProvider();
+        org.telegram.ui.ActionBar.b6 resourceProvider = this.b.d.getResourceProvider();
         a02.getClass();
         if (AndroidUtilities.shouldShowClipboardToast()) {
-            org.telegram.ui.Components.mb mbVar = new org.telegram.ui.Components.mb(a02.W(), resourceProvider);
-            mbVar.c(R.raw.voip_invite, 36, 36, "Wibe", "Circle");
-            mbVar.b.setText(string);
-            b10 = a02.b(mbVar, 1500);
+            org.telegram.ui.Components.ob obVar = new org.telegram.ui.Components.ob(a02.W(), resourceProvider);
+            obVar.c(R.raw.voip_invite, 36, 36, "Wibe", "Circle");
+            obVar.b.setText(string);
+            b10 = a02.b(obVar, 1500);
         } else {
-            b10 = new org.telegram.ui.Components.eb();
+            b10 = new org.telegram.ui.Components.gb();
         }
         b10.j();
     }

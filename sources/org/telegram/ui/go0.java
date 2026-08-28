@@ -1,46 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class go0 extends jo0 {
-    public int B;
-    public final /* synthetic */ ap0 C;
+public final class go0 extends org.telegram.ui.Components.e71 {
+    public final /* synthetic */ zo0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public go0(ap0 ap0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        this.C = ap0Var;
-        this.B = 0;
+    public go0(zo0 zo0Var) {
+        this.a = zo0Var;
     }
 
-    @Override // org.telegram.ui.jo0
-    public final void a() {
-        ap0 ap0Var = this.C;
-        if (ap0Var.getParentActivity() != null) {
-            AndroidUtilities.setLightStatusBar(ap0Var.getParentActivity(), ap0Var.isLightStatusBar());
+    @Override // org.telegram.ui.Components.e71
+    public final View d(int i9) {
+        zo0 zo0Var = this.a;
+        if (i9 == 1) {
+            return zo0Var.f;
         }
-        int actionBarButtonColor = getActionBarButtonColor();
-        if (this.B != actionBarButtonColor) {
-            ImageView imageView = ap0Var.A;
-            if (imageView != null) {
-                this.B = actionBarButtonColor;
-                imageView.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
-            }
-            ImageView imageView2 = ap0Var.B;
-            if (imageView2 != null) {
-                this.B = actionBarButtonColor;
-                imageView2.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
-            }
+        if (i9 == 0) {
+            return zo0Var.h;
         }
-        org.telegram.ui.Components.ez ezVar = ap0Var.D;
-        if (ezVar != null) {
-            ezVar.setBackgroundColor(getTabsViewBackgroundColor());
-        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.e71
+    public final int e() {
+        return 2;
+    }
+
+    @Override // org.telegram.ui.Components.e71
+    public final int h(int i9) {
+        return i9;
+    }
+
+    @Override // org.telegram.ui.Components.e71
+    public final void b(View view, int i9, int i10) {
     }
 }

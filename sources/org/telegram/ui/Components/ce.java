@@ -1,120 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.app.Activity;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.ImageView;
-import android.widget.ToggleButton;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLObject;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ce extends ImageView {
-    public final /* synthetic */ int a;
+public final class ce extends FrameLayout {
+    public final /* synthetic */ ChatActivityEnterView a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ce(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public ce(ChatActivityEnterView chatActivityEnterView, Activity activity) {
+        super(activity);
+        this.a = chatActivityEnterView;
     }
 
-    @Override // android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                super.dispatchDraw(canvas);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                if (getAlpha() < 0.5f) {
-                    return false;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(final Canvas canvas, final View view, final long j10) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        if (view != null && view == chatActivityEnterView.A0) {
+            return chatActivityEnterView.e0(canvas, new Utilities.Callback0Return() { // from class: org.telegram.ui.Components.be
+                @Override // org.telegram.messenger.Utilities.Callback0Return
+                public final Object run() {
+                    Boolean valueOf;
+                    valueOf = Boolean.valueOf(super/*android.widget.FrameLayout*/.drawChild(canvas, view, j10));
+                    return valueOf;
                 }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
+            });
         }
+        if (chatActivityEnterView.u4 && view == chatActivityEnterView.a1) {
+            return true;
+        }
+        return super.drawChild(canvas, view, j10);
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 3:
-                super.onDraw(canvas);
-                invalidate();
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
+        super.onLayout(z10, i9, i10, i11, i12);
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        if (chatActivityEnterView.x0.isEmpty()) {
+            return;
         }
+        for (int i13 = 0; i13 < getChildCount(); i13++) {
+            View childAt = getChildAt(i13);
+            Float f10 = (Float) chatActivityEnterView.x0.get(childAt);
+            if (f10 != null) {
+                childAt.setTranslationX(f10.floatValue() - childAt.getLeft());
+                childAt.animate().translationX(0.0f).setDuration(150L).setInterpolator(gr.f).start();
+            }
+        }
+        chatActivityEnterView.x0.clear();
     }
 
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
-            case 4:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setClassName(ToggleButton.class.getName());
-                accessibilityNodeInfo.setCheckable(true);
-                VoIPService sharedInstance = VoIPService.getSharedInstance();
-                if (sharedInstance != null) {
-                    accessibilityNodeInfo.setChecked(sharedInstance.isSpeakerphoneOn());
-                    break;
-                }
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(i9, i10);
+        int max = Math.max(AndroidUtilities.dp(44.0f), getMeasuredHeight());
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        td.c cVar = chatActivityEnterView.a5;
+        if (cVar.e > 0.0f) {
+            cVar.a(max);
+        } else {
+            cVar.c(max);
         }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        float f10;
-        float f11;
-        switch (this.a) {
-            case 2:
-                int size = View.MeasureSpec.getSize(i10);
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
-                break;
-            case 5:
-                super.onMeasure(i10, i11);
-                Matrix imageMatrix = getImageMatrix();
-                int measuredWidth = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
-                int measuredHeight = (getMeasuredHeight() - getPaddingTop()) - getPaddingBottom();
-                int intrinsicWidth = getDrawable().getIntrinsicWidth();
-                int intrinsicHeight = getDrawable().getIntrinsicHeight();
-                if (intrinsicWidth * measuredHeight > intrinsicHeight * measuredWidth) {
-                    f10 = measuredHeight;
-                    f11 = intrinsicHeight;
-                } else {
-                    f10 = measuredWidth;
-                    f11 = intrinsicWidth;
-                }
-                float f12 = f10 / f11;
-                imageMatrix.setScale(f12, f12);
-                setImageMatrix(imageMatrix);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ce(tt ttVar, Context context) {
-        super(context);
-        this.a = 1;
+        chatActivityEnterView.M();
     }
 }

@@ -1,40 +1,28 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class w4 extends org.telegram.ui.Components.n9 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.c6 C;
-    public final /* synthetic */ y4 D;
+public final class w4 extends FrameLayout {
+    public RadialProgressView a;
+    public TextView b;
+    public ImageView c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w4(y4 y4Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        this.D = y4Var;
-        this.C = c6Var;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.dp(56.0f) * 2.5f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.Components.n9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        y4 y4Var = this.D;
-        if (y4Var.r == null) {
-            super.onDraw(canvas);
-            return;
-        }
-        float dp = AndroidUtilities.dp(1.0f);
-        y4Var.J.F.set(dp, dp, getMeasuredWidth() - r1, getMeasuredHeight() - r1);
-        jh.h7 h7Var = y4Var.J;
-        h7Var.a = false;
-        h7Var.b = false;
-        h7Var.v = true;
-        h7Var.o = false;
-        h7Var.J = this.C;
-        TL_stories.StoryItem storyItem = y4Var.r;
-        h7Var.d = storyItem;
-        jh.l7.h(storyItem.dialogId, canvas, this.a, h7Var);
+    public void setLoading(boolean z10) {
+        this.a.setVisibility(z10 ? 0 : 4);
+        this.b.setVisibility(z10 ? 4 : 0);
+        this.c.setVisibility(z10 ? 4 : 0);
     }
 }

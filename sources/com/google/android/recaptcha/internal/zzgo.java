@@ -1,19 +1,19 @@
 package com.google.android.recaptcha.internal;
 
-import ad.l;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import h7.q6;
+import g7.o6;
 import java.util.ArrayList;
 import java.util.List;
-import kotlin.jvm.internal.f;
-import kotlin.jvm.internal.j;
-import qc.g;
-import qc.o;
+import kotlin.jvm.internal.e;
+import kotlin.jvm.internal.i;
+import pc.g;
+import pc.o;
+import zc.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzgo extends SQLiteOpenHelper {
     public static final zzgn zza = new zzgn(null);
@@ -30,7 +30,7 @@ public final class zzgo extends SQLiteOpenHelper {
         zzc = zzd2;
     }
 
-    public /* synthetic */ zzgo(Context context, f fVar) {
+    public /* synthetic */ zzgo(Context context, e eVar) {
         super(context, zzc, (SQLiteDatabase.CursorFactory) null, zzb);
     }
 
@@ -40,13 +40,13 @@ public final class zzgo extends SQLiteOpenHelper {
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
-    public final void onDowngrade(SQLiteDatabase sQLiteDatabase, int i10, int i11) {
+    public final void onDowngrade(SQLiteDatabase sQLiteDatabase, int i9, int i10) {
         sQLiteDatabase.execSQL("DROP TABLE IF EXISTS ce");
         sQLiteDatabase.execSQL("CREATE TABLE ce (id INTEGER PRIMARY KEY,ts BIGINT NOT NULL,ss TEXT NOT NULL)");
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
-    public final void onUpgrade(SQLiteDatabase sQLiteDatabase, int i10, int i11) {
+    public final void onUpgrade(SQLiteDatabase sQLiteDatabase, int i9, int i10) {
         sQLiteDatabase.execSQL("DROP TABLE IF EXISTS ce");
         sQLiteDatabase.execSQL("CREATE TABLE ce (id INTEGER PRIMARY KEY,ts BIGINT NOT NULL,ss TEXT NOT NULL)");
     }
@@ -56,7 +56,7 @@ public final class zzgo extends SQLiteOpenHelper {
             return 0;
         }
         return getWritableDatabase().delete("ce", "id IN ".concat(String.valueOf(g.h(list, ", ", "(", ")", new l() { // from class: com.google.android.recaptcha.internal.zzgm
-            @Override // ad.l
+            @Override // zc.l
             public final Object invoke(Object obj) {
                 zzgn zzgnVar = zzgo.zza;
                 return String.valueOf(((zzgp) obj).zza());
@@ -66,10 +66,10 @@ public final class zzgo extends SQLiteOpenHelper {
 
     public final int zzb() {
         Cursor rawQuery = getReadableDatabase().rawQuery("SELECT COUNT(*) FROM ce", null);
-        int i10 = -1;
+        int i9 = -1;
         try {
             if (rawQuery.moveToNext()) {
-                i10 = rawQuery.getInt(0);
+                i9 = rawQuery.getInt(0);
             }
         } catch (Exception unused) {
         } catch (Throwable th) {
@@ -77,7 +77,7 @@ public final class zzgo extends SQLiteOpenHelper {
             throw th;
         }
         rawQuery.close();
-        return i10;
+        return i9;
     }
 
     public final List zzd() {
@@ -86,11 +86,11 @@ public final class zzgo extends SQLiteOpenHelper {
         while (query.moveToNext()) {
             try {
                 try {
-                    int i10 = query.getInt(query.getColumnIndexOrThrow("id"));
+                    int i9 = query.getInt(query.getColumnIndexOrThrow("id"));
                     String string = query.getString(query.getColumnIndexOrThrow("ss"));
                     long j10 = query.getLong(query.getColumnIndexOrThrow("ts"));
-                    j.b(string);
-                    arrayList.add(new zzgp(string, j10, i10));
+                    i.b(string);
+                    arrayList.add(new zzgp(string, j10, i9));
                 } catch (Exception unused) {
                     arrayList = o.a;
                 }
@@ -102,6 +102,6 @@ public final class zzgo extends SQLiteOpenHelper {
     }
 
     public final boolean zzf(zzgp zzgpVar) {
-        return zza(q6.a(zzgpVar)) == 1;
+        return zza(o6.a(zzgpVar)) == 1;
     }
 }

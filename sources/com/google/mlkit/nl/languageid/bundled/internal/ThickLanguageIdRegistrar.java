@@ -1,22 +1,22 @@
 package com.google.mlkit.nl.languageid.bundled.internal;
 
 import com.google.firebase.components.ComponentRegistrar;
-import f7.d;
-import f7.e;
+import e7.d;
+import e7.e;
 import java.util.List;
-import ug.b;
-import z8.a;
+import tg.b;
+import y8.a;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class ThickLanguageIdRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        b a2 = a.a(cb.a.class);
+        b a2 = a.a(bb.a.class);
         a2.b = 1;
-        a2.f = new za.b(3);
+        a2.f = new za.a(3);
         a b10 = a2.b();
-        f7.b bVar = d.b;
+        e7.b bVar = d.b;
         return new e(1, new Object[]{b10});
     }
 }

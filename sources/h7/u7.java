@@ -1,80 +1,21 @@
 package h7;
 
-import android.os.Bundle;
-import org.json.JSONObject;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class u7 {
-    public static b8.a a(String str, Bundle data) {
-        kotlin.jvm.internal.j.e(data, "data");
-        try {
-            switch (str.hashCode()) {
-                case -1678407252:
-                    if (str.equals("androidx.credentials.TYPE_DIGITAL_CREDENTIAL")) {
-                        try {
-                            String string = data.getString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON");
-                            kotlin.jvm.internal.j.b(string);
-                            v0.n nVar = new v0.n("androidx.credentials.TYPE_DIGITAL_CREDENTIAL", data);
-                            if (string.length() != 0) {
-                                try {
-                                    new JSONObject(string);
-                                    return nVar;
-                                } catch (Exception unused) {
-                                }
-                            }
-                            throw new IllegalArgumentException("credentialJson must not be empty, and must be a valid JSON");
-                        } catch (Exception unused2) {
-                            throw new z0.a();
-                        }
-                    }
-                    throw new z0.a();
-                case -1072734346:
-                    if (str.equals("androidx.credentials.TYPE_RESTORE_CREDENTIAL")) {
-                        String string2 = data.getString("androidx.credentials.BUNDLE_KEY_GET_RESTORE_CREDENTIAL_RESPONSE");
-                        if (string2 == null) {
-                            throw new w0.k("The device does not contain a restore credential.");
-                        }
-                        v0.n nVar2 = new v0.n("androidx.credentials.TYPE_RESTORE_CREDENTIAL", data);
-                        if (string2.length() != 0) {
-                            try {
-                                new JSONObject(string2);
-                                return nVar2;
-                            } catch (Exception unused3) {
-                            }
-                        }
-                        throw new IllegalArgumentException("authenticationResponseJson must not be empty, and must be a valid JSON");
-                    }
-                    throw new z0.a();
-                case -543568185:
-                    if (str.equals("android.credentials.TYPE_PASSWORD_CREDENTIAL")) {
-                        try {
-                            String string3 = data.getString("androidx.credentials.BUNDLE_KEY_ID");
-                            String string4 = data.getString("androidx.credentials.BUNDLE_KEY_PASSWORD");
-                            kotlin.jvm.internal.j.b(string3);
-                            kotlin.jvm.internal.j.b(string4);
-                            return new v0.n(string4, 2, data);
-                        } catch (Exception unused4) {
-                            throw new z0.a();
-                        }
-                    }
-                    throw new z0.a();
-                case -95037569:
-                    if (str.equals("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL")) {
-                        try {
-                            String string5 = data.getString("androidx.credentials.BUNDLE_KEY_AUTHENTICATION_RESPONSE_JSON");
-                            kotlin.jvm.internal.j.b(string5);
-                            return new v0.n(string5, 3, data);
-                        } catch (Exception unused5) {
-                            throw new z0.a();
-                        }
-                    }
-                    throw new z0.a();
-                default:
-                    throw new z0.a();
-            }
-        } catch (z0.a unused6) {
-            return new v0.n(str, 0, data);
-        }
+public final class u7 {
+    public final n9 a;
+    public final t7 b;
+    public final r7 c;
+    public final l8 d;
+    public final k8 e;
+    public final x0 f;
+
+    public /* synthetic */ u7(com.google.firebase.messaging.m mVar) {
+        this.a = (n9) mVar.a;
+        this.b = (t7) mVar.b;
+        this.c = (r7) mVar.c;
+        this.d = (l8) mVar.d;
+        this.e = (k8) mVar.e;
+        this.f = (x0) mVar.f;
     }
 }

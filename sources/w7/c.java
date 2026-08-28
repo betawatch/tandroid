@@ -1,24 +1,7 @@
 package w7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import h7.r8;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c extends z5.a {
-    public static final Parcelable.Creator<c> CREATOR = new f(1);
-
-    public final boolean equals(Object obj) {
-        return this == obj || (obj instanceof c);
-    }
-
-    public final int hashCode() {
-        return 0;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        r8.r(parcel, r8.q(parcel, 20293));
-    }
+public abstract class c {
+    public static final com.google.android.gms.common.api.e a = new com.google.android.gms.common.api.e("SafetyNet.API", new b7.d(14), new com.google.android.gms.common.api.d());
 }

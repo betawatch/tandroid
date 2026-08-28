@@ -1,130 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.view.View;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sg0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tg0 b;
+public final class sg0 implements m2.e {
+    public final /* synthetic */ ah0 a;
 
-    public /* synthetic */ sg0(tg0 tg0Var, int i10) {
-        this.a = i10;
-        this.b = tg0Var;
+    public sg0(ah0 ah0Var) {
+        this.a = ah0Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x007a, code lost:
-    
-        if (r3.getHeight() != r5.b.getHeight()) goto L30;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i10;
-        hh0[] hh0VarArr;
-        switch (this.a) {
-            case 0:
-                tg0 tg0Var = this.b;
-                synchronized (tg0Var.b) {
-                    hh0[] hh0VarArr2 = tg0Var.c;
-                    hh0 hh0Var = hh0VarArr2[0];
-                    hh0[] hh0VarArr3 = tg0Var.d;
-                    i10 = 2;
-                    hh0VarArr = new hh0[]{hh0Var, hh0VarArr3[0], hh0VarArr2[1], hh0VarArr3[1], hh0VarArr2[2], hh0VarArr3[2]};
-                }
-                boolean z10 = false;
-                for (int i11 = 0; i11 < 6; i11 += 2) {
-                    hh0 hh0Var2 = hh0VarArr[i11];
-                    hh0 hh0Var3 = hh0VarArr[i11 + 1];
-                    if (hh0Var2 != null && !hh0Var2.c && hh0Var2.f) {
-                        hh0Var2.e = true;
-                        if (hh0Var3 != null) {
-                            Bitmap bitmap = hh0Var3.b;
-                            if (!hh0Var3.d) {
-                                if (bitmap.getWidth() == hh0Var2.b.getWidth()) {
-                                    break;
-                                }
+    @Override // m2.e
+    public final void b(int i9) {
+        ah0 ah0Var = this.a;
+        int i10 = ah0Var.k1;
+        boolean z10 = i9 >= i10;
+        if (i9 != i10) {
+            ah0Var.getClass();
+            ah0Var.k1 = i9;
+        }
+        MessagesController.DialogPhotos dialogPhotos = ah0Var.O0;
+        if (dialogPhotos != null) {
+            zg0 zg0Var = ah0Var.z0;
+            dialogPhotos.loadAfter(i9 - (zg0Var != null ? zg0Var.j() : 0), z10);
+        }
+    }
+
+    @Override // m2.e
+    public final void c(float f10, int i9, int i10) {
+        ImageLocation imageLocation;
+        ah0 ah0Var = this.a;
+        ah0Var.B(f10, i9);
+        if (i10 == 0) {
+            int k10 = ah0Var.z0.k(i9);
+            if (ah0Var.e1) {
+                k10--;
+            }
+            ah0Var.getCurrentItemView();
+            int childCount = ah0Var.getChildCount();
+            for (int i11 = 0; i11 < childCount; i11++) {
+                View childAt = ah0Var.getChildAt(i11);
+                if (childAt instanceof o9) {
+                    zg0 zg0Var = ah0Var.z0;
+                    int k11 = zg0Var.k(zg0Var.d.indexOf(childAt));
+                    if (ah0Var.e1) {
+                        k11--;
+                    }
+                    ImageReceiver imageReceiver = ((o9) childAt).getImageReceiver();
+                    boolean allowStartAnimation = imageReceiver.getAllowStartAnimation();
+                    if (k11 >= 0 && k11 < ah0Var.S0.size()) {
+                        if (k11 == k10) {
+                            if (!allowStartAnimation) {
+                                imageReceiver.setAllowStartAnimation(true);
+                                imageReceiver.startAnimation();
                             }
-                        }
-                        if (hh0Var3 != null) {
-                            hh0Var3.a();
-                        }
-                        hh0Var3 = new hh0();
-                        Bitmap createBitmap = Bitmap.createBitmap(hh0Var2.b.getWidth(), hh0Var2.b.getHeight(), Bitmap.Config.ARGB_8888);
-                        hh0Var3.b = createBitmap;
-                        hh0Var3.a = new Canvas(createBitmap);
-                        synchronized (tg0Var.b) {
-                            hh0[] hh0VarArr4 = tg0Var.d;
-                            int i12 = 0;
-                            while (true) {
-                                hh0[] hh0VarArr5 = tg0Var.c;
-                                if (i12 >= hh0VarArr5.length) {
-                                    i12 = 0;
-                                } else if (hh0VarArr5[i12] != hh0Var2) {
-                                    i12++;
-                                }
+                            ImageLocation imageLocation2 = (ImageLocation) ah0Var.S0.get(k11);
+                            if (imageLocation2 != null) {
+                                FileLoader.getInstance(ah0Var.H0).setForceStreamLoadingFile(imageLocation2.location, "mp4");
                             }
-                            hh0VarArr4[i12] = hh0Var3;
-                        }
-                        Bitmap bitmap2 = hh0Var2.b;
-                        Utilities.stackBlurBitmap(bitmap2, Math.max(10, bitmap2.getWidth() / 180));
-                        synchronized (tg0Var.b) {
-                            if (!hh0Var3.d) {
-                                hh0Var3.f = false;
-                                hh0Var3.b.eraseColor(0);
+                        } else if (allowStartAnimation) {
+                            x5 animation = imageReceiver.getAnimation();
+                            if (animation != null && (imageLocation = (ImageLocation) ah0Var.S0.get(k11)) != null) {
+                                animation.y(imageLocation.videoSeekTo, false, true);
                             }
-                            hh0Var3.a.drawBitmap(bitmap2, 0.0f, 0.0f, (Paint) null);
-                            hh0Var3.f = true;
-                            Bitmap bitmap3 = hh0Var3.b;
-                            int i13 = 0;
-                            while (true) {
-                                hh0[] hh0VarArr6 = tg0Var.c;
-                                if (i13 >= hh0VarArr6.length) {
-                                    i13 = 0;
-                                } else if (hh0VarArr6[i13] != hh0Var2) {
-                                    i13++;
-                                }
-                            }
-                            tg0Var.b(bitmap3, i13);
+                            imageReceiver.setAllowStartAnimation(false);
+                            imageReceiver.stopAnimation();
                         }
-                        if (!hh0Var2.d) {
-                            hh0Var2.f = false;
-                            hh0Var2.b.eraseColor(0);
-                        }
-                        hh0Var2.e = false;
-                        if (!hh0Var2.d && hh0Var2.c) {
-                            hh0Var2.d = true;
-                            hh0Var2.b.recycle();
-                        }
-                        z10 = true;
                     }
                 }
-                if (z10 && tg0Var.e && tg0Var.h != null) {
-                    tg0Var.postInvalidateOnAnimation();
-                }
-                if (tg0Var.e && (tg0Var.B || tg0Var.D)) {
-                    AndroidUtilities.runOnUIThread(new sg0(tg0Var, i10));
-                    return;
-                } else {
-                    tg0Var.e = false;
-                    return;
-                }
-            case 1:
-                tg0 tg0Var2 = this.b;
-                tg0Var2.D = true;
-                tg0Var2.postInvalidateOnAnimation();
-                return;
-            default:
-                tg0 tg0Var3 = this.b;
-                tg0Var3.d();
-                ih0.a.postRunnable(tg0Var3.s);
-                return;
+            }
         }
+    }
+
+    @Override // m2.e
+    public final void d(int i9) {
     }
 }

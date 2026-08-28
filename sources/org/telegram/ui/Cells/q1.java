@@ -1,77 +1,2353 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.drawable.Drawable;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.Build;
+import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.text.StaticLayout;
-import org.telegram.messenger.ImageReceiver;
+import android.text.TextUtils;
+import android.text.style.CharacterStyle;
+import android.text.style.ClickableSpan;
+import android.util.SparseArray;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.accessibility.AccessibilityNodeProvider;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Locale;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotInlineKeyboard;
+import org.telegram.messenger.CodeHighlighting;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pz0;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class q1 {
-    public StaticLayout A;
-    public org.telegram.ui.Components.p5 B;
-    public int C;
-    public int D;
-    public final /* synthetic */ s1 E;
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public float e;
-    public int f;
-    public float g;
-    public float h;
-    public boolean i;
-    public int j;
-    public boolean k;
-    public boolean l;
-    public float m;
-    public float n;
-    public boolean o;
-    public StaticLayout p;
-    public pz0 q;
-    public org.telegram.ui.Components.p5 r;
-    public TLRPC.PollAnswer s;
-    public TLRPC.TodoItem t;
-    public boolean u;
-    public int v;
-    public Drawable w;
-    public bh.b x;
-    public org.telegram.ui.Components.y8 y;
-    public ImageReceiver z;
+public final class q1 extends AccessibilityNodeProvider {
+    public final Path a = new Path();
+    public final RectF b = new RectF();
+    public final Rect c = new Rect();
+    public final /* synthetic */ t1 d;
 
-    public q1(s1 s1Var) {
-        this.E = s1Var;
+    public q1(t1 t1Var) {
+        this.d = t1Var;
     }
 
-    public static /* synthetic */ void n(q1 q1Var, float f10) {
-        q1Var.e -= f10;
+    public final ClickableSpan a(int i9, boolean z10) {
+        if (i9 == 5000) {
+            return null;
+        }
+        t1 t1Var = this.d;
+        if (z10) {
+            int i10 = i9 - 3000;
+            CharSequence charSequence = t1Var.u7.caption;
+            if (!(charSequence instanceof Spannable) || i10 < 0) {
+                return null;
+            }
+            Spannable spannable = (Spannable) charSequence;
+            ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannable.getSpans(0, spannable.length(), ClickableSpan.class);
+            if (clickableSpanArr.length <= i10) {
+                return null;
+            }
+            return clickableSpanArr[i10];
+        }
+        int i11 = i9 - 2000;
+        CharSequence charSequence2 = t1Var.u7.messageText;
+        if (!(charSequence2 instanceof Spannable) || i11 < 0) {
+            return null;
+        }
+        Spannable spannable2 = (Spannable) charSequence2;
+        ClickableSpan[] clickableSpanArr2 = (ClickableSpan[]) spannable2.getSpans(0, spannable2.length(), ClickableSpan.class);
+        if (clickableSpanArr2.length <= i11) {
+            return null;
+        }
+        return clickableSpanArr2[i11];
     }
 
-    public final void q() {
-        ImageReceiver imageReceiver = this.z;
-        if (imageReceiver != null) {
-            imageReceiver.onAttachedToWindow();
+    public final RichMessageLayout.RichBlock b(int i9, int[] iArr) {
+        RichMessageLayout richMessageLayout;
+        int i10;
+        MessageObject messageObject = this.d.u7;
+        if (messageObject == null || (richMessageLayout = messageObject.richLayout) == null || i9 - 6000 < 0) {
+            return null;
         }
-        bh.b bVar = this.x;
-        if (bVar != null) {
-            bVar.b.a();
-            bVar.c.onAttachedToWindow();
-            bVar.A.e();
+        int i11 = 0;
+        for (int i12 = 0; i12 < richMessageLayout.blocks.size(); i12++) {
+            RichMessageLayout.RichBlock richBlock = richMessageLayout.blocks.get(i12);
+            if (richBlock.isVisible()) {
+                int accessibilityElementCount = richBlock.getAccessibilityElementCount() + i11;
+                if (i10 < accessibilityElementCount) {
+                    iArr[0] = i10 - i11;
+                    return richBlock;
+                }
+                i11 = accessibilityElementCount;
+            }
         }
+        return null;
     }
 
-    public final void r() {
-        ImageReceiver imageReceiver = this.z;
-        if (imageReceiver != null) {
-            imageReceiver.onDetachedFromWindow();
+    /* JADX WARN: Code restructure failed: missing block: B:302:0x02df, code lost:
+    
+        if (r1 == 4) goto L134;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:342:0x0443, code lost:
+    
+        if (r1 == 1) goto L182;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:440:0x037f, code lost:
+    
+        if (r1 != false) goto L153;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:609:0x0f78, code lost:
+    
+        if (((android.graphics.Rect) r0.get(r33)).equals(r2) == false) goto L574;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:621:0x0fd5, code lost:
+    
+        if (((android.graphics.Rect) r0.get(r33)).equals(r2) == false) goto L587;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:640:0x106e, code lost:
+    
+        if (((android.graphics.Rect) r0.get(r33)).equals(r2) == false) goto L607;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:659:0x1108, code lost:
+    
+        if (((android.graphics.Rect) r0.get(r33)).equals(r2) == false) goto L629;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:675:0x119f, code lost:
+    
+        if (((android.graphics.Rect) r0.get(r33)).equals(r2) == false) goto L645;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:698:0x1248, code lost:
+    
+        if (((android.graphics.Rect) r0.get(r33)).equals(r2) == false) goto L666;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:718:0x12f2, code lost:
+    
+        if (((android.graphics.Rect) r0.get(r33)).equals(r2) == false) goto L696;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x089c, code lost:
+    
+        if (r1.isMusic() != false) goto L318;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:758:0x13d2, code lost:
+    
+        if (((android.graphics.Rect) r0.get(r33)).equals(r2) == false) goto L729;
+     */
+    /* JADX WARN: Incorrect condition in loop: B:747:0x1389 */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x094b A[LOOP:3: B:101:0x0949->B:102:0x094b, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0965  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0974  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0981 A[LOOP:4: B:112:0x097f->B:113:0x0981, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x099b  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x09ac  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x09c1  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0053  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x0a3e  */
+    /* JADX WARN: Removed duplicated region for block: B:171:0x0a48  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x0a54  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x0a5f  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x0aa4  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:201:0x0ac6  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x08ac  */
+    /* JADX WARN: Removed duplicated region for block: B:218:0x07f6  */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x077b  */
+    /* JADX WARN: Removed duplicated region for block: B:222:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:239:0x012b  */
+    /* JADX WARN: Removed duplicated region for block: B:258:0x0160  */
+    /* JADX WARN: Removed duplicated region for block: B:265:0x019c  */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x02cd  */
+    /* JADX WARN: Removed duplicated region for block: B:317:0x0334  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x076e  */
+    /* JADX WARN: Removed duplicated region for block: B:320:0x03be  */
+    /* JADX WARN: Removed duplicated region for block: B:336:0x0420  */
+    /* JADX WARN: Removed duplicated region for block: B:346:0x045d  */
+    /* JADX WARN: Removed duplicated region for block: B:349:0x049c  */
+    /* JADX WARN: Removed duplicated region for block: B:357:0x05ab  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x078c  */
+    /* JADX WARN: Removed duplicated region for block: B:362:0x05cd  */
+    /* JADX WARN: Removed duplicated region for block: B:381:0x0663  */
+    /* JADX WARN: Removed duplicated region for block: B:382:0x0677  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x07b2  */
+    /* JADX WARN: Removed duplicated region for block: B:405:0x0718  */
+    /* JADX WARN: Removed duplicated region for block: B:408:0x0742 A[LOOP:11: B:407:0x0740->B:408:0x0742, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:411:0x0730  */
+    /* JADX WARN: Removed duplicated region for block: B:431:0x0575  */
+    /* JADX WARN: Removed duplicated region for block: B:432:0x046c  */
+    /* JADX WARN: Removed duplicated region for block: B:437:0x0371  */
+    /* JADX WARN: Removed duplicated region for block: B:447:0x023c  */
+    /* JADX WARN: Removed duplicated region for block: B:473:0x006f  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0821  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0837  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0855  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x088a  */
+    /* JADX WARN: Removed duplicated region for block: B:714:0x12c8  */
+    /* JADX WARN: Removed duplicated region for block: B:717:0x12e4  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x08b9  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x08c6  */
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final AccessibilityNodeInfo createAccessibilityNodeInfo(int i9) {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        RectF rectF;
+        SparseArray sparseArray;
+        SparseArray sparseArray2;
+        boolean z10;
+        SparseArray sparseArray3;
+        MessageObject messageObject;
+        String str;
+        int i10;
+        MessageObject messageObject2;
+        String formatShortNumber;
+        Rect rect;
+        SparseArray sparseArray4;
+        SparseArray sparseArray5;
+        SparseArray sparseArray6;
+        MessageObject messageObject3;
+        MessageObject messageObject4;
+        StaticLayout[] staticLayoutArr;
+        int i11;
+        int i12;
+        SparseArray sparseArray7;
+        SparseArray sparseArray8;
+        SparseArray sparseArray9;
+        StaticLayout[] staticLayoutArr2;
+        StaticLayout[] staticLayoutArr3;
+        int i13;
+        int i14;
+        SparseArray sparseArray10;
+        SparseArray sparseArray11;
+        SparseArray sparseArray12;
+        MessageObject messageObject5;
+        SparseArray sparseArray13;
+        SparseArray sparseArray14;
+        SparseArray sparseArray15;
+        ArrayList arrayList3;
+        SparseArray sparseArray16;
+        SparseArray sparseArray17;
+        SparseArray sparseArray18;
+        ArrayList arrayList4;
+        ArrayList arrayList5;
+        RectF rectF2;
+        RectF rectF3;
+        SparseArray sparseArray19;
+        SparseArray sparseArray20;
+        SparseArray sparseArray21;
+        SparseArray sparseArray22;
+        SparseArray sparseArray23;
+        SparseArray sparseArray24;
+        boolean z11;
+        boolean z12;
+        int i15;
+        TLRPC.Poll poll;
+        TLRPC.Poll poll2;
+        boolean z13;
+        String str2;
+        int i16;
+        SparseArray sparseArray25;
+        SparseArray sparseArray26;
+        MessageObject messageObject6;
+        int i17;
+        boolean z14;
+        int dp;
+        SparseArray sparseArray27;
+        SparseArray sparseArray28;
+        MessageObject messageObject7;
+        MessageObject messageObject8;
+        MessageObject messageObject9;
+        boolean z15;
+        MessageObject messageObject10;
+        SparseArray sparseArray29;
+        SparseArray sparseArray30;
+        MessageObject messageObject11;
+        MessageObject messageObject12;
+        boolean z16;
+        SparseArray sparseArray31;
+        SparseArray sparseArray32;
+        SparseArray sparseArray33;
+        SparseArray sparseArray34;
+        TLRPC.User user;
+        TLRPC.User user2;
+        int i18;
+        SparseArray sparseArray35;
+        SparseArray sparseArray36;
+        MessageObject messageObject13;
+        boolean z17;
+        MessageObject messageObject14;
+        boolean z18;
+        MessageObject messageObject15;
+        String str3;
+        long j10;
+        AccessibilityNodeInfo accessibilityNodeInfo;
+        RectF rectF4;
+        ArrayList arrayList6;
+        ArrayList arrayList7;
+        boolean z19;
+        MessageObject messageObject16;
+        MessageObject messageObject17;
+        MessageObject messageObject18;
+        Spanned spanned;
+        int i19;
+        String formatString;
+        MessageObject messageObject19;
+        MessageObject messageObject20;
+        MessageObject messageObject21;
+        MessageObject messageObject22;
+        boolean z20;
+        TLRPC.Poll poll3;
+        MessageObject messageObject23;
+        MessageObject messageObject24;
+        MessageObject messageObject25;
+        MessageObject messageObject26;
+        MessageObject messageObject27;
+        String str4;
+        int i20;
+        MessageObject messageObject28;
+        MessageObject messageObject29;
+        int i21;
+        MessageObject messageObject30;
+        MessageObject messageObject31;
+        MessageObject messageObject32;
+        MessageObject messageObject33;
+        MessageObject messageObject34;
+        MessageObject messageObject35;
+        MessageObject messageObject36;
+        boolean z21;
+        MessageObject messageObject37;
+        MessageObject messageObject38;
+        MessageObject messageObject39;
+        MessageObject messageObject40;
+        MessageObject messageObject41;
+        RadialProgress2 radialProgress2;
+        MessageObject messageObject42;
+        MessageObject messageObject43;
+        String str5;
+        int i22;
+        MessageObject messageObject44;
+        int i23;
+        int i24;
+        MessageObject messageObject45;
+        TLRPC.Poll poll4;
+        boolean z22;
+        TLRPC.Poll poll5;
+        TLRPC.Poll poll6;
+        String string;
+        TLRPC.Poll poll7;
+        MessageObject messageObject46;
+        MessageObject messageObject47;
+        MessageObject messageObject48;
+        int i25;
+        StaticLayout staticLayout;
+        MessageObject messageObject49;
+        MessageObject messageObject50;
+        long j11;
+        int i26;
+        int i27;
+        MessageObject messageObject51;
+        MessageObject messageObject52;
+        int i28;
+        StaticLayout[] staticLayoutArr4;
+        StaticLayout[] staticLayoutArr5;
+        StaticLayout[] staticLayoutArr6;
+        TLRPC.User user3;
+        MessageObject messageObject53;
+        TLRPC.User user4;
+        TLRPC.User user5;
+        CharSequence adminAccessibilityText;
+        boolean z23;
+        boolean z24;
+        AccessibilityNodeInfo accessibilityNodeInfo2;
+        AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo;
+        int iconForCurrentState;
+        String string2;
+        int miniIconForCurrentState;
+        boolean z25;
+        MessageObject messageObject54;
+        MessageObject messageObject55;
+        MediaController mediaController;
+        MessageObject messageObject56;
+        f1 f1Var;
+        boolean z26;
+        int size;
+        int i29;
+        boolean z27;
+        int size2;
+        int i30;
+        boolean z28;
+        boolean z29;
+        StaticLayout staticLayout2;
+        int i31;
+        MessageObject messageObject57;
+        StaticLayout[] staticLayoutArr7;
+        boolean z30;
+        StaticLayout[] staticLayoutArr8;
+        MessageObject messageObject58;
+        MessageObject messageObject59;
+        RectF rectF5;
+        ArrayList arrayList8;
+        ArrayList arrayList9;
+        ArrayList arrayList10;
+        boolean z31;
+        boolean z32;
+        boolean z33;
+        RectF rectF6;
+        RectF rectF7;
+        RectF rectF8;
+        MessageObject messageObject60;
+        MessageObject messageObject61;
+        MessageObject messageObject62;
+        MessageObject messageObject63;
+        MessageObject messageObject64;
+        TLRPC.User user6;
+        MessageObject messageObject65;
+        MessageObject messageObject66;
+        MessageObject messageObject67;
+        MessageObject messageObject68;
+        MessageObject messageObject69;
+        boolean z34;
+        boolean z35;
+        long j12;
+        MessageObject messageObject70;
+        MessageObject messageObject71;
+        MessageObject messageObject72;
+        MessageObject messageObject73;
+        MessageObject messageObject74;
+        int[] iArr = {0, 0};
+        t1 t1Var = this.d;
+        RectF rectF9 = t1Var.u3;
+        ArrayList arrayList11 = t1Var.U5;
+        ArrayList arrayList12 = t1Var.k7;
+        t1Var.getLocationOnScreen(iArr);
+        if (i9 != -1) {
+            AccessibilityNodeInfo obtain = AccessibilityNodeInfo.obtain();
+            obtain.setSource(t1Var, i9);
+            obtain.setParent(t1Var);
+            obtain.setPackageName(t1Var.getContext().getPackageName());
+            Rect rect2 = this.c;
+            if (i9 == 5000) {
+                user = t1Var.Ub;
+                if (user != null) {
+                    user2 = t1Var.Ub;
+                    obtain.setText(UserObject.getUserName(user2));
+                    float f10 = t1Var.Sa;
+                    int i32 = (int) f10;
+                    int i33 = (int) t1Var.Ta;
+                    i18 = t1Var.Qa;
+                    rect2.set(i32, i33, (int) (f10 + i18), (int) (t1Var.Ta + (t1Var.Ga != null ? r10.getHeight() : 10)));
+                    obtain.setBoundsInParent(rect2);
+                    sparseArray35 = t1Var.ld;
+                    if (sparseArray35.get(i9) == null) {
+                        sparseArray36 = t1Var.ld;
+                        sparseArray36.put(i9, new Rect(rect2));
+                    }
+                    rect2.offset(iArr[0], iArr[1]);
+                    obtain.setBoundsInScreen(rect2);
+                    obtain.setClassName("android.widget.TextView");
+                    obtain.setEnabled(true);
+                    obtain.setClickable(true);
+                    obtain.setLongClickable(true);
+                    obtain.addAction(16);
+                    obtain.addAction(32);
+                    z10 = true;
+                }
+                return null;
+            }
+            if (i9 >= 6000) {
+                int[] iArr2 = {0};
+                RichMessageLayout.RichBlock b10 = b(i9, iArr2);
+                if (b10 != null) {
+                    obtain.setText(b10.getAccessibilityElementText(iArr2[0]));
+                    b10.getAccessibilityElementBounds(iArr2[0], rect2);
+                    rect2.offset(t1Var.j0, t1Var.n0);
+                    obtain.setBoundsInParent(rect2);
+                    sparseArray33 = t1Var.ld;
+                    if (sparseArray33.get(i9) == null) {
+                        sparseArray34 = t1Var.ld;
+                        sparseArray34.put(i9, new Rect(rect2));
+                    }
+                    rect2.offset(iArr[0], iArr[1]);
+                    obtain.setBoundsInScreen(rect2);
+                    boolean isAccessibilityElementCheckbox = b10.isAccessibilityElementCheckbox(iArr2[0]);
+                    if (isAccessibilityElementCheckbox) {
+                        obtain.setClassName("android.widget.CheckBox");
+                    } else if (b10.isAccessibilityElementText(iArr2[0])) {
+                        obtain.setClassName("android.widget.TextView");
+                    } else {
+                        obtain.setClassName("android.widget.ImageView");
+                    }
+                    obtain.setEnabled(true);
+                    if (isAccessibilityElementCheckbox) {
+                        obtain.setCheckable(true);
+                        obtain.setChecked(b10.isAccessibilityElementChecked(iArr2[0]));
+                    }
+                    boolean isAccessibilityElementClickable = b10.isAccessibilityElementClickable(iArr2[0]);
+                    obtain.setClickable(isAccessibilityElementClickable);
+                    if (isAccessibilityElementClickable) {
+                        obtain.addAction(16);
+                    }
+                    z10 = true;
+                }
+                return null;
+            }
+            RectF rectF10 = this.b;
+            Path path = this.a;
+            if (i9 >= 3000) {
+                messageObject11 = t1Var.u7;
+                if ((messageObject11.caption instanceof Spannable) && t1Var.Y3 != null) {
+                    messageObject12 = t1Var.u7;
+                    Spannable spannable = (Spannable) messageObject12.caption;
+                    ClickableSpan a2 = a(i9, false);
+                    if (a2 != null) {
+                        int[] J2 = t1.J2(spannable, a2);
+                        obtain.setText(spannable.subSequence(J2[0], J2[1]).toString());
+                        ArrayList<MessageObject.TextLayoutBlock> arrayList13 = t1Var.Y3.textLayoutBlocks;
+                        int size3 = arrayList13.size();
+                        int i34 = 0;
+                        while (true) {
+                            if (i34 >= size3) {
+                                z16 = true;
+                                break;
+                            }
+                            MessageObject.TextLayoutBlock textLayoutBlock = arrayList13.get(i34);
+                            i34++;
+                            MessageObject.TextLayoutBlock textLayoutBlock2 = textLayoutBlock;
+                            int length = textLayoutBlock2.textLayout.getText().length();
+                            int i35 = textLayoutBlock2.charactersOffset;
+                            int[] iArr3 = iArr;
+                            int i36 = J2[0];
+                            if (i35 <= i36) {
+                                int i37 = length + i35;
+                                int i38 = J2[1];
+                                if (i37 >= i38) {
+                                    textLayoutBlock2.textLayout.getSelectionPath(i36 - i35, i38 - i35, path);
+                                    path.computeBounds(rectF10, true);
+                                    rect2.set((int) rectF10.left, (int) rectF10.top, (int) rectF10.right, (int) rectF10.bottom);
+                                    rect2.offset(0, (int) textLayoutBlock2.textYOffset(t1Var.Y3.textLayoutBlocks, t1Var.Vc));
+                                    rect2.offset(t1Var.j0, t1Var.n0);
+                                    obtain.setBoundsInParent(rect2);
+                                    sparseArray31 = t1Var.ld;
+                                    if (sparseArray31.get(i9) == null) {
+                                        sparseArray32 = t1Var.ld;
+                                        sparseArray32.put(i9, new Rect(rect2));
+                                    }
+                                    z16 = true;
+                                    rect2.offset(iArr3[0], iArr3[1]);
+                                    obtain.setBoundsInScreen(rect2);
+                                }
+                            }
+                            iArr = iArr3;
+                        }
+                        obtain.setClassName("android.widget.TextView");
+                        obtain.setEnabled(z16);
+                        obtain.setClickable(z16);
+                        obtain.setLongClickable(z16);
+                        obtain.addAction(16);
+                        obtain.addAction(32);
+                        z10 = true;
+                    }
+                }
+                return null;
+            }
+            if (i9 >= 2000) {
+                messageObject7 = t1Var.u7;
+                if (messageObject7.messageText instanceof Spannable) {
+                    messageObject8 = t1Var.u7;
+                    Spannable spannable2 = (Spannable) messageObject8.messageText;
+                    ClickableSpan a3 = a(i9, false);
+                    if (a3 != null) {
+                        int[] J22 = t1.J2(spannable2, a3);
+                        obtain.setText(spannable2.subSequence(J22[0], J22[1]).toString());
+                        messageObject9 = t1Var.u7;
+                        ArrayList<MessageObject.TextLayoutBlock> arrayList14 = messageObject9.textLayoutBlocks;
+                        int size4 = arrayList14.size();
+                        int i39 = 0;
+                        while (true) {
+                            if (i39 >= size4) {
+                                z15 = true;
+                                break;
+                            }
+                            MessageObject.TextLayoutBlock textLayoutBlock3 = arrayList14.get(i39);
+                            i39++;
+                            MessageObject.TextLayoutBlock textLayoutBlock4 = textLayoutBlock3;
+                            int length2 = textLayoutBlock4.textLayout.getText().length();
+                            int i40 = textLayoutBlock4.charactersOffset;
+                            int i41 = J22[0];
+                            if (i40 <= i41) {
+                                int i42 = length2 + i40;
+                                int i43 = J22[1];
+                                if (i42 >= i43) {
+                                    textLayoutBlock4.textLayout.getSelectionPath(i41 - i40, i43 - i40, path);
+                                    path.computeBounds(rectF10, true);
+                                    rect2.set((int) rectF10.left, (int) rectF10.top, (int) rectF10.right, (int) rectF10.bottom);
+                                    messageObject10 = t1Var.u7;
+                                    rect2.offset(0, (int) textLayoutBlock4.textYOffset(messageObject10.textLayoutBlocks, t1Var.Vc));
+                                    rect2.offset(t1Var.j0, t1Var.n0);
+                                    obtain.setBoundsInParent(rect2);
+                                    sparseArray29 = t1Var.ld;
+                                    if (sparseArray29.get(i9) == null) {
+                                        sparseArray30 = t1Var.ld;
+                                        sparseArray30.put(i9, new Rect(rect2));
+                                    }
+                                    z15 = true;
+                                    rect2.offset(iArr[0], iArr[1]);
+                                    obtain.setBoundsInScreen(rect2);
+                                }
+                            }
+                        }
+                        obtain.setClassName("android.widget.TextView");
+                        obtain.setEnabled(z15);
+                        obtain.setClickable(z15);
+                        obtain.setLongClickable(z15);
+                        obtain.addAction(16);
+                        obtain.addAction(32);
+                        z10 = true;
+                    }
+                }
+                return null;
+            }
+            if (i9 >= 1000) {
+                int i44 = i9 - 1000;
+                if (i44 < arrayList12.size()) {
+                    e0 e0Var = (e0) arrayList12.get(i44);
+                    if (!e0Var.b) {
+                        obtain.setText(e0Var.h.k());
+                        obtain.setClassName("android.widget.Button");
+                        obtain.setEnabled(true);
+                        obtain.setClickable(true);
+                        obtain.addAction(16);
+                        float f11 = e0Var.c;
+                        int i45 = t1Var.o7;
+                        int i46 = e0Var.d;
+                        rect2.set((int) (i45 * f11), i46, (int) ((f11 + e0Var.e) * i45), e0Var.f + i46);
+                        messageObject6 = t1Var.u7;
+                        if (messageObject6.isOutOwner()) {
+                            dp = (t1Var.getMeasuredWidth() - t1Var.getWidthForButtons()) - AndroidUtilities.dp(10.0f);
+                        } else {
+                            i17 = t1Var.r8;
+                            z14 = t1Var.g8;
+                            dp = i17 + AndroidUtilities.dp(z14 ? 1.0f : 7.0f);
+                        }
+                        rect2.offset(dp, t1Var.I8);
+                        obtain.setBoundsInParent(rect2);
+                        sparseArray27 = t1Var.ld;
+                        if (sparseArray27.get(i9) == null) {
+                            sparseArray28 = t1Var.ld;
+                            sparseArray28.put(i9, new Rect(rect2));
+                        }
+                        rect2.offset(iArr[0], iArr[1]);
+                        obtain.setBoundsInScreen(rect2);
+                        z10 = true;
+                    }
+                }
+                return null;
+            }
+            if (i9 >= 500) {
+                int i47 = i9 - 500;
+                if (i47 < arrayList11.size()) {
+                    r1 r1Var = (r1) arrayList11.get(i47);
+                    StringBuilder sb2 = new StringBuilder(r1Var.p.getText());
+                    z11 = t1Var.i6;
+                    if (z11) {
+                        z12 = r1Var.i;
+                        obtain.setSelected(z12);
+                        sb2.append(", ");
+                        i15 = r1Var.d;
+                        sb2.append(i15);
+                        sb2.append("%");
+                        poll = t1Var.K6;
+                        if (poll != null) {
+                            poll2 = t1Var.K6;
+                            if (poll2.quiz) {
+                                z13 = r1Var.i;
+                                if (z13 || r1Var.l) {
+                                    sb2.append(", ");
+                                    if (r1Var.l) {
+                                        str2 = "AccDescrQuizCorrectAnswer";
+                                        i16 = R.string.AccDescrQuizCorrectAnswer;
+                                    } else {
+                                        str2 = "AccDescrQuizIncorrectAnswer";
+                                        i16 = R.string.AccDescrQuizIncorrectAnswer;
+                                    }
+                                    sb2.append(LocaleController.getString(str2, i16));
+                                }
+                            }
+                        }
+                    } else {
+                        obtain.setClassName("android.widget.Button");
+                    }
+                    obtain.setText(sb2);
+                    obtain.setEnabled(true);
+                    obtain.addAction(16);
+                    int i48 = r1Var.b + t1Var.Hc;
+                    int dp2 = t1Var.F8 - AndroidUtilities.dp(76.0f);
+                    int i49 = r1Var.a;
+                    rect2.set(i49, i48, dp2 + i49, r1Var.c + i48);
+                    obtain.setBoundsInParent(rect2);
+                    sparseArray25 = t1Var.ld;
+                    if (sparseArray25.get(i9) == null) {
+                        sparseArray26 = t1Var.ld;
+                        sparseArray26.put(i9, new Rect(rect2));
+                    }
+                    rect2.offset(iArr[0], iArr[1]);
+                    obtain.setBoundsInScreen(rect2);
+                    obtain.setClickable(true);
+                }
+                return null;
+            }
+            if (i9 == 495) {
+                obtain.setClassName("android.widget.Button");
+                obtain.setEnabled(true);
+                obtain.setText(LocaleController.getString(R.string.AccDescrQuizExplanation));
+                obtain.addAction(16);
+                rect2.set(t1Var.Q6 - AndroidUtilities.dp(8.0f), t1Var.R6 - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(32.0f) + t1Var.Q6, AndroidUtilities.dp(32.0f) + t1Var.R6);
+                obtain.setBoundsInParent(rect2);
+                sparseArray22 = t1Var.ld;
+                if (sparseArray22.get(i9) != null) {
+                    sparseArray24 = t1Var.ld;
+                }
+                sparseArray23 = t1Var.ld;
+                sparseArray23.put(i9, new Rect(rect2));
+                rect2.offset(iArr[0], iArr[1]);
+                obtain.setBoundsInScreen(rect2);
+                obtain.setClickable(true);
+            } else if (i9 == 499) {
+                obtain.setClassName("android.widget.Button");
+                obtain.setEnabled(true);
+                StaticLayout staticLayout3 = t1Var.K2;
+                if (staticLayout3 != null) {
+                    obtain.setText(staticLayout3.getText());
+                }
+                obtain.addAction(16);
+                rectF9.round(rect2);
+                obtain.setBoundsInParent(rect2);
+                sparseArray19 = t1Var.ld;
+                if (sparseArray19.get(i9) != null) {
+                    sparseArray21 = t1Var.ld;
+                }
+                sparseArray20 = t1Var.ld;
+                sparseArray20.put(i9, new Rect(rect2));
+                rect2.offset(iArr[0], iArr[1]);
+                obtain.setBoundsInScreen(rect2);
+                obtain.setClickable(true);
+            } else if (i9 == 492) {
+                obtain.setClassName("android.widget.Button");
+                obtain.setEnabled(true);
+                StaticLayout staticLayout4 = t1Var.F2;
+                if (staticLayout4 != null) {
+                    obtain.setText(staticLayout4.getText());
+                }
+                obtain.addAction(16);
+                t1Var.U2.round(rect2);
+                arrayList3 = t1Var.T2;
+                if (arrayList3 != null) {
+                    arrayList4 = t1Var.T2;
+                    if (arrayList4.size() > 1) {
+                        arrayList5 = t1Var.T2;
+                        l1 l1Var = (l1) arrayList5.get(0);
+                        rectF2 = l1Var.e;
+                        if (!rectF2.isEmpty()) {
+                            int i50 = rect2.left;
+                            int i51 = rect2.top;
+                            int i52 = rect2.right;
+                            float f12 = rect2.bottom;
+                            rectF3 = l1Var.e;
+                            rect2.set(i50, i51, i52, (int) (f12 - rectF3.height()));
+                        }
+                    }
+                }
+                obtain.setBoundsInParent(rect2);
+                sparseArray16 = t1Var.ld;
+                if (sparseArray16.get(i9) != null) {
+                    sparseArray18 = t1Var.ld;
+                }
+                sparseArray17 = t1Var.ld;
+                sparseArray17.put(i9, new Rect(rect2));
+                rect2.offset(iArr[0], iArr[1]);
+                obtain.setBoundsInScreen(rect2);
+                obtain.setClickable(true);
+            } else if (i9 == 491 || i9 == 490 || i9 == 489) {
+                int i53 = i9 == 491 ? 5 : i9 == 490 ? 31 : 30;
+                for (int i54 = 0; i54 < arrayList.size(); i54++) {
+                    arrayList2 = t1Var.T2;
+                    l1 l1Var2 = (l1) arrayList2.get(i54);
+                    if (l1Var2.a == i53) {
+                        obtain.setClassName("android.widget.Button");
+                        obtain.setEnabled(true);
+                        StaticLayout staticLayout5 = l1Var2.d;
+                        if (staticLayout5 != null) {
+                            obtain.setText(staticLayout5.getText());
+                        }
+                        obtain.addAction(16);
+                        rectF = l1Var2.e;
+                        rectF.round(rect2);
+                        obtain.setBoundsInParent(rect2);
+                        sparseArray = t1Var.ld;
+                        if (sparseArray.get(i9) != null) {
+                            sparseArray3 = t1Var.ld;
+                        }
+                        sparseArray2 = t1Var.ld;
+                        sparseArray2.put(i9, new Rect(rect2));
+                        z10 = true;
+                        rect2.offset(iArr[0], iArr[1]);
+                        obtain.setBoundsInScreen(rect2);
+                        obtain.setClickable(true);
+                    }
+                }
+            } else if (i9 == 498) {
+                obtain.setClassName("android.widget.ImageButton");
+                obtain.setEnabled(true);
+                messageObject5 = t1Var.u7;
+                if (t1.S(t1Var, messageObject5)) {
+                    obtain.setContentDescription(LocaleController.getString("AccDescrOpenChat", R.string.AccDescrOpenChat));
+                } else {
+                    obtain.setContentDescription(LocaleController.getString("ShareFile", R.string.ShareFile));
+                }
+                obtain.addAction(16);
+                float f13 = t1Var.Ca;
+                rect2.set((int) f13, (int) t1Var.Da, AndroidUtilities.dp(40.0f) + ((int) f13), AndroidUtilities.dp(32.0f) + ((int) t1Var.Da));
+                obtain.setBoundsInParent(rect2);
+                sparseArray13 = t1Var.ld;
+                if (sparseArray13.get(i9) != null) {
+                    sparseArray15 = t1Var.ld;
+                }
+                sparseArray14 = t1Var.ld;
+                sparseArray14.put(i9, new Rect(rect2));
+                rect2.offset(iArr[0], iArr[1]);
+                obtain.setBoundsInScreen(rect2);
+                obtain.setClickable(true);
+            } else if (i9 == 497) {
+                obtain.setEnabled(true);
+                StringBuilder sb3 = new StringBuilder();
+                sb3.append(LocaleController.getString("Reply", R.string.Reply));
+                sb3.append(", ");
+                StaticLayout staticLayout6 = t1Var.y9;
+                if (staticLayout6 != null) {
+                    sb3.append(staticLayout6.getText());
+                    sb3.append(", ");
+                }
+                StaticLayout staticLayout7 = t1Var.z9;
+                if (staticLayout7 != null) {
+                    sb3.append(staticLayout7.getText());
+                }
+                obtain.setContentDescription(sb3.toString());
+                obtain.addAction(16);
+                int i55 = t1Var.C9;
+                int i56 = t1Var.D9;
+                i13 = t1Var.F9;
+                i14 = t1Var.H9;
+                rect2.set(i55, i56, Math.max(i13, i14) + i55, t1Var.D9 + ((int) t1Var.E9));
+                obtain.setBoundsInParent(rect2);
+                sparseArray10 = t1Var.ld;
+                if (sparseArray10.get(i9) != null) {
+                    sparseArray12 = t1Var.ld;
+                }
+                sparseArray11 = t1Var.ld;
+                sparseArray11.put(i9, new Rect(rect2));
+                rect2.offset(iArr[0], iArr[1]);
+                obtain.setBoundsInScreen(rect2);
+                obtain.setClickable(true);
+            } else if (i9 == 494) {
+                obtain.setEnabled(true);
+                StringBuilder sb4 = new StringBuilder();
+                staticLayoutArr = t1Var.bb;
+                if (staticLayoutArr[0] != null) {
+                    staticLayoutArr2 = t1Var.bb;
+                    if (staticLayoutArr2[1] != null) {
+                        int i57 = 0;
+                        while (i57 < 2) {
+                            staticLayoutArr3 = t1Var.bb;
+                            sb4.append(staticLayoutArr3[i57].getText());
+                            sb4.append(i57 == 0 ? " " : "\n");
+                            i57++;
+                        }
+                    }
+                }
+                obtain.setContentDescription(sb4.toString());
+                obtain.addAction(16);
+                float f14 = t1Var.eb;
+                float[] fArr = t1Var.hb;
+                int min = (int) Math.min(f14 - fArr[0], f14 - fArr[1]);
+                int i58 = t1Var.fb;
+                i11 = t1Var.cb;
+                int i59 = t1Var.fb;
+                i12 = t1Var.gb;
+                rect2.set(min, i58, i11 + min, i12 + i59);
+                obtain.setBoundsInParent(rect2);
+                sparseArray7 = t1Var.ld;
+                if (sparseArray7.get(i9) != null) {
+                    sparseArray9 = t1Var.ld;
+                }
+                sparseArray8 = t1Var.ld;
+                sparseArray8.put(i9, new Rect(rect2));
+                rect2.offset(iArr[0], iArr[1]);
+                obtain.setBoundsInScreen(rect2);
+                obtain.setClickable(true);
+            } else if (i9 == 496) {
+                obtain.setClassName("android.widget.Button");
+                obtain.setEnabled(true);
+                int repliesCount = t1Var.getRepliesCount();
+                messageObject2 = t1Var.u7;
+                if (messageObject2 != null) {
+                    messageObject3 = t1Var.u7;
+                    if (!messageObject3.shouldDrawWithoutBackground()) {
+                        messageObject4 = t1Var.u7;
+                        if (!messageObject4.isAnimatedEmoji()) {
+                            formatShortNumber = t1Var.Y7 ? LocaleController.getString("ViewInChat", R.string.ViewInChat) : repliesCount == 0 ? LocaleController.getString("LeaveAComment", R.string.LeaveAComment) : LocaleController.formatPluralString("CommentsCount", repliesCount, new Object[0]);
+                            if (formatShortNumber != null) {
+                                obtain.setText(formatShortNumber);
+                            }
+                            obtain.addAction(16);
+                            rect = t1Var.g9;
+                            rect2.set(rect);
+                            obtain.setBoundsInParent(rect2);
+                            sparseArray4 = t1Var.ld;
+                            if (sparseArray4.get(i9) != null) {
+                                sparseArray6 = t1Var.ld;
+                            }
+                            sparseArray5 = t1Var.ld;
+                            sparseArray5.put(i9, new Rect(rect2));
+                            rect2.offset(iArr[0], iArr[1]);
+                            obtain.setBoundsInScreen(rect2);
+                            obtain.setClickable(true);
+                        }
+                    }
+                }
+                formatShortNumber = (t1Var.Y7 || repliesCount <= 0) ? null : LocaleController.formatShortNumber(repliesCount, null);
+                if (formatShortNumber != null) {
+                }
+                obtain.addAction(16);
+                rect = t1Var.g9;
+                rect2.set(rect);
+                obtain.setBoundsInParent(rect2);
+                sparseArray4 = t1Var.ld;
+                if (sparseArray4.get(i9) != null) {
+                }
+                sparseArray5 = t1Var.ld;
+                sparseArray5.put(i9, new Rect(rect2));
+                rect2.offset(iArr[0], iArr[1]);
+                obtain.setBoundsInScreen(rect2);
+                obtain.setClickable(true);
+            } else if (i9 == 493) {
+                obtain.setClassName("android.widget.Button");
+                obtain.setEnabled(true);
+                messageObject = t1Var.u7;
+                if (messageObject.isVoiceTranscriptionOpen()) {
+                    str = "AccActionCloseTranscription";
+                    i10 = R.string.AccActionCloseTranscription;
+                } else {
+                    str = "AccActionOpenTranscription";
+                    i10 = R.string.AccActionOpenTranscription;
+                }
+                obtain.setText(LocaleController.getString(str, i10));
+                obtain.addAction(16);
+                if (t1Var.I5 != null) {
+                    float f15 = t1Var.J5;
+                    rect2.set((int) f15, (int) t1Var.K5, (int) (f15 + r0.x()), (int) (t1Var.K5 + t1Var.I5.i()));
+                }
+                obtain.setBoundsInParent(rect2);
+                rect2.offset(iArr[0], iArr[1]);
+                obtain.setBoundsInScreen(rect2);
+                obtain.setClickable(true);
+            }
+            z10 = true;
+            obtain.setFocusable(z10);
+            obtain.setVisibleToUser(z10);
+            return obtain;
         }
-        bh.b bVar = this.x;
-        if (bVar != null) {
-            bVar.b.b();
-            bVar.c.onDetachedFromWindow();
-            bVar.A.f();
+        AccessibilityNodeInfo obtain2 = AccessibilityNodeInfo.obtain(t1Var);
+        t1Var.onInitializeAccessibilityNodeInfo(obtain2);
+        messageObject13 = t1Var.u7;
+        if (messageObject13 != null) {
+            messageObject72 = t1Var.u7;
+            if (messageObject72.isOut()) {
+                messageObject73 = t1Var.u7;
+                if (!messageObject73.scheduled) {
+                    messageObject74 = t1Var.u7;
+                    if (messageObject74.isUnread()) {
+                        z17 = true;
+                        messageObject14 = t1Var.u7;
+                        if (messageObject14 != null) {
+                            messageObject71 = t1Var.u7;
+                            if (messageObject71.isContentUnread()) {
+                                z18 = true;
+                                messageObject15 = t1Var.u7;
+                                if (messageObject15 != null) {
+                                    messageObject70 = t1Var.u7;
+                                    str3 = " ";
+                                    j10 = messageObject70.loadedFileSize;
+                                } else {
+                                    str3 = " ";
+                                    j10 = 0;
+                                }
+                                if (t1Var.y3 != null) {
+                                    z34 = t1Var.z3;
+                                    if (z34 == z17) {
+                                        z35 = t1Var.A3;
+                                        if (z35 == z18) {
+                                            j12 = t1Var.B3;
+                                            if (j12 == j10) {
+                                                accessibilityNodeInfo = obtain2;
+                                                rectF4 = rectF9;
+                                                arrayList6 = arrayList11;
+                                                arrayList7 = arrayList12;
+                                                if (Build.VERSION.SDK_INT >= 24) {
+                                                    accessibilityNodeInfo2 = accessibilityNodeInfo;
+                                                    accessibilityNodeInfo2.setContentDescription(t1Var.y3.toString());
+                                                } else {
+                                                    accessibilityNodeInfo2 = accessibilityNodeInfo;
+                                                    accessibilityNodeInfo2.setText(t1Var.y3);
+                                                }
+                                                accessibilityNodeInfo2.setEnabled(true);
+                                                collectionItemInfo = accessibilityNodeInfo2.getCollectionItemInfo();
+                                                if (collectionItemInfo != null) {
+                                                    accessibilityNodeInfo2.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(collectionItemInfo.getRowIndex(), 1, 0, 1, false));
+                                                }
+                                                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, LocaleController.getString("AccActionMessageOptions", R.string.AccActionMessageOptions)));
+                                                iconForCurrentState = t1Var.getIconForCurrentState();
+                                                if (iconForCurrentState != 0) {
+                                                    string2 = LocaleController.getString("AccActionPlay", R.string.AccActionPlay);
+                                                } else if (iconForCurrentState == 1) {
+                                                    string2 = LocaleController.getString("AccActionPause", R.string.AccActionPause);
+                                                } else if (iconForCurrentState == 2) {
+                                                    string2 = LocaleController.getString("AccActionDownload", R.string.AccActionDownload);
+                                                } else if (iconForCurrentState == 3) {
+                                                    string2 = LocaleController.getString("AccActionCancelDownload", R.string.AccActionCancelDownload);
+                                                } else if (iconForCurrentState != 5) {
+                                                    messageObject69 = t1Var.u7;
+                                                    string2 = messageObject69.type == 16 ? LocaleController.getString("CallAgain", R.string.CallAgain) : null;
+                                                } else {
+                                                    string2 = LocaleController.getString("AccActionOpenFile", R.string.AccActionOpenFile);
+                                                }
+                                                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, string2));
+                                                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccActionEnterSelectionMode", R.string.AccActionEnterSelectionMode)));
+                                                miniIconForCurrentState = t1Var.getMiniIconForCurrentState();
+                                                if (miniIconForCurrentState == 2) {
+                                                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_small_button, LocaleController.getString("AccActionDownload", R.string.AccActionDownload)));
+                                                }
+                                                z25 = t1Var.ua;
+                                                if (!z25 || t1Var.da) {
+                                                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, LocaleController.getString("SummaryTitle", R.string.SummaryTitle)));
+                                                }
+                                                messageObject54 = t1Var.u7;
+                                                if (messageObject54.textLayoutBlocks != null) {
+                                                    messageObject68 = t1Var.u7;
+                                                    ArrayList<MessageObject.TextLayoutBlock> arrayList15 = messageObject68.textLayoutBlocks;
+                                                    int size5 = arrayList15.size();
+                                                    int i60 = 0;
+                                                    while (true) {
+                                                        if (i60 >= size5) {
+                                                            break;
+                                                        }
+                                                        MessageObject.TextLayoutBlock textLayoutBlock5 = arrayList15.get(i60);
+                                                        i60++;
+                                                        if (textLayoutBlock5.hasCodeCopyButton) {
+                                                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_copy_code, LocaleController.getString("CopyCode", R.string.CopyCode)));
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                                messageObject55 = t1Var.u7;
+                                                if (!messageObject55.isVoice()) {
+                                                    messageObject66 = t1Var.u7;
+                                                    if (!messageObject66.isRoundVideo()) {
+                                                        messageObject67 = t1Var.u7;
+                                                    }
+                                                }
+                                                mediaController = MediaController.getInstance();
+                                                messageObject56 = t1Var.u7;
+                                                if (mediaController.isPlayingMessage(messageObject56)) {
+                                                    f1Var = t1Var.E5;
+                                                    f1Var.f(accessibilityNodeInfo2);
+                                                }
+                                                z26 = t1Var.H5;
+                                                if (z26 && t1Var.I5 != null) {
+                                                    accessibilityNodeInfo2.addChild(t1Var, 493);
+                                                }
+                                                if (Build.VERSION.SDK_INT < 24) {
+                                                    if (t1Var.J7) {
+                                                        user6 = t1Var.Ub;
+                                                        if (user6 != null) {
+                                                            messageObject65 = t1Var.u7;
+                                                            if (!messageObject65.isOut()) {
+                                                                accessibilityNodeInfo2.addChild(t1Var, 5000);
+                                                            }
+                                                        }
+                                                    }
+                                                    messageObject61 = t1Var.u7;
+                                                    if (messageObject61.messageText instanceof Spannable) {
+                                                        messageObject64 = t1Var.u7;
+                                                        Spannable spannable3 = (Spannable) messageObject64.messageText;
+                                                        int i61 = 0;
+                                                        for (CharacterStyle characterStyle : (CharacterStyle[]) spannable3.getSpans(0, spannable3.length(), ClickableSpan.class)) {
+                                                            accessibilityNodeInfo2.addChild(t1Var, i61 + 2000);
+                                                            i61++;
+                                                        }
+                                                    }
+                                                    messageObject62 = t1Var.u7;
+                                                    if ((messageObject62.caption instanceof Spannable) && t1Var.Y3 != null) {
+                                                        messageObject63 = t1Var.u7;
+                                                        Spannable spannable4 = (Spannable) messageObject63.caption;
+                                                        int i62 = 0;
+                                                        for (CharacterStyle characterStyle2 : (CharacterStyle[]) spannable4.getSpans(0, spannable4.length(), ClickableSpan.class)) {
+                                                            accessibilityNodeInfo2.addChild(t1Var, i62 + 3000);
+                                                            i62++;
+                                                        }
+                                                    }
+                                                }
+                                                size = arrayList7.size();
+                                                int i63 = 0;
+                                                i29 = 0;
+                                                while (i29 < size) {
+                                                    Object obj = arrayList7.get(i29);
+                                                    i29++;
+                                                    accessibilityNodeInfo2.addChild(t1Var, i63 + MediaDataController.MAX_STYLE_RUNS_COUNT);
+                                                    i63++;
+                                                }
+                                                z27 = t1Var.T6;
+                                                if (z27 && t1Var.Q6 != -1) {
+                                                    messageObject60 = t1Var.u7;
+                                                    if (messageObject60.isPoll()) {
+                                                        accessibilityNodeInfo2.addChild(t1Var, 495);
+                                                    }
+                                                }
+                                                size2 = arrayList6.size();
+                                                int i64 = 0;
+                                                i30 = 0;
+                                                while (i30 < size2) {
+                                                    Object obj2 = arrayList6.get(i30);
+                                                    i30++;
+                                                    accessibilityNodeInfo2.addChild(t1Var, i64 + 500);
+                                                    i64++;
+                                                }
+                                                z28 = t1Var.N2;
+                                                if (z28 && !rectF4.isEmpty()) {
+                                                    accessibilityNodeInfo2.addChild(t1Var, 499);
+                                                }
+                                                z29 = t1Var.O2;
+                                                if (z29 && (rectF5 = t1Var.U2) != null && !rectF5.isEmpty()) {
+                                                    accessibilityNodeInfo2.addChild(t1Var, 492);
+                                                    arrayList8 = t1Var.T2;
+                                                    if (arrayList8 != null) {
+                                                        arrayList9 = t1Var.T2;
+                                                        if (arrayList9.size() > 1) {
+                                                            arrayList10 = t1Var.T2;
+                                                            int size6 = arrayList10.size();
+                                                            int i65 = 0;
+                                                            while (i65 < size6) {
+                                                                Object obj3 = arrayList10.get(i65);
+                                                                i65++;
+                                                                l1 l1Var3 = (l1) obj3;
+                                                                z31 = t1Var.Q2;
+                                                                if (z31 && l1Var3.a == 5) {
+                                                                    rectF8 = l1Var3.e;
+                                                                    if (!rectF8.isEmpty()) {
+                                                                        accessibilityNodeInfo2.addChild(t1Var, 491);
+                                                                    }
+                                                                }
+                                                                z32 = t1Var.R2;
+                                                                if (z32 && l1Var3.a == 31) {
+                                                                    rectF7 = l1Var3.e;
+                                                                    if (!rectF7.isEmpty()) {
+                                                                        accessibilityNodeInfo2.addChild(t1Var, 490);
+                                                                    }
+                                                                }
+                                                                z33 = t1Var.P2;
+                                                                if (z33 && l1Var3.a == 30) {
+                                                                    rectF6 = l1Var3.e;
+                                                                    if (!rectF6.isEmpty()) {
+                                                                        accessibilityNodeInfo2.addChild(t1Var, 489);
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                staticLayout2 = t1Var.V8;
+                                                if (staticLayout2 != null) {
+                                                    accessibilityNodeInfo2.addChild(t1Var, 496);
+                                                }
+                                                i31 = t1Var.qa;
+                                                if (i31 != 1 || i31 == 2) {
+                                                    accessibilityNodeInfo2.addChild(t1Var, 498);
+                                                }
+                                                if (t1Var.y9 != null) {
+                                                    accessibilityNodeInfo2.addChild(t1Var, 497);
+                                                }
+                                                messageObject57 = t1Var.u7;
+                                                if (messageObject57 != null) {
+                                                    messageObject58 = t1Var.u7;
+                                                    if (messageObject58.richLayout != null) {
+                                                        messageObject59 = t1Var.u7;
+                                                        RichMessageLayout richMessageLayout = messageObject59.richLayout;
+                                                        int i66 = 0;
+                                                        for (int i67 = 0; i67 < richMessageLayout.blocks.size(); i67++) {
+                                                            RichMessageLayout.RichBlock richBlock = richMessageLayout.blocks.get(i67);
+                                                            if (richBlock.isVisible()) {
+                                                                int accessibilityElementCount = richBlock.getAccessibilityElementCount();
+                                                                for (int i68 = 0; i68 < accessibilityElementCount; i68++) {
+                                                                    accessibilityNodeInfo2.addChild(t1Var, i66 + 6000 + i68);
+                                                                }
+                                                                i66 += accessibilityElementCount;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                staticLayoutArr7 = t1Var.bb;
+                                                if (staticLayoutArr7[0] != null) {
+                                                    staticLayoutArr8 = t1Var.bb;
+                                                    if (staticLayoutArr8[1] != null) {
+                                                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_forwarded_origin, LocaleController.getString("AccActionOpenForwardedOrigin", R.string.AccActionOpenForwardedOrigin)));
+                                                    }
+                                                }
+                                                z30 = t1Var.f1;
+                                                if (z30 && t1Var.getBackground() == null) {
+                                                    return accessibilityNodeInfo2;
+                                                }
+                                                accessibilityNodeInfo2.setSelected(true);
+                                                return accessibilityNodeInfo2;
+                                            }
+                                        }
+                                    }
+                                }
+                                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                                if (t1Var.J7) {
+                                    user3 = t1Var.Ub;
+                                    if (user3 != null) {
+                                        messageObject53 = t1Var.u7;
+                                        if (!messageObject53.isOut()) {
+                                            user4 = t1Var.Ub;
+                                            spannableStringBuilder.append((CharSequence) UserObject.getUserName(user4));
+                                            rectF4 = rectF9;
+                                            user5 = t1Var.Ub;
+                                            arrayList6 = arrayList11;
+                                            arrayList7 = arrayList12;
+                                            spannableStringBuilder.setSpan(new p1(this, user5), 0, spannableStringBuilder.length(), 33);
+                                            adminAccessibilityText = t1Var.getAdminAccessibilityText();
+                                            if (TextUtils.isEmpty(adminAccessibilityText)) {
+                                                accessibilityNodeInfo = obtain2;
+                                            } else {
+                                                z23 = t1Var.Ka;
+                                                if (z23) {
+                                                    SpannableStringBuilder append = spannableStringBuilder.append(' ');
+                                                    z24 = t1Var.Ia;
+                                                    accessibilityNodeInfo = obtain2;
+                                                    append.append((CharSequence) LocaleController.formatString(z24 ? R.string.AccDescrWithAdminTag : R.string.AccDescrWithMemberTag, adminAccessibilityText));
+                                                } else {
+                                                    accessibilityNodeInfo = obtain2;
+                                                    spannableStringBuilder.append((CharSequence) ", ").append(adminAccessibilityText);
+                                                }
+                                            }
+                                            spannableStringBuilder.append('\n');
+                                            z19 = t1Var.db;
+                                            if (z19) {
+                                                int i69 = 0;
+                                                while (i69 < 2) {
+                                                    staticLayoutArr4 = t1Var.bb;
+                                                    if (staticLayoutArr4[i69] != null) {
+                                                        staticLayoutArr5 = t1Var.bb;
+                                                        if (staticLayoutArr5[i69].getText() != null) {
+                                                            staticLayoutArr6 = t1Var.bb;
+                                                            spannableStringBuilder.append(staticLayoutArr6[i69].getText());
+                                                            spannableStringBuilder.append((CharSequence) (i69 == 0 ? str3 : "\n"));
+                                                        }
+                                                    }
+                                                    i69++;
+                                                }
+                                            }
+                                            if (t1Var.H1 != null) {
+                                                i28 = t1Var.G1;
+                                                if (i28 == 1) {
+                                                    String attachFileName = FileLoader.getAttachFileName(t1Var.H1);
+                                                    if (attachFileName.indexOf(46) != -1) {
+                                                        spannableStringBuilder.append((CharSequence) LocaleController.formatString(R.string.AccDescrDocumentType, attachFileName.substring(attachFileName.lastIndexOf(46) + 1).toUpperCase(Locale.ROOT)));
+                                                    }
+                                                }
+                                            }
+                                            messageObject16 = t1Var.u7;
+                                            if (messageObject16.richLayout != null) {
+                                                messageObject51 = t1Var.u7;
+                                                if (!messageObject51.richLayout.blocks.isEmpty()) {
+                                                    messageObject52 = t1Var.u7;
+                                                    ArrayList<RichMessageLayout.RichBlock> arrayList16 = messageObject52.richLayout.blocks;
+                                                    int size7 = arrayList16.size();
+                                                    int i70 = 0;
+                                                    while (i70 < size7) {
+                                                        RichMessageLayout.RichBlock richBlock2 = arrayList16.get(i70);
+                                                        i70++;
+                                                        RichMessageLayout.RichBlock richBlock3 = richBlock2;
+                                                        if (richBlock3.isVisible()) {
+                                                            int length3 = spannableStringBuilder.length();
+                                                            ArrayList<RichMessageLayout.RichBlock> arrayList17 = arrayList16;
+                                                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
+                                                            richBlock3.appendAccessibilityText(spannableStringBuilder2);
+                                                            int i71 = size7;
+                                                            CharSequence accessibilityLabel = richBlock3.getAccessibilityLabel();
+                                                            CharSequence accessibilityListMarker = richBlock3.getAccessibilityListMarker();
+                                                            if (!TextUtils.isEmpty(accessibilityListMarker)) {
+                                                                spannableStringBuilder.append(accessibilityListMarker);
+                                                                if (!TextUtils.isEmpty(accessibilityLabel) || spannableStringBuilder2.length() > 0) {
+                                                                    spannableStringBuilder.append(' ');
+                                                                }
+                                                            }
+                                                            if (!TextUtils.isEmpty(accessibilityLabel)) {
+                                                                spannableStringBuilder.append(accessibilityLabel);
+                                                                if (spannableStringBuilder2.length() > 0) {
+                                                                    spannableStringBuilder.append((CharSequence) ", ");
+                                                                }
+                                                            }
+                                                            spannableStringBuilder.append((CharSequence) spannableStringBuilder2);
+                                                            if (spannableStringBuilder.length() > length3 && spannableStringBuilder.charAt(spannableStringBuilder.length() - 1) != '\n') {
+                                                                spannableStringBuilder.append('\n');
+                                                            }
+                                                            arrayList16 = arrayList17;
+                                                            size7 = i71;
+                                                        }
+                                                    }
+                                                    if (t1Var.H1 != null) {
+                                                        i25 = t1Var.G1;
+                                                        if (i25 != 1) {
+                                                            i26 = t1Var.G1;
+                                                            if (i26 != 2) {
+                                                                i27 = t1Var.G1;
+                                                            }
+                                                        }
+                                                        if (t1Var.K4 == 1) {
+                                                            staticLayout = t1Var.u4;
+                                                            if (staticLayout != null) {
+                                                                spannableStringBuilder.append((CharSequence) "\n");
+                                                                messageObject49 = t1Var.u7;
+                                                                boolean isSending = messageObject49.isSending();
+                                                                String str6 = isSending ? "AccDescrUploadProgress" : "AccDescrDownloadProgress";
+                                                                int i72 = isSending ? R.string.AccDescrUploadProgress : R.string.AccDescrDownloadProgress;
+                                                                messageObject50 = t1Var.u7;
+                                                                String formatFileSize = AndroidUtilities.formatFileSize(messageObject50.loadedFileSize);
+                                                                j11 = t1Var.u1;
+                                                                spannableStringBuilder.append((CharSequence) LocaleController.formatString(str6, i72, formatFileSize, AndroidUtilities.formatFileSize(j11)));
+                                                            }
+                                                        }
+                                                    }
+                                                    messageObject19 = t1Var.u7;
+                                                    if (messageObject19.isMusic()) {
+                                                        spannableStringBuilder.append((CharSequence) "\n");
+                                                        int i73 = R.string.AccDescrMusicInfo;
+                                                        messageObject46 = t1Var.u7;
+                                                        String musicAuthor = messageObject46.getMusicAuthor();
+                                                        messageObject47 = t1Var.u7;
+                                                        spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrMusicInfo", i73, musicAuthor, messageObject47.getMusicTitle()));
+                                                        spannableStringBuilder.append((CharSequence) ", ");
+                                                        messageObject48 = t1Var.u7;
+                                                        spannableStringBuilder.append((CharSequence) LocaleController.formatDuration((int) messageObject48.getDuration()));
+                                                    } else {
+                                                        messageObject20 = t1Var.u7;
+                                                        if (!messageObject20.isVoice()) {
+                                                            z20 = t1Var.md;
+                                                        }
+                                                        spannableStringBuilder.append((CharSequence) ", ");
+                                                        messageObject21 = t1Var.u7;
+                                                        spannableStringBuilder.append((CharSequence) LocaleController.formatDuration((int) messageObject21.getDuration()));
+                                                        spannableStringBuilder.append((CharSequence) ", ");
+                                                        messageObject22 = t1Var.u7;
+                                                        if (messageObject22.isContentUnread()) {
+                                                            spannableStringBuilder.append((CharSequence) LocaleController.getString("AccDescrMsgNotPlayed", R.string.AccDescrMsgNotPlayed));
+                                                        } else {
+                                                            spannableStringBuilder.append((CharSequence) LocaleController.getString("AccDescrMsgPlayed", R.string.AccDescrMsgPlayed));
+                                                        }
+                                                    }
+                                                    poll3 = t1Var.K6;
+                                                    if (poll3 != null) {
+                                                        spannableStringBuilder.append((CharSequence) ", ");
+                                                        poll4 = t1Var.K6;
+                                                        spannableStringBuilder.append((CharSequence) poll4.question.text);
+                                                        spannableStringBuilder.append((CharSequence) ", ");
+                                                        z22 = t1Var.p6;
+                                                        if (z22) {
+                                                            string = LocaleController.getString("FinalResults", R.string.FinalResults);
+                                                        } else {
+                                                            poll5 = t1Var.K6;
+                                                            if (poll5.quiz) {
+                                                                poll7 = t1Var.K6;
+                                                                string = poll7.public_voters ? LocaleController.getString("QuizPoll", R.string.QuizPoll) : LocaleController.getString("AnonymousQuizPoll", R.string.AnonymousQuizPoll);
+                                                            } else {
+                                                                poll6 = t1Var.K6;
+                                                                string = poll6.public_voters ? LocaleController.getString("PublicPoll", R.string.PublicPoll) : LocaleController.getString("AnonymousPoll", R.string.AnonymousPoll);
+                                                            }
+                                                        }
+                                                        spannableStringBuilder.append((CharSequence) string);
+                                                    }
+                                                    if (t1Var.H1 != null) {
+                                                        i23 = t1Var.G1;
+                                                        if (i23 == 4) {
+                                                            spannableStringBuilder.append((CharSequence) ", ");
+                                                            messageObject45 = t1Var.u7;
+                                                            spannableStringBuilder.append((CharSequence) LocaleController.formatDuration((int) messageObject45.getDuration()));
+                                                        }
+                                                        if (t1Var.K4 != 0) {
+                                                            i24 = t1Var.G1;
+                                                        }
+                                                        spannableStringBuilder.append((CharSequence) ", ");
+                                                        spannableStringBuilder.append((CharSequence) AndroidUtilities.formatFileSize(t1Var.H1.size));
+                                                    }
+                                                    messageObject23 = t1Var.u7;
+                                                    if (messageObject23.isVoiceTranscriptionOpen()) {
+                                                        spannableStringBuilder.append((CharSequence) "\n");
+                                                        messageObject44 = t1Var.u7;
+                                                        spannableStringBuilder.append(messageObject44.getVoiceTranscription());
+                                                    } else {
+                                                        messageObject24 = t1Var.u7;
+                                                        if (MessageObject.getMedia(messageObject24.messageOwner) != null) {
+                                                            messageObject25 = t1Var.u7;
+                                                            if (!TextUtils.isEmpty(messageObject25.caption)) {
+                                                                spannableStringBuilder.append((CharSequence) "\n");
+                                                                messageObject26 = t1Var.u7;
+                                                                spannableStringBuilder.append(messageObject26.caption);
+                                                            }
+                                                        }
+                                                    }
+                                                    messageObject27 = t1Var.u7;
+                                                    if (messageObject27.isOut()) {
+                                                        messageObject39 = t1Var.u7;
+                                                        if (messageObject39.isSent()) {
+                                                            spannableStringBuilder.append((CharSequence) "\n");
+                                                            messageObject42 = t1Var.u7;
+                                                            if (messageObject42.scheduled) {
+                                                                spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrScheduledDate", R.string.AccDescrScheduledDate, t1Var.pb));
+                                                                str4 = str3;
+                                                            } else {
+                                                                int i74 = R.string.AccDescrSentDate;
+                                                                StringBuilder sb5 = new StringBuilder();
+                                                                sb5.append(LocaleController.getString("TodayAt", R.string.TodayAt));
+                                                                str4 = str3;
+                                                                sb5.append(str4);
+                                                                sb5.append((Object) t1Var.pb);
+                                                                spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrSentDate", i74, sb5.toString()));
+                                                                spannableStringBuilder.append((CharSequence) ", ");
+                                                                messageObject43 = t1Var.u7;
+                                                                if (messageObject43.isUnread()) {
+                                                                    str5 = "AccDescrMsgUnread";
+                                                                    i22 = R.string.AccDescrMsgUnread;
+                                                                } else {
+                                                                    str5 = "AccDescrMsgRead";
+                                                                    i22 = R.string.AccDescrMsgRead;
+                                                                }
+                                                                spannableStringBuilder.append((CharSequence) LocaleController.getString(str5, i22));
+                                                            }
+                                                        } else {
+                                                            str4 = str3;
+                                                            messageObject40 = t1Var.u7;
+                                                            if (messageObject40.isSending()) {
+                                                                spannableStringBuilder.append((CharSequence) "\n");
+                                                                spannableStringBuilder.append((CharSequence) LocaleController.getString("AccDescrMsgSending", R.string.AccDescrMsgSending));
+                                                                radialProgress2 = t1Var.K0;
+                                                                float f16 = (radialProgress2.c ? radialProgress2.j : radialProgress2.i).w;
+                                                                if (f16 > 0.0f) {
+                                                                    spannableStringBuilder.append((CharSequence) Integer.toString(Math.round(f16 * 100.0f))).append((CharSequence) "%");
+                                                                }
+                                                            } else {
+                                                                messageObject41 = t1Var.u7;
+                                                                if (messageObject41.isSendError()) {
+                                                                    spannableStringBuilder.append((CharSequence) "\n");
+                                                                    spannableStringBuilder.append((CharSequence) LocaleController.getString("AccDescrMsgSendingError", R.string.AccDescrMsgSendingError));
+                                                                }
+                                                            }
+                                                        }
+                                                        i20 = 0;
+                                                    } else {
+                                                        str4 = str3;
+                                                        spannableStringBuilder.append((CharSequence) "\n");
+                                                        i20 = 0;
+                                                        spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrReceivedDate", R.string.AccDescrReceivedDate, LocaleController.getString("TodayAt", R.string.TodayAt) + str4 + ((Object) t1Var.pb)));
+                                                    }
+                                                    if (t1Var.getRepliesCount() > 0 && !t1Var.Q2()) {
+                                                        spannableStringBuilder.append((CharSequence) "\n");
+                                                        spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString("AccDescrNumberOfReplies", t1Var.getRepliesCount(), new Object[i20]));
+                                                    }
+                                                    messageObject28 = t1Var.u7;
+                                                    if (messageObject28.messageOwner.reactions != null) {
+                                                        messageObject31 = t1Var.u7;
+                                                        if (messageObject31.messageOwner.reactions.results != null) {
+                                                            messageObject32 = t1Var.u7;
+                                                            String str7 = "";
+                                                            if (messageObject32.messageOwner.reactions.results.size() == 1) {
+                                                                messageObject35 = t1Var.u7;
+                                                                TLRPC.ReactionCount reactionCount = messageObject35.messageOwner.reactions.results.get(0);
+                                                                TLRPC.Reaction reaction = reactionCount.reaction;
+                                                                String str8 = reaction instanceof TLRPC.TL_reactionEmoji ? ((TLRPC.TL_reactionEmoji) reaction).emoticon : "";
+                                                                int i75 = reactionCount.count;
+                                                                if (i75 == 1) {
+                                                                    spannableStringBuilder.append((CharSequence) "\n");
+                                                                    messageObject36 = t1Var.u7;
+                                                                    if (messageObject36.messageOwner.reactions.recent_reactions != null) {
+                                                                        messageObject37 = t1Var.u7;
+                                                                        if (messageObject37.messageOwner.reactions.recent_reactions.size() == 1) {
+                                                                            messageObject38 = t1Var.u7;
+                                                                            TLRPC.MessagePeerReaction messagePeerReaction = messageObject38.messageOwner.reactions.recent_reactions.get(0);
+                                                                            if (messagePeerReaction != null) {
+                                                                                TLRPC.User user7 = MessagesController.getInstance(t1Var.E7).getUser(Long.valueOf(MessageObject.getPeerId(messagePeerReaction.peer_id)));
+                                                                                z21 = UserObject.isUserSelf(user7);
+                                                                                if (user7 != null) {
+                                                                                    str7 = UserObject.getFirstName(user7);
+                                                                                }
+                                                                                if (z21) {
+                                                                                    spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrReactedWith", R.string.AccDescrReactedWith, str7, str8));
+                                                                                } else {
+                                                                                    spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrYouReactedWith", R.string.AccDescrYouReactedWith, str8));
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    z21 = false;
+                                                                    if (z21) {
+                                                                    }
+                                                                } else if (i75 > 1) {
+                                                                    spannableStringBuilder.append((CharSequence) "\n");
+                                                                    spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString("AccDescrNumberOfPeopleReactions", reactionCount.count, str8));
+                                                                }
+                                                            } else {
+                                                                spannableStringBuilder.append((CharSequence) LocaleController.getString("Reactions", R.string.Reactions)).append((CharSequence) ": ");
+                                                                messageObject33 = t1Var.u7;
+                                                                int size8 = messageObject33.messageOwner.reactions.results.size();
+                                                                int i76 = 0;
+                                                                while (i76 < size8) {
+                                                                    messageObject34 = t1Var.u7;
+                                                                    TLRPC.ReactionCount reactionCount2 = messageObject34.messageOwner.reactions.results.get(i76);
+                                                                    TLRPC.Reaction reaction2 = reactionCount2.reaction;
+                                                                    int i77 = i76;
+                                                                    spannableStringBuilder.append((CharSequence) (reaction2 instanceof TLRPC.TL_reactionEmoji ? ((TLRPC.TL_reactionEmoji) reaction2).emoticon : "")).append((CharSequence) str4).append((CharSequence) (reactionCount2.count + ""));
+                                                                    i76 = i77 + 1;
+                                                                    if (i76 < size8) {
+                                                                        spannableStringBuilder.append((CharSequence) ", ");
+                                                                    }
+                                                                }
+                                                                spannableStringBuilder.append((CharSequence) "\n");
+                                                            }
+                                                        }
+                                                    }
+                                                    messageObject29 = t1Var.u7;
+                                                    if ((messageObject29.messageOwner.flags & 1024) != 0) {
+                                                        spannableStringBuilder.append((CharSequence) "\n");
+                                                        messageObject30 = t1Var.u7;
+                                                        i21 = 0;
+                                                        spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString("AccDescrNumberOfViews", messageObject30.messageOwner.views, new Object[0]));
+                                                    } else {
+                                                        i21 = 0;
+                                                    }
+                                                    spannableStringBuilder.append((CharSequence) "\n");
+                                                    for (CharacterStyle characterStyle3 : (CharacterStyle[]) spannableStringBuilder.getSpans(i21, spannableStringBuilder.length(), ClickableSpan.class)) {
+                                                        int spanStart = spannableStringBuilder.getSpanStart(characterStyle3);
+                                                        int spanEnd = spannableStringBuilder.getSpanEnd(characterStyle3);
+                                                        spannableStringBuilder.removeSpan(characterStyle3);
+                                                        spannableStringBuilder.setSpan(new i(2, this, characterStyle3), spanStart, spanEnd, 33);
+                                                    }
+                                                    t1Var.y3 = spannableStringBuilder;
+                                                    t1Var.z3 = z17;
+                                                    t1Var.A3 = z18;
+                                                    t1Var.B3 = j10;
+                                                    if (Build.VERSION.SDK_INT >= 24) {
+                                                    }
+                                                    accessibilityNodeInfo2.setEnabled(true);
+                                                    collectionItemInfo = accessibilityNodeInfo2.getCollectionItemInfo();
+                                                    if (collectionItemInfo != null) {
+                                                    }
+                                                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, LocaleController.getString("AccActionMessageOptions", R.string.AccActionMessageOptions)));
+                                                    iconForCurrentState = t1Var.getIconForCurrentState();
+                                                    if (iconForCurrentState != 0) {
+                                                    }
+                                                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, string2));
+                                                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccActionEnterSelectionMode", R.string.AccActionEnterSelectionMode)));
+                                                    miniIconForCurrentState = t1Var.getMiniIconForCurrentState();
+                                                    if (miniIconForCurrentState == 2) {
+                                                    }
+                                                    z25 = t1Var.ua;
+                                                    if (!z25) {
+                                                    }
+                                                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, LocaleController.getString("SummaryTitle", R.string.SummaryTitle)));
+                                                    messageObject54 = t1Var.u7;
+                                                    if (messageObject54.textLayoutBlocks != null) {
+                                                    }
+                                                    messageObject55 = t1Var.u7;
+                                                    if (!messageObject55.isVoice()) {
+                                                    }
+                                                    mediaController = MediaController.getInstance();
+                                                    messageObject56 = t1Var.u7;
+                                                    if (mediaController.isPlayingMessage(messageObject56)) {
+                                                    }
+                                                    z26 = t1Var.H5;
+                                                    if (z26) {
+                                                        accessibilityNodeInfo2.addChild(t1Var, 493);
+                                                    }
+                                                    if (Build.VERSION.SDK_INT < 24) {
+                                                    }
+                                                    size = arrayList7.size();
+                                                    int i632 = 0;
+                                                    i29 = 0;
+                                                    while (i29 < size) {
+                                                    }
+                                                    z27 = t1Var.T6;
+                                                    if (z27) {
+                                                        messageObject60 = t1Var.u7;
+                                                        if (messageObject60.isPoll()) {
+                                                        }
+                                                    }
+                                                    size2 = arrayList6.size();
+                                                    int i642 = 0;
+                                                    i30 = 0;
+                                                    while (i30 < size2) {
+                                                    }
+                                                    z28 = t1Var.N2;
+                                                    if (z28) {
+                                                        accessibilityNodeInfo2.addChild(t1Var, 499);
+                                                    }
+                                                    z29 = t1Var.O2;
+                                                    if (z29) {
+                                                        accessibilityNodeInfo2.addChild(t1Var, 492);
+                                                        arrayList8 = t1Var.T2;
+                                                        if (arrayList8 != null) {
+                                                        }
+                                                    }
+                                                    staticLayout2 = t1Var.V8;
+                                                    if (staticLayout2 != null) {
+                                                    }
+                                                    i31 = t1Var.qa;
+                                                    if (i31 != 1) {
+                                                    }
+                                                    accessibilityNodeInfo2.addChild(t1Var, 498);
+                                                    if (t1Var.y9 != null) {
+                                                    }
+                                                    messageObject57 = t1Var.u7;
+                                                    if (messageObject57 != null) {
+                                                    }
+                                                    staticLayoutArr7 = t1Var.bb;
+                                                    if (staticLayoutArr7[0] != null) {
+                                                    }
+                                                    z30 = t1Var.f1;
+                                                    if (z30) {
+                                                    }
+                                                    accessibilityNodeInfo2.setSelected(true);
+                                                    return accessibilityNodeInfo2;
+                                                }
+                                            }
+                                            messageObject17 = t1Var.u7;
+                                            if (!TextUtils.isEmpty(messageObject17.messageText)) {
+                                                messageObject18 = t1Var.u7;
+                                                CharSequence charSequence = messageObject18.messageText;
+                                                if (charSequence instanceof Spanned) {
+                                                    Spanned spanned2 = (Spanned) charSequence;
+                                                    CodeHighlighting.Span[] spanArr = (CodeHighlighting.Span[]) spanned2.getSpans(0, spanned2.length(), CodeHighlighting.Span.class);
+                                                    if (spanArr != null && spanArr.length > 0) {
+                                                        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(charSequence);
+                                                        Arrays.sort(spanArr, new o1(spanned2, 0));
+                                                        int length4 = spanArr.length;
+                                                        int i78 = 0;
+                                                        while (i78 < length4) {
+                                                            int i79 = length4;
+                                                            CodeHighlighting.Span span = spanArr[i78];
+                                                            CodeHighlighting.Span[] spanArr2 = spanArr;
+                                                            int spanStart2 = spanned2.getSpanStart(span);
+                                                            if (spanStart2 < 0) {
+                                                                spanned = spanned2;
+                                                                i19 = i78;
+                                                            } else {
+                                                                spanned = spanned2;
+                                                                if (TextUtils.isEmpty(span.lng)) {
+                                                                    formatString = LocaleController.getString(R.string.AccDescrCodeBlock);
+                                                                    i19 = i78;
+                                                                } else {
+                                                                    i19 = i78;
+                                                                    formatString = LocaleController.formatString(R.string.AccDescrCodeBlockLanguage, MessageObject.TextLayoutBlock.capitalizeLanguage(span.lng));
+                                                                }
+                                                                spannableStringBuilder3.insert(spanStart2, (CharSequence) (((Object) formatString) + ". "));
+                                                            }
+                                                            i78 = i19 + 1;
+                                                            length4 = i79;
+                                                            spanArr = spanArr2;
+                                                            spanned2 = spanned;
+                                                        }
+                                                        charSequence = spannableStringBuilder3;
+                                                    }
+                                                }
+                                                spannableStringBuilder.append(charSequence);
+                                            }
+                                            if (t1Var.H1 != null) {
+                                            }
+                                            messageObject19 = t1Var.u7;
+                                            if (messageObject19.isMusic()) {
+                                            }
+                                            poll3 = t1Var.K6;
+                                            if (poll3 != null) {
+                                            }
+                                            if (t1Var.H1 != null) {
+                                            }
+                                            messageObject23 = t1Var.u7;
+                                            if (messageObject23.isVoiceTranscriptionOpen()) {
+                                            }
+                                            messageObject27 = t1Var.u7;
+                                            if (messageObject27.isOut()) {
+                                            }
+                                            if (t1Var.getRepliesCount() > 0) {
+                                                spannableStringBuilder.append((CharSequence) "\n");
+                                                spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString("AccDescrNumberOfReplies", t1Var.getRepliesCount(), new Object[i20]));
+                                            }
+                                            messageObject28 = t1Var.u7;
+                                            if (messageObject28.messageOwner.reactions != null) {
+                                            }
+                                            messageObject29 = t1Var.u7;
+                                            if ((messageObject29.messageOwner.flags & 1024) != 0) {
+                                            }
+                                            spannableStringBuilder.append((CharSequence) "\n");
+                                            while (r5 < r2) {
+                                            }
+                                            t1Var.y3 = spannableStringBuilder;
+                                            t1Var.z3 = z17;
+                                            t1Var.A3 = z18;
+                                            t1Var.B3 = j10;
+                                            if (Build.VERSION.SDK_INT >= 24) {
+                                            }
+                                            accessibilityNodeInfo2.setEnabled(true);
+                                            collectionItemInfo = accessibilityNodeInfo2.getCollectionItemInfo();
+                                            if (collectionItemInfo != null) {
+                                            }
+                                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, LocaleController.getString("AccActionMessageOptions", R.string.AccActionMessageOptions)));
+                                            iconForCurrentState = t1Var.getIconForCurrentState();
+                                            if (iconForCurrentState != 0) {
+                                            }
+                                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, string2));
+                                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccActionEnterSelectionMode", R.string.AccActionEnterSelectionMode)));
+                                            miniIconForCurrentState = t1Var.getMiniIconForCurrentState();
+                                            if (miniIconForCurrentState == 2) {
+                                            }
+                                            z25 = t1Var.ua;
+                                            if (!z25) {
+                                            }
+                                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, LocaleController.getString("SummaryTitle", R.string.SummaryTitle)));
+                                            messageObject54 = t1Var.u7;
+                                            if (messageObject54.textLayoutBlocks != null) {
+                                            }
+                                            messageObject55 = t1Var.u7;
+                                            if (!messageObject55.isVoice()) {
+                                            }
+                                            mediaController = MediaController.getInstance();
+                                            messageObject56 = t1Var.u7;
+                                            if (mediaController.isPlayingMessage(messageObject56)) {
+                                            }
+                                            z26 = t1Var.H5;
+                                            if (z26) {
+                                            }
+                                            if (Build.VERSION.SDK_INT < 24) {
+                                            }
+                                            size = arrayList7.size();
+                                            int i6322 = 0;
+                                            i29 = 0;
+                                            while (i29 < size) {
+                                            }
+                                            z27 = t1Var.T6;
+                                            if (z27) {
+                                            }
+                                            size2 = arrayList6.size();
+                                            int i6422 = 0;
+                                            i30 = 0;
+                                            while (i30 < size2) {
+                                            }
+                                            z28 = t1Var.N2;
+                                            if (z28) {
+                                            }
+                                            z29 = t1Var.O2;
+                                            if (z29) {
+                                            }
+                                            staticLayout2 = t1Var.V8;
+                                            if (staticLayout2 != null) {
+                                            }
+                                            i31 = t1Var.qa;
+                                            if (i31 != 1) {
+                                            }
+                                            accessibilityNodeInfo2.addChild(t1Var, 498);
+                                            if (t1Var.y9 != null) {
+                                            }
+                                            messageObject57 = t1Var.u7;
+                                            if (messageObject57 != null) {
+                                            }
+                                            staticLayoutArr7 = t1Var.bb;
+                                            if (staticLayoutArr7[0] != null) {
+                                            }
+                                            z30 = t1Var.f1;
+                                            if (z30) {
+                                            }
+                                            accessibilityNodeInfo2.setSelected(true);
+                                            return accessibilityNodeInfo2;
+                                        }
+                                    }
+                                }
+                                accessibilityNodeInfo = obtain2;
+                                rectF4 = rectF9;
+                                arrayList6 = arrayList11;
+                                arrayList7 = arrayList12;
+                                z19 = t1Var.db;
+                                if (z19) {
+                                }
+                                if (t1Var.H1 != null) {
+                                }
+                                messageObject16 = t1Var.u7;
+                                if (messageObject16.richLayout != null) {
+                                }
+                                messageObject17 = t1Var.u7;
+                                if (!TextUtils.isEmpty(messageObject17.messageText)) {
+                                }
+                                if (t1Var.H1 != null) {
+                                }
+                                messageObject19 = t1Var.u7;
+                                if (messageObject19.isMusic()) {
+                                }
+                                poll3 = t1Var.K6;
+                                if (poll3 != null) {
+                                }
+                                if (t1Var.H1 != null) {
+                                }
+                                messageObject23 = t1Var.u7;
+                                if (messageObject23.isVoiceTranscriptionOpen()) {
+                                }
+                                messageObject27 = t1Var.u7;
+                                if (messageObject27.isOut()) {
+                                }
+                                if (t1Var.getRepliesCount() > 0) {
+                                }
+                                messageObject28 = t1Var.u7;
+                                if (messageObject28.messageOwner.reactions != null) {
+                                }
+                                messageObject29 = t1Var.u7;
+                                if ((messageObject29.messageOwner.flags & 1024) != 0) {
+                                }
+                                spannableStringBuilder.append((CharSequence) "\n");
+                                while (r5 < r2) {
+                                }
+                                t1Var.y3 = spannableStringBuilder;
+                                t1Var.z3 = z17;
+                                t1Var.A3 = z18;
+                                t1Var.B3 = j10;
+                                if (Build.VERSION.SDK_INT >= 24) {
+                                }
+                                accessibilityNodeInfo2.setEnabled(true);
+                                collectionItemInfo = accessibilityNodeInfo2.getCollectionItemInfo();
+                                if (collectionItemInfo != null) {
+                                }
+                                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, LocaleController.getString("AccActionMessageOptions", R.string.AccActionMessageOptions)));
+                                iconForCurrentState = t1Var.getIconForCurrentState();
+                                if (iconForCurrentState != 0) {
+                                }
+                                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, string2));
+                                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccActionEnterSelectionMode", R.string.AccActionEnterSelectionMode)));
+                                miniIconForCurrentState = t1Var.getMiniIconForCurrentState();
+                                if (miniIconForCurrentState == 2) {
+                                }
+                                z25 = t1Var.ua;
+                                if (!z25) {
+                                }
+                                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, LocaleController.getString("SummaryTitle", R.string.SummaryTitle)));
+                                messageObject54 = t1Var.u7;
+                                if (messageObject54.textLayoutBlocks != null) {
+                                }
+                                messageObject55 = t1Var.u7;
+                                if (!messageObject55.isVoice()) {
+                                }
+                                mediaController = MediaController.getInstance();
+                                messageObject56 = t1Var.u7;
+                                if (mediaController.isPlayingMessage(messageObject56)) {
+                                }
+                                z26 = t1Var.H5;
+                                if (z26) {
+                                }
+                                if (Build.VERSION.SDK_INT < 24) {
+                                }
+                                size = arrayList7.size();
+                                int i63222 = 0;
+                                i29 = 0;
+                                while (i29 < size) {
+                                }
+                                z27 = t1Var.T6;
+                                if (z27) {
+                                }
+                                size2 = arrayList6.size();
+                                int i64222 = 0;
+                                i30 = 0;
+                                while (i30 < size2) {
+                                }
+                                z28 = t1Var.N2;
+                                if (z28) {
+                                }
+                                z29 = t1Var.O2;
+                                if (z29) {
+                                }
+                                staticLayout2 = t1Var.V8;
+                                if (staticLayout2 != null) {
+                                }
+                                i31 = t1Var.qa;
+                                if (i31 != 1) {
+                                }
+                                accessibilityNodeInfo2.addChild(t1Var, 498);
+                                if (t1Var.y9 != null) {
+                                }
+                                messageObject57 = t1Var.u7;
+                                if (messageObject57 != null) {
+                                }
+                                staticLayoutArr7 = t1Var.bb;
+                                if (staticLayoutArr7[0] != null) {
+                                }
+                                z30 = t1Var.f1;
+                                if (z30) {
+                                }
+                                accessibilityNodeInfo2.setSelected(true);
+                                return accessibilityNodeInfo2;
+                            }
+                        }
+                        z18 = false;
+                        messageObject15 = t1Var.u7;
+                        if (messageObject15 != null) {
+                        }
+                        if (t1Var.y3 != null) {
+                        }
+                        SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder();
+                        if (t1Var.J7) {
+                        }
+                        accessibilityNodeInfo = obtain2;
+                        rectF4 = rectF9;
+                        arrayList6 = arrayList11;
+                        arrayList7 = arrayList12;
+                        z19 = t1Var.db;
+                        if (z19) {
+                        }
+                        if (t1Var.H1 != null) {
+                        }
+                        messageObject16 = t1Var.u7;
+                        if (messageObject16.richLayout != null) {
+                        }
+                        messageObject17 = t1Var.u7;
+                        if (!TextUtils.isEmpty(messageObject17.messageText)) {
+                        }
+                        if (t1Var.H1 != null) {
+                        }
+                        messageObject19 = t1Var.u7;
+                        if (messageObject19.isMusic()) {
+                        }
+                        poll3 = t1Var.K6;
+                        if (poll3 != null) {
+                        }
+                        if (t1Var.H1 != null) {
+                        }
+                        messageObject23 = t1Var.u7;
+                        if (messageObject23.isVoiceTranscriptionOpen()) {
+                        }
+                        messageObject27 = t1Var.u7;
+                        if (messageObject27.isOut()) {
+                        }
+                        if (t1Var.getRepliesCount() > 0) {
+                        }
+                        messageObject28 = t1Var.u7;
+                        if (messageObject28.messageOwner.reactions != null) {
+                        }
+                        messageObject29 = t1Var.u7;
+                        if ((messageObject29.messageOwner.flags & 1024) != 0) {
+                        }
+                        spannableStringBuilder4.append((CharSequence) "\n");
+                        while (r5 < r2) {
+                        }
+                        t1Var.y3 = spannableStringBuilder4;
+                        t1Var.z3 = z17;
+                        t1Var.A3 = z18;
+                        t1Var.B3 = j10;
+                        if (Build.VERSION.SDK_INT >= 24) {
+                        }
+                        accessibilityNodeInfo2.setEnabled(true);
+                        collectionItemInfo = accessibilityNodeInfo2.getCollectionItemInfo();
+                        if (collectionItemInfo != null) {
+                        }
+                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, LocaleController.getString("AccActionMessageOptions", R.string.AccActionMessageOptions)));
+                        iconForCurrentState = t1Var.getIconForCurrentState();
+                        if (iconForCurrentState != 0) {
+                        }
+                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, string2));
+                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccActionEnterSelectionMode", R.string.AccActionEnterSelectionMode)));
+                        miniIconForCurrentState = t1Var.getMiniIconForCurrentState();
+                        if (miniIconForCurrentState == 2) {
+                        }
+                        z25 = t1Var.ua;
+                        if (!z25) {
+                        }
+                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, LocaleController.getString("SummaryTitle", R.string.SummaryTitle)));
+                        messageObject54 = t1Var.u7;
+                        if (messageObject54.textLayoutBlocks != null) {
+                        }
+                        messageObject55 = t1Var.u7;
+                        if (!messageObject55.isVoice()) {
+                        }
+                        mediaController = MediaController.getInstance();
+                        messageObject56 = t1Var.u7;
+                        if (mediaController.isPlayingMessage(messageObject56)) {
+                        }
+                        z26 = t1Var.H5;
+                        if (z26) {
+                        }
+                        if (Build.VERSION.SDK_INT < 24) {
+                        }
+                        size = arrayList7.size();
+                        int i632222 = 0;
+                        i29 = 0;
+                        while (i29 < size) {
+                        }
+                        z27 = t1Var.T6;
+                        if (z27) {
+                        }
+                        size2 = arrayList6.size();
+                        int i642222 = 0;
+                        i30 = 0;
+                        while (i30 < size2) {
+                        }
+                        z28 = t1Var.N2;
+                        if (z28) {
+                        }
+                        z29 = t1Var.O2;
+                        if (z29) {
+                        }
+                        staticLayout2 = t1Var.V8;
+                        if (staticLayout2 != null) {
+                        }
+                        i31 = t1Var.qa;
+                        if (i31 != 1) {
+                        }
+                        accessibilityNodeInfo2.addChild(t1Var, 498);
+                        if (t1Var.y9 != null) {
+                        }
+                        messageObject57 = t1Var.u7;
+                        if (messageObject57 != null) {
+                        }
+                        staticLayoutArr7 = t1Var.bb;
+                        if (staticLayoutArr7[0] != null) {
+                        }
+                        z30 = t1Var.f1;
+                        if (z30) {
+                        }
+                        accessibilityNodeInfo2.setSelected(true);
+                        return accessibilityNodeInfo2;
+                    }
+                }
+            }
         }
+        z17 = false;
+        messageObject14 = t1Var.u7;
+        if (messageObject14 != null) {
+        }
+        z18 = false;
+        messageObject15 = t1Var.u7;
+        if (messageObject15 != null) {
+        }
+        if (t1Var.y3 != null) {
+        }
+        SpannableStringBuilder spannableStringBuilder42 = new SpannableStringBuilder();
+        if (t1Var.J7) {
+        }
+        accessibilityNodeInfo = obtain2;
+        rectF4 = rectF9;
+        arrayList6 = arrayList11;
+        arrayList7 = arrayList12;
+        z19 = t1Var.db;
+        if (z19) {
+        }
+        if (t1Var.H1 != null) {
+        }
+        messageObject16 = t1Var.u7;
+        if (messageObject16.richLayout != null) {
+        }
+        messageObject17 = t1Var.u7;
+        if (!TextUtils.isEmpty(messageObject17.messageText)) {
+        }
+        if (t1Var.H1 != null) {
+        }
+        messageObject19 = t1Var.u7;
+        if (messageObject19.isMusic()) {
+        }
+        poll3 = t1Var.K6;
+        if (poll3 != null) {
+        }
+        if (t1Var.H1 != null) {
+        }
+        messageObject23 = t1Var.u7;
+        if (messageObject23.isVoiceTranscriptionOpen()) {
+        }
+        messageObject27 = t1Var.u7;
+        if (messageObject27.isOut()) {
+        }
+        if (t1Var.getRepliesCount() > 0) {
+        }
+        messageObject28 = t1Var.u7;
+        if (messageObject28.messageOwner.reactions != null) {
+        }
+        messageObject29 = t1Var.u7;
+        if ((messageObject29.messageOwner.flags & 1024) != 0) {
+        }
+        spannableStringBuilder42.append((CharSequence) "\n");
+        while (r5 < r2) {
+        }
+        t1Var.y3 = spannableStringBuilder42;
+        t1Var.z3 = z17;
+        t1Var.A3 = z18;
+        t1Var.B3 = j10;
+        if (Build.VERSION.SDK_INT >= 24) {
+        }
+        accessibilityNodeInfo2.setEnabled(true);
+        collectionItemInfo = accessibilityNodeInfo2.getCollectionItemInfo();
+        if (collectionItemInfo != null) {
+        }
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, LocaleController.getString("AccActionMessageOptions", R.string.AccActionMessageOptions)));
+        iconForCurrentState = t1Var.getIconForCurrentState();
+        if (iconForCurrentState != 0) {
+        }
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, string2));
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccActionEnterSelectionMode", R.string.AccActionEnterSelectionMode)));
+        miniIconForCurrentState = t1Var.getMiniIconForCurrentState();
+        if (miniIconForCurrentState == 2) {
+        }
+        z25 = t1Var.ua;
+        if (!z25) {
+        }
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, LocaleController.getString("SummaryTitle", R.string.SummaryTitle)));
+        messageObject54 = t1Var.u7;
+        if (messageObject54.textLayoutBlocks != null) {
+        }
+        messageObject55 = t1Var.u7;
+        if (!messageObject55.isVoice()) {
+        }
+        mediaController = MediaController.getInstance();
+        messageObject56 = t1Var.u7;
+        if (mediaController.isPlayingMessage(messageObject56)) {
+        }
+        z26 = t1Var.H5;
+        if (z26) {
+        }
+        if (Build.VERSION.SDK_INT < 24) {
+        }
+        size = arrayList7.size();
+        int i6322222 = 0;
+        i29 = 0;
+        while (i29 < size) {
+        }
+        z27 = t1Var.T6;
+        if (z27) {
+        }
+        size2 = arrayList6.size();
+        int i6422222 = 0;
+        i30 = 0;
+        while (i30 < size2) {
+        }
+        z28 = t1Var.N2;
+        if (z28) {
+        }
+        z29 = t1Var.O2;
+        if (z29) {
+        }
+        staticLayout2 = t1Var.V8;
+        if (staticLayout2 != null) {
+        }
+        i31 = t1Var.qa;
+        if (i31 != 1) {
+        }
+        accessibilityNodeInfo2.addChild(t1Var, 498);
+        if (t1Var.y9 != null) {
+        }
+        messageObject57 = t1Var.u7;
+        if (messageObject57 != null) {
+        }
+        staticLayoutArr7 = t1Var.bb;
+        if (staticLayoutArr7[0] != null) {
+        }
+        z30 = t1Var.f1;
+        if (z30) {
+        }
+        accessibilityNodeInfo2.setSelected(true);
+        return accessibilityNodeInfo2;
+    }
+
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public final boolean performAction(int i9, int i10, Bundle bundle) {
+        k1 k1Var;
+        i1 i1Var;
+        TLRPC.Message message;
+        TLRPC.MessageReplyHeader messageReplyHeader;
+        t1 t1Var = this.d;
+        ArrayList arrayList = t1Var.U5;
+        ArrayList arrayList2 = t1Var.k7;
+        if (i9 == -1) {
+            t1Var.performAccessibilityAction(i10, bundle);
+            return true;
+        }
+        if (i10 == 64) {
+            t1Var.I3(i9, 32768, null);
+            return true;
+        }
+        if (i10 == 16) {
+            if (i9 == 5000) {
+                k1 k1Var2 = t1Var.Fc;
+                if (k1Var2 != null) {
+                    k1Var2.u0(t1Var, t1Var.Ub, 0.0f, 0.0f);
+                    return true;
+                }
+            } else if (i9 >= 6000) {
+                int[] iArr = {0};
+                RichMessageLayout.RichBlock b10 = b(i9, iArr);
+                if (b10 != null && b10.onAccessibilityElementClick(iArr[0], t1Var)) {
+                    t1Var.I3(i9, 1, null);
+                    AndroidUtilities.makeAccessibilityAnnouncement(b10.getAccessibilityElementStateDescription(iArr[0]));
+                    return true;
+                }
+            } else if (i9 >= 3000) {
+                ClickableSpan a2 = a(i9, true);
+                if (a2 != null) {
+                    t1Var.Fc.R0(t1Var, a2, false);
+                    t1Var.I3(i9, 1, null);
+                    return true;
+                }
+            } else {
+                if (i9 < 2000) {
+                    if (i9 >= 1000) {
+                        int i11 = i9 - 1000;
+                        if (i11 < arrayList2.size()) {
+                            e0 e0Var = (e0) arrayList2.get(i11);
+                            k1 k1Var3 = t1Var.Fc;
+                            if (k1Var3 != null && !e0Var.m) {
+                                BotInlineKeyboard.ButtonCustom buttonCustom = e0Var.j;
+                                if (buttonCustom != null) {
+                                    k1Var3.M(t1Var, buttonCustom);
+                                } else {
+                                    TL_keyboard.KeyboardInlineButton keyboardInlineButton = e0Var.i;
+                                    if (keyboardInlineButton != null) {
+                                        k1Var3.e1(t1Var, keyboardInlineButton);
+                                    }
+                                }
+                            }
+                            t1Var.I3(i9, 1, null);
+                            return true;
+                        }
+                    } else if (i9 >= 500) {
+                        int i12 = i9 - 500;
+                        if (i12 < arrayList.size()) {
+                            r1 r1Var = (r1) arrayList.get(i12);
+                            if (t1Var.Fc != null) {
+                                ArrayList arrayList3 = new ArrayList();
+                                arrayList3.add(r1Var.s);
+                                t1Var.Fc.l(t1Var, arrayList3, -1, 0, 0);
+                            }
+                            t1Var.I3(i9, 1, null);
+                            return true;
+                        }
+                    } else {
+                        if (i9 == 495) {
+                            t1Var.x1();
+                            return true;
+                        }
+                        if (i9 == 499) {
+                            k1 k1Var4 = t1Var.Fc;
+                            if (k1Var4 != null) {
+                                k1Var4.O0(t1Var.X2, t1Var);
+                                return true;
+                            }
+                        } else if (i9 == 492) {
+                            k1 k1Var5 = t1Var.Fc;
+                            if (k1Var5 != null) {
+                                k1Var5.O0(5, t1Var);
+                                return true;
+                            }
+                        } else if (i9 == 491) {
+                            k1 k1Var6 = t1Var.Fc;
+                            if (k1Var6 != null) {
+                                k1Var6.O0(5, t1Var);
+                                return true;
+                            }
+                        } else if (i9 == 490) {
+                            k1 k1Var7 = t1Var.Fc;
+                            if (k1Var7 != null) {
+                                k1Var7.O0(31, t1Var);
+                                return true;
+                            }
+                        } else if (i9 == 489) {
+                            k1 k1Var8 = t1Var.Fc;
+                            if (k1Var8 != null) {
+                                k1Var8.O0(30, t1Var);
+                                return true;
+                            }
+                        } else if (i9 == 498) {
+                            k1 k1Var9 = t1Var.Fc;
+                            if (k1Var9 != null) {
+                                k1Var9.v(t1Var);
+                                return true;
+                            }
+                        } else if (i9 == 497) {
+                            if (t1Var.Fc != null && ((!t1Var.S7 || t1Var.Q7 || t1Var.u7.getReplyTopMsgId() != 0) && (t1Var.u7.hasValidReplyMessageObject() || t1Var.u9 || ((message = t1Var.u7.messageOwner) != null && (messageReplyHeader = message.reply_to) != null && messageReplyHeader.reply_from != null)))) {
+                                t1Var.Fc.S1(t1Var, t1Var.u7.getReplyMsgId(), 0.0f, 0.0f, false);
+                                return true;
+                            }
+                        } else if (i9 == 494) {
+                            k1 k1Var10 = t1Var.Fc;
+                            if (k1Var10 != null) {
+                                TLRPC.Chat chat = t1Var.fc;
+                                if (chat != null) {
+                                    k1Var10.Z(t1Var, chat, t1Var.u7.messageOwner.fwd_from.channel_post, t1Var.c1, t1Var.d1, false);
+                                    return true;
+                                }
+                                TLRPC.User user = t1Var.dc;
+                                if (user != null) {
+                                    k1Var10.u0(t1Var, user, t1Var.c1, t1Var.d1);
+                                    return true;
+                                }
+                                if (t1Var.gc != null) {
+                                    k1Var10.r(t1Var);
+                                    return true;
+                                }
+                            }
+                        } else if (i9 == 496) {
+                            k1 k1Var11 = t1Var.Fc;
+                            if (k1Var11 != null) {
+                                if (t1Var.Y7) {
+                                    k1Var11.v(t1Var);
+                                    return true;
+                                }
+                                k1Var11.z(t1Var);
+                                return true;
+                            }
+                        } else if (i9 == 493 && (i1Var = t1Var.I5) != null) {
+                            i1Var.m();
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                ClickableSpan a3 = a(i9, false);
+                if (a3 != null) {
+                    t1Var.Fc.R0(t1Var, a3, false);
+                    t1Var.I3(i9, 1, null);
+                    return true;
+                }
+            }
+        } else if (i10 == 32) {
+            ClickableSpan a10 = a(i9, i9 >= 3000);
+            if (a10 != null && (k1Var = t1Var.Fc) != null) {
+                k1Var.R0(t1Var, a10, true);
+                t1Var.I3(i9, 2, null);
+            }
+        }
+        return true;
     }
 }

@@ -1,50 +1,19 @@
 package oa;
 
-import ma.u;
+import java.util.Date;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class e extends u {
-    public volatile u a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ ma.g d;
-    public final /* synthetic */ ta.a e;
-    public final /* synthetic */ f f;
-
-    public e(f fVar, boolean z10, boolean z11, ma.g gVar, ta.a aVar) {
-        this.f = fVar;
-        this.b = z10;
-        this.c = z11;
-        this.d = gVar;
-        this.e = aVar;
+public class e implements la.v {
+    @Override // la.v
+    public final la.u create(la.g gVar, sa.a aVar) {
+        if (aVar.a == Date.class) {
+            return new h(g.a);
+        }
+        return null;
     }
 
-    @Override // ma.u
-    public final Object read(ua.a aVar) {
-        if (this.b) {
-            aVar.C();
-            return null;
-        }
-        u uVar = this.a;
-        if (uVar == null) {
-            uVar = this.d.c(this.f, this.e);
-            this.a = uVar;
-        }
-        return uVar.read(aVar);
-    }
-
-    @Override // ma.u
-    public final void write(ua.b bVar, Object obj) {
-        if (this.c) {
-            bVar.i();
-            return;
-        }
-        u uVar = this.a;
-        if (uVar == null) {
-            uVar = this.d.c(this.f, this.e);
-            this.a = uVar;
-        }
-        uVar.write(bVar, obj);
+    public final String toString() {
+        return "DefaultDateTypeAdapter#DEFAULT_STYLE_FACTORY";
     }
 }

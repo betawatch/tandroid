@@ -2,7 +2,7 @@ package w2;
 
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class p {
     public final i a;
@@ -25,16 +25,16 @@ public final class p {
             throw new NullPointerException("Null transformer");
         }
         q qVar = this.e;
-        b3.b bVar = qVar.c;
+        b3.c cVar = qVar.c;
         i b10 = this.a.b(aVar.c);
         com.google.firebase.messaging.m mVar = new com.google.firebase.messaging.m();
         mVar.f = new HashMap();
-        mVar.d = Long.valueOf(qVar.a.E());
-        mVar.e = Long.valueOf(qVar.b.E());
+        mVar.d = Long.valueOf(qVar.a.d());
+        mVar.e = Long.valueOf(qVar.b.d());
         mVar.a = this.b;
         mVar.c = new l(this.c, (byte[]) eVar.apply(aVar.b));
         mVar.b = aVar.a;
-        b3.a aVar2 = (b3.a) bVar;
-        aVar2.b.execute(new androidx.car.app.utils.b(aVar2, b10, gVar, mVar.i(), 1));
+        b3.a aVar2 = (b3.a) cVar;
+        aVar2.b.execute(new androidx.car.app.utils.c(aVar2, b10, gVar, mVar.i(), 1));
     }
 }

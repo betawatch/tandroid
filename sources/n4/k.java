@@ -3,9 +3,9 @@ package n4;
 import h3.t0;
 import java.util.ArrayList;
 import java.util.List;
-import p8.z;
+import o8.z;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class k extends m implements m4.h {
     public final n n;
@@ -16,22 +16,7 @@ public final class k extends m implements m4.h {
     }
 
     @Override // m4.h
-    public final boolean B() {
-        return this.n.i();
-    }
-
-    @Override // m4.h
-    public final long E() {
-        return this.n.d;
-    }
-
-    @Override // m4.h
-    public final long F(long j10) {
-        return this.n.d(j10);
-    }
-
-    @Override // m4.h
-    public final long G(long j10, long j11) {
+    public final long C(long j10, long j11) {
         return this.n.b(j10, j11);
     }
 
@@ -51,17 +36,17 @@ public final class k extends m implements m4.h {
     }
 
     @Override // m4.h
-    public final long l(long j10, long j11) {
+    public final long f(long j10, long j11) {
         return this.n.e(j10, j11);
     }
 
     @Override // m4.h
-    public final long r(long j10, long j11) {
+    public final long i(long j10, long j11) {
         return this.n.c(j10, j11);
     }
 
     @Override // m4.h
-    public final long s(long j10, long j11) {
+    public final long j(long j10, long j11) {
         n nVar = this.n;
         if (nVar.f != null) {
             return -9223372036854775807L;
@@ -71,13 +56,28 @@ public final class k extends m implements m4.h {
     }
 
     @Override // m4.h
-    public final j w(long j10) {
+    public final j l(long j10) {
         return this.n.h(this, j10);
     }
 
     @Override // m4.h
-    public final long y(long j10, long j11) {
+    public final long q(long j10, long j11) {
         return this.n.f(j10, j11);
+    }
+
+    @Override // m4.h
+    public final boolean v() {
+        return this.n.i();
+    }
+
+    @Override // m4.h
+    public final long x() {
+        return this.n.d;
+    }
+
+    @Override // m4.h
+    public final long z(long j10) {
+        return this.n.d(j10);
     }
 
     @Override // n4.m

@@ -1,17 +1,17 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class ScaleAtom extends Atom {
     protected Atom base;
     private double xscl;
     private double yscl;
 
-    public ScaleAtom(Atom atom, double d, double d10) {
+    public ScaleAtom(Atom atom, double d, double d9) {
         this.type = atom.type;
         this.base = atom;
         this.xscl = d;
-        this.yscl = d10;
+        this.yscl = d9;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom

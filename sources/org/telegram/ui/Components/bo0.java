@@ -1,27 +1,43 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class bo0 extends f2.b1 {
-    public final /* synthetic */ re a;
+public final class bo0 extends FrameLayout {
+    public final /* synthetic */ ve a;
 
-    public bo0(re reVar) {
-        this.a = reVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bo0(ve veVar, Context context) {
+        super(context);
+        this.a = veVar;
     }
 
-    @Override // f2.b1
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        re reVar = this.a;
-        View view = reVar.u;
-        boolean z10 = reVar.w.I0() != 0;
-        Boolean bool = reVar.x;
-        if (bool == null || z10 != bool.booleanValue()) {
-            view.animate().cancel();
-            view.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(150L).start();
-            reVar.x = Boolean.valueOf(z10);
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ve veVar = this.a;
+        View contentView = veVar.getContentView();
+        int[] iArr = new int[2];
+        contentView.getLocationInWindow(iArr);
+        iArr[0] = iArr[0] + veVar.E;
+        iArr[1] = iArr[1] + veVar.F;
+        getLocationInWindow(new int[2]);
+        if (motionEvent.getAction() != 0 || motionEvent.getX() > iArr[0]) {
+            if (motionEvent.getX() < contentView.getWidth() + iArr[0] && motionEvent.getY() > iArr[1]) {
+                if (motionEvent.getY() < contentView.getHeight() + iArr[1]) {
+                    motionEvent.offsetLocation(r2[0] - iArr[0], (AndroidUtilities.statusBarHeight + r2[1]) - iArr[1]);
+                    return contentView.dispatchTouchEvent(motionEvent);
+                }
+            }
         }
+        if (!veVar.A && !veVar.D) {
+            veVar.D = true;
+            veVar.l(new o1.j[0]);
+        }
+        return true;
     }
 }

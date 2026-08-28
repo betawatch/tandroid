@@ -34,9 +34,9 @@ public final class z7 extends x6 {
             if (j10 >= t6Var.count()) {
                 throw new IndexOutOfBoundsException(Long.toString(j10));
             }
-            for (int i10 = 0; i10 <= t6Var.c; i10++) {
-                long j11 = t6Var.d[i10];
-                Object[] objArr = t6Var.f[i10];
+            for (int i9 = 0; i9 <= t6Var.c; i9++) {
+                long j11 = t6Var.d[i9];
+                Object[] objArr = t6Var.f[i9];
                 if (j10 < objArr.length + j11) {
                     obj = objArr[(int) (j10 - j11)];
                 }

@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzot {
     public static Object zza(Object obj, String str) {
@@ -17,8 +17,8 @@ public final class zzot {
         if (!zzc(str.charAt(0))) {
             throw new IllegalArgumentException("identifier must start with an ASCII letter: ".concat(str));
         }
-        for (int i10 = 1; i10 < str.length(); i10++) {
-            char charAt = str.charAt(i10);
+        for (int i9 = 1; i9 < str.length(); i9++) {
+            char charAt = str.charAt(i9);
             if (!zzc(charAt) && ((charAt < '0' || charAt > '9') && charAt != '_')) {
                 throw new IllegalArgumentException("identifier must contain only ASCII letters, digits or underscore: ".concat(str));
             }

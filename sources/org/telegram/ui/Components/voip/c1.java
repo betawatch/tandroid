@@ -2,7 +2,7 @@ package org.telegram.ui.Components.voip;
 
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class c1 implements RendererCommon.RendererEvents {
     public final /* synthetic */ g1 a;
@@ -14,14 +14,14 @@ public final class c1 implements RendererCommon.RendererEvents {
     @Override // org.webrtc.RendererCommon.RendererEvents
     public final void onFirstFrameRendered() {
         g1 g1Var = this.a;
-        bf.e eVar = g1Var.U;
-        if (eVar != null) {
-            eVar.run();
+        af.f fVar = g1Var.U;
+        if (fVar != null) {
+            fVar.run();
             g1Var.U = null;
         }
     }
 
     @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
+    public final void onFrameResolutionChanged(int i9, int i10, int i11) {
     }
 }

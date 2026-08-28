@@ -4,15 +4,15 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class t3 implements TextWatcher {
     public boolean a;
     public final /* synthetic */ int b;
     public final /* synthetic */ EditTextBoldCursor c;
 
-    public t3(int i10, EditTextBoldCursor editTextBoldCursor) {
-        this.b = i10;
+    public t3(int i9, EditTextBoldCursor editTextBoldCursor) {
+        this.b = i9;
         this.c = editTextBoldCursor;
     }
 
@@ -22,10 +22,10 @@ public final class t3 implements TextWatcher {
             return;
         }
         int length = editable.length();
-        int i10 = this.b;
-        if (length > i10) {
+        int i9 = this.b;
+        if (length > i9) {
             this.a = true;
-            editable.delete(i10, editable.length());
+            editable.delete(i9, editable.length());
             EditTextBoldCursor editTextBoldCursor = this.c;
             AndroidUtilities.shakeView(editTextBoldCursor);
             try {
@@ -37,10 +37,10 @@ public final class t3 implements TextWatcher {
     }
 
     @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    public final void beforeTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
     }
 
     @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    public final void onTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
     }
 }

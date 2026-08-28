@@ -2,13 +2,14 @@ package u3;
 
 import android.util.Pair;
 import android.util.SparseArray;
+import d5.e0;
 import d5.f0;
-import d5.g0;
-import d5.z;
+import d5.y;
 import h3.s0;
 import h3.t0;
 import h3.t1;
 import j$.util.DesugarCollections;
+import j3.r0;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,7 +20,7 @@ import m3.w;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i implements m3.k {
     public static final byte[] H = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
@@ -31,23 +32,23 @@ public final class i implements m3.k {
     public final int a;
     public final List b;
     public final byte[] g;
-    public final z h;
-    public final f0 i;
+    public final y h;
+    public final e0 i;
     public final w n;
     public int o;
     public int p;
     public long q;
     public int r;
-    public z s;
+    public y s;
     public long t;
     public int u;
     public h y;
     public int z;
-    public final xe.b j = new xe.b(7, (byte) 0);
-    public final z k = new z(16);
-    public final z d = new z(d5.a.d);
-    public final z e = new z(5);
-    public final z f = new z();
+    public final we.b j = new we.b(6, (byte) 0);
+    public final y k = new y(16);
+    public final y d = new y(d5.a.d);
+    public final y e = new y(5);
+    public final y f = new y();
     public final ArrayDeque l = new ArrayDeque();
     public final ArrayDeque m = new ArrayDeque();
     public final SparseArray c = new SparseArray();
@@ -64,67 +65,67 @@ public final class i implements m3.k {
         I = new t0(s0Var);
     }
 
-    public i(int i10, f0 f0Var, List list, m4.n nVar) {
-        this.a = i10;
-        this.i = f0Var;
+    public i(int i9, e0 e0Var, List list, m4.n nVar) {
+        this.a = i9;
+        this.i = e0Var;
         this.b = DesugarCollections.unmodifiableList(list);
         this.n = nVar;
         byte[] bArr = new byte[16];
         this.g = bArr;
-        this.h = new z(bArr);
+        this.h = new y(bArr);
     }
 
-    public static l3.d a(List list) {
+    public static l3.c a(List list) {
         int size = list.size();
         ArrayList arrayList = null;
-        for (int i10 = 0; i10 < size; i10++) {
-            b bVar = (b) list.get(i10);
+        for (int i9 = 0; i9 < size; i9++) {
+            b bVar = (b) list.get(i9);
             if (bVar.b == 1886614376) {
                 if (arrayList == null) {
                     arrayList = new ArrayList();
                 }
                 byte[] bArr = bVar.c.a;
-                n1.d e9 = j.e(bArr);
-                UUID uuid = e9 == null ? null : (UUID) e9.b;
+                n5.e0 e10 = j.e(bArr);
+                UUID uuid = e10 == null ? null : (UUID) e10.b;
                 if (uuid == null) {
                     d5.a.K("FragmentedMp4Extractor", "Skipped pssh atom (failed to extract uuid)");
                 } else {
-                    arrayList.add(new l3.c(uuid, null, "video/mp4", bArr));
+                    arrayList.add(new l3.b(uuid, null, "video/mp4", bArr));
                 }
             }
         }
         if (arrayList == null) {
             return null;
         }
-        return new l3.d(null, false, (l3.c[]) arrayList.toArray(new l3.c[0]));
+        return new l3.c(null, false, (l3.b[]) arrayList.toArray(new l3.b[0]));
     }
 
-    public static void d(z zVar, int i10, r rVar) {
-        zVar.C(i10 + 8);
-        int e9 = zVar.e();
-        if ((e9 & 1) != 0) {
+    public static void d(y yVar, int i9, q qVar) {
+        yVar.C(i9 + 8);
+        int e10 = yVar.e();
+        if ((e10 & 1) != 0) {
             throw t1.c("Overriding TrackEncryptionBox parameters is unsupported.");
         }
-        boolean z10 = (e9 & 2) != 0;
-        int u10 = zVar.u();
+        boolean z10 = (e10 & 2) != 0;
+        int u10 = yVar.u();
         if (u10 == 0) {
-            Arrays.fill(rVar.l, 0, rVar.e, false);
+            Arrays.fill(qVar.l, 0, qVar.e, false);
             return;
         }
-        int i11 = rVar.e;
-        z zVar2 = rVar.n;
-        if (u10 != i11) {
-            StringBuilder o10 = i0.a.o(u10, "Senc sample count ", " is different from fragment sample count");
-            o10.append(rVar.e);
-            throw t1.a(o10.toString(), null);
+        int i10 = qVar.e;
+        y yVar2 = qVar.n;
+        if (u10 != i10) {
+            StringBuilder p6 = r0.p(u10, "Senc sample count ", " is different from fragment sample count");
+            p6.append(qVar.e);
+            throw t1.a(p6.toString(), null);
         }
-        Arrays.fill(rVar.l, 0, u10, z10);
-        zVar2.z(zVar.a());
-        rVar.k = true;
-        rVar.o = true;
-        zVar.c(0, zVar2.c, zVar2.a);
-        zVar2.C(0);
-        rVar.o = false;
+        Arrays.fill(qVar.l, 0, u10, z10);
+        yVar2.z(yVar.a());
+        qVar.k = true;
+        qVar.o = true;
+        yVar.c(0, yVar2.c, yVar2.a);
+        yVar2.C(0);
+        qVar.o = false;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:100:0x0129, code lost:
@@ -134,7 +135,7 @@ public final class i implements m3.k {
     /* JADX WARN: Code restructure failed: missing block: B:101:0x012b, code lost:
     
         r33.z = r4 - 8;
-        ((m3.h) r34).t(8);
+        ((m3.h) r34).u(8);
      */
     /* JADX WARN: Code restructure failed: missing block: B:103:0x0145, code lost:
     
@@ -316,7 +317,7 @@ public final class i implements m3.k {
         r5 = d5.a.J(r12.c, r12.a);
         r12.C("video/hevc".equals(r6.B) ? 1 : 0);
         r12.B(r5);
-        h7.p.a(r13, r12, r33.F);
+        g7.p.a(r13, r12, r33.F);
      */
     /* JADX WARN: Code restructure failed: missing block: B:145:0x0273, code lost:
     
@@ -491,7 +492,7 @@ public final class i implements m3.k {
      */
     /* JADX WARN: Code restructure failed: missing block: B:84:0x00ec, code lost:
     
-        ((m3.h) r34).t(r4);
+        ((m3.h) r34).u(r4);
         r1 = r2.a();
      */
     /* JADX WARN: Code restructure failed: missing block: B:85:0x00f5, code lost:
@@ -560,15 +561,15 @@ public final class i implements m3.k {
         char c10;
         loop0: while (true) {
             while (true) {
-                int i10 = this.o;
+                int i9 = this.o;
                 ArrayDeque arrayDeque = this.l;
                 SparseArray sparseArray = this.c;
-                if (i10 != 0) {
+                if (i9 != 0) {
                     ArrayDeque arrayDeque2 = this.m;
-                    f0 f0Var = this.i;
-                    if (i10 != 1) {
+                    e0 e0Var = this.i;
+                    if (i9 != 1) {
                         long j12 = Long.MAX_VALUE;
-                        if (i10 != 2) {
+                        if (i9 != 2) {
                             h hVar = this.y;
                             if (hVar != null) {
                                 c10 = 2;
@@ -577,12 +578,12 @@ public final class i implements m3.k {
                             int size = sparseArray.size();
                             long j13 = Long.MAX_VALUE;
                             h hVar2 = null;
-                            for (int i11 = 0; i11 < size; i11++) {
-                                h hVar3 = (h) sparseArray.valueAt(i11);
+                            for (int i10 = 0; i10 < size; i10++) {
+                                h hVar3 = (h) sparseArray.valueAt(i10);
                                 boolean z10 = hVar3.l;
-                                r rVar = hVar3.b;
-                                if ((z10 || hVar3.f != hVar3.d.b) && (!z10 || hVar3.h != rVar.d)) {
-                                    long j14 = !z10 ? hVar3.d.c[hVar3.f] : rVar.f[hVar3.h];
+                                q qVar = hVar3.b;
+                                if ((z10 || hVar3.f != hVar3.d.b) && (!z10 || hVar3.h != qVar.d)) {
+                                    long j14 = !z10 ? hVar3.d.c[hVar3.f] : qVar.f[hVar3.h];
                                     if (j14 < j13) {
                                         hVar2 = hVar3;
                                         j13 = j14;
@@ -591,32 +592,32 @@ public final class i implements m3.k {
                             }
                             c10 = 2;
                             if (hVar2 == null) {
-                                int i12 = (int) (this.t - ((m3.h) lVar).d);
-                                if (i12 < 0) {
+                                int i11 = (int) (this.t - ((m3.h) lVar).d);
+                                if (i11 < 0) {
                                     throw t1.a("Offset to end of mdat was negative.", null);
                                 }
-                                ((m3.h) lVar).t(i12);
+                                ((m3.h) lVar).u(i11);
                                 this.o = 0;
                                 this.r = 0;
                             } else {
-                                int i13 = (int) ((!hVar2.l ? hVar2.d.c[hVar2.f] : hVar2.b.f[hVar2.h]) - ((m3.h) lVar).d);
-                                if (i13 < 0) {
+                                int i12 = (int) ((!hVar2.l ? hVar2.d.c[hVar2.f] : hVar2.b.f[hVar2.h]) - ((m3.h) lVar).d);
+                                if (i12 < 0) {
                                     d5.a.K("FragmentedMp4Extractor", "Ignoring negative offset to sample data.");
-                                    i13 = 0;
+                                    i12 = 0;
                                 }
-                                ((m3.h) lVar).t(i13);
+                                ((m3.h) lVar).u(i12);
                                 this.y = hVar2;
                                 hVar = hVar2;
                             }
                         } else {
                             int size2 = sparseArray.size();
                             h hVar4 = null;
-                            for (int i14 = 0; i14 < size2; i14++) {
-                                r rVar2 = ((h) sparseArray.valueAt(i14)).b;
-                                if (rVar2.o) {
-                                    long j15 = rVar2.c;
+                            for (int i13 = 0; i13 < size2; i13++) {
+                                q qVar2 = ((h) sparseArray.valueAt(i13)).b;
+                                if (qVar2.o) {
+                                    long j15 = qVar2.c;
                                     if (j15 < j12) {
-                                        hVar4 = (h) sparseArray.valueAt(i14);
+                                        hVar4 = (h) sparseArray.valueAt(i13);
                                         j12 = j15;
                                     }
                                 }
@@ -624,106 +625,106 @@ public final class i implements m3.k {
                             if (hVar4 == null) {
                                 this.o = 3;
                             } else {
-                                int i15 = (int) (j12 - ((m3.h) lVar).d);
-                                if (i15 < 0) {
+                                int i14 = (int) (j12 - ((m3.h) lVar).d);
+                                if (i14 < 0) {
                                     throw t1.a("Offset to encryption data was negative.", null);
                                 }
                                 m3.h hVar5 = (m3.h) lVar;
-                                hVar5.t(i15);
-                                r rVar3 = hVar4.b;
-                                z zVar = rVar3.n;
-                                hVar5.d(zVar.a, 0, zVar.c, false);
-                                zVar.C(0);
-                                rVar3.o = false;
+                                hVar5.u(i14);
+                                q qVar3 = hVar4.b;
+                                y yVar = qVar3.n;
+                                hVar5.d(yVar.a, 0, yVar.c, false);
+                                yVar.C(0);
+                                qVar3.o = false;
                             }
                         }
                     } else {
-                        int i16 = ((int) this.q) - this.r;
-                        z zVar2 = this.s;
-                        if (zVar2 != null) {
-                            ((m3.h) lVar).d(zVar2.a, 8, i16, false);
-                            int i17 = this.p;
-                            b bVar = new b(i17, zVar2);
+                        int i15 = ((int) this.q) - this.r;
+                        y yVar2 = this.s;
+                        if (yVar2 != null) {
+                            ((m3.h) lVar).d(yVar2.a, 8, i15, false);
+                            int i16 = this.p;
+                            b bVar = new b(i16, yVar2);
                             long j16 = ((m3.h) lVar).d;
                             if (!arrayDeque.isEmpty()) {
                                 ((a) arrayDeque.peek()).d.add(bVar);
-                            } else if (i17 == 1936286840) {
-                                zVar2.C(8);
-                                int b10 = mc.k.b(zVar2.e());
-                                zVar2.D(4);
-                                long s11 = zVar2.s();
+                            } else if (i16 == 1936286840) {
+                                yVar2.C(8);
+                                int b10 = lc.k.b(yVar2.e());
+                                yVar2.D(4);
+                                long s11 = yVar2.s();
                                 if (b10 == 0) {
-                                    v = zVar2.s();
-                                    v4 = zVar2.s();
+                                    v = yVar2.s();
+                                    v4 = yVar2.s();
                                 } else {
-                                    v = zVar2.v();
-                                    v4 = zVar2.v();
+                                    v = yVar2.v();
+                                    v4 = yVar2.v();
                                 }
                                 long j17 = v4 + j16;
                                 long j18 = v;
-                                long O2 = g0.O(j18, 1000000L, s11);
-                                zVar2.D(2);
-                                int w10 = zVar2.w();
-                                int[] iArr = new int[w10];
-                                long[] jArr = new long[w10];
-                                long[] jArr2 = new long[w10];
-                                long[] jArr3 = new long[w10];
+                                long O2 = f0.O(j18, 1000000L, s11);
+                                yVar2.D(2);
+                                int w8 = yVar2.w();
+                                int[] iArr = new int[w8];
+                                long[] jArr = new long[w8];
+                                long[] jArr2 = new long[w8];
+                                long[] jArr3 = new long[w8];
                                 long j19 = O2;
                                 long j20 = j18;
-                                int i18 = 0;
-                                while (i18 < w10) {
-                                    int e9 = zVar2.e();
-                                    if ((e9 & TLObject.FLAG_31) != 0) {
+                                int i17 = 0;
+                                while (i17 < w8) {
+                                    int e10 = yVar2.e();
+                                    if ((e10 & TLObject.FLAG_31) != 0) {
                                         throw t1.a("Unhandled indirect reference", null);
                                     }
-                                    long s12 = zVar2.s();
-                                    iArr[i18] = e9 & ConnectionsManager.DEFAULT_DATACENTER_ID;
-                                    jArr[i18] = j17;
-                                    jArr3[i18] = j19;
+                                    long s12 = yVar2.s();
+                                    iArr[i17] = e10 & ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                    jArr[i17] = j17;
+                                    jArr3[i17] = j19;
                                     long j21 = j20 + s12;
                                     long[] jArr4 = jArr2;
                                     long[] jArr5 = jArr3;
-                                    int i19 = i18;
-                                    j19 = g0.O(j21, 1000000L, s11);
-                                    jArr4[i19] = j19 - jArr5[i19];
-                                    zVar2.D(4);
-                                    j17 += iArr[i19];
+                                    int i18 = i17;
+                                    j19 = f0.O(j21, 1000000L, s11);
+                                    jArr4[i18] = j19 - jArr5[i18];
+                                    yVar2.D(4);
+                                    j17 += iArr[i18];
                                     jArr2 = jArr4;
                                     jArr3 = jArr5;
-                                    i18 = i19 + 1;
+                                    i17 = i18 + 1;
                                     O2 = O2;
                                     j20 = j21;
                                 }
                                 Pair create = Pair.create(Long.valueOf(O2), new m3.f(iArr, jArr, jArr2, jArr3));
                                 this.x = ((Long) create.first).longValue();
-                                this.D.n((t) create.second);
+                                this.D.y((t) create.second);
                                 this.G = true;
-                            } else if (i17 == 1701671783 && this.E.length != 0) {
-                                zVar2.C(8);
-                                int b11 = mc.k.b(zVar2.e());
+                            } else if (i16 == 1701671783 && this.E.length != 0) {
+                                yVar2.C(8);
+                                int b11 = lc.k.b(yVar2.e());
                                 if (b11 == 0) {
-                                    m10 = zVar2.m();
+                                    m10 = yVar2.m();
                                     m10.getClass();
-                                    m11 = zVar2.m();
+                                    m11 = yVar2.m();
                                     m11.getClass();
-                                    long s13 = zVar2.s();
-                                    long O3 = g0.O(zVar2.s(), 1000000L, s13);
+                                    long s13 = yVar2.s();
+                                    long O3 = f0.O(yVar2.s(), 1000000L, s13);
                                     long j22 = this.x;
                                     long j23 = j22 != -9223372036854775807L ? j22 + O3 : -9223372036854775807L;
                                     j10 = O3;
                                     j11 = j23;
-                                    O = g0.O(zVar2.s(), 1000L, s13);
-                                    s10 = zVar2.s();
+                                    O = f0.O(yVar2.s(), 1000L, s13);
+                                    s10 = yVar2.s();
                                 } else if (b11 != 1) {
-                                    com.google.android.recaptcha.internal.a.s(b11, "Skipping unsupported emsg version: ", "FragmentedMp4Extractor");
+                                    e2.c.t(b11, "Skipping unsupported emsg version: ", "FragmentedMp4Extractor");
                                 } else {
-                                    long s14 = zVar2.s();
-                                    j11 = g0.O(zVar2.v(), 1000000L, s14);
-                                    long O4 = g0.O(zVar2.s(), 1000L, s14);
-                                    long s15 = zVar2.s();
-                                    m10 = zVar2.m();
+                                    long s14 = yVar2.s();
+                                    j11 = f0.O(yVar2.v(), 1000000L, s14);
+                                    long O4 = f0.O(yVar2.s(), 1000L, s14);
+                                    long s15 = yVar2.s();
+                                    m10 = yVar2.m();
                                     m10.getClass();
-                                    m11 = zVar2.m();
+                                    m11 = yVar2.m();
                                     m11.getClass();
                                     O = O4;
                                     s10 = s15;
@@ -731,20 +732,20 @@ public final class i implements m3.k {
                                 }
                                 String str = m10;
                                 String str2 = m11;
-                                byte[] bArr = new byte[zVar2.a()];
-                                zVar2.c(0, zVar2.a(), bArr);
-                                z zVar3 = new z(this.j.A(new b4.a(str, str2, O, s10, bArr)));
-                                int a2 = zVar3.a();
+                                byte[] bArr = new byte[yVar2.a()];
+                                yVar2.c(0, yVar2.a(), bArr);
+                                y yVar3 = new y(this.j.A(new b4.a(str, str2, O, s10, bArr)));
+                                int a2 = yVar3.a();
                                 for (w wVar : this.E) {
-                                    zVar3.C(0);
-                                    wVar.a(a2, zVar3);
+                                    yVar3.C(0);
+                                    wVar.a(a2, yVar3);
                                 }
                                 if (j11 == -9223372036854775807L) {
                                     arrayDeque2.addLast(new g(a2, j10, true));
                                     this.u += a2;
                                 } else if (arrayDeque2.isEmpty()) {
-                                    if (f0Var != null) {
-                                        j11 = f0Var.a(j11);
+                                    if (e0Var != null) {
+                                        j11 = e0Var.a(j11);
                                     }
                                     long j24 = j11;
                                     for (w wVar2 : this.E) {
@@ -756,27 +757,27 @@ public final class i implements m3.k {
                                 }
                             }
                         } else {
-                            ((m3.h) lVar).t(i16);
+                            ((m3.h) lVar).u(i15);
                         }
                         e(((m3.h) lVar).d);
                     }
                 } else {
-                    int i20 = this.r;
-                    z zVar4 = this.k;
-                    if (i20 == 0) {
-                        if (!((m3.h) lVar).d(zVar4.a, 0, 8, true)) {
+                    int i19 = this.r;
+                    y yVar4 = this.k;
+                    if (i19 == 0) {
+                        if (!((m3.h) lVar).d(yVar4.a, 0, 8, true)) {
                             return -1;
                         }
                         this.r = 8;
-                        zVar4.C(0);
-                        this.q = zVar4.s();
-                        this.p = zVar4.e();
+                        yVar4.C(0);
+                        this.q = yVar4.s();
+                        this.p = yVar4.e();
                     }
                     long j25 = this.q;
                     if (j25 == 1) {
-                        ((m3.h) lVar).d(zVar4.a, 8, 8, false);
+                        ((m3.h) lVar).d(yVar4.a, 8, 8, false);
                         this.r += 8;
-                        this.q = zVar4.v();
+                        this.q = yVar4.v();
                     } else if (j25 == 0) {
                         long j26 = ((m3.h) lVar).c;
                         if (j26 == -1 && !arrayDeque.isEmpty()) {
@@ -787,49 +788,49 @@ public final class i implements m3.k {
                         }
                     }
                     long j27 = this.q;
-                    int i21 = this.r;
-                    if (j27 < i21) {
+                    int i20 = this.r;
+                    if (j27 < i20) {
                         throw t1.c("Atom size less than header length (unsupported).");
                     }
-                    long j28 = ((m3.h) lVar).d - i21;
-                    int i22 = this.p;
-                    if ((i22 == 1836019558 || i22 == 1835295092) && !this.G) {
-                        this.D.n(new m3.o(this.w, j28));
+                    long j28 = ((m3.h) lVar).d - i20;
+                    int i21 = this.p;
+                    if ((i21 == 1836019558 || i21 == 1835295092) && !this.G) {
+                        this.D.y(new m3.o(this.w, j28));
                         this.G = true;
                     }
                     if (this.p == 1836019558) {
                         int size3 = sparseArray.size();
-                        for (int i23 = 0; i23 < size3; i23++) {
-                            r rVar4 = ((h) sparseArray.valueAt(i23)).b;
-                            rVar4.getClass();
-                            rVar4.c = j28;
-                            rVar4.b = j28;
+                        for (int i22 = 0; i22 < size3; i22++) {
+                            q qVar4 = ((h) sparseArray.valueAt(i22)).b;
+                            qVar4.getClass();
+                            qVar4.c = j28;
+                            qVar4.b = j28;
                         }
                     }
-                    int i24 = this.p;
-                    if (i24 == 1835295092) {
+                    int i23 = this.p;
+                    if (i23 == 1835295092) {
                         this.y = null;
                         this.t = j28 + this.q;
                         this.o = 2;
-                    } else if (i24 == 1836019574 || i24 == 1953653099 || i24 == 1835297121 || i24 == 1835626086 || i24 == 1937007212 || i24 == 1836019558 || i24 == 1953653094 || i24 == 1836475768 || i24 == 1701082227) {
+                    } else if (i23 == 1836019574 || i23 == 1953653099 || i23 == 1835297121 || i23 == 1835626086 || i23 == 1937007212 || i23 == 1836019558 || i23 == 1953653094 || i23 == 1836475768 || i23 == 1701082227) {
                         long j29 = (((m3.h) lVar).d + this.q) - 8;
-                        arrayDeque.push(new a(i24, j29));
+                        arrayDeque.push(new a(i23, j29));
                         if (this.q == this.r) {
                             e(j29);
                         } else {
                             this.o = 0;
                             this.r = 0;
                         }
-                    } else if (i24 == 1751411826 || i24 == 1835296868 || i24 == 1836476516 || i24 == 1936286840 || i24 == 1937011556 || i24 == 1937011827 || i24 == 1668576371 || i24 == 1937011555 || i24 == 1937011578 || i24 == 1937013298 || i24 == 1937007471 || i24 == 1668232756 || i24 == 1937011571 || i24 == 1952867444 || i24 == 1952868452 || i24 == 1953196132 || i24 == 1953654136 || i24 == 1953658222 || i24 == 1886614376 || i24 == 1935763834 || i24 == 1935763823 || i24 == 1936027235 || i24 == 1970628964 || i24 == 1935828848 || i24 == 1936158820 || i24 == 1701606260 || i24 == 1835362404 || i24 == 1701671783) {
+                    } else if (i23 == 1751411826 || i23 == 1835296868 || i23 == 1836476516 || i23 == 1936286840 || i23 == 1937011556 || i23 == 1937011827 || i23 == 1668576371 || i23 == 1937011555 || i23 == 1937011578 || i23 == 1937013298 || i23 == 1937007471 || i23 == 1668232756 || i23 == 1937011571 || i23 == 1952867444 || i23 == 1952868452 || i23 == 1953196132 || i23 == 1953654136 || i23 == 1953658222 || i23 == 1886614376 || i23 == 1935763834 || i23 == 1935763823 || i23 == 1936027235 || i23 == 1970628964 || i23 == 1935828848 || i23 == 1936158820 || i23 == 1701606260 || i23 == 1835362404 || i23 == 1701671783) {
                         if (this.r != 8) {
                             throw t1.c("Leaf atom defines extended atom size (unsupported).");
                         }
                         if (this.q > 2147483647L) {
                             throw t1.c("Leaf atom with length > 2147483647 (unsupported).");
                         }
-                        z zVar5 = new z((int) this.q);
-                        System.arraycopy(zVar4.a, 0, zVar5.a, 0, 8);
-                        this.s = zVar5;
+                        y yVar5 = new y((int) this.q);
+                        System.arraycopy(yVar4.a, 0, yVar5.a, 0, 8);
+                        this.s = yVar5;
                         this.o = 1;
                     } else {
                         if (this.q > 2147483647L) {
@@ -845,9 +846,9 @@ public final class i implements m3.k {
 
     @Override // m3.k
     public final void c(m3.m mVar) {
-        int i10;
+        int i9;
         this.D = mVar;
-        int i11 = 0;
+        int i10 = 0;
         this.o = 0;
         this.r = 0;
         w[] wVarArr = new w[2];
@@ -855,515 +856,508 @@ public final class i implements m3.k {
         w wVar = this.n;
         if (wVar != null) {
             wVarArr[0] = wVar;
-            i10 = 1;
+            i9 = 1;
         } else {
-            i10 = 0;
+            i9 = 0;
         }
-        int i12 = 100;
+        int i11 = 100;
         if ((this.a & 4) != 0) {
-            wVarArr[i10] = mVar.C(100, 5);
-            i12 = 101;
-            i10++;
+            wVarArr[i9] = mVar.I(100, 5);
+            i11 = 101;
+            i9++;
         }
-        w[] wVarArr2 = (w[]) g0.J(i10, this.E);
+        w[] wVarArr2 = (w[]) f0.J(i9, this.E);
         this.E = wVarArr2;
         for (w wVar2 : wVarArr2) {
             wVar2.c(I);
         }
         List list = this.b;
         this.F = new w[list.size()];
-        while (i11 < this.F.length) {
-            w C = this.D.C(i12, 3);
-            C.c((t0) list.get(i11));
-            this.F[i11] = C;
+        while (i10 < this.F.length) {
+            w I2 = this.D.I(i11, 3);
+            I2.c((t0) list.get(i10));
+            this.F[i10] = I2;
+            i10++;
             i11++;
-            i12++;
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:388:0x0726, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:386:0x0711, code lost:
     
         r50.o = 0;
         r50.r = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:389:0x072b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:387:0x0716, code lost:
     
         return;
      */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x063b  */
+    /* JADX WARN: Removed duplicated region for block: B:246:0x062b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void e(long j10) {
         f fVar;
         f fVar2;
-        l3.d dVar;
+        ArrayList arrayList;
+        int i9;
+        ArrayList arrayList2;
+        ArrayList arrayList3;
         int i10;
         int i11;
-        ArrayList arrayList;
-        ArrayList arrayList2;
         int i12;
+        int size;
         int i13;
         int i14;
-        int size;
-        int i15;
-        int i16;
         boolean z10;
+        int i15;
+        ArrayList arrayList4;
+        ArrayList arrayList5;
+        int i16;
         int i17;
         int i18;
-        ArrayList arrayList3;
-        ArrayList arrayList4;
+        f fVar3;
         int i19;
-        boolean z11;
-        int i20;
-        int i21;
-        int i22;
         while (true) {
             ArrayDeque arrayDeque = this.l;
             if (arrayDeque.isEmpty() || ((a) arrayDeque.peek()).c != j10) {
                 break;
             }
             a aVar = (a) arrayDeque.pop();
-            int i23 = aVar.b;
-            ArrayList arrayList5 = aVar.e;
-            ArrayList arrayList6 = aVar.d;
-            int i24 = this.a;
-            int i25 = 12;
+            int i20 = aVar.b;
+            ArrayList arrayList6 = aVar.e;
+            ArrayList arrayList7 = aVar.d;
+            int i21 = this.a;
+            int i22 = 12;
             SparseArray sparseArray = this.c;
-            if (i23 == 1836019574) {
-                l3.d a2 = a(arrayList6);
-                a e9 = aVar.e(1836475768);
-                e9.getClass();
+            if (i20 == 1836019574) {
+                l3.c a2 = a(arrayList7);
+                a e10 = aVar.e(1836475768);
+                e10.getClass();
                 SparseArray sparseArray2 = new SparseArray();
-                ArrayList arrayList7 = e9.d;
-                int size2 = arrayList7.size();
-                int i26 = 0;
+                ArrayList arrayList8 = e10.d;
+                int size2 = arrayList8.size();
+                int i23 = 0;
                 long j11 = -9223372036854775807L;
-                while (i26 < size2) {
-                    b bVar = (b) arrayList7.get(i26);
-                    int i27 = bVar.b;
-                    z zVar = bVar.c;
-                    if (i27 == 1953654136) {
-                        zVar.C(i25);
-                        dVar = a2;
-                        Pair create = Pair.create(Integer.valueOf(zVar.e()), new f(zVar.e() - 1, zVar.e(), zVar.e(), zVar.e()));
+                while (i23 < size2) {
+                    b bVar = (b) arrayList8.get(i23);
+                    int i24 = bVar.b;
+                    y yVar = bVar.c;
+                    if (i24 == 1953654136) {
+                        yVar.C(i22);
+                        arrayList = arrayList8;
+                        Pair create = Pair.create(Integer.valueOf(yVar.e()), new f(yVar.e() - 1, yVar.e(), yVar.e(), yVar.e()));
                         sparseArray2.put(((Integer) create.first).intValue(), (f) create.second);
                     } else {
-                        dVar = a2;
-                        if (i27 == 1835362404) {
-                            zVar.C(8);
-                            j11 = mc.k.b(zVar.e()) == 0 ? zVar.s() : zVar.v();
+                        arrayList = arrayList8;
+                        if (i24 == 1835362404) {
+                            yVar.C(8);
+                            j11 = lc.k.b(yVar.e()) == 0 ? yVar.s() : yVar.v();
                         }
                     }
-                    i26++;
-                    a2 = dVar;
-                    i25 = 12;
+                    i23++;
+                    arrayList8 = arrayList;
+                    i22 = 12;
                 }
-                ArrayList e10 = e.e(aVar, new m3.q(), j11, a2, (i24 & 16) != 0, false, new t0.c(this, 2));
-                int size3 = e10.size();
+                ArrayList e11 = e.e(aVar, new m3.q(), j11, a2, (i21 & 16) != 0, false, new t0.c(this, 3));
+                int size3 = e11.size();
                 if (sparseArray.size() == 0) {
-                    for (int i28 = 0; i28 < size3; i28++) {
-                        s sVar = (s) e10.get(i28);
-                        p pVar = sVar.a;
+                    for (int i25 = 0; i25 < size3; i25++) {
+                        r rVar = (r) e11.get(i25);
+                        o oVar = rVar.a;
                         m3.m mVar = this.D;
-                        int i29 = pVar.b;
-                        int i30 = pVar.a;
-                        w C = mVar.C(i28, i29);
+                        int i26 = oVar.b;
+                        int i27 = oVar.a;
+                        w I2 = mVar.I(i25, i26);
                         if (sparseArray2.size() == 1) {
                             fVar = (f) sparseArray2.valueAt(0);
                         } else {
-                            fVar = (f) sparseArray2.get(i30);
+                            fVar = (f) sparseArray2.get(i27);
                             fVar.getClass();
                         }
-                        sparseArray.put(i30, new h(C, sVar, fVar));
-                        this.w = Math.max(this.w, pVar.e);
+                        sparseArray.put(i27, new h(I2, rVar, fVar));
+                        this.w = Math.max(this.w, oVar.e);
                     }
-                    this.D.A();
+                    this.D.B();
                 } else {
                     d5.a.i(sparseArray.size() == size3);
-                    for (int i31 = 0; i31 < size3; i31++) {
-                        s sVar2 = (s) e10.get(i31);
-                        p pVar2 = sVar2.a;
-                        h hVar = (h) sparseArray.get(pVar2.a);
-                        int i32 = pVar2.a;
+                    for (int i28 = 0; i28 < size3; i28++) {
+                        r rVar2 = (r) e11.get(i28);
+                        o oVar2 = rVar2.a;
+                        h hVar = (h) sparseArray.get(oVar2.a);
+                        int i29 = oVar2.a;
                         if (sparseArray2.size() == 1) {
                             fVar2 = (f) sparseArray2.valueAt(0);
                         } else {
-                            fVar2 = (f) sparseArray2.get(i32);
+                            fVar2 = (f) sparseArray2.get(i29);
                             fVar2.getClass();
                         }
-                        hVar.d = sVar2;
+                        hVar.d = rVar2;
                         hVar.e = fVar2;
-                        hVar.a.c(sVar2.a.f);
+                        hVar.a.c(rVar2.a.f);
                         hVar.d();
                     }
                 }
-            } else if (i23 == 1836019558) {
-                int size4 = arrayList5.size();
-                int i33 = 0;
-                while (i33 < size4) {
-                    a aVar2 = (a) arrayList5.get(i33);
+            } else if (i20 == 1836019558) {
+                int size4 = arrayList6.size();
+                int i30 = 0;
+                while (i30 < size4) {
+                    a aVar2 = (a) arrayList6.get(i30);
                     if (aVar2.b == 1953653094) {
                         b f10 = aVar2.f(1952868452);
-                        ArrayList arrayList8 = aVar2.d;
+                        ArrayList arrayList9 = aVar2.d;
                         f10.getClass();
-                        z zVar2 = f10.c;
-                        zVar2.C(8);
-                        int e11 = zVar2.e();
-                        h hVar2 = (h) sparseArray.get(zVar2.e());
+                        y yVar2 = f10.c;
+                        yVar2.C(8);
+                        int e12 = yVar2.e();
+                        h hVar2 = (h) sparseArray.get(yVar2.e());
                         if (hVar2 == null) {
-                            i10 = size4;
+                            i9 = size4;
                             hVar2 = null;
                         } else {
-                            r rVar = hVar2.b;
-                            if ((e11 & 1) != 0) {
-                                long v = zVar2.v();
-                                rVar.b = v;
-                                rVar.c = v;
+                            q qVar = hVar2.b;
+                            if ((e12 & 1) != 0) {
+                                long v = yVar2.v();
+                                qVar.b = v;
+                                qVar.c = v;
                             }
-                            f fVar3 = hVar2.e;
-                            int e12 = (e11 & 2) != 0 ? zVar2.e() - 1 : fVar3.a;
-                            int e13 = (e11 & 8) != 0 ? zVar2.e() : fVar3.b;
-                            if ((e11 & 16) != 0) {
-                                i10 = size4;
-                                i13 = zVar2.e();
+                            f fVar4 = hVar2.e;
+                            int e13 = (e12 & 2) != 0 ? yVar2.e() - 1 : fVar4.a;
+                            int e14 = (e12 & 8) != 0 ? yVar2.e() : fVar4.b;
+                            if ((e12 & 16) != 0) {
+                                i9 = size4;
+                                i11 = yVar2.e();
                             } else {
-                                i10 = size4;
-                                i13 = fVar3.c;
+                                i9 = size4;
+                                i11 = fVar4.c;
                             }
-                            rVar.a = new f(e12, e13, i13, (e11 & 32) != 0 ? zVar2.e() : fVar3.d);
+                            qVar.a = new f(e13, e14, i11, (e12 & 32) != 0 ? yVar2.e() : fVar4.d);
                         }
                         if (hVar2 == null) {
-                            i11 = i33;
-                            arrayList = arrayList5;
                             arrayList2 = arrayList6;
-                            i12 = i24;
+                            arrayList3 = arrayList7;
+                            i10 = i30;
                         } else {
-                            r rVar2 = hVar2.b;
-                            long j12 = rVar2.p;
-                            boolean z12 = rVar2.q;
+                            q qVar2 = hVar2.b;
+                            long j12 = qVar2.p;
+                            boolean z11 = qVar2.q;
                             hVar2.d();
                             hVar2.l = true;
                             b f11 = aVar2.f(1952867444);
-                            if (f11 == null || (i24 & 2) != 0) {
-                                rVar2.p = j12;
-                                rVar2.q = z12;
+                            if (f11 == null || (i21 & 2) != 0) {
+                                qVar2.p = j12;
+                                qVar2.q = z11;
                             } else {
-                                z zVar3 = f11.c;
-                                zVar3.C(8);
-                                rVar2.p = mc.k.b(zVar3.e()) == 1 ? zVar3.v() : zVar3.s();
-                                rVar2.q = true;
+                                y yVar3 = f11.c;
+                                yVar3.C(8);
+                                qVar2.p = lc.k.b(yVar3.e()) == 1 ? yVar3.v() : yVar3.s();
+                                qVar2.q = true;
                             }
-                            int size5 = arrayList8.size();
-                            int i34 = 0;
-                            int i35 = 0;
-                            int i36 = 0;
+                            int size5 = arrayList9.size();
+                            int i31 = 0;
+                            int i32 = 0;
+                            int i33 = 0;
                             while (true) {
-                                i14 = 1953658222;
-                                if (i34 >= size5) {
+                                i12 = 1953658222;
+                                if (i31 >= size5) {
                                     break;
                                 }
-                                b bVar2 = (b) arrayList8.get(i34);
-                                int i37 = i33;
+                                b bVar2 = (b) arrayList9.get(i31);
+                                int i34 = i31;
                                 if (bVar2.b == 1953658222) {
-                                    z zVar4 = bVar2.c;
-                                    zVar4.C(12);
-                                    int u10 = zVar4.u();
+                                    y yVar4 = bVar2.c;
+                                    yVar4.C(12);
+                                    int u10 = yVar4.u();
                                     if (u10 > 0) {
-                                        i36 += u10;
-                                        i35++;
+                                        i33 += u10;
+                                        i32++;
                                     }
                                 }
-                                i34++;
-                                i33 = i37;
+                                i31 = i34 + 1;
                             }
-                            i11 = i33;
                             hVar2.h = 0;
                             hVar2.g = 0;
                             hVar2.f = 0;
-                            rVar2.d = i35;
-                            rVar2.e = i36;
-                            if (rVar2.g.length < i35) {
-                                rVar2.f = new long[i35];
-                                rVar2.g = new int[i35];
+                            qVar2.d = i32;
+                            qVar2.e = i33;
+                            if (qVar2.g.length < i32) {
+                                qVar2.f = new long[i32];
+                                qVar2.g = new int[i32];
                             }
-                            if (rVar2.h.length < i36) {
-                                int i38 = (i36 * 125) / 100;
-                                rVar2.h = new int[i38];
-                                rVar2.i = new long[i38];
-                                rVar2.j = new boolean[i38];
-                                rVar2.l = new boolean[i38];
+                            if (qVar2.h.length < i33) {
+                                int i35 = (i33 * 125) / 100;
+                                qVar2.h = new int[i35];
+                                qVar2.i = new long[i35];
+                                qVar2.j = new boolean[i35];
+                                qVar2.l = new boolean[i35];
                             }
-                            int i39 = 0;
-                            int i40 = 0;
-                            int i41 = 0;
+                            int i36 = 0;
+                            int i37 = 0;
+                            int i38 = 0;
                             while (true) {
                                 long j13 = 0;
-                                if (i39 < size5) {
-                                    b bVar3 = (b) arrayList8.get(i39);
-                                    if (bVar3.b == i14) {
-                                        int i42 = i40 + 1;
-                                        z zVar5 = bVar3.c;
-                                        zVar5.C(8);
-                                        int e14 = zVar5.e();
-                                        i17 = i39;
-                                        p pVar3 = hVar2.d.a;
-                                        i18 = size5;
-                                        f fVar4 = rVar2.a;
-                                        int i43 = g0.a;
-                                        arrayList3 = arrayList5;
-                                        rVar2.g[i40] = zVar5.u();
-                                        long[] jArr = rVar2.f;
+                                if (i36 < size5) {
+                                    b bVar3 = (b) arrayList9.get(i36);
+                                    int i39 = size5;
+                                    if (bVar3.b == i12) {
+                                        int i40 = i37 + 1;
+                                        y yVar5 = bVar3.c;
+                                        yVar5.C(8);
+                                        int e15 = yVar5.e();
+                                        o oVar3 = hVar2.d.a;
+                                        i15 = i36;
+                                        f fVar5 = qVar2.a;
+                                        int i41 = f0.a;
                                         arrayList4 = arrayList6;
-                                        long j14 = rVar2.b;
-                                        jArr[i40] = j14;
-                                        if ((e14 & 1) != 0) {
-                                            jArr[i40] = j14 + zVar5.e();
+                                        qVar2.g[i37] = yVar5.u();
+                                        long[] jArr = qVar2.f;
+                                        arrayList5 = arrayList7;
+                                        long j14 = qVar2.b;
+                                        jArr[i37] = j14;
+                                        if ((e15 & 1) != 0) {
+                                            jArr[i37] = j14 + yVar5.e();
                                         }
-                                        boolean z13 = (e14 & 4) != 0;
-                                        int i44 = fVar4.d;
-                                        if (z13) {
-                                            i44 = zVar5.e();
+                                        boolean z12 = (e15 & 4) != 0;
+                                        int i42 = fVar5.d;
+                                        if (z12) {
+                                            i42 = yVar5.e();
                                         }
-                                        boolean z14 = z13;
-                                        boolean z15 = (e14 & 256) != 0;
-                                        boolean z16 = (e14 & 512) != 0;
-                                        boolean z17 = (e14 & 1024) != 0;
-                                        boolean z18 = (e14 & 2048) != 0;
-                                        boolean z19 = z17;
-                                        long[] jArr2 = pVar3.h;
-                                        int i45 = i44;
+                                        boolean z13 = z12;
+                                        boolean z14 = (e15 & 256) != 0;
+                                        boolean z15 = (e15 & 512) != 0;
+                                        boolean z16 = (e15 & 1024) != 0;
+                                        boolean z17 = (e15 & 2048) != 0;
+                                        boolean z18 = z16;
+                                        long[] jArr2 = oVar3.h;
+                                        int i43 = i42;
                                         if (jArr2 != null && jArr2.length == 1 && jArr2[0] == 0) {
-                                            j13 = pVar3.i[0];
+                                            j13 = oVar3.i[0];
                                         }
-                                        int[] iArr = rVar2.h;
-                                        long[] jArr3 = rVar2.i;
-                                        boolean[] zArr = rVar2.j;
-                                        boolean z20 = pVar3.b == 2 && (i24 & 1) != 0;
-                                        int i46 = rVar2.g[i40] + i41;
-                                        i19 = i24;
-                                        long j15 = pVar3.c;
-                                        long j16 = rVar2.p;
-                                        int i47 = i41;
-                                        while (i47 < i46) {
-                                            int e15 = z15 ? zVar5.e() : fVar4.b;
-                                            int i48 = i47;
-                                            if (e15 < 0) {
-                                                throw t1.a("Unexpected negative value: " + e15, null);
+                                        int[] iArr = qVar2.h;
+                                        long[] jArr3 = qVar2.i;
+                                        boolean[] zArr = qVar2.j;
+                                        boolean z19 = oVar3.b == 2 && (i21 & 1) != 0;
+                                        int i44 = qVar2.g[i37] + i38;
+                                        i16 = i30;
+                                        long j15 = oVar3.c;
+                                        long j16 = qVar2.p;
+                                        while (i38 < i44) {
+                                            int e16 = z14 ? yVar5.e() : fVar5.b;
+                                            boolean z20 = z19;
+                                            if (e16 < 0) {
+                                                throw t1.a("Unexpected negative value: " + e16, null);
                                             }
-                                            if (z16) {
-                                                z11 = z20;
-                                                i20 = zVar5.e();
+                                            if (z15) {
+                                                i17 = i44;
+                                                i18 = yVar5.e();
                                             } else {
-                                                z11 = z20;
-                                                i20 = fVar4.c;
+                                                i17 = i44;
+                                                i18 = fVar5.c;
                                             }
-                                            if (i20 < 0) {
-                                                throw t1.a("Unexpected negative value: " + i20, null);
+                                            if (i18 < 0) {
+                                                throw t1.a("Unexpected negative value: " + i18, null);
                                             }
-                                            int e16 = z19 ? zVar5.e() : (i48 == 0 && z14) ? i45 : fVar4.d;
-                                            if (z18) {
-                                                i21 = e16;
-                                                i22 = zVar5.e();
+                                            int e17 = z18 ? yVar5.e() : (i38 == 0 && z13) ? i43 : fVar5.d;
+                                            if (z17) {
+                                                fVar3 = fVar5;
+                                                i19 = yVar5.e();
                                             } else {
-                                                i21 = e16;
-                                                i22 = 0;
+                                                fVar3 = fVar5;
+                                                i19 = 0;
                                             }
-                                            f fVar5 = fVar4;
-                                            long O = g0.O((i22 + j16) - j13, 1000000L, j15);
-                                            jArr3[i48] = O;
-                                            if (!rVar2.q) {
-                                                jArr3[i48] = O + hVar2.d.h;
+                                            int i45 = e17;
+                                            long O = f0.O((i19 + j16) - j13, 1000000L, j15);
+                                            jArr3[i38] = O;
+                                            if (!qVar2.q) {
+                                                jArr3[i38] = O + hVar2.d.h;
                                             }
-                                            iArr[i48] = i20;
-                                            zArr[i48] = ((i21 >> 16) & 1) == 0 && (!z11 || i48 == 0);
-                                            j16 += e15;
-                                            i47 = i48 + 1;
-                                            z20 = z11;
-                                            fVar4 = fVar5;
+                                            iArr[i38] = i18;
+                                            zArr[i38] = ((i45 >> 16) & 1) == 0 && (!z20 || i38 == 0);
+                                            j16 += e16;
+                                            i38++;
+                                            z19 = z20;
+                                            i44 = i17;
+                                            fVar5 = fVar3;
                                         }
-                                        rVar2.p = j16;
-                                        i41 = i46;
-                                        i40 = i42;
+                                        qVar2.p = j16;
+                                        i37 = i40;
+                                        i38 = i44;
                                     } else {
-                                        i17 = i39;
-                                        i18 = size5;
-                                        arrayList3 = arrayList5;
+                                        i15 = i36;
                                         arrayList4 = arrayList6;
-                                        i19 = i24;
+                                        arrayList5 = arrayList7;
+                                        i16 = i30;
                                     }
-                                    i39 = i17 + 1;
-                                    size5 = i18;
-                                    arrayList5 = arrayList3;
+                                    i36 = i15 + 1;
+                                    size5 = i39;
                                     arrayList6 = arrayList4;
-                                    i24 = i19;
-                                    i14 = 1953658222;
+                                    arrayList7 = arrayList5;
+                                    i30 = i16;
+                                    i12 = 1953658222;
                                 } else {
-                                    arrayList = arrayList5;
                                     arrayList2 = arrayList6;
-                                    i12 = i24;
-                                    p pVar4 = hVar2.d.a;
-                                    f fVar6 = rVar2.a;
+                                    arrayList3 = arrayList7;
+                                    i10 = i30;
+                                    o oVar4 = hVar2.d.a;
+                                    f fVar6 = qVar2.a;
                                     fVar6.getClass();
-                                    q qVar = pVar4.k[fVar6.a];
+                                    p pVar = oVar4.k[fVar6.a];
                                     b f12 = aVar2.f(1935763834);
                                     if (f12 != null) {
-                                        qVar.getClass();
-                                        z zVar6 = f12.c;
-                                        int i49 = qVar.d;
-                                        zVar6.C(8);
-                                        if ((zVar6.e() & 1) == 1) {
-                                            zVar6.D(8);
+                                        pVar.getClass();
+                                        y yVar6 = f12.c;
+                                        int i46 = pVar.d;
+                                        yVar6.C(8);
+                                        if ((yVar6.e() & 1) == 1) {
+                                            yVar6.D(8);
                                         }
-                                        int r10 = zVar6.r();
-                                        int u11 = zVar6.u();
-                                        if (u11 > rVar2.e) {
-                                            StringBuilder o10 = i0.a.o(u11, "Saiz sample count ", " is greater than fragment sample count");
-                                            o10.append(rVar2.e);
-                                            throw t1.a(o10.toString(), null);
+                                        int r10 = yVar6.r();
+                                        int u11 = yVar6.u();
+                                        if (u11 > qVar2.e) {
+                                            StringBuilder p6 = r0.p(u11, "Saiz sample count ", " is greater than fragment sample count");
+                                            p6.append(qVar2.e);
+                                            throw t1.a(p6.toString(), null);
                                         }
                                         if (r10 == 0) {
-                                            boolean[] zArr2 = rVar2.l;
-                                            i16 = 0;
-                                            for (int i50 = 0; i50 < u11; i50++) {
-                                                int r11 = zVar6.r();
-                                                i16 += r11;
-                                                zArr2[i50] = r11 > i49;
+                                            boolean[] zArr2 = qVar2.l;
+                                            i14 = 0;
+                                            for (int i47 = 0; i47 < u11; i47++) {
+                                                int r11 = yVar6.r();
+                                                i14 += r11;
+                                                zArr2[i47] = r11 > i46;
                                             }
                                             z10 = false;
                                         } else {
-                                            i16 = r10 * u11;
+                                            boolean z21 = r10 > i46;
+                                            i14 = r10 * u11;
                                             z10 = false;
-                                            Arrays.fill(rVar2.l, 0, u11, r10 > i49);
+                                            Arrays.fill(qVar2.l, 0, u11, z21);
                                         }
-                                        Arrays.fill(rVar2.l, u11, rVar2.e, z10);
-                                        if (i16 > 0) {
-                                            rVar2.n.z(i16);
-                                            rVar2.k = true;
-                                            rVar2.o = true;
+                                        Arrays.fill(qVar2.l, u11, qVar2.e, z10);
+                                        if (i14 > 0) {
+                                            qVar2.n.z(i14);
+                                            qVar2.k = true;
+                                            qVar2.o = true;
                                         }
                                     }
                                     b f13 = aVar2.f(1935763823);
                                     if (f13 != null) {
-                                        z zVar7 = f13.c;
-                                        zVar7.C(8);
-                                        int e17 = zVar7.e();
-                                        if ((e17 & 1) == 1) {
-                                            zVar7.D(8);
+                                        y yVar7 = f13.c;
+                                        yVar7.C(8);
+                                        int e18 = yVar7.e();
+                                        if ((e18 & 1) == 1) {
+                                            yVar7.D(8);
                                         }
-                                        int u12 = zVar7.u();
+                                        int u12 = yVar7.u();
                                         if (u12 != 1) {
                                             throw t1.a("Unexpected saio entry count: " + u12, null);
                                         }
-                                        rVar2.c += mc.k.b(e17) == 0 ? zVar7.s() : zVar7.v();
+                                        qVar2.c += lc.k.b(e18) == 0 ? yVar7.s() : yVar7.v();
                                     }
                                     byte[] bArr = null;
                                     b f14 = aVar2.f(1936027235);
                                     if (f14 != null) {
-                                        d(f14.c, 0, rVar2);
+                                        d(f14.c, 0, qVar2);
                                     }
-                                    String str = qVar != null ? qVar.b : null;
-                                    z zVar8 = null;
-                                    z zVar9 = null;
-                                    for (int i51 = 0; i51 < arrayList8.size(); i51++) {
-                                        b bVar4 = (b) arrayList8.get(i51);
-                                        z zVar10 = bVar4.c;
-                                        int i52 = bVar4.b;
-                                        if (i52 == 1935828848) {
-                                            zVar10.C(12);
-                                            if (zVar10.e() == 1936025959) {
-                                                zVar8 = zVar10;
+                                    String str = pVar != null ? pVar.b : null;
+                                    y yVar8 = null;
+                                    y yVar9 = null;
+                                    for (int i48 = 0; i48 < arrayList9.size(); i48++) {
+                                        b bVar4 = (b) arrayList9.get(i48);
+                                        y yVar10 = bVar4.c;
+                                        int i49 = bVar4.b;
+                                        if (i49 == 1935828848) {
+                                            yVar10.C(12);
+                                            if (yVar10.e() == 1936025959) {
+                                                yVar9 = yVar10;
                                             }
-                                        } else if (i52 == 1936158820) {
-                                            zVar10.C(12);
-                                            if (zVar10.e() == 1936025959) {
-                                                zVar9 = zVar10;
+                                        } else if (i49 == 1936158820) {
+                                            yVar10.C(12);
+                                            if (yVar10.e() == 1936025959) {
+                                                yVar8 = yVar10;
                                             }
                                         }
                                     }
-                                    if (zVar8 != null && zVar9 != null) {
-                                        zVar8.C(8);
-                                        int b10 = mc.k.b(zVar8.e());
-                                        zVar8.D(4);
+                                    if (yVar9 != null && yVar8 != null) {
+                                        yVar9.C(8);
+                                        int b10 = lc.k.b(yVar9.e());
+                                        yVar9.D(4);
                                         if (b10 == 1) {
-                                            zVar8.D(4);
+                                            yVar9.D(4);
                                         }
-                                        if (zVar8.e() != 1) {
+                                        if (yVar9.e() != 1) {
                                             throw t1.c("Entry count in sbgp != 1 (unsupported).");
                                         }
-                                        zVar9.C(8);
-                                        int b11 = mc.k.b(zVar9.e());
-                                        zVar9.D(4);
+                                        yVar8.C(8);
+                                        int b11 = lc.k.b(yVar8.e());
+                                        yVar8.D(4);
                                         if (b11 == 1) {
-                                            if (zVar9.s() == 0) {
+                                            if (yVar8.s() == 0) {
                                                 throw t1.c("Variable length description in sgpd found (unsupported)");
                                             }
                                         } else if (b11 >= 2) {
-                                            zVar9.D(4);
+                                            yVar8.D(4);
                                         }
-                                        if (zVar9.s() != 1) {
+                                        if (yVar8.s() != 1) {
                                             throw t1.c("Entry count in sgpd != 1 (unsupported).");
                                         }
-                                        zVar9.D(1);
-                                        int r12 = zVar9.r();
-                                        int i53 = (r12 & 240) >> 4;
-                                        int i54 = r12 & 15;
-                                        boolean z21 = zVar9.r() == 1;
-                                        if (z21) {
-                                            int r13 = zVar9.r();
+                                        yVar8.D(1);
+                                        int r12 = yVar8.r();
+                                        int i50 = (r12 & 240) >> 4;
+                                        int i51 = r12 & 15;
+                                        boolean z22 = yVar8.r() == 1;
+                                        if (z22) {
+                                            int r13 = yVar8.r();
                                             byte[] bArr2 = new byte[16];
-                                            zVar9.c(0, 16, bArr2);
+                                            yVar8.c(0, 16, bArr2);
                                             if (r13 == 0) {
-                                                int r14 = zVar9.r();
+                                                int r14 = yVar8.r();
                                                 bArr = new byte[r14];
-                                                zVar9.c(0, r14, bArr);
+                                                yVar8.c(0, r14, bArr);
                                             }
-                                            rVar2.k = true;
-                                            rVar2.m = new q(z21, str, r13, bArr2, i53, i54, bArr);
-                                            size = arrayList8.size();
-                                            for (i15 = 0; i15 < size; i15++) {
-                                                b bVar5 = (b) arrayList8.get(i15);
+                                            qVar2.k = true;
+                                            qVar2.m = new p(z22, str, r13, bArr2, i50, i51, bArr);
+                                            size = arrayList9.size();
+                                            for (i13 = 0; i13 < size; i13++) {
+                                                b bVar5 = (b) arrayList9.get(i13);
                                                 if (bVar5.b == 1970628964) {
-                                                    z zVar11 = bVar5.c;
-                                                    zVar11.C(8);
+                                                    y yVar11 = bVar5.c;
+                                                    yVar11.C(8);
                                                     byte[] bArr3 = this.g;
-                                                    zVar11.c(0, 16, bArr3);
+                                                    yVar11.c(0, 16, bArr3);
                                                     if (Arrays.equals(bArr3, H)) {
-                                                        d(zVar11, 16, rVar2);
+                                                        d(yVar11, 16, qVar2);
                                                     }
                                                 }
                                             }
                                         }
                                     }
-                                    size = arrayList8.size();
-                                    while (i15 < size) {
+                                    size = arrayList9.size();
+                                    while (i13 < size) {
                                     }
                                 }
                             }
                         }
                     } else {
-                        i10 = size4;
-                        i11 = i33;
-                        arrayList = arrayList5;
+                        i9 = size4;
                         arrayList2 = arrayList6;
-                        i12 = i24;
+                        arrayList3 = arrayList7;
+                        i10 = i30;
                     }
-                    i33 = i11 + 1;
-                    size4 = i10;
-                    arrayList5 = arrayList;
+                    i30 = i10 + 1;
+                    size4 = i9;
                     arrayList6 = arrayList2;
-                    i24 = i12;
+                    arrayList7 = arrayList3;
                 }
-                l3.d a3 = a(arrayList6);
+                l3.c a3 = a(arrayList7);
                 if (a3 != null) {
                     int size6 = sparseArray.size();
-                    for (int i55 = 0; i55 < size6; i55++) {
-                        h hVar3 = (h) sparseArray.valueAt(i55);
-                        p pVar5 = hVar3.d.a;
+                    for (int i52 = 0; i52 < size6; i52++) {
+                        h hVar3 = (h) sparseArray.valueAt(i52);
+                        o oVar5 = hVar3.d.a;
                         f fVar7 = hVar3.b.a;
-                        int i56 = g0.a;
-                        q qVar2 = pVar5.k[fVar7.a];
-                        l3.d a10 = a3.a(qVar2 != null ? qVar2.b : null);
+                        int i53 = f0.a;
+                        p pVar2 = oVar5.k[fVar7.a];
+                        l3.c a10 = a3.a(pVar2 != null ? pVar2.b : null);
                         s0 a11 = hVar3.d.a.f.a();
                         a11.r = a10;
                         hVar3.a.c(new t0(a11));
@@ -1371,17 +1365,17 @@ public final class i implements m3.k {
                 }
                 if (this.v != -9223372036854775807L) {
                     int size7 = sparseArray.size();
-                    for (int i57 = 0; i57 < size7; i57++) {
-                        h hVar4 = (h) sparseArray.valueAt(i57);
+                    for (int i54 = 0; i54 < size7; i54++) {
+                        h hVar4 = (h) sparseArray.valueAt(i54);
                         long j17 = this.v;
-                        int i58 = hVar4.f;
+                        int i55 = hVar4.f;
                         while (true) {
-                            r rVar3 = hVar4.b;
-                            if (i58 < rVar3.e && rVar3.i[i58] <= j17) {
-                                if (rVar3.j[i58]) {
-                                    hVar4.i = i58;
+                            q qVar3 = hVar4.b;
+                            if (i55 < qVar3.e && qVar3.i[i55] <= j17) {
+                                if (qVar3.j[i55]) {
+                                    hVar4.i = i55;
                                 }
-                                i58++;
+                                i55++;
                             }
                         }
                     }
@@ -1402,8 +1396,8 @@ public final class i implements m3.k {
     public final void g(long j10, long j11) {
         SparseArray sparseArray = this.c;
         int size = sparseArray.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            ((h) sparseArray.valueAt(i10)).d();
+        for (int i9 = 0; i9 < size; i9++) {
+            ((h) sparseArray.valueAt(i9)).d();
         }
         this.m.clear();
         this.u = 0;

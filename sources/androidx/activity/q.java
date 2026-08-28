@@ -1,49 +1,58 @@
 package androidx.activity;
 
-import android.window.OnBackInvokedCallback;
-import jh.i9;
-import lh.sb;
-import org.telegram.ui.LaunchActivity;
+import androidx.fragment.app.a0;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class q implements OnBackInvokedCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class q extends kotlin.jvm.internal.j implements zc.a {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ x c;
 
-    public /* synthetic */ q(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ q(x xVar, int i9) {
+        super(0);
+        this.b = i9;
+        this.c = xVar;
     }
 
-    @Override // android.window.OnBackInvokedCallback
-    public final void onBackInvoked() {
-        switch (this.a) {
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r3v2 */
+    /* JADX WARN: Type inference failed for: r3v3 */
+    /* JADX WARN: Type inference failed for: r3v4, types: [java.lang.Object] */
+    @Override // zc.a
+    public final Object invoke() {
+        a0 a0Var;
+        switch (this.b) {
             case 0:
-                ad.a onBackInvoked = (ad.a) this.b;
-                kotlin.jvm.internal.j.e(onBackInvoked, "$onBackInvoked");
-                onBackInvoked.invoke();
+                this.c.b();
                 break;
             case 1:
-                ((g.r) this.b).s();
-                break;
-            case 2:
-                i9 i9Var = (i9) this.b;
-                i9Var.getClass();
-                LaunchActivity launchActivity = LaunchActivity.C1;
-                if (launchActivity == null) {
-                    i9Var.onAttachedBackPressed();
-                    break;
-                } else {
-                    launchActivity.onBackPressed();
-                    break;
+                x xVar = this.c;
+                a0 a0Var2 = xVar.c;
+                if (a0Var2 == null) {
+                    pc.e eVar = xVar.b;
+                    ListIterator listIterator = eVar.listIterator(eVar.size());
+                    while (true) {
+                        if (listIterator.hasPrevious()) {
+                            a0Var = listIterator.previous();
+                            if (((a0) a0Var).a) {
+                            }
+                        } else {
+                            a0Var = 0;
+                        }
+                    }
+                    a0Var2 = a0Var;
                 }
-            case 3:
-                ((sb) this.b).M();
+                xVar.c = null;
+                if (a0Var2 != null) {
+                    a0Var2.a();
+                }
                 break;
             default:
-                ((Runnable) this.b).run();
+                this.c.b();
                 break;
         }
+        return oc.i.a;
     }
 }

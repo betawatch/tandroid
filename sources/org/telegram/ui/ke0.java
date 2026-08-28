@@ -1,65 +1,54 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ke0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ me0 b;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-    public /* synthetic */ ke0(me0 me0Var, int i10) {
-        this.a = i10;
-        this.b = me0Var;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ke0 implements org.telegram.ui.ActionBar.b2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qe0 b;
+
+    public /* synthetic */ ke0(qe0 qe0Var, int i9) {
+        this.a = i9;
+        this.b = qe0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.ActionBar.b2
+    public final void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
         switch (this.a) {
             case 0:
-                me0 me0Var = this.b;
-                org.telegram.ui.Components.ri0 ri0Var = me0Var.e;
-                ri0Var.getAnimatedDrawable().L(0, false, false);
-                ri0Var.d();
-                od0 od0Var = me0Var.a;
-                if (od0Var != null) {
-                    od0Var.f[0].requestFocus();
-                    break;
-                }
+                qe0 qe0Var = this.b;
+                qe0Var.c(true);
+                qe0Var.K.u1(0, true, null, true);
+                qe0Var.o();
                 break;
             case 1:
-                me0 me0Var2 = this.b;
-                int i10 = 0;
-                me0Var2.w = false;
-                while (true) {
-                    wr[] wrVarArr = me0Var2.a.f;
-                    if (i10 >= wrVarArr.length) {
-                        break;
-                    } else {
-                        wrVarArr[i10].i(0.0f);
-                        i10++;
-                    }
-                }
+                qe0 qe0Var2 = this.b;
+                qe0Var2.K.l0.popup = false;
+                qe0Var2.h(null);
+                break;
             case 2:
-                me0 me0Var3 = this.b;
-                me0Var3.postDelayed(new ke0(me0Var3, 3), 150L);
-                ke0 ke0Var = me0Var3.x;
-                me0Var3.removeCallbacks(ke0Var);
-                me0Var3.postDelayed(ke0Var, 3000L);
-                me0Var3.w = true;
+                qe0 qe0Var3 = this.b;
+                fg0 fg0Var = qe0Var3.K;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(fg0Var.getParentActivity());
+                alertDialog$Builder.a.N = LocaleController.getString("TermsOfService", R.string.TermsOfService);
+                alertDialog$Builder.a.P = LocaleController.getString("TosDecline", R.string.TosDecline);
+                alertDialog$Builder.k(LocaleController.getString("SignUp", R.string.SignUp), new ke0(qe0Var3, 3));
+                alertDialog$Builder.h(LocaleController.getString("Decline", R.string.Decline), new ke0(qe0Var3, 4));
+                fg0Var.showDialog(alertDialog$Builder.a);
+                break;
+            case 3:
+                qe0 qe0Var4 = this.b;
+                qe0Var4.K.l0.popup = false;
+                qe0Var4.h(null);
                 break;
             default:
-                od0 od0Var2 = this.b.a;
-                int i11 = 0;
-                od0Var2.e = false;
-                od0Var2.f[0].requestFocus();
-                while (true) {
-                    wr[] wrVarArr2 = od0Var2.f;
-                    if (i11 >= wrVarArr2.length) {
-                        break;
-                    } else {
-                        wrVarArr2[i11].i(0.0f);
-                        i11++;
-                    }
-                }
+                qe0 qe0Var5 = this.b;
+                qe0Var5.c(true);
+                qe0Var5.K.u1(0, true, null, true);
+                break;
         }
     }
 }

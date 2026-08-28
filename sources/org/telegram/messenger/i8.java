@@ -1,29 +1,51 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.Timer;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ a0.h d;
+    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ BaseController f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ i8(MediaDataController mediaDataController, String str, boolean z10, int i10) {
-        this.a = i10;
-        this.b = mediaDataController;
-        this.c = str;
-        this.d = z10;
+    public /* synthetic */ i8(MediaDataController mediaDataController, Timer.Task task, Timer timer, ArrayList arrayList, long j10, a0.h hVar, Runnable runnable) {
+        this.f = mediaDataController;
+        this.h = task;
+        this.n = timer;
+        this.c = arrayList;
+        this.b = j10;
+        this.d = hVar;
+        this.e = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processLoadedDiceStickers$87(this.c, this.d);
+                ((MediaDataController) this.f).lambda$loadReplyMessagesForMessages$171((Timer.Task) this.h, (Timer) this.n, this.c, this.b, this.d, this.e);
                 break;
             default:
-                this.b.lambda$loadStickersByEmojiOrName$83(this.c, this.d);
+                ((TopicsController) this.f).lambda$reloadTopics$13((TLRPC.TL_messages_savedDialogs) this.h, this.b, this.c, this.d, (HashSet) this.n, this.e);
                 break;
         }
+    }
+
+    public /* synthetic */ i8(TopicsController topicsController, TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs, long j10, ArrayList arrayList, a0.h hVar, HashSet hashSet, Runnable runnable) {
+        this.f = topicsController;
+        this.h = tL_messages_savedDialogs;
+        this.b = j10;
+        this.c = arrayList;
+        this.d = hVar;
+        this.n = hashSet;
+        this.e = runnable;
     }
 }

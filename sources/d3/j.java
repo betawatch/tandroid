@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class j extends SQLiteOpenHelper {
     public static final String c = "INSERT INTO global_log_event_state VALUES (" + System.currentTimeMillis() + ")";
@@ -15,22 +15,22 @@ public final class j extends SQLiteOpenHelper {
     public final int a;
     public boolean b;
 
-    public j(Context context, String str, int i10) {
-        super(context, str, (SQLiteDatabase.CursorFactory) null, i10);
+    public j(Context context, String str, int i9) {
+        super(context, str, (SQLiteDatabase.CursorFactory) null, i9);
         this.b = false;
-        this.a = i10;
+        this.a = i9;
     }
 
-    public static void a(SQLiteDatabase sQLiteDatabase, int i10, int i11) {
+    public static void a(SQLiteDatabase sQLiteDatabase, int i9, int i10) {
         List list = e;
-        if (i11 > list.size()) {
-            StringBuilder p6 = com.google.android.recaptcha.internal.a.p("Migration from ", i10, " to ", i11, " was requested, but cannot be performed. Only ");
-            p6.append(list.size());
-            p6.append(" migrations are provided");
-            throw new IllegalArgumentException(p6.toString());
+        if (i10 > list.size()) {
+            StringBuilder o6 = e2.c.o("Migration from ", i9, " to ", i10, " was requested, but cannot be performed. Only ");
+            o6.append(list.size());
+            o6.append(" migrations are provided");
+            throw new IllegalArgumentException(o6.toString());
         }
-        while (i10 < i11) {
-            switch (((i) list.get(i10)).a) {
+        while (i9 < i10) {
+            switch (((i) list.get(i9)).a) {
                 case 0:
                     sQLiteDatabase.execSQL("CREATE TABLE events (_id INTEGER PRIMARY KEY, context_id INTEGER NOT NULL, transport_name TEXT NOT NULL, timestamp_ms INTEGER NOT NULL, uptime_ms INTEGER NOT NULL, payload BLOB NOT NULL, code INTEGER, num_attempts INTEGER NOT NULL,FOREIGN KEY (context_id) REFERENCES transport_contexts(_id) ON DELETE CASCADE)");
                     sQLiteDatabase.execSQL("CREATE TABLE event_metadata (_id INTEGER PRIMARY KEY, event_id INTEGER NOT NULL, name TEXT NOT NULL, value TEXT NOT NULL,FOREIGN KEY (event_id) REFERENCES events(_id) ON DELETE CASCADE)");
@@ -59,7 +59,7 @@ public final class j extends SQLiteOpenHelper {
                     sQLiteDatabase.execSQL(c);
                     break;
             }
-            i10++;
+            i9++;
         }
     }
 
@@ -79,7 +79,7 @@ public final class j extends SQLiteOpenHelper {
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
-    public final void onDowngrade(SQLiteDatabase sQLiteDatabase, int i10, int i11) {
+    public final void onDowngrade(SQLiteDatabase sQLiteDatabase, int i9, int i10) {
         sQLiteDatabase.execSQL("DROP TABLE events");
         sQLiteDatabase.execSQL("DROP TABLE event_metadata");
         sQLiteDatabase.execSQL("DROP TABLE transport_contexts");
@@ -89,7 +89,7 @@ public final class j extends SQLiteOpenHelper {
         if (!this.b) {
             onConfigure(sQLiteDatabase);
         }
-        a(sQLiteDatabase, 0, i11);
+        a(sQLiteDatabase, 0, i10);
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
@@ -101,10 +101,10 @@ public final class j extends SQLiteOpenHelper {
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
-    public final void onUpgrade(SQLiteDatabase sQLiteDatabase, int i10, int i11) {
+    public final void onUpgrade(SQLiteDatabase sQLiteDatabase, int i9, int i10) {
         if (!this.b) {
             onConfigure(sQLiteDatabase);
         }
-        a(sQLiteDatabase, i10, i11);
+        a(sQLiteDatabase, i9, i10);
     }
 }

@@ -1,65 +1,54 @@
 package tb;
 
-import java.io.FilterInputStream;
+import com.googlecode.mp4parser.c;
 import java.io.IOException;
-import java.io.InputStream;
+import java.nio.ByteBuffer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import ub.k;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a extends FilterInputStream {
-    public int a;
-    public int b;
+public abstract class a extends c {
+    public static final Logger f;
+    public static final /* synthetic */ zd.b h;
+    public ByteBuffer e;
 
-    public a(InputStream inputStream) {
-        super(inputStream);
-        this.a = -1;
-        this.b = -1;
+    static {
+        zd.a aVar = new zd.a(a.class, "AbstractDescriptorBox.java");
+        aVar.e(aVar.d("getData", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "java.nio.ByteBuffer"));
+        aVar.e(aVar.d("getDescriptor", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BaseDescriptor"));
+        aVar.e(aVar.d("getDescriptorAsString", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "java.lang.String"));
+        aVar.e(aVar.d("setDescriptor", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BaseDescriptor", "descriptor", "void"));
+        h = aVar.e(aVar.d("setData", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "java.nio.ByteBuffer", "data", "void"));
+        f = Logger.getLogger(a.class.getName());
     }
 
-    @Override // java.io.FilterInputStream, java.io.InputStream
-    public final boolean markSupported() {
-        return false;
+    @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
+    public final void _parseDetails(ByteBuffer byteBuffer) {
+        Logger logger = f;
+        f(byteBuffer);
+        this.e = byteBuffer.slice();
+        byteBuffer.position(byteBuffer.remaining() + byteBuffer.position());
+        try {
+            this.e.rewind();
+            k.a(-1, this.e);
+        } catch (IOException e10) {
+            logger.log(Level.WARNING, "Error parsing ObjectDescriptor", (Throwable) e10);
+        } catch (IndexOutOfBoundsException e11) {
+            logger.log(Level.WARNING, "Error parsing ObjectDescriptor", (Throwable) e11);
+        }
     }
 
-    @Override // java.io.FilterInputStream, java.io.InputStream
-    public final int read() {
-        int read = super.read();
-        if (read == 3 && this.a == 0 && this.b == 0) {
-            this.a = -1;
-            this.b = -1;
-            read = super.read();
-        }
-        this.a = this.b;
-        this.b = read;
-        return read;
+    @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
+    public final void getContent(ByteBuffer byteBuffer) {
+        i(byteBuffer);
+        this.e.rewind();
+        byteBuffer.put(this.e);
     }
 
-    @Override // java.io.FilterInputStream, java.io.InputStream
-    public final int read(byte[] bArr, int i10, int i11) {
-        bArr.getClass();
-        if (i10 < 0 || i11 < 0 || i11 > bArr.length - i10) {
-            throw new IndexOutOfBoundsException();
-        }
-        if (i11 == 0) {
-            return 0;
-        }
-        int read = read();
-        if (read == -1) {
-            return -1;
-        }
-        bArr[i10] = (byte) read;
-        int i12 = 1;
-        while (i12 < i11) {
-            try {
-                int read2 = read();
-                if (read2 == -1) {
-                    break;
-                }
-                bArr[i10 + i12] = (byte) read2;
-                i12++;
-            } catch (IOException unused) {
-            }
-        }
-        return i12;
+    @Override // com.googlecode.mp4parser.a
+    public final long getContentSize() {
+        return this.e.limit() + 4;
     }
 }

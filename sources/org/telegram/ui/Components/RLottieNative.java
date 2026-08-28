@@ -5,7 +5,7 @@ import android.os.Trace;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class RLottieNative {
     public final int[] a;
@@ -17,16 +17,16 @@ public final class RLottieNative {
         this.a = iArr;
     }
 
-    public static RLottieNative a(String str, String str2, int i10, int i11, int[] iArr, boolean z10, int[] iArr2, boolean z11, int i12, HashMap hashMap) {
+    public static RLottieNative a(String str, String str2, int i9, int i10, int[] iArr, boolean z10, int[] iArr2, boolean z11, int i11, HashMap hashMap) {
         String[] strArr;
         int[] iArr3;
         String str3;
+        int i12;
         int i13;
-        int i14;
         boolean z12;
         int[] iArr4;
         boolean z13;
-        int i15;
+        int i14;
         String str4;
         int[] iArr5 = new int[3];
         Trace.beginSection("RLottieNative#create");
@@ -44,28 +44,28 @@ public final class RLottieNative {
             iArr3 = null;
             str4 = str;
             str3 = str2;
+            i12 = i9;
             i13 = i10;
-            i14 = i11;
             z12 = z10;
             iArr4 = iArr2;
             z13 = z11;
-            i15 = i12;
+            i14 = i11;
         } else {
             int[] iArr6 = new int[strArr.length];
-            for (int i16 = 0; i16 < strArr.length; i16++) {
-                iArr6[i16] = ((Integer) hashMap.get(strArr[i16])).intValue();
+            for (int i15 = 0; i15 < strArr.length; i15++) {
+                iArr6[i15] = ((Integer) hashMap.get(strArr[i15])).intValue();
             }
             iArr3 = iArr6;
             str3 = str2;
+            i12 = i9;
             i13 = i10;
-            i14 = i11;
             z12 = z10;
             iArr4 = iArr2;
             z13 = z11;
-            i15 = i12;
+            i14 = i11;
             str4 = str;
         }
-        long nCreate = nCreate(str4, str3, i13, i14, iArr5, z12, iArr4, z13, i15, strArr, iArr3);
+        long nCreate = nCreate(str4, str3, i12, i13, iArr5, z12, iArr4, z13, i14, strArr, iArr3);
         Trace.endSection();
         if (nCreate == 0) {
             return null;
@@ -85,8 +85,8 @@ public final class RLottieNative {
                 iArr3 = null;
             } else {
                 int[] iArr5 = new int[strArr.length];
-                for (int i10 = 0; i10 < strArr.length; i10++) {
-                    iArr5[i10] = ((Integer) hashMap.get(strArr[i10])).intValue();
+                for (int i9 = 0; i9 < strArr.length; i9++) {
+                    iArr5[i9] = ((Integer) hashMap.get(strArr[i9])).intValue();
                 }
                 iArr3 = iArr5;
             }
@@ -108,22 +108,22 @@ public final class RLottieNative {
         return null;
     }
 
-    private static native long nCreate(String str, String str2, int i10, int i11, int[] iArr, boolean z10, int[] iArr2, boolean z11, int i12, String[] strArr, int[] iArr3);
+    private static native long nCreate(String str, String str2, int i9, int i10, int[] iArr, boolean z10, int[] iArr2, boolean z11, int i11, String[] strArr, int[] iArr3);
 
     private static native long nCreateWithJson(String str, String str2, int[] iArr, int[] iArr2, String[] strArr, int[] iArr3);
 
     private static native void nDestroy(long j10);
 
-    private static native int nGetFrame(long j10, int i10, Bitmap bitmap, boolean z10);
+    private static native int nGetFrame(long j10, int i9, Bitmap bitmap, boolean z10);
 
-    public final int c(int i10, Bitmap bitmap, boolean z10) {
+    public final int c(int i9, Bitmap bitmap, boolean z10) {
         if (this.c.get()) {
             throw new IllegalStateException("Called method on a recycled RLottie instance");
         }
         long j10 = this.b;
         Trace.beginSection("RLottieNative#getFrame");
         try {
-            return nGetFrame(j10, i10, bitmap, z10);
+            return nGetFrame(j10, i9, bitmap, z10);
         } finally {
             Trace.endSection();
         }

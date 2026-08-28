@@ -8,13 +8,13 @@ public abstract class s6 extends c implements Iterable {
     public Object e;
     public Object[] f;
 
-    public abstract void i(Object obj, int i10, int i11, Object obj2);
+    public abstract void i(Object obj, int i9, int i10, Object obj2);
 
     public abstract int j(Object obj);
 
     public abstract Object[] m();
 
-    public abstract Object newArray(int i10);
+    public abstract Object newArray(int i9);
 
     public abstract Spliterator spliterator();
 
@@ -23,8 +23,8 @@ public abstract class s6 extends c implements Iterable {
         return Spliterator.Wrapper.convert(spliterator());
     }
 
-    public s6(int i10) {
-        super(i10);
+    public s6(int i9) {
+        super(i9);
         this.e = newArray(1 << this.a);
     }
 
@@ -34,11 +34,11 @@ public abstract class s6 extends c implements Iterable {
 
     public final void l(long j10) {
         long j11;
-        int i10 = this.c;
-        if (i10 == 0) {
+        int i9 = this.c;
+        if (i9 == 0) {
             j11 = j(this.e);
         } else {
-            j11 = j(this.f[i10]) + this.d[i10];
+            j11 = j(this.f[i9]) + this.d[i9];
         }
         if (j10 > j11) {
             if (this.f == null) {
@@ -47,24 +47,24 @@ public abstract class s6 extends c implements Iterable {
                 this.d = new long[8];
                 m10[0] = this.e;
             }
-            int i11 = this.c + 1;
+            int i10 = this.c + 1;
             while (j10 > j11) {
                 Object[] objArr = this.f;
-                if (i11 >= objArr.length) {
+                if (i10 >= objArr.length) {
                     int length = objArr.length * 2;
                     this.f = Arrays.copyOf(objArr, length);
                     this.d = Arrays.copyOf(this.d, length);
                 }
-                int i12 = this.a;
-                if (i11 != 0 && i11 != 1) {
-                    i12 = Math.min((i12 + i11) - 1, 30);
+                int i11 = this.a;
+                if (i10 != 0 && i10 != 1) {
+                    i11 = Math.min((i11 + i10) - 1, 30);
                 }
-                int i13 = 1 << i12;
-                this.f[i11] = newArray(i13);
+                int i12 = 1 << i11;
+                this.f[i10] = newArray(i12);
                 long[] jArr = this.d;
-                jArr[i11] = jArr[i11 - 1] + j(this.f[r6]);
-                j11 += i13;
-                i11++;
+                jArr[i10] = jArr[i10 - 1] + j(this.f[r6]);
+                j11 += i12;
+                i10++;
             }
         }
     }
@@ -79,32 +79,32 @@ public abstract class s6 extends c implements Iterable {
         if (j10 >= count()) {
             throw new IndexOutOfBoundsException(Long.toString(j10));
         }
-        for (int i10 = 0; i10 <= this.c; i10++) {
-            if (j10 < this.d[i10] + j(this.f[i10])) {
-                return i10;
+        for (int i9 = 0; i9 <= this.c; i9++) {
+            if (j10 < this.d[i9] + j(this.f[i9])) {
+                return i9;
             }
         }
         throw new IndexOutOfBoundsException(Long.toString(j10));
     }
 
-    public void c(int i10, Object obj) {
-        long j10 = i10;
+    public void c(int i9, Object obj) {
+        long j10 = i9;
         long count = count() + j10;
         if (count > j(obj) || count < j10) {
             throw new IndexOutOfBoundsException("does not fit");
         }
         if (this.c == 0) {
-            System.arraycopy(this.e, 0, obj, i10, this.b);
+            System.arraycopy(this.e, 0, obj, i9, this.b);
             return;
         }
-        for (int i11 = 0; i11 < this.c; i11++) {
-            Object obj2 = this.f[i11];
-            System.arraycopy(obj2, 0, obj, i10, j(obj2));
-            i10 += j(this.f[i11]);
+        for (int i10 = 0; i10 < this.c; i10++) {
+            Object obj2 = this.f[i10];
+            System.arraycopy(obj2, 0, obj, i9, j(obj2));
+            i9 += j(this.f[i10]);
         }
-        int i12 = this.b;
-        if (i12 > 0) {
-            System.arraycopy(this.e, 0, obj, i10, i12);
+        int i11 = this.b;
+        if (i11 > 0) {
+            System.arraycopy(this.e, 0, obj, i9, i11);
         }
     }
 
@@ -127,21 +127,21 @@ public abstract class s6 extends c implements Iterable {
                 this.d = new long[8];
                 m10[0] = this.e;
             }
-            int i10 = this.c;
-            int i11 = i10 + 1;
+            int i9 = this.c;
+            int i10 = i9 + 1;
             Object[] objArr = this.f;
-            if (i11 >= objArr.length || objArr[i11] == null) {
-                if (i10 == 0) {
+            if (i10 >= objArr.length || objArr[i10] == null) {
+                if (i9 == 0) {
                     j10 = j(this.e);
                 } else {
-                    j10 = j(objArr[i10]) + this.d[i10];
+                    j10 = j(objArr[i9]) + this.d[i9];
                 }
                 l(j10 + 1);
             }
             this.b = 0;
-            int i12 = this.c + 1;
-            this.c = i12;
-            this.e = this.f[i12];
+            int i11 = this.c + 1;
+            this.c = i11;
+            this.e = this.f[i11];
         }
     }
 
@@ -158,8 +158,8 @@ public abstract class s6 extends c implements Iterable {
     }
 
     public void d(Object obj) {
-        for (int i10 = 0; i10 < this.c; i10++) {
-            Object obj2 = this.f[i10];
+        for (int i9 = 0; i9 < this.c; i9++) {
+            Object obj2 = this.f[i9];
             i(obj2, 0, j(obj2), obj);
         }
         i(this.e, 0, this.b, obj);

@@ -1,24 +1,10 @@
 package b5;
 
-import h3.t0;
 import j4.i1;
+import o8.l0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class o {
-    public final int a;
-    public final i1 b;
-    public final int c;
-    public final t0 d;
-
-    public o(int i10, i1 i1Var, int i11) {
-        this.a = i10;
-        this.b = i1Var;
-        this.c = i11;
-        this.d = i1Var.d[i11];
-    }
-
-    public abstract int a();
-
-    public abstract boolean b(o oVar);
+public interface o {
+    l0 e(int i9, i1 i1Var, int[] iArr);
 }

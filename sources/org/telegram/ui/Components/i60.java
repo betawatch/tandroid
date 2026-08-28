@@ -1,48 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class i60 extends iw0 {
-    public final /* synthetic */ int G;
+public final class i60 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j60 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i60(Context context, View view, int i10, org.telegram.ui.ActionBar.c6 c6Var, int i11) {
-        super(context, view, i10, c6Var);
-        this.G = i11;
+    public /* synthetic */ i60(j60 j60Var, int i9) {
+        this.a = i9;
+        this.b = j60Var;
     }
 
-    @Override // org.telegram.ui.Components.iw0, android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.G) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                super.onAttachedToWindow();
-                this.b.getImageReceiver().startAnimation();
-                break;
-            case 1:
-                super.onAttachedToWindow();
-                this.b.getImageReceiver().startAnimation();
+                j60 j60Var = this.b;
+                j60Var.e.Z = null;
+                j60Var.requestLayout();
                 break;
             default:
-                super.onAttachedToWindow();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.iw0, android.view.View
-    public void setVisibility(int i10) {
-        switch (this.G) {
-            case 2:
-                super.setVisibility(i10);
-                if (i10 != 0) {
-                    e(false, false);
-                    break;
-                }
-                break;
-            default:
-                super.setVisibility(i10);
+                j60 j60Var2 = this.b;
+                j60Var2.e.Z = null;
+                j60Var2.a = false;
                 break;
         }
     }

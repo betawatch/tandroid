@@ -1,9 +1,9 @@
 package y0;
 
-import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.i;
 import w0.d;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class a extends d {
     public static final /* synthetic */ int b = 0;
@@ -16,7 +16,7 @@ public final class a extends d {
     public a(x0.a aVar, String str) {
         super(str, type);
         String type = "androidx.credentials.TYPE_CREATE_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/".concat(aVar.a);
-        j.e(type, "type");
+        i.e(type, "type");
         if (type.length() <= 0) {
             throw new IllegalArgumentException("type must not be empty");
         }

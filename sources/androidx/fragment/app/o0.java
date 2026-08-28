@@ -3,10 +3,10 @@ package androidx.fragment.app;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class o0 implements Parcelable {
-    public static final Parcelable.Creator<o0> CREATOR = new w.a(20);
+    public static final Parcelable.Creator<o0> CREATOR = new w.a(12);
     public final boolean A;
     public final String a;
     public final String b;
@@ -59,10 +59,10 @@ public final class o0 implements Parcelable {
         if (this.d) {
             sb2.append(" dynamicContainer");
         }
-        int i10 = this.f;
-        if (i10 != 0) {
+        int i9 = this.f;
+        if (i9 != 0) {
             sb2.append(" id=0x");
-            sb2.append(Integer.toHexString(i10));
+            sb2.append(Integer.toHexString(i9));
         }
         String str = this.h;
         if (str != null && !str.isEmpty()) {
@@ -95,7 +95,7 @@ public final class o0 implements Parcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeString(this.a);
         parcel.writeString(this.b);
         parcel.writeInt(this.c ? 1 : 0);

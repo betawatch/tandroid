@@ -1,29 +1,30 @@
 package h3;
 
 import android.net.Uri;
+import fh.y5;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class d1 implements g {
-    public static final d1 c = new d1(new a5.n(18, false));
+    public static final d1 c = new d1(new a5.m(20, false));
     public static final String d;
     public static final String e;
     public static final String f;
-    public static final f9.z h;
+    public static final y5 h;
     public final Uri a;
     public final String b;
 
     static {
-        int i10 = d5.g0.a;
+        int i9 = d5.f0.a;
         d = Integer.toString(0, 36);
         e = Integer.toString(1, 36);
         f = Integer.toString(2, 36);
-        h = new f9.z(23);
+        h = new y5(19);
     }
 
-    public d1(a5.n nVar) {
-        this.a = (Uri) nVar.b;
-        this.b = (String) nVar.c;
+    public d1(a5.m mVar) {
+        this.a = (Uri) mVar.b;
+        this.b = (String) mVar.c;
     }
 
     public final boolean equals(Object obj) {
@@ -34,7 +35,7 @@ public final class d1 implements g {
             return false;
         }
         d1 d1Var = (d1) obj;
-        return d5.g0.a(this.a, d1Var.a) && d5.g0.a(this.b, d1Var.b);
+        return d5.f0.a(this.a, d1Var.a) && d5.f0.a(this.b, d1Var.b);
     }
 
     public final int hashCode() {

@@ -27,46 +27,46 @@ public final class b extends CharsetEncoder {
         this.a = eVar;
     }
 
-    public static int a(char[] cArr, int i10, byte[] bArr, int i11, int i12) {
-        int i13 = 0;
-        if (i12 <= 0) {
+    public static int a(char[] cArr, int i9, byte[] bArr, int i10, int i11) {
+        int i12 = 0;
+        if (i11 <= 0) {
             return 0;
         }
         Objects.requireNonNull(cArr);
         Objects.requireNonNull(bArr);
-        if (i10 < 0 || i10 >= cArr.length) {
+        if (i9 < 0 || i9 >= cArr.length) {
+            throw new ArrayIndexOutOfBoundsException(i9);
+        }
+        if (i10 < 0 || i10 >= bArr.length) {
             throw new ArrayIndexOutOfBoundsException(i10);
         }
-        if (i11 < 0 || i11 >= bArr.length) {
-            throw new ArrayIndexOutOfBoundsException(i11);
+        int i13 = (i9 + i11) - 1;
+        if (i13 < 0 || i13 >= cArr.length) {
+            throw new ArrayIndexOutOfBoundsException(i13);
         }
-        int i14 = (i10 + i12) - 1;
-        if (i14 < 0 || i14 >= cArr.length) {
+        int i14 = (i10 + i11) - 1;
+        if (i14 < 0 || i14 >= bArr.length) {
             throw new ArrayIndexOutOfBoundsException(i14);
         }
-        int i15 = (i11 + i12) - 1;
-        if (i15 < 0 || i15 >= bArr.length) {
-            throw new ArrayIndexOutOfBoundsException(i15);
-        }
-        while (i13 < i12) {
-            int i16 = i10 + 1;
-            char c10 = cArr[i10];
+        while (i12 < i11) {
+            int i15 = i9 + 1;
+            char c10 = cArr[i9];
             if (c10 > 255) {
                 break;
             }
-            bArr[i11] = (byte) c10;
-            i13++;
-            i10 = i16;
-            i11++;
+            bArr[i10] = (byte) c10;
+            i12++;
+            i9 = i15;
+            i10++;
         }
-        return i13;
+        return i12;
     }
 
     @Override // java.nio.charset.CharsetEncoder
     public final CoderResult encodeLoop(CharBuffer charBuffer, ByteBuffer byteBuffer) {
         CoderResult coderResult;
         CoderResult coderResult2;
-        int i10 = 2;
+        int i9 = 2;
         if (!charBuffer.hasArray() || !byteBuffer.hasArray()) {
             int position = charBuffer.position();
             while (true) {
@@ -87,9 +87,9 @@ public final class b extends CharsetEncoder {
                         coderResult = this.a.a;
                     } else {
                         if (!this.a.b) {
-                            i10 = 1;
+                            i9 = 1;
                         }
-                        coderResult = CoderResult.unmappableForLength(i10);
+                        coderResult = CoderResult.unmappableForLength(i9);
                     }
                 } finally {
                 }
@@ -110,24 +110,24 @@ public final class b extends CharsetEncoder {
         if (position3 > limit2) {
             position3 = limit2;
         }
-        int i11 = limit2 - position3;
-        int i12 = limit - position2;
-        if (i11 >= i12) {
-            i11 = i12;
+        int i10 = limit2 - position3;
+        int i11 = limit - position2;
+        if (i10 >= i11) {
+            i10 = i11;
         }
         try {
-            int a2 = a(array, position2, array2, position3, i11);
-            int i13 = position2 + a2;
-            int i14 = position3 + a2;
-            if (a2 == i11) {
-                coderResult2 = i11 < i12 ? CoderResult.OVERFLOW : CoderResult.UNDERFLOW;
-            } else if (this.a.b(array[i13], array, i13, limit) < 0) {
+            int a2 = a(array, position2, array2, position3, i10);
+            int i12 = position2 + a2;
+            int i13 = position3 + a2;
+            if (a2 == i10) {
+                coderResult2 = i10 < i11 ? CoderResult.OVERFLOW : CoderResult.UNDERFLOW;
+            } else if (this.a.b(array[i12], array, i12, limit) < 0) {
                 coderResult2 = this.a.a;
             } else {
                 if (!this.a.b) {
-                    i10 = 1;
+                    i9 = 1;
                 }
-                coderResult2 = CoderResult.unmappableForLength(i10);
+                coderResult2 = CoderResult.unmappableForLength(i9);
             }
             return coderResult2;
         } catch (Throwable th) {

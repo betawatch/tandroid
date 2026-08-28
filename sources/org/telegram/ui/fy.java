@@ -1,93 +1,271 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.widget.FrameLayout;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class fy extends FrameLayout {
-    public static final /* synthetic */ int H = 0;
-    public boolean A;
-    public zw B;
-    public pf.k C;
-    public boolean D;
-    public final jw E;
-    public final jw F;
-    public final /* synthetic */ gy G;
-    public cy a;
-    public b6.a b;
-    public kw c;
-    public ow d;
-    public f2.f0 e;
-    public ey f;
-    public int h;
-    public nw n;
-    public c2.x r;
-    public int s;
-    public int v;
-    public org.telegram.ui.Components.h00 w;
-    public iw x;
-    public org.telegram.ui.Components.gk0 y;
+public final class fy extends View implements NotificationCenter.NotificationCenterDelegate {
+    public final Paint a;
+    public final Paint b;
+    public final int c;
+    public final ArrayList d;
+    public float e;
+    public float f;
+    public float h;
+    public final ImageReceiver n;
+    public final ImageReceiver r;
+    public final org.telegram.ui.Components.mi0 s;
+    public final org.telegram.ui.Components.mi0 v;
+    public boolean w;
+    public int x;
+    public boolean y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fy(Context context, gy gyVar) {
+    public fy(Context context, int i9) {
         super(context);
-        this.G = gyVar;
-        this.E = new jw(this, 1);
-        this.F = new jw(this, 2);
+        this.a = new Paint(1);
+        this.b = new Paint(1);
+        this.d = new ArrayList();
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.n = imageReceiver;
+        ImageReceiver imageReceiver2 = new ImageReceiver(this);
+        this.r = imageReceiver2;
+        this.c = i9;
+        imageReceiver.ignoreNotifications = true;
+        imageReceiver2.ignoreNotifications = true;
+        org.telegram.ui.Components.mi0 mi0Var = new org.telegram.ui.Components.mi0(R.raw.download_progress, "download_progress", AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        this.s = mi0Var;
+        org.telegram.ui.Components.mi0 mi0Var2 = new org.telegram.ui.Components.mi0(R.raw.download_finish, "download_finish", AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        this.v = mi0Var2;
+        imageReceiver.setImageBitmap(mi0Var);
+        imageReceiver2.setImageBitmap(mi0Var2);
+        imageReceiver.setAutoRepeat(1);
+        mi0Var.I(1);
+        mi0Var.start();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        ((FrameLayout.LayoutParams) this.a.getLayoutParams()).bottomMargin = 0;
-        super.onMeasure(i10, i11);
+    public final void a() {
+        int i9 = org.telegram.ui.ActionBar.f6.v8;
+        this.s.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.f6.w0(null, i9, false), PorterDuff.Mode.SRC_IN));
+        this.v.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.f6.w0(null, i9, false), PorterDuff.Mode.SRC));
+        invalidate();
     }
 
-    public final boolean p() {
-        int i10 = this.s;
-        return i10 == 0 || i10 == 7 || i10 == 8;
-    }
-
-    public final void q(boolean z10) {
-        if (((org.telegram.ui.ActionBar.n2) this.G).isPaused) {
+    public final void b() {
+        ArrayList arrayList;
+        int i9 = this.c;
+        DownloadController downloadController = DownloadController.getInstance(i9);
+        HashMap hashMap = new HashMap();
+        int i10 = 0;
+        while (true) {
+            arrayList = this.d;
+            if (i10 >= arrayList.size()) {
+                break;
+            }
+            hashMap.put(((ey) arrayList.get(i10)).c, (ey) arrayList.get(i10));
+            DownloadController.getInstance(i9).removeLoadingFileObserver((DownloadController.FileDownloadProgressListener) arrayList.get(i10));
+            i10++;
+        }
+        arrayList.clear();
+        for (int i11 = 0; i11 < downloadController.downloadingFiles.size(); i11++) {
+            String fileName = downloadController.downloadingFiles.get(i11).getFileName();
+            if (FileLoader.getInstance(i9).isLoadingFile(fileName)) {
+                ey eyVar = (ey) hashMap.get(fileName);
+                if (eyVar == null) {
+                    eyVar = new ey(this, fileName);
+                }
+                DownloadController.getInstance(i9).addLoadingFileObserver(fileName, eyVar);
+                arrayList.add(eyVar);
+            }
+        }
+        if (arrayList.size() != 0 || this.y) {
             return;
         }
-        jw jwVar = this.F;
-        if (z10) {
-            AndroidUtilities.cancelRunOnUIThread(jwVar);
-            this.a.setItemAnimator(this.x);
-            jwVar.run();
+        if (DownloadController.getInstance(i9).hasUnviewedDownloads()) {
+            this.e = 1.0f;
+            this.f = 1.0f;
+            this.w = true;
         } else {
-            if (this.D) {
+            this.e = 0.0f;
+            this.f = 0.0f;
+            this.w = false;
+        }
+    }
+
+    public final void c() {
+        MessagesStorage.getInstance(this.c);
+        int i9 = 0;
+        long j10 = 0;
+        long j11 = 0;
+        while (true) {
+            ArrayList arrayList = this.d;
+            if (i9 >= arrayList.size()) {
+                break;
+            }
+            j10 += ((ey) arrayList.get(i9)).a;
+            j11 += ((ey) arrayList.get(i9)).b;
+            i9++;
+        }
+        if (j10 == 0) {
+            this.e = 1.0f;
+        } else {
+            this.e = j11 / j10;
+        }
+        float f10 = this.e;
+        if (f10 > 1.0f) {
+            this.e = 1.0f;
+        } else if (f10 < 0.0f) {
+            this.e = 0.0f;
+        }
+        this.h = ((this.e - this.f) * 16.0f) / 150.0f;
+        invalidate();
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i9, int i10, Object... objArr) {
+        if (i9 == NotificationCenter.onDownloadingFilesChanged) {
+            b();
+            c();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        b();
+        NotificationCenter.getInstance(this.c).addObserver(this, NotificationCenter.onDownloadingFilesChanged);
+        this.n.onAttachedToWindow();
+        this.r.onAttachedToWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        int i9 = 0;
+        while (true) {
+            ArrayList arrayList = this.d;
+            int size = arrayList.size();
+            int i10 = this.c;
+            if (i9 >= size) {
+                arrayList.clear();
+                NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.onDownloadingFilesChanged);
+                this.n.onDetachedFromWindow();
+                this.r.onDetachedFromWindow();
                 return;
             }
-            this.D = true;
-            if (!this.x.k()) {
-                this.a.setItemAnimator(null);
-            }
-            AndroidUtilities.runOnUIThread(jwVar, 36L);
+            DownloadController.getInstance(i10).removeLoadingFileObserver((DownloadController.FileDownloadProgressListener) arrayList.get(i9));
+            i9++;
         }
     }
 
     @Override // android.view.View
-    public void setTranslationX(float f10) {
-        fy fyVar;
-        if (getTranslationX() != f10) {
-            super.setTranslationX(f10);
-            gy gyVar = this.G;
-            if (gyVar.c3 && (fyVar = gyVar.a0[0]) == this) {
-                gyVar.v0.g(Math.abs(fyVar.getTranslationX()) / gyVar.a0[0].getMeasuredWidth(), gyVar.a0[1].h);
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (getAlpha() == 0.0f) {
+            return;
+        }
+        int i9 = this.x;
+        int i10 = org.telegram.ui.ActionBar.f6.v8;
+        int w02 = org.telegram.ui.ActionBar.f6.w0(null, i10, false);
+        ImageReceiver imageReceiver = this.r;
+        ImageReceiver imageReceiver2 = this.n;
+        Paint paint = this.a;
+        Paint paint2 = this.b;
+        if (i9 != w02) {
+            this.x = org.telegram.ui.ActionBar.f6.w0(null, i10, false);
+            paint.setColor(org.telegram.ui.ActionBar.f6.w0(null, i10, false));
+            paint2.setColor(org.telegram.ui.ActionBar.f6.w0(null, i10, false));
+            int w03 = org.telegram.ui.ActionBar.f6.w0(null, i10, false);
+            PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+            imageReceiver2.setColorFilter(new PorterDuffColorFilter(w03, mode));
+            imageReceiver.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.f6.w0(null, i10, false), mode));
+            paint2.setAlpha(100);
+        }
+        float f10 = this.f;
+        float f11 = this.e;
+        if (f10 != f11) {
+            float f12 = this.h;
+            float f13 = f10 + f12;
+            this.f = f13;
+            if (f12 > 0.0f && f13 > f11) {
+                this.f = f11;
+            } else if (f12 >= 0.0f || f13 >= f11) {
+                invalidate();
+            } else {
+                this.f = f11;
             }
-            gyVar.m3();
+        }
+        int dp = AndroidUtilities.dp(8.0f) + (getMeasuredHeight() / 2);
+        float dp2 = AndroidUtilities.dp(1.0f);
+        float dp3 = AndroidUtilities.dp(16.0f);
+        RectF rectF = AndroidUtilities.rectTmp;
+        float f14 = dp;
+        float f15 = f14 - dp2;
+        float f16 = f14 + dp2;
+        rectF.set(dp3, f15, getMeasuredWidth() - dp3, f16);
+        canvas.drawRoundRect(rectF, dp2, dp2, paint2);
+        rectF.set(dp3, f15, ((getMeasuredWidth() - (2.0f * dp3)) * this.f) + dp3, f16);
+        canvas.drawRoundRect(rectF, dp2, dp2, paint);
+        canvas.save();
+        canvas.clipRect(0.0f, 0.0f, getMeasuredWidth(), f15);
+        if (this.e != 1.0f) {
+            this.w = false;
+        }
+        if (this.w) {
+            imageReceiver.draw(canvas);
+        } else {
+            imageReceiver2.draw(canvas);
+        }
+        if (this.e == 1.0f && !this.w && this.s.X == 0) {
+            org.telegram.ui.Components.mi0 mi0Var = this.v;
+            mi0Var.L(0, false, false);
+            mi0Var.start();
+            this.w = true;
+        }
+        canvas.restore();
+        if (getAlpha() != 0.0f) {
+            this.y = true;
         }
     }
 
     @Override // android.view.View
-    public void setTranslationY(float f10) {
-        if (getTranslationY() != f10) {
-            this.G.m3();
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
+        int dp = AndroidUtilities.dp(15.0f);
+        float f10 = dp;
+        int i11 = dp * 2;
+        this.n.setImageCoords(f10, f10, getMeasuredWidth() - i11, getMeasuredHeight() - i11);
+        this.r.setImageCoords(f10, f10, getMeasuredWidth() - i11, getMeasuredHeight() - i11);
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f10) {
+        if (f10 == 0.0f) {
+            this.y = false;
         }
-        super.setTranslationY(f10);
+        super.setAlpha(f10);
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i9) {
+        if (i9 != 0) {
+            this.y = false;
+        }
+        super.setVisibility(i9);
     }
 }

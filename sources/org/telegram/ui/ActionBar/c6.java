@@ -1,29 +1,54 @@
 package org.telegram.ui.ActionBar;
 
+import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public interface c6 {
-    ColorFilter F();
+public final class c6 extends Drawable {
+    public float[] b;
+    public Path a = new Path();
+    public boolean c = true;
 
-    Paint N(String str);
+    public c6(float f10, float f11) {
+        this.b = new float[]{r4, r4, r4, r4, r4, r4, r4, r4};
+        float dp = AndroidUtilities.dp(f10);
+        float dp2 = AndroidUtilities.dp(f11);
+    }
 
-    int N0(int i10);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Path path = this.a;
+        if (this.c) {
+            this.c = false;
+            path.reset();
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(getBounds());
+            path.addRoundRect(rectF, this.b, Path.Direction.CW);
+        }
+        canvas.drawPath(path, f6.z);
+    }
 
-    boolean a();
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
 
-    void c1(int i10, int i11);
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.c = true;
+    }
 
-    Drawable getDrawable(String str);
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i9) {
+    }
 
-    void m(float f10, float f11, int i10, int i11);
-
-    int o1(int i10);
-
-    int q0(int i10);
-
-    boolean u0();
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+    }
 }

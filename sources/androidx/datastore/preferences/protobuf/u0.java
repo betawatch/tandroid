@@ -1,6 +1,91 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class u0 {
+public final class u0 implements c1 {
+    public final a a;
+    public final k1 b;
+    public final o c;
+
+    public u0(k1 k1Var, o oVar, a aVar) {
+        this.b = k1Var;
+        oVar.getClass();
+        this.c = oVar;
+        this.a = aVar;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.c1
+    public final Object a() {
+        return ((v) ((x) this.a).d(5)).b();
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.c1
+    public final void b(Object obj, l0 l0Var) {
+        this.c.getClass();
+        aa.d.v(obj);
+        throw null;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.c1
+    public final void c(Object obj) {
+        this.b.getClass();
+        ((x) obj).unknownFields.e = false;
+        this.c.getClass();
+        aa.d.v(obj);
+        throw null;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.c1
+    public final int d(a aVar) {
+        this.b.getClass();
+        j1 j1Var = ((x) aVar).unknownFields;
+        int i9 = j1Var.d;
+        if (i9 != -1) {
+            return i9;
+        }
+        int i10 = 0;
+        for (int i11 = 0; i11 < j1Var.a; i11++) {
+            int i12 = j1Var.b[i11] >>> 3;
+            g gVar = (g) j1Var.c[i11];
+            i10 += k.r(3, gVar) + k.z(i12) + k.y(2) + (k.y(1) * 2);
+        }
+        j1Var.d = i10;
+        return i10;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.c1
+    public final boolean e(Object obj) {
+        this.c.getClass();
+        aa.d.v(obj);
+        throw null;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.c1
+    public final void f(x xVar, x xVar2) {
+        d1.w(this.b, xVar, xVar2);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.c1
+    public final int g(x xVar) {
+        this.b.getClass();
+        return xVar.unknownFields.hashCode();
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.c1
+    public final boolean h(x xVar, x xVar2) {
+        this.b.getClass();
+        return xVar.unknownFields.equals(xVar2.unknownFields);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.c1
+    public final void i(Object obj, i iVar, n nVar) {
+        this.b.getClass();
+        x xVar = (x) obj;
+        if (xVar.unknownFields == j1.f) {
+            xVar.unknownFields = j1.b();
+        }
+        this.c.getClass();
+        obj.getClass();
+        throw new ClassCastException();
+    }
 }

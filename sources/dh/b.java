@@ -1,120 +1,93 @@
 package dh;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import h7.n;
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.h5;
+import org.telegram.ui.Cells.t1;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.ut;
+import org.telegram.ui.Components.wy;
+import org.telegram.ui.nq;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class b extends Drawable {
-    public final a b;
-    public Bitmap c;
-    public Canvas d;
-    public int e;
-    public float f;
-    public int g;
-    public int h;
-    public final Paint a = new Paint(2);
-    public int i = 255;
+public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public b(a aVar) {
-        this.b = aVar;
+    public /* synthetic */ b(Object obj, int i9, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = i9;
     }
 
-    public final void a(int i10, int i11, float f10, int i12) {
-        int i13 = i12 * 2;
-        int i14 = (int) ((i10 + i13) / f10);
-        int i15 = (int) ((i11 + i13) / f10);
-        Bitmap bitmap = this.c;
-        if (bitmap != null && bitmap.getWidth() == i14 && this.c.getHeight() == i15) {
-            this.c.eraseColor(0);
-        } else {
-            Bitmap bitmap2 = this.c;
-            if (bitmap2 != null) {
-                bitmap2.recycle();
-            }
-            this.c = Bitmap.createBitmap(i14, i15, Bitmap.Config.ARGB_8888);
-            this.d = new Canvas(this.c);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int i9;
+        switch (this.a) {
+            case 0:
+                l lVar = (l) this.c;
+                lVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                lVar.n = floatValue;
+                lVar.setAlpha((int) ((1.0f - floatValue) * this.b));
+                lVar.p = true;
+                lVar.invalidateSelf();
+                break;
+            case 1:
+                f3 f3Var = (f3) this.c;
+                f3Var.getClass();
+                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                f3Var.setItemColor(this.b, intValue, intValue);
+                break;
+            case 2:
+                t1 t1Var = (t1) this.c;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (t1Var.getMessageObject() != null && t1Var.getMessageObject().getId() == this.b) {
+                    t1Var.setSelectedBackgroundProgress(floatValue2);
+                    break;
+                }
+                break;
+            case 3:
+                ut utVar = (ut) this.c;
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                utVar.d.setTranslationY(floatValue3);
+                int i10 = this.b;
+                float f10 = i10;
+                float f11 = 1.0f - (floatValue3 / f10);
+                utVar.N = f11;
+                if (i10 > 0 && ((i9 = utVar.H) == 2 || i9 == 3)) {
+                    utVar.d.setAlpha(f11);
+                }
+                utVar.c(floatValue3 - f10);
+                break;
+            case 4:
+                ((wy) this.c).M0[this.b] = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            case 5:
+                k90 k90Var = (k90) this.c;
+                float[] fArr = k90Var.V;
+                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                int i11 = this.b;
+                fArr[i11] = floatValue4;
+                h5[] h5VarArr = k90Var.w;
+                h5VarArr[i11].setScaleX(AndroidUtilities.lerp(1.111f, 1.0f, floatValue4));
+                h5VarArr[i11].setScaleY(AndroidUtilities.lerp(1.111f, 1.0f, fArr[i11]));
+                h5VarArr[i11].setTranslationY(AndroidUtilities.lerp(AndroidUtilities.dp(8.0f), 0, fArr[i11]));
+                k90Var.x[i11].setAlpha(fArr[i11]);
+                break;
+            default:
+                nq nqVar = (nq) this.c;
+                nqVar.getClass();
+                Float f12 = (Float) valueAnimator.getAnimatedValue();
+                dk0 dk0Var = (dk0) nqVar.d;
+                dk0Var.b.put(this.b, f12);
+                dk0Var.d = true;
+                dk0Var.a.invalidate();
+                break;
         }
-        this.f = f10;
-        this.e = i12;
-        this.d.save();
-        float f11 = i12 / f10;
-        this.d.translate(f11, f11);
-        float f12 = 1.0f / f10;
-        this.d.scale(f12, f12);
-        this.b.l(this.d, 255);
-        Utilities.stackBlurBitmap(this.c, (int) f11);
-        this.d.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int i10 = this.i;
-        a aVar = this.b;
-        if (i10 == 255) {
-            canvas.save();
-            canvas.translate(this.g, this.h);
-            aVar.l(canvas, 255);
-            canvas.restore();
-            return;
-        }
-        if (i10 == 0) {
-            return;
-        }
-        double d = i10 / 255.0d;
-        double d10 = d / ((1.0d - d) * 6.0d);
-        double d11 = 1.0d + d10;
-        double sqrt = ((-d11) + Math.sqrt((d11 * d11) - (((-d10) * 4.0d) * (-d)))) / ((-2.0d) * d10);
-        int b10 = n.b((int) (d10 * sqrt * 255.0d), 0, 255);
-        int b11 = n.b((int) (sqrt * 255.0d), 0, 255);
-        if (b11 > 0 && this.c != null) {
-            Paint paint = this.a;
-            paint.setAlpha(b11);
-            canvas.save();
-            int i11 = this.g;
-            int i12 = this.e;
-            canvas.translate(i11 - i12, this.h - i12);
-            float f10 = this.f;
-            canvas.scale(f10, f10);
-            canvas.drawBitmap(this.c, 0.0f, 0.0f, paint);
-            canvas.restore();
-        }
-        if (b10 > 0) {
-            canvas.save();
-            canvas.translate(this.g, this.h);
-            aVar.l(canvas, b10);
-            canvas.restore();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.i;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.i = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setBounds(int i10, int i11, int i12, int i13) {
-        this.g = i10;
-        this.h = i11;
-        super.setBounds(i10, i11, i12, i13);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

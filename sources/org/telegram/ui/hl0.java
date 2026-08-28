@@ -5,15 +5,15 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hl0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xm0 b;
+    public final /* synthetic */ wm0 b;
 
-    public /* synthetic */ hl0(xm0 xm0Var, int i10) {
-        this.a = i10;
-        this.b = xm0Var;
+    public /* synthetic */ hl0(wm0 wm0Var, int i9) {
+        this.a = i9;
+        this.b = wm0Var;
     }
 
     @Override // java.lang.Runnable
@@ -21,24 +21,24 @@ public final /* synthetic */ class hl0 implements Runnable {
         ViewGroup viewGroup;
         switch (this.a) {
             case 0:
-                xm0 xm0Var = this.b;
-                ViewGroup[] viewGroupArr = xm0Var.V;
+                wm0 wm0Var = this.b;
+                ViewGroup[] viewGroupArr = wm0Var.V;
                 if (viewGroupArr != null && (viewGroup = viewGroupArr[0]) != null && viewGroup.getVisibility() == 0) {
-                    xm0Var.U[0].requestFocus();
-                    AndroidUtilities.showKeyboard(xm0Var.U[0]);
+                    wm0Var.U[0].requestFocus();
+                    AndroidUtilities.showKeyboard(wm0Var.U[0]);
                     break;
                 }
                 break;
             case 1:
-                xm0 xm0Var2 = this.b;
-                xm0Var2.presentFragment(xm0Var2.d1, true);
-                xm0Var2.d1 = null;
+                wm0 wm0Var2 = this.b;
+                wm0Var2.presentFragment(wm0Var2.d1, true);
+                wm0Var2.d1 = null;
                 break;
             case 2:
-                xm0 xm0Var3 = this.b;
-                EditTextBoldCursor[] editTextBoldCursorArr = xm0Var3.W;
+                wm0 wm0Var3 = this.b;
+                EditTextBoldCursor[] editTextBoldCursorArr = wm0Var3.W;
                 if (editTextBoldCursorArr != null) {
-                    xm0Var3.I1(editTextBoldCursorArr[0]);
+                    wm0Var3.I1(editTextBoldCursorArr[0]);
                     break;
                 }
                 break;
@@ -49,23 +49,23 @@ public final /* synthetic */ class hl0 implements Runnable {
                 this.b.x1();
                 break;
             case 5:
-                int i10 = 0;
+                int i9 = 0;
                 while (true) {
-                    xm0 xm0Var4 = this.b;
-                    if (i10 >= xm0Var4.Y.getChildCount()) {
-                        xm0Var4.x1();
-                        xm0Var4.m1.clear();
-                        xm0Var4.l1.clear();
-                        xm0Var4.y.values.clear();
-                        xm0Var4.Q1();
+                    wm0 wm0Var4 = this.b;
+                    if (i9 >= wm0Var4.Y.getChildCount()) {
+                        wm0Var4.x1();
+                        wm0Var4.m1.clear();
+                        wm0Var4.l1.clear();
+                        wm0Var4.y.values.clear();
+                        wm0Var4.Q1();
                         break;
                     } else {
-                        View childAt = xm0Var4.Y.getChildAt(i10);
-                        if (childAt instanceof wm0) {
-                            xm0Var4.Y.removeView(childAt);
-                            i10--;
+                        View childAt = wm0Var4.Y.getChildAt(i9);
+                        if (childAt instanceof vm0) {
+                            wm0Var4.Y.removeView(childAt);
+                            i9--;
                         }
-                        i10++;
+                        i9++;
                     }
                 }
             default:

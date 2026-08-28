@@ -8,11 +8,11 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import androidx.appcompat.view.menu.ListMenuItemView;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class j2 extends s1 {
     public f2 A;
-    public l.n B;
+    public l.m B;
     public final int x;
     public final int y;
 
@@ -29,30 +29,30 @@ public final class j2 extends s1 {
 
     @Override // m.s1, android.view.View
     public final boolean onHoverEvent(MotionEvent motionEvent) {
-        l.i iVar;
-        int i10;
+        l.h hVar;
+        int i9;
         int pointToPosition;
-        int i11;
+        int i10;
         if (this.A != null) {
             ListAdapter adapter = getAdapter();
             if (adapter instanceof HeaderViewListAdapter) {
                 HeaderViewListAdapter headerViewListAdapter = (HeaderViewListAdapter) adapter;
-                i10 = headerViewListAdapter.getHeadersCount();
-                iVar = (l.i) headerViewListAdapter.getWrappedAdapter();
+                i9 = headerViewListAdapter.getHeadersCount();
+                hVar = (l.h) headerViewListAdapter.getWrappedAdapter();
             } else {
-                iVar = (l.i) adapter;
-                i10 = 0;
+                hVar = (l.h) adapter;
+                i9 = 0;
             }
-            l.n item = (motionEvent.getAction() == 10 || (pointToPosition = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY())) == -1 || (i11 = pointToPosition - i10) < 0 || i11 >= iVar.getCount()) ? null : iVar.getItem(i11);
-            l.n nVar = this.B;
-            if (nVar != item) {
-                l.l lVar = iVar.a;
-                if (nVar != null) {
-                    this.A.j(lVar, nVar);
+            l.m item = (motionEvent.getAction() == 10 || (pointToPosition = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY())) == -1 || (i10 = pointToPosition - i9) < 0 || i10 >= hVar.getCount()) ? null : hVar.getItem(i10);
+            l.m mVar = this.B;
+            if (mVar != item) {
+                l.k kVar = hVar.a;
+                if (mVar != null) {
+                    this.A.k(kVar, mVar);
                 }
                 this.B = item;
                 if (item != null) {
-                    this.A.y(lVar, item);
+                    this.A.y(kVar, item);
                 }
             }
         }
@@ -60,20 +60,20 @@ public final class j2 extends s1 {
     }
 
     @Override // android.widget.ListView, android.widget.AbsListView, android.view.View, android.view.KeyEvent.Callback
-    public final boolean onKeyDown(int i10, KeyEvent keyEvent) {
+    public final boolean onKeyDown(int i9, KeyEvent keyEvent) {
         ListMenuItemView listMenuItemView = (ListMenuItemView) getSelectedView();
-        if (listMenuItemView != null && i10 == this.x) {
+        if (listMenuItemView != null && i9 == this.x) {
             if (listMenuItemView.isEnabled() && listMenuItemView.getItemData().hasSubMenu()) {
                 performItemClick(listMenuItemView, getSelectedItemPosition(), getSelectedItemId());
             }
             return true;
         }
-        if (listMenuItemView == null || i10 != this.y) {
-            return super.onKeyDown(i10, keyEvent);
+        if (listMenuItemView == null || i9 != this.y) {
+            return super.onKeyDown(i9, keyEvent);
         }
         setSelection(-1);
         ListAdapter adapter = getAdapter();
-        (adapter instanceof HeaderViewListAdapter ? (l.i) ((HeaderViewListAdapter) adapter).getWrappedAdapter() : (l.i) adapter).a.c(false);
+        (adapter instanceof HeaderViewListAdapter ? (l.h) ((HeaderViewListAdapter) adapter).getWrappedAdapter() : (l.h) adapter).a.c(false);
         return true;
     }
 

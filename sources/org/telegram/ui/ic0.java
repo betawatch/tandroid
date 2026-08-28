@@ -1,60 +1,33 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.Context;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ic0 implements org.telegram.ui.Components.ss0 {
-    public final /* synthetic */ tc0 a;
+public final class ic0 extends of.q0 {
+    public final /* synthetic */ pc0 J;
 
-    public ic0(tc0 tc0Var) {
-        this.a = tc0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ic0(pc0 pc0Var, Context context, org.telegram.ui.ActionBar.b6 b6Var, boolean z10) {
+        super(context, b6Var, false, z10);
+        this.J = pc0Var;
     }
 
-    @Override // org.telegram.ui.Components.ss0
-    public final void R() {
-        tc0 tc0Var = this.a;
-        jc0 jc0Var = tc0Var.G0;
-        int c02 = jc0Var == null ? 0 : jc0Var.c0(8);
-        tc0Var.H0.setText(LocaleController.formatPluralString("LocationStories", c02, new Object[0]));
-        hc0 hc0Var = tc0Var.P;
-        boolean z10 = c02 > 0;
-        if (hc0Var.e0 != z10) {
-            hc0Var.e0 = z10;
-            hc0Var.l();
-            tc0Var.Q.v0(0, AndroidUtilities.dp(200.0f), null);
+    @Override // f2.r0
+    public final void l() {
+        pc0 pc0Var = this.J;
+        org.telegram.ui.ActionBar.w0 w0Var = pc0Var.w;
+        if (w0Var != null) {
+            w0Var.setShowSearchProgress(pc0Var.S.F);
         }
-    }
-
-    @Override // org.telegram.ui.Components.ss0
-    public final boolean T() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ss0
-    public final org.telegram.ui.Components.zk0 f() {
-        return this.a.Q;
-    }
-
-    @Override // org.telegram.ui.Components.ss0
-    public final TLRPC.Chat g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.ss0
-    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ss0
-    public final boolean r() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ss0
-    public final void F() {
+        TextView textView = pc0Var.r;
+        if (textView != null) {
+            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, pc0Var.S.x)));
+        }
+        super.l();
     }
 }

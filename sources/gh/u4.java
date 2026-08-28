@@ -1,14 +1,15 @@
 package gh;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.k51;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class u4 extends k51 {
-    @Override // org.telegram.ui.Components.zk0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min((int) (AndroidUtilities.displaySize.y * 0.35f), View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11)));
+public final class u4 extends q4 {
+    public final TL_stars.starGiftAttributePattern c;
+
+    public u4(TL_stars.starGiftAttributePattern stargiftattributepattern) {
+        this.a = stargiftattributepattern.name;
+        this.b = stargiftattributepattern.getRarityPermille();
+        this.c = stargiftattributepattern;
     }
 }

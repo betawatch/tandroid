@@ -1,34 +1,32 @@
 package zf;
 
-import android.view.KeyEvent;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q implements org.telegram.ui.ActionBar.l1, Utilities.Callback3Return {
-    public final /* synthetic */ l0 a;
+public final class q extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r b;
+    public final /* synthetic */ s c;
 
-    public /* synthetic */ q(l0 l0Var) {
-        this.a = l0Var;
+    public /* synthetic */ q(s sVar, r rVar, int i9) {
+        this.a = i9;
+        this.c = sVar;
+        this.b = rVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.l1
-    public void k(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.n1 n1Var;
-        l0 l0Var = this.a;
-        l0Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var = l0Var.N1) != null && n1Var.isShowing()) {
-            l0Var.N1.d(true);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.f = null;
+                s.a(this.c);
+                break;
+            default:
+                this.b.f = null;
+                s.a(this.c);
+                break;
         }
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback3Return
-    public Object run(Object obj, Object obj2, Object obj3) {
-        y i02 = this.a.i0(obj, (TLRPC.Document) obj2, true);
-        if (((Boolean) obj3).booleanValue()) {
-            i02.setScale(1.5f);
-        }
-        return Boolean.TRUE;
     }
 }

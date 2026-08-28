@@ -1,11 +1,14 @@
 package u3;
 
-import d5.z;
+import d5.y;
+import j3.r0;
 import java.nio.ByteBuffer;
 import java.util.UUID;
+import n5.e0;
+import o8.z;
 import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final String[] a = {"Blues", "Classic Rock", "Country", "Dance", "Disco", "Funk", "Grunge", "Hip-Hop", "Jazz", "Metal", "New Age", "Oldies", "Other", "Pop", "R&B", "Rap", "Reggae", "Rock", "Techno", "Industrial", "Alternative", "Ska", "Death Metal", "Pranks", "Soundtrack", "Euro-Techno", "Ambient", "Trip-Hop", "Vocal", "Jazz+Funk", "Fusion", "Trance", "Classical", "Instrumental", "Acid", "House", "Game", "Sound Clip", "Gospel", "Noise", "AlternRock", "Bass", "Soul", "Punk", "Space", "Meditative", "Instrumental Pop", "Instrumental Rock", "Ethnic", "Gothic", "Darkwave", "Techno-Industrial", "Electronic", "Pop-Folk", "Eurodance", "Dream", "Southern Rock", "Comedy", "Cult", "Gangsta", "Top 40", "Christian Rap", "Pop/Funk", "Jungle", "Native American", "Cabaret", "New Wave", "Psychadelic", "Rave", "Showtunes", "Trailer", "Lo-Fi", "Tribal", "Acid Punk", "Acid Jazz", "Polka", "Retro", "Musical", "Rock & Roll", "Hard Rock", "Folk", "Folk-Rock", "National Folk", "Swing", "Fast Fusion", "Bebob", "Latin", "Revival", "Celtic", "Bluegrass", "Avantgarde", "Gothic Rock", "Progressive Rock", "Psychedelic Rock", "Symphonic Rock", "Slow Rock", "Big Band", "Chorus", "Easy Listening", "Acoustic", "Humour", "Speech", "Chanson", "Opera", "Chamber Music", "Sonata", "Symphony", "Booty Bass", "Primus", "Porn Groove", "Satire", "Slow Jam", "Club", "Tango", "Samba", "Folklore", "Ballad", "Power Ballad", "Rhythmic Soul", "Freestyle", "Duet", "Punk Rock", "Drum Solo", "A capella", "Euro-House", "Dance Hall", "Goa", "Drum & Bass", "Club-House", "Hardcore", "Terror", "Indie", "BritPop", "Afro-Punk", "Polsk Punk", "Beat", "Christian Gangsta Rap", "Heavy Metal", "Black Metal", "Crossover", "Contemporary Christian", "Christian Rock", "Merengue", "Salsa", "Thrash Metal", "Anime", "Jpop", "Synthpop", "Abstract", "Art Rock", "Baroque", "Bhangra", "Big beat", "Breakbeat", "Chillout", "Downtempo", "Dub", "EBM", "Eclectic", "Electro", "Electroclash", "Emo", "Experimental", "Garage", "Global", "IDM", "Illbient", "Industro-Goth", "Jam Band", "Krautrock", "Leftfield", "Lounge", "Math Rock", "New Romantic", "Nu-Breakz", "Post-Punk", "Post-Rock", "Psytrance", "Shoegaze", "Space Rock", "Trop Rock", "World Music", "Neoclassical", "Audiobook", "Audio theatre", "Neue Deutsche Welle", "Podcast", "Indie-Rock", "G-Funk", "Dubstep", "Garage Rock", "Psybient"};
@@ -36,106 +39,106 @@ public abstract class j {
         return allocate.array();
     }
 
-    public static e4.e b(int i10, z zVar) {
-        int e9 = zVar.e();
-        if (zVar.e() == 1684108385) {
-            zVar.D(8);
-            String n10 = zVar.n(e9 - 16);
+    public static e4.e b(int i9, y yVar) {
+        int e10 = yVar.e();
+        if (yVar.e() == 1684108385) {
+            yVar.D(8);
+            String n10 = yVar.n(e10 - 16);
             return new e4.e(TranslateController.UNKNOWN_LANGUAGE, n10, n10);
         }
-        d5.a.K("MetadataUtil", "Failed to parse comment attribute: " + mc.k.a(i10));
+        d5.a.K("MetadataUtil", "Failed to parse comment attribute: " + lc.k.a(i9));
         return null;
     }
 
-    public static e4.a c(z zVar) {
-        int e9 = zVar.e();
-        if (zVar.e() != 1684108385) {
+    public static e4.a c(y yVar) {
+        int e10 = yVar.e();
+        if (yVar.e() != 1684108385) {
             d5.a.K("MetadataUtil", "Failed to parse cover art attribute");
             return null;
         }
-        int e10 = zVar.e() & 16777215;
-        String str = e10 == 13 ? "image/jpeg" : e10 == 14 ? "image/png" : null;
+        int e11 = yVar.e() & 16777215;
+        String str = e11 == 13 ? "image/jpeg" : e11 == 14 ? "image/png" : null;
         if (str == null) {
-            com.google.android.recaptcha.internal.a.s(e10, "Unrecognized cover art flags: ", "MetadataUtil");
+            e2.c.t(e11, "Unrecognized cover art flags: ", "MetadataUtil");
             return null;
         }
-        zVar.D(4);
-        int i10 = e9 - 16;
-        byte[] bArr = new byte[i10];
-        zVar.c(0, i10, bArr);
+        yVar.D(4);
+        int i9 = e10 - 16;
+        byte[] bArr = new byte[i9];
+        yVar.c(0, i9, bArr);
         return new e4.a(3, str, null, bArr);
     }
 
-    public static e4.n d(int i10, String str, z zVar) {
-        int e9 = zVar.e();
-        if (zVar.e() == 1684108385 && e9 >= 22) {
-            zVar.D(10);
-            int w10 = zVar.w();
-            if (w10 > 0) {
-                String k10 = i0.a.k(w10, "");
-                int w11 = zVar.w();
-                if (w11 > 0) {
-                    k10 = k10 + "/" + w11;
+    public static e4.n d(int i9, String str, y yVar) {
+        int e10 = yVar.e();
+        if (yVar.e() == 1684108385 && e10 >= 22) {
+            yVar.D(10);
+            int w8 = yVar.w();
+            if (w8 > 0) {
+                String l10 = r0.l(w8, "");
+                int w10 = yVar.w();
+                if (w10 > 0) {
+                    l10 = l10 + "/" + w10;
                 }
-                return new e4.n(str, null, p8.z.y(k10));
+                return new e4.n(str, null, z.y(l10));
             }
         }
-        d5.a.K("MetadataUtil", "Failed to parse index/count attribute: " + mc.k.a(i10));
+        d5.a.K("MetadataUtil", "Failed to parse index/count attribute: " + lc.k.a(i9));
         return null;
     }
 
-    public static n1.d e(byte[] bArr) {
-        z zVar = new z(bArr);
-        if (zVar.c >= 32) {
-            zVar.C(0);
-            if (zVar.e() == zVar.a() + 4 && zVar.e() == 1886614376) {
-                int b10 = mc.k.b(zVar.e());
+    public static e0 e(byte[] bArr) {
+        y yVar = new y(bArr);
+        if (yVar.c >= 32) {
+            yVar.C(0);
+            if (yVar.e() == yVar.a() + 4 && yVar.e() == 1886614376) {
+                int b10 = lc.k.b(yVar.e());
                 if (b10 > 1) {
-                    com.google.android.recaptcha.internal.a.s(b10, "Unsupported pssh version: ", "PsshAtomUtil");
+                    e2.c.t(b10, "Unsupported pssh version: ", "PsshAtomUtil");
                     return null;
                 }
-                UUID uuid = new UUID(zVar.l(), zVar.l());
+                UUID uuid = new UUID(yVar.l(), yVar.l());
                 if (b10 == 1) {
-                    zVar.D(zVar.u() * 16);
+                    yVar.D(yVar.u() * 16);
                 }
-                int u10 = zVar.u();
-                if (u10 == zVar.a()) {
+                int u10 = yVar.u();
+                if (u10 == yVar.a()) {
                     byte[] bArr2 = new byte[u10];
-                    zVar.c(0, u10, bArr2);
-                    return new n1.d(uuid, b10, bArr2);
+                    yVar.c(0, u10, bArr2);
+                    return new e0(uuid, b10, bArr2);
                 }
             }
         }
         return null;
     }
 
-    public static e4.n f(int i10, String str, z zVar) {
-        int e9 = zVar.e();
-        if (zVar.e() == 1684108385) {
-            zVar.D(8);
-            return new e4.n(str, null, p8.z.y(zVar.n(e9 - 16)));
+    public static e4.n f(int i9, String str, y yVar) {
+        int e10 = yVar.e();
+        if (yVar.e() == 1684108385) {
+            yVar.D(8);
+            return new e4.n(str, null, z.y(yVar.n(e10 - 16)));
         }
-        d5.a.K("MetadataUtil", "Failed to parse text attribute: " + mc.k.a(i10));
+        d5.a.K("MetadataUtil", "Failed to parse text attribute: " + lc.k.a(i9));
         return null;
     }
 
-    public static e4.j g(int i10, String str, z zVar, boolean z10, boolean z11) {
-        int h = h(zVar);
+    public static e4.j g(int i9, String str, y yVar, boolean z10, boolean z11) {
+        int h = h(yVar);
         if (z11) {
             h = Math.min(1, h);
         }
         if (h >= 0) {
-            return z10 ? new e4.n(str, null, p8.z.y(Integer.toString(h))) : new e4.e(TranslateController.UNKNOWN_LANGUAGE, str, Integer.toString(h));
+            return z10 ? new e4.n(str, null, z.y(Integer.toString(h))) : new e4.e(TranslateController.UNKNOWN_LANGUAGE, str, Integer.toString(h));
         }
-        d5.a.K("MetadataUtil", "Failed to parse uint8 attribute: " + mc.k.a(i10));
+        d5.a.K("MetadataUtil", "Failed to parse uint8 attribute: " + lc.k.a(i9));
         return null;
     }
 
-    public static int h(z zVar) {
-        zVar.D(4);
-        if (zVar.e() == 1684108385) {
-            zVar.D(8);
-            return zVar.r();
+    public static int h(y yVar) {
+        yVar.D(4);
+        if (yVar.e() == 1684108385) {
+            yVar.D(8);
+            return yVar.r();
         }
         d5.a.K("MetadataUtil", "Failed to parse uint8 attribute value");
         return -1;
@@ -143,96 +146,96 @@ public abstract class j {
 
     public static boolean i(m3.l lVar, boolean z10, boolean z11) {
         boolean z12;
+        int i9;
         int i10;
-        int i11;
         long length = lVar.getLength();
         long j10 = 4096;
         long j11 = -1;
-        int i12 = (length > (-1L) ? 1 : (length == (-1L) ? 0 : -1));
-        if (i12 != 0 && length <= 4096) {
+        int i11 = (length > (-1L) ? 1 : (length == (-1L) ? 0 : -1));
+        if (i11 != 0 && length <= 4096) {
             j10 = length;
         }
-        int i13 = (int) j10;
-        z zVar = new z(64);
+        int i12 = (int) j10;
+        y yVar = new y(64);
+        int i13 = 0;
         int i14 = 0;
-        int i15 = 0;
         boolean z13 = false;
-        while (i15 < i13) {
-            zVar.z(8);
-            if (!lVar.g(zVar.a, i14, 8, true)) {
+        while (i14 < i12) {
+            yVar.z(8);
+            if (!lVar.g(yVar.a, i13, 8, true)) {
                 break;
             }
-            long s10 = zVar.s();
-            int e9 = zVar.e();
+            long s10 = yVar.s();
+            int e10 = yVar.e();
             if (s10 == 1) {
-                lVar.b(8, 8, zVar.a);
-                zVar.B(16);
-                i10 = i15;
-                s10 = zVar.l();
-                i11 = 16;
+                lVar.c(8, 8, yVar.a);
+                yVar.B(16);
+                i9 = i14;
+                s10 = yVar.l();
+                i10 = 16;
             } else {
                 if (s10 == 0) {
                     long length2 = lVar.getLength();
                     if (length2 != j11) {
-                        s10 = (length2 - lVar.i()) + 8;
+                        s10 = (length2 - lVar.k()) + 8;
                     }
                 }
-                i10 = i15;
-                i11 = 8;
+                i9 = i14;
+                i10 = 8;
             }
-            long j12 = i11;
+            long j12 = i10;
             if (s10 < j12) {
                 return false;
             }
-            int i16 = i10 + i11;
-            if (e9 == 1836019574) {
-                i13 += (int) s10;
-                if (i12 != 0 && i13 > length) {
-                    i13 = (int) length;
+            int i15 = i9 + i10;
+            if (e10 == 1836019574) {
+                i12 += (int) s10;
+                if (i11 != 0 && i12 > length) {
+                    i12 = (int) length;
                 }
-                i15 = i16;
+                i14 = i15;
             } else {
-                if (e9 == 1836019558 || e9 == 1836475768) {
+                if (e10 == 1836019558 || e10 == 1836475768) {
                     z12 = true;
                     break;
                 }
-                int i17 = i12;
-                if ((i16 + s10) - j12 >= i13) {
+                int i16 = i11;
+                if ((i15 + s10) - j12 >= i12) {
                     break;
                 }
-                int i18 = (int) (s10 - j12);
-                i15 = i16 + i18;
-                if (e9 == 1718909296) {
-                    if (i18 < 8) {
+                int i17 = (int) (s10 - j12);
+                i14 = i15 + i17;
+                if (e10 == 1718909296) {
+                    if (i17 < 8) {
                         return false;
                     }
-                    zVar.z(i18);
-                    lVar.b(0, i18, zVar.a);
-                    int i19 = i18 / 4;
-                    for (int i20 = 0; i20 < i19; i20++) {
-                        if (i20 != 1) {
-                            int e10 = zVar.e();
-                            if ((e10 >>> 8) != 3368816 && (e10 != 1751476579 || !z11)) {
-                                for (int i21 = 0; i21 < 29; i21++) {
-                                    if (b[i21] != e10) {
+                    yVar.z(i17);
+                    lVar.c(0, i17, yVar.a);
+                    int i18 = i17 / 4;
+                    for (int i19 = 0; i19 < i18; i19++) {
+                        if (i19 != 1) {
+                            int e11 = yVar.e();
+                            if ((e11 >>> 8) != 3368816 && (e11 != 1751476579 || !z11)) {
+                                for (int i20 = 0; i20 < 29; i20++) {
+                                    if (b[i20] != e11) {
                                     }
                                 }
                             }
                             z13 = true;
                             break;
                         }
-                        zVar.D(4);
+                        yVar.D(4);
                     }
                     if (!z13) {
                         return false;
                     }
-                } else if (i18 != 0) {
-                    lVar.j(i18);
+                } else if (i17 != 0) {
+                    lVar.n(i17);
                 }
-                i12 = i17;
+                i11 = i16;
             }
             j11 = -1;
-            i14 = 0;
+            i13 = 0;
         }
         z12 = false;
         return z13 && z10 == z12;

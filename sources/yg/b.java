@@ -1,33 +1,41 @@
 package yg;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import ff.s;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.gr;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class b {
-    public static final b a;
-    public static final b b;
-    public static final b c;
-    public static final b d;
-    public static final /* synthetic */ b[] e;
+public final class b extends View {
+    public final td.a a;
+    public final Drawable b;
+    public final Drawable c;
 
-    static {
-        b bVar = new b("STATE_FULLY_HIDDEN", 0);
-        a = bVar;
-        b bVar2 = new b("STATE_ANIMATING_TO_FULLY_HIDDEN", 1);
-        b = bVar2;
-        b bVar3 = new b("STATE_ANIMATING_TO_FULLY_VISIBLE", 2);
-        c = bVar3;
-        b bVar4 = new b("STATE_FULLY_VISIBLE", 3);
-        d = bVar4;
-        e = new b[]{bVar, bVar2, bVar3, bVar4};
+    public b(Context context) {
+        super(context);
+        this.a = new td.a(this, gr.h, 320L);
+        this.b = context.getResources().getDrawable(R.drawable.outline_poll_emoji_24).mutate();
+        this.c = context.getResources().getDrawable(R.drawable.input_keyboard).mutate();
     }
 
-    public static b valueOf(String str) {
-        return (b) Enum.valueOf(b.class, str);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float f10 = this.a.e;
+        s.b(canvas, this.b, 1.0f - f10);
+        s.b(canvas, this.c, f10);
     }
 
-    public static b[] values() {
-        return (b[]) e.clone();
+    @Override // android.view.View
+    public final void onSizeChanged(int i9, int i10, int i11, int i12) {
+        super.onSizeChanged(i9, i10, i11, i12);
+        float f10 = i9 / 2.0f;
+        float f11 = i10 / 2.0f;
+        s.d(this.b, f10, f11, 17);
+        s.d(this.c, f10, f11, 17);
     }
 }

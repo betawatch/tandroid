@@ -1,12 +1,12 @@
 package k4;
 
 import android.net.Uri;
-import d5.g0;
+import d5.f0;
 import h3.g;
-import ia.l;
+import i3.i;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b implements g {
     public static final b f = new b(new a[0], 0, -9223372036854775807L, 0);
@@ -15,7 +15,7 @@ public final class b implements g {
     public static final String r;
     public static final String s;
     public static final String v;
-    public static final l w;
+    public static final i w;
     public final int a;
     public final long b;
     public final long c;
@@ -35,25 +35,25 @@ public final class b implements g {
         long[] copyOf2 = Arrays.copyOf(jArr, max2);
         Arrays.fill(copyOf2, length2, max2, -9223372036854775807L);
         h = new a(aVar.a, 0, aVar.c, copyOf, (Uri[]) Arrays.copyOf(aVar.d, 0), copyOf2, aVar.h, aVar.n);
-        int i10 = g0.a;
+        int i9 = f0.a;
         n = Integer.toString(1, 36);
         r = Integer.toString(2, 36);
         s = Integer.toString(3, 36);
         v = Integer.toString(4, 36);
-        w = new l(17);
+        w = new i(11);
     }
 
-    public b(a[] aVarArr, long j10, long j11, int i10) {
+    public b(a[] aVarArr, long j10, long j11, int i9) {
         this.b = j10;
         this.c = j11;
-        this.a = aVarArr.length + i10;
+        this.a = aVarArr.length + i9;
         this.e = aVarArr;
-        this.d = i10;
+        this.d = i9;
     }
 
-    public final a a(int i10) {
-        int i11 = this.d;
-        return i10 < i11 ? h : this.e[i10 - i11];
+    public final a a(int i9) {
+        int i10 = this.d;
+        return i9 < i10 ? h : this.e[i9 - i10];
     }
 
     public final boolean equals(Object obj) {
@@ -64,7 +64,7 @@ public final class b implements g {
             return false;
         }
         b bVar = (b) obj;
-        int i10 = g0.a;
+        int i9 = f0.a;
         return this.a == bVar.a && this.b == bVar.b && this.c == bVar.c && this.d == bVar.d && Arrays.equals(this.e, bVar.e);
     }
 
@@ -76,44 +76,44 @@ public final class b implements g {
         StringBuilder sb2 = new StringBuilder("AdPlaybackState(adsId=null, adResumePositionUs=");
         sb2.append(this.b);
         sb2.append(", adGroups=[");
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             a[] aVarArr = this.e;
-            if (i10 >= aVarArr.length) {
+            if (i9 >= aVarArr.length) {
                 sb2.append("])");
                 return sb2.toString();
             }
             sb2.append("adGroup(timeUs=");
-            sb2.append(aVarArr[i10].a);
+            sb2.append(aVarArr[i9].a);
             sb2.append(", ads=[");
-            for (int i11 = 0; i11 < aVarArr[i10].e.length; i11++) {
+            for (int i10 = 0; i10 < aVarArr[i9].e.length; i10++) {
                 sb2.append("ad(state=");
-                int i12 = aVarArr[i10].e[i11];
-                if (i12 == 0) {
+                int i11 = aVarArr[i9].e[i10];
+                if (i11 == 0) {
                     sb2.append('_');
-                } else if (i12 == 1) {
+                } else if (i11 == 1) {
                     sb2.append('R');
-                } else if (i12 == 2) {
+                } else if (i11 == 2) {
                     sb2.append('S');
-                } else if (i12 == 3) {
+                } else if (i11 == 3) {
                     sb2.append('P');
-                } else if (i12 != 4) {
+                } else if (i11 != 4) {
                     sb2.append('?');
                 } else {
                     sb2.append('!');
                 }
                 sb2.append(", durationUs=");
-                sb2.append(aVarArr[i10].f[i11]);
+                sb2.append(aVarArr[i9].f[i10]);
                 sb2.append(')');
-                if (i11 < aVarArr[i10].e.length - 1) {
+                if (i10 < aVarArr[i9].e.length - 1) {
                     sb2.append(", ");
                 }
             }
             sb2.append("])");
-            if (i10 < aVarArr.length - 1) {
+            if (i9 < aVarArr.length - 1) {
                 sb2.append(", ");
             }
-            i10++;
+            i9++;
         }
     }
 }

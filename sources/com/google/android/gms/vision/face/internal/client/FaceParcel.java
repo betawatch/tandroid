@@ -2,14 +2,14 @@ package com.google.android.gms.vision.face.internal.client;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import f4.e;
-import h7.r8;
-import z5.a;
+import c.c;
+import g7.p8;
+import y5.a;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class FaceParcel extends a {
-    public static final Parcelable.Creator<FaceParcel> CREATOR = new e(2);
+    public static final Parcelable.Creator<FaceParcel> CREATOR = new c(18);
     public final float A;
     public final int a;
     public final int b;
@@ -24,11 +24,11 @@ public class FaceParcel extends a {
     public final float v;
     public final float w;
     public final float x;
-    public final f8.a[] y;
+    public final e8.a[] y;
 
-    public FaceParcel(int i10, int i11, float f10, float f11, float f12, float f13, float f14, float f15, float f16, LandmarkParcel[] landmarkParcelArr, float f17, float f18, float f19, f8.a[] aVarArr, float f20) {
-        this.a = i10;
-        this.b = i11;
+    public FaceParcel(int i9, int i10, float f10, float f11, float f12, float f13, float f14, float f15, float f16, LandmarkParcel[] landmarkParcelArr, float f17, float f18, float f19, e8.a[] aVarArr, float f20) {
+        this.a = i9;
+        this.b = i10;
         this.c = f10;
         this.d = f11;
         this.e = f12;
@@ -45,40 +45,40 @@ public class FaceParcel extends a {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.s(parcel, 1, 4);
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        r8.s(parcel, 2, 4);
+        p8.s(parcel, 2, 4);
         parcel.writeInt(this.b);
-        r8.s(parcel, 3, 4);
+        p8.s(parcel, 3, 4);
         parcel.writeFloat(this.c);
-        r8.s(parcel, 4, 4);
+        p8.s(parcel, 4, 4);
         parcel.writeFloat(this.d);
-        r8.s(parcel, 5, 4);
+        p8.s(parcel, 5, 4);
         parcel.writeFloat(this.e);
-        r8.s(parcel, 6, 4);
+        p8.s(parcel, 6, 4);
         parcel.writeFloat(this.f);
-        r8.s(parcel, 7, 4);
+        p8.s(parcel, 7, 4);
         parcel.writeFloat(this.h);
-        r8.s(parcel, 8, 4);
+        p8.s(parcel, 8, 4);
         parcel.writeFloat(this.n);
-        r8.o(parcel, 9, this.s, i10);
-        r8.s(parcel, 10, 4);
+        p8.o(parcel, 9, this.s, i9);
+        p8.s(parcel, 10, 4);
         parcel.writeFloat(this.v);
-        r8.s(parcel, 11, 4);
+        p8.s(parcel, 11, 4);
         parcel.writeFloat(this.w);
-        r8.s(parcel, 12, 4);
+        p8.s(parcel, 12, 4);
         parcel.writeFloat(this.x);
-        r8.o(parcel, 13, this.y, i10);
-        r8.s(parcel, 14, 4);
+        p8.o(parcel, 13, this.y, i9);
+        p8.s(parcel, 14, 4);
         parcel.writeFloat(this.r);
-        r8.s(parcel, 15, 4);
+        p8.s(parcel, 15, 4);
         parcel.writeFloat(this.A);
-        r8.r(parcel, q6);
+        p8.r(parcel, q10);
     }
 
-    public FaceParcel(int i10, int i11, float f10, float f11, float f12, float f13, float f14, float f15, LandmarkParcel[] landmarkParcelArr, float f16, float f17, float f18) {
-        this(i10, i11, f10, f11, f12, f13, f14, f15, 0.0f, landmarkParcelArr, f16, f17, f18, new f8.a[0], -1.0f);
+    public FaceParcel(int i9, int i10, float f10, float f11, float f12, float f13, float f14, float f15, LandmarkParcel[] landmarkParcelArr, float f16, float f17, float f18) {
+        this(i9, i10, f10, f11, f12, f13, f14, f15, 0.0f, landmarkParcelArr, f16, f17, f18, new e8.a[0], -1.0f);
     }
 }

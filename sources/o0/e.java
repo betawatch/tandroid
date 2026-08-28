@@ -1,47 +1,50 @@
 package o0;
 
-import android.util.Base64;
+import android.content.Context;
+import j$.util.DesugarCollections;
+import j$.util.Objects;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class e {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final List d;
-    public final String e;
+public final class e implements Callable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
 
-    public e(String str, String str2, String str3, List list) {
-        str.getClass();
-        this.a = str;
-        str2.getClass();
-        this.b = str2;
-        this.c = str3;
-        list.getClass();
-        this.d = list;
-        this.e = str + "-" + str2 + "-" + str3;
+    public /* synthetic */ e(String str, Context context, Object obj, int i9, int i10) {
+        this.a = i10;
+        this.b = str;
+        this.c = context;
+        this.e = obj;
+        this.d = i9;
     }
 
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append("FontRequest {mProviderAuthority: " + this.a + ", mProviderPackage: " + this.b + ", mQuery: " + this.c + ", mCertificates:");
-        int i10 = 0;
-        while (true) {
-            List list = this.d;
-            if (i10 >= list.size()) {
-                sb2.append("}mCertificatesArray: 0");
-                return sb2.toString();
-            }
-            sb2.append(" [");
-            List list2 = (List) list.get(i10);
-            for (int i11 = 0; i11 < list2.size(); i11++) {
-                sb2.append(" \"");
-                sb2.append(Base64.encodeToString((byte[]) list2.get(i11), 0));
-                sb2.append("\"");
-            }
-            sb2.append(" ]");
-            i10++;
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        int i9 = this.a;
+        int i10 = this.d;
+        Object obj = this.e;
+        Context context = this.c;
+        String str = this.b;
+        switch (i9) {
+            case 0:
+                Object[] objArr = {(d) obj};
+                ArrayList arrayList = new ArrayList(1);
+                Object obj2 = objArr[0];
+                Objects.requireNonNull(obj2);
+                arrayList.add(obj2);
+                return g.b(str, context, DesugarCollections.unmodifiableList(arrayList), i10);
+            default:
+                try {
+                    return g.b(str, context, (List) obj, i10);
+                } catch (Throwable unused) {
+                    return new f(-3);
+                }
         }
     }
 }

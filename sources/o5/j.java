@@ -8,7 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class j extends n {
     public final /* synthetic */ int r;
@@ -16,23 +16,23 @@ public final class j extends n {
     public final /* synthetic */ Object t;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j(h hVar, Object obj, int i10) {
+    public /* synthetic */ j(h hVar, Object obj, int i9) {
         super(hVar, false);
-        this.r = i10;
+        this.r = i9;
         this.s = hVar;
         this.t = obj;
     }
 
     @Override // o5.n
     public final void n() {
-        int i10 = this.r;
+        int i9 = this.r;
         Object obj = this.t;
         h hVar = this.s;
-        int i11 = 0;
-        switch (i10) {
+        int i10 = 0;
+        switch (i9) {
             case 0:
-                r5.n nVar = hVar.c;
-                r5.o o10 = o();
+                q5.n nVar = hVar.c;
+                q5.o o6 = o();
                 int[] iArr = (int[]) obj;
                 nVar.getClass();
                 JSONObject jSONObject = new JSONObject();
@@ -43,19 +43,19 @@ public final class j extends n {
                     jSONObject.put("mediaSessionId", nVar.p());
                     JSONArray jSONArray = new JSONArray();
                     int length = iArr.length;
-                    while (i11 < length) {
-                        jSONArray.put(iArr[i11]);
-                        i11++;
+                    while (i10 < length) {
+                        jSONArray.put(iArr[i10]);
+                        i10++;
                     }
                     jSONObject.put("itemIds", jSONArray);
                 } catch (JSONException unused) {
                 }
                 nVar.c(b10, jSONObject.toString());
-                nVar.s.a(b10, o10);
+                nVar.s.a(b10, o6);
                 return;
             case 1:
-                r5.n nVar2 = hVar.c;
-                r5.o o11 = o();
+                q5.n nVar2 = hVar.c;
+                q5.o o9 = o();
                 m5.k kVar = (m5.k) obj;
                 nVar2.getClass();
                 MediaInfo mediaInfo = kVar.a;
@@ -76,7 +76,7 @@ public final class j extends n {
                     jSONObject2.putOpt("autoplay", kVar.c);
                     long j10 = kVar.d;
                     if (j10 != -1) {
-                        Pattern pattern = r5.a.a;
+                        Pattern pattern = q5.a.a;
                         jSONObject2.put("currentTime", j10 / 1000.0d);
                     }
                     jSONObject2.put("playbackRate", kVar.e);
@@ -86,16 +86,16 @@ public final class j extends n {
                     jSONObject2.putOpt("atvCredentialsType", kVar.w);
                     if (jArr != null) {
                         JSONArray jSONArray2 = new JSONArray();
-                        for (int i12 = 0; i12 < jArr.length; i12++) {
-                            jSONArray2.put(i12, jArr[i12]);
+                        for (int i11 = 0; i11 < jArr.length; i11++) {
+                            jSONArray2.put(i11, jArr[i11]);
                         }
                         jSONObject2.put("activeTrackIds", jSONArray2);
                     }
                     jSONObject2.putOpt("customData", kVar.n);
                     jSONObject2.put("requestId", kVar.x);
-                } catch (JSONException e9) {
-                    r5.b bVar = m5.k.y;
-                    Log.e(bVar.a, bVar.d("Error transforming MediaLoadRequestData into JSONObject", e9));
+                } catch (JSONException e10) {
+                    q5.b bVar = m5.k.y;
+                    Log.e(bVar.a, bVar.d("Error transforming MediaLoadRequestData into JSONObject", e10));
                     jSONObject2 = new JSONObject();
                 }
                 long b11 = nVar2.b();
@@ -105,26 +105,26 @@ public final class j extends n {
                 } catch (JSONException unused2) {
                 }
                 nVar2.c(b11, jSONObject2.toString());
-                nVar2.j.a(b11, o11);
+                nVar2.j.a(b11, o9);
                 return;
             default:
-                r5.n nVar4 = hVar.c;
-                r5.o o12 = o();
+                q5.n nVar4 = hVar.c;
+                q5.o o10 = o();
                 nVar4.getClass();
                 JSONObject jSONObject3 = new JSONObject();
                 long b12 = nVar4.b();
-                long j11 = ((m5.q) obj).a;
+                long j11 = ((m5.p) obj).a;
                 try {
                     jSONObject3.put("requestId", b12);
                     jSONObject3.put(TeXSymbolParser.TYPE_ATTR, "SEEK");
                     jSONObject3.put("mediaSessionId", nVar4.p());
-                    Pattern pattern2 = r5.a.a;
+                    Pattern pattern2 = q5.a.a;
                     jSONObject3.put("currentTime", j11 / 1000.0d);
                 } catch (JSONException unused3) {
                 }
                 nVar4.c(b12, jSONObject3.toString());
                 nVar4.g = Long.valueOf(j11);
-                nVar4.m.a(b12, new r5.k(nVar4, o12, i11));
+                nVar4.m.a(b12, new q5.k(nVar4, o10, i10));
                 return;
         }
     }

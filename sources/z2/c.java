@@ -1,8 +1,8 @@
 package z2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public enum c implements u9.b {
+public enum c implements t9.b {
     b(0),
     c(1),
     d(2),
@@ -13,11 +13,11 @@ public enum c implements u9.b {
 
     public final int a;
 
-    c(int i10) {
-        this.a = i10;
+    c(int i9) {
+        this.a = i9;
     }
 
-    @Override // u9.b
+    @Override // t9.b
     public final int a() {
         return this.a;
     }

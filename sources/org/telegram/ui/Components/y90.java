@@ -1,44 +1,161 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
 import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class y90 extends f2.w0 {
-    public final /* synthetic */ z90 a;
+public final class y90 extends Drawable {
+    public Paint a;
+    public Paint b;
+    public long c;
+    public float d;
+    public boolean e;
+    public boolean f;
+    public float g;
+    public float h;
+    public float i;
+    public float j;
+    public float k;
+    public long l;
+    public org.telegram.ui.Cells.t1 m;
 
-    public y90(z90 z90Var) {
-        this.a = z90Var;
+    public final void a() {
+        Rect bounds = getBounds();
+        float centerX = bounds.centerX();
+        float centerY = bounds.centerY();
+        int i9 = bounds.left;
+        float f10 = (i9 - centerX) * (i9 - centerX);
+        int i10 = bounds.top;
+        this.g = (float) Math.ceil(Math.sqrt(e2.c.z(i10, centerY, i10 - centerY, f10)));
     }
 
-    @Override // f2.w0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, f2.l1 l1Var) {
-        int R;
-        rect.left = 0;
-        rect.right = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        f2.x0 layoutManager = recyclerView.getLayoutManager();
-        aa0 aa0Var = this.a.X2;
-        if (layoutManager != aa0Var.d || (R = RecyclerView.R(view)) == 0 || aa0Var.f.N()) {
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x0049, code lost:
+    
+        if (r7 >= 0.0f) goto L25;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x0056, code lost:
+    
+        if (r7 >= 0.0f) goto L25;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00b9  */
+    /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
+    @Override // android.graphics.drawable.Drawable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        float f10;
+        org.telegram.ui.Cells.t1 t1Var;
+        Paint paint = this.a;
+        float f11 = this.d;
+        if (f11 == 1.0f) {
+            Rect bounds = getBounds();
+            Paint paint2 = this.b;
+            if (paint2 != null) {
+                paint = paint2;
+            }
+            canvas.drawRect(bounds, paint);
+        } else if (f11 != 0.0f) {
+            float interpolation = this.e ? gr.h.getInterpolation(f11) : 1.0f - gr.h.getInterpolation(1.0f - f11);
+            Rect bounds2 = getBounds();
+            float centerX = bounds2.centerX();
+            float centerY = bounds2.centerY();
+            float f12 = this.j;
+            if (f12 >= 0.0f) {
+                f10 = this.k;
+            }
+            f12 = this.h;
+            if (f12 >= 0.0f) {
+                f10 = this.i;
+            }
+            f10 = centerY;
+            f12 = centerX;
+            float f13 = 1.0f - interpolation;
+            float z10 = e2.c.z(f12, centerX, f13, centerX);
+            float z11 = e2.c.z(f10, centerY, f13, centerY);
+            float f14 = this.g * interpolation;
+            Paint paint3 = this.b;
+            if (paint3 != null) {
+                paint = paint3;
+            }
+            canvas.drawCircle(z10, z11, f14, paint);
+        }
+        if (!this.f) {
             return;
         }
-        if (aa0Var.f.I() == null && aa0Var.f.Q == null) {
-            rect.top = AndroidUtilities.dp(2.0f);
-        } else {
-            if (R == 0) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j10 = elapsedRealtime - this.c;
+        if (j10 > 20) {
+            j10 = 17;
+        }
+        this.c = elapsedRealtime;
+        if (this.e) {
+            float f15 = (j10 / 240.0f) + this.d;
+            this.d = f15;
+            if (f15 >= 1.0f) {
+                this.d = 1.0f;
+                this.h = -1.0f;
+                this.i = -1.0f;
+                this.j = -1.0f;
+                this.k = -1.0f;
+                this.f = false;
+            }
+            t1Var = this.m;
+            if (t1Var == null) {
+                t1Var.invalidate();
+                if (t1Var.getParent() != null) {
+                    ((ViewGroup) t1Var.getParent()).invalidate();
+                    return;
+                }
                 return;
             }
-            R--;
-            t90 t90Var = aa0Var.d;
-            t90Var.B1();
-            if (R > t90Var.U) {
-                rect.top = AndroidUtilities.dp(2.0f);
-            }
+            return;
         }
-        rect.right = aa0Var.d.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
+        float f16 = this.d - (j10 / 240.0f);
+        this.d = f16;
+        if (f16 <= 0.0f) {
+            this.d = 0.0f;
+            this.h = -1.0f;
+            this.i = -1.0f;
+            this.j = -1.0f;
+            this.k = -1.0f;
+            this.f = false;
+        }
+        t1Var = this.m;
+        if (t1Var == null) {
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i9) {
+        this.a.setAlpha(i9);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i9, int i10, int i11, int i12) {
+        super.setBounds(i9, i10, i11, i12);
+        a();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(Rect rect) {
+        super.setBounds(rect);
+        a();
     }
 }

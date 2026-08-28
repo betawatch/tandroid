@@ -1,36 +1,36 @@
 package i3;
 
-import d5.g0;
+import d5.f0;
 import h3.p2;
 import h3.q;
+import h3.q2;
 import h3.r2;
-import h3.s2;
-import j4.c0;
+import j4.d0;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Random;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class h {
     public static final q g = new q(1);
     public static final Random h = new Random();
-    public i d;
+    public j d;
     public String f;
-    public final r2 a = new r2();
+    public final q2 a = new q2();
     public final p2 b = new p2();
     public final HashMap c = new HashMap();
-    public s2 e = s2.a;
+    public r2 e = r2.a;
 
     public final synchronized void a(a aVar) {
-        i iVar;
+        j jVar;
         this.f = null;
         Iterator it = this.c.values().iterator();
         while (it.hasNext()) {
             g gVar = (g) it.next();
             it.remove();
-            if (gVar.e && (iVar = this.d) != null) {
-                iVar.n(aVar, gVar.a);
+            if (gVar.e && (jVar = this.d) != null) {
+                jVar.n(aVar, gVar.a);
             }
         }
     }
@@ -40,42 +40,42 @@ public final class h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final g b(int i10, c0 c0Var) {
+    public final g b(int i9, d0 d0Var) {
         long j10;
         HashMap hashMap = this.c;
         g gVar = null;
         long j11 = Long.MAX_VALUE;
         for (g gVar2 : hashMap.values()) {
             long j12 = gVar2.c;
-            c0 c0Var2 = gVar2.d;
-            if (j12 == -1 && i10 == gVar2.b && c0Var != null) {
-                gVar2.c = c0Var.d;
+            d0 d0Var2 = gVar2.d;
+            if (j12 == -1 && i9 == gVar2.b && d0Var != null) {
+                gVar2.c = d0Var.d;
             }
-            if (c0Var != null) {
-                long j13 = c0Var.d;
-                if (c0Var2 == null) {
-                    if (!c0Var.a() && j13 == gVar2.c) {
+            if (d0Var != null) {
+                long j13 = d0Var.d;
+                if (d0Var2 == null) {
+                    if (!d0Var.a() && j13 == gVar2.c) {
                         j10 = gVar2.c;
                         if (j10 == -1) {
                         }
                         gVar = gVar2;
                         j11 = j10;
                     }
-                } else if (j13 == c0Var2.d && c0Var.b == c0Var2.b && c0Var.c == c0Var2.c) {
+                } else if (j13 == d0Var2.d && d0Var.b == d0Var2.b && d0Var.c == d0Var2.c) {
                     j10 = gVar2.c;
                     if (j10 == -1) {
                     }
                     gVar = gVar2;
                     j11 = j10;
                 }
-            } else if (i10 == gVar2.b) {
+            } else if (i9 == gVar2.b) {
                 j10 = gVar2.c;
                 if (j10 == -1 || j10 < j11) {
                     gVar = gVar2;
                     j11 = j10;
                 } else if (j10 == j11) {
-                    int i11 = g0.a;
-                    if (gVar.d != null && c0Var2 != null) {
+                    int i10 = f0.a;
+                    if (gVar.d != null && d0Var2 != null) {
                         gVar = gVar2;
                     }
                 }
@@ -85,34 +85,34 @@ public final class h {
             return gVar;
         }
         String str = (String) g.get();
-        g gVar3 = new g(this, str, i10, c0Var);
+        g gVar3 = new g(this, str, i9, d0Var);
         hashMap.put(str, gVar3);
         return gVar3;
     }
 
-    public final synchronized String c(s2 s2Var, c0 c0Var) {
-        return b(s2Var.g(c0Var.a, this.b).c, c0Var).a;
+    public final synchronized String c(r2 r2Var, d0 d0Var) {
+        return b(r2Var.g(d0Var.a, this.b).c, d0Var).a;
     }
 
     public final void d(a aVar) {
-        c0 c0Var;
-        s2 s2Var = aVar.b;
-        int i10 = aVar.c;
-        c0 c0Var2 = aVar.d;
-        if (s2Var.p()) {
+        d0 d0Var;
+        r2 r2Var = aVar.b;
+        int i9 = aVar.c;
+        d0 d0Var2 = aVar.d;
+        if (r2Var.p()) {
             this.f = null;
             return;
         }
         g gVar = (g) this.c.get(this.f);
-        this.f = b(i10, c0Var2).a;
+        this.f = b(i9, d0Var2).a;
         e(aVar);
-        if (c0Var2 != null) {
-            long j10 = c0Var2.d;
-            if (c0Var2.a()) {
-                if (gVar != null && gVar.c == j10 && (c0Var = gVar.d) != null && c0Var.b == c0Var2.b && c0Var.c == c0Var2.c) {
+        if (d0Var2 != null) {
+            long j10 = d0Var2.d;
+            if (d0Var2.a()) {
+                if (gVar != null && gVar.c == j10 && (d0Var = gVar.d) != null && d0Var.b == d0Var2.b && d0Var.c == d0Var2.c) {
                     return;
                 }
-                b(i10, new c0(c0Var2.a, j10));
+                b(i9, new d0(d0Var2.a, j10));
                 this.d.getClass();
             }
         }
@@ -134,8 +134,8 @@ public final class h {
             return;
         }
         g gVar = (g) this.c.get(this.f);
-        c0 c0Var = aVar.d;
-        if (c0Var != null && gVar != null) {
+        d0 d0Var = aVar.d;
+        if (d0Var != null && gVar != null) {
             long j10 = gVar.c;
             if (j10 == -1) {
                 if (gVar.b != aVar.c) {
@@ -143,18 +143,18 @@ public final class h {
                 }
             }
         }
-        g b10 = b(aVar.c, c0Var);
+        g b10 = b(aVar.c, d0Var);
         if (this.f == null) {
             this.f = b10.a;
         }
-        c0 c0Var2 = aVar.d;
-        if (c0Var2 != null && c0Var2.a()) {
-            c0 c0Var3 = aVar.d;
-            g b11 = b(aVar.c, new c0(c0Var3.a, c0Var3.d, c0Var3.b));
+        d0 d0Var2 = aVar.d;
+        if (d0Var2 != null && d0Var2.a()) {
+            d0 d0Var3 = aVar.d;
+            g b11 = b(aVar.c, new d0(d0Var3.a, d0Var3.d, d0Var3.b));
             if (!b11.e) {
                 b11.e = true;
                 aVar.b.g(aVar.d.a, this.b);
-                Math.max(0L, g0.S(this.b.d(aVar.d.b)) + g0.S(this.b.e));
+                Math.max(0L, f0.S(this.b.d(aVar.d.b)) + f0.S(this.b.e));
                 this.d.getClass();
             }
         }
@@ -168,10 +168,10 @@ public final class h {
         }
     }
 
-    public final synchronized void f(a aVar, int i10) {
+    public final synchronized void f(a aVar, int i9) {
         try {
             this.d.getClass();
-            boolean z10 = i10 == 0;
+            boolean z10 = i9 == 0;
             Iterator it = this.c.values().iterator();
             while (it.hasNext()) {
                 g gVar = (g) it.next();

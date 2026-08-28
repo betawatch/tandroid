@@ -1,50 +1,84 @@
 package kh;
 
-import ag.n0;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import cg.x0;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.qa;
-import org.telegram.ui.Components.yk0;
-import org.telegram.ui.Components.zk0;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.messenger.BuildVars;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final class u extends qa {
-    public final int T;
-    public final CharSequence U;
-    public b51 V;
+public final class u {
+    public static ArrayList f;
+    public final String a;
+    public final int b;
+    public final int c;
+    public final int[] d;
+    public final ArrayList e = new ArrayList();
 
-    public u(n2 n2Var, String str, n0 n0Var) {
-        super(n2Var.getParentActivity(), n2Var, true, false, false, 1, n2Var.getResourceProvider());
-        new FrameLayout(getContext());
-        new ImageView(getContext());
-        this.T = n2Var.getCurrentAccount();
-        this.U = str;
-        N();
-        this.v = 0.6f;
-        this.y = true;
-        this.A = true;
-        fixNavigationBar();
-        K();
-        zk0 zk0Var = this.d;
-        int i10 = this.backgroundPaddingLeft;
-        zk0Var.setPadding(i10, 0, i10, 0);
-        this.d.setOnItemClickListener(new x0(3, this, n0Var));
+    public u(String str) {
+        str = str == null ? "." : str;
+        this.a = str;
+        String[] split = str.split("/");
+        int length = split.length;
+        this.c = length;
+        this.d = new int[length];
+        int i9 = 0;
+        for (int i10 = 0; i10 < split.length; i10++) {
+            this.d[i10] = split[i10].length();
+            i9 = Math.max(i9, split[i10].length());
+        }
+        this.b = i9;
+        for (int i11 = 0; i11 < split.length; i11++) {
+            for (int i12 = 0; i12 < split[i11].length(); i12++) {
+                this.e.add(new t(this, i12, i11));
+            }
+        }
     }
 
-    @Override // org.telegram.ui.Components.qa
-    public final yk0 w(zk0 zk0Var) {
-        b51 b51Var = new b51(zk0Var, getContext(), this.T, 0, false, new ch.c(this, 23), this.resourcesProvider);
-        this.V = b51Var;
-        b51Var.r = false;
-        return b51Var;
+    public static ArrayList a() {
+        if (f == null) {
+            ArrayList arrayList = new ArrayList();
+            f = arrayList;
+            arrayList.add(new u("./."));
+            f.add(new u(".."));
+            f.add(new u("../."));
+            f.add(new u("./.."));
+            f.add(new u("././."));
+            f.add(new u("..."));
+            f.add(new u("../.."));
+            f.add(new u("./../.."));
+            f.add(new u("../../."));
+            f.add(new u("../../.."));
+            if (BuildVars.DEBUG_PRIVATE_VERSION) {
+                f.add(new u("../../../.."));
+                f.add(new u(".../.../..."));
+                f.add(new u("..../..../...."));
+                f.add(new u(".../.../.../..."));
+            }
+        }
+        return f;
     }
 
-    @Override // org.telegram.ui.Components.qa
-    public final CharSequence z() {
-        return this.U;
+    public static int b() {
+        ArrayList a2 = a();
+        int size = a2.size();
+        int i9 = 0;
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = a2.get(i10);
+            i10++;
+            i9 = Math.max(i9, ((u) obj).e.size());
+        }
+        return i9;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof u)) {
+            return false;
+        }
+        return TextUtils.equals(this.a, ((u) obj).a);
+    }
+
+    public final String toString() {
+        return this.a;
     }
 }

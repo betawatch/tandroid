@@ -9,13 +9,13 @@ import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class s1 {
-    public final i3.k a;
+    public final i3.l a;
     public final q0 e;
     public final i3.f h;
-    public final d5.d0 i;
+    public final d5.c0 i;
     public boolean k;
     public com.google.android.exoplayer2.upstream.y0 l;
     public j4.g1 j = new j4.e1();
@@ -25,21 +25,21 @@ public final class s1 {
     public final HashMap f = new HashMap();
     public final HashSet g = new HashSet();
 
-    public s1(q0 q0Var, i3.f fVar, d5.d0 d0Var, i3.k kVar) {
-        this.a = kVar;
+    public s1(q0 q0Var, i3.f fVar, d5.c0 c0Var, i3.l lVar) {
+        this.a = lVar;
         this.e = q0Var;
         this.h = fVar;
-        this.i = d0Var;
+        this.i = c0Var;
     }
 
-    public final s2 a(int i10, ArrayList arrayList, j4.g1 g1Var) {
+    public final r2 a(int i9, ArrayList arrayList, j4.g1 g1Var) {
         if (!arrayList.isEmpty()) {
             this.j = g1Var;
-            for (int i11 = i10; i11 < arrayList.size() + i10; i11++) {
-                r1 r1Var = (r1) arrayList.get(i11 - i10);
+            for (int i10 = i9; i10 < arrayList.size() + i9; i10++) {
+                r1 r1Var = (r1) arrayList.get(i10 - i9);
                 ArrayList arrayList2 = this.b;
-                if (i11 > 0) {
-                    r1 r1Var2 = (r1) arrayList2.get(i11 - 1);
+                if (i10 > 0) {
+                    r1 r1Var2 = (r1) arrayList2.get(i10 - 1);
                     r1Var.d = r1Var2.a.o.b.o() + r1Var2.d;
                     r1Var.e = false;
                     r1Var.c.clear();
@@ -48,11 +48,11 @@ public final class s1 {
                     r1Var.e = false;
                     r1Var.c.clear();
                 }
-                int o10 = r1Var.a.o.b.o();
-                for (int i12 = i11; i12 < arrayList2.size(); i12++) {
-                    ((r1) arrayList2.get(i12)).d += o10;
+                int o6 = r1Var.a.o.b.o();
+                for (int i11 = i10; i11 < arrayList2.size(); i11++) {
+                    ((r1) arrayList2.get(i11)).d += o6;
                 }
-                arrayList2.add(i11, r1Var);
+                arrayList2.add(i10, r1Var);
                 this.d.put(r1Var.b, r1Var);
                 if (this.k) {
                     e(r1Var);
@@ -70,16 +70,16 @@ public final class s1 {
         return b();
     }
 
-    public final s2 b() {
+    public final r2 b() {
         ArrayList arrayList = this.b;
         if (arrayList.isEmpty()) {
-            return s2.a;
+            return r2.a;
         }
-        int i10 = 0;
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            r1 r1Var = (r1) arrayList.get(i11);
-            r1Var.d = i10;
-            i10 += r1Var.a.o.b.o();
+        int i9 = 0;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            r1 r1Var = (r1) arrayList.get(i10);
+            r1Var.d = i9;
+            i9 += r1Var.a.o.b.o();
         }
         return new f2(arrayList, this.j);
     }
@@ -112,65 +112,65 @@ public final class s1 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v0, types: [h3.m1, j4.d0] */
+    /* JADX WARN: Type inference failed for: r1v0, types: [h3.m1, j4.e0] */
     public final void e(r1 r1Var) {
-        j4.w wVar = r1Var.a;
-        ?? r12 = new j4.d0() { // from class: h3.m1
-            @Override // j4.d0
-            public final void a(j4.a aVar, s2 s2Var) {
+        j4.x xVar = r1Var.a;
+        ?? r12 = new j4.e0() { // from class: h3.m1
+            @Override // j4.e0
+            public final void a(j4.a aVar, r2 r2Var) {
                 s1.this.e.n.d(22);
             }
         };
-        g5.b bVar = new g5.b(this, r1Var, false, 3);
-        this.f.put(r1Var, new q1(wVar, r12, bVar));
-        int i10 = d5.g0.a;
+        g5.b bVar = new g5.b(this, r1Var, false, 4);
+        this.f.put(r1Var, new q1(xVar, r12, bVar));
+        int i9 = d5.f0.a;
         Looper myLooper = Looper.myLooper();
         if (myLooper == null) {
             myLooper = Looper.getMainLooper();
         }
         Handler handler = new Handler(myLooper, null);
-        wVar.getClass();
-        j4.g0 g0Var = wVar.c;
-        g0Var.getClass();
-        CopyOnWriteArrayList copyOnWriteArrayList = g0Var.c;
-        j4.f0 f0Var = new j4.f0();
-        f0Var.a = handler;
-        f0Var.b = bVar;
-        copyOnWriteArrayList.add(f0Var);
+        xVar.getClass();
+        j4.h0 h0Var = xVar.c;
+        h0Var.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList = h0Var.c;
+        j4.g0 g0Var = new j4.g0();
+        g0Var.a = handler;
+        g0Var.b = bVar;
+        copyOnWriteArrayList.add(g0Var);
         Looper myLooper2 = Looper.myLooper();
         if (myLooper2 == null) {
             myLooper2 = Looper.getMainLooper();
         }
         new Handler(myLooper2, null);
-        b6.a aVar = wVar.d;
+        a6.a aVar = xVar.d;
         aVar.getClass();
         CopyOnWriteArrayList copyOnWriteArrayList2 = (CopyOnWriteArrayList) aVar.d;
-        l3.g gVar = new l3.g();
-        gVar.a = bVar;
-        copyOnWriteArrayList2.add(gVar);
-        wVar.k(r12, this.l, this.a);
+        l3.f fVar = new l3.f();
+        fVar.a = bVar;
+        copyOnWriteArrayList2.add(fVar);
+        xVar.k(r12, this.l, this.a);
     }
 
-    public final void f(j4.z zVar) {
+    public final void f(j4.a0 a0Var) {
         IdentityHashMap identityHashMap = this.c;
-        r1 r1Var = (r1) identityHashMap.remove(zVar);
+        r1 r1Var = (r1) identityHashMap.remove(a0Var);
         r1Var.getClass();
-        r1Var.a.n(zVar);
-        r1Var.c.remove(((j4.t) zVar).a);
+        r1Var.a.n(a0Var);
+        r1Var.c.remove(((j4.u) a0Var).a);
         if (!identityHashMap.isEmpty()) {
             c();
         }
         d(r1Var);
     }
 
-    public final void g(int i10, int i11) {
-        for (int i12 = i11 - 1; i12 >= i10; i12--) {
+    public final void g(int i9, int i10) {
+        for (int i11 = i10 - 1; i11 >= i9; i11--) {
             ArrayList arrayList = this.b;
-            r1 r1Var = (r1) arrayList.remove(i12);
+            r1 r1Var = (r1) arrayList.remove(i11);
             this.d.remove(r1Var.b);
-            int i13 = -r1Var.a.o.b.o();
-            for (int i14 = i12; i14 < arrayList.size(); i14++) {
-                ((r1) arrayList.get(i14)).d += i13;
+            int i12 = -r1Var.a.o.b.o();
+            for (int i13 = i11; i13 < arrayList.size(); i13++) {
+                ((r1) arrayList.get(i13)).d += i12;
             }
             r1Var.e = true;
             if (this.k) {

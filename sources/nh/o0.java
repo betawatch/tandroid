@@ -1,42 +1,74 @@
 package nh;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o0 implements org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class o0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Activity b;
+    public final /* synthetic */ q0 b;
 
-    public /* synthetic */ o0(Activity activity, int i10) {
-        this.a = i10;
-        this.b = activity;
+    public /* synthetic */ o0(q0 q0Var, int i9) {
+        this.a = i9;
+        this.b = q0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                Activity activity = this.b;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    activity.startActivity(intent);
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                q0 q0Var = this.b;
+                q0Var.q.dismiss();
+                q0Var.q = null;
+                q0Var.r = 0;
+                if (tL_error == null) {
+                    p0 p0Var = q0Var.h;
+                    if (p0Var != null) {
+                        p0Var.close();
+                        break;
+                    }
+                } else {
+                    q0Var.c.d0(tL_error, false);
                     break;
-                } catch (Exception e9) {
-                    FileLog.e(e9);
-                    return;
                 }
-            default:
-                Activity activity2 = this.b;
-                Intent intent2 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                intent2.setData(Uri.fromParts("package", activity2.getPackageName(), null));
-                activity2.startActivity(intent2);
                 break;
+            case 1:
+                TL_communities.PeerLinkRequests peerLinkRequests = (TL_communities.PeerLinkRequests) obj;
+                q0 q0Var2 = this.b;
+                q0Var2.m = false;
+                if (peerLinkRequests != null) {
+                    ArrayList arrayList = q0Var2.j;
+                    if (arrayList == null) {
+                        q0Var2.j = new ArrayList(peerLinkRequests.requests);
+                    } else {
+                        arrayList.addAll(peerLinkRequests.requests);
+                    }
+                    String str = peerLinkRequests.next_offset;
+                    q0Var2.k = str;
+                    q0Var2.l = peerLinkRequests.total_count;
+                    q0Var2.n = str == null;
+                    q0Var2.a();
+                    p0 p0Var2 = q0Var2.h;
+                    if (p0Var2 != null) {
+                        p0Var2.c();
+                        break;
+                    }
+                }
+                break;
+            default:
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                q0 q0Var3 = this.b;
+                if (tL_error2 == null) {
+                    q0Var3.getClass();
+                    break;
+                } else {
+                    q0Var3.c.d0(tL_error2, false);
+                    break;
+                }
         }
     }
 }

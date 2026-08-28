@@ -12,13 +12,13 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import g7.k8;
-import g7.o7;
+import f7.q8;
+import f7.t7;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class m0 extends g0 {
+public final class m0 extends h0 {
     public final ImageView A;
     public final ProgressBar B;
     public final TextView C;
@@ -26,7 +26,7 @@ public final class m0 extends g0 {
     public final CheckBox E;
     public final float F;
     public final int G;
-    public final f0 H;
+    public final y H;
     public final /* synthetic */ n0 I;
     public final View z;
 
@@ -38,7 +38,7 @@ public final class m0 extends g0 {
         super(r4, view, (ImageButton) view.findViewById(R.id.mr_cast_mute_button), (MediaRouteVolumeSlider) view.findViewById(R.id.mr_cast_volume_slider));
         this.I = n0Var;
         p0 p0Var = n0Var.w;
-        this.H = new f0(this, 4);
+        this.H = new y(this, 3);
         this.z = view;
         this.A = (ImageView) view.findViewById(R.id.mr_cast_route_icon);
         ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.mr_cast_route_progress_bar);
@@ -48,13 +48,13 @@ public final class m0 extends g0 {
         CheckBox checkBox = (CheckBox) view.findViewById(R.id.mr_cast_checkbox);
         this.E = checkBox;
         Context context = p0Var.y;
-        Drawable d = k8.d(o7.b(context, R.drawable.mr_cast_checkbox));
-        if (g7.b0.h(context)) {
+        Drawable d = q8.d(t7.b(context, R.drawable.mr_cast_checkbox));
+        if (f7.d0.h(context)) {
             d.setTint(f0.e.c(context, R.color.mr_dynamic_dialog_icon_light));
         }
         checkBox.setButtonDrawable(d);
-        g7.b0.i(context, progressBar);
-        this.F = g7.b0.c(context);
+        f7.d0.i(context, progressBar);
+        this.F = f7.d0.c(context);
         Resources resources = context.getResources();
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
         TypedValue typedValue = new TypedValue();
@@ -62,11 +62,11 @@ public final class m0 extends g0 {
         this.G = (int) typedValue.getDimension(displayMetrics);
     }
 
-    public final boolean v(c2.z zVar) {
-        if (zVar.g()) {
+    public final boolean v(c2.a0 a0Var) {
+        if (a0Var.g()) {
             return true;
         }
-        ae.b b10 = this.I.w.r.b(zVar);
+        fa.c b10 = this.I.w.r.b(a0Var);
         if (b10 == null) {
             return false;
         }

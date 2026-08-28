@@ -1,23 +1,43 @@
 package gh;
 
-import android.content.Context;
-import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.wq0;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class n3 extends k51 {
-    public final /* synthetic */ wq0 b3;
+public final class n3 extends ClickableSpan {
+    public final /* synthetic */ int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n3(Context context, int i10, ch.c cVar, l3 l3Var, l3 l3Var2, org.telegram.ui.ActionBar.c6 c6Var, wq0 wq0Var) {
-        super(context, i10, 0, false, cVar, l3Var, l3Var2, c6Var, 3, 1);
-        this.b3 = wq0Var;
+    public /* synthetic */ n3(int i9) {
+        this.a = i9;
     }
 
-    @Override // org.telegram.ui.Components.zk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.b3.o();
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                ve.e.s(view.getContext(), "https://t.me/BotFather");
+                break;
+        }
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 0:
+                textPaint.setUnderlineText(false);
+                textPaint.setColor(-1);
+                break;
+            default:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                break;
+        }
+    }
+
+    private final void a(View view) {
     }
 }

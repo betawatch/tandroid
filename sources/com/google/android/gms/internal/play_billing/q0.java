@@ -1,18 +1,18 @@
 package com.google.android.gms.internal.play_billing;
 
-import g7.v5;
+import f7.w5;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class q0 implements Runnable {
     public final t0 a;
-    public final d5.x b;
+    public final d5.w b;
 
-    public q0(t0 t0Var, d5.x xVar) {
+    public q0(t0 t0Var, d5.w wVar) {
         this.a = t0Var;
-        this.b = xVar;
+        this.b = wVar;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -22,9 +22,9 @@ public final class q0 implements Runnable {
         Throwable b10;
         t0 t0Var = this.a;
         boolean z10 = t0Var instanceof x0;
-        d5.x xVar = this.b;
+        d5.w wVar = this.b;
         if (z10 && (b10 = ((x0) t0Var).b()) != null) {
-            xVar.k(b10);
+            wVar.k(b10);
             return;
         }
         try {
@@ -32,7 +32,7 @@ public final class q0 implements Runnable {
             boolean z11 = false;
             Future future = t0Var;
             if (!isDone) {
-                throw new IllegalStateException(v5.a("Future was expected to be done: %s", t0Var));
+                throw new IllegalStateException(w5.a("Future was expected to be done: %s", t0Var));
             }
             while (true) {
                 try {
@@ -53,30 +53,30 @@ public final class q0 implements Runnable {
             }
             Integer num = (Integer) obj;
             int intValue = num.intValue();
-            n2.x xVar2 = (n2.x) xVar.d;
+            n2.y yVar = (n2.y) wVar.d;
             if (intValue <= 0) {
-                ((Runnable) xVar.c).run();
+                ((Runnable) wVar.c).run();
                 return;
             }
-            int i10 = xVar.a;
+            int i9 = wVar.a;
             int intValue2 = num.intValue();
-            xVar2.getClass();
-            n2.g a2 = n2.a0.a(intValue2, "Billing override value was set by a license tester.");
-            xVar2.F(93, i10, a2);
-            ((q0.a) xVar.b).accept(a2);
-        } catch (ExecutionException e9) {
-            xVar.k(e9.getCause());
+            yVar.getClass();
+            n2.g a2 = n2.b0.a(intValue2, "Billing override value was set by a license tester.");
+            yVar.F(93, i9, a2);
+            ((q0.a) wVar.b).accept(a2);
+        } catch (ExecutionException e10) {
+            wVar.k(e10.getCause());
         } catch (Throwable th2) {
-            xVar.k(th2);
+            wVar.k(th2);
         }
     }
 
     public final String toString() {
-        a5.n nVar = new a5.n(q0.class.getSimpleName(), 8);
+        a5.m mVar = new a5.m(q0.class.getSimpleName(), 9);
         k kVar = new k();
-        ((k) nVar.d).b = kVar;
-        nVar.d = kVar;
+        ((k) mVar.d).b = kVar;
+        mVar.d = kVar;
         kVar.a = this.b;
-        return nVar.toString();
+        return mVar.toString();
     }
 }

@@ -1,35 +1,29 @@
 package androidx.car.app.utils;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements c {
+public final /* synthetic */ class f implements d {
     public final /* synthetic */ int a;
     public final /* synthetic */ RemoteUtils$SurfaceCallbackStub b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
+    public final /* synthetic */ w.b c;
 
-    public /* synthetic */ f(RemoteUtils$SurfaceCallbackStub remoteUtils$SurfaceCallbackStub, float f10, float f11, int i10) {
-        this.a = i10;
+    public /* synthetic */ f(RemoteUtils$SurfaceCallbackStub remoteUtils$SurfaceCallbackStub, w.b bVar, int i9) {
+        this.a = i9;
         this.b = remoteUtils$SurfaceCallbackStub;
-        this.c = f10;
-        this.d = f11;
+        this.c = bVar;
     }
 
-    @Override // androidx.car.app.utils.c
-    public final Object b() {
-        Object lambda$onClick$7;
-        Object lambda$onScroll$4;
-        Object lambda$onFling$5;
+    @Override // androidx.car.app.utils.d
+    public final Object a() {
+        Object lambda$onSurfaceDestroyed$3;
+        Object lambda$onSurfaceAvailable$0;
         switch (this.a) {
             case 0:
-                lambda$onClick$7 = this.b.lambda$onClick$7(this.c, this.d);
-                return lambda$onClick$7;
-            case 1:
-                lambda$onScroll$4 = this.b.lambda$onScroll$4(this.c, this.d);
-                return lambda$onScroll$4;
+                lambda$onSurfaceDestroyed$3 = this.b.lambda$onSurfaceDestroyed$3(this.c);
+                return lambda$onSurfaceDestroyed$3;
             default:
-                lambda$onFling$5 = this.b.lambda$onFling$5(this.c, this.d);
-                return lambda$onFling$5;
+                lambda$onSurfaceAvailable$0 = this.b.lambda$onSurfaceAvailable$0(this.c);
+                return lambda$onSurfaceAvailable$0;
         }
     }
 }

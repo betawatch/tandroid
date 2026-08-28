@@ -1,19 +1,28 @@
 package ia;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes.dex */
-public final class e implements r9.d {
-    public static final e a = new e();
-    public static final r9.c b = r9.c.c("performance");
-    public static final r9.c c = r9.c.c("crashlytics");
-    public static final r9.c d = r9.c.c("sessionSamplingRate");
+import kotlin.jvm.internal.i;
 
-    @Override // r9.a
-    public final void a(Object obj, Object obj2) {
-        j jVar = (j) obj;
-        r9.e eVar = (r9.e) obj2;
-        eVar.a(b, jVar.a);
-        eVar.a(c, jVar.b);
-        eVar.e(d, jVar.c);
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public final class e {
+    public final String a;
+
+    public e(String str) {
+        this.a = str;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return (obj instanceof e) && i.a(this.a, ((e) obj).a);
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
+    }
+
+    public final String toString() {
+        return "SessionDetails(sessionId=" + this.a + ')';
     }
 }

@@ -3,11 +3,12 @@ package o5;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.BasePendingResult;
 import java.util.Iterator;
+import n5.e0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class n extends BasePendingResult {
-    public m5.o o;
+    public e0 o;
     public final boolean p;
     public final /* synthetic */ h q;
 
@@ -25,9 +26,9 @@ public abstract class n extends BasePendingResult {
 
     public abstract void n();
 
-    public final r5.o o() {
+    public final q5.o o() {
         if (this.o == null) {
-            this.o = new m5.o(this, 4);
+            this.o = new e0(this, 5);
         }
         return this.o;
     }
@@ -48,7 +49,7 @@ public abstract class n extends BasePendingResult {
             synchronized (this.q.a) {
                 n();
             }
-        } catch (r5.l unused) {
+        } catch (q5.l unused) {
             a(new m(new Status(2100, null, null, null), 1));
         }
     }

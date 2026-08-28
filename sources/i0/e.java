@@ -1,495 +1,209 @@
 package i0;
 
-import android.graphics.Path;
+import a0.k;
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Typeface;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Trace;
 import android.util.Log;
-import g7.w7;
-import org.telegram.messenger.voip.VoIPService;
+import androidx.biometric.o;
+import com.google.android.gms.common.api.internal.q1;
+import d5.d0;
+import e5.u;
+import f7.j8;
+import f7.r8;
+import j$.util.DesugarCollections;
+import j$.util.Objects;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import m.i3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class e {
-    public char a;
-    public final float[] b;
+public abstract class e {
+    public static final j8 a;
+    public static final a0.j b;
 
-    public e(char c10, float[] fArr) {
-        this.a = c10;
-        this.b = fArr;
-    }
-
-    public static void a(Path path, float f10, float f11, float f12, float f13, float f14, float f15, float f16, boolean z10, boolean z11) {
-        double d;
-        double d10;
-        double radians = Math.toRadians(f16);
-        double cos = Math.cos(radians);
-        double sin = Math.sin(radians);
-        double d11 = f10;
-        double d12 = f11;
-        double d13 = f14;
-        double d14 = ((d12 * sin) + (d11 * cos)) / d13;
-        double d15 = f15;
-        double d16 = ((d12 * cos) + ((-f10) * sin)) / d15;
-        double d17 = f13;
-        double d18 = ((d17 * sin) + (f12 * cos)) / d13;
-        double d19 = ((d17 * cos) + ((-f12) * sin)) / d15;
-        double d20 = d14 - d18;
-        double d21 = d16 - d19;
-        double d22 = (d14 + d18) / 2.0d;
-        double d23 = (d16 + d19) / 2.0d;
-        double d24 = (d21 * d21) + (d20 * d20);
-        if (d24 == 0.0d) {
-            Log.w("PathParser", " Points are coincident");
-            return;
-        }
-        double d25 = (1.0d / d24) - 0.25d;
-        if (d25 < 0.0d) {
-            Log.w("PathParser", "Points are too far apart " + d24);
-            float sqrt = (float) (Math.sqrt(d24) / 1.99999d);
-            a(path, f10, f11, f12, f13, f14 * sqrt, sqrt * f15, f16, z10, z11);
-            return;
-        }
-        double sqrt2 = Math.sqrt(d25);
-        double d26 = sqrt2 * d20;
-        double d27 = sqrt2 * d21;
-        if (z10 == z11) {
-            d = d22 - d27;
-            d10 = d23 + d26;
+    static {
+        r8.a("TypefaceCompat static init");
+        int i9 = Build.VERSION.SDK_INT;
+        if (i9 >= 29) {
+            a = new j();
+        } else if (i9 >= 28) {
+            a = new i();
+        } else if (i9 >= 26) {
+            a = new h();
         } else {
-            d = d22 + d27;
-            d10 = d23 - d26;
-        }
-        double atan2 = Math.atan2(d16 - d10, d14 - d);
-        double atan22 = Math.atan2(d19 - d10, d18 - d) - atan2;
-        if (z11 != (atan22 >= 0.0d)) {
-            atan22 = atan22 > 0.0d ? atan22 - 6.283185307179586d : atan22 + 6.283185307179586d;
-        }
-        double d28 = d * d13;
-        double d29 = d10 * d15;
-        double d30 = (d28 * cos) - (d29 * sin);
-        double d31 = (d29 * cos) + (d28 * sin);
-        int ceil = (int) Math.ceil(Math.abs((atan22 * 4.0d) / 3.141592653589793d));
-        double cos2 = Math.cos(radians);
-        double sin2 = Math.sin(radians);
-        double cos3 = Math.cos(atan2);
-        double sin3 = Math.sin(atan2);
-        double d32 = d12;
-        double d33 = -d13;
-        double d34 = d33 * cos2;
-        double d35 = d15 * sin2;
-        double d36 = (d34 * sin3) - (d35 * cos3);
-        double d37 = d33 * sin2;
-        double d38 = d15 * cos2;
-        double d39 = (cos3 * d38) + (sin3 * d37);
-        double d40 = atan22 / ceil;
-        double d41 = atan2;
-        int i10 = 0;
-        while (i10 < ceil) {
-            double d42 = d41 + d40;
-            double sin4 = Math.sin(d42);
-            double cos4 = Math.cos(d42);
-            int i11 = ceil;
-            double d43 = (((d13 * cos2) * cos4) + d30) - (d35 * sin4);
-            double d44 = d37;
-            double d45 = (d38 * sin4) + (d13 * sin2 * cos4) + d31;
-            double d46 = (d34 * sin4) - (d35 * cos4);
-            double d47 = (cos4 * d38) + (sin4 * d44);
-            double d48 = d42 - d41;
-            double tan = Math.tan(d48 / 2.0d);
-            double sqrt3 = ((Math.sqrt(((tan * 3.0d) * tan) + 4.0d) - 1.0d) * Math.sin(d48)) / 3.0d;
-            path.rLineTo(0.0f, 0.0f);
-            path.cubicTo((float) ((d36 * sqrt3) + d11), (float) ((d39 * sqrt3) + d32), (float) (d43 - (sqrt3 * d46)), (float) (d45 - (sqrt3 * d47)), (float) d43, (float) d45);
-            i10++;
-            d11 = d43;
-            d32 = d45;
-            d30 = d30;
-            d41 = d42;
-            cos2 = cos2;
-            d39 = d47;
-            d36 = d46;
-            ceil = i11;
-            d40 = d40;
-            d37 = d44;
-        }
-    }
-
-    public static void b(e[] eVarArr, Path path) {
-        int i10;
-        float[] fArr;
-        int i11;
-        e eVar;
-        int i12;
-        char c10;
-        float f10;
-        float f11;
-        e eVar2;
-        boolean z10;
-        float f12;
-        float f13;
-        float f14;
-        float f15;
-        float f16;
-        float f17;
-        float f18;
-        float f19;
-        e[] eVarArr2 = eVarArr;
-        Path path2 = path;
-        float[] fArr2 = new float[6];
-        int length = eVarArr2.length;
-        char c11 = 0;
-        char c12 = 'm';
-        int i13 = 0;
-        while (i13 < length) {
-            e eVar3 = eVarArr2[i13];
-            char c13 = eVar3.a;
-            float[] fArr3 = eVar3.b;
-            float f20 = fArr2[c11];
-            float f21 = fArr2[1];
-            float f22 = fArr2[2];
-            float f23 = fArr2[3];
-            float f24 = fArr2[4];
-            float f25 = fArr2[5];
-            switch (c13) {
-                case VoIPService.CALL_MIN_LAYER /* 65 */:
-                case 'a':
-                    i10 = 7;
-                    break;
-                case 'C':
-                case 'c':
-                    i10 = 6;
-                    break;
-                case 'H':
-                case 'V':
-                case 'h':
-                case 'v':
-                    i10 = 1;
-                    break;
-                case 'Q':
-                case 'S':
-                case 'q':
-                case 's':
-                    i10 = 4;
-                    break;
-                case 'Z':
-                case 'z':
-                    path2.close();
-                    path2.moveTo(f24, f25);
-                    f20 = f24;
-                    f22 = f20;
-                    f21 = f25;
-                    f23 = f21;
-                default:
-                    i10 = 2;
-                    break;
-            }
-            float f26 = f24;
-            float f27 = f25;
-            float f28 = f20;
-            float f29 = f21;
-            int i14 = 0;
-            while (i14 < fArr3.length) {
-                if (c13 == 'A') {
-                    fArr = fArr3;
-                    i11 = i14;
-                    eVar = eVar3;
-                    float f30 = f28;
-                    float f31 = f29;
-                    i12 = i13;
-                    c10 = c13;
-                    int i15 = i11 + 5;
-                    int i16 = i11 + 6;
-                    a(path, f30, f31, fArr[i15], fArr[i16], fArr[i11], fArr[i11 + 1], fArr[i11 + 2], fArr[i11 + 3] != 0.0f, fArr[i11 + 4] != 0.0f);
-                    f22 = fArr[i15];
-                    f10 = fArr[i16];
-                    f23 = f10;
-                    f11 = f22;
-                } else if (c13 == 'C') {
-                    fArr = fArr3;
-                    i11 = i14;
-                    i12 = i13;
-                    eVar = eVar3;
-                    c10 = c13;
-                    int i17 = i11 + 2;
-                    int i18 = i11 + 3;
-                    int i19 = i11 + 4;
-                    int i20 = i11 + 5;
-                    path2.cubicTo(fArr[i11], fArr[i11 + 1], fArr[i17], fArr[i18], fArr[i19], fArr[i20]);
-                    float f32 = fArr[i19];
-                    float f33 = fArr[i20];
-                    f22 = fArr[i17];
-                    f23 = fArr[i18];
-                    f10 = f33;
-                    f11 = f32;
-                } else if (c13 == 'H') {
-                    fArr = fArr3;
-                    i11 = i14;
-                    eVar = eVar3;
-                    c10 = c13;
-                    f10 = f29;
-                    i12 = i13;
-                    path2.lineTo(fArr[i11], f10);
-                    f11 = fArr[i11];
-                } else if (c13 == 'Q') {
-                    fArr = fArr3;
-                    i11 = i14;
-                    i12 = i13;
-                    eVar = eVar3;
-                    c10 = c13;
-                    int i21 = i11 + 1;
-                    int i22 = i11 + 2;
-                    int i23 = i11 + 3;
-                    path2.quadTo(fArr[i11], fArr[i21], fArr[i22], fArr[i23]);
-                    float f34 = fArr[i11];
-                    float f35 = fArr[i21];
-                    float f36 = fArr[i22];
-                    float f37 = fArr[i23];
-                    f22 = f34;
-                    f23 = f35;
-                    f11 = f36;
-                    f10 = f37;
-                } else if (c13 == 'V') {
-                    fArr = fArr3;
-                    i11 = i14;
-                    i12 = i13;
-                    eVar = eVar3;
-                    f11 = f28;
-                    c10 = c13;
-                    path2.lineTo(f11, fArr[i11]);
-                    f10 = fArr[i11];
-                } else if (c13 != 'a') {
-                    if (c13 == 'c') {
-                        fArr = fArr3;
-                        i11 = i14;
-                        int i24 = i11 + 2;
-                        int i25 = i11 + 3;
-                        int i26 = i11 + 4;
-                        int i27 = i11 + 5;
-                        path2.rCubicTo(fArr[i11], fArr[i11 + 1], fArr[i24], fArr[i25], fArr[i26], fArr[i27]);
-                        float f38 = fArr[i24] + f28;
-                        float f39 = fArr[i25] + f29;
-                        f28 += fArr[i26];
-                        f29 += fArr[i27];
-                        f22 = f38;
-                        f23 = f39;
-                    } else if (c13 != 'h') {
-                        if (c13 != 'q') {
-                            if (c13 != 'v') {
-                                if (c13 == 'L') {
-                                    fArr = fArr3;
-                                    i11 = i14;
-                                    int i28 = i11 + 1;
-                                    path2.lineTo(fArr[i11], fArr[i28]);
-                                    f11 = fArr[i11];
-                                    f10 = fArr[i28];
-                                } else if (c13 == 'M') {
-                                    fArr = fArr3;
-                                    i11 = i14;
-                                    f11 = fArr[i11];
-                                    f10 = fArr[i11 + 1];
-                                    if (i11 > 0) {
-                                        path2.lineTo(f11, f10);
-                                    } else {
-                                        path2.moveTo(f11, f10);
-                                        f26 = f11;
-                                        f27 = f10;
-                                    }
-                                } else if (c13 != 'S') {
-                                    if (c13 == 'T') {
-                                        fArr = fArr3;
-                                        i11 = i14;
-                                        if (c12 == 'q' || c12 == 't' || c12 == 'Q' || c12 == 'T') {
-                                            f28 = (f28 * 2.0f) - f22;
-                                            f29 = (f29 * 2.0f) - f23;
-                                        }
-                                        int i29 = i11 + 1;
-                                        path2.quadTo(f28, f29, fArr[i11], fArr[i29]);
-                                        f11 = fArr[i11];
-                                        f10 = fArr[i29];
-                                        eVar = eVar3;
-                                        f22 = f28;
-                                        f23 = f29;
-                                    } else if (c13 == 'l') {
-                                        fArr = fArr3;
-                                        i11 = i14;
-                                        int i30 = i11 + 1;
-                                        path2.rLineTo(fArr[i11], fArr[i30]);
-                                        f28 += fArr[i11];
-                                        f15 = fArr[i30];
-                                    } else if (c13 == 'm') {
-                                        fArr = fArr3;
-                                        i11 = i14;
-                                        float f40 = fArr[i11];
-                                        f28 += f40;
-                                        float f41 = fArr[i11 + 1];
-                                        f29 += f41;
-                                        if (i11 > 0) {
-                                            path2.rLineTo(f40, f41);
-                                        } else {
-                                            path2.rMoveTo(f40, f41);
-                                            eVar = eVar3;
-                                            f11 = f28;
-                                            f26 = f11;
-                                            f10 = f29;
-                                            f27 = f10;
-                                        }
-                                    } else if (c13 != 's') {
-                                        if (c13 != 't') {
-                                            fArr = fArr3;
-                                            i11 = i14;
-                                            eVar = eVar3;
-                                            f11 = f28;
-                                        } else {
-                                            if (c12 == 'q' || c12 == 't' || c12 == 'Q' || c12 == 'T') {
-                                                f18 = f28 - f22;
-                                                f19 = f29 - f23;
-                                            } else {
-                                                f19 = 0.0f;
-                                                f18 = 0.0f;
-                                            }
-                                            int i31 = i14 + 1;
-                                            path2.rQuadTo(f18, f19, fArr3[i14], fArr3[i31]);
-                                            float f42 = f18 + f28;
-                                            float f43 = f19 + f29;
-                                            float f44 = f28 + fArr3[i14];
-                                            f29 += fArr3[i31];
-                                            f23 = f43;
-                                            fArr = fArr3;
-                                            i11 = i14;
-                                            eVar = eVar3;
-                                            f11 = f44;
-                                            f22 = f42;
-                                        }
-                                        f10 = f29;
-                                    } else {
-                                        if (c12 == 'c' || c12 == 's' || c12 == 'C' || c12 == 'S') {
-                                            f16 = f29 - f23;
-                                            f17 = f28 - f22;
-                                        } else {
-                                            f17 = 0.0f;
-                                            f16 = 0.0f;
-                                        }
-                                        int i32 = i14;
-                                        int i33 = i32 + 1;
-                                        int i34 = i32 + 2;
-                                        int i35 = i32 + 3;
-                                        fArr = fArr3;
-                                        i11 = i32;
-                                        path2.rCubicTo(f17, f16, fArr3[i32], fArr3[i33], fArr3[i34], fArr3[i35]);
-                                        f12 = fArr[i11] + f28;
-                                        f13 = fArr[i33] + f29;
-                                        f28 += fArr[i34];
-                                        f14 = fArr[i35];
-                                    }
-                                    i12 = i13;
-                                    c10 = c13;
-                                } else {
-                                    fArr = fArr3;
-                                    i11 = i14;
-                                    if (c12 == 'c' || c12 == 's' || c12 == 'C' || c12 == 'S') {
-                                        f28 = (f28 * 2.0f) - f22;
-                                        f29 = (f29 * 2.0f) - f23;
-                                    }
-                                    float f45 = f28;
-                                    float f46 = f29;
-                                    int i36 = i11 + 1;
-                                    int i37 = i11 + 2;
-                                    int i38 = i11 + 3;
-                                    path2.cubicTo(f45, f46, fArr[i11], fArr[i36], fArr[i37], fArr[i38]);
-                                    float f47 = fArr[i11];
-                                    f22 = f47;
-                                    f23 = fArr[i36];
-                                    f11 = fArr[i37];
-                                    f10 = fArr[i38];
-                                }
-                                i12 = i13;
-                                eVar = eVar3;
-                                c10 = c13;
-                            } else {
-                                fArr = fArr3;
-                                i11 = i14;
-                                path2.rLineTo(0.0f, fArr[i11]);
-                                f15 = fArr[i11];
-                            }
-                            f29 += f15;
-                        } else {
-                            fArr = fArr3;
-                            i11 = i14;
-                            int i39 = i11 + 1;
-                            int i40 = i11 + 2;
-                            int i41 = i11 + 3;
-                            path2.rQuadTo(fArr[i11], fArr[i39], fArr[i40], fArr[i41]);
-                            f12 = fArr[i11] + f28;
-                            f13 = fArr[i39] + f29;
-                            f28 += fArr[i40];
-                            f14 = fArr[i41];
-                        }
-                        f29 += f14;
-                        f22 = f12;
-                        f23 = f13;
-                    } else {
-                        fArr = fArr3;
-                        i11 = i14;
-                        path2.rLineTo(fArr[i11], 0.0f);
-                        f28 += fArr[i11];
-                    }
-                    eVar = eVar3;
-                    f11 = f28;
-                    f10 = f29;
-                    i12 = i13;
-                    c10 = c13;
-                } else {
-                    fArr = fArr3;
-                    i11 = i14;
-                    int i42 = i11 + 5;
-                    float f48 = fArr[i42] + f28;
-                    int i43 = i11 + 6;
-                    float f49 = fArr[i43] + f29;
-                    float f50 = fArr[i11];
-                    float f51 = fArr[i11 + 1];
-                    float f52 = fArr[i11 + 2];
-                    if (fArr[i11 + 3] != 0.0f) {
-                        eVar2 = eVar3;
-                        z10 = true;
-                    } else {
-                        eVar2 = eVar3;
-                        z10 = false;
-                    }
-                    eVar = eVar2;
-                    float f53 = f28;
-                    c10 = c13;
-                    float f54 = f29;
-                    i12 = i13;
-                    a(path, f53, f54, f48, f49, f50, f51, f52, z10, fArr[i11 + 4] != 0.0f);
-                    f11 = f53 + fArr[i42];
-                    f10 = f54 + fArr[i43];
-                    f22 = f11;
-                    f23 = f10;
+            if (i9 >= 24) {
+                Method method = g.c;
+                if (method == null) {
+                    Log.w("TypefaceCompatApi24Impl", "Unable to collect necessary private methods.Fallback to legacy implementation.");
                 }
-                i14 = i11 + i10;
-                path2 = path;
-                eVar3 = eVar;
-                c13 = c10;
-                i13 = i12;
-                f28 = f11;
-                f29 = f10;
-                c12 = c13;
-                fArr3 = fArr;
+                if (method != null) {
+                    a = new g();
+                }
             }
-            fArr2[0] = f28;
-            fArr2[1] = f29;
-            fArr2[2] = f22;
-            fArr2[3] = f23;
-            fArr2[4] = f26;
-            fArr2[5] = f27;
-            c12 = eVar3.a;
-            i13++;
-            eVarArr2 = eVarArr;
-            path2 = path;
-            c11 = 0;
+            a = new f();
         }
+        b = new a0.j(16);
+        Trace.endSection();
     }
 
-    public e(e eVar) {
-        this.a = eVar.a;
-        float[] fArr = eVar.b;
-        this.b = w7.b(fArr, fArr.length);
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x002a, code lost:
+    
+        if (r2.equals(r7) == false) goto L15;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static Typeface a(Context context, h0.d dVar, Resources resources, int i9, String str, int i10, int i11, d0 d0Var) {
+        Typeface a2;
+        Typeface typeface;
+        List unmodifiableList;
+        int i12 = 28;
+        if (dVar instanceof h0.g) {
+            h0.g gVar = (h0.g) dVar;
+            String str2 = gVar.e;
+            Typeface typeface2 = null;
+            boolean z10 = false;
+            if (str2 != null && !str2.isEmpty()) {
+                typeface = Typeface.create(str2, 0);
+                Typeface create = Typeface.create(Typeface.DEFAULT, 0);
+                if (typeface != null) {
+                }
+            }
+            typeface = null;
+            if (typeface != null) {
+                new Handler(Looper.getMainLooper()).post(new u(i12, d0Var, typeface));
+                return typeface;
+            }
+            int i13 = 1;
+            boolean z11 = gVar.d == 0;
+            int i14 = gVar.c;
+            Handler handler = new Handler(Looper.getMainLooper());
+            k5.i iVar = new k5.i(18, z10);
+            iVar.b = d0Var;
+            o0.d dVar2 = gVar.b;
+            int i15 = 2;
+            if (dVar2 != null) {
+                Object[] objArr = {gVar.a, dVar2};
+                ArrayList arrayList = new ArrayList(2);
+                for (int i16 = 0; i16 < 2; i16++) {
+                    Object obj = objArr[i16];
+                    Objects.requireNonNull(obj);
+                    arrayList.add(obj);
+                }
+                unmodifiableList = DesugarCollections.unmodifiableList(arrayList);
+            } else {
+                Object[] objArr2 = {gVar.a};
+                ArrayList arrayList2 = new ArrayList(1);
+                Object obj2 = objArr2[0];
+                Objects.requireNonNull(obj2);
+                arrayList2.add(obj2);
+                unmodifiableList = DesugarCollections.unmodifiableList(arrayList2);
+            }
+            o oVar = new o(handler, 4);
+            g5.b bVar = new g5.b(27, iVar, oVar);
+            if (!z11) {
+                String a3 = o0.g.a(i11, unmodifiableList);
+                Typeface typeface3 = (Typeface) o0.g.a.a(a3);
+                if (typeface3 != null) {
+                    oVar.execute(new androidx.biometric.j(iVar, typeface3, z10, i12));
+                    typeface2 = typeface3;
+                } else {
+                    n2.u uVar = new n2.u(bVar, i13);
+                    synchronized (o0.g.c) {
+                        try {
+                            k kVar = o0.g.d;
+                            ArrayList arrayList3 = (ArrayList) kVar.get(a3);
+                            if (arrayList3 != null) {
+                                arrayList3.add(uVar);
+                            } else {
+                                ArrayList arrayList4 = new ArrayList();
+                                arrayList4.add(uVar);
+                                kVar.put(a3, arrayList4);
+                                o0.e eVar = new o0.e(a3, context, unmodifiableList, i11, 1);
+                                ThreadPoolExecutor threadPoolExecutor = o0.g.b;
+                                n2.u uVar2 = new n2.u(a3, i15);
+                                Handler handler2 = Looper.myLooper() == null ? new Handler(Looper.getMainLooper()) : new Handler();
+                                q1 q1Var = new q1();
+                                q1Var.b = eVar;
+                                q1Var.c = uVar2;
+                                q1Var.d = handler2;
+                                threadPoolExecutor.execute(q1Var);
+                            }
+                        } finally {
+                        }
+                    }
+                }
+            } else {
+                if (unmodifiableList.size() > 1) {
+                    throw new IllegalArgumentException("Fallbacks with blocking fetches are not supported for performance reasons");
+                }
+                o0.d dVar3 = (o0.d) unmodifiableList.get(0);
+                a0.j jVar = o0.g.a;
+                ArrayList arrayList5 = new ArrayList(1);
+                Object obj3 = new Object[]{dVar3}[0];
+                Objects.requireNonNull(obj3);
+                arrayList5.add(obj3);
+                String a10 = o0.g.a(i11, DesugarCollections.unmodifiableList(arrayList5));
+                Typeface typeface4 = (Typeface) o0.g.a.a(a10);
+                if (typeface4 != null) {
+                    oVar.execute(new androidx.biometric.j(iVar, typeface4, z10, i12));
+                    typeface2 = typeface4;
+                } else if (i14 == -1) {
+                    Object[] objArr3 = {dVar3};
+                    ArrayList arrayList6 = new ArrayList(1);
+                    Object obj4 = objArr3[0];
+                    Objects.requireNonNull(obj4);
+                    arrayList6.add(obj4);
+                    o0.f b10 = o0.g.b(a10, context, DesugarCollections.unmodifiableList(arrayList6), i11);
+                    bVar.s(b10);
+                    typeface2 = b10.a;
+                } else {
+                    try {
+                        try {
+                            try {
+                                o0.f fVar = (o0.f) o0.g.b.submit(new o0.e(a10, context, dVar3, i11, 0)).get(i14, TimeUnit.MILLISECONDS);
+                                bVar.s(fVar);
+                                typeface2 = fVar.a;
+                            } catch (InterruptedException e10) {
+                                throw e10;
+                            }
+                        } catch (ExecutionException e11) {
+                            throw new RuntimeException(e11);
+                        } catch (TimeoutException unused) {
+                            throw new InterruptedException("timeout");
+                        }
+                    } catch (InterruptedException unused2) {
+                        ((o) bVar.c).execute(new i3((k5.i) bVar.b, -3));
+                    }
+                }
+            }
+            a2 = typeface2;
+        } else {
+            a2 = a.a(context, (h0.e) dVar, resources, i11);
+            if (a2 != null) {
+                new Handler(Looper.getMainLooper()).post(new u(i12, d0Var, a2));
+            } else {
+                d0Var.a();
+            }
+        }
+        if (a2 != null) {
+            b.b(b(resources, i9, str, i10, i11), a2);
+        }
+        return a2;
+    }
+
+    public static String b(Resources resources, int i9, String str, int i10, int i11) {
+        return resources.getResourcePackageName(i9) + '-' + str + '-' + i10 + '-' + i9 + '-' + i11;
     }
 }

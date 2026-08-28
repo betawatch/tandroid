@@ -1,108 +1,36 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class t9 implements Runnable {
+public final /* synthetic */ class t9 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ Utilities.Callback2 c;
 
-    public /* synthetic */ t9(MessagesController messagesController, int i10) {
-        this.a = i10;
+    public /* synthetic */ t9(MessagesController messagesController, Utilities.Callback2 callback2, int i9) {
+        this.a = i9;
         this.b = messagesController;
+        this.c = callback2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                this.b.lambda$new$18();
+                this.b.lambda$toggleChatNoForwards$278(this.c, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                this.b.lambda$new$39();
+                this.b.lambda$fetchCommunityPendingJoinRequests$246(this.c, (TL_communities.PeerLinkRequests) obj, (TLRPC.TL_error) obj2);
                 break;
             case 2:
-                this.b.requestIsUserContactBlocked();
-                break;
-            case 3:
-                this.b.lambda$new$505();
-                break;
-            case 4:
-                this.b.lambda$updateTimerProc$158();
-                break;
-            case 5:
-                this.b.lambda$updateTimerProc$161();
-                break;
-            case 6:
-                this.b.lambda$applyAppConfig$36();
-                break;
-            case 7:
-                this.b.lambda$applyAppConfig$37();
-                break;
-            case 8:
-                this.b.lambda$processUpdates$380();
-                break;
-            case 9:
-                this.b.lambda$migrateDialogs$213();
-                break;
-            case 10:
-                this.b.lambda$loadRemoteFilters$26();
-                break;
-            case 11:
-                this.b.lambda$loadRemoteFilters$27();
-                break;
-            case 12:
-                this.b.lambda$loadRemoteFilters$28();
-                break;
-            case 13:
-                this.b.lambda$loadRemoteFilters$29();
-                break;
-            case 14:
-                this.b.lambda$cleanup$52();
-                break;
-            case 15:
-                this.b.lambda$cleanup$53();
-                break;
-            case 16:
-                this.b.lambda$cleanup$54();
-                break;
-            case 17:
-                this.b.lambda$toggleChannelInvitesHistory$287();
-                break;
-            case 18:
-                this.b.lambda$removeWebBrowserException$514();
-                break;
-            case 19:
-                this.b.lambda$checkPromoInfoInternal$166();
-                break;
-            case 20:
-                this.b.lambda$toggleChatJoinToSend$279();
-                break;
-            case 21:
-                this.b.lambda$migrateDialogs$215();
-                break;
-            case 22:
-                this.b.lambda$scheduleTranscriptionUpdate$38();
-                break;
-            case 23:
-                this.b.lambda$processUpdateArray$409();
-                break;
-            case 24:
-                this.b.lambda$processUpdateArray$410();
-                break;
-            case 25:
-                this.b.lambda$processUpdateArray$411();
-                break;
-            case 26:
-                this.b.lambda$registerForPush$323();
-                break;
-            case 27:
-                this.b.lambda$updateEmojiStatusUntil$474();
-                break;
-            case 28:
-                this.b.lambda$toggleChannelForum$285();
+                this.b.lambda$fetchCommunityJoinedChats$247(this.c, (TL_communities.ParticipantJoinedChats) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                this.b.lambda$toggleChannelSignatures$283();
+                this.b.lambda$fetchChatsToAddToCommunity$252(this.c, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
                 break;
         }
     }

@@ -2,15 +2,14 @@ package f4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.o;
+import g7.s6;
 import h3.g1;
 import h3.t0;
-import h7.v6;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b implements z3.b {
-    public static final Parcelable.Creator<b> CREATOR = new o(27);
+    public static final Parcelable.Creator<b> CREATOR = new c.c(23);
     public final long a;
     public final long b;
     public final long c;
@@ -54,7 +53,7 @@ public final class b implements z3.b {
     }
 
     public final int hashCode() {
-        return v6.a(this.e) + ((v6.a(this.d) + ((v6.a(this.c) + ((v6.a(this.b) + ((v6.a(this.a) + 527) * 31)) * 31)) * 31)) * 31);
+        return s6.a(this.e) + ((s6.a(this.d) + ((s6.a(this.c) + ((s6.a(this.b) + ((s6.a(this.a) + 527) * 31)) * 31)) * 31)) * 31);
     }
 
     public final String toString() {
@@ -62,7 +61,7 @@ public final class b implements z3.b {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeLong(this.a);
         parcel.writeLong(this.b);
         parcel.writeLong(this.c);

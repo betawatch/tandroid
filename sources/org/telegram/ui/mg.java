@@ -1,58 +1,49 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mg implements View.OnKeyListener {
+public final /* synthetic */ class mg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c2[] b;
 
-    public /* synthetic */ mg(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ mg(org.telegram.ui.ActionBar.c2[] c2VarArr, int i9) {
+        this.a = i9;
+        this.b = c2VarArr;
     }
 
-    @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                rn rnVar = (rn) this.b;
-                rnVar.getClass();
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
-                if (i10 == 67 && keyEvent.getAction() == 0 && editTextBoldCursor.length() == 0) {
-                    rnVar.ta();
-                    break;
+                org.telegram.ui.ActionBar.c2[] c2VarArr = this.b;
+                try {
+                    c2VarArr[0].dismiss();
+                } catch (Throwable unused) {
                 }
+                c2VarArr[0] = null;
                 break;
             case 1:
-                xm0 xm0Var = (xm0) this.b;
-                if (i10 != 67) {
-                    xm0Var.getClass();
-                    break;
-                } else if (xm0Var.U[2].length() == 0) {
-                    xm0Var.U[1].requestFocus();
-                    EditTextBoldCursor editTextBoldCursor2 = xm0Var.U[1];
-                    editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
-                    xm0Var.U[1].dispatchKeyEvent(keyEvent);
-                    break;
+                org.telegram.ui.ActionBar.c2[] c2VarArr2 = this.b;
+                try {
+                    c2VarArr2[0].dismiss();
+                } catch (Throwable unused2) {
                 }
+                c2VarArr2[0] = null;
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new mg(this.b, 4));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new mg(this.b, 5));
+                break;
+            case 4:
+                this.b[0].dismiss();
                 break;
             default:
-                vu0 vu0Var = (vu0) this.b;
-                EditTextBoldCursor editTextBoldCursor3 = (EditTextBoldCursor) view;
-                if (i10 == 67 && keyEvent.getAction() == 0 && editTextBoldCursor3.length() == 0) {
-                    ImageView imageView = vu0Var.f;
-                    if (imageView != null) {
-                        imageView.callOnClick();
-                        break;
-                    }
-                }
+                this.b[0].dismiss();
                 break;
         }
-        return true;
     }
 }

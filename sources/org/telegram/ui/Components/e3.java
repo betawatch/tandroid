@@ -6,9 +6,9 @@ import android.graphics.Path;
 import android.graphics.Region;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class e3 extends n9 {
+public final class e3 extends o9 {
     public final Path C;
 
     public e3(Context context) {
@@ -16,7 +16,7 @@ public final class e3 extends n9 {
         this.C = new Path();
     }
 
-    @Override // org.telegram.ui.Components.n9, android.view.View
+    @Override // org.telegram.ui.Components.o9, android.view.View
     public final void onDraw(Canvas canvas) {
         canvas.save();
         Path path = this.C;

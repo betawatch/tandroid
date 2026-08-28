@@ -43,8 +43,8 @@ public final class o implements Temporal, j$.time.temporal.m, Comparable, Serial
         } else {
             try {
                 oVar = new o(h.I(temporal), ZoneOffset.L(temporal));
-            } catch (b e9) {
-                throw new b("Unable to obtain OffsetTime from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e9);
+            } catch (b e10) {
+                throw new b("Unable to obtain OffsetTime from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e10);
             }
         }
         if (qVar instanceof ChronoUnit) {

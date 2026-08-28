@@ -1,87 +1,48 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class r10 extends f2.c0 {
-    public final /* synthetic */ FiltersSetupActivity d;
+public final class r10 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ ag.a c;
 
-    public r10(FiltersSetupActivity filtersSetupActivity) {
-        this.d = filtersSetupActivity;
+    public /* synthetic */ r10(Context context, ag.a aVar, int i9) {
+        this.a = i9;
+        this.b = context;
+        this.c = aVar;
     }
 
-    @Override // f2.c0
-    public final void a(RecyclerView recyclerView, f2.o1 o1Var) {
-        super.a(recyclerView, o1Var);
-        View view = o1Var.a;
-        view.setPressed(false);
-        view.setTag(R.id.dragging, null);
-    }
-
-    @Override // f2.c0
-    public final int e(RecyclerView recyclerView, f2.o1 o1Var) {
-        return o1Var.f != 2 ? f2.c0.l(0, 0) : f2.c0.l(3, 0);
-    }
-
-    @Override // f2.c0
-    public final boolean k() {
-        return true;
-    }
-
-    @Override // f2.c0
-    public final boolean n(RecyclerView recyclerView, f2.o1 o1Var, f2.o1 o1Var2) {
-        MessagesController.DialogFilter dialogFilter;
-        MessagesController.DialogFilter dialogFilter2;
-        if (o1Var.f != o1Var2.f) {
-            return false;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                g gVar = new g(this, 18);
+                Context context = this.b;
+                org.telegram.ui.Components.m8 m8Var = new org.telegram.ui.Components.m8(context, false, gVar, 1);
+                ag.k kVar = this.c.c;
+                m8Var.e(kVar != null ? kVar.C : 0, 0);
+                m8Var.f(-1, 1, 1, false);
+                org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(context, false);
+                f3Var.setCustomView(m8Var);
+                f3Var.setDimBehind(false);
+                f3Var.show();
+                break;
+            default:
+                g gVar2 = new g(this, 19);
+                Context context2 = this.b;
+                org.telegram.ui.Components.m8 m8Var2 = new org.telegram.ui.Components.m8(context2, false, gVar2, 2);
+                ag.k kVar2 = this.c.c;
+                m8Var2.e(kVar2 == null ? 0 : kVar2.B, 0);
+                m8Var2.f(-1, 1, 1, false);
+                org.telegram.ui.ActionBar.f3 f3Var2 = new org.telegram.ui.ActionBar.f3(context2, false);
+                f3Var2.setCustomView(m8Var2);
+                f3Var2.setDimBehind(false);
+                f3Var2.show();
+                break;
         }
-        o10 o10Var = this.d.b;
-        int b10 = o1Var.b();
-        int b11 = o1Var2.b();
-        FiltersSetupActivity filtersSetupActivity = o10Var.e;
-        int i10 = filtersSetupActivity.r;
-        ArrayList arrayList = filtersSetupActivity.n;
-        if (b10 >= i10 && b11 >= i10) {
-            m10 m10Var = (m10) arrayList.get(b10);
-            m10 m10Var2 = (m10) arrayList.get(b11);
-            if (m10Var != null && m10Var2 != null && (dialogFilter = m10Var.d) != null && (dialogFilter2 = m10Var2.d) != null) {
-                int i11 = dialogFilter.order;
-                dialogFilter.order = dialogFilter2.order;
-                dialogFilter2.order = i11;
-                ArrayList<MessagesController.DialogFilter> arrayList2 = filtersSetupActivity.getMessagesController().dialogFilters;
-                try {
-                    arrayList2.set(b10 - filtersSetupActivity.r, m10Var2.d);
-                    arrayList2.set(b11 - filtersSetupActivity.r, m10Var.d);
-                } catch (Exception unused) {
-                }
-                filtersSetupActivity.e = true;
-                filtersSetupActivity.Z(true);
-            }
-        }
-        return true;
-    }
-
-    @Override // f2.c0
-    public final void p(f2.o1 o1Var, int i10) {
-        if (i10 != 0) {
-            this.d.a.I0(false);
-            o1Var.a.setPressed(true);
-        } else {
-            AndroidUtilities.cancelRunOnUIThread(new r00(this, 4));
-            AndroidUtilities.runOnUIThread(new r00(this, 4), 320L);
-        }
-        if (o1Var != null) {
-            o1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
-        }
-    }
-
-    @Override // f2.c0
-    public final void q(f2.o1 o1Var) {
     }
 }

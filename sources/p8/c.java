@@ -1,82 +1,46 @@
 package p8;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
+import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public class c extends i7.d0 {
-    public final Map b;
-    public final /* synthetic */ h0 c;
+public abstract /* synthetic */ class c {
+    public static final /* synthetic */ int[] a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(h0 h0Var, Map map) {
-        super(2);
-        this.c = h0Var;
-        map.getClass();
-        this.b = map;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final void clear() {
-        Iterator it = iterator();
-        while (true) {
-            i7.c cVar = (i7.c) it;
-            if (!cVar.hasNext()) {
-                return;
-            }
-            cVar.next();
-            cVar.remove();
+    static {
+        int[] iArr = new int[RoundingMode.values().length];
+        a = iArr;
+        try {
+            iArr[RoundingMode.UNNECESSARY.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
         }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.b.containsKey(obj);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean containsAll(Collection collection) {
-        return this.b.keySet().containsAll(collection);
-    }
-
-    @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
-    public final boolean equals(Object obj) {
-        return this == obj || this.b.keySet().equals(obj);
-    }
-
-    @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return this.b.keySet().hashCode();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean isEmpty() {
-        return this.b.isEmpty();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        return new i7.c(this, this.b.entrySet().iterator(), 7);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean remove(Object obj) {
-        int i10;
-        Collection collection = (Collection) this.b.remove(obj);
-        if (collection != null) {
-            i10 = collection.size();
-            collection.clear();
-            this.c.e -= i10;
-        } else {
-            i10 = 0;
+        try {
+            a[RoundingMode.DOWN.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
         }
-        return i10 > 0;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.b.size();
+        try {
+            a[RoundingMode.FLOOR.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        try {
+            a[RoundingMode.UP.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
+        try {
+            a[RoundingMode.CEILING.ordinal()] = 5;
+        } catch (NoSuchFieldError unused5) {
+        }
+        try {
+            a[RoundingMode.HALF_DOWN.ordinal()] = 6;
+        } catch (NoSuchFieldError unused6) {
+        }
+        try {
+            a[RoundingMode.HALF_UP.ordinal()] = 7;
+        } catch (NoSuchFieldError unused7) {
+        }
+        try {
+            a[RoundingMode.HALF_EVEN.ordinal()] = 8;
+        } catch (NoSuchFieldError unused8) {
+        }
     }
 }

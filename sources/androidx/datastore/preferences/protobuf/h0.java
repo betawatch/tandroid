@@ -2,15 +2,42 @@ package androidx.datastore.preferences.protobuf;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class h0 {
-    public static final f0 a = new f0();
-    public static final g0 b = new g0();
+public final class h0 extends i0 {
+    @Override // androidx.datastore.preferences.protobuf.i0
+    public final void a(Object obj, long j10) {
+        ((b) ((z) s1.d.i(obj, j10))).a = false;
+    }
 
-    public abstract void a(Object obj, long j10);
+    @Override // androidx.datastore.preferences.protobuf.i0
+    public final void b(Object obj, long j10, Object obj2) {
+        r1 r1Var = s1.d;
+        z zVar = (z) r1Var.i(obj, j10);
+        z zVar2 = (z) r1Var.i(obj2, j10);
+        int size = zVar.size();
+        int size2 = zVar2.size();
+        if (size > 0 && size2 > 0) {
+            if (!((b) zVar).a) {
+                zVar = zVar.e(size2 + size);
+            }
+            zVar.addAll(zVar2);
+        }
+        if (size > 0) {
+            zVar2 = zVar;
+        }
+        s1.o(obj, j10, zVar2);
+    }
 
-    public abstract void b(Object obj, long j10, Object obj2);
-
-    public abstract List c(Object obj, long j10);
+    @Override // androidx.datastore.preferences.protobuf.i0
+    public final List c(Object obj, long j10) {
+        z zVar = (z) s1.d.i(obj, j10);
+        if (((b) zVar).a) {
+            return zVar;
+        }
+        int size = zVar.size();
+        z e10 = zVar.e(size == 0 ? 10 : size * 2);
+        s1.o(obj, j10, e10);
+        return e10;
+    }
 }

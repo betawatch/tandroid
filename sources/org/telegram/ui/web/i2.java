@@ -1,112 +1,53 @@
 package org.telegram.ui.web;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Build;
-import android.text.TextUtils;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final class i2 extends TLObject {
-    public long a = System.currentTimeMillis();
-    public String b;
-    public String c;
-    public String d;
-    public int e;
-    public int f;
-    public Bitmap i;
-    public byte[] j;
+public final class i2 {
+    public static i2 e;
+    public HashMap a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
 
-    public static i2 a(w0 w0Var) {
-        i2 i2Var = new i2();
-        String hostAuthority = AndroidUtilities.getHostAuthority(w0Var.getUrl(), true);
-        i2Var.b = hostAuthority;
-        if (TextUtils.isEmpty(hostAuthority)) {
+    public static i2 b() {
+        if (e == null) {
+            e = new i2();
+        }
+        return e;
+    }
+
+    public final h2 a(String str) {
+        c();
+        h2 h2Var = (h2) this.a.get(str);
+        if (h2Var == null) {
             return null;
         }
-        if (w0Var.F) {
-            i2Var.c = w0Var.G;
-        }
-        i2Var.d = w0Var.r;
-        if (w0Var.s) {
-            i2Var.e = w0Var.w;
-        }
-        if (w0Var.v) {
-            i2Var.f = w0Var.x;
-        }
-        if (w0Var.I) {
-            i2Var.i = w0Var.K;
-        }
-        return i2Var;
+        h2Var.a = Math.max(h2Var.a, System.currentTimeMillis());
+        d();
+        return h2Var;
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
-        this.a = inputSerializedData.readInt64(z10);
-        this.b = inputSerializedData.readString(z10);
-        this.c = inputSerializedData.readString(z10);
-        this.d = inputSerializedData.readString(z10);
-        this.e = inputSerializedData.readInt32(z10);
-        this.f = inputSerializedData.readInt32(z10);
-        if (inputSerializedData.readInt32(z10) == 1450380236) {
-            this.i = null;
-        } else {
-            this.j = inputSerializedData.readByteArray(z10);
-            this.i = BitmapFactory.decodeStream(new ByteArrayInputStream(this.j));
+    public final void c() {
+        if (this.b || this.c) {
+            return;
         }
+        this.c = true;
+        if (this.a == null) {
+            this.a = new HashMap();
+        }
+        Utilities.globalQueue.postRunnable(new e2(this, 1));
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        Bitmap.CompressFormat compressFormat;
-        outputSerializedData.writeInt64(this.a);
-        String str = this.b;
-        if (str == null) {
-            str = "";
-        }
-        outputSerializedData.writeString(str);
-        String str2 = this.c;
-        if (str2 == null) {
-            str2 = "";
-        }
-        outputSerializedData.writeString(str2);
-        String str3 = this.d;
-        outputSerializedData.writeString(str3 != null ? str3 : "");
-        outputSerializedData.writeInt32(this.e);
-        outputSerializedData.writeInt32(this.f);
-        if (this.i == null) {
-            outputSerializedData.writeInt32(TLRPC.TL_null.constructor);
+    public final void d() {
+        AndroidUtilities.cancelRunOnUIThread(new e2(this, 0));
+        if (this.d) {
             return;
         }
-        outputSerializedData.writeInt32(953850003);
-        byte[] bArr = this.j;
-        if (bArr != null) {
-            outputSerializedData.writeByteArray(bArr);
-            return;
-        }
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        if (Build.VERSION.SDK_INT >= 30) {
-            Bitmap bitmap = this.i;
-            compressFormat = Bitmap.CompressFormat.WEBP_LOSSY;
-            bitmap.compress(compressFormat, 80, byteArrayOutputStream);
-        } else {
-            this.i.compress(Bitmap.CompressFormat.WEBP, 80, byteArrayOutputStream);
-        }
-        byte[] byteArray = byteArrayOutputStream.toByteArray();
-        this.j = byteArray;
-        outputSerializedData.writeByteArray(byteArray);
-        try {
-            byteArrayOutputStream.close();
-        } catch (Exception e9) {
-            FileLog.e(e9);
-        }
+        AndroidUtilities.runOnUIThread(new e2(this, 0), BuildVars.DEBUG_PRIVATE_VERSION ? 1L : 1000L);
     }
 }

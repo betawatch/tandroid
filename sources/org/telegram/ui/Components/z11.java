@@ -1,30 +1,48 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class z11 {
-    public static final z11 a;
-    public static final z11 b;
-    public static final z11 c;
-    public static final /* synthetic */ z11[] d;
+public final class z11 extends k41 {
+    public static final /* synthetic */ int a = 0;
 
     static {
-        z11 z11Var = new z11("TOP", 0);
-        a = z11Var;
-        z11 z11Var2 = new z11("LEFT", 1);
-        b = z11Var2;
-        z11 z11Var3 = new z11("BOTTOM", 2);
-        c = z11Var3;
-        d = new z11[]{z11Var, z11Var2, z11Var3};
+        k41.setup(new z11());
     }
 
-    public static z11 valueOf(String str) {
-        return (z11) Enum.valueOf(z11.class, str);
+    @Override // org.telegram.ui.Components.k41
+    public final void bindView(View view, l41 l41Var, boolean z10, z41 z41Var, i51 i51Var) {
+        a21 a21Var = (a21) view;
+        boolean z11 = false;
+        if (l41Var.r) {
+            a21Var.e();
+        } else {
+            Object obj = l41Var.G;
+            if (obj == null) {
+                if (l41Var.B == -2) {
+                    a21Var.b(l41Var.q, l41Var.e);
+                } else {
+                    a21Var.c((l41Var.y & 1) != 0, l41Var.q, l41Var.e);
+                }
+            } else if (obj instanceof TLRPC.TL_forumTopic) {
+                if (l41Var.I) {
+                    a21Var.a(l41Var.x, (TLRPC.TL_forumTopic) obj, l41Var.e);
+                } else {
+                    a21Var.f((TLRPC.TL_forumTopic) obj, l41Var.e);
+                }
+            }
+        }
+        if (i51Var != null && i51Var.Y2 && a21Var.y) {
+            z11 = true;
+        }
+        a21Var.setReorder(z11);
     }
 
-    public static z11[] values() {
-        return (z11[]) d.clone();
+    @Override // org.telegram.ui.Components.k41
+    public final View createView(Context context, wk0 wk0Var, int i9, int i10, org.telegram.ui.ActionBar.b6 b6Var) {
+        return new a21(context, i9, b6Var);
     }
 }

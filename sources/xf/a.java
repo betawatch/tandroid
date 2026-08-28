@@ -1,17 +1,27 @@
 package xf;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes3.dex */
-public abstract class a {
-    public int a;
-    public boolean b;
+import org.telegram.messenger.R;
 
-    public a(int i10, boolean z10) {
-        this.a = i10;
-        this.b = z10;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes3.dex */
+public final class a extends m {
+    @Override // xf.m
+    public final int c() {
+        return -30208;
     }
 
-    public boolean a(a aVar) {
-        return false;
+    @Override // xf.m
+    public final float d() {
+        return 0.25f;
+    }
+
+    @Override // xf.m
+    public final int e() {
+        return R.raw.photo_arrow;
+    }
+
+    @Override // xf.m
+    public final float j() {
+        return 0.25f;
     }
 }

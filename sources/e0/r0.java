@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.NotificationsController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class r0 {
     public final CharSequence a;
@@ -25,20 +25,20 @@ public final class r0 {
             return null;
         }
         RemoteInput[] remoteInputArr = new RemoteInput[r0VarArr.length];
-        for (int i10 = 0; i10 < r0VarArr.length; i10++) {
-            r0 r0Var = r0VarArr[i10];
+        for (int i9 = 0; i9 < r0VarArr.length; i9++) {
+            r0 r0Var = r0VarArr[i9];
             r0Var.getClass();
             RemoteInput.Builder addExtras = new RemoteInput.Builder(NotificationsController.EXTRA_VOICE_REPLY).setLabel(r0Var.a).setChoices(null).setAllowFreeFormInput(true).addExtras(r0Var.b);
             if (Build.VERSION.SDK_INT >= 26) {
                 Iterator it = r0Var.c.iterator();
                 while (it.hasNext()) {
-                    h6.a.f(addExtras, (String) it.next());
+                    g6.a.f(addExtras, (String) it.next());
                 }
             }
             if (Build.VERSION.SDK_INT >= 29) {
                 com.google.firebase.messaging.q.h(addExtras);
             }
-            remoteInputArr[i10] = addExtras.build();
+            remoteInputArr[i9] = addExtras.build();
         }
         return remoteInputArr;
     }

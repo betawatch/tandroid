@@ -1,26 +1,19 @@
 package g7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.nio.ByteBuffer;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class y8 {
-    public final String a;
-
-    public y8(String str) {
-        this.a = str;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+public abstract class y8 {
+    public z3.c a(z3.e eVar) {
+        ByteBuffer byteBuffer = eVar.b;
+        byteBuffer.getClass();
+        d5.a.f(byteBuffer.position() == 0 && byteBuffer.hasArray() && byteBuffer.arrayOffset() == 0);
+        if (eVar.isDecodeOnly()) {
+            return null;
         }
-        return (obj instanceof y8) && this.a.equals(((y8) obj).a);
+        return b(eVar, byteBuffer);
     }
 
-    public final int hashCode() {
-        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ 1231) * 1000003) ^ 1;
-    }
-
-    public final String toString() {
-        return a9.p.m("MLKitLoggingOptions{libraryName=", this.a, ", enableFirelog=true, firelogEventType=1}");
-    }
+    public abstract z3.c b(z3.e eVar, ByteBuffer byteBuffer);
 }

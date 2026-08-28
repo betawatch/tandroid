@@ -1,26 +1,32 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.DialogInterface;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r1 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class r1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ c2 b;
 
-    public /* synthetic */ r1(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ r1(c2 c2Var, int i9) {
+        this.a = i9;
+        this.b = c2Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((b2) this.b).G = null;
+                this.b.dismiss();
                 break;
             default:
-                ((Runnable) this.b).run();
+                c2 c2Var = this.b;
+                if (!c2Var.isShowing()) {
+                    try {
+                        c2Var.show();
+                        break;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
                 break;
         }
     }

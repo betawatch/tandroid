@@ -1,40 +1,50 @@
 package gh;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.o71;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class n2 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d4 b;
+public final /* synthetic */ class n2 implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ k5 b;
+    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ TLRPC.TL_error f;
+    public final /* synthetic */ long h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ n2(d4 d4Var, int i10) {
-        this.a = i10;
-        this.b = d4Var;
+    public /* synthetic */ n2(k5 k5Var, TLObject tLObject, long j10, long j11, Utilities.Callback callback, TLRPC.TL_error tL_error, long j12) {
+        this.b = k5Var;
+        this.c = tLObject;
+        this.d = j10;
+        this.e = j11;
+        this.n = callback;
+        this.f = tL_error;
+        this.h = j12;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                d4 d4Var = this.b;
-                d4Var.e.b((String) obj, new n2(d4Var, 1));
+                k5.G0(this.b, (org.telegram.ui.ActionBar.c2) this.n, this.c, this.d, this.e, this.h, this.f);
                 break;
             default:
-                d4 d4Var2 = this.b;
-                d4Var2.f(true);
-                o71 o71Var = d4Var2.n;
-                int i10 = ((TL_stars.TL_starGiftCollection) obj).collection_id;
-                o71Var.d(i10, d4Var2.e.f(i10) + 1);
-                org.telegram.ui.ActionBar.n2 n2Var = d4Var2.a;
-                if (n2Var instanceof ProfileActivity) {
-                    ((ProfileActivity) n2Var).G4(true);
-                }
-                d4Var2.n();
+                k5.e0(this.b, this.c, this.d, this.e, (Utilities.Callback) this.n, this.f, this.h);
                 break;
         }
+    }
+
+    public /* synthetic */ n2(k5 k5Var, org.telegram.ui.ActionBar.c2 c2Var, TLObject tLObject, long j10, long j11, long j12, TLRPC.TL_error tL_error) {
+        this.b = k5Var;
+        this.n = c2Var;
+        this.c = tLObject;
+        this.d = j10;
+        this.e = j11;
+        this.h = j12;
+        this.f = tL_error;
     }
 }

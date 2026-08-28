@@ -1,14 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import android.graphics.Bitmap;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class tu0 {
-    public float a;
-    public float b;
-    public boolean c;
-
-    public tu0(float f10, float f11) {
-        this.a = f10;
-        this.b = f11;
-    }
+    public int a;
+    public vu0 b;
+    public Bitmap c;
+    public float d;
+    public float e;
 }

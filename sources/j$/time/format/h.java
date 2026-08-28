@@ -11,7 +11,7 @@ public final class h implements f {
         j$.time.temporal.l lVar = rVar.a;
         j$.time.temporal.a aVar = j$.time.temporal.a.NANO_OF_SECOND;
         Long valueOf = lVar.e(aVar) ? Long.valueOf(lVar.y(aVar)) : null;
-        int i10 = 0;
+        int i9 = 0;
         if (a2 == null) {
             return false;
         }
@@ -51,16 +51,16 @@ public final class h implements f {
         }
         if (a3 > 0) {
             sb2.append('.');
-            int i11 = 100000000;
+            int i10 = 100000000;
             while (true) {
-                if (a3 <= 0 && i10 % 3 == 0 && i10 >= -2) {
+                if (a3 <= 0 && i9 % 3 == 0 && i9 >= -2) {
                     break;
                 }
-                int i12 = a3 / i11;
-                sb2.append((char) (i12 + 48));
-                a3 -= i12 * i11;
-                i11 /= 10;
-                i10++;
+                int i11 = a3 / i10;
+                sb2.append((char) (i11 + 48));
+                a3 -= i11 * i10;
+                i10 /= 10;
+                i9++;
             }
         }
         sb2.append('Z');

@@ -1,104 +1,91 @@
 package g7;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
-import org.telegram.tgnet.TLObject;
+import java.util.Set;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class s8 {
-    /* JADX WARN: Removed duplicated region for block: B:16:0x006d  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0093  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0042  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0022  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:28:0x0084 -> B:13:0x0067). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x0087 -> B:13:0x0067). Please report as a decompilation issue!!! */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static final Object a(List list, k1.s sVar, tc.c cVar) {
-        k1.c cVar2;
-        int i10;
-        List list2;
-        kotlin.jvm.internal.q qVar;
-        Iterator it;
-        Throwable th;
-        if (cVar instanceof k1.c) {
-            cVar2 = (k1.c) cVar;
-            int i11 = cVar2.d;
-            if ((i11 & TLObject.FLAG_31) != 0) {
-                cVar2.d = i11 - TLObject.FLAG_31;
-                Object obj = cVar2.c;
-                Object obj2 = sc.a.a;
-                i10 = cVar2.d;
-                if (i10 != 0) {
-                    h7.k6.b(obj);
-                    ArrayList arrayList = new ArrayList();
-                    k1.e eVar = new k1.e(list, arrayList, null);
-                    cVar2.a = arrayList;
-                    cVar2.d = 1;
-                    if (sVar.a(eVar, cVar2) == obj2) {
-                        return obj2;
-                    }
-                    list2 = arrayList;
-                } else {
-                    if (i10 != 1) {
-                        if (i10 != 2) {
-                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                        }
-                        it = cVar2.b;
-                        qVar = (kotlin.jvm.internal.q) cVar2.a;
-                        try {
-                            h7.k6.b(obj);
-                        } catch (Throwable th2) {
-                            Object obj3 = qVar.a;
-                            if (obj3 == null) {
-                                qVar.a = th2;
-                            } else {
-                                h7.i6.a((Throwable) obj3, th2);
+    public static void a(ArrayList arrayList) {
+        HashMap hashMap = new HashMap(arrayList.size());
+        int size = arrayList.size();
+        int i9 = 0;
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            y8.a aVar = (y8.a) obj;
+            y8.h hVar = new y8.h(aVar);
+            for (y8.r rVar : aVar.b) {
+                boolean z10 = aVar.e == 0;
+                y8.i iVar = new y8.i(rVar, !z10);
+                if (!hashMap.containsKey(iVar)) {
+                    hashMap.put(iVar, new HashSet());
+                }
+                Set set = (Set) hashMap.get(iVar);
+                if (!set.isEmpty() && z10) {
+                    throw new IllegalArgumentException("Multiple components provide " + rVar + ".");
+                }
+                set.add(hVar);
+            }
+        }
+        Iterator it = hashMap.values().iterator();
+        while (it.hasNext()) {
+            for (y8.h hVar2 : (Set) it.next()) {
+                for (y8.j jVar : hVar2.a.c) {
+                    if (jVar.c == 0) {
+                        Set<y8.h> set2 = (Set) hashMap.get(new y8.i(jVar.a, jVar.b == 2));
+                        if (set2 != null) {
+                            for (y8.h hVar3 : set2) {
+                                hVar2.b.add(hVar3);
+                                hVar3.c.add(hVar2);
                             }
                         }
-                        while (it.hasNext()) {
-                            ad.l lVar = (ad.l) it.next();
-                            cVar2.a = qVar;
-                            cVar2.b = it;
-                            cVar2.d = 2;
-                            if (lVar.invoke(cVar2) == obj2) {
-                                return obj2;
-                            }
-                        }
-                        th = (Throwable) qVar.a;
-                        if (th == null) {
-                            return pc.i.a;
-                        }
-                        throw th;
                     }
-                    list2 = (List) cVar2.a;
-                    h7.k6.b(obj);
-                }
-                qVar = new kotlin.jvm.internal.q();
-                it = list2.iterator();
-                while (it.hasNext()) {
-                }
-                th = (Throwable) qVar.a;
-                if (th == null) {
                 }
             }
         }
-        cVar2 = new k1.c(cVar);
-        Object obj4 = cVar2.c;
-        Object obj22 = sc.a.a;
-        i10 = cVar2.d;
-        if (i10 != 0) {
+        HashSet hashSet = new HashSet();
+        Iterator it2 = hashMap.values().iterator();
+        while (it2.hasNext()) {
+            hashSet.addAll((Set) it2.next());
         }
-        qVar = new kotlin.jvm.internal.q();
-        it = list2.iterator();
-        while (it.hasNext()) {
+        HashSet hashSet2 = new HashSet();
+        Iterator it3 = hashSet.iterator();
+        while (it3.hasNext()) {
+            y8.h hVar4 = (y8.h) it3.next();
+            if (hVar4.c.isEmpty()) {
+                hashSet2.add(hVar4);
+            }
         }
-        th = (Throwable) qVar.a;
-        if (th == null) {
+        while (!hashSet2.isEmpty()) {
+            y8.h hVar5 = (y8.h) hashSet2.iterator().next();
+            hashSet2.remove(hVar5);
+            i9++;
+            Iterator it4 = hVar5.b.iterator();
+            while (it4.hasNext()) {
+                y8.h hVar6 = (y8.h) it4.next();
+                hVar6.c.remove(hVar5);
+                if (hVar6.c.isEmpty()) {
+                    hashSet2.add(hVar6);
+                }
+            }
         }
+        if (i9 == arrayList.size()) {
+            return;
+        }
+        ArrayList arrayList2 = new ArrayList();
+        Iterator it5 = hashSet.iterator();
+        while (it5.hasNext()) {
+            y8.h hVar7 = (y8.h) it5.next();
+            if (!hVar7.c.isEmpty() && !hVar7.b.isEmpty()) {
+                arrayList2.add(hVar7.a);
+            }
+        }
+        throw new y8.k("Dependency cycle detected: " + Arrays.toString(arrayList2.toArray()));
     }
 }

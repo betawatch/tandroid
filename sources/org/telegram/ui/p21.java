@@ -1,37 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class p21 implements s21 {
-    public final /* synthetic */ org.telegram.messenger.video.a a;
-    public final /* synthetic */ org.telegram.ui.Components.mc b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ jh.h0 d;
-    public final /* synthetic */ org.telegram.messenger.video.d e;
+public final class p21 implements t21 {
+    public final /* synthetic */ qn a;
+    public final /* synthetic */ Activity b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b6 c;
+    public final /* synthetic */ MessageObject d;
 
-    public p21(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.mc mcVar, Context context, jh.h0 h0Var, org.telegram.messenger.video.d dVar) {
-        this.a = aVar;
-        this.b = mcVar;
-        this.c = context;
-        this.d = h0Var;
-        this.e = dVar;
+    public p21(qn qnVar, Activity activity, org.telegram.ui.ActionBar.b6 b6Var, MessageObject messageObject) {
+        this.a = qnVar;
+        this.b = activity;
+        this.c = b6Var;
+        this.d = messageObject;
     }
 
-    @Override // org.telegram.ui.s21
+    @Override // org.telegram.ui.t21
     public final void a() {
-        AndroidUtilities.runOnUIThread(new k21(this.a, this.b, this.c, this.d, 2), 200L);
+        AndroidUtilities.runOnUIThread(new i21(this.a, this.b, this.c, this.d, 2), 200L);
     }
 
-    @Override // org.telegram.ui.s21
+    @Override // org.telegram.ui.t21
     public final void b() {
-        AndroidUtilities.runOnUIThread(new m21(1, this.a, this.b), 200L);
+        AndroidUtilities.runOnUIThread(new me(this.a, this.d, 8), 200L);
     }
 
-    @Override // org.telegram.ui.s21
+    @Override // org.telegram.ui.t21
     public final void c() {
-        this.e.run();
+        qn qnVar = this.a;
+        qnVar.showDialog(new zf.x0((org.telegram.ui.ActionBar.o2) qnVar, 3, true));
     }
 }

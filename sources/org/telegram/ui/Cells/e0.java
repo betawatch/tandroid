@@ -10,10 +10,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.pz0;
-import org.telegram.ui.Components.t80;
+import org.telegram.ui.Components.nz0;
+import org.telegram.ui.Components.p80;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class e0 {
     public final Runnable a;
@@ -23,7 +23,7 @@ public final class e0 {
     public float e;
     public int f;
     public int g;
-    public pz0 h;
+    public nz0 h;
     public TL_keyboard.KeyboardInlineButton i;
     public BotInlineKeyboard.ButtonCustom j;
     public BotInlineKeyboard.Button k;
@@ -33,7 +33,7 @@ public final class e0 {
     public final Paint o = new Paint(1);
     public final RectF p = new RectF();
     public final float[] q = new float[8];
-    public t80 r;
+    public p80 r;
     public z s;
     public Drawable t;
     public org.telegram.ui.Components.k5 u;
@@ -55,7 +55,7 @@ public final class e0 {
                 this.a.run();
             }
         }
-        return com.google.android.recaptcha.internal.a.z(1.0f, this.w, 0.04f, 0.96f);
+        return e2.c.z(1.0f, this.w, 0.04f, 0.96f);
     }
 
     public final void b(boolean z10) {
@@ -75,7 +75,7 @@ public final class e0 {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
                 this.x = ofFloat;
                 ofFloat.addUpdateListener(new r(this, 1));
-                this.x.addListener(new lh.h9(this, 14));
+                this.x.addListener(new mh.x(this, 12));
                 this.x.setInterpolator(new OvershootInterpolator(2.0f));
                 this.x.setDuration(350L);
                 this.x.start();

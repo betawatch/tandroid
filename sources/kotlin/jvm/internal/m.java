@@ -1,25 +1,58 @@
 package kotlin.jvm.internal;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import hd.e0;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class m extends n implements ed.f {
-    public m(Class cls) {
-        super(c.NO_RECEIVER, cls, "dataStore", "getDataStore(Landroid/content/Context;)Landroidx/datastore/core/DataStore;", 0);
+public abstract class m extends b implements dd.g {
+    public final boolean a;
+
+    public m(Object obj, Class cls, String str, String str2, int i9) {
+        super(obj, cls, str, str2, (i9 & 1) == 1);
+        this.a = false;
     }
 
-    public final void c() {
-        ((m) ((ed.f) getReflected())).c();
+    @Override // kotlin.jvm.internal.b
+    /* renamed from: b, reason: merged with bridge method [inline-methods] */
+    public final dd.g getReflected() {
+        if (this.a) {
+            throw new UnsupportedOperationException("Kotlin reflection is not yet supported for synthetic Java properties. Please follow/upvote https://youtrack.jetbrains.com/issue/KT-55980");
+        }
+        dd.b compute = compute();
+        if (compute != this) {
+            return (dd.g) compute;
+        }
+        throw new e0("Kotlin reflection implementation is not found at runtime. Make sure you have kotlin-reflect.jar in the classpath");
     }
 
-    @Override // kotlin.jvm.internal.c
-    public final ed.b computeReflected() {
-        r.a.getClass();
-        return this;
+    @Override // kotlin.jvm.internal.b
+    public final dd.b compute() {
+        return this.a ? this : super.compute();
     }
 
-    @Override // ad.p
-    public final Object invoke(Object obj, Object obj2) {
-        c();
-        throw null;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof m) {
+            m mVar = (m) obj;
+            return getOwner().equals(mVar.getOwner()) && getName().equals(mVar.getName()) && getSignature().equals(mVar.getSignature()) && i.a(getBoundReceiver(), mVar.getBoundReceiver());
+        }
+        if (obj instanceof dd.g) {
+            return obj.equals(compute());
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return getSignature().hashCode() + ((getName().hashCode() + (getOwner().hashCode() * 31)) * 31);
+    }
+
+    public final String toString() {
+        dd.b compute = compute();
+        if (compute != this) {
+            return compute.toString();
+        }
+        return "property " + getName() + " (Kotlin reflection is not available)";
     }
 }

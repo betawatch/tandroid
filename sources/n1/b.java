@@ -4,9 +4,9 @@ import j$.util.DesugarCollections;
 import java.util.LinkedHashMap;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
-import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b {
     public final LinkedHashMap a;
@@ -17,13 +17,13 @@ public final class b {
         this.b = new AtomicBoolean(z10);
     }
 
-    public final Object a(e key) {
-        j.e(key, "key");
+    public final Object a(d key) {
+        i.e(key, "key");
         return this.a.get(key);
     }
 
-    public final void b(e key, Object obj) {
-        j.e(key, "key");
+    public final void b(d key, Object obj) {
+        i.e(key, "key");
         AtomicBoolean atomicBoolean = this.b;
         if (atomicBoolean.get()) {
             throw new IllegalStateException("Do mutate preferences once returned to DataStore.");
@@ -39,8 +39,8 @@ public final class b {
                 linkedHashMap.put(key, obj);
                 return;
             }
-            Set unmodifiableSet = DesugarCollections.unmodifiableSet(qc.g.p((Iterable) obj));
-            j.d(unmodifiableSet, "unmodifiableSet(value.toSet())");
+            Set unmodifiableSet = DesugarCollections.unmodifiableSet(pc.g.p((Iterable) obj));
+            i.d(unmodifiableSet, "unmodifiableSet(value.toSet())");
             linkedHashMap.put(key, unmodifiableSet);
         }
     }
@@ -49,7 +49,7 @@ public final class b {
         if (!(obj instanceof b)) {
             return false;
         }
-        return j.a(this.a, ((b) obj).a);
+        return i.a(this.a, ((b) obj).a);
     }
 
     public final int hashCode() {
@@ -57,7 +57,7 @@ public final class b {
     }
 
     public final String toString() {
-        return qc.g.h(this.a.entrySet(), ",\n", "{\n", "\n}", a.b, 24);
+        return pc.g.h(this.a.entrySet(), ",\n", "{\n", "\n}", a.b, 24);
     }
 
     public /* synthetic */ b(boolean z10) {

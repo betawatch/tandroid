@@ -16,16 +16,16 @@ public final class u8 extends v8 implements Consumer {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u8(Spliterator spliterator, Predicate predicate, int i10) {
+    public u8(Spliterator spliterator, Predicate predicate, int i9) {
         super(spliterator);
-        this.g = i10;
+        this.g = i9;
         this.e = predicate;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u8(Spliterator spliterator, u8 u8Var, int i10) {
+    public u8(Spliterator spliterator, u8 u8Var, int i9) {
         super(spliterator, u8Var);
-        this.g = i10;
+        this.g = i9;
         this.e = u8Var.e;
     }
 

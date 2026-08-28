@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -23,10 +23,10 @@ public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ h0(Object obj, int i10, Object obj2, Object obj3, int i11) {
-        this.a = i11;
+    public /* synthetic */ h0(Object obj, int i9, Object obj2, Object obj3, int i10) {
+        this.a = i10;
         this.c = obj;
-        this.b = i10;
+        this.b = i9;
         this.d = obj2;
         this.e = obj3;
     }
@@ -94,19 +94,19 @@ public final /* synthetic */ class h0 implements Runnable {
         }
     }
 
-    public /* synthetic */ h0(Object obj, Object obj2, int i10, Object obj3, int i11) {
-        this.a = i11;
+    public /* synthetic */ h0(Object obj, Object obj2, int i9, Object obj3, int i10) {
+        this.a = i10;
         this.c = obj;
         this.d = obj2;
-        this.b = i10;
+        this.b = i9;
         this.e = obj3;
     }
 
-    public /* synthetic */ h0(BaseController baseController, Object obj, Object obj2, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ h0(BaseController baseController, Object obj, Object obj2, int i9, int i10) {
+        this.a = i10;
         this.c = baseController;
         this.d = obj;
         this.e = obj2;
-        this.b = i10;
+        this.b = i9;
     }
 }

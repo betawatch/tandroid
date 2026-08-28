@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class q0 implements r0 {
     public static final k0 d = new k0(0, -9223372036854775807L, false);
@@ -18,7 +18,7 @@ public final class q0 implements r0 {
 
     public q0(String str) {
         String concat = "ExoPlayer:Loader:".concat(str);
-        int i10 = d5.g0.a;
+        int i9 = d5.f0.a;
         this.a = Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(concat, 1));
     }
 
@@ -30,9 +30,9 @@ public final class q0 implements r0 {
         }
         m0 m0Var = this.b;
         if (m0Var != null) {
-            int i10 = m0Var.a;
+            int i9 = m0Var.a;
             IOException iOException2 = m0Var.e;
-            if (iOException2 != null && m0Var.f > i10) {
+            if (iOException2 != null && m0Var.f > i9) {
                 throw iOException2;
             }
         }
@@ -59,17 +59,17 @@ public final class q0 implements r0 {
         }
         ExecutorService executorService = this.a;
         if (o0Var != null) {
-            executorService.execute(new a8.b(o0Var, 11));
+            executorService.execute(new androidx.activity.i(o0Var, 11));
         }
         executorService.shutdown();
     }
 
-    public final long f(n0 n0Var, l0 l0Var, int i10) {
+    public final long f(n0 n0Var, l0 l0Var, int i9) {
         Looper myLooper = Looper.myLooper();
         d5.a.j(myLooper);
         this.c = null;
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        m0 m0Var = new m0(this, myLooper, n0Var, l0Var, i10, elapsedRealtime);
+        m0 m0Var = new m0(this, myLooper, n0Var, l0Var, i9, elapsedRealtime);
         d5.a.i(this.b == null);
         this.b = m0Var;
         m0Var.e = null;

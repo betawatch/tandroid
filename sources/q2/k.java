@@ -1,23 +1,23 @@
 package q2;
 
-import h7.x8;
+import g7.v8;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import org.telegram.ui.Cells.pa;
+import org.telegram.ui.Cells.j2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class k extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ ae.b A;
-    public static final /* synthetic */ ae.b B;
-    public static final /* synthetic */ ae.b C;
-    public static final /* synthetic */ ae.b D;
-    public static final /* synthetic */ ae.b E;
-    public static final /* synthetic */ ae.b s;
-    public static final /* synthetic */ ae.b v;
-    public static final /* synthetic */ ae.b w;
-    public static final /* synthetic */ ae.b x;
-    public static final /* synthetic */ ae.b y;
+    public static final /* synthetic */ zd.b A;
+    public static final /* synthetic */ zd.b B;
+    public static final /* synthetic */ zd.b C;
+    public static final /* synthetic */ zd.b D;
+    public static final /* synthetic */ zd.b E;
+    public static final /* synthetic */ zd.b s;
+    public static final /* synthetic */ zd.b v;
+    public static final /* synthetic */ zd.b w;
+    public static final /* synthetic */ zd.b x;
+    public static final /* synthetic */ zd.b y;
     public Date e;
     public Date f;
     public long h;
@@ -25,7 +25,7 @@ public final class k extends com.googlecode.mp4parser.c {
     public String r;
 
     static {
-        ae.a aVar = new ae.a(k.class, "MediaHeaderBox.java");
+        zd.a aVar = new zd.a(k.class, "MediaHeaderBox.java");
         s = aVar.e(aVar.d("getCreationTime", "com.coremedia.iso.boxes.MediaHeaderBox", "", "", "java.util.Date"));
         v = aVar.e(aVar.d("getModificationTime", "com.coremedia.iso.boxes.MediaHeaderBox", "", "", "java.util.Date"));
         E = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.MediaHeaderBox", "", "", "java.lang.String"));
@@ -43,20 +43,20 @@ public final class k extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = x8.b(p2.b.j(byteBuffer));
-            this.f = x8.b(p2.b.j(byteBuffer));
+            this.e = v8.b(p2.b.j(byteBuffer));
+            this.f = v8.b(p2.b.j(byteBuffer));
             this.h = p2.b.i(byteBuffer);
             this.n = p2.b.j(byteBuffer);
         } else {
-            this.e = x8.b(p2.b.i(byteBuffer));
-            this.f = x8.b(p2.b.i(byteBuffer));
+            this.e = v8.b(p2.b.i(byteBuffer));
+            this.f = v8.b(p2.b.i(byteBuffer));
             this.h = p2.b.i(byteBuffer);
             this.n = p2.b.i(byteBuffer);
         }
         int h = p2.b.h(byteBuffer);
         StringBuilder sb2 = new StringBuilder();
-        for (int i10 = 0; i10 < 3; i10++) {
-            sb2.append((char) (((h >> ((2 - i10) * 5)) & 31) + 96));
+        for (int i9 = 0; i9 < 3; i9++) {
+            sb2.append((char) (((h >> ((2 - i9) * 5)) & 31) + 96));
         }
         this.r = sb2.toString();
         p2.b.h(byteBuffer);
@@ -66,25 +66,25 @@ public final class k extends com.googlecode.mp4parser.c {
     public final void getContent(ByteBuffer byteBuffer) {
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(x8.a(this.e));
-            byteBuffer.putLong(x8.a(this.f));
+            byteBuffer.putLong(v8.a(this.e));
+            byteBuffer.putLong(v8.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) x8.a(this.e));
-            byteBuffer.putInt((int) x8.a(this.f));
+            byteBuffer.putInt((int) v8.a(this.e));
+            byteBuffer.putInt((int) v8.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) this.n);
         }
         String str = this.r;
         if (str.getBytes().length != 3) {
-            throw new IllegalArgumentException(a9.p.m("\"", str, "\" language string isn't exactly 3 characters long!"));
+            throw new IllegalArgumentException(aa.d.o("\"", str, "\" language string isn't exactly 3 characters long!"));
         }
-        int i10 = 0;
-        for (int i11 = 0; i11 < 3; i11++) {
-            i10 += (str.getBytes()[i11] - 96) << ((2 - i11) * 5);
+        int i9 = 0;
+        for (int i10 = 0; i10 < 3; i10++) {
+            i9 += (str.getBytes()[i10] - 96) << ((2 - i10) * 5);
         }
-        p2.b.p(i10, byteBuffer);
+        p2.b.p(i9, byteBuffer);
         p2.b.p(0, byteBuffer);
     }
 
@@ -94,23 +94,23 @@ public final class k extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.t b10 = ae.a.b(E, this, this);
+        com.google.firebase.messaging.t b10 = zd.a.b(E, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("MediaHeaderBox[creationTime=");
-        pa.u(ae.a.b(s, this, this));
+        j2.t(zd.a.b(s, this, this));
         sb2.append(this.e);
         sb2.append(";modificationTime=");
-        pa.u(ae.a.b(v, this, this));
+        j2.t(zd.a.b(v, this, this));
         sb2.append(this.f);
         sb2.append(";timescale=");
-        pa.u(ae.a.b(w, this, this));
+        j2.t(zd.a.b(w, this, this));
         sb2.append(this.h);
         sb2.append(";duration=");
-        pa.u(ae.a.b(x, this, this));
+        j2.t(zd.a.b(x, this, this));
         sb2.append(this.n);
         sb2.append(";language=");
-        pa.u(ae.a.b(y, this, this));
-        return a9.p.p(sb2, this.r, "]");
+        j2.t(zd.a.b(y, this, this));
+        return aa.d.r(sb2, this.r, "]");
     }
 }

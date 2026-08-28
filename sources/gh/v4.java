@@ -1,63 +1,83 @@
 package gh;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.n41;
-import org.telegram.ui.Components.zk0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class v4 extends m41 {
-    public static final /* synthetic */ int a = 0;
+public final class v4 {
+    public final g5 a;
+    public a5 b;
+    public a5 c;
+    public a5 d;
+    public r4 h;
+    public r4 i;
+    public r4 j;
+    public r4 k;
+    public TL_stars.TL_starGiftUnique l;
+    public long m;
+    public v1 r;
+    public v1 s;
+    public float t;
+    public boolean u;
+    public boolean v;
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ArrayList g = new ArrayList();
+    public float n = 0.0f;
+    public boolean o = false;
+    public boolean p = false;
+    public boolean q = false;
 
-    static {
-        m41.setup(new v4());
+    public v4(g5 g5Var) {
+        this.a = g5Var;
+        g5Var.c.addOnAttachStateChangeListener(new af.b(this, 4));
     }
 
-    @Override // org.telegram.ui.Components.m41
-    public final void bindView(View view, n41 n41Var, boolean z10, b51 b51Var, k51 k51Var) {
-        w4 w4Var = (w4) view;
-        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) n41Var.G;
-        int i10 = n41Var.z;
-        String str = (String) n41Var.l;
-        boolean z11 = n41Var.e;
-        w4Var.getClass();
-        ShapeDrawable K = org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(20.0f), stargiftattributebackdrop.center_color | (-16777216));
-        CharSequence charSequence = stargiftattributebackdrop.name;
-        if (!TextUtils.isEmpty(str)) {
-            charSequence = AndroidUtilities.highlightText(charSequence, str, w4Var.B);
+    public final void a() {
+        this.o = false;
+        this.a.c.c();
+        r4 r4Var = this.h;
+        if (r4Var != null) {
+            r4Var.a();
         }
-        if (i10 > 0) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-            spannableStringBuilder.append((CharSequence) "  ");
-            int length = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) Integer.toString(i10));
-            spannableStringBuilder.setSpan(new k41(AndroidUtilities.bold()), length, spannableStringBuilder.length(), 33);
-            charSequence = spannableStringBuilder;
+        r4 r4Var2 = this.i;
+        if (r4Var2 != null) {
+            r4Var2.a();
         }
-        w4Var.g(charSequence, 0, K);
-        w4Var.setChecked(z11);
+        r4 r4Var3 = this.j;
+        if (r4Var3 != null) {
+            r4Var3.a();
+        }
+        r4 r4Var4 = this.k;
+        if (r4Var4 != null) {
+            r4Var4.a();
+        }
+        c();
     }
 
-    @Override // org.telegram.ui.Components.m41
-    public final View createView(Context context, zk0 zk0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
-        w4 w4Var = new w4(0, context, c6Var, false, false);
-        w4Var.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-        w4Var.c(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.E8, c6Var), org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.F8, c6Var));
-        w4Var.e(-1, PorterDuff.Mode.MULTIPLY);
-        w4Var.c.setTranslationX(AndroidUtilities.dp(2.0f));
-        w4Var.a(2);
-        w4Var.setBackground(null);
-        return w4Var;
+    public final void b() {
+        if (this.o && !this.v) {
+            this.v = true;
+            AndroidUtilities.runOnUIThread(new p4(this, 1));
+        }
+    }
+
+    public final void c() {
+        if (this.o) {
+            return;
+        }
+        ArrayList arrayList = this.e;
+        int size = arrayList.size();
+        int i9 = 0;
+        while (i9 < size) {
+            Object obj = arrayList.get(i9);
+            i9++;
+            ((t4) obj).a();
+        }
+        arrayList.clear();
+        this.f.clear();
+        this.g.clear();
     }
 }

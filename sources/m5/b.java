@@ -2,17 +2,17 @@ package m5;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import h7.r8;
+import g7.p8;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b extends z5.a {
-    public static final Parcelable.Creator<b> CREATOR = new w(4);
+public final class b extends y5.a {
+    public static final Parcelable.Creator<b> CREATOR = new v(4);
     public final long a;
     public final String b;
     public final long c;
@@ -36,7 +36,7 @@ public final class b extends z5.a {
         try {
             jSONObject.put("id", this.b);
             long j10 = this.a;
-            Pattern pattern = r5.a.a;
+            Pattern pattern = q5.a.a;
             jSONObject.put("position", j10 / 1000.0d);
             jSONObject.put("isWatched", this.d);
             jSONObject.put("isEmbedded", this.f);
@@ -63,7 +63,7 @@ public final class b extends z5.a {
             return false;
         }
         b bVar = (b) obj;
-        return r5.a.d(this.b, bVar.b) && this.a == bVar.a && this.c == bVar.c && this.d == bVar.d && Arrays.equals(this.e, bVar.e) && this.f == bVar.f && this.h == bVar.h;
+        return q5.a.d(this.b, bVar.b) && this.a == bVar.a && this.c == bVar.c && this.d == bVar.d && Arrays.equals(this.e, bVar.e) && this.f == bVar.f && this.h == bVar.h;
     }
 
     public final int hashCode() {
@@ -71,20 +71,20 @@ public final class b extends z5.a {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.s(parcel, 2, 8);
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.s(parcel, 2, 8);
         parcel.writeLong(this.a);
-        r8.l(parcel, 3, this.b);
-        r8.s(parcel, 4, 8);
+        p8.l(parcel, 3, this.b);
+        p8.s(parcel, 4, 8);
         parcel.writeLong(this.c);
-        r8.s(parcel, 5, 4);
+        p8.s(parcel, 5, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        r8.m(parcel, 6, this.e);
-        r8.s(parcel, 7, 4);
+        p8.m(parcel, 6, this.e);
+        p8.s(parcel, 7, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        r8.s(parcel, 8, 4);
+        p8.s(parcel, 8, 4);
         parcel.writeInt(this.h ? 1 : 0);
-        r8.r(parcel, q6);
+        p8.r(parcel, q10);
     }
 }

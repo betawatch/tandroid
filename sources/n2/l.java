@@ -1,12 +1,13 @@
 package n2;
 
 import android.text.TextUtils;
+import j3.r0;
 import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class l {
     public final String a;
@@ -43,8 +44,8 @@ public final class l {
         JSONArray optJSONArray = jSONObject.optJSONArray("subscriptionOfferDetails");
         if (optJSONArray != null) {
             ArrayList arrayList = new ArrayList();
-            for (int i10 = 0; i10 < optJSONArray.length(); i10++) {
-                arrayList.add(new k(optJSONArray.getJSONObject(i10)));
+            for (int i9 = 0; i9 < optJSONArray.length(); i9++) {
+                arrayList.add(new k(optJSONArray.getJSONObject(i9)));
             }
             this.h = arrayList;
         } else {
@@ -54,8 +55,8 @@ public final class l {
         JSONArray optJSONArray2 = this.b.optJSONArray("oneTimePurchaseOfferDetailsList");
         ArrayList arrayList2 = new ArrayList();
         if (optJSONArray2 != null) {
-            for (int i11 = 0; i11 < optJSONArray2.length(); i11++) {
-                arrayList2.add(new i(optJSONArray2.getJSONObject(i11)));
+            for (int i10 = 0; i10 < optJSONArray2.length(); i10++) {
+                arrayList2.add(new i(optJSONArray2.getJSONObject(i10)));
             }
             this.i = arrayList2;
             return;
@@ -94,7 +95,7 @@ public final class l {
         String obj = this.b.toString();
         String valueOf = String.valueOf(this.h);
         StringBuilder sb2 = new StringBuilder("ProductDetails{jsonString='");
-        i0.a.z(sb2, this.a, "', parsedJson=", obj, ", productId='");
+        r0.A(sb2, this.a, "', parsedJson=", obj, ", productId='");
         sb2.append(this.c);
         sb2.append("', productType='");
         sb2.append(this.d);

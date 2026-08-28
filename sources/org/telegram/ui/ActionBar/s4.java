@@ -14,7 +14,7 @@ import android.widget.ListView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class s4 extends ListView {
     public final t4 a;
@@ -27,13 +27,13 @@ public final class s4 extends ListView {
         super(t4Var.a);
         float dp = AndroidUtilities.dp(16.0f);
         int[] iArr = new int[8];
-        PathInterpolator pathInterpolator = gf.c0.i;
-        gf.c0.a(pathInterpolator, -16777216, iArr);
+        PathInterpolator pathInterpolator = ff.c0.i;
+        ff.c0.a(pathInterpolator, -16777216, iArr);
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         LinearGradient linearGradient = new LinearGradient(0.0f, dp, 0.0f, 0.0f, iArr, (float[]) null, tileMode);
         float dp2 = AndroidUtilities.dp(16.0f);
         int[] iArr2 = new int[8];
-        gf.c0.a(pathInterpolator, -16777216, iArr2);
+        ff.c0.a(pathInterpolator, -16777216, iArr2);
         LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, 0.0f, dp2, iArr2, (float[]) null, tileMode);
         this.b = linearGradient2;
         Paint paint = new Paint(1);
@@ -85,16 +85,16 @@ public final class s4 extends ListView {
     }
 
     @Override // android.widget.ListView, android.widget.AbsListView, android.view.View
-    public final void onMeasure(int i10, int i11) {
+    public final void onMeasure(int i9, int i10) {
         t4 t4Var = this.a;
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(t4Var.I.getHeight() - t4Var.H.getHeight(), TLObject.FLAG_30));
+        super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(t4Var.I.getHeight() - t4Var.H.getHeight(), TLObject.FLAG_30));
     }
 
     @Override // android.widget.ListView, android.widget.AbsListView, android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+    public final void onSizeChanged(int i9, int i10, int i11, int i12) {
         Matrix matrix = this.e;
         matrix.reset();
-        matrix.postTranslate(0.0f, i11 - AndroidUtilities.dp(16.0f));
+        matrix.postTranslate(0.0f, i10 - AndroidUtilities.dp(16.0f));
         this.b.setLocalMatrix(matrix);
     }
 }

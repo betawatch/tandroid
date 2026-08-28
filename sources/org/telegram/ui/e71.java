@@ -1,38 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e71 implements org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class e71 implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ SessionsActivity b;
 
-    public /* synthetic */ e71(SessionsActivity sessionsActivity, int i10) {
-        this.a = i10;
+    public /* synthetic */ e71(SessionsActivity sessionsActivity, int i9) {
+        this.a = i9;
         this.b = sessionsActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
+                TL_account.connectedBots connectedbots = (TL_account.connectedBots) obj;
                 SessionsActivity sessionsActivity = this.b;
                 sessionsActivity.getClass();
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    sessionsActivity.getParentActivity().startActivity(intent);
-                    break;
-                } catch (Exception e9) {
-                    FileLog.e(e9);
-                    return;
+                if (connectedbots != null) {
+                    sessionsActivity.h = connectedbots.connected_bots;
+                    if (sessionsActivity.a != null) {
+                        sessionsActivity.l0();
+                        sessionsActivity.a.l();
+                        break;
+                    }
                 }
+                break;
             default:
-                SessionsActivity.W(this.b);
+                SessionsActivity.U(this.b, (Boolean) obj);
                 break;
         }
     }

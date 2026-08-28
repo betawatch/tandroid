@@ -1,19 +1,18 @@
 package a5;
 
-import java.util.Set;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class h {
-    public final String a;
-    public final int b;
-    public final String c;
-    public final Set d;
+public final class h implements Comparable {
+    public final int a;
+    public final c b;
 
-    public h(String str, int i10, String str2, Set set) {
-        this.b = i10;
-        this.a = str;
-        this.c = str2;
-        this.d = set;
+    public h(int i9, c cVar) {
+        this.a = i9;
+        this.b = cVar;
+    }
+
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return Integer.compare(this.a, ((h) obj).a);
     }
 }

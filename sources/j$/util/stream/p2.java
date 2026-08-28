@@ -28,11 +28,11 @@ public final class p2 extends g2 {
     }
 
     @Override // j$.util.stream.e2
-    public final void f(Object[] objArr, int i10) {
+    public final void f(Object[] objArr, int i9) {
         Objects.requireNonNull(objArr);
         e2 e2Var = this.a;
-        e2Var.f(objArr, i10);
-        this.b.f(objArr, i10 + ((int) e2Var.count()));
+        e2Var.f(objArr, i9);
+        this.b.f(objArr, i9 + ((int) e2Var.count()));
     }
 
     @Override // j$.util.stream.e2

@@ -1,39 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashMap;
-import java.util.Map;
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class qc0 extends FrameLayout {
-    public final HashMap a;
-    public final /* synthetic */ tc0 b;
+public final /* synthetic */ class qc0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fg0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qc0(tc0 tc0Var, Context context) {
-        super(context);
-        this.b = tc0Var;
-        this.a = new HashMap();
+    public /* synthetic */ qc0(fg0 fg0Var, int i9) {
+        this.a = i9;
+        this.b = fg0Var;
     }
 
-    public final void a() {
-        IMapsProvider.IMap iMap = this.b.E;
-        if (iMap == null) {
-            return;
-        }
-        IMapsProvider.IProjection projection = iMap.getProjection();
-        for (Map.Entry entry : this.a.entrySet()) {
-            IMapsProvider.IMarker iMarker = (IMapsProvider.IMarker) entry.getKey();
-            View view = (View) entry.getValue();
-            Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
-            view.setTranslationX(screenLocation.x - (view.getMeasuredWidth() / 2));
-            view.setTranslationY(AndroidUtilities.dp(22.0f) + (screenLocation.y - view.getMeasuredHeight()));
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                fg0 fg0Var = this.b;
+                fg0Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fg0Var.c.setAlpha(floatValue);
+                fg0Var.c.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(230.0f));
+                break;
+            case 1:
+                fg0 fg0Var2 = this.b;
+                fg0Var2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fg0Var2.c.setAlpha(floatValue2);
+                fg0Var2.c.setTranslationY((1.0f - floatValue2) * AndroidUtilities.dp(230.0f));
+                break;
+            default:
+                fg0 fg0Var3 = this.b;
+                fg0Var3.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float f10 = (0.9f * floatValue3) + 0.1f;
+                fg0Var3.R.setScaleX(f10);
+                fg0Var3.R.setScaleY(f10);
+                fg0Var3.R.setAlpha(floatValue3);
+                break;
         }
     }
 }

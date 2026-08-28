@@ -3,21 +3,22 @@ package y3;
 import android.media.MediaCodecInfo;
 import android.util.Pair;
 import androidx.car.app.navigation.model.Maneuver;
-import d5.g0;
+import bg.l0;
+import d5.f0;
+import g7.b0;
 import h3.t0;
-import h7.d0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import o8.z;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
-import p8.z;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final Pattern a = Pattern.compile("^\\D?(\\d+)$");
@@ -26,19 +27,19 @@ public abstract class w {
 
     public static void a(String str, ArrayList arrayList) {
         if ("audio/raw".equals(str)) {
-            if (g0.a < 26 && g0.b.equals("R9") && arrayList.size() == 1 && ((n) arrayList.get(0)).a.equals("OMX.MTK.AUDIO.DECODER.RAW")) {
+            if (f0.a < 26 && f0.b.equals("R9") && arrayList.size() == 1 && ((n) arrayList.get(0)).a.equals("OMX.MTK.AUDIO.DECODER.RAW")) {
                 arrayList.add(n.h("OMX.google.raw.decoder", "audio/raw", "audio/raw", null, false, false));
             }
-            Collections.sort(arrayList, new ag.h(new r(2), 6));
+            Collections.sort(arrayList, new l0(new r(2), 5));
         }
-        int i10 = g0.a;
-        if (i10 < 21 && arrayList.size() > 1) {
+        int i9 = f0.a;
+        if (i9 < 21 && arrayList.size() > 1) {
             String str2 = ((n) arrayList.get(0)).a;
             if ("OMX.SEC.mp3.dec".equals(str2) || "OMX.SEC.MP3.Decoder".equals(str2) || "OMX.brcm.audio.mp3.decoder".equals(str2)) {
-                Collections.sort(arrayList, new ag.h(new r(3), 6));
+                Collections.sort(arrayList, new l0(new r(3), 5));
             }
         }
-        if (i10 >= 32 || arrayList.size() <= 1 || !"OMX.qti.audio.decoder.flac".equals(((n) arrayList.get(0)).a)) {
+        if (i9 >= 32 || arrayList.size() <= 1 || !"OMX.qti.audio.decoder.flac".equals(((n) arrayList.get(0)).a)) {
             return;
         }
         arrayList.add((n) arrayList.remove(0));
@@ -99,13 +100,13 @@ public abstract class w {
     */
     public static Pair d(t0 t0Var) {
         char c10;
+        int i9;
         int i10;
-        int i11;
         int parseInt;
         int parseInt2;
-        int i12;
+        int i11;
         char c11;
-        int i13;
+        int i12;
         char c12;
         Integer num;
         char c13;
@@ -175,12 +176,12 @@ public abstract class w {
                     c10 = 65535;
                     break;
             }
-            int i14 = 20;
+            int i13 = 20;
             switch (c10) {
                 case 0:
                     e5.b bVar = t0Var.N;
                     if (split.length < 4) {
-                        s3.c.k("Ignoring malformed AV1 codec string: ", str2, "MediaCodecUtil");
+                        ta.b.i("Ignoring malformed AV1 codec string: ", str2, "MediaCodecUtil");
                         break;
                     } else {
                         try {
@@ -188,101 +189,101 @@ public abstract class w {
                             int parseInt4 = Integer.parseInt(split[2].substring(0, 2));
                             int parseInt5 = Integer.parseInt(split[3]);
                             if (parseInt3 == 0) {
-                                int i15 = 8;
+                                int i14 = 8;
                                 if (parseInt5 != 8 && parseInt5 != 10) {
-                                    com.google.android.recaptcha.internal.a.s(parseInt5, "Unknown AV1 bit depth: ", "MediaCodecUtil");
+                                    e2.c.t(parseInt5, "Unknown AV1 bit depth: ", "MediaCodecUtil");
                                     break;
                                 } else {
-                                    int i16 = parseInt5 == 8 ? 1 : (bVar == null || !(bVar.d != null || (i10 = bVar.c) == 7 || i10 == 6)) ? 2 : 4096;
+                                    int i15 = parseInt5 == 8 ? 1 : (bVar == null || !(bVar.d != null || (i9 = bVar.c) == 7 || i9 == 6)) ? 2 : 4096;
                                     switch (parseInt4) {
                                         case 0:
-                                            i15 = 1;
+                                            i14 = 1;
                                             break;
                                         case 1:
-                                            i15 = 2;
+                                            i14 = 2;
                                             break;
                                         case 2:
-                                            i15 = 4;
+                                            i14 = 4;
                                             break;
                                         case 3:
                                             break;
                                         case 4:
-                                            i15 = 16;
+                                            i14 = 16;
                                             break;
                                         case 5:
-                                            i15 = 32;
+                                            i14 = 32;
                                             break;
                                         case 6:
-                                            i15 = 64;
+                                            i14 = 64;
                                             break;
                                         case 7:
-                                            i15 = 128;
+                                            i14 = 128;
                                             break;
                                         case 8:
-                                            i15 = 256;
+                                            i14 = 256;
                                             break;
                                         case 9:
-                                            i15 = 512;
+                                            i14 = 512;
                                             break;
                                         case 10:
-                                            i15 = 1024;
+                                            i14 = 1024;
                                             break;
                                         case 11:
-                                            i15 = 2048;
+                                            i14 = 2048;
                                             break;
                                         case 12:
-                                            i15 = 4096;
+                                            i14 = 4096;
                                             break;
                                         case 13:
-                                            i15 = 8192;
+                                            i14 = 8192;
                                             break;
                                         case 14:
-                                            i15 = 16384;
+                                            i14 = 16384;
                                             break;
                                         case 15:
-                                            i15 = 32768;
+                                            i14 = 32768;
                                             break;
                                         case 16:
-                                            i15 = 65536;
+                                            i14 = 65536;
                                             break;
                                         case 17:
-                                            i15 = 131072;
+                                            i14 = 131072;
                                             break;
                                         case 18:
-                                            i15 = 262144;
+                                            i14 = 262144;
                                             break;
                                         case 19:
-                                            i15 = TLObject.FLAG_19;
+                                            i14 = TLObject.FLAG_19;
                                             break;
                                         case 20:
-                                            i15 = 1048576;
+                                            i14 = 1048576;
                                             break;
                                         case 21:
-                                            i15 = TLObject.FLAG_21;
+                                            i14 = TLObject.FLAG_21;
                                             break;
                                         case 22:
-                                            i15 = TLObject.FLAG_22;
+                                            i14 = TLObject.FLAG_22;
                                             break;
                                         case 23:
-                                            i15 = TLObject.FLAG_23;
+                                            i14 = TLObject.FLAG_23;
                                             break;
                                         default:
-                                            i15 = -1;
+                                            i14 = -1;
                                             break;
                                     }
-                                    if (i15 != -1) {
+                                    if (i14 != -1) {
                                         break;
                                     } else {
-                                        com.google.android.recaptcha.internal.a.s(parseInt4, "Unknown AV1 level: ", "MediaCodecUtil");
+                                        e2.c.t(parseInt4, "Unknown AV1 level: ", "MediaCodecUtil");
                                         break;
                                     }
                                 }
                             } else {
-                                com.google.android.recaptcha.internal.a.s(parseInt3, "Unknown AV1 profile: ", "MediaCodecUtil");
+                                e2.c.t(parseInt3, "Unknown AV1 profile: ", "MediaCodecUtil");
                                 break;
                             }
                         } catch (NumberFormatException unused) {
-                            s3.c.k("Ignoring malformed AV1 codec string: ", str2, "MediaCodecUtil");
+                            ta.b.i("Ignoring malformed AV1 codec string: ", str2, "MediaCodecUtil");
                             return null;
                         }
                     }
@@ -290,12 +291,12 @@ public abstract class w {
                 case 1:
                 case 2:
                     if (split.length < 2) {
-                        s3.c.k("Ignoring malformed AVC codec string: ", str2, "MediaCodecUtil");
+                        ta.b.i("Ignoring malformed AVC codec string: ", str2, "MediaCodecUtil");
                         break;
                     } else {
                         try {
                             if (split[1].length() != 6) {
-                                i11 = 16;
+                                i10 = 16;
                                 if (split.length < 3) {
                                     d5.a.K("MediaCodecUtil", "Ignoring malformed AVC codec string: " + str2);
                                     break;
@@ -304,112 +305,112 @@ public abstract class w {
                                     parseInt2 = Integer.parseInt(split[2]);
                                 }
                             } else {
-                                i11 = 16;
+                                i10 = 16;
                                 parseInt = Integer.parseInt(split[1].substring(0, 2), 16);
                                 parseInt2 = Integer.parseInt(split[1].substring(4), 16);
                             }
-                            int i17 = parseInt != 66 ? parseInt != 77 ? parseInt != 88 ? parseInt != 100 ? parseInt != 110 ? parseInt != 122 ? parseInt != 244 ? -1 : 64 : 32 : 16 : 8 : 4 : 2 : 1;
-                            if (i17 != -1) {
+                            int i16 = parseInt != 66 ? parseInt != 77 ? parseInt != 88 ? parseInt != 100 ? parseInt != 110 ? parseInt != 122 ? parseInt != 244 ? -1 : 64 : 32 : 16 : 8 : 4 : 2 : 1;
+                            if (i16 != -1) {
                                 switch (parseInt2) {
                                     case 10:
-                                        i11 = 1;
+                                        i10 = 1;
                                         break;
                                     case 11:
-                                        i11 = 4;
+                                        i10 = 4;
                                         break;
                                     case 12:
-                                        i11 = 8;
+                                        i10 = 8;
                                         break;
                                     case 13:
                                         break;
                                     default:
                                         switch (parseInt2) {
                                             case 20:
-                                                i11 = 32;
+                                                i10 = 32;
                                                 break;
                                             case 21:
-                                                i11 = 64;
+                                                i10 = 64;
                                                 break;
                                             case 22:
-                                                i11 = 128;
+                                                i10 = 128;
                                                 break;
                                             default:
                                                 switch (parseInt2) {
                                                     case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                                                        i11 = 256;
+                                                        i10 = 256;
                                                         break;
                                                     case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
-                                                        i11 = 512;
+                                                        i10 = 512;
                                                         break;
                                                     case 32:
-                                                        i11 = 1024;
+                                                        i10 = 1024;
                                                         break;
                                                     default:
                                                         switch (parseInt2) {
                                                             case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
-                                                                i11 = 2048;
+                                                                i10 = 2048;
                                                                 break;
                                                             case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                                                                i11 = 4096;
+                                                                i10 = 4096;
                                                                 break;
                                                             case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
-                                                                i11 = 8192;
+                                                                i10 = 8192;
                                                                 break;
                                                             default:
                                                                 switch (parseInt2) {
                                                                     case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
-                                                                        i11 = 16384;
+                                                                        i10 = 16384;
                                                                         break;
                                                                     case 51:
-                                                                        i11 = 32768;
+                                                                        i10 = 32768;
                                                                         break;
                                                                     case 52:
-                                                                        i11 = 65536;
+                                                                        i10 = 65536;
                                                                         break;
                                                                     default:
-                                                                        i11 = -1;
+                                                                        i10 = -1;
                                                                         break;
                                                                 }
                                                         }
                                                 }
                                         }
                                 }
-                                if (i11 != -1) {
+                                if (i10 != -1) {
                                     break;
                                 } else {
-                                    com.google.android.recaptcha.internal.a.s(parseInt2, "Unknown AVC level: ", "MediaCodecUtil");
+                                    e2.c.t(parseInt2, "Unknown AVC level: ", "MediaCodecUtil");
                                     break;
                                 }
                             } else {
-                                com.google.android.recaptcha.internal.a.s(parseInt, "Unknown AVC profile: ", "MediaCodecUtil");
+                                e2.c.t(parseInt, "Unknown AVC profile: ", "MediaCodecUtil");
                                 break;
                             }
                         } catch (NumberFormatException unused2) {
-                            s3.c.k("Ignoring malformed AVC codec string: ", str2, "MediaCodecUtil");
+                            ta.b.i("Ignoring malformed AVC codec string: ", str2, "MediaCodecUtil");
                             return null;
                         }
                     }
                 case 3:
                 case 4:
                     if (split.length < 4) {
-                        s3.c.k("Ignoring malformed HEVC codec string: ", str2, "MediaCodecUtil");
+                        ta.b.i("Ignoring malformed HEVC codec string: ", str2, "MediaCodecUtil");
                         break;
                     } else {
                         Matcher matcher = pattern.matcher(split[1]);
                         if (!matcher.matches()) {
-                            s3.c.k("Ignoring malformed HEVC codec string: ", str2, "MediaCodecUtil");
+                            ta.b.i("Ignoring malformed HEVC codec string: ", str2, "MediaCodecUtil");
                             break;
                         } else {
                             String group = matcher.group(1);
                             if (!"1".equals(group)) {
                                 if (!"2".equals(group)) {
-                                    s3.c.k("Unknown HEVC profile string: ", group, "MediaCodecUtil");
+                                    ta.b.i("Unknown HEVC profile string: ", group, "MediaCodecUtil");
                                     break;
                                 } else {
-                                    i12 = 2;
+                                    i11 = 2;
                                 }
                             } else {
-                                i12 = 1;
+                                i11 = 1;
                             }
                             String str4 = split[3];
                             if (str4 != null) {
@@ -680,7 +681,7 @@ public abstract class w {
                                 if (num2 == null) {
                                     break;
                                 } else {
-                                    s3.c.k("Unknown HEVC level string: ", str4, "MediaCodecUtil");
+                                    ta.b.i("Unknown HEVC level string: ", str4, "MediaCodecUtil");
                                     break;
                                 }
                             }
@@ -695,113 +696,113 @@ public abstract class w {
                             if (MediaController.AUDIO_MIME_TYPE.equals(d5.q.d(Integer.parseInt(split[1], 16)))) {
                                 int parseInt6 = Integer.parseInt(split[2]);
                                 if (parseInt6 == 17) {
-                                    i14 = 17;
+                                    i13 = 17;
                                 } else if (parseInt6 != 20) {
                                     if (parseInt6 == 23) {
-                                        i14 = 23;
+                                        i13 = 23;
                                     } else if (parseInt6 == 29) {
-                                        i14 = 29;
+                                        i13 = 29;
                                     } else if (parseInt6 == 39) {
-                                        i14 = 39;
+                                        i13 = 39;
                                     } else if (parseInt6 != 42) {
                                         switch (parseInt6) {
                                             case 1:
-                                                i14 = 1;
+                                                i13 = 1;
                                                 break;
                                             case 2:
-                                                i14 = 2;
+                                                i13 = 2;
                                                 break;
                                             case 3:
-                                                i14 = 3;
+                                                i13 = 3;
                                                 break;
                                             case 4:
-                                                i14 = 4;
+                                                i13 = 4;
                                                 break;
                                             case 5:
-                                                i14 = 5;
+                                                i13 = 5;
                                                 break;
                                             case 6:
-                                                i14 = 6;
+                                                i13 = 6;
                                                 break;
                                             default:
-                                                i14 = -1;
+                                                i13 = -1;
                                                 break;
                                         }
                                     } else {
-                                        i14 = 42;
+                                        i13 = 42;
                                     }
                                 }
-                                if (i14 != -1) {
+                                if (i13 != -1) {
                                     break;
                                 }
                             }
                         } catch (NumberFormatException unused3) {
-                            s3.c.k("Ignoring malformed MP4A codec string: ", str2, "MediaCodecUtil");
+                            ta.b.i("Ignoring malformed MP4A codec string: ", str2, "MediaCodecUtil");
                             break;
                         }
                     } else {
-                        s3.c.k("Ignoring malformed MP4A codec string: ", str2, "MediaCodecUtil");
+                        ta.b.i("Ignoring malformed MP4A codec string: ", str2, "MediaCodecUtil");
                         break;
                     }
                     break;
                 case 6:
                     if (split.length < 3) {
-                        s3.c.k("Ignoring malformed VP9 codec string: ", str2, "MediaCodecUtil");
+                        ta.b.i("Ignoring malformed VP9 codec string: ", str2, "MediaCodecUtil");
                         break;
                     } else {
                         try {
                             int parseInt7 = Integer.parseInt(split[1]);
                             int parseInt8 = Integer.parseInt(split[2]);
-                            int i18 = parseInt7 != 0 ? parseInt7 != 1 ? parseInt7 != 2 ? parseInt7 != 3 ? -1 : 8 : 4 : 2 : 1;
-                            if (i18 != -1) {
+                            int i17 = parseInt7 != 0 ? parseInt7 != 1 ? parseInt7 != 2 ? parseInt7 != 3 ? -1 : 8 : 4 : 2 : 1;
+                            if (i17 != -1) {
                                 if (parseInt8 == 10) {
-                                    i13 = 1;
+                                    i12 = 1;
                                 } else if (parseInt8 == 11) {
-                                    i13 = 2;
+                                    i12 = 2;
                                 } else if (parseInt8 == 20) {
-                                    i13 = 4;
+                                    i12 = 4;
                                 } else if (parseInt8 == 21) {
-                                    i13 = 8;
+                                    i12 = 8;
                                 } else if (parseInt8 == 30) {
-                                    i13 = 16;
+                                    i12 = 16;
                                 } else if (parseInt8 == 31) {
-                                    i13 = 32;
+                                    i12 = 32;
                                 } else if (parseInt8 == 40) {
-                                    i13 = 64;
+                                    i12 = 64;
                                 } else if (parseInt8 == 41) {
-                                    i13 = 128;
+                                    i12 = 128;
                                 } else if (parseInt8 == 50) {
-                                    i13 = 256;
+                                    i12 = 256;
                                 } else if (parseInt8 != 51) {
                                     switch (parseInt8) {
                                         case 60:
-                                            i13 = 2048;
+                                            i12 = 2048;
                                             break;
                                         case 61:
-                                            i13 = 4096;
+                                            i12 = 4096;
                                             break;
                                         case 62:
-                                            i13 = 8192;
+                                            i12 = 8192;
                                             break;
                                         default:
-                                            i13 = -1;
+                                            i12 = -1;
                                             break;
                                     }
                                 } else {
-                                    i13 = 512;
+                                    i12 = 512;
                                 }
-                                if (i13 != -1) {
+                                if (i12 != -1) {
                                     break;
                                 } else {
-                                    com.google.android.recaptcha.internal.a.s(parseInt8, "Unknown VP9 level: ", "MediaCodecUtil");
+                                    e2.c.t(parseInt8, "Unknown VP9 level: ", "MediaCodecUtil");
                                     break;
                                 }
                             } else {
-                                com.google.android.recaptcha.internal.a.s(parseInt7, "Unknown VP9 profile: ", "MediaCodecUtil");
+                                e2.c.t(parseInt7, "Unknown VP9 profile: ", "MediaCodecUtil");
                                 break;
                             }
                         } catch (NumberFormatException unused4) {
-                            s3.c.k("Ignoring malformed VP9 codec string: ", str2, "MediaCodecUtil");
+                            ta.b.i("Ignoring malformed VP9 codec string: ", str2, "MediaCodecUtil");
                             return null;
                         }
                     }
@@ -809,12 +810,12 @@ public abstract class w {
             return null;
         }
         if (split.length < 3) {
-            s3.c.k("Ignoring malformed Dolby Vision codec string: ", str2, "MediaCodecUtil");
+            ta.b.i("Ignoring malformed Dolby Vision codec string: ", str2, "MediaCodecUtil");
             return null;
         }
         Matcher matcher2 = pattern.matcher(split[1]);
         if (!matcher2.matches()) {
-            s3.c.k("Ignoring malformed Dolby Vision codec string: ", str2, "MediaCodecUtil");
+            ta.b.i("Ignoring malformed Dolby Vision codec string: ", str2, "MediaCodecUtil");
             return null;
         }
         String group2 = matcher2.group(1);
@@ -933,7 +934,7 @@ public abstract class w {
             num = null;
         }
         if (num == null) {
-            s3.c.k("Unknown Dolby Vision profile string: ", group2, "MediaCodecUtil");
+            ta.b.i("Unknown Dolby Vision profile string: ", group2, "MediaCodecUtil");
             return null;
         }
         String str5 = split[2];
@@ -1075,7 +1076,7 @@ public abstract class w {
             if (num2 == null) {
                 return new Pair(num, num2);
             }
-            s3.c.k("Unknown Dolby Vision level string: ", str5, "MediaCodecUtil");
+            ta.b.i("Unknown Dolby Vision level string: ", str5, "MediaCodecUtil");
             return null;
         }
         num2 = null;
@@ -1093,10 +1094,10 @@ public abstract class w {
                 if (list != null) {
                     return list;
                 }
-                int i10 = g0.a;
-                ArrayList f10 = f(sVar, i10 >= 21 ? new n2.v(z10, z11) : new ab.a(26));
-                if (z10 && f10.isEmpty() && 21 <= i10 && i10 <= 23) {
-                    f10 = f(sVar, new ab.a(26));
+                int i9 = f0.a;
+                ArrayList f10 = f(sVar, i9 >= 21 ? new n2.w(z10, z11) : new wa.a(26));
+                if (z10 && f10.isEmpty() && 21 <= i9 && i9 <= 23) {
+                    f10 = f(sVar, new wa.a(26));
                     if (!f10.isEmpty()) {
                         d5.a.K("MediaCodecUtil", "MediaCodecList API didn't list secure decoder for: " + str + ". Assuming: " + ((n) f10.get(0)).a);
                     }
@@ -1126,46 +1127,46 @@ public abstract class w {
         try {
             ArrayList arrayList = new ArrayList();
             String str4 = sVar2.a;
-            int r10 = uVar.r();
-            boolean B = uVar.B();
-            int i10 = 0;
-            while (i10 < r10) {
-                MediaCodecInfo a2 = uVar.a(i10);
-                int i11 = g0.a;
-                if (i11 < 29 || !a2.isAlias()) {
-                    String name = a2.getName();
-                    if (g(a2, name, B, str4) && (c10 = c(a2, name, str4)) != null) {
+            int B = uVar.B();
+            boolean I = uVar.I();
+            int i9 = 0;
+            while (i9 < B) {
+                MediaCodecInfo b10 = uVar.b(i9);
+                int i10 = f0.a;
+                if (i10 < 29 || !b10.isAlias()) {
+                    String name = b10.getName();
+                    if (g(b10, name, I, str4) && (c10 = c(b10, name, str4)) != null) {
                         try {
-                            MediaCodecInfo.CodecCapabilities capabilitiesForType = a2.getCapabilitiesForType(c10);
-                            boolean e9 = uVar.e("tunneled-playback", c10, capabilitiesForType);
-                            boolean i12 = uVar.i("tunneled-playback", capabilitiesForType);
+                            MediaCodecInfo.CodecCapabilities capabilitiesForType = b10.getCapabilitiesForType(c10);
+                            boolean p6 = uVar.p("tunneled-playback", c10, capabilitiesForType);
+                            boolean y10 = uVar.y("tunneled-playback", capabilitiesForType);
                             boolean z11 = sVar2.c;
-                            if ((z11 || !i12) && (!z11 || e9)) {
-                                boolean e10 = uVar.e("secure-playback", c10, capabilitiesForType);
-                                boolean i13 = uVar.i("secure-playback", capabilitiesForType);
-                                if ((z10 || !i13) && (!z10 || e10)) {
+                            if ((z11 || !y10) && (!z11 || p6)) {
+                                boolean p9 = uVar.p("secure-playback", c10, capabilitiesForType);
+                                boolean y11 = uVar.y("secure-playback", capabilitiesForType);
+                                if ((z10 || !y11) && (!z10 || p9)) {
                                     try {
-                                        boolean h = h(a2, str4);
-                                        i(a2, str4);
-                                        if (i11 >= 29) {
-                                            a2.isVendor();
+                                        boolean h = h(b10, str4);
+                                        i(b10, str4);
+                                        if (i10 >= 29) {
+                                            b10.isVendor();
                                         } else {
-                                            String b10 = d0.b(a2.getName());
-                                            if (!b10.startsWith("omx.google.") && !b10.startsWith("c2.android.")) {
-                                                b10.startsWith("c2.google.");
+                                            String b11 = b0.b(b10.getName());
+                                            if (!b11.startsWith("omx.google.") && !b11.startsWith("c2.android.")) {
+                                                b11.startsWith("c2.google.");
                                             }
                                         }
-                                        if (!(B && z10 == e10) && (B || z10)) {
+                                        if (!(I && z10 == p9) && (I || z10)) {
                                             str3 = name;
-                                            if (!B && e10) {
+                                            if (!I && p9) {
                                                 str2 = str3;
                                                 str = c10;
                                                 try {
                                                     arrayList.add(n.h(str3 + ".secure", str4, str, capabilitiesForType, h, true));
                                                     break;
-                                                } catch (Exception e11) {
-                                                    e = e11;
-                                                    if (g0.a > 23) {
+                                                } catch (Exception e10) {
+                                                    e = e10;
+                                                    if (f0.a > 23) {
                                                     }
                                                     d5.a.o("MediaCodecUtil", "Failed to query codec " + str2 + " (" + str + ")");
                                                     throw e;
@@ -1175,48 +1176,48 @@ public abstract class w {
                                             str3 = name;
                                             str = c10;
                                             try {
-                                            } catch (Exception e12) {
-                                                e = e12;
+                                            } catch (Exception e11) {
+                                                e = e11;
                                                 str2 = str3;
-                                                if (g0.a > 23 || arrayList.isEmpty()) {
+                                                if (f0.a > 23 || arrayList.isEmpty()) {
                                                     d5.a.o("MediaCodecUtil", "Failed to query codec " + str2 + " (" + str + ")");
                                                     throw e;
                                                 }
                                                 d5.a.o("MediaCodecUtil", "Skipping codec " + str2 + " (failed to query capabilities)");
-                                                i10++;
+                                                i9++;
                                                 sVar2 = sVar;
                                             }
                                             try {
                                                 arrayList.add(n.h(str3, str4, str, capabilitiesForType, h, false));
-                                            } catch (Exception e13) {
-                                                e = e13;
+                                            } catch (Exception e12) {
+                                                e = e12;
                                                 str2 = str3;
                                                 str = c10;
-                                                if (g0.a > 23) {
+                                                if (f0.a > 23) {
                                                 }
                                                 d5.a.o("MediaCodecUtil", "Failed to query codec " + str2 + " (" + str + ")");
                                                 throw e;
                                             }
                                         }
-                                    } catch (Exception e14) {
-                                        e = e14;
+                                    } catch (Exception e13) {
+                                        e = e13;
                                         str2 = name;
                                     }
                                 }
                             }
-                        } catch (Exception e15) {
-                            e = e15;
+                        } catch (Exception e14) {
+                            e = e14;
                             str = c10;
                             str2 = name;
                         }
                     }
                 }
-                i10++;
+                i9++;
                 sVar2 = sVar;
             }
             return arrayList;
-        } catch (Exception e16) {
-            throw new t("Failed to query underlying media codecs", e16);
+        } catch (Exception e15) {
+            throw new t("Failed to query underlying media codecs", e15);
         }
     }
 
@@ -1227,61 +1228,61 @@ public abstract class w {
         if (!z10 && str.endsWith(".secure")) {
             return false;
         }
-        int i10 = g0.a;
-        if (i10 < 21 && ("CIPAACDecoder".equals(str) || "CIPMP3Decoder".equals(str) || "CIPVorbisDecoder".equals(str) || "CIPAMRNBDecoder".equals(str) || "AACDecoder".equals(str) || "MP3Decoder".equals(str))) {
+        int i9 = f0.a;
+        if (i9 < 21 && ("CIPAACDecoder".equals(str) || "CIPMP3Decoder".equals(str) || "CIPVorbisDecoder".equals(str) || "CIPAMRNBDecoder".equals(str) || "AACDecoder".equals(str) || "MP3Decoder".equals(str))) {
             return false;
         }
-        if (i10 < 18 && "OMX.MTK.AUDIO.DECODER.AAC".equals(str)) {
-            String str3 = g0.b;
+        if (i9 < 18 && "OMX.MTK.AUDIO.DECODER.AAC".equals(str)) {
+            String str3 = f0.b;
             if ("a70".equals(str3)) {
                 return false;
             }
-            if ("Xiaomi".equals(g0.c) && str3.startsWith("HM")) {
+            if ("Xiaomi".equals(f0.c) && str3.startsWith("HM")) {
                 return false;
             }
         }
-        if (i10 == 16 && "OMX.qcom.audio.decoder.mp3".equals(str)) {
-            String str4 = g0.b;
+        if (i9 == 16 && "OMX.qcom.audio.decoder.mp3".equals(str)) {
+            String str4 = f0.b;
             if ("dlxu".equals(str4) || "protou".equals(str4) || "ville".equals(str4) || "villeplus".equals(str4) || "villec2".equals(str4) || str4.startsWith("gee") || "C6602".equals(str4) || "C6603".equals(str4) || "C6606".equals(str4) || "C6616".equals(str4) || "L36h".equals(str4) || "SO-02E".equals(str4)) {
                 return false;
             }
         }
-        if (i10 == 16 && "OMX.qcom.audio.decoder.aac".equals(str)) {
-            String str5 = g0.b;
+        if (i9 == 16 && "OMX.qcom.audio.decoder.aac".equals(str)) {
+            String str5 = f0.b;
             if ("C1504".equals(str5) || "C1505".equals(str5) || "C1604".equals(str5) || "C1605".equals(str5)) {
                 return false;
             }
         }
-        if (i10 < 24 && (("OMX.SEC.aac.dec".equals(str) || "OMX.Exynos.AAC.Decoder".equals(str)) && "samsung".equals(g0.c))) {
-            String str6 = g0.b;
+        if (i9 < 24 && (("OMX.SEC.aac.dec".equals(str) || "OMX.Exynos.AAC.Decoder".equals(str)) && "samsung".equals(f0.c))) {
+            String str6 = f0.b;
             if (str6.startsWith("zeroflte") || str6.startsWith("zerolte") || str6.startsWith("zenlte") || "SC-05G".equals(str6) || "marinelteatt".equals(str6) || "404SC".equals(str6) || "SC-04G".equals(str6) || "SCV31".equals(str6)) {
                 return false;
             }
         }
-        if (i10 <= 19 && "OMX.SEC.vp8.dec".equals(str) && "samsung".equals(g0.c)) {
-            String str7 = g0.b;
+        if (i9 <= 19 && "OMX.SEC.vp8.dec".equals(str) && "samsung".equals(f0.c)) {
+            String str7 = f0.b;
             if (str7.startsWith("d2") || str7.startsWith("serrano") || str7.startsWith("jflte") || str7.startsWith("santos") || str7.startsWith("t0")) {
                 return false;
             }
         }
-        if (i10 <= 19 && g0.b.startsWith("jflte") && "OMX.qcom.video.decoder.vp8".equals(str)) {
+        if (i9 <= 19 && f0.b.startsWith("jflte") && "OMX.qcom.video.decoder.vp8".equals(str)) {
             return false;
         }
-        return (i10 <= 23 && "audio/eac3-joc".equals(str2) && "OMX.MTK.AUDIO.DECODER.DSPAC3".equals(str)) ? false : true;
+        return (i9 <= 23 && "audio/eac3-joc".equals(str2) && "OMX.MTK.AUDIO.DECODER.DSPAC3".equals(str)) ? false : true;
     }
 
     public static boolean h(MediaCodecInfo mediaCodecInfo, String str) {
-        return g0.a >= 29 ? mediaCodecInfo.isHardwareAccelerated() : !i(mediaCodecInfo, str);
+        return f0.a >= 29 ? mediaCodecInfo.isHardwareAccelerated() : !i(mediaCodecInfo, str);
     }
 
     public static boolean i(MediaCodecInfo mediaCodecInfo, String str) {
-        if (g0.a >= 29) {
+        if (f0.a >= 29) {
             return mediaCodecInfo.isSoftwareOnly();
         }
         if (d5.q.h(str)) {
             return true;
         }
-        String b10 = d0.b(mediaCodecInfo.getName());
+        String b10 = b0.b(mediaCodecInfo.getName());
         if (b10.startsWith("arc.")) {
             return false;
         }
@@ -1296,72 +1297,72 @@ public abstract class w {
 
     public static int j() {
         MediaCodecInfo.CodecProfileLevel[] codecProfileLevelArr;
-        int i10;
+        int i9;
         if (c == -1) {
-            int i11 = 0;
-            List e9 = e(MediaController.VIDEO_MIME_TYPE, false, false);
-            n nVar = e9.isEmpty() ? null : (n) e9.get(0);
+            int i10 = 0;
+            List e10 = e(MediaController.VIDEO_MIME_TYPE, false, false);
+            n nVar = e10.isEmpty() ? null : (n) e10.get(0);
             if (nVar != null) {
                 MediaCodecInfo.CodecCapabilities codecCapabilities = nVar.d;
                 if (codecCapabilities == null || (codecProfileLevelArr = codecCapabilities.profileLevels) == null) {
                     codecProfileLevelArr = new MediaCodecInfo.CodecProfileLevel[0];
                 }
                 int length = codecProfileLevelArr.length;
-                int i12 = 0;
-                while (i11 < length) {
-                    int i13 = codecProfileLevelArr[i11].level;
-                    if (i13 != 1 && i13 != 2) {
-                        switch (i13) {
+                int i11 = 0;
+                while (i10 < length) {
+                    int i12 = codecProfileLevelArr[i10].level;
+                    if (i12 != 1 && i12 != 2) {
+                        switch (i12) {
                             case 8:
                             case 16:
                             case 32:
-                                i10 = 101376;
+                                i9 = 101376;
                                 break;
                             case 64:
-                                i10 = 202752;
+                                i9 = 202752;
                                 break;
                             case 128:
                             case 256:
-                                i10 = 414720;
+                                i9 = 414720;
                                 break;
                             case 512:
-                                i10 = 921600;
+                                i9 = 921600;
                                 break;
                             case 1024:
-                                i10 = 1310720;
+                                i9 = 1310720;
                                 break;
                             case 2048:
                             case 4096:
-                                i10 = TLObject.FLAG_21;
+                                i9 = TLObject.FLAG_21;
                                 break;
                             case 8192:
-                                i10 = 2228224;
+                                i9 = 2228224;
                                 break;
                             case 16384:
-                                i10 = 5652480;
+                                i9 = 5652480;
                                 break;
                             case 32768:
                             case 65536:
-                                i10 = 9437184;
+                                i9 = 9437184;
                                 break;
                             case 131072:
                             case 262144:
                             case TLObject.FLAG_19 /* 524288 */:
-                                i10 = 35651584;
+                                i9 = 35651584;
                                 break;
                             default:
-                                i10 = -1;
+                                i9 = -1;
                                 break;
                         }
                     } else {
-                        i10 = 25344;
+                        i9 = 25344;
                     }
-                    i12 = Math.max(i10, i12);
-                    i11++;
+                    i11 = Math.max(i9, i11);
+                    i10++;
                 }
-                i11 = Math.max(i12, g0.a >= 21 ? 345600 : 172800);
+                i10 = Math.max(i11, f0.a >= 21 ? 345600 : 172800);
             }
-            c = i11;
+            c = i10;
         }
         return c;
     }

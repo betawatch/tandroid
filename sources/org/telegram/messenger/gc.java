@@ -1,49 +1,52 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class gc implements Runnable {
-    public final /* synthetic */ int a = 1;
+public final /* synthetic */ class gc implements RequestDelegate {
+    public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ int c;
     public final /* synthetic */ long d;
-    public final /* synthetic */ ArrayList e;
+    public final /* synthetic */ long e;
 
-    public /* synthetic */ gc(MessagesController messagesController, long j10, long j11, ArrayList arrayList) {
+    public /* synthetic */ gc(int i9, long j10, long j11, MessagesController messagesController) {
+        this.a = 0;
         this.b = messagesController;
-        this.c = j10;
-        this.d = j11;
-        this.e = arrayList;
+        this.d = j10;
+        this.c = i9;
+        this.e = j11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdateArray$419(this.c, this.e, this.d);
+                int i9 = this.c;
+                long j10 = this.e;
+                this.b.lambda$getChannelDifference$349(this.d, i9, j10, tLObject, tL_error);
                 break;
             case 1:
-                this.b.lambda$checkUnreadPollVotesInternal2$431(this.c, this.d, 0, this.e);
+                long j11 = this.d;
+                long j12 = this.e;
+                this.b.lambda$sendTyping$172(this.c, j11, j12, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$deleteMessagesByPush$370(this.e, this.c, this.d);
+                long j13 = this.d;
+                long j14 = this.e;
+                this.b.lambda$sendTyping$174(this.c, j13, j14, tLObject, tL_error);
                 break;
         }
     }
 
-    public /* synthetic */ gc(MessagesController messagesController, long j10, ArrayList arrayList, long j11) {
+    public /* synthetic */ gc(MessagesController messagesController, int i9, long j10, long j11, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.c = j10;
-        this.e = arrayList;
-        this.d = j11;
-    }
-
-    public /* synthetic */ gc(MessagesController messagesController, ArrayList arrayList, long j10, long j11) {
-        this.b = messagesController;
-        this.e = arrayList;
-        this.c = j10;
-        this.d = j11;
+        this.c = i9;
+        this.d = j10;
+        this.e = j11;
     }
 }

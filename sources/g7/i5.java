@@ -1,24 +1,19 @@
 package g7;
 
-import android.os.Bundle;
-import j$.util.DesugarCollections;
-import java.util.HashMap;
-import java.util.Map;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class i5 {
-    public static Map a(String str, Bundle bundle) {
-        Map map = (Map) bundle.getSerializable(str);
-        if (map == null) {
-            return com.google.android.gms.internal.cast.r0.n;
+public final class i5 implements q9.d {
+    public static final i5 a = new i5();
+
+    static {
+        e2.c.u(e2.c.r(d.class, e2.c.i(2, e2.c.r(d.class, new a(1)))));
+    }
+
+    @Override // q9.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        HashMap hashMap = new HashMap();
-        for (Map.Entry entry : map.entrySet()) {
-            if (entry != null && entry.getKey() != null && entry.getValue() != null) {
-                hashMap.put((Integer) entry.getKey(), (Integer) entry.getValue());
-            }
-        }
-        return DesugarCollections.unmodifiableMap(hashMap);
+        throw null;
     }
 }

@@ -1,13 +1,17 @@
 package g7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class w {
-    public w(androidx.fragment.app.u0 operation) {
-        kotlin.jvm.internal.j.e(operation, "operation");
+    public static float a(float f10, float f11, float f12, float f13) {
+        double d = f10 - f12;
+        double d9 = f11 - f13;
+        return (float) Math.sqrt((d9 * d9) + (d * d));
     }
 
-    public boolean a() {
-        throw null;
+    public static float b(int i9, int i10, int i11, int i12) {
+        double d = i9 - i11;
+        double d9 = i10 - i12;
+        return (float) Math.sqrt((d9 * d9) + (d * d));
     }
 }

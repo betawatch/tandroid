@@ -23,9 +23,9 @@ public final class w extends d {
         if (localDate.N(d)) {
             throw new j$.time.b("JapaneseDate before Meiji 6 is not supported");
         }
-        x o10 = x.o(localDate);
-        this.b = o10;
-        this.c = (localDate.getYear() - o10.b.getYear()) + 1;
+        x o6 = x.o(localDate);
+        this.b = o6;
+        this.c = (localDate.getYear() - o6.b.getYear()) + 1;
         this.a = localDate;
     }
 
@@ -65,12 +65,12 @@ public final class w extends d {
             throw new j$.time.temporal.r(j$.time.c.a("Unsupported field: ", oVar));
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        int i10 = v.a[aVar.ordinal()];
-        if (i10 == 1) {
+        int i9 = v.a[aVar.ordinal()];
+        if (i9 == 1) {
             return j$.time.temporal.s.e(1L, this.a.P());
         }
-        if (i10 != 2) {
-            if (i10 != 3) {
+        if (i9 != 2) {
+            if (i9 != 3) {
                 return u.c.s(aVar);
             }
             int year = this.b.b.getYear();
@@ -115,17 +115,17 @@ public final class w extends d {
                 return this;
             }
             int[] iArr = v.a;
-            int i10 = iArr[aVar.ordinal()];
-            if (i10 == 3 || i10 == 8 || i10 == 9) {
+            int i9 = iArr[aVar.ordinal()];
+            if (i9 == 3 || i9 == 8 || i9 == 9) {
                 int a2 = u.c.s(aVar).a(j10, aVar);
-                int i11 = iArr[aVar.ordinal()];
-                if (i11 == 3) {
+                int i10 = iArr[aVar.ordinal()];
+                if (i10 == 3) {
                     return P(this.b, a2);
                 }
-                if (i11 == 8) {
+                if (i10 == 8) {
                     return P(x.s(a2), this.c);
                 }
-                if (i11 == 9) {
+                if (i10 == 9) {
                     return O(this.a.Y(a2));
                 }
             }
@@ -145,13 +145,13 @@ public final class w extends d {
         return (w) super.k(localDate);
     }
 
-    public final w P(x xVar, int i10) {
+    public final w P(x xVar, int i9) {
         u.c.getClass();
         if (xVar == null) {
             throw new ClassCastException("Era must be JapaneseEra");
         }
-        int year = (xVar.b.getYear() + i10) - 1;
-        if (i10 != 1 && (year < -999999999 || year > 999999999 || year < xVar.b.getYear() || xVar != x.o(LocalDate.of(year, 1, 1)))) {
+        int year = (xVar.b.getYear() + i9) - 1;
+        if (i9 != 1 && (year < -999999999 || year > 999999999 || year < xVar.b.getYear() || xVar != x.o(LocalDate.of(year, 1, 1)))) {
             throw new j$.time.b("Invalid yearOfEra value");
         }
         return O(this.a.Y(year));

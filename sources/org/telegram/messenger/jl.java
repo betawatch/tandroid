@@ -1,33 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.LanguageDetector;
-import org.telegram.messenger.TranslateController;
+import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class jl implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
-    public final /* synthetic */ TranslateController a;
-    public final /* synthetic */ MessageObject b;
-    public final /* synthetic */ TranslateController.MessageKey c;
-    public final /* synthetic */ Utilities.Callback d;
+public final /* synthetic */ class jl implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UnconfirmedAuthController.UnconfirmedAuth b;
+    public final /* synthetic */ Utilities.Callback c;
 
-    public /* synthetic */ jl(TranslateController translateController, MessageObject messageObject, TranslateController.MessageKey messageKey, Utilities.Callback callback) {
-        this.a = translateController;
-        this.b = messageObject;
-        this.c = messageKey;
-        this.d = callback;
+    public /* synthetic */ jl(UnconfirmedAuthController.UnconfirmedAuth unconfirmedAuth, Utilities.Callback callback, int i9) {
+        this.a = i9;
+        this.b = unconfirmedAuth;
+        this.c = callback;
     }
 
-    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
-    public void run(Exception exc) {
-        this.a.lambda$detectPhotoLanguage$42(this.b, this.c, this.d, exc);
-    }
-
-    @Override // org.telegram.messenger.LanguageDetector.StringCallback
-    public void run(String str) {
-        TranslateController.MessageKey messageKey = this.c;
-        Utilities.Callback callback = this.d;
-        this.a.lambda$detectPhotoLanguage$40(this.b, messageKey, callback, str);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                this.b.lambda$deny$4(this.c, tLObject, tL_error);
+                break;
+            case 1:
+                this.b.lambda$deny$6(this.c, tLObject, tL_error);
+                break;
+            default:
+                this.b.lambda$confirm$2(this.c, tLObject, tL_error);
+                break;
+        }
     }
 }

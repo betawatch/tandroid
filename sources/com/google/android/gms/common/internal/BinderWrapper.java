@@ -3,13 +3,13 @@ package com.google.android.gms.common.internal;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.Parcelable;
-import r5.v;
-import w7.f;
+import q5.v;
+import w7.i;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class BinderWrapper implements Parcelable {
-    public static final Parcelable.Creator<BinderWrapper> CREATOR = new f(16);
+    public static final Parcelable.Creator<BinderWrapper> CREATOR = new i(8);
     public final IBinder a;
 
     public BinderWrapper(v vVar) {
@@ -22,7 +22,7 @@ public final class BinderWrapper implements Parcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeStrongBinder(this.a);
     }
 

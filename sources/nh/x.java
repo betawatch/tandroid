@@ -1,19 +1,23 @@
 package nh;
 
-import org.telegram.ui.ActionBar.c5;
+import androidx.recyclerview.widget.RecyclerView;
+import f2.d1;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final class x extends c5 {
-    public final /* synthetic */ a0 p;
+public final class x extends d1 {
+    public final /* synthetic */ j0 a;
 
-    public x(a0 a0Var) {
-        this.p = a0Var;
+    public x(j0 j0Var) {
+        this.a = j0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        super.invalidateSelf();
-        this.p.invalidate();
+    @Override // f2.d1
+    public final void b(RecyclerView recyclerView, int i9, int i10) {
+        j0 j0Var = this.a;
+        if (j0Var.C.G1) {
+            AndroidUtilities.hideKeyboard(j0Var.A.r);
+        }
     }
 }

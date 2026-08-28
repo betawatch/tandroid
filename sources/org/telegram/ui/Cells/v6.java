@@ -1,76 +1,96 @@
 package org.telegram.ui.Cells;
 
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.FileLog;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.text.style.ImageSpan;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.xz0;
+import org.telegram.ui.Components.h21;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public abstract class v6 extends LinearLayout {
-    public TextView a;
-    public p80 b;
-    public TextView c;
-    public TextView d;
-    public int e;
-    public int f;
+public final class v6 extends ImageSpan {
+    public static h21 b;
+    public final /* synthetic */ int a = 1;
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    public /* synthetic */ v6(Drawable drawable) {
+        super(drawable);
     }
 
-    public void setType(int i10) {
-        int i11 = this.f;
-        TextView textView = this.c;
-        p80 p80Var = this.b;
-        TextView textView2 = this.a;
-        TextView textView3 = this.d;
-        this.e = i10;
-        if (i10 != 0) {
-            if (i10 == 1) {
-                textView2.setText(LocaleController.getString(R.string.YourPasswordHeader));
-                p80Var.setText(LocaleController.getString(R.string.YourPasswordRemember));
-                textView.setText(LocaleController.getString(R.string.YourPasswordRememberYes));
-                textView3.setVisibility(0);
-                textView3.setText(LocaleController.getString(R.string.YourPasswordRememberNo));
-                return;
-            }
-            if (i10 == 2) {
-                textView2.setText(LocaleController.getString(R.string.GraceSuggestionTitle));
-                p80Var.setText(LocaleController.getString(R.string.GraceSuggestionMessage));
-                textView.setText(LocaleController.getString(R.string.GraceSuggestionButton));
-                textView3.setVisibility(8);
-                return;
-            }
-            return;
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public void draw(Canvas canvas, CharSequence charSequence, int i9, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        switch (this.a) {
+            case 0:
+                Drawable drawable = getDrawable();
+                canvas.save();
+                int i14 = paint.getFontMetricsInt().descent;
+                canvas.translate(f10, ((i12 + i14) - ((i14 - r4.ascent) / 2)) - ((drawable.getBounds().bottom - drawable.getBounds().top) / 2));
+                if (LocaleController.isRTL) {
+                    canvas.scale(-1.0f, 1.0f, drawable.getIntrinsicWidth() / 2, drawable.getIntrinsicHeight() / 2);
+                }
+                drawable.draw(canvas);
+                canvas.restore();
+                break;
+            default:
+                super.draw(canvas, charSequence, i9, i10, f10, i11, i12, i13, paint);
+                break;
         }
-        textView2.setText(LocaleController.formatString(R.string.CheckPhoneNumber, org.telegram.messenger.y1.k(new StringBuilder("+"), MessagesController.getInstance(i11).getUser(Long.valueOf(UserConfig.getInstance(i11).clientUserId)).phone, oe.b.c())));
-        String string = LocaleController.getString(R.string.CheckPhoneNumberInfo);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
-        int indexOf = string.indexOf("**");
-        int lastIndexOf = string.lastIndexOf("**");
-        if (indexOf >= 0 && lastIndexOf >= 0 && indexOf != lastIndexOf) {
-            spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 2, (CharSequence) "");
-            spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) "");
-            try {
-                spannableStringBuilder.setSpan(new r41(LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl), (xz0) null), indexOf, lastIndexOf - 2, 33);
-            } catch (Exception e9) {
-                FileLog.e(e9);
-            }
+    }
+
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public int getSize(Paint paint, CharSequence charSequence, int i9, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        switch (this.a) {
+            case 0:
+                Rect bounds = getDrawable().getBounds();
+                if (fontMetricsInt != null) {
+                    Paint.FontMetricsInt fontMetricsInt2 = paint.getFontMetricsInt();
+                    int i11 = fontMetricsInt2.descent;
+                    int i12 = fontMetricsInt2.ascent;
+                    int i13 = ((i11 - i12) / 2) + i12;
+                    int i14 = (bounds.bottom - bounds.top) / 2;
+                    int i15 = i13 - i14;
+                    fontMetricsInt.ascent = i15;
+                    fontMetricsInt.top = i15;
+                    int i16 = i13 + i14;
+                    fontMetricsInt.bottom = i16;
+                    fontMetricsInt.descent = i16;
+                }
+                return bounds.right;
+            default:
+                return super.getSize(paint, charSequence, i9, i10, fontMetricsInt);
         }
-        p80Var.setText(spannableStringBuilder);
-        textView.setText(LocaleController.getString(R.string.CheckPhoneNumberYes));
-        textView3.setVisibility(0);
-        textView3.setText(LocaleController.getString(R.string.CheckPhoneNumberNo));
+    }
+
+    @Override // android.text.style.ReplacementSpan, android.text.style.CharacterStyle
+    public void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 1:
+                float textSize = textPaint.getTextSize() * 0.89f;
+                int i9 = (int) (0.02f * textSize);
+                getDrawable().setBounds(0, i9, (int) textSize, ((int) (textSize * 1.25f)) + i9);
+                super.updateDrawState(textPaint);
+                break;
+            default:
+                super.updateDrawState(textPaint);
+                break;
+        }
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public v6() {
+        super(r0, 0);
+        h21 h21Var = b;
+        if (h21Var == null) {
+            h21Var = new h21(org.telegram.ui.ActionBar.f6.o2);
+            b = h21Var;
+        }
+        float textSize = org.telegram.ui.ActionBar.f6.o2.getTextSize() * 0.89f;
+        int i9 = (int) (0.02f * textSize);
+        getDrawable().setBounds(0, i9, (int) textSize, ((int) (textSize * 1.25f)) + i9);
     }
 }

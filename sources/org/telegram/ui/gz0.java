@@ -5,17 +5,17 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class gz0 implements lh.jb {
+public final class gz0 implements kh.nb {
     public final /* synthetic */ ProfileActivity a;
 
     public gz0(ProfileActivity profileActivity) {
         this.a = profileActivity;
     }
 
-    @Override // lh.jb
-    public final lh.nb a(long j10) {
+    @Override // kh.nb
+    public final kh.rb a(long j10) {
         ProfileActivity profileActivity = this.a;
         if (j10 != profileActivity.a()) {
             return null;
@@ -29,26 +29,26 @@ public final class gz0 implements lh.jb {
         float scaleX = ((View) ly0Var.getParent()).getScaleX();
         float imageWidth = ly0Var.getImageReceiver().getImageWidth() * scaleX;
         float f10 = isForum ? 0.32f * imageWidth : imageWidth;
-        lh.lb lbVar = new lh.lb(ly0Var, 0);
+        kh.pb pbVar = new kh.pb(ly0Var, 0);
         float[] fArr = new float[2];
         ly0Var.getRootView().getLocationOnScreen(new int[2]);
         AndroidUtilities.getViewPositionInParent(ly0Var, (ViewGroup) ly0Var.getRootView(), fArr);
         float imageX = (ly0Var.getImageReceiver().getImageX() * scaleX) + r4[0] + fArr[0];
         float imageY = (ly0Var.getImageReceiver().getImageY() * scaleX) + r4[1] + fArr[1];
-        lbVar.c.set(imageX, imageY, imageX + imageWidth, imageWidth + imageY);
-        lbVar.e = ly0Var.getImageReceiver();
-        lbVar.b = f10;
-        return lbVar;
+        pbVar.c.set(imageX, imageY, imageX + imageWidth, imageWidth + imageY);
+        pbVar.e = ly0Var.getImageReceiver();
+        pbVar.b = f10;
+        return pbVar;
     }
 
-    @Override // lh.jb
-    public final void b(long j10, cg.b2 b2Var) {
+    @Override // kh.nb
+    public final void b(long j10, bg.i2 i2Var) {
         ProfileActivity profileActivity = this.a;
         profileActivity.a0.setHasStories(profileActivity.j4());
         if (j10 == profileActivity.a() && profileActivity.k2 && profileActivity.g2 > 0.0f) {
             profileActivity.c.h1(0, profileActivity.T3() - profileActivity.a.getPaddingTop());
-            profileActivity.a.post(new gb0(profileActivity, 14));
+            profileActivity.a.post(new cb0(profileActivity, 14));
         }
-        AndroidUtilities.runOnUIThread(b2Var, 30L);
+        AndroidUtilities.runOnUIThread(i2Var, 30L);
     }
 }

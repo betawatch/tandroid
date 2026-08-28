@@ -2,7 +2,7 @@ package org.scilab.forge.jlatexmath;
 
 import ru.noties.jlatexmath.awt.Graphics2D;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class OverBar extends VerticalBox {
     public OverBar(Box box, float f10, float f11) {
@@ -13,8 +13,8 @@ public class OverBar extends VerticalBox {
     }
 
     @Override // org.scilab.forge.jlatexmath.VerticalBox, org.scilab.forge.jlatexmath.Box
-    public /* bridge */ /* synthetic */ void add(int i10, Box box) {
-        super.add(i10, box);
+    public /* bridge */ /* synthetic */ void add(int i9, Box box) {
+        super.add(i9, box);
     }
 
     @Override // org.scilab.forge.jlatexmath.VerticalBox, org.scilab.forge.jlatexmath.Box

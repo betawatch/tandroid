@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class n {
     public final View a;
@@ -28,8 +28,8 @@ public final class n {
         View view = this.a;
         Drawable background = view.getBackground();
         if (background != null) {
-            int i10 = Build.VERSION.SDK_INT;
-            if (i10 <= 21 ? i10 == 21 : this.d != null) {
+            int i9 = Build.VERSION.SDK_INT;
+            if (i9 <= 21 ? i9 == 21 : this.d != null) {
                 if (this.f == null) {
                     this.f = new f3();
                 }
@@ -86,34 +86,34 @@ public final class n {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void d(AttributeSet attributeSet, int i10) {
+    public final void d(AttributeSet attributeSet, int i9) {
         boolean z10;
-        ColorStateList i11;
+        ColorStateList i10;
         View view = this.a;
         Context context = view.getContext();
         int[] iArr = f.a.z;
-        j9.a G = j9.a.G(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) G.c;
+        j4.c E = j4.c.E(context, attributeSet, iArr, i9);
+        TypedArray typedArray = (TypedArray) E.c;
         View view2 = this.a;
-        r0.j0.j(view2, view2.getContext(), iArr, attributeSet, (TypedArray) G.c, i10);
+        r0.j0.j(view2, view2.getContext(), iArr, attributeSet, (TypedArray) E.c, i9);
         try {
             if (typedArray.hasValue(0)) {
                 this.c = typedArray.getResourceId(0, -1);
                 r rVar = this.b;
                 Context context2 = view.getContext();
-                int i12 = this.c;
+                int i11 = this.c;
                 synchronized (rVar) {
-                    i11 = rVar.a.i(context2, i12);
+                    i10 = rVar.a.i(context2, i11);
                 }
-                if (i11 != null) {
-                    g(i11);
+                if (i10 != null) {
+                    g(i10);
                 }
             }
             if (typedArray.hasValue(1)) {
-                ColorStateList x8 = G.x(1);
-                int i13 = Build.VERSION.SDK_INT;
-                r0.b0.g(view, x8);
-                if (i13 == 21) {
+                ColorStateList v = E.v(1);
+                int i12 = Build.VERSION.SDK_INT;
+                r0.b0.g(view, v);
+                if (i12 == 21) {
                     Drawable background = view.getBackground();
                     if (r0.b0.c(view) == null && r0.b0.d(view) == null) {
                         z10 = false;
@@ -134,9 +134,9 @@ public final class n {
             }
             if (typedArray.hasValue(2)) {
                 PorterDuff.Mode b10 = m1.b(typedArray.getInt(2, -1), null);
-                int i14 = Build.VERSION.SDK_INT;
+                int i13 = Build.VERSION.SDK_INT;
                 r0.b0.h(view, b10);
-                if (i14 == 21) {
+                if (i13 == 21) {
                     Drawable background2 = view.getBackground();
                     boolean z11 = (r0.b0.c(view) == null && r0.b0.d(view) == null) ? false : true;
                     if (background2 != null && z11) {
@@ -147,9 +147,9 @@ public final class n {
                     }
                 }
             }
-            G.I();
+            E.G();
         } catch (Throwable th) {
-            G.I();
+            E.G();
             throw th;
         }
     }
@@ -160,14 +160,14 @@ public final class n {
         a();
     }
 
-    public final void f(int i10) {
+    public final void f(int i9) {
         ColorStateList colorStateList;
-        this.c = i10;
+        this.c = i9;
         r rVar = this.b;
         if (rVar != null) {
             Context context = this.a.getContext();
             synchronized (rVar) {
-                colorStateList = rVar.a.i(context, i10);
+                colorStateList = rVar.a.i(context, i9);
             }
         } else {
             colorStateList = null;

@@ -9,10 +9,10 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import va.a;
-import y5.l;
+import ua.a;
+import x5.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class ThickLanguageIdentifier {
     public static boolean c;
@@ -46,8 +46,8 @@ public class ThickLanguageIdentifier {
                 try {
                     System.loadLibrary("language_id_l2c_jni");
                     c = true;
-                } catch (UnsatisfiedLinkError e9) {
-                    throw new a("Couldn't load language identification library.", e9);
+                } catch (UnsatisfiedLinkError e10) {
+                    throw new a("Couldn't load language identification library.", e10);
                 }
             }
         }
@@ -67,8 +67,8 @@ public class ThickLanguageIdentifier {
                 }
             } finally {
             }
-        } catch (IOException e10) {
-            throw new a("Couldn't open language identification model file", e10);
+        } catch (IOException e11) {
+            throw new a("Couldn't open language identification model file", e11);
         }
     }
 

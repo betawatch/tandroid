@@ -1,111 +1,87 @@
 package gh;
 
-import android.content.Context;
-import android.util.LongSparseArray;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.GiftAuctionController;
+import android.app.Activity;
+import android.view.View;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.n41;
-import org.telegram.ui.Components.qa;
-import org.telegram.ui.Components.yk0;
-import org.telegram.ui.Components.zk0;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.b21;
+import org.telegram.ui.Components.x60;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class f extends qa implements GiftAuctionController.OnActiveAuctionsUpdateListeners {
-    public final n41 T;
-    public final LongSparseArray U;
-    public ArrayList V;
-    public boolean W;
-    public b51 X;
+public final /* synthetic */ class f implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ TLObject n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(Context context) {
-        super(context, null, false, false, false, false, false, 2, null);
-        int i10 = 0;
-        this.U = new LongSparseArray();
-        this.V = new ArrayList();
-        setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.a7, false));
-        GiftAuctionController.getInstance(this.currentAccount).subscribeToActiveAuctionsUpdates(this);
-        this.H = false;
-        this.G = AndroidUtilities.dp(12.0f);
-        fixNavigationBar();
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        linearLayout.setClipChildren(false);
-        linearLayout.setClipToPadding(false);
-        linearLayout.setClickable(true);
-        this.T = n41.j(-1, linearLayout);
-        this.d.setPadding(this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f), this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f));
-        this.d.setOverScrollMode(2);
-        this.X.N(false);
-        ArrayList<GiftAuctionController.Auction> activeAuctions = GiftAuctionController.getInstance(this.currentAccount).getActiveAuctions();
-        int size = activeAuctions.size();
-        while (i10 < size) {
-            GiftAuctionController.Auction auction = activeAuctions.get(i10);
-            i10++;
-            GiftAuctionController.Auction auction2 = auction;
-            e eVar = new e(context, auction2);
-            eVar.a.setOnClickListener(new gg.f(this, context, auction2, 1));
-            linearLayout.addView(eVar, h7.z5.n(-1, -2));
-            this.U.put(auction2.giftId, eVar);
-        }
-        onActiveAuctionsUpdate(activeAuctions);
+    public /* synthetic */ f(r rVar, TLRPC.TL_error tL_error, TwoStepVerificationActivity twoStepVerificationActivity, Activity activity, boolean z10, long j10, TLObject tLObject) {
+        this.d = rVar;
+        this.e = tL_error;
+        this.f = twoStepVerificationActivity;
+        this.h = activity;
+        this.b = z10;
+        this.c = j10;
+        this.n = tLObject;
     }
 
-    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        GiftAuctionController.getInstance(this.currentAccount).unsubscribeFromActiveAuctionsUpdates(this);
-        super.dismiss();
-    }
-
-    @Override // org.telegram.messenger.GiftAuctionController.OnActiveAuctionsUpdateListeners
-    public final void onActiveAuctionsUpdate(List list) {
-        this.V = new ArrayList(list);
-        this.e.setTitle(z());
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            GiftAuctionController.Auction auction = (GiftAuctionController.Auction) it.next();
-            TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = auction.auctionStateActive;
-            int i10 = tL_starGiftAuctionState != null ? tL_starGiftAuctionState.next_round_at : 0;
-            e eVar = (e) this.U.get(auction.giftId);
-            if (eVar != null) {
-                eVar.b(this.W);
-                long max = Math.max(0, i10 - ConnectionsManager.getInstance(this.currentAccount).getCurrentTime());
-                eVar.a(max, this.W);
-                eVar.f.a(max);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                r.Y((r) this.d, (TLRPC.TL_error) this.e, (TwoStepVerificationActivity) this.f, (Activity) this.h, this.b, this.c, this.n);
+                break;
+            default:
+                final b21 b21Var = (b21) this.d;
+                org.telegram.ui.ActionBar.g1 g1Var = (org.telegram.ui.ActionBar.g1) this.e;
+                final x60 x60Var = (x60) this.f;
+                final TLRPC.User user = (TLRPC.User) this.h;
+                final TLRPC.Chat chat = (TLRPC.Chat) this.n;
+                boolean z10 = this.b;
+                final boolean z11 = !z10;
+                g1Var.setVisibility(0);
+                g1Var.setText(LocaleController.getString(!z10 ? R.string.UnbanUserMonoforum : R.string.BanUserMonoforum));
+                final long j10 = this.c;
+                g1Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.m11
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        b21 b21Var2 = b21.this;
+                        int i9 = b21Var2.b;
+                        x60Var.u();
+                        boolean z12 = z11;
+                        TLRPC.User user2 = user;
+                        if (!z12) {
+                            MessagesController.getInstance(i9).deleteParticipantFromChat(j10, user2, (TLRPC.Chat) null, false, false);
+                            return;
+                        }
+                        TLRPC.TL_channels_editBanned tL_channels_editBanned = new TLRPC.TL_channels_editBanned();
+                        tL_channels_editBanned.participant = MessagesController.getInputPeer(user2);
+                        tL_channels_editBanned.channel = MessagesController.getInputChannel(chat);
+                        tL_channels_editBanned.banned_rights = new TLRPC.TL_chatBannedRights();
+                        ConnectionsManager.getInstance(i9).sendRequest(tL_channels_editBanned, new w1(b21Var2, 15));
+                    }
+                });
+                break;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e3
-    public final void onOpenAnimationEnd() {
-        super.onOpenAnimationEnd();
-        this.W = true;
-    }
-
-    @Override // org.telegram.ui.Components.qa
-    public final yk0 w(zk0 zk0Var) {
-        b51 b51Var = new b51(this.d, getContext(), this.currentAccount, 0, true, new ch.c(this, 4), this.resourcesProvider);
-        this.X = b51Var;
-        b51Var.r = false;
-        return b51Var;
-    }
-
-    @Override // org.telegram.ui.Components.qa
-    public final CharSequence z() {
-        ArrayList arrayList = this.V;
-        if (arrayList == null) {
-            return null;
-        }
-        return LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveAuctionsTitle, Integer.valueOf(arrayList.size()));
+    public /* synthetic */ f(b21 b21Var, boolean z10, org.telegram.ui.ActionBar.g1 g1Var, x60 x60Var, long j10, TLRPC.User user, TLRPC.Chat chat) {
+        this.d = b21Var;
+        this.b = z10;
+        this.e = g1Var;
+        this.f = x60Var;
+        this.c = j10;
+        this.h = user;
+        this.n = chat;
     }
 }

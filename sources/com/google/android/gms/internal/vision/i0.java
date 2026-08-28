@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i0 implements k1 {
     public static final i0 b = new i0(0);
@@ -13,41 +13,41 @@ public final class i0 implements k1 {
     public static final i0 i = new i0(7);
     public final /* synthetic */ int a;
 
-    public /* synthetic */ i0(int i10) {
-        this.a = i10;
+    public /* synthetic */ i0(int i9) {
+        this.a = i9;
     }
 
     @Override // com.google.android.gms.internal.vision.k1
-    public final boolean zza(int i10) {
+    public final boolean zza(int i9) {
         j0 j0Var;
         k0 k0Var;
         switch (this.a) {
             case 0:
-                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : l.e : l.d : l.c : l.b) != null) {
+                if ((i9 != 0 ? i9 != 1 ? i9 != 2 ? i9 != 3 ? null : l.e : l.d : l.c : l.b) != null) {
                 }
                 break;
             case 1:
-                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : n.e : n.d : n.c : n.b) != null) {
+                if ((i9 != 0 ? i9 != 1 ? i9 != 2 ? i9 != 3 ? null : n.e : n.d : n.c : n.b) != null) {
                 }
                 break;
             case 2:
-                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? null : q.d : q.c : q.b) != null) {
+                if ((i9 != 0 ? i9 != 1 ? i9 != 2 ? null : q.d : q.c : q.b) != null) {
                 }
                 break;
             case 3:
-                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : r.e : r.d : r.c : r.b) != null) {
+                if ((i9 != 0 ? i9 != 1 ? i9 != 2 ? i9 != 3 ? null : r.e : r.d : r.c : r.b) != null) {
                 }
                 break;
             case 4:
-                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : s.e : s.d : s.c : s.b) != null) {
+                if ((i9 != 0 ? i9 != 1 ? i9 != 2 ? i9 != 3 ? null : s.e : s.d : s.c : s.b) != null) {
                 }
                 break;
             case 5:
-                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : x.e : x.d : x.c : x.b) != null) {
+                if ((i9 != 0 ? i9 != 1 ? i9 != 2 ? i9 != 3 ? null : x.e : x.d : x.c : x.b) != null) {
                 }
                 break;
             case 6:
-                switch (i10) {
+                switch (i9) {
                     case 0:
                         j0Var = j0.b;
                         break;
@@ -105,7 +105,7 @@ public final class i0 implements k1 {
                 }
                 break;
             default:
-                switch (i10) {
+                switch (i9) {
                     case 0:
                         k0Var = k0.b;
                         break;

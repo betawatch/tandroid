@@ -1,43 +1,53 @@
 package org.telegram.ui.Components;
 
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class nm0 extends f2.l {
-    @Override // f2.l, f2.r1
-    public final boolean r(f2.o1 o1Var, d5.p pVar, int i10, int i11, int i12, int i13) {
-        tm0 tm0Var;
-        sm0 sm0Var;
-        View view = o1Var.a;
-        if ((view instanceof tm0) && (sm0Var = (tm0Var = (tm0) view).a) != null) {
-            sm0Var.i = sm0Var.N;
-            sm0Var.g = sm0Var.O;
-            sm0Var.h = sm0Var.P;
-            tm0Var.b.d(0.0f, true);
-            tm0Var.invalidate();
-        }
-        int translationX = i10 + ((int) view.getTranslationX());
-        int translationY = i11 + ((int) view.getTranslationY());
-        R(o1Var);
-        int i14 = i12 - translationX;
-        int i15 = i13 - translationY;
-        if (i14 == 0 && i15 == 0) {
-            v(o1Var);
-            return false;
-        }
-        if (i14 != 0) {
-            view.setTranslationX(-i14);
-        }
-        if (i15 != 0) {
-            view.setTranslationY(-i15);
-        }
-        this.r.add(new f2.k(o1Var, translationX, translationY, i12, i13));
-        return true;
+public final class nm0 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ mm0 a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ TLRPC.Reaction c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c2[] d;
+    public final /* synthetic */ View e;
+
+    public nm0(mm0 mm0Var, int i9, TLRPC.Reaction reaction, org.telegram.ui.ActionBar.c2[] c2VarArr, View view) {
+        this.a = mm0Var;
+        this.b = i9;
+        this.c = reaction;
+        this.d = c2VarArr;
+        this.e = view;
     }
 
-    @Override // f2.r1
-    public final boolean t(f2.o1 o1Var) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i9, KeyEvent keyEvent) {
+        if (i9 != 6) {
+            return false;
+        }
+        mm0 mm0Var = this.a;
+        String obj = mm0Var.getText().toString();
+        if (obj.length() > 12) {
+            AndroidUtilities.shakeView(mm0Var);
+            return true;
+        }
+        MessagesController.getInstance(this.b).renameSavedReactionTag(hg.r0.d(this.c), obj);
+        org.telegram.ui.ActionBar.c2[] c2VarArr = this.d;
+        org.telegram.ui.ActionBar.c2 c2Var = c2VarArr[0];
+        if (c2Var != null) {
+            c2Var.dismiss();
+        }
+        if (c2VarArr[0] == sm0.D) {
+            sm0.D = null;
+        }
+        View view = this.e;
+        if (view != null) {
+            view.requestFocus();
+        }
         return true;
     }
 }

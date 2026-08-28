@@ -23,7 +23,7 @@ public abstract class x2 implements e2 {
     }
 
     @Override // j$.util.stream.e2
-    public e2 a(int i10) {
+    public e2 a(int i9) {
         throw new IndexOutOfBoundsException();
     }
 
@@ -32,6 +32,6 @@ public abstract class x2 implements e2 {
         return (Object[]) intFunction.apply(0);
     }
 
-    public final void c(int i10, Object obj) {
+    public final void c(int i9, Object obj) {
     }
 }

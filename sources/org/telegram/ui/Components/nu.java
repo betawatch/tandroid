@@ -1,21 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class nu extends cv {
-    public final /* synthetic */ cv S;
+public final class nu extends av {
+    public final /* synthetic */ dv h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nu(cv cvVar, org.telegram.ui.ActionBar.n2 n2Var, Context context, org.telegram.ui.ActionBar.c6 c6Var, ArrayList arrayList) {
-        super(n2Var, context, c6Var, arrayList);
-        this.S = cvVar;
-    }
-
-    @Override // org.telegram.ui.Components.cv
-    public final void Y() {
-        this.S.dismiss();
+    public nu(int i9, ArrayList arrayList, dv dvVar) {
+        super(i9, arrayList, dvVar);
+        this.h = dvVar;
     }
 }

@@ -1,6 +1,6 @@
 package androidx.lifecycle;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class u {
     public n a;
@@ -9,7 +9,7 @@ public final class u {
     public final void a(t tVar, m mVar) {
         n a2 = mVar.a();
         n state1 = this.a;
-        kotlin.jvm.internal.j.e(state1, "state1");
+        kotlin.jvm.internal.i.e(state1, "state1");
         if (a2.compareTo(state1) < 0) {
             state1 = a2;
         }

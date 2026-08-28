@@ -14,7 +14,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class z {
     public static final long i = TimeUnit.HOURS.toSeconds(8);
@@ -40,15 +40,15 @@ public final class z {
     public static void a(Task task) {
         try {
             Tasks.await(task, 30L, TimeUnit.SECONDS);
-        } catch (InterruptedException | TimeoutException e9) {
-            throw new IOException("SERVICE_NOT_AVAILABLE", e9);
-        } catch (ExecutionException e10) {
-            Throwable cause = e10.getCause();
+        } catch (InterruptedException | TimeoutException e10) {
+            throw new IOException("SERVICE_NOT_AVAILABLE", e10);
+        } catch (ExecutionException e11) {
+            Throwable cause = e11.getCause();
             if (cause instanceof IOException) {
                 throw ((IOException) cause);
             }
             if (!(cause instanceof RuntimeException)) {
-                throw new IOException(e10);
+                throw new IOException(e11);
             }
             throw ((RuntimeException) cause);
         }
@@ -67,7 +67,7 @@ public final class z {
         mVar.getClass();
         Bundle bundle = new Bundle();
         bundle.putString("gcm.topic", "/topics/" + str);
-        a(mVar.n(mVar.A(a2, "/topics/" + str, bundle)));
+        a(mVar.m(mVar.A(a2, "/topics/" + str, bundle)));
     }
 
     public final void c(String str) {
@@ -77,7 +77,7 @@ public final class z {
         Bundle bundle = new Bundle();
         bundle.putString("gcm.topic", "/topics/" + str);
         bundle.putString("delete", "1");
-        a(mVar.n(mVar.A(a2, "/topics/" + str, bundle)));
+        a(mVar.m(mVar.A(a2, "/topics/" + str, bundle)));
     }
 
     public final void e(w wVar) {
@@ -153,15 +153,15 @@ public final class z {
                     this.h.c(a2);
                     e(a2);
                 }
-            } catch (IOException e9) {
-                if (!"SERVICE_NOT_AVAILABLE".equals(e9.getMessage()) && !"INTERNAL_SERVER_ERROR".equals(e9.getMessage())) {
-                    if (e9.getMessage() != null) {
-                        throw e9;
+            } catch (IOException e10) {
+                if (!"SERVICE_NOT_AVAILABLE".equals(e10.getMessage()) && !"INTERNAL_SERVER_ERROR".equals(e10.getMessage())) {
+                    if (e10.getMessage() != null) {
+                        throw e10;
                     }
                     Log.e("FirebaseMessaging", "Topic operation failed without exception message. Will retry Topic operation.");
                     return false;
                 }
-                Log.e("FirebaseMessaging", "Topic operation failed: " + e9.getMessage() + ". Will retry Topic operation.");
+                Log.e("FirebaseMessaging", "Topic operation failed: " + e10.getMessage() + ". Will retry Topic operation.");
                 return false;
             }
         }

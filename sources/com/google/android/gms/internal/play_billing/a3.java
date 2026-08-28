@@ -1,27 +1,48 @@
 package com.google.android.gms.internal.play_billing;
 
-import sun.misc.Unsafe;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class a3 {
-    public final Unsafe a;
-
-    public a3(Unsafe unsafe) {
-        this.a = unsafe;
+public final class a3 extends b3 {
+    @Override // com.google.android.gms.internal.play_billing.b3
+    public final double a(Object obj, long j10) {
+        return Double.longBitsToDouble(this.a.getLong(obj, j10));
     }
 
-    public abstract double a(Object obj, long j10);
+    @Override // com.google.android.gms.internal.play_billing.b3
+    public final float b(Object obj, long j10) {
+        return Float.intBitsToFloat(this.a.getInt(obj, j10));
+    }
 
-    public abstract float b(Object obj, long j10);
+    @Override // com.google.android.gms.internal.play_billing.b3
+    public final void c(Object obj, long j10, boolean z10) {
+        if (c3.g) {
+            c3.c(obj, j10, z10 ? (byte) 1 : (byte) 0);
+        } else {
+            c3.d(obj, j10, z10 ? (byte) 1 : (byte) 0);
+        }
+    }
 
-    public abstract void c(Object obj, long j10, boolean z10);
+    @Override // com.google.android.gms.internal.play_billing.b3
+    public final void d(Object obj, long j10, byte b10) {
+        if (c3.g) {
+            c3.c(obj, j10, b10);
+        } else {
+            c3.d(obj, j10, b10);
+        }
+    }
 
-    public abstract void d(Object obj, long j10, byte b10);
+    @Override // com.google.android.gms.internal.play_billing.b3
+    public final void e(Object obj, long j10, double d) {
+        this.a.putLong(obj, j10, Double.doubleToLongBits(d));
+    }
 
-    public abstract void e(Object obj, long j10, double d);
+    @Override // com.google.android.gms.internal.play_billing.b3
+    public final void f(Object obj, long j10, float f10) {
+        this.a.putInt(obj, j10, Float.floatToIntBits(f10));
+    }
 
-    public abstract void f(Object obj, long j10, float f10);
-
-    public abstract boolean g(Object obj, long j10);
+    @Override // com.google.android.gms.internal.play_billing.b3
+    public final boolean g(Object obj, long j10) {
+        return c3.g ? c3.m(obj, j10) : c3.n(obj, j10);
+    }
 }

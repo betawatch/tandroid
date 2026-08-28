@@ -13,14 +13,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class vc extends FrameLayout {
     public final int a;
-    public final org.telegram.ui.ActionBar.c6 b;
+    public final org.telegram.ui.ActionBar.b6 b;
     public final ArrayList c;
-    public final ta1 d;
-    public final org.telegram.ui.Components.h00 e;
+    public final va1 d;
+    public final org.telegram.ui.Components.e00 e;
     public boolean f;
     public final tc h;
     public boolean n;
@@ -30,42 +30,42 @@ public final class vc extends FrameLayout {
     public final HashMap w;
     public final HashMap x;
 
-    public vc(int i10, Activity activity, org.telegram.ui.ActionBar.c6 c6Var) {
+    public vc(int i9, Activity activity, org.telegram.ui.ActionBar.b6 b6Var) {
         super(activity);
         this.c = new ArrayList();
         this.w = new HashMap();
         this.x = new HashMap();
-        this.a = i10;
-        this.b = c6Var;
-        org.telegram.ui.Components.h00 h00Var = new org.telegram.ui.Components.h00(getContext(), c6Var);
-        this.e = h00Var;
-        h00Var.setViewType(14);
-        h00Var.setVisibility(0);
-        addView(h00Var, h7.z5.d(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
-        ta1 ta1Var = new ta1(activity, 3, c6Var);
-        this.d = ta1Var;
-        ta1Var.setClipToPadding(false);
-        ta1Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f));
+        this.a = i9;
+        this.b = b6Var;
+        org.telegram.ui.Components.e00 e00Var = new org.telegram.ui.Components.e00(getContext(), b6Var);
+        this.e = e00Var;
+        e00Var.setViewType(14);
+        e00Var.setVisibility(0);
+        addView(e00Var, g7.e6.d(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
+        va1 va1Var = new va1(activity, 4, b6Var);
+        this.d = va1Var;
+        va1Var.setClipToPadding(false);
+        va1Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f));
         getContext();
-        f2.k0 k0Var = new f2.k0();
-        k0Var.j1(0);
-        ta1Var.setLayoutManager(k0Var);
-        ta1Var.setAlpha(0.0f);
-        tc tcVar = new tc(this, i10, c6Var);
+        f2.m0 m0Var = new f2.m0();
+        m0Var.j1(0);
+        va1Var.setLayoutManager(m0Var);
+        va1Var.setAlpha(0.0f);
+        tc tcVar = new tc(this, i9, b6Var);
         this.h = tcVar;
-        ta1Var.setAdapter(tcVar);
-        addView(ta1Var, h7.z5.c(130.0f, -1));
-        ta1Var.setOnItemClickListener(new i(this, 2));
-        ChatThemeController chatThemeController = ChatThemeController.getInstance(i10);
+        va1Var.setAdapter(tcVar);
+        addView(va1Var, g7.e6.c(130.0f, -1));
+        va1Var.setOnItemClickListener(new i(this, 2));
+        ChatThemeController chatThemeController = ChatThemeController.getInstance(i9);
         chatThemeController.preloadAllWallpaperThumbs(true);
         chatThemeController.preloadAllWallpaperThumbs(false);
         chatThemeController.preloadAllWallpaperImages(true);
         chatThemeController.preloadAllWallpaperImages(false);
-        chatThemeController.requestAllChatThemes(new uc(this, i10), true);
+        chatThemeController.requestAllChatThemes(new uc(this, i9), true);
         if (this.n) {
-            AndroidUtilities.updateViewVisibilityAnimated(h00Var, false, 1.0f, true, false);
+            AndroidUtilities.updateViewVisibilityAnimated(e00Var, false, 1.0f, true, false);
         } else {
-            AndroidUtilities.updateViewVisibilityAnimated(h00Var, true, 1.0f, true, false);
+            AndroidUtilities.updateViewVisibilityAnimated(e00Var, true, 1.0f, true, false);
         }
     }
 
@@ -73,48 +73,48 @@ public final class vc extends FrameLayout {
         ArrayList arrayList;
         int R;
         this.s = str;
-        int i10 = -1;
-        int i11 = 0;
+        int i9 = -1;
+        int i10 = 0;
         while (true) {
             arrayList = this.c;
             boolean z11 = true;
-            if (i11 >= arrayList.size()) {
+            if (i10 >= arrayList.size()) {
                 break;
             }
-            org.telegram.ui.Components.zo zoVar = (org.telegram.ui.Components.zo) arrayList.get(i11);
-            if (!TextUtils.equals(this.s, zoVar.a()) && (!TextUtils.isEmpty(str) || !zoVar.a.a)) {
+            org.telegram.ui.Components.bp bpVar = (org.telegram.ui.Components.bp) arrayList.get(i10);
+            if (!TextUtils.equals(this.s, bpVar.a()) && (!TextUtils.isEmpty(str) || !bpVar.a.a)) {
                 z11 = false;
             }
-            zoVar.d = z11;
+            bpVar.d = z11;
             if (z11) {
-                i10 = i11;
+                i9 = i10;
             }
-            i11++;
+            i10++;
         }
-        ta1 ta1Var = this.d;
-        if (i10 >= 0 && !z10 && (ta1Var.getLayoutManager() instanceof f2.k0)) {
-            ((f2.k0) ta1Var.getLayoutManager()).h1(i10, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
+        va1 va1Var = this.d;
+        if (i9 >= 0 && !z10 && (va1Var.getLayoutManager() instanceof f2.m0)) {
+            ((f2.m0) va1Var.getLayoutManager()).h1(i9, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
         }
-        for (int i12 = 0; i12 < ta1Var.getChildCount(); i12++) {
-            View childAt = ta1Var.getChildAt(i12);
-            if ((childAt instanceof org.telegram.ui.Components.b11) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
-                ((org.telegram.ui.Components.b11) childAt).g(((org.telegram.ui.Components.zo) arrayList.get(R)).d, true);
+        for (int i11 = 0; i11 < va1Var.getChildCount(); i11++) {
+            View childAt = va1Var.getChildAt(i11);
+            if ((childAt instanceof org.telegram.ui.Components.a11) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
+                ((org.telegram.ui.Components.a11) childAt).g(((org.telegram.ui.Components.bp) arrayList.get(R)).d, true);
             }
         }
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), i10);
     }
 
     public void setGalleryWallpaper(TLRPC.WallPaper wallPaper) {
         this.v = wallPaper;
-        AndroidUtilities.forEachViews((RecyclerView) this.d, (d5.d) new rc(this, 1));
+        AndroidUtilities.forEachViews((RecyclerView) this.d, (d5.d) new qc(this, 1));
         if (this.v != null) {
             ArrayList arrayList = this.c;
-            if ((arrayList.isEmpty() || ((org.telegram.ui.Components.zo) arrayList.get(0)).a.a) && this.f) {
-                arrayList.add(0, new org.telegram.ui.Components.zo(org.telegram.ui.ActionBar.b4.a(this.a)));
+            if ((arrayList.isEmpty() || ((org.telegram.ui.Components.bp) arrayList.get(0)).a.a) && this.f) {
+                arrayList.add(0, new org.telegram.ui.Components.bp(org.telegram.ui.ActionBar.b4.a(this.a)));
                 this.h.l();
             }
         }

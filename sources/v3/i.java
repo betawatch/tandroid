@@ -1,11 +1,11 @@
 package v3;
 
-import d5.z;
+import d5.y;
 import m3.m;
 import m3.w;
-import org.telegram.ui.i6;
+import org.telegram.ui.Cells.e3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class i {
     public w b;
@@ -20,19 +20,19 @@ public abstract class i {
     public boolean l;
     public boolean m;
     public final e a = new e();
-    public i6 j = new i6(27);
+    public e3 j = new e3(26);
 
     public void a(long j10) {
         this.g = j10;
     }
 
-    public abstract long b(z zVar);
+    public abstract long b(y yVar);
 
-    public abstract boolean c(z zVar, long j10, i6 i6Var);
+    public abstract boolean c(y yVar, long j10, e3 e3Var);
 
     public void d(boolean z10) {
         if (z10) {
-            this.j = new i6(27);
+            this.j = new e3(26);
             this.f = 0L;
             this.h = 0;
         } else {

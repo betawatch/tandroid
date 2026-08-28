@@ -17,20 +17,20 @@ public final class g6 extends u5 {
 
     @Override // j$.util.stream.c5, j$.util.stream.j5
     public final void end() {
-        int i10 = 0;
+        int i9 = 0;
         Arrays.sort(this.c, 0, this.d);
         long j10 = this.d;
         j5 j5Var = this.a;
         j5Var.o(j10);
         if (!this.b) {
-            while (i10 < this.d) {
-                j5Var.accept(this.c[i10]);
-                i10++;
+            while (i9 < this.d) {
+                j5Var.accept(this.c[i9]);
+                i9++;
             }
         } else {
-            while (i10 < this.d && !j5Var.q()) {
-                j5Var.accept(this.c[i10]);
-                i10++;
+            while (i9 < this.d && !j5Var.q()) {
+                j5Var.accept(this.c[i9]);
+                i9++;
             }
         }
         j5Var.end();
@@ -40,8 +40,8 @@ public final class g6 extends u5 {
     @Override // j$.util.stream.g5, j$.util.stream.j5
     public final void accept(double d) {
         double[] dArr = this.c;
-        int i10 = this.d;
-        this.d = i10 + 1;
-        dArr[i10] = d;
+        int i9 = this.d;
+        this.d = i9 + 1;
+        dArr[i9] = d;
     }
 }

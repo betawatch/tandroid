@@ -9,7 +9,7 @@ import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class e {
     public static final int[] A;
@@ -71,22 +71,22 @@ public final class e {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static int c(int i10, int i11, int i12, int i13) {
-        int i14;
+    public static int c(int i9, int i10, int i11, int i12) {
+        int i13;
+        d5.a.h(i9, 4);
         d5.a.h(i10, 4);
         d5.a.h(i11, 4);
         d5.a.h(i12, 4);
-        d5.a.h(i13, 4);
-        if (i13 != 0 && i13 != 1) {
-            if (i13 == 2) {
-                i14 = 127;
-            } else if (i13 == 3) {
-                i14 = 0;
+        if (i12 != 0 && i12 != 1) {
+            if (i12 == 2) {
+                i13 = 127;
+            } else if (i12 == 3) {
+                i13 = 0;
             }
-            return Color.argb(i14, i10 <= 1 ? 255 : 0, i11 <= 1 ? 255 : 0, i12 <= 1 ? 0 : 255);
+            return Color.argb(i13, i9 <= 1 ? 255 : 0, i10 <= 1 ? 255 : 0, i11 <= 1 ? 0 : 255);
         }
-        i14 = 255;
-        return Color.argb(i14, i10 <= 1 ? 255 : 0, i11 <= 1 ? 255 : 0, i12 <= 1 ? 0 : 255);
+        i13 = 255;
+        return Color.argb(i13, i9 <= 1 ? 255 : 0, i10 <= 1 ? 255 : 0, i11 <= 1 ? 0 : 255);
     }
 
     public final void a(char c10) {
@@ -160,16 +160,16 @@ public final class e {
         this.l = 0;
         this.m = 0;
         this.n = 0;
-        int i10 = x;
-        this.o = i10;
+        int i9 = x;
+        this.o = i9;
         this.s = w;
-        this.u = i10;
+        this.u = i9;
     }
 
     public final void e(boolean z10, boolean z11) {
-        int i10 = this.p;
+        int i9 = this.p;
         SpannableStringBuilder spannableStringBuilder = this.b;
-        if (i10 != -1) {
+        if (i9 != -1) {
             if (!z10) {
                 spannableStringBuilder.setSpan(new StyleSpan(2), this.p, spannableStringBuilder.length(), 33);
                 this.p = -1;
@@ -190,22 +190,22 @@ public final class e {
         }
     }
 
-    public final void f(int i10, int i11) {
-        int i12 = this.r;
+    public final void f(int i9, int i10) {
+        int i11 = this.r;
         SpannableStringBuilder spannableStringBuilder = this.b;
-        if (i12 != -1 && this.s != i10) {
+        if (i11 != -1 && this.s != i9) {
             spannableStringBuilder.setSpan(new ForegroundColorSpan(this.s), this.r, spannableStringBuilder.length(), 33);
         }
-        if (i10 != w) {
+        if (i9 != w) {
             this.r = spannableStringBuilder.length();
-            this.s = i10;
+            this.s = i9;
         }
-        if (this.t != -1 && this.u != i11) {
+        if (this.t != -1 && this.u != i10) {
             spannableStringBuilder.setSpan(new BackgroundColorSpan(this.u), this.t, spannableStringBuilder.length(), 33);
         }
-        if (i11 != x) {
+        if (i10 != x) {
             this.t = spannableStringBuilder.length();
-            this.u = i11;
+            this.u = i10;
         }
     }
 }

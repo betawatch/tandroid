@@ -1,26 +1,58 @@
 package o5;
 
-import android.util.LruCache;
-import java.util.ArrayList;
+import android.util.Log;
+import c2.u0;
+import com.google.android.gms.common.api.Status;
+import kh.j2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class q extends LruCache {
-    public final /* synthetic */ c a;
+public final /* synthetic */ class q {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q(c cVar) {
-        super(20);
-        this.a = cVar;
+    public /* synthetic */ q(c cVar, int i9) {
+        this.a = i9;
+        this.b = cVar;
     }
 
-    @Override // android.util.LruCache
-    public final /* bridge */ /* synthetic */ void entryRemoved(boolean z10, Object obj, Object obj2, Object obj3) {
-        ArrayList arrayList = this.a.g;
-        Integer num = (Integer) obj;
-        if (z10) {
-            y5.l.h(arrayList);
-            arrayList.add(num);
+    public final void a(com.google.android.gms.common.api.q qVar) {
+        m mVar = (m) qVar;
+        switch (this.a) {
+            case 0:
+                Status i9 = mVar.i();
+                int i10 = i9.a;
+                c cVar = this.b;
+                if (i10 != 0) {
+                    q5.b bVar = cVar.a;
+                    Log.w(bVar.a, bVar.d("Error fetching queue item ids, statusCode=" + i10 + ", statusMessage=" + i9.b, new Object[0]));
+                }
+                cVar.l = null;
+                if (!cVar.h.isEmpty()) {
+                    u0 u0Var = cVar.i;
+                    j2 j2Var = cVar.j;
+                    u0Var.removeCallbacks(j2Var);
+                    u0Var.postDelayed(j2Var, 500L);
+                    break;
+                }
+                break;
+            default:
+                Status i11 = mVar.i();
+                int i12 = i11.a;
+                c cVar2 = this.b;
+                if (i12 != 0) {
+                    q5.b bVar2 = cVar2.a;
+                    Log.w(bVar2.a, bVar2.d("Error fetching queue items, statusCode=" + i12 + ", statusMessage=" + i11.b, new Object[0]));
+                }
+                cVar2.k = null;
+                if (!cVar2.h.isEmpty()) {
+                    u0 u0Var2 = cVar2.i;
+                    j2 j2Var2 = cVar2.j;
+                    u0Var2.removeCallbacks(j2Var2);
+                    u0Var2.postDelayed(j2Var2, 500L);
+                    break;
+                }
+                break;
         }
     }
 }

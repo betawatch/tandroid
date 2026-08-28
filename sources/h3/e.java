@@ -1,12 +1,12 @@
 package h3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class e implements h2, d2 {
     private i2 configuration;
     private int index;
     private long lastResetPositionUs;
-    private i3.k playerId;
+    private i3.l playerId;
     private int state;
     private j4.b1 stream;
     private t0[] streamFormats;
@@ -17,12 +17,12 @@ public abstract class e implements h2, d2 {
     private final u0 formatHolder = new u0();
     private long readingPositionUs = Long.MIN_VALUE;
 
-    public e(int i10) {
-        this.trackType = i10;
+    public e(int i9) {
+        this.trackType = i9;
     }
 
-    public final n createRendererException(Throwable th, t0 t0Var, int i10) {
-        return createRendererException(th, t0Var, false, i10);
+    public final n createRendererException(Throwable th, t0 t0Var, int i9) {
+        return createRendererException(th, t0Var, false, i9);
     }
 
     public final void disable() {
@@ -77,10 +77,10 @@ public abstract class e implements h2, d2 {
     @Override // h3.h2
     public abstract String getName();
 
-    public final i3.k getPlayerId() {
-        i3.k kVar = this.playerId;
-        kVar.getClass();
-        return kVar;
+    public final i3.l getPlayerId() {
+        i3.l lVar = this.playerId;
+        lVar.getClass();
+        return lVar;
     }
 
     public final long getReadingPositionUs() {
@@ -110,9 +110,9 @@ public abstract class e implements h2, d2 {
         return this.readingPositionUs == Long.MIN_VALUE;
     }
 
-    public final void init(int i10, i3.k kVar) {
-        this.index = i10;
-        this.playerId = kVar;
+    public final void init(int i9, i3.l lVar) {
+        this.index = i9;
+        this.playerId = lVar;
     }
 
     public final boolean isCurrentStreamFinal() {
@@ -129,7 +129,7 @@ public abstract class e implements h2, d2 {
         }
         j4.b1 b1Var = this.stream;
         b1Var.getClass();
-        return b1Var.e();
+        return b1Var.f();
     }
 
     public final void maybeThrowStreamError() {
@@ -144,11 +144,11 @@ public abstract class e implements h2, d2 {
 
     public abstract void onStreamChanged(t0[] t0VarArr, long j10, long j11);
 
-    public final int readSource(u0 u0Var, k3.i iVar, int i10) {
+    public final int readSource(u0 u0Var, k3.i iVar, int i9) {
         j4.b1 b1Var = this.stream;
         b1Var.getClass();
-        int i11 = b1Var.i(u0Var, iVar, i10);
-        if (i11 == -4) {
+        int l10 = b1Var.l(u0Var, iVar, i9);
+        if (l10 == -4) {
             if (iVar.isEndOfStream()) {
                 this.readingPositionUs = Long.MIN_VALUE;
                 return this.streamIsFinal ? -4 : -3;
@@ -156,9 +156,9 @@ public abstract class e implements h2, d2 {
             long j10 = iVar.d + this.streamOffsetUs;
             iVar.d = j10;
             this.readingPositionUs = Math.max(this.readingPositionUs, j10);
-            return i11;
+            return l10;
         }
-        if (i11 == -5) {
+        if (l10 == -5) {
             t0 t0Var = u0Var.b;
             t0Var.getClass();
             long j11 = t0Var.F;
@@ -168,7 +168,7 @@ public abstract class e implements h2, d2 {
                 u0Var.b = new t0(a2);
             }
         }
-        return i11;
+        return l10;
     }
 
     public abstract void render(long j10, long j11);
@@ -206,7 +206,7 @@ public abstract class e implements h2, d2 {
     public int skipSource(long j10) {
         j4.b1 b1Var = this.stream;
         b1Var.getClass();
-        return b1Var.f(j10 - this.streamOffsetUs);
+        return b1Var.j(j10 - this.streamOffsetUs);
     }
 
     public final void start() {
@@ -231,20 +231,20 @@ public abstract class e implements h2, d2 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final n createRendererException(Throwable th, t0 t0Var, boolean z10, int i10) {
-        int i11;
+    public final n createRendererException(Throwable th, t0 t0Var, boolean z10, int i9) {
+        int i10;
         if (t0Var != null && !this.throwRendererExceptionIsExecuting) {
             this.throwRendererExceptionIsExecuting = true;
             try {
-                i11 = supportsFormat(t0Var) & 7;
+                i10 = supportsFormat(t0Var) & 7;
             } catch (n unused) {
             } finally {
                 this.throwRendererExceptionIsExecuting = false;
             }
-            return new n(1, th, i10, getName(), getIndex(), t0Var, t0Var != null ? 4 : i11, z10);
+            return new n(1, th, i9, getName(), getIndex(), t0Var, t0Var != null ? 4 : i10, z10);
         }
-        i11 = 4;
-        return new n(1, th, i10, getName(), getIndex(), t0Var, t0Var != null ? 4 : i11, z10);
+        i10 = 4;
+        return new n(1, th, i9, getName(), getIndex(), t0Var, t0Var != null ? 4 : i10, z10);
     }
 
     public final h2 getCapabilities() {
@@ -260,7 +260,7 @@ public abstract class e implements h2, d2 {
     public void onStopped() {
     }
 
-    public void handleMessage(int i10, Object obj) {
+    public void handleMessage(int i9, Object obj) {
     }
 
     public void onEnabled(boolean z10, boolean z11) {

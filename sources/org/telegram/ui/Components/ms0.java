@@ -1,24 +1,30 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.os.Bundle;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ms0 extends org.telegram.ui.tn {
-    public final /* synthetic */ hu0 f;
+public final class ms0 extends bu0 {
+    public final /* synthetic */ eu0 C;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ms0(hu0 hu0Var, Context context, org.telegram.ui.ActionBar.b5 b5Var, Bundle bundle) {
-        super(context, b5Var, bundle);
-        this.f = hu0Var;
+    public ms0(eu0 eu0Var, Context context) {
+        super(eu0Var, context, 0, false);
+        this.C = eu0Var;
     }
 
-    @Override // org.telegram.ui.tn
-    public final void b(boolean z10) {
-        org.telegram.ui.ActionBar.v0 v0Var = this.f.j0;
-        if (v0Var != null) {
-            v0Var.setShowSearchProgress(z10);
+    @Override // org.telegram.ui.Components.bu0, f2.r0
+    public final void l() {
+        super.l();
+        eu0 eu0Var = this.C;
+        xs0 W = eu0Var.W(8);
+        if (W != null && W.r.getVisibility() == 0) {
+            eu0Var.W.l();
+        }
+        if (W != null) {
+            or0 or0Var = W.w;
+            ih.n6 n6Var = this.s;
+            or0Var.e(n6Var != null && (n6Var.k() || (eu0Var.i0() && this.s.g() > 0)), true);
         }
     }
 }

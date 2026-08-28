@@ -14,7 +14,7 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.view.Gravity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class a extends Drawable {
     public final Bitmap a;
@@ -41,9 +41,9 @@ public final class a extends Drawable {
             this.k = -1;
             this.e = null;
         } else {
-            int i10 = this.b;
-            this.k = bitmap.getScaledWidth(i10);
-            this.l = bitmap.getScaledHeight(i10);
+            int i9 = this.b;
+            this.k = bitmap.getScaledWidth(i9);
+            this.l = bitmap.getScaledHeight(i9);
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
             this.e = new BitmapShader(bitmap, tileMode, tileMode);
         }
@@ -127,10 +127,10 @@ public final class a extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    public final void setAlpha(int i9) {
         Paint paint = this.d;
-        if (i10 != paint.getAlpha()) {
-            paint.setAlpha(i10);
+        if (i9 != paint.getAlpha()) {
+            paint.setAlpha(i9);
             invalidateSelf();
         }
     }

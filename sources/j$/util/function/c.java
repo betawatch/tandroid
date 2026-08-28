@@ -8,8 +8,8 @@ public final /* synthetic */ class c implements Function {
     public final /* synthetic */ Function b;
     public final /* synthetic */ Function c;
 
-    public /* synthetic */ c(Function function, Function function2, int i10) {
-        this.a = i10;
+    public /* synthetic */ c(Function function, Function function2, int i9) {
+        this.a = i9;
         this.b = function;
         this.c = function2;
     }

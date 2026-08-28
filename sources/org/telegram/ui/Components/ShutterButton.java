@@ -16,21 +16,21 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class ShutterButton extends View {
     public Drawable a;
     public DecelerateInterpolator b;
     public Paint c;
     public Paint d;
-    public nu0 e;
-    public ou0 f;
+    public ku0 e;
+    public lu0 f;
     public boolean h;
     public float n;
     public long r;
     public long s;
     public boolean v;
-    public mu0 w;
+    public ju0 w;
 
     private void setHighlighted(boolean z10) {
         AnimatorSet animatorSet = new AnimatorSet();
@@ -47,23 +47,23 @@ public class ShutterButton extends View {
         animatorSet.start();
     }
 
-    public final void a(ou0 ou0Var) {
-        if (this.f != ou0Var) {
-            this.f = ou0Var;
+    public final void a(lu0 lu0Var) {
+        if (this.f != lu0Var) {
+            this.f = lu0Var;
             this.r = System.currentTimeMillis();
             this.s = 0L;
-            if (this.f != ou0.b) {
+            if (this.f != lu0.b) {
                 this.n = 0.0f;
             }
             invalidate();
         }
     }
 
-    public nu0 getDelegate() {
+    public ku0 getDelegate() {
         return this.e;
     }
 
-    public ou0 getState() {
+    public lu0 getState() {
         return this.f;
     }
 
@@ -88,7 +88,7 @@ public class ShutterButton extends View {
         float f10 = measuredWidth;
         float f11 = measuredHeight;
         canvas.drawCircle(f10, f11, AndroidUtilities.dp(26.0f), paint2);
-        if (this.f != ou0.b) {
+        if (this.f != lu0.b) {
             if (this.n != 0.0f) {
                 canvas.drawCircle(f10, f11, AndroidUtilities.dp(26.5f) * scaleX, paint);
                 return;
@@ -122,7 +122,7 @@ public class ShutterButton extends View {
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
+    public final void onMeasure(int i9, int i10) {
         setMeasuredDimension(AndroidUtilities.dp(84.0f), AndroidUtilities.dp(84.0f));
     }
 
@@ -139,12 +139,12 @@ public class ShutterButton extends View {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        mu0 mu0Var = this.w;
-        float x8 = motionEvent.getX();
+        ju0 ju0Var = this.w;
+        float x10 = motionEvent.getX();
         float y10 = motionEvent.getY();
         int action = motionEvent.getAction();
         if (action == 0) {
-            AndroidUtilities.runOnUIThread(mu0Var, 800L);
+            AndroidUtilities.runOnUIThread(ju0Var, 800L);
             this.h = true;
             this.v = true;
             setHighlighted(true);
@@ -152,56 +152,56 @@ public class ShutterButton extends View {
         }
         if (action == 1) {
             setHighlighted(false);
-            AndroidUtilities.cancelRunOnUIThread(mu0Var);
+            AndroidUtilities.cancelRunOnUIThread(ju0Var);
             if (this.v) {
-                ((el) this.e).b();
+                ((il) this.e).b();
             }
         } else if (action == 2) {
-            if (x8 >= 0.0f && x8 <= getMeasuredWidth()) {
-                x8 = 0.0f;
+            if (x10 >= 0.0f && x10 <= getMeasuredWidth()) {
+                x10 = 0.0f;
             }
             if (y10 >= 0.0f && y10 <= getMeasuredHeight()) {
                 y10 = 0.0f;
             }
-            el elVar = (el) this.e;
-            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = elVar.e;
-            k81 k81Var = chatAttachAlertPhotoLayout.h0;
-            org.telegram.ui.ActionBar.c3 c3Var = elVar.d;
-            boolean z10 = c3Var.getWidth() < c3Var.getHeight();
-            float f10 = z10 ? x8 : y10;
-            float f11 = z10 ? y10 : x8;
-            if (elVar.b || Math.abs(f10) <= Math.abs(f11)) {
+            il ilVar = (il) this.e;
+            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ilVar.e;
+            i81 i81Var = chatAttachAlertPhotoLayout.h0;
+            org.telegram.ui.ActionBar.d3 d3Var = ilVar.d;
+            boolean z10 = d3Var.getWidth() < d3Var.getHeight();
+            float f10 = z10 ? x10 : y10;
+            float f11 = z10 ? y10 : x10;
+            if (ilVar.b || Math.abs(f10) <= Math.abs(f11)) {
                 if (f11 < 0.0f) {
                     boolean z11 = ChatAttachAlertPhotoLayout.m1;
-                    chatAttachAlertPhotoLayout.t0(true);
-                    k81Var.b((-f11) / AndroidUtilities.dp(200.0f), true);
-                    elVar.b = true;
+                    chatAttachAlertPhotoLayout.s0(true);
+                    i81Var.b((-f11) / AndroidUtilities.dp(200.0f), true);
+                    ilVar.b = true;
                     return true;
                 }
-                if (elVar.b) {
-                    k81Var.b(0.0f, true);
+                if (ilVar.b) {
+                    i81Var.b(0.0f, true);
                 }
-                if (x8 == 0.0f && y10 == 0.0f) {
-                    elVar.b = false;
+                if (x10 == 0.0f && y10 == 0.0f) {
+                    ilVar.b = false;
                 }
-                if (!elVar.b) {
-                    if (x8 == 0.0f) {
+                if (!ilVar.b) {
+                    if (x10 == 0.0f) {
                     }
-                    AndroidUtilities.cancelRunOnUIThread(mu0Var);
-                    if (this.f == ou0.b) {
+                    AndroidUtilities.cancelRunOnUIThread(ju0Var);
+                    if (this.f == lu0.b) {
                         this.v = false;
                         setHighlighted(false);
-                        el elVar2 = (el) this.e;
-                        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = elVar2.e;
-                        File file = elVar2.a;
+                        il ilVar2 = (il) this.e;
+                        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ilVar2.e;
+                        File file = ilVar2.a;
                         if (file != null) {
                             file.delete();
-                            elVar2.a = null;
+                            ilVar2.a = null;
                         }
                         boolean z12 = ChatAttachAlertPhotoLayout.m1;
-                        chatAttachAlertPhotoLayout2.l0();
+                        chatAttachAlertPhotoLayout2.k0();
                         CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout2.L.getCameraSession(), true);
-                        a(ou0.a);
+                        a(lu0.a);
                         return true;
                     }
                 }
@@ -214,8 +214,8 @@ public class ShutterButton extends View {
         return true;
     }
 
-    public void setDelegate(nu0 nu0Var) {
-        this.e = nu0Var;
+    public void setDelegate(ku0 ku0Var) {
+        this.e = ku0Var;
     }
 
     @Override // android.view.View

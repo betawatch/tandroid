@@ -1,56 +1,39 @@
 package qc;
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import g7.u6;
+import zc.p;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a extends kotlin.jvm.internal.a implements ListIterator {
-    public final /* synthetic */ c d;
+public abstract class a implements f {
+    public final g a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(c cVar, int i10) {
-        super(cVar);
-        this.d = cVar;
-        int i11 = cVar.i();
-        if (i10 < 0 || i10 > i11) {
-            throw new IndexOutOfBoundsException(a9.p.j(i10, i11, "index: ", ", size: "));
-        }
-        this.b = i10;
+    public a(g gVar) {
+        this.a = gVar;
     }
 
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    @Override // qc.h
+    public final Object fold(Object obj, p pVar) {
+        return pVar.invoke(obj, this);
     }
 
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.b > 0;
+    @Override // qc.h
+    public f get(g gVar) {
+        return u6.a(this, gVar);
     }
 
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.b;
+    @Override // qc.f
+    public final g getKey() {
+        return this.a;
     }
 
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.b - 1;
-        this.b = i10;
-        return this.d.get(i10);
+    @Override // qc.h
+    public h minusKey(g gVar) {
+        return u6.b(this, gVar);
     }
 
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.b - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    @Override // qc.h
+    public final h plus(h hVar) {
+        return u6.c(this, hVar);
     }
 }

@@ -1,37 +1,37 @@
 package j4;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class j1 implements h3.g {
     public static final j1 d = new j1(new i1[0]);
     public static final String e;
     public final int a;
-    public final p8.l0 b;
+    public final o8.l0 b;
     public int c;
 
     static {
-        int i10 = d5.g0.a;
+        int i9 = d5.f0.a;
         e = Integer.toString(0, 36);
     }
 
     public j1(i1... i1VarArr) {
-        p8.l0 v = p8.z.v(i1VarArr);
+        o8.l0 v = o8.z.v(i1VarArr);
         this.b = v;
         this.a = i1VarArr.length;
-        int i10 = 0;
-        while (i10 < v.d) {
-            int i11 = i10 + 1;
-            for (int i12 = i11; i12 < v.d; i12++) {
-                if (((i1) v.get(i10)).equals(v.get(i12))) {
+        int i9 = 0;
+        while (i9 < v.d) {
+            int i10 = i9 + 1;
+            for (int i11 = i10; i11 < v.d; i11++) {
+                if (((i1) v.get(i9)).equals(v.get(i11))) {
                     d5.a.p("TrackGroupArray", "", new IllegalArgumentException("Multiple identical TrackGroups added to one TrackGroupArray."));
                 }
             }
-            i10 = i11;
+            i9 = i10;
         }
     }
 
-    public final i1 a(int i10) {
-        return (i1) this.b.get(i10);
+    public final i1 a(int i9) {
+        return (i1) this.b.get(i9);
     }
 
     public final int b(i1 i1Var) {

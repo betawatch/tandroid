@@ -3,13 +3,13 @@ package ru.noties.jlatexmath.awt.image;
 import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.Image;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
 public class BufferedImage extends Image {
     public static final int TYPE_INT_ARGB = 2;
     public static final int TYPE_INT_RGB = 1;
 
-    public BufferedImage(int i10, int i11, int i12) {
+    public BufferedImage(int i9, int i10, int i11) {
     }
 
     public Graphics2D createGraphics() {
@@ -20,7 +20,7 @@ public class BufferedImage extends Image {
         return 0;
     }
 
-    public int getRGB(int i10, int i11) {
+    public int getRGB(int i9, int i10) {
         return 0;
     }
 

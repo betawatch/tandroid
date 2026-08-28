@@ -2,12 +2,12 @@ package e4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import d5.g0;
+import d5.f0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class e extends j {
-    public static final Parcelable.Creator<e> CREATOR = new c8.o(18);
+    public static final Parcelable.Creator<e> CREATOR = new c.c(10);
     public final String b;
     public final String c;
     public final String d;
@@ -25,7 +25,7 @@ public final class e extends j {
         }
         if (obj != null && e.class == obj.getClass()) {
             e eVar = (e) obj;
-            if (g0.a(this.c, eVar.c) && g0.a(this.b, eVar.b) && g0.a(this.d, eVar.d)) {
+            if (f0.a(this.c, eVar.c) && f0.a(this.b, eVar.b) && f0.a(this.d, eVar.d)) {
                 return true;
             }
         }
@@ -47,7 +47,7 @@ public final class e extends j {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeString(this.a);
         parcel.writeString(this.b);
         parcel.writeString(this.d);
@@ -56,7 +56,7 @@ public final class e extends j {
     public e(Parcel parcel) {
         super("COMM");
         String readString = parcel.readString();
-        int i10 = g0.a;
+        int i9 = f0.a;
         this.b = readString;
         this.c = parcel.readString();
         this.d = parcel.readString();

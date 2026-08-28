@@ -1,64 +1,99 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.n41;
-import org.telegram.ui.Components.zk0;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.mi0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class d7 extends m41 {
-    public static final /* synthetic */ int a = 0;
+public final class d7 extends Drawable {
+    public final Paint a;
+    public final mi0 b;
+    public final Drawable c;
+    public int d;
 
-    static {
-        m41.setup(new d7());
+    public d7(Context context, org.telegram.ui.Components.o9 o9Var, boolean z10, org.telegram.ui.ActionBar.b6 b6Var) {
+        this(context, o9Var, z10, R.drawable.large_repost_story, b6Var);
     }
 
-    public static n41 a(MediaController.AudioEntry audioEntry, Utilities.CallbackReturn callbackReturn) {
-        n41 J = n41.J(d7.class);
-        J.G = audioEntry;
-        J.H = callbackReturn;
-        return J;
-    }
-
-    @Override // org.telegram.ui.Components.m41
-    public final void bindView(View view, n41 n41Var, boolean z10, b51 b51Var, k51 k51Var) {
-        e7 e7Var = (e7) view;
-        Object obj = n41Var.G;
-        if (obj instanceof MessageObject) {
-            e7Var.f((MessageObject) obj, z10);
-        } else if (obj instanceof MediaController.AudioEntry) {
-            MediaController.AudioEntry audioEntry = (MediaController.AudioEntry) obj;
-            e7Var.setTag(audioEntry);
-            e7Var.f(audioEntry.messageObject, z10);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(getBounds().left, getBounds().top);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, 0.0f, getBounds().width(), getBounds().height());
+        int i9 = this.d;
+        Paint paint = this.a;
+        paint.setAlpha(i9);
+        float min = (this.d / 255.0f) * (Math.min(getBounds().width(), getBounds().height()) / 2.0f);
+        canvas.drawRoundRect(rectF, min, min, paint);
+        canvas.restore();
+        Drawable drawable = this.b;
+        int dp = AndroidUtilities.dp(drawable != null ? 20.0f : 15.0f);
+        Rect rect = AndroidUtilities.rectTmp2;
+        rect.set(getBounds().centerX() - dp, getBounds().centerY() - dp, getBounds().centerX() + dp, getBounds().centerY() + dp);
+        if (drawable == null) {
+            drawable = this.c;
         }
-        Object obj2 = n41Var.H;
-        if (obj2 instanceof Utilities.CallbackReturn) {
-            e7Var.setNeedPlayMessageListener((Utilities.CallbackReturn) obj2);
+        if (drawable != null) {
+            drawable.setBounds(rect);
+            drawable.setAlpha(this.d);
+            drawable.draw(canvas);
         }
-        e7Var.e(n41Var.e, false);
     }
 
-    @Override // org.telegram.ui.Components.m41
-    public final boolean contentsEquals(n41 n41Var, n41 n41Var2) {
-        return n41Var.d == n41Var2.d && n41Var.G == n41Var2.G;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(56.0f);
     }
 
-    @Override // org.telegram.ui.Components.m41
-    public final View createView(Context context, zk0 zk0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
-        e7 e7Var = new e7(context, 0, c6Var);
-        e7Var.setCheckForButtonPress(true);
-        return e7Var;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(56.0f);
     }
 
-    @Override // org.telegram.ui.Components.m41
-    public final boolean equals(n41 n41Var, n41 n41Var2) {
-        return n41Var.d == n41Var2.d && n41Var.G == n41Var2.G;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i9) {
+        this.d = i9;
+    }
+
+    public d7(Context context, View view, boolean z10, int i9, org.telegram.ui.ActionBar.b6 b6Var) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.d = 255;
+        paint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f), new int[]{org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.hk, b6Var), org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.ik, b6Var)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+        if (!z10) {
+            this.b = null;
+            Drawable mutate = context.getResources().getDrawable(i9).mutate();
+            this.c = mutate;
+            mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            return;
+        }
+        mi0 mi0Var = new mi0(R.raw.story_repost, "story_repost", AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), true, null);
+        this.b = mi0Var;
+        mi0Var.r0 = view;
+        AndroidUtilities.runOnUIThread(new q0(mi0Var, 1), 450L);
+        this.c = null;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

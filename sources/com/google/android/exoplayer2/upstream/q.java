@@ -5,7 +5,7 @@ import j$.util.DesugarCollections;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class q {
     public static final /* synthetic */ int i = 0;
@@ -22,18 +22,18 @@ public final class q {
         h3.r0.a("goog.exo.datasource");
     }
 
-    public q(Uri uri, int i10, byte[] bArr, Map map, long j10, long j11, String str, int i11) {
+    public q(Uri uri, int i9, byte[] bArr, Map map, long j10, long j11, String str, int i10) {
         d5.a.f(j10 >= 0);
         d5.a.f(j10 >= 0);
         d5.a.f(j11 > 0 || j11 == -1);
         this.a = uri;
-        this.b = i10;
+        this.b = i9;
         this.c = (bArr == null || bArr.length == 0) ? null : bArr;
         this.d = DesugarCollections.unmodifiableMap(new HashMap(map));
         this.e = j10;
         this.f = j11;
         this.g = str;
-        this.h = i11;
+        this.h = i10;
     }
 
     public final q a(long j10) {
@@ -48,13 +48,13 @@ public final class q {
     public final String toString() {
         String str;
         StringBuilder sb2 = new StringBuilder("DataSpec[");
-        int i10 = this.b;
-        if (i10 == 1) {
+        int i9 = this.b;
+        if (i9 == 1) {
             str = "GET";
-        } else if (i10 == 2) {
+        } else if (i9 == 2) {
             str = "POST";
         } else {
-            if (i10 != 3) {
+            if (i9 != 3) {
                 throw new IllegalStateException();
             }
             str = "HEAD";
@@ -69,6 +69,6 @@ public final class q {
         sb2.append(", ");
         sb2.append(this.g);
         sb2.append(", ");
-        return a9.p.k(this.h, "]", sb2);
+        return aa.d.l(this.h, "]", sb2);
     }
 }

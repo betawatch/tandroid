@@ -4,14 +4,14 @@ import android.animation.ValueAnimator;
 import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class h2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ l2 b;
 
-    public /* synthetic */ h2(l2 l2Var, int i10) {
-        this.a = i10;
+    public /* synthetic */ h2(l2 l2Var, int i9) {
+        this.a = i9;
         this.b = l2Var;
     }
 

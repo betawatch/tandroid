@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.Window;
 import androidx.appcompat.widget.Toolbar;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class p3 implements l1 {
     public Toolbar a;
@@ -25,14 +25,14 @@ public final class p3 implements l1 {
     public int n;
     public Drawable o;
 
-    public final void a(int i10) {
+    public final void a(int i9) {
         View view;
         Toolbar toolbar = this.a;
-        int i11 = this.b ^ i10;
-        this.b = i10;
-        if (i11 != 0) {
-            if ((i11 & 4) != 0) {
-                if ((i10 & 4) != 0) {
+        int i10 = this.b ^ i9;
+        this.b = i9;
+        if (i10 != 0) {
+            if ((i10 & 4) != 0) {
+                if ((i9 & 4) != 0) {
                     b();
                 }
                 if ((this.b & 4) != 0) {
@@ -45,11 +45,11 @@ public final class p3 implements l1 {
                     toolbar.setNavigationIcon((Drawable) null);
                 }
             }
-            if ((i11 & 3) != 0) {
+            if ((i10 & 3) != 0) {
                 c();
             }
-            if ((i11 & 8) != 0) {
-                if ((i10 & 8) != 0) {
+            if ((i10 & 8) != 0) {
+                if ((i9 & 8) != 0) {
                     toolbar.setTitle(this.h);
                     toolbar.setSubtitle(this.i);
                 } else {
@@ -57,10 +57,10 @@ public final class p3 implements l1 {
                     toolbar.setSubtitle((CharSequence) null);
                 }
             }
-            if ((i11 & 16) == 0 || (view = this.c) == null) {
+            if ((i10 & 16) == 0 || (view = this.c) == null) {
                 return;
             }
-            if ((i10 & 16) != 0) {
+            if ((i9 & 16) != 0) {
                 toolbar.addView(view);
             } else {
                 toolbar.removeView(view);
@@ -81,10 +81,10 @@ public final class p3 implements l1 {
 
     public final void c() {
         Drawable drawable;
-        int i10 = this.b;
-        if ((i10 & 2) == 0) {
+        int i9 = this.b;
+        if ((i9 & 2) == 0) {
             drawable = null;
-        } else if ((i10 & 1) != 0) {
+        } else if ((i9 & 1) != 0) {
             drawable = this.e;
             if (drawable == null) {
                 drawable = this.d;

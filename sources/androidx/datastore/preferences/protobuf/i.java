@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i {
     public int a;
@@ -14,38 +14,38 @@ public final class i {
     public int c;
     public Object d;
 
-    public static void U(int i10) {
-        if ((i10 & 3) != 0) {
-            throw b0.e();
+    public static void U(int i9) {
+        if ((i9 & 3) != 0) {
+            throw c0.e();
         }
     }
 
-    public static void V(int i10) {
-        if ((i10 & 7) != 0) {
-            throw b0.e();
+    public static void V(int i9) {
+        if ((i9 & 7) != 0) {
+            throw c0.e();
         }
     }
 
-    public Object A(b1 b1Var, n nVar) {
+    public Object A(c1 c1Var, n nVar) {
         h hVar = (h) this.d;
         int A = hVar.A();
         if (hVar.a >= 100) {
-            throw new b0("Protocol message had too many levels of nesting.  May be malicious.  Use CodedInputStream.setRecursionLimit() to increase the depth limit.");
+            throw new c0("Protocol message had too many levels of nesting.  May be malicious.  Use CodedInputStream.setRecursionLimit() to increase the depth limit.");
         }
-        int e9 = hVar.e(A);
-        Object a2 = b1Var.a();
+        int e10 = hVar.e(A);
+        Object a2 = c1Var.a();
         hVar.a++;
-        b1Var.i(a2, this, nVar);
-        b1Var.c(a2);
+        c1Var.i(a2, this, nVar);
+        c1Var.c(a2);
         hVar.a(0);
         hVar.a--;
-        hVar.d(e9);
+        hVar.d(e10);
         return a2;
     }
 
-    public Object B(b1 b1Var, n nVar) {
+    public Object B(c1 c1Var, n nVar) {
         S(2);
-        return A(b1Var, nVar);
+        return A(c1Var, nVar);
     }
 
     public int C() {
@@ -56,11 +56,11 @@ public final class i {
     public void D(List list) {
         int z10;
         h hVar = (h) this.d;
-        if (list instanceof x) {
+        if (list instanceof y) {
             throw new ClassCastException();
         }
-        int i10 = this.a & 7;
-        if (i10 == 2) {
+        int i9 = this.a & 7;
+        if (i9 == 2) {
             int A = hVar.A();
             U(A);
             int b10 = hVar.b() + A;
@@ -69,8 +69,8 @@ public final class i {
             } while (hVar.b() < b10);
             return;
         }
-        if (i10 != 5) {
-            throw b0.b();
+        if (i9 != 5) {
+            throw c0.b();
         }
         do {
             list.add(Integer.valueOf(hVar.v()));
@@ -91,11 +91,11 @@ public final class i {
     public void F(List list) {
         int z10;
         h hVar = (h) this.d;
-        if (list instanceof i0) {
+        if (list instanceof j0) {
             throw new ClassCastException();
         }
-        int i10 = this.a & 7;
-        if (i10 == 1) {
+        int i9 = this.a & 7;
+        if (i9 == 1) {
             do {
                 list.add(Long.valueOf(hVar.w()));
                 if (hVar.c()) {
@@ -107,8 +107,8 @@ public final class i {
             this.c = z10;
             return;
         }
-        if (i10 != 2) {
-            throw b0.b();
+        if (i9 != 2) {
+            throw c0.b();
         }
         int A = hVar.A();
         V(A);
@@ -126,11 +126,11 @@ public final class i {
     public void H(List list) {
         int z10;
         h hVar = (h) this.d;
-        if (list instanceof x) {
+        if (list instanceof y) {
             throw new ClassCastException();
         }
-        int i10 = this.a & 7;
-        if (i10 == 0) {
+        int i9 = this.a & 7;
+        if (i9 == 0) {
             do {
                 list.add(Integer.valueOf(hVar.x()));
                 if (hVar.c()) {
@@ -142,8 +142,8 @@ public final class i {
             this.c = z10;
             return;
         }
-        if (i10 != 2) {
-            throw b0.b();
+        if (i9 != 2) {
+            throw c0.b();
         }
         int b10 = hVar.b() + hVar.A();
         do {
@@ -160,11 +160,11 @@ public final class i {
     public void J(List list) {
         int z10;
         h hVar = (h) this.d;
-        if (list instanceof i0) {
+        if (list instanceof j0) {
             throw new ClassCastException();
         }
-        int i10 = this.a & 7;
-        if (i10 == 0) {
+        int i9 = this.a & 7;
+        if (i9 == 0) {
             do {
                 list.add(Long.valueOf(hVar.y()));
                 if (hVar.c()) {
@@ -176,8 +176,8 @@ public final class i {
             this.c = z10;
             return;
         }
-        if (i10 != 2) {
-            throw b0.b();
+        if (i9 != 2) {
+            throw c0.b();
         }
         int b10 = hVar.b() + hVar.A();
         do {
@@ -192,10 +192,10 @@ public final class i {
         byte[] bArr = hVar.d;
         int s10 = hVar.s();
         if (s10 > 0) {
-            int i10 = hVar.e;
-            int i11 = hVar.g;
-            if (s10 <= i10 - i11) {
-                String str = new String(bArr, i11, s10, z.a);
+            int i9 = hVar.e;
+            int i10 = hVar.g;
+            if (s10 <= i9 - i10) {
+                String str = new String(bArr, i10, s10, a0.a);
                 hVar.g += s10;
                 return str;
             }
@@ -204,10 +204,10 @@ public final class i {
             return "";
         }
         if (s10 > hVar.e) {
-            return new String(hVar.n(s10), z.a);
+            return new String(hVar.n(s10), a0.a);
         }
         hVar.D(s10);
-        String str2 = new String(bArr, hVar.g, s10, z.a);
+        String str2 = new String(bArr, hVar.g, s10, a0.a);
         hVar.g += s10;
         return str2;
     }
@@ -217,9 +217,9 @@ public final class i {
         int z12;
         h hVar = (h) this.d;
         if ((this.a & 7) != 2) {
-            throw b0.b();
+            throw c0.b();
         }
-        if (!(list instanceof e0) || z10) {
+        if (!(list instanceof f0) || z10) {
             do {
                 list.add(z10 ? M() : K());
                 if (hVar.c()) {
@@ -231,9 +231,9 @@ public final class i {
             this.c = z11;
             return;
         }
-        e0 e0Var = (e0) list;
+        f0 f0Var = (f0) list;
         do {
-            e0Var.g(g());
+            f0Var.g(g());
             if (hVar.c()) {
                 return;
             } else {
@@ -248,23 +248,23 @@ public final class i {
         h hVar = (h) this.d;
         byte[] bArr = hVar.d;
         int s10 = hVar.s();
-        int i10 = hVar.g;
-        int i11 = hVar.e;
-        if (s10 <= i11 - i10 && s10 > 0) {
-            hVar.g = i10 + s10;
+        int i9 = hVar.g;
+        int i10 = hVar.e;
+        if (s10 <= i10 - i9 && s10 > 0) {
+            hVar.g = i9 + s10;
         } else {
             if (s10 == 0) {
                 return "";
             }
-            i10 = 0;
-            if (s10 <= i11) {
+            i9 = 0;
+            if (s10 <= i10) {
                 hVar.D(s10);
                 hVar.g = s10;
             } else {
                 bArr = hVar.n(s10);
             }
         }
-        return u1.a.e(i10, s10, bArr);
+        return v1.a.e(i9, s10, bArr);
     }
 
     public int N() {
@@ -275,11 +275,11 @@ public final class i {
     public void O(List list) {
         int z10;
         h hVar = (h) this.d;
-        if (list instanceof x) {
+        if (list instanceof y) {
             throw new ClassCastException();
         }
-        int i10 = this.a & 7;
-        if (i10 == 0) {
+        int i9 = this.a & 7;
+        if (i9 == 0) {
             do {
                 list.add(Integer.valueOf(hVar.A()));
                 if (hVar.c()) {
@@ -291,8 +291,8 @@ public final class i {
             this.c = z10;
             return;
         }
-        if (i10 != 2) {
-            throw b0.b();
+        if (i9 != 2) {
+            throw c0.b();
         }
         int b10 = hVar.b() + hVar.A();
         do {
@@ -309,11 +309,11 @@ public final class i {
     public void Q(List list) {
         int z10;
         h hVar = (h) this.d;
-        if (list instanceof i0) {
+        if (list instanceof j0) {
             throw new ClassCastException();
         }
-        int i10 = this.a & 7;
-        if (i10 == 0) {
+        int i9 = this.a & 7;
+        if (i9 == 0) {
             do {
                 list.add(Long.valueOf(hVar.B()));
                 if (hVar.c()) {
@@ -325,8 +325,8 @@ public final class i {
             this.c = z10;
             return;
         }
-        if (i10 != 2) {
-            throw b0.b();
+        if (i9 != 2) {
+            throw c0.b();
         }
         int b10 = hVar.b() + hVar.A();
         do {
@@ -335,117 +335,117 @@ public final class i {
         R(b10);
     }
 
-    public void R(int i10) {
-        if (((h) this.d).b() != i10) {
-            throw b0.f();
+    public void R(int i9) {
+        if (((h) this.d).b() != i9) {
+            throw c0.f();
         }
     }
 
-    public void S(int i10) {
-        if ((this.a & 7) != i10) {
-            throw b0.b();
+    public void S(int i9) {
+        if ((this.a & 7) != i9) {
+            throw c0.b();
         }
     }
 
     public boolean T() {
-        int i10;
+        int i9;
         h hVar = (h) this.d;
-        if (hVar.c() || (i10 = this.a) == this.b) {
+        if (hVar.c() || (i9 = this.a) == this.b) {
             return false;
         }
-        return hVar.E(i10);
+        return hVar.E(i9);
     }
 
-    public void a(int i10, int i11) {
-        if (i10 < 0) {
+    public void a(int i9, int i10) {
+        if (i9 < 0) {
             throw new IllegalArgumentException("Layout positions must be non-negative");
         }
-        if (i11 < 0) {
+        if (i10 < 0) {
             throw new IllegalArgumentException("Pixel distance must be non-negative");
         }
-        int i12 = this.c;
-        int i13 = i12 * 2;
+        int i11 = this.c;
+        int i12 = i11 * 2;
         int[] iArr = (int[]) this.d;
         if (iArr == null) {
             int[] iArr2 = new int[4];
             this.d = iArr2;
             Arrays.fill(iArr2, -1);
-        } else if (i13 >= iArr.length) {
-            int[] iArr3 = new int[i12 * 4];
+        } else if (i12 >= iArr.length) {
+            int[] iArr3 = new int[i11 * 4];
             this.d = iArr3;
             System.arraycopy(iArr, 0, iArr3, 0, iArr.length);
         }
         int[] iArr4 = (int[]) this.d;
-        iArr4[i13] = i10;
-        iArr4[i13 + 1] = i11;
+        iArr4[i12] = i9;
+        iArr4[i12 + 1] = i10;
         this.c++;
     }
 
     public void b(RecyclerView recyclerView, boolean z10) {
         boolean z11;
-        int i10;
+        int i9;
         this.c = 0;
         int[] iArr = (int[]) this.d;
         if (iArr != null) {
             Arrays.fill(iArr, -1);
         }
-        f2.x0 x0Var = recyclerView.x;
-        if (recyclerView.w == null || x0Var == null || !x0Var.h) {
+        f2.z0 z0Var = recyclerView.x;
+        if (recyclerView.w == null || z0Var == null || !z0Var.h) {
             return;
         }
         if (z10) {
             if (!recyclerView.d.h()) {
                 int h = recyclerView.w.h();
-                f2.k0 k0Var = (f2.k0) x0Var;
-                f2.j0 j0Var = k0Var.B;
-                if (j0Var == null || (i10 = j0Var.a) < 0) {
-                    k0Var.f1();
-                    z11 = k0Var.v;
-                    i10 = k0Var.y;
-                    if (i10 == -1) {
-                        i10 = z11 ? h - 1 : 0;
+                f2.m0 m0Var = (f2.m0) z0Var;
+                f2.l0 l0Var = m0Var.B;
+                if (l0Var == null || (i9 = l0Var.a) < 0) {
+                    m0Var.f1();
+                    z11 = m0Var.v;
+                    i9 = m0Var.y;
+                    if (i9 == -1) {
+                        i9 = z11 ? h - 1 : 0;
                     }
                 } else {
-                    z11 = j0Var.c;
+                    z11 = l0Var.c;
                 }
-                int i11 = z11 ? -1 : 1;
-                for (int i12 = 0; i12 < k0Var.E && i10 >= 0 && i10 < h; i12++) {
-                    a(i10, 0);
-                    i10 += i11;
+                int i10 = z11 ? -1 : 1;
+                for (int i11 = 0; i11 < m0Var.E && i9 >= 0 && i9 < h; i11++) {
+                    a(i9, 0);
+                    i9 += i10;
                 }
             }
         } else if (!recyclerView.Z()) {
-            int i13 = this.a;
-            int i14 = this.b;
-            f2.l1 l1Var = recyclerView.p0;
-            f2.k0 k0Var2 = (f2.k0) x0Var;
-            if (k0Var2.o != 0) {
-                i13 = i14;
+            int i12 = this.a;
+            int i13 = this.b;
+            f2.n1 n1Var = recyclerView.p0;
+            f2.m0 m0Var2 = (f2.m0) z0Var;
+            if (m0Var2.o != 0) {
+                i12 = i13;
             }
-            if (k0Var2.r() != 0 && i13 != 0) {
-                k0Var2.G0();
-                k0Var2.m1(i13 > 0 ? 1 : -1, Math.abs(i13), true, l1Var);
-                k0Var2.A0(l1Var, k0Var2.p, this);
+            if (m0Var2.r() != 0 && i12 != 0) {
+                m0Var2.G0();
+                m0Var2.m1(i12 > 0 ? 1 : -1, Math.abs(i12), true, n1Var);
+                m0Var2.A0(n1Var, m0Var2.p, this);
             }
         }
-        int i15 = this.c;
-        if (i15 > x0Var.i) {
-            x0Var.i = i15;
-            x0Var.j = z10;
+        int i14 = this.c;
+        if (i14 > z0Var.i) {
+            z0Var.i = i14;
+            z0Var.j = z10;
             recyclerView.b.l();
         }
     }
 
     public int c() {
-        int i10 = this.c;
-        if (i10 != 0) {
-            this.a = i10;
+        int i9 = this.c;
+        if (i9 != 0) {
+            this.a = i9;
             this.c = 0;
         } else {
             this.a = ((h) this.d).z();
         }
-        int i11 = this.a;
-        return (i11 == 0 || i11 == this.b) ? ConnectionsManager.DEFAULT_DATACENTER_ID : i11 >>> 3;
+        int i10 = this.a;
+        return (i10 == 0 || i10 == this.b) ? ConnectionsManager.DEFAULT_DATACENTER_ID : i10 >>> 3;
     }
 
     public int d() {
@@ -463,8 +463,8 @@ public final class i {
         if (list instanceof d) {
             throw new ClassCastException();
         }
-        int i10 = this.a & 7;
-        if (i10 == 0) {
+        int i9 = this.a & 7;
+        if (i9 == 0) {
             do {
                 list.add(Boolean.valueOf(hVar.f()));
                 if (hVar.c()) {
@@ -476,8 +476,8 @@ public final class i {
             this.c = z10;
             return;
         }
-        if (i10 != 2) {
-            throw b0.b();
+        if (i9 != 2) {
+            throw c0.b();
         }
         int b10 = hVar.b() + hVar.A();
         do {
@@ -491,37 +491,37 @@ public final class i {
         h hVar = (h) this.d;
         byte[] bArr = hVar.d;
         int s10 = hVar.s();
-        int i10 = hVar.e;
-        int i11 = hVar.g;
-        if (s10 <= i10 - i11 && s10 > 0) {
-            g i12 = g.i(i11, s10, bArr);
+        int i9 = hVar.e;
+        int i10 = hVar.g;
+        if (s10 <= i9 - i10 && s10 > 0) {
+            g i11 = g.i(i10, s10, bArr);
             hVar.g += s10;
-            return i12;
+            return i11;
         }
         if (s10 == 0) {
             return g.c;
         }
-        byte[] o10 = hVar.o(s10);
-        if (o10 != null) {
-            return g.i(0, o10.length, o10);
+        byte[] o6 = hVar.o(s10);
+        if (o6 != null) {
+            return g.i(0, o6.length, o6);
         }
-        int i13 = hVar.g;
-        int i14 = hVar.e;
-        int i15 = i14 - i13;
-        hVar.i += i14;
+        int i12 = hVar.g;
+        int i13 = hVar.e;
+        int i14 = i13 - i12;
+        hVar.i += i13;
         hVar.g = 0;
         hVar.e = 0;
-        ArrayList p6 = hVar.p(s10 - i15);
+        ArrayList p6 = hVar.p(s10 - i14);
         byte[] bArr2 = new byte[s10];
-        System.arraycopy(bArr, i13, bArr2, 0, i15);
+        System.arraycopy(bArr, i12, bArr2, 0, i14);
         int size = p6.size();
-        int i16 = 0;
-        while (i16 < size) {
-            Object obj = p6.get(i16);
-            i16++;
+        int i15 = 0;
+        while (i15 < size) {
+            Object obj = p6.get(i15);
+            i15++;
             byte[] bArr3 = (byte[]) obj;
-            System.arraycopy(bArr3, 0, bArr2, i15, bArr3.length);
-            i15 += bArr3.length;
+            System.arraycopy(bArr3, 0, bArr2, i14, bArr3.length);
+            i14 += bArr3.length;
         }
         g gVar = g.c;
         return new g(bArr2);
@@ -531,7 +531,7 @@ public final class i {
         int z10;
         h hVar = (h) this.d;
         if ((this.a & 7) != 2) {
-            throw b0.b();
+            throw c0.b();
         }
         do {
             list.add(g());
@@ -555,8 +555,8 @@ public final class i {
         if (list instanceof l) {
             throw new ClassCastException();
         }
-        int i10 = this.a & 7;
-        if (i10 == 1) {
+        int i9 = this.a & 7;
+        if (i9 == 1) {
             do {
                 list.add(Double.valueOf(hVar.g()));
                 if (hVar.c()) {
@@ -568,8 +568,8 @@ public final class i {
             this.c = z10;
             return;
         }
-        if (i10 != 2) {
-            throw b0.b();
+        if (i9 != 2) {
+            throw c0.b();
         }
         int A = hVar.A();
         V(A);
@@ -587,11 +587,11 @@ public final class i {
     public void l(List list) {
         int z10;
         h hVar = (h) this.d;
-        if (list instanceof x) {
+        if (list instanceof y) {
             throw new ClassCastException();
         }
-        int i10 = this.a & 7;
-        if (i10 == 0) {
+        int i9 = this.a & 7;
+        if (i9 == 0) {
             do {
                 list.add(Integer.valueOf(hVar.h()));
                 if (hVar.c()) {
@@ -603,8 +603,8 @@ public final class i {
             this.c = z10;
             return;
         }
-        if (i10 != 2) {
-            throw b0.b();
+        if (i9 != 2) {
+            throw c0.b();
         }
         int b10 = hVar.b() + hVar.A();
         do {
@@ -613,8 +613,8 @@ public final class i {
         R(b10);
     }
 
-    public Object m(z1 z1Var, Class cls, n nVar) {
-        switch (z1Var.ordinal()) {
+    public Object m(a2 a2Var, Class cls, n nVar) {
+        switch (a2Var.ordinal()) {
             case 0:
                 return Double.valueOf(i());
             case 1:
@@ -638,7 +638,7 @@ public final class i {
                 throw new RuntimeException("unsupported field type.");
             case 10:
                 S(2);
-                return A(y0.c.a(cls), nVar);
+                return A(z0.c.a(cls), nVar);
             case 11:
                 return g();
             case 12:
@@ -664,11 +664,11 @@ public final class i {
     public void o(List list) {
         int z10;
         h hVar = (h) this.d;
-        if (list instanceof x) {
+        if (list instanceof y) {
             throw new ClassCastException();
         }
-        int i10 = this.a & 7;
-        if (i10 == 2) {
+        int i9 = this.a & 7;
+        if (i9 == 2) {
             int A = hVar.A();
             U(A);
             int b10 = hVar.b() + A;
@@ -677,8 +677,8 @@ public final class i {
             } while (hVar.b() < b10);
             return;
         }
-        if (i10 != 5) {
-            throw b0.b();
+        if (i9 != 5) {
+            throw c0.b();
         }
         do {
             list.add(Integer.valueOf(hVar.i()));
@@ -699,11 +699,11 @@ public final class i {
     public void q(List list) {
         int z10;
         h hVar = (h) this.d;
-        if (list instanceof i0) {
+        if (list instanceof j0) {
             throw new ClassCastException();
         }
-        int i10 = this.a & 7;
-        if (i10 == 1) {
+        int i9 = this.a & 7;
+        if (i9 == 1) {
             do {
                 list.add(Long.valueOf(hVar.j()));
                 if (hVar.c()) {
@@ -715,8 +715,8 @@ public final class i {
             this.c = z10;
             return;
         }
-        if (i10 != 2) {
-            throw b0.b();
+        if (i9 != 2) {
+            throw c0.b();
         }
         int A = hVar.A();
         V(A);
@@ -734,11 +734,11 @@ public final class i {
     public void s(List list) {
         int z10;
         h hVar = (h) this.d;
-        if (list instanceof s) {
+        if (list instanceof t) {
             throw new ClassCastException();
         }
-        int i10 = this.a & 7;
-        if (i10 == 2) {
+        int i9 = this.a & 7;
+        if (i9 == 2) {
             int A = hVar.A();
             U(A);
             int b10 = hVar.b() + A;
@@ -747,8 +747,8 @@ public final class i {
             } while (hVar.b() < b10);
             return;
         }
-        if (i10 != 5) {
-            throw b0.b();
+        if (i9 != 5) {
+            throw c0.b();
         }
         do {
             list.add(Float.valueOf(hVar.k()));
@@ -761,42 +761,42 @@ public final class i {
         this.c = z10;
     }
 
-    public Object t(b1 b1Var, n nVar) {
-        int i10 = this.b;
+    public Object t(c1 c1Var, n nVar) {
+        int i9 = this.b;
         this.b = ((this.a >>> 3) << 3) | 4;
         try {
-            Object a2 = b1Var.a();
-            b1Var.i(a2, this, nVar);
-            b1Var.c(a2);
+            Object a2 = c1Var.a();
+            c1Var.i(a2, this, nVar);
+            c1Var.c(a2);
             if (this.a == this.b) {
                 return a2;
             }
-            throw b0.e();
+            throw c0.e();
         } finally {
-            this.b = i10;
+            this.b = i9;
         }
     }
 
-    public Object u(b1 b1Var, n nVar) {
+    public Object u(c1 c1Var, n nVar) {
         S(3);
-        return t(b1Var, nVar);
+        return t(c1Var, nVar);
     }
 
-    public void v(List list, b1 b1Var, n nVar) {
+    public void v(List list, c1 c1Var, n nVar) {
         int z10;
         h hVar = (h) this.d;
-        int i10 = this.a;
-        if ((i10 & 7) != 3) {
-            throw b0.b();
+        int i9 = this.a;
+        if ((i9 & 7) != 3) {
+            throw c0.b();
         }
         do {
-            list.add(t(b1Var, nVar));
+            list.add(t(c1Var, nVar));
             if (hVar.c() || this.c != 0) {
                 return;
             } else {
                 z10 = hVar.z();
             }
-        } while (z10 == i10);
+        } while (z10 == i9);
         this.c = z10;
     }
 
@@ -808,11 +808,11 @@ public final class i {
     public void x(List list) {
         int z10;
         h hVar = (h) this.d;
-        if (list instanceof x) {
+        if (list instanceof y) {
             throw new ClassCastException();
         }
-        int i10 = this.a & 7;
-        if (i10 == 0) {
+        int i9 = this.a & 7;
+        if (i9 == 0) {
             do {
                 list.add(Integer.valueOf(hVar.l()));
                 if (hVar.c()) {
@@ -824,8 +824,8 @@ public final class i {
             this.c = z10;
             return;
         }
-        if (i10 != 2) {
-            throw b0.b();
+        if (i9 != 2) {
+            throw c0.b();
         }
         int b10 = hVar.b() + hVar.A();
         do {
@@ -842,11 +842,11 @@ public final class i {
     public void z(List list) {
         int z10;
         h hVar = (h) this.d;
-        if (list instanceof i0) {
+        if (list instanceof j0) {
             throw new ClassCastException();
         }
-        int i10 = this.a & 7;
-        if (i10 == 0) {
+        int i9 = this.a & 7;
+        if (i9 == 0) {
             do {
                 list.add(Long.valueOf(hVar.m()));
                 if (hVar.c()) {
@@ -858,8 +858,8 @@ public final class i {
             this.c = z10;
             return;
         }
-        if (i10 != 2) {
-            throw b0.b();
+        if (i9 != 2) {
+            throw c0.b();
         }
         int b10 = hVar.b() + hVar.A();
         do {

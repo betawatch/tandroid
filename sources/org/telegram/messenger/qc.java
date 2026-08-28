@@ -1,48 +1,35 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class qc implements Runnable {
+public final /* synthetic */ class qc implements Utilities.Callback2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Utilities.Callback2 d;
 
-    public /* synthetic */ qc(int i10, long j10, long j11, MessagesController messagesController) {
-        this.a = 2;
+    public /* synthetic */ qc(MessagesController messagesController, long j10, Utilities.Callback2 callback2, int i9) {
+        this.a = i9;
         this.b = messagesController;
-        this.d = j10;
-        this.e = j11;
-        this.c = i10;
+        this.c = j10;
+        this.d = callback2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                long j10 = this.d;
-                long j11 = this.e;
-                this.b.lambda$sendTyping$173(this.c, j10, j11);
+                this.b.lambda$resolveCommunityAllJoinPendingRequests$250(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                long j12 = this.d;
-                long j13 = this.e;
-                this.b.lambda$sendTyping$171(this.c, j12, j13);
+                this.b.lambda$resolveCommunityJoinPendingRequest$249(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                long j14 = this.e;
-                int i10 = this.c;
-                this.b.lambda$checkDeletingTask$84(this.d, j14, i10);
+                this.b.lambda$toggleCommunityParticipantBanned$248(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
                 break;
         }
-    }
-
-    public /* synthetic */ qc(MessagesController messagesController, int i10, long j10, long j11, int i11) {
-        this.a = i11;
-        this.b = messagesController;
-        this.c = i10;
-        this.d = j10;
-        this.e = j11;
     }
 }

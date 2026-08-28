@@ -1,21 +1,20 @@
 package b1;
 
-import ad.l;
-import ad.p;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.os.Parcel;
 import android.os.ResultReceiver;
-import g7.d0;
+import f7.f0;
+import j3.r0;
 import java.util.LinkedHashSet;
 import java.util.concurrent.Executor;
-import kotlin.jvm.internal.j;
-import kotlin.jvm.internal.q;
-import qc.r;
-import v0.i;
+import kotlin.jvm.internal.i;
+import pc.r;
+import zc.l;
+import zc.p;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final a a = new a();
@@ -26,19 +25,19 @@ public abstract class d {
     static {
         Integer[] numArr = {7, 20};
         LinkedHashSet linkedHashSet = new LinkedHashSet(r.a(2));
-        for (int i10 = 0; i10 < 2; i10++) {
-            linkedHashSet.add(numArr[i10]);
+        for (int i9 = 0; i9 < 2; i9++) {
+            linkedHashSet.add(numArr[i9]);
         }
         b = linkedHashSet;
         c = 1;
     }
 
     public static void a(ResultReceiver resultReceiver, Intent intent, String str) {
-        j.e(resultReceiver, "resultReceiver");
+        i.e(resultReceiver, "resultReceiver");
         intent.putExtra("TYPE", str);
         intent.putExtra("ACTIVITY_REQUEST_CODE", c);
         Parcel obtain = Parcel.obtain();
-        j.d(obtain, "obtain(...)");
+        i.d(obtain, "obtain(...)");
         resultReceiver.writeToParcel(obtain, 0);
         obtain.setDataPosition(0);
         ResultReceiver resultReceiver2 = (ResultReceiver) ResultReceiver.CREATOR.createFromParcel(obtain);
@@ -47,26 +46,26 @@ public abstract class d {
         intent.setFlags(65536);
     }
 
-    public static boolean b(Bundle bundle, p pVar, Executor executor, i callback, CancellationSignal cancellationSignal) {
-        j.e(executor, "executor");
-        j.e(callback, "callback");
+    public static boolean b(Bundle bundle, p pVar, Executor executor, v0.i callback, CancellationSignal cancellationSignal) {
+        i.e(executor, "executor");
+        i.e(callback, "callback");
         if (!bundle.getBoolean("FAILURE_RESPONSE")) {
             return false;
         }
-        d0.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
+        f0.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
         return true;
     }
 
-    public static final boolean c(int i10, p pVar, l lVar, CancellationSignal cancellationSignal) {
-        if (i10 == -1) {
+    public static final boolean c(int i9, p pVar, l lVar, CancellationSignal cancellationSignal) {
+        if (i9 == -1) {
             return false;
         }
-        q qVar = new q();
-        qVar.a = new w0.c(i0.a.l(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
-        if (i10 == 0) {
-            qVar.a = new w0.b("activity is cancelled by the user.");
+        kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
+        pVar2.a = new w0.c(r0.m(i9, "activity with result code: ", " indicating not RESULT_OK"), 2);
+        if (i9 == 0) {
+            pVar2.a = new w0.b("activity is cancelled by the user.");
         }
-        pVar.invoke(cancellationSignal, new c(lVar, qVar, 0));
+        pVar.invoke(cancellationSignal, new c(lVar, pVar2, 0));
         return true;
     }
 }

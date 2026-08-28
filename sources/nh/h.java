@@ -1,120 +1,30 @@
 package nh;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import h7.z5;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.rl;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Cells.pa;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final class h extends FrameLayout {
-    public final ImageView a;
-    public final FrameLayout.LayoutParams b;
-    public final FrameLayout.LayoutParams c;
-    public final TextView d;
-    public final TextView e;
-    public final TextView f;
+public final /* synthetic */ class h implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o b;
 
-    public h(Context context, c6 c6Var) {
-        super(context);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        FrameLayout.LayoutParams d = z5.d(28, 28.0f, 51, 17.0f, 14.33f, 0.0f, 0.0f);
-        this.b = d;
-        addView(imageView, d);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        FrameLayout.LayoutParams d10 = z5.d(-1, -2.0f, 55, 62.0f, 10.0f, 40.0f, 8.66f);
-        this.c = d10;
-        addView(linearLayout, d10);
-        TextView textView = new TextView(context);
-        this.d = textView;
-        rl.h(15.0f, 1, textView);
-        textView.setTextColor(g6.v0(g6.G6, c6Var));
-        TextView i10 = pa.i(linearLayout, textView, z5.t(-1, -2, 55, 0, 0, 0, 0), context);
-        this.e = i10;
-        i10.setTextSize(1, 14.0f);
-        i10.setTextColor(g6.v0(g6.z6, c6Var));
-        linearLayout.addView(i10, z5.t(-1, -2, 55, 0, 3, 0, 0));
-        ImageView imageView2 = new ImageView(context);
-        imageView2.setColorFilter(new PorterDuffColorFilter(g6.v0(g6.M6, c6Var), mode));
-        imageView2.setImageResource(R.drawable.msg_arrowright);
-        imageView2.setScaleType(scaleType);
-        addView(imageView2, z5.d(24, 24.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.f = textView2;
-        textView2.setTextColor(-1);
-        textView2.setBackground(g6.b0(AndroidUtilities.dp(4.0f), g6.v0(g6.uj, c6Var)));
-        textView2.setTextSize(1, 13.0f);
-        textView2.setTypeface(AndroidUtilities.bold());
-        textView2.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        textView2.setGravity(17);
-        textView2.setVisibility(8);
-        addView(textView2, z5.d(-2, 18.0f, 21, 0.0f, 0.0f, 35.33f, 0.0f));
+    public /* synthetic */ h(o oVar, int i9) {
+        this.a = i9;
+        this.b = oVar;
     }
 
-    public final void a(int i10, int i11, CharSequence charSequence, CharSequence charSequence2) {
-        ImageView imageView = this.a;
-        imageView.setImageResource(i11);
-        imageView.setBackground(g6.b0(AndroidUtilities.dp(9.0f), i10));
-        TextView textView = this.d;
-        textView.setText(charSequence);
-        boolean isEmpty = TextUtils.isEmpty(charSequence2);
-        TextView textView2 = this.e;
-        FrameLayout.LayoutParams layoutParams = this.c;
-        FrameLayout.LayoutParams layoutParams2 = this.b;
-        if (isEmpty) {
-            layoutParams2.topMargin = AndroidUtilities.dp(10.0f);
-            layoutParams2.bottomMargin = AndroidUtilities.dp(10.0f);
-            textView.setTypeface(null);
-            textView.setTextSize(1, 16.0f);
-            layoutParams.topMargin = 0;
-            layoutParams.bottomMargin = 0;
-            layoutParams.gravity = 23;
-            textView2.setVisibility(8);
-            return;
-        }
-        layoutParams2.topMargin = AndroidUtilities.dp(14.33f);
-        layoutParams2.bottomMargin = AndroidUtilities.dp(10.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(1, 15.0f);
-        layoutParams.topMargin = AndroidUtilities.dp(10.0f);
-        layoutParams.bottomMargin = AndroidUtilities.dp(8.66f);
-        layoutParams.gravity = 55;
-        textView2.setText(charSequence2);
-        textView2.setVisibility(0);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-    }
-
-    public void setPercent(CharSequence charSequence) {
-        boolean isEmpty = TextUtils.isEmpty(charSequence);
-        TextView textView = this.f;
-        if (isEmpty) {
-            textView.setVisibility(8);
-        } else {
-            textView.setVisibility(0);
-            textView.setText(charSequence);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i9 = this.a;
+        o oVar = this.b;
+        switch (i9) {
+            case 0:
+                o.V(oVar);
+                break;
+            default:
+                oVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_CHAT));
+                break;
         }
     }
 }

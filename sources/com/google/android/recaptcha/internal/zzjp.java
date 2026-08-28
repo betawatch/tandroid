@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.lang.reflect.Proxy;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzjp implements zzjt {
     public static final zzjp zza = new zzjp();
@@ -11,7 +11,7 @@ public final class zzjp implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i10, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i9, zziz zzizVar, zzzt... zzztVarArr) {
         int length = zzztVarArr.length;
         if (length != 4 && length != 5) {
             throw new zzdm(4, 3, null);
@@ -57,9 +57,9 @@ public final class zzjp implements zzjt {
         try {
             Class zza9 = zziy.zza(zza5);
             zzizVar.zzc().zze(intValue, Proxy.newProxyInstance(zza9.getClassLoader(), new Class[]{zza9}, new zziw(zzivVar, zza7, zza8)));
-            zzizVar.zzc().zze(i10, zzivVar);
-        } catch (Exception e9) {
-            throw new zzdm(6, 20, e9);
+            zzizVar.zzc().zze(i9, zzivVar);
+        } catch (Exception e10) {
+            throw new zzdm(6, 20, e10);
         }
     }
 }

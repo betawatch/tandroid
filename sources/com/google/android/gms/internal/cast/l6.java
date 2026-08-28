@@ -1,53 +1,58 @@
 package com.google.android.gms.internal.cast;
 
-import j$.util.DesugarCollections;
-import java.util.AbstractList;
-import java.util.Iterator;
-import java.util.List;
 import java.util.ListIterator;
-import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class l6 extends AbstractList implements RandomAccess, m5 {
-    public final l5 a;
+public final class l6 implements ListIterator {
+    public final ListIterator a;
 
-    public l6(l5 l5Var) {
-        this.a = l5Var;
+    public l6(n6 n6Var, int i9) {
+        this.a = n6Var.a.listIterator(i9);
     }
 
-    @Override // com.google.android.gms.internal.cast.m5
-    public final Object c(int i10) {
-        return this.a.b.get(i10);
+    @Override // java.util.ListIterator
+    public final /* synthetic */ void add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object get(int i10) {
-        return this.a.get(i10);
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final boolean hasNext() {
+        return this.a.hasNext();
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final Iterator iterator() {
-        return new k6(this);
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.a.hasPrevious();
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i10) {
-        return new j6(this, i10);
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final /* bridge */ /* synthetic */ Object next() {
+        return (String) this.a.next();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.a.b.size();
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.a.nextIndex();
     }
 
-    @Override // com.google.android.gms.internal.cast.m5
-    public final List zzh() {
-        return DesugarCollections.unmodifiableList(this.a.b);
+    @Override // java.util.ListIterator
+    public final /* bridge */ /* synthetic */ Object previous() {
+        return (String) this.a.previous();
     }
 
-    @Override // com.google.android.gms.internal.cast.m5
-    public final m5 zzd() {
-        return this;
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.a.previousIndex();
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final void remove() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.ListIterator
+    public final /* synthetic */ void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

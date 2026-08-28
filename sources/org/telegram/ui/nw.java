@@ -1,32 +1,40 @@
 package org.telegram.ui;
 
-import android.text.SpannableStringBuilder;
+import android.content.Context;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class nw extends org.telegram.ui.Components.wh0 {
-    public final /* synthetic */ int f0 = 0;
-    public final /* synthetic */ Object g0;
+public final class nw extends FragmentContextView {
+    public final /* synthetic */ int J0;
+    public final /* synthetic */ dy K0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nw(we1 we1Var, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
-        super(spannableStringBuilder, spannableStringBuilder2);
-        this.g0 = we1Var;
-    }
-
-    @Override // org.telegram.ui.Components.wh0
-    public final float d() {
-        switch (this.f0) {
-            case 0:
-                return ((fy) this.g0).a.getViewOffset();
+    public nw(dy dyVar, Context context, dy dyVar2, int i9) {
+        super(context, dyVar2, true);
+        this.J0 = i9;
+        switch (i9) {
+            case 1:
+                this.K0 = dyVar;
+                super(context, dyVar2, false);
+                break;
             default:
-                return ((we1) this.g0).J.b3;
+                this.K0 = dyVar;
+                break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nw(String str, String str2, fy fyVar) {
-        super(str, str2);
-        this.g0 = fyVar;
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i9) {
+        switch (this.J0) {
+            case 0:
+                dy dyVar = this.K0;
+                dyVar.F1.i(dyVar.C1, i9 == 0, true);
+                break;
+            default:
+                dy dyVar2 = this.K0;
+                dyVar2.F1.i(dyVar2.E1, i9 == 0, true);
+                break;
+        }
     }
 }

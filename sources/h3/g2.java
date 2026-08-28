@@ -1,14 +1,16 @@
 package h3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import fh.y5;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class g2 implements g {
     public static final String a;
-    public static final f9.z b;
+    public static final y5 b;
 
     static {
-        int i10 = d5.g0.a;
+        int i9 = d5.f0.a;
         a = Integer.toString(0, 36);
-        b = new f9.z(26);
+        b = new y5(22);
     }
 }

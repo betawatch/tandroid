@@ -1,28 +1,49 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
+import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class d60 extends org.telegram.ui.Cells.sa {
-    public final TextView T;
-    public final TextView U;
+public final class d60 extends gw0 {
+    public final /* synthetic */ int G;
 
-    public d60(Context context) {
-        super(context, 6, 0, true);
-        LinearLayout g10 = org.telegram.messenger.y1.g(context, 1);
-        TextView textView = new TextView(context);
-        this.T = textView;
-        org.telegram.messenger.y1.s(textView, org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.G6, false), 1, 16.0f);
-        g10.addView(textView, h7.z5.q(-2, -2, 5));
-        TextView textView2 = new TextView(context);
-        this.U = textView2;
-        textView2.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.z6, false));
-        textView2.setTextSize(1, 13.0f);
-        g10.addView(textView2, h7.z5.t(-2, -2, 5, 0, 1, 0, 0));
-        addView(g10, h7.z5.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 16, 18.0f, 0.0f, 18.0f, 0.0f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ d60(Context context, View view, int i9, org.telegram.ui.ActionBar.b6 b6Var, int i10) {
+        super(context, view, i9, b6Var);
+        this.G = i10;
+    }
+
+    @Override // org.telegram.ui.Components.gw0, android.view.ViewGroup, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.G) {
+            case 0:
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().startAnimation();
+                break;
+            case 1:
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().startAnimation();
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.gw0, android.view.View
+    public void setVisibility(int i9) {
+        switch (this.G) {
+            case 2:
+                super.setVisibility(i9);
+                if (i9 != 0) {
+                    e(false, false);
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i9);
+                break;
+        }
     }
 }

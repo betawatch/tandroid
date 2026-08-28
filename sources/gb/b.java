@@ -1,15 +1,22 @@
 package gb;
 
-import androidx.lifecycle.b0;
-import androidx.lifecycle.m;
-import androidx.lifecycle.s;
-import com.google.android.gms.common.api.n;
-import java.io.Closeable;
+import fb.c;
+import x5.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public interface b extends Closeable, s, n {
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    @b0(m.ON_DESTROY)
-    void close();
+public final class b extends c {
+    public static final b b;
+
+    static {
+        a aVar = new a();
+        aVar.a = -1.0f;
+        boolean z10 = false;
+        if (Float.compare(0.5f, 0.0f) >= 0 && Float.compare(0.5f, 1.0f) <= 0) {
+            z10 = true;
+        }
+        l.a("Confidence Threshold should be in range [0.0f, 1.0f].", z10);
+        aVar.a = 0.5f;
+        b = new b(aVar);
+    }
 }

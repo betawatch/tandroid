@@ -1,22 +1,47 @@
 package oa;
 
-import java.lang.reflect.Method;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class p extends r {
-    public final /* synthetic */ Method b;
+public final class p implements la.v {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public p(Method method) {
-        this.b = method;
+    public /* synthetic */ p(Object obj, int i9) {
+        this.a = i9;
+        this.b = obj;
     }
 
-    @Override // oa.r
-    public final Object a(Class cls) {
-        String j10 = g5.b.j(cls);
-        if (j10 == null) {
-            return this.b.invoke(null, cls, Object.class);
+    @Override // la.v
+    public final la.u create(la.g gVar, sa.a aVar) {
+        switch (this.a) {
+            case 0:
+                if (aVar.a == Number.class) {
+                    return (q) this.b;
+                }
+                return null;
+            case 1:
+                if (aVar.a == Object.class) {
+                    return new r(gVar, (la.t) this.b);
+                }
+                return null;
+            default:
+                Class cls = aVar.a;
+                if (cls == Calendar.class || cls == GregorianCalendar.class) {
+                    return (s0) this.b;
+                }
+                return null;
         }
-        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(j10));
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 2:
+                return "Factory[type=" + Calendar.class.getName() + "+" + GregorianCalendar.class.getName() + ",adapter=" + ((s0) this.b) + "]";
+            default:
+                return super.toString();
+        }
     }
 }

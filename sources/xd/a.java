@@ -1,7 +1,83 @@
 package xd;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.lang.ref.Reference;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.concurrent.Semaphore;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public interface a {
-    void a();
+public final class a implements Iterator {
+    public int a;
+    public Object b;
+    public final /* synthetic */ b c;
+
+    public a(b bVar) {
+        this.c = bVar;
+        this.a = bVar.b.size();
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        int i9;
+        synchronized (this.c.b) {
+            try {
+                this.b = null;
+                while (true) {
+                    if (this.b != null || (i9 = this.a) <= 0) {
+                        break;
+                    }
+                    ArrayList arrayList = this.c.b;
+                    int i10 = i9 - 1;
+                    this.a = i10;
+                    Reference reference = (Reference) arrayList.get(i10);
+                    Object obj = reference.get();
+                    if (obj != null && !this.c.c.contains(reference)) {
+                        this.b = obj;
+                        break;
+                    }
+                }
+                if (this.b == null) {
+                    b bVar = this.c;
+                    if (bVar.a) {
+                        ArrayList arrayList2 = bVar.b;
+                        ArrayList arrayList3 = bVar.d;
+                        ArrayList arrayList4 = bVar.c;
+                        if (!bVar.e) {
+                            throw new IllegalStateException();
+                        }
+                        bVar.e = false;
+                        if (!arrayList4.isEmpty()) {
+                            arrayList2.removeAll(arrayList4);
+                            arrayList4.clear();
+                        }
+                        if (!arrayList3.isEmpty()) {
+                            arrayList2.addAll(arrayList3);
+                            arrayList3.clear();
+                        }
+                    }
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        if (this.b != null) {
+            return true;
+        }
+        Semaphore semaphore = this.c.f;
+        if (semaphore != null) {
+            semaphore.release();
+        }
+        return false;
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        Object obj = this.b;
+        if (obj != null) {
+            return obj;
+        }
+        throw new NoSuchElementException();
+    }
 }

@@ -28,14 +28,14 @@ public final class m0 extends LinkedHashMap {
         byte[] bArr = (byte[]) obj;
         int length = bArr.length;
         Charset charset = a0.a;
-        int i10 = length;
+        int i9 = length;
         for (byte b10 : bArr) {
-            i10 = (i10 * 31) + b10;
+            i9 = (i9 * 31) + b10;
         }
-        if (i10 == 0) {
+        if (i9 == 0) {
             return 1;
         }
-        return i10;
+        return i9;
     }
 
     public final void a() {
@@ -89,11 +89,11 @@ public final class m0 extends LinkedHashMap {
 
     @Override // java.util.AbstractMap, java.util.Map
     public final int hashCode() {
-        int i10 = 0;
+        int i9 = 0;
         for (Map.Entry entry : entrySet()) {
-            i10 += b(entry.getValue()) ^ b(entry.getKey());
+            i9 += b(entry.getValue()) ^ b(entry.getKey());
         }
-        return i10;
+        return i9;
     }
 
     @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map

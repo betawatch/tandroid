@@ -1,62 +1,66 @@
 package org.telegram.ui;
 
 import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
+import android.transition.Fade;
+import android.transition.TransitionValues;
+import android.view.View;
 import android.view.ViewGroup;
-import java.lang.reflect.Method;
-import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class s31 extends AnimatorListenerAdapter {
+public final class s31 extends Fade {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.sl0 b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ SecretMediaViewer d;
 
-    public /* synthetic */ s31(org.telegram.ui.Components.sl0 sl0Var, int i10) {
-        this.a = i10;
-        this.b = sl0Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b.b;
-                secretMediaViewer.V.getNextView().setText((CharSequence) null);
-                at0 at0Var = secretMediaViewer.W;
-                at0Var.h0 = false;
-                if (at0Var.i0 >= 0) {
-                    ((ViewGroup.MarginLayoutParams) at0Var.k0.getLayoutParams()).topMargin = at0Var.i0;
-                    at0Var.i0 = -1;
-                    at0Var.requestLayout();
-                    break;
-                }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s31(SecretMediaViewer secretMediaViewer, boolean z10, boolean z11, int i9) {
+        super(1);
+        this.a = i9;
+        switch (i9) {
+            case 1:
+                this.d = secretMediaViewer;
+                this.b = z10;
+                this.c = z11;
+                super(2);
                 break;
             default:
-                ((SecretMediaViewer) this.b.b).V.setTranslationY(0.0f);
+                this.d = secretMediaViewer;
+                this.b = z10;
+                this.c = z11;
                 break;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
         switch (this.a) {
             case 0:
-                at0 at0Var = ((SecretMediaViewer) this.b.b).W;
-                Method method = at0Var.b0;
-                if (method != null) {
-                    try {
-                        method.invoke(at0Var, null);
-                        break;
-                    } catch (Exception e9) {
-                        FileLog.e(e9);
-                        return;
-                    }
+                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+                if (this.b && !this.c && view == this.d.V) {
+                    onAppear.addListener(new bc0(this, 23));
+                    ((ObjectAnimator) onAppear).addUpdateListener(new v01(this, 4));
                 }
-                break;
+                return onAppear;
             default:
-                super.onAnimationStart(animator);
-                break;
+                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+        }
+    }
+
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 1:
+                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                if (!this.b && this.c && view == this.d.V) {
+                    onDisappear.addListener(new bc0(this, 24));
+                    ((ObjectAnimator) onDisappear).addUpdateListener(new v01(this, 5));
+                }
+                return onDisappear;
+            default:
+                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
         }
     }
 }

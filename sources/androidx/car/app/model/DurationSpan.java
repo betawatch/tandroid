@@ -2,7 +2,7 @@ package androidx.car.app.model;
 
 import j$.time.Duration;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class DurationSpan extends CarSpan {
     private final long mDurationSeconds;
@@ -32,7 +32,7 @@ public final class DurationSpan extends CarSpan {
     }
 
     public String toString() {
-        return a9.p.o(new StringBuilder("[seconds: "), this.mDurationSeconds, "]");
+        return aa.d.q(new StringBuilder("[seconds: "), this.mDurationSeconds, "]");
     }
 
     public static DurationSpan create(Duration duration) {

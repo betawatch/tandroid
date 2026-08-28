@@ -2,40 +2,35 @@ package l8;
 
 import android.os.IBinder;
 import android.os.IInterface;
-import android.os.RemoteException;
-import java.util.ArrayList;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a extends g0 {
-    public final /* synthetic */ IBinder h;
-    public final /* synthetic */ ef.a n;
+public final class a implements c, IInterface {
+    public final IBinder a;
 
-    public a(ef.a aVar, IBinder iBinder) {
-        this.h = iBinder;
-        this.n = aVar;
+    public a(IBinder iBinder) {
+        this.a = iBinder;
     }
 
-    @Override // l8.g0
-    public final void b() {
-        c cVar = (c) this.n.b;
-        cVar.n = (IInterface) cVar.i.a(this.h);
-        f0 f0Var = cVar.b;
-        int i10 = 0;
-        f0Var.b("linkToDeath", new Object[0]);
+    public final Parcel E0(Parcel parcel, int i9) {
+        Parcel obtain = Parcel.obtain();
         try {
-            cVar.n.asBinder().linkToDeath(cVar.k, 0);
-        } catch (RemoteException e9) {
-            f0Var.a(e9, "linkToDeath failed", new Object[0]);
+            try {
+                this.a.transact(i9, parcel, obtain, 0);
+                obtain.readException();
+                return obtain;
+            } catch (RuntimeException e10) {
+                obtain.recycle();
+                throw e10;
+            }
+        } finally {
+            parcel.recycle();
         }
-        cVar.g = false;
-        ArrayList arrayList = cVar.d;
-        int size = arrayList.size();
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((Runnable) obj).run();
-        }
-        cVar.d.clear();
+    }
+
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
     }
 }

@@ -1,60 +1,34 @@
 package t5;
 
-import a9.p;
-import android.os.Parcel;
-import android.os.Parcelable;
-import h7.r8;
-import java.util.Arrays;
-import r6.l;
+import android.os.Bundle;
+import android.util.Log;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.SuccessContinuation;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import java.io.IOException;
 
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b extends z5.a {
-    public static final Parcelable.Creator<b> CREATOR = new l(15);
-    public final boolean a;
-    public final long b;
-    public final long c;
+public final /* synthetic */ class b implements Continuation, SuccessContinuation {
+    public static final /* synthetic */ b a = new b();
+    public static final /* synthetic */ b b = new b();
 
-    public b(long j10, long j11, boolean z10) {
-        this.a = z10;
-        this.b = j10;
-        this.c = j11;
+    @Override // com.google.android.gms.tasks.SuccessContinuation
+    public Task then(Object obj) {
+        Bundle bundle = (Bundle) obj;
+        int i9 = a.h;
+        return (bundle == null || !bundle.containsKey("google.messenger")) ? Tasks.forResult(bundle) : Tasks.forResult(null);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // com.google.android.gms.tasks.Continuation
+    public Object then(Task task) {
+        if (task.isSuccessful()) {
+            return (Bundle) task.getResult();
         }
-        if (obj instanceof b) {
-            b bVar = (b) obj;
-            if (this.a == bVar.a && this.b == bVar.b && this.c == bVar.c) {
-                return true;
-            }
+        if (Log.isLoggable("Rpc", 3)) {
+            Log.d("Rpc", "Error making request: ".concat(String.valueOf(task.getException())));
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), Long.valueOf(this.b), Long.valueOf(this.c)});
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("CollectForDebugParcelable[skipPersistentStorage: ");
-        sb2.append(this.a);
-        sb2.append(",collectForDebugStartTimeMillis: ");
-        sb2.append(this.b);
-        sb2.append(",collectForDebugExpiryTimeMillis: ");
-        return p.o(sb2, this.c, "]");
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.s(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        r8.s(parcel, 2, 8);
-        parcel.writeLong(this.c);
-        r8.s(parcel, 3, 8);
-        parcel.writeLong(this.b);
-        r8.r(parcel, q6);
+        throw new IOException("SERVICE_NOT_AVAILABLE", task.getException());
     }
 }

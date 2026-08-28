@@ -1,32 +1,44 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class o2 extends View {
-    public final d70 a;
-    public final org.telegram.ui.Components.dq b;
+public final class o2 extends m2.g {
+    public final /* synthetic */ t2 s0;
 
-    public o2(Context context, d70 d70Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o2(t2 t2Var, Context context) {
         super(context);
-        this.a = d70Var;
-        org.telegram.ui.Components.dq dqVar = new org.telegram.ui.Components.dq(new ColorDrawable(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.Qk, false)), org.telegram.ui.ActionBar.g6.U0(context, R.drawable.greydivider_bottom, -16777216));
-        this.b = dqVar;
-        dqVar.w = true;
-        setBackgroundDrawable(dqVar);
-        setImportantForAccessibility(2);
+        this.s0 = t2Var;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(12.0f));
-        int i12 = org.telegram.ui.ActionBar.g6.Qk;
-        ((m4) this.a).getClass();
-        org.telegram.ui.ActionBar.g6.v1(this.b, org.telegram.ui.ActionBar.g6.w0(null, i12, false), false);
+    @Override // m2.g, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        t2 t2Var = this.s0;
+        if (actionMasked == 0) {
+            t2Var.x.b0.requestDisallowInterceptTouchEvent(true);
+        } else if (motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) {
+            t2Var.x.b0.requestDisallowInterceptTouchEvent(false);
+        }
+        t2Var.x.k();
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // m2.g, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        t2 t2Var = this.s0;
+        if (actionMasked == 0) {
+            t2Var.x.b0.requestDisallowInterceptTouchEvent(true);
+        }
+        boolean onTouchEvent = super.onTouchEvent(motionEvent);
+        if (motionEvent.getActionMasked() != 1 && motionEvent.getActionMasked() != 3) {
+            return onTouchEvent;
+        }
+        t2Var.x.b0.requestDisallowInterceptTouchEvent(false);
+        return onTouchEvent;
     }
 }

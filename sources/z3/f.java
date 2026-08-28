@@ -3,26 +3,26 @@ package z3;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import d5.g0;
+import d5.f0;
 import d5.n;
+import g7.y8;
+import gh.i3;
 import h3.g1;
 import h3.h0;
 import h3.h1;
 import h3.k0;
 import h3.t0;
 import h3.u0;
-import h3.x;
-import h7.p8;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class f extends h3.e implements Handler.Callback {
     public final d a;
     public final h0 b;
     public final Handler c;
     public final e d;
-    public p8 e;
+    public y8 e;
     public boolean f;
     public boolean h;
     public long n;
@@ -36,7 +36,7 @@ public final class f extends h3.e implements Handler.Callback {
         if (looper == null) {
             handler = null;
         } else {
-            int i10 = g0.a;
+            int i9 = f0.a;
             handler = new Handler(looper, this);
         }
         this.c = handler;
@@ -46,33 +46,33 @@ public final class f extends h3.e implements Handler.Callback {
     }
 
     public final void a(c cVar, ArrayList arrayList) {
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             b[] bVarArr = cVar.a;
-            if (i10 >= bVarArr.length) {
+            if (i9 >= bVarArr.length) {
                 return;
             }
-            t0 wrappedMetadataFormat = bVarArr[i10].getWrappedMetadataFormat();
+            t0 wrappedMetadataFormat = bVarArr[i9].getWrappedMetadataFormat();
             if (wrappedMetadataFormat != null) {
                 d dVar = this.a;
                 if (dVar.b(wrappedMetadataFormat)) {
-                    p8 a2 = dVar.a(wrappedMetadataFormat);
-                    byte[] wrappedMetadataBytes = bVarArr[i10].getWrappedMetadataBytes();
+                    y8 a2 = dVar.a(wrappedMetadataFormat);
+                    byte[] wrappedMetadataBytes = bVarArr[i9].getWrappedMetadataBytes();
                     wrappedMetadataBytes.getClass();
                     e eVar = this.d;
                     eVar.clear();
-                    eVar.b(wrappedMetadataBytes.length);
+                    eVar.c(wrappedMetadataBytes.length);
                     eVar.b.put(wrappedMetadataBytes);
                     eVar.d();
                     c a3 = a2.a(eVar);
                     if (a3 != null) {
                         a(a3, arrayList);
                     }
-                    i10++;
+                    i9++;
                 }
             }
-            arrayList.add(bVarArr[i10]);
-            i10++;
+            arrayList.add(bVarArr[i9]);
+            i9++;
         }
     }
 
@@ -88,22 +88,22 @@ public final class f extends h3.e implements Handler.Callback {
         h1 h1Var = k0Var.h0;
         n nVar = k0Var.l;
         g1 a2 = h1Var.a();
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             b[] bVarArr = cVar.a;
-            if (i10 >= bVarArr.length) {
+            if (i9 >= bVarArr.length) {
                 break;
             }
-            bVarArr[i10].populateMediaMetadata(a2);
-            i10++;
+            bVarArr[i9].populateMediaMetadata(a2);
+            i9++;
         }
         k0Var.h0 = new h1(a2);
         h1 R = k0Var.R();
         if (!R.equals(k0Var.O)) {
             k0Var.O = R;
-            nVar.c(14, new x(h0Var, 2));
+            nVar.c(14, new i3(h0Var, 11));
         }
-        nVar.c(28, new x(cVar, 3));
+        nVar.c(28, new i3(cVar, 12));
         nVar.b();
     }
 
@@ -175,9 +175,9 @@ public final class f extends h3.e implements Handler.Callback {
                     } else {
                         eVar.n = this.n;
                         eVar.d();
-                        p8 p8Var = this.e;
-                        int i10 = g0.a;
-                        c a2 = p8Var.a(eVar);
+                        y8 y8Var = this.e;
+                        int i9 = f0.a;
+                        c a2 = y8Var.a(eVar);
                         if (a2 != null) {
                             ArrayList arrayList = new ArrayList(a2.a.length);
                             a(a2, arrayList);
@@ -215,8 +215,8 @@ public final class f extends h3.e implements Handler.Callback {
     @Override // h3.h2
     public final int supportsFormat(t0 t0Var) {
         if (this.a.b(t0Var)) {
-            return com.google.android.recaptcha.internal.a.b(t0Var.W == 0 ? 4 : 2, 0, 0);
+            return e2.c.b(t0Var.W == 0 ? 4 : 2, 0, 0);
         }
-        return com.google.android.recaptcha.internal.a.b(0, 0, 0);
+        return e2.c.b(0, 0, 0);
     }
 }

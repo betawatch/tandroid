@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 import java.lang.ref.WeakReference;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class l {
     protected final m mLifecycleFragment;
@@ -23,9 +23,9 @@ public abstract class l {
     }
 
     public Activity getActivity() {
-        Activity e9 = this.mLifecycleFragment.e();
-        y5.l.h(e9);
-        return e9;
+        Activity e10 = this.mLifecycleFragment.e();
+        x5.l.h(e10);
+        return e10;
     }
 
     public abstract void onStop();
@@ -51,8 +51,8 @@ public abstract class l {
                 }
                 weakHashMap.put(activity, new WeakReference(p1Var2));
                 return p1Var2;
-            } catch (ClassCastException e9) {
-                throw new IllegalStateException("Fragment with tag LifecycleFragmentImpl is not a LifecycleFragmentImpl", e9);
+            } catch (ClassCastException e10) {
+                throw new IllegalStateException("Fragment with tag LifecycleFragmentImpl is not a LifecycleFragmentImpl", e10);
             }
         }
         androidx.fragment.app.v vVar = (androidx.fragment.app.v) activity;
@@ -73,8 +73,8 @@ public abstract class l {
             }
             weakHashMap2.put(vVar, new WeakReference(r1Var2));
             return r1Var2;
-        } catch (ClassCastException e10) {
-            throw new IllegalStateException("Fragment with tag SLifecycleFragmentImpl is not a SupportLifecycleFragmentImpl", e10);
+        } catch (ClassCastException e11) {
+            throw new IllegalStateException("Fragment with tag SLifecycleFragmentImpl is not a SupportLifecycleFragmentImpl", e11);
         }
     }
 
@@ -97,7 +97,7 @@ public abstract class l {
     public void onSaveInstanceState(Bundle bundle) {
     }
 
-    public void onActivityResult(int i10, int i11, Intent intent) {
+    public void onActivityResult(int i9, int i10, Intent intent) {
     }
 
     public void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {

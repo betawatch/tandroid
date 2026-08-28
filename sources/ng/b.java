@@ -1,156 +1,103 @@
 package ng;
 
-import android.graphics.ColorFilter;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
+import android.graphics.Shader;
+import kg.f;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements mg.c, c6 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c6 b;
+public final class b implements a {
+    public final Paint a;
+    public final Matrix b;
+    public BitmapShader c;
+    public Bitmap d;
+    public final Matrix e;
+    public Bitmap f;
+    public int h;
+    public int n;
 
-    public /* synthetic */ b(int i10, c6 c6Var) {
-        this.a = i10;
-        this.b = c6Var;
+    public b() {
+        Paint paint = new Paint(3);
+        this.a = paint;
+        this.b = new Matrix();
+        this.e = new Matrix();
+        paint.setFilterBitmap(true);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public ColorFilter F() {
-        return g6.v3;
+    @Override // ng.a
+    public final void T0(Canvas canvas, float f10, float f11, float f12, float f13) {
+        Bitmap bitmap = this.d;
+        if (bitmap == null || bitmap.isRecycled() || this.c == null) {
+            return;
+        }
+        Matrix matrix = this.e;
+        Matrix matrix2 = this.b;
+        matrix.set(matrix2);
+        matrix.postTranslate(f10, f11);
+        this.c.setLocalMatrix(matrix2);
+        canvas.drawRect(f10, f11, f12, f13, this.a);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public Paint N(String str) {
-        return g6.S0(str);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public int N0(int i10) {
-        if (i10 == g6.G8) {
-            return -14145495;
+    public final void a(Bitmap bitmap) {
+        if (this.d == bitmap) {
+            return;
         }
-        if (i10 == g6.E8) {
-            return -1;
-        }
-        if (i10 == g6.h5) {
-            return -14737633;
-        }
-        if (i10 == g6.j5) {
-            return -592138;
-        }
-        if (i10 == g6.r5) {
-            return -8553091;
-        }
-        if (i10 == g6.He) {
-            return -16777216;
-        }
-        if (i10 == g6.Ke) {
-            return -1610612736;
-        }
-        if (i10 == g6.Ne || i10 == g6.Re || i10 == g6.Me) {
-            return -9539985;
-        }
-        if (i10 == g6.G6) {
-            return -1;
-        }
-        int i11 = g6.Mh;
-        if (i10 == i11) {
-            return -11754001;
-        }
-        if (i10 == g6.i6) {
-            return 536870911;
-        }
-        if (i10 == g6.Fh || i10 == g6.Eh || i10 == g6.Gh) {
-            return -1;
-        }
-        if (i10 == g6.Hh) {
-            return 352321535;
-        }
-        if (i10 == g6.Je || i10 == i11) {
-            return -7895161;
-        }
-        if (i10 == g6.Ie) {
-            return 780633991;
-        }
-        if (i10 == g6.a7) {
-            return -15921907;
-        }
-        if (i10 == g6.m7) {
-            return -12500671;
-        }
-        if (i10 == g6.l7) {
-            return -13133079;
-        }
-        if (i10 == g6.n7) {
-            return -1;
-        }
-        if (i10 == g6.d6) {
-            return -15198183;
-        }
-        if (i10 == g6.d7) {
-            return -16777216;
-        }
-        c6 c6Var = this.b;
-        return c6Var != null ? c6Var.N0(i10) : g6.w0(null, i10, false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public boolean a() {
-        return g6.I.q();
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public /* synthetic */ Drawable getDrawable(String str) {
-        return null;
-    }
-
-    @Override // mg.c
-    public int i(c6 c6Var, boolean z10) {
-        switch (this.a) {
-            case 0:
-                if (c.c(UserConfig.selectedAccount, this.b)) {
-                    return g6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, g6.v0(g6.Sd, c6Var));
-                }
-                return i0.b.k(g6.v0(g6.Sd, c6Var), 255);
-            case 1:
-                if (c.c(UserConfig.selectedAccount, this.b)) {
-                    return g6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, g6.v0(g6.ce, c6Var));
-                }
-                return i0.b.k(g6.v0(z10 ? g6.s8 : g6.ce, c6Var), 255);
-            default:
-                if (c.c(UserConfig.selectedAccount, this.b)) {
-                    return g6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, g6.v0(g6.ce, c6Var));
-                }
-                return i0.b.k(g6.v0(z10 ? g6.s8 : g6.ce, c6Var), 255);
+        this.d = bitmap;
+        Paint paint = this.a;
+        paint.setShader(null);
+        this.c = null;
+        if (bitmap != null) {
+            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+            this.c = bitmapShader;
+            paint.setShader(bitmapShader);
+            c();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public void m(float f10, float f11, int i10, int i11) {
-        g6.q(f10, f11, i10, i11);
+    public final void b(int i9, int i10) {
+        if (this.h == i9 && this.n == i10) {
+            return;
+        }
+        this.h = i9;
+        this.n = i10;
+        c();
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public int o1(int i10) {
-        return N0(i10);
+    public final void c() {
+        Bitmap bitmap = this.d;
+        Matrix matrix = this.b;
+        if (bitmap == null) {
+            matrix.reset();
+            return;
+        }
+        int width = bitmap.getWidth();
+        int height = this.d.getHeight();
+        int i9 = this.h;
+        int i10 = this.n;
+        matrix.reset();
+        if (width <= 0 || height <= 0 || i9 <= 0 || i10 <= 0) {
+            return;
+        }
+        float f10 = i9;
+        float f11 = width;
+        float f12 = i10;
+        float f13 = height;
+        float max = Math.max(f10 / f11, f12 / f13);
+        matrix.setScale(max, max);
+        matrix.postTranslate((f10 - (f11 * max)) * 0.5f, ((f12 - (f13 * max)) * 0.5f) + 0);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public int q0(int i10) {
-        return N0(i10);
+    @Override // ng.a
+    public final kg.d y() {
+        return new f(this);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public /* synthetic */ boolean u0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public /* synthetic */ void c1(int i10, int i11) {
+    @Override // ng.a
+    public final /* synthetic */ void t() {
     }
 }

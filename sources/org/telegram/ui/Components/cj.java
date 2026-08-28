@@ -1,27 +1,27 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.ContactsController;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cj implements jj {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ContactsController.Contact b;
+public final class cj extends f2.n0 {
+    public final /* synthetic */ dj r;
 
-    public /* synthetic */ cj(ContactsController.Contact contact, int i10) {
-        this.a = i10;
-        this.b = contact;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cj(dj djVar, Context context) {
+        super(context);
+        this.r = djVar;
     }
 
-    @Override // org.telegram.ui.Components.jj
-    public final String run() {
-        switch (this.a) {
-            case 0:
-                ContactsController.Contact contact = this.b;
-                return contact.phones.isEmpty() ? "" : oe.b.c().b(contact.phones.get(0));
-            default:
-                ContactsController.Contact contact2 = this.b;
-                return contact2.phones.isEmpty() ? "" : oe.b.c().b(contact2.phones.get(0));
-        }
+    @Override // f2.n0
+    public final int k(int i9, View view) {
+        return org.telegram.messenger.l0.A(8.0f, ((pj) this.r.V).s.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i9, view));
+    }
+
+    @Override // f2.n0
+    public final int m(int i9) {
+        return super.m(i9) * 2;
     }
 }

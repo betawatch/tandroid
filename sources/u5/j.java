@@ -1,50 +1,50 @@
 package u5;
 
-import android.os.Bundle;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.firebase.messaging.s;
+import c2.u0;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class j {
-    public final int a;
-    public final TaskCompletionSource b = new TaskCompletionSource();
-    public final int c;
-    public final Bundle d;
-    public final /* synthetic */ int e;
+public final class j extends u0 {
+    public final Context a;
+    public final /* synthetic */ d b;
 
-    public j(int i10, int i11, Bundle bundle, int i12) {
-        this.e = i12;
-        this.a = i10;
-        this.c = i11;
-        this.d = bundle;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j(d dVar, Context context) {
+        super(Looper.myLooper() == null ? Looper.getMainLooper() : Looper.myLooper(), 4);
+        this.b = dVar;
+        this.a = context.getApplicationContext();
     }
 
-    public final boolean a() {
-        switch (this.e) {
-            case 0:
-                return true;
-            default:
-                return false;
+    @Override // android.os.Handler
+    public final void handleMessage(Message message) {
+        PendingIntent activity;
+        int i9 = message.what;
+        if (i9 != 1) {
+            Log.w("GoogleApiAvailability", "Don't know how to handle this message: " + i9);
+            return;
         }
-    }
-
-    public final void b(s sVar) {
-        if (Log.isLoggable("MessengerIpcClient", 3)) {
-            Log.d("MessengerIpcClient", "Failing " + toString() + " with " + sVar.toString());
+        int i10 = e.a;
+        d dVar = this.b;
+        Context context = this.a;
+        int d = dVar.d(context, i10);
+        AtomicBoolean atomicBoolean = g.a;
+        if (d == 1 || d == 2 || d == 3 || d == 9) {
+            Intent b10 = dVar.b(context, "n", d);
+            if (b10 == null) {
+                activity = null;
+            } else {
+                activity = PendingIntent.getActivity(context, 0, b10, Build.VERSION.SDK_INT >= 23 ? 201326592 : TLObject.FLAG_27);
+            }
+            dVar.h(context, d, activity);
         }
-        this.b.setException(sVar);
-    }
-
-    public final void c(Bundle bundle) {
-        if (Log.isLoggable("MessengerIpcClient", 3)) {
-            Log.d("MessengerIpcClient", "Finishing " + toString() + " with " + String.valueOf(bundle));
-        }
-        this.b.setResult(bundle);
-    }
-
-    public final String toString() {
-        return "Request { what=" + this.c + " id=" + this.a + " oneWay=" + a() + "}";
     }
 }

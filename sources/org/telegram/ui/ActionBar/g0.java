@@ -1,32 +1,32 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ v0 b;
+    public final /* synthetic */ w0 b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ g0(v0 v0Var, int i10, int i11) {
-        this.a = i11;
-        this.b = v0Var;
-        this.c = i10;
+    public /* synthetic */ g0(w0 w0Var, int i9, int i10) {
+        this.a = i10;
+        this.b = w0Var;
+        this.c = i9;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                v0 v0Var = this.b;
-                if (v0Var.b.getSwipeBack() != null) {
-                    v0Var.b.getSwipeBack().e(this.c);
+                w0 w0Var = this.b;
+                if (w0Var.b.getSwipeBack() != null) {
+                    w0Var.b.getSwipeBack().e(this.c);
                     break;
                 }
                 break;
             default:
-                v0 v0Var2 = this.b;
-                if (v0Var2.b.getSwipeBack() != null) {
-                    v0Var2.b.getSwipeBack().e(this.c);
+                w0 w0Var2 = this.b;
+                if (w0Var2.b.getSwipeBack() != null) {
+                    w0Var2.b.getSwipeBack().e(this.c);
                     break;
                 }
                 break;

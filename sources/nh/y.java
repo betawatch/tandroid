@@ -1,16 +1,20 @@
 package nh;
 
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import org.telegram.ui.Cells.r2;
+import org.telegram.ui.Components.dn0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final class y extends LinearLayout {
-    public TextView a;
-    public cg.q b;
-    public String c;
+public final class y implements dn0 {
+    @Override // org.telegram.ui.Components.dn0
+    public final void finish() {
+    }
 
-    public String getCommand() {
-        return this.c;
+    @Override // org.telegram.ui.Components.dn0
+    public final void d(float f10) {
+    }
+
+    @Override // org.telegram.ui.Components.dn0
+    public final void f(r2 r2Var) {
     }
 }

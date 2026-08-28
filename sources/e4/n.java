@@ -2,16 +2,17 @@ package e4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import d5.g0;
+import d5.f0;
 import h3.g1;
+import j3.r0;
 import java.util.ArrayList;
-import p8.l0;
-import p8.z;
+import o8.l0;
+import o8.z;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class n extends j {
-    public static final Parcelable.Creator<n> CREATOR = new c8.o(23);
+    public static final Parcelable.Creator<n> CREATOR = new c.c(15);
     public final String b;
     public final z c;
 
@@ -52,7 +53,7 @@ public final class n extends j {
         }
         if (obj != null && n.class == obj.getClass()) {
             n nVar = (n) obj;
-            if (g0.a(this.a, nVar.a) && g0.a(this.b, nVar.b) && this.c.equals(nVar.c)) {
+            if (f0.a(this.a, nVar.a) && f0.a(this.b, nVar.b) && this.c.equals(nVar.c)) {
                 return true;
             }
         }
@@ -60,9 +61,9 @@ public final class n extends j {
     }
 
     public final int hashCode() {
-        int g10 = i0.a.g(527, 31, this.a);
+        int f10 = r0.f(527, 31, this.a);
         String str = this.b;
-        return this.c.hashCode() + ((g10 + (str != null ? str.hashCode() : 0)) * 31);
+        return this.c.hashCode() + ((f10 + (str != null ? str.hashCode() : 0)) * 31);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -264,7 +265,7 @@ public final class n extends j {
                 case 6:
                 case 20:
                     String str3 = (String) zVar.get(0);
-                    int i10 = g0.a;
+                    int i9 = f0.a;
                     String[] split = str3.split("/", -1);
                     int parseInt3 = Integer.parseInt(split[0]);
                     Integer valueOf = split.length > 1 ? Integer.valueOf(Integer.parseInt(split[1])) : null;
@@ -320,7 +321,7 @@ public final class n extends j {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeString(this.a);
         parcel.writeString(this.b);
         parcel.writeStringArray((String[]) this.c.toArray(new String[0]));

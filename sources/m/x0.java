@@ -16,12 +16,12 @@ import android.util.TypedValue;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.TextView;
-import g7.o7;
-import h7.p7;
+import f7.t7;
+import g7.r7;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class x0 {
     public final TextView a;
@@ -43,70 +43,70 @@ public final class x0 {
         this.i = new h1(textView);
     }
 
-    public static f3 c(Context context, r rVar, int i10) {
-        ColorStateList i11;
+    public static f3 c(Context context, r rVar, int i9) {
+        ColorStateList i10;
         synchronized (rVar) {
-            i11 = rVar.a.i(context, i10);
+            i10 = rVar.a.i(context, i9);
         }
-        if (i11 == null) {
+        if (i10 == null) {
             return null;
         }
         f3 f3Var = new f3();
         f3Var.b = true;
-        f3Var.c = i11;
+        f3Var.c = i10;
         return f3Var;
     }
 
     public static void h(EditorInfo editorInfo, InputConnection inputConnection, TextView textView) {
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 30 || inputConnection == null) {
+        int i9 = Build.VERSION.SDK_INT;
+        if (i9 >= 30 || inputConnection == null) {
             return;
         }
         CharSequence text = textView.getText();
-        if (i10 >= 30) {
+        if (i9 >= 30) {
             t0.a.a(editorInfo, text);
             return;
         }
         text.getClass();
-        if (i10 >= 30) {
+        if (i9 >= 30) {
             t0.a.a(editorInfo, text);
             return;
         }
-        int i11 = editorInfo.initialSelStart;
-        int i12 = editorInfo.initialSelEnd;
-        int i13 = i11 > i12 ? i12 : i11;
-        if (i11 <= i12) {
-            i11 = i12;
+        int i10 = editorInfo.initialSelStart;
+        int i11 = editorInfo.initialSelEnd;
+        int i12 = i10 > i11 ? i11 : i10;
+        if (i10 <= i11) {
+            i10 = i11;
         }
         int length = text.length();
-        if (i13 < 0 || i11 > length) {
+        if (i12 < 0 || i10 > length) {
             t0.b.c(editorInfo, null, 0, 0);
             return;
         }
-        int i14 = editorInfo.inputType & 4095;
-        if (i14 == 129 || i14 == 225 || i14 == 18) {
+        int i13 = editorInfo.inputType & 4095;
+        if (i13 == 129 || i13 == 225 || i13 == 18) {
             t0.b.c(editorInfo, null, 0, 0);
             return;
         }
         if (length <= 2048) {
-            t0.b.c(editorInfo, text, i13, i11);
+            t0.b.c(editorInfo, text, i12, i10);
             return;
         }
-        int i15 = i11 - i13;
-        int i16 = i15 > 1024 ? 0 : i15;
-        int i17 = 2048 - i16;
-        int min = Math.min(text.length() - i11, i17 - Math.min(i13, (int) (i17 * 0.8d)));
-        int min2 = Math.min(i13, i17 - min);
-        int i18 = i13 - min2;
-        if (Character.isLowSurrogate(text.charAt(i18))) {
-            i18++;
+        int i14 = i10 - i12;
+        int i15 = i14 > 1024 ? 0 : i14;
+        int i16 = 2048 - i15;
+        int min = Math.min(text.length() - i10, i16 - Math.min(i12, (int) (i16 * 0.8d)));
+        int min2 = Math.min(i12, i16 - min);
+        int i17 = i12 - min2;
+        if (Character.isLowSurrogate(text.charAt(i17))) {
+            i17++;
             min2--;
         }
-        if (Character.isHighSurrogate(text.charAt((i11 + min) - 1))) {
+        if (Character.isHighSurrogate(text.charAt((i10 + min) - 1))) {
             min--;
         }
-        int i19 = min2 + i16;
-        t0.b.c(editorInfo, i16 != i15 ? TextUtils.concat(text.subSequence(i18, i18 + min2), text.subSequence(i11, min + i11)) : text.subSequence(i18, i19 + min + i18), min2, i19);
+        int i18 = min2 + i15;
+        t0.b.c(editorInfo, i15 != i14 ? TextUtils.concat(text.subSequence(i17, i17 + min2), text.subSequence(i10, min + i10)) : text.subSequence(i17, i18 + min + i17), min2, i18);
     }
 
     public final void a(Drawable drawable, f3 f3Var) {
@@ -189,7 +189,7 @@ public final class x0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void f(AttributeSet attributeSet, int i10) {
+    public final void f(AttributeSet attributeSet, int i9) {
         String str;
         boolean z10;
         boolean z11;
@@ -198,7 +198,7 @@ public final class x0 {
         ColorStateList colorStateList3;
         String str2;
         r rVar;
-        int i11;
+        int i10;
         h1 h1Var;
         TypedArray obtainStyledAttributes;
         TypedArray obtainStyledAttributes2;
@@ -212,17 +212,17 @@ public final class x0 {
         ColorStateList colorStateList4;
         int resourceId;
         int[] iArr;
-        int i12;
+        int i11;
         int resourceId2;
         int length;
-        int i13;
+        int i12;
         TextView textView = this.a;
         Context context = textView.getContext();
         r a2 = r.a();
         int[] iArr2 = f.a.h;
-        j9.a G = j9.a.G(context, attributeSet, iArr2, i10);
-        r0.j0.j(textView, textView.getContext(), iArr2, attributeSet, (TypedArray) G.c, i10);
-        TypedArray typedArray = (TypedArray) G.c;
+        j4.c E = j4.c.E(context, attributeSet, iArr2, i9);
+        r0.j0.j(textView, textView.getContext(), iArr2, attributeSet, (TypedArray) E.c, i9);
+        TypedArray typedArray = (TypedArray) E.c;
         int resourceId3 = typedArray.getResourceId(0, -1);
         if (typedArray.hasValue(3)) {
             this.b = c(context, a2, typedArray.getResourceId(3, 0));
@@ -236,19 +236,19 @@ public final class x0 {
         if (typedArray.hasValue(2)) {
             this.e = c(context, a2, typedArray.getResourceId(2, 0));
         }
-        int i14 = Build.VERSION.SDK_INT;
+        int i13 = Build.VERSION.SDK_INT;
         if (typedArray.hasValue(5)) {
             this.f = c(context, a2, typedArray.getResourceId(5, 0));
         }
         if (typedArray.hasValue(6)) {
             this.g = c(context, a2, typedArray.getResourceId(6, 0));
         }
-        G.I();
+        E.G();
         boolean z12 = textView.getTransformationMethod() instanceof PasswordTransformationMethod;
         int[] iArr3 = f.a.w;
         if (resourceId3 != -1) {
             TypedArray obtainStyledAttributes3 = context.obtainStyledAttributes(resourceId3, iArr3);
-            j9.a aVar = new j9.a(context, obtainStyledAttributes3);
+            j4.c cVar = new j4.c(context, obtainStyledAttributes3);
             if (z12 || !obtainStyledAttributes3.hasValue(14)) {
                 z10 = false;
                 z11 = false;
@@ -256,30 +256,30 @@ public final class x0 {
                 z11 = obtainStyledAttributes3.getBoolean(14, false);
                 z10 = true;
             }
-            n(context, aVar);
-            if (i14 < 23) {
-                colorStateList = obtainStyledAttributes3.hasValue(3) ? aVar.x(3) : null;
-                colorStateList2 = obtainStyledAttributes3.hasValue(4) ? aVar.x(4) : null;
+            n(context, cVar);
+            if (i13 < 23) {
+                colorStateList = obtainStyledAttributes3.hasValue(3) ? cVar.v(3) : null;
+                colorStateList2 = obtainStyledAttributes3.hasValue(4) ? cVar.v(4) : null;
                 if (obtainStyledAttributes3.hasValue(5)) {
-                    colorStateList3 = aVar.x(5);
-                    i13 = 15;
-                    str2 = !obtainStyledAttributes3.hasValue(i13) ? obtainStyledAttributes3.getString(i13) : null;
-                    str = (i14 >= 26 || !obtainStyledAttributes3.hasValue(13)) ? null : obtainStyledAttributes3.getString(13);
-                    aVar.I();
+                    colorStateList3 = cVar.v(5);
+                    i12 = 15;
+                    str2 = !obtainStyledAttributes3.hasValue(i12) ? obtainStyledAttributes3.getString(i12) : null;
+                    str = (i13 >= 26 || !obtainStyledAttributes3.hasValue(13)) ? null : obtainStyledAttributes3.getString(13);
+                    cVar.G();
                 } else {
-                    i13 = 15;
+                    i12 = 15;
                 }
             } else {
-                i13 = 15;
+                i12 = 15;
                 colorStateList = null;
                 colorStateList2 = null;
             }
             colorStateList3 = null;
-            if (!obtainStyledAttributes3.hasValue(i13)) {
+            if (!obtainStyledAttributes3.hasValue(i12)) {
             }
-            if (i14 >= 26) {
+            if (i13 >= 26) {
             }
-            aVar.I();
+            cVar.G();
         } else {
             str = null;
             z10 = false;
@@ -289,22 +289,22 @@ public final class x0 {
             colorStateList3 = null;
             str2 = null;
         }
-        TypedArray obtainStyledAttributes4 = context.obtainStyledAttributes(attributeSet, iArr3, i10, 0);
-        j9.a aVar2 = new j9.a(context, obtainStyledAttributes4);
+        TypedArray obtainStyledAttributes4 = context.obtainStyledAttributes(attributeSet, iArr3, i9, 0);
+        j4.c cVar2 = new j4.c(context, obtainStyledAttributes4);
         if (!z12 && obtainStyledAttributes4.hasValue(14)) {
             z11 = obtainStyledAttributes4.getBoolean(14, false);
             z10 = true;
         }
         boolean z13 = z11;
-        if (i14 < 23) {
+        if (i13 < 23) {
             if (obtainStyledAttributes4.hasValue(3)) {
-                colorStateList = aVar2.x(3);
+                colorStateList = cVar2.v(3);
             }
             if (obtainStyledAttributes4.hasValue(4)) {
-                colorStateList2 = aVar2.x(4);
+                colorStateList2 = cVar2.v(4);
             }
             if (obtainStyledAttributes4.hasValue(5)) {
-                colorStateList3 = aVar2.x(5);
+                colorStateList3 = cVar2.v(5);
             }
         }
         ColorStateList colorStateList5 = colorStateList;
@@ -314,10 +314,10 @@ public final class x0 {
             str2 = obtainStyledAttributes4.getString(15);
         }
         String str3 = str2;
-        if (i14 >= 26 && obtainStyledAttributes4.hasValue(13)) {
+        if (i13 >= 26 && obtainStyledAttributes4.hasValue(13)) {
             str = obtainStyledAttributes4.getString(13);
         }
-        if (i14 < 28 || !obtainStyledAttributes4.hasValue(0)) {
+        if (i13 < 28 || !obtainStyledAttributes4.hasValue(0)) {
             rVar = a2;
         } else {
             rVar = a2;
@@ -325,8 +325,8 @@ public final class x0 {
                 textView.setTextSize(0, 0.0f);
             }
         }
-        n(context, aVar2);
-        aVar2.I();
+        n(context, cVar2);
+        cVar2.G();
         if (colorStateList5 != null) {
             textView.setTextColor(colorStateList5);
         }
@@ -351,17 +351,17 @@ public final class x0 {
             v0.d(textView, str);
         }
         if (str3 != null) {
-            if (i14 < 24) {
-                i11 = 0;
+            if (i13 < 24) {
+                i10 = 0;
                 s0.c(textView, t0.a(str3.split(",")[0]));
                 h1Var = this.i;
                 Context context2 = h1Var.j;
                 int[] iArr4 = f.a.i;
-                obtainStyledAttributes = context2.obtainStyledAttributes(attributeSet, iArr4, i10, i11);
+                obtainStyledAttributes = context2.obtainStyledAttributes(attributeSet, iArr4, i9, i10);
                 TextView textView2 = h1Var.i;
-                r0.j0.j(textView2, textView2.getContext(), iArr4, attributeSet, obtainStyledAttributes, i10);
+                r0.j0.j(textView2, textView2.getContext(), iArr4, attributeSet, obtainStyledAttributes, i9);
                 if (obtainStyledAttributes.hasValue(5)) {
-                    h1Var.a = obtainStyledAttributes.getInt(5, i11);
+                    h1Var.a = obtainStyledAttributes.getInt(5, i10);
                 }
                 float dimension = !obtainStyledAttributes.hasValue(4) ? obtainStyledAttributes.getDimension(4, -1.0f) : -1.0f;
                 float dimension2 = !obtainStyledAttributes.hasValue(2) ? obtainStyledAttributes.getDimension(2, -1.0f) : -1.0f;
@@ -371,8 +371,8 @@ public final class x0 {
                     length = obtainTypedArray.length();
                     int[] iArr5 = new int[length];
                     if (length > 0) {
-                        for (int i15 = 0; i15 < length; i15++) {
-                            iArr5[i15] = obtainTypedArray.getDimensionPixelSize(i15, -1);
+                        for (int i14 = 0; i14 < length; i14++) {
+                            iArr5[i14] = obtainTypedArray.getDimensionPixelSize(i14, -1);
                         }
                         h1Var.f = h1.b(iArr5);
                         h1Var.i();
@@ -386,13 +386,13 @@ public final class x0 {
                     if (!h1Var.g) {
                         DisplayMetrics displayMetrics = context2.getResources().getDisplayMetrics();
                         if (dimension2 == -1.0f) {
-                            i12 = 2;
+                            i11 = 2;
                             dimension2 = TypedValue.applyDimension(2, 12.0f, displayMetrics);
                         } else {
-                            i12 = 2;
+                            i11 = 2;
                         }
                         if (dimension3 == -1.0f) {
-                            dimension3 = TypedValue.applyDimension(i12, 112.0f, displayMetrics);
+                            dimension3 = TypedValue.applyDimension(i11, 112.0f, displayMetrics);
                         }
                         if (dimension == -1.0f) {
                             dimension = 1.0f;
@@ -470,7 +470,7 @@ public final class x0 {
                     }
                 }
                 if (obtainStyledAttributes2.hasValue(11)) {
-                    if (!obtainStyledAttributes2.hasValue(11) || (resourceId = obtainStyledAttributes2.getResourceId(11, 0)) == 0 || (colorStateList4 = o7.a(context, resourceId)) == null) {
+                    if (!obtainStyledAttributes2.hasValue(11) || (resourceId = obtainStyledAttributes2.getResourceId(11, 0)) == 0 || (colorStateList4 = t7.a(context, resourceId)) == null) {
                         colorStateList4 = obtainStyledAttributes2.getColorStateList(11);
                     }
                     if (Build.VERSION.SDK_INT >= 24) {
@@ -492,10 +492,10 @@ public final class x0 {
                 dimensionPixelSize3 = obtainStyledAttributes2.getDimensionPixelSize(19, -1);
                 obtainStyledAttributes2.recycle();
                 if (dimensionPixelSize != -1) {
-                    p7.b(dimensionPixelSize, textView);
+                    r7.b(dimensionPixelSize, textView);
                 }
                 if (dimensionPixelSize2 != -1) {
-                    p7.c(dimensionPixelSize2, textView);
+                    r7.c(dimensionPixelSize2, textView);
                 }
                 if (dimensionPixelSize3 == -1) {
                     if (dimensionPixelSize3 < 0) {
@@ -511,13 +511,13 @@ public final class x0 {
             }
             u0.b(textView, u0.a(str3));
         }
-        i11 = 0;
+        i10 = 0;
         h1Var = this.i;
         Context context22 = h1Var.j;
         int[] iArr42 = f.a.i;
-        obtainStyledAttributes = context22.obtainStyledAttributes(attributeSet, iArr42, i10, i11);
+        obtainStyledAttributes = context22.obtainStyledAttributes(attributeSet, iArr42, i9, i10);
         TextView textView22 = h1Var.i;
-        r0.j0.j(textView22, textView22.getContext(), iArr42, attributeSet, obtainStyledAttributes, i10);
+        r0.j0.j(textView22, textView22.getContext(), iArr42, attributeSet, obtainStyledAttributes, i9);
         if (obtainStyledAttributes.hasValue(5)) {
         }
         if (!obtainStyledAttributes.hasValue(4)) {
@@ -590,67 +590,67 @@ public final class x0 {
         }
     }
 
-    public final void g(Context context, int i10) {
+    public final void g(Context context, int i9) {
         String string;
-        ColorStateList x8;
-        ColorStateList x10;
-        ColorStateList x11;
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(i10, f.a.w);
-        j9.a aVar = new j9.a(context, obtainStyledAttributes);
+        ColorStateList v;
+        ColorStateList v4;
+        ColorStateList v10;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(i9, f.a.w);
+        j4.c cVar = new j4.c(context, obtainStyledAttributes);
         boolean hasValue = obtainStyledAttributes.hasValue(14);
         TextView textView = this.a;
         if (hasValue) {
             textView.setAllCaps(obtainStyledAttributes.getBoolean(14, false));
         }
-        int i11 = Build.VERSION.SDK_INT;
-        if (i11 < 23) {
-            if (obtainStyledAttributes.hasValue(3) && (x11 = aVar.x(3)) != null) {
-                textView.setTextColor(x11);
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 < 23) {
+            if (obtainStyledAttributes.hasValue(3) && (v10 = cVar.v(3)) != null) {
+                textView.setTextColor(v10);
             }
-            if (obtainStyledAttributes.hasValue(5) && (x10 = aVar.x(5)) != null) {
-                textView.setLinkTextColor(x10);
+            if (obtainStyledAttributes.hasValue(5) && (v4 = cVar.v(5)) != null) {
+                textView.setLinkTextColor(v4);
             }
-            if (obtainStyledAttributes.hasValue(4) && (x8 = aVar.x(4)) != null) {
-                textView.setHintTextColor(x8);
+            if (obtainStyledAttributes.hasValue(4) && (v = cVar.v(4)) != null) {
+                textView.setHintTextColor(v);
             }
         }
         if (obtainStyledAttributes.hasValue(0) && obtainStyledAttributes.getDimensionPixelSize(0, -1) == 0) {
             textView.setTextSize(0, 0.0f);
         }
-        n(context, aVar);
-        if (i11 >= 26 && obtainStyledAttributes.hasValue(13) && (string = obtainStyledAttributes.getString(13)) != null) {
+        n(context, cVar);
+        if (i10 >= 26 && obtainStyledAttributes.hasValue(13) && (string = obtainStyledAttributes.getString(13)) != null) {
             v0.d(textView, string);
         }
-        aVar.I();
+        cVar.G();
         Typeface typeface = this.l;
         if (typeface != null) {
             textView.setTypeface(typeface, this.j);
         }
     }
 
-    public final void i(int i10, int i11, int i12, int i13) {
+    public final void i(int i9, int i10, int i11, int i12) {
         h1 h1Var = this.i;
         if (h1Var.j()) {
             DisplayMetrics displayMetrics = h1Var.j.getResources().getDisplayMetrics();
-            h1Var.k(TypedValue.applyDimension(i13, i10, displayMetrics), TypedValue.applyDimension(i13, i11, displayMetrics), TypedValue.applyDimension(i13, i12, displayMetrics));
+            h1Var.k(TypedValue.applyDimension(i12, i9, displayMetrics), TypedValue.applyDimension(i12, i10, displayMetrics), TypedValue.applyDimension(i12, i11, displayMetrics));
             if (h1Var.h()) {
                 h1Var.a();
             }
         }
     }
 
-    public final void j(int[] iArr, int i10) {
+    public final void j(int[] iArr, int i9) {
         h1 h1Var = this.i;
         if (h1Var.j()) {
             int length = iArr.length;
             if (length > 0) {
                 int[] iArr2 = new int[length];
-                if (i10 == 0) {
+                if (i9 == 0) {
                     iArr2 = Arrays.copyOf(iArr, length);
                 } else {
                     DisplayMetrics displayMetrics = h1Var.j.getResources().getDisplayMetrics();
-                    for (int i11 = 0; i11 < length; i11++) {
-                        iArr2[i11] = Math.round(TypedValue.applyDimension(i10, iArr[i11], displayMetrics));
+                    for (int i10 = 0; i10 < length; i10++) {
+                        iArr2[i10] = Math.round(TypedValue.applyDimension(i9, iArr[i10], displayMetrics));
                     }
                 }
                 h1Var.f = h1.b(iArr2);
@@ -666,10 +666,10 @@ public final class x0 {
         }
     }
 
-    public final void k(int i10) {
+    public final void k(int i9) {
         h1 h1Var = this.i;
         if (h1Var.j()) {
-            if (i10 == 0) {
+            if (i9 == 0) {
                 h1Var.a = 0;
                 h1Var.d = -1.0f;
                 h1Var.e = -1.0f;
@@ -678,8 +678,8 @@ public final class x0 {
                 h1Var.b = false;
                 return;
             }
-            if (i10 != 1) {
-                throw new IllegalArgumentException(i0.a.k(i10, "Unknown auto-size text type: "));
+            if (i9 != 1) {
+                throw new IllegalArgumentException(j3.r0.l(i9, "Unknown auto-size text type: "));
             }
             DisplayMetrics displayMetrics = h1Var.j.getResources().getDisplayMetrics();
             h1Var.k(TypedValue.applyDimension(2, 12.0f, displayMetrics), TypedValue.applyDimension(2, 112.0f, displayMetrics), 1.0f);
@@ -719,31 +719,31 @@ public final class x0 {
         this.g = f3Var;
     }
 
-    public final void n(Context context, j9.a aVar) {
+    public final void n(Context context, j4.c cVar) {
         String string;
-        int i10 = this.j;
-        TypedArray typedArray = (TypedArray) aVar.c;
-        this.j = typedArray.getInt(2, i10);
-        int i11 = Build.VERSION.SDK_INT;
-        if (i11 >= 28) {
-            int i12 = typedArray.getInt(11, -1);
-            this.k = i12;
-            if (i12 != -1) {
+        int i9 = this.j;
+        TypedArray typedArray = (TypedArray) cVar.c;
+        this.j = typedArray.getInt(2, i9);
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 28) {
+            int i11 = typedArray.getInt(11, -1);
+            this.k = i11;
+            if (i11 != -1) {
                 this.j &= 2;
             }
         }
         if (!typedArray.hasValue(10) && !typedArray.hasValue(12)) {
             if (typedArray.hasValue(1)) {
                 this.m = false;
-                int i13 = typedArray.getInt(1, 1);
-                if (i13 == 1) {
+                int i12 = typedArray.getInt(1, 1);
+                if (i12 == 1) {
                     this.l = Typeface.SANS_SERIF;
                     return;
-                } else if (i13 == 2) {
+                } else if (i12 == 2) {
                     this.l = Typeface.SERIF;
                     return;
                 } else {
-                    if (i13 != 3) {
+                    if (i12 != 3) {
                         return;
                     }
                     this.l = Typeface.MONOSPACE;
@@ -753,30 +753,30 @@ public final class x0 {
             return;
         }
         this.l = null;
-        int i14 = typedArray.hasValue(12) ? 12 : 10;
-        int i15 = this.k;
-        int i16 = this.j;
+        int i13 = typedArray.hasValue(12) ? 12 : 10;
+        int i14 = this.k;
+        int i15 = this.j;
         if (!context.isRestricted()) {
             WeakReference weakReference = new WeakReference(this.a);
-            d5.e0 e0Var = new d5.e0();
-            e0Var.d = this;
-            e0Var.a = i15;
-            e0Var.b = i16;
-            e0Var.c = weakReference;
+            d5.d0 d0Var = new d5.d0();
+            d0Var.d = this;
+            d0Var.a = i14;
+            d0Var.b = i15;
+            d0Var.c = weakReference;
             try {
-                Typeface A = aVar.A(i14, this.j, e0Var);
-                if (A != null) {
-                    if (i11 < 28 || this.k == -1) {
-                        this.l = A;
+                Typeface y10 = cVar.y(i13, this.j, d0Var);
+                if (y10 != null) {
+                    if (i10 < 28 || this.k == -1) {
+                        this.l = y10;
                     } else {
-                        this.l = w0.a(Typeface.create(A, 0), this.k, (this.j & 2) != 0);
+                        this.l = w0.a(Typeface.create(y10, 0), this.k, (this.j & 2) != 0);
                     }
                 }
                 this.m = this.l == null;
             } catch (Resources.NotFoundException | UnsupportedOperationException unused) {
             }
         }
-        if (this.l != null || (string = typedArray.getString(i14)) == null) {
+        if (this.l != null || (string = typedArray.getString(i13)) == null) {
             return;
         }
         if (Build.VERSION.SDK_INT < 28 || this.k == -1) {

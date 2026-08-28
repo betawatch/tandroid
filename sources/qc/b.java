@@ -1,33 +1,119 @@
 package qc;
 
-import h7.o6;
-import java.util.RandomAccess;
+import java.io.Serializable;
+import zc.p;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b extends c implements RandomAccess {
-    public final c a;
-    public final int b;
-    public final int c;
+public final class b implements h, Serializable {
+    public final h a;
+    public final f b;
 
-    public b(c cVar, int i10, int i11) {
-        this.a = cVar;
-        this.b = i10;
-        o6.a(i10, i11, cVar.i());
-        this.c = i11 - i10;
+    public b(f element, h left) {
+        kotlin.jvm.internal.i.e(left, "left");
+        kotlin.jvm.internal.i.e(element, "element");
+        this.a = left;
+        this.b = element;
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        int i11 = this.c;
-        if (i10 < 0 || i10 >= i11) {
-            throw new IndexOutOfBoundsException(a9.p.j(i10, i11, "index: ", ", size: "));
+    public final boolean equals(Object obj) {
+        boolean z10;
+        if (this == obj) {
+            return true;
         }
-        return this.a.get(this.b + i10);
+        if (obj instanceof b) {
+            b bVar = (b) obj;
+            int i9 = 2;
+            b bVar2 = bVar;
+            int i10 = 2;
+            while (true) {
+                h hVar = bVar2.a;
+                bVar2 = hVar instanceof b ? (b) hVar : null;
+                if (bVar2 == null) {
+                    break;
+                }
+                i10++;
+            }
+            b bVar3 = this;
+            while (true) {
+                h hVar2 = bVar3.a;
+                bVar3 = hVar2 instanceof b ? (b) hVar2 : null;
+                if (bVar3 == null) {
+                    break;
+                }
+                i9++;
+            }
+            if (i10 == i9) {
+                b bVar4 = this;
+                while (true) {
+                    f fVar = bVar4.b;
+                    if (!kotlin.jvm.internal.i.a(bVar.get(fVar.getKey()), fVar)) {
+                        z10 = false;
+                        break;
+                    }
+                    h hVar3 = bVar4.a;
+                    if (!(hVar3 instanceof b)) {
+                        kotlin.jvm.internal.i.c(hVar3, "null cannot be cast to non-null type kotlin.coroutines.CoroutineContext.Element");
+                        f fVar2 = (f) hVar3;
+                        z10 = kotlin.jvm.internal.i.a(bVar.get(fVar2.getKey()), fVar2);
+                        break;
+                    }
+                    bVar4 = (b) hVar3;
+                }
+                if (z10) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
-    @Override // qc.c
-    public final int i() {
-        return this.c;
+    @Override // qc.h
+    public final Object fold(Object obj, p pVar) {
+        return pVar.invoke(this.a.fold(obj, pVar), this.b);
+    }
+
+    @Override // qc.h
+    public final f get(g key) {
+        kotlin.jvm.internal.i.e(key, "key");
+        b bVar = this;
+        while (true) {
+            f fVar = bVar.b.get(key);
+            if (fVar != null) {
+                return fVar;
+            }
+            h hVar = bVar.a;
+            if (!(hVar instanceof b)) {
+                return hVar.get(key);
+            }
+            bVar = (b) hVar;
+        }
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + this.a.hashCode();
+    }
+
+    @Override // qc.h
+    public final h minusKey(g key) {
+        kotlin.jvm.internal.i.e(key, "key");
+        f fVar = this.b;
+        f fVar2 = fVar.get(key);
+        h hVar = this.a;
+        if (fVar2 != null) {
+            return hVar;
+        }
+        h minusKey = hVar.minusKey(key);
+        return minusKey == hVar ? this : minusKey == i.a ? fVar : new b(fVar, minusKey);
+    }
+
+    @Override // qc.h
+    public final h plus(h context) {
+        kotlin.jvm.internal.i.e(context, "context");
+        return context == i.a ? this : (h) context.fold(this, new b1.e(5));
+    }
+
+    public final String toString() {
+        return "[" + ((String) fold("", new b1.e(4))) + ']';
     }
 }

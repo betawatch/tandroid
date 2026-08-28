@@ -6,7 +6,7 @@ import android.os.Message;
 import android.os.SystemClock;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class DispatchQueueMainThreadSync extends Thread {
     private static int indexPointer;
@@ -45,13 +45,13 @@ public class DispatchQueueMainThreadSync extends Thread {
             this.handler.removeCallbacks(runnable);
             return;
         }
-        int i10 = 0;
-        while (i10 < this.postponedTasks.size()) {
-            if (this.postponedTasks.get(i10).runnable == runnable) {
-                this.postponedTasks.remove(i10);
-                i10--;
+        int i9 = 0;
+        while (i9 < this.postponedTasks.size()) {
+            if (this.postponedTasks.get(i9).runnable == runnable) {
+                this.postponedTasks.remove(i9);
+                i9--;
             }
-            i10++;
+            i9++;
         }
     }
 
@@ -88,20 +88,20 @@ public class DispatchQueueMainThreadSync extends Thread {
 
     public void recycle() {
         checkThread();
-        postRunnable(new d1(this, 18));
+        postRunnable(new e1(this, 18));
         this.isRecycled = true;
     }
 
     @Override // java.lang.Thread, java.lang.Runnable
     public void run() {
         Looper.prepare();
-        this.handler = new Handler(Looper.myLooper(), new z1(this, 1));
+        this.handler = new Handler(Looper.myLooper(), new y1(this, 1));
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.DispatchQueueMainThreadSync.1
             @Override // java.lang.Runnable
             public void run() {
                 DispatchQueueMainThreadSync.this.isRunning = true;
-                for (int i10 = 0; i10 < DispatchQueueMainThreadSync.this.postponedTasks.size(); i10++) {
-                    ((PostponedTask) DispatchQueueMainThreadSync.this.postponedTasks.get(i10)).run();
+                for (int i9 = 0; i9 < DispatchQueueMainThreadSync.this.postponedTasks.size(); i9++) {
+                    ((PostponedTask) DispatchQueueMainThreadSync.this.postponedTasks.get(i9)).run();
                 }
                 DispatchQueueMainThreadSync.this.postponedTasks.clear();
             }
@@ -109,25 +109,25 @@ public class DispatchQueueMainThreadSync extends Thread {
         Looper.loop();
     }
 
-    public void sendMessage(Message message, int i10) {
+    public void sendMessage(Message message, int i9) {
         checkThread();
         if (this.isRecycled) {
             return;
         }
         if (!this.isRunning) {
-            this.postponedTasks.add(new PostponedTask(message, i10));
-        } else if (i10 <= 0) {
+            this.postponedTasks.add(new PostponedTask(message, i9));
+        } else if (i9 <= 0) {
             this.handler.sendMessage(message);
         } else {
-            this.handler.sendMessageDelayed(message, i10);
+            this.handler.sendMessageDelayed(message, i9);
         }
     }
 
     public DispatchQueueMainThreadSync(String str, boolean z10) {
         this.handler = null;
-        int i10 = indexPointer;
-        indexPointer = i10 + 1;
-        this.index = i10;
+        int i9 = indexPointer;
+        indexPointer = i9 + 1;
+        this.index = i9;
         this.postponedTasks = new ArrayList<>();
         setName(str);
         if (z10) {
@@ -135,15 +135,15 @@ public class DispatchQueueMainThreadSync extends Thread {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class PostponedTask {
         long delay;
         Message message;
         Runnable runnable;
 
-        public PostponedTask(Message message, int i10) {
+        public PostponedTask(Message message, int i9) {
             this.message = message;
-            this.delay = i10;
+            this.delay = i9;
         }
 
         public void run() {

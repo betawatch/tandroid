@@ -13,7 +13,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class g0 extends Drawable {
     public final Drawable a;
@@ -65,7 +65,7 @@ public final class g0 extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         Canvas canvas2;
-        int i10;
+        int i9;
         Rect bounds = getBounds();
         if (bounds.isEmpty() || this.e == 0) {
             return;
@@ -74,26 +74,26 @@ public final class g0 extends Drawable {
         if (colorFilter != null) {
             Paint paint = this.d;
             paint.setColorFilter(colorFilter);
-            i10 = canvas.saveLayer(bounds.left, bounds.top, bounds.right, bounds.bottom, paint);
+            i9 = canvas.saveLayer(bounds.left, bounds.top, bounds.right, bounds.bottom, paint);
             canvas2 = canvas;
         } else {
             canvas2 = canvas;
-            i10 = -1;
+            i9 = -1;
         }
         float width = bounds.width() / 800.0f;
         float height = bounds.height() / 427.0f;
-        int i11 = this.e;
+        int i10 = this.e;
         Paint paint2 = this.b;
-        paint2.setAlpha(i11);
+        paint2.setAlpha(i10);
         canvas2.save();
         canvas2.translate(bounds.left, bounds.top);
         canvas2.scale(width, height);
         Canvas canvas3 = canvas2;
         canvas3.drawRect(0.0f, 0.0f, 800.0f, 427.0f, paint2);
         canvas3.restore();
-        int i12 = this.e;
+        int i11 = this.e;
         Paint paint3 = this.c;
-        paint3.setAlpha(i12);
+        paint3.setAlpha(i11);
         paint3.setStrokeWidth(Math.min(width, height) * 16.4f);
         b(canvas3, bounds, width, height, 449.809f, 246.04f, 483.703f, 212.418f);
         b(canvas3, bounds, width, height, 483.703f, 212.418f, 451.291f, 179.901f);
@@ -122,8 +122,8 @@ public final class g0 extends Drawable {
         a(canvas3, 678.299f, 408.888f, 42.0f, 0.075f);
         a(canvas3, 655.947f, 316.916f, 42.0f, 0.15f);
         canvas3.restore();
-        if (i10 >= 0) {
-            canvas3.restoreToCount(i10);
+        if (i9 >= 0) {
+            canvas3.restoreToCount(i9);
         }
     }
 
@@ -143,8 +143,8 @@ public final class g0 extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        int max = Math.max(0, Math.min(255, i10));
+    public final void setAlpha(int i9) {
+        int max = Math.max(0, Math.min(255, i9));
         if (this.e != max) {
             this.e = max;
             invalidateSelf();

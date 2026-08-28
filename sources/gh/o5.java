@@ -1,46 +1,89 @@
 package gh;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ap0;
-import org.telegram.ui.ib0;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import kh.wb;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.y40;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class o5 implements Utilities.Callback {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ hf.b b;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class o5 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ o5(x5 x5Var, org.telegram.ui.ActionBar.b2 b2Var, hf.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10) {
-        this.e = x5Var;
-        this.f = b2Var;
-        this.b = bVar;
-        this.c = tL_starGiftUnique;
-        this.d = j10;
+    public /* synthetic */ o5(Object obj, float f10, Runnable runnable, int i9) {
+        this.a = i9;
+        this.d = obj;
+        this.b = f10;
+        this.c = runnable;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i9 = this.a;
+        Runnable runnable = this.c;
+        float f10 = this.b;
+        Object obj = this.d;
+        switch (i9) {
             case 0:
-                x5.U((x5) this.e, (org.telegram.ui.ActionBar.b2) this.f, this.b, this.c, this.d, (TLRPC.TL_payments_paymentFormStarGift) obj);
+                p5 p5Var = (p5) obj;
+                p5Var.y = f10;
+                p5Var.invalidate();
+                if (animator == p5Var.A && runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 1:
+                ih.s1 s1Var = (ih.s1) obj;
+                s1Var.n = f10;
+                s1Var.invalidate();
+                if (animator == s1Var.r && runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 2:
+                kh.s2 s2Var = (kh.s2) obj;
+                s2Var.h = f10;
+                s2Var.i();
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 3:
+                wb wbVar = (wb) obj;
+                wbVar.H = null;
+                wbVar.E = f10;
+                wbVar.k();
+                wbVar.r.invalidate();
+                wbVar.n.invalidate();
+                runnable.run();
+                wbVar.L.unlock();
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                NotificationCenter.getGlobalInstance().runDelayedNotifications();
+                wbVar.o();
+                Runnable runnable2 = wbVar.M;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    wbVar.M = null;
+                }
+                wbVar.r.invalidate();
+                wbVar.d0.invalidate();
                 break;
             default:
-                ap0.U((ap0) this.e, this.b, this.c, this.d, (ib0) this.f, (TLRPC.TL_payments_paymentFormStarGift) obj);
+                y40 y40Var = (y40) obj;
+                y40Var.h = f10;
+                y40Var.a.invalidate();
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ o5(ap0 ap0Var, hf.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, ib0 ib0Var) {
-        this.e = ap0Var;
-        this.b = bVar;
-        this.c = tL_starGiftUnique;
-        this.d = j10;
-        this.f = ib0Var;
     }
 }

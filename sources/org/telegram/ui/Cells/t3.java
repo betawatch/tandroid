@@ -1,70 +1,42 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public abstract class t3 extends FrameLayout {
-    public org.telegram.ui.Components.n9 a;
-    public org.telegram.ui.ActionBar.h5 b;
-    public org.telegram.ui.ActionBar.h5 c;
-    public ImageView d;
-    public org.telegram.ui.Components.y8 e;
-    public TLRPC.User f;
-    public Paint h;
-    public int n;
-    public boolean r;
+public final class t3 extends View {
+    public final /* synthetic */ int a;
+    public final int b;
 
-    public final void a(int i10, int i11) {
-        this.n = i10;
-        ImageView imageView = this.d;
-        imageView.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.MULTIPLY));
-        this.c.setTextColor(i11);
-        org.telegram.ui.ActionBar.g6.B1(imageView.getDrawable(), i11 & 620756991, true);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        if (this.r) {
-            canvas2 = canvas;
-            canvas2.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(68.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(68.0f) : 0), getMeasuredHeight() - 1, this.h);
-        } else {
-            canvas2 = canvas;
-        }
-        super.dispatchDraw(canvas2);
-    }
-
-    public CharSequence getName() {
-        return this.b.getText();
-    }
-
-    public TLRPC.User getUser() {
-        return this.f;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ t3(Context context, int i9, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = i9;
     }
 
     @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
+    public final void onMeasure(int i9, int i10) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.b), TLObject.FLAG_30));
+                break;
+            case 1:
+                super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.b), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.b, TLObject.FLAG_30));
+                break;
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLObject.FLAG_30));
-    }
-
-    public void setDrawDivider(boolean z10) {
-        this.r = z10;
-        invalidate();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t3(Context context, int i9) {
+        super(context);
+        this.a = 0;
+        this.b = i9;
     }
 }

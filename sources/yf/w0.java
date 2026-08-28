@@ -1,39 +1,34 @@
 package yf;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class w0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x0 b;
+import android.graphics.Bitmap;
+import android.widget.FrameLayout;
+import kh.s5;
+import kh.vb;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ w0(x0 x0Var, int i10) {
-        this.a = i10;
-        this.b = x0Var;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class w0 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FrameLayout b;
+
+    public /* synthetic */ w0(int i9, FrameLayout frameLayout) {
+        this.a = i9;
+        this.b = frameLayout;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                z0 z0Var = this.b.b.d;
-                if (z0Var != null) {
-                    z0Var.postRunnable(z0Var.w);
-                    break;
-                }
-                break;
-            case 1:
-                z0 z0Var2 = this.b.b.d;
-                if (z0Var2 != null) {
-                    z0Var2.postRunnable(z0Var2.w);
-                    break;
-                }
+                s5 s5Var = (s5) this.b;
+                s5Var.u0 = ((Integer) obj).intValue();
+                s5Var.v0 = ((Integer) obj2).intValue();
+                AndroidUtilities.runOnUIThread(new pf.o1(s5Var, 17), 60L);
                 break;
             default:
-                b1 b1Var = this.b.b;
-                z0 z0Var3 = b1Var.d;
-                z0Var3.getClass();
-                z0Var3.postRunnable(new y0(z0Var3, 2));
-                b1Var.d = null;
+                ((vb) this.b).Z((Bitmap) obj, ((Float) obj2).floatValue());
                 break;
         }
     }

@@ -1,21 +1,57 @@
 package g6;
 
-import a9.n;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicInteger;
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.os.CancellationSignal;
+import g7.g7;
+import hd.m;
+import kotlin.jvm.internal.i;
+import m5.c0;
+import org.telegram.ui.gb0;
+import v0.e;
+import v0.g;
+import v0.h;
+import v0.j;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b implements ThreadFactory {
-    public final AtomicInteger b = new AtomicInteger();
-    public final ThreadFactory c = Executors.defaultThreadFactory();
-    public final String a = "GAC_Executor";
+public final class b implements h {
+    public final Context a;
 
-    @Override // java.util.concurrent.ThreadFactory
-    public final Thread newThread(Runnable runnable) {
-        Thread newThread = this.c.newThread(new n(1, runnable));
-        newThread.setName(this.a + "[" + this.b.getAndIncrement() + "]");
-        return newThread;
+    public b(Context context, int i9) {
+        switch (i9) {
+            case 1:
+                i.e(context, "context");
+                this.a = context;
+                break;
+            default:
+                this.a = context;
+                break;
+        }
+    }
+
+    public Object a(Context context, e eVar, qc.c cVar) {
+        m mVar = new m(1, g7.b(cVar));
+        mVar.s();
+        CancellationSignal cancellationSignal = new CancellationSignal();
+        mVar.u(new g(cancellationSignal));
+        c0 c0Var = new c0(mVar, 27);
+        gb0 gb0Var = new gb0(1);
+        i.e(context, "context");
+        j b10 = u5.h.b(new u5.h(this.a, 3), eVar);
+        if (b10 == null) {
+            c0Var.onError(new w0.c("createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", 1));
+        } else if (context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
+            c0Var.onError(new w0.c("createCredential is not supported on this device", 3));
+        } else {
+            b10.onCreateCredential(context, eVar, cancellationSignal, gb0Var, c0Var);
+        }
+        Object r10 = mVar.r();
+        rc.a aVar = rc.a.a;
+        return r10;
+    }
+
+    public PackageInfo b(int i9, String str) {
+        return this.a.getPackageManager().getPackageInfo(str, i9);
     }
 }

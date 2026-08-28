@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class b {
     public final f a;
@@ -60,14 +60,14 @@ public abstract class b {
         return declaredMethod;
     }
 
-    public abstract boolean e(int i10);
+    public abstract boolean e(int i9);
 
-    public final int f(int i10, int i11) {
-        return !e(i11) ? i10 : ((c) this).e.readInt();
+    public final int f(int i9, int i10) {
+        return !e(i10) ? i9 : ((c) this).e.readInt();
     }
 
-    public final Parcelable g(Parcelable parcelable, int i10) {
-        if (!e(i10)) {
+    public final Parcelable g(Parcelable parcelable, int i9) {
+        if (!e(i9)) {
             return parcelable;
         }
         return ((c) this).e.readParcelable(c.class.getClassLoader());
@@ -80,29 +80,29 @@ public abstract class b {
         }
         try {
             return (d) c(readString).invoke(null, a());
-        } catch (ClassNotFoundException e9) {
-            throw new RuntimeException("VersionedParcel encountered ClassNotFoundException", e9);
-        } catch (IllegalAccessException e10) {
-            throw new RuntimeException("VersionedParcel encountered IllegalAccessException", e10);
-        } catch (NoSuchMethodException e11) {
-            throw new RuntimeException("VersionedParcel encountered NoSuchMethodException", e11);
-        } catch (InvocationTargetException e12) {
-            if (e12.getCause() instanceof RuntimeException) {
-                throw ((RuntimeException) e12.getCause());
+        } catch (ClassNotFoundException e10) {
+            throw new RuntimeException("VersionedParcel encountered ClassNotFoundException", e10);
+        } catch (IllegalAccessException e11) {
+            throw new RuntimeException("VersionedParcel encountered IllegalAccessException", e11);
+        } catch (NoSuchMethodException e12) {
+            throw new RuntimeException("VersionedParcel encountered NoSuchMethodException", e12);
+        } catch (InvocationTargetException e13) {
+            if (e13.getCause() instanceof RuntimeException) {
+                throw ((RuntimeException) e13.getCause());
             }
-            throw new RuntimeException("VersionedParcel encountered InvocationTargetException", e12);
+            throw new RuntimeException("VersionedParcel encountered InvocationTargetException", e13);
         }
     }
 
-    public abstract void i(int i10);
+    public abstract void i(int i9);
 
-    public final void j(int i10, int i11) {
-        i(i11);
-        ((c) this).e.writeInt(i10);
+    public final void j(int i9, int i10) {
+        i(i10);
+        ((c) this).e.writeInt(i9);
     }
 
-    public final void k(Parcelable parcelable, int i10) {
-        i(i10);
+    public final void k(Parcelable parcelable, int i9) {
+        i(i9);
         ((c) this).e.writeParcelable(parcelable, 0);
     }
 
@@ -117,28 +117,28 @@ public abstract class b {
             try {
                 d(dVar.getClass()).invoke(null, dVar, a2);
                 Parcel parcel = a2.e;
-                int i10 = a2.i;
-                if (i10 >= 0) {
-                    int i11 = a2.d.get(i10);
+                int i9 = a2.i;
+                if (i9 >= 0) {
+                    int i10 = a2.d.get(i9);
                     int dataPosition = parcel.dataPosition();
-                    parcel.setDataPosition(i11);
-                    parcel.writeInt(dataPosition - i11);
+                    parcel.setDataPosition(i10);
+                    parcel.writeInt(dataPosition - i10);
                     parcel.setDataPosition(dataPosition);
                 }
-            } catch (ClassNotFoundException e9) {
-                throw new RuntimeException("VersionedParcel encountered ClassNotFoundException", e9);
-            } catch (IllegalAccessException e10) {
-                throw new RuntimeException("VersionedParcel encountered IllegalAccessException", e10);
-            } catch (NoSuchMethodException e11) {
-                throw new RuntimeException("VersionedParcel encountered NoSuchMethodException", e11);
-            } catch (InvocationTargetException e12) {
-                if (!(e12.getCause() instanceof RuntimeException)) {
-                    throw new RuntimeException("VersionedParcel encountered InvocationTargetException", e12);
+            } catch (ClassNotFoundException e10) {
+                throw new RuntimeException("VersionedParcel encountered ClassNotFoundException", e10);
+            } catch (IllegalAccessException e11) {
+                throw new RuntimeException("VersionedParcel encountered IllegalAccessException", e11);
+            } catch (NoSuchMethodException e12) {
+                throw new RuntimeException("VersionedParcel encountered NoSuchMethodException", e12);
+            } catch (InvocationTargetException e13) {
+                if (!(e13.getCause() instanceof RuntimeException)) {
+                    throw new RuntimeException("VersionedParcel encountered InvocationTargetException", e13);
                 }
-                throw ((RuntimeException) e12.getCause());
+                throw ((RuntimeException) e13.getCause());
             }
-        } catch (ClassNotFoundException e13) {
-            throw new RuntimeException(dVar.getClass().getSimpleName().concat(" does not have a Parcelizer"), e13);
+        } catch (ClassNotFoundException e14) {
+            throw new RuntimeException(dVar.getClass().getSimpleName().concat(" does not have a Parcelizer"), e14);
         }
     }
 }

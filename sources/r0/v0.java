@@ -2,7 +2,7 @@ package r0;
 
 import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class v0 {
     public final int a;
@@ -10,8 +10,8 @@ public abstract class v0 {
     public final Interpolator c;
     public final long d;
 
-    public v0(int i10, long j10, Interpolator interpolator) {
-        this.a = i10;
+    public v0(int i9, long j10, Interpolator interpolator) {
+        this.a = i9;
         this.c = interpolator;
         this.d = j10;
     }

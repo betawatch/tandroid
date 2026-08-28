@@ -1,55 +1,41 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import android.os.Bundle;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v9 implements RequestDelegate {
+public final /* synthetic */ class v9 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ int h;
 
-    public /* synthetic */ v9(BaseController baseController, Object obj, Object obj2, Object obj3, Object obj4, int i10) {
-        this.a = i10;
-        this.b = baseController;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.f = obj4;
+    public /* synthetic */ v9(MessagesController messagesController, long j10, int i9, boolean z10, int i10, int i11, int i12) {
+        this.a = i12;
+        this.b = messagesController;
+        this.c = j10;
+        this.d = i9;
+        this.e = z10;
+        this.f = i10;
+        this.h = i11;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$checkCanOpenChat$452((org.telegram.ui.ActionBar.b2) this.c, (we.d) this.d, (org.telegram.ui.ActionBar.n2) this.e, (Bundle) this.f, tLObject, tL_error);
-                break;
-            case 1:
-                ((MessagesController) this.b).lambda$didReceivedNotification$51((TLRPC.TL_theme) this.c, (org.telegram.ui.ActionBar.f6) this.d, (TLRPC.TL_inputThemeSettings) this.e, (org.telegram.ui.ActionBar.e6) this.f, tLObject, tL_error);
-                break;
-            case 2:
-                ((SecretChatHelper) this.b).lambda$startSecretChat$28((Context) this.d, (org.telegram.ui.ActionBar.b2) this.c, (byte[]) this.e, (TLRPC.User) this.f, tLObject, tL_error);
+                int i9 = this.f;
+                int i10 = this.h;
+                int i11 = this.d;
+                this.b.lambda$markDialogAsRead$243(this.c, i11, this.e, i9, i10);
                 break;
             default:
-                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$56((TLRPC.InputMedia) this.c, (SendMessagesHelper.DelayedMessage) this.d, (String) this.e, (MessageObject) this.f, tLObject, tL_error);
+                int i12 = this.f;
+                int i13 = this.h;
+                int i14 = this.d;
+                this.b.lambda$markDialogAsRead$244(this.c, i14, this.e, i12, i13);
                 break;
         }
-    }
-
-    public /* synthetic */ v9(SecretChatHelper secretChatHelper, Context context, org.telegram.ui.ActionBar.b2 b2Var, byte[] bArr, TLRPC.User user) {
-        this.a = 2;
-        this.b = secretChatHelper;
-        this.d = context;
-        this.c = b2Var;
-        this.e = bArr;
-        this.f = user;
     }
 }

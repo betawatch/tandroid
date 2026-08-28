@@ -51,8 +51,8 @@ public interface Spliterator<T> {
         }
 
         @Override // java.util.Spliterator
-        public final /* synthetic */ boolean hasCharacteristics(int i10) {
-            return Spliterator.this.hasCharacteristics(i10);
+        public final /* synthetic */ boolean hasCharacteristics(int i9) {
+            return Spliterator.this.hasCharacteristics(i9);
         }
 
         public final /* synthetic */ int hashCode() {
@@ -80,7 +80,7 @@ public interface Spliterator<T> {
 
     long getExactSizeIfKnown();
 
-    boolean hasCharacteristics(int i10);
+    boolean hasCharacteristics(int i9);
 
     boolean tryAdvance(Consumer consumer);
 

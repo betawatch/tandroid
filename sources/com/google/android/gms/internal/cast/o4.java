@@ -1,47 +1,124 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class o4 extends k4 implements ScheduledExecutorService {
-    public final ScheduledExecutorService b;
+public final class o4 implements n5.h {
+    public final /* synthetic */ b3.b a;
 
-    public o4(ScheduledExecutorService scheduledExecutorService) {
-        super(scheduledExecutorService);
-        this.b = scheduledExecutorService;
+    public /* synthetic */ o4(b3.b bVar) {
+        this.a = bVar;
     }
 
-    @Override // com.google.android.gms.internal.cast.k4, java.lang.AutoCloseable
-    public final /* synthetic */ void close() {
-        a9.b.e(this);
+    @Override // n5.h
+    public /* bridge */ /* synthetic */ void a(n5.f fVar) {
     }
 
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final ScheduledFuture schedule(Runnable runnable, long j10, TimeUnit timeUnit) {
-        q4 q4Var = new q4(Executors.callable(runnable, null));
-        return new l4(q4Var, this.b.schedule(q4Var, j10, timeUnit));
+    @Override // n5.h
+    public void b(n5.f fVar, int i9) {
+        a6.a aVar = new a6.a(8, 3);
+        aVar.b = Integer.valueOf(i9);
+        w6 w6Var = new w6(aVar);
+        b3.b bVar = this.a;
+        b3.b.D(bVar, w6Var);
+        bVar.F();
     }
 
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final /* bridge */ /* synthetic */ ScheduledFuture scheduleAtFixedRate(Runnable runnable, long j10, long j11, TimeUnit timeUnit) {
-        n4 n4Var = new n4(runnable);
-        return new l4(n4Var, this.b.scheduleAtFixedRate(n4Var, j10, j11, timeUnit));
+    @Override // n5.h
+    public void c(n5.f fVar, int i9) {
+        a6.a aVar = new a6.a(9, 3);
+        aVar.b = Integer.valueOf(i9);
+        b3.b bVar = this.a;
+        aVar.d = Boolean.valueOf(((d) bVar.b).d == 2);
+        b3.b.D(bVar, new w6(aVar));
+        bVar.F();
     }
 
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final /* bridge */ /* synthetic */ ScheduledFuture scheduleWithFixedDelay(Runnable runnable, long j10, long j11, TimeUnit timeUnit) {
-        n4 n4Var = new n4(runnable);
-        return new l4(n4Var, this.b.scheduleWithFixedDelay(n4Var, j10, j11, timeUnit));
+    @Override // n5.h
+    public void d(n5.f fVar) {
+        n5.c cVar = (n5.c) fVar;
+        a6.a aVar = new a6.a(2, 3);
+        b3.b bVar = this.a;
+        aVar.d = Boolean.valueOf(((d) bVar.b).d == 2);
+        b3.b.D(bVar, new w6(aVar));
+        v6 v6Var = (v6) bVar.d;
+        x5.l.h(v6Var);
+        v6Var.a(cVar);
+        cVar.l = (o4) bVar.e;
     }
 
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final /* bridge */ /* synthetic */ ScheduledFuture schedule(Callable callable, long j10, TimeUnit timeUnit) {
-        q4 q4Var = new q4(callable);
-        return new l4(q4Var, this.b.schedule(q4Var, j10, timeUnit));
+    @Override // n5.h
+    public /* bridge */ /* synthetic */ void e(n5.f fVar, boolean z10) {
+        w6 w6Var = new w6(new a6.a(4, 3));
+        b3.b bVar = this.a;
+        b3.b.D(bVar, w6Var);
+        v6 v6Var = (v6) bVar.d;
+        x5.l.h(v6Var);
+        v6Var.a((n5.c) fVar);
+    }
+
+    @Override // n5.h
+    public void f(n5.f fVar, int i9) {
+        a6.a aVar = new a6.a(6, 3);
+        aVar.b = Integer.valueOf(i9);
+        w6 w6Var = new w6(aVar);
+        b3.b bVar = this.a;
+        b3.b.D(bVar, w6Var);
+        v6 v6Var = (v6) bVar.d;
+        x5.l.h(v6Var);
+        v6Var.a((n5.c) fVar);
+    }
+
+    @Override // n5.h
+    public void g(n5.f fVar, int i9) {
+        a6.a aVar = new a6.a(5, 3);
+        aVar.b = Integer.valueOf(i9);
+        w6 w6Var = new w6(aVar);
+        b3.b bVar = this.a;
+        b3.b.D(bVar, w6Var);
+        bVar.F();
+    }
+
+    @Override // n5.h
+    public void h(n5.f fVar, String str) {
+        w6 w6Var = new w6(new a6.a(4, 3));
+        b3.b bVar = this.a;
+        b3.b.D(bVar, w6Var);
+        v6 v6Var = (v6) bVar.d;
+        x5.l.h(v6Var);
+        v6Var.a((n5.c) fVar);
+        v6 v6Var2 = (v6) bVar.d;
+        x5.l.h(v6Var2);
+        String str2 = v6Var2.k;
+        if (str2 == null) {
+            v6Var2.k = str;
+        } else {
+            if (TextUtils.equals(str, str2)) {
+                return;
+            }
+            v6Var2.b(4);
+        }
+    }
+
+    @Override // n5.h
+    public void i(n5.f fVar, String str) {
+        w6 w6Var = new w6(new a6.a(7, 3));
+        b3.b bVar = this.a;
+        b3.b.D(bVar, w6Var);
+        v6 v6Var = (v6) bVar.d;
+        x5.l.h(v6Var);
+        v6Var.a((n5.c) fVar);
+        v6 v6Var2 = (v6) bVar.d;
+        x5.l.h(v6Var2);
+        String str2 = v6Var2.k;
+        if (str2 == null) {
+            v6Var2.k = str;
+        } else {
+            if (TextUtils.equals(str, str2)) {
+                return;
+            }
+            v6Var2.b(4);
+        }
     }
 }

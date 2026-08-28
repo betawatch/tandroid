@@ -14,7 +14,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import h7.z5;
+import g7.e6;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -24,13 +24,13 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.rl;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.f11;
-import org.telegram.ui.Components.nb0;
+import org.telegram.messenger.ll;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.Components.jb0;
+import org.telegram.ui.Components.y11;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class r2 extends FrameLayout {
     public boolean A;
@@ -132,7 +132,7 @@ public class r2 extends FrameLayout {
         if (this.c) {
             float scaleX = ((View) getParent()).getScaleX();
             this.v.setAlpha(1.0f - f10);
-            float c10 = !z10 ? rl.c(0.4f, scaleX, f10, 1.0f / scaleX) : 1.0f - (0.4f * f10);
+            float c10 = !z10 ? ll.c(0.4f, scaleX, f10, 1.0f / scaleX) : 1.0f - (0.4f * f10);
             ImageView imageView = this.s;
             imageView.setScaleX(c10);
             imageView.setScaleY(c10);
@@ -204,16 +204,16 @@ public class r2 extends FrameLayout {
         if (this.n == null) {
             View view = new View(getContext());
             this.n = view;
-            addView(view, z5.g());
+            addView(view, e6.g());
         }
         return this.n;
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+    public void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
         float top;
         final float left;
-        super.onLayout(z10, i10, i11, i12, i13);
+        super.onLayout(z10, i9, i10, i11, i12);
         TextureView textureView = this.e;
         if (textureView != null) {
             this.Q = Math.max(getMeasuredHeight() / textureView.getMeasuredHeight(), getMeasuredWidth() / textureView.getMeasuredWidth());
@@ -238,10 +238,10 @@ public class r2 extends FrameLayout {
                 this.J = 0.0f;
             }
         } else {
-            int i14 = this.T;
-            if (i14 == 0) {
+            int i13 = this.T;
+            if (i13 == 0) {
                 this.P = Math.max(getMeasuredHeight() / q2Var.getMeasuredHeight(), getMeasuredWidth() / q2Var.getMeasuredWidth());
-            } else if (i14 == 2) {
+            } else if (i13 == 2) {
                 if (Math.abs((getMeasuredHeight() / getMeasuredWidth()) - 1.0f) < 0.02f) {
                     this.P = Math.max(getMeasuredHeight() / q2Var.getMeasuredHeight(), getMeasuredWidth() / q2Var.getMeasuredWidth());
                 } else if (getMeasuredWidth() <= getMeasuredHeight() || q2Var.getMeasuredHeight() <= q2Var.getMeasuredWidth()) {
@@ -249,7 +249,7 @@ public class r2 extends FrameLayout {
                 } else {
                     this.P = Math.max(getMeasuredHeight() / q2Var.getMeasuredHeight(), (getMeasuredWidth() / 2.0f) / q2Var.getMeasuredWidth());
                 }
-            } else if (i14 == 1) {
+            } else if (i13 == 1) {
                 this.P = Math.min(getMeasuredHeight() / q2Var.getMeasuredHeight(), getMeasuredWidth() / q2Var.getMeasuredWidth());
                 if (this.V && !this.b0 && this.U == null && !this.A) {
                     this.K = (getMeasuredWidth() - q2Var.getMeasuredWidth()) / 2.0f;
@@ -352,13 +352,13 @@ public class r2 extends FrameLayout {
         } else {
             this.U.setDuration(350L);
         }
-        this.U.setInterpolator(er.f);
-        this.U.addListener(new f11(this, 16));
+        this.U.setInterpolator(gr.f);
+        this.U.addListener(new y11(this, 14));
         this.U.start();
         ArrayList arrayList = this.C;
         if (!arrayList.isEmpty()) {
-            for (int i15 = 0; i15 < arrayList.size(); i15++) {
-                ((Animator) arrayList.get(i15)).start();
+            for (int i14 = 0; i14 < arrayList.size(); i14++) {
+                ((Animator) arrayList.get(i14)).start();
             }
         }
         arrayList.clear();
@@ -366,7 +366,7 @@ public class r2 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
+    public final void onMeasure(int i9, int i10) {
         boolean z10 = this.a;
         q2 q2Var = this.d;
         if (!z10) {
@@ -374,9 +374,9 @@ public class r2 extends FrameLayout {
             q2Var.setScreenRotation(((WindowManager) getContext().getSystemService("window")).getDefaultDisplay().getRotation());
             this.a0 = false;
         }
-        super.onMeasure(i10, i11);
+        super.onMeasure(i9, i10);
         e();
-        super.onMeasure(i10, i11);
+        super.onMeasure(i9, i10);
         q2Var.updateRotation();
     }
 
@@ -464,28 +464,28 @@ public class r2 extends FrameLayout {
             View view = new View(context);
             this.h = view;
             view.setBackgroundColor(-14999773);
-            addView(view, z5.c(-1.0f, -1));
+            addView(view, e6.c(-1.0f, -1));
             if (z13) {
                 TextureView textureView = new TextureView(context);
                 this.e = textureView;
-                addView(textureView, z5.e(-1, -2, 17));
+                addView(textureView, e6.e(-1, -2, 17));
             }
             q2Var.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FIT);
-            addView(q2Var, z5.e(-1, -2, 17));
+            addView(q2Var, e6.e(-1, -2, 17));
         } else if (z10) {
             if (z13) {
                 TextureView textureView2 = new TextureView(context);
                 this.e = textureView2;
-                addView(textureView2, z5.e(-1, -2, 17));
+                addView(textureView2, e6.e(-1, -2, 17));
             }
             addView(q2Var);
         } else {
             if (z13) {
                 TextureView textureView3 = new TextureView(context);
                 this.e = textureView3;
-                addView(textureView3, z5.e(-1, -2, 17));
+                addView(textureView3, e6.e(-1, -2, 17));
             }
-            addView(q2Var, z5.e(-1, -2, 17));
+            addView(q2Var, e6.e(-1, -2, 17));
         }
         addView(imageView);
         TextureView textureView4 = this.e;
@@ -494,23 +494,23 @@ public class r2 extends FrameLayout {
         }
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.r = frameLayout;
-        frameLayout.setBackground(new nb0(true, -14602694, -13935795, -14395293, -14203560));
-        addView(frameLayout, z5.c(-1.0f, -1));
+        frameLayout.setBackground(new jb0(true, -14602694, -13935795, -14395293, -14203560));
+        addView(frameLayout, e6.c(-1.0f, -1));
         frameLayout.setVisibility(8);
         ImageView imageView2 = new ImageView(getContext());
         this.s = imageView2;
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
         imageView2.setImageResource(R.drawable.screencast_big);
-        frameLayout.addView(imageView2, z5.d(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
+        frameLayout.addView(imageView2, e6.d(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
         TextView textView = new TextView(getContext());
         this.v = textView;
         textView.setText(LocaleController.getString(R.string.VoipVideoScreenSharing));
         textView.setGravity(17);
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        org.telegram.messenger.y1.s(textView, -1, 1, 15.0f);
-        frameLayout.addView(textView, z5.d(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
+        org.telegram.messenger.l0.q(textView, -1, 1, 15.0f);
+        frameLayout.addView(textView, e6.d(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
         if (z12) {
-            setOutlineProvider(new lg.b(this, 5));
+            setOutlineProvider(new kg.b(this, 5));
             setClipToOutline(true);
         }
         if (z10 && this.x == null) {

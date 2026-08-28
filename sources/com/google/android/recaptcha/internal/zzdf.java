@@ -2,12 +2,12 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import id.f0;
-import id.i0;
-import id.s;
-import id.t;
+import hd.f0;
+import hd.i0;
+import hd.s;
+import hd.t;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzdf {
     public static final i0 zza(Task task) {

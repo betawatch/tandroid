@@ -3,9 +3,9 @@ package com.google.android.gms.vision.clearcut;
 import android.os.Bundle;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
-import v5.a;
+import u5.a;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class LoggingConnectionCallbacks implements k, l {
     @Override // com.google.android.gms.common.api.k
@@ -19,7 +19,7 @@ public class LoggingConnectionCallbacks implements k, l {
     }
 
     @Override // com.google.android.gms.common.api.k
-    public void onConnectionSuspended(int i10) {
+    public void onConnectionSuspended(int i9) {
         throw new NoSuchMethodError();
     }
 }

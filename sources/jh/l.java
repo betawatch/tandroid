@@ -1,53 +1,31 @@
 package jh;
 
-import android.view.ViewGroup;
-import org.telegram.ui.Components.lk0;
-import org.telegram.ui.yw;
+import android.content.Context;
+import ih.n6;
+import org.telegram.ui.Components.gw0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final class l extends xf.b {
-    public final boolean d;
-    public final /* synthetic */ yw e;
+public final class l extends p {
+    public final /* synthetic */ q v;
 
-    public l(yw ywVar, boolean z10) {
-        this.e = ywVar;
-        this.d = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l(q qVar, Context context) {
+        super(qVar, context);
+        this.v = qVar;
     }
 
-    @Override // org.telegram.ui.Components.yk0
-    public final boolean D(f2.o1 o1Var) {
-        return false;
-    }
-
-    @Override // f2.q0
-    public final int h() {
-        boolean z10 = this.d;
-        yw ywVar = this.e;
-        return (z10 ? ywVar.y : ywVar.x).size();
-    }
-
-    @Override // f2.q0
-    public final void v(f2.o1 o1Var, int i10) {
-        o oVar = (o) o1Var.a;
-        oVar.b = i10;
-        boolean z10 = this.d;
-        yw ywVar = this.e;
-        if (z10) {
-            oVar.setDialogId(((m) ywVar.y.get(i10)).c);
-        } else {
-            oVar.setDialogId(((m) ywVar.x.get(i10)).c);
+    @Override // jh.p, f2.r0
+    public final void l() {
+        super.l();
+        q qVar = this.v;
+        if (qVar.r.getVisibility() == 0) {
+            qVar.w.l();
         }
-    }
-
-    @Override // f2.q0
-    public final f2.o1 x(ViewGroup viewGroup, int i10) {
-        o oVar = new o(this.e, viewGroup.getContext());
-        boolean z10 = this.d;
-        oVar.J = z10;
-        if (z10) {
-            oVar.d(1.0f, 1.0f, 0.0f, false);
+        gw0 gw0Var = qVar.y;
+        if (gw0Var != null) {
+            n6 n6Var = this.e;
+            gw0Var.e(n6Var != null && n6Var.k(), true);
         }
-        return new lk0(oVar);
     }
 }

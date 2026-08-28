@@ -1,25 +1,21 @@
 package ld;
 
-import org.telegram.tgnet.TLObject;
+import ha.u;
+import java.util.concurrent.CancellationException;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a extends tc.c {
-    public md.g a;
-    public /* synthetic */ Object b;
-    public final /* synthetic */ k5.i c;
-    public int d;
+public final class a extends CancellationException {
+    public final transient u a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(k5.i iVar, tc.c cVar) {
-        super(cVar);
-        this.c = iVar;
+    public a(u uVar) {
+        super("Flow was aborted, no more elements needed");
+        this.a = uVar;
     }
 
-    @Override // tc.a
-    public final Object invokeSuspend(Object obj) {
-        this.b = obj;
-        this.d |= TLObject.FLAG_31;
-        return this.c.q(null, this);
+    @Override // java.lang.Throwable
+    public final Throwable fillInStackTrace() {
+        setStackTrace(new StackTraceElement[0]);
+        return this;
     }
 }

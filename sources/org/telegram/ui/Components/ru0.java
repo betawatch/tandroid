@@ -1,7 +1,71 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public interface ru0 {
-    void b(Object obj, float f10);
+public final /* synthetic */ class ru0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ androidx.activity.g b;
+
+    public /* synthetic */ ru0(androidx.activity.g gVar, int i9) {
+        this.a = i9;
+        this.b = gVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i9 = this.a;
+        androidx.activity.g gVar = this.b;
+        int i10 = 0;
+        switch (i9) {
+            case 0:
+                xu0 xu0Var = (xu0) gVar.c;
+                boolean z10 = xu0Var.K;
+                Paint paint = xu0Var.U;
+                Paint paint2 = xu0Var.S;
+                if (!z10) {
+                    tu0 tu0Var = (tu0) gVar.d;
+                    if (tu0Var != null) {
+                        tu0Var.c.recycle();
+                    }
+                    xu0Var.L = false;
+                    break;
+                } else {
+                    tu0 tu0Var2 = xu0Var.M;
+                    xu0Var.N = tu0Var2;
+                    xu0Var.T.setShader(paint2.getShader());
+                    xu0Var.V.setShader(paint.getShader());
+                    Bitmap bitmap = ((tu0) gVar.d).c;
+                    Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                    paint2.setShader(new BitmapShader(bitmap, tileMode, tileMode));
+                    ((tu0) gVar.d).getClass();
+                    ValueAnimator valueAnimator = xu0Var.c0;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                    }
+                    xu0Var.b0 = 0.0f;
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                    xu0Var.c0 = ofFloat;
+                    ofFloat.addUpdateListener(new q60(gVar, 22));
+                    xu0Var.c0.addListener(new su0(i10, gVar, tu0Var2));
+                    xu0Var.c0.setDuration(50L);
+                    xu0Var.c0.start();
+                    xu0Var.N();
+                    xu0Var.M = (tu0) gVar.d;
+                    AndroidUtilities.runOnUIThread(new ru0(gVar, 1), 16L);
+                    break;
+                }
+            default:
+                xu0 xu0Var2 = (xu0) gVar.c;
+                xu0Var2.L = false;
+                xu0Var2.W();
+                break;
+        }
+    }
 }

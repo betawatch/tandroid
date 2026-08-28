@@ -2,22 +2,22 @@ package m;
 
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b2 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ e2 b;
 
-    public /* synthetic */ b2(e2 e2Var, int i10) {
-        this.a = i10;
+    public /* synthetic */ b2(e2 e2Var, int i9) {
+        this.a = i9;
         this.b = e2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
+        int i9 = this.a;
         e2 e2Var = this.b;
-        switch (i10) {
+        switch (i9) {
             case 0:
                 s1 s1Var = e2Var.c;
                 if (s1Var != null) {

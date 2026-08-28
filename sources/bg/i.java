@@ -1,543 +1,400 @@
 package bg;
 
-import ag.k3;
-import ag.u;
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
-import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.SurfaceTexture;
-import android.opengl.GLUtils;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.TextureView;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.OvershootInterpolator;
-import hh.pa;
+import android.graphics.BitmapShader;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.text.TextUtils;
+import android.util.Pair;
+import android.widget.TextView;
+import fh.e6;
+import fh.g6;
+import fh.t5;
+import fh.u6;
+import gh.s3;
+import gh.v7;
+import ih.i4;
+import ih.j7;
+import ih.m9;
+import ih.n6;
+import ih.v6;
+import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.Collections;
-import javax.microedition.khronos.egl.EGL10;
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.egl.EGLContext;
-import javax.microedition.khronos.egl.EGLDisplay;
-import javax.microedition.khronos.egl.EGLSurface;
-import javax.microedition.khronos.opengles.GL10;
+import java.util.HashMap;
+import kh.a8;
+import kh.k8;
+import kh.q3;
+import kh.r6;
+import kh.wb;
+import kh.ya;
+import kh.z7;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.EmuDetector;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.er;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.ec;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.ob;
+import org.telegram.ui.Components.qf0;
+import org.telegram.ui.Components.y51;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public class i extends TextureView implements TextureView.SurfaceTextureListener {
-    public boolean A;
-    public boolean B;
-    public h C;
-    public final int D;
-    public final long E;
-    public final int F;
-    public int G;
-    public final ArrayList H;
-    public boolean I;
-    public k3 J;
-    public final int K;
-    public volatile boolean L;
-    public volatile pa M;
-    public final GestureDetector N;
-    public ValueAnimator O;
-    public AnimatorSet P;
-    public final f Q;
-    public final b R;
-    public final b S;
-    public final b T;
-    public boolean a;
-    public a b;
-    public SurfaceTexture c;
-    public EGLDisplay d;
-    public EGLSurface e;
-    public EGLContext f;
-    public EGL10 h;
-    public EGLConfig n;
-    public GL10 r;
-    public int s;
-    public int v;
-    public int w;
-    public boolean x;
-    public boolean y;
+public final /* synthetic */ class i implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: Type inference failed for: r2v3, types: [bg.b] */
-    /* JADX WARN: Type inference failed for: r2v4, types: [bg.b] */
-    /* JADX WARN: Type inference failed for: r2v5, types: [bg.b] */
-    public i(Context context, int i10, int i11) {
-        super(context);
-        int i12 = 0;
-        this.x = false;
-        this.y = true;
-        this.A = false;
-        this.B = false;
-        this.H = new ArrayList();
-        this.P = new AnimatorSet();
-        final int i13 = 0;
-        this.Q = new f(this, 0);
-        this.R = new ValueAnimator.AnimatorUpdateListener(this) { // from class: bg.b
-            public final /* synthetic */ i b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                switch (i13) {
-                    case 0:
-                        this.b.b.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                        break;
-                    case 1:
-                        this.b.b.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                        break;
-                    default:
-                        this.b.b.g = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                        break;
-                }
-            }
-        };
-        final int i14 = 1;
-        this.S = new ValueAnimator.AnimatorUpdateListener(this) { // from class: bg.b
-            public final /* synthetic */ i b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                switch (i14) {
-                    case 0:
-                        this.b.b.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                        break;
-                    case 1:
-                        this.b.b.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                        break;
-                    default:
-                        this.b.b.g = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                        break;
-                }
-            }
-        };
-        final int i15 = 2;
-        this.T = new ValueAnimator.AnimatorUpdateListener(this) { // from class: bg.b
-            public final /* synthetic */ i b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                switch (i15) {
-                    case 0:
-                        this.b.b.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                        break;
-                    case 1:
-                        this.b.b.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                        break;
-                    default:
-                        this.b.b.g = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                        break;
-                }
-            }
-        };
-        this.K = i11;
-        this.F = (i11 == 1 || i11 == 4 || i11 == 3) ? 1 : 5;
-        this.E = i11 == 4 ? 0L : 2000L;
-        setOpaque(false);
-        setRenderer(new a(context, i10, i11));
-        this.D = (int) AndroidUtilities.screenRefreshRate;
-        setSurfaceTextureListener(this);
-        GestureDetector gestureDetector = new GestureDetector(context, new e(0, this));
-        this.N = gestureDetector;
-        gestureDetector.setIsLongpressEnabled(true);
-        while (i12 < this.F) {
-            i12 = i0.a.f(i12, i12, 1, this.H);
-        }
-        Collections.shuffle(this.H);
+    public /* synthetic */ i(Object obj, int i9) {
+        this.a = i9;
+        this.b = obj;
     }
 
-    public static void a(i iVar) {
-        EGL10 egl10 = (EGL10) EGLContext.getEGL();
-        iVar.h = egl10;
-        EGLDisplay eglGetDisplay = egl10.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
-        iVar.d = eglGetDisplay;
-        if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
-            throw new RuntimeException("eglGetDisplay failed " + GLUtils.getEGLErrorString(iVar.h.eglGetError()));
-        }
-        if (!iVar.h.eglInitialize(eglGetDisplay, new int[2])) {
-            throw new RuntimeException("eglInitialize failed " + GLUtils.getEGLErrorString(iVar.h.eglGetError()));
-        }
-        int[] iArr = new int[1];
-        EGLConfig[] eGLConfigArr = new EGLConfig[1];
-        int[] iArr2 = EmuDetector.with(iVar.getContext()).detect() ? new int[]{12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12344} : new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12326, 0, 12338, 1, 12344};
-        iVar.n = null;
-        if (!iVar.h.eglChooseConfig(iVar.d, iArr2, eGLConfigArr, 1, iArr)) {
-            throw new IllegalArgumentException("eglChooseConfig failed " + GLUtils.getEGLErrorString(iVar.h.eglGetError()));
-        }
-        if (iArr[0] > 0) {
-            iVar.n = eGLConfigArr[0];
-        }
-        EGLConfig eGLConfig = iVar.n;
-        if (eGLConfig == null) {
-            throw new RuntimeException("eglConfig not initialized");
-        }
-        iVar.f = iVar.h.eglCreateContext(iVar.d, eGLConfig, EGL10.EGL_NO_CONTEXT, new int[]{12440, 2, 12344});
-        iVar.f();
-        iVar.e = iVar.h.eglCreateWindowSurface(iVar.d, iVar.n, iVar.c, null);
-        iVar.f();
-        EGLSurface eGLSurface = iVar.e;
-        if (eGLSurface == null || eGLSurface == EGL10.EGL_NO_SURFACE) {
-            int eglGetError = iVar.h.eglGetError();
-            if (eglGetError == 12299) {
-                FileLog.e("eglCreateWindowSurface returned EGL10.EGL_BAD_NATIVE_WINDOW");
-                return;
-            } else {
-                throw new RuntimeException("eglCreateWindowSurface failed " + GLUtils.getEGLErrorString(eglGetError));
-            }
-        }
-        if (!iVar.h.eglMakeCurrent(iVar.d, eGLSurface, eGLSurface, iVar.f)) {
-            throw new RuntimeException("eglMakeCurrent failed " + GLUtils.getEGLErrorString(iVar.h.eglGetError()));
-        }
-        iVar.f();
-        iVar.r = (GL10) iVar.f.getGL();
-        iVar.f();
-    }
-
-    public static boolean b(i iVar) {
-        boolean z10;
-        synchronized (iVar) {
-            z10 = iVar.y;
-        }
-        return z10 || iVar.b == null;
-    }
-
-    public static void c(i iVar, float f10) {
-        synchronized (iVar) {
-            try {
-                iVar.e();
-                a aVar = iVar.b;
-                if (aVar != null) {
-                    aVar.D = f10;
-                    aVar.onDrawFrame(iVar.r);
-                }
-                int glGetError = iVar.r.glGetError();
-                if (glGetError != 0) {
-                    FileLog.e("GL error = 0x" + Integer.toHexString(glGetError));
-                }
-                iVar.h.eglSwapBuffers(iVar.d, iVar.e);
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-    }
-
-    public final void d() {
-        ValueAnimator valueAnimator = this.O;
-        if (valueAnimator != null) {
-            valueAnimator.removeAllListeners();
-            this.O.cancel();
-            this.O = null;
-        }
-        AnimatorSet animatorSet = this.P;
-        if (animatorSet != null) {
-            animatorSet.removeAllListeners();
-            this.P.cancel();
-            this.P = null;
-        }
-    }
-
-    public final void e() {
-        if (this.f.equals(this.h.eglGetCurrentContext()) && this.e.equals(this.h.eglGetCurrentSurface(12377))) {
-            return;
-        }
-        f();
-        EGL10 egl10 = this.h;
-        EGLDisplay eGLDisplay = this.d;
-        EGLSurface eGLSurface = this.e;
-        if (egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.f)) {
-            f();
-        } else {
-            throw new RuntimeException("eglMakeCurrent failed " + GLUtils.getEGLErrorString(this.h.eglGetError()));
-        }
-    }
-
-    public final void f() {
-        if (this.h.eglGetError() != 12288) {
-            FileLog.e("cannot swap buffers!");
-        }
-    }
-
-    public final void h(long j10) {
-        f fVar = this.Q;
-        AndroidUtilities.cancelRunOnUIThread(fVar);
-        if (this.B) {
-            return;
-        }
-        AndroidUtilities.runOnUIThread(fVar, j10);
-    }
-
-    public final void i() {
-        d();
-        a aVar = this.b;
-        float f10 = aVar.d;
-        float f11 = aVar.g;
-        float f12 = aVar.e;
-        float f13 = f10 + f11;
-        int i10 = 2;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
-        this.O = ofFloat;
-        ofFloat.addUpdateListener(new c(this, f10, f12, f11, 0));
-        this.O.setDuration(600L);
-        this.O.setInterpolator(new OvershootInterpolator());
-        this.O.start();
-        k3 k3Var = this.J;
-        if (k3Var != null) {
-            float abs = Math.abs(f13);
-            float f14 = abs < 60.0f ? 5.0f : abs < 180.0f ? 9.0f : 15.0f;
-            AnimatorSet animatorSet = new AnimatorSet();
-            u uVar = new u(k3Var, i10);
-            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(1.0f, f14);
-            ofFloat2.addUpdateListener(uVar);
-            ofFloat2.setDuration(600L);
-            ValueAnimator ofFloat3 = ValueAnimator.ofFloat(f14, 1.0f);
-            ofFloat3.addUpdateListener(uVar);
-            ofFloat3.setDuration(2000L);
-            animatorSet.playTogether(ofFloat2, ofFloat3);
-            animatorSet.start();
-        }
-        h(this.E);
-    }
-
-    public final void j(long j10) {
-        a aVar = this.b;
-        if (aVar != null) {
-            aVar.d = -180.0f;
-            AndroidUtilities.runOnUIThread(new f(this, 1), j10);
-        }
-    }
-
-    public void k() {
-        if (this.I) {
-            int i10 = this.G;
-            ArrayList arrayList = this.H;
-            int intValue = ((Integer) arrayList.get(i10)).intValue();
-            int i11 = this.G + 1;
-            this.G = i11;
-            if (i11 >= arrayList.size()) {
-                Collections.shuffle(arrayList);
-                this.G = 0;
-            }
-            b bVar = this.T;
-            b bVar2 = this.S;
-            if (intValue == 0) {
-                int abs = Math.abs(Utilities.random.nextInt() % 4);
-                this.P = new AnimatorSet();
-                int i12 = this.K;
-                if (i12 == 4) {
-                    float f10 = this.b.d;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 360.0f + f10);
-                    ofFloat.addUpdateListener(bVar2);
-                    ofFloat.setDuration(12000L);
-                    ofFloat.setInterpolator(new LinearInterpolator());
-                    this.P.playTogether(ofFloat);
-                } else if (abs != 0 || i12 == 1 || i12 == 3) {
-                    int i13 = (i12 == 1 || i12 == 3) ? 360 : 485;
-                    if (abs == 2) {
-                        i13 = -i13;
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x00a7, code lost:
+    
+        if (android.text.TextUtils.isEmpty(r4.G1.y) == false) goto L34;
+     */
+    @Override // org.telegram.messenger.Utilities.Callback
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run(Object obj) {
+        TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
+        String str;
+        int i9 = 2;
+        int i10 = 0;
+        switch (this.a) {
+            case 0:
+                MessageObject messageObject = (MessageObject) this.b;
+                TLRPC.payments_GiveawayInfo payments_giveawayinfo = (TLRPC.payments_GiveawayInfo) obj;
+                TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
+                if (messageMedia instanceof TLRPC.TL_messageMediaGiveawayResults) {
+                    TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults = (TLRPC.TL_messageMediaGiveawayResults) messageMedia;
+                    tL_messageMediaGiveaway = new TLRPC.TL_messageMediaGiveaway();
+                    tL_messageMediaGiveaway.prize_description = tL_messageMediaGiveawayResults.prize_description;
+                    tL_messageMediaGiveaway.months = tL_messageMediaGiveawayResults.months;
+                    tL_messageMediaGiveaway.quantity = tL_messageMediaGiveawayResults.winners_count + tL_messageMediaGiveawayResults.unclaimed_count;
+                    tL_messageMediaGiveaway.only_new_subscribers = tL_messageMediaGiveawayResults.only_new_subscribers;
+                    tL_messageMediaGiveaway.until_date = tL_messageMediaGiveawayResults.until_date;
+                    if ((tL_messageMediaGiveawayResults.flags & 32) != 0) {
+                        tL_messageMediaGiveaway.flags |= 32;
+                        tL_messageMediaGiveaway.stars = tL_messageMediaGiveawayResults.stars;
                     }
-                    float f11 = i13;
-                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.b.g, f11);
-                    ofFloat2.addUpdateListener(bVar2);
-                    ofFloat2.setDuration(3000L);
-                    ofFloat2.setInterpolator(er.h);
-                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(f11, 0.0f);
-                    ofFloat3.addUpdateListener(bVar2);
-                    ofFloat3.setDuration(1000L);
-                    ofFloat3.setStartDelay(3000L);
-                    ofFloat3.setInterpolator(AndroidUtilities.overshootInterpolator);
-                    this.P.playTogether(ofFloat2, ofFloat3);
                 } else {
-                    float f12 = 48;
-                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(this.b.g, f12);
-                    ofFloat4.addUpdateListener(bVar);
-                    ofFloat4.setDuration(2300L);
-                    ofFloat4.setInterpolator(er.h);
-                    ValueAnimator ofFloat5 = ValueAnimator.ofFloat(f12, 0.0f);
-                    ofFloat5.addUpdateListener(bVar);
-                    ofFloat5.setDuration(500L);
-                    ofFloat5.setStartDelay(2300L);
-                    ofFloat5.setInterpolator(AndroidUtilities.overshootInterpolator);
-                    this.P.playTogether(ofFloat4, ofFloat5);
+                    tL_messageMediaGiveaway = (TLRPC.TL_messageMediaGiveaway) messageMedia;
                 }
-                this.P.addListener(new g(this, 1));
-                this.P.start();
-                return;
-            }
-            if (intValue == 1) {
-                this.P = new AnimatorSet();
-                ValueAnimator ofFloat6 = ValueAnimator.ofFloat(this.b.d, 360.0f);
-                ofFloat6.addUpdateListener(bVar2);
-                ofFloat6.setDuration(8000L);
-                ofFloat6.setInterpolator(er.f);
-                this.P.playTogether(ofFloat6);
-                this.P.addListener(new g(this, 0));
-                this.P.start();
-                return;
-            }
-            if (intValue != 2) {
-                this.P = new AnimatorSet();
-                ValueAnimator ofFloat7 = ValueAnimator.ofFloat(this.b.d, 180.0f);
-                ofFloat7.addUpdateListener(bVar2);
-                ofFloat7.setDuration(600L);
-                er erVar = er.f;
-                ofFloat7.setInterpolator(erVar);
-                ValueAnimator ofFloat8 = ValueAnimator.ofFloat(180.0f, 360.0f);
-                ofFloat8.addUpdateListener(bVar2);
-                ofFloat8.setDuration(600L);
-                ofFloat8.setStartDelay(2000L);
-                ofFloat8.setInterpolator(erVar);
-                this.P.playTogether(ofFloat7, ofFloat8);
-                this.P.addListener(new g(this, 2));
-                this.P.start();
-                return;
-            }
-            this.P = new AnimatorSet();
-            ValueAnimator ofFloat9 = ValueAnimator.ofFloat(this.b.d, 184.0f);
-            ofFloat9.addUpdateListener(bVar2);
-            ofFloat9.setDuration(600L);
-            er erVar2 = er.g;
-            ofFloat9.setInterpolator(erVar2);
-            ValueAnimator ofFloat10 = ValueAnimator.ofFloat(this.b.g, 50.0f);
-            ofFloat10.addUpdateListener(bVar);
-            ofFloat10.setDuration(600L);
-            ofFloat10.setInterpolator(erVar2);
-            ValueAnimator ofFloat11 = ValueAnimator.ofFloat(180.0f, 0.0f);
-            ofFloat11.addUpdateListener(bVar2);
-            ofFloat11.setDuration(800L);
-            ofFloat11.setStartDelay(10000L);
-            ofFloat11.setInterpolator(AndroidUtilities.overshootInterpolator);
-            ValueAnimator ofFloat12 = ValueAnimator.ofFloat(60.0f, 0.0f);
-            ofFloat12.addUpdateListener(bVar);
-            ofFloat12.setDuration(800L);
-            ofFloat12.setStartDelay(10000L);
-            ofFloat12.setInterpolator(AndroidUtilities.overshootInterpolator);
-            ValueAnimator ofFloat13 = ValueAnimator.ofFloat(0.0f, 2.0f, -3.0f, 2.0f, -1.0f, 2.0f, -3.0f, 2.0f, -1.0f, 0.0f);
-            ofFloat13.addUpdateListener(this.R);
-            ofFloat13.setDuration(10000L);
-            ofFloat13.setInterpolator(new LinearInterpolator());
-            this.P.playTogether(ofFloat9, ofFloat10, ofFloat11, ofFloat12, ofFloat13);
-            this.P.addListener(new g(this, 3));
-            this.P.start();
+                TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway2 = tL_messageMediaGiveaway;
+                long j10 = 1000 * messageObject.messageOwner.date;
+                org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
+                if (R != null) {
+                    String b10 = u.b(messageObject);
+                    TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-messageObject.getFromChatId()));
+                    boolean z10 = chat != null && ChatObject.isChannelAndNotMegaGroup(chat);
+                    ob obVar = new ob(R.getParentActivity(), R.getResourceProvider());
+                    if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfoResults) {
+                        obVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
+                        obVar.b.setText(LocaleController.getString(R.string.BoostingGiveawayShortStatusEnded));
+                    } else if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfo) {
+                        if (((TLRPC.TL_payments_giveawayInfo) payments_giveawayinfo).participating) {
+                            obVar.c(R.raw.forward, 30, 30, new String[0]);
+                            obVar.b.setText(LocaleController.getString(R.string.BoostingGiveawayShortStatusParticipating));
+                        } else {
+                            obVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
+                            obVar.b.setText(LocaleController.getString(R.string.BoostingGiveawayShortStatusNotParticipating));
+                        }
+                    }
+                    obVar.b.setSingleLine(false);
+                    obVar.b.setMaxLines(2);
+                    ec ecVar = new ec(R.getParentActivity(), R.getResourceProvider(), true);
+                    ecVar.e(LocaleController.getString(R.string.LearnMore));
+                    ecVar.a = new m(payments_giveawayinfo, z10, b10, j10, tL_messageMediaGiveaway2, R);
+                    obVar.setButton(ecVar);
+                    gc.g(R, obVar, 2750).j();
+                    break;
+                }
+                break;
+            case 1:
+                g2 g2Var = (g2) this.b;
+                g2Var.W.setLoading(false);
+                u.j(g2Var.getContext(), (TLRPC.TL_error) obj);
+                break;
+            case 2:
+                bh.j.O((bh.j) this.b, (Pair) obj);
+                break;
+            case 3:
+                HashMap hashMap = ((cg.b) this.b).w;
+                hashMap.clear();
+                hashMap.putAll((HashMap) obj);
+                break;
+            case 4:
+                ((cg.e) this.b).F((TLObject) obj);
+                break;
+            case 5:
+                HashMap hashMap2 = ((cg.h) this.b).n;
+                hashMap2.clear();
+                hashMap2.putAll((HashMap) obj);
+                break;
+            case 6:
+                ch.j jVar = (ch.j) this.b;
+                Bitmap bitmap = (Bitmap) obj;
+                Matrix matrix = jVar.G;
+                if (!jVar.P) {
+                    jVar.E = bitmap;
+                    Bitmap bitmap2 = jVar.E;
+                    Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                    jVar.F = new BitmapShader(bitmap2, tileMode, tileMode);
+                    Paint paint = new Paint(2);
+                    jVar.H = paint;
+                    paint.setShader(jVar.F);
+                    ColorMatrix colorMatrix = new ColorMatrix();
+                    AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, f6.I.q() ? 0.08f : 1.25f);
+                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, f6.I.q() ? 0.02f : -0.15f);
+                    jVar.H.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                    matrix.reset();
+                    matrix.setScale(15.0f, 15.0f);
+                    jVar.F.setLocalMatrix(matrix);
+                    break;
+                } else {
+                    jVar.E.recycle();
+                    break;
+                }
+            case 7:
+                ((fh.k2) this.b).a();
+                break;
+            case 8:
+                ((g6) this.b).d0(((Boolean) obj).booleanValue());
+                break;
+            case 9:
+                e6 e6Var = (e6) this.b;
+                ((Boolean) obj).getClass();
+                t5 t5Var = e6Var.d;
+                if (t5Var != null) {
+                    t5Var.run();
+                    break;
+                }
+                break;
+            case 10:
+                u.j(((u6) this.b).getContext(), (TLRPC.TL_error) obj);
+                break;
+            case 11:
+                gh.o0 o0Var = (gh.o0) this.b;
+                int i11 = gh.o0.s0[((Integer) obj).intValue()];
+                if (o0Var.j0 != i11) {
+                    o0Var.j0 = i11;
+                    o0Var.b0.setText(LocaleController.formatPluralString("GiftOfferHours", i11 / 3600, new Object[0]));
+                }
+                o0Var.S(true);
+                break;
+            case 12:
+                gh.l1 l1Var = (gh.l1) this.b;
+                l1Var.e0.g();
+                l1Var.g0.N(true);
+                break;
+            case 13:
+                s3 s3Var = (s3) this.b;
+                s3Var.getClass();
+                s3Var.s = new Matrix();
+                s3Var.v = new Matrix();
+                Shader.TileMode tileMode2 = Shader.TileMode.CLAMP;
+                BitmapShader bitmapShader = new BitmapShader((Bitmap) obj, tileMode2, tileMode2);
+                s3Var.r = bitmapShader;
+                Paint paint2 = s3Var.c;
+                paint2.setShader(bitmapShader);
+                ColorMatrix colorMatrix2 = new ColorMatrix();
+                AndroidUtilities.adjustSaturationColorMatrix(colorMatrix2, 0.25f);
+                paint2.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
+                break;
+            case 14:
+                v7.a((v7) this.b, (TL_stars.StarGifts) obj);
+                break;
+            case 15:
+                ((org.telegram.ui.ActionBar.f3) this.b).dismiss(((Boolean) obj).booleanValue());
+                break;
+            case 16:
+                TextView textView = (TextView) this.b;
+                TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
+                if (starGift != null) {
+                    if (!(starGift instanceof TL_stars.TL_starGiftUnique)) {
+                        int i12 = starGift.availability_remains;
+                        textView.setText(i12 <= 0 ? LocaleController.formatPluralStringComma("Gift2Availability2ValueNone", starGift.availability_total) : LocaleController.formatPluralStringComma("Gift2Availability4Value", i12, LocaleController.formatNumber(starGift.availability_total, ',')));
+                        break;
+                    } else {
+                        if (starGift.availability_remains <= 0) {
+                            str = LocaleController.formatPluralStringComma("Gift2QuantityIssuedNone", starGift.availability_total);
+                        } else {
+                            str = LocaleController.formatPluralStringComma("Gift2QuantityIssued1", starGift.availability_issued) + LocaleController.formatPluralStringComma("Gift2QuantityIssued2", starGift.availability_total);
+                        }
+                        textView.setText(str);
+                        break;
+                    }
+                }
+                break;
+            case 17:
+                ih.f1 f1Var = (ih.f1) this.b;
+                if (((Boolean) obj).booleanValue() && !f1Var.w) {
+                    f1Var.n = true;
+                    f1Var.E = true;
+                    f1Var.u(false);
+                    ih.f1.S = f1Var;
+                    f1Var.F = NativeInstance.createVideoCapturer(f1Var.D, f1Var.E ? 1 : 0);
+                    if (f1Var.A != null) {
+                        DispatchQueue dispatchQueue = Utilities.globalQueue;
+                        NativeInstance nativeInstance = f1Var.A;
+                        Objects.requireNonNull(nativeInstance);
+                        dispatchQueue.postRunnable(new org.telegram.messenger.voip.r0(nativeInstance, 4));
+                        f1Var.I.clear();
+                        f1Var.A = null;
+                    }
+                    f1Var.c();
+                    f1Var.k();
+                    NotificationCenter.getInstance(f1Var.e).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(f1Var.f.id));
+                    break;
+                }
+                break;
+            case 18:
+                i4 i4Var = (i4) this.b;
+                i4Var.H3 = ((Long) obj).longValue();
+                ih.p2 p2Var = i4Var.X1;
+                if (p2Var != null) {
+                    p2Var.J(true);
+                    i4Var.X1.R1();
+                }
+                i4Var.r0(true);
+                break;
+            case 19:
+                m9 m9Var = (m9) this.b;
+                m9Var.g1 = false;
+                m9Var.P();
+                break;
+            case 20:
+                v6 v6Var = (v6) this.b;
+                n6 n6Var = (n6) obj;
+                HashMap hashMap3 = v6Var.H;
+                int i13 = n6Var.e;
+                int i14 = n6Var.f;
+                long j11 = n6Var.d;
+                if (i13 == 0 && i14 > 0) {
+                    HashMap hashMap4 = (HashMap) hashMap3.get(Long.valueOf(j11));
+                    if (hashMap4 != null) {
+                        hashMap4.remove(Integer.valueOf(i14));
+                        if (hashMap4.isEmpty()) {
+                            hashMap3.remove(Long.valueOf(j11));
+                            break;
+                        }
+                    }
+                } else {
+                    HashMap hashMap5 = v6Var.G[i13];
+                    if (hashMap5 != null) {
+                        hashMap5.remove(Long.valueOf(j11));
+                        break;
+                    }
+                }
+                break;
+            case 21:
+                jh.u uVar = (jh.u) this.b;
+                String str2 = (String) obj;
+                ArrayList arrayList = uVar.h;
+                if (!arrayList.contains(str2)) {
+                    arrayList.add(str2);
+                    uVar.i(true);
+                }
+                AndroidUtilities.runOnUIThread(new j7(9, uVar, str2), 120L);
+                break;
+            case 22:
+                ((kh.m) this.b).x(((Integer) obj).intValue());
+                break;
+            case 23:
+                kh.f0 f0Var = (kh.f0) this.b;
+                f0Var.f0.n.P = ((Float) obj).floatValue();
+                kh.e0 e0Var = f0Var.f0;
+                kh.d0 d0Var = e0Var.d;
+                if (d0Var != null) {
+                    d0Var.setVolume(e0Var.n.P);
+                    break;
+                }
+                break;
+            case 24:
+                kh.s0 s0Var = (kh.s0) this.b;
+                VideoEditedInfo videoEditedInfo = (VideoEditedInfo) obj;
+                MessageObject messageObject2 = s0Var.c;
+                if (messageObject2 != null) {
+                    messageObject2.videoEditedInfo = videoEditedInfo;
+                    MediaController.getInstance().scheduleVideoConvert(s0Var.c);
+                    break;
+                }
+                break;
+            case 25:
+                kh.s2 s2Var = (kh.s2) this.b;
+                s2Var.h(-1.0f);
+                AndroidUtilities.runOnUIThread(new j7(14, s2Var, (Runnable) obj), 80L);
+                break;
+            case 26:
+                ((q3) this.b).s.animate().translationY(((-((Integer) obj).intValue()) / 2.0f) + AndroidUtilities.dp(80.0f)).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.q1.w).start();
+                break;
+            case 27:
+                ya yaVar = (ya) ((kh.g6) this.b);
+                wb wbVar = yaVar.w2;
+                wbVar.T0.q((MessageObject) obj);
+                a8 a8Var = wbVar.G1;
+                if (a8Var != null && wbVar.K1 != 1) {
+                    boolean isEmpty = TextUtils.isEmpty(a8Var.y);
+                    boolean z11 = !isEmpty;
+                    ((qf0) wbVar.f1.c).a(!wbVar.T0.k(), false);
+                    wbVar.f1.setVisibility(0);
+                    wbVar.f1.animate().alpha(!isEmpty ? 1.0f : 0.0f).withEndAction(new eh.f(11, yaVar, z11)).start();
+                }
+                if (wbVar.w0.j()) {
+                    ArrayList arrayList2 = wbVar.w0.h;
+                    int size = arrayList2.size();
+                    while (true) {
+                        if (i10 < size) {
+                            Object obj2 = arrayList2.get(i10);
+                            i10++;
+                            a8 a8Var2 = ((kh.e0) obj2).n;
+                            if (a8Var2 != null && a8Var2.K) {
+                                break;
+                            }
+                        }
+                    }
+                }
+                i9 = -1;
+                wbVar.l0(i9, true, true);
+                break;
+            case 28:
+                z7 z7Var = (z7) obj;
+                y51 y51Var = ((r6) this.b).n;
+                if (y51Var != null) {
+                    y51Var.setHDRInfo(z7Var);
+                    break;
+                }
+                break;
+            default:
+                k8 k8Var = (k8) this.b;
+                yf.m0 m0Var = (yf.m0) obj;
+                if (m0Var != null) {
+                    k8Var.k0 = m0Var.e;
+                    k8Var.j0 = m0Var.f;
+                    break;
+                } else {
+                    k8Var.T();
+                    break;
+                }
         }
-    }
-
-    @Override // android.view.TextureView, android.view.View
-    public void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.I = true;
-        this.A = true;
-        h(this.E);
-    }
-
-    @Override // android.view.View
-    public void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        d();
-        a aVar = this.b;
-        if (aVar != null) {
-            aVar.d = 0.0f;
-            aVar.g = 0.0f;
-            aVar.e = 0.0f;
-        }
-        this.I = false;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        this.C = new h(this);
-        this.c = surfaceTexture;
-        this.w = i10;
-        this.v = i11;
-        this.s = Math.max(0, ((int) ((1.0f / this.D) * 1000.0f)) - 1);
-        this.C.start();
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        this.L = false;
-        if (this.C != null) {
-            this.x = false;
-            this.C = null;
-        }
-        return false;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        this.w = i10;
-        this.v = i11;
-        a aVar = this.b;
-        if (aVar != null) {
-            aVar.onSurfaceChanged(this.r, i10, i11);
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            getParent().requestDisallowInterceptTouchEvent(true);
-        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
-            this.a = false;
-            i();
-            getParent().requestDisallowInterceptTouchEvent(false);
-        }
-        return this.N.onTouchEvent(motionEvent);
-    }
-
-    public void setBackgroundBitmap(Bitmap bitmap) {
-        a aVar = this.b;
-        j jVar = aVar.c;
-        if (jVar != null) {
-            jVar.V = bitmap;
-        }
-        aVar.o = bitmap;
-    }
-
-    public void setDialogVisible(boolean z10) {
-        this.B = z10;
-        if (!z10) {
-            h(this.E);
-        } else {
-            AndroidUtilities.cancelRunOnUIThread(this.Q);
-            i();
-        }
-    }
-
-    public synchronized void setPaused(boolean z10) {
-        this.y = z10;
-    }
-
-    public synchronized void setRenderer(a aVar) {
-        this.b = aVar;
-        this.A = true;
-    }
-
-    public void setStarParticlesView(k3 k3Var) {
-        this.J = k3Var;
-    }
-
-    public void g() {
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

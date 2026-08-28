@@ -1,24 +1,7 @@
 package j4;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c0 extends a0 {
-    public c0(Object obj) {
-        super(obj, -1L);
-    }
-
-    public final c0 b(Object obj) {
-        a0 a0Var;
-        if (this.a.equals(obj)) {
-            a0Var = this;
-        } else {
-            long j10 = this.d;
-            a0Var = new a0(this.b, this.c, this.e, j10, obj);
-        }
-        return new c0(a0Var);
-    }
-
-    public c0(Object obj, long j10, int i10) {
-        super(-1, -1, i10, j10, obj);
-    }
+public interface c0 {
+    a a(h3.f1 f1Var);
 }

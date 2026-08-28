@@ -5,7 +5,7 @@ import h3.t0;
 import java.util.Arrays;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class f implements h {
     public final String b;
@@ -16,7 +16,7 @@ public final class f implements h {
     public long h;
     public t0 i;
     public int j;
-    public final d5.z a = new d5.z(new byte[18]);
+    public final d5.y a = new d5.y(new byte[18]);
     public int e = 0;
     public long k = -9223372036854775807L;
 
@@ -31,33 +31,33 @@ public final class f implements h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(d5.z zVar) {
+    public final void g(d5.y yVar) {
         char c10;
         char c11;
-        int i10;
+        int i9;
         byte b10;
         boolean z10;
+        int i10;
         int i11;
         int i12;
-        int i13;
         byte b11;
-        int i14;
+        int i13;
         byte b12;
-        d5.y yVar;
+        d5.x xVar;
         d5.a.j(this.d);
-        while (zVar.a() > 0) {
-            int i15 = this.e;
-            int i16 = 8;
-            int i17 = 2;
-            d5.z zVar2 = this.a;
-            if (i15 == 0) {
-                while (zVar.a() > 0) {
-                    int i18 = this.g << 8;
-                    this.g = i18;
-                    int r10 = i18 | zVar.r();
+        while (yVar.a() > 0) {
+            int i14 = this.e;
+            int i15 = 8;
+            int i16 = 2;
+            d5.y yVar2 = this.a;
+            if (i14 == 0) {
+                while (yVar.a() > 0) {
+                    int i17 = this.g << 8;
+                    this.g = i17;
+                    int r10 = i17 | yVar.r();
                     this.g = r10;
                     if (r10 == 2147385345 || r10 == -25230976 || r10 == 536864768 || r10 == -14745368) {
-                        byte[] bArr = zVar2.a;
+                        byte[] bArr = yVar2.a;
                         bArr[0] = (byte) ((r10 >> 24) & 255);
                         bArr[1] = (byte) ((r10 >> 16) & 255);
                         bArr[2] = (byte) ((r10 >> 8) & 255);
@@ -68,80 +68,80 @@ public final class f implements h {
                         break;
                     }
                 }
-            } else if (i15 == 1) {
-                byte[] bArr2 = zVar2.a;
-                int min = Math.min(zVar.a(), 18 - this.f);
-                zVar.c(this.f, min, bArr2);
-                int i19 = this.f + min;
-                this.f = i19;
-                if (i19 == 18) {
-                    byte[] bArr3 = zVar2.a;
+            } else if (i14 == 1) {
+                byte[] bArr2 = yVar2.a;
+                int min = Math.min(yVar.a(), 18 - this.f);
+                yVar.c(this.f, min, bArr2);
+                int i18 = this.f + min;
+                this.f = i18;
+                if (i18 == 18) {
+                    byte[] bArr3 = yVar2.a;
                     if (this.i == null) {
                         String str = this.c;
                         c10 = 0;
                         if (bArr3[0] == Byte.MAX_VALUE) {
-                            yVar = new d5.y(bArr3, bArr3.length);
+                            xVar = new d5.x(bArr3, bArr3.length);
                             c11 = '\b';
                         } else {
                             byte[] copyOf = Arrays.copyOf(bArr3, bArr3.length);
                             byte b13 = copyOf[0];
                             if (b13 == -2 || b13 == -1) {
-                                for (int i20 = 0; i20 < copyOf.length - 1; i20 += 2) {
-                                    byte b14 = copyOf[i20];
-                                    int i21 = i20 + 1;
-                                    copyOf[i20] = copyOf[i21];
-                                    copyOf[i21] = b14;
+                                for (int i19 = 0; i19 < copyOf.length - 1; i19 += 2) {
+                                    byte b14 = copyOf[i19];
+                                    int i20 = i19 + 1;
+                                    copyOf[i19] = copyOf[i20];
+                                    copyOf[i20] = b14;
                                 }
                             }
-                            d5.y yVar2 = new d5.y(copyOf, copyOf.length);
+                            d5.x xVar2 = new d5.x(copyOf, copyOf.length);
                             if (copyOf[0] == 31) {
-                                d5.y yVar3 = new d5.y(copyOf, copyOf.length);
-                                while (yVar3.b() >= 16) {
-                                    yVar3.s(i17);
-                                    int i22 = yVar3.i(14) & 16383;
-                                    int min2 = Math.min(8 - yVar2.d, 14);
-                                    int i23 = yVar2.d;
-                                    int i24 = (8 - i23) - min2;
-                                    byte[] bArr4 = yVar2.b;
-                                    int i25 = yVar2.c;
-                                    byte b15 = (byte) (bArr4[i25] & ((65280 >> i23) | ((1 << i24) - 1)));
-                                    bArr4[i25] = b15;
-                                    int i26 = 14 - min2;
-                                    bArr4[i25] = (byte) (b15 | ((i22 >>> i26) << i24));
-                                    int i27 = i25 + 1;
-                                    while (i26 > i16) {
-                                        yVar2.b[i27] = (byte) (i22 >>> (i26 - 8));
-                                        i26 -= 8;
-                                        i27++;
-                                        i16 = 8;
+                                d5.x xVar3 = new d5.x(copyOf, copyOf.length);
+                                while (xVar3.b() >= 16) {
+                                    xVar3.s(i16);
+                                    int i21 = xVar3.i(14) & 16383;
+                                    int min2 = Math.min(8 - xVar2.d, 14);
+                                    int i22 = xVar2.d;
+                                    int i23 = (8 - i22) - min2;
+                                    byte[] bArr4 = xVar2.b;
+                                    int i24 = xVar2.c;
+                                    byte b15 = (byte) (bArr4[i24] & ((65280 >> i22) | ((1 << i23) - 1)));
+                                    bArr4[i24] = b15;
+                                    int i25 = 14 - min2;
+                                    bArr4[i24] = (byte) (b15 | ((i21 >>> i25) << i23));
+                                    int i26 = i24 + 1;
+                                    while (i25 > i15) {
+                                        xVar2.b[i26] = (byte) (i21 >>> (i25 - 8));
+                                        i25 -= 8;
+                                        i26++;
+                                        i15 = 8;
                                     }
-                                    byte[] bArr5 = yVar2.b;
-                                    byte b16 = (byte) (bArr5[i27] & ((1 << r4) - 1));
-                                    bArr5[i27] = b16;
-                                    bArr5[i27] = (byte) (((i22 & ((1 << i26) - 1)) << (8 - i26)) | b16);
-                                    yVar2.s(14);
-                                    yVar2.a();
-                                    i16 = 8;
-                                    i17 = 2;
+                                    byte[] bArr5 = xVar2.b;
+                                    byte b16 = (byte) (bArr5[i26] & ((1 << r4) - 1));
+                                    bArr5[i26] = b16;
+                                    bArr5[i26] = (byte) (((i21 & ((1 << i25) - 1)) << (8 - i25)) | b16);
+                                    xVar2.s(14);
+                                    xVar2.a();
+                                    i15 = 8;
+                                    i16 = 2;
                                 }
                             }
                             c11 = '\b';
-                            yVar2.n(copyOf.length, copyOf);
-                            yVar = yVar2;
+                            xVar2.n(copyOf.length, copyOf);
+                            xVar = xVar2;
                         }
-                        yVar.s(60);
-                        int i28 = j3.b.j[yVar.i(6)];
-                        int i29 = j3.b.k[yVar.i(4)];
-                        int i30 = yVar.i(5);
-                        int i31 = i30 >= 29 ? -1 : (j3.b.l[i30] * MediaDataController.MAX_STYLE_RUNS_COUNT) / 2;
-                        yVar.s(10);
-                        int i32 = i28 + (yVar.i(2) > 0 ? 1 : 0);
+                        xVar.s(60);
+                        int i27 = j3.b.j[xVar.i(6)];
+                        int i28 = j3.b.k[xVar.i(4)];
+                        int i29 = xVar.i(5);
+                        int i30 = i29 >= 29 ? -1 : (j3.b.l[i29] * MediaDataController.MAX_STYLE_RUNS_COUNT) / 2;
+                        xVar.s(10);
+                        int i31 = i27 + (xVar.i(2) > 0 ? 1 : 0);
                         s0 s0Var = new s0();
                         s0Var.a = str;
                         s0Var.o = "audio/vnd.dts";
-                        s0Var.f = i31;
-                        s0Var.B = i32;
-                        s0Var.C = i29;
+                        s0Var.f = i30;
+                        s0Var.B = i31;
+                        s0Var.C = i28;
                         s0Var.r = null;
                         s0Var.c = this.b;
                         t0 t0Var = new t0(s0Var);
@@ -154,70 +154,70 @@ public final class f implements h {
                     byte b17 = bArr3[c10];
                     if (b17 != -2) {
                         if (b17 == -1) {
-                            i14 = ((bArr3[7] & 3) << 12) | ((bArr3[6] & 255) << 4);
+                            i13 = ((bArr3[7] & 3) << 12) | ((bArr3[6] & 255) << 4);
                             b12 = bArr3[9];
                         } else if (b17 != 31) {
-                            i10 = ((bArr3[5] & 3) << 12) | ((bArr3[6] & 255) << 4);
+                            i9 = ((bArr3[5] & 3) << 12) | ((bArr3[6] & 255) << 4);
                             b10 = bArr3[7];
                         } else {
-                            i14 = ((bArr3[6] & 3) << 12) | ((bArr3[7] & 255) << 4);
+                            i13 = ((bArr3[6] & 3) << 12) | ((bArr3[7] & 255) << 4);
                             b12 = bArr3[c11];
                         }
-                        i11 = (i14 | ((b12 & 60) >> 2)) + 1;
+                        i10 = (i13 | ((b12 & 60) >> 2)) + 1;
                         z10 = true;
                         if (z10) {
-                            i11 = (i11 * 16) / 14;
+                            i10 = (i10 * 16) / 14;
                         }
-                        this.j = i11;
+                        this.j = i10;
                         if (b17 == -2) {
                             if (b17 == -1) {
-                                i12 = (bArr3[4] & 7) << 4;
+                                i11 = (bArr3[4] & 7) << 4;
                                 b11 = bArr3[7];
                             } else if (b17 != 31) {
-                                i12 = (bArr3[4] & 1) << 6;
-                                i13 = bArr3[5] & 252;
+                                i11 = (bArr3[4] & 1) << 6;
+                                i12 = bArr3[5] & 252;
                             } else {
-                                i12 = (bArr3[5] & 7) << 4;
+                                i11 = (bArr3[5] & 7) << 4;
                                 b11 = bArr3[6];
                             }
-                            i13 = b11 & 60;
+                            i12 = b11 & 60;
                         } else {
-                            i12 = (bArr3[5] & 1) << 6;
-                            i13 = bArr3[4] & 252;
+                            i11 = (bArr3[5] & 1) << 6;
+                            i12 = bArr3[4] & 252;
                         }
-                        this.h = (int) ((((((i13 >> 2) | i12) + 1) * 32) * 1000000) / this.i.P);
-                        zVar2.C(0);
-                        this.d.a(18, zVar2);
+                        this.h = (int) ((((((i12 >> 2) | i11) + 1) * 32) * 1000000) / this.i.P);
+                        yVar2.C(0);
+                        this.d.a(18, yVar2);
                         this.e = 2;
                     } else {
-                        i10 = ((bArr3[4] & 3) << 12) | ((bArr3[7] & 255) << 4);
+                        i9 = ((bArr3[4] & 3) << 12) | ((bArr3[7] & 255) << 4);
                         b10 = bArr3[6];
                     }
-                    i11 = (i10 | ((b10 & 240) >> 4)) + 1;
+                    i10 = (i9 | ((b10 & 240) >> 4)) + 1;
                     z10 = false;
                     if (z10) {
                     }
-                    this.j = i11;
+                    this.j = i10;
                     if (b17 == -2) {
                     }
-                    this.h = (int) ((((((i13 >> 2) | i12) + 1) * 32) * 1000000) / this.i.P);
-                    zVar2.C(0);
-                    this.d.a(18, zVar2);
+                    this.h = (int) ((((((i12 >> 2) | i11) + 1) * 32) * 1000000) / this.i.P);
+                    yVar2.C(0);
+                    this.d.a(18, yVar2);
                     this.e = 2;
                 }
             } else {
-                if (i15 != 2) {
+                if (i14 != 2) {
                     throw new IllegalStateException();
                 }
-                int min3 = Math.min(zVar.a(), this.j - this.f);
-                this.d.a(min3, zVar);
-                int i33 = this.f + min3;
-                this.f = i33;
-                int i34 = this.j;
-                if (i33 == i34) {
+                int min3 = Math.min(yVar.a(), this.j - this.f);
+                this.d.a(min3, yVar);
+                int i32 = this.f + min3;
+                this.f = i32;
+                int i33 = this.j;
+                if (i32 == i33) {
                     long j10 = this.k;
                     if (j10 != -9223372036854775807L) {
-                        this.d.e(j10, 1, i34, 0, null);
+                        this.d.e(j10, 1, i33, 0, null);
                         this.k += this.h;
                     }
                     this.e = 0;
@@ -227,7 +227,7 @@ public final class f implements h {
     }
 
     @Override // w3.h
-    public final void c() {
+    public final void h() {
         this.e = 0;
         this.f = 0;
         this.g = 0;
@@ -235,22 +235,22 @@ public final class f implements h {
     }
 
     @Override // w3.h
-    public final void e(m3.m mVar, e0 e0Var) {
-        e0Var.a();
-        e0Var.b();
-        this.c = e0Var.e;
-        e0Var.b();
-        this.d = mVar.C(e0Var.d, 1);
+    public final void j(m3.m mVar, d0 d0Var) {
+        d0Var.a();
+        d0Var.b();
+        this.c = d0Var.e;
+        d0Var.b();
+        this.d = mVar.I(d0Var.d, 1);
     }
 
     @Override // w3.h
-    public final void f(int i10, long j10) {
+    public final void k(int i9, long j10) {
         if (j10 != -9223372036854775807L) {
             this.k = j10;
         }
     }
 
     @Override // w3.h
-    public final void d() {
+    public final void i() {
     }
 }

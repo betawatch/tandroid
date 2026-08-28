@@ -2,9 +2,9 @@ package w3;
 
 import android.util.SparseArray;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.i6;
+import org.telegram.ui.Cells.e3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class x implements m3.k {
     public boolean e;
@@ -14,8 +14,8 @@ public final class x implements m3.k {
     public p3.a i;
     public m3.m j;
     public boolean k;
-    public final d5.f0 a = new d5.f0(0);
-    public final d5.z c = new d5.z(4096);
+    public final d5.e0 a = new d5.e0(0);
+    public final d5.y c = new d5.y(4096);
     public final SparseArray b = new SparseArray();
     public final v d = new v(0);
 
@@ -38,8 +38,8 @@ public final class x implements m3.k {
         long j12 = ((m3.h) lVar).c;
         v vVar = this.d;
         if (j12 != -1 && !vVar.d) {
-            d5.f0 f0Var = vVar.b;
-            d5.z zVar = vVar.c;
+            d5.e0 e0Var = vVar.b;
+            d5.y yVar = vVar.c;
             if (!vVar.f) {
                 m3.h hVar = (m3.h) lVar;
                 long j13 = hVar.c;
@@ -49,25 +49,25 @@ public final class x implements m3.k {
                     nVar.a = j14;
                     return 1;
                 }
-                zVar.z(min);
+                yVar.z(min);
                 hVar.f = 0;
-                hVar.g(zVar.a, 0, min, false);
-                int i10 = zVar.b;
-                int i11 = zVar.c - 4;
+                hVar.g(yVar.a, 0, min, false);
+                int i9 = yVar.b;
+                int i10 = yVar.c - 4;
                 while (true) {
-                    if (i11 < i10) {
+                    if (i10 < i9) {
                         j11 = -9223372036854775807L;
                         break;
                     }
-                    if (v.b(i11, zVar.a) == 442) {
-                        zVar.C(i11 + 4);
-                        long c10 = v.c(zVar);
+                    if (v.b(i10, yVar.a) == 442) {
+                        yVar.C(i10 + 4);
+                        long c10 = v.c(yVar);
                         if (c10 != -9223372036854775807L) {
                             j11 = c10;
                             break;
                         }
                     }
-                    i11--;
+                    i10--;
                 }
                 vVar.h = j11;
                 vVar.f = true;
@@ -83,7 +83,7 @@ public final class x implements m3.k {
                     vVar.a(lVar);
                     return 0;
                 }
-                long b10 = f0Var.b(vVar.h) - f0Var.b(j15);
+                long b10 = e0Var.b(vVar.h) - e0Var.b(j15);
                 vVar.i = b10;
                 if (b10 < 0) {
                     d5.a.K("PsDurationReader", "Invalid duration: " + vVar.i + ". Using TIME_UNSET instead.");
@@ -99,25 +99,25 @@ public final class x implements m3.k {
                 nVar.a = j16;
                 return 1;
             }
-            zVar.z(min2);
+            yVar.z(min2);
             hVar2.f = 0;
-            hVar2.g(zVar.a, 0, min2, false);
-            int i12 = zVar.b;
-            int i13 = zVar.c;
+            hVar2.g(yVar.a, 0, min2, false);
+            int i11 = yVar.b;
+            int i12 = yVar.c;
             while (true) {
-                if (i12 >= i13 - 3) {
+                if (i11 >= i12 - 3) {
                     j10 = -9223372036854775807L;
                     break;
                 }
-                if (v.b(i12, zVar.a) == 442) {
-                    zVar.C(i12 + 4);
-                    long c11 = v.c(zVar);
+                if (v.b(i11, yVar.a) == 442) {
+                    yVar.C(i11 + 4);
+                    long c11 = v.c(yVar);
                     if (c11 != -9223372036854775807L) {
                         j10 = c11;
                         break;
                     }
                 }
-                i12++;
+                i11++;
             }
             vVar.g = j10;
             vVar.e = true;
@@ -130,12 +130,12 @@ public final class x implements m3.k {
             long j17 = vVar.i;
             if (j17 != -9223372036854775807L) {
                 r32 = 0;
-                p3.a aVar = new p3.a(new e7.v(14), new i6(vVar.b), j17, j17 + 1, 0L, j12, 188L, MediaDataController.MAX_STYLE_RUNS_COUNT);
+                p3.a aVar = new p3.a(new wa.a(14), new e3(vVar.b), j17, j17 + 1, 0L, j12, 188L, MediaDataController.MAX_STYLE_RUNS_COUNT);
                 this.i = aVar;
-                this.j.n(aVar.a);
+                this.j.y(aVar.a);
             } else {
                 r32 = 0;
-                this.j.n(new m3.o(j17));
+                this.j.y(new m3.o(j17));
             }
         }
         p3.a aVar2 = this.i;
@@ -144,59 +144,59 @@ public final class x implements m3.k {
         }
         m3.h hVar3 = (m3.h) lVar;
         hVar3.f = r32;
-        long i14 = j12 != -1 ? j12 - hVar3.i() : -1L;
-        if (i14 != -1 && i14 < 4) {
+        long k10 = j12 != -1 ? j12 - hVar3.k() : -1L;
+        if (k10 != -1 && k10 < 4) {
             return -1;
         }
-        d5.z zVar2 = this.c;
-        if (!hVar3.g(zVar2.a, r32, 4, true)) {
+        d5.y yVar2 = this.c;
+        if (!hVar3.g(yVar2.a, r32, 4, true)) {
             return -1;
         }
-        zVar2.C(r32);
-        int e9 = zVar2.e();
-        if (e9 == 441) {
+        yVar2.C(r32);
+        int e10 = yVar2.e();
+        if (e10 == 441) {
             return -1;
         }
-        if (e9 == 442) {
-            hVar3.g(zVar2.a, r32, 10, r32);
-            zVar2.C(9);
-            hVar3.t((zVar2.r() & 7) + 14);
+        if (e10 == 442) {
+            hVar3.g(yVar2.a, r32, 10, r32);
+            yVar2.C(9);
+            hVar3.u((yVar2.r() & 7) + 14);
             return r32;
         }
-        if (e9 == 443) {
-            hVar3.g(zVar2.a, r32, 2, r32);
-            zVar2.C(r32);
-            hVar3.t(zVar2.w() + 6);
+        if (e10 == 443) {
+            hVar3.g(yVar2.a, r32, 2, r32);
+            yVar2.C(r32);
+            hVar3.u(yVar2.w() + 6);
             return r32;
         }
-        if (((e9 & (-256)) >> 8) != 1) {
-            hVar3.t(1);
+        if (((e10 & (-256)) >> 8) != 1) {
+            hVar3.u(1);
             return r32;
         }
-        int i15 = e9 & 255;
+        int i13 = e10 & 255;
         SparseArray sparseArray = this.b;
-        w wVar = (w) sparseArray.get(i15);
+        w wVar = (w) sparseArray.get(i13);
         if (!this.e) {
             if (wVar == null) {
                 h hVar4 = null;
-                if (i15 == 189) {
+                if (i13 == 189) {
                     jVar = new b(null, 0);
                     this.f = true;
                     this.h = hVar3.d;
-                } else if ((e9 & 224) == 192) {
+                } else if ((e10 & 224) == 192) {
                     jVar = new t(null);
                     this.f = true;
                     this.h = hVar3.d;
                 } else {
-                    if ((e9 & 240) == 224) {
+                    if ((e10 & 240) == 224) {
                         jVar = new j(null);
                         this.g = true;
                         this.h = hVar3.d;
                     }
                     if (hVar4 != null) {
-                        hVar4.e(this.j, new e0(i15, 256));
+                        hVar4.j(this.j, new d0(i13, 256));
                         wVar = new w(hVar4, this.a);
-                        sparseArray.put(i15, wVar);
+                        sparseArray.put(i13, wVar);
                     }
                 }
                 hVar4 = jVar;
@@ -205,51 +205,51 @@ public final class x implements m3.k {
             }
             if (hVar3.d > ((this.f && this.g) ? this.h + 8192 : 1048576L)) {
                 this.e = true;
-                this.j.A();
+                this.j.B();
             }
         }
-        hVar3.g(zVar2.a, r32, 2, r32);
-        zVar2.C(r32);
-        int w10 = zVar2.w() + 6;
+        hVar3.g(yVar2.a, r32, 2, r32);
+        yVar2.C(r32);
+        int w8 = yVar2.w() + 6;
         if (wVar == null) {
-            hVar3.t(w10);
+            hVar3.u(w8);
             return r32;
         }
-        zVar2.z(w10);
-        hVar3.d(zVar2.a, r32, w10, r32);
-        zVar2.C(6);
+        yVar2.z(w8);
+        hVar3.d(yVar2.a, r32, w8, r32);
+        yVar2.C(6);
         h hVar5 = wVar.a;
-        d5.y yVar = wVar.c;
-        zVar2.c(r32, 3, yVar.b);
-        yVar.p(r32);
-        yVar.s(8);
-        wVar.d = yVar.h();
-        wVar.e = yVar.h();
-        yVar.s(6);
-        zVar2.c(r32, yVar.i(8), yVar.b);
-        yVar.p(r32);
-        d5.f0 f0Var2 = wVar.b;
+        d5.x xVar = wVar.c;
+        yVar2.c(r32, 3, xVar.b);
+        xVar.p(r32);
+        xVar.s(8);
+        wVar.d = xVar.h();
+        wVar.e = xVar.h();
+        xVar.s(6);
+        yVar2.c(r32, xVar.i(8), xVar.b);
+        xVar.p(r32);
+        d5.e0 e0Var2 = wVar.b;
         wVar.g = 0L;
         if (wVar.d) {
-            yVar.s(4);
-            yVar.s(1);
-            yVar.s(1);
-            long i16 = (yVar.i(3) << 30) | (yVar.i(15) << 15) | yVar.i(15);
-            yVar.s(1);
+            xVar.s(4);
+            xVar.s(1);
+            xVar.s(1);
+            long i14 = (xVar.i(3) << 30) | (xVar.i(15) << 15) | xVar.i(15);
+            xVar.s(1);
             if (!wVar.f && wVar.e) {
-                yVar.s(4);
-                yVar.s(1);
-                yVar.s(1);
-                yVar.s(1);
-                f0Var2.b(yVar.i(15) | (yVar.i(3) << 30) | (yVar.i(15) << 15));
+                xVar.s(4);
+                xVar.s(1);
+                xVar.s(1);
+                xVar.s(1);
+                e0Var2.b(xVar.i(15) | (xVar.i(3) << 30) | (xVar.i(15) << 15));
                 wVar.f = true;
             }
-            wVar.g = f0Var2.b(i16);
+            wVar.g = e0Var2.b(i14);
         }
-        hVar5.f(4, wVar.g);
-        hVar5.b(zVar2);
-        hVar5.d();
-        zVar2.B(zVar2.a.length);
+        hVar5.k(4, wVar.g);
+        hVar5.g(yVar2);
+        hVar5.i();
+        yVar2.B(yVar2.a.length);
         return r32;
     }
 
@@ -275,29 +275,29 @@ public final class x implements m3.k {
 
     @Override // m3.k
     public final void g(long j10, long j11) {
-        d5.f0 f0Var = this.a;
-        boolean z10 = f0Var.d() == -9223372036854775807L;
+        d5.e0 e0Var = this.a;
+        boolean z10 = e0Var.d() == -9223372036854775807L;
         if (!z10) {
-            long c10 = f0Var.c();
+            long c10 = e0Var.c();
             z10 = (c10 == -9223372036854775807L || c10 == 0 || c10 == j11) ? false : true;
         }
         if (z10) {
-            f0Var.e(j11);
+            e0Var.e(j11);
         }
         p3.a aVar = this.i;
         if (aVar != null) {
             aVar.d(j11);
         }
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             SparseArray sparseArray = this.b;
-            if (i10 >= sparseArray.size()) {
+            if (i9 >= sparseArray.size()) {
                 return;
             }
-            w wVar = (w) sparseArray.valueAt(i10);
+            w wVar = (w) sparseArray.valueAt(i9);
             wVar.f = false;
-            wVar.a.c();
-            i10++;
+            wVar.a.h();
+            i9++;
         }
     }
 

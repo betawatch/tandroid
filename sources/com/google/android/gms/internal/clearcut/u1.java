@@ -39,9 +39,9 @@ public final class u1 extends z {
 
     /* JADX WARN: Type inference failed for: r4v12, types: [com.google.android.gms.internal.clearcut.u0, java.lang.Object] */
     @Override // com.google.android.gms.internal.clearcut.z
-    public final Object a(int i10) {
+    public final Object a(int i9) {
         u0 u0Var;
-        switch (w1.a[i10 - 1]) {
+        switch (w1.a[i9 - 1]) {
             case 1:
                 return new u1();
             case 2:

@@ -19,20 +19,20 @@ public abstract class l1 {
     public static final long g;
     public static final boolean h;
 
-    /* JADX WARN: Can't wrap try/catch for region: R(27:0|1|(24:63|(1:(1:66)(1:(1:68)))(1:69)|4|(3:52|53|(1:55)(21:56|(1:59)|58|8|(18:44|45|(1:48)|47|11|(1:15)|16|17|18|19|20|21|(1:37)(1:25)|(1:29)|30|(1:32)(1:36)|33|34)|10|11|(2:13|15)|16|17|18|19|20|21|(1:23)|37|(2:27|29)|30|(0)(0)|33|34))|6|7|8|(0)|10|11|(0)|16|17|18|19|20|21|(0)|37|(0)|30|(0)(0)|33|34)|3|4|(0)|6|7|8|(0)|10|11|(0)|16|17|18|19|20|21|(0)|37|(0)|30|(0)(0)|33|34|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x0290, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(27:0|1|(24:3|(1:(1:6)(1:(1:67)))(1:68)|7|(3:55|56|(1:58)(21:59|(1:62)|61|11|(18:47|48|(1:51)|50|14|(1:18)|19|20|21|22|23|24|(1:40)(1:28)|(1:32)|33|(1:35)(1:39)|36|37)|13|14|(2:16|18)|19|20|21|22|23|24|(1:26)|40|(2:30|32)|33|(0)(0)|36|37))|9|10|11|(0)|13|14|(0)|19|20|21|22|23|24|(0)|40|(0)|33|(0)(0)|36|37)|69|7|(0)|9|10|11|(0)|13|14|(0)|19|20|21|22|23|24|(0)|40|(0)|33|(0)(0)|36|37|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0291, code lost:
     
         r0 = null;
      */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0276  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0293  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x02a0  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x02b0  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x02b2  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0127 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x006d A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0277  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0294  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x02a1  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x02b1  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x02b3  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0128 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x006e A[EXC_TOP_SPLITTER, SYNTHETIC] */
     static {
-        k1 j1Var;
+        k1 k1Var;
         Class<?> cls;
         Class<?> cls2;
         boolean z10;
@@ -40,8 +40,8 @@ public abstract class l1 {
         boolean z11;
         Field g10;
         Field field;
-        k1 k1Var;
         k1 k1Var2;
+        k1 k1Var3;
         Unsafe f10 = f();
         b = f10;
         c = l.a;
@@ -51,13 +51,13 @@ public abstract class l1 {
         boolean j11 = j(cls4);
         if (f10 != null) {
             if (!l.a()) {
-                j1Var = new j1(f10);
+                k1Var = new j1(f10);
             } else if (j10) {
-                j1Var = new i1(f10, 1);
+                k1Var = new i1(f10, 1);
             } else if (j11) {
-                j1Var = new i1(f10, 0);
+                k1Var = new i1(f10, 0);
             }
-            d = j1Var;
+            d = k1Var;
             Class<?> cls5 = Byte.TYPE;
             if (f10 != null) {
                 try {
@@ -136,14 +136,14 @@ public abstract class l1 {
                         h(Object[].class);
                         i(Object[].class);
                         g10 = g();
-                        if (g10 != null && (k1Var2 = d) != null) {
-                            k1Var2.a(g10);
+                        if (g10 != null && (k1Var3 = d) != null) {
+                            k1Var3.a(g10);
                         }
                         Field field2 = String.class.getDeclaredField("value");
                         field2.setAccessible(true);
                         field = (field2 == null && field2.getType() == char[].class) ? field2 : null;
-                        if (field != null && (k1Var = d) != null) {
-                            k1Var.a(field);
+                        if (field != null && (k1Var2 = d) != null) {
+                            k1Var2.a(field);
                         }
                         h = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
                     }
@@ -164,14 +164,14 @@ public abstract class l1 {
                     i(Object[].class);
                     g10 = g();
                     if (g10 != null) {
-                        k1Var2.a(g10);
+                        k1Var3.a(g10);
                     }
                     Field field22 = String.class.getDeclaredField("value");
                     field22.setAccessible(true);
                     if (field22 == null) {
                     }
                     if (field != null) {
-                        k1Var.a(field);
+                        k1Var2.a(field);
                     }
                     h = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
                 }
@@ -208,8 +208,8 @@ public abstract class l1 {
             }
             h = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
         }
-        j1Var = null;
-        d = j1Var;
+        k1Var = null;
+        d = k1Var;
         Class<?> cls52 = Byte.TYPE;
         if (f10 != null) {
         }
@@ -250,15 +250,15 @@ public abstract class l1 {
         return d.l(bArr, g + j10);
     }
 
-    public static void b(long j10, Object obj, int i10) {
-        d.b(j10, obj, i10);
+    public static void b(long j10, Object obj, int i9) {
+        d.b(j10, obj, i9);
     }
 
     public static void c(Object obj, long j10, byte b10) {
         long j11 = (-4) & j10;
         int g10 = d.g(obj, j11);
-        int i10 = ((~((int) j10)) & 3) << 3;
-        b(j11, obj, ((255 & b10) << i10) | (g10 & (~(255 << i10))));
+        int i9 = ((~((int) j10)) & 3) << 3;
+        b(j11, obj, ((255 & b10) << i9) | (g10 & (~(255 << i9))));
     }
 
     public static void d(Object obj, long j10, Object obj2) {
@@ -267,8 +267,8 @@ public abstract class l1 {
 
     public static void e(Object obj, long j10, byte b10) {
         long j11 = (-4) & j10;
-        int i10 = (((int) j10) & 3) << 3;
-        b(j11, obj, ((255 & b10) << i10) | (d.g(obj, j11) & (~(255 << i10))));
+        int i9 = (((int) j10) & 3) << 3;
+        b(j11, obj, ((255 & b10) << i9) | (d.g(obj, j11) & (~(255 << i9))));
     }
 
     public static Unsafe f() {

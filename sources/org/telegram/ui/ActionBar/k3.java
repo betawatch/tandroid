@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class k3 extends j1.b {
     public static final /* synthetic */ int r = 0;
@@ -58,18 +58,18 @@ public final class k3 extends j1.b {
     }
 
     @Override // j1.b
-    public final boolean k(int i10, int i11) {
-        if (i11 == 16) {
+    public final boolean k(int i9, int i10) {
+        if (i10 == 16) {
             m3 m3Var = this.q;
             ArrayList<l3> tabs = m3Var.getTabs();
             if (!tabs.isEmpty()) {
                 l3 l3Var = tabs.get(0);
-                if (i10 == 1) {
+                if (i9 == 1) {
                     m3Var.b();
                     return true;
                 }
-                if (i10 == 2) {
-                    m3Var.g(l3Var, new cg.h(2));
+                if (i9 == 2) {
+                    m3Var.g(l3Var, new bg.k(2));
                     return true;
                 }
             }
@@ -78,46 +78,46 @@ public final class k3 extends j1.b {
     }
 
     @Override // j1.b
-    public final void l(int i10, s0.c cVar) {
+    public final void l(int i9, s0.d dVar) {
         String str;
         String str2;
         m3 m3Var = this.q;
         ArrayList<l3> tabs = m3Var.getTabs();
         l3 l3Var = tabs.isEmpty() ? null : tabs.get(0);
         j3 c10 = l3Var != null ? m3Var.c(l3Var) : null;
-        cVar.i("android.widget.Button");
-        cVar.b(s0.b.c);
+        dVar.i("android.widget.Button");
+        dVar.b(s0.c.c);
         Rect rect = this.p;
         if (c10 == null) {
             rect.set(0, 0, 1, 1);
-            cVar.h(rect);
-            cVar.j("");
-            cVar.p(false);
+            dVar.h(rect);
+            dVar.j("");
+            dVar.p(false);
             return;
         }
         float c11 = c10.c();
         RectF rectF = this.o;
         m3Var.d(rectF, c11);
         String b10 = l3Var.b() != null ? l3Var.b() : "";
-        if (i10 != 2) {
+        if (i9 != 2) {
             rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            cVar.h(rect);
+            dVar.h(rect);
             if (TextUtils.isEmpty(b10)) {
                 str = LocaleController.getString(R.string.Open);
             } else {
                 str = LocaleController.getString(R.string.Open) + ", " + b10;
             }
-            cVar.j(str);
+            dVar.j(str);
             return;
         }
         Rect bounds = c10.k.getBounds();
         rect.set((int) (rectF.left + bounds.left), (int) (rectF.centerY() + bounds.top), (int) (rectF.left + bounds.right), (int) (rectF.centerY() + bounds.bottom));
-        cVar.h(rect);
+        dVar.h(rect);
         if (TextUtils.isEmpty(b10)) {
             str2 = LocaleController.getString(R.string.Close);
         } else {
             str2 = LocaleController.getString(R.string.Close) + ", " + b10;
         }
-        cVar.j(str2);
+        dVar.j(str2);
     }
 }

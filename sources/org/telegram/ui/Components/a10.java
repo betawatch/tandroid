@@ -1,75 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a10 implements View.OnLongClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class a10 implements Runnable {
+    public final /* synthetic */ FragmentContextView a;
 
-    public /* synthetic */ a10(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public a10(FragmentContextView fragmentContextView) {
+        this.a = fragmentContextView;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                final FragmentContextView fragmentContextView = (FragmentContextView) obj;
-                float[] fArr = FragmentContextView.I0;
-                final float playbackSpeed = MediaController.getInstance().getPlaybackSpeed(fragmentContextView.R);
-                fragmentContextView.D.d(playbackSpeed, false);
-                org.telegram.ui.ActionBar.b1 b1Var = fragmentContextView.D;
-                int i11 = org.telegram.ui.ActionBar.g6.G8;
-                b1Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.v0(i11, fragmentContextView.l0));
-                org.telegram.ui.ActionBar.b1 b1Var2 = fragmentContextView.D;
-                b1Var2.J = fragmentContextView.h instanceof org.telegram.ui.rn;
-                b1Var2.B.setShader(null);
-                b1Var2.h = null;
-                Bitmap bitmap = b1Var2.f;
-                if (bitmap != null) {
-                    bitmap.recycle();
-                    b1Var2.f = null;
-                }
-                fragmentContextView.B.B(org.telegram.ui.ActionBar.g6.w0(null, i11, false));
-                fragmentContextView.B.N();
-                fragmentContextView.q(false);
-                fragmentContextView.B.setDimMenu(0.3f);
-                fragmentContextView.B.M(fragmentContextView.D, null);
-                fragmentContextView.B.setOnMenuDismiss(new Utilities.Callback() { // from class: org.telegram.ui.Components.z00
-                    @Override // org.telegram.messenger.Utilities.Callback
-                    public final void run(Object obj2) {
-                        float[] fArr2 = FragmentContextView.I0;
-                        if (((Boolean) obj2).booleanValue()) {
-                            return;
-                        }
-                        MediaController mediaController = MediaController.getInstance();
-                        FragmentContextView fragmentContextView2 = FragmentContextView.this;
-                        fragmentContextView2.l(playbackSpeed, mediaController.getPlaybackSpeed(fragmentContextView2.R), false);
-                    }
-                });
-                MessagesController.getGlobalNotificationsSettings().edit().putInt("speedhint", -15).apply();
-                return true;
-            case 1:
-                dd0 dd0Var = (dd0) obj;
-                dd0Var.r.setText("");
-                lh.w8.a(dd0Var.s, true);
-                Drawable drawable = dd0Var.a;
-                if (drawable instanceof nb0) {
-                    ((nb0) drawable).y();
-                }
-                return true;
-            default:
-                return sp0.n((sp0) obj);
+    @Override // java.lang.Runnable
+    public final void run() {
+        FragmentContextView fragmentContextView = this.a;
+        org.telegram.ui.ActionBar.o2 o2Var = fragmentContextView.h;
+        if (fragmentContextView.b0 == null || !(o2Var instanceof org.telegram.ui.qn)) {
+            fragmentContextView.g0 = false;
+            return;
         }
+        ChatObject.Call groupCall = fragmentContextView.n.getGroupCall();
+        if (groupCall == null || !groupCall.isScheduled()) {
+            fragmentContextView.c0 = false;
+            fragmentContextView.g0 = false;
+            return;
+        }
+        int currentTime = groupCall.call.schedule_date - o2Var.getConnectionsManager().getCurrentTime();
+        String formatPluralString = currentTime >= 86400 ? LocaleController.formatPluralString("Days", Math.round(currentTime / 86400.0f), new Object[0]) : AndroidUtilities.formatFullDuration(currentTime);
+        i6 i6Var = fragmentContextView.e0;
+        if (!fragmentContextView.d0) {
+            formatPluralString = LocaleController.getString(R.string.VoipChatNotify);
+        }
+        i6Var.q(formatPluralString, true, true);
+        AndroidUtilities.runOnUIThread(fragmentContextView.h0, 1000L);
+        fragmentContextView.r.invalidate();
     }
 }

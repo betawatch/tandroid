@@ -4,15 +4,15 @@ import android.os.Build;
 import android.view.View;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class j1 {
     public static final m1 b;
     public final m1 a;
 
     static {
-        int i10 = Build.VERSION.SDK_INT;
-        b = (i10 >= 34 ? new b1() : i10 >= 30 ? new a1() : i10 >= 29 ? new z0() : new y0()).b().a.a().a.b().a.c();
+        int i9 = Build.VERSION.SDK_INT;
+        b = (i9 >= 34 ? new b1() : i9 >= 30 ? new a1() : i9 >= 29 ? new z0() : new y0()).b().a.a().a.b().a.c();
     }
 
     public j1(m1 m1Var) {
@@ -46,18 +46,18 @@ public class j1 {
         return o() == j1Var.o() && n() == j1Var.n() && Objects.equals(k(), j1Var.k()) && Objects.equals(i(), j1Var.i()) && Objects.equals(e(), j1Var.e());
     }
 
-    public i0.c f(int i10) {
-        return i0.c.e;
+    public i0.b f(int i9) {
+        return i0.b.e;
     }
 
-    public i0.c g(int i10) {
-        if ((i10 & 8) == 0) {
-            return i0.c.e;
+    public i0.b g(int i9) {
+        if ((i9 & 8) == 0) {
+            return i0.b.e;
         }
         throw new IllegalArgumentException("Unable to query the maximum insets for IME");
     }
 
-    public i0.c h() {
+    public i0.b h() {
         return k();
     }
 
@@ -65,23 +65,23 @@ public class j1 {
         return Objects.hash(Boolean.valueOf(o()), Boolean.valueOf(n()), k(), i(), e());
     }
 
-    public i0.c i() {
-        return i0.c.e;
+    public i0.b i() {
+        return i0.b.e;
     }
 
-    public i0.c j() {
+    public i0.b j() {
         return k();
     }
 
-    public i0.c k() {
-        return i0.c.e;
+    public i0.b k() {
+        return i0.b.e;
     }
 
-    public i0.c l() {
+    public i0.b l() {
         return k();
     }
 
-    public m1 m(int i10, int i11, int i12, int i13) {
+    public m1 m(int i9, int i10, int i11, int i12) {
         return b;
     }
 
@@ -93,22 +93,22 @@ public class j1 {
         return false;
     }
 
-    public boolean p(int i10) {
+    public boolean p(int i9) {
         return true;
     }
 
     public void d(View view) {
     }
 
-    public void q(i0.c[] cVarArr) {
+    public void q(i0.b[] bVarArr) {
     }
 
     public void r(m1 m1Var) {
     }
 
-    public void s(i0.c cVar) {
+    public void s(i0.b bVar) {
     }
 
-    public void t(int i10) {
+    public void t(int i9) {
     }
 }

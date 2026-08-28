@@ -1,45 +1,49 @@
 package e5;
 
-import d5.g0;
+import d5.f0;
+import gh.i3;
+import h3.h0;
+import h3.k0;
+import j4.d0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class x implements h3.g {
-    public static final x e = new x(0, 0, 1.0f, 0);
-    public final int a;
-    public final int b;
-    public final int c;
-    public final float d;
+public final /* synthetic */ class x implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ we.b b;
+    public final /* synthetic */ k3.f c;
 
-    static {
-        int i10 = g0.a;
-        Integer.toString(0, 36);
-        Integer.toString(1, 36);
-        Integer.toString(2, 36);
-        Integer.toString(3, 36);
+    public /* synthetic */ x(we.b bVar, k3.f fVar, int i9) {
+        this.a = i9;
+        this.b = bVar;
+        this.c = fVar;
     }
 
-    public x(int i10, int i11, float f10, int i12) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = f10;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                we.b bVar = this.b;
+                k3.f fVar = this.c;
+                synchronized (fVar) {
+                }
+                h0 h0Var = (h0) bVar.c;
+                int i9 = f0.a;
+                k0 k0Var = h0Var.a;
+                i3.f fVar2 = k0Var.r;
+                i3.a i10 = fVar2.i((d0) fVar2.d.e);
+                fVar2.l(i10, 1020, new i3(i10, fVar, 17));
+                k0Var.P = null;
+                break;
+            default:
+                we.b bVar2 = this.b;
+                k3.f fVar3 = this.c;
+                h0 h0Var2 = (h0) bVar2.c;
+                int i11 = f0.a;
+                i3.f fVar4 = h0Var2.a.r;
+                i3.a k10 = fVar4.k();
+                fVar4.l(k10, 1015, new i3.d(k10, fVar3, 0));
+                break;
         }
-        if (obj instanceof x) {
-            x xVar = (x) obj;
-            if (this.a == xVar.a && this.b == xVar.b && this.c == xVar.c && this.d == xVar.d) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Float.floatToRawIntBits(this.d) + ((((((217 + this.a) * 31) + this.b) * 31) + this.c) * 31);
     }
 }

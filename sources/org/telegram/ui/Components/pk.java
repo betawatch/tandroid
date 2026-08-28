@@ -1,46 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.util.Property;
+import android.content.Context;
 import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class pk implements ValueAnimator.AnimatorUpdateListener {
-    public boolean a;
-    public final float[] b = {0.0f, 1.0f};
-    public final /* synthetic */ FrameLayout c;
-    public final /* synthetic */ qk d;
+public final class pk extends f2.n0 {
+    public final /* synthetic */ dj r;
 
-    public pk(qk qkVar, FrameLayout frameLayout) {
-        this.d = qkVar;
-        this.c = frameLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pk(dj djVar, Context context) {
+        super(context);
+        this.r = djVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float lerp = AndroidUtilities.lerp(this.b, valueAnimator.getAnimatedFraction());
-        if (lerp >= 0.7f && !this.a) {
-            qk qkVar = this.d;
-            tk tkVar = qkVar.b;
-            tk tkVar2 = qkVar.b;
-            if (tkVar.e0 != null) {
-                AnimatorSet animatorSet = new AnimatorSet();
-                animatorSet.playTogether(ObjectAnimator.ofFloat(tkVar2.e0, (Property<FrameLayout, Float>) View.SCALE_X, 0.0f, 1.0f), ObjectAnimator.ofFloat(tkVar2.e0, (Property<FrameLayout, Float>) View.SCALE_Y, 0.0f, 1.0f), ObjectAnimator.ofFloat(tkVar2.e0, (Property<FrameLayout, Float>) View.ALPHA, 0.0f, 1.0f));
-                animatorSet.setInterpolator(new OvershootInterpolator(1.02f));
-                animatorSet.setDuration(250L);
-                animatorSet.start();
-                this.a = true;
-            }
-        }
-        float interpolation = lerp <= 0.5f ? er.g.getInterpolation(lerp / 0.5f) * 1.1f : lerp <= 0.75f ? 1.1f - (er.g.getInterpolation((lerp - 0.5f) / 0.25f) * 0.2f) : (er.g.getInterpolation((lerp - 0.75f) / 0.25f) * 0.1f) + 0.9f;
-        FrameLayout frameLayout = this.c;
-        frameLayout.setScaleX(interpolation);
-        frameLayout.setScaleY(interpolation);
+    @Override // f2.n0
+    public final int k(int i9, View view) {
+        int k10 = super.k(i9, view);
+        xk xkVar = (xk) this.r.V;
+        return k10 - (xkVar.L.getPaddingTop() - (xkVar.w0 - xkVar.v0));
+    }
+
+    @Override // f2.n0
+    public final int m(int i9) {
+        return super.m(i9) * 4;
     }
 }

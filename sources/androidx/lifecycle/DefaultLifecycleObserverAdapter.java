@@ -1,6 +1,6 @@
 package androidx.lifecycle;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class DefaultLifecycleObserverAdapter implements r {
     public final e a;
@@ -13,9 +13,9 @@ public final class DefaultLifecycleObserverAdapter implements r {
 
     @Override // androidx.lifecycle.r
     public final void d(t tVar, m mVar) {
-        int i10 = f.a[mVar.ordinal()];
+        int i9 = f.a[mVar.ordinal()];
         e eVar = this.a;
-        switch (i10) {
+        switch (i9) {
             case 1:
                 eVar.b(tVar);
                 break;

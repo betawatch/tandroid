@@ -7,10 +7,9 @@ import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import g7.k8;
-import org.telegram.messenger.beta.R;
+import f7.q8;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class e0 extends z {
     public final d0 e;
@@ -30,29 +29,29 @@ public final class e0 extends z {
     }
 
     @Override // m.z
-    public final void b(AttributeSet attributeSet, int i10) {
-        super.b(attributeSet, R.attr.seekBarStyle);
+    public final void b(AttributeSet attributeSet, int i9) {
+        super.b(attributeSet, i9);
         d0 d0Var = this.e;
         Context context = d0Var.getContext();
         int[] iArr = f.a.g;
-        j9.a G = j9.a.G(context, attributeSet, iArr, R.attr.seekBarStyle);
-        TypedArray typedArray = (TypedArray) G.c;
-        r0.j0.j(d0Var, d0Var.getContext(), iArr, attributeSet, (TypedArray) G.c, R.attr.seekBarStyle);
-        Drawable z10 = G.z(0);
-        if (z10 != null) {
-            d0Var.setThumb(z10);
+        j4.c E = j4.c.E(context, attributeSet, iArr, i9);
+        TypedArray typedArray = (TypedArray) E.c;
+        r0.j0.j(d0Var, d0Var.getContext(), iArr, attributeSet, (TypedArray) E.c, i9);
+        Drawable x10 = E.x(0);
+        if (x10 != null) {
+            d0Var.setThumb(x10);
         }
-        Drawable y10 = G.y(1);
+        Drawable w8 = E.w(1);
         Drawable drawable = this.f;
         if (drawable != null) {
             drawable.setCallback(null);
         }
-        this.f = y10;
-        if (y10 != null) {
-            y10.setCallback(d0Var);
-            k8.b(d0Var.getLayoutDirection(), y10);
-            if (y10.isStateful()) {
-                y10.setState(d0Var.getDrawableState());
+        this.f = w8;
+        if (w8 != null) {
+            w8.setCallback(d0Var);
+            q8.b(d0Var.getLayoutDirection(), w8);
+            if (w8.isStateful()) {
+                w8.setState(d0Var.getDrawableState());
             }
             f();
         }
@@ -62,10 +61,10 @@ public final class e0 extends z {
             this.j = true;
         }
         if (typedArray.hasValue(2)) {
-            this.g = G.x(2);
+            this.g = E.v(2);
             this.i = true;
         }
-        G.I();
+        E.G();
         f();
     }
 
@@ -73,7 +72,7 @@ public final class e0 extends z {
         Drawable drawable = this.f;
         if (drawable != null) {
             if (this.i || this.j) {
-                Drawable d = k8.d(drawable.mutate());
+                Drawable d = q8.d(drawable.mutate());
                 this.f = d;
                 if (this.i) {
                     d.setTintList(this.g);
@@ -94,13 +93,13 @@ public final class e0 extends z {
             if (max > 1) {
                 int intrinsicWidth = this.f.getIntrinsicWidth();
                 int intrinsicHeight = this.f.getIntrinsicHeight();
-                int i10 = intrinsicWidth >= 0 ? intrinsicWidth / 2 : 1;
-                int i11 = intrinsicHeight >= 0 ? intrinsicHeight / 2 : 1;
-                this.f.setBounds(-i10, -i11, i10, i11);
+                int i9 = intrinsicWidth >= 0 ? intrinsicWidth / 2 : 1;
+                int i10 = intrinsicHeight >= 0 ? intrinsicHeight / 2 : 1;
+                this.f.setBounds(-i9, -i10, i9, i10);
                 float width = ((r0.getWidth() - r0.getPaddingLeft()) - r0.getPaddingRight()) / max;
                 int save = canvas.save();
                 canvas.translate(r0.getPaddingLeft(), r0.getHeight() / 2);
-                for (int i12 = 0; i12 <= max; i12++) {
+                for (int i11 = 0; i11 <= max; i11++) {
                     this.f.draw(canvas);
                     canvas.translate(width, 0.0f);
                 }

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import java.util.Set;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class q {
     public final Bundle a;
@@ -13,7 +13,7 @@ public final class q {
     public final String d;
 
     public q(String requestJson) {
-        kotlin.jvm.internal.j.e(requestJson, "requestJson");
+        kotlin.jvm.internal.i.e(requestJson, "requestJson");
         Bundle bundle = new Bundle();
         bundle.putString("androidx.credentials.BUNDLE_KEY_SUBTYPE", "androidx.credentials.BUNDLE_VALUE_SUBTYPE_GET_PUBLIC_KEY_CREDENTIAL_OPTION");
         bundle.putString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON", requestJson);
@@ -24,7 +24,7 @@ public final class q {
         bundle2.putByteArray("androidx.credentials.BUNDLE_KEY_CLIENT_DATA_HASH", null);
         this.a = bundle;
         this.b = bundle2;
-        this.c = qc.q.a;
+        this.c = pc.q.a;
         bundle.putBoolean("androidx.credentials.BUNDLE_KEY_IS_AUTO_SELECT_ALLOWED", true);
         bundle2.putBoolean("androidx.credentials.BUNDLE_KEY_IS_AUTO_SELECT_ALLOWED", true);
         bundle.putInt("androidx.credentials.BUNDLE_KEY_TYPE_PRIORITY_VALUE", 100);

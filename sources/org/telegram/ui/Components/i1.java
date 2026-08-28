@@ -6,19 +6,19 @@ import android.net.Uri;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i1 implements org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class i1 implements org.telegram.ui.ActionBar.b2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Activity b;
 
-    public /* synthetic */ i1(Activity activity, int i10) {
-        this.a = i10;
+    public /* synthetic */ i1(Activity activity, int i9) {
+        this.a = i9;
         this.b = activity;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.b2
+    public final void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
         switch (this.a) {
             case 0:
                 y4.a(this.b);
@@ -30,8 +30,8 @@ public final /* synthetic */ class i1 implements org.telegram.ui.ActionBar.a2 {
                     intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
                     activity.startActivity(intent);
                     break;
-                } catch (Exception e9) {
-                    FileLog.e(e9);
+                } catch (Exception e10) {
+                    FileLog.e(e10);
                     return;
                 }
             default:
@@ -41,8 +41,8 @@ public final /* synthetic */ class i1 implements org.telegram.ui.ActionBar.a2 {
                     intent2.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
                     activity2.startActivity(intent2);
                     break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e11) {
+                    FileLog.e(e11);
                 }
         }
     }

@@ -3,7 +3,7 @@ package com.google.android.gms.internal.play_billing;
 import java.util.Arrays;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public enum j {
     b(-999),
@@ -41,20 +41,20 @@ public enum j {
 
     /* JADX WARN: Multi-variable type inference failed */
     static {
-        b6.a aVar = new b6.a((char) (0 == true ? 1 : 0), 4);
+        a6.a aVar = new a6.a((char) (0 == true ? 1 : 0), 4);
         aVar.b = new Object[8];
         aVar.c = 0;
         for (j jVar : values()) {
             Integer valueOf = Integer.valueOf(jVar.a);
-            int i10 = aVar.c + 1;
+            int i9 = aVar.c + 1;
             Object[] objArr = (Object[]) aVar.b;
             int length = objArr.length;
-            int i11 = i10 + i10;
-            if (i11 > length) {
-                if (i11 > length) {
+            int i10 = i9 + i9;
+            if (i10 > length) {
+                if (i10 > length) {
                     length = length + (length >> 1) + 1;
-                    if (length < i11) {
-                        int highestOneBit = Integer.highestOneBit(i11 - 1);
+                    if (length < i10) {
+                        int highestOneBit = Integer.highestOneBit(i10 - 1);
                         length = highestOneBit + highestOneBit;
                     }
                     if (length < 0) {
@@ -64,11 +64,11 @@ public enum j {
                 aVar.b = Arrays.copyOf(objArr, length);
             }
             Object[] objArr2 = (Object[]) aVar.b;
-            int i12 = aVar.c;
-            int i13 = i12 + i12;
-            objArr2[i13] = valueOf;
-            objArr2[i13 + 1] = jVar;
-            aVar.c = i12 + 1;
+            int i11 = aVar.c;
+            int i12 = i11 + i11;
+            objArr2[i12] = valueOf;
+            objArr2[i12 + 1] = jVar;
+            aVar.c = i11 + 1;
         }
         s sVar = (s) aVar.d;
         if (sVar != null) {
@@ -82,7 +82,7 @@ public enum j {
         c = b10;
     }
 
-    j(int i10) {
-        this.a = i10;
+    j(int i9) {
+        this.a = i9;
     }
 }

@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class ik0 {
     public boolean a;
@@ -19,7 +19,7 @@ public final class ik0 {
     public String f;
     public String g;
 
-    public final Uri a(int i10) {
+    public final Uri a(int i9) {
         if (!TextUtils.isEmpty(this.g)) {
             return Uri.fromFile(new File(this.g));
         }
@@ -34,14 +34,14 @@ public final class ik0 {
         }
         String lowerCase = documentExtension.toLowerCase();
         if (!str.endsWith(lowerCase)) {
-            str = a9.p.w(str, ".", lowerCase);
+            str = aa.d.z(str, ".", lowerCase);
         }
         File file = new File(AndroidUtilities.getCacheDir(), str);
         if (!file.exists()) {
             try {
-                AndroidUtilities.copyFile(FileLoader.getInstance(i10).getPathToAttach(this.e), file);
-            } catch (IOException e9) {
-                e9.printStackTrace();
+                AndroidUtilities.copyFile(FileLoader.getInstance(i9).getPathToAttach(this.e), file);
+            } catch (IOException e10) {
+                e10.printStackTrace();
             }
         }
         return Uri.fromFile(file);

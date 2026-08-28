@@ -3,7 +3,7 @@ package p0;
 import android.text.SpannableStringBuilder;
 import c2.t;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b {
     public static final String b;
@@ -83,14 +83,14 @@ public final class b {
         byte directionality;
         a aVar = new a(charSequence);
         aVar.c = 0;
+        int i9 = 0;
         int i10 = 0;
         int i11 = 0;
-        int i12 = 0;
         while (true) {
-            int i13 = aVar.c;
-            if (i13 < aVar.b && i10 == 0) {
+            int i12 = aVar.c;
+            if (i12 < aVar.b && i9 == 0) {
                 CharSequence charSequence2 = aVar.a;
-                char charAt = charSequence2.charAt(i13);
+                char charAt = charSequence2.charAt(i12);
                 aVar.d = charAt;
                 if (Character.isHighSurrogate(charAt)) {
                     int codePointAt = Character.codePointAt(charSequence2, aVar.c);
@@ -103,29 +103,29 @@ public final class b {
                 }
                 if (directionality != 0) {
                     if (directionality == 1 || directionality == 2) {
-                        if (i12 == 0) {
+                        if (i11 == 0) {
                         }
                     } else if (directionality != 9) {
                         switch (directionality) {
                             case 14:
                             case 15:
-                                i12++;
-                                i11 = -1;
+                                i11++;
+                                i10 = -1;
                                 continue;
                             case 16:
                             case 17:
-                                i12++;
-                                i11 = 1;
+                                i11++;
+                                i10 = 1;
                                 continue;
                             case 18:
-                                i12--;
-                                i11 = 0;
+                                i11--;
+                                i10 = 0;
                                 continue;
                         }
                     }
-                } else if (i12 == 0) {
+                } else if (i11 == 0) {
                 }
-                i10 = i12;
+                i9 = i11;
             }
         }
         return -1;
@@ -134,42 +134,42 @@ public final class b {
     public static int b(CharSequence charSequence) {
         a aVar = new a(charSequence);
         aVar.c = aVar.b;
+        int i9 = 0;
         int i10 = 0;
-        int i11 = 0;
         while (aVar.c > 0) {
             byte a2 = aVar.a();
             if (a2 != 0) {
                 if (a2 == 1 || a2 == 2) {
-                    if (i10 == 0) {
+                    if (i9 == 0) {
                         return 1;
                     }
-                    if (i11 == 0) {
-                        i11 = i10;
+                    if (i10 == 0) {
+                        i10 = i9;
                     }
                 } else if (a2 != 9) {
                     switch (a2) {
                         case 14:
                         case 15:
-                            if (i11 == i10) {
+                            if (i10 == i9) {
                                 return -1;
                             }
-                            i10--;
+                            i9--;
                             break;
                         case 16:
                         case 17:
-                            if (i11 == i10) {
+                            if (i10 == i9) {
                                 return 1;
                             }
-                            i10--;
+                            i9--;
                             break;
                         case 18:
-                            i10++;
+                            i9++;
                             break;
                         default:
-                            if (i11 != 0) {
+                            if (i10 != 0) {
                                 break;
                             } else {
-                                i11 = i10;
+                                i10 = i9;
                                 break;
                             }
                     }
@@ -177,11 +177,11 @@ public final class b {
                     continue;
                 }
             } else {
-                if (i10 == 0) {
+                if (i9 == 0) {
                     return -1;
                 }
-                if (i11 == 0) {
-                    i11 = i10;
+                if (i10 == 0) {
+                    i10 = i9;
                 }
             }
         }

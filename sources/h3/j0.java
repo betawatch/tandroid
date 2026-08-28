@@ -1,14 +1,14 @@
 package h3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class j0 implements l1 {
     public final Object a;
-    public s2 b;
+    public r2 b;
 
-    public j0(Object obj, s2 s2Var) {
+    public j0(Object obj, r2 r2Var) {
         this.a = obj;
-        this.b = s2Var;
+        this.b = r2Var;
     }
 
     @Override // h3.l1
@@ -17,7 +17,7 @@ public final class j0 implements l1 {
     }
 
     @Override // h3.l1
-    public final s2 b() {
+    public final r2 b() {
         return this.b;
     }
 }

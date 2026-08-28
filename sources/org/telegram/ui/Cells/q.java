@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class q extends ImageView {
     public Drawable a;
@@ -31,34 +31,34 @@ public class q extends ImageView {
         canvas.restore();
         Drawable drawable = this.a;
         if (drawable != null) {
-            int i10 = this.c;
-            drawable.setBounds(-i10, -i10, getWidth() + this.c, getHeight() + this.c);
+            int i9 = this.c;
+            drawable.setBounds(-i9, -i9, getWidth() + this.c, getHeight() + this.c);
             this.a.draw(canvas);
         }
     }
 
     @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
+    public final void onSizeChanged(int i9, int i10, int i11, int i12) {
+        super.onSizeChanged(i9, i10, i11, i12);
         Path path = this.b;
         path.rewind();
         path.addCircle(getWidth() / 2.0f, getHeight() / 2.0f, Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f, Path.Direction.CW);
     }
 
-    public void setBackgroundOuterPadding(int i10) {
-        this.d = i10;
+    public void setBackgroundOuterPadding(int i9) {
+        this.d = i9;
     }
 
-    public void setForeground(int i10) {
-        this.a = getContext().getDrawable(i10);
+    public void setForeground(int i9) {
+        this.a = getContext().getDrawable(i9);
         invalidate();
     }
 
-    public void setOuterPadding(int i10) {
-        this.c = i10;
+    public void setOuterPadding(int i9) {
+        this.c = i9;
     }
 
-    public void setPadding(int i10) {
-        setPadding(i10, i10, i10, i10);
+    public void setPadding(int i9) {
+        setPadding(i9, i9, i9, i9);
     }
 }

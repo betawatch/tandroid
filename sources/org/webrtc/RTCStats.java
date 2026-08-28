@@ -2,7 +2,7 @@ package org.webrtc;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
 public class RTCStats {
     private final String id;
@@ -30,11 +30,11 @@ public class RTCStats {
         }
         Object[] objArr = (Object[]) obj;
         sb2.append('[');
-        for (int i10 = 0; i10 < objArr.length; i10++) {
-            if (i10 != 0) {
+        for (int i9 = 0; i9 < objArr.length; i9++) {
+            if (i9 != 0) {
                 sb2.append(", ");
             }
-            appendValue(sb2, objArr[i10]);
+            appendValue(sb2, objArr[i9]);
         }
         sb2.append(']');
     }
@@ -60,19 +60,19 @@ public class RTCStats {
     }
 
     public String toString() {
-        StringBuilder o10 = com.google.android.recaptcha.internal.a.o("{ timestampUs: ");
-        o10.append(this.timestampUs);
-        o10.append(", type: ");
-        o10.append(this.type);
-        o10.append(", id: ");
-        o10.append(this.id);
+        StringBuilder n10 = e2.c.n("{ timestampUs: ");
+        n10.append(this.timestampUs);
+        n10.append(", type: ");
+        n10.append(this.type);
+        n10.append(", id: ");
+        n10.append(this.id);
         for (Map.Entry<String, Object> entry : this.members.entrySet()) {
-            o10.append(", ");
-            o10.append(entry.getKey());
-            o10.append(": ");
-            appendValue(o10, entry.getValue());
+            n10.append(", ");
+            n10.append(entry.getKey());
+            n10.append(": ");
+            appendValue(n10, entry.getValue());
         }
-        o10.append(" }");
-        return o10.toString();
+        n10.append(" }");
+        return n10.toString();
     }
 }

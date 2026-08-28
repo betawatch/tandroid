@@ -1,68 +1,55 @@
 package s7;
 
-import android.content.Context;
+import android.os.IBinder;
+import android.os.IInterface;
 import android.os.Parcel;
-import android.os.RemoteException;
-import android.util.Log;
-import h7.g7;
-import h7.l7;
-import h7.r7;
-import org.telegram.messenger.BuildConfig;
-import y5.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class e {
-    public static boolean a = false;
-    public static int b = 1;
-
-    public static synchronized int a(Context context) {
-        synchronized (e.class) {
-            try {
-                l.i(context, "Context is null");
-                Log.d("e", "preferredRenderer: ".concat(BuildConfig.BETA_URL));
-                if (a) {
-                    return 0;
-                }
-                try {
-                    t7.e a2 = l7.a(context);
-                    try {
-                        t7.a U0 = a2.U0();
-                        l.h(U0);
-                        g7.a = U0;
-                        d7.e W0 = a2.W0();
-                        if (r7.a == null) {
-                            l.i(W0, "delegate must not be null");
-                            r7.a = W0;
-                        }
-                        a = true;
-                        try {
-                            Parcel L0 = a2.L0(a2.M0(), 9);
-                            int readInt = L0.readInt();
-                            L0.recycle();
-                            if (readInt == 2) {
-                                b = 2;
-                            }
-                            i6.b bVar = new i6.b(context);
-                            Parcel M0 = a2.M0();
-                            d7.b.c(M0, bVar);
-                            M0.writeInt(0);
-                            a2.Q0(M0, 10);
-                        } catch (RemoteException e9) {
-                            Log.e("e", "Failed to retrieve renderer type or log initialization.", e9);
-                        }
-                        int i10 = b;
-                        Log.d("e", "loadedRenderer: ".concat(i10 != 1 ? i10 != 2 ? BuildConfig.BETA_URL : "LATEST" : "LEGACY"));
-                        return 0;
-                    } catch (RemoteException e10) {
-                        throw new a7.c(e10);
-                    }
-                } catch (v5.f e11) {
-                    return e11.a;
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
+public final class e extends b7.a {
+    public final a U0() {
+        a aVar;
+        Parcel L0 = L0(M0(), 4);
+        IBinder readStrongBinder = L0.readStrongBinder();
+        if (readStrongBinder == null) {
+            aVar = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
+            aVar = queryLocalInterface instanceof a ? (a) queryLocalInterface : new a(readStrongBinder, "com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate", 1);
         }
+        L0.recycle();
+        return aVar;
+    }
+
+    public final g V0(h6.b bVar) {
+        g gVar;
+        Parcel M0 = M0();
+        c7.b.c(M0, bVar);
+        M0.writeInt(0);
+        Parcel L0 = L0(M0, 3);
+        IBinder readStrongBinder = L0.readStrongBinder();
+        if (readStrongBinder == null) {
+            gVar = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.IMapViewDelegate");
+            gVar = queryLocalInterface instanceof g ? (g) queryLocalInterface : new g(readStrongBinder, "com.google.android.gms.maps.internal.IMapViewDelegate", 1);
+        }
+        L0.recycle();
+        return gVar;
+    }
+
+    public final c7.e W0() {
+        c7.e cVar;
+        Parcel L0 = L0(M0(), 5);
+        IBinder readStrongBinder = L0.readStrongBinder();
+        int i9 = c7.d.b;
+        if (readStrongBinder == null) {
+            cVar = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.IBitmapDescriptorFactoryDelegate");
+            cVar = queryLocalInterface instanceof c7.e ? (c7.e) queryLocalInterface : new c7.c(readStrongBinder, "com.google.android.gms.maps.model.internal.IBitmapDescriptorFactoryDelegate", 1);
+        }
+        L0.recycle();
+        return cVar;
     }
 }

@@ -24,9 +24,9 @@ public final class e implements Serializable {
     public final ZoneOffset h;
     public final ZoneOffset i;
 
-    public e(j jVar, int i10, DayOfWeek dayOfWeek, j$.time.h hVar, boolean z10, d dVar, ZoneOffset zoneOffset, ZoneOffset zoneOffset2, ZoneOffset zoneOffset3) {
+    public e(j jVar, int i9, DayOfWeek dayOfWeek, j$.time.h hVar, boolean z10, d dVar, ZoneOffset zoneOffset, ZoneOffset zoneOffset2, ZoneOffset zoneOffset3) {
         this.a = jVar;
-        this.b = (byte) i10;
+        this.b = (byte) i9;
         this.c = dayOfWeek;
         this.d = hVar;
         this.e = z10;
@@ -55,21 +55,21 @@ public final class e implements Serializable {
         } else {
             b10 = 31;
         }
-        int i10 = totalSeconds % RichMessageLayout.PART_MAX_HEIGHT_DP == 0 ? (totalSeconds / RichMessageLayout.PART_MAX_HEIGHT_DP) + 128 : 255;
-        int i11 = (totalSeconds2 == 0 || totalSeconds2 == 1800 || totalSeconds2 == 3600) ? totalSeconds2 / 1800 : 3;
-        int i12 = (totalSeconds3 == 0 || totalSeconds3 == 1800 || totalSeconds3 == 3600) ? totalSeconds3 / 1800 : 3;
+        int i9 = totalSeconds % RichMessageLayout.PART_MAX_HEIGHT_DP == 0 ? (totalSeconds / RichMessageLayout.PART_MAX_HEIGHT_DP) + 128 : 255;
+        int i10 = (totalSeconds2 == 0 || totalSeconds2 == 1800 || totalSeconds2 == 3600) ? totalSeconds2 / 1800 : 3;
+        int i11 = (totalSeconds3 == 0 || totalSeconds3 == 1800 || totalSeconds3 == 3600) ? totalSeconds3 / 1800 : 3;
         DayOfWeek dayOfWeek = this.c;
-        dataOutput.writeInt((this.a.getValue() << 28) + ((this.b + 32) << 22) + ((dayOfWeek == null ? 0 : dayOfWeek.getValue()) << 19) + (b10 << 14) + (this.f.ordinal() << 12) + (i10 << 4) + (i11 << 2) + i12);
+        dataOutput.writeInt((this.a.getValue() << 28) + ((this.b + 32) << 22) + ((dayOfWeek == null ? 0 : dayOfWeek.getValue()) << 19) + (b10 << 14) + (this.f.ordinal() << 12) + (i9 << 4) + (i10 << 2) + i11);
         if (b10 == 31) {
             dataOutput.writeInt(S);
         }
-        if (i10 == 255) {
+        if (i9 == 255) {
             dataOutput.writeInt(totalSeconds);
         }
-        if (i11 == 3) {
+        if (i10 == 3) {
             dataOutput.writeInt(this.h.getTotalSeconds());
         }
-        if (i12 == 3) {
+        if (i11 == 3) {
             dataOutput.writeInt(this.i.getTotalSeconds());
         }
     }
@@ -79,40 +79,40 @@ public final class e implements Serializable {
         j$.time.h hVar;
         int readInt = dataInput.readInt();
         j J = j.J(readInt >>> 28);
-        int i10 = ((264241152 & readInt) >>> 22) - 32;
-        int i11 = (3670016 & readInt) >>> 19;
-        DayOfWeek G = i11 == 0 ? null : DayOfWeek.G(i11);
-        int i12 = (507904 & readInt) >>> 14;
+        int i9 = ((264241152 & readInt) >>> 22) - 32;
+        int i10 = (3670016 & readInt) >>> 19;
+        DayOfWeek G = i10 == 0 ? null : DayOfWeek.G(i10);
+        int i11 = (507904 & readInt) >>> 14;
         d dVar2 = d.values()[(readInt & 12288) >>> 12];
-        int i13 = (readInt & 4080) >>> 4;
-        int i14 = (readInt & 12) >>> 2;
-        int i15 = readInt & 3;
-        if (i12 == 31) {
+        int i12 = (readInt & 4080) >>> 4;
+        int i13 = (readInt & 12) >>> 2;
+        int i14 = readInt & 3;
+        if (i11 == 31) {
             long readInt2 = dataInput.readInt();
             j$.time.h hVar2 = j$.time.h.e;
             j$.time.temporal.a.SECOND_OF_DAY.w(readInt2);
-            int i16 = (int) (readInt2 / 3600);
+            int i15 = (int) (readInt2 / 3600);
             dVar = dVar2;
-            long j10 = readInt2 - (i16 * 3600);
-            hVar = j$.time.h.H(i16, (int) (j10 / 60), (int) (j10 - (r8 * 60)), 0);
+            long j10 = readInt2 - (i15 * 3600);
+            hVar = j$.time.h.H(i15, (int) (j10 / 60), (int) (j10 - (r8 * 60)), 0);
         } else {
             dVar = dVar2;
-            int i17 = i12 % 24;
+            int i16 = i11 % 24;
             j$.time.h hVar3 = j$.time.h.e;
-            j$.time.temporal.a.HOUR_OF_DAY.w(i17);
-            hVar = j$.time.h.h[i17];
+            j$.time.temporal.a.HOUR_OF_DAY.w(i16);
+            hVar = j$.time.h.h[i16];
         }
-        ZoneOffset O = ZoneOffset.O(i13 == 255 ? dataInput.readInt() : (i13 - 128) * RichMessageLayout.PART_MAX_HEIGHT_DP);
-        ZoneOffset O2 = ZoneOffset.O(i14 == 3 ? dataInput.readInt() : (i14 * 1800) + O.getTotalSeconds());
-        ZoneOffset O3 = ZoneOffset.O(i15 == 3 ? dataInput.readInt() : (i15 * 1800) + O.getTotalSeconds());
-        boolean z10 = i12 == 24;
+        ZoneOffset O = ZoneOffset.O(i12 == 255 ? dataInput.readInt() : (i12 - 128) * RichMessageLayout.PART_MAX_HEIGHT_DP);
+        ZoneOffset O2 = ZoneOffset.O(i13 == 3 ? dataInput.readInt() : (i13 * 1800) + O.getTotalSeconds());
+        ZoneOffset O3 = ZoneOffset.O(i14 == 3 ? dataInput.readInt() : (i14 * 1800) + O.getTotalSeconds());
+        boolean z10 = i11 == 24;
         Objects.requireNonNull(J, "month");
         Objects.requireNonNull(hVar, "time");
         Objects.requireNonNull(dVar, "timeDefnition");
         Objects.requireNonNull(O, "standardOffset");
         Objects.requireNonNull(O2, "offsetBefore");
         Objects.requireNonNull(O3, "offsetAfter");
-        if (i10 < -28 || i10 > 31 || i10 == 0) {
+        if (i9 < -28 || i9 > 31 || i9 == 0) {
             throw new IllegalArgumentException("Day of month indicator must be between -28 and 31 inclusive excluding zero");
         }
         if (z10 && !hVar.equals(j$.time.h.g)) {
@@ -121,7 +121,7 @@ public final class e implements Serializable {
         if (hVar.d != 0) {
             throw new IllegalArgumentException("Time's nano-of-second must be zero");
         }
-        return new e(J, i10, G, hVar, z10, dVar, O, O2, O3);
+        return new e(J, i9, G, hVar, z10, dVar, O, O2, O3);
     }
 
     public final boolean equals(Object obj) {

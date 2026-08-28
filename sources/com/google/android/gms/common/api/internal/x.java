@@ -20,7 +20,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import m.t3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class x implements x0 {
     public final Context a;
@@ -33,19 +33,19 @@ public final class x implements x0 {
     public Bundle k;
     public final Lock o;
     public final Set i = Collections.newSetFromMap(new WeakHashMap());
-    public v5.a l = null;
-    public v5.a m = null;
+    public u5.a l = null;
+    public u5.a m = null;
     public boolean n = false;
     public int p = 0;
 
-    public x(Context context, j0 j0Var, ReentrantLock reentrantLock, Looper looper, v5.e eVar, a0.f fVar, a0.f fVar2, t3 t3Var, a6.b bVar, com.google.android.gms.common.api.c cVar, ArrayList arrayList, ArrayList arrayList2, a0.f fVar3, a0.f fVar4) {
+    public x(Context context, j0 j0Var, ReentrantLock reentrantLock, Looper looper, u5.e eVar, a0.f fVar, a0.f fVar2, t3 t3Var, b7.d dVar, com.google.android.gms.common.api.c cVar, ArrayList arrayList, ArrayList arrayList2, a0.f fVar3, a0.f fVar4) {
         this.a = context;
         this.b = j0Var;
         this.o = reentrantLock;
         this.c = looper;
         this.j = cVar;
-        this.d = new m0(context, j0Var, reentrantLock, looper, eVar, fVar2, null, fVar4, null, arrayList2, new a9.i(this, 10));
-        this.e = new m0(context, j0Var, reentrantLock, looper, eVar, fVar, t3Var, fVar3, bVar, arrayList, new ae.b(this, 8));
+        this.d = new m0(context, j0Var, reentrantLock, looper, eVar, fVar2, null, fVar4, null, arrayList2, new fa.c(this, 9));
+        this.e = new m0(context, j0Var, reentrantLock, looper, eVar, fVar, t3Var, fVar3, dVar, arrayList, new k5.i(this, 9));
         a0.f fVar5 = new a0.f(0);
         Iterator it = ((a0.c) fVar2.keySet()).iterator();
         while (it.hasNext()) {
@@ -58,27 +58,27 @@ public final class x implements x0 {
         this.f = DesugarCollections.unmodifiableMap(fVar5);
     }
 
-    public static /* bridge */ /* synthetic */ void k(x xVar, int i10) {
-        xVar.b.r(i10);
+    public static /* bridge */ /* synthetic */ void k(x xVar, int i9) {
+        xVar.b.n(i9);
         xVar.m = null;
         xVar.l = null;
     }
 
     public static void l(x xVar) {
-        v5.a aVar;
-        v5.a aVar2;
-        v5.a aVar3 = xVar.l;
+        u5.a aVar;
+        u5.a aVar2;
+        u5.a aVar3 = xVar.l;
         m0 m0Var = xVar.e;
         m0 m0Var2 = xVar.d;
         if (aVar3 == null || !aVar3.c()) {
             if (xVar.l != null && (aVar2 = xVar.m) != null && aVar2.c()) {
                 m0Var.f();
-                v5.a aVar4 = xVar.l;
-                y5.l.h(aVar4);
+                u5.a aVar4 = xVar.l;
+                x5.l.h(aVar4);
                 xVar.h(aVar4);
                 return;
             }
-            v5.a aVar5 = xVar.l;
+            u5.a aVar5 = xVar.l;
             if (aVar5 == null || (aVar = xVar.m) == null) {
                 return;
             }
@@ -88,9 +88,9 @@ public final class x implements x0 {
             xVar.h(aVar5);
             return;
         }
-        v5.a aVar6 = xVar.m;
+        u5.a aVar6 = xVar.m;
         if ((aVar6 == null || !aVar6.c()) && !xVar.j()) {
-            v5.a aVar7 = xVar.m;
+            u5.a aVar7 = xVar.m;
             if (aVar7 != null) {
                 if (xVar.p == 1) {
                     xVar.i();
@@ -103,14 +103,14 @@ public final class x implements x0 {
             }
             return;
         }
-        int i10 = xVar.p;
-        if (i10 != 1) {
-            if (i10 != 2) {
+        int i9 = xVar.p;
+        if (i9 != 1) {
+            if (i9 != 2) {
                 Log.wtf("CompositeGAC", "Attempted to call success callbacks in CONNECTION_MODE_NONE. Callbacks should be disabled via GmsClientSupervisor", new AssertionError());
                 xVar.p = 0;
             } else {
                 j0 j0Var = xVar.b;
-                y5.l.h(j0Var);
+                x5.l.h(j0Var);
                 j0Var.s(xVar.k);
             }
         }
@@ -154,22 +154,22 @@ public final class x implements x0 {
     @Override // com.google.android.gms.common.api.internal.x0
     public final e c(e eVar) {
         m0 m0Var = (m0) this.f.get(eVar.o);
-        y5.l.i(m0Var, "GoogleApiClient is not configured to use the API required for this call.");
+        x5.l.i(m0Var, "GoogleApiClient is not configured to use the API required for this call.");
         if (!m0Var.equals(this.e)) {
             m0 m0Var2 = this.d;
             m0Var2.getClass();
             eVar.l();
-            return m0Var2.m.B(eVar);
+            return m0Var2.m.C(eVar);
         }
         if (j()) {
             com.google.android.gms.common.api.c cVar = this.j;
-            eVar.o(new Status(4, null, cVar == null ? null : PendingIntent.getActivity(this.a, System.identityHashCode(this.b), cVar.n(), v6.d.a | TLObject.FLAG_27), null));
+            eVar.o(new Status(4, null, cVar == null ? null : PendingIntent.getActivity(this.a, System.identityHashCode(this.b), cVar.o(), u6.d.a | TLObject.FLAG_27), null));
             return eVar;
         }
         m0 m0Var3 = this.e;
         m0Var3.getClass();
         eVar.l();
-        return m0Var3.m.B(eVar);
+        return m0Var3.m.C(eVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
@@ -218,9 +218,9 @@ public final class x implements x0 {
                 boolean z10 = this.p == 2;
                 lock.unlock();
                 this.e.f();
-                this.m = new v5.a(4);
+                this.m = new u5.a(4);
                 if (z10) {
-                    new c2.t0(this.c, 4).post(new a8.b(this, 17));
+                    new c2.u0(this.c, 4).post(new androidx.activity.i(this, 17));
                 } else {
                     i();
                 }
@@ -250,14 +250,14 @@ public final class x implements x0 {
         this.d.g(String.valueOf(str).concat("  "), fileDescriptor, printWriter, strArr);
     }
 
-    public final void h(v5.a aVar) {
-        int i10 = this.p;
-        if (i10 != 1) {
-            if (i10 != 2) {
+    public final void h(u5.a aVar) {
+        int i9 = this.p;
+        if (i9 != 1) {
+            if (i9 != 2) {
                 Log.wtf("CompositeGAC", "Attempted to call failure callbacks in CONNECTION_MODE_NONE. Callbacks should be disabled via GmsClientSupervisor", new Exception());
                 this.p = 0;
             }
-            this.b.C(aVar);
+            this.b.t(aVar);
         }
         i();
         this.p = 0;
@@ -273,7 +273,7 @@ public final class x implements x0 {
     }
 
     public final boolean j() {
-        v5.a aVar = this.m;
+        u5.a aVar = this.m;
         return aVar != null && aVar.b == 4;
     }
 }

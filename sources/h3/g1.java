@@ -3,7 +3,7 @@ package h3;
 import android.net.Uri;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class g1 {
     public Integer A;
@@ -40,15 +40,15 @@ public final class g1 {
     public CharSequence y;
     public CharSequence z;
 
-    public final void a(int i10, byte[] bArr) {
+    public final void a(int i9, byte[] bArr) {
         if (this.j != null) {
-            Integer valueOf = Integer.valueOf(i10);
-            int i11 = d5.g0.a;
-            if (!valueOf.equals(3) && d5.g0.a(this.k, 3)) {
+            Integer valueOf = Integer.valueOf(i9);
+            int i10 = d5.f0.a;
+            if (!valueOf.equals(3) && d5.f0.a(this.k, 3)) {
                 return;
             }
         }
         this.j = (byte[]) bArr.clone();
-        this.k = Integer.valueOf(i10);
+        this.k = Integer.valueOf(i9);
     }
 }

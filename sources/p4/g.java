@@ -1,11 +1,11 @@
 package p4;
 
 import java.util.List;
-import p8.l0;
-import p8.x;
-import p8.z;
+import o8.l0;
+import o8.x;
+import o8.z;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class g extends h {
     public final String w;
@@ -17,8 +17,8 @@ public final class g extends h {
         x xVar = z.b;
     }
 
-    public g(String str, g gVar, String str2, long j10, int i10, long j11, l3.d dVar, String str3, String str4, long j12, long j13, boolean z10, List list) {
-        super(str, gVar, j10, i10, j11, dVar, str3, str4, j12, j13, z10);
+    public g(String str, g gVar, String str2, long j10, int i9, long j11, l3.c cVar, String str3, String str4, long j12, long j13, boolean z10, List list) {
+        super(str, gVar, j10, i9, j11, cVar, str3, str4, j12, j13, z10);
         this.w = str2;
         this.x = z.u(list);
     }

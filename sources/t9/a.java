@@ -1,25 +1,41 @@
 package t9;
 
-import java.util.Map;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements r9.d {
-    public final /* synthetic */ int a;
+public final class a implements d {
+    public final int a;
 
-    @Override // r9.a
-    public final void a(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                throw new r9.b("Couldn't find encoder for type " + obj.getClass().getCanonicalName());
-            case 1:
-                Map.Entry entry = (Map.Entry) obj;
-                r9.e eVar = (r9.e) obj2;
-                eVar.a(u9.e.g, entry.getKey());
-                eVar.a(u9.e.h, entry.getValue());
-                return;
-            default:
-                throw new r9.b("Couldn't find encoder for type " + obj.getClass().getCanonicalName());
+    public a(int i9) {
+        this.a = i9;
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final Class annotationType() {
+        return d.class;
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof d)) {
+            return false;
+        }
+        if (this.a != ((a) ((d) obj)).a) {
+            return false;
+        }
+        Object obj2 = c.a;
+        return obj2.equals(obj2);
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final int hashCode() {
+        return (14552422 ^ this.a) + (c.a.hashCode() ^ 2041407134);
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final String toString() {
+        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + this.a + "intEncoding=" + c.a + ')';
     }
 }

@@ -1,57 +1,33 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.ai1;
-import org.telegram.ui.nc1;
-import org.telegram.ui.yh1;
+import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ti extends org.telegram.ui.Cells.wa {
-    public final /* synthetic */ int w;
-    public final /* synthetic */ yk0 x;
+public final class ti extends k41 {
+    public static final /* synthetic */ int a = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ti(yk0 yk0Var, Context context, int i10) {
-        super(context, 5);
-        this.w = i10;
-        this.x = yk0Var;
+    static {
+        k41.setup(new ti());
     }
 
-    @Override // org.telegram.ui.Cells.wa
-    public final void a(int i10, Object obj) {
-        switch (this.w) {
-            case 0:
-                q0.a aVar = ((ui) ((pa) this.x).f).x;
-                if (aVar != null) {
-                    aVar.accept(obj);
-                    break;
-                }
-                break;
-            case 1:
-                WallpapersListActivity.r0(((yh1) this.x).d, this, obj, i10);
-                break;
-            default:
-                ((ai1) this.x).A.presentFragment(new nc1(obj, null, true));
-                break;
-        }
+    @Override // org.telegram.ui.Components.k41
+    public final void bindView(View view, l41 l41Var, boolean z10, z41 z41Var, i51 i51Var) {
+        ui uiVar = (ui) view;
+        CharSequence charSequence = l41Var.l;
+        CharSequence charSequence2 = l41Var.m;
+        uiVar.b.setText(charSequence);
+        uiVar.c.setText(charSequence2);
     }
 
-    @Override // org.telegram.ui.Cells.wa
-    public boolean b(Object obj, int i10) {
-        switch (this.w) {
-            case 1:
-                return WallpapersListActivity.s0(((yh1) this.x).d, this, obj, i10);
-            default:
-                return super.b(obj, i10);
-        }
+    @Override // org.telegram.ui.Components.k41
+    public final View createView(Context context, wk0 wk0Var, int i9, int i10, org.telegram.ui.ActionBar.b6 b6Var) {
+        return new ui(context, b6Var);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ti(pa paVar, Context context) {
-        super(context, 1);
-        this.w = 0;
-        this.x = paVar;
+    @Override // org.telegram.ui.Components.k41
+    public final boolean isShadow() {
+        return true;
     }
 }

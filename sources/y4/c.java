@@ -1,12 +1,11 @@
 package y4;
 
-import a9.p;
-import af.h;
 import android.text.Layout;
 import android.text.TextUtils;
-import d5.g0;
-import h7.d0;
-import hh.j4;
+import d5.f0;
+import d5.p;
+import g7.b0;
+import gh.l4;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayDeque;
@@ -14,21 +13,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import o8.c0;
+import o8.d0;
+import o8.l;
+import o8.r0;
+import o8.t0;
+import o8.w0;
 import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
-import p8.c0;
-import p8.l;
-import p8.r0;
-import p8.t0;
-import p8.w0;
-import r4.g;
-import r4.i;
+import r4.h;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c extends r4.f {
+public final class c extends r4.e {
     public static final Pattern c = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
     public static final Pattern d = Pattern.compile("^([0-9]+(?:\\.[0-9]+)?)(h|m|s|ms|f|t)$");
     public static final Pattern e = Pattern.compile("^(([0-9]*.)?[0-9]+)(px|em|%)$");
@@ -36,7 +35,7 @@ public final class c extends r4.f {
     public static final Pattern g = Pattern.compile("^(\\d+\\.?\\d*?)% (\\d+\\.?\\d*?)%$");
     public static final Pattern h = Pattern.compile("^(\\d+\\.?\\d*?)px (\\d+\\.?\\d*?)px$");
     public static final Pattern i = Pattern.compile("^(\\d+) (\\d+)$");
-    public static final j4 j = new j4(30.0f, 1, 1);
+    public static final l4 j = new l4(30.0f, 1, 1);
     public static final com.google.android.gms.internal.cast.a k = new com.google.android.gms.internal.cast.a(15);
     public final XmlPullParserFactory b;
 
@@ -46,8 +45,8 @@ public final class c extends r4.f {
             XmlPullParserFactory newInstance = XmlPullParserFactory.newInstance();
             this.b = newInstance;
             newInstance.setNamespaceAware(true);
-        } catch (XmlPullParserException e9) {
-            throw new RuntimeException("Couldn't create XmlPullParserFactory instance", e9);
+        } catch (XmlPullParserException e10) {
+            throw new RuntimeException("Couldn't create XmlPullParserFactory instance", e10);
         }
     }
 
@@ -79,7 +78,7 @@ public final class c extends r4.f {
             if (parseInt != 0 && parseInt2 != 0) {
                 return new com.google.android.gms.internal.cast.a(parseInt2);
             }
-            throw new i("Invalid cell resolution " + parseInt + " " + parseInt2);
+            throw new h("Invalid cell resolution " + parseInt + " " + parseInt2);
         } catch (NumberFormatException unused) {
             d5.a.K("TtmlDecoder", "Ignoring malformed cell resolution: ".concat(attributeValue));
             return aVar;
@@ -89,7 +88,7 @@ public final class c extends r4.f {
     public static void g(String str, f fVar) {
         Matcher matcher;
         String group;
-        int i10 = g0.a;
+        int i9 = f0.a;
         String[] split = str.split("\\s+", -1);
         int length = split.length;
         Pattern pattern = e;
@@ -97,13 +96,13 @@ public final class c extends r4.f {
             matcher = pattern.matcher(str);
         } else {
             if (split.length != 2) {
-                throw new i(p.k(split.length, ".", new StringBuilder("Invalid number of entries for fontSize: ")));
+                throw new h(aa.d.l(split.length, ".", new StringBuilder("Invalid number of entries for fontSize: ")));
             }
             matcher = pattern.matcher(split[1]);
             d5.a.K("TtmlDecoder", "Multiple values in fontSize attribute. Picking the second value for vertical font size and ignoring the first.");
         }
         if (!matcher.matches()) {
-            throw new i(p.m("Invalid expression for fontSize: '", str, "'."));
+            throw new h(aa.d.o("Invalid expression for fontSize: '", str, "'."));
         }
         group = matcher.group(3);
         group.getClass();
@@ -118,39 +117,39 @@ public final class c extends r4.f {
                 fVar.j = 1;
                 break;
             default:
-                throw new i(p.m("Invalid unit for fontSize: '", group, "'."));
+                throw new h(aa.d.o("Invalid unit for fontSize: '", group, "'."));
         }
         String group2 = matcher.group(1);
         group2.getClass();
         fVar.k = Float.parseFloat(group2);
     }
 
-    public static j4 h(XmlPullParser xmlPullParser) {
+    public static l4 h(XmlPullParser xmlPullParser) {
         float f10;
         String attributeValue = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "frameRate");
         int parseInt = attributeValue != null ? Integer.parseInt(attributeValue) : 30;
         String attributeValue2 = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "frameRateMultiplier");
         if (attributeValue2 != null) {
-            int i10 = g0.a;
+            int i9 = f0.a;
             if (attributeValue2.split(" ", -1).length != 2) {
-                throw new i("frameRateMultiplier doesn't have 2 parts");
+                throw new h("frameRateMultiplier doesn't have 2 parts");
             }
             f10 = Integer.parseInt(r2[0]) / Integer.parseInt(r2[1]);
         } else {
             f10 = 1.0f;
         }
-        j4 j4Var = j;
-        int i11 = j4Var.b;
+        l4 l4Var = j;
+        int i10 = l4Var.b;
         String attributeValue3 = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "subFrameRate");
         if (attributeValue3 != null) {
-            i11 = Integer.parseInt(attributeValue3);
+            i10 = Integer.parseInt(attributeValue3);
         }
-        int i12 = j4Var.c;
+        int i11 = l4Var.c;
         String attributeValue4 = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "tickRate");
         if (attributeValue4 != null) {
-            i12 = Integer.parseInt(attributeValue4);
+            i11 = Integer.parseInt(attributeValue4);
         }
-        return new j4(parseInt * f10, i11, i12);
+        return new l4(parseInt * f10, i10, i11);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -159,7 +158,7 @@ public final class c extends r4.f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void i(XmlPullParser xmlPullParser, HashMap hashMap, com.google.android.gms.internal.cast.a aVar, d5.p pVar, HashMap hashMap2, HashMap hashMap3) {
+    public static void i(XmlPullParser xmlPullParser, HashMap hashMap, com.google.android.gms.internal.cast.a aVar, p pVar, HashMap hashMap2, HashMap hashMap3) {
         String t10;
         float parseFloat;
         float parseFloat2;
@@ -168,9 +167,9 @@ public final class c extends r4.f {
         com.google.android.gms.internal.cast.a aVar2;
         float f10;
         float f11;
-        int i10;
+        int i9;
         String t11;
-        int i11;
+        int i10;
         e eVar;
         char c10;
         String[] split;
@@ -184,7 +183,7 @@ public final class c extends r4.f {
                     if (trim.isEmpty()) {
                         split = new String[0];
                     } else {
-                        int i12 = g0.a;
+                        int i11 = f0.a;
                         split = trim.split("\\s+", -1);
                     }
                     for (String str : split) {
@@ -268,23 +267,23 @@ public final class c extends r4.f {
                             float f13 = parseFloat3;
                             String t16 = d5.a.t(xmlPullParser, "displayAlign");
                             if (t16 != null) {
-                                String b10 = d0.b(t16);
+                                String b10 = b0.b(t16);
                                 b10.getClass();
                                 if (b10.equals("center")) {
                                     aVar2 = aVar;
                                     f10 = parseFloat2 + (parseFloat4 / 2.0f);
                                     f11 = parseFloat;
-                                    i10 = 1;
+                                    i9 = 1;
                                 } else if (b10.equals("after")) {
                                     aVar2 = aVar;
                                     f10 = parseFloat2 + parseFloat4;
                                     f11 = parseFloat;
-                                    i10 = 2;
+                                    i9 = 2;
                                 }
                                 float f14 = 1.0f / aVar2.a;
                                 t11 = d5.a.t(xmlPullParser, "writingMode");
                                 if (t11 != null) {
-                                    String b11 = d0.b(t11);
+                                    String b11 = b0.b(t11);
                                     b11.getClass();
                                     switch (b11.hashCode()) {
                                         case 3694:
@@ -315,32 +314,32 @@ public final class c extends r4.f {
                                     switch (c10) {
                                         case 0:
                                         case 1:
-                                            i11 = 2;
+                                            i10 = 2;
                                             break;
                                         case 2:
-                                            i11 = 1;
+                                            i10 = 1;
                                             break;
                                     }
-                                    eVar = new e(t13, f11, f10, 0, i10, f13, parseFloat4, 1, f14, i11);
+                                    eVar = new e(t13, f11, f10, 0, i9, f13, parseFloat4, 1, f14, i10);
                                     if (eVar != null) {
                                         hashMap2.put(eVar.a, eVar);
                                     }
                                 }
-                                i11 = TLObject.FLAG_31;
-                                eVar = new e(t13, f11, f10, 0, i10, f13, parseFloat4, 1, f14, i11);
+                                i10 = TLObject.FLAG_31;
+                                eVar = new e(t13, f11, f10, 0, i9, f13, parseFloat4, 1, f14, i10);
                                 if (eVar != null) {
                                 }
                             }
                             aVar2 = aVar;
                             f10 = parseFloat2;
                             f11 = parseFloat;
-                            i10 = 0;
+                            i9 = 0;
                             float f142 = 1.0f / aVar2.a;
                             t11 = d5.a.t(xmlPullParser, "writingMode");
                             if (t11 != null) {
                             }
-                            i11 = TLObject.FLAG_31;
-                            eVar = new e(t13, f11, f10, 0, i10, f13, parseFloat4, 1, f142, i11);
+                            i10 = TLObject.FLAG_31;
+                            eVar = new e(t13, f11, f10, 0, i9, f13, parseFloat4, 1, f142, i10);
                             if (eVar != null) {
                             }
                         } else {
@@ -368,7 +367,7 @@ public final class c extends r4.f {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    public static d j(XmlPullParser xmlPullParser, d dVar, HashMap hashMap, j4 j4Var) {
+    public static d j(XmlPullParser xmlPullParser, d dVar, HashMap hashMap, l4 l4Var) {
         long j10;
         char c10;
         String[] split;
@@ -380,9 +379,9 @@ public final class c extends r4.f {
         long j11 = -9223372036854775807L;
         long j12 = -9223372036854775807L;
         long j13 = -9223372036854775807L;
-        for (int i10 = 0; i10 < attributeCount; i10++) {
-            String attributeName = xmlPullParser.getAttributeName(i10);
-            String attributeValue = xmlPullParser.getAttributeValue(i10);
+        for (int i9 = 0; i9 < attributeCount; i9++) {
+            String attributeName = xmlPullParser.getAttributeName(i9);
+            String attributeValue = xmlPullParser.getAttributeValue(i9);
             attributeName.getClass();
             switch (attributeName.hashCode()) {
                 case -934795532:
@@ -440,20 +439,20 @@ public final class c extends r4.f {
                         continue;
                     }
                 case 1:
-                    j13 = l(attributeValue, j4Var);
+                    j13 = l(attributeValue, l4Var);
                     break;
                 case 2:
-                    j12 = l(attributeValue, j4Var);
+                    j12 = l(attributeValue, l4Var);
                     break;
                 case 3:
-                    j11 = l(attributeValue, j4Var);
+                    j11 = l(attributeValue, l4Var);
                     break;
                 case 4:
                     String trim = attributeValue.trim();
                     if (trim.isEmpty()) {
                         split = new String[0];
                     } else {
-                        int i11 = g0.a;
+                        int i10 = f0.a;
                         split = trim.split("\\s+", -1);
                     }
                     if (split.length > 0) {
@@ -508,19 +507,19 @@ public final class c extends r4.f {
         char c11;
         char c12;
         char c13;
-        int i10;
-        t0 i11;
-        int i12;
+        int i9;
+        t0 i10;
+        int i11;
         int hashCode;
-        int i13;
+        int i12;
         b bVar;
-        int i14;
+        int i13;
         char c14;
         int attributeCount = xmlPullParser.getAttributeCount();
         f fVar2 = fVar;
-        for (int i15 = 0; i15 < attributeCount; i15++) {
-            String attributeValue = xmlPullParser.getAttributeValue(i15);
-            String attributeName = xmlPullParser.getAttributeName(i15);
+        for (int i14 = 0; i14 < attributeCount; i14++) {
+            String attributeValue = xmlPullParser.getAttributeValue(i14);
+            String attributeName = xmlPullParser.getAttributeName(i14);
             attributeName.getClass();
             switch (attributeName.hashCode()) {
                 case -1550943582:
@@ -644,7 +643,7 @@ public final class c extends r4.f {
                     break;
                 case 2:
                     fVar2 = d(fVar2);
-                    String b10 = d0.b(attributeValue);
+                    String b10 = b0.b(attributeValue);
                     b10.getClass();
                     switch (b10.hashCode()) {
                         case -1364013995:
@@ -702,7 +701,7 @@ public final class c extends r4.f {
                     fVar2.o = alignment;
                     break;
                 case 3:
-                    String b11 = d0.b(attributeValue);
+                    String b11 = b0.b(attributeValue);
                     b11.getClass();
                     switch (b11.hashCode()) {
                         case -1461280213:
@@ -768,7 +767,7 @@ public final class c extends r4.f {
                         break;
                     }
                 case 6:
-                    String b12 = d0.b(attributeValue);
+                    String b12 = b0.b(attributeValue);
                     b12.getClass();
                     switch (b12.hashCode()) {
                         case -618561360:
@@ -844,11 +843,11 @@ public final class c extends r4.f {
                         fVar2.c = true;
                         break;
                     } catch (IllegalArgumentException unused) {
-                        s3.c.k("Failed parsing color value: ", attributeValue, "TtmlDecoder");
+                        ta.b.i("Failed parsing color value: ", attributeValue, "TtmlDecoder");
                         break;
                     }
                 case '\b':
-                    f d10 = d(fVar2);
+                    f d9 = d(fVar2);
                     Matcher matcher = f.matcher(attributeValue);
                     float f10 = Float.MAX_VALUE;
                     if (matcher.matches()) {
@@ -856,17 +855,17 @@ public final class c extends r4.f {
                             String group = matcher.group(1);
                             group.getClass();
                             f10 = Math.min(100.0f, Math.max(-100.0f, Float.parseFloat(group)));
-                        } catch (NumberFormatException e9) {
-                            d5.a.L("TtmlDecoder", "Failed to parse shear: " + attributeValue, e9);
+                        } catch (NumberFormatException e10) {
+                            d5.a.L("TtmlDecoder", "Failed to parse shear: " + attributeValue, e10);
                         }
                     } else {
-                        s3.c.k("Invalid value for shear: ", attributeValue, "TtmlDecoder");
+                        ta.b.i("Invalid value for shear: ", attributeValue, "TtmlDecoder");
                     }
-                    d10.s = f10;
-                    fVar2 = d10;
+                    d9.s = f10;
+                    fVar2 = d9;
                     break;
                 case '\t':
-                    String b13 = d0.b(attributeValue);
+                    String b13 = b0.b(attributeValue);
                     b13.getClass();
                     if (b13.equals("all")) {
                         fVar2 = d(fVar2);
@@ -884,15 +883,15 @@ public final class c extends r4.f {
                         fVar2 = d(fVar2);
                         g(attributeValue, fVar2);
                         break;
-                    } catch (i unused2) {
-                        s3.c.k("Failed parsing fontSize value: ", attributeValue, "TtmlDecoder");
+                    } catch (h unused2) {
+                        ta.b.i("Failed parsing fontSize value: ", attributeValue, "TtmlDecoder");
                         break;
                     }
                 case 11:
                     fVar2 = d(fVar2);
                     Pattern pattern = b.b;
                     if (attributeValue != null) {
-                        String b14 = d0.b(attributeValue.trim());
+                        String b14 = b0.b(attributeValue.trim());
                         if (!b14.isEmpty()) {
                             String[] split = TextUtils.split(b14, b.b);
                             int length = split.length;
@@ -902,61 +901,61 @@ public final class c extends r4.f {
                             if (hashCode2 != -1392885889) {
                                 if (hashCode2 != -1106037339) {
                                     if (hashCode2 == 92734940 && str.equals("after")) {
-                                        i10 = 2;
-                                        i11 = l.i(b.c, t10);
-                                        if (i11.isEmpty()) {
-                                            t0 i16 = l.i(b.e, t10);
-                                            t0 i17 = l.i(b.d, t10);
-                                            if (i16.isEmpty() && i17.isEmpty()) {
-                                                bVar = new b(-1, 0, i10);
+                                        i9 = 2;
+                                        i10 = l.i(b.c, t10);
+                                        if (i10.isEmpty()) {
+                                            t0 i15 = l.i(b.e, t10);
+                                            t0 i16 = l.i(b.d, t10);
+                                            if (i15.isEmpty() && i16.isEmpty()) {
+                                                bVar = new b(-1, 0, i9);
                                             } else {
-                                                String str2 = (String) l.f(i16, "filled");
+                                                String str2 = (String) l.f(i15, "filled");
                                                 int hashCode3 = str2.hashCode();
                                                 if (hashCode3 == -1274499742) {
                                                     str2.equals("filled");
                                                 } else if (hashCode3 == 3417674 && str2.equals("open")) {
-                                                    i12 = 2;
-                                                    String str3 = (String) l.f(i17, "circle");
+                                                    i11 = 2;
+                                                    String str3 = (String) l.f(i16, "circle");
                                                     hashCode = str3.hashCode();
                                                     if (hashCode != -1360216880) {
                                                         str3.equals("circle");
                                                     } else if (hashCode != -905816648) {
                                                         if (hashCode == 99657 && str3.equals("dot")) {
-                                                            i13 = 2;
-                                                            bVar = new b(i13, i12, i10);
+                                                            i12 = 2;
+                                                            bVar = new b(i12, i11, i9);
                                                         }
                                                     } else if (str3.equals("sesame")) {
-                                                        i13 = 3;
-                                                        bVar = new b(i13, i12, i10);
+                                                        i12 = 3;
+                                                        bVar = new b(i12, i11, i9);
                                                     }
-                                                    i13 = 1;
-                                                    bVar = new b(i13, i12, i10);
+                                                    i12 = 1;
+                                                    bVar = new b(i12, i11, i9);
                                                 }
-                                                i12 = 1;
-                                                String str32 = (String) l.f(i17, "circle");
+                                                i11 = 1;
+                                                String str32 = (String) l.f(i16, "circle");
                                                 hashCode = str32.hashCode();
                                                 if (hashCode != -1360216880) {
                                                 }
-                                                i13 = 1;
-                                                bVar = new b(i13, i12, i10);
+                                                i12 = 1;
+                                                bVar = new b(i12, i11, i9);
                                             }
                                         } else {
-                                            String str4 = (String) new p8.d0(i11).next();
+                                            String str4 = (String) new d0(i10).next();
                                             int hashCode4 = str4.hashCode();
                                             if (hashCode4 == 3005871) {
                                                 str4.equals("auto");
                                             } else if (hashCode4 == 3387192 && str4.equals("none")) {
-                                                i14 = 0;
-                                                bVar = new b(i14, 0, i10);
+                                                i13 = 0;
+                                                bVar = new b(i13, 0, i9);
                                             }
-                                            i14 = -1;
-                                            bVar = new b(i14, 0, i10);
+                                            i13 = -1;
+                                            bVar = new b(i13, 0, i9);
                                         }
                                     }
                                 } else if (str.equals("outside")) {
-                                    i10 = -2;
-                                    i11 = l.i(b.c, t10);
-                                    if (i11.isEmpty()) {
+                                    i9 = -2;
+                                    i10 = l.i(b.c, t10);
+                                    if (i10.isEmpty()) {
                                     }
                                 }
                                 fVar2.r = bVar;
@@ -964,9 +963,9 @@ public final class c extends r4.f {
                             } else {
                                 str.equals("before");
                             }
-                            i10 = 1;
-                            i11 = l.i(b.c, t10);
-                            if (i11.isEmpty()) {
+                            i9 = 1;
+                            i10 = l.i(b.c, t10);
+                            if (i10.isEmpty()) {
                             }
                             fVar2.r = bVar;
                         }
@@ -975,7 +974,7 @@ public final class c extends r4.f {
                     fVar2.r = bVar;
                     break;
                 case '\f':
-                    String b15 = d0.b(attributeValue);
+                    String b15 = b0.b(attributeValue);
                     b15.getClass();
                     if (b15.equals("before")) {
                         fVar2 = d(fVar2);
@@ -995,12 +994,12 @@ public final class c extends r4.f {
                         fVar2.e = true;
                         break;
                     } catch (IllegalArgumentException unused3) {
-                        s3.c.k("Failed parsing background value: ", attributeValue, "TtmlDecoder");
+                        ta.b.i("Failed parsing background value: ", attributeValue, "TtmlDecoder");
                         break;
                     }
                 case 14:
                     fVar2 = d(fVar2);
-                    String b16 = d0.b(attributeValue);
+                    String b16 = b0.b(attributeValue);
                     b16.getClass();
                     switch (b16.hashCode()) {
                         case -1364013995:
@@ -1070,9 +1069,9 @@ public final class c extends r4.f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static long l(String str, j4 j4Var) {
+    public static long l(String str, l4 l4Var) {
+        double d9;
         double d10;
-        double d11;
         Matcher matcher = c.matcher(str);
         char c10 = 4;
         if (matcher.matches()) {
@@ -1084,11 +1083,11 @@ public final class c extends r4.f {
             matcher.group(3).getClass();
             double parseLong3 = parseLong2 + Long.parseLong(r13);
             String group2 = matcher.group(4);
-            return (long) ((parseLong3 + (group2 != null ? Double.parseDouble(group2) : 0.0d) + (matcher.group(5) != null ? Long.parseLong(r13) / j4Var.a : 0.0d) + (matcher.group(6) != null ? (Long.parseLong(r13) / j4Var.b) / j4Var.a : 0.0d)) * 1000000.0d);
+            return (long) ((parseLong3 + (group2 != null ? Double.parseDouble(group2) : 0.0d) + (matcher.group(5) != null ? Long.parseLong(r13) / l4Var.a : 0.0d) + (matcher.group(6) != null ? (Long.parseLong(r13) / l4Var.b) / l4Var.a : 0.0d)) * 1000000.0d);
         }
         Matcher matcher2 = d.matcher(str);
         if (!matcher2.matches()) {
-            throw new i(s3.c.e("Malformed time expression: ", str));
+            throw new h(ta.b.d("Malformed time expression: ", str));
         }
         String group3 = matcher2.group(1);
         group3.getClass();
@@ -1132,29 +1131,29 @@ public final class c extends r4.f {
         }
         switch (c10) {
             case 0:
-                d10 = j4Var.a;
-                parseDouble /= d10;
+                d9 = l4Var.a;
+                parseDouble /= d9;
                 break;
             case 1:
-                d11 = 3600.0d;
+                d10 = 3600.0d;
                 break;
             case 2:
-                d11 = 60.0d;
+                d10 = 60.0d;
                 break;
             case 3:
-                d10 = j4Var.c;
-                parseDouble /= d10;
+                d9 = l4Var.c;
+                parseDouble /= d9;
                 break;
             case 4:
-                d10 = 1000.0d;
-                parseDouble /= d10;
+                d9 = 1000.0d;
+                parseDouble /= d9;
                 break;
         }
-        parseDouble *= d11;
+        parseDouble *= d10;
         return (long) (parseDouble * 1000000.0d);
     }
 
-    public static d5.p m(XmlPullParser xmlPullParser) {
+    public static p m(XmlPullParser xmlPullParser) {
         String t10 = d5.a.t(xmlPullParser, "extent");
         if (t10 == null) {
             return null;
@@ -1170,48 +1169,48 @@ public final class c extends r4.f {
             int parseInt = Integer.parseInt(group);
             String group2 = matcher.group(2);
             group2.getClass();
-            return new d5.p(parseInt, Integer.parseInt(group2));
+            return new p(parseInt, Integer.parseInt(group2));
         } catch (NumberFormatException unused) {
             d5.a.K("TtmlDecoder", "Ignoring malformed tts extent: ".concat(t10));
             return null;
         }
     }
 
-    @Override // r4.f
-    public final g c(int i10, boolean z10, byte[] bArr) {
+    @Override // r4.e
+    public final r4.f c(int i9, boolean z10, byte[] bArr) {
         try {
             XmlPullParser newPullParser = this.b.newPullParser();
             HashMap hashMap = new HashMap();
             HashMap hashMap2 = new HashMap();
             HashMap hashMap3 = new HashMap();
             hashMap2.put("", new e("", -3.4028235E38f, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, TLObject.FLAG_31, -3.4028235E38f, TLObject.FLAG_31));
-            d5.p pVar = null;
-            newPullParser.setInput(new ByteArrayInputStream(bArr, 0, i10), null);
+            p pVar = null;
+            newPullParser.setInput(new ByteArrayInputStream(bArr, 0, i9), null);
             ArrayDeque arrayDeque = new ArrayDeque();
-            j4 j4Var = j;
+            l4 l4Var = j;
             com.google.android.gms.internal.cast.a aVar = k;
-            h hVar = null;
-            j4 j4Var2 = j4Var;
+            b3.b bVar = null;
+            l4 l4Var2 = l4Var;
             com.google.android.gms.internal.cast.a aVar2 = aVar;
-            int i11 = 0;
+            int i10 = 0;
             for (int eventType = newPullParser.getEventType(); eventType != 1; eventType = newPullParser.getEventType()) {
                 d dVar = (d) arrayDeque.peek();
-                if (i11 == 0) {
+                if (i10 == 0) {
                     String name = newPullParser.getName();
                     if (eventType == 2) {
                         if ("tt".equals(name)) {
-                            j4Var2 = h(newPullParser);
+                            l4Var2 = h(newPullParser);
                             aVar2 = f(newPullParser, aVar);
                             pVar = m(newPullParser);
                         }
-                        j4 j4Var3 = j4Var2;
+                        l4 l4Var3 = l4Var2;
                         com.google.android.gms.internal.cast.a aVar3 = aVar2;
                         if (e(name)) {
                             if ("head".equals(name)) {
                                 i(newPullParser, hashMap, aVar3, pVar, hashMap2, hashMap3);
                             } else {
                                 try {
-                                    d j10 = j(newPullParser, dVar, hashMap2, j4Var3);
+                                    d j10 = j(newPullParser, dVar, hashMap2, l4Var3);
                                     arrayDeque.push(j10);
                                     if (dVar != null) {
                                         if (dVar.m == null) {
@@ -1219,18 +1218,18 @@ public final class c extends r4.f {
                                         }
                                         dVar.m.add(j10);
                                     }
-                                } catch (i e9) {
-                                    d5.a.L("TtmlDecoder", "Suppressing parser error", e9);
+                                } catch (h e10) {
+                                    d5.a.L("TtmlDecoder", "Suppressing parser error", e10);
                                 }
                             }
                             aVar2 = aVar3;
-                            j4Var2 = j4Var3;
+                            l4Var2 = l4Var3;
                         } else {
                             d5.a.v("TtmlDecoder", "Ignoring unsupported tag: " + newPullParser.getName());
                         }
-                        i11++;
+                        i10++;
                         aVar2 = aVar3;
-                        j4Var2 = j4Var3;
+                        l4Var2 = l4Var3;
                     } else if (eventType == 4) {
                         dVar.getClass();
                         d a2 = d.a(newPullParser.getText());
@@ -1242,25 +1241,25 @@ public final class c extends r4.f {
                         if (newPullParser.getName().equals("tt")) {
                             d dVar2 = (d) arrayDeque.peek();
                             dVar2.getClass();
-                            hVar = new h(dVar2, hashMap, hashMap2, hashMap3);
+                            bVar = new b3.b(dVar2, hashMap, hashMap2, hashMap3);
                         }
                         arrayDeque.pop();
                     }
                 } else if (eventType == 2) {
-                    i11++;
+                    i10++;
                 } else if (eventType == 3) {
-                    i11--;
+                    i10--;
                 }
                 newPullParser.next();
             }
-            if (hVar != null) {
-                return hVar;
+            if (bVar != null) {
+                return bVar;
             }
-            throw new i("No TTML subtitles found");
-        } catch (IOException e10) {
-            throw new IllegalStateException("Unexpected error when reading input.", e10);
-        } catch (XmlPullParserException e11) {
-            throw new i("Unable to decode source", e11);
+            throw new h("No TTML subtitles found");
+        } catch (IOException e11) {
+            throw new IllegalStateException("Unexpected error when reading input.", e11);
+        } catch (XmlPullParserException e12) {
+            throw new h("Unable to decode source", e12);
         }
     }
 }

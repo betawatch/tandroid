@@ -27,30 +27,29 @@ import com.google.android.gms.common.api.internal.q1;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
-import d5.g0;
-import g7.e8;
-import g7.o7;
+import f7.f8;
+import f7.t7;
+import g7.d8;
+import g9.a2;
+import g9.l0;
+import g9.m0;
+import g9.n0;
+import g9.p0;
+import g9.r0;
+import g9.s1;
+import g9.t0;
+import g9.t1;
+import g9.u0;
+import g9.u1;
+import g9.v0;
+import g9.v1;
+import g9.w1;
+import g9.x0;
+import g9.y0;
+import g9.z1;
 import h3.c2;
 import h3.p2;
-import h3.s2;
-import h7.h8;
-import h9.a2;
-import h9.l0;
-import h9.m0;
-import h9.n0;
-import h9.p0;
-import h9.r0;
-import h9.s1;
-import h9.t0;
-import h9.t1;
-import h9.u0;
-import h9.u1;
-import h9.v0;
-import h9.v1;
-import h9.w1;
-import h9.x0;
-import h9.y0;
-import h9.z1;
+import h3.r2;
 import j$.util.DesugarCollections;
 import java.io.File;
 import java.io.IOException;
@@ -68,24 +67,24 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicMarkableReference;
-import lh.r5;
+import kh.s5;
 import m.d3;
 import m.m1;
 import m.n2;
 import m.t3;
+import o8.q0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.d5;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.dx0;
-import org.telegram.ui.i6;
-import org.telegram.ui.kb0;
-import p8.q0;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Cells.e3;
+import org.telegram.ui.Components.bx0;
+import org.telegram.ui.gb0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class m implements c6 {
+public final class m implements b6 {
     public Object a;
     public Object b;
     public Object c;
@@ -93,12 +92,12 @@ public final class m implements c6 {
     public Object e;
     public Object f;
 
-    public m(int i10, int i11) {
+    public m(int i9, int i10) {
         Paint paint = new Paint(1);
         this.a = paint;
         this.d = new RectF();
         this.f = new Matrix();
-        Bitmap createBitmap = Bitmap.createBitmap(Math.max(1, i10), Math.max(1, i11), Bitmap.Config.ARGB_8888);
+        Bitmap createBitmap = Bitmap.createBitmap(Math.max(1, i9), Math.max(1, i10), Bitmap.Config.ARGB_8888);
         this.c = createBitmap;
         this.b = new Canvas(createBitmap);
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
@@ -108,40 +107,40 @@ public final class m implements c6 {
         C();
     }
 
-    public static l0 b(l0 l0Var, g9.e eVar, t3 t3Var) {
+    public static l0 b(l0 l0Var, f9.e eVar, t3 t3Var) {
         m a2 = l0Var.a();
-        String c10 = ((g9.c) eVar.b).c();
+        String c10 = ((f9.c) eVar.b).c();
         if (c10 != null) {
             a2.e = new v0(c10);
         } else if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", "No log data to include with this event.", null);
         }
-        List q6 = q(((g9.d) ((AtomicMarkableReference) ((l) t3Var.d).b).getReference()).a());
-        List q9 = q(((g9.d) ((AtomicMarkableReference) ((l) t3Var.e).b).getReference()).a());
-        if (!q6.isEmpty() || !q9.isEmpty()) {
+        List q10 = q(((f9.d) ((AtomicMarkableReference) ((l) t3Var.d).b).getReference()).a());
+        List q11 = q(((f9.d) ((AtomicMarkableReference) ((l) t3Var.e).b).getReference()).a());
+        if (!q10.isEmpty() || !q11.isEmpty()) {
             m0 m0Var = (m0) l0Var.c;
             s1 s1Var = m0Var.a;
             Boolean bool = m0Var.d;
             t1 t1Var = m0Var.e;
             List list = m0Var.f;
-            int i10 = m0Var.g;
+            int i9 = m0Var.g;
             String str = s1Var == null ? " execution" : "";
             if (!str.isEmpty()) {
                 throw new IllegalStateException("Missing required properties:".concat(str));
             }
-            a2.c = new m0(s1Var, q6, q9, bool, t1Var, list, i10);
+            a2.c = new m0(s1Var, q10, q11, bool, t1Var, list, i9);
         }
         return a2.g();
     }
 
     public static a2 d(l0 l0Var, t3 t3Var) {
-        List g10 = ((n2.v) t3Var.f).g();
+        List f10 = ((n2.w) t3Var.f).f();
         ArrayList arrayList = new ArrayList();
-        for (int i10 = 0; i10 < g10.size(); i10++) {
-            g9.n nVar = (g9.n) g10.get(i10);
+        for (int i9 = 0; i9 < f10.size(); i9++) {
+            f9.n nVar = (f9.n) f10.get(i9);
             nVar.getClass();
-            t tVar = new t(10, false);
-            g9.b bVar = (g9.b) nVar;
+            t tVar = new t(9, false);
+            f9.b bVar = (f9.b) nVar;
             String str = bVar.e;
             if (str == null) {
                 throw new NullPointerException("Null variantId");
@@ -172,58 +171,58 @@ public final class m implements c6 {
         return a2.g();
     }
 
-    public static boolean f(int i10, int[] iArr) {
-        for (int i11 : iArr) {
-            if (i11 == i10) {
+    public static boolean f(int i9, int[] iArr) {
+        for (int i10 : iArr) {
+            if (i10 == i9) {
                 return true;
             }
         }
         return false;
     }
 
-    public static m k(Context context, f9.x xVar, k9.c cVar, f9.a aVar, g9.e eVar, t3 t3Var, g5.b bVar, c3.g gVar, xe.b bVar2, f9.k kVar) {
-        f9.r rVar = new f9.r(context, xVar, aVar, bVar, gVar);
-        k9.b bVar3 = new k9.b(cVar, gVar, kVar);
-        i9.a aVar2 = l9.a.b;
+    public static m k(Context context, e9.x xVar, j9.c cVar, e9.a aVar, f9.e eVar, t3 t3Var, g5.b bVar, c3.h hVar, we.b bVar2, e9.k kVar) {
+        e9.r rVar = new e9.r(context, xVar, aVar, bVar, hVar);
+        j9.b bVar3 = new j9.b(cVar, hVar, kVar);
+        h9.c cVar2 = k9.a.b;
         w2.q.b(context);
-        l9.a aVar3 = new l9.a(new l9.c(w2.q.a().c(new u2.a(l9.a.c, l9.a.d)).a("FIREBASE_CRASHLYTICS_REPORT", new t2.c("json"), l9.a.e), gVar.d(), bVar2));
+        k9.a aVar2 = new k9.a(new k9.c(w2.q.a().c(new u2.a(k9.a.c, k9.a.d)).a("FIREBASE_CRASHLYTICS_REPORT", new t2.c("json"), k9.a.e), hVar.d(), bVar2));
         m mVar = new m();
         mVar.a = rVar;
         mVar.b = bVar3;
-        mVar.c = aVar3;
+        mVar.c = aVar2;
         mVar.d = eVar;
         mVar.e = t3Var;
         mVar.f = xVar;
         return mVar;
     }
 
-    public static ColorStateList l(Context context, int i10) {
+    public static ColorStateList l(Context context, int i9) {
         int c10 = d3.c(context, R.attr.colorControlHighlight);
-        return new ColorStateList(new int[][]{d3.b, d3.d, d3.c, d3.f}, new int[]{d3.b(context, R.attr.colorButtonNormal), i0.b.h(c10, i10), i0.b.h(c10, i10), i10});
+        return new ColorStateList(new int[][]{d3.b, d3.d, d3.c, d3.f}, new int[]{d3.b(context, R.attr.colorButtonNormal), i0.a.h(c10, i9), i0.a.h(c10, i9), i9});
     }
 
-    public static j4.c0 o(c2 c2Var, p8.z zVar, j4.c0 c0Var, p2 p2Var) {
-        s2 A = c2Var.A();
+    public static j4.d0 n(c2 c2Var, o8.z zVar, j4.d0 d0Var, p2 p2Var) {
+        r2 A = c2Var.A();
         int l10 = c2Var.l();
         Object l11 = A.p() ? null : A.l(l10);
-        int b10 = (c2Var.c() || A.p()) ? -1 : A.f(l10, p2Var, false).b(g0.H(c2Var.D()) - p2Var.e);
-        for (int i10 = 0; i10 < zVar.size(); i10++) {
-            j4.c0 c0Var2 = (j4.c0) zVar.get(i10);
-            if (s(c0Var2, l11, c2Var.c(), c2Var.w(), c2Var.m(), b10)) {
-                return c0Var2;
+        int b10 = (c2Var.c() || A.p()) ? -1 : A.f(l10, p2Var, false).b(d5.f0.H(c2Var.D()) - p2Var.e);
+        for (int i9 = 0; i9 < zVar.size(); i9++) {
+            j4.d0 d0Var2 = (j4.d0) zVar.get(i9);
+            if (s(d0Var2, l11, c2Var.c(), c2Var.w(), c2Var.m(), b10)) {
+                return d0Var2;
             }
         }
-        if (zVar.isEmpty() && c0Var != null && s(c0Var, l11, c2Var.c(), c2Var.w(), c2Var.m(), b10)) {
-            return c0Var;
+        if (zVar.isEmpty() && d0Var != null && s(d0Var, l11, c2Var.c(), c2Var.w(), c2Var.m(), b10)) {
+            return d0Var;
         }
         return null;
     }
 
-    public static LayerDrawable p(n2 n2Var, Context context, int i10) {
+    public static LayerDrawable p(n2 n2Var, Context context, int i9) {
         BitmapDrawable bitmapDrawable;
         BitmapDrawable bitmapDrawable2;
         BitmapDrawable bitmapDrawable3;
-        int dimensionPixelSize = context.getResources().getDimensionPixelSize(i10);
+        int dimensionPixelSize = context.getResources().getDimensionPixelSize(i9);
         Drawable g10 = n2Var.g(context, R.drawable.abc_star_black_48dp);
         Drawable g11 = n2Var.g(context, R.drawable.abc_star_half_black_48dp);
         if ((g10 instanceof BitmapDrawable) && g10.getIntrinsicWidth() == dimensionPixelSize && g10.getIntrinsicHeight() == dimensionPixelSize) {
@@ -266,25 +265,25 @@ public final class m implements c6 {
             if (str2 == null) {
                 throw new NullPointerException("Null value");
             }
-            arrayList.add(new h9.d0(str, str2));
+            arrayList.add(new g9.d0(str, str2));
         }
-        Collections.sort(arrayList, new a5.f(15));
+        Collections.sort(arrayList, new a5.e(14));
         return DesugarCollections.unmodifiableList(arrayList);
     }
 
-    public static boolean s(j4.c0 c0Var, Object obj, boolean z10, int i10, int i11, int i12) {
-        Object obj2 = c0Var.a;
-        int i13 = c0Var.b;
+    public static boolean s(j4.d0 d0Var, Object obj, boolean z10, int i9, int i10, int i11) {
+        Object obj2 = d0Var.a;
+        int i12 = d0Var.b;
         if (!obj2.equals(obj)) {
             return false;
         }
-        if (z10 && i13 == i10 && c0Var.c == i11) {
+        if (z10 && i12 == i9 && d0Var.c == i10) {
             return true;
         }
-        return !z10 && i13 == -1 && c0Var.e == i12;
+        return !z10 && i12 == -1 && d0Var.e == i11;
     }
 
-    public static void z(Drawable drawable, int i10, PorterDuff.Mode mode) {
+    public static void z(Drawable drawable, int i9, PorterDuff.Mode mode) {
         PorterDuffColorFilter h;
         int[] iArr = m1.a;
         Drawable mutate = drawable.mutate();
@@ -293,32 +292,32 @@ public final class m implements c6 {
         }
         PorterDuff.Mode mode2 = m.r.b;
         synchronized (m.r.class) {
-            h = n2.h(i10, mode);
+            h = n2.h(i9, mode);
         }
         mutate.setColorFilter(h);
     }
 
     public Task A(String str, String str2, Bundle bundle) {
-        int i10;
+        int i9;
         try {
             x(str, str2, bundle);
-            u5.a aVar = (u5.a) this.c;
-            u5.l lVar = u5.l.a;
+            t5.a aVar = (t5.a) this.c;
+            t5.m mVar = t5.m.a;
             com.google.android.exoplayer2.upstream.w wVar = aVar.c;
             if (wVar.f() < 12000000) {
                 if (wVar.g() == 0) {
                     return Tasks.forException(new IOException("MISSING_INSTANCEID_SERVICE"));
                 }
-                return aVar.a(bundle).continueWithTask(lVar, new i6(aVar, bundle, false, 23));
+                return aVar.a(bundle).continueWithTask(mVar, new e3(aVar, bundle, false, 22));
             }
-            u5.k b10 = u5.k.b(aVar.b);
+            t5.l b10 = t5.l.b(aVar.b);
             synchronized (b10) {
-                i10 = b10.a;
-                b10.a = i10 + 1;
+                i9 = b10.a;
+                b10.a = i9 + 1;
             }
-            return b10.c(new u5.j(i10, 1, bundle, 1)).continueWith(lVar, u5.b.a);
-        } catch (InterruptedException | ExecutionException e9) {
-            return Tasks.forException(e9);
+            return b10.c(new t5.k(i9, 1, bundle, 1)).continueWith(mVar, t5.b.a);
+        } catch (InterruptedException | ExecutionException e10) {
+            return Tasks.forException(e10);
         }
     }
 
@@ -326,29 +325,29 @@ public final class m implements c6 {
         ArrayList arrayList = (ArrayList) this.c;
         ArrayList arrayList2 = (ArrayList) this.b;
         ArrayList arrayList3 = (ArrayList) this.a;
-        for (int i10 = 0; i10 < arrayList3.size(); i10++) {
-            ((ValueAnimator) arrayList3.get(i10)).cancel();
+        for (int i9 = 0; i9 < arrayList3.size(); i9++) {
+            ((ValueAnimator) arrayList3.get(i9)).cancel();
             if (z10) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i10)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new dx0(this, i10, 0));
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i9)).floatValue(), 0.0f);
+                ofFloat.addUpdateListener(new bx0(this, i9, 0));
                 ofFloat.setDuration(100L);
                 ofFloat.start();
             }
         }
-        for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-            ((ValueAnimator) arrayList2.get(i11)).cancel();
+        for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+            ((ValueAnimator) arrayList2.get(i10)).cancel();
             if (z10) {
-                ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i11)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new dx0(this, i11, 1));
+                ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i10)).floatValue(), 0.0f);
+                ofFloat2.addUpdateListener(new bx0(this, i10, 1));
                 ofFloat2.setDuration(100L);
                 ofFloat2.start();
             }
         }
-        for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            ((ValueAnimator) arrayList.get(i12)).cancel();
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            ((ValueAnimator) arrayList.get(i11)).cancel();
             if (z10) {
-                ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i12)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new dx0(this, i12, 2));
+                ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i11)).floatValue(), 0.0f);
+                ofFloat3.addUpdateListener(new bx0(this, i11, 2));
                 ofFloat3.setDuration(100L);
                 ofFloat3.start();
             }
@@ -374,34 +373,39 @@ public final class m implements c6 {
         bitmapShader.setLocalMatrix(matrix);
     }
 
-    public void D(s2 s2Var) {
-        b6.a aVar = new b6.a(4, 21);
-        if (((p8.z) this.b).isEmpty()) {
-            e(aVar, (j4.c0) this.e, s2Var);
-            if (!h7.e0.a((j4.c0) this.f, (j4.c0) this.e)) {
-                e(aVar, (j4.c0) this.f, s2Var);
+    public void D(r2 r2Var) {
+        a6.a aVar = new a6.a(4, 17);
+        if (((o8.z) this.b).isEmpty()) {
+            e(aVar, (j4.d0) this.e, r2Var);
+            if (!g7.c0.a((j4.d0) this.f, (j4.d0) this.e)) {
+                e(aVar, (j4.d0) this.f, r2Var);
             }
-            if (!h7.e0.a((j4.c0) this.d, (j4.c0) this.e) && !h7.e0.a((j4.c0) this.d, (j4.c0) this.f)) {
-                e(aVar, (j4.c0) this.d, s2Var);
+            if (!g7.c0.a((j4.d0) this.d, (j4.d0) this.e) && !g7.c0.a((j4.d0) this.d, (j4.d0) this.f)) {
+                e(aVar, (j4.d0) this.d, r2Var);
             }
         } else {
-            for (int i10 = 0; i10 < ((p8.z) this.b).size(); i10++) {
-                e(aVar, (j4.c0) ((p8.z) this.b).get(i10), s2Var);
+            for (int i9 = 0; i9 < ((o8.z) this.b).size(); i9++) {
+                e(aVar, (j4.d0) ((o8.z) this.b).get(i9), r2Var);
             }
-            if (!((p8.z) this.b).contains((j4.c0) this.d)) {
-                e(aVar, (j4.c0) this.d, s2Var);
+            if (!((o8.z) this.b).contains((j4.d0) this.d)) {
+                e(aVar, (j4.d0) this.d, r2Var);
             }
         }
         this.c = aVar.c();
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public ColorFilter F() {
-        return g6.v3;
+    @Override // org.telegram.ui.ActionBar.b6
+    public ColorFilter H() {
+        return f6.v3;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public Paint N(String str) {
+    @Override // org.telegram.ui.ActionBar.b6
+    public int N0(int i9) {
+        return ((s5) this.f).y0.get(i9, f6.w0(null, i9, false));
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public Paint O(String str) {
         str.getClass();
         switch (str) {
             case "paintChatActionText2":
@@ -415,18 +419,13 @@ public final class m implements c6 {
             case "paintChatActionText":
                 return (TextPaint) this.a;
             default:
-                return g6.S0(str);
+                return f6.S0(str);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public int N0(int i10) {
-        return ((r5) this.f).y0.get(i10, g6.w0(null, i10, false));
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public boolean a() {
-        return ((r5) this.f).x0;
+        return ((s5) this.f).x0;
     }
 
     public void c(String str, String str2) {
@@ -437,17 +436,17 @@ public final class m implements c6 {
         hashMap.put(str, str2);
     }
 
-    public void e(b6.a aVar, j4.c0 c0Var, s2 s2Var) {
-        if (c0Var == null) {
+    public void e(a6.a aVar, j4.d0 d0Var, r2 r2Var) {
+        if (d0Var == null) {
             return;
         }
-        if (s2Var.b(c0Var.a) != -1) {
-            aVar.j(c0Var, s2Var);
+        if (r2Var.b(d0Var.a) != -1) {
+            aVar.j(d0Var, r2Var);
             return;
         }
-        s2 s2Var2 = (s2) ((q0) this.c).get(c0Var);
-        if (s2Var2 != null) {
-            aVar.j(c0Var, s2Var2);
+        r2 r2Var2 = (r2) ((q0) this.c).get(d0Var);
+        if (r2Var2 != null) {
+            aVar.j(d0Var, r2Var2);
         }
     }
 
@@ -457,10 +456,10 @@ public final class m implements c6 {
             str = str.concat(" type");
         }
         if (((u1) this.c) == null) {
-            str = s3.c.l(str, " app");
+            str = ta.b.j(str, " app");
         }
         if (((v1) this.d) == null) {
-            str = s3.c.l(str, " device");
+            str = ta.b.j(str, " device");
         }
         if (str.isEmpty()) {
             return new l0(((Long) this.a).longValue(), (String) this.b, (u1) this.c, (v1) this.d, (w1) this.e, (z1) this.f);
@@ -468,60 +467,60 @@ public final class m implements c6 {
         throw new IllegalStateException("Missing required properties:".concat(str));
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public Drawable getDrawable(String str) {
-        r5 r5Var = (r5) this.f;
-        m mVar = r5Var.z0;
+        s5 s5Var = (s5) this.f;
+        m mVar = s5Var.z0;
         if (str.equals("drawableMsgIn")) {
-            if (r5Var.A0 == null) {
-                r5Var.A0 = new d5(0, false, false, mVar);
+            if (s5Var.A0 == null) {
+                s5Var.A0 = new d5(0, false, false, mVar);
             }
-            return r5Var.A0;
+            return s5Var.A0;
         }
         if (str.equals("drawableMsgInSelected")) {
-            if (r5Var.B0 == null) {
-                r5Var.B0 = new d5(0, false, true, mVar);
+            if (s5Var.B0 == null) {
+                s5Var.B0 = new d5(0, false, true, mVar);
             }
-            return r5Var.B0;
+            return s5Var.B0;
         }
         if (str.equals("drawableMsgOut")) {
-            if (r5Var.C0 == null) {
-                r5Var.C0 = new d5(0, true, false, mVar);
+            if (s5Var.C0 == null) {
+                s5Var.C0 = new d5(0, true, false, mVar);
             }
-            return r5Var.C0;
+            return s5Var.C0;
         }
         if (str.equals("drawableMsgOutSelected")) {
-            if (r5Var.D0 == null) {
-                r5Var.D0 = new d5(0, true, true, mVar);
+            if (s5Var.D0 == null) {
+                s5Var.D0 = new d5(0, true, true, mVar);
             }
-            return r5Var.D0;
+            return s5Var.D0;
         }
         if (str.equals("drawableMsgInMedia")) {
-            if (r5Var.E0 == null) {
-                r5Var.E0 = new d5(1, false, false, mVar);
+            if (s5Var.E0 == null) {
+                s5Var.E0 = new d5(1, false, false, mVar);
             }
-            r5Var.E0.invalidateSelf();
-            return r5Var.E0;
+            s5Var.E0.invalidateSelf();
+            return s5Var.E0;
         }
         if (str.equals("drawableMsgInMediaSelected")) {
-            if (r5Var.F0 == null) {
-                r5Var.F0 = new d5(1, false, true, mVar);
+            if (s5Var.F0 == null) {
+                s5Var.F0 = new d5(1, false, true, mVar);
             }
-            return r5Var.F0;
+            return s5Var.F0;
         }
         if (str.equals("drawableMsgOutMedia")) {
-            if (r5Var.G0 == null) {
-                r5Var.G0 = new d5(1, true, false, mVar);
+            if (s5Var.G0 == null) {
+                s5Var.G0 = new d5(1, true, false, mVar);
             }
-            return r5Var.G0;
+            return s5Var.G0;
         }
         if (!str.equals("drawableMsgOutMediaSelected")) {
-            return g6.O0(str);
+            return f6.O0(str);
         }
-        if (r5Var.H0 == null) {
-            r5Var.H0 = new d5(1, true, true, mVar);
+        if (s5Var.H0 == null) {
+            s5Var.H0 = new d5(1, true, true, mVar);
         }
-        return r5Var.H0;
+        return s5Var.H0;
     }
 
     public u0 h() {
@@ -530,13 +529,13 @@ public final class m implements c6 {
             str = str.concat(" proximityOn");
         }
         if (((Integer) this.d) == null) {
-            str = s3.c.l(str, " orientation");
+            str = ta.b.j(str, " orientation");
         }
         if (((Long) this.e) == null) {
-            str = s3.c.l(str, " ramUsed");
+            str = ta.b.j(str, " ramUsed");
         }
         if (((Long) this.f) == null) {
-            str = s3.c.l(str, " diskUsed");
+            str = ta.b.j(str, " diskUsed");
         }
         if (str.isEmpty()) {
             return new u0((Double) this.a, ((Integer) this.b).intValue(), ((Boolean) this.c).booleanValue(), ((Integer) this.d).intValue(), ((Long) this.e).longValue(), ((Long) this.f).longValue());
@@ -550,13 +549,13 @@ public final class m implements c6 {
             str = str.concat(" encodedPayload");
         }
         if (((Long) this.d) == null) {
-            str = s3.c.l(str, " eventMillis");
+            str = ta.b.j(str, " eventMillis");
         }
         if (((Long) this.e) == null) {
-            str = s3.c.l(str, " uptimeMillis");
+            str = ta.b.j(str, " uptimeMillis");
         }
         if (((HashMap) this.f) == null) {
-            str = s3.c.l(str, " autoMetadata");
+            str = ta.b.j(str, " autoMetadata");
         }
         if (str.isEmpty()) {
             return new w2.h((String) this.a, (Integer) this.b, (w2.l) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f);
@@ -564,8 +563,8 @@ public final class m implements c6 {
         throw new IllegalStateException("Missing required properties:".concat(str));
     }
 
-    public y8.b j() {
-        y5.l.i((String) this.f, "setActionToken is required before calling build().");
+    public x8.b j() {
+        x5.l.i((String) this.f, "setActionToken is required before calling build().");
         new String((String) this.e);
         u("actionToken", (String) this.f);
         String str = (String) this.c;
@@ -577,65 +576,65 @@ public final class m implements c6 {
         if ((str2 != null ? new String(str2) : null) == null) {
             String valueOf = String.valueOf((String) this.f);
             String concat = valueOf.length() != 0 ? "https://developers.google.com/actions?invocation=".concat(valueOf) : new String("https://developers.google.com/actions?invocation=");
-            y5.l.h(concat);
+            x5.l.h(concat);
             this.d = concat;
             u("url", concat);
         }
-        y5.l.i((String) this.c, "setObject is required before calling build().");
-        y5.l.i((String) this.d, "setObject is required before calling build().");
-        return new y8.b((String) this.b, (String) this.c, (String) this.d, null, new y8.a(), (String) this.e, (Bundle) this.a);
+        x5.l.i((String) this.c, "setObject is required before calling build().");
+        x5.l.i((String) this.d, "setObject is required before calling build().");
+        return new x8.b((String) this.b, (String) this.c, (String) this.d, null, new x8.a(), (String) this.e, (Bundle) this.a);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public void m(float f10, float f11, int i10, int i11) {
-        g6.q(f10, f11, i10, i11);
+    public Task m(Task task) {
+        return task.continueWith(new gb0(1), new a1.c(this, 15));
     }
 
-    public Task n(Task task) {
-        return task.continueWith(new kb0(1), new a1.c(this, 14));
+    @Override // org.telegram.ui.ActionBar.b6
+    public void o(float f10, float f11, int i9, int i10) {
+        f6.q(f10, f11, i9, i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public int o1(int i10) {
-        return N0(i10);
+    @Override // org.telegram.ui.ActionBar.b6
+    public int p0(int i9) {
+        return N0(i9);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public int q0(int i10) {
-        return N0(i10);
+    @Override // org.telegram.ui.ActionBar.b6
+    public int q1(int i9) {
+        return N0(i9);
     }
 
-    public ColorStateList r(Context context, int i10) {
-        if (i10 == R.drawable.abc_edit_text_material) {
-            return o7.a(context, R.color.abc_tint_edittext);
+    public ColorStateList r(Context context, int i9) {
+        if (i9 == R.drawable.abc_edit_text_material) {
+            return t7.a(context, R.color.abc_tint_edittext);
         }
-        if (i10 == R.drawable.abc_switch_track_mtrl_alpha) {
-            return o7.a(context, R.color.abc_tint_switch_track);
+        if (i9 == R.drawable.abc_switch_track_mtrl_alpha) {
+            return t7.a(context, R.color.abc_tint_switch_track);
         }
-        if (i10 != R.drawable.abc_switch_thumb_material) {
-            if (i10 == R.drawable.abc_btn_default_mtrl_shape) {
+        if (i9 != R.drawable.abc_switch_thumb_material) {
+            if (i9 == R.drawable.abc_btn_default_mtrl_shape) {
                 return l(context, d3.c(context, R.attr.colorButtonNormal));
             }
-            if (i10 == R.drawable.abc_btn_borderless_material) {
+            if (i9 == R.drawable.abc_btn_borderless_material) {
                 return l(context, 0);
             }
-            if (i10 == R.drawable.abc_btn_colored_material) {
+            if (i9 == R.drawable.abc_btn_colored_material) {
                 return l(context, d3.c(context, R.attr.colorAccent));
             }
-            if (i10 == R.drawable.abc_spinner_mtrl_am_alpha || i10 == R.drawable.abc_spinner_textfield_background_material) {
-                return o7.a(context, R.color.abc_tint_spinner);
+            if (i9 == R.drawable.abc_spinner_mtrl_am_alpha || i9 == R.drawable.abc_spinner_textfield_background_material) {
+                return t7.a(context, R.color.abc_tint_spinner);
             }
-            if (f(i10, (int[]) this.b)) {
+            if (f(i9, (int[]) this.b)) {
                 return d3.d(context, R.attr.colorControlNormal);
             }
-            if (f(i10, (int[]) this.e)) {
-                return o7.a(context, R.color.abc_tint_default);
+            if (f(i9, (int[]) this.e)) {
+                return t7.a(context, R.color.abc_tint_default);
             }
-            if (f(i10, (int[]) this.f)) {
-                return o7.a(context, R.color.abc_tint_btn_checkable);
+            if (f(i9, (int[]) this.f)) {
+                return t7.a(context, R.color.abc_tint_btn_checkable);
             }
-            if (i10 == R.drawable.abc_seekbar_thumb_material) {
-                return o7.a(context, R.color.abc_tint_seek_thumb);
+            if (i9 == R.drawable.abc_seekbar_thumb_material) {
+                return t7.a(context, R.color.abc_tint_seek_thumb);
             }
             return null;
         }
@@ -665,9 +664,9 @@ public final class m implements c6 {
         Iterator<Map.Entry<Thread, StackTraceElement[]>> it;
         g5.b bVar;
         boolean equals = str2.equals("crash");
-        f9.r rVar = (f9.r) this.a;
+        e9.r rVar = (e9.r) this.a;
         Context context = rVar.a;
-        int i10 = context.getResources().getConfiguration().orientation;
+        int i9 = context.getResources().getConfiguration().orientation;
         g5.b bVar2 = rVar.d;
         Stack stack = new Stack();
         for (Throwable th2 = th; th2 != null; th2 = th2.getCause()) {
@@ -676,23 +675,23 @@ public final class m implements c6 {
         t tVar = null;
         while (!stack.isEmpty()) {
             Throwable th3 = (Throwable) stack.pop();
-            tVar = new t(th3.getLocalizedMessage(), th3.getClass().getName(), bVar2.a0(th3.getStackTrace()), tVar, 20);
+            tVar = new t(th3.getLocalizedMessage(), th3.getClass().getName(), bVar2.k(th3.getStackTrace()), tVar, 19);
         }
         t tVar2 = tVar;
         m mVar = new m();
         mVar.b = str2;
         mVar.a = Long.valueOf(j10);
-        t1 b10 = c9.d.a.b(context);
-        int i11 = ((t0) b10).c;
-        Boolean valueOf = i11 > 0 ? Boolean.valueOf(i11 != 100) : null;
-        ArrayList a2 = c9.d.a(context);
+        t1 b10 = b9.e.a.b(context);
+        int i10 = ((t0) b10).c;
+        Boolean valueOf = i10 > 0 ? Boolean.valueOf(i10 != 100) : null;
+        ArrayList a2 = b9.e.a(context);
         ArrayList arrayList = new ArrayList();
         StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) tVar2.d;
         String name = thread.getName();
         if (name == null) {
             throw new NullPointerException("Null name");
         }
-        List d = f9.r.d(stackTraceElementArr, 4);
+        List d = e9.r.d(stackTraceElementArr, 4);
         if (d == null) {
             throw new NullPointerException("Null frames");
         }
@@ -706,163 +705,163 @@ public final class m implements c6 {
                     it = it2;
                     bVar = bVar2;
                 } else {
-                    StackTraceElement[] a02 = bVar2.a0(next.getValue());
+                    StackTraceElement[] k10 = bVar2.k(next.getValue());
                     String name2 = key.getName();
                     if (name2 == null) {
                         throw new NullPointerException("Null name");
                     }
                     it = it2;
-                    List d10 = f9.r.d(a02, 0);
-                    if (d10 == null) {
+                    List d9 = e9.r.d(k10, 0);
+                    if (d9 == null) {
                         throw new NullPointerException("Null frames");
                     }
                     bVar = bVar2;
-                    arrayList.add(new r0(name2, 0, d10));
+                    arrayList.add(new r0(name2, 0, d9));
                 }
                 it2 = it;
                 bVar2 = bVar;
             }
         }
         List unmodifiableList = DesugarCollections.unmodifiableList(arrayList);
-        p0 c10 = f9.r.c(tVar2, 0);
-        h9.q0 q0Var = new h9.q0(0L, "0", "0");
+        p0 c10 = e9.r.c(tVar2, 0);
+        g9.q0 q0Var = new g9.q0(0L, "0", "0");
         List a3 = rVar.a();
         if (a3 == null) {
             throw new NullPointerException("Null binaries");
         }
-        mVar.c = new m0(new n0(unmodifiableList, c10, null, q0Var, a3), null, null, valueOf, b10, a2, i10);
-        mVar.d = rVar.b(i10);
+        mVar.c = new m0(new n0(unmodifiableList, c10, null, q0Var, a3), null, null, valueOf, b10, a2, i9);
+        mVar.d = rVar.b(i9);
         l0 g10 = mVar.g();
-        k9.b bVar3 = (k9.b) this.b;
-        g9.e eVar = (g9.e) this.d;
+        j9.b bVar3 = (j9.b) this.b;
+        f9.e eVar = (f9.e) this.d;
         t3 t3Var = (t3) this.e;
         bVar3.d(d(b(g10, eVar, t3Var), t3Var), str, equals);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public /* synthetic */ boolean t0() {
+        return false;
     }
 
     public void u(String str, String... strArr) {
         Bundle bundle = (Bundle) this.a;
         String[] strArr2 = (String[]) Arrays.copyOf(strArr, strArr.length);
         if (strArr2.length <= 0) {
-            h8.a("String array is empty and is ignored by put method.");
+            d8.a("String array is empty and is ignored by put method.");
             return;
         }
-        int i10 = 0;
-        for (int i11 = 0; i11 < Math.min(strArr2.length, 100); i11++) {
-            String str2 = strArr2[i11];
-            strArr2[i10] = str2;
-            if (strArr2[i11] == null) {
+        int i9 = 0;
+        for (int i10 = 0; i10 < Math.min(strArr2.length, 100); i10++) {
+            String str2 = strArr2[i10];
+            strArr2[i9] = str2;
+            if (strArr2[i10] == null) {
                 StringBuilder sb2 = new StringBuilder(59);
                 sb2.append("String at ");
-                sb2.append(i11);
+                sb2.append(i10);
                 sb2.append(" is null and is ignored by put method.");
-                h8.a(sb2.toString());
+                d8.a(sb2.toString());
             } else {
-                int i12 = 20000;
+                int i11 = 20000;
                 if (str2.length() > 20000) {
                     StringBuilder sb3 = new StringBuilder(53);
                     sb3.append("String at ");
-                    sb3.append(i11);
+                    sb3.append(i10);
                     sb3.append(" is too long, truncating string.");
-                    h8.a(sb3.toString());
-                    String str3 = strArr2[i10];
+                    d8.a(sb3.toString());
+                    String str3 = strArr2[i9];
                     if (str3.length() > 20000) {
                         if (Character.isHighSurrogate(str3.charAt(19999)) && Character.isLowSurrogate(str3.charAt(20000))) {
-                            i12 = 19999;
+                            i11 = 19999;
                         }
-                        str3 = str3.substring(0, i12);
+                        str3 = str3.substring(0, i11);
                     }
-                    strArr2[i10] = str3;
+                    strArr2[i9] = str3;
                 }
-                i10++;
+                i9++;
             }
         }
-        if (i10 > 0) {
-            Object[] objArr = (String[]) Arrays.copyOfRange(strArr2, 0, i10);
+        if (i9 > 0) {
+            Object[] objArr = (String[]) Arrays.copyOfRange(strArr2, 0, i9);
             if (objArr.length >= 100) {
-                h8.a("Input Array of elements is too big, cutting off.");
+                d8.a("Input Array of elements is too big, cutting off.");
                 objArr = Arrays.copyOf(objArr, 100);
             }
             bundle.putStringArray(str, (String[]) objArr);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public /* synthetic */ boolean u0() {
-        return false;
-    }
-
     public Task v(Executor executor, String str) {
         TaskCompletionSource taskCompletionSource;
         String str2;
-        ArrayList b10 = ((k9.b) this.b).b();
+        ArrayList b10 = ((j9.b) this.b).b();
         ArrayList arrayList = new ArrayList();
         int size = b10.size();
-        int i10 = 0;
-        while (i10 < size) {
-            int i11 = i10 + 1;
-            File file = (File) b10.get(i10);
+        int i9 = 0;
+        while (i9 < size) {
+            int i10 = i9 + 1;
+            File file = (File) b10.get(i9);
             try {
-                i9.a aVar = k9.b.g;
-                String e9 = k9.b.e(file);
-                aVar.getClass();
-                arrayList.add(new f9.b(i9.a.i(e9), file.getName(), file));
-            } catch (IOException e10) {
-                Log.w("FirebaseCrashlytics", "Could not load report file " + file + "; deleting", e10);
+                h9.c cVar = j9.b.g;
+                String e10 = j9.b.e(file);
+                cVar.getClass();
+                arrayList.add(new e9.b(h9.c.i(e10), file.getName(), file));
+            } catch (IOException e11) {
+                Log.w("FirebaseCrashlytics", "Could not load report file " + file + "; deleting", e11);
                 file.delete();
             }
-            i10 = i11;
+            i9 = i10;
         }
         ArrayList arrayList2 = new ArrayList();
         int size2 = arrayList.size();
-        int i12 = 0;
-        while (i12 < size2) {
-            int i13 = i12 + 1;
-            f9.b bVar = (f9.b) arrayList.get(i12);
+        int i11 = 0;
+        while (i11 < size2) {
+            int i12 = i11 + 1;
+            e9.b bVar = (e9.b) arrayList.get(i11);
             if (str == null || str.equals(bVar.b)) {
-                l9.a aVar2 = (l9.a) this.c;
+                k9.a aVar = (k9.a) this.c;
                 if (bVar.a.f == null) {
                     try {
-                        str2 = (String) f9.b0.a(((z9.c) ((f9.x) this.f).d).d());
-                    } catch (Exception e11) {
-                        Log.w("FirebaseCrashlytics", "Failed to retrieve Firebase Installation ID.", e11);
+                        str2 = (String) e9.z.a(((y9.c) ((e9.x) this.f).d).d());
+                    } catch (Exception e12) {
+                        Log.w("FirebaseCrashlytics", "Failed to retrieve Firebase Installation ID.", e12);
                         str2 = null;
                     }
-                    e8 a2 = bVar.a.a();
+                    f8 a2 = bVar.a.a();
                     a2.d = str2;
-                    bVar = new f9.b(a2.a(), bVar.b, bVar.c);
+                    bVar = new e9.b(a2.a(), bVar.b, bVar.c);
                 }
                 boolean z10 = str != null;
-                l9.c cVar = aVar2.a;
-                synchronized (cVar.f) {
+                k9.c cVar2 = aVar.a;
+                synchronized (cVar2.f) {
                     try {
                         taskCompletionSource = new TaskCompletionSource();
                         if (z10) {
-                            ((AtomicInteger) cVar.i.b).getAndIncrement();
-                            if (cVar.f.size() < cVar.e) {
-                                c9.c cVar2 = c9.c.a;
-                                cVar2.b("Enqueueing report: " + bVar.b);
-                                cVar2.b("Queue size: " + cVar.f.size());
-                                cVar.g.execute(new q1(cVar, bVar, taskCompletionSource, 6));
-                                cVar2.b("Closing task for report: " + bVar.b);
+                            ((AtomicInteger) cVar2.i.b).getAndIncrement();
+                            if (cVar2.f.size() < cVar2.e) {
+                                b9.d dVar = b9.d.a;
+                                dVar.b("Enqueueing report: " + bVar.b);
+                                dVar.b("Queue size: " + cVar2.f.size());
+                                cVar2.g.execute(new q1(cVar2, bVar, taskCompletionSource, 6));
+                                dVar.b("Closing task for report: " + bVar.b);
                                 taskCompletionSource.trySetResult(bVar);
                             } else {
-                                cVar.a();
+                                cVar2.a();
                                 String str3 = "Dropping report due to queue being full: " + bVar.b;
                                 if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                                     Log.d("FirebaseCrashlytics", str3, null);
                                 }
-                                ((AtomicInteger) cVar.i.c).getAndIncrement();
+                                ((AtomicInteger) cVar2.i.c).getAndIncrement();
                                 taskCompletionSource.trySetResult(bVar);
                             }
                         } else {
-                            cVar.b(bVar, taskCompletionSource);
+                            cVar2.b(bVar, taskCompletionSource);
                         }
                     } finally {
                     }
                 }
-                arrayList2.add(taskCompletionSource.getTask().continueWith(executor, new f9.z(this)));
+                arrayList2.add(taskCompletionSource.getTask().continueWith(executor, new a9.b(this, 23)));
             }
-            i12 = i13;
+            i11 = i12;
         }
         return Tasks.whenAll(arrayList2);
     }
@@ -884,15 +883,15 @@ public final class m implements c6 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void x(String str, String str2, Bundle bundle) {
-        int i10;
+        int i9;
         String str3;
-        w9.f fVar;
+        v9.f fVar;
         int a2;
         PackageInfo d;
         bundle.putString("scope", str2);
         bundle.putString("sender", str);
         bundle.putString("subtype", str);
-        t8.h hVar = (t8.h) this.a;
+        s8.h hVar = (s8.h) this.a;
         hVar.a();
         bundle.putString("gmp_app_id", hVar.c.b);
         o oVar = (o) this.b;
@@ -901,15 +900,15 @@ public final class m implements c6 {
                 if (oVar.a == 0 && (d = oVar.d("com.google.android.gms")) != null) {
                     oVar.a = d.versionCode;
                 }
-                i10 = oVar.a;
+                i9 = oVar.a;
             } finally {
             }
         }
-        bundle.putString("gmsv", Integer.toString(i10));
+        bundle.putString("gmsv", Integer.toString(i9));
         bundle.putString("osv", Integer.toString(Build.VERSION.SDK_INT));
         bundle.putString("app_ver", ((o) this.b).a());
         bundle.putString("app_ver_name", ((o) this.b).b());
-        t8.h hVar2 = (t8.h) this.a;
+        s8.h hVar2 = (s8.h) this.a;
         hVar2.a();
         try {
             str3 = Base64.encodeToString(MessageDigest.getInstance("SHA-1").digest(hVar2.b.getBytes()), 11);
@@ -918,39 +917,39 @@ public final class m implements c6 {
         }
         bundle.putString("firebase-app-name-hash", str3);
         try {
-            String str4 = ((z9.a) Tasks.await(((z9.c) ((z9.d) this.f)).e())).a;
+            String str4 = ((y9.a) Tasks.await(((y9.c) ((y9.d) this.f)).e())).a;
             if (TextUtils.isEmpty(str4)) {
                 Log.w("FirebaseMessaging", "FIS auth token is empty");
             } else {
                 bundle.putString("Goog-Firebase-Installations-Auth", str4);
             }
-        } catch (InterruptedException e9) {
-            e = e9;
+        } catch (InterruptedException e10) {
+            e = e10;
             Log.e("FirebaseMessaging", "Failed to get FIS auth token", e);
-            bundle.putString("appid", (String) Tasks.await(((z9.c) ((z9.d) this.f)).d()));
+            bundle.putString("appid", (String) Tasks.await(((y9.c) ((y9.d) this.f)).d()));
             bundle.putString("cliv", "fcm-23.4.0");
-            fVar = (w9.f) ((y9.b) this.e).get();
-            ga.b bVar = (ga.b) ((y9.b) this.d).get();
+            fVar = (v9.f) ((x9.b) this.e).get();
+            fa.b bVar = (fa.b) ((x9.b) this.d).get();
             if (fVar == null) {
                 return;
             } else {
                 return;
             }
-        } catch (ExecutionException e10) {
-            e = e10;
+        } catch (ExecutionException e11) {
+            e = e11;
             Log.e("FirebaseMessaging", "Failed to get FIS auth token", e);
-            bundle.putString("appid", (String) Tasks.await(((z9.c) ((z9.d) this.f)).d()));
+            bundle.putString("appid", (String) Tasks.await(((y9.c) ((y9.d) this.f)).d()));
             bundle.putString("cliv", "fcm-23.4.0");
-            fVar = (w9.f) ((y9.b) this.e).get();
-            ga.b bVar2 = (ga.b) ((y9.b) this.d).get();
+            fVar = (v9.f) ((x9.b) this.e).get();
+            fa.b bVar2 = (fa.b) ((x9.b) this.d).get();
             if (fVar == null) {
             }
         }
-        bundle.putString("appid", (String) Tasks.await(((z9.c) ((z9.d) this.f)).d()));
+        bundle.putString("appid", (String) Tasks.await(((y9.c) ((y9.d) this.f)).d()));
         bundle.putString("cliv", "fcm-23.4.0");
-        fVar = (w9.f) ((y9.b) this.e).get();
-        ga.b bVar22 = (ga.b) ((y9.b) this.d).get();
-        if (fVar == null || bVar22 == null || (a2 = ((w9.c) fVar).a()) == 1) {
+        fVar = (v9.f) ((x9.b) this.e).get();
+        fa.b bVar22 = (fa.b) ((x9.b) this.d).get();
+        if (fVar == null || bVar22 == null || (a2 = ((v9.c) fVar).a()) == 1) {
             return;
         }
         bundle.putString("Firebase-Client-Log-Type", Integer.toString(m1.j.b(a2)));
@@ -967,8 +966,8 @@ public final class m implements c6 {
         ((BitmapShader) this.e).setLocalMatrix(matrix);
     }
 
-    public m(int i10) {
-        switch (i10) {
+    public m(int i9) {
+        switch (i9) {
             case 7:
                 Paint paint = new Paint(1);
                 this.a = paint;
@@ -1007,7 +1006,7 @@ public final class m implements c6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public /* synthetic */ void c1(int i10, int i11) {
+    @Override // org.telegram.ui.ActionBar.b6
+    public /* synthetic */ void c1(int i9, int i10) {
     }
 }

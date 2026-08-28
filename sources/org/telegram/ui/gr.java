@@ -1,54 +1,63 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gr implements org.telegram.ui.Cells.x4, org.telegram.ui.Components.cv0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hr b;
+public final /* synthetic */ class gr implements org.telegram.ui.Cells.a5, of.u1 {
+    public final /* synthetic */ ir a;
 
-    public /* synthetic */ gr(hr hrVar, int i10) {
-        this.a = i10;
-        this.b = hrVar;
+    public /* synthetic */ gr(ir irVar) {
+        this.a = irVar;
     }
 
-    @Override // org.telegram.ui.Cells.x4
-    public boolean d(org.telegram.ui.Cells.y4 y4Var, boolean z10) {
-        lr lrVar = this.b.d;
-        return lrVar.h0(lrVar.a.E(((Integer) y4Var.getTag()).intValue()), !z10, y4Var);
+    @Override // of.u1
+    public /* synthetic */ a0.h O() {
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.cv0
-    public void j(int i10) {
-        switch (this.a) {
-            case 1:
-                lr lrVar = this.b.d;
-                if (lrVar.s != null) {
-                    int i11 = lrVar.l1;
-                    boolean z10 = (i11 > 0 && i10 == 0) || (i11 == 0 && i10 > 0);
-                    lrVar.l1 = i10;
-                    if (z10) {
-                        er w02 = lrVar.w0();
-                        lrVar.B0();
-                        lrVar.A0(w02);
-                    }
-                    lrVar.a.m(lrVar.L0);
-                    break;
-                }
-                break;
-            default:
-                this.b.d.o1 = i10 + 1;
-                break;
+    @Override // org.telegram.ui.Cells.a5
+    public boolean d(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
+        int intValue = ((Integer) b5Var.getTag()).intValue();
+        ir irVar = this.a;
+        TLObject E = irVar.E(intValue);
+        if (!(E instanceof TLRPC.ChannelParticipant)) {
+            return false;
         }
+        return irVar.y.g0((TLRPC.ChannelParticipant) E, !z10, b5Var);
     }
 
-    @Override // org.telegram.ui.Components.cv0
-    public /* synthetic */ void m() {
-        int i10 = this.a;
+    @Override // of.u1
+    public void e(int i9) {
+        ir irVar = this.a;
+        jr jrVar = irVar.y;
+        if (irVar.h.e()) {
+            return;
+        }
+        int i10 = irVar.r;
+        irVar.l();
+        if (irVar.r > i10) {
+            jrVar.x0(i10);
+        }
+        if (irVar.s || irVar.r != 0 || i9 == 0) {
+            return;
+        }
+        jrVar.b.e(false, true);
     }
 
-    private final /* synthetic */ void a() {
+    @Override // of.u1
+    public /* synthetic */ boolean p0(int i9) {
+        return true;
     }
 
-    private final /* synthetic */ void b() {
+    @Override // of.u1
+    public /* synthetic */ a0.h y() {
+        return null;
+    }
+
+    @Override // of.u1
+    public /* synthetic */ void H0(ArrayList arrayList) {
     }
 }

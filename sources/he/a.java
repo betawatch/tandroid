@@ -1,79 +1,47 @@
 package he;
 
-import ge.c;
-import je.g;
-import je.p;
-import je.s;
+import d7.u;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a implements me.a {
-    public final char a;
+public abstract class a {
+    public static final Pattern a = Pattern.compile("[\\\\&]");
+    public static final Pattern b = Pattern.compile("\\\\[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]|&(?:#x[a-f0-9]{1,6}|#[0-9]{1,7}|[a-z][a-z0-9]{1,31});", 2);
+    public static final Pattern c;
+    public static final u d;
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public a(int i10) {
-        this('*');
-        switch (i10) {
-            case 1:
-                this('_');
-                break;
-            default:
-                break;
-        }
+    static {
+        Pattern.compile("(%[a-fA-F0-9]{0,2}|[^:/?#@!$&'()*+,;=a-zA-Z0-9\\-._~])");
+        c = Pattern.compile("[ \t\r\n]+");
+        d = new u(9);
     }
 
-    @Override // me.a
-    public final char a() {
-        return this.a;
-    }
-
-    @Override // me.a
-    public final void b(s sVar, s sVar2, int i10) {
-        String.valueOf(this.a);
-        g gVar = i10 == 1 ? new g(0) : new g(3);
-        p pVar = (p) sVar.f;
-        while (pVar != null && pVar != sVar2) {
-            p pVar2 = (p) pVar.f;
-            gVar.b(pVar);
-            pVar = pVar2;
+    public static String a(String str) {
+        if (!a.matcher(str).find()) {
+            return str;
         }
-        gVar.g();
-        p pVar3 = (p) sVar.f;
-        gVar.f = pVar3;
-        if (pVar3 != null) {
-            pVar3.e = gVar;
+        Matcher matcher = b.matcher(str);
+        if (!matcher.find()) {
+            return str;
         }
-        gVar.e = sVar;
-        sVar.f = gVar;
-        p pVar4 = (p) sVar.b;
-        gVar.b = pVar4;
-        if (((p) gVar.f) == null) {
-            pVar4.d = gVar;
-        }
-    }
-
-    @Override // me.a
-    public final int c(c cVar, c cVar2) {
-        if (cVar.d || cVar2.c) {
-            int i10 = cVar2.h;
-            if (i10 % 3 != 0 && (cVar.h + i10) % 3 == 0) {
-                return 0;
+        StringBuilder sb2 = new StringBuilder(str.length() + 16);
+        int i9 = 0;
+        do {
+            sb2.append((CharSequence) str, i9, matcher.start());
+            String group = matcher.group();
+            d.getClass();
+            if (group.charAt(0) == '\\') {
+                sb2.append((CharSequence) group, 1, group.length());
+            } else {
+                sb2.append(b.a(group));
             }
+            i9 = matcher.end();
+        } while (matcher.find());
+        if (i9 != str.length()) {
+            sb2.append((CharSequence) str, i9, str.length());
         }
-        return (cVar.g < 2 || cVar2.g < 2) ? 1 : 2;
-    }
-
-    @Override // me.a
-    public final int d() {
-        return 1;
-    }
-
-    @Override // me.a
-    public final char e() {
-        return this.a;
-    }
-
-    public a(char c10) {
-        this.a = c10;
+        return sb2.toString();
     }
 }

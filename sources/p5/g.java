@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.support.v4.media.session.t;
 import android.view.KeyEvent;
 import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
-import m5.q;
-import y5.l;
+import m5.p;
+import x5.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class g extends t {
     public final /* synthetic */ h a;
@@ -36,15 +36,15 @@ public final class g extends t {
                     if (hVar3 == null) {
                         return;
                     }
-                    hVar3.q(new q(min));
+                    hVar3.q(new p(min));
                     return;
                 }
                 break;
             case -668151673:
                 if (str.equals(MediaIntentReceiver.ACTION_STOP_CASTING)) {
-                    n5.h hVar4 = hVar.d;
-                    if (hVar4 != null) {
-                        hVar4.b(true);
+                    n5.g gVar = hVar.d;
+                    if (gVar != null) {
+                        gVar.b(true);
                         return;
                     }
                     return;
@@ -52,9 +52,9 @@ public final class g extends t {
                 break;
             case -124479363:
                 if (str.equals(MediaIntentReceiver.ACTION_DISCONNECT)) {
-                    n5.h hVar5 = hVar.d;
-                    if (hVar5 != null) {
-                        hVar5.b(false);
+                    n5.g gVar2 = hVar.d;
+                    if (gVar2 != null) {
+                        gVar2.b(false);
                         return;
                     }
                     return;
@@ -63,16 +63,16 @@ public final class g extends t {
             case 1362116196:
                 if (str.equals(MediaIntentReceiver.ACTION_FORWARD)) {
                     long j11 = hVar.e.c;
-                    o5.h hVar6 = hVar.n;
-                    if (hVar6 == null) {
+                    o5.h hVar4 = hVar.n;
+                    if (hVar4 == null) {
                         return;
                     }
-                    long min2 = Math.min(hVar6.g(), Math.max(0L, hVar6.a() + j11));
-                    o5.h hVar7 = hVar.n;
-                    if (hVar7 == null) {
+                    long min2 = Math.min(hVar4.g(), Math.max(0L, hVar4.a() + j11));
+                    o5.h hVar5 = hVar.n;
+                    if (hVar5 == null) {
                         return;
                     }
-                    hVar7.q(new q(min2));
+                    hVar5.q(new p(min2));
                     return;
                 }
                 break;
@@ -122,7 +122,7 @@ public final class g extends t {
         if (hVar == null) {
             return;
         }
-        hVar.q(new q(j10));
+        hVar.q(new p(j10));
     }
 
     @Override // android.support.v4.media.session.t

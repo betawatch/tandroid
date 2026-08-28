@@ -1,6 +1,6 @@
 package o1;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class k {
     public double a;
@@ -38,59 +38,59 @@ public final class k {
         this.c = false;
     }
 
-    public final e c(double d, double d10, long j10) {
+    public final e c(double d, double d9, long j10) {
         double sin;
         double cos;
         if (!this.c) {
             if (this.i == Double.MAX_VALUE) {
                 throw new IllegalStateException("Error: Final position of the spring must be set before the animation starts");
             }
-            double d11 = this.b;
-            if (d11 > 1.0d) {
-                double d12 = this.a;
-                this.f = (Math.sqrt((d11 * d11) - 1.0d) * d12) + ((-d11) * d12);
-                double d13 = this.b;
-                double d14 = this.a;
-                this.g = ((-d13) * d14) - (Math.sqrt((d13 * d13) - 1.0d) * d14);
-            } else if (d11 >= 0.0d && d11 < 1.0d) {
-                this.h = Math.sqrt(1.0d - (d11 * d11)) * this.a;
+            double d10 = this.b;
+            if (d10 > 1.0d) {
+                double d11 = this.a;
+                this.f = (Math.sqrt((d10 * d10) - 1.0d) * d11) + ((-d10) * d11);
+                double d12 = this.b;
+                double d13 = this.a;
+                this.g = ((-d12) * d13) - (Math.sqrt((d12 * d12) - 1.0d) * d13);
+            } else if (d10 >= 0.0d && d10 < 1.0d) {
+                this.h = Math.sqrt(1.0d - (d10 * d10)) * this.a;
             }
             this.c = true;
         }
-        double d15 = j10 / 1000.0d;
-        double d16 = d - this.i;
-        double d17 = this.b;
-        if (d17 > 1.0d) {
-            double d18 = this.g;
-            double d19 = ((d18 * d16) - d10) / (d18 - this.f);
-            double d20 = d16 - d19;
-            sin = (Math.pow(2.718281828459045d, this.f * d15) * d19) + (Math.pow(2.718281828459045d, d18 * d15) * d20);
-            double d21 = this.g;
-            double pow = Math.pow(2.718281828459045d, d21 * d15) * d20 * d21;
-            double d22 = this.f;
-            cos = (Math.pow(2.718281828459045d, d22 * d15) * d19 * d22) + pow;
-        } else if (d17 == 1.0d) {
-            double d23 = this.a;
-            double d24 = (d23 * d16) + d10;
-            double d25 = (d24 * d15) + d16;
-            double pow2 = Math.pow(2.718281828459045d, (-d23) * d15) * d25;
-            double pow3 = Math.pow(2.718281828459045d, (-this.a) * d15) * d25;
-            double d26 = -this.a;
-            cos = (Math.pow(2.718281828459045d, d26 * d15) * d24) + (pow3 * d26);
+        double d14 = j10 / 1000.0d;
+        double d15 = d - this.i;
+        double d16 = this.b;
+        if (d16 > 1.0d) {
+            double d17 = this.g;
+            double d18 = ((d17 * d15) - d9) / (d17 - this.f);
+            double d19 = d15 - d18;
+            sin = (Math.pow(2.718281828459045d, this.f * d14) * d18) + (Math.pow(2.718281828459045d, d17 * d14) * d19);
+            double d20 = this.g;
+            double pow = Math.pow(2.718281828459045d, d20 * d14) * d19 * d20;
+            double d21 = this.f;
+            cos = (Math.pow(2.718281828459045d, d21 * d14) * d18 * d21) + pow;
+        } else if (d16 == 1.0d) {
+            double d22 = this.a;
+            double d23 = (d22 * d15) + d9;
+            double d24 = (d23 * d14) + d15;
+            double pow2 = Math.pow(2.718281828459045d, (-d22) * d14) * d24;
+            double pow3 = Math.pow(2.718281828459045d, (-this.a) * d14) * d24;
+            double d25 = -this.a;
+            cos = (Math.pow(2.718281828459045d, d25 * d14) * d23) + (pow3 * d25);
             sin = pow2;
         } else {
-            double d27 = 1.0d / this.h;
-            double d28 = this.a;
-            double d29 = ((d17 * d28 * d16) + d10) * d27;
-            sin = ((Math.sin(this.h * d15) * d29) + (Math.cos(this.h * d15) * d16)) * Math.pow(2.718281828459045d, (-d17) * d28 * d15);
-            double d30 = this.a;
-            double d31 = this.b;
-            double d32 = (-d30) * sin * d31;
-            double pow4 = Math.pow(2.718281828459045d, (-d31) * d30 * d15);
+            double d26 = 1.0d / this.h;
+            double d27 = this.a;
+            double d28 = ((d16 * d27 * d15) + d9) * d26;
+            sin = ((Math.sin(this.h * d14) * d28) + (Math.cos(this.h * d14) * d15)) * Math.pow(2.718281828459045d, (-d16) * d27 * d14);
+            double d29 = this.a;
+            double d30 = this.b;
+            double d31 = (-d29) * sin * d30;
+            double pow4 = Math.pow(2.718281828459045d, (-d30) * d29 * d14);
+            double d32 = this.h;
+            double sin2 = Math.sin(d32 * d14) * (-d32) * d15;
             double d33 = this.h;
-            double sin2 = Math.sin(d33 * d15) * (-d33) * d16;
-            double d34 = this.h;
-            cos = (((Math.cos(d34 * d15) * d29 * d34) + sin2) * pow4) + d32;
+            cos = (((Math.cos(d33 * d14) * d28 * d33) + sin2) * pow4) + d31;
         }
         float f10 = (float) (sin + this.i);
         e eVar = this.j;

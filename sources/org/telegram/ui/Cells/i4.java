@@ -1,29 +1,27 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class i4 extends TextView {
-    public boolean a;
+public final class i4 {
+    public ArrayList a;
+    public ArrayList b;
+    public HashMap c;
+    public int d;
+    public int e;
+    public int f;
+    public float g;
+    public int h;
+    public float i;
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.a) {
-            canvas.drawLine(0.0f, getHeight() - 1, getWidth(), getHeight() - 1, org.telegram.ui.ActionBar.g6.k0);
+    public final float a(float[] fArr, int i9, int i10) {
+        float f10 = 0.0f;
+        while (i9 < i10) {
+            f10 += fArr[i9];
+            i9++;
         }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(48.0f) + 1);
-    }
-
-    public void setNeedDivider(boolean z10) {
-        this.a = z10;
+        return this.h / f10;
     }
 }

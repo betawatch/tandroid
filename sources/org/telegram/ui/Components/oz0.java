@@ -1,42 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.style.ReplacementSpan;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class oz0 extends FrameLayout {
-    public static final /* synthetic */ int e = 0;
-    public TextView a;
-    public nz0 b;
-    public TLRPC.TL_help_termsOfService c;
-    public int d;
+public final class oz0 extends ReplacementSpan {
+    public static final /* synthetic */ int f = 0;
+    public ImageReceiver a;
+    public int b;
+    public int c;
+    public final boolean d;
+    public final int e;
 
-    public final void a() {
-        nz0 nz0Var = this.b;
-        int i10 = this.d;
-        org.telegram.ui.ga0 ga0Var = (org.telegram.ui.ga0) nz0Var;
-        ga0Var.getClass();
-        UserConfig.getInstance(i10).unacceptedTermsOfService = null;
-        UserConfig.getInstance(i10).saveConfig(false);
-        LaunchActivity launchActivity = ga0Var.a;
-        ArrayList arrayList = launchActivity.Z;
-        if (!arrayList.isEmpty()) {
-            ((org.telegram.ui.ActionBar.n2) i0.a.i(1, arrayList)).onResume();
-        }
-        launchActivity.y0.animate().alpha(0.0f).setDuration(150L).setInterpolator(AndroidUtilities.accelerateInterpolator).withEndAction(new org.telegram.ui.r00(ga0Var, 15)).start();
-        TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();
-        tL_help_acceptTermsOfService.id = this.c.id;
-        ConnectionsManager.getInstance(this.d).sendRequest(tL_help_acceptTermsOfService, new jh.m5(13));
+    public oz0(View view, Bitmap bitmap, int i9, int i10, int i11, int i12) {
+        this.b = i9;
+        this.c = i10;
+        ImageReceiver imageReceiver = new ImageReceiver(view);
+        this.a = imageReceiver;
+        imageReceiver.setInvalidateAll(true);
+        imageReceiver.setImageBitmap(bitmap);
+        imageReceiver.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN));
+        this.e = i12;
+        this.d = true;
     }
 
-    public void setDelegate(nz0 nz0Var) {
-        this.b = nz0Var;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i9, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        int i14 = this.b;
+        int i15 = this.c;
+        ImageReceiver imageReceiver = this.a;
+        canvas.save();
+        if (this.d) {
+            imageReceiver.setImageCoords((int) f10, i12 - (i15 - this.e), i14, i15);
+        } else {
+            imageReceiver.setImageCoords((int) f10, j3.r0.d(org.telegram.messenger.l0.B(4.0f, i13, i11), i15, 2, i11), i14, i15);
+        }
+        imageReceiver.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i9, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        int i11 = this.c;
+        if (fontMetricsInt != null) {
+            if (this.d) {
+                int i12 = this.e;
+                int i13 = -(i11 - i12);
+                fontMetricsInt.ascent = i13;
+                fontMetricsInt.top = i13;
+                fontMetricsInt.descent = i12;
+                fontMetricsInt.bottom = i12;
+            } else {
+                int dp = ((-i11) / 2) - AndroidUtilities.dp(4.0f);
+                fontMetricsInt.ascent = dp;
+                fontMetricsInt.top = dp;
+                int dp2 = (i11 - (i11 / 2)) - AndroidUtilities.dp(4.0f);
+                fontMetricsInt.descent = dp2;
+                fontMetricsInt.bottom = dp2;
+            }
+        }
+        return this.b;
     }
 }

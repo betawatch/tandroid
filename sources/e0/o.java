@@ -3,7 +3,7 @@ package e0;
 import android.app.Notification;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class o extends b0 {
     public final /* synthetic */ int e;
@@ -30,10 +30,10 @@ public final class o extends b0 {
                 }
                 ArrayList arrayList = (ArrayList) this.f;
                 int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
+                int i9 = 0;
+                while (i9 < size) {
+                    Object obj = arrayList.get(i9);
+                    i9++;
                     bigContentTitle.addLine((CharSequence) obj);
                 }
                 break;
@@ -69,9 +69,9 @@ public final class o extends b0 {
         this.d = true;
     }
 
-    public o(int i10) {
-        this.e = i10;
-        switch (i10) {
+    public o(int i9) {
+        this.e = i9;
+        switch (i9) {
             case 1:
                 this.f = new ArrayList();
                 break;

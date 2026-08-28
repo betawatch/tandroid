@@ -1,65 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import org.telegram.ui.WallpapersListActivity;
+import org.telegram.ui.bi1;
+import org.telegram.ui.oc1;
+import org.telegram.ui.zh1;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class xi implements TextWatcher {
-    public final /* synthetic */ lj a;
+public final class xi extends org.telegram.ui.Cells.za {
+    public final /* synthetic */ int w;
+    public final /* synthetic */ vk0 x;
 
-    public xi(lj ljVar) {
-        this.a = ljVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ xi(vk0 vk0Var, Context context, int i9) {
+        super(context, 5);
+        this.w = i9;
+        this.x = vk0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int currentTop;
-        String obj = editable.toString();
-        if (obj.isEmpty()) {
-            f2.q0 adapter = this.a.s.getAdapter();
-            lj ljVar = this.a;
-            if (adapter != ljVar.A) {
-                currentTop = ljVar.getCurrentTop();
-                this.a.C.setText(LocaleController.getString(R.string.NoContacts));
-                this.a.C.c();
-                lj ljVar2 = this.a;
-                ljVar2.s.setAdapter(ljVar2.A);
-                this.a.A.l();
-                if (currentTop > 0) {
-                    this.a.v.h1(0, -currentTop);
+    @Override // org.telegram.ui.Cells.za
+    public final void a(int i9, Object obj) {
+        switch (this.w) {
+            case 0:
+                q0.a aVar = ((yi) ((ra) this.x).f).x;
+                if (aVar != null) {
+                    aVar.accept(obj);
+                    break;
                 }
-            }
-        } else {
-            az azVar = this.a.C;
-            if (azVar != null) {
-                azVar.setText(LocaleController.getString(R.string.NoResult));
-            }
-        }
-        hj hjVar = this.a.B;
-        if (hjVar != null) {
-            if (hjVar.f != null) {
-                Utilities.searchQueue.cancelRunnable(hjVar.f);
-                hjVar.f = null;
-            }
-            int i10 = hjVar.h + 1;
-            hjVar.h = i10;
-            DispatchQueue dispatchQueue = Utilities.searchQueue;
-            fj fjVar = new fj(hjVar, obj, i10, 0);
-            hjVar.f = fjVar;
-            dispatchQueue.postRunnable(fjVar, 300L);
+                break;
+            case 1:
+                WallpapersListActivity.q0(((zh1) this.x).d, this, obj, i9);
+                break;
+            default:
+                ((bi1) this.x).A.presentFragment(new oc1(obj, null, true));
+                break;
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Cells.za
+    public boolean b(Object obj, int i9) {
+        switch (this.w) {
+            case 1:
+                return WallpapersListActivity.r0(((zh1) this.x).d, this, obj, i9);
+            default:
+                return super.b(obj, i9);
+        }
     }
 
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xi(ra raVar, Context context) {
+        super(context, 1);
+        this.w = 0;
+        this.x = raVar;
     }
 }

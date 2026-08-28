@@ -1,50 +1,23 @@
 package j4;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import h3.j2;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public class a0 {
-    public final Object a;
-    public final int b;
-    public final int c;
-    public final long d;
-    public final int e;
+public interface a0 extends d1 {
+    void g();
 
-    public a0(Object obj, long j10) {
-        this(-1, -1, -1, j10, obj);
-    }
+    long i(long j10);
 
-    public final boolean a() {
-        return this.b != -1;
-    }
+    void k(long j10);
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof a0)) {
-            return false;
-        }
-        a0 a0Var = (a0) obj;
-        return this.a.equals(a0Var.a) && this.b == a0Var.b && this.c == a0Var.c && this.d == a0Var.d && this.e == a0Var.e;
-    }
+    long o();
 
-    public final int hashCode() {
-        return ((((((((this.a.hashCode() + 527) * 31) + this.b) * 31) + this.c) * 31) + ((int) this.d)) * 31) + this.e;
-    }
+    j1 q();
 
-    public a0(a0 a0Var) {
-        this.a = a0Var.a;
-        this.b = a0Var.b;
-        this.c = a0Var.c;
-        this.d = a0Var.d;
-        this.e = a0Var.e;
-    }
+    long u(long j10, j2 j2Var);
 
-    public a0(int i10, int i11, int i12, long j10, Object obj) {
-        this.a = obj;
-        this.b = i10;
-        this.c = i11;
-        this.d = j10;
-        this.e = i12;
-    }
+    void w(z zVar, long j10);
+
+    long x(b5.t[] tVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j10);
 }

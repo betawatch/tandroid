@@ -1,117 +1,114 @@
 package gh;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import hh.m7;
-import java.util.HashSet;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.b70;
-import org.telegram.ui.Components.bz;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.h00;
-import org.telegram.ui.Components.qa;
-import org.telegram.ui.Components.yk0;
-import org.telegram.ui.Components.zk0;
+import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class y3 extends qa implements NotificationCenter.NotificationCenterDelegate {
-    public final int T;
-    public final m7 U;
-    public final HashSet V;
-    public final bz W;
-    public final lh.d X;
-    public b70 Y;
-    public b51 Z;
+public final class y3 extends Drawable {
+    public final Paint a;
+    public final LinearGradient[] b;
+    public final Matrix c;
+    public final org.telegram.ui.Components.y5 d;
+    public final Path e;
+    public final bb f;
+    public int g;
+    public int h;
 
-    public y3(org.telegram.ui.ActionBar.n2 n2Var, long j10, int i10, q2 q2Var) {
-        super(n2Var);
-        this.V = new HashSet();
-        this.H = false;
-        this.G = AndroidUtilities.dp(12.0f);
-        fixNavigationBar();
-        K();
-        this.T = i10;
-        this.U = new m7(this.currentAccount, j10, true);
-        this.e.setActionBarMenuOnItemClick(new v3(this, this.e.n().a(1, R.drawable.ic_ab_other), j10));
-        FrameLayout frameLayout = new FrameLayout(getContext());
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.h5, this.resourcesProvider));
-        int i11 = this.backgroundPaddingLeft;
-        frameLayout.setPadding(i11, 0, i11, 0);
-        this.containerView.addView(frameLayout, h7.z5.d(-1, -2.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
-        View view = new View(getContext());
-        view.setBackgroundColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.d7, this.resourcesProvider));
-        frameLayout.addView(view, h7.z5.a(-1.0f, 1.0f / AndroidUtilities.density, 55));
-        lh.d dVar = new lh.d(getContext(), this.resourcesProvider, true);
-        this.X = dVar;
-        dVar.g(LocaleController.getString(R.string.Gift2CollectionAddGiftsButton), false, true);
-        dVar.setEnabled(false);
-        dVar.setOnClickListener(new ag.q0(9, this, q2Var));
-        frameLayout.addView(dVar, h7.z5.d(-1, 48.0f, 119, 10.0f, (1.0f / AndroidUtilities.density) + 10.0f, 10.0f, 10.0f));
-        getContext();
-        bz bzVar = new bz(3, false);
-        this.W = bzVar;
-        bzVar.O = new w3(this);
-        this.d.setPadding(AndroidUtilities.dp(9.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(9.0f) + this.backgroundPaddingLeft, 0);
-        this.d.setSelectorType(9);
-        this.d.setSelectorDrawableColor(0);
-        this.d.setLayoutManager(bzVar);
-        this.d.setOnItemClickListener(new ag.p0(this, 4));
-        this.d.j(new x3(this));
-        f2.l lVar = new f2.l();
-        lVar.m = false;
-        lVar.C = false;
-        lVar.o(er.h);
-        lVar.n(350L);
-        this.d.setItemAnimator(lVar);
-        this.Z.N(true);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starUserGiftsLoaded);
+    public y3() {
+        Paint paint = new Paint(1);
+        Paint paint2 = new Paint(1);
+        this.a = new Paint(1);
+        this.b = new LinearGradient[2];
+        this.c = new Matrix();
+        this.d = new org.telegram.ui.Components.y5(1.0f, new fh.o1(this, 11), 0L, 420L, gr.h);
+        this.e = new Path();
+        this.f = new bb(1, 45);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setColor(117440511);
+        paint.setStrokeWidth(AndroidUtilities.dpf2(1.0f));
+        paint2.setStyle(style);
+        paint2.setColor(301989887);
+        paint2.setStrokeWidth(AndroidUtilities.dpf2(0.6666667f));
     }
 
-    public final boolean S() {
-        zk0 zk0Var = this.d;
-        if (zk0Var != null && zk0Var.C) {
-            for (int i10 = 0; i10 < zk0Var.getChildCount(); i10++) {
-                if (zk0Var.getChildAt(i10) instanceof h00) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        b51 b51Var;
-        if (i10 != NotificationCenter.starUserGiftsLoaded || (b51Var = this.Z) == null) {
+    public final void a(int i9, int i10) {
+        if (this.g == i9 && this.h == i10) {
             return;
         }
-        b51Var.N(true);
-        if (S()) {
-            this.U.a();
+        LinearGradient[] linearGradientArr = this.b;
+        linearGradientArr[0] = linearGradientArr[1];
+        this.g = i9;
+        this.h = i10;
+        linearGradientArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i9, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.d.d(0.0f, true);
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        AndroidUtilities.rectTmp.set(getBounds());
+        float dp = AndroidUtilities.dp(24.0f);
+        int i9 = 0;
+        float d = this.d.d(1.0f, false);
+        while (true) {
+            LinearGradient[] linearGradientArr = this.b;
+            if (i9 >= linearGradientArr.length) {
+                Path path = this.e;
+                path.rewind();
+                RectF rectF = AndroidUtilities.rectTmp;
+                path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
+                canvas.save();
+                canvas.clipPath(path);
+                bb bbVar = this.f;
+                bbVar.g(rectF);
+                bbVar.h = 30.0f;
+                bbVar.d();
+                bbVar.a(canvas, org.telegram.ui.ActionBar.f6.l1(0.6f, -1));
+                invalidateSelf();
+                canvas.restore();
+                AndroidUtilities.drawStroke(canvas, rectF, dp);
+                return;
+            }
+            if (linearGradientArr[i9] != null) {
+                float pow = (float) Math.pow(1.0f - Math.abs(i9 - d), 0.5d);
+                if (pow > 0.0f) {
+                    Matrix matrix = this.c;
+                    matrix.reset();
+                    RectF rectF2 = AndroidUtilities.rectTmp;
+                    matrix.postScale(rectF2.width() / 100.0f, 1.0f);
+                    linearGradientArr[i9].setLocalMatrix(matrix);
+                    LinearGradient linearGradient = linearGradientArr[i9];
+                    Paint paint = this.a;
+                    paint.setShader(linearGradient);
+                    paint.setAlpha((int) (pow * 255.0f));
+                    canvas.drawRoundRect(rectF2, dp, dp, paint);
+                }
+            }
+            i9++;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starUserGiftsLoaded);
-        super.dismiss();
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    @Override // org.telegram.ui.Components.qa
-    public final yk0 w(zk0 zk0Var) {
-        b51 b51Var = new b51(zk0Var, getContext(), this.currentAccount, 0, false, new ch.c(this, 10), this.resourcesProvider);
-        this.Z = b51Var;
-        b51Var.r = false;
-        return b51Var;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i9) {
     }
 
-    @Override // org.telegram.ui.Components.qa
-    public final CharSequence z() {
-        return LocaleController.getString(R.string.Gift2CollectionAddGiftsTitle);
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

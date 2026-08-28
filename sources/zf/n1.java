@@ -1,64 +1,89 @@
 package zf;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.widget.TextView;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import g7.e6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.rl;
-import org.telegram.ui.ActionBar.w5;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class n1 extends TextView {
-    public boolean a;
-    public Drawable b;
+public final class n1 extends FrameLayout {
+    public float a;
+    public final m1 b;
+    public final ImageReceiver c;
+    public final ImageReceiver d;
+    public boolean e;
+    public boolean f;
+    public float h;
+    public float n;
+    public TLRPC.Document r;
+    public boolean s;
+    public final /* synthetic */ s0 v;
 
-    public n1(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n1(s0 s0Var, Context context) {
         super(context);
-        setTextColor(-1);
-        setTextSize(1, 14.0f);
-        setCurrent(false);
-        setEllipsize(TextUtils.TruncateAt.END);
-        setSingleLine();
+        this.v = s0Var;
+        this.f = true;
+        m1 m1Var = new m1(this, context);
+        this.b = m1Var;
+        ImageReceiver imageReceiver = new ImageReceiver(m1Var);
+        this.c = imageReceiver;
+        ImageReceiver imageReceiver2 = new ImageReceiver(m1Var);
+        this.d = imageReceiver2;
+        imageReceiver.setAllowStartAnimation(false);
+        imageReceiver2.setAllowStartAnimation(false);
+        setClipChildren(false);
+        addView(m1Var, e6.e(-1, -2, 21));
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        canvas.translate(0.0f, AndroidUtilities.dp(-1.0f));
-        super.onDraw(canvas);
-        canvas.restore();
-        if (this.a) {
-            int x8 = rl.x(16.0f, getHeight(), 2);
-            if (LocaleController.isRTL) {
-                this.b.setBounds(AndroidUtilities.dp(7.0f), x8, AndroidUtilities.dp(23.0f), AndroidUtilities.dp(16.0f) + x8);
-            } else {
-                this.b.setBounds(getWidth() - AndroidUtilities.dp(23.0f), x8, getWidth() - AndroidUtilities.dp(7.0f), AndroidUtilities.dp(16.0f) + x8);
+    public final void a(boolean z10, boolean z11, boolean z12) {
+        boolean z13 = this.e;
+        m1 m1Var = this.b;
+        if (z13 != z11) {
+            this.e = z11;
+            if (!z12) {
+                this.h = z11 ? 1.0f : 0.0f;
             }
-            this.b.draw(canvas);
+            m1Var.invalidate();
+        }
+        if (this.f != z10) {
+            this.f = z10;
+            if (!z12) {
+                this.n = z10 ? 1.0f : 0.0f;
+            }
+            m1Var.invalidate();
         }
     }
 
-    public void setCurrent(boolean z10) {
-        this.a = z10;
-        if (z10) {
-            setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 27.0f : 12.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(LocaleController.isRTL ? 12.0f : 27.0f), AndroidUtilities.dp(6.0f));
-            setBackground(w5.d(new float[]{AndroidUtilities.dp(32.0f)}, 0, w5.b(1090519039)));
-        } else {
-            setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(14.0f));
-            setBackground(w5.d(new float[]{0.0f}, 0, w5.b(-14145495)));
-        }
-        if (this.a && this.b == null) {
-            Drawable drawable = getContext().getDrawable(R.drawable.photo_expand);
-            this.b = drawable;
-            drawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        }
-        invalidate();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.c.onAttachedToWindow();
+        this.d.onAttachedToWindow();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.c.onDetachedFromWindow();
+        this.d.onDetachedFromWindow();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        int i11 = (int) (this.v.g3 * 0.6f);
+        m1 m1Var = this.b;
+        ViewGroup.LayoutParams layoutParams = m1Var.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams2 = m1Var.getLayoutParams();
+        int dp = i11 - AndroidUtilities.dp(16.0f);
+        layoutParams2.height = dp;
+        layoutParams.width = dp;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (i11 * 0.7f), TLObject.FLAG_30));
     }
 }

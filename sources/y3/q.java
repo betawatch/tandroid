@@ -6,11 +6,11 @@ import android.media.MediaCryptoException;
 import android.media.MediaFormat;
 import android.os.Bundle;
 import android.os.SystemClock;
-import d5.e0;
-import d5.g0;
-import f9.y;
+import d5.d0;
+import d5.f0;
 import h3.t0;
 import h3.u0;
+import j3.r0;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayDeque;
@@ -19,20 +19,21 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
+import m5.c0;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.pa;
+import org.telegram.ui.Cells.j2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class q extends h3.e {
     public static final byte[] D0 = {0, 0, 1, 103, 66, -64, 11, -38, 37, -112, 0, 0, 1, 104, -50, 15, 19, 32, 0, 0, 1, 101, -120, -124, 13, -50, 113, 24, -96, 0, 47, -65, 28, 49, -61, 39, 93, 120};
     public t0 A;
     public long A0;
-    public l3.f B;
+    public l3.e B;
     public long B0;
-    public l3.f C;
+    public l3.e C;
     public int C0;
     public MediaCrypto D;
     public boolean E;
@@ -77,7 +78,7 @@ public abstract class q extends h3.e {
     public boolean k0;
     public boolean l0;
     public int m0;
-    public final e0 n;
+    public final d0 n;
     public int n0;
     public int o0;
     public boolean p0;
@@ -98,8 +99,8 @@ public abstract class q extends h3.e {
     public h3.n y0;
     public k3.f z0;
 
-    public q(int i10, j jVar, float f10) {
-        super(i10);
+    public q(int i9, j jVar, float f10) {
+        super(i9);
         this.a = jVar;
         this.b = r.b;
         this.c = f10;
@@ -109,10 +110,10 @@ public abstract class q extends h3.e {
         g gVar = new g(2, 0);
         gVar.s = 32;
         this.h = gVar;
-        e0 e0Var = new e0();
-        e0Var.c = new long[10];
-        e0Var.d = new Object[10];
-        this.n = e0Var;
+        d0 d0Var = new d0();
+        d0Var.c = new long[10];
+        d0Var.d = new Object[10];
+        this.n = d0Var;
         this.r = new ArrayList();
         this.s = new MediaCodec.BufferInfo();
         this.G = 1.0f;
@@ -123,7 +124,7 @@ public abstract class q extends h3.e {
         this.x = new long[10];
         this.A0 = -9223372036854775807L;
         J(-9223372036854775807L);
-        gVar.b(0);
+        gVar.c(0);
         gVar.b.order(ByteOrder.nativeOrder());
         this.M = -1.0f;
         this.Q = 0;
@@ -140,15 +141,15 @@ public abstract class q extends h3.e {
     public abstract void A();
 
     public final void B() {
-        int i10 = this.o0;
-        if (i10 == 1) {
+        int i9 = this.o0;
+        if (i9 == 1) {
             h();
             return;
         }
-        if (i10 == 2) {
+        if (i9 == 2) {
             h();
             O();
-        } else if (i10 != 3) {
+        } else if (i9 != 3) {
             this.v0 = true;
             F();
         } else {
@@ -157,13 +158,13 @@ public abstract class q extends h3.e {
         }
     }
 
-    public abstract boolean C(long j10, long j11, k kVar, ByteBuffer byteBuffer, int i10, int i11, int i12, long j12, boolean z10, boolean z11, t0 t0Var);
+    public abstract boolean C(long j10, long j11, k kVar, ByteBuffer byteBuffer, int i9, int i10, int i11, long j12, boolean z10, boolean z11, t0 t0Var);
 
-    public final boolean D(int i10) {
+    public final boolean D(int i9) {
         u0 formatHolder = getFormatHolder();
         k3.i iVar = this.d;
         iVar.clear();
-        int readSource = readSource(formatHolder, iVar, i10 | 4);
+        int readSource = readSource(formatHolder, iVar, i9 | 4);
         if (readSource == -5) {
             w(formatHolder);
             return true;
@@ -257,9 +258,9 @@ public abstract class q extends h3.e {
         this.E = false;
     }
 
-    public final void I(l3.f fVar) {
-        i0.a.D(this.B, fVar);
-        this.B = fVar;
+    public final void I(l3.e eVar) {
+        r0.D(this.B, eVar);
+        this.B = eVar;
     }
 
     public final void J(long j10) {
@@ -280,7 +281,7 @@ public abstract class q extends h3.e {
     public abstract int M(r rVar, t0 t0Var);
 
     public final boolean N(t0 t0Var) {
-        if (g0.a >= 23 && this.I != null && this.o0 != 3 && getState() != 0) {
+        if (f0.a >= 23 && this.I != null && this.o0 != 3 && getState() != 0) {
             float l10 = l(this.H, getStreamFormats());
             float f10 = this.M;
             if (f10 != l10) {
@@ -313,18 +314,18 @@ public abstract class q extends h3.e {
             I(this.C);
             this.n0 = 0;
             this.o0 = 0;
-        } catch (MediaCryptoException e9) {
-            throw createRendererException(e9, this.y, 6006);
+        } catch (MediaCryptoException e10) {
+            throw createRendererException(e10, this.y, 6006);
         }
     }
 
     public final void P(long j10) {
         Object obj;
-        e0 e0Var = this.n;
-        synchronized (e0Var) {
+        d0 d0Var = this.n;
+        synchronized (d0Var) {
             obj = null;
-            while (e0Var.b > 0 && j10 - ((long[]) e0Var.c)[e0Var.a] >= 0) {
-                obj = e0Var.f();
+            while (d0Var.b > 0 && j10 - ((long[]) d0Var.c)[d0Var.a] >= 0) {
+                obj = d0Var.f();
             }
         }
         t0 t0Var = (t0) obj;
@@ -344,10 +345,10 @@ public abstract class q extends h3.e {
         g gVar;
         d5.a.i(!this.v0);
         g gVar2 = this.h;
-        int i10 = gVar2.r;
-        if (i10 > 0) {
+        int i9 = gVar2.r;
+        if (i9 > 0) {
             gVar = gVar2;
-            if (!C(j10, j11, null, gVar2.b, this.e0, 0, i10, gVar2.d, gVar2.isDecodeOnly(), gVar2.isEndOfStream(), this.A)) {
+            if (!C(j10, j11, null, gVar2.b, this.e0, 0, i9, gVar2.d, gVar2.isDecodeOnly(), gVar2.isEndOfStream(), this.A)) {
                 return false;
             }
             z(gVar.n);
@@ -450,9 +451,9 @@ public abstract class q extends h3.e {
         boolean C;
         int d;
         boolean z12;
-        int i10 = this.e0;
+        int i9 = this.e0;
         MediaCodec.BufferInfo bufferInfo2 = this.s;
-        if (i10 < 0) {
+        if (i9 < 0) {
             if (this.V && this.q0) {
                 try {
                     d = this.I.d(bufferInfo2);
@@ -511,18 +512,18 @@ public abstract class q extends h3.e {
             long j13 = bufferInfo2.presentationTimeUs;
             ArrayList arrayList = this.r;
             int size = arrayList.size();
-            int i11 = 0;
+            int i10 = 0;
             while (true) {
-                if (i11 >= size) {
+                if (i10 >= size) {
                     z12 = false;
                     break;
                 }
-                if (((Long) arrayList.get(i11)).longValue() == j13) {
-                    arrayList.remove(i11);
+                if (((Long) arrayList.get(i10)).longValue() == j13) {
+                    arrayList.remove(i10);
                     z12 = true;
                     break;
                 }
-                i11++;
+                i10++;
             }
             this.g0 = z12;
             long j14 = this.t0;
@@ -602,8 +603,8 @@ public abstract class q extends h3.e {
                 return true;
             }
             if (this.m0 == 1) {
-                for (int i10 = 0; i10 < this.J.D.size(); i10++) {
-                    this.e.b.put((byte[]) this.J.D.get(i10));
+                for (int i9 = 0; i9 < this.J.D.size(); i9++) {
+                    this.e.b.put((byte[]) this.J.D.get(i9));
                 }
                 this.m0 = 2;
             }
@@ -643,31 +644,31 @@ public abstract class q extends h3.e {
                             if (this.R && !flag) {
                                 ByteBuffer byteBuffer = this.e.b;
                                 int position2 = byteBuffer.position();
+                                int i10 = 0;
                                 int i11 = 0;
-                                int i12 = 0;
                                 while (true) {
-                                    int i13 = i11 + 1;
-                                    if (i13 >= position2) {
+                                    int i12 = i10 + 1;
+                                    if (i12 >= position2) {
                                         byteBuffer.clear();
                                         break;
                                     }
-                                    int i14 = byteBuffer.get(i11) & 255;
-                                    if (i12 == 3) {
-                                        if (i14 == 1 && (byteBuffer.get(i13) & 31) == 7) {
+                                    int i13 = byteBuffer.get(i10) & 255;
+                                    if (i11 == 3) {
+                                        if (i13 == 1 && (byteBuffer.get(i12) & 31) == 7) {
                                             ByteBuffer duplicate = byteBuffer.duplicate();
-                                            duplicate.position(i11 - 3);
+                                            duplicate.position(i10 - 3);
                                             duplicate.limit(position2);
                                             byteBuffer.position(0);
                                             byteBuffer.put(duplicate);
                                             break;
                                         }
-                                    } else if (i14 == 0) {
-                                        i12++;
+                                    } else if (i13 == 0) {
+                                        i11++;
                                     }
-                                    if (i14 != 0) {
-                                        i12 = 0;
+                                    if (i13 != 0) {
+                                        i11 = 0;
                                     }
-                                    i11 = i13;
+                                    i10 = i12;
                                 }
                                 if (this.e.b.position() != 0) {
                                     this.R = false;
@@ -684,12 +685,12 @@ public abstract class q extends h3.e {
                                 if (!hVar.c) {
                                     ByteBuffer byteBuffer2 = iVar.b;
                                     byteBuffer2.getClass();
-                                    int i15 = 0;
-                                    for (int i16 = 0; i16 < 4; i16++) {
-                                        i15 = (i15 << 8) | (byteBuffer2.get(i16) & 255);
+                                    int i14 = 0;
+                                    for (int i15 = 0; i15 < 4; i15++) {
+                                        i14 = (i14 << 8) | (byteBuffer2.get(i15) & 255);
                                     }
-                                    int i17 = j3.b.i(i15);
-                                    if (i17 == -1) {
+                                    int i16 = j3.b.i(i14);
+                                    if (i16 == -1) {
                                         hVar.c = true;
                                         hVar.b = 0L;
                                         hVar.a = iVar.d;
@@ -698,7 +699,7 @@ public abstract class q extends h3.e {
                                     } else {
                                         z10 = flag;
                                         long max = hVar.a + Math.max(0L, ((hVar.b - 529) * 1000000) / t0Var.P);
-                                        hVar.b += i17;
+                                        hVar.b += i16;
                                         j11 = max;
                                         long j12 = this.s0;
                                         h hVar2 = this.b0;
@@ -728,22 +729,22 @@ public abstract class q extends h3.e {
                                 qVar.r.add(Long.valueOf(j10));
                             }
                             if (qVar.w0) {
-                                e0 e0Var = qVar.n;
+                                d0 d0Var = qVar.n;
                                 t0 t0Var3 = qVar.y;
-                                synchronized (e0Var) {
-                                    if (e0Var.b > 0) {
-                                        if (j10 <= ((long[]) e0Var.c)[((e0Var.a + r4) - 1) % ((Object[]) e0Var.d).length]) {
-                                            e0Var.b();
+                                synchronized (d0Var) {
+                                    if (d0Var.b > 0) {
+                                        if (j10 <= ((long[]) d0Var.c)[((d0Var.a + r4) - 1) % ((Object[]) d0Var.d).length]) {
+                                            d0Var.b();
                                         }
                                     }
-                                    e0Var.c();
-                                    int i18 = e0Var.a;
-                                    int i19 = e0Var.b;
-                                    Object[] objArr = (Object[]) e0Var.d;
-                                    int length = (i18 + i19) % objArr.length;
-                                    ((long[]) e0Var.c)[length] = j10;
+                                    d0Var.c();
+                                    int i17 = d0Var.a;
+                                    int i18 = d0Var.b;
+                                    Object[] objArr = (Object[]) d0Var.d;
+                                    int length = (i17 + i18) % objArr.length;
+                                    ((long[]) d0Var.c)[length] = j10;
                                     objArr[length] = t0Var3;
-                                    e0Var.b = i19 + 1;
+                                    d0Var.b = i18 + 1;
                                 }
                                 qVar.w0 = false;
                             }
@@ -765,8 +766,8 @@ public abstract class q extends h3.e {
                                 qVar.m0 = 0;
                                 qVar.z0.c++;
                                 return true;
-                            } catch (MediaCodec.CryptoException e9) {
-                                throw qVar.createRendererException(e9, qVar.y, g0.q(e9.getErrorCode()));
+                            } catch (MediaCodec.CryptoException e10) {
+                                throw qVar.createRendererException(e10, qVar.y, f0.q(e10.getErrorCode()));
                             }
                         }
                         this.e.clear();
@@ -793,12 +794,12 @@ public abstract class q extends h3.e {
                             this.e.b = null;
                             return false;
                         }
-                    } catch (MediaCodec.CryptoException e10) {
-                        throw createRendererException(e10, this.y, g0.q(e10.getErrorCode()));
+                    } catch (MediaCodec.CryptoException e11) {
+                        throw createRendererException(e11, this.y, f0.q(e11.getErrorCode()));
                     }
                 }
-            } catch (k3.h e11) {
-                t(e11);
+            } catch (k3.h e12) {
+                t(e12);
                 D(0);
                 h();
                 return true;
@@ -819,19 +820,19 @@ public abstract class q extends h3.e {
         if (this.I == null) {
             return false;
         }
-        int i10 = this.o0;
-        if (i10 == 3 || this.S || ((this.T && !this.r0) || (this.U && this.q0))) {
+        int i9 = this.o0;
+        if (i9 == 3 || this.S || ((this.T && !this.r0) || (this.U && this.q0))) {
             E();
             return true;
         }
-        if (i10 == 2) {
-            int i11 = g0.a;
-            d5.a.i(i11 >= 23);
-            if (i11 >= 23) {
+        if (i9 == 2) {
+            int i10 = f0.a;
+            d5.a.i(i10 >= 23);
+            if (i10 >= 23) {
                 try {
                     O();
-                } catch (h3.n e9) {
-                    d5.a.L("MediaCodecRenderer", "Failed to update the DRM session, releasing the codec instead.", e9);
+                } catch (h3.n e10) {
+                    d5.a.L("MediaCodecRenderer", "Failed to update the DRM session, releasing the codec instead.", e10);
                     E();
                     return true;
                 }
@@ -879,10 +880,10 @@ public abstract class q extends h3.e {
 
     public abstract ArrayList m(r rVar, t0 t0Var, boolean z10);
 
-    public final l3.k n(l3.f fVar) {
-        k3.b y10 = fVar.y();
-        if (y10 == null || (y10 instanceof l3.k)) {
-            return (l3.k) y10;
+    public final l3.j n(l3.e eVar) {
+        k3.b y10 = eVar.y();
+        if (y10 == null || (y10 instanceof l3.j)) {
+            return (l3.j) y10;
         }
         throw createRendererException(new IllegalArgumentException("Expecting FrameworkCryptoConfig but found: " + y10), this.y, 6001);
     }
@@ -900,7 +901,7 @@ public abstract class q extends h3.e {
 
     @Override // h3.e
     public void onPositionReset(long j10, boolean z10) {
-        int i10;
+        int i9;
         this.u0 = false;
         this.v0 = false;
         this.x0 = false;
@@ -911,17 +912,17 @@ public abstract class q extends h3.e {
         } else if (i()) {
             r();
         }
-        e0 e0Var = this.n;
-        synchronized (e0Var) {
-            i10 = e0Var.b;
+        d0 d0Var = this.n;
+        synchronized (d0Var) {
+            i9 = d0Var.b;
         }
-        if (i10 > 0) {
+        if (i9 > 0) {
             this.w0 = true;
         }
         this.n.b();
-        int i11 = this.C0;
-        if (i11 != 0) {
-            J(this.w[i11 - 1]);
+        int i10 = this.C0;
+        if (i10 != 0) {
+            J(this.w[i10 - 1]);
             this.A0 = this.v[this.C0 - 1];
             this.C0 = 0;
         }
@@ -935,7 +936,7 @@ public abstract class q extends h3.e {
             d();
             E();
         } finally {
-            i0.a.D(this.C, null);
+            r0.D(this.C, null);
             this.C = null;
         }
     }
@@ -948,17 +949,17 @@ public abstract class q extends h3.e {
             J(j11);
             return;
         }
-        int i10 = this.C0;
+        int i9 = this.C0;
         long[] jArr = this.w;
-        if (i10 == jArr.length) {
+        if (i9 == jArr.length) {
             d5.a.K("MediaCodecRenderer", "Too many stream changes, so dropping offset: " + jArr[this.C0 - 1]);
         } else {
-            this.C0 = i10 + 1;
+            this.C0 = i9 + 1;
         }
-        int i11 = this.C0;
-        this.v[i11 - 1] = j10;
-        jArr[i11 - 1] = j11;
-        this.x[i11 - 1] = this.s0;
+        int i10 = this.C0;
+        this.v[i10 - 1] = j10;
+        jArr[i10 - 1] = j11;
+        this.x[i10 - 1] = this.s0;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:142:0x039d, code lost:
@@ -987,27 +988,27 @@ public abstract class q extends h3.e {
         long j10;
         float f10;
         long j11;
-        int i10;
+        int i9;
         boolean z10;
         boolean z11;
         String str;
         char c10;
         String sb2;
-        l3.d dVar;
+        l3.c cVar;
         String str2 = nVar.a;
-        int i11 = g0.a;
-        float l10 = i11 < 23 ? -1.0f : l(this.H, getStreamFormats());
+        int i10 = f0.a;
+        float l10 = i10 < 23 ? -1.0f : l(this.H, getStreamFormats());
         if (l10 <= this.c) {
             l10 = -1.0f;
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        i o10 = o(nVar, this.y, mediaCrypto, l10);
-        if (i11 >= 31) {
-            o.a(o10, getPlayerId());
+        i o6 = o(nVar, this.y, mediaCrypto, l10);
+        if (i10 >= 31) {
+            o.a(o6, getPlayerId());
         }
         try {
             d5.a.c("createCodec:" + str2);
-            this.I = this.a.t1(o10);
+            this.I = this.a.G(o6);
             d5.a.q();
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
             if (nVar.d(this.y)) {
@@ -1024,38 +1025,38 @@ public abstract class q extends h3.e {
                 } else {
                     String str3 = t0Var.b;
                     String str4 = t0Var.c;
-                    int i12 = t0Var.P;
-                    int i13 = t0Var.O;
+                    int i11 = t0Var.P;
+                    int i12 = t0Var.O;
                     float f11 = t0Var.I;
-                    int i14 = t0Var.H;
+                    int i13 = t0Var.H;
                     j10 = elapsedRealtime2;
-                    int i15 = t0Var.G;
-                    l3.d dVar2 = t0Var.E;
+                    int i14 = t0Var.G;
+                    l3.c cVar2 = t0Var.E;
                     j11 = elapsedRealtime;
                     String str5 = t0Var.r;
-                    int i16 = t0Var.n;
+                    int i15 = t0Var.n;
                     f10 = l10;
-                    int i17 = t0Var.d;
-                    int i18 = t0Var.e;
-                    StringBuilder o11 = com.google.android.recaptcha.internal.a.o("id=");
-                    o11.append(t0Var.a);
-                    o11.append(", mimeType=");
-                    o11.append(t0Var.B);
-                    int i19 = -1;
-                    if (i16 != -1) {
-                        o11.append(", bitrate=");
-                        o11.append(i16);
+                    int i16 = t0Var.d;
+                    int i17 = t0Var.e;
+                    StringBuilder n10 = e2.c.n("id=");
+                    n10.append(t0Var.a);
+                    n10.append(", mimeType=");
+                    n10.append(t0Var.B);
+                    int i18 = -1;
+                    if (i15 != -1) {
+                        n10.append(", bitrate=");
+                        n10.append(i15);
                     }
                     if (str5 != null) {
-                        o11.append(", codecs=");
-                        o11.append(str5);
+                        n10.append(", codecs=");
+                        n10.append(str5);
                     }
-                    if (dVar2 != null) {
+                    if (cVar2 != null) {
                         LinkedHashSet linkedHashSet = new LinkedHashSet();
-                        int i20 = 0;
+                        int i19 = 0;
                         c10 = ',';
-                        while (i20 < dVar2.d) {
-                            UUID uuid = dVar2.a[i20].b;
+                        while (i19 < cVar2.d) {
+                            UUID uuid = cVar2.a[i19].b;
                             if (uuid.equals(h3.h.b)) {
                                 linkedHashSet.add("cenc");
                             } else if (uuid.equals(h3.h.c)) {
@@ -1067,134 +1068,134 @@ public abstract class q extends h3.e {
                             } else if (uuid.equals(h3.h.a)) {
                                 linkedHashSet.add("universal");
                             } else {
-                                dVar = dVar2;
+                                cVar = cVar2;
                                 linkedHashSet.add("unknown (" + uuid + ")");
-                                i20++;
-                                dVar2 = dVar;
+                                i19++;
+                                cVar2 = cVar;
                             }
-                            dVar = dVar2;
-                            i20++;
-                            dVar2 = dVar;
+                            cVar = cVar2;
+                            i19++;
+                            cVar2 = cVar;
                         }
-                        o11.append(", drm=[");
-                        new y(String.valueOf(',')).a(o11, linkedHashSet);
-                        o11.append(']');
-                        i19 = -1;
+                        n10.append(", drm=[");
+                        new c0(String.valueOf(',')).c(n10, linkedHashSet);
+                        n10.append(']');
+                        i18 = -1;
                     } else {
                         c10 = ',';
                     }
-                    if (i15 != i19 && i14 != i19) {
-                        o11.append(", res=");
-                        o11.append(i15);
-                        o11.append("x");
-                        o11.append(i14);
+                    if (i14 != i18 && i13 != i18) {
+                        n10.append(", res=");
+                        n10.append(i14);
+                        n10.append("x");
+                        n10.append(i13);
                     }
                     if (f11 != -1.0f) {
-                        o11.append(", fps=");
-                        o11.append(f11);
-                    }
-                    if (i13 != -1) {
-                        o11.append(", channels=");
-                        o11.append(i13);
+                        n10.append(", fps=");
+                        n10.append(f11);
                     }
                     if (i12 != -1) {
-                        o11.append(", sample_rate=");
-                        o11.append(i12);
+                        n10.append(", channels=");
+                        n10.append(i12);
+                    }
+                    if (i11 != -1) {
+                        n10.append(", sample_rate=");
+                        n10.append(i11);
                     }
                     if (str4 != null) {
-                        o11.append(", language=");
-                        o11.append(str4);
+                        n10.append(", language=");
+                        n10.append(str4);
                     }
                     if (str3 != null) {
-                        o11.append(", label=");
-                        o11.append(str3);
+                        n10.append(", label=");
+                        n10.append(str3);
                     }
-                    if (i17 != 0) {
+                    if (i16 != 0) {
                         ArrayList arrayList = new ArrayList();
-                        if ((i17 & 4) != 0) {
+                        if ((i16 & 4) != 0) {
                             arrayList.add("auto");
                         }
-                        if ((i17 & 1) != 0) {
+                        if ((i16 & 1) != 0) {
                             arrayList.add("default");
                         }
-                        if ((i17 & 2) != 0) {
+                        if ((i16 & 2) != 0) {
                             arrayList.add("forced");
                         }
-                        o11.append(", selectionFlags=[");
-                        new y(String.valueOf(c10)).a(o11, arrayList);
-                        o11.append("]");
+                        n10.append(", selectionFlags=[");
+                        new c0(String.valueOf(c10)).c(n10, arrayList);
+                        n10.append("]");
                     }
-                    if (i18 != 0) {
+                    if (i17 != 0) {
                         ArrayList arrayList2 = new ArrayList();
-                        if ((i18 & 1) != 0) {
+                        if ((i17 & 1) != 0) {
                             arrayList2.add("main");
                         }
-                        if ((i18 & 2) != 0) {
+                        if ((i17 & 2) != 0) {
                             arrayList2.add("alt");
                         }
-                        if ((i18 & 4) != 0) {
+                        if ((i17 & 4) != 0) {
                             arrayList2.add("supplementary");
                         }
-                        if ((i18 & 8) != 0) {
+                        if ((i17 & 8) != 0) {
                             arrayList2.add("commentary");
                         }
-                        if ((i18 & 16) != 0) {
+                        if ((i17 & 16) != 0) {
                             arrayList2.add("dub");
                         }
-                        if ((i18 & 32) != 0) {
+                        if ((i17 & 32) != 0) {
                             arrayList2.add("emergency");
                         }
-                        if ((i18 & 64) != 0) {
+                        if ((i17 & 64) != 0) {
                             arrayList2.add("caption");
                         }
-                        if ((i18 & 128) != 0) {
+                        if ((i17 & 128) != 0) {
                             arrayList2.add("subtitle");
                         }
-                        if ((i18 & 256) != 0) {
+                        if ((i17 & 256) != 0) {
                             arrayList2.add("sign");
                         }
-                        if ((i18 & 512) != 0) {
+                        if ((i17 & 512) != 0) {
                             arrayList2.add("describes-video");
                         }
-                        if ((i18 & 1024) != 0) {
+                        if ((i17 & 1024) != 0) {
                             arrayList2.add("describes-music");
                         }
-                        if ((i18 & 2048) != 0) {
+                        if ((i17 & 2048) != 0) {
                             arrayList2.add("enhanced-intelligibility");
                         }
-                        if ((i18 & 4096) != 0) {
+                        if ((i17 & 4096) != 0) {
                             arrayList2.add("transcribes-dialog");
                         }
-                        if ((i18 & 8192) != 0) {
+                        if ((i17 & 8192) != 0) {
                             arrayList2.add("easy-read");
                         }
-                        if ((i18 & 16384) != 0) {
+                        if ((i17 & 16384) != 0) {
                             arrayList2.add("trick-play");
                         }
-                        o11.append(", roleFlags=[");
-                        new y(String.valueOf(c10)).a(o11, arrayList2);
-                        o11.append("]");
+                        n10.append(", roleFlags=[");
+                        new c0(String.valueOf(c10)).c(n10, arrayList2);
+                        n10.append("]");
                     }
-                    sb2 = o11.toString();
+                    sb2 = n10.toString();
                 }
                 Locale locale = Locale.US;
-                d5.a.K("MediaCodecRenderer", pa.j("Format exceeds selected codec's capabilities [", sb2, ", ", str2, "]"));
+                d5.a.K("MediaCodecRenderer", j2.h("Format exceeds selected codec's capabilities [", sb2, ", ", str2, "]"));
             }
             this.P = nVar;
             this.M = f10;
             this.J = this.y;
-            int i21 = g0.a;
-            if (i21 <= 25 && "OMX.Exynos.avc.dec.secure".equals(str2)) {
-                String str6 = g0.d;
+            int i20 = f0.a;
+            if (i20 <= 25 && "OMX.Exynos.avc.dec.secure".equals(str2)) {
+                String str6 = f0.d;
                 if (str6.startsWith("SM-T585") || str6.startsWith("SM-A510") || str6.startsWith("SM-A520") || str6.startsWith("SM-J700")) {
-                    i10 = 2;
-                    this.Q = i10;
-                    this.R = i21 >= 21 && this.J.D.isEmpty() && "OMX.MTK.VIDEO.DECODER.AVC".equals(str2);
-                    this.S = i21 >= 18 || (i21 == 18 && ("OMX.SEC.avc.dec".equals(str2) || "OMX.SEC.avc.dec.secure".equals(str2))) || (i21 == 19 && g0.d.startsWith("SM-G800") && ("OMX.Exynos.avc.dec".equals(str2) || "OMX.Exynos.avc.dec.secure".equals(str2)));
-                    this.T = i21 != 29 && "c2.android.aac.decoder".equals(str2);
-                    if (i21 <= 23 || !"OMX.google.vorbis.decoder".equals(str2)) {
-                        if (i21 <= 19) {
-                            String str7 = g0.b;
+                    i9 = 2;
+                    this.Q = i9;
+                    this.R = i20 >= 21 && this.J.D.isEmpty() && "OMX.MTK.VIDEO.DECODER.AVC".equals(str2);
+                    this.S = i20 >= 18 || (i20 == 18 && ("OMX.SEC.avc.dec".equals(str2) || "OMX.SEC.avc.dec.secure".equals(str2))) || (i20 == 19 && f0.d.startsWith("SM-G800") && ("OMX.Exynos.avc.dec".equals(str2) || "OMX.Exynos.avc.dec.secure".equals(str2)));
+                    this.T = i20 != 29 && "c2.android.aac.decoder".equals(str2);
+                    if (i20 <= 23 || !"OMX.google.vorbis.decoder".equals(str2)) {
+                        if (i20 <= 19) {
+                            String str7 = f0.b;
                             if (!"hb2000".equals(str7)) {
                             }
                             if (!"OMX.amlogic.avc.decoder.awesome".equals(str2)) {
@@ -1202,14 +1203,14 @@ public abstract class q extends h3.e {
                         }
                         z10 = false;
                         this.U = z10;
-                        this.V = i21 != 21 && "OMX.google.aac.decoder".equals(str2);
-                        if (i21 < 21 && "OMX.SEC.mp3.dec".equals(str2) && "samsung".equals(g0.c)) {
-                            str = g0.b;
+                        this.V = i20 != 21 && "OMX.google.aac.decoder".equals(str2);
+                        if (i20 < 21 && "OMX.SEC.mp3.dec".equals(str2) && "samsung".equals(f0.c)) {
+                            str = f0.b;
                             if (!str.startsWith("baffin") || str.startsWith("grand") || str.startsWith("fortuna") || str.startsWith("gprimelte") || str.startsWith("j2y18lte") || str.startsWith("ms01")) {
                                 z11 = true;
                                 this.W = z11;
-                                this.X = i21 > 18 && this.J.O == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str2);
-                                this.a0 = (i21 > 25 && "OMX.rk.video_decoder.avc".equals(str2)) || (i21 <= 17 && "OMX.allwinner.video.decoder.avc".equals(str2)) || ((i21 <= 29 && ("OMX.broadcom.video_decoder.tunnel".equals(str2) || "OMX.broadcom.video_decoder.tunnel.secure".equals(str2) || "OMX.bcm.vdec.avc.tunnel".equals(str2) || "OMX.bcm.vdec.avc.tunnel.secure".equals(str2) || "OMX.bcm.vdec.hevc.tunnel".equals(str2) || "OMX.bcm.vdec.hevc.tunnel.secure".equals(str2))) || (("Amazon".equals(g0.c) && "AFTS".equals(g0.d) && nVar.f) || k()));
+                                this.X = i20 > 18 && this.J.O == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str2);
+                                this.a0 = (i20 > 25 && "OMX.rk.video_decoder.avc".equals(str2)) || (i20 <= 17 && "OMX.allwinner.video.decoder.avc".equals(str2)) || ((i20 <= 29 && ("OMX.broadcom.video_decoder.tunnel".equals(str2) || "OMX.broadcom.video_decoder.tunnel.secure".equals(str2) || "OMX.bcm.vdec.avc.tunnel".equals(str2) || "OMX.bcm.vdec.avc.tunnel.secure".equals(str2) || "OMX.bcm.vdec.hevc.tunnel".equals(str2) || "OMX.bcm.vdec.hevc.tunnel.secure".equals(str2))) || (("Amazon".equals(f0.c) && "AFTS".equals(f0.d) && nVar.f) || k()));
                                 this.I.getClass();
                                 if ("c2.android.mp3.decoder".equals(str2)) {
                                     this.b0 = new h();
@@ -1223,8 +1224,8 @@ public abstract class q extends h3.e {
                         }
                         z11 = false;
                         this.W = z11;
-                        this.X = i21 > 18 && this.J.O == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str2);
-                        this.a0 = (i21 > 25 && "OMX.rk.video_decoder.avc".equals(str2)) || (i21 <= 17 && "OMX.allwinner.video.decoder.avc".equals(str2)) || ((i21 <= 29 && ("OMX.broadcom.video_decoder.tunnel".equals(str2) || "OMX.broadcom.video_decoder.tunnel.secure".equals(str2) || "OMX.bcm.vdec.avc.tunnel".equals(str2) || "OMX.bcm.vdec.avc.tunnel.secure".equals(str2) || "OMX.bcm.vdec.hevc.tunnel".equals(str2) || "OMX.bcm.vdec.hevc.tunnel.secure".equals(str2))) || (("Amazon".equals(g0.c) && "AFTS".equals(g0.d) && nVar.f) || k()));
+                        this.X = i20 > 18 && this.J.O == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str2);
+                        this.a0 = (i20 > 25 && "OMX.rk.video_decoder.avc".equals(str2)) || (i20 <= 17 && "OMX.allwinner.video.decoder.avc".equals(str2)) || ((i20 <= 29 && ("OMX.broadcom.video_decoder.tunnel".equals(str2) || "OMX.broadcom.video_decoder.tunnel.secure".equals(str2) || "OMX.bcm.vdec.avc.tunnel".equals(str2) || "OMX.bcm.vdec.avc.tunnel.secure".equals(str2) || "OMX.bcm.vdec.hevc.tunnel".equals(str2) || "OMX.bcm.vdec.hevc.tunnel.secure".equals(str2))) || (("Amazon".equals(f0.c) && "AFTS".equals(f0.d) && nVar.f) || k()));
                         this.I.getClass();
                         if ("c2.android.mp3.decoder".equals(str2)) {
                         }
@@ -1235,15 +1236,15 @@ public abstract class q extends h3.e {
                     }
                     z10 = true;
                     this.U = z10;
-                    this.V = i21 != 21 && "OMX.google.aac.decoder".equals(str2);
-                    if (i21 < 21) {
-                        str = g0.b;
+                    this.V = i20 != 21 && "OMX.google.aac.decoder".equals(str2);
+                    if (i20 < 21) {
+                        str = f0.b;
                         if (!str.startsWith("baffin")) {
                         }
                         z11 = true;
                         this.W = z11;
-                        this.X = i21 > 18 && this.J.O == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str2);
-                        this.a0 = (i21 > 25 && "OMX.rk.video_decoder.avc".equals(str2)) || (i21 <= 17 && "OMX.allwinner.video.decoder.avc".equals(str2)) || ((i21 <= 29 && ("OMX.broadcom.video_decoder.tunnel".equals(str2) || "OMX.broadcom.video_decoder.tunnel.secure".equals(str2) || "OMX.bcm.vdec.avc.tunnel".equals(str2) || "OMX.bcm.vdec.avc.tunnel.secure".equals(str2) || "OMX.bcm.vdec.hevc.tunnel".equals(str2) || "OMX.bcm.vdec.hevc.tunnel.secure".equals(str2))) || (("Amazon".equals(g0.c) && "AFTS".equals(g0.d) && nVar.f) || k()));
+                        this.X = i20 > 18 && this.J.O == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str2);
+                        this.a0 = (i20 > 25 && "OMX.rk.video_decoder.avc".equals(str2)) || (i20 <= 17 && "OMX.allwinner.video.decoder.avc".equals(str2)) || ((i20 <= 29 && ("OMX.broadcom.video_decoder.tunnel".equals(str2) || "OMX.broadcom.video_decoder.tunnel.secure".equals(str2) || "OMX.bcm.vdec.avc.tunnel".equals(str2) || "OMX.bcm.vdec.avc.tunnel.secure".equals(str2) || "OMX.bcm.vdec.hevc.tunnel".equals(str2) || "OMX.bcm.vdec.hevc.tunnel.secure".equals(str2))) || (("Amazon".equals(f0.c) && "AFTS".equals(f0.d) && nVar.f) || k()));
                         this.I.getClass();
                         if ("c2.android.mp3.decoder".equals(str2)) {
                         }
@@ -1254,8 +1255,8 @@ public abstract class q extends h3.e {
                     }
                     z11 = false;
                     this.W = z11;
-                    this.X = i21 > 18 && this.J.O == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str2);
-                    this.a0 = (i21 > 25 && "OMX.rk.video_decoder.avc".equals(str2)) || (i21 <= 17 && "OMX.allwinner.video.decoder.avc".equals(str2)) || ((i21 <= 29 && ("OMX.broadcom.video_decoder.tunnel".equals(str2) || "OMX.broadcom.video_decoder.tunnel.secure".equals(str2) || "OMX.bcm.vdec.avc.tunnel".equals(str2) || "OMX.bcm.vdec.avc.tunnel.secure".equals(str2) || "OMX.bcm.vdec.hevc.tunnel".equals(str2) || "OMX.bcm.vdec.hevc.tunnel.secure".equals(str2))) || (("Amazon".equals(g0.c) && "AFTS".equals(g0.d) && nVar.f) || k()));
+                    this.X = i20 > 18 && this.J.O == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str2);
+                    this.a0 = (i20 > 25 && "OMX.rk.video_decoder.avc".equals(str2)) || (i20 <= 17 && "OMX.allwinner.video.decoder.avc".equals(str2)) || ((i20 <= 29 && ("OMX.broadcom.video_decoder.tunnel".equals(str2) || "OMX.broadcom.video_decoder.tunnel.secure".equals(str2) || "OMX.bcm.vdec.avc.tunnel".equals(str2) || "OMX.bcm.vdec.avc.tunnel.secure".equals(str2) || "OMX.bcm.vdec.hevc.tunnel".equals(str2) || "OMX.bcm.vdec.hevc.tunnel.secure".equals(str2))) || (("Amazon".equals(f0.c) && "AFTS".equals(f0.d) && nVar.f) || k()));
                     this.I.getClass();
                     if ("c2.android.mp3.decoder".equals(str2)) {
                     }
@@ -1265,27 +1266,27 @@ public abstract class q extends h3.e {
                     u(j10, j10 - j11, str2);
                 }
             }
-            if (i21 < 24 && ("OMX.Nvidia.h264.decode".equals(str2) || "OMX.Nvidia.h264.decode.secure".equals(str2))) {
-                String str8 = g0.b;
+            if (i20 < 24 && ("OMX.Nvidia.h264.decode".equals(str2) || "OMX.Nvidia.h264.decode.secure".equals(str2))) {
+                String str8 = f0.b;
                 if ("flounder".equals(str8) || "flounder_lte".equals(str8) || "grouper".equals(str8) || "tilapia".equals(str8)) {
-                    i10 = 1;
-                    this.Q = i10;
-                    this.R = i21 >= 21 && this.J.D.isEmpty() && "OMX.MTK.VIDEO.DECODER.AVC".equals(str2);
-                    this.S = i21 >= 18 || (i21 == 18 && ("OMX.SEC.avc.dec".equals(str2) || "OMX.SEC.avc.dec.secure".equals(str2))) || (i21 == 19 && g0.d.startsWith("SM-G800") && ("OMX.Exynos.avc.dec".equals(str2) || "OMX.Exynos.avc.dec.secure".equals(str2)));
-                    this.T = i21 != 29 && "c2.android.aac.decoder".equals(str2);
-                    if (i21 <= 23) {
+                    i9 = 1;
+                    this.Q = i9;
+                    this.R = i20 >= 21 && this.J.D.isEmpty() && "OMX.MTK.VIDEO.DECODER.AVC".equals(str2);
+                    this.S = i20 >= 18 || (i20 == 18 && ("OMX.SEC.avc.dec".equals(str2) || "OMX.SEC.avc.dec.secure".equals(str2))) || (i20 == 19 && f0.d.startsWith("SM-G800") && ("OMX.Exynos.avc.dec".equals(str2) || "OMX.Exynos.avc.dec.secure".equals(str2)));
+                    this.T = i20 != 29 && "c2.android.aac.decoder".equals(str2);
+                    if (i20 <= 23) {
                     }
-                    if (i21 <= 19) {
+                    if (i20 <= 19) {
                     }
                     z10 = false;
                     this.U = z10;
-                    this.V = i21 != 21 && "OMX.google.aac.decoder".equals(str2);
-                    if (i21 < 21) {
+                    this.V = i20 != 21 && "OMX.google.aac.decoder".equals(str2);
+                    if (i20 < 21) {
                     }
                     z11 = false;
                     this.W = z11;
-                    this.X = i21 > 18 && this.J.O == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str2);
-                    this.a0 = (i21 > 25 && "OMX.rk.video_decoder.avc".equals(str2)) || (i21 <= 17 && "OMX.allwinner.video.decoder.avc".equals(str2)) || ((i21 <= 29 && ("OMX.broadcom.video_decoder.tunnel".equals(str2) || "OMX.broadcom.video_decoder.tunnel.secure".equals(str2) || "OMX.bcm.vdec.avc.tunnel".equals(str2) || "OMX.bcm.vdec.avc.tunnel.secure".equals(str2) || "OMX.bcm.vdec.hevc.tunnel".equals(str2) || "OMX.bcm.vdec.hevc.tunnel.secure".equals(str2))) || (("Amazon".equals(g0.c) && "AFTS".equals(g0.d) && nVar.f) || k()));
+                    this.X = i20 > 18 && this.J.O == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str2);
+                    this.a0 = (i20 > 25 && "OMX.rk.video_decoder.avc".equals(str2)) || (i20 <= 17 && "OMX.allwinner.video.decoder.avc".equals(str2)) || ((i20 <= 29 && ("OMX.broadcom.video_decoder.tunnel".equals(str2) || "OMX.broadcom.video_decoder.tunnel.secure".equals(str2) || "OMX.bcm.vdec.avc.tunnel".equals(str2) || "OMX.bcm.vdec.avc.tunnel.secure".equals(str2) || "OMX.bcm.vdec.hevc.tunnel".equals(str2) || "OMX.bcm.vdec.hevc.tunnel.secure".equals(str2))) || (("Amazon".equals(f0.c) && "AFTS".equals(f0.d) && nVar.f) || k()));
                     this.I.getClass();
                     if ("c2.android.mp3.decoder".equals(str2)) {
                     }
@@ -1295,24 +1296,24 @@ public abstract class q extends h3.e {
                     u(j10, j10 - j11, str2);
                 }
             }
-            i10 = 0;
-            this.Q = i10;
-            this.R = i21 >= 21 && this.J.D.isEmpty() && "OMX.MTK.VIDEO.DECODER.AVC".equals(str2);
-            this.S = i21 >= 18 || (i21 == 18 && ("OMX.SEC.avc.dec".equals(str2) || "OMX.SEC.avc.dec.secure".equals(str2))) || (i21 == 19 && g0.d.startsWith("SM-G800") && ("OMX.Exynos.avc.dec".equals(str2) || "OMX.Exynos.avc.dec.secure".equals(str2)));
-            this.T = i21 != 29 && "c2.android.aac.decoder".equals(str2);
-            if (i21 <= 23) {
+            i9 = 0;
+            this.Q = i9;
+            this.R = i20 >= 21 && this.J.D.isEmpty() && "OMX.MTK.VIDEO.DECODER.AVC".equals(str2);
+            this.S = i20 >= 18 || (i20 == 18 && ("OMX.SEC.avc.dec".equals(str2) || "OMX.SEC.avc.dec.secure".equals(str2))) || (i20 == 19 && f0.d.startsWith("SM-G800") && ("OMX.Exynos.avc.dec".equals(str2) || "OMX.Exynos.avc.dec.secure".equals(str2)));
+            this.T = i20 != 29 && "c2.android.aac.decoder".equals(str2);
+            if (i20 <= 23) {
             }
-            if (i21 <= 19) {
+            if (i20 <= 19) {
             }
             z10 = false;
             this.U = z10;
-            this.V = i21 != 21 && "OMX.google.aac.decoder".equals(str2);
-            if (i21 < 21) {
+            this.V = i20 != 21 && "OMX.google.aac.decoder".equals(str2);
+            if (i20 < 21) {
             }
             z11 = false;
             this.W = z11;
-            this.X = i21 > 18 && this.J.O == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str2);
-            this.a0 = (i21 > 25 && "OMX.rk.video_decoder.avc".equals(str2)) || (i21 <= 17 && "OMX.allwinner.video.decoder.avc".equals(str2)) || ((i21 <= 29 && ("OMX.broadcom.video_decoder.tunnel".equals(str2) || "OMX.broadcom.video_decoder.tunnel.secure".equals(str2) || "OMX.bcm.vdec.avc.tunnel".equals(str2) || "OMX.bcm.vdec.avc.tunnel.secure".equals(str2) || "OMX.bcm.vdec.hevc.tunnel".equals(str2) || "OMX.bcm.vdec.hevc.tunnel.secure".equals(str2))) || (("Amazon".equals(g0.c) && "AFTS".equals(g0.d) && nVar.f) || k()));
+            this.X = i20 > 18 && this.J.O == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str2);
+            this.a0 = (i20 > 25 && "OMX.rk.video_decoder.avc".equals(str2)) || (i20 <= 17 && "OMX.allwinner.video.decoder.avc".equals(str2)) || ((i20 <= 29 && ("OMX.broadcom.video_decoder.tunnel".equals(str2) || "OMX.broadcom.video_decoder.tunnel.secure".equals(str2) || "OMX.bcm.vdec.avc.tunnel".equals(str2) || "OMX.bcm.vdec.avc.tunnel.secure".equals(str2) || "OMX.bcm.vdec.hevc.tunnel".equals(str2) || "OMX.bcm.vdec.hevc.tunnel.secure".equals(str2))) || (("Amazon".equals(f0.c) && "AFTS".equals(f0.d) && nVar.f) || k()));
             this.I.getClass();
             if ("c2.android.mp3.decoder".equals(str2)) {
             }
@@ -1349,30 +1350,30 @@ public abstract class q extends h3.e {
         }
         I(this.C);
         String str2 = this.y.B;
-        l3.f fVar = this.B;
-        if (fVar != null) {
+        l3.e eVar = this.B;
+        if (eVar != null) {
             if (this.D == null) {
-                n(fVar);
+                n(eVar);
                 if (this.B.x() == null) {
                     return;
                 }
             }
-            if (l3.k.a) {
-                int p6 = this.B.p();
-                if (p6 == 1) {
-                    l3.e x8 = this.B.x();
-                    x8.getClass();
-                    throw createRendererException(x8, this.y, x8.a);
+            if (l3.j.a) {
+                int j10 = this.B.j();
+                if (j10 == 1) {
+                    l3.d x10 = this.B.x();
+                    x10.getClass();
+                    throw createRendererException(x10, this.y, x10.a);
                 }
-                if (p6 != 4) {
+                if (j10 != 4) {
                     return;
                 }
             }
         }
         try {
             s(this.D, this.E);
-        } catch (p e9) {
-            throw createRendererException(e9, this.y, 4001);
+        } catch (p e10) {
+            throw createRendererException(e10, this.y, 4001);
         }
     }
 
@@ -1444,24 +1445,24 @@ public abstract class q extends h3.e {
                 synchronized (this.z0) {
                 }
             }
-        } catch (IllegalStateException e9) {
-            int i10 = g0.a;
-            if (i10 < 21 || !(e9 instanceof MediaCodec.CodecException)) {
-                StackTraceElement[] stackTrace = e9.getStackTrace();
+        } catch (IllegalStateException e10) {
+            int i9 = f0.a;
+            if (i9 < 21 || !(e10 instanceof MediaCodec.CodecException)) {
+                StackTraceElement[] stackTrace = e10.getStackTrace();
                 if (stackTrace.length <= 0 || !stackTrace[0].getClassName().equals("android.media.MediaCodec")) {
-                    throw e9;
+                    throw e10;
                 }
             }
-            t(e9);
-            if (i10 >= 21) {
-                if (e9 instanceof MediaCodec.CodecException ? ((MediaCodec.CodecException) e9).isRecoverable() : false) {
+            t(e10);
+            if (i9 >= 21) {
+                if (e10 instanceof MediaCodec.CodecException ? ((MediaCodec.CodecException) e10).isRecoverable() : false) {
                     z12 = true;
                 }
             }
             if (z12) {
                 E();
             }
-            throw createRendererException(c(e9, this.P), this.y, z12, 4003);
+            throw createRendererException(c(e10, this.P), this.y, z12, 4003);
         }
     }
 
@@ -1486,8 +1487,8 @@ public abstract class q extends h3.e {
                     this.N.add((n) arrayList.get(0));
                 }
                 this.O = null;
-            } catch (t e9) {
-                throw new p(this.y, e9, z10, -49998);
+            } catch (t e10) {
+                throw new p(this.y, e10, z10, -49998);
             }
         }
         if (this.N.isEmpty()) {
@@ -1501,26 +1502,26 @@ public abstract class q extends h3.e {
             }
             try {
                 q(nVar2, mediaCrypto);
-            } catch (Exception e10) {
+            } catch (Exception e11) {
                 if (nVar2 != nVar) {
-                    throw e10;
+                    throw e11;
                 }
                 try {
                     d5.a.K("MediaCodecRenderer", "Preferred decoder instantiation failed. Sleeping for 50ms then retrying.");
                     Thread.sleep(50L);
                     q(nVar2, mediaCrypto);
-                } catch (Exception e11) {
-                    d5.a.L("MediaCodecRenderer", "Failed to initialize decoder: " + nVar2, e11);
+                } catch (Exception e12) {
+                    d5.a.L("MediaCodecRenderer", "Failed to initialize decoder: " + nVar2, e12);
                     this.N.removeFirst();
                     t0 t0Var = this.y;
                     String str2 = "Decoder init failed: " + nVar2.a + ", " + t0Var;
                     String str3 = t0Var.B;
-                    if (g0.a < 21) {
-                        str = e11 instanceof MediaCodec.CodecException ? ((MediaCodec.CodecException) e11).getDiagnosticInfo() : null;
+                    if (f0.a < 21) {
+                        str = e12 instanceof MediaCodec.CodecException ? ((MediaCodec.CodecException) e12).getDiagnosticInfo() : null;
                     } else {
                         str = null;
                     }
-                    p pVar2 = new p(str2, e11, str3, z10, nVar2, str);
+                    p pVar2 = new p(str2, e12, str3, z10, nVar2, str);
                     t(pVar2);
                     pVar = this.O;
                     if (pVar != null) {
@@ -1532,14 +1533,14 @@ public abstract class q extends h3.e {
                         throw this.O;
                     }
                 }
-                d5.a.L("MediaCodecRenderer", "Failed to initialize decoder: " + nVar2, e11);
+                d5.a.L("MediaCodecRenderer", "Failed to initialize decoder: " + nVar2, e12);
                 this.N.removeFirst();
                 t0 t0Var2 = this.y;
                 String str22 = "Decoder init failed: " + nVar2.a + ", " + t0Var2;
                 String str32 = t0Var2.B;
-                if (g0.a < 21) {
+                if (f0.a < 21) {
                 }
-                p pVar22 = new p(str22, e11, str32, z10, nVar2, str);
+                p pVar22 = new p(str22, e12, str32, z10, nVar2, str);
                 t(pVar22);
                 pVar = this.O;
                 if (pVar != null) {
@@ -1562,8 +1563,8 @@ public abstract class q extends h3.e {
     public final int supportsFormat(t0 t0Var) {
         try {
             return M(this.b, t0Var);
-        } catch (t e9) {
-            throw createRendererException(e9, t0Var, 4002);
+        } catch (t e10) {
+            throw createRendererException(e10, t0Var, 4002);
         }
     }
 
@@ -1601,9 +1602,9 @@ public abstract class q extends h3.e {
         if (t0Var.B == null) {
             throw createRendererException(new IllegalArgumentException(), t0Var, 4005);
         }
-        l3.f fVar = u0Var.a;
-        i0.a.D(this.C, fVar);
-        this.C = fVar;
+        l3.e eVar = u0Var.a;
+        r0.D(this.C, eVar);
+        this.C = eVar;
         this.y = t0Var;
         if (this.i0) {
             this.k0 = true;
@@ -1617,12 +1618,12 @@ public abstract class q extends h3.e {
         }
         n nVar = this.P;
         t0 t0Var2 = this.J;
-        l3.f fVar2 = this.B;
-        if (fVar2 != fVar) {
-            if (fVar != null && fVar2 != null && fVar.d().equals(fVar2.d()) && g0.a >= 23) {
+        l3.e eVar2 = this.B;
+        if (eVar2 != eVar) {
+            if (eVar != null && eVar2 != null && eVar.a().equals(eVar2.a()) && f0.a >= 23) {
                 UUID uuid = h3.h.e;
-                if (!uuid.equals(fVar2.d()) && !uuid.equals(fVar.d())) {
-                    n(fVar);
+                if (!uuid.equals(eVar2.a()) && !uuid.equals(eVar.a())) {
+                    n(eVar);
                 }
             }
             if (this.p0) {
@@ -1634,13 +1635,13 @@ public abstract class q extends h3.e {
             }
             return new k3.l(nVar.a, t0Var2, t0Var, 0, 128);
         }
-        int i10 = 0;
+        int i9 = 0;
         boolean z11 = this.C != this.B;
-        d5.a.i(!z11 || g0.a >= 23);
+        d5.a.i(!z11 || f0.a >= 23);
         k3.l b10 = b(nVar, t0Var2, t0Var);
-        int i11 = b10.d;
-        if (i11 != 0) {
-            if (i11 == 1) {
+        int i10 = b10.d;
+        if (i10 != 0) {
+            if (i10 == 1) {
                 if (N(t0Var)) {
                     this.J = t0Var;
                     if (!z11) {
@@ -1648,20 +1649,20 @@ public abstract class q extends h3.e {
                             this.n0 = 1;
                             if (this.S || this.U) {
                                 this.o0 = 3;
-                                i10 = 2;
+                                i9 = 2;
                             } else {
                                 this.o0 = 1;
                             }
                         }
                     }
                 }
-                i10 = 16;
-            } else if (i11 == 2) {
+                i9 = 16;
+            } else if (i10 == 2) {
                 if (N(t0Var)) {
                     this.l0 = true;
                     this.m0 = 1;
-                    int i12 = this.Q;
-                    if (i12 != 2 && (i12 != 1 || t0Var.G != t0Var2.G || t0Var.H != t0Var2.H)) {
+                    int i11 = this.Q;
+                    if (i11 != 2 && (i11 != 1 || t0Var.G != t0Var2.G || t0Var.H != t0Var2.H)) {
                         z10 = false;
                     }
                     this.Y = z10;
@@ -1669,9 +1670,9 @@ public abstract class q extends h3.e {
                     if (z11) {
                     }
                 }
-                i10 = 16;
+                i9 = 16;
             } else {
-                if (i11 != 3) {
+                if (i10 != 3) {
                     throw new IllegalStateException();
                 }
                 if (N(t0Var)) {
@@ -1679,7 +1680,7 @@ public abstract class q extends h3.e {
                     if (z11) {
                     }
                 }
-                i10 = 16;
+                i9 = 16;
             }
         } else if (this.p0) {
             this.n0 = 1;
@@ -1688,7 +1689,7 @@ public abstract class q extends h3.e {
             E();
             r();
         }
-        return (i11 == 0 || (this.I == kVar && this.o0 != 3)) ? b10 : new k3.l(nVar.a, t0Var2, t0Var, 0, i10);
+        return (i10 == 0 || (this.I == kVar && this.o0 != 3)) ? b10 : new k3.l(nVar.a, t0Var2, t0Var, 0, i9);
     }
 
     public abstract void x(t0 t0Var, MediaFormat mediaFormat);
@@ -1703,9 +1704,9 @@ public abstract class q extends h3.e {
             this.A0 = jArr2[0];
             long[] jArr3 = this.w;
             J(jArr3[0]);
-            int i10 = this.C0 - 1;
-            this.C0 = i10;
-            System.arraycopy(jArr2, 1, jArr2, 0, i10);
+            int i9 = this.C0 - 1;
+            this.C0 = i9;
+            System.arraycopy(jArr2, 1, jArr2, 0, i9);
             System.arraycopy(jArr3, 1, jArr3, 0, this.C0);
             System.arraycopy(jArr, 1, jArr, 0, this.C0);
             A();

@@ -1,66 +1,195 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.text.TextPaint;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class w80 extends View {
-    public final TextPaint a;
-    public final Paint b;
-    public final String c;
-    public final Rect d;
-    public View e;
+public final class w80 extends f7.p8 {
+    public int a;
+    public final TL_iv.PageBlock b;
+    public TL_iv.textConcat c = new TL_iv.textConcat();
 
-    public w80(Context context) {
-        super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        this.b = new Paint(1);
-        this.d = new Rect();
-        this.c = LocaleController.getString(R.string.LoginOrSingInWithGoogle);
-        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
-        a();
+    public w80(TL_iv.PageBlock pageBlock) {
+        this.b = pageBlock;
     }
 
-    public final void a() {
-        this.a.setColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.y6, false));
-        this.b.setColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.Ii, false));
-        invalidate();
+    public static TL_iv.RichText x(TL_iv.textConcat textconcat) {
+        return textconcat.texts.isEmpty() ? new TL_iv.textEmpty() : textconcat.texts.size() == 1 ? textconcat.texts.get(0) : textconcat;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        View view = this.e;
-        Rect rect = this.d;
-        float width = view != null ? ((((getWidth() - rect.width()) - AndroidUtilities.dp(8.0f)) - this.e.getPaddingLeft()) - this.e.getPaddingRight()) / 2.0f : AndroidUtilities.dp(64.0f);
-        Paint paint = this.b;
-        canvas.drawLine((((getWidth() - rect.width()) / 2.0f) - AndroidUtilities.dp(8.0f)) - width, getHeight() / 2.0f, ((getWidth() - rect.width()) / 2.0f) - AndroidUtilities.dp(8.0f), getHeight() / 2.0f, paint);
-        canvas.drawLine(((rect.width() + getWidth()) / 2.0f) + AndroidUtilities.dp(8.0f), getHeight() / 2.0f, ((rect.width() + getWidth()) / 2.0f) + AndroidUtilities.dp(8.0f) + width, getHeight() / 2.0f, paint);
-        canvas.drawText(this.c, (getWidth() - rect.width()) / 2.0f, (rect.height() + getHeight()) / 2.0f, this.a);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        View view = this.e;
-        if (view != null) {
-            i10 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(view.getMeasuredWidth()), TLObject.FLAG_30);
+    @Override // f7.p8
+    public final void a(ie.b bVar) {
+        int i9 = this.a;
+        if (i9 >= 64) {
+            return;
         }
-        super.onMeasure(i10, i11);
-        String str = this.c;
-        this.a.getTextBounds(str, 0, str.length(), this.d);
+        this.a = i9 + 1;
+        try {
+            v(bVar);
+        } finally {
+            this.a--;
+        }
     }
 
-    public void setMeasureAfter(View view) {
-        this.e = view;
+    @Override // f7.p8
+    public final void b(ie.c cVar) {
+        int i9 = this.a;
+        if (i9 >= 64) {
+            return;
+        }
+        this.a = i9 + 1;
+        try {
+            v(cVar);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // f7.p8
+    public final void c(ie.d dVar) {
+        TL_iv.textFixed textfixed = new TL_iv.textFixed();
+        textfixed.text = z80.j(dVar.h);
+        w(textfixed);
+    }
+
+    @Override // f7.p8
+    public final void d(ie.e eVar) {
+        if (eVar instanceof be.a) {
+            TL_iv.textStrike textstrike = new TL_iv.textStrike();
+            textstrike.text = y(eVar);
+            w(textstrike);
+        } else if (eVar instanceof hc.d) {
+            w(z80.c(((hc.d) eVar).g));
+        } else {
+            v(eVar);
+        }
+    }
+
+    @Override // f7.p8
+    public final void e(ie.g gVar) {
+        TL_iv.textItalic textitalic = new TL_iv.textItalic();
+        textitalic.text = y(gVar);
+        w(textitalic);
+    }
+
+    @Override // f7.p8
+    public final void i(ie.k kVar) {
+        w(y(kVar));
+    }
+
+    @Override // f7.p8
+    public final void k(ie.n nVar) {
+        if (!(nVar instanceof hc.a)) {
+            v(nVar);
+            return;
+        }
+        if (!this.c.texts.isEmpty()) {
+            w(z80.j("\n"));
+        }
+        w(z80.c(((hc.a) nVar).g));
+        w(z80.j("\n"));
+    }
+
+    @Override // f7.p8
+    public final void l(ie.o oVar) {
+        int i9 = this.a;
+        if (i9 >= 64) {
+            return;
+        }
+        this.a = i9 + 1;
+        try {
+            v(oVar);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // f7.p8
+    public final void m(ie.q qVar) {
+        int i9 = this.a;
+        if (i9 >= 64) {
+            return;
+        }
+        this.a = i9 + 1;
+        try {
+            v(qVar);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // f7.p8
+    public final void n(ie.r rVar) {
+        if (!this.c.texts.isEmpty()) {
+            w(z80.j("\n\n"));
+        }
+        v(rVar);
+    }
+
+    @Override // f7.p8
+    public final void o(ie.s sVar) {
+        w(z80.j(sVar.g));
+    }
+
+    @Override // f7.p8
+    public final void q(ie.d dVar) {
+        w(z80.j(dVar.h));
+    }
+
+    @Override // f7.p8
+    public final void r(ie.g gVar) {
+        w(z80.j("\n"));
+    }
+
+    @Override // f7.p8
+    public final void s(ie.k kVar) {
+        String str = kVar.h;
+        if (str == null) {
+            str = "";
+        }
+        String trim = str.trim();
+        if (trim.startsWith("mailto:")) {
+            TL_iv.RichText textemail = new TL_iv.textEmail();
+            textemail.text = y(kVar);
+            textemail.email = trim.substring(7);
+            w(textemail);
+            return;
+        }
+        if (trim.startsWith("tel:")) {
+            TL_iv.textPhone textphone = new TL_iv.textPhone();
+            textphone.text = y(kVar);
+            textphone.phone = trim.substring(4);
+            w(textphone);
+            return;
+        }
+        TL_iv.RichText texturl = new TL_iv.textUrl();
+        texturl.text = y(kVar);
+        texturl.url = trim;
+        w(texturl);
+    }
+
+    @Override // f7.p8
+    public final void t(ie.g gVar) {
+        w(z80.j(this.b instanceof TL_iv.pageBlockBlockquote ? "\n" : " "));
+    }
+
+    @Override // f7.p8
+    public final void u(ie.g gVar) {
+        TL_iv.textBold textbold = new TL_iv.textBold();
+        textbold.text = y(gVar);
+        w(textbold);
+    }
+
+    public final void w(TL_iv.RichText richText) {
+        this.c.texts.add(richText);
+    }
+
+    public final TL_iv.RichText y(ie.p pVar) {
+        TL_iv.textConcat textconcat = this.c;
+        this.c = new TL_iv.textConcat();
+        v(pVar);
+        TL_iv.RichText x10 = x(this.c);
+        this.c = textconcat;
+        return x10;
     }
 }

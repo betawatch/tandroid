@@ -1,19 +1,108 @@
 package j4;
 
+import h3.p1;
+import ih.h3;
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public interface h0 {
-    void b(int i10, c0 c0Var, x xVar);
+public final class h0 {
+    public final int a;
+    public final d0 b;
+    public final CopyOnWriteArrayList c;
+    public final long d;
 
-    void c(int i10, c0 c0Var, x xVar);
+    public h0(CopyOnWriteArrayList copyOnWriteArrayList, int i9, d0 d0Var, long j10) {
+        this.c = copyOnWriteArrayList;
+        this.a = i9;
+        this.b = d0Var;
+        this.d = j10;
+    }
 
-    void d(int i10, c0 c0Var, p pVar, x xVar, IOException iOException, boolean z10);
+    public final long a(long j10) {
+        long S = d5.f0.S(j10);
+        if (S == -9223372036854775807L) {
+            return -9223372036854775807L;
+        }
+        return this.d + S;
+    }
 
-    void f(int i10, c0 c0Var, p pVar, x xVar);
+    public final void b(int i9, h3.t0 t0Var, int i10, Object obj, long j10) {
+        c(new y(1, i9, t0Var, i10, obj, a(j10), -9223372036854775807L));
+    }
 
-    void g(int i10, c0 c0Var, p pVar, x xVar);
+    public final void c(y yVar) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            g0 g0Var = (g0) it.next();
+            d5.f0.L(g0Var.a, new h3(this, g0Var.b, yVar, 9));
+        }
+    }
 
-    void h(int i10, c0 c0Var, p pVar, x xVar);
+    public final void d(q qVar, int i9, int i10, h3.t0 t0Var, int i11, Object obj, long j10, long j11) {
+        e(qVar, new y(i9, i10, t0Var, i11, obj, a(j10), a(j11)));
+    }
+
+    /* JADX WARN: Type inference failed for: r4v0, types: [j4.i0, java.lang.Object] */
+    public final void e(q qVar, y yVar) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            g0 g0Var = (g0) it.next();
+            d5.f0.L(g0Var.a, new f0(this, g0Var.b, qVar, yVar, 1));
+        }
+    }
+
+    public final void f(q qVar, int i9, int i10, h3.t0 t0Var, int i11, Object obj, long j10, long j11) {
+        g(qVar, new y(i9, i10, t0Var, i11, obj, a(j10), a(j11)));
+    }
+
+    /* JADX WARN: Type inference failed for: r4v0, types: [j4.i0, java.lang.Object] */
+    public final void g(q qVar, y yVar) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            g0 g0Var = (g0) it.next();
+            d5.f0.L(g0Var.a, new f0(this, g0Var.b, qVar, yVar, 0));
+        }
+    }
+
+    public final void h(q qVar, int i9, int i10, h3.t0 t0Var, int i11, Object obj, long j10, long j11, IOException iOException, boolean z10) {
+        j(qVar, new y(i9, i10, t0Var, i11, obj, a(j10), a(j11)), iOException, z10);
+    }
+
+    public final void i(q qVar, int i9, IOException iOException, boolean z10) {
+        h(qVar, i9, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, iOException, z10);
+    }
+
+    public final void j(q qVar, y yVar, IOException iOException, boolean z10) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            g0 g0Var = (g0) it.next();
+            d5.f0.L(g0Var.a, new p1(this, g0Var.b, qVar, yVar, iOException, z10, 1));
+        }
+    }
+
+    public final void k(q qVar, int i9, int i10, h3.t0 t0Var, int i11, Object obj, long j10, long j11) {
+        l(qVar, new y(i9, i10, t0Var, i11, obj, a(j10), a(j11)));
+    }
+
+    /* JADX WARN: Type inference failed for: r4v0, types: [j4.i0, java.lang.Object] */
+    public final void l(q qVar, y yVar) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            g0 g0Var = (g0) it.next();
+            d5.f0.L(g0Var.a, new f0(this, g0Var.b, qVar, yVar, 2));
+        }
+    }
+
+    public final void m(y yVar) {
+        d0 d0Var = this.b;
+        d0Var.getClass();
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            g0 g0Var = (g0) it.next();
+            d5.f0.L(g0Var.a, new androidx.car.app.utils.c(this, g0Var.b, d0Var, yVar, 14));
+        }
+    }
 }

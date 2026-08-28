@@ -7,7 +7,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class AiTonesController {
     public final int currentAccount;
@@ -18,8 +18,8 @@ public final class AiTonesController {
     private int requestId = -1;
     private long requestedTime = 0;
 
-    public AiTonesController(int i10) {
-        this.currentAccount = i10;
+    public AiTonesController(int i9) {
+        this.currentAccount = i9;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -49,8 +49,8 @@ public final class AiTonesController {
     public void add(TL_aicompose.AiComposeTone aiComposeTone) {
         if (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) {
             long j10 = ((TL_aicompose.TL_aiComposeTone) aiComposeTone).id;
-            for (int i10 = 0; i10 < this.tones.size(); i10++) {
-                if ((this.tones.get(i10) instanceof TL_aicompose.TL_aiComposeTone) && ((TL_aicompose.TL_aiComposeTone) this.tones.get(i10)).id == j10) {
+            for (int i9 = 0; i9 < this.tones.size(); i9++) {
+                if ((this.tones.get(i9) instanceof TL_aicompose.TL_aiComposeTone) && ((TL_aicompose.TL_aiComposeTone) this.tones.get(i9)).id == j10) {
                     return;
                 }
             }
@@ -68,9 +68,9 @@ public final class AiTonesController {
     }
 
     public void edit(TL_aicompose.TL_aiComposeTone tL_aiComposeTone) {
-        for (int i10 = 0; i10 < this.tones.size(); i10++) {
-            if ((this.tones.get(i10) instanceof TL_aicompose.TL_aiComposeTone) && ((TL_aicompose.TL_aiComposeTone) this.tones.get(i10)).id == tL_aiComposeTone.id) {
-                this.tones.set(i10, tL_aiComposeTone);
+        for (int i9 = 0; i9 < this.tones.size(); i9++) {
+            if ((this.tones.get(i9) instanceof TL_aicompose.TL_aiComposeTone) && ((TL_aicompose.TL_aiComposeTone) this.tones.get(i9)).id == tL_aiComposeTone.id) {
+                this.tones.set(i9, tL_aiComposeTone);
                 notifyUpdate();
                 return;
             }
@@ -78,13 +78,13 @@ public final class AiTonesController {
     }
 
     public int getSavedTonesCount() {
-        int i10 = 0;
-        for (int i11 = 0; i11 < this.tones.size(); i11++) {
-            if (this.tones.get(i11) instanceof TL_aicompose.TL_aiComposeTone) {
-                i10++;
+        int i9 = 0;
+        for (int i10 = 0; i10 < this.tones.size(); i10++) {
+            if (this.tones.get(i10) instanceof TL_aicompose.TL_aiComposeTone) {
+                i9++;
             }
         }
-        return i10;
+        return i9;
     }
 
     public void invalidate() {
@@ -112,8 +112,8 @@ public final class AiTonesController {
                         this.tones.addAll(((TL_aicompose.TL_tones) TLdeserialize).tones);
                     }
                 }
-            } catch (Exception e9) {
-                FileLog.e(e9);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
         }
         request();
@@ -133,7 +133,7 @@ public final class AiTonesController {
         if (this.requestId < 0 && System.currentTimeMillis() - this.requestedTime >= 1800000) {
             TL_aicompose.getTones gettones = new TL_aicompose.getTones();
             gettones.hash = this.hash;
-            this.requestId = ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(gettones, new a(), new le(this, 1));
+            this.requestId = ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(gettones, new a(), new he(this, 1));
         }
     }
 

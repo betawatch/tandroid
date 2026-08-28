@@ -1,39 +1,37 @@
 package j3;
 
-import h3.q2;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n b;
+    public final /* synthetic */ m b;
     public final /* synthetic */ Exception c;
 
-    public /* synthetic */ k(n nVar, Exception exc, int i10) {
-        this.a = i10;
-        this.b = nVar;
+    public /* synthetic */ k(m mVar, Exception exc, int i9) {
+        this.a = i9;
+        this.b = mVar;
         this.c = exc;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
+        int i9 = this.a;
         Exception exc = this.c;
-        n nVar = this.b;
-        switch (i10) {
+        m mVar = this.b;
+        switch (i9) {
             case 0:
-                o oVar = nVar.b;
-                int i11 = d5.g0.a;
-                i3.f fVar = ((h3.h0) oVar).a.r;
+                n nVar = mVar.b;
+                int i10 = d5.f0.a;
+                i3.f fVar = ((h3.h0) nVar).a.r;
                 i3.a k10 = fVar.k();
-                fVar.l(k10, 1029, new q2(k10, exc, 9));
+                fVar.l(k10, 1029, new h9.a(k10, exc, 16));
                 break;
             default:
-                o oVar2 = nVar.b;
-                int i12 = d5.g0.a;
-                i3.f fVar2 = ((h3.h0) oVar2).a.r;
+                n nVar2 = mVar.b;
+                int i11 = d5.f0.a;
+                i3.f fVar2 = ((h3.h0) nVar2).a.r;
                 i3.a k11 = fVar2.k();
-                fVar2.l(k11, 1014, new i3.d(k11, exc, 6));
+                fVar2.l(k11, 1014, new i3.d(k11, exc, 13));
                 break;
         }
     }

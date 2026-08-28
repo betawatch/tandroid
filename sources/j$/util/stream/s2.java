@@ -14,7 +14,7 @@ public final class s2 extends m6 implements y1, t1 {
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i10) {
+    public final /* synthetic */ void accept(int i9) {
         t3.J();
         throw null;
     }
@@ -70,24 +70,24 @@ public final class s2 extends m6 implements y1, t1 {
     }
 
     @Override // j$.util.stream.e2
-    public final /* bridge */ /* synthetic */ e2 a(int i10) {
-        a(i10);
+    public final /* bridge */ /* synthetic */ e2 a(int i9) {
+        a(i9);
         throw null;
     }
 
     @Override // j$.util.stream.d2, j$.util.stream.e2
-    public final d2 a(int i10) {
+    public final d2 a(int i9) {
         throw new IndexOutOfBoundsException();
     }
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ void f(Object[] objArr, int i10) {
-        t3.M(this, (Double[]) objArr, i10);
+    public final /* synthetic */ void f(Object[] objArr, int i9) {
+        t3.M(this, (Double[]) objArr, i9);
     }
 
     @Override // j$.util.stream.s6, j$.util.stream.d2
-    public final void c(int i10, Object obj) {
-        super.c(i10, (double[]) obj);
+    public final void c(int i9, Object obj) {
+        super.c(i9, (double[]) obj);
     }
 
     @Override // j$.util.stream.s6, j$.util.stream.d2

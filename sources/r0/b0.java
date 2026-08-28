@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.WindowInsets;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class b0 {
     public static void a(WindowInsets windowInsets, View view) {
@@ -48,18 +48,18 @@ public abstract class b0 {
                     Rect rect = (Rect) x0.b.get(obj);
                     Rect rect2 = (Rect) x0.c.get(obj);
                     if (rect != null && rect2 != null) {
-                        int i10 = Build.VERSION.SDK_INT;
-                        c1 b1Var = i10 >= 34 ? new b1() : i10 >= 30 ? new a1() : i10 >= 29 ? new z0() : new y0();
-                        b1Var.e(i0.c.b(rect.left, rect.top, rect.right, rect.bottom));
-                        b1Var.g(i0.c.b(rect2.left, rect2.top, rect2.right, rect2.bottom));
+                        int i9 = Build.VERSION.SDK_INT;
+                        c1 b1Var = i9 >= 34 ? new b1() : i9 >= 30 ? new a1() : i9 >= 29 ? new z0() : new y0();
+                        b1Var.e(i0.b.b(rect.left, rect.top, rect.right, rect.bottom));
+                        b1Var.g(i0.b.b(rect2.left, rect2.top, rect2.right, rect2.bottom));
                         m1 b10 = b1Var.b();
                         b10.a.r(b10);
                         b10.a.d(view.getRootView());
                         return b10;
                     }
                 }
-            } catch (IllegalAccessException e9) {
-                Log.w("WindowInsetsCompat", "Failed to get insets from AttachInfo. " + e9.getMessage(), e9);
+            } catch (IllegalAccessException e10) {
+                Log.w("WindowInsetsCompat", "Failed to get insets from AttachInfo. " + e10.getMessage(), e10);
             }
         }
         return null;

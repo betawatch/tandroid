@@ -1,61 +1,51 @@
 package h7;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
+import java.util.Map;
+import java.util.Set;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class g {
-    public static String a(String str, Object... objArr) {
-        int length;
-        int length2;
-        int indexOf;
-        String j10;
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i11 >= length) {
-                break;
-            }
-            Object obj = objArr[i11];
-            if (obj == null) {
-                j10 = BuildConfig.BETA_URL;
-            } else {
-                try {
-                    j10 = obj.toString();
-                } catch (Exception e9) {
-                    String w10 = a9.p.w(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(w10), (Throwable) e9);
-                    j10 = org.telegram.ui.Cells.pa.j("<", w10, " threw ", e9.getClass().getName(), ">");
-                }
-            }
-            objArr[i11] = j10;
-            i11++;
+public abstract class g implements u {
+    public transient a a;
+    public transient wa b;
+
+    public final Map a() {
+        wa waVar = this.b;
+        if (waVar != null) {
+            return waVar;
         }
-        StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
-        int i12 = 0;
-        while (true) {
-            length2 = objArr.length;
-            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
-                break;
-            }
-            sb2.append((CharSequence) str, i12, indexOf);
-            sb2.append(objArr[i10]);
-            i10++;
-            i12 = indexOf + 2;
+        h hVar = (h) this;
+        wa waVar2 = new wa(hVar, hVar.c, 0);
+        this.b = waVar2;
+        return waVar2;
+    }
+
+    public final Set b() {
+        a aVar = this.a;
+        if (aVar != null) {
+            return aVar;
         }
-        sb2.append((CharSequence) str, i12, str.length());
-        if (i10 < length2) {
-            sb2.append(" [");
-            sb2.append(objArr[i10]);
-            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
-                sb2.append(", ");
-                sb2.append(objArr[i13]);
-            }
-            sb2.append(']');
+        h hVar = (h) this;
+        a aVar2 = new a(hVar, hVar.c);
+        this.a = aVar2;
+        return aVar2;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        return sb2.toString();
+        if (obj instanceof u) {
+            return a().equals(((g) ((u) obj)).a());
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return ((wa) a()).b.hashCode();
+    }
+
+    public final String toString() {
+        return ((wa) a()).b.toString();
     }
 }

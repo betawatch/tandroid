@@ -12,13 +12,13 @@ import java.util.Comparator;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public abstract class a6 extends LinearLayout {
-    public static final Comparator r = Comparator$-EL.thenComparingInt(Comparator$-CC.comparingInt(new gf.d(14)), new gf.d(15));
+    public static final Comparator r = Comparator$-EL.thenComparingInt(Comparator$-CC.comparingInt(new ff.d(14)), new ff.d(15));
     public final HashMap a;
     public final ArrayList b;
-    public final ud.h c;
+    public final td.h c;
     public boolean d;
     public int e;
     public int f;
@@ -29,15 +29,15 @@ public abstract class a6 extends LinearLayout {
         super(context);
         this.a = new HashMap();
         this.b = new ArrayList();
-        this.c = new ud.h(new s(this, 11), er.h, 420L);
+        this.c = new td.h(new s(this, 11), gr.h, 420L);
     }
 
     public final void a() {
         this.f = 0;
         this.e = 0;
         int childCount = getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = getChildAt(i10);
+        for (int i9 = 0; i9 < childCount; i9++) {
+            View childAt = getChildAt(i9);
             z5 z5Var = (z5) this.a.get(childAt);
             if (childAt.getVisibility() == 0 && z5Var != null && z5Var.b) {
                 this.e = childAt.getMeasuredWidth() + this.e;
@@ -49,11 +49,11 @@ public abstract class a6 extends LinearLayout {
     public final void b() {
         ArrayList arrayList = this.c.b;
         int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ud.e eVar = (ud.e) obj;
+        int i9 = 0;
+        while (i9 < size) {
+            Object obj = arrayList.get(i9);
+            i9++;
+            td.e eVar = (td.e) obj;
             View view = ((z5) eVar.a).a;
             RectF b10 = eVar.b();
             if (getOrientation() == 1) {
@@ -102,7 +102,7 @@ public abstract class a6 extends LinearLayout {
         return this.c.b.size();
     }
 
-    public ud.g getMetadata() {
+    public td.g getMetadata() {
         return this.c.d;
     }
 
@@ -114,10 +114,10 @@ public abstract class a6 extends LinearLayout {
         return this.e;
     }
 
-    public final void h(int i10, View view) {
+    public final void h(int i9, View view) {
         z5 z5Var = (z5) this.a.get(view);
         if (z5Var != null) {
-            z5Var.d = i10;
+            z5Var.d = i9;
         }
     }
 
@@ -143,16 +143,16 @@ public abstract class a6 extends LinearLayout {
     }
 
     @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
+    public void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
+        super.onLayout(z10, i9, i10, i11, i12);
         ArrayList arrayList = this.b;
         arrayList.clear();
         int childCount = getChildCount();
-        for (int i14 = 0; i14 < childCount; i14++) {
-            View childAt = getChildAt(i14);
+        for (int i13 = 0; i13 < childCount; i13++) {
+            View childAt = getChildAt(i13);
             z5 z5Var = (z5) this.a.get(childAt);
             if (z5Var != null) {
-                z5Var.e = i14;
+                z5Var.e = i13;
                 if (childAt.getVisibility() == 0 && z5Var.b) {
                     arrayList.add(z5Var);
                 }
@@ -161,10 +161,10 @@ public abstract class a6 extends LinearLayout {
         Collections.sort(arrayList, r);
         this.c.r(arrayList, !this.d);
         int size = arrayList.size();
-        int i15 = 0;
-        while (i15 < size) {
-            Object obj = arrayList.get(i15);
-            i15++;
+        int i14 = 0;
+        while (i14 < size) {
+            Object obj = arrayList.get(i14);
+            i14++;
             ((z5) obj).c = true;
         }
         this.d = false;
@@ -172,8 +172,8 @@ public abstract class a6 extends LinearLayout {
     }
 
     @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
+    public void onMeasure(int i9, int i10) {
+        super.onMeasure(i9, i10);
         a();
     }
 

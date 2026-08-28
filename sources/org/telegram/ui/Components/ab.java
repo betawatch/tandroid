@@ -1,70 +1,82 @@
 package org.telegram.ui.Components;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.os.Build;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import java.util.WeakHashMap;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import android.widget.FrameLayout;
+import j$.util.Objects;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.ui.tg1;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ab extends Dialog {
-    public final za a;
-    public final WindowManager.LayoutParams b;
+public final class ab implements View.OnLayoutChangeListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ gc b;
 
-    public ab(Context context, cg.w wVar) {
-        super(context);
-        AndroidUtilities.enableEdgeToEdge(getWindow());
-        za zaVar = new za(this, context);
-        this.a = zaVar;
-        setContentView(zaVar, new ViewGroup.LayoutParams(-1, -1));
-        s sVar = new s(this, 15);
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.b0.j(zaVar, sVar);
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 30) {
-            zaVar.setSystemUiVisibility(1792);
-        } else {
-            zaVar.setSystemUiVisibility(1280);
-        }
-        ec.a(zaVar, new gh.w0(wVar, 8));
-        try {
-            Window window = getWindow();
-            window.setWindowAnimations(R.style.DialogNoAnimation);
-            window.setBackgroundDrawable(null);
-            WindowManager.LayoutParams attributes = window.getAttributes();
-            this.b = attributes;
-            attributes.width = -1;
-            attributes.height = -1;
-            attributes.gravity = 51;
-            attributes.dimAmount = 0.0f;
-            attributes.format = -3;
-            attributes.flags = (((-3) & attributes.flags) | (-1946091240)) & (-1025);
-            boolean z10 = true;
-            if (i10 >= 28) {
-                attributes.layoutInDisplayCutoutMode = 1;
-            }
-            window.setAttributes(attributes);
-            if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.a7, false)) <= 0.721f) {
-                z10 = false;
-            }
-            AndroidUtilities.setLightNavigationBar(this, z10);
-        } catch (Exception unused) {
-        }
+    public ab(gc gcVar, boolean z10) {
+        this.b = gcVar;
+        this.a = z10;
     }
 
-    public static za a(Context context) {
-        return new ab(context, null).a;
-    }
-
-    @Override // android.app.Dialog
-    public final void show() {
-        if (AndroidUtilities.isSafeToShow(getContext())) {
-            super.show();
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i9, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+        fb fbVar;
+        gc gcVar = this.b;
+        lb lbVar = gcVar.e;
+        lbVar.removeOnLayoutChangeListener(this);
+        if (gcVar.l) {
+            lbVar.onShow();
+            org.telegram.ui.ActionBar.o2 o2Var = gcVar.g;
+            boolean z10 = this.a;
+            if (z10 && (o2Var instanceof tg1)) {
+                o2Var = ((tg1) o2Var).W();
+            }
+            FrameLayout frameLayout = gcVar.h;
+            if (o2Var == null || (fbVar = o2Var.getBulletinDelegate()) == null) {
+                if (frameLayout != null) {
+                    Object tag = frameLayout.getTag(R.id.bulletin_delegate_tag);
+                    if (tag instanceof fb) {
+                        fbVar = (fb) tag;
+                    }
+                }
+                fbVar = null;
+            }
+            gcVar.p = fbVar;
+            if (fbVar == null && o2Var != null) {
+                gcVar.p = new fh.y0(o2Var, 7);
+            }
+            o1.j jVar = gcVar.d;
+            if (jVar == null || !jVar.f) {
+                fb fbVar2 = gcVar.p;
+                gcVar.o = fbVar2 != null ? fbVar2.f(gcVar.a) : 0;
+            }
+            fb fbVar3 = gcVar.p;
+            if (fbVar3 != null) {
+                fbVar3.b(gcVar);
+            }
+            if (MessagesController.getGlobalMainSettings().getBoolean("view_animations", true) && !gcVar.s) {
+                if (lbVar != null && gcVar.q == null) {
+                    gcVar.q = lbVar.createTransition();
+                }
+                lbVar.transitionRunningEnter = true;
+                lbVar.delegate = gcVar.p;
+                lbVar.invalidate();
+                kb kbVar = gcVar.q;
+                Objects.requireNonNull(lbVar);
+                kbVar.g(lbVar, new wa(lbVar, 1), new fg(this, 15), new dl(2, this, z10));
+                return;
+            }
+            fb fbVar4 = gcVar.p;
+            lbVar.delegate = fbVar4;
+            if (fbVar4 != null && !z10) {
+                fbVar4.c(lbVar.getHeight());
+            }
+            gcVar.l();
+            lbVar.onEnterTransitionStart();
+            lbVar.onEnterTransitionEnd();
+            if (gcVar.u) {
+                gcVar.i(true);
+            }
         }
     }
 }

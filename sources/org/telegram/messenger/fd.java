@@ -1,46 +1,75 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.TranslateController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class fd implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
+public final /* synthetic */ class fd implements Runnable {
+    public final /* synthetic */ int a = 2;
     public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ BaseController d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ fd(MessagesController messagesController, long j10, Utilities.Callback callback, TLRPC.User user, int i10) {
-        this.d = messagesController;
+    public /* synthetic */ fd(ChatThemeController chatThemeController, TLObject tLObject, long j10, boolean z10, String str, Runnable runnable) {
+        this.d = chatThemeController;
+        this.e = tLObject;
         this.b = j10;
-        this.e = callback;
-        this.f = user;
-        this.c = i10;
+        this.c = z10;
+        this.f = str;
+        this.h = runnable;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.d).lambda$loadFullUser$72(this.b, (Utilities.Callback) this.e, (TLRPC.User) this.f, this.c, tLObject, tL_error);
+                ((MessagesController) this.d).lambda$getSendAsPeers$442((TLRPC.TL_channels_sendAsPeers) this.e, (a0.h) this.f, this.b, (MessagesController.SendAsPeersInfo) this.h, this.c);
+                break;
+            case 1:
+                ((TranslateController) this.d).lambda$pushToTranslate$24((HashMap) this.e, this.b, (TranslateController.PendingTranslation) this.f, this.c, (Set) this.h);
+                break;
+            case 2:
+                ((ChatThemeController) this.d).lambda$setWallpaperToPeer$16((TLObject) this.e, this.b, this.c, (String) this.f, (Runnable) this.h);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new hh.v6((org.telegram.ui.Cells.c6) this.d, tLObject, (MessagesStorage) this.e, this.b, this.c, (ArrayList) this.f));
+                ((TopicsController) this.d).lambda$reloadTopics$15((TLObject) this.e, this.c, this.b, (HashSet) this.f, (Runnable) this.h);
                 break;
         }
     }
 
-    public /* synthetic */ fd(org.telegram.ui.Cells.c6 c6Var, MessagesStorage messagesStorage, long j10, int i10, ArrayList arrayList) {
-        this.d = c6Var;
-        this.e = messagesStorage;
+    public /* synthetic */ fd(MessagesController messagesController, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, a0.h hVar, long j10, MessagesController.SendAsPeersInfo sendAsPeersInfo, boolean z10) {
+        this.d = messagesController;
+        this.e = tL_channels_sendAsPeers;
+        this.f = hVar;
         this.b = j10;
-        this.c = i10;
-        this.f = arrayList;
+        this.h = sendAsPeersInfo;
+        this.c = z10;
+    }
+
+    public /* synthetic */ fd(TopicsController topicsController, TLObject tLObject, boolean z10, long j10, HashSet hashSet, Runnable runnable) {
+        this.d = topicsController;
+        this.e = tLObject;
+        this.c = z10;
+        this.b = j10;
+        this.f = hashSet;
+        this.h = runnable;
+    }
+
+    public /* synthetic */ fd(TranslateController translateController, HashMap hashMap, long j10, TranslateController.PendingTranslation pendingTranslation, boolean z10, Set set) {
+        this.d = translateController;
+        this.e = hashMap;
+        this.b = j10;
+        this.f = pendingTranslation;
+        this.c = z10;
+        this.h = set;
     }
 }

@@ -8,13 +8,13 @@ import java.util.ListIterator;
 import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.Graphics2D;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class HorizontalBox extends Box {
     protected List<Integer> breakPositions;
     private float curPos;
 
-    public HorizontalBox(Box box, float f10, int i10) {
+    public HorizontalBox(Box box, float f10, int i9) {
         this.curPos = 0.0f;
         if (f10 == Float.POSITIVE_INFINITY) {
             add(box);
@@ -25,17 +25,17 @@ public class HorizontalBox extends Box {
             add(box);
             return;
         }
-        if (i10 == 2 || i10 == 5) {
+        if (i9 == 2 || i9 == 5) {
             StrutBox strutBox = new StrutBox(width / 2.0f, 0.0f, 0.0f, 0.0f);
             add(strutBox);
             add(box);
             add(strutBox);
             return;
         }
-        if (i10 == 0) {
+        if (i9 == 0) {
             add(box);
             add(new StrutBox(width, 0.0f, 0.0f, 0.0f));
-        } else if (i10 != 1) {
+        } else if (i9 != 1) {
             add(box);
         } else {
             add(new StrutBox(width, 0.0f, 0.0f, 0.0f));
@@ -55,11 +55,11 @@ public class HorizontalBox extends Box {
         super.add(box);
     }
 
-    public void addBreakPosition(int i10) {
+    public void addBreakPosition(int i9) {
         if (this.breakPositions == null) {
             this.breakPositions = new ArrayList();
         }
-        this.breakPositions.add(Integer.valueOf(i10));
+        this.breakPositions.add(Integer.valueOf(i9));
     }
 
     public HorizontalBox cloneBox() {
@@ -84,34 +84,34 @@ public class HorizontalBox extends Box {
     public int getLastFontId() {
         LinkedList<Box> linkedList = this.children;
         ListIterator<Box> listIterator = linkedList.listIterator(linkedList.size());
-        int i10 = -1;
-        while (i10 == -1 && listIterator.hasPrevious()) {
-            i10 = listIterator.previous().getLastFontId();
+        int i9 = -1;
+        while (i9 == -1 && listIterator.hasPrevious()) {
+            i9 = listIterator.previous().getLastFontId();
         }
-        return i10;
+        return i9;
     }
 
-    public HorizontalBox[] split(int i10) {
-        return split(i10, 1);
+    public HorizontalBox[] split(int i9) {
+        return split(i9, 1);
     }
 
-    public HorizontalBox[] splitRemove(int i10) {
-        return split(i10, 2);
+    public HorizontalBox[] splitRemove(int i9) {
+        return split(i9, 2);
     }
 
-    private HorizontalBox[] split(int i10, int i11) {
+    private HorizontalBox[] split(int i9, int i10) {
         HorizontalBox cloneBox = cloneBox();
         HorizontalBox cloneBox2 = cloneBox();
-        for (int i12 = 0; i12 <= i10; i12++) {
-            cloneBox.add(this.children.get(i12));
+        for (int i11 = 0; i11 <= i9; i11++) {
+            cloneBox.add(this.children.get(i11));
         }
-        for (int i13 = i11 + i10; i13 < this.children.size(); i13++) {
-            cloneBox2.add(this.children.get(i13));
+        for (int i12 = i10 + i9; i12 < this.children.size(); i12++) {
+            cloneBox2.add(this.children.get(i12));
         }
         if (this.breakPositions != null) {
-            for (int i14 = 0; i14 < this.breakPositions.size(); i14++) {
-                if (this.breakPositions.get(i14).intValue() > i10 + 1) {
-                    cloneBox2.addBreakPosition((this.breakPositions.get(i14).intValue() - i10) - 1);
+            for (int i13 = 0; i13 < this.breakPositions.size(); i13++) {
+                if (this.breakPositions.get(i13).intValue() > i9 + 1) {
+                    cloneBox2.addBreakPosition((this.breakPositions.get(i13).intValue() - i9) - 1);
                 }
             }
         }
@@ -119,9 +119,9 @@ public class HorizontalBox extends Box {
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
-    public final void add(int i10, Box box) {
+    public final void add(int i9, Box box) {
         recalculate(box);
-        super.add(i10, box);
+        super.add(i9, box);
     }
 
     public HorizontalBox(Box box) {

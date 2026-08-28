@@ -1,70 +1,54 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.Emoji;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class za0 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fb0 b;
+public final class za0 extends org.telegram.ui.Cells.j3 {
+    public boolean x;
+    public final /* synthetic */ bb0 y;
 
-    public /* synthetic */ za0(fb0 fb0Var, int i10) {
-        this.a = i10;
-        this.b = fb0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public za0(bb0 bb0Var, Context context, String str, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(context, str, false, false, -1, b6Var);
+        this.y = bb0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        switch (this.a) {
-            case 0:
-                Emoji.replaceEmoji(editable, this.b.G.getPaint().getFontMetricsInt(), false);
-                break;
-            default:
-                fb0 fb0Var = this.b;
-                if (!fb0Var.K) {
-                    if (editable.toString().equals("0")) {
-                        fb0Var.B.setText("");
-                        break;
-                    } else {
-                        try {
-                            int parseInt = Integer.parseInt(editable.toString());
-                            if (parseInt <= 100000) {
-                                fb0Var.W(parseInt);
-                                break;
-                            } else {
-                                fb0Var.X();
-                                break;
-                            }
-                        } catch (NumberFormatException unused) {
-                            fb0Var.X();
-                        }
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Cells.j3
+    public final void b(Editable editable) {
+        int i9;
+        if (this.x) {
+            return;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+        boolean isEmpty = TextUtils.isEmpty(editable);
+        bb0 bb0Var = this.y;
+        if (isEmpty) {
+            bb0Var.s.setText("");
+            return;
+        }
+        try {
+            long parseLong = Long.parseLong(editable.toString());
+            if (parseLong > bb0Var.getMessagesController().starsSubscriptionAmountMax) {
+                this.x = true;
+                parseLong = bb0Var.getMessagesController().starsSubscriptionAmountMax;
+                setText(Long.toString(parseLong));
+                this.x = false;
+            }
+            TextView textView = bb0Var.s;
+            int i10 = bb0Var.getConnectionsManager().isTestBackend() ? R.string.RequireMonthlyFeePriceTest5Minutes : R.string.RequireMonthlyFeePrice;
+            BillingController billingController = BillingController.getInstance();
+            i9 = ((org.telegram.ui.ActionBar.o2) bb0Var).currentAccount;
+            textView.setText(LocaleController.formatString(i10, billingController.formatCurrency((long) ((parseLong / 1000.0d) * MessagesController.getInstance(i9).starsUsdWithdrawRate1000), "USD")));
+        } catch (Exception e10) {
+            FileLog.e(e10);
+        }
     }
 }

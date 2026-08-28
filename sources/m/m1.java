@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class m1 {
     public static final int[] a = {R.attr.state_checked};
@@ -18,10 +18,10 @@ public abstract class m1 {
 
     public static void a(Drawable drawable) {
         String name = drawable.getClass().getName();
-        int i10 = Build.VERSION.SDK_INT;
+        int i9 = Build.VERSION.SDK_INT;
         int[] iArr = a;
         int[] iArr2 = b;
-        if (i10 == 21 && "android.graphics.drawable.VectorDrawable".equals(name)) {
+        if (i9 == 21 && "android.graphics.drawable.VectorDrawable".equals(name)) {
             int[] state = drawable.getState();
             if (state == null || state.length == 0) {
                 drawable.setState(iArr);
@@ -31,7 +31,7 @@ public abstract class m1 {
             drawable.setState(state);
             return;
         }
-        if (i10 < 29 || i10 >= 31 || !"android.graphics.drawable.ColorStateListDrawable".equals(name)) {
+        if (i9 < 29 || i9 >= 31 || !"android.graphics.drawable.ColorStateListDrawable".equals(name)) {
             return;
         }
         int[] state2 = drawable.getState();
@@ -43,17 +43,17 @@ public abstract class m1 {
         drawable.setState(state2);
     }
 
-    public static PorterDuff.Mode b(int i10, PorterDuff.Mode mode) {
-        if (i10 == 3) {
+    public static PorterDuff.Mode b(int i9, PorterDuff.Mode mode) {
+        if (i9 == 3) {
             return PorterDuff.Mode.SRC_OVER;
         }
-        if (i10 == 5) {
+        if (i9 == 5) {
             return PorterDuff.Mode.SRC_IN;
         }
-        if (i10 == 9) {
+        if (i9 == 9) {
             return PorterDuff.Mode.SRC_ATOP;
         }
-        switch (i10) {
+        switch (i9) {
             case 14:
                 return PorterDuff.Mode.MULTIPLY;
             case 15:

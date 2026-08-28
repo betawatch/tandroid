@@ -1,97 +1,91 @@
 package b9;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.firebase.messaging.l;
-import com.google.firebase.messaging.t;
-import com.google.firebase.messaging.v;
-import e7.p;
-import f9.o;
-import f9.q;
-import java.util.concurrent.atomic.AtomicMarkableReference;
-import m.t3;
+import e9.h;
+import java.io.IOException;
+import java.io.InputStream;
+import n2.o;
+import x5.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class c {
-    public final q a;
+    public final /* synthetic */ int a;
+    public String b;
+    public String c;
 
-    public c(q qVar) {
-        this.a = qVar;
+    public /* synthetic */ c() {
+        this.a = 2;
     }
 
-    public final void a(Throwable th) {
-        if (th == null) {
-            Log.w("FirebaseCrashlytics", "A null value was passed to recordException. Ignoring.", null);
+    public o a() {
+        if ("first_party".equals(this.c)) {
+            throw new IllegalArgumentException("Serialized doc id must be provided for first party products.");
+        }
+        if (this.b == null) {
+            throw new IllegalArgumentException("Product id must be provided.");
+        }
+        if (this.c != null) {
+            return new o(this);
+        }
+        throw new IllegalArgumentException("Product type must be provided.");
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 3:
+                return this.b + ", " + this.c;
+            default:
+                return super.toString();
+        }
+    }
+
+    public /* synthetic */ c(int i9, String str, String str2) {
+        this.a = i9;
+        this.b = str;
+        this.c = str2;
+    }
+
+    public c(String str, String str2) {
+        this.a = 5;
+        l.c(str.length() <= 23, "tag \"%s\" is longer than the %d character maximum", str, 23);
+        this.b = str;
+        this.c = (str2 == null || str2.length() <= 0) ? null : str2;
+    }
+
+    public c(we.b bVar) {
+        this.a = 0;
+        Context context = (Context) bVar.b;
+        int e10 = h.e(context, "com.google.firebase.crashlytics.unity_version", "string");
+        if (e10 != 0) {
+            this.b = "Unity";
+            String string = context.getResources().getString(e10);
+            this.c = string;
+            String d = ta.b.d("Unity Editor version is: ", string);
+            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                Log.v("FirebaseCrashlytics", d, null);
+                return;
+            }
             return;
         }
-        o oVar = this.a.f;
-        Thread currentThread = Thread.currentThread();
-        oVar.getClass();
-        long currentTimeMillis = System.currentTimeMillis();
-        t tVar = oVar.e;
-        v vVar = new v(oVar, currentTimeMillis, th, currentThread);
-        tVar.getClass();
-        tVar.Q(new p(vVar, 1));
-    }
-
-    public final void b() {
-        q qVar = this.a;
-        Boolean bool = Boolean.TRUE;
-        f9.t tVar = qVar.b;
-        synchronized (tVar) {
-            tVar.f = false;
-            tVar.g = bool;
-            SharedPreferences.Editor edit = tVar.a.edit();
-            edit.putBoolean("firebase_crashlytics_collection_enabled", true);
-            edit.apply();
-            synchronized (tVar.c) {
-                try {
-                    if (tVar.a()) {
-                        if (!tVar.e) {
-                            tVar.d.trySetResult(null);
-                            tVar.e = true;
-                        }
-                    } else if (tVar.e) {
-                        tVar.d = new TaskCompletionSource();
-                        tVar.e = false;
-                    }
-                } finally {
-                }
-            }
-        }
-    }
-
-    public final void c(String str, String str2) {
-        o oVar = this.a.f;
-        oVar.getClass();
-        try {
-            ((l) oVar.d.d).r(str, str2);
-        } catch (IllegalArgumentException e9) {
-            Context context = oVar.a;
-            if (context != null && (context.getApplicationInfo().flags & 2) != 0) {
-                throw e9;
-            }
-            Log.e("FirebaseCrashlytics", "Attempting to set custom attribute with null key, ignoring.", null);
-        }
-    }
-
-    public final void d(String str) {
-        t3 t3Var = this.a.f.d;
-        t3Var.getClass();
-        String b10 = g9.d.b(1024, str);
-        synchronized (((AtomicMarkableReference) t3Var.h)) {
+        if (context.getAssets() != null) {
             try {
-                String str2 = (String) ((AtomicMarkableReference) t3Var.h).getReference();
-                if (b10 == null ? str2 == null : b10.equals(str2)) {
+                InputStream open = context.getAssets().open("flutter_assets/NOTICES.Z");
+                if (open != null) {
+                    open.close();
+                }
+                this.b = "Flutter";
+                this.c = null;
+                if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                    Log.v("FirebaseCrashlytics", "Development platform is: Flutter", null);
                     return;
                 }
-                ((AtomicMarkableReference) t3Var.h).set(b10, true);
-                ((t) t3Var.b).Q(new g9.o(t3Var, 0));
-            } finally {
+                return;
+            } catch (IOException unused) {
             }
         }
+        this.b = null;
+        this.c = null;
     }
 }

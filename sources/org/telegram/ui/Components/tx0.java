@@ -1,74 +1,92 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class tx0 extends yk0 {
-    public final wx0 c;
-    public final /* synthetic */ wx0 d;
+public final class tx0 extends View {
+    public String a;
+    public Drawable b;
+    public boolean c;
+    public int d;
+    public final y5 e;
+    public final /* synthetic */ ux0 f;
 
-    public tx0(wx0 wx0Var, wx0 wx0Var2) {
-        this.d = wx0Var;
-        this.c = wx0Var2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tx0(ux0 ux0Var, Context context) {
+        super(context);
+        this.f = ux0Var;
+        this.d = 0;
+        this.e = new y5(this, 350L, new OvershootInterpolator(5.0f));
     }
 
-    @Override // org.telegram.ui.Components.yk0
-    public final boolean D(f2.o1 o1Var) {
-        return true;
-    }
-
-    @Override // f2.q0
-    public final int h() {
-        ArrayList arrayList = this.c.w;
-        if (arrayList == null) {
-            return 0;
-        }
-        return arrayList.size();
-    }
-
-    @Override // f2.q0
-    public final long i(int i10) {
-        if (this.c.w == null) {
-            return 0L;
-        }
-        return ((MediaDataController.KeywordResult) r0.get(i10)).emoji.hashCode();
-    }
-
-    @Override // f2.q0
-    public final void v(f2.o1 o1Var, int i10) {
-        vx0 vx0Var = (vx0) o1Var.a;
-        wx0 wx0Var = this.c;
-        ArrayList arrayList = wx0Var.w;
-        String str = arrayList == null ? null : ((MediaDataController.KeywordResult) arrayList.get(i10)).emoji;
-        int direction = wx0Var.getDirection();
-        vx0Var.a = str;
-        if (str == null || !str.startsWith("animated_")) {
-            vx0Var.setImageDrawable(Emoji.getEmojiBigDrawable(str));
-        } else {
-            try {
-                long parseLong = Long.parseLong(str.substring(9));
-                Drawable drawable = vx0Var.b;
-                if (!(drawable instanceof k5) || ((k5) drawable).i() != parseLong) {
-                    vx0Var.setImageDrawable(k5.n(UserConfig.selectedAccount, parseLong, null, vx0Var.f.d()));
-                }
-            } catch (Exception unused) {
-                vx0Var.setImageDrawable(null);
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float d = ((1.0f - this.e.d(isPressed() ? 1.0f : 0.0f, false)) * 0.2f) + 0.8f;
+        if (this.b != null) {
+            int width = getWidth() / 2;
+            int paddingTop = (getPaddingTop() + (getHeight() - getPaddingBottom())) / 2;
+            this.b.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
+            canvas.scale(d, d, width, paddingTop);
+            Drawable drawable = this.b;
+            if (drawable instanceof k5) {
+                ((k5) drawable).q(System.currentTimeMillis());
             }
-        }
-        if (vx0Var.d != direction) {
-            vx0Var.d = direction;
-            vx0Var.requestLayout();
+            this.b.draw(canvas);
         }
     }
 
-    @Override // f2.q0
-    public final f2.o1 x(ViewGroup viewGroup, int i10) {
-        return new lk0(new vx0(this.d, this.c.getContext()));
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        Drawable drawable = this.b;
+        if (drawable instanceof k5) {
+            ((k5) drawable).a(this);
+        }
+        this.c = true;
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        Drawable drawable = this.b;
+        if (drawable instanceof k5) {
+            ((k5) drawable).o(this);
+        }
+        this.c = false;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i9, int i10) {
+        setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp((this.d == 0 ? 0.0f : 6.66f) + 3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp((this.d != 0 ? 0.0f : 6.66f) + 3.0f));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
+    }
+
+    public void setDirection(int i9) {
+        this.d = i9;
+        invalidate();
+    }
+
+    public void setImageDrawable(Drawable drawable) {
+        Drawable drawable2 = this.b;
+        if (drawable2 instanceof k5) {
+            ((k5) drawable2).o(this);
+        }
+        this.b = drawable;
+        if ((drawable instanceof k5) && this.c) {
+            ((k5) drawable).a(this);
+        }
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z10) {
+        super.setPressed(z10);
+        invalidate();
     }
 }

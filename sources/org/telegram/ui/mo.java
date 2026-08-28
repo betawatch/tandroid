@@ -1,45 +1,72 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class mo implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xo b;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-    public /* synthetic */ mo(xo xoVar, int i10) {
-        this.a = i10;
-        this.b = xoVar;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class mo implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vo b;
+
+    public /* synthetic */ mo(vo voVar, int i9) {
+        this.a = i9;
+        this.b = voVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i9 = this.a;
+        vo voVar = this.b;
+        switch (i9) {
             case 0:
-                xo xoVar = this.b;
-                xoVar.Y = true;
-                xoVar.b0();
+                TLRPC.Chat currentChannel = ((org.telegram.ui.Cells.n) view.getParent()).getCurrentChannel();
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(voVar.getParentActivity());
+                String string = LocaleController.getString(R.string.AppName);
+                org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+                c2Var.N = string;
+                if (voVar.W) {
+                    c2Var.P = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlertChannel", R.string.RevokeLinkAlertChannel, voVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
+                } else {
+                    c2Var.P = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlert", R.string.RevokeLinkAlert, voVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
+                }
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new ih.v3(23, voVar, currentChannel));
+                voVar.showDialog(c2Var);
                 break;
             case 1:
-                xo xoVar2 = this.b;
-                xoVar2.T = xoVar2.getMessagesController().getChat(Long.valueOf(xoVar2.V));
-                xoVar2.Y();
+                if (!voVar.R) {
+                    voVar.R = true;
+                    voVar.a0();
+                    break;
+                }
                 break;
             case 2:
-                this.b.a0(false);
+                if (voVar.R) {
+                    if (!voVar.Y) {
+                        voVar.Y();
+                        break;
+                    } else {
+                        voVar.R = false;
+                        voVar.a0();
+                        break;
+                    }
+                }
                 break;
             case 3:
-                xo xoVar3 = this.b;
-                xoVar3.Y = true;
-                if (xoVar3.a.length() > 0) {
-                    xoVar3.W(xoVar3.a.getText().toString());
-                }
-                xoVar3.b0();
-                break;
-            case 4:
-                this.b.Y();
+                hh0 hh0Var = new hh0(voVar.V, 0L, 0);
+                hh0Var.f0(voVar.U, voVar.h0);
+                voVar.presentFragment(hh0Var);
                 break;
             default:
-                this.b.a0(true);
+                boolean z10 = !voVar.X;
+                voVar.X = z10;
+                ((org.telegram.ui.Cells.t8) view).setChecked(z10);
                 break;
         }
     }

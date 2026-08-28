@@ -1,13 +1,13 @@
 package x1;
 
 import android.util.Log;
-import e7.p;
+import d7.p;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b extends FutureTask {
     public final /* synthetic */ a a;
@@ -28,15 +28,15 @@ public final class b extends FutureTask {
                 return;
             }
             aVar.b(obj);
-        } catch (InterruptedException e9) {
-            Log.w("AsyncTask", e9);
+        } catch (InterruptedException e10) {
+            Log.w("AsyncTask", e10);
         } catch (CancellationException unused) {
             if (atomicBoolean.get()) {
                 return;
             }
             aVar.b(null);
-        } catch (ExecutionException e10) {
-            throw new RuntimeException("An error occurred while executing doInBackground()", e10.getCause());
+        } catch (ExecutionException e11) {
+            throw new RuntimeException("An error occurred while executing doInBackground()", e11.getCause());
         } catch (Throwable th) {
             throw new RuntimeException("An error occurred while executing doInBackground()", th);
         }

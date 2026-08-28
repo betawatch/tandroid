@@ -11,14 +11,14 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class vw0 extends FrameLayout {
-    public org.telegram.ui.Components.l9 a;
-    public org.telegram.ui.Cells.s1 b;
+    public org.telegram.ui.Components.m9 a;
+    public org.telegram.ui.Cells.t1 b;
     public Drawable c;
     public Drawable d;
-    public org.telegram.ui.Components.x30 e;
+    public org.telegram.ui.Components.s30 e;
     public MessageObject f;
 
     @Override // android.view.ViewGroup, android.view.View
@@ -41,9 +41,9 @@ public final class vw0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.ui.Components.l9 l9Var = this.a;
-        if (l9Var != null) {
-            l9Var.dispose();
+        org.telegram.ui.Components.m9 m9Var = this.a;
+        if (m9Var != null) {
+            m9Var.dispose();
             this.a = null;
         }
     }
@@ -51,21 +51,21 @@ public final class vw0 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Drawable drawable = this.d;
-        Drawable s02 = org.telegram.ui.ActionBar.g6.s0();
+        Drawable s02 = org.telegram.ui.ActionBar.f6.s0();
         if (s02 != null && this.c != s02) {
-            org.telegram.ui.Components.l9 l9Var = this.a;
-            if (l9Var != null) {
-                l9Var.dispose();
+            org.telegram.ui.Components.m9 m9Var = this.a;
+            if (m9Var != null) {
+                m9Var.dispose();
                 this.a = null;
             }
             this.c = s02;
         }
         Drawable drawable2 = this.c;
-        if ((drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof org.telegram.ui.Components.nb0)) {
+        if ((drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof org.telegram.ui.Components.jb0)) {
             drawable2.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
             Drawable drawable3 = this.c;
-            if (drawable3 instanceof org.telegram.ui.Components.m9) {
-                this.a = ((org.telegram.ui.Components.m9) drawable3).c(canvas, this);
+            if (drawable3 instanceof org.telegram.ui.Components.n9) {
+                this.a = ((org.telegram.ui.Components.n9) drawable3).c(canvas, this);
             } else {
                 drawable3.draw(canvas);
             }
@@ -81,10 +81,10 @@ public final class vw0 extends FrameLayout {
                 int ceil = (int) Math.ceil(this.c.getIntrinsicWidth() * max);
                 int ceil2 = (int) Math.ceil(this.c.getIntrinsicHeight() * max);
                 int measuredWidth = (getMeasuredWidth() - ceil) / 2;
-                int i10 = (measuredHeight - ceil2) / 2;
+                int i9 = (measuredHeight - ceil2) / 2;
                 canvas.save();
                 canvas.clipRect(0, 0, ceil, getMeasuredHeight());
-                this.c.setBounds(measuredWidth, i10, ceil + measuredWidth, ceil2 + i10);
+                this.c.setBounds(measuredWidth, i9, ceil + measuredWidth, ceil2 + i9);
             }
             this.c.draw(canvas);
             canvas.restore();

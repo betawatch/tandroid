@@ -13,18 +13,19 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.CompoundButton;
 import android.widget.TextView;
-import g7.k8;
+import androidx.lifecycle.j;
+import f7.q8;
+import f7.t7;
 import g7.o7;
-import h7.m7;
 import java.lang.reflect.Field;
 import java.util.Iterator;
 import java.util.Map;
-import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.i;
 import m.m1;
 import m.q;
 import r0.j0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class e {
     public boolean a;
@@ -48,30 +49,30 @@ public final class e {
         if (Build.VERSION.SDK_INT >= 23) {
             drawable = e0.b.d(compoundButton);
         } else {
-            if (!m7.b) {
+            if (!o7.b) {
                 try {
                     Field declaredField = CompoundButton.class.getDeclaredField("mButtonDrawable");
-                    m7.a = declaredField;
+                    o7.a = declaredField;
                     declaredField.setAccessible(true);
-                } catch (NoSuchFieldException e9) {
-                    Log.i("CompoundButtonCompat", "Failed to retrieve mButtonDrawable field", e9);
+                } catch (NoSuchFieldException e10) {
+                    Log.i("CompoundButtonCompat", "Failed to retrieve mButtonDrawable field", e10);
                 }
-                m7.b = true;
+                o7.b = true;
             }
-            Field field = m7.a;
+            Field field = o7.a;
             if (field != null) {
                 try {
                     drawable = (Drawable) field.get(compoundButton);
-                } catch (IllegalAccessException e10) {
-                    Log.i("CompoundButtonCompat", "Failed to get button drawable via reflection", e10);
-                    m7.a = null;
+                } catch (IllegalAccessException e11) {
+                    Log.i("CompoundButtonCompat", "Failed to get button drawable via reflection", e11);
+                    o7.a = null;
                 }
             }
             drawable = null;
         }
         if (drawable != null) {
             if (this.a || this.b) {
-                Drawable mutate = k8.d(drawable).mutate();
+                Drawable mutate = q8.d(drawable).mutate();
                 if (this.a) {
                     mutate.setTintList((ColorStateList) this.e);
                 }
@@ -91,7 +92,7 @@ public final class e {
         Drawable checkMarkDrawable = qVar.getCheckMarkDrawable();
         if (checkMarkDrawable != null) {
             if (this.a || this.b) {
-                Drawable mutate = k8.d(checkMarkDrawable).mutate();
+                Drawable mutate = q8.d(checkMarkDrawable).mutate();
                 if (this.a) {
                     mutate.setTintList((ColorStateList) this.e);
                 }
@@ -137,10 +138,10 @@ public final class e {
                 return null;
             }
             Map.Entry components = (Map.Entry) bVar.next();
-            j.d(components, "components");
+            i.d(components, "components");
             str = (String) components.getKey();
             dVar = (d) components.getValue();
-        } while (!j.a(str, "androidx.lifecycle.internal.SavedStateHandlesProvider"));
+        } while (!i.a(str, "androidx.lifecycle.internal.SavedStateHandlesProvider"));
         return dVar;
     }
 
@@ -149,50 +150,50 @@ public final class e {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void e(AttributeSet attributeSet, int i10) {
+    public void e(AttributeSet attributeSet, int i9) {
         int resourceId;
         int resourceId2;
         CompoundButton compoundButton = (CompoundButton) this.d;
         Context context = compoundButton.getContext();
         int[] iArr = f.a.m;
-        j9.a G = j9.a.G(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) G.c;
-        j0.j(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) G.c, i10);
+        j4.c E = j4.c.E(context, attributeSet, iArr, i9);
+        TypedArray typedArray = (TypedArray) E.c;
+        j0.j(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) E.c, i9);
         try {
             if (typedArray.hasValue(1) && (resourceId2 = typedArray.getResourceId(1, 0)) != 0) {
                 try {
-                    compoundButton.setButtonDrawable(o7.b(compoundButton.getContext(), resourceId2));
+                    compoundButton.setButtonDrawable(t7.b(compoundButton.getContext(), resourceId2));
                 } catch (Resources.NotFoundException unused) {
                 }
                 if (typedArray.hasValue(2)) {
-                    compoundButton.setButtonTintList(G.x(2));
+                    compoundButton.setButtonTintList(E.v(2));
                 }
                 if (typedArray.hasValue(3)) {
                     compoundButton.setButtonTintMode(m1.b(typedArray.getInt(3, -1), null));
                 }
-                G.I();
+                E.G();
             }
             if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
-                compoundButton.setButtonDrawable(o7.b(compoundButton.getContext(), resourceId));
+                compoundButton.setButtonDrawable(t7.b(compoundButton.getContext(), resourceId));
             }
             if (typedArray.hasValue(2)) {
             }
             if (typedArray.hasValue(3)) {
             }
-            G.I();
+            E.G();
         } catch (Throwable th) {
-            G.I();
+            E.G();
             throw th;
         }
     }
 
     public void f(String str, d provider) {
         Object obj;
-        j.e(provider, "provider");
+        i.e(provider, "provider");
         o.f fVar = (o.f) this.d;
-        o.c i10 = fVar.i(str);
-        if (i10 != null) {
-            obj = i10.b;
+        o.c i9 = fVar.i(str);
+        if (i9 != null) {
+            obj = i9.b;
         } else {
             o.c cVar = new o.c(str, provider);
             fVar.d++;
@@ -222,13 +223,13 @@ public final class e {
         }
         this.f = aVar;
         try {
-            androidx.lifecycle.j.class.getDeclaredConstructor(null);
+            j.class.getDeclaredConstructor(null);
             a aVar2 = (a) this.f;
             if (aVar2 != null) {
-                aVar2.a.add(androidx.lifecycle.j.class.getName());
+                aVar2.a.add(j.class.getName());
             }
-        } catch (NoSuchMethodException e9) {
-            throw new IllegalArgumentException("Class " + androidx.lifecycle.j.class.getSimpleName() + " must have default constructor in order to be automatically recreated", e9);
+        } catch (NoSuchMethodException e10) {
+            throw new IllegalArgumentException("Class " + j.class.getSimpleName() + " must have default constructor in order to be automatically recreated", e10);
         }
     }
 

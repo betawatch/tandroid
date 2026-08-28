@@ -2,13 +2,13 @@ package com.google.android.play.core.integrity;
 
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class c extends StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder {
     private long a;
     private byte b;
 
-    public final StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder a(int i10) {
+    public final StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder a(int i9) {
         this.b = (byte) (this.b | 2);
         return this;
     }

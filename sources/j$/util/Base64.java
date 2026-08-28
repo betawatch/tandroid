@@ -21,58 +21,58 @@ public class Base64 {
             int length = ((bArr.length + 2) / 3) * 4;
             byte[] bArr2 = new byte[length];
             int length2 = bArr.length;
-            int i10 = (length2 / 3) * 3;
+            int i9 = (length2 / 3) * 3;
+            int i10 = 0;
             int i11 = 0;
-            int i12 = 0;
             while (true) {
                 char[] cArr = a;
-                if (i11 >= i10) {
-                    if (i11 < length2) {
-                        int i13 = i11 + 1;
-                        int i14 = bArr[i11] & 255;
-                        int i15 = i12 + 1;
-                        bArr2[i12] = (byte) cArr[i14 >> 2];
-                        if (i13 == length2) {
-                            bArr2[i15] = (byte) cArr[(i14 << 4) & 63];
-                            int i16 = i12 + 3;
-                            bArr2[i12 + 2] = 61;
-                            i12 += 4;
-                            bArr2[i16] = 61;
+                if (i10 >= i9) {
+                    if (i10 < length2) {
+                        int i12 = i10 + 1;
+                        int i13 = bArr[i10] & 255;
+                        int i14 = i11 + 1;
+                        bArr2[i11] = (byte) cArr[i13 >> 2];
+                        if (i12 == length2) {
+                            bArr2[i14] = (byte) cArr[(i13 << 4) & 63];
+                            int i15 = i11 + 3;
+                            bArr2[i11 + 2] = 61;
+                            i11 += 4;
+                            bArr2[i15] = 61;
                         } else {
-                            int i17 = bArr[i13] & 255;
-                            bArr2[i15] = (byte) cArr[((i14 << 4) & 63) | (i17 >> 4)];
-                            int i18 = i12 + 3;
-                            bArr2[i12 + 2] = (byte) cArr[(i17 << 2) & 63];
-                            i12 += 4;
-                            bArr2[i18] = 61;
+                            int i16 = bArr[i12] & 255;
+                            bArr2[i14] = (byte) cArr[((i13 << 4) & 63) | (i16 >> 4)];
+                            int i17 = i11 + 3;
+                            bArr2[i11 + 2] = (byte) cArr[(i16 << 2) & 63];
+                            i11 += 4;
+                            bArr2[i17] = 61;
                         }
                     }
-                    if (i12 != length) {
-                        bArr2 = Arrays.copyOf(bArr2, i12);
+                    if (i11 != length) {
+                        bArr2 = Arrays.copyOf(bArr2, i11);
                     }
                     return new String(bArr2, 0, 0, bArr2.length);
                 }
-                int min = Math.min(i11 + i10, i10);
+                int min = Math.min(i10 + i9, i9);
+                int i18 = i10;
                 int i19 = i11;
-                int i20 = i12;
-                while (i19 < min) {
-                    int i21 = i19 + 2;
-                    int i22 = ((bArr[i19 + 1] & 255) << 8) | ((bArr[i19] & 255) << 16);
-                    i19 += 3;
-                    int i23 = i22 | (bArr[i21] & 255);
-                    bArr2[i20] = (byte) cArr[(i23 >>> 18) & 63];
-                    bArr2[i20 + 1] = (byte) cArr[(i23 >>> 12) & 63];
-                    int i24 = i20 + 3;
-                    bArr2[i20 + 2] = (byte) cArr[(i23 >>> 6) & 63];
-                    i20 += 4;
-                    bArr2[i24] = (byte) cArr[i23 & 63];
+                while (i18 < min) {
+                    int i20 = i18 + 2;
+                    int i21 = ((bArr[i18 + 1] & 255) << 8) | ((bArr[i18] & 255) << 16);
+                    i18 += 3;
+                    int i22 = i21 | (bArr[i20] & 255);
+                    bArr2[i19] = (byte) cArr[(i22 >>> 18) & 63];
+                    bArr2[i19 + 1] = (byte) cArr[(i22 >>> 12) & 63];
+                    int i23 = i19 + 3;
+                    bArr2[i19 + 2] = (byte) cArr[(i22 >>> 6) & 63];
+                    i19 += 4;
+                    bArr2[i23] = (byte) cArr[i22 & 63];
                 }
-                int i25 = ((min - i11) / 3) * 4;
-                i12 += i25;
-                if (i25 == -1 && min < length2) {
+                int i24 = ((min - i10) / 3) * 4;
+                i11 += i24;
+                if (i24 == -1 && min < length2) {
                     throw null;
                 }
-                i11 = min;
+                i10 = min;
             }
         }
     }
@@ -86,15 +86,15 @@ public class Base64 {
             int[] iArr = new int[256];
             a = iArr;
             Arrays.fill(iArr, -1);
-            for (int i10 = 0; i10 < 64; i10++) {
-                a[Encoder.a[i10]] = i10;
+            for (int i9 = 0; i9 < 64; i9++) {
+                a[Encoder.a[i9]] = i9;
             }
             a[61] = -2;
             int[] iArr2 = new int[256];
             b = iArr2;
             Arrays.fill(iArr2, -1);
-            for (int i11 = 0; i11 < 64; i11++) {
-                b[Encoder.b[i11]] = i11;
+            for (int i10 = 0; i10 < 64; i10++) {
+                b[Encoder.b[i10]] = i10;
             }
             b[61] = -2;
             c = new Decoder();
@@ -112,108 +112,108 @@ public class Base64 {
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public byte[] decode(String str) {
+            int i9;
             int i10;
             int i11;
-            int i12;
             byte[] bytes = str.getBytes(j$.sun.nio.cs.c.a);
             int length = bytes.length;
             if (length == 0) {
-                i11 = 0;
+                i10 = 0;
             } else {
                 if (length < 2) {
                     throw new IllegalArgumentException("Input byte[] should at least have 2 bytes for base64 bytes");
                 }
                 if (bytes[length - 1] == 61) {
-                    i10 = bytes[length + (-2)] == 61 ? 2 : 1;
+                    i9 = bytes[length + (-2)] == 61 ? 2 : 1;
                 } else {
-                    i10 = 0;
+                    i9 = 0;
                 }
-                if (i10 == 0 && (i12 = length & 3) != 0) {
-                    i10 = 4 - i12;
+                if (i9 == 0 && (i11 = length & 3) != 0) {
+                    i9 = 4 - i11;
                 }
-                i11 = (((length + 3) / 4) * 3) - i10;
+                i10 = (((length + 3) / 4) * 3) - i9;
             }
-            byte[] bArr = new byte[i11];
+            byte[] bArr = new byte[i10];
             int length2 = bytes.length;
-            int i13 = 18;
-            int i14 = 0;
-            int i15 = 18;
+            int i12 = 18;
+            int i13 = 0;
+            int i14 = 18;
+            int i15 = 0;
             int i16 = 0;
-            int i17 = 0;
             while (true) {
-                if (i14 >= length2) {
+                if (i13 >= length2) {
                     break;
                 }
                 int[] iArr = a;
-                if (i15 == i13 && i14 + 4 < length2) {
-                    int i18 = ((length2 - i14) & (-4)) + i14;
-                    while (i14 < i18) {
-                        int i19 = iArr[bytes[i14] & 255];
-                        int i20 = iArr[bytes[i14 + 1] & 255];
-                        int i21 = iArr[bytes[i14 + 2] & 255];
-                        int i22 = i14 + 4;
-                        int i23 = iArr[bytes[i14 + 3] & 255];
-                        if ((i19 | i20 | i21 | i23) < 0) {
+                if (i14 == i12 && i13 + 4 < length2) {
+                    int i17 = ((length2 - i13) & (-4)) + i13;
+                    while (i13 < i17) {
+                        int i18 = iArr[bytes[i13] & 255];
+                        int i19 = iArr[bytes[i13 + 1] & 255];
+                        int i20 = iArr[bytes[i13 + 2] & 255];
+                        int i21 = i13 + 4;
+                        int i22 = iArr[bytes[i13 + 3] & 255];
+                        if ((i18 | i19 | i20 | i22) < 0) {
                             break;
                         }
-                        int i24 = (i19 << 18) | (i20 << 12) | (i21 << 6) | i23;
-                        bArr[i16] = (byte) (i24 >> 16);
-                        int i25 = i16 + 2;
-                        bArr[i16 + 1] = (byte) (i24 >> 8);
-                        i16 += 3;
-                        bArr[i25] = (byte) i24;
-                        i14 = i22;
+                        int i23 = (i18 << 18) | (i19 << 12) | (i20 << 6) | i22;
+                        bArr[i15] = (byte) (i23 >> 16);
+                        int i24 = i15 + 2;
+                        bArr[i15 + 1] = (byte) (i23 >> 8);
+                        i15 += 3;
+                        bArr[i24] = (byte) i23;
+                        i13 = i21;
                     }
-                    if (i14 >= length2) {
+                    if (i13 >= length2) {
                         break;
                     }
                 }
-                int i26 = i14 + 1;
-                int i27 = iArr[bytes[i14] & 255];
-                if (i27 >= 0) {
-                    i13 = 18;
-                    int i28 = (i27 << i15) | i17;
-                    i15 -= 6;
-                    if (i15 < 0) {
-                        bArr[i16] = (byte) (i28 >> 16);
-                        int i29 = i16 + 2;
-                        bArr[i16 + 1] = (byte) (i28 >> 8);
-                        i16 += 3;
-                        bArr[i29] = (byte) i28;
-                        i15 = 18;
-                        i17 = 0;
+                int i25 = i13 + 1;
+                int i26 = iArr[bytes[i13] & 255];
+                if (i26 >= 0) {
+                    i12 = 18;
+                    int i27 = (i26 << i14) | i16;
+                    i14 -= 6;
+                    if (i14 < 0) {
+                        bArr[i15] = (byte) (i27 >> 16);
+                        int i28 = i15 + 2;
+                        bArr[i15 + 1] = (byte) (i27 >> 8);
+                        i15 += 3;
+                        bArr[i28] = (byte) i27;
+                        i14 = 18;
+                        i16 = 0;
                     } else {
-                        i17 = i28;
+                        i16 = i27;
                     }
-                    i14 = i26;
+                    i13 = i25;
                 } else {
-                    if (i27 != -2) {
-                        throw new IllegalArgumentException("Illegal base64 character " + Integer.toString(bytes[i14], 16));
+                    if (i26 != -2) {
+                        throw new IllegalArgumentException("Illegal base64 character " + Integer.toString(bytes[i13], 16));
                     }
-                    if (i15 == 6) {
-                        if (i26 != length2) {
-                            i14 += 2;
+                    if (i14 == 6) {
+                        if (i25 != length2) {
+                            i13 += 2;
                         }
                         throw new IllegalArgumentException("Input byte array has wrong 4-byte ending unit");
                     }
-                    i14 = i26;
+                    i13 = i25;
                 }
             }
-            if (i15 == 6) {
-                bArr[i16] = (byte) (i17 >> 16);
-                i16++;
-            } else if (i15 == 0) {
-                int i30 = i16 + 1;
-                bArr[i16] = (byte) (i17 >> 16);
-                i16 += 2;
-                bArr[i30] = (byte) (i17 >> 8);
-            } else if (i15 == 12) {
+            if (i14 == 6) {
+                bArr[i15] = (byte) (i16 >> 16);
+                i15++;
+            } else if (i14 == 0) {
+                int i29 = i15 + 1;
+                bArr[i15] = (byte) (i16 >> 16);
+                i15 += 2;
+                bArr[i29] = (byte) (i16 >> 8);
+            } else if (i14 == 12) {
                 throw new IllegalArgumentException("Last unit does not have enough valid bits");
             }
-            if (i14 >= length2) {
-                return i16 != i11 ? Arrays.copyOf(bArr, i16) : bArr;
+            if (i13 >= length2) {
+                return i15 != i10 ? Arrays.copyOf(bArr, i15) : bArr;
             }
-            throw new IllegalArgumentException("Input byte array has incorrect ending byte at " + i14);
+            throw new IllegalArgumentException("Input byte array has incorrect ending byte at " + i13);
         }
     }
 }

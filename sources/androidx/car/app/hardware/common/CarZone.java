@@ -1,10 +1,10 @@
 package androidx.car.app.hardware.common;
 
 import j$.util.Objects;
-import org.telegram.ui.Cells.pa;
+import org.telegram.ui.Cells.j2;
 import r.b;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class CarZone {
     public static final int CAR_ZONE_COLUMN_ALL = 16;
@@ -52,24 +52,24 @@ public final class CarZone {
     }
 
     public String toString() {
-        int i10 = this.mRow;
+        int i9 = this.mRow;
         String str = "UNKNOWN";
-        String str2 = i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? "UNKNOWN" : "CAR_ZONE_ROW_EXCLUDE_FIRST" : "CAR_ZONE_ROW_THIRD" : "CAR_ZONE_ROW_SECOND" : "CAR_ZONE_ROW_FIRST" : "CAR_ZONE_ROW_ALL";
-        int i11 = this.mColumn;
-        if (i11 == 16) {
+        String str2 = i9 != 0 ? i9 != 1 ? i9 != 2 ? i9 != 3 ? i9 != 4 ? "UNKNOWN" : "CAR_ZONE_ROW_EXCLUDE_FIRST" : "CAR_ZONE_ROW_THIRD" : "CAR_ZONE_ROW_SECOND" : "CAR_ZONE_ROW_FIRST" : "CAR_ZONE_ROW_ALL";
+        int i10 = this.mColumn;
+        if (i10 == 16) {
             str = "CAR_ZONE_COLUMN_ALL";
-        } else if (i11 == 32) {
+        } else if (i10 == 32) {
             str = "CAR_ZONE_COLUMN_LEFT";
-        } else if (i11 == 48) {
+        } else if (i10 == 48) {
             str = "CAR_ZONE_COLUMN_CENTER";
-        } else if (i11 == 64) {
+        } else if (i10 == 64) {
             str = "CAR_ZONE_COLUMN_RIGHT";
-        } else if (i11 == 80) {
+        } else if (i10 == 80) {
             str = "CAR_ZONE_COLUMN_DRIVER";
-        } else if (i11 == 96) {
+        } else if (i10 == 96) {
             str = "CAR_ZONE_COLUMN_PASSENGER";
         }
-        return pa.j("[CarZone row value: ", str2, ", column value: ", str, "]");
+        return j2.h("[CarZone row value: ", str2, ", column value: ", str, "]");
     }
 
     private CarZone() {

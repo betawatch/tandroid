@@ -6,7 +6,7 @@ import android.os.Process;
 import java.util.HashSet;
 import java.util.Set;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class PackageValidator {
     private static final Set<String> KNOWN_PACKAGES;
@@ -29,7 +29,7 @@ public final class PackageValidator {
     private PackageValidator() {
     }
 
-    private static boolean hasPermission(Context context, String str, int i10) {
+    private static boolean hasPermission(Context context, String str, int i9) {
         PackageManager packageManager = context.getPackageManager();
         try {
             if (packageManager.checkPermission("android.permission.MEDIA_CONTENT_CONTROL", str) == 0) {
@@ -41,13 +41,13 @@ public final class PackageValidator {
         }
     }
 
-    public static boolean isKnownCaller(Context context, String str, int i10) {
+    public static boolean isKnownCaller(Context context, String str, int i9) {
         if (str == null) {
             return false;
         }
-        if (i10 == 1000 || i10 == Process.myUid() || KNOWN_PACKAGES.contains(str)) {
+        if (i9 == 1000 || i9 == Process.myUid() || KNOWN_PACKAGES.contains(str)) {
             return true;
         }
-        return hasPermission(context, str, i10);
+        return hasPermission(context, str, i9);
     }
 }

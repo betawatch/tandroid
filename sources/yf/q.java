@@ -1,42 +1,34 @@
 package yf;
 
-import android.view.View;
-import hh.w9;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.g71;
+import android.view.KeyEvent;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class q extends g71 {
-    public final /* synthetic */ w9 a;
+public final /* synthetic */ class q implements org.telegram.ui.ActionBar.m1, Utilities.Callback3Return {
+    public final /* synthetic */ l0 a;
 
-    public q(w9 w9Var) {
-        this.a = w9Var;
+    public /* synthetic */ q(l0 l0Var) {
+        this.a = l0Var;
     }
 
-    @Override // org.telegram.ui.Components.g71
-    public final View d(int i10) {
-        w9 w9Var = this.a;
-        return i10 != 1 ? i10 != 2 ? (t) w9Var.b : (w) w9Var.d : (s) w9Var.c;
+    @Override // org.telegram.ui.ActionBar.m1
+    public void k(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.o1 o1Var;
+        l0 l0Var = this.a;
+        l0Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (o1Var = l0Var.N1) != null && o1Var.isShowing()) {
+            l0Var.N1.d(true);
+        }
     }
 
-    @Override // org.telegram.ui.Components.g71
-    public final int e() {
-        return 3;
-    }
-
-    @Override // org.telegram.ui.Components.g71
-    public final CharSequence g(int i10) {
-        return i10 != 1 ? i10 != 2 ? LocaleController.getString(R.string.PaintPaletteGrid).toUpperCase() : LocaleController.getString(R.string.PaintPaletteSliders).toUpperCase() : LocaleController.getString(R.string.PaintPaletteSpectrum).toUpperCase();
-    }
-
-    @Override // org.telegram.ui.Components.g71
-    public final int h(int i10) {
-        return i10;
-    }
-
-    @Override // org.telegram.ui.Components.g71
-    public final void b(View view, int i10, int i11) {
+    @Override // org.telegram.messenger.Utilities.Callback3Return
+    public Object run(Object obj, Object obj2, Object obj3) {
+        y i02 = this.a.i0(obj, (TLRPC.Document) obj2, true);
+        if (((Boolean) obj3).booleanValue()) {
+            i02.setScale(1.5f);
+        }
+        return Boolean.TRUE;
     }
 }

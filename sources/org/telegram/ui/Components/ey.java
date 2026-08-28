@@ -1,61 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ey extends FrameLayout {
-    public final ImageView a;
-    public final TextView b;
-    public final RadialProgressView c;
-    public boolean d;
-    public final /* synthetic */ yy e;
+public final class ey {
+    public final ArrayList a = new ArrayList();
+    public final /* synthetic */ wy b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ey(yy yyVar, Context context) {
-        super(context);
-        this.e = yyVar;
-        ImageView imageView = new ImageView(getContext());
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.gif_empty);
-        int i10 = org.telegram.ui.ActionBar.g6.Le;
-        imageView.setColorFilter(new PorterDuffColorFilter(yyVar.B(i10), PorterDuff.Mode.MULTIPLY));
-        addView(imageView, h7.z5.d(-2, -2.0f, 17, 0.0f, 8.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(getContext());
-        this.b = textView;
-        textView.setText(LocaleController.getString(R.string.NoGIFsFound));
-        textView.setTextSize(1, 16.0f);
-        textView.setTextColor(yyVar.B(i10));
-        addView(textView, h7.z5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 0.0f));
-        RadialProgressView radialProgressView = new RadialProgressView(context, yyVar.V1);
-        this.c = radialProgressView;
-        radialProgressView.setVisibility(8);
-        radialProgressView.setProgressColor(yyVar.B(org.telegram.ui.ActionBar.g6.h6));
-        addView(radialProgressView, h7.z5.e(-2, -2, 17));
+    public ey(wy wyVar) {
+        this.b = wyVar;
     }
 
-    public final void a(boolean z10) {
-        if (this.d != z10) {
-            this.d = z10;
-            this.a.setVisibility(z10 ? 8 : 0);
-            this.b.setVisibility(z10 ? 8 : 0);
-            this.c.setVisibility(z10 ? 0 : 8);
+    public final void a(String str, boolean z10) {
+        wy wyVar = this.b;
+        int i9 = wyVar.Y0;
+        String o6 = aa.d.o("gif_search_", str, "_");
+        if (z10 && wyVar.h0.containsKey(o6)) {
+            return;
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.rl.x(8.0f, r0 - r4.X0, 3) * 1.7f) : this.e.d0.getMeasuredHeight() - AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+        kh.t1 t1Var = new kh.t1(this, str, z10, o6);
+        ArrayList arrayList = this.a;
+        if (z10) {
+            arrayList.add(o6);
+            MessagesStorage.getInstance(i9).getBotCache(o6, t1Var);
+            return;
+        }
+        MessagesController messagesController = MessagesController.getInstance(i9);
+        TLObject userOrChat = messagesController.getUserOrChat(messagesController.gifSearchBot);
+        if (userOrChat instanceof TLRPC.User) {
+            arrayList.add(o6);
+            TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
+            if (str == null) {
+                str = "";
+            }
+            tL_messages_getInlineBotResults.query = str;
+            tL_messages_getInlineBotResults.bot = messagesController.getInputUser((TLRPC.User) userOrChat);
+            tL_messages_getInlineBotResults.offset = "";
+            tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
+            ConnectionsManager.getInstance(i9).sendRequest(tL_messages_getInlineBotResults, t1Var, 2);
+        }
     }
 }

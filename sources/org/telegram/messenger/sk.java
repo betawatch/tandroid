@@ -1,76 +1,77 @@
 package org.telegram.messenger;
 
+import android.net.Uri;
 import java.util.ArrayList;
-import java.util.Set;
+import java.util.HashMap;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.RequestDelegate;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sk implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ BaseController d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ long e;
     public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
 
-    public /* synthetic */ sk(long j10, Set set, TranslateController.PendingTranslation pendingTranslation, TranslateController translateController, TLObject tLObject, TLRPC.TL_error tL_error, boolean z10) {
-        this.d = translateController;
-        this.e = pendingTranslation;
-        this.f = tLObject;
-        this.b = z10;
-        this.h = tL_error;
-        this.c = j10;
-        this.n = set;
+    public /* synthetic */ sk(BaseController baseController, Object obj, long j10, Object obj2, Object obj3, int i9) {
+        this.a = i9;
+        this.b = baseController;
+        this.f = obj;
+        this.e = j10;
+        this.c = obj2;
+        this.d = obj3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                TranslateController translateController = (TranslateController) this.d;
-                TranslateController.PendingTranslation pendingTranslation = (TranslateController.PendingTranslation) this.e;
-                TLObject tLObject = (TLObject) this.f;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.h;
-                Set set = (Set) this.n;
-                translateController.lambda$pushToTranslate$22(pendingTranslation, tLObject, this.b, tL_error, this.c, set);
+                ((TranslateController) this.b).lambda$pushPollToTranslate$25((TranslateController.PendingPollTranslation) this.f, (TLObject) this.c, (TLRPC.TL_error) this.d, this.e);
                 break;
             case 1:
-                ((MediaDataController) this.d).lambda$broadcastReplyMessages$179((ArrayList) this.e, this.b, (ArrayList) this.f, (ArrayList) this.h, (a0.h) this.n, this.c);
+                ((TranslateController) this.b).lambda$pushRichMessageToTranslate$28((TranslateController.PendingRichTranslation) this.f, (TLObject) this.c, (TLRPC.TL_error) this.d, this.e);
+                break;
+            case 2:
+                ((MessagesController) this.b).lambda$getSponsoredMessages$439((ArrayList) this.f, this.e, (MessagesController.SponsoredMessagesInfo) this.c, (Integer) this.d);
+                break;
+            case 3:
+                ((MessagesController) this.b).lambda$getSavedReactionTags$485((TLObject) this.c, this.e, (TLRPC.messages_SavedReactionTags) this.f, (TLRPC.TL_messages_getSavedReactionTags) this.d);
+                break;
+            case 4:
+                ((MessagesController) this.b).lambda$addUserToChat$306((TLRPC.Updates) this.f, (Utilities.Callback) this.c, (TLRPC.TL_messages_invitedUsers) this.d, this.e);
+                break;
+            case 5:
+                ((SendMessagesHelper) this.b).lambda$prepareImportHistory$109((HashMap) this.f, this.e, (SendMessagesHelper.ImportingHistory) this.c, (MessagesStorage.LongCallback) this.d);
                 break;
             default:
-                MemberRequestsController memberRequestsController = (MemberRequestsController) this.d;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.h;
-                TLObject tLObject2 = (TLObject) this.f;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.e;
-                RequestDelegate requestDelegate = (RequestDelegate) this.n;
-                memberRequestsController.lambda$getImporters$0(tL_error2, tLObject2, tL_chatInviteImporter, this.b, this.c, requestDelegate);
+                ((SendMessagesHelper) this.b).lambda$prepareImportHistory$110((ArrayList) this.f, this.e, (Uri) this.c, (MessagesStorage.LongCallback) this.d);
                 break;
         }
     }
 
-    public /* synthetic */ sk(long j10, MemberRequestsController memberRequestsController, RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.TL_error tL_error, boolean z10) {
-        this.d = memberRequestsController;
-        this.h = tL_error;
-        this.f = tLObject;
-        this.e = tL_chatInviteImporter;
-        this.b = z10;
-        this.c = j10;
-        this.n = requestDelegate;
+    public /* synthetic */ sk(BaseController baseController, Object obj, Object obj2, TLObject tLObject, long j10, int i9) {
+        this.a = i9;
+        this.b = baseController;
+        this.f = obj;
+        this.c = obj2;
+        this.d = tLObject;
+        this.e = j10;
     }
 
-    public /* synthetic */ sk(MediaDataController mediaDataController, ArrayList arrayList, boolean z10, ArrayList arrayList2, ArrayList arrayList3, a0.h hVar, long j10) {
-        this.d = mediaDataController;
-        this.e = arrayList;
-        this.b = z10;
-        this.f = arrayList2;
-        this.h = arrayList3;
-        this.n = hVar;
-        this.c = j10;
+    public /* synthetic */ sk(MessagesController messagesController, TLObject tLObject, long j10, TLRPC.messages_SavedReactionTags messages_savedreactiontags, TLRPC.TL_messages_getSavedReactionTags tL_messages_getSavedReactionTags) {
+        this.a = 3;
+        this.b = messagesController;
+        this.c = tLObject;
+        this.e = j10;
+        this.f = messages_savedreactiontags;
+        this.d = tL_messages_getSavedReactionTags;
     }
 }

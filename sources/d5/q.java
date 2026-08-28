@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.MediaController;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class q {
     public static final ArrayList a = new ArrayList();
@@ -16,7 +16,7 @@ public abstract class q {
 
     public static String a(String str, String str2) {
         if (str != null && str2 != null) {
-            String[] Q = g0.Q(str);
+            String[] Q = f0.Q(str);
             StringBuilder sb2 = new StringBuilder();
             for (String str3 : Q) {
                 if (str2.equals(c(str3))) {
@@ -34,7 +34,7 @@ public abstract class q {
     }
 
     public static int b(String str, String str2) {
-        p e9;
+        p e10;
         str.getClass();
         switch (str) {
             case "audio/eac3-joc":
@@ -42,10 +42,10 @@ public abstract class q {
             case "audio/vnd.dts":
                 return 7;
             case "audio/mp4a-latm":
-                if (str2 == null || (e9 = e(str2)) == null) {
+                if (str2 == null || (e10 = e(str2)) == null) {
                     return 0;
                 }
-                return e9.a();
+                return e10.a();
             case "audio/ac3":
                 return 5;
             case "audio/ac4":
@@ -66,10 +66,10 @@ public abstract class q {
     }
 
     public static String c(String str) {
-        p e9;
+        p e10;
         String str2 = null;
         if (str != null) {
-            String b10 = h7.d0.b(str.trim());
+            String b10 = g7.b0.b(str.trim());
             if (b10.startsWith("avc1") || b10.startsWith("avc3")) {
                 return MediaController.VIDEO_MIME_TYPE;
             }
@@ -89,8 +89,8 @@ public abstract class q {
                 return "video/x-vnd.on2.vp8";
             }
             if (b10.startsWith("mp4a")) {
-                if (b10.startsWith("mp4a.") && (e9 = e(b10)) != null) {
-                    str2 = d(e9.a);
+                if (b10.startsWith("mp4a.") && (e10 = e(b10)) != null) {
+                    str2 = d(e10.a);
                 }
                 return str2 == null ? MediaController.AUDIO_MIME_TYPE : str2;
             }
@@ -154,32 +154,32 @@ public abstract class q {
         return null;
     }
 
-    public static String d(int i10) {
-        if (i10 == 32) {
+    public static String d(int i9) {
+        if (i9 == 32) {
             return "video/mp4v-es";
         }
-        if (i10 == 33) {
+        if (i9 == 33) {
             return MediaController.VIDEO_MIME_TYPE;
         }
-        if (i10 == 35) {
+        if (i9 == 35) {
             return "video/hevc";
         }
-        if (i10 == 64) {
+        if (i9 == 64) {
             return MediaController.AUDIO_MIME_TYPE;
         }
-        if (i10 == 163) {
+        if (i9 == 163) {
             return "video/wvc1";
         }
-        if (i10 == 177) {
+        if (i9 == 177) {
             return "video/x-vnd.on2.vp9";
         }
-        if (i10 == 165) {
+        if (i9 == 165) {
             return "audio/ac3";
         }
-        if (i10 == 166) {
+        if (i9 == 166) {
             return "audio/eac3";
         }
-        switch (i10) {
+        switch (i9) {
             case CarZone.CAR_ZONE_COLUMN_PASSENGER /* 96 */:
             case 97:
             case 98:
@@ -197,7 +197,7 @@ public abstract class q {
             case 106:
                 return "video/mpeg";
             default:
-                switch (i10) {
+                switch (i9) {
                     case 169:
                     case 172:
                         return "audio/vnd.dts";

@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class EmojiData {
     public static final String[] aliasNew;
@@ -39,45 +39,45 @@ public class EmojiData {
         emojiColoredMap = new HashSet<>(strArr.length);
         emojiBigColoredMap = new HashSet<>(strArr2.length);
         emojiAliasMap = new HashMap<>(strArr3.length);
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             char[] cArr3 = emojiToFE0F;
-            if (i10 >= cArr3.length) {
+            if (i9 >= cArr3.length) {
                 break;
             }
-            emojiToFE0FMap.put(Character.valueOf(cArr3[i10]), Boolean.TRUE);
-            i10++;
+            emojiToFE0FMap.put(Character.valueOf(cArr3[i9]), Boolean.TRUE);
+            i9++;
         }
-        int i11 = 0;
+        int i10 = 0;
         while (true) {
             char[] cArr4 = dataChars;
-            if (i11 >= cArr4.length) {
+            if (i10 >= cArr4.length) {
                 break;
             }
-            dataCharsMap.put(Character.valueOf(cArr4[i11]), Boolean.TRUE);
-            i11++;
+            dataCharsMap.put(Character.valueOf(cArr4[i10]), Boolean.TRUE);
+            i10++;
         }
         Collections.addAll(emojiColoredMap, emojiColored);
         Collections.addAll(emojiBigColoredMap, emojiBigColored);
-        int i12 = 0;
+        int i11 = 0;
         while (true) {
             String[] strArr4 = aliasNew;
-            if (i12 >= strArr4.length) {
+            if (i11 >= strArr4.length) {
                 break;
             }
-            emojiAliasMap.put(aliasOld[i12], strArr4[i12]);
-            i12++;
+            emojiAliasMap.put(aliasOld[i11], strArr4[i11]);
+            i11++;
         }
-        int i13 = 0;
+        int i12 = 0;
         while (true) {
             String[][] strArr5 = dataColored;
-            if (i13 >= strArr5.length) {
+            if (i12 >= strArr5.length) {
                 return;
             }
-            if (strArr5[i13] == null) {
-                strArr5[i13] = data[i13];
+            if (strArr5[i12] == null) {
+                strArr5[i12] = data[i12];
             }
-            i13++;
+            i12++;
         }
     }
 

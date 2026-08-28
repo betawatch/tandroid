@@ -1,53 +1,64 @@
 package pf;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
+import android.location.Address;
+import android.location.Geocoder;
+import java.util.List;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.pc0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class p0 implements Runnable {
-    public final /* synthetic */ TLRPC.Chat a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ a0.h e;
-    public final /* synthetic */ MessagesController f;
-    public final /* synthetic */ u0 h;
+public final /* synthetic */ class p0 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ w0 b;
+    public final /* synthetic */ pc0 c;
+    public final /* synthetic */ c2 d;
 
-    public p0(u0 u0Var, TLRPC.Chat chat, String str, long j10, ArrayList arrayList, a0.h hVar, MessagesController messagesController) {
-        this.h = u0Var;
-        this.a = chat;
-        this.b = str;
-        this.c = j10;
-        this.d = arrayList;
-        this.e = hVar;
-        this.f = messagesController;
+    public /* synthetic */ p0(w0 w0Var, c2 c2Var, pc0 pc0Var) {
+        this.b = w0Var;
+        this.d = c2Var;
+        this.c = pc0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        u0 u0Var = this.h;
-        if (u0Var.A != this) {
-            return;
+        switch (this.a) {
+            case 0:
+                w0 w0Var = this.b;
+                w0Var.getClass();
+                this.d.dismiss();
+                w0Var.presentFragment(this.c);
+                break;
+            default:
+                w0 w0Var2 = this.b;
+                pc0 pc0Var = this.c;
+                try {
+                    List<Address> fromLocationName = new Geocoder(w0Var2.getParentActivity(), LocaleController.getInstance().getCurrentLocale()).getFromLocationName(w0Var2.y, 1);
+                    if (!fromLocationName.isEmpty()) {
+                        Address address = fromLocationName.get(0);
+                        TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
+                        tL_channelLocation.address = w0Var2.y;
+                        TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
+                        tL_channelLocation.geo_point = tL_geoPoint;
+                        tL_geoPoint.lat = address.getLatitude();
+                        tL_channelLocation.geo_point._long = address.getLongitude();
+                        pc0Var.w0 = tL_channelLocation;
+                    }
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                }
+                AndroidUtilities.runOnUIThread(new p0(w0Var2, this.d, pc0Var));
+                break;
         }
-        TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-        tL_channels_getParticipants.channel = MessagesController.getInputChannel(this.a);
-        tL_channels_getParticipants.limit = 20;
-        tL_channels_getParticipants.offset = 0;
-        TLRPC.TL_channelParticipantsMentions tL_channelParticipantsMentions = new TLRPC.TL_channelParticipantsMentions();
-        int i10 = tL_channelParticipantsMentions.flags;
-        tL_channelParticipantsMentions.flags = i10 | 1;
-        tL_channelParticipantsMentions.q = this.b;
-        long j10 = this.c;
-        if (j10 != 0) {
-            tL_channelParticipantsMentions.flags = i10 | 3;
-            tL_channelParticipantsMentions.top_msg_id = (int) j10;
-        }
-        tL_channels_getParticipants.filter = tL_channelParticipantsMentions;
-        int i11 = u0Var.e0 + 1;
-        u0Var.e0 = i11;
-        u0Var.f0 = ConnectionsManager.getInstance(u0Var.f).sendRequest(tL_channels_getParticipants, new gf.j0(this, i11, this.d, this.e, this.f, 13));
+    }
+
+    public /* synthetic */ p0(w0 w0Var, pc0 pc0Var, c2 c2Var) {
+        this.b = w0Var;
+        this.c = pc0Var;
+        this.d = c2Var;
     }
 }

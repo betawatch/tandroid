@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.SocketTimeoutException;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class f0 extends n {
     public final int c;
@@ -14,14 +14,14 @@ public class f0 extends n {
         this.c = 1;
     }
 
-    public static f0 a(IOException iOException, int i10) {
+    public static f0 a(IOException iOException, int i9) {
         String message = iOException.getMessage();
-        int i11 = iOException instanceof SocketTimeoutException ? 2002 : iOException instanceof InterruptedIOException ? 1004 : (message == null || !h7.d0.b(message).matches("cleartext.*not permitted.*")) ? 2001 : 2007;
-        return i11 == 2007 ? new e0("Cleartext HTTP traffic not permitted. See https://exoplayer.dev/issues/cleartext-not-permitted", iOException, 2007) : new f0(iOException, i11, i10);
+        int i10 = iOException instanceof SocketTimeoutException ? 2002 : iOException instanceof InterruptedIOException ? 1004 : (message == null || !g7.b0.b(message).matches("cleartext.*not permitted.*")) ? 2001 : 2007;
+        return i10 == 2007 ? new e0("Cleartext HTTP traffic not permitted. See https://exoplayer.dev/issues/cleartext-not-permitted", iOException, 2007) : new f0(iOException, i10, i9);
     }
 
-    public f0(String str, int i10) {
-        super(str, i10 == 2000 ? 2001 : i10);
+    public f0(String str, int i9) {
+        super(str, i9 == 2000 ? 2001 : i9);
         this.c = 1;
     }
 
@@ -29,16 +29,16 @@ public class f0 extends n {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public f0(IOException iOException, int i10, int i11) {
-        super(iOException, i10);
-        if (i10 == 2000 && i11 == 1) {
-            i10 = 2001;
+    public f0(IOException iOException, int i9, int i10) {
+        super(iOException, i9);
+        if (i9 == 2000 && i10 == 1) {
+            i9 = 2001;
         }
-        this.c = i11;
+        this.c = i10;
     }
 
-    public f0(String str, IOException iOException, int i10) {
-        super(str, iOException, i10 == 2000 ? 2001 : i10);
+    public f0(String str, IOException iOException, int i9) {
+        super(str, iOException, i9 == 2000 ? 2001 : i9);
         this.c = 1;
     }
 }

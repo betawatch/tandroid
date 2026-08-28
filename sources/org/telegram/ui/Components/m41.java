@@ -1,87 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.util.LongSparseArray;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public abstract class m41 {
-    private ArrayList<View> cache;
-    public final int viewType;
+public final class m41 extends p41 {
+    public static boolean h = true;
+    public final int e;
+    public final vz0 f;
 
-    public m41() {
-        int i10 = n41.J;
-        n41.J = i10 + 1;
-        this.viewType = i10;
+    public m41(String str, int i9, vz0 vz0Var) {
+        super(str, (vz0) null);
+        this.e = i9;
+        this.f = vz0Var;
     }
 
-    public static void setup(m41 m41Var) {
-        if (n41.L == null) {
-            n41.L = new HashMap();
+    @Override // org.telegram.ui.Components.p41, android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        int i9 = this.e;
+        if (i9 == 2) {
+            textPaint.setColor(-1);
+        } else if (i9 == 1) {
+            textPaint.setColor(org.telegram.ui.ActionBar.f6.w0(null, h ? org.telegram.ui.ActionBar.f6.hc : org.telegram.ui.ActionBar.f6.fc, false));
+        } else {
+            textPaint.setColor(org.telegram.ui.ActionBar.f6.w0(null, h ? org.telegram.ui.ActionBar.f6.gc : org.telegram.ui.ActionBar.f6.ec, false));
         }
-        if (n41.K == null) {
-            n41.K = new LongSparseArray();
+        vz0 vz0Var = this.f;
+        if (vz0Var != null) {
+            vz0Var.a(textPaint);
+        } else {
+            textPaint.setUnderlineText(false);
         }
-        Class<?> cls = m41Var.getClass();
-        if (n41.L.containsKey(cls)) {
-            return;
-        }
-        n41.L.put(cls, m41Var);
-        n41.K.put(m41Var.viewType, m41Var);
-    }
-
-    public boolean contentsEquals(n41 n41Var, n41 n41Var2) {
-        return n41Var.H(n41Var2);
-    }
-
-    public abstract View createView(Context context, zk0 zk0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var);
-
-    public boolean equals(n41 n41Var, n41 n41Var2) {
-        return n41Var.I(n41Var2);
-    }
-
-    public View getCached() {
-        ArrayList<View> arrayList = this.cache;
-        if (arrayList == null || arrayList.isEmpty()) {
-            return null;
-        }
-        return this.cache.remove(0);
-    }
-
-    public boolean isClickable() {
-        return !(this instanceof pi);
-    }
-
-    public boolean isShadow() {
-        return false;
-    }
-
-    public void precache(org.telegram.ui.ActionBar.n2 n2Var, int i10) {
-        precache(n2Var.getContext(), n2Var.getCurrentAccount(), n2Var.getClassGuid(), n2Var.getResourceProvider(), i10);
-    }
-
-    public void precache(Context context, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var, int i12) {
-        if (context == null) {
-            return;
-        }
-        if (this.cache == null) {
-            this.cache = new ArrayList<>();
-        }
-        int i13 = 0;
-        while (i13 < this.cache.size() - i12) {
-            Context context2 = context;
-            this.cache.add(createView(context2, null, i10, i11, c6Var));
-            i13++;
-            context = context2;
-        }
-    }
-
-    public void attachedView(zk0 zk0Var, View view, n41 n41Var) {
-    }
-
-    public void bindView(View view, n41 n41Var, boolean z10, b51 b51Var, k51 k51Var) {
     }
 }

@@ -3,15 +3,15 @@ package r3;
 import h3.t1;
 import java.io.StringReader;
 import java.util.Arrays;
+import o8.l;
+import o8.l0;
+import o8.w;
+import o8.x;
+import o8.z;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
-import p8.l;
-import p8.l0;
-import p8.w;
-import p8.x;
-import p8.z;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final String[] a = {"Camera:MotionPhoto", "GCamera:MotionPhoto", "Camera:MicroVideo", "GCamera:MicroVideo"};
@@ -25,7 +25,7 @@ public abstract class d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static f2.c a(String str) {
+    public static f2.d a(String str) {
         XmlPullParser newPullParser = XmlPullParserFactory.newInstance().newPullParser();
         newPullParser.setInput(new StringReader(str));
         newPullParser.next();
@@ -38,44 +38,44 @@ public abstract class d {
         loop0: while (true) {
             newPullParser.next();
             if (d5.a.z(newPullParser, "rdf:Description")) {
-                int i10 = 0;
+                int i9 = 0;
                 while (true) {
-                    if (i10 >= 4) {
+                    if (i9 >= 4) {
                         break loop0;
                     }
-                    String t10 = d5.a.t(newPullParser, a[i10]);
+                    String t10 = d5.a.t(newPullParser, a[i9]);
                     if (t10 == null) {
-                        i10++;
+                        i9++;
                     } else {
                         if (Integer.parseInt(t10) != 1) {
                             break;
                         }
-                        int i11 = 0;
+                        int i10 = 0;
                         while (true) {
-                            if (i11 >= 4) {
+                            if (i10 >= 4) {
                                 break;
                             }
-                            String t11 = d5.a.t(newPullParser, b[i11]);
+                            String t11 = d5.a.t(newPullParser, b[i10]);
                             if (t11 != null) {
                                 j10 = Long.parseLong(t11);
                             } else {
-                                i11++;
+                                i10++;
                             }
                         }
                         j10 = -9223372036854775807L;
-                        int i12 = 0;
+                        int i11 = 0;
                         while (true) {
-                            if (i12 >= 2) {
+                            if (i11 >= 2) {
                                 x xVar2 = z.b;
                                 l0Var = l0.e;
                                 break;
                             }
-                            String t12 = d5.a.t(newPullParser, c[i12]);
+                            String t12 = d5.a.t(newPullParser, c[i11]);
                             if (t12 != null) {
                                 l0Var = z.t(new b("image/jpeg", 0L, 0L, "Primary"), new b("video/mp4", Long.parseLong(t12), 0L, "MotionPhoto"));
                                 break;
                             }
-                            i12++;
+                            i11++;
                         }
                     }
                 }
@@ -86,7 +86,7 @@ public abstract class d {
             }
             if (d5.a.y(newPullParser, "x:xmpmeta")) {
                 if (!l0Var.isEmpty()) {
-                    return new f2.c(j10, l0Var, 9);
+                    return new f2.d(j10, l0Var, 9);
                 }
             }
         }
@@ -99,7 +99,7 @@ public abstract class d {
         Object[] objArr = new Object[4];
         String concat = str.concat(":Item");
         String concat2 = str.concat(":Directory");
-        int i10 = 0;
+        int i9 = 0;
         do {
             xmlPullParser.next();
             if (d5.a.z(xmlPullParser, concat)) {
@@ -115,14 +115,14 @@ public abstract class d {
                     return l0.e;
                 }
                 b bVar = new b(t10, t12 != null ? Long.parseLong(t12) : 0L, t13 != null ? Long.parseLong(t13) : 0L, t11);
-                int i11 = i10 + 1;
-                if (objArr.length < i11) {
-                    objArr = Arrays.copyOf(objArr, w.d(objArr.length, i11));
+                int i10 = i9 + 1;
+                if (objArr.length < i10) {
+                    objArr = Arrays.copyOf(objArr, w.d(objArr.length, i10));
                 }
-                objArr[i10] = bVar;
-                i10 = i11;
+                objArr[i9] = bVar;
+                i9 = i10;
             }
         } while (!d5.a.y(xmlPullParser, concat2));
-        return z.s(i10, objArr);
+        return z.s(i9, objArr);
     }
 }

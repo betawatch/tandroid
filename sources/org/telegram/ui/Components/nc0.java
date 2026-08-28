@@ -1,38 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.widget.TextView;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class nc0 extends TextView {
-    public final /* synthetic */ oc0 a;
+public final /* synthetic */ class nc0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yc0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nc0(oc0 oc0Var, Context context, int i10) {
-        super(context);
-        this.a = oc0Var;
+    public /* synthetic */ nc0(yc0 yc0Var, int i9) {
+        this.a = i9;
+        this.b = yc0Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        oc0 oc0Var = this.a;
-        if (oc0Var.e.getAdapter() instanceof mc0) {
-            ((mc0) oc0Var.e.getAdapter()).getClass();
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i9 = this.a;
+        yc0 yc0Var = this.b;
+        switch (i9) {
+            case 0:
+                EditTextBoldCursor editTextBoldCursor = yc0Var.r;
+                if (yc0Var.x.getVisibility() != 0 && editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    AndroidUtilities.showKeyboard(editTextBoldCursor);
+                    break;
+                }
+                break;
+            default:
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(yc0Var.L, 0.0f);
+                ofFloat.addUpdateListener(new oc0(yc0Var, 0));
+                ofFloat.addListener(new r60(yc0Var, 6));
+                ofFloat.setDuration(420L);
+                ofFloat.setInterpolator(gr.h);
+                ofFloat.start();
+                break;
         }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void setSelected(boolean z10) {
-        super.setSelected(z10);
-        Drawable background = getBackground();
-        oc0 oc0Var = this.a;
-        if (background != null) {
-            org.telegram.ui.ActionBar.g6.B1(background, oc0Var.c(z10 ? 0.1f : 0.05f), true);
-        }
-        setTextColor(oc0Var.c(z10 ? 0.8f : 0.6f));
     }
 }

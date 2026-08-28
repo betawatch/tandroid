@@ -1,6 +1,6 @@
 package p4;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class h implements Comparable {
     public final String a;
@@ -8,20 +8,20 @@ public abstract class h implements Comparable {
     public final long c;
     public final int d;
     public final long e;
-    public final l3.d f;
+    public final l3.c f;
     public final String h;
     public final String n;
     public final long r;
     public final long s;
     public final boolean v;
 
-    public h(String str, g gVar, long j10, int i10, long j11, l3.d dVar, String str2, String str3, long j12, long j13, boolean z10) {
+    public h(String str, g gVar, long j10, int i9, long j11, l3.c cVar, String str2, String str3, long j12, long j13, boolean z10) {
         this.a = str;
         this.b = gVar;
         this.c = j10;
-        this.d = i10;
+        this.d = i9;
         this.e = j11;
-        this.f = dVar;
+        this.f = cVar;
         this.h = str2;
         this.n = str3;
         this.r = j12;

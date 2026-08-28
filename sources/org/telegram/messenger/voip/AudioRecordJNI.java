@@ -8,9 +8,9 @@ import android.media.audiofx.NoiseSuppressor;
 import android.text.TextUtils;
 import java.nio.ByteBuffer;
 import java.util.regex.Pattern;
-import lh.k7;
+import kh.o8;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class AudioRecordJNI {
     private AcousticEchoCanceler aec;
@@ -28,8 +28,8 @@ public class AudioRecordJNI {
         this.nativeInst = j10;
     }
 
-    private int getBufferSize(int i10, int i11) {
-        return Math.max(AudioRecord.getMinBufferSize(i11, 16, 2), i10);
+    private int getBufferSize(int i9, int i10) {
+        return Math.max(AudioRecord.getMinBufferSize(i10, 16, 2), i9);
     }
 
     private static boolean isGoodAudioEffect(AudioEffect audioEffect) {
@@ -74,8 +74,8 @@ public class AudioRecordJNI {
                 } else {
                     this.audioRecord.read(this.buffer, 1920);
                 }
-            } catch (Exception e9) {
-                VLog.e(e9);
+            } catch (Exception e10) {
+                VLog.e(e10);
             }
             if (!this.running) {
                 this.audioRecord.stop();
@@ -93,8 +93,8 @@ public class AudioRecordJNI {
         }
         try {
             return Pattern.compile(string);
-        } catch (Exception e9) {
-            VLog.e(e9);
+        } catch (Exception e10) {
+            VLog.e(e10);
             return null;
         }
     }
@@ -106,7 +106,7 @@ public class AudioRecordJNI {
             throw new IllegalStateException("thread already started");
         }
         this.running = true;
-        Thread thread = new Thread(new k7(23, this, this.needResampling ? ByteBuffer.allocateDirect(1764) : null));
+        Thread thread = new Thread(new o8(23, this, this.needResampling ? ByteBuffer.allocateDirect(1764) : null));
         this.thread = thread;
         thread.start();
     }
@@ -116,8 +116,8 @@ public class AudioRecordJNI {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private boolean tryInit(int i10, int i11) {
-        int i12;
+    private boolean tryInit(int i9, int i10) {
+        int i11;
         AudioRecord audioRecord;
         AudioRecord audioRecord2 = this.audioRecord;
         if (audioRecord2 != null) {
@@ -126,23 +126,23 @@ public class AudioRecordJNI {
             } catch (Exception unused) {
             }
         }
-        VLog.i(a9.p.j(i10, i11, "Trying to initialize AudioRecord with source=", " and sample rate="));
+        VLog.i(aa.d.k(i9, i10, "Trying to initialize AudioRecord with source=", " and sample rate="));
         try {
-            i12 = i11;
-        } catch (Exception e9) {
-            e = e9;
-            i12 = i11;
-        }
-        try {
-            this.audioRecord = new AudioRecord(i10, i12, 16, 2, getBufferSize(this.bufferSize, 48000));
+            i11 = i10;
         } catch (Exception e10) {
             e = e10;
+            i11 = i10;
+        }
+        try {
+            this.audioRecord = new AudioRecord(i9, i11, 16, 2, getBufferSize(this.bufferSize, 48000));
+        } catch (Exception e11) {
+            e = e11;
             VLog.e("AudioRecord init failed!", e);
-            this.needResampling = i12 == 48000;
+            this.needResampling = i11 == 48000;
             audioRecord = this.audioRecord;
             return audioRecord == null ? false : false;
         }
-        this.needResampling = i12 == 48000;
+        this.needResampling = i11 == 48000;
         audioRecord = this.audioRecord;
         if (audioRecord == null && audioRecord.getState() == 1) {
             return true;
@@ -151,16 +151,16 @@ public class AudioRecordJNI {
 
     public int getEnabledEffectsMask() {
         AcousticEchoCanceler acousticEchoCanceler = this.aec;
-        int i10 = (acousticEchoCanceler == null || !acousticEchoCanceler.getEnabled()) ? 0 : 1;
+        int i9 = (acousticEchoCanceler == null || !acousticEchoCanceler.getEnabled()) ? 0 : 1;
         NoiseSuppressor noiseSuppressor = this.ns;
-        return (noiseSuppressor == null || !noiseSuppressor.getEnabled()) ? i10 : i10 | 2;
+        return (noiseSuppressor == null || !noiseSuppressor.getEnabled()) ? i9 : i9 | 2;
     }
 
-    public void init(int i10, int i11, int i12, int i13) {
+    public void init(int i9, int i10, int i11, int i12) {
         if (this.audioRecord != null) {
             throw new IllegalStateException("already inited");
         }
-        this.bufferSize = i13;
+        this.bufferSize = i12;
         boolean tryInit = tryInit(7, 48000);
         boolean z10 = true;
         if (!tryInit) {
@@ -215,7 +215,7 @@ public class AudioRecordJNI {
             } catch (Throwable th3) {
                 VLog.e("error creating AcousticEchoCanceler", th3);
             }
-            this.buffer = ByteBuffer.allocateDirect(i13);
+            this.buffer = ByteBuffer.allocateDirect(i12);
         }
     }
 
@@ -225,8 +225,8 @@ public class AudioRecordJNI {
         if (thread != null) {
             try {
                 thread.join();
-            } catch (InterruptedException e9) {
-                VLog.e(e9);
+            } catch (InterruptedException e10) {
+                VLog.e(e10);
             }
             this.thread = null;
         }
@@ -267,8 +267,8 @@ public class AudioRecordJNI {
                     this.audioRecord.startRecording();
                 }
                 return true;
-            } catch (Exception e9) {
-                VLog.e("Error initializing AudioRecord", e9);
+            } catch (Exception e10) {
+                VLog.e("Error initializing AudioRecord", e10);
             }
         }
         return false;

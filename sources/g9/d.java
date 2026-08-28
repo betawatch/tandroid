@@ -1,74 +1,35 @@
 package g9;
 
-import android.util.Log;
-import j$.util.DesugarCollections;
-import java.util.HashMap;
-import java.util.Map;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class d {
-    public final HashMap a = new HashMap();
-    public final int b = 64;
-    public final int c;
+public final class d implements q9.d {
+    public static final d a = new d();
+    public static final q9.c b = q9.c.c("sdkVersion");
+    public static final q9.c c = q9.c.c("gmpAppId");
+    public static final q9.c d = q9.c.c("platform");
+    public static final q9.c e = q9.c.c("installationUuid");
+    public static final q9.c f = q9.c.c("firebaseInstallationId");
+    public static final q9.c g = q9.c.c("appQualitySessionId");
+    public static final q9.c h = q9.c.c("buildVersion");
+    public static final q9.c i = q9.c.c("displayVersion");
+    public static final q9.c j = q9.c.c("session");
+    public static final q9.c k = q9.c.c("ndkPayload");
+    public static final q9.c l = q9.c.c("appExitInfo");
 
-    public d(int i10) {
-        this.c = i10;
-    }
-
-    public static String b(int i10, String str) {
-        if (str != null) {
-            str = str.trim();
-            if (str.length() > i10) {
-                return str.substring(0, i10);
-            }
-        }
-        return str;
-    }
-
-    public final synchronized Map a() {
-        return DesugarCollections.unmodifiableMap(new HashMap(this.a));
-    }
-
-    public final synchronized boolean c(String str, String str2) {
-        String b10 = b(this.c, str);
-        if (this.a.size() >= this.b && !this.a.containsKey(b10)) {
-            Log.w("FirebaseCrashlytics", "Ignored entry \"" + str + "\" when adding custom keys. Maximum allowable: " + this.b, null);
-            return false;
-        }
-        String b11 = b(this.c, str2);
-        String str3 = (String) this.a.get(b10);
-        if (str3 == null ? b11 == null : str3.equals(b11)) {
-            return false;
-        }
-        HashMap hashMap = this.a;
-        if (str2 == null) {
-            b11 = "";
-        }
-        hashMap.put(b10, b11);
-        return true;
-    }
-
-    public final synchronized void d(Map map) {
-        try {
-            int i10 = 0;
-            for (Map.Entry entry : map.entrySet()) {
-                String str = (String) entry.getKey();
-                if (str == null) {
-                    throw new IllegalArgumentException("Custom attribute key must not be null.");
-                }
-                String b10 = b(this.c, str);
-                if (this.a.size() >= this.b && !this.a.containsKey(b10)) {
-                    i10++;
-                }
-                String str2 = (String) entry.getValue();
-                this.a.put(b10, str2 == null ? "" : b(this.c, str2));
-            }
-            if (i10 > 0) {
-                Log.w("FirebaseCrashlytics", "Ignored " + i10 + " entries when adding custom keys. Maximum allowable: " + this.b, null);
-            }
-        } catch (Throwable th) {
-            throw th;
-        }
+    @Override // q9.a
+    public final void a(Object obj, Object obj2) {
+        q9.e eVar = (q9.e) obj2;
+        a0 a0Var = (a0) ((e2) obj);
+        eVar.g(b, a0Var.b);
+        eVar.g(c, a0Var.c);
+        eVar.c(d, a0Var.d);
+        eVar.g(e, a0Var.e);
+        eVar.g(f, a0Var.f);
+        eVar.g(g, a0Var.g);
+        eVar.g(h, a0Var.h);
+        eVar.g(i, a0Var.i);
+        eVar.g(j, a0Var.j);
+        eVar.g(k, a0Var.k);
+        eVar.g(l, a0Var.l);
     }
 }

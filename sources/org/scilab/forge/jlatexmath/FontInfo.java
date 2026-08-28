@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import ru.noties.jlatexmath.awt.Font;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class FontInfo {
     public static final int NUMBER_OF_CHAR_CODES = 256;
@@ -35,7 +35,7 @@ public class FontInfo {
     private final Map<CharCouple, Float> kern = new HashMap();
     private char skewChar = 65535;
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class CharCouple {
         private final char left;
         private final char right;
@@ -55,9 +55,9 @@ public class FontInfo {
         }
     }
 
-    public FontInfo(int i10, Object obj, String str, String str2, int i11, float f10, float f11, float f12, String str3, String str4, String str5, String str6, String str7) {
+    public FontInfo(int i9, Object obj, String str, String str2, int i10, float f10, float f11, float f12, String str3, String str4, String str5, String str6, String str7) {
         this.unicode = null;
-        this.fontId = i10;
+        this.fontId = i9;
         this.base = obj;
         this.path = str;
         this.fontName = str2;
@@ -69,15 +69,15 @@ public class FontInfo {
         this.ssVersion = str5;
         this.ttVersion = str6;
         this.itVersion = str7;
-        if (i11 != 0) {
-            this.unicode = new HashMap<>(i11);
+        if (i10 != 0) {
+            this.unicode = new HashMap<>(i10);
         } else {
-            i11 = 256;
+            i10 = 256;
         }
-        this.metrics = new float[i11][];
-        this.nextLarger = new CharFont[i11];
-        this.extensions = new int[i11][];
-        fonts.put(Integer.valueOf(i10), this);
+        this.metrics = new float[i10][];
+        this.nextLarger = new CharFont[i10];
+        this.extensions = new int[i10][];
+        fonts.put(Integer.valueOf(i9), this);
     }
 
     public void addKern(char c10, char c11, float f10) {
@@ -174,11 +174,11 @@ public class FontInfo {
         return this.space > 1.0E-7f;
     }
 
-    public void setBoldId(int i10) {
-        if (i10 == -1) {
-            i10 = this.fontId;
+    public void setBoldId(int i9) {
+        if (i9 == -1) {
+            i9 = this.fontId;
         }
-        this.boldId = i10;
+        this.boldId = i9;
     }
 
     public void setExtension(char c10, int[] iArr) {
@@ -196,11 +196,11 @@ public class FontInfo {
         }
     }
 
-    public void setItId(int i10) {
-        if (i10 == -1) {
-            i10 = this.fontId;
+    public void setItId(int i9) {
+        if (i9 == -1) {
+            i9 = this.fontId;
         }
-        this.itId = i10;
+        this.itId = i9;
     }
 
     public void setMetrics(char c10, float[] fArr) {
@@ -218,47 +218,47 @@ public class FontInfo {
         }
     }
 
-    public void setNextLarger(char c10, char c11, int i10) {
+    public void setNextLarger(char c10, char c11, int i9) {
         HashMap<Character, Character> hashMap = this.unicode;
         if (hashMap == null) {
-            this.nextLarger[c10] = new CharFont(c11, i10);
+            this.nextLarger[c10] = new CharFont(c11, i9);
         } else {
             if (hashMap.containsKey(Character.valueOf(c10))) {
-                this.nextLarger[this.unicode.get(Character.valueOf(c10)).charValue()] = new CharFont(c11, i10);
+                this.nextLarger[this.unicode.get(Character.valueOf(c10)).charValue()] = new CharFont(c11, i9);
                 return;
             }
             char size = (char) this.unicode.size();
             this.unicode.put(Character.valueOf(c10), Character.valueOf(size));
-            this.nextLarger[size] = new CharFont(c11, i10);
+            this.nextLarger[size] = new CharFont(c11, i9);
         }
     }
 
-    public void setRomanId(int i10) {
-        if (i10 == -1) {
-            i10 = this.fontId;
+    public void setRomanId(int i9) {
+        if (i9 == -1) {
+            i9 = this.fontId;
         }
-        this.romanId = i10;
+        this.romanId = i9;
     }
 
     public void setSkewChar(char c10) {
         this.skewChar = c10;
     }
 
-    public void setSsId(int i10) {
-        if (i10 == -1) {
-            i10 = this.fontId;
+    public void setSsId(int i9) {
+        if (i9 == -1) {
+            i9 = this.fontId;
         }
-        this.ssId = i10;
+        this.ssId = i9;
     }
 
-    public void setTtId(int i10) {
-        if (i10 == -1) {
-            i10 = this.fontId;
+    public void setTtId(int i9) {
+        if (i9 == -1) {
+            i9 = this.fontId;
         }
-        this.ttId = i10;
+        this.ttId = i9;
     }
 
-    public static Font getFont(int i10) {
-        return fonts.get(Integer.valueOf(i10)).getFont();
+    public static Font getFont(int i9) {
+        return fonts.get(Integer.valueOf(i9)).getFont();
     }
 }

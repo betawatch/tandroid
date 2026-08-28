@@ -1,25 +1,63 @@
 package tf;
 
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.g6;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class g extends e {
-    public TextView I;
-    public TextView J;
+public final /* synthetic */ class g implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float[] d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ float f;
 
-    @Override // tf.e
-    public final void b() {
-        TextView textView = this.I;
-        if (textView == null) {
-            return;
-        }
-        super.b();
-        textView.setTextColor(g6.w0(null, g6.j5, false));
+    public /* synthetic */ g(n nVar, float f10, float[] fArr, float f11, float f12, int i9) {
+        this.a = i9;
+        this.b = nVar;
+        this.c = f10;
+        this.d = fArr;
+        this.e = f11;
+        this.f = f12;
     }
 
-    @Override // tf.e
-    public void setSize(int i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                n nVar = this.b;
+                nVar.getClass();
+                float z10 = e2.c.z(this.c, 1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
+                float[] fArr = this.d;
+                float f10 = fArr[0];
+                float f11 = z10 / f10;
+                fArr[0] = f10 * f11;
+                l.g(nVar.H, f11, this.e, this.f);
+                nVar.r(false);
+                break;
+            default:
+                n nVar2 = this.b;
+                nVar2.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float f12 = this.c * floatValue;
+                float[] fArr2 = this.d;
+                float f13 = fArr2[1];
+                float f14 = f12 - f13;
+                fArr2[1] = f13 + f14;
+                float f15 = this.e * floatValue;
+                float f16 = fArr2[2];
+                float f17 = f15 - f16;
+                fArr2[2] = f16 + f17;
+                l lVar = nVar2.H;
+                float f18 = fArr2[0];
+                l.f(lVar, f14 * f18, f17 * f18);
+                float f19 = ((this.f - 1.0f) * floatValue) + 1.0f;
+                float f20 = fArr2[0];
+                float f21 = f19 / f20;
+                fArr2[0] = f20 * f21;
+                l.g(nVar2.H, f21, 0.0f, 0.0f);
+                nVar2.r(false);
+                break;
+        }
     }
 }

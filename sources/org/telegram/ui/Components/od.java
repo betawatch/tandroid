@@ -1,37 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class od implements Utilities.Callback {
+public final /* synthetic */ class od implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ od(ChatActivityEnterView chatActivityEnterView, int i10) {
-        this.a = i10;
+    public /* synthetic */ od(ChatActivityEnterView chatActivityEnterView, boolean z10, int i9) {
+        this.a = i9;
         this.b = chatActivityEnterView;
+        this.c = z10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10 = this.a;
+    @Override // java.lang.Runnable
+    public final void run() {
+        cf cfVar;
+        int i9 = this.a;
         ChatActivityEnterView chatActivityEnterView = this.b;
-        switch (i10) {
+        boolean z10 = this.c;
+        switch (i9) {
             case 0:
-                chatActivityEnterView.Q0((TL_iv.RichMessage) obj);
-                break;
+                if (!z10) {
+                    chatActivityEnterView.o1.setVisibility(8);
+                    break;
+                } else {
+                    int i10 = ChatActivityEnterView.i5;
+                    chatActivityEnterView.getClass();
+                    break;
+                }
             case 1:
-                CharSequence charSequence = (CharSequence) obj;
-                chatActivityEnterView.A0.setText(charSequence);
-                chatActivityEnterView.A0.setSelection(charSequence.length(), charSequence.length());
-                break;
+                if (!z10) {
+                    chatActivityEnterView.p1.setVisibility(8);
+                    break;
+                } else {
+                    int i11 = ChatActivityEnterView.i5;
+                    chatActivityEnterView.getClass();
+                    break;
+                }
             default:
-                int i11 = ChatActivityEnterView.i5;
-                chatActivityEnterView.e0((Canvas) obj, false);
-                break;
+                ChatActivityEnterView chatActivityEnterView2 = this.b;
+                hd hdVar = chatActivityEnterView2.A4;
+                chatActivityEnterView2.I0 = System.currentTimeMillis();
+                boolean T0 = chatActivityEnterView2.T0(0, false, 0, true, 0L);
+                if (!z10 && (cfVar = chatActivityEnterView2.H0) != null) {
+                    cfVar.h(!T0);
+                    chatActivityEnterView2.H0 = null;
+                    break;
+                } else {
+                    chatActivityEnterView2.z4 = !T0;
+                    AndroidUtilities.cancelRunOnUIThread(hdVar);
+                    AndroidUtilities.runOnUIThread(hdVar, 500L);
+                    break;
+                }
         }
     }
 }

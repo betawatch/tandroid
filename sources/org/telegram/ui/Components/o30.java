@@ -1,44 +1,109 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.text.TextUtils;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class o30 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q30 b;
+public abstract class o30 extends z41 {
+    public final int J;
+    public final ArrayList K;
+    public boolean L;
+    public ih.h6 M;
+    public boolean N;
+    public boolean O;
+    public int P;
+    public int Q;
+    public boolean R;
+    public int S;
+    public String T;
+    public String U;
+    public int V;
+    public org.telegram.ui.rl W;
+    public final boolean[] X;
 
-    public /* synthetic */ o30(q30 q30Var, int i10) {
-        this.a = i10;
-        this.b = q30Var;
+    public o30(wk0 wk0Var, Context context, int i9) {
+        super(wk0Var, context, i9, 0, false, null, null);
+        this.K = new ArrayList();
+        this.P = 0;
+        this.Q = -1;
+        this.X = new boolean[1];
+        this.s = new d(this, 16);
+        this.J = i9;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        org.telegram.ui.sn snVar;
-        hh.f1 f1Var;
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q30 q30Var = this.b;
-                q30Var.w = floatValue;
-                q30Var.e.setTranslationY(floatValue * AndroidUtilities.dp(48.0f));
-                q30Var.e.setPadding(0, 0, 0, (int) (q30Var.w * AndroidUtilities.dp(48.0f)));
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q30 q30Var2 = this.b;
-                q30Var2.A = floatValue2;
-                q30Var2.n.setScaleX(AndroidUtilities.lerp(0.95f, 1.0f, floatValue2));
-                q30Var2.n.setScaleY(AndroidUtilities.lerp(0.95f, 1.0f, q30Var2.A));
-                org.telegram.ui.yj yjVar = q30Var2.f;
-                if (yjVar != null && (snVar = yjVar.a) != null && (f1Var = snVar.H3) != null) {
-                    f1Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, q30Var2.A));
-                    q30Var2.f.a.H3.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, q30Var2.A));
-                }
-                q30Var2.h.setAlpha(q30Var2.A);
-                break;
+    public static String X(String str, boolean[] zArr) {
+        if (zArr != null) {
+            zArr[0] = false;
         }
+        if (str == null || str.isEmpty()) {
+            return null;
+        }
+        String trim = str.trim();
+        if (trim.length() <= 1) {
+            return null;
+        }
+        if ((trim.charAt(0) != '#' && trim.charAt(0) != '$') || trim.indexOf(64) >= 0) {
+            return null;
+        }
+        if (zArr != null) {
+            zArr[0] = trim.charAt(0) == '$';
+        }
+        return trim.substring(1);
+    }
+
+    public final void V() {
+        ih.h6 h6Var = this.M;
+        if (h6Var != null && h6Var.I != 0) {
+            ConnectionsManager.getInstance(h6Var.c).cancelRequest(h6Var.I, true);
+            h6Var.I = 0;
+        }
+        this.L = false;
+        if (this.Q >= 0) {
+            ConnectionsManager.getInstance(this.J).cancelRequest(this.Q, true);
+            this.Q = -1;
+        }
+        AndroidUtilities.cancelRunOnUIThread(this.W);
+        this.P++;
+        this.O = false;
+    }
+
+    public final void W() {
+        wk0 wk0Var;
+        if (TextUtils.isEmpty(this.T) || this.R || this.O || (wk0Var = this.d) == null) {
+            return;
+        }
+        for (int i9 = 0; i9 < wk0Var.getChildCount(); i9++) {
+            if (wk0Var.getChildAt(i9) instanceof e00) {
+                Y(this.T);
+                return;
+            }
+        }
+    }
+
+    public final void Y(String str) {
+        this.T = str;
+        String X = X(str, this.X);
+        if (!TextUtils.equals(this.U, X)) {
+            this.K.clear();
+            this.R = false;
+            this.S = 0;
+            V();
+        } else if (this.O) {
+            return;
+        }
+        int i9 = this.P + 1;
+        this.P = i9;
+        if (X == null) {
+            return;
+        }
+        this.O = true;
+        N(true);
+        org.telegram.ui.rl rlVar = new org.telegram.ui.rl(this, i9, X, 6);
+        this.W = rlVar;
+        AndroidUtilities.runOnUIThread(rlVar, 300L);
     }
 }

@@ -1,206 +1,62 @@
 package com.google.android.gms.internal.cast;
 
-import java.nio.charset.Charset;
-import java.util.AbstractList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.RandomAccess;
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class e5 extends s4 implements RandomAccess, f5, b6 {
-    public static final e5 d = new e5(new int[0], 0, false);
-    public int[] b;
-    public int c;
+public abstract class e5 implements Cloneable {
+    public final f5 a;
+    public f5 b;
 
-    public e5(int[] iArr, int i10, boolean z10) {
-        super(z10);
-        this.b = iArr;
-        this.c = i10;
+    public e5(f5 f5Var) {
+        this.a = f5Var;
+        if (f5Var.g()) {
+            throw new IllegalArgumentException("Default instance must be immutable.");
+        }
+        this.b = (f5) f5Var.h(4, null);
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final void add(int i10, Object obj) {
-        int i11;
-        int intValue = ((Integer) obj).intValue();
-        i();
-        if (i10 < 0 || i10 > (i11 = this.c)) {
-            throw new IndexOutOfBoundsException(a9.p.j(i10, this.c, "Index:", ", Size:"));
-        }
-        int i12 = i10 + 1;
-        int[] iArr = this.b;
-        if (i11 < iArr.length) {
-            System.arraycopy(iArr, i10, iArr, i12, i11 - i10);
-        } else {
-            int[] iArr2 = new int[((i11 * 3) / 2) + 1];
-            System.arraycopy(iArr, 0, iArr2, 0, i10);
-            System.arraycopy(this.b, i10, iArr2, i12, this.c - i10);
-            this.b = iArr2;
-        }
-        this.b[i10] = intValue;
-        this.c++;
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // com.google.android.gms.internal.cast.s4, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean addAll(Collection collection) {
-        i();
-        Charset charset = j5.a;
-        collection.getClass();
-        if (!(collection instanceof e5)) {
-            return super.addAll(collection);
-        }
-        e5 e5Var = (e5) collection;
-        int i10 = e5Var.c;
-        if (i10 == 0) {
-            return false;
-        }
-        int i11 = this.c;
-        if (ConnectionsManager.DEFAULT_DATACENTER_ID - i11 < i10) {
-            throw new OutOfMemoryError();
-        }
-        int i12 = i11 + i10;
-        int[] iArr = this.b;
-        if (i12 > iArr.length) {
-            this.b = Arrays.copyOf(iArr, i12);
-        }
-        System.arraycopy(e5Var.b, 0, this.b, this.c, e5Var.c);
-        this.c = i12;
-        ((AbstractList) this).modCount++;
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return indexOf(obj) != -1;
-    }
-
-    @Override // com.google.android.gms.internal.cast.s4, java.util.AbstractList, java.util.Collection, java.util.List
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof e5)) {
-            return super.equals(obj);
-        }
-        e5 e5Var = (e5) obj;
-        if (this.c != e5Var.c) {
-            return false;
-        }
-        int[] iArr = e5Var.b;
-        for (int i10 = 0; i10 < this.c; i10++) {
-            if (this.b[i10] != iArr[i10]) {
-                return false;
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x002b, code lost:
+    
+        if (r3 != false) goto L12;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final f5 a() {
+        f5 b10 = b();
+        byte byteValue = ((Byte) b10.h(1, null)).byteValue();
+        if (byteValue != 1) {
+            if (byteValue != 0) {
+                boolean f10 = e6.c.a(b10.getClass()).f(b10);
+                b10.h(2, true == f10 ? b10 : null);
             }
+            throw new androidx.car.app.j("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
         }
-        return true;
+        return b10;
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ Object get(int i10) {
-        n(i10);
-        return Integer.valueOf(this.b[i10]);
-    }
-
-    @Override // com.google.android.gms.internal.cast.s4, java.util.AbstractList, java.util.Collection, java.util.List
-    public final int hashCode() {
-        int i10 = 1;
-        for (int i11 = 0; i11 < this.c; i11++) {
-            i10 = (i10 * 31) + this.b[i11];
+    public final f5 b() {
+        if (!this.b.g()) {
+            return this.b;
         }
-        return i10;
+        f5 f5Var = this.b;
+        f5Var.getClass();
+        e6.c.a(f5Var.getClass()).a(f5Var);
+        f5Var.d();
+        return this.b;
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final int indexOf(Object obj) {
-        if (!(obj instanceof Integer)) {
-            return -1;
+    public final void c() {
+        if (this.b.g()) {
+            return;
         }
-        int intValue = ((Integer) obj).intValue();
-        int i10 = this.c;
-        for (int i11 = 0; i11 < i10; i11++) {
-            if (this.b[i11] == intValue) {
-                return i11;
-            }
-        }
-        return -1;
+        f5 f5Var = (f5) this.a.h(4, null);
+        e6.c.a(f5Var.getClass()).d(f5Var, this.b);
+        this.b = f5Var;
     }
 
-    public final void n(int i10) {
-        if (i10 < 0 || i10 >= this.c) {
-            throw new IndexOutOfBoundsException(a9.p.j(i10, this.c, "Index:", ", Size:"));
-        }
-    }
-
-    @Override // com.google.android.gms.internal.cast.s4, java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object remove(int i10) {
-        i();
-        n(i10);
-        int[] iArr = this.b;
-        int i11 = iArr[i10];
-        if (i10 < this.c - 1) {
-            System.arraycopy(iArr, i10 + 1, iArr, i10, (r2 - i10) - 1);
-        }
-        this.c--;
-        ((AbstractList) this).modCount++;
-        return Integer.valueOf(i11);
-    }
-
-    @Override // java.util.AbstractList
-    public final void removeRange(int i10, int i11) {
-        i();
-        if (i11 < i10) {
-            throw new IndexOutOfBoundsException("toIndex < fromIndex");
-        }
-        int[] iArr = this.b;
-        System.arraycopy(iArr, i11, iArr, i10, this.c - i11);
-        this.c -= i11 - i10;
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object set(int i10, Object obj) {
-        int intValue = ((Integer) obj).intValue();
-        i();
-        n(i10);
-        int[] iArr = this.b;
-        int i11 = iArr[i10];
-        iArr[i10] = intValue;
-        return Integer.valueOf(i11);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.c;
-    }
-
-    @Override // com.google.android.gms.internal.cast.i5
-    public final i5 zzg(int i10) {
-        if (i10 >= this.c) {
-            return new e5(Arrays.copyOf(this.b, i10), this.c, true);
-        }
-        throw new IllegalArgumentException();
-    }
-
-    public final void zzh(int i10) {
-        i();
-        int i11 = this.c;
-        int[] iArr = this.b;
-        if (i11 == iArr.length) {
-            int[] iArr2 = new int[((i11 * 3) / 2) + 1];
-            System.arraycopy(iArr, 0, iArr2, 0, i11);
-            this.b = iArr2;
-        }
-        int[] iArr3 = this.b;
-        int i12 = this.c;
-        this.c = i12 + 1;
-        iArr3[i12] = i10;
-    }
-
-    @Override // com.google.android.gms.internal.cast.s4, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
-        zzh(((Integer) obj).intValue());
-        return true;
+    public final Object clone() {
+        e5 e5Var = (e5) this.a.h(5, null);
+        e5Var.b = b();
+        return e5Var;
     }
 }

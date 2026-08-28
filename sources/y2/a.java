@@ -1,13 +1,13 @@
 package y2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a implements oc.a {
+public final class a implements nc.a {
     public static final Object c = new Object();
     public volatile b a;
     public volatile Object b;
 
-    public static oc.a a(b bVar) {
+    public static nc.a a(b bVar) {
         if (bVar instanceof a) {
             return bVar;
         }
@@ -17,7 +17,7 @@ public final class a implements oc.a {
         return aVar;
     }
 
-    @Override // oc.a
+    @Override // nc.a
     public final Object get() {
         Object obj;
         Object obj2 = this.b;

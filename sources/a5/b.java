@@ -1,70 +1,79 @@
 package a5;
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import d5.y;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b implements r4.g {
-    public final /* synthetic */ int a;
-    public final List b;
+public final class b {
+    public static final Pattern c = Pattern.compile("\\[voice=\"([^\"]*)\"\\]");
+    public static final Pattern d = Pattern.compile("^((?:[0-9]*\\.)?[0-9]+)(px|em|%)$");
+    public final y a = new y();
+    public final StringBuilder b = new StringBuilder();
 
-    public /* synthetic */ b(int i10, List list) {
-        this.a = i10;
-        this.b = list;
+    public static String a(y yVar, StringBuilder sb2) {
+        boolean z10 = false;
+        sb2.setLength(0);
+        int i9 = yVar.b;
+        int i10 = yVar.c;
+        while (i9 < i10 && !z10) {
+            char c10 = (char) yVar.a[i9];
+            if ((c10 < 'A' || c10 > 'Z') && ((c10 < 'a' || c10 > 'z') && !((c10 >= '0' && c10 <= '9') || c10 == '#' || c10 == '-' || c10 == '.' || c10 == '_'))) {
+                z10 = true;
+            } else {
+                i9++;
+                sb2.append(c10);
+            }
+        }
+        yVar.D(i9 - yVar.b);
+        return sb2.toString();
     }
 
-    @Override // r4.g
-    public final int c(long j10) {
-        switch (this.a) {
-            case 0:
-                if (j10 < 0) {
+    public static String b(y yVar, StringBuilder sb2) {
+        c(yVar);
+        if (yVar.a() == 0) {
+            return null;
+        }
+        String a2 = a(yVar, sb2);
+        if (!"".equals(a2)) {
+            return a2;
+        }
+        return "" + ((char) yVar.r());
+    }
+
+    public static void c(y yVar) {
+        while (true) {
+            for (boolean z10 = true; yVar.a() > 0 && z10; z10 = false) {
+                int i9 = yVar.b;
+                byte[] bArr = yVar.a;
+                byte b10 = bArr[i9];
+                char c10 = (char) b10;
+                if (c10 == '\t' || c10 == '\n' || c10 == '\f' || c10 == '\r' || c10 == ' ') {
+                    yVar.D(1);
+                } else {
+                    int i10 = yVar.c;
+                    int i11 = i9 + 2;
+                    if (i11 <= i10) {
+                        int i12 = i9 + 1;
+                        if (b10 == 47 && bArr[i12] == 42) {
+                            while (true) {
+                                int i13 = i11 + 1;
+                                if (i13 >= i10) {
+                                    break;
+                                }
+                                if (((char) bArr[i11]) == '*' && ((char) bArr[i13]) == '/') {
+                                    i11 += 2;
+                                    i10 = i11;
+                                } else {
+                                    i11 = i13;
+                                }
+                            }
+                            yVar.D(i10 - yVar.b);
+                        }
+                    }
                 }
-                break;
-            case 1:
-                if (j10 < 0) {
-                }
-                break;
+            }
+            return;
         }
-        return -1;
-    }
-
-    @Override // r4.g
-    public final long f(int i10) {
-        switch (this.a) {
-            case 0:
-                d5.a.f(i10 == 0);
-                break;
-            case 1:
-                d5.a.f(i10 == 0);
-                break;
-        }
-        return 0L;
-    }
-
-    @Override // r4.g
-    public final List h(long j10) {
-        switch (this.a) {
-            case 0:
-                return j10 >= 0 ? this.b : Collections.EMPTY_LIST;
-            case 1:
-                return j10 >= 0 ? this.b : Collections.EMPTY_LIST;
-            default:
-                return this.b;
-        }
-    }
-
-    @Override // r4.g
-    public final int p() {
-        switch (this.a) {
-        }
-        return 1;
-    }
-
-    public b(ArrayList arrayList) {
-        this.a = 0;
-        this.b = DesugarCollections.unmodifiableList(arrayList);
     }
 }

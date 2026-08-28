@@ -1,113 +1,355 @@
 package org.telegram.ui.Components;
 
-import android.animation.TimeInterpolator;
+import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
+import android.text.style.ClickableSpan;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.TranslateController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class k31 extends m41 {
-    static {
-        m41.setup(new k31());
+public final class k31 extends sa {
+    public final ImageView T;
+    public final FrameLayout U;
+    public final kh.d V;
+    public CharSequence W;
+    public boolean X;
+    public CharSequence Y;
+    public gt Z;
+    public String a0;
+    public String b0;
+    public int c0;
+    public final String[] d0;
+    public final String[] e0;
+    public z41 f0;
+    public boolean g0;
+    public int h0;
+
+    public k31(Context context, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(context, null, false, false, false, false, false, 2, b6Var);
+        this.c0 = 1;
+        this.d0 = new String[]{"formal", "neutral", "casual"};
+        this.e0 = new String[]{"Formal", "Neutral", "Casual"};
+        this.g0 = true;
+        this.h0 = -1;
+        ImageView imageView = new ImageView(context);
+        this.T = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.ic_close_white);
+        int i9 = org.telegram.ui.ActionBar.f6.G6;
+        imageView.setColorFilter(getThemedColor(i9));
+        imageView.setBackground(org.telegram.ui.ActionBar.f6.f0(org.telegram.ui.ActionBar.f6.l1(0.1f, getThemedColor(i9)), 1, -1));
+        this.e.addView(imageView, g7.e6.d(54, 54.0f, 85, 0.0f, 0.0f, 8.0f, 0.0f));
+        g7.g6.b(imageView, 0.1f, 1.5f);
+        imageView.setOnClickListener(new b31(this, 2));
+        String A = z21.A();
+        this.b0 = A;
+        if (A == null) {
+            this.b0 = TranslateController.currentLanguage();
+        }
+        this.H = false;
+        this.G = AndroidUtilities.dp(12.0f);
+        int i10 = org.telegram.ui.ActionBar.f6.a7;
+        setBackgroundColor(getThemedColor(i10));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.U = frameLayout;
+        frameLayout.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{org.telegram.ui.ActionBar.f6.l1(0.0f, getThemedColor(i10)), getThemedColor(i10), getThemedColor(i10)}));
+        kh.d dVar = new kh.d(context, b6Var, true);
+        dVar.setRoundRadius(24);
+        this.V = dVar;
+        dVar.setText(LocaleController.getString(R.string.OK));
+        FrameLayout.LayoutParams d = g7.e6.d(-1, 48.0f, 119, 12.0f, 6.0f, 12.0f, 12.0f);
+        int i11 = d.leftMargin;
+        int i12 = this.backgroundPaddingLeft;
+        d.leftMargin = i11 + i12;
+        d.rightMargin += i12;
+        frameLayout.addView(dVar, d);
+        this.containerView.addView(frameLayout, g7.e6.e(-1, -2, 80));
+        wk0 wk0Var = this.d;
+        int i13 = this.backgroundPaddingLeft;
+        wk0Var.setPadding(i13, 0, i13, AndroidUtilities.dp(66.0f));
+        this.d.setClipToPadding(false);
+        this.d.p1();
+        this.d.setOnItemClickListener(new bg.b1(16, this, b6Var));
+        f2.n nVar = new f2.n();
+        nVar.m = false;
+        nVar.C = false;
+        nVar.o(gr.h);
+        nVar.n(350L);
+        this.d.setItemAnimator(nVar);
+        this.f0.N(false);
     }
 
-    public static n41 a(int i10, CharSequence charSequence, boolean z10, View.OnClickListener onClickListener, o80 o80Var, View.OnClickListener onClickListener2) {
-        n41 J = n41.J(k31.class);
-        J.d = i10;
-        J.l = charSequence;
-        J.f = z10;
-        J.t = false;
-        J.D = onClickListener;
-        J.G = o80Var;
-        J.E = onClickListener2;
-        return J;
+    public static void O(final k31 k31Var, View view) {
+        x60 F = x60.F(k31Var.container, k31Var.resourcesProvider, view);
+        F.X = AndroidUtilities.dp(450.0f);
+        int i9 = 0;
+        F.t = false;
+        F.Y = true;
+        ScrollView scrollView = new ScrollView(k31Var.getContext());
+        LinearLayout linearLayout = new LinearLayout(k31Var.getContext());
+        linearLayout.setOrientation(1);
+        scrollView.addView(linearLayout);
+        F.q(scrollView);
+        int i10 = 0;
+        while (i10 < k31Var.d0.length) {
+            k31Var.S(F, linearLayout, k31Var.c0 == i10, k31Var.e0[i10], new qd(k31Var, i10, 10));
+            i10++;
+        }
+        View l1Var = new org.telegram.ui.ActionBar.l1(k31Var.getContext(), k31Var.resourcesProvider);
+        l1Var.setTag(R.id.fit_width_tag, 1);
+        linearLayout.addView(l1Var, g7.e6.n(-1, 8));
+        ArrayList<TranslateController.Language> suggestedLanguages = TranslateController.getSuggestedLanguages(null);
+        ArrayList<TranslateController.Language> languages = TranslateController.getLanguages();
+        if (!TextUtils.isEmpty(k31Var.b0)) {
+            k31Var.S(F, linearLayout, true, z21.y(z21.D(k31Var.b0, null, null)), null);
+        }
+        int size = suggestedLanguages.size();
+        int i11 = 0;
+        while (i11 < size) {
+            int i12 = i11 + 1;
+            final TranslateController.Language language = suggestedLanguages.get(i11);
+            if (!TextUtils.equals(language.code, k31Var.b0)) {
+                final int i13 = 0;
+                k31Var.S(F, linearLayout, false, language.displayName, new Runnable(k31Var) { // from class: org.telegram.ui.Components.a31
+                    public final /* synthetic */ k31 b;
+
+                    {
+                        this.b = k31Var;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i13) {
+                            case 0:
+                                k31 k31Var2 = this.b;
+                                k31Var2.T();
+                                String str = language.code;
+                                k31Var2.b0 = str;
+                                z21.H(str);
+                                k31Var2.U();
+                                break;
+                            default:
+                                k31 k31Var3 = this.b;
+                                k31Var3.T();
+                                String str2 = language.code;
+                                k31Var3.b0 = str2;
+                                z21.H(str2);
+                                k31Var3.U();
+                                break;
+                        }
+                    }
+                });
+            }
+            i11 = i12;
+        }
+        View l1Var2 = new org.telegram.ui.ActionBar.l1(k31Var.getContext(), k31Var.resourcesProvider);
+        l1Var2.setTag(R.id.fit_width_tag, 1);
+        linearLayout.addView(l1Var2, g7.e6.n(-1, 8));
+        int size2 = languages.size();
+        while (i9 < size2) {
+            TranslateController.Language language2 = languages.get(i9);
+            i9++;
+            final TranslateController.Language language3 = language2;
+            final int i14 = 1;
+            k31Var.S(F, linearLayout, TextUtils.equals(language3.code, k31Var.b0), language3.displayName, new Runnable(k31Var) { // from class: org.telegram.ui.Components.a31
+                public final /* synthetic */ k31 b;
+
+                {
+                    this.b = k31Var;
+                }
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    switch (i14) {
+                        case 0:
+                            k31 k31Var2 = this.b;
+                            k31Var2.T();
+                            String str = language3.code;
+                            k31Var2.b0 = str;
+                            z21.H(str);
+                            k31Var2.U();
+                            break;
+                        default:
+                            k31 k31Var3 = this.b;
+                            k31Var3.T();
+                            String str2 = language3.code;
+                            k31Var3.b0 = str2;
+                            z21.H(str2);
+                            k31Var3.U();
+                            break;
+                    }
+                }
+            });
+        }
+        F.Z();
     }
 
-    @Override // org.telegram.ui.Components.m41
-    public final void bindView(View view, n41 n41Var, boolean z10, b51 b51Var, k51 k51Var) {
-        l31 l31Var = (l31) view;
-        CharSequence charSequence = n41Var.l;
-        boolean z11 = n41Var.f;
-        View.OnClickListener onClickListener = n41Var.D;
-        Object obj = n41Var.G;
-        o80 o80Var = obj != null ? (o80) obj : null;
-        boolean z12 = n41Var.t;
-        View.OnClickListener onClickListener2 = n41Var.E;
-        ImageView imageView = l31Var.n;
-        TextView textView = l31Var.d;
-        i31 i31Var = l31Var.c;
-        j31 j31Var = l31Var.f;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence == null ? "" : t5.cloneSpans(charSequence));
-        u80[] u80VarArr = (u80[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), u80.class);
-        if (u80VarArr != null) {
-            int i10 = 0;
-            while (i10 < u80VarArr.length) {
-                int spanStart = spannableStringBuilder.getSpanStart(u80VarArr[i10]);
-                int spanEnd = spannableStringBuilder.getSpanEnd(u80VarArr[i10]);
-                boolean z13 = z12;
-                spannableStringBuilder.removeSpan(u80VarArr[i10]);
-                int i11 = i10;
-                u80 u80Var = u80VarArr[i11];
-                u80 u80Var2 = new u80(j31Var, u80Var.a, u80Var.d, null);
-                u80 u80Var3 = u80VarArr[i11];
-                u80Var2.f = u80Var3.f;
-                u80Var2.h = u80Var3.h;
-                u80Var2.n = u80Var3.n;
-                spannableStringBuilder.setSpan(u80Var2, spanStart, spanEnd, 33);
-                i10 = i11 + 1;
-                z12 = z13;
-                onClickListener2 = onClickListener2;
+    public static void P(k31 k31Var, ClickableSpan clickableSpan) {
+        if (clickableSpan == null) {
+            return;
+        }
+        clickableSpan.onClick(k31Var.containerView);
+    }
+
+    public static void Q(k31 k31Var, TLRPC.TL_messages_translateResult tL_messages_translateResult, TLRPC.TL_error tL_error) {
+        k31Var.h0 = -1;
+        kh.d dVar = k31Var.V;
+        dVar.setLoading(false);
+        if (tL_error != null) {
+            org.telegram.ui.Cells.j2.s(k31Var.topBulletinContainer, k31Var.resourcesProvider, tL_error, false);
+            dVar.setText(LocaleController.getString(R.string.OK));
+            dVar.setOnClickListener(new b31(k31Var, 0));
+        } else if (tL_messages_translateResult == null || tL_messages_translateResult.result.isEmpty()) {
+            dVar.setText(LocaleController.getString(R.string.OK));
+            dVar.setOnClickListener(new b31(k31Var, 1));
+        } else {
+            k31Var.Y = MessageObject.formatTextWithEntities(tL_messages_translateResult.result.get(0));
+            k31Var.X = false;
+            k31Var.f0.N(true);
+        }
+    }
+
+    public static /* synthetic */ void R(k31 k31Var, org.telegram.ui.ActionBar.b6 b6Var, int i9) {
+        l41 G = k31Var.f0.G(i9 - 1);
+        if (G == null) {
+            return;
+        }
+        int i10 = G.d;
+        if (i10 == 1) {
+            CharSequence charSequence = k31Var.Y;
+            if (charSequence == null || k31Var.X) {
+                return;
+            }
+            AndroidUtilities.addToClipboard(charSequence);
+            return;
+        }
+        if (i10 == 2) {
+            if (UserConfig.getInstance(k31Var.currentAccount).isPremium()) {
+                MessagesController.getInstance(k31Var.currentAccount).getTranslateController().toggleTranslatingDialog(0L);
+                k31Var.dismiss();
+            } else {
+                if (LaunchActivity.U() == null) {
+                    return;
+                }
+                new zf.x0(k31Var.getContext(), 13, b6Var).show();
             }
         }
-        View.OnClickListener onClickListener3 = onClickListener2;
-        boolean z14 = z12;
-        if (!l31Var.h || z11) {
-            i31Var.setVisibility(z11 ? 0 : 8);
-            j31Var.setVisibility(!z11 ? 0 : 8);
-        } else {
-            i31Var.setVisibility(0);
-            j31Var.setVisibility(0);
-            ViewPropertyAnimator withEndAction = i31Var.animate().alpha(0.0f).withEndAction(new up0(l31Var, 23));
-            TimeInterpolator timeInterpolator = er.h;
-            withEndAction.setInterpolator(timeInterpolator).setDuration(320L).start();
-            j31Var.animate().alpha(1.0f).setInterpolator(timeInterpolator).setDuration(320L).start();
+    }
+
+    @Override // org.telegram.ui.Components.sa
+    public final void A(float f10) {
+        float f11 = 1.0f - f10;
+        ImageView imageView = this.T;
+        imageView.setAlpha(f11);
+        imageView.setScaleX(AndroidUtilities.lerp(0.6f, 1.0f, f11));
+        imageView.setScaleY(AndroidUtilities.lerp(0.6f, 1.0f, f11));
+    }
+
+    public final void S(x60 x60Var, LinearLayout linearLayout, boolean z10, String str, Runnable runnable) {
+        int i9 = org.telegram.ui.ActionBar.f6.E8;
+        int i10 = org.telegram.ui.ActionBar.f6.F8;
+        org.telegram.ui.ActionBar.g1 g1Var = new org.telegram.ui.ActionBar.g1(1, getContext(), this.resourcesProvider, false, false);
+        g1Var.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
+        g1Var.setText(str);
+        g1Var.setChecked(z10);
+        g1Var.c(org.telegram.ui.ActionBar.f6.v0(i9, this.resourcesProvider), org.telegram.ui.ActionBar.f6.v0(i10, this.resourcesProvider));
+        g1Var.setSelectorColor(org.telegram.ui.ActionBar.f6.l1(0.12f, org.telegram.ui.ActionBar.f6.v0(i9, this.resourcesProvider)));
+        g1Var.setOnClickListener(new h(x60Var, z10, runnable, 1));
+        linearLayout.addView(g1Var, g7.e6.n(-1, -2));
+    }
+
+    public final void T() {
+        if (this.h0 >= 0) {
+            ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.h0, true);
+            this.h0 = -1;
         }
-        l31Var.h = z11;
-        textView.setVisibility(z11 ? 0 : 8);
-        textView.setOnClickListener(onClickListener);
-        l31Var.setClipChildren(z11);
-        i31Var.setText(spannableStringBuilder);
-        j31Var.setText(spannableStringBuilder);
-        j31Var.setTextIsSelectable(!z14 && (u80VarArr == null || u80VarArr.length == 0));
-        j31Var.setOnLinkPressListener(o80Var);
-        imageView.setVisibility(onClickListener3 != null ? 0 : 8);
-        imageView.setOnClickListener(onClickListener3);
-        l31Var.b = z10;
-        l31Var.setWillNotDraw(true ^ z10);
     }
 
-    @Override // org.telegram.ui.Components.m41
-    public final boolean contentsEquals(n41 n41Var, n41 n41Var2) {
-        return TextUtils.equals(n41Var.l, n41Var2.l) && n41Var.f == n41Var2.f;
+    public final void U() {
+        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+        int i9 = 1;
+        CharSequence[] charSequenceArr = {this.W};
+        tL_textWithEntities.entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr, true);
+        CharSequence charSequence = charSequenceArr[0];
+        tL_textWithEntities.text = charSequence == null ? "" : charSequence.toString();
+        if (this.Z != null) {
+            this.V.setLoading(true);
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.Loading));
+        spannableStringBuilder.setSpan(new q80(null, AndroidUtilities.dp(120.0f), 0, null), 0, spannableStringBuilder.length(), 33);
+        this.Y = spannableStringBuilder;
+        this.X = true;
+        TLRPC.TL_messages_translateText tL_messages_translateText = new TLRPC.TL_messages_translateText();
+        tL_messages_translateText.to_lang = this.b0;
+        tL_messages_translateText.flags |= 2;
+        tL_messages_translateText.text.add(tL_textWithEntities);
+        int i10 = this.c0;
+        if (i10 != 1) {
+            tL_messages_translateText.flags |= 4;
+            tL_messages_translateText.tone = this.d0[i10];
+        }
+        this.h0 = ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_translateText, new org.telegram.messenger.a(), new c31(this, i9));
+        this.f0.N(true);
     }
 
-    @Override // org.telegram.ui.Components.m41
-    public final View createView(Context context, zk0 zk0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
-        return new l31(context, c6Var);
+    @Override // org.telegram.ui.Components.sa, org.telegram.ui.ActionBar.f3
+    public final void onContainerViewTranslation() {
+        super.onContainerViewTranslation();
+        ValueAnimator valueAnimator = this.keyboardContentAnimator;
+        FrameLayout frameLayout = this.U;
+        if (valueAnimator != null) {
+            frameLayout.setTranslationY(-((Float) valueAnimator.getAnimatedValue()).floatValue());
+        } else {
+            frameLayout.setTranslationY(0.0f);
+        }
     }
 
-    @Override // org.telegram.ui.Components.m41
-    public final boolean equals(n41 n41Var, n41 n41Var2) {
-        return n41Var.d == n41Var2.d;
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    public final void show() {
+        super.show();
+        pa paVar = this.e;
+        if (paVar != null) {
+            paVar.setTitle("Translate");
+        }
+        this.f0.N(false);
+        U();
+        if (this.Z != null) {
+            kh.d dVar = this.V;
+            dVar.setText("Use This Translation");
+            dVar.setOnClickListener(new b31(this, 3));
+        }
     }
 
-    @Override // org.telegram.ui.Components.m41
-    public final boolean isClickable() {
-        return false;
+    @Override // org.telegram.ui.Components.sa
+    public final vk0 v(wk0 wk0Var) {
+        z41 z41Var = new z41(wk0Var, getContext(), this.currentAccount, 0, true, new c31(this, 0), this.resourcesProvider);
+        this.f0 = z41Var;
+        z41Var.r = false;
+        return z41Var;
+    }
+
+    @Override // org.telegram.ui.Components.sa
+    public final CharSequence y() {
+        return "Translate";
     }
 }

@@ -1,58 +1,36 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pf implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean[] d;
+    public final /* synthetic */ CountDownLatch e;
 
-    public /* synthetic */ pf(MessagesStorage messagesStorage, long j10, ArrayList arrayList, boolean z10, int i10, int i11) {
-        this.f = messagesStorage;
-        this.e = j10;
-        this.h = arrayList;
-        this.b = z10;
-        this.c = i10;
-        this.d = i11;
+    public /* synthetic */ pf(int i9, long j10, CountDownLatch countDownLatch, MessagesStorage messagesStorage, boolean[] zArr) {
+        this.a = i9;
+        this.b = messagesStorage;
+        this.c = j10;
+        this.d = zArr;
+        this.e = countDownLatch;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesStorage) this.f).lambda$markMessagesAsDeleted$229(this.e, (ArrayList) this.h, this.b, this.c, this.d);
+                this.b.lambda$checkMessageByRandomId$153(this.c, this.d, this.e);
+                break;
+            case 1:
+                this.b.lambda$isMigratedChat$141(this.c, this.d, this.e);
                 break;
             default:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.f;
-                CharSequence charSequence = (CharSequence) this.h;
-                chatActivityEnterView.b0 = null;
-                chatActivityEnterView.q0(true);
-                org.telegram.ui.Components.bf bfVar = chatActivityEnterView.A0;
-                if (bfVar != null) {
-                    bfVar.setText("");
-                }
-                org.telegram.ui.Components.ag agVar = chatActivityEnterView.U2;
-                if (agVar != null) {
-                    agVar.w(charSequence, this.b, this.c, this.d, this.e);
-                    break;
-                }
+                this.b.lambda$hasInviteMeMessage$143(this.c, this.d, this.e);
                 break;
         }
-    }
-
-    public /* synthetic */ pf(ChatActivityEnterView chatActivityEnterView, CharSequence charSequence, boolean z10, int i10, int i11, long j10) {
-        this.f = chatActivityEnterView;
-        this.h = charSequence;
-        this.b = z10;
-        this.c = i10;
-        this.d = i11;
-        this.e = j10;
     }
 }

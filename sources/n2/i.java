@@ -5,7 +5,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i {
     public final String a;
@@ -14,14 +14,14 @@ public final class i {
     public final String d;
     public final ArrayList e;
     public final String f;
-    public final za.b g;
+    public final d7.u g;
 
     public i(JSONObject jSONObject) {
         this.a = jSONObject.optString("formattedPrice");
         this.b = jSONObject.optLong("priceAmountMicros");
         this.c = jSONObject.optString("priceCurrencyCode");
         String optString = jSONObject.optString("offerIdToken");
-        za.b bVar = null;
+        d7.u uVar = null;
         this.d = true == optString.isEmpty() ? null : optString;
         jSONObject.optString("offerId").getClass();
         jSONObject.optString("purchaseOptionId").getClass();
@@ -29,8 +29,8 @@ public final class i {
         JSONArray optJSONArray = jSONObject.optJSONArray("offerTags");
         this.e = new ArrayList();
         if (optJSONArray != null) {
-            for (int i10 = 0; i10 < optJSONArray.length(); i10++) {
-                this.e.add(optJSONArray.getString(i10));
+            for (int i9 = 0; i9 < optJSONArray.length(); i9++) {
+                this.e.add(optJSONArray.getString(i9));
             }
         }
         if (jSONObject.has("fullPriceMicros")) {
@@ -75,17 +75,17 @@ public final class i {
         }
         JSONObject optJSONObject7 = jSONObject.optJSONObject("autoPayDetails");
         if (optJSONObject7 != null) {
-            bVar = new za.b(15);
+            uVar = new d7.u(16);
             optJSONObject7.getString(TeXSymbolParser.TYPE_ATTR);
         }
-        this.g = bVar;
+        this.g = uVar;
         JSONArray optJSONArray2 = jSONObject.optJSONArray("pricingPhases");
         if (optJSONArray2 == null) {
             return;
         }
         ArrayList arrayList = new ArrayList();
-        for (int i11 = 0; i11 < optJSONArray2.length(); i11++) {
-            JSONObject optJSONObject8 = optJSONArray2.optJSONObject(i11);
+        for (int i10 = 0; i10 < optJSONArray2.length(); i10++) {
+            JSONObject optJSONObject8 = optJSONArray2.optJSONObject(i10);
             if (optJSONObject8 != null) {
                 arrayList.add(new j(optJSONObject8));
             }

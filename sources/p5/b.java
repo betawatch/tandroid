@@ -6,36 +6,36 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Parcel;
 import android.os.RemoteException;
-import com.google.android.gms.internal.cast.t;
-import n5.k;
+import com.google.android.gms.internal.cast.u;
+import n5.j;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b extends AsyncTask {
-    public static final r5.b c = new r5.b("FetchBitmapTask", null);
+    public static final q5.b c = new q5.b("FetchBitmapTask", null);
     public final e a;
-    public final af.h b;
+    public final b3.b b;
 
-    public b(Context context, int i10, int i11, af.h hVar) {
+    public b(Context context, int i9, int i10, b3.b bVar) {
         e eVar;
-        this.b = hVar;
+        this.b = bVar;
         Context applicationContext = context.getApplicationContext();
-        k kVar = new k(this);
-        r5.b bVar = com.google.android.gms.internal.cast.e.a;
+        j jVar = new j(this);
+        q5.b bVar2 = com.google.android.gms.internal.cast.e.a;
         try {
             com.google.android.gms.internal.cast.g b10 = com.google.android.gms.internal.cast.e.b(applicationContext.getApplicationContext());
-            i6.b bVar2 = new i6.b(applicationContext.getApplicationContext());
+            h6.b bVar3 = new h6.b(applicationContext.getApplicationContext());
             Parcel O0 = b10.O0(b10.M0(), 8);
             int readInt = O0.readInt();
             O0.recycle();
-            eVar = readInt >= 233700000 ? b10.Y0(bVar2, new i6.b(this), kVar, i10, i11) : b10.X0(new i6.b(this), kVar, i10, i11);
-        } catch (RemoteException e9) {
-            e = e9;
+            eVar = readInt >= 233700000 ? b10.Y0(bVar3, new h6.b(this), jVar, i9, i10) : b10.X0(new h6.b(this), jVar, i9, i10);
+        } catch (RemoteException e10) {
+            e = e10;
             com.google.android.gms.internal.cast.e.a.a(e, "Unable to call %s on %s.", "newFetchBitmapTaskImpl", com.google.android.gms.internal.cast.g.class.getSimpleName());
             eVar = null;
             this.a = eVar;
-        } catch (n5.d e10) {
-            e = e10;
+        } catch (n5.d e11) {
+            e = e11;
             com.google.android.gms.internal.cast.e.a.a(e, "Unable to call %s on %s.", "newFetchBitmapTaskImpl", com.google.android.gms.internal.cast.g.class.getSimpleName());
             eVar = null;
             this.a = eVar;
@@ -52,13 +52,13 @@ public final class b extends AsyncTask {
             try {
                 c cVar = (c) eVar;
                 Parcel M0 = cVar.M0();
-                t.c(M0, uri);
+                u.c(M0, uri);
                 Parcel O0 = cVar.O0(M0, 1);
-                Bitmap bitmap = (Bitmap) t.a(O0, Bitmap.CREATOR);
+                Bitmap bitmap = (Bitmap) u.a(O0, Bitmap.CREATOR);
                 O0.recycle();
                 return bitmap;
-            } catch (RemoteException e9) {
-                c.a(e9, "Unable to call %s on %s.", "doFetch", e.class.getSimpleName());
+            } catch (RemoteException e10) {
+                c.a(e10, "Unable to call %s on %s.", "doFetch", e.class.getSimpleName());
             }
         }
         return null;
@@ -67,13 +67,13 @@ public final class b extends AsyncTask {
     @Override // android.os.AsyncTask
     public final void onPostExecute(Object obj) {
         Bitmap bitmap = (Bitmap) obj;
-        af.h hVar = this.b;
-        if (hVar != null) {
-            a aVar = (a) hVar.e;
+        b3.b bVar = this.b;
+        if (bVar != null) {
+            a aVar = (a) bVar.e;
             if (aVar != null) {
-                aVar.z0(bitmap);
+                aVar.y0(bitmap);
             }
-            hVar.d = null;
+            bVar.d = null;
         }
     }
 }

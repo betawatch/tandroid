@@ -1,65 +1,20 @@
 package h7;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class g0 {
-    public static String a(String str, Object... objArr) {
-        int indexOf;
-        String sb2;
-        int i10 = 0;
-        for (int i11 = 0; i11 < objArr.length; i11++) {
-            Object obj = objArr[i11];
-            if (obj == null) {
-                sb2 = BuildConfig.BETA_URL;
-            } else {
-                try {
-                    sb2 = obj.toString();
-                } catch (Exception e9) {
-                    String name = obj.getClass().getName();
-                    String hexString = Integer.toHexString(System.identityHashCode(obj));
-                    StringBuilder sb3 = new StringBuilder(String.valueOf(hexString).length() + name.length() + 1);
-                    sb3.append(name);
-                    sb3.append('@');
-                    sb3.append(hexString);
-                    String sb4 = sb3.toString();
-                    Logger logger = Logger.getLogger("com.google.common.base.Strings");
-                    Level level = Level.WARNING;
-                    String valueOf = String.valueOf(sb4);
-                    logger.log(level, valueOf.length() != 0 ? "Exception during lenientFormat for ".concat(valueOf) : new String("Exception during lenientFormat for "), (Throwable) e9);
-                    String name2 = e9.getClass().getName();
-                    StringBuilder sb5 = new StringBuilder(name2.length() + String.valueOf(sb4).length() + 9);
-                    sb5.append("<");
-                    sb5.append(sb4);
-                    sb5.append(" threw ");
-                    sb5.append(name2);
-                    sb5.append(">");
-                    sb2 = sb5.toString();
-                }
-            }
-            objArr[i11] = sb2;
-        }
-        StringBuilder sb6 = new StringBuilder((objArr.length * 16) + str.length());
-        int i12 = 0;
-        while (i10 < objArr.length && (indexOf = str.indexOf("%s", i12)) != -1) {
-            sb6.append((CharSequence) str, i12, indexOf);
-            sb6.append(objArr[i10]);
-            i12 = indexOf + 2;
-            i10++;
-        }
-        sb6.append((CharSequence) str, i12, str.length());
-        if (i10 < objArr.length) {
-            sb6.append(" [");
-            sb6.append(objArr[i10]);
-            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
-                sb6.append(", ");
-                sb6.append(objArr[i13]);
-            }
-            sb6.append(']');
-        }
-        return sb6.toString();
+public final class g0 {
+    public static final g0 a;
+    public static final /* synthetic */ g0[] b;
+
+    static {
+        g0 g0Var = new g0("DEFAULT", 0);
+        a = g0Var;
+        b = new g0[]{g0Var, new g0("SIGNED", 1), new g0("FIXED", 2)};
+    }
+
+    public static g0[] values() {
+        return (g0[]) b.clone();
     }
 }

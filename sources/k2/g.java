@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class g extends Drawable implements j0.b {
     public Drawable a;
@@ -74,28 +74,28 @@ public abstract class g extends Drawable implements j0.b {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public boolean onLevelChange(int i10) {
+    public boolean onLevelChange(int i9) {
         Drawable drawable = this.a;
-        return drawable != null ? drawable.setLevel(i10) : super.onLevelChange(i10);
+        return drawable != null ? drawable.setLevel(i9) : super.onLevelChange(i9);
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setChangingConfigurations(int i10) {
+    public final void setChangingConfigurations(int i9) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            drawable.setChangingConfigurations(i10);
+            drawable.setChangingConfigurations(i9);
         } else {
-            super.setChangingConfigurations(i10);
+            super.setChangingConfigurations(i9);
         }
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(int i10, PorterDuff.Mode mode) {
+    public final void setColorFilter(int i9, PorterDuff.Mode mode) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            drawable.setColorFilter(i10, mode);
+            drawable.setColorFilter(i9, mode);
         } else {
-            super.setColorFilter(i10, mode);
+            super.setColorFilter(i9, mode);
         }
     }
 
@@ -116,10 +116,10 @@ public abstract class g extends Drawable implements j0.b {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setHotspotBounds(int i10, int i11, int i12, int i13) {
+    public final void setHotspotBounds(int i9, int i10, int i11, int i12) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            drawable.setHotspotBounds(i10, i11, i12, i13);
+            drawable.setHotspotBounds(i9, i10, i11, i12);
         }
     }
 

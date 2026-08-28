@@ -3,24 +3,24 @@ package org.telegram.ui;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class yk0 implements TextWatcher {
     public final /* synthetic */ int a;
     public final /* synthetic */ PasscodeActivity b;
 
-    public /* synthetic */ yk0(PasscodeActivity passcodeActivity, int i10) {
-        this.a = i10;
+    public /* synthetic */ yk0(PasscodeActivity passcodeActivity, int i9) {
+        this.a = i9;
         this.b = passcodeActivity;
     }
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
-        int i10 = this.a;
+        int i9 = this.a;
     }
 
     @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    public final void beforeTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
         switch (this.a) {
             case 0:
                 PasscodeActivity passcodeActivity = this.b;
@@ -44,8 +44,8 @@ public final class yk0 implements TextWatcher {
     }
 
     @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
+    public final void onTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
+        int i12 = this.a;
     }
 
     private final void a(Editable editable) {
@@ -54,9 +54,9 @@ public final class yk0 implements TextWatcher {
     private final void b(Editable editable) {
     }
 
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    private final void c(int i9, int i10, int i11, CharSequence charSequence) {
     }
 
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    private final void d(int i9, int i10, int i11, CharSequence charSequence) {
     }
 }

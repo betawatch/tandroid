@@ -1,55 +1,52 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import org.telegram.messenger.MessagesController;
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class m10 extends xf.a {
-    public CharSequence c;
-    public MessagesController.DialogFilter d;
+public final class m10 extends FrameLayout {
+    public TextView a;
+    public TextView b;
+    public org.telegram.ui.Components.jh0 c;
+    public boolean d;
     public TLRPC.TL_dialogFilterSuggested e;
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public TLRPC.TL_dialogFilterSuggested getSuggestedFilter() {
+        return this.e;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(0.0f, getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.f6.k0);
         }
-        if (!(obj instanceof m10)) {
-            return false;
-        }
-        m10 m10Var = (m10) obj;
-        int i10 = m10Var.a;
-        int i11 = this.a;
-        if (i10 != i11) {
-            return false;
-        }
-        if ((i11 == 0 || i11 == 4 || i11 == 3 || i11 == 6) && !TextUtils.equals(this.c, m10Var.c)) {
-            return false;
-        }
-        int i12 = this.a;
-        if (i12 == 2) {
-            MessagesController.DialogFilter dialogFilter = this.d;
-            boolean z10 = dialogFilter == null;
-            MessagesController.DialogFilter dialogFilter2 = m10Var.d;
-            if (z10 != (dialogFilter2 == null)) {
-                return false;
-            }
-            if (dialogFilter != null && dialogFilter.id != dialogFilter2.id) {
-                return false;
-            }
-        }
-        if (i12 == 5) {
-            TLRPC.TL_dialogFilterSuggested tL_dialogFilterSuggested = this.e;
-            boolean z11 = tL_dialogFilterSuggested == null;
-            TLRPC.TL_dialogFilterSuggested tL_dialogFilterSuggested2 = m10Var.e;
-            if (z11 != (tL_dialogFilterSuggested2 == null)) {
-                return false;
-            }
-            if (tL_dialogFilterSuggested != null && tL_dialogFilterSuggested.filter.id != tL_dialogFilterSuggested2.filter.id) {
-                return false;
-            }
-        }
-        return true;
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+        accessibilityNodeInfo.setText(this.c.getText());
+        accessibilityNodeInfo.setClassName("android.widget.Button");
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i9), AndroidUtilities.dp(64.0f));
+        measureChildWithMargins(this.c, i9, 0, i10, 0);
+        TextView textView = this.a;
+        org.telegram.ui.Components.jh0 jh0Var = this.c;
+        measureChildWithMargins(textView, i9, jh0Var.getMeasuredWidth(), i10, 0);
+        measureChildWithMargins(this.b, i9, jh0Var.getMeasuredWidth(), i10, 0);
+    }
+
+    public void setAddOnClickListener(View.OnClickListener onClickListener) {
+        this.c.setOnClickListener(onClickListener);
     }
 }

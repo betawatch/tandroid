@@ -2,27 +2,40 @@ package c6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import h7.r8;
+import g7.o8;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c extends z5.a {
-    public static final Parcelable.Creator<c> CREATOR = new w.a(27);
-    public final int a;
-    public final boolean b;
-
-    public c(int i10, boolean z10) {
-        this.a = i10;
-        this.b = z10;
+public final class c implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        int z10 = o8.z(parcel);
+        ArrayList arrayList = null;
+        String str = null;
+        String str2 = null;
+        boolean z11 = false;
+        while (parcel.dataPosition() < z10) {
+            int readInt = parcel.readInt();
+            char c10 = (char) readInt;
+            if (c10 == 1) {
+                arrayList = o8.l(parcel, readInt, u5.c.CREATOR);
+            } else if (c10 == 2) {
+                z11 = o8.n(parcel, readInt);
+            } else if (c10 == 3) {
+                str = o8.h(parcel, readInt);
+            } else if (c10 != 4) {
+                o8.y(parcel, readInt);
+            } else {
+                str2 = o8.h(parcel, readInt);
+            }
+        }
+        o8.m(parcel, z10);
+        return new a(arrayList, z11, str, str2);
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.s(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        r8.s(parcel, 2, 4);
-        parcel.writeInt(this.b ? 1 : 0);
-        r8.r(parcel, q6);
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i9) {
+        return new a[i9];
     }
 }

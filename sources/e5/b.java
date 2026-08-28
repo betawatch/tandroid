@@ -1,16 +1,16 @@
 package e5;
 
-import d5.g0;
+import d5.f0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b implements h3.g {
     public static final String f;
     public static final String h;
     public static final String n;
     public static final String r;
-    public static final a9.m s;
+    public static final a9.b s;
     public final int a;
     public final int b;
     public final int c;
@@ -18,27 +18,27 @@ public final class b implements h3.g {
     public int e;
 
     static {
-        int i10 = g0.a;
+        int i9 = f0.a;
         f = Integer.toString(0, 36);
         h = Integer.toString(1, 36);
         n = Integer.toString(2, 36);
         r = Integer.toString(3, 36);
-        s = new a9.m(27);
+        s = new a9.b(21);
     }
 
-    public b(int i10, int i11, int i12, byte[] bArr) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
+    public b(int i9, int i10, int i11, byte[] bArr) {
+        this.a = i9;
+        this.b = i10;
+        this.c = i11;
         this.d = bArr;
     }
 
-    public static int a(int i10) {
-        if (i10 == 1) {
+    public static int a(int i9) {
+        if (i9 == 1) {
             return 1;
         }
-        if (i10 != 9) {
-            return (i10 == 4 || i10 == 5 || i10 == 6 || i10 == 7) ? 2 : -1;
+        if (i9 != 9) {
+            return (i9 == 4 || i9 == 5 || i9 == 6 || i9 == 7) ? 2 : -1;
         }
         return 6;
     }

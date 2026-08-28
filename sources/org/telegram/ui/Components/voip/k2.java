@@ -14,11 +14,11 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.gr;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.lh1;
+import org.telegram.ui.mh1;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class k2 extends FrameLayout {
     public static final /* synthetic */ int h = 0;
@@ -34,7 +34,7 @@ public final class k2 extends FrameLayout {
         super(context);
         this.f = l2Var;
         this.a = ViewConfiguration.get(context).getScaledTouchSlop();
-        setOutlineProvider(new cg.l1(16));
+        setOutlineProvider(new bg.q1(16));
         setClipToOutline(true);
     }
 
@@ -53,8 +53,8 @@ public final class k2 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(i9, i10);
         this.b = AndroidUtilities.dp(16.0f);
         this.c = AndroidUtilities.dp(16.0f);
         this.d = AndroidUtilities.dp(60.0f);
@@ -120,7 +120,7 @@ public final class k2 extends FrameLayout {
                 Context context = getContext();
                 boolean z10 = context instanceof LaunchActivity;
                 if (z10 && !ApplicationLoader.mainInterfacePaused) {
-                    lh1.w((Activity) context, this.f.H);
+                    mh1.w((Activity) context, this.f.H);
                 } else if (z10) {
                     Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
                     intent.setAction("voip");
@@ -132,8 +132,8 @@ public final class k2 extends FrameLayout {
             if (parent != null) {
                 parent.requestDisallowInterceptTouchEvent(false);
                 Point point = AndroidUtilities.displaySize;
-                int i10 = point.x;
-                int i11 = point.y + l2.S;
+                int i9 = point.x;
+                int i10 = point.y + l2.S;
                 float f14 = this.d;
                 float f15 = this.e;
                 l2 l2Var5 = this.f;
@@ -149,9 +149,9 @@ public final class k2 extends FrameLayout {
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(l2Var7.d.x, f16 - l2Var7.b.getLeft());
                     ofFloat.addUpdateListener(this.f.K);
                     this.f.J.playTogether(ofFloat);
-                } else if (measuredWidth > i10 - this.c) {
+                } else if (measuredWidth > i9 - this.c) {
                     l2 l2Var8 = this.f;
-                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(l2Var8.d.x, (i10 - l2Var8.b.getRight()) - this.c);
+                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(l2Var8.d.x, (i9 - l2Var8.b.getRight()) - this.c);
                     ofFloat2.addUpdateListener(this.f.K);
                     this.f.J.playTogether(ofFloat2);
                 }
@@ -160,13 +160,13 @@ public final class k2 extends FrameLayout {
                     ValueAnimator ofFloat3 = ValueAnimator.ofFloat(l2Var9.d.y, f14 - l2Var9.b.getTop());
                     ofFloat3.addUpdateListener(this.f.L);
                     this.f.J.playTogether(ofFloat3);
-                } else if (measuredHeight > i11 - f15) {
+                } else if (measuredHeight > i10 - f15) {
                     l2 l2Var10 = this.f;
-                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(l2Var10.d.y, (i11 - l2Var10.b.getMeasuredHeight()) - f15);
+                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(l2Var10.d.y, (i10 - l2Var10.b.getMeasuredHeight()) - f15);
                     ofFloat4.addUpdateListener(this.f.L);
                     this.f.J.playTogether(ofFloat4);
                 }
-                this.f.J.setDuration(150L).setInterpolator(er.f);
+                this.f.J.setDuration(150L).setInterpolator(gr.f);
                 this.f.J.start();
             }
             this.f.F = false;

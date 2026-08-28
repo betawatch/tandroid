@@ -1,6 +1,6 @@
 package m3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class g implements t {
     public final long a;
@@ -11,11 +11,11 @@ public class g implements t {
     public final long f;
     public final boolean g;
 
-    public g(long j10, int i10, int i11, boolean z10, long j11) {
+    public g(long j10, int i9, int i10, boolean z10, long j11) {
         this.a = j10;
         this.b = j11;
-        this.c = i11 == -1 ? 1 : i11;
-        this.e = i10;
+        this.c = i10 == -1 ? 1 : i10;
+        this.e = i9;
         this.g = z10;
         if (j10 == -1) {
             this.d = -1L;
@@ -23,7 +23,7 @@ public class g implements t {
         } else {
             long j12 = j10 - j11;
             this.d = j12;
-            this.f = (Math.max(0L, j12) * 8000000) / i10;
+            this.f = (Math.max(0L, j12) * 8000000) / i9;
         }
     }
 
@@ -40,19 +40,19 @@ public class g implements t {
             u uVar = new u(0L, j11);
             return new s(uVar, uVar);
         }
-        int i10 = this.e;
+        int i9 = this.e;
         long j13 = this.c;
-        long j14 = (((i10 * j10) / 8000000) / j13) * j13;
+        long j14 = (((i9 * j10) / 8000000) / j13) * j13;
         if (j12 != -1) {
             j14 = Math.min(j14, j12 - j13);
         }
         long max = Math.max(j14, 0L) + j11;
-        long max2 = (Math.max(0L, max - j11) * 8000000) / i10;
+        long max2 = (Math.max(0L, max - j11) * 8000000) / i9;
         u uVar2 = new u(max2, max);
         if (j12 != -1 && max2 < j10) {
             long j15 = max + j13;
             if (j15 < this.a) {
-                return new s(uVar2, new u((Math.max(0L, j15 - j11) * 8000000) / i10, j15));
+                return new s(uVar2, new u((Math.max(0L, j15 - j11) * 8000000) / i9, j15));
             }
         }
         return new s(uVar2, uVar2);

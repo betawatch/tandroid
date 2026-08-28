@@ -16,8 +16,8 @@ public final class a {
         g10.setAccessible(true);
         try {
             b = new a((Unsafe) g10.get(null));
-        } catch (IllegalAccessException e9) {
-            throw new AssertionError("Couldn't get the Unsafe", e9);
+        } catch (IllegalAccessException e10) {
+            throw new AssertionError("Couldn't get the Unsafe", e10);
         }
     }
 
@@ -28,13 +28,13 @@ public final class a {
     public static Field g() {
         try {
             return Unsafe.class.getDeclaredField("theUnsafe");
-        } catch (NoSuchFieldException e9) {
+        } catch (NoSuchFieldException e10) {
             for (Field field : Unsafe.class.getDeclaredFields()) {
                 if (Modifier.isStatic(field.getModifiers()) && Unsafe.class.isAssignableFrom(field.getType())) {
                     return field;
                 }
             }
-            throw new AssertionError("Couldn't find the Unsafe", e9);
+            throw new AssertionError("Couldn't find the Unsafe", e10);
         }
     }
 
@@ -58,8 +58,8 @@ public final class a {
     public final long h(Class cls, String str) {
         try {
             return i(cls.getDeclaredField(str));
-        } catch (NoSuchFieldException e9) {
-            throw new AssertionError("Cannot find field:", e9);
+        } catch (NoSuchFieldException e10) {
+            throw new AssertionError("Cannot find field:", e10);
         }
     }
 
@@ -79,8 +79,8 @@ public final class a {
         this.a.putObjectVolatile(obj, j10, lVar);
     }
 
-    public final boolean c(Object obj, long j10, int i10, int i11) {
-        return this.a.compareAndSwapInt(obj, j10, i10, i11);
+    public final boolean c(Object obj, long j10, int i9, int i10) {
+        return this.a.compareAndSwapInt(obj, j10, i9, i10);
     }
 
     public final boolean d(Object obj, long j10, long j11, long j12) {

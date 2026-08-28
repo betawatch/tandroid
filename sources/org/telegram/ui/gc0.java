@@ -1,45 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class gc0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ tc0 a;
+public final class gc0 extends f2.d1 {
+    public final /* synthetic */ pc0 a;
 
-    public gc0(tc0 tc0Var) {
-        this.a = tc0Var;
+    public gc0(pc0 pc0Var) {
+        this.a = pc0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        tc0 tc0Var = this.a;
-        if (i10 == -1) {
-            tc0Var.finishFragment();
+    @Override // f2.d1
+    public final void a(RecyclerView recyclerView, int i9) {
+        boolean z10 = i9 != 0;
+        pc0 pc0Var = this.a;
+        pc0Var.M = z10;
+        if (z10 || pc0Var.H == null) {
             return;
         }
-        if (i10 != 1) {
-            if (i10 == 5) {
-                tc0Var.s0(false);
-                return;
-            } else {
-                if (i10 == 6) {
-                    tc0Var.r0(null);
-                    return;
-                }
-                return;
-            }
-        }
-        try {
-            TLRPC.GeoPoint geoPoint = tc0Var.x0.messageOwner.media.geo;
-            double d = geoPoint.lat;
-            double d10 = geoPoint._long;
-            tc0Var.getParentActivity().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d10 + "?q=" + d + "," + d10)));
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        pc0Var.H = null;
+    }
+
+    @Override // f2.d1
+    public final void b(RecyclerView recyclerView, int i9, int i10) {
+        pc0 pc0Var = this.a;
+        pc0Var.z0(false);
+        if (pc0Var.H != null) {
+            pc0Var.J += i10;
         }
     }
 }

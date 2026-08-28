@@ -1,34 +1,19 @@
 package oa;
 
-import j$.util.Objects;
-import java.io.Serializable;
 import java.lang.reflect.GenericArrayType;
 import java.lang.reflect.Type;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a implements GenericArrayType, Serializable {
-    public final Type a;
-
-    public a(Type type) {
-        Objects.requireNonNull(type);
-        this.a = d.a(type);
-    }
-
-    public final boolean equals(Object obj) {
-        return (obj instanceof GenericArrayType) && d.e(this, (GenericArrayType) obj);
-    }
-
-    @Override // java.lang.reflect.GenericArrayType
-    public final Type getGenericComponentType() {
-        return this.a;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return d.k(this.a) + "[]";
+public class a implements la.v {
+    @Override // la.v
+    public final la.u create(la.g gVar, sa.a aVar) {
+        Type type = aVar.b;
+        boolean z10 = type instanceof GenericArrayType;
+        if (!z10 && (!(type instanceof Class) || !((Class) type).isArray())) {
+            return null;
+        }
+        Type genericComponentType = z10 ? ((GenericArrayType) type).getGenericComponentType() : ((Class) type).getComponentType();
+        return new b(gVar, gVar.b(new sa.a(genericComponentType)), na.d.h(genericComponentType));
     }
 }

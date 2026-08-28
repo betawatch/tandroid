@@ -1,6 +1,6 @@
 package h0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class l {
     public static final l k;
@@ -40,13 +40,13 @@ public final class l {
         }
         float[] fArr6 = {(((100.0f / f15) * exp) + 1.0f) - exp, (((100.0f / f16) * exp) + 1.0f) - exp, (((100.0f / f17) * exp) + 1.0f) - exp};
         float f19 = 1.0f / ((5.0f * j10) + 1.0f);
-        float C = com.google.android.recaptcha.internal.a.C(f19, f19, f19, f19);
+        float C = e2.c.C(f19, f19, f19, f19);
         float f20 = 1.0f - C;
         float cbrt = (0.1f * f20 * f20 * ((float) Math.cbrt(j10 * 5.0d))) + (C * j10);
         float j11 = b.j() / fArr[1];
-        double d10 = j11;
-        float sqrt = ((float) Math.sqrt(d10)) + 1.48f;
-        float pow = 0.725f / ((float) Math.pow(d10, 0.2d));
+        double d9 = j11;
+        float sqrt = ((float) Math.sqrt(d9)) + 1.48f;
+        float pow = 0.725f / ((float) Math.pow(d9, 0.2d));
         float[] fArr7 = {(float) Math.pow(((fArr6[0] * cbrt) * f15) / 100.0d, 0.42d), (float) Math.pow(((fArr6[1] * cbrt) * f16) / 100.0d, 0.42d), (float) Math.pow(((fArr6[2] * cbrt) * f17) / 100.0d, 0.42d)};
         float f21 = fArr7[0];
         float f22 = (f21 * 400.0f) / (f21 + 27.13f);
@@ -54,7 +54,7 @@ public final class l {
         float f24 = (f23 * 400.0f) / (f23 + 27.13f);
         float f25 = fArr7[2];
         float[] fArr8 = {f22, f24, (400.0f * f25) / (f25 + 27.13f)};
-        k = new l(j11, com.google.android.recaptcha.internal.a.B(fArr8[2], 0.05f, (fArr8[0] * 2.0f) + fArr8[1], pow), pow, pow, f18, 1.0f, fArr6, cbrt, (float) Math.pow(cbrt, 0.25d), sqrt);
+        k = new l(j11, e2.c.B(fArr8[2], 0.05f, (fArr8[0] * 2.0f) + fArr8[1], pow), pow, pow, f18, 1.0f, fArr6, cbrt, (float) Math.pow(cbrt, 0.25d), sqrt);
     }
 
     public l(float f10, float f11, float f12, float f13, float f14, float f15, float[] fArr, float f16, float f17, float f18) {

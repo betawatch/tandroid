@@ -2,18 +2,18 @@ package i;
 
 import android.animation.ObjectAnimator;
 import android.graphics.drawable.AnimationDrawable;
-import g7.v7;
+import f7.h8;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c extends v7 {
+public final class c extends h8 {
     public final ObjectAnimator a;
     public final boolean b;
 
     public c(AnimationDrawable animationDrawable, boolean z10, boolean z11) {
         int numberOfFrames = animationDrawable.getNumberOfFrames();
-        int i10 = z10 ? numberOfFrames - 1 : 0;
-        int i11 = z10 ? 0 : numberOfFrames - 1;
+        int i9 = z10 ? numberOfFrames - 1 : 0;
+        int i10 = z10 ? 0 : numberOfFrames - 1;
         d dVar = new d();
         int numberOfFrames2 = animationDrawable.getNumberOfFrames();
         dVar.b = numberOfFrames2;
@@ -22,14 +22,14 @@ public final class c extends v7 {
             dVar.a = new int[numberOfFrames2];
         }
         int[] iArr2 = dVar.a;
-        int i12 = 0;
-        for (int i13 = 0; i13 < numberOfFrames2; i13++) {
-            int duration = animationDrawable.getDuration(z10 ? (numberOfFrames2 - i13) - 1 : i13);
-            iArr2[i13] = duration;
-            i12 += duration;
+        int i11 = 0;
+        for (int i12 = 0; i12 < numberOfFrames2; i12++) {
+            int duration = animationDrawable.getDuration(z10 ? (numberOfFrames2 - i12) - 1 : i12);
+            iArr2[i12] = duration;
+            i11 += duration;
         }
-        dVar.c = i12;
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(animationDrawable, "currentIndex", i10, i11);
+        dVar.c = i11;
+        ObjectAnimator ofInt = ObjectAnimator.ofInt(animationDrawable, "currentIndex", i9, i10);
         j.a.a(ofInt, true);
         ofInt.setDuration(dVar.c);
         ofInt.setInterpolator(dVar);
@@ -37,22 +37,22 @@ public final class c extends v7 {
         this.a = ofInt;
     }
 
-    @Override // g7.v7
+    @Override // f7.h8
     public final boolean a() {
         return this.b;
     }
 
-    @Override // g7.v7
+    @Override // f7.h8
     public final void b() {
         this.a.reverse();
     }
 
-    @Override // g7.v7
+    @Override // f7.h8
     public final void c() {
         this.a.start();
     }
 
-    @Override // g7.v7
+    @Override // f7.h8
     public final void d() {
         this.a.cancel();
     }

@@ -1,78 +1,28 @@
 package h7;
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class pa extends c7.w implements ListIterator {
-    public final int b;
-    public int c;
-    public final ra d;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pa(ra raVar, int i10) {
-        super(6);
-        int size = raVar.size();
-        if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(g7.r7.c(i10, size, "index"));
+public final class pa extends b7.a implements ra {
+    public final oa U0(h6.b bVar, ta taVar) {
+        oa oaVar;
+        Parcel M0 = M0();
+        int i9 = c0.a;
+        M0.writeStrongBinder(bVar);
+        M0.writeInt(1);
+        taVar.writeToParcel(M0, 0);
+        Parcel O0 = O0(M0, 1);
+        IBinder readStrongBinder = O0.readStrongBinder();
+        if (readStrongBinder == null) {
+            oaVar = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.mlkit.vision.label.aidls.IImageLabeler");
+            oaVar = queryLocalInterface instanceof oa ? (oa) queryLocalInterface : new oa(readStrongBinder, "com.google.mlkit.vision.label.aidls.IImageLabeler", 5);
         }
-        this.b = size;
-        this.c = i10;
-        this.d = raVar;
-    }
-
-    public final Object a(int i10) {
-        return this.d.get(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.c;
-        this.c = i10 + 1;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.c - 1;
-        this.c = i10;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+        O0.recycle();
+        return oaVar;
     }
 }

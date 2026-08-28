@@ -1,90 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.SendMessagesHelper;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class th implements sj {
-    public final /* synthetic */ gi a;
+public final class th extends ut {
+    public final /* synthetic */ ki R;
 
-    public th(gi giVar) {
-        this.a = giVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public th(ki kiVar, Context context, ai aiVar, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(context, aiVar, null, 1, true, b6Var);
+        this.R = kiVar;
     }
 
-    @Override // org.telegram.ui.Components.sj
-    public final void O() {
-        this.a.B1(true);
+    @Override // org.telegram.ui.Components.ut
+    public final void f() {
+        super.f();
+        wy emojiView = getEmojiView();
+        if (emojiView != null) {
+            emojiView.s0 = false;
+            emojiView.t2 = false;
+            emojiView.setShouldDrawBackground(false);
+            emojiView.setBottomInset(AndroidUtilities.navigationBarHeight);
+        }
     }
 
-    @Override // org.telegram.ui.Components.sj
-    public final void l(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j10, boolean z11, long j11) {
-        gi giVar = this.a;
-        sj sjVar = giVar.T;
-        if (sjVar != null) {
-            sjVar.l(arrayList, str, arrayList2, arrayList3, z10, i10, j10, z11, j11);
-            return;
+    @Override // org.telegram.ui.Components.ut
+    public final void i(Menu menu) {
+        org.telegram.ui.ActionBar.o2 o2Var = this.R.b0;
+        if (o2Var instanceof org.telegram.ui.qn) {
+            org.telegram.ui.qn.k8(menu, ((org.telegram.ui.qn) o2Var).h, true, true, true, true);
         }
-        Object obj = giVar.b0;
-        if (obj instanceof sj) {
-            ((sj) obj).l(arrayList, str, arrayList2, arrayList3, z10, i10, j10, z11, j11);
-            return;
-        }
-        if (obj instanceof org.telegram.ui.xm0) {
-            org.telegram.ui.xm0 xm0Var = (org.telegram.ui.xm0) obj;
-            ArrayList arrayList4 = new ArrayList();
-            int size = arrayList.size();
-            for (int i11 = 0; i11 < size; i11++) {
-                SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-                sendingMediaInfo.path = (String) arrayList.get(i11);
-                arrayList4.add(sendingMediaInfo);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        ki kiVar = this.R;
+        th thVar = kiVar.L0;
+        if (!kiVar.q1) {
+            if (motionEvent.getX() <= thVar.getEditText().getLeft() || motionEvent.getX() >= thVar.getEditText().getRight() || motionEvent.getY() <= thVar.getEditText().getTop() || motionEvent.getY() >= thVar.getEditText().getBottom()) {
+                kiVar.t1(thVar.getEditText(), false);
+            } else {
+                kiVar.t1(thVar.getEditText(), true);
             }
-            xm0Var.G1(arrayList4);
         }
+        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.sj
-    public final void m(long j10, ArrayList arrayList, boolean z10, int i10) {
-        gi giVar = this.a;
-        sj sjVar = giVar.T;
-        if (sjVar != null) {
-            sjVar.m(j10, arrayList, z10, i10);
-            return;
-        }
-        org.telegram.ui.ActionBar.n2 n2Var = giVar.b0;
-        if (n2Var instanceof org.telegram.ui.rn) {
-            ((org.telegram.ui.rn) n2Var).m(j10, arrayList, z10, i10);
-        } else if (n2Var instanceof org.telegram.ui.xm0) {
-            ((org.telegram.ui.xm0) n2Var).G1(arrayList);
-        }
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
+        super.onLayout(z10, i9, i10, i11, i12);
+        this.R.b2();
     }
 
-    @Override // org.telegram.ui.Components.sj
-    public final void y() {
-        gi giVar = this.a;
-        sj sjVar = giVar.T;
-        if (sjVar != null) {
-            sjVar.y();
-            return;
-        }
-        Object obj = giVar.b0;
-        if (obj instanceof sj) {
-            ((sj) obj).y();
-            return;
-        }
-        if (obj instanceof org.telegram.ui.xm0) {
-            org.telegram.ui.xm0 xm0Var = (org.telegram.ui.xm0) obj;
-            xm0Var.getClass();
-            try {
-                Intent intent = new Intent("android.intent.action.GET_CONTENT");
-                intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
-                intent.setType("*/*");
-                xm0Var.startActivityForResult(intent, 21);
-            } catch (Exception e9) {
-                FileLog.e(e9);
-            }
+    @Override // org.telegram.ui.Components.ut
+    public final void q(int i9, int i10) {
+        ki kiVar = this.R;
+        kiVar.b2();
+        if (kiVar.Y) {
+            kiVar.M1(i10 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
         }
     }
 }

@@ -2,76 +2,34 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class g9 extends FrameLayout {
-    public static final /* synthetic */ int e = 0;
-    public final TextView a;
-    public final TextView b;
-    public final View c;
-    public final org.telegram.ui.Components.ri0 d;
+public final class g9 extends org.telegram.ui.Components.k41 {
+    public static final /* synthetic */ int a = 0;
 
-    public g9(j9 j9Var, Context context, org.telegram.ui.Components.h00 h00Var) {
-        super(context);
-        addView(h00Var, h7.z5.c(-1.0f, -1));
-        this.c = h00Var;
-        org.telegram.ui.Components.ri0 ri0Var = new org.telegram.ui.Components.ri0(context);
-        this.d = ri0Var;
-        ri0Var.f(R.raw.utyan_call, 110, 110, null);
-        ri0Var.setAutoRepeat(false);
-        addView(ri0Var, h7.z5.d(110, 110.0f, 17, 52.0f, 17.0f, 52.0f, 60.0f));
-        ri0Var.setOnClickListener(new a(this, 10));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.G6, false));
-        textView.setText(LocaleController.getString(R.string.MakeYourFirstCall));
-        textView.setTextSize(1, 20.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setGravity(17);
-        addView(textView, h7.z5.d(-1, -2.0f, 17, 17.0f, 40.0f, 17.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        String formatString = LocaleController.formatString(R.string.MakeYourFirstCallHint, Integer.valueOf(j9Var.getMessagesController().conferenceCallSizeLimit));
-        if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
-            formatString = formatString.replace('\n', ' ');
-        }
-        textView2.setText(formatString);
-        textView2.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.c7, false));
-        textView2.setTextSize(1, 14.0f);
-        textView2.setGravity(17);
-        textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView2, h7.z5.d(-1, -2.0f, 17, 17.0f, 80.0f, 17.0f, 0.0f));
-        h00Var.setAlpha(0.0f);
-        ri0Var.setAlpha(0.0f);
-        textView.setAlpha(0.0f);
-        textView2.setAlpha(0.0f);
-        setOnTouchListener(new kh.e(4));
+    static {
+        org.telegram.ui.Components.k41.setup(new g9());
     }
 
-    public final void a() {
-        this.d.animate().alpha(0.0f).setDuration(150L).start();
-        this.a.animate().alpha(0.0f).setDuration(150L).start();
-        this.b.animate().alpha(0.0f).setDuration(150L).start();
-        this.c.animate().alpha(1.0f).setDuration(150L).start();
+    @Override // org.telegram.ui.Components.k41
+    public final void bindView(View view, org.telegram.ui.Components.l41 l41Var, boolean z10, org.telegram.ui.Components.z41 z41Var, org.telegram.ui.Components.i51 i51Var) {
+        h9 h9Var = (h9) view;
+        TLRPC.Chat chat = (TLRPC.Chat) l41Var.G;
+        View.OnClickListener onClickListener = l41Var.D;
+        h9Var.c = chat;
+        org.telegram.ui.Components.jh0 jh0Var = h9Var.b;
+        jh0Var.setTag(Long.valueOf(chat.id));
+        h9Var.a.t(chat, null, null, (!ChatObject.isChannel(chat) || chat.megagroup) ? chat.has_geo ? LocaleController.getString(R.string.MegaLocation) : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.MegaPrivate).toLowerCase() : LocaleController.getString(R.string.MegaPublic).toLowerCase() : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.ChannelPrivate).toLowerCase() : LocaleController.getString(R.string.ChannelPublic).toLowerCase(), false, false);
+        jh0Var.setOnClickListener(onClickListener);
     }
 
-    public final void b() {
-        org.telegram.ui.Components.ri0 ri0Var = this.d;
-        ri0Var.animate().alpha(1.0f).setDuration(150L).start();
-        this.a.animate().alpha(1.0f).setDuration(150L).start();
-        this.b.animate().alpha(1.0f).setDuration(150L).start();
-        this.c.animate().alpha(0.0f).setDuration(150L).start();
-        ri0Var.d();
-    }
-
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
+    @Override // org.telegram.ui.Components.k41
+    public final View createView(Context context, org.telegram.ui.Components.wk0 wk0Var, int i9, int i10, org.telegram.ui.ActionBar.b6 b6Var) {
+        return new h9(context);
     }
 }

@@ -4,16 +4,16 @@ import android.os.Looper;
 import androidx.lifecycle.p0;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class y extends p0 {
     public androidx.lifecycle.z A;
     public Executor d;
-    public e7.t e;
-    public u5.k f;
+    public f7.n e;
+    public t5.l f;
     public u g;
-    public a5.n h;
-    public xe.b i;
+    public a5.m h;
+    public we.b i;
     public x j;
     public String k;
     public boolean m;
@@ -41,13 +41,13 @@ public class y extends p0 {
     }
 
     public final int c() {
-        u5.k kVar = this.f;
-        if (kVar == null) {
+        t5.l lVar = this.f;
+        if (lVar == null) {
             return 0;
         }
         u uVar = this.g;
-        int i10 = kVar.a;
-        return i10 != 0 ? i10 : uVar != null ? 15 : 255;
+        int i9 = lVar.a;
+        return i9 != 0 ? i9 : uVar != null ? 15 : 255;
     }
 
     public final void d(e eVar) {
@@ -64,11 +64,11 @@ public class y extends p0 {
         h(this.A, charSequence);
     }
 
-    public final void f(int i10) {
+    public final void f(int i9) {
         if (this.z == null) {
             this.z = new androidx.lifecycle.z();
         }
-        h(this.z, Integer.valueOf(i10));
+        h(this.z, Integer.valueOf(i9));
     }
 
     public final void g(boolean z10) {

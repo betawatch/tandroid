@@ -1,67 +1,371 @@
 package org.telegram.ui;
 
 import android.animation.ValueAnimator;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
+import android.app.Activity;
+import android.app.Dialog;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.PowerManager;
+import android.view.Choreographer;
+import android.view.TextureView;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.TextView;
+import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d41 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a61 b;
+public final class d41 extends Dialog {
+    public final org.telegram.ui.Components.ws A;
+    public float B;
+    public float C;
+    public boolean D;
+    public float E;
+    public boolean F;
+    public float G;
+    public org.telegram.ui.ActionBar.b6 H;
+    public MessageObject I;
+    public b41 J;
+    public org.telegram.ui.Cells.t1 K;
+    public TextureView L;
+    public boolean M;
+    public final RectF N;
+    public boolean O;
+    public float P;
+    public float Q;
+    public org.telegram.ui.Components.d8 R;
+    public boolean S;
+    public me T;
+    public e5.w U;
+    public final y31 V;
+    public float W;
+    public boolean X;
+    public org.telegram.ui.ActionBar.c2 Y;
+    public ValueAnimator Z;
+    public final Context a;
+    public ValueAnimator a0;
+    public final m0 b;
+    public final fh.v c;
+    public org.telegram.ui.Components.d01 d;
+    public i0.b e;
+    public Bitmap f;
+    public BitmapShader h;
+    public Paint n;
+    public Matrix r;
+    public float s;
+    public float v;
+    public org.telegram.ui.Components.k61 w;
+    public kh.x3 x;
+    public TextView y;
 
-    public /* synthetic */ d41(a61 a61Var, int i10) {
-        this.a = i10;
-        this.b = a61Var;
+    public d41(Activity activity) {
+        super(activity, R.style.TransparentDialog);
+        this.e = i0.b.e;
+        this.N = new RectF();
+        this.P = 0.0f;
+        this.Q = 0.0f;
+        int i9 = 0;
+        this.V = new y31(this, i9);
+        this.W = 0.0f;
+        this.X = false;
+        this.a = activity;
+        AndroidUtilities.enableEdgeToEdge(getWindow());
+        m0 m0Var = new m0(this, activity, 22);
+        this.b = m0Var;
+        m0Var.setOnClickListener(new z31(this, i9));
+        fh.v vVar = new fh.v(this, activity);
+        this.c = vVar;
+        vVar.setClipToPadding(false);
+        m0Var.addView(vVar, g7.e6.e(-1, -1, 119));
+        a41 a41Var = new a41(this, i9);
+        WeakHashMap weakHashMap = r0.j0.a;
+        r0.b0.j(m0Var, a41Var);
+        if (SharedConfig.raiseToListen) {
+            this.A = new org.telegram.ui.Components.ws();
+        }
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                a61 a61Var = this.b;
-                a61Var.getClass();
-                a61Var.E(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 1:
-                this.b.m();
-                break;
-            case 2:
-                a61 a61Var2 = this.b;
-                View view = a61Var2.p0;
-                if (view != null) {
-                    view.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+    public final void c(boolean z10, y31 y31Var) {
+        ValueAnimator valueAnimator = this.Z;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        ValueAnimator valueAnimator2 = this.a0;
+        if (valueAnimator2 != null) {
+            valueAnimator2.cancel();
+        }
+        d();
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.s, z10 ? 1.0f : 0.0f);
+        this.Z = ofFloat;
+        int i9 = 11;
+        ofFloat.addUpdateListener(new hg.y(i9, this, z10));
+        this.Z.addListener(new androidx.fragment.app.g(this, z10, y31Var, i9));
+        long j10 = (z10 || this.U != null) ? 520L : 330L;
+        ValueAnimator valueAnimator3 = this.Z;
+        org.telegram.ui.Components.gr grVar = org.telegram.ui.Components.gr.h;
+        valueAnimator3.setInterpolator(grVar);
+        this.Z.setDuration(j10);
+        this.Z.start();
+        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.v, z10 ? 1.0f : 0.0f);
+        this.a0 = ofFloat2;
+        int i10 = 7;
+        ofFloat2.addUpdateListener(new v01(this, i10));
+        this.a0.addListener(new n60(i10, this, z10));
+        this.a0.setDuration((long) (j10 * 1.5f));
+        this.a0.setInterpolator(grVar);
+        this.a0.start();
+    }
+
+    public final void d() {
+        if (this.D) {
+            return;
+        }
+        m0 m0Var = this.b;
+        if (m0Var.getWidth() <= 0) {
+            return;
+        }
+        org.telegram.ui.Cells.t1 t1Var = this.K;
+        if (t1Var != null) {
+            int[] iArr = new int[2];
+            t1Var.getLocationOnScreen(iArr);
+            float f10 = iArr[0] - this.e.a;
+            int width = m0Var.getWidth();
+            i0.b bVar = this.e;
+            this.B = f10 - ((((width - bVar.a) - bVar.c) - this.K.getWidth()) / 2.0f);
+            float f11 = iArr[1] - this.e.b;
+            int height = m0Var.getHeight();
+            i0.b bVar2 = this.e;
+            this.C = org.telegram.messenger.l0.a(((height - bVar2.b) - bVar2.d) - this.K.getHeight(), this.G, 2.0f, f11);
+            if (!this.F) {
+                this.F = true;
+                float clamp = (Utilities.clamp((this.K.getHeight() / 2.0f) + iArr[1], m0Var.getHeight() * 0.7f, m0Var.getHeight() * 0.3f) - (this.K.getHeight() / 2.0f)) - ((m0Var.getHeight() - this.K.getHeight()) / 2.0f);
+                this.E = clamp;
+                if (this.O) {
+                    this.E = 0.0f;
+                } else {
+                    this.E = AndroidUtilities.lerp(0.0f, clamp, 0.78f);
                 }
-                int v = org.telegram.ui.ActionBar.g6.v(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.G8, a61Var2.V0), i0.b.k(-16777216, (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * 255.0f)));
-                View view2 = a61Var2.i0;
-                if (view2 != null) {
-                    view2.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
+            }
+            e();
+        } else {
+            this.C = 0.0f;
+            this.B = 0.0f;
+        }
+        this.D = true;
+    }
+
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        b41 b41Var;
+        if (this.X) {
+            return;
+        }
+        org.telegram.ui.ActionBar.c2 c2Var = this.Y;
+        if (c2Var != null) {
+            c2Var.dismiss();
+            this.Y = null;
+        }
+        this.X = true;
+        kh.x3 x3Var = this.x;
+        if (x3Var != null) {
+            x3Var.e(true);
+        }
+        org.telegram.ui.Components.k61 k61Var = this.w;
+        if (k61Var != null) {
+            k61Var.C();
+            this.w.I();
+            this.w = null;
+        }
+        if (!this.O && (b41Var = this.J) != null && b41Var.getSeekBarWaveform() != null) {
+            org.telegram.ui.Components.rn0 seekBarWaveform = this.J.getSeekBarWaveform();
+            seekBarWaveform.L = this.s;
+            org.telegram.ui.Cells.t1 t1Var = seekBarWaveform.n;
+            if (t1Var != null) {
+                t1Var.invalidate();
+            }
+        }
+        this.D = false;
+        d();
+        c(false, new y31(this, 3));
+        m0 m0Var = this.b;
+        m0Var.invalidate();
+        e5.w wVar = this.U;
+        if (wVar != null) {
+            org.telegram.ui.Cells.t1 t1Var2 = this.K;
+            if (t1Var2 != null) {
+                t1Var2.bd = true;
+            }
+            AndroidUtilities.runOnUIThread(wVar);
+            this.U = null;
+            org.telegram.ui.Components.d01 d01Var = new org.telegram.ui.Components.d01(this.a, null);
+            this.d = d01Var;
+            m0Var.addView(d01Var, g7.e6.e(-1, -1, 119));
+            org.telegram.ui.Components.d01 d01Var2 = this.d;
+            b41 b41Var2 = this.J;
+            y31 y31Var = new y31(this, 1);
+            org.telegram.ui.Components.b01 b01Var = d01Var2.a;
+            if (b01Var != null) {
+                b01Var.e(b41Var2, 1.5f, y31Var);
+                Choreographer.getInstance().postFrameCallback(d01Var2.b);
+            } else {
+                org.telegram.ui.Components.c01 c01Var = new org.telegram.ui.Components.c01(b41Var2, y31Var);
+                c01Var.g = 1.5f;
+                d01Var2.c.add(c01Var);
+            }
+            WindowManager.LayoutParams attributes = getWindow().getAttributes();
+            attributes.flags |= 16;
+            getWindow().setAttributes(attributes);
+        }
+        org.telegram.ui.Components.ws wsVar = this.A;
+        if (wsVar != null) {
+            PowerManager.WakeLock wakeLock = wsVar.h;
+            SensorManager sensorManager = wsVar.a;
+            if (wsVar.n) {
+                Sensor sensor = wsVar.f;
+                if (sensor != null) {
+                    sensorManager.unregisterListener(wsVar, sensor);
                 }
-                org.telegram.ui.Components.zm zmVar = a61Var2.j0;
-                if (zmVar != null) {
-                    zmVar.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
-                    break;
+                Sensor sensor2 = wsVar.e;
+                if (sensor2 != null) {
+                    sensorManager.unregisterListener(wsVar, sensor2);
                 }
-                break;
-            default:
-                a61 a61Var3 = this.b;
-                u41 u41Var = a61Var3.T;
-                float floatValue = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a61Var3.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(8.0f));
-                View view3 = a61Var3.i0;
-                if (view3 != null) {
-                    view3.setAlpha(floatValue);
+                Sensor sensor3 = wsVar.d;
+                if (sensor3 != null) {
+                    sensorManager.unregisterListener(wsVar, sensor3);
                 }
-                org.telegram.ui.Components.zm zmVar2 = a61Var3.j0;
-                if (zmVar2 != null) {
-                    zmVar2.setAlpha(floatValue * floatValue);
+                sensorManager.unregisterListener(wsVar, wsVar.c);
+                if (wakeLock != null && wakeLock.isHeld()) {
+                    wakeLock.release();
                 }
-                u41Var.setAlpha(floatValue);
-                u41Var.invalidate();
-                a61Var3.invalidate();
-                break;
+                wsVar.n = false;
+            }
+        }
+    }
+
+    public final void e() {
+        if (this.d != null) {
+            return;
+        }
+        this.J.setTranslationX(AndroidUtilities.lerp(this.B, 0.0f, this.s));
+        this.J.setTranslationY(AndroidUtilities.lerp(this.C, this.E, this.s));
+        kh.x3 x3Var = this.x;
+        if (x3Var != null) {
+            x3Var.setTranslationX(AndroidUtilities.lerp(this.B, 0.0f, this.s));
+            this.x.setTranslationY(AndroidUtilities.lerp(this.C, this.E, this.s));
+        }
+    }
+
+    @Override // android.app.Dialog
+    public final void onBackPressed() {
+        MessageObject messageObject;
+        org.telegram.ui.ActionBar.c2 c2Var = this.Y;
+        if (c2Var != null) {
+            c2Var.dismiss();
+            this.Y = null;
+            return;
+        }
+        if (this.X || (messageObject = this.I) == null || messageObject.isOutOwner()) {
+            super.onBackPressed();
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, this.H);
+        alertDialog$Builder.a.N = LocaleController.getString(this.O ? R.string.VideoOnceCloseTitle : R.string.VoiceOnceCloseTitle);
+        alertDialog$Builder.a.P = LocaleController.getString(this.O ? R.string.VideoOnceCloseMessage : R.string.VoiceOnceCloseMessage);
+        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new a41(this, 1));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Delete), new a41(this, 2));
+        org.telegram.ui.ActionBar.c2 c2Var2 = alertDialog$Builder.a;
+        this.Y = c2Var2;
+        c2Var2.show();
+        TextView textView = (TextView) this.Y.d(-2);
+        if (textView != null) {
+            textView.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.q7, false));
+        }
+    }
+
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
+        m0 m0Var = this.b;
+        setContentView(m0Var, layoutParams);
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.height = -1;
+        attributes.gravity = 119;
+        attributes.dimAmount = 0.0f;
+        int i9 = attributes.flags & (-3);
+        attributes.softInputMode = 48;
+        attributes.flags = (-2013069056) | i9;
+        if (!BuildVars.DEBUG_PRIVATE_VERSION) {
+            attributes.flags = i9 | (-2013060864);
+            AndroidUtilities.logFlagSecure();
+        }
+        attributes.flags |= 1152;
+        window.setAttributes(attributes);
+        m0Var.setSystemUiVisibility(1284);
+        AndroidUtilities.setLightNavigationBar(m0Var, !org.telegram.ui.ActionBar.f6.I.q());
+    }
+
+    @Override // android.app.Dialog
+    public final void show() {
+        if (AndroidUtilities.isSafeToShow(getContext())) {
+            super.show();
+            org.telegram.ui.Cells.t1 t1Var = this.K;
+            if (t1Var != null) {
+                t1Var.setVisibility(4);
+            }
+            AndroidUtilities.makeGlobalBlurBitmap(new eb0(11, this, t1Var), 14.0f);
+            this.S = true;
+            c(true, null);
+            me meVar = this.T;
+            if (meVar != null) {
+                AndroidUtilities.runOnUIThread(meVar);
+                this.T = null;
+            }
+            org.telegram.ui.Components.ws wsVar = this.A;
+            if (wsVar != null) {
+                PowerManager.WakeLock wakeLock = wsVar.h;
+                SensorManager sensorManager = wsVar.a;
+                if (wsVar.n) {
+                    return;
+                }
+                Sensor sensor = wsVar.f;
+                if (sensor != null) {
+                    sensorManager.registerListener(wsVar, sensor, 30000);
+                }
+                Sensor sensor2 = wsVar.e;
+                if (sensor2 != null) {
+                    sensorManager.registerListener(wsVar, sensor2, 30000);
+                }
+                Sensor sensor3 = wsVar.d;
+                if (sensor3 != null) {
+                    sensorManager.registerListener(wsVar, sensor3, 30000);
+                }
+                sensorManager.registerListener(wsVar, wsVar.c, 3);
+                if (wakeLock != null && Build.MANUFACTURER.equalsIgnoreCase("samsung")) {
+                    wakeLock.acquire();
+                }
+                wsVar.n = true;
+            }
         }
     }
 }

@@ -1,116 +1,67 @@
 package u5;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Looper;
-import android.os.Message;
-import android.os.Messenger;
+import android.os.Parcel;
 import android.os.Parcelable;
-import android.util.Log;
-import c2.t0;
-import java.util.regex.Matcher;
+import g7.p8;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c extends t0 {
-    public final /* synthetic */ a a;
+public final class c extends y5.a {
+    public static final Parcelable.Creator<c> CREATOR = new q7.j(18);
+    public final String a;
+    public final int b;
+    public final long c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(a aVar, Looper looper) {
-        super(looper);
-        this.a = aVar;
-        Looper.getMainLooper();
+    public c(int i9, String str, long j10) {
+        this.a = str;
+        this.b = i9;
+        this.c = j10;
     }
 
-    @Override // android.os.Handler
-    public final void handleMessage(Message message) {
-        String str;
-        a aVar = this.a;
-        if (message != null) {
-            Object obj = message.obj;
-            if (obj instanceof Intent) {
-                Intent intent = (Intent) obj;
-                intent.setExtrasClassLoader(new e());
-                if (intent.hasExtra("google.messenger")) {
-                    Parcelable parcelableExtra = intent.getParcelableExtra("google.messenger");
-                    if (parcelableExtra instanceof f) {
-                        aVar.g = (f) parcelableExtra;
-                    }
-                    if (parcelableExtra instanceof Messenger) {
-                        aVar.f = (Messenger) parcelableExtra;
-                    }
-                }
-                Intent intent2 = (Intent) message.obj;
-                String action = intent2.getAction();
-                if (action != "com.google.android.c2dm.intent.REGISTRATION" && (action == null || !action.equals("com.google.android.c2dm.intent.REGISTRATION"))) {
-                    if (Log.isLoggable("Rpc", 3)) {
-                        Log.d("Rpc", "Unexpected response action: ".concat(String.valueOf(action)));
-                        return;
-                    }
-                    return;
-                }
-                String stringExtra = intent2.getStringExtra("registration_id");
-                if (stringExtra == null) {
-                    stringExtra = intent2.getStringExtra("unregistered");
-                }
-                if (stringExtra != null) {
-                    Matcher matcher = a.j.matcher(stringExtra);
-                    if (!matcher.matches()) {
-                        if (Log.isLoggable("Rpc", 3)) {
-                            Log.d("Rpc", "Unexpected response string: ".concat(stringExtra));
-                            return;
-                        }
-                        return;
-                    }
-                    String group = matcher.group(1);
-                    String group2 = matcher.group(2);
-                    if (group != null) {
-                        Bundle extras = intent2.getExtras();
-                        extras.putString("registration_id", group2);
-                        aVar.d(group, extras);
-                        return;
-                    }
-                    return;
-                }
-                String stringExtra2 = intent2.getStringExtra("error");
-                if (stringExtra2 == null) {
-                    Log.w("Rpc", "Unexpected response, no error or registration id ".concat(String.valueOf(intent2.getExtras())));
-                    return;
-                }
-                if (Log.isLoggable("Rpc", 3)) {
-                    Log.d("Rpc", "Received InstanceID error ".concat(stringExtra2));
-                }
-                if (!stringExtra2.startsWith("|")) {
-                    synchronized (aVar.a) {
-                        int i10 = 0;
-                        while (true) {
-                            try {
-                                a0.k kVar = aVar.a;
-                                if (i10 < kVar.c) {
-                                    aVar.d((String) kVar.e(i10), intent2.getExtras());
-                                    i10++;
-                                }
-                            } catch (Throwable th) {
-                                throw th;
-                            }
-                        }
-                    }
-                    return;
-                }
-                String[] split = stringExtra2.split("\\|");
-                if (split.length <= 2 || ((str = split[1]) != "ID" && (str == null || !str.equals("ID")))) {
-                    Log.w("Rpc", "Unexpected structured response ".concat(stringExtra2));
-                    return;
-                }
-                String str2 = split[2];
-                String str3 = split[3];
-                if (str3.startsWith(":")) {
-                    str3 = str3.substring(1);
-                }
-                aVar.d(str2, intent2.putExtra("error", str3).getExtras());
-                return;
+    public final long b() {
+        long j10 = this.c;
+        return j10 == -1 ? this.b : j10;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof c) {
+            c cVar = (c) obj;
+            String str = cVar.a;
+            String str2 = this.a;
+            if (((str2 != null && str2.equals(str)) || (str2 == null && str == null)) && b() == cVar.b()) {
+                return true;
             }
         }
-        Log.w("Rpc", "Dropping invalid message");
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, Long.valueOf(b())});
+    }
+
+    public final String toString() {
+        w4.e eVar = new w4.e(this);
+        eVar.c(this.a, "name");
+        eVar.c(Long.valueOf(b()), "version");
+        return eVar.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.l(parcel, 1, this.a);
+        p8.s(parcel, 2, 4);
+        parcel.writeInt(this.b);
+        long b10 = b();
+        p8.s(parcel, 3, 8);
+        parcel.writeLong(b10);
+        p8.r(parcel, q10);
+    }
+
+    public c(String str, long j10) {
+        this.a = str;
+        this.c = j10;
+        this.b = -1;
     }
 }

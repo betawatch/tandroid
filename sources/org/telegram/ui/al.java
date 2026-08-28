@@ -1,85 +1,127 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.app.Activity;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class al extends FrameLayout {
-    public float a;
-    public float b;
-    public final /* synthetic */ rn c;
+public final class al extends org.telegram.ui.Components.o9 {
+    public final /* synthetic */ int C = 0;
+    public Object D;
+    public Object E;
+    public Object F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public al(rn rnVar, Activity activity) {
-        super(activity);
-        this.c = rnVar;
-        setOnLongClickListener(new v(this, 2));
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        rn rnVar = this.c;
-        if (view == rnVar.v2) {
-            canvas.save();
-            canvas.clipRect(0, 0, getMeasuredWidth(), AndroidUtilities.dp(48.0f));
-        }
-        org.telegram.ui.ActionBar.h5[] h5VarArr = rnVar.z2;
-        if (view != h5VarArr[0] && view != h5VarArr[1]) {
-            boolean drawChild = super.drawChild(canvas, view, j10);
-            if (view == rnVar.v2) {
-                canvas.restore();
-            }
-            return drawChild;
-        }
-        canvas.save();
-        canvas.clipRect(0, 0, getMeasuredWidth() - AndroidUtilities.dp(38.0f), getMeasuredHeight());
-        boolean drawChild2 = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild2;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        rn rnVar = this.c;
-        if (!rnVar.w2) {
-            return;
-        }
-        int i12 = 0;
-        while (true) {
-            AnimatorSet[] animatorSetArr = rnVar.D2;
-            if (i12 >= animatorSetArr.length) {
-                rnVar.w2 = false;
-                return;
-            }
-            AnimatorSet animatorSet = animatorSetArr[i12];
-            if (animatorSet != null) {
-                animatorSet.start();
-            }
-            i12++;
-        }
+    public /* synthetic */ al(Context context) {
+        super(context);
     }
 
     @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        this.a = motionEvent.getY();
-        int action = motionEvent.getAction();
-        rn rnVar = this.c;
-        if (action == 1) {
-            rnVar.finishPreviewFragment();
-        } else if (motionEvent.getAction() == 2) {
-            float f10 = this.b - this.a;
-            rnVar.movePreviewFragment(f10);
-            if (f10 < 0.0f) {
-                this.b = this.a;
-            }
+    public void draw(Canvas canvas) {
+        switch (this.C) {
+            case 1:
+                dh.l lVar = (dh.l) this.E;
+                Path path = (Path) this.D;
+                super.draw(canvas);
+                if (((org.telegram.ui.Components.go) this.F).h) {
+                    path.rewind();
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    rectF.set(this.a.getImageX(), this.a.getImageY(), this.a.getImageX2(), this.a.getImageY2());
+                    path.addRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), Path.Direction.CW);
+                    canvas.save();
+                    canvas.clipPath(path);
+                    lVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f)));
+                    lVar.setBounds((int) this.a.getImageX(), (int) this.a.getImageY(), (int) this.a.getImageX2(), (int) this.a.getImageY2());
+                    lVar.draw(canvas);
+                    invalidate();
+                    canvas.restore();
+                    break;
+                }
+                break;
+            default:
+                super.draw(canvas);
+                break;
         }
-        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.o9, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.C) {
+            case 0:
+                float[] fArr = (float[]) this.F;
+                dh.l lVar = (dh.l) this.E;
+                Path path = (Path) this.D;
+                super.onDraw(canvas);
+                if (this.r) {
+                    canvas.save();
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                    int[] roundRadius = this.a.getRoundRadius();
+                    float f10 = roundRadius[0];
+                    fArr[1] = f10;
+                    fArr[0] = f10;
+                    float f11 = roundRadius[1];
+                    fArr[3] = f11;
+                    fArr[2] = f11;
+                    float f12 = roundRadius[2];
+                    fArr[5] = f12;
+                    fArr[4] = f12;
+                    float f13 = roundRadius[3];
+                    fArr[7] = f13;
+                    fArr[6] = f13;
+                    path.rewind();
+                    path.addRoundRect(rectF, fArr, Path.Direction.CW);
+                    canvas.clipPath(path);
+                    lVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f)));
+                    lVar.setBounds(0, 0, getWidth(), getHeight());
+                    lVar.draw(canvas);
+                    canvas.restore();
+                    invalidate();
+                    break;
+                }
+                break;
+            case 1:
+            default:
+                super.onDraw(canvas);
+                break;
+            case 2:
+                org.telegram.ui.Components.voip.h hVar = (org.telegram.ui.Components.voip.h) this.E;
+                super.onDraw(canvas);
+                org.telegram.ui.Components.f50 f50Var = (org.telegram.ui.Components.f50) this.F;
+                if (f50Var.o0) {
+                    int i9 = f50Var.J0;
+                    hVar.f = i9;
+                    RectF rectF2 = AndroidUtilities.rectTmp;
+                    float f14 = i9;
+                    rectF2.set(0.0f, 0.0f, f14, f14);
+                    float width = rectF2.width() / 2.0f;
+                    canvas.drawRoundRect(rectF2, width, width, (Paint) this.D);
+                    rectF2.inset(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
+                    hVar.a(width, canvas, rectF2, null);
+                    invalidate();
+                    break;
+                }
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public al(org.telegram.ui.Components.go goVar, Context context, dh.l lVar) {
+        super(context);
+        this.F = goVar;
+        this.E = lVar;
+        this.D = new Path();
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public al(org.telegram.ui.Components.f50 f50Var, Context context, Paint paint) {
+        super(context);
+        this.F = f50Var;
+        this.D = paint;
+        this.E = new org.telegram.ui.Components.voip.h();
     }
 }

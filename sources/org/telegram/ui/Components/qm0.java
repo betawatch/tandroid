@@ -1,33 +1,42 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class qm0 extends f2.q {
-    public final /* synthetic */ um0 b;
+public final class qm0 extends hg.p0 {
+    public final /* synthetic */ rm0 h0;
 
-    public qm0(um0 um0Var) {
-        this.b = um0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qm0(rm0 rm0Var, int i9, View view, TLRPC.TL_reactionCount tL_reactionCount, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(null, i9, view, tL_reactionCount, false, true, b6Var);
+        this.h0 = rm0Var;
     }
 
-    @Override // f2.q
-    public final boolean a(int i10, int i11) {
-        um0 um0Var = this.b;
-        return ((rm0) um0Var.n.get(i10)).equals(um0Var.r.get(i11));
+    @Override // hg.p0
+    public final boolean e() {
+        return this.w > 0 || this.u || this.F.l != 1.0f;
     }
 
-    @Override // f2.q
-    public final boolean b(int i10, int i11) {
-        um0 um0Var = this.b;
-        return ((rm0) um0Var.n.get(i10)).a.h == ((rm0) um0Var.r.get(i11)).a.h;
+    @Override // hg.p0
+    public final boolean i() {
+        return !e();
     }
 
-    @Override // f2.q
-    public final int d() {
-        return this.b.r.size();
+    @Override // hg.p0
+    public final int j() {
+        return 18;
     }
 
-    @Override // f2.q
-    public final int e() {
-        return this.b.n.size();
+    @Override // hg.p0
+    public final void s(float f10) {
+        int i9 = this.i;
+        rm0 rm0Var = this.h0;
+        this.N = i0.a.d(f10, i9, org.telegram.ui.ActionBar.f6.v0(rm0Var.e ? org.telegram.ui.ActionBar.f6.Fj : org.telegram.ui.ActionBar.f6.va, rm0Var.s.c));
+        int d = i0.a.d(f10, this.g, rm0Var.e ? org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.Cj, rm0Var.s.c) : 0);
+        this.O = d;
+        this.N = org.telegram.ui.ActionBar.f6.v(d, this.N);
+        this.P = i0.a.d(f10, this.h, rm0Var.e ? 1526726655 : org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.wa, rm0Var.s.c));
     }
 }

@@ -1,17 +1,17 @@
 package m3;
 
 import com.google.android.exoplayer2.extractor.FlacStreamMetadata;
-import d5.g0;
+import d5.f0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class o implements t {
     public final /* synthetic */ int a;
     public final long b;
     public final Object c;
 
-    public /* synthetic */ o(Object obj, long j10, int i10) {
-        this.a = i10;
+    public /* synthetic */ o(Object obj, long j10, int i9) {
+        this.a = i9;
         this.c = obj;
         this.b = j10;
     }
@@ -37,34 +37,34 @@ public class o implements t {
                 p pVar = flacStreamMetadata.seekTable;
                 long[] jArr = pVar.a;
                 long[] jArr2 = pVar.b;
-                int e9 = g0.e(jArr, flacStreamMetadata.getSampleNumber(j10), false);
-                long j11 = e9 == -1 ? 0L : jArr[e9];
-                long j12 = e9 != -1 ? jArr2[e9] : 0L;
-                int i10 = flacStreamMetadata.sampleRate;
-                long j13 = (j11 * 1000000) / i10;
+                int e10 = f0.e(jArr, flacStreamMetadata.getSampleNumber(j10), false);
+                long j11 = e10 == -1 ? 0L : jArr[e10];
+                long j12 = e10 != -1 ? jArr2[e10] : 0L;
+                int i9 = flacStreamMetadata.sampleRate;
+                long j13 = (j11 * 1000000) / i9;
                 long j14 = this.b;
                 u uVar = new u(j13, j12 + j14);
-                if (j13 == j10 || e9 == jArr.length - 1) {
+                if (j13 == j10 || e10 == jArr.length - 1) {
                     return new s(uVar, uVar);
                 }
-                int i11 = e9 + 1;
-                return new s(uVar, new u((jArr[i11] * 1000000) / i10, j14 + jArr2[i11]));
+                int i10 = e10 + 1;
+                return new s(uVar, new u((jArr[i10] * 1000000) / i9, j14 + jArr2[i10]));
             case 1:
                 return (s) this.c;
             default:
                 o3.b bVar = (o3.b) this.c;
                 s b10 = bVar.g[0].b(j10);
-                int i12 = 1;
+                int i11 = 1;
                 while (true) {
                     o3.e[] eVarArr = bVar.g;
-                    if (i12 >= eVarArr.length) {
+                    if (i11 >= eVarArr.length) {
                         return b10;
                     }
-                    s b11 = eVarArr[i12].b(j10);
+                    s b11 = eVarArr[i11].b(j10);
                     if (b11.a.b < b10.a.b) {
                         b10 = b11;
                     }
-                    i12++;
+                    i11++;
                 }
         }
     }

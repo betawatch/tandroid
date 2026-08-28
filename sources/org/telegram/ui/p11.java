@@ -1,46 +1,33 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MrzRecognizer;
+import android.widget.Toast;
+import java.util.List;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class p11 implements s9 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+public final class p11 implements ResultCallback {
+    public final /* synthetic */ z11 a;
 
-    public p11(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
-        this.a = i10;
-        this.b = n2Var;
+    public p11(z11 z11Var) {
+        this.a = z11Var;
     }
 
-    @Override // org.telegram.ui.s9
-    public final void C(String str) {
-        String b10 = we.e.b(str);
-        if (TextUtils.isEmpty(b10)) {
-            AndroidUtilities.runOnUIThread(new tq0(1));
-            return;
-        }
-        MessagesController.getInstance(this.a).getUserNameResolver().resolve(b10, new tb(this.b, 4));
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        List list = (List) obj;
+        this.a.b0(list);
+        z11.O = list;
     }
 
-    @Override // org.telegram.ui.s9
-    public final /* synthetic */ boolean i1(String str, k9 k9Var) {
-        return false;
+    @Override // org.telegram.tgnet.ResultCallback
+    public final /* synthetic */ void onError(Throwable th) {
+        org.telegram.tgnet.k.a(this, th);
     }
 
-    @Override // org.telegram.ui.s9
-    public final /* synthetic */ String z0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.s9
-    public final /* synthetic */ void T0(MrzRecognizer.Result result) {
-    }
-
-    @Override // org.telegram.ui.s9
-    public final /* synthetic */ void onDismiss() {
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+        Toast.makeText(this.a.getParentActivity(), tL_error.text, 0).show();
     }
 }

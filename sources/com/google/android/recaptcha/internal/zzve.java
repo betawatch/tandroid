@@ -1,11 +1,11 @@
 package com.google.android.recaptcha.internal;
 
-import a9.p;
+import aa.d;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class zzve extends IllegalArgumentException {
-    public zzve(int i10, int i11) {
-        super(p.j(i10, i11, "Unpaired surrogate at index ", " of "));
+    public zzve(int i9, int i10) {
+        super(d.k(i9, i10, "Unpaired surrogate at index ", " of "));
     }
 }

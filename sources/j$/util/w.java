@@ -34,29 +34,29 @@ public final class w implements DoubleConsumer {
     }
 
     public final void b(double d) {
-        double d10 = d - this.a;
-        double d11 = this.sum;
-        double d12 = d11 + d10;
-        this.a = (d12 - d11) - d10;
-        this.sum = d12;
+        double d9 = d - this.a;
+        double d10 = this.sum;
+        double d11 = d10 + d9;
+        this.a = (d11 - d10) - d9;
+        this.sum = d11;
     }
 
     public final String toString() {
         double d;
         String simpleName = w.class.getSimpleName();
         Long valueOf = Long.valueOf(this.count);
-        double d10 = this.sum + this.a;
-        if (Double.isNaN(d10) && Double.isInfinite(this.b)) {
-            d10 = this.b;
+        double d9 = this.sum + this.a;
+        if (Double.isNaN(d9) && Double.isInfinite(this.b)) {
+            d9 = this.b;
         }
-        Double valueOf2 = Double.valueOf(d10);
+        Double valueOf2 = Double.valueOf(d9);
         Double valueOf3 = Double.valueOf(this.min);
         if (this.count > 0) {
-            double d11 = this.sum + this.a;
-            if (Double.isNaN(d11) && Double.isInfinite(this.b)) {
-                d11 = this.b;
+            double d10 = this.sum + this.a;
+            if (Double.isNaN(d10) && Double.isInfinite(this.b)) {
+                d10 = this.b;
             }
-            d = d11 / this.count;
+            d = d10 / this.count;
         } else {
             d = 0.0d;
         }

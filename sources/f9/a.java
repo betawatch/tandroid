@@ -1,42 +1,23 @@
 package f9;
 
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.os.Build;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a {
-    public final String a;
-    public final String b;
-    public final ArrayList c;
-    public final String d;
-    public final String e;
-    public final String f;
-    public final String g;
-    public final xe.b h;
+public final class a implements q9.d {
+    public static final a a = new a();
+    public static final q9.c b = q9.c.c("rolloutId");
+    public static final q9.c c = q9.c.c("parameterKey");
+    public static final q9.c d = q9.c.c("parameterValue");
+    public static final q9.c e = q9.c.c("variantId");
+    public static final q9.c f = q9.c.c("templateVersion");
 
-    public a(String str, String str2, ArrayList arrayList, String str3, String str4, String str5, String str6, xe.b bVar) {
-        this.a = str;
-        this.b = str2;
-        this.c = arrayList;
-        this.d = str3;
-        this.e = str4;
-        this.f = str5;
-        this.g = str6;
-        this.h = bVar;
-    }
-
-    public static a a(Context context, x xVar, String str, String str2, ArrayList arrayList, xe.b bVar) {
-        String packageName = context.getPackageName();
-        String c10 = xVar.c();
-        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 0);
-        String l10 = Build.VERSION.SDK_INT >= 28 ? Long.toString(packageInfo.getLongVersionCode()) : Integer.toString(packageInfo.versionCode);
-        String str3 = packageInfo.versionName;
-        if (str3 == null) {
-            str3 = "0.0";
-        }
-        return new a(str, str2, arrayList, c10, packageName, l10, str3, bVar);
+    @Override // q9.a
+    public final void a(Object obj, Object obj2) {
+        q9.e eVar = (q9.e) obj2;
+        b bVar = (b) ((n) obj);
+        eVar.g(b, bVar.b);
+        eVar.g(c, bVar.c);
+        eVar.g(d, bVar.d);
+        eVar.g(e, bVar.e);
+        eVar.d(f, bVar.f);
     }
 }

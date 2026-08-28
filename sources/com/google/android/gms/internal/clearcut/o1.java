@@ -20,176 +20,176 @@ public final class o1 {
     public static final byte[] d = new byte[0];
     public final /* synthetic */ int a;
 
-    public static int a(int i10, byte[] bArr) {
-        return ((bArr[i10 + 3] & 255) << 24) | (bArr[i10] & 255) | ((bArr[i10 + 1] & 255) << 8) | ((bArr[i10 + 2] & 255) << 16);
+    public static int a(int i9, byte[] bArr) {
+        return ((bArr[i9 + 3] & 255) << 24) | (bArr[i9] & 255) | ((bArr[i9 + 1] & 255) << 8) | ((bArr[i9 + 2] & 255) << 16);
     }
 
-    public static int b(int i10, byte[] bArr, int i11, int i12, m mVar) {
-        if ((i10 >>> 3) == 0) {
+    public static int b(int i9, byte[] bArr, int i10, int i11, m mVar) {
+        if ((i9 >>> 3) == 0) {
             throw new d0("Protocol message contained an invalid tag (zero).");
         }
-        int i13 = i10 & 7;
-        if (i13 == 0) {
-            return m(bArr, i11, mVar);
+        int i12 = i9 & 7;
+        if (i12 == 0) {
+            return m(bArr, i10, mVar);
         }
-        if (i13 == 1) {
-            return i11 + 8;
+        if (i12 == 1) {
+            return i10 + 8;
         }
-        if (i13 == 2) {
-            return f(bArr, i11, mVar) + mVar.a;
+        if (i12 == 2) {
+            return f(bArr, i10, mVar) + mVar.a;
         }
-        if (i13 != 3) {
-            if (i13 == 5) {
-                return i11 + 4;
+        if (i12 != 3) {
+            if (i12 == 5) {
+                return i10 + 4;
             }
             throw new d0("Protocol message contained an invalid tag (zero).");
         }
-        int i14 = (i10 & (-8)) | 4;
-        int i15 = 0;
-        while (i11 < i12) {
-            i11 = f(bArr, i11, mVar);
-            i15 = mVar.a;
-            if (i15 == i14) {
+        int i13 = (i9 & (-8)) | 4;
+        int i14 = 0;
+        while (i10 < i11) {
+            i10 = f(bArr, i10, mVar);
+            i14 = mVar.a;
+            if (i14 == i13) {
                 break;
             }
-            i11 = b(i15, bArr, i11, i12, mVar);
+            i10 = b(i14, bArr, i10, i11, mVar);
         }
-        if (i11 > i12 || i15 != i14) {
+        if (i10 > i11 || i14 != i13) {
             throw d0.b();
         }
-        return i11;
+        return i10;
     }
 
-    public static int c(int i10, byte[] bArr, int i11, int i12, d1 d1Var, m mVar) {
-        if ((i10 >>> 3) == 0) {
+    public static int c(int i9, byte[] bArr, int i10, int i11, d1 d1Var, m mVar) {
+        if ((i9 >>> 3) == 0) {
             throw new d0("Protocol message contained an invalid tag (zero).");
         }
-        int i13 = i10 & 7;
-        if (i13 == 0) {
-            int m10 = m(bArr, i11, mVar);
-            d1Var.a(i10, Long.valueOf(mVar.b));
+        int i12 = i9 & 7;
+        if (i12 == 0) {
+            int m10 = m(bArr, i10, mVar);
+            d1Var.a(i9, Long.valueOf(mVar.b));
             return m10;
         }
-        if (i13 == 1) {
-            d1Var.a(i10, Long.valueOf(r(i11, bArr)));
-            return i11 + 8;
+        if (i12 == 1) {
+            d1Var.a(i9, Long.valueOf(r(i10, bArr)));
+            return i10 + 8;
         }
-        if (i13 == 2) {
-            int f10 = f(bArr, i11, mVar);
-            int i14 = mVar.a;
-            d1Var.a(i10, i14 == 0 ? o.c : o.n(f10, i14, bArr));
-            return f10 + i14;
+        if (i12 == 2) {
+            int f10 = f(bArr, i10, mVar);
+            int i13 = mVar.a;
+            d1Var.a(i9, i13 == 0 ? o.c : o.n(f10, i13, bArr));
+            return f10 + i13;
         }
-        if (i13 != 3) {
-            if (i13 != 5) {
+        if (i12 != 3) {
+            if (i12 != 5) {
                 throw new d0("Protocol message contained an invalid tag (zero).");
             }
-            d1Var.a(i10, Integer.valueOf(o(i11, bArr)));
-            return i11 + 4;
+            d1Var.a(i9, Integer.valueOf(o(i10, bArr)));
+            return i10 + 4;
         }
         d1 b10 = d1.b();
-        int i15 = (i10 & (-8)) | 4;
-        int i16 = 0;
+        int i14 = (i9 & (-8)) | 4;
+        int i15 = 0;
         while (true) {
-            if (i11 >= i12) {
+            if (i10 >= i11) {
                 break;
             }
-            int f11 = f(bArr, i11, mVar);
-            int i17 = mVar.a;
-            if (i17 == i15) {
-                i16 = i17;
-                i11 = f11;
+            int f11 = f(bArr, i10, mVar);
+            int i16 = mVar.a;
+            if (i16 == i14) {
+                i15 = i16;
+                i10 = f11;
                 break;
             }
-            i11 = c(i17, bArr, f11, i12, b10, mVar);
-            i16 = i17;
+            i10 = c(i16, bArr, f11, i11, b10, mVar);
+            i15 = i16;
         }
-        if (i11 > i12 || i16 != i15) {
+        if (i10 > i11 || i15 != i14) {
             throw d0.b();
         }
-        d1Var.a(i10, b10);
-        return i11;
+        d1Var.a(i9, b10);
+        return i10;
     }
 
-    public static int d(int i10, byte[] bArr, int i11, m mVar) {
-        int i12;
-        int i13 = i10 & 127;
-        int i14 = i11 + 1;
-        byte b10 = bArr[i11];
+    public static int d(int i9, byte[] bArr, int i10, m mVar) {
+        int i11;
+        int i12 = i9 & 127;
+        int i13 = i10 + 1;
+        byte b10 = bArr[i10];
         if (b10 >= 0) {
-            i12 = b10 << 7;
+            i11 = b10 << 7;
         } else {
-            int i15 = i13 | ((b10 & Byte.MAX_VALUE) << 7);
-            int i16 = i11 + 2;
-            byte b11 = bArr[i14];
+            int i14 = i12 | ((b10 & Byte.MAX_VALUE) << 7);
+            int i15 = i10 + 2;
+            byte b11 = bArr[i13];
             if (b11 >= 0) {
-                mVar.a = i15 | (b11 << 14);
-                return i16;
+                mVar.a = i14 | (b11 << 14);
+                return i15;
             }
-            i13 = i15 | ((b11 & Byte.MAX_VALUE) << 14);
-            i14 = i11 + 3;
-            byte b12 = bArr[i16];
+            i12 = i14 | ((b11 & Byte.MAX_VALUE) << 14);
+            i13 = i10 + 3;
+            byte b12 = bArr[i15];
             if (b12 >= 0) {
-                i12 = b12 << 21;
+                i11 = b12 << 21;
             } else {
-                int i17 = i13 | ((b12 & Byte.MAX_VALUE) << 21);
-                int i18 = i11 + 4;
-                byte b13 = bArr[i14];
+                int i16 = i12 | ((b12 & Byte.MAX_VALUE) << 21);
+                int i17 = i10 + 4;
+                byte b13 = bArr[i13];
                 if (b13 >= 0) {
-                    mVar.a = i17 | (b13 << 28);
-                    return i18;
+                    mVar.a = i16 | (b13 << 28);
+                    return i17;
                 }
-                int i19 = i17 | ((b13 & Byte.MAX_VALUE) << 28);
+                int i18 = i16 | ((b13 & Byte.MAX_VALUE) << 28);
                 while (true) {
-                    int i20 = i18 + 1;
-                    if (bArr[i18] >= 0) {
-                        mVar.a = i19;
-                        return i20;
+                    int i19 = i17 + 1;
+                    if (bArr[i17] >= 0) {
+                        mVar.a = i18;
+                        return i19;
                     }
-                    i18 = i20;
+                    i17 = i19;
                 }
             }
         }
-        mVar.a = i13 | i12;
-        return i14;
+        mVar.a = i12 | i11;
+        return i13;
     }
 
-    public static int e(long j10, byte[] bArr, int i10, int i11) {
-        if (i11 == 0) {
+    public static int e(long j10, byte[] bArr, int i9, int i10) {
+        if (i10 == 0) {
             o1 o1Var = n1.a;
-            if (i10 > -12) {
+            if (i9 > -12) {
                 return -1;
             }
-            return i10;
+            return i9;
         }
-        if (i11 == 1) {
+        if (i10 == 1) {
             byte a2 = l1.a(j10, bArr);
             o1 o1Var2 = n1.a;
-            if (i10 > -12 || a2 > -65) {
+            if (i9 > -12 || a2 > -65) {
                 return -1;
             }
-            return (a2 << 8) ^ i10;
+            return (a2 << 8) ^ i9;
         }
-        if (i11 != 2) {
+        if (i10 != 2) {
             throw new AssertionError();
         }
         byte a3 = l1.a(j10, bArr);
         byte a10 = l1.a(j10 + 1, bArr);
         o1 o1Var3 = n1.a;
-        if (i10 > -12 || a3 > -65 || a10 > -65) {
+        if (i9 > -12 || a3 > -65 || a10 > -65) {
             return -1;
         }
-        return (a10 << 16) ^ ((a3 << 8) ^ i10);
+        return (a10 << 16) ^ ((a3 << 8) ^ i9);
     }
 
-    public static int f(byte[] bArr, int i10, m mVar) {
-        int i11 = i10 + 1;
-        byte b10 = bArr[i10];
+    public static int f(byte[] bArr, int i9, m mVar) {
+        int i10 = i9 + 1;
+        byte b10 = bArr[i9];
         if (b10 < 0) {
-            return d(b10, bArr, i11, mVar);
+            return d(b10, bArr, i10, mVar);
         }
         mVar.a = b10;
-        return i11;
+        return i10;
     }
 
     public static long g(long j10, long j11, long j12) {
@@ -248,41 +248,41 @@ public final class o1 {
         long[] jArr = new long[2];
         long[] jArr2 = new long[2];
         long n21 = n(0, bArr2) + 95310865018149119L;
-        int i10 = length - 1;
-        int i11 = (i10 / 64) << 6;
-        int i12 = i10 & 63;
-        int i13 = i11 + i12;
-        int i14 = i13 - 63;
+        int i9 = length - 1;
+        int i10 = (i9 / 64) << 6;
+        int i11 = i9 & 63;
+        int i12 = i10 + i11;
+        int i13 = i12 - 63;
         long j14 = 2480279821605975764L;
         long j15 = 1390051526045402406L;
-        int i15 = i12;
-        int i16 = 0;
+        int i14 = i11;
+        int i15 = 0;
         while (true) {
-            long rotateRight2 = Long.rotateRight(n(i16 + 8, bArr2) + n21 + j14 + jArr[c10], 37) * (-5435081209227447693L);
-            long rotateRight3 = Long.rotateRight(n(i16 + 48, bArr2) + j14 + jArr[1], 42) * (-5435081209227447693L);
+            long rotateRight2 = Long.rotateRight(n(i15 + 8, bArr2) + n21 + j14 + jArr[c10], 37) * (-5435081209227447693L);
+            long rotateRight3 = Long.rotateRight(n(i15 + 48, bArr2) + j14 + jArr[1], 42) * (-5435081209227447693L);
             long j16 = rotateRight2 ^ jArr2[1];
-            long n22 = n(i16 + 40, bArr2) + jArr[0] + rotateRight3;
+            long n22 = n(i15 + 40, bArr2) + jArr[0] + rotateRight3;
             long rotateRight4 = Long.rotateRight(j15 + jArr2[0], 33) * (-5435081209227447693L);
+            int i16 = i14;
+            l(bArr2, i15, jArr[1] * (-5435081209227447693L), j16 + jArr2[0], jArr);
             int i17 = i15;
-            l(bArr2, i16, jArr[1] * (-5435081209227447693L), j16 + jArr2[0], jArr);
-            int i18 = i16;
             long[] jArr3 = jArr;
-            l(bArr2, i18 + 32, rotateRight4 + jArr2[1], n(i18 + 16, bArr2) + n22, jArr2);
-            i16 = i18 + 64;
-            if (i16 == i11) {
+            l(bArr2, i17 + 32, rotateRight4 + jArr2[1], n(i17 + 16, bArr2) + n22, jArr2);
+            i15 = i17 + 64;
+            if (i15 == i10) {
                 long j17 = ((j16 & 255) << 1) - 5435081209227447693L;
-                long j18 = jArr2[0] + i17;
+                long j18 = jArr2[0] + i16;
                 jArr2[0] = j18;
                 long j19 = jArr3[0] + j18;
                 jArr3[0] = j19;
                 jArr2[0] = jArr2[0] + j19;
-                long rotateRight5 = Long.rotateRight(n(i13 - 55, bArr2) + rotateRight4 + n22 + jArr3[0], 37) * j17;
-                long rotateRight6 = Long.rotateRight(n(i13 - 15, bArr2) + n22 + jArr3[1], 42) * j17;
+                long rotateRight5 = Long.rotateRight(n(i12 - 55, bArr2) + rotateRight4 + n22 + jArr3[0], 37) * j17;
+                long rotateRight6 = Long.rotateRight(n(i12 - 15, bArr2) + n22 + jArr3[1], 42) * j17;
                 long j20 = rotateRight5 ^ (jArr2[1] * 9);
-                long n23 = n(i13 - 23, bArr2) + (jArr3[0] * 9) + rotateRight6;
+                long n23 = n(i12 - 23, bArr2) + (jArr3[0] * 9) + rotateRight6;
                 long rotateRight7 = Long.rotateRight(j16 + jArr2[0], 33) * j17;
-                l(bArr2, i14, jArr3[1] * j17, jArr2[0] + j20, jArr3);
-                l(bArr2, i13 - 31, jArr2[1] + rotateRight7, n(i13 - 47, bArr2) + n23, jArr2);
+                l(bArr2, i13, jArr3[1] * j17, jArr2[0] + j20, jArr3);
+                l(bArr2, i12 - 31, jArr2[1] + rotateRight7, n(i12 - 47, bArr2) + n23, jArr2);
                 return g((((n23 >>> 47) ^ n23) * (-4348849565147123417L)) + g(jArr3[0], jArr2[0], j17) + j20, g(jArr3[1], jArr2[1], j17) + rotateRight7, j17);
             }
             bArr2 = bArr;
@@ -291,34 +291,34 @@ public final class o1 {
             j15 = j16;
             j14 = n22;
             c10 = 0;
-            i15 = i17;
+            i14 = i16;
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:100:0x021b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:100:0x0217, code lost:
     
-        if (((java.lang.Double) r11).doubleValue() == 0.0d) goto L80;
+        if (((java.lang.Double) r11).doubleValue() == 0.0d) goto L111;
      */
     /* JADX WARN: Code restructure failed: missing block: B:78:0x01e6, code lost:
     
-        if (((java.lang.Boolean) r11).booleanValue() == false) goto L80;
+        if (((java.lang.Boolean) r11).booleanValue() == false) goto L111;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x01e8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:88:0x024a, code lost:
     
         r7 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:92:0x01f8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x01f4, code lost:
     
-        if (((java.lang.Integer) r11).intValue() == 0) goto L80;
+        if (((java.lang.Integer) r11).intValue() == 0) goto L111;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:96:0x0209, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x0205, code lost:
     
-        if (((java.lang.Float) r11).floatValue() == 0.0f) goto L80;
+        if (((java.lang.Float) r11).floatValue() == 0.0f) goto L111;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void i(z zVar, StringBuilder sb2, int i10) {
+    public static void i(z zVar, StringBuilder sb2, int i9) {
         boolean equals;
         HashMap hashMap = new HashMap();
         HashMap hashMap2 = new HashMap();
@@ -344,7 +344,7 @@ public final class o1 {
                 String concat = valueOf2.length() != 0 ? valueOf.concat(valueOf2) : new String(valueOf);
                 Method method2 = (Method) hashMap.get(str);
                 if (method2 != null && method2.getReturnType().equals(List.class)) {
-                    k(sb2, i10, u(concat), z.b(method2, zVar, new Object[0]));
+                    k(sb2, i9, u(concat), z.b(method2, zVar, new Object[0]));
                 }
             }
             if (replaceFirst.endsWith(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && !replaceFirst.equals(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL)) {
@@ -353,7 +353,7 @@ public final class o1 {
                 String concat2 = valueOf4.length() != 0 ? valueOf3.concat(valueOf4) : new String(valueOf3);
                 Method method3 = (Method) hashMap.get(str);
                 if (method3 != null && method3.getReturnType().equals(Map.class) && !method3.isAnnotationPresent(Deprecated.class) && Modifier.isPublic(method3.getModifiers())) {
-                    k(sb2, i10, u(concat2), z.b(method3, zVar, new Object[0]));
+                    k(sb2, i9, u(concat2), z.b(method3, zVar, new Object[0]));
                 }
             }
             if (((Method) hashMap2.get(replaceFirst.length() != 0 ? "set".concat(replaceFirst) : new String("set"))) != null) {
@@ -393,15 +393,15 @@ public final class o1 {
                         z10 = ((Boolean) z.b(method5, zVar, new Object[0])).booleanValue();
                     }
                     if (z10) {
-                        k(sb2, i10, u(concat3), b10);
+                        k(sb2, i9, u(concat3), b10);
                     }
                 }
             }
         }
         d1 d1Var = zVar.zzjp;
         if (d1Var != null) {
-            for (int i11 = 0; i11 < d1Var.a; i11++) {
-                k(sb2, i10, String.valueOf(d1Var.b[i11] >>> 3), d1Var.c[i11]);
+            for (int i10 = 0; i10 < d1Var.a; i10++) {
+                k(sb2, i9, String.valueOf(d1Var.b[i10] >>> 3), d1Var.c[i10]);
             }
         }
     }
@@ -420,8 +420,8 @@ public final class o1 {
                     }
                     int length = str2.length();
                     StringBuilder sb2 = new StringBuilder(length);
-                    for (int i10 = 0; i10 < length; i10++) {
-                        char charAt = str2.charAt(i10);
+                    for (int i9 = 0; i9 < length; i9++) {
+                        char charAt = str2.charAt(i9);
                         if (charAt < ' ' || charAt > '~' || charAt == '\"' || charAt == '\'') {
                             sb2.append(String.format("\\u%04x", Integer.valueOf(charAt)));
                         } else {
@@ -435,13 +435,13 @@ public final class o1 {
                 } else if (obj instanceof byte[]) {
                     stringBuffer2.append('\"');
                     for (byte b10 : (byte[]) obj) {
-                        int i11 = b10 & 255;
-                        if (i11 == 92 || i11 == 34) {
+                        int i10 = b10 & 255;
+                        if (i10 == 92 || i10 == 34) {
                             stringBuffer2.append('\\');
-                        } else if (i11 < 32 || i11 >= 127) {
-                            stringBuffer2.append(String.format("\\%03o", Integer.valueOf(i11)));
+                        } else if (i10 < 32 || i10 >= 127) {
+                            stringBuffer2.append(String.format("\\%03o", Integer.valueOf(i10)));
                         }
-                        stringBuffer2.append((char) i11);
+                        stringBuffer2.append((char) i10);
                     }
                     stringBuffer2.append('\"');
                 } else {
@@ -468,8 +468,8 @@ public final class o1 {
                         j(name, obj2, stringBuffer, stringBuffer2);
                     } else {
                         int length3 = obj2 == null ? 0 : Array.getLength(obj2);
-                        for (int i12 = 0; i12 < length3; i12++) {
-                            j(name, Array.get(obj2, i12), stringBuffer, stringBuffer2);
+                        for (int i11 = 0; i11 < length3; i11++) {
+                            j(name, Array.get(obj2, i11), stringBuffer, stringBuffer2);
                         }
                     }
                 }
@@ -496,24 +496,24 @@ public final class o1 {
         }
     }
 
-    public static final void k(StringBuilder sb2, int i10, String str, Object obj) {
+    public static final void k(StringBuilder sb2, int i9, String str, Object obj) {
         if (obj instanceof List) {
             Iterator it = ((List) obj).iterator();
             while (it.hasNext()) {
-                k(sb2, i10, str, it.next());
+                k(sb2, i9, str, it.next());
             }
             return;
         }
         if (obj instanceof Map) {
             Iterator it2 = ((Map) obj).entrySet().iterator();
             while (it2.hasNext()) {
-                k(sb2, i10, str, (Map.Entry) it2.next());
+                k(sb2, i9, str, (Map.Entry) it2.next());
             }
             return;
         }
         sb2.append('\n');
-        int i11 = 0;
-        for (int i12 = 0; i12 < i10; i12++) {
+        int i10 = 0;
+        for (int i11 = 0; i11 < i9; i11++) {
             sb2.append(' ');
         }
         sb2.append(str);
@@ -532,11 +532,11 @@ public final class o1 {
         }
         if (obj instanceof z) {
             sb2.append(" {");
-            i((z) obj, sb2, i10 + 2);
+            i((z) obj, sb2, i9 + 2);
             sb2.append("\n");
-            while (i11 < i10) {
+            while (i10 < i9) {
                 sb2.append(' ');
-                i11++;
+                i10++;
             }
             sb2.append("}");
             return;
@@ -548,22 +548,22 @@ public final class o1 {
         }
         sb2.append(" {");
         Map.Entry entry = (Map.Entry) obj;
-        int i13 = i10 + 2;
-        k(sb2, i13, "key", entry.getKey());
-        k(sb2, i13, "value", entry.getValue());
+        int i12 = i9 + 2;
+        k(sb2, i12, "key", entry.getKey());
+        k(sb2, i12, "value", entry.getValue());
         sb2.append("\n");
-        while (i11 < i10) {
+        while (i10 < i9) {
             sb2.append(' ');
-            i11++;
+            i10++;
         }
         sb2.append("}");
     }
 
-    public static void l(byte[] bArr, int i10, long j10, long j11, long[] jArr) {
-        long n10 = n(i10, bArr);
-        long n11 = n(i10 + 8, bArr);
-        long n12 = n(i10 + 16, bArr);
-        long n13 = n(i10 + 24, bArr);
+    public static void l(byte[] bArr, int i9, long j10, long j11, long[] jArr) {
+        long n10 = n(i9, bArr);
+        long n11 = n(i9 + 8, bArr);
+        long n12 = n(i9 + 16, bArr);
+        long n13 = n(i9 + 24, bArr);
         long j12 = j10 + n10;
         long j13 = n11 + j12 + n12;
         long rotateRight = Long.rotateRight(j13, 44) + Long.rotateRight(j11 + j12 + n13, 21);
@@ -571,49 +571,49 @@ public final class o1 {
         jArr[1] = rotateRight + j12;
     }
 
-    public static int m(byte[] bArr, int i10, m mVar) {
-        int i11 = i10 + 1;
-        long j10 = bArr[i10];
+    public static int m(byte[] bArr, int i9, m mVar) {
+        int i10 = i9 + 1;
+        long j10 = bArr[i9];
         if (j10 >= 0) {
             mVar.b = j10;
-            return i11;
+            return i10;
         }
-        int i12 = i10 + 2;
-        byte b10 = bArr[i11];
+        int i11 = i9 + 2;
+        byte b10 = bArr[i10];
         long j11 = (j10 & 127) | ((b10 & Byte.MAX_VALUE) << 7);
-        int i13 = 7;
+        int i12 = 7;
         while (b10 < 0) {
-            int i14 = i12 + 1;
-            i13 += 7;
-            j11 |= (r10 & Byte.MAX_VALUE) << i13;
-            b10 = bArr[i12];
-            i12 = i14;
+            int i13 = i11 + 1;
+            i12 += 7;
+            j11 |= (r10 & Byte.MAX_VALUE) << i12;
+            b10 = bArr[i11];
+            i11 = i13;
         }
         mVar.b = j11;
-        return i12;
+        return i11;
     }
 
-    public static long n(int i10, byte[] bArr) {
-        ByteBuffer wrap = ByteBuffer.wrap(bArr, i10, 8);
+    public static long n(int i9, byte[] bArr) {
+        ByteBuffer wrap = ByteBuffer.wrap(bArr, i9, 8);
         wrap.order(ByteOrder.LITTLE_ENDIAN);
         return wrap.getLong();
     }
 
-    public static int o(int i10, byte[] bArr) {
-        return ((bArr[i10 + 3] & 255) << 24) | (bArr[i10] & 255) | ((bArr[i10 + 1] & 255) << 8) | ((bArr[i10 + 2] & 255) << 16);
+    public static int o(int i9, byte[] bArr) {
+        return ((bArr[i9 + 3] & 255) << 24) | (bArr[i9] & 255) | ((bArr[i9 + 1] & 255) << 8) | ((bArr[i9 + 2] & 255) << 16);
     }
 
     public static String p(o oVar) {
         String str;
         StringBuilder sb2 = new StringBuilder(oVar.size());
-        for (int i10 = 0; i10 < oVar.size(); i10++) {
-            int o10 = oVar.o(i10);
-            if (o10 == 34) {
+        for (int i9 = 0; i9 < oVar.size(); i9++) {
+            int o6 = oVar.o(i9);
+            if (o6 == 34) {
                 str = "\\\"";
-            } else if (o10 == 39) {
+            } else if (o6 == 39) {
                 str = "\\'";
-            } else if (o10 != 92) {
-                switch (o10) {
+            } else if (o6 != 92) {
+                switch (o6) {
                     case 7:
                         str = "\\a";
                         break;
@@ -636,13 +636,13 @@ public final class o1 {
                         str = "\\r";
                         break;
                     default:
-                        if (o10 < 32 || o10 > 126) {
+                        if (o6 < 32 || o6 > 126) {
                             sb2.append('\\');
-                            sb2.append((char) (((o10 >>> 6) & 3) + 48));
-                            sb2.append((char) (((o10 >>> 3) & 7) + 48));
-                            o10 = (o10 & 7) + 48;
+                            sb2.append((char) (((o6 >>> 6) & 3) + 48));
+                            sb2.append((char) (((o6 >>> 3) & 7) + 48));
+                            o6 = (o6 & 7) + 48;
                         }
-                        sb2.append((char) o10);
+                        sb2.append((char) o6);
                         continue;
                 }
             } else {
@@ -653,40 +653,40 @@ public final class o1 {
         return sb2.toString();
     }
 
-    public static int q(byte[] bArr, int i10, m mVar) {
-        int f10 = f(bArr, i10, mVar);
-        int i11 = mVar.a;
-        if (i11 == 0) {
+    public static int q(byte[] bArr, int i9, m mVar) {
+        int f10 = f(bArr, i9, mVar);
+        int i10 = mVar.a;
+        if (i10 == 0) {
             mVar.c = "";
             return f10;
         }
-        int i12 = f10 + i11;
-        if (!n1.a.t(bArr, f10, i12)) {
+        int i11 = f10 + i10;
+        if (!n1.a.t(bArr, f10, i11)) {
             throw new d0("Protocol message had invalid UTF-8.");
         }
-        mVar.c = new String(bArr, f10, i11, a0.a);
-        return i12;
+        mVar.c = new String(bArr, f10, i10, a0.a);
+        return i11;
     }
 
-    public static long r(int i10, byte[] bArr) {
-        return ((bArr[i10 + 7] & 255) << 56) | (bArr[i10] & 255) | ((bArr[i10 + 1] & 255) << 8) | ((bArr[i10 + 2] & 255) << 16) | ((bArr[i10 + 3] & 255) << 24) | ((bArr[i10 + 4] & 255) << 32) | ((bArr[i10 + 5] & 255) << 40) | ((bArr[i10 + 6] & 255) << 48);
+    public static long r(int i9, byte[] bArr) {
+        return ((bArr[i9 + 7] & 255) << 56) | (bArr[i9] & 255) | ((bArr[i9 + 1] & 255) << 8) | ((bArr[i9 + 2] & 255) << 16) | ((bArr[i9 + 3] & 255) << 24) | ((bArr[i9 + 4] & 255) << 32) | ((bArr[i9 + 5] & 255) << 40) | ((bArr[i9 + 6] & 255) << 48);
     }
 
-    public static int s(byte[] bArr, int i10, m mVar) {
-        int f10 = f(bArr, i10, mVar);
-        int i11 = mVar.a;
-        if (i11 == 0) {
+    public static int s(byte[] bArr, int i9, m mVar) {
+        int f10 = f(bArr, i9, mVar);
+        int i10 = mVar.a;
+        if (i10 == 0) {
             mVar.c = o.c;
             return f10;
         }
-        mVar.c = o.n(f10, i11, bArr);
-        return f10 + i11;
+        mVar.c = o.n(f10, i10, bArr);
+        return f10 + i10;
     }
 
     public static final String u(String str) {
         StringBuilder sb2 = new StringBuilder();
-        for (int i10 = 0; i10 < str.length(); i10++) {
-            char charAt = str.charAt(i10);
+        for (int i9 = 0; i9 < str.length(); i9++) {
+            char charAt = str.charAt(i9);
             if (Character.isUpperCase(charAt)) {
                 sb2.append("_");
             }
@@ -697,9 +697,9 @@ public final class o1 {
 
     public static String v(String str) {
         StringBuffer stringBuffer = new StringBuffer();
-        for (int i10 = 0; i10 < str.length(); i10++) {
-            char charAt = str.charAt(i10);
-            if (i10 != 0) {
+        for (int i9 = 0; i9 < str.length(); i9++) {
+            char charAt = str.charAt(i9);
+            if (i9 != 0) {
                 if (Character.isUpperCase(charAt)) {
                     stringBuffer.append('_');
                 }
@@ -716,119 +716,119 @@ public final class o1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public boolean t(byte[] bArr, int i10, int i11) {
+    public boolean t(byte[] bArr, int i9, int i10) {
         boolean z10;
         boolean z11;
-        int i12;
+        int i11;
         long j10;
-        int i13;
+        int i12;
         byte b10;
-        int i14;
-        int i15 = i10;
+        int i13;
+        int i14 = i9;
         byte b11 = -16;
         byte b12 = -62;
         switch (this.a) {
             case 0:
                 z10 = false;
                 z11 = true;
-                while (i15 < i11 && bArr[i15] >= 0) {
-                    i15++;
+                while (i14 < i10 && bArr[i14] >= 0) {
+                    i14++;
                 }
-                if (i15 < i11) {
-                    while (i15 < i11) {
-                        int i16 = i15 + 1;
-                        byte b13 = bArr[i15];
+                if (i14 < i10) {
+                    while (i14 < i10) {
+                        int i15 = i14 + 1;
+                        byte b13 = bArr[i14];
                         if (b13 >= 0) {
-                            i15 = i16;
+                            i14 = i15;
                         } else if (b13 >= -32) {
                             if (b13 < -16) {
-                                if (i16 >= i11 - 1) {
-                                    i12 = n1.a(i16, i11, bArr);
+                                if (i15 >= i10 - 1) {
+                                    i11 = n1.a(i15, i10, bArr);
                                 } else {
-                                    int i17 = i15 + 2;
-                                    byte b14 = bArr[i16];
+                                    int i16 = i14 + 2;
+                                    byte b14 = bArr[i15];
                                     if (b14 <= -65 && ((b13 != -32 || b14 >= -96) && (b13 != -19 || b14 < -96))) {
-                                        i15 += 3;
-                                        if (bArr[i17] > -65) {
+                                        i14 += 3;
+                                        if (bArr[i16] > -65) {
                                         }
                                     }
-                                    i12 = -1;
+                                    i11 = -1;
                                 }
-                            } else if (i16 >= i11 - 2) {
-                                i12 = n1.a(i16, i11, bArr);
+                            } else if (i15 >= i10 - 2) {
+                                i11 = n1.a(i15, i10, bArr);
                             } else {
-                                int i18 = i15 + 2;
-                                byte b15 = bArr[i16];
+                                int i17 = i14 + 2;
+                                byte b15 = bArr[i15];
                                 if (b15 <= -65 && (((b15 + 112) + (b13 << 28)) >> 30) == 0) {
-                                    int i19 = i15 + 3;
-                                    if (bArr[i18] <= -65) {
-                                        i15 += 4;
-                                        if (bArr[i19] > -65) {
+                                    int i18 = i14 + 3;
+                                    if (bArr[i17] <= -65) {
+                                        i14 += 4;
+                                        if (bArr[i18] > -65) {
                                         }
                                     }
                                 }
-                                i12 = -1;
+                                i11 = -1;
                             }
-                            if (i12 == 0) {
+                            if (i11 == 0) {
                             }
                         } else {
-                            if (i16 >= i11) {
-                                i12 = b13;
-                                return i12 == 0 ? z11 : z10;
+                            if (i15 >= i10) {
+                                i11 = b13;
+                                return i11 == 0 ? z11 : z10;
                             }
                             if (b13 >= -62) {
-                                i15 += 2;
-                                if (bArr[i16] > -65) {
+                                i14 += 2;
+                                if (bArr[i15] > -65) {
                                 }
                             }
-                            i12 = -1;
-                            if (i12 == 0) {
+                            i11 = -1;
+                            if (i11 == 0) {
                             }
                         }
                     }
                 }
-                i12 = 0;
-                if (i12 == 0) {
+                i11 = 0;
+                if (i11 == 0) {
                 }
                 break;
             default:
-                int i20 = 2;
-                if ((i15 | i11 | (bArr.length - i11)) < 0) {
-                    throw new ArrayIndexOutOfBoundsException(String.format("Array length=%d, index=%d, limit=%d", Integer.valueOf(bArr.length), Integer.valueOf(i15), Integer.valueOf(i11)));
+                int i19 = 2;
+                if ((i14 | i10 | (bArr.length - i10)) < 0) {
+                    throw new ArrayIndexOutOfBoundsException(String.format("Array length=%d, index=%d, limit=%d", Integer.valueOf(bArr.length), Integer.valueOf(i14), Integer.valueOf(i10)));
                 }
                 z10 = false;
-                long j11 = i15;
+                long j11 = i14;
                 z11 = true;
-                int i21 = (int) (i11 - j11);
-                if (i21 < 16) {
+                int i20 = (int) (i10 - j11);
+                if (i20 < 16) {
                     j10 = 1;
-                    i13 = 0;
+                    i12 = 0;
                 } else {
                     long j12 = j11;
                     j10 = 1;
-                    i13 = 0;
+                    i12 = 0;
                     while (true) {
-                        if (i13 < i21) {
+                        if (i12 < i20) {
                             long j13 = j12 + 1;
                             if (l1.a(j12, bArr) >= 0) {
-                                i13++;
+                                i12++;
                                 j12 = j13;
                             }
                         } else {
-                            i13 = i21;
+                            i12 = i20;
                         }
                     }
                 }
-                int i22 = i21 - i13;
-                long j14 = j11 + i13;
+                int i21 = i20 - i12;
+                long j14 = j11 + i12;
                 while (true) {
                     b10 = 0;
                     while (true) {
-                        if (i22 > 0) {
+                        if (i21 > 0) {
                             long j15 = j14 + j10;
                             byte a2 = l1.a(j14, bArr);
                             if (a2 >= 0) {
-                                i22--;
+                                i21--;
                                 j14 = j15;
                                 b10 = a2;
                             } else {
@@ -837,14 +837,14 @@ public final class o1 {
                             }
                         }
                     }
-                    if (i22 == 0) {
+                    if (i21 == 0) {
                         break;
                     } else {
-                        i14 = i22 - 1;
+                        i13 = i21 - 1;
                         if (b10 >= -32) {
                             if (b10 >= b11) {
-                                if (i14 >= 3) {
-                                    i22 -= 4;
+                                if (i13 >= 3) {
+                                    i21 -= 4;
                                     long j16 = j14 + j10;
                                     byte a3 = l1.a(j14, bArr);
                                     if (a3 <= -65 && (((a3 + 112) + (b10 << 28)) >> 30) == 0) {
@@ -861,8 +861,8 @@ public final class o1 {
                                         }
                                     }
                                 }
-                            } else if (i14 >= i20) {
-                                i22 -= 3;
+                            } else if (i13 >= i19) {
+                                i21 -= 3;
                                 long j18 = j14 + j10;
                                 byte a10 = l1.a(j14, bArr);
                                 if (a10 <= -65 && ((b10 != -32 || a10 >= -96) && (b10 != -19 || a10 < -96))) {
@@ -872,8 +872,8 @@ public final class o1 {
                                     }
                                 }
                             }
-                        } else if (i14 != 0) {
-                            i22 -= 2;
+                        } else if (i13 != 0) {
+                            i21 -= 2;
                             if (b10 < b12) {
                                 break;
                             } else {
@@ -887,13 +887,13 @@ public final class o1 {
                                 }
                             }
                         } else {
-                            i12 = b10;
+                            i11 = b10;
                         }
-                        i20 = 2;
+                        i19 = 2;
                     }
                 }
-                i12 = e(j14, bArr, b10, i14);
-                if (i12 == 0) {
+                i11 = e(j14, bArr, b10, i13);
+                if (i11 == 0) {
                 }
                 break;
         }

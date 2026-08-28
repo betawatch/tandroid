@@ -1,84 +1,51 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLMethod;
+import java.util.Comparator;
+import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class q9 implements Runnable {
+public final /* synthetic */ class q9 implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ MessagesController b;
 
-    public /* synthetic */ q9(int i10, long j10, long j11, org.telegram.ui.ActionBar.f1 f1Var, org.telegram.ui.ActionBar.f1 f1Var2) {
-        this.a = 3;
-        this.c = i10;
-        this.b = j10;
-        this.d = j11;
-        this.e = f1Var;
-        this.f = f1Var2;
+    public /* synthetic */ q9(MessagesController messagesController, int i9) {
+        this.a = i9;
+        this.b = messagesController;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$new$9;
+        int lambda$new$10;
+        int lambda$new$11;
+        int lambda$new$12;
+        int lambda$processUpdatesQueue$327;
+        int lambda$renameSavedReactionTag$484;
+        int lambda$updateSavedReactionTags$483;
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.e).lambda$loadBotInfo$199(this.b, this.d, (Utilities.Callback) this.f, this.c);
-                break;
+                lambda$new$9 = this.b.lambda$new$9((TLRPC.Dialog) obj, (TLRPC.Dialog) obj2);
+                return lambda$new$9;
             case 1:
-                ((MessagesController) this.e).lambda$loadFullChat$67(this.b, (TLRPC.TL_messages_chatFull) this.f, this.c, this.d);
-                break;
+                lambda$new$10 = this.b.lambda$new$10((TLRPC.Dialog) obj, (TLRPC.Dialog) obj2);
+                return lambda$new$10;
             case 2:
-                ((MessagesStorage) this.e).lambda$loadPendingTasks$20(this.b, this.d, (TLMethod) this.f, this.c);
-                break;
+                lambda$new$11 = this.b.lambda$new$11((MessagesController.CommunityPeerDialog) obj, (MessagesController.CommunityPeerDialog) obj2);
+                return lambda$new$11;
+            case 3:
+                lambda$new$12 = this.b.lambda$new$12((TLRPC.Update) obj, (TLRPC.Update) obj2);
+                return lambda$new$12;
+            case 4:
+                lambda$processUpdatesQueue$327 = this.b.lambda$processUpdatesQueue$327((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
+                return lambda$processUpdatesQueue$327;
+            case 5:
+                lambda$renameSavedReactionTag$484 = this.b.lambda$renameSavedReactionTag$484((TLRPC.TL_savedReactionTag) obj, (TLRPC.TL_savedReactionTag) obj2);
+                return lambda$renameSavedReactionTag$484;
             default:
-                org.telegram.ui.ActionBar.f1 f1Var = (org.telegram.ui.ActionBar.f1) this.e;
-                org.telegram.ui.ActionBar.f1 f1Var2 = (org.telegram.ui.ActionBar.f1) this.f;
-                int i11 = this.c;
-                MessagesController messagesController = MessagesController.getInstance(i11);
-                long j10 = this.b;
-                long j11 = this.d;
-                if (messagesController.isDialogMuted(j10, j11)) {
-                    f1Var.g(LocaleController.getString(R.string.UnmuteNotifications), R.drawable.msg_unmute, null);
-                    i10 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.x6, false);
-                    f1Var2.setVisibility(8);
-                } else {
-                    f1Var.g(LocaleController.getString(R.string.MuteNotifications), R.drawable.msg_mute, null);
-                    int w02 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.q7, false);
-                    f1Var2.setVisibility(0);
-                    if (MessagesController.getInstance(i11).isDialogNotificationsSoundEnabled(j10, j11)) {
-                        f1Var2.g(LocaleController.getString(R.string.SoundOff), R.drawable.msg_tone_off, null);
-                    } else {
-                        f1Var2.g(LocaleController.getString(R.string.SoundOn), R.drawable.msg_tone_on, null);
-                    }
-                    i10 = w02;
-                }
-                f1Var.c(i10, i10);
-                f1Var.setSelectorColor(org.telegram.ui.ActionBar.g6.l1(0.1f, i10));
-                break;
+                lambda$updateSavedReactionTags$483 = this.b.lambda$updateSavedReactionTags$483((TLRPC.TL_savedReactionTag) obj, (TLRPC.TL_savedReactionTag) obj2);
+                return lambda$updateSavedReactionTags$483;
         }
-    }
-
-    public /* synthetic */ q9(BaseController baseController, long j10, long j11, Object obj, int i10, int i11) {
-        this.a = i11;
-        this.e = baseController;
-        this.b = j10;
-        this.d = j11;
-        this.f = obj;
-        this.c = i10;
-    }
-
-    public /* synthetic */ q9(MessagesController messagesController, long j10, TLRPC.TL_messages_chatFull tL_messages_chatFull, int i10, long j11) {
-        this.a = 1;
-        this.e = messagesController;
-        this.b = j10;
-        this.f = tL_messages_chatFull;
-        this.c = i10;
-        this.d = j11;
     }
 }

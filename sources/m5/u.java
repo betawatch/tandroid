@@ -2,37 +2,22 @@ package m5;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import h7.r8;
+import g7.p8;
 import java.util.Arrays;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class u extends z5.a {
-    public static final Parcelable.Creator<u> CREATOR = new w(20);
-    public final String a;
-    public final String b;
+public final class u extends y5.a {
+    public final int a;
+    public final int b;
+    public final int c;
+    public static final q5.b d = new q5.b("VideoInfo", null);
+    public static final Parcelable.Creator<u> CREATOR = new v(21);
 
-    public u(String str, String str2) {
-        this.a = str;
-        this.b = str2;
-    }
-
-    public final JSONObject b() {
-        JSONObject jSONObject = new JSONObject();
-        try {
-            String str = this.a;
-            if (str != null) {
-                jSONObject.put("adTagUrl", str);
-            }
-            String str2 = this.b;
-            if (str2 != null) {
-                jSONObject.put("adsResponse", str2);
-            }
-        } catch (JSONException unused) {
-        }
-        return jSONObject;
+    public u(int i9, int i10, int i11) {
+        this.a = i9;
+        this.b = i10;
+        this.c = i11;
     }
 
     public final boolean equals(Object obj) {
@@ -43,18 +28,22 @@ public final class u extends z5.a {
             return false;
         }
         u uVar = (u) obj;
-        return r5.a.d(this.a, uVar.a) && r5.a.d(this.b, uVar.b);
+        return this.b == uVar.b && this.a == uVar.a && this.c == uVar.c;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b});
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.b), Integer.valueOf(this.a), Integer.valueOf(this.c)});
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.l(parcel, 2, this.a);
-        r8.l(parcel, 3, this.b);
-        r8.r(parcel, q6);
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.s(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        p8.s(parcel, 3, 4);
+        parcel.writeInt(this.b);
+        p8.s(parcel, 4, 4);
+        parcel.writeInt(this.c);
+        p8.r(parcel, q10);
     }
 }

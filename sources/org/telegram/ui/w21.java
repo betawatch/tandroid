@@ -1,90 +1,114 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.util.LongSparseArray;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class w21 extends FrameLayout {
-    public int a;
-    public TLRPC.TL_channels_sponsoredMessageReportResultChooseOption b;
-    public TLRPC.TL_reportResultChooseOption c;
-    public TLRPC.TL_reportResultAddComment d;
-    public final FrameLayout e;
-    public final org.telegram.ui.Components.k51 f;
-    public final ag.w h;
-    public u21 n;
-    public FrameLayout r;
-    public lh.d s;
-    public final /* synthetic */ x21 v;
+public final /* synthetic */ class w21 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w21(x21 x21Var, Context context) {
-        super(context);
-        org.telegram.ui.ActionBar.c6 c6Var;
-        org.telegram.ui.ActionBar.c6 c6Var2;
-        org.telegram.ui.ActionBar.c6 c6Var3;
-        int i10;
-        org.telegram.ui.ActionBar.c6 c6Var4;
-        this.v = x21Var;
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.e = frameLayout;
-        frameLayout.setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
-        frameLayout.setClipToPadding(true);
-        addView(frameLayout, h7.z5.e(-1, -1, 119));
-        c6Var = ((org.telegram.ui.ActionBar.e3) x21Var).resourcesProvider;
-        ag.w wVar = new ag.w(context, c6Var);
-        TextView textView = (TextView) wVar.d;
-        this.h = wVar;
-        wVar.e = new t21(this, 0);
-        if (x21Var.d) {
-            textView.setText(LocaleController.getString(R.string.ReportAd));
-        } else if (x21Var.e) {
-            textView.setText(LocaleController.getString(R.string.ReportStory));
-        } else {
-            textView.setText(LocaleController.getString(R.string.Report2));
-        }
-        org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) wVar.c;
-        int i11 = org.telegram.ui.ActionBar.g6.G6;
-        c6Var2 = ((org.telegram.ui.ActionBar.e3) x21Var).resourcesProvider;
-        g2Var.a(org.telegram.ui.ActionBar.g6.v0(i11, c6Var2));
-        int i12 = org.telegram.ui.ActionBar.g6.h5;
-        c6Var3 = ((org.telegram.ui.ActionBar.e3) x21Var).resourcesProvider;
-        wVar.setBackgroundColor(org.telegram.ui.ActionBar.g6.v0(i12, c6Var3));
-        addView(wVar, h7.z5.e(-1, -2, 55));
-        i10 = ((org.telegram.ui.ActionBar.e3) x21Var).currentAccount;
-        b5 b5Var = new b5(this, 19);
-        dl0 dl0Var = new dl0(this, 15);
-        c6Var4 = ((org.telegram.ui.ActionBar.e3) x21Var).resourcesProvider;
-        org.telegram.ui.Components.k51 k51Var = new org.telegram.ui.Components.k51(context, i10, 0, true, b5Var, dl0Var, null, c6Var4);
-        this.f = k51Var;
-        k51Var.setClipToPadding(false);
-        k51Var.T2.k1(true);
-        k51Var.setOnScrollListener(new m3(this, 27));
-        frameLayout.addView(k51Var, h7.z5.c(-1.0f, -1));
+    public /* synthetic */ w21(Object obj, int i9) {
+        this.a = i9;
+        this.b = obj;
     }
 
-    public final void a(int i10) {
-        this.a = i10;
-        this.h.b(i10 != 0);
-        org.telegram.ui.Components.k51 k51Var = this.f;
-        if (k51Var != null) {
-            k51Var.U2.N(true);
-        }
-    }
-
-    public final void b(TLRPC.TL_reportResultAddComment tL_reportResultAddComment) {
-        this.b = null;
-        this.c = null;
-        this.d = tL_reportResultAddComment;
-        this.f.U2.N(false);
-        if (this.n != null) {
-            AndroidUtilities.runOnUIThread(new t21(this, 1), 120L);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                u21 u21Var = (u21) ((bh.g) this.b).e;
+                if (u21Var != null) {
+                    u21Var.run();
+                    break;
+                }
+                break;
+            case 1:
+                ((d31) this.b).dismiss();
+                break;
+            case 2:
+                SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) this.b;
+                if (saveToGallerySettingsActivity.d) {
+                    LongSparseArray<SaveToGallerySettingsHelper.DialogException> saveGalleryExceptions = saveToGallerySettingsActivity.getUserConfig().getSaveGalleryExceptions(saveToGallerySettingsActivity.a);
+                    SaveToGallerySettingsHelper.DialogException dialogException = saveToGallerySettingsActivity.c;
+                    saveGalleryExceptions.put(dialogException.dialogId, dialogException);
+                    saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.a, saveGalleryExceptions);
+                }
+                saveToGallerySettingsActivity.finishFragment();
+                break;
+            case 3:
+                ((n31) this.b).dismiss();
+                break;
+            case 4:
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
+                MessageObject messageObject = secretMediaViewer.d0;
+                if (messageObject != null) {
+                    TLRPC.Message message = messageObject.messageOwner;
+                    if (message.destroyTime != 0 || message.ttl == Integer.MAX_VALUE) {
+                        kh.x3 x3Var = secretMediaViewer.r;
+                        if (x3Var.R) {
+                            x3Var.e(true);
+                            break;
+                        } else {
+                            secretMediaViewer.l();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 5:
+                l61 l61Var = (l61) this.b;
+                if (l61Var.W instanceof TLRPC.User) {
+                    kh.d dVar = l61Var.d0;
+                    if (!dVar.J) {
+                        dVar.setLoading(true);
+                        l61Var.S((TLRPC.User) l61Var.W, null, null);
+                        break;
+                    }
+                }
+                break;
+            case 6:
+                l71.a((l71) this.b);
+                break;
+            case 7:
+                ((dd1) this.b).c(true);
+                break;
+            case 8:
+                ((dd1) ((bg.x) this.b).c).c(true);
+                break;
+            case 9:
+                kd1 kd1Var = (kd1) this.b;
+                ArrayList arrayList = kd1Var.f;
+                HashSet hashSet = kd1Var.w;
+                if (!hashSet.isEmpty()) {
+                    TLRPC.User user = kd1Var.getMessagesController().getUser(Long.valueOf(kd1Var.getUserConfig().getClientUserId()));
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i9 = 0; i9 < arrayList.size(); i9++) {
+                        if (hashSet.contains(Long.valueOf(((TLRPC.Chat) arrayList.get(i9)).id))) {
+                            arrayList2.add((TLRPC.Chat) arrayList.get(i9));
+                        }
+                    }
+                    for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+                        TLRPC.Chat chat = (TLRPC.Chat) arrayList2.get(i10);
+                        kd1Var.getMessagesController().putChat(chat, false);
+                        kd1Var.getMessagesController().deleteParticipantFromChat(chat.id, user);
+                    }
+                    kd1Var.finishFragment();
+                    break;
+                }
+                break;
+            default:
+                fi1 fi1Var = (fi1) this.b;
+                fi1Var.a.c(!r0.b(), true);
+                fi1Var.c.setEnabled(fi1Var.a.b());
+                fi1Var.c.animate().alpha(fi1Var.a.b() ? 1.0f : 0.5f).start();
+                break;
         }
     }
 }

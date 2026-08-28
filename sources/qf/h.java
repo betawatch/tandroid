@@ -1,90 +1,30 @@
 package qf;
 
-import java.util.ArrayList;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
+import android.animation.ValueAnimator;
+import kh.g4;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class h {
-    public static volatile h[] g = new h[4];
-    public static final Object[] h = new Object[4];
     public final int a;
-    public long b;
-    public TL_account.connectedBots c;
-    public final ArrayList d = new ArrayList();
-    public boolean e;
-    public boolean f;
+    public int b;
+    public float c;
+    public float d;
+    public ValueAnimator e;
+    public float f = 0.0f;
+    public final /* synthetic */ j g;
 
-    static {
-        for (int i10 = 0; i10 < 4; i10++) {
-            h[i10] = new Object();
-        }
+    public h(j jVar, int i9) {
+        this.g = jVar;
+        this.a = i9;
     }
 
-    public h(int i10) {
-        this.a = i10;
-    }
-
-    public static h a(int i10) {
-        h hVar;
-        h hVar2 = g[i10];
-        if (hVar2 != null) {
-            return hVar2;
-        }
-        synchronized (h[i10]) {
-            try {
-                hVar = g[i10];
-                if (hVar == null) {
-                    h[] hVarArr = g;
-                    h hVar3 = new h(i10);
-                    hVarArr[i10] = hVar3;
-                    hVar = hVar3;
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return hVar;
-    }
-
-    public final void b() {
-        this.f = false;
-        c(null);
-    }
-
-    public final void c(Utilities.Callback callback) {
-        boolean z10;
-        if (callback != null) {
-            this.d.add(callback);
-        }
-        if (this.e) {
-            return;
-        }
-        if (System.currentTimeMillis() - this.b > 60000 || !(z10 = this.f)) {
-            this.e = true;
-            ConnectionsManager.getInstance(this.a).sendRequest(new TL_account.getConnectedBots(), new cf.a(this, 23));
-        } else if (z10) {
-            d();
-        }
-    }
-
-    public final void d() {
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.d;
-            if (i10 >= arrayList.size()) {
-                arrayList.clear();
-                NotificationCenter.getInstance(this.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updatedChatbot, new Object[0]);
-                return;
-            } else {
-                if (arrayList.get(i10) != null) {
-                    ((Utilities.Callback) arrayList.get(i10)).run(this.c);
-                }
-                i10++;
-            }
-        }
+    public final void a() {
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.e = ofFloat;
+        ofFloat.setDuration(600L);
+        this.e.setInterpolator(g.y1);
+        this.e.addUpdateListener(new g4(this, 15));
+        this.e.start();
     }
 }

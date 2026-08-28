@@ -12,7 +12,7 @@ public final class w0 {
     public w0() {
         String[] strArr = {"com.google.protobuf.AndroidProto3SchemaFactory"};
         k0 k0Var = null;
-        for (int i10 = 0; i10 <= 0; i10++) {
+        for (int i9 = 0; i9 <= 0; i9++) {
             try {
                 k0Var = (k0) Class.forName(strArr[0]).getConstructor(null).newInstance(null);
             } catch (Throwable unused) {

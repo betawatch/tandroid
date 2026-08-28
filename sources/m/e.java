@@ -4,26 +4,26 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class e extends l.w {
+public final class e extends l.v {
     public final /* synthetic */ int l = 0;
     public final /* synthetic */ i m;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(i iVar, Context context, l.l lVar, View view) {
-        super(context, lVar, view, true, R.attr.actionOverflowMenuStyle, 0);
+    public e(i iVar, Context context, l.k kVar, View view) {
+        super(context, kVar, view, true, R.attr.actionOverflowMenuStyle, 0);
         this.m = iVar;
         this.f = 8388613;
-        k5.i iVar2 = iVar.I;
-        this.h = iVar2;
-        l.t tVar = this.i;
-        if (tVar != null) {
-            tVar.h(iVar2);
+        android.support.v4.media.c cVar = iVar.I;
+        this.h = cVar;
+        l.s sVar = this.i;
+        if (sVar != null) {
+            sVar.h(cVar);
         }
     }
 
-    @Override // l.w
+    @Override // l.v
     public final void c() {
         switch (this.l) {
             case 0:
@@ -34,9 +34,9 @@ public final class e extends l.w {
                 break;
             default:
                 i iVar2 = this.m;
-                l.l lVar = iVar2.c;
-                if (lVar != null) {
-                    lVar.c(true);
+                l.k kVar = iVar2.c;
+                if (kVar != null) {
+                    kVar.c(true);
                 }
                 iVar2.E = null;
                 super.c();
@@ -45,18 +45,18 @@ public final class e extends l.w {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(i iVar, Context context, l.e0 e0Var, View view) {
-        super(context, e0Var, view, false, R.attr.actionOverflowMenuStyle, 0);
+    public e(i iVar, Context context, l.d0 d0Var, View view) {
+        super(context, d0Var, view, false, R.attr.actionOverflowMenuStyle, 0);
         this.m = iVar;
-        if ((e0Var.A.x & 32) != 32) {
+        if ((d0Var.A.x & 32) != 32) {
             View view2 = iVar.r;
             this.e = view2 == null ? (View) iVar.n : view2;
         }
-        k5.i iVar2 = iVar.I;
-        this.h = iVar2;
-        l.t tVar = this.i;
-        if (tVar != null) {
-            tVar.h(iVar2);
+        android.support.v4.media.c cVar = iVar.I;
+        this.h = cVar;
+        l.s sVar = this.i;
+        if (sVar != null) {
+            sVar.h(cVar);
         }
     }
 }

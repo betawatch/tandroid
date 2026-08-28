@@ -2,16 +2,17 @@ package h3;
 
 import android.net.Uri;
 import android.os.Bundle;
+import fh.y5;
 import java.util.Arrays;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class h1 implements g {
     public static final String A0;
     public static final String B0;
-    public static final f9.z C0;
+    public static final y5 C0;
     public static final h1 U = new h1(new g1());
     public static final String V;
     public static final String W;
@@ -80,7 +81,7 @@ public final class h1 implements g {
     public final Integer y;
 
     static {
-        int i10 = d5.g0.a;
+        int i9 = d5.f0.a;
         V = Integer.toString(0, 36);
         W = Integer.toString(1, 36);
         X = Integer.toString(2, 36);
@@ -114,15 +115,15 @@ public final class h1 implements g {
         z0 = Integer.toString(31, 36);
         A0 = Integer.toString(32, 36);
         B0 = Integer.toString(MediaDataController.MAX_STYLE_RUNS_COUNT, 36);
-        C0 = new f9.z(24);
+        C0 = new y5(20);
     }
 
     public h1(g1 g1Var) {
         Boolean bool = g1Var.p;
         Integer num = g1Var.o;
         Integer num2 = g1Var.F;
-        int i10 = 1;
-        int i11 = 0;
+        int i9 = 1;
+        int i10 = 0;
         if (bool != null) {
             if (!bool.booleanValue()) {
                 num = -1;
@@ -161,27 +162,27 @@ public final class h1 implements g {
                         case 29:
                         case MessageObject.TYPE_GIFT_STARS /* 30 */:
                         default:
-                            i10 = 0;
+                            i9 = 0;
                             break;
                         case 21:
-                            i10 = 2;
+                            i9 = 2;
                             break;
                         case 22:
-                            i10 = 3;
+                            i9 = 3;
                             break;
                         case 23:
-                            i10 = 4;
+                            i9 = 4;
                             break;
                         case 24:
-                            i10 = 5;
+                            i9 = 5;
                             break;
                         case 25:
-                            i10 = 6;
+                            i9 = 6;
                             break;
                     }
-                    i11 = i10;
+                    i10 = i9;
                 }
-                num = Integer.valueOf(i11);
+                num = Integer.valueOf(i10);
             }
         } else if (num != null) {
             boolean z10 = num.intValue() != -1;
@@ -191,25 +192,25 @@ public final class h1 implements g {
                     case 1:
                         break;
                     case 2:
-                        i11 = 21;
+                        i10 = 21;
                         break;
                     case 3:
-                        i11 = 22;
+                        i10 = 22;
                         break;
                     case 4:
-                        i11 = 23;
+                        i10 = 23;
                         break;
                     case 5:
-                        i11 = 24;
+                        i10 = 24;
                         break;
                     case 6:
-                        i11 = 25;
+                        i10 = 25;
                         break;
                     default:
-                        i11 = 20;
+                        i10 = 20;
                         break;
                 }
-                num2 = Integer.valueOf(i11);
+                num2 = Integer.valueOf(i10);
             }
         }
         this.a = g1Var.a;
@@ -293,7 +294,7 @@ public final class h1 implements g {
         }
         if (obj != null && h1.class == obj.getClass()) {
             h1 h1Var = (h1) obj;
-            if (d5.g0.a(this.a, h1Var.a) && d5.g0.a(this.b, h1Var.b) && d5.g0.a(this.c, h1Var.c) && d5.g0.a(this.d, h1Var.d) && d5.g0.a(this.e, h1Var.e) && d5.g0.a(this.f, h1Var.f) && d5.g0.a(this.h, h1Var.h) && d5.g0.a(this.n, h1Var.n) && d5.g0.a(this.r, h1Var.r) && Arrays.equals(this.s, h1Var.s) && d5.g0.a(this.v, h1Var.v) && d5.g0.a(this.w, h1Var.w) && d5.g0.a(this.x, h1Var.x) && d5.g0.a(this.y, h1Var.y) && d5.g0.a(this.A, h1Var.A) && d5.g0.a(this.B, h1Var.B) && d5.g0.a(this.C, h1Var.C) && d5.g0.a(this.E, h1Var.E) && d5.g0.a(this.F, h1Var.F) && d5.g0.a(this.G, h1Var.G) && d5.g0.a(this.H, h1Var.H) && d5.g0.a(this.I, h1Var.I) && d5.g0.a(this.J, h1Var.J) && d5.g0.a(this.K, h1Var.K) && d5.g0.a(this.L, h1Var.L) && d5.g0.a(this.M, h1Var.M) && d5.g0.a(this.N, h1Var.N) && d5.g0.a(this.O, h1Var.O) && d5.g0.a(this.P, h1Var.P) && d5.g0.a(this.Q, h1Var.Q) && d5.g0.a(this.R, h1Var.R) && d5.g0.a(this.S, h1Var.S)) {
+            if (d5.f0.a(this.a, h1Var.a) && d5.f0.a(this.b, h1Var.b) && d5.f0.a(this.c, h1Var.c) && d5.f0.a(this.d, h1Var.d) && d5.f0.a(this.e, h1Var.e) && d5.f0.a(this.f, h1Var.f) && d5.f0.a(this.h, h1Var.h) && d5.f0.a(this.n, h1Var.n) && d5.f0.a(this.r, h1Var.r) && Arrays.equals(this.s, h1Var.s) && d5.f0.a(this.v, h1Var.v) && d5.f0.a(this.w, h1Var.w) && d5.f0.a(this.x, h1Var.x) && d5.f0.a(this.y, h1Var.y) && d5.f0.a(this.A, h1Var.A) && d5.f0.a(this.B, h1Var.B) && d5.f0.a(this.C, h1Var.C) && d5.f0.a(this.E, h1Var.E) && d5.f0.a(this.F, h1Var.F) && d5.f0.a(this.G, h1Var.G) && d5.f0.a(this.H, h1Var.H) && d5.f0.a(this.I, h1Var.I) && d5.f0.a(this.J, h1Var.J) && d5.f0.a(this.K, h1Var.K) && d5.f0.a(this.L, h1Var.L) && d5.f0.a(this.M, h1Var.M) && d5.f0.a(this.N, h1Var.N) && d5.f0.a(this.O, h1Var.O) && d5.f0.a(this.P, h1Var.P) && d5.f0.a(this.Q, h1Var.Q) && d5.f0.a(this.R, h1Var.R) && d5.f0.a(this.S, h1Var.S)) {
                 return true;
             }
         }

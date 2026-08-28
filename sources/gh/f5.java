@@ -1,70 +1,37 @@
 package gh;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.n41;
-import org.telegram.ui.Components.ri0;
-import org.telegram.ui.Components.zk0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class f5 extends m41 {
-    public static final /* synthetic */ int a = 0;
+public final class f5 extends AnimatorListenerAdapter {
+    public final /* synthetic */ g5 a;
 
-    static {
-        m41.setup(new f5());
+    public f5(g5 g5Var) {
+        this.a = g5Var;
     }
 
-    @Override // org.telegram.ui.Components.m41
-    public final void bindView(View view, n41 n41Var, boolean z10, b51 b51Var, k51 k51Var) {
-        g5 g5Var = (g5) view;
-        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) n41Var.G;
-        int i10 = n41Var.z;
-        String str = (String) n41Var.l;
-        boolean z11 = n41Var.e;
-        org.telegram.ui.ActionBar.c6 c6Var = g5Var.B;
-        ri0 ri0Var = g5Var.c;
-        e5 e5Var = g5Var.J;
-        if (e5Var == null || g5Var.I != stargiftattributepattern.document.id) {
-            g5Var.I = stargiftattributepattern.document.id;
-            if (e5Var != null) {
-                e5Var.o(ri0Var);
-            }
-            e5 e5Var2 = new e5(3, g5Var.H, stargiftattributepattern.document);
-            g5Var.J = e5Var2;
-            e5Var2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.E8, c6Var), PorterDuff.Mode.SRC_IN));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        g5 g5Var = this.a;
+        fh.o1 o1Var = g5Var.e0;
+        g5Var.o0 = g5Var.n0;
+        g5Var.d(g5Var.Q);
+        TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = g5Var.e;
+        int i9 = 2 - g5Var.n0;
+        stargiftattributemodelArr[i9] = (TL_stars.starGiftAttributeModel) g5Var.S.f;
+        oa.Z0(g5Var.d[i9].getImageReceiver(), stargiftattributemodelArr[2 - g5Var.n0].document, 160);
+        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) g5Var.T.f;
+        if (stargiftattributepattern != null) {
+            org.telegram.ui.Components.k5 m10 = org.telegram.ui.Components.k5.m(UserConfig.selectedAccount, 7, stargiftattributepattern.document);
+            m10.m = true;
+            m10.v();
         }
-        if (ri0Var.isAttachedToWindow()) {
-            g5Var.J.a(ri0Var);
-        }
-        CharSequence charSequence = stargiftattributepattern.name;
-        if (!TextUtils.isEmpty(str)) {
-            charSequence = AndroidUtilities.highlightText(charSequence, str, c6Var);
-        }
-        if (i10 > 0) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-            spannableStringBuilder.append((CharSequence) "  ");
-            int length = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) Integer.toString(i10));
-            spannableStringBuilder.setSpan(new k41(AndroidUtilities.bold()), length, spannableStringBuilder.length(), 33);
-            charSequence = spannableStringBuilder;
-        }
-        g5Var.g(charSequence, 0, g5Var.J);
-        g5Var.setChecked(z11);
-    }
-
-    @Override // org.telegram.ui.Components.m41
-    public final View createView(Context context, zk0 zk0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
-        return new g5(context, i10, c6Var);
+        AndroidUtilities.cancelRunOnUIThread(o1Var);
+        AndroidUtilities.runOnUIThread(o1Var, 2500L);
     }
 }

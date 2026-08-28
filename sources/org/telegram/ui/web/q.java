@@ -1,42 +1,37 @@
 package org.telegram.ui.web;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class q implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z0 b;
-    public final /* synthetic */ String c;
+import org.json.JSONObject;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ q(z0 z0Var, String str, int i10) {
-        this.a = i10;
-        this.b = z0Var;
-        this.c = str;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class q implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y0 b;
+
+    public /* synthetic */ q(y0 y0Var, int i9) {
+        this.a = i9;
+        this.b = y0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                w0 w0Var = this.b.a;
-                if (w0Var != null) {
-                    w0Var.d(this.c);
+                y0 y0Var = this.b;
+                y0Var.getClass();
+                if (!((Boolean) obj).booleanValue()) {
+                    y0Var.v("home_screen_failed", y0.x("UNSUPPORTED", "error"));
+                    break;
+                } else {
+                    y0Var.v("home_screen_added", null);
                     break;
                 }
+            case 1:
+                this.b.v("location_requested", (JSONObject) obj);
                 break;
             default:
-                z0 z0Var = this.b;
-                z0Var.J = false;
-                z0Var.L = 0L;
-                z0Var.P = false;
-                String str = this.c;
-                z0Var.b = str;
-                z0Var.c();
-                w0 w0Var2 = z0Var.a;
-                if (w0Var2 != null) {
-                    w0Var2.onResume();
-                    z0Var.a.loadUrl(str);
-                    break;
-                }
+                this.b.v("location_requested", (JSONObject) obj);
                 break;
         }
     }

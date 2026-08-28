@@ -27,26 +27,26 @@ import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class GoogleMapsProvider implements IMapsProvider {
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class GoogleCameraUpdate implements IMapsProvider.ICameraUpdate {
-        private s7.a cameraUpdate;
+        private r7.a cameraUpdate;
 
-        private GoogleCameraUpdate(s7.a aVar) {
+        private GoogleCameraUpdate(r7.a aVar) {
             this.cameraUpdate = aVar;
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class GoogleCircleOptions implements IMapsProvider.ICircleOptions {
-        private u7.b circleOptions;
+        private t7.b circleOptions;
 
         @Override // org.telegram.messenger.IMapsProvider.ICircleOptions
         public IMapsProvider.ICircleOptions center(IMapsProvider.LatLng latLng) {
-            u7.b bVar = this.circleOptions;
+            t7.b bVar = this.circleOptions;
             LatLng latLng2 = new LatLng(latLng.latitude, latLng.longitude);
             bVar.getClass();
             bVar.a = latLng2;
@@ -54,8 +54,8 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
 
         @Override // org.telegram.messenger.IMapsProvider.ICircleOptions
-        public IMapsProvider.ICircleOptions fillColor(int i10) {
-            this.circleOptions.e = i10;
+        public IMapsProvider.ICircleOptions fillColor(int i9) {
+            this.circleOptions.e = i9;
             return this;
         }
 
@@ -66,8 +66,8 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
 
         @Override // org.telegram.messenger.IMapsProvider.ICircleOptions
-        public IMapsProvider.ICircleOptions strokeColor(int i10) {
-            this.circleOptions.d = i10;
+        public IMapsProvider.ICircleOptions strokeColor(int i9) {
+            this.circleOptions.d = i9;
             return this;
         }
 
@@ -76,9 +76,9 @@ public class GoogleMapsProvider implements IMapsProvider {
             ArrayList arrayList = new ArrayList();
             for (IMapsProvider.PatternItem patternItem : list) {
                 if (patternItem instanceof IMapsProvider.PatternItem.Gap) {
-                    arrayList.add(new u7.c(((IMapsProvider.PatternItem.Gap) patternItem).length, 1));
+                    arrayList.add(new t7.c(((IMapsProvider.PatternItem.Gap) patternItem).length, 1));
                 } else if (patternItem instanceof IMapsProvider.PatternItem.Dash) {
-                    arrayList.add(new u7.c(((IMapsProvider.PatternItem.Dash) patternItem).length, 0));
+                    arrayList.add(new t7.c(((IMapsProvider.PatternItem.Dash) patternItem).length, 0));
                 }
             }
             this.circleOptions.r = arrayList;
@@ -86,13 +86,13 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
 
         @Override // org.telegram.messenger.IMapsProvider.ICircleOptions
-        public IMapsProvider.ICircleOptions strokeWidth(int i10) {
-            this.circleOptions.c = i10;
+        public IMapsProvider.ICircleOptions strokeWidth(int i9) {
+            this.circleOptions.c = i9;
             return this;
         }
 
         private GoogleCircleOptions() {
-            u7.b bVar = new u7.b();
+            t7.b bVar = new t7.b();
             bVar.a = null;
             bVar.b = 0.0d;
             bVar.c = 10.0f;
@@ -106,7 +106,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class GoogleLatLngBounds implements IMapsProvider.ILatLngBounds {
         private LatLngBounds bounds;
 
@@ -116,13 +116,13 @@ public class GoogleMapsProvider implements IMapsProvider {
             LatLng latLng = latLngBounds.a;
             double d = latLng.a;
             LatLng latLng2 = latLngBounds.b;
-            double d10 = (d + latLng2.a) / 2.0d;
-            double d11 = latLng2.b;
-            double d12 = latLng.b;
-            if (d12 > d11) {
-                d11 += 360.0d;
+            double d9 = (d + latLng2.a) / 2.0d;
+            double d10 = latLng2.b;
+            double d11 = latLng.b;
+            if (d11 > d10) {
+                d10 += 360.0d;
             }
-            LatLng latLng3 = new LatLng(d10, (d11 + d12) / 2.0d);
+            LatLng latLng3 = new LatLng(d9, (d10 + d11) / 2.0d);
             return new IMapsProvider.LatLng(latLng3.a, latLng3.b);
         }
 
@@ -131,47 +131,47 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class GoogleLatLngBoundsBuilder implements IMapsProvider.ILatLngBoundsBuilder {
-        private u7.d builder;
+        private t7.d builder;
 
         @Override // org.telegram.messenger.IMapsProvider.ILatLngBoundsBuilder
         public IMapsProvider.ILatLngBounds build() {
-            u7.d dVar = this.builder;
-            y5.l.j("no included points", !Double.isNaN(dVar.c));
+            t7.d dVar = this.builder;
+            x5.l.j("no included points", !Double.isNaN(dVar.c));
             return new GoogleLatLngBounds(new LatLngBounds(new LatLng(dVar.a, dVar.c), new LatLng(dVar.b, dVar.d)));
         }
 
         @Override // org.telegram.messenger.IMapsProvider.ILatLngBoundsBuilder
         public IMapsProvider.ILatLngBoundsBuilder include(IMapsProvider.LatLng latLng) {
-            u7.d dVar = this.builder;
+            t7.d dVar = this.builder;
             LatLng latLng2 = new LatLng(latLng.latitude, latLng.longitude);
             dVar.getClass();
             double d = dVar.a;
-            double d10 = latLng2.a;
-            dVar.a = Math.min(d, d10);
-            dVar.b = Math.max(dVar.b, d10);
+            double d9 = latLng2.a;
+            dVar.a = Math.min(d, d9);
+            dVar.b = Math.max(dVar.b, d9);
             boolean isNaN = Double.isNaN(dVar.c);
-            double d11 = latLng2.b;
+            double d10 = latLng2.b;
             if (isNaN) {
-                dVar.c = d11;
-                dVar.d = d11;
+                dVar.c = d10;
+                dVar.d = d10;
                 return this;
             }
-            double d12 = dVar.c;
-            double d13 = dVar.d;
-            if (d12 > d13 ? !(d12 <= d11 || d11 <= d13) : !(d12 <= d11 && d11 <= d13)) {
-                if (((d12 - d11) + 360.0d) % 360.0d < ((d11 - d13) + 360.0d) % 360.0d) {
-                    dVar.c = d11;
+            double d11 = dVar.c;
+            double d12 = dVar.d;
+            if (d11 > d12 ? !(d11 <= d10 || d10 <= d12) : !(d11 <= d10 && d10 <= d12)) {
+                if (((d11 - d10) + 360.0d) % 360.0d < ((d10 - d12) + 360.0d) % 360.0d) {
+                    dVar.c = d10;
                     return this;
                 }
-                dVar.d = d11;
+                dVar.d = d10;
             }
             return this;
         }
 
         private GoogleLatLngBoundsBuilder() {
-            u7.d dVar = new u7.d();
+            t7.d dVar = new t7.d();
             dVar.a = Double.POSITIVE_INFINITY;
             dVar.b = Double.NEGATIVE_INFINITY;
             dVar.c = Double.NaN;
@@ -180,230 +180,230 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class GoogleMapImpl implements IMapsProvider.IMap {
-        private s7.c googleMap;
-        private Map<u7.a, GoogleCircle> implToAbsCircleMap;
-        private Map<u7.f, GoogleMarker> implToAbsMarkerMap;
+        private r7.c googleMap;
+        private Map<t7.a, GoogleCircle> implToAbsCircleMap;
+        private Map<t7.f, GoogleMarker> implToAbsMarkerMap;
 
-        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
         public final class GoogleCircle implements IMapsProvider.ICircle {
-            private u7.a circle;
+            private t7.a circle;
 
             @Override // org.telegram.messenger.IMapsProvider.ICircle
             public double getRadius() {
-                u7.a aVar = this.circle;
+                t7.a aVar = this.circle;
                 aVar.getClass();
                 try {
-                    d7.f fVar = (d7.f) aVar.a;
+                    c7.f fVar = (c7.f) aVar.a;
                     Parcel L0 = fVar.L0(fVar.M0(), 6);
                     double readDouble = L0.readDouble();
                     L0.recycle();
                     return readDouble;
-                } catch (RemoteException e9) {
-                    throw new a7.c(e9);
+                } catch (RemoteException e10) {
+                    throw new androidx.car.app.j(e10);
                 }
             }
 
             @Override // org.telegram.messenger.IMapsProvider.ICircle
             public void remove() {
-                u7.a aVar = this.circle;
+                t7.a aVar = this.circle;
                 aVar.getClass();
                 try {
-                    d7.f fVar = (d7.f) aVar.a;
+                    c7.f fVar = (c7.f) aVar.a;
                     fVar.Q0(fVar.M0(), 1);
                     GoogleMapImpl.this.implToAbsCircleMap.remove(this.circle);
-                } catch (RemoteException e9) {
-                    throw new a7.c(e9);
+                } catch (RemoteException e10) {
+                    throw new androidx.car.app.j(e10);
                 }
             }
 
             @Override // org.telegram.messenger.IMapsProvider.ICircle
             public void setCenter(IMapsProvider.LatLng latLng) {
-                u7.a aVar = this.circle;
+                t7.a aVar = this.circle;
                 LatLng latLng2 = new LatLng(latLng.latitude, latLng.longitude);
                 aVar.getClass();
                 try {
-                    d7.f fVar = (d7.f) aVar.a;
+                    c7.f fVar = (c7.f) aVar.a;
                     Parcel M0 = fVar.M0();
-                    d7.b.b(M0, latLng2);
+                    c7.b.b(M0, latLng2);
                     fVar.Q0(M0, 3);
-                } catch (RemoteException e9) {
-                    throw new a7.c(e9);
+                } catch (RemoteException e10) {
+                    throw new androidx.car.app.j(e10);
                 }
             }
 
             @Override // org.telegram.messenger.IMapsProvider.ICircle
-            public void setFillColor(int i10) {
-                u7.a aVar = this.circle;
+            public void setFillColor(int i9) {
+                t7.a aVar = this.circle;
                 aVar.getClass();
                 try {
-                    d7.f fVar = (d7.f) aVar.a;
+                    c7.f fVar = (c7.f) aVar.a;
                     Parcel M0 = fVar.M0();
-                    M0.writeInt(i10);
+                    M0.writeInt(i9);
                     fVar.Q0(M0, 11);
-                } catch (RemoteException e9) {
-                    throw new a7.c(e9);
+                } catch (RemoteException e10) {
+                    throw new androidx.car.app.j(e10);
                 }
             }
 
             @Override // org.telegram.messenger.IMapsProvider.ICircle
             public void setRadius(double d) {
-                u7.a aVar = this.circle;
+                t7.a aVar = this.circle;
                 aVar.getClass();
                 try {
-                    d7.f fVar = (d7.f) aVar.a;
+                    c7.f fVar = (c7.f) aVar.a;
                     Parcel M0 = fVar.M0();
                     M0.writeDouble(d);
                     fVar.Q0(M0, 5);
-                } catch (RemoteException e9) {
-                    throw new a7.c(e9);
+                } catch (RemoteException e10) {
+                    throw new androidx.car.app.j(e10);
                 }
             }
 
             @Override // org.telegram.messenger.IMapsProvider.ICircle
-            public void setStrokeColor(int i10) {
-                u7.a aVar = this.circle;
+            public void setStrokeColor(int i9) {
+                t7.a aVar = this.circle;
                 aVar.getClass();
                 try {
-                    d7.f fVar = (d7.f) aVar.a;
+                    c7.f fVar = (c7.f) aVar.a;
                     Parcel M0 = fVar.M0();
-                    M0.writeInt(i10);
+                    M0.writeInt(i9);
                     fVar.Q0(M0, 9);
-                } catch (RemoteException e9) {
-                    throw new a7.c(e9);
+                } catch (RemoteException e10) {
+                    throw new androidx.car.app.j(e10);
                 }
             }
 
-            private GoogleCircle(u7.a aVar) {
+            private GoogleCircle(t7.a aVar) {
                 this.circle = aVar;
             }
         }
 
-        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
         public final class GoogleMarker implements IMapsProvider.IMarker {
-            private u7.f marker;
+            private t7.f marker;
 
             @Override // org.telegram.messenger.IMapsProvider.IMarker
             public IMapsProvider.LatLng getPosition() {
-                u7.f fVar = this.marker;
+                t7.f fVar = this.marker;
                 fVar.getClass();
                 try {
-                    d7.i iVar = (d7.i) fVar.a;
+                    c7.i iVar = (c7.i) fVar.a;
                     Parcel L0 = iVar.L0(iVar.M0(), 4);
                     Parcelable.Creator<LatLng> creator = LatLng.CREATOR;
-                    int i10 = d7.b.a;
+                    int i9 = c7.b.a;
                     LatLng createFromParcel = L0.readInt() == 0 ? null : creator.createFromParcel(L0);
                     L0.recycle();
                     return new IMapsProvider.LatLng(createFromParcel.a, createFromParcel.b);
-                } catch (RemoteException e9) {
-                    throw new a7.c(e9);
+                } catch (RemoteException e10) {
+                    throw new androidx.car.app.j(e10);
                 }
             }
 
             @Override // org.telegram.messenger.IMapsProvider.IMarker
             public Object getTag() {
-                u7.f fVar = this.marker;
+                t7.f fVar = this.marker;
                 fVar.getClass();
                 try {
-                    d7.i iVar = (d7.i) fVar.a;
+                    c7.i iVar = (c7.i) fVar.a;
                     Parcel L0 = iVar.L0(iVar.M0(), 30);
-                    i6.a J0 = i6.b.J0(L0.readStrongBinder());
+                    h6.a J0 = h6.b.J0(L0.readStrongBinder());
                     L0.recycle();
-                    return i6.b.K0(J0);
-                } catch (RemoteException e9) {
-                    throw new a7.c(e9);
+                    return h6.b.K0(J0);
+                } catch (RemoteException e10) {
+                    throw new androidx.car.app.j(e10);
                 }
             }
 
             @Override // org.telegram.messenger.IMapsProvider.IMarker
             public void remove() {
-                u7.f fVar = this.marker;
+                t7.f fVar = this.marker;
                 fVar.getClass();
                 try {
-                    d7.i iVar = (d7.i) fVar.a;
+                    c7.i iVar = (c7.i) fVar.a;
                     iVar.Q0(iVar.M0(), 1);
                     GoogleMapImpl.this.implToAbsMarkerMap.remove(this.marker);
-                } catch (RemoteException e9) {
-                    throw new a7.c(e9);
+                } catch (RemoteException e10) {
+                    throw new androidx.car.app.j(e10);
                 }
             }
 
             @Override // org.telegram.messenger.IMapsProvider.IMarker
             public void setIcon(Bitmap bitmap) {
-                this.marker.a(h7.r7.a(bitmap));
+                this.marker.a(g7.m7.a(bitmap));
             }
 
             @Override // org.telegram.messenger.IMapsProvider.IMarker
             public void setPosition(IMapsProvider.LatLng latLng) {
-                u7.f fVar = this.marker;
+                t7.f fVar = this.marker;
                 LatLng latLng2 = new LatLng(latLng.latitude, latLng.longitude);
                 fVar.getClass();
                 try {
-                    d7.i iVar = (d7.i) fVar.a;
+                    c7.i iVar = (c7.i) fVar.a;
                     Parcel M0 = iVar.M0();
-                    d7.b.b(M0, latLng2);
+                    c7.b.b(M0, latLng2);
                     iVar.Q0(M0, 3);
-                } catch (RemoteException e9) {
-                    throw new a7.c(e9);
+                } catch (RemoteException e10) {
+                    throw new androidx.car.app.j(e10);
                 }
             }
 
             @Override // org.telegram.messenger.IMapsProvider.IMarker
-            public void setRotation(int i10) {
-                u7.f fVar = this.marker;
-                float f10 = i10;
+            public void setRotation(int i9) {
+                t7.f fVar = this.marker;
+                float f10 = i9;
                 fVar.getClass();
                 try {
-                    d7.i iVar = (d7.i) fVar.a;
+                    c7.i iVar = (c7.i) fVar.a;
                     Parcel M0 = iVar.M0();
                     M0.writeFloat(f10);
                     iVar.Q0(M0, 22);
-                } catch (RemoteException e9) {
-                    throw new a7.c(e9);
+                } catch (RemoteException e10) {
+                    throw new androidx.car.app.j(e10);
                 }
             }
 
             @Override // org.telegram.messenger.IMapsProvider.IMarker
             public void setTag(Object obj) {
-                u7.f fVar = this.marker;
+                t7.f fVar = this.marker;
                 fVar.getClass();
                 try {
-                    d7.a aVar = fVar.a;
-                    i6.b bVar = new i6.b(obj);
-                    d7.i iVar = (d7.i) aVar;
+                    c7.a aVar = fVar.a;
+                    h6.b bVar = new h6.b(obj);
+                    c7.i iVar = (c7.i) aVar;
                     Parcel M0 = iVar.M0();
-                    d7.b.c(M0, bVar);
+                    c7.b.c(M0, bVar);
                     iVar.Q0(M0, 29);
-                } catch (RemoteException e9) {
-                    throw new a7.c(e9);
+                } catch (RemoteException e10) {
+                    throw new androidx.car.app.j(e10);
                 }
             }
 
-            private GoogleMarker(u7.f fVar) {
+            private GoogleMarker(t7.f fVar) {
                 this.marker = fVar;
             }
 
             @Override // org.telegram.messenger.IMapsProvider.IMarker
-            public void setIcon(int i10) {
-                this.marker.a(h7.r7.b(i10));
+            public void setIcon(int i9) {
+                this.marker.a(g7.m7.b(i9));
             }
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$setOnCameraMoveStartedListener$0(IMapsProvider.OnCameraMoveStartedListener onCameraMoveStartedListener, int i10) {
-            int i11 = 2;
-            if (i10 != 2) {
-                i11 = 3;
-                if (i10 != 3) {
-                    i11 = 1;
+        public static /* synthetic */ void lambda$setOnCameraMoveStartedListener$0(IMapsProvider.OnCameraMoveStartedListener onCameraMoveStartedListener, int i9) {
+            int i10 = 2;
+            if (i9 != 2) {
+                i10 = 3;
+                if (i9 != 3) {
+                    i10 = 1;
                 }
             }
-            onCameraMoveStartedListener.onCameraMoveStarted(i11);
+            onCameraMoveStartedListener.onCameraMoveStarted(i10);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ boolean lambda$setOnMarkerClickListener$1(IMapsProvider.OnMarkerClickListener onMarkerClickListener, u7.f fVar) {
+        public /* synthetic */ boolean lambda$setOnMarkerClickListener$1(IMapsProvider.OnMarkerClickListener onMarkerClickListener, t7.f fVar) {
             GoogleMarker googleMarker = this.implToAbsMarkerMap.get(fVar);
             if (googleMarker == null) {
                 googleMarker = new GoogleMarker(fVar);
@@ -414,218 +414,218 @@ public class GoogleMapsProvider implements IMapsProvider {
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public IMapsProvider.ICircle addCircle(IMapsProvider.ICircleOptions iCircleOptions) {
-            d7.h fVar;
-            s7.c cVar = this.googleMap;
-            u7.b bVar = ((GoogleCircleOptions) iCircleOptions).circleOptions;
+            c7.h fVar;
+            r7.c cVar = this.googleMap;
+            t7.b bVar = ((GoogleCircleOptions) iCircleOptions).circleOptions;
             cVar.getClass();
             try {
-                y5.l.i(bVar, "CircleOptions must not be null.");
-                t7.f fVar2 = cVar.a;
+                x5.l.i(bVar, "CircleOptions must not be null.");
+                s7.f fVar2 = cVar.a;
                 Parcel M0 = fVar2.M0();
-                d7.b.b(M0, bVar);
+                c7.b.b(M0, bVar);
                 Parcel L0 = fVar2.L0(M0, 35);
                 IBinder readStrongBinder = L0.readStrongBinder();
-                int i10 = d7.g.b;
+                int i9 = c7.g.b;
                 if (readStrongBinder == null) {
                     fVar = null;
                 } else {
                     IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
-                    fVar = queryLocalInterface instanceof d7.h ? (d7.h) queryLocalInterface : new d7.f(readStrongBinder, "com.google.android.gms.maps.model.internal.ICircleDelegate", 4);
+                    fVar = queryLocalInterface instanceof c7.h ? (c7.h) queryLocalInterface : new c7.f(readStrongBinder, "com.google.android.gms.maps.model.internal.ICircleDelegate", 1);
                 }
                 L0.recycle();
-                u7.a aVar = new u7.a(fVar);
+                t7.a aVar = new t7.a(fVar);
                 GoogleCircle googleCircle = new GoogleCircle(aVar);
                 this.implToAbsCircleMap.put(aVar, googleCircle);
                 return googleCircle;
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public IMapsProvider.IMarker addMarker(IMapsProvider.IMarkerOptions iMarkerOptions) {
-            d7.a iVar;
-            s7.c cVar = this.googleMap;
-            u7.g gVar = ((GoogleMarkerOptions) iMarkerOptions).markerOptions;
+            c7.a iVar;
+            r7.c cVar = this.googleMap;
+            t7.g gVar = ((GoogleMarkerOptions) iMarkerOptions).markerOptions;
             cVar.getClass();
             try {
-                y5.l.i(gVar, "MarkerOptions must not be null.");
-                t7.f fVar = cVar.a;
+                x5.l.i(gVar, "MarkerOptions must not be null.");
+                s7.f fVar = cVar.a;
                 Parcel M0 = fVar.M0();
-                d7.b.b(M0, gVar);
+                c7.b.b(M0, gVar);
                 Parcel L0 = fVar.L0(M0, 11);
                 IBinder readStrongBinder = L0.readStrongBinder();
-                int i10 = d7.j.b;
+                int i9 = c7.j.b;
                 if (readStrongBinder == null) {
                     iVar = null;
                 } else {
                     IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.IMarkerDelegate");
-                    iVar = queryLocalInterface instanceof d7.a ? (d7.a) queryLocalInterface : new d7.i(readStrongBinder, "com.google.android.gms.maps.model.internal.IMarkerDelegate", 4);
+                    iVar = queryLocalInterface instanceof c7.a ? (c7.a) queryLocalInterface : new c7.i(readStrongBinder, "com.google.android.gms.maps.model.internal.IMarkerDelegate", 1);
                 }
                 L0.recycle();
-                u7.f fVar2 = iVar != null ? new u7.f(iVar) : null;
+                t7.f fVar2 = iVar != null ? new t7.f(iVar) : null;
                 GoogleMarker googleMarker = new GoogleMarker(fVar2);
                 this.implToAbsMarkerMap.put(fVar2, googleMarker);
                 return googleMarker;
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public void animateCamera(IMapsProvider.ICameraUpdate iCameraUpdate) {
-            s7.c cVar = this.googleMap;
-            s7.a aVar = ((GoogleCameraUpdate) iCameraUpdate).cameraUpdate;
+            r7.c cVar = this.googleMap;
+            r7.a aVar = ((GoogleCameraUpdate) iCameraUpdate).cameraUpdate;
             cVar.getClass();
             try {
-                y5.l.i(aVar, "CameraUpdate must not be null.");
-                t7.f fVar = cVar.a;
-                i6.a aVar2 = aVar.a;
+                x5.l.i(aVar, "CameraUpdate must not be null.");
+                s7.f fVar = cVar.a;
+                h6.a aVar2 = aVar.a;
                 Parcel M0 = fVar.M0();
-                d7.b.c(M0, aVar2);
+                c7.b.c(M0, aVar2);
                 fVar.Q0(M0, 5);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public IMapsProvider.CameraPosition getCameraPosition() {
-            s7.c cVar = this.googleMap;
+            r7.c cVar = this.googleMap;
             cVar.getClass();
             try {
-                t7.f fVar = cVar.a;
+                s7.f fVar = cVar.a;
                 Parcel L0 = fVar.L0(fVar.M0(), 1);
                 Parcelable.Creator<CameraPosition> creator = CameraPosition.CREATOR;
-                int i10 = d7.b.a;
+                int i9 = c7.b.a;
                 CameraPosition createFromParcel = L0.readInt() == 0 ? null : creator.createFromParcel(L0);
                 L0.recycle();
                 LatLng latLng = createFromParcel.a;
                 return new IMapsProvider.CameraPosition(new IMapsProvider.LatLng(latLng.a, latLng.b), createFromParcel.b);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public float getMaxZoomLevel() {
-            s7.c cVar = this.googleMap;
+            r7.c cVar = this.googleMap;
             cVar.getClass();
             try {
-                t7.f fVar = cVar.a;
+                s7.f fVar = cVar.a;
                 Parcel L0 = fVar.L0(fVar.M0(), 2);
                 float readFloat = L0.readFloat();
                 L0.recycle();
                 return readFloat;
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public float getMinZoomLevel() {
-            s7.c cVar = this.googleMap;
+            r7.c cVar = this.googleMap;
             cVar.getClass();
             try {
-                t7.f fVar = cVar.a;
+                s7.f fVar = cVar.a;
                 Parcel L0 = fVar.L0(fVar.M0(), 3);
                 float readFloat = L0.readFloat();
                 L0.recycle();
                 return readFloat;
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public IMapsProvider.IProjection getProjection() {
-            t7.b bVar;
-            s7.c cVar = this.googleMap;
+            s7.b bVar;
+            r7.c cVar = this.googleMap;
             cVar.getClass();
             try {
-                t7.f fVar = cVar.a;
+                s7.f fVar = cVar.a;
                 Parcel L0 = fVar.L0(fVar.M0(), 26);
                 IBinder readStrongBinder = L0.readStrongBinder();
                 if (readStrongBinder == null) {
                     bVar = null;
                 } else {
                     IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.IProjectionDelegate");
-                    bVar = queryLocalInterface instanceof t7.b ? (t7.b) queryLocalInterface : new t7.b(readStrongBinder, "com.google.android.gms.maps.internal.IProjectionDelegate", 4);
+                    bVar = queryLocalInterface instanceof s7.b ? (s7.b) queryLocalInterface : new s7.b(readStrongBinder, "com.google.android.gms.maps.internal.IProjectionDelegate", 1);
                 }
                 L0.recycle();
-                return new GoogleProjection(new s7.g(bVar));
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+                return new GoogleProjection(new r7.g(bVar));
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public IMapsProvider.IUISettings getUiSettings() {
-            t7.c cVar;
-            s7.c cVar2 = this.googleMap;
+            s7.c cVar;
+            r7.c cVar2 = this.googleMap;
             cVar2.getClass();
             try {
                 if (cVar2.b == null) {
-                    t7.f fVar = cVar2.a;
+                    s7.f fVar = cVar2.a;
                     Parcel L0 = fVar.L0(fVar.M0(), 25);
                     IBinder readStrongBinder = L0.readStrongBinder();
                     if (readStrongBinder == null) {
                         cVar = null;
                     } else {
                         IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
-                        cVar = queryLocalInterface instanceof t7.c ? (t7.c) queryLocalInterface : new t7.c(readStrongBinder, "com.google.android.gms.maps.internal.IUiSettingsDelegate", 4);
+                        cVar = queryLocalInterface instanceof s7.c ? (s7.c) queryLocalInterface : new s7.c(readStrongBinder, "com.google.android.gms.maps.internal.IUiSettingsDelegate", 1);
                     }
                     L0.recycle();
-                    cVar2.b = new s7.h(cVar);
+                    cVar2.b = new r7.h(cVar);
                 }
                 return new GoogleUISettings(cVar2.b);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public void moveCamera(IMapsProvider.ICameraUpdate iCameraUpdate) {
-            s7.c cVar = this.googleMap;
-            s7.a aVar = ((GoogleCameraUpdate) iCameraUpdate).cameraUpdate;
+            r7.c cVar = this.googleMap;
+            r7.a aVar = ((GoogleCameraUpdate) iCameraUpdate).cameraUpdate;
             cVar.getClass();
             try {
-                y5.l.i(aVar, "CameraUpdate must not be null.");
-                t7.f fVar = cVar.a;
-                i6.a aVar2 = aVar.a;
+                x5.l.i(aVar, "CameraUpdate must not be null.");
+                s7.f fVar = cVar.a;
+                h6.a aVar2 = aVar.a;
                 Parcel M0 = fVar.M0();
-                d7.b.c(M0, aVar2);
+                c7.b.c(M0, aVar2);
                 fVar.Q0(M0, 4);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public void setMapStyle(IMapsProvider.IMapStyleOptions iMapStyleOptions) {
-            s7.c cVar = this.googleMap;
-            u7.e eVar = iMapStyleOptions == null ? null : ((GoogleMapStyleOptions) iMapStyleOptions).mapStyleOptions;
+            r7.c cVar = this.googleMap;
+            t7.e eVar = iMapStyleOptions == null ? null : ((GoogleMapStyleOptions) iMapStyleOptions).mapStyleOptions;
             cVar.getClass();
             try {
-                t7.f fVar = cVar.a;
+                s7.f fVar = cVar.a;
                 Parcel M0 = fVar.M0();
-                d7.b.b(M0, eVar);
+                c7.b.b(M0, eVar);
                 Parcel L0 = fVar.L0(M0, 91);
                 L0.readInt();
                 L0.recycle();
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
-        public void setMapType(int i10) {
-            if (i10 == 0) {
+        public void setMapType(int i9) {
+            if (i9 == 0) {
                 this.googleMap.a(1);
-            } else if (i10 == 1) {
+            } else if (i9 == 1) {
                 this.googleMap.a(2);
             } else {
-                if (i10 != 2) {
+                if (i9 != 2) {
                     return;
                 }
                 this.googleMap.a(4);
@@ -634,131 +634,131 @@ public class GoogleMapsProvider implements IMapsProvider {
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public void setMyLocationEnabled(boolean z10) {
-            s7.c cVar = this.googleMap;
+            r7.c cVar = this.googleMap;
             cVar.getClass();
             try {
-                t7.f fVar = cVar.a;
+                s7.f fVar = cVar.a;
                 Parcel M0 = fVar.M0();
-                int i10 = d7.b.a;
+                int i9 = c7.b.a;
                 M0.writeInt(z10 ? 1 : 0);
                 fVar.Q0(M0, 22);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public void setOnCameraIdleListener(Runnable runnable) {
-            s7.c cVar = this.googleMap;
+            r7.c cVar = this.googleMap;
             Objects.requireNonNull(runnable);
-            i4 i4Var = new i4(runnable);
-            t7.f fVar = cVar.a;
+            g4 g4Var = new g4(runnable);
+            s7.f fVar = cVar.a;
             try {
-                s7.i iVar = new s7.i(i4Var, (char) 0);
+                r7.i iVar = new r7.i(g4Var, (char) 0);
                 Parcel M0 = fVar.M0();
-                d7.b.c(M0, iVar);
+                c7.b.c(M0, iVar);
                 fVar.Q0(M0, 99);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public void setOnCameraMoveListener(Runnable runnable) {
-            s7.c cVar = this.googleMap;
+            r7.c cVar = this.googleMap;
             Objects.requireNonNull(runnable);
-            i4 i4Var = new i4(runnable);
-            t7.f fVar = cVar.a;
+            g4 g4Var = new g4(runnable);
+            s7.f fVar = cVar.a;
             try {
-                s7.i iVar = new s7.i(i4Var);
+                r7.i iVar = new r7.i(g4Var);
                 Parcel M0 = fVar.M0();
-                d7.b.c(M0, iVar);
+                c7.b.c(M0, iVar);
                 fVar.Q0(M0, 97);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public void setOnCameraMoveStartedListener(IMapsProvider.OnCameraMoveStartedListener onCameraMoveStartedListener) {
-            s7.c cVar = this.googleMap;
+            r7.c cVar = this.googleMap;
             d dVar = new d(onCameraMoveStartedListener, 5);
-            t7.f fVar = cVar.a;
+            s7.f fVar = cVar.a;
             try {
-                s7.i iVar = new s7.i(dVar);
+                r7.i iVar = new r7.i(dVar);
                 Parcel M0 = fVar.M0();
-                d7.b.c(M0, iVar);
+                c7.b.c(M0, iVar);
                 fVar.Q0(M0, 96);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public void setOnMapLoadedCallback(Runnable runnable) {
-            s7.c cVar = this.googleMap;
+            r7.c cVar = this.googleMap;
             Objects.requireNonNull(runnable);
-            i4 i4Var = new i4(runnable);
-            t7.f fVar = cVar.a;
+            g4 g4Var = new g4(runnable);
+            s7.f fVar = cVar.a;
             try {
-                s7.i iVar = new s7.i(i4Var, (byte) 0);
+                r7.i iVar = new r7.i(g4Var, (byte) 0);
                 Parcel M0 = fVar.M0();
-                d7.b.c(M0, iVar);
+                c7.b.c(M0, iVar);
                 fVar.Q0(M0, 42);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public void setOnMarkerClickListener(IMapsProvider.OnMarkerClickListener onMarkerClickListener) {
-            s7.c cVar = this.googleMap;
+            r7.c cVar = this.googleMap;
             c cVar2 = new c(2, this, onMarkerClickListener);
-            t7.f fVar = cVar.a;
+            s7.f fVar = cVar.a;
             try {
-                s7.i iVar = new s7.i(cVar2);
+                r7.i iVar = new r7.i(cVar2);
                 Parcel M0 = fVar.M0();
-                d7.b.c(M0, iVar);
+                c7.b.c(M0, iVar);
                 fVar.Q0(M0, 30);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public void setOnMyLocationChangeListener(q0.a aVar) {
-            s7.c cVar = this.googleMap;
+            r7.c cVar = this.googleMap;
             Objects.requireNonNull(aVar);
-            h4 h4Var = new h4(aVar, 2);
-            t7.f fVar = cVar.a;
+            f4 f4Var = new f4(aVar, 2);
+            s7.f fVar = cVar.a;
             try {
-                s7.i iVar = new s7.i(h4Var);
+                r7.i iVar = new r7.i(f4Var);
                 Parcel M0 = fVar.M0();
-                d7.b.c(M0, iVar);
+                c7.b.c(M0, iVar);
                 fVar.Q0(M0, 36);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
-        public void setPadding(int i10, int i11, int i12, int i13) {
-            s7.c cVar = this.googleMap;
+        public void setPadding(int i9, int i10, int i11, int i12) {
+            r7.c cVar = this.googleMap;
             cVar.getClass();
             try {
-                t7.f fVar = cVar.a;
+                s7.f fVar = cVar.a;
                 Parcel M0 = fVar.M0();
+                M0.writeInt(i9);
                 M0.writeInt(i10);
                 M0.writeInt(i11);
                 M0.writeInt(i12);
-                M0.writeInt(i13);
                 fVar.Q0(M0, 39);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
-        private GoogleMapImpl(s7.c cVar) {
+        private GoogleMapImpl(r7.c cVar) {
             this.implToAbsMarkerMap = new HashMap();
             this.implToAbsCircleMap = new HashMap();
             this.googleMap = cVar;
@@ -766,91 +766,91 @@ public class GoogleMapsProvider implements IMapsProvider {
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
         public void animateCamera(IMapsProvider.ICameraUpdate iCameraUpdate, final IMapsProvider.ICancelableCallback iCancelableCallback) {
-            s7.c cVar = this.googleMap;
-            s7.a aVar = ((GoogleCameraUpdate) iCameraUpdate).cameraUpdate;
-            s7.i iVar = null;
-            s7.b bVar = iCancelableCallback == null ? null : new s7.b() { // from class: org.telegram.messenger.GoogleMapsProvider.GoogleMapImpl.1
-                @Override // s7.b
+            r7.c cVar = this.googleMap;
+            r7.a aVar = ((GoogleCameraUpdate) iCameraUpdate).cameraUpdate;
+            r7.i iVar = null;
+            r7.b bVar = iCancelableCallback == null ? null : new r7.b() { // from class: org.telegram.messenger.GoogleMapsProvider.GoogleMapImpl.1
+                @Override // r7.b
                 public void onCancel() {
                     iCancelableCallback.onCancel();
                 }
 
-                @Override // s7.b
+                @Override // r7.b
                 public void onFinish() {
                     iCancelableCallback.onFinish();
                 }
             };
             cVar.getClass();
             try {
-                y5.l.i(aVar, "CameraUpdate must not be null.");
-                t7.f fVar = cVar.a;
-                i6.a aVar2 = aVar.a;
+                x5.l.i(aVar, "CameraUpdate must not be null.");
+                s7.f fVar = cVar.a;
+                h6.a aVar2 = aVar.a;
                 if (bVar != null) {
-                    iVar = new s7.i(bVar);
+                    iVar = new r7.i(bVar);
                 }
                 Parcel M0 = fVar.M0();
-                d7.b.c(M0, aVar2);
-                d7.b.c(M0, iVar);
+                c7.b.c(M0, aVar2);
+                c7.b.c(M0, iVar);
                 fVar.Q0(M0, 6);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMap
-        public void animateCamera(IMapsProvider.ICameraUpdate iCameraUpdate, int i10, final IMapsProvider.ICancelableCallback iCancelableCallback) {
-            s7.c cVar = this.googleMap;
-            s7.a aVar = ((GoogleCameraUpdate) iCameraUpdate).cameraUpdate;
-            s7.i iVar = null;
-            s7.b bVar = iCancelableCallback == null ? null : new s7.b() { // from class: org.telegram.messenger.GoogleMapsProvider.GoogleMapImpl.2
-                @Override // s7.b
+        public void animateCamera(IMapsProvider.ICameraUpdate iCameraUpdate, int i9, final IMapsProvider.ICancelableCallback iCancelableCallback) {
+            r7.c cVar = this.googleMap;
+            r7.a aVar = ((GoogleCameraUpdate) iCameraUpdate).cameraUpdate;
+            r7.i iVar = null;
+            r7.b bVar = iCancelableCallback == null ? null : new r7.b() { // from class: org.telegram.messenger.GoogleMapsProvider.GoogleMapImpl.2
+                @Override // r7.b
                 public void onCancel() {
                     iCancelableCallback.onCancel();
                 }
 
-                @Override // s7.b
+                @Override // r7.b
                 public void onFinish() {
                     iCancelableCallback.onFinish();
                 }
             };
             cVar.getClass();
             try {
-                y5.l.i(aVar, "CameraUpdate must not be null.");
-                t7.f fVar = cVar.a;
-                i6.a aVar2 = aVar.a;
+                x5.l.i(aVar, "CameraUpdate must not be null.");
+                s7.f fVar = cVar.a;
+                h6.a aVar2 = aVar.a;
                 if (bVar != null) {
-                    iVar = new s7.i(bVar);
+                    iVar = new r7.i(bVar);
                 }
                 Parcel M0 = fVar.M0();
-                d7.b.c(M0, aVar2);
-                M0.writeInt(i10);
-                d7.b.c(M0, iVar);
+                c7.b.c(M0, aVar2);
+                M0.writeInt(i9);
+                c7.b.c(M0, iVar);
                 fVar.Q0(M0, 7);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class GoogleMapStyleOptions implements IMapsProvider.IMapStyleOptions {
-        private u7.e mapStyleOptions;
+        private t7.e mapStyleOptions;
 
-        private GoogleMapStyleOptions(u7.e eVar) {
+        private GoogleMapStyleOptions(t7.e eVar) {
             this.mapStyleOptions = eVar;
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class GoogleMapView implements IMapsProvider.IMapView {
         private IMapsProvider.ITouchInterceptor dispatchInterceptor;
         private GLSurfaceView glSurfaceView;
         private IMapsProvider.ITouchInterceptor interceptInterceptor;
-        private s7.d mapView;
+        private r7.d mapView;
         private Runnable onLayoutListener;
 
-        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-        public class 1 extends s7.d {
+        /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+        public class 1 extends r7.d {
             public 1(Context context) {
                 super(context);
             }
@@ -867,17 +867,17 @@ public class GoogleMapsProvider implements IMapsProvider {
 
             @Override // android.view.ViewGroup, android.view.View
             public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-                return GoogleMapView.this.dispatchInterceptor != null ? GoogleMapView.this.dispatchInterceptor.onInterceptTouchEvent(motionEvent, new k4(this, 0)) : super.dispatchTouchEvent(motionEvent);
+                return GoogleMapView.this.dispatchInterceptor != null ? GoogleMapView.this.dispatchInterceptor.onInterceptTouchEvent(motionEvent, new i4(this, 0)) : super.dispatchTouchEvent(motionEvent);
             }
 
             @Override // android.view.ViewGroup
             public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-                return GoogleMapView.this.interceptInterceptor != null ? GoogleMapView.this.interceptInterceptor.onInterceptTouchEvent(motionEvent, new k4(this, 1)) : super.onInterceptTouchEvent(motionEvent);
+                return GoogleMapView.this.interceptInterceptor != null ? GoogleMapView.this.interceptInterceptor.onInterceptTouchEvent(motionEvent, new i4(this, 1)) : super.onInterceptTouchEvent(motionEvent);
             }
 
             @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-            public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-                super.onLayout(z10, i10, i11, i12, i13);
+            public void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
+                super.onLayout(z10, i9, i10, i11, i12);
                 if (GoogleMapView.this.onLayoutListener != null) {
                     GoogleMapView.this.onLayoutListener.run();
                 }
@@ -890,14 +890,14 @@ public class GoogleMapsProvider implements IMapsProvider {
             }
             if (view instanceof ViewGroup) {
                 ViewGroup viewGroup = (ViewGroup) view;
-                for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
-                    findGlSurfaceView(viewGroup.getChildAt(i10));
+                for (int i9 = 0; i9 < viewGroup.getChildCount(); i9++) {
+                    findGlSurfaceView(viewGroup.getChildAt(i9));
                 }
             }
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$getMapAsync$0(q0.a aVar, s7.c cVar) {
+        public /* synthetic */ void lambda$getMapAsync$0(q0.a aVar, r7.c cVar) {
             aVar.accept(new GoogleMapImpl(cVar));
             findGlSurfaceView(this.mapView);
         }
@@ -909,7 +909,7 @@ public class GoogleMapsProvider implements IMapsProvider {
 
         @Override // org.telegram.messenger.IMapsProvider.IMapView
         public void getMapAsync(q0.a aVar) {
-            this.mapView.getMapAsync(new j4(this, aVar));
+            this.mapView.getMapAsync(new h4(this, aVar));
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMapView
@@ -962,13 +962,13 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class GoogleMarkerOptions implements IMapsProvider.IMarkerOptions {
-        private u7.g markerOptions;
+        private t7.g markerOptions;
 
         @Override // org.telegram.messenger.IMapsProvider.IMarkerOptions
         public IMapsProvider.IMarkerOptions anchor(float f10, float f11) {
-            u7.g gVar = this.markerOptions;
+            t7.g gVar = this.markerOptions;
             gVar.e = f10;
             gVar.f = f11;
             return this;
@@ -982,7 +982,7 @@ public class GoogleMapsProvider implements IMapsProvider {
 
         @Override // org.telegram.messenger.IMapsProvider.IMarkerOptions
         public IMapsProvider.IMarkerOptions icon(Bitmap bitmap) {
-            this.markerOptions.d = h7.r7.a(bitmap);
+            this.markerOptions.d = g7.m7.a(bitmap);
             return this;
         }
 
@@ -1005,7 +1005,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
 
         private GoogleMarkerOptions() {
-            u7.g gVar = new u7.g();
+            t7.g gVar = new t7.g();
             gVar.e = 0.5f;
             gVar.f = 1.0f;
             gVar.n = true;
@@ -1018,89 +1018,89 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMarkerOptions
-        public IMapsProvider.IMarkerOptions icon(int i10) {
-            this.markerOptions.d = h7.r7.b(i10);
+        public IMapsProvider.IMarkerOptions icon(int i9) {
+            this.markerOptions.d = g7.m7.b(i9);
             return this;
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class GoogleProjection implements IMapsProvider.IProjection {
-        private s7.g projection;
+        private r7.g projection;
 
         @Override // org.telegram.messenger.IMapsProvider.IProjection
         public Point toScreenLocation(IMapsProvider.LatLng latLng) {
-            s7.g gVar = this.projection;
+            r7.g gVar = this.projection;
             LatLng latLng2 = new LatLng(latLng.latitude, latLng.longitude);
             gVar.getClass();
             try {
-                t7.b bVar = gVar.a;
+                s7.b bVar = gVar.a;
                 Parcel M0 = bVar.M0();
-                d7.b.b(M0, latLng2);
+                c7.b.b(M0, latLng2);
                 Parcel L0 = bVar.L0(M0, 2);
-                i6.a J0 = i6.b.J0(L0.readStrongBinder());
+                h6.a J0 = h6.b.J0(L0.readStrongBinder());
                 L0.recycle();
-                return (Point) i6.b.K0(J0);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+                return (Point) h6.b.K0(J0);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
-        private GoogleProjection(s7.g gVar) {
+        private GoogleProjection(r7.g gVar) {
             this.projection = gVar;
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class GoogleUISettings implements IMapsProvider.IUISettings {
-        private s7.h uiSettings;
+        private r7.h uiSettings;
 
         @Override // org.telegram.messenger.IMapsProvider.IUISettings
         public void setCompassEnabled(boolean z10) {
-            s7.h hVar = this.uiSettings;
+            r7.h hVar = this.uiSettings;
             hVar.getClass();
             try {
-                t7.c cVar = hVar.a;
+                s7.c cVar = hVar.a;
                 Parcel M0 = cVar.M0();
-                int i10 = d7.b.a;
+                int i9 = c7.b.a;
                 M0.writeInt(z10 ? 1 : 0);
                 cVar.Q0(M0, 2);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IUISettings
         public void setMyLocationButtonEnabled(boolean z10) {
-            s7.h hVar = this.uiSettings;
+            r7.h hVar = this.uiSettings;
             hVar.getClass();
             try {
-                t7.c cVar = hVar.a;
+                s7.c cVar = hVar.a;
                 Parcel M0 = cVar.M0();
-                int i10 = d7.b.a;
+                int i9 = c7.b.a;
                 M0.writeInt(z10 ? 1 : 0);
                 cVar.Q0(M0, 3);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IUISettings
         public void setZoomControlsEnabled(boolean z10) {
-            s7.h hVar = this.uiSettings;
+            r7.h hVar = this.uiSettings;
             hVar.getClass();
             try {
-                t7.c cVar = hVar.a;
+                s7.c cVar = hVar.a;
                 Parcel M0 = cVar.M0();
-                int i10 = d7.b.a;
+                int i9 = c7.b.a;
                 M0.writeInt(z10 ? 1 : 0);
                 cVar.Q0(M0, 1);
-            } catch (RemoteException e9) {
-                throw new a7.c(e9);
+            } catch (RemoteException e10) {
+                throw new androidx.car.app.j(e10);
             }
         }
 
-        private GoogleUISettings(s7.h hVar) {
+        private GoogleUISettings(r7.h hVar) {
             this.uiSettings = hVar;
         }
     }
@@ -1117,14 +1117,14 @@ public class GoogleMapsProvider implements IMapsProvider {
 
     @Override // org.telegram.messenger.IMapsProvider
     public void initializeMaps(Context context) {
-        synchronized (s7.e.class) {
-            s7.e.a(context);
+        synchronized (r7.e.class) {
+            r7.e.a(context);
         }
     }
 
     @Override // org.telegram.messenger.IMapsProvider
-    public IMapsProvider.IMapStyleOptions loadRawResourceStyle(Context context, int i10) {
-        InputStream openRawResource = context.getResources().openRawResource(i10);
+    public IMapsProvider.IMapStyleOptions loadRawResourceStyle(Context context, int i9) {
+        InputStream openRawResource = context.getResources().openRawResource(i9);
         try {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             byte[] bArr = new byte[1024];
@@ -1132,19 +1132,19 @@ public class GoogleMapsProvider implements IMapsProvider {
                 try {
                     int read = openRawResource.read(bArr, 0, 1024);
                     if (read == -1) {
-                        f6.b.a(openRawResource);
-                        f6.b.a(byteArrayOutputStream);
-                        return new GoogleMapStyleOptions(new u7.e(new String(byteArrayOutputStream.toByteArray(), "UTF-8")));
+                        e6.b.a(openRawResource);
+                        e6.b.a(byteArrayOutputStream);
+                        return new GoogleMapStyleOptions(new t7.e(new String(byteArrayOutputStream.toByteArray(), "UTF-8")));
                     }
                     byteArrayOutputStream.write(bArr, 0, read);
                 } catch (Throwable th) {
-                    f6.b.a(openRawResource);
-                    f6.b.a(byteArrayOutputStream);
+                    e6.b.a(openRawResource);
+                    e6.b.a(byteArrayOutputStream);
                     throw th;
                 }
             }
-        } catch (IOException e9) {
-            throw new Resources.NotFoundException("Failed to read resource " + i10 + ": " + e9.toString());
+        } catch (IOException e10) {
+            throw new Resources.NotFoundException("Failed to read resource " + i9 + ": " + e10.toString());
         }
     }
 
@@ -1152,35 +1152,35 @@ public class GoogleMapsProvider implements IMapsProvider {
     public IMapsProvider.ICameraUpdate newCameraUpdateLatLng(IMapsProvider.LatLng latLng) {
         LatLng latLng2 = new LatLng(latLng.latitude, latLng.longitude);
         try {
-            t7.a aVar = h7.g7.a;
-            y5.l.i(aVar, "CameraUpdateFactory is not initialized");
+            s7.a aVar = g7.f7.a;
+            x5.l.i(aVar, "CameraUpdateFactory is not initialized");
             Parcel M0 = aVar.M0();
-            d7.b.b(M0, latLng2);
+            c7.b.b(M0, latLng2);
             Parcel L0 = aVar.L0(M0, 8);
-            i6.a J0 = i6.b.J0(L0.readStrongBinder());
+            h6.a J0 = h6.b.J0(L0.readStrongBinder());
             L0.recycle();
-            return new GoogleCameraUpdate(new s7.a(J0));
-        } catch (RemoteException e9) {
-            throw new a7.c(e9);
+            return new GoogleCameraUpdate(new r7.a(J0));
+        } catch (RemoteException e10) {
+            throw new androidx.car.app.j(e10);
         }
     }
 
     @Override // org.telegram.messenger.IMapsProvider
-    public IMapsProvider.ICameraUpdate newCameraUpdateLatLngBounds(IMapsProvider.ILatLngBounds iLatLngBounds, int i10) {
+    public IMapsProvider.ICameraUpdate newCameraUpdateLatLngBounds(IMapsProvider.ILatLngBounds iLatLngBounds, int i9) {
         LatLngBounds latLngBounds = ((GoogleLatLngBounds) iLatLngBounds).bounds;
-        y5.l.i(latLngBounds, "bounds must not be null");
+        x5.l.i(latLngBounds, "bounds must not be null");
         try {
-            t7.a aVar = h7.g7.a;
-            y5.l.i(aVar, "CameraUpdateFactory is not initialized");
+            s7.a aVar = g7.f7.a;
+            x5.l.i(aVar, "CameraUpdateFactory is not initialized");
             Parcel M0 = aVar.M0();
-            d7.b.b(M0, latLngBounds);
-            M0.writeInt(i10);
+            c7.b.b(M0, latLngBounds);
+            M0.writeInt(i9);
             Parcel L0 = aVar.L0(M0, 10);
-            i6.a J0 = i6.b.J0(L0.readStrongBinder());
+            h6.a J0 = h6.b.J0(L0.readStrongBinder());
             L0.recycle();
-            return new GoogleCameraUpdate(new s7.a(J0));
-        } catch (RemoteException e9) {
-            throw new a7.c(e9);
+            return new GoogleCameraUpdate(new r7.a(J0));
+        } catch (RemoteException e10) {
+            throw new androidx.car.app.j(e10);
         }
     }
 
@@ -1188,17 +1188,17 @@ public class GoogleMapsProvider implements IMapsProvider {
     public IMapsProvider.ICameraUpdate newCameraUpdateLatLngZoom(IMapsProvider.LatLng latLng, float f10) {
         LatLng latLng2 = new LatLng(latLng.latitude, latLng.longitude);
         try {
-            t7.a aVar = h7.g7.a;
-            y5.l.i(aVar, "CameraUpdateFactory is not initialized");
+            s7.a aVar = g7.f7.a;
+            x5.l.i(aVar, "CameraUpdateFactory is not initialized");
             Parcel M0 = aVar.M0();
-            d7.b.b(M0, latLng2);
+            c7.b.b(M0, latLng2);
             M0.writeFloat(f10);
             Parcel L0 = aVar.L0(M0, 9);
-            i6.a J0 = i6.b.J0(L0.readStrongBinder());
+            h6.a J0 = h6.b.J0(L0.readStrongBinder());
             L0.recycle();
-            return new GoogleCameraUpdate(new s7.a(J0));
-        } catch (RemoteException e9) {
-            throw new a7.c(e9);
+            return new GoogleCameraUpdate(new r7.a(J0));
+        } catch (RemoteException e10) {
+            throw new androidx.car.app.j(e10);
         }
     }
 

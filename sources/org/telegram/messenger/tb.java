@@ -1,65 +1,66 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import org.telegram.messenger.voip.VoIPGroupNotification;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.ui.NotificationsSettingsActivity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class tb implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ long f;
-    public final /* synthetic */ boolean g;
-    public final /* synthetic */ Object h;
+public final /* synthetic */ class tb implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ Cloneable c;
+    public final /* synthetic */ Cloneable d;
+    public final /* synthetic */ Cloneable e;
+    public final /* synthetic */ Cloneable f;
+    public final /* synthetic */ Cloneable h;
+    public final /* synthetic */ Cloneable n;
+    public final /* synthetic */ Cloneable r;
+    public final /* synthetic */ Object s;
+    public final /* synthetic */ Cloneable v;
 
-    public /* synthetic */ tb(int i10, int i11, long j10, long j11, MessagesController messagesController, TLRPC.InputPeer inputPeer, boolean z10) {
+    public /* synthetic */ tb(MessagesController messagesController, LongSparseIntArray longSparseIntArray, LongSparseIntArray longSparseIntArray2, SparseIntArray sparseIntArray, a0.h hVar, a0.h hVar2, a0.h hVar3, a0.h hVar4, a0.h hVar5, LongSparseIntArray longSparseIntArray3, int i9) {
+        this.a = i9;
         this.b = messagesController;
-        this.c = j10;
-        this.f = j11;
-        this.d = i10;
-        this.e = i11;
-        this.g = z10;
-        this.h = inputPeer;
+        this.c = longSparseIntArray;
+        this.d = longSparseIntArray2;
+        this.e = sparseIntArray;
+        this.f = hVar;
+        this.h = hVar2;
+        this.n = hVar3;
+        this.r = hVar4;
+        this.s = hVar5;
+        this.v = longSparseIntArray3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$deleteDialog$142(this.c, this.f, this.d, this.e, this.g, (TLRPC.InputPeer) this.h, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$processUpdateArray$416((LongSparseIntArray) this.c, (LongSparseIntArray) this.d, (SparseIntArray) this.e, (a0.h) this.f, (a0.h) this.h, (a0.h) this.n, (a0.h) this.r, (a0.h) this.s, (LongSparseIntArray) this.v);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$deleteMessagesRange$466(this.c, this.d, this.e, this.f, this.g, (Runnable) this.h, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$processUpdateArray$417((LongSparseIntArray) this.c, (LongSparseIntArray) this.d, (SparseIntArray) this.e, (a0.h) this.f, (a0.h) this.h, (a0.h) this.n, (a0.h) this.r, (a0.h) this.s, (LongSparseIntArray) this.v);
                 break;
             default:
-                VoIPGroupNotification.lambda$request$1(this.d, this.c, this.f, this.e, this.g, (Context) this.b, (String) this.h, tLObject, tL_error);
+                NotificationsSettingsActivity.T((NotificationsSettingsActivity) this.b, (ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.v, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h, (ArrayList) this.n, (ArrayList) this.r, (Runnable) this.s);
                 break;
         }
     }
 
-    public /* synthetic */ tb(Context context, int i10, long j10, String str, long j11, int i11, boolean z10) {
-        this.d = i10;
-        this.c = j10;
-        this.f = j11;
-        this.e = i11;
-        this.g = z10;
-        this.b = context;
-        this.h = str;
-    }
-
-    public /* synthetic */ tb(MessagesController messagesController, long j10, int i10, int i11, long j11, boolean z10, Runnable runnable) {
-        this.b = messagesController;
-        this.c = j10;
-        this.d = i10;
-        this.e = i11;
-        this.f = j11;
-        this.g = z10;
-        this.h = runnable;
+    public /* synthetic */ tb(NotificationsSettingsActivity notificationsSettingsActivity, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5, ArrayList arrayList6, ArrayList arrayList7, ArrayList arrayList8, Runnable runnable) {
+        this.a = 2;
+        this.b = notificationsSettingsActivity;
+        this.c = arrayList;
+        this.d = arrayList2;
+        this.v = arrayList3;
+        this.e = arrayList4;
+        this.f = arrayList5;
+        this.h = arrayList6;
+        this.n = arrayList7;
+        this.r = arrayList8;
+        this.s = runnable;
     }
 }

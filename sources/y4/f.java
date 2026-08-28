@@ -2,7 +2,7 @@ package y4;
 
 import android.text.Layout;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class f {
     public String a;
@@ -26,7 +26,7 @@ public final class f {
     public float s = Float.MAX_VALUE;
 
     public final void a(f fVar) {
-        int i10;
+        int i9;
         Layout.Alignment alignment;
         Layout.Alignment alignment2;
         String str;
@@ -76,10 +76,10 @@ public final class f {
                 this.d = fVar.d;
                 this.e = true;
             }
-            if (this.m != -1 || (i10 = fVar.m) == -1) {
+            if (this.m != -1 || (i9 = fVar.m) == -1) {
                 return;
             }
-            this.m = i10;
+            this.m = i9;
         }
     }
 }

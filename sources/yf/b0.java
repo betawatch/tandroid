@@ -1,31 +1,31 @@
 package yf;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.Bitmap;
+import org.telegram.ui.xs0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d0 b;
-    public final /* synthetic */ q0 c;
+public final class b0 extends xf.c1 {
+    public final /* synthetic */ Bitmap A;
+    public final /* synthetic */ xs0 B;
 
-    public /* synthetic */ b0(d0 d0Var, q0 q0Var, int i10) {
-        this.a = i10;
-        this.b = d0Var;
-        this.c = q0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b0(xs0 xs0Var, Context context, xf.q0 q0Var, Bitmap bitmap, Bitmap bitmap2) {
+        super(context, q0Var, bitmap, null, null);
+        this.B = xs0Var;
+        this.A = bitmap2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new b0(this.b, this.c, 1));
-                break;
-            default:
-                d0 d0Var = this.b;
-                d0Var.getClass();
-                d0Var.i = this.c.a;
-                break;
+    @Override // xf.c1
+    public final void g(xf.m mVar) {
+        int indexOf = xf.m.a.indexOf(mVar);
+        int i9 = indexOf + 1;
+        if (i9 <= 1 || this.A != null) {
+            indexOf = i9;
         }
+        xs0 xs0Var = this.B;
+        xs0Var.p1.b(indexOf);
+        xs0Var.n(mVar);
     }
 }

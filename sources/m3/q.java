@@ -1,10 +1,10 @@
 package m3;
 
-import d5.g0;
+import d5.f0;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class q {
     public static final Pattern c = Pattern.compile("^ [0-9a-fA-F]{8} ([0-9a-fA-F]{8}) ([0-9a-fA-F]{8})");
@@ -18,7 +18,7 @@ public final class q {
         }
         try {
             String group = matcher.group(1);
-            int i10 = g0.a;
+            int i9 = f0.a;
             int parseInt = Integer.parseInt(group, 16);
             int parseInt2 = Integer.parseInt(matcher.group(2), 16);
             if (parseInt <= 0 && parseInt2 <= 0) {
@@ -33,13 +33,13 @@ public final class q {
     }
 
     public final void b(z3.c cVar) {
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             z3.b[] bVarArr = cVar.a;
-            if (i10 >= bVarArr.length) {
+            if (i9 >= bVarArr.length) {
                 return;
             }
-            z3.b bVar = bVarArr[i10];
+            z3.b bVar = bVarArr[i9];
             if (bVar instanceof e4.e) {
                 e4.e eVar = (e4.e) bVar;
                 if ("iTunSMPB".equals(eVar.c) && a(eVar.d)) {
@@ -53,7 +53,7 @@ public final class q {
             } else {
                 continue;
             }
-            i10++;
+            i9++;
         }
     }
 }

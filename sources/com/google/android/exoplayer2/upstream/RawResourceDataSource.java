@@ -10,7 +10,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class RawResourceDataSource extends g {
     public final Resources a;
@@ -27,8 +27,8 @@ public final class RawResourceDataSource extends g {
         this.b = context.getPackageName();
     }
 
-    public static Uri buildRawResourceUri(int i10) {
-        return Uri.parse("rawresource:///" + i10);
+    public static Uri buildRawResourceUri(int i9) {
+        return Uri.parse("rawresource:///" + i9);
     }
 
     @Override // com.google.android.exoplayer2.upstream.m
@@ -47,8 +47,8 @@ public final class RawResourceDataSource extends g {
                         if (assetFileDescriptor != null) {
                             assetFileDescriptor.close();
                         }
-                    } catch (IOException e9) {
-                        throw new u0(null, e9, 2000);
+                    } catch (IOException e10) {
+                        throw new u0(null, e10, 2000);
                     }
                 } finally {
                     this.d = null;
@@ -57,8 +57,8 @@ public final class RawResourceDataSource extends g {
                         transferEnded();
                     }
                 }
-            } catch (IOException e10) {
-                throw new u0(null, e10, 2000);
+            } catch (IOException e11) {
+                throw new u0(null, e11, 2000);
             }
         } catch (Throwable th) {
             this.e = null;
@@ -74,8 +74,8 @@ public final class RawResourceDataSource extends g {
                         transferEnded();
                     }
                     throw th;
-                } catch (IOException e11) {
-                    throw new u0(null, e11, 2000);
+                } catch (IOException e12) {
+                    throw new u0(null, e12, 2000);
                 }
             } finally {
                 this.d = null;
@@ -127,7 +127,7 @@ public final class RawResourceDataSource extends g {
                         path = path.substring(1);
                     }
                     String host = uri.getHost();
-                    parseInt = resources.getIdentifier(a9.p.p(new StringBuilder(), TextUtils.isEmpty(host) ? "" : s3.c.l(host, ":"), path), "raw", this.b);
+                    parseInt = resources.getIdentifier(aa.d.r(new StringBuilder(), TextUtils.isEmpty(host) ? "" : ta.b.j(host, ":"), path), "raw", this.b);
                     if (parseInt == 0) {
                         throw new u0("Resource not found.", null, 2005);
                     }
@@ -174,18 +174,18 @@ public final class RawResourceDataSource extends g {
                         this.h = true;
                         transferStarted(qVar);
                         return j10 != -1 ? j10 : this.f;
-                    } catch (u0 e9) {
-                        throw e9;
-                    } catch (IOException e10) {
-                        throw new u0(null, e10, 2000);
+                    } catch (u0 e10) {
+                        throw e10;
+                    } catch (IOException e11) {
+                        throw new u0(null, e11, 2000);
                     }
                 }
                 openRawResourceFd = resources.openRawResourceFd(parseInt);
                 this.d = openRawResourceFd;
                 if (openRawResourceFd != null) {
                 }
-            } catch (Resources.NotFoundException e11) {
-                throw new u0(null, e11, 2005);
+            } catch (Resources.NotFoundException e12) {
+                throw new u0(null, e12, 2005);
             }
             String lastPathSegment2 = uri.getLastPathSegment();
             lastPathSegment2.getClass();
@@ -197,22 +197,22 @@ public final class RawResourceDataSource extends g {
     }
 
     @Override // com.google.android.exoplayer2.upstream.j
-    public final int read(byte[] bArr, int i10, int i11) {
-        if (i11 == 0) {
+    public final int read(byte[] bArr, int i9, int i10) {
+        if (i10 == 0) {
             return 0;
         }
         long j10 = this.f;
         if (j10 != 0) {
             if (j10 != -1) {
                 try {
-                    i11 = (int) Math.min(j10, i11);
-                } catch (IOException e9) {
-                    throw new u0(null, e9, 2000);
+                    i10 = (int) Math.min(j10, i10);
+                } catch (IOException e10) {
+                    throw new u0(null, e10, 2000);
                 }
             }
             FileInputStream fileInputStream = this.e;
-            int i12 = d5.g0.a;
-            int read = fileInputStream.read(bArr, i10, i11);
+            int i11 = d5.f0.a;
+            int read = fileInputStream.read(bArr, i9, i10);
             if (read != -1) {
                 long j11 = this.f;
                 if (j11 != -1) {

@@ -1,55 +1,39 @@
 package org.telegram.ui;
 
+import android.R;
 import android.content.Context;
 import android.view.ActionMode;
-import java.util.ArrayList;
+import android.view.Menu;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class tu0 extends org.telegram.ui.Cells.z5 {
-    public final /* synthetic */ wu0 B;
+public final class tu0 extends org.telegram.ui.Cells.c6 {
+    public final /* synthetic */ vu0 B;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tu0(wu0 wu0Var, Context context, int i10) {
-        super(context, i10, null, null);
-        this.B = wu0Var;
+    public tu0(vu0 vu0Var, Context context, int i9) {
+        super(context, i9, null, null);
+        this.B = vu0Var;
     }
 
-    @Override // org.telegram.ui.Cells.z5
-    public final void i(boolean z10) {
-        yu0.d0(this.B.d, this, z10);
-    }
-
-    @Override // org.telegram.ui.Cells.z5
-    public final void j(org.telegram.ui.Cells.z5 z5Var) {
-        yu0.e0(this.B.d, z5Var);
-    }
-
-    @Override // org.telegram.ui.Cells.z5
-    public final boolean l(ArrayList arrayList) {
-        yu0 yu0Var = this.B.d;
-        if (arrayList.isEmpty()) {
-            return false;
-        }
-        gh.r rVar = this.d;
-        rVar.getText().replace(rVar.getSelectionStart(), rVar.getSelectionEnd(), (CharSequence) arrayList.remove(0));
-        int i10 = 0;
-        while (!arrayList.isEmpty() && i10 < yu0Var.n) {
-            for (int length = yu0Var.v.length - 1; length > i10; length--) {
-                CharSequence[] charSequenceArr = yu0Var.v;
-                charSequenceArr[length] = charSequenceArr[length - 1];
+    @Override // org.telegram.ui.Cells.c6
+    public final void g(fh.s sVar, ActionMode actionMode) {
+        if (sVar.isFocused() && sVar.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
+                return;
             }
-            yu0Var.v[i10] = (CharSequence) arrayList.remove(0);
-            yu0Var.y++;
-            i10++;
+            qn.k8(menu, this.B.d.f.h, false, true, true, true);
         }
-        yu0Var.r0();
-        yu0Var.c0 = (yu0Var.j0 + i10) - 1;
-        yu0Var.b.l();
-        return true;
     }
 
-    @Override // org.telegram.ui.Cells.z5
-    public final void g(gh.r rVar, ActionMode actionMode) {
+    @Override // org.telegram.ui.Cells.c6
+    public final void i(boolean z10) {
+        xu0.c0(this.B.d, this, z10);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void j(org.telegram.ui.Cells.c6 c6Var) {
+        xu0.d0(this.B.d, c6Var);
     }
 }

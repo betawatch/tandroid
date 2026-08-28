@@ -1,41 +1,29 @@
 package g7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.util.Map;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class e implements i {
-    public final int a;
+public final /* synthetic */ class e implements q9.d {
+    public static final /* synthetic */ e b = new e(0);
+    public static final /* synthetic */ e c = new e(1);
+    public final /* synthetic */ int a;
 
-    public e(int i10) {
-        this.a = i10;
+    public /* synthetic */ e(int i9) {
+        this.a = i9;
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final Class annotationType() {
-        return i.class;
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // q9.a
+    public final void a(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                Map.Entry entry = (Map.Entry) obj;
+                q9.e eVar = (q9.e) obj2;
+                eVar.g(f.g, entry.getKey());
+                eVar.g(f.h, entry.getValue());
+                return;
+            default:
+                throw new q9.b("Couldn't find encoder for type ".concat(String.valueOf(obj.getClass().getCanonicalName())));
         }
-        if (!(obj instanceof i)) {
-            return false;
-        }
-        if (this.a != ((e) ((i) obj)).a) {
-            return false;
-        }
-        Object obj2 = h.a;
-        return obj2.equals(obj2);
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final int hashCode() {
-        return (this.a ^ 14552422) + (h.a.hashCode() ^ 2041407134);
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final String toString() {
-        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + this.a + "intEncoding=" + h.a + ')';
     }
 }

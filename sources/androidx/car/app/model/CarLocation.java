@@ -3,19 +3,19 @@ package androidx.car.app.model;
 import android.location.Location;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class CarLocation {
     private final double mLat;
     private final double mLng;
 
-    private CarLocation(double d, double d10) {
+    private CarLocation(double d, double d9) {
         this.mLat = d;
-        this.mLng = d10;
+        this.mLng = d9;
     }
 
-    public static CarLocation create(double d, double d10) {
-        return new CarLocation(d, d10);
+    public static CarLocation create(double d, double d9) {
+        return new CarLocation(d, d9);
     }
 
     public boolean equals(Object obj) {

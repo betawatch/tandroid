@@ -7,21 +7,21 @@ import android.os.Bundle;
 import android.os.ResultReceiver;
 import b1.a;
 import b1.d;
-import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class IdentityCredentialApiHiddenActivity extends Activity {
     public ResultReceiver a;
     public boolean b;
 
     @Override // android.app.Activity
-    public final void onActivityResult(int i10, int i11, Intent intent) {
-        super.onActivityResult(i10, i11, intent);
+    public final void onActivityResult(int i9, int i10, Intent intent) {
+        super.onActivityResult(i9, i10, intent);
         ResultReceiver resultReceiver = this.a;
         if (resultReceiver != null) {
-            int i12 = d.d;
-            a.d(resultReceiver, i10, i11, intent);
+            int i11 = d.d;
+            a.d(resultReceiver, i9, i10, intent);
         }
         this.b = false;
         finish();
@@ -55,7 +55,7 @@ public class IdentityCredentialApiHiddenActivity extends Activity {
         }
         ResultReceiver resultReceiver2 = this.a;
         if (resultReceiver2 != null) {
-            int i10 = d.d;
+            int i9 = d.d;
             a.c(resultReceiver2, stringExtra, "Internal error");
         }
         finish();
@@ -63,7 +63,7 @@ public class IdentityCredentialApiHiddenActivity extends Activity {
 
     @Override // android.app.Activity
     public final void onSaveInstanceState(Bundle outState) {
-        j.e(outState, "outState");
+        i.e(outState, "outState");
         outState.putBoolean("androidx.credentials.playservices.AWAITING_RESULT", this.b);
         super.onSaveInstanceState(outState);
     }

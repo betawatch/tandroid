@@ -1,50 +1,29 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.util.NoSuchElementException;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class l0 extends g0 {
-    public static final l0 e = new l0(0, new Object[0]);
-    public final transient Object[] c;
-    public final transient int d;
+public final class l0 extends b7.x {
+    public boolean b;
+    public final /* synthetic */ Object c;
 
-    public l0(int i10, Object[] objArr) {
-        this.c = objArr;
-        this.d = i10;
+    public l0(Object obj) {
+        super(1);
+        this.c = obj;
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        g7.k5.a(i10, this.d);
-        Object obj = this.c[i10];
-        obj.getClass();
-        return obj;
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return !this.b;
     }
 
-    @Override // com.google.android.gms.internal.cast.g0, com.google.android.gms.internal.cast.d0
-    public final int i(Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i10 = this.d;
-        System.arraycopy(objArr2, 0, objArr, 0, i10);
-        return i10;
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final int n() {
-        return this.d;
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final int o() {
-        return 0;
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final Object[] p() {
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (this.b) {
+            throw new NoSuchElementException();
+        }
+        this.b = true;
         return this.c;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
     }
 }

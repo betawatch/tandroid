@@ -21,8 +21,8 @@ public final class g implements PrivilegedAction {
                 h.b(hVar);
                 ((ArrayList) this.a).add(hVar);
                 return null;
-            } catch (Exception e9) {
-                throw new Error(e9);
+            } catch (Exception e10) {
+                throw new Error(e10);
             }
         }
         h.b(new h());

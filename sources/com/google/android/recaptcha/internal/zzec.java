@@ -1,11 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import ad.p;
-import h7.k6;
-import rc.c;
-import tc.i;
+import g7.y5;
+import qc.c;
+import rc.a;
+import sc.i;
+import zc.p;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class zzec extends i implements p {
     int zza;
@@ -28,26 +29,26 @@ final class zzec extends i implements p {
         this.zzg = zzhhVar;
     }
 
-    @Override // tc.a
+    @Override // sc.a
     public final c create(Object obj, c cVar) {
         zzec zzecVar = new zzec(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, cVar);
         zzecVar.zzh = obj;
         return zzecVar;
     }
 
-    @Override // ad.p
+    @Override // zc.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzec) create((zzhk) obj, (c) obj2)).invokeSuspend(pc.i.a);
+        return ((zzec) create((zzhk) obj, (c) obj2)).invokeSuspend(oc.i.a);
     }
 
-    @Override // tc.a
+    @Override // sc.a
     public final Object invokeSuspend(Object obj) {
-        sc.a aVar = sc.a.a;
+        a aVar = a.a;
         try {
             if (this.zza != 0) {
-                k6.b(obj);
+                y5.b(obj);
             } else {
-                k6.b(obj);
+                y5.b(obj);
                 zzhk zzhkVar = (zzhk) this.zzh;
                 zzeb zzebVar = new zzeb(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, null);
                 this.zza = 1;
@@ -57,10 +58,10 @@ final class zzec extends i implements p {
                 }
             }
             return (zzeq) obj;
-        } catch (zzcg e9) {
-            throw e9.zzc();
-        } catch (Exception e10) {
-            throw new zzcg(zzce.zzb, zzcd.zza, e10.getMessage(), null, 8, null).zzc();
+        } catch (zzcg e10) {
+            throw e10.zzc();
+        } catch (Exception e11) {
+            throw new zzcg(zzce.zzb, zzcd.zza, e11.getMessage(), null, 8, null).zzc();
         }
     }
 }

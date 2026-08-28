@@ -23,7 +23,7 @@ public final class r0 implements b1 {
         this.b.getClass();
         ((z) obj).zzjp.d = false;
         this.c.getClass();
-        a9.p.t(obj);
+        aa.d.v(obj);
         throw null;
     }
 
@@ -50,8 +50,8 @@ public final class r0 implements b1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void f(Object obj, byte[] bArr, int i10, int i11, m mVar) {
-        int i12;
+    public final void f(Object obj, byte[] bArr, int i9, int i10, m mVar) {
+        int i11;
         z zVar = (z) obj;
         d1 d1Var = zVar.zzjp;
         if (d1Var == d1.e) {
@@ -59,55 +59,55 @@ public final class r0 implements b1 {
             zVar.zzjp = d1Var;
         }
         d1 d1Var2 = d1Var;
-        while (i10 < i11) {
-            int f10 = o1.f(bArr, i10, mVar);
-            int i13 = mVar.a;
-            if (i13 != 11) {
+        while (i9 < i10) {
+            int f10 = o1.f(bArr, i9, mVar);
+            int i12 = mVar.a;
+            if (i12 != 11) {
                 byte[] bArr2 = bArr;
-                int i14 = i11;
+                int i13 = i10;
                 m mVar2 = mVar;
-                i10 = (i13 & 7) == 2 ? o1.c(i13, bArr2, f10, i14, d1Var2, mVar2) : o1.b(i13, bArr2, f10, i14, mVar2);
+                i9 = (i12 & 7) == 2 ? o1.c(i12, bArr2, f10, i13, d1Var2, mVar2) : o1.b(i12, bArr2, f10, i13, mVar2);
             } else {
                 byte[] bArr3 = bArr;
-                int i15 = i11;
+                int i14 = i10;
                 m mVar3 = mVar;
-                int i16 = 0;
+                int i15 = 0;
                 o oVar = null;
                 while (true) {
-                    if (f10 >= i15) {
-                        i12 = f10;
+                    if (f10 >= i14) {
+                        i11 = f10;
                         break;
                     }
-                    i12 = o1.f(bArr3, f10, mVar3);
-                    int i17 = mVar3.a;
-                    int i18 = i17 >>> 3;
-                    int i19 = i17 & 7;
-                    if (i18 != 2) {
-                        if (i18 == 3 && i19 == 2) {
-                            f10 = o1.s(bArr3, i12, mVar3);
+                    i11 = o1.f(bArr3, f10, mVar3);
+                    int i16 = mVar3.a;
+                    int i17 = i16 >>> 3;
+                    int i18 = i16 & 7;
+                    if (i17 != 2) {
+                        if (i17 == 3 && i18 == 2) {
+                            f10 = o1.s(bArr3, i11, mVar3);
                             oVar = (o) mVar3.c;
                         }
-                        if (i17 != 12) {
+                        if (i16 != 12) {
                             break;
                         } else {
-                            f10 = o1.b(i17, bArr3, i12, i15, mVar3);
+                            f10 = o1.b(i16, bArr3, i11, i14, mVar3);
                         }
-                    } else if (i19 == 0) {
-                        f10 = o1.f(bArr3, i12, mVar3);
-                        i16 = mVar3.a;
-                    } else if (i17 != 12) {
+                    } else if (i18 == 0) {
+                        f10 = o1.f(bArr3, i11, mVar3);
+                        i15 = mVar3.a;
+                    } else if (i16 != 12) {
                     }
                 }
                 if (oVar != null) {
-                    d1Var2.a((i16 << 3) | 2, oVar);
+                    d1Var2.a((i15 << 3) | 2, oVar);
                 }
-                i10 = i12;
+                i9 = i11;
                 bArr = bArr3;
-                i11 = i15;
+                i10 = i14;
                 mVar = mVar3;
             }
         }
-        if (i10 != i11) {
+        if (i9 != i10) {
             throw d0.b();
         }
     }
@@ -115,7 +115,7 @@ public final class r0 implements b1 {
     @Override // com.google.android.gms.internal.clearcut.b1
     public final boolean g(Object obj) {
         this.c.getClass();
-        a9.p.t(obj);
+        aa.d.v(obj);
         throw null;
     }
 }

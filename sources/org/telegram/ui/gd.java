@@ -4,17 +4,17 @@ import android.content.Context;
 import android.view.ContextThemeWrapper;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class gd extends RadialProgressView {
     public final /* synthetic */ int G;
     public final /* synthetic */ Object H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ gd(org.telegram.ui.Components.i40 i40Var, Context context, int i10) {
+    public /* synthetic */ gd(org.telegram.ui.Components.d40 d40Var, Context context, int i9) {
         super(context, null);
-        this.G = i10;
-        this.H = i40Var;
+        this.G = i9;
+        this.H = d40Var;
     }
 
     @Override // android.view.View
@@ -22,9 +22,9 @@ public final class gd extends RadialProgressView {
         switch (this.G) {
             case 3:
                 super.invalidate();
-                ut0 ut0Var = ((PhotoViewer) this.H).a0;
-                if (ut0Var != null) {
-                    ut0Var.invalidate();
+                tt0 tt0Var = ((PhotoViewer) this.H).a0;
+                if (tt0Var != null) {
+                    tt0Var.invalidate();
                     break;
                 }
                 break;
@@ -43,17 +43,17 @@ public final class gd extends RadialProgressView {
                 break;
             case 1:
                 super.setAlpha(f10);
-                ((u60) this.H).e.invalidate();
+                ((r60) this.H).e.invalidate();
                 break;
             case 2:
                 super.setAlpha(f10);
-                ((te0) this.H).h.invalidate();
+                ((qe0) this.H).h.invalidate();
                 break;
             default:
                 super.setAlpha(f10);
-                ut0 ut0Var = ((PhotoViewer) this.H).a0;
-                if (ut0Var != null) {
-                    ut0Var.invalidate();
+                tt0 tt0Var = ((PhotoViewer) this.H).a0;
+                if (tt0Var != null) {
+                    tt0Var.invalidate();
                     break;
                 }
                 break;
@@ -61,8 +61,8 @@ public final class gd extends RadialProgressView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gd(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(contextThemeWrapper, c6Var);
+    public gd(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(contextThemeWrapper, b6Var);
         this.G = 3;
         this.H = photoViewer;
     }

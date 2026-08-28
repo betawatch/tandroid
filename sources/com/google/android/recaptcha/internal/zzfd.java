@@ -1,13 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import ad.p;
-import h7.k6;
-import id.e2;
-import id.f0;
-import rc.c;
-import tc.i;
+import g7.y5;
+import hd.e2;
+import hd.f0;
+import qc.c;
+import rc.a;
+import sc.i;
+import zc.p;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class zzfd extends i implements p {
     int zza;
@@ -24,26 +25,26 @@ final class zzfd extends i implements p {
         this.zzd = zzxnVar;
     }
 
-    @Override // tc.a
+    @Override // sc.a
     public final c create(Object obj, c cVar) {
         zzfd zzfdVar = new zzfd(this.zzb, this.zzc, this.zzd, cVar);
         zzfdVar.zze = obj;
         return zzfdVar;
     }
 
-    @Override // ad.p
+    @Override // zc.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfd) create((zzhk) obj, (c) obj2)).invokeSuspend(pc.i.a);
+        return ((zzfd) create((zzhk) obj, (c) obj2)).invokeSuspend(oc.i.a);
     }
 
-    @Override // tc.a
+    @Override // sc.a
     public final Object invokeSuspend(Object obj) {
-        sc.a aVar = sc.a.a;
+        a aVar = a.a;
         try {
             if (this.zza != 0) {
-                k6.b(obj);
+                y5.b(obj);
             } else {
-                k6.b(obj);
+                y5.b(obj);
                 zzhk zzhkVar = (zzhk) this.zze;
                 long j10 = this.zzb;
                 zzfc zzfcVar = new zzfc(zzhkVar, this.zzc, this.zzd, j10, null);
@@ -52,13 +53,13 @@ final class zzfd extends i implements p {
                     return aVar;
                 }
             }
-            return pc.i.a;
-        } catch (zzcg e9) {
-            throw e9;
-        } catch (e2 e10) {
-            throw new zzcg(zzce.zzb, zzcd.zzb, e10.getMessage(), null, 8, null);
-        } catch (Exception e11) {
-            throw new zzcg(zzce.zzb, zzcd.zzap, e11.getMessage(), null, 8, null);
+            return oc.i.a;
+        } catch (zzcg e10) {
+            throw e10;
+        } catch (e2 e11) {
+            throw new zzcg(zzce.zzb, zzcd.zzb, e11.getMessage(), null, 8, null);
+        } catch (Exception e12) {
+            throw new zzcg(zzce.zzb, zzcd.zzap, e12.getMessage(), null, 8, null);
         }
     }
 }

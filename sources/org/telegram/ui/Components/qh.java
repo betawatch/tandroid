@@ -1,117 +1,127 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.text.style.ImageSpan;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
+import android.view.Menu;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class qh implements TextWatcher {
-    public boolean a;
-    public boolean b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 c;
-    public final /* synthetic */ gi d;
+public final class qh extends ut {
+    public boolean R;
+    public int S;
+    public int T;
+    public ValueAnimator U;
+    public final /* synthetic */ ki V;
 
-    public qh(gi giVar, org.telegram.ui.ActionBar.n2 n2Var) {
-        this.d = giVar;
-        this.c = n2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qh(ki kiVar, Context context, ai aiVar, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(context, aiVar, null, 1, true, b6Var);
+        this.V = kiVar;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        boolean z10;
-        int i10;
-        gi giVar = this.d;
-        j6 j6Var = giVar.s;
-        ph phVar = giVar.L0;
-        int i11 = giVar.F1;
-        j6 j6Var2 = giVar.v;
-        if (this.b != TextUtils.isEmpty(editable)) {
-            yh yhVar = giVar.u0;
-            if (yhVar != null) {
-                yhVar.C(yhVar.getSelectedItemsCount());
+    @Override // org.telegram.ui.Components.ut
+    public final void c(float f10) {
+        ki kiVar = this.V;
+        kiVar.c2 = f10;
+        mh mhVar = kiVar.z0;
+        mhVar.setTranslationY(f10);
+        mhVar.invalidate();
+        kiVar.g1();
+        kiVar.X1(kiVar.u0, 0);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.R) {
+            mt editText = this.V.A0.getEditText();
+            editText.setOffsetY(editText.getOffsetY() - ((this.T - editText.getScrollY()) + (this.S - editText.getMeasuredHeight())));
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
+            ofFloat.addUpdateListener(new f2.g(10, this, editText));
+            ValueAnimator valueAnimator = this.U;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
             }
-            this.b = !this.b;
+            this.U = ofFloat;
+            ofFloat.setDuration(200L);
+            ofFloat.setInterpolator(gr.f);
+            ofFloat.start();
+            this.R = false;
         }
-        boolean z11 = false;
-        if (this.a) {
-            for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
-                editable.removeSpan(imageSpan);
-            }
-            Emoji.replaceEmoji(editable, phVar.getEditText().getPaint().getFontMetricsInt(), false);
-            this.a = false;
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.ut
+    public final void e() {
+        super/*org.telegram.ui.ActionBar.f3*/.dismiss();
+    }
+
+    @Override // org.telegram.ui.Components.ut
+    public final void f() {
+        super.f();
+        wy emojiView = getEmojiView();
+        if (emojiView != null) {
+            emojiView.s0 = false;
+            emojiView.t2 = false;
+            emojiView.setShouldDrawBackground(false);
+            emojiView.setBottomInset(AndroidUtilities.navigationBarHeight);
         }
-        int codePointCount = Character.codePointCount(editable, 0, editable.length());
-        giVar.H = codePointCount;
-        giVar.e.a(codePointCount > 0, true);
-        int i12 = giVar.G;
-        if (i12 <= 0 || (i10 = i12 - giVar.H) > 100) {
-            j6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.am(this, 13));
-            j6Var.setAlpha(0.0f);
-            z10 = true;
-        } else {
-            if (i10 < -9999) {
-                i10 = -9999;
-            }
-            long j10 = i10;
-            j6Var2.c(LocaleController.formatNumber(j10, ','), j6Var2.getVisibility() == 0, true);
-            if (j6Var2.getVisibility() != 0) {
-                j6Var2.setVisibility(0);
-                j6Var2.setAlpha(0.0f);
-                j6Var2.setScaleX(0.5f);
-                j6Var2.setScaleY(0.5f);
-            }
-            j6Var2.animate().setListener(null).cancel();
-            j6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
-            if (i10 < 0) {
-                j6Var2.setTextColor(giVar.getThemedColor(org.telegram.ui.ActionBar.g6.p7));
-                z10 = false;
+    }
+
+    @Override // org.telegram.ui.Components.ut
+    public final void i(Menu menu) {
+        org.telegram.ui.ActionBar.o2 o2Var = this.V.b0;
+        if (o2Var instanceof org.telegram.ui.qn) {
+            org.telegram.ui.qn.k8(menu, ((org.telegram.ui.qn) o2Var).h, true, true, true, true);
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        ki kiVar = this.V;
+        qh qhVar = kiVar.A0;
+        if (!kiVar.q1) {
+            if (motionEvent.getX() <= qhVar.getEditText().getLeft() || motionEvent.getX() >= qhVar.getEditText().getRight() || motionEvent.getY() <= qhVar.getEditText().getTop() || motionEvent.getY() >= qhVar.getEditText().getBottom()) {
+                kiVar.t1(qhVar.getEditText(), false);
             } else {
-                j6Var2.setTextColor(giVar.getThemedColor(org.telegram.ui.ActionBar.g6.y6));
+                kiVar.t1(qhVar.getEditText(), true);
+            }
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
+        super.onLayout(z10, i9, i10, i11, i12);
+        this.V.U1();
+    }
+
+    @Override // org.telegram.ui.Components.ut
+    public final void q(int i9, int i10) {
+        ki kiVar = this.V;
+        mh mhVar = kiVar.z0;
+        boolean z10 = false;
+        if (TextUtils.isEmpty(getEditText().getText())) {
+            getEditText().animate().cancel();
+            getEditText().setOffsetY(0.0f);
+            this.R = false;
+        } else {
+            this.R = true;
+            this.S = getEditText().getMeasuredHeight();
+            this.T = getEditText().getScrollY();
+            invalidate();
+        }
+        if (!kiVar.Y) {
+            if (i10 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim())) {
                 z10 = true;
             }
-            j6Var.c(LocaleController.formatNumber(j10, ','), false, true);
-            j6Var.setAlpha(1.0f);
+            kiVar.M1(z10);
         }
-        if (giVar.Q0 != z10) {
-            giVar.Q0 = z10;
-            giVar.E0.invalidate();
-        }
-        if (!giVar.e2 && !MessagesController.getInstance(i11).premiumFeaturesBlocked() && !UserConfig.getInstance(i11).isPremium() && giVar.H > MessagesController.getInstance(i11).captionLengthLimitDefault && giVar.H < MessagesController.getInstance(i11).captionLengthLimitPremium) {
-            giVar.e2 = true;
-            giVar.O1(this.c);
-        }
-        if (giVar.Y) {
-            if (phVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(phVar.getText().toString().trim())) {
-                z11 = true;
-            }
-            giVar.M1(z11);
-        }
-        giVar.d1(true);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        if (i12 - i11 >= 1) {
-            this.a = true;
-        }
-        gi giVar = this.d;
-        if (giVar.x2 == null) {
-            gi.Q(giVar);
-        }
-        if (giVar.x2.getAdapter() != null) {
-            giVar.x2.setReversed(true);
-            giVar.x2.getAdapter().U(charSequence, giVar.L0.getEditText().getSelectionStart(), null, false, false);
-            giVar.U1();
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        kiVar.S1 = mhVar.getTop() + kiVar.R1;
+        mhVar.invalidate();
+        kiVar.U1();
     }
 }

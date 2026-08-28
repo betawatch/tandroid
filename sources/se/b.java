@@ -1,80 +1,92 @@
 package se;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.MediaMetadataRetriever;
-import java.io.File;
-import org.telegram.messenger.FileLog;
-import s3.c;
+import com.google.firebase.messaging.d;
+import ie.p;
+import java.io.DataInputStream;
+import java.io.EOFException;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b extends a {
-    public final MediaMetadataRetriever r;
-    public final boolean s;
+public final class b extends p {
+    public final /* synthetic */ int g;
 
-    public b(File file) {
-        long j10;
-        MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
-        this.r = mediaMetadataRetriever;
-        try {
-            mediaMetadataRetriever.setDataSource(file.getAbsolutePath());
-            this.a = "OTHER";
-            try {
-                j10 = Long.parseLong(mediaMetadataRetriever.extractMetadata(9));
-            } catch (Exception unused) {
-                j10 = 0;
-            }
-            this.b = j10;
-            this.c = c(7);
-            this.d = c(2);
-            this.e = c(13);
-            this.f = c(1);
-            this.g = b(8);
-            this.h = c(6);
-            this.j = b(0);
-            b(10);
-            this.k = b(14);
-            this.m = c(4);
-            byte[] embeddedPicture = this.r.getEmbeddedPicture();
-            if (embeddedPicture != null) {
-                this.o = BitmapFactory.decodeByteArray(embeddedPicture, 0, embeddedPicture.length);
-            }
-            if (this.o != null) {
-                float max = Math.max(r5.getWidth(), this.o.getHeight()) / 120.0f;
-                if (max > 0.0f) {
-                    this.p = Bitmap.createScaledBitmap(this.o, (int) (r0.getWidth() / max), (int) (this.o.getHeight() / max), true);
-                } else {
-                    this.p = this.o;
-                }
-            }
-        } catch (Exception e9) {
-            this.s = true;
-            FileLog.e(e9);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ b(d dVar, p pVar, String str, int i9) {
+        super(dVar, pVar, str);
+        this.g = i9;
+    }
+
+    public static void h(StringBuffer stringBuffer, p pVar) {
+        p pVar2 = (p) pVar.c;
+        if (pVar2 != null) {
+            h(stringBuffer, pVar2);
+            stringBuffer.append("/");
         }
-        try {
-            MediaMetadataRetriever mediaMetadataRetriever2 = this.r;
-            if (mediaMetadataRetriever2 != null) {
-                c.j(mediaMetadataRetriever2);
+        stringBuffer.append((String) pVar.d);
+    }
+
+    public long i() {
+        return ((ue.a) ((d) this.b)).e();
+    }
+
+    public boolean j() {
+        b bVar = (b) this.f;
+        return (bVar != null ? bVar.i() : 0L) < i();
+    }
+
+    public b k(String str) {
+        while (i() > 0) {
+            b c10 = c();
+            if (((String) c10.d).matches(str)) {
+                return c10;
             }
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        }
+        throw new IOException("atom type mismatch, not found: ".concat(str));
+    }
+
+    public short l() {
+        return ((DataInputStream) this.e).readShort();
+    }
+
+    public String m() {
+        byte[] bArr = new byte[(int) i()];
+        ((DataInputStream) this.e).readFully(bArr);
+        String str = new String(bArr, "UTF-8");
+        int indexOf = str.indexOf(0);
+        return indexOf < 0 ? str : str.substring(0, indexOf);
+    }
+
+    public void n(int i9) {
+        int i10 = 0;
+        while (i10 < i9) {
+            int skipBytes = ((DataInputStream) this.e).skipBytes(i9 - i10);
+            if (skipBytes <= 0) {
+                throw new EOFException();
+            }
+            i10 += skipBytes;
         }
     }
 
-    public final short b(int i10) {
-        try {
-            return Short.parseShort(this.r.extractMetadata(i10));
-        } catch (Exception unused) {
-            return (short) 0;
-        }
-    }
-
-    public final String c(int i10) {
-        try {
-            return this.r.extractMetadata(i10);
-        } catch (Exception unused) {
-            return null;
+    @Override // ie.p
+    public final String toString() {
+        switch (this.g) {
+            case 0:
+                StringBuffer stringBuffer = new StringBuffer();
+                h(stringBuffer, this);
+                stringBuffer.append("[off=");
+                long j10 = ((d) ((p) this.c).b).b;
+                d dVar = (d) this.b;
+                stringBuffer.append(j10 - dVar.b);
+                stringBuffer.append(",pos=");
+                stringBuffer.append(dVar.b);
+                stringBuffer.append(",len=");
+                ue.a aVar = (ue.a) dVar;
+                stringBuffer.append(aVar.e() + aVar.b);
+                stringBuffer.append("]");
+                return stringBuffer.toString();
+            default:
+                return aa.d.q(new StringBuilder("mp4[pos="), ((d) this.b).b, "]");
         }
     }
 }

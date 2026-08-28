@@ -1,191 +1,136 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.content.res.Configuration;
 import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class rf0 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sf0 b;
+public final class rf0 extends tv0 {
+    public boolean a = false;
+    public final Paint b = new Paint(1);
+    public final int c = UserConfig.selectedAccount;
+    public long d = 0;
+    public boolean e = false;
+    public final RectF f = new RectF();
+    public float g;
+    public final boolean h;
+    public final org.telegram.ui.ActionBar.b6 i;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ rf0(sf0 sf0Var, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = sf0Var;
+    public rf0(org.telegram.ui.ActionBar.b6 b6Var, boolean z10) {
+        this.h = z10;
+        this.i = b6Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                super.dispatchDraw(canvas);
-                sf0 sf0Var = this.b;
-                un0 un0Var = sf0Var.N;
-                if (un0Var != null && un0Var.a()) {
-                    sf0Var.N.setBounds(getLeft(), getTop(), getRight(), getBottom());
-                    sf0Var.N.draw(canvas);
-                    break;
-                }
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
+    @Override // org.telegram.ui.Components.tv0
+    public final void c(boolean z10) {
+        this.a = z10;
+    }
+
+    @Override // org.telegram.ui.Components.tv0
+    public final void d() {
+        this.d = System.currentTimeMillis();
+        this.e = true;
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int dp = AndroidUtilities.dp(10.0f);
+        int dp2 = ((AndroidUtilities.dp(18.0f) - dp) / 2) + getBounds().top;
+        if (!this.a) {
+            dp2 += AndroidUtilities.dp(1.0f);
+        }
+        int i9 = dp2;
+        boolean z10 = this.h;
+        int v02 = org.telegram.ui.ActionBar.f6.v0(z10 ? org.telegram.ui.ActionBar.f6.p9 : org.telegram.ui.ActionBar.f6.pa, this.i);
+        Paint paint = this.b;
+        paint.setColor(v02);
+        RectF rectF = this.f;
+        rectF.set(0.0f, i9, dp, i9 + dp);
+        float f10 = this.g;
+        int v = (int) (f10 < 0.5f ? org.telegram.messenger.ll.v(f10, 0.5f, 1.0f, 35.0f) : ((f10 - 0.5f) * 35.0f) / 0.5f);
+        for (int i10 = 0; i10 < 3; i10++) {
+            float dp3 = AndroidUtilities.dp(9.2f) + (AndroidUtilities.dp(5.0f) * i10);
+            float dp4 = AndroidUtilities.dp(5.0f);
+            float f11 = this.g;
+            float f12 = dp3 - (dp4 * f11);
+            if (i10 == 2) {
+                paint.setAlpha(Math.min(255, (int) ((f11 * 255.0f) / 0.5f)));
+            } else if (i10 != 0) {
+                paint.setAlpha(255);
+            } else if (f11 > 0.5f) {
+                paint.setAlpha((int) ((1.0f - ((f11 - 0.5f) / 0.5f)) * 255.0f));
+            } else {
+                paint.setAlpha(255);
+            }
+            canvas.drawCircle(f12, (dp / 2) + i9, AndroidUtilities.dp(1.2f), paint);
+        }
+        paint.setAlpha(255);
+        canvas.drawArc(rectF, v, 360 - (v * 2), true, paint);
+        paint.setColor(org.telegram.ui.ActionBar.f6.w0(null, z10 ? org.telegram.ui.ActionBar.f6.d6 : org.telegram.ui.ActionBar.f6.s8, false));
+        canvas.drawCircle(AndroidUtilities.dp(4.0f), ((dp / 2) + i9) - AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f), paint);
+        f();
+    }
+
+    @Override // org.telegram.ui.Components.tv0
+    public final void e() {
+        this.g = 0.0f;
+        this.e = false;
+    }
+
+    public final void f() {
+        if (this.e) {
+            if (NotificationCenter.getInstance(this.c).isAnimationInProgress()) {
+                AndroidUtilities.runOnUIThread(new ib0(this, 13), 100L);
+                return;
+            }
+            long currentTimeMillis = System.currentTimeMillis();
+            long j10 = currentTimeMillis - this.d;
+            this.d = currentTimeMillis;
+            if (j10 > 50) {
+                j10 = 50;
+            }
+            if (this.g >= 1.0f) {
+                this.g = 0.0f;
+            }
+            float f10 = (j10 / 300.0f) + this.g;
+            this.g = f10;
+            if (f10 > 1.0f) {
+                this.g = 1.0f;
+            }
+            a();
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        PhotoViewer photoViewer;
-        org.telegram.ui.is0 is0Var;
-        switch (this.a) {
-            case 0:
-                int actionMasked = motionEvent.getActionMasked();
-                sf0 sf0Var = this.b;
-                if (actionMasked == 0 || actionMasked == 5) {
-                    if (motionEvent.getPointerCount() == 1) {
-                        sf0Var.b0 = true;
-                        sf0Var.c0 = new float[]{motionEvent.getX(), motionEvent.getY()};
-                        AndroidUtilities.runOnUIThread(sf0Var.d0, 500L);
-                    } else {
-                        sf0Var.b0 = false;
-                        sf0Var.i();
-                        AndroidUtilities.cancelRunOnUIThread(sf0Var.d0);
-                    }
-                }
-                if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
-                    sf0Var.b0 = false;
-                    sf0Var.i();
-                    AndroidUtilities.cancelRunOnUIThread(sf0Var.d0);
-                } else if (actionMasked == 2 && (photoViewer = sf0Var.R) != null && (is0Var = photoViewer.Y3) != null && is0Var.rewinding) {
-                    is0Var.setX(motionEvent.getX());
-                }
-                if (sf0Var.y != null) {
-                    MotionEvent obtain = MotionEvent.obtain(motionEvent);
-                    obtain.offsetLocation(sf0Var.y.getX(), sf0Var.y.getY());
-                    boolean dispatchTouchEvent = sf0Var.y.dispatchTouchEvent(motionEvent);
-                    obtain.recycle();
-                    if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
-                        sf0Var.y = null;
-                    }
-                    if (dispatchTouchEvent) {
-                        return true;
-                    }
-                }
-                MotionEvent obtain2 = MotionEvent.obtain(motionEvent);
-                obtain2.offsetLocation(motionEvent.getRawX() - motionEvent.getX(), motionEvent.getRawY() - motionEvent.getY());
-                boolean onTouchEvent = sf0Var.s.onTouchEvent(obtain2);
-                obtain2.recycle();
-                boolean z10 = !sf0Var.s.isInProgress() && sf0Var.v.P(motionEvent);
-                if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
-                    sf0Var.w = false;
-                    sf0Var.x = false;
-                    if (sf0Var.Z) {
-                        sf0Var.Z = false;
-                        sf0 sf0Var2 = sf0.l0;
-                        fu fuVar = sf0Var2.Q;
-                        if (fuVar != null) {
-                            fuVar.H();
-                        } else {
-                            PhotoViewer photoViewer2 = sf0Var2.R;
-                            if (photoViewer2 != null) {
-                                photoViewer2.P0();
-                                MediaController.getInstance().tryResumePausedAudio();
-                            }
-                        }
-                        sf0.j(false);
-                    } else {
-                        o1.j jVar = sf0Var.I;
-                        if (!jVar.f) {
-                            float f10 = sf0Var.G;
-                            jVar.b = f10;
-                            jVar.c = true;
-                            jVar.u.i = (sf0Var.D / 2.0f) + f10 >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r1 - r6) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
-                            sf0Var.I.f();
-                        }
-                        o1.j jVar2 = sf0Var.J;
-                        if (!jVar2.f) {
-                            jVar2.b = sf0Var.H;
-                            jVar2.c = true;
-                            jVar2.u.i = h7.n.a(r1, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - sf0Var.E) - AndroidUtilities.dp(16.0f));
-                            sf0Var.J.f();
-                        }
-                    }
-                }
-                return onTouchEvent || z10;
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(18.0f);
     }
 
-    @Override // android.view.View
-    public void onConfigurationChanged(Configuration configuration) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.checkDisplaySize(getContext(), configuration);
-                sf0 sf0Var = this.b;
-                sf0Var.C = null;
-                AndroidUtilities.setPreferredMaxRefreshRate(sf0Var.b, sf0Var.d, sf0Var.c);
-                if (sf0Var.D != sf0Var.t() * sf0Var.F || sf0Var.E != sf0Var.r() * sf0Var.F) {
-                    WindowManager.LayoutParams layoutParams = sf0Var.c;
-                    int t10 = (int) (sf0Var.t() * sf0Var.F);
-                    sf0Var.D = t10;
-                    layoutParams.width = t10;
-                    WindowManager.LayoutParams layoutParams2 = sf0Var.c;
-                    int r10 = (int) (sf0Var.r() * sf0Var.F);
-                    sf0Var.E = r10;
-                    layoutParams2.height = r10;
-                    AndroidUtilities.updateViewLayout(sf0Var.b, sf0Var.d, sf0Var.c);
-                    o1.j jVar = sf0Var.I;
-                    float f10 = sf0Var.G;
-                    jVar.b = f10;
-                    jVar.c = true;
-                    jVar.u.i = a9.p.d(sf0Var.t(), sf0Var.F, 2.0f, f10) >= AndroidUtilities.displaySize.x / 2.0f ? (r3 - (sf0Var.t() * sf0Var.F)) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
-                    sf0Var.I.f();
-                    o1.j jVar2 = sf0Var.J;
-                    jVar2.b = sf0Var.H;
-                    jVar2.c = true;
-                    jVar2.u.i = h7.n.a(r1, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - (sf0Var.r() * sf0Var.F)) - AndroidUtilities.dp(16.0f));
-                    sf0Var.J.f();
-                    break;
-                }
-                break;
-            default:
-                super.onConfigurationChanged(configuration);
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(20.0f);
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                sf0 sf0Var = this.b;
-                c61 c61Var = sf0Var.M;
-                if (c61Var.j) {
-                    c61Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
-                    sf0Var.M.draw(canvas);
-                }
-                PhotoViewer photoViewer = sf0Var.R;
-                if (photoViewer != null && photoViewer.X3 != null) {
-                    canvas.save();
-                    canvas.translate(getLeft(), getTop());
-                    sf0Var.R.X3.draw(canvas, getRight() - getLeft(), getBottom() - getTop());
-                    canvas.restore();
-                    break;
-                }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // org.telegram.ui.Components.tv0
+    public final void b(int i9) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i9) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

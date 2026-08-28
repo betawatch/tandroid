@@ -9,7 +9,7 @@ import org.telegram.messenger.voip.VoIPPreNotificationService;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class VoIPPermissionActivity extends Activity {
     @Override // android.app.Activity
@@ -35,24 +35,24 @@ public class VoIPPermissionActivity extends Activity {
         }
         try {
             requestPermissions((String[]) arrayList.toArray(new String[0]), isVideo ? 102 : 101);
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
     }
 
     @Override // android.app.Activity
-    public final void onRequestPermissionsResult(int i10, String[] strArr, int[] iArr) {
-        if (i10 == 101 || i10 == 102) {
+    public final void onRequestPermissionsResult(int i9, String[] strArr, int[] iArr) {
+        if (i9 == 101 || i9 == 102) {
             boolean z10 = false;
-            int i11 = 0;
+            int i10 = 0;
             while (true) {
-                if (i11 >= iArr.length) {
+                if (i10 >= iArr.length) {
                     z10 = true;
                     break;
-                } else if (iArr[i11] != 0) {
+                } else if (iArr[i10] != 0) {
                     break;
                 } else {
-                    i11++;
+                    i10++;
                 }
             }
             if (iArr.length > 0 && z10) {
@@ -74,7 +74,7 @@ public class VoIPPermissionActivity extends Activity {
             } else {
                 VoIPPreNotificationService.decline(this, 1);
             }
-            org.telegram.ui.Components.voip.e2.i(this, new ky0(this, 27), i10);
+            org.telegram.ui.Components.voip.e2.i(this, new ky0(this, 27), i9);
         }
     }
 }

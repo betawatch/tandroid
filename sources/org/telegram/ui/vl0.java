@@ -1,81 +1,56 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import java.util.Locale;
+import android.text.Editable;
+import android.text.TextWatcher;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.R;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class vl0 implements s9 {
-    public final /* synthetic */ xm0 a;
+public final class vl0 implements TextWatcher {
+    public final /* synthetic */ EditTextBoldCursor a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ wm0 c;
 
-    public vl0(xm0 xm0Var) {
-        this.a = xm0Var;
+    public vl0(wm0 wm0Var, EditTextBoldCursor editTextBoldCursor, String str) {
+        this.c = wm0Var;
+        this.a = editTextBoldCursor;
+        this.b = str;
     }
 
-    @Override // org.telegram.ui.s9
-    public final void T0(MrzRecognizer.Result result) {
-        boolean isEmpty = TextUtils.isEmpty(result.firstName);
-        xm0 xm0Var = this.a;
-        if (!isEmpty) {
-            xm0Var.U[0].setText(result.firstName);
-        }
-        if (!TextUtils.isEmpty(result.middleName)) {
-            xm0Var.U[1].setText(result.middleName);
-        }
-        if (!TextUtils.isEmpty(result.lastName)) {
-            xm0Var.U[2].setText(result.lastName);
-        }
-        int i10 = result.gender;
-        if (i10 != 0) {
-            if (i10 == 1) {
-                xm0Var.w = "male";
-                xm0Var.U[4].setText(LocaleController.getString(R.string.PassportMale));
-            } else if (i10 == 2) {
-                xm0Var.w = "female";
-                xm0Var.U[4].setText(LocaleController.getString(R.string.PassportFemale));
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10;
+        EditTextBoldCursor editTextBoldCursor = this.a;
+        int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
+        int i9 = 0;
+        while (true) {
+            if (i9 >= editable.length()) {
+                z10 = false;
+                break;
             }
-        }
-        if (!TextUtils.isEmpty(result.nationality)) {
-            String str = result.nationality;
-            xm0Var.s = str;
-            String str2 = (String) xm0Var.U0.get(str);
-            if (str2 != null) {
-                xm0Var.U[5].setText(str2);
+            char charAt = editable.charAt(i9);
+            if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'z') && !((charAt >= 'A' && charAt <= 'Z') || charAt == ' ' || charAt == '\'' || charAt == ',' || charAt == '.' || charAt == '&' || charAt == '-' || charAt == '/'))) {
+                z10 = true;
+                break;
             }
+            i9++;
         }
-        if (!TextUtils.isEmpty(result.issuingCountry)) {
-            String str3 = result.issuingCountry;
-            xm0Var.v = str3;
-            String str4 = (String) xm0Var.U0.get(str3);
-            if (str4 != null) {
-                xm0Var.U[6].setText(str4);
-            }
+        wm0 wm0Var = this.c;
+        if (z10 && !wm0Var.q0) {
+            editTextBoldCursor.setErrorText(LocaleController.getString(R.string.PassportUseLatinOnly));
+        } else {
+            wm0Var.p0[intValue] = z10;
+            wm0.I0(wm0Var, editTextBoldCursor, this.b, editable, false);
         }
-        int i11 = result.birthDay;
-        if (i11 <= 0 || result.birthMonth <= 0 || result.birthYear <= 0) {
-            return;
-        }
-        xm0Var.U[3].setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(i11), Integer.valueOf(result.birthMonth), Integer.valueOf(result.birthYear)));
     }
 
-    @Override // org.telegram.ui.s9
-    public final /* synthetic */ boolean i1(String str, k9 k9Var) {
-        return false;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
     }
 
-    @Override // org.telegram.ui.s9
-    public final /* synthetic */ String z0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.s9
-    public final /* synthetic */ void C(String str) {
-    }
-
-    @Override // org.telegram.ui.s9
-    public final /* synthetic */ void onDismiss() {
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
     }
 }

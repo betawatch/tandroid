@@ -2,12 +2,12 @@ package com.google.android.play.core.integrity;
 
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class e extends StandardIntegrityManager.PrepareIntegrityTokenRequest {
     private final long a;
 
-    public /* synthetic */ e(long j10, int i10, d dVar) {
+    public /* synthetic */ e(long j10, int i9, d dVar) {
         this.a = j10;
     }
 
@@ -41,6 +41,6 @@ final class e extends StandardIntegrityManager.PrepareIntegrityTokenRequest {
     }
 
     public final String toString() {
-        return a9.p.o(new StringBuilder("PrepareIntegrityTokenRequest{cloudProjectNumber="), this.a, ", webViewRequestMode=0}");
+        return aa.d.q(new StringBuilder("PrepareIntegrityTokenRequest{cloudProjectNumber="), this.a, ", webViewRequestMode=0}");
     }
 }

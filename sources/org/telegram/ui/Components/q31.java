@@ -1,39 +1,62 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.widget.ScrollView;
-import org.telegram.messenger.R;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class q31 extends ScrollView {
-    public Drawable a;
-    public y5 b;
-    public boolean c;
+public final class q31 extends f2.d1 {
+    public final /* synthetic */ int a;
+    public int b;
+    public final /* synthetic */ Object c;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        float d = this.b.d(canScrollVertically(-1) ? 1.0f : 0.0f, false) * 0.5f;
-        if (d > 0.0f) {
-            if (this.a == null) {
-                this.a = getContext().getResources().getDrawable(R.drawable.header_shadow);
-            }
-            this.a.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
-            this.a.setAlpha((int) (d * 255.0f));
-            this.a.draw(canvas);
+    public q31(t31 t31Var) {
+        this.a = 0;
+        this.c = t31Var;
+    }
+
+    @Override // f2.d1
+    public void a(RecyclerView recyclerView, int i9) {
+        switch (this.a) {
+            case 0:
+                if (i9 == 0) {
+                    this.b = 0;
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final void onNestedScroll(View view, int i10, int i11, int i12, int i13) {
-        super.onNestedScroll(view, i10, i11, i12, i13);
-        boolean canScrollVertically = canScrollVertically(-1);
-        if (this.c != canScrollVertically) {
-            invalidate();
-            this.c = canScrollVertically;
+    @Override // f2.d1
+    public final void b(RecyclerView recyclerView, int i9, int i10) {
+        switch (this.a) {
+            case 0:
+                t31 t31Var = (t31) this.c;
+                this.b += i10;
+                if (recyclerView.getScrollState() == 1 && Math.abs(this.b) > AndroidUtilities.dp(96.0f)) {
+                    View findFocus = t31Var.e.findFocus();
+                    if (findFocus == null) {
+                        findFocus = t31Var.e;
+                    }
+                    AndroidUtilities.hideKeyboard(findFocus);
+                }
+                if (i10 != 0) {
+                    t31.m(t31Var);
+                    break;
+                }
+                break;
+            default:
+                int i11 = this.b + i10;
+                this.b = i11;
+                ((org.telegram.ui.y11) this.c).D.setAlpha((i11 * 1.0f) / AndroidUtilities.dp(6.0f));
+                break;
         }
+    }
+
+    public q31(org.telegram.ui.y11 y11Var) {
+        this.a = 1;
+        this.c = y11Var;
+        this.b = 0;
     }
 }

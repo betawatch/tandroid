@@ -5,10 +5,10 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
-import d5.g0;
-import d5.y;
+import d5.f0;
+import d5.x;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class h {
     public static final byte[] h = {0, 7, 8, 15};
@@ -22,7 +22,7 @@ public final class h {
     public final g f;
     public Bitmap g;
 
-    public h(int i10, int i11) {
+    public h(int i9, int i10) {
         Paint paint = new Paint();
         this.a = paint;
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
@@ -36,13 +36,13 @@ public final class h {
         this.c = new Canvas();
         this.d = new b(719, 575, 0, 719, 0, 575);
         this.e = new a(0, new int[]{0, -1, -16777216, -8421505}, b(), c());
-        this.f = new g(i10, i11);
+        this.f = new g(i9, i10);
     }
 
-    public static byte[] a(int i10, int i11, y yVar) {
-        byte[] bArr = new byte[i10];
-        for (int i12 = 0; i12 < i10; i12++) {
-            bArr[i12] = (byte) yVar.i(i11);
+    public static byte[] a(int i9, int i10, x xVar) {
+        byte[] bArr = new byte[i9];
+        for (int i11 = 0; i11 < i9; i11++) {
+            bArr[i11] = (byte) xVar.i(i10);
         }
         return bArr;
     }
@@ -50,11 +50,11 @@ public final class h {
     public static int[] b() {
         int[] iArr = new int[16];
         iArr[0] = 0;
-        for (int i10 = 1; i10 < 16; i10++) {
-            if (i10 < 8) {
-                iArr[i10] = d(255, (i10 & 1) != 0 ? 255 : 0, (i10 & 2) != 0 ? 255 : 0, (i10 & 4) != 0 ? 255 : 0);
+        for (int i9 = 1; i9 < 16; i9++) {
+            if (i9 < 8) {
+                iArr[i9] = d(255, (i9 & 1) != 0 ? 255 : 0, (i9 & 2) != 0 ? 255 : 0, (i9 & 4) != 0 ? 255 : 0);
             } else {
-                iArr[i10] = d(255, (i10 & 1) != 0 ? 127 : 0, (i10 & 2) != 0 ? 127 : 0, (i10 & 4) == 0 ? 0 : 127);
+                iArr[i9] = d(255, (i9 & 1) != 0 ? 127 : 0, (i9 & 2) != 0 ? 127 : 0, (i9 & 4) == 0 ? 0 : 127);
             }
         }
         return iArr;
@@ -63,27 +63,27 @@ public final class h {
     public static int[] c() {
         int[] iArr = new int[256];
         iArr[0] = 0;
-        for (int i10 = 0; i10 < 256; i10++) {
-            if (i10 < 8) {
-                iArr[i10] = d(63, (i10 & 1) != 0 ? 255 : 0, (i10 & 2) != 0 ? 255 : 0, (i10 & 4) == 0 ? 0 : 255);
+        for (int i9 = 0; i9 < 256; i9++) {
+            if (i9 < 8) {
+                iArr[i9] = d(63, (i9 & 1) != 0 ? 255 : 0, (i9 & 2) != 0 ? 255 : 0, (i9 & 4) == 0 ? 0 : 255);
             } else {
-                int i11 = i10 & 136;
-                if (i11 == 0) {
-                    iArr[i10] = d(255, ((i10 & 1) != 0 ? 85 : 0) + ((i10 & 16) != 0 ? 170 : 0), ((i10 & 2) != 0 ? 85 : 0) + ((i10 & 32) != 0 ? 170 : 0), ((i10 & 4) == 0 ? 0 : 85) + ((i10 & 64) == 0 ? 0 : 170));
-                } else if (i11 == 8) {
-                    iArr[i10] = d(127, ((i10 & 1) != 0 ? 85 : 0) + ((i10 & 16) != 0 ? 170 : 0), ((i10 & 2) != 0 ? 85 : 0) + ((i10 & 32) != 0 ? 170 : 0), ((i10 & 4) == 0 ? 0 : 85) + ((i10 & 64) == 0 ? 0 : 170));
-                } else if (i11 == 128) {
-                    iArr[i10] = d(255, ((i10 & 1) != 0 ? 43 : 0) + 127 + ((i10 & 16) != 0 ? 85 : 0), ((i10 & 2) != 0 ? 43 : 0) + 127 + ((i10 & 32) != 0 ? 85 : 0), ((i10 & 4) == 0 ? 0 : 43) + 127 + ((i10 & 64) == 0 ? 0 : 85));
-                } else if (i11 == 136) {
-                    iArr[i10] = d(255, ((i10 & 1) != 0 ? 43 : 0) + ((i10 & 16) != 0 ? 85 : 0), ((i10 & 2) != 0 ? 43 : 0) + ((i10 & 32) != 0 ? 85 : 0), ((i10 & 4) == 0 ? 0 : 43) + ((i10 & 64) == 0 ? 0 : 85));
+                int i10 = i9 & 136;
+                if (i10 == 0) {
+                    iArr[i9] = d(255, ((i9 & 1) != 0 ? 85 : 0) + ((i9 & 16) != 0 ? 170 : 0), ((i9 & 2) != 0 ? 85 : 0) + ((i9 & 32) != 0 ? 170 : 0), ((i9 & 4) == 0 ? 0 : 85) + ((i9 & 64) == 0 ? 0 : 170));
+                } else if (i10 == 8) {
+                    iArr[i9] = d(127, ((i9 & 1) != 0 ? 85 : 0) + ((i9 & 16) != 0 ? 170 : 0), ((i9 & 2) != 0 ? 85 : 0) + ((i9 & 32) != 0 ? 170 : 0), ((i9 & 4) == 0 ? 0 : 85) + ((i9 & 64) == 0 ? 0 : 170));
+                } else if (i10 == 128) {
+                    iArr[i9] = d(255, ((i9 & 1) != 0 ? 43 : 0) + 127 + ((i9 & 16) != 0 ? 85 : 0), ((i9 & 2) != 0 ? 43 : 0) + 127 + ((i9 & 32) != 0 ? 85 : 0), ((i9 & 4) == 0 ? 0 : 43) + 127 + ((i9 & 64) == 0 ? 0 : 85));
+                } else if (i10 == 136) {
+                    iArr[i9] = d(255, ((i9 & 1) != 0 ? 43 : 0) + ((i9 & 16) != 0 ? 85 : 0), ((i9 & 2) != 0 ? 43 : 0) + ((i9 & 32) != 0 ? 85 : 0), ((i9 & 4) == 0 ? 0 : 43) + ((i9 & 64) == 0 ? 0 : 85));
                 }
             }
         }
         return iArr;
     }
 
-    public static int d(int i10, int i11, int i12, int i13) {
-        return (i10 << 24) | (i11 << 16) | (i12 << 8) | i13;
+    public static int d(int i9, int i10, int i11, int i12) {
+        return (i9 << 24) | (i10 << 16) | (i11 << 8) | i12;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:91:0x01d7 A[ADDED_TO_REGION] */
@@ -92,223 +92,223 @@ public final class h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void e(byte[] bArr, int[] iArr, int i10, int i11, int i12, Paint paint, Canvas canvas) {
-        int i13;
+    public static void e(byte[] bArr, int[] iArr, int i9, int i10, int i11, Paint paint, Canvas canvas) {
+        int i12;
         boolean z10;
+        int i13;
         int i14;
-        int i15;
         byte[] bArr2;
         boolean z11;
+        int i15;
         int i16;
         int i17;
         int i18;
-        int i19;
         boolean z12;
+        int i19;
         int i20;
-        int i21;
         Paint paint2 = paint;
-        y yVar = new y(bArr, bArr.length);
+        x xVar = new x(bArr, bArr.length);
+        int i21 = i10;
         int i22 = i11;
-        int i23 = i12;
         byte[] bArr3 = null;
         byte[] bArr4 = null;
         byte[] bArr5 = null;
-        while (yVar.b() != 0) {
-            int i24 = 8;
-            int i25 = yVar.i(8);
-            if (i25 != 240) {
-                int i26 = 3;
-                int i27 = 2;
-                int i28 = 4;
-                switch (i25) {
+        while (xVar.b() != 0) {
+            int i23 = 8;
+            int i24 = xVar.i(8);
+            if (i24 != 240) {
+                int i25 = 3;
+                int i26 = 2;
+                int i27 = 4;
+                switch (i24) {
                     case 16:
-                        byte[] bArr6 = i10 == 3 ? bArr3 == null ? i : bArr3 : i10 == 2 ? bArr5 == null ? h : bArr5 : null;
+                        byte[] bArr6 = i9 == 3 ? bArr3 == null ? i : bArr3 : i9 == 2 ? bArr5 == null ? h : bArr5 : null;
                         boolean z13 = false;
                         while (true) {
-                            int i29 = yVar.i(2);
-                            if (i29 != 0) {
+                            int i28 = xVar.i(2);
+                            if (i28 != 0) {
                                 z10 = z13;
-                                i13 = i29;
+                                i12 = i28;
                             } else {
-                                if (yVar.h()) {
-                                    int i30 = yVar.i(3) + 3;
+                                if (xVar.h()) {
+                                    int i29 = xVar.i(3) + 3;
                                     z10 = z13;
-                                    i13 = yVar.i(2);
-                                    i14 = i30;
-                                } else if (yVar.h()) {
+                                    i12 = xVar.i(2);
+                                    i13 = i29;
+                                } else if (xVar.h()) {
                                     z10 = z13;
-                                    i13 = 0;
+                                    i12 = 0;
                                 } else {
-                                    int i31 = yVar.i(2);
-                                    if (i31 != 0) {
-                                        if (i31 == 1) {
+                                    int i30 = xVar.i(2);
+                                    if (i30 != 0) {
+                                        if (i30 == 1) {
                                             z10 = z13;
-                                            i13 = 0;
-                                            i14 = 2;
-                                        } else if (i31 == 2) {
-                                            i14 = yVar.i(4) + 12;
-                                            i13 = yVar.i(2);
+                                            i12 = 0;
+                                            i13 = 2;
+                                        } else if (i30 == 2) {
+                                            i13 = xVar.i(4) + 12;
+                                            i12 = xVar.i(2);
                                             z10 = z13;
-                                        } else if (i31 != 3) {
+                                        } else if (i30 != 3) {
                                             z10 = z13;
-                                            i13 = 0;
+                                            i12 = 0;
                                         } else {
-                                            int i32 = yVar.i(8) + 29;
-                                            i13 = yVar.i(2);
+                                            int i31 = xVar.i(8) + 29;
+                                            i12 = xVar.i(2);
                                             z10 = z13;
-                                            i14 = i32;
+                                            i13 = i31;
                                         }
-                                        if (i14 != 0 || paint2 == null) {
-                                            i15 = i22;
+                                        if (i13 != 0 || paint2 == null) {
+                                            i14 = i21;
                                         } else {
                                             if (bArr6 != 0) {
-                                                i13 = bArr6[i13];
+                                                i12 = bArr6[i12];
                                             }
-                                            paint2.setColor(iArr[i13]);
-                                            i15 = i22;
-                                            canvas.drawRect(i22, i23, i22 + i14, i23 + 1, paint2);
+                                            paint2.setColor(iArr[i12]);
+                                            i14 = i21;
+                                            canvas.drawRect(i21, i22, i21 + i13, i22 + 1, paint2);
                                         }
-                                        i22 = i15 + i14;
+                                        i21 = i14 + i13;
                                         if (!z10) {
-                                            yVar.c();
+                                            xVar.c();
                                             break;
                                         } else {
                                             paint2 = paint;
                                             z13 = z10;
                                         }
                                     } else {
-                                        i13 = 0;
+                                        i12 = 0;
                                         z10 = true;
                                     }
-                                    i14 = 0;
-                                    if (i14 != 0) {
+                                    i13 = 0;
+                                    if (i13 != 0) {
                                     }
-                                    i15 = i22;
-                                    i22 = i15 + i14;
+                                    i14 = i21;
+                                    i21 = i14 + i13;
                                     if (!z10) {
                                     }
                                 }
-                                if (i14 != 0) {
+                                if (i13 != 0) {
                                 }
-                                i15 = i22;
-                                i22 = i15 + i14;
+                                i14 = i21;
+                                i21 = i14 + i13;
                                 if (!z10) {
                                 }
                             }
-                            i14 = 1;
-                            if (i14 != 0) {
+                            i13 = 1;
+                            if (i13 != 0) {
                             }
-                            i15 = i22;
-                            i22 = i15 + i14;
+                            i14 = i21;
+                            i21 = i14 + i13;
                             if (!z10) {
                             }
                         }
                     case 17:
-                        if (i10 == 3) {
+                        if (i9 == 3) {
                             bArr2 = bArr4 == null ? j : bArr4;
                         } else {
                             bArr2 = null;
                         }
                         boolean z14 = false;
                         while (true) {
-                            int i33 = yVar.i(i28);
-                            if (i33 != 0) {
+                            int i32 = xVar.i(i27);
+                            if (i32 != 0) {
                                 z11 = z14;
-                                i18 = i33;
-                                i16 = 1;
-                            } else if (yVar.h()) {
-                                if (yVar.h()) {
-                                    int i34 = yVar.i(i27);
-                                    if (i34 == 0) {
+                                i17 = i32;
+                                i15 = 1;
+                            } else if (xVar.h()) {
+                                if (xVar.h()) {
+                                    int i33 = xVar.i(i26);
+                                    if (i33 == 0) {
                                         z11 = z14;
-                                        i16 = 1;
-                                    } else if (i34 != 1) {
-                                        if (i34 == i27) {
-                                            i16 = yVar.i(i28) + 9;
-                                            i17 = yVar.i(i28);
-                                        } else if (i34 != i26) {
+                                        i15 = 1;
+                                    } else if (i33 != 1) {
+                                        if (i33 == i26) {
+                                            i15 = xVar.i(i27) + 9;
+                                            i16 = xVar.i(i27);
+                                        } else if (i33 != i25) {
                                             z11 = z14;
-                                            i16 = 0;
+                                            i15 = 0;
                                         } else {
-                                            i16 = yVar.i(i24) + 25;
-                                            i17 = yVar.i(i28);
+                                            i15 = xVar.i(i23) + 25;
+                                            i16 = xVar.i(i27);
                                         }
-                                        i18 = i17;
+                                        i17 = i16;
                                     } else {
                                         z11 = z14;
-                                        i16 = 2;
+                                        i15 = 2;
                                     }
-                                    i18 = 0;
+                                    i17 = 0;
                                 } else {
-                                    i16 = yVar.i(i27) + 4;
-                                    i18 = yVar.i(i28);
+                                    i15 = xVar.i(i26) + 4;
+                                    i17 = xVar.i(i27);
                                 }
                                 z11 = z14;
                             } else {
-                                int i35 = yVar.i(i26);
-                                if (i35 != 0) {
-                                    i16 = i35 + 2;
+                                int i34 = xVar.i(i25);
+                                if (i34 != 0) {
+                                    i15 = i34 + 2;
                                     z11 = z14;
-                                    i18 = 0;
+                                    i17 = 0;
                                 } else {
                                     z11 = true;
-                                    i16 = 0;
-                                    i18 = 0;
+                                    i15 = 0;
+                                    i17 = 0;
                                 }
                             }
-                            if (i16 == 0 || paint2 == null) {
-                                i19 = i22;
+                            if (i15 == 0 || paint2 == null) {
+                                i18 = i21;
                             } else {
                                 if (bArr2 != 0) {
-                                    i18 = bArr2[i18];
+                                    i17 = bArr2[i17];
                                 }
-                                paint2.setColor(iArr[i18]);
-                                i19 = i22;
-                                canvas.drawRect(i22, i23, i22 + i16, i23 + 1, paint2);
+                                paint2.setColor(iArr[i17]);
+                                i18 = i21;
+                                canvas.drawRect(i21, i22, i21 + i15, i22 + 1, paint2);
                             }
-                            i22 = i19 + i16;
+                            i21 = i18 + i15;
                             if (z11) {
-                                yVar.c();
+                                xVar.c();
                                 break;
                             } else {
                                 z14 = z11;
-                                i26 = 3;
-                                i27 = 2;
-                                i28 = 4;
-                                i24 = 8;
+                                i25 = 3;
+                                i26 = 2;
+                                i27 = 4;
+                                i23 = 8;
                             }
                         }
                     case 18:
                         boolean z15 = false;
                         while (true) {
-                            int i36 = yVar.i(8);
-                            if (i36 != 0) {
+                            int i35 = xVar.i(8);
+                            if (i35 != 0) {
                                 z12 = z15;
-                                i20 = 1;
-                            } else if (yVar.h()) {
+                                i19 = 1;
+                            } else if (xVar.h()) {
                                 z12 = z15;
-                                i20 = yVar.i(7);
-                                i36 = yVar.i(8);
+                                i19 = xVar.i(7);
+                                i35 = xVar.i(8);
                             } else {
-                                int i37 = yVar.i(7);
-                                if (i37 != 0) {
+                                int i36 = xVar.i(7);
+                                if (i36 != 0) {
                                     z12 = z15;
-                                    i20 = i37;
-                                    i36 = 0;
+                                    i19 = i36;
+                                    i35 = 0;
                                 } else {
-                                    i36 = 0;
+                                    i35 = 0;
                                     z12 = true;
-                                    i20 = 0;
+                                    i19 = 0;
                                 }
                             }
-                            if (i20 == 0 || paint2 == null) {
-                                i21 = i22;
+                            if (i19 == 0 || paint2 == null) {
+                                i20 = i21;
                             } else {
-                                paint2.setColor(iArr[i36]);
-                                i21 = i22;
-                                canvas.drawRect(i22, i23, i22 + i20, i23 + 1, paint2);
+                                paint2.setColor(iArr[i35]);
+                                i20 = i21;
+                                canvas.drawRect(i21, i22, i21 + i19, i22 + 1, paint2);
                             }
-                            i22 = i21 + i20;
+                            i21 = i20 + i19;
                             if (z12) {
                                 break;
                             } else {
@@ -317,101 +317,101 @@ public final class h {
                         }
                         break;
                     default:
-                        switch (i25) {
+                        switch (i24) {
                             case 32:
-                                bArr5 = a(4, 4, yVar);
+                                bArr5 = a(4, 4, xVar);
                                 break;
                             case 33:
-                                bArr3 = a(4, 8, yVar);
+                                bArr3 = a(4, 8, xVar);
                                 break;
                             case 34:
-                                bArr4 = a(16, 8, yVar);
+                                bArr4 = a(16, 8, xVar);
                                 break;
                         }
                 }
             } else {
-                i23 += 2;
-                i22 = i11;
+                i22 += 2;
+                i21 = i10;
             }
             paint2 = paint;
         }
     }
 
-    public static a f(y yVar, int i10) {
+    public static a f(x xVar, int i9) {
+        int i10;
         int i11;
         int i12;
         int i13;
         int i14;
-        int i15;
-        int i16 = 8;
-        int i17 = yVar.i(8);
-        yVar.s(8);
-        int i18 = 2;
-        int i19 = i10 - 2;
+        int i15 = 8;
+        int i16 = xVar.i(8);
+        xVar.s(8);
+        int i17 = 2;
+        int i18 = i9 - 2;
         int[] iArr = {0, -1, -16777216, -8421505};
         int[] b10 = b();
         int[] c10 = c();
-        while (i19 > 0) {
-            int i20 = yVar.i(i16);
-            int i21 = yVar.i(i16);
-            int[] iArr2 = (i21 & 128) != 0 ? iArr : (i21 & 64) != 0 ? b10 : c10;
-            if ((i21 & 1) != 0) {
-                i14 = yVar.i(i16);
-                i15 = yVar.i(i16);
-                i11 = yVar.i(i16);
-                i13 = yVar.i(i16);
-                i12 = i19 - 6;
+        while (i18 > 0) {
+            int i19 = xVar.i(i15);
+            int i20 = xVar.i(i15);
+            int[] iArr2 = (i20 & 128) != 0 ? iArr : (i20 & 64) != 0 ? b10 : c10;
+            if ((i20 & 1) != 0) {
+                i13 = xVar.i(i15);
+                i14 = xVar.i(i15);
+                i10 = xVar.i(i15);
+                i12 = xVar.i(i15);
+                i11 = i18 - 6;
             } else {
-                int i22 = yVar.i(6) << i18;
-                int i23 = yVar.i(4) << 4;
-                i11 = yVar.i(4) << 4;
-                i12 = i19 - 4;
-                i13 = yVar.i(i18) << 6;
+                int i21 = xVar.i(6) << i17;
+                int i22 = xVar.i(4) << 4;
+                i10 = xVar.i(4) << 4;
+                i11 = i18 - 4;
+                i12 = xVar.i(i17) << 6;
+                i13 = i21;
                 i14 = i22;
-                i15 = i23;
             }
-            if (i14 == 0) {
-                i15 = 0;
-                i11 = 0;
-                i13 = 255;
+            if (i13 == 0) {
+                i14 = 0;
+                i10 = 0;
+                i12 = 255;
             }
-            double d = i14;
-            double d10 = i15 - 128;
-            double d11 = i11 - 128;
-            iArr2[i20] = d((byte) (255 - (i13 & 255)), g0.h((int) ((1.402d * d10) + d), 0, 255), g0.h((int) ((d - (0.34414d * d11)) - (d10 * 0.71414d)), 0, 255), g0.h((int) ((d11 * 1.772d) + d), 0, 255));
-            i19 = i12;
-            i17 = i17;
+            double d = i13;
+            double d9 = i14 - 128;
+            double d10 = i10 - 128;
+            iArr2[i19] = d((byte) (255 - (i12 & 255)), f0.h((int) ((1.402d * d9) + d), 0, 255), f0.h((int) ((d - (0.34414d * d10)) - (d9 * 0.71414d)), 0, 255), f0.h((int) ((d10 * 1.772d) + d), 0, 255));
+            i18 = i11;
+            i16 = i16;
             c10 = c10;
-            i16 = 8;
-            i18 = 2;
+            i15 = 8;
+            i17 = 2;
         }
-        return new a(i17, iArr, b10, c10);
+        return new a(i16, iArr, b10, c10);
     }
 
-    public static c g(y yVar) {
+    public static c g(x xVar) {
         byte[] bArr;
-        int i10 = yVar.i(16);
-        yVar.s(4);
-        int i11 = yVar.i(2);
-        boolean h10 = yVar.h();
-        yVar.s(1);
-        byte[] bArr2 = g0.f;
-        if (i11 == 1) {
-            yVar.s(yVar.i(8) * 16);
-        } else if (i11 == 0) {
-            int i12 = yVar.i(16);
-            int i13 = yVar.i(16);
-            if (i12 > 0) {
-                bArr2 = new byte[i12];
-                yVar.k(i12, bArr2);
+        int i9 = xVar.i(16);
+        xVar.s(4);
+        int i10 = xVar.i(2);
+        boolean h10 = xVar.h();
+        xVar.s(1);
+        byte[] bArr2 = f0.f;
+        if (i10 == 1) {
+            xVar.s(xVar.i(8) * 16);
+        } else if (i10 == 0) {
+            int i11 = xVar.i(16);
+            int i12 = xVar.i(16);
+            if (i11 > 0) {
+                bArr2 = new byte[i11];
+                xVar.k(i11, bArr2);
             }
-            if (i13 > 0) {
-                bArr = new byte[i13];
-                yVar.k(i13, bArr);
-                return new c(bArr2, bArr, h10, i10);
+            if (i12 > 0) {
+                bArr = new byte[i12];
+                xVar.k(i12, bArr);
+                return new c(bArr2, bArr, h10, i9);
             }
         }
         bArr = bArr2;
-        return new c(bArr2, bArr, h10, i10);
+        return new c(bArr2, bArr, h10, i9);
     }
 }

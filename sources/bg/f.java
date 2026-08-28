@@ -1,36 +1,47 @@
 package bg;
 
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
+import java.util.Calendar;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.xb0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class f implements Runnable {
+public final /* synthetic */ class f implements xb0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i b;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Calendar c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ f(i iVar, int i10) {
+    public /* synthetic */ f(long j10, Calendar calendar, int i9, int i10) {
         this.a = i10;
-        this.b = iVar;
+        this.b = j10;
+        this.c = calendar;
+        this.d = i9;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ValueAnimator valueAnimator;
+    @Override // org.telegram.ui.Components.xb0
+    public final String g(int i9) {
         switch (this.a) {
             case 0:
-                i iVar = this.b;
-                AnimatorSet animatorSet = iVar.P;
-                if ((animatorSet != null && animatorSet.isRunning()) || ((valueAnimator = iVar.O) != null && valueAnimator.isRunning())) {
-                    iVar.h(iVar.E);
-                    break;
-                } else {
-                    iVar.k();
-                    break;
+                if (i9 == 0) {
+                    return LocaleController.getString("MessageScheduleToday", R.string.MessageScheduleToday);
                 }
+                long j10 = (i9 * 86400000) + this.b;
+                Calendar calendar = this.c;
+                calendar.setTimeInMillis(j10);
+                return calendar.get(1) == this.d ? LocaleController.getInstance().getFormatterScheduleDay().format(j10) : LocaleController.getInstance().getFormatterScheduleYear().format(j10);
             default:
-                this.b.i();
-                break;
+                if (i9 == 0) {
+                    return LocaleController.getString(R.string.MessageScheduleToday);
+                }
+                long j11 = (i9 * 86400000) + this.b;
+                Calendar calendar2 = this.c;
+                calendar2.setTimeInMillis(j11);
+                if (calendar2.get(1) != this.d) {
+                    return LocaleController.getInstance().getFormatterScheduleYear().format(j11);
+                }
+                return LocaleController.getInstance().getFormatterWeek().format(j11) + " " + LocaleController.getInstance().getFormatterScheduleDay().format(j11);
         }
     }
 }

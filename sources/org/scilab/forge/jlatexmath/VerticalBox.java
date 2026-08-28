@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 import ru.noties.jlatexmath.awt.Graphics2D;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 class VerticalBox extends Box {
     private float leftMostPos;
@@ -57,21 +57,21 @@ class VerticalBox extends Box {
     public int getLastFontId() {
         LinkedList<Box> linkedList = this.children;
         ListIterator<Box> listIterator = linkedList.listIterator(linkedList.size());
-        int i10 = -1;
-        while (i10 == -1 && listIterator.hasPrevious()) {
-            i10 = listIterator.previous().getLastFontId();
+        int i9 = -1;
+        while (i9 == -1 && listIterator.hasPrevious()) {
+            i9 = listIterator.previous().getLastFontId();
         }
-        return i10;
+        return i9;
     }
 
     public int getSize() {
         return this.children.size();
     }
 
-    public VerticalBox(Box box, float f10, int i10) {
+    public VerticalBox(Box box, float f10, int i9) {
         this();
         add(box);
-        if (i10 == 2) {
+        if (i9 == 2) {
             float f11 = f10 / 2.0f;
             StrutBox strutBox = new StrutBox(0.0f, f11, 0.0f, 0.0f);
             super.add(0, strutBox);
@@ -80,10 +80,10 @@ class VerticalBox extends Box {
             super.add(strutBox);
             return;
         }
-        if (i10 == 3) {
+        if (i9 == 3) {
             this.depth += f10;
             super.add(new StrutBox(0.0f, f10, 0.0f, 0.0f));
-        } else if (i10 == 4) {
+        } else if (i9 == 4) {
             this.height += f10;
             super.add(0, new StrutBox(0.0f, f10, 0.0f, 0.0f));
         }
@@ -97,9 +97,9 @@ class VerticalBox extends Box {
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
-    public void add(int i10, Box box) {
-        super.add(i10, box);
-        if (i10 == 0) {
+    public void add(int i9, Box box) {
+        super.add(i9, box);
+        if (i9 == 0) {
             this.depth = box.depth + this.height + this.depth;
             this.height = box.height;
         } else {

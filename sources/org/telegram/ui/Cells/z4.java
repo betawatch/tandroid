@@ -1,85 +1,40 @@
 package org.telegram.ui.Cells;
 
-import android.animation.AnimatorSet;
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.f11;
-import org.telegram.ui.Components.pn0;
-import org.telegram.ui.yt;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class z4 implements pn0 {
-    public final /* synthetic */ yt a;
+public final class z4 extends org.telegram.ui.Components.o9 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.b6 C;
+    public final /* synthetic */ b5 D;
 
-    public z4(yt ytVar) {
-        this.a = ytVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z4(b5 b5Var, Context context, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(context);
+        this.D = b5Var;
+        this.C = b6Var;
     }
 
-    @Override // org.telegram.ui.Components.pn0
-    public final void P(float f10, boolean z10) {
-        float c10;
-        int i10;
-        if (f10 <= 0.25f) {
-            c10 = s3.c.c(f10, 0.25f, 536576.0f, 512000);
-        } else {
-            float f11 = f10 - 0.25f;
-            if (f11 < 0.25f) {
-                c10 = s3.c.c(f11, 0.25f, 9437184.0f, 1048576);
-            } else {
-                float f12 = f11 - 0.25f;
-                c10 = f12 <= 0.25f ? s3.c.c(f12, 0.25f, 9.437184E7f, 10485760) : s3.c.c(f12 - 0.25f, 0.25f, FileLoader.DEFAULT_MAX_FILE_SIZE - 104857600, 104857600);
-            }
+    @Override // org.telegram.ui.Components.o9, android.view.View
+    public final void onDraw(Canvas canvas) {
+        b5 b5Var = this.D;
+        if (b5Var.r == null) {
+            super.onDraw(canvas);
+            return;
         }
-        int i11 = (int) c10;
-        yt ytVar = this.a;
-        long j10 = i11;
-        ytVar.b.setText(LocaleController.formatString("AutodownloadSizeLimitUpTo", R.string.AutodownloadSizeLimitUpTo, AndroidUtilities.formatFileSize(j10)));
-        ytVar.d = j10;
-        p8[] p8VarArr = ytVar.h;
-        AnimatorSet[] animatorSetArr = ytVar.n;
-        int i12 = ytVar.e;
-        i10 = ytVar.r.videosRow;
-        if (i12 == i10) {
-            ytVar.f.setText(LocaleController.formatString("AutoDownloadPreloadVideoInfo", R.string.AutoDownloadPreloadVideoInfo, AndroidUtilities.formatFileSize(j10)));
-            boolean z11 = i11 > 2097152;
-            if (z11 != p8VarArr[0].isEnabled()) {
-                ArrayList arrayList = new ArrayList();
-                p8VarArr[0].e(arrayList, z11);
-                AnimatorSet animatorSet = animatorSetArr[0];
-                if (animatorSet != null) {
-                    animatorSet.cancel();
-                    animatorSetArr[0] = null;
-                }
-                AnimatorSet animatorSet2 = new AnimatorSet();
-                animatorSetArr[0] = animatorSet2;
-                animatorSet2.playTogether(arrayList);
-                animatorSetArr[0].addListener(new f11(ytVar, 22));
-                animatorSetArr[0].setDuration(150L);
-                animatorSetArr[0].start();
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pn0
-    public final /* synthetic */ int a0() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.pn0
-    public final CharSequence getContentDescription() {
-        StringBuilder sb2 = new StringBuilder();
-        yt ytVar = this.a;
-        sb2.append((Object) ytVar.a.getText());
-        sb2.append(" ");
-        sb2.append((Object) ytVar.b.getText());
-        return sb2.toString();
-    }
-
-    @Override // org.telegram.ui.Components.pn0
-    public final void r() {
+        float dp = AndroidUtilities.dp(1.0f);
+        b5Var.J.F.set(dp, dp, getMeasuredWidth() - r1, getMeasuredHeight() - r1);
+        ih.l7 l7Var = b5Var.J;
+        l7Var.a = false;
+        l7Var.b = false;
+        l7Var.v = true;
+        l7Var.o = false;
+        l7Var.J = this.C;
+        TL_stories.StoryItem storyItem = b5Var.r;
+        l7Var.d = storyItem;
+        ih.p7.h(storyItem.dialogId, canvas, this.a, l7Var);
     }
 }

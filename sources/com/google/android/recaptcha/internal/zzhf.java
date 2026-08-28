@@ -1,19 +1,20 @@
 package com.google.android.recaptcha.internal;
 
-import ad.p;
-import h7.k6;
+import g7.y5;
 import org.telegram.tgnet.TLObject;
-import rc.c;
+import qc.c;
+import rc.a;
+import zc.p;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzhf {
     private final p zza;
     private final Integer zzb;
     private final int zzc;
 
-    public zzhf(int i10, p pVar, Integer num) {
-        this.zzc = i10;
+    public zzhf(int i9, p pVar, Integer num) {
+        this.zzc = i9;
         this.zza = pVar;
         this.zzb = num;
     }
@@ -25,19 +26,19 @@ public final class zzhf {
     */
     public final Object zza(zzhk zzhkVar, c cVar) {
         zzhe zzheVar;
-        int i10;
-        zzcg e9;
+        int i9;
+        zzcg e10;
         zzgr zzgrVar;
         if (cVar instanceof zzhe) {
             zzheVar = (zzhe) cVar;
-            int i11 = zzheVar.zzc;
-            if ((i11 & TLObject.FLAG_31) != 0) {
-                zzheVar.zzc = i11 - TLObject.FLAG_31;
+            int i10 = zzheVar.zzc;
+            if ((i10 & TLObject.FLAG_31) != 0) {
+                zzheVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzheVar.zza;
-                sc.a aVar = sc.a.a;
-                i10 = zzheVar.zzc;
-                if (i10 != 0) {
-                    k6.b(obj);
+                a aVar = a.a;
+                i9 = zzheVar.zzc;
+                if (i9 != 0) {
+                    y5.b(obj);
                     zzgr zzgrVar2 = new zzgr(zzhkVar, this.zzc, this.zzb);
                     try {
                         p pVar = this.zza;
@@ -48,23 +49,23 @@ public final class zzhf {
                             return aVar;
                         }
                         zzgrVar = zzgrVar2;
-                    } catch (zzcg e10) {
-                        e9 = e10;
+                    } catch (zzcg e11) {
+                        e10 = e11;
                         zzgrVar = zzgrVar2;
-                        zzgrVar.zzc(e9);
-                        throw e9;
+                        zzgrVar.zzc(e10);
+                        throw e10;
                     }
                 } else {
-                    if (i10 != 1) {
+                    if (i9 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     zzgrVar = zzheVar.zzd;
                     try {
-                        k6.b(obj);
-                    } catch (zzcg e11) {
-                        e9 = e11;
-                        zzgrVar.zzc(e9);
-                        throw e9;
+                        y5.b(obj);
+                    } catch (zzcg e12) {
+                        e10 = e12;
+                        zzgrVar.zzc(e10);
+                        throw e10;
                     }
                 }
                 zzgrVar.zzb();
@@ -73,9 +74,9 @@ public final class zzhf {
         }
         zzheVar = new zzhe(this, cVar);
         Object obj2 = zzheVar.zza;
-        sc.a aVar2 = sc.a.a;
-        i10 = zzheVar.zzc;
-        if (i10 != 0) {
+        a aVar2 = a.a;
+        i9 = zzheVar.zzc;
+        if (i9 != 0) {
         }
         zzgrVar.zzb();
         return obj2;

@@ -3,7 +3,7 @@ package t4;
 import android.util.SparseArray;
 import com.google.android.exoplayer2.upstream.w;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class g {
     public final int a;
@@ -16,8 +16,8 @@ public final class g {
     public b h;
     public w i;
 
-    public g(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    public g(int i9, int i10) {
+        this.a = i9;
+        this.b = i10;
     }
 }

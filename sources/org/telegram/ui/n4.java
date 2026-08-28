@@ -1,26 +1,13 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class n4 implements Runnable {
-    public final /* synthetic */ q4 a;
-
-    public n4(q4 q4Var) {
-        this.a = q4Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        UsersSelectActivity usersSelectActivity = new UsersSelectActivity(null);
-        usersSelectActivity.J = new a0.h();
-        usersSelectActivity.K = new ArrayList();
-        usersSelectActivity.x = 1;
-        usersSelectActivity.C = false;
-        q4 q4Var = this.a;
-        usersSelectActivity.N = q4Var.U();
-        usersSelectActivity.n = new c1(this, 2);
-        q4Var.presentFragment(usersSelectActivity);
+public final class n4 implements RequestDelegate {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 }

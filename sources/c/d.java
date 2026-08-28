@@ -1,34 +1,40 @@
 package c;
 
+import android.os.Binder;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.os.Parcel;
-import android.os.Parcelable;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public class d implements Parcelable {
-    public static final Parcelable.Creator<d> CREATOR = new w.a(22);
-    public b a;
+public final class d extends Binder implements b {
+    public static final /* synthetic */ int b = 0;
+    public final /* synthetic */ e a;
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
+    public d(e eVar) {
+        this.a = eVar;
+        attachInterface(this, b.h);
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        synchronized (this) {
-            try {
-                if (this.a == null) {
-                    this.a = new c(this);
-                }
-                parcel.writeStrongBinder(this.a.asBinder());
-            } catch (Throwable th) {
-                throw th;
-            }
+    @Override // android.os.Binder
+    public final boolean onTransact(int i9, Parcel parcel, Parcel parcel2, int i10) {
+        String str = b.h;
+        if (i9 >= 1 && i9 <= 16777215) {
+            parcel.enforceInterface(str);
         }
+        if (i9 == 1598968902) {
+            parcel2.writeString(str);
+            return true;
+        }
+        if (i9 != 1) {
+            return super.onTransact(i9, parcel, parcel2, i10);
+        }
+        this.a.a(parcel.readInt(), (Bundle) (parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null));
+        return true;
     }
 
-    public void a(int i10, Bundle bundle) {
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this;
     }
 }

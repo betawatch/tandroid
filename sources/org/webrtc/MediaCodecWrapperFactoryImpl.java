@@ -8,11 +8,11 @@ import android.os.Bundle;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
 class MediaCodecWrapperFactoryImpl implements MediaCodecWrapperFactory {
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class MediaCodecWrapperImpl implements MediaCodecWrapper {
         private final MediaCodec mediaCodec;
 
@@ -21,8 +21,8 @@ class MediaCodecWrapperFactoryImpl implements MediaCodecWrapperFactory {
         }
 
         @Override // org.webrtc.MediaCodecWrapper
-        public void configure(MediaFormat mediaFormat, Surface surface, MediaCrypto mediaCrypto, int i10) {
-            this.mediaCodec.configure(mediaFormat, surface, mediaCrypto, i10);
+        public void configure(MediaFormat mediaFormat, Surface surface, MediaCrypto mediaCrypto, int i9) {
+            this.mediaCodec.configure(mediaFormat, surface, mediaCrypto, i9);
         }
 
         @Override // org.webrtc.MediaCodecWrapper
@@ -51,8 +51,8 @@ class MediaCodecWrapperFactoryImpl implements MediaCodecWrapperFactory {
         }
 
         @Override // org.webrtc.MediaCodecWrapper
-        public ByteBuffer getInputBuffer(int i10) {
-            return this.mediaCodec.getInputBuffer(i10);
+        public ByteBuffer getInputBuffer(int i9) {
+            return this.mediaCodec.getInputBuffer(i9);
         }
 
         @Override // org.webrtc.MediaCodecWrapper
@@ -61,8 +61,8 @@ class MediaCodecWrapperFactoryImpl implements MediaCodecWrapperFactory {
         }
 
         @Override // org.webrtc.MediaCodecWrapper
-        public ByteBuffer getOutputBuffer(int i10) {
-            return this.mediaCodec.getOutputBuffer(i10);
+        public ByteBuffer getOutputBuffer(int i9) {
+            return this.mediaCodec.getOutputBuffer(i9);
         }
 
         @Override // org.webrtc.MediaCodecWrapper
@@ -71,8 +71,8 @@ class MediaCodecWrapperFactoryImpl implements MediaCodecWrapperFactory {
         }
 
         @Override // org.webrtc.MediaCodecWrapper
-        public void queueInputBuffer(int i10, int i11, int i12, long j10, int i13) {
-            this.mediaCodec.queueInputBuffer(i10, i11, i12, j10, i13);
+        public void queueInputBuffer(int i9, int i10, int i11, long j10, int i12) {
+            this.mediaCodec.queueInputBuffer(i9, i10, i11, j10, i12);
         }
 
         @Override // org.webrtc.MediaCodecWrapper
@@ -81,8 +81,8 @@ class MediaCodecWrapperFactoryImpl implements MediaCodecWrapperFactory {
         }
 
         @Override // org.webrtc.MediaCodecWrapper
-        public void releaseOutputBuffer(int i10, boolean z10) {
-            this.mediaCodec.releaseOutputBuffer(i10, z10);
+        public void releaseOutputBuffer(int i9, boolean z10) {
+            this.mediaCodec.releaseOutputBuffer(i9, z10);
         }
 
         @Override // org.webrtc.MediaCodecWrapper
@@ -101,8 +101,8 @@ class MediaCodecWrapperFactoryImpl implements MediaCodecWrapperFactory {
         }
 
         @Override // org.webrtc.MediaCodecWrapper
-        public MediaFormat getOutputFormat(int i10) {
-            return this.mediaCodec.getOutputFormat(i10);
+        public MediaFormat getOutputFormat(int i9) {
+            return this.mediaCodec.getOutputFormat(i9);
         }
     }
 

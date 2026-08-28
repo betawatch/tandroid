@@ -6,20 +6,20 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class l7 extends ri0 {
+public final class l7 extends pi0 {
     public float r;
     public float s;
     public boolean v;
     public final m.i3 w;
     public final /* synthetic */ float x;
-    public final /* synthetic */ b8 y;
+    public final /* synthetic */ c8 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l7(b8 b8Var, Context context, float f10) {
+    public l7(c8 c8Var, Context context, float f10) {
         super(context);
-        this.y = b8Var;
+        this.y = c8Var;
         this.x = f10;
         this.w = new m.i3(this, 10);
     }
@@ -39,9 +39,9 @@ public final class l7 extends ri0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        b8 b8Var = this.y;
-        l7 l7Var = b8Var.H;
-        if (b8Var.P.v || b8Var.D0 == -1) {
+        c8 c8Var = this.y;
+        l7 l7Var = c8Var.H;
+        if (c8Var.P.v || c8Var.D0 == -1) {
             return false;
         }
         float rawX = motionEvent.getRawX();
@@ -78,17 +78,17 @@ public final class l7 extends ri0 {
             l7Var.d();
         }
         AndroidUtilities.cancelRunOnUIThread(i3Var);
-        if (b8Var.F0 > 0) {
+        if (c8Var.F0 > 0) {
             MediaController.getInstance().setPlaybackSpeed(true, 1.0f);
             if (MediaController.getInstance().isMessagePaused()) {
-                b8Var.H0 = 0L;
-                b8Var.J0.run();
+                c8Var.H0 = 0L;
+                c8Var.J0.run();
             }
         }
-        b8Var.D0 = 0;
+        c8Var.D0 = 0;
         setPressed(false);
-        b8Var.F0 = 0;
-        b8Var.E0 = -1.0f;
+        c8Var.F0 = 0;
+        c8Var.E0 = -1.0f;
         return true;
     }
 }

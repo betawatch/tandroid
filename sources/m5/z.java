@@ -1,34 +1,34 @@
 package m5;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes.dex */
-public abstract class z {
-    public static final v5.c a;
-    public static final v5.c b;
-    public static final v5.c c;
-    public static final v5.c d;
-    public static final v5.c[] e;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-    static {
-        v5.c cVar = new v5.c("client_side_logging", 1L);
-        v5.c cVar2 = new v5.c("cxless_client_minimal", 1L);
-        a = cVar2;
-        v5.c cVar3 = new v5.c("cxless_caf_control", 1L);
-        v5.c cVar4 = new v5.c("module_flag_control", 1L);
-        b = cVar4;
-        v5.c cVar5 = new v5.c("discovery_hint_supply", 1L);
-        v5.c cVar6 = new v5.c("relay_casting_set_active_account", 1L);
-        v5.c cVar7 = new v5.c("analytics_proto_enum_translation", 1L);
-        c = cVar7;
-        v5.c cVar8 = new v5.c("integer_to_integer_map", 1L);
-        d = cVar8;
-        e = new v5.c[]{cVar, cVar2, cVar3, cVar4, cVar5, cVar6, cVar7, cVar8, new v5.c("relay_casting_set_remote_casting_mode", 1L), new v5.c("get_relay_access_token", 1L), new v5.c("get_cast_settings", 1L), new v5.c("set_bundle_setting", 1L), new v5.c("get_client_updated_info", 1L)};
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class z implements com.google.android.gms.common.api.internal.s {
+    public static final /* synthetic */ z b = new z(0);
+    public static final /* synthetic */ z c = new z(1);
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ z(int i9) {
+        this.a = i9;
     }
 
-    public static String a(String str) {
-        if (str == null) {
-            throw new IllegalArgumentException("applicationId cannot be null");
+    @Override // com.google.android.gms.common.api.internal.s
+    public final void accept(Object obj, Object obj2) {
+        q5.x xVar = (q5.x) obj;
+        TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
+        switch (this.a) {
+            case 0:
+                q5.b bVar = f0.G;
+                ((q5.f) xVar.u()).U0();
+                taskCompletionSource.setResult(null);
+                break;
+            default:
+                q5.b bVar2 = f0.G;
+                q5.f fVar = (q5.f) xVar.u();
+                fVar.R0(fVar.M0(), 19);
+                taskCompletionSource.setResult(Boolean.TRUE);
+                break;
         }
-        return g5.b.v(new g5.b(str, null, false, 21));
     }
 }

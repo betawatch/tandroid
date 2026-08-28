@@ -1,48 +1,46 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class c41 extends f2.b1 {
-    public final /* synthetic */ j41 a;
+public final class c41 implements ax0 {
+    public final /* synthetic */ TLRPC.InputStickerSet a;
+    public final /* synthetic */ h41 b;
 
-    public c41(j41 j41Var) {
-        this.a = j41Var;
+    public c41(h41 h41Var, TLRPC.InputStickerSet inputStickerSet) {
+        this.b = h41Var;
+        this.a = inputStickerSet;
     }
 
-    @Override // f2.b1
-    public final void a(RecyclerView recyclerView, int i10) {
-        f2.b1 b1Var = this.a.y;
-        if (b1Var != null) {
-            b1Var.a(recyclerView, i10);
-        }
-    }
-
-    @Override // f2.b1
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        j41 j41Var = this.a;
-        i41 i41Var = j41Var.s;
-        z31 z31Var = j41Var.n;
-        f2.b1 b1Var = j41Var.y;
-        if (b1Var != null) {
-            b1Var.b(z31Var, i10, i11);
-        }
-        if (i11 <= 0 || z31Var.getAdapter() != i41Var || !j41Var.F || i41Var.r || i41Var.s) {
+    @Override // org.telegram.ui.Components.ax0
+    public final void a() {
+        h41 h41Var = this.b;
+        f2.r0 adapter = h41Var.n.getAdapter();
+        g41 g41Var = h41Var.s;
+        TLRPC.InputStickerSet inputStickerSet = this.a;
+        int i9 = 0;
+        if (adapter == g41Var) {
+            while (i9 < g41Var.e.size()) {
+                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) g41Var.e.get(i9);
+                if (stickerSetCovered.set.id == inputStickerSet.id) {
+                    g41Var.F(stickerSetCovered, null);
+                    return;
+                }
+                i9++;
+            }
             return;
         }
-        if (j41Var.r.N0() >= ((i41Var.w + 1) - ((i41Var.v + 1) * 10)) - 1) {
-            j41 j41Var2 = i41Var.x;
-            if (!j41Var2.F || i41Var.r || i41Var.s) {
+        of.y1 y1Var = h41Var.v;
+        ArrayList arrayList = y1Var.A;
+        while (i9 < arrayList.size()) {
+            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i9);
+            if (stickerSetCovered2.set.id == inputStickerSet.id) {
+                y1Var.F(stickerSetCovered2, null);
                 return;
             }
-            i41Var.r = true;
-            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
-            tL_messages_getOldFeaturedStickers.offset = i41Var.n.size();
-            tL_messages_getOldFeaturedStickers.limit = 40;
-            ConnectionsManager.getInstance(j41Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new w1(i41Var, 17));
+            i9++;
         }
     }
 }

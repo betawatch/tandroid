@@ -1,31 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ur0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zs0 b;
-    public final /* synthetic */ hu0 c;
+public final class ur0 extends qt0 {
+    public final /* synthetic */ eu0 p0;
 
-    public /* synthetic */ ur0(hu0 hu0Var, zs0 zs0Var, int i10) {
-        this.a = i10;
-        this.c = hu0Var;
-        this.b = zs0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ur0(eu0 eu0Var, Context context, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(eu0Var, context, b6Var);
+        this.p0 = eu0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                this.c.j1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                this.b.h.invalidate();
-                break;
-            default:
-                this.c.j1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                this.b.h.invalidate();
-                break;
-        }
+    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip
+    public final int f(int i9) {
+        return this.p0.V0(i9);
     }
 }

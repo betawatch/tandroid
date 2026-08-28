@@ -1,25 +1,18 @@
 package org.telegram.ui.Components;
 
-import androidx.core.widget.NestedScrollView;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qd0 implements u0.g, x4 {
-    public final /* synthetic */ be0 a;
+public final class qd0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ wd0 a;
 
-    public /* synthetic */ qd0(be0 be0Var) {
-        this.a = be0Var;
+    public qd0(wd0 wd0Var) {
+        this.a = wd0Var;
     }
 
-    @Override // org.telegram.ui.Components.x4
-    public void I(int i10, int i11, boolean z10) {
-        be0 be0Var = this.a;
-        be0Var.G.b(be0Var.J, z10, i10, 0L);
-        be0Var.dismiss();
-    }
-
-    @Override // u0.g
-    public void a(NestedScrollView nestedScrollView) {
-        this.a.H(!r2.s);
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i9) {
+        if (i9 == -1) {
+            this.a.dismiss();
+        }
     }
 }

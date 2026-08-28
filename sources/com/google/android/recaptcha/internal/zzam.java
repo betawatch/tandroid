@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import id.e2;
-import rc.c;
+import hd.e2;
+import qc.c;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class zzam {
     public static /* synthetic */ Object zza(zzar zzarVar, String str, c cVar) {
@@ -15,12 +15,12 @@ public final /* synthetic */ class zzam {
     }
 
     public static /* synthetic */ Object zzd(zzar zzarVar, Exception exc, c cVar) {
-        int i10 = true != (exc instanceof e2) ? 2 : 27;
+        int i9 = true != (exc instanceof e2) ? 2 : 27;
         int zza = zzarVar.zza();
         zzys zzf = zzyt.zzf();
         zzf.zzf(zza);
         zzf.zzr(13);
-        zzf.zzq(i10);
+        zzf.zzq(i9);
         return zzas.zza(zzarVar, (zzyt) zzf.zzk());
     }
 }

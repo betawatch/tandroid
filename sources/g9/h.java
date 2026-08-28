@@ -1,25 +1,19 @@
 package g9;
 
-import a9.p;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class h {
-    public static final h c = new h(0, 0);
-    public final int a;
-    public final int b;
+public final class h implements q9.d {
+    public static final h a = new h();
 
-    public h(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    static {
+        q9.c.c("clsId");
     }
 
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(h.class.getSimpleName());
-        sb2.append("[position = ");
-        sb2.append(this.a);
-        sb2.append(", length = ");
-        return p.k(this.b, "]", sb2);
+    @Override // q9.a
+    public final void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

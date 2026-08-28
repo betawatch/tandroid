@@ -5,816 +5,711 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.os.ResultReceiver;
 import androidx.versionedparcelable.ParcelImpl;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.internal.SignInConfiguration;
 import com.google.android.gms.fido.common.Transport;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.wallet.wobs.CommonWalletObject;
 import com.google.android.gms.wearable.ConnectionConfiguration;
-import h7.q8;
+import g7.o8;
 import java.util.ArrayList;
 import m.o0;
-import n5.b0;
-import n5.c0;
-import n6.a1;
-import n6.m0;
-import n6.u;
+import m6.a0;
+import m6.b0;
+import m6.h0;
+import m6.j;
+import m6.k;
+import m6.m;
+import m6.m0;
+import m6.n0;
+import m6.p0;
+import m6.q0;
+import m6.t;
+import m6.u;
+import m6.v;
+import m6.w;
+import m6.x;
+import m6.y;
+import m6.z;
+import m6.z0;
+import x6.s0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class h implements Parcelable.Creator {
     public final /* synthetic */ int a;
 
-    public /* synthetic */ h(int i10) {
-        this.a = i10;
+    public /* synthetic */ h(int i9) {
+        this.a = i9;
     }
 
     @Override // android.os.Parcelable.Creator
     public final Object createFromParcel(Parcel parcel) {
         switch (this.a) {
             case 0:
-                int z10 = q8.z(parcel);
-                PendingIntent pendingIntent = null;
+                int z10 = o8.z(parcel);
+                d dVar = null;
+                a aVar = null;
+                String str = null;
+                c cVar = null;
+                b bVar = null;
+                boolean z11 = false;
+                int i9 = 0;
+                boolean z12 = false;
                 while (parcel.dataPosition() < z10) {
                     int readInt = parcel.readInt();
-                    if (((char) readInt) != 1) {
-                        q8.y(parcel, readInt);
-                    } else {
-                        pendingIntent = (PendingIntent) q8.g(parcel, readInt, PendingIntent.CREATOR);
-                    }
-                }
-                q8.m(parcel, z10);
-                return new f(pendingIntent);
-            case 1:
-                int z11 = q8.z(parcel);
-                String str = null;
-                String str2 = null;
-                String str3 = null;
-                ArrayList arrayList = null;
-                boolean z12 = false;
-                boolean z13 = false;
-                boolean z14 = false;
-                while (parcel.dataPosition() < z11) {
-                    int readInt2 = parcel.readInt();
-                    switch ((char) readInt2) {
+                    switch ((char) readInt) {
                         case 1:
-                            z12 = q8.n(parcel, readInt2);
+                            dVar = (d) o8.g(parcel, readInt, d.CREATOR);
                             break;
                         case 2:
-                            str = q8.h(parcel, readInt2);
+                            aVar = (a) o8.g(parcel, readInt, a.CREATOR);
                             break;
                         case 3:
-                            str2 = q8.h(parcel, readInt2);
+                            str = o8.h(parcel, readInt);
                             break;
                         case 4:
-                            z13 = q8.n(parcel, readInt2);
+                            z11 = o8.n(parcel, readInt);
                             break;
                         case 5:
-                            str3 = q8.h(parcel, readInt2);
+                            i9 = o8.u(parcel, readInt);
                             break;
                         case 6:
-                            arrayList = q8.j(parcel, readInt2);
+                            cVar = (c) o8.g(parcel, readInt, c.CREATOR);
                             break;
                         case 7:
-                            z14 = q8.n(parcel, readInt2);
+                            bVar = (b) o8.g(parcel, readInt, b.CREATOR);
+                            break;
+                        case '\b':
+                            z12 = o8.n(parcel, readInt);
                             break;
                         default:
-                            q8.y(parcel, readInt2);
+                            o8.y(parcel, readInt);
                             break;
                     }
                 }
-                q8.m(parcel, z11);
-                return new a(z12, str, str2, z13, str3, arrayList, z14);
+                o8.m(parcel, z10);
+                return new e(dVar, aVar, str, z11, i9, cVar, bVar, z12);
+            case 1:
+                int z13 = o8.z(parcel);
+                PendingIntent pendingIntent = null;
+                while (parcel.dataPosition() < z13) {
+                    int readInt2 = parcel.readInt();
+                    if (((char) readInt2) != 1) {
+                        o8.y(parcel, readInt2);
+                    } else {
+                        pendingIntent = (PendingIntent) o8.g(parcel, readInt2, PendingIntent.CREATOR);
+                    }
+                }
+                o8.m(parcel, z13);
+                return new f(pendingIntent);
             case 2:
-                int z15 = q8.z(parcel);
+                int z14 = o8.z(parcel);
+                String str2 = null;
+                String str3 = null;
                 String str4 = null;
+                ArrayList arrayList = null;
+                boolean z15 = false;
                 boolean z16 = false;
-                while (parcel.dataPosition() < z15) {
+                boolean z17 = false;
+                while (parcel.dataPosition() < z14) {
                     int readInt3 = parcel.readInt();
-                    char c10 = (char) readInt3;
-                    if (c10 == 1) {
-                        z16 = q8.n(parcel, readInt3);
-                    } else if (c10 != 2) {
-                        q8.y(parcel, readInt3);
-                    } else {
-                        str4 = q8.h(parcel, readInt3);
+                    switch ((char) readInt3) {
+                        case 1:
+                            z15 = o8.n(parcel, readInt3);
+                            break;
+                        case 2:
+                            str2 = o8.h(parcel, readInt3);
+                            break;
+                        case 3:
+                            str3 = o8.h(parcel, readInt3);
+                            break;
+                        case 4:
+                            z16 = o8.n(parcel, readInt3);
+                            break;
+                        case 5:
+                            str4 = o8.h(parcel, readInt3);
+                            break;
+                        case 6:
+                            arrayList = o8.j(parcel, readInt3);
+                            break;
+                        case 7:
+                            z17 = o8.n(parcel, readInt3);
+                            break;
+                        default:
+                            o8.y(parcel, readInt3);
+                            break;
                     }
                 }
-                q8.m(parcel, z15);
-                return new b(str4, z16);
+                o8.m(parcel, z14);
+                return new a(z15, str2, str3, z16, str4, arrayList, z17);
             case 3:
-                int z17 = q8.z(parcel);
-                byte[] bArr = null;
+                int z18 = o8.z(parcel);
                 String str5 = null;
-                boolean z18 = false;
-                while (parcel.dataPosition() < z17) {
+                boolean z19 = false;
+                while (parcel.dataPosition() < z18) {
                     int readInt4 = parcel.readInt();
-                    char c11 = (char) readInt4;
-                    if (c11 == 1) {
-                        z18 = q8.n(parcel, readInt4);
-                    } else if (c11 == 2) {
-                        bArr = q8.b(parcel, readInt4);
-                    } else if (c11 != 3) {
-                        q8.y(parcel, readInt4);
+                    char c10 = (char) readInt4;
+                    if (c10 == 1) {
+                        z19 = o8.n(parcel, readInt4);
+                    } else if (c10 != 2) {
+                        o8.y(parcel, readInt4);
                     } else {
-                        str5 = q8.h(parcel, readInt4);
+                        str5 = o8.h(parcel, readInt4);
                     }
                 }
-                q8.m(parcel, z17);
-                return new c(z18, bArr, str5);
+                o8.m(parcel, z18);
+                return new b(str5, z19);
             case 4:
-                int z19 = q8.z(parcel);
-                boolean z20 = false;
-                while (parcel.dataPosition() < z19) {
+                int z20 = o8.z(parcel);
+                byte[] bArr = null;
+                String str6 = null;
+                boolean z21 = false;
+                while (parcel.dataPosition() < z20) {
                     int readInt5 = parcel.readInt();
-                    if (((char) readInt5) != 1) {
-                        q8.y(parcel, readInt5);
+                    char c11 = (char) readInt5;
+                    if (c11 == 1) {
+                        z21 = o8.n(parcel, readInt5);
+                    } else if (c11 == 2) {
+                        bArr = o8.b(parcel, readInt5);
+                    } else if (c11 != 3) {
+                        o8.y(parcel, readInt5);
                     } else {
-                        z20 = q8.n(parcel, readInt5);
+                        str6 = o8.h(parcel, readInt5);
                     }
                 }
-                q8.m(parcel, z19);
-                return new d(z20);
+                o8.m(parcel, z20);
+                return new c(z21, bArr, str6);
             case 5:
-                int z21 = q8.z(parcel);
-                String str6 = null;
+                int z22 = o8.z(parcel);
+                boolean z23 = false;
+                while (parcel.dataPosition() < z22) {
+                    int readInt6 = parcel.readInt();
+                    if (((char) readInt6) != 1) {
+                        o8.y(parcel, readInt6);
+                    } else {
+                        z23 = o8.n(parcel, readInt6);
+                    }
+                }
+                o8.m(parcel, z22);
+                return new d(z23);
+            case 6:
+                int z24 = o8.z(parcel);
                 String str7 = null;
                 String str8 = null;
                 String str9 = null;
-                Uri uri = null;
                 String str10 = null;
+                Uri uri = null;
                 String str11 = null;
                 String str12 = null;
+                String str13 = null;
                 u uVar = null;
-                while (parcel.dataPosition() < z21) {
-                    int readInt6 = parcel.readInt();
-                    switch ((char) readInt6) {
+                while (parcel.dataPosition() < z24) {
+                    int readInt7 = parcel.readInt();
+                    switch ((char) readInt7) {
                         case 1:
-                            str6 = q8.h(parcel, readInt6);
+                            str7 = o8.h(parcel, readInt7);
                             break;
                         case 2:
-                            str7 = q8.h(parcel, readInt6);
+                            str8 = o8.h(parcel, readInt7);
                             break;
                         case 3:
-                            str8 = q8.h(parcel, readInt6);
+                            str9 = o8.h(parcel, readInt7);
                             break;
                         case 4:
-                            str9 = q8.h(parcel, readInt6);
+                            str10 = o8.h(parcel, readInt7);
                             break;
                         case 5:
-                            uri = (Uri) q8.g(parcel, readInt6, Uri.CREATOR);
+                            uri = (Uri) o8.g(parcel, readInt7, Uri.CREATOR);
                             break;
                         case 6:
-                            str10 = q8.h(parcel, readInt6);
+                            str11 = o8.h(parcel, readInt7);
                             break;
                         case 7:
-                            str11 = q8.h(parcel, readInt6);
+                            str12 = o8.h(parcel, readInt7);
                             break;
                         case '\b':
-                            str12 = q8.h(parcel, readInt6);
+                            str13 = o8.h(parcel, readInt7);
                             break;
                         case '\t':
-                            uVar = (u) q8.g(parcel, readInt6, u.CREATOR);
+                            uVar = (u) o8.g(parcel, readInt7, u.CREATOR);
                             break;
                         default:
-                            q8.y(parcel, readInt6);
+                            o8.y(parcel, readInt7);
                             break;
                     }
                 }
-                q8.m(parcel, z21);
-                return new g(str6, str7, str8, str9, uri, str10, str11, str12, uVar);
-            case 6:
-                int z22 = q8.z(parcel);
-                ArrayList arrayList2 = new ArrayList();
-                ArrayList arrayList3 = new ArrayList();
-                String str13 = null;
-                ArrayList arrayList4 = new ArrayList();
-                ArrayList arrayList5 = new ArrayList();
-                ArrayList arrayList6 = new ArrayList();
-                ArrayList arrayList7 = new ArrayList();
+                o8.m(parcel, z24);
+                return new g(str7, str8, str9, str10, uri, str11, str12, str13, uVar);
+            case 7:
+                int z25 = o8.z(parcel);
                 String str14 = null;
                 String str15 = null;
-                h8.f fVar = null;
                 String str16 = null;
                 String str17 = null;
                 String str18 = null;
-                String str19 = null;
-                String str20 = null;
-                String str21 = null;
-                String str22 = null;
+                ArrayList arrayList2 = null;
                 int i10 = 0;
-                boolean z23 = false;
-                while (parcel.dataPosition() < z22) {
-                    int readInt7 = parcel.readInt();
-                    String str23 = str15;
-                    switch ((char) readInt7) {
+                int i11 = 0;
+                boolean z26 = false;
+                boolean z27 = false;
+                boolean z28 = false;
+                int i12 = 0;
+                while (parcel.dataPosition() < z25) {
+                    int readInt8 = parcel.readInt();
+                    switch ((char) readInt8) {
                         case 2:
-                            str13 = q8.h(parcel, readInt7);
+                            str14 = o8.h(parcel, readInt8);
                             break;
                         case 3:
-                            str16 = q8.h(parcel, readInt7);
+                            str15 = o8.h(parcel, readInt8);
                             break;
                         case 4:
-                            str17 = q8.h(parcel, readInt7);
+                            i10 = o8.u(parcel, readInt8);
                             break;
                         case 5:
-                            str18 = q8.h(parcel, readInt7);
+                            i11 = o8.u(parcel, readInt8);
                             break;
                         case 6:
-                            str19 = q8.h(parcel, readInt7);
+                            z26 = o8.n(parcel, readInt8);
                             break;
                         case 7:
-                            str20 = q8.h(parcel, readInt7);
+                            z27 = o8.n(parcel, readInt8);
                             break;
                         case '\b':
-                            str21 = q8.h(parcel, readInt7);
+                            str16 = o8.h(parcel, readInt8);
                             break;
                         case '\t':
-                            str14 = q8.h(parcel, readInt7);
+                            z28 = o8.n(parcel, readInt8);
                             break;
                         case '\n':
-                            i10 = q8.u(parcel, readInt7);
+                            str17 = o8.h(parcel, readInt8);
                             break;
                         case 11:
-                            arrayList2 = q8.l(parcel, readInt7, h8.h.CREATOR);
+                            str18 = o8.h(parcel, readInt8);
                             break;
                         case '\f':
-                            fVar = (h8.f) q8.g(parcel, readInt7, h8.f.CREATOR);
+                            i12 = o8.u(parcel, readInt8);
                             break;
                         case '\r':
-                            arrayList3 = q8.l(parcel, readInt7, LatLng.CREATOR);
-                            break;
-                        case 14:
-                            str15 = q8.h(parcel, readInt7);
-                            continue;
-                        case 15:
-                            str22 = q8.h(parcel, readInt7);
-                            break;
-                        case 16:
-                            arrayList4 = q8.l(parcel, readInt7, h8.b.CREATOR);
-                            break;
-                        case 17:
-                            z23 = q8.n(parcel, readInt7);
-                            break;
-                        case 18:
-                            arrayList5 = q8.l(parcel, readInt7, h8.g.CREATOR);
-                            break;
-                        case 19:
-                            arrayList6 = q8.l(parcel, readInt7, h8.e.CREATOR);
-                            break;
-                        case 20:
-                            arrayList7 = q8.l(parcel, readInt7, h8.g.CREATOR);
+                            arrayList2 = o8.j(parcel, readInt8);
                             break;
                         default:
-                            q8.y(parcel, readInt7);
+                            o8.y(parcel, readInt8);
                             break;
                     }
-                    str15 = str23;
                 }
-                q8.m(parcel, z22);
-                CommonWalletObject commonWalletObject = new CommonWalletObject();
-                commonWalletObject.a = str13;
-                commonWalletObject.b = str16;
-                commonWalletObject.c = str17;
-                commonWalletObject.d = str18;
-                commonWalletObject.e = str19;
-                commonWalletObject.f = str20;
-                commonWalletObject.h = str21;
-                commonWalletObject.n = str14;
-                commonWalletObject.r = i10;
-                commonWalletObject.s = arrayList2;
-                commonWalletObject.v = fVar;
-                commonWalletObject.w = arrayList3;
-                commonWalletObject.x = str15;
-                commonWalletObject.y = str22;
-                commonWalletObject.A = arrayList4;
-                commonWalletObject.B = z23;
-                commonWalletObject.C = arrayList5;
-                commonWalletObject.D = arrayList6;
-                commonWalletObject.E = arrayList7;
-                return commonWalletObject;
-            case 7:
-                int z24 = q8.z(parcel);
-                String str24 = null;
-                String str25 = null;
-                while (parcel.dataPosition() < z24) {
-                    int readInt8 = parcel.readInt();
-                    char c12 = (char) readInt8;
-                    if (c12 == 2) {
-                        str24 = q8.h(parcel, readInt8);
-                    } else if (c12 != 3) {
-                        q8.y(parcel, readInt8);
-                    } else {
-                        str25 = q8.h(parcel, readInt8);
-                    }
-                }
-                q8.m(parcel, z24);
-                h8.a aVar = new h8.a();
-                aVar.a = str24;
-                aVar.b = str25;
-                return aVar;
+                o8.m(parcel, z25);
+                return new ConnectionConfiguration(str14, str15, i10, i11, z26, z27, str16, z28, str17, str18, i12, arrayList2);
             case 8:
-                int z25 = q8.z(parcel);
-                ArrayList arrayList8 = new ArrayList();
-                String str26 = null;
-                String str27 = null;
-                while (parcel.dataPosition() < z25) {
-                    int readInt9 = parcel.readInt();
-                    char c13 = (char) readInt9;
-                    if (c13 == 2) {
-                        str26 = q8.h(parcel, readInt9);
-                    } else if (c13 == 3) {
-                        str27 = q8.h(parcel, readInt9);
-                    } else if (c13 != 4) {
-                        q8.y(parcel, readInt9);
-                    } else {
-                        arrayList8 = q8.l(parcel, readInt9, h8.a.CREATOR);
-                    }
-                }
-                q8.m(parcel, z25);
-                h8.b bVar = new h8.b();
-                bVar.a = str26;
-                bVar.b = str27;
-                bVar.c = arrayList8;
-                return bVar;
-            case 9:
-                int z26 = q8.z(parcel);
-                int i11 = 0;
-                String str28 = null;
-                long j10 = 0;
-                int i12 = -1;
-                double d = 0.0d;
-                String str29 = null;
-                while (parcel.dataPosition() < z26) {
-                    int readInt10 = parcel.readInt();
-                    switch ((char) readInt10) {
-                        case 2:
-                            i11 = q8.u(parcel, readInt10);
-                            break;
-                        case 3:
-                            str28 = q8.h(parcel, readInt10);
-                            break;
-                        case 4:
-                            d = q8.q(parcel, readInt10);
-                            break;
-                        case 5:
-                            str29 = q8.h(parcel, readInt10);
-                            break;
-                        case 6:
-                            j10 = q8.w(parcel, readInt10);
-                            break;
-                        case 7:
-                            i12 = q8.u(parcel, readInt10);
-                            break;
-                        default:
-                            q8.y(parcel, readInt10);
-                            break;
-                    }
-                }
-                q8.m(parcel, z26);
-                h8.d dVar = new h8.d();
-                dVar.a = i11;
-                dVar.b = str28;
-                dVar.c = d;
-                dVar.d = str29;
-                dVar.e = j10;
-                dVar.f = i12;
-                return dVar;
-            case 10:
-                int z27 = q8.z(parcel);
-                String str30 = null;
-                h8.d dVar2 = null;
-                h8.f fVar2 = null;
-                while (parcel.dataPosition() < z27) {
-                    int readInt11 = parcel.readInt();
-                    char c14 = (char) readInt11;
-                    if (c14 == 2) {
-                        str30 = q8.h(parcel, readInt11);
-                    } else if (c14 == 3) {
-                        dVar2 = (h8.d) q8.g(parcel, readInt11, h8.d.CREATOR);
-                    } else if (c14 != 5) {
-                        q8.y(parcel, readInt11);
-                    } else {
-                        fVar2 = (h8.f) q8.g(parcel, readInt11, h8.f.CREATOR);
-                    }
-                }
-                q8.m(parcel, z27);
-                h8.c cVar = new h8.c();
-                cVar.a = str30;
-                cVar.b = dVar2;
-                cVar.c = fVar2;
-                return cVar;
-            case 11:
-                int z28 = q8.z(parcel);
-                String str31 = null;
-                String str32 = null;
-                while (parcel.dataPosition() < z28) {
-                    int readInt12 = parcel.readInt();
-                    char c15 = (char) readInt12;
-                    if (c15 == 2) {
-                        str31 = q8.h(parcel, readInt12);
-                    } else if (c15 != 3) {
-                        q8.y(parcel, readInt12);
-                    } else {
-                        str32 = q8.h(parcel, readInt12);
-                    }
-                }
-                q8.m(parcel, z28);
-                h8.e eVar = new h8.e();
-                eVar.a = str31;
-                eVar.b = str32;
-                return eVar;
-            case 12:
-                int z29 = q8.z(parcel);
-                long j11 = 0;
-                long j12 = 0;
-                while (parcel.dataPosition() < z29) {
-                    int readInt13 = parcel.readInt();
-                    char c16 = (char) readInt13;
-                    if (c16 == 2) {
-                        j11 = q8.w(parcel, readInt13);
-                    } else if (c16 != 3) {
-                        q8.y(parcel, readInt13);
-                    } else {
-                        j12 = q8.w(parcel, readInt13);
-                    }
-                }
-                q8.m(parcel, z29);
-                h8.f fVar3 = new h8.f();
-                fVar3.a = j11;
-                fVar3.b = j12;
-                return fVar3;
-            case 13:
-                int z30 = q8.z(parcel);
-                String str33 = null;
-                String str34 = null;
-                while (parcel.dataPosition() < z30) {
-                    int readInt14 = parcel.readInt();
-                    char c17 = (char) readInt14;
-                    if (c17 == 2) {
-                        str33 = q8.h(parcel, readInt14);
-                    } else if (c17 != 3) {
-                        q8.y(parcel, readInt14);
-                    } else {
-                        str34 = q8.h(parcel, readInt14);
-                    }
-                }
-                q8.m(parcel, z30);
-                h8.g gVar = new h8.g();
-                gVar.a = str33;
-                gVar.b = str34;
-                return gVar;
-            case 14:
-                int z31 = q8.z(parcel);
-                String str35 = null;
-                String str36 = null;
-                h8.f fVar4 = null;
-                h8.g gVar2 = null;
-                h8.g gVar3 = null;
-                while (parcel.dataPosition() < z31) {
-                    int readInt15 = parcel.readInt();
-                    char c18 = (char) readInt15;
-                    if (c18 == 2) {
-                        str35 = q8.h(parcel, readInt15);
-                    } else if (c18 == 3) {
-                        str36 = q8.h(parcel, readInt15);
-                    } else if (c18 == 4) {
-                        fVar4 = (h8.f) q8.g(parcel, readInt15, h8.f.CREATOR);
-                    } else if (c18 == 5) {
-                        gVar2 = (h8.g) q8.g(parcel, readInt15, h8.g.CREATOR);
-                    } else if (c18 != 6) {
-                        q8.y(parcel, readInt15);
-                    } else {
-                        gVar3 = (h8.g) q8.g(parcel, readInt15, h8.g.CREATOR);
-                    }
-                }
-                q8.m(parcel, z31);
-                h8.h hVar = new h8.h();
-                hVar.a = str35;
-                hVar.b = str36;
-                hVar.c = fVar4;
-                hVar.d = gVar2;
-                hVar.e = gVar3;
-                return hVar;
-            case 15:
                 return new i4.b(parcel);
-            case 16:
-                int z32 = q8.z(parcel);
-                String str37 = null;
-                String str38 = null;
-                String str39 = null;
-                String str40 = null;
-                String str41 = null;
-                ArrayList arrayList9 = null;
+            case 9:
+                int z29 = o8.z(parcel);
+                Bundle bundle = null;
                 int i13 = 0;
                 int i14 = 0;
-                boolean z33 = false;
-                boolean z34 = false;
-                boolean z35 = false;
-                int i15 = 0;
-                while (parcel.dataPosition() < z32) {
-                    int readInt16 = parcel.readInt();
-                    switch ((char) readInt16) {
-                        case 2:
-                            str37 = q8.h(parcel, readInt16);
-                            break;
-                        case 3:
-                            str38 = q8.h(parcel, readInt16);
-                            break;
-                        case 4:
-                            i13 = q8.u(parcel, readInt16);
-                            break;
-                        case 5:
-                            i14 = q8.u(parcel, readInt16);
-                            break;
-                        case 6:
-                            z33 = q8.n(parcel, readInt16);
-                            break;
-                        case 7:
-                            z34 = q8.n(parcel, readInt16);
-                            break;
-                        case '\b':
-                            str39 = q8.h(parcel, readInt16);
-                            break;
-                        case '\t':
-                            z35 = q8.n(parcel, readInt16);
-                            break;
-                        case '\n':
-                            str40 = q8.h(parcel, readInt16);
-                            break;
-                        case 11:
-                            str41 = q8.h(parcel, readInt16);
-                            break;
-                        case '\f':
-                            i15 = q8.u(parcel, readInt16);
-                            break;
-                        case '\r':
-                            arrayList9 = q8.j(parcel, readInt16);
-                            break;
-                        default:
-                            q8.y(parcel, readInt16);
-                            break;
-                    }
-                }
-                q8.m(parcel, z32);
-                return new ConnectionConfiguration(str37, str38, i13, i14, z33, z34, str39, z35, str40, str41, i15, arrayList9);
-            case 17:
-                int z36 = q8.z(parcel);
-                Bundle bundle = null;
-                int i16 = 0;
-                int i17 = 0;
-                while (parcel.dataPosition() < z36) {
-                    int readInt17 = parcel.readInt();
-                    char c19 = (char) readInt17;
-                    if (c19 == 1) {
-                        i16 = q8.u(parcel, readInt17);
-                    } else if (c19 == 2) {
-                        i17 = q8.u(parcel, readInt17);
-                    } else if (c19 != 3) {
-                        q8.y(parcel, readInt17);
+                while (parcel.dataPosition() < z29) {
+                    int readInt9 = parcel.readInt();
+                    char c12 = (char) readInt9;
+                    if (c12 == 1) {
+                        i13 = o8.u(parcel, readInt9);
+                    } else if (c12 == 2) {
+                        i14 = o8.u(parcel, readInt9);
+                    } else if (c12 != 3) {
+                        o8.y(parcel, readInt9);
                     } else {
-                        bundle = q8.a(parcel, readInt17);
+                        bundle = o8.a(parcel, readInt9);
                     }
                 }
-                q8.m(parcel, z36);
-                return new k5.a(i16, i17, bundle);
-            case 18:
-                int z37 = q8.z(parcel);
-                String str42 = null;
+                o8.m(parcel, z29);
+                return new k5.a(i13, i14, bundle);
+            case 10:
+                int z30 = o8.z(parcel);
+                String str19 = null;
                 GoogleSignInOptions googleSignInOptions = null;
-                while (parcel.dataPosition() < z37) {
-                    int readInt18 = parcel.readInt();
-                    char c20 = (char) readInt18;
-                    if (c20 == 2) {
-                        str42 = q8.h(parcel, readInt18);
-                    } else if (c20 != 5) {
-                        q8.y(parcel, readInt18);
+                while (parcel.dataPosition() < z30) {
+                    int readInt10 = parcel.readInt();
+                    char c13 = (char) readInt10;
+                    if (c13 == 2) {
+                        str19 = o8.h(parcel, readInt10);
+                    } else if (c13 != 5) {
+                        o8.y(parcel, readInt10);
                     } else {
-                        googleSignInOptions = (GoogleSignInOptions) q8.g(parcel, readInt18, GoogleSignInOptions.CREATOR);
+                        googleSignInOptions = (GoogleSignInOptions) o8.g(parcel, readInt10, GoogleSignInOptions.CREATOR);
                     }
                 }
-                q8.m(parcel, z37);
-                return new SignInConfiguration(str42, googleSignInOptions);
-            case 19:
-                return new ParcelImpl(parcel);
-            case 20:
-                return new l3.d(parcel);
-            case 21:
-                return new l3.c(parcel);
-            case 22:
+                o8.m(parcel, z30);
+                return new SignInConfiguration(str19, googleSignInOptions);
+            case 11:
                 try {
                     return Transport.a(parcel.readString());
-                } catch (l6.a e9) {
-                    throw new RuntimeException(e9);
+                } catch (k6.a e10) {
+                    throw new RuntimeException(e10);
                 }
-            case 23:
+            case 12:
+                return new ParcelImpl(parcel);
+            case 13:
+                return new l3.c(parcel);
+            case 14:
+                return new l3.b(parcel);
+            case 15:
                 o0 o0Var = new o0(parcel);
                 o0Var.a = parcel.readByte() != 0;
                 return o0Var;
-            case 24:
-                int z38 = q8.z(parcel);
-                boolean z39 = false;
+            case 16:
+                try {
+                    return m6.c.a(parcel.readString());
+                } catch (m6.b e11) {
+                    throw new RuntimeException(e11);
+                }
+            case 17:
+                int z31 = o8.z(parcel);
+                boolean z32 = false;
+                while (parcel.dataPosition() < z31) {
+                    int readInt11 = parcel.readInt();
+                    if (((char) readInt11) != 1) {
+                        o8.y(parcel, readInt11);
+                    } else {
+                        z32 = o8.n(parcel, readInt11);
+                    }
+                }
+                o8.m(parcel, z31);
+                return new z0(z32);
+            case 18:
+                int z33 = o8.z(parcel);
+                long j10 = 0;
+                while (parcel.dataPosition() < z33) {
+                    int readInt12 = parcel.readInt();
+                    if (((char) readInt12) != 1) {
+                        o8.y(parcel, readInt12);
+                    } else {
+                        j10 = o8.w(parcel, readInt12);
+                    }
+                }
+                o8.m(parcel, z33);
+                return new m0(j10);
+            case 19:
+                int z34 = o8.z(parcel);
+                boolean z35 = false;
+                while (parcel.dataPosition() < z34) {
+                    int readInt13 = parcel.readInt();
+                    if (((char) readInt13) != 1) {
+                        o8.y(parcel, readInt13);
+                    } else {
+                        z35 = o8.n(parcel, readInt13);
+                    }
+                }
+                o8.m(parcel, z34);
+                return new n0(z35);
+            case 20:
+                int z36 = o8.z(parcel);
+                boolean z37 = false;
+                while (parcel.dataPosition() < z36) {
+                    int readInt14 = parcel.readInt();
+                    if (((char) readInt14) != 1) {
+                        o8.y(parcel, readInt14);
+                    } else {
+                        z37 = o8.n(parcel, readInt14);
+                    }
+                }
+                o8.m(parcel, z36);
+                return new t(z37);
+            case 21:
+                int z38 = o8.z(parcel);
+                String str20 = null;
                 while (parcel.dataPosition() < z38) {
-                    int readInt19 = parcel.readInt();
-                    if (((char) readInt19) != 2) {
-                        q8.y(parcel, readInt19);
+                    int readInt15 = parcel.readInt();
+                    if (((char) readInt15) != 1) {
+                        o8.y(parcel, readInt15);
                     } else {
-                        z39 = q8.n(parcel, readInt19);
+                        str20 = o8.h(parcel, readInt15);
                     }
                 }
-                q8.m(parcel, z38);
-                return new b0(z39);
-            case 25:
-                int z40 = q8.z(parcel);
-                int i18 = 0;
+                o8.m(parcel, z38);
+                return new m6.o0(str20);
+            case 22:
+                int z39 = o8.z(parcel);
+                int i15 = 0;
+                byte[] bArr2 = null;
+                byte[] bArr3 = null;
+                byte[] bArr4 = null;
+                while (parcel.dataPosition() < z39) {
+                    int readInt16 = parcel.readInt();
+                    char c14 = (char) readInt16;
+                    if (c14 == 1) {
+                        bArr2 = o8.b(parcel, readInt16);
+                    } else if (c14 == 2) {
+                        bArr3 = o8.b(parcel, readInt16);
+                    } else if (c14 == 3) {
+                        bArr4 = o8.b(parcel, readInt16);
+                    } else if (c14 != 4) {
+                        o8.y(parcel, readInt16);
+                    } else {
+                        i15 = o8.u(parcel, readInt16);
+                    }
+                }
+                o8.m(parcel, z39);
+                return new p0(bArr2 == null ? null : s0.t(bArr2.length, bArr2), bArr3 == null ? null : s0.t(bArr3.length, bArr3), bArr4 != null ? s0.t(bArr4.length, bArr4) : null, i15);
+            case 23:
+                int z40 = o8.z(parcel);
+                byte[][] bArr5 = null;
                 while (parcel.dataPosition() < z40) {
-                    int readInt20 = parcel.readInt();
-                    if (((char) readInt20) != 2) {
-                        q8.y(parcel, readInt20);
+                    int readInt17 = parcel.readInt();
+                    if (((char) readInt17) != 1) {
+                        o8.y(parcel, readInt17);
                     } else {
-                        i18 = q8.u(parcel, readInt20);
+                        bArr5 = o8.c(parcel, readInt17);
                     }
                 }
-                q8.m(parcel, z40);
-                return new c0(i18);
-            case 26:
-                int z41 = q8.z(parcel);
-                String str43 = null;
-                ArrayList arrayList10 = null;
-                m5.i iVar = null;
-                o5.a aVar2 = null;
-                ArrayList arrayList11 = null;
+                o8.m(parcel, z40);
+                return new q0(bArr5);
+            case 24:
+                int z41 = o8.z(parcel);
+                y yVar = null;
                 b0 b0Var = null;
-                c0 c0Var = null;
-                double d10 = 0.0d;
-                boolean z42 = false;
-                boolean z43 = false;
-                boolean z44 = false;
-                boolean z45 = false;
-                boolean z46 = false;
-                boolean z47 = false;
-                boolean z48 = false;
-                boolean z49 = false;
+                byte[] bArr6 = null;
+                ArrayList arrayList3 = null;
+                Double d = null;
+                ArrayList arrayList4 = null;
+                m mVar = null;
+                Integer num = null;
+                h0 h0Var = null;
+                String str21 = null;
+                m6.f fVar = null;
+                String str22 = null;
+                ResultReceiver resultReceiver = null;
                 while (parcel.dataPosition() < z41) {
-                    int readInt21 = parcel.readInt();
-                    switch ((char) readInt21) {
+                    int readInt18 = parcel.readInt();
+                    switch ((char) readInt18) {
                         case 2:
-                            str43 = q8.h(parcel, readInt21);
+                            yVar = (y) o8.g(parcel, readInt18, y.CREATOR);
                             break;
                         case 3:
-                            arrayList10 = q8.j(parcel, readInt21);
+                            b0Var = (b0) o8.g(parcel, readInt18, b0.CREATOR);
                             break;
                         case 4:
-                            z42 = q8.n(parcel, readInt21);
+                            bArr6 = o8.b(parcel, readInt18);
                             break;
                         case 5:
-                            iVar = (m5.i) q8.g(parcel, readInt21, m5.i.CREATOR);
+                            arrayList3 = o8.l(parcel, readInt18, x.CREATOR);
                             break;
                         case 6:
-                            z43 = q8.n(parcel, readInt21);
-                            break;
+                            int x10 = o8.x(parcel, readInt18);
+                            if (x10 != 0) {
+                                o8.A(parcel, x10, 8);
+                                d = Double.valueOf(parcel.readDouble());
+                                break;
+                            } else {
+                                d = null;
+                                break;
+                            }
                         case 7:
-                            aVar2 = (o5.a) q8.g(parcel, readInt21, o5.a.CREATOR);
+                            arrayList4 = o8.l(parcel, readInt18, w.CREATOR);
                             break;
                         case '\b':
-                            z44 = q8.n(parcel, readInt21);
+                            mVar = (m) o8.g(parcel, readInt18, m.CREATOR);
                             break;
                         case '\t':
-                            d10 = q8.q(parcel, readInt21);
+                            num = o8.v(parcel, readInt18);
                             break;
                         case '\n':
-                            z45 = q8.n(parcel, readInt21);
+                            h0Var = (h0) o8.g(parcel, readInt18, h0.CREATOR);
                             break;
                         case 11:
-                            z46 = q8.n(parcel, readInt21);
+                            str21 = o8.h(parcel, readInt18);
                             break;
                         case '\f':
-                            z47 = q8.n(parcel, readInt21);
+                            fVar = (m6.f) o8.g(parcel, readInt18, m6.f.CREATOR);
                             break;
                         case '\r':
-                            arrayList11 = q8.j(parcel, readInt21);
+                            str22 = o8.h(parcel, readInt18);
                             break;
                         case 14:
-                            z48 = q8.n(parcel, readInt21);
-                            break;
-                        case 15:
-                            q8.u(parcel, readInt21);
-                            break;
-                        case 16:
-                            z49 = q8.n(parcel, readInt21);
-                            break;
-                        case 17:
-                            b0Var = (b0) q8.g(parcel, readInt21, b0.CREATOR);
-                            break;
-                        case 18:
-                            c0Var = (c0) q8.g(parcel, readInt21, c0.CREATOR);
+                            resultReceiver = (ResultReceiver) o8.g(parcel, readInt18, ResultReceiver.CREATOR);
                             break;
                         default:
-                            q8.y(parcel, readInt21);
+                            o8.y(parcel, readInt18);
                             break;
                     }
                 }
-                q8.m(parcel, z41);
-                return new n5.b(str43, arrayList10, z42, iVar, z43, aVar2, z44, d10, z45, z46, z47, arrayList11, z48, z49, b0Var, c0Var);
+                o8.m(parcel, z41);
+                return new v(yVar, b0Var, bArr6, arrayList3, d, arrayList4, mVar, num, h0Var, str21, fVar, str22, resultReceiver);
+            case 25:
+                int z42 = o8.z(parcel);
+                String str23 = null;
+                String str24 = null;
+                byte[] bArr7 = null;
+                j jVar = null;
+                m6.i iVar = null;
+                k kVar = null;
+                m6.g gVar = null;
+                String str25 = null;
+                while (parcel.dataPosition() < z42) {
+                    int readInt19 = parcel.readInt();
+                    switch ((char) readInt19) {
+                        case 1:
+                            str23 = o8.h(parcel, readInt19);
+                            break;
+                        case 2:
+                            str24 = o8.h(parcel, readInt19);
+                            break;
+                        case 3:
+                            bArr7 = o8.b(parcel, readInt19);
+                            break;
+                        case 4:
+                            jVar = (j) o8.g(parcel, readInt19, j.CREATOR);
+                            break;
+                        case 5:
+                            iVar = (m6.i) o8.g(parcel, readInt19, m6.i.CREATOR);
+                            break;
+                        case 6:
+                            kVar = (k) o8.g(parcel, readInt19, k.CREATOR);
+                            break;
+                        case 7:
+                            gVar = (m6.g) o8.g(parcel, readInt19, m6.g.CREATOR);
+                            break;
+                        case '\b':
+                            str25 = o8.h(parcel, readInt19);
+                            break;
+                        case '\t':
+                            o8.h(parcel, readInt19);
+                            break;
+                        default:
+                            o8.y(parcel, readInt19);
+                            break;
+                    }
+                }
+                o8.m(parcel, z42);
+                return new u(str23, str24, bArr7, jVar, iVar, kVar, gVar, str25);
+            case 26:
+                int z43 = o8.z(parcel);
+                String str26 = null;
+                byte[] bArr8 = null;
+                ArrayList arrayList5 = null;
+                while (parcel.dataPosition() < z43) {
+                    int readInt20 = parcel.readInt();
+                    char c15 = (char) readInt20;
+                    if (c15 == 2) {
+                        str26 = o8.h(parcel, readInt20);
+                    } else if (c15 == 3) {
+                        bArr8 = o8.b(parcel, readInt20);
+                    } else if (c15 != 4) {
+                        o8.y(parcel, readInt20);
+                    } else {
+                        arrayList5 = o8.l(parcel, readInt20, Transport.CREATOR);
+                    }
+                }
+                o8.m(parcel, z43);
+                return new w(str26, bArr8, arrayList5);
             case 27:
-                try {
-                    return n6.c.a(parcel.readString());
-                } catch (n6.b e10) {
-                    throw new RuntimeException(e10);
+                int z44 = o8.z(parcel);
+                String str27 = null;
+                Integer num2 = null;
+                while (parcel.dataPosition() < z44) {
+                    int readInt21 = parcel.readInt();
+                    char c16 = (char) readInt21;
+                    if (c16 == 2) {
+                        str27 = o8.h(parcel, readInt21);
+                    } else if (c16 != 3) {
+                        o8.y(parcel, readInt21);
+                    } else {
+                        num2 = o8.v(parcel, readInt21);
+                    }
                 }
+                o8.m(parcel, z44);
+                return new x(str27, num2.intValue());
             case 28:
-                int z50 = q8.z(parcel);
-                boolean z51 = false;
-                while (parcel.dataPosition() < z50) {
+                int z45 = o8.z(parcel);
+                String str28 = null;
+                String str29 = null;
+                String str30 = null;
+                while (parcel.dataPosition() < z45) {
                     int readInt22 = parcel.readInt();
-                    if (((char) readInt22) != 1) {
-                        q8.y(parcel, readInt22);
+                    char c17 = (char) readInt22;
+                    if (c17 == 2) {
+                        str28 = o8.h(parcel, readInt22);
+                    } else if (c17 == 3) {
+                        str29 = o8.h(parcel, readInt22);
+                    } else if (c17 != 4) {
+                        o8.y(parcel, readInt22);
                     } else {
-                        z51 = q8.n(parcel, readInt22);
+                        str30 = o8.h(parcel, readInt22);
                     }
                 }
-                q8.m(parcel, z50);
-                return new a1(z51);
+                o8.m(parcel, z45);
+                return new y(str28, str29, str30);
             default:
-                int z52 = q8.z(parcel);
-                long j13 = 0;
-                while (parcel.dataPosition() < z52) {
-                    int readInt23 = parcel.readInt();
-                    if (((char) readInt23) != 1) {
-                        q8.y(parcel, readInt23);
-                    } else {
-                        j13 = q8.w(parcel, readInt23);
-                    }
+                try {
+                    return a0.a(parcel.readString());
+                } catch (z e12) {
+                    throw new RuntimeException(e12);
                 }
-                q8.m(parcel, z52);
-                return new m0(j13);
         }
     }
 
     @Override // android.os.Parcelable.Creator
-    public final Object[] newArray(int i10) {
+    public final Object[] newArray(int i9) {
         switch (this.a) {
             case 0:
-                return new f[i10];
+                return new e[i9];
             case 1:
-                return new a[i10];
+                return new f[i9];
             case 2:
-                return new b[i10];
+                return new a[i9];
             case 3:
-                return new c[i10];
+                return new b[i9];
             case 4:
-                return new d[i10];
+                return new c[i9];
             case 5:
-                return new g[i10];
+                return new d[i9];
             case 6:
-                return new CommonWalletObject[i10];
+                return new g[i9];
             case 7:
-                return new h8.a[i10];
+                return new ConnectionConfiguration[i9];
             case 8:
-                return new h8.b[i10];
+                return new i4.b[i9];
             case 9:
-                return new h8.d[i10];
+                return new k5.a[i9];
             case 10:
-                return new h8.c[i10];
+                return new SignInConfiguration[i9];
             case 11:
-                return new h8.e[i10];
+                return new Transport[i9];
             case 12:
-                return new h8.f[i10];
+                return new ParcelImpl[i9];
             case 13:
-                return new h8.g[i10];
+                return new l3.c[i9];
             case 14:
-                return new h8.h[i10];
+                return new l3.b[i9];
             case 15:
-                return new i4.b[i10];
+                return new o0[i9];
             case 16:
-                return new ConnectionConfiguration[i10];
+                return new m6.c[i9];
             case 17:
-                return new k5.a[i10];
+                return new z0[i9];
             case 18:
-                return new SignInConfiguration[i10];
+                return new m0[i9];
             case 19:
-                return new ParcelImpl[i10];
+                return new n0[i9];
             case 20:
-                return new l3.d[i10];
+                return new t[i9];
             case 21:
-                return new l3.c[i10];
+                return new m6.o0[i9];
             case 22:
-                return new Transport[i10];
+                return new p0[i9];
             case 23:
-                return new o0[i10];
+                return new q0[i9];
             case 24:
-                return new b0[i10];
+                return new v[i9];
             case 25:
-                return new c0[i10];
+                return new u[i9];
             case 26:
-                return new n5.b[i10];
+                return new w[i9];
             case 27:
-                return new n6.c[i10];
+                return new x[i9];
             case 28:
-                return new a1[i10];
+                return new y[i9];
             default:
-                return new m0[i10];
+                return new a0[i9];
         }
     }
 }

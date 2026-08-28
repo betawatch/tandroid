@@ -17,7 +17,7 @@ public final class z3 implements o4, g5 {
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i10) {
+    public final /* synthetic */ void accept(int i9) {
         t3.J();
         throw null;
     }

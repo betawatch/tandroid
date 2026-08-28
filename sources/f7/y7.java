@@ -1,0 +1,13 @@
+package f7;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public abstract class y7 {
+    public static void a(int i9, Object[] objArr) {
+        for (int i10 = 0; i10 < i9; i10++) {
+            if (objArr[i10] == null) {
+                throw new NullPointerException(j3.r0.l(i10, "at index "));
+            }
+        }
+    }
+}

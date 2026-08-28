@@ -7,8 +7,8 @@ public final /* synthetic */ class l1 implements Supplier {
     public final /* synthetic */ int a;
     public final /* synthetic */ r1 b;
 
-    public /* synthetic */ l1(r1 r1Var, int i10) {
-        this.a = i10;
+    public /* synthetic */ l1(r1 r1Var, int i9) {
+        this.a = i9;
         this.b = r1Var;
     }
 

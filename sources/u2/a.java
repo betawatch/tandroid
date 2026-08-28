@@ -1,15 +1,16 @@
 package u2;
 
-import h7.q7;
+import g7.s7;
 import j$.util.DesugarCollections;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
+import t2.c;
 import w2.k;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class a implements k {
     public static final String c;
@@ -20,11 +21,11 @@ public final class a implements k {
     public final String b;
 
     static {
-        String a2 = q7.a("hts/frbslgiggolai.o/0clgbthfra=snpoo", "tp:/ieaeogn.ogepscmvc/o/ac?omtjo_rt3");
+        String a2 = s7.a("hts/frbslgiggolai.o/0clgbthfra=snpoo", "tp:/ieaeogn.ogepscmvc/o/ac?omtjo_rt3");
         c = a2;
-        String a3 = q7.a("hts/frbslgigp.ogepscmv/ieo/eaybtho", "tp:/ieaeogn-agolai.o/1frlglgc/aclg");
-        String a10 = q7.a("AzSCki82AwsLzKd5O8zo", "IayckHiZRO1EFl1aGoK");
-        d = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList(new t2.c("proto"), new t2.c("json"))));
+        String a3 = s7.a("hts/frbslgigp.ogepscmv/ieo/eaybtho", "tp:/ieaeogn-agolai.o/1frlglgc/aclg");
+        String a10 = s7.a("AzSCki82AwsLzKd5O8zo", "IayckHiZRO1EFl1aGoK");
+        d = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList(new c("proto"), new c("json"))));
         e = new a(a2, null);
         f = new a(a3, a10);
     }

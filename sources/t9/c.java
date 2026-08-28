@@ -1,24 +1,24 @@
 package t9;
 
-import j$.util.DesugarTimeZone;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-import r9.g;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c implements r9.f {
-    public static final SimpleDateFormat a;
+public final class c {
+    public static final c a;
+    public static final /* synthetic */ c[] b;
 
     static {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US);
-        a = simpleDateFormat;
-        simpleDateFormat.setTimeZone(DesugarTimeZone.getTimeZone("UTC"));
+        c cVar = new c("DEFAULT", 0);
+        a = cVar;
+        b = new c[]{cVar, new c("SIGNED", 1), new c("FIXED", 2)};
     }
 
-    @Override // r9.a
-    public final void a(Object obj, Object obj2) {
-        ((g) obj2).b(a.format((Date) obj));
+    public static c valueOf(String str) {
+        return (c) Enum.valueOf(c.class, str);
+    }
+
+    public static c[] values() {
+        return (c[]) b.clone();
     }
 }

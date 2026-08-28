@@ -1,30 +1,57 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import java.util.regex.Pattern;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xg implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class xg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ xg(int i10, boolean[] zArr) {
-        this.a = i10;
-        this.b = zArr;
+    public /* synthetic */ xg(int i9, View view) {
+        this.a = i9;
+        this.b = view;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        int i10 = this.a;
-        boolean[] zArr = this.b;
-        switch (i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i9 = this.a;
+        View view = this.b;
+        switch (i9) {
             case 0:
-                zArr[0] = true;
+                try {
+                    view.performHapticFeedback(3, 2);
+                    break;
+                } catch (Exception unused) {
+                    return;
+                }
+            case 1:
+                view.setBackgroundDrawable(null);
+                break;
+            case 2:
+                Drawable[] drawableArr = PhotoViewer.P8;
+                AndroidUtilities.removeFromParent(view);
+                break;
+            case 3:
+                Drawable[] drawableArr2 = PhotoViewer.P8;
+                view.setVisibility(8);
+                break;
+            case 4:
+                SharedConfig.setSuggestStickers(0);
+                ((org.telegram.ui.Cells.ba) view).c.c(LocaleController.getString(R.string.SuggestStickersAll), true, true);
+                break;
+            case 5:
+                SharedConfig.setSuggestStickers(1);
+                ((org.telegram.ui.Cells.ba) view).c.c(LocaleController.getString(R.string.SuggestStickersInstalled), true, true);
                 break;
             default:
-                Pattern pattern = LaunchActivity.x1;
-                zArr[0] = true;
+                SharedConfig.setSuggestStickers(2);
+                ((org.telegram.ui.Cells.ba) view).c.c(LocaleController.getString(R.string.SuggestStickersNone), true, true);
                 break;
         }
     }

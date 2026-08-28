@@ -41,14 +41,14 @@ public final class a extends CharsetDecoder {
                             coderResult2 = CoderResult.OVERFLOW;
                             break;
                         }
-                        int i10 = position2 + 1;
+                        int i9 = position2 + 1;
                         try {
                             array2[position2] = (char) (b10 & 255);
                             position++;
-                            position2 = i10;
+                            position2 = i9;
                         } catch (Throwable th) {
                             th = th;
-                            position2 = i10;
+                            position2 = i9;
                             throw th;
                         }
                     } catch (Throwable th2) {

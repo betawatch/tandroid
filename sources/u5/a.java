@@ -1,131 +1,145 @@
 package u5;
 
 import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Looper;
-import android.os.Message;
-import android.os.Messenger;
-import android.os.RemoteException;
-import android.util.Log;
-import com.google.android.exoplayer2.upstream.w;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.regex.Pattern;
-import org.telegram.ui.Components.mu0;
+import android.os.Parcel;
+import android.os.Parcelable;
+import g7.p8;
+import j3.r0;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a {
-    public static int h;
-    public static PendingIntent i;
-    public static final Pattern j = Pattern.compile("\\|ID\\|([^|]+)\\|:?+(.*)");
-    public final Context b;
-    public final w c;
-    public final ScheduledThreadPoolExecutor d;
-    public Messenger f;
-    public f g;
-    public final a0.k a = new a0.k(0);
-    public final Messenger e = new Messenger(new c(this, Looper.getMainLooper()));
+public final class a extends y5.a {
+    public final int a;
+    public final int b;
+    public final PendingIntent c;
+    public final String d;
+    public static final a e = new a(0);
+    public static final Parcelable.Creator<a> CREATOR = new q7.j(17);
 
-    public a(Context context) {
-        this.b = context;
-        this.c = new w(context);
-        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1);
-        scheduledThreadPoolExecutor.setKeepAliveTime(60L, TimeUnit.SECONDS);
-        scheduledThreadPoolExecutor.allowCoreThreadTimeOut(true);
-        this.d = scheduledThreadPoolExecutor;
+    public a(int i9, int i10, PendingIntent pendingIntent, String str) {
+        this.a = i9;
+        this.b = i10;
+        this.c = pendingIntent;
+        this.d = str;
     }
 
-    public static synchronized String b() {
-        String num;
-        synchronized (a.class) {
-            int i10 = h;
-            h = i10 + 1;
-            num = Integer.toString(i10);
+    public static String d(int i9) {
+        if (i9 == 99) {
+            return "UNFINISHED";
         }
-        return num;
+        if (i9 == 1500) {
+            return "DRIVE_EXTERNAL_STORAGE_REQUIRED";
+        }
+        switch (i9) {
+            case -1:
+                return "UNKNOWN";
+            case 0:
+                return "SUCCESS";
+            case 1:
+                return "SERVICE_MISSING";
+            case 2:
+                return "SERVICE_VERSION_UPDATE_REQUIRED";
+            case 3:
+                return "SERVICE_DISABLED";
+            case 4:
+                return "SIGN_IN_REQUIRED";
+            case 5:
+                return "INVALID_ACCOUNT";
+            case 6:
+                return "RESOLUTION_REQUIRED";
+            case 7:
+                return "NETWORK_ERROR";
+            case 8:
+                return "INTERNAL_ERROR";
+            case 9:
+                return "SERVICE_INVALID";
+            case 10:
+                return "DEVELOPER_ERROR";
+            case 11:
+                return "LICENSE_CHECK_FAILED";
+            default:
+                switch (i9) {
+                    case 13:
+                        return "CANCELED";
+                    case 14:
+                        return "TIMEOUT";
+                    case 15:
+                        return "INTERRUPTED";
+                    case 16:
+                        return "API_UNAVAILABLE";
+                    case 17:
+                        return "SIGN_IN_FAILED";
+                    case 18:
+                        return "SERVICE_UPDATING";
+                    case 19:
+                        return "SERVICE_MISSING_PERMISSION";
+                    case 20:
+                        return "RESTRICTED_PROFILE";
+                    case 21:
+                        return "API_VERSION_UPDATE_REQUIRED";
+                    case 22:
+                        return "RESOLUTION_ACTIVITY_NOT_FOUND";
+                    case 23:
+                        return "API_DISABLED";
+                    case 24:
+                        return "API_DISABLED_FOR_CONNECTION";
+                    case 25:
+                        return "API_INSTALL_REQUIRED";
+                    default:
+                        return r0.m(i9, "UNKNOWN_ERROR_CODE(", ")");
+                }
+        }
     }
 
-    public static synchronized void c(Context context, Intent intent) {
-        synchronized (a.class) {
-            try {
-                if (i == null) {
-                    Intent intent2 = new Intent();
-                    intent2.setPackage("com.google.example.invalidpackage");
-                    i = PendingIntent.getBroadcast(context, 0, intent2, w6.a.a);
-                }
-                intent.putExtra("app", i);
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
+    public final boolean b() {
+        return (this.b == 0 || this.c == null) ? false : true;
     }
 
-    public final Task a(Bundle bundle) {
-        String b10 = b();
-        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        synchronized (this.a) {
-            this.a.put(b10, taskCompletionSource);
-        }
-        Intent intent = new Intent();
-        intent.setPackage("com.google.android.gms");
-        if (this.c.g() == 2) {
-            intent.setAction("com.google.iid.TOKEN_REQUEST");
-        } else {
-            intent.setAction("com.google.android.c2dm.intent.REGISTER");
-        }
-        intent.putExtras(bundle);
-        c(this.b, intent);
-        intent.putExtra("kid", "|ID|" + b10 + "|");
-        if (Log.isLoggable("Rpc", 3)) {
-            Log.d("Rpc", "Sending ".concat(String.valueOf(intent.getExtras())));
-        }
-        intent.putExtra("google.messenger", this.e);
-        if (this.f != null || this.g != null) {
-            Message obtain = Message.obtain();
-            obtain.obj = intent;
-            try {
-                Messenger messenger = this.f;
-                if (messenger != null) {
-                    messenger.send(obtain);
-                } else {
-                    Messenger messenger2 = this.g.a;
-                    messenger2.getClass();
-                    messenger2.send(obtain);
-                }
-            } catch (RemoteException unused) {
-                if (Log.isLoggable("Rpc", 3)) {
-                    Log.d("Rpc", "Messenger failed, fallback to startService");
-                }
-            }
-            taskCompletionSource.getTask().addOnCompleteListener(l.a, new u2.b(this, b10, this.d.schedule(new mu0(taskCompletionSource, 8), 30L, TimeUnit.SECONDS)));
-            return taskCompletionSource.getTask();
-        }
-        if (this.c.g() == 2) {
-            this.b.sendBroadcast(intent);
-        } else {
-            this.b.startService(intent);
-        }
-        taskCompletionSource.getTask().addOnCompleteListener(l.a, new u2.b(this, b10, this.d.schedule(new mu0(taskCompletionSource, 8), 30L, TimeUnit.SECONDS)));
-        return taskCompletionSource.getTask();
+    public final boolean c() {
+        return this.b == 0;
     }
 
-    public final void d(String str, Bundle bundle) {
-        synchronized (this.a) {
-            try {
-                TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.a.remove(str);
-                if (taskCompletionSource != null) {
-                    taskCompletionSource.setResult(bundle);
-                    return;
-                }
-                Log.w("Rpc", "Missing callback for " + str);
-            } catch (Throwable th) {
-                throw th;
-            }
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
+        if (!(obj instanceof a)) {
+            return false;
+        }
+        a aVar = (a) obj;
+        return this.b == aVar.b && x5.l.l(this.c, aVar.c) && x5.l.l(this.d, aVar.d);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.b), this.c, this.d});
+    }
+
+    public final String toString() {
+        w4.e eVar = new w4.e(this);
+        eVar.c(d(this.b), "statusCode");
+        eVar.c(this.c, "resolution");
+        eVar.c(this.d, "message");
+        return eVar.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.s(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        p8.s(parcel, 2, 4);
+        parcel.writeInt(this.b);
+        p8.k(parcel, 3, this.c, i9);
+        p8.l(parcel, 4, this.d);
+        p8.r(parcel, q10);
+    }
+
+    public a(int i9) {
+        this(1, i9, null, null);
+    }
+
+    public a(int i9, PendingIntent pendingIntent) {
+        this(1, i9, pendingIntent, null);
     }
 }

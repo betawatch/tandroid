@@ -4,7 +4,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class j extends k {
     public final Matrix a;
@@ -35,30 +35,30 @@ public final class j extends k {
 
     @Override // k2.k
     public final boolean a() {
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             ArrayList arrayList = this.b;
-            if (i10 >= arrayList.size()) {
+            if (i9 >= arrayList.size()) {
                 return false;
             }
-            if (((k) arrayList.get(i10)).a()) {
+            if (((k) arrayList.get(i9)).a()) {
                 return true;
             }
-            i10++;
+            i9++;
         }
     }
 
     @Override // k2.k
     public final boolean b(int[] iArr) {
-        int i10 = 0;
+        int i9 = 0;
         boolean z10 = false;
         while (true) {
             ArrayList arrayList = this.b;
-            if (i10 >= arrayList.size()) {
+            if (i9 >= arrayList.size()) {
                 return z10;
             }
-            z10 |= ((k) arrayList.get(i10)).b(iArr);
-            i10++;
+            z10 |= ((k) arrayList.get(i9)).b(iArr);
+            i9++;
         }
     }
 
@@ -185,8 +185,8 @@ public final class j extends k {
         }
         matrix.set(jVar.j);
         ArrayList arrayList = jVar.b;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            Object obj = arrayList.get(i10);
+        for (int i9 = 0; i9 < arrayList.size(); i9++) {
+            Object obj = arrayList.get(i9);
             if (obj instanceof j) {
                 this.b.add(new j((j) obj, fVar));
             } else {

@@ -9,28 +9,28 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class uo0 extends FrameLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sp0 b;
+    public final /* synthetic */ rp0 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ uo0(sp0 sp0Var, Context context, int i10) {
+    public /* synthetic */ uo0(rp0 rp0Var, Context context, int i9) {
         super(context);
-        this.a = i10;
-        this.b = sp0Var;
+        this.a = i9;
+        this.b = rp0Var;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                sp0 sp0Var = this.b;
-                sp0Var.T0.setBounds(0, (int) sp0Var.q0, getMeasuredWidth(), getMeasuredHeight());
-                sp0Var.T0.draw(canvas);
+                rp0 rp0Var = this.b;
+                rp0Var.T0.setBounds(0, (int) rp0Var.q0, getMeasuredWidth(), getMeasuredHeight());
+                rp0Var.T0.draw(canvas);
                 canvas.save();
-                canvas.clipRect(0.0f, sp0Var.q0, getMeasuredWidth(), getMeasuredHeight());
+                canvas.clipRect(0.0f, rp0Var.q0, getMeasuredWidth(), getMeasuredHeight());
                 super.dispatchDraw(canvas);
                 canvas.restore();
                 break;
@@ -44,25 +44,25 @@ public final class uo0 extends FrameLayout {
     public void onDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                sp0 sp0Var = this.b;
-                uo0 uo0Var = sp0Var.c;
-                float f10 = sp0Var.r0;
-                if (f10 != 0.0f && f10 != uo0Var.getTop() + sp0Var.r0) {
-                    ValueAnimator valueAnimator = sp0Var.s0;
+                rp0 rp0Var = this.b;
+                uo0 uo0Var = rp0Var.c;
+                float f10 = rp0Var.r0;
+                if (f10 != 0.0f && f10 != uo0Var.getTop() + rp0Var.r0) {
+                    ValueAnimator valueAnimator = rp0Var.s0;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    float top = sp0Var.r0 - (uo0Var.getTop() + sp0Var.q0);
-                    sp0Var.q0 = top;
+                    float top = rp0Var.r0 - (uo0Var.getTop() + rp0Var.q0);
+                    rp0Var.q0 = top;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
-                    sp0Var.s0 = ofFloat;
-                    ofFloat.addUpdateListener(new v60(this, 17));
-                    sp0Var.s0.setInterpolator(er.f);
-                    sp0Var.s0.setDuration(200L);
-                    sp0Var.s0.start();
-                    sp0Var.r0 = 0.0f;
+                    rp0Var.s0 = ofFloat;
+                    ofFloat.addUpdateListener(new q60(this, 17));
+                    rp0Var.s0.setInterpolator(gr.f);
+                    rp0Var.s0.setDuration(200L);
+                    rp0Var.s0.start();
+                    rp0Var.r0 = 0.0f;
                 }
-                sp0Var.O[1].setTranslationY((-(uo0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))) + sp0Var.q0 + sp0Var.p0 + ((1.0f - getAlpha()) * (uo0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))));
+                rp0Var.O[1].setTranslationY((-(uo0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))) + rp0Var.q0 + rp0Var.p0 + ((1.0f - getAlpha()) * (uo0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))));
                 break;
             default:
                 super.onDraw(canvas);
@@ -100,17 +100,17 @@ public final class uo0 extends FrameLayout {
     }
 
     @Override // android.view.View
-    public void setVisibility(int i10) {
+    public void setVisibility(int i9) {
         switch (this.a) {
             case 0:
-                super.setVisibility(i10);
-                if (i10 != 0) {
+                super.setVisibility(i9);
+                if (i9 != 0) {
                     this.b.O[1].setTranslationY(0.0f);
                     break;
                 }
                 break;
             default:
-                super.setVisibility(i10);
+                super.setVisibility(i9);
                 break;
         }
     }

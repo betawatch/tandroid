@@ -39,9 +39,9 @@ public final class h1 implements Iterator {
         }
     }
 
-    public h1(Iterator it, int i10) {
-        this.a = i10;
-        switch (i10) {
+    public h1(Iterator it, int i9) {
+        this.a = i9;
+        switch (i9) {
             case 2:
                 it.getClass();
                 this.b = it;

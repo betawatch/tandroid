@@ -10,17 +10,17 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class g5 {
     public HashMap a;
     public HashMap b;
     public HashSet c;
-    public bg d;
+    public fg d;
     public final int e;
 
-    public g5(int i10) {
-        this.e = i10;
+    public g5(int i9) {
+        this.e = i9;
     }
 
     public static boolean a() {
@@ -67,9 +67,9 @@ public final class g5 {
                     if (this.d != null) {
                         return;
                     }
-                    bg bgVar = new bg(this, 5);
-                    this.d = bgVar;
-                    AndroidUtilities.runOnUIThread(bgVar);
+                    fg fgVar = new fg(this, 5);
+                    this.d = fgVar;
+                    AndroidUtilities.runOnUIThread(fgVar);
                 }
             } catch (Throwable th) {
                 throw th;
@@ -99,14 +99,14 @@ public final class g5 {
         ArrayList arrayList2;
         if (a()) {
             k5.x();
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                if (arrayList.get(i10) instanceof TLRPC.Document) {
-                    TLRPC.Document document = (TLRPC.Document) arrayList.get(i10);
+            for (int i9 = 0; i9 < arrayList.size(); i9++) {
+                if (arrayList.get(i9) instanceof TLRPC.Document) {
+                    TLRPC.Document document = (TLRPC.Document) arrayList.get(i9);
                     e(document);
                     HashMap hashMap = this.b;
                     if (hashMap != null && (arrayList2 = (ArrayList) hashMap.remove(Long.valueOf(document.id))) != null) {
-                        for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                            h5 h5Var = (h5) arrayList2.get(i11);
+                        for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+                            h5 h5Var = (h5) arrayList2.get(i10);
                             if (h5Var != null) {
                                 h5Var.a(document);
                             }
@@ -144,10 +144,10 @@ public final class g5 {
                     this.a = new HashMap();
                 }
                 int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
+                int i9 = 0;
+                while (i9 < size) {
+                    Object obj = arrayList.get(i9);
+                    i9++;
                     TLRPC.Document document = (TLRPC.Document) obj;
                     this.a.put(Long.valueOf(document.id), document);
                 }

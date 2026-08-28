@@ -26,7 +26,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class k5 extends Drawable {
     public static SparseArray q;
@@ -34,7 +34,7 @@ public class k5 extends Drawable {
     public static boolean s;
     public static boolean t;
     public static boolean u;
-    public static final ag.l3 v = new ag.l3(27);
+    public static final bg.d2 v = new bg.d2(28);
     public static HashMap w;
     public boolean a;
     public ArrayList b;
@@ -46,23 +46,23 @@ public class k5 extends Drawable {
     public int h;
     public String i;
     public boolean j;
-    public jh.y2 k;
+    public ih.z2 k;
     public boolean m;
     public ColorFilter p;
     public float l = 1.0f;
     public Boolean n = null;
     public Boolean o = null;
 
-    public k5(int i10, int i11, long j10) {
-        this.h = i11;
-        this.g = i10;
+    public k5(int i9, int i10, long j10) {
+        this.h = i10;
+        this.g = i9;
         y();
         this.f = j10;
-        h(i11).b(j10, new c5(this, 0));
+        h(i10).b(j10, new c5(this, 0));
     }
 
-    public static TLRPC.Document f(int i10, long j10) {
-        HashMap hashMap = h(i10).a;
+    public static TLRPC.Document f(int i9, long j10) {
+        HashMap hashMap = h(i9).a;
         if (hashMap == null) {
             return null;
         }
@@ -73,26 +73,26 @@ public class k5 extends Drawable {
         return SharedConfig.getDevicePerformanceClass() == 0 ? 0 : 2;
     }
 
-    public static g5 h(int i10) {
+    public static g5 h(int i9) {
         if (r == null) {
             r = new HashMap();
         }
-        g5 g5Var = (g5) r.get(Integer.valueOf(i10));
+        g5 g5Var = (g5) r.get(Integer.valueOf(i9));
         if (g5Var != null) {
             return g5Var;
         }
         HashMap hashMap = r;
-        Integer valueOf = Integer.valueOf(i10);
-        g5 g5Var2 = new g5(i10);
+        Integer valueOf = Integer.valueOf(i9);
+        g5 g5Var2 = new g5(i9);
         hashMap.put(valueOf, g5Var2);
         return g5Var2;
     }
 
-    public static k5 m(int i10, int i11, TLRPC.Document document) {
+    public static k5 m(int i9, int i10, TLRPC.Document document) {
         if (q == null) {
             q = new SparseArray();
         }
-        int hash = Objects.hash(Integer.valueOf(i10), Integer.valueOf(i11));
+        int hash = Objects.hash(Integer.valueOf(i9), Integer.valueOf(i10));
         LongSparseArray longSparseArray = (LongSparseArray) q.get(hash);
         if (longSparseArray == null) {
             SparseArray sparseArray = q;
@@ -105,17 +105,17 @@ public class k5 extends Drawable {
             return k5Var;
         }
         long j10 = document.id;
-        k5 k5Var2 = new k5(i11, i10, document);
+        k5 k5Var2 = new k5(i10, i9, document);
         longSparseArray.put(j10, k5Var2);
         return k5Var2;
     }
 
-    public static k5 n(int i10, long j10, String str, int i11) {
+    public static k5 n(int i9, long j10, String str, int i10) {
         if (q == null) {
             q = new SparseArray();
         }
-        int i12 = 1;
-        int hash = Objects.hash(Integer.valueOf(i10), Integer.valueOf(i11));
+        int i11 = 1;
+        int hash = Objects.hash(Integer.valueOf(i9), Integer.valueOf(i10));
         LongSparseArray longSparseArray = (LongSparseArray) q.get(hash);
         if (longSparseArray == null) {
             SparseArray sparseArray = q;
@@ -131,52 +131,52 @@ public class k5 extends Drawable {
         k5Var2.l = 1.0f;
         k5Var2.n = null;
         k5Var2.o = null;
-        k5Var2.h = i10;
-        k5Var2.g = i11;
+        k5Var2.h = i9;
+        k5Var2.g = i10;
         k5Var2.y();
         k5Var2.f = j10;
         k5Var2.i = str;
-        h(i10).b(j10, new c5(k5Var2, i12));
+        h(i9).b(j10, new c5(k5Var2, i11));
         longSparseArray.put(j10, k5Var2);
         return k5Var2;
     }
 
-    public static void s(int i10, boolean z10) {
+    public static void s(int i9, boolean z10) {
         LongSparseArray longSparseArray;
-        jh.y2 y2Var;
+        ih.z2 z2Var;
         boolean z11 = !z10;
         if (u == z11) {
             return;
         }
         u = z11;
-        if (q == null || (longSparseArray = (LongSparseArray) q.get(Objects.hash(Integer.valueOf(i10), 25))) == null) {
+        if (q == null || (longSparseArray = (LongSparseArray) q.get(Objects.hash(Integer.valueOf(i9), 25))) == null) {
             return;
         }
-        for (int i11 = 0; i11 < longSparseArray.size(); i11++) {
-            k5 k5Var = (k5) longSparseArray.valueAt(i11);
-            if (k5Var != null && (y2Var = k5Var.k) != null) {
+        for (int i10 = 0; i10 < longSparseArray.size(); i10++) {
+            k5 k5Var = (k5) longSparseArray.valueAt(i10);
+            if (k5Var != null && (z2Var = k5Var.k) != null) {
                 if (z10) {
-                    y2Var.setAllowStartLottieAnimation(true);
-                    y2Var.setAllowStartAnimation(true);
-                    y2Var.setAutoRepeat(1);
-                    x5 animation = y2Var.getAnimation();
+                    z2Var.setAllowStartLottieAnimation(true);
+                    z2Var.setAllowStartAnimation(true);
+                    z2Var.setAutoRepeat(1);
+                    x5 animation = z2Var.getAnimation();
                     if (animation != null) {
-                        boolean z12 = y2Var.useSharedAnimationQueue;
+                        boolean z12 = z2Var.useSharedAnimationQueue;
                         if (!animation.j0) {
                             animation.r0 = z12;
                         }
                         animation.start();
                     } else {
-                        oi0 lottieAnimation = y2Var.getLottieAnimation();
+                        mi0 lottieAnimation = z2Var.getLottieAnimation();
                         if (lottieAnimation != null) {
                             lottieAnimation.start();
                         }
                     }
                 } else {
-                    y2Var.setAllowStartAnimation(false);
-                    y2Var.setAllowStartLottieAnimation(false);
-                    y2Var.setAutoRepeat(0);
-                    y2Var.stopAnimation();
+                    z2Var.setAllowStartAnimation(false);
+                    z2Var.setAllowStartLottieAnimation(false);
+                    z2Var.setAutoRepeat(0);
+                    z2Var.stopAnimation();
                 }
             }
         }
@@ -187,10 +187,10 @@ public class k5 extends Drawable {
             return;
         }
         x();
-        for (int i10 = 0; i10 < q.size(); i10++) {
-            LongSparseArray longSparseArray = (LongSparseArray) q.valueAt(i10);
-            for (int i11 = 0; i11 < longSparseArray.size(); i11++) {
-                long keyAt = longSparseArray.keyAt(i11);
+        for (int i9 = 0; i9 < q.size(); i9++) {
+            LongSparseArray longSparseArray = (LongSparseArray) q.valueAt(i9);
+            for (int i10 = 0; i10 < longSparseArray.size(); i10++) {
+                long keyAt = longSparseArray.keyAt(i10);
                 k5 k5Var = (k5) longSparseArray.get(keyAt);
                 if (k5Var == null || !k5Var.a) {
                     longSparseArray.remove(keyAt);
@@ -207,7 +207,7 @@ public class k5 extends Drawable {
     }
 
     public final void a(View view) {
-        if (view instanceof org.telegram.ui.c51) {
+        if (view instanceof org.telegram.ui.d51) {
             throw new RuntimeException();
         }
         this.m = false;
@@ -265,20 +265,20 @@ public class k5 extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        jh.y2 y2Var = this.k;
-        if (y2Var == null) {
+        ih.z2 z2Var = this.k;
+        if (z2Var == null) {
             return;
         }
-        y2Var.setImageCoords(getBounds());
+        z2Var.setImageCoords(getBounds());
         this.k.setAlpha(this.l);
         this.k.draw(canvas);
     }
 
     public final void e() {
         if (this.k == null) {
-            jh.y2 y2Var = new jh.y2(this, 3);
-            this.k = y2Var;
-            y2Var.setCurrentAccount(this.h);
+            ih.z2 z2Var = new ih.z2(this, 3);
+            this.k = z2Var;
+            z2Var.setCurrentAccount(this.h);
             this.k.setAllowLoadingOnAttachedOnly(true);
             if (this.g == 12) {
                 this.k.ignoreNotifications = true;
@@ -324,18 +324,18 @@ public class k5 extends Drawable {
     public final void j(boolean z10) {
         SvgHelper.SvgDrawable svgThumb;
         String str;
-        int i10;
+        int i9;
         ImageLocation imageLocation;
         ImageLocation forDocument;
         ImageLocation imageLocation2;
         Drawable emojiDrawable;
         Drawable drawable;
         String str2 = this.i;
-        int i11 = this.g;
+        int i10 = this.g;
         TLRPC.Document document = this.e;
         if (document != null) {
             if (this.k == null || this.j || z10) {
-                if ((i11 == 20 || i11 == 21) && (document instanceof TLRPC.TL_documentEmpty)) {
+                if ((i10 == 20 || i10 == 21) && (document instanceof TLRPC.TL_documentEmpty)) {
                     return;
                 }
                 this.j = false;
@@ -343,97 +343,97 @@ public class k5 extends Drawable {
                 if (this.p != null && c()) {
                     this.k.setColorFilter(this.p);
                 }
-                if (i11 != 0) {
-                    int i12 = i11 == 12 ? 2 : i11;
-                    this.k.setUniqKeyPrefix(i12 + "_");
+                if (i10 != 0) {
+                    int i11 = i10 == 12 ? 2 : i10;
+                    this.k.setUniqKeyPrefix(i11 + "_");
                 }
                 this.k.setVideoThumbIsSame(true);
-                boolean z11 = (SharedConfig.getDevicePerformanceClass() == 0 && i11 == 5) || ((i11 == 2 || i11 == 25) && !s) || (i11 == 3 && !t);
-                if (i11 == 13 || i11 == 16) {
+                boolean z11 = (SharedConfig.getDevicePerformanceClass() == 0 && i10 == 5) || ((i10 == 2 || i10 == 25) && !s) || (i10 == 3 && !t);
+                if (i10 == 13 || i10 == 16) {
                     z11 = true;
                 }
-                if (i11 == 24 || i11 == 27) {
+                if (i10 == 24 || i10 == 27) {
                     z11 = false;
                 }
                 String str3 = this.d + "_" + this.d;
-                if (i11 == 12) {
-                    str3 = s3.c.l(str3, "_d_nostream");
+                if (i10 == 12) {
+                    str3 = ta.b.j(str3, "_d_nostream");
                 }
-                if (i11 != 17 && i11 != 15 && i11 != 14 && i11 != 8 && ((i11 != 1 || SharedConfig.getDevicePerformanceClass() < 2) && i11 != 12)) {
-                    str3 = s3.c.l(str3, "_pcache");
+                if (i10 != 17 && i10 != 15 && i10 != 14 && i10 != 8 && ((i10 != 1 || SharedConfig.getDevicePerformanceClass() < 2) && i10 != 12)) {
+                    str3 = ta.b.j(str3, "_pcache");
                 }
-                if (i11 != 17 && i11 != 0 && i11 != 26 && i11 != 1 && i11 != 14 && i11 != 15 && i11 != 19 && i11 != 20 && i11 != 21) {
-                    str3 = s3.c.l(str3, "_compress");
+                if (i10 != 17 && i10 != 0 && i10 != 26 && i10 != 1 && i10 != 14 && i10 != 15 && i10 != 19 && i10 != 20 && i10 != 21) {
+                    str3 = ta.b.j(str3, "_compress");
                 }
-                if (i11 == 8) {
-                    str3 = s3.c.l(str3, "firstframe");
+                if (i10 == 8) {
+                    str3 = ta.b.j(str3, "firstframe");
                 }
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(this.e.thumbs, 90);
                 if ("video/webm".equals(this.e.mime_type)) {
                     forDocument = ImageLocation.getForDocument(this.e);
-                    str3 = s3.c.l(str3, "_g");
-                    svgThumb = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.g6.m6, 0.2f, true);
+                    str3 = ta.b.j(str3, "_g");
+                    svgThumb = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.f6.m6, 0.2f, true);
                 } else {
                     if (!"application/x-tgsticker".equals(this.e.mime_type)) {
-                        svgThumb = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.g6.m6, 0.2f, true);
+                        svgThumb = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.f6.m6, 0.2f, true);
                         if (svgThumb != null && MessageObject.isAnimatedStickerDocument(this.e, true)) {
                             svgThumb.overrideWidthAndHeight(512, 512);
                         }
                         str = str3;
-                        i10 = 20;
+                        i9 = 20;
                         imageLocation = null;
-                        if (i11 != i10 || i11 == 21) {
+                        if (i10 != i9 || i10 == 21) {
                             imageLocation2 = null;
                             emojiDrawable = Emoji.getEmojiDrawable(MessageObject.findAnimatedEmojiEmoticon(this.e, null));
                             if (emojiDrawable != null) {
                                 drawable = emojiDrawable;
                                 if (str2 != null) {
                                     this.k.setImageBitmap(new x5(new File(str2), true, 0L, 0, null, null, null, 0L, this.h, true, 512, 512, null, 0, true));
-                                } else if (i11 == 8) {
-                                    jh.y2 y2Var = this.k;
+                                } else if (i10 == 8) {
+                                    ih.z2 z2Var = this.k;
                                     TLRPC.Document document2 = this.e;
-                                    y2Var.setImage(null, null, imageLocation, str, null, null, drawable, document2.size, null, document2, 1);
+                                    z2Var.setImage(null, null, imageLocation, str, null, null, drawable, document2.size, null, document2, 1);
                                 } else {
                                     ImageLocation imageLocation3 = imageLocation;
                                     String str4 = str;
-                                    if (z11 || !(s || i11 == 14)) {
-                                        ImageLocation forDocument2 = i11 == 16 ? ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e) : imageLocation2;
+                                    if (z11 || !(s || i10 == 14)) {
+                                        ImageLocation forDocument2 = i10 == 16 ? ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e) : imageLocation2;
                                         if ("video/webm".equals(this.e.mime_type)) {
-                                            jh.y2 y2Var2 = this.k;
+                                            ih.z2 z2Var2 = this.k;
                                             ImageLocation forDocument3 = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e);
                                             String str5 = this.d + "_" + this.d;
                                             TLRPC.Document document3 = this.e;
-                                            y2Var2.setImage(null, null, forDocument3, str5, forDocument2, null, drawable, document3.size, null, document3, 1);
+                                            z2Var2.setImage(null, null, forDocument3, str5, forDocument2, null, drawable, document3.size, null, document3, 1);
                                         } else if (MessageObject.isAnimatedStickerDocument(this.e, true)) {
-                                            jh.y2 y2Var3 = this.k;
-                                            String l10 = s3.c.l(str4, "_firstframe");
+                                            ih.z2 z2Var3 = this.k;
+                                            String j10 = ta.b.j(str4, "_firstframe");
                                             TLRPC.Document document4 = this.e;
-                                            y2Var3.setImage(imageLocation3, l10, forDocument2, null, drawable, document4.size, null, document4, 1);
+                                            z2Var3.setImage(imageLocation3, j10, forDocument2, null, drawable, document4.size, null, document4, 1);
                                         } else {
-                                            jh.y2 y2Var4 = this.k;
+                                            ih.z2 z2Var4 = this.k;
                                             ImageLocation forDocument4 = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e);
                                             String str6 = this.d + "_" + this.d;
                                             TLRPC.Document document5 = this.e;
-                                            y2Var4.setImage(forDocument4, str6, forDocument2, null, drawable, document5.size, null, document5, 1);
+                                            z2Var4.setImage(forDocument4, str6, forDocument2, null, drawable, document5.size, null, document5, 1);
                                         }
                                     } else {
-                                        ImageLocation forDocument5 = i11 == 17 ? ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e) : imageLocation2;
-                                        jh.y2 y2Var5 = this.k;
+                                        ImageLocation forDocument5 = i10 == 17 ? ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e) : imageLocation2;
+                                        ih.z2 z2Var5 = this.k;
                                         ImageLocation forDocument6 = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e);
                                         String str7 = this.d + "_" + this.d;
                                         TLRPC.Document document6 = this.e;
-                                        y2Var5.setImage(imageLocation3, str4, forDocument6, str7, forDocument5, null, drawable, document6.size, null, document6, 1);
+                                        z2Var5.setImage(imageLocation3, str4, forDocument6, str7, forDocument5, null, drawable, document6.size, null, document6, 1);
                                     }
                                 }
                                 w(this.k);
-                                if (i11 != 13 || i11 == 16 || i11 == 3 || i11 == 5 || i11 == 4 || i11 == 24) {
+                                if (i10 != 13 || i10 == 16 || i10 == 3 || i10 == 5 || i10 == 4 || i10 == 24) {
                                     this.k.setLayerNum(7);
                                 }
-                                if (i11 != 9 || i11 == 21 || i11 == 27) {
+                                if (i10 != 9 || i10 == 21 || i10 == 27) {
                                     this.k.setLayerNum(6656);
                                 }
                                 this.k.setAspectFit(true);
-                                if (i11 != 12 || i11 == 26 || i11 == 18 || i11 == 8 || i11 == 6 || i11 == 5 || (i11 == 25 && u)) {
+                                if (i10 != 12 || i10 == 26 || i10 == 18 || i10 == 8 || i10 == 6 || i10 == 5 || (i10 == 25 && u)) {
                                     this.k.setAllowStartAnimation(false);
                                     this.k.setAllowStartLottieAnimation(false);
                                     this.k.setAutoRepeat(0);
@@ -443,7 +443,7 @@ public class k5 extends Drawable {
                                     this.k.setAutoRepeat(1);
                                 }
                                 this.k.setAllowDecodeSingleFrame(true);
-                                this.k.setRoundRadius((i11 != 5 || i11 == 6 || i11 == 27) ? AndroidUtilities.dp(6.0f) : i11 == 24 ? AndroidUtilities.dp(14.0f) : 0);
+                                this.k.setRoundRadius((i10 != 5 || i10 == 6 || i10 == 27) ? AndroidUtilities.dp(6.0f) : i10 == 24 ? AndroidUtilities.dp(14.0f) : 0);
                                 v();
                                 k();
                             }
@@ -454,31 +454,31 @@ public class k5 extends Drawable {
                         if (str2 != null) {
                         }
                         w(this.k);
-                        if (i11 != 13) {
+                        if (i10 != 13) {
                         }
                         this.k.setLayerNum(7);
-                        if (i11 != 9) {
+                        if (i10 != 9) {
                         }
                         this.k.setLayerNum(6656);
                         this.k.setAspectFit(true);
-                        if (i11 != 12) {
+                        if (i10 != 12) {
                         }
                         this.k.setAllowStartAnimation(false);
                         this.k.setAllowStartLottieAnimation(false);
                         this.k.setAutoRepeat(0);
                         this.k.setAllowDecodeSingleFrame(true);
-                        this.k.setRoundRadius((i11 != 5 || i11 == 6 || i11 == 27) ? AndroidUtilities.dp(6.0f) : i11 == 24 ? AndroidUtilities.dp(14.0f) : 0);
+                        this.k.setRoundRadius((i10 != 5 || i10 == 6 || i10 == 27) ? AndroidUtilities.dp(6.0f) : i10 == 24 ? AndroidUtilities.dp(14.0f) : 0);
                         v();
                         k();
                     }
                     StringBuilder sb2 = new StringBuilder();
-                    sb2.append(i11 != 0 ? s3.c.d(i11, "_") : "");
+                    sb2.append(i10 != 0 ? ta.b.c(i10, "_") : "");
                     sb2.append(this.f);
                     sb2.append("@");
                     sb2.append(str3);
                     String sb3 = sb2.toString();
-                    if (SharedConfig.getDevicePerformanceClass() != 0 || i11 == 2 || i11 == 25 || i11 == 22 || !ImageLoader.getInstance().hasLottieMemCache(sb3)) {
-                        SvgHelper.SvgDrawable svgThumb2 = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.g6.m6, i11 == 22 ? 0.8f : 0.2f);
+                    if (SharedConfig.getDevicePerformanceClass() != 0 || i10 == 2 || i10 == 25 || i10 == 22 || !ImageLoader.getInstance().hasLottieMemCache(sb3)) {
+                        SvgHelper.SvgDrawable svgThumb2 = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.f6.m6, i10 == 22 ? 0.8f : 0.2f);
                         if (svgThumb2 != null && MessageObject.isAnimatedStickerDocument(this.e, true)) {
                             svgThumb2.overrideWidthAndHeight(512, 512);
                         }
@@ -490,8 +490,8 @@ public class k5 extends Drawable {
                 }
                 str = str3;
                 imageLocation = forDocument;
-                i10 = 20;
-                if (i11 != i10) {
+                i9 = 20;
+                if (i10 != i9) {
                 }
                 imageLocation2 = null;
                 emojiDrawable = Emoji.getEmojiDrawable(MessageObject.findAnimatedEmojiEmoticon(this.e, null));
@@ -501,20 +501,20 @@ public class k5 extends Drawable {
                 if (str2 != null) {
                 }
                 w(this.k);
-                if (i11 != 13) {
+                if (i10 != 13) {
                 }
                 this.k.setLayerNum(7);
-                if (i11 != 9) {
+                if (i10 != 9) {
                 }
                 this.k.setLayerNum(6656);
                 this.k.setAspectFit(true);
-                if (i11 != 12) {
+                if (i10 != 12) {
                 }
                 this.k.setAllowStartAnimation(false);
                 this.k.setAllowStartLottieAnimation(false);
                 this.k.setAutoRepeat(0);
                 this.k.setAllowDecodeSingleFrame(true);
-                this.k.setRoundRadius((i11 != 5 || i11 == 6 || i11 == 27) ? AndroidUtilities.dp(6.0f) : i11 == 24 ? AndroidUtilities.dp(14.0f) : 0);
+                this.k.setRoundRadius((i10 != 5 || i10 == 6 || i10 == 27) ? AndroidUtilities.dp(6.0f) : i10 == 24 ? AndroidUtilities.dp(14.0f) : 0);
                 v();
                 k();
             }
@@ -523,16 +523,16 @@ public class k5 extends Drawable {
 
     public final void k() {
         if (this.b != null) {
-            for (int i10 = 0; i10 < this.b.size(); i10++) {
-                View view = (View) this.b.get(i10);
+            for (int i9 = 0; i9 < this.b.size(); i9++) {
+                View view = (View) this.b.get(i9);
                 if (view != null) {
                     view.invalidate();
                 }
             }
         }
         if (this.c != null) {
-            for (int i11 = 0; i11 < this.c.size(); i11++) {
-                q5 q5Var = (q5) this.c.get(i11);
+            for (int i10 = 0; i10 < this.c.size(); i10++) {
+                q5 q5Var = (q5) this.c.get(i10);
                 if (q5Var != null) {
                     q5Var.invalidate();
                 }
@@ -589,18 +589,18 @@ public class k5 extends Drawable {
     }
 
     public final void q(long j10) {
-        jh.y2 y2Var = this.k;
-        if (y2Var != null) {
+        ih.z2 z2Var = this.k;
+        if (z2Var != null) {
             if (this.g == 8) {
                 j10 = 0;
             }
-            y2Var.setCurrentTime(j10);
+            z2Var.setCurrentTime(j10);
         }
     }
 
     public final void r(String str) {
-        int i10 = this.g;
-        if ((i10 == 20 || i10 == 21) && !TextUtils.isEmpty(str) && this.k == null) {
+        int i9 = this.g;
+        if ((i9 == 20 || i9 == 21) && !TextUtils.isEmpty(str) && this.k == null) {
             e();
             this.j = true;
             this.k.setImageBitmap(Emoji.getEmojiDrawable(str));
@@ -609,12 +609,12 @@ public class k5 extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        float f10 = i10 / 255.0f;
+    public final void setAlpha(int i9) {
+        float f10 = i9 / 255.0f;
         this.l = f10;
-        jh.y2 y2Var = this.k;
-        if (y2Var != null) {
-            y2Var.setAlpha(f10);
+        ih.z2 z2Var = this.k;
+        if (z2Var != null) {
+            z2Var.setAlpha(f10);
         }
     }
 
@@ -628,12 +628,12 @@ public class k5 extends Drawable {
     }
 
     public final void t(long j10) {
-        jh.y2 y2Var = this.k;
-        if (y2Var != null) {
+        ih.z2 z2Var = this.k;
+        if (z2Var != null) {
             if (this.g == 8) {
                 j10 = 0;
             }
-            if (y2Var.getLottieAnimation() != null) {
+            if (z2Var.getLottieAnimation() != null) {
                 this.k.getLottieAnimation().S(j10);
             }
             if (this.k.getAnimation() != null) {
@@ -645,7 +645,7 @@ public class k5 extends Drawable {
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("AnimatedEmojiDrawable{");
         TLRPC.Document document = this.e;
-        return a9.p.p(sb2, document == null ? BuildConfig.BETA_URL : MessageObject.findAnimatedEmojiEmoticon(document, null), "}");
+        return aa.d.r(sb2, document == null ? BuildConfig.BETA_URL : MessageObject.findAnimatedEmojiEmoticon(document, null), "}");
     }
 
     public final void v() {
@@ -665,68 +665,68 @@ public class k5 extends Drawable {
             if (this.a) {
                 return;
             }
-            ag.l3 l3Var = v;
-            AndroidUtilities.cancelRunOnUIThread(l3Var);
-            AndroidUtilities.runOnUIThread(l3Var, 5000L);
+            bg.d2 d2Var = v;
+            AndroidUtilities.cancelRunOnUIThread(d2Var);
+            AndroidUtilities.runOnUIThread(d2Var, 5000L);
         }
     }
 
     public final void w(ImageReceiver imageReceiver) {
-        int i10 = this.g;
-        if (i10 == 7 || i10 == 9 || i10 == 10) {
+        int i9 = this.g;
+        if (i9 == 7 || i9 == 9 || i9 == 10) {
             imageReceiver.setAutoRepeatCount(2);
             return;
         }
-        if (i10 == 11 || i10 == 18 || i10 == 14 || i10 == 6 || i10 == 5 || i10 == 22) {
+        if (i9 == 11 || i9 == 18 || i9 == 14 || i9 == 6 || i9 == 5 || i9 == 22) {
             imageReceiver.setAutoRepeatCount(1);
-        } else if (i10 == 17) {
+        } else if (i9 == 17) {
             imageReceiver.setAutoRepeatCount(0);
         }
     }
 
     public final void y() {
-        int i10 = this.g;
-        if (i10 == 0 || i10 == 26) {
-            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.g6.o2.descent()) + Math.abs(org.telegram.ui.ActionBar.g6.o2.ascent())) * 1.15f) / AndroidUtilities.density);
+        int i9 = this.g;
+        if (i9 == 0 || i9 == 26) {
+            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.f6.o2.descent()) + Math.abs(org.telegram.ui.ActionBar.f6.o2.ascent())) * 1.15f) / AndroidUtilities.density);
             return;
         }
-        TextPaint[] textPaintArr = org.telegram.ui.ActionBar.g6.y2;
-        if (textPaintArr != null && (i10 == 1 || i10 == 4 || i10 == 19 || i10 == 20)) {
-            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.g6.y2[2].descent()) + Math.abs(textPaintArr[2].ascent())) * 1.15f) / AndroidUtilities.density);
+        TextPaint[] textPaintArr = org.telegram.ui.ActionBar.f6.y2;
+        if (textPaintArr != null && (i9 == 1 || i9 == 4 || i9 == 19 || i9 == 20)) {
+            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.f6.y2[2].descent()) + Math.abs(textPaintArr[2].ascent())) * 1.15f) / AndroidUtilities.density);
             return;
         }
-        if (textPaintArr != null && i10 == 8) {
-            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.g6.y2[0].descent()) + Math.abs(textPaintArr[0].ascent())) * 1.15f) / AndroidUtilities.density);
+        if (textPaintArr != null && i9 == 8) {
+            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.f6.y2[0].descent()) + Math.abs(textPaintArr[0].ascent())) * 1.15f) / AndroidUtilities.density);
             return;
         }
-        if (i10 == 14 || i10 == 15 || i10 == 17) {
+        if (i9 == 14 || i9 == 15 || i9 == 17) {
             this.d = 100;
             return;
         }
-        if (i10 == 11 || i10 == 22) {
+        if (i9 == 11 || i9 == 22) {
             this.d = 56;
             return;
         }
-        if (i10 == 27) {
+        if (i9 == 27) {
             this.d = 50;
             return;
         }
-        if (i10 == 24) {
+        if (i9 == 24) {
             this.d = 140;
             return;
         }
-        if (i10 == 23) {
+        if (i9 == 23) {
             this.d = 14;
-        } else if (i10 == 21) {
+        } else if (i9 == 21) {
             this.d = 90;
         } else {
             this.d = 34;
         }
     }
 
-    public k5(int i10, int i11, TLRPC.Document document) {
-        this.g = i10;
-        this.h = i11;
+    public k5(int i9, int i10, TLRPC.Document document) {
+        this.g = i9;
+        this.h = i10;
         this.e = document;
         y();
         x();

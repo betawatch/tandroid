@@ -1,31 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wn0 implements o1.g {
+public final /* synthetic */ class wn0 implements o1.f {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fo0 b;
+    public final /* synthetic */ eo0 b;
+    public final /* synthetic */ o1.j c;
 
-    public /* synthetic */ wn0(fo0 fo0Var, int i10) {
-        this.a = i10;
-        this.b = fo0Var;
+    public /* synthetic */ wn0(eo0 eo0Var, o1.j jVar, int i9) {
+        this.a = i9;
+        this.b = eo0Var;
+        this.c = jVar;
     }
 
-    @Override // o1.g
-    public final void a(o1.h hVar, float f10, float f11) {
+    @Override // o1.f
+    public final void a(o1.h hVar, boolean z10, float f10, float f11) {
         switch (this.a) {
             case 0:
-                this.b.o.setScaleX(1.0f / f10);
-                break;
-            case 1:
-                this.b.o.setScaleY(1.0f / f10);
-                break;
-            case 2:
-                this.b.o.setScaleX(1.0f / f10);
+                if (!z10) {
+                    this.b.z.remove(this.c);
+                    hVar.c();
+                    break;
+                }
                 break;
             default:
-                this.b.o.setScaleY(1.0f / f10);
-                break;
+                eo0 eo0Var = this.b;
+                if (!z10) {
+                    eo0Var.z.remove(this.c);
+                    hVar.c();
+                    break;
+                } else {
+                    eo0Var.getClass();
+                    break;
+                }
         }
     }
 }

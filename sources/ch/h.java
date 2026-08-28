@@ -1,289 +1,56 @@
 package ch;
 
-import ag.e1;
-import ag.n0;
-import ag.w;
-import ag.z2;
-import android.content.Context;
-import android.graphics.Rect;
-import android.text.TextUtils;
-import android.util.Pair;
-import android.view.View;
-import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
-import cg.c2;
-import f2.l;
-import h7.b6;
-import h7.z5;
-import j$.util.Map;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import n2.b0;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k;
-import org.telegram.ui.Cells.s3;
-import org.telegram.ui.Components.a30;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.m10;
-import org.telegram.ui.Components.p10;
-import org.telegram.ui.Components.qa;
-import org.telegram.ui.Components.t10;
-import org.telegram.ui.Components.yk0;
-import org.telegram.ui.Components.zk0;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class h extends qa implements ud.b {
-    public static final /* synthetic */ int n0 = 0;
-    public final ud.c T;
-    public final ud.a U;
-    public final HashMap V;
-    public final ArrayList W;
-    public final ArrayList X;
-    public String Y;
-    public b51 Z;
-    public final lh.d a0;
-    public final e1 b0;
-    public final w c0;
-    public final t10 d0;
-    public final s3 e0;
-    public final HashMap f0;
-    public b0 g0;
-    public int h0;
-    public final int i0;
-    public final FrameLayout j0;
-    public HashSet k0;
-    public final Rect l0;
-    public a30 m0;
+public abstract class h {
+    public static final DecelerateInterpolator a = new DecelerateInterpolator();
+    public static final LinearInterpolator b;
+    public static final e c;
+    public static final e d;
+    public static final e e;
+    public static final e f;
+    public static final e g;
+    public static final e h;
+    public static final e i;
+    public static final e j;
+    public static final e k;
+    public static final e l;
+    public static final e m;
+    public static final e n;
+    public static final e o;
+    public static final e p;
+    public static final e q;
+    public static final e r;
+    public static final e s;
+    public static final e t;
 
-    public h(Context context, c6 c6Var) {
-        super(context, null, true, true, false, false, false, 2, c6Var);
-        er erVar = er.h;
-        this.T = new ud.c(3, this, erVar, 350L);
-        this.U = new ud.a(4, this, erVar, 320L, false);
-        this.V = new HashMap();
-        this.W = new ArrayList();
-        this.X = new ArrayList();
-        this.f0 = new HashMap();
-        this.l0 = new Rect();
-        this.occupyNavigationBar = true;
-        this.drawNavigationBar = false;
-        this.H = false;
-        this.w = false;
-        this.i0 = MessagesController.getInstance(this.currentAccount).config.pollCountriesMax.get();
-        AndroidUtilities.enableEdgeToEdge(getWindow());
-        zk0 zk0Var = this.d;
-        int i10 = this.backgroundPaddingLeft;
-        zk0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
-        this.d.setClipToPadding(false);
-        this.d.j(new z2(this, 2));
-        this.d.setOnItemClickListener(new d(context, this, c6Var));
-        lh.d dVar = new lh.d(context, c6Var, true);
-        this.a0 = dVar;
-        dVar.e();
-        dVar.setCountFilled(true);
-        dVar.setText(LocaleController.getString(R.string.Save));
-        dVar.setOnClickListener(new a(this, 0));
-        e1 e1Var = new e1(this, context);
-        this.b0 = e1Var;
-        e1Var.setTextColor(getThemedColor(g6.Sh));
-        e1Var.setText(LocaleController.getString(R.string.Save));
-        e1Var.setTypeface(AndroidUtilities.bold());
-        e1Var.setTextSize(1, 14.0f);
-        e1Var.setGravity(17);
-        e1Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        e1Var.setVisibility(8);
-        b6.a(e1Var);
-        this.e.n().addView(e1Var, z5.t(-2, 48, 16, 12, 0, 12, 0));
-        e1Var.setOnClickListener(new a(this, 1));
-        p10 p10Var = new p10(context, c6Var);
-        String string = LocaleController.getString(R.string.PollV2SearchHint);
-        gg.g gVar = p10Var.r;
-        gVar.setHint(string);
-        gVar.addTextChangedListener(new e(this, 0));
-        t10 t10Var = new t10(context, this.currentAccount);
-        this.d0 = t10Var;
-        t10Var.setDelegate(new b(this));
-        w wVar = new w(context, this, c6Var);
-        this.c0 = wVar;
-        int i11 = this.backgroundPaddingLeft;
-        wVar.setPadding(i11, 0, i11, 0);
-        wVar.addView(p10Var, z5.d(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
-        wVar.addView(t10Var, z5.d(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
-        s3 s3Var = new s3(context, 18, c6Var);
-        this.e0 = s3Var;
-        s3Var.setTranslationY(AndroidUtilities.dp(48.0f));
-        s3Var.c(LocaleController.getString(R.string.SearchCountriesTitle), LocaleController.getString(R.string.DeselectAll), new a(this, 2));
-        wVar.addView(s3Var, z5.e(-1, 32, 48));
-        this.containerView.addView(wVar, z5.e(-1, 216, 48));
-        FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setPadding(AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f) + AndroidUtilities.navigationBarHeight);
-        frameLayout.addView(dVar, z5.c(48.0f, -1));
-        this.containerView.addView(frameLayout, z5.e(-1, -2, 80));
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        this.j0 = frameLayout2;
-        frameLayout2.setTranslationY((-AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(68.0f));
-        this.containerView.addView(frameLayout2, z5.e(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 80));
-        l lVar = new l();
-        lVar.n(350L);
-        lVar.o(erVar);
-        lVar.C = false;
-        lVar.m = false;
-        this.d.setItemAnimator(lVar);
-        this.d.i(new f(this, c6Var));
-        n0 n0Var = new n0(this, 4);
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
-        TLRPC.TL_help_getCountriesList tL_help_getCountriesList = new TLRPC.TL_help_getCountriesList();
-        tL_help_getCountriesList.lang_code = LocaleController.getInstance().getCurrentLocaleInfo() != null ? LocaleController.getInstance().getCurrentLocaleInfo().getLangCode() : Locale.getDefault().getCountry();
-        connectionsManager.sendRequest(tL_help_getCountriesList, new cf.a(n0Var, 3));
-        r0.b0.j(getContainer(), new b(this));
-    }
-
-    public static void P(h hVar, Pair pair) {
-        HashMap hashMap = hVar.f0;
-        HashMap hashMap2 = hVar.V;
-        hashMap2.putAll((Map) pair.first);
-        ArrayList arrayList = hVar.W;
-        arrayList.addAll((Collection) pair.second);
-        Map.-EL.forEach(hashMap2, new c2(hVar, 1));
-        HashSet hashSet = hVar.k0;
-        if (hashSet != null) {
-            Iterator it = hashSet.iterator();
-            while (it.hasNext()) {
-                String str = (String) it.next();
-                int size = arrayList.size();
-                int i10 = 0;
-                while (true) {
-                    if (i10 >= size) {
-                        r7 = null;
-                        break;
-                    }
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    for (TLRPC.TL_help_country tL_help_country : (List) hashMap2.get((String) obj)) {
-                        if (TextUtils.equals(str, tL_help_country.iso2)) {
-                            break;
-                        }
-                    }
-                }
-                if (tL_help_country != null) {
-                    a30 a30Var = new a30(hVar.getContext(), tL_help_country);
-                    a30Var.setOnClickListener(new a(hVar, 3));
-                    hVar.d0.a(a30Var);
-                    hashMap.put(tL_help_country.iso2, a30Var);
-                }
-            }
-        }
-        hVar.Z.N(true);
-        hVar.a0.c(hashMap.size(), true);
-    }
-
-    public final void Q() {
-        int dp = AndroidUtilities.dp(56.0f) + k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + ((int) this.T.e);
-        int measuredHeight = (this.containerView.getMeasuredHeight() - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(34.0f);
-        Rect rect = this.l0;
-        boolean z10 = (rect.top == dp && rect.bottom == measuredHeight) ? false : true;
-        rect.set(0, dp, this.containerView.getMeasuredWidth(), measuredHeight);
-        zk0 zk0Var = this.d;
-        zk0Var.setClipBounds(rect);
-        if (z10) {
-            zk0Var.invalidate();
-        }
-    }
-
-    public final void R() {
-        zk0 zk0Var;
-        float f10 = AndroidUtilities.displaySize.y;
-        int i10 = 0;
-        while (true) {
-            zk0Var = this.d;
-            if (i10 >= zk0Var.getChildCount()) {
-                break;
-            }
-            View childAt = zk0Var.getChildAt(i10);
-            if (RecyclerView.R(childAt) >= 1 && childAt.getY() < f10) {
-                f10 = childAt.getY();
-            }
-            i10++;
-        }
-        float max = Math.max(k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight, f10 + AndroidUtilities.dp(8.0f));
-        w wVar = this.c0;
-        if (wVar.getTranslationY() != max) {
-            wVar.setTranslationY(max);
-            zk0Var.invalidate();
-        }
-    }
-
-    public final void S(View view) {
-        a30 a30Var = (a30) view;
-        if (!a30Var.y) {
-            a30 a30Var2 = this.m0;
-            if (a30Var2 != null) {
-                a30Var2.a();
-            }
-            this.m0 = a30Var;
-            a30Var.b();
-            return;
-        }
-        this.m0 = null;
-        this.d0.c(a30Var);
-        String countryIso2 = a30Var.getCountryIso2();
-        HashMap hashMap = this.f0;
-        hashMap.remove(countryIso2);
-        this.a0.c(hashMap.size(), true);
-        this.Z.N(true);
-    }
-
-    @Override // ud.b
-    public final void o(int i10, float f10, float f11, ud.c cVar) {
-        if (i10 != 3) {
-            if (i10 == 4) {
-                m10.d(this.b0, f10);
-            }
-        } else {
-            Q();
-            this.e0.setTranslationY(AndroidUtilities.dp(48.0f) + f10);
-            this.c0.invalidate();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.e3
-    public final void onContainerLayout(int i10, int i11, int i12, int i13) {
-        super.onContainerLayout(i10, i11, i12, i13);
-        Q();
-        R();
-    }
-
-    @Override // org.telegram.ui.Components.qa
-    public final yk0 w(zk0 zk0Var) {
-        b51 b51Var = new b51(zk0Var, getContext(), this.currentAccount, 0, true, new c(this, 0), this.resourcesProvider);
-        this.Z = b51Var;
-        b51Var.r = false;
-        return b51Var;
-    }
-
-    @Override // org.telegram.ui.Components.qa
-    public final CharSequence z() {
-        return LocaleController.getString(R.string.BoostingSelectCountry);
-    }
-
-    @Override // ud.b
-    public final /* synthetic */ void A(float f10, int i10) {
+    static {
+        LinearInterpolator linearInterpolator = new LinearInterpolator();
+        b = linearInterpolator;
+        c = j.i(new DecelerateInterpolator(), 0, 240, 240, false);
+        d = j.i(linearInterpolator, 0, 240, 240, false);
+        e = j.i(new DecelerateInterpolator(), 220, 240, 240, false);
+        f = j.i(new gr(0.7f, -0.6f, 0.4f, 1.0f), 0, 200, 560, false);
+        g = j.i(new gr(0.7f, -0.6f, 0.4f, 1.0f), 200, 400, 560, true);
+        h = j.i(new DecelerateInterpolator(), 0, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 560, false);
+        i = j.i(new DecelerateInterpolator(), 210, 425, 560, false);
+        gr grVar = gr.h;
+        j = j.i(grVar, 0, 320, 560, false);
+        k = j.i(grVar, 40, 320, 560, false);
+        l = j.i(new DecelerateInterpolator(), 0, MediaDataController.MAX_LINKS_COUNT, 560, false);
+        m = j.i(grVar, 0, 460, 560, false);
+        n = j.i(grVar, 0, 325, 560, false);
+        o = j.i(new DecelerateInterpolator(), ImageReceiver.DEFAULT_CROSSFADE_DURATION, MediaDataController.MAX_LINKS_COUNT, 560, false);
+        p = j.i(new DecelerateInterpolator(), 200, 480, 560, false);
+        q = j.i(grVar, 60, 320, 560, false);
+        r = j.i(grVar, 90, 380, 560, false);
+        s = j.i(grVar, 110, 440, 560, false);
+        t = j.i(new DecelerateInterpolator(), 200, 460, 560, false);
     }
 }

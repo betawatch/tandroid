@@ -5,20 +5,20 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
-import h7.r8;
-import n6.w0;
+import g7.p8;
+import m6.r0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a extends z5.a {
+public final class a extends y5.a {
     public final String a;
     public final String b;
     public final k c;
     public final f d;
     public final boolean e;
     public final boolean f;
-    public static final r5.b h = new r5.b("CastMediaOptions", null);
-    public static final Parcelable.Creator<a> CREATOR = new w0(6);
+    public static final q5.b h = new q5.b("CastMediaOptions", null);
+    public static final Parcelable.Creator<a> CREATOR = new r0(28);
 
     public a(String str, String str2, IBinder iBinder, f fVar, boolean z10, boolean z11) {
         k kVar;
@@ -28,7 +28,7 @@ public final class a extends z5.a {
             kVar = null;
         } else {
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.cast.framework.media.IImagePicker");
-            kVar = queryLocalInterface instanceof k ? (k) queryLocalInterface : new k(iBinder, "com.google.android.gms.cast.framework.media.IImagePicker", 1);
+            kVar = queryLocalInterface instanceof k ? (k) queryLocalInterface : new k(iBinder, "com.google.android.gms.cast.framework.media.IImagePicker", 2);
         }
         this.c = kVar;
         this.d = fVar;
@@ -41,30 +41,30 @@ public final class a extends z5.a {
         if (kVar != null) {
             try {
                 Parcel O0 = kVar.O0(kVar.M0(), 2);
-                i6.a J0 = i6.b.J0(O0.readStrongBinder());
+                h6.a J0 = h6.b.J0(O0.readStrongBinder());
                 O0.recycle();
-                if (i6.b.K0(J0) == null) {
+                if (h6.b.K0(J0) == null) {
                 } else {
                     throw new ClassCastException();
                 }
-            } catch (RemoteException e9) {
-                h.a(e9, "Unable to call %s on %s.", "getWrappedClientObject", k.class.getSimpleName());
+            } catch (RemoteException e10) {
+                h.a(e10, "Unable to call %s on %s.", "getWrappedClientObject", k.class.getSimpleName());
             }
         }
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.l(parcel, 2, this.a);
-        r8.l(parcel, 3, this.b);
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.l(parcel, 2, this.a);
+        p8.l(parcel, 3, this.b);
         k kVar = this.c;
-        r8.f(parcel, 4, kVar == null ? null : kVar.b);
-        r8.k(parcel, 5, this.d, i10);
-        r8.s(parcel, 6, 4);
+        p8.f(parcel, 4, kVar == null ? null : kVar.b);
+        p8.k(parcel, 5, this.d, i9);
+        p8.s(parcel, 6, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        r8.s(parcel, 7, 4);
+        p8.s(parcel, 7, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        r8.r(parcel, q6);
+        p8.r(parcel, q10);
     }
 }

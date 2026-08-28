@@ -3,6 +3,7 @@ package com.google.android.gms.vision.clearcut;
 import android.content.Context;
 import android.util.Log;
 import com.google.android.gms.common.api.internal.r;
+import com.google.android.gms.internal.cast.o;
 import com.google.android.gms.internal.vision.c;
 import com.google.android.gms.internal.vision.e0;
 import com.google.android.gms.internal.vision.f0;
@@ -13,9 +14,9 @@ import com.google.android.gms.internal.vision.u0;
 import com.google.android.gms.internal.vision.y1;
 import com.google.android.gms.internal.vision.z0;
 import java.io.IOException;
-import t5.a;
+import s5.a;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class VisionClearcutLogger {
     private final a zza;
@@ -25,7 +26,7 @@ public class VisionClearcutLogger {
         this.zza = new a(context);
     }
 
-    public final void zza(int i10, f0 f0Var) {
+    public final void zza(int i9, f0 f0Var) {
         u0 u0Var;
         f0Var.getClass();
         try {
@@ -44,8 +45,8 @@ public class VisionClearcutLogger {
             if (r0Var.F() != 0) {
                 throw new IllegalStateException("Did not write as much data as expected.");
             }
-            if (i10 < 0 || i10 > 3) {
-                Object[] objArr = {Integer.valueOf(i10)};
+            if (i9 < 0 || i9 > 3) {
+                Object[] objArr = {Integer.valueOf(i9)};
                 if (Log.isLoggable("Vision", 4)) {
                     Log.i("Vision", String.format("Illegal event code: %d", objArr));
                     return;
@@ -57,7 +58,7 @@ public class VisionClearcutLogger {
                     a aVar = this.zza;
                     aVar.getClass();
                     r rVar = new r(aVar, bArr);
-                    ((com.google.android.gms.internal.clearcut.y1) rVar.e).c = i10;
+                    ((com.google.android.gms.internal.clearcut.y1) rVar.e).c = i9;
                     rVar.b();
                     return;
                 }
@@ -82,20 +83,20 @@ public class VisionClearcutLogger {
                     if (Log.isLoggable("Vision", 6)) {
                         Log.e("Vision", "Would have logged:\n" + obj);
                     }
-                } catch (Exception e9) {
-                    g7.f0.a(e9, "Parsing error", new Object[0]);
+                } catch (Exception e10) {
+                    o.a(e10, "Parsing error", new Object[0]);
                 }
-            } catch (Exception e10) {
-                c.a.q(e10);
-                g7.f0.a(e10, "Failed to log", new Object[0]);
+            } catch (Exception e11) {
+                c.a.q(e11);
+                o.a(e11, "Failed to log", new Object[0]);
             }
-        } catch (IOException e11) {
+        } catch (IOException e12) {
             String name = f0.class.getName();
             StringBuilder sb2 = new StringBuilder(name.length() + 72);
             sb2.append("Serializing ");
             sb2.append(name);
             sb2.append(" to a byte array threw an IOException (should never happen).");
-            throw new RuntimeException(sb2.toString(), e11);
+            throw new RuntimeException(sb2.toString(), e12);
         }
     }
 }

@@ -20,12 +20,12 @@ public final class n1 extends q1 implements h5 {
     }
 
     @Override // j$.util.stream.q1, j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i10) {
+    public final void accept(int i9) {
         if (this.a) {
             return;
         }
         IntPredicate intPredicate = null;
-        intPredicate.test(i10);
+        intPredicate.test(i9);
         throw null;
     }
 }

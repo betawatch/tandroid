@@ -1,18 +1,19 @@
 package com.google.android.recaptcha.internal;
 
-import ad.p;
-import h7.k6;
-import id.c0;
-import id.f0;
-import id.g1;
+import g7.y5;
+import hd.c0;
+import hd.f0;
+import hd.g1;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import pc.f;
-import rc.c;
-import tc.i;
+import oc.f;
+import qc.c;
+import rc.a;
+import sc.i;
+import zc.p;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class zzaf extends i implements p {
     int zza;
@@ -29,26 +30,26 @@ final class zzaf extends i implements p {
         this.zzd = zzhkVar;
     }
 
-    @Override // tc.a
+    @Override // sc.a
     public final c create(Object obj, c cVar) {
         zzaf zzafVar = new zzaf(this.zzb, this.zzc, this.zzd, cVar);
         zzafVar.zze = obj;
         return zzafVar;
     }
 
-    @Override // ad.p
+    @Override // zc.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzaf) create((c0) obj, (c) obj2)).invokeSuspend(pc.i.a);
+        return ((zzaf) create((c0) obj, (c) obj2)).invokeSuspend(oc.i.a);
     }
 
-    @Override // tc.a
+    @Override // sc.a
     public final Object invokeSuspend(Object obj) {
         zzxx zzp;
         List list;
-        sc.a aVar = sc.a.a;
-        int i10 = this.zza;
-        k6.b(obj);
-        if (i10 == 0) {
+        a aVar = a.a;
+        int i9 = this.zza;
+        y5.b(obj);
+        if (i9 == 0) {
             c0 c0Var = (c0) this.zze;
             ArrayList arrayList = new ArrayList();
             zzaj zzajVar = this.zzb;
@@ -63,8 +64,8 @@ final class zzaf extends i implements p {
                 }
             }
             int size = arrayList3.size();
-            for (int i11 = 0; i11 < size; i11++) {
-                arrayList2.add(f0.q(c0Var, new zzae(this.zzd, (zzar) arrayList3.get(i11), str, arrayList, null)));
+            for (int i10 = 0; i10 < size; i10++) {
+                arrayList2.add(f0.q(c0Var, new zzae(this.zzd, (zzar) arrayList3.get(i10), str, arrayList, null)));
             }
             g1[] g1VarArr = (g1[]) arrayList2.toArray(new g1[0]);
             g1[] g1VarArr2 = (g1[]) Arrays.copyOf(g1VarArr, g1VarArr.length);

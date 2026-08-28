@@ -24,7 +24,7 @@ public final class q extends l {
 
     public q(r rVar) {
         super(-2, null, null);
-        int i10;
+        int i9;
         this.f = rVar;
         r rVar2 = null;
         while (rVar != null) {
@@ -36,27 +36,27 @@ public final class q extends l {
                 rVar.i = false;
             } else {
                 Object obj = rVar.b;
-                int i11 = rVar.a;
+                int i10 = rVar.a;
                 r rVar4 = rVar2;
                 Class<?> cls = null;
                 while (true) {
                     Object obj2 = rVar4.b;
-                    int i12 = rVar4.a;
-                    if (i12 > i11) {
-                        i10 = -1;
-                    } else if (i12 < i11) {
-                        i10 = 1;
+                    int i11 = rVar4.a;
+                    if (i11 > i10) {
+                        i9 = -1;
+                    } else if (i11 < i10) {
+                        i9 = 1;
                     } else {
                         if (cls != null || (cls = ConcurrentHashMap.c(obj)) != null) {
-                            int i13 = ConcurrentHashMap.g;
+                            int i12 = ConcurrentHashMap.g;
                             int compareTo = (obj2 == null || obj2.getClass() != cls) ? 0 : ((Comparable) obj).compareTo(obj2);
                             if (compareTo != 0) {
-                                i10 = compareTo;
+                                i9 = compareTo;
                             }
                         }
-                        i10 = i(obj, obj2);
+                        i9 = i(obj, obj2);
                     }
-                    r rVar5 = i10 <= 0 ? rVar4.f : rVar4.g;
+                    r rVar5 = i9 <= 0 ? rVar4.f : rVar4.g;
                     if (rVar5 == null) {
                         break;
                     } else {
@@ -64,7 +64,7 @@ public final class q extends l {
                     }
                 }
                 rVar.e = rVar4;
-                if (i10 <= 0) {
+                if (i9 <= 0) {
                     rVar4.f = rVar;
                 } else {
                     rVar4.g = rVar;
@@ -83,13 +83,13 @@ public final class q extends l {
         }
         boolean z10 = false;
         while (true) {
-            int i10 = this.lockState;
-            if ((i10 & (-3)) == 0) {
-                if (h.c(this, i, i10, 1)) {
+            int i9 = this.lockState;
+            if ((i9 & (-3)) == 0) {
+                if (h.c(this, i, i9, 1)) {
                     break;
                 }
-            } else if ((i10 & 2) == 0) {
-                if (h.c(this, i, i10, i10 | 2)) {
+            } else if ((i9 & 2) == 0) {
+                if (h.c(this, i, i9, i9 | 2)) {
                     this.g = Thread.currentThread();
                     z10 = true;
                 }
@@ -103,7 +103,7 @@ public final class q extends l {
     }
 
     @Override // j$.util.concurrent.l
-    public final l a(int i10, Object obj) {
+    public final l a(int i9, Object obj) {
         Object obj2;
         Thread thread;
         l lVar = this.f;
@@ -112,19 +112,19 @@ public final class q extends l {
             if (lVar == null) {
                 return null;
             }
-            int i11 = this.lockState;
-            if ((i11 & 3) != 0) {
-                if (lVar.a != i10 || ((obj2 = lVar.b) != obj && (obj2 == null || !obj.equals(obj2)))) {
+            int i10 = this.lockState;
+            if ((i10 & 3) != 0) {
+                if (lVar.a != i9 || ((obj2 = lVar.b) != obj && (obj2 == null || !obj.equals(obj2)))) {
                     lVar = lVar.d;
                 }
             } else {
                 j$.sun.misc.a aVar = h;
                 long j10 = i;
-                if (aVar.c(this, j10, i11, i11 + 4)) {
+                if (aVar.c(this, j10, i10, i10 + 4)) {
                     try {
                         r rVar2 = this.e;
                         if (rVar2 != null) {
-                            rVar = rVar2.b(i10, obj, null);
+                            rVar = rVar2.b(i9, obj, null);
                         }
                         if (aVar.e(this, j10) == 6 && (thread = this.g) != null) {
                             LockSupport.unpark(thread);
@@ -138,53 +138,53 @@ public final class q extends l {
         return lVar;
     }
 
-    public final r e(int i10, Object obj, Object obj2) {
-        int i11;
+    public final r e(int i9, Object obj, Object obj2) {
+        int i10;
         r b10;
         r b11;
         r rVar = this.e;
         Class<?> cls = null;
         boolean z10 = false;
         while (rVar != null) {
-            int i12 = rVar.a;
-            if (i12 > i10) {
-                i11 = -1;
-            } else if (i12 < i10) {
-                i11 = 1;
+            int i11 = rVar.a;
+            if (i11 > i9) {
+                i10 = -1;
+            } else if (i11 < i9) {
+                i10 = 1;
             } else {
                 Object obj3 = rVar.b;
                 if (obj3 == obj || (obj3 != null && obj.equals(obj3))) {
                     return rVar;
                 }
                 if (cls != null || (cls = ConcurrentHashMap.c(obj)) != null) {
-                    int i13 = ConcurrentHashMap.g;
+                    int i12 = ConcurrentHashMap.g;
                     int compareTo = (obj3 == null || obj3.getClass() != cls) ? 0 : ((Comparable) obj).compareTo(obj3);
                     if (compareTo != 0) {
-                        i11 = compareTo;
+                        i10 = compareTo;
                     }
                 }
                 if (!z10) {
                     r rVar2 = rVar.f;
-                    if (rVar2 != null && (b11 = rVar2.b(i10, obj, cls)) != null) {
+                    if (rVar2 != null && (b11 = rVar2.b(i9, obj, cls)) != null) {
                         return b11;
                     }
                     r rVar3 = rVar.g;
-                    if (rVar3 != null && (b10 = rVar3.b(i10, obj, cls)) != null) {
+                    if (rVar3 != null && (b10 = rVar3.b(i9, obj, cls)) != null) {
                         return b10;
                     }
                     z10 = true;
                 }
-                i11 = i(obj, obj3);
+                i10 = i(obj, obj3);
             }
-            r rVar4 = i11 <= 0 ? rVar.f : rVar.g;
+            r rVar4 = i10 <= 0 ? rVar.f : rVar.g;
             if (rVar4 == null) {
                 r rVar5 = this.f;
-                r rVar6 = new r(i10, obj, obj2, rVar5, rVar);
+                r rVar6 = new r(i9, obj, obj2, rVar5, rVar);
                 this.f = rVar6;
                 if (rVar5 != null) {
                     rVar5.h = rVar6;
                 }
-                if (i11 <= 0) {
+                if (i10 <= 0) {
                     rVar.f = rVar6;
                 } else {
                     rVar.g = rVar6;
@@ -203,7 +203,7 @@ public final class q extends l {
             }
             rVar = rVar4;
         }
-        r rVar7 = new r(i10, obj, obj2, null, null);
+        r rVar7 = new r(i9, obj, obj2, null, null);
         this.e = rVar7;
         this.f = rVar7;
         return null;

@@ -13,7 +13,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class RadioButton extends View {
     public static Paint s;
@@ -64,9 +64,9 @@ public class RadioButton extends View {
         setProgress(z10 ? 1.0f : 0.0f);
     }
 
-    public final void b(int i10, int i11) {
-        this.b = i10;
-        this.a = i11;
+    public final void b(int i9, int i10) {
+        this.b = i9;
+        this.a = i10;
         invalidate();
     }
 
@@ -113,12 +113,12 @@ public class RadioButton extends View {
                 canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f13 - AndroidUtilities.dp(1.0f), w);
                 canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f10) * (f13 - AndroidUtilities.dp(1.0f)), v);
             } else {
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, com.google.android.recaptcha.internal.a.z(f13 - AndroidUtilities.dp(1.0f), this.h / 4, f10, this.h / 4), w);
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, e2.c.z(f13 - AndroidUtilities.dp(1.0f), this.h / 4, f10, this.h / 4), w);
             }
         }
         canvas.restore();
         if (this.r != null) {
-            int d = i0.b.d(Utilities.clamp(this.c, 1.0f, 0.0f), this.b, this.a);
+            int d = i0.a.d(Utilities.clamp(this.c, 1.0f, 0.0f), this.b, this.a);
             if (this.n != d) {
                 Drawable drawable = this.r;
                 this.n = d;
@@ -130,13 +130,13 @@ public class RadioButton extends View {
     }
 
     @Override // android.view.View
-    public void setBackgroundColor(int i10) {
-        this.b = i10;
+    public void setBackgroundColor(int i9) {
+        this.b = i9;
         invalidate();
     }
 
-    public void setCheckedColor(int i10) {
-        this.a = i10;
+    public void setCheckedColor(int i9) {
+        this.a = i9;
         invalidate();
     }
 
@@ -154,10 +154,10 @@ public class RadioButton extends View {
         invalidate();
     }
 
-    public void setSize(int i10) {
-        if (this.h == i10) {
+    public void setSize(int i9) {
+        if (this.h == i9) {
             return;
         }
-        this.h = i10;
+        this.h = i9;
     }
 }

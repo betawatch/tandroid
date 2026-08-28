@@ -8,7 +8,7 @@ import android.media.projection.MediaProjectionManager;
 import android.view.Surface;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
 public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     private static final int DISPLAY_FLAGS = 3;
@@ -69,10 +69,10 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     }
 
     @Override // org.webrtc.VideoCapturer
-    public synchronized void changeCaptureFormat(int i10, int i11, int i12) {
+    public synchronized void changeCaptureFormat(int i9, int i10, int i11) {
         checkNotDisposed();
-        this.width = i10;
-        this.height = i11;
+        this.width = i9;
+        this.height = i10;
         if (this.virtualDisplay == null) {
             return;
         }
@@ -123,14 +123,14 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     }
 
     @Override // org.webrtc.VideoCapturer
-    public synchronized void startCapture(int i10, int i11, int i12) {
+    public synchronized void startCapture(int i9, int i10, int i11) {
         if (this.mediaProjection != null || this.mediaProjectionManager == null) {
             return;
         }
         try {
             checkNotDisposed();
-            this.width = i10;
-            this.height = i11;
+            this.width = i9;
+            this.height = i10;
             MediaProjection mediaProjection = this.mediaProjectionManager.getMediaProjection(-1, this.mediaProjectionPermissionResultData);
             this.mediaProjection = mediaProjection;
             mediaProjection.registerCallback(this.mediaProjectionCallback, this.surfaceTextureHelper.getHandler());

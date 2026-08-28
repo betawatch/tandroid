@@ -1,72 +1,278 @@
 package org.telegram.ui;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ox0 implements d5.d {
+public final /* synthetic */ class ox0 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ ProfileActivity b;
 
-    public /* synthetic */ ox0(ProfileActivity profileActivity, int i10) {
-        this.a = i10;
+    public /* synthetic */ ox0(ProfileActivity profileActivity, int i9) {
+        this.a = i9;
         this.b = profileActivity;
     }
 
-    @Override // d5.d
-    public final void accept(Object obj) {
-        View view = (View) obj;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                if (view instanceof org.telegram.ui.Cells.v8) {
-                    org.telegram.ui.Cells.v8 v8Var = (org.telegram.ui.Cells.v8) view;
-                    eh.s sVar = v8Var.a;
-                    ProfileActivity profileActivity = this.b;
-                    sVar.setLoading(profileActivity.e5);
-                    v8Var.b.setLoading(profileActivity.e5);
+                final int i9 = 1;
+                final ProfileActivity profileActivity = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.qx0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i9) {
+                            case 0:
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                if (tL_error2 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error2);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (tL_error3 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error3);
+                                    break;
+                                }
+                                break;
+                            case 2:
+                                TLRPC.TL_error tL_error4 = tL_error;
+                                if (tL_error4 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error4);
+                                    break;
+                                }
+                                break;
+                            default:
+                                TLRPC.TL_error tL_error5 = tL_error;
+                                if (tL_error5 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error5);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 1:
+                final int i10 = 3;
+                final ProfileActivity profileActivity2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.qx0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                if (tL_error2 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity2), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error2);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (tL_error3 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity2), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error3);
+                                    break;
+                                }
+                                break;
+                            case 2:
+                                TLRPC.TL_error tL_error4 = tL_error;
+                                if (tL_error4 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity2), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error4);
+                                    break;
+                                }
+                                break;
+                            default:
+                                TLRPC.TL_error tL_error5 = tL_error;
+                                if (tL_error5 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity2), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error5);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 2:
+                final int i11 = 0;
+                final ProfileActivity profileActivity3 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.qx0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                if (tL_error2 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity3), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error2);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (tL_error3 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity3), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error3);
+                                    break;
+                                }
+                                break;
+                            case 2:
+                                TLRPC.TL_error tL_error4 = tL_error;
+                                if (tL_error4 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity3), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error4);
+                                    break;
+                                }
+                                break;
+                            default:
+                                TLRPC.TL_error tL_error5 = tL_error;
+                                if (tL_error5 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity3), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error5);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 3:
+                final int i12 = 2;
+                final ProfileActivity profileActivity4 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.qx0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                if (tL_error2 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity4), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error2);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (tL_error3 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity4), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error3);
+                                    break;
+                                }
+                                break;
+                            case 2:
+                                TLRPC.TL_error tL_error4 = tL_error;
+                                if (tL_error4 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity4), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error4);
+                                    break;
+                                }
+                                break;
+                            default:
+                                TLRPC.TL_error tL_error5 = tL_error;
+                                if (tL_error5 == null) {
+                                    if (tLObject instanceof TLRPC.TL_boolFalse) {
+                                        org.telegram.messenger.ll.p(R.string.UnknownError, org.telegram.ui.Components.oc.a0(profileActivity4), null);
+                                        break;
+                                    }
+                                } else {
+                                    org.telegram.ui.Components.oc.b0(tL_error5);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 4:
+                if (tLObject != null) {
+                    AndroidUtilities.runOnUIThread(new ys0(16, this.b, tLObject));
                     break;
                 }
                 break;
             default:
-                boolean z10 = view instanceof org.telegram.ui.Cells.j4;
-                ProfileActivity profileActivity2 = this.b;
-                if (z10) {
-                    ((org.telegram.ui.Cells.j4) view).setTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.L6, profileActivity2.v0));
-                } else if (view instanceof org.telegram.ui.Cells.v8) {
-                    ((org.telegram.ui.Cells.v8) view).e();
-                } else if (view instanceof org.telegram.ui.Cells.l8) {
-                    ((org.telegram.ui.Cells.l8) view).v();
-                } else if (view instanceof org.telegram.ui.Cells.j) {
-                    org.telegram.ui.ActionBar.g6.P1.linkColor = org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.gc, ((org.telegram.ui.Cells.j) view).E);
-                } else if (view instanceof org.telegram.ui.Cells.g5) {
-                    ((org.telegram.ui.Cells.g5) view).getCheckBox().invalidate();
-                } else if (view instanceof qf.b1) {
-                    qf.b1 b1Var = (qf.b1) view;
-                    org.telegram.ui.Components.rp rpVar = b1Var.r;
-                    int dp = AndroidUtilities.dp(8.0f);
-                    int i10 = org.telegram.ui.ActionBar.g6.o6;
-                    org.telegram.ui.ActionBar.c6 c6Var = b1Var.a;
-                    int v02 = org.telegram.ui.ActionBar.g6.v0(i10, c6Var);
-                    b1Var.a(v02);
-                    int l1 = org.telegram.ui.ActionBar.g6.l1(0.1f, v02);
-                    int v03 = org.telegram.ui.ActionBar.g6.v0(i10, c6Var);
-                    b1Var.a(v03);
-                    int l12 = org.telegram.ui.ActionBar.g6.l1(0.22f, v03);
-                    rpVar.setBackground(org.telegram.ui.ActionBar.g6.i0(dp, dp, dp, dp, l1, l12, l12));
-                    int v04 = org.telegram.ui.ActionBar.g6.v0(i10, c6Var);
-                    b1Var.a(v04);
-                    rpVar.setTextColor(v04);
-                } else if (view instanceof org.telegram.ui.Cells.d6) {
-                    ((org.telegram.ui.Cells.d6) view).d();
+                boolean z10 = tLObject instanceof TL_account.TL_password;
+                ProfileActivity profileActivity5 = this.b;
+                if (!z10) {
+                    profileActivity5.getClass();
+                    break;
+                } else {
+                    profileActivity5.D2 = (TL_account.TL_password) tLObject;
+                    break;
                 }
-                vz0 vz0Var = profileActivity2.d;
-                profileActivity2.a.getClass();
-                RecyclerView.R(view);
-                vz0Var.getClass();
-                profileActivity2.d.getClass();
-                break;
         }
     }
 }

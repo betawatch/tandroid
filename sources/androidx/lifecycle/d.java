@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class d {
     public static final d c = new d();
@@ -24,7 +24,7 @@ public final class d {
     }
 
     public final b a(Class cls, Method[] methodArr) {
-        int i10;
+        int i9;
         Class superclass = cls.getSuperclass();
         HashMap hashMap = new HashMap();
         HashMap hashMap2 = this.a;
@@ -47,8 +47,8 @@ public final class d {
         if (methodArr == null) {
             try {
                 methodArr = cls.getDeclaredMethods();
-            } catch (NoClassDefFoundError e9) {
-                throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e9);
+            } catch (NoClassDefFoundError e10) {
+                throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e10);
             }
         }
         boolean z10 = false;
@@ -57,12 +57,12 @@ public final class d {
             if (b0Var != null) {
                 Class<?>[] parameterTypes = method.getParameterTypes();
                 if (parameterTypes.length <= 0) {
-                    i10 = 0;
+                    i9 = 0;
                 } else {
                     if (!t.class.isAssignableFrom(parameterTypes[0])) {
                         throw new IllegalArgumentException("invalid parameter type. Must be one and instanceof LifecycleOwner");
                     }
-                    i10 = 1;
+                    i9 = 1;
                 }
                 m value = b0Var.value();
                 if (parameterTypes.length > 1) {
@@ -72,12 +72,12 @@ public final class d {
                     if (value != m.ON_ANY) {
                         throw new IllegalArgumentException("Second arg is supported only for ON_ANY value");
                     }
-                    i10 = 2;
+                    i9 = 2;
                 }
                 if (parameterTypes.length > 2) {
                     throw new IllegalArgumentException("cannot have more than 2 params");
                 }
-                b(hashMap, new c(i10, method), value, cls);
+                b(hashMap, new c(i9, method), value, cls);
                 z10 = true;
             }
         }

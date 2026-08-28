@@ -1,153 +1,27 @@
 package h7;
 
-import android.graphics.Bitmap;
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.zip.GZIPInputStream;
-import java.util.zip.GZIPOutputStream;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class a0 {
-    public static String a(BufferedInputStream bufferedInputStream, ArrayList arrayList) {
-        String b10;
-        do {
-            b10 = b(bufferedInputStream, arrayList);
-            if (b10 == null) {
-                throw new IOException("Unexpected EOF in header");
-            }
-        } while (b10.startsWith("#"));
-        return b10;
+public final class a0 extends s {
+    public final transient Object[] c;
+    public final transient int d;
+    public final transient int e = 1;
+
+    public a0(int i9, Object[] objArr) {
+        this.c = objArr;
+        this.d = i9;
     }
 
-    public static String b(BufferedInputStream bufferedInputStream, ArrayList arrayList) {
-        StringBuilder sb2 = new StringBuilder();
-        while (true) {
-            bufferedInputStream.mark(1);
-            int read = bufferedInputStream.read();
-            if (read == -1) {
-                if (sb2.length() == 0) {
-                    return null;
-                }
-                return sb2.toString();
-            }
-            if (Character.isWhitespace(read)) {
-                if (sb2.length() > 0) {
-                    return sb2.toString();
-                }
-            } else {
-                if (read != 35) {
-                    sb2.append((char) read);
-                    while (true) {
-                        bufferedInputStream.mark(1);
-                        int read2 = bufferedInputStream.read();
-                        if (read2 == -1 || Character.isWhitespace(read2)) {
-                            break;
-                        }
-                        if (read2 == 35) {
-                            bufferedInputStream.reset();
-                            return sb2.toString();
-                        }
-                        sb2.append((char) read2);
-                    }
-                    return sb2.toString();
-                }
-                StringBuilder sb3 = new StringBuilder();
-                while (true) {
-                    int read3 = bufferedInputStream.read();
-                    if (read3 == -1 || read3 == 10) {
-                        break;
-                    }
-                    if (read3 != 13) {
-                        sb3.append((char) read3);
-                    }
-                }
-                arrayList.add(sb3.toString());
-                if (sb2.length() > 0) {
-                    return sb2.toString();
-                }
-            }
-        }
+    @Override // java.util.List
+    public final Object get(int i9) {
+        f7.b8.a(i9, this.e);
+        Object obj = this.c[i9 + i9 + this.d];
+        obj.getClass();
+        return obj;
     }
 
-    public static int c(String str, String str2) {
-        try {
-            int parseInt = Integer.parseInt(str);
-            if (parseInt > 0) {
-                return parseInt;
-            }
-            throw new IOException("Invalid " + str2 + ": " + parseInt);
-        } catch (NumberFormatException e9) {
-            throw new IOException(i0.a.n("Invalid ", str2, ": ", str), e9);
-        }
-    }
-
-    public static Bitmap d(GZIPInputStream gZIPInputStream, ArrayList arrayList) {
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(gZIPInputStream);
-        String b10 = b(bufferedInputStream, arrayList);
-        if (!"P5".equals(b10)) {
-            throw new IOException(s3.c.e("Not a binary PGM (P5), got: ", b10));
-        }
-        int c10 = c(a(bufferedInputStream, arrayList), "width");
-        int c11 = c(a(bufferedInputStream, arrayList), "height");
-        int c12 = c(a(bufferedInputStream, arrayList), "maxval");
-        if (c12 != 255) {
-            throw new IOException(i0.a.k(c12, "Only 8-bit PGM supported (maxval=255), got: "));
-        }
-        Bitmap createBitmap = Bitmap.createBitmap(c10, c11, Bitmap.Config.ALPHA_8);
-        int rowBytes = createBitmap.getRowBytes();
-        byte[] bArr = new byte[rowBytes * c11];
-        ByteBuffer wrap = ByteBuffer.wrap(bArr);
-        byte[] bArr2 = new byte[c10];
-        int i10 = 0;
-        for (int i11 = 0; i11 < c11; i11++) {
-            int i12 = 0;
-            while (i12 < c10) {
-                int read = bufferedInputStream.read(bArr2, i12, c10 - i12);
-                if (read < 0) {
-                    throw new IOException("Unexpected EOF");
-                }
-                i12 += read;
-            }
-            System.arraycopy(bArr2, 0, bArr, i10, c10);
-            i10 += rowBytes;
-        }
-        createBitmap.copyPixelsFromBuffer(wrap);
-        return createBitmap;
-    }
-
-    public static void e(Bitmap bitmap, GZIPOutputStream gZIPOutputStream, List list) {
-        if (bitmap.getConfig() != Bitmap.Config.ALPHA_8) {
-            throw new IllegalArgumentException("Only Bitmap.Config.ALPHA_8 is supported");
-        }
-        int width = bitmap.getWidth();
-        int height = bitmap.getHeight();
-        gZIPOutputStream.write("P5\n".getBytes(StandardCharsets.US_ASCII));
-        if (list != null && !list.isEmpty()) {
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                String str = (String) it.next();
-                gZIPOutputStream.write(a9.p.m("#", str == null ? "" : str.replace('\r', ' ').replace('\n', ' '), "\n").getBytes(StandardCharsets.US_ASCII));
-            }
-        }
-        Charset charset = StandardCharsets.US_ASCII;
-        gZIPOutputStream.write((width + " " + height + "\n").getBytes(charset));
-        gZIPOutputStream.write("255\n".getBytes(charset));
-        int rowBytes = bitmap.getRowBytes();
-        byte[] bArr = new byte[rowBytes * height];
-        bitmap.copyPixelsToBuffer(ByteBuffer.wrap(bArr));
-        int i10 = 0;
-        int i11 = 0;
-        while (i10 < height) {
-            gZIPOutputStream.write(bArr, i11, width);
-            i10++;
-            i11 += rowBytes;
-        }
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.e;
     }
 }

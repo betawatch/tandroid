@@ -1,40 +1,121 @@
 package zg;
 
-import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.er;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class b extends View {
-    public final ud.a a;
-    public final Drawable b;
-    public final Drawable c;
+public final class b extends Drawable {
+    public final TextPaint a;
+    public final TextPaint b;
+    public RadialProgress2 c;
+    public StaticLayout f;
+    public StaticLayout g;
+    public CharSequence d = "";
+    public CharSequence e = "";
+    public int l = -1;
+    public final int h = AndroidUtilities.dp(64.0f);
+    public final int i = AndroidUtilities.dp(10.66f);
+    public final int j = AndroidUtilities.dp(12.0f);
+    public final int k = AndroidUtilities.dp(4.0f);
 
-    public b(Context context) {
-        super(context);
-        this.a = new ud.a(this, er.h, 320L);
-        this.b = context.getResources().getDrawable(R.drawable.outline_poll_emoji_24).mutate();
-        this.c = context.getResources().getDrawable(R.drawable.input_keyboard).mutate();
+    public b() {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        textPaint.setTextSize(AndroidUtilities.dp(15.0f));
+        textPaint.setTypeface(AndroidUtilities.bold());
+        TextPaint textPaint2 = new TextPaint(1);
+        this.b = textPaint2;
+        textPaint2.setTextSize(AndroidUtilities.dp(13.0f));
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float f10 = this.a.e;
-        gf.s.b(canvas, this.b, 1.0f - f10);
-        gf.s.b(canvas, this.c, f10);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int width = getBounds().width();
+        int i9 = this.h;
+        if (width > 0 && (width != this.l || this.f == null || this.g == null)) {
+            this.l = width;
+            int i10 = (width - i9) - this.j;
+            if (i10 <= 0) {
+                this.f = null;
+                this.g = null;
+            } else {
+                CharSequence charSequence = this.d;
+                float f10 = i10;
+                TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.MIDDLE;
+                TextPaint textPaint = this.a;
+                CharSequence ellipsize = TextUtils.ellipsize(charSequence, textPaint, f10, truncateAt);
+                CharSequence charSequence2 = this.e;
+                TextUtils.TruncateAt truncateAt2 = TextUtils.TruncateAt.END;
+                TextPaint textPaint2 = this.b;
+                CharSequence ellipsize2 = TextUtils.ellipsize(charSequence2, textPaint2, f10, truncateAt2);
+                Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
+                this.f = new StaticLayout(ellipsize, textPaint, i10, alignment, 1.0f, 0.0f, false);
+                this.g = new StaticLayout(ellipsize2, textPaint2, i10, alignment, 1.0f, 0.0f, false);
+            }
+        }
+        if (this.f == null || this.g == null) {
+            return;
+        }
+        Rect bounds = getBounds();
+        float f11 = bounds.left + i9;
+        float f12 = bounds.top + this.i;
+        this.c.q(AndroidUtilities.dp(10.0f) + bounds.left, AndroidUtilities.dp(9.0f) + bounds.top, AndroidUtilities.dp(42.0f) + AndroidUtilities.dp(10.0f) + bounds.left, AndroidUtilities.dp(42.0f) + AndroidUtilities.dp(9.0f) + bounds.top);
+        canvas.save();
+        canvas.translate(f11, f12);
+        this.f.draw(canvas);
+        canvas.restore();
+        canvas.save();
+        canvas.translate(f11, this.f.getHeight() + f12 + this.k);
+        this.g.draw(canvas);
+        canvas.restore();
+        this.c.draw(canvas);
     }
 
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        float f10 = i10 / 2.0f;
-        float f11 = i11 / 2.0f;
-        gf.s.d(this.b, f10, f11, 17);
-        gf.s.d(this.c, f10, f11, 17);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        Paint.FontMetricsInt fontMetricsInt = this.a.getFontMetricsInt();
+        int i9 = fontMetricsInt.descent - fontMetricsInt.ascent;
+        int i10 = this.i;
+        int i11 = i9 + i10 + this.k;
+        Paint.FontMetricsInt fontMetricsInt2 = this.b.getFontMetricsInt();
+        return (fontMetricsInt2.descent - fontMetricsInt2.ascent) + i11 + i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        this.l = -1;
+        this.f = null;
+        this.g = null;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i9) {
+        this.c.E = i9 / 255.0f;
+        this.a.setAlpha(i9);
+        this.b.setAlpha(i9);
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+        this.b.setColorFilter(colorFilter);
+        invalidateSelf();
     }
 }

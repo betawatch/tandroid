@@ -3,25 +3,25 @@ package m4;
 import android.os.Handler;
 import android.os.Message;
 import com.google.android.exoplayer2.upstream.r;
-import d5.g0;
+import d5.f0;
 import java.util.TreeMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class o implements Handler.Callback {
     public final r a;
-    public final k5.i b;
+    public final android.support.v4.media.c b;
     public n4.c f;
     public boolean h;
     public boolean n;
     public boolean r;
     public final TreeMap e = new TreeMap();
-    public final Handler d = g0.k(this);
+    public final Handler d = f0.k(this);
     public final a4.b c = new a4.b(1);
 
-    public o(n4.c cVar, k5.i iVar, r rVar) {
+    public o(n4.c cVar, android.support.v4.media.c cVar2, r rVar) {
         this.f = cVar;
-        this.b = iVar;
+        this.b = cVar2;
         this.a = rVar;
     }
 

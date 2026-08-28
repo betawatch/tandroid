@@ -1,9 +1,17 @@
 package g9;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public interface c {
-    void a();
+public final class c implements q9.d {
+    public static final c a = new c();
+    public static final q9.c b = q9.c.c("key");
+    public static final q9.c c = q9.c.c("value");
 
-    String c();
+    @Override // q9.a
+    public final void a(Object obj, Object obj2) {
+        q9.e eVar = (q9.e) obj2;
+        d0 d0Var = (d0) ((h1) obj);
+        eVar.g(b, d0Var.a);
+        eVar.g(c, d0Var.b);
+    }
 }

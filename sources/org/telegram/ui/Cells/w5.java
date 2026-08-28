@@ -1,107 +1,73 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.rl;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.bp;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class w5 extends FrameLayout {
-    public org.telegram.ui.Components.n9 a;
-    public FrameLayout b;
-    public bp c;
-    public TextView d;
-    public ag.w e;
-    public int f;
-    public int h;
+    public final org.telegram.ui.Components.o9 a;
+    public final TextView b;
+    public final TextView c;
+    public final View d;
+    public final /* synthetic */ y5 e;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.c.b(org.telegram.ui.ActionBar.g6.W9, org.telegram.ui.ActionBar.g6.X9, org.telegram.ui.ActionBar.g6.V9);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w5(y5 y5Var, Context context) {
+        super(context);
+        this.e = y5Var;
+        org.telegram.ui.Components.o9 o9Var = new org.telegram.ui.Components.o9(context);
+        this.a = o9Var;
+        addView(o9Var, g7.e6.c(-1.0f, -1));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        linearLayout.setBackgroundResource(R.drawable.album_shadow);
+        addView(linearLayout, g7.e6.e(-1, 60, 83));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextSize(1, 13.0f);
+        textView.setTextColor(-1);
+        textView.setSingleLine(true);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        textView.setMaxLines(1);
+        textView.setGravity(80);
+        TextView h = j3.r0.h(linearLayout, textView, g7.e6.m(1.0f, 0, -1, 8, 0, 5), context);
+        this.c = h;
+        h.setTextSize(1, 13.0f);
+        h.setTextColor(-1);
+        h.setSingleLine(true);
+        h.setEllipsize(truncateAt);
+        h.setMaxLines(1);
+        h.setGravity(80);
+        linearLayout.addView(h, g7.e6.k(4.0f, 0.0f, 7.0f, 5.0f, -2, -1));
+        View view = new View(context);
+        this.d = view;
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.f6.K0(false));
+        addView(view, g7.e6.c(-1.0f, -1));
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.f + this.h, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.f, TLObject.FLAG_30));
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        org.telegram.ui.Components.o9 o9Var = this.a;
+        if (o9Var.getImageReceiver().hasNotThumb() && o9Var.getImageReceiver().getCurrentAlpha() == 1.0f) {
+            return;
+        }
+        y5 y5Var = this.e;
+        y5Var.e.setColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.X9, false));
+        canvas.drawRect(0.0f, 0.0f, o9Var.getMeasuredWidth(), o9Var.getMeasuredHeight(), y5Var.e);
     }
 
-    public void setImage(MediaController.PhotoEntry photoEntry) {
-        ag.w wVar = this.e;
-        org.telegram.ui.Components.n9 n9Var = this.a;
-        Drawable drawable = getResources().getDrawable(R.drawable.nophotos);
-        String str = photoEntry.thumbPath;
-        if (str != null) {
-            n9Var.f(str, null, drawable);
-            return;
-        }
-        if (photoEntry.path == null) {
-            n9Var.setImageDrawable(drawable);
-            return;
-        }
-        n9Var.p(photoEntry.orientation, photoEntry.invert, true);
-        if (photoEntry.isLivePhoto()) {
-            wVar.setVisibility(4);
-            setContentDescription(LocaleController.getString(R.string.AttachLivePhoto));
-            n9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
-            return;
-        }
-        if (!photoEntry.isVideo) {
-            wVar.setVisibility(4);
-            setContentDescription(LocaleController.getString(R.string.AttachPhoto));
-            n9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
-            return;
-        }
-        wVar.setVisibility(0);
-        this.d.setText(AndroidUtilities.formatShortDuration(photoEntry.duration));
-        StringBuilder sb2 = new StringBuilder();
-        rl.j(R.string.AttachVideo, ", ", sb2);
-        sb2.append(LocaleController.formatDuration(photoEntry.duration));
-        setContentDescription(sb2.toString());
-        n9Var.f("vthumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
-    }
-
-    public void setNum(int i10) {
-        this.c.setNum(i10);
-    }
-
-    public void setImage(MediaController.SearchImage searchImage) {
-        org.telegram.ui.Components.n9 n9Var = this.a;
-        Drawable drawable = getResources().getDrawable(R.drawable.nophotos);
-        TLRPC.PhotoSize photoSize = searchImage.thumbPhotoSize;
-        if (photoSize != null) {
-            n9Var.h(ImageLocation.getForPhoto(photoSize, searchImage.photo), null, drawable, searchImage);
-            return;
-        }
-        TLRPC.PhotoSize photoSize2 = searchImage.photoSize;
-        if (photoSize2 != null) {
-            n9Var.h(ImageLocation.getForPhoto(photoSize2, searchImage.photo), "80_80", drawable, searchImage);
-            return;
-        }
-        String str = searchImage.thumbPath;
-        if (str != null) {
-            n9Var.f(str, null, drawable);
-            return;
-        }
-        String str2 = searchImage.thumbUrl;
-        if (str2 != null && str2.length() > 0) {
-            n9Var.f(searchImage.thumbUrl, null, drawable);
-        } else if (MessageObject.isDocumentHasThumb(searchImage.document)) {
-            n9Var.h(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, 320), searchImage.document), null, drawable, searchImage);
-        } else {
-            n9Var.setImageDrawable(drawable);
-        }
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        this.d.drawableHotspotChanged(motionEvent.getX(), motionEvent.getY());
+        return super.onTouchEvent(motionEvent);
     }
 }

@@ -1,17 +1,17 @@
 package q2;
 
-import h7.w8;
+import g7.u8;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class u extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ ae.b f;
-    public static final /* synthetic */ ae.b h;
+    public static final /* synthetic */ zd.b f;
+    public static final /* synthetic */ zd.b h;
     public long[] e;
 
     static {
-        ae.a aVar = new ae.a(u.class, "SyncSampleBox.java");
+        zd.a aVar = new zd.a(u.class, "SyncSampleBox.java");
         aVar.e(aVar.d("getSampleNumber", "com.coremedia.iso.boxes.SyncSampleBox", "", "", "[J"));
         f = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.SyncSampleBox", "", "", "java.lang.String"));
         h = aVar.e(aVar.d("setSampleNumber", "com.coremedia.iso.boxes.SyncSampleBox", "[J", "sampleNumber", "void"));
@@ -20,10 +20,10 @@ public final class u extends com.googlecode.mp4parser.c {
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
-        int a2 = w8.a(p2.b.i(byteBuffer));
+        int a2 = u8.a(p2.b.i(byteBuffer));
         this.e = new long[a2];
-        for (int i10 = 0; i10 < a2; i10++) {
-            this.e[i10] = p2.b.i(byteBuffer);
+        for (int i9 = 0; i9 < a2; i9++) {
+            this.e[i9] = p2.b.i(byteBuffer);
         }
     }
 
@@ -42,9 +42,9 @@ public final class u extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.t b10 = ae.a.b(f, this, this);
+        com.google.firebase.messaging.t b10 = zd.a.b(f, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
-        return a9.p.k(this.e.length, "]", new StringBuilder("SyncSampleBox[entryCount="));
+        return aa.d.l(this.e.length, "]", new StringBuilder("SyncSampleBox[entryCount="));
     }
 }

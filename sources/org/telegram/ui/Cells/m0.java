@@ -5,16 +5,16 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class m0 extends Drawable {
     public final /* synthetic */ int a;
     public Object b;
     public int c;
 
-    public m0(int i10) {
-        this.a = i10;
-        switch (i10) {
+    public m0(int i9) {
+        this.a = i9;
+        switch (i9) {
             case 2:
                 this.c = 255;
                 break;
@@ -86,16 +86,16 @@ public final class m0 extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    public final void setAlpha(int i9) {
         switch (this.a) {
             case 0:
-                ((Paint) this.b).setAlpha(org.telegram.ui.ActionBar.g6.l1(i10 / 255.0f, this.c));
+                ((Paint) this.b).setAlpha(org.telegram.ui.ActionBar.f6.l1(i9 / 255.0f, this.c));
                 break;
             case 1:
-                ((Paint) this.b).setAlpha(i10);
+                ((Paint) this.b).setAlpha(i9);
                 break;
             default:
-                this.c = i10;
+                this.c = i9;
                 break;
         }
     }
@@ -114,10 +114,10 @@ public final class m0 extends Drawable {
         }
     }
 
-    public m0(Paint paint, int i10) {
+    public m0(Paint paint, int i9) {
         this.a = 0;
         this.b = paint;
-        this.c = i10;
+        this.c = i9;
     }
 
     private final void a(Canvas canvas) {

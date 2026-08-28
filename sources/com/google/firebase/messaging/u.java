@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class u {
     public static final long d = TimeUnit.DAYS.toMillis(7);
@@ -27,8 +27,8 @@ public final class u {
             jSONObject.put("appVersion", str2);
             jSONObject.put("timestamp", j10);
             return jSONObject.toString();
-        } catch (JSONException e9) {
-            Log.w("FirebaseMessaging", "Failed to encode token: " + e9);
+        } catch (JSONException e10) {
+            Log.w("FirebaseMessaging", "Failed to encode token: " + e10);
             return null;
         }
     }
@@ -43,8 +43,8 @@ public final class u {
         try {
             JSONObject jSONObject = new JSONObject(str);
             return new u(jSONObject.getLong("timestamp"), jSONObject.getString("token"), jSONObject.getString("appVersion"));
-        } catch (JSONException e9) {
-            Log.w("FirebaseMessaging", "Failed to parse token: " + e9);
+        } catch (JSONException e10) {
+            Log.w("FirebaseMessaging", "Failed to parse token: " + e10);
             return null;
         }
     }

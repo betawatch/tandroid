@@ -1,58 +1,48 @@
 package eg;
 
-import android.content.Context;
-import org.telegram.messenger.Emoji;
-import org.telegram.ui.ActionBar.h5;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Cells.t1;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class c extends h5 {
-    public final /* synthetic */ int I0;
+public final /* synthetic */ class c implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d b;
+    public final /* synthetic */ MessageObject c;
+    public final /* synthetic */ TLRPC.TL_messageMediaGiveawayResults d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c(Context context, int i10) {
-        super(context);
-        this.I0 = i10;
+    public /* synthetic */ c(d dVar, MessageObject messageObject, TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults, int i9) {
+        this.a = i9;
+        this.b = dVar;
+        this.c = messageObject;
+        this.d = tL_messageMediaGiveawayResults;
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
-    public boolean k(CharSequence charSequence) {
-        switch (this.I0) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                return l(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), false);
-            case 1:
-            case 2:
-            default:
-                return super.k(charSequence);
-            case 3:
-                return l(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), false);
-            case 4:
-                return l(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), false);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.h5
-    public boolean l(CharSequence charSequence, boolean z10) {
-        switch (this.I0) {
-            case 2:
-                return super.l(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), z10);
-            case 5:
-                return super.l(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), false);
-            default:
-                return super.l(charSequence, z10);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.h5, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.I0) {
-            case 1:
-                super.onMeasure(i10, i11);
-                setPivotY(getMeasuredHeight() / 2.0f);
+                AndroidUtilities.runOnUIThread(new c(this.b, this.c, this.d, 1));
                 break;
             default:
-                super.onMeasure(i10, i11);
-                break;
+                t1 t1Var = this.b.c;
+                long dialogId = this.c.getDialogId();
+                TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults = this.d;
+                if (dialogId != (-tL_messageMediaGiveawayResults.channel_id)) {
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("chat_id", tL_messageMediaGiveawayResults.channel_id);
+                    bundle.putInt("message_id", tL_messageMediaGiveawayResults.launch_msg_id);
+                    LaunchActivity.R().presentFragment(new qn(bundle));
+                    break;
+                } else {
+                    t1Var.getDelegate().S1(t1Var, tL_messageMediaGiveawayResults.launch_msg_id, 0.0f, 0.0f, false);
+                    break;
+                }
         }
     }
 }

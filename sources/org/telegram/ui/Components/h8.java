@@ -1,43 +1,194 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.text.method.LinkMovementMethod;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v8 b;
+public final class h8 {
+    public final ActionBarPopupWindow$ActionBarPopupWindowLayout a;
+    public final org.telegram.ui.ActionBar.g1 b;
+    public final g8 c;
+    public long d;
+    public final l80 e;
 
-    public /* synthetic */ h8(v8 v8Var, int i10) {
-        this.a = i10;
-        this.b = v8Var;
+    public h8(Context context, fg0 fg0Var, final g8 g8Var, boolean z10, int i9, org.telegram.ui.ActionBar.b6 b6Var) {
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(z10 ? R.drawable.popup_fixed_alert : 0, 0, context, b6Var);
+        this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setFitItems(true);
+        this.c = g8Var;
+        if (fg0Var != null) {
+            org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, b6Var).setOnClickListener(new e8(fg0Var, 0));
+        }
+        final int i10 = 0;
+        org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1d, LocaleController.getString(R.string.AutoDelete1Day), false, b6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.f8
+            public final /* synthetic */ h8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i10) {
+                    case 0:
+                        this.b.a();
+                        g8Var.V0(86400, 70);
+                        break;
+                    case 1:
+                        this.b.a();
+                        g8Var.V0(604800, 70);
+                        break;
+                    case 2:
+                        this.b.a();
+                        g8Var.V0(2678400, 70);
+                        break;
+                    default:
+                        this.b.a();
+                        g8Var.V0(0, 71);
+                        break;
+                }
+            }
+        });
+        final int i11 = 1;
+        org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1w, LocaleController.getString(R.string.AutoDelete7Days), false, b6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.f8
+            public final /* synthetic */ h8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i11) {
+                    case 0:
+                        this.b.a();
+                        g8Var.V0(86400, 70);
+                        break;
+                    case 1:
+                        this.b.a();
+                        g8Var.V0(604800, 70);
+                        break;
+                    case 2:
+                        this.b.a();
+                        g8Var.V0(2678400, 70);
+                        break;
+                    default:
+                        this.b.a();
+                        g8Var.V0(0, 71);
+                        break;
+                }
+            }
+        });
+        final int i12 = 2;
+        org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1m, LocaleController.getString(R.string.AutoDelete1Month), false, b6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.f8
+            public final /* synthetic */ h8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i12) {
+                    case 0:
+                        this.b.a();
+                        g8Var.V0(86400, 70);
+                        break;
+                    case 1:
+                        this.b.a();
+                        g8Var.V0(604800, 70);
+                        break;
+                    case 2:
+                        this.b.a();
+                        g8Var.V0(2678400, 70);
+                        break;
+                    default:
+                        this.b.a();
+                        g8Var.V0(0, 71);
+                        break;
+                }
+            }
+        });
+        org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, i9 == 1 ? LocaleController.getString(R.string.AutoDeleteCustom2) : LocaleController.getString(R.string.AutoDeleteCustom), false, b6Var).setOnClickListener(new fh.g4(this, context, i9, b6Var, g8Var));
+        org.telegram.ui.ActionBar.g1 c10 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_disable, LocaleController.getString(R.string.AutoDeleteDisable), false, b6Var);
+        this.b = c10;
+        final int i13 = 3;
+        c10.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.f8
+            public final /* synthetic */ h8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i13) {
+                    case 0:
+                        this.b.a();
+                        g8Var.V0(86400, 70);
+                        break;
+                    case 1:
+                        this.b.a();
+                        g8Var.V0(604800, 70);
+                        break;
+                    case 2:
+                        this.b.a();
+                        g8Var.V0(2678400, 70);
+                        break;
+                    default:
+                        this.b.a();
+                        g8Var.V0(0, 71);
+                        break;
+                }
+            }
+        });
+        if (i9 != 1) {
+            int i14 = org.telegram.ui.ActionBar.f6.q7;
+            c10.c(org.telegram.ui.ActionBar.f6.w0(null, i14, false), org.telegram.ui.ActionBar.f6.w0(null, i14, false));
+        }
+        if (i9 != 1) {
+            FrameLayout frameLayout = new FrameLayout(context);
+            frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.H8, b6Var));
+            View view = new View(context);
+            view.setBackground(org.telegram.ui.ActionBar.f6.U0(context, R.drawable.greydivider, org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.b7, b6Var)));
+            frameLayout.addView(view, g7.e6.c(-1.0f, -1));
+            frameLayout.setTag(R.id.fit_width_tag, 1);
+            actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, g7.e6.n(-1, 8));
+            l80 l80Var = new l80(context, null);
+            this.e = l80Var;
+            l80Var.setTag(R.id.fit_width_tag, 1);
+            l80Var.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
+            l80Var.setTextSize(1, 13.0f);
+            l80Var.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.E8, false));
+            l80Var.setMovementMethod(LinkMovementMethod.getInstance());
+            l80Var.setLinkTextColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.J6, false));
+            l80Var.setText(LocaleController.getString(R.string.AutoDeletePopupDescription));
+            actionBarPopupWindow$ActionBarPopupWindowLayout.a(l80Var, g7.e6.p(-1, -2, 0.0f, 0, 0, 8, 0, 0));
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                v8 v8Var = this.b;
-                if (!v8Var.Q) {
-                    if (v8Var.J <= 0.0f) {
-                        v8Var.g0(!v8Var.a.v, true, false);
-                        break;
-                    } else {
-                        if (v8Var.I != null) {
-                            v8Var.A = 1.0f;
-                            v8Var.B = true;
-                        }
-                        AndroidUtilities.hideKeyboard(v8Var.fragmentView);
-                        break;
-                    }
-                }
-                break;
-            default:
-                v8 v8Var2 = this.b;
-                v8Var2.getClass();
-                v8Var2.presentFragment(new PremiumPreviewFragment(0, "avatar"));
-                break;
+    public final void a() {
+        this.c.dismiss();
+        this.d = System.currentTimeMillis();
+    }
+
+    public final void b(int i9) {
+        if (System.currentTimeMillis() - this.d < 200) {
+            AndroidUtilities.runOnUIThread(new bg.c2(this, i9, 28));
+            return;
+        }
+        org.telegram.ui.ActionBar.g1 g1Var = this.b;
+        if (i9 == 0) {
+            g1Var.setVisibility(8);
+        } else {
+            g1Var.setVisibility(0);
         }
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m5 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -13,8 +13,8 @@ public final /* synthetic */ class m5 implements ValueAnimator.AnimatorUpdateLis
     public final /* synthetic */ float e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ m5(Object obj, float f10, float f11, float f12, float f13, int i10) {
-        this.a = i10;
+    public /* synthetic */ m5(Object obj, float f10, float f11, float f12, float f13, int i9) {
+        this.a = i9;
         this.f = obj;
         this.b = f10;
         this.c = f11;
@@ -24,13 +24,13 @@ public final /* synthetic */ class m5 implements ValueAnimator.AnimatorUpdateLis
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i10 = this.a;
+        int i9 = this.a;
         float f10 = this.e;
         float f11 = this.d;
         float f12 = this.c;
         float f13 = this.b;
         Object obj = this.f;
-        switch (i10) {
+        switch (i9) {
             case 0:
                 t5 t5Var = (t5) obj;
                 t5Var.getClass();
@@ -40,17 +40,17 @@ public final /* synthetic */ class m5 implements ValueAnimator.AnimatorUpdateLis
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
-                int i11 = ChatActivityEnterView.i5;
+                int i10 = ChatActivityEnterView.i5;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float z10 = com.google.android.recaptcha.internal.a.z(f12, f13, floatValue2, f13);
-                go0 go0Var = chatActivityEnterView.l0;
-                if (go0Var != null) {
-                    go0Var.setAlpha(((f10 - f11) * floatValue2) + f11);
+                float z10 = e2.c.z(f12, f13, floatValue2, f13);
+                fo0 fo0Var = chatActivityEnterView.l0;
+                if (fo0Var != null) {
+                    fo0Var.setAlpha(((f10 - f11) * floatValue2) + f11);
                     chatActivityEnterView.l0.setTranslationX(z10);
                 }
                 chatActivityEnterView.M0.setTranslationX(z10);
                 chatActivityEnterView.C = z10;
-                chatActivityEnterView.I1();
+                chatActivityEnterView.J1();
                 break;
         }
     }

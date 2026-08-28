@@ -1,437 +1,118 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class mg0 extends FrameLayout {
-    public final n9 A;
-    public final TextView B;
-    public final TextView C;
-    public final lh.d D;
-    public final TextView E;
-    public boolean F;
-    public int G;
-    public int H;
-    public boolean I;
-    public boolean J;
-    public int K;
-    public boolean L;
-    public boolean M;
-    public cq N;
-    public cq O;
-    public vt P;
-    public final cq[] Q;
-    public final ig0 R;
-    public final org.telegram.ui.gy a;
-    public final int b;
-    public final k51 c;
-    public TLRPC.SearchPostsFlood d;
-    public final ArrayList e;
-    public int f;
-    public boolean h;
-    public final ArrayList n;
-    public int r;
+public final class mg0 {
+    public int a;
+    public final pc b;
+    public final y5 e;
+    public Drawable i;
+    public Drawable j;
+    public mi0 k;
+    public nz0 l;
+    public p80 r;
     public boolean s;
-    public boolean v;
-    public String w;
-    public final FrameLayout x;
-    public final hh.m y;
+    public boolean t;
+    public int u;
+    public long w;
+    public int x;
+    public final /* synthetic */ pg0 y;
+    public final RectF c = new RectF();
+    public final RectF d = new RectF();
+    public final RectF f = new RectF();
+    public final RectF g = new RectF();
+    public final Rect h = new Rect();
+    public float m = 1.0f;
+    public boolean n = false;
+    public boolean o = false;
+    public boolean p = false;
+    public final float q = 1.0f;
+    public int v = 0;
 
-    public mg0(Context context, org.telegram.ui.gy gyVar) {
-        super(context);
-        this.e = new ArrayList();
-        this.n = new ArrayList();
-        this.G = -1;
-        this.H = 0;
-        this.K = -1;
-        this.Q = new cq[1];
-        this.R = new ig0(this, 1);
-        this.a = gyVar;
-        int currentAccount = gyVar.getCurrentAccount();
-        this.b = currentAccount;
-        k51 k51Var = new k51(context, currentAccount, 0, false, new d(this, 18), new vu(this, 11), null, null);
-        this.c = k51Var;
-        k51Var.j(new fh.l(4, this, gyVar));
-        addView(k51Var, h7.z5.e(-1, -1, 119));
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.x = frameLayout;
-        hh.m mVar = new hh.m(context, 5);
-        this.y = mVar;
-        mVar.setOrientation(1);
-        frameLayout.addView(mVar, h7.z5.d(-2, -2.0f, 17, 32.0f, 0.0f, 32.0f, 0.0f));
-        n9 n9Var = new n9(context);
-        this.A = n9Var;
-        n9Var.setVisibility(8);
-        mVar.addView(n9Var, h7.z5.t(130, 130, 1, 0, 0, 0, 12));
-        TextView textView = new TextView(context);
-        this.B = textView;
-        textView.setTextSize(1, 16.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setGravity(17);
-        textView.setSingleLine(false);
-        textView.setMaxLines(4);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView.setEllipsize(truncateAt);
-        mVar.addView(textView, h7.z5.q(-2, -2, 1));
-        TextView textView2 = new TextView(context);
-        this.C = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setGravity(17);
-        textView2.setSingleLine(false);
-        textView2.setMaxLines(4);
-        textView2.setEllipsize(truncateAt);
-        mVar.addView(textView2, h7.z5.t(-2, -2, 1, 0, 9, 0, 0));
-        lh.d g10 = org.telegram.messenger.rl.g(24, context, null, true);
-        this.D = g10;
-        mVar.addView(g10, h7.z5.t(-1, 44, 7, 0, 19, 0, 0));
-        TextView textView3 = new TextView(context);
-        this.E = textView3;
-        textView3.setTextSize(1, 12.0f);
-        textView3.setGravity(17);
-        mVar.addView(textView3, h7.z5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
-        addView(frameLayout, h7.z5.e(-1, -1, 119));
-        k51Var.setHideIfEmpty(false);
-        k51Var.setEmptyView(frameLayout);
-        k51Var.U1 = true;
-        k51Var.V1 = 0;
-        c();
-        d();
+    public mg0(pg0 pg0Var) {
+        this.y = pg0Var;
+        this.b = new pc(pg0Var);
+        this.e = new y5(pg0Var, 0L, 250L, gr.f);
     }
 
-    public final void a(boolean z10) {
-        long j10;
-        TLRPC.SearchPostsFlood searchPostsFlood;
-        if (this.v) {
-            return;
-        }
-        boolean isEmpty = TextUtils.isEmpty(this.w);
-        if (isEmpty && this.h) {
-            return;
-        }
-        if (isEmpty || !this.s) {
-            if (isEmpty || this.d != null) {
-                this.v = true;
-                int i10 = this.b;
-                MessagesController messagesController = MessagesController.getInstance(i10);
-                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i10);
-                TLRPC.TL_channels_searchPosts tL_channels_searchPosts = new TLRPC.TL_channels_searchPosts();
-                tL_channels_searchPosts.flags |= 2;
-                tL_channels_searchPosts.query = this.w;
-                tL_channels_searchPosts.limit = 30;
-                if (isEmpty) {
-                    ArrayList arrayList = this.e;
-                    if (arrayList.isEmpty()) {
-                        tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
-                    } else {
-                        MessageObject messageObject = (MessageObject) i0.a.i(1, arrayList);
-                        tL_channels_searchPosts.offset_rate = this.f;
-                        tL_channels_searchPosts.offset_id = messageObject.getRealId();
-                        tL_channels_searchPosts.offset_peer = messagesController.getInputPeer(messageObject.messageOwner.peer_id);
-                    }
-                } else {
-                    ArrayList arrayList2 = this.n;
-                    if (arrayList2.isEmpty()) {
-                        tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
-                    } else {
-                        MessageObject messageObject2 = (MessageObject) i0.a.i(1, arrayList2);
-                        tL_channels_searchPosts.offset_rate = this.r;
-                        tL_channels_searchPosts.offset_id = messageObject2.getRealId();
-                        tL_channels_searchPosts.offset_peer = messagesController.getInputPeer(messageObject2.messageOwner.peer_id);
-                    }
-                }
-                if (!z10 || (searchPostsFlood = this.d) == null) {
-                    j10 = 0;
-                } else {
-                    tL_channels_searchPosts.flags |= 4;
-                    j10 = searchPostsFlood.stars_amount;
-                    tL_channels_searchPosts.allow_paid_stars = j10;
-                }
-                this.G = connectionsManager.sendRequest(tL_channels_searchPosts, new b7(this, messagesController, isEmpty, tL_channels_searchPosts, z10, j10, connectionsManager), 1024);
-                d();
-                this.c.U2.N(true);
+    public final void a() {
+        float d = this.e.d(1.0f, false);
+        if (d == 1.0f) {
+            this.n = false;
+            if (this.o) {
+                this.p = true;
+                return;
             }
-        }
-    }
-
-    public final void b(String str) {
-        int i10 = this.K;
-        int i11 = this.b;
-        if (i10 >= 0) {
-            ConnectionsManager.getInstance(i11).cancelRequest(this.K, true);
-            this.K = -1;
-        }
-        if (!this.I) {
-            this.J = this.M && !(this.n.isEmpty() && this.s);
-        }
-        this.I = true;
-        TLRPC.TL_channels_checkSearchPostsFlood tL_channels_checkSearchPostsFlood = new TLRPC.TL_channels_checkSearchPostsFlood();
-        if (!TextUtils.isEmpty(str)) {
-            tL_channels_checkSearchPostsFlood.flags = 1 | tL_channels_checkSearchPostsFlood.flags;
-            tL_channels_checkSearchPostsFlood.query = str;
-        }
-        this.K = ConnectionsManager.getInstance(i11).sendRequest(tL_channels_checkSearchPostsFlood, new w1(this, 9));
-    }
-
-    public final void c() {
-        this.x.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.d6, false));
-        this.B.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.G6, false));
-        int i10 = org.telegram.ui.ActionBar.g6.y6;
-        this.E.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, i10, false));
-        this.C.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, i10, false));
-        k51 k51Var = this.c;
-        k51Var.setAdapter(null);
-        k51Var.setAdapter(k51Var.U2);
-        if (this.P != null) {
-            this.P = null;
-            d();
-        }
-    }
-
-    public final void d() {
-        float f10;
-        TLRPC.SearchPostsFlood searchPostsFlood;
-        ig0 ig0Var = this.R;
-        AndroidUtilities.cancelRunOnUIThread(ig0Var);
-        int i10 = this.b;
-        int currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
-        boolean isPremium = UserConfig.getInstance(i10).isPremium();
-        TextView textView = this.C;
-        TextView textView2 = this.B;
-        n9 n9Var = this.A;
-        TextView textView3 = this.E;
-        final int i11 = 1;
-        lh.d dVar = this.D;
-        final int i12 = 0;
-        if (!isPremium) {
-            n9Var.setVisibility(8);
-            textView2.setText(LocaleController.getString(R.string.SearchPostsTitle));
-            textView.setText(LocaleController.getString(R.string.SearchPostsText));
-            dVar.setVisibility(0);
-            dVar.g(LocaleController.getString(R.string.SearchPostsButtonPremium), true, true);
-            dVar.f(null, true);
-            dVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.jg0
-                public final /* synthetic */ mg0 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    switch (i12) {
-                        case 0:
-                            this.b.a.presentFragment(new PremiumPreviewFragment(0, "search"));
-                            break;
-                        case 1:
-                            mg0 mg0Var = this.b;
-                            mg0Var.D.setLoading(true);
-                            mg0Var.a(true);
-                            break;
-                        default:
-                            mg0 mg0Var2 = this.b;
-                            mg0Var2.D.setLoading(true);
-                            mg0Var2.a(false);
-                            break;
-                    }
-                }
-            });
-            textView3.setVisibility(0);
-            textView3.setText(LocaleController.getString(R.string.SearchPostsPremium));
             return;
         }
-        boolean isEmpty = TextUtils.isEmpty(this.w);
-        ArrayList arrayList = this.n;
-        if (!isEmpty && arrayList.isEmpty() && this.s) {
-            if (n9Var.getImageReceiver().getImageDrawable() == null) {
-                n9Var.setImageDrawable(new oi0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), "utyan_empty", AndroidUtilities.dp(130.0f)));
-            }
-            n9Var.setVisibility(0);
-            textView2.setText(LocaleController.getString(R.string.SearchPostsNotFound));
-            textView.setText(LocaleController.formatString(R.string.SearchPostsNotFoundText, TextUtils.ellipsize(this.w, textView.getPaint(), AndroidUtilities.dp(100.0f), TextUtils.TruncateAt.END)));
-            dVar.setVisibility(8);
-            textView3.setVisibility(8);
-            return;
+        RectF rectF = this.g;
+        float f10 = rectF.left;
+        RectF rectF2 = this.f;
+        float lerp = AndroidUtilities.lerp(f10, rectF2.left, d);
+        RectF rectF3 = this.d;
+        rectF3.left = lerp;
+        rectF3.right = AndroidUtilities.lerp(rectF.right, rectF2.right, d);
+    }
+
+    public final float b() {
+        boolean z10 = this.o;
+        y5 y5Var = this.e;
+        if (z10) {
+            return 1.0f - y5Var.d(1.0f, false);
         }
-        final int i13 = 2;
-        if (TextUtils.isEmpty(this.w) || (searchPostsFlood = this.d) == null) {
-            f10 = 100.0f;
+        if (this.n) {
+            return y5Var.d(1.0f, false);
+        }
+        return 1.0f;
+    }
+
+    public final void c(String str) {
+        nz0 nz0Var = new nz0(str, 11.0f, AndroidUtilities.bold());
+        nz0Var.n(3);
+        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
+        nz0Var.a();
+        this.l = nz0Var;
+    }
+
+    public final void d(int i9, int i10, int i11) {
+        pg0 pg0Var = this.y;
+        if (i9 != 0) {
+            mi0 mi0Var = new mi0(i9, String.valueOf(i9), AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f), false, null);
+            mi0Var.r0 = pg0Var;
+            mi0Var.start();
+            this.k = mi0Var;
         } else {
-            f10 = 100.0f;
-            if ((searchPostsFlood.flags & 2) != 0 && currentTime < searchPostsFlood.wait_till) {
-                n9Var.setVisibility(8);
-                textView2.setText(LocaleController.getString(R.string.SearchPostsLimitReached));
-                textView.setText(LocaleController.formatPluralStringComma("SearchPostsLimitReachedText", this.d.total_daily));
-                int i14 = this.d.wait_till - currentTime;
-                int i15 = i14 / 3600;
-                int i16 = i14 - (i15 * 3600);
-                int i17 = i16 / 60;
-                int i18 = i16 - (i17 * 60);
-                dVar.setVisibility(0);
-                dVar.g(hh.oa.R0(LocaleController.formatPluralStringComma("SearchPostsButtonPay", (int) this.d.stars_amount), 1.13f, this.Q), true, true);
-                int i19 = R.string.SearchPostsFreeSearchUnlocksIn;
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append(i15 > 0 ? s3.c.d(i15, ":") : "");
-                sb2.append(i17 < 10 ? i0.a.k(i17, "0") : Integer.valueOf(i17));
-                sb2.append(":");
-                sb2.append(i18 < 10 ? i0.a.k(i18, "0") : Integer.valueOf(i18));
-                dVar.f(LocaleController.formatString(i19, sb2.toString()), true);
-                dVar.e.o(false, true, false);
-                dVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.jg0
-                    public final /* synthetic */ mg0 b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        switch (i11) {
-                            case 0:
-                                this.b.a.presentFragment(new PremiumPreviewFragment(0, "search"));
-                                break;
-                            case 1:
-                                mg0 mg0Var = this.b;
-                                mg0Var.D.setLoading(true);
-                                mg0Var.a(true);
-                                break;
-                            default:
-                                mg0 mg0Var2 = this.b;
-                                mg0Var2.D.setLoading(true);
-                                mg0Var2.a(false);
-                                break;
-                        }
-                    }
-                });
-                AndroidUtilities.runOnUIThread(ig0Var, 1000L);
-                textView3.setVisibility(8);
-                return;
-            }
+            this.k = null;
         }
-        if (!arrayList.isEmpty() || this.v || TextUtils.isEmpty(this.w)) {
-            n9Var.setVisibility(8);
-            textView2.setText(LocaleController.getString(R.string.SearchPostsTitle));
-            textView.setText(LocaleController.getString(R.string.SearchPostsText));
-            dVar.setVisibility(8);
-            if (this.d == null) {
-                textView3.setVisibility(8);
-                return;
-            }
-            textView3.setVisibility(0);
-            TLRPC.SearchPostsFlood searchPostsFlood2 = this.d;
-            int i20 = searchPostsFlood2.remains;
-            if (i20 < 1) {
-                i20 = searchPostsFlood2.total_daily;
-            }
-            textView3.setText(LocaleController.formatPluralStringComma("SearchPostsFreeSearches", i20));
-            return;
+        this.i = i10 != 0 ? pg0Var.getResources().getDrawable(i10).mutate() : null;
+        this.j = i11 != 0 ? pg0Var.getResources().getDrawable(i11).mutate() : null;
+        mi0 mi0Var2 = this.k;
+        Rect rect = this.h;
+        if (mi0Var2 != null) {
+            mi0Var2.setBounds(rect);
         }
-        n9Var.setVisibility(8);
-        textView2.setText(LocaleController.getString(R.string.SearchPostsTitle));
-        textView.setText(LocaleController.getString(R.string.SearchPostsText));
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("s ");
-        if (this.N == null) {
-            cq cqVar = new cq(R.drawable.smiles_tab_search, 0);
-            this.N = cqVar;
-            cqVar.setScale(0.79f, 0.79f);
+        Drawable drawable = this.i;
+        if (drawable != null) {
+            drawable.setBounds(rect);
         }
-        if (this.P == null) {
-            this.P = new vt(org.telegram.ui.ActionBar.g6.v(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.Oh, false), org.telegram.ui.ActionBar.g6.l1(0.75f, org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.Sh, false))), i11);
+        Drawable drawable2 = this.j;
+        if (drawable2 != null) {
+            drawable2.setBounds(rect);
         }
-        spannableStringBuilder.setSpan(this.N, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.SearchPostsButton));
-        spannableStringBuilder.append((CharSequence) " ");
-        int length = spannableStringBuilder.length();
-        spannableStringBuilder.append(TextUtils.ellipsize(this.w, dVar.getTextPaint(), AndroidUtilities.dp(f10), TextUtils.TruncateAt.END));
-        spannableStringBuilder.setSpan(this.P, length, spannableStringBuilder.length(), 33);
-        spannableStringBuilder.append((CharSequence) " >");
-        if (this.O == null) {
-            cq cqVar2 = new cq(R.drawable.msg_mini_forumarrow, 0);
-            this.O = cqVar2;
-            cqVar2.setScale(1.05f, 1.05f);
-        }
-        spannableStringBuilder.setSpan(this.O, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-        dVar.setVisibility(0);
-        dVar.g(spannableStringBuilder, true, true);
-        dVar.d.o(false, false, false);
-        dVar.f(null, true);
-        dVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.jg0
-            public final /* synthetic */ mg0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i13) {
-                    case 0:
-                        this.b.a.presentFragment(new PremiumPreviewFragment(0, "search"));
-                        break;
-                    case 1:
-                        mg0 mg0Var = this.b;
-                        mg0Var.D.setLoading(true);
-                        mg0Var.a(true);
-                        break;
-                    default:
-                        mg0 mg0Var2 = this.b;
-                        mg0Var2.D.setLoading(true);
-                        mg0Var2.a(false);
-                        break;
-                }
-            }
-        });
-        if (this.d == null) {
-            textView3.setVisibility(8);
-            return;
-        }
-        textView3.setVisibility(0);
-        TLRPC.SearchPostsFlood searchPostsFlood3 = this.d;
-        int i21 = searchPostsFlood3.remains;
-        if (i21 < 1) {
-            i21 = searchPostsFlood3.total_daily;
-        }
-        textView3.setText(LocaleController.formatPluralStringComma("SearchPostsFreeSearches", i21));
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (this.d == null) {
-            b(null);
-        }
-        if (this.L) {
-            return;
-        }
-        this.L = true;
-        MessagesController.getGlobalMainSettings().edit().putInt("searchpostsnew", MessagesController.getGlobalMainSettings().getInt("searchpostsnew", 0) + 1).apply();
-        hh.u7.y(this.b, false).p();
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.F) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    public void setKeyboardHeight(int i10) {
-        this.y.animate().translationY((-i10) / 2.0f).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.p1.w).start();
+    public mg0(pg0 pg0Var, ng0 ng0Var) {
+        this.y = pg0Var;
+        this.b = new pc(pg0Var);
+        this.e = new y5(pg0Var, 0L, 250L, gr.f);
+        d(0, ng0Var.b, ng0Var.c);
+        c(LocaleController.getString(ng0Var.a));
     }
 }

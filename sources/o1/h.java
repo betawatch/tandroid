@@ -4,7 +4,7 @@ import android.os.Looper;
 import android.util.AndroidRuntimeException;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final c m = new c(1);
@@ -28,7 +28,7 @@ public abstract class h {
     public final ArrayList k;
     public final ArrayList l;
 
-    public h(hb.a aVar) {
+    public h(gb.a aVar) {
         this.a = 0.0f;
         this.b = Float.MAX_VALUE;
         this.c = false;
@@ -73,7 +73,7 @@ public abstract class h {
 
     public final void d(boolean z10) {
         ArrayList arrayList;
-        int i10 = 0;
+        int i9 = 0;
         this.f = false;
         ThreadLocal threadLocal = b.f;
         if (threadLocal.get() == null) {
@@ -91,13 +91,13 @@ public abstract class h {
         this.c = false;
         while (true) {
             arrayList = this.k;
-            if (i10 >= arrayList.size()) {
+            if (i9 >= arrayList.size()) {
                 break;
             }
-            if (arrayList.get(i10) != null) {
-                ((f) arrayList.get(i10)).a(this, z10, this.b, this.a);
+            if (arrayList.get(i9) != null) {
+                ((f) arrayList.get(i9)).a(this, z10, this.b, this.a);
             }
-            i10++;
+            i9++;
         }
         for (int size = arrayList.size() - 1; size >= 0; size--) {
             if (arrayList.get(size) == null) {
@@ -109,16 +109,16 @@ public abstract class h {
     public final void e(float f10) {
         ArrayList arrayList;
         this.e.b(this.d, f10);
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             arrayList = this.l;
-            if (i10 >= arrayList.size()) {
+            if (i9 >= arrayList.size()) {
                 break;
             }
-            if (arrayList.get(i10) != null) {
-                ((g) arrayList.get(i10)).a(this, this.b, this.a);
+            if (arrayList.get(i9) != null) {
+                ((g) arrayList.get(i9)).a(this, this.b, this.a);
             }
-            i10++;
+            i9++;
         }
         for (int size = arrayList.size() - 1; size >= 0; size--) {
             if (arrayList.get(size) == null) {

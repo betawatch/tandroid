@@ -5,9 +5,9 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
-import l8.f0;
+import k8.g0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class bg extends bm {
     final /* synthetic */ StandardIntegrityManager.StandardIntegrityTokenRequest a;
@@ -17,7 +17,7 @@ final class bg extends bm {
     final /* synthetic */ bn e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bg(bn bnVar, TaskCompletionSource taskCompletionSource, int i10, StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest, long j10, long j11, TaskCompletionSource taskCompletionSource2) {
+    public bg(bn bnVar, TaskCompletionSource taskCompletionSource, int i9, StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest, long j10, long j11, TaskCompletionSource taskCompletionSource2) {
         super(bnVar, taskCompletionSource);
         this.a = standardIntegrityTokenRequest;
         this.b = j10;
@@ -26,9 +26,9 @@ final class bg extends bm {
         this.e = bnVar;
     }
 
-    @Override // l8.g0
+    @Override // k8.h0
     public final void b() {
-        f0 f0Var;
+        g0 g0Var;
         if (bn.l(this.e)) {
             a(new StandardIntegrityException(-2, null));
             return;
@@ -39,24 +39,24 @@ final class bg extends bm {
         }
         try {
             bn bnVar = this.e;
-            l8.v vVar = (l8.v) bnVar.a.n;
+            k8.w wVar = (k8.w) bnVar.a.n;
             Bundle a2 = bn.a(bnVar, this.a, this.b, this.c, 0);
             bk bkVar = new bk(this.e, this.d, this.b);
-            l8.t tVar = (l8.t) vVar;
-            tVar.getClass();
+            k8.u uVar = (k8.u) wVar;
+            uVar.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(tVar.c);
-            int i10 = l8.r.a;
+            obtain.writeInterfaceToken(uVar.c);
+            int i9 = k8.s.a;
             obtain.writeInt(1);
             a2.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(bkVar);
-            tVar.F0(obtain, 3);
-        } catch (RemoteException e9) {
+            uVar.F0(obtain, 3);
+        } catch (RemoteException e10) {
             bn bnVar2 = this.e;
             StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest = this.a;
-            f0Var = bnVar2.b;
-            f0Var.a(e9, "requestExpressIntegrityToken(%s, %s, %s)", standardIntegrityTokenRequest.requestHash(), this.a.verdictOptOut(), Long.valueOf(this.b));
-            this.d.trySetException(new StandardIntegrityException(-100, e9));
+            g0Var = bnVar2.b;
+            g0Var.a(e10, "requestExpressIntegrityToken(%s, %s, %s)", standardIntegrityTokenRequest.requestHash(), this.a.verdictOptOut(), Long.valueOf(this.b));
+            this.d.trySetException(new StandardIntegrityException(-100, e10));
         }
     }
 }

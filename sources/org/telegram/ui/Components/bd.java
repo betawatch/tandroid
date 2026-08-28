@@ -1,50 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import androidx.mediarouter.app.MediaRouteButton;
+import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public abstract class bd extends FrameLayout {
-    public ag.p1 a;
-    public zc b;
-    public boolean c;
+public abstract class bd extends MediaRouteButton {
+    public boolean a;
 
-    public final void a(zc zcVar, FrameLayout.LayoutParams layoutParams) {
-        if (this.b == null) {
-            this.b = zcVar;
-            zcVar.setVisibility(8);
-            addView(zcVar, layoutParams);
+    public final void a() {
+        boolean b10 = b();
+        if (this.a != b10) {
+            this.a = b10;
+            c(b10);
         }
     }
 
-    public final void b(ag.p1 p1Var, FrameLayout.LayoutParams layoutParams) {
-        if (this.a == null) {
-            this.a = p1Var;
-            addView(p1Var, layoutParams);
+    public final boolean b() {
+        Field declaredField;
+        try {
+            declaredField = MediaRouteButton.class.getDeclaredField("mConnectionState");
+            declaredField.setAccessible(true);
+        } catch (Exception unused) {
         }
+        return ((Integer) declaredField.get(this)).intValue() > 0;
     }
 
-    public zc getEditView() {
-        return this.b;
+    public abstract void c(boolean z10);
+
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        a();
     }
 
-    public View getReplyView() {
-        return this.a;
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        a();
     }
 
-    public void setEditMode(boolean z10) {
-        this.c = z10;
-        this.a.setVisibility(z10 ? 8 : 0);
-        this.b.setVisibility(z10 ? 0 : 8);
+    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        a();
     }
 
-    public void setEditSuggestionMode(boolean z10) {
-        setEditMode(z10);
-        if (z10) {
-            this.a.setVisibility(0);
-        }
-        this.b.a[0].setOnlyIconMode(z10);
-        this.b.a[1].setOnlyIconMode(z10);
+    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
+    public final void onDraw(Canvas canvas) {
+        a();
+    }
+
+    @Override // android.view.View
+    public void setBackground(Drawable drawable) {
     }
 }

@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.upstream;
 
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class o extends InputStream {
     public final m a;
@@ -48,10 +48,10 @@ public final class o extends InputStream {
     }
 
     @Override // java.io.InputStream
-    public final int read(byte[] bArr, int i10, int i11) {
+    public final int read(byte[] bArr, int i9, int i10) {
         d5.a.i(!this.e);
         a();
-        int read = this.a.read(bArr, i10, i11);
+        int read = this.a.read(bArr, i9, i10);
         if (read == -1) {
             return -1;
         }

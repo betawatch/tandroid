@@ -1,86 +1,53 @@
 package y8;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import h7.r8;
-import w7.f;
+import g7.t8;
+import j$.util.DesugarCollections;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a extends z5.a {
-    public static final Parcelable.Creator<a> CREATOR = new f(21);
-    public int a;
-    public final boolean b;
-    public final String c;
-    public final String d;
-    public final byte[] e;
-    public final boolean f;
+public final class a {
+    public final String a;
+    public final Set b;
+    public final Set c;
+    public final int d;
+    public final int e;
+    public final d f;
+    public final Set g;
 
-    public a() {
-        this.a = 0;
-        this.b = true;
-        this.c = null;
-        this.d = null;
-        this.e = null;
-        this.f = false;
+    public a(String str, Set set, Set set2, int i9, int i10, d dVar, Set set3) {
+        this.a = str;
+        this.b = DesugarCollections.unmodifiableSet(set);
+        this.c = DesugarCollections.unmodifiableSet(set2);
+        this.d = i9;
+        this.e = i10;
+        this.f = dVar;
+        this.g = DesugarCollections.unmodifiableSet(set3);
+    }
+
+    public static tg.b a(Class cls) {
+        return new tg.b(cls, new Class[0]);
+    }
+
+    public static tg.b b(r rVar) {
+        return new tg.b(rVar, new r[0]);
+    }
+
+    public static a c(Object obj, Class cls, Class... clsArr) {
+        HashSet hashSet = new HashSet();
+        HashSet hashSet2 = new HashSet();
+        HashSet hashSet3 = new HashSet();
+        hashSet.add(r.a(cls));
+        for (Class cls2 : clsArr) {
+            t8.a(cls2, "Null interface");
+            hashSet.add(r.a(cls2));
+        }
+        return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new t0.c(obj, 7), hashSet3);
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("MetadataImpl { { eventStatus: '");
-        sb2.append(this.a);
-        sb2.append("' } { uploadable: '");
-        sb2.append(this.b);
-        sb2.append("' } ");
-        String str = this.c;
-        if (str != null) {
-            sb2.append("{ completionToken: '");
-            sb2.append(str);
-            sb2.append("' } ");
-        }
-        String str2 = this.d;
-        if (str2 != null) {
-            sb2.append("{ accountName: '");
-            sb2.append(str2);
-            sb2.append("' } ");
-        }
-        byte[] bArr = this.e;
-        if (bArr != null) {
-            sb2.append("{ ssbContext: [ ");
-            for (byte b10 : bArr) {
-                sb2.append("0x");
-                sb2.append(Integer.toHexString(b10));
-                sb2.append(" ");
-            }
-            sb2.append("] } ");
-        }
-        sb2.append("{ contextOnly: '");
-        sb2.append(this.f);
-        sb2.append("' } }");
-        return sb2.toString();
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        int i11 = this.a;
-        r8.s(parcel, 1, 4);
-        parcel.writeInt(i11);
-        r8.s(parcel, 2, 4);
-        parcel.writeInt(this.b ? 1 : 0);
-        r8.l(parcel, 3, this.c);
-        r8.l(parcel, 4, this.d);
-        r8.c(parcel, 5, this.e);
-        r8.s(parcel, 6, 4);
-        parcel.writeInt(this.f ? 1 : 0);
-        r8.r(parcel, q6);
-    }
-
-    public a(int i10, boolean z10, String str, String str2, byte[] bArr, boolean z11) {
-        this.a = i10;
-        this.b = z10;
-        this.c = str;
-        this.d = str2;
-        this.e = bArr;
-        this.f = z11;
+        return "Component<" + Arrays.toString(this.b.toArray()) + ">{" + this.d + ", type=" + this.e + ", deps=" + Arrays.toString(this.c.toArray()) + "}";
     }
 }

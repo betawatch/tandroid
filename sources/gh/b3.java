@@ -1,60 +1,82 @@
 package gh;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.lt;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.oc;
+import org.telegram.ui.dy;
+import org.telegram.ui.q21;
+import org.telegram.ui.y21;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b3 extends lt {
-    public final org.telegram.ui.Components.b5 c;
-    public int d;
-    public final org.telegram.ui.Components.i6 e;
-    public final /* synthetic */ d4 f;
+public final /* synthetic */ class b3 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b3(d4 d4Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        this.f = d4Var;
-        this.c = new org.telegram.ui.Components.b5(this);
-        org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(false, true, true, false);
-        this.e = i6Var;
-        i6Var.k(0.2f, 160L, er.h);
-        i6Var.t(AndroidUtilities.dp(15.33f));
-        i6Var.setCallback(this);
-        i6Var.b = 5;
+    public /* synthetic */ b3(k5 k5Var, ve.d dVar, org.telegram.ui.ActionBar.c2 c2Var, TLObject tLObject, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLRPC.TL_error tL_error, long j10, CharSequence charSequence) {
+        this.f = k5Var;
+        this.h = dVar;
+        this.b = c2Var;
+        this.c = tLObject;
+        this.n = tL_starGiftUnique;
+        this.e = tL_error;
+        this.d = j10;
+        this.r = charSequence;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int a2 = this.c.a(org.telegram.ui.ActionBar.g6.v0(this.d < 0 ? org.telegram.ui.ActionBar.g6.p7 : org.telegram.ui.ActionBar.g6.P5, this.f.f), false);
-        org.telegram.ui.Components.i6 i6Var = this.e;
-        i6Var.r(a2);
-        i6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-        i6Var.draw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.nt, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        super.onTextChanged(charSequence, i10, i11, i12);
-        org.telegram.ui.Components.i6 i6Var = this.e;
-        if (i6Var != null) {
-            this.d = 12 - charSequence.length();
-            i6Var.b();
-            String str = "";
-            if (this.d <= 4) {
-                str = "" + this.d;
-            }
-            i6Var.q(str, true, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                k5.A0((k5) this.f, (ve.d) this.h, (org.telegram.ui.ActionBar.c2) this.b, this.c, (TL_stars.TL_starGiftUnique) this.n, (TLRPC.TL_error) this.e, this.d, (CharSequence) this.r);
+                break;
+            case 1:
+                dy.l0((dy) this.f, (org.telegram.ui.ActionBar.c2) this.b, this.c, (TLRPC.User) this.h, (TLRPC.Chat) this.n, this.d, (TLRPC.TL_error) this.e, (TLRPC.TL_messages_checkHistoryImportPeer) this.r);
+                break;
+            default:
+                Context context = (Context) this.f;
+                ih.j0 j0Var = (ih.j0) this.h;
+                byte[] bArr = (byte[]) this.b;
+                org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.n;
+                oc ocVar = (oc) this.e;
+                org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.r;
+                TLRPC.TL_channels_sponsoredMessageReportResultChooseOption tL_channels_sponsoredMessageReportResultChooseOption = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) this.c;
+                y21 y21Var = new y21(context, j0Var, this.d, bArr);
+                y21Var.N(tL_channels_sponsoredMessageReportResultChooseOption);
+                y21Var.s = new q21(aVar, ocVar, context, j0Var, dVar);
+                y21Var.show();
+                break;
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.e || super.verifyDrawable(drawable);
+    public /* synthetic */ b3(TLObject tLObject, Context context, ih.j0 j0Var, long j10, byte[] bArr, org.telegram.messenger.video.a aVar, oc ocVar, org.telegram.messenger.video.d dVar) {
+        this.c = tLObject;
+        this.f = context;
+        this.h = j0Var;
+        this.d = j10;
+        this.b = bArr;
+        this.n = aVar;
+        this.e = ocVar;
+        this.r = dVar;
+    }
+
+    public /* synthetic */ b3(dy dyVar, org.telegram.ui.ActionBar.c2 c2Var, TLObject tLObject, TLRPC.User user, TLRPC.Chat chat, long j10, TLRPC.TL_error tL_error, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
+        this.f = dyVar;
+        this.b = c2Var;
+        this.c = tLObject;
+        this.h = user;
+        this.n = chat;
+        this.d = j10;
+        this.e = tL_error;
+        this.r = tL_messages_checkHistoryImportPeer;
     }
 }

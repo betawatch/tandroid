@@ -1,32 +1,23 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.mc1;
+import android.graphics.Bitmap;
+import org.telegram.ui.oc1;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qo implements mc1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ro b;
+public final class qo extends oc1 {
+    public final /* synthetic */ int g2;
 
-    public /* synthetic */ qo(ro roVar, int i10) {
-        this.a = i10;
-        this.b = roVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ qo(Object obj, Bitmap bitmap, boolean z10, int i9) {
+        super(obj, bitmap, z10);
+        this.g2 = i9;
     }
 
-    @Override // org.telegram.ui.mc1
-    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
-        switch (this.a) {
-            case 0:
-                ap apVar = this.b.a;
-                apVar.U.dismissInternal();
-                apVar.dismiss();
-                break;
-            default:
-                ap apVar2 = this.b.a;
-                apVar2.U.dismissInternal();
-                apVar2.dismiss();
-                break;
+    @Override // org.telegram.ui.oc1
+    public final boolean U0() {
+        switch (this.g2) {
         }
+        return true;
     }
 }

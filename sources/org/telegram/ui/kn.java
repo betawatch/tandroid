@@ -1,47 +1,29 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kn implements Runnable {
+public final /* synthetic */ class kn implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pn b;
+    public final /* synthetic */ org.telegram.ui.Components.jb0 b;
 
-    public /* synthetic */ kn(pn pnVar, int i10) {
-        this.a = i10;
-        this.b = pnVar;
+    public /* synthetic */ kn(org.telegram.ui.Components.jb0 jb0Var, int i9) {
+        this.a = i9;
+        this.b = jb0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.ActionBar.b5 b5Var;
-        org.telegram.ui.ActionBar.b5 b5Var2;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                SparseIntArray sparseIntArray = new SparseIntArray();
-                pn pnVar = this.b;
-                pnVar.e = sparseIntArray;
-                rn rnVar = pnVar.R;
-                org.telegram.ui.ActionBar.d5 d5Var = (org.telegram.ui.ActionBar.d5) rnVar.getThemedDrawable("drawableMsgOut");
-                pnVar.E = d5Var;
-                b5Var = ((org.telegram.ui.ActionBar.n2) rnVar).parentLayout;
-                d5Var.H = b5Var.getMessageDrawableOutStart();
-                org.telegram.ui.ActionBar.d5 d5Var2 = (org.telegram.ui.ActionBar.d5) rnVar.getThemedDrawable("drawableMsgOutMedia");
-                pnVar.F = d5Var2;
-                b5Var2 = ((org.telegram.ui.ActionBar.n2) rnVar).parentLayout;
-                d5Var2.H = b5Var2.getMessageDrawableOutMediaStart();
-                pnVar.E.I = 0.0f;
-                pnVar.F.I = 0.0f;
-                rnVar.uc();
-                pnVar.k(0.0f);
+                this.b.s(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                this.b.s(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                pn pnVar2 = this.b;
-                pnVar2.E.H = null;
-                pnVar2.F.H = null;
-                pnVar2.e = null;
-                pnVar2.k(1.0f);
+                this.b.s(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

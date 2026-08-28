@@ -1,26 +1,52 @@
 package gh;
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.mc;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class m1 extends m6 {
-    public final /* synthetic */ k2 t0;
+public final /* synthetic */ class m1 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ k5 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TwoStepVerificationActivity d;
+    public final /* synthetic */ TLObject e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m1(k2 k2Var, Context context, int i10, TL_stars.StarGift starGift, long j10, a1 a1Var, boolean z10, boolean z11) {
-        super(context, i10, starGift, null, j10, a1Var, z10, z11);
-        this.t0 = k2Var;
+    public /* synthetic */ m1(k5 k5Var, TLRPC.TL_error tL_error, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity) {
+        this.b = k5Var;
+        this.c = tL_error;
+        this.e = tLObject;
+        this.d = twoStepVerificationActivity;
     }
 
-    @Override // gh.m6
-    public final mc X() {
-        org.telegram.ui.ActionBar.c6 c6Var;
-        k2 k2Var = this.t0;
-        org.telegram.ui.ActionBar.c3 c3Var = k2Var.container;
-        c6Var = k2Var.resourcesProvider;
-        return new mc(c3Var, c6Var);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                k5 k5Var = this.b;
+                k5Var.getClass();
+                if (this.c == null) {
+                    TL_account.Password password = (TL_account.Password) this.e;
+                    TwoStepVerificationActivity twoStepVerificationActivity = this.d;
+                    twoStepVerificationActivity.E = password;
+                    TwoStepVerificationActivity.l0(password);
+                    k5Var.M1(twoStepVerificationActivity.k0(), twoStepVerificationActivity);
+                    break;
+                }
+                break;
+            default:
+                TwoStepVerificationActivity twoStepVerificationActivity2 = this.d;
+                k5.W0(this.b, this.c, this.e, twoStepVerificationActivity2);
+                break;
+        }
+    }
+
+    public /* synthetic */ m1(k5 k5Var, TLRPC.TL_error tL_error, TwoStepVerificationActivity twoStepVerificationActivity, TLObject tLObject) {
+        this.b = k5Var;
+        this.c = tL_error;
+        this.d = twoStepVerificationActivity;
+        this.e = tLObject;
     }
 }

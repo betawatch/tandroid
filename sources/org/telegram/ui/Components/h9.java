@@ -1,40 +1,63 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Bitmap;
+import android.graphics.Rect;
+import android.graphics.drawable.GradientDrawable;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h9 implements l9 {
-    public final /* synthetic */ m9 a;
-    public final /* synthetic */ h7.w5[] b;
+public final /* synthetic */ class h9 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ n9 b;
     public final /* synthetic */ Runnable[] c;
-    public final /* synthetic */ m50[] d;
+    public final /* synthetic */ h50 d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ g7.b6[] f;
 
-    public /* synthetic */ h9(m9 m9Var, h7.w5[] w5VarArr, Runnable[] runnableArr, m50[] m50VarArr) {
-        this.a = m9Var;
-        this.b = w5VarArr;
+    public /* synthetic */ h9(n9 n9Var, h50 h50Var, Runnable[] runnableArr, int i9, g7.b6[] b6VarArr) {
+        this.b = n9Var;
+        this.d = h50Var;
         this.c = runnableArr;
-        this.d = m50VarArr;
+        this.e = i9;
+        this.f = b6VarArr;
     }
 
-    @Override // org.telegram.ui.Components.l9
-    public final void dispose() {
-        m9 m9Var = this.a;
-        h7.w5[] w5VarArr = this.b;
-        Runnable[] runnableArr = this.c;
-        m50[] m50VarArr = this.d;
-        w5VarArr[0] = null;
-        if (m9Var.e.contains(runnableArr)) {
-            Utilities.globalQueue.cancelRunnables(runnableArr);
-            m9Var.e.remove(runnableArr);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                n9 n9Var = this.b;
+                h50 h50Var = this.d;
+                Runnable[] runnableArr = this.c;
+                int i9 = this.e;
+                g7.b6[] b6VarArr = this.f;
+                try {
+                    GradientDrawable.Orientation orientation = n9Var.getOrientation();
+                    int[] iArr = n9Var.a;
+                    int i10 = h50Var.a;
+                    int i11 = h50Var.b;
+                    Rect e10 = n9.e(orientation, i10, i11);
+                    Bitmap createBitmap = Bitmap.createBitmap(i10, i11, Bitmap.Config.ARGB_8888);
+                    Utilities.drawDitheredGradient(createBitmap, iArr, e10.left, e10.top, e10.right, e10.bottom);
+                    AndroidUtilities.runOnUIThread(new ff.k0(n9Var, runnableArr, createBitmap, h50Var, i9, b6VarArr));
+                    return;
+                } catch (Throwable th) {
+                    AndroidUtilities.runOnUIThread(new h9(n9Var, runnableArr, h50Var, i9, b6VarArr));
+                    throw th;
+                }
+            default:
+                n9.a(this.b, this.c, null, this.d, this.e, this.f);
+                return;
         }
-        for (m50 m50Var : m50VarArr) {
-            Bitmap bitmap = (Bitmap) m9Var.b.remove(m50Var);
-            m9Var.c.remove(m50Var);
-            if (bitmap != null) {
-                bitmap.recycle();
-            }
-        }
+    }
+
+    public /* synthetic */ h9(n9 n9Var, Runnable[] runnableArr, h50 h50Var, int i9, g7.b6[] b6VarArr) {
+        this.b = n9Var;
+        this.c = runnableArr;
+        this.d = h50Var;
+        this.e = i9;
+        this.f = b6VarArr;
     }
 }

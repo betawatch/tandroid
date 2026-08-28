@@ -4,16 +4,16 @@ import j$.util.DesugarCollections;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
-import org.telegram.ui.Cells.pa;
+import org.telegram.ui.Cells.j2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class j extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ ae.b A;
-    public static final /* synthetic */ ae.b B;
-    public static final /* synthetic */ ae.b w;
-    public static final /* synthetic */ ae.b x;
-    public static final /* synthetic */ ae.b y;
+    public static final /* synthetic */ zd.b A;
+    public static final /* synthetic */ zd.b B;
+    public static final /* synthetic */ zd.b w;
+    public static final /* synthetic */ zd.b x;
+    public static final /* synthetic */ zd.b y;
     public String e;
     public String f;
     public long h;
@@ -23,7 +23,7 @@ public final class j extends com.googlecode.mp4parser.c {
     public long v;
 
     static {
-        ae.a aVar = new ae.a(j.class, "HandlerBox.java");
+        zd.a aVar = new zd.a(j.class, "HandlerBox.java");
         w = aVar.e(aVar.d("getHandlerType", "com.coremedia.iso.boxes.HandlerBox", "", "", "java.lang.String"));
         x = aVar.e(aVar.d("setName", "com.coremedia.iso.boxes.HandlerBox", "java.lang.String", "name", "void"));
         y = aVar.e(aVar.d("setHandlerType", "com.coremedia.iso.boxes.HandlerBox", "java.lang.String", "handlerType", "void"));
@@ -69,11 +69,11 @@ public final class j extends com.googlecode.mp4parser.c {
             if (!str.endsWith("\u0000")) {
                 this.s = false;
             } else {
-                this.f = com.google.android.recaptcha.internal.a.n(this.f, 1, 0);
+                this.f = e2.c.m(this.f, 1, 0);
                 this.s = true;
             }
-        } catch (UnsupportedEncodingException e9) {
-            throw new Error(e9);
+        } catch (UnsupportedEncodingException e10) {
+            throw new Error(e10);
         }
     }
 
@@ -100,14 +100,14 @@ public final class j extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.t b10 = ae.a.b(B, this, this);
+        com.google.firebase.messaging.t b10 = zd.a.b(B, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("HandlerBox[handlerType=");
-        pa.u(ae.a.b(w, this, this));
+        j2.t(zd.a.b(w, this, this));
         sb2.append(this.e);
         sb2.append(";name=");
-        pa.u(ae.a.b(A, this, this));
-        return a9.p.p(sb2, this.f, "]");
+        j2.t(zd.a.b(A, this, this));
+        return aa.d.r(sb2, this.f, "]");
     }
 }

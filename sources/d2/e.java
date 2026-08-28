@@ -3,7 +3,7 @@ package d2;
 import android.graphics.Color;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class e {
     public final int a;
@@ -16,36 +16,36 @@ public final class e {
     public int h;
     public float[] i;
 
-    public e(int i10, int i11) {
-        this.a = Color.red(i10);
-        this.b = Color.green(i10);
-        this.c = Color.blue(i10);
-        this.d = i10;
-        this.e = i11;
+    public e(int i9, int i10) {
+        this.a = Color.red(i9);
+        this.b = Color.green(i9);
+        this.c = Color.blue(i9);
+        this.d = i9;
+        this.e = i10;
     }
 
     public final void a() {
         if (this.f) {
             return;
         }
-        int i10 = this.d;
-        int g10 = i0.b.g(4.5f, -1, i10);
-        int g11 = i0.b.g(3.0f, -1, i10);
+        int i9 = this.d;
+        int g10 = i0.a.g(4.5f, -1, i9);
+        int g11 = i0.a.g(3.0f, -1, i9);
         if (g10 != -1 && g11 != -1) {
-            this.h = i0.b.k(-1, g10);
-            this.g = i0.b.k(-1, g11);
+            this.h = i0.a.k(-1, g10);
+            this.g = i0.a.k(-1, g11);
             this.f = true;
             return;
         }
-        int g12 = i0.b.g(4.5f, -16777216, i10);
-        int g13 = i0.b.g(3.0f, -16777216, i10);
+        int g12 = i0.a.g(4.5f, -16777216, i9);
+        int g13 = i0.a.g(3.0f, -16777216, i9);
         if (g12 == -1 || g13 == -1) {
-            this.h = g10 != -1 ? i0.b.k(-1, g10) : i0.b.k(-16777216, g12);
-            this.g = g11 != -1 ? i0.b.k(-1, g11) : i0.b.k(-16777216, g13);
+            this.h = g10 != -1 ? i0.a.k(-1, g10) : i0.a.k(-16777216, g12);
+            this.g = g11 != -1 ? i0.a.k(-1, g11) : i0.a.k(-16777216, g13);
             this.f = true;
         } else {
-            this.h = i0.b.k(-16777216, g12);
-            this.g = i0.b.k(-16777216, g13);
+            this.h = i0.a.k(-16777216, g12);
+            this.g = i0.a.k(-16777216, g13);
             this.f = true;
         }
     }
@@ -54,7 +54,7 @@ public final class e {
         if (this.i == null) {
             this.i = new float[3];
         }
-        i0.b.b(this.i, this.a, this.b, this.c);
+        i0.a.b(this.i, this.a, this.b, this.c);
         return this.i;
     }
 

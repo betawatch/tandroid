@@ -1,60 +1,137 @@
 package ch;
 
-import android.content.Context;
-import android.view.View;
-import java.util.HashMap;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.a30;
-import org.telegram.ui.Components.mc;
-import org.telegram.ui.Components.pk0;
-import org.telegram.ui.Components.t10;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.Cells.j2;
+import org.telegram.ui.Cells.t1;
+import org.telegram.ui.Components.z8;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class d implements pk0 {
-    public final /* synthetic */ c6 a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ h c;
+public final class d implements ValueAnimator.AnimatorUpdateListener {
+    public final j a;
+    public final t1 b;
+    public final ImageReceiver c;
+    public final long d;
+    public b e;
+    public b f;
+    public Paint g;
+    public final StaticLayout h;
+    public float i;
+    public float j;
+    public ValueAnimator k;
+    public float l;
+    public boolean m;
+    public ValueAnimator n;
+    public float o;
+    public boolean p;
 
-    public d(Context context, h hVar, c6 c6Var) {
-        this.c = hVar;
-        this.a = c6Var;
-        this.b = context;
-    }
-
-    @Override // org.telegram.ui.Components.pk0
-    public final void a(int i10, View view) {
-        TLRPC.TL_help_country tL_help_country;
-        h hVar = this.c;
-        t10 t10Var = hVar.d0;
-        HashMap hashMap = hVar.f0;
-        if (i10 == 0 || (tL_help_country = (TLRPC.TL_help_country) hVar.Z.G(i10 - 1).G) == null) {
-            return;
-        }
-        boolean z10 = false;
-        if (hashMap.containsKey(tL_help_country.iso2)) {
-            t10Var.c((a30) hashMap.remove(tL_help_country.iso2));
-        } else {
-            int size = hashMap.size();
-            int i11 = hVar.i0;
-            if (size >= i11) {
-                new mc(hVar.j0, this.a).Q(R.raw.info, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.PollV2YouCanAddXCountriesOnly, Integer.valueOf(i11)))).j();
+    public d(j jVar, long j10) {
+        ImageReceiver imageReceiver;
+        String str;
+        String str2;
+        z8 z8Var = new z8((b6) null);
+        int i9 = UserConfig.selectedAccount;
+        this.l = 1.0f;
+        this.m = true;
+        this.o = 0.0f;
+        this.p = false;
+        ImageReceiver imageReceiver2 = new ImageReceiver(jVar.a);
+        this.c = imageReceiver2;
+        this.a = jVar;
+        t1 t1Var = jVar.y;
+        this.b = t1Var;
+        this.d = j10;
+        z8Var.p = 1.0f;
+        if (DialogObject.isUserDialog(j10)) {
+            TLRPC.User user = MessagesController.getInstance(i9).getUser(Long.valueOf(j10));
+            z8Var.m(i9, user);
+            if (UserObject.isUserSelf(user)) {
+                str2 = LocaleController.getString(R.string.SavedMessages);
+                z8Var.g(1);
+                z8Var.p = 0.75f;
+                imageReceiver = imageReceiver2;
+                imageReceiver.setImage(null, null, null, null, z8Var, 0L, null, user, 0);
+                imageReceiver.setRoundRadius(AndroidUtilities.dp(i.a / 2.0f));
+                imageReceiver.setImageCoords(0.0f, 0.0f, AndroidUtilities.dp(r2), AndroidUtilities.dp(r2));
+                Paint M2 = t1Var.M2("paintChatActionText");
+                if (str2 != null || M2 == null) {
+                }
+                int dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp(48);
+                TextPaint textPaint = new TextPaint(M2);
+                this.h = new StaticLayout(TextUtils.ellipsize(str2, textPaint, dp, TextUtils.TruncateAt.END), textPaint, (int) Math.ceil(textPaint.measureText(r5, 0, r5.length())), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 return;
             }
-            a30 a30Var = new a30(this.b, tL_help_country);
-            a30Var.setOnClickListener(new a(hVar, 4));
-            t10Var.a(a30Var);
-            hashMap.put(tL_help_country.iso2, a30Var);
-            z10 = true;
+            imageReceiver = imageReceiver2;
+            str = user != null ? ContactsController.formatName(user.first_name, user.last_name) : "";
+            imageReceiver.setForUserOrChat(user, z8Var);
+        } else {
+            imageReceiver = imageReceiver2;
+            TLRPC.Chat chat = MessagesController.getInstance(i9).getChat(Long.valueOf(-j10));
+            str = chat != null ? chat.title : "";
+            z8Var.k(i9, chat);
+            imageReceiver.setForUserOrChat(chat, z8Var);
         }
-        if (view instanceof gg.c) {
-            ((gg.c) view).c(z10, true);
+        str2 = str;
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(i.a / 2.0f));
+        imageReceiver.setImageCoords(0.0f, 0.0f, AndroidUtilities.dp(r2), AndroidUtilities.dp(r2));
+        Paint M22 = t1Var.M2("paintChatActionText");
+        if (str2 != null) {
         }
-        hVar.Z.N(true);
-        hVar.a0.c(hashMap.size(), true);
+    }
+
+    public static float b(float f10, float f11, float f12, float f13) {
+        float f14 = f11 / 2.0f;
+        float f15 = f10 - f14;
+        float f16 = f10 + f14;
+        float f17 = f13 - f12;
+        if (f11 <= f17) {
+            return f15 < f12 ? f12 + f14 : f16 > f13 ? f13 - f14 : f10;
+        }
+        float f18 = (f12 + f13) / 2.0f;
+        float f19 = f11 - f17;
+        float max = Math.max(0.0f, f12 - f15);
+        float max2 = Math.max(0.0f, f16 - f13);
+        float f20 = max + max2;
+        return f20 < 0.1f ? f18 : j2.b(f19, 2.0f, (max - max2) / f20, f18);
+    }
+
+    public final void a(Canvas canvas, float f10, float f11, float f12, float f13) {
+        canvas.save();
+        canvas.translate(f10 - f12, f11 - f12);
+        int i9 = i.a;
+        float f14 = 21;
+        canvas.scale(f12 / AndroidUtilities.dp(f14), f12 / AndroidUtilities.dp(f14));
+        float f15 = ((this.l * 0.25f) + 0.75f) * f13;
+        ImageReceiver imageReceiver = this.c;
+        imageReceiver.setAlpha(f15);
+        imageReceiver.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        if (valueAnimator == this.n) {
+            this.o = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        } else if (valueAnimator == this.k) {
+            this.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        }
+        this.a.invalidateSelf();
     }
 }

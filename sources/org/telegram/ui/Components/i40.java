@@ -1,23 +1,15 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.opengl.GLES20;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public interface i40 {
-    void E(float f10);
+public final class i40 extends k40 {
+    public final int g;
 
-    void J(boolean z10, boolean z11);
-
-    void P();
-
-    void Q(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize);
-
-    boolean e();
-
-    org.telegram.ui.cu0 getCloseIntoObject();
-
-    String getInitialSearchString();
-
-    boolean v();
+    public i40() {
+        super(R.raw.round_blur_stage_1_frag);
+        this.g = GLES20.glGetUniformLocation(this.a, "texOffset");
+    }
 }

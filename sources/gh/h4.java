@@ -1,104 +1,102 @@
 package gh;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.b70;
-import org.telegram.ui.Components.n41;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h4 implements Utilities.Callback5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y5 b;
-    public final /* synthetic */ b70 c;
+public final class h4 extends Drawable {
+    public Drawable g;
+    public int h;
+    public int i;
+    public final Paint b = new Paint(1);
+    public final Shader[] c = new Shader[2];
+    public final Matrix d = new Matrix();
+    public final org.telegram.ui.Components.y5 e = new org.telegram.ui.Components.y5(1.0f, new fh.o1(this, 14), 0, 420, gr.h);
+    public final RectF f = new RectF();
+    public final int a = 1;
 
-    public /* synthetic */ h4(y5 y5Var, b70 b70Var, int i10) {
-        this.a = i10;
-        this.b = y5Var;
-        this.c = b70Var;
+    public final void a(int i9, int i10) {
+        if (this.h == i9 && this.i == i10) {
+            return;
+        }
+        Shader[] shaderArr = this.c;
+        shaderArr[0] = shaderArr[1];
+        if (this.a == 0) {
+            this.h = i9;
+            this.i = i10;
+            shaderArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i9, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        } else {
+            float dp = AndroidUtilities.dp(340.0f);
+            this.h = i9;
+            this.i = i10;
+            shaderArr[1] = new RadialGradient(0.0f, 0.0f, dp, new int[]{i9, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        }
+        this.e.d(0.0f, true);
+        invalidateSelf();
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        int i10 = this.a;
-        n41 n41Var = (n41) obj;
-        y5 y5Var = this.b;
-        y5Var.getClass();
-        switch (i10) {
-            case 0:
-                long j10 = ((TL_stars.starGiftAttributePattern) n41Var.G).document.id;
-                i5 i5Var = y5Var.d;
-                HashSet hashSet = i5Var.l;
-                if (hashSet.contains(Long.valueOf(j10))) {
-                    hashSet.remove(Long.valueOf(j10));
-                } else if (hashSet.isEmpty()) {
-                    ArrayList arrayList = i5Var.h;
-                    int size = arrayList.size();
-                    int i11 = 0;
-                    while (i11 < size) {
-                        Object obj6 = arrayList.get(i11);
-                        i11++;
-                        long j11 = ((TL_stars.starGiftAttributePattern) obj6).document.id;
-                        if (j11 != j10) {
-                            hashSet.add(Long.valueOf(j11));
-                        }
-                    }
-                } else {
-                    hashSet.add(Long.valueOf(j10));
-                }
-                i5Var.h();
-                this.c.u();
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        RectF rectF = this.f;
+        rectF.set(bounds);
+        rectF.right = rectF.width() + rectF.left;
+        int i9 = 0;
+        float d = this.e.d(1.0f, false);
+        while (true) {
+            Shader[] shaderArr = this.c;
+            if (i9 >= shaderArr.length) {
                 break;
-            case 1:
-                int i12 = ((TL_stars.starGiftAttributeBackdrop) n41Var.G).backdrop_id;
-                i5 i5Var2 = y5Var.d;
-                HashSet hashSet2 = i5Var2.k;
-                if (hashSet2.contains(Integer.valueOf(i12))) {
-                    hashSet2.remove(Integer.valueOf(i12));
-                } else if (hashSet2.isEmpty()) {
-                    ArrayList arrayList2 = i5Var2.g;
-                    int size2 = arrayList2.size();
-                    int i13 = 0;
-                    while (i13 < size2) {
-                        Object obj7 = arrayList2.get(i13);
-                        i13++;
-                        int i14 = ((TL_stars.starGiftAttributeBackdrop) obj7).backdrop_id;
-                        if (i14 != i12) {
-                            hashSet2.add(Integer.valueOf(i14));
-                        }
+            }
+            if (shaderArr[i9] != null) {
+                float pow = (float) Math.pow(1.0f - Math.abs(i9 - d), 0.25d);
+                if (pow > 0.0f) {
+                    Matrix matrix = this.d;
+                    matrix.reset();
+                    if (this.a == 1) {
+                        matrix.postTranslate(rectF.centerX(), AndroidUtilities.dp(145.0f));
+                    } else {
+                        matrix.postScale(getBounds().width() / 100.0f, 1.0f);
                     }
-                } else {
-                    hashSet2.add(Integer.valueOf(i12));
+                    shaderArr[i9].setLocalMatrix(matrix);
+                    Shader shader = shaderArr[i9];
+                    Paint paint = this.b;
+                    paint.setShader(shader);
+                    paint.setAlpha((int) (pow * 255.0f));
+                    canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
                 }
-                i5Var2.h();
-                this.c.u();
-                break;
-            default:
-                long j12 = ((TL_stars.starGiftAttributeModel) n41Var.G).document.id;
-                i5 i5Var3 = y5Var.d;
-                HashSet hashSet3 = i5Var3.j;
-                if (hashSet3.contains(Long.valueOf(j12))) {
-                    hashSet3.remove(Long.valueOf(j12));
-                } else if (hashSet3.isEmpty()) {
-                    ArrayList arrayList3 = i5Var3.f;
-                    int size3 = arrayList3.size();
-                    int i15 = 0;
-                    while (i15 < size3) {
-                        Object obj8 = arrayList3.get(i15);
-                        i15++;
-                        long j13 = ((TL_stars.starGiftAttributeModel) obj8).document.id;
-                        if (j13 != j12) {
-                            hashSet3.add(Long.valueOf(j13));
-                        }
-                    }
-                } else {
-                    hashSet3.add(Long.valueOf(j12));
-                }
-                i5Var3.h();
-                this.c.u();
-                break;
+            }
+            i9++;
         }
+        if (this.g != null) {
+            canvas.save();
+            canvas.translate(rectF.centerX(), AndroidUtilities.dp(145.0f));
+            y0.a(canvas, 0, this.g, rectF.width(), AndroidUtilities.dp(290.0f), 2.0f, 1.0f);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i9) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

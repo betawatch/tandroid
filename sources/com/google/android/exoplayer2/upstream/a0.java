@@ -2,10 +2,10 @@ package com.google.android.exoplayer2.upstream;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class a0 implements l {
-    public final xe.b a = new xe.b(12, (byte) 0);
+    public final we.b a = new we.b(13, (byte) 0);
     public final String b;
     public final y0 c;
     public final int d;

@@ -35,11 +35,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.rl;
-import org.telegram.ui.Components.bt;
-import org.telegram.ui.ra1;
+import org.telegram.messenger.ll;
+import org.telegram.ui.Components.ct;
+import org.telegram.ui.ta1;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class v4 {
     public static final h4 p = new h4();
@@ -50,36 +50,36 @@ public final class v4 {
     public Menu e;
     public final int i;
     public Runnable j;
-    public bt k;
-    public final c6 n;
-    public final jg.a o;
+    public ct k;
+    public final b6 n;
+    public final ig.a o;
     public final Rect c = new Rect();
     public final Rect d = new Rect();
     public ArrayList f = new ArrayList();
     public MenuItem.OnMenuItemClickListener g = p;
     public boolean h = true;
     public final i4 l = new i4(this);
-    public final k9.a m = new k9.a(7);
+    public final j9.a m = new j9.a(9);
 
-    public v4(Context context, View view, int i10, c6 c6Var, jg.a aVar) {
+    public v4(Context context, View view, int i9, b6 b6Var, ig.a aVar) {
         this.a = view;
-        this.i = i10;
+        this.i = i9;
         this.o = aVar;
-        this.n = c6Var;
+        this.n = b6Var;
         this.b = new t4(this, context, view);
     }
 
-    public static AnimatorSet a(RelativeLayout relativeLayout, int i10, AnimatorListenerAdapter animatorListenerAdapter) {
+    public static AnimatorSet a(RelativeLayout relativeLayout, int i9, AnimatorListenerAdapter animatorListenerAdapter) {
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(ObjectAnimator.ofFloat(relativeLayout, (Property<RelativeLayout, Float>) View.ALPHA, 1.0f, 0.0f).setDuration(100L));
-        animatorSet.setStartDelay(i10);
+        animatorSet.setStartDelay(i9);
         animatorSet.addListener(animatorListenerAdapter);
         return animatorSet;
     }
 
     public static LinearLayout b(v4 v4Var, Context context, MenuItem menuItem, boolean z10, boolean z11, boolean z12) {
         int v02;
-        c6 c6Var = v4Var.n;
+        b6 b6Var = v4Var.n;
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(-2, -2));
         linearLayout.setOrientation(0);
@@ -95,25 +95,25 @@ public final class v4 {
         textView.setFocusable(false);
         textView.setImportantForAccessibility(2);
         textView.setFocusableInTouchMode(false);
-        int v03 = g6.v0(g6.i6, c6Var);
-        int i10 = v4Var.i;
-        if (i10 == 0) {
-            v02 = g6.v0(g6.j5, c6Var);
+        int v03 = f6.v0(f6.i6, b6Var);
+        int i9 = v4Var.i;
+        if (i9 == 0) {
+            v02 = f6.v0(f6.j5, b6Var);
             textView.setTextColor(v02);
-        } else if (i10 == 2) {
+        } else if (i9 == 2) {
             v02 = -328966;
             textView.setTextColor(-328966);
             v03 = 553648127;
-        } else if (i10 == 1) {
-            v02 = g6.v0(g6.G6, c6Var);
+        } else if (i9 == 1) {
+            v02 = f6.v0(f6.G6, b6Var);
             textView.setTextColor(v02);
         } else {
-            v02 = g6.v0(g6.G6, c6Var);
+            v02 = f6.v0(f6.G6, b6Var);
         }
         if (z11 || z12) {
-            linearLayout.setBackground(g6.a0(v03, z11 ? 12 : 0, z12 ? 12 : 0, z12 ? 12 : 0, z11 ? 12 : 0));
+            linearLayout.setBackground(f6.a0(v03, z11 ? 12 : 0, z12 ? 12 : 0, z12 ? 12 : 0, z11 ? 12 : 0));
         } else {
-            linearLayout.setBackground(g6.f0(v03, 2, -1));
+            linearLayout.setBackground(f6.f0(v03, 2, -1));
         }
         textView.setPaddingRelative(AndroidUtilities.dp(11.0f), 0, 0, 0);
         linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, AndroidUtilities.dp(z10 ? 42.0f : 48.0f)));
@@ -121,9 +121,9 @@ public final class v4 {
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.msg_mini_lock3);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(g6.l1(0.4f, v02), PorterDuff.Mode.SRC_IN));
+        imageView.setColorFilter(new PorterDuffColorFilter(f6.l1(0.4f, v02), PorterDuff.Mode.SRC_IN));
         imageView.setVisibility(8);
-        linearLayout.addView(imageView, h7.z5.p(-2, -1, 0.0f, 0, 12, 0, 0, 0));
+        linearLayout.addView(imageView, g7.e6.p(-2, -1, 0.0f, 0, 12, 0, 0, 0));
         if (menuItem != null) {
             e(linearLayout, menuItem, v4Var.j != null);
         }
@@ -167,7 +167,7 @@ public final class v4 {
     */
     public final void c() {
         List list;
-        int i10;
+        int i9;
         List list2;
         boolean z10;
         ArrayList d = d(this.e);
@@ -176,15 +176,15 @@ public final class v4 {
         t4 t4Var = this.b;
         if (arrayList != null && d.size() == this.f.size()) {
             int size = d.size();
-            int i11 = 0;
+            int i10 = 0;
             while (true) {
-                if (i11 < size) {
-                    MenuItem menuItem = (MenuItem) d.get(i11);
-                    MenuItem menuItem2 = (MenuItem) this.f.get(i11);
+                if (i10 < size) {
+                    MenuItem menuItem = (MenuItem) d.get(i10);
+                    MenuItem menuItem2 = (MenuItem) this.f.get(i10);
                     if (menuItem.getItemId() != menuItem2.getItemId() || !TextUtils.equals(menuItem.getTitle(), menuItem2.getTitle()) || !Objects.equals(menuItem.getIcon(), menuItem2.getIcon()) || menuItem.getGroupId() != menuItem2.getGroupId()) {
                         break;
                     } else {
-                        i11++;
+                        i10++;
                     }
                 }
             }
@@ -207,19 +207,19 @@ public final class v4 {
         t4Var.J = null;
         t4Var.N = false;
         t4Var.n();
-        ra1 ra1Var = t4Var.g;
-        ra1Var.removeAllViews();
-        ra1Var.setPaddingRelative(0, 0, 0, 0);
+        ta1 ta1Var = t4Var.g;
+        ta1Var.removeAllViews();
+        ta1Var.setPaddingRelative(0, 0, 0, 0);
         s4 s4Var = t4Var.h;
         ArrayAdapter arrayAdapter = (ArrayAdapter) s4Var.getAdapter();
         arrayAdapter.clear();
         s4Var.setAdapter((ListAdapter) arrayAdapter);
         t4Var.f.removeAllViews();
         t4Var.b.getWindowVisibleDisplayFrame(rect);
-        int min = Math.min(AndroidUtilities.dp(400.0f), rl.z(16.0f, 2, rect.width()));
+        int min = Math.min(AndroidUtilities.dp(400.0f), ll.A(16.0f, 2, rect.width()));
         LinkedList linkedList = new LinkedList(d);
         Iterator it = linkedList.iterator();
-        int i12 = min;
+        int i11 = min;
         boolean z12 = true;
         while (true) {
             boolean hasNext = it.hasNext();
@@ -232,50 +232,50 @@ public final class v4 {
             boolean hasNext2 = it.hasNext();
             boolean z13 = !hasNext2;
             if (menuItem3 == null || v4Var.j == null || !list3.contains(Integer.valueOf(menuItem3.getItemId()))) {
-                int i13 = i12;
+                int i12 = i11;
                 list = list3;
                 LinearLayout b10 = b(v4Var, t4Var.a, menuItem3, false, z12, z13);
                 b10.setGravity(17);
-                int i14 = min;
+                int i13 = min;
                 b10.setPaddingRelative((int) ((z12 ? 1.5d : 1.0d) * b10.getPaddingStart()), b10.getPaddingTop(), (int) (b10.getPaddingEnd() * (hasNext2 ? 1.0d : 1.5d)), b10.getPaddingBottom());
                 b10.measure(0, 0);
-                min = i14;
+                min = i13;
                 int min2 = Math.min(b10.getMeasuredWidth(), min);
-                boolean z14 = min2 <= i13 - size2.getWidth();
-                boolean z15 = !hasNext2 && min2 <= i13;
+                boolean z14 = min2 <= i12 - size2.getWidth();
+                boolean z15 = !hasNext2 && min2 <= i12;
                 if (!z14 && !z15) {
                     break;
                 }
                 b10.setTag(menuItem3);
                 b10.setOnClickListener(t4Var.L);
-                ra1Var.addView(b10);
+                ta1Var.addView(b10);
                 ViewGroup.LayoutParams layoutParams = b10.getLayoutParams();
                 layoutParams.width = min2;
                 b10.setLayoutParams(layoutParams);
-                i12 = i13 - min2;
+                i11 = i12 - min2;
                 it.remove();
                 z12 = false;
             }
         }
         if (linkedList.isEmpty()) {
-            i10 = 0;
+            i9 = 0;
         } else {
-            i10 = 0;
-            ra1Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
+            i9 = 0;
+            ta1Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
         }
-        ra1Var.measure(i10, i10);
-        t4Var.J = new Size(ra1Var.getMeasuredWidth(), ra1Var.getMeasuredHeight());
+        ta1Var.measure(i9, i9);
+        t4Var.J = new Size(ta1Var.getMeasuredWidth(), ta1Var.getMeasuredHeight());
         if (!linkedList.isEmpty()) {
             ArrayAdapter arrayAdapter2 = (ArrayAdapter) s4Var.getAdapter();
             arrayAdapter2.clear();
             if (v4Var.j != null) {
-                Collections.sort(linkedList, new k9.a(8));
+                Collections.sort(linkedList, new j9.a(10));
             }
             int size3 = linkedList.size();
             boolean premiumFeaturesBlocked = MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked();
-            int i15 = 0;
-            while (i15 < size3) {
-                MenuItem menuItem4 = (MenuItem) linkedList.get(i15);
+            int i14 = 0;
+            while (i14 < size3) {
+                MenuItem menuItem4 = (MenuItem) linkedList.get(i14);
                 if (v4Var.j == null) {
                     list2 = list;
                 } else {
@@ -285,14 +285,14 @@ public final class v4 {
                         if (!z10) {
                             arrayAdapter2.add(menuItem4);
                         }
-                        i15++;
+                        i14++;
                         list = list2;
                     }
                 }
                 z10 = true;
                 if (!z10) {
                 }
-                i15++;
+                i14++;
                 list = list2;
             }
             s4Var.setAdapter((ListAdapter) arrayAdapter2);
@@ -302,16 +302,16 @@ public final class v4 {
                 s4Var.setY(size2.getHeight());
             }
             int count = s4Var.getAdapter().getCount();
-            int i16 = 0;
-            for (int i17 = 0; i17 < count; i17++) {
-                MenuItem menuItem5 = (MenuItem) s4Var.getAdapter().getItem(i17);
+            int i15 = 0;
+            for (int i16 = 0; i16 < count; i16++) {
+                MenuItem menuItem5 = (MenuItem) s4Var.getAdapter().getItem(i16);
                 com.google.firebase.messaging.o oVar = t4Var.q;
                 LinearLayout linearLayout = (LinearLayout) oVar.d;
                 e(linearLayout, menuItem5, ((t4) oVar.e).Q.j != null);
                 linearLayout.measure(0, 0);
-                i16 = Math.max(linearLayout.getMeasuredWidth(), i16);
+                i15 = Math.max(linearLayout.getMeasuredWidth(), i15);
             }
-            Size size4 = new Size(Math.max(i16, size2.getWidth()), t4Var.c(4));
+            Size size4 = new Size(Math.max(i15, size2.getWidth()), t4Var.c(4));
             t4Var.I = size4;
             t4.m(s4Var, size4);
         }
@@ -345,15 +345,15 @@ public final class v4 {
     }
 
     public final ArrayList d(Menu menu) {
-        bt btVar;
+        ct ctVar;
         ArrayList arrayList = new ArrayList();
-        for (int i10 = 0; menu != null && i10 < menu.size(); i10++) {
-            MenuItem item = menu.getItem(i10);
+        for (int i9 = 0; menu != null && i9 < menu.size(); i9++) {
+            MenuItem item = menu.getItem(i9);
             if (item.isVisible() && item.isEnabled()) {
                 SubMenu subMenu = item.getSubMenu();
                 if (subMenu != null) {
                     arrayList.addAll(d(subMenu));
-                } else if ((item.getItemId() != R.id.menu_quote || (btVar = this.k) == null || ((Boolean) btVar.run()).booleanValue()) && item.getItemId() != 16908353 && item.getItemId() != 16909808 && (item.getItemId() != R.id.menu_regular || this.j == null)) {
+                } else if ((item.getItemId() != R.id.menu_quote || (ctVar = this.k) == null || ((Boolean) ctVar.run()).booleanValue()) && item.getItemId() != 16908353 && item.getItemId() != 16909808 && (item.getItemId() != R.id.menu_regular || this.j == null)) {
                     arrayList.add(item);
                 }
             }

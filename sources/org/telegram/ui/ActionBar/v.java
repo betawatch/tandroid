@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Parcelable;
 import com.google.firebase.iid.FirebaseInstanceIdReceiver;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class v implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -31,11 +31,11 @@ public final class v implements Runnable {
                     return;
                 }
                 actionBarLayout.e = null;
-                n2 n2Var = (n2) this.c;
-                if (n2Var != null) {
-                    n2Var.onTransitionAnimationStart(false, false);
+                o2 o2Var = (o2) this.c;
+                if (o2Var != null) {
+                    o2Var.onTransitionAnimationStart(false, false);
                 }
-                ((n2) this.d).onTransitionAnimationStart(true, false);
+                ((o2) this.d).onTransitionAnimationStart(true, false);
                 actionBarLayout.d0(true, true, this.b);
                 return;
             default:
@@ -58,10 +58,10 @@ public final class v implements Runnable {
         }
     }
 
-    public v(ActionBarLayout actionBarLayout, n2 n2Var, n2 n2Var2, boolean z10) {
+    public v(ActionBarLayout actionBarLayout, o2 o2Var, o2 o2Var2, boolean z10) {
         this.e = actionBarLayout;
-        this.c = n2Var;
-        this.d = n2Var2;
+        this.c = o2Var;
+        this.d = o2Var2;
         this.b = z10;
     }
 }

@@ -2,11 +2,11 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class a4 extends fc0 {
-    @Override // org.telegram.ui.Components.fc0
-    public final CharSequence d(int i10) {
-        return LocaleController.formatPluralString("Hours", i10, new Object[0]);
+public final class a4 extends bc0 {
+    @Override // org.telegram.ui.Components.bc0
+    public final CharSequence d(int i9) {
+        return LocaleController.formatPluralString("Hours", i9, new Object[0]);
     }
 }

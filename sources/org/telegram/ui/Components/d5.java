@@ -16,15 +16,15 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d5 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ g5 b;
     public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ d5(g5 g5Var, ArrayList arrayList, int i10) {
-        this.a = i10;
+    public /* synthetic */ d5(g5 g5Var, ArrayList arrayList, int i9) {
+        this.a = i9;
         this.b = g5Var;
         this.c = arrayList;
     }
@@ -41,8 +41,8 @@ public final /* synthetic */ class d5 implements Runnable {
             case 0:
                 ArrayList arrayList = this.c;
                 g5 g5Var = this.b;
-                int i10 = g5Var.e;
-                MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
+                int i9 = g5Var.e;
+                MessagesStorage messagesStorage = MessagesStorage.getInstance(i9);
                 SQLiteDatabase database = messagesStorage.getDatabase();
                 if (database != null) {
                     try {
@@ -59,8 +59,8 @@ public final /* synthetic */ class d5 implements Runnable {
                                     arrayList2.add(TLdeserialize);
                                     hashSet.remove(Long.valueOf(TLdeserialize.id));
                                 }
-                            } catch (Exception e9) {
-                                FileLog.e(e9);
+                            } catch (Exception e10) {
+                                FileLog.e(e10);
                             }
                             if (byteBufferValue != null) {
                                 byteBufferValue.reuse();
@@ -72,15 +72,15 @@ public final /* synthetic */ class d5 implements Runnable {
                                 ArrayList<Long> arrayList3 = new ArrayList<>(hashSet);
                                 TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
                                 tL_messages_getCustomEmojiDocuments.document_id = arrayList3;
-                                ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.gg(7, g5Var, arrayList3));
+                                ConnectionsManager.getInstance(i9).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.rc(10, g5Var, arrayList3));
                             }
                         } else {
-                            NotificationCenter.getInstance(i10).doOnIdle(new e5(g5Var, arrayList2, hashSet, 0));
+                            NotificationCenter.getInstance(i9).doOnIdle(new e5(g5Var, arrayList2, hashSet, 0));
                         }
                         queryFinalized.dispose();
                         break;
-                    } catch (SQLiteException e10) {
-                        messagesStorage.checkSQLException(e10);
+                    } catch (SQLiteException e11) {
+                        messagesStorage.checkSQLException(e11);
                         return;
                     }
                 }
@@ -89,14 +89,14 @@ public final /* synthetic */ class d5 implements Runnable {
                 ArrayList arrayList4 = this.c;
                 try {
                     SQLitePreparedStatement executeFast = MessagesStorage.getInstance(this.b.e).getDatabase().executeFast("REPLACE INTO animated_emoji VALUES(?, ?)");
-                    for (int i11 = 0; i11 < arrayList4.size(); i11++) {
-                        if (arrayList4.get(i11) instanceof TLRPC.Document) {
-                            TLRPC.Document document = (TLRPC.Document) arrayList4.get(i11);
+                    for (int i10 = 0; i10 < arrayList4.size(); i10++) {
+                        if (arrayList4.get(i10) instanceof TLRPC.Document) {
+                            TLRPC.Document document = (TLRPC.Document) arrayList4.get(i10);
                             NativeByteBuffer nativeByteBuffer2 = null;
                             try {
                                 nativeByteBuffer = new NativeByteBuffer(document.getObjectSize());
-                            } catch (Exception e11) {
-                                e = e11;
+                            } catch (Exception e12) {
+                                e = e12;
                             }
                             try {
                                 document.serializeToStream(nativeByteBuffer);
@@ -104,8 +104,8 @@ public final /* synthetic */ class d5 implements Runnable {
                                 executeFast.bindLong(1, document.id);
                                 executeFast.bindByteBuffer(2, nativeByteBuffer);
                                 executeFast.step();
-                            } catch (Exception e12) {
-                                e = e12;
+                            } catch (Exception e13) {
+                                e = e13;
                                 nativeByteBuffer2 = nativeByteBuffer;
                                 e.printStackTrace();
                                 nativeByteBuffer = nativeByteBuffer2;
@@ -119,8 +119,8 @@ public final /* synthetic */ class d5 implements Runnable {
                     }
                     executeFast.dispose();
                     break;
-                } catch (SQLiteException e13) {
-                    FileLog.e(e13);
+                } catch (SQLiteException e14) {
+                    FileLog.e(e14);
                 }
         }
     }

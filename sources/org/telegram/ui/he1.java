@@ -1,28 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class he1 extends ue1 {
-    public final /* synthetic */ we1 e3;
+public final /* synthetic */ class he1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ie1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public he1(we1 we1Var, Context context) {
-        super(we1Var, context);
-        this.e3 = we1Var;
+    public /* synthetic */ he1(ie1 ie1Var, int i9) {
+        this.a = i9;
+        this.b = ie1Var;
     }
 
-    @Override // org.telegram.ui.Components.zk0
-    public final boolean S0() {
-        ArrayList arrayList = this.e3.b;
-        return (getAdapter() == null || this.T1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((ne1) arrayList.get(0)).c == null || ((ne1) arrayList.get(0)).c.id != 1 ? getAdapter().h() > 1 : getAdapter().h() > 2)) ? false : true;
-    }
-
-    @Override // org.telegram.ui.ue1, org.telegram.ui.Components.zk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.e3.y0();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ie1 ie1Var = this.b;
+                ie1Var.F = null;
+                if (ie1Var.G != -1) {
+                    ie1Var.H.getNotificationCenter().onAnimationFinish(ie1Var.G);
+                    ie1Var.G = -1;
+                    break;
+                }
+                break;
+            default:
+                ie1 ie1Var2 = this.b;
+                ie1Var2.F = null;
+                if (ie1Var2.G != -1) {
+                    ie1Var2.H.getNotificationCenter().onAnimationFinish(ie1Var2.G);
+                    ie1Var2.G = -1;
+                    break;
+                }
+                break;
+        }
     }
 }

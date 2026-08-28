@@ -1,60 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.content.Context;
+import android.view.ViewGroup;
 import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dx0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ com.google.firebase.messaging.m b;
-    public final /* synthetic */ int c;
+public final class dx0 extends vk0 {
+    public final Context c;
+    public final /* synthetic */ ex0 d;
 
-    public /* synthetic */ dx0(com.google.firebase.messaging.m mVar, int i10, int i11) {
-        this.a = i11;
-        this.b = mVar;
-        this.c = i10;
+    public dx0(ex0 ex0Var, Activity activity) {
+        this.d = ex0Var;
+        this.c = activity;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = (ArrayList) this.b.d;
-                Float f10 = (Float) valueAnimator.getAnimatedValue();
-                f10.getClass();
-                arrayList.set(this.c, f10);
-                break;
-            case 1:
-                ArrayList arrayList2 = (ArrayList) this.b.e;
-                Float f11 = (Float) valueAnimator.getAnimatedValue();
-                f11.getClass();
-                arrayList2.set(this.c, f11);
-                break;
-            case 2:
-                ArrayList arrayList3 = (ArrayList) this.b.f;
-                Float f12 = (Float) valueAnimator.getAnimatedValue();
-                f12.getClass();
-                arrayList3.set(this.c, f12);
-                break;
-            case 3:
-                ArrayList arrayList4 = (ArrayList) this.b.d;
-                Float f13 = (Float) valueAnimator.getAnimatedValue();
-                f13.getClass();
-                arrayList4.set(this.c, f13);
-                break;
-            case 4:
-                ArrayList arrayList5 = (ArrayList) this.b.e;
-                Float f14 = (Float) valueAnimator.getAnimatedValue();
-                f14.getClass();
-                arrayList5.set(this.c, f14);
-                break;
-            default:
-                ArrayList arrayList6 = (ArrayList) this.b.f;
-                Float f15 = (Float) valueAnimator.getAnimatedValue();
-                f15.getClass();
-                arrayList6.set(this.c, f15);
-                break;
-        }
+    @Override // org.telegram.ui.Components.vk0
+    public final boolean D(f2.q1 q1Var) {
+        return false;
+    }
+
+    @Override // f2.r0
+    public final int h() {
+        return this.d.c.size();
+    }
+
+    @Override // f2.r0
+    public final void v(f2.q1 q1Var, int i9) {
+        org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) q1Var.a;
+        ArrayList arrayList = this.d.c;
+        wVar.b((TLRPC.StickerSetCovered) arrayList.get(i9), i9 != arrayList.size() - 1);
+    }
+
+    @Override // f2.r0
+    public final f2.q1 x(ViewGroup viewGroup, int i9) {
+        org.telegram.ui.Cells.w wVar = new org.telegram.ui.Cells.w(this.c, false);
+        wVar.setLayoutParams(new f2.a1(-1, AndroidUtilities.dp(82.0f)));
+        return new ik0(wVar);
     }
 }

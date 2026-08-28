@@ -1,47 +1,37 @@
 package z8;
 
-import android.util.Log;
-import com.google.firebase.components.ComponentRegistrar;
-import java.lang.reflect.InvocationTargetException;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+import n5.a0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements y9.b {
+public final /* synthetic */ class c implements g {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ f b;
+    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ TimeUnit f;
 
-    public /* synthetic */ c(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ c(f fVar, Runnable runnable, long j10, long j11, TimeUnit timeUnit, int i9) {
+        this.a = i9;
+        this.b = fVar;
+        this.c = runnable;
+        this.d = j10;
+        this.e = j11;
+        this.f = timeUnit;
     }
 
-    @Override // y9.b
-    public final Object get() {
+    @Override // z8.g
+    public final ScheduledFuture a(a0 a0Var) {
         switch (this.a) {
             case 0:
-                String str = (String) this.b;
-                try {
-                    Class<?> cls = Class.forName(str);
-                    if (ComponentRegistrar.class.isAssignableFrom(cls)) {
-                        return (ComponentRegistrar) cls.getDeclaredConstructor(null).newInstance(null);
-                    }
-                    throw new l("Class " + str + " is not an instance of com.google.firebase.components.ComponentRegistrar");
-                } catch (ClassNotFoundException unused) {
-                    Log.w("ComponentDiscovery", "Class " + str + " is not an found.");
-                    return null;
-                } catch (IllegalAccessException e9) {
-                    throw new l(a9.p.m("Could not instantiate ", str, "."), e9);
-                } catch (InstantiationException e10) {
-                    throw new l(a9.p.m("Could not instantiate ", str, "."), e10);
-                } catch (NoSuchMethodException e11) {
-                    throw new l(s3.c.e("Could not instantiate ", str), e11);
-                } catch (InvocationTargetException e12) {
-                    throw new l(s3.c.e("Could not instantiate ", str), e12);
-                }
-            case 1:
-                return (ComponentRegistrar) this.b;
+                f fVar = this.b;
+                return fVar.b.scheduleAtFixedRate(new d(fVar, this.c, a0Var, 0), this.d, this.e, this.f);
             default:
-                return new aa.c((t8.h) this.b);
+                f fVar2 = this.b;
+                return fVar2.b.scheduleWithFixedDelay(new d(fVar2, this.c, a0Var, 2), this.d, this.e, this.f);
         }
     }
 }

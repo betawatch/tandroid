@@ -1,31 +1,64 @@
 package org.telegram.ui.Cells;
 
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class z6 extends org.telegram.ui.Components.y8 {
-    public final /* synthetic */ int D;
-    public final /* synthetic */ FrameLayout E;
+public final class z6 extends View {
+    public int a;
+    public final int b;
+    public boolean c;
+    public boolean d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z6(FrameLayout frameLayout, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
-        super(c6Var);
-        this.D = i10;
-        this.E = frameLayout;
+    public z6(Context context) {
+        this(context, (j2) null);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        switch (this.D) {
-            case 0:
-                super.invalidateSelf();
-                ((b7) this.E).a.invalidate();
-                break;
-            default:
-                super.invalidateSelf();
-                ((c7) this.E).a.invalidate();
-                break;
+    private int getBackgroundResId() {
+        boolean z10 = this.c;
+        return (z10 && this.d) ? R.drawable.greydivider : z10 ? R.drawable.greydivider_bottom : this.d ? R.drawable.greydivider_top : R.drawable.transparent;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.a), TLObject.FLAG_30));
+    }
+
+    public void setSize(int i9) {
+        this.a = i9;
+    }
+
+    public z6(Context context, Object obj) {
+        this(context, (j2) null);
+    }
+
+    public z6(Context context, j2 j2Var) {
+        super(context);
+        this.c = true;
+        this.d = true;
+        this.a = 12;
+        int i9 = this.b;
+        if (i9 == 0) {
+            setBackground(null);
+        } else {
+            setBackgroundColor(i9);
+        }
+    }
+
+    public z6(Context context, int i9, int i10) {
+        super(context);
+        this.c = true;
+        this.d = true;
+        this.b = i9;
+        this.a = 12;
+        if (i9 == 0) {
+            setBackground(null);
+        } else {
+            setBackgroundColor(i9);
         }
     }
 }

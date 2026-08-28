@@ -6,13 +6,13 @@ import android.util.Log;
 import com.google.android.gms.common.api.Status;
 import java.util.Map;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class h1 extends k1 {
     public final e b;
 
-    public h1(int i10, e eVar) {
-        super(i10);
+    public h1(int i9, e eVar) {
+        super(i9);
         this.b = eVar;
     }
 
@@ -20,17 +20,17 @@ public final class h1 extends k1 {
     public final void a(Status status) {
         try {
             this.b.o(status);
-        } catch (IllegalStateException e9) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e9);
+        } catch (IllegalStateException e10) {
+            Log.w("ApiCallRunner", "Exception reporting failure", e10);
         }
     }
 
     @Override // com.google.android.gms.common.api.internal.k1
     public final void b(Exception exc) {
         try {
-            this.b.o(new Status(10, a9.p.w(exc.getClass().getSimpleName(), ": ", exc.getLocalizedMessage()), null, null));
-        } catch (IllegalStateException e9) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e9);
+            this.b.o(new Status(10, aa.d.z(exc.getClass().getSimpleName(), ": ", exc.getLocalizedMessage()), null, null));
+        } catch (IllegalStateException e10) {
+            Log.w("ApiCallRunner", "Exception reporting failure", e10);
         }
     }
 
@@ -42,14 +42,14 @@ public final class h1 extends k1 {
             eVar.getClass();
             try {
                 eVar.n(cVar);
-            } catch (DeadObjectException e9) {
-                eVar.o(new Status(8, e9.getLocalizedMessage(), null, null));
-                throw e9;
-            } catch (RemoteException e10) {
+            } catch (DeadObjectException e10) {
                 eVar.o(new Status(8, e10.getLocalizedMessage(), null, null));
+                throw e10;
+            } catch (RemoteException e11) {
+                eVar.o(new Status(8, e11.getLocalizedMessage(), null, null));
             }
-        } catch (RuntimeException e11) {
-            b(e11);
+        } catch (RuntimeException e12) {
+            b(e12);
         }
     }
 

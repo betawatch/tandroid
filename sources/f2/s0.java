@@ -1,21 +1,41 @@
 package f2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import android.database.Observable;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class s0 {
-    public abstract void a();
-
-    public void c(int i10, int i11, Object obj) {
-        b(i10, i11);
+public final class s0 extends Observable {
+    public final boolean a() {
+        return !((Observable) this).mObservers.isEmpty();
     }
 
-    public abstract void d(int i10, int i11);
-
-    public abstract void f(int i10, int i11);
-
-    public void b(int i10, int i11) {
+    public final void b() {
+        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
+            ((t0) ((Observable) this).mObservers.get(size)).a();
+        }
     }
 
-    public void e(int i10, int i11) {
+    public final void c(int i9, int i10) {
+        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
+            ((t0) ((Observable) this).mObservers.get(size)).e(i9, i10);
+        }
+    }
+
+    public final void d(int i9, int i10, Object obj) {
+        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
+            ((t0) ((Observable) this).mObservers.get(size)).c(i9, i10, obj);
+        }
+    }
+
+    public final void e(int i9, int i10) {
+        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
+            ((t0) ((Observable) this).mObservers.get(size)).d(i9, i10);
+        }
+    }
+
+    public final void f(int i9, int i10) {
+        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
+            ((t0) ((Observable) this).mObservers.get(size)).f(i9, i10);
+        }
     }
 }

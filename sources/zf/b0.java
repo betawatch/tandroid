@@ -1,31 +1,30 @@
 package zf;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import org.telegram.ui.ys0;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class b0 extends yf.b1 {
-    public final /* synthetic */ Bitmap A;
-    public final /* synthetic */ ys0 B;
+public final class b0 extends View {
+    public final /* synthetic */ int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b0(ys0 ys0Var, Context context, yf.p0 p0Var, Bitmap bitmap, Bitmap bitmap2) {
-        super(context, p0Var, bitmap, null, null);
-        this.B = ys0Var;
-        this.A = bitmap2;
+    public /* synthetic */ b0(Context context, int i9) {
+        super(context);
+        this.a = i9;
     }
 
-    @Override // yf.b1
-    public final void g(yf.m mVar) {
-        int indexOf = yf.m.a.indexOf(mVar);
-        int i10 = indexOf + 1;
-        if (i10 <= 1 || this.A != null) {
-            indexOf = i10;
+    @Override // android.view.View
+    public final void onMeasure(int i9, int i10) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(68.0f), TLObject.FLAG_30));
+                break;
         }
-        ys0 ys0Var = this.B;
-        ys0Var.p1.b(indexOf);
-        ys0Var.l(mVar);
     }
 }

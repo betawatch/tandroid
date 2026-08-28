@@ -1,56 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.util.SparseIntArray;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.WebFile;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class mi implements TextWatcher {
-    public final /* synthetic */ ri a;
+public final /* synthetic */ class mi implements Utilities.CallbackReturn {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public mi(ri riVar) {
-        this.a = riVar;
+    public /* synthetic */ mi(Object obj, int i9) {
+        this.a = i9;
+        this.b = obj;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        ri riVar = this.a;
-        hi hiVar = riVar.c0;
-        TextUtils.isEmpty(riVar.A);
-        riVar.A = editable.toString().trim();
-        hi hiVar2 = riVar.U;
-        AndroidUtilities.cancelRunOnUIThread(hiVar2);
-        if (!TextUtils.isEmpty(riVar.A)) {
-            String str = riVar.A;
-            riVar.T = str != null && str.length() >= 0;
-            if (!TextUtils.equals(riVar.S, riVar.A)) {
-                riVar.I.clear();
-                riVar.V = 0;
-                riVar.W = false;
-            }
-            AndroidUtilities.runOnUIThread(hiVar2, 1500L);
+    @Override // org.telegram.messenger.Utilities.CallbackReturn
+    public final Object run(Object obj) {
+        switch (this.a) {
+            case 0:
+                return Boolean.valueOf(vi.J((vi) this.b, (MessageObject) obj));
+            case 1:
+                zg.f fVar = (zg.f) this.b;
+                View view = (View) obj;
+                ImageReceiver imageReceiver = new ImageReceiver(view);
+                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(R.raw.map_placeholder, org.telegram.ui.ActionBar.f6.Pb, (org.telegram.ui.ActionBar.f6.I.q() ? 3 : 6) * 0.12f);
+                svgThumb.setAspectCenter(true);
+                svgThumb.setColorKey(org.telegram.ui.ActionBar.f6.qe);
+                imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(fVar.b.geo, 300, 168, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), (String) null, (ImageLocation) null, (String) null, new up(svgThumb), (Object) null, 0);
+                view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.o8(imageReceiver, 1));
+                imageReceiver.setRoundRadius(AndroidUtilities.dp(14.0f));
+                return new vc(imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());
+            case 2:
+                int i9 = ((SparseIntArray) this.b).get(((Integer) obj).intValue(), -1);
+                if (i9 == -1) {
+                    return Boolean.TRUE;
+                }
+                return Boolean.valueOf(i9 == 1);
+            default:
+                i51 i51Var = (i51) this.b;
+                View view2 = (View) obj;
+                i51Var.getClass();
+                return view2.getParent() != i51Var ? Boolean.FALSE : Boolean.valueOf(!z41.K(i51Var.T(view2).f));
         }
-        AndroidUtilities.cancelRunOnUIThread(hiVar);
-        if (!TextUtils.isEmpty(riVar.A)) {
-            String str2 = riVar.A;
-            riVar.j0 = (str2 == null || str2.length() < 3 || TextUtils.isEmpty(MessagesController.getInstance(riVar.b.F1).config.musicSearchUsername.get())) ? false : true;
-            if (!TextUtils.equals(riVar.b0, riVar.A)) {
-                riVar.J.clear();
-                riVar.d0 = false;
-            }
-            AndroidUtilities.runOnUIThread(hiVar, 1500L);
-        }
-        riVar.P();
-    }
-
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

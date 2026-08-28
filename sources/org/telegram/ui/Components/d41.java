@@ -1,29 +1,45 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class d41 implements bx0 {
-    public final /* synthetic */ j41 a;
+public final class d41 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    public d41(j41 j41Var) {
-        this.a = j41Var;
+    public d41(org.telegram.ui.su suVar, int i9, int i10) {
+        this.a = 1;
+        this.d = suVar;
+        this.b = i9;
+        this.c = i10;
     }
 
-    @Override // org.telegram.ui.Components.bx0
-    public final boolean b() {
-        return this.a.b.a();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.c);
+                h41 h41Var = (h41) this.d;
+                h41Var.J = true;
+                h41Var.n.scrollBy(0, floatValue - this.b);
+                h41Var.J = false;
+                this.b = floatValue;
+                break;
+            default:
+                ((org.telegram.ui.su) this.d).c.d.setColorFilter(new PorterDuffColorFilter(i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.b, this.c), PorterDuff.Mode.SRC_IN));
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.bx0
-    public final boolean c() {
-        return this.a.b.c();
-    }
-
-    @Override // org.telegram.ui.Components.bx0
-    public final void e(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, boolean z11, int i10, int i11) {
-        this.a.b.f(document, obj, z11, i10);
+    public d41(h41 h41Var, int i9) {
+        this.a = 0;
+        this.d = h41Var;
+        this.c = i9;
+        this.b = 0;
     }
 }

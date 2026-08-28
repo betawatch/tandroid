@@ -1,32 +1,33 @@
 package com.google.mlkit.vision.segmentation.subject.internal;
 
 import com.google.firebase.components.ComponentRegistrar;
-import g7.v8;
+import f7.v8;
+import j7.i;
 import java.util.List;
-import kb.c;
-import ug.b;
-import z8.a;
-import z8.i;
-import za.d;
-import za.g;
+import jb.c;
+import tg.b;
+import y8.a;
+import y8.j;
+import ya.d;
+import ya.g;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class SubjectSegmentationRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
         b a2 = a.a(c.class);
-        a2.a(i.a(g.class));
-        a2.f = kb.a.b;
+        a2.a(j.a(g.class));
+        a2.f = jb.a.b;
         a b10 = a2.b();
-        b a3 = a.a(kb.b.class);
-        a3.a(i.a(c.class));
-        a3.a(i.a(d.class));
-        a3.f = kb.a.c;
+        b a3 = a.a(jb.b.class);
+        a3.a(j.a(c.class));
+        a3.a(j.a(d.class));
+        a3.f = jb.a.c;
         a b11 = a3.b();
-        k7.g gVar = k7.i.b;
+        j7.g gVar = i.b;
         Object[] objArr = {b10, b11};
         v8.a(2, objArr);
-        return k7.i.r(2, objArr);
+        return i.r(2, objArr);
     }
 }

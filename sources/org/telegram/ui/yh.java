@@ -1,74 +1,82 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.view.View;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class yh implements m2.e {
-    public final /* synthetic */ AtomicBoolean a;
-    public final /* synthetic */ LinearLayout b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ HorizontalScrollView d;
-    public final /* synthetic */ SparseIntArray e;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout f;
-    public final /* synthetic */ int[] g;
+public final class yh implements org.telegram.ui.Components.pk0 {
+    public final /* synthetic */ qn a;
 
-    public yh(AtomicBoolean atomicBoolean, LinearLayout linearLayout, int i10, HorizontalScrollView horizontalScrollView, SparseIntArray sparseIntArray, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
-        this.a = atomicBoolean;
-        this.b = linearLayout;
-        this.c = i10;
-        this.d = horizontalScrollView;
-        this.e = sparseIntArray;
-        this.f = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.g = iArr;
+    public yh(qn qnVar) {
+        this.a = qnVar;
     }
 
-    @Override // m2.e
-    public final void b(int i10) {
-        this.f.getSwipeBack().f(this.g[0], this.e.get(i10), true);
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0094  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0083  */
+    @Override // org.telegram.ui.Components.pk0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean c(float f10, float f11, int i9, View view) {
+        boolean z10;
+        boolean z11;
+        org.telegram.ui.ActionBar.k kVar;
+        View view2;
+        boolean z12;
+        qn qnVar = this.a;
+        jm jmVar = qnVar.Y8;
+        if ((jmVar == null || !jmVar.z) && !qnVar.b9()) {
+            z10 = ((org.telegram.ui.ActionBar.o2) qnVar).inPreviewMode;
+            if (!z10 && !qnVar.Ka) {
+                qnVar.z4 = true;
+                if (view instanceof org.telegram.ui.Cells.w0) {
+                    org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
+                    MessageObject messageObject = w0Var.getMessageObject();
+                    if (messageObject != null) {
+                        if (!(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && w0Var.getMessageObject().type != 21 && !w0Var.getMessageObject().isWallpaperAction() && w0Var.getMessageObject().type != 30) {
+                            z11 = false;
+                            kVar = ((org.telegram.ui.ActionBar.o2) qnVar).actionBar;
+                            if (!kVar.s() || (qnVar.A9() && !z11)) {
+                                view2 = view;
+                                qn.b2(qnVar, view2, view2 instanceof org.telegram.ui.Cells.t1 ? !((org.telegram.ui.Cells.t1) view2).i3(f10) : false, f10, f11);
+                                z12 = true;
+                            } else {
+                                view2 = view;
+                                z12 = qnVar.I7(view2, false, true, f10, f11, true, true, false);
+                            }
+                            if (view2 instanceof org.telegram.ui.Cells.t1) {
+                                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view2;
+                                if (t1Var.getMessageObject() != null && t1Var.getMessageObject().type != 27) {
+                                    qn.c2(qnVar, i9);
+                                    return true;
+                                }
+                            }
+                            return z12;
+                        }
+                    }
+                }
+                z11 = true;
+                kVar = ((org.telegram.ui.ActionBar.o2) qnVar).actionBar;
+                if (kVar.s()) {
+                }
+                view2 = view;
+                qn.b2(qnVar, view2, view2 instanceof org.telegram.ui.Cells.t1 ? !((org.telegram.ui.Cells.t1) view2).i3(f10) : false, f10, f11);
+                z12 = true;
+                if (view2 instanceof org.telegram.ui.Cells.t1) {
+                }
+                return z12;
+            }
+        }
+        return false;
     }
 
-    @Override // m2.e
-    public final void c(float f10, int i10, int i11) {
-        HorizontalScrollView horizontalScrollView;
-        if (this.a.get()) {
-            return;
-        }
-        int i12 = 0;
-        float f11 = -1.0f;
-        float f12 = -1.0f;
-        while (true) {
-            LinearLayout linearLayout = this.b;
-            int childCount = linearLayout.getChildCount();
-            horizontalScrollView = this.d;
-            if (i12 >= childCount) {
-                break;
-            }
-            org.telegram.ui.Components.hj0 hj0Var = (org.telegram.ui.Components.hj0) linearLayout.getChildAt(i12);
-            hj0Var.setOutlineProgress(i12 == i10 ? 1.0f - f10 : i12 == (i10 + 1) % this.c ? f10 : 0.0f);
-            if (i12 == i10) {
-                f11 = hj0Var.getX() - ((horizontalScrollView.getWidth() - hj0Var.getWidth()) / 2.0f);
-            }
-            if (i12 == i10 + 1) {
-                f12 = hj0Var.getX() - ((horizontalScrollView.getWidth() - hj0Var.getWidth()) / 2.0f);
-            }
-            i12++;
-        }
-        if (f11 != -1.0f && f12 != -1.0f) {
-            horizontalScrollView.setScrollX((int) com.google.android.recaptcha.internal.a.z(f12, f11, f10, f11));
-        }
-        SparseIntArray sparseIntArray = this.e;
-        this.f.getSwipeBack().f(this.g[0], (int) ((sparseIntArray.get(i10 + 1, 0) * f10) + ((1.0f - f10) * sparseIntArray.get(i10, 0))), false);
+    @Override // org.telegram.ui.Components.pk0
+    public final /* synthetic */ void j() {
     }
 
-    @Override // m2.e
-    public final void d(int i10) {
-        if (i10 == 0) {
-            this.a.set(false);
-        }
+    @Override // org.telegram.ui.Components.pk0
+    public final /* synthetic */ void u(float f10) {
     }
 }

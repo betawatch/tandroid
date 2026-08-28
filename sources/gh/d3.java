@@ -1,39 +1,29 @@
 package gh;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class d3 implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ b3 b;
+public final /* synthetic */ class d3 implements org.telegram.ui.ActionBar.b2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k5 b;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
 
-    public d3(b3 b3Var) {
-        this.b = b3Var;
+    public /* synthetic */ d3(k5 k5Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i9) {
+        this.a = i9;
+        this.b = k5Var;
+        this.c = tL_starGiftUnique;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        if (!this.a && editable.length() > 12) {
-            this.a = true;
-            editable.delete(12, editable.length());
-            b3 b3Var = this.b;
-            AndroidUtilities.shakeView(b3Var);
-            try {
-                b3Var.performHapticFeedback(3, 2);
-            } catch (Exception unused) {
-            }
-            this.a = false;
+    @Override // org.telegram.ui.ActionBar.b2
+    public final void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
+        switch (this.a) {
+            case 0:
+                k5.N0(this.b, this.c, c2Var);
+                break;
+            default:
+                ve.e.u(this.b.getContext(), "https://fragment.com/gift/" + this.c.slug);
+                break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

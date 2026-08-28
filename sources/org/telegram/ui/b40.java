@@ -1,50 +1,27 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class b40 extends ou0 {
-    public final /* synthetic */ s50 T;
+public final class b40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Components.voip.t a;
+    public final /* synthetic */ o50 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b40(s50 s50Var, ViewGroup viewGroup, ViewGroup viewGroup2) {
-        super(viewGroup, viewGroup2);
-        this.T = s50Var;
+    public b40(o50 o50Var, org.telegram.ui.Components.voip.t tVar) {
+        this.b = o50Var;
+        this.a = tVar;
     }
 
-    @Override // org.telegram.ui.ou0
-    public final void c(Canvas canvas, float f10, float f11, float f12, float f13, float f14) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         ViewGroup viewGroup;
-        ViewGroup viewGroup2;
-        s50 s50Var = this.T;
-        l30 l30Var = s50Var.b;
-        m30 m30Var = s50Var.y2;
-        if (f10 > 0.0f) {
-            float x8 = m30Var.getX();
-            viewGroup = ((org.telegram.ui.ActionBar.e3) s50Var).containerView;
-            float x10 = viewGroup.getX() + x8;
-            float y10 = m30Var.getY();
-            viewGroup2 = ((org.telegram.ui.ActionBar.e3) s50Var).containerView;
-            float y11 = viewGroup2.getY() + y10;
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(x10, y11, l30Var.getMeasuredWidth() + x10, l30Var.getMeasuredHeight() + y11);
-            canvas.saveLayerAlpha(rectF, (int) (f10 * 255.0f), 31);
-            canvas.translate(x10, y11);
-            m30Var.draw(canvas);
-            canvas.restore();
-        }
-    }
-
-    @Override // org.telegram.ui.ou0
-    public final void e() {
-        l30 l30Var = this.T.b;
-        super.e();
-        for (int i10 = 0; i10 < l30Var.getChildCount(); i10++) {
-            l30Var.getChildAt(i10).invalidate();
+        org.telegram.ui.Components.voip.t tVar = this.a;
+        if (tVar.getParent() != null) {
+            viewGroup = ((org.telegram.ui.ActionBar.f3) this.b).containerView;
+            viewGroup.removeView(tVar);
         }
     }
 }

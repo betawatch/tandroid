@@ -7,14 +7,14 @@ import android.support.v4.media.MediaDescriptionCompat;
 import android.support.v4.media.session.MediaSessionCompat$QueueItem;
 import android.support.v4.media.session.p;
 import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector;
-import d5.g0;
+import d5.f0;
 import h3.c2;
 import h3.f1;
 import java.util.ArrayList;
 import java.util.List;
-import p8.z;
+import o8.z;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class TimelineQueueEditor implements MediaSessionConnector.QueueEditor, MediaSessionConnector.CommandReceiver {
     public static final String COMMAND_MOVE_QUEUE_ITEM = "exo_move_window";
@@ -25,31 +25,31 @@ public final class TimelineQueueEditor implements MediaSessionConnector.QueueEdi
     private final MediaDescriptionConverter mediaDescriptionConverter;
     private final QueueDataAdapter queueDataAdapter;
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface MediaDescriptionConverter {
         f1 convert(MediaDescriptionCompat mediaDescriptionCompat);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface MediaDescriptionEqualityChecker {
         boolean equals(MediaDescriptionCompat mediaDescriptionCompat, MediaDescriptionCompat mediaDescriptionCompat2);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class MediaIdEqualityChecker implements MediaDescriptionEqualityChecker {
         @Override // com.google.android.exoplayer2.ext.mediasession.TimelineQueueEditor.MediaDescriptionEqualityChecker
         public boolean equals(MediaDescriptionCompat mediaDescriptionCompat, MediaDescriptionCompat mediaDescriptionCompat2) {
-            return g0.a(mediaDescriptionCompat.a, mediaDescriptionCompat2.a);
+            return f0.a(mediaDescriptionCompat.a, mediaDescriptionCompat2.a);
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface QueueDataAdapter {
-        void add(int i10, MediaDescriptionCompat mediaDescriptionCompat);
+        void add(int i9, MediaDescriptionCompat mediaDescriptionCompat);
 
-        void move(int i10, int i11);
+        void move(int i9, int i10);
 
-        void remove(int i10);
+        void remove(int i9);
     }
 
     public TimelineQueueEditor(p pVar, QueueDataAdapter queueDataAdapter, MediaDescriptionConverter mediaDescriptionConverter) {
@@ -66,13 +66,13 @@ public final class TimelineQueueEditor implements MediaSessionConnector.QueueEdi
         if (!COMMAND_MOVE_QUEUE_ITEM.equals(str) || bundle == null) {
             return false;
         }
-        int i10 = bundle.getInt(EXTRA_FROM_INDEX, -1);
-        int i11 = bundle.getInt(EXTRA_TO_INDEX, -1);
-        if (i10 != -1 && i11 != -1) {
-            this.queueDataAdapter.move(i10, i11);
-            b8.a aVar = (b8.a) c2Var;
-            if (i10 != i11) {
-                aVar.y(i10, i10 + 1, i11);
+        int i9 = bundle.getInt(EXTRA_FROM_INDEX, -1);
+        int i10 = bundle.getInt(EXTRA_TO_INDEX, -1);
+        if (i9 != -1 && i10 != -1) {
+            this.queueDataAdapter.move(i9, i10);
+            a8.a aVar = (a8.a) c2Var;
+            if (i9 != i10) {
+                aVar.y(i9, i9 + 1, i10);
                 return true;
             }
             aVar.getClass();
@@ -84,10 +84,10 @@ public final class TimelineQueueEditor implements MediaSessionConnector.QueueEdi
     public void onRemoveQueueItem(c2 c2Var, MediaDescriptionCompat mediaDescriptionCompat) {
         List<MediaSession.QueueItem> queue = this.mediaController.a.a.getQueue();
         ArrayList a2 = queue != null ? MediaSessionCompat$QueueItem.a(queue) : null;
-        for (int i10 = 0; i10 < a2.size(); i10++) {
-            if (this.equalityChecker.equals(((MediaSessionCompat$QueueItem) a2.get(i10)).a, mediaDescriptionCompat)) {
-                this.queueDataAdapter.remove(i10);
-                ((b8.a) c2Var).n(i10, i10 + 1);
+        for (int i9 = 0; i9 < a2.size(); i9++) {
+            if (this.equalityChecker.equals(((MediaSessionCompat$QueueItem) a2.get(i9)).a, mediaDescriptionCompat)) {
+                this.queueDataAdapter.remove(i9);
+                ((a8.a) c2Var).n(i9, i9 + 1);
                 return;
             }
         }
@@ -101,13 +101,13 @@ public final class TimelineQueueEditor implements MediaSessionConnector.QueueEdi
     }
 
     @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.QueueEditor
-    public void onAddQueueItem(c2 c2Var, MediaDescriptionCompat mediaDescriptionCompat, int i10) {
+    public void onAddQueueItem(c2 c2Var, MediaDescriptionCompat mediaDescriptionCompat, int i9) {
         f1 convert = this.mediaDescriptionConverter.convert(mediaDescriptionCompat);
         if (convert != null) {
-            this.queueDataAdapter.add(i10, mediaDescriptionCompat);
-            b8.a aVar = (b8.a) c2Var;
+            this.queueDataAdapter.add(i9, mediaDescriptionCompat);
+            a8.a aVar = (a8.a) c2Var;
             aVar.getClass();
-            aVar.s(i10, z.y(convert));
+            aVar.s(i9, z.y(convert));
         }
     }
 }

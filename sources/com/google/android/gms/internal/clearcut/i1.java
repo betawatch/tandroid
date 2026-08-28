@@ -7,9 +7,9 @@ public final class i1 extends k1 {
     public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i1(Unsafe unsafe, int i10) {
+    public /* synthetic */ i1(Unsafe unsafe, int i9) {
         super(unsafe);
-        this.b = i10;
+        this.b = i9;
     }
 
     @Override // com.google.android.gms.internal.clearcut.k1

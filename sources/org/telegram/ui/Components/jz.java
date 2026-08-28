@@ -1,495 +1,158 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.SurfaceTexture;
 import android.opengl.GLES20;
-import android.opengl.Matrix;
-import java.nio.Buffer;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.FloatBuffer;
 import java.util.Locale;
-import javax.microedition.khronos.egl.EGL10;
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.egl.EGLContext;
-import javax.microedition.khronos.egl.EGLDisplay;
-import javax.microedition.khronos.egl.EGLSurface;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class jz extends DispatchQueue {
-    public final int[] A;
-    public boolean B;
-    public boolean C;
-    public final z9 D;
-    public fa E;
-    public final nz F;
-    public int G;
-    public int H;
-    public int I;
-    public int J;
-    public int K;
-    public int L;
-    public int M;
-    public int N;
-    public int O;
-    public boolean P;
-    public int Q;
-    public int R;
-    public int S;
-    public int T;
-    public final FloatBuffer U;
-    public boolean V;
-    public long W;
-    public final vu X;
-    public boolean Y;
-    public final Runnable Z;
-    public final SurfaceTexture a;
-    public EGL10 b;
-    public EGLDisplay c;
-    public EGLContext d;
-    public EGLSurface e;
-    public boolean f;
-    public final boolean h;
-    public volatile int n;
-    public volatile int r;
-    public Bitmap s;
-    public final int v;
-    public SurfaceTexture w;
-    public boolean x;
-    public final float[] y;
+public final class jz {
+    public final String a;
+    public final String b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
 
-    public jz(SurfaceTexture surfaceTexture, Bitmap bitmap, int i10, boolean z10, boolean z11, z9 z9Var, int i11, int i12) {
-        super("PhotoFilterGLThread", false);
-        this.y = new float[16];
-        this.A = new int[1];
-        this.Z = new gz(this, 1);
-        this.a = surfaceTexture;
-        this.n = i11;
-        this.r = i12;
-        this.s = bitmap;
-        this.v = i10;
-        this.D = z9Var;
-        boolean z12 = z9Var != null;
-        this.C = z12;
-        if (z12) {
-            fa faVar = new fa();
-            this.E = faVar;
-            z9 z9Var2 = faVar.t;
-            if (z9Var2 != null && z9Var2.m != null) {
-                z9Var2.m = null;
-            }
-            faVar.t = z9Var;
-            if (z9Var != null && z9Var.m != faVar) {
-                z9Var.m = faVar;
-                z9Var.d();
-            }
-        }
-        this.h = false;
-        nz nzVar = new nz(false, null);
-        this.F = nzVar;
-        nzVar.i1 = z11;
-        float[] fArr = {0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f};
-        if (z10) {
-            fArr[2] = 0.0f;
-            fArr[0] = 1.0f;
-            fArr[6] = 0.0f;
-            fArr[4] = 1.0f;
-        }
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(32);
-        allocateDirect.order(ByteOrder.nativeOrder());
-        FloatBuffer asFloatBuffer = allocateDirect.asFloatBuffer();
-        this.U = asFloatBuffer;
-        asFloatBuffer.put(fArr);
-        asFloatBuffer.position(0);
-        start();
-    }
-
-    public static void b(jz jzVar) {
-        mz mzVar;
-        if (jzVar.f) {
-            jzVar.c();
-            if (jzVar.x) {
-                jzVar.w.updateTexImage();
-                jzVar.w.getTransformMatrix(jzVar.y);
-                jzVar.g();
-                jzVar.x = false;
-                nz nzVar = jzVar.F;
-                nzVar.P0 = jzVar.y;
-                nzVar.W0 = false;
-                jzVar.B = true;
-            }
-            if (jzVar.V) {
-                if (jzVar.h && ((mzVar = jzVar.F.f1) == null || mzVar.b())) {
-                    GLES20.glViewport(0, 0, jzVar.n, jzVar.r);
-                    GLES20.glBindFramebuffer(36160, 0);
-                    GLES20.glUseProgram(jzVar.K);
-                    GLES20.glActiveTexture(33984);
-                    GLES20.glBindTexture(36197, jzVar.A[0]);
-                    GLES20.glUniform1i(jzVar.O, 0);
-                    GLES20.glEnableVertexAttribArray(jzVar.N);
-                    int i10 = jzVar.N;
-                    FloatBuffer floatBuffer = jzVar.U;
-                    if (floatBuffer == null) {
-                        floatBuffer = jzVar.F.a1;
-                    }
-                    GLES20.glVertexAttribPointer(i10, 2, 5126, false, 8, (Buffer) floatBuffer);
-                    GLES20.glEnableVertexAttribArray(jzVar.L);
-                    GLES20.glVertexAttribPointer(jzVar.L, 2, 5126, false, 8, (Buffer) jzVar.F.b1);
-                    GLES20.glUniformMatrix4fv(jzVar.M, 1, false, jzVar.y, 0);
-                    GLES20.glDrawArrays(5, 0, 4);
-                    jzVar.b.eglSwapBuffers(jzVar.c, jzVar.e);
-                    fa faVar = jzVar.E;
-                    if (faVar != null) {
-                        faVar.a(jzVar.y, jzVar.A[0], jzVar.S, jzVar.T);
-                        return;
-                    }
-                    return;
-                }
-                if (jzVar.X == null || jzVar.B) {
-                    GLES20.glViewport(0, 0, jzVar.Q, jzVar.R);
-                    jzVar.F.f();
-                    jzVar.F.d();
-                    if (jzVar.X == null) {
-                        jzVar.F.e();
-                    }
-                    jzVar.F.c();
-                    jzVar.P = jzVar.F.b();
-                    jzVar.Y = true;
-                }
-                if (jzVar.Y) {
-                    GLES20.glViewport(0, 0, jzVar.n, jzVar.r);
-                    GLES20.glBindFramebuffer(36160, 0);
-                    int g10 = jzVar.F.g(1 ^ (jzVar.P ? 1 : 0));
-                    GLES20.glUseProgram(jzVar.G);
-                    GLES20.glActiveTexture(33984);
-                    GLES20.glBindTexture(3553, g10);
-                    GLES20.glUniform1i(jzVar.J, 0);
-                    GLES20.glEnableVertexAttribArray(jzVar.I);
-                    int i11 = jzVar.I;
-                    FloatBuffer floatBuffer2 = jzVar.U;
-                    if (floatBuffer2 == null) {
-                        floatBuffer2 = jzVar.F.a1;
-                    }
-                    GLES20.glVertexAttribPointer(i11, 2, 5126, false, 8, (Buffer) floatBuffer2);
-                    GLES20.glEnableVertexAttribArray(jzVar.H);
-                    GLES20.glVertexAttribPointer(jzVar.H, 2, 5126, false, 8, (Buffer) jzVar.F.Z0);
-                    GLES20.glDrawArrays(5, 0, 4);
-                    jzVar.b.eglSwapBuffers(jzVar.c, jzVar.e);
-                    fa faVar2 = jzVar.E;
-                    if (faVar2 != null) {
-                        faVar2.a(null, g10, jzVar.Q, jzVar.R);
-                    }
-                }
-            }
-        }
-    }
-
-    public final void c() {
-        if (this.d.equals(this.b.eglGetCurrentContext()) && this.e.equals(this.b.eglGetCurrentSurface(12377))) {
-            return;
-        }
-        EGL10 egl10 = this.b;
-        EGLDisplay eGLDisplay = this.c;
-        EGLSurface eGLSurface = this.e;
-        if (egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.d) || !BuildVars.LOGS_ENABLED) {
-            return;
-        }
-        org.telegram.messenger.rl.r(this.b, new StringBuilder("eglMakeCurrent failed "));
-    }
-
-    public final void e(boolean z10, boolean z11, boolean z12) {
-        postRunnable(new hz(this, z10, z12, z11, 0));
-    }
-
-    public final void f(mz mzVar) {
-        postRunnable(new xq(15, this, mzVar));
-    }
-
-    public final void finish() {
-        this.s = null;
-        if (this.e != null) {
-            EGL10 egl10 = this.b;
-            EGLDisplay eGLDisplay = this.c;
-            EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
-            egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, EGL10.EGL_NO_CONTEXT);
-            this.b.eglDestroySurface(this.c, this.e);
-            this.e = null;
-        }
-        EGLContext eGLContext = this.d;
-        if (eGLContext != null) {
-            z9 z9Var = this.D;
-            if (z9Var != null) {
-                synchronized (z9Var.f) {
-                    try {
-                        if (z9Var.g == eGLContext) {
-                            z9Var.g = null;
-                        }
-                    } finally {
-                    }
-                }
-            }
-            this.b.eglDestroyContext(this.c, this.d);
-            this.d = null;
-        }
-        EGLDisplay eGLDisplay2 = this.c;
-        if (eGLDisplay2 != null) {
-            this.b.eglTerminate(eGLDisplay2);
-            this.c = null;
-        }
-        SurfaceTexture surfaceTexture = this.a;
-        if (surfaceTexture != null) {
-            surfaceTexture.release();
-        }
-    }
-
-    public final void g() {
+    public jz(float f10, float f11, boolean z10) {
+        int i9;
+        float f12;
         int i10;
-        int i11;
-        if (this.V || (i10 = this.S) <= 0 || (i11 = this.T) <= 0) {
-            return;
+        double d = 6.283185307179586d;
+        if (z10) {
+            f12 = Math.round(f10);
+            if (f12 >= 1.0f) {
+                double d9 = f12;
+                int floor = (int) Math.floor(Math.sqrt(Math.log(Math.sqrt(Math.pow(d9, 2.0d) * 6.283185307179586d) * 0.00390625f) * Math.pow(d9, 2.0d) * (-2.0d)));
+                i9 = (floor % 2) + floor;
+            } else {
+                i9 = 0;
+            }
+        } else {
+            i9 = (int) f10;
+            f12 = f11;
         }
-        this.F.i(this.s, this.v, this.A[0], i10, i11);
-        this.V = true;
-        nz nzVar = this.F;
-        this.Q = nzVar.X0;
-        this.R = nzVar.Y0;
+        int i11 = (i9 * 2) + 1;
+        float[] fArr = new float[i11];
+        int i12 = 0;
+        float f13 = 0.0f;
+        while (true) {
+            i10 = i9 + 1;
+            if (i12 >= i10) {
+                break;
+            }
+            double d10 = d;
+            double d11 = f12;
+            float[] fArr2 = fArr;
+            float exp = (float) (Math.exp((-Math.pow(i12, 2.0d)) / (Math.pow(d11, 2.0d) * 2.0d)) * (1.0d / Math.sqrt(Math.pow(d11, 2.0d) * d10)));
+            fArr2[i12] = exp;
+            f13 = i12 == 0 ? f13 + exp : (float) ((exp * 2.0d) + f13);
+            i12++;
+            d = d10;
+            fArr = fArr2;
+        }
+        double d12 = d;
+        float[] fArr3 = fArr;
+        for (int i13 = 0; i13 < i10; i13++) {
+            fArr3[i13] = fArr3[i13] / f13;
+        }
+        int i14 = (i9 % 2) + (i9 / 2);
+        int min = Math.min(i14, 7);
+        StringBuilder sb2 = new StringBuilder("uniform sampler2D sTexture;\nuniform highp float texelWidthOffset;\nuniform highp float texelHeightOffset;\n");
+        Locale locale = Locale.US;
+        sb2.append("varying highp vec2 blurCoordinates[" + ((min * 2) + 1) + "];\n");
+        sb2.append("void main()\n{\nlowp vec4 sum = vec4(0.0);\n");
+        sb2.append(String.format(locale, "sum += texture2D(sTexture, blurCoordinates[0]) * %f;\n", Float.valueOf(fArr3[0])));
+        for (int i15 = 0; i15 < min; i15++) {
+            int i16 = i15 * 2;
+            int i17 = i16 + 1;
+            int i18 = i16 + 2;
+            float f14 = fArr3[i17] + fArr3[i18];
+            Locale locale2 = Locale.US;
+            sb2.append(String.format(locale2, "sum += texture2D(sTexture, blurCoordinates[%d]) * %f;\n", Integer.valueOf(i17), Float.valueOf(f14)));
+            sb2.append(String.format(locale2, "sum += texture2D(sTexture, blurCoordinates[%d]) * %f;\n", Integer.valueOf(i18), Float.valueOf(f14)));
+        }
+        if (i14 > min) {
+            sb2.append("highp vec2 singleStepOffset = vec2(texelWidthOffset, texelHeightOffset);\n");
+            while (min < i14) {
+                int i19 = min * 2;
+                int i20 = i19 + 1;
+                float f15 = fArr3[i20];
+                int i21 = i19 + 2;
+                float f16 = fArr3[i21];
+                float f17 = f15 + f16;
+                float y10 = e2.c.y(f16, i21, f15 * i20, f17);
+                Locale locale3 = Locale.US;
+                sb2.append(String.format(locale3, "sum += texture2D(sTexture, blurCoordinates[0] + singleStepOffset * %f) * %f;\n", Float.valueOf(y10), Float.valueOf(f17)));
+                sb2.append(String.format(locale3, "sum += texture2D(sTexture, blurCoordinates[0] - singleStepOffset * %f) * %f;\n", Float.valueOf(y10), Float.valueOf(f17)));
+                min++;
+            }
+        }
+        sb2.append("gl_FragColor = sum;\n}\n");
+        this.b = sb2.toString();
+        float[] fArr4 = new float[i11];
+        float f18 = 0.0f;
+        int i22 = 0;
+        while (i22 < i10) {
+            double d13 = f12;
+            float f19 = f18;
+            float exp2 = (float) (Math.exp((-Math.pow(i22, 2.0d)) / (Math.pow(d13, 2.0d) * 2.0d)) * (1.0d / Math.sqrt(Math.pow(d13, 2.0d) * d12)));
+            fArr4[i22] = exp2;
+            f18 = i22 == 0 ? f19 + exp2 : (float) ((exp2 * 2.0d) + f19);
+            i22++;
+        }
+        float f20 = f18;
+        for (int i23 = 0; i23 < i10; i23++) {
+            fArr4[i23] = fArr4[i23] / f20;
+        }
+        int min2 = Math.min(i14, 7);
+        float[] fArr5 = new float[min2];
+        for (int i24 = 0; i24 < min2; i24++) {
+            int i25 = i24 * 2;
+            int i26 = i25 + 1;
+            float f21 = fArr4[i26];
+            int i27 = i25 + 2;
+            float f22 = fArr4[i27];
+            fArr5[i24] = e2.c.y(f22, i27, f21 * i26, f21 + f22);
+        }
+        StringBuilder sb3 = new StringBuilder("attribute vec4 position;\nattribute vec4 inputTexCoord;\nuniform float texelWidthOffset;\nuniform float texelHeightOffset;\n");
+        Locale locale4 = Locale.US;
+        sb3.append("varying vec2 blurCoordinates[" + ((min2 * 2) + 1) + "];\n");
+        sb3.append("void main()\n{\ngl_Position = position;\nvec2 singleStepOffset = vec2(texelWidthOffset, texelHeightOffset);\nblurCoordinates[0] = inputTexCoord.xy;\n");
+        for (int i28 = 0; i28 < min2; i28++) {
+            int i29 = i28 * 2;
+            sb3.append(String.format(Locale.US, "blurCoordinates[%d] = inputTexCoord.xy + singleStepOffset * %f;\nblurCoordinates[%d] = inputTexCoord.xy - singleStepOffset * %f;\n", Integer.valueOf(i29 + 1), Float.valueOf(fArr5[i28]), Integer.valueOf(i29 + 2), Float.valueOf(fArr5[i28])));
+        }
+        sb3.append("}");
+        this.a = sb3.toString();
     }
 
-    public final boolean h(lh.y7 y7Var) {
-        int h;
-        int h10;
-        int a2 = y7Var != null ? y7Var.a() : 0;
-        String readRes = a2 == 1 ? AndroidUtilities.readRes(R.raw.hdr2sdr_hlg) : a2 == 2 ? AndroidUtilities.readRes(R.raw.hdr2sdr_pq) : "";
-        if (a2 != 0) {
-            h = nz.h(35633, "attribute vec4 position;uniform mat4 videoMatrix;attribute vec4 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = vec2(videoMatrix * inputTexCoord).xy;}");
-            h10 = nz.h(35632, String.format(Locale.US, "%1$s\nvarying highp vec2 vTextureCoord;void main() {gl_FragColor = TEX(vTextureCoord);}", readRes));
-        } else {
-            h = nz.h(35633, "attribute vec4 position;uniform mat4 videoMatrix;attribute vec4 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = vec2(videoMatrix * inputTexCoord).xy;}");
-            h10 = nz.h(35632, "#extension GL_OES_EGL_image_external : require\n" + "varying highp vec2 vTextureCoord;uniform sampler2D sTexture;void main() {gl_FragColor = texture2D(sTexture, vTextureCoord);}".replace("sampler2D", "samplerExternalOES"));
-        }
+    public final boolean a() {
+        int h = lz.h(35633, this.a);
+        int h10 = lz.h(35632, this.b);
         if (h == 0 || h10 == 0) {
             return false;
         }
-        int i10 = this.K;
-        if (i10 != 0) {
-            GLES20.glDeleteProgram(i10);
-        }
         int glCreateProgram = GLES20.glCreateProgram();
-        this.K = glCreateProgram;
+        this.c = glCreateProgram;
         GLES20.glAttachShader(glCreateProgram, h);
-        GLES20.glAttachShader(this.K, h10);
-        GLES20.glBindAttribLocation(this.K, 0, "position");
-        GLES20.glBindAttribLocation(this.K, 1, "inputTexCoord");
-        GLES20.glLinkProgram(this.K);
+        GLES20.glAttachShader(this.c, h10);
+        GLES20.glBindAttribLocation(this.c, 0, "position");
+        GLES20.glBindAttribLocation(this.c, 1, "inputTexCoord");
+        GLES20.glLinkProgram(this.c);
         int[] iArr = new int[1];
-        GLES20.glGetProgramiv(this.K, 35714, iArr, 0);
+        GLES20.glGetProgramiv(this.c, 35714, iArr, 0);
         if (iArr[0] == 0) {
-            GLES20.glDeleteProgram(this.K);
-            this.K = 0;
+            GLES20.glDeleteProgram(this.c);
+            this.c = 0;
         } else {
-            this.L = GLES20.glGetAttribLocation(this.K, "position");
-            this.N = GLES20.glGetAttribLocation(this.K, "inputTexCoord");
-            this.O = GLES20.glGetUniformLocation(this.K, "sourceImage");
-            this.M = GLES20.glGetUniformLocation(this.K, "videoMatrix");
+            this.d = GLES20.glGetAttribLocation(this.c, "position");
+            this.e = GLES20.glGetAttribLocation(this.c, "inputTexCoord");
+            this.f = GLES20.glGetUniformLocation(this.c, "sTexture");
+            this.g = GLES20.glGetUniformLocation(this.c, "texelWidthOffset");
+            this.h = GLES20.glGetUniformLocation(this.c, "texelHeightOffset");
         }
         return true;
-    }
-
-    public final void i(int i10, int i11) {
-        if (this.E == null) {
-            return;
-        }
-        postRunnable(new fz(this, i10, i11, 2));
-    }
-
-    @Override // org.telegram.messenger.DispatchQueue, java.lang.Thread, java.lang.Runnable
-    public final void run() {
-        EGLContext eGLContext;
-        int i10;
-        int i11;
-        fa faVar;
-        EGL10 egl10 = (EGL10) EGLContext.getEGL();
-        this.b = egl10;
-        EGLDisplay eglGetDisplay = egl10.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
-        this.c = eglGetDisplay;
-        boolean z10 = false;
-        if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
-            if (BuildVars.LOGS_ENABLED) {
-                org.telegram.messenger.rl.r(this.b, new StringBuilder("eglGetDisplay failed "));
-            }
-            finish();
-        } else {
-            int i12 = 2;
-            if (this.b.eglInitialize(eglGetDisplay, new int[2])) {
-                int[] iArr = new int[1];
-                EGLConfig[] eGLConfigArr = new EGLConfig[1];
-                if (!this.b.eglChooseConfig(this.c, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12326, 0, 12344}, eGLConfigArr, 1, iArr)) {
-                    if (BuildVars.LOGS_ENABLED) {
-                        org.telegram.messenger.rl.r(this.b, new StringBuilder("eglChooseConfig failed "));
-                    }
-                    finish();
-                } else if (iArr[0] > 0) {
-                    EGLConfig eGLConfig = eGLConfigArr[0];
-                    int[] iArr2 = {12440, 2, 12344};
-                    z9 z9Var = this.D;
-                    if (z9Var != null) {
-                        synchronized (z9Var.f) {
-                            try {
-                                eGLContext = z9Var.g;
-                                if (eGLContext == null) {
-                                    eGLContext = EGL10.EGL_NO_CONTEXT;
-                                }
-                            } finally {
-                            }
-                        }
-                    } else {
-                        eGLContext = EGL10.EGL_NO_CONTEXT;
-                    }
-                    EGLContext eglCreateContext = this.b.eglCreateContext(this.c, eGLConfig, eGLContext, iArr2);
-                    this.d = eglCreateContext;
-                    if (eglCreateContext == null) {
-                        if (BuildVars.LOGS_ENABLED) {
-                            org.telegram.messenger.rl.r(this.b, new StringBuilder("eglCreateContext failed "));
-                        }
-                        finish();
-                    } else {
-                        z9 z9Var2 = this.D;
-                        if (z9Var2 != null) {
-                            z9Var2.a(eglCreateContext);
-                        }
-                        SurfaceTexture surfaceTexture = this.a;
-                        if (surfaceTexture != null) {
-                            EGLSurface eglCreateWindowSurface = this.b.eglCreateWindowSurface(this.c, eGLConfig, surfaceTexture, null);
-                            this.e = eglCreateWindowSurface;
-                            if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
-                                if (BuildVars.LOGS_ENABLED) {
-                                    org.telegram.messenger.rl.r(this.b, new StringBuilder("createWindowSurface failed "));
-                                }
-                                finish();
-                            } else if (this.b.eglMakeCurrent(this.c, eglCreateWindowSurface, eglCreateWindowSurface, this.d)) {
-                                int h = nz.h(35633, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}");
-                                int h10 = nz.h(35632, "varying highp vec2 vTextureCoord;uniform sampler2D sTexture;void main() {gl_FragColor = texture2D(sTexture, vTextureCoord);}");
-                                if (h != 0 && h10 != 0) {
-                                    int glCreateProgram = GLES20.glCreateProgram();
-                                    this.G = glCreateProgram;
-                                    GLES20.glAttachShader(glCreateProgram, h);
-                                    GLES20.glAttachShader(this.G, h10);
-                                    GLES20.glBindAttribLocation(this.G, 0, "position");
-                                    GLES20.glBindAttribLocation(this.G, 1, "inputTexCoord");
-                                    GLES20.glLinkProgram(this.G);
-                                    int[] iArr3 = new int[1];
-                                    GLES20.glGetProgramiv(this.G, 35714, iArr3, 0);
-                                    if (iArr3[0] == 0) {
-                                        GLES20.glDeleteProgram(this.G);
-                                        this.G = 0;
-                                    } else {
-                                        this.H = GLES20.glGetAttribLocation(this.G, "position");
-                                        this.I = GLES20.glGetAttribLocation(this.G, "inputTexCoord");
-                                        this.J = GLES20.glGetUniformLocation(this.G, "sourceImage");
-                                    }
-                                    if (h(null)) {
-                                        Bitmap bitmap = this.s;
-                                        if (bitmap != null) {
-                                            i10 = bitmap.getWidth();
-                                            i11 = this.s.getHeight();
-                                        } else {
-                                            i10 = this.S;
-                                            i11 = this.T;
-                                        }
-                                        int i13 = i10;
-                                        int i14 = i11;
-                                        if (this.X != null) {
-                                            GLES20.glGenTextures(1, this.A, 0);
-                                            Matrix.setIdentityM(this.y, 0);
-                                            SurfaceTexture surfaceTexture2 = new SurfaceTexture(this.A[0]);
-                                            this.w = surfaceTexture2;
-                                            surfaceTexture2.setOnFrameAvailableListener(new iz(this, 0));
-                                            GLES20.glBindTexture(36197, this.A[0]);
-                                            GLES20.glTexParameterf(36197, 10240, 9729.0f);
-                                            GLES20.glTexParameterf(36197, 10241, 9728.0f);
-                                            GLES20.glTexParameteri(36197, 10242, 33071);
-                                            GLES20.glTexParameteri(36197, 10243, 33071);
-                                            AndroidUtilities.runOnUIThread(new gz(this, i12));
-                                        }
-                                        if (this.C && (faVar = this.E) != null && !faVar.b(this.n / this.r, this.D.a)) {
-                                            FileLog.e("Failed to create uiBlurFramebuffer");
-                                            this.C = false;
-                                            this.E = null;
-                                        }
-                                        if (this.F.a()) {
-                                            if (i13 != 0 && i14 != 0) {
-                                                this.F.i(this.s, this.v, this.A[0], i13, i14);
-                                                this.V = true;
-                                                nz nzVar = this.F;
-                                                this.Q = nzVar.X0;
-                                                this.R = nzVar.Y0;
-                                            }
-                                            z10 = true;
-                                        } else {
-                                            finish();
-                                        }
-                                    }
-                                }
-                            } else {
-                                if (BuildVars.LOGS_ENABLED) {
-                                    org.telegram.messenger.rl.r(this.b, new StringBuilder("eglMakeCurrent failed "));
-                                }
-                                finish();
-                            }
-                        } else {
-                            finish();
-                        }
-                    }
-                } else {
-                    if (BuildVars.LOGS_ENABLED) {
-                        FileLog.e("eglConfig not initialized");
-                    }
-                    finish();
-                }
-            } else {
-                if (BuildVars.LOGS_ENABLED) {
-                    org.telegram.messenger.rl.r(this.b, new StringBuilder("eglInitialize failed "));
-                }
-                finish();
-            }
-        }
-        this.f = z10;
-        super.run();
-    }
-
-    public jz(SurfaceTexture surfaceTexture, vu vuVar, lh.y7 y7Var, z9 z9Var, int i10, int i11) {
-        super("VideoFilterGLThread", false);
-        this.y = new float[16];
-        this.A = new int[1];
-        this.Z = new gz(this, 1);
-        this.a = surfaceTexture;
-        this.n = i10;
-        this.r = i11;
-        this.X = vuVar;
-        this.D = z9Var;
-        boolean z10 = z9Var != null;
-        this.C = z10;
-        if (z10) {
-            fa faVar = new fa();
-            this.E = faVar;
-            z9 z9Var2 = faVar.t;
-            if (z9Var2 != null && z9Var2.m != null) {
-                z9Var2.m = null;
-            }
-            faVar.t = z9Var;
-            if (z9Var != null && z9Var.m != faVar) {
-                z9Var.m = faVar;
-                z9Var.d();
-            }
-        }
-        this.h = true;
-        this.F = new nz(true, y7Var);
-        start();
     }
 }

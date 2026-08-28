@@ -28,8 +28,8 @@ public final class w implements u0 {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.p(this, i10);
+    public final /* synthetic */ boolean hasCharacteristics(int i9) {
+        return j$.com.android.tools.r8.a.p(this, i9);
     }
 
     @Override // j$.util.Spliterator
@@ -42,11 +42,11 @@ public final class w implements u0 {
         throw new IllegalStateException();
     }
 
-    public w(long j10, long j11, double d, double d10) {
+    public w(long j10, long j11, double d, double d9) {
         this.a = j10;
         this.b = j11;
         this.c = d;
-        this.d = d10;
+        this.d = d9;
     }
 
     @Override // j$.util.u0, j$.util.d1, j$.util.Spliterator

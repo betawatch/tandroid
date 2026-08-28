@@ -1,7 +1,7 @@
 package s4;
 
 import androidx.car.app.navigation.model.Maneuver;
-import d5.z;
+import d5.y;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,9 +10,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import r4.l;
+import r4.k;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class c extends i {
     public final int h;
@@ -36,24 +36,24 @@ public final class c extends i {
     public static final int[] D = {193, 201, 211, 218, 220, 252, 8216, 161, 42, 39, 8212, 169, 8480, 8226, 8220, 8221, 192, 194, 199, 200, 202, VoIPService.ID_INCOMING_CALL_PRENOTIFICATION, 235, 206, 207, 239, 212, 217, 249, 219, 171, 187};
     public static final int[] E = {195, 227, 205, 204, 236, 210, 242, 213, 245, 123, 125, 92, 94, 95, 124, 126, 196, 228, 214, 246, 223, 165, 164, 9474, 197, TLRPC.LAYER, 216, 248, 9484, 9488, 9492, 9496};
     public static final boolean[] F = {false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false};
-    public final z g = new z();
+    public final y g = new y();
     public final ArrayList l = new ArrayList();
     public b m = new b(0, 4);
     public int v = 0;
     public final long k = 16000000;
 
-    public c(String str, int i10) {
+    public c(String str, int i9) {
         this.h = "application/x-mp4-cea-608".equals(str) ? 2 : 3;
-        if (i10 == 1) {
+        if (i9 == 1) {
             this.j = 0;
             this.i = 0;
-        } else if (i10 == 2) {
+        } else if (i9 == 2) {
             this.j = 1;
             this.i = 0;
-        } else if (i10 == 3) {
+        } else if (i9 == 3) {
             this.j = 0;
             this.i = 1;
-        } else if (i10 != 4) {
+        } else if (i9 != 4) {
             d5.a.K("Cea608Decoder", "Invalid channel. Defaulting to CC1.");
             this.j = 0;
             this.i = 0;
@@ -68,11 +68,11 @@ public final class c extends i {
     }
 
     @Override // s4.i
-    public final a5.b b() {
+    public final j b() {
         List list = this.n;
         this.o = list;
         list.getClass();
-        return new a5.b(1, list);
+        return new j(0, list);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:160:0x007e A[SYNTHETIC] */
@@ -87,16 +87,16 @@ public final class c extends i {
         byteBuffer.getClass();
         byte[] array = byteBuffer.array();
         int limit = byteBuffer.limit();
-        z zVar = this.g;
-        zVar.A(limit, array);
+        y yVar = this.g;
+        yVar.A(limit, array);
         boolean z11 = false;
         while (true) {
-            int a2 = zVar.a();
-            int i10 = this.h;
-            if (a2 < i10) {
+            int a2 = yVar.a();
+            int i9 = this.h;
+            if (a2 < i9) {
                 if (z11) {
-                    int i11 = this.p;
-                    if (i11 == 1 || i11 == 3) {
+                    int i10 = this.p;
+                    if (i10 == 1 || i10 == 3) {
                         this.n = f();
                         this.x = this.e;
                         return;
@@ -105,9 +105,9 @@ public final class c extends i {
                 }
                 return;
             }
-            int r10 = i10 == 2 ? -4 : zVar.r();
-            int r11 = zVar.r();
-            int r12 = zVar.r();
+            int r10 = i9 == 2 ? -4 : yVar.r();
+            int r11 = yVar.r();
+            int r12 = yVar.r();
             if ((r10 & 2) == 0 && (r10 & 1) == this.i) {
                 byte b10 = (byte) (r11 & 127);
                 byte b11 = (byte) (r12 & 127);
@@ -150,50 +150,50 @@ public final class c extends i {
                                     this.w = true;
                                 }
                                 if (this.w) {
-                                    int i12 = b10 & 224;
-                                    if (i12 == 0) {
+                                    int i11 = b10 & 224;
+                                    if (i11 == 0) {
                                         this.v = (b10 >> 3) & 1;
                                     }
                                     if (this.v == this.j) {
-                                        if (i12 == 0) {
-                                            int i13 = b10 & 247;
-                                            if (i13 == 17 && (b11 & 240) == 48) {
+                                        if (i11 == 0) {
+                                            int i12 = b10 & 247;
+                                            if (i12 == 17 && (b11 & 240) == 48) {
                                                 this.m.a((char) C[b11 & 15]);
                                             } else {
-                                                int i14 = b10 & 246;
-                                                if (i14 == 18 && (b11 & 224) == 32) {
+                                                int i13 = b10 & 246;
+                                                if (i13 == 18 && (b11 & 224) == 32) {
                                                     this.m.b();
                                                     this.m.a((char) ((b10 & 1) == 0 ? D[b11 & 31] : E[b11 & 31]));
-                                                } else if (i13 == 17 && (b11 & 240) == 32) {
+                                                } else if (i12 == 17 && (b11 & 240) == 32) {
                                                     this.m.a(' ');
                                                     boolean z13 = (b11 & 1) == 1;
                                                     b bVar = this.m;
                                                     bVar.a.add(new a((b11 >> 1) & 7, z13, bVar.c.length()));
                                                 } else if ((b10 & 240) == 16 && (b11 & 192) == 64) {
-                                                    int i15 = y[b10 & 7];
+                                                    int i14 = y[b10 & 7];
                                                     if ((b11 & 32) != 0) {
-                                                        i15++;
+                                                        i14++;
                                                     }
                                                     b bVar2 = this.m;
-                                                    if (i15 != bVar2.d) {
+                                                    if (i14 != bVar2.d) {
                                                         if (this.p != 1 && !bVar2.e()) {
                                                             b bVar3 = new b(this.p, this.q);
                                                             this.m = bVar3;
                                                             this.l.add(bVar3);
                                                         }
-                                                        this.m.d = i15;
+                                                        this.m.d = i14;
                                                     }
                                                     boolean z14 = (b11 & 16) == 16;
                                                     boolean z15 = (b11 & 1) == 1;
-                                                    int i16 = (b11 >> 1) & 7;
+                                                    int i15 = (b11 >> 1) & 7;
                                                     b bVar4 = this.m;
-                                                    bVar4.a.add(new a(z14 ? 8 : i16, z15, bVar4.c.length()));
+                                                    bVar4.a.add(new a(z14 ? 8 : i15, z15, bVar4.c.length()));
                                                     if (z14) {
-                                                        this.m.e = z[i16];
+                                                        this.m.e = z[i15];
                                                     }
-                                                } else if (i13 == 23 && b11 >= 33 && b11 <= 35) {
+                                                } else if (i12 == 23 && b11 >= 33 && b11 <= 35) {
                                                     this.m.f = b11 - 32;
-                                                } else if (i14 == 20 && (b11 & 240) == 32) {
+                                                } else if (i13 == 20 && (b11 & 240) == 32) {
                                                     if (b11 == 32) {
                                                         h(2);
                                                     } else if (b11 != 41) {
@@ -214,8 +214,8 @@ public final class c extends i {
                                                                 this.m.h = 4;
                                                                 break;
                                                             default:
-                                                                int i17 = this.p;
-                                                                if (i17 != 0) {
+                                                                int i16 = this.p;
+                                                                if (i16 != 0) {
                                                                     if (b11 == 33) {
                                                                         this.m.b();
                                                                         break;
@@ -223,12 +223,12 @@ public final class c extends i {
                                                                         switch (b11) {
                                                                             case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
                                                                                 this.n = Collections.EMPTY_LIST;
-                                                                                if (i17 == 1 || i17 == 3) {
+                                                                                if (i16 == 1 || i16 == 3) {
                                                                                     g();
                                                                                     break;
                                                                                 }
                                                                             case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                                                                                if (i17 == 1 && !this.m.e()) {
+                                                                                if (i16 == 1 && !this.m.e()) {
                                                                                     b bVar5 = this.m;
                                                                                     ArrayList arrayList = bVar5.b;
                                                                                     arrayList.add(bVar5.d());
@@ -289,9 +289,9 @@ public final class c extends i {
 
     @Override // s4.i, k3.e
     /* renamed from: d */
-    public final l dequeueOutputBuffer() {
-        l lVar;
-        l dequeueOutputBuffer = super.dequeueOutputBuffer();
+    public final k dequeueOutputBuffer() {
+        k kVar;
+        k dequeueOutputBuffer = super.dequeueOutputBuffer();
         if (dequeueOutputBuffer != null) {
             return dequeueOutputBuffer;
         }
@@ -300,13 +300,13 @@ public final class c extends i {
             return null;
         }
         long j11 = this.x;
-        if (j11 == -9223372036854775807L || this.e - j11 < j10 || (lVar = (l) this.b.pollFirst()) == null) {
+        if (j11 == -9223372036854775807L || this.e - j11 < j10 || (kVar = (k) this.b.pollFirst()) == null) {
             return null;
         }
         this.n = Collections.EMPTY_LIST;
         this.x = -9223372036854775807L;
-        lVar.a(this.e, b(), Long.MAX_VALUE);
-        return lVar;
+        kVar.a(this.e, b(), Long.MAX_VALUE);
+        return kVar;
     }
 
     @Override // s4.i
@@ -318,23 +318,23 @@ public final class c extends i {
         ArrayList arrayList = this.l;
         int size = arrayList.size();
         ArrayList arrayList2 = new ArrayList(size);
-        int i10 = 2;
-        for (int i11 = 0; i11 < size; i11++) {
-            r4.c c10 = ((b) arrayList.get(i11)).c(TLObject.FLAG_31);
+        int i9 = 2;
+        for (int i10 = 0; i10 < size; i10++) {
+            r4.b c10 = ((b) arrayList.get(i10)).c(TLObject.FLAG_31);
             arrayList2.add(c10);
             if (c10 != null) {
-                i10 = Math.min(i10, c10.r);
+                i9 = Math.min(i9, c10.r);
             }
         }
         ArrayList arrayList3 = new ArrayList(size);
-        for (int i12 = 0; i12 < size; i12++) {
-            r4.c cVar = (r4.c) arrayList2.get(i12);
-            if (cVar != null) {
-                if (cVar.r != i10) {
-                    cVar = ((b) arrayList.get(i12)).c(i10);
-                    cVar.getClass();
+        for (int i11 = 0; i11 < size; i11++) {
+            r4.b bVar = (r4.b) arrayList2.get(i11);
+            if (bVar != null) {
+                if (bVar.r != i9) {
+                    bVar = ((b) arrayList.get(i11)).c(i9);
+                    bVar.getClass();
                 }
-                arrayList3.add(cVar);
+                arrayList3.add(bVar);
             }
         }
         return arrayList3;
@@ -377,28 +377,28 @@ public final class c extends i {
         return "Cea608Decoder";
     }
 
-    public final void h(int i10) {
-        int i11 = this.p;
-        if (i11 == i10) {
+    public final void h(int i9) {
+        int i10 = this.p;
+        if (i10 == i9) {
             return;
         }
-        this.p = i10;
-        if (i10 != 3) {
+        this.p = i9;
+        if (i9 != 3) {
             g();
-            if (i11 == 3 || i10 == 1 || i10 == 0) {
+            if (i10 == 3 || i9 == 1 || i9 == 0) {
                 this.n = Collections.EMPTY_LIST;
                 return;
             }
             return;
         }
-        int i12 = 0;
+        int i11 = 0;
         while (true) {
             ArrayList arrayList = this.l;
-            if (i12 >= arrayList.size()) {
+            if (i11 >= arrayList.size()) {
                 return;
             }
-            ((b) arrayList.get(i12)).g = i10;
-            i12++;
+            ((b) arrayList.get(i11)).g = i9;
+            i11++;
         }
     }
 

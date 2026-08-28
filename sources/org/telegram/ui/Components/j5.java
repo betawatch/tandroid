@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class j5 extends Drawable {
     public final Drawable a;
@@ -12,10 +12,10 @@ public class j5 extends Drawable {
     public final int c;
     public int d = 255;
 
-    public j5(int i10, int i11, Drawable drawable) {
+    public j5(int i9, int i10, Drawable drawable) {
         this.a = drawable;
-        this.b = i10;
-        this.c = i11;
+        this.b = i9;
+        this.c = i10;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -48,11 +48,11 @@ public class j5 extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.d = i10;
+    public final void setAlpha(int i9) {
+        this.d = i9;
         Drawable drawable = this.a;
         if (drawable != null) {
-            drawable.setAlpha(i10);
+            drawable.setAlpha(i9);
         }
     }
 

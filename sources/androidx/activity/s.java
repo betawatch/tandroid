@@ -1,42 +1,27 @@
 package androidx.activity;
 
-import android.window.BackEvent;
-import android.window.OnBackAnimationCallback;
+import android.window.OnBackInvokedCallback;
+import android.window.OnBackInvokedDispatcher;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class s implements OnBackAnimationCallback {
-    public final /* synthetic */ ad.l a;
-    public final /* synthetic */ ad.l b;
-    public final /* synthetic */ ad.a c;
-    public final /* synthetic */ ad.a d;
+public final class s {
+    public static final s a = new s();
 
-    public s(ad.l lVar, ad.l lVar2, ad.a aVar, ad.a aVar2) {
-        this.a = lVar;
-        this.b = lVar2;
-        this.c = aVar;
-        this.d = aVar2;
+    public final OnBackInvokedCallback a(zc.a onBackInvoked) {
+        kotlin.jvm.internal.i.e(onBackInvoked, "onBackInvoked");
+        return new r(onBackInvoked, 0);
     }
 
-    @Override // android.window.OnBackAnimationCallback
-    public final void onBackCancelled() {
-        this.d.invoke();
+    public final void b(Object dispatcher, int i9, Object callback) {
+        kotlin.jvm.internal.i.e(dispatcher, "dispatcher");
+        kotlin.jvm.internal.i.e(callback, "callback");
+        ((OnBackInvokedDispatcher) dispatcher).registerOnBackInvokedCallback(i9, (OnBackInvokedCallback) callback);
     }
 
-    @Override // android.window.OnBackInvokedCallback
-    public final void onBackInvoked() {
-        this.c.invoke();
-    }
-
-    @Override // android.window.OnBackAnimationCallback
-    public final void onBackProgressed(BackEvent backEvent) {
-        kotlin.jvm.internal.j.e(backEvent, "backEvent");
-        this.b.invoke(new b(backEvent));
-    }
-
-    @Override // android.window.OnBackAnimationCallback
-    public final void onBackStarted(BackEvent backEvent) {
-        kotlin.jvm.internal.j.e(backEvent, "backEvent");
-        this.a.invoke(new b(backEvent));
+    public final void c(Object dispatcher, Object callback) {
+        kotlin.jvm.internal.i.e(dispatcher, "dispatcher");
+        kotlin.jvm.internal.i.e(callback, "callback");
+        ((OnBackInvokedDispatcher) dispatcher).unregisterOnBackInvokedCallback((OnBackInvokedCallback) callback);
     }
 }

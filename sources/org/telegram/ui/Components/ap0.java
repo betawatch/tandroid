@@ -5,16 +5,16 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class ap0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ sp0 c;
+    public final /* synthetic */ rp0 c;
 
-    public /* synthetic */ ap0(sp0 sp0Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = sp0Var;
+    public /* synthetic */ ap0(rp0 rp0Var, boolean z10, int i9) {
+        this.a = i9;
+        this.c = rp0Var;
         this.b = z10;
     }
 
@@ -30,9 +30,9 @@ public final class ap0 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                sp0 sp0Var = this.c;
-                if (animator.equals(sp0Var.y)) {
-                    sp0Var.y = null;
+                rp0 rp0Var = this.c;
+                if (animator.equals(rp0Var.y)) {
+                    rp0Var.y = null;
                     break;
                 }
                 break;
@@ -43,32 +43,32 @@ public final class ap0 extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                sp0 sp0Var = this.c;
-                AnimatorSet[] animatorSetArr = sp0Var.P;
+                rp0 rp0Var = this.c;
+                AnimatorSet[] animatorSetArr = rp0Var.P;
                 AnimatorSet animatorSet = animatorSetArr[0];
                 if (animatorSet != null && animatorSet.equals(animator)) {
                     if (!this.b) {
-                        sp0Var.O[0].setVisibility(4);
+                        rp0Var.O[0].setVisibility(4);
                     }
                     animatorSetArr[0] = null;
                     break;
                 }
                 break;
             default:
-                sp0 sp0Var2 = this.c;
-                FrameLayout frameLayout = sp0Var2.h;
-                if (animator.equals(sp0Var2.y)) {
+                rp0 rp0Var2 = this.c;
+                FrameLayout frameLayout = rp0Var2.h;
+                if (animator.equals(rp0Var2.y)) {
                     if (!this.b) {
-                        sp0Var2.c.setVisibility(4);
-                        FrameLayout frameLayout2 = sp0Var2.Y;
+                        rp0Var2.c.setVisibility(4);
+                        FrameLayout frameLayout2 = rp0Var2.Y;
                         if (frameLayout2 != null && frameLayout == null) {
                             frameLayout2.setVisibility(4);
                         }
-                        sp0Var2.f.setVisibility(4);
+                        rp0Var2.f.setVisibility(4);
                     } else if (frameLayout != null) {
                         frameLayout.setVisibility(4);
                     }
-                    sp0Var2.y = null;
+                    rp0Var2.y = null;
                     break;
                 }
                 break;

@@ -1,35 +1,31 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.Iterator;
+import android.content.Context;
+import java.util.UUID;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class p0 extends j0 {
-    public final transient r0 d;
-    public final transient q0 e;
+public final class p0 {
+    public static final q5.b i = new q5.b("ClientCastAnalytics", null);
+    public static final boolean j = true;
+    public final n5.g a;
+    public final t b;
+    public final d c;
+    public Long e;
+    public w2.p g;
+    public int h = 1;
+    public final String d = UUID.randomUUID().toString();
+    public final ExecutorService f = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
 
-    public p0(r0 r0Var, q0 q0Var) {
-        this.d = r0Var;
-        this.e = q0Var;
+    public p0(Context context, q5.s sVar, n5.g gVar, t tVar, d dVar) {
+        this.a = gVar;
+        this.b = tVar;
+        this.c = dVar;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.d.get(obj) != null;
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final int i(Object[] objArr) {
-        return this.e.i(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return this.e.listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.d.h;
+    public final void a(s1 s1Var, int i9) {
+        this.f.execute(new androidx.activity.g(this, s1Var, i9, 4));
     }
 }

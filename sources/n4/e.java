@@ -7,11 +7,11 @@ import android.util.Pair;
 import android.util.Xml;
 import androidx.car.app.navigation.model.Maneuver;
 import com.google.android.exoplayer2.upstream.s0;
-import d5.g0;
+import d5.f0;
+import g7.b0;
 import h3.a1;
 import h3.t0;
 import h3.t1;
-import h7.d0;
 import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,6 +19,10 @@ import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import n5.e0;
+import o8.l0;
+import o8.x;
+import o8.z;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.tgnet.TLObject;
 import org.webrtc.MediaStreamTrack;
@@ -27,11 +31,8 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 import org.xmlpull.v1.XmlSerializer;
-import p8.l0;
-import p8.x;
-import p8.z;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class e extends DefaultHandler implements s0 {
     public static final Pattern b = Pattern.compile("(\\d+)(?:/(\\d+))?");
@@ -43,20 +44,20 @@ public final class e extends DefaultHandler implements s0 {
     public e() {
         try {
             this.a = XmlPullParserFactory.newInstance();
-        } catch (XmlPullParserException e9) {
-            throw new RuntimeException("Couldn't create XmlPullParserFactory instance", e9);
+        } catch (XmlPullParserException e10) {
+            throw new RuntimeException("Couldn't create XmlPullParserFactory instance", e10);
         }
     }
 
-    public static long a(ArrayList arrayList, long j10, long j11, int i10, long j12) {
-        int i11;
-        if (i10 >= 0) {
-            i11 = i10 + 1;
+    public static long a(ArrayList arrayList, long j10, long j11, int i9, long j12) {
+        int i10;
+        if (i9 >= 0) {
+            i10 = i9 + 1;
         } else {
-            int i12 = g0.a;
-            i11 = (int) ((((j12 - j10) + j11) - 1) / j11);
+            int i11 = f0.a;
+            i10 = (int) ((((j12 - j10) + j11) - 1) / j11);
         }
-        for (int i13 = 0; i13 < i11; i13++) {
+        for (int i12 = 0; i12 < i10; i12++) {
             arrayList.add(new q(j10, j11));
             j10 += j11;
         }
@@ -65,13 +66,13 @@ public final class e extends DefaultHandler implements s0 {
 
     public static void b(XmlPullParser xmlPullParser) {
         if (xmlPullParser.getEventType() == 2) {
-            int i10 = 1;
-            while (i10 != 0) {
+            int i9 = 1;
+            while (i9 != 0) {
                 xmlPullParser.next();
                 if (xmlPullParser.getEventType() == 2) {
-                    i10++;
+                    i9++;
                 } else if (xmlPullParser.getEventType() == 3) {
-                    i10--;
+                    i9--;
                 }
             }
         }
@@ -105,9 +106,9 @@ public final class e extends DefaultHandler implements s0 {
             attributeValue = null;
         }
         attributeValue.getClass();
-        int i10 = 6;
+        int i9 = 6;
         char c11 = 3;
-        int i11 = -1;
+        int i10 = -1;
         switch (attributeValue.hashCode()) {
             case -2128649360:
                 if (attributeValue.equals("urn:dts:dash:audio_channel_configuration:2012")) {
@@ -174,7 +175,7 @@ public final class e extends DefaultHandler implements s0 {
             case 1:
                 String attributeValue3 = xmlPullParser.getAttributeValue(null, "value");
                 if (attributeValue3 != null) {
-                    i11 = Integer.parseInt(attributeValue3);
+                    i10 = Integer.parseInt(attributeValue3);
                     break;
                 }
                 break;
@@ -182,7 +183,7 @@ public final class e extends DefaultHandler implements s0 {
             case 6:
                 String attributeValue4 = xmlPullParser.getAttributeValue(null, "value");
                 if (attributeValue4 != null) {
-                    String b10 = d0.b(attributeValue4);
+                    String b10 = b0.b(attributeValue4);
                     b10.getClass();
                     switch (b10.hashCode()) {
                         case 1596796:
@@ -214,27 +215,27 @@ public final class e extends DefaultHandler implements s0 {
                     }
                     switch (c11) {
                         case 0:
-                            i10 = 1;
+                            i9 = 1;
                             break;
                         case 1:
-                            i10 = 2;
+                            i9 = 2;
                             break;
                         case 3:
-                            i10 = 8;
+                            i9 = 8;
                             break;
                     }
-                    i11 = i10;
+                    i10 = i9;
                     break;
                 }
-                i10 = -1;
-                i11 = i10;
+                i9 = -1;
+                i10 = i9;
             case 3:
                 String attributeValue5 = xmlPullParser.getAttributeValue(null, "value");
                 int parseInt2 = attributeValue5 == null ? -1 : Integer.parseInt(attributeValue5);
                 if (parseInt2 >= 0) {
                     int[] iArr = e;
                     if (parseInt2 < iArr.length) {
-                        i11 = iArr[parseInt2];
+                        i10 = iArr[parseInt2];
                         break;
                     }
                 }
@@ -250,7 +251,7 @@ public final class e extends DefaultHandler implements s0 {
         do {
             xmlPullParser.next();
         } while (!d5.a.y(xmlPullParser, "AudioChannelConfiguration"));
-        return i11;
+        return i10;
     }
 
     public static long d(XmlPullParser xmlPullParser, long j10) {
@@ -264,7 +265,7 @@ public final class e extends DefaultHandler implements s0 {
         return (long) (Float.parseFloat(attributeValue) * 1000000.0f);
     }
 
-    public static ArrayList f(XmlPullParser xmlPullParser, ArrayList arrayList, boolean z10) {
+    public static ArrayList e(XmlPullParser xmlPullParser, ArrayList arrayList, boolean z10) {
         String attributeValue = xmlPullParser.getAttributeValue(null, "dvb:priority");
         int parseInt = attributeValue != null ? Integer.parseInt(attributeValue) : z10 ? 1 : TLObject.FLAG_31;
         String attributeValue2 = xmlPullParser.getAttributeValue(null, "dvb:weight");
@@ -283,11 +284,11 @@ public final class e extends DefaultHandler implements s0 {
             if (attributeValue3 == null) {
                 attributeValue3 = str;
             }
-            return p8.l.k(new b(parseInt, parseInt2, str, attributeValue3));
+            return o8.l.k(new b(parseInt, parseInt2, str, attributeValue3));
         }
         ArrayList arrayList2 = new ArrayList();
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            b bVar = (b) arrayList.get(i10);
+        for (int i9 = 0; i9 < arrayList.size(); i9++) {
+            b bVar = (b) arrayList.get(i9);
             String G = d5.a.G(bVar.a, str);
             String str2 = attributeValue3 == null ? G : attributeValue3;
             if (z10) {
@@ -334,7 +335,7 @@ public final class e extends DefaultHandler implements s0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static Pair g(XmlPullParser xmlPullParser) {
+    public static Pair f(XmlPullParser xmlPullParser) {
         String str;
         ?? r62;
         String str2;
@@ -344,7 +345,7 @@ public final class e extends DefaultHandler implements s0 {
         String str4;
         String attributeValue = xmlPullParser.getAttributeValue(null, "schemeIdUri");
         if (attributeValue != null) {
-            String b10 = d0.b(attributeValue);
+            String b10 = b0.b(attributeValue);
             b10.getClass();
             switch (b10.hashCode()) {
                 case -1980789791:
@@ -404,28 +405,28 @@ public final class e extends DefaultHandler implements s0 {
                 case 3:
                     str = xmlPullParser.getAttributeValue(null, "value");
                     int attributeCount = xmlPullParser.getAttributeCount();
-                    int i10 = 0;
+                    int i9 = 0;
                     while (true) {
-                        if (i10 >= attributeCount) {
+                        if (i9 >= attributeCount) {
                             str4 = null;
                         } else {
-                            String attributeName = xmlPullParser.getAttributeName(i10);
+                            String attributeName = xmlPullParser.getAttributeName(i9);
                             int indexOf = attributeName.indexOf(58);
                             if (indexOf != -1) {
                                 attributeName = attributeName.substring(indexOf + 1);
                             }
                             if (attributeName.equals("default_KID")) {
-                                str4 = xmlPullParser.getAttributeValue(i10);
+                                str4 = xmlPullParser.getAttributeValue(i9);
                             } else {
-                                i10++;
+                                i9++;
                             }
                         }
                     }
                     if (!TextUtils.isEmpty(str4) && !"00000000-0000-0000-0000-000000000000".equals(str4)) {
                         String[] split = str4.split("\\s+");
                         UUID[] uuidArr = new UUID[split.length];
-                        for (int i11 = 0; i11 < split.length; i11++) {
-                            uuidArr[i11] = UUID.fromString(split[i11]);
+                        for (int i10 = 0; i10 < split.length; i10++) {
+                            uuidArr[i10] = UUID.fromString(split[i10]);
                         }
                         r62 = h3.h.b;
                         str3 = null;
@@ -454,8 +455,8 @@ public final class e extends DefaultHandler implements s0 {
                         }
                         if (name.equals("pssh") && xmlPullParser.next() == 4) {
                             byte[] decode = Base64.decode(xmlPullParser.getText(), 0);
-                            n1.d e9 = u3.j.e(decode);
-                            UUID uuid = e9 == null ? null : (UUID) e9.b;
+                            e0 e10 = u3.j.e(decode);
+                            UUID uuid = e10 == null ? null : (UUID) e10.b;
                             if (uuid == null) {
                                 d5.a.K("MpdParser", "Skipping malformed cenc:pssh data");
                                 r62 = uuid;
@@ -480,7 +481,7 @@ public final class e extends DefaultHandler implements s0 {
                     r72 = r72;
                 }
             } while (!d5.a.y(xmlPullParser, "ContentProtection"));
-            return Pair.create(str, r62 != null ? new l3.c(r62, str3, "video/mp4", r72) : null);
+            return Pair.create(str, r62 != null ? new l3.b(r62, str3, "video/mp4", r72) : null);
         }
         str = null;
         r62 = null;
@@ -494,10 +495,10 @@ public final class e extends DefaultHandler implements s0 {
             if (d5.a.z(xmlPullParser, "ms:laurl")) {
             }
         } while (!d5.a.y(xmlPullParser, "ContentProtection"));
-        return Pair.create(str, r62 != null ? new l3.c(r62, str3, "video/mp4", r72) : null);
+        return Pair.create(str, r62 != null ? new l3.b(r62, str3, "video/mp4", r72) : null);
     }
 
-    public static int h(XmlPullParser xmlPullParser) {
+    public static int g(XmlPullParser xmlPullParser) {
         String attributeValue = xmlPullParser.getAttributeValue(null, "contentType");
         if (TextUtils.isEmpty(attributeValue)) {
             return -1;
@@ -514,7 +515,7 @@ public final class e extends DefaultHandler implements s0 {
         return "image".equals(attributeValue) ? 4 : -1;
     }
 
-    public static f i(XmlPullParser xmlPullParser, String str) {
+    public static f h(XmlPullParser xmlPullParser, String str) {
         String attributeValue = xmlPullParser.getAttributeValue(null, "schemeIdUri");
         if (attributeValue == null) {
             attributeValue = "";
@@ -531,12 +532,12 @@ public final class e extends DefaultHandler implements s0 {
         return new f(attributeValue, attributeValue2, str2);
     }
 
-    public static long j(XmlPullParser xmlPullParser, String str, long j10) {
+    public static long i(XmlPullParser xmlPullParser, String str, long j10) {
         String attributeValue = xmlPullParser.getAttributeValue(null, str);
         if (attributeValue == null) {
             return j10;
         }
-        Matcher matcher = g0.h.matcher(attributeValue);
+        Matcher matcher = f0.h.matcher(attributeValue);
         if (!matcher.matches()) {
             return (long) (Double.parseDouble(attributeValue) * 3600.0d * 1000.0d);
         }
@@ -556,7 +557,7 @@ public final class e extends DefaultHandler implements s0 {
         return !isEmpty ? -parseDouble6 : parseDouble6;
     }
 
-    public static float k(XmlPullParser xmlPullParser, float f10) {
+    public static float j(XmlPullParser xmlPullParser, float f10) {
         String attributeValue = xmlPullParser.getAttributeValue(null, "frameRate");
         if (attributeValue != null) {
             Matcher matcher = b.matcher(attributeValue);
@@ -604,7 +605,7 @@ public final class e extends DefaultHandler implements s0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static c l(XmlPullParser xmlPullParser, Uri uri) {
+    public static c k(XmlPullParser xmlPullParser, Uri uri) {
         boolean z10;
         long j10;
         ArrayList arrayList;
@@ -650,7 +651,7 @@ public final class e extends DefaultHandler implements s0 {
         String str18;
         String str19;
         ArrayList arrayList15;
-        int i10;
+        int i9;
         long j18;
         long j19;
         ArrayList arrayList16;
@@ -668,16 +669,16 @@ public final class e extends DefaultHandler implements s0 {
         String str27;
         float f11;
         int parseInt3;
-        int i11;
+        int i10;
         String str28;
         String str29;
         ArrayList arrayList19;
         String str30;
         ArrayList arrayList20;
-        int i12;
+        int i11;
         String str31;
+        int i12;
         int i13;
-        int i14;
         long j20;
         ArrayList arrayList21;
         String str32;
@@ -697,28 +698,28 @@ public final class e extends DefaultHandler implements s0 {
         ArrayList arrayList26;
         String str38;
         s sVar;
-        int i15;
+        int i14;
         String str39;
         String str40;
         String str41;
         String c10;
         long j25;
         String str42;
-        int i16;
+        int i15;
         ArrayList arrayList27;
+        int i16;
         int i17;
         int i18;
-        int i19;
         Pair pair;
         int parseInt4;
-        int i20;
+        int i19;
         String str43;
         char c11;
+        int i20;
         int i21;
-        int i22;
         String str44;
         long j26;
-        int i23;
+        int i22;
         long j27;
         m kVar;
         String str45;
@@ -730,36 +731,36 @@ public final class e extends DefaultHandler implements s0 {
             strArr = attributeValue.split(",");
         }
         int length = strArr.length;
-        int i24 = 0;
+        int i23 = 0;
         while (true) {
-            if (i24 >= length) {
+            if (i23 >= length) {
                 z10 = false;
                 break;
             }
-            if (strArr[i24].startsWith("urn:dvb:dash:profile:dvb-dash:")) {
+            if (strArr[i23].startsWith("urn:dvb:dash:profile:dvb-dash:")) {
                 z10 = true;
                 break;
             }
-            i24++;
+            i23++;
         }
         String attributeValue2 = xmlPullParser.getAttributeValue(null, "availabilityStartTime");
         long j29 = -9223372036854775807L;
-        long K = attributeValue2 == null ? -9223372036854775807L : g0.K(attributeValue2);
-        long j30 = j(xmlPullParser, "mediaPresentationDuration", -9223372036854775807L);
-        long j31 = j(xmlPullParser, "minBufferTime", -9223372036854775807L);
+        long K = attributeValue2 == null ? -9223372036854775807L : f0.K(attributeValue2);
+        long i24 = i(xmlPullParser, "mediaPresentationDuration", -9223372036854775807L);
+        long i25 = i(xmlPullParser, "minBufferTime", -9223372036854775807L);
         boolean equals = "dynamic".equals(xmlPullParser.getAttributeValue(null, TeXSymbolParser.TYPE_ATTR));
-        long j32 = equals ? j(xmlPullParser, "minimumUpdatePeriod", -9223372036854775807L) : -9223372036854775807L;
-        long j33 = equals ? j(xmlPullParser, "timeShiftBufferDepth", -9223372036854775807L) : -9223372036854775807L;
-        long j34 = equals ? j(xmlPullParser, "suggestedPresentationDelay", -9223372036854775807L) : -9223372036854775807L;
+        long i26 = equals ? i(xmlPullParser, "minimumUpdatePeriod", -9223372036854775807L) : -9223372036854775807L;
+        long i27 = equals ? i(xmlPullParser, "timeShiftBufferDepth", -9223372036854775807L) : -9223372036854775807L;
+        long i28 = equals ? i(xmlPullParser, "suggestedPresentationDelay", -9223372036854775807L) : -9223372036854775807L;
         String attributeValue3 = xmlPullParser.getAttributeValue(null, "publishTime");
-        long K2 = attributeValue3 == null ? -9223372036854775807L : g0.K(attributeValue3);
-        long j35 = equals ? 0L : -9223372036854775807L;
-        ArrayList k10 = p8.l.k(new b(z10 ? 1 : TLObject.FLAG_31, 1, uri.toString(), uri.toString()));
+        long K2 = attributeValue3 == null ? -9223372036854775807L : f0.K(attributeValue3);
+        long j30 = equals ? 0L : -9223372036854775807L;
+        ArrayList k10 = o8.l.k(new b(z10 ? 1 : TLObject.FLAG_31, 1, uri.toString(), uri.toString()));
         ArrayList arrayList28 = new ArrayList();
         ArrayList arrayList29 = new ArrayList();
-        long j36 = equals ? -9223372036854775807L : 0L;
+        long j31 = equals ? -9223372036854775807L : 0L;
         i iVar = null;
-        c9.b bVar = null;
+        b9.c cVar = null;
         Uri uri2 = null;
         a1 a1Var = null;
         boolean z12 = false;
@@ -769,14 +770,14 @@ public final class e extends DefaultHandler implements s0 {
             String str47 = "BaseURL";
             if (d5.a.z(xmlPullParser, "BaseURL")) {
                 if (!z12) {
-                    j35 = d(xmlPullParser, j35);
+                    j30 = d(xmlPullParser, j30);
                     z12 = true;
                 }
-                arrayList29.addAll(f(xmlPullParser, k10, z10));
+                arrayList29.addAll(e(xmlPullParser, k10, z10));
                 arrayList = k10;
                 j13 = j29;
                 arrayList3 = arrayList29;
-                j11 = j36;
+                j11 = j31;
                 z11 = z10;
                 arrayList2 = arrayList28;
             } else {
@@ -809,7 +810,7 @@ public final class e extends DefaultHandler implements s0 {
                             i iVar2 = new i(str54, str55, str56, str49, str50);
                             arrayList = k10;
                             arrayList3 = arrayList29;
-                            j11 = j36;
+                            j11 = j31;
                             z11 = z10;
                             arrayList2 = arrayList28;
                             iVar = iVar2;
@@ -825,18 +826,18 @@ public final class e extends DefaultHandler implements s0 {
                     if (d5.a.z(xmlPullParser, "UTCTiming")) {
                         arrayList = k10;
                         arrayList3 = arrayList29;
-                        j11 = j36;
-                        bVar = new c9.b(3, xmlPullParser.getAttributeValue(str46, "schemeIdUri"), xmlPullParser.getAttributeValue(str46, "value"));
+                        j11 = j31;
+                        cVar = new b9.c(3, xmlPullParser.getAttributeValue(str46, "schemeIdUri"), xmlPullParser.getAttributeValue(str46, "value"));
                     } else if (d5.a.z(xmlPullParser, "Location")) {
                         uri2 = d5.a.H(uri.toString(), xmlPullParser.nextText());
                         arrayList = k10;
                         arrayList3 = arrayList29;
-                        j11 = j36;
+                        j11 = j31;
                     } else {
                         if (d5.a.z(xmlPullParser, "ServiceDescription")) {
-                            long j37 = j10;
-                            long j38 = j37;
-                            long j39 = j38;
+                            long j32 = j10;
+                            long j33 = j32;
+                            long j34 = j33;
                             float f12 = -3.4028235E38f;
                             float f13 = -3.4028235E38f;
                             while (true) {
@@ -844,11 +845,11 @@ public final class e extends DefaultHandler implements s0 {
                                 if (d5.a.z(xmlPullParser, "Latency")) {
                                     arrayList = k10;
                                     String attributeValue6 = xmlPullParser.getAttributeValue(null, "target");
-                                    j37 = attributeValue6 == null ? j10 : Long.parseLong(attributeValue6);
+                                    j32 = attributeValue6 == null ? j10 : Long.parseLong(attributeValue6);
                                     String attributeValue7 = xmlPullParser.getAttributeValue(null, "min");
-                                    j38 = attributeValue7 == null ? j10 : Long.parseLong(attributeValue7);
+                                    j33 = attributeValue7 == null ? j10 : Long.parseLong(attributeValue7);
                                     String attributeValue8 = xmlPullParser.getAttributeValue(null, "max");
-                                    j39 = attributeValue8 == null ? j10 : Long.parseLong(attributeValue8);
+                                    j34 = attributeValue8 == null ? j10 : Long.parseLong(attributeValue8);
                                 } else {
                                     arrayList = k10;
                                     if (d5.a.z(xmlPullParser, "PlaybackRate")) {
@@ -858,104 +859,104 @@ public final class e extends DefaultHandler implements s0 {
                                         f13 = attributeValue10 == null ? -3.4028235E38f : Float.parseFloat(attributeValue10);
                                     }
                                 }
-                                long j40 = j37;
-                                long j41 = j35;
-                                long j42 = j38;
-                                long j43 = j33;
-                                long j44 = j39;
+                                long j35 = j32;
+                                long j36 = j30;
+                                long j37 = j33;
+                                long j38 = i27;
+                                long j39 = j34;
                                 if (d5.a.y(xmlPullParser, "ServiceDescription")) {
                                     a1 a1Var2 = new a1();
-                                    a1Var2.a = j40;
-                                    a1Var2.b = j42;
-                                    a1Var2.c = j44;
+                                    a1Var2.a = j35;
+                                    a1Var2.b = j37;
+                                    a1Var2.c = j39;
                                     a1Var2.d = f12;
                                     a1Var2.e = f13;
                                     a1Var = a1Var2;
-                                    j11 = j36;
+                                    j11 = j31;
                                     z11 = z10;
                                     arrayList2 = arrayList28;
-                                    j35 = j41;
-                                    j12 = j43;
+                                    j30 = j36;
+                                    j12 = j38;
                                     j13 = j10;
                                     arrayList3 = arrayList29;
                                 } else {
-                                    j39 = j44;
-                                    j33 = j43;
+                                    j34 = j39;
+                                    i27 = j38;
                                     k10 = arrayList;
-                                    j38 = j42;
-                                    j35 = j41;
-                                    j37 = j40;
+                                    j33 = j37;
+                                    j30 = j36;
+                                    j32 = j35;
                                 }
                             }
                         } else {
                             arrayList = k10;
-                            long j45 = j35;
-                            long j46 = j33;
+                            long j40 = j30;
+                            long j41 = i27;
                             if (!d5.a.z(xmlPullParser, "Period") || z13) {
-                                j11 = j36;
+                                j11 = j31;
                                 z11 = z10;
                                 arrayList2 = arrayList28;
-                                j12 = j46;
+                                j12 = j41;
                                 j13 = j10;
-                                j14 = j45;
+                                j14 = j40;
                                 arrayList3 = arrayList29;
                                 b(xmlPullParser);
                             } else {
                                 ArrayList arrayList30 = !arrayList29.isEmpty() ? arrayList29 : arrayList;
                                 String str57 = "id";
                                 String attributeValue11 = xmlPullParser.getAttributeValue(null, "id");
-                                long j47 = j(xmlPullParser, "start", j36);
+                                long i29 = i(xmlPullParser, "start", j31);
                                 String str58 = "duration";
                                 String str59 = "value";
-                                long j48 = K != j10 ? K + j47 : j10;
-                                long j49 = j(xmlPullParser, "duration", j10);
+                                long j42 = K != j10 ? K + i29 : j10;
+                                long i30 = i(xmlPullParser, "duration", j10);
                                 ArrayList arrayList31 = new ArrayList();
                                 ArrayList arrayList32 = new ArrayList();
                                 ArrayList arrayList33 = new ArrayList();
-                                long j50 = j10;
+                                long j43 = j10;
                                 String str60 = "schemeIdUri";
                                 String str61 = "Period";
-                                long j51 = j45;
+                                long j44 = j40;
                                 s sVar2 = null;
                                 boolean z14 = false;
                                 while (true) {
                                     xmlPullParser.next();
                                     if (d5.a.z(xmlPullParser, str47)) {
                                         if (!z14) {
-                                            j51 = d(xmlPullParser, j51);
+                                            j44 = d(xmlPullParser, j44);
                                             z14 = true;
                                         }
-                                        arrayList33.addAll(f(xmlPullParser, arrayList30, z10));
+                                        arrayList33.addAll(e(xmlPullParser, arrayList30, z10));
                                         arrayList4 = arrayList30;
                                         str = str57;
-                                        j11 = j36;
+                                        j11 = j31;
                                         str2 = str47;
                                         str6 = str58;
                                         str5 = str59;
                                         z11 = z10;
-                                        j15 = j51;
+                                        j15 = j44;
                                         str3 = str48;
-                                        j12 = j46;
+                                        j12 = j41;
                                         arrayList8 = arrayList31;
                                         arrayList5 = arrayList32;
                                         str4 = str60;
                                         str7 = str61;
                                         j13 = -9223372036854775807L;
-                                        j14 = j45;
+                                        j14 = j40;
                                         arrayList3 = arrayList29;
                                         arrayList7 = arrayList28;
-                                        long j52 = j49;
+                                        long j45 = i30;
                                         arrayList6 = arrayList33;
-                                        j16 = j52;
+                                        j16 = j45;
                                     } else {
-                                        j15 = j51;
+                                        j15 = j44;
                                         arrayList4 = arrayList30;
                                         if (d5.a.z(xmlPullParser, "AdaptationSet")) {
                                             ArrayList arrayList34 = !arrayList33.isEmpty() ? arrayList33 : arrayList4;
                                             String str62 = "SegmentTemplate";
                                             String attributeValue12 = xmlPullParser.getAttributeValue(null, str57);
                                             int parseInt5 = attributeValue12 == null ? -1 : Integer.parseInt(attributeValue12);
-                                            int h = h(xmlPullParser);
+                                            int g10 = g(xmlPullParser);
                                             String str63 = "AdaptationSet";
                                             String attributeValue13 = xmlPullParser.getAttributeValue(null, "mimeType");
                                             ArrayList arrayList35 = arrayList33;
@@ -964,10 +965,10 @@ public final class e extends DefaultHandler implements s0 {
                                             ArrayList arrayList36 = arrayList29;
                                             String attributeValue15 = xmlPullParser.getAttributeValue(null, "width");
                                             int parseInt6 = attributeValue15 == null ? -1 : Integer.parseInt(attributeValue15);
-                                            j11 = j36;
+                                            j11 = j31;
                                             String attributeValue16 = xmlPullParser.getAttributeValue(null, "height");
                                             int parseInt7 = attributeValue16 == null ? -1 : Integer.parseInt(attributeValue16);
-                                            float k11 = k(xmlPullParser, -1.0f);
+                                            float j46 = j(xmlPullParser, -1.0f);
                                             String str65 = str58;
                                             String attributeValue17 = xmlPullParser.getAttributeValue(null, "audioSamplingRate");
                                             int parseInt8 = attributeValue17 == null ? -1 : Integer.parseInt(attributeValue17);
@@ -984,41 +985,41 @@ public final class e extends DefaultHandler implements s0 {
                                             ArrayList arrayList41 = new ArrayList();
                                             String str70 = "audioSamplingRate";
                                             ArrayList arrayList42 = new ArrayList();
-                                            float f14 = k11;
+                                            float f14 = j46;
                                             ArrayList arrayList43 = new ArrayList();
                                             ArrayList arrayList44 = new ArrayList();
                                             String str71 = "mimeType";
                                             str = str57;
                                             String str72 = "width";
                                             s sVar3 = sVar2;
-                                            long j53 = j50;
-                                            long j54 = j15;
+                                            long j47 = j43;
+                                            long j48 = j15;
                                             String str73 = attributeValue18;
                                             boolean z15 = false;
-                                            int i25 = -1;
+                                            int i31 = -1;
                                             String str74 = "height";
-                                            int i26 = h;
+                                            int i32 = g10;
                                             String str75 = null;
                                             while (true) {
                                                 xmlPullParser.next();
                                                 if (d5.a.z(xmlPullParser, str47)) {
                                                     if (!z15) {
-                                                        j54 = d(xmlPullParser, j54);
+                                                        j48 = d(xmlPullParser, j48);
                                                         z15 = true;
                                                     }
-                                                    j17 = j54;
-                                                    arrayList44.addAll(f(xmlPullParser, arrayList34, z10));
+                                                    j17 = j48;
+                                                    arrayList44.addAll(e(xmlPullParser, arrayList34, z10));
                                                 } else {
-                                                    j17 = j54;
+                                                    j17 = j48;
                                                     if (d5.a.z(xmlPullParser, "ContentProtection")) {
-                                                        Pair g10 = g(xmlPullParser);
-                                                        Object obj = g10.first;
+                                                        Pair f15 = f(xmlPullParser);
+                                                        Object obj = f15.first;
                                                         if (obj != null) {
                                                             str75 = (String) obj;
                                                         }
-                                                        Object obj2 = g10.second;
+                                                        Object obj2 = f15.second;
                                                         if (obj2 != null) {
-                                                            arrayList37.add((l3.c) obj2);
+                                                            arrayList37.add((l3.b) obj2);
                                                         }
                                                     } else if (d5.a.z(xmlPullParser, "ContentComponent")) {
                                                         String attributeValue20 = xmlPullParser.getAttributeValue(null, str48);
@@ -1027,32 +1028,32 @@ public final class e extends DefaultHandler implements s0 {
                                                         } else if (attributeValue20 != null) {
                                                             d5.a.i(str73.equals(attributeValue20));
                                                         }
-                                                        int h10 = h(xmlPullParser);
-                                                        if (i26 == -1) {
-                                                            i26 = h10;
-                                                        } else if (h10 != -1) {
-                                                            d5.a.i(i26 == h10);
+                                                        int g11 = g(xmlPullParser);
+                                                        if (i32 == -1) {
+                                                            i32 = g11;
+                                                        } else if (g11 != -1) {
+                                                            d5.a.i(i32 == g11);
                                                         }
                                                     } else {
                                                         if (d5.a.z(xmlPullParser, "Role")) {
-                                                            arrayList40.add(i(xmlPullParser, "Role"));
+                                                            arrayList40.add(h(xmlPullParser, "Role"));
                                                         } else {
                                                             String str76 = "AudioChannelConfiguration";
                                                             if (d5.a.z(xmlPullParser, "AudioChannelConfiguration")) {
-                                                                i25 = c(xmlPullParser);
+                                                                i31 = c(xmlPullParser);
                                                             } else {
                                                                 String str77 = "ContentProtection";
                                                                 if (d5.a.z(xmlPullParser, "Accessibility")) {
-                                                                    arrayList39.add(i(xmlPullParser, "Accessibility"));
+                                                                    arrayList39.add(h(xmlPullParser, "Accessibility"));
                                                                 } else if (d5.a.z(xmlPullParser, "EssentialProperty")) {
-                                                                    arrayList41.add(i(xmlPullParser, "EssentialProperty"));
+                                                                    arrayList41.add(h(xmlPullParser, "EssentialProperty"));
                                                                 } else {
                                                                     str3 = str48;
                                                                     if (d5.a.z(xmlPullParser, "SupplementalProperty")) {
-                                                                        arrayList42.add(i(xmlPullParser, "SupplementalProperty"));
+                                                                        arrayList42.add(h(xmlPullParser, "SupplementalProperty"));
                                                                         arrayList10 = arrayList37;
                                                                         str19 = str73;
-                                                                        i10 = i26;
+                                                                        i9 = i32;
                                                                         str2 = str47;
                                                                         z11 = z10;
                                                                         arrayList9 = arrayList40;
@@ -1068,26 +1069,26 @@ public final class e extends DefaultHandler implements s0 {
                                                                         f10 = f14;
                                                                         arrayList16 = arrayList43;
                                                                         str16 = str72;
-                                                                        j18 = j53;
+                                                                        j18 = j47;
                                                                         str17 = str64;
                                                                         arrayList13 = arrayList44;
-                                                                        j16 = j49;
+                                                                        j16 = i30;
                                                                         arrayList6 = arrayList35;
                                                                         arrayList12 = arrayList34;
                                                                         arrayList15 = arrayList39;
-                                                                        j19 = j46;
+                                                                        j19 = j41;
                                                                         arrayList17 = arrayList38;
-                                                                        j14 = j45;
+                                                                        j14 = j40;
                                                                         arrayList3 = arrayList36;
                                                                         arrayList14 = arrayList42;
                                                                         arrayList7 = arrayList28;
-                                                                        j53 = j18;
+                                                                        j47 = j18;
                                                                         str21 = str67;
-                                                                        j54 = j17;
-                                                                        i26 = i10;
+                                                                        j48 = j17;
+                                                                        i32 = i9;
                                                                         str22 = str12;
                                                                         if (d5.a.y(xmlPullParser, str22)) {
-                                                                            long j55 = j19;
+                                                                            long j49 = j19;
                                                                             c12 = 1;
                                                                             arrayList38 = arrayList17;
                                                                             str69 = str20;
@@ -1110,11 +1111,11 @@ public final class e extends DefaultHandler implements s0 {
                                                                             str65 = str13;
                                                                             str63 = str22;
                                                                             arrayList36 = arrayList3;
-                                                                            j45 = j14;
+                                                                            j40 = j14;
                                                                             arrayList35 = arrayList6;
                                                                             arrayList44 = arrayList13;
-                                                                            j46 = j55;
-                                                                            j49 = j16;
+                                                                            j41 = j49;
+                                                                            i30 = j16;
                                                                             str68 = str18;
                                                                             str64 = str17;
                                                                             arrayList40 = arrayList9;
@@ -1122,9 +1123,9 @@ public final class e extends DefaultHandler implements s0 {
                                                                             arrayList31 = arrayList8;
                                                                         } else {
                                                                             ArrayList arrayList45 = new ArrayList(arrayList16.size());
-                                                                            int i27 = 0;
-                                                                            while (i27 < arrayList16.size()) {
-                                                                                d dVar = (d) arrayList16.get(i27);
+                                                                            int i33 = 0;
+                                                                            while (i33 < arrayList16.size()) {
+                                                                                d dVar = (d) arrayList16.get(i33);
                                                                                 h3.s0 a2 = dVar.a.a();
                                                                                 if (str21 != null) {
                                                                                     a2.b = str21;
@@ -1137,24 +1138,24 @@ public final class e extends DefaultHandler implements s0 {
                                                                                 ArrayList arrayList47 = arrayList10;
                                                                                 arrayList46.addAll(arrayList47);
                                                                                 if (arrayList46.isEmpty()) {
-                                                                                    i22 = i27;
+                                                                                    i21 = i33;
                                                                                     str44 = str21;
                                                                                     j26 = j16;
-                                                                                    i23 = i26;
+                                                                                    i22 = i32;
                                                                                     j27 = j19;
                                                                                 } else {
-                                                                                    i22 = i27;
+                                                                                    i21 = i33;
                                                                                     str44 = str21;
-                                                                                    int i28 = 0;
+                                                                                    int i34 = 0;
                                                                                     while (true) {
-                                                                                        if (i28 < arrayList46.size()) {
-                                                                                            l3.c cVar = (l3.c) arrayList46.get(i28);
+                                                                                        if (i34 < arrayList46.size()) {
+                                                                                            l3.b bVar = (l3.b) arrayList46.get(i34);
                                                                                             j26 = j16;
-                                                                                            if (!h3.h.c.equals(cVar.b) || (str45 = cVar.c) == null) {
-                                                                                                i28++;
+                                                                                            if (!h3.h.c.equals(bVar.b) || (str45 = bVar.c) == null) {
+                                                                                                i34++;
                                                                                                 j16 = j26;
                                                                                             } else {
-                                                                                                arrayList46.remove(i28);
+                                                                                                arrayList46.remove(i34);
                                                                                             }
                                                                                         } else {
                                                                                             j26 = j16;
@@ -1162,45 +1163,45 @@ public final class e extends DefaultHandler implements s0 {
                                                                                         }
                                                                                     }
                                                                                     if (str45 != null) {
-                                                                                        int i29 = 0;
-                                                                                        while (i29 < arrayList46.size()) {
-                                                                                            l3.c cVar2 = (l3.c) arrayList46.get(i29);
-                                                                                            int i30 = i26;
-                                                                                            if (h3.h.b.equals(cVar2.b) && cVar2.c == null) {
+                                                                                        int i35 = 0;
+                                                                                        while (i35 < arrayList46.size()) {
+                                                                                            l3.b bVar2 = (l3.b) arrayList46.get(i35);
+                                                                                            int i36 = i32;
+                                                                                            if (h3.h.b.equals(bVar2.b) && bVar2.c == null) {
                                                                                                 j28 = j19;
-                                                                                                arrayList46.set(i29, new l3.c(h3.h.c, str45, cVar2.d, cVar2.e));
+                                                                                                arrayList46.set(i35, new l3.b(h3.h.c, str45, bVar2.d, bVar2.e));
                                                                                             } else {
                                                                                                 j28 = j19;
                                                                                             }
-                                                                                            i29++;
-                                                                                            i26 = i30;
+                                                                                            i35++;
+                                                                                            i32 = i36;
                                                                                             j19 = j28;
                                                                                         }
                                                                                     }
-                                                                                    i23 = i26;
+                                                                                    i22 = i32;
                                                                                     j27 = j19;
                                                                                     for (int size = arrayList46.size() - 1; size >= 0; size--) {
-                                                                                        l3.c cVar3 = (l3.c) arrayList46.get(size);
-                                                                                        if (cVar3.e == null) {
-                                                                                            int i31 = 0;
+                                                                                        l3.b bVar3 = (l3.b) arrayList46.get(size);
+                                                                                        if (bVar3.e == null) {
+                                                                                            int i37 = 0;
                                                                                             while (true) {
-                                                                                                if (i31 < arrayList46.size()) {
-                                                                                                    l3.c cVar4 = (l3.c) arrayList46.get(i31);
-                                                                                                    if (cVar4.e != null && cVar3.e == null) {
-                                                                                                        UUID uuid = cVar3.b;
-                                                                                                        cVar4.getClass();
+                                                                                                if (i37 < arrayList46.size()) {
+                                                                                                    l3.b bVar4 = (l3.b) arrayList46.get(i37);
+                                                                                                    if (bVar4.e != null && bVar3.e == null) {
+                                                                                                        UUID uuid = bVar3.b;
+                                                                                                        bVar4.getClass();
                                                                                                         UUID uuid2 = h3.h.a;
-                                                                                                        UUID uuid3 = cVar4.b;
+                                                                                                        UUID uuid3 = bVar4.b;
                                                                                                         if (uuid2.equals(uuid3) || uuid.equals(uuid3)) {
                                                                                                             arrayList46.remove(size);
                                                                                                         }
                                                                                                     }
-                                                                                                    i31++;
+                                                                                                    i37++;
                                                                                                 }
                                                                                             }
                                                                                         }
                                                                                     }
-                                                                                    a2.r = new l3.d(str78, arrayList46);
+                                                                                    a2.r = new l3.c(str78, arrayList46);
                                                                                 }
                                                                                 ArrayList arrayList48 = dVar.f;
                                                                                 arrayList48.addAll(arrayList17);
@@ -1218,15 +1219,15 @@ public final class e extends DefaultHandler implements s0 {
                                                                                     kVar = new k(t0Var, zVar, (n) sVar4, arrayList48, arrayList49, arrayList50);
                                                                                 }
                                                                                 arrayList45.add(kVar);
-                                                                                i27 = i22 + 1;
+                                                                                i33 = i21 + 1;
                                                                                 arrayList10 = arrayList47;
                                                                                 str21 = str44;
-                                                                                i26 = i23;
+                                                                                i32 = i22;
                                                                                 j16 = j26;
                                                                                 j19 = j27;
                                                                             }
                                                                             c12 = 1;
-                                                                            arrayList8.add(new a(parseInt5, i26, arrayList45, arrayList15, arrayList11, arrayList14));
+                                                                            arrayList8.add(new a(parseInt5, i32, arrayList45, arrayList15, arrayList11, arrayList14));
                                                                             str4 = str60;
                                                                             j12 = j19;
                                                                             str5 = str14;
@@ -1278,17 +1279,17 @@ public final class e extends DefaultHandler implements s0 {
                                                                             }
                                                                             String attributeValue26 = xmlPullParser.getAttributeValue(null, str26);
                                                                             if (attributeValue26 == null) {
-                                                                                float f15 = f14;
-                                                                                str27 = str26;
-                                                                                f11 = f15;
-                                                                                parseInt3 = parseInt7;
-                                                                            } else {
                                                                                 float f16 = f14;
                                                                                 str27 = str26;
                                                                                 f11 = f16;
+                                                                                parseInt3 = parseInt7;
+                                                                            } else {
+                                                                                float f17 = f14;
+                                                                                str27 = str26;
+                                                                                f11 = f17;
                                                                                 parseInt3 = Integer.parseInt(attributeValue26);
                                                                             }
-                                                                            float k12 = k(xmlPullParser, f11);
+                                                                            float j50 = j(xmlPullParser, f11);
                                                                             f10 = f11;
                                                                             String str91 = str70;
                                                                             String attributeValue27 = xmlPullParser.getAttributeValue(null, str91);
@@ -1302,38 +1303,38 @@ public final class e extends DefaultHandler implements s0 {
                                                                             str15 = str91;
                                                                             ArrayList arrayList57 = arrayList34;
                                                                             String str92 = str73;
-                                                                            int i32 = i26;
+                                                                            int i38 = i32;
                                                                             s sVar5 = sVar3;
-                                                                            long j56 = j53;
-                                                                            int i33 = i25;
-                                                                            long j57 = j17;
+                                                                            long j51 = j47;
+                                                                            int i39 = i31;
+                                                                            long j52 = j17;
                                                                             boolean z16 = false;
                                                                             String str93 = null;
                                                                             while (true) {
                                                                                 xmlPullParser.next();
                                                                                 if (d5.a.z(xmlPullParser, str47)) {
                                                                                     if (!z16) {
-                                                                                        j57 = d(xmlPullParser, j57);
+                                                                                        j52 = d(xmlPullParser, j52);
                                                                                         z16 = true;
                                                                                     }
-                                                                                    i11 = parseInt9;
-                                                                                    arrayList56.addAll(f(xmlPullParser, arrayList18, z10));
+                                                                                    i10 = parseInt9;
+                                                                                    arrayList56.addAll(e(xmlPullParser, arrayList18, z10));
                                                                                 } else {
-                                                                                    i11 = parseInt9;
+                                                                                    i10 = parseInt9;
                                                                                     if (d5.a.z(xmlPullParser, str76)) {
-                                                                                        i33 = c(xmlPullParser);
+                                                                                        i39 = c(xmlPullParser);
                                                                                     } else {
                                                                                         String str94 = str69;
                                                                                         if (d5.a.z(xmlPullParser, str94)) {
                                                                                             str69 = str94;
-                                                                                            sVar5 = p(xmlPullParser, (r) sVar5);
+                                                                                            sVar5 = o(xmlPullParser, (r) sVar5);
                                                                                         } else {
                                                                                             String str95 = str68;
                                                                                             if (d5.a.z(xmlPullParser, str95)) {
                                                                                                 arrayList13 = arrayList44;
                                                                                                 str2 = str47;
-                                                                                                long d10 = d(xmlPullParser, j56);
-                                                                                                long j58 = j48;
+                                                                                                long d9 = d(xmlPullParser, j51);
+                                                                                                long j53 = j42;
                                                                                                 str33 = str76;
                                                                                                 str28 = str95;
                                                                                                 arrayList22 = arrayList18;
@@ -1347,15 +1348,15 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                 str30 = str94;
                                                                                                 str74 = str27;
                                                                                                 arrayList20 = arrayList43;
-                                                                                                i12 = parseInt;
+                                                                                                i11 = parseInt;
                                                                                                 str34 = str77;
                                                                                                 arrayList10 = arrayList51;
                                                                                                 str71 = str86;
                                                                                                 str31 = str92;
-                                                                                                i13 = i32;
-                                                                                                i14 = i11;
+                                                                                                i12 = i38;
+                                                                                                i13 = i10;
                                                                                                 str17 = str64;
-                                                                                                long j59 = j49;
+                                                                                                long j54 = i30;
                                                                                                 arrayList6 = arrayList35;
                                                                                                 arrayList12 = arrayList57;
                                                                                                 arrayList21 = arrayList39;
@@ -1364,29 +1365,29 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                 str = str83;
                                                                                                 ArrayList arrayList59 = arrayList36;
                                                                                                 arrayList14 = arrayList42;
-                                                                                                long j60 = j46;
-                                                                                                j14 = j45;
+                                                                                                long j55 = j41;
+                                                                                                j14 = j40;
                                                                                                 arrayList3 = arrayList59;
                                                                                                 arrayList7 = arrayList28;
                                                                                                 arrayList23 = arrayList56;
                                                                                                 str35 = str62;
-                                                                                                j20 = j59;
+                                                                                                j20 = j54;
                                                                                                 str36 = str80;
-                                                                                                j24 = d10;
-                                                                                                j23 = j58;
-                                                                                                j21 = j57;
+                                                                                                j24 = d9;
+                                                                                                j23 = j53;
+                                                                                                j21 = j52;
                                                                                                 str38 = str79;
-                                                                                                sVar = q(xmlPullParser, (o) sVar5, j58, j59, j57, d10, j60);
+                                                                                                sVar = p(xmlPullParser, (o) sVar5, j53, j54, j52, d9, j55);
                                                                                                 arrayList25 = arrayList58;
                                                                                                 arrayList26 = arrayList55;
-                                                                                                i15 = i33;
+                                                                                                i14 = i39;
                                                                                                 z11 = z10;
                                                                                                 str39 = str93;
-                                                                                                j22 = j60;
+                                                                                                j22 = j55;
                                                                                                 arrayList24 = arrayList52;
                                                                                             } else {
                                                                                                 str28 = str95;
-                                                                                                long j61 = j57;
+                                                                                                long j56 = j52;
                                                                                                 arrayList13 = arrayList44;
                                                                                                 str2 = str47;
                                                                                                 arrayList8 = arrayList31;
@@ -1399,69 +1400,69 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                 str30 = str94;
                                                                                                 str74 = str27;
                                                                                                 arrayList20 = arrayList43;
-                                                                                                i12 = parseInt;
+                                                                                                i11 = parseInt;
                                                                                                 arrayList10 = arrayList51;
                                                                                                 str71 = str86;
                                                                                                 str31 = str92;
-                                                                                                i13 = i32;
-                                                                                                i14 = i11;
+                                                                                                i12 = i38;
+                                                                                                i13 = i10;
                                                                                                 str17 = str64;
-                                                                                                j20 = j49;
+                                                                                                j20 = i30;
                                                                                                 arrayList6 = arrayList35;
                                                                                                 arrayList12 = arrayList57;
                                                                                                 arrayList21 = arrayList39;
                                                                                                 ArrayList arrayList60 = arrayList54;
                                                                                                 str32 = str82;
                                                                                                 str = str83;
-                                                                                                long j62 = j48;
+                                                                                                long j57 = j42;
                                                                                                 str33 = str76;
                                                                                                 arrayList22 = arrayList18;
                                                                                                 str34 = str77;
                                                                                                 ArrayList arrayList61 = arrayList36;
                                                                                                 arrayList14 = arrayList42;
-                                                                                                long j63 = j46;
-                                                                                                j14 = j45;
+                                                                                                long j58 = j41;
+                                                                                                j14 = j40;
                                                                                                 arrayList3 = arrayList61;
                                                                                                 arrayList7 = arrayList28;
                                                                                                 arrayList23 = arrayList56;
                                                                                                 str35 = str62;
                                                                                                 if (d5.a.z(xmlPullParser, str35)) {
-                                                                                                    j22 = j63;
-                                                                                                    long d11 = d(xmlPullParser, j56);
+                                                                                                    j22 = j58;
+                                                                                                    long d10 = d(xmlPullParser, j51);
                                                                                                     z11 = z10;
-                                                                                                    j21 = j61;
-                                                                                                    s r10 = r(xmlPullParser, (p) sVar5, arrayList14, j62, j20, j21, d11, j22);
+                                                                                                    j21 = j56;
+                                                                                                    s q10 = q(xmlPullParser, (p) sVar5, arrayList14, j57, j20, j21, d10, j22);
                                                                                                     str36 = str80;
-                                                                                                    j24 = d11;
-                                                                                                    j23 = j62;
+                                                                                                    j24 = d10;
+                                                                                                    j23 = j57;
                                                                                                     str38 = str79;
-                                                                                                    sVar = r10;
+                                                                                                    sVar = q10;
                                                                                                     arrayList24 = arrayList52;
                                                                                                     arrayList25 = arrayList60;
                                                                                                     arrayList26 = arrayList55;
                                                                                                 } else {
-                                                                                                    j21 = j61;
+                                                                                                    j21 = j56;
                                                                                                     z11 = z10;
-                                                                                                    j22 = j63;
+                                                                                                    j22 = j58;
                                                                                                     if (d5.a.z(xmlPullParser, str34)) {
-                                                                                                        Pair g11 = g(xmlPullParser);
-                                                                                                        Object obj3 = g11.first;
+                                                                                                        Pair f18 = f(xmlPullParser);
+                                                                                                        Object obj3 = f18.first;
                                                                                                         if (obj3 != null) {
                                                                                                             str93 = (String) obj3;
                                                                                                         }
-                                                                                                        Object obj4 = g11.second;
+                                                                                                        Object obj4 = f18.second;
                                                                                                         if (obj4 != null) {
                                                                                                             arrayList24 = arrayList52;
-                                                                                                            arrayList24.add((l3.c) obj4);
+                                                                                                            arrayList24.add((l3.b) obj4);
                                                                                                         } else {
                                                                                                             arrayList24 = arrayList52;
                                                                                                         }
-                                                                                                        j23 = j62;
+                                                                                                        j23 = j57;
                                                                                                         str36 = str80;
                                                                                                         sVar = sVar5;
                                                                                                         arrayList25 = arrayList60;
-                                                                                                        i15 = i33;
-                                                                                                        j24 = j56;
+                                                                                                        i14 = i39;
+                                                                                                        j24 = j51;
                                                                                                         str38 = str79;
                                                                                                         str39 = str93;
                                                                                                         arrayList26 = arrayList55;
@@ -1469,30 +1470,30 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                         str36 = str80;
                                                                                                         arrayList24 = arrayList52;
                                                                                                         if (d5.a.z(xmlPullParser, str36)) {
-                                                                                                            j23 = j62;
-                                                                                                            arrayList53.add(i(xmlPullParser, str36));
-                                                                                                            j24 = j56;
+                                                                                                            j23 = j57;
+                                                                                                            arrayList53.add(h(xmlPullParser, str36));
+                                                                                                            j24 = j51;
                                                                                                             str37 = str23;
                                                                                                             arrayList25 = arrayList60;
                                                                                                         } else {
-                                                                                                            j23 = j62;
+                                                                                                            j23 = j57;
                                                                                                             ArrayList arrayList62 = arrayList53;
                                                                                                             if (d5.a.z(xmlPullParser, str32)) {
                                                                                                                 arrayList53 = arrayList62;
                                                                                                                 arrayList25 = arrayList60;
-                                                                                                                arrayList25.add(i(xmlPullParser, str32));
-                                                                                                                j24 = j56;
+                                                                                                                arrayList25.add(h(xmlPullParser, str32));
+                                                                                                                j24 = j51;
                                                                                                                 str37 = str23;
                                                                                                             } else {
                                                                                                                 arrayList53 = arrayList62;
                                                                                                                 str37 = str23;
                                                                                                                 arrayList25 = arrayList60;
                                                                                                                 if (d5.a.z(xmlPullParser, str37)) {
-                                                                                                                    j24 = j56;
+                                                                                                                    j24 = j51;
                                                                                                                     arrayList26 = arrayList55;
-                                                                                                                    arrayList26.add(i(xmlPullParser, str37));
+                                                                                                                    arrayList26.add(h(xmlPullParser, str37));
                                                                                                                 } else {
-                                                                                                                    j24 = j56;
+                                                                                                                    j24 = j51;
                                                                                                                     arrayList26 = arrayList55;
                                                                                                                     b(xmlPullParser);
                                                                                                                 }
@@ -1507,17 +1508,17 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                         sVar = sVar5;
                                                                                                     }
                                                                                                 }
-                                                                                                i15 = i33;
+                                                                                                i14 = i39;
                                                                                                 str39 = str93;
                                                                                             }
                                                                                             if (d5.a.y(xmlPullParser, str38)) {
                                                                                                 ArrayList arrayList63 = arrayList25;
                                                                                                 arrayList52 = arrayList24;
-                                                                                                long j64 = j22;
-                                                                                                long j65 = j20;
+                                                                                                long j59 = j22;
+                                                                                                long j60 = j20;
                                                                                                 str79 = str38;
                                                                                                 arrayList55 = arrayList26;
-                                                                                                j57 = j21;
+                                                                                                j52 = j21;
                                                                                                 str62 = str35;
                                                                                                 str77 = str34;
                                                                                                 arrayList56 = arrayList23;
@@ -1529,14 +1530,14 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                 arrayList42 = arrayList14;
                                                                                                 arrayList44 = arrayList13;
                                                                                                 str86 = str71;
-                                                                                                j56 = j24;
+                                                                                                j51 = j24;
                                                                                                 str93 = str39;
-                                                                                                i32 = i13;
+                                                                                                i38 = i12;
                                                                                                 arrayList31 = arrayList8;
                                                                                                 arrayList51 = arrayList10;
                                                                                                 arrayList38 = arrayList19;
                                                                                                 str92 = str31;
-                                                                                                parseInt = i12;
+                                                                                                parseInt = i11;
                                                                                                 str66 = str14;
                                                                                                 str69 = str30;
                                                                                                 str68 = str28;
@@ -1545,16 +1546,16 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                 c12 = 1;
                                                                                                 str80 = str36;
                                                                                                 arrayList36 = arrayList3;
-                                                                                                j45 = j14;
+                                                                                                j40 = j14;
                                                                                                 arrayList35 = arrayList6;
                                                                                                 sVar5 = sVar;
-                                                                                                j46 = j64;
+                                                                                                j41 = j59;
                                                                                                 str47 = str2;
-                                                                                                i33 = i15;
-                                                                                                parseInt9 = i14;
+                                                                                                i39 = i14;
+                                                                                                parseInt9 = i13;
                                                                                                 str85 = str85;
                                                                                                 str76 = str33;
-                                                                                                j48 = j23;
+                                                                                                j42 = j23;
                                                                                                 str83 = str;
                                                                                                 arrayList43 = arrayList20;
                                                                                                 str82 = str32;
@@ -1562,28 +1563,28 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                 arrayList54 = arrayList63;
                                                                                                 arrayList57 = arrayList12;
                                                                                                 str25 = str16;
-                                                                                                j49 = j65;
+                                                                                                i30 = j60;
                                                                                                 arrayList32 = arrayList5;
                                                                                             } else {
                                                                                                 if (d5.q.h(str85)) {
                                                                                                     if (str88 != null) {
-                                                                                                        for (String str96 : g0.Q(str88)) {
+                                                                                                        for (String str96 : f0.Q(str88)) {
                                                                                                             c10 = d5.q.c(str96);
                                                                                                             if (c10 != null && d5.q.h(c10)) {
                                                                                                                 str40 = c10;
                                                                                                                 str41 = str85;
                                                                                                                 if ("audio/eac3".equals(str40)) {
-                                                                                                                    int i34 = 0;
+                                                                                                                    int i40 = 0;
                                                                                                                     while (true) {
                                                                                                                         j25 = j20;
                                                                                                                         str42 = "ec+3";
-                                                                                                                        if (i34 < arrayList26.size()) {
-                                                                                                                            f fVar = (f) arrayList26.get(i34);
+                                                                                                                        if (i40 < arrayList26.size()) {
+                                                                                                                            f fVar = (f) arrayList26.get(i40);
                                                                                                                             String str97 = fVar.a;
                                                                                                                             String str98 = fVar.b;
-                                                                                                                            int i35 = i34;
+                                                                                                                            int i41 = i40;
                                                                                                                             if ((!"tag:dolby.com,2018:dash:EC3_ExtensionType:2018".equals(str97) || !"JOC".equals(str98)) && (!"tag:dolby.com,2014:dash:DolbyDigitalPlusExtensionType:2014".equals(str97) || !"ec+3".equals(str98))) {
-                                                                                                                                i34 = i35 + 1;
+                                                                                                                                i40 = i41 + 1;
                                                                                                                                 j20 = j25;
                                                                                                                             }
                                                                                                                         } else {
@@ -1594,46 +1595,46 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                                     j25 = j20;
                                                                                                                 }
                                                                                                                 str42 = str88;
-                                                                                                                i16 = 0;
-                                                                                                                int i36 = 0;
-                                                                                                                while (i16 < arrayList9.size()) {
+                                                                                                                i15 = 0;
+                                                                                                                int i42 = 0;
+                                                                                                                while (i15 < arrayList9.size()) {
                                                                                                                     ArrayList arrayList64 = arrayList9;
                                                                                                                     ArrayList arrayList65 = arrayList26;
-                                                                                                                    f fVar2 = (f) arrayList64.get(i16);
-                                                                                                                    int i37 = i16;
-                                                                                                                    if (d0.a("urn:mpeg:dash:role:2011", fVar2.a)) {
+                                                                                                                    f fVar2 = (f) arrayList64.get(i15);
+                                                                                                                    int i43 = i15;
+                                                                                                                    if (b0.a("urn:mpeg:dash:role:2011", fVar2.a)) {
                                                                                                                         String str99 = fVar2.b;
-                                                                                                                        i36 |= (str99 != null && (str99.equals("forced_subtitle") || str99.equals("forced-subtitle"))) ? 2 : 0;
+                                                                                                                        i42 |= (str99 != null && (str99.equals("forced_subtitle") || str99.equals("forced-subtitle"))) ? 2 : 0;
                                                                                                                     }
-                                                                                                                    i16 = i37 + 1;
+                                                                                                                    i15 = i43 + 1;
                                                                                                                     arrayList9 = arrayList64;
                                                                                                                     arrayList26 = arrayList65;
                                                                                                                 }
                                                                                                                 ArrayList arrayList66 = arrayList26;
                                                                                                                 arrayList27 = arrayList9;
-                                                                                                                i17 = 0;
-                                                                                                                int i38 = 0;
-                                                                                                                while (i17 < arrayList27.size()) {
-                                                                                                                    f fVar3 = (f) arrayList27.get(i17);
-                                                                                                                    int i39 = i17;
-                                                                                                                    if (d0.a("urn:mpeg:dash:role:2011", fVar3.a)) {
-                                                                                                                        i38 |= n(fVar3.b);
+                                                                                                                i16 = 0;
+                                                                                                                int i44 = 0;
+                                                                                                                while (i16 < arrayList27.size()) {
+                                                                                                                    f fVar3 = (f) arrayList27.get(i16);
+                                                                                                                    int i45 = i16;
+                                                                                                                    if (b0.a("urn:mpeg:dash:role:2011", fVar3.a)) {
+                                                                                                                        i44 |= m(fVar3.b);
                                                                                                                     }
-                                                                                                                    i17 = i39 + 1;
+                                                                                                                    i16 = i45 + 1;
                                                                                                                 }
-                                                                                                                i18 = 0;
-                                                                                                                int i40 = 0;
-                                                                                                                while (i18 < arrayList21.size()) {
+                                                                                                                i17 = 0;
+                                                                                                                int i46 = 0;
+                                                                                                                while (i17 < arrayList21.size()) {
                                                                                                                     ArrayList arrayList67 = arrayList21;
-                                                                                                                    int i41 = i18;
-                                                                                                                    f fVar4 = (f) arrayList67.get(i18);
+                                                                                                                    int i47 = i17;
+                                                                                                                    f fVar4 = (f) arrayList67.get(i17);
                                                                                                                     ArrayList arrayList68 = arrayList24;
                                                                                                                     String str100 = fVar4.a;
-                                                                                                                    long j66 = j22;
+                                                                                                                    long j61 = j22;
                                                                                                                     String str101 = fVar4.b;
-                                                                                                                    if (d0.a("urn:mpeg:dash:role:2011", str100)) {
-                                                                                                                        i21 = n(str101);
-                                                                                                                    } else if (d0.a("urn:tva:metadata:cs:AudioPurposeCS:2007", fVar4.a)) {
+                                                                                                                    if (b0.a("urn:mpeg:dash:role:2011", str100)) {
+                                                                                                                        i20 = m(str101);
+                                                                                                                    } else if (b0.a("urn:tva:metadata:cs:AudioPurposeCS:2007", fVar4.a)) {
                                                                                                                         if (str101 != null) {
                                                                                                                             switch (str101.hashCode()) {
                                                                                                                                 case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
@@ -1678,45 +1679,45 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                                             }
                                                                                                                             switch (c11) {
                                                                                                                                 case 0:
-                                                                                                                                    i21 = 512;
+                                                                                                                                    i20 = 512;
                                                                                                                                     break;
                                                                                                                                 case 1:
-                                                                                                                                    i21 = 2048;
+                                                                                                                                    i20 = 2048;
                                                                                                                                     break;
                                                                                                                                 case 2:
-                                                                                                                                    i21 = 4;
+                                                                                                                                    i20 = 4;
                                                                                                                                     break;
                                                                                                                                 case 3:
-                                                                                                                                    i21 = 8;
+                                                                                                                                    i20 = 8;
                                                                                                                                     break;
                                                                                                                                 case 4:
-                                                                                                                                    i21 = 1;
+                                                                                                                                    i20 = 1;
                                                                                                                                     break;
                                                                                                                             }
                                                                                                                         }
-                                                                                                                        i21 = 0;
+                                                                                                                        i20 = 0;
                                                                                                                     } else {
-                                                                                                                        i18 = i41 + 1;
+                                                                                                                        i17 = i47 + 1;
                                                                                                                         arrayList21 = arrayList67;
                                                                                                                         arrayList24 = arrayList68;
-                                                                                                                        j22 = j66;
+                                                                                                                        j22 = j61;
                                                                                                                     }
-                                                                                                                    i40 |= i21;
-                                                                                                                    i18 = i41 + 1;
+                                                                                                                    i46 |= i20;
+                                                                                                                    i17 = i47 + 1;
                                                                                                                     arrayList21 = arrayList67;
                                                                                                                     arrayList24 = arrayList68;
-                                                                                                                    j22 = j66;
+                                                                                                                    j22 = j61;
                                                                                                                 }
                                                                                                                 ArrayList arrayList69 = arrayList24;
-                                                                                                                long j67 = j22;
+                                                                                                                long j62 = j22;
                                                                                                                 ArrayList arrayList70 = arrayList21;
-                                                                                                                int o10 = i38 | i40 | o(arrayList25) | o(arrayList66);
-                                                                                                                i19 = 0;
+                                                                                                                int n10 = i44 | i46 | n(arrayList25) | n(arrayList66);
+                                                                                                                i18 = 0;
                                                                                                                 while (true) {
-                                                                                                                    if (i19 < arrayList25.size()) {
-                                                                                                                        f fVar5 = (f) arrayList25.get(i19);
-                                                                                                                        if ((d0.a("http://dashif.org/thumbnail_tile", fVar5.a) || d0.a("http://dashif.org/guidelines/thumbnail_tile", fVar5.a)) && (str43 = fVar5.b) != null) {
-                                                                                                                            int i42 = g0.a;
+                                                                                                                    if (i18 < arrayList25.size()) {
+                                                                                                                        f fVar5 = (f) arrayList25.get(i18);
+                                                                                                                        if ((b0.a("http://dashif.org/thumbnail_tile", fVar5.a) || b0.a("http://dashif.org/guidelines/thumbnail_tile", fVar5.a)) && (str43 = fVar5.b) != null) {
+                                                                                                                            int i48 = f0.a;
                                                                                                                             String[] split = str43.split("x", -1);
                                                                                                                             if (split.length != 2) {
                                                                                                                                 continue;
@@ -1728,7 +1729,7 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                                                 }
                                                                                                                             }
                                                                                                                         }
-                                                                                                                        i19++;
+                                                                                                                        i18++;
                                                                                                                     } else {
                                                                                                                         pair = null;
                                                                                                                     }
@@ -1738,9 +1739,9 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                                 s0Var.n = str41;
                                                                                                                 s0Var.o = str40;
                                                                                                                 s0Var.h = str42;
-                                                                                                                s0Var.g = i12;
-                                                                                                                s0Var.d = i36;
-                                                                                                                s0Var.e = o10;
+                                                                                                                s0Var.g = i11;
+                                                                                                                s0Var.d = i42;
+                                                                                                                s0Var.e = n10;
                                                                                                                 String str102 = str31;
                                                                                                                 s0Var.c = str102;
                                                                                                                 s0Var.H = pair != null ? ((Integer) pair.first).intValue() : -1;
@@ -1748,17 +1749,17 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                                 if (d5.q.j(str40)) {
                                                                                                                     s0Var.t = parseInt2;
                                                                                                                     s0Var.u = parseInt3;
-                                                                                                                    s0Var.v = k12;
+                                                                                                                    s0Var.v = j50;
                                                                                                                 } else {
-                                                                                                                    int i43 = parseInt2;
-                                                                                                                    int i44 = parseInt3;
+                                                                                                                    int i49 = parseInt2;
+                                                                                                                    int i50 = parseInt3;
                                                                                                                     if (d5.q.h(str40)) {
-                                                                                                                        s0Var.B = i15;
-                                                                                                                        s0Var.C = i14;
+                                                                                                                        s0Var.B = i14;
+                                                                                                                        s0Var.C = i13;
                                                                                                                     } else if (d5.q.i(str40)) {
                                                                                                                         if ("application/cea-608".equals(str40)) {
-                                                                                                                            for (int i45 = 0; i45 < arrayList70.size(); i45++) {
-                                                                                                                                f fVar6 = (f) arrayList70.get(i45);
+                                                                                                                            for (int i51 = 0; i51 < arrayList70.size(); i51++) {
+                                                                                                                                f fVar6 = (f) arrayList70.get(i51);
                                                                                                                                 String str103 = fVar6.a;
                                                                                                                                 String str104 = fVar6.b;
                                                                                                                                 if ("urn:scte:dash:cc:cea-608:2015".equals(str103) && str104 != null) {
@@ -1775,8 +1776,8 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                                             s0Var.G = parseInt4;
                                                                                                                         } else {
                                                                                                                             if ("application/cea-708".equals(str40)) {
-                                                                                                                                for (int i46 = 0; i46 < arrayList70.size(); i46++) {
-                                                                                                                                    f fVar7 = (f) arrayList70.get(i46);
+                                                                                                                                for (int i52 = 0; i52 < arrayList70.size(); i52++) {
+                                                                                                                                    f fVar7 = (f) arrayList70.get(i52);
                                                                                                                                     String str105 = fVar7.a;
                                                                                                                                     String str106 = fVar7.b;
                                                                                                                                     if ("urn:scte:dash:cc:cea-708:2015".equals(str105) && str106 != null) {
@@ -1794,19 +1795,19 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                                             s0Var.G = parseInt4;
                                                                                                                         }
                                                                                                                     } else if ("image".equals(d5.q.f(str40))) {
-                                                                                                                        s0Var.t = i43;
-                                                                                                                        s0Var.u = i44;
+                                                                                                                        s0Var.t = i49;
+                                                                                                                        s0Var.u = i50;
                                                                                                                     }
                                                                                                                 }
                                                                                                                 t0 t0Var2 = new t0(s0Var);
                                                                                                                 d dVar2 = new d(t0Var2, !arrayList23.isEmpty() ? arrayList23 : arrayList22, sVar != null ? sVar : new r(null, 1L, 0L, 0L, 0L), str39, arrayList69, arrayList53, arrayList25, arrayList66);
-                                                                                                                i26 = d5.q.g(t0Var2.B);
-                                                                                                                i20 = i13;
-                                                                                                                if (i20 != -1) {
-                                                                                                                    if (i26 != -1) {
-                                                                                                                        d5.a.i(i20 == i26);
+                                                                                                                i32 = d5.q.g(t0Var2.B);
+                                                                                                                i19 = i12;
+                                                                                                                if (i19 != -1) {
+                                                                                                                    if (i32 != -1) {
+                                                                                                                        d5.a.i(i19 == i32);
                                                                                                                     }
-                                                                                                                    i26 = i20;
+                                                                                                                    i32 = i19;
                                                                                                                 }
                                                                                                                 ArrayList arrayList71 = arrayList20;
                                                                                                                 arrayList71.add(dVar2);
@@ -1816,10 +1817,10 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                                 arrayList9 = arrayList27;
                                                                                                                 str62 = str35;
                                                                                                                 str21 = str67;
-                                                                                                                j48 = j23;
-                                                                                                                j54 = j17;
+                                                                                                                j42 = j23;
+                                                                                                                j48 = j17;
                                                                                                                 j16 = j25;
-                                                                                                                j19 = j67;
+                                                                                                                j19 = j62;
                                                                                                                 arrayList17 = arrayList19;
                                                                                                                 str20 = str30;
                                                                                                                 str18 = str28;
@@ -1832,38 +1833,38 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                     if ("audio/eac3".equals(str40)) {
                                                                                                     }
                                                                                                     str42 = str88;
-                                                                                                    i16 = 0;
-                                                                                                    int i362 = 0;
-                                                                                                    while (i16 < arrayList9.size()) {
+                                                                                                    i15 = 0;
+                                                                                                    int i422 = 0;
+                                                                                                    while (i15 < arrayList9.size()) {
                                                                                                     }
                                                                                                     ArrayList arrayList662 = arrayList26;
                                                                                                     arrayList27 = arrayList9;
-                                                                                                    i17 = 0;
-                                                                                                    int i382 = 0;
-                                                                                                    while (i17 < arrayList27.size()) {
+                                                                                                    i16 = 0;
+                                                                                                    int i442 = 0;
+                                                                                                    while (i16 < arrayList27.size()) {
                                                                                                     }
-                                                                                                    i18 = 0;
-                                                                                                    int i402 = 0;
-                                                                                                    while (i18 < arrayList21.size()) {
+                                                                                                    i17 = 0;
+                                                                                                    int i462 = 0;
+                                                                                                    while (i17 < arrayList21.size()) {
                                                                                                     }
                                                                                                     ArrayList arrayList692 = arrayList24;
-                                                                                                    long j672 = j22;
+                                                                                                    long j622 = j22;
                                                                                                     ArrayList arrayList702 = arrayList21;
-                                                                                                    int o102 = i382 | i402 | o(arrayList25) | o(arrayList662);
-                                                                                                    i19 = 0;
+                                                                                                    int n102 = i442 | i462 | n(arrayList25) | n(arrayList662);
+                                                                                                    i18 = 0;
                                                                                                     while (true) {
-                                                                                                        if (i19 < arrayList25.size()) {
+                                                                                                        if (i18 < arrayList25.size()) {
                                                                                                         }
-                                                                                                        i19++;
+                                                                                                        i18++;
                                                                                                     }
                                                                                                     h3.s0 s0Var2 = new h3.s0();
                                                                                                     s0Var2.a = attributeValue21;
                                                                                                     s0Var2.n = str41;
                                                                                                     s0Var2.o = str40;
                                                                                                     s0Var2.h = str42;
-                                                                                                    s0Var2.g = i12;
-                                                                                                    s0Var2.d = i362;
-                                                                                                    s0Var2.e = o102;
+                                                                                                    s0Var2.g = i11;
+                                                                                                    s0Var2.d = i422;
+                                                                                                    s0Var2.e = n102;
                                                                                                     String str1022 = str31;
                                                                                                     s0Var2.c = str1022;
                                                                                                     s0Var2.H = pair != null ? ((Integer) pair.first).intValue() : -1;
@@ -1874,9 +1875,9 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                     if (sVar != null) {
                                                                                                     }
                                                                                                     d dVar22 = new d(t0Var22, !arrayList23.isEmpty() ? arrayList23 : arrayList22, sVar != null ? sVar : new r(null, 1L, 0L, 0L, 0L), str39, arrayList692, arrayList53, arrayList25, arrayList662);
-                                                                                                    i26 = d5.q.g(t0Var22.B);
-                                                                                                    i20 = i13;
-                                                                                                    if (i20 != -1) {
+                                                                                                    i32 = d5.q.g(t0Var22.B);
+                                                                                                    i19 = i12;
+                                                                                                    if (i19 != -1) {
                                                                                                     }
                                                                                                     ArrayList arrayList712 = arrayList20;
                                                                                                     arrayList712.add(dVar22);
@@ -1886,17 +1887,17 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                     arrayList9 = arrayList27;
                                                                                                     str62 = str35;
                                                                                                     str21 = str67;
-                                                                                                    j48 = j23;
-                                                                                                    j54 = j17;
+                                                                                                    j42 = j23;
+                                                                                                    j48 = j17;
                                                                                                     j16 = j25;
-                                                                                                    j19 = j672;
+                                                                                                    j19 = j622;
                                                                                                     arrayList17 = arrayList19;
                                                                                                     str20 = str30;
                                                                                                     str18 = str28;
                                                                                                     str22 = str29;
                                                                                                 } else if (d5.q.j(str85)) {
                                                                                                     if (str88 != null) {
-                                                                                                        for (String str107 : g0.Q(str88)) {
+                                                                                                        for (String str107 : f0.Q(str88)) {
                                                                                                             c10 = d5.q.c(str107);
                                                                                                             if (c10 != null && d5.q.j(c10)) {
                                                                                                                 str40 = c10;
@@ -1904,38 +1905,38 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                                 if ("audio/eac3".equals(str40)) {
                                                                                                                 }
                                                                                                                 str42 = str88;
-                                                                                                                i16 = 0;
-                                                                                                                int i3622 = 0;
-                                                                                                                while (i16 < arrayList9.size()) {
+                                                                                                                i15 = 0;
+                                                                                                                int i4222 = 0;
+                                                                                                                while (i15 < arrayList9.size()) {
                                                                                                                 }
                                                                                                                 ArrayList arrayList6622 = arrayList26;
                                                                                                                 arrayList27 = arrayList9;
-                                                                                                                i17 = 0;
-                                                                                                                int i3822 = 0;
-                                                                                                                while (i17 < arrayList27.size()) {
+                                                                                                                i16 = 0;
+                                                                                                                int i4422 = 0;
+                                                                                                                while (i16 < arrayList27.size()) {
                                                                                                                 }
-                                                                                                                i18 = 0;
-                                                                                                                int i4022 = 0;
-                                                                                                                while (i18 < arrayList21.size()) {
+                                                                                                                i17 = 0;
+                                                                                                                int i4622 = 0;
+                                                                                                                while (i17 < arrayList21.size()) {
                                                                                                                 }
                                                                                                                 ArrayList arrayList6922 = arrayList24;
-                                                                                                                long j6722 = j22;
+                                                                                                                long j6222 = j22;
                                                                                                                 ArrayList arrayList7022 = arrayList21;
-                                                                                                                int o1022 = i3822 | i4022 | o(arrayList25) | o(arrayList6622);
-                                                                                                                i19 = 0;
+                                                                                                                int n1022 = i4422 | i4622 | n(arrayList25) | n(arrayList6622);
+                                                                                                                i18 = 0;
                                                                                                                 while (true) {
-                                                                                                                    if (i19 < arrayList25.size()) {
+                                                                                                                    if (i18 < arrayList25.size()) {
                                                                                                                     }
-                                                                                                                    i19++;
+                                                                                                                    i18++;
                                                                                                                 }
                                                                                                                 h3.s0 s0Var22 = new h3.s0();
                                                                                                                 s0Var22.a = attributeValue21;
                                                                                                                 s0Var22.n = str41;
                                                                                                                 s0Var22.o = str40;
                                                                                                                 s0Var22.h = str42;
-                                                                                                                s0Var22.g = i12;
-                                                                                                                s0Var22.d = i3622;
-                                                                                                                s0Var22.e = o1022;
+                                                                                                                s0Var22.g = i11;
+                                                                                                                s0Var22.d = i4222;
+                                                                                                                s0Var22.e = n1022;
                                                                                                                 String str10222 = str31;
                                                                                                                 s0Var22.c = str10222;
                                                                                                                 s0Var22.H = pair != null ? ((Integer) pair.first).intValue() : -1;
@@ -1946,9 +1947,9 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                                 if (sVar != null) {
                                                                                                                 }
                                                                                                                 d dVar222 = new d(t0Var222, !arrayList23.isEmpty() ? arrayList23 : arrayList22, sVar != null ? sVar : new r(null, 1L, 0L, 0L, 0L), str39, arrayList6922, arrayList53, arrayList25, arrayList6622);
-                                                                                                                i26 = d5.q.g(t0Var222.B);
-                                                                                                                i20 = i13;
-                                                                                                                if (i20 != -1) {
+                                                                                                                i32 = d5.q.g(t0Var222.B);
+                                                                                                                i19 = i12;
+                                                                                                                if (i19 != -1) {
                                                                                                                 }
                                                                                                                 ArrayList arrayList7122 = arrayList20;
                                                                                                                 arrayList7122.add(dVar222);
@@ -1958,10 +1959,10 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                                 arrayList9 = arrayList27;
                                                                                                                 str62 = str35;
                                                                                                                 str21 = str67;
-                                                                                                                j48 = j23;
-                                                                                                                j54 = j17;
+                                                                                                                j42 = j23;
+                                                                                                                j48 = j17;
                                                                                                                 j16 = j25;
-                                                                                                                j19 = j6722;
+                                                                                                                j19 = j6222;
                                                                                                                 arrayList17 = arrayList19;
                                                                                                                 str20 = str30;
                                                                                                                 str18 = str28;
@@ -1974,38 +1975,38 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                     if ("audio/eac3".equals(str40)) {
                                                                                                     }
                                                                                                     str42 = str88;
-                                                                                                    i16 = 0;
-                                                                                                    int i36222 = 0;
-                                                                                                    while (i16 < arrayList9.size()) {
+                                                                                                    i15 = 0;
+                                                                                                    int i42222 = 0;
+                                                                                                    while (i15 < arrayList9.size()) {
                                                                                                     }
                                                                                                     ArrayList arrayList66222 = arrayList26;
                                                                                                     arrayList27 = arrayList9;
-                                                                                                    i17 = 0;
-                                                                                                    int i38222 = 0;
-                                                                                                    while (i17 < arrayList27.size()) {
+                                                                                                    i16 = 0;
+                                                                                                    int i44222 = 0;
+                                                                                                    while (i16 < arrayList27.size()) {
                                                                                                     }
-                                                                                                    i18 = 0;
-                                                                                                    int i40222 = 0;
-                                                                                                    while (i18 < arrayList21.size()) {
+                                                                                                    i17 = 0;
+                                                                                                    int i46222 = 0;
+                                                                                                    while (i17 < arrayList21.size()) {
                                                                                                     }
                                                                                                     ArrayList arrayList69222 = arrayList24;
-                                                                                                    long j67222 = j22;
+                                                                                                    long j62222 = j22;
                                                                                                     ArrayList arrayList70222 = arrayList21;
-                                                                                                    int o10222 = i38222 | i40222 | o(arrayList25) | o(arrayList66222);
-                                                                                                    i19 = 0;
+                                                                                                    int n10222 = i44222 | i46222 | n(arrayList25) | n(arrayList66222);
+                                                                                                    i18 = 0;
                                                                                                     while (true) {
-                                                                                                        if (i19 < arrayList25.size()) {
+                                                                                                        if (i18 < arrayList25.size()) {
                                                                                                         }
-                                                                                                        i19++;
+                                                                                                        i18++;
                                                                                                     }
                                                                                                     h3.s0 s0Var222 = new h3.s0();
                                                                                                     s0Var222.a = attributeValue21;
                                                                                                     s0Var222.n = str41;
                                                                                                     s0Var222.o = str40;
                                                                                                     s0Var222.h = str42;
-                                                                                                    s0Var222.g = i12;
-                                                                                                    s0Var222.d = i36222;
-                                                                                                    s0Var222.e = o10222;
+                                                                                                    s0Var222.g = i11;
+                                                                                                    s0Var222.d = i42222;
+                                                                                                    s0Var222.e = n10222;
                                                                                                     String str102222 = str31;
                                                                                                     s0Var222.c = str102222;
                                                                                                     s0Var222.H = pair != null ? ((Integer) pair.first).intValue() : -1;
@@ -2016,9 +2017,9 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                     if (sVar != null) {
                                                                                                     }
                                                                                                     d dVar2222 = new d(t0Var2222, !arrayList23.isEmpty() ? arrayList23 : arrayList22, sVar != null ? sVar : new r(null, 1L, 0L, 0L, 0L), str39, arrayList69222, arrayList53, arrayList25, arrayList66222);
-                                                                                                    i26 = d5.q.g(t0Var2222.B);
-                                                                                                    i20 = i13;
-                                                                                                    if (i20 != -1) {
+                                                                                                    i32 = d5.q.g(t0Var2222.B);
+                                                                                                    i19 = i12;
+                                                                                                    if (i19 != -1) {
                                                                                                     }
                                                                                                     ArrayList arrayList71222 = arrayList20;
                                                                                                     arrayList71222.add(dVar2222);
@@ -2028,10 +2029,10 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                     arrayList9 = arrayList27;
                                                                                                     str62 = str35;
                                                                                                     str21 = str67;
-                                                                                                    j48 = j23;
-                                                                                                    j54 = j17;
+                                                                                                    j42 = j23;
+                                                                                                    j48 = j17;
                                                                                                     j16 = j25;
-                                                                                                    j19 = j67222;
+                                                                                                    j19 = j62222;
                                                                                                     arrayList17 = arrayList19;
                                                                                                     str20 = str30;
                                                                                                     str18 = str28;
@@ -2053,38 +2054,38 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                     if ("audio/eac3".equals(str40)) {
                                                                                                     }
                                                                                                     str42 = str88;
-                                                                                                    i16 = 0;
-                                                                                                    int i362222 = 0;
-                                                                                                    while (i16 < arrayList9.size()) {
+                                                                                                    i15 = 0;
+                                                                                                    int i422222 = 0;
+                                                                                                    while (i15 < arrayList9.size()) {
                                                                                                     }
                                                                                                     ArrayList arrayList662222 = arrayList26;
                                                                                                     arrayList27 = arrayList9;
-                                                                                                    i17 = 0;
-                                                                                                    int i382222 = 0;
-                                                                                                    while (i17 < arrayList27.size()) {
+                                                                                                    i16 = 0;
+                                                                                                    int i442222 = 0;
+                                                                                                    while (i16 < arrayList27.size()) {
                                                                                                     }
-                                                                                                    i18 = 0;
-                                                                                                    int i402222 = 0;
-                                                                                                    while (i18 < arrayList21.size()) {
+                                                                                                    i17 = 0;
+                                                                                                    int i462222 = 0;
+                                                                                                    while (i17 < arrayList21.size()) {
                                                                                                     }
                                                                                                     ArrayList arrayList692222 = arrayList24;
-                                                                                                    long j672222 = j22;
+                                                                                                    long j622222 = j22;
                                                                                                     ArrayList arrayList702222 = arrayList21;
-                                                                                                    int o102222 = i382222 | i402222 | o(arrayList25) | o(arrayList662222);
-                                                                                                    i19 = 0;
+                                                                                                    int n102222 = i442222 | i462222 | n(arrayList25) | n(arrayList662222);
+                                                                                                    i18 = 0;
                                                                                                     while (true) {
-                                                                                                        if (i19 < arrayList25.size()) {
+                                                                                                        if (i18 < arrayList25.size()) {
                                                                                                         }
-                                                                                                        i19++;
+                                                                                                        i18++;
                                                                                                     }
                                                                                                     h3.s0 s0Var2222 = new h3.s0();
                                                                                                     s0Var2222.a = attributeValue21;
                                                                                                     s0Var2222.n = str41;
                                                                                                     s0Var2222.o = str40;
                                                                                                     s0Var2222.h = str42;
-                                                                                                    s0Var2222.g = i12;
-                                                                                                    s0Var2222.d = i362222;
-                                                                                                    s0Var2222.e = o102222;
+                                                                                                    s0Var2222.g = i11;
+                                                                                                    s0Var2222.d = i422222;
+                                                                                                    s0Var2222.e = n102222;
                                                                                                     String str1022222 = str31;
                                                                                                     s0Var2222.c = str1022222;
                                                                                                     s0Var2222.H = pair != null ? ((Integer) pair.first).intValue() : -1;
@@ -2095,9 +2096,9 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                     if (sVar != null) {
                                                                                                     }
                                                                                                     d dVar22222 = new d(t0Var22222, !arrayList23.isEmpty() ? arrayList23 : arrayList22, sVar != null ? sVar : new r(null, 1L, 0L, 0L, 0L), str39, arrayList692222, arrayList53, arrayList25, arrayList662222);
-                                                                                                    i26 = d5.q.g(t0Var22222.B);
-                                                                                                    i20 = i13;
-                                                                                                    if (i20 != -1) {
+                                                                                                    i32 = d5.q.g(t0Var22222.B);
+                                                                                                    i19 = i12;
+                                                                                                    if (i19 != -1) {
                                                                                                     }
                                                                                                     ArrayList arrayList712222 = arrayList20;
                                                                                                     arrayList712222.add(dVar22222);
@@ -2107,10 +2108,10 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                     arrayList9 = arrayList27;
                                                                                                     str62 = str35;
                                                                                                     str21 = str67;
-                                                                                                    j48 = j23;
-                                                                                                    j54 = j17;
+                                                                                                    j42 = j23;
+                                                                                                    j48 = j17;
                                                                                                     j16 = j25;
-                                                                                                    j19 = j672222;
+                                                                                                    j19 = j622222;
                                                                                                     arrayList17 = arrayList19;
                                                                                                     str20 = str30;
                                                                                                     str18 = str28;
@@ -2134,35 +2135,35 @@ public final class e extends DefaultHandler implements s0 {
                                                                                 str30 = str69;
                                                                                 str74 = str27;
                                                                                 arrayList20 = arrayList43;
-                                                                                i12 = parseInt;
+                                                                                i11 = parseInt;
                                                                                 arrayList10 = arrayList51;
                                                                                 str36 = str80;
                                                                                 str71 = str86;
                                                                                 str31 = str92;
-                                                                                i13 = i32;
+                                                                                i12 = i38;
                                                                                 sVar = sVar5;
-                                                                                i15 = i33;
-                                                                                i14 = i11;
-                                                                                j24 = j56;
+                                                                                i14 = i39;
+                                                                                i13 = i10;
+                                                                                j24 = j51;
                                                                                 str17 = str64;
                                                                                 arrayList13 = arrayList44;
-                                                                                j23 = j48;
+                                                                                j23 = j42;
                                                                                 str38 = str79;
                                                                                 str39 = str93;
                                                                                 arrayList26 = arrayList55;
                                                                                 str33 = str76;
-                                                                                j21 = j57;
+                                                                                j21 = j52;
                                                                                 arrayList25 = arrayList54;
                                                                                 arrayList22 = arrayList18;
-                                                                                j20 = j49;
+                                                                                j20 = i30;
                                                                                 arrayList6 = arrayList35;
                                                                                 str32 = str82;
                                                                                 str34 = str77;
                                                                                 str = str83;
                                                                                 arrayList12 = arrayList57;
                                                                                 arrayList21 = arrayList39;
-                                                                                j22 = j46;
-                                                                                j14 = j45;
+                                                                                j22 = j41;
+                                                                                j14 = j40;
                                                                                 arrayList3 = arrayList36;
                                                                                 arrayList14 = arrayList42;
                                                                                 arrayList7 = arrayList28;
@@ -2177,8 +2178,8 @@ public final class e extends DefaultHandler implements s0 {
                                                                             str2 = str47;
                                                                             z11 = z10;
                                                                             arrayList11 = arrayList41;
-                                                                            long j68 = j46;
-                                                                            long j69 = j49;
+                                                                            long j63 = j41;
+                                                                            long j64 = i30;
                                                                             arrayList8 = arrayList31;
                                                                             arrayList5 = arrayList32;
                                                                             String str108 = str62;
@@ -2198,66 +2199,66 @@ public final class e extends DefaultHandler implements s0 {
                                                                             String str111 = str73;
                                                                             arrayList13 = arrayList44;
                                                                             ArrayList arrayList74 = arrayList39;
-                                                                            j14 = j45;
-                                                                            long j70 = j48;
+                                                                            j14 = j40;
+                                                                            long j65 = j42;
                                                                             arrayList3 = arrayList36;
-                                                                            int i47 = i26;
+                                                                            int i53 = i32;
                                                                             arrayList14 = arrayList42;
                                                                             arrayList7 = arrayList28;
                                                                             if (d5.a.z(xmlPullParser, str110)) {
-                                                                                sVar3 = p(xmlPullParser, (r) sVar3);
+                                                                                sVar3 = o(xmlPullParser, (r) sVar3);
                                                                                 str19 = str111;
                                                                                 arrayList15 = arrayList74;
-                                                                                i26 = i47;
+                                                                                i32 = i53;
                                                                                 str62 = str108;
                                                                                 str21 = str67;
-                                                                                j48 = j70;
-                                                                                j16 = j69;
-                                                                                j19 = j68;
+                                                                                j42 = j65;
+                                                                                j16 = j64;
+                                                                                j19 = j63;
                                                                                 arrayList17 = arrayList72;
                                                                                 arrayList16 = arrayList73;
                                                                                 str18 = str109;
                                                                                 str22 = str12;
                                                                                 str20 = str110;
-                                                                                j54 = j17;
+                                                                                j48 = j17;
                                                                             } else {
                                                                                 str18 = str109;
                                                                                 if (d5.a.z(xmlPullParser, str18)) {
-                                                                                    long d12 = d(xmlPullParser, j53);
+                                                                                    long d11 = d(xmlPullParser, j47);
                                                                                     str19 = str111;
                                                                                     arrayList15 = arrayList74;
-                                                                                    i10 = i47;
+                                                                                    i9 = i53;
                                                                                     arrayList16 = arrayList73;
-                                                                                    sVar3 = q(xmlPullParser, (o) sVar3, j70, j69, j17, d12, j68);
-                                                                                    j19 = j68;
-                                                                                    j16 = j69;
-                                                                                    j48 = j70;
-                                                                                    j53 = d12;
+                                                                                    sVar3 = p(xmlPullParser, (o) sVar3, j65, j64, j17, d11, j63);
+                                                                                    j19 = j63;
+                                                                                    j16 = j64;
+                                                                                    j42 = j65;
+                                                                                    j47 = d11;
                                                                                     str62 = str108;
                                                                                     str21 = str67;
                                                                                     str20 = str110;
                                                                                 } else {
                                                                                     str19 = str111;
                                                                                     arrayList15 = arrayList74;
-                                                                                    i10 = i47;
-                                                                                    j48 = j70;
-                                                                                    j18 = j53;
-                                                                                    j16 = j69;
-                                                                                    j19 = j68;
+                                                                                    i9 = i53;
+                                                                                    j42 = j65;
+                                                                                    j18 = j47;
+                                                                                    j16 = j64;
+                                                                                    j19 = j63;
                                                                                     arrayList16 = arrayList73;
                                                                                     if (d5.a.z(xmlPullParser, str108)) {
-                                                                                        long d13 = d(xmlPullParser, j18);
+                                                                                        long d12 = d(xmlPullParser, j18);
                                                                                         str62 = str108;
                                                                                         str20 = str110;
-                                                                                        sVar3 = r(xmlPullParser, (p) sVar3, arrayList14, j48, j16, j17, d13, j19);
-                                                                                        j53 = d13;
+                                                                                        sVar3 = q(xmlPullParser, (p) sVar3, arrayList14, j42, j16, j17, d12, j19);
+                                                                                        j47 = d12;
                                                                                         str21 = str67;
                                                                                     } else {
                                                                                         str62 = str108;
                                                                                         str20 = str110;
                                                                                         if (d5.a.z(xmlPullParser, "InbandEventStream")) {
                                                                                             arrayList17 = arrayList72;
-                                                                                            arrayList17.add(i(xmlPullParser, "InbandEventStream"));
+                                                                                            arrayList17.add(h(xmlPullParser, "InbandEventStream"));
                                                                                         } else {
                                                                                             arrayList17 = arrayList72;
                                                                                             if (d5.a.z(xmlPullParser, "Label")) {
@@ -2270,24 +2271,24 @@ public final class e extends DefaultHandler implements s0 {
                                                                                                         b(xmlPullParser);
                                                                                                     }
                                                                                                 } while (!d5.a.y(xmlPullParser, "Label"));
-                                                                                                j53 = j18;
+                                                                                                j47 = j18;
                                                                                                 str21 = str112;
-                                                                                                j54 = j17;
-                                                                                                i26 = i10;
+                                                                                                j48 = j17;
+                                                                                                i32 = i9;
                                                                                                 str22 = str12;
                                                                                             } else if (xmlPullParser.getEventType() == 2) {
                                                                                                 b(xmlPullParser);
                                                                                             }
                                                                                         }
-                                                                                        j53 = j18;
+                                                                                        j47 = j18;
                                                                                         str21 = str67;
-                                                                                        j54 = j17;
-                                                                                        i26 = i10;
+                                                                                        j48 = j17;
+                                                                                        i32 = i9;
                                                                                         str22 = str12;
                                                                                     }
                                                                                 }
-                                                                                j54 = j17;
-                                                                                i26 = i10;
+                                                                                j48 = j17;
+                                                                                i32 = i9;
                                                                                 arrayList17 = arrayList72;
                                                                                 str22 = str12;
                                                                             }
@@ -2300,7 +2301,7 @@ public final class e extends DefaultHandler implements s0 {
                                                         }
                                                         arrayList10 = arrayList37;
                                                         str19 = str73;
-                                                        i10 = i26;
+                                                        i9 = i32;
                                                         str2 = str47;
                                                         z11 = z10;
                                                         arrayList9 = arrayList40;
@@ -2317,23 +2318,23 @@ public final class e extends DefaultHandler implements s0 {
                                                         f10 = f14;
                                                         arrayList16 = arrayList43;
                                                         str16 = str72;
-                                                        j18 = j53;
+                                                        j18 = j47;
                                                         str17 = str64;
                                                         arrayList13 = arrayList44;
-                                                        j16 = j49;
+                                                        j16 = i30;
                                                         arrayList6 = arrayList35;
                                                         arrayList12 = arrayList34;
                                                         arrayList15 = arrayList39;
-                                                        j19 = j46;
+                                                        j19 = j41;
                                                         arrayList17 = arrayList38;
-                                                        j14 = j45;
+                                                        j14 = j40;
                                                         arrayList3 = arrayList36;
                                                         arrayList14 = arrayList42;
                                                         arrayList7 = arrayList28;
-                                                        j53 = j18;
+                                                        j47 = j18;
                                                         str21 = str67;
-                                                        j54 = j17;
-                                                        i26 = i10;
+                                                        j48 = j17;
+                                                        i32 = i9;
                                                         str22 = str12;
                                                         if (d5.a.y(xmlPullParser, str22)) {
                                                         }
@@ -2357,17 +2358,17 @@ public final class e extends DefaultHandler implements s0 {
                                                 f10 = f14;
                                                 arrayList16 = arrayList43;
                                                 str16 = str72;
-                                                j54 = j17;
+                                                j48 = j17;
                                                 str17 = str64;
                                                 arrayList13 = arrayList44;
-                                                j16 = j49;
+                                                j16 = i30;
                                                 str22 = str63;
                                                 arrayList6 = arrayList35;
                                                 arrayList12 = arrayList34;
                                                 arrayList15 = arrayList39;
-                                                j19 = j46;
+                                                j19 = j41;
                                                 arrayList17 = arrayList38;
-                                                j14 = j45;
+                                                j14 = j40;
                                                 arrayList3 = arrayList36;
                                                 arrayList14 = arrayList42;
                                                 arrayList7 = arrayList28;
@@ -2376,18 +2377,18 @@ public final class e extends DefaultHandler implements s0 {
                                             }
                                         } else {
                                             str = str57;
-                                            j11 = j36;
+                                            j11 = j31;
                                             str2 = str47;
                                             String str113 = str58;
                                             String str114 = str59;
                                             z11 = z10;
                                             str3 = str48;
-                                            long j71 = j46;
-                                            long j72 = j49;
+                                            long j66 = j41;
+                                            long j67 = i30;
                                             ArrayList arrayList75 = arrayList31;
                                             arrayList5 = arrayList32;
                                             arrayList6 = arrayList33;
-                                            j14 = j45;
+                                            j14 = j40;
                                             arrayList3 = arrayList29;
                                             arrayList7 = arrayList28;
                                             if (d5.a.z(xmlPullParser, "EventStream")) {
@@ -2415,8 +2416,8 @@ public final class e extends DefaultHandler implements s0 {
                                                         long parseLong4 = attributeValue33 == null ? -9223372036854775807L : Long.parseLong(attributeValue33);
                                                         String attributeValue34 = xmlPullParser.getAttributeValue(null, "presentationTime");
                                                         long parseLong5 = attributeValue34 == null ? 0L : Long.parseLong(attributeValue34);
-                                                        long O = g0.O(parseLong4, 1000L, parseLong);
-                                                        long O2 = g0.O(parseLong5 - parseLong2, 1000000L, parseLong);
+                                                        long O = f0.O(parseLong4, 1000L, parseLong);
+                                                        long O2 = f0.O(parseLong5 - parseLong2, 1000000L, parseLong);
                                                         String attributeValue35 = xmlPullParser.getAttributeValue(null, "messageData");
                                                         if (attributeValue35 == null) {
                                                             attributeValue35 = null;
@@ -2424,7 +2425,7 @@ public final class e extends DefaultHandler implements s0 {
                                                         byteArrayOutputStream.reset();
                                                         XmlSerializer newSerializer = Xml.newSerializer();
                                                         str5 = str116;
-                                                        newSerializer.setOutput(byteArrayOutputStream, o8.d.c.name());
+                                                        newSerializer.setOutput(byteArrayOutputStream, n8.d.c.name());
                                                         xmlPullParser.nextToken();
                                                         while (!d5.a.y(xmlPullParser, str118)) {
                                                             switch (xmlPullParser.getEventType()) {
@@ -2443,10 +2444,10 @@ public final class e extends DefaultHandler implements s0 {
                                                                 case 2:
                                                                     str9 = str118;
                                                                     newSerializer.startTag(xmlPullParser.getNamespace(), xmlPullParser.getName());
-                                                                    int i48 = 0;
-                                                                    while (i48 < xmlPullParser.getAttributeCount()) {
-                                                                        newSerializer.attribute(xmlPullParser.getAttributeNamespace(i48), xmlPullParser.getAttributeName(i48), xmlPullParser.getAttributeValue(i48));
-                                                                        i48++;
+                                                                    int i54 = 0;
+                                                                    while (i54 < xmlPullParser.getAttributeCount()) {
+                                                                        newSerializer.attribute(xmlPullParser.getAttributeNamespace(i54), xmlPullParser.getAttributeName(i54), xmlPullParser.getAttributeValue(i54));
+                                                                        i54++;
                                                                         str115 = str115;
                                                                         str117 = str117;
                                                                     }
@@ -2518,7 +2519,7 @@ public final class e extends DefaultHandler implements s0 {
                                                         byte[] byteArray = byteArrayOutputStream.toByteArray();
                                                         Long valueOf = Long.valueOf(O2);
                                                         if (attributeValue35 != null) {
-                                                            byteArray = attributeValue35.getBytes(o8.d.c);
+                                                            byteArray = attributeValue35.getBytes(n8.d.c);
                                                         }
                                                         str6 = str119;
                                                         str115 = str120;
@@ -2533,16 +2534,16 @@ public final class e extends DefaultHandler implements s0 {
                                                     if (d5.a.y(xmlPullParser, "EventStream")) {
                                                         long[] jArr = new long[arrayList76.size()];
                                                         b4.a[] aVarArr = new b4.a[arrayList76.size()];
-                                                        for (int i49 = 0; i49 < arrayList76.size(); i49++) {
-                                                            Pair pair2 = (Pair) arrayList76.get(i49);
-                                                            jArr[i49] = ((Long) pair2.first).longValue();
-                                                            aVarArr[i49] = (b4.a) pair2.second;
+                                                        for (int i55 = 0; i55 < arrayList76.size(); i55++) {
+                                                            Pair pair2 = (Pair) arrayList76.get(i55);
+                                                            jArr[i55] = ((Long) pair2.first).longValue();
+                                                            aVarArr[i55] = (b4.a) pair2.second;
                                                         }
                                                         arrayList5.add(new g(str115, str117, jArr, aVarArr));
                                                         arrayList8 = arrayList75;
                                                         str = str8;
-                                                        j16 = j72;
-                                                        j12 = j71;
+                                                        j16 = j67;
+                                                        j12 = j66;
                                                     } else {
                                                         str = str8;
                                                         str113 = str6;
@@ -2554,39 +2555,39 @@ public final class e extends DefaultHandler implements s0 {
                                                 str5 = str114;
                                                 str6 = str113;
                                                 if (d5.a.z(xmlPullParser, "SegmentBase")) {
-                                                    sVar2 = p(xmlPullParser, null);
+                                                    sVar2 = o(xmlPullParser, null);
                                                     arrayList5 = arrayList5;
                                                     arrayList8 = arrayList75;
                                                     str7 = str61;
-                                                    j16 = j72;
-                                                    j12 = j71;
+                                                    j16 = j67;
+                                                    j12 = j66;
                                                     j13 = -9223372036854775807L;
                                                 } else if (d5.a.z(xmlPullParser, "SegmentList")) {
                                                     j13 = -9223372036854775807L;
-                                                    long d14 = d(xmlPullParser, -9223372036854775807L);
+                                                    long d13 = d(xmlPullParser, -9223372036854775807L);
                                                     arrayList5 = arrayList5;
-                                                    sVar2 = q(xmlPullParser, null, j48, j72, j15, d14, j71);
-                                                    j16 = j72;
-                                                    j50 = d14;
+                                                    sVar2 = p(xmlPullParser, null, j42, j67, j15, d13, j66);
+                                                    j16 = j67;
+                                                    j43 = d13;
                                                     arrayList8 = arrayList75;
                                                     str7 = str61;
-                                                    j12 = j71;
+                                                    j12 = j66;
                                                 } else {
                                                     arrayList5 = arrayList5;
-                                                    j16 = j72;
+                                                    j16 = j67;
                                                     j13 = -9223372036854775807L;
                                                     if (d5.a.z(xmlPullParser, "SegmentTemplate")) {
-                                                        long d15 = d(xmlPullParser, -9223372036854775807L);
+                                                        long d14 = d(xmlPullParser, -9223372036854775807L);
                                                         x xVar = z.b;
                                                         arrayList8 = arrayList75;
-                                                        j12 = j71;
-                                                        sVar2 = r(xmlPullParser, null, l0.e, j48, j16, j15, d15, j12);
-                                                        j50 = d15;
+                                                        j12 = j66;
+                                                        sVar2 = q(xmlPullParser, null, l0.e, j42, j16, j15, d14, j12);
+                                                        j43 = d14;
                                                     } else {
                                                         arrayList8 = arrayList75;
-                                                        j12 = j71;
+                                                        j12 = j66;
                                                         if (d5.a.z(xmlPullParser, "AssetIdentifier")) {
-                                                            i(xmlPullParser, "AssetIdentifier");
+                                                            h(xmlPullParser, "AssetIdentifier");
                                                         } else {
                                                             b(xmlPullParser);
                                                         }
@@ -2599,14 +2600,14 @@ public final class e extends DefaultHandler implements s0 {
                                         str7 = str61;
                                     }
                                     if (d5.a.y(xmlPullParser, str7)) {
-                                        Pair create = Pair.create(new h(attributeValue11, j47, arrayList8, arrayList5), Long.valueOf(j16));
+                                        Pair create = Pair.create(new h(attributeValue11, i29, arrayList8, arrayList5), Long.valueOf(j16));
                                         h hVar = (h) create.first;
                                         if (hVar.b != j13) {
                                             long longValue = ((Long) create.second).longValue();
-                                            long j73 = longValue == j13 ? j13 : longValue + hVar.b;
+                                            long j68 = longValue == j13 ? j13 : longValue + hVar.b;
                                             arrayList2 = arrayList7;
                                             arrayList2.add(hVar);
-                                            j11 = j73;
+                                            j11 = j68;
                                         } else {
                                             if (!equals) {
                                                 throw t1.b("Unable to determine start of period " + arrayList7.size(), null);
@@ -2615,35 +2616,35 @@ public final class e extends DefaultHandler implements s0 {
                                             z13 = true;
                                         }
                                     } else {
-                                        long j74 = j16;
+                                        long j69 = j16;
                                         arrayList33 = arrayList6;
-                                        j49 = j74;
+                                        i30 = j69;
                                         str61 = str7;
                                         str60 = str4;
                                         arrayList28 = arrayList7;
                                         arrayList29 = arrayList3;
-                                        j45 = j14;
-                                        j51 = j15;
+                                        j40 = j14;
+                                        j44 = j15;
                                         arrayList30 = arrayList4;
-                                        j36 = j11;
+                                        j31 = j11;
                                         str58 = str6;
                                         str57 = str;
                                         str48 = str3;
                                         str47 = str2;
                                         arrayList31 = arrayList8;
                                         arrayList32 = arrayList5;
-                                        j46 = j12;
+                                        j41 = j12;
                                         z10 = z11;
                                         str59 = str5;
                                     }
                                 }
                             }
-                            j35 = j14;
+                            j30 = j14;
                         }
                         if (!d5.a.y(xmlPullParser, "MPD")) {
-                            if (j30 == j13) {
+                            if (i24 == j13) {
                                 if (j11 != j13) {
-                                    j30 = j11;
+                                    i24 = j11;
                                 } else if (!equals) {
                                     throw t1.b("Unable to determine duration of static manifest.", null);
                                 }
@@ -2651,15 +2652,15 @@ public final class e extends DefaultHandler implements s0 {
                             if (arrayList2.isEmpty()) {
                                 throw t1.b("No periods found.", null);
                             }
-                            return new c(K, j30, j31, equals, j32, j12, j34, K2, iVar, bVar, a1Var, uri2, arrayList2);
+                            return new c(K, i24, i25, equals, i26, j12, i28, K2, iVar, cVar, a1Var, uri2, arrayList2);
                         }
                         arrayList28 = arrayList2;
-                        j33 = j12;
+                        i27 = j12;
                         j29 = j13;
                         arrayList29 = arrayList3;
                         k10 = arrayList;
                         z10 = z11;
-                        j36 = j11;
+                        j31 = j11;
                         str46 = null;
                     }
                     z11 = z10;
@@ -2667,13 +2668,13 @@ public final class e extends DefaultHandler implements s0 {
                 }
                 j13 = j10;
             }
-            j12 = j33;
+            j12 = i27;
             if (!d5.a.y(xmlPullParser, "MPD")) {
             }
         }
     }
 
-    public static j m(XmlPullParser xmlPullParser, String str, String str2) {
+    public static j l(XmlPullParser xmlPullParser, String str, String str2) {
         long j10;
         long j11;
         String attributeValue = xmlPullParser.getAttributeValue(null, str);
@@ -2692,7 +2693,7 @@ public final class e extends DefaultHandler implements s0 {
         return new j(j10, j11, attributeValue);
     }
 
-    public static int n(String str) {
+    public static int m(String str) {
         if (str != null) {
             switch (str) {
                 case "subtitle":
@@ -2724,17 +2725,17 @@ public final class e extends DefaultHandler implements s0 {
         return 0;
     }
 
-    public static int o(ArrayList arrayList) {
-        int i10 = 0;
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            if (d0.a("http://dashif.org/guidelines/trickmode", ((f) arrayList.get(i11)).a)) {
-                i10 = 16384;
+    public static int n(ArrayList arrayList) {
+        int i9 = 0;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            if (b0.a("http://dashif.org/guidelines/trickmode", ((f) arrayList.get(i10)).a)) {
+                i9 = 16384;
             }
         }
-        return i10;
+        return i9;
     }
 
-    public static r p(XmlPullParser xmlPullParser, r rVar) {
+    public static r o(XmlPullParser xmlPullParser, r rVar) {
         long j10 = rVar != null ? rVar.b : 1L;
         String attributeValue = xmlPullParser.getAttributeValue(null, "timescale");
         if (attributeValue != null) {
@@ -2761,7 +2762,7 @@ public final class e extends DefaultHandler implements s0 {
         while (true) {
             xmlPullParser.next();
             if (d5.a.z(xmlPullParser, "Initialization")) {
-                jVar = m(xmlPullParser, "sourceURL", "range");
+                jVar = l(xmlPullParser, "sourceURL", "range");
             } else {
                 b(xmlPullParser);
             }
@@ -2773,7 +2774,7 @@ public final class e extends DefaultHandler implements s0 {
         }
     }
 
-    public static o q(XmlPullParser xmlPullParser, o oVar, long j10, long j11, long j12, long j13, long j14) {
+    public static o p(XmlPullParser xmlPullParser, o oVar, long j10, long j11, long j12, long j13, long j14) {
         long j15 = oVar != null ? oVar.b : 1L;
         List list = null;
         String attributeValue = xmlPullParser.getAttributeValue(null, "timescale");
@@ -2806,14 +2807,14 @@ public final class e extends DefaultHandler implements s0 {
         do {
             xmlPullParser.next();
             if (d5.a.z(xmlPullParser, "Initialization")) {
-                jVar = m(xmlPullParser, "sourceURL", "range");
+                jVar = l(xmlPullParser, "sourceURL", "range");
             } else if (d5.a.z(xmlPullParser, "SegmentTimeline")) {
-                list2 = s(xmlPullParser, j16, j11);
+                list2 = r(xmlPullParser, j16, j11);
             } else if (d5.a.z(xmlPullParser, "SegmentURL")) {
                 if (list == null) {
                     list = new ArrayList();
                 }
-                list.add(m(xmlPullParser, "media", "mediaRange"));
+                list.add(l(xmlPullParser, "media", "mediaRange"));
             } else {
                 b(xmlPullParser);
             }
@@ -2829,10 +2830,10 @@ public final class e extends DefaultHandler implements s0 {
                 list = oVar.j;
             }
         }
-        return new o(jVar, j16, j18, j22, j20, list2, j24, list, g0.H(j14), g0.H(j10));
+        return new o(jVar, j16, j18, j22, j20, list2, j24, list, f0.H(j14), f0.H(j10));
     }
 
-    public static p r(XmlPullParser xmlPullParser, p pVar, List list, long j10, long j11, long j12, long j13, long j14) {
+    public static p q(XmlPullParser xmlPullParser, p pVar, List list, long j10, long j11, long j12, long j13, long j14) {
         long j15;
         long j16 = pVar != null ? pVar.b : 1L;
         j jVar = null;
@@ -2859,31 +2860,31 @@ public final class e extends DefaultHandler implements s0 {
             j22 = Long.parseLong(attributeValue4);
         }
         long j23 = j22;
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
-            if (i10 >= list.size()) {
+            if (i9 >= list.size()) {
                 j15 = -1;
                 break;
             }
-            f fVar = (f) list.get(i10);
-            if (d0.a("http://dashif.org/guidelines/last-segment-number", fVar.a)) {
+            f fVar = (f) list.get(i9);
+            if (b0.a("http://dashif.org/guidelines/last-segment-number", fVar.a)) {
                 j15 = Long.parseLong(fVar.b);
                 break;
             }
-            i10++;
+            i9++;
         }
         long j24 = j15;
         long j25 = j13 == -9223372036854775807L ? j12 : j13;
         long j26 = j25 == Long.MAX_VALUE ? -9223372036854775807L : j25;
-        u5.k t10 = t(xmlPullParser, "media", pVar != null ? pVar.k : null);
-        u5.k t11 = t(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
+        t5.l s10 = s(xmlPullParser, "media", pVar != null ? pVar.k : null);
+        t5.l s11 = s(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
         List list2 = null;
         do {
             xmlPullParser.next();
             if (d5.a.z(xmlPullParser, "Initialization")) {
-                jVar = m(xmlPullParser, "sourceURL", "range");
+                jVar = l(xmlPullParser, "sourceURL", "range");
             } else if (d5.a.z(xmlPullParser, "SegmentTimeline")) {
-                list2 = s(xmlPullParser, j17, j11);
+                list2 = r(xmlPullParser, j17, j11);
             } else {
                 b(xmlPullParser);
             }
@@ -2896,25 +2897,25 @@ public final class e extends DefaultHandler implements s0 {
                 list2 = pVar.f;
             }
         }
-        return new p(jVar, j17, j19, j23, j24, j21, list2, j26, t11, t10, g0.H(j14), g0.H(j10));
+        return new p(jVar, j17, j19, j23, j24, j21, list2, j26, s11, s10, f0.H(j14), f0.H(j10));
     }
 
-    public static ArrayList s(XmlPullParser xmlPullParser, long j10, long j11) {
+    public static ArrayList r(XmlPullParser xmlPullParser, long j10, long j11) {
         long j12;
         ArrayList arrayList = new ArrayList();
         long j13 = 0;
         long j14 = -9223372036854775807L;
         boolean z10 = false;
-        int i10 = 0;
+        int i9 = 0;
         do {
             xmlPullParser.next();
             if (d5.a.z(xmlPullParser, "S")) {
                 String attributeValue = xmlPullParser.getAttributeValue(null, "t");
                 long parseLong = attributeValue == null ? -9223372036854775807L : Long.parseLong(attributeValue);
                 if (z10) {
-                    int i11 = i10;
+                    int i10 = i9;
                     j12 = parseLong;
-                    j13 = a(arrayList, j13, j14, i11, j12);
+                    j13 = a(arrayList, j13, j14, i10, j12);
                 } else {
                     j12 = parseLong;
                 }
@@ -2924,7 +2925,7 @@ public final class e extends DefaultHandler implements s0 {
                 String attributeValue2 = xmlPullParser.getAttributeValue(null, "d");
                 j14 = attributeValue2 == null ? -9223372036854775807L : Long.parseLong(attributeValue2);
                 String attributeValue3 = xmlPullParser.getAttributeValue(null, "r");
-                i10 = attributeValue3 == null ? 0 : Integer.parseInt(attributeValue3);
+                i9 = attributeValue3 == null ? 0 : Integer.parseInt(attributeValue3);
                 z10 = true;
             } else {
                 b(xmlPullParser);
@@ -2933,7 +2934,7 @@ public final class e extends DefaultHandler implements s0 {
         if (!z10) {
             return arrayList;
         }
-        a(arrayList, j13, j14, i10, g0.O(j11, j10, 1000L));
+        a(arrayList, j13, j14, i9, f0.O(j11, j10, 1000L));
         return arrayList;
     }
 
@@ -2942,35 +2943,35 @@ public final class e extends DefaultHandler implements s0 {
     /* JADX WARN: Type inference failed for: r0v1, types: [int[], java.io.Serializable] */
     /* JADX WARN: Type inference failed for: r14v2, types: [java.io.Serializable, java.lang.String[]] */
     /* JADX WARN: Type inference failed for: r1v0, types: [java.io.Serializable, java.lang.String[]] */
-    public static u5.k t(XmlPullParser xmlPullParser, String str, u5.k kVar) {
+    public static t5.l s(XmlPullParser xmlPullParser, String str, t5.l lVar) {
         String str2;
         String attributeValue = xmlPullParser.getAttributeValue(null, str);
         if (attributeValue == null) {
-            return kVar;
+            return lVar;
         }
         ?? r14 = new String[5];
         ?? r02 = new int[4];
         ?? r12 = new String[4];
         r14[0] = "";
+        int i9 = 0;
         int i10 = 0;
-        int i11 = 0;
-        while (i10 < attributeValue.length()) {
-            int indexOf = attributeValue.indexOf("$", i10);
+        while (i9 < attributeValue.length()) {
+            int indexOf = attributeValue.indexOf("$", i9);
             if (indexOf == -1) {
-                r14[i11] = r14[i11] + attributeValue.substring(i10);
-                i10 = attributeValue.length();
-            } else if (indexOf != i10) {
-                r14[i11] = r14[i11] + attributeValue.substring(i10, indexOf);
-                i10 = indexOf;
-            } else if (attributeValue.startsWith("$$", i10)) {
-                r14[i11] = a9.p.p(new StringBuilder(), r14[i11], "$");
-                i10 += 2;
+                r14[i10] = r14[i10] + attributeValue.substring(i9);
+                i9 = attributeValue.length();
+            } else if (indexOf != i9) {
+                r14[i10] = r14[i10] + attributeValue.substring(i9, indexOf);
+                i9 = indexOf;
+            } else if (attributeValue.startsWith("$$", i9)) {
+                r14[i10] = aa.d.r(new StringBuilder(), r14[i10], "$");
+                i9 += 2;
             } else {
-                int i12 = i10 + 1;
-                int indexOf2 = attributeValue.indexOf("$", i12);
-                String substring = attributeValue.substring(i12, indexOf2);
+                int i11 = i9 + 1;
+                int indexOf2 = attributeValue.indexOf("$", i11);
+                String substring = attributeValue.substring(i11, indexOf2);
                 if (substring.equals("RepresentationID")) {
-                    r02[i11] = 1;
+                    r02[i10] = 1;
                 } else {
                     int indexOf3 = substring.indexOf("%0");
                     if (indexOf3 != -1) {
@@ -2985,38 +2986,38 @@ public final class e extends DefaultHandler implements s0 {
                     substring.getClass();
                     switch (substring) {
                         case "Number":
-                            r02[i11] = 2;
+                            r02[i10] = 2;
                             break;
                         case "Time":
-                            r02[i11] = 4;
+                            r02[i10] = 4;
                             break;
                         case "Bandwidth":
-                            r02[i11] = 3;
+                            r02[i10] = 3;
                             break;
                         default:
                             throw new IllegalArgumentException("Invalid template: ".concat(attributeValue));
                     }
-                    r12[i11] = str2;
+                    r12[i10] = str2;
                 }
-                i11++;
-                r14[i11] = "";
-                i10 = indexOf2 + 1;
+                i10++;
+                r14[i10] = "";
+                i9 = indexOf2 + 1;
             }
         }
-        return new u5.k((Serializable) r14, (Serializable) r02, (Serializable) r12, i11);
+        return new t5.l((Serializable) r14, (Serializable) r02, (Serializable) r12, i10);
     }
 
     @Override // com.google.android.exoplayer2.upstream.s0
-    public final Object e(Uri uri, com.google.android.exoplayer2.upstream.o oVar) {
+    public final Object D(Uri uri, com.google.android.exoplayer2.upstream.o oVar) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();
             newPullParser.setInput(oVar, null);
             if (newPullParser.next() == 2 && "MPD".equals(newPullParser.getName())) {
-                return l(newPullParser, uri);
+                return k(newPullParser, uri);
             }
             throw t1.b("inputStream does not contain a valid media presentation description", null);
-        } catch (XmlPullParserException e9) {
-            throw t1.b(null, e9);
+        } catch (XmlPullParserException e10) {
+            throw t1.b(null, e10);
         }
     }
 }

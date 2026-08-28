@@ -1,128 +1,311 @@
 package ag;
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
+import android.view.TextureView;
+import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import h7.z5;
-import java.util.ArrayList;
+import androidx.appcompat.widget.ActionBarOverlayLayout;
+import dh.l;
+import fh.w0;
+import gh.a4;
+import gh.b4;
+import gh.ca;
+import gh.da;
+import h3.g0;
+import hg.k0;
+import hg.u;
+import hg.v;
+import ih.d8;
+import ih.e4;
+import ih.k1;
+import ih.m4;
+import ih.p0;
+import ih.p2;
+import ih.q;
+import ih.u0;
+import ih.w4;
+import ih.y6;
+import ih.z6;
+import java.util.Iterator;
+import kh.d0;
+import kh.d6;
+import kh.e0;
+import kh.e7;
+import kh.f0;
+import kh.j6;
+import kh.l9;
+import kh.m;
+import kh.n9;
+import kh.q3;
+import kh.x3;
+import kh.y2;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Cells.pa;
-import org.telegram.ui.Cells.q3;
-import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.yk0;
+import org.telegram.ui.Components.mi0;
+import org.telegram.ui.Stories.ProfileStoriesView;
+import org.telegram.ui.iz0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class e extends yk0 {
-    public final c6 c;
-    public final int d;
-    public final int e;
-    public final ArrayList f;
-    public final i2 h;
-    public int n;
-    public c r;
-    public final boolean s;
+public final class e extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public e(int i10, c6 c6Var) {
-        ArrayList arrayList = new ArrayList();
-        this.f = arrayList;
-        this.s = true;
-        this.c = c6Var;
-        i2 i2Var = new i2(g6.Lj, g6.Mj, g6.Nj, g6.Oj, c6Var);
-        this.h = i2Var;
-        i2Var.o = 0.0f;
-        i2Var.p = 0.0f;
-        i2Var.q = 1.0f;
-        MessagesController messagesController = MessagesController.getInstance(i10);
-        arrayList.add(new f(messagesController.channelsLimitDefault, messagesController.channelsLimitPremium, LocaleController.getString(R.string.GroupsAndChannelsLimitTitle), LocaleController.formatString(R.string.GroupsAndChannelsLimitSubtitle, Integer.valueOf(messagesController.channelsLimitPremium))));
-        arrayList.add(new f(messagesController.dialogFiltersPinnedLimitDefault, messagesController.dialogFiltersPinnedLimitPremium, LocaleController.getString(R.string.PinChatsLimitTitle), LocaleController.formatString(R.string.PinChatsLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersPinnedLimitPremium))));
-        arrayList.add(new f(messagesController.publicLinksLimitDefault, messagesController.publicLinksLimitPremium, LocaleController.getString(R.string.PublicLinksLimitTitle), LocaleController.formatString(R.string.PublicLinksLimitSubtitle, Integer.valueOf(messagesController.publicLinksLimitPremium))));
-        arrayList.add(new f(messagesController.savedGifsLimitDefault, messagesController.savedGifsLimitPremium, LocaleController.getString(R.string.SavedGifsLimitTitle), LocaleController.formatString(R.string.SavedGifsLimitSubtitle, Integer.valueOf(messagesController.savedGifsLimitPremium))));
-        arrayList.add(new f(messagesController.stickersFavedLimitDefault, messagesController.stickersFavedLimitPremium, LocaleController.getString(R.string.FavoriteStickersLimitTitle), LocaleController.formatString(R.string.FavoriteStickersLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
-        arrayList.add(new f(messagesController.aboutLengthLimitDefault, messagesController.aboutLengthLimitPremium, LocaleController.getString(R.string.BioLimitTitle), LocaleController.formatString(R.string.BioLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
-        arrayList.add(new f(messagesController.captionLengthLimitDefault, messagesController.captionLengthLimitPremium, LocaleController.getString(R.string.CaptionsLimitTitle), LocaleController.formatString(R.string.CaptionsLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
-        arrayList.add(new f(messagesController.dialogFiltersLimitDefault, messagesController.dialogFiltersLimitPremium, LocaleController.getString(R.string.FoldersLimitTitle), LocaleController.formatString(R.string.FoldersLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersLimitPremium))));
-        arrayList.add(new f(messagesController.dialogFiltersChatsLimitDefault, messagesController.dialogFiltersChatsLimitPremium, LocaleController.getString(R.string.ChatPerFolderLimitTitle), LocaleController.formatString(R.string.ChatPerFolderLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersChatsLimitPremium))));
-        arrayList.add(new f(3, 4, LocaleController.getString(R.string.ConnectedAccountsLimitTitle), LocaleController.formatString(R.string.ConnectedAccountsLimitSubtitle, 4)));
-        arrayList.add(new f(messagesController.recommendedChannelsLimitDefault, messagesController.recommendedChannelsLimitPremium, LocaleController.getString(R.string.SimilarChannelsLimitTitle), LocaleController.formatString(R.string.SimilarChannelsLimitSubtitle, Integer.valueOf(messagesController.recommendedChannelsLimitPremium))));
-        this.d = 1;
-        this.e = 1;
-        this.d = arrayList.size() + 1;
+    public /* synthetic */ e(Object obj, int i9) {
+        this.a = i9;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.yk0
-    public final boolean D(f2.o1 o1Var) {
-        return false;
-    }
-
-    @Override // f2.q0
-    public final int h() {
-        return this.d;
-    }
-
-    @Override // f2.q0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 1;
-        }
-        return i10 == 0 ? 2 : 0;
-    }
-
-    @Override // f2.q0
-    public final void v(f2.o1 o1Var, int i10) {
-        if (o1Var.f == 0) {
-            g gVar = (g) o1Var.a;
-            int i11 = i10 - this.e;
-            ArrayList arrayList = this.f;
-            gVar.a((f) arrayList.get(i11));
-            LimitPreviewView limitPreviewView = gVar.c;
-            limitPreviewView.B = ((f) arrayList.get(i11)).e;
-            limitPreviewView.c = this.n;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 29:
+                ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) this.b;
+                actionBarOverlayLayout.I = null;
+                actionBarOverlayLayout.v = false;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [ag.d, android.view.ViewGroup] */
-    /* JADX WARN: Type inference failed for: r1v7, types: [ag.g] */
-    @Override // f2.q0
-    public final f2.o1 x(ViewGroup viewGroup, int i10) {
-        q3 q3Var;
-        Context context = viewGroup.getContext();
-        c6 c6Var = this.c;
-        if (i10 != 1) {
-            if (i10 != 2) {
-                ?? gVar = new g(context, c6Var);
-                gVar.c.setParentViewForGradien(this.r);
-                gVar.c.setStaticGradinet(this.h);
-                q3Var = gVar;
-            } else {
-                q3Var = new q3(context, 16);
-            }
-        } else if (this.s) {
-            ?? dVar = new d(context, 0);
-            LinearLayout g10 = org.telegram.messenger.y1.g(context, 0);
-            ImageView imageView = new ImageView(context);
-            imageView.setImageDrawable(j2.c(context.getDrawable(R.drawable.other_2x_large), j2.d().a));
-            g10.addView(imageView, z5.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
-            TextView textView = new TextView(context);
-            textView.setText(LocaleController.getString(R.string.DoubledLimits));
-            textView.setGravity(17);
-            textView.setTextSize(1, 20.0f);
-            textView.setTextColor(g6.v0(g6.G6, c6Var));
-            textView.setTypeface(AndroidUtilities.bold());
-            g10.addView(textView, z5.e(-2, -2, 16));
-            dVar.addView(g10, z5.e(-2, -2, 17));
-            q3Var = dVar;
-        } else {
-            q3Var = new q3(context, 64);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationEnd(Animator animator) {
+        boolean z10;
+        int i9 = this.a;
+        Object obj = this.b;
+        switch (i9) {
+            case 0:
+                super.onAnimationEnd(animator);
+                j jVar = (j) ((f) obj).b;
+                jVar.b.d = 0.0f;
+                jVar.P = null;
+                jVar.h(jVar.E);
+                break;
+            case 1:
+                bg.c cVar = (bg.c) obj;
+                cVar.b = 1.0f;
+                cVar.invalidate();
+                break;
+            case 2:
+                l lVar = (l) obj;
+                Iterator it = lVar.h.iterator();
+                while (it.hasNext()) {
+                    dh.e eVar = (dh.e) it.next();
+                    if (lVar.c.size() < lVar.d) {
+                        lVar.c.push(eVar);
+                    }
+                    it.remove();
+                }
+                Runnable runnable = lVar.q;
+                if (runnable != null) {
+                    runnable.run();
+                    lVar.q = null;
+                }
+                lVar.r = null;
+                lVar.invalidateSelf();
+                break;
+            case 3:
+                ((w0) obj).b.w.setVisibility(8);
+                break;
+            case 4:
+                b4 b4Var = (b4) obj;
+                b4Var.A = 1.0f;
+                b4Var.B = -1;
+                a4 a4Var = b4Var.D;
+                if (a4Var != null && (z10 = a4Var.l) && z10) {
+                    a4Var.l = false;
+                    a4Var.b();
+                }
+                b4Var.C = null;
+                break;
+            case 5:
+                ca caVar = ((da) obj).c;
+                caVar.setScaleX(1.0f);
+                caVar.setScaleY(1.0f);
+                break;
+            case 6:
+                ((g0) obj).run();
+                break;
+            case 7:
+                v vVar = (v) obj;
+                vVar.setVisibility(8);
+                u uVar = vVar.b;
+                if (uVar != null) {
+                    vVar.removeView(uVar);
+                    vVar.b = null;
+                }
+                vVar.e = null;
+                break;
+            case 8:
+                ((k0) obj).x.c();
+                break;
+            case 9:
+                ih.a aVar = (ih.a) obj;
+                aVar.h = 1.0f;
+                aVar.invalidate();
+                break;
+            case 10:
+                super.onAnimationEnd(animator);
+                ((q) obj).K.p = false;
+                break;
+            case 11:
+                p0 p0Var = (p0) obj;
+                u0 u0Var = p0Var.G;
+                if (u0Var != null && p0Var.E == u0Var.a) {
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                    p0Var.F = ofFloat;
+                    ofFloat.addUpdateListener(new bg.b(this, 15));
+                    p0Var.F.setStartDelay(3000L);
+                    p0Var.F.setDuration(550L);
+                    p0Var.F.setInterpolator(new LinearInterpolator());
+                    p0Var.F.start();
+                    break;
+                }
+                break;
+            case 12:
+                ((k1) obj).E = null;
+                break;
+            case 13:
+                p2 p2Var = (p2) obj;
+                p2Var.n5.invalidate();
+                p2Var.setAnimatedTop(0);
+                p2Var.n5.R2 = true;
+                View view = p2Var.B1;
+                if (view != null && view.getVisibility() == 0) {
+                    p2Var.B1.setTranslationY(((1.0f - p2Var.getTopViewEnterProgress()) * p2Var.B1.getLayoutParams().height) + p2Var.O1);
+                }
+                p2Var.n5.a2 = null;
+                break;
+            case 14:
+                e4 e4Var = (e4) obj;
+                e4Var.c[1].setVisibility(8);
+                e4Var.c[0].setAlpha(1.0f);
+                e4Var.c[0].setTranslationY(0.0f);
+                break;
+            case 15:
+                ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
+                iz0 iz0Var = profileStoriesView.h;
+                profileStoriesView.C = 1.0f;
+                iz0Var.N = 1.0f;
+                iz0Var.invalidate();
+                profileStoriesView.invalidate();
+                break;
+            case 16:
+                ((m4) obj).I = null;
+                break;
+            case 17:
+                w4 w4Var = (w4) obj;
+                w4Var.w = null;
+                w4Var.r = 1.0f;
+                w4Var.invalidate();
+                break;
+            case 18:
+            default:
+                super.onAnimationEnd(animator);
+                break;
+            case 19:
+                d8 d8Var = (d8) obj;
+                d8Var.D = false;
+                d8Var.C = 0.0f;
+                d8Var.invalidate();
+                d8Var.requestLayout();
+                d8Var.F.requestLayout();
+                break;
+            case 20:
+                m mVar = ((kh.g) obj).V;
+                if (mVar.c0 == animator) {
+                    mVar.c0 = null;
+                    mVar.f.getEditText().setScrollY(mVar.U);
+                    break;
+                }
+                break;
+            case 21:
+                e0 e0Var = (e0) obj;
+                e0Var.l = 1.0f;
+                f0 f0Var = e0Var.p;
+                if (f0Var.n.contains(e0Var)) {
+                    e0Var.c.onDetachedFromWindow();
+                    d0 d0Var = e0Var.d;
+                    if (d0Var != null) {
+                        d0Var.pause();
+                        e0Var.d.release(null);
+                        e0Var.d = null;
+                    }
+                    TextureView textureView = e0Var.e;
+                    if (textureView != null) {
+                        AndroidUtilities.removeFromParent(textureView);
+                        e0Var.e = null;
+                    }
+                    e0Var.f = false;
+                    f0Var.n.remove(e0Var);
+                }
+                f0Var.invalidate();
+                break;
+            case 22:
+                q3 q3Var = ((y2) obj).h;
+                q3Var.B.setVisibility(8);
+                q3Var.d.setVisibility(8);
+                break;
+            case 23:
+                x3 x3Var = (x3) obj;
+                x3Var.k0 = 1.0f;
+                x3Var.invalidate();
+                break;
+            case 24:
+                super.onAnimationEnd(animator);
+                d6 d6Var = (d6) obj;
+                ImageView imageView = d6Var.c;
+                d6Var.c = d6Var.d;
+                d6Var.d = imageView;
+                imageView.bringToFront();
+                d6Var.d.setVisibility(8);
+                d6Var.h = null;
+                break;
+            case 25:
+                super.onAnimationEnd(animator);
+                ((j6) obj).w = null;
+                break;
+            case 26:
+                e7 e7Var = (e7) obj;
+                if (e7Var.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) e7Var.getParent()).removeView(e7Var);
+                    break;
+                }
+                break;
+            case 27:
+                ((n9) obj).J = false;
+                break;
+            case 28:
+                l9 l9Var = (l9) obj;
+                l9Var.setTranslationY(0.0f);
+                l9Var.d = null;
+                break;
+            case 29:
+                ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) obj;
+                actionBarOverlayLayout.I = null;
+                actionBarOverlayLayout.v = false;
+                break;
         }
-        return pa.l(q3Var, q3Var, -1, -2);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 18:
+                super.onAnimationStart(animator);
+                z6 z6Var = (z6) this.b;
+                mi0 mi0Var = ((y6) z6Var.a.get(z6Var.d)).c;
+                mi0Var.I = 2;
+                mi0Var.start();
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

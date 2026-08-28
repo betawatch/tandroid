@@ -4,22 +4,22 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class zo0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
     public final Rect b;
-    public final /* synthetic */ sp0 c;
+    public final /* synthetic */ rp0 c;
 
-    public zo0(sp0 sp0Var, int i10) {
-        this.a = i10;
-        switch (i10) {
+    public zo0(rp0 rp0Var, int i9) {
+        this.a = i9;
+        switch (i9) {
             case 1:
-                this.c = sp0Var;
+                this.c = rp0Var;
                 this.b = new Rect();
                 break;
             default:
-                this.c = sp0Var;
+                this.c = rp0Var;
                 this.b = new Rect();
                 break;
         }
@@ -27,27 +27,27 @@ public final class zo0 implements View.OnTouchListener {
 
     @Override // android.view.View.OnTouchListener
     public final boolean onTouch(View view, MotionEvent motionEvent) {
-        sp0 sp0Var;
-        org.telegram.ui.ActionBar.n1 n1Var;
-        sp0 sp0Var2;
-        org.telegram.ui.ActionBar.n1 n1Var2;
+        rp0 rp0Var;
+        org.telegram.ui.ActionBar.o1 o1Var;
+        rp0 rp0Var2;
+        org.telegram.ui.ActionBar.o1 o1Var2;
         switch (this.a) {
             case 0:
-                if (motionEvent.getActionMasked() == 0 && (n1Var = (sp0Var = this.c).F0) != null && n1Var.isShowing()) {
+                if (motionEvent.getActionMasked() == 0 && (o1Var = (rp0Var = this.c).F0) != null && o1Var.isShowing()) {
                     Rect rect = this.b;
                     view.getHitRect(rect);
                     if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        sp0Var.F0.d(true);
+                        rp0Var.F0.d(true);
                         break;
                     }
                 }
                 break;
             default:
-                if (motionEvent.getActionMasked() == 0 && (n1Var2 = (sp0Var2 = this.c).F0) != null && n1Var2.isShowing()) {
+                if (motionEvent.getActionMasked() == 0 && (o1Var2 = (rp0Var2 = this.c).F0) != null && o1Var2.isShowing()) {
                     Rect rect2 = this.b;
                     view.getHitRect(rect2);
                     if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        sp0Var2.F0.d(true);
+                        rp0Var2.F0.d(true);
                         break;
                     }
                 }

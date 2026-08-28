@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.se;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class y {
     public z a;
@@ -15,12 +15,12 @@ public final class y {
     public int e;
     public Drawable f;
     public int g;
-    public c6 h;
+    public b6 h;
     public float i;
     public Boolean j;
     public Boolean k;
     public int l;
-    public v0 m;
+    public w0 m;
     public ArrayList n;
     public Integer o;
 
@@ -31,25 +31,25 @@ public final class y {
         }
         int childCount = zVar.getChildCount();
         ArrayList arrayList = zVar.e;
-        int i10 = 0;
+        int i9 = 0;
         if (arrayList != null) {
             int indexOf = arrayList.indexOf(Integer.valueOf(this.b));
-            int i11 = 0;
+            int i10 = 0;
             while (true) {
-                if (i11 >= zVar.getChildCount()) {
+                if (i10 >= zVar.getChildCount()) {
                     break;
                 }
-                Object tag = zVar.getChildAt(i11).getTag();
+                Object tag = zVar.getChildAt(i10).getTag();
                 if (tag instanceof Integer) {
                     if (zVar.e.indexOf((Integer) tag) > indexOf) {
-                        childCount = i11;
+                        childCount = i10;
                         break;
                     }
                 }
-                i11++;
+                i10++;
             }
         }
-        v0 f10 = zVar.f(childCount, this.b, this.c, null, this.e, this.f, this.g, null, this.h);
+        w0 f10 = zVar.f(childCount, this.b, this.c, null, this.e, this.f, this.g, null, this.h);
         this.m = f10;
         f10.setVisibility(this.l);
         CharSequence charSequence = this.d;
@@ -68,9 +68,9 @@ public final class y {
         ArrayList arrayList2 = this.n;
         if (arrayList2 != null) {
             int size = arrayList2.size();
-            while (i10 < size) {
-                Object obj = arrayList2.get(i10);
-                i10++;
+            while (i9 < size) {
+                Object obj = arrayList2.get(i9);
+                i9++;
                 ((Utilities.Callback) obj).run(this.m);
             }
             this.n = null;
@@ -78,9 +78,9 @@ public final class y {
     }
 
     public final void b(se seVar) {
-        v0 v0Var = this.m;
-        if (v0Var != null) {
-            seVar.run(v0Var);
+        w0 w0Var = this.m;
+        if (w0Var != null) {
+            seVar.run(w0Var);
             return;
         }
         if (this.n == null) {
@@ -91,17 +91,17 @@ public final class y {
 
     public final void c() {
         this.k = Boolean.FALSE;
-        v0 v0Var = this.m;
-        if (v0Var != null) {
-            v0Var.N = false;
+        w0 w0Var = this.m;
+        if (w0Var != null) {
+            w0Var.N = false;
         }
     }
 
     public final void d() {
         this.j = Boolean.TRUE;
-        v0 v0Var = this.m;
-        if (v0Var != null) {
-            v0Var.O = true;
+        w0 w0Var = this.m;
+        if (w0Var != null) {
+            w0Var.O = true;
         }
     }
 
@@ -109,15 +109,15 @@ public final class y {
         this.o = null;
     }
 
-    public final void f(int i10) {
-        if (this.l != i10) {
-            this.l = i10;
-            if (i10 == 0) {
+    public final void f(int i9) {
+        if (this.l != i9) {
+            this.l = i9;
+            if (i9 == 0) {
                 a();
             }
-            v0 v0Var = this.m;
-            if (v0Var != null) {
-                v0Var.setVisibility(i10);
+            w0 w0Var = this.m;
+            if (w0Var != null) {
+                w0Var.setVisibility(i9);
             }
         }
     }

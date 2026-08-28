@@ -2,7 +2,7 @@ package v2;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class k extends r {
     public final long a;
@@ -47,17 +47,17 @@ public final class k extends r {
 
     public final int hashCode() {
         long j10 = this.a;
-        int i10 = (((int) (j10 ^ (j10 >>> 32))) ^ 1000003) * 1000003;
+        int i9 = (((int) (j10 ^ (j10 >>> 32))) ^ 1000003) * 1000003;
         Integer num = this.b;
-        int hashCode = (i10 ^ (num == null ? 0 : num.hashCode())) * 1000003;
+        int hashCode = (i9 ^ (num == null ? 0 : num.hashCode())) * 1000003;
         long j11 = this.c;
         int hashCode2 = (((hashCode ^ ((int) (j11 ^ (j11 >>> 32)))) * 1000003) ^ Arrays.hashCode(this.d)) * 1000003;
         String str = this.e;
         int hashCode3 = (hashCode2 ^ (str == null ? 0 : str.hashCode())) * 1000003;
         long j12 = this.f;
-        int i11 = (hashCode3 ^ ((int) (j12 ^ (j12 >>> 32)))) * 1000003;
+        int i10 = (hashCode3 ^ ((int) (j12 ^ (j12 >>> 32)))) * 1000003;
         v vVar = this.g;
-        return i11 ^ (vVar != null ? vVar.hashCode() : 0);
+        return i10 ^ (vVar != null ? vVar.hashCode() : 0);
     }
 
     public final String toString() {

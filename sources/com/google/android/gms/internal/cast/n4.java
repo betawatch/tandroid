@@ -1,29 +1,57 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.util.concurrent.Delayed;
+import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class n4 extends e4 implements Runnable {
-    public final Runnable n;
+public final class n4 extends f7.n5 implements ScheduledFuture, r8.a, Future {
+    public final f4 b;
+    public final ScheduledFuture c;
 
-    public n4(Runnable runnable) {
-        runnable.getClass();
-        this.n = runnable;
+    public n4(f4 f4Var, ScheduledFuture scheduledFuture) {
+        this.b = f4Var;
+        this.c = scheduledFuture;
     }
 
-    @Override // com.google.android.gms.internal.cast.e4
-    public final String b() {
-        return a9.p.m("task=[", this.n.toString(), "]");
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        try {
-            this.n.run();
-        } catch (Error | RuntimeException e9) {
-            if (e4.f.e(this, null, new x3(e9))) {
-                e4.g(this);
-            }
-            throw e9;
+    @Override // java.util.concurrent.Future
+    public final boolean cancel(boolean z10) {
+        boolean cancel = this.b.cancel(z10);
+        if (cancel) {
+            this.c.cancel(z10);
         }
+        return cancel;
+    }
+
+    @Override // java.lang.Comparable
+    public final /* bridge */ /* synthetic */ int compareTo(Delayed delayed) {
+        return this.c.compareTo(delayed);
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get() {
+        return this.b.get();
+    }
+
+    @Override // java.util.concurrent.Delayed
+    public final long getDelay(TimeUnit timeUnit) {
+        return this.c.getDelay(timeUnit);
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isCancelled() {
+        return this.b.a instanceof x3;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isDone() {
+        return this.b.isDone();
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get(long j10, TimeUnit timeUnit) {
+        return this.b.get(j10, timeUnit);
     }
 }

@@ -1,43 +1,45 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Rect;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ar0 extends org.telegram.ui.y01 {
-    public final /* synthetic */ hu0 D;
+public final class ar0 extends xs0 {
+    public final /* synthetic */ eu0 I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ar0(hu0 hu0Var, Context context, zu0 zu0Var, jh.f6 f6Var, zq0 zq0Var) {
-        super(context, zu0Var, f6Var, zq0Var);
-        this.D = hu0Var;
+    public ar0(eu0 eu0Var, Context context) {
+        super(context);
+        this.I = eu0Var;
     }
 
-    @Override // org.telegram.ui.y01
-    public final void a() {
-        er0 er0Var;
-        int measuredWidth = getMeasuredWidth();
-        int visualHeight = (int) getVisualHeight();
-        Rect rect = this.B;
-        rect.set(0, 0, measuredWidth, visualHeight);
-        setClipBounds(rect);
-        invalidate();
-        hu0 hu0Var = this.D;
-        zs0[] zs0VarArr = hu0Var.g0;
-        if (zs0VarArr != null) {
-            for (zs0 zs0Var : zs0VarArr) {
-                if (zs0Var != null && (er0Var = zs0Var.h) != null) {
-                    int paddingLeft = er0Var.getPaddingLeft();
-                    int Z = hu0Var.Z(zs0Var.B);
-                    int paddingRight = zs0Var.h.getPaddingRight();
-                    er0 er0Var2 = zs0Var.h;
-                    int Y = hu0Var.Y(hu0Var.v0());
-                    er0Var2.a3 = Y;
-                    er0Var.setPadding(paddingLeft, Z, paddingRight, Y);
+    @Override // android.view.View
+    public final void setTranslationX(float f10) {
+        xs0 xs0Var;
+        super.setTranslationX(f10);
+        eu0 eu0Var = this.I;
+        xs0[] xs0VarArr = eu0Var.g0;
+        if (eu0Var.c1 && (xs0Var = xs0VarArr[0]) == this) {
+            float abs = Math.abs(xs0Var.getTranslationX()) / xs0VarArr[0].getMeasuredWidth();
+            eu0Var.Z0(abs, xs0VarArr[1].B);
+            if (eu0Var.D()) {
+                int i9 = eu0Var.t0;
+                if (i9 == 2) {
+                    eu0Var.k0 = 1.0f - abs;
+                } else if (i9 == 1) {
+                    eu0Var.k0 = abs;
                 }
+                eu0Var.s1(abs);
+                float a02 = eu0Var.a0(abs);
+                eu0Var.l0 = a02;
+                eu0Var.n0.setVisibility((a02 == 0.0f || !eu0Var.D() || eu0Var.q0()) ? 4 : 0);
+            } else {
+                eu0Var.k0 = 0.0f;
             }
+            eu0Var.q1(false);
         }
-        hu0Var.K();
+        eu0Var.I();
+        eu0Var.K();
+        eu0Var.o0();
     }
 }

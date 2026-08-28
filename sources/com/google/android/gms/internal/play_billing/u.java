@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import com.android.billingclient.api.Purchase;
-import g7.x5;
+import f7.y5;
 import java.util.ArrayList;
 import org.json.JSONException;
 import org.telegram.messenger.OneUIUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class u {
     public static final int a = Runtime.getRuntime().availableProcessors();
@@ -40,25 +40,25 @@ public abstract class u {
         bundle.putLong("billingClientSessionId", j10);
     }
 
-    public static Bundle c(int i10, n2.g gVar) {
+    public static Bundle c(int i9, n2.g gVar) {
         Bundle bundle = new Bundle();
         bundle.putInt("RESPONSE_CODE", gVar.a);
         bundle.putString("DEBUG_MESSAGE", gVar.c);
-        bundle.putInt("LOG_REASON", a9.p.c(i10));
+        bundle.putInt("LOG_REASON", aa.d.c(i9));
         return bundle;
     }
 
-    public static Bundle d(String str, String str2, ArrayList arrayList, s1 s1Var, long j10) {
+    public static Bundle d(String str, String str2, ArrayList arrayList, t1 t1Var, long j10) {
         Bundle bundle = new Bundle();
         b(bundle, str, str2, j10);
         bundle.putBoolean("enablePendingPurchases", true);
         bundle.putString("SKU_DETAILS_RESPONSE_FORMAT", "PRODUCT_DETAILS");
         p pVar = r.b;
         Object[] objArr = {"subs", "inapp"};
-        x5.a(2, objArr);
+        y5.a(2, objArr);
         bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_MULTIPLE_OFFERS", new ArrayList<>(r.t(2, objArr)));
         Object[] objArr2 = {"inapp"};
-        x5.a(1, objArr2);
+        y5.a(1, objArr2);
         bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_RENT_OFFERS", new ArrayList<>(r.t(1, objArr2)));
         bundle.putBoolean("SHOULD_RETURN_UNFETCHED_PRODUCTS", true);
         ArrayList<String> arrayList2 = new ArrayList<>();
@@ -67,8 +67,8 @@ public abstract class u {
         int size = arrayList.size();
         boolean z10 = false;
         boolean z11 = false;
-        for (int i10 = 0; i10 < size; i10++) {
-            n2.o oVar = (n2.o) arrayList.get(i10);
+        for (int i9 = 0; i9 < size; i9++) {
+            n2.o oVar = (n2.o) arrayList.get(i9);
             arrayList2.add(null);
             z10 |= !TextUtils.isEmpty(null);
             arrayList4.add(null);
@@ -129,12 +129,12 @@ public abstract class u {
                 Log.v(str, str2);
                 return;
             }
-            int i10 = OneUIUtilities.ONE_UI_4_0;
-            while (!str2.isEmpty() && i10 > 0) {
-                int min = Math.min(str2.length(), Math.min(4000, i10));
+            int i9 = OneUIUtilities.ONE_UI_4_0;
+            while (!str2.isEmpty() && i9 > 0) {
+                int min = Math.min(str2.length(), Math.min(4000, i9));
                 Log.v(str, str2.substring(0, min));
                 str2 = str2.substring(min);
-                i10 -= min;
+                i9 -= min;
             }
         }
     }
@@ -165,8 +165,8 @@ public abstract class u {
         }
         try {
             return new Purchase(str, str2);
-        } catch (JSONException e9) {
-            h("BillingHelper", "Got JSONException while parsing purchase data: ".concat(e9.toString()));
+        } catch (JSONException e10) {
+            h("BillingHelper", "Got JSONException while parsing purchase data: ".concat(e10.toString()));
             return null;
         }
     }

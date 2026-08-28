@@ -1,22 +1,41 @@
 package xf;
 
-import f2.q;
-import java.util.ArrayList;
-import org.telegram.ui.Components.fx;
-import org.telegram.ui.Components.yk0;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public abstract class b extends yk0 {
-    public final fx c = new fx();
+public final class b extends m {
+    @Override // xf.m
+    public final float a() {
+        return 1.0f;
+    }
 
-    public final void E(ArrayList arrayList, ArrayList arrayList2) {
-        if (arrayList2 == null) {
-            arrayList2 = new ArrayList();
+    @Override // xf.m
+    public final float d() {
+        return 1.0f;
+    }
+
+    @Override // xf.m
+    public final int e() {
+        return R.raw.photo_blur;
+    }
+
+    @Override // xf.m
+    public final float g() {
+        return 0.35f;
+    }
+
+    @Override // xf.m
+    public final String i(int i9) {
+        if (i9 == 0) {
+            return "blitWithMaskBlurer";
         }
-        fx fxVar = this.c;
-        fxVar.c = arrayList;
-        fxVar.d = arrayList2;
-        q.c(fxVar, true).b(this);
+        if (i9 == 1) {
+            return "compositeWithMaskBlurer";
+        }
+        if (i9 != 2) {
+            return null;
+        }
+        return "brush";
     }
 }

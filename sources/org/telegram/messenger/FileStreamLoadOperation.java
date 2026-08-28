@@ -15,7 +15,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstream.g implements FileLoadOperationStream {
     public static final ConcurrentHashMap<Long, FileStreamLoadOperation> allStreams = new ConcurrentHashMap<>();
@@ -54,15 +54,15 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
         return num.intValue();
     }
 
-    public static Uri prepareUri(int i10, TLRPC.Document document, Object obj) {
+    public static Uri prepareUri(int i9, TLRPC.Document document, Object obj) {
         String attachFileName = FileLoader.getAttachFileName(document);
-        File pathToAttach = FileLoader.getInstance(i10).getPathToAttach(document);
+        File pathToAttach = FileLoader.getInstance(i9).getPathToAttach(document);
         if (pathToAttach != null && pathToAttach.exists()) {
             return Uri.fromFile(pathToAttach);
         }
         try {
             StringBuilder sb2 = new StringBuilder("?account=");
-            sb2.append(i10);
+            sb2.append(i9);
             sb2.append("&id=");
             sb2.append(document.id);
             sb2.append("&hash=");
@@ -74,7 +74,7 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
             sb2.append("&mime=");
             sb2.append(URLEncoder.encode(document.mime_type, "UTF-8"));
             sb2.append("&rid=");
-            sb2.append(FileLoader.getInstance(i10).getFileReference(obj));
+            sb2.append(FileLoader.getInstance(i9).getFileReference(obj));
             sb2.append("&name=");
             sb2.append(URLEncoder.encode(FileLoader.getDocumentFileName(document), "UTF-8"));
             sb2.append("&reference=");
@@ -84,15 +84,15 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
             }
             sb2.append(Utilities.bytesToHex(bArr));
             return Uri.parse("tg://" + attachFileName + sb2.toString());
-        } catch (UnsupportedEncodingException e9) {
-            FileLog.e(e9);
+        } catch (UnsupportedEncodingException e10) {
+            FileLog.e(e10);
             return null;
         }
     }
 
-    public static void setPriorityForDocument(TLRPC.Document document, int i10) {
+    public static void setPriorityForDocument(TLRPC.Document document, int i9) {
         if (document != null) {
-            priorityMap.put(Long.valueOf(document.id), Integer.valueOf(i10));
+            priorityMap.put(Long.valueOf(document.id), Integer.valueOf(i9));
         }
     }
 
@@ -107,8 +107,8 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
         if (randomAccessFile != null) {
             try {
                 randomAccessFile.close();
-            } catch (Exception e9) {
-                FileLog.e(e9);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
             this.file = null;
         }
@@ -217,33 +217,33 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public int read(byte[] bArr, int i10, int i11) {
+    public int read(byte[] bArr, int i9, int i10) {
         Exception exc;
         InterruptedException interruptedException;
-        Exception e9;
-        InterruptedException e10;
+        Exception e10;
+        InterruptedException e11;
         FileStreamLoadOperation fileStreamLoadOperation;
         RandomAccessFile randomAccessFile;
-        if (i11 == 0) {
+        if (i10 == 0) {
             return 0;
         }
         long j10 = this.bytesRemaining;
         if (j10 == 0) {
             return -1;
         }
-        if (j10 < i11) {
-            i11 = (int) j10;
+        if (j10 < i10) {
+            i10 = (int) j10;
         }
-        int i12 = 0;
+        int i11 = 0;
         while (true) {
-            if (i12 == 0) {
+            if (i11 == 0) {
                 try {
-                } catch (InterruptedException e11) {
-                    interruptedException = e11;
+                } catch (InterruptedException e12) {
+                    interruptedException = e12;
                     FileLog.e(interruptedException);
                     return -3;
-                } catch (Exception e12) {
-                    exc = e12;
+                } catch (Exception e13) {
+                    exc = e13;
                     throw new IOException(exc);
                 }
             }
@@ -252,8 +252,8 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
                 break;
             }
             try {
-                i12 = (int) this.loadOperation.getDownloadedLengthFromOffset(this.currentOffset, i11)[0];
-                if (i12 == 0) {
+                i11 = (int) this.loadOperation.getDownloadedLengthFromOffset(this.currentOffset, i10)[0];
+                if (i11 == 0) {
                     this.countDownLatch = new CountDownLatch(1);
                     fileStreamLoadOperation = this;
                     try {
@@ -268,14 +268,14 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
                             countDownLatch.await();
                             fileStreamLoadOperation.countDownLatch = null;
                         }
-                    } catch (InterruptedException e13) {
-                        e10 = e13;
-                        interruptedException = e10;
+                    } catch (InterruptedException e14) {
+                        e11 = e14;
+                        interruptedException = e11;
                         FileLog.e(interruptedException);
                         return -3;
-                    } catch (Exception e14) {
-                        e9 = e14;
-                        exc = e9;
+                    } catch (Exception e15) {
+                        e10 = e15;
+                        exc = e10;
                         throw new IOException(exc);
                     }
                 } else {
@@ -321,21 +321,21 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
                         }
                     }
                 }
-            } catch (InterruptedException e15) {
-                e10 = e15;
-                interruptedException = e10;
+            } catch (InterruptedException e16) {
+                e11 = e16;
+                interruptedException = e11;
                 FileLog.e(interruptedException);
                 return -3;
-            } catch (Exception e16) {
-                e9 = e16;
-                exc = e9;
+            } catch (Exception e17) {
+                e10 = e17;
+                exc = e10;
                 throw new IOException(exc);
             }
         }
         if (!this.opened) {
             return 0;
         }
-        int read = randomAccessFile.read(bArr, i10, i12);
+        int read = randomAccessFile.read(bArr, i9, i11);
         if (read > 0) {
             long j12 = read;
             this.currentOffset += j12;

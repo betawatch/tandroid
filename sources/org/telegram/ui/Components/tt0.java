@@ -1,60 +1,146 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import org.telegram.messenger.SharedConfig;
+import android.util.SparseArray;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public abstract class tt0 extends ScrollSlidingTextTabStrip {
-    public Paint l0;
-    public int m0;
-    public final Rect n0;
-    public final /* synthetic */ hu0 o0;
+public final class tt0 {
+    public boolean g;
+    public boolean h;
+    public int k;
+    public int m;
+    public int n;
+    public boolean o;
+    public int p;
+    public boolean r;
+    public int t;
+    public int u;
+    public boolean v;
+    public boolean w;
+    public final ArrayList a = new ArrayList();
+    public final SparseArray[] b = {new SparseArray(), new SparseArray()};
+    public final ArrayList c = new ArrayList();
+    public final HashMap d = new HashMap();
+    public final ArrayList e = new ArrayList();
+    public final int[] f = {0, 0};
+    public final boolean[] i = {false, true};
+    public final int[] j = {0, 0};
+    public boolean l = true;
+    public int q = 0;
+    public final ArrayList s = new ArrayList();
+    public f2.f1 x = new f2.f1();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tt0(hu0 hu0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        this.o0 = hu0Var;
-        this.m0 = 0;
-        this.n0 = new Rect();
-    }
-
-    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.m0 != 0) {
-            if (this.l0 == null) {
-                this.l0 = new Paint();
-            }
-            this.l0.setColor(this.m0);
-            int measuredWidth = getMeasuredWidth();
-            int measuredHeight = getMeasuredHeight();
-            Rect rect = this.n0;
-            rect.set(0, 0, measuredWidth, measuredHeight);
-            canvas.save();
-            canvas.translate(getScrollX(), 0.0f);
-            canvas.clipPath(this.b0);
-            if (SharedConfig.chatBlurEnabled()) {
-                this.o0.P(canvas, getY(), rect, this.l0);
-            } else {
-                canvas.drawPaint(this.l0);
-            }
-            canvas.translate(-getScrollX(), 0.0f);
-            canvas.restore();
+    public final boolean a(MessageObject messageObject, int i9, boolean z10, boolean z11) {
+        SparseArray[] sparseArrayArr = this.b;
+        if (sparseArrayArr[i9].indexOfKey(messageObject.getId()) >= 0) {
+            return false;
         }
-        super.dispatchDraw(canvas);
+        String str = messageObject.monthKey;
+        HashMap hashMap = this.d;
+        ArrayList arrayList = (ArrayList) hashMap.get(str);
+        if (arrayList == null) {
+            arrayList = new ArrayList();
+            hashMap.put(messageObject.monthKey, arrayList);
+            ArrayList arrayList2 = this.c;
+            if (z10) {
+                arrayList2.add(0, messageObject.monthKey);
+            } else {
+                arrayList2.add(messageObject.monthKey);
+            }
+        }
+        ArrayList arrayList3 = this.a;
+        if (z10) {
+            arrayList.add(0, messageObject);
+            arrayList3.add(0, messageObject);
+        } else {
+            arrayList.add(messageObject);
+            arrayList3.add(messageObject);
+        }
+        sparseArrayArr[i9].put(messageObject.getId(), messageObject);
+        int[] iArr = this.j;
+        if (z11) {
+            iArr[i9] = Math.max(messageObject.getId(), iArr[i9]);
+            this.k = Math.min(messageObject.getId(), this.k);
+        } else if (messageObject.getId() > 0) {
+            iArr[i9] = Math.min(messageObject.getId(), iArr[i9]);
+            this.k = Math.max(messageObject.getId(), this.k);
+        }
+        if (!this.v && messageObject.isVideo()) {
+            this.v = true;
+        }
+        if (!this.w && messageObject.isPhoto()) {
+            this.w = true;
+        }
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
+    public final MessageObject b(int i9, int i10) {
+        SparseArray[] sparseArrayArr = this.b;
+        MessageObject messageObject = (MessageObject) sparseArrayArr[i10].get(i9);
+        if (messageObject == null) {
+            return null;
+        }
+        String str = messageObject.monthKey;
+        HashMap hashMap = this.d;
+        ArrayList arrayList = (ArrayList) hashMap.get(str);
+        if (arrayList == null) {
+            return null;
+        }
+        arrayList.remove(messageObject);
+        this.a.remove(messageObject);
+        sparseArrayArr[i10].remove(messageObject.getId());
+        if (arrayList.isEmpty()) {
+            hashMap.remove(messageObject.monthKey);
+            this.c.remove(messageObject.monthKey);
+        }
+        int[] iArr = this.f;
+        int i11 = iArr[i10] - 1;
+        iArr[i10] = i11;
+        if (i11 < 0) {
+            iArr[i10] = 0;
+        }
+        return messageObject;
     }
 
-    @Override // android.view.View
-    public void setBackgroundColor(int i10) {
-        this.m0 = i10;
-        invalidate();
+    public final ArrayList c() {
+        return this.r ? this.s : this.a;
+    }
+
+    public final int d() {
+        return this.r ? this.t : this.m;
+    }
+
+    public final int e() {
+        int[] iArr = this.f;
+        return iArr[0] + iArr[1];
+    }
+
+    public final void f(int i9, int i10, int i11) {
+        SparseArray[] sparseArrayArr = this.b;
+        MessageObject messageObject = (MessageObject) sparseArrayArr[i9].get(i10);
+        if (messageObject != null) {
+            sparseArrayArr[i9].remove(i10);
+            sparseArrayArr[i9].put(i11, messageObject);
+            messageObject.messageOwner.id = i11;
+            int[] iArr = this.j;
+            iArr[i9] = Math.min(i11, iArr[i9]);
+        }
+    }
+
+    public final void g(boolean z10) {
+        if (this.r == z10) {
+            return;
+        }
+        this.r = z10;
+        if (z10) {
+            this.t = this.m;
+            this.u = this.n;
+            ArrayList arrayList = this.s;
+            arrayList.clear();
+            arrayList.addAll(this.a);
+        }
     }
 }

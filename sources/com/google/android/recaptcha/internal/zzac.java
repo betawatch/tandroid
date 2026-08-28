@@ -1,13 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import zc.a;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class zzac implements ad.a {
+public final class zzac implements a {
     public static final zzac zza = new zzac();
 
-    @Override // ad.a
+    @Override // zc.a
     public final Object invoke() {
-        int i10 = zzby.zza;
+        int i9 = zzby.zza;
         Object zzb = zzbx.zza().zzb(915034697);
         if (zzb != null) {
             return (zzci) zzb;

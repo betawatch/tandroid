@@ -1,52 +1,38 @@
 package pf;
 
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.ui.Components.cn0;
+import android.content.DialogInterface;
+import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n implements Runnable {
+public final /* synthetic */ class n implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ n(cn0 cn0Var, long j10, int i10) {
-        this.a = i10;
-        this.b = cn0Var;
-        this.c = j10;
+    public /* synthetic */ n(int i9, View view) {
+        this.a = i9;
+        this.b = view;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                long j10 = this.c;
-                z zVar = this.b;
-                zVar.getClass();
-                try {
-                    MessagesStorage.getInstance(zVar.o0).getDatabase().executeFast("DELETE FROM search_recent WHERE did = " + j10).stepThis().dispose();
+                r.d = null;
+                View view = this.b;
+                if (view != null) {
+                    view.requestFocus();
                     break;
-                } catch (Exception e9) {
-                    FileLog.e(e9);
-                    return;
                 }
+                break;
             default:
-                long j11 = this.c;
-                z zVar2 = this.b;
-                zVar2.getClass();
-                try {
-                    SQLitePreparedStatement executeFast = MessagesStorage.getInstance(zVar2.o0).getDatabase().executeFast("REPLACE INTO search_recent VALUES(?, ?)");
-                    executeFast.requery();
-                    executeFast.bindLong(1, j11);
-                    executeFast.bindInteger(2, (int) (System.currentTimeMillis() / 1000));
-                    executeFast.step();
-                    executeFast.dispose();
+                n1.h = null;
+                View view2 = this.b;
+                if (view2 != null) {
+                    view2.requestFocus();
                     break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
                 }
+                break;
         }
     }
 }

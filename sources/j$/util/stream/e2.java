@@ -6,13 +6,13 @@ import java.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
 public interface e2 {
-    e2 a(int i10);
+    e2 a(int i9);
 
     long count();
 
     e2 e(long j10, long j11, IntFunction intFunction);
 
-    void f(Object[] objArr, int i10);
+    void f(Object[] objArr, int i9);
 
     void forEach(Consumer consumer);
 

@@ -1,32 +1,23 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class i61 extends View {
-    public final Paint a;
-    public final LinearGradient b;
+public final class i61 extends f2.d1 {
+    public final /* synthetic */ l61 a;
 
-    public i61(k61 k61Var, Context context) {
-        super(context);
-        this.a = new Paint(1);
-        float dp = AndroidUtilities.dp(68.0f);
-        int i10 = org.telegram.ui.ActionBar.g6.h5;
-        this.b = new LinearGradient(0.0f, 0.0f, 0.0f, dp, new int[]{org.telegram.ui.ActionBar.g6.l1(0.0f, k61Var.getThemedColor(i10)), k61Var.getThemedColor(i10)}, new float[]{0.0f, 0.2f}, Shader.TileMode.CLAMP);
+    public i61(l61 l61Var) {
+        this.a = l61Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        LinearGradient linearGradient = this.b;
-        Paint paint = this.a;
-        paint.setShader(linearGradient);
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
+    @Override // f2.d1
+    public final void b(RecyclerView recyclerView, int i9, int i10) {
+        l61 l61Var = this.a;
+        if (l61Var.d.G1) {
+            AndroidUtilities.hideKeyboard(l61Var.Y);
+        }
+        l61.R(l61Var);
     }
 }

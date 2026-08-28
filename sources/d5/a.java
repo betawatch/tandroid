@@ -7,6 +7,7 @@ import android.os.SystemClock;
 import android.os.Trace;
 import android.text.TextUtils;
 import android.util.Log;
+import j3.r0;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -17,10 +18,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+import o8.l0;
 import org.xmlpull.v1.XmlPullParser;
-import p8.l0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final byte[] a = {0, 0, 0, 1};
@@ -35,244 +36,244 @@ public abstract class a {
     public static boolean j;
     public static long k;
 
-    public static void A(MediaFormat mediaFormat, String str, int i10) {
-        if (i10 != -1) {
-            mediaFormat.setInteger(str, i10);
+    public static void A(MediaFormat mediaFormat, String str, int i9) {
+        if (i9 != -1) {
+            mediaFormat.setInteger(str, i9);
         }
     }
 
-    public static r B(int i10, int i11, byte[] bArr) {
+    public static r B(int i9, int i10, byte[] bArr) {
+        int i11;
         int i12;
-        int i13;
-        y yVar = new y(bArr, i10 + 2, i11);
-        int i14 = 4;
-        yVar.s(4);
-        int i15 = yVar.i(3);
-        yVar.r();
-        int i16 = yVar.i(2);
-        boolean h10 = yVar.h();
-        int i17 = yVar.i(5);
-        int i18 = 0;
-        for (int i19 = 0; i19 < 32; i19++) {
-            if (yVar.h()) {
-                i18 |= 1 << i19;
+        x xVar = new x(bArr, i9 + 2, i10);
+        int i13 = 4;
+        xVar.s(4);
+        int i14 = xVar.i(3);
+        xVar.r();
+        int i15 = xVar.i(2);
+        boolean h10 = xVar.h();
+        int i16 = xVar.i(5);
+        int i17 = 0;
+        for (int i18 = 0; i18 < 32; i18++) {
+            if (xVar.h()) {
+                i17 |= 1 << i18;
             }
         }
-        int i20 = 6;
+        int i19 = 6;
         int[] iArr = new int[6];
-        for (int i21 = 0; i21 < 6; i21++) {
-            iArr[i21] = yVar.i(8);
+        for (int i20 = 0; i20 < 6; i20++) {
+            iArr[i20] = xVar.i(8);
         }
-        int i22 = i18;
-        int i23 = yVar.i(8);
-        int i24 = 0;
-        for (int i25 = 0; i25 < i15; i25++) {
-            if (yVar.h()) {
-                i24 += 89;
+        int i21 = i17;
+        int i22 = xVar.i(8);
+        int i23 = 0;
+        for (int i24 = 0; i24 < i14; i24++) {
+            if (xVar.h()) {
+                i23 += 89;
             }
-            if (yVar.h()) {
-                i24 += 8;
+            if (xVar.h()) {
+                i23 += 8;
             }
         }
-        yVar.s(i24);
-        if (i15 > 0) {
-            yVar.s((8 - i15) * 2);
+        xVar.s(i23);
+        if (i14 > 0) {
+            xVar.s((8 - i14) * 2);
         }
-        yVar.l();
-        int l10 = yVar.l();
+        xVar.l();
+        int l10 = xVar.l();
         if (l10 == 3) {
-            yVar.r();
+            xVar.r();
         }
-        int l11 = yVar.l();
-        int l12 = yVar.l();
-        if (yVar.h()) {
-            int l13 = yVar.l();
-            int l14 = yVar.l();
-            int l15 = yVar.l();
-            int l16 = yVar.l();
+        int l11 = xVar.l();
+        int l12 = xVar.l();
+        if (xVar.h()) {
+            int l13 = xVar.l();
+            int l14 = xVar.l();
+            int l15 = xVar.l();
+            int l16 = xVar.l();
             l11 -= (l13 + l14) * ((l10 == 1 || l10 == 2) ? 2 : 1);
             l12 -= (l15 + l16) * (l10 == 1 ? 2 : 1);
         }
-        yVar.l();
-        yVar.l();
-        int l17 = yVar.l();
-        for (int i26 = yVar.h() ? 0 : i15; i26 <= i15; i26++) {
-            yVar.l();
-            yVar.l();
-            yVar.l();
+        xVar.l();
+        xVar.l();
+        int l17 = xVar.l();
+        for (int i25 = xVar.h() ? 0 : i14; i25 <= i14; i25++) {
+            xVar.l();
+            xVar.l();
+            xVar.l();
         }
-        yVar.l();
-        yVar.l();
-        yVar.l();
-        yVar.l();
-        yVar.l();
-        yVar.l();
-        if (yVar.h() && yVar.h()) {
-            int i27 = 0;
-            while (i27 < i14) {
-                int i28 = 0;
-                while (i28 < i20) {
-                    if (yVar.h()) {
-                        int min = Math.min(64, 1 << ((i27 << 1) + 4));
-                        if (i27 > 1) {
-                            yVar.m();
+        xVar.l();
+        xVar.l();
+        xVar.l();
+        xVar.l();
+        xVar.l();
+        xVar.l();
+        if (xVar.h() && xVar.h()) {
+            int i26 = 0;
+            while (i26 < i13) {
+                int i27 = 0;
+                while (i27 < i19) {
+                    if (xVar.h()) {
+                        int min = Math.min(64, 1 << ((i26 << 1) + 4));
+                        if (i26 > 1) {
+                            xVar.m();
                         }
-                        for (int i29 = 0; i29 < min; i29++) {
-                            yVar.m();
+                        for (int i28 = 0; i28 < min; i28++) {
+                            xVar.m();
                         }
                     } else {
-                        yVar.l();
+                        xVar.l();
                     }
-                    i28 += i27 == 3 ? 3 : 1;
-                    i20 = 6;
+                    i27 += i26 == 3 ? 3 : 1;
+                    i19 = 6;
                 }
-                i27++;
-                i14 = 4;
-                i20 = 6;
+                i26++;
+                i13 = 4;
+                i19 = 6;
             }
         }
-        yVar.s(2);
-        if (yVar.h()) {
-            yVar.s(8);
-            yVar.l();
-            yVar.l();
-            yVar.r();
+        xVar.s(2);
+        if (xVar.h()) {
+            xVar.s(8);
+            xVar.l();
+            xVar.l();
+            xVar.r();
         }
-        int l18 = yVar.l();
+        int l18 = xVar.l();
         int[] iArr2 = new int[0];
         int[] iArr3 = new int[0];
+        int i29 = -1;
         int i30 = -1;
-        int i31 = -1;
-        int i32 = 0;
-        while (i32 < l18) {
-            if (i32 == 0 || !yVar.h()) {
-                i12 = l18;
-                i13 = l17;
-                int l19 = yVar.l();
-                int l20 = yVar.l();
+        int i31 = 0;
+        while (i31 < l18) {
+            if (i31 == 0 || !xVar.h()) {
+                i11 = l18;
+                i12 = l17;
+                int l19 = xVar.l();
+                int l20 = xVar.l();
                 int[] iArr4 = new int[l19];
-                for (int i33 = 0; i33 < l19; i33++) {
-                    iArr4[i33] = yVar.l() + 1;
-                    yVar.r();
+                for (int i32 = 0; i32 < l19; i32++) {
+                    iArr4[i32] = xVar.l() + 1;
+                    xVar.r();
                 }
                 int[] iArr5 = new int[l20];
-                for (int i34 = 0; i34 < l20; i34++) {
-                    iArr5[i34] = yVar.l() + 1;
-                    yVar.r();
+                for (int i33 = 0; i33 < l20; i33++) {
+                    iArr5[i33] = xVar.l() + 1;
+                    xVar.r();
                 }
-                i30 = l19;
+                i29 = l19;
                 iArr3 = iArr5;
                 iArr2 = iArr4;
-                i31 = l20;
+                i30 = l20;
             } else {
-                int i35 = i30 + i31;
-                int l21 = (1 - ((yVar.h() ? 1 : 0) * 2)) * (yVar.l() + 1);
-                i12 = l18;
-                int i36 = i35 + 1;
+                int i34 = i29 + i30;
+                int l21 = (1 - ((xVar.h() ? 1 : 0) * 2)) * (xVar.l() + 1);
+                i11 = l18;
+                int i35 = i34 + 1;
                 int[] iArr6 = iArr2;
-                boolean[] zArr = new boolean[i36];
-                for (int i37 = 0; i37 <= i35; i37++) {
-                    if (yVar.h()) {
-                        zArr[i37] = true;
+                boolean[] zArr = new boolean[i35];
+                for (int i36 = 0; i36 <= i34; i36++) {
+                    if (xVar.h()) {
+                        zArr[i36] = true;
                     } else {
-                        zArr[i37] = yVar.h();
+                        zArr[i36] = xVar.h();
                     }
                 }
-                int[] iArr7 = new int[i36];
-                int[] iArr8 = new int[i36];
-                int i38 = 0;
-                for (int i39 = i31 - 1; i39 >= 0; i39--) {
-                    int i40 = iArr3[i39] + l21;
-                    if (i40 < 0 && zArr[i30 + i39]) {
-                        iArr7[i38] = i40;
-                        i38++;
+                int[] iArr7 = new int[i35];
+                int[] iArr8 = new int[i35];
+                int i37 = 0;
+                for (int i38 = i30 - 1; i38 >= 0; i38--) {
+                    int i39 = iArr3[i38] + l21;
+                    if (i39 < 0 && zArr[i29 + i38]) {
+                        iArr7[i37] = i39;
+                        i37++;
                     }
                 }
-                if (l21 < 0 && zArr[i35]) {
-                    iArr7[i38] = l21;
-                    i38++;
+                if (l21 < 0 && zArr[i34]) {
+                    iArr7[i37] = l21;
+                    i37++;
                 }
-                int i41 = i38;
-                i13 = l17;
-                for (int i42 = 0; i42 < i30; i42++) {
-                    int i43 = iArr6[i42] + l21;
-                    if (i43 < 0 && zArr[i42]) {
-                        iArr7[i41] = i43;
-                        i41++;
+                int i40 = i37;
+                i12 = l17;
+                for (int i41 = 0; i41 < i29; i41++) {
+                    int i42 = iArr6[i41] + l21;
+                    if (i42 < 0 && zArr[i41]) {
+                        iArr7[i40] = i42;
+                        i40++;
                     }
                 }
-                iArr2 = Arrays.copyOf(iArr7, i41);
-                int i44 = 0;
-                for (int i45 = i30 - 1; i45 >= 0; i45--) {
-                    int i46 = iArr6[i45] + l21;
-                    if (i46 > 0 && zArr[i45]) {
-                        iArr8[i44] = i46;
-                        i44++;
+                iArr2 = Arrays.copyOf(iArr7, i40);
+                int i43 = 0;
+                for (int i44 = i29 - 1; i44 >= 0; i44--) {
+                    int i45 = iArr6[i44] + l21;
+                    if (i45 > 0 && zArr[i44]) {
+                        iArr8[i43] = i45;
+                        i43++;
                     }
                 }
-                if (l21 > 0 && zArr[i35]) {
-                    iArr8[i44] = l21;
-                    i44++;
+                if (l21 > 0 && zArr[i34]) {
+                    iArr8[i43] = l21;
+                    i43++;
                 }
-                int i47 = i41;
-                int i48 = i44;
-                for (int i49 = 0; i49 < i31; i49++) {
-                    int i50 = iArr3[i49] + l21;
-                    if (i50 > 0 && zArr[i30 + i49]) {
-                        iArr8[i48] = i50;
-                        i48++;
+                int i46 = i40;
+                int i47 = i43;
+                for (int i48 = 0; i48 < i30; i48++) {
+                    int i49 = iArr3[i48] + l21;
+                    if (i49 > 0 && zArr[i29 + i48]) {
+                        iArr8[i47] = i49;
+                        i47++;
                     }
                 }
-                iArr3 = Arrays.copyOf(iArr8, i48);
-                i31 = i48;
+                iArr3 = Arrays.copyOf(iArr8, i47);
                 i30 = i47;
+                i29 = i46;
             }
-            i32++;
-            l18 = i12;
-            l17 = i13;
+            i31++;
+            l18 = i11;
+            l17 = i12;
         }
-        int i51 = l17;
-        if (yVar.h()) {
-            for (int i52 = 0; i52 < yVar.l(); i52++) {
-                yVar.s(i51 + 5);
+        int i50 = l17;
+        if (xVar.h()) {
+            for (int i51 = 0; i51 < xVar.l(); i51++) {
+                xVar.s(i50 + 5);
             }
         }
-        yVar.s(2);
+        xVar.s(2);
         float f10 = 1.0f;
-        if (yVar.h()) {
-            if (yVar.h()) {
-                int i53 = yVar.i(8);
-                if (i53 == 255) {
-                    int i54 = yVar.i(16);
-                    int i55 = yVar.i(16);
-                    if (i54 != 0 && i55 != 0) {
-                        f10 = i54 / i55;
+        if (xVar.h()) {
+            if (xVar.h()) {
+                int i52 = xVar.i(8);
+                if (i52 == 255) {
+                    int i53 = xVar.i(16);
+                    int i54 = xVar.i(16);
+                    if (i53 != 0 && i54 != 0) {
+                        f10 = i53 / i54;
                     }
-                } else if (i53 < 17) {
-                    f10 = e[i53];
+                } else if (i52 < 17) {
+                    f10 = e[i52];
                 } else {
-                    com.google.android.recaptcha.internal.a.s(i53, "Unexpected aspect_ratio_idc value: ", "NalUnitUtil");
+                    e2.c.t(i52, "Unexpected aspect_ratio_idc value: ", "NalUnitUtil");
                 }
             }
-            if (yVar.h()) {
-                yVar.r();
+            if (xVar.h()) {
+                xVar.r();
             }
-            if (yVar.h()) {
-                yVar.s(4);
-                if (yVar.h()) {
-                    yVar.s(24);
+            if (xVar.h()) {
+                xVar.s(4);
+                if (xVar.h()) {
+                    xVar.s(24);
                 }
             }
-            if (yVar.h()) {
-                yVar.l();
-                yVar.l();
+            if (xVar.h()) {
+                xVar.l();
+                xVar.l();
             }
-            yVar.r();
-            if (yVar.h()) {
+            xVar.r();
+            if (xVar.h()) {
                 l12 *= 2;
             }
         }
-        return new r(i16, h10, i17, i22, iArr, i23, l11, l12, f10);
+        return new r(i15, h10, i16, i21, iArr, i22, l11, l12, f10);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:28:0x00fd  */
@@ -282,145 +283,148 @@ public abstract class a {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static t C(int i10, int i11, byte[] bArr) {
+    public static t C(int i9, int i10, byte[] bArr) {
         int l10;
         boolean h10;
-        y yVar;
-        int i12;
+        x xVar;
+        int i11;
         boolean z10;
         boolean h11;
-        int i13;
-        y yVar2 = new y(bArr, i10 + 1, i11);
-        int i14 = 8;
-        int i15 = yVar2.i(8);
-        int i16 = yVar2.i(8);
-        int i17 = yVar2.i(8);
-        int l11 = yVar2.l();
-        if (i15 == 100 || i15 == 110 || i15 == 122 || i15 == 244 || i15 == 44 || i15 == 83 || i15 == 86 || i15 == 118 || i15 == 128 || i15 == 138) {
-            l10 = yVar2.l();
-            h10 = l10 == 3 ? yVar2.h() : false;
-            yVar2.l();
-            yVar2.l();
-            yVar2.r();
-            if (yVar2.h()) {
-                int i18 = l10 != 3 ? 8 : 12;
-                int i19 = 0;
-                while (i19 < i18) {
-                    if (yVar2.h()) {
-                        int i20 = i19 < 6 ? 16 : 64;
+        int i12;
+        x xVar2 = new x(bArr, i9 + 1, i10);
+        int i13 = 8;
+        int i14 = xVar2.i(8);
+        int i15 = xVar2.i(8);
+        int i16 = xVar2.i(8);
+        int l11 = xVar2.l();
+        if (i14 == 100 || i14 == 110 || i14 == 122 || i14 == 244 || i14 == 44 || i14 == 83 || i14 == 86 || i14 == 118 || i14 == 128 || i14 == 138) {
+            l10 = xVar2.l();
+            h10 = l10 == 3 ? xVar2.h() : false;
+            xVar2.l();
+            xVar2.l();
+            xVar2.r();
+            if (xVar2.h()) {
+                int i17 = l10 != 3 ? 8 : 12;
+                int i18 = 0;
+                while (i18 < i17) {
+                    if (xVar2.h()) {
+                        int i19 = i18 < 6 ? 16 : 64;
+                        int i20 = 8;
                         int i21 = 8;
-                        int i22 = 8;
-                        for (int i23 = 0; i23 < i20; i23++) {
-                            if (i21 != 0) {
-                                i21 = ((yVar2.m() + i22) + 256) % 256;
+                        for (int i22 = 0; i22 < i19; i22++) {
+                            if (i20 != 0) {
+                                i20 = ((xVar2.m() + i21) + 256) % 256;
                             }
-                            if (i21 != 0) {
-                                i22 = i21;
+                            if (i20 != 0) {
+                                i21 = i20;
                             }
                         }
                     }
-                    i19++;
+                    i18++;
                 }
             }
         } else {
             l10 = 1;
             h10 = false;
         }
-        int l12 = yVar2.l() + 4;
-        int l13 = yVar2.l();
+        int l12 = xVar2.l() + 4;
+        int l13 = xVar2.l();
         if (l13 == 0) {
-            i12 = yVar2.l() + 4;
-            yVar = yVar2;
+            i11 = xVar2.l() + 4;
+            xVar = xVar2;
         } else {
             if (l13 == 1) {
-                boolean h12 = yVar2.h();
-                yVar2.m();
-                yVar2.m();
-                long l14 = yVar2.l();
-                yVar = yVar2;
-                for (int i24 = 0; i24 < l14; i24++) {
-                    yVar.l();
+                boolean h12 = xVar2.h();
+                xVar2.m();
+                xVar2.m();
+                long l14 = xVar2.l();
+                xVar = xVar2;
+                for (int i23 = 0; i23 < l14; i23++) {
+                    xVar.l();
                 }
                 z10 = h12;
-                i14 = 8;
-                i12 = 0;
-                yVar.l();
-                yVar.r();
-                int l15 = yVar.l() + 1;
-                int l16 = yVar.l() + 1;
-                h11 = yVar.h();
-                int i25 = 2 - (h11 ? 1 : 0);
-                int i26 = l16 * i25;
+                i13 = 8;
+                i11 = 0;
+                xVar.l();
+                xVar.r();
+                int l15 = xVar.l() + 1;
+                int l16 = xVar.l() + 1;
+                h11 = xVar.h();
+                int i24 = 2 - (h11 ? 1 : 0);
+                int i25 = l16 * i24;
                 if (!h11) {
-                    yVar.r();
+                    xVar.r();
                 }
-                yVar.r();
-                int i27 = l15 * 16;
-                int i28 = i26 * 16;
-                if (yVar.h()) {
-                    int l17 = yVar.l();
-                    int l18 = yVar.l();
-                    int l19 = yVar.l();
-                    int l20 = yVar.l();
+                xVar.r();
+                int i26 = l15 * 16;
+                int i27 = i25 * 16;
+                if (xVar.h()) {
+                    int l17 = xVar.l();
+                    int l18 = xVar.l();
+                    int l19 = xVar.l();
+                    int l20 = xVar.l();
                     if (l10 != 0) {
-                        int i29 = l10 == 3 ? 1 : 2;
-                        i25 *= l10 == 1 ? 2 : 1;
-                        r0 = i29;
+                        int i28 = l10 == 3 ? 1 : 2;
+                        i24 *= l10 == 1 ? 2 : 1;
+                        r0 = i28;
                     }
-                    i27 -= (l17 + l18) * r0;
-                    i28 -= (l19 + l20) * i25;
+                    i26 -= (l17 + l18) * r0;
+                    i27 -= (l19 + l20) * i24;
                 }
-                int i30 = i27;
+                int i29 = i26;
                 float f10 = 1.0f;
-                if (yVar.h() && yVar.h()) {
-                    i13 = yVar.i(i14);
-                    if (i13 != 255) {
-                        int i31 = yVar.i(16);
-                        int i32 = yVar.i(16);
-                        if (i31 != 0 && i32 != 0) {
-                            f10 = i31 / i32;
+                if (xVar.h() && xVar.h()) {
+                    i12 = xVar.i(i13);
+                    if (i12 != 255) {
+                        int i30 = xVar.i(16);
+                        int i31 = xVar.i(16);
+                        if (i30 != 0 && i31 != 0) {
+                            f10 = i30 / i31;
                         }
-                    } else if (i13 < 17) {
-                        f10 = e[i13];
+                    } else if (i12 < 17) {
+                        f10 = e[i12];
                     } else {
-                        com.google.android.recaptcha.internal.a.s(i13, "Unexpected aspect_ratio_idc value: ", "NalUnitUtil");
+                        e2.c.t(i12, "Unexpected aspect_ratio_idc value: ", "NalUnitUtil");
                     }
                 }
-                return new t(i15, i16, i17, l11, i30, i28, f10, h10, h11, l12, l13, i12, z10);
+                return new t(i14, i15, i16, l11, i29, i27, f10, h10, h11, l12, l13, i11, z10);
             }
-            yVar = yVar2;
-            i12 = 0;
+            xVar = xVar2;
+            i11 = 0;
         }
         z10 = false;
-        yVar.l();
-        yVar.r();
-        int l152 = yVar.l() + 1;
-        int l162 = yVar.l() + 1;
-        h11 = yVar.h();
-        int i252 = 2 - (h11 ? 1 : 0);
-        int i262 = l162 * i252;
+        xVar.l();
+        xVar.r();
+        int l152 = xVar.l() + 1;
+        int l162 = xVar.l() + 1;
+        h11 = xVar.h();
+        int i242 = 2 - (h11 ? 1 : 0);
+        int i252 = l162 * i242;
         if (!h11) {
         }
-        yVar.r();
-        int i272 = l152 * 16;
-        int i282 = i262 * 16;
-        if (yVar.h()) {
+        xVar.r();
+        int i262 = l152 * 16;
+        int i272 = i252 * 16;
+        if (xVar.h()) {
         }
-        int i302 = i272;
+        int i292 = i262;
         float f102 = 1.0f;
-        if (yVar.h()) {
-            i13 = yVar.i(i14);
-            if (i13 != 255) {
+        if (xVar.h()) {
+            i12 = xVar.i(i13);
+            if (i12 != 255) {
             }
         }
-        return new t(i15, i16, i17, l11, i302, i282, f102, h10, h11, l12, l13, i12, z10);
+        return new t(i14, i15, i16, l11, i292, i272, f102, h10, h11, l12, l13, i11, z10);
     }
 
-    public static long D(int i10, byte[] bArr) {
-        int i11 = bArr[i10];
-        int i12 = bArr[i10 + 1];
-        int i13 = bArr[i10 + 2];
-        int i14 = bArr[i10 + 3];
+    public static long D(int i9, byte[] bArr) {
+        int i10 = bArr[i9];
+        int i11 = bArr[i9 + 1];
+        int i12 = bArr[i9 + 2];
+        int i13 = bArr[i9 + 3];
+        if ((i10 & 128) == 128) {
+            i10 = (i10 & 127) + 128;
+        }
         if ((i11 & 128) == 128) {
             i11 = (i11 & 127) + 128;
         }
@@ -430,56 +434,53 @@ public abstract class a {
         if ((i13 & 128) == 128) {
             i13 = (i13 & 127) + 128;
         }
-        if ((i14 & 128) == 128) {
-            i14 = (i14 & 127) + 128;
-        }
-        return (i11 << 24) + (i12 << 16) + (i13 << 8) + i14;
+        return (i10 << 24) + (i11 << 16) + (i12 << 8) + i13;
     }
 
-    public static long E(int i10, byte[] bArr) {
-        long D = D(i10, bArr);
-        long D2 = D(i10 + 4, bArr);
+    public static long E(int i9, byte[] bArr) {
+        long D = D(i9, bArr);
+        long D2 = D(i9 + 4, bArr);
         if (D == 0 && D2 == 0) {
             return 0L;
         }
         return ((D2 * 1000) / 4294967296L) + ((D - 2208988800L) * 1000);
     }
 
-    public static String F(StringBuilder sb2, int i10, int i11) {
+    public static String F(StringBuilder sb2, int i9, int i10) {
+        int i11;
         int i12;
-        int i13;
-        if (i10 >= i11) {
+        if (i9 >= i10) {
             return sb2.toString();
         }
-        if (sb2.charAt(i10) == '/') {
-            i10++;
+        if (sb2.charAt(i9) == '/') {
+            i9++;
         }
-        int i14 = i10;
-        int i15 = i14;
-        while (i14 <= i11) {
-            if (i14 == i11) {
-                i12 = i14;
-            } else if (sb2.charAt(i14) == '/') {
-                i12 = i14 + 1;
+        int i13 = i9;
+        int i14 = i13;
+        while (i13 <= i10) {
+            if (i13 == i10) {
+                i11 = i13;
+            } else if (sb2.charAt(i13) == '/') {
+                i11 = i13 + 1;
             } else {
-                i14++;
+                i13++;
             }
-            int i16 = i15 + 1;
-            if (i14 == i16 && sb2.charAt(i15) == '.') {
-                sb2.delete(i15, i12);
-                i11 -= i12 - i15;
+            int i15 = i14 + 1;
+            if (i13 == i15 && sb2.charAt(i14) == '.') {
+                sb2.delete(i14, i11);
+                i10 -= i11 - i14;
             } else {
-                if (i14 == i15 + 2 && sb2.charAt(i15) == '.' && sb2.charAt(i16) == '.') {
-                    i13 = sb2.lastIndexOf("/", i15 - 2) + 1;
-                    int i17 = i13 > i10 ? i13 : i10;
-                    sb2.delete(i17, i12);
-                    i11 -= i12 - i17;
+                if (i13 == i14 + 2 && sb2.charAt(i14) == '.' && sb2.charAt(i15) == '.') {
+                    i12 = sb2.lastIndexOf("/", i14 - 2) + 1;
+                    int i16 = i12 > i9 ? i12 : i9;
+                    sb2.delete(i16, i11);
+                    i10 -= i11 - i16;
                 } else {
-                    i13 = i14 + 1;
+                    i12 = i13 + 1;
                 }
-                i15 = i13;
+                i14 = i12;
             }
-            i14 = i15;
+            i13 = i14;
         }
         return sb2.toString();
     }
@@ -509,33 +510,33 @@ public abstract class a {
             sb2.append(str2);
             return sb2.toString();
         }
-        int i10 = u10[1];
-        if (i10 != 0) {
-            int i11 = u11[0] + 1;
-            sb2.append((CharSequence) str, 0, i11);
+        int i9 = u10[1];
+        if (i9 != 0) {
+            int i10 = u11[0] + 1;
+            sb2.append((CharSequence) str, 0, i10);
             sb2.append(str2);
-            return F(sb2, u10[1] + i11, i11 + u10[2]);
+            return F(sb2, u10[1] + i10, i10 + u10[2]);
         }
-        if (str2.charAt(i10) == '/') {
+        if (str2.charAt(i9) == '/') {
             sb2.append((CharSequence) str, 0, u11[1]);
             sb2.append(str2);
-            int i12 = u11[1];
-            return F(sb2, i12, u10[2] + i12);
+            int i11 = u11[1];
+            return F(sb2, i11, u10[2] + i11);
         }
-        int i13 = u11[0] + 2;
-        int i14 = u11[1];
-        if (i13 >= i14 || i14 != u11[2]) {
+        int i12 = u11[0] + 2;
+        int i13 = u11[1];
+        if (i12 >= i13 || i13 != u11[2]) {
             int lastIndexOf = str.lastIndexOf(47, u11[2] - 1);
-            int i15 = lastIndexOf == -1 ? u11[1] : lastIndexOf + 1;
-            sb2.append((CharSequence) str, 0, i15);
+            int i14 = lastIndexOf == -1 ? u11[1] : lastIndexOf + 1;
+            sb2.append((CharSequence) str, 0, i14);
             sb2.append(str2);
-            return F(sb2, u11[1], i15 + u10[2]);
+            return F(sb2, u11[1], i14 + u10[2]);
         }
-        sb2.append((CharSequence) str, 0, i14);
+        sb2.append((CharSequence) str, 0, i13);
         sb2.append('/');
         sb2.append(str2);
-        int i16 = u11[1];
-        return F(sb2, i16, u10[2] + i16 + 1);
+        int i15 = u11[1];
+        return F(sb2, i15, u10[2] + i15 + 1);
     }
 
     public static Uri H(String str, String str2) {
@@ -543,57 +544,57 @@ public abstract class a {
     }
 
     public static void I(MediaFormat mediaFormat, List list) {
-        for (int i10 = 0; i10 < list.size(); i10++) {
-            mediaFormat.setByteBuffer(i0.a.k(i10, "csd-"), ByteBuffer.wrap((byte[]) list.get(i10)));
+        for (int i9 = 0; i9 < list.size(); i9++) {
+            mediaFormat.setByteBuffer(r0.l(i9, "csd-"), ByteBuffer.wrap((byte[]) list.get(i9)));
         }
     }
 
-    public static int J(int i10, byte[] bArr) {
-        int i11;
+    public static int J(int i9, byte[] bArr) {
+        int i10;
         synchronized (f) {
+            int i11 = 0;
             int i12 = 0;
-            int i13 = 0;
-            while (i12 < i10) {
+            while (i11 < i9) {
                 while (true) {
-                    if (i12 >= i10 - 2) {
-                        i12 = i10;
+                    if (i11 >= i9 - 2) {
+                        i11 = i9;
                         break;
                     }
                     try {
-                        if (bArr[i12] == 0 && bArr[i12 + 1] == 0 && bArr[i12 + 2] == 3) {
+                        if (bArr[i11] == 0 && bArr[i11 + 1] == 0 && bArr[i11 + 2] == 3) {
                             break;
                         }
-                        i12++;
+                        i11++;
                     } catch (Throwable th) {
                         throw th;
                     }
                 }
-                if (i12 < i10) {
+                if (i11 < i9) {
                     int[] iArr = g;
-                    if (iArr.length <= i13) {
+                    if (iArr.length <= i12) {
                         g = Arrays.copyOf(iArr, iArr.length * 2);
                     }
-                    g[i13] = i12;
-                    i12 += 3;
-                    i13++;
+                    g[i12] = i11;
+                    i11 += 3;
+                    i12++;
                 }
             }
-            i11 = i10 - i13;
+            i10 = i9 - i12;
+            int i13 = 0;
             int i14 = 0;
-            int i15 = 0;
-            for (int i16 = 0; i16 < i13; i16++) {
-                int i17 = g[i16] - i15;
-                System.arraycopy(bArr, i15, bArr, i14, i17);
-                int i18 = i14 + i17;
-                int i19 = i18 + 1;
+            for (int i15 = 0; i15 < i12; i15++) {
+                int i16 = g[i15] - i14;
+                System.arraycopy(bArr, i14, bArr, i13, i16);
+                int i17 = i13 + i16;
+                int i18 = i17 + 1;
+                bArr[i17] = 0;
+                i13 = i17 + 2;
                 bArr[i18] = 0;
-                i14 = i18 + 2;
-                bArr[i19] = 0;
-                i15 += i17 + 3;
+                i14 += i16 + 3;
             }
-            System.arraycopy(bArr, i15, bArr, i14, i11 - i14);
+            System.arraycopy(bArr, i14, bArr, i13, i10 - i13);
         }
-        return i11;
+        return i10;
     }
 
     public static void K(String str, String str2) {
@@ -649,13 +650,13 @@ public abstract class a {
             byte b10 = bArr[c10];
             byte b11 = (byte) ((b10 >> 6) & 3);
             byte b12 = (byte) (b10 & 7);
-            int i10 = bArr[1] & 255;
+            int i9 = bArr[1] & 255;
             long E = E(24, bArr);
             long E2 = E(32, bArr);
             datagramSocket = datagramSocket2;
             try {
                 long E3 = E(40, bArr);
-                l(b11, b12, i10, E3);
+                l(b11, b12, i9, E3);
                 long j16 = (j15 + (((E3 - j15) + (E2 - E)) / 2)) - elapsedRealtime2;
                 datagramSocket.close();
                 return j16;
@@ -702,28 +703,28 @@ public abstract class a {
         if (TextUtils.isEmpty(replace)) {
             return str;
         }
-        StringBuilder f10 = s3.c.f(str, "\n  ");
-        f10.append(replace.replace("\n", "\n  "));
-        f10.append('\n');
-        return f10.toString();
+        StringBuilder e10 = ta.b.e(str, "\n  ");
+        e10.append(replace.replace("\n", "\n  "));
+        e10.append('\n');
+        return e10.toString();
     }
 
     public static void c(String str) {
-        if (g0.a >= 18) {
+        if (f0.a >= 18) {
             Trace.beginSection(str);
         }
     }
 
-    public static String d(int i10, int i11, int i12, int i13, boolean z10, int[] iArr) {
-        Object[] objArr = {b[i10], Integer.valueOf(i11), Integer.valueOf(i12), Character.valueOf(z10 ? 'H' : 'L'), Integer.valueOf(i13)};
-        int i14 = g0.a;
+    public static String d(int i9, int i10, int i11, int i12, boolean z10, int[] iArr) {
+        Object[] objArr = {b[i9], Integer.valueOf(i10), Integer.valueOf(i11), Character.valueOf(z10 ? 'H' : 'L'), Integer.valueOf(i12)};
+        int i13 = f0.a;
         StringBuilder sb2 = new StringBuilder(String.format(Locale.US, "hvc1.%s%d.%X.%c%d", objArr));
         int length = iArr.length;
         while (length > 0 && iArr[length - 1] == 0) {
             length--;
         }
-        for (int i15 = 0; i15 < length; i15++) {
-            sb2.append(String.format(".%02X", Integer.valueOf(iArr[i15])));
+        for (int i14 = 0; i14 < length; i14++) {
+            sb2.append(String.format(".%02X", Integer.valueOf(iArr[i14])));
         }
         return sb2.toString();
     }
@@ -746,8 +747,8 @@ public abstract class a {
         }
     }
 
-    public static void h(int i10, int i11) {
-        if (i10 < 0 || i10 >= i11) {
+    public static void h(int i9, int i10) {
+        if (i9 < 0 || i9 >= i10) {
             throw new IndexOutOfBoundsException();
         }
     }
@@ -770,15 +771,15 @@ public abstract class a {
         }
     }
 
-    public static void l(byte b10, byte b11, int i10, long j10) {
+    public static void l(byte b10, byte b11, int i9, long j10) {
         if (b10 == 3) {
             throw new IOException("SNTP: Unsynchronized server");
         }
         if (b11 != 4 && b11 != 5) {
-            throw new IOException(i0.a.k(b11, "SNTP: Untrusted mode: "));
+            throw new IOException(r0.l(b11, "SNTP: Untrusted mode: "));
         }
-        if (i10 == 0 || i10 > 15) {
-            throw new IOException(i0.a.k(i10, "SNTP: Untrusted stratum: "));
+        if (i9 == 0 || i9 > 15) {
+            throw new IOException(r0.l(i9, "SNTP: Untrusted stratum: "));
         }
         if (j10 == 0) {
             throw new IOException("SNTP: Zero transmitTime");
@@ -808,83 +809,83 @@ public abstract class a {
     }
 
     public static void q() {
-        if (g0.a >= 18) {
+        if (f0.a >= 18) {
             Trace.endSection();
         }
     }
 
-    public static int r(byte[] bArr, int i10, int i11, boolean[] zArr) {
-        int i12 = i11 - i10;
-        i(i12 >= 0);
-        if (i12 == 0) {
-            return i11;
+    public static int r(byte[] bArr, int i9, int i10, boolean[] zArr) {
+        int i11 = i10 - i9;
+        i(i11 >= 0);
+        if (i11 == 0) {
+            return i10;
         }
         if (zArr[0]) {
             m(zArr);
-            return i10 - 3;
+            return i9 - 3;
         }
-        if (i12 > 1 && zArr[1] && bArr[i10] == 1) {
+        if (i11 > 1 && zArr[1] && bArr[i9] == 1) {
             m(zArr);
-            return i10 - 2;
+            return i9 - 2;
         }
-        if (i12 > 2 && zArr[2] && bArr[i10] == 0 && bArr[i10 + 1] == 1) {
+        if (i11 > 2 && zArr[2] && bArr[i9] == 0 && bArr[i9 + 1] == 1) {
             m(zArr);
-            return i10 - 1;
+            return i9 - 1;
         }
-        int i13 = i11 - 1;
-        int i14 = i10 + 2;
-        while (i14 < i13) {
-            byte b10 = bArr[i14];
+        int i12 = i10 - 1;
+        int i13 = i9 + 2;
+        while (i13 < i12) {
+            byte b10 = bArr[i13];
             if ((b10 & 254) == 0) {
-                int i15 = i14 - 2;
-                if (bArr[i15] == 0 && bArr[i14 - 1] == 0 && b10 == 1) {
+                int i14 = i13 - 2;
+                if (bArr[i14] == 0 && bArr[i13 - 1] == 0 && b10 == 1) {
                     m(zArr);
-                    return i15;
+                    return i14;
                 }
-                i14 -= 2;
+                i13 -= 2;
             }
-            i14 += 3;
+            i13 += 3;
         }
-        zArr[0] = i12 <= 2 ? !(i12 != 2 ? !(zArr[1] && bArr[i13] == 1) : !(zArr[2] && bArr[i11 + (-2)] == 0 && bArr[i13] == 1)) : bArr[i11 + (-3)] == 0 && bArr[i11 + (-2)] == 0 && bArr[i13] == 1;
-        zArr[1] = i12 <= 1 ? zArr[2] && bArr[i13] == 0 : bArr[i11 + (-2)] == 0 && bArr[i13] == 0;
-        zArr[2] = bArr[i13] == 0;
-        return i11;
+        zArr[0] = i11 <= 2 ? !(i11 != 2 ? !(zArr[1] && bArr[i12] == 1) : !(zArr[2] && bArr[i10 + (-2)] == 0 && bArr[i12] == 1)) : bArr[i10 + (-3)] == 0 && bArr[i10 + (-2)] == 0 && bArr[i12] == 1;
+        zArr[1] = i11 <= 1 ? zArr[2] && bArr[i12] == 0 : bArr[i10 + (-2)] == 0 && bArr[i12] == 0;
+        zArr[2] = bArr[i12] == 0;
+        return i10;
     }
 
     public static l0 s(h3.f fVar, ArrayList arrayList) {
-        p8.x xVar = p8.z.b;
-        p8.l.a(4, "initialCapacity");
+        o8.x xVar = o8.z.b;
+        o8.l.a(4, "initialCapacity");
         Object[] objArr = new Object[4];
+        int i9 = 0;
         int i10 = 0;
-        int i11 = 0;
-        while (i10 < arrayList.size()) {
-            Bundle bundle = (Bundle) arrayList.get(i10);
+        while (i9 < arrayList.size()) {
+            Bundle bundle = (Bundle) arrayList.get(i9);
             bundle.getClass();
-            h3.g a2 = fVar.a(bundle);
-            a2.getClass();
-            int i12 = i11 + 1;
-            if (objArr.length < i12) {
-                objArr = Arrays.copyOf(objArr, p8.w.d(objArr.length, i12));
+            h3.g c10 = fVar.c(bundle);
+            c10.getClass();
+            int i11 = i10 + 1;
+            if (objArr.length < i11) {
+                objArr = Arrays.copyOf(objArr, o8.w.d(objArr.length, i11));
             }
-            objArr[i11] = a2;
-            i10++;
-            i11 = i12;
+            objArr[i10] = c10;
+            i9++;
+            i10 = i11;
         }
-        return p8.z.s(i11, objArr);
+        return o8.z.s(i10, objArr);
     }
 
     public static String t(XmlPullParser xmlPullParser, String str) {
         int attributeCount = xmlPullParser.getAttributeCount();
-        for (int i10 = 0; i10 < attributeCount; i10++) {
-            if (xmlPullParser.getAttributeName(i10).equals(str)) {
-                return xmlPullParser.getAttributeValue(i10);
+        for (int i9 = 0; i9 < attributeCount; i9++) {
+            if (xmlPullParser.getAttributeName(i9).equals(str)) {
+                return xmlPullParser.getAttributeValue(i9);
             }
         }
         return null;
     }
 
     public static int[] u(String str) {
-        int i10;
+        int i9;
         int[] iArr = new int[4];
         if (TextUtils.isEmpty(str)) {
             iArr[0] = -1;
@@ -907,17 +908,17 @@ public abstract class a {
         if (indexOf4 > indexOf3) {
             indexOf4 = -1;
         }
-        int i11 = indexOf4 + 2;
-        if (i11 < indexOf2 && str.charAt(indexOf4 + 1) == '/' && str.charAt(i11) == '/') {
-            i10 = str.indexOf(47, indexOf4 + 3);
-            if (i10 == -1 || i10 > indexOf2) {
-                i10 = indexOf2;
+        int i10 = indexOf4 + 2;
+        if (i10 < indexOf2 && str.charAt(indexOf4 + 1) == '/' && str.charAt(i10) == '/') {
+            i9 = str.indexOf(47, indexOf4 + 3);
+            if (i9 == -1 || i9 > indexOf2) {
+                i9 = indexOf2;
             }
         } else {
-            i10 = indexOf4 + 1;
+            i9 = indexOf4 + 1;
         }
         iArr[0] = indexOf4;
-        iArr[1] = i10;
+        iArr[1] = i9;
         iArr[2] = indexOf2;
         iArr[3] = length;
         return iArr;

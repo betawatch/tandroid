@@ -4,7 +4,7 @@ import android.os.Looper;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
-import c2.t0;
+import c2.u0;
 import com.google.android.gms.cast.MediaError;
 import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.common.api.Status;
@@ -18,23 +18,22 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import m5.a0;
 import m5.f0;
 import m5.g0;
-import m5.r;
-import n2.b0;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class h implements m5.f {
-    public static final r5.b k = new r5.b("RemoteMediaClient", null);
+    public static final q5.b k = new q5.b("RemoteMediaClient", null);
     public final Object a;
-    public final t0 b;
-    public final r5.n c;
-    public final j9.a d;
+    public final u0 b;
+    public final q5.n c;
+    public final j4.c d;
     public final c e;
     public g0 f;
     public TaskCompletionSource g;
@@ -43,19 +42,19 @@ public final class h implements m5.f {
     public final ConcurrentHashMap j;
 
     static {
-        String str = r5.n.v;
+        String str = q5.n.v;
     }
 
-    public h(r5.n nVar) {
+    public h(q5.n nVar) {
         new ConcurrentHashMap();
         this.j = new ConcurrentHashMap();
         this.a = new Object();
-        this.b = new t0(Looper.getMainLooper(), 1);
-        j9.a aVar = new j9.a(this);
-        this.d = aVar;
+        this.b = new u0(Looper.getMainLooper(), 1);
+        j4.c cVar = new j4.c(this);
+        this.d = cVar;
         this.c = nVar;
-        nVar.h = new b0(this, 4);
-        nVar.c = aVar;
+        nVar.h = new n2.p(this, 5);
+        nVar.c = cVar;
         this.e = new c(this);
     }
 
@@ -68,143 +67,143 @@ public final class h implements m5.f {
     public static final void x(n nVar) {
         try {
             nVar.p();
-        } catch (IllegalArgumentException e9) {
-            throw e9;
+        } catch (IllegalArgumentException e10) {
+            throw e10;
         } catch (Throwable unused) {
             nVar.a(new m(new Status(2100, null, null, null), 1));
         }
     }
 
     public final long a() {
-        long o10;
+        long o6;
         synchronized (this.a) {
-            y5.l.e("Must be called from the main thread.");
-            o10 = this.c.o();
+            x5.l.e("Must be called from the main thread.");
+            o6 = this.c.o();
         }
-        return o10;
+        return o6;
     }
 
     public final int b() {
-        int i10;
+        int i9;
         synchronized (this.a) {
             try {
-                y5.l.e("Must be called from the main thread.");
-                r e9 = e();
-                i10 = e9 != null ? e9.f : 0;
+                x5.l.e("Must be called from the main thread.");
+                m5.q e10 = e();
+                i9 = e10 != null ? e10.f : 0;
             } catch (Throwable th) {
                 throw th;
             }
         }
-        return i10;
+        return i9;
     }
 
-    public final m5.p c() {
-        y5.l.e("Must be called from the main thread.");
-        r e9 = e();
-        if (e9 == null) {
+    public final m5.o c() {
+        x5.l.e("Must be called from the main thread.");
+        m5.q e10 = e();
+        if (e10 == null) {
             return null;
         }
-        Integer num = (Integer) e9.J.get(e9.w);
+        Integer num = (Integer) e10.J.get(e10.w);
         if (num == null) {
             return null;
         }
-        return (m5.p) e9.C.get(num.intValue());
+        return (m5.o) e10.C.get(num.intValue());
     }
 
     public final MediaInfo d() {
         MediaInfo mediaInfo;
         synchronized (this.a) {
-            y5.l.e("Must be called from the main thread.");
-            r rVar = this.c.f;
-            mediaInfo = rVar == null ? null : rVar.a;
+            x5.l.e("Must be called from the main thread.");
+            m5.q qVar = this.c.f;
+            mediaInfo = qVar == null ? null : qVar.a;
         }
         return mediaInfo;
     }
 
-    public final r e() {
-        r rVar;
+    public final m5.q e() {
+        m5.q qVar;
         synchronized (this.a) {
-            y5.l.e("Must be called from the main thread.");
-            rVar = this.c.f;
+            x5.l.e("Must be called from the main thread.");
+            qVar = this.c.f;
         }
-        return rVar;
+        return qVar;
     }
 
     public final int f() {
-        int i10;
+        int i9;
         synchronized (this.a) {
             try {
-                y5.l.e("Must be called from the main thread.");
-                r e9 = e();
-                i10 = e9 != null ? e9.e : 1;
+                x5.l.e("Must be called from the main thread.");
+                m5.q e10 = e();
+                i9 = e10 != null ? e10.e : 1;
             } catch (Throwable th) {
                 throw th;
             }
         }
-        return i10;
+        return i9;
     }
 
     public final long g() {
         long j10;
         synchronized (this.a) {
-            y5.l.e("Must be called from the main thread.");
-            r rVar = this.c.f;
-            MediaInfo mediaInfo = rVar == null ? null : rVar.a;
+            x5.l.e("Must be called from the main thread.");
+            m5.q qVar = this.c.f;
+            MediaInfo mediaInfo = qVar == null ? null : qVar.a;
             j10 = mediaInfo != null ? mediaInfo.e : 0L;
         }
         return j10;
     }
 
     public final boolean h() {
-        y5.l.e("Must be called from the main thread.");
+        x5.l.e("Must be called from the main thread.");
         if (i()) {
             return true;
         }
-        y5.l.e("Must be called from the main thread.");
-        r e9 = e();
-        return (e9 != null && e9.e == 5) || m() || l() || k();
+        x5.l.e("Must be called from the main thread.");
+        m5.q e10 = e();
+        return (e10 != null && e10.e == 5) || m() || l() || k();
     }
 
     public final boolean i() {
-        y5.l.e("Must be called from the main thread.");
-        r e9 = e();
-        return e9 != null && e9.e == 4;
+        x5.l.e("Must be called from the main thread.");
+        m5.q e10 = e();
+        return e10 != null && e10.e == 4;
     }
 
     public final boolean j() {
-        y5.l.e("Must be called from the main thread.");
+        x5.l.e("Must be called from the main thread.");
         MediaInfo d = d();
         return d != null && d.b == 2;
     }
 
     public final boolean k() {
-        y5.l.e("Must be called from the main thread.");
-        r e9 = e();
-        return (e9 == null || e9.w == 0) ? false : true;
+        x5.l.e("Must be called from the main thread.");
+        m5.q e10 = e();
+        return (e10 == null || e10.w == 0) ? false : true;
     }
 
     public final boolean l() {
-        y5.l.e("Must be called from the main thread.");
-        r e9 = e();
-        if (e9 == null) {
+        x5.l.e("Must be called from the main thread.");
+        m5.q e10 = e();
+        if (e10 == null) {
             return false;
         }
-        if (e9.e != 3) {
+        if (e10.e != 3) {
             return j() && b() == 2;
         }
         return true;
     }
 
     public final boolean m() {
-        y5.l.e("Must be called from the main thread.");
-        r e9 = e();
-        return e9 != null && e9.e == 2;
+        x5.l.e("Must be called from the main thread.");
+        m5.q e10 = e();
+        return e10 != null && e10.e == 2;
     }
 
     public final boolean n() {
-        y5.l.e("Must be called from the main thread.");
-        r e9 = e();
-        return e9 != null && e9.D;
+        x5.l.e("Must be called from the main thread.");
+        m5.q e10 = e();
+        return e10 != null && e10.D;
     }
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
@@ -218,7 +217,7 @@ public final class h implements m5.f {
     /* JADX WARN: Removed duplicated region for block: B:58:0x0145 A[Catch: JSONException -> 0x0084, TryCatch #0 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c3, B:40:0x00c8, B:41:0x010c, B:43:0x0110, B:44:0x011c, B:46:0x0120, B:47:0x0129, B:49:0x012d, B:50:0x0133, B:52:0x0137, B:53:0x013a, B:55:0x013e, B:56:0x0141, B:58:0x0145, B:59:0x0148, B:61:0x014c, B:63:0x0156, B:64:0x0159, B:66:0x015d, B:67:0x0175, B:68:0x0179, B:70:0x017f, B:73:0x00cd, B:74:0x00b3, B:76:0x00b9, B:80:0x0167, B:84:0x0192), top: B:8:0x0040 }] */
     /* JADX WARN: Removed duplicated region for block: B:61:0x014c A[Catch: JSONException -> 0x0084, TryCatch #0 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c3, B:40:0x00c8, B:41:0x010c, B:43:0x0110, B:44:0x011c, B:46:0x0120, B:47:0x0129, B:49:0x012d, B:50:0x0133, B:52:0x0137, B:53:0x013a, B:55:0x013e, B:56:0x0141, B:58:0x0145, B:59:0x0148, B:61:0x014c, B:63:0x0156, B:64:0x0159, B:66:0x015d, B:67:0x0175, B:68:0x0179, B:70:0x017f, B:73:0x00cd, B:74:0x00b3, B:76:0x00b9, B:80:0x0167, B:84:0x0192), top: B:8:0x0040 }] */
     /* JADX WARN: Removed duplicated region for block: B:66:0x015d A[Catch: JSONException -> 0x0084, TryCatch #0 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c3, B:40:0x00c8, B:41:0x010c, B:43:0x0110, B:44:0x011c, B:46:0x0120, B:47:0x0129, B:49:0x012d, B:50:0x0133, B:52:0x0137, B:53:0x013a, B:55:0x013e, B:56:0x0141, B:58:0x0145, B:59:0x0148, B:61:0x014c, B:63:0x0156, B:64:0x0159, B:66:0x015d, B:67:0x0175, B:68:0x0179, B:70:0x017f, B:73:0x00cd, B:74:0x00b3, B:76:0x00b9, B:80:0x0167, B:84:0x0192), top: B:8:0x0040 }] */
-    /* JADX WARN: Type inference failed for: r3v0, types: [r5.p] */
+    /* JADX WARN: Type inference failed for: r3v0, types: [q5.p] */
     /* JADX WARN: Type inference failed for: r3v1 */
     /* JADX WARN: Type inference failed for: r3v2 */
     /* JADX WARN: Type inference failed for: r3v3, types: [java.lang.String] */
@@ -232,16 +231,16 @@ public final class h implements m5.f {
         JSONObject jSONObject;
         String string;
         long optLong;
+        int i9;
         int i10;
-        int i11;
-        r rVar;
+        m5.q qVar;
         int[] m10;
-        r5.n nVar = this.c;
+        q5.n nVar = this.c;
         ?? r32 = nVar.o;
-        r5.p pVar = nVar.n;
-        r5.p pVar2 = nVar.j;
+        q5.p pVar = nVar.n;
+        q5.p pVar2 = nVar.j;
         List list = nVar.d;
-        r5.b bVar = nVar.a;
+        q5.b bVar = nVar.a;
         bVar.b("message received: %s", str);
         String str2 = bVar.a;
         try {
@@ -250,8 +249,8 @@ public final class h implements m5.f {
             try {
                 optLong = jSONObject.optLong("requestId", -1L);
                 c10 = 1;
-            } catch (JSONException e9) {
-                e = e9;
+            } catch (JSONException e10) {
+                e = e10;
                 r32 = str2;
                 c10 = 1;
                 Object[] objArr = new Object[2];
@@ -259,8 +258,8 @@ public final class h implements m5.f {
                 objArr[c10] = str;
                 Log.w((String) r32, bVar.d("Message is malformed (%s); ignoring: %s", objArr));
             }
-        } catch (JSONException e10) {
-            e = e10;
+        } catch (JSONException e11) {
+            e = e11;
             r32 = str2;
         }
         try {
@@ -268,7 +267,7 @@ public final class h implements m5.f {
                 switch (string.hashCode()) {
                     case -1830647528:
                         if (string.equals("LOAD_CANCELLED")) {
-                            pVar2.b(optLong, 2101, r5.n.f(jSONObject));
+                            pVar2.b(optLong, 2101, q5.n.f(jSONObject));
                             break;
                         }
                         break;
@@ -278,13 +277,13 @@ public final class h implements m5.f {
                             nVar.h("QUEUE_ITEMS", jSONObject);
                             if (nVar.h != null) {
                                 JSONArray jSONArray = jSONObject.getJSONArray("items");
-                                m5.p[] pVarArr = new m5.p[jSONArray.length()];
-                                for (int i12 = 0; i12 < jSONArray.length(); i12++) {
-                                    pVarArr[i12] = new m5.o(jSONArray.getJSONObject(i12)).k();
+                                m5.o[] oVarArr = new m5.o[jSONArray.length()];
+                                for (int i11 = 0; i11 < jSONArray.length(); i11++) {
+                                    oVarArr[i11] = new xa.c(jSONArray.getJSONObject(i11)).z();
                                 }
                                 Iterator it = ((h) nVar.h.b).i.iterator();
                                 while (it.hasNext()) {
-                                    ((g) it.next()).k(pVarArr);
+                                    ((g) it.next()).k(oVarArr);
                                 }
                                 break;
                             }
@@ -295,14 +294,14 @@ public final class h implements m5.f {
                             Log.w(str2, bVar.d("received unexpected error: Invalid Request.", new Object[0]));
                             Iterator it2 = list.iterator();
                             while (it2.hasNext()) {
-                                ((r5.p) it2.next()).b(optLong, 2001, r5.n.f(jSONObject));
+                                ((q5.p) it2.next()).b(optLong, 2001, q5.n.f(jSONObject));
                             }
                             break;
                         }
                         break;
                     case -262628938:
                         if (string.equals("LOAD_FAILED")) {
-                            pVar2.b(optLong, 2100, r5.n.f(jSONObject));
+                            pVar2.b(optLong, 2100, q5.n.f(jSONObject));
                             break;
                         }
                         break;
@@ -310,7 +309,7 @@ public final class h implements m5.f {
                         if (string.equals("ERROR")) {
                             Iterator it3 = list.iterator();
                             while (it3.hasNext()) {
-                                ((r5.p) it3.next()).b(optLong, 2100, r5.n.f(jSONObject));
+                                ((q5.p) it3.next()).b(optLong, 2100, q5.n.f(jSONObject));
                             }
                             if (nVar.h == null) {
                                 break;
@@ -330,7 +329,7 @@ public final class h implements m5.f {
                             nVar.h("QUEUE_CHANGE", jSONObject);
                             if (nVar.h != null) {
                                 String string2 = jSONObject.getString("changeType");
-                                int[] m11 = r5.n.m(jSONObject.getJSONArray("itemIds"));
+                                int[] m11 = q5.n.m(jSONObject.getJSONArray("itemIds"));
                                 int optInt = jSONObject.optInt("insertBefore", 0);
                                 if (m11 != null) {
                                     switch (string2.hashCode()) {
@@ -354,15 +353,15 @@ public final class h implements m5.f {
                                             break;
                                         case -1785516855:
                                             if (string2.equals("UPDATE")) {
-                                                int[] m12 = r5.n.m(jSONObject.getJSONArray("itemIds"));
-                                                y5.l.i(m12, "A list of item IDs is expected in a QUEUE UPDATE message.");
+                                                int[] m12 = q5.n.m(jSONObject.getJSONArray("itemIds"));
+                                                x5.l.i(m12, "A list of item IDs is expected in a QUEUE UPDATE message.");
                                                 JSONArray optJSONArray = jSONObject.optJSONArray("reorderItemIds");
                                                 if (optJSONArray != null) {
-                                                    ArrayList c11 = r5.a.c(m12);
+                                                    ArrayList c11 = q5.a.c(m12);
                                                     int optInt2 = jSONObject.optInt("insertBefore", 0);
-                                                    int[] m13 = r5.n.m(optJSONArray);
-                                                    y5.l.h(m13);
-                                                    ArrayList c12 = r5.a.c(m13);
+                                                    int[] m13 = q5.n.m(optJSONArray);
+                                                    x5.l.h(m13);
+                                                    ArrayList c12 = q5.a.c(m13);
                                                     Iterator it7 = ((h) nVar.h.b).i.iterator();
                                                     while (it7.hasNext()) {
                                                         ((g) it7.next()).m(c11, c12, optInt2);
@@ -396,7 +395,7 @@ public final class h implements m5.f {
                             Log.w(str2, bVar.d("received unexpected error: Invalid Player State.", new Object[0]));
                             Iterator it10 = list.iterator();
                             while (it10.hasNext()) {
-                                ((r5.p) it10.next()).b(optLong, 2100, r5.n.f(jSONObject));
+                                ((q5.p) it10.next()).b(optLong, 2100, q5.n.f(jSONObject));
                             }
                             break;
                         }
@@ -410,130 +409,130 @@ public final class h implements m5.f {
                                 if (pVar.d()) {
                                     if (pVar.c(optLong)) {
                                     }
-                                    i10 = 1;
-                                    if (!c13 && (rVar = nVar.f) != null) {
-                                        i11 = rVar.b(i10, jSONObject2);
-                                        if ((i11 & 1) != 0) {
+                                    i9 = 1;
+                                    if (!c13 && (qVar = nVar.f) != null) {
+                                        i10 = qVar.b(i9, jSONObject2);
+                                        if ((i10 & 1) != 0) {
                                             nVar.e = SystemClock.elapsedRealtime();
                                             nVar.i = -1;
                                             nVar.l();
                                         }
-                                        if ((i11 & 2) != 0) {
+                                        if ((i10 & 2) != 0) {
                                             nVar.e = SystemClock.elapsedRealtime();
                                             nVar.l();
                                         }
-                                        if ((i11 & 128) != 0) {
+                                        if ((i10 & 128) != 0) {
                                             nVar.e = SystemClock.elapsedRealtime();
                                         }
-                                        if ((i11 & 4) != 0) {
+                                        if ((i10 & 4) != 0) {
                                             nVar.i();
                                         }
-                                        if ((i11 & 8) != 0) {
+                                        if ((i10 & 8) != 0) {
                                             nVar.k();
                                         }
-                                        if ((i11 & 16) != 0) {
+                                        if ((i10 & 16) != 0) {
                                             nVar.j();
                                         }
-                                        if ((i11 & 32) != 0) {
+                                        if ((i10 & 32) != 0) {
                                             nVar.e = SystemClock.elapsedRealtime();
-                                            b0 b0Var = nVar.h;
-                                            if (b0Var != null) {
-                                                b0Var.t();
+                                            n2.p pVar3 = nVar.h;
+                                            if (pVar3 != null) {
+                                                pVar3.S();
                                             }
                                         }
-                                        if ((i11 & 64) != 0) {
+                                        if ((i10 & 64) != 0) {
                                             nVar.e = SystemClock.elapsedRealtime();
                                             nVar.l();
                                         }
                                     }
-                                    r rVar2 = new r(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
-                                    rVar2.b(0, jSONObject2);
-                                    nVar.f = rVar2;
+                                    m5.q qVar2 = new m5.q(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
+                                    qVar2.b(0, jSONObject2);
+                                    nVar.f = qVar2;
                                     nVar.e = SystemClock.elapsedRealtime();
-                                    i11 = 127;
-                                    if ((i11 & 1) != 0) {
+                                    i10 = 127;
+                                    if ((i10 & 1) != 0) {
                                     }
-                                    if ((i11 & 2) != 0) {
+                                    if ((i10 & 2) != 0) {
                                     }
-                                    if ((i11 & 128) != 0) {
+                                    if ((i10 & 128) != 0) {
                                     }
-                                    if ((i11 & 4) != 0) {
+                                    if ((i10 & 4) != 0) {
                                     }
-                                    if ((i11 & 8) != 0) {
+                                    if ((i10 & 8) != 0) {
                                     }
-                                    if ((i11 & 16) != 0) {
+                                    if ((i10 & 16) != 0) {
                                     }
-                                    if ((i11 & 32) != 0) {
+                                    if ((i10 & 32) != 0) {
                                     }
-                                    if ((i11 & 64) != 0) {
+                                    if ((i10 & 64) != 0) {
                                     }
                                 }
                                 if (!r32.d() || r32.c(optLong)) {
-                                    i10 = 0;
+                                    i9 = 0;
                                     if (!c13) {
-                                        i11 = rVar.b(i10, jSONObject2);
-                                        if ((i11 & 1) != 0) {
+                                        i10 = qVar.b(i9, jSONObject2);
+                                        if ((i10 & 1) != 0) {
                                         }
-                                        if ((i11 & 2) != 0) {
+                                        if ((i10 & 2) != 0) {
                                         }
-                                        if ((i11 & 128) != 0) {
+                                        if ((i10 & 128) != 0) {
                                         }
-                                        if ((i11 & 4) != 0) {
+                                        if ((i10 & 4) != 0) {
                                         }
-                                        if ((i11 & 8) != 0) {
+                                        if ((i10 & 8) != 0) {
                                         }
-                                        if ((i11 & 16) != 0) {
+                                        if ((i10 & 16) != 0) {
                                         }
-                                        if ((i11 & 32) != 0) {
+                                        if ((i10 & 32) != 0) {
                                         }
-                                        if ((i11 & 64) != 0) {
+                                        if ((i10 & 64) != 0) {
                                         }
                                     }
-                                    r rVar22 = new r(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
-                                    rVar22.b(0, jSONObject2);
-                                    nVar.f = rVar22;
+                                    m5.q qVar22 = new m5.q(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
+                                    qVar22.b(0, jSONObject2);
+                                    nVar.f = qVar22;
                                     nVar.e = SystemClock.elapsedRealtime();
-                                    i11 = 127;
-                                    if ((i11 & 1) != 0) {
+                                    i10 = 127;
+                                    if ((i10 & 1) != 0) {
                                     }
-                                    if ((i11 & 2) != 0) {
+                                    if ((i10 & 2) != 0) {
                                     }
-                                    if ((i11 & 128) != 0) {
+                                    if ((i10 & 128) != 0) {
                                     }
-                                    if ((i11 & 4) != 0) {
+                                    if ((i10 & 4) != 0) {
                                     }
-                                    if ((i11 & 8) != 0) {
+                                    if ((i10 & 8) != 0) {
                                     }
-                                    if ((i11 & 16) != 0) {
+                                    if ((i10 & 16) != 0) {
                                     }
-                                    if ((i11 & 32) != 0) {
+                                    if ((i10 & 32) != 0) {
                                     }
-                                    if ((i11 & 64) != 0) {
+                                    if ((i10 & 64) != 0) {
                                     }
                                 } else {
-                                    i10 = 1;
+                                    i9 = 1;
                                     if (!c13) {
                                     }
-                                    r rVar222 = new r(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
-                                    rVar222.b(0, jSONObject2);
-                                    nVar.f = rVar222;
+                                    m5.q qVar222 = new m5.q(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
+                                    qVar222.b(0, jSONObject2);
+                                    nVar.f = qVar222;
                                     nVar.e = SystemClock.elapsedRealtime();
-                                    i11 = 127;
-                                    if ((i11 & 1) != 0) {
+                                    i10 = 127;
+                                    if ((i10 & 1) != 0) {
                                     }
-                                    if ((i11 & 2) != 0) {
+                                    if ((i10 & 2) != 0) {
                                     }
-                                    if ((i11 & 128) != 0) {
+                                    if ((i10 & 128) != 0) {
                                     }
-                                    if ((i11 & 4) != 0) {
+                                    if ((i10 & 4) != 0) {
                                     }
-                                    if ((i11 & 8) != 0) {
+                                    if ((i10 & 8) != 0) {
                                     }
-                                    if ((i11 & 16) != 0) {
+                                    if ((i10 & 16) != 0) {
                                     }
-                                    if ((i11 & 32) != 0) {
+                                    if ((i10 & 32) != 0) {
                                     }
-                                    if ((i11 & 64) != 0) {
+                                    if ((i10 & 64) != 0) {
                                     }
                                 }
                             } else {
@@ -545,7 +544,7 @@ public final class h implements m5.f {
                             }
                             Iterator it11 = list.iterator();
                             while (it11.hasNext()) {
-                                ((r5.p) it11.next()).b(optLong, 0, null);
+                                ((q5.p) it11.next()).b(optLong, 0, null);
                             }
                             break;
                         }
@@ -554,7 +553,7 @@ public final class h implements m5.f {
                         if (string.equals("QUEUE_ITEM_IDS")) {
                             nVar.r.b(optLong, 0, null);
                             nVar.h("QUEUE_ITEM_IDS", jSONObject);
-                            if (nVar.h != null && (m10 = r5.n.m(jSONObject.getJSONArray("itemIds"))) != null) {
+                            if (nVar.h != null && (m10 = q5.n.m(jSONObject.getJSONArray("itemIds"))) != null) {
                                 Iterator it12 = ((h) nVar.h.b).i.iterator();
                                 while (it12.hasNext()) {
                                     ((g) it12.next()).i(m10);
@@ -564,16 +563,16 @@ public final class h implements m5.f {
                         }
                         break;
                 }
-            } catch (JSONException e11) {
-                e = e11;
+            } catch (JSONException e12) {
+                e = e12;
                 r32 = str2;
                 Object[] objArr2 = new Object[2];
                 objArr2[0] = e.getMessage();
                 objArr2[c10] = str;
                 Log.w((String) r32, bVar.d("Message is malformed (%s); ignoring: %s", objArr2));
             }
-        } catch (JSONException e12) {
-            e = e12;
+        } catch (JSONException e13) {
+            e = e13;
             Object[] objArr22 = new Object[2];
             objArr22[0] = e.getMessage();
             objArr22[c10] = str;
@@ -582,27 +581,27 @@ public final class h implements m5.f {
     }
 
     public final void p(g gVar) {
-        y5.l.e("Must be called from the main thread.");
+        x5.l.e("Must be called from the main thread.");
         if (gVar != null) {
             this.i.add(gVar);
         }
     }
 
-    public final BasePendingResult q(m5.q qVar) {
-        y5.l.e("Must be called from the main thread.");
+    public final BasePendingResult q(m5.p pVar) {
+        x5.l.e("Must be called from the main thread.");
         if (!w()) {
             return t();
         }
-        j jVar = new j(this, qVar, 2);
+        j jVar = new j(this, pVar, 2);
         x(jVar);
         return jVar;
     }
 
     public final void r() {
-        y5.l.e("Must be called from the main thread.");
+        x5.l.e("Must be called from the main thread.");
         int f10 = f();
         if (f10 == 4 || f10 == 2) {
-            y5.l.e("Must be called from the main thread.");
+            x5.l.e("Must be called from the main thread.");
             if (w()) {
                 x(new i(this, 5));
                 return;
@@ -611,7 +610,7 @@ public final class h implements m5.f {
                 return;
             }
         }
-        y5.l.e("Must be called from the main thread.");
+        x5.l.e("Must be called from the main thread.");
         if (w()) {
             x(new i(this, 6));
         } else {
@@ -620,7 +619,7 @@ public final class h implements m5.f {
     }
 
     public final int s() {
-        m5.p c10;
+        m5.o c10;
         if (d() != null && h()) {
             if (i()) {
                 return 6;
@@ -643,18 +642,18 @@ public final class h implements m5.f {
         if (g0Var == null) {
             return;
         }
-        y5.l.e("Must be called from the main thread.");
+        x5.l.e("Must be called from the main thread.");
         String str = this.c.b;
         f0 f0Var = (f0) g0Var;
-        r5.a.b(str);
+        q5.a.b(str);
         synchronized (f0Var.C) {
             f0Var.C.put(str, this);
         }
         v b10 = w.b();
-        b10.c = new m5.b0(f0Var, str, this);
+        b10.c = new a0(f0Var, str, this);
         b10.a = 8413;
         f0Var.e(1, b10.b());
-        y5.l.e("Must be called from the main thread.");
+        x5.l.e("Must be called from the main thread.");
         if (w()) {
             x(new i(this, 0));
         } else {
@@ -671,7 +670,7 @@ public final class h implements m5.f {
         if (g0Var != null) {
             this.c.n();
             this.e.c();
-            y5.l.e("Must be called from the main thread.");
+            x5.l.e("Must be called from the main thread.");
             String str = this.c.b;
             f0 f0Var2 = (f0) g0Var;
             if (TextUtils.isEmpty(str)) {
@@ -681,7 +680,7 @@ public final class h implements m5.f {
                 fVar = (m5.f) f0Var2.C.remove(str);
             }
             v b10 = w.b();
-            b10.c = new m5.b0(f0Var2, fVar, str);
+            b10.c = new a0(f0Var2, fVar, str);
             b10.a = 8414;
             f0Var2.e(1, b10.b());
             this.d.b = null;

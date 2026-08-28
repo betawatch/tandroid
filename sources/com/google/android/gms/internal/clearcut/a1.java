@@ -8,23 +8,23 @@ public final class a1 {
 
     public int a() {
         String str = this.c;
-        int i10 = this.b;
-        this.b = i10 + 1;
-        char charAt = str.charAt(i10);
+        int i9 = this.b;
+        this.b = i9 + 1;
+        char charAt = str.charAt(i9);
         if (charAt < 55296) {
             return charAt;
         }
-        int i11 = charAt & 8191;
-        int i12 = 13;
+        int i10 = charAt & 8191;
+        int i11 = 13;
         while (true) {
-            int i13 = this.b;
-            this.b = i13 + 1;
-            char charAt2 = str.charAt(i13);
+            int i12 = this.b;
+            this.b = i12 + 1;
+            char charAt2 = str.charAt(i12);
             if (charAt2 < 55296) {
-                return (charAt2 << i12) | i11;
+                return (charAt2 << i11) | i10;
             }
-            i11 |= (charAt2 & 8191) << i12;
-            i12 += 13;
+            i10 |= (charAt2 & 8191) << i11;
+            i11 += 13;
         }
     }
 
@@ -43,15 +43,15 @@ public final class a1 {
         this.b = 0;
     }
 
-    public a1(String str, int i10, Object[] objArr) {
+    public a1(String str, int i9, Object[] objArr) {
         this.a = 2;
         this.c = String.format(str, objArr);
-        this.b = i10;
+        this.b = i9;
     }
 
-    public a1(int i10, String str) {
+    public a1(int i9, String str) {
         this.a = 1;
-        this.b = i10;
+        this.b = i9;
         this.c = str;
     }
 }

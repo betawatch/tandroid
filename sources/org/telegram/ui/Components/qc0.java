@@ -1,17 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class qc0 extends zf.b {
-    @Override // org.telegram.ui.Components.nt, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
+public final class qc0 extends f7.n {
+    public final /* synthetic */ yc0 a;
+
+    public qc0(yc0 yc0Var) {
+        this.a = yc0Var;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
+    @Override // f7.n
+    public final void a(int i9, CharSequence charSequence) {
+        FileLog.d("PasscodeView onAuthenticationError " + i9 + " \"" + ((Object) charSequence) + "\"");
+        this.a.m(true);
+    }
+
+    @Override // f7.n
+    public final void b() {
+        FileLog.d("PasscodeView onAuthenticationFailed");
+        this.a.m(true);
+    }
+
+    @Override // f7.n
+    public final void c(androidx.biometric.t tVar) {
+        FileLog.d("PasscodeView onAuthenticationSucceeded");
+        this.a.k(true);
     }
 }

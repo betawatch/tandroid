@@ -16,7 +16,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class q6 extends View {
     public final ImageReceiver a;
@@ -77,19 +77,19 @@ public final class q6 extends View {
     public void setAttachBot(TLRPC.TL_attachMenuBot tL_attachMenuBot) {
         TLRPC.TL_attachMenuBotIcon staticAttachMenuBotIcon = MediaDataController.getStaticAttachMenuBotIcon(tL_attachMenuBot);
         if (staticAttachMenuBotIcon != null) {
-            this.a.setImage(ImageLocation.getForDocument(staticAttachMenuBotIcon.icon), "42_42", DocumentObject.getSvgThumb(staticAttachMenuBotIcon.icon, org.telegram.ui.ActionBar.g6.q5, 1.0f), "svg", tL_attachMenuBot, 0);
+            this.a.setImage(ImageLocation.getForDocument(staticAttachMenuBotIcon.icon), "42_42", DocumentObject.getSvgThumb(staticAttachMenuBotIcon.icon, org.telegram.ui.ActionBar.f6.q5, 1.0f), "svg", tL_attachMenuBot, 0);
         }
     }
 
     @Override // android.view.View
-    public void setBackgroundColor(int i10) {
-        this.d.setColor(i10);
+    public void setBackgroundColor(int i9) {
+        this.d.setColor(i9);
     }
 
-    public void setColor(int i10) {
+    public void setColor(int i9) {
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        this.b.setColorFilter(i10, mode);
-        this.c.setColor(i10);
-        this.a.setColorFilter(new PorterDuffColorFilter(i10, mode));
+        this.b.setColorFilter(i9, mode);
+        this.c.setColor(i9);
+        this.a.setColorFilter(new PorterDuffColorFilter(i9, mode));
     }
 }

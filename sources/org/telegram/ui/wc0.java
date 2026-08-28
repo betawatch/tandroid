@@ -1,45 +1,32 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.play.core.integrity.IntegrityTokenResponse;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wc0 implements OnSuccessListener {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ ig0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ TLRPC.auth_SentCode d;
-    public final /* synthetic */ Bundle e;
-    public final /* synthetic */ boolean f;
+public final /* synthetic */ class wc0 implements org.telegram.ui.ActionBar.b2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fg0 b;
 
-    public /* synthetic */ wc0(ig0 ig0Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, String str, boolean z10) {
-        this.b = ig0Var;
-        this.e = bundle;
-        this.d = auth_sentcode;
-        this.c = str;
-        this.f = z10;
+    public /* synthetic */ wc0(fg0 fg0Var, int i9) {
+        this.a = i9;
+        this.b = fg0Var;
     }
 
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(Object obj) {
+    @Override // org.telegram.ui.ActionBar.b2
+    public final void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
         switch (this.a) {
             case 0:
-                ig0.X(this.b, this.e, this.d, this.c, this.f, (IntegrityTokenResponse) obj);
+                fg0 fg0Var = this.b;
+                fg0Var.b[fg0Var.a].d();
+                fg0Var.k1(true, true);
                 break;
             default:
-                ig0.V(this.b, this.c, this.d, this.e, this.f, (x7.d) obj);
+                fg0 fg0Var2 = this.b;
+                fg0Var2.h0 = true;
+                if (fg0Var2.a != 0) {
+                    fg0Var2.u1(0, true, null, true);
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ wc0(ig0 ig0Var, String str, TLRPC.auth_SentCode auth_sentcode, Bundle bundle, boolean z10) {
-        this.b = ig0Var;
-        this.c = str;
-        this.d = auth_sentcode;
-        this.e = bundle;
-        this.f = z10;
     }
 }

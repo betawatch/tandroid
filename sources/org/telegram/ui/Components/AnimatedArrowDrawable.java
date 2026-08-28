@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class AnimatedArrowDrawable extends Drawable {
     public final Paint a;
@@ -21,12 +21,12 @@ public class AnimatedArrowDrawable extends Drawable {
     public final float h;
     public final float i;
 
-    public AnimatedArrowDrawable(int i10, boolean z10) {
+    public AnimatedArrowDrawable(int i9, boolean z10) {
         Paint paint = new Paint(1);
         this.a = paint;
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        paint.setColor(i10);
+        paint.setColor(i9);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
         this.f = z10;
@@ -131,12 +131,12 @@ public class AnimatedArrowDrawable extends Drawable {
         this.a.setColorFilter(colorFilter);
     }
 
-    public AnimatedArrowDrawable(int i10) {
+    public AnimatedArrowDrawable(int i9) {
         Paint paint = new Paint(1);
         this.a = paint;
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dpf2(1.66f));
-        paint.setColor(i10);
+        paint.setColor(i9);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
         this.f = true;
@@ -147,6 +147,6 @@ public class AnimatedArrowDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    public final void setAlpha(int i9) {
     }
 }

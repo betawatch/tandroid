@@ -1,27 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class w50 extends i80 {
-    public final /* synthetic */ a60 H;
+public final class w50 extends FrameLayout {
+    public TextView a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w50(a60 a60Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.e3 e3Var, boolean z10) {
-        super(context, n2Var, e3Var, false, z10);
-        this.H = a60Var;
-    }
-
-    @Override // org.telegram.ui.Components.i80
-    public final void e(int i10, SpannableStringBuilder spannableStringBuilder) {
-        org.telegram.ui.ActionBar.c6 c6Var;
-        f60 f60Var = this.H.c;
-        org.telegram.ui.ActionBar.c3 c3Var = f60Var.container;
-        c6Var = ((org.telegram.ui.ActionBar.e3) f60Var).resourcesProvider;
-        ec Q = new mc(c3Var, c6Var).Q(i10, 36, spannableStringBuilder);
-        Q.r = false;
-        Q.k(true);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(84.0f), TLObject.FLAG_30));
     }
 }

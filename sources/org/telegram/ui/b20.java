@@ -1,72 +1,84 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.View;
-import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b20 implements org.telegram.ui.ActionBar.r0, org.telegram.ui.Components.rk0, r0.o, NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.l1 {
+public final /* synthetic */ class b20 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s50 b;
+    public final /* synthetic */ o50 b;
 
-    public /* synthetic */ b20(s50 s50Var, int i10) {
-        this.a = i10;
-        this.b = s50Var;
+    public /* synthetic */ b20(o50 o50Var, int i9) {
+        this.a = i9;
+        this.b = o50Var;
     }
 
-    @Override // r0.o
-    public r0.m1 I0(View view, r0.m1 m1Var) {
-        return s50.B(this.b, m1Var);
-    }
-
-    @Override // org.telegram.ui.Components.rk0
-    public boolean a(int i10, View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
+            case 0:
+                o50 o50Var = this.b;
+                if (o50Var.r1() && AndroidUtilities.checkInlinePermissions(o50Var.e0) && !org.telegram.ui.Components.voip.g1.Z.R) {
+                    o50Var.dismiss();
+                    AndroidUtilities.runOnUIThread(new b20(o50Var, 4), 100L);
+                    break;
+                }
+                break;
             case 1:
-                s50 s50Var = this.b;
-                if (s50Var.F1(view)) {
+                o50 o50Var2 = this.b;
+                if (o50Var2.W0 != null && o50Var2.N1 && VoIPService.getSharedInstance() != null) {
                     try {
-                        s50Var.M.performHapticFeedback(0);
+                        o50Var2.w.performHapticFeedback(3, 2);
                     } catch (Exception unused) {
                     }
+                    o50Var2.J1(1, true);
+                    AndroidUtilities.runOnUIThread(o50Var2.t2, 80L);
+                    o50Var2.N1 = false;
+                    o50Var2.O1 = true;
+                    break;
                 }
-                return false;
+                break;
+            case 2:
+                o50 o50Var3 = this.b;
+                int i9 = o50Var3.P1;
+                if (i9 == 1 || i9 == 2 || i9 == 6 || i9 == 5) {
+                    o50Var3.N1(true, false);
+                    break;
+                }
+                break;
+            case 3:
+                this.b.v1();
+                break;
+            case 4:
+                org.telegram.ui.Components.voip.g1.n(this.b.e0);
+                break;
+            case 5:
+                this.b.dismiss();
+                break;
+            case 6:
+                o50 o50Var4 = this.b;
+                o50Var4.K1();
+                AndroidUtilities.runOnUIThread(o50Var4.z1, 1000L);
+                break;
+            case 7:
+                j40 j40Var = this.b.n0;
+                if (j40Var != null) {
+                    j40Var.show();
+                    break;
+                }
+                break;
+            case 8:
+                o50.t(this.b);
+                break;
+            case 9:
+                this.b.d.getMessagesController().deleteUserPhoto(null);
+                break;
             default:
-                s50 s50Var2 = this.b;
-                if (!s50Var2.r1()) {
-                    if (view instanceof org.telegram.ui.Components.voip.l) {
-                        return s50Var2.F1(view);
-                    }
-                    if (view instanceof org.telegram.ui.Cells.b4) {
-                        s50Var2.I1();
-                        org.telegram.ui.Components.ri0 ri0Var = ((org.telegram.ui.Cells.b4) view).f;
-                        if (ri0Var.isEnabled()) {
-                            ri0Var.callOnClick();
-                            return true;
-                        }
-                    }
-                }
-                return false;
+                o50 o50Var5 = this.b;
+                o50Var5.t3 = null;
+                o50Var5.H1(true);
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.r0
-    public void h(int i10) {
-        this.b.K.getActionBarMenuOnItemClick().b(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.l1
-    public void k(KeyEvent keyEvent) {
-        s50 s50Var;
-        s40 s40Var;
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (s40Var = (s50Var = this.b).b3) != null && s40Var.isShowing()) {
-            s50Var.b3.dismiss();
-        }
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
-    public void run(int[] iArr, float[] fArr, boolean[] zArr) {
-        s50.D(this.b, iArr, fArr);
     }
 }

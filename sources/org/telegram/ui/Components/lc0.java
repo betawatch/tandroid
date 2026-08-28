@@ -1,23 +1,17 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class lc0 {
-    public Paint a;
-    public Paint b;
-    public View c;
-    public h3.f0 d;
-    public long e;
-    public RectF f;
-    public float g;
-    public float h;
-    public float i;
-    public Path j;
-    public boolean k;
-    public boolean l;
+public final class lc0 extends yf.b {
+    @Override // org.telegram.ui.Components.ot, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
 }

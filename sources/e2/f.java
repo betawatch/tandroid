@@ -1,85 +1,78 @@
 package e2;
 
-import android.graphics.Rect;
-import android.view.Choreographer;
-import eh.m;
-import gf.b0;
-import h7.n;
-import java.util.ArrayList;
+import android.content.Context;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import androidx.profileinstaller.ProfileInstallerInitializer;
+import gh.g0;
+import java.util.Random;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
+import org.telegram.ui.gb0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements Choreographer.FrameCallback {
+public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ Context b;
 
-    public /* synthetic */ f(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ f(Context context, int i9) {
+        this.a = i9;
+        this.b = context;
     }
 
-    @Override // android.view.Choreographer.FrameCallback
-    public final void doFrame(long j10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((Runnable) this.b).run();
+                (Build.VERSION.SDK_INT >= 28 ? h.a(Looper.getMainLooper()) : new Handler(Looper.getMainLooper())).postDelayed(new f(this.b, 1), new Random().nextInt(Math.max(MediaDataController.MAX_STYLE_RUNS_COUNT, 1)) + 5000);
                 break;
             case 1:
-                m mVar = (m) this.b;
-                Rect rect = mVar.m;
-                long currentTimeMillis = System.currentTimeMillis();
-                if (currentTimeMillis - mVar.h > 32 && !mVar.j && !rect.isEmpty()) {
-                    mVar.h = currentTimeMillis;
-                    mVar.j = true;
-                    mVar.o.set(rect);
-                    mVar.a.postRunnable(new eh.l(mVar, (mVar.d + 1) % 2, 0));
-                }
-                rect.set(0, 0, 0, 0);
-                mVar.l = false;
+                new ThreadPoolExecutor(0, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue()).execute(new f(this.b, 2));
                 break;
             case 2:
-                b0 b0Var = (b0) this.b;
-                if (b0Var.B.get()) {
-                    long j11 = b0Var.b;
-                    if (j11 == 0) {
-                        b0Var.b = j10;
-                    } else if (j10 - j11 >= 1000000000) {
-                        b0Var.c = b0Var.a;
-                        b0Var.f = b0Var.e.getAndSet(0);
-                        b0Var.a = 0;
-                        b0Var.b = j10;
-                    } else {
-                        b0Var.a++;
-                    }
-                    Choreographer.getInstance().postFrameCallback(b0Var.d);
-                    break;
-                }
+                e.s(this.b, new gb0(1), e.a, false);
+                break;
+            case 3:
+                new g0(this.b).show();
+                break;
+            case 4:
+                ve.e.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                break;
+            case 5:
+                new g0(this.b).show();
+                break;
+            case 6:
+                ve.e.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                break;
+            case 7:
+                ve.e.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                break;
+            case 8:
+                ve.e.s(this.b, LocaleController.getString(R.string.PaidContentInfoLink));
+                break;
+            case 9:
+                ve.e.s(this.b, LocaleController.getString(R.string.StarsSubscribeInfoLink));
+                break;
+            case 10:
+                ve.e.s(this.b, LocaleController.getString(R.string.StarsReactionTermsLink));
+                break;
+            case 11:
+                new g0(this.b).show();
                 break;
             default:
-                ye.b bVar = (ye.b) this.b;
-                bf.a aVar = bVar.k;
-                bf.a aVar2 = bVar.j;
-                if (bVar.n) {
-                    ArrayList arrayList = bVar.b;
-                    int size = arrayList.size();
-                    int i10 = 0;
-                    while (i10 < size) {
-                        Object obj = arrayList.get(i10);
-                        i10++;
-                        ye.e eVar = ((af.f) ((ze.b) obj)).f;
-                        if (eVar != null) {
-                            eVar.invalidate();
-                        }
-                    }
-                    if (aVar2.c != 0) {
-                        bVar.d(n.a(aVar2.b() / 0.95f, 0.0f, 1.0f));
-                    } else if (aVar.c != 0) {
-                        bVar.d(n.a(1.0f - (aVar.b() / 0.95f), 0.0f, 1.0f));
-                    }
-                    bVar.l.postFrameCallback(bVar.m);
-                    break;
-                }
+                ve.e.s(this.b, LocaleController.getString(R.string.ChannelAffiliateProgramJoinButtonInfoLink));
                 break;
         }
+    }
+
+    public /* synthetic */ f(ProfileInstallerInitializer profileInstallerInitializer, Context context) {
+        this.a = 0;
+        this.b = context;
     }
 }

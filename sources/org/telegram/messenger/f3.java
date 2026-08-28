@@ -1,24 +1,32 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.util.concurrent.CountDownLatch;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Throwable b;
+    public final /* synthetic */ FilePathDatabase b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ boolean[] d;
+    public final /* synthetic */ CountDownLatch e;
 
-    public /* synthetic */ f3(int i10, Throwable th) {
-        this.a = i10;
-        this.b = th;
+    public /* synthetic */ f3(FilePathDatabase filePathDatabase, String str, boolean[] zArr, CountDownLatch countDownLatch, int i9) {
+        this.a = i9;
+        this.b = filePathDatabase;
+        this.c = str;
+        this.d = zArr;
+        this.e = countDownLatch;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                FileLog.lambda$e$4(this.b);
+                this.b.lambda$isLocallyCreated$8(this.c, this.d, this.e);
                 break;
             default:
-                FileLog.lambda$fatal$5(this.b);
+                this.b.lambda$hasAnotherRefOnFile$4(this.c, this.d, this.e);
                 break;
         }
     }

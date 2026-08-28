@@ -1,72 +1,45 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ny extends f2.c0 {
-    public boolean d;
-    public final /* synthetic */ py e;
+public final class ny implements ImageReceiver.ImageReceiverDelegate {
+    public final /* synthetic */ oy a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ MessageObject c;
+    public final /* synthetic */ py d;
 
-    public ny(py pyVar) {
-        this.e = pyVar;
+    public ny(py pyVar, oy oyVar, boolean z10, MessageObject messageObject) {
+        this.d = pyVar;
+        this.a = oyVar;
+        this.b = z10;
+        this.c = messageObject;
     }
 
-    @Override // f2.c0
-    public final void a(RecyclerView recyclerView, f2.o1 o1Var) {
-        super.a(recyclerView, o1Var);
-        o1Var.a.setPressed(false);
-    }
-
-    @Override // f2.c0
-    public final int e(RecyclerView recyclerView, f2.o1 o1Var) {
-        return o1Var.f != 3 ? f2.c0.l(0, 0) : f2.c0.l(3, 0);
-    }
-
-    @Override // f2.c0
-    public final boolean n(RecyclerView recyclerView, f2.o1 o1Var, f2.o1 o1Var2) {
-        if (o1Var.f != o1Var2.f) {
-            return false;
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        oy oyVar = this.a;
+        if (oyVar.r.getLottieAnimation() != null) {
+            oyVar.r.getLottieAnimation().L(0, false, true);
         }
-        int b10 = o1Var.b();
-        int b11 = o1Var2.b();
-        py pyVar = this.e;
-        my myVar = pyVar.a;
-        py pyVar2 = myVar.d;
-        int i10 = pyVar2.n;
-        ArrayList arrayList = pyVar2.e;
-        int i11 = b10 - i10;
-        int i12 = b11 - i10;
-        int i13 = pyVar2.r - i10;
-        if (i11 >= 0 && i12 >= 0 && i11 < i13 && i12 < i13) {
-            Long l10 = (Long) arrayList.get(i11);
-            arrayList.set(i11, (Long) arrayList.get(i12));
-            arrayList.set(i12, l10);
-            myVar.p(b10, b11);
-            ((org.telegram.ui.Cells.d4) o1Var.a).setDrawDivider(b11 != pyVar.r - 1);
-            ((org.telegram.ui.Cells.d4) o1Var2.a).setDrawDivider(b10 != pyVar.r - 1);
-            this.d = true;
-        }
-        return true;
     }
 
-    @Override // f2.c0
-    public final void p(f2.o1 o1Var, int i10) {
-        py pyVar = this.e;
-        if (i10 != 0) {
-            pyVar.b.I0(false);
-            o1Var.a.setPressed(true);
-        } else if (this.d) {
-            oy oyVar = pyVar.f;
-            if (oyVar != null) {
-                oyVar.a();
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final /* synthetic */ void didSetImageBitmap(int i9, String str, Drawable drawable) {
+        org.telegram.messenger.g5.a(this, i9, str, drawable);
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final void onAnimationReady(ImageReceiver imageReceiver) {
+        MessageObject messageObject;
+        if (this.b && (messageObject = this.c) != null && messageObject.isAnimatedAnimatedEmoji() && imageReceiver.getLottieAnimation() != null && imageReceiver.getLottieAnimation().x == null) {
+            try {
+                this.d.C.performHapticFeedback(3, 1);
+            } catch (Exception unused) {
             }
-            this.d = false;
         }
-    }
-
-    @Override // f2.c0
-    public final void q(f2.o1 o1Var) {
     }
 }

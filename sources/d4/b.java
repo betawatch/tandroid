@@ -2,18 +2,17 @@ package d4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.o;
-import d5.g0;
+import d5.f0;
 import h3.g1;
 import h3.t0;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b implements z3.b {
-    public static final Parcelable.Creator<b> CREATOR = new o(12);
+    public static final Parcelable.Creator<b> CREATOR = new c.c(4);
     public final int a;
     public final String b;
     public final String c;
@@ -21,14 +20,14 @@ public final class b implements z3.b {
     public final boolean e;
     public final int f;
 
-    public b(int i10, String str, String str2, String str3, boolean z10, int i11) {
-        d5.a.f(i11 == -1 || i11 > 0);
-        this.a = i10;
+    public b(int i9, String str, String str2, String str3, boolean z10, int i10) {
+        d5.a.f(i10 == -1 || i10 > 0);
+        this.a = i9;
         this.b = str;
         this.c = str2;
         this.d = str3;
         this.e = z10;
-        this.f = i11;
+        this.f = i10;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x004c  */
@@ -48,7 +47,7 @@ public final class b implements z3.b {
     */
     public static b a(Map map) {
         boolean z10;
-        int i10;
+        int i9;
         List list;
         String str;
         List list2;
@@ -58,25 +57,25 @@ public final class b implements z3.b {
         List list4;
         boolean z11;
         List list5;
+        int i10;
         int i11;
-        int i12;
         List list6 = (List) map.get("icy-br");
         boolean z12 = true;
-        int i13 = -1;
+        int i12 = -1;
         if (list6 != null) {
             String str4 = (String) list6.get(0);
             try {
-                i12 = Integer.parseInt(str4) * MediaDataController.MAX_STYLE_RUNS_COUNT;
-                if (i12 > 0) {
+                i11 = Integer.parseInt(str4) * MediaDataController.MAX_STYLE_RUNS_COUNT;
+                if (i11 > 0) {
                     z10 = true;
                 } else {
                     try {
                         d5.a.K("IcyHeaders", "Invalid bitrate: " + str4);
                         z10 = false;
-                        i12 = -1;
+                        i11 = -1;
                     } catch (NumberFormatException unused) {
-                        s3.c.k("Invalid bitrate header: ", str4, "IcyHeaders");
-                        i10 = i12;
+                        ta.b.i("Invalid bitrate header: ", str4, "IcyHeaders");
+                        i9 = i11;
                         z10 = false;
                         list = (List) map.get("icy-genre");
                         if (list == null) {
@@ -97,13 +96,13 @@ public final class b implements z3.b {
                         }
                     }
                 }
-                i10 = i12;
+                i9 = i11;
             } catch (NumberFormatException unused2) {
-                i12 = -1;
+                i11 = -1;
             }
         } else {
             z10 = false;
-            i10 = -1;
+            i9 = -1;
         }
         list = (List) map.get("icy-genre");
         if (list == null) {
@@ -139,15 +138,15 @@ public final class b implements z3.b {
             try {
                 int parseInt = Integer.parseInt(str5);
                 if (parseInt > 0) {
-                    i13 = parseInt;
+                    i12 = parseInt;
                 } else {
                     try {
                         d5.a.K("IcyHeaders", "Invalid metadata interval: " + str5);
                         z12 = z10;
                     } catch (NumberFormatException unused3) {
-                        i13 = parseInt;
-                        s3.c.k("Invalid metadata interval: ", str5, "IcyHeaders");
-                        i11 = i13;
+                        i12 = parseInt;
+                        ta.b.i("Invalid metadata interval: ", str5, "IcyHeaders");
+                        i10 = i12;
                         if (z10) {
                         }
                     }
@@ -155,12 +154,12 @@ public final class b implements z3.b {
                 z10 = z12;
             } catch (NumberFormatException unused4) {
             }
-            i11 = i13;
+            i10 = i12;
         } else {
-            i11 = -1;
+            i10 = -1;
         }
         if (z10) {
-            return new b(i10, str, str2, str3, z11, i11);
+            return new b(i9, str, str2, str3, z11, i10);
         }
         return null;
     }
@@ -176,7 +175,7 @@ public final class b implements z3.b {
         }
         if (obj != null && b.class == obj.getClass()) {
             b bVar = (b) obj;
-            if (this.a == bVar.a && g0.a(this.b, bVar.b) && g0.a(this.c, bVar.c) && g0.a(this.d, bVar.d) && this.e == bVar.e && this.f == bVar.f) {
+            if (this.a == bVar.a && f0.a(this.b, bVar.b) && f0.a(this.c, bVar.c) && f0.a(this.d, bVar.d) && this.e == bVar.e && this.f == bVar.f) {
                 return true;
             }
         }
@@ -194,9 +193,9 @@ public final class b implements z3.b {
     }
 
     public final int hashCode() {
-        int i10 = (527 + this.a) * 31;
+        int i9 = (527 + this.a) * 31;
         String str = this.b;
-        int hashCode = (i10 + (str != null ? str.hashCode() : 0)) * 31;
+        int hashCode = (i9 + (str != null ? str.hashCode() : 0)) * 31;
         String str2 = this.c;
         int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
         String str3 = this.d;
@@ -220,12 +219,12 @@ public final class b implements z3.b {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeInt(this.a);
         parcel.writeString(this.b);
         parcel.writeString(this.c);
         parcel.writeString(this.d);
-        int i11 = g0.a;
+        int i10 = f0.a;
         parcel.writeInt(this.e ? 1 : 0);
         parcel.writeInt(this.f);
     }
@@ -235,7 +234,7 @@ public final class b implements z3.b {
         this.b = parcel.readString();
         this.c = parcel.readString();
         this.d = parcel.readString();
-        int i10 = g0.a;
+        int i9 = f0.a;
         this.e = parcel.readInt() != 0;
         this.f = parcel.readInt();
     }

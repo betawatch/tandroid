@@ -1,33 +1,51 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ea implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ int c;
+import j$.util.function.Function$-CC;
+import java.util.function.Function;
+import org.telegram.messenger.TranslateController;
 
-    public /* synthetic */ ea(MessagesController messagesController, int i10, int i11) {
-        this.a = i11;
-        this.b = messagesController;
-        this.c = i10;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ea implements Function {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ ea(int i9) {
+        this.a = i9;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public /* synthetic */ Function andThen(Function function) {
+        int i9 = this.a;
+        return Function$-CC.$default$andThen(this, function);
+    }
+
+    @Override // java.util.function.Function
+    public final Object apply(Object obj) {
+        String valueOf;
+        String lambda$applyAppConfig$35;
+        Long lambda$new$14;
+        int[] lambda$new$15;
+        String str;
         switch (this.a) {
             case 0:
-                this.b.lambda$updateTimerProc$157(this.c);
-                break;
+                valueOf = String.valueOf((Long) obj);
+                return valueOf;
             case 1:
-                this.b.lambda$onFolderEmpty$197(this.c);
-                break;
+                lambda$applyAppConfig$35 = MessagesController.lambda$applyAppConfig$35((int[]) obj);
+                return lambda$applyAppConfig$35;
             case 2:
-                this.b.lambda$ensureMessagesLoaded$462(this.c);
-                break;
+                lambda$new$14 = MessagesController.lambda$new$14((String) obj);
+                return lambda$new$14;
+            case 3:
+                lambda$new$15 = MessagesController.lambda$new$15((String) obj);
+                return lambda$new$15;
             default:
-                this.b.lambda$didAddedNewTask$81(this.c);
-                break;
+                str = ((TranslateController.Language) obj).displayName;
+                return str;
         }
+    }
+
+    public /* synthetic */ Function compose(Function function) {
+        int i9 = this.a;
+        return Function$-CC.$default$compose(this, function);
     }
 }

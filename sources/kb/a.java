@@ -1,26 +1,13 @@
 package kb;
 
-import af.h;
-import za.g;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements z8.d {
-    public static final /* synthetic */ a b = new a(0);
-    public static final /* synthetic */ a c = new a(1);
-    public final /* synthetic */ int a;
+public final class a extends h {
+    public static final a c;
 
-    public /* synthetic */ a(int i10) {
-        this.a = i10;
-    }
-
-    @Override // z8.d
-    public final Object u0(h hVar) {
-        switch (this.a) {
-            case 0:
-                return new c((g) hVar.a(g.class));
-            default:
-                return new b((c) hVar.a(c.class), (za.d) hVar.a(za.d.class));
-        }
+    static {
+        a aVar = new a();
+        c = aVar;
+        aVar.setStackTrace(h.b);
     }
 }

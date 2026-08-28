@@ -7,7 +7,7 @@ import android.util.ArrayMap;
 import android.util.Log;
 import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b implements Parcelable {
     public static final Parcelable.Creator<b> CREATOR = new a(0);
@@ -15,11 +15,11 @@ public final class b implements Parcelable {
 
     public b(Object obj) {
         ArrayMap arrayMap = g.a;
-        String i10 = g.i(obj.getClass());
+        String i9 = g.i(obj.getClass());
         if (Log.isLoggable("CarApp.Bun", 3)) {
-            Log.d("CarApp.Bun", "Bundling ".concat(i10));
+            Log.d("CarApp.Bun", "Bundling ".concat(i9));
         }
-        this.a = g.o(obj, i10, new e(null, "", new ArrayDeque()));
+        this.a = g.o(obj, i9, new e(null, "", new ArrayDeque()));
     }
 
     public final Object a() {
@@ -42,7 +42,7 @@ public final class b implements Parcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeBundle(this.a);
     }
 

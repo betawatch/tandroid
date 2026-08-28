@@ -5,7 +5,7 @@ import androidx.car.app.h;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class ProjectedCarAudioRecord extends b {
     private InputStream mInputStream;
@@ -14,13 +14,13 @@ public class ProjectedCarAudioRecord extends b {
     }
 
     @Override // androidx.car.app.media.b
-    public int readInternal(byte[] bArr, int i10, int i11) {
+    public int readInternal(byte[] bArr, int i9, int i10) {
         InputStream inputStream = this.mInputStream;
         if (inputStream == null) {
             return -1;
         }
         try {
-            return inputStream.read(bArr, i10, i11);
+            return inputStream.read(bArr, i9, i10);
         } catch (IOException unused) {
             stopRecording();
             return -1;
@@ -39,8 +39,8 @@ public class ProjectedCarAudioRecord extends b {
                 inputStream.close();
                 this.mInputStream = null;
             }
-        } catch (IOException e9) {
-            Log.e("CarApp", "Exception closing microphone pipe", e9);
+        } catch (IOException e10) {
+            Log.e("CarApp", "Exception closing microphone pipe", e10);
         }
     }
 }

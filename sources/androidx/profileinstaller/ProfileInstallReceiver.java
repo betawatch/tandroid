@@ -1,6 +1,5 @@
 package androidx.profileinstaller;
 
-import ae.b;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -10,11 +9,12 @@ import android.os.Bundle;
 import android.os.Process;
 import android.util.Log;
 import e2.a;
-import e2.d;
+import e2.e;
+import fa.c;
 import java.io.File;
-import org.telegram.ui.kb0;
+import org.telegram.ui.gb0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class ProfileInstallReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -25,7 +25,7 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
         }
         String action = intent.getAction();
         if ("androidx.profileinstaller.action.INSTALL_PROFILE".equals(action)) {
-            d.s(context, new kb0(1), new b(this, 11), true);
+            e.s(context, new gb0(1), new c(this, 12), true);
             return;
         }
         if ("androidx.profileinstaller.action.SKIP_FILE".equals(action)) {
@@ -41,26 +41,26 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
                     }
                     return;
                 }
-                b bVar = new b(this, 11);
+                c cVar = new c(this, 12);
                 try {
-                    d.e(context.getPackageManager().getPackageInfo(context.getApplicationContext().getPackageName(), 0), context.getFilesDir());
-                    bVar.n(10, null);
+                    e.e(context.getPackageManager().getPackageInfo(context.getApplicationContext().getPackageName(), 0), context.getFilesDir());
+                    cVar.g(10, null);
                     return;
-                } catch (PackageManager.NameNotFoundException e9) {
-                    bVar.n(7, e9);
+                } catch (PackageManager.NameNotFoundException e10) {
+                    cVar.g(7, e10);
                     return;
                 }
             }
             return;
         }
         if ("androidx.profileinstaller.action.SAVE_PROFILE".equals(action)) {
-            b bVar2 = new b(this, 11);
+            c cVar2 = new c(this, 12);
             if (Build.VERSION.SDK_INT < 24) {
-                bVar2.n(13, null);
+                cVar2.g(13, null);
                 return;
             } else {
                 Process.sendSignal(Process.myPid(), 10);
-                bVar2.n(12, null);
+                cVar2.g(12, null);
                 return;
             }
         }
@@ -68,16 +68,16 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
             return;
         }
         String string2 = extras.getString("EXTRA_BENCHMARK_OPERATION");
-        b bVar3 = new b(this, 11);
+        c cVar3 = new c(this, 12);
         if (!"DROP_SHADER_CACHE".equals(string2)) {
-            bVar3.n(16, null);
+            cVar3.g(16, null);
             return;
         }
-        int i10 = Build.VERSION.SDK_INT;
-        if (d.c(i10 >= 24 ? a.a(context) : i10 >= 23 ? context.getCodeCacheDir() : context.getCacheDir())) {
-            bVar3.n(14, null);
+        int i9 = Build.VERSION.SDK_INT;
+        if (e.c(i9 >= 24 ? a.a(context) : i9 >= 23 ? context.getCodeCacheDir() : context.getCacheDir())) {
+            cVar3.g(14, null);
         } else {
-            bVar3.n(15, null);
+            cVar3.g(15, null);
         }
     }
 }

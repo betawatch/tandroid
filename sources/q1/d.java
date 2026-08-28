@@ -3,9 +3,9 @@ package q1;
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.widget.TextView;
-import androidx.emoji2.text.l;
+import androidx.emoji2.text.k;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class d implements InputFilter {
     public final TextView a;
@@ -16,27 +16,27 @@ public final class d implements InputFilter {
     }
 
     @Override // android.text.InputFilter
-    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
+    public final CharSequence filter(CharSequence charSequence, int i9, int i10, Spanned spanned, int i11, int i12) {
         TextView textView = this.a;
         if (textView.isInEditMode()) {
             return charSequence;
         }
-        int b10 = l.a().b();
+        int b10 = k.a().b();
         if (b10 != 0) {
             if (b10 == 1) {
-                if ((i13 == 0 && i12 == 0 && spanned.length() == 0 && charSequence == textView.getText()) || charSequence == null) {
+                if ((i12 == 0 && i11 == 0 && spanned.length() == 0 && charSequence == textView.getText()) || charSequence == null) {
                     return charSequence;
                 }
-                if (i10 != 0 || i11 != charSequence.length()) {
-                    charSequence = charSequence.subSequence(i10, i11);
+                if (i9 != 0 || i10 != charSequence.length()) {
+                    charSequence = charSequence.subSequence(i9, i10);
                 }
-                return l.a().e(0, charSequence.length(), charSequence);
+                return k.a().e(0, charSequence.length(), charSequence);
             }
             if (b10 != 3) {
                 return charSequence;
             }
         }
-        l a2 = l.a();
+        k a2 = k.a();
         if (this.b == null) {
             this.b = new c(textView, this);
         }

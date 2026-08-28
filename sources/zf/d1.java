@@ -1,52 +1,36 @@
 package zf;
 
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class d1 extends f2.w0 {
-    @Override // f2.w0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, f2.l1 l1Var) {
-        org.telegram.ui.Cells.s1 s1Var;
-        MessageObject.GroupedMessages currentMessagesGroup;
-        MessageObject.GroupedMessagePosition currentPosition;
-        int i10 = 0;
-        rect.bottom = 0;
-        if (!(view instanceof org.telegram.ui.Cells.s1) || (currentMessagesGroup = (s1Var = (org.telegram.ui.Cells.s1) view).getCurrentMessagesGroup()) == null || (currentPosition = s1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
-            return;
-        }
-        Point point = AndroidUtilities.displaySize;
-        float max = Math.max(point.x, point.y) * 0.5f;
-        int extraInsetHeight = s1Var.getExtraInsetHeight();
-        int i11 = 0;
-        while (true) {
-            if (i11 >= currentPosition.siblingHeights.length) {
+public final /* synthetic */ class d1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k1 b;
+
+    public /* synthetic */ d1(k1 k1Var, int i9) {
+        this.a = i9;
+        this.b = k1Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                k1 k1Var = this.b;
+                ve.e.s(k1Var.getContext(), "https://" + MessagesController.getInstance(k1Var.U).linkPrefix + "/nft/" + k1Var.z0.slug);
                 break;
-            }
-            extraInsetHeight += (int) Math.ceil(r3[i11] * max);
-            i11++;
-        }
-        int round = (Math.round(AndroidUtilities.density * 7.0f) * (currentPosition.maxY - currentPosition.minY)) + extraInsetHeight;
-        int size = currentMessagesGroup.posArray.size();
-        while (true) {
-            if (i10 < size) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition = currentMessagesGroup.posArray.get(i10);
-                byte b10 = groupedMessagePosition.minY;
-                byte b11 = currentPosition.minY;
-                if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
-                    round = org.telegram.messenger.y1.A(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
-                    break;
+            case 1:
+                k1 k1Var2 = this.b;
+                try {
+                    k1Var2.container.performHapticFeedback(3, 2);
+                } catch (Exception unused) {
                 }
-                i10++;
-            } else {
+                k1Var2.k0.c(k1Var2.G0);
                 break;
-            }
+            default:
+                this.b.K0[0].setVisibility(8);
+                break;
         }
-        rect.bottom = -round;
     }
 }

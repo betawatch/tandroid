@@ -9,14 +9,14 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v5 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ x5 b;
 
-    public /* synthetic */ v5(x5 x5Var, int i10) {
-        this.a = i10;
+    public /* synthetic */ v5(x5 x5Var, int i9) {
+        this.a = i9;
         this.b = x5Var;
     }
 
@@ -30,7 +30,7 @@ public final /* synthetic */ class v5 implements Runnable {
                 this.b.i();
                 return;
             case 1:
-                gf.h hVar = this.b.v0;
+                ff.h hVar = this.b.v0;
                 return;
             case 2:
                 x5 x5Var = this.b;
@@ -48,13 +48,13 @@ public final /* synthetic */ class v5 implements Runnable {
                     return;
                 }
                 x5Var2.c0 = System.currentTimeMillis();
-                if (oi0.P0 == null) {
-                    oi0.P0 = new DispatchQueue("cache generator queue");
+                if (mi0.P0 == null) {
+                    mi0.P0 = new DispatchQueue("cache generator queue");
                 }
                 x5Var2.y0 = true;
                 x5Var2.e = null;
-                gf.h.A++;
-                DispatchQueue dispatchQueue = oi0.P0;
+                ff.h.A++;
+                DispatchQueue dispatchQueue = mi0.P0;
                 v5 v5Var = new v5(x5Var2, 7);
                 x5Var2.z0 = v5Var;
                 dispatchQueue.postRunnable(v5Var);
@@ -65,11 +65,11 @@ public final /* synthetic */ class v5 implements Runnable {
                 if (x5Var3.q0 != null && x5Var3.J) {
                     FileLoader.getInstance(x5Var3.F).removeLoadingVideo(x5Var3.q0.getDocument(), false, false);
                 }
-                int i10 = x5Var3.K;
-                if (i10 <= 0) {
+                int i9 = x5Var3.K;
+                if (i9 <= 0) {
                     x5Var3.J = true;
                 } else {
-                    x5Var3.K = i10 - 1;
+                    x5Var3.K = i9 - 1;
                 }
                 if (x5Var3.B) {
                     x5Var3.B = false;
@@ -108,8 +108,8 @@ public final /* synthetic */ class v5 implements Runnable {
                 }
                 x5Var3.c = x5Var3.d[3];
                 int size = x5Var3.o0.size();
-                for (int i11 = 0; i11 < size; i11++) {
-                    ((View) x5Var3.o0.get(i11)).invalidate();
+                for (int i10 = 0; i10 < size; i10++) {
+                    ((View) x5Var3.o0.get(i10)).invalidate();
                 }
                 if ((!x5Var3.X && x5Var3.y) || (x5Var3.n == null && x5Var3.r != null)) {
                     x5Var3.t();
@@ -135,9 +135,9 @@ public final /* synthetic */ class v5 implements Runnable {
                     x5Var4.d();
                     x5Var4.E();
                     if (x5Var4.j0 && x5Var4.Z == null) {
-                        int i12 = x5Var4.C0;
-                        x5Var4.C0 = i12 + 1;
-                        if (i12 <= 15) {
+                        int i11 = x5Var4.C0;
+                        x5Var4.C0 = i11 + 1;
+                        if (i11 <= 15) {
                             z11 = false;
                             x5Var4.x = z11;
                             AndroidUtilities.runOnUIThread(new v5(x5Var4, 0));
@@ -164,18 +164,18 @@ public final /* synthetic */ class v5 implements Runnable {
                     }
                     System.currentTimeMillis();
                     com.google.android.gms.internal.cast.a aVar = x5Var4.w0;
-                    int i13 = aVar.a;
-                    gf.h hVar2 = x5Var4.v0;
+                    int i12 = aVar.a;
+                    ff.h hVar2 = x5Var4.v0;
                     int f11 = hVar2.f(x5Var4.v.b, hVar2.i);
                     aVar.a = hVar2.i;
                     if (hVar2.q && !hVar2.e.isEmpty()) {
-                        int i14 = hVar2.i + 1;
-                        hVar2.i = i14;
-                        if (i14 >= hVar2.e.size()) {
+                        int i13 = hVar2.i + 1;
+                        hVar2.i = i13;
+                        if (i13 >= hVar2.e.size()) {
                             hVar2.i = 0;
                         }
                     }
-                    if (f11 != -1 && x5Var4.w0.a < i13) {
+                    if (f11 != -1 && x5Var4.w0.a < i12) {
                         x5Var4.L = true;
                     }
                     int[] iArr2 = x5Var4.d;
@@ -242,15 +242,15 @@ public final /* synthetic */ class v5 implements Runnable {
                     if (!x5Var4.f) {
                         x5Var4.f = x5Var4.Z.a[7] == 1;
                     }
-                    int i15 = x5Var4.d[3];
-                    if (i15 < x5Var4.c) {
+                    int i14 = x5Var4.d[3];
+                    if (i14 < x5Var4.c) {
                         x5Var4.L = true;
                     }
                     if (z10) {
-                        x5Var4.c = i15;
+                        x5Var4.c = i14;
                     }
                     u5 u5Var3 = x5Var4.v;
-                    u5Var3.e = i15;
+                    u5Var3.e = i14;
                     u5Var3.f = x5Var4.Z.a[6] == 1;
                 }
                 AndroidUtilities.runOnUIThread(x5Var4.B0);
@@ -259,8 +259,8 @@ public final /* synthetic */ class v5 implements Runnable {
                 x5 x5Var5 = this.b;
                 ArrayList arrayList = x5Var5.o0;
                 int size2 = arrayList.size();
-                for (int i16 = 0; i16 < size2; i16++) {
-                    ((View) arrayList.get(i16)).invalidate();
+                for (int i15 = 0; i15 < size2; i15++) {
+                    ((View) arrayList.get(i15)).invalidate();
                 }
                 if ((arrayList.isEmpty() || x5Var5.N) && (view = x5Var5.n0) != null) {
                     view.invalidate();
@@ -275,7 +275,7 @@ public final /* synthetic */ class v5 implements Runnable {
             default:
                 x5 x5Var7 = this.b;
                 if (x5Var7.z0 != null) {
-                    gf.h.c();
+                    ff.h.c();
                     x5Var7.z0 = null;
                 }
                 x5Var7.y0 = false;

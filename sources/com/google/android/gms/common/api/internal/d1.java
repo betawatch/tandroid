@@ -6,21 +6,21 @@ import android.os.Handler;
 import java.util.Set;
 import m.t3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class d1 extends z7.c implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
-    public static final a6.b k = y7.b.a;
+public final class d1 extends y7.c implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
+    public static final b7.d k = x7.b.a;
     public final Context b;
     public final Handler c;
-    public final a6.b d = k;
+    public final b7.d d = k;
     public final Set e;
     public final t3 f;
-    public z7.a i;
+    public y7.a i;
     public s0 j;
 
-    public d1(Context context, c2.t0 t0Var, t3 t3Var) {
+    public d1(Context context, c2.u0 u0Var, t3 t3Var) {
         this.b = context;
-        this.c = t0Var;
+        this.c = u0Var;
         this.f = t3Var;
         this.e = (Set) t3Var.a;
     }
@@ -31,25 +31,25 @@ public final class d1 extends z7.c implements com.google.android.gms.common.api.
     }
 
     @Override // com.google.android.gms.common.api.l
-    public final void onConnectionFailed(v5.a aVar) {
+    public final void onConnectionFailed(u5.a aVar) {
         this.j.b(aVar);
     }
 
     @Override // com.google.android.gms.common.api.k
-    public final void onConnectionSuspended(int i10) {
+    public final void onConnectionSuspended(int i9) {
         s0 s0Var = this.j;
         p0 p0Var = (p0) s0Var.f.s.get(s0Var.b);
         if (p0Var != null) {
             if (p0Var.k) {
-                p0Var.n(new v5.a(17));
+                p0Var.n(new u5.a(17));
             } else {
-                p0Var.onConnectionSuspended(i10);
+                p0Var.onConnectionSuspended(i9);
             }
         }
     }
 
-    @Override // z7.d
-    public final void p0(z7.h hVar) {
+    @Override // y7.d
+    public final void s0(y7.h hVar) {
         this.c.post(new r0(this, hVar, 2));
     }
 }

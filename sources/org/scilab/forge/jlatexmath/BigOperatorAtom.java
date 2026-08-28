@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class BigOperatorAtom extends Atom {
     protected Atom base;
@@ -45,7 +45,7 @@ public class BigOperatorAtom extends Atom {
         RowAtom rowAtom;
         boolean z10;
         Atom atom;
-        int i10;
+        int i9;
         Box horizontalBox;
         float f10;
         Box changeWidth;
@@ -60,7 +60,7 @@ public class BigOperatorAtom extends Atom {
                 if (rowAtom.lookAtLastAtom && this.base.type_limits != 2) {
                     this.base = rowAtom.getLastAtom();
                     z10 = this.limitsSet;
-                    if ((!z10 && !this.limits) || ((!z10 && style >= 2) || (i10 = (atom = this.base).type_limits) == 1 || (i10 == 0 && style >= 2))) {
+                    if ((!z10 && !this.limits) || ((!z10 && style >= 2) || (i9 = (atom = this.base).type_limits) == 1 || (i9 == 0 && style >= 2))) {
                         if (rowAtom == null) {
                             return new ScriptsAtom(this.base, this.under, this.over).createBox(teXEnvironment);
                         }

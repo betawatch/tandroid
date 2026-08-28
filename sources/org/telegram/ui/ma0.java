@@ -1,20 +1,25 @@
 package org.telegram.ui;
 
-import j$.util.function.Consumer$-CC;
-import java.util.function.Consumer;
-import java.util.regex.Pattern;
+import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ma0 implements Consumer {
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void x(Object obj) {
-        ((Boolean) obj).getClass();
-        Pattern pattern = LaunchActivity.x1;
+public final class ma0 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ LaunchActivity a;
+
+    public ma0(LaunchActivity launchActivity) {
+        this.a = launchActivity;
     }
 
-    public /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        LaunchActivity launchActivity = this.a;
+        launchActivity.getWindowManager().addCrossWindowBlurEnabledListener(launchActivity.Z0);
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        LaunchActivity launchActivity = this.a;
+        launchActivity.getWindowManager().removeCrossWindowBlurEnabledListener(launchActivity.Z0);
     }
 }

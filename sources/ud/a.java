@@ -1,80 +1,36 @@
 package ud;
 
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.Interpolator;
-import org.telegram.ui.Components.voip.t1;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a implements b {
-    public final int a;
-    public final b b;
-    public final Interpolator c;
-    public final long d;
-    public float e;
-    public boolean f;
-    public c h;
+public interface a {
+    boolean forceEnableVibration();
 
-    public a(View view, Interpolator interpolator, long j10) {
-        this(0, new t1(view), interpolator, j10, false);
-    }
+    long getLongPressDuration();
 
-    @Override // ud.b
-    public final void A(float f10, int i10) {
-        this.b.A(f10, this.a);
-    }
+    boolean ignoreHapticFeedbackSettings(float f10, float f11);
 
-    public final void a(boolean z10, boolean z11) {
-        a aVar;
-        if (this.f == z10 && z11) {
-            return;
-        }
-        this.f = z10;
-        float f10 = z10 ? 1.0f : 0.0f;
-        if (z11) {
-            if (this.h == null) {
-                aVar = this;
-                aVar.h = new c(0, aVar, this.c, this.d, this.e);
-            } else {
-                aVar = this;
-            }
-            aVar.h.a(f10);
-            return;
-        }
-        c cVar = this.h;
-        if (cVar != null) {
-            cVar.c(f10);
-        }
-        float f11 = this.e;
-        if (f11 != f10) {
-            int i10 = this.a;
-            b bVar = this.b;
-            if (f11 != f10) {
-                this.e = f10;
-                bVar.o(i10, f10, -1.0f, null);
-            }
-            bVar.A(f10, i10);
-        }
-    }
+    boolean needCancelTouchBySlopMove();
 
-    @Override // ud.b
-    public final void o(int i10, float f10, float f11, c cVar) {
-        if (this.e != f10) {
-            this.e = f10;
-            this.b.o(this.a, f10, -1.0f, null);
-        }
-    }
+    boolean needClickAt(View view, float f10, float f11);
 
-    public a(int i10, b bVar, Interpolator interpolator, long j10) {
-        this(i10, bVar, interpolator, j10, false);
-    }
+    boolean needLongPress(float f10, float f11);
 
-    public a(int i10, b bVar, Interpolator interpolator, long j10, boolean z10) {
-        this.a = i10;
-        this.b = bVar;
-        this.c = interpolator;
-        this.d = j10;
-        this.f = z10;
-        this.e = z10 ? 1.0f : 0.0f;
-    }
+    void onClickAt(View view, float f10, float f11);
+
+    void onClickTouchDown(View view, float f10, float f11);
+
+    void onClickTouchMove(View view, float f10, float f11);
+
+    void onClickTouchUp(View view, float f10, float f11);
+
+    void onLongPressCancelled(View view, float f10, float f11);
+
+    void onLongPressFinish(View view, float f10, float f11);
+
+    void onLongPressMove(View view, MotionEvent motionEvent, float f10, float f11, float f12, float f13);
+
+    boolean onLongPressRequestedAt(View view, float f10, float f11);
 }

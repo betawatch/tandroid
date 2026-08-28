@@ -1,118 +1,63 @@
 package com.google.android.gms.internal.play_billing;
 
 import java.nio.charset.Charset;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class i2 extends LinkedHashMap {
-    public static final i2 b;
-    public boolean a = true;
+public final class i2 implements l2 {
+    public static final t1 b = new t1(4);
+    public final Object a;
 
-    static {
-        i2 i2Var = new i2();
-        b = i2Var;
-        i2Var.a = false;
+    public i2(l2... l2VarArr) {
+        this.a = l2VarArr;
     }
 
-    public static int a(Object obj) {
-        if (!(obj instanceof byte[])) {
-            if (obj instanceof l3) {
-                throw new UnsupportedOperationException();
-            }
-            return obj.hashCode();
-        }
-        byte[] bArr = (byte[]) obj;
-        int length = bArr.length;
-        Charset charset = z1.a;
-        int i10 = length;
-        for (byte b10 : bArr) {
-            i10 = (i10 * 31) + b10;
-        }
-        if (i10 == 0) {
-            return 1;
-        }
-        return i10;
+    public void a(int i9, Object obj, t2 t2Var) {
+        m1 m1Var = (m1) this.a;
+        m1Var.m(i9, 3);
+        t2Var.c((e1) obj, m1Var.a);
+        m1Var.m(i9, 4);
     }
 
-    public final void b() {
-        if (!this.a) {
-            throw new UnsupportedOperationException();
-        }
+    public void b(int i9, Object obj, t2 t2Var) {
+        e1 e1Var = (e1) obj;
+        m1 m1Var = (m1) this.a;
+        m1Var.o((i9 << 3) | 2);
+        m1Var.o(e1Var.b(t2Var));
+        t2Var.c(e1Var, m1Var.a);
     }
 
-    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final void clear() {
-        b();
-        super.clear();
-    }
-
-    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Set entrySet() {
-        return isEmpty() ? Collections.EMPTY_SET : super.entrySet();
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof Map)) {
-            return false;
-        }
-        Map map = (Map) obj;
-        if (this == map) {
-            return true;
-        }
-        if (size() != map.size()) {
-            return false;
-        }
-        for (Map.Entry entry : entrySet()) {
-            if (!map.containsKey(entry.getKey())) {
-                return false;
-            }
-            Object value = entry.getValue();
-            Object obj2 = map.get(entry.getKey());
-            if (!(((value instanceof byte[]) && (obj2 instanceof byte[])) ? Arrays.equals((byte[]) value, (byte[]) obj2) : value.equals(obj2))) {
-                return false;
+    @Override // com.google.android.gms.internal.play_billing.l2
+    public s2 zzb(Class cls) {
+        for (int i9 = 0; i9 < 2; i9++) {
+            l2 l2Var = ((l2[]) this.a)[i9];
+            if (l2Var.zzc(cls)) {
+                return l2Var.zzb(cls);
             }
         }
-        return true;
+        throw new UnsupportedOperationException("No factory is available for message type: ".concat(cls.getName()));
     }
 
-    @Override // java.util.AbstractMap, java.util.Map
-    public final int hashCode() {
-        int i10 = 0;
-        for (Map.Entry entry : entrySet()) {
-            i10 += a(entry.getValue()) ^ a(entry.getKey());
+    @Override // com.google.android.gms.internal.play_billing.l2
+    public boolean zzc(Class cls) {
+        for (int i9 = 0; i9 < 2; i9++) {
+            if (((l2[]) this.a)[i9].zzc(cls)) {
+                return true;
+            }
         }
-        return i10;
+        return false;
     }
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object put(Object obj, Object obj2) {
-        b();
-        Charset charset = z1.a;
-        obj.getClass();
-        obj2.getClass();
-        return super.put(obj, obj2);
+    public i2() {
+        q2 q2Var = q2.c;
+        i2 i2Var = new i2(t1.b, b);
+        Charset charset = a2.a;
+        this.a = i2Var;
     }
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final void putAll(Map map) {
-        b();
-        for (Object obj : map.keySet()) {
-            Charset charset = z1.a;
-            obj.getClass();
-            map.get(obj).getClass();
-        }
-        super.putAll(map);
-    }
-
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object remove(Object obj) {
-        b();
-        return super.remove(obj);
+    public i2(m1 m1Var) {
+        Charset charset = a2.a;
+        this.a = m1Var;
+        m1Var.a = this;
     }
 }

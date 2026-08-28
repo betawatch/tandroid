@@ -1,58 +1,47 @@
 package e5;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class c {
-    public long a;
-    public long b;
-    public long c;
-    public long d;
-    public long e;
-    public long f;
-    public final boolean[] g = new boolean[15];
-    public int h;
+    public final /* synthetic */ int a;
+    public String b;
 
-    public final boolean a() {
-        return this.d > 15 && this.h == 0;
-    }
-
-    public final void b(long j10) {
-        long j11 = this.d;
-        if (j11 == 0) {
-            this.a = j10;
-        } else if (j11 == 1) {
-            long j12 = j10 - this.a;
-            this.b = j12;
-            this.f = j12;
-            this.e = 1L;
+    public static c a(d5.y yVar) {
+        String str;
+        yVar.D(2);
+        int r10 = yVar.r();
+        int i9 = r10 >> 1;
+        int r11 = ((yVar.r() >> 3) & 31) | ((r10 & 1) << 5);
+        if (i9 == 4 || i9 == 5 || i9 == 7) {
+            str = "dvhe";
+        } else if (i9 == 8) {
+            str = "hev1";
         } else {
-            long j13 = j10 - this.c;
-            int i10 = (int) (j11 % 15);
-            long abs = Math.abs(j13 - this.b);
-            boolean[] zArr = this.g;
-            if (abs <= 1000000) {
-                this.e++;
-                this.f += j13;
-                if (zArr[i10]) {
-                    zArr[i10] = false;
-                    this.h--;
-                }
-            } else if (!zArr[i10]) {
-                zArr[i10] = true;
-                this.h++;
+            if (i9 != 9) {
+                return null;
             }
+            str = "avc3";
         }
-        this.d++;
-        this.c = j10;
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(str);
+        sb2.append(".0");
+        sb2.append(i9);
+        sb2.append(r11 >= 10 ? "." : ".0");
+        sb2.append(r11);
+        return new c(sb2.toString(), 0);
     }
 
-    public final void c() {
-        this.d = 0L;
-        this.e = 0L;
-        this.f = 0L;
-        this.h = 0;
-        Arrays.fill(this.g, false);
+    public String toString() {
+        switch (this.a) {
+            case 2:
+                return "<" + this.b + '>';
+            default:
+                return super.toString();
+        }
+    }
+
+    public /* synthetic */ c(String str, int i9) {
+        this.a = i9;
+        this.b = str;
     }
 }

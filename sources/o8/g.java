@@ -1,54 +1,66 @@
 package o8;
 
-import java.io.Serializable;
-import java.util.List;
+import h7.wa;
+import java.util.Comparator;
+import java.util.SortedMap;
+import java.util.SortedSet;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class g implements f, Serializable {
-    public final List a;
+public class g extends wa implements SortedMap {
+    public SortedSet f;
+    public final /* synthetic */ h0 h;
 
-    public g(List list) {
-        this.a = list;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g(h0 h0Var, SortedMap sortedMap) {
+        super(h0Var, sortedMap, 2);
+        this.h = h0Var;
     }
 
-    @Override // o8.f
-    public final boolean apply(Object obj) {
-        int i10 = 0;
-        while (true) {
-            List list = this.a;
-            if (i10 >= list.size()) {
-                return true;
-            }
-            if (!((f) list.get(i10)).apply(obj)) {
-                return false;
-            }
-            i10++;
+    public SortedSet b() {
+        return new h(this.h, d());
+    }
+
+    @Override // h7.wa, java.util.AbstractMap, java.util.Map
+    /* renamed from: c, reason: merged with bridge method [inline-methods] */
+    public SortedSet keySet() {
+        SortedSet sortedSet = this.f;
+        if (sortedSet != null) {
+            return sortedSet;
         }
+        SortedSet b10 = b();
+        this.f = b10;
+        return b10;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof g) {
-            return this.a.equals(((g) obj).a);
-        }
-        return false;
+    @Override // java.util.SortedMap
+    public final Comparator comparator() {
+        return d().comparator();
     }
 
-    public final int hashCode() {
-        return this.a.hashCode() + 306654252;
+    public SortedMap d() {
+        return (SortedMap) this.b;
     }
 
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("Predicates.and(");
-        boolean z10 = true;
-        for (Object obj : this.a) {
-            if (!z10) {
-                sb2.append(',');
-            }
-            sb2.append(obj);
-            z10 = false;
-        }
-        sb2.append(')');
-        return sb2.toString();
+    @Override // java.util.SortedMap
+    public final Object firstKey() {
+        return d().firstKey();
+    }
+
+    public SortedMap headMap(Object obj) {
+        return new g(this.h, d().headMap(obj));
+    }
+
+    @Override // java.util.SortedMap
+    public final Object lastKey() {
+        return d().lastKey();
+    }
+
+    public SortedMap subMap(Object obj, Object obj2) {
+        return new g(this.h, d().subMap(obj, obj2));
+    }
+
+    public SortedMap tailMap(Object obj) {
+        return new g(this.h, d().tailMap(obj));
     }
 }

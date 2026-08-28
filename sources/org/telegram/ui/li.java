@@ -1,46 +1,100 @@
 package org.telegram.ui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class li implements Runnable {
+public final class li extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mi b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.Components.wj0 e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ float h;
-    public final /* synthetic */ ig.q0 n;
+    public final /* synthetic */ qn b;
 
-    public /* synthetic */ li(mi miVar, int i10, boolean z10, org.telegram.ui.Components.wj0 wj0Var, float f10, float f11, ig.q0 q0Var, int i11) {
-        this.a = i11;
-        this.b = miVar;
-        this.c = i10;
-        this.d = z10;
-        this.e = wj0Var;
-        this.f = f10;
-        this.h = f11;
-        this.n = q0Var;
+    public /* synthetic */ li(qn qnVar, int i9) {
+        this.a = i9;
+        this.b = qnVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ij ijVar;
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new li(this.b, this.c, this.d, this.e, this.f, this.h, this.n, 1), 50L);
-                break;
-            default:
-                rn rnVar = this.b.s;
-                org.telegram.ui.Cells.a0 q82 = rnVar.q8(this.c, true);
-                if (this.d) {
-                    i10 = ((org.telegram.ui.ActionBar.n2) rnVar).currentAccount;
-                    ig.m0.d(rnVar, this.e, q82, null, this.f, this.h, this.n, i10, 1);
-                    ig.m0.f();
+                qn qnVar = this.b;
+                uk ukVar = qnVar.X2;
+                if (ukVar != null) {
+                    ukVar.setIsMessageTransition(false);
+                    qnVar.X2.h(true);
+                    qnVar.X2.setVisibility(4);
                     break;
                 }
+                break;
+            case 1:
+                float dp = AndroidUtilities.dp(30.0f);
+                qn qnVar2 = this.b;
+                qnVar2.w9 = dp;
+                qnVar2.o9();
+                break;
+            case 2:
+                qn qnVar3 = this.b;
+                if (qnVar3.fragmentView != null && (ijVar = qnVar3.t0) != null) {
+                    ijVar.invalidate();
+                    qnVar3.fragmentView.invalidate();
+                    break;
+                }
+                break;
+            case 3:
+                this.b.L.setVisibility(4);
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new ri(this, 3), 2000L);
+                break;
+            case 5:
+                qn qnVar4 = this.b;
+                if (animator.equals(qnVar4.c3)) {
+                    qnVar4.c3 = null;
+                    break;
+                }
+                break;
+            case 6:
+                qn qnVar5 = this.b;
+                if (animator.equals(qnVar5.c3)) {
+                    qnVar5.c3 = null;
+                    break;
+                }
+                break;
+            case 7:
+                qn qnVar6 = this.b;
+                if (animator.equals(qnVar6.d3)) {
+                    qnVar6.e3 = 1.0f;
+                    qnVar6.lc();
+                    qnVar6.d3 = null;
+                    break;
+                }
+                break;
+            case 8:
+                qn qnVar7 = this.b;
+                if (animator.equals(qnVar7.d3)) {
+                    qnVar7.e3 = 0.0f;
+                    qnVar7.lc();
+                    qnVar7.d3 = null;
+                    break;
+                }
+                break;
+            case 9:
+                this.b.P4 = null;
+                break;
+            case 10:
+                qn qnVar8 = this.b;
+                qnVar8.za = 1.0f;
+                qnVar8.U.setVisibility(4);
+                qnVar8.K0.setVisibility(4);
+                qnVar8.o9();
+                break;
+            default:
+                qn qnVar9 = this.b;
+                qnVar9.za = 0.0f;
+                qnVar9.o9();
                 break;
         }
     }

@@ -4,16 +4,17 @@ import android.content.Context;
 import android.content.IntentFilter;
 import android.media.AudioManager;
 import android.os.Handler;
+import gh.i3;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class m2 {
     public final Context a;
     public final Handler b;
     public final h0 c;
     public final AudioManager d;
-    public androidx.mediarouter.app.f e;
+    public androidx.mediarouter.app.h e;
     public int f;
     public int g;
     public boolean h;
@@ -28,38 +29,38 @@ public final class m2 {
         this.d = audioManager;
         this.f = 3;
         this.g = b(audioManager, 3);
-        int i10 = this.f;
-        this.h = d5.g0.a >= 23 ? audioManager.isStreamMute(i10) : b(audioManager, i10) == 0;
-        androidx.mediarouter.app.f fVar = new androidx.mediarouter.app.f(this, 6);
+        int i9 = this.f;
+        this.h = d5.f0.a >= 23 ? audioManager.isStreamMute(i9) : b(audioManager, i9) == 0;
+        androidx.mediarouter.app.h hVar = new androidx.mediarouter.app.h(this, 6);
         try {
-            d5.g0.M(applicationContext, fVar, new IntentFilter("android.media.VOLUME_CHANGED_ACTION"));
-            this.e = fVar;
-        } catch (RuntimeException e9) {
-            d5.a.L("StreamVolumeManager", "Error registering stream volume receiver", e9);
+            d5.f0.M(applicationContext, hVar, new IntentFilter("android.media.VOLUME_CHANGED_ACTION"));
+            this.e = hVar;
+        } catch (RuntimeException e10) {
+            d5.a.L("StreamVolumeManager", "Error registering stream volume receiver", e10);
         }
     }
 
-    public static int b(AudioManager audioManager, int i10) {
+    public static int b(AudioManager audioManager, int i9) {
         try {
-            return audioManager.getStreamVolume(i10);
-        } catch (RuntimeException e9) {
-            d5.a.L("StreamVolumeManager", "Could not retrieve stream volume for stream type " + i10, e9);
-            return audioManager.getStreamMaxVolume(i10);
+            return audioManager.getStreamVolume(i9);
+        } catch (RuntimeException e10) {
+            d5.a.L("StreamVolumeManager", "Could not retrieve stream volume for stream type " + i9, e10);
+            return audioManager.getStreamMaxVolume(i9);
         }
     }
 
     public final int a() {
-        if (d5.g0.a >= 28) {
+        if (d5.f0.a >= 28) {
             return this.d.getStreamMinVolume(this.f);
         }
         return 0;
     }
 
-    public final void c(int i10) {
-        if (this.f == i10) {
+    public final void c(int i9) {
+        if (this.f == i9) {
             return;
         }
-        this.f = i10;
+        this.f = i9;
         d();
         k0 k0Var = this.c.a;
         m2 m2Var = k0Var.B;
@@ -68,21 +69,21 @@ public final class m2 {
             return;
         }
         k0Var.f0 = mVar;
-        k0Var.l.e(29, new x(mVar, 4));
+        k0Var.l.e(29, new i3(mVar, 13));
     }
 
     public final void d() {
-        int i10 = this.f;
+        int i9 = this.f;
         AudioManager audioManager = this.d;
-        final int b10 = b(audioManager, i10);
-        int i11 = this.f;
-        final boolean isStreamMute = d5.g0.a >= 23 ? audioManager.isStreamMute(i11) : b(audioManager, i11) == 0;
+        final int b10 = b(audioManager, i9);
+        int i10 = this.f;
+        final boolean isStreamMute = d5.f0.a >= 23 ? audioManager.isStreamMute(i10) : b(audioManager, i10) == 0;
         if (this.g == b10 && this.h == isStreamMute) {
             return;
         }
         this.g = b10;
         this.h = isStreamMute;
-        this.c.a.l.e(30, new d5.k() { // from class: h3.g0
+        this.c.a.l.e(30, new d5.k() { // from class: h3.f0
             @Override // d5.k
             public final void invoke(Object obj) {
                 ((a2) obj).onDeviceVolumeChanged(b10, isStreamMute);

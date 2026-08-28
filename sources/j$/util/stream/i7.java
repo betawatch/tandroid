@@ -48,7 +48,7 @@ public final class i7 extends x6 implements j$.util.x0 {
 
     @Override // j$.util.d1
     public final boolean tryAdvance(IntConsumer intConsumer) {
-        int i10;
+        int i9;
         Objects.requireNonNull(intConsumer);
         boolean a2 = a();
         if (a2) {
@@ -56,11 +56,11 @@ public final class i7 extends x6 implements j$.util.x0 {
             long j10 = this.g;
             int k10 = o6Var.k(j10);
             if (o6Var.c == 0 && k10 == 0) {
-                i10 = ((int[]) o6Var.e)[(int) j10];
+                i9 = ((int[]) o6Var.e)[(int) j10];
             } else {
-                i10 = ((int[][]) o6Var.f)[k10][(int) (j10 - o6Var.d[k10])];
+                i9 = ((int[][]) o6Var.f)[k10][(int) (j10 - o6Var.d[k10])];
             }
-            intConsumer.accept(i10);
+            intConsumer.accept(i9);
         }
         return a2;
     }

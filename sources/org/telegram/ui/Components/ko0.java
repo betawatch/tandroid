@@ -1,103 +1,53 @@
 package org.telegram.ui.Components;
 
+import android.view.KeyEvent;
 import android.view.View;
-import android.widget.Toast;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.PhotoViewer;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ko0 implements View.OnClickListener {
+public final /* synthetic */ class ko0 implements r0.o, org.telegram.ui.ActionBar.m1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sp0 b;
+    public final /* synthetic */ rp0 b;
 
-    public /* synthetic */ ko0(sp0 sp0Var, int i10) {
-        this.a = i10;
-        this.b = sp0Var;
+    public /* synthetic */ ko0(rp0 rp0Var, int i9) {
+        this.a = i9;
+        this.b = rp0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // r0.o
+    public r0.m1 L0(View view, r0.m1 m1Var) {
+        WindowInsets g10 = m1Var.g();
+        rp0 rp0Var = this.b;
+        rp0Var.processLegacyContainerInsets(g10);
+        i0.b f10 = m1Var.a.f(519);
+        if (!rp0Var.C0.equals(f10)) {
+            rp0Var.C0 = f10;
+            rp0Var.container.requestLayout();
+        }
+        return r0.m1.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.m1
+    public void k(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.o1 o1Var;
+        org.telegram.ui.ActionBar.o1 o1Var2;
         switch (this.a) {
-            case 0:
-                sp0 sp0Var = this.b;
-                sp0Var.a0.a(!r0.a.q, true);
-                sp0Var.Z0();
-                break;
             case 1:
-                sp0 sp0Var2 = this.b;
-                org.telegram.ui.ActionBar.n1 n1Var = sp0Var2.F0;
-                if (n1Var != null && n1Var.isShowing()) {
-                    sp0Var2.F0.d(true);
-                }
-                sp0Var2.V0(false);
-                break;
-            case 2:
-                sp0 sp0Var3 = this.b;
-                org.telegram.ui.ActionBar.n1 n1Var2 = sp0Var3.F0;
-                if (n1Var2 != null && n1Var2.isShowing()) {
-                    sp0Var3.F0.d(true);
-                }
-                sp0Var3.V0(true);
-                break;
-            case 3:
-                sp0 sp0Var4 = this.b;
-                String[] strArr = sp0Var4.k0;
-                if (sp0Var4.Q.m() == 0) {
-                    if (sp0Var4.j0 || strArr[0] != null) {
-                        sp0Var4.dismiss();
-                        PhotoViewer.t1().G0(true, false);
-                        if (strArr[0] != null || !sp0Var4.h0) {
-                            sp0Var4.getContext();
-                            sp0Var4.M0();
-                            break;
-                        } else {
-                            sp0Var4.i0 = true;
-                            Toast.makeText(sp0Var4.getContext(), LocaleController.getString(R.string.Loading), 0).show();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 4:
-                sp0 sp0Var5 = this.b;
-                String[] strArr2 = sp0Var5.k0;
-                if (sp0Var5.Q.m() == 0) {
-                    if (sp0Var5.j0 || strArr2[0] != null) {
-                        sp0Var5.dismiss();
-                        if (strArr2[0] != null || !sp0Var5.h0) {
-                            sp0Var5.getContext();
-                            sp0Var5.M0();
-                            break;
-                        } else {
-                            sp0Var5.i0 = true;
-                            Toast.makeText(sp0Var5.getContext(), LocaleController.getString(R.string.Loading), 0).show();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 5:
-                sp0 sp0Var6 = this.b;
-                String[] strArr3 = sp0Var6.k0;
-                if (sp0Var6.Q.m() == 0) {
-                    if (sp0Var6.j0 || strArr3[0] != null) {
-                        sp0Var6.dismiss();
-                        if (strArr3[0] != null || !sp0Var6.h0) {
-                            sp0Var6.getContext();
-                            sp0Var6.M0();
-                            break;
-                        } else {
-                            sp0Var6.i0 = true;
-                            Toast.makeText(sp0Var6.getContext(), LocaleController.getString(R.string.Loading), 0).show();
-                            break;
-                        }
-                    }
+                rp0 rp0Var = this.b;
+                rp0Var.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (o1Var = rp0Var.F0) != null && o1Var.isShowing()) {
+                    rp0Var.F0.d(true);
+                    break;
                 }
                 break;
             default:
-                this.b.V0(true);
+                rp0 rp0Var2 = this.b;
+                rp0Var2.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (o1Var2 = rp0Var2.F0) != null && o1Var2.isShowing()) {
+                    rp0Var2.F0.d(true);
+                    break;
+                }
                 break;
         }
     }

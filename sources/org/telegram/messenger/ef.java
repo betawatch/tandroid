@@ -1,38 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.ui.rn;
-import org.webrtc.TextureViewRenderer;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ef implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ ef(Object obj, int i10, int i11, int i12, int i13, int i14) {
-        this.a = i14;
-        this.f = obj;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
+    public /* synthetic */ ef(MessagesStorage messagesStorage, boolean z10, int i9) {
+        this.a = i9;
+        this.b = messagesStorage;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesStorage) this.f).lambda$saveDiffParams$35(this.b, this.c, this.d, this.e);
-                break;
-            case 1:
-                rn.r1((rn) this.f, this.b, this.c, this.d, this.e);
+                this.b.lambda$getCachedPhoneBook$150(this.c);
                 break;
             default:
-                ((TextureViewRenderer) this.f).lambda$onFrameResolutionChanged$0(this.b, this.c, this.d, this.e);
+                this.b.lambda$cleanup$6(this.c);
                 break;
         }
     }

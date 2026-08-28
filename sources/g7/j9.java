@@ -1,49 +1,80 @@
 package g7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.AbstractCollection;
+import java.util.Arrays;
+import java.util.Collection;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class j9 extends k9 {
-    public final transient int c;
-    public final transient int d;
-    public final /* synthetic */ k9 e;
+public abstract class j9 extends AbstractCollection implements Serializable {
+    public static final Object[] a = new Object[0];
 
-    public j9(k9 k9Var, int i10, int i11) {
-        this.e = k9Var;
-        this.c = i10;
-        this.d = i11;
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        c7.a(i10, this.d);
-        return this.e.get(i10 + this.c);
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean addAll(Collection collection) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // g7.h9
-    public final int n() {
-        return this.e.o() + this.c + this.d;
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final void clear() {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // g7.h9
-    public final int o() {
-        return this.e.o() + this.c;
+    public abstract int i(Object[] objArr);
+
+    public int n() {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // g7.h9
-    public final Object[] p() {
-        return this.e.p();
+    public int o() {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // g7.k9, java.util.List
-    /* renamed from: q, reason: merged with bridge method [inline-methods] */
-    public final k9 subList(int i10, int i11) {
-        c7.b(i10, i11, this.d);
-        int i12 = this.c;
-        return this.e.subList(i10 + i12, i11 + i12);
+    public Object[] p() {
+        return null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean removeAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean retainAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray() {
+        return toArray(a);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        objArr.getClass();
+        int size = size();
+        int length = objArr.length;
+        if (length < size) {
+            Object[] p6 = p();
+            if (p6 != null) {
+                return Arrays.copyOfRange(p6, o(), n(), objArr.getClass());
+            }
+            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), size);
+        } else if (length > size) {
+            objArr[size] = null;
+        }
+        i(objArr);
+        return objArr;
     }
 }

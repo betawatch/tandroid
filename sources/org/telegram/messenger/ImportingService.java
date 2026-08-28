@@ -5,21 +5,21 @@ import android.content.Intent;
 import android.os.IBinder;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class ImportingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private e0.t builder;
 
     public ImportingService() {
-        for (int i10 = 0; i10 < 4; i10++) {
-            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.historyImportProgressChanged);
-            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.stickersImportProgressChanged);
+        for (int i9 = 0; i9 < 4; i9++) {
+            NotificationCenter.getInstance(i9).addObserver(this, NotificationCenter.historyImportProgressChanged);
+            NotificationCenter.getInstance(i9).addObserver(this, NotificationCenter.stickersImportProgressChanged);
         }
     }
 
     private boolean hasImportingHistory() {
-        for (int i10 = 0; i10 < 4; i10++) {
-            if (SendMessagesHelper.getInstance(i10).isImportingHistory()) {
+        for (int i9 = 0; i9 < 4; i9++) {
+            if (SendMessagesHelper.getInstance(i9).isImportingHistory()) {
                 return true;
             }
         }
@@ -27,8 +27,8 @@ public class ImportingService extends Service implements NotificationCenter.Noti
     }
 
     private boolean hasImportingStickers() {
-        for (int i10 = 0; i10 < 4; i10++) {
-            if (SendMessagesHelper.getInstance(i10).isImportingStickers()) {
+        for (int i9 = 0; i9 < 4; i9++) {
+            if (SendMessagesHelper.getInstance(i9).isImportingStickers()) {
                 return true;
             }
         }
@@ -36,8 +36,8 @@ public class ImportingService extends Service implements NotificationCenter.Noti
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if ((i10 != NotificationCenter.historyImportProgressChanged && i10 != NotificationCenter.stickersImportProgressChanged) || hasImportingStickers() || hasImportingStickers()) {
+    public void didReceivedNotification(int i9, int i10, Object... objArr) {
+        if ((i9 != NotificationCenter.historyImportProgressChanged && i9 != NotificationCenter.stickersImportProgressChanged) || hasImportingStickers() || hasImportingStickers()) {
             return;
         }
         stopSelf();
@@ -56,9 +56,9 @@ public class ImportingService extends Service implements NotificationCenter.Noti
         } catch (Throwable unused) {
         }
         new e0.n0(ApplicationLoader.applicationContext).b(5);
-        for (int i10 = 0; i10 < 4; i10++) {
-            NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.historyImportProgressChanged);
-            NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.stickersImportProgressChanged);
+        for (int i9 = 0; i9 < 4; i9++) {
+            NotificationCenter.getInstance(i9).removeObserver(this, NotificationCenter.historyImportProgressChanged);
+            NotificationCenter.getInstance(i9).removeObserver(this, NotificationCenter.stickersImportProgressChanged);
         }
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("destroy import service");
@@ -66,7 +66,7 @@ public class ImportingService extends Service implements NotificationCenter.Noti
     }
 
     @Override // android.app.Service
-    public int onStartCommand(Intent intent, int i10, int i11) {
+    public int onStartCommand(Intent intent, int i9, int i10) {
         if (!hasImportingStickers() && !hasImportingHistory()) {
             stopSelf();
             return 2;

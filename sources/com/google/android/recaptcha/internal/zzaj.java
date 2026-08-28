@@ -1,19 +1,20 @@
 package com.google.android.recaptcha.internal;
 
-import a7.c;
+import androidx.car.app.j;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import kotlin.jvm.internal.f;
-import qc.h;
-import qc.i;
-import qc.p;
-import qc.r;
+import kotlin.jvm.internal.e;
+import pc.h;
+import pc.i;
+import pc.p;
+import pc.r;
+import qc.c;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzaj extends zzg {
     private final List zza;
@@ -64,7 +65,7 @@ public final class zzaj extends zzg {
             zzf.zzf(zzdn.zza(zzpp.zzh().zzi(zzd, 0, zzd.length), zzqmVar));
         } else {
             if (!(zzatVar instanceof zzak)) {
-                throw new c();
+                throw new j();
             }
             zzyt zza2 = ((zzak) zzatVar).zza();
             zzqm zzqmVar3 = this.zzb;
@@ -86,10 +87,10 @@ public final class zzaj extends zzg {
             }
         }
         int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj2 = arrayList.get(i10);
-            i10++;
+        int i9 = 0;
+        while (i9 < size) {
+            Object obj2 = arrayList.get(i9);
+            i9++;
             zzar zzarVar = (zzar) obj2;
             if (!map.containsKey(Integer.valueOf(zzarVar.zza()))) {
                 int zza = zzarVar.zza();
@@ -111,17 +112,17 @@ public final class zzaj extends zzg {
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zza(String str, rc.c cVar) {
+    public final Object zza(String str, c cVar) {
         return zzp(str);
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzb(String str, rc.c cVar) {
+    public final Object zzb(String str, c cVar) {
         return new zzhg(new zzag(this, str, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzd(zzxn zzxnVar, rc.c cVar) {
+    public final Object zzd(zzxn zzxnVar, c cVar) {
         return new zzhg(new zzai(zzxnVar, this, null));
     }
 
@@ -147,7 +148,7 @@ public final class zzaj extends zzg {
         return this.zzc;
     }
 
-    public /* synthetic */ zzaj(List list, int i10, f fVar) {
+    public /* synthetic */ zzaj(List list, int i9, e eVar) {
         this.zza = h.c(new zzav(), new zzad(), new zzx(), new zzz(), new zzba(null, null, 3, null));
         this.zzc = new LinkedHashMap();
     }

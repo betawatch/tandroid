@@ -1,51 +1,42 @@
 package org.telegram.ui.Cells;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class e8 extends AnimatorListenerAdapter {
+public final /* synthetic */ class e8 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ h8 c;
+    public final /* synthetic */ k8 b;
 
-    public /* synthetic */ e8(h8 h8Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = h8Var;
-        this.b = z10;
+    public /* synthetic */ e8(k8 k8Var, int i9) {
+        this.a = i9;
+        this.b = k8Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                if (!this.b) {
-                    this.c.h.setVisibility(4);
-                    break;
-                }
+                this.b.getClass();
                 break;
             default:
-                if (!this.b) {
-                    this.c.x.setVisibility(4);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                if (this.b) {
-                    this.c.h.setVisibility(0);
-                    break;
-                }
-                break;
-            default:
-                if (this.b) {
-                    this.c.x.setVisibility(0);
+                k8 k8Var = this.b;
+                TextView textView = k8Var.A;
+                TextView textView2 = k8Var.y;
+                zf.p0 p0Var = k8Var.B;
+                if (p0Var.getVisibility() != 0 || !p0Var.r.isEnabled()) {
+                    if (textView2.getVisibility() != 0 || !textView2.isEnabled()) {
+                        if (textView.getVisibility() == 0 && textView.isEnabled()) {
+                            textView.performClick();
+                            break;
+                        }
+                    } else {
+                        textView2.performClick();
+                        break;
+                    }
+                } else {
+                    p0Var.performClick();
                     break;
                 }
                 break;

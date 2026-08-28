@@ -4,9 +4,9 @@ import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
-import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class p0 {
     public float a;
@@ -21,15 +21,15 @@ public final class p0 {
     public boolean h = false;
     public float i = 1.0f;
 
-    public p0(int i10, int i11, int i12, int i13) {
-        k3 k3Var = new k3(i13 - 1);
+    public p0(int i9, int i10, int i11, int i12) {
+        k3 k3Var = new k3(i12 - 1);
         this.f = k3Var;
-        k3 k3Var2 = new k3(i13);
+        k3 k3Var2 = new k3(i12);
         this.g = k3Var2;
-        k3Var.a = i10;
-        k3Var.b = i11;
-        k3Var2.a = i10 - i12;
-        k3Var2.b = i11 - i12;
+        k3Var.a = i9;
+        k3Var.b = i10;
+        k3Var2.a = i9 - i11;
+        k3Var2.b = i10 - i11;
         k3Var.b();
         k3Var2.b();
         k3Var.d.setColor(-1);
@@ -42,7 +42,7 @@ public final class p0 {
         float f12 = (this.a * 0.4f) + 0.8f;
         if (this.e || this.d != 0.0f) {
             canvas.save();
-            float interpolation = er.f.getInterpolation(this.d) * f12;
+            float interpolation = gr.f.getInterpolation(this.d) * f12;
             canvas.scale(interpolation, interpolation, f10, f11);
             float f13 = this.a;
             float f14 = this.i;
@@ -60,9 +60,9 @@ public final class p0 {
         if (this.h && this.k == 0) {
             return;
         }
-        int i10 = this.k;
-        if (i10 != 0) {
-            this.k = i10 - 1;
+        int i9 = this.k;
+        if (i9 != 0) {
+            this.k = i9 - 1;
         }
         if (this.d != 0.0f) {
             view.invalidate();

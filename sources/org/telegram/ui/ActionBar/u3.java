@@ -8,10 +8,10 @@ import android.graphics.RadialGradient;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.nc;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.Components.pc;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class u3 {
     public final RectF a = new RectF();
@@ -24,7 +24,7 @@ public final class u3 {
     public final float[] h;
     public float i;
     public ValueAnimator j;
-    public final nc k;
+    public final pc k;
     public final Paint l;
     public final RectF m;
     public final Path n;
@@ -50,7 +50,7 @@ public final class u3 {
         this.b = v3Var;
         this.c = l3Var;
         this.d = j3Var;
-        this.k = new nc(v3Var);
+        this.k = new pc(v3Var);
         paint.setColor(l3Var.p);
     }
 
@@ -61,12 +61,12 @@ public final class u3 {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.i, f10);
         this.j = ofFloat;
-        ofFloat.addUpdateListener(new w0(this, 5));
-        this.j.addListener(new z0(this, f10, 1));
+        ofFloat.addUpdateListener(new x0(this, 5));
+        this.j.addListener(new a1(this, f10, 1));
         if (Math.abs(f10) < 0.1f) {
             AndroidUtilities.applySpring(this.j, 285.0d, 20.0d);
         } else {
-            this.j.setInterpolator(er.h);
+            this.j.setInterpolator(gr.h);
         }
         this.j.start();
     }

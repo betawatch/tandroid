@@ -1,12 +1,21 @@
 package l7;
 
-import android.os.IInterface;
-import com.google.android.gms.common.api.Status;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public interface b extends IInterface {
-    void Y(Status status, w7.b bVar);
+public abstract class b {
+    public static final /* synthetic */ int a = 0;
 
-    void b0(Status status, w7.d dVar);
+    static {
+        b.class.getClassLoader();
+    }
+
+    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() == 0) {
+            return null;
+        }
+        return (Parcelable) creator.createFromParcel(parcel);
+    }
 }

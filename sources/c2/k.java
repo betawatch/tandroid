@@ -7,7 +7,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class k extends MediaRouter2.TransferCallback {
     public final /* synthetic */ l a;
@@ -25,10 +25,10 @@ public final class k extends MediaRouter2.TransferCallback {
         }
         e eVar = (e) this.a.s.b;
         if (rVar != eVar.e) {
-            int i10 = e.F;
+            int i9 = e.F;
             return;
         }
-        z c10 = eVar.c();
+        a0 c10 = eVar.c();
         if (eVar.e() != c10) {
             eVar.j(c10, 2);
         }
@@ -36,11 +36,11 @@ public final class k extends MediaRouter2.TransferCallback {
 
     @Override // android.media.MediaRouter2.TransferCallback
     public final void onTransfer(MediaRouter2.RoutingController routingController, MediaRouter2.RoutingController routingController2) {
-        z zVar;
+        a0 a0Var;
         this.a.v.remove(routingController);
         if (routingController2 == this.a.r.getSystemController()) {
             e eVar = (e) this.a.s.b;
-            z c10 = eVar.c();
+            a0 c10 = eVar.c();
             if (eVar.e() != c10) {
                 eVar.j(c10, 3);
                 return;
@@ -52,28 +52,28 @@ public final class k extends MediaRouter2.TransferCallback {
             Log.w("MR2Provider", "Selected routes are empty. This shouldn't happen.");
             return;
         }
-        int i10 = 0;
-        String id2 = a9.m.d(selectedRoutes.get(0)).getId();
+        int i9 = 0;
+        String id2 = a9.b.h(selectedRoutes.get(0)).getId();
         this.a.v.put(routingController2, new h(this.a, routingController2, id2));
         e eVar2 = (e) this.a.s.b;
         ArrayList arrayList = eVar2.j;
         int size = arrayList.size();
         while (true) {
-            if (i10 >= size) {
-                zVar = null;
+            if (i9 >= size) {
+                a0Var = null;
                 break;
             }
-            Object obj = arrayList.get(i10);
-            i10++;
-            zVar = (z) obj;
-            if (zVar.c() == eVar2.r && TextUtils.equals(id2, zVar.b)) {
+            Object obj = arrayList.get(i9);
+            i9++;
+            a0Var = (a0) obj;
+            if (a0Var.c() == eVar2.r && TextUtils.equals(id2, a0Var.b)) {
                 break;
             }
         }
-        if (zVar == null) {
+        if (a0Var == null) {
             Log.w("GlobalMediaRouter", "onSelectRoute: The target RouteInfo is not found for descriptorId=" + id2);
         } else {
-            eVar2.j(zVar, 3);
+            eVar2.j(a0Var, 3);
         }
         this.a.r(routingController2);
     }

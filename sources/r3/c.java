@@ -4,14 +4,14 @@ import m3.s;
 import m3.t;
 import m3.u;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class c implements t {
     public final /* synthetic */ t a;
-    public final /* synthetic */ f2.c b;
+    public final /* synthetic */ f2.d b;
 
-    public c(f2.c cVar, t tVar) {
-        this.b = cVar;
+    public c(f2.d dVar, t tVar) {
+        this.b = dVar;
         this.a = tVar;
     }
 

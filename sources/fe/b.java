@@ -1,132 +1,36 @@
 package fe;
 
-import e4.h;
-import ee.c;
-import ee.d;
-import ee.e;
-import ee.f;
-import java.util.ArrayList;
-import je.p;
+import android.support.v4.media.session.MediaSessionCompat$Token;
+import ie.s;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b extends le.a {
-    public final ArrayList c;
-    public final ArrayList d;
-    public final ee.a a = new ee.a();
-    public final ArrayList b = new ArrayList();
-    public boolean e = true;
+public final class b {
+    public final boolean a;
+    public final int b;
+    public boolean c;
+    public boolean d;
+    public final Object e;
+    public final Object f;
+    public final Object g;
 
-    public b(ArrayList arrayList, ArrayList arrayList2) {
-        this.c = arrayList;
-        this.d = arrayList2;
+    public b(boolean z10, int i9, String str, String str2, MediaSessionCompat$Token mediaSessionCompat$Token, boolean z11, boolean z12) {
+        this.a = z10;
+        this.b = i9;
+        this.f = str;
+        this.g = str2;
+        this.e = mediaSessionCompat$Token;
+        this.c = z11;
+        this.d = z12;
     }
 
-    public static ArrayList i(CharSequence charSequence) {
-        String trim = charSequence.toString().trim();
-        if (trim.startsWith("|")) {
-            trim = trim.substring(1);
-        }
-        ArrayList arrayList = new ArrayList();
-        StringBuilder sb2 = new StringBuilder();
-        int i10 = 0;
-        while (i10 < trim.length()) {
-            char charAt = trim.charAt(i10);
-            if (charAt == '\\') {
-                int i11 = i10 + 1;
-                if (i11 >= trim.length() || trim.charAt(i11) != '|') {
-                    sb2.append('\\');
-                } else {
-                    sb2.append('|');
-                    i10 = i11;
-                }
-            } else if (charAt != '|') {
-                sb2.append(charAt);
-            } else {
-                arrayList.add(sb2.toString());
-                sb2.setLength(0);
-            }
-            i10++;
-        }
-        if (sb2.length() > 0) {
-            arrayList.add(sb2.toString());
-        }
-        return arrayList;
-    }
-
-    @Override // le.a
-    public final void a(CharSequence charSequence) {
-        if (this.e) {
-            this.e = false;
-        } else {
-            this.b.add(charSequence);
-        }
-    }
-
-    @Override // le.a
-    public final je.a e() {
-        return this.a;
-    }
-
-    @Override // le.a
-    public final void g(ke.a aVar) {
-        ArrayList arrayList;
-        ArrayList arrayList2 = this.d;
-        int size = arrayList2.size();
-        e eVar = new e();
-        ee.a aVar2 = this.a;
-        aVar2.b(eVar);
-        p fVar = new f();
-        eVar.b(fVar);
-        int i10 = 0;
-        while (true) {
-            arrayList = this.c;
-            if (i10 >= size) {
-                break;
-            }
-            String str = (String) arrayList2.get(i10);
-            d dVar = new d();
-            if (i10 < arrayList.size()) {
-                dVar.h = (c) arrayList.get(i10);
-            }
-            aVar.a(str.trim(), dVar);
-            dVar.g = true;
-            fVar.b(dVar);
-            i10++;
-        }
-        ArrayList arrayList3 = this.b;
-        int size2 = arrayList3.size();
-        p pVar = null;
-        int i11 = 0;
-        while (i11 < size2) {
-            Object obj = arrayList3.get(i11);
-            i11++;
-            ArrayList i12 = i((CharSequence) obj);
-            p fVar2 = new f();
-            int i13 = 0;
-            while (i13 < size) {
-                String str2 = i13 < i12.size() ? (String) i12.get(i13) : "";
-                d dVar2 = new d();
-                if (i13 < arrayList.size()) {
-                    dVar2.h = (c) arrayList.get(i13);
-                }
-                aVar.a(str2.trim(), dVar2);
-                fVar2.b(dVar2);
-                i13++;
-            }
-            if (pVar == null) {
-                pVar = new ee.b();
-                aVar2.b(pVar);
-            }
-            pVar.b(fVar2);
-        }
-    }
-
-    @Override // le.a
-    public final h h(ge.e eVar) {
-        if (eVar.a.toString().contains("|")) {
-            return h.a(eVar.b);
-        }
-        return null;
+    public b(s sVar, int i9, b bVar, c cVar, boolean z10) {
+        this.c = true;
+        this.d = false;
+        this.e = sVar;
+        this.b = i9;
+        this.a = z10;
+        this.f = bVar;
+        this.g = cVar;
     }
 }

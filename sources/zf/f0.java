@@ -1,123 +1,64 @@
 package zf;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import g7.e6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ys0;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.h5;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class f0 extends d {
-    public final Paint h;
-    public long n;
-    public float r;
-    public float s;
-    public final /* synthetic */ ys0 v;
+public final class f0 extends FrameLayout {
+    public final ImageView a;
+    public final h5 b;
+    public final bh.g c;
+    public final h5 d;
+    public e0 e;
+    public d0 f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f0(ys0 ys0Var, Context context, e0 e0Var) {
-        super(context, e0Var);
-        this.v = ys0Var;
-        Paint paint = new Paint();
-        this.h = paint;
-        setWillNotDraw(false);
-        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(-1);
+    public f0(j0 j0Var, Context context, b6 b6Var) {
+        super(context);
+        int i9;
+        int i10;
+        i9 = ((f3) j0Var).backgroundPaddingLeft;
+        i10 = ((f3) j0Var).backgroundPaddingLeft;
+        setPadding(i9, 0, i10, 0);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        imageView.setColorFilter(new PorterDuffColorFilter(f6.v0(f6.Lj, b6Var), PorterDuff.Mode.SRC_IN));
+        addView(imageView, e6.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
+        h5 h5Var = new h5(context);
+        this.b = h5Var;
+        h5Var.setWidthWrapContent(true);
+        h5Var.setTextColor(f6.v0(f6.j5, b6Var));
+        h5Var.setTextSize(14);
+        boolean z10 = LocaleController.isRTL;
+        addView(h5Var, e6.d(-2, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 30.0f : 60.0f, 0.0f, z10 ? 60.0f : 30.0f, 0.0f));
+        h5 h5Var2 = new h5(context);
+        this.d = h5Var2;
+        h5Var2.setTextColor(-1);
+        h5Var2.setWidthWrapContent(true);
+        h5Var2.setTypeface(AndroidUtilities.bold());
+        h5Var2.setTextSize(14);
+        bh.g gVar = new bh.g(this, context, b6Var);
+        this.c = gVar;
+        gVar.setWillNotDraw(false);
+        gVar.addView(h5Var2, e6.e(-2, -2, 17));
+        addView(gVar, e6.c(-1.0f, -1));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0094  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:25:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00ad  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0076  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDraw(Canvas canvas) {
-        int i10;
-        int i11;
-        float f10;
-        Canvas canvas2;
-        float f11;
-        super.onDraw(canvas);
-        long min = Math.min(16L, System.currentTimeMillis() - this.n);
-        this.n = System.currentTimeMillis();
-        ys0 ys0Var = this.v;
-        j jVar = ys0Var.O0;
-        if (jVar == null || jVar.r || !jVar.n) {
-            i10 = 0;
-            i11 = 0;
-        } else {
-            i10 = jVar.getStickyX();
-            i11 = ys0Var.O0.getStickyY();
-        }
-        if (i10 != 0) {
-            float f12 = this.r;
-            if (f12 != 1.0f) {
-                this.r = Math.min(1.0f, (min / 150.0f) + f12);
-                invalidate();
-                if (i11 != 0) {
-                    float f13 = this.s;
-                    if (f13 != 1.0f) {
-                        this.s = Math.min(1.0f, (min / 150.0f) + f13);
-                        invalidate();
-                        f10 = this.s;
-                        Paint paint = this.h;
-                        if (f10 != 0.0f) {
-                            paint.setAlpha((int) (f10 * 255.0f));
-                            float measuredHeight = getMeasuredHeight() / 2.0f;
-                            canvas2 = canvas;
-                            canvas2.drawLine(0.0f, measuredHeight, getMeasuredWidth(), measuredHeight, paint);
-                        } else {
-                            canvas2 = canvas;
-                        }
-                        f11 = this.r;
-                        if (f11 != 0.0f) {
-                            paint.setAlpha((int) (f11 * 255.0f));
-                            float measuredWidth = getMeasuredWidth() / 2.0f;
-                            canvas2.drawLine(measuredWidth, 0.0f, measuredWidth, getMeasuredHeight(), paint);
-                            return;
-                        }
-                        return;
-                    }
-                }
-                if (i11 == 0) {
-                    float f14 = this.s;
-                    if (f14 != 0.0f) {
-                        this.s = Math.max(0.0f, f14 - (min / 150.0f));
-                        invalidate();
-                    }
-                }
-                f10 = this.s;
-                Paint paint2 = this.h;
-                if (f10 != 0.0f) {
-                }
-                f11 = this.r;
-                if (f11 != 0.0f) {
-                }
-            }
-        }
-        if (i10 == 0) {
-            float f15 = this.r;
-            if (f15 != 0.0f) {
-                this.r = Math.max(0.0f, f15 - (min / 150.0f));
-                invalidate();
-            }
-        }
-        if (i11 != 0) {
-        }
-        if (i11 == 0) {
-        }
-        f10 = this.s;
-        Paint paint22 = this.h;
-        if (f10 != 0.0f) {
-        }
-        f11 = this.r;
-        if (f11 != 0.0f) {
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.f != null ? 49.0f : 36.0f), TLObject.FLAG_30));
     }
 }

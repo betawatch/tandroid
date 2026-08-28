@@ -1,17 +1,19 @@
 package g7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class p5 {
-    public abstract com.google.android.gms.internal.cast.y3 a(com.google.android.gms.internal.cast.e4 e4Var);
+public final class p5 implements q9.d {
+    public static final p5 a = new p5();
 
-    public abstract com.google.android.gms.internal.cast.d4 b(com.google.android.gms.internal.cast.e4 e4Var);
+    static {
+        e2.c.u(e2.c.r(d.class, e2.c.i(2, e2.c.r(d.class, new a(1)))));
+    }
 
-    public abstract void c(com.google.android.gms.internal.cast.d4 d4Var, com.google.android.gms.internal.cast.d4 d4Var2);
-
-    public abstract void d(com.google.android.gms.internal.cast.d4 d4Var, Thread thread);
-
-    public abstract boolean e(com.google.android.gms.internal.cast.e4 e4Var, Object obj, Object obj2);
-
-    public abstract boolean f(com.google.android.gms.internal.cast.e4 e4Var, com.google.android.gms.internal.cast.d4 d4Var, com.google.android.gms.internal.cast.d4 d4Var2);
+    @Override // q9.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
+    }
 }

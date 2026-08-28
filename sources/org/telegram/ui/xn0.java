@@ -1,164 +1,197 @@
 package org.telegram.ui;
 
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
+import java.util.Calendar;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class xn0 implements TextWatcher {
-    public final String[] a = {"34", "37"};
-    public final String[] b = {"300", "301", "302", "303", "304", "305", "309", "36", "38", "39"};
-    public final String[] c = {"2221", "2222", "2223", "2224", "2225", "2226", "2227", "2228", "2229", "2200", "2201", "2202", "2203", "2204", "8600", "9860", "223", "224", "225", "226", "227", "228", "229", "23", "24", "25", "26", "270", "271", "2720", "50", "51", "52", "53", "54", "55", "4", "60", "62", "64", "65", "35"};
-    public int d = -1;
-    public int e;
-    public final /* synthetic */ do0 f;
+    public int a = -1;
+    public boolean b;
+    public int c;
+    public final /* synthetic */ co0 d;
 
-    public xn0(do0 do0Var) {
-        this.f = do0Var;
+    public xn0(co0 co0Var) {
+        this.d = co0Var;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0171  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x017d  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x018b  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x01a6  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0191  */
     @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void afterTextChanged(Editable editable) {
-        char c10;
-        boolean z10;
-        int i10;
-        int i11;
-        String[] strArr;
-        int i12;
-        String str;
-        do0 do0Var = this.f;
-        if (do0Var.k0) {
+        int i9;
+        lt ltVar;
+        co0 co0Var = this.d;
+        if (co0Var.k0) {
             return;
         }
-        EditTextBoldCursor editTextBoldCursor = do0Var.f[0];
+        boolean z10 = true;
+        EditTextBoldCursor editTextBoldCursor = co0Var.f[1];
         int selectionStart = editTextBoldCursor.getSelectionStart();
         String obj = editTextBoldCursor.getText().toString();
-        int i13 = 3;
-        int i14 = 1;
-        if (this.d == 3) {
-            obj = obj.substring(0, this.e) + obj.substring(this.e + 1);
+        if (this.a == 3) {
+            obj = obj.substring(0, this.c) + obj.substring(this.c + 1);
             selectionStart--;
         }
         StringBuilder sb2 = new StringBuilder(obj.length());
-        int i15 = 0;
-        while (i15 < obj.length()) {
-            int i16 = i15 + 1;
-            String substring = obj.substring(i15, i16);
+        int i10 = 0;
+        while (i10 < obj.length()) {
+            int i11 = i10 + 1;
+            String substring = obj.substring(i10, i11);
             if ("0123456789".contains(substring)) {
                 sb2.append(substring);
             }
-            i15 = i16;
+            i10 = i11;
         }
-        do0Var.k0 = true;
-        String str2 = null;
-        int i17 = 100;
-        if (sb2.length() > 0) {
-            String sb3 = sb2.toString();
-            int i18 = 0;
-            while (true) {
-                if (i18 >= i13) {
-                    c10 = 1;
-                    break;
+        co0Var.k0 = true;
+        co0Var.f[1].setTextColor(co0Var.getThemedColor(org.telegram.ui.ActionBar.f6.G6));
+        if (sb2.length() > 4) {
+            sb2.setLength(4);
+        }
+        if (sb2.length() < 2) {
+            this.b = false;
+        }
+        if (!this.b) {
+            if (sb2.length() == 1) {
+                int intValue = Utilities.parseInt((CharSequence) sb2.toString()).intValue();
+                if (intValue != 1 && intValue != 0) {
+                    sb2.insert(0, "0");
+                    selectionStart++;
                 }
-                if (i18 == 0) {
-                    strArr = this.c;
-                    i12 = 16;
-                    str = "xxxx xxxx xxxx xxxx";
-                } else if (i18 != i14) {
-                    strArr = this.b;
-                    i12 = 14;
-                    str = "xxxx xxxx xxxx xx";
+            } else if (sb2.length() == 2) {
+                int intValue2 = Utilities.parseInt((CharSequence) sb2.toString()).intValue();
+                if (intValue2 > 12 || intValue2 == 0) {
+                    co0Var.f[1].setTextColor(co0Var.getThemedColor(org.telegram.ui.ActionBar.f6.p7));
                 } else {
-                    strArr = this.a;
-                    i12 = 15;
-                    str = "xxxx xxxx xxxx xxx";
+                    z10 = false;
                 }
-                c10 = 1;
-                for (String str3 : strArr) {
-                    if (sb3.length() <= str3.length()) {
-                        if (str3.startsWith(sb3)) {
-                            i17 = i12;
-                            str2 = str;
-                            break;
-                        }
-                    } else {
-                        if (sb3.startsWith(str3)) {
-                            i17 = i12;
-                            str2 = str;
-                            break;
-                        }
-                    }
+                selectionStart++;
+                if (!z10) {
                 }
-                if (str2 != null) {
-                    break;
+                if (sb2.length() == 2) {
                 }
-                i18++;
-                i13 = 3;
-                i14 = 1;
+                selectionStart++;
+                editTextBoldCursor.setText(sb2);
+                if (selectionStart >= 0) {
+                }
+                co0Var.k0 = false;
             }
-            if (sb2.length() > i17) {
-                sb2.setLength(i17);
-            }
-        } else {
-            c10 = 1;
-        }
-        if (str2 != null) {
-            if (sb2.length() == i17) {
-                do0Var.f[c10].requestFocus();
-            }
-            editTextBoldCursor.setTextColor(do0Var.getThemedColor(org.telegram.ui.ActionBar.g6.G6));
-            int i19 = 0;
-            while (true) {
-                if (i19 >= sb2.length()) {
-                    break;
-                }
-                if (i19 < str2.length()) {
-                    if (str2.charAt(i19) == ' ') {
-                        sb2.insert(i19, ' ');
-                        i19++;
-                        if (selectionStart == i19 && (i11 = this.d) != 2 && i11 != 3) {
-                            selectionStart++;
-                        }
-                    }
-                    i19++;
-                } else {
-                    sb2.insert(i19, ' ');
-                    if (selectionStart == i19 + 1 && (i10 = this.d) != 2 && i10 != 3) {
-                        selectionStart++;
-                    }
-                }
-            }
-        }
-        if (sb2.toString().equals(editable.toString())) {
             z10 = false;
-        } else {
-            z10 = false;
-            editable.replace(0, editable.length(), sb2);
+            if (!z10) {
+            }
+            if (sb2.length() == 2) {
+            }
+            selectionStart++;
+            editTextBoldCursor.setText(sb2);
+            if (selectionStart >= 0) {
+            }
+            co0Var.k0 = false;
         }
+        int i12 = sb2.length() > 2 ? 2 : 1;
+        String[] strArr = new String[i12];
+        strArr[0] = sb2.substring(0, 2);
+        if (i12 == 2) {
+            strArr[1] = sb2.substring(2);
+        }
+        if (sb2.length() == 4 && i12 == 2) {
+            int intValue3 = Utilities.parseInt((CharSequence) strArr[0]).intValue();
+            int intValue4 = Utilities.parseInt((CharSequence) strArr[1]).intValue() + 2000;
+            Calendar calendar = Calendar.getInstance();
+            i9 = ((org.telegram.ui.ActionBar.o2) co0Var).currentAccount;
+            boolean z11 = UserConfig.getInstance(i9).getClientPhone().startsWith("7") || ((ltVar = co0Var.w0) != null && ltVar.c.equals("7"));
+            int i13 = z11 ? 2022 : calendar.get(1);
+            int i14 = z11 ? 1 : calendar.get(2) + 1;
+            if (intValue4 < i13 || (intValue4 == i13 && intValue3 < i14)) {
+                co0Var.f[1].setTextColor(co0Var.getThemedColor(org.telegram.ui.ActionBar.f6.p7));
+                if (!z10) {
+                }
+                if (sb2.length() == 2) {
+                }
+                selectionStart++;
+                editTextBoldCursor.setText(sb2);
+                if (selectionStart >= 0) {
+                }
+                co0Var.k0 = false;
+            }
+            z10 = false;
+            if (!z10) {
+            }
+            if (sb2.length() == 2) {
+            }
+            selectionStart++;
+            editTextBoldCursor.setText(sb2);
+            if (selectionStart >= 0) {
+            }
+            co0Var.k0 = false;
+        }
+        int intValue5 = Utilities.parseInt((CharSequence) strArr[0]).intValue();
+        if (intValue5 > 12 || intValue5 == 0) {
+            co0Var.f[1].setTextColor(co0Var.getThemedColor(org.telegram.ui.ActionBar.f6.p7));
+            if (!z10 && sb2.length() == 4) {
+                co0Var.f[co0Var.e0 ? (char) 2 : (char) 3].requestFocus();
+            }
+            if (sb2.length() == 2) {
+                if (sb2.length() > 2 && sb2.charAt(2) != '/') {
+                    sb2.insert(2, '/');
+                }
+                editTextBoldCursor.setText(sb2);
+                if (selectionStart >= 0) {
+                    editTextBoldCursor.setSelection(Math.min(selectionStart, editTextBoldCursor.length()));
+                }
+                co0Var.k0 = false;
+            }
+            sb2.append('/');
+            selectionStart++;
+            editTextBoldCursor.setText(sb2);
+            if (selectionStart >= 0) {
+            }
+            co0Var.k0 = false;
+        }
+        z10 = false;
+        if (!z10) {
+            co0Var.f[co0Var.e0 ? (char) 2 : (char) 3].requestFocus();
+        }
+        if (sb2.length() == 2) {
+        }
+        selectionStart++;
+        editTextBoldCursor.setText(sb2);
         if (selectionStart >= 0) {
-            editTextBoldCursor.setSelection(Math.min(selectionStart, editTextBoldCursor.length()));
         }
-        do0Var.k0 = z10;
+        co0Var.k0 = false;
     }
 
     @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        if (i11 == 0 && i12 == 1) {
-            this.d = 1;
+    public final void beforeTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
+        if (i10 == 0 && i11 == 1) {
+            this.b = TextUtils.indexOf((CharSequence) this.d.f[1].getText(), '/') != -1;
+            this.a = 1;
             return;
         }
-        if (i11 != 1 || i12 != 0) {
-            this.d = -1;
-        } else if (charSequence.charAt(i10) != ' ' || i10 <= 0) {
-            this.d = 2;
-        } else {
-            this.d = 3;
-            this.e = i10 - 1;
+        if (i10 != 1 || i11 != 0) {
+            this.a = -1;
+            return;
         }
+        if (charSequence.charAt(i9) != '/' || i9 <= 0) {
+            this.a = 2;
+            return;
+        }
+        this.b = false;
+        this.a = 3;
+        this.c = i9 - 1;
     }
 
     @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    public final void onTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
     }
 }

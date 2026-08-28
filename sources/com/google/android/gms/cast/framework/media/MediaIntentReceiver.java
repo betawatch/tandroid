@@ -5,16 +5,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import m5.q;
+import m5.p;
 import n5.a;
 import n5.c;
+import n5.f;
 import n5.g;
 import o5.h;
 import o5.i;
-import r5.b;
-import y5.l;
+import q5.b;
+import x5.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class MediaIntentReceiver extends BroadcastReceiver {
     public static final String ACTION_DISCONNECT = "com.google.android.gms.cast.framework.action.DISCONNECT";
@@ -41,7 +42,7 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         if (j10 == 0 || (remoteMediaClient = getRemoteMediaClient(cVar)) == null || remoteMediaClient.j() || remoteMediaClient.n()) {
             return;
         }
-        remoteMediaClient.q(new q(remoteMediaClient.a() + j10));
+        remoteMediaClient.q(new p(remoteMediaClient.a() + j10));
     }
 
     private void togglePlayback(c cVar) {
@@ -61,8 +62,8 @@ public class MediaIntentReceiver extends BroadcastReceiver {
      */
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
-        n5.h b10;
-        g d;
+        g b10;
+        f d;
         String action = intent.getAction();
         log.b("onReceive action: %s", action);
         if (action == null || (d = (b10 = a.c(context).b()).d()) == null) {
@@ -121,32 +122,32 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         onReceiveOtherAction(context, action, intent);
     }
 
-    public void onReceiveActionForward(g gVar, long j10) {
-        if (gVar instanceof c) {
-            seek((c) gVar, j10);
+    public void onReceiveActionForward(f fVar, long j10) {
+        if (fVar instanceof c) {
+            seek((c) fVar, j10);
         }
     }
 
-    public void onReceiveActionMediaButton(g gVar, Intent intent) {
-        if ((gVar instanceof c) && intent.hasExtra("android.intent.extra.KEY_EVENT")) {
+    public void onReceiveActionMediaButton(f fVar, Intent intent) {
+        if ((fVar instanceof c) && intent.hasExtra("android.intent.extra.KEY_EVENT")) {
             Bundle extras = intent.getExtras();
             l.h(extras);
             KeyEvent keyEvent = (KeyEvent) extras.get("android.intent.extra.KEY_EVENT");
             if (keyEvent != null && keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 85) {
-                togglePlayback((c) gVar);
+                togglePlayback((c) fVar);
             }
         }
     }
 
-    public void onReceiveActionRewind(g gVar, long j10) {
-        if (gVar instanceof c) {
-            seek((c) gVar, -j10);
+    public void onReceiveActionRewind(f fVar, long j10) {
+        if (fVar instanceof c) {
+            seek((c) fVar, -j10);
         }
     }
 
-    public void onReceiveActionSkipNext(g gVar) {
+    public void onReceiveActionSkipNext(f fVar) {
         h remoteMediaClient;
-        if (!(gVar instanceof c) || (remoteMediaClient = getRemoteMediaClient((c) gVar)) == null || remoteMediaClient.n()) {
+        if (!(fVar instanceof c) || (remoteMediaClient = getRemoteMediaClient((c) fVar)) == null || remoteMediaClient.n()) {
             return;
         }
         l.e("Must be called from the main thread.");
@@ -157,9 +158,9 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         }
     }
 
-    public void onReceiveActionSkipPrev(g gVar) {
+    public void onReceiveActionSkipPrev(f fVar) {
         h remoteMediaClient;
-        if (!(gVar instanceof c) || (remoteMediaClient = getRemoteMediaClient((c) gVar)) == null || remoteMediaClient.n()) {
+        if (!(fVar instanceof c) || (remoteMediaClient = getRemoteMediaClient((c) fVar)) == null || remoteMediaClient.n()) {
             return;
         }
         l.e("Must be called from the main thread.");
@@ -170,9 +171,9 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         }
     }
 
-    public void onReceiveActionTogglePlayback(g gVar) {
-        if (gVar instanceof c) {
-            togglePlayback((c) gVar);
+    public void onReceiveActionTogglePlayback(f fVar) {
+        if (fVar instanceof c) {
+            togglePlayback((c) fVar);
         }
     }
 

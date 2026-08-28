@@ -1,8 +1,8 @@
 package com.google.android.exoplayer2.ext.ffmpeg;
 
 import com.google.android.exoplayer2.decoder.SimpleDecoderOutputBuffer;
-import d5.g0;
-import d5.z;
+import d5.f0;
+import d5.y;
 import h3.t0;
 import java.nio.ByteBuffer;
 import java.util.List;
@@ -12,7 +12,7 @@ import k3.k;
 import k3.m;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class FfmpegAudioDecoder extends m {
     private static final int AUDIO_DECODER_ERROR_INVALID_DATA = -1;
@@ -28,8 +28,8 @@ final class FfmpegAudioDecoder extends m {
     private final int outputBufferSize;
     private volatile int sampleRate;
 
-    public FfmpegAudioDecoder(t0 t0Var, int i10, int i11, int i12, boolean z10) {
-        super(new i[i10], new SimpleDecoderOutputBuffer[i11]);
+    public FfmpegAudioDecoder(t0 t0Var, int i9, int i10, int i11, boolean z10) {
+        super(new i[i9], new SimpleDecoderOutputBuffer[i10]);
         if (!FfmpegLibrary.isAvailable()) {
             throw new FfmpegDecoderException("Failed to load decoder native libraries.");
         }
@@ -48,16 +48,16 @@ final class FfmpegAudioDecoder extends m {
         if (ffmpegInitialize == 0) {
             throw new FfmpegDecoderException("Initialization failed.");
         }
-        setInitialInputBufferSize(i12);
+        setInitialInputBufferSize(i11);
     }
 
-    private native int ffmpegDecode(long j10, ByteBuffer byteBuffer, int i10, ByteBuffer byteBuffer2, int i11);
+    private native int ffmpegDecode(long j10, ByteBuffer byteBuffer, int i9, ByteBuffer byteBuffer2, int i10);
 
     private native int ffmpegGetChannelCount(long j10);
 
     private native int ffmpegGetSampleRate(long j10);
 
-    private native long ffmpegInitialize(String str, byte[] bArr, boolean z10, int i10, int i11);
+    private native long ffmpegInitialize(String str, byte[] bArr, boolean z10, int i9, int i10);
 
     private native void ffmpegRelease(long j10);
 
@@ -137,7 +137,7 @@ final class FfmpegAudioDecoder extends m {
     public SimpleDecoderOutputBuffer createOutputBuffer() {
         return new SimpleDecoderOutputBuffer(new j() { // from class: com.google.android.exoplayer2.ext.ffmpeg.a
             @Override // k3.j
-            public final void c(k kVar) {
+            public final void d(k kVar) {
                 FfmpegAudioDecoder.this.releaseOutputBuffer((SimpleDecoderOutputBuffer) kVar);
             }
         });
@@ -158,7 +158,7 @@ final class FfmpegAudioDecoder extends m {
             }
         }
         ByteBuffer byteBuffer = iVar.b;
-        int i10 = g0.a;
+        int i9 = f0.a;
         int limit = byteBuffer.limit();
         ByteBuffer init = simpleDecoderOutputBuffer.init(iVar.d, this.outputBufferSize);
         int ffmpegDecode = ffmpegDecode(this.nativeContext, byteBuffer, limit, init, this.outputBufferSize);
@@ -178,9 +178,9 @@ final class FfmpegAudioDecoder extends m {
             this.sampleRate = ffmpegGetSampleRate(this.nativeContext);
             if (this.sampleRate == 0 && "alac".equals(this.codecName)) {
                 this.extraData.getClass();
-                z zVar = new z(this.extraData);
-                zVar.C(this.extraData.length - 4);
-                this.sampleRate = zVar.u();
+                y yVar = new y(this.extraData);
+                yVar.C(this.extraData.length - 4);
+                this.sampleRate = yVar.u();
             }
             this.hasOutputFormat = true;
         }

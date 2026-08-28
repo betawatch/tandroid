@@ -24,8 +24,8 @@ public final class v0 extends d5 {
     }
 
     @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i10) {
-        IntStream intStream = (IntStream) ((k0) this.d.t).apply(i10);
+    public final void accept(int i9) {
+        IntStream intStream = (IntStream) ((k0) this.d.t).apply(i9);
         if (intStream != null) {
             try {
                 boolean z10 = this.b;

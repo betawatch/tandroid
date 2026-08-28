@@ -9,12 +9,12 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
-import kotlin.jvm.internal.j;
-import pc.d;
-import qc.q;
-import qc.r;
+import kotlin.jvm.internal.i;
+import oc.d;
+import pc.q;
+import pc.r;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzch {
     public zzch() {
@@ -27,7 +27,7 @@ public final class zzch {
             LinkedHashSet linkedHashSet = new LinkedHashSet();
             if (Build.VERSION.SDK_INT >= 23) {
                 Object systemService = context.getSystemService("connectivity");
-                j.c(systemService, "null cannot be cast to non-null type android.net.ConnectivityManager");
+                i.c(systemService, "null cannot be cast to non-null type android.net.ConnectivityManager");
                 ConnectivityManager connectivityManager = (ConnectivityManager) systemService;
                 NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(connectivityManager.getActiveNetwork());
                 if (networkCapabilities != null && networkCapabilities.hasTransport(1)) {
@@ -56,28 +56,28 @@ public final class zzch {
         d[] dVarArr = {new d(0, zzvs.zzb), new d(1, zzvs.zzc), new d(2, zzvs.zzd), new d(3, zzvs.zze), new d(4, zzvs.zzf), new d(5, zzvs.zzg), new d(6, zzvs.zzh), new d(7, zzvs.zzi), new d(8, zzvs.zzj), new d(9, zzvs.zzk), new d(10, zzvs.zzl), new d(11, zzvs.zzm), new d(12, zzvs.zzn), new d(13, zzvs.zzo), new d(14, zzvs.zzp), new d(15, zzvs.zzq)};
         LinkedHashMap linkedHashMap = new LinkedHashMap(r.a(16));
         r.c(linkedHashMap, dVarArr);
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 23) {
+        int i9 = Build.VERSION.SDK_INT;
+        if (i9 >= 23) {
             linkedHashMap.put(17, zzvs.zzs);
             linkedHashMap.put(16, zzvs.zzr);
         }
-        if (i10 >= 28) {
+        if (i9 >= 28) {
             linkedHashMap.put(18, zzvs.zzt);
             linkedHashMap.put(19, zzvs.zzu);
             linkedHashMap.put(20, zzvs.zzv);
             linkedHashMap.put(21, zzvs.zzw);
         }
-        if (i10 >= 29) {
+        if (i9 >= 29) {
             linkedHashMap.put(23, zzvs.zzy);
         }
-        if (i10 >= 30) {
+        if (i9 >= 30) {
             linkedHashMap.put(25, zzvs.zzA);
         }
-        if (i10 >= 31) {
+        if (i9 >= 31) {
             linkedHashMap.put(32, zzvs.zzH);
             linkedHashMap.put(29, zzvs.zzE);
         }
-        if (i10 >= 33) {
+        if (i9 >= 33) {
             linkedHashMap.put(35, zzvs.zzK);
             linkedHashMap.put(34, zzvs.zzJ);
             linkedHashMap.put(33, zzvs.zzI);

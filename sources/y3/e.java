@@ -2,19 +2,19 @@ package y3;
 
 import android.media.MediaCodec;
 import android.os.HandlerThread;
-import d5.g0;
+import d5.f0;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class e {
     public static final ArrayDeque g = new ArrayDeque();
     public static final Object h = new Object();
     public final MediaCodec a;
     public final HandlerThread b;
-    public androidx.mediarouter.app.c c;
+    public androidx.mediarouter.app.d c;
     public final AtomicReference d;
     public final d5.c e;
     public boolean f;
@@ -51,33 +51,33 @@ public final class e {
     public final void a() {
         if (this.f) {
             try {
-                androidx.mediarouter.app.c cVar = this.c;
-                cVar.getClass();
-                cVar.removeCallbacksAndMessages(null);
-                d5.c cVar2 = this.e;
-                cVar2.b();
-                androidx.mediarouter.app.c cVar3 = this.c;
-                cVar3.getClass();
-                cVar3.obtainMessage(2).sendToTarget();
-                synchronized (cVar2) {
-                    while (!cVar2.a) {
-                        cVar2.wait();
+                androidx.mediarouter.app.d dVar = this.c;
+                dVar.getClass();
+                dVar.removeCallbacksAndMessages(null);
+                d5.c cVar = this.e;
+                cVar.b();
+                androidx.mediarouter.app.d dVar2 = this.c;
+                dVar2.getClass();
+                dVar2.obtainMessage(2).sendToTarget();
+                synchronized (cVar) {
+                    while (!cVar.a) {
+                        cVar.wait();
                     }
                 }
-            } catch (InterruptedException e9) {
+            } catch (InterruptedException e10) {
                 Thread.currentThread().interrupt();
-                throw new IllegalStateException(e9);
+                throw new IllegalStateException(e10);
             }
         }
     }
 
-    public final void c(int i10, k3.d dVar, long j10) {
+    public final void c(int i9, k3.d dVar, long j10) {
         RuntimeException runtimeException = (RuntimeException) this.d.getAndSet(null);
         if (runtimeException != null) {
             throw runtimeException;
         }
         d b10 = b();
-        b10.a = i10;
+        b10.a = i9;
         b10.b = 0;
         b10.d = j10;
         b10.e = 0;
@@ -126,7 +126,7 @@ public final class e {
         bArr4.getClass();
         cryptoInfo.iv = bArr4;
         cryptoInfo.mode = dVar.c;
-        if (g0.a >= 24) {
+        if (f0.a >= 24) {
             cryptoInfo.setPattern(new MediaCodec.CryptoInfo.Pattern(dVar.g, dVar.h));
         }
         this.c.obtainMessage(1, b10).sendToTarget();

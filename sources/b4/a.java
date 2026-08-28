@@ -2,14 +2,14 @@ package b4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import d5.g0;
+import d5.f0;
 import h3.g1;
 import h3.s0;
 import h3.t0;
 import java.util.Arrays;
 import z3.b;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class a implements b {
     public static final Parcelable.Creator<a> CREATOR;
@@ -29,7 +29,7 @@ public final class a implements b {
         s0 s0Var2 = new s0();
         s0Var2.o = "application/x-scte35";
         n = new t0(s0Var2);
-        CREATOR = new w.a(21);
+        CREATOR = new w.a(13);
     }
 
     public a(String str, String str2, long j10, long j11, byte[] bArr) {
@@ -51,7 +51,7 @@ public final class a implements b {
         }
         if (obj != null && a.class == obj.getClass()) {
             a aVar = (a) obj;
-            if (this.c == aVar.c && this.d == aVar.d && g0.a(this.a, aVar.a) && g0.a(this.b, aVar.b) && Arrays.equals(this.e, aVar.e)) {
+            if (this.c == aVar.c && this.d == aVar.d && f0.a(this.a, aVar.a) && f0.a(this.b, aVar.b) && Arrays.equals(this.e, aVar.e)) {
                 return true;
             }
         }
@@ -88,9 +88,9 @@ public final class a implements b {
             String str2 = this.b;
             int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
             long j10 = this.c;
-            int i10 = (hashCode2 + ((int) (j10 ^ (j10 >>> 32)))) * 31;
+            int i9 = (hashCode2 + ((int) (j10 ^ (j10 >>> 32)))) * 31;
             long j11 = this.d;
-            this.f = Arrays.hashCode(this.e) + ((i10 + ((int) (j11 ^ (j11 >>> 32)))) * 31);
+            this.f = Arrays.hashCode(this.e) + ((i9 + ((int) (j11 ^ (j11 >>> 32)))) * 31);
         }
         return this.f;
     }
@@ -100,7 +100,7 @@ public final class a implements b {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeString(this.a);
         parcel.writeString(this.b);
         parcel.writeLong(this.c);
@@ -110,7 +110,7 @@ public final class a implements b {
 
     public a(Parcel parcel) {
         String readString = parcel.readString();
-        int i10 = g0.a;
+        int i9 = f0.a;
         this.a = readString;
         this.b = parcel.readString();
         this.c = parcel.readLong();

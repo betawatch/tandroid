@@ -1,37 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gt implements DialogInterface.OnShowListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+public final /* synthetic */ class gt implements Utilities.Callback {
+    public final /* synthetic */ mt a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ gt(int i10, EditTextBoldCursor editTextBoldCursor) {
-        this.a = i10;
-        this.b = editTextBoldCursor;
+    public /* synthetic */ gt(mt mtVar, int i9, int i10) {
+        this.a = mtVar;
+        this.b = i9;
+        this.c = i10;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                hh.o oVar = (hh.o) this.b;
-                oVar.requestFocus();
-                AndroidUtilities.showKeyboard(oVar);
-                break;
-            case 1:
-                hh.o oVar2 = (hh.o) this.b;
-                oVar2.requestFocus();
-                AndroidUtilities.showKeyboard(oVar2);
-                break;
-            default:
-                z3 z3Var = (z3) this.b;
-                z3Var.requestFocus();
-                AndroidUtilities.showKeyboard(z3Var);
-                break;
-        }
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        CharSequence charSequence = (CharSequence) obj;
+        mt mtVar = this.a;
+        Editable text = mtVar.getText();
+        int i9 = this.b;
+        text.replace(i9, this.c, charSequence);
+        mtVar.setSelection(i9, charSequence.length() + i9);
     }
 }

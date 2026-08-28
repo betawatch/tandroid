@@ -1,42 +1,58 @@
 package androidx.datastore.preferences.protobuf;
 
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'EF2' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a2 {
-    public static final a2 a;
-    public static final a2 b;
-    public static final a2 c;
-    public static final a2 d;
-    public static final a2 e;
-    public static final a2 f;
-    public static final a2 h;
-    public static final a2 n;
-    public static final a2 r;
-    public static final /* synthetic */ a2[] s;
+public class a2 {
+    public static final w1 c;
+    public static final x1 d;
+    public static final y1 e;
+    public static final /* synthetic */ a2[] f;
+    public final b2 a;
+    public final int b;
+
+    /* JADX INFO: Fake field, exist only in values array */
+    a2 EF0;
+
+    /* JADX INFO: Fake field, exist only in values array */
+    a2 EF1;
+
+    /* JADX INFO: Fake field, exist only in values array */
+    a2 EF2;
 
     static {
-        a2 a2Var = new a2("INT", 0);
-        a = a2Var;
-        a2 a2Var2 = new a2("LONG", 1);
-        b = a2Var2;
-        a2 a2Var3 = new a2("FLOAT", 2);
-        c = a2Var3;
-        a2 a2Var4 = new a2("DOUBLE", 3);
-        d = a2Var4;
-        a2 a2Var5 = new a2("BOOLEAN", 4);
-        e = a2Var5;
-        a2 a2Var6 = new a2("STRING", 5);
-        f = a2Var6;
-        g gVar = g.c;
-        a2 a2Var7 = new a2("BYTE_STRING", 6);
-        h = a2Var7;
-        a2 a2Var8 = new a2("ENUM", 7);
-        n = a2Var8;
-        a2 a2Var9 = new a2("MESSAGE", 8);
-        r = a2Var9;
-        s = new a2[]{a2Var, a2Var2, a2Var3, a2Var4, a2Var5, a2Var6, a2Var7, a2Var8, a2Var9};
+        a2 a2Var = new a2("DOUBLE", 0, b2.d, 1);
+        a2 a2Var2 = new a2("FLOAT", 1, b2.c, 5);
+        b2 b2Var = b2.b;
+        a2 a2Var3 = new a2("INT64", 2, b2Var, 0);
+        a2 a2Var4 = new a2("UINT64", 3, b2Var, 0);
+        b2 b2Var2 = b2.a;
+        a2 a2Var5 = new a2("INT32", 4, b2Var2, 0);
+        a2 a2Var6 = new a2("FIXED64", 5, b2Var, 1);
+        a2 a2Var7 = new a2("FIXED32", 6, b2Var2, 5);
+        a2 a2Var8 = new a2("BOOL", 7, b2.e, 0);
+        w1 w1Var = new w1("STRING", 8, b2.f, 2);
+        c = w1Var;
+        b2 b2Var3 = b2.r;
+        x1 x1Var = new x1("GROUP", 9, b2Var3, 3);
+        d = x1Var;
+        y1 y1Var = new y1("MESSAGE", 10, b2Var3, 2);
+        e = y1Var;
+        f = new a2[]{a2Var, a2Var2, a2Var3, a2Var4, a2Var5, a2Var6, a2Var7, a2Var8, w1Var, x1Var, y1Var, new z1("BYTES", 11, b2.h, 2), new a2("UINT32", 12, b2Var2, 0), new a2("ENUM", 13, b2.n, 0), new a2("SFIXED32", 14, b2Var2, 5), new a2("SFIXED64", 15, b2Var, 1), new a2("SINT32", 16, b2Var2, 0), new a2("SINT64", 17, b2Var, 0)};
+    }
+
+    public a2(String str, int i9, b2 b2Var, int i10) {
+        this.a = b2Var;
+        this.b = i10;
     }
 
     public static a2 valueOf(String str) {
@@ -44,6 +60,6 @@ public final class a2 {
     }
 
     public static a2[] values() {
-        return (a2[]) s.clone();
+        return (a2[]) f.clone();
     }
 }

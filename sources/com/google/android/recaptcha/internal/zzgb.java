@@ -1,18 +1,19 @@
 package com.google.android.recaptcha.internal;
 
-import ad.l;
 import com.google.android.recaptcha.RecaptchaAction;
-import h7.j6;
-import h7.k6;
-import id.f0;
-import id.s;
+import g7.x5;
+import g7.y5;
+import hd.f0;
+import hd.s;
 import java.util.concurrent.TimeUnit;
-import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.i;
+import oc.c;
+import oc.g;
 import org.telegram.tgnet.TLObject;
-import pc.c;
-import pc.g;
+import rc.a;
+import zc.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzgb implements zzdw {
     private final zzfp zza;
@@ -25,8 +26,8 @@ public final class zzgb implements zzdw {
     public zzgb(zzfp zzfpVar, zzct zzctVar) {
         zzdu zzduVar;
         this.zza = zzfpVar;
-        int i10 = zzby.zza;
-        this.zzc = j6.a(zzfv.zza);
+        int i9 = zzby.zza;
+        this.zzc = x5.a(zzfv.zza);
         zzduVar = zzdv.zza;
         this.zzf = zzduVar;
     }
@@ -40,7 +41,7 @@ public final class zzgb implements zzdw {
             return true;
         }
         zzcg zzcgVar = (zzcg) exc;
-        return (j.a(zzcgVar.zzb(), zzce.zzd) || j.a(zzcgVar.zzb(), zzce.zze) || j.a(zzcgVar.zzb(), zzce.zzf)) ? false : true;
+        return (i.a(zzcgVar.zzb(), zzce.zzd) || i.a(zzcgVar.zzb(), zzce.zze) || i.a(zzcgVar.zzb(), zzce.zzf)) ? false : true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -49,20 +50,20 @@ public final class zzgb implements zzdw {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzp(l lVar, rc.c cVar) {
+    public final Object zzp(l lVar, qc.c cVar) {
         zzfr zzfrVar;
-        int i10;
+        int i9;
         zzcs zzcsVar;
         if (cVar instanceof zzfr) {
             zzfrVar = (zzfr) cVar;
-            int i11 = zzfrVar.zzc;
-            if ((i11 & TLObject.FLAG_31) != 0) {
-                zzfrVar.zzc = i11 - TLObject.FLAG_31;
+            int i10 = zzfrVar.zzc;
+            if ((i10 & TLObject.FLAG_31) != 0) {
+                zzfrVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzfrVar.zza;
-                Object obj2 = sc.a.a;
-                i10 = zzfrVar.zzc;
-                if (i10 != 0) {
-                    k6.b(obj);
+                Object obj2 = a.a;
+                i9 = zzfrVar.zzc;
+                if (i9 != 0) {
+                    y5.b(obj);
                     zzcs zzcsVar2 = new zzcs();
                     zzfrVar.zzd = zzcsVar2;
                     zzfrVar.zzc = 1;
@@ -71,11 +72,11 @@ public final class zzgb implements zzdw {
                     }
                     zzcsVar = zzcsVar2;
                 } else {
-                    if (i10 != 1) {
+                    if (i9 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     zzcsVar = zzfrVar.zzd;
-                    k6.b(obj);
+                    y5.b(obj);
                 }
                 zzcsVar.zzc();
                 return new Long(zzcsVar.zza(TimeUnit.MILLISECONDS));
@@ -83,26 +84,26 @@ public final class zzgb implements zzdw {
         }
         zzfrVar = new zzfr(this, cVar);
         Object obj3 = zzfrVar.zza;
-        Object obj22 = sc.a.a;
-        i10 = zzfrVar.zzc;
-        if (i10 != 0) {
+        Object obj22 = a.a;
+        i9 = zzfrVar.zzc;
+        if (i9 != 0) {
         }
         zzcsVar.zzc();
         return new Long(zzcsVar.zza(TimeUnit.MILLISECONDS));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final Object zzq(long j10, rc.c cVar) {
+    public final Object zzq(long j10, qc.c cVar) {
         return new zzhg(new zzga(this, j10, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzdw
-    public final Object zza(String str, RecaptchaAction recaptchaAction, long j10, rc.c cVar) {
+    public final Object zza(String str, RecaptchaAction recaptchaAction, long j10, qc.c cVar) {
         return new zzhg(new zzfq(this, j10, str, recaptchaAction, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzdw
-    public final Object zzb(long j10, rc.c cVar) {
+    public final Object zzb(long j10, qc.c cVar) {
         return zzq(j10, cVar);
     }
 

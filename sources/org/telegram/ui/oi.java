@@ -1,32 +1,71 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class oi implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ag.k0 b;
-    public final /* synthetic */ rn c;
-    public final /* synthetic */ rn d;
+public final class oi extends ve.d {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Cells.t1 f;
+    public final /* synthetic */ qn g;
 
-    public oi(rn rnVar, int i10, ag.k0 k0Var, rn rnVar2) {
-        this.d = rnVar;
-        this.a = i10;
-        this.b = k0Var;
-        this.c = rnVar2;
+    public /* synthetic */ oi(qn qnVar, int i9, org.telegram.ui.Cells.t1 t1Var, int i10) {
+        this.d = i10;
+        this.g = qnVar;
+        this.e = i9;
+        this.f = t1Var;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12;
-        int i13 = NotificationCenter.messagesDidLoad;
-        if (i10 == i13 && ((Integer) objArr[10]).intValue() == this.a) {
-            this.b.run();
-            AndroidUtilities.runOnUIThread(new h3.f0(this.c, i10, i11, objArr), 50L);
-            i12 = ((org.telegram.ui.ActionBar.n2) this.d).currentAccount;
-            NotificationCenter.getInstance(i12).removeObserver(this, i13);
+    @Override // ve.d
+    public final void c(boolean z10) {
+        switch (this.d) {
+            case 0:
+                if (!z10) {
+                    AndroidUtilities.runOnUIThread(new bg.c2(this, this.e, 20), 240L);
+                    break;
+                }
+                break;
+            case 1:
+                if (!z10) {
+                    AndroidUtilities.runOnUIThread(new bg.c2(this, this.e, 22), 240L);
+                    break;
+                }
+                break;
+            default:
+                if (!z10) {
+                    AndroidUtilities.runOnUIThread(new bg.c2(this, this.e, 23), 240L);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // ve.d
+    public final void d() {
+        switch (this.d) {
+            case 0:
+                int i9 = this.e;
+                qn qnVar = this.g;
+                qnVar.sb = i9;
+                qnVar.tb = 6;
+                this.f.invalidate();
+                break;
+            case 1:
+                int i10 = this.e;
+                qn qnVar2 = this.g;
+                qnVar2.sb = i10;
+                qnVar2.tb = 5;
+                qnVar2.vb = null;
+                this.f.invalidate();
+                break;
+            default:
+                int i11 = this.e;
+                qn qnVar3 = this.g;
+                qnVar3.sb = i11;
+                qnVar3.tb = 7;
+                this.f.invalidate();
+                break;
         }
     }
 }

@@ -1,118 +1,37 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import android.icu.text.Collator;
+import java.util.Comparator;
 import java.util.HashMap;
-import java.util.LinkedHashSet;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.a61;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class hk implements Utilities.Callback {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+public final /* synthetic */ class hk implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ hk(SendMessagesHelper sendMessagesHelper, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10) {
-        this.c = sendMessagesHelper;
-        this.d = arrayList;
-        this.e = arrayList2;
-        this.f = arrayList3;
-        this.g = delayedMessage;
-        this.b = z10;
+    public /* synthetic */ hk(Object obj, int i9) {
+        this.a = i9;
+        this.b = obj;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        ArrayList<TLRPC.Document> arrayList;
-        ArrayList<TLRPC.Document> arrayList2;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$getMusicDialogsSortedByVisibleOrder$1;
+        int lambda$getLocales$3;
+        int lambda$getLanguages$1;
         switch (this.a) {
             case 0:
-                ((SendMessagesHelper) this.c).lambda$performSendMessageRequestMulti$64((ArrayList) this.d, (ArrayList) this.e, (ArrayList) this.f, (SendMessagesHelper.DelayedMessage) this.g, this.b, (TLObject) obj);
-                break;
+                lambda$getMusicDialogsSortedByVisibleOrder$1 = TelegramMediaSession.lambda$getMusicDialogsSortedByVisibleOrder$1((HashMap) this.b, (Long) obj, (Long) obj2);
+                return lambda$getMusicDialogsSortedByVisibleOrder$1;
             case 1:
-                ProfileActivity profileActivity = (ProfileActivity) this.c;
-                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) this.d;
-                TLRPC.User user = (TLRPC.User) this.e;
-                TLRPC.ChatParticipant chatParticipant = (TLRPC.ChatParticipant) this.f;
-                String str = (String) this.g;
-                Integer num = (Integer) obj;
-                profileActivity.getClass();
-                boolean z10 = this.b;
-                if (channelParticipant != null) {
-                    profileActivity.A4(num.intValue(), user, chatParticipant, channelParticipant.admin_rights, channelParticipant.banned_rights, channelParticipant.rank, z10);
-                    break;
-                } else {
-                    profileActivity.A4(num.intValue(), user, chatParticipant, null, null, str, z10);
-                    break;
-                }
+                lambda$getLocales$3 = TranslateController.lambda$getLocales$3((LocaleController.LocaleInfo) this.b, (LocaleController.LocaleInfo) obj, (LocaleController.LocaleInfo) obj2);
+                return lambda$getLocales$3;
             default:
-                a61 a61Var = (a61) this.c;
-                LinkedHashSet linkedHashSet = (LinkedHashSet) this.e;
-                String str2 = (String) this.f;
-                HashMap hashMap = (HashMap) this.g;
-                ArrayList arrayList3 = (ArrayList) this.d;
-                Runnable runnable = (Runnable) obj;
-                int i10 = a61Var.R;
-                if (this.b) {
-                    ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i10).getStickerSets(5);
-                    for (int i11 = 0; i11 < stickerSets.size(); i11++) {
-                        if (stickerSets.get(i11).documents != null && (arrayList2 = stickerSets.get(i11).documents) != null) {
-                            for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-                                String findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(arrayList2.get(i12), null);
-                                long j10 = arrayList2.get(i12).id;
-                                if (findAnimatedEmojiEmoticon != null && !linkedHashSet.contains(Long.valueOf(j10)) && str2.contains(findAnimatedEmojiEmoticon.toLowerCase())) {
-                                    linkedHashSet.add(Long.valueOf(j10));
-                                }
-                            }
-                        }
-                    }
-                    ArrayList<TLRPC.StickerSetCovered> featuredEmojiSets = MediaDataController.getInstance(i10).getFeaturedEmojiSets();
-                    for (int i13 = 0; i13 < featuredEmojiSets.size(); i13++) {
-                        if ((featuredEmojiSets.get(i13) instanceof TLRPC.TL_stickerSetFullCovered) && ((TLRPC.TL_stickerSetFullCovered) featuredEmojiSets.get(i13)).keywords != null && (arrayList = ((TLRPC.TL_stickerSetFullCovered) featuredEmojiSets.get(i13)).documents) != null) {
-                            for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                                String findAnimatedEmojiEmoticon2 = MessageObject.findAnimatedEmojiEmoticon(arrayList.get(i14), null);
-                                long j11 = arrayList.get(i14).id;
-                                if (findAnimatedEmojiEmoticon2 != null && !linkedHashSet.contains(Long.valueOf(j11)) && str2.contains(findAnimatedEmojiEmoticon2)) {
-                                    linkedHashSet.add(Long.valueOf(j11));
-                                }
-                            }
-                        }
-                    }
-                    runnable.run();
-                    break;
-                } else {
-                    MediaDataController.getInstance(i10).getEmojiSuggestions(a61.W1, str2, false, new f1.a(a61Var, linkedHashSet, hashMap, arrayList3, runnable), null, true, a61Var.S == 3, false, 30);
-                    break;
-                }
-                break;
+                lambda$getLanguages$1 = TranslateController.lambda$getLanguages$1((Collator) this.b, (TranslateController.Language) obj, (TranslateController.Language) obj2);
+                return lambda$getLanguages$1;
         }
-    }
-
-    public /* synthetic */ hk(ProfileActivity profileActivity, TLRPC.ChannelParticipant channelParticipant, TLRPC.User user, TLRPC.ChatParticipant chatParticipant, boolean z10, String str) {
-        this.c = profileActivity;
-        this.d = channelParticipant;
-        this.e = user;
-        this.f = chatParticipant;
-        this.b = z10;
-        this.g = str;
-    }
-
-    public /* synthetic */ hk(a61 a61Var, boolean z10, LinkedHashSet linkedHashSet, String str, HashMap hashMap, ArrayList arrayList) {
-        this.c = a61Var;
-        this.b = z10;
-        this.e = linkedHashSet;
-        this.f = str;
-        this.g = hashMap;
-        this.d = arrayList;
     }
 }

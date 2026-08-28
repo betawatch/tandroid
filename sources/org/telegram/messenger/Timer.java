@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class Timer {
     final String name;
@@ -10,7 +10,7 @@ public class Timer {
     public ArrayList<Task> tasks = new ArrayList<>();
     final long startTime = System.currentTimeMillis();
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class Log extends Task {
         public Log(String str) {
             super(str);
@@ -22,7 +22,7 @@ public class Timer {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class Task {
         int pad;
         final String task;
@@ -38,9 +38,9 @@ public class Timer {
         public void done() {
             if (this.endTime < 0) {
                 Timer timer = Timer.this;
-                int i10 = timer.pad;
-                timer.pad = i10 - 1;
-                this.pad = i10;
+                int i9 = timer.pad;
+                timer.pad = i9 - 1;
+                this.pad = i9;
             }
             this.endTime = System.currentTimeMillis();
         }
@@ -49,7 +49,7 @@ public class Timer {
             StringBuilder sb2 = new StringBuilder();
             sb2.append(this.task);
             sb2.append(": ");
-            sb2.append(this.endTime < 0 ? "not done" : a9.p.o(new StringBuilder(), this.endTime - this.startTime, "ms"));
+            sb2.append(this.endTime < 0 ? "not done" : aa.d.q(new StringBuilder(), this.endTime - this.startTime, "ms"));
             return sb2.toString();
         }
     }
@@ -97,16 +97,16 @@ public class Timer {
         sb2.append(" total=");
         sb2.append(currentTimeMillis);
         sb2.append("ms\n");
-        for (int i10 = 0; i10 < this.tasks.size(); i10++) {
-            if (this.tasks.get(i10) != null) {
+        for (int i9 = 0; i9 < this.tasks.size(); i9++) {
+            if (this.tasks.get(i9) != null) {
                 sb2.append("#");
-                sb2.append(i10);
-                int i11 = this.tasks.get(i10).pad;
-                for (int i12 = 0; i12 < i11; i12++) {
+                sb2.append(i9);
+                int i10 = this.tasks.get(i9).pad;
+                for (int i11 = 0; i11 < i10; i11++) {
                     sb2.append(" ");
                 }
                 sb2.append(" ");
-                sb2.append(this.tasks.get(i10));
+                sb2.append(this.tasks.get(i9));
                 sb2.append("\n");
             }
         }

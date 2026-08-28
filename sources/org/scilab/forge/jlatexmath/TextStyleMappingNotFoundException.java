@@ -1,13 +1,13 @@
 package org.scilab.forge.jlatexmath;
 
-import a9.p;
+import aa.d;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class TextStyleMappingNotFoundException extends JMathTeXException {
     private static final long serialVersionUID = 4887043712790844966L;
 
     public TextStyleMappingNotFoundException(String str) {
-        super(p.m("No mapping found for the text style '", str, "'! Insert a <TextStyleMapping>-element in 'DefaultTeXFont.xml'."));
+        super(d.o("No mapping found for the text style '", str, "'! Insert a <TextStyleMapping>-element in 'DefaultTeXFont.xml'."));
     }
 }

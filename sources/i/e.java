@@ -9,17 +9,17 @@ import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.StateSet;
-import g7.v7;
+import f7.h8;
 import k2.p;
 import m.n2;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class e extends f implements j0.b {
     public boolean A;
     public b B;
-    public v7 C;
+    public h8 C;
     public int D;
     public int E;
     public boolean F;
@@ -58,13 +58,13 @@ public final class e extends f implements j0.b {
         }
         e eVar = new e(null, null);
         TypedArray f10 = h0.b.f(resources2, theme, attributeSet, j.c.a);
-        int i10 = 1;
+        int i9 = 1;
         eVar.setVisible(f10.getBoolean(1, true), true);
         b bVar = eVar.B;
         bVar.d |= j.b.b(f10);
-        int i11 = 2;
+        int i10 = 2;
         bVar.i = f10.getBoolean(2, bVar.i);
-        int i12 = 3;
+        int i11 = 3;
         bVar.l = f10.getBoolean(3, bVar.l);
         bVar.y = f10.getInt(4, bVar.y);
         bVar.z = f10.getInt(5, bVar.z);
@@ -73,13 +73,13 @@ public final class e extends f implements j0.b {
         b bVar2 = eVar.a;
         if (resources2 != null) {
             bVar2.b = resources2;
-            int i13 = resources2.getDisplayMetrics().densityDpi;
-            if (i13 == 0) {
-                i13 = 160;
+            int i12 = resources2.getDisplayMetrics().densityDpi;
+            if (i12 == 0) {
+                i12 = 160;
             }
-            int i14 = bVar2.c;
-            bVar2.c = i13;
-            if (i14 != i13) {
+            int i13 = bVar2.c;
+            bVar2.c = i12;
+            if (i13 != i12) {
                 bVar2.m = false;
                 bVar2.j = false;
             }
@@ -90,31 +90,31 @@ public final class e extends f implements j0.b {
         int depth2 = xmlResourceParser.getDepth() + 1;
         while (true) {
             int next3 = xmlResourceParser.next();
-            if (next3 == i10 || ((depth = xmlResourceParser.getDepth()) < depth2 && next3 == i12)) {
+            if (next3 == i9 || ((depth = xmlResourceParser.getDepth()) < depth2 && next3 == i11)) {
                 break;
             }
-            if (next3 == i11 && depth <= depth2) {
+            if (next3 == i10 && depth <= depth2) {
                 if (xmlResourceParser.getName().equals("item")) {
                     TypedArray f11 = h0.b.f(resources2, theme, attributeSet, j.c.b);
                     int resourceId = f11.getResourceId(z10 ? 1 : 0, z10 ? 1 : 0);
-                    int resourceId2 = f11.getResourceId(i10, -1);
+                    int resourceId2 = f11.getResourceId(i9, -1);
                     Drawable g10 = resourceId2 > 0 ? n2.d().g(context2, resourceId2) : null;
                     f11.recycle();
                     int attributeCount = attributeSet.getAttributeCount();
                     int[] iArr = new int[attributeCount];
-                    int i15 = 0;
-                    for (int i16 = 0; i16 < attributeCount; i16++) {
-                        int attributeNameResource = attributeSet.getAttributeNameResource(i16);
+                    int i14 = 0;
+                    for (int i15 = 0; i15 < attributeCount; i15++) {
+                        int attributeNameResource = attributeSet.getAttributeNameResource(i15);
                         if (attributeNameResource != 0 && attributeNameResource != 16842960 && attributeNameResource != 16843161) {
-                            int i17 = i15 + 1;
-                            if (!attributeSet.getAttributeBooleanValue(i16, z10)) {
+                            int i16 = i14 + 1;
+                            if (!attributeSet.getAttributeBooleanValue(i15, z10)) {
                                 attributeNameResource = -attributeNameResource;
                             }
-                            iArr[i15] = attributeNameResource;
-                            i15 = i17;
+                            iArr[i14] = attributeNameResource;
+                            i14 = i16;
                         }
                     }
-                    int[] trimStateSet = StateSet.trimStateSet(iArr, i15);
+                    int[] trimStateSet = StateSet.trimStateSet(iArr, i14);
                     if (g10 == null) {
                         do {
                             next2 = xmlResourceParser.next();
@@ -177,17 +177,17 @@ public final class e extends f implements j0.b {
                     }
                     context2 = context;
                     resources2 = resources;
-                    i10 = 1;
+                    i9 = 1;
                     z10 = false;
-                    i11 = 2;
-                    i12 = 3;
+                    i10 = 2;
+                    i11 = 3;
                 } else {
                     context2 = context;
                     resources2 = resources;
                 }
-                i10 = 1;
-                i11 = 2;
-                i12 = 3;
+                i9 = 1;
+                i10 = 2;
+                i11 = 3;
             }
         }
         throw new XmlPullParserException(xmlResourceParser.getPositionDescription() + ": <transition> tag requires 'fromId' & 'toId' attributes");
@@ -202,9 +202,9 @@ public final class e extends f implements j0.b {
     @Override // i.f
     public final void d(b bVar) {
         this.a = bVar;
-        int i10 = this.h;
-        if (i10 >= 0) {
-            Drawable d = bVar.d(i10);
+        int i9 = this.h;
+        if (i9 >= 0) {
+            Drawable d = bVar.d(i9);
             this.c = d;
             if (d != null) {
                 b(d);
@@ -234,9 +234,9 @@ public final class e extends f implements j0.b {
     @Override // i.f, android.graphics.drawable.Drawable
     public final void jumpToCurrentState() {
         super.jumpToCurrentState();
-        v7 v7Var = this.C;
-        if (v7Var != null) {
-            v7Var.d();
+        h8 h8Var = this.C;
+        if (h8Var != null) {
+            h8Var.d();
             this.C = null;
             c(this.D);
             this.D = -1;
@@ -265,38 +265,38 @@ public final class e extends f implements j0.b {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onStateChange(int[] iArr) {
-        int i10;
-        v7 aVar;
+        int i9;
+        h8 aVar;
         b bVar = this.B;
         int f10 = bVar.f(iArr);
         if (f10 < 0) {
             f10 = bVar.f(StateSet.WILD_CARD);
         }
         if (f10 != this.h) {
-            v7 v7Var = this.C;
-            if (v7Var != null) {
+            h8 h8Var = this.C;
+            if (h8Var != null) {
                 if (f10 != this.D) {
-                    if (f10 == this.E && v7Var.a()) {
-                        v7Var.b();
+                    if (f10 == this.E && h8Var.a()) {
+                        h8Var.b();
                         this.D = this.E;
                         this.E = f10;
                     } else {
-                        i10 = this.D;
-                        v7Var.d();
+                        i9 = this.D;
+                        h8Var.d();
                     }
                 }
                 r2 = true;
             } else {
-                i10 = this.h;
+                i9 = this.h;
             }
             this.C = null;
             this.E = -1;
             this.D = -1;
             b bVar2 = this.B;
-            int e9 = bVar2.e(i10);
-            int e10 = bVar2.e(f10);
-            if (e10 != 0 && e9 != 0) {
-                long j10 = e10 | (e9 << 32);
+            int e10 = bVar2.e(i9);
+            int e11 = bVar2.e(f10);
+            if (e11 != 0 && e10 != 0) {
+                long j10 = e11 | (e10 << 32);
                 int longValue = (int) ((Long) bVar2.I.g(-1L, j10)).longValue();
                 if (longValue >= 0) {
                     boolean z10 = (((Long) bVar2.I.g(-1L, j10)).longValue() & 8589934592L) != 0;
@@ -311,7 +311,7 @@ public final class e extends f implements j0.b {
                     }
                     aVar.c();
                     this.C = aVar;
-                    this.E = i10;
+                    this.E = i9;
                     this.D = f10;
                     r2 = true;
                 }
@@ -324,10 +324,10 @@ public final class e extends f implements j0.b {
     @Override // i.f, android.graphics.drawable.Drawable
     public final boolean setVisible(boolean z10, boolean z11) {
         boolean visible = super.setVisible(z10, z11);
-        v7 v7Var = this.C;
-        if (v7Var != null && (visible || z11)) {
+        h8 h8Var = this.C;
+        if (h8Var != null && (visible || z11)) {
             if (z10) {
-                v7Var.c();
+                h8Var.c();
                 return visible;
             }
             jumpToCurrentState();

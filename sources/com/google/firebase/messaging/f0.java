@@ -11,7 +11,7 @@ import java.util.ArrayDeque;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class f0 implements ServiceConnection {
     public final Context a;
@@ -22,7 +22,7 @@ public final class f0 implements ServiceConnection {
     public boolean f;
 
     public f0(Context context) {
-        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(0, new f9.v("Firebase-FirebaseInstanceIdServiceConnection"));
+        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(0, new e9.v("Firebase-FirebaseInstanceIdServiceConnection"));
         this.d = new ArrayDeque();
         this.f = false;
         Context applicationContext = context.getApplicationContext();
@@ -63,7 +63,7 @@ public final class f0 implements ServiceConnection {
             }
             e0Var = new e0(intent);
             ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = this.c;
-            e0Var.b.getTask().addOnCompleteListener(scheduledThreadPoolExecutor, new a1.c(scheduledThreadPoolExecutor.schedule(new af.e(e0Var, 29), 20L, TimeUnit.SECONDS), 17));
+            e0Var.b.getTask().addOnCompleteListener(scheduledThreadPoolExecutor, new a1.c(scheduledThreadPoolExecutor.schedule(new af.e(e0Var, 22), 20L, TimeUnit.SECONDS), 18));
             this.d.add(e0Var);
             a();
         } catch (Throwable th) {
@@ -80,7 +80,7 @@ public final class f0 implements ServiceConnection {
     public final void c() {
         f0 f0Var;
         ArrayDeque arrayDeque;
-        e6.a a2;
+        d6.a a2;
         Context context;
         if (Log.isLoggable("FirebaseMessaging", 3)) {
             StringBuilder sb2 = new StringBuilder("binder is dead. start connection? ");
@@ -92,12 +92,12 @@ public final class f0 implements ServiceConnection {
         }
         this.f = true;
         try {
-            a2 = e6.a.a();
+            a2 = d6.a.a();
             context = this.a;
             f0Var = this;
             try {
-            } catch (SecurityException e9) {
-                e = e9;
+            } catch (SecurityException e10) {
+                e = e10;
                 Log.e("FirebaseMessaging", "Exception while binding the service", e);
                 f0Var.f = false;
                 while (true) {
@@ -107,8 +107,8 @@ public final class f0 implements ServiceConnection {
                     ((e0) arrayDeque.poll()).b.trySetResult(null);
                 }
             }
-        } catch (SecurityException e10) {
-            e = e10;
+        } catch (SecurityException e11) {
+            e = e11;
             f0Var = this;
         }
         if (a2.c(context, context.getClass().getName(), this.b, f0Var, 65, null)) {

@@ -1,31 +1,147 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.style.CharacterStyle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.UndoView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class zk extends UndoView {
-    public final /* synthetic */ rn b0;
+public final class zk extends org.telegram.ui.ActionBar.h5 {
+    public final /* synthetic */ int I0;
+    public final Object J0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zk(rn rnVar, Activity activity, rn rnVar2, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(activity, rnVar2, true, c6Var);
-        this.b0 = rnVar;
+    public /* synthetic */ zk(Object obj, Context context, int i9) {
+        super(context);
+        this.I0 = i9;
+        this.J0 = obj;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void b(CharacterStyle characterStyle) {
-        this.b0.U7(characterStyle, false, null, null);
+    @Override // org.telegram.ui.ActionBar.h5
+    public boolean k(CharSequence charSequence) {
+        org.telegram.ui.ActionBar.h5 h5Var;
+        switch (this.I0) {
+            case 1:
+                AtomicReference atomicReference = (AtomicReference) this.J0;
+                if (atomicReference != null && (h5Var = (org.telegram.ui.ActionBar.h5) atomicReference.get()) != null) {
+                    h5Var.k(charSequence);
+                }
+                return l(charSequence, false);
+            default:
+                return super.k(charSequence);
+        }
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void k(long j10, int i10, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
-        int i11;
-        xj xjVar = this.b0.T1;
-        setAdditionalTranslationY((xjVar == null || !(((i11 = xjVar.P) == 1 || i11 == 3) && xjVar.O)) ? 0.0f : AndroidUtilities.dp(xjVar.getStyleHeight()));
-        super.k(j10, i10, obj, obj2, runnable, runnable2);
+    @Override // org.telegram.ui.ActionBar.h5, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.I0) {
+            case 2:
+                super.onAttachedToWindow();
+                ((yo0) this.J0).s.a();
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.h5, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.I0) {
+            case 2:
+                super.onDetachedFromWindow();
+                ((yo0) this.J0).s.b();
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.h5, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.I0) {
+            case 3:
+                int rightDrawableX = getRightDrawableX();
+                super.onDraw(canvas);
+                if (rightDrawableX != getRightDrawableX()) {
+                    ((ProfileActivity) this.J0).V4();
+                    break;
+                }
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.h5, android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.I0) {
+            case 3:
+                ProfileActivity profileActivity = (ProfileActivity) this.J0;
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                if (isFocusable()) {
+                    if (profileActivity.h != null || profileActivity.n != null) {
+                        StringBuilder sb2 = new StringBuilder(getText());
+                        if (profileActivity.n != null) {
+                            if (sb2.length() > 0) {
+                                sb2.append(", ");
+                            }
+                            sb2.append(profileActivity.n);
+                        }
+                        if (profileActivity.h != null) {
+                            if (sb2.length() > 0) {
+                                sb2.append(", ");
+                            }
+                            sb2.append(profileActivity.h);
+                        }
+                        accessibilityNodeInfo.setText(sb2);
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f10) {
+        org.telegram.ui.ActionBar.h5 h5Var;
+        switch (this.I0) {
+            case 0:
+                super.setTranslationY(f10);
+                qn qnVar = (qn) this.J0;
+                if (this == qnVar.z2[0] && qnVar.D2[1] != null) {
+                    if (qnVar.K4 && f10 < 0.0f) {
+                        qnVar.v2.setTranslationY(f10 / 2.0f);
+                        break;
+                    } else {
+                        qnVar.v2.setTranslationY(0.0f);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                AtomicReference atomicReference = (AtomicReference) this.J0;
+                if (atomicReference != null && (h5Var = (org.telegram.ui.ActionBar.h5) atomicReference.get()) != null) {
+                    h5Var.setTranslationY(f10);
+                }
+                super.setTranslationY(f10);
+                break;
+            default:
+                super.setTranslationY(f10);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zk(Context context, AtomicReference atomicReference) {
+        super(context);
+        this.I0 = 1;
+        this.J0 = atomicReference;
     }
 }

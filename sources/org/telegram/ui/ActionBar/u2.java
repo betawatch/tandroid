@@ -1,55 +1,45 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class u2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class u2 extends TextView {
+    public final /* synthetic */ f3 a;
 
-    public /* synthetic */ u2(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u2(f3 f3Var, Context context) {
+        super(context);
+        this.a = f3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i9, int i10) {
         boolean z10;
-        switch (this.a) {
-            case 0:
-                e3 e3Var = (e3) this.b;
-                if (e3Var.startAnimationRunnable == this) {
-                    z10 = e3Var.dismissed;
-                    if (!z10) {
-                        e3Var.startAnimationRunnable = null;
-                        e3.access$2400(e3Var);
-                        break;
+        View view;
+        View view2;
+        super.onMeasure(i9, i10);
+        f3 f3Var = this.a;
+        z10 = f3Var.multipleLinesTitle;
+        if (z10) {
+            int measuredHeight = getMeasuredHeight();
+            view = f3Var.customView;
+            if (view != null) {
+                view2 = f3Var.customView;
+                ((ViewGroup.MarginLayoutParams) view2.getLayoutParams()).topMargin = measuredHeight;
+            } else if (f3Var.containerView != null) {
+                for (int i11 = 1; i11 < f3Var.containerView.getChildCount(); i11++) {
+                    View childAt = f3Var.containerView.getChildAt(i11);
+                    if (childAt instanceof y2) {
+                        ((ViewGroup.MarginLayoutParams) childAt.getLayoutParams()).topMargin = measuredHeight;
+                        measuredHeight = AndroidUtilities.dp(48.0f) + measuredHeight;
                     }
                 }
-                break;
-            case 1:
-                ActionBarLayout actionBarLayout = (ActionBarLayout) this.b;
-                if (actionBarLayout.d == this) {
-                    actionBarLayout.d = null;
-                    actionBarLayout.d0(false, true, false);
-                    break;
-                }
-                break;
-            case 2:
-                p1 p1Var = (p1) this.b;
-                ValueAnimator valueAnimator = p1Var.m;
-                if (valueAnimator != null && !valueAnimator.isRunning()) {
-                    p1Var.m.start();
-                    break;
-                }
-                break;
-            default:
-                t4 t4Var = (t4) this.b;
-                t4Var.k();
-                t4Var.j();
-                t4Var.f.setAlpha(1.0f);
-                break;
+            }
         }
     }
 }

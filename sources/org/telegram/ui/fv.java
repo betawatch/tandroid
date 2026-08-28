@@ -1,58 +1,33 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fv implements Runnable {
+public final /* synthetic */ class fv implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
+    public final /* synthetic */ dy b;
 
-    public /* synthetic */ fv(Context context, int i10) {
-        this.a = i10;
-        this.b = context;
+    public /* synthetic */ fv(dy dyVar, int i9) {
+        this.a = i9;
+        this.b = dyVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.g6.J(this.b, false);
+                dy dyVar = this.b;
+                dyVar.getClass();
+                dyVar.z4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 1:
-                Activity findActivity = AndroidUtilities.findActivity(this.b);
-                if (findActivity == null) {
-                    findActivity = LaunchActivity.C1;
-                }
-                if (findActivity != null && !findActivity.isFinishing()) {
-                    findActivity.moveTaskToBack(true);
-                    break;
-                }
-                break;
-            case 2:
-                we.e.s(this.b, "https://promote.telegram.org/guidelines");
-                break;
-            case 3:
-                we.e.s(this.b, "https://promote.telegram.org/guidelines");
-                break;
-            case 4:
-                we.e.s(this.b, "https://promote.telegram.org/guidelines");
-                break;
-            case 5:
-                we.e.s(this.b, "https://promote.telegram.org/guidelines");
-                break;
-            case 6:
-                we.e.s(this.b, "https://promote.telegram.org/guidelines");
-                break;
-            case 7:
-                we.e.s(this.b, "https://promote.telegram.org/guidelines");
+                this.b.D4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                we.e.s(this.b, LocaleController.getString(R.string.WebAppDisclaimerUrl));
+                dy dyVar2 = this.b;
+                dyVar2.getClass();
+                dyVar2.F4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

@@ -1,42 +1,44 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class as implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.view.View;
 
-    public /* synthetic */ as(org.telegram.ui.ActionBar.b2[] b2VarArr, int i10) {
-        this.a = i10;
-        this.b = b2VarArr;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes3.dex */
+public final class as extends View {
+    public final Paint a;
+    public final Matrix b;
+    public LinearGradient c;
+    public int d;
+    public float e;
+    public float f;
+
+    public as(Context context) {
+        super(context);
+        this.a = new Paint(1);
+        this.b = new Matrix();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.b2 b2Var = this.b[0];
-                if (b2Var != null) {
-                    b2Var.dismiss();
-                    break;
-                }
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.b2[] b2VarArr = this.b;
-                try {
-                    b2VarArr[0].dismiss();
-                } catch (Throwable unused) {
-                }
-                b2VarArr[0] = null;
-                break;
-            default:
-                org.telegram.ui.ActionBar.b2[] b2VarArr2 = this.b;
-                try {
-                    b2VarArr2[0].dismiss();
-                } catch (Throwable unused2) {
-                }
-                b2VarArr2[0] = null;
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), this.e + this.f, this.a);
+    }
+
+    public void setColor(int i9) {
+        if (this.d != i9) {
+            this.d = i9;
+            int alpha = Color.alpha(i9);
+            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.k(i9, (alpha * 232) / 255), i0.a.k(i9, (alpha * 192) / 255), i0.a.k(i9, (alpha * 144) / 255), i0.a.k(i9, 0)}, (float[]) null, Shader.TileMode.CLAMP);
+            this.c = linearGradient;
+            this.a.setShader(linearGradient);
+            this.c.setLocalMatrix(this.b);
+            invalidate();
         }
     }
 }

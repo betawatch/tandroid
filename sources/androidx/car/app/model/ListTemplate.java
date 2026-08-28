@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class ListTemplate implements x0 {
     static final int MAX_ALLOWED_ITEMS = 100;
@@ -24,9 +24,9 @@ public final class ListTemplate implements x0 {
         this.mTitle = uVar.d;
         this.mHeaderAction = uVar.e;
         this.mSingleList = uVar.b;
-        this.mSectionedLists = androidx.car.app.utils.i.g(uVar.c);
+        this.mSectionedLists = androidx.car.app.utils.j.g(uVar.c);
         this.mActionStrip = uVar.f;
-        this.mActions = androidx.car.app.utils.i.g(uVar.g);
+        this.mActions = androidx.car.app.utils.j.g(uVar.g);
     }
 
     public static List<SectionedItemList> getTruncatedCopy(List<SectionedItemList> list) {
@@ -60,9 +60,9 @@ public final class ListTemplate implements x0 {
                     break;
                 }
                 androidx.car.app.messaging.model.f fVar = new androidx.car.app.messaging.model.f(conversationItem);
-                int i10 = vVar.a - 1;
-                vVar.a = i10;
-                int min = Math.min(i10, 10);
+                int i9 = vVar.a - 1;
+                vVar.a = i9;
+                int min = Math.min(i9, 10);
                 int size = conversationItem.getMessages().size();
                 int min2 = Math.min(size, min);
                 fVar.f = conversationItem.getMessages().subList(size - min2, size);
@@ -75,15 +75,15 @@ public final class ListTemplate implements x0 {
             if (size2 == 0) {
                 throw new IllegalStateException("A selectable list cannot be empty");
             }
-            int i11 = rVar.b;
-            if (i11 >= size2) {
-                throw new IllegalStateException("The selected item index (" + i11 + ") is larger than the size of the list (" + size2 + ")");
+            int i10 = rVar.b;
+            if (i10 >= size2) {
+                throw new IllegalStateException("The selected item index (" + i10 + ") is larger than the size of the list (" + size2 + ")");
             }
             int size3 = arrayList.size();
-            int i12 = 0;
-            while (i12 < size3) {
-                Object obj = arrayList.get(i12);
-                i12++;
+            int i11 = 0;
+            while (i11 < size3) {
+                Object obj = arrayList.get(i11);
+                i11++;
                 q qVar2 = (q) obj;
                 if (ItemList.getOnClickDelegate(qVar2) != null) {
                     throw new IllegalStateException("Items that belong to selectable lists can't have an onClickListener. Use the OnSelectedListener of the list instead");

@@ -1,25 +1,19 @@
 package h7;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class h6 {
-    public static SharedPreferences a;
+public final class h6 implements q9.d {
+    public static final h6 a = new h6();
 
-    public static SharedPreferences a(Context context) {
-        SharedPreferences sharedPreferences;
-        synchronized (SharedPreferences.class) {
-            try {
-                if (a == null) {
-                    a = (SharedPreferences) t8.a(new e7.p(context, 9));
-                }
-                sharedPreferences = a;
-            } catch (Throwable th) {
-                throw th;
-            }
+    static {
+        e2.c.u(e2.c.s(h0.class, e2.c.j(3, e2.c.s(h0.class, e2.c.j(2, e2.c.s(h0.class, new e0(1)))))));
+    }
+
+    @Override // q9.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return sharedPreferences;
+        throw null;
     }
 }

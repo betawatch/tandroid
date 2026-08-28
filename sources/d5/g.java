@@ -2,7 +2,7 @@ package d5;
 
 import android.util.SparseBooleanArray;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class g {
     public final SparseBooleanArray a;
@@ -11,10 +11,10 @@ public final class g {
         this.a = sparseBooleanArray;
     }
 
-    public final int a(int i10) {
+    public final int a(int i9) {
         SparseBooleanArray sparseBooleanArray = this.a;
-        a.h(i10, sparseBooleanArray.size());
-        return sparseBooleanArray.keyAt(i10);
+        a.h(i9, sparseBooleanArray.size());
+        return sparseBooleanArray.keyAt(i9);
     }
 
     public final boolean equals(Object obj) {
@@ -26,16 +26,16 @@ public final class g {
         }
         g gVar = (g) obj;
         SparseBooleanArray sparseBooleanArray = gVar.a;
-        int i10 = g0.a;
+        int i9 = f0.a;
         SparseBooleanArray sparseBooleanArray2 = this.a;
-        if (i10 >= 24) {
+        if (i9 >= 24) {
             return sparseBooleanArray2.equals(sparseBooleanArray);
         }
         if (sparseBooleanArray2.size() != sparseBooleanArray.size()) {
             return false;
         }
-        for (int i11 = 0; i11 < sparseBooleanArray2.size(); i11++) {
-            if (a(i11) != gVar.a(i11)) {
+        for (int i10 = 0; i10 < sparseBooleanArray2.size(); i10++) {
+            if (a(i10) != gVar.a(i10)) {
                 return false;
             }
         }
@@ -43,14 +43,14 @@ public final class g {
     }
 
     public final int hashCode() {
-        int i10 = g0.a;
+        int i9 = f0.a;
         SparseBooleanArray sparseBooleanArray = this.a;
-        if (i10 >= 24) {
+        if (i9 >= 24) {
             return sparseBooleanArray.hashCode();
         }
         int size = sparseBooleanArray.size();
-        for (int i11 = 0; i11 < sparseBooleanArray.size(); i11++) {
-            size = (size * 31) + a(i11);
+        for (int i10 = 0; i10 < sparseBooleanArray.size(); i10++) {
+            size = (size * 31) + a(i10);
         }
         return size;
     }

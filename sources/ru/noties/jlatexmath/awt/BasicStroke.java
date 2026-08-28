@@ -1,6 +1,6 @@
 package ru.noties.jlatexmath.awt;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
 public class BasicStroke implements Stroke {
     public static final int CAP_BUTT = 0;
@@ -8,8 +8,8 @@ public class BasicStroke implements Stroke {
     private final float miterLimit;
     private final float width;
 
-    public BasicStroke(float f10, int i10, int i11) {
-        this(f10, i10, i11, 10.0f);
+    public BasicStroke(float f10, int i9, int i10) {
+        this(f10, i9, i10, 10.0f);
     }
 
     @Override // ru.noties.jlatexmath.awt.Stroke
@@ -26,7 +26,7 @@ public class BasicStroke implements Stroke {
         return this.width;
     }
 
-    public BasicStroke(float f10, int i10, int i11, float f11) {
+    public BasicStroke(float f10, int i9, int i10, float f11) {
         this.width = f10;
         this.miterLimit = f11;
     }

@@ -1,17 +1,17 @@
 package k4;
 
 import android.net.Uri;
-import d5.g0;
+import d5.f0;
 import h3.g;
-import ia.l;
+import i3.i;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class a implements g {
     public static final String A;
     public static final String B;
-    public static final l C;
+    public static final i C;
     public static final String r;
     public static final String s;
     public static final String v;
@@ -28,7 +28,7 @@ public final class a implements g {
     public final boolean n;
 
     static {
-        int i10 = g0.a;
+        int i9 = f0.a;
         r = Integer.toString(0, 36);
         s = Integer.toString(1, 36);
         v = Integer.toString(2, 36);
@@ -37,14 +37,14 @@ public final class a implements g {
         y = Integer.toString(5, 36);
         A = Integer.toString(6, 36);
         B = Integer.toString(7, 36);
-        C = new l(18);
+        C = new i(12);
     }
 
-    public a(long j10, int i10, int i11, int[] iArr, Uri[] uriArr, long[] jArr, long j11, boolean z10) {
+    public a(long j10, int i9, int i10, int[] iArr, Uri[] uriArr, long[] jArr, long j11, boolean z10) {
         d5.a.f(iArr.length == uriArr.length);
         this.a = j10;
-        this.b = i10;
-        this.c = i11;
+        this.b = i9;
+        this.c = i10;
         this.e = iArr;
         this.d = uriArr;
         this.f = jArr;
@@ -52,17 +52,17 @@ public final class a implements g {
         this.n = z10;
     }
 
-    public final int a(int i10) {
-        int i11;
-        int i12 = i10 + 1;
+    public final int a(int i9) {
+        int i10;
+        int i11 = i9 + 1;
         while (true) {
             int[] iArr = this.e;
-            if (i12 >= iArr.length || this.n || (i11 = iArr[i12]) == 0 || i11 == 1) {
+            if (i11 >= iArr.length || this.n || (i10 = iArr[i11]) == 0 || i10 == 1) {
                 break;
             }
-            i12++;
+            i11++;
         }
-        return i12;
+        return i11;
     }
 
     public final boolean equals(Object obj) {
@@ -79,9 +79,9 @@ public final class a implements g {
     }
 
     public final int hashCode() {
-        int i10 = ((this.b * 31) + this.c) * 31;
+        int i9 = ((this.b * 31) + this.c) * 31;
         long j10 = this.a;
-        int hashCode = (Arrays.hashCode(this.f) + ((Arrays.hashCode(this.e) + ((((i10 + ((int) (j10 ^ (j10 >>> 32)))) * 31) + Arrays.hashCode(this.d)) * 31)) * 31)) * 31;
+        int hashCode = (Arrays.hashCode(this.f) + ((Arrays.hashCode(this.e) + ((((i9 + ((int) (j10 ^ (j10 >>> 32)))) * 31) + Arrays.hashCode(this.d)) * 31)) * 31)) * 31;
         long j11 = this.h;
         return ((hashCode + ((int) (j11 ^ (j11 >>> 32)))) * 31) + (this.n ? 1 : 0);
     }

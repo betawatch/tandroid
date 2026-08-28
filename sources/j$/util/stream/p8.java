@@ -63,9 +63,9 @@ public final class p8 extends d {
         if (!b10 && this.j) {
             v6 v6Var = v6.SIZED;
             a aVar = this.h;
-            int i10 = aVar.j;
-            int i11 = v6Var.e;
-            if ((i10 & i11) == i11) {
+            int i9 = aVar.j;
+            int i10 = v6Var.e;
+            if ((i9 & i10) == i10) {
                 j10 = aVar.k0(this.b);
                 w1 A0 = this.a.A0(j10, this.i);
                 o8 h = ((n8) this.h).h(A0, (this.j || b10) ? false : true);

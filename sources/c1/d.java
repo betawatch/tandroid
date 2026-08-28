@@ -10,40 +10,39 @@ import android.os.ResultReceiver;
 import android.util.Log;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import com.google.android.gms.common.api.f;
-import g7.d0;
-import g7.q7;
-import h7.o8;
-import h7.s8;
-import h7.t7;
-import h7.u7;
+import f7.f0;
+import f7.v7;
+import g7.q8;
+import g7.w7;
+import g7.x7;
+import g7.x8;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
-import kotlin.jvm.internal.j;
-import kotlin.jvm.internal.q;
-import n6.k;
-import n6.r;
-import n6.u;
+import m6.k;
+import m6.r;
+import m6.u;
 import org.json.JSONException;
 import v0.p;
 import w0.g;
 import w0.h;
 import w0.i;
+import w0.j;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class d extends ResultReceiver {
     public final /* synthetic */ int a;
     public final /* synthetic */ b1.d b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ d(b1.d dVar, Handler handler, int i10) {
+    public /* synthetic */ d(b1.d dVar, Handler handler, int i9) {
         super(handler);
-        this.a = i10;
+        this.a = i9;
         this.b = dVar;
     }
 
     @Override // android.os.ResultReceiver
-    public final void onReceiveResult(int i10, Bundle resultData) {
+    public final void onReceiveResult(int i9, Bundle resultData) {
         w0.d dVar;
         Object parcelable;
         String string;
@@ -55,66 +54,66 @@ public final class d extends ResultReceiver {
         Bundle bundle2;
         p pVar;
         i b10;
-        int i11 = this.a;
+        int i10 = this.a;
         b1.d dVar2 = this.b;
-        switch (i11) {
+        switch (i10) {
             case 0:
-                j.e(resultData, "resultData");
+                kotlin.jvm.internal.i.e(resultData, "resultData");
                 final e eVar = (e) dVar2;
                 if (b1.d.b(resultData, new c(2, b1.d.a, b1.a.class, "getCredentialExceptionTypeToException", "getCredentialExceptionTypeToException$credentials_play_services_auth_release(Ljava/lang/String;Ljava/lang/String;)Landroidx/credentials/exceptions/GetCredentialException;", 0, 0), eVar.f(), eVar.e(), eVar.h)) {
                     return;
                 }
-                int i12 = resultData.getInt("ACTIVITY_REQUEST_CODE");
+                int i11 = resultData.getInt("ACTIVITY_REQUEST_CODE");
                 Intent intent = (Intent) resultData.getParcelable("RESULT_DATA");
-                int i13 = b1.d.c;
-                if (i12 != i13) {
-                    Log.w("BeginSignIn", "Returned request code " + i13 + " which  does not match what was given " + i12);
+                int i12 = b1.d.c;
+                if (i11 != i12) {
+                    Log.w("BeginSignIn", "Returned request code " + i12 + " which  does not match what was given " + i11);
                     return;
                 }
-                if (d0.b(i10, new b1.e(1), new b(eVar, 0), eVar.h)) {
+                if (f0.b(i9, new b1.e(1), new b(eVar, 0), eVar.h)) {
                     return;
                 }
                 try {
-                    final p d = eVar.d(q7.a(eVar.e).f(intent));
-                    final int i14 = 1;
-                    d0.a(eVar.h, new ad.a() { // from class: b1.g
-                        @Override // ad.a
+                    final p d = eVar.d(v7.a(eVar.e).f(intent));
+                    final int i13 = 1;
+                    f0.a(eVar.h, new zc.a() { // from class: b1.g
+                        @Override // zc.a
                         public final Object invoke() {
-                            switch (i14) {
+                            switch (i13) {
                                 case 0:
                                     ((Executor) eVar).execute(new a1.b((v0.i) d, 7));
                                     break;
                                 default:
                                     c1.e eVar2 = (c1.e) eVar;
-                                    eVar2.f().execute(new a1.e(14, eVar2, (p) d));
+                                    eVar2.f().execute(new a1.e(19, eVar2, (p) d));
                                     break;
                             }
-                            return pc.i.a;
+                            return oc.i.a;
                         }
                     });
                     return;
-                } catch (f e9) {
-                    q qVar = new q();
-                    qVar.a = new h(e9.getMessage(), 2);
-                    if (e9.getStatusCode() == 16) {
-                        qVar.a = new g(e9.getMessage());
-                    } else if (b1.d.b.contains(Integer.valueOf(e9.getStatusCode()))) {
-                        qVar.a = new w0.j(e9.getMessage());
+                } catch (f e10) {
+                    kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
+                    pVar2.a = new h(e10.getMessage(), 2);
+                    if (e10.getStatusCode() == 16) {
+                        pVar2.a = new g(e10.getMessage());
+                    } else if (b1.d.b.contains(Integer.valueOf(e10.getStatusCode()))) {
+                        pVar2.a = new j(e10.getMessage());
                     }
                     CancellationSignal cancellationSignal = eVar.h;
                     CredentialProviderPlayServicesImpl.Companion.getClass();
                     if (a1.g.a(cancellationSignal)) {
                         return;
                     }
-                    eVar.f().execute(new a1.e(12, eVar, qVar));
+                    eVar.f().execute(new a1.e(17, eVar, pVar2));
                     return;
-                } catch (i e10) {
+                } catch (i e11) {
                     CancellationSignal cancellationSignal2 = eVar.h;
                     CredentialProviderPlayServicesImpl.Companion.getClass();
                     if (a1.g.a(cancellationSignal2)) {
                         return;
                     }
-                    eVar.f().execute(new a(eVar, e10, 1));
+                    eVar.f().execute(new a(eVar, e11, 1));
                     return;
                 } catch (Throwable th) {
                     h hVar = new h(th.getMessage(), 2);
@@ -123,34 +122,34 @@ public final class d extends ResultReceiver {
                     if (a1.g.a(cancellationSignal3)) {
                         return;
                     }
-                    eVar.f().execute(new a1.e(13, eVar, hVar));
+                    eVar.f().execute(new a1.e(18, eVar, hVar));
                     return;
                 }
             case 1:
-                j.e(resultData, "resultData");
+                kotlin.jvm.internal.i.e(resultData, "resultData");
                 c cVar = new c(2, b1.d.a, b1.a.class, "createCredentialExceptionTypeToException", "createCredentialExceptionTypeToException$credentials_play_services_auth_release(Ljava/lang/String;Ljava/lang/String;)Landroidx/credentials/exceptions/CreateCredentialException;", 0, 1);
                 d1.e eVar2 = (d1.e) dVar2;
                 Executor executor = eVar2.g;
                 if (executor == null) {
-                    j.h("executor");
+                    kotlin.jvm.internal.i.h("executor");
                     throw null;
                 }
                 v0.i iVar = eVar2.f;
                 if (iVar == null) {
-                    j.h("callback");
+                    kotlin.jvm.internal.i.h("callback");
                     throw null;
                 }
                 if (b1.d.b(resultData, cVar, executor, iVar, eVar2.h)) {
                     return;
                 }
-                int i15 = resultData.getInt("ACTIVITY_REQUEST_CODE");
+                int i14 = resultData.getInt("ACTIVITY_REQUEST_CODE");
                 Intent intent2 = (Intent) resultData.getParcelable("RESULT_DATA");
-                int i16 = b1.d.c;
-                if (i15 != i16) {
-                    Log.w("CreatePublicKey", "Returned request code " + i16 + " does not match what was given " + i15);
+                int i15 = b1.d.c;
+                if (i14 != i15) {
+                    Log.w("CreatePublicKey", "Returned request code " + i15 + " does not match what was given " + i14);
                     return;
                 }
-                if (b1.d.c(i10, new b1.e(2), new b(eVar2, 1), eVar2.h)) {
+                if (b1.d.c(i9, new b1.e(2), new b(eVar2, 1), eVar2.h)) {
                     return;
                 }
                 byte[] byteArrayExtra = intent2 != null ? intent2.getByteArrayExtra("FIDO2_CREDENTIAL_EXTRA") : null;
@@ -166,12 +165,12 @@ public final class d extends ResultReceiver {
                         executor2.execute(new d1.d(eVar2, 1));
                         return;
                     } else {
-                        j.h("executor");
+                        kotlin.jvm.internal.i.h("executor");
                         throw null;
                     }
                 }
-                u uVar = (u) s8.a(byteArrayExtra, u.CREATOR);
-                j.d(uVar, "deserializeFromBytes(...)");
+                u uVar = (u) q8.a(byteArrayExtra, u.CREATOR);
+                kotlin.jvm.internal.i.d(uVar, "deserializeFromBytes(...)");
                 LinkedHashMap linkedHashMap = d1.g.a;
                 Parcelable parcelable3 = uVar.d;
                 if (parcelable3 == null && (parcelable3 = uVar.e) == null && (parcelable3 = uVar.f) == null) {
@@ -180,10 +179,10 @@ public final class d extends ResultReceiver {
                 if (parcelable3 instanceof k) {
                     k kVar = (k) parcelable3;
                     r rVar = kVar.a;
-                    j.d(rVar, "getErrorCode(...)");
+                    kotlin.jvm.internal.i.d(rVar, "getErrorCode(...)");
                     x0.a aVar = (x0.a) d1.g.a.get(rVar);
                     String str = kVar.b;
-                    dVar = aVar == null ? new y0.a(new x0.a(26), s3.c.e("unknown fido gms exception - ", str)) : (rVar == r.w && str != null && gd.j.b(str, "Unable to get sync account")) ? new w0.b("Passkey registration was cancelled by the user.") : new y0.a(aVar, str);
+                    dVar = aVar == null ? new y0.a(new x0.a(26), ta.b.d("unknown fido gms exception - ", str)) : (rVar == r.w && str != null && fd.j.b(str, "Unable to get sync account")) ? new w0.b("Passkey registration was cancelled by the user.") : new y0.a(aVar, str);
                 } else {
                     dVar = null;
                 }
@@ -198,12 +197,12 @@ public final class d extends ResultReceiver {
                         executor3.execute(new d1.a(eVar2, dVar, 2));
                         return;
                     } else {
-                        j.h("executor");
+                        kotlin.jvm.internal.i.h("executor");
                         throw null;
                     }
                 }
                 try {
-                    v0.f e11 = d1.e.e(uVar);
+                    v0.f e12 = d1.e.e(uVar);
                     CancellationSignal cancellationSignal6 = eVar2.h;
                     CredentialProviderPlayServicesImpl.Companion.getClass();
                     if (a1.g.a(cancellationSignal6)) {
@@ -211,13 +210,13 @@ public final class d extends ResultReceiver {
                     }
                     Executor executor4 = eVar2.g;
                     if (executor4 != null) {
-                        executor4.execute(new a1.e(29, eVar2, e11));
+                        executor4.execute(new a1.e(24, eVar2, e12));
                         return;
                     } else {
-                        j.h("executor");
+                        kotlin.jvm.internal.i.h("executor");
                         throw null;
                     }
-                } catch (JSONException e12) {
+                } catch (JSONException e13) {
                     CancellationSignal cancellationSignal7 = eVar2.h;
                     CredentialProviderPlayServicesImpl.Companion.getClass();
                     if (a1.g.a(cancellationSignal7)) {
@@ -225,10 +224,10 @@ public final class d extends ResultReceiver {
                     }
                     Executor executor5 = eVar2.g;
                     if (executor5 != null) {
-                        executor5.execute(new d1.b(eVar2, e12, 0));
+                        executor5.execute(new d1.b(eVar2, e13, 0));
                         return;
                     } else {
-                        j.h("executor");
+                        kotlin.jvm.internal.i.h("executor");
                         throw null;
                     }
                 } catch (Throwable th2) {
@@ -242,30 +241,30 @@ public final class d extends ResultReceiver {
                         executor6.execute(new d1.c(eVar2, th2, 0));
                         return;
                     } else {
-                        j.h("executor");
+                        kotlin.jvm.internal.i.h("executor");
                         throw null;
                     }
                 }
             case 2:
-                j.e(resultData, "resultData");
+                kotlin.jvm.internal.i.e(resultData, "resultData");
                 c cVar2 = new c(2, b1.d.a, b1.a.class, "createCredentialExceptionTypeToException", "createCredentialExceptionTypeToException$credentials_play_services_auth_release(Ljava/lang/String;Ljava/lang/String;)Landroidx/credentials/exceptions/CreateCredentialException;", 0, 2);
                 e1.d dVar3 = (e1.d) dVar2;
                 Executor executor7 = dVar3.g;
                 if (executor7 == null) {
-                    j.h("executor");
+                    kotlin.jvm.internal.i.h("executor");
                     throw null;
                 }
                 v0.i iVar2 = dVar3.f;
                 if (iVar2 == null) {
-                    j.h("callback");
+                    kotlin.jvm.internal.i.h("callback");
                     throw null;
                 }
                 if (b1.d.b(resultData, cVar2, executor7, iVar2, dVar3.h)) {
                     return;
                 }
-                int i17 = resultData.getInt("ACTIVITY_REQUEST_CODE");
-                int i18 = Build.VERSION.SDK_INT;
-                if (i18 >= 34) {
+                int i16 = resultData.getInt("ACTIVITY_REQUEST_CODE");
+                int i17 = Build.VERSION.SDK_INT;
+                if (i17 >= 34) {
                     parcelable = g0.a.c(resultData);
                 } else {
                     parcelable = resultData.getParcelable("RESULT_DATA");
@@ -274,12 +273,12 @@ public final class d extends ResultReceiver {
                     }
                 }
                 Intent intent3 = (Intent) parcelable;
-                int i19 = b1.d.c;
-                if (i17 != i19) {
-                    Log.w("CreatePublicKey", "Returned request code " + i19 + " does not match what was given " + i17);
+                int i18 = b1.d.c;
+                if (i16 != i18) {
+                    Log.w("CreatePublicKey", "Returned request code " + i18 + " does not match what was given " + i16);
                     return;
                 }
-                if (b1.d.c(i10, new b1.e(3), new b(dVar3, 2), dVar3.h)) {
+                if (b1.d.c(i9, new b1.e(3), new b(dVar3, 2), dVar3.h)) {
                     return;
                 }
                 if (intent3 == null) {
@@ -293,15 +292,15 @@ public final class d extends ResultReceiver {
                         executor8.execute(new e1.a(dVar3, 1));
                         return;
                     } else {
-                        j.h("executor");
+                        kotlin.jvm.internal.i.h("executor");
                         throw null;
                     }
                 }
-                if (i18 >= 34) {
+                if (i17 >= 34) {
                     a2 = g1.a.b("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", intent3);
                 } else {
                     Bundle bundleExtra = intent3.getBundleExtra("android.service.credentials.extra.CREATE_CREDENTIAL_RESPONSE");
-                    a2 = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_RESPONSE_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.CREATE_CREDENTIAL_REQUEST_DATA")) == null) ? null : t7.a(string, bundle);
+                    a2 = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_RESPONSE_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.CREATE_CREDENTIAL_REQUEST_DATA")) == null) ? null : w7.a(string, bundle);
                 }
                 if (a2 != null) {
                     CancellationSignal cancellationSignal10 = dVar3.h;
@@ -311,17 +310,17 @@ public final class d extends ResultReceiver {
                     }
                     Executor executor9 = dVar3.g;
                     if (executor9 != null) {
-                        executor9.execute(new d5.u(4, dVar3, a2));
+                        executor9.execute(new a1.e(29, dVar3, a2));
                         return;
                     } else {
-                        j.h("executor");
+                        kotlin.jvm.internal.i.h("executor");
                         throw null;
                     }
                 }
-                if (i18 >= 34) {
+                if (i17 >= 34) {
                     a3 = g1.a.a(intent3);
                 } else {
-                    int i20 = w0.d.a;
+                    int i19 = w0.d.a;
                     Bundle bundleExtra2 = intent3.getBundleExtra("android.service.credentials.extra.CREATE_CREDENTIAL_EXCEPTION");
                     if (bundleExtra2 == null) {
                         a3 = null;
@@ -330,7 +329,7 @@ public final class d extends ResultReceiver {
                         if (string3 == null) {
                             throw new IllegalArgumentException("Bundle was missing exception type.");
                         }
-                        a3 = o8.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string3);
+                        a3 = x8.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string3);
                     }
                 }
                 CancellationSignal cancellationSignal11 = dVar3.h;
@@ -343,29 +342,29 @@ public final class d extends ResultReceiver {
                     executor10.execute(new e1.c(dVar3, a3, 1));
                     return;
                 } else {
-                    j.h("executor");
+                    kotlin.jvm.internal.i.h("executor");
                     throw null;
                 }
             default:
-                j.e(resultData, "resultData");
+                kotlin.jvm.internal.i.e(resultData, "resultData");
                 c cVar3 = new c(2, b1.d.a, b1.a.class, "getCredentialExceptionTypeToException", "getCredentialExceptionTypeToException$credentials_play_services_auth_release(Ljava/lang/String;Ljava/lang/String;)Landroidx/credentials/exceptions/GetCredentialException;", 0, 3);
                 f1.b bVar = (f1.b) dVar2;
                 Executor executor11 = bVar.g;
                 if (executor11 == null) {
-                    j.h("executor");
+                    kotlin.jvm.internal.i.h("executor");
                     throw null;
                 }
                 v0.i iVar3 = bVar.f;
                 if (iVar3 == null) {
-                    j.h("callback");
+                    kotlin.jvm.internal.i.h("callback");
                     throw null;
                 }
                 if (b1.d.b(resultData, cVar3, executor11, iVar3, bVar.h)) {
                     return;
                 }
-                int i21 = resultData.getInt("ACTIVITY_REQUEST_CODE");
-                int i22 = Build.VERSION.SDK_INT;
-                if (i22 >= 34) {
+                int i20 = resultData.getInt("ACTIVITY_REQUEST_CODE");
+                int i21 = Build.VERSION.SDK_INT;
+                if (i21 >= 34) {
                     parcelable2 = g0.a.c(resultData);
                 } else {
                     parcelable2 = resultData.getParcelable("RESULT_DATA");
@@ -376,56 +375,56 @@ public final class d extends ResultReceiver {
                 Intent intent4 = (Intent) parcelable2;
                 final Executor executor12 = bVar.g;
                 if (executor12 == null) {
-                    j.h("executor");
+                    kotlin.jvm.internal.i.h("executor");
                     throw null;
                 }
                 final v0.i iVar4 = bVar.f;
                 if (iVar4 == null) {
-                    j.h("callback");
+                    kotlin.jvm.internal.i.h("callback");
                     throw null;
                 }
                 CancellationSignal cancellationSignal12 = bVar.h;
-                int i23 = b1.d.c;
-                if (i21 != i23) {
-                    Log.w("GetCredentialController", "Returned request code " + i23 + " which  does not match what was given " + i21);
+                int i22 = b1.d.c;
+                if (i20 != i22) {
+                    Log.w("GetCredentialController", "Returned request code " + i22 + " which  does not match what was given " + i20);
                     return;
                 }
-                final int i24 = 0;
-                if (d0.b(i10, new b1.e(i24), new b1.f(i24, executor12, iVar4), cancellationSignal12)) {
+                final int i23 = 0;
+                if (f0.b(i9, new b1.e(i23), new b1.f(i23, executor12, iVar4), cancellationSignal12)) {
                     return;
                 }
                 if (intent4 == null) {
-                    d0.a(cancellationSignal12, new ad.a() { // from class: b1.g
-                        @Override // ad.a
+                    f0.a(cancellationSignal12, new zc.a() { // from class: b1.g
+                        @Override // zc.a
                         public final Object invoke() {
-                            switch (i24) {
+                            switch (i23) {
                                 case 0:
                                     ((Executor) executor12).execute(new a1.b((v0.i) iVar4, 7));
                                     break;
                                 default:
                                     c1.e eVar22 = (c1.e) executor12;
-                                    eVar22.f().execute(new a1.e(14, eVar22, (p) iVar4));
+                                    eVar22.f().execute(new a1.e(19, eVar22, (p) iVar4));
                                     break;
                             }
-                            return pc.i.a;
+                            return oc.i.a;
                         }
                     });
                     return;
                 }
-                if (i22 >= 34) {
+                if (i21 >= 34) {
                     pVar = g1.a.d(intent4);
                 } else {
                     Bundle bundleExtra3 = intent4.getBundleExtra("android.service.credentials.extra.GET_CREDENTIAL_RESPONSE");
-                    pVar = (bundleExtra3 == null || (string2 = bundleExtra3.getString("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_TYPE")) == null || (bundle2 = bundleExtra3.getBundle("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_DATA")) == null) ? null : new p(u7.a(string2, bundle2));
+                    pVar = (bundleExtra3 == null || (string2 = bundleExtra3.getString("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_TYPE")) == null || (bundle2 = bundleExtra3.getBundle("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_DATA")) == null) ? null : new p(x7.a(string2, bundle2));
                 }
                 if (pVar != null) {
-                    d0.a(cancellationSignal12, new b1.b(executor12, iVar4, pVar, 1));
+                    f0.a(cancellationSignal12, new b1.b(executor12, iVar4, pVar, 1));
                     return;
                 }
-                if (i22 >= 34) {
+                if (i21 >= 34) {
                     b10 = g1.a.c(intent4);
                 } else {
-                    int i25 = i.a;
+                    int i24 = i.a;
                     Bundle bundleExtra4 = intent4.getBundleExtra("android.service.credentials.extra.GET_CREDENTIAL_EXCEPTION");
                     if (bundleExtra4 == null) {
                         b10 = null;
@@ -434,10 +433,10 @@ public final class d extends ResultReceiver {
                         if (string4 == null) {
                             throw new IllegalArgumentException("Bundle was missing exception type.");
                         }
-                        b10 = o8.b(bundleExtra4.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string4);
+                        b10 = x8.b(bundleExtra4.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string4);
                     }
                 }
-                d0.a(cancellationSignal12, new b1.b(executor12, iVar4, b10, 2));
+                f0.a(cancellationSignal12, new b1.b(executor12, iVar4, b10, 2));
                 return;
         }
     }

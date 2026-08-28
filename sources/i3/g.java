@@ -1,65 +1,65 @@
 package i3;
 
+import h3.q2;
 import h3.r2;
-import h3.s2;
-import j4.c0;
+import j4.d0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class g {
     public final String a;
     public int b;
     public long c;
-    public final c0 d;
+    public final d0 d;
     public boolean e;
     public boolean f;
     public final /* synthetic */ h g;
 
-    public g(h hVar, String str, int i10, c0 c0Var) {
+    public g(h hVar, String str, int i9, d0 d0Var) {
         this.g = hVar;
         this.a = str;
-        this.b = i10;
-        this.c = c0Var == null ? -1L : c0Var.d;
-        if (c0Var == null || !c0Var.a()) {
+        this.b = i9;
+        this.c = d0Var == null ? -1L : d0Var.d;
+        if (d0Var == null || !d0Var.a()) {
             return;
         }
-        this.d = c0Var;
+        this.d = d0Var;
     }
 
     public final boolean a(a aVar) {
-        c0 c0Var = aVar.d;
-        s2 s2Var = aVar.b;
-        if (c0Var == null) {
+        d0 d0Var = aVar.d;
+        r2 r2Var = aVar.b;
+        if (d0Var == null) {
             return this.b != aVar.c;
         }
         long j10 = this.c;
         if (j10 == -1) {
             return false;
         }
-        if (c0Var.d > j10) {
+        if (d0Var.d > j10) {
             return true;
         }
-        c0 c0Var2 = this.d;
-        if (c0Var2 == null) {
+        d0 d0Var2 = this.d;
+        if (d0Var2 == null) {
             return false;
         }
-        int i10 = c0Var2.b;
-        int b10 = s2Var.b(c0Var.a);
-        int b11 = s2Var.b(c0Var2.a);
-        if (c0Var.d < c0Var2.d || b10 < b11) {
+        int i9 = d0Var2.b;
+        int b10 = r2Var.b(d0Var.a);
+        int b11 = r2Var.b(d0Var2.a);
+        if (d0Var.d < d0Var2.d || b10 < b11) {
             return false;
         }
         if (b10 > b11) {
             return true;
         }
-        if (!c0Var.a()) {
-            int i11 = c0Var.e;
-            return i11 == -1 || i11 > i10;
+        if (!d0Var.a()) {
+            int i10 = d0Var.e;
+            return i10 == -1 || i10 > i9;
         }
-        int i12 = c0Var.b;
-        int i13 = c0Var.c;
-        if (i12 <= i10) {
-            return i12 == i10 && i13 > c0Var2.c;
+        int i11 = d0Var.b;
+        int i12 = d0Var.c;
+        if (i11 <= i9) {
+            return i11 == i9 && i12 > d0Var2.c;
         }
         return true;
     }
@@ -71,23 +71,23 @@ public final class g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean b(s2 s2Var, s2 s2Var2) {
-        c0 c0Var;
-        int i10 = this.b;
-        if (i10 < s2Var.o()) {
+    public final boolean b(r2 r2Var, r2 r2Var2) {
+        d0 d0Var;
+        int i9 = this.b;
+        if (i9 < r2Var.o()) {
             h hVar = this.g;
-            r2 r2Var = hVar.a;
-            s2Var.n(i10, r2Var);
-            for (int i11 = r2Var.A; i11 <= r2Var.B; i11++) {
-                int b10 = s2Var2.b(s2Var.l(i11));
+            q2 q2Var = hVar.a;
+            r2Var.n(i9, q2Var);
+            for (int i10 = q2Var.A; i10 <= q2Var.B; i10++) {
+                int b10 = r2Var2.b(r2Var.l(i10));
                 if (b10 != -1) {
-                    i10 = s2Var2.f(b10, hVar.b, false).c;
+                    i9 = r2Var2.f(b10, hVar.b, false).c;
                     break;
                 }
             }
-            i10 = -1;
+            i9 = -1;
         }
-        this.b = i10;
-        return i10 != -1 && ((c0Var = this.d) == null || s2Var2.b(c0Var.a) != -1);
+        this.b = i9;
+        return i9 != -1 && ((d0Var = this.d) == null || r2Var2.b(d0Var.a) != -1);
     }
 }

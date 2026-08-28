@@ -5,7 +5,7 @@ import m.p3;
 import r0.n0;
 import r0.o0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i extends o0 {
     public final /* synthetic */ int a;
@@ -13,9 +13,9 @@ public final class i extends o0 {
     public int c;
     public final /* synthetic */ Object d;
 
-    public i(j jVar) {
+    public i(jb.d dVar) {
         this.a = 0;
-        this.d = jVar;
+        this.d = dVar;
         this.b = false;
         this.c = 0;
     }
@@ -35,7 +35,7 @@ public final class i extends o0 {
             case 0:
                 if (!this.b) {
                     this.b = true;
-                    n0 n0Var = (n0) ((j) this.d).e;
+                    n0 n0Var = (n0) ((jb.d) this.d).e;
                     if (n0Var != null) {
                         n0Var.b();
                         break;
@@ -52,17 +52,17 @@ public final class i extends o0 {
     public final void c() {
         switch (this.a) {
             case 0:
-                int i10 = this.c + 1;
-                this.c = i10;
-                j jVar = (j) this.d;
-                if (i10 == ((ArrayList) jVar.c).size()) {
-                    n0 n0Var = (n0) jVar.e;
+                int i9 = this.c + 1;
+                this.c = i9;
+                jb.d dVar = (jb.d) this.d;
+                if (i9 == ((ArrayList) dVar.c).size()) {
+                    n0 n0Var = (n0) dVar.e;
                     if (n0Var != null) {
                         n0Var.c();
                     }
                     this.c = 0;
                     this.b = false;
-                    jVar.b = false;
+                    dVar.b = false;
                     break;
                 }
                 break;
@@ -75,10 +75,10 @@ public final class i extends o0 {
         }
     }
 
-    public i(p3 p3Var, int i10) {
+    public i(p3 p3Var, int i9) {
         this.a = 1;
         this.d = p3Var;
-        this.c = i10;
+        this.c = i9;
         this.b = false;
     }
 }

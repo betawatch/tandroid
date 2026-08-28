@@ -1,53 +1,150 @@
 package g;
 
+import android.content.Context;
+import android.view.MenuItem;
 import android.view.View;
-import androidx.appcompat.widget.ActionBarOverlayLayout;
-import java.util.WeakHashMap;
-import r0.j0;
-import r0.o0;
+import androidx.appcompat.widget.ActionBarContextView;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class z extends o0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b0 b;
+public final class z extends k.a implements l.i {
+    public final Context c;
+    public final l.k d;
+    public we.b e;
+    public WeakReference f;
+    public final /* synthetic */ a0 h;
 
-    public /* synthetic */ z(b0 b0Var, int i10) {
-        this.a = i10;
-        this.b = b0Var;
+    public z(a0 a0Var, Context context, we.b bVar) {
+        this.h = a0Var;
+        this.c = context;
+        this.e = bVar;
+        l.k kVar = new l.k(context);
+        kVar.l = 1;
+        this.d = kVar;
+        kVar.e = this;
     }
 
-    @Override // r0.n0
-    public final void c() {
-        View view;
-        int i10 = this.a;
-        b0 b0Var = this.b;
-        switch (i10) {
-            case 0:
-                if (b0Var.o && (view = b0Var.g) != null) {
-                    view.setTranslationY(0.0f);
-                    b0Var.d.setTranslationY(0.0f);
-                }
-                b0Var.d.setVisibility(8);
-                b0Var.d.setTransitioning(false);
-                b0Var.s = null;
-                xe.b bVar = b0Var.k;
-                if (bVar != null) {
-                    bVar.J(b0Var.j);
-                    b0Var.j = null;
-                    b0Var.k = null;
-                }
-                ActionBarOverlayLayout actionBarOverlayLayout = b0Var.c;
-                if (actionBarOverlayLayout != null) {
-                    WeakHashMap weakHashMap = j0.a;
-                    r0.z.c(actionBarOverlayLayout);
-                    break;
-                }
-                break;
-            default:
-                b0Var.s = null;
-                b0Var.d.requestLayout();
-                break;
+    @Override // k.a
+    public final void a() {
+        a0 a0Var = this.h;
+        if (a0Var.i != this) {
+            return;
         }
+        if (a0Var.p) {
+            a0Var.j = this;
+            a0Var.k = this.e;
+        } else {
+            this.e.H(this);
+        }
+        this.e = null;
+        a0Var.a(false);
+        ActionBarContextView actionBarContextView = a0Var.f;
+        if (actionBarContextView.v == null) {
+            actionBarContextView.e();
+        }
+        a0Var.c.setHideOnContentScrollEnabled(a0Var.t);
+        a0Var.i = null;
+    }
+
+    @Override // k.a
+    public final View b() {
+        WeakReference weakReference = this.f;
+        if (weakReference != null) {
+            return (View) weakReference.get();
+        }
+        return null;
+    }
+
+    @Override // k.a
+    public final l.k c() {
+        return this.d;
+    }
+
+    @Override // k.a
+    public final k.h d() {
+        return new k.h(this.c);
+    }
+
+    @Override // k.a
+    public final CharSequence e() {
+        return this.h.f.getSubtitle();
+    }
+
+    @Override // k.a
+    public final CharSequence f() {
+        return this.h.f.getTitle();
+    }
+
+    @Override // k.a
+    public final void g() {
+        if (this.h.i != this) {
+            return;
+        }
+        l.k kVar = this.d;
+        kVar.w();
+        try {
+            this.e.I(this, kVar);
+        } finally {
+            kVar.v();
+        }
+    }
+
+    @Override // k.a
+    public final boolean h() {
+        return this.h.f.E;
+    }
+
+    @Override // k.a
+    public final void i(View view) {
+        this.h.f.setCustomView(view);
+        this.f = new WeakReference(view);
+    }
+
+    @Override // k.a
+    public final void j(int i9) {
+        k(this.h.a.getResources().getString(i9));
+    }
+
+    @Override // k.a
+    public final void k(CharSequence charSequence) {
+        this.h.f.setSubtitle(charSequence);
+    }
+
+    @Override // l.i
+    public final void l(l.k kVar) {
+        if (this.e == null) {
+            return;
+        }
+        g();
+        m.i iVar = this.h.f.d;
+        if (iVar != null) {
+            iVar.l();
+        }
+    }
+
+    @Override // k.a
+    public final void m(int i9) {
+        n(this.h.a.getResources().getString(i9));
+    }
+
+    @Override // k.a
+    public final void n(CharSequence charSequence) {
+        this.h.f.setTitle(charSequence);
+    }
+
+    @Override // k.a
+    public final void o(boolean z10) {
+        this.b = z10;
+        this.h.f.setTitleOptional(z10);
+    }
+
+    @Override // l.i
+    public final boolean r(l.k kVar, MenuItem menuItem) {
+        we.b bVar = this.e;
+        if (bVar != null) {
+            return ((com.google.firebase.messaging.t) bVar.b).F(this, menuItem);
+        }
+        return false;
     }
 }

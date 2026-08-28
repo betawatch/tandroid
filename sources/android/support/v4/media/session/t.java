@@ -13,7 +13,7 @@ import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class t {
     r mCallbackHandler;
@@ -104,7 +104,7 @@ public abstract class t {
         }
     }
 
-    public void onAddQueueItem(MediaDescriptionCompat mediaDescriptionCompat, int i10) {
+    public void onAddQueueItem(MediaDescriptionCompat mediaDescriptionCompat, int i9) {
     }
 
     public void onSetRating(RatingCompat ratingCompat, Bundle bundle) {
@@ -138,7 +138,7 @@ public abstract class t {
     }
 
     @Deprecated
-    public void onRemoveQueueItemAt(int i10) {
+    public void onRemoveQueueItemAt(int i9) {
     }
 
     public void onSeekTo(long j10) {
@@ -150,10 +150,10 @@ public abstract class t {
     public void onSetPlaybackSpeed(float f10) {
     }
 
-    public void onSetRepeatMode(int i10) {
+    public void onSetRepeatMode(int i9) {
     }
 
-    public void onSetShuffleMode(int i10) {
+    public void onSetShuffleMode(int i9) {
     }
 
     public void onSkipToQueueItem(long j10) {

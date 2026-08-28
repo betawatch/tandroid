@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class FourierTransform {
     protected static final int LINAVG = 1;
@@ -18,11 +18,11 @@ public abstract class FourierTransform {
     protected int timeSize;
     protected int whichAverage;
 
-    public FourierTransform(int i10, float f10) {
-        this.timeSize = i10;
-        int i11 = (int) f10;
-        this.sampleRate = i11;
-        this.bandWidth = (i11 / 2.0f) * (2.0f / i10);
+    public FourierTransform(int i9, float f10) {
+        this.timeSize = i9;
+        int i10 = (int) f10;
+        this.sampleRate = i10;
+        this.bandWidth = (i10 / 2.0f) * (2.0f / i9);
         noAverages();
         allocateArrays();
     }
@@ -33,77 +33,77 @@ public abstract class FourierTransform {
         int freqToIndex = freqToIndex(f10);
         int freqToIndex2 = freqToIndex(f11);
         float f12 = 0.0f;
-        for (int i10 = freqToIndex; i10 <= freqToIndex2; i10++) {
-            f12 += this.spectrum[i10];
+        for (int i9 = freqToIndex; i9 <= freqToIndex2; i9++) {
+            f12 += this.spectrum[i9];
         }
         return f12 / ((freqToIndex2 - freqToIndex) + 1);
     }
 
     public void fillSpectrum() {
         float[] fArr;
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             fArr = this.spectrum;
-            if (i10 >= fArr.length) {
+            if (i9 >= fArr.length) {
                 break;
             }
-            float f10 = this.real[i10];
-            float f11 = this.imag[i10];
-            fArr[i10] = (float) Math.sqrt((f11 * f11) + (f10 * f10));
-            i10++;
+            float f10 = this.real[i9];
+            float f11 = this.imag[i9];
+            fArr[i9] = (float) Math.sqrt((f11 * f11) + (f10 * f10));
+            i9++;
         }
-        int i11 = this.whichAverage;
-        if (i11 == 1) {
+        int i10 = this.whichAverage;
+        if (i10 == 1) {
             int length = fArr.length / this.averages.length;
-            for (int i12 = 0; i12 < this.averages.length; i12++) {
-                int i13 = 0;
+            for (int i11 = 0; i11 < this.averages.length; i11++) {
+                int i12 = 0;
                 float f12 = 0.0f;
-                while (i13 < length) {
-                    int i14 = (i12 * length) + i13;
+                while (i12 < length) {
+                    int i13 = (i11 * length) + i12;
                     float[] fArr2 = this.spectrum;
-                    if (i14 < fArr2.length) {
-                        f12 += fArr2[i14];
-                        i13++;
+                    if (i13 < fArr2.length) {
+                        f12 += fArr2[i13];
+                        i12++;
                     }
                 }
-                this.averages[i12] = f12 / (i13 + 1);
+                this.averages[i11] = f12 / (i12 + 1);
             }
             return;
         }
-        if (i11 != 2) {
+        if (i10 != 2) {
             return;
         }
-        int i15 = 0;
+        int i14 = 0;
         while (true) {
-            if (i15 >= this.octaves) {
+            if (i14 >= this.octaves) {
                 return;
             }
-            float pow = i15 == 0 ? 0.0f : (this.sampleRate / 2) / ((float) Math.pow(2.0d, r5 - i15));
-            float pow2 = (((this.sampleRate / 2) / ((float) Math.pow(2.0d, (this.octaves - i15) - 1))) - pow) / this.avgPerOctave;
-            int i16 = 0;
+            float pow = i14 == 0 ? 0.0f : (this.sampleRate / 2) / ((float) Math.pow(2.0d, r5 - i14));
+            float pow2 = (((this.sampleRate / 2) / ((float) Math.pow(2.0d, (this.octaves - i14) - 1))) - pow) / this.avgPerOctave;
+            int i15 = 0;
             while (true) {
-                int i17 = this.avgPerOctave;
-                if (i16 < i17) {
+                int i16 = this.avgPerOctave;
+                if (i15 < i16) {
                     float f13 = pow + pow2;
-                    this.averages[(i17 * i15) + i16] = calcAvg(pow, f13);
-                    i16++;
+                    this.averages[(i16 * i14) + i15] = calcAvg(pow, f13);
+                    i15++;
                     pow = f13;
                 }
             }
-            i15++;
+            i14++;
         }
     }
 
     public abstract void forward(float[] fArr);
 
-    public void forward(float[] fArr, int i10) {
-        int length = fArr.length - i10;
-        int i11 = this.timeSize;
-        if (length < i11) {
+    public void forward(float[] fArr, int i9) {
+        int length = fArr.length - i9;
+        int i10 = this.timeSize;
+        if (length < i10) {
             return;
         }
-        float[] fArr2 = new float[i11];
-        System.arraycopy(fArr, i10, fArr2, 0, i11);
+        float[] fArr2 = new float[i10];
+        System.arraycopy(fArr, i9, fArr2, 0, i10);
         forward(fArr2);
     }
 
@@ -117,15 +117,15 @@ public abstract class FourierTransform {
         return Math.round(this.timeSize * (f10 / this.sampleRate));
     }
 
-    public float getBand(int i10) {
-        if (i10 < 0) {
-            i10 = 0;
+    public float getBand(int i9) {
+        if (i9 < 0) {
+            i9 = 0;
         }
         float[] fArr = this.spectrum;
-        if (i10 > fArr.length - 1) {
-            i10 = fArr.length - 1;
+        if (i9 > fArr.length - 1) {
+            i9 = fArr.length - 1;
         }
-        return fArr[i10];
+        return fArr[i9];
     }
 
     public float getBandWidth() {
@@ -140,13 +140,13 @@ public abstract class FourierTransform {
         return this.real;
     }
 
-    public float indexToFreq(int i10) {
+    public float indexToFreq(int i9) {
         float bandWidth = getBandWidth();
-        if (i10 == 0) {
+        if (i9 == 0) {
             return bandWidth * 0.25f;
         }
-        if (i10 != this.spectrum.length - 1) {
-            return i10 * bandWidth;
+        if (i9 != this.spectrum.length - 1) {
+            return i9 * bandWidth;
         }
         return (bandWidth * 0.25f) + ((this.sampleRate / 2) - (bandWidth / 2.0f));
     }
@@ -158,22 +158,22 @@ public abstract class FourierTransform {
         inverse(fArr3);
     }
 
-    public void linAverages(int i10) {
-        if (i10 > this.spectrum.length / 2) {
+    public void linAverages(int i9) {
+        if (i9 > this.spectrum.length / 2) {
             return;
         }
-        this.averages = new float[i10];
+        this.averages = new float[i9];
         this.whichAverage = 1;
     }
 
-    public void logAverages(int i10, int i11) {
+    public void logAverages(int i9, int i10) {
         float f10 = this.sampleRate / 2.0f;
         this.octaves = 1;
         while (true) {
             f10 /= 2.0f;
-            if (f10 <= i10) {
-                this.avgPerOctave = i11;
-                this.averages = new float[this.octaves * i11];
+            if (f10 <= i9) {
+                this.avgPerOctave = i10;
+                this.averages = new float[this.octaves * i10];
                 this.whichAverage = 2;
                 return;
             }
@@ -186,9 +186,9 @@ public abstract class FourierTransform {
         this.whichAverage = 3;
     }
 
-    public abstract void scaleBand(int i10, float f10);
+    public abstract void scaleBand(int i9, float f10);
 
-    public abstract void setBand(int i10, float f10);
+    public abstract void setBand(int i9, float f10);
 
     public void setComplex(float[] fArr, float[] fArr2) {
         float[] fArr3 = this.real;
@@ -206,15 +206,15 @@ public abstract class FourierTransform {
         return this.timeSize;
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class FFT extends FourierTransform {
         private float[] coslookup;
         private int[] reverse;
         private float[] sinlookup;
 
-        public FFT(int i10, float f10) {
-            super(i10, f10);
-            if ((i10 & (i10 - 1)) != 0) {
+        public FFT(int i9, float f10) {
+            super(i9, f10);
+            if ((i9 & (i9 - 1)) != 0) {
                 throw new IllegalArgumentException("FFT: timeSize must be a power of two.");
             }
             buildReverseTable();
@@ -224,104 +224,104 @@ public abstract class FourierTransform {
         private void bitReverseComplex() {
             float[] fArr = new float[this.real.length];
             float[] fArr2 = new float[this.imag.length];
-            int i10 = 0;
+            int i9 = 0;
             while (true) {
                 float[] fArr3 = this.real;
-                if (i10 >= fArr3.length) {
+                if (i9 >= fArr3.length) {
                     this.real = fArr;
                     this.imag = fArr2;
                     return;
                 } else {
-                    int i11 = this.reverse[i10];
-                    fArr[i10] = fArr3[i11];
-                    fArr2[i10] = this.imag[i11];
-                    i10++;
+                    int i10 = this.reverse[i9];
+                    fArr[i9] = fArr3[i10];
+                    fArr2[i9] = this.imag[i10];
+                    i9++;
                 }
             }
         }
 
-        private void bitReverseSamples(float[] fArr, int i10) {
-            for (int i11 = 0; i11 < this.timeSize; i11++) {
-                this.real[i11] = fArr[this.reverse[i11] + i10];
-                this.imag[i11] = 0.0f;
+        private void bitReverseSamples(float[] fArr, int i9) {
+            for (int i10 = 0; i10 < this.timeSize; i10++) {
+                this.real[i10] = fArr[this.reverse[i10] + i9];
+                this.imag[i10] = 0.0f;
             }
         }
 
         private void buildReverseTable() {
-            int i10 = this.timeSize;
-            int[] iArr = new int[i10];
+            int i9 = this.timeSize;
+            int[] iArr = new int[i9];
             this.reverse = iArr;
             iArr[0] = 0;
-            int i11 = i10 / 2;
-            int i12 = 1;
-            while (i12 < i10) {
-                for (int i13 = 0; i13 < i12; i13++) {
+            int i10 = i9 / 2;
+            int i11 = 1;
+            while (i11 < i9) {
+                for (int i12 = 0; i12 < i11; i12++) {
                     int[] iArr2 = this.reverse;
-                    iArr2[i13 + i12] = iArr2[i13] + i11;
+                    iArr2[i12 + i11] = iArr2[i12] + i10;
                 }
-                i12 <<= 1;
-                i11 >>= 1;
+                i11 <<= 1;
+                i10 >>= 1;
             }
         }
 
         private void buildTrigTables() {
-            int i10 = this.timeSize;
-            this.sinlookup = new float[i10];
-            this.coslookup = new float[i10];
-            for (int i11 = 0; i11 < i10; i11++) {
-                double d = (-3.1415927f) / i11;
-                this.sinlookup[i11] = (float) Math.sin(d);
-                this.coslookup[i11] = (float) Math.cos(d);
+            int i9 = this.timeSize;
+            this.sinlookup = new float[i9];
+            this.coslookup = new float[i9];
+            for (int i10 = 0; i10 < i9; i10++) {
+                double d = (-3.1415927f) / i10;
+                this.sinlookup[i10] = (float) Math.sin(d);
+                this.coslookup[i10] = (float) Math.cos(d);
             }
         }
 
-        private float cos(int i10) {
-            return this.coslookup[i10];
+        private float cos(int i9) {
+            return this.coslookup[i9];
         }
 
         private void fft() {
-            for (int i10 = 1; i10 < this.real.length; i10 *= 2) {
-                float cos = cos(i10);
-                float sin = sin(i10);
+            for (int i9 = 1; i9 < this.real.length; i9 *= 2) {
+                float cos = cos(i9);
+                float sin = sin(i9);
                 float f10 = 1.0f;
                 float f11 = 0.0f;
-                int i11 = 0;
-                while (i11 < i10) {
-                    int i12 = i11;
+                int i10 = 0;
+                while (i10 < i9) {
+                    int i11 = i10;
                     while (true) {
                         float[] fArr = this.real;
-                        if (i12 < fArr.length) {
-                            int i13 = i12 + i10;
-                            float f12 = fArr[i13];
+                        if (i11 < fArr.length) {
+                            int i12 = i11 + i9;
+                            float f12 = fArr[i12];
                             float[] fArr2 = this.imag;
-                            float f13 = fArr2[i13];
+                            float f13 = fArr2[i12];
                             float f14 = (f10 * f12) - (f11 * f13);
                             float f15 = (f12 * f11) + (f13 * f10);
-                            fArr[i13] = fArr[i12] - f14;
-                            fArr2[i13] = fArr2[i12] - f15;
-                            fArr[i12] = fArr[i12] + f14;
-                            fArr2[i12] = fArr2[i12] + f15;
-                            i12 += i10 * 2;
+                            fArr[i12] = fArr[i11] - f14;
+                            fArr2[i12] = fArr2[i11] - f15;
+                            fArr[i11] = fArr[i11] + f14;
+                            fArr2[i11] = fArr2[i11] + f15;
+                            i11 += i9 * 2;
                         }
                     }
                     float f16 = (f10 * cos) - (f11 * sin);
                     f11 = (f11 * cos) + (f10 * sin);
-                    i11++;
+                    i10++;
                     f10 = f16;
                 }
             }
         }
 
-        private float sin(int i10) {
-            return this.sinlookup[i10];
+        private float sin(int i9) {
+            return this.sinlookup[i9];
         }
 
         @Override // org.telegram.messenger.FourierTransform
         public void allocateArrays() {
-            int i10 = this.timeSize;
-            this.spectrum = new float[(i10 / 2) + 1];
-            this.real = new float[i10];
-            this.imag = new float[i10];
+            int i9 = this.timeSize;
+            this.spectrum = new float[(i9 / 2) + 1];
+            this.real = new float[i9];
+            this.imag = new float[i9];
         }
 
         @Override // org.telegram.messenger.FourierTransform
@@ -339,80 +339,80 @@ public abstract class FourierTransform {
             if (fArr.length > this.real.length) {
                 return;
             }
-            for (int i10 = 0; i10 < this.timeSize; i10++) {
+            for (int i9 = 0; i9 < this.timeSize; i9++) {
                 float[] fArr2 = this.imag;
-                fArr2[i10] = fArr2[i10] * (-1.0f);
+                fArr2[i9] = fArr2[i9] * (-1.0f);
             }
             bitReverseComplex();
             fft();
-            for (int i11 = 0; i11 < fArr.length; i11++) {
-                fArr[i11] = this.real[i11] / r1.length;
+            for (int i10 = 0; i10 < fArr.length; i10++) {
+                fArr[i10] = this.real[i10] / r1.length;
             }
         }
 
         @Override // org.telegram.messenger.FourierTransform
-        public void scaleBand(int i10, float f10) {
+        public void scaleBand(int i9, float f10) {
             if (f10 < 0.0f) {
                 return;
             }
             float[] fArr = this.real;
-            fArr[i10] = fArr[i10] * f10;
+            fArr[i9] = fArr[i9] * f10;
             float[] fArr2 = this.imag;
-            fArr2[i10] = fArr2[i10] * f10;
+            fArr2[i9] = fArr2[i9] * f10;
             float[] fArr3 = this.spectrum;
-            fArr3[i10] = fArr3[i10] * f10;
-            if (i10 != 0) {
-                int i11 = this.timeSize;
-                if (i10 != i11 / 2) {
-                    fArr[i11 - i10] = fArr[i10];
-                    fArr2[i11 - i10] = -fArr2[i10];
+            fArr3[i9] = fArr3[i9] * f10;
+            if (i9 != 0) {
+                int i10 = this.timeSize;
+                if (i9 != i10 / 2) {
+                    fArr[i10 - i9] = fArr[i9];
+                    fArr2[i10 - i9] = -fArr2[i9];
                 }
             }
         }
 
         @Override // org.telegram.messenger.FourierTransform
-        public void setBand(int i10, float f10) {
+        public void setBand(int i9, float f10) {
             if (f10 < 0.0f) {
                 return;
             }
             float[] fArr = this.real;
-            float f11 = fArr[i10];
-            if (f11 == 0.0f && this.imag[i10] == 0.0f) {
-                fArr[i10] = f10;
-                this.spectrum[i10] = f10;
+            float f11 = fArr[i9];
+            if (f11 == 0.0f && this.imag[i9] == 0.0f) {
+                fArr[i9] = f10;
+                this.spectrum[i9] = f10;
             } else {
                 float[] fArr2 = this.spectrum;
-                fArr[i10] = f11 / fArr2[i10];
+                fArr[i9] = f11 / fArr2[i9];
                 float[] fArr3 = this.imag;
-                fArr3[i10] = fArr3[i10] / fArr2[i10];
-                fArr2[i10] = f10;
-                fArr[i10] = fArr[i10] * f10;
-                fArr3[i10] = fArr3[i10] * fArr2[i10];
+                fArr3[i9] = fArr3[i9] / fArr2[i9];
+                fArr2[i9] = f10;
+                fArr[i9] = fArr[i9] * f10;
+                fArr3[i9] = fArr3[i9] * fArr2[i9];
             }
-            if (i10 != 0) {
-                int i11 = this.timeSize;
-                if (i10 != i11 / 2) {
-                    fArr[i11 - i10] = fArr[i10];
+            if (i9 != 0) {
+                int i10 = this.timeSize;
+                if (i9 != i10 / 2) {
+                    fArr[i10 - i9] = fArr[i9];
                     float[] fArr4 = this.imag;
-                    fArr4[i11 - i10] = -fArr4[i10];
+                    fArr4[i10 - i9] = -fArr4[i9];
                 }
             }
         }
 
         @Override // org.telegram.messenger.FourierTransform
-        public void forward(float[] fArr, int i10) {
-            if (fArr.length - i10 < this.timeSize) {
+        public void forward(float[] fArr, int i9) {
+            if (fArr.length - i9 < this.timeSize) {
                 return;
             }
-            bitReverseSamples(fArr, i10);
+            bitReverseSamples(fArr, i9);
             fft();
             fillSpectrum();
         }
 
         public void forward(float[] fArr, float[] fArr2) {
             int length = fArr.length;
-            int i10 = this.timeSize;
-            if (length == i10 && fArr2.length == i10) {
+            int i9 = this.timeSize;
+            if (length == i9 && fArr2.length == i9) {
                 setComplex(fArr, fArr2);
                 bitReverseComplex();
                 fft();

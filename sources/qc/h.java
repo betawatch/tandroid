@@ -1,23 +1,15 @@
 package qc;
 
-import h7.q6;
-import java.util.Arrays;
-import java.util.List;
+import zc.p;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class h extends q6 {
-    public static int b(List list) {
-        kotlin.jvm.internal.j.e(list, "<this>");
-        return list.size() - 1;
-    }
+public interface h {
+    Object fold(Object obj, p pVar);
 
-    public static List c(Object... objArr) {
-        if (objArr.length <= 0) {
-            return o.a;
-        }
-        List asList = Arrays.asList(objArr);
-        kotlin.jvm.internal.j.d(asList, "asList(...)");
-        return asList;
-    }
+    f get(g gVar);
+
+    h minusKey(g gVar);
+
+    h plus(h hVar);
 }

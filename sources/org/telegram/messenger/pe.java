@@ -1,36 +1,31 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pe implements Runnable {
-    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ TLRPC.Message c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ pe(MessagesStorage messagesStorage, ArrayList arrayList, boolean z10) {
+    public /* synthetic */ pe(int i9, long j10, MessagesStorage messagesStorage, TLRPC.Message message) {
+        this.a = i9;
         this.b = messagesStorage;
-        this.d = arrayList;
-        this.c = z10;
+        this.c = message;
+        this.d = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$putEphemeralMessages$204(this.d, this.c);
+                this.b.lambda$updateMessageCustomParams$110(this.c, this.d);
                 break;
             default:
-                this.b.lambda$putContacts$146(this.c, this.d);
+                this.b.lambda$markMessageAsSendErrorWithParams$210(this.c, this.d);
                 break;
         }
-    }
-
-    public /* synthetic */ pe(MessagesStorage messagesStorage, boolean z10, ArrayList arrayList) {
-        this.b = messagesStorage;
-        this.c = z10;
-        this.d = arrayList;
     }
 }

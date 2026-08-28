@@ -1,53 +1,14 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import java.io.File;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class li0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ oi0 b;
-
-    public /* synthetic */ li0(oi0 oi0Var, int i10) {
-        this.a = i10;
-        this.b = oi0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                oi0 oi0Var = this.b;
-                oi0Var.getClass();
-                try {
-                    gf.h hVar = oi0Var.z0;
-                    if (hVar != null) {
-                        hVar.b();
-                    }
-                } catch (Throwable unused) {
-                }
-                AndroidUtilities.runOnUIThread(oi0Var.x0);
-                break;
-            case 1:
-                oi0 oi0Var2 = this.b;
-                oi0Var2.M = null;
-                oi0Var2.n();
-                break;
-            case 2:
-                oi0.h(this.b);
-                break;
-            case 3:
-                oi0.e(this.b);
-                break;
-            case 4:
-                oi0.d(this.b);
-                break;
-            case 5:
-                oi0.f(this.b);
-                break;
-            default:
-                this.b.k();
-                break;
-        }
-    }
+public final class li0 {
+    public int[] a;
+    public int b;
+    public int c;
+    public File d;
+    public String e;
+    public String f;
 }

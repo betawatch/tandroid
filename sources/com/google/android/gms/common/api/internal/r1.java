@@ -8,16 +8,16 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class r1 extends androidx.fragment.app.s implements m {
     public static final WeakHashMap h0 = new WeakHashMap();
-    public final b6.a g0 = new b6.a(2, (byte) 0);
+    public final a6.a g0 = new a6.a(2, (byte) 0);
 
     @Override // androidx.fragment.app.s
     public final void A() {
         this.Q = true;
-        b6.a aVar = this.g0;
+        a6.a aVar = this.g0;
         aVar.c = 5;
         Iterator it = ((Map) aVar.b).values().iterator();
         while (it.hasNext()) {
@@ -28,7 +28,7 @@ public final class r1 extends androidx.fragment.app.s implements m {
     @Override // androidx.fragment.app.s
     public final void F() {
         this.Q = true;
-        b6.a aVar = this.g0;
+        a6.a aVar = this.g0;
         aVar.c = 3;
         Iterator it = ((Map) aVar.b).values().iterator();
         while (it.hasNext()) {
@@ -44,7 +44,7 @@ public final class r1 extends androidx.fragment.app.s implements m {
     @Override // androidx.fragment.app.s
     public final void H() {
         this.Q = true;
-        b6.a aVar = this.g0;
+        a6.a aVar = this.g0;
         aVar.c = 2;
         Iterator it = ((Map) aVar.b).values().iterator();
         while (it.hasNext()) {
@@ -55,7 +55,7 @@ public final class r1 extends androidx.fragment.app.s implements m {
     @Override // androidx.fragment.app.s
     public final void I() {
         this.Q = true;
-        b6.a aVar = this.g0;
+        a6.a aVar = this.g0;
         aVar.c = 4;
         Iterator it = ((Map) aVar.b).values().iterator();
         while (it.hasNext()) {
@@ -83,11 +83,11 @@ public final class r1 extends androidx.fragment.app.s implements m {
     }
 
     @Override // androidx.fragment.app.s
-    public final void x(int i10, int i11, Intent intent) {
-        super.x(i10, i11, intent);
+    public final void x(int i9, int i10, Intent intent) {
+        super.x(i9, i10, intent);
         Iterator it = ((Map) this.g0.b).values().iterator();
         while (it.hasNext()) {
-            ((l) it.next()).onActivityResult(i10, i11, intent);
+            ((l) it.next()).onActivityResult(i9, i10, intent);
         }
     }
 

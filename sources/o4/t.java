@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class t implements Parcelable {
     public static final Parcelable.Creator<t> CREATOR = new s(1);
@@ -15,9 +15,9 @@ public final class t implements Parcelable {
     public final String e;
     public final String f;
 
-    public t(int i10, String str, int i11, String str2, String str3, String str4) {
-        this.a = i10;
-        this.b = i11;
+    public t(int i9, String str, int i10, String str2, String str3, String str4) {
+        this.a = i9;
+        this.b = i10;
         this.c = str;
         this.d = str2;
         this.e = str3;
@@ -43,9 +43,9 @@ public final class t implements Parcelable {
     }
 
     public final int hashCode() {
-        int i10 = ((this.a * 31) + this.b) * 31;
+        int i9 = ((this.a * 31) + this.b) * 31;
         String str = this.c;
-        int hashCode = (i10 + (str != null ? str.hashCode() : 0)) * 31;
+        int hashCode = (i9 + (str != null ? str.hashCode() : 0)) * 31;
         String str2 = this.d;
         int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
         String str3 = this.e;
@@ -55,7 +55,7 @@ public final class t implements Parcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeInt(this.a);
         parcel.writeInt(this.b);
         parcel.writeString(this.c);

@@ -4,7 +4,7 @@ import android.animation.TimeInterpolator;
 import android.os.SystemClock;
 import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class b5 {
     public final View a;
@@ -20,33 +20,33 @@ public final class b5 {
 
     public b5(View view) {
         this.f = 200L;
-        this.g = er.f;
+        this.g = gr.f;
         this.a = view;
         this.e = true;
     }
 
-    public final int a(int i10, boolean z10) {
+    public final int a(int i9, boolean z10) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long j10 = this.f;
         if (z10 || j10 <= 0 || this.e) {
-            this.d = i10;
-            this.c = i10;
+            this.d = i9;
+            this.c = i9;
             this.h = false;
             this.e = false;
-        } else if (this.d != i10) {
+        } else if (this.d != i9) {
             this.h = true;
-            this.d = i10;
+            this.d = i9;
             this.j = this.c;
             this.i = elapsedRealtime;
         }
         if (this.h) {
-            float a2 = h7.n.a((elapsedRealtime - this.i) / j10, 0.0f, 1.0f);
+            float a2 = g7.n.a((elapsedRealtime - this.i) / j10, 0.0f, 1.0f);
             if (elapsedRealtime - this.i >= 0) {
                 TimeInterpolator timeInterpolator = this.g;
                 if (timeInterpolator == null) {
-                    this.c = i0.b.d(a2, this.j, this.d);
+                    this.c = i0.a.d(a2, this.j, this.d);
                 } else {
-                    this.c = i0.b.d(timeInterpolator.getInterpolation(a2), this.j, this.d);
+                    this.c = i0.a.d(timeInterpolator.getInterpolation(a2), this.j, this.d);
                 }
             }
             if (a2 >= 1.0f) {
@@ -67,16 +67,16 @@ public final class b5 {
 
     public b5(View view, long j10, TimeInterpolator timeInterpolator) {
         this.f = 200L;
-        er erVar = er.f;
+        gr grVar = gr.f;
         this.a = view;
         this.f = j10;
         this.g = timeInterpolator;
         this.e = true;
     }
 
-    public b5(View view, long j10, TimeInterpolator timeInterpolator, int i10) {
+    public b5(View view, long j10, TimeInterpolator timeInterpolator, int i9) {
         this.f = 200L;
-        er erVar = er.f;
+        gr grVar = gr.f;
         this.a = view;
         this.f = j10;
         this.g = timeInterpolator;
@@ -85,7 +85,7 @@ public final class b5 {
 
     public b5(Runnable runnable, long j10, TimeInterpolator timeInterpolator) {
         this.f = 200L;
-        er erVar = er.f;
+        gr grVar = gr.f;
         this.b = runnable;
         this.f = j10;
         this.g = timeInterpolator;

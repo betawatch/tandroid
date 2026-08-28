@@ -7,7 +7,7 @@ import android.service.media.MediaBrowserService;
 import android.widget.Toast;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class MusicBrowserService extends MediaBrowserService {
     private static final String MEDIA_ID_ROOT = "__ROOT__";
@@ -25,11 +25,11 @@ public class MusicBrowserService extends MediaBrowserService {
     }
 
     @Override // android.service.media.MediaBrowserService
-    public MediaBrowserService.BrowserRoot onGetRoot(String str, int i10, Bundle bundle) {
+    public MediaBrowserService.BrowserRoot onGetRoot(String str, int i9, Bundle bundle) {
         if (str == null) {
             return null;
         }
-        if ((1000 == i10 || Process.myUid() == i10 || PackageValidator.isKnownCaller(this, str, i10)) && !TelegramMediaSession.getInstance(this).isPasscodeLocked()) {
+        if ((1000 == i9 || Process.myUid() == i9 || PackageValidator.isKnownCaller(this, str, i9)) && !TelegramMediaSession.getInstance(this).isPasscodeLocked()) {
             return new MediaBrowserService.BrowserRoot(MEDIA_ID_ROOT, TelegramMediaSession.getInstance(this).buildRootHints());
         }
         return null;

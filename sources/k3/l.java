@@ -2,8 +2,9 @@ package k3;
 
 import android.text.TextUtils;
 import h3.t0;
+import j3.r0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class l {
     public final String a;
@@ -12,8 +13,8 @@ public final class l {
     public final int d;
     public final int e;
 
-    public l(String str, t0 t0Var, t0 t0Var2, int i10, int i11) {
-        d5.a.f(i10 == 0 || i11 == 0);
+    public l(String str, t0 t0Var, t0 t0Var2, int i9, int i10) {
+        d5.a.f(i9 == 0 || i10 == 0);
         if (TextUtils.isEmpty(str)) {
             throw new IllegalArgumentException();
         }
@@ -22,8 +23,8 @@ public final class l {
         this.b = t0Var;
         t0Var2.getClass();
         this.c = t0Var2;
-        this.d = i10;
-        this.e = i11;
+        this.d = i9;
+        this.e = i10;
     }
 
     public final boolean equals(Object obj) {
@@ -40,6 +41,6 @@ public final class l {
     }
 
     public final int hashCode() {
-        return this.c.hashCode() + ((this.b.hashCode() + i0.a.g((((527 + this.d) * 31) + this.e) * 31, 31, this.a)) * 31);
+        return this.c.hashCode() + ((this.b.hashCode() + r0.f((((527 + this.d) * 31) + this.e) * 31, 31, this.a)) * 31);
     }
 }

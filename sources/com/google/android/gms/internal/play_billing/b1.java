@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b1 extends u1 {
+public final class b1 extends v1 {
     private static final b1 zzb;
-    private y1 zzd = q2.e;
+    private z1 zzd = r2.e;
 
     static {
         b1 b1Var = new b1();
         zzb = b1Var;
-        u1.k(b1.class, b1Var);
+        v1.k(b1.class, b1Var);
     }
 
     public static a1 n() {
@@ -22,42 +22,42 @@ public final class b1 extends u1 {
     }
 
     public static void o(b1 b1Var, ArrayList arrayList) {
-        y1 y1Var = b1Var.zzd;
-        if (!((f1) y1Var).a) {
-            int size = y1Var.size();
-            b1Var.zzd = y1Var.zzd(size + size);
+        z1 z1Var = b1Var.zzd;
+        if (!((f1) z1Var).a) {
+            int size = z1Var.size();
+            b1Var.zzd = z1Var.zzd(size + size);
         }
         List list = b1Var.zzd;
-        Charset charset = z1.a;
+        Charset charset = a2.a;
         int size2 = arrayList.size();
         if (list instanceof ArrayList) {
             ((ArrayList) list).ensureCapacity(list.size() + size2);
-        } else if (list instanceof q2) {
-            q2 q2Var = (q2) list;
-            int i10 = q2Var.c + size2;
-            int length = q2Var.b.length;
-            if (i10 > length) {
+        } else if (list instanceof r2) {
+            r2 r2Var = (r2) list;
+            int i9 = r2Var.c + size2;
+            int length = r2Var.b.length;
+            if (i9 > length) {
                 if (length != 0) {
-                    while (length < i10) {
+                    while (length < i9) {
                         length = Math.max(((length * 3) / 2) + 1, 10);
                     }
-                    q2Var.b = Arrays.copyOf(q2Var.b, length);
+                    r2Var.b = Arrays.copyOf(r2Var.b, length);
                 } else {
-                    q2Var.b = new Object[Math.max(i10, 10)];
+                    r2Var.b = new Object[Math.max(i9, 10)];
                 }
             }
         }
         int size3 = list.size();
         int size4 = arrayList.size();
-        for (int i11 = 0; i11 < size4; i11++) {
-            Object obj = arrayList.get(i11);
+        for (int i10 = 0; i10 < size4; i10++) {
+            Object obj = arrayList.get(i10);
             if (obj == null) {
-                String l10 = i0.a.l(list.size() - size3, "Element at index ", " is null.");
+                String m10 = j3.r0.m(list.size() - size3, "Element at index ", " is null.");
                 int size5 = list.size();
                 while (true) {
                     size5--;
                     if (size5 < size3) {
-                        throw new NullPointerException(l10);
+                        throw new NullPointerException(m10);
                     }
                     list.remove(size5);
                 }
@@ -67,22 +67,22 @@ public final class b1 extends u1 {
         }
     }
 
-    @Override // com.google.android.gms.internal.play_billing.u1
-    public final Object d(int i10) {
-        int i11 = i10 - 1;
-        if (i11 == 0) {
+    @Override // com.google.android.gms.internal.play_billing.v1
+    public final Object d(int i9) {
+        int i10 = i9 - 1;
+        if (i10 == 0) {
             return (byte) 1;
         }
-        if (i11 == 2) {
-            return new r2(zzb, "\u0004\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001b", new Object[]{"zzd", z0.class});
+        if (i10 == 2) {
+            return new s2(zzb, "\u0004\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001b", new Object[]{"zzd", z0.class});
         }
-        if (i11 == 3) {
+        if (i10 == 3) {
             return new b1();
         }
-        if (i11 == 4) {
+        if (i10 == 4) {
             return new a1(zzb);
         }
-        if (i11 == 5) {
+        if (i10 == 5) {
             return zzb;
         }
         throw null;

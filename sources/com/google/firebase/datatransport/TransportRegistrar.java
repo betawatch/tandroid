@@ -2,17 +2,16 @@ package com.google.firebase.datatransport;
 
 import android.content.Context;
 import com.google.firebase.components.ComponentRegistrar;
-import g7.i7;
+import f7.c7;
 import java.util.Arrays;
 import java.util.List;
-import org.telegram.ui.j70;
 import t2.f;
 import u2.a;
 import w2.q;
-import z8.b;
-import z8.i;
+import y8.b;
+import y8.j;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class TransportRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-transport";
@@ -24,11 +23,11 @@ public class TransportRegistrar implements ComponentRegistrar {
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List<z8.a> getComponents() {
-        ug.b a2 = z8.a.a(f.class);
+    public List<y8.a> getComponents() {
+        tg.b a2 = y8.a.a(f.class);
         a2.c = LIBRARY_NAME;
-        a2.a(i.a(Context.class));
-        a2.f = new j70(20);
-        return Arrays.asList(a2.b(), i7.a(LIBRARY_NAME, "18.1.8"));
+        a2.a(j.a(Context.class));
+        a2.f = new mg.b(14);
+        return Arrays.asList(a2.b(), c7.a(LIBRARY_NAME, "18.1.8"));
     }
 }

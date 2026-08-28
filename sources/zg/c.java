@@ -1,195 +1,144 @@
 package zg;
 
-import android.app.Activity;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
-import h7.b6;
-import h7.z5;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import android.view.View;
+import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.h5;
-import org.telegram.ui.Cells.s1;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.m10;
-import org.telegram.ui.lg;
-import org.telegram.ui.rn;
-import org.telegram.ui.z71;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawListener {
-    public final Rect A;
-    public ViewTreeObserver B;
-    public int C;
-    public final ud.a D;
-    public final ud.a E;
-    public final gh.r a;
-    public final b b;
-    public final d c;
-    public final rn d;
-    public final FrameLayout.LayoutParams e;
-    public final h5 f;
-    public e h;
-    public s1 n;
-    public int r;
-    public lg s;
-    public final z71 v;
-    public final z71 w;
-    public final int x;
-    public final int[] y;
+public final class c extends yg.e {
+    public final String b;
+    public final Uri c;
+    public final String d;
+    public final long e;
+    public final String f;
+    public final Drawable h;
+    public final StaticLayout n;
 
-    public c(Activity activity, c6 c6Var, rn rnVar) {
-        super(activity);
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(0, -2);
-        this.e = layoutParams;
-        this.y = new int[2];
-        this.A = new Rect();
-        int i10 = 16;
-        t0.c cVar = new t0.c(this, i10);
-        er erVar = er.h;
-        this.D = new ud.a(0, cVar, erVar, 380L, false);
-        this.E = new ud.a(0, new t0.c(this, i10), erVar, 380L, false);
-        this.d = rnVar;
-        this.x = rnVar.getMessagesController().config.pollAnswerLengthMax.get();
-        gh.r rVar = new gh.r(this, activity, c6Var, 3);
-        this.a = rVar;
-        rVar.setAllowTextEntitiesIntersection(true);
-        rVar.setTextColor(g6.v0(g6.G6, c6Var));
-        rVar.setLinkTextColor(g6.v0(g6.gc, c6Var));
-        rVar.setHintTextColor(g6.v0(g6.H6, c6Var));
-        rVar.setHint(LocaleController.getString(R.string.PollAddAnOptionHint));
-        rVar.setTextSize(1, 15.0f);
-        rVar.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
-        rVar.setBackground(null);
-        rVar.setImeOptions(268435462);
-        rVar.setInputType(rVar.getInputType() | 16384);
-        rVar.addTextChangedListener(new ch.e(this, 19));
-        b bVar = new b(activity);
-        this.b = bVar;
-        int i11 = g6.Vh;
-        bVar.setBackground(g6.f0(g6.v0(i11, c6Var), 1, -1));
-        b6.a(bVar);
-        d dVar = new d(getContext(), 36);
-        this.c = dVar;
-        dVar.setBackground(g6.f0(g6.v0(i11, c6Var), 1, -1));
-        dVar.setOnClickListener(new org.telegram.ui.web.c(7, this, rnVar));
-        b6.a(dVar);
-        h5 h5Var = new h5(getContext());
-        this.f = h5Var;
-        h5Var.setTextSize(13);
-        h5Var.setGravity(17);
-        h5Var.setTranslationY(AndroidUtilities.dp(44.0f));
-        h5Var.setVisibility(8);
-        z71 z71Var = new z71(activity, 11);
-        this.w = z71Var;
-        addView(z71Var, layoutParams);
-        z71 z71Var2 = new z71(activity, 10);
-        this.v = z71Var2;
-        z71Var.addView(z71Var2, z5.c(-2.0f, -1));
-        z71Var2.addView(h5Var, z5.e(54, 24, 53));
-        z71Var2.addView(bVar, z5.e(44, 44, 51));
-        z71Var2.addView(dVar, z5.d(44, 44.0f, 53, 0.0f, 0.0f, 5.0f, 0.0f));
-        z71Var2.addView(rVar, z5.d(-1, -2.0f, 119, 39.0f, 0.0f, 47.0f, 0.0f));
-        rVar.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(11.0f));
-    }
-
-    public static void a(c cVar) {
-        h5 h5Var = cVar.f;
-        m10.d(h5Var, cVar.D.e);
-        int i10 = g6.A6;
-        rn rnVar = cVar.d;
-        h5Var.setTextColor(i0.b.d(cVar.E.e, g6.v0(i10, rnVar.getResourceProvider()), g6.v0(g6.p7, rnVar.getResourceProvider())));
-    }
-
-    public e getAttachedMedia() {
-        return this.h;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        ViewTreeObserver viewTreeObserver = getViewTreeObserver();
-        this.B = viewTreeObserver;
-        viewTreeObserver.addOnPreDrawListener(this);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        ViewTreeObserver viewTreeObserver = this.B;
-        if (viewTreeObserver != null && viewTreeObserver.isAlive()) {
-            this.B.removeOnPreDrawListener(this);
+    public c(String str) {
+        long j10;
+        this.b = str;
+        this.c = null;
+        File file = new File(str);
+        try {
+            j10 = file.length();
+        } catch (Throwable unused) {
+            j10 = 0;
         }
-        this.B = null;
-        super.onDetachedFromWindow();
+        this.e = j10;
+        String name = file.getName();
+        this.d = name;
+        String[] split = name.split("\\.");
+        String str2 = split.length > 1 ? split[split.length - 1] : "?";
+        this.f = str2;
+        int thumbForNameOrMime = AndroidUtilities.getThumbForNameOrMime(name, str2, false);
+        if (thumbForNameOrMime != 0) {
+            this.h = ApplicationLoader.applicationContext.getResources().getDrawable(thumbForNameOrMime);
+        } else {
+            this.h = null;
+        }
+        if (TextUtils.isEmpty(str2)) {
+            this.n = null;
+            return;
+        }
+        TextPaint textPaint = new TextPaint(1);
+        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
+        textPaint.setTypeface(AndroidUtilities.bold());
+        textPaint.setColor(f6.w0(null, f6.Bi, false));
+        this.n = new StaticLayout(TextUtils.ellipsize(str2, textPaint, AndroidUtilities.dp(34.0f), TextUtils.TruncateAt.END), textPaint, AndroidUtilities.dp(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        s1 s1Var;
-        bh.a aVar;
-        s1 s1Var2 = this.n;
-        if (s1Var2 != null) {
-            int id2 = s1Var2.getMessageObject().getId();
-            if (this.n.isAttachedToWindow() && this.r == id2 && (aVar = (s1Var = this.n).W5) != null && s1Var.j6) {
-                Rect bounds = aVar.getBounds();
-                Rect rect = this.A;
-                rect.set(bounds);
-                s1 s1Var3 = this.n;
-                int[] iArr = this.y;
-                s1Var3.getLocationInWindow(iArr);
-                int i10 = iArr[0];
-                int i11 = iArr[1];
-                getLocationInWindow(iArr);
-                rect.offset(i10 - iArr[0], i11 - iArr[1]);
-                int width = rect.width();
-                FrameLayout.LayoutParams layoutParams = this.e;
-                int i12 = layoutParams.width;
-                z71 z71Var = this.w;
-                if (i12 != width) {
-                    layoutParams.width = width;
-                    z71Var.setLayoutParams(layoutParams);
+    public static b d(View view, String str, String str2, TLRPC.Document document, MessageObject messageObject) {
+        b bVar = new b();
+        bVar.a.setColor(f6.w0(null, f6.G6, false));
+        bVar.b.setColor(f6.w0(null, f6.y6, false));
+        RadialProgress2 radialProgress2 = new RadialProgress2(view, null);
+        bVar.c = radialProgress2;
+        radialProgress2.setCircleRadius(AndroidUtilities.dp(21.0f));
+        bVar.c.g(f6.ie, f6.je, f6.uc, f6.vc);
+        if (MessageObject.isMusicDocument(document)) {
+            if (MessageObject.isDocumentHasThumb(document)) {
+                TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(22.0f), true, null, false);
+                bVar.c.j(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(44.0f), true, closestPhotoSizeWithSize, true), closestPhotoSizeWithSize, document, messageObject);
+            } else {
+                String artworkUrl = MessageObject.getArtworkUrl(document, true);
+                if (TextUtils.isEmpty(artworkUrl)) {
+                    bVar.c.i(null, null, null);
+                } else {
+                    bVar.c.h(artworkUrl);
                 }
-                z71Var.setTranslationX(rect.left);
-                z71Var.setTranslationY(AndroidUtilities.dp(0.66f) + rect.top);
-                return true;
             }
-            lg lgVar = this.s;
-            if (lgVar != null) {
-                lgVar.run();
-                this.s = null;
-            }
+            bVar.c.setIcon(0, false, false);
+        } else {
+            bVar.c.setIcon(5, false, false);
         }
-        return true;
-    }
-
-    public void setAnimatedVisibility(float f10) {
-        this.v.setAlpha(f10);
-    }
-
-    public void setCellToWatch(s1 s1Var) {
-        this.n = s1Var;
-        this.r = s1Var.getMessageObject().getId();
-    }
-
-    public void setColor(int i10) {
-        if (this.C != i10) {
-            this.C = i10;
-            PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
-            b bVar = this.b;
-            bVar.b.setColorFilter(porterDuffColorFilter);
-            bVar.c.setColorFilter(porterDuffColorFilter);
-            this.c.a.setColorFilter(porterDuffColorFilter);
-            gh.r rVar = this.a;
-            rVar.setCursorColor(i10);
-            rVar.setHandlesColor(i10);
-            rVar.setHintTextColor(i10);
+        if (str == null) {
+            str = "";
         }
+        bVar.d = str;
+        if (str2 == null) {
+            str2 = "";
+        }
+        bVar.e = str2;
+        bVar.l = -1;
+        bVar.f = null;
+        bVar.g = null;
+        bVar.invalidateSelf();
+        view.addOnAttachStateChangeListener(new a(bVar));
+        return bVar;
+    }
+
+    @Override // yg.e
+    public final void c(Canvas canvas, int i9, int i10) {
+        Drawable drawable = this.h;
+        if (drawable != null) {
+            drawable.setBounds(0, 0, i9, i10);
+            drawable.draw(canvas);
+            canvas.save();
+            canvas.translate((i9 - AndroidUtilities.dp(34.0f)) / 2.0f, AndroidUtilities.dp(15.0f));
+            this.n.draw(canvas);
+            canvas.restore();
+        }
+    }
+
+    public c(Uri uri) {
+        this.b = null;
+        this.c = uri;
+        String fileName = MediaController.getFileName(uri);
+        fileName = fileName == null ? "?" : fileName;
+        this.d = fileName;
+        String[] split = fileName.split("\\.");
+        String str = split.length > 1 ? split[split.length - 1] : "?";
+        this.f = str;
+        this.e = 0L;
+        int thumbForNameOrMime = AndroidUtilities.getThumbForNameOrMime(fileName, str, false);
+        if (thumbForNameOrMime != 0) {
+            this.h = ApplicationLoader.applicationContext.getResources().getDrawable(thumbForNameOrMime);
+        } else {
+            this.h = null;
+        }
+        if (!TextUtils.isEmpty(str)) {
+            TextPaint textPaint = new TextPaint(1);
+            textPaint.setTextSize(AndroidUtilities.dp(13.0f));
+            textPaint.setTypeface(AndroidUtilities.bold());
+            textPaint.setColor(f6.w0(null, f6.Bi, false));
+            this.n = new StaticLayout(TextUtils.ellipsize(str, textPaint, AndroidUtilities.dp(34.0f), TextUtils.TruncateAt.END), textPaint, AndroidUtilities.dp(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+            return;
+        }
+        this.n = null;
     }
 }

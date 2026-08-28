@@ -1,28 +1,35 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.util.Iterator;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class q0 extends g0 {
-    public final transient Object[] c;
-    public final transient int d;
-    public final transient int e;
+public final class q0 extends k0 {
+    public final transient s0 d;
+    public final transient r0 e;
 
-    public q0(int i10, int i11, Object[] objArr) {
-        this.c = objArr;
-        this.d = i10;
-        this.e = i11;
+    public q0(s0 s0Var, r0 r0Var) {
+        this.d = s0Var;
+        this.e = r0Var;
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        g7.k5.a(i10, this.e);
-        Object obj = this.c[i10 + i10 + this.d];
-        obj.getClass();
-        return obj;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.d.get(obj) != null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // com.google.android.gms.internal.cast.e0
+    public final int i(Object[] objArr) {
+        return this.e.i(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return this.e.listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final int size() {
-        return this.e;
+        return this.d.h;
     }
 }

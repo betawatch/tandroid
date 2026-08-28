@@ -1,24 +1,17 @@
 package kb;
 
-import g7.c9;
-import k7.wf;
-import k7.yf;
-import za.g;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c extends b8.a {
-    public final g b;
+public final class c extends h {
+    public static final c c;
 
-    public c(g gVar) {
-        super(8);
-        this.b = gVar;
+    static {
+        c cVar = new c();
+        c = cVar;
+        cVar.setStackTrace(h.b);
     }
 
-    @Override // b8.a
-    public final Object F(Object obj) {
-        wf b10 = yf.b();
-        g gVar = this.b;
-        return new e(gVar, (jb.e) obj, b10, new c9(gVar.b(), 2));
+    public static c a() {
+        return h.a ? new c() : c;
     }
 }

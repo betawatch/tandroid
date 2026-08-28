@@ -7,44 +7,44 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class i7 extends FrameLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b8 b;
+    public final /* synthetic */ c8 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i7(b8 b8Var, Context context, int i10) {
+    public /* synthetic */ i7(c8 c8Var, Context context, int i9) {
         super(context);
-        this.a = i10;
-        this.b = b8Var;
+        this.a = i9;
+        this.b = c8Var;
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+    public void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
         TextView textView;
         switch (this.a) {
             case 0:
-                int x8 = org.telegram.messenger.rl.x(248.0f, i12 - i10, 4);
-                for (int i14 = 0; i14 < 5; i14++) {
-                    int dp = (x8 * i14) + AndroidUtilities.dp((i14 * 48) + 4);
+                int y10 = org.telegram.messenger.ll.y(248.0f, i11 - i9, 4);
+                for (int i13 = 0; i13 < 5; i13++) {
+                    int dp = (y10 * i13) + AndroidUtilities.dp((i13 * 48) + 4);
                     int dp2 = AndroidUtilities.dp(9.0f);
-                    b8 b8Var = this.b;
-                    View view = b8Var.j0[i14];
-                    view.layout(dp, dp2, view.getMeasuredWidth() + dp, b8Var.j0[i14].getMeasuredHeight() + dp2);
+                    c8 c8Var = this.b;
+                    View view = c8Var.j0[i13];
+                    view.layout(dp, dp2, view.getMeasuredWidth() + dp, c8Var.j0[i13].getMeasuredHeight() + dp2);
                 }
                 break;
             case 1:
             default:
-                super.onLayout(z10, i10, i11, i12, i13);
+                super.onLayout(z10, i9, i10, i11, i12);
                 break;
             case 2:
-                super.onLayout(z10, i10, i11, i12, i13);
-                b8 b8Var2 = this.b;
-                if (b8Var2.R != null && (textView = b8Var2.W) != null) {
-                    int left = (textView.getLeft() - AndroidUtilities.dp(4.0f)) - b8Var2.R.getMeasuredWidth();
-                    org.telegram.ui.ActionBar.v0 v0Var = b8Var2.R;
-                    v0Var.layout(left, v0Var.getTop(), b8Var2.R.getMeasuredWidth() + left, b8Var2.R.getBottom());
+                super.onLayout(z10, i9, i10, i11, i12);
+                c8 c8Var2 = this.b;
+                if (c8Var2.R != null && (textView = c8Var2.W) != null) {
+                    int left = (textView.getLeft() - AndroidUtilities.dp(4.0f)) - c8Var2.R.getMeasuredWidth();
+                    org.telegram.ui.ActionBar.w0 w0Var = c8Var2.R;
+                    w0Var.layout(left, w0Var.getTop(), c8Var2.R.getMeasuredWidth() + left, c8Var2.R.getBottom());
                     break;
                 }
                 break;
@@ -55,9 +55,9 @@ public final class i7 extends FrameLayout {
     public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.a) {
             case 1:
-                b8 b8Var = this.b;
-                if (b8Var.e0.getTag() != null) {
-                    b8Var.A0(false, true);
+                c8 c8Var = this.b;
+                if (c8Var.e0.getTag() != null) {
+                    c8Var.z0(false, true);
                 }
                 return true;
             default:

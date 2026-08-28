@@ -1,494 +1,243 @@
 package c3;
 
-import ag.h0;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
-import com.google.firebase.messaging.m;
-import d3.h;
-import h9.b0;
-import h9.k0;
-import j$.util.Objects;
-import j4.x0;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.net.URL;
-import java.nio.charset.Charset;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import ff.g0;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicReference;
-import k5.i;
-import m.t3;
-import m1.j;
-import org.json.JSONObject;
-import v2.k;
-import v2.t;
-import v2.u;
-import v2.w;
-import w2.l;
-import w2.n;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+import kh.a8;
+import kh.r6;
+import kh.y7;
+import n5.a0;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.Cells.z1;
+import org.telegram.ui.Components.d40;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.x4;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.bu0;
+import org.telegram.ui.dy;
+import org.telegram.ui.dz0;
+import org.telegram.ui.o50;
+import org.telegram.ui.qn;
+import w2.i;
+import xf.o0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class g {
-    public Object a;
-    public Object b;
-    public Object c;
-    public Object d;
-    public Object e;
-    public Object f;
-    public Object g;
-    public Object h;
-    public Object i;
+public final /* synthetic */ class g implements e3.b, d40, y7, x4, b2, z8.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public static void f(String str, JSONObject jSONObject) {
-        StringBuilder o10 = com.google.android.recaptcha.internal.a.o(str);
-        o10.append(jSONObject.toString());
-        String sb2 = o10.toString();
-        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", sb2, null);
+    public /* synthetic */ g(Object obj, Object obj2, long j10, Object obj3, int i9) {
+        this.a = i9;
+        this.c = obj;
+        this.d = obj2;
+        this.b = j10;
+        this.e = obj3;
+    }
+
+    @Override // org.telegram.ui.Components.x4
+    public void B(int i9, int i10, boolean z10) {
+        qn.r0((qn) this.c, (ArrayList) this.d, this.b, (ll0) this.e, z10, i9);
+    }
+
+    @Override // org.telegram.ui.Components.d40
+    public void P(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize) {
+        qn qnVar = (qn) this.c;
+        TLRPC.FileLocation[] fileLocationArr = (TLRPC.FileLocation[]) this.d;
+        TLRPC.FileLocation[] fileLocationArr2 = (TLRPC.FileLocation[]) this.e;
+        if (inputFile == null && inputFile2 == null && videoSize == null) {
+            fileLocationArr[0] = photoSize2.location;
+            fileLocationArr2[0] = photoSize.location;
+            return;
+        }
+        TLRPC.TL_photos_uploadProfilePhoto tL_photos_uploadProfilePhoto = new TLRPC.TL_photos_uploadProfilePhoto();
+        if (inputFile != null) {
+            tL_photos_uploadProfilePhoto.file = inputFile;
+            tL_photos_uploadProfilePhoto.flags |= 1;
+        }
+        if (inputFile2 != null) {
+            tL_photos_uploadProfilePhoto.video = inputFile2;
+            int i9 = tL_photos_uploadProfilePhoto.flags;
+            tL_photos_uploadProfilePhoto.video_start_ts = d;
+            tL_photos_uploadProfilePhoto.flags = i9 | 6;
+        }
+        if (videoSize != null) {
+            tL_photos_uploadProfilePhoto.video_emoji_markup = videoSize;
+            tL_photos_uploadProfilePhoto.flags |= 16;
+        }
+        qnVar.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new g0(qnVar, fileLocationArr, str, fileLocationArr2, this.b));
+    }
+
+    @Override // z8.g
+    public ScheduledFuture a(final a0 a0Var) {
+        switch (this.a) {
+            case 6:
+                z8.f fVar = (z8.f) this.c;
+                Runnable runnable = (Runnable) this.d;
+                return fVar.b.schedule(new z8.d(fVar, runnable, a0Var, 1), this.b, (TimeUnit) this.e);
+            default:
+                final z8.f fVar2 = (z8.f) this.c;
+                final Callable callable = (Callable) this.d;
+                return fVar2.b.schedule(new Callable() { // from class: z8.e
+                    @Override // java.util.concurrent.Callable
+                    public final Object call() {
+                        return f.this.a.submit(new o0(8, callable, a0Var));
+                    }
+                }, this.b, (TimeUnit) this.e);
         }
     }
 
-    public b0 a() {
-        String str = ((Integer) this.a) == null ? " pid" : "";
-        if (((String) this.b) == null) {
-            str = str.concat(" processName");
-        }
-        if (((Integer) this.c) == null) {
-            str = s3.c.l(str, " reasonCode");
-        }
-        if (((Integer) this.d) == null) {
-            str = s3.c.l(str, " importance");
-        }
-        if (((Long) this.e) == null) {
-            str = s3.c.l(str, " pss");
-        }
-        if (((Long) this.f) == null) {
-            str = s3.c.l(str, " rss");
-        }
-        if (((Long) this.g) == null) {
-            str = s3.c.l(str, " timestamp");
-        }
-        if (str.isEmpty()) {
-            return new b0(((Integer) this.a).intValue(), (String) this.b, ((Integer) this.c).intValue(), ((Integer) this.d).intValue(), ((Long) this.e).longValue(), ((Long) this.f).longValue(), ((Long) this.g).longValue(), (String) this.h, (List) this.i);
-        }
-        throw new IllegalStateException("Missing required properties:".concat(str));
+    @Override // org.telegram.ui.Components.d40
+    public /* synthetic */ boolean e() {
+        return true;
     }
 
-    public k0 b() {
-        String str = ((Integer) this.a) == null ? " arch" : "";
-        if (((String) this.b) == null) {
-            str = str.concat(" model");
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(c2 c2Var, int i9) {
+        switch (this.a) {
+            case 4:
+                ChatObject.Call call = (ChatObject.Call) this.c;
+                z1[] z1VarArr = (z1[]) this.d;
+                Runnable runnable = (Runnable) this.e;
+                boolean z10 = false;
+                z1 z1Var = z1VarArr[0];
+                if (z1Var != null && z1Var.b()) {
+                    z10 = true;
+                }
+                o50.w1(call, z10, this.b, runnable);
+                break;
+            default:
+                dz0 dz0Var = (dz0) this.c;
+                dy dyVar = (dy) this.d;
+                TLRPC.User user = (TLRPC.User) this.e;
+                ProfileActivity profileActivity = dz0Var.b;
+                profileActivity.J1 = true;
+                Bundle i10 = aa.d.i("scrollToTopOnResume", true);
+                long j10 = -this.b;
+                i10.putLong("chat_id", j10);
+                if (profileActivity.getMessagesController().checkCanOpenChat(i10, dyVar)) {
+                    qn qnVar = new qn(i10);
+                    NotificationCenter notificationCenter = profileActivity.getNotificationCenter();
+                    int i11 = NotificationCenter.closeChats;
+                    notificationCenter.removeObserver(profileActivity, i11);
+                    profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i11, new Object[0]);
+                    profileActivity.getMessagesController().addUserToChat(j10, user, 0, null, qnVar, true, null, null);
+                    profileActivity.presentFragment(qnVar, true);
+                    break;
+                }
+                break;
         }
-        if (((Integer) this.c) == null) {
-            str = s3.c.l(str, " cores");
-        }
-        if (((Long) this.d) == null) {
-            str = s3.c.l(str, " ram");
-        }
-        if (((Long) this.e) == null) {
-            str = s3.c.l(str, " diskSpace");
-        }
-        if (((Boolean) this.f) == null) {
-            str = s3.c.l(str, " simulator");
-        }
-        if (((Integer) this.g) == null) {
-            str = s3.c.l(str, " state");
-        }
-        if (((String) this.h) == null) {
-            str = s3.c.l(str, " manufacturer");
-        }
-        if (((String) this.i) == null) {
-            str = s3.c.l(str, " modelClass");
-        }
-        if (str.isEmpty()) {
-            return new k0(((Integer) this.a).intValue(), (String) this.b, ((Integer) this.c).intValue(), ((Long) this.d).longValue(), ((Long) this.e).longValue(), ((Boolean) this.f).booleanValue(), ((Integer) this.g).intValue(), (String) this.h, (String) this.i);
-        }
-        throw new IllegalStateException("Missing required properties:".concat(str));
     }
 
-    public m9.a c(int i10) {
-        m9.a aVar = null;
+    @Override // kh.y7
+    public Bitmap g(BitmapFactory.Options options) {
+        r6 r6Var = (r6) this.c;
+        a8 a8Var = (a8) this.d;
+        long j10 = this.b;
+        String str = (String) this.e;
+        if (!a8Var.K) {
+            return BitmapFactory.decodeFile(str, options);
+        }
+        String str2 = a8Var.N;
+        if (str2 != null) {
+            return BitmapFactory.decodeFile(str2, options);
+        }
         try {
-            if (!j.a(2, i10)) {
-                JSONObject F = ((i) this.e).F();
-                if (F != null) {
-                    m9.a h = ((ga.c) this.c).h(F);
-                    f("Loaded cached settings: ", F);
-                    ((ab.a) this.d).getClass();
-                    long currentTimeMillis = System.currentTimeMillis();
-                    if (j.a(3, i10) || h.c >= currentTimeMillis) {
-                        try {
-                            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                                Log.v("FirebaseCrashlytics", "Returning cached settings.", null);
-                            }
-                            return h;
-                        } catch (Exception e9) {
-                            e = e9;
-                            aVar = h;
-                            Log.e("FirebaseCrashlytics", "Failed to get cached settings", e);
-                            return aVar;
-                        }
-                    }
-                    if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                        Log.v("FirebaseCrashlytics", "Cached settings have expired.", null);
-                        return null;
-                    }
-                } else if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                    Log.d("FirebaseCrashlytics", "No cached settings data found.", null);
-                }
-            }
+            return MediaStore.Video.Thumbnails.getThumbnail(r6Var.getContext().getContentResolver(), j10, 1, options);
+        } catch (Throwable unused) {
+            r6Var.invalidate();
             return null;
-        } catch (Exception e10) {
-            e = e10;
         }
     }
 
-    public m9.a d() {
-        return (m9.a) ((AtomicReference) this.h).get();
+    @Override // org.telegram.ui.Components.d40
+    public /* synthetic */ bu0 getCloseIntoObject() {
+        return null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0403  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x03e7 A[SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void e(w2.i iVar, int i10) {
-        byte[] bArr;
-        long j10;
-        x2.a aVar;
-        String str;
-        x2.a aVar2;
-        int i11;
-        x0 c10;
-        Integer num;
-        String str2;
-        t3 t3Var;
-        int i12;
-        final g gVar = this;
-        final w2.i iVar2 = iVar;
-        byte[] bArr2 = iVar2.b;
-        e3.c cVar = (e3.c) gVar.f;
-        x2.e a2 = ((x2.d) gVar.b).a(iVar2.a);
-        long j11 = 0;
-        while (true) {
-            final int i13 = 0;
-            h hVar = (h) cVar;
-            if (!((Boolean) hVar.f(new e3.b(gVar) { // from class: c3.e
-                public final /* synthetic */ g b;
+    @Override // org.telegram.ui.Components.d40
+    public /* synthetic */ String getInitialSearchString() {
+        return null;
+    }
 
-                {
-                    this.b = gVar;
-                }
-
-                @Override // e3.b
-                public final Object i() {
-                    Boolean bool;
-                    switch (i13) {
-                        case 0:
-                            w2.i iVar3 = iVar2;
-                            h hVar2 = (h) ((d3.d) this.b.c);
-                            SQLiteDatabase a3 = hVar2.a();
-                            a3.beginTransaction();
-                            try {
-                                Long b10 = h.b(a3, iVar3);
-                                if (b10 == null) {
-                                    bool = Boolean.FALSE;
-                                } else {
-                                    Cursor rawQuery = hVar2.a().rawQuery("SELECT 1 FROM events WHERE context_id = ? LIMIT 1", new String[]{b10.toString()});
-                                    try {
-                                        Boolean valueOf = Boolean.valueOf(rawQuery.moveToNext());
-                                        rawQuery.close();
-                                        bool = valueOf;
-                                    } catch (Throwable th) {
-                                        rawQuery.close();
-                                        throw th;
-                                    }
-                                }
-                                a3.setTransactionSuccessful();
-                                return bool;
-                            } finally {
-                                a3.endTransaction();
-                            }
-                        default:
-                            h hVar3 = (h) ((d3.d) this.b.c);
-                            hVar3.getClass();
-                            return (Iterable) hVar3.c(new h0(14, hVar3, iVar2));
-                    }
-                }
-            })).booleanValue()) {
-                hVar.f(new f(gVar, iVar2, j11, 0));
-                return;
-            }
-            final int i14 = 1;
-            Iterable iterable = (Iterable) hVar.f(new e3.b(gVar) { // from class: c3.e
-                public final /* synthetic */ g b;
-
-                {
-                    this.b = gVar;
-                }
-
-                @Override // e3.b
-                public final Object i() {
-                    Boolean bool;
-                    switch (i14) {
-                        case 0:
-                            w2.i iVar3 = iVar2;
-                            h hVar2 = (h) ((d3.d) this.b.c);
-                            SQLiteDatabase a3 = hVar2.a();
-                            a3.beginTransaction();
-                            try {
-                                Long b10 = h.b(a3, iVar3);
-                                if (b10 == null) {
-                                    bool = Boolean.FALSE;
-                                } else {
-                                    Cursor rawQuery = hVar2.a().rawQuery("SELECT 1 FROM events WHERE context_id = ? LIMIT 1", new String[]{b10.toString()});
-                                    try {
-                                        Boolean valueOf = Boolean.valueOf(rawQuery.moveToNext());
-                                        rawQuery.close();
-                                        bool = valueOf;
-                                    } catch (Throwable th) {
-                                        rawQuery.close();
-                                        throw th;
-                                    }
-                                }
-                                a3.setTransactionSuccessful();
-                                return bool;
-                            } finally {
-                                a3.endTransaction();
-                            }
-                        default:
-                            h hVar3 = (h) ((d3.d) this.b.c);
-                            hVar3.getClass();
-                            return (Iterable) hVar3.c(new h0(14, hVar3, iVar2));
-                    }
-                }
-            });
-            if (!iterable.iterator().hasNext()) {
-                return;
-            }
-            int i15 = 3;
-            if (a2 == null) {
-                a.a.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
-                aVar2 = new x2.a(3, -1L);
-                bArr = bArr2;
-                j10 = j11;
-            } else {
-                ArrayList arrayList = new ArrayList();
-                Iterator it = iterable.iterator();
-                while (it.hasNext()) {
-                    arrayList.add(((d3.b) it.next()).c);
-                }
-                if (bArr2 != null) {
-                    d3.c cVar2 = (d3.c) gVar.i;
-                    Objects.requireNonNull(cVar2);
-                    z2.a aVar3 = (z2.a) hVar.f(new a1.c(cVar2, i15));
-                    m mVar = new m();
-                    mVar.f = new HashMap();
-                    mVar.d = Long.valueOf(((f3.a) gVar.g).E());
-                    mVar.e = Long.valueOf(((f3.a) gVar.h).E());
-                    mVar.a = "GDT_CLIENT_METRICS";
-                    t2.c cVar3 = new t2.c("proto");
-                    aVar3.getClass();
-                    u2.b bVar = n.a;
-                    bVar.getClass();
-                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+    @Override // e3.b
+    public Object j() {
+        h hVar = (h) this.c;
+        Iterable iterable = (Iterable) this.d;
+        i iVar = (i) this.e;
+        d3.h hVar2 = (d3.h) ((d3.d) hVar.c);
+        hVar2.getClass();
+        if (iterable.iterator().hasNext()) {
+            String str = "UPDATE events SET num_attempts = num_attempts + 1 WHERE _id in " + d3.h.g(iterable);
+            SQLiteDatabase a2 = hVar2.a();
+            a2.beginTransaction();
+            try {
+                a2.compileStatement(str).execute();
+                Cursor rawQuery = a2.rawQuery("SELECT COUNT(*), transport_name FROM events WHERE num_attempts >= 16 GROUP BY transport_name", null);
+                while (rawQuery.moveToNext()) {
                     try {
-                        bVar.e(aVar3, byteArrayOutputStream);
-                    } catch (IOException unused) {
-                    }
-                    mVar.c = new l(cVar3, byteArrayOutputStream.toByteArray());
-                    arrayList.add(((u2.c) a2).a(mVar.i()));
-                }
-                u2.c cVar4 = (u2.c) a2;
-                HashMap hashMap = new HashMap();
-                int size = arrayList.size();
-                int i16 = 0;
-                while (i16 < size) {
-                    Object obj = arrayList.get(i16);
-                    i16++;
-                    w2.h hVar2 = (w2.h) obj;
-                    String str3 = hVar2.a;
-                    if (hashMap.containsKey(str3)) {
-                        ((List) hashMap.get(str3)).add(hVar2);
-                    } else {
-                        ArrayList arrayList2 = new ArrayList();
-                        arrayList2.add(hVar2);
-                        hashMap.put(str3, arrayList2);
+                        hVar2.e(rawQuery.getInt(0), z2.c.f, rawQuery.getString(1));
+                    } catch (Throwable th) {
+                        rawQuery.close();
+                        throw th;
                     }
                 }
-                ArrayList arrayList3 = new ArrayList();
-                Iterator it2 = hashMap.entrySet().iterator();
-                while (it2.hasNext()) {
-                    Map.Entry entry = (Map.Entry) it2.next();
-                    w2.h hVar3 = (w2.h) ((List) entry.getValue()).get(0);
-                    w wVar = w.a;
-                    long E = cVar4.f.E();
-                    long E2 = cVar4.e.E();
-                    v2.j jVar = new v2.j(new v2.h(Integer.valueOf(hVar3.b("sdk-version")), hVar3.a("model"), hVar3.a("hardware"), hVar3.a("device"), hVar3.a("product"), hVar3.a("os-uild"), hVar3.a("manufacturer"), hVar3.a("fingerprint"), hVar3.a("locale"), hVar3.a("country"), hVar3.a("mcc_mnc"), hVar3.a("application_build")));
-                    try {
-                        str2 = null;
-                        num = Integer.valueOf(Integer.parseInt((String) entry.getKey()));
-                    } catch (NumberFormatException unused2) {
-                        num = null;
-                        str2 = (String) entry.getKey();
-                    }
-                    ArrayList arrayList4 = new ArrayList();
-                    for (w2.h hVar4 : (List) entry.getValue()) {
-                        Iterator it3 = it2;
-                        l lVar = hVar4.c;
-                        byte[] bArr3 = bArr2;
-                        t2.c cVar5 = lVar.a;
-                        byte[] bArr4 = lVar.b;
-                        long j12 = j11;
-                        if (cVar5.equals(new t2.c("proto"))) {
-                            t3Var = new t3();
-                            t3Var.d = bArr4;
-                        } else if (cVar5.equals(new t2.c("json"))) {
-                            String str4 = new String(bArr4, Charset.forName("UTF-8"));
-                            t3 t3Var2 = new t3();
-                            t3Var2.e = str4;
-                            t3Var = t3Var2;
-                        } else {
-                            String c11 = a.a.c("CctTransportBackend");
-                            if (Log.isLoggable(c11, 5)) {
-                                Log.w(c11, "Received event of unsupported encoding " + cVar5 + ". Skipping...");
-                            }
-                            it2 = it3;
-                            bArr2 = bArr3;
-                            j11 = j12;
-                        }
-                        t3Var.a = Long.valueOf(hVar4.d);
-                        t3Var.c = Long.valueOf(hVar4.e);
-                        String str5 = (String) hVar4.f.get("tz-offset");
-                        t3Var.f = Long.valueOf(str5 == null ? 0L : Long.valueOf(str5).longValue());
-                        t3Var.h = new v2.n((u) u.a.get(hVar4.b("net-type")), (t) t.a.get(hVar4.b("mobile-subtype")));
-                        Integer num2 = hVar4.b;
-                        if (num2 != null) {
-                            t3Var.b = num2;
-                        }
-                        String str6 = ((Long) t3Var.a) == null ? " eventTimeMs" : "";
-                        if (((Long) t3Var.c) == null) {
-                            str6 = str6.concat(" eventUptimeMs");
-                        }
-                        if (((Long) t3Var.f) == null) {
-                            str6 = s3.c.l(str6, " timezoneOffsetSeconds");
-                        }
-                        if (!str6.isEmpty()) {
-                            throw new IllegalStateException("Missing required properties:".concat(str6));
-                        }
-                        arrayList4.add(new k(((Long) t3Var.a).longValue(), (Integer) t3Var.b, ((Long) t3Var.c).longValue(), (byte[]) t3Var.d, (String) t3Var.e, ((Long) t3Var.f).longValue(), (v2.n) t3Var.h));
-                        it2 = it3;
-                        bArr2 = bArr3;
-                        j11 = j12;
-                    }
-                    arrayList3.add(new v2.l(E, E2, jVar, num, str2, arrayList4));
-                    it2 = it2;
-                }
-                bArr = bArr2;
-                j10 = j11;
-                v2.i iVar3 = new v2.i(arrayList3);
-                URL url = cVar4.d;
-                if (bArr != null) {
-                    try {
-                        u2.a a3 = u2.a.a(bArr);
-                        str = a3.b;
-                        if (str == null) {
-                            str = null;
-                        }
-                        String str7 = a3.a;
-                        if (str7 != null) {
-                            url = u2.c.b(str7);
-                        }
-                    } catch (IllegalArgumentException unused3) {
-                        aVar = new x2.a(3, -1L);
-                    }
-                } else {
-                    str = null;
-                }
-                try {
-                    u2.b bVar2 = new u2.b(url, iVar3, str, 0);
-                    t0.c cVar6 = new t0.c(cVar4, 1);
-                    int i17 = 5;
-                    do {
-                        c10 = cVar6.c(bVar2);
-                        URL url2 = (URL) c10.c;
-                        if (url2 != null) {
-                            a.a.a(url2, "CctTransportBackend", "Following redirect to: %s");
-                            bVar2 = new u2.b(url2, (v2.i) bVar2.d, (String) bVar2.b, 0);
-                        } else {
-                            bVar2 = null;
-                        }
-                        if (bVar2 == null) {
-                            break;
-                        } else {
-                            i17--;
-                        }
-                    } while (i17 >= 1);
-                    int i18 = c10.b;
-                    if (i18 == 200) {
-                        aVar2 = new x2.a(1, c10.a);
-                    } else {
-                        if (i18 >= 500 || i18 == 404) {
-                            aVar = new x2.a(2, -1L);
-                        } else if (i18 == 400) {
-                            try {
-                                aVar = new x2.a(4, -1L);
-                            } catch (IOException e9) {
-                                e = e9;
-                                a.a.b("CctTransportBackend", "Could not make request to the backend", e);
-                                i11 = 2;
-                                aVar2 = new x2.a(2, -1L);
-                                i12 = aVar2.a;
-                                if (i12 != i11) {
-                                }
-                            }
-                        } else {
-                            aVar = new x2.a(3, -1L);
-                        }
-                        aVar2 = aVar;
-                    }
-                } catch (IOException e10) {
-                    e = e10;
-                }
+                rawQuery.close();
+                a2.compileStatement("DELETE FROM events WHERE num_attempts >= 16").execute();
+                a2.setTransactionSuccessful();
+            } finally {
+                a2.endTransaction();
             }
-            i11 = 2;
-            i12 = aVar2.a;
-            if (i12 != i11) {
-                hVar.f(new a9.d(this, iterable, iVar, j10, 2));
-                ((a5.n) this.d).y(iVar, i10 + 1, true);
-                return;
-            }
-            gVar = this;
-            iVar2 = iVar;
-            long j13 = j10;
-            hVar.f(new h0(4, gVar, iterable));
-            if (i12 == 1) {
-                j11 = Math.max(j13, aVar2.b);
-                if (bArr != null) {
-                    hVar.f(new a1.c(gVar, 5));
-                }
-            } else {
-                if (i12 == 4) {
-                    HashMap hashMap2 = new HashMap();
-                    Iterator it4 = iterable.iterator();
-                    while (it4.hasNext()) {
-                        String str8 = ((d3.b) it4.next()).c.a;
-                        if (hashMap2.containsKey(str8)) {
-                            hashMap2.put(str8, Integer.valueOf(((Integer) hashMap2.get(str8)).intValue() + 1));
-                        } else {
-                            hashMap2.put(str8, 1);
-                        }
-                    }
-                    hVar.f(new h0(5, gVar, hashMap2));
-                }
-                j11 = j13;
-            }
-            bArr2 = bArr;
         }
+        hVar2.c(new d3.e(((f3.a) hVar.g).d() + this.b, iVar));
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.d40
+    public /* synthetic */ boolean u() {
+        return false;
+    }
+
+    public /* synthetic */ g(Object obj, Object obj2, Object obj3, long j10, int i9) {
+        this.a = i9;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = j10;
+    }
+
+    public /* synthetic */ g(dz0 dz0Var, long j10, dy dyVar, TLRPC.User user) {
+        this.a = 5;
+        this.c = dz0Var;
+        this.b = j10;
+        this.d = dyVar;
+        this.e = user;
+    }
+
+    @Override // org.telegram.ui.Components.d40
+    public /* synthetic */ void O() {
+    }
+
+    @Override // org.telegram.ui.Components.d40
+    public /* synthetic */ void D(float f10) {
+    }
+
+    @Override // org.telegram.ui.Components.d40
+    public /* synthetic */ void J(boolean z10, boolean z11) {
     }
 }

@@ -1,199 +1,76 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.h00;
-import org.telegram.ui.Components.lk0;
-import org.telegram.ui.Components.mc;
-import org.telegram.ui.Components.n41;
-import org.telegram.ui.Components.p80;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public abstract /* synthetic */ class pa {
-    public static void A(int i10, ArrayList arrayList) {
-        arrayList.add(n41.B(LocaleController.getString(i10)));
-    }
+public final class pa extends FrameLayout {
+    public final org.telegram.ui.Components.o9 a;
+    public final TextView b;
+    public TLRPC.TL_forumTopic c;
+    public boolean d;
 
-    public static void B(int i10, ArrayList arrayList, ArrayList arrayList2, Integer num) {
-        arrayList.add(LocaleController.getString(i10));
-        arrayList2.add(num);
-    }
-
-    public static /* synthetic */ String C(int i10) {
-        if (i10 == 1) {
-            return "PAID";
+    public pa(Context context) {
+        super(context);
+        org.telegram.ui.Components.o9 o9Var = new org.telegram.ui.Components.o9(context);
+        this.a = o9Var;
+        TextView textView = new TextView(context);
+        this.b = textView;
+        org.telegram.messenger.l0.q(textView, org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.G6, false), 1, 16.0f);
+        if (LocaleController.isRTL) {
+            addView(o9Var, g7.e6.d(30, 30.0f, 21, 12.0f, 0.0f, 12.0f, 0.0f));
+            addView(textView, g7.e6.d(-1, -2.0f, 21, 12.0f, 0.0f, 56.0f, 0.0f));
+        } else {
+            addView(o9Var, g7.e6.d(30, 30.0f, 16, 12.0f, 0.0f, 12.0f, 0.0f));
+            addView(textView, g7.e6.d(-1, -2.0f, 16, 56.0f, 0.0f, 12.0f, 0.0f));
         }
-        if (i10 == 2) {
-            return "CANCELLED";
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.d) {
+            int dp = AndroidUtilities.dp(56.0f);
+            if (LocaleController.isRTL) {
+                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - dp, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.f6.k0);
+            } else {
+                canvas.drawLine(dp, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.f6.k0);
+            }
         }
-        if (i10 == 3) {
-            return "PENDING";
+    }
+
+    public TLRPC.TL_forumTopic getTopic() {
+        return this.c;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+    }
+
+    public void setTopic(TLRPC.TL_forumTopic tL_forumTopic) {
+        this.c = tL_forumTopic;
+        boolean isEmpty = TextUtils.isEmpty(tL_forumTopic.searchQuery);
+        TextView textView = this.b;
+        if (isEmpty) {
+            textView.setText(AndroidUtilities.removeDiacritics(tL_forumTopic.title));
+        } else {
+            textView.setText(AndroidUtilities.highlightText(AndroidUtilities.removeDiacritics(tL_forumTopic.title), tL_forumTopic.searchQuery, (org.telegram.ui.ActionBar.b6) null));
         }
-        if (i10 == 4) {
-            return "FAILED";
+        org.telegram.ui.Components.o9 o9Var = this.a;
+        vf.c.p(o9Var, tL_forumTopic, false, false, null);
+        if (o9Var == null || o9Var.getImageReceiver() == null || !(o9Var.getImageReceiver().getDrawable() instanceof vf.b)) {
+            return;
         }
-        throw null;
-    }
-
-    public static boolean a(int i10, int i11, int i12) {
-        switch (i10) {
-            case 1:
-                if (((i11 + i12) & 1) == 0) {
-                }
-                break;
-            case 2:
-                if ((i11 & 1) == 0) {
-                }
-                break;
-            case 3:
-                if (i12 % 3 == 0) {
-                }
-                break;
-            case 4:
-                if ((i11 + i12) % 3 == 0) {
-                }
-                break;
-            case 5:
-                if ((((i12 / 3) + (i11 / 2)) & 1) == 0) {
-                }
-                break;
-            case 6:
-                if ((i11 * i12) % 6 == 0) {
-                }
-                break;
-            case 7:
-                if ((i11 * i12) % 6 < 3) {
-                }
-                break;
-            default:
-                if (((((i11 * i12) % 3) + i11 + i12) & 1) == 0) {
-                }
-                break;
-        }
-        return true;
-    }
-
-    public static float b(float f10, float f11, float f12, float f13) {
-        return f13 - ((f10 - f11) * f12);
-    }
-
-    public static int c(float f10, int i10, TextView textView) {
-        textView.setText(LocaleController.getString(i10));
-        return AndroidUtilities.dp(f10);
-    }
-
-    public static int d(int i10, int i11, int i12, int i13) {
-        return Math.max(i13, Math.min(Math.max(i10, i11), i12));
-    }
-
-    public static int e(int i10, int i11, ArrayList arrayList) {
-        return i11 - (arrayList.size() + i10);
-    }
-
-    public static int f(Random random, int i10) {
-        return Math.abs(random.nextInt() % i10);
-    }
-
-    public static int g(h00 h00Var, int i10) {
-        return h00Var.c(h00Var.getMeasuredWidth()) + i10;
-    }
-
-    public static TextView h(FrameLayout frameLayout, TextView textView, FrameLayout.LayoutParams layoutParams, Context context) {
-        frameLayout.addView(textView, layoutParams);
-        return new TextView(context);
-    }
-
-    public static TextView i(LinearLayout linearLayout, TextView textView, LinearLayout.LayoutParams layoutParams, Context context) {
-        linearLayout.addView(textView, layoutParams);
-        return new TextView(context);
-    }
-
-    public static String j(String str, String str2, String str3, String str4, String str5) {
-        return str + str2 + str3 + str4 + str5;
-    }
-
-    public static o1.k k(float f10, float f11, float f12) {
-        o1.k kVar = new o1.k(f10);
-        kVar.b(f11);
-        kVar.a(f12);
-        return kVar;
-    }
-
-    public static lk0 l(View view, View view2, int i10, int i11) {
-        view.setLayoutParams(new f2.y0(i10, i11));
-        return new lk0(view2);
-    }
-
-    public static void m(float f10, int i10, TextView textView) {
-        textView.setTextSize(i10, f10);
-        textView.setTypeface(AndroidUtilities.bold());
-    }
-
-    public static void n(int i10, int i11, ArrayList arrayList, ArrayList arrayList2) {
-        arrayList.add(Integer.valueOf(i10));
-        arrayList2.add(Integer.valueOf(i11));
-    }
-
-    public static void o(int i10, ArrayList arrayList) {
-        arrayList.add(n41.t(LocaleController.getString(i10)));
-    }
-
-    public static void p(int i10, ArrayList arrayList, ArrayList arrayList2, Integer num) {
-        arrayList.add(Integer.valueOf(i10));
-        arrayList2.add(num);
-    }
-
-    public static void q(int i10, p80 p80Var) {
-        p80Var.setText(AndroidUtilities.replaceTags(LocaleController.getString(i10)));
-    }
-
-    public static void r(int i10, Object[] objArr, mc mcVar, int i11, int i12) {
-        mcVar.Q(i11, i12, LocaleController.formatString(i10, objArr)).j();
-    }
-
-    public static void s(int i10, boolean[] zArr, boolean z10, TextView textView, int i11) {
-        textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(zArr, i10, z10));
-        textView.setGravity(i11);
-    }
-
-    public static void t(FrameLayout frameLayout, org.telegram.ui.ActionBar.c6 c6Var, TLRPC.TL_error tL_error, boolean z10) {
-        new mc(frameLayout, c6Var).d0(tL_error, z10);
-    }
-
-    public static void u(com.google.firebase.messaging.t tVar) {
-        com.googlecode.mp4parser.g.a().getClass();
-        com.googlecode.mp4parser.g.b(tVar);
-    }
-
-    public static void v(String str, StringBuilder sb2) {
-        sb2.append(str);
-        FileLog.d(sb2.toString());
-    }
-
-    public static void w(pf.k kVar, int i10, ArrayList arrayList) {
-        arrayList.add(new pf.i(kVar, i10));
-    }
-
-    public static void x(boolean z10, org.telegram.ui.ActionBar.k kVar) {
-        kVar.setBackButtonDrawable(new org.telegram.ui.ActionBar.g2(z10));
-    }
-
-    public static int y(int i10, int i11, int i12, int i13) {
-        return Math.max(i13, Math.min(Math.min(i10, i11), i12));
-    }
-
-    public static void z(int i10, int i11, ArrayList arrayList, ArrayList arrayList2) {
-        arrayList.add(LocaleController.getString(i10));
-        arrayList2.add(Integer.valueOf(i11));
+        ((vf.b) o9Var.getImageReceiver().getDrawable()).a(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.c9, false));
     }
 }

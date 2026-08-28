@@ -2,47 +2,66 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.text.method.LinkMovementMethod;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public class ac extends cb {
-    public final n9 a;
-    public final TextView b;
-    public final TextView c;
+public final class ac extends eb {
+    public final pi0 a;
+    public final j6 b;
+    public final j6 c;
+    public final int d;
 
-    public ac(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        int themedColor = getThemedColor(org.telegram.ui.ActionBar.g6.Hi);
-        n9 n9Var = new n9(context);
-        this.a = n9Var;
-        addView(n9Var, h7.z5.i(29.0f, 29.0f, 8388627, 12.0f, 12.0f, 12.0f, 12.0f));
+    public ac(Context context, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(context, b6Var);
+        int i9 = org.telegram.ui.ActionBar.f6.Hi;
+        this.d = getThemedColor(i9);
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.f6.Fi));
+        pi0 pi0Var = new pi0(context);
+        this.a = pi0Var;
+        pi0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(pi0Var, g7.e6.h(56.0f, 48.0f, 8388627));
+        int themedColor = getThemedColor(i9);
+        getThemedColor(org.telegram.ui.ActionBar.f6.Gi);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, h7.z5.i(-2.0f, -2.0f, 8388627, 54.0f, 8.0f, 12.0f, 8.0f));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setSingleLine();
-        textView.setTextColor(themedColor);
-        textView.setTextSize(1, 14.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(textView);
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        textView2.setMaxLines(2);
-        textView2.setTextColor(themedColor);
-        textView2.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.Gi));
-        textView2.setMovementMethod(new LinkMovementMethod());
-        textView2.setTypeface(Typeface.SANS_SERIF);
-        textView2.setTextSize(1, 13.0f);
-        linearLayout.addView(textView2);
+        addView(linearLayout, g7.e6.i(-1.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
+        j6 j6Var = new j6(context, true, true, true);
+        this.b = j6Var;
+        j6Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        j6Var.setTextColor(themedColor);
+        j6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        j6Var.setTypeface(AndroidUtilities.bold());
+        j6Var.setEllipsizeByGradient(true);
+        linearLayout.addView(j6Var, g7.e6.n(-1, 20));
+        j6 j6Var2 = new j6(context, true, true, true);
+        this.c = j6Var2;
+        j6Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        j6Var2.setTextColor(themedColor);
+        j6Var2.setTypeface(Typeface.SANS_SERIF);
+        j6Var2.setTextSize(AndroidUtilities.dp(13.0f));
+        j6Var2.setEllipsizeByGradient(true);
+        linearLayout.addView(j6Var2, g7.e6.n(-1, 18));
     }
 
-    @Override // org.telegram.ui.Components.jb
+    public final void c(int i9, String... strArr) {
+        pi0 pi0Var = this.a;
+        pi0Var.f(i9, 32, 32, null);
+        for (String str : strArr) {
+            pi0Var.h(this.d, str);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.lb
     public CharSequence getAccessibilityText() {
         return ((Object) this.b.getText()) + ".\n" + ((Object) this.c.getText());
+    }
+
+    @Override // org.telegram.ui.Components.lb
+    public final void onShow() {
+        super.onShow();
+        this.a.d();
     }
 }

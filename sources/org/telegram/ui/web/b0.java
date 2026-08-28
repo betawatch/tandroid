@@ -1,39 +1,38 @@
 package org.telegram.ui.web;
 
-import android.app.Activity;
-import org.json.JSONObject;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.t9;
+import org.telegram.ui.Components.y4;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final class b0 implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ z0 a;
+public final /* synthetic */ class b0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
 
-    public b0(z0 z0Var) {
-        this.a = z0Var;
+    public /* synthetic */ b0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, long j10, int i9) {
+        this.a = i9;
+        this.c = notificationCenterDelegate;
+        this.b = j10;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12 = NotificationCenter.onRequestPermissionResultReceived;
-        if (i10 == i12) {
-            int intValue = ((Integer) objArr[0]).intValue();
-            int[] iArr = (int[]) objArr[2];
-            if (intValue == 5000) {
-                NotificationCenter.getGlobalInstance().removeObserver(this, i12);
-                int i13 = iArr[0];
-                z0 z0Var = this.a;
-                if (i13 != 0) {
-                    z0Var.v("scan_qr_popup_closed", new JSONObject());
-                    return;
-                }
-                Activity activity = z0Var.S;
-                if (activity == null) {
-                    return;
-                }
-                z0Var.c0 = t9.e0(activity, 3, new n2.b0(z0Var, 13));
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                c0 c0Var = (c0) this.c;
+                c0Var.getClass();
+                c0Var.presentFragment(qn.R9(this.b));
+                break;
+            case 1:
+                qh.p pVar = (qh.p) this.c;
+                y4.M(pVar.b.b0.getParentActivity(), this.b, new n5.a0(pVar, 13), pVar.a);
+                break;
+            default:
+                qh.x1 x1Var = (qh.x1) this.c;
+                y4.M(x1Var.getParentActivity(), this.b, new m5.c0(x1Var, 21), x1Var.getResourceProvider());
+                break;
         }
     }
 }

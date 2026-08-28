@@ -1,11 +1,15 @@
 package fb;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes.dex */
-public final class b {
-    public final y9.b a;
+import androidx.lifecycle.b0;
+import androidx.lifecycle.m;
+import androidx.lifecycle.s;
+import com.google.android.gms.common.api.n;
+import java.io.Closeable;
 
-    public b(y9.b bVar) {
-        this.a = bVar;
-    }
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public interface b extends Closeable, s, n {
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    @b0(m.ON_DESTROY)
+    void close();
 }

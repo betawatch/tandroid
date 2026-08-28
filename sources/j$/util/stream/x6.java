@@ -22,8 +22,8 @@ public abstract class x6 implements Spliterator {
     public abstract x6 e(Spliterator spliterator);
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.p(this, i10);
+    public final /* synthetic */ boolean hasCharacteristics(int i9) {
+        return j$.com.android.tools.r8.a.p(this, i9);
     }
 
     public x6(a aVar, Supplier supplier, boolean z10) {
@@ -114,9 +114,9 @@ public abstract class x6 implements Spliterator {
     @Override // j$.util.Spliterator
     public final int characteristics() {
         c();
-        int i10 = this.b.m;
-        int i11 = i10 & ((~i10) >> 1) & v6.j & v6.f;
-        return (i11 & 64) != 0 ? (i11 & (-16449)) | (this.d.characteristics() & 16448) : i11;
+        int i9 = this.b.m;
+        int i10 = i9 & ((~i9) >> 1) & v6.j & v6.f;
+        return (i10 & 64) != 0 ? (i10 & (-16449)) | (this.d.characteristics() & 16448) : i10;
     }
 
     @Override // j$.util.Spliterator

@@ -1,65 +1,44 @@
 package gh;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.n41;
-import org.telegram.ui.Components.ri0;
-import org.telegram.ui.Components.zk0;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c5 extends m41 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class c5 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g5 b;
 
-    static {
-        m41.setup(new c5());
+    public /* synthetic */ c5(g5 g5Var, int i9) {
+        this.a = i9;
+        this.b = g5Var;
     }
 
-    @Override // org.telegram.ui.Components.m41
-    public final void bindView(View view, n41 n41Var, boolean z10, b51 b51Var, k51 k51Var) {
-        d5 d5Var = (d5) view;
-        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) n41Var.G;
-        int i10 = n41Var.z;
-        String str = (String) n41Var.l;
-        boolean z11 = n41Var.e;
-        ri0 ri0Var = d5Var.c;
-        b5 b5Var = d5Var.J;
-        if (b5Var == null || d5Var.I != stargiftattributemodel.document.id) {
-            d5Var.I = stargiftattributemodel.document.id;
-            if (b5Var != null) {
-                b5Var.o(ri0Var);
-            }
-            d5Var.J = new b5(3, d5Var.H, stargiftattributemodel.document);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                g5 g5Var = this.b;
+                g5Var.getClass();
+                g5Var.o0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g5Var.d(g5Var.Q);
+                break;
+            case 1:
+                g5 g5Var2 = this.b;
+                g5Var2.getClass();
+                float x10 = e2.c.x((float) Math.pow((r6 * 2.0f) - 2.0f, 2.0d), 0.075f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
+                g5Var2.p0 = x10;
+                FrameLayout frameLayout = g5Var2.b;
+                frameLayout.setScaleX(x10);
+                frameLayout.setScaleY(g5Var2.p0);
+                g5Var2.invalidate();
+                break;
+            default:
+                g5 g5Var3 = this.b;
+                g5Var3.getClass();
+                g5Var3.o0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g5Var3.d(g5Var3.Q);
+                break;
         }
-        if (ri0Var.isAttachedToWindow()) {
-            d5Var.J.a(ri0Var);
-        }
-        CharSequence charSequence = stargiftattributemodel.name;
-        if (!TextUtils.isEmpty(str)) {
-            charSequence = AndroidUtilities.highlightText(charSequence, str, d5Var.B);
-        }
-        if (i10 > 0) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-            spannableStringBuilder.append((CharSequence) "  ");
-            int length = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) Integer.toString(i10));
-            spannableStringBuilder.setSpan(new k41(AndroidUtilities.bold()), length, spannableStringBuilder.length(), 33);
-            charSequence = spannableStringBuilder;
-        }
-        d5Var.g(charSequence, 0, d5Var.J);
-        d5Var.setChecked(z11);
-    }
-
-    @Override // org.telegram.ui.Components.m41
-    public final View createView(Context context, zk0 zk0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
-        return new d5(context, i10, c6Var);
     }
 }

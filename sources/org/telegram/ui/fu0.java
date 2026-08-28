@@ -1,19 +1,11 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class fu0 {
-    public final int a;
-    public final ArrayList b;
-    public final au0 c;
-    public final /* synthetic */ PhotoViewer d;
+    public final float a;
 
-    public fu0(PhotoViewer photoViewer, int i10, ArrayList arrayList, au0 au0Var) {
-        this.d = photoViewer;
-        this.b = arrayList;
-        this.a = i10;
-        this.c = au0Var;
+    public fu0(float f10) {
+        this.a = f10;
     }
 }

@@ -21,8 +21,8 @@ public final class Period implements Serializable {
         Pattern.compile("([-+]?)P(?:([-+]?[0-9]+)Y)?(?:([-+]?[0-9]+)M)?(?:([-+]?[0-9]+)W)?(?:([-+]?[0-9]+)D)?", 2);
         Object[] objArr = {ChronoUnit.YEARS, ChronoUnit.MONTHS, ChronoUnit.DAYS};
         ArrayList arrayList = new ArrayList(3);
-        for (int i10 = 0; i10 < 3; i10++) {
-            arrayList.add(Objects.requireNonNull(objArr[i10]));
+        for (int i9 = 0; i9 < 3; i9++) {
+            arrayList.add(Objects.requireNonNull(objArr[i9]));
         }
         Collections.unmodifiableList(arrayList);
     }
@@ -31,27 +31,27 @@ public final class Period implements Serializable {
         localDate.getClass();
         LocalDate I = LocalDate.I(localDate2);
         long M = I.M() - localDate.M();
-        int i10 = I.c - localDate.c;
-        if (M > 0 && i10 < 0) {
+        int i9 = I.c - localDate.c;
+        if (M > 0 && i9 < 0) {
             M--;
-            i10 = (int) (I.z() - localDate.T(M).z());
-        } else if (M < 0 && i10 > 0) {
+            i9 = (int) (I.z() - localDate.T(M).z());
+        } else if (M < 0 && i9 > 0) {
             M++;
-            i10 -= I.P();
+            i9 -= I.P();
         }
         long j10 = M / 12;
-        int i11 = (int) (M % 12);
-        int i12 = (int) j10;
-        if (j10 == i12) {
-            return ((i12 | i11) | i10) == 0 ? d : new Period(i12, i11, i10);
+        int i10 = (int) (M % 12);
+        int i11 = (int) j10;
+        if (j10 == i11) {
+            return ((i11 | i10) | i9) == 0 ? d : new Period(i11, i10, i9);
         }
         throw new ArithmeticException();
     }
 
-    public Period(int i10, int i11, int i12) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
+    public Period(int i9, int i10, int i11) {
+        this.a = i9;
+        this.b = i10;
+        this.c = i11;
     }
 
     public int getYears() {
@@ -80,19 +80,19 @@ public final class Period implements Serializable {
             return "P0D";
         }
         StringBuilder sb2 = new StringBuilder("P");
-        int i10 = this.a;
-        if (i10 != 0) {
-            sb2.append(i10);
+        int i9 = this.a;
+        if (i9 != 0) {
+            sb2.append(i9);
             sb2.append('Y');
         }
-        int i11 = this.b;
-        if (i11 != 0) {
-            sb2.append(i11);
+        int i10 = this.b;
+        if (i10 != 0) {
+            sb2.append(i10);
             sb2.append('M');
         }
-        int i12 = this.c;
-        if (i12 != 0) {
-            sb2.append(i12);
+        int i11 = this.c;
+        if (i11 != 0) {
+            sb2.append(i11);
             sb2.append('D');
         }
         return sb2.toString();

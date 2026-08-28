@@ -1,23 +1,26 @@
 package b5;
 
-import j4.j1;
+import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class u {
-    public final int a;
-    public final int[] b;
-    public final j1[] c;
-    public final int[] d;
-    public final int[][][] e;
-    public final j1 f;
+public final class u extends c {
+    @Override // b5.t
+    public final int d() {
+        return 0;
+    }
 
-    public u(int[] iArr, j1[] j1VarArr, int[] iArr2, int[][][] iArr3, j1 j1Var) {
-        this.b = iArr;
-        this.c = j1VarArr;
-        this.e = iArr3;
-        this.d = iArr2;
-        this.f = j1Var;
-        this.a = iArr.length;
+    @Override // b5.t
+    public final int p() {
+        return 0;
+    }
+
+    @Override // b5.t
+    public final Object r() {
+        return null;
+    }
+
+    @Override // b5.t
+    public final void m(long j10, long j11, long j12, List list, l4.l[] lVarArr) {
     }
 }

@@ -1,14 +1,24 @@
 package f2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class v extends y0 {
-    public int e;
-    public int f;
+public final class v extends x {
+    public final /* synthetic */ int c;
 
-    public v(int i10, int i11) {
-        super(i10, i11);
-        this.e = -1;
-        this.f = 0;
+    @Override // f2.x
+    public int h(int i9, int i10) {
+        switch (this.c) {
+            case 0:
+                return i9 % i10;
+            default:
+                return super.h(i9, i10);
+        }
+    }
+
+    @Override // f2.x
+    public final int i(int i9) {
+        switch (this.c) {
+        }
+        return 1;
     }
 }

@@ -1,177 +1,127 @@
 package h3;
 
-import android.os.Bundle;
-import hh.i5;
-import org.telegram.ui.zf1;
+import android.net.Uri;
+import java.util.Collections;
+import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class q2 implements f, org.telegram.ui.ActionBar.a2, d5.k, d5.l {
-    public final /* synthetic */ int a;
+public final class q2 implements g {
+    public static final Object D = new Object();
+    public static final Object E = new Object();
+    public static final f1 F;
+    public static final String G;
+    public static final String H;
+    public static final String I;
+    public static final String J;
+    public static final String K;
+    public static final String L;
+    public static final String M;
+    public static final String N;
+    public static final String O;
+    public static final String P;
+    public static final String Q;
+    public static final String R;
+    public static final String S;
+    public int A;
+    public int B;
+    public long C;
+    public Object b;
+    public Object d;
+    public long e;
+    public long f;
+    public long h;
+    public boolean n;
+    public boolean r;
+    public boolean s;
+    public b1 v;
+    public boolean w;
+    public long x;
+    public long y;
+    public Object a = D;
+    public f1 c = F;
 
-    public /* synthetic */ q2(int i10) {
-        this.a = i10;
+    static {
+        x0 x0Var = new x0();
+        o8.x xVar = o8.z.b;
+        o8.l0 l0Var = o8.l0.e;
+        List list = Collections.EMPTY_LIST;
+        o8.l0 l0Var2 = o8.l0.e;
+        d1 d1Var = d1.c;
+        Uri uri = Uri.EMPTY;
+        F = new f1("com.google.android.exoplayer2.Timeline", new z0(x0Var), uri != null ? new c1(uri, null, null, list, null, l0Var2, null) : null, new b1(-9223372036854775807L, -9223372036854775807L, -9223372036854775807L, -3.4028235E38f, -3.4028235E38f), h1.U, d1Var);
+        int i9 = d5.f0.a;
+        G = Integer.toString(1, 36);
+        H = Integer.toString(2, 36);
+        I = Integer.toString(3, 36);
+        J = Integer.toString(4, 36);
+        K = Integer.toString(5, 36);
+        L = Integer.toString(6, 36);
+        M = Integer.toString(7, 36);
+        N = Integer.toString(8, 36);
+        O = Integer.toString(9, 36);
+        P = Integer.toString(10, 36);
+        Q = Integer.toString(11, 36);
+        R = Integer.toString(12, 36);
+        S = Integer.toString(13, 36);
     }
 
-    @Override // h3.f
-    public g a(Bundle bundle) {
-        switch (this.a) {
-            case 0:
-                Bundle bundle2 = bundle.getBundle(r2.G);
-                f1 f1Var = bundle2 != null ? (f1) f1.x.a(bundle2) : f1.h;
-                long j10 = bundle.getLong(r2.H, -9223372036854775807L);
-                long j11 = bundle.getLong(r2.I, -9223372036854775807L);
-                long j12 = bundle.getLong(r2.J, -9223372036854775807L);
-                boolean z10 = bundle.getBoolean(r2.K, false);
-                boolean z11 = bundle.getBoolean(r2.L, false);
-                Bundle bundle3 = bundle.getBundle(r2.M);
-                b1 b1Var = bundle3 != null ? (b1) b1.w.a(bundle3) : null;
-                boolean z12 = bundle.getBoolean(r2.N, false);
-                long j13 = bundle.getLong(r2.O, 0L);
-                long j14 = bundle.getLong(r2.P, -9223372036854775807L);
-                int i10 = bundle.getInt(r2.Q, 0);
-                int i11 = bundle.getInt(r2.R, 0);
-                long j15 = bundle.getLong(r2.S, 0L);
-                r2 r2Var = new r2();
-                r2Var.b(r2.E, f1Var, null, j10, j11, j12, z10, z11, b1Var, j13, j14, i10, i11, j15);
-                r2Var.w = z12;
-                return r2Var;
-            default:
-                ia.l lVar = j4.i1.n;
-                Bundle bundle4 = bundle.getBundle(t2.f);
-                bundle4.getClass();
-                j4.i1 i1Var = (j4.i1) lVar.a(bundle4);
-                int[] intArray = bundle.getIntArray(t2.h);
-                int i12 = i1Var.a;
-                int[] iArr = new int[i12];
-                if (intArray == null) {
-                    intArray = iArr;
-                }
-                boolean[] booleanArray = bundle.getBooleanArray(t2.n);
-                boolean[] zArr = new boolean[i12];
-                if (booleanArray == null) {
-                    booleanArray = zArr;
-                }
-                return new t2(i1Var, bundle.getBoolean(t2.r, false), intArray, booleanArray);
+    public final boolean a() {
+        d5.a.i(this.s == (this.v != null));
+        return this.v != null;
+    }
+
+    public final void b(Object obj, f1 f1Var, Object obj2, long j10, long j11, long j12, boolean z10, boolean z11, b1 b1Var, long j13, long j14, int i9, int i10, long j15) {
+        c1 c1Var;
+        this.a = obj;
+        this.c = f1Var != null ? f1Var : F;
+        this.b = (f1Var == null || (c1Var = f1Var.b) == null) ? null : c1Var.f;
+        this.d = obj2;
+        this.e = j10;
+        this.f = j11;
+        this.h = j12;
+        this.n = z10;
+        this.r = z11;
+        this.s = b1Var != null;
+        this.v = b1Var;
+        this.x = j13;
+        this.y = j14;
+        this.A = i9;
+        this.B = i10;
+        this.C = j15;
+        this.w = false;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-    }
-
-    @Override // d5.l
-    public void e(Object obj, d5.g gVar) {
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 2:
-                i5.d2(new zf1(6, null));
-                break;
-            default:
-                int i11 = i5.m1;
-                break;
+        if (obj != null && q2.class.equals(obj.getClass())) {
+            q2 q2Var = (q2) obj;
+            if (d5.f0.a(this.a, q2Var.a) && d5.f0.a(this.c, q2Var.c) && d5.f0.a(this.d, q2Var.d) && d5.f0.a(this.v, q2Var.v) && this.e == q2Var.e && this.f == q2Var.f && this.h == q2Var.h && this.n == q2Var.n && this.r == q2Var.r && this.w == q2Var.w && this.x == q2Var.x && this.y == q2Var.y && this.A == q2Var.A && this.B == q2Var.B && this.C == q2Var.C) {
+                return true;
+            }
         }
+        return false;
     }
 
-    @Override // d5.k
-    public void invoke(Object obj) {
-        i3.b bVar = (i3.b) obj;
-        switch (this.a) {
-            case 8:
-                bVar.getClass();
-                break;
-            case 9:
-                bVar.getClass();
-                break;
-            case 10:
-                bVar.getClass();
-                break;
-            case 11:
-                bVar.getClass();
-                break;
-            case 12:
-                bVar.getClass();
-                break;
-            case 13:
-                bVar.getClass();
-                break;
-            case 14:
-                bVar.getClass();
-                break;
-            case 15:
-                bVar.getClass();
-                break;
-            case 16:
-                bVar.getClass();
-                break;
-            case 17:
-                bVar.getClass();
-                break;
-            case 18:
-                bVar.getClass();
-                break;
-            case 19:
-                bVar.getClass();
-                break;
-            case 20:
-                bVar.getClass();
-                break;
-            case 21:
-                bVar.getClass();
-                break;
-            case 22:
-                bVar.getClass();
-                break;
-            case 23:
-                bVar.getClass();
-                break;
-            case 24:
-                bVar.getClass();
-                break;
-            case 25:
-                bVar.getClass();
-                break;
-            case 26:
-            default:
-                bVar.getClass();
-                break;
-            case 27:
-                bVar.getClass();
-                break;
-            case 28:
-                bVar.getClass();
-                break;
-        }
-    }
-
-    public /* synthetic */ q2(i5 i5Var) {
-        this.a = 2;
-    }
-
-    public /* synthetic */ q2(i3.a aVar, int i10, int i11) {
-        this.a = 18;
-    }
-
-    public /* synthetic */ q2(i3.a aVar, int i10, int i11, byte b10) {
-        this.a = i11;
-    }
-
-    public /* synthetic */ q2(i3.a aVar, f1 f1Var, int i10) {
-        this.a = 19;
-    }
-
-    public /* synthetic */ q2(i3.a aVar, Object obj, int i10) {
-        this.a = i10;
-    }
-
-    public /* synthetic */ q2(i3.a aVar, Object obj, Object obj2, int i10) {
-        this.a = i10;
-    }
-
-    public /* synthetic */ q2(i3.a aVar, boolean z10) {
-        this.a = 10;
-    }
-
-    public /* synthetic */ q2(i3.a aVar, boolean z10, int i10, int i11) {
-        this.a = i11;
+    public final int hashCode() {
+        int hashCode = (this.c.hashCode() + ((this.a.hashCode() + 217) * 31)) * 31;
+        Object obj = this.d;
+        int hashCode2 = (hashCode + (obj == null ? 0 : obj.hashCode())) * 31;
+        b1 b1Var = this.v;
+        int hashCode3 = (hashCode2 + (b1Var != null ? b1Var.hashCode() : 0)) * 31;
+        long j10 = this.e;
+        int i9 = (hashCode3 + ((int) (j10 ^ (j10 >>> 32)))) * 31;
+        long j11 = this.f;
+        int i10 = (i9 + ((int) (j11 ^ (j11 >>> 32)))) * 31;
+        long j12 = this.h;
+        int i11 = (((((((i10 + ((int) (j12 ^ (j12 >>> 32)))) * 31) + (this.n ? 1 : 0)) * 31) + (this.r ? 1 : 0)) * 31) + (this.w ? 1 : 0)) * 31;
+        long j13 = this.x;
+        int i12 = (i11 + ((int) (j13 ^ (j13 >>> 32)))) * 31;
+        long j14 = this.y;
+        int i13 = (((((i12 + ((int) (j14 ^ (j14 >>> 32)))) * 31) + this.A) * 31) + this.B) * 31;
+        long j15 = this.C;
+        return i13 + ((int) (j15 ^ (j15 >>> 32)));
     }
 }

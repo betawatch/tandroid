@@ -1,51 +1,22 @@
 package wf;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import f2.s;
+import java.util.ArrayList;
+import of.g;
+import org.telegram.ui.Components.vk0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class b extends Drawable {
-    public Drawable a;
-    public float b;
-    public int c;
+public abstract class b extends vk0 {
+    public final g c = new g();
 
-    public final void a(int i10) {
-        if (this.c != i10) {
-            this.c = i10;
-            setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
+    public final void E(ArrayList arrayList, ArrayList arrayList2) {
+        if (arrayList2 == null) {
+            arrayList2 = new ArrayList();
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Drawable drawable = this.a;
-        Rect bounds = getBounds();
-        float f10 = this.b;
-        if (f10 == 1.0f) {
-            drawable.setBounds(bounds);
-        } else {
-            drawable.setBounds((int) (bounds.centerX() - ((bounds.width() / 2.0f) * f10)), (int) (bounds.centerY() - ((bounds.height() / 2.0f) * f10)), (int) (((bounds.width() / 2.0f) * f10) + bounds.centerX()), (int) (((bounds.height() / 2.0f) * f10) + bounds.centerY()));
-        }
-        drawable.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
+        g gVar = this.c;
+        gVar.c = arrayList;
+        gVar.d = arrayList2;
+        s.c(gVar, true).b(this);
     }
 }

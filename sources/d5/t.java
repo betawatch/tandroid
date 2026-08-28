@@ -1,6 +1,6 @@
 package d5;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class t {
     public final int a;
@@ -17,19 +17,19 @@ public final class t {
     public final int l;
     public final boolean m;
 
-    public t(int i10, int i11, int i12, int i13, int i14, int i15, float f10, boolean z10, boolean z11, int i16, int i17, int i18, boolean z12) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = i14;
-        this.f = i15;
+    public t(int i9, int i10, int i11, int i12, int i13, int i14, float f10, boolean z10, boolean z11, int i15, int i16, int i17, boolean z12) {
+        this.a = i9;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
+        this.f = i14;
         this.g = f10;
         this.h = z10;
         this.i = z11;
-        this.j = i16;
-        this.k = i17;
-        this.l = i18;
+        this.j = i15;
+        this.k = i16;
+        this.l = i17;
         this.m = z12;
     }
 }

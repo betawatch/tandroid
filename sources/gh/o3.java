@@ -1,33 +1,27 @@
 package gh;
 
-import org.telegram.ui.Components.wq0;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class o3 extends f2.l {
-    public final /* synthetic */ wq0 F;
+public final class o3 extends ClickableSpan {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ k5 b;
 
-    public o3(wq0 wq0Var) {
-        this.F = wq0Var;
+    public o3(k5 k5Var, long j10) {
+        this.b = k5Var;
+        this.a = j10;
     }
 
-    @Override // f2.l
-    public final void M() {
-        this.F.o();
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.b.X1(this.a);
     }
 
-    @Override // f2.l
-    public final void O() {
-        this.F.o();
-    }
-
-    @Override // f2.l
-    public final void P(f2.o1 o1Var) {
-        this.F.o();
-    }
-
-    @Override // f2.l
-    public final void Q() {
-        this.F.o();
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setColor(textPaint.linkColor);
     }
 }

@@ -1,12 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import ad.p;
-import h7.k6;
-import id.e2;
-import rc.c;
-import tc.i;
+import g7.y5;
+import hd.e2;
+import qc.c;
+import rc.a;
+import sc.i;
+import zc.p;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class zzet extends i implements p {
     int zza;
@@ -23,33 +24,33 @@ final class zzet extends i implements p {
         this.zzd = j10;
     }
 
-    @Override // tc.a
+    @Override // sc.a
     public final c create(Object obj, c cVar) {
         zzet zzetVar = new zzet(this.zzb, this.zzc, this.zzd, cVar);
         zzetVar.zze = obj;
         return zzetVar;
     }
 
-    @Override // ad.p
+    @Override // zc.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzet) create((zzgr) obj, (c) obj2)).invokeSuspend(pc.i.a);
+        return ((zzet) create((zzgr) obj, (c) obj2)).invokeSuspend(oc.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0038, code lost:
     
         if (r8 != r0) goto L19;
      */
-    @Override // tc.a
+    @Override // sc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
-        sc.a aVar = sc.a.a;
-        int i10 = this.zza;
+        a aVar = a.a;
+        int i9 = this.zza;
         try {
-            if (i10 == 0) {
-                k6.b(obj);
+            if (i9 == 0) {
+                y5.b(obj);
                 zzgrVar = (zzgr) this.zze;
                 zzq zzb = zzfp.zzb(this.zzb);
                 String str = this.zzc;
@@ -58,12 +59,12 @@ final class zzet extends i implements p {
                 this.zza = 1;
                 obj = zzb.zzb(str, j10, this);
             } else {
-                if (i10 != 1) {
-                    k6.b(obj);
+                if (i9 != 1) {
+                    y5.b(obj);
                     return (zzxx) obj;
                 }
                 zzgrVar = (zzgr) this.zze;
-                k6.b(obj);
+                y5.b(obj);
             }
             this.zze = null;
             this.zza = 2;
@@ -72,12 +73,12 @@ final class zzet extends i implements p {
                 return aVar;
             }
             return (zzxx) obj;
-        } catch (zzcg e9) {
-            throw e9;
-        } catch (e2 e10) {
-            throw new zzcg(zzce.zzb, zzcd.zzb, e10.getMessage(), null, 8, null);
-        } catch (Exception e11) {
-            throw new zzcg(zzce.zzb, zzcd.zzaa, e11.getMessage(), null, 8, null);
+        } catch (zzcg e10) {
+            throw e10;
+        } catch (e2 e11) {
+            throw new zzcg(zzce.zzb, zzcd.zzb, e11.getMessage(), null, 8, null);
+        } catch (Exception e12) {
+            throw new zzcg(zzce.zzb, zzcd.zzaa, e12.getMessage(), null, 8, null);
         }
     }
 }

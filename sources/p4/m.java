@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class m extends n {
     public static final m n;
@@ -31,8 +31,8 @@ public class m extends n {
     public m(String str, List list, List list2, List list3, List list4, List list5, List list6, t0 t0Var, List list7, boolean z10, Map map, List list8) {
         super(str, list, z10);
         ArrayList arrayList = new ArrayList();
-        for (int i10 = 0; i10 < list2.size(); i10++) {
-            Uri uri = ((l) list2.get(i10)).a;
+        for (int i9 = 0; i9 < list2.size(); i9++) {
+            Uri uri = ((l) list2.get(i9)).a;
             if (!arrayList.contains(uri)) {
                 arrayList.add(uri);
             }
@@ -54,27 +54,27 @@ public class m extends n {
     }
 
     public static void b(ArrayList arrayList, List list) {
-        for (int i10 = 0; i10 < list.size(); i10++) {
-            Uri uri = ((k) list.get(i10)).a;
+        for (int i9 = 0; i9 < list.size(); i9++) {
+            Uri uri = ((k) list.get(i9)).a;
             if (!arrayList.contains(uri)) {
                 arrayList.add(uri);
             }
         }
     }
 
-    public static ArrayList c(int i10, List list, List list2) {
+    public static ArrayList c(int i9, List list, List list2) {
         ArrayList arrayList = new ArrayList(list2.size());
-        for (int i11 = 0; i11 < list.size(); i11++) {
-            Object obj = list.get(i11);
-            int i12 = 0;
+        for (int i10 = 0; i10 < list.size(); i10++) {
+            Object obj = list.get(i10);
+            int i11 = 0;
             while (true) {
-                if (i12 < list2.size()) {
-                    i4.b bVar = (i4.b) list2.get(i12);
-                    if (bVar.b == i10 && bVar.c == i11) {
+                if (i11 < list2.size()) {
+                    i4.b bVar = (i4.b) list2.get(i11);
+                    if (bVar.b == i9 && bVar.c == i10) {
                         arrayList.add(obj);
                         break;
                     }
-                    i12++;
+                    i11++;
                 }
             }
         }

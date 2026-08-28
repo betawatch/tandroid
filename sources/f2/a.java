@@ -1,6 +1,6 @@
 package f2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class a {
     public int a;
@@ -14,11 +14,11 @@ public final class a {
                 return false;
             }
             a aVar = (a) obj;
-            int i10 = this.a;
-            if (i10 != aVar.a) {
+            int i9 = this.a;
+            if (i9 != aVar.a) {
                 return false;
             }
-            if (i10 != 8 || Math.abs(this.d - this.b) != 1 || this.d != aVar.b || this.b != aVar.d) {
+            if (i9 != 8 || Math.abs(this.d - this.b) != 1 || this.d != aVar.b || this.b != aVar.d) {
                 if (this.d != aVar.d || this.b != aVar.b) {
                     return false;
                 }
@@ -43,8 +43,8 @@ public final class a {
         StringBuilder sb2 = new StringBuilder();
         sb2.append(Integer.toHexString(System.identityHashCode(this)));
         sb2.append("[");
-        int i10 = this.a;
-        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 4 ? i10 != 8 ? "??" : "mv" : "up" : "rm" : "add");
+        int i9 = this.a;
+        sb2.append(i9 != 1 ? i9 != 2 ? i9 != 4 ? i9 != 8 ? "??" : "mv" : "up" : "rm" : "add");
         sb2.append(",s:");
         sb2.append(this.b);
         sb2.append("c:");

@@ -1,17 +1,55 @@
 package h7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.util.Iterator;
+import java.util.Map;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class y {
-    public static float a(float f10, float f11, float f12, float f13) {
-        double d = f10 - f12;
-        double d10 = f11 - f13;
-        return (float) Math.sqrt((d10 * d10) + (d * d));
+public final class y extends t {
+    public final transient com.google.android.gms.internal.cast.j0 c;
+    public final transient Object[] d;
+    public final transient int e = 1;
+
+    public y(com.google.android.gms.internal.cast.j0 j0Var, Object[] objArr) {
+        this.c = j0Var;
+        this.d = objArr;
     }
 
-    public static float b(int i10, int i11, int i12, int i13) {
-        double d = i10 - i12;
-        double d10 = i11 - i13;
-        return (float) Math.sqrt((d10 * d10) + (d * d));
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            if (value != null && value.equals(this.c.get(key))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // h7.o
+    public final int i(Object[] objArr) {
+        s sVar = this.b;
+        if (sVar == null) {
+            sVar = new x(this);
+            this.b = sVar;
+        }
+        return sVar.i(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        s sVar = this.b;
+        if (sVar == null) {
+            sVar = new x(this);
+            this.b = sVar;
+        }
+        return sVar.listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.e;
     }
 }

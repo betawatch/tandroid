@@ -1,121 +1,42 @@
 package org.telegram.messenger;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.BotFullscreenButtons;
-import org.telegram.messenger.CodeHighlighting;
-import org.telegram.messenger.CompoundEmoji;
-import org.telegram.messenger.FilesMigrationService;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.TelegramMediaSession;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.UnconfirmedAuthController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d1 implements Runnable {
+public final /* synthetic */ class d1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ d1(Object obj, int i10) {
-        this.a = i10;
+    public /* synthetic */ d1(int i9, Object obj, Object obj2) {
+        this.a = i9;
         this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                ((CompoundEmoji.DrawableInfo) this.b).lambda$load$0();
+                ((ChatThemeController) this.b).lambda$requestNextChatThemes$21((ResultCallback) this.c, (TL_account.ChatThemes) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                ((FeedRemoteViewsFactory) this.b).lambda$onDataSetChanged$0();
+                ((GiftAuctionController) this.b).lambda$requestGiftAuctionInternal$4((Utilities.Callback2) this.c, (TL_payments.TL_StarGiftAuctionState) obj, (TLRPC.TL_error) obj2);
                 break;
             case 2:
-                ((FilesMigrationService.1) this.b).lambda$run$0();
+                ((MessagesController) this.b).lambda$fetchJoinedCommunities$251((Utilities.Callback) this.c, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
                 break;
             case 3:
-                ((ImageLoader.6) this.b).lambda$onReceive$0();
-                break;
-            case 4:
-                ((LocaleController.TimeZoneChangedReceiver) this.b).lambda$onReceive$0();
-                break;
-            case 5:
-                ((MediaController.7) this.b).lambda$onSurfaceDestroyed$0();
-                break;
-            case 6:
-                ((MediaController.9) this.b).lambda$onSurfaceDestroyed$0();
-                break;
-            case 7:
-                ((MediaController.GalleryObserverInternal) this.b).lambda$scheduleReloadRunnable$0();
-                break;
-            case 8:
-                ((MediaController.MusicListenReporter) this.b).report();
-                break;
-            case 9:
-                MediaController.VideoConvertRunnable.lambda$runConversion$0((MediaController.VideoConvertMessage) this.b);
-                break;
-            case 10:
-                ((TelegramMediaSession.SessionCallback) this.b).lambda$notifyPlayStateForNotificationRefresh$0();
-                break;
-            case 11:
-                ((ANRDetector) this.b).run();
-                break;
-            case 12:
-                AndroidUtilities.lambda$notifyDataSetChanged$26((RecyclerView) this.b);
-                break;
-            case 13:
-                ((BotFullscreenButtons) this.b).lambda$new$0();
-                break;
-            case 14:
-                ((BotFullscreenButtons.OptionsIcon) this.b).invalidateSelf();
-                break;
-            case 15:
-                CodeHighlighting.lambda$highlight$3((CodeHighlighting.LockedSpannableString) this.b);
-                break;
-            case 16:
-                ((CompoundEmoji.CompoundEmojiDrawable) this.b).invalidate();
-                break;
-            case 17:
-                ((ContactsLoadingObserver) this.b).lambda$new$1();
-                break;
-            case 18:
-                ((DispatchQueueMainThreadSync) this.b).lambda$recycle$0();
-                break;
-            case 19:
-                ((FactCheckController) this.b).loadMissing();
-                break;
-            case 20:
-                ((FileLoaderPriorityQueue) this.b).lambda$new$0();
-                break;
-            case 21:
-                ((FilePathDatabase) this.b).lambda$clear$3();
-                break;
-            case 22:
-                FileRefController.lambda$onRequestComplete$46((TLRPC.TL_theme) this.b);
-                break;
-            case 23:
-                ((ImageReceiver) this.b).invalidate();
-                break;
-            case 24:
-                MediaController.lambda$saveFile$46((org.telegram.ui.ActionBar.b2) this.b);
-                break;
-            case 25:
-                ((org.telegram.ui.Components.cc) this.b).f();
-                break;
-            case 26:
-                MediaDataController.lambda$addRecentGif$27((TLRPC.Document) this.b);
-                break;
-            case 27:
-                MessagesController.lambda$convertToGigaGroup$268((MessagesStorage.BooleanCallback) this.b);
-                break;
-            case 28:
-                MessagesController.lambda$performLogout$321((TLObject) this.b);
+                PasskeysController.lambda$create$4((org.telegram.ui.ActionBar.c2) this.b, (Utilities.Callback2) this.c, (TL_account.Passkey) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                MessagesController.lambda$setContentSettings$503((TLRPC.TL_error) this.b);
+                ((UnconfirmedAuthController.UnconfirmedAuth) this.b).lambda$confirm$0((Utilities.Callback) this.c, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
                 break;
         }
     }

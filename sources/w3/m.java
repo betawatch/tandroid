@@ -1,20 +1,21 @@
 package w3;
 
-import f2.g0;
+import d5.f0;
+import f2.i0;
 import h3.s0;
 import h3.t0;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class m implements h {
     public static final float[] l = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
     public final a0 a;
-    public final d5.z b;
+    public final d5.y b;
     public final boolean[] c = new boolean[4];
     public final k d;
-    public final g0 e;
+    public final i0 e;
     public l f;
     public long g;
     public String h;
@@ -28,8 +29,8 @@ public final class m implements h {
         kVar.e = new byte[128];
         this.d = kVar;
         this.k = -9223372036854775807L;
-        this.e = new g0(178);
-        this.b = new d5.z();
+        this.e = new i0(178);
+        this.b = new d5.y();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -44,55 +45,55 @@ public final class m implements h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(d5.z zVar) {
+    public final void g(d5.y yVar) {
+        int i9;
         int i10;
-        int i11;
         l lVar;
         long j10;
+        int i11;
         int i12;
-        int i13;
         float f10;
         d5.a.j(this.f);
         d5.a.j(this.i);
-        int i14 = zVar.b;
-        int i15 = zVar.c;
-        byte[] bArr = zVar.a;
-        this.g += zVar.a();
-        this.i.a(zVar.a(), zVar);
+        int i13 = yVar.b;
+        int i14 = yVar.c;
+        byte[] bArr = yVar.a;
+        this.g += yVar.a();
+        this.i.a(yVar.a(), yVar);
         while (true) {
-            int r10 = d5.a.r(bArr, i14, i15, this.c);
+            int r10 = d5.a.r(bArr, i13, i14, this.c);
             k kVar = this.d;
-            g0 g0Var = this.e;
-            if (r10 == i15) {
+            i0 i0Var = this.e;
+            if (r10 == i14) {
                 if (!this.j) {
-                    kVar.a(i14, i15, bArr);
+                    kVar.a(i13, i14, bArr);
                 }
-                this.f.a(i14, i15, bArr);
-                if (g0Var != null) {
-                    g0Var.a(i14, i15, bArr);
+                this.f.a(i13, i14, bArr);
+                if (i0Var != null) {
+                    i0Var.a(i13, i14, bArr);
                     return;
                 }
                 return;
             }
-            int i16 = r10 + 3;
-            byte b10 = zVar.a[i16];
-            int i17 = b10 & 255;
-            int i18 = r10 - i14;
+            int i15 = r10 + 3;
+            byte b10 = yVar.a[i15];
+            int i16 = b10 & 255;
+            int i17 = r10 - i13;
             if (this.j) {
+                i9 = i14;
                 i10 = i15;
-                i11 = i16;
             } else {
-                if (i18 > 0) {
-                    kVar.a(i14, r10, bArr);
+                if (i17 > 0) {
+                    kVar.a(i13, r10, bArr);
                 }
-                int i19 = i18 < 0 ? -i18 : 0;
-                int i20 = kVar.b;
-                if (i20 != 0) {
-                    i10 = i15;
-                    if (i20 == 1) {
-                        i11 = i16;
-                        i13 = 0;
-                        if (i17 != 181) {
+                int i18 = i17 < 0 ? -i17 : 0;
+                int i19 = kVar.b;
+                if (i19 != 0) {
+                    i9 = i14;
+                    if (i19 == 1) {
+                        i10 = i15;
+                        i12 = 0;
+                        if (i16 != 181) {
                             d5.a.K("H263Reader", "Unexpected start code value");
                             kVar.a = false;
                             kVar.c = 0;
@@ -100,134 +101,134 @@ public final class m implements h {
                         } else {
                             kVar.b = 2;
                         }
-                    } else if (i20 != 2) {
-                        i11 = i16;
-                        if (i20 != 3) {
-                            if (i20 != 4) {
+                    } else if (i19 != 2) {
+                        i10 = i15;
+                        if (i19 != 3) {
+                            if (i19 != 4) {
                                 throw new IllegalStateException();
                             }
-                            if (i17 == 179 || i17 == 181) {
-                                kVar.c -= i19;
+                            if (i16 == 179 || i16 == 181) {
+                                kVar.c -= i18;
                                 kVar.a = false;
                                 m3.w wVar = this.i;
-                                int i21 = kVar.d;
+                                int i20 = kVar.d;
                                 String str = this.h;
                                 str.getClass();
                                 byte[] copyOf = Arrays.copyOf(kVar.e, kVar.c);
-                                d5.y yVar = new d5.y(copyOf, copyOf.length);
-                                yVar.t(i21);
-                                yVar.t(4);
-                                yVar.r();
-                                yVar.s(8);
-                                if (yVar.h()) {
-                                    yVar.s(4);
-                                    yVar.s(3);
+                                d5.x xVar = new d5.x(copyOf, copyOf.length);
+                                xVar.t(i20);
+                                xVar.t(4);
+                                xVar.r();
+                                xVar.s(8);
+                                if (xVar.h()) {
+                                    xVar.s(4);
+                                    xVar.s(3);
                                 }
-                                int i22 = yVar.i(4);
-                                if (i22 == 15) {
-                                    int i23 = yVar.i(8);
-                                    int i24 = yVar.i(8);
-                                    if (i24 == 0) {
+                                int i21 = xVar.i(4);
+                                if (i21 == 15) {
+                                    int i22 = xVar.i(8);
+                                    int i23 = xVar.i(8);
+                                    if (i23 == 0) {
                                         d5.a.K("H263Reader", "Invalid aspect ratio");
                                         f10 = 1.0f;
-                                        if (yVar.h()) {
-                                            yVar.s(2);
-                                            yVar.s(1);
-                                            if (yVar.h()) {
-                                                yVar.s(15);
-                                                yVar.r();
-                                                yVar.s(15);
-                                                yVar.r();
-                                                yVar.s(15);
-                                                yVar.r();
-                                                yVar.s(3);
-                                                yVar.s(11);
-                                                yVar.r();
-                                                yVar.s(15);
-                                                yVar.r();
+                                        if (xVar.h()) {
+                                            xVar.s(2);
+                                            xVar.s(1);
+                                            if (xVar.h()) {
+                                                xVar.s(15);
+                                                xVar.r();
+                                                xVar.s(15);
+                                                xVar.r();
+                                                xVar.s(15);
+                                                xVar.r();
+                                                xVar.s(3);
+                                                xVar.s(11);
+                                                xVar.r();
+                                                xVar.s(15);
+                                                xVar.r();
                                             }
                                         }
-                                        if (yVar.i(2) != 0) {
+                                        if (xVar.i(2) != 0) {
                                             d5.a.K("H263Reader", "Unhandled video object layer shape");
                                         }
-                                        yVar.r();
-                                        int i25 = yVar.i(16);
-                                        yVar.r();
-                                        if (yVar.h()) {
-                                            if (i25 == 0) {
+                                        xVar.r();
+                                        int i24 = xVar.i(16);
+                                        xVar.r();
+                                        if (xVar.h()) {
+                                            if (i24 == 0) {
                                                 d5.a.K("H263Reader", "Invalid vop_increment_time_resolution");
                                             } else {
-                                                int i26 = 0;
-                                                for (int i27 = i25 - 1; i27 > 0; i27 >>= 1) {
-                                                    i26++;
+                                                int i25 = 0;
+                                                for (int i26 = i24 - 1; i26 > 0; i26 >>= 1) {
+                                                    i25++;
                                                 }
-                                                yVar.s(i26);
+                                                xVar.s(i25);
                                             }
                                         }
-                                        yVar.r();
-                                        int i28 = yVar.i(13);
-                                        yVar.r();
-                                        int i29 = yVar.i(13);
-                                        yVar.r();
-                                        yVar.r();
+                                        xVar.r();
+                                        int i27 = xVar.i(13);
+                                        xVar.r();
+                                        int i28 = xVar.i(13);
+                                        xVar.r();
+                                        xVar.r();
                                         s0 s0Var = new s0();
                                         s0Var.a = str;
                                         s0Var.o = "video/mp4v-es";
-                                        s0Var.t = i28;
-                                        s0Var.u = i29;
+                                        s0Var.t = i27;
+                                        s0Var.u = i28;
                                         s0Var.x = f10;
                                         s0Var.q = Collections.singletonList(copyOf);
                                         wVar.c(new t0(s0Var));
                                         this.j = true;
                                     } else {
-                                        f10 = i23 / i24;
-                                        if (yVar.h()) {
+                                        f10 = i22 / i23;
+                                        if (xVar.h()) {
                                         }
-                                        if (yVar.i(2) != 0) {
+                                        if (xVar.i(2) != 0) {
                                         }
-                                        yVar.r();
-                                        int i252 = yVar.i(16);
-                                        yVar.r();
-                                        if (yVar.h()) {
+                                        xVar.r();
+                                        int i242 = xVar.i(16);
+                                        xVar.r();
+                                        if (xVar.h()) {
                                         }
-                                        yVar.r();
-                                        int i282 = yVar.i(13);
-                                        yVar.r();
-                                        int i292 = yVar.i(13);
-                                        yVar.r();
-                                        yVar.r();
+                                        xVar.r();
+                                        int i272 = xVar.i(13);
+                                        xVar.r();
+                                        int i282 = xVar.i(13);
+                                        xVar.r();
+                                        xVar.r();
                                         s0 s0Var2 = new s0();
                                         s0Var2.a = str;
                                         s0Var2.o = "video/mp4v-es";
-                                        s0Var2.t = i282;
-                                        s0Var2.u = i292;
+                                        s0Var2.t = i272;
+                                        s0Var2.u = i282;
                                         s0Var2.x = f10;
                                         s0Var2.q = Collections.singletonList(copyOf);
                                         wVar.c(new t0(s0Var2));
                                         this.j = true;
                                     }
-                                } else if (i22 < 7) {
-                                    f10 = l[i22];
-                                    if (yVar.h()) {
+                                } else if (i21 < 7) {
+                                    f10 = l[i21];
+                                    if (xVar.h()) {
                                     }
-                                    if (yVar.i(2) != 0) {
+                                    if (xVar.i(2) != 0) {
                                     }
-                                    yVar.r();
-                                    int i2522 = yVar.i(16);
-                                    yVar.r();
-                                    if (yVar.h()) {
+                                    xVar.r();
+                                    int i2422 = xVar.i(16);
+                                    xVar.r();
+                                    if (xVar.h()) {
                                     }
-                                    yVar.r();
-                                    int i2822 = yVar.i(13);
-                                    yVar.r();
-                                    int i2922 = yVar.i(13);
-                                    yVar.r();
-                                    yVar.r();
+                                    xVar.r();
+                                    int i2722 = xVar.i(13);
+                                    xVar.r();
+                                    int i2822 = xVar.i(13);
+                                    xVar.r();
+                                    xVar.r();
                                     s0 s0Var22 = new s0();
                                     s0Var22.a = str;
                                     s0Var22.o = "video/mp4v-es";
-                                    s0Var22.t = i2822;
-                                    s0Var22.u = i2922;
+                                    s0Var22.t = i2722;
+                                    s0Var22.u = i2822;
                                     s0Var22.x = f10;
                                     s0Var22.q = Collections.singletonList(copyOf);
                                     wVar.c(new t0(s0Var22));
@@ -235,49 +236,49 @@ public final class m implements h {
                                 } else {
                                     d5.a.K("H263Reader", "Invalid aspect ratio");
                                     f10 = 1.0f;
-                                    if (yVar.h()) {
+                                    if (xVar.h()) {
                                     }
-                                    if (yVar.i(2) != 0) {
+                                    if (xVar.i(2) != 0) {
                                     }
-                                    yVar.r();
-                                    int i25222 = yVar.i(16);
-                                    yVar.r();
-                                    if (yVar.h()) {
+                                    xVar.r();
+                                    int i24222 = xVar.i(16);
+                                    xVar.r();
+                                    if (xVar.h()) {
                                     }
-                                    yVar.r();
-                                    int i28222 = yVar.i(13);
-                                    yVar.r();
-                                    int i29222 = yVar.i(13);
-                                    yVar.r();
-                                    yVar.r();
+                                    xVar.r();
+                                    int i27222 = xVar.i(13);
+                                    xVar.r();
+                                    int i28222 = xVar.i(13);
+                                    xVar.r();
+                                    xVar.r();
                                     s0 s0Var222 = new s0();
                                     s0Var222.a = str;
                                     s0Var222.o = "video/mp4v-es";
-                                    s0Var222.t = i28222;
-                                    s0Var222.u = i29222;
+                                    s0Var222.t = i27222;
+                                    s0Var222.u = i28222;
                                     s0Var222.x = f10;
                                     s0Var222.q = Collections.singletonList(copyOf);
                                     wVar.c(new t0(s0Var222));
                                     this.j = true;
                                 }
                             } else {
-                                i13 = 0;
+                                i12 = 0;
                             }
                         } else if ((b10 & 240) != 32) {
                             d5.a.K("H263Reader", "Unexpected start code value");
-                            i13 = 0;
+                            i12 = 0;
                             kVar.a = false;
                             kVar.c = 0;
                             kVar.b = 0;
                         } else {
-                            i13 = 0;
+                            i12 = 0;
                             kVar.d = kVar.c;
                             kVar.b = 4;
                         }
                     } else {
-                        i11 = i16;
-                        i13 = 0;
-                        if (i17 > 31) {
+                        i10 = i15;
+                        i12 = 0;
+                        if (i16 > 31) {
                             d5.a.K("H263Reader", "Unexpected start code value");
                             kVar.a = false;
                             kVar.c = 0;
@@ -287,44 +288,44 @@ public final class m implements h {
                         }
                     }
                 } else {
+                    i9 = i14;
                     i10 = i15;
-                    i11 = i16;
-                    i13 = 0;
-                    if (i17 == 176) {
+                    i12 = 0;
+                    if (i16 == 176) {
                         kVar.b = 1;
                         kVar.a = true;
                     }
                 }
-                kVar.a(i13, 3, k.f);
+                kVar.a(i12, 3, k.f);
             }
-            this.f.a(i14, r10, bArr);
-            if (g0Var != null) {
-                if (i18 > 0) {
-                    g0Var.a(i14, r10, bArr);
-                    i12 = 0;
+            this.f.a(i13, r10, bArr);
+            if (i0Var != null) {
+                if (i17 > 0) {
+                    i0Var.a(i13, r10, bArr);
+                    i11 = 0;
                 } else {
-                    i12 = -i18;
+                    i11 = -i17;
                 }
-                if (g0Var.e(i12)) {
-                    int J = d5.a.J(g0Var.e, (byte[]) g0Var.f);
-                    int i30 = d5.g0.a;
-                    byte[] bArr2 = (byte[]) g0Var.f;
-                    d5.z zVar2 = this.b;
-                    zVar2.A(J, bArr2);
-                    this.a.a(this.k, zVar2);
+                if (i0Var.e(i11)) {
+                    int J = d5.a.J(i0Var.e, (byte[]) i0Var.f);
+                    int i29 = f0.a;
+                    byte[] bArr2 = (byte[]) i0Var.f;
+                    d5.y yVar2 = this.b;
+                    yVar2.A(J, bArr2);
+                    this.a.a(this.k, yVar2);
                 }
-                if (i17 == 178) {
-                    if (zVar.a[r10 + 2] == 1) {
-                        g0Var.g(i17);
+                if (i16 == 178) {
+                    if (yVar.a[r10 + 2] == 1) {
+                        i0Var.g(i16);
                     }
-                    int i31 = i10 - r10;
-                    long j11 = this.g - i31;
+                    int i30 = i9 - r10;
+                    long j11 = this.g - i30;
                     lVar = this.f;
                     boolean z10 = this.j;
                     if (lVar.e == 182 && z10 && lVar.b) {
                         j10 = lVar.h;
                         if (j10 != -9223372036854775807L) {
-                            lVar.a.e(j10, lVar.d ? 1 : 0, (int) (j11 - lVar.g), i31, null);
+                            lVar.a.e(j10, lVar.d ? 1 : 0, (int) (j11 - lVar.g), i30, null);
                         }
                     }
                     if (lVar.e != 179) {
@@ -332,18 +333,18 @@ public final class m implements h {
                     }
                     l lVar2 = this.f;
                     long j12 = this.k;
-                    lVar2.e = i17;
+                    lVar2.e = i16;
                     lVar2.d = false;
-                    lVar2.b = i17 != 182 || i17 == 179;
-                    lVar2.c = i17 != 182;
+                    lVar2.b = i16 != 182 || i16 == 179;
+                    lVar2.c = i16 != 182;
                     lVar2.f = 0;
                     lVar2.h = j12;
-                    i15 = i10;
-                    i14 = i11;
+                    i14 = i9;
+                    i13 = i10;
                 }
             }
-            int i312 = i10 - r10;
-            long j112 = this.g - i312;
+            int i302 = i9 - r10;
+            long j112 = this.g - i302;
             lVar = this.f;
             boolean z102 = this.j;
             if (lVar.e == 182) {
@@ -355,19 +356,19 @@ public final class m implements h {
             }
             l lVar22 = this.f;
             long j122 = this.k;
-            lVar22.e = i17;
+            lVar22.e = i16;
             lVar22.d = false;
-            lVar22.b = i17 != 182 || i17 == 179;
-            lVar22.c = i17 != 182;
+            lVar22.b = i16 != 182 || i16 == 179;
+            lVar22.c = i16 != 182;
             lVar22.f = 0;
             lVar22.h = j122;
-            i15 = i10;
-            i14 = i11;
+            i14 = i9;
+            i13 = i10;
         }
     }
 
     @Override // w3.h
-    public final void c() {
+    public final void h() {
         d5.a.m(this.c);
         k kVar = this.d;
         kVar.a = false;
@@ -380,34 +381,34 @@ public final class m implements h {
             lVar.d = false;
             lVar.e = -1;
         }
-        g0 g0Var = this.e;
-        if (g0Var != null) {
-            g0Var.f();
+        i0 i0Var = this.e;
+        if (i0Var != null) {
+            i0Var.f();
         }
         this.g = 0L;
         this.k = -9223372036854775807L;
     }
 
     @Override // w3.h
-    public final void e(m3.m mVar, e0 e0Var) {
-        e0Var.a();
-        e0Var.b();
-        this.h = e0Var.e;
-        e0Var.b();
-        m3.w C = mVar.C(e0Var.d, 2);
-        this.i = C;
-        this.f = new l(C);
-        this.a.b(mVar, e0Var);
+    public final void j(m3.m mVar, d0 d0Var) {
+        d0Var.a();
+        d0Var.b();
+        this.h = d0Var.e;
+        d0Var.b();
+        m3.w I = mVar.I(d0Var.d, 2);
+        this.i = I;
+        this.f = new l(I);
+        this.a.b(mVar, d0Var);
     }
 
     @Override // w3.h
-    public final void f(int i10, long j10) {
+    public final void k(int i9, long j10) {
         if (j10 != -9223372036854775807L) {
             this.k = j10;
         }
     }
 
     @Override // w3.h
-    public final void d() {
+    public final void i() {
     }
 }

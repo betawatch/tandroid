@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.OneUIUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 12000, 11025, 8000, 7350};
@@ -38,82 +38,82 @@ public abstract class b {
         return arrayList;
     }
 
-    public static int b(int i10, int i11) {
-        int i12 = i11 / 2;
-        if (i10 < 0 || i10 >= 3 || i11 < 0 || i12 >= 19) {
+    public static int b(int i9, int i10) {
+        int i11 = i10 / 2;
+        if (i9 < 0 || i9 >= 3 || i10 < 0 || i11 >= 19) {
             return -1;
         }
-        int i13 = d[i10];
-        if (i13 == 44100) {
-            return ((i11 % 2) + h[i12]) * 2;
+        int i12 = d[i9];
+        if (i12 == 44100) {
+            return ((i10 % 2) + h[i11]) * 2;
         }
-        int i14 = g[i12];
-        return i13 == 32000 ? i14 * 6 : i14 * 4;
+        int i13 = g[i11];
+        return i12 == 32000 ? i13 * 6 : i13 * 4;
     }
 
-    public static void c(int i10, d5.z zVar) {
-        zVar.z(7);
-        byte[] bArr = zVar.a;
+    public static void c(int i9, d5.y yVar) {
+        yVar.z(7);
+        byte[] bArr = yVar.a;
         bArr[0] = -84;
         bArr[1] = 64;
         bArr[2] = -1;
         bArr[3] = -1;
-        bArr[4] = (byte) ((i10 >> 16) & 255);
-        bArr[5] = (byte) ((i10 >> 8) & 255);
-        bArr[6] = (byte) (i10 & 255);
+        bArr[4] = (byte) ((i9 >> 16) & 255);
+        bArr[5] = (byte) ((i9 >> 8) & 255);
+        bArr[6] = (byte) (i9 & 255);
     }
 
-    public static int d(int i10) {
+    public static int d(int i9) {
+        int i10;
         int i11;
         int i12;
         int i13;
-        int i14;
-        if ((i10 & (-2097152)) != -2097152 || (i11 = (i10 >>> 19) & 3) == 1 || (i12 = (i10 >>> 17) & 3) == 0 || (i13 = (i10 >>> 12) & 15) == 0 || i13 == 15 || (i14 = (i10 >>> 10) & 3) == 3) {
+        if ((i9 & (-2097152)) != -2097152 || (i10 = (i9 >>> 19) & 3) == 1 || (i11 = (i9 >>> 17) & 3) == 0 || (i12 = (i9 >>> 12) & 15) == 0 || i12 == 15 || (i13 = (i9 >>> 10) & 3) == 3) {
             return -1;
         }
-        int i15 = n[i14];
-        if (i11 == 2) {
-            i15 /= 2;
-        } else if (i11 == 0) {
-            i15 /= 4;
+        int i14 = n[i13];
+        if (i10 == 2) {
+            i14 /= 2;
+        } else if (i10 == 0) {
+            i14 /= 4;
         }
-        int i16 = (i10 >>> 9) & 1;
-        if (i12 == 3) {
-            return ((((i11 == 3 ? o[i13 - 1] : p[i13 - 1]) * 12) / i15) + i16) * 4;
-        }
-        int i17 = i11 == 3 ? i12 == 2 ? q[i13 - 1] : r[i13 - 1] : s[i13 - 1];
+        int i15 = (i9 >>> 9) & 1;
         if (i11 == 3) {
-            return ((i17 * 144) / i15) + i16;
+            return ((((i10 == 3 ? o[i12 - 1] : p[i12 - 1]) * 12) / i14) + i15) * 4;
         }
-        return (((i12 == 1 ? 72 : 144) * i17) / i15) + i16;
+        int i16 = i10 == 3 ? i11 == 2 ? q[i12 - 1] : r[i12 - 1] : s[i12 - 1];
+        if (i10 == 3) {
+            return ((i16 * 144) / i14) + i15;
+        }
+        return (((i11 == 1 ? 72 : 144) * i16) / i14) + i15;
     }
 
     public static long e(byte b10, byte b11) {
-        int i10;
-        int i11 = b10 & 255;
-        int i12 = b10 & 3;
-        if (i12 != 0) {
-            i10 = 2;
-            if (i12 != 1 && i12 != 2) {
-                i10 = b11 & 63;
+        int i9;
+        int i10 = b10 & 255;
+        int i11 = b10 & 3;
+        if (i11 != 0) {
+            i9 = 2;
+            if (i11 != 1 && i11 != 2) {
+                i9 = b11 & 63;
             }
         } else {
-            i10 = 1;
+            i9 = 1;
         }
-        int i13 = i11 >> 3;
-        return i10 * (i13 >= 16 ? 2500 << r6 : i13 >= 12 ? 10000 << (i13 & 1) : (i13 & 3) == 3 ? 60000 : 10000 << r6);
+        int i12 = i10 >> 3;
+        return i9 * (i12 >= 16 ? 2500 << r6 : i12 >= 12 ? 10000 << (i12 & 1) : (i12 & 3) == 3 ? 60000 : 10000 << r6);
     }
 
-    public static int f(d5.y yVar) {
-        int i10 = yVar.i(4);
-        if (i10 == 15) {
-            if (yVar.b() >= 24) {
-                return yVar.i(24);
+    public static int f(d5.x xVar) {
+        int i9 = xVar.i(4);
+        if (i9 == 15) {
+            if (xVar.b() >= 24) {
+                return xVar.i(24);
             }
             throw t1.a("AAC header insufficient data", null);
         }
-        if (i10 < 13) {
-            return a[i10];
+        if (i9 < 13) {
+            return a[i9];
         }
         throw t1.a("AAC header wrong Sampling Frequency Index", null);
     }
@@ -133,85 +133,85 @@ public abstract class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static b8.b g(d5.y yVar) {
+    public static a8.b g(d5.x xVar) {
+        int i9;
         int i10;
-        int i11;
-        int i12 = yVar.i(16);
-        int i13 = yVar.i(16);
-        if (i13 == 65535) {
-            i13 = yVar.i(24);
-            i10 = 7;
+        int i11 = xVar.i(16);
+        int i12 = xVar.i(16);
+        if (i12 == 65535) {
+            i12 = xVar.i(24);
+            i9 = 7;
         } else {
-            i10 = 4;
+            i9 = 4;
         }
-        int i14 = i13 + i10;
-        if (i12 == 44097) {
-            i14 += 2;
+        int i13 = i12 + i9;
+        if (i11 == 44097) {
+            i13 += 2;
         }
-        if (yVar.i(2) == 3) {
+        if (xVar.i(2) == 3) {
             do {
-                yVar.i(2);
-            } while (yVar.h());
+                xVar.i(2);
+            } while (xVar.h());
         }
-        int i15 = yVar.i(10);
-        if (yVar.h() && yVar.i(3) > 0) {
-            yVar.s(2);
+        int i14 = xVar.i(10);
+        if (xVar.h() && xVar.i(3) > 0) {
+            xVar.s(2);
         }
-        int i16 = yVar.h() ? 48000 : 44100;
-        int i17 = yVar.i(4);
+        int i15 = xVar.h() ? 48000 : 44100;
+        int i16 = xVar.i(4);
         int[] iArr = i;
-        if (i16 == 44100 && i17 == 13) {
-            i11 = iArr[i17];
-        } else if (i16 != 48000 || i17 >= 14) {
-            i11 = 0;
+        if (i15 == 44100 && i16 == 13) {
+            i10 = iArr[i16];
+        } else if (i15 != 48000 || i16 >= 14) {
+            i10 = 0;
         } else {
-            int i18 = iArr[i17];
-            int i19 = i15 % 5;
-            if (i19 != 1) {
-                if (i19 == 2) {
-                    if (i17 != 8) {
+            int i17 = iArr[i16];
+            int i18 = i14 % 5;
+            if (i18 != 1) {
+                if (i18 == 2) {
+                    if (i16 != 8) {
                     }
-                    i11 = i18 + 1;
-                } else if (i19 != 3) {
-                    if (i19 == 4) {
-                        if (i17 != 3) {
-                            if (i17 != 8) {
+                    i10 = i17 + 1;
+                } else if (i18 != 3) {
+                    if (i18 == 4) {
+                        if (i16 != 3) {
+                            if (i16 != 8) {
                             }
                         }
-                        i11 = i18 + 1;
+                        i10 = i17 + 1;
                     }
-                    i11 = i18;
+                    i10 = i17;
                 }
             }
-            if (i17 != 3) {
+            if (i16 != 3) {
             }
-            i11 = i18 + 1;
+            i10 = i17 + 1;
         }
-        return new b8.b(i16, i14, i11);
+        return new a8.b(i15, i13, i10);
     }
 
-    public static a h(d5.y yVar, boolean z10) {
-        int i10 = yVar.i(5);
-        if (i10 == 31) {
-            i10 = yVar.i(6) + 32;
+    public static a h(d5.x xVar, boolean z10) {
+        int i9 = xVar.i(5);
+        if (i9 == 31) {
+            i9 = xVar.i(6) + 32;
         }
-        int f10 = f(yVar);
-        int i11 = yVar.i(4);
-        String k10 = i0.a.k(i10, "mp4a.40.");
-        if (i10 == 5 || i10 == 29) {
-            f10 = f(yVar);
-            int i12 = yVar.i(5);
-            if (i12 == 31) {
-                i12 = yVar.i(6) + 32;
+        int f10 = f(xVar);
+        int i10 = xVar.i(4);
+        String l10 = r0.l(i9, "mp4a.40.");
+        if (i9 == 5 || i9 == 29) {
+            f10 = f(xVar);
+            int i11 = xVar.i(5);
+            if (i11 == 31) {
+                i11 = xVar.i(6) + 32;
             }
-            i10 = i12;
-            if (i10 == 22) {
-                i11 = yVar.i(4);
+            i9 = i11;
+            if (i9 == 22) {
+                i10 = xVar.i(4);
             }
         }
         if (z10) {
-            if (i10 != 1 && i10 != 2 && i10 != 3 && i10 != 4 && i10 != 6 && i10 != 7 && i10 != 17) {
-                switch (i10) {
+            if (i9 != 1 && i9 != 2 && i9 != 3 && i9 != 4 && i9 != 6 && i9 != 7 && i9 != 17) {
+                switch (i9) {
                     case 19:
                     case 20:
                     case 21:
@@ -219,69 +219,69 @@ public abstract class b {
                     case 23:
                         break;
                     default:
-                        throw t1.c("Unsupported audio object type: " + i10);
+                        throw t1.c("Unsupported audio object type: " + i9);
                 }
             }
-            if (yVar.h()) {
+            if (xVar.h()) {
                 d5.a.K("AacUtil", "Unexpected frameLengthFlag = 1");
             }
-            if (yVar.h()) {
-                yVar.s(14);
+            if (xVar.h()) {
+                xVar.s(14);
             }
-            boolean h10 = yVar.h();
-            if (i11 == 0) {
+            boolean h10 = xVar.h();
+            if (i10 == 0) {
                 throw new UnsupportedOperationException();
             }
-            if (i10 == 6 || i10 == 20) {
-                yVar.s(3);
+            if (i9 == 6 || i9 == 20) {
+                xVar.s(3);
             }
             if (h10) {
-                if (i10 == 22) {
-                    yVar.s(16);
+                if (i9 == 22) {
+                    xVar.s(16);
                 }
-                if (i10 == 17 || i10 == 19 || i10 == 20 || i10 == 23) {
-                    yVar.s(3);
+                if (i9 == 17 || i9 == 19 || i9 == 20 || i9 == 23) {
+                    xVar.s(3);
                 }
-                yVar.s(1);
+                xVar.s(1);
             }
-            switch (i10) {
+            switch (i9) {
                 case 17:
                 case 19:
                 case 20:
                 case 21:
                 case 22:
                 case 23:
-                    int i13 = yVar.i(2);
-                    if (i13 == 2 || i13 == 3) {
-                        throw t1.c("Unsupported epConfig: " + i13);
+                    int i12 = xVar.i(2);
+                    if (i12 == 2 || i12 == 3) {
+                        throw t1.c("Unsupported epConfig: " + i12);
                     }
             }
         }
-        int i14 = b[i11];
-        if (i14 == -1) {
+        int i13 = b[i10];
+        if (i13 == -1) {
             throw t1.a(null, null);
         }
         a aVar = new a();
         aVar.a = f10;
-        aVar.b = i14;
-        aVar.c = k10;
+        aVar.b = i13;
+        aVar.c = l10;
         return aVar;
     }
 
-    public static int i(int i10) {
+    public static int i(int i9) {
+        int i10;
         int i11;
-        int i12;
-        if ((i10 & (-2097152)) == -2097152 && (i11 = (i10 >>> 19) & 3) != 1 && (i12 = (i10 >>> 17) & 3) != 0) {
-            int i13 = (i10 >>> 12) & 15;
-            int i14 = (i10 >>> 10) & 3;
-            if (i13 != 0 && i13 != 15 && i14 != 3) {
-                if (i12 == 1) {
-                    return i11 == 3 ? 1152 : 576;
+        if ((i9 & (-2097152)) == -2097152 && (i10 = (i9 >>> 19) & 3) != 1 && (i11 = (i9 >>> 17) & 3) != 0) {
+            int i12 = (i9 >>> 12) & 15;
+            int i13 = (i9 >>> 10) & 3;
+            if (i12 != 0 && i12 != 15 && i13 != 3) {
+                if (i11 == 1) {
+                    return i10 == 3 ? 1152 : 576;
                 }
-                if (i12 == 2) {
+                if (i11 == 2) {
                     return 1152;
                 }
-                if (i12 == 3) {
+                if (i11 == 3) {
                     return 384;
                 }
                 throw new IllegalArgumentException();

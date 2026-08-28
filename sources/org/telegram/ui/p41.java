@@ -1,27 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class p41 extends w51 {
-    public final /* synthetic */ View M;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique N;
-    public final /* synthetic */ q41 O;
+public final class p41 extends f2.y {
+    public final /* synthetic */ int Q;
+    public final /* synthetic */ b61 R;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p41(q41 q41Var, Context context, Runnable runnable, View view, j51 j51Var, org.telegram.ui.ActionBar.c6 c6Var, View view2, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        super(q41Var.e, context, runnable, view, j51Var, c6Var);
-        this.O = q41Var;
-        this.M = view2;
-        this.N = tL_starGiftUnique;
+    public /* synthetic */ p41(b61 b61Var, int i9) {
+        super(40);
+        this.Q = i9;
+        this.R = b61Var;
     }
 
-    @Override // org.telegram.ui.w51, android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        super.dismiss();
-        this.O.e.T0 = null;
+    @Override // f2.m0, f2.z0
+    public final void v0(RecyclerView recyclerView, f2.n1 n1Var, int i9) {
+        switch (this.Q) {
+            case 0:
+                try {
+                    kh.n1 n1Var2 = new kh.n1(this, recyclerView.getContext(), 3);
+                    n1Var2.a = i9;
+                    w0(n1Var2);
+                    break;
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                }
+            default:
+                try {
+                    kh.n1 n1Var3 = new kh.n1(this, recyclerView.getContext(), 5);
+                    n1Var3.a = i9;
+                    w0(n1Var3);
+                    break;
+                } catch (Exception e11) {
+                    FileLog.e(e11);
+                    return;
+                }
+        }
     }
 }

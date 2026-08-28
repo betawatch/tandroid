@@ -47,9 +47,9 @@ public final class r {
     }
 
     public final Long a(j$.time.temporal.o oVar) {
-        int i10 = this.c;
+        int i9 = this.c;
         j$.time.temporal.l lVar = this.a;
-        if (i10 <= 0 || lVar.e(oVar)) {
+        if (i9 <= 0 || lVar.e(oVar)) {
             return Long.valueOf(lVar.y(oVar));
         }
         return null;

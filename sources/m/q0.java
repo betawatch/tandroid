@@ -17,9 +17,9 @@ import android.view.ViewTreeObserver;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
-import g7.o7;
+import f7.t7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class q0 extends Spinner {
     public static final int[] r = {R.attr.spinnerMode};
@@ -46,8 +46,8 @@ public final class q0 extends Spinner {
         this.n = new Rect();
         d3.a(this, getContext());
         int[] iArr = f.a.v;
-        j9.a G = j9.a.G(context, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
-        TypedArray typedArray2 = (TypedArray) G.c;
+        j4.c E = j4.c.E(context, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
+        TypedArray typedArray2 = (TypedArray) E.c;
         this.a = new n(this);
         int resourceId = typedArray2.getResourceId(4, 0);
         if (resourceId != 0) {
@@ -55,17 +55,17 @@ public final class q0 extends Spinner {
         } else {
             this.b = context;
         }
-        int i10 = -1;
+        int i9 = -1;
         TypedArray typedArray3 = null;
         try {
             typedArray = context.obtainStyledAttributes(attributeSet, r, org.telegram.messenger.beta.R.attr.spinnerStyle, 0);
             try {
                 try {
                     if (typedArray.hasValue(0)) {
-                        i10 = typedArray.getInt(0, 0);
+                        i9 = typedArray.getInt(0, 0);
                     }
-                } catch (Exception e9) {
-                    e = e9;
+                } catch (Exception e10) {
+                    e = e10;
                     Log.i("AppCompatSpinner", "Could not read android:spinnerMode", e);
                 }
             } catch (Throwable th) {
@@ -76,8 +76,8 @@ public final class q0 extends Spinner {
                 }
                 throw th;
             }
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e11) {
+            e = e11;
             typedArray = null;
         } catch (Throwable th2) {
             th = th2;
@@ -86,17 +86,17 @@ public final class q0 extends Spinner {
             throw th;
         }
         typedArray.recycle();
-        if (i10 == 0) {
+        if (i9 == 0) {
             j0 j0Var = new j0(this);
             this.f = j0Var;
             j0Var.c = typedArray2.getString(2);
-        } else if (i10 == 1) {
+        } else if (i9 == 1) {
             n0 n0Var = new n0(this, this.b, attributeSet);
-            j9.a G2 = j9.a.G(this.b, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
-            this.h = ((TypedArray) G2.c).getLayoutDimension(3, -2);
-            n0Var.i(G2.y(1));
+            j4.c E2 = j4.c.E(this.b, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
+            this.h = ((TypedArray) E2.c).getLayoutDimension(3, -2);
+            n0Var.i(E2.w(1));
             n0Var.O = typedArray2.getString(2);
-            G2.I();
+            E2.G();
             this.f = n0Var;
             this.c = new f0(this, this, n0Var);
         }
@@ -106,7 +106,7 @@ public final class q0 extends Spinner {
             arrayAdapter.setDropDownViewResource(org.telegram.messenger.beta.R.layout.support_simple_spinner_dropdown_item);
             setAdapter((SpinnerAdapter) arrayAdapter);
         }
-        G.I();
+        E.G();
         this.e = true;
         SpinnerAdapter spinnerAdapter = this.d;
         if (spinnerAdapter != null) {
@@ -117,7 +117,7 @@ public final class q0 extends Spinner {
     }
 
     public final int a(SpinnerAdapter spinnerAdapter, Drawable drawable) {
-        int i10 = 0;
+        int i9 = 0;
         if (spinnerAdapter == null) {
             return 0;
         }
@@ -126,26 +126,26 @@ public final class q0 extends Spinner {
         int max = Math.max(0, getSelectedItemPosition());
         int min = Math.min(spinnerAdapter.getCount(), max + 15);
         View view = null;
-        int i11 = 0;
+        int i10 = 0;
         for (int max2 = Math.max(0, max - (15 - (min - max))); max2 < min; max2++) {
             int itemViewType = spinnerAdapter.getItemViewType(max2);
-            if (itemViewType != i10) {
+            if (itemViewType != i9) {
                 view = null;
-                i10 = itemViewType;
+                i9 = itemViewType;
             }
             view = spinnerAdapter.getView(max2, view, this);
             if (view.getLayoutParams() == null) {
                 view.setLayoutParams(new ViewGroup.LayoutParams(-2, -2));
             }
             view.measure(makeMeasureSpec, makeMeasureSpec2);
-            i11 = Math.max(i11, view.getMeasuredWidth());
+            i10 = Math.max(i10, view.getMeasuredWidth());
         }
         if (drawable == null) {
-            return i11;
+            return i10;
         }
         Rect rect = this.n;
         drawable.getPadding(rect);
-        return rect.left + rect.right + i11;
+        return rect.left + rect.right + i10;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -222,12 +222,12 @@ public final class q0 extends Spinner {
     }
 
     @Override // android.widget.Spinner, android.widget.AbsSpinner, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        if (this.f == null || View.MeasureSpec.getMode(i10) != Integer.MIN_VALUE) {
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(i9, i10);
+        if (this.f == null || View.MeasureSpec.getMode(i9) != Integer.MIN_VALUE) {
             return;
         }
-        setMeasuredDimension(Math.min(Math.max(getMeasuredWidth(), a(getAdapter(), getBackground())), View.MeasureSpec.getSize(i10)), getMeasuredHeight());
+        setMeasuredDimension(Math.min(Math.max(getMeasuredWidth(), a(getAdapter(), getBackground())), View.MeasureSpec.getSize(i9)), getMeasuredHeight());
     }
 
     @Override // android.widget.Spinner, android.widget.AbsSpinner, android.view.View
@@ -238,7 +238,7 @@ public final class q0 extends Spinner {
         if (!o0Var.a || (viewTreeObserver = getViewTreeObserver()) == null) {
             return;
         }
-        viewTreeObserver.addOnGlobalLayoutListener(new l.d(this, 2));
+        viewTreeObserver.addOnGlobalLayoutListener(new androidx.mediarouter.app.k(this, 3));
     }
 
     @Override // android.widget.Spinner, android.widget.AbsSpinner, android.view.View
@@ -281,41 +281,41 @@ public final class q0 extends Spinner {
     }
 
     @Override // android.view.View
-    public void setBackgroundResource(int i10) {
-        super.setBackgroundResource(i10);
+    public void setBackgroundResource(int i9) {
+        super.setBackgroundResource(i9);
         n nVar = this.a;
         if (nVar != null) {
-            nVar.f(i10);
+            nVar.f(i9);
         }
     }
 
     @Override // android.widget.Spinner
-    public void setDropDownHorizontalOffset(int i10) {
+    public void setDropDownHorizontalOffset(int i9) {
         p0 p0Var = this.f;
         if (p0Var == null) {
-            super.setDropDownHorizontalOffset(i10);
+            super.setDropDownHorizontalOffset(i9);
         } else {
-            p0Var.l(i10);
-            p0Var.c(i10);
+            p0Var.l(i9);
+            p0Var.c(i9);
         }
     }
 
     @Override // android.widget.Spinner
-    public void setDropDownVerticalOffset(int i10) {
+    public void setDropDownVerticalOffset(int i9) {
         p0 p0Var = this.f;
         if (p0Var != null) {
-            p0Var.k(i10);
+            p0Var.j(i9);
         } else {
-            super.setDropDownVerticalOffset(i10);
+            super.setDropDownVerticalOffset(i9);
         }
     }
 
     @Override // android.widget.Spinner
-    public void setDropDownWidth(int i10) {
+    public void setDropDownWidth(int i9) {
         if (this.f != null) {
-            this.h = i10;
+            this.h = i9;
         } else {
-            super.setDropDownWidth(i10);
+            super.setDropDownWidth(i9);
         }
     }
 
@@ -330,8 +330,8 @@ public final class q0 extends Spinner {
     }
 
     @Override // android.widget.Spinner
-    public void setPopupBackgroundResource(int i10) {
-        setPopupBackgroundDrawable(o7.b(getPopupContext(), i10));
+    public void setPopupBackgroundResource(int i9) {
+        setPopupBackgroundDrawable(t7.b(getPopupContext(), i9));
     }
 
     @Override // android.widget.Spinner

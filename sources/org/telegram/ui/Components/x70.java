@@ -1,261 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public abstract class x70 extends LinearLayout {
-    public final org.telegram.ui.Cells.j4 a;
-    public final org.telegram.ui.Cells.p8 b;
-    public final org.telegram.ui.Cells.p8 c;
-    public final org.telegram.ui.Cells.x8 d;
-    public final org.telegram.ui.Cells.x8 e;
-    public boolean f;
-    public boolean h;
-    public TLRPC.Chat n;
-    public ValueAnimator r;
-    public float s;
-    public final int v;
+public final /* synthetic */ class x70 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e80 b;
 
-    public x70(Context context, TLRPC.Chat chat) {
-        super(context);
-        TLRPC.TL_chatAdminRights tL_chatAdminRights;
-        TLRPC.TL_chatAdminRights tL_chatAdminRights2;
-        this.v = View.MeasureSpec.makeMeasureSpec(999999, TLObject.FLAG_31);
-        this.n = chat;
-        this.f = chat.join_to_send;
-        this.h = chat.join_request;
-        boolean z10 = true;
-        setOrientation(1);
-        org.telegram.ui.Cells.j4 j4Var = new org.telegram.ui.Cells.j4(context, 20);
-        this.a = j4Var;
-        j4Var.setText(LocaleController.getString(R.string.ChannelSettingsJoinTitle));
-        j4Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.d6, false));
-        addView(j4Var);
-        org.telegram.ui.Cells.p8 p8Var = new org.telegram.ui.Cells.p8(context, 20);
-        this.b = p8Var;
-        String string = LocaleController.getString(R.string.ChannelSettingsJoinToSend);
-        boolean z11 = this.f;
-        p8Var.f(string, z11, z11);
-        p8Var.setEnabled(chat.creator || ((tL_chatAdminRights2 = chat.admin_rights) != null && tL_chatAdminRights2.ban_users));
-        final int i10 = 0;
-        p8Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.u70
-            public final /* synthetic */ x70 b;
+    public /* synthetic */ x70(e80 e80Var, int i9) {
+        this.a = i9;
+        this.b = e80Var;
+    }
 
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i10) {
-                    case 0:
-                        x70 x70Var = this.b;
-                        boolean z12 = x70Var.f;
-                        boolean z13 = !z12;
-                        if (x70Var.b(z13, new w70(x70Var, x70Var.h, z12, 0))) {
-                            x70Var.setJoinRequest(false);
-                            x70Var.setJoinToSend(z13);
-                            break;
-                        }
-                        break;
-                    default:
-                        x70 x70Var2 = this.b;
-                        boolean z14 = x70Var2.h;
-                        boolean z15 = !z14;
-                        if (x70Var2.a(z15, new v70(x70Var2, z14, 0))) {
-                            x70Var2.setJoinRequest(z15);
-                            break;
-                        }
-                        break;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.r.j();
+                break;
+            case 1:
+                e80 e80Var = this.b;
+                org.telegram.ui.ActionBar.o1 o1Var = e80Var.s;
+                if (o1Var != null) {
+                    o1Var.d(true);
                 }
-            }
-        });
-        addView(p8Var);
-        org.telegram.ui.Cells.p8 p8Var2 = new org.telegram.ui.Cells.p8(context, 20);
-        this.c = p8Var2;
-        p8Var2.f(LocaleController.getString(R.string.ChannelSettingsJoinRequest), this.h, false);
-        p8Var2.setPivotY(0.0f);
-        if (!chat.creator && ((tL_chatAdminRights = chat.admin_rights) == null || !tL_chatAdminRights.ban_users)) {
-            z10 = false;
-        }
-        p8Var2.setEnabled(z10);
-        final int i11 = 1;
-        p8Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.u70
-            public final /* synthetic */ x70 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i11) {
-                    case 0:
-                        x70 x70Var = this.b;
-                        boolean z12 = x70Var.f;
-                        boolean z13 = !z12;
-                        if (x70Var.b(z13, new w70(x70Var, x70Var.h, z12, 0))) {
-                            x70Var.setJoinRequest(false);
-                            x70Var.setJoinToSend(z13);
-                            break;
-                        }
-                        break;
-                    default:
-                        x70 x70Var2 = this.b;
-                        boolean z14 = x70Var2.h;
-                        boolean z15 = !z14;
-                        if (x70Var2.a(z15, new v70(x70Var2, z14, 0))) {
-                            x70Var2.setJoinRequest(z15);
-                            break;
-                        }
-                        break;
+                e80Var.r.b();
+                break;
+            case 2:
+                e80 e80Var2 = this.b;
+                String str = e80Var2.b;
+                boolean z10 = str != null && str.endsWith("?direct");
+                Context context = e80Var2.getContext();
+                String string = LocaleController.getString(R.string.InviteByQRCode);
+                String str2 = e80Var2.b;
+                String str3 = e80Var2.F;
+                if (str3 == null) {
+                    str3 = LocaleController.getString(e80Var2.D ? z10 ? R.string.QRCodeLinkHelpChannelDirect : R.string.QRCodeLinkHelpChannel : R.string.QRCodeLinkHelpGroup);
                 }
-            }
-        });
-        addView(p8Var2);
-        org.telegram.ui.Cells.x8 x8Var = new org.telegram.ui.Cells.x8(context, 12, null);
-        this.d = x8Var;
-        x8Var.setText(LocaleController.getString(R.string.ChannelSettingsJoinToSendInfo));
-        addView(x8Var);
-        org.telegram.ui.Cells.x8 x8Var2 = new org.telegram.ui.Cells.x8(context, 12, null);
-        this.e = x8Var2;
-        x8Var2.setText(LocaleController.getString(R.string.ChannelSettingsJoinRequestInfo));
-        addView(x8Var2);
-        boolean z12 = this.f;
-        this.s = z12 ? 1.0f : 0.0f;
-        p8Var2.setVisibility(z12 ? 0 : 8);
-        d(this.s);
-    }
-
-    public abstract boolean a(boolean z10, v70 v70Var);
-
-    public boolean b(boolean z10, w70 w70Var) {
-        return true;
-    }
-
-    public final void c(boolean z10) {
-        this.a.setVisibility(z10 ? 0 : 8);
-        this.b.setVisibility(z10 ? 0 : 8);
-        if (!z10) {
-            this.f = true;
-            this.c.setVisibility(0);
-            d(1.0f);
+                b80 b80Var = new b80(e80Var2, context, string, str2, str3);
+                e80Var2.A = b80Var;
+                b80Var.m(R.raw.qr_code_logo);
+                e80Var2.A.show();
+                org.telegram.ui.ActionBar.o1 o1Var2 = e80Var2.s;
+                if (o1Var2 != null) {
+                    o1Var2.d(true);
+                    break;
+                }
+                break;
+            default:
+                e80 e80Var3 = this.b;
+                org.telegram.ui.ActionBar.o1 o1Var3 = e80Var3.s;
+                if (o1Var3 != null) {
+                    o1Var3.d(true);
+                }
+                org.telegram.ui.ActionBar.o2 o2Var = e80Var3.c;
+                if (o2Var.getParentActivity() != null) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(o2Var.getParentActivity());
+                    alertDialog$Builder.a.N = LocaleController.getString(R.string.RevokeLink);
+                    alertDialog$Builder.a.P = LocaleController.getString(R.string.RevokeAlert);
+                    alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new w70(e80Var3, 1));
+                    alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                    TextView textView = (TextView) alertDialog$Builder.a.d(-1);
+                    if (textView != null) {
+                        textView.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.q7, false));
+                    }
+                    alertDialog$Builder.o();
+                    break;
+                }
+                break;
         }
-        requestLayout();
-    }
-
-    public final void d(float f10) {
-        this.s = f10;
-        org.telegram.ui.Cells.p8 p8Var = this.c;
-        p8Var.setAlpha(f10);
-        float f11 = 1.0f - f10;
-        p8Var.setTranslationY((-AndroidUtilities.dp(16.0f)) * f11);
-        p8Var.setScaleY(1.0f - (0.1f * f11));
-        int dp = p8Var.getMeasuredHeight() <= 0 ? AndroidUtilities.dp(50.0f) : p8Var.getMeasuredHeight();
-        org.telegram.ui.Cells.x8 x8Var = this.d;
-        x8Var.setAlpha(f11);
-        float f12 = (-dp) * f11;
-        x8Var.setTranslationY(((-AndroidUtilities.dp(4.0f)) * f10) + f12);
-        org.telegram.ui.Cells.x8 x8Var2 = this.e;
-        x8Var2.setAlpha(f10);
-        x8Var2.setTranslationY((AndroidUtilities.dp(4.0f) * f11) + f12);
-        requestLayout();
-    }
-
-    public float getBottomInfoMargin() {
-        return (this.e.getAlpha() * r0.getHeight()) + (this.d.getAlpha() * r0.getHeight());
-    }
-
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int i14;
-        org.telegram.ui.Cells.p8 p8Var = this.b;
-        if (p8Var.getVisibility() == 0) {
-            int i15 = i12 - i10;
-            org.telegram.ui.Cells.j4 j4Var = this.a;
-            int measuredHeight = j4Var.getMeasuredHeight();
-            j4Var.layout(0, 0, i15, measuredHeight);
-            i14 = p8Var.getMeasuredHeight() + measuredHeight;
-            p8Var.layout(0, measuredHeight, i15, i14);
-        } else {
-            i14 = 0;
-        }
-        int i16 = i12 - i10;
-        org.telegram.ui.Cells.p8 p8Var2 = this.c;
-        int measuredHeight2 = p8Var2.getMeasuredHeight() + i14;
-        p8Var2.layout(0, i14, i16, measuredHeight2);
-        org.telegram.ui.Cells.x8 x8Var = this.d;
-        x8Var.layout(0, measuredHeight2, i16, x8Var.getMeasuredHeight() + measuredHeight2);
-        org.telegram.ui.Cells.x8 x8Var2 = this.e;
-        x8Var2.layout(0, measuredHeight2, i16, x8Var2.getMeasuredHeight() + measuredHeight2);
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        float measuredHeight;
-        org.telegram.ui.Cells.j4 j4Var = this.a;
-        int i12 = this.v;
-        j4Var.measure(i10, i12);
-        org.telegram.ui.Cells.p8 p8Var = this.b;
-        p8Var.measure(i10, i12);
-        org.telegram.ui.Cells.p8 p8Var2 = this.c;
-        p8Var2.measure(i10, i12);
-        this.d.measure(i10, i12);
-        this.e.measure(i10, i12);
-        if (p8Var.getVisibility() == 0) {
-            measuredHeight = (p8Var2.getMeasuredHeight() * this.s) + p8Var.getMeasuredHeight() + j4Var.getMeasuredHeight();
-        } else {
-            measuredHeight = p8Var2.getMeasuredHeight();
-        }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) (measuredHeight + AndroidUtilities.lerp(r3.getMeasuredHeight(), r4.getMeasuredHeight(), this.s)), TLObject.FLAG_30));
-    }
-
-    public void setChat(TLRPC.Chat chat) {
-        TLRPC.TL_chatAdminRights tL_chatAdminRights;
-        TLRPC.TL_chatAdminRights tL_chatAdminRights2;
-        this.n = chat;
-        boolean z10 = true;
-        this.b.setEnabled(chat.creator || ((tL_chatAdminRights2 = chat.admin_rights) != null && tL_chatAdminRights2.ban_users));
-        TLRPC.Chat chat2 = this.n;
-        if (!chat2.creator && ((tL_chatAdminRights = chat2.admin_rights) == null || !tL_chatAdminRights.ban_users)) {
-            z10 = false;
-        }
-        this.c.setEnabled(z10);
-    }
-
-    public void setJoinRequest(boolean z10) {
-        this.h = z10;
-        this.c.setChecked(z10);
-    }
-
-    public void setJoinToSend(boolean z10) {
-        this.f = z10;
-        org.telegram.ui.Cells.p8 p8Var = this.b;
-        p8Var.setChecked(z10);
-        p8Var.setDivider(this.f);
-        boolean z11 = this.h;
-        org.telegram.ui.Cells.p8 p8Var2 = this.c;
-        p8Var2.setChecked(z11);
-        ValueAnimator valueAnimator = this.r;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.s, this.f ? 1.0f : 0.0f);
-        this.r = ofFloat;
-        ofFloat.setDuration(200L);
-        this.r.setInterpolator(er.f);
-        this.r.addUpdateListener(new v60(this, 1));
-        this.r.addListener(new sz(this, 4));
-        p8Var2.setVisibility(0);
-        this.r.start();
     }
 }

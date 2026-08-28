@@ -1,54 +1,35 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class jb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ob0 b;
-    public final /* synthetic */ String c;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ jb0(ob0 ob0Var, String str, int i10) {
-        this.a = i10;
-        this.b = ob0Var;
-        this.c = str;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes3.dex */
+public final class jb0 extends qn {
+    public boolean Mc;
+    public final /* synthetic */ TLRPC.User Nc;
+    public final /* synthetic */ TLRPC.User[] Oc;
+    public final /* synthetic */ long Pc;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jb0(Bundle bundle, TLRPC.User user, TLRPC.User[] userArr, long j10) {
+        super(bundle);
+        this.Nc = user;
+        this.Oc = userArr;
+        this.Pc = j10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ob0 ob0Var = this.b;
-                ob0Var.getClass();
-                String str = this.c;
-                if ("disable".equalsIgnoreCase(str)) {
-                    ob0Var.o("turnPasswordOffRow");
-                }
-                if ("change".equalsIgnoreCase(str)) {
-                    ob0Var.o("changePasswordRow");
-                }
-                if ("change-email".equalsIgnoreCase(str)) {
-                    ob0Var.o("emailRow");
-                    break;
-                }
-                break;
-            default:
-                ob0 ob0Var2 = this.b;
-                ob0Var2.getClass();
-                String str2 = this.c;
-                if ("disable".equalsIgnoreCase(str2)) {
-                    ob0Var2.o("disablePasscodeRow");
-                }
-                if ("change".equalsIgnoreCase(str2)) {
-                    ob0Var2.o("changePasscodeRow");
-                }
-                if ("auto-lock".equalsIgnoreCase(str2)) {
-                    ob0Var2.o("autoLockRow");
-                }
-                if ("fingerprint".equalsIgnoreCase(str2)) {
-                    ob0Var2.o("fingerprintRow");
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.qn, org.telegram.ui.ActionBar.o2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.Mc) {
+            return;
         }
+        this.Mc = true;
+        org.telegram.ui.Components.oc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Nc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Oc[0])), new bg.i2(this, this.Pc, 27)), R.raw.contact_check).j();
     }
 }

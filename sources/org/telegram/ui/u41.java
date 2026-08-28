@@ -1,68 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class u41 extends FrameLayout {
-    public final Path a;
-    public final Paint b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c6 e;
-    public final /* synthetic */ Integer f;
-    public final /* synthetic */ a61 h;
+public final class u41 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ b61 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u41(a61 a61Var, Context context, boolean z10, boolean z11, org.telegram.ui.ActionBar.c6 c6Var, Integer num) {
-        super(context);
-        this.h = a61Var;
-        this.c = z10;
-        this.d = z11;
-        this.e = c6Var;
-        this.f = num;
-        this.a = new Path();
-        this.b = new Paint(1);
+    public /* synthetic */ u41(b61 b61Var, boolean z10, int i9) {
+        this.a = i9;
+        this.c = b61Var;
+        this.b = z10;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        a61 a61Var = this.h;
-        if (!a61Var.M0) {
-            super.dispatchDraw(canvas);
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        switch (this.a) {
+            case 0:
+                b61 b61Var = this.c;
+                o41 o41Var = b61Var.e0;
+                boolean z10 = this.b;
+                o41Var.setVisibility(z10 ? 0 : 8);
+                b61Var.d0.setVisibility(z10 ? 8 : 0);
+                b61Var.A1 = null;
+                if (!z10 && (arrayList2 = b61Var.w1) != null) {
+                    arrayList2.clear();
+                    ArrayList arrayList3 = b61Var.z1;
+                    if (arrayList3 != null) {
+                        arrayList3.clear();
+                    }
+                    b61Var.m0.E(false);
+                }
+                if (!z10 && (arrayList = b61Var.x1) != null) {
+                    arrayList.clear();
+                    break;
+                }
+                break;
+            default:
+                b61 b61Var2 = this.c;
+                b61Var2.f0.setVisibility((this.b && b61Var2.e0.getVisibility() == 0) ? 0 : 8);
+                b61Var2.D1 = null;
+                break;
         }
-        if (!this.c) {
-            super.dispatchDraw(canvas);
-            return;
-        }
-        canvas.save();
-        boolean z10 = this.d;
-        Paint paint = this.b;
-        if (z10) {
-            org.telegram.ui.ActionBar.g6.m(paint);
-        }
-        paint.setColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.G8, this.e));
-        paint.setAlpha((int) (getAlpha() * 255.0f));
-        float width = (this.f == null ? getWidth() / 2.0f : r1.intValue()) + AndroidUtilities.dp(20.0f);
-        float width2 = (getWidth() - getPaddingLeft()) - getPaddingRight();
-        float height = (getHeight() - getPaddingBottom()) - getPaddingTop();
-        if (a61Var.n()) {
-            AndroidUtilities.rectTmp.set((width - (a61Var.W0 * width)) + getPaddingLeft(), com.google.android.recaptcha.internal.a.z(1.0f, a61Var.X0, height, getPaddingTop()), ((width2 - width) * a61Var.W0) + getPaddingLeft() + width, getPaddingTop() + height);
-        } else {
-            AndroidUtilities.rectTmp.set((width - (a61Var.W0 * width)) + getPaddingLeft(), getPaddingTop(), ((width2 - width) * a61Var.W0) + getPaddingLeft() + width, (height * a61Var.X0) + getPaddingTop());
-        }
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(AndroidUtilities.rectTmp, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), Path.Direction.CW);
-        canvas.drawPath(path, paint);
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
     }
 }

@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class s2 extends View {
     public StaticLayout a;
@@ -26,7 +26,7 @@ public final class s2 extends View {
     public int h;
     public boolean n;
     public final Drawable r;
-    public final nh.f0 s;
+    public final mh.m2 s;
 
     public s2(Activity activity) {
         super(activity);
@@ -39,19 +39,19 @@ public final class s2 extends View {
         this.f = textPaint;
         this.h = 4;
         this.n = false;
-        this.s = new nh.f0(this, 18);
+        this.s = new mh.m2(this, 12);
         textPaint.setTextSize(AndroidUtilities.dp(15.0f));
         textPaint.setColor(-1);
-        paint.setColor(i0.b.k(-1, TLRPC.LAYER));
-        paint2.setColor(i0.b.k(-1, 102));
+        paint.setColor(i0.a.k(-1, TLRPC.LAYER));
+        paint2.setColor(i0.a.k(-1, 102));
         Drawable drawable = activity.getDrawable(R.drawable.calls_decline);
         this.r = drawable;
         drawable.setBounds(0, 0, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
     }
 
     public final void a() {
-        nh.f0 f0Var = this.s;
-        removeCallbacks(f0Var);
+        mh.m2 m2Var = this.s;
+        removeCallbacks(m2Var);
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance == null) {
             return;
@@ -67,14 +67,14 @@ public final class s2 extends View {
             TextPaint textPaint = this.f;
             this.a = new StaticLayout(str2, textPaint, (int) textPaint.measureText(str2), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
-        postDelayed(f0Var, 300L);
+        postDelayed(m2Var, 300L);
         invalidate();
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         StaticLayout staticLayout = this.a;
-        int i10 = 0;
+        int i9 = 0;
         int dp = staticLayout == null ? 0 : AndroidUtilities.dp(21.0f) + staticLayout.getWidth();
         canvas.save();
         canvas.translate((getMeasuredWidth() - dp) / 2.0f, 0.0f);
@@ -84,18 +84,18 @@ public final class s2 extends View {
             this.r.draw(canvas);
         } else {
             canvas.translate(0.0f, (getMeasuredHeight() - AndroidUtilities.dp(11.0f)) / 2.0f);
-            while (i10 < 4) {
-                int i11 = i10 + 1;
-                Paint paint = i11 > this.h ? this.d : this.c;
-                float f10 = i10;
+            while (i9 < 4) {
+                int i10 = i9 + 1;
+                Paint paint = i10 > this.h ? this.d : this.c;
+                float f10 = i9;
                 float dpf2 = AndroidUtilities.dpf2(4.16f) * f10;
-                float dpf22 = AndroidUtilities.dpf2(2.75f) * (3 - i10);
+                float dpf22 = AndroidUtilities.dpf2(2.75f) * (3 - i9);
                 float dpf23 = AndroidUtilities.dpf2(2.75f) + (AndroidUtilities.dpf2(4.16f) * f10);
                 float dp2 = AndroidUtilities.dp(11.0f);
                 RectF rectF = this.b;
                 rectF.set(dpf2, dpf22, dpf23, dp2);
                 canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(0.7f), AndroidUtilities.dpf2(0.7f), paint);
-                i10 = i11;
+                i9 = i10;
             }
         }
         canvas.restore();
@@ -107,24 +107,24 @@ public final class s2 extends View {
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
+    public final void onMeasure(int i9, int i10) {
         StaticLayout staticLayout = this.a;
         if (staticLayout != null) {
-            setMeasuredDimension(View.MeasureSpec.getSize(i10), staticLayout.getHeight());
+            setMeasuredDimension(View.MeasureSpec.getSize(i9), staticLayout.getHeight());
         } else {
-            setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(15.0f));
+            setMeasuredDimension(View.MeasureSpec.getSize(i9), AndroidUtilities.dp(15.0f));
         }
     }
 
-    public void setSignalBarCount(int i10) {
-        this.h = i10;
+    public void setSignalBarCount(int i9) {
+        this.h = i9;
         invalidate();
     }
 
     @Override // android.view.View
-    public void setVisibility(int i10) {
-        if (getVisibility() != i10) {
-            if (i10 == 0) {
+    public void setVisibility(int i9) {
+        if (getVisibility() != i9) {
+            if (i9 == 0) {
                 this.e = "00:00";
                 String str = this.e;
                 TextPaint textPaint = this.f;
@@ -135,6 +135,6 @@ public final class s2 extends View {
                 this.a = null;
             }
         }
-        super.setVisibility(i10);
+        super.setVisibility(i9);
     }
 }

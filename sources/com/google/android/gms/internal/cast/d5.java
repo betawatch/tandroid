@@ -1,163 +1,39 @@
 package com.google.android.gms.internal.cast;
 
-import j$.util.concurrent.ConcurrentHashMap;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Map;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class d5 extends r4 {
-    private static final Map zzb = new ConcurrentHashMap();
-    protected h6 zzc;
-    private int zzd;
+public final class d5 implements x5 {
+    public static final d5 b = new d5(0);
+    public final /* synthetic */ int a;
 
-    public d5() {
-        this.zza = 0;
-        this.zzd = -1;
-        this.zzc = h6.e;
+    public /* synthetic */ d5(int i9) {
+        this.a = i9;
     }
 
-    public static i5 b(i5 i5Var) {
-        int size = i5Var.size();
-        return i5Var.zzg(size == 0 ? 10 : size + size);
-    }
-
-    public static Object c(Method method, d5 d5Var, Object... objArr) {
-        try {
-            return method.invoke(d5Var, objArr);
-        } catch (IllegalAccessException e9) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e9);
-        } catch (InvocationTargetException e10) {
-            Throwable cause = e10.getCause();
-            if (cause instanceof RuntimeException) {
-                throw ((RuntimeException) cause);
-            }
-            if (cause instanceof Error) {
-                throw ((Error) cause);
-            }
-            throw new RuntimeException("Unexpected exception thrown by generated accessor method.", cause);
+    @Override // com.google.android.gms.internal.cast.x5
+    public final g6 zzb(Class cls) {
+        switch (this.a) {
+            case 0:
+                if (!f5.class.isAssignableFrom(cls)) {
+                    throw new IllegalArgumentException("Unsupported message type: ".concat(cls.getName()));
+                }
+                try {
+                    return (g6) f5.k(cls.asSubclass(f5.class)).h(3, null);
+                } catch (Exception e10) {
+                    throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e10);
+                }
+            default:
+                throw new IllegalStateException("This should never be called.");
         }
     }
 
-    public static void e(Class cls, d5 d5Var) {
-        d5Var.d();
-        zzb.put(cls, d5Var);
-    }
-
-    public static d5 k(Class cls) {
-        Map map = zzb;
-        d5 d5Var = (d5) map.get(cls);
-        if (d5Var == null) {
-            try {
-                Class.forName(cls.getName(), true, cls.getClassLoader());
-                d5Var = (d5) map.get(cls);
-            } catch (ClassNotFoundException e9) {
-                throw new IllegalStateException("Class initialization cannot fail.", e9);
-            }
+    @Override // com.google.android.gms.internal.cast.x5
+    public final boolean zzc(Class cls) {
+        switch (this.a) {
+            case 0:
+                return f5.class.isAssignableFrom(cls);
+            default:
+                return false;
         }
-        if (d5Var != null) {
-            return d5Var;
-        }
-        d5 d5Var2 = (d5) ((d5) q6.g(cls)).h(6, null);
-        if (d5Var2 == null) {
-            throw new IllegalStateException();
-        }
-        map.put(cls, d5Var2);
-        return d5Var2;
-    }
-
-    @Override // com.google.android.gms.internal.cast.r4
-    public final int a(f6 f6Var) {
-        if (g()) {
-            int g10 = f6Var.g(this);
-            if (g10 >= 0) {
-                return g10;
-            }
-            throw new IllegalStateException(i0.a.k(g10, "serialized size must be non-negative, was "));
-        }
-        int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-        if (i10 != Integer.MAX_VALUE) {
-            return i10;
-        }
-        int g11 = f6Var.g(this);
-        if (g11 < 0) {
-            throw new IllegalStateException(i0.a.k(g11, "serialized size must be non-negative, was "));
-        }
-        this.zzd = (this.zzd & TLObject.FLAG_31) | g11;
-        return g11;
-    }
-
-    public final void d() {
-        this.zzd &= ConnectionsManager.DEFAULT_DATACENTER_ID;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        return c6.c.a(getClass()).c(this, (d5) obj);
-    }
-
-    public final void f() {
-        this.zzd = (this.zzd & TLObject.FLAG_31) | ConnectionsManager.DEFAULT_DATACENTER_ID;
-    }
-
-    public final boolean g() {
-        return (this.zzd & TLObject.FLAG_31) != 0;
-    }
-
-    public abstract Object h(int i10, d5 d5Var);
-
-    public final int hashCode() {
-        if (g()) {
-            return c6.c.a(getClass()).b(this);
-        }
-        int i10 = this.zza;
-        if (i10 != 0) {
-            return i10;
-        }
-        int b10 = c6.c.a(getClass()).b(this);
-        this.zza = b10;
-        return b10;
-    }
-
-    public final int i() {
-        if (g()) {
-            int g10 = c6.c.a(getClass()).g(this);
-            if (g10 >= 0) {
-                return g10;
-            }
-            throw new IllegalStateException(i0.a.k(g10, "serialized size must be non-negative, was "));
-        }
-        int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-        if (i10 != Integer.MAX_VALUE) {
-            return i10;
-        }
-        int g11 = c6.c.a(getClass()).g(this);
-        if (g11 < 0) {
-            throw new IllegalStateException(i0.a.k(g11, "serialized size must be non-negative, was "));
-        }
-        this.zzd = (this.zzd & TLObject.FLAG_31) | g11;
-        return g11;
-    }
-
-    public final c5 j() {
-        return (c5) h(5, null);
-    }
-
-    public final String toString() {
-        String obj = super.toString();
-        char[] cArr = w5.a;
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append("# ");
-        sb2.append(obj);
-        w5.c(this, sb2, 0);
-        return sb2.toString();
     }
 }

@@ -1,53 +1,41 @@
 package f7;
 
-import g7.x6;
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class e extends d {
-    public static final e e = new e(0, new Object[0]);
-    public final transient Object[] c;
-    public final transient int d;
+public final class e implements i {
+    public final int a;
 
-    public e(int i10, Object[] objArr) {
-        this.c = objArr;
-        this.d = i10;
+    public e(int i9) {
+        this.a = i9;
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        x6.a(i10, this.d);
-        Object obj = this.c[i10];
-        Objects.requireNonNull(obj);
-        return obj;
+    @Override // java.lang.annotation.Annotation
+    public final Class annotationType() {
+        return i.class;
     }
 
-    @Override // f7.d, f7.a
-    public final int i(Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i10 = this.d;
-        System.arraycopy(objArr2, 0, objArr, 0, i10);
-        return i10;
+    @Override // java.lang.annotation.Annotation
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof i)) {
+            return false;
+        }
+        if (this.a != ((e) ((i) obj)).a) {
+            return false;
+        }
+        Object obj2 = h.a;
+        return obj2.equals(obj2);
     }
 
-    @Override // f7.a
-    public final int n() {
-        return this.d;
+    @Override // java.lang.annotation.Annotation
+    public final int hashCode() {
+        return (this.a ^ 14552422) + (h.a.hashCode() ^ 2041407134);
     }
 
-    @Override // f7.a
-    public final int o() {
-        return 0;
-    }
-
-    @Override // f7.a
-    public final Object[] p() {
-        return this.c;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    @Override // java.lang.annotation.Annotation
+    public final String toString() {
+        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + this.a + "intEncoding=" + h.a + ')';
     }
 }

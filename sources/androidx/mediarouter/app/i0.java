@@ -4,13 +4,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import f2.o1;
+import f2.q1;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class i0 extends o1 {
-    public c2.z A;
+public final class i0 extends q1 {
+    public c2.a0 A;
     public final /* synthetic */ n0 B;
     public final View v;
     public final ImageView w;
@@ -28,7 +28,7 @@ public final class i0 extends o1 {
         this.x = progressBar;
         this.y = (TextView) view.findViewById(R.id.mr_cast_group_name);
         p0 p0Var = n0Var.w;
-        this.z = g7.b0.c(p0Var.y);
-        g7.b0.i(p0Var.y, progressBar);
+        this.z = f7.d0.c(p0Var.y);
+        f7.d0.i(p0Var.y, progressBar);
     }
 }

@@ -1,189 +1,93 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.SystemClock;
-import android.text.style.CharacterStyle;
-import android.view.ViewConfiguration;
-import java.util.ArrayList;
+import android.text.style.ReplacementSpan;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class q80 {
-    public static final ArrayList s = new ArrayList();
-    public int a;
-    public int b;
-    public Paint c;
-    public Paint d;
-    public int e;
-    public int f;
-    public final CharacterStyle i;
-    public final float j;
-    public final float k;
-    public Rect m;
-    public float n;
-    public final long q;
-    public final ArrayList g = new ArrayList();
-    public int h = 0;
-    public final Path l = new Path();
-    public long o = -1;
-    public long p = -1;
-    public final boolean r = !LiteMode.isEnabled(LiteMode.FLAGS_CHAT);
+public final class q80 extends ReplacementSpan {
+    public final int a;
+    public View b;
+    public final p80 c;
+    public final int d;
+    public float e;
+    public float f;
+    public float h;
+    public boolean n;
 
-    public q80(CharacterStyle characterStyle, org.telegram.ui.ActionBar.c6 c6Var, float f10, float f11, int i10) {
-        this.i = characterStyle;
-        d(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.Ld, c6Var));
-        this.j = f10;
-        this.k = f11;
-        this.q = (long) Math.min(ViewConfiguration.getTapTimeout() * 1.8f, ViewConfiguration.getLongPressTimeout() * 0.8f);
+    public q80(int i9, View view) {
+        this(view, i9, AndroidUtilities.dp(2.0f), null);
     }
 
-    public final boolean a(Canvas canvas) {
-        boolean z10;
-        float f10;
-        boolean z11;
-        boolean z12;
-        boolean z13 = this.r;
-        int dp = z13 ? 0 : AndroidUtilities.dp(4.0f);
-        boolean z14 = this.a != dp;
-        if (this.c == null) {
-            Paint paint = new Paint(1);
-            this.c = paint;
-            paint.setStyle(Paint.Style.FILL_AND_STROKE);
-            this.c.setColor(this.b);
-            this.e = Color.alpha(this.b);
+    public final void a(int i9, int i10) {
+        Integer valueOf = Integer.valueOf(i9);
+        p80 p80Var = this.c;
+        p80Var.o = valueOf;
+        p80Var.p = Integer.valueOf(i10);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i9, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        View view;
+        boolean z10 = this.n;
+        int i14 = this.a;
+        if (z10 && (view = this.b) != null && view.getMeasuredWidth() > 0) {
+            i14 = ((this.b.getMeasuredWidth() - this.b.getPaddingLeft()) - this.b.getPaddingRight()) - i14;
         }
-        if (this.d == null) {
-            Paint paint2 = new Paint(1);
-            this.d = paint2;
-            paint2.setStyle(Paint.Style.FILL_AND_STROKE);
-            this.d.setColor(this.b);
-            this.f = Color.alpha(this.b);
-        }
-        if (z14) {
-            this.a = dp;
-            if (dp <= 0) {
-                this.c.setPathEffect(null);
-                this.d.setPathEffect(null);
-            } else {
-                this.c.setPathEffect(new CornerPathEffect(this.a));
-                this.d.setPathEffect(new CornerPathEffect(this.a));
-            }
-        }
-        Rect rect = this.m;
-        float f11 = this.k;
-        float f12 = this.j;
-        ArrayList arrayList = this.g;
-        if (rect != null || this.h <= 0) {
-            z10 = z13;
-            f10 = f12;
-            z11 = false;
-            z12 = true;
+        float f11 = this.f;
+        p80 p80Var = this.c;
+        if (f11 > 0.0f) {
+            float f12 = (i11 + i13) / 2.0f;
+            int i15 = (int) f10;
+            float f13 = f11 / 2.0f;
+            p80Var.setBounds(i15, (int) (f12 - f13), i14 + i15, (int) (f13 + f12));
         } else {
-            j80 j80Var = (j80) arrayList.get(0);
-            RectF rectF = AndroidUtilities.rectTmp;
-            j80Var.computeBounds(rectF, false);
-            this.m = new Rect((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            for (int i10 = 1; i10 < this.h; i10++) {
-                j80 j80Var2 = (j80) arrayList.get(i10);
-                RectF rectF2 = AndroidUtilities.rectTmp;
-                j80Var2.computeBounds(rectF2, false);
-                Rect rect2 = this.m;
-                rect2.left = Math.min(rect2.left, (int) rectF2.left);
-                Rect rect3 = this.m;
-                rect3.top = Math.min(rect3.top, (int) rectF2.top);
-                Rect rect4 = this.m;
-                rect4.right = Math.max(rect4.right, (int) rectF2.right);
-                Rect rect5 = this.m;
-                rect5.bottom = Math.max(rect5.bottom, (int) rectF2.bottom);
-            }
-            z10 = z13;
-            z11 = false;
-            f10 = f12;
-            z12 = true;
-            this.n = (float) Math.sqrt(Math.max(Math.max(Math.pow(this.m.top - f11, 2.0d) + Math.pow(this.m.left - f12, 2.0d), Math.pow(this.m.top - f11, 2.0d) + Math.pow(this.m.right - f12, 2.0d)), Math.max(Math.pow(this.m.bottom - f11, 2.0d) + Math.pow(this.m.left - f12, 2.0d), Math.pow(this.m.bottom - f11, 2.0d) + Math.pow(this.m.right - f12, 2.0d))));
+            int i16 = (int) f10;
+            float z11 = e2.c.z(1.0f, this.e, org.telegram.messenger.l0.B(2.0f, i13, i11) / 2.0f, i11);
+            float f14 = this.d;
+            p80Var.setBounds(i16, (int) (z11 + f14), i14 + i16, (int) (((i13 - AndroidUtilities.dp(2.0f)) - ((1.0f - this.e) * (org.telegram.messenger.l0.B(2.0f, i13, i11) / 2.0f))) + f14));
         }
-        if (z10) {
-            for (int i11 = 0; i11 < this.h; i11++) {
-                canvas.drawPath((Path) arrayList.get(i11), this.d);
-            }
-        } else {
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            if (this.o < 0) {
-                this.o = elapsedRealtime;
-            }
-            float interpolation = er.f.getInterpolation(Math.min(1.0f, (elapsedRealtime - this.o) / this.q));
-            float min = 1.0f - (this.p < 0 ? 0.0f : Math.min(1.0f, Math.max(0.0f, ((elapsedRealtime - 75) - r11) / 100.0f)));
-            this.c.setAlpha((int) (Math.min(1.0f, interpolation * 5.0f) * this.e * 0.2f * min));
-            this.c.setStrokeWidth(Math.min(1.0f, 0.0f) * AndroidUtilities.dp(5.0f));
-            for (int i12 = 0; i12 < this.h; i12++) {
-                ((j80) arrayList.get(i12)).a();
-                canvas.drawPath((Path) arrayList.get(i12), this.c);
-            }
-            this.d.setAlpha((int) (this.f * 0.8f * min));
-            this.d.setStrokeWidth(Math.min(1.0f, 0.0f) * AndroidUtilities.dp(5.0f));
-            if (interpolation < 1.0f) {
-                float f13 = interpolation * this.n;
-                canvas.save();
-                Path path = this.l;
-                path.reset();
-                path.addCircle(f10, f11, f13, Path.Direction.CW);
-                canvas.clipPath(path);
-                for (int i13 = 0; i13 < this.h; i13++) {
-                    canvas.drawPath((Path) arrayList.get(i13), this.d);
-                }
-                canvas.restore();
-            } else {
-                for (int i14 = 0; i14 < this.h; i14++) {
-                    canvas.drawPath((Path) arrayList.get(i14), this.d);
-                }
-            }
-            if (interpolation < 1.0f || this.p >= 0) {
-                return z12;
-            }
+        p80Var.setAlpha((int) ((paint == null ? 255 : paint.getAlpha()) * this.h));
+        p80Var.draw(canvas);
+        View view2 = this.b;
+        if (view2 != null) {
+            view2.invalidate();
         }
-        return z11;
     }
 
-    public final j80 b() {
-        ArrayList arrayList = s;
-        j80 j80Var = !arrayList.isEmpty() ? (j80) arrayList.remove(0) : new j80(0);
-        j80Var.c = !this.r;
-        j80Var.reset();
-        ArrayList arrayList2 = this.g;
-        arrayList2.add(j80Var);
-        this.h = arrayList2.size();
-        return j80Var;
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i9, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        View view;
+        Paint.FontMetrics fontMetrics = paint.getFontMetrics();
+        if (fontMetricsInt != null) {
+            fontMetricsInt.ascent = (int) fontMetrics.ascent;
+            fontMetricsInt.bottom = (int) fontMetrics.bottom;
+            fontMetricsInt.descent = (int) fontMetrics.descent;
+            fontMetricsInt.leading = (int) fontMetrics.leading;
+            fontMetricsInt.top = (int) fontMetrics.top;
+        }
+        p80 p80Var = this.c;
+        if (p80Var.o == null && p80Var.p == null) {
+            p80Var.e(org.telegram.ui.ActionBar.f6.l1(0.1f, paint.getColor()), org.telegram.ui.ActionBar.f6.l1(0.25f, paint.getColor()));
+        }
+        boolean z10 = this.n;
+        int i11 = this.a;
+        return (!z10 || (view = this.b) == null || view.getMeasuredWidth() <= 0) ? i11 : ((this.b.getMeasuredWidth() - this.b.getPaddingLeft()) - this.b.getPaddingRight()) - i11;
     }
 
-    public final void c() {
-        ArrayList arrayList = this.g;
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        s.addAll(arrayList);
-        arrayList.clear();
-        this.h = 0;
-    }
-
-    public final void d(int i10) {
-        this.b = i10;
-        Paint paint = this.c;
-        if (paint != null) {
-            paint.setColor(i10);
-            this.e = Color.alpha(i10);
-        }
-        Paint paint2 = this.d;
-        if (paint2 != null) {
-            paint2.setColor(i10);
-            this.f = Color.alpha(i10);
-        }
+    public q80(View view, int i9, int i10, org.telegram.ui.ActionBar.b6 b6Var) {
+        this.e = 1.0f;
+        this.f = -1.0f;
+        this.h = 1.0f;
+        this.n = false;
+        this.b = view;
+        this.a = i9;
+        this.d = i10;
+        p80 p80Var = new p80(b6Var);
+        this.c = p80Var;
+        p80Var.j(4.0f);
     }
 }

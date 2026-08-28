@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class y implements Map {
     public final Map a;
@@ -27,7 +27,7 @@ public final class y implements Map {
 
     @Override // java.util.Map
     public final boolean containsValue(Object obj) {
-        Iterator it = ((p8.u0) entrySet()).iterator();
+        Iterator it = ((o8.u0) entrySet()).iterator();
         it.getClass();
         if (obj == null) {
             while (it.hasNext()) {
@@ -47,12 +47,12 @@ public final class y implements Map {
 
     @Override // java.util.Map
     public final Set entrySet() {
-        return p8.l.e(this.a.entrySet(), new x(1));
+        return o8.l.e(this.a.entrySet(), new x(1));
     }
 
     @Override // java.util.Map
     public final boolean equals(Object obj) {
-        return obj != null && p8.l.c(this, obj);
+        return obj != null && o8.l.c(this, obj);
     }
 
     @Override // java.util.Map
@@ -65,7 +65,7 @@ public final class y implements Map {
 
     @Override // java.util.Map
     public final int hashCode() {
-        return p8.l.h(entrySet());
+        return o8.l.h(entrySet());
     }
 
     @Override // java.util.Map
@@ -76,7 +76,7 @@ public final class y implements Map {
 
     @Override // java.util.Map
     public final Set keySet() {
-        return p8.l.e(this.a.keySet(), new x(0));
+        return o8.l.e(this.a.keySet(), new x(0));
     }
 
     @Override // java.util.Map

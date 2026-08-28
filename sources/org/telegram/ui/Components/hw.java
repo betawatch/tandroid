@@ -1,23 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class hw extends ky {
-    public final /* synthetic */ yy D;
+public final class hw extends f2.x {
+    public final /* synthetic */ wy c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hw(yy yyVar, Context context) {
-        super(yyVar, context, 0);
-        this.D = yyVar;
+    public hw(wy wyVar) {
+        this.c = wyVar;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        if (f10 != getTranslationY()) {
-            super.setTranslationY(f10);
-            this.D.t0.invalidate();
+    @Override // f2.x
+    public final int i(int i9) {
+        wy wyVar = this.c;
+        ry ryVar = wyVar.v0;
+        f2.r0 adapter = wyVar.z0.getAdapter();
+        ny nyVar = wyVar.u0;
+        if (adapter != nyVar) {
+            if (i9 == ryVar.x || !(ryVar.r.get(i9) == null || (ryVar.r.get(i9) instanceof TLRPC.Document))) {
+                return nyVar.d;
+            }
+            return 1;
         }
+        if (i9 == 0) {
+            return nyVar.d;
+        }
+        if (i9 == nyVar.s || !(nyVar.h.get(i9) == null || (nyVar.h.get(i9) instanceof TLRPC.Document))) {
+            return nyVar.d;
+        }
+        return 1;
     }
 }

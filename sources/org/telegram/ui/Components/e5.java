@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e5 implements Runnable {
     public final /* synthetic */ int a;
@@ -14,8 +14,8 @@ public final /* synthetic */ class e5 implements Runnable {
     public final /* synthetic */ ArrayList c;
     public final /* synthetic */ HashSet d;
 
-    public /* synthetic */ e5(g5 g5Var, ArrayList arrayList, HashSet hashSet, int i10) {
-        this.a = i10;
+    public /* synthetic */ e5(g5 g5Var, ArrayList arrayList, HashSet hashSet, int i9) {
+        this.a = i9;
         this.b = g5Var;
         this.c = arrayList;
         this.d = hashSet;
@@ -35,7 +35,7 @@ public final /* synthetic */ class e5 implements Runnable {
                     ArrayList<Long> arrayList = new ArrayList<>(hashSet);
                     TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
                     tL_messages_getCustomEmojiDocuments.document_id = arrayList;
-                    ConnectionsManager.getInstance(g5Var.e).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.gg(7, g5Var, arrayList));
+                    ConnectionsManager.getInstance(g5Var.e).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.rc(10, g5Var, arrayList));
                     break;
                 }
                 break;

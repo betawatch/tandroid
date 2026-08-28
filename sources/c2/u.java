@@ -2,65 +2,41 @@ package c2;
 
 import android.os.Bundle;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class u {
-    public static final u c = new u(new Bundle(), null);
-    public final Bundle a;
-    public List b;
+    public ArrayList a;
 
-    public u(Bundle bundle, ArrayList arrayList) {
-        this.a = bundle;
-        this.b = arrayList;
-    }
-
-    public static u b(Bundle bundle) {
-        if (bundle != null) {
-            return new u(bundle, null);
-        }
-        return null;
-    }
-
-    public final void a() {
-        if (this.b == null) {
-            ArrayList<String> stringArrayList = this.a.getStringArrayList("controlCategories");
-            this.b = stringArrayList;
-            if (stringArrayList == null || stringArrayList.isEmpty()) {
-                this.b = Collections.EMPTY_LIST;
-            }
+    public u(int i9) {
+        switch (i9) {
+            case 2:
+                this.a = new ArrayList();
+                break;
+            default:
+                this.a = new ArrayList();
+                new ArrayList();
+                new ArrayList();
+                break;
         }
     }
 
-    public final ArrayList c() {
-        a();
-        return new ArrayList(this.b);
-    }
-
-    public final boolean d() {
-        a();
-        return this.b.isEmpty();
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof u)) {
-            return false;
+    public v a() {
+        if (this.a == null) {
+            return v.c;
         }
-        u uVar = (u) obj;
-        a();
-        uVar.a();
-        return this.b.equals(uVar.b);
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("controlCategories", this.a);
+        return new v(bundle, this.a);
     }
 
-    public final int hashCode() {
-        a();
-        return this.b.hashCode();
+    public void b(StringBuilder sb2) {
+        sb2.append(((Boolean) e2.c.k(1, this.a)).booleanValue() ? "</ol>" : "</ul>");
     }
 
-    public final String toString() {
-        return "MediaRouteSelector{ controlCategories=" + Arrays.toString(c().toArray()) + " }";
+    public void c(StringBuilder sb2) {
+        while (!this.a.isEmpty()) {
+            b(sb2);
+        }
     }
 }

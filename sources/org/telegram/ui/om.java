@@ -1,68 +1,50 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.ui.Components.UndoView;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class om implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dn b;
+    public final /* synthetic */ cn b;
+    public final /* synthetic */ MessageObject c;
 
-    public /* synthetic */ om(dn dnVar, int i10) {
-        this.a = i10;
-        this.b = dnVar;
+    public /* synthetic */ om(cn cnVar, MessageObject messageObject, int i9) {
+        this.a = i9;
+        this.b = cnVar;
+        this.c = messageObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                rn rnVar = this.b.a;
-                rnVar.Z4 = null;
-                rnVar.a5 = null;
+                cn cnVar = this.b;
+                qn qnVar = cnVar.a;
+                qnVar.Q7();
+                UndoView undoView = qnVar.u3;
+                if (undoView != null) {
+                    int i9 = (qnVar.U.getVisibility() != 0 || qnVar.N.getVisibility() == 0) ? 17 : 16;
+                    MessageObject messageObject = this.c;
+                    undoView.k(0L, i9, messageObject.getDiceEmoji(), null, null, new om(cnVar, messageObject, 2));
+                    break;
+                }
                 break;
             case 1:
-                dn dnVar = this.b;
-                dnVar.getClass();
-                rn rnVar2 = dnVar.a;
-                new ag.g2((org.telegram.ui.ActionBar.n2) rnVar2, 8, true).show();
-                rnVar2.getMessagesController().pressTranscribeButton();
-                break;
-            case 2:
-                dn dnVar2 = this.b;
-                dnVar2.getClass();
-                rn rnVar3 = dnVar2.a;
-                new ag.g2((org.telegram.ui.ActionBar.n2) rnVar3, 8, true).show();
-                rnVar3.getMessagesController().pressTranscribeButton();
-                break;
-            case 3:
-                dn dnVar3 = this.b;
-                dnVar3.getClass();
-                rn rnVar4 = dnVar3.a;
-                new ag.g2((org.telegram.ui.ActionBar.n2) rnVar4, 8, true).show();
-                rnVar4.getMessagesController().pressTranscribeButton();
-                break;
-            case 4:
-                this.b.a.presentFragment(new PremiumPreviewFragment(0, "similar_channels"));
-                break;
-            case 5:
-                rn rnVar5 = this.b.a;
-                rnVar5.Z4 = null;
-                rnVar5.a5 = null;
-                break;
-            case 6:
-                this.b.a.U.H0();
-                break;
-            case 7:
-                this.b.a.U.H0();
-                break;
-            case 8:
-                rn rnVar6 = this.b.a;
-                ThemeActivity themeActivity = new ThemeActivity(0);
-                themeActivity.P0 = true;
-                rnVar6.presentFragment(themeActivity);
+                qn qnVar2 = this.b.a;
+                qnVar2.sb = this.c.getId();
+                qnVar2.tb = 0;
                 break;
             default:
-                rn rnVar7 = this.b.a;
-                rnVar7.showDialog(new ag.g2((org.telegram.ui.ActionBar.n2) rnVar7, 39, false));
+                qn qnVar3 = this.b.a;
+                if (qnVar3.f7()) {
+                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(this.c.getDiceEmoji(), qnVar3.P5, qnVar3.j5, qnVar3.T3, null, false, null, null, null, true, 0, 0, null, false);
+                    of2.sendMessageChatArguments = qnVar3.C8();
+                    qnVar3.getSendMessagesHelper().sendMessage(of2);
+                    break;
+                }
                 break;
         }
     }

@@ -3,16 +3,16 @@ package org.telegram.messenger;
 import android.content.Context;
 import com.google.android.gms.tasks.TaskExecutors;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class LanguageDetector {
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface ExceptionCallback {
         void run(Exception exc);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface StringCallback {
         void run(String str);
     }
@@ -43,24 +43,24 @@ public class LanguageDetector {
         if (z10) {
             try {
                 Context context = ApplicationLoader.applicationContext;
-                synchronized (za.g.b) {
-                    za.g.d(context, TaskExecutors.MAIN_THREAD);
+                synchronized (ya.g.b) {
+                    ya.g.d(context, TaskExecutors.MAIN_THREAD);
                 }
-            } catch (IllegalStateException e9) {
+            } catch (IllegalStateException e10) {
                 if (!z10) {
                     detectLanguage(str, stringCallback, exceptionCallback, true);
                     return;
                 }
                 if (exceptionCallback != null) {
-                    exceptionCallback.run(e9);
-                }
-                FileLog.e((Throwable) e9, false);
-                return;
-            } catch (Exception e10) {
-                if (exceptionCallback != null) {
                     exceptionCallback.run(e10);
                 }
-                FileLog.e(e10);
+                FileLog.e((Throwable) e10, false);
+                return;
+            } catch (Exception e11) {
+                if (exceptionCallback != null) {
+                    exceptionCallback.run(e11);
+                }
+                FileLog.e(e11);
                 return;
             } catch (Throwable th) {
                 if (exceptionCallback != null) {
@@ -70,6 +70,6 @@ public class LanguageDetector {
                 return;
             }
         }
-        g7.g0.a().g(str).addOnSuccessListener(new d(stringCallback, 6)).addOnFailureListener(new d(exceptionCallback, 7));
+        com.google.android.gms.internal.play_billing.s1.a().g(str).addOnSuccessListener(new d(stringCallback, 6)).addOnFailureListener(new d(exceptionCallback, 7));
     }
 }

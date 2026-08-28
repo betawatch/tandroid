@@ -1,78 +1,31 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y9 implements RequestDelegate {
+public final /* synthetic */ class y9 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c2 c;
 
-    public /* synthetic */ y9(MessagesController messagesController, long j10, int i10) {
-        this.a = i10;
-        this.b = messagesController;
-        this.c = j10;
+    public /* synthetic */ y9(int i9, Context context, org.telegram.ui.ActionBar.c2 c2Var) {
+        this.a = i9;
+        this.b = context;
+        this.c = c2Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$markMessageAsRead2$235(this.c, tLObject, tL_error);
+                MessagesController.lambda$convertToGigaGroup$267(this.b, this.c);
                 break;
             case 1:
-                this.b.lambda$markMessageAsRead2$236(this.c, tLObject, tL_error);
-                break;
-            case 2:
-                this.b.lambda$pinDialog$364(this.c, tLObject, tL_error);
-                break;
-            case 3:
-                this.b.lambda$saveWallpaperToServer$121(this.c, tLObject, tL_error);
-                break;
-            case 4:
-                this.b.lambda$updateTimerProc$160(this.c, tLObject, tL_error);
-                break;
-            case 5:
-                this.b.lambda$deleteUserPhoto$115(this.c, tLObject, tL_error);
-                break;
-            case 6:
-                this.b.lambda$reorderPinnedDialogs$363(this.c, tLObject, tL_error);
-                break;
-            case 7:
-                this.b.lambda$loadPeerSettings$80(this.c, tLObject, tL_error);
-                break;
-            case 8:
-                this.b.lambda$setChannelSlowMode$94(this.c, tLObject, tL_error);
-                break;
-            case 9:
-                this.b.lambda$loadChannelAdmins$65(this.c, tLObject, tL_error);
-                break;
-            case 10:
-                this.b.lambda$deleteDialog$141(this.c, tLObject, tL_error);
-                break;
-            case 11:
-                this.b.lambda$addDialogToFolder$198(this.c, tLObject, tL_error);
-                break;
-            case 12:
-                this.b.lambda$setDefaultSendAs$275(this.c, tLObject, tL_error);
-                break;
-            case 13:
-                this.b.lambda$deleteMessages$122(this.c, tLObject, tL_error);
-                break;
-            case 14:
-                this.b.lambda$deleteMessages$123(this.c, tLObject, tL_error);
-                break;
-            case 15:
-                this.b.lambda$deleteMessages$125(this.c, tLObject, tL_error);
-                break;
-            case 16:
-                this.b.lambda$setBoostsToUnblockRestrictions$96(this.c, tLObject, tL_error);
+                MessagesController.lambda$convertToMegaGroup$262(this.b, this.c);
                 break;
             default:
-                this.b.lambda$markDialogAsUnread$360(this.c, tLObject, tL_error);
+                SecretChatHelper.lambda$startSecretChat$24(this.b, this.c);
                 break;
         }
     }

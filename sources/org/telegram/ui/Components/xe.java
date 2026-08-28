@@ -1,21 +1,35 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.app.Dialog;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class xe extends org.telegram.ui.ActionBar.n1 {
-    public final /* synthetic */ ChatActivityEnterView o;
+public final class xe implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Dialog b;
+    public final /* synthetic */ ChatActivityEnterView c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xe(ChatActivityEnterView chatActivityEnterView, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = chatActivityEnterView;
+    public /* synthetic */ xe(ChatActivityEnterView chatActivityEnterView, Dialog dialog, int i9) {
+        this.a = i9;
+        this.c = chatActivityEnterView;
+        this.b = dialog;
     }
 
-    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        this.o.F0.invalidate();
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        switch (this.a) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = this.c;
+                chatActivityEnterView.l0.getViewTreeObserver().removeOnPreDrawListener(this);
+                chatActivityEnterView.l0.postDelayed(new fg(this.b, 18), 100L);
+                break;
+            default:
+                ChatActivityEnterView chatActivityEnterView2 = this.c;
+                chatActivityEnterView2.l0.getViewTreeObserver().removeOnPreDrawListener(this);
+                chatActivityEnterView2.l0.postDelayed(new fg(this.b, 18), 100L);
+                break;
+        }
+        return true;
     }
 }

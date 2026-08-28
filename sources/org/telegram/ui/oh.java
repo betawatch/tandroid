@@ -1,67 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oh implements r0.o, gf.e0, org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ rn a;
+public final /* synthetic */ class oh implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ qn b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ MessageObject d;
 
-    public /* synthetic */ oh(rn rnVar) {
-        this.a = rnVar;
+    public /* synthetic */ oh(qn qnVar, int i9, MessageObject messageObject) {
+        this.b = qnVar;
+        this.c = i9;
+        this.d = messageObject;
     }
 
-    @Override // r0.o
-    public r0.m1 I0(View view, r0.m1 m1Var) {
-        i0.c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
-        int i10 = defaultWindowInsets.a;
-        int i11 = defaultWindowInsets.c;
-        rn rnVar = this.a;
-        if (rnVar.Qa != i10 || rnVar.Ra != i11) {
-            rnVar.Qa = i10;
-            rnVar.Ra = i11;
-            rnVar.T0.requestLayout();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.j4 = null;
+                this.d.messageOwner.replies.read_max_id = this.c;
+                break;
+            default:
+                qn qnVar = this.b;
+                org.telegram.ui.Components.oc.a0(qnVar).c(LocaleController.getString(R.string.AdHidden)).j();
+                MessagesController.getInstance(this.c).disableAds(false);
+                MessageObject messageObject = this.d;
+                qnVar.Fa(messageObject);
+                qnVar.Ha(messageObject);
+                break;
         }
-        rnVar.v.i(m1Var);
-        qg.e eVar = rnVar.G3;
-        if (eVar != null) {
-            eVar.setPadding(i10, 0, i11, 0);
-        }
-        rnVar.n7();
-        rnVar.r7();
-        rnVar.p9();
-        boolean p6 = m1Var.a.p(8);
-        if (rnVar.Pa != p6) {
-            rnVar.Pa = p6;
-            rnVar.T0.S();
-        }
-        lh.h1 h1Var = rnVar.m1;
-        if (h1Var != null) {
-            r0.j0.b(h1Var, m1Var);
-        }
-        return r0.m1.b;
     }
 
-    @Override // gf.e0
-    public void a(int i10) {
-        rn.S0(this.a, i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        rn rnVar = this.a;
-        rnVar.getClass();
-        try {
-            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-            rnVar.getParentActivity().startActivity(intent);
-        } catch (Exception e9) {
-            FileLog.e(e9);
-        }
+    public /* synthetic */ oh(qn qnVar, MessageObject messageObject, int i9) {
+        this.b = qnVar;
+        this.d = messageObject;
+        this.c = i9;
     }
 }

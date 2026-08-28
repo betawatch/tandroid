@@ -1,51 +1,60 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class t1 implements Cloneable {
-    public final u1 a;
-    public u1 b;
+public final class t1 implements l2 {
+    public static final t1 b = new t1(0);
+    public final /* synthetic */ int a;
 
-    public t1(u1 u1Var) {
-        this.a = u1Var;
-        if (u1Var.m()) {
-            throw new IllegalArgumentException("Default instance must be immutable.");
-        }
-        this.b = (u1) u1Var.d(4);
+    public /* synthetic */ t1(int i9) {
+        this.a = i9;
     }
 
-    public final u1 a() {
-        u1 b10 = b();
-        b10.getClass();
-        if (u1.c(b10, true)) {
-            return b10;
+    public static final j2 a(Object obj, Object obj2) {
+        j2 j2Var = (j2) obj;
+        j2 j2Var2 = (j2) obj2;
+        if (!j2Var2.isEmpty()) {
+            if (!j2Var.a) {
+                if (j2Var.isEmpty()) {
+                    j2Var = new j2();
+                } else {
+                    j2 j2Var3 = new j2(j2Var);
+                    j2Var3.a = true;
+                    j2Var = j2Var3;
+                }
+            }
+            j2Var.b();
+            if (!j2Var2.isEmpty()) {
+                j2Var.putAll(j2Var2);
+            }
         }
-        throw new v2();
+        return j2Var;
     }
 
-    public final u1 b() {
-        if (!this.b.m()) {
-            return this.b;
+    @Override // com.google.android.gms.internal.play_billing.l2
+    public s2 zzb(Class cls) {
+        switch (this.a) {
+            case 0:
+                if (!v1.class.isAssignableFrom(cls)) {
+                    throw new IllegalArgumentException("Unsupported message type: ".concat(cls.getName()));
+                }
+                try {
+                    return (s2) v1.h(cls.asSubclass(v1.class)).d(3);
+                } catch (Exception e10) {
+                    throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e10);
+                }
+            default:
+                throw new IllegalStateException("This should never be called.");
         }
-        u1 u1Var = this.b;
-        u1Var.getClass();
-        p2.c.a(u1Var.getClass()).zzf(u1Var);
-        u1Var.j();
-        return this.b;
     }
 
-    public final void c() {
-        if (this.b.m()) {
-            return;
+    @Override // com.google.android.gms.internal.play_billing.l2
+    public boolean zzc(Class cls) {
+        switch (this.a) {
+            case 0:
+                return v1.class.isAssignableFrom(cls);
+            default:
+                return false;
         }
-        u1 u1Var = (u1) this.a.d(4);
-        p2.c.a(u1Var.getClass()).zzg(u1Var, this.b);
-        this.b = u1Var;
-    }
-
-    public final Object clone() {
-        t1 t1Var = (t1) this.a.d(5);
-        t1Var.b = b();
-        return t1Var;
     }
 }

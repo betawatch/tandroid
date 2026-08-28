@@ -1,61 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.text.style.ClickableSpan;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e31 implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m31 b;
-
-    public /* synthetic */ e31(m31 m31Var, int i10) {
-        this.a = i10;
-        this.b = m31Var;
+public final class e31 extends k41 {
+    static {
+        k41.setup(new e31());
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                b51 b51Var = (b51) obj2;
-                final m31 m31Var = this.b;
-                String[] strArr = m31Var.e0;
-                arrayList.add(n41.B(null));
-                b51Var.A = 1;
-                b51Var.U();
-                String str = m31Var.a0;
-                arrayList.add(g31.b(3, "", str != null ? b31.z(b31.E(str, null, null)) : LocaleController.getString(R.string.AIEditorOriginalText), null, null));
-                arrayList.add(k31.a(4, m31Var.W, m31Var.g0, new xh0(6, m31Var, b51Var), new o80() { // from class: org.telegram.ui.Components.f31
-                    @Override // org.telegram.ui.Components.o80
-                    public final void a(ClickableSpan clickableSpan) {
-                        m31.Q(m31.this, clickableSpan);
-                    }
-                }, null));
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append(b31.E(m31Var.b0, null, null));
-                sb2.append((m31Var.c0 == 1 || strArr == null) ? "" : a9.p.p(new StringBuilder(" ("), strArr[m31Var.c0], ")"));
-                arrayList.add(g31.b(5, "", b31.z(sb2.toString()), null, new d31(m31Var, 4)));
-                arrayList.add(k31.a(6, m31Var.Y, false, null, new o80() { // from class: org.telegram.ui.Components.f31
-                    @Override // org.telegram.ui.Components.o80
-                    public final void a(ClickableSpan clickableSpan) {
-                        m31.Q(m31.this, clickableSpan);
-                    }
-                }, null));
-                b51Var.T();
-                arrayList.add(n41.B(null));
-                b51Var.U();
-                arrayList.add(n41.c(1, R.drawable.msg_copy, LocaleController.getString(R.string.TranslateCopy)));
-                b51Var.T();
-                break;
-            default:
-                m31.R(this.b, (TLRPC.TL_messages_translateResult) obj, (TLRPC.TL_error) obj2);
-                break;
-        }
+    public static l41 a(int i9, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, View.OnClickListener onClickListener, boolean z10, View.OnClickListener onClickListener2, n nVar) {
+        l41 J = l41.J(e31.class);
+        J.d = i9;
+        J.l = charSequence;
+        J.m = charSequence2;
+        J.n = charSequence3;
+        J.D = onClickListener;
+        J.e = z10;
+        J.E = onClickListener2;
+        J.G = nVar;
+        return J;
+    }
+
+    public static l41 b(int i9, String str, String str2, String str3, b31 b31Var) {
+        return a(i9, str, str2, str3, b31Var, false, null, null);
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final void bindView(View view, l41 l41Var, boolean z10, z41 z41Var, i51 i51Var) {
+        f31 f31Var = (f31) view;
+        CharSequence charSequence = l41Var.l;
+        CharSequence charSequence2 = l41Var.m;
+        CharSequence charSequence3 = l41Var.n;
+        View.OnClickListener onClickListener = l41Var.D;
+        boolean z11 = l41Var.e;
+        View.OnClickListener onClickListener2 = l41Var.E;
+        Object obj = l41Var.G;
+        View.OnClickListener onClickListener3 = obj instanceof View.OnClickListener ? (View.OnClickListener) obj : null;
+        LinearLayout linearLayout = f31Var.r;
+        LinearLayout linearLayout2 = f31Var.h;
+        LinearLayout linearLayout3 = f31Var.b;
+        f31Var.c.setText(charSequence);
+        f31Var.d.setText(charSequence2);
+        f31Var.e.setText(charSequence3);
+        f31Var.f.setVisibility(onClickListener != null ? 0 : 8);
+        linearLayout3.setOnClickListener(onClickListener);
+        linearLayout3.setClickable(onClickListener != null);
+        f31Var.n.a(z11, false);
+        linearLayout2.setVisibility(onClickListener2 != null ? 0 : 8);
+        linearLayout2.setOnClickListener(onClickListener2);
+        linearLayout.setVisibility(onClickListener3 != null ? 0 : 8);
+        linearLayout.setOnClickListener(new vh0(6, f31Var, onClickListener3));
+        f31Var.d();
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final boolean contentsEquals(l41 l41Var, l41 l41Var2) {
+        return TextUtils.equals(l41Var.l, l41Var2.l) && TextUtils.equals(l41Var.m, l41Var2.m) && TextUtils.equals(l41Var.n, l41Var2.n) && l41Var.E == l41Var2.E;
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final View createView(Context context, wk0 wk0Var, int i9, int i10, org.telegram.ui.ActionBar.b6 b6Var) {
+        return new f31(context, b6Var);
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final boolean equals(l41 l41Var, l41 l41Var2) {
+        return l41Var.d == l41Var2.d;
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final boolean isClickable() {
+        return false;
     }
 }

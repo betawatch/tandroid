@@ -1,26 +1,14 @@
 package ld;
 
-import org.telegram.tgnet.TLObject;
+import zc.q;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class h extends tc.c {
-    public i a;
-    public Object b;
-    public /* synthetic */ Object c;
-    public final /* synthetic */ i d;
-    public int e;
+public final /* synthetic */ class h extends kotlin.jvm.internal.h implements q {
+    public static final h a = new h(3, kd.c.class, "emit", "emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", 0);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(i iVar, tc.c cVar) {
-        super(cVar);
-        this.d = iVar;
-    }
-
-    @Override // tc.a
-    public final Object invokeSuspend(Object obj) {
-        this.c = obj;
-        this.e |= TLObject.FLAG_31;
-        return this.d.c(null, this);
+    @Override // zc.q
+    public final Object a(Object obj, Object obj2, sc.c cVar) {
+        return ((kd.c) obj).c(obj2, cVar);
     }
 }

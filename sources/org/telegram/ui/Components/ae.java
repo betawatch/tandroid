@@ -1,58 +1,96 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.NotificationsSettingsFacade;
-import org.telegram.messenger.R;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotForumHelper;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ae implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.rn a;
-    public final /* synthetic */ Activity b;
-    public final /* synthetic */ ChatActivityEnterView c;
+public final class ae extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public ae(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.rn rnVar, Activity activity) {
-        this.c = chatActivityEnterView;
-        this.a = rnVar;
-        this.b = activity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ae(ChatActivityEnterView chatActivityEnterView, Context context, int i9) {
+        super(context);
+        this.a = i9;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        String str;
-        int i10;
-        org.telegram.ui.rn rnVar = this.a;
-        if (rnVar == null) {
-            return;
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                mh.v3 v3Var = chatActivityEnterView.g0;
+                return (v3Var == null || v3Var.getVisibility() != 0) ? super.dispatchTouchEvent(motionEvent) : chatActivityEnterView.g0.dispatchTouchEvent(motionEvent);
+            case 1:
+                ChatActivityEnterView chatActivityEnterView2 = this.b;
+                if (!chatActivityEnterView2.F || chatActivityEnterView2.O4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
+                    return false;
+                }
+                return super.dispatchTouchEvent(motionEvent);
+            default:
+                return super.dispatchTouchEvent(motionEvent);
         }
-        ChatActivityEnterView chatActivityEnterView = this.c;
-        chatActivityEnterView.b2 = !chatActivityEnterView.b2;
-        if (chatActivityEnterView.a0 == null) {
-            chatActivityEnterView.a0 = new br(this.b, R.drawable.input_notify_on, org.telegram.ui.ActionBar.g6.Wk);
+    }
+
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j10) {
+        switch (this.a) {
+            case 1:
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                if (view == chatActivityEnterView.F0 && chatActivityEnterView.d0) {
+                    return true;
+                }
+                return super.drawChild(canvas, view, j10);
+            default:
+                return super.drawChild(canvas, view, j10);
         }
-        chatActivityEnterView.a0.a(chatActivityEnterView.b2, true);
-        chatActivityEnterView.D1.setImageDrawable(chatActivityEnterView.a0);
-        MessagesController.getNotificationsSettings(chatActivityEnterView.M).edit().putBoolean(NotificationsSettingsFacade.PROPERTY_SILENT + chatActivityEnterView.L2, chatActivityEnterView.b2).commit();
-        NotificationsController.getInstance(chatActivityEnterView.M).updateServerNotificationsSettings(chatActivityEnterView.L2, rnVar == null ? 0L : rnVar.b());
-        rnVar.Q7();
-        UndoView undoView = rnVar.u3;
-        if (undoView != null) {
-            undoView.j(!chatActivityEnterView.b2 ? 54 : 55, 0L, null);
+    }
+
+    @Override // android.view.View
+    public void onSizeChanged(int i9, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 1:
+                super.onSizeChanged(i9, i10, i11, i12);
+                setPivotX(i9 - AndroidUtilities.dp(22.0f));
+                setPivotY(i10 - AndroidUtilities.dp(22.0f));
+                break;
+            default:
+                super.onSizeChanged(i9, i10, i11, i12);
+                break;
         }
-        ImageView imageView = chatActivityEnterView.D1;
-        if (chatActivityEnterView.b2) {
-            str = "AccDescrChanSilentOn";
-            i10 = R.string.AccDescrChanSilentOn;
-        } else {
-            str = "AccDescrChanSilentOff";
-            i10 = R.string.AccDescrChanSilentOff;
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                if (!chatActivityEnterView.F || chatActivityEnterView.O4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
+                    return false;
+                }
+                return super.onTouchEvent(motionEvent);
+            default:
+                return super.onTouchEvent(motionEvent);
         }
-        imageView.setContentDescription(LocaleController.getString(str, i10));
-        chatActivityEnterView.F1(true);
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i9) {
+        switch (this.a) {
+            case 2:
+                super.setVisibility(i9);
+                this.b.P1(true);
+                break;
+            default:
+                super.setVisibility(i9);
+                break;
+        }
     }
 }

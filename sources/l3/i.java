@@ -1,10 +1,23 @@
 package l3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class i {
-    public static final i a = new i();
+import android.os.Looper;
+import h3.t0;
+import i3.l;
 
-    public final void a() {
-    }
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public interface i {
+    public static final wa.a p = new wa.a(13);
+
+    h D(a6.a aVar, t0 t0Var);
+
+    int G(t0 t0Var);
+
+    void H(Looper looper, l lVar);
+
+    void a();
+
+    e n(a6.a aVar, t0 t0Var);
+
+    void release();
 }

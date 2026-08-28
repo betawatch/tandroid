@@ -4,27 +4,27 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.util.SparseArray;
-import g7.o7;
+import f7.t7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b extends AsyncTask {
     public final int a;
     public final Context b;
     public final /* synthetic */ MediaRouteButton c;
 
-    public b(MediaRouteButton mediaRouteButton, int i10, Context context) {
+    public b(MediaRouteButton mediaRouteButton, int i9, Context context) {
         this.c = mediaRouteButton;
-        this.a = i10;
+        this.a = i9;
         this.b = context;
     }
 
     @Override // android.os.AsyncTask
     public final Object doInBackground(Object[] objArr) {
         SparseArray<Drawable.ConstantState> sparseArray = MediaRouteButton.sRemoteIndicatorCache;
-        int i10 = this.a;
-        if (sparseArray.get(i10) == null) {
-            return o7.b(this.b, i10);
+        int i9 = this.a;
+        if (sparseArray.get(i9) == null) {
+            return t7.b(this.b, i9);
         }
         return null;
     }
@@ -41,13 +41,13 @@ public final class b extends AsyncTask {
     @Override // android.os.AsyncTask
     public final void onPostExecute(Object obj) {
         Drawable drawable = (Drawable) obj;
-        int i10 = this.a;
+        int i9 = this.a;
         MediaRouteButton mediaRouteButton = this.c;
         if (drawable != null) {
-            MediaRouteButton.sRemoteIndicatorCache.put(i10, drawable.getConstantState());
+            MediaRouteButton.sRemoteIndicatorCache.put(i9, drawable.getConstantState());
             mediaRouteButton.mRemoteIndicatorLoader = null;
         } else {
-            Drawable.ConstantState constantState = MediaRouteButton.sRemoteIndicatorCache.get(i10);
+            Drawable.ConstantState constantState = MediaRouteButton.sRemoteIndicatorCache.get(i9);
             if (constantState != null) {
                 drawable = constantState.newDrawable();
             }

@@ -10,11 +10,11 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class p1 extends Fragment implements m {
     public static final WeakHashMap b = new WeakHashMap();
-    public final b6.a a = new b6.a(2, (byte) 0);
+    public final a6.a a = new a6.a(2, (byte) 0);
 
     @Override // com.google.android.gms.common.api.internal.m
     public final void a(String str, l lVar) {
@@ -41,11 +41,11 @@ public final class p1 extends Fragment implements m {
     }
 
     @Override // android.app.Fragment
-    public final void onActivityResult(int i10, int i11, Intent intent) {
-        super.onActivityResult(i10, i11, intent);
+    public final void onActivityResult(int i9, int i10, Intent intent) {
+        super.onActivityResult(i9, i10, intent);
         Iterator it = ((Map) this.a.b).values().iterator();
         while (it.hasNext()) {
-            ((l) it.next()).onActivityResult(i10, i11, intent);
+            ((l) it.next()).onActivityResult(i9, i10, intent);
         }
     }
 
@@ -58,7 +58,7 @@ public final class p1 extends Fragment implements m {
     @Override // android.app.Fragment
     public final void onDestroy() {
         super.onDestroy();
-        b6.a aVar = this.a;
+        a6.a aVar = this.a;
         aVar.c = 5;
         Iterator it = ((Map) aVar.b).values().iterator();
         while (it.hasNext()) {
@@ -69,7 +69,7 @@ public final class p1 extends Fragment implements m {
     @Override // android.app.Fragment
     public final void onResume() {
         super.onResume();
-        b6.a aVar = this.a;
+        a6.a aVar = this.a;
         aVar.c = 3;
         Iterator it = ((Map) aVar.b).values().iterator();
         while (it.hasNext()) {
@@ -86,7 +86,7 @@ public final class p1 extends Fragment implements m {
     @Override // android.app.Fragment
     public final void onStart() {
         super.onStart();
-        b6.a aVar = this.a;
+        a6.a aVar = this.a;
         aVar.c = 2;
         Iterator it = ((Map) aVar.b).values().iterator();
         while (it.hasNext()) {
@@ -97,7 +97,7 @@ public final class p1 extends Fragment implements m {
     @Override // android.app.Fragment
     public final void onStop() {
         super.onStop();
-        b6.a aVar = this.a;
+        a6.a aVar = this.a;
         aVar.c = 4;
         Iterator it = ((Map) aVar.b).values().iterator();
         while (it.hasNext()) {

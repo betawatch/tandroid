@@ -1,16 +1,6 @@
 package j3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class s extends Exception {
-    public final int a;
-    public final boolean b;
-    public final h3.t0 c;
-
-    public s(int i10, h3.t0 t0Var, boolean z10) {
-        super(i0.a.k(i10, "AudioTrack write failed: "));
-        this.b = z10;
-        this.a = i10;
-        this.c = t0Var;
-    }
+public interface s {
 }

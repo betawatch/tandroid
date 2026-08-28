@@ -1,38 +1,28 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class sj extends org.telegram.ui.Components.i11 {
-    public final /* synthetic */ rn e;
+public final class sj implements Runnable {
+    public final /* synthetic */ qn a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sj(rn rnVar, Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, i10, c6Var);
-        this.e = rnVar;
+    public sj(qn qnVar) {
+        this.a = qnVar;
     }
 
-    @Override // org.telegram.ui.Components.i11, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        if (getAlpha() == 0.0f) {
-            return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        qn qnVar = this.a;
+        MessageObject messageObject = qnVar.Z4;
+        if (messageObject == null || qnVar.P8 == null) {
+            return;
         }
-        rn rnVar = this.e;
-        kVar = ((org.telegram.ui.ActionBar.n2) rnVar).actionBar;
-        if (kVar.t() || rnVar.A9()) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        if (getTranslationY() != f10) {
-            invalidate();
-        }
-        super.setTranslationY(f10);
+        int max = Math.max(0, messageObject.messageOwner.ttl_period - (qnVar.getConnectionsManager().getCurrentTime() - qnVar.Z4.messageOwner.date));
+        qnVar.P8.setSubtext(LocaleController.formatString(R.string.AutoDeleteIn, max < 86400 ? AndroidUtilities.formatDuration(max, false, true) : LocaleController.formatPluralString("Days", Math.round(max / 86400.0f), new Object[0])));
+        AndroidUtilities.runOnUIThread(qnVar.Q8, 1000L);
     }
 }

@@ -5,12 +5,12 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.ISearchCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class SearchCallbackDelegateImpl implements o0 {
     private final ISearchCallback mStubCallback;
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class SearchCallbackStub extends ISearchCallback.Stub {
         private final r0 mCallback;
 
@@ -29,12 +29,12 @@ public class SearchCallbackDelegateImpl implements o0 {
 
         @Override // androidx.car.app.model.ISearchCallback
         public void onSearchSubmitted(String str, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.i.b(iOnDoneCallback, "onSearchSubmitted", new p0(this, str, 0));
+            androidx.car.app.utils.j.b(iOnDoneCallback, "onSearchSubmitted", new p0(this, str, 0));
         }
 
         @Override // androidx.car.app.model.ISearchCallback
         public void onSearchTextChanged(String str, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.i.b(iOnDoneCallback, "onSearchTextChanged", new p0(this, str, 1));
+            androidx.car.app.utils.j.b(iOnDoneCallback, "onSearchTextChanged", new p0(this, str, 1));
         }
     }
 
@@ -46,23 +46,23 @@ public class SearchCallbackDelegateImpl implements o0 {
         return new SearchCallbackDelegateImpl(r0Var);
     }
 
-    public void sendSearchSubmitted(String str, androidx.car.app.j jVar) {
+    public void sendSearchSubmitted(String str, androidx.car.app.k kVar) {
         try {
             ISearchCallback iSearchCallback = this.mStubCallback;
             Objects.requireNonNull(iSearchCallback);
-            iSearchCallback.onSearchSubmitted(str, androidx.car.app.utils.i.a());
-        } catch (RemoteException e9) {
-            throw new RuntimeException(e9);
+            iSearchCallback.onSearchSubmitted(str, androidx.car.app.utils.j.a());
+        } catch (RemoteException e10) {
+            throw new RuntimeException(e10);
         }
     }
 
-    public void sendSearchTextChanged(String str, androidx.car.app.j jVar) {
+    public void sendSearchTextChanged(String str, androidx.car.app.k kVar) {
         try {
             ISearchCallback iSearchCallback = this.mStubCallback;
             Objects.requireNonNull(iSearchCallback);
-            iSearchCallback.onSearchTextChanged(str, androidx.car.app.utils.i.a());
-        } catch (RemoteException e9) {
-            throw new RuntimeException(e9);
+            iSearchCallback.onSearchTextChanged(str, androidx.car.app.utils.j.a());
+        } catch (RemoteException e10) {
+            throw new RuntimeException(e10);
         }
     }
 

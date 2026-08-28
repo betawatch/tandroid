@@ -1,22 +1,22 @@
 package l3;
 
-import android.os.Looper;
-import h3.t0;
+import d5.f0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public interface j {
-    public static final xa.a m = new xa.a(12);
+public abstract class j implements k3.b {
+    public static final boolean a;
 
-    void a();
-
-    i g(b6.a aVar, t0 t0Var);
-
-    f l(b6.a aVar, t0 t0Var);
-
-    int m(t0 t0Var);
-
-    void release();
-
-    void w(Looper looper, i3.k kVar);
+    static {
+        boolean z10;
+        if ("Amazon".equals(f0.c)) {
+            String str = f0.d;
+            if ("AFTM".equals(str) || "AFTB".equals(str)) {
+                z10 = true;
+                a = z10;
+            }
+        }
+        z10 = false;
+        a = z10;
+    }
 }

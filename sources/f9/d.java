@@ -1,15 +1,74 @@
 package f9;
 
-import android.os.Process;
+import android.util.Log;
+import j$.util.DesugarCollections;
+import java.util.HashMap;
+import java.util.Map;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class d implements Runnable {
-    public abstract void a();
+public final class d {
+    public final HashMap a = new HashMap();
+    public final int b = 64;
+    public final int c;
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Process.setThreadPriority(10);
-        a();
+    public d(int i9) {
+        this.c = i9;
+    }
+
+    public static String b(int i9, String str) {
+        if (str != null) {
+            str = str.trim();
+            if (str.length() > i9) {
+                return str.substring(0, i9);
+            }
+        }
+        return str;
+    }
+
+    public final synchronized Map a() {
+        return DesugarCollections.unmodifiableMap(new HashMap(this.a));
+    }
+
+    public final synchronized boolean c(String str, String str2) {
+        String b10 = b(this.c, str);
+        if (this.a.size() >= this.b && !this.a.containsKey(b10)) {
+            Log.w("FirebaseCrashlytics", "Ignored entry \"" + str + "\" when adding custom keys. Maximum allowable: " + this.b, null);
+            return false;
+        }
+        String b11 = b(this.c, str2);
+        String str3 = (String) this.a.get(b10);
+        if (str3 == null ? b11 == null : str3.equals(b11)) {
+            return false;
+        }
+        HashMap hashMap = this.a;
+        if (str2 == null) {
+            b11 = "";
+        }
+        hashMap.put(b10, b11);
+        return true;
+    }
+
+    public final synchronized void d(Map map) {
+        try {
+            int i9 = 0;
+            for (Map.Entry entry : map.entrySet()) {
+                String str = (String) entry.getKey();
+                if (str == null) {
+                    throw new IllegalArgumentException("Custom attribute key must not be null.");
+                }
+                String b10 = b(this.c, str);
+                if (this.a.size() >= this.b && !this.a.containsKey(b10)) {
+                    i9++;
+                }
+                String str2 = (String) entry.getValue();
+                this.a.put(b10, str2 == null ? "" : b(this.c, str2));
+            }
+            if (i9 > 0) {
+                Log.w("FirebaseCrashlytics", "Ignored " + i9 + " entries when adding custom keys. Maximum allowable: " + this.b, null);
+            }
+        } catch (Throwable th) {
+            throw th;
+        }
     }
 }

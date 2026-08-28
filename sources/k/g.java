@@ -1,6 +1,5 @@
 package k;
 
-import a9.p;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
@@ -11,11 +10,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import java.lang.reflect.Constructor;
+import l.m;
 import l.n;
-import l.o;
-import l.s;
+import l.r;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class g {
     public CharSequence A;
@@ -40,7 +39,7 @@ public final class g {
     public int w;
     public String x;
     public String y;
-    public o z;
+    public n z;
     public ColorStateList C = null;
     public PorterDuff.Mode D = null;
     public int b = 0;
@@ -60,8 +59,8 @@ public final class g {
             Constructor<?> constructor = Class.forName(str, false, this.E.c.getClassLoader()).getConstructor(clsArr);
             constructor.setAccessible(true);
             return constructor.newInstance(objArr);
-        } catch (Exception e9) {
-            Log.w("SupportMenuInflater", "Cannot instantiate class: " + str, e9);
+        } catch (Exception e10) {
+            Log.w("SupportMenuInflater", "Cannot instantiate class: " + str, e10);
             return null;
         }
     }
@@ -71,9 +70,9 @@ public final class g {
         Context context = hVar.c;
         boolean z10 = false;
         menuItem.setChecked(this.s).setVisible(this.t).setEnabled(this.u).setCheckable(this.r >= 1).setTitleCondensed(this.l).setIcon(this.m);
-        int i10 = this.v;
-        if (i10 >= 0) {
-            menuItem.setShowAsAction(i10);
+        int i9 = this.v;
+        if (i9 >= 0) {
+            menuItem.setShowAsAction(i9);
         }
         if (this.y != null) {
             if (context.isRestricted()) {
@@ -90,28 +89,28 @@ public final class g {
             try {
                 fVar.b = cls.getMethod(str, f.c);
                 menuItem.setOnMenuItemClickListener(fVar);
-            } catch (Exception e9) {
-                StringBuilder r10 = p.r("Couldn't resolve menu item onClick handler ", str, " in class ");
-                r10.append(cls.getName());
-                InflateException inflateException = new InflateException(r10.toString());
-                inflateException.initCause(e9);
+            } catch (Exception e10) {
+                StringBuilder t10 = aa.d.t("Couldn't resolve menu item onClick handler ", str, " in class ");
+                t10.append(cls.getName());
+                InflateException inflateException = new InflateException(t10.toString());
+                inflateException.initCause(e10);
                 throw inflateException;
             }
         }
         if (this.r >= 2) {
-            if (menuItem instanceof n) {
-                n nVar = (n) menuItem;
-                nVar.x = (nVar.x & (-5)) | 4;
-            } else if (menuItem instanceof s) {
-                s sVar = (s) menuItem;
-                l0.a aVar = sVar.c;
+            if (menuItem instanceof m) {
+                m mVar = (m) menuItem;
+                mVar.x = (mVar.x & (-5)) | 4;
+            } else if (menuItem instanceof r) {
+                r rVar = (r) menuItem;
+                l0.a aVar = rVar.c;
                 try {
-                    if (sVar.d == null) {
-                        sVar.d = aVar.getClass().getDeclaredMethod("setExclusiveCheckable", Boolean.TYPE);
+                    if (rVar.d == null) {
+                        rVar.d = aVar.getClass().getDeclaredMethod("setExclusiveCheckable", Boolean.TYPE);
                     }
-                    sVar.d.invoke(aVar, Boolean.TRUE);
-                } catch (Exception e10) {
-                    Log.w("MenuItemWrapper", "Error while calling setExclusiveCheckable", e10);
+                    rVar.d.invoke(aVar, Boolean.TRUE);
+                } catch (Exception e11) {
+                    Log.w("MenuItemWrapper", "Error while calling setExclusiveCheckable", e11);
                 }
             }
         }
@@ -120,18 +119,18 @@ public final class g {
             menuItem.setActionView((View) a(str2, h.e, hVar.a));
             z10 = true;
         }
-        int i11 = this.w;
-        if (i11 > 0) {
+        int i10 = this.w;
+        if (i10 > 0) {
             if (z10) {
                 Log.w("SupportMenuInflater", "Ignoring attribute 'itemActionViewLayout'. Action view already specified.");
             } else {
-                menuItem.setActionView(i11);
+                menuItem.setActionView(i10);
             }
         }
-        o oVar = this.z;
-        if (oVar != null) {
+        n nVar = this.z;
+        if (nVar != null) {
             if (menuItem instanceof l0.a) {
-                ((l0.a) menuItem).a(oVar);
+                ((l0.a) menuItem).a(nVar);
             } else {
                 Log.w("MenuItemCompat", "setActionProvider: item does not implement SupportMenuItem; ignoring");
             }
@@ -141,34 +140,34 @@ public final class g {
         if (z11) {
             ((l0.a) menuItem).setContentDescription(charSequence);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            h6.a.i(menuItem, charSequence);
+            g6.a.i(menuItem, charSequence);
         }
         CharSequence charSequence2 = this.B;
         if (z11) {
             ((l0.a) menuItem).setTooltipText(charSequence2);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            h6.a.q(menuItem, charSequence2);
+            g6.a.q(menuItem, charSequence2);
         }
         char c10 = this.n;
-        int i12 = this.o;
+        int i11 = this.o;
         if (z11) {
-            ((l0.a) menuItem).setAlphabeticShortcut(c10, i12);
+            ((l0.a) menuItem).setAlphabeticShortcut(c10, i11);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            h6.a.g(menuItem, c10, i12);
+            g6.a.g(menuItem, c10, i11);
         }
         char c11 = this.p;
-        int i13 = this.q;
+        int i12 = this.q;
         if (z11) {
-            ((l0.a) menuItem).setNumericShortcut(c11, i13);
+            ((l0.a) menuItem).setNumericShortcut(c11, i12);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            h6.a.m(menuItem, c11, i13);
+            g6.a.m(menuItem, c11, i12);
         }
         PorterDuff.Mode mode = this.D;
         if (mode != null) {
             if (z11) {
                 ((l0.a) menuItem).setIconTintMode(mode);
             } else if (Build.VERSION.SDK_INT >= 26) {
-                h6.a.l(menuItem, mode);
+                g6.a.l(menuItem, mode);
             }
         }
         ColorStateList colorStateList = this.C;
@@ -176,7 +175,7 @@ public final class g {
             if (z11) {
                 ((l0.a) menuItem).setIconTintList(colorStateList);
             } else if (Build.VERSION.SDK_INT >= 26) {
-                h6.a.k(menuItem, colorStateList);
+                g6.a.k(menuItem, colorStateList);
             }
         }
     }

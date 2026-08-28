@@ -1,157 +1,174 @@
 package fh;
 
-import android.util.LongSparseArray;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
-import android.view.ViewGroup;
-import f2.o1;
 import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.h5;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Cells.d5;
-import org.telegram.ui.Components.lk0;
-import org.telegram.ui.Components.y8;
-import org.telegram.ui.Components.yk0;
-import org.telegram.ui.Components.zm;
+import java.util.regex.Pattern;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.ui.Components.cq;
+import org.telegram.ui.Components.gu;
+import org.telegram.ui.Components.kr;
+import org.telegram.ui.Components.pf0;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.ExternalActionActivity;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes3.dex */
-public final class n extends yk0 {
-    public final /* synthetic */ v c;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class n implements View.OnClickListener {
+    public final /* synthetic */ int a;
 
-    public n(v vVar) {
-        this.c = vVar;
+    public /* synthetic */ n(int i9) {
+        this.a = i9;
     }
 
-    @Override // org.telegram.ui.Components.yk0
-    public final boolean D(o1 o1Var) {
-        return o1Var.f == 0;
-    }
-
-    public final void E(List list) {
-        v vVar = this.c;
-        ArrayList arrayList = vVar.c;
-        boolean isEmpty = arrayList.isEmpty();
-        int i10 = 0;
-        while (i10 < list.size()) {
-            long j10 = ((TLRPC.TL_chatInviteImporter) list.get(i10)).user_id;
-            int i11 = i10 + 1;
-            while (true) {
-                if (i11 >= list.size()) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                int i9 = x.w0;
+                break;
+            case 1:
+                qc[] qcVarArr = k0.l0;
+                break;
+            case 2:
+                int i10 = r0.b0;
+                break;
+            case 3:
+                int i11 = gh.l1.z0;
+                break;
+            case 4:
+                int i12 = hg.f.e;
+                break;
+            case 5:
+                ih.k1.j();
+                break;
+            case 6:
+                int i13 = kh.c4.d;
+                break;
+            case 7:
+                PhotoViewer.t1().i0(1.0f, 0.0f, 0.0f, false);
+                break;
+            case 8:
+                int i14 = mh.n.n;
+                break;
+            case 9:
+                int i15 = org.telegram.ui.Cells.x.H;
+                break;
+            case 10:
+                org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
+                if (R != null) {
+                    R.presentFragment(new PremiumPreviewFragment(0, "contact"));
                     break;
                 }
-                if (((TLRPC.TL_chatInviteImporter) list.get(i11)).user_id == j10) {
-                    list.remove(i10);
-                    i10--;
+                break;
+            case 11:
+                if (!MediaController.getInstance().isDownloadingCurrentMessage()) {
+                    if (!MediaController.getInstance().isMessagePaused()) {
+                        MediaController.getInstance().lambda$startAudioAgain$7(MediaController.getInstance().getPlayingMessageObject());
+                        break;
+                    } else {
+                        MediaController.getInstance().playMessage(MediaController.getInstance().getPlayingMessageObject());
+                        break;
+                    }
+                }
+                break;
+            case 12:
+                int i16 = cq.a0;
+                break;
+            case 13:
+                int i17 = kr.s;
+                break;
+            case 14:
+                float[] fArr = FragmentContextView.I0;
+                MediaController.getInstance().updateSilent(false);
+                break;
+            case 15:
+                pf0 pf0Var = pf0.l0;
+                gu guVar = pf0Var.Q;
+                if (guVar != null) {
+                    guVar.G();
+                } else {
+                    PhotoViewer photoViewer = pf0Var.R;
+                    if (photoViewer != null) {
+                        photoViewer.P0();
+                        MediaController.getInstance().tryResumePausedAudio();
+                    }
+                }
+                pf0.j(false);
+                break;
+            case 16:
+                org.telegram.ui.Components.voip.g1.j();
+                break;
+            case 17:
+                ((org.telegram.ui.Cells.z1) view).c(!r6.b(), true);
+                break;
+            case 18:
+                VoIPService sharedInstance = VoIPService.getSharedInstance();
+                if (sharedInstance == null) {
+                    org.telegram.ui.Components.voip.l2.i();
+                    break;
+                } else {
+                    sharedInstance.hangUp();
                     break;
                 }
-                i11++;
-            }
-            i10++;
-        }
-        arrayList.clear();
-        arrayList.addAll(list);
-        if (isEmpty) {
-            s(!vVar.B ? 1 : 0, arrayList.size());
-        } else {
-            l();
-        }
-    }
-
-    @Override // f2.q0
-    public final int h() {
-        v vVar = this.c;
-        return ((vVar.c.isEmpty() || !vVar.x) ? 0 : 1) + vVar.c.size() + (!vVar.B ? 1 : 0);
-    }
-
-    @Override // f2.q0
-    public final int j(int i10) {
-        v vVar = this.c;
-        if (i10 != 0 || vVar.B) {
-            return (i10 == h() + (-1) && !vVar.c.isEmpty() && vVar.x) ? 4 : 0;
-        }
-        return 2;
-    }
-
-    @Override // f2.q0
-    public final void v(o1 o1Var, int i10) {
-        v vVar = this.c;
-        ArrayList arrayList = vVar.c;
-        int i11 = o1Var.f;
-        View view = o1Var.a;
-        if (i11 != 0) {
-            if (i11 == 2) {
-                view.requestLayout();
-                return;
-            }
-            return;
-        }
-        d5 d5Var = (d5) view;
-        int i12 = i10 - (!vVar.B ? 1 : 0);
-        LongSparseArray longSparseArray = vVar.d;
-        TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) arrayList.get(i12);
-        boolean z10 = i12 != arrayList.size() - 1 || vVar.x;
-        h5 h5Var = d5Var.d;
-        d5Var.e = tL_chatInviteImporter;
-        d5Var.f = z10;
-        d5Var.setWillNotDraw(!z10);
-        TLRPC.User user = (TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id);
-        y8 y8Var = d5Var.a;
-        y8Var.r(user);
-        d5Var.b.e(user, y8Var);
-        d5Var.c.l(UserObject.getUserName(user), false);
-        String formatDateAudio = LocaleController.formatDateAudio(tL_chatInviteImporter.date, false);
-        if (tL_chatInviteImporter.via_chatlist) {
-            h5Var.l(LocaleController.getString(R.string.JoinedViaFolder), false);
-            return;
-        }
-        long j10 = tL_chatInviteImporter.approved_by;
-        if (j10 == 0) {
-            h5Var.l(LocaleController.formatString("RequestedToJoinAt", R.string.RequestedToJoinAt, formatDateAudio), false);
-            return;
-        }
-        TLRPC.User user2 = (TLRPC.User) longSparseArray.get(j10);
-        if (user2 != null) {
-            h5Var.l(LocaleController.formatString("AddedBy", R.string.AddedBy, UserObject.getFirstName(user2), formatDateAudio), false);
-        } else {
-            h5Var.l("", false);
+            case 19:
+                bg.g3.d0(0, null);
+                break;
+            case 20:
+                ArrayList arrayList = ExternalActionActivity.x;
+                break;
+            case 21:
+                break;
+            case 22:
+                Pattern pattern = LaunchActivity.x1;
+                break;
+            case 23:
+                break;
+            case 24:
+                try {
+                    view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://fragment.com")));
+                    break;
+                } catch (ActivityNotFoundException e10) {
+                    FileLog.e(e10);
+                    return;
+                }
+            case 25:
+                break;
+            case 26:
+                int i18 = rg.c.e;
+                break;
+            case 27:
+                PhotoViewer.t1().i0(1.0f, 0.0f, 0.0f, false);
+                break;
+            default:
+                try {
+                    view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://play.google.com/store/apps/details?id=org.telegram.messenger")));
+                    break;
+                } catch (ActivityNotFoundException e11) {
+                    FileLog.e(e11);
+                    return;
+                }
         }
     }
 
-    @Override // f2.q0
-    public final o1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        v vVar = this.c;
-        boolean z10 = vVar.a;
-        if (i10 == 1) {
-            view = new View(viewGroup.getContext());
-        } else if (i10 == 2) {
-            zm zmVar = new zm(viewGroup.getContext(), 3);
-            zmVar.setTag(-33024);
-            view = zmVar;
-        } else if (i10 == 3) {
-            view = new View(viewGroup.getContext());
-        } else if (i10 != 4) {
-            view = new d5(viewGroup.getContext(), vVar, z10);
-        } else {
-            n2 n2Var = vVar.g;
-            m mVar = new m(n2Var.getParentActivity(), 0, n2Var.getResourceProvider());
-            if (vVar.B) {
-                mVar.setBackgroundColor(g6.v0(g6.d6, n2Var.getResourceProvider()));
-            }
-            mVar.f(g6.d6, g6.a7, -1);
-            mVar.setViewType(15);
-            mVar.setMemberRequestButton(z10);
-            mVar.setIsSingleCell(true);
-            mVar.setItemsCount(1);
-            mVar.setTag(-33024);
-            view = mVar;
-        }
-        return new lk0(view);
+    public /* synthetic */ n(Object obj, int i9) {
+        this.a = i9;
+    }
+
+    private final void a(View view) {
+    }
+
+    private final void b(View view) {
+    }
+
+    private final void c(View view) {
     }
 }

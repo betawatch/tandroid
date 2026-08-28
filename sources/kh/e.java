@@ -1,137 +1,131 @@
 package kh;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.view.MotionEvent;
-import android.view.View;
-import java.util.HashSet;
-import java.util.List;
-import java.util.regex.Pattern;
-import org.telegram.ui.ActionBar.e3;
-import org.telegram.ui.Cells.v2;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.ap;
-import org.telegram.ui.Components.az;
-import org.telegram.ui.Components.b8;
-import org.telegram.ui.Components.bk;
-import org.telegram.ui.Components.dd0;
-import org.telegram.ui.Components.ex0;
-import org.telegram.ui.Components.fu;
-import org.telegram.ui.Components.gi;
-import org.telegram.ui.Components.hu0;
-import org.telegram.ui.Components.jn0;
-import org.telegram.ui.Components.sh0;
-import org.telegram.ui.Components.sp0;
-import org.telegram.ui.Components.tk;
-import org.telegram.ui.Components.y4;
-import org.telegram.ui.PopupNotificationActivity;
-import org.telegram.ui.do0;
-import org.telegram.ui.g9;
-import org.telegram.ui.m4;
-import org.telegram.ui.na;
-import org.telegram.ui.oj0;
-import org.telegram.ui.qb;
-import org.telegram.ui.rn;
+import android.graphics.Shader;
+import android.widget.FrameLayout;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.Components.mt;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements View.OnTouchListener {
+public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ m b;
 
-    public /* synthetic */ e(int i10) {
-        this.a = i10;
+    public /* synthetic */ e(m mVar, int i9) {
+        this.a = i9;
+        this.b = mVar;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i9 = this.a;
+        m mVar = this.b;
+        switch (i9) {
             case 0:
-                int i10 = r.T;
-                break;
-            case 1:
-                int i11 = e3.a;
-                break;
-            case 3:
-                HashSet hashSet = m4.X0;
-            case 2:
-                return true;
-            case 4:
-                int i12 = g9.e;
-                break;
-            case 5:
-                int i13 = v2.w;
-                break;
-            case 6:
-                Paint paint = na.D;
-                break;
-            case 7:
-                int i14 = qb.T0;
-                break;
-            case 8:
-                int i15 = rn.Dc;
-                break;
-            case 10:
-                Pattern pattern = y4.a;
-            case 9:
-                return true;
-            case 11:
-                b8 b8Var = b8.P0;
-                break;
-            case 12:
-                int i16 = ChatActivityEnterView.i5;
-                break;
-            case 13:
-                int i17 = gi.K2;
-                break;
-            case 14:
-                int i18 = bk.c0;
-                break;
-            case 15:
-                int i19 = tk.A0;
-                break;
-            case 16:
-                int i20 = ap.e0;
-                break;
-            case 17:
-                fu fuVar = fu.O;
-                break;
-            case 18:
-                int i21 = az.h;
-                break;
-            case 19:
-                int[] iArr = dd0.T;
-                break;
-            case 20:
-                int i22 = sh0.N;
-                break;
-            case 21:
-                int i23 = jn0.T0;
-                break;
-            case 22:
-                int i24 = sp0.W0;
-                break;
-            case 23:
-                int[] iArr2 = hu0.Z1;
-                break;
-            case 24:
-                int i25 = ex0.q0;
-                break;
-            case 25:
-                int i26 = UndoView.a0;
-                break;
-            case 26:
-                int i27 = UndoView.a0;
-                break;
-            case 27:
-                int i28 = oj0.Z;
-                break;
-            case 28:
-                List list = do0.c1;
+                mVar.t();
                 break;
             default:
-                int i29 = PopupNotificationActivity.X;
+                boolean z10 = mVar.i0;
+                FrameLayout frameLayout = mVar.F;
+                j jVar = mVar.r;
+                g gVar = mVar.f;
+                if (mVar.l0 != z10) {
+                    mVar.l0 = z10;
+                    ValueAnimator valueAnimator = mVar.m0;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                        mVar.m0 = null;
+                    }
+                    Utilities.Callback callback = mVar.g0;
+                    if (callback != null) {
+                        callback.run(Boolean.valueOf(z10));
+                    }
+                    mVar.d(z10);
+                    if (z10) {
+                        i iVar = mVar.I;
+                        if (iVar != null) {
+                            iVar.setVisibility(0);
+                        }
+                        jVar.setVisibility(0);
+                    } else {
+                        gVar.getEditText().scrollBy(0, -gVar.getEditText().getScrollY());
+                    }
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(mVar.k0, z10 ? 1.0f : 0.0f);
+                    mVar.m0 = ofFloat;
+                    ofFloat.addUpdateListener(new bg.b(mVar, 25));
+                    if (!z10) {
+                        gVar.getEditText().setAllowDrawCursor(false);
+                    }
+                    mVar.m0.addListener(new hg.b0(8, mVar, z10));
+                    if (z10) {
+                        mVar.m0.setInterpolator(org.telegram.ui.ActionBar.q1.w);
+                        mVar.m0.setDuration(250L);
+                    } else {
+                        mVar.m0.setInterpolator(new u1.a());
+                        mVar.m0.setDuration(420L);
+                    }
+                    mVar.m0.start();
+                    mt editText = gVar.getEditText();
+                    if (editText != null && editText.getLayout() != null) {
+                        ObjectAnimator objectAnimator = mVar.c0;
+                        if (objectAnimator != null) {
+                            objectAnimator.cancel();
+                        }
+                        int scrollY = editText.getScrollY();
+                        gVar.setSelection(z10 ? gVar.a.length() : 0);
+                        gVar.getEditText().setForceCursorEnd(false);
+                        ObjectAnimator ofInt = ObjectAnimator.ofInt(editText, "scrollY", scrollY, z10 ? editText.getLayout().getLineTop(editText.getLineCount()) - ((editText.getHeight() - editText.getPaddingTop()) - editText.getPaddingBottom()) : 0);
+                        mVar.c0 = ofInt;
+                        ofInt.setDuration(360L);
+                        mVar.c0.setInterpolator(gr.h);
+                        mVar.c0.start();
+                    }
+                    gVar.setSuggestionsEnabled(z10);
+                    if (!z10) {
+                        gVar.getEditText().setSpoilersRevealed(false, true);
+                    }
+                    if (z10 && SharedConfig.getDevicePerformanceClass() >= 1 && !LiteMode.isPowerSaverApplied()) {
+                        if (mVar.n0 == null) {
+                            mVar.n0 = Bitmap.createBitmap((int) (frameLayout.getWidth() / 12.0f), (int) (frameLayout.getHeight() / 12.0f), Bitmap.Config.ARGB_8888);
+                        }
+                        mVar.u0 = true;
+                        mVar.i(mVar.n0);
+                        mVar.u0 = false;
+                        Bitmap bitmap = mVar.n0;
+                        if (bitmap != null && !bitmap.isRecycled()) {
+                            Bitmap bitmap2 = mVar.n0;
+                            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                            mVar.o0 = new BitmapShader(bitmap2, tileMode, tileMode);
+                            Matrix matrix = mVar.p0;
+                            if (matrix == null) {
+                                mVar.p0 = new Matrix();
+                            } else {
+                                matrix.reset();
+                            }
+                            mVar.o0.setLocalMatrix(mVar.p0);
+                            if (mVar.q0 == null) {
+                                Paint paint = new Paint(3);
+                                mVar.q0 = paint;
+                                paint.setColor(-1);
+                            }
+                            mVar.q0.setShader(mVar.o0);
+                            break;
+                        } else {
+                            mVar.n0 = null;
+                            break;
+                        }
+                    }
+                }
                 break;
         }
-        return true;
     }
 }

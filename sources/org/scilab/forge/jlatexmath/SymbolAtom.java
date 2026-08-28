@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.util.BitSet;
 import java.util.Map;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class SymbolAtom extends CharSymbol {
     public static Map<String, SymbolAtom> symbols = new TeXSymbolParser().readSymbols();
@@ -28,13 +28,13 @@ public class SymbolAtom extends CharSymbol {
         validSymbolTypes.set(10);
     }
 
-    public SymbolAtom(SymbolAtom symbolAtom, int i10) {
-        if (!validSymbolTypes.get(i10)) {
+    public SymbolAtom(SymbolAtom symbolAtom, int i9) {
+        if (!validSymbolTypes.get(i9)) {
             throw new InvalidSymbolTypeException("The symbol type was not valid! Use one of the symbol type constants from the class 'TeXConstants'.");
         }
         this.name = symbolAtom.name;
-        this.type = i10;
-        if (i10 == 1) {
+        this.type = i9;
+        if (i9 == 1) {
             this.type_limits = 0;
         }
         this.delimiter = symbolAtom.delimiter;
@@ -43,8 +43,8 @@ public class SymbolAtom extends CharSymbol {
     public static void addSymbolAtom(String str) {
         try {
             addSymbolAtom(new FileInputStream(str), str);
-        } catch (FileNotFoundException e9) {
-            throw new ResourceParseException(str, e9);
+        } catch (FileNotFoundException e10) {
+            throw new ResourceParseException(str, e10);
         }
     }
 
@@ -115,10 +115,10 @@ public class SymbolAtom extends CharSymbol {
         symbols.put(symbolAtom.name, symbolAtom);
     }
 
-    public SymbolAtom(String str, int i10, boolean z10) {
+    public SymbolAtom(String str, int i9, boolean z10) {
         this.name = str;
-        this.type = i10;
-        if (i10 == 1) {
+        this.type = i9;
+        if (i9 == 1) {
             this.type_limits = 0;
         }
         this.delimiter = z10;

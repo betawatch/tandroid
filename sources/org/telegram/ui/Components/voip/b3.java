@@ -14,10 +14,10 @@ import android.widget.FrameLayout;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.f11;
-import org.telegram.ui.Components.nb0;
+import org.telegram.ui.Components.jb0;
+import org.telegram.ui.Components.y11;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class b3 extends FrameLayout {
     public int A;
@@ -40,18 +40,18 @@ public final class b3 extends FrameLayout {
     public int R;
     public final Drawable a;
     public final Drawable b;
-    public final nb0 c;
-    public final nb0 d;
+    public final jb0 c;
+    public final jb0 d;
     public final Drawable e;
     public final Drawable f;
-    public final nb0 h;
-    public final nb0 n;
+    public final jb0 h;
+    public final jb0 n;
     public final Drawable r;
     public final Drawable s;
-    public final nb0 v;
-    public final nb0 w;
-    public final nb0 x;
-    public final nb0 y;
+    public final jb0 v;
+    public final jb0 w;
+    public final jb0 x;
+    public final jb0 y;
 
     public b3(Activity activity, boolean z10, n1 n1Var) {
         super(activity);
@@ -69,42 +69,42 @@ public final class b3 extends FrameLayout {
         this.P = n1Var;
         boolean isEnabled = LiteMode.isEnabled(512);
         this.Q = isEnabled;
-        this.a = z10 ? new a3() : new nb0(-4958504, -8304404, -14637865, -12612630, false, 0, true);
-        this.b = z10 ? new a3() : new nb0(-12224791, -12879119, -16207709, -15226140, false, 0, true);
-        this.c = new nb0(-16275028, -16270749, -5649306, -10833593, false, 0, true);
-        this.d = new nb0(-1545896, -1613425, -2387892, -2198984, false, 0, true);
-        Drawable a3Var = z10 ? new a3() : new nb0(-5818672, -9819171, -15755831, -14124319, false, 0, true);
+        this.a = z10 ? new a3() : new jb0(-4958504, -8304404, -14637865, -12612630, false, 0, true);
+        this.b = z10 ? new a3() : new jb0(-12224791, -12879119, -16207709, -15226140, false, 0, true);
+        this.c = new jb0(-16275028, -16270749, -5649306, -10833593, false, 0, true);
+        this.d = new jb0(-1545896, -1613425, -2387892, -2198984, false, 0, true);
+        Drawable a3Var = z10 ? new a3() : new jb0(-5818672, -9819171, -15755831, -14124319, false, 0, true);
         this.e = a3Var;
-        Drawable a3Var2 = z10 ? new a3() : new nb0(-13803306, -13866273, -16738923, -16608823, false, 0, true);
+        Drawable a3Var2 = z10 ? new a3() : new jb0(-13803306, -13866273, -16738923, -16608823, false, 0, true);
         this.f = a3Var2;
-        nb0 nb0Var = new nb0(-16741490, -16673972, -7357129, -13525721, false, 0, true);
-        this.h = nb0Var;
-        nb0 nb0Var2 = new nb0(-1949911, -1691537, -3705322, -2663914, false, 0, true);
-        this.n = nb0Var2;
-        Drawable a3Var3 = z10 ? new a3() : new nb0(-2726657, -7186179, -13778695, -11034113, false, 0, true);
+        jb0 jb0Var = new jb0(-16741490, -16673972, -7357129, -13525721, false, 0, true);
+        this.h = jb0Var;
+        jb0 jb0Var2 = new jb0(-1949911, -1691537, -3705322, -2663914, false, 0, true);
+        this.n = jb0Var2;
+        Drawable a3Var3 = z10 ? new a3() : new jb0(-2726657, -7186179, -13778695, -11034113, false, 0, true);
         this.r = a3Var3;
-        Drawable a3Var4 = z10 ? new a3() : new nb0(-11170817, -10507265, -16458548, -14105857, false, 0, true);
+        Drawable a3Var4 = z10 ? new a3() : new jb0(-11170817, -10507265, -16458548, -14105857, false, 0, true);
         this.s = a3Var4;
-        nb0 nb0Var3 = new nb0(-16723243, -16129415, -3674272, -9578153, false, 0, true);
-        this.v = nb0Var3;
-        nb0 nb0Var4 = new nb0(-34714, -32091, -85931, -29103, false, 0, true);
-        this.w = nb0Var4;
-        this.x = new nb0(-16723243, -16129415, -3674272, -9578153, false, 0, true);
-        this.y = new nb0(-16741490, -16673972, -7357129, -13525721, false, 0, true);
+        jb0 jb0Var3 = new jb0(-16723243, -16129415, -3674272, -9578153, false, 0, true);
+        this.v = jb0Var3;
+        jb0 jb0Var4 = new jb0(-34714, -32091, -85931, -29103, false, 0, true);
+        this.w = jb0Var4;
+        this.x = new jb0(-16723243, -16129415, -3674272, -9578153, false, 0, true);
+        this.y = new jb0(-16741490, -16673972, -7357129, -13525721, false, 0, true);
         a3Var.setBounds(0, 0, 80, 80);
         a3Var2.setBounds(0, 0, 80, 80);
-        nb0Var.setBounds(0, 0, 80, 80);
-        nb0Var2.setBounds(0, 0, 80, 80);
+        jb0Var.setBounds(0, 0, 80, 80);
+        jb0Var2.setBounds(0, 0, 80, 80);
         a3Var3.setBounds(0, 0, 80, 80);
         a3Var4.setBounds(0, 0, 80, 80);
-        nb0Var3.setBounds(0, 0, 80, 80);
-        nb0Var4.setBounds(0, 0, 80, 80);
+        jb0Var3.setBounds(0, 0, 80, 80);
+        jb0Var4.setBounds(0, 0, 80, 80);
         setWillNotDraw(false);
         setLayerType(2, null);
         AnimatorSet animatorSet = new AnimatorSet();
         this.M = animatorSet;
         ValueAnimator ofInt = ValueAnimator.ofInt(0, 360);
-        ofInt.addUpdateListener(new ag.t2(16, this, n1Var));
+        ofInt.addUpdateListener(new f2.g(15, this, n1Var));
         ofInt.setRepeatCount(-1);
         ofInt.setRepeatMode(1);
         animatorSet.setInterpolator(new LinearInterpolator());
@@ -145,9 +145,9 @@ public final class b3 extends FrameLayout {
         }
     }
 
-    public final void b(int i10, int i11, boolean z10) {
-        int i12 = this.R;
-        if (i12 == 2 || i12 == 3) {
+    public final void b(int i9, int i10, boolean z10) {
+        int i11 = this.R;
+        if (i11 == 2 || i11 == 3) {
             return;
         }
         this.R = 2;
@@ -157,21 +157,21 @@ public final class b3 extends FrameLayout {
             this.J.cancel();
             this.J = null;
         }
-        this.H = i10;
-        this.I = i11;
+        this.H = i9;
+        this.I = i10;
         Point point = AndroidUtilities.displaySize;
-        int i13 = point.x - i10;
-        int i14 = i13 * i13;
-        int i15 = ((point.y + AndroidUtilities.statusBarHeight) + AndroidUtilities.navigationBarHeight) - i11;
-        int i16 = i15 * i15;
+        int i12 = point.x - i9;
+        int i13 = i12 * i12;
+        int i14 = ((point.y + AndroidUtilities.statusBarHeight) + AndroidUtilities.navigationBarHeight) - i10;
+        int i15 = i14 * i14;
+        int i16 = i9 * i9;
         int i17 = i10 * i10;
-        int i18 = i11 * i11;
-        double max = Math.max(Math.max(Math.max(Math.sqrt(i14 + i16), Math.sqrt(i16 + i17)), Math.sqrt(i17 + i18)), Math.sqrt(i14 + i18));
+        double max = Math.max(Math.max(Math.max(Math.sqrt(i13 + i15), Math.sqrt(i15 + i16)), Math.sqrt(i16 + i17)), Math.sqrt(i13 + i17));
         this.F = true;
         this.P.e = true;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, (float) max);
         ofFloat.addUpdateListener(new z2(this, 1));
-        ofFloat.addListener(new f11(this, 19));
+        ofFloat.addListener(new y11(this, 17));
         ofFloat.setDuration(z10 ? 400L : 0L);
         ofFloat.start();
     }
@@ -240,36 +240,36 @@ public final class b3 extends FrameLayout {
         PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
         canvas2.drawColor(0, mode);
         ((Canvas) this.P.b.b).drawColor(0, mode);
-        int i10 = this.C;
-        if (i10 != 0 && this.D != 255) {
-            this.c.setAlpha(i10);
+        int i9 = this.C;
+        if (i9 != 0 && this.D != 255) {
+            this.c.setAlpha(i9);
             this.v.setAlpha(this.C);
             this.h.setAlpha(this.C);
             this.c.draw(canvas);
             this.v.draw((Canvas) this.P.a.b);
             this.h.draw((Canvas) this.P.b.b);
         }
-        int i11 = this.B;
-        if (i11 != 0 && this.D != 255) {
-            this.b.setAlpha(i11);
+        int i10 = this.B;
+        if (i10 != 0 && this.D != 255) {
+            this.b.setAlpha(i10);
             this.f.setAlpha(this.B);
             this.s.setAlpha(this.B);
             this.b.draw(canvas);
             this.f.draw((Canvas) this.P.b.b);
             this.s.draw((Canvas) this.P.a.b);
         }
-        int i12 = this.A;
-        if (i12 != 0 && this.D != 255) {
-            this.a.setAlpha(i12);
+        int i11 = this.A;
+        if (i11 != 0 && this.D != 255) {
+            this.a.setAlpha(i11);
             this.e.setAlpha(this.A);
             this.r.setAlpha(this.A);
             this.a.draw(canvas);
             this.e.draw((Canvas) this.P.b.b);
             this.r.draw((Canvas) this.P.a.b);
         }
-        int i13 = this.D;
-        if (i13 != 0) {
-            this.d.setAlpha(i13);
+        int i12 = this.D;
+        if (i12 != 0) {
+            this.d.setAlpha(i12);
             this.n.setAlpha(this.D);
             this.w.setAlpha(this.D);
             this.d.draw(canvas);
@@ -310,8 +310,8 @@ public final class b3 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
+    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
+        super.onLayout(z10, i9, i10, i11, i12);
         this.c.setBounds(0, 0, getWidth(), getHeight());
         this.d.setBounds(0, 0, getWidth(), getHeight());
         this.b.setBounds(0, 0, getWidth(), getHeight());
@@ -323,10 +323,10 @@ public final class b3 extends FrameLayout {
         n1 n1Var = this.P;
         n1Var.f = width;
         n1Var.g = height;
-        int i14 = width / 4;
-        int i15 = height / 4;
-        n1Var.c = new com.google.firebase.messaging.m(i14, i15);
-        com.google.firebase.messaging.m mVar = new com.google.firebase.messaging.m(i14, i15);
+        int i13 = width / 4;
+        int i14 = height / 4;
+        n1Var.c = new com.google.firebase.messaging.m(i13, i14);
+        com.google.firebase.messaging.m mVar = new com.google.firebase.messaging.m(i13, i14);
         n1Var.d = mVar;
         ((Paint) mVar.a).setAlpha(180);
     }

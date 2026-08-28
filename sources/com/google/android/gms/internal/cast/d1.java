@@ -1,87 +1,73 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class d1 implements b0, u, g5 {
-    public static final d1 a = new d1();
-    public static final /* synthetic */ d1 b = new d1();
+public enum d1 {
+    b(0),
+    c(1),
+    d(2),
+    e(3),
+    f(4),
+    h(5),
+    n(6),
+    r(7),
+    s(8),
+    v(9),
+    w(10),
+    x(11),
+    y(12),
+    A(13),
+    B(14),
+    C(15),
+    D(16),
+    E(17),
+    F(18),
+    G(19),
+    H(20),
+    I(21),
+    J(22),
+    K(23),
+    L(24),
+    M(25),
+    N(26),
+    O(27),
+    P(28),
+    Q(29),
+    R(30),
+    S(31),
+    T(32),
+    U(33),
+    V(34),
+    W(35),
+    X(36),
+    Y(37),
+    Z(38),
+    a0(39),
+    b0(40),
+    c0(41),
+    d0(42),
+    e0(43),
+    f0(44),
+    g0(45),
+    h0(46),
+    i0(47),
+    j0(48),
+    k0(49),
+    l0(50),
+    m0(51),
+    n0(52),
+    o0(53),
+    p0(54),
+    q0(55);
 
-    public static boolean a(int i10, byte[] bArr) {
-        int i11;
-        int i12 = 0;
-        while (i12 < i10 && bArr[i12] >= 0) {
-            i12++;
-        }
-        if (i12 < i10) {
-            while (i12 < i10) {
-                int i13 = i12 + 1;
-                i11 = bArr[i12];
-                if (i11 < 0) {
-                    if (i11 >= -32) {
-                        if (i11 >= -16) {
-                            if (i13 < i10 - 2) {
-                                int i14 = i12 + 2;
-                                int i15 = bArr[i13];
-                                if (i15 <= -65) {
-                                    if ((((i15 + 112) + (i11 << 28)) >> 30) == 0) {
-                                        int i16 = i12 + 3;
-                                        if (bArr[i14] <= 65471) {
-                                            i12 += 4;
-                                            if (bArr[i16] > 65471) {
-                                            }
-                                        }
-                                    }
-                                }
-                                i11 = -1;
-                                break;
-                            }
-                            i11 = s6.a(bArr, i13, i10);
-                            break;
-                        }
-                        if (i13 < i10 - 1) {
-                            int i17 = i12 + 2;
-                            char c10 = bArr[i13];
-                            if (c10 <= 65471 && ((i11 != -32 || c10 >= 65440) && (i11 != -19 || c10 < 65440))) {
-                                i12 += 3;
-                                if (bArr[i17] > 65471) {
-                                }
-                            }
-                            i11 = -1;
-                            break;
-                        }
-                        i11 = s6.a(bArr, i13, i10);
-                        break;
-                    }
-                    if (i13 < i10) {
-                        if (i11 >= -62) {
-                            i12 += 2;
-                            if (bArr[i13] > 65471) {
-                            }
-                        }
-                        i11 = -1;
-                        break;
-                    }
-                    break;
-                }
-                i12 = i13;
-            }
-        }
-        i11 = 0;
-        return i11 == 0;
+    public final int a;
+
+    d1(int i9) {
+        this.a = i9;
     }
 
-    @Override // com.google.android.gms.internal.cast.u
-    public void zza() {
-    }
-
-    @Override // com.google.android.gms.internal.cast.b0
-    public Object zza() {
-        r5.b bVar = t6.n;
-        r5.b bVar2 = n5.a.l;
-        y5.l.e("Must be called from the main thread.");
-        n5.a aVar = n5.a.n;
-        y5.l.h(aVar);
-        y5.l.e("Must be called from the main thread.");
-        return aVar.e.a;
+    @Override // java.lang.Enum
+    public final String toString() {
+        return Integer.toString(this.a);
     }
 }

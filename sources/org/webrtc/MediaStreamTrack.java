@@ -1,30 +1,32 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import j3.r0;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
 public class MediaStreamTrack {
     public static final String AUDIO_TRACK_KIND = "audio";
     public static final String VIDEO_TRACK_KIND = "video";
     private long nativeTrack;
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public enum MediaType {
         MEDIA_TYPE_AUDIO(0),
         MEDIA_TYPE_VIDEO(1);
 
         private final int nativeIndex;
 
-        MediaType(int i10) {
-            this.nativeIndex = i10;
+        MediaType(int i9) {
+            this.nativeIndex = i9;
         }
 
-        public static MediaType fromNativeIndex(int i10) {
+        public static MediaType fromNativeIndex(int i9) {
             for (MediaType mediaType : values()) {
-                if (mediaType.getNative() == i10) {
+                if (mediaType.getNative() == i9) {
                     return mediaType;
                 }
             }
-            throw new IllegalArgumentException(i0.a.k(i10, "Unknown native media type: "));
+            throw new IllegalArgumentException(r0.l(i9, "Unknown native media type: "));
         }
 
         public int getNative() {
@@ -32,13 +34,13 @@ public class MediaStreamTrack {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public enum State {
         LIVE,
         ENDED;
 
-        public static State fromNativeIndex(int i10) {
-            return values()[i10];
+        public static State fromNativeIndex(int i9) {
+            return values()[i9];
         }
     }
 

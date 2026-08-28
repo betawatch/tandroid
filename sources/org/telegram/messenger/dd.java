@@ -1,57 +1,44 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class dd implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ dd(MessagesController messagesController, int i10) {
-        this.a = i10;
-        this.b = messagesController;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class dd implements RequestDelegate {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ dd(int i9) {
+        this.a = i9;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$processLoadedDeleteTask$87();
+                MessagesController.lambda$removeSuggestion$40(tLObject, tL_error);
                 break;
             case 1:
-                this.b.lambda$markAllTopicsAsRead$5();
+                MessagesController.lambda$hidePromoDialog$135(tLObject, tL_error);
                 break;
             case 2:
-                this.b.lambda$hidePromoDialog$136();
+                MessagesController.lambda$blockPeer$89(tLObject, tL_error);
                 break;
             case 3:
-                this.b.removePromoDialog();
+                MessagesController.lambda$logDeviceStats$31(tLObject, tL_error);
                 break;
             case 4:
-                this.b.lambda$putUsers$57();
+                MessagesController.lambda$deleteParticipantFromChat$314(tLObject, tL_error);
                 break;
             case 5:
-                this.b.lambda$didReceivedNotification$42();
+                NotificationsController.lambda$updateServerNotificationsSettings$51(tLObject, tL_error);
                 break;
             case 6:
-                this.b.lambda$addWebBrowserException$512();
-                break;
-            case 7:
-                this.b.lambda$markAllTopicsAsRead$6();
-                break;
-            case 8:
-                this.b.lambda$removeWebBrowserException$514();
-                break;
-            case 9:
-                this.b.lambda$new$13();
-                break;
-            case 10:
-                this.b.loadAppConfig();
-                break;
-            case 11:
-                this.b.lambda$new$17();
+                NotificationsController.lambda$updateServerNotificationsSettings$52(tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$new$0();
+                NotificationsController.lambda$updateServerNotificationsSettings$50(tLObject, tL_error);
                 break;
         }
     }

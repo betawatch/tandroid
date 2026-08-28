@@ -1,7 +1,7 @@
 package n3;
 
 import androidx.car.app.media.b;
-import d5.g0;
+import d5.f0;
 import h3.s0;
 import h3.t0;
 import h3.t1;
@@ -17,9 +17,9 @@ import m3.n;
 import m3.o;
 import m3.t;
 import m3.w;
-import o8.d;
+import n8.d;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class a implements k {
     public static final int[] p = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -46,34 +46,34 @@ public final class a implements k {
     static {
         int[] iArr = {18, 24, 33, 37, 41, 47, 51, 59, 61, 6, 1, 1, 1, 1, 1, 1};
         q = iArr;
-        int i10 = g0.a;
+        int i9 = f0.a;
         Charset charset = d.c;
         r = "#!AMR\n".getBytes(charset);
         s = "#!AMR-WB\n".getBytes(charset);
         t = iArr[8];
     }
 
-    public a(int i10) {
-        this.b = i10;
+    public a(int i9) {
+        this.b = i9;
     }
 
     public final int a(l lVar) {
         boolean z10;
-        lVar.q();
+        lVar.t();
         byte[] bArr = this.a;
-        lVar.b(0, 1, bArr);
+        lVar.c(0, 1, bArr);
         byte b10 = bArr[0];
         if ((b10 & 131) > 0) {
             throw t1.a("Invalid padding bits for frame header " + ((int) b10), null);
         }
-        int i10 = (b10 >> 3) & 15;
-        if (i10 >= 0 && i10 <= 15 && (((z10 = this.c) && (i10 < 10 || i10 > 13)) || (!z10 && (i10 < 12 || i10 > 14)))) {
-            return z10 ? q[i10] : p[i10];
+        int i9 = (b10 >> 3) & 15;
+        if (i9 >= 0 && i9 <= 15 && (((z10 = this.c) && (i9 < 10 || i9 > 13)) || (!z10 && (i9 < 12 || i9 > 14)))) {
+            return z10 ? q[i9] : p[i9];
         }
         StringBuilder sb2 = new StringBuilder("Illegal AMR ");
         sb2.append(this.c ? "WB" : "NB");
         sb2.append(" frame type ");
-        sb2.append(i10);
+        sb2.append(i9);
         throw t1.a(sb2.toString(), null);
     }
 
@@ -83,10 +83,10 @@ public final class a implements k {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final int b(l lVar, n nVar) {
+        int i9;
         int i10;
-        int i11;
         d5.a.j(this.m);
-        int i12 = g0.a;
+        int i11 = f0.a;
         if (((h) lVar).d == 0 && !d(lVar)) {
             throw t1.a("Could not find AMR header.", null);
         }
@@ -94,13 +94,13 @@ public final class a implements k {
             this.o = true;
             boolean z10 = this.c;
             String str = z10 ? "audio/amr-wb" : "audio/3gpp";
-            int i13 = z10 ? b.AUDIO_CONTENT_SAMPLING_RATE : 8000;
+            int i12 = z10 ? b.AUDIO_CONTENT_SAMPLING_RATE : 8000;
             w wVar = this.m;
             s0 s0Var = new s0();
             s0Var.o = str;
             s0Var.p = t;
             s0Var.B = 1;
-            s0Var.C = i13;
+            s0Var.C = i12;
             wVar.c(new t0(s0Var));
         }
         if (this.f == 0) {
@@ -120,62 +120,62 @@ public final class a implements k {
         }
         int b10 = this.m.b(lVar, this.f, true);
         if (b10 != -1) {
-            int i14 = this.f - b10;
-            this.f = i14;
-            i10 = 0;
-            if (i14 <= 0) {
+            int i13 = this.f - b10;
+            this.f = i13;
+            i9 = 0;
+            if (i13 <= 0) {
                 this.m.e(this.k + this.d, 1, this.e, 0, null);
                 this.d += 20000;
             }
             long j10 = ((h) lVar).c;
             if (!this.g) {
-                if ((this.b & 1) == 0 || j10 == -1 || !((i11 = this.i) == -1 || i11 == this.e)) {
+                if ((this.b & 1) == 0 || j10 == -1 || !((i10 = this.i) == -1 || i10 == this.e)) {
                     o oVar = new o(-9223372036854775807L);
                     this.n = oVar;
-                    this.l.n(oVar);
+                    this.l.y(oVar);
                     this.g = true;
-                } else if (this.j >= 20 || i10 == -1) {
-                    g gVar = new g(j10, (int) ((i11 * 8000000) / 20000), i11, false, this.h);
+                } else if (this.j >= 20 || i9 == -1) {
+                    g gVar = new g(j10, (int) ((i10 * 8000000) / 20000), i10, false, this.h);
                     this.n = gVar;
-                    this.l.n(gVar);
+                    this.l.y(gVar);
                     this.g = true;
                 }
             }
-            return i10;
+            return i9;
         }
-        i10 = -1;
+        i9 = -1;
         long j102 = ((h) lVar).c;
         if (!this.g) {
         }
-        return i10;
+        return i9;
     }
 
     @Override // m3.k
     public final void c(m mVar) {
         this.l = mVar;
-        this.m = mVar.C(0, 1);
-        mVar.A();
+        this.m = mVar.I(0, 1);
+        mVar.B();
     }
 
     public final boolean d(l lVar) {
-        lVar.q();
+        lVar.t();
         byte[] bArr = r;
         byte[] bArr2 = new byte[bArr.length];
-        lVar.b(0, bArr.length, bArr2);
+        lVar.c(0, bArr.length, bArr2);
         if (Arrays.equals(bArr2, bArr)) {
             this.c = false;
-            lVar.t(bArr.length);
+            lVar.u(bArr.length);
             return true;
         }
-        lVar.q();
+        lVar.t();
         byte[] bArr3 = s;
         byte[] bArr4 = new byte[bArr3.length];
-        lVar.b(0, bArr3.length, bArr4);
+        lVar.c(0, bArr3.length, bArr4);
         if (!Arrays.equals(bArr4, bArr3)) {
             return false;
         }
         this.c = true;
-        lVar.t(bArr3.length);
+        lVar.u(bArr3.length);
         return true;
     }
 

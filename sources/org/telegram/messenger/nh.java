@@ -1,42 +1,31 @@
 package org.telegram.messenger;
 
-import android.os.SystemClock;
-import org.telegram.messenger.SharedConfig;
+import android.text.Spanned;
+import java.util.Comparator;
+import org.telegram.messenger.RichMessageLayout;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class nh implements Runnable {
+public final /* synthetic */ class nh implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SharedConfig.ProxyInfo b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ Spanned b;
 
-    public /* synthetic */ nh(SharedConfig.ProxyInfo proxyInfo, long j10, int i10) {
-        this.a = i10;
-        this.b = proxyInfo;
-        this.c = j10;
+    public /* synthetic */ nh(Spanned spanned, int i9) {
+        this.a = i9;
+        this.b = spanned;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        long j10 = this.c;
-        SharedConfig.ProxyInfo proxyInfo = this.b;
-        switch (i10) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$withReplacements$0;
+        int lambda$new$0;
+        switch (this.a) {
             case 0:
-                ProxyRotationController.lambda$new$0(proxyInfo, j10);
-                break;
+                lambda$withReplacements$0 = RichMessageLayout.RichBlock.lambda$withReplacements$0(this.b, (org.telegram.ui.Cells.t9) obj, (org.telegram.ui.Cells.t9) obj2);
+                return lambda$withReplacements$0;
             default:
-                proxyInfo.availableCheckTime = SystemClock.elapsedRealtime();
-                proxyInfo.checking = false;
-                if (j10 == -1) {
-                    proxyInfo.available = false;
-                    proxyInfo.ping = 0L;
-                } else {
-                    proxyInfo.ping = j10;
-                    proxyInfo.available = true;
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.proxyCheckDone, proxyInfo);
-                break;
+                lambda$new$0 = RichMessageLayout.Text.lambda$new$0(this.b, (RichMessageLayout.RichButtonSpan) obj, (RichMessageLayout.RichButtonSpan) obj2);
+                return lambda$new$0;
         }
     }
 }

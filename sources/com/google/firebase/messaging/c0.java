@@ -5,16 +5,16 @@ import android.content.Context;
 import android.content.Intent;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class c0 {
     public static final long a = TimeUnit.MINUTES.toMillis(1);
     public static final Object b = new Object();
-    public static a8.a c;
+    public static z7.a c;
 
     public static void a(Context context) {
         if (c == null) {
-            a8.a aVar = new a8.a(context);
+            z7.a aVar = new z7.a(context);
             c = aVar;
             synchronized (aVar.a) {
                 aVar.g = true;
@@ -44,7 +44,7 @@ public abstract class c0 {
                 if (!booleanExtra) {
                     c.a(a);
                 }
-                f0Var.b(intent).addOnCompleteListener(new a1.c(intent, 15));
+                f0Var.b(intent).addOnCompleteListener(new a1.c(intent, 16));
             } catch (Throwable th) {
                 throw th;
             }

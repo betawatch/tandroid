@@ -29,19 +29,19 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class p0 extends g.t {
+public final class p0 extends g.s {
     public static final /* synthetic */ int f0 = 0;
     public boolean A;
     public boolean B;
     public long C;
-    public final c D;
+    public final d D;
     public RecyclerView E;
     public n0 F;
     public o0 G;
     public HashMap H;
-    public c2.z I;
+    public c2.a0 I;
     public HashMap J;
     public boolean K;
     public boolean L;
@@ -55,19 +55,19 @@ public final class p0 extends g.t {
     public TextView T;
     public String U;
     public android.support.v4.media.session.p V;
-    public final r W;
+    public final s W;
     public MediaDescriptionCompat X;
-    public e0 Y;
+    public g0 Y;
     public Bitmap Z;
     public Uri a0;
     public boolean b0;
     public Bitmap c0;
     public int d0;
     public final boolean e0;
-    public final c2.b0 f;
-    public final h0 h;
-    public c2.u n;
-    public c2.z r;
+    public final c2.c0 f;
+    public final e h;
+    public c2.v n;
+    public c2.a0 r;
     public final ArrayList s;
     public final ArrayList v;
     public final ArrayList w;
@@ -83,29 +83,29 @@ public final class p0 extends g.t {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public p0(Context context) {
-        super(r2, r0 == 0 ? g7.b0.e(r2) : r0);
-        ContextThemeWrapper a2 = g7.b0.a(context, false);
-        int g10 = g7.b0.g(a2, R.attr.mediaRouteTheme);
-        this.n = c2.u.c;
+        super(r2, r0 == 0 ? f7.d0.e(r2) : r0);
+        ContextThemeWrapper a2 = f7.d0.a(context, false);
+        int g10 = f7.d0.g(a2, R.attr.mediaRouteTheme);
+        this.n = c2.v.c;
         this.s = new ArrayList();
         this.v = new ArrayList();
         this.w = new ArrayList();
         this.x = new ArrayList();
-        this.D = new c(this, 2);
+        this.D = new d(this, 2);
         Context context2 = getContext();
         this.y = context2;
-        this.f = c2.b0.d(context2);
-        this.e0 = c2.b0.g();
-        this.h = new h0(this, 0);
-        this.r = c2.b0.f();
-        this.W = new r(this, 1);
-        h(c2.b0.e());
+        this.f = c2.c0.d(context2);
+        this.e0 = c2.c0.g();
+        this.h = new e(this, 3);
+        this.r = c2.c0.f();
+        this.W = new s(this, 1);
+        h(c2.c0.e());
     }
 
     public final void e(List list) {
         for (int size = list.size() - 1; size >= 0; size--) {
-            c2.z zVar = (c2.z) list.get(size);
-            if (zVar.d() || !zVar.g || !zVar.h(this.n) || this.r == zVar) {
+            c2.a0 a0Var = (c2.a0) list.get(size);
+            if (a0Var.d() || !a0Var.g || !a0Var.h(this.n) || this.r == a0Var) {
                 list.remove(size);
             }
         }
@@ -115,31 +115,31 @@ public final class p0 extends g.t {
         MediaDescriptionCompat mediaDescriptionCompat = this.X;
         Bitmap bitmap = mediaDescriptionCompat == null ? null : mediaDescriptionCompat.e;
         Uri uri = mediaDescriptionCompat != null ? mediaDescriptionCompat.f : null;
-        e0 e0Var = this.Y;
-        Bitmap bitmap2 = e0Var == null ? this.Z : e0Var.a;
-        Uri uri2 = e0Var == null ? this.a0 : e0Var.b;
+        g0 g0Var = this.Y;
+        Bitmap bitmap2 = g0Var == null ? this.Z : g0Var.a;
+        Uri uri2 = g0Var == null ? this.a0 : g0Var.b;
         if (bitmap2 != bitmap || (bitmap2 == null && !Objects.equals(uri2, uri))) {
-            e0 e0Var2 = this.Y;
-            if (e0Var2 != null) {
-                e0Var2.cancel(true);
+            g0 g0Var2 = this.Y;
+            if (g0Var2 != null) {
+                g0Var2.cancel(true);
             }
-            e0 e0Var3 = new e0(this);
-            this.Y = e0Var3;
-            e0Var3.execute(new Void[0]);
+            g0 g0Var3 = new g0(this);
+            this.Y = g0Var3;
+            g0Var3.execute(new Void[0]);
         }
     }
 
     public final void h(MediaSessionCompat$Token mediaSessionCompat$Token) {
         android.support.v4.media.session.p pVar = this.V;
-        r rVar = this.W;
+        s sVar = this.W;
         if (pVar != null) {
-            pVar.e(rVar);
+            pVar.e(sVar);
             this.V = null;
         }
         if (mediaSessionCompat$Token != null && this.B) {
             android.support.v4.media.session.p pVar2 = new android.support.v4.media.session.p(this.y, mediaSessionCompat$Token);
             this.V = pVar2;
-            pVar2.d(rVar);
+            pVar2.d(sVar);
             MediaMetadataCompat a2 = this.V.a();
             this.X = a2 != null ? a2.a() : null;
             f();
@@ -147,26 +147,26 @@ public final class p0 extends g.t {
         }
     }
 
-    public final void i(c2.u uVar) {
-        if (uVar == null) {
+    public final void i(c2.v vVar) {
+        if (vVar == null) {
             throw new IllegalArgumentException("selector must not be null");
         }
-        if (this.n.equals(uVar)) {
+        if (this.n.equals(vVar)) {
             return;
         }
-        this.n = uVar;
+        this.n = vVar;
         if (this.B) {
-            c2.b0 b0Var = this.f;
-            h0 h0Var = this.h;
-            b0Var.h(h0Var);
-            b0Var.a(uVar, h0Var, 1);
+            c2.c0 c0Var = this.f;
+            e eVar = this.h;
+            c0Var.h(eVar);
+            c0Var.a(vVar, eVar, 1);
             l();
         }
     }
 
     public final void j() {
         Context context = this.y;
-        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : g7.a0.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
+        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : f7.c0.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
         this.Z = null;
         this.a0 = null;
         f();
@@ -273,36 +273,36 @@ public final class p0 extends g.t {
         ArrayList arrayList3 = this.w;
         arrayList3.clear();
         arrayList.addAll(DesugarCollections.unmodifiableList(this.r.v));
-        c2.y yVar = this.r.a;
-        yVar.getClass();
-        c2.b0.b();
-        for (c2.z zVar : DesugarCollections.unmodifiableList(yVar.b)) {
-            ae.b b10 = this.r.b(zVar);
+        c2.z zVar = this.r.a;
+        zVar.getClass();
+        c2.c0.b();
+        for (c2.a0 a0Var : DesugarCollections.unmodifiableList(zVar.b)) {
+            fa.c b10 = this.r.b(a0Var);
             if (b10 != null) {
                 c2.p pVar = (c2.p) b10.b;
                 if (pVar != null && pVar.d) {
-                    arrayList2.add(zVar);
+                    arrayList2.add(a0Var);
                 }
                 if (pVar != null && pVar.e) {
-                    arrayList3.add(zVar);
+                    arrayList3.add(a0Var);
                 }
             }
         }
         e(arrayList2);
         e(arrayList3);
-        e eVar = e.d;
-        Collections.sort(arrayList, eVar);
-        Collections.sort(arrayList2, eVar);
-        Collections.sort(arrayList3, eVar);
+        g gVar = g.d;
+        Collections.sort(arrayList, gVar);
+        Collections.sort(arrayList2, gVar);
+        Collections.sort(arrayList3, gVar);
         this.F.G();
     }
 
     public final void n() {
         if (this.B) {
             if (SystemClock.uptimeMillis() - this.C < 300) {
-                c cVar = this.D;
-                cVar.removeMessages(1);
-                cVar.sendEmptyMessageAtTime(1, this.C + 300);
+                d dVar = this.D;
+                dVar.removeMessages(1);
+                dVar.sendEmptyMessageAtTime(1, this.C + 300);
                 return;
             }
             if ((this.I != null || this.K) ? true : !this.A) {
@@ -333,29 +333,29 @@ public final class p0 extends g.t {
         this.B = true;
         this.f.a(this.n, this.h, 1);
         l();
-        h(c2.b0.e());
+        h(c2.c0.e());
     }
 
-    @Override // g.t, androidx.activity.m, android.app.Dialog
+    @Override // g.s, androidx.activity.n, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.mr_cast_dialog);
         View decorView = getWindow().getDecorView();
         Context context = this.y;
-        decorView.setBackgroundColor(f0.e.c(context, g7.b0.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
+        decorView.setBackgroundColor(f0.e.c(context, f7.d0.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
         ImageButton imageButton = (ImageButton) findViewById(R.id.mr_cast_close_button);
         this.N = imageButton;
         imageButton.setColorFilter(-1);
-        this.N.setOnClickListener(new d0(this, 0));
+        this.N.setOnClickListener(new f0(this, 0));
         Button button = (Button) findViewById(R.id.mr_cast_stop_button);
         this.O = button;
         button.setTextColor(-1);
-        this.O.setOnClickListener(new d0(this, 1));
+        this.O.setOnClickListener(new f0(this, 1));
         this.F = new n0(this);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mr_cast_list);
         this.E = recyclerView;
         recyclerView.setAdapter(this.F);
-        this.E.setLayoutManager(new f2.k0());
+        this.E.setLayoutManager(new f2.m0());
         this.G = new o0(this);
         this.H = new HashMap();
         this.J = new HashMap();

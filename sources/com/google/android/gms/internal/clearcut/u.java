@@ -106,14 +106,14 @@ public final class u {
         }
     }
 
-    public u(String str, int i10, int i11, int i12, e0 e0Var) {
-        this.a = i11;
-        int i13 = v.a[m1.j.b(i12)];
-        if (i13 == 1 || i13 == 2) {
+    public u(String str, int i9, int i10, int i11, e0 e0Var) {
+        this.a = i10;
+        int i12 = v.a[m1.j.b(i11)];
+        if (i12 == 1 || i12 == 2) {
             e0Var.getClass();
         }
-        if (i12 == 1) {
-            int i14 = v.b[e0Var.ordinal()];
+        if (i11 == 1) {
+            int i13 = v.b[e0Var.ordinal()];
         }
     }
 

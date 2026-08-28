@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class DelimiterFactory {
     private static final float MAX_LENGTH = 4096.0f;
@@ -61,21 +61,21 @@ public class DelimiterFactory {
         return verticalBox;
     }
 
-    public static Box create(SymbolAtom symbolAtom, TeXEnvironment teXEnvironment, int i10) {
-        if (i10 > 4) {
+    public static Box create(SymbolAtom symbolAtom, TeXEnvironment teXEnvironment, int i9) {
+        if (i9 > 4) {
             return symbolAtom.createBox(teXEnvironment);
         }
         TeXFont teXFont = teXEnvironment.getTeXFont();
         int style = teXEnvironment.getStyle();
         Char r22 = teXFont.getChar(symbolAtom.getName(), style);
-        int i11 = 1;
-        while (i11 <= i10 && teXFont.hasNextLarger(r22)) {
+        int i10 = 1;
+        while (i10 <= i9 && teXFont.hasNextLarger(r22)) {
             r22 = teXFont.getNextLarger(r22, style);
-            i11++;
+            i10++;
         }
-        if (i11 <= i10 && !teXFont.hasNextLarger(r22)) {
+        if (i10 <= i9 && !teXFont.hasNextLarger(r22)) {
             CharBox charBox = new CharBox(teXFont.getChar('A', "mathnormal", style));
-            return create(symbolAtom.getName(), teXEnvironment, (charBox.getDepth() + charBox.getHeight()) * i10);
+            return create(symbolAtom.getName(), teXEnvironment, (charBox.getDepth() + charBox.getHeight()) * i9);
         }
         return new CharBox(r22);
     }

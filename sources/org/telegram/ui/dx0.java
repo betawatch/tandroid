@@ -12,15 +12,15 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dx0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ ProfileActivity b;
     public final /* synthetic */ TLRPC.User c;
 
-    public /* synthetic */ dx0(ProfileActivity profileActivity, TLRPC.User user, int i10) {
-        this.a = i10;
+    public /* synthetic */ dx0(ProfileActivity profileActivity, TLRPC.User user, int i9) {
+        this.a = i9;
         this.b = profileActivity;
         this.c = user;
     }
@@ -32,7 +32,7 @@ public final /* synthetic */ class dx0 implements Runnable {
                 ProfileActivity profileActivity = this.b;
                 TLRPC.User user = this.c;
                 profileActivity.getClass();
-                profileActivity.presentFragment(rn.R9(user.id));
+                profileActivity.presentFragment(qn.R9(user.id));
                 break;
             case 1:
                 ProfileActivity profileActivity2 = this.b;
@@ -61,8 +61,8 @@ public final /* synthetic */ class dx0 implements Runnable {
                     intent.addFlags(TLObject.FLAG_28);
                     profileActivity4.getParentActivity().startActivityForResult(intent, 500);
                     break;
-                } catch (Exception e9) {
-                    FileLog.e(e9);
+                } catch (Exception e10) {
+                    FileLog.e(e10);
                     return;
                 }
             default:
@@ -71,11 +71,11 @@ public final /* synthetic */ class dx0 implements Runnable {
                 try {
                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", "+" + user5.phone));
                     if (AndroidUtilities.shouldShowClipboardToast()) {
-                        org.telegram.ui.Components.mc.a0(profileActivity5).i(LocaleController.getString(R.string.PhoneCopied)).j();
+                        org.telegram.ui.Components.oc.a0(profileActivity5).i(LocaleController.getString(R.string.PhoneCopied)).j();
                         break;
                     }
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e11) {
+                    FileLog.e(e11);
                 }
                 break;
         }

@@ -2,7 +2,7 @@ package h3;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class s0 {
     public e5.b A;
@@ -21,7 +21,7 @@ public final class s0 {
     public String n;
     public String o;
     public List q;
-    public l3.d r;
+    public l3.c r;
     public int w;
     public byte[] y;
     public int f = -1;

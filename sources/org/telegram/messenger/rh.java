@@ -1,31 +1,34 @@
 package org.telegram.messenger;
 
-import android.text.Spanned;
-import java.util.Comparator;
-import org.telegram.messenger.RichMessageLayout;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class rh implements Comparator {
+public final /* synthetic */ class rh implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Spanned b;
+    public final /* synthetic */ SavedMessagesController b;
 
-    public /* synthetic */ rh(Spanned spanned, int i10) {
-        this.a = i10;
-        this.b = spanned;
+    public /* synthetic */ rh(SavedMessagesController savedMessagesController, int i9) {
+        this.a = i9;
+        this.b = savedMessagesController;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$withReplacements$0;
-        int lambda$new$0;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$withReplacements$0 = RichMessageLayout.RichBlock.lambda$withReplacements$0(this.b, (org.telegram.ui.Cells.p9) obj, (org.telegram.ui.Cells.p9) obj2);
-                return lambda$withReplacements$0;
+                this.b.update();
+                break;
+            case 1:
+                this.b.saveCache();
+                break;
+            case 2:
+                this.b.lambda$deleteCache$12();
+                break;
+            case 3:
+                this.b.lambda$saveCache$10();
+                break;
             default:
-                lambda$new$0 = RichMessageLayout.Text.lambda$new$0(this.b, (RichMessageLayout.RichButtonSpan) obj, (RichMessageLayout.RichButtonSpan) obj2);
-                return lambda$new$0;
+                this.b.lambda$loadDialogs$1();
+                break;
         }
     }
 }

@@ -1,38 +1,42 @@
 package b9;
 
-import c3.g;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import f9.b0;
-import f9.m;
-import f9.q;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
+import android.util.Log;
+import g9.b1;
+import java.util.concurrent.atomic.AtomicReference;
+import y8.p;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b implements Callable {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ q b;
-    public final /* synthetic */ g c;
+public final class b {
+    public static final d c = new d();
+    public final p a;
+    public final AtomicReference b = new AtomicReference(null);
 
-    public b(boolean z10, q qVar, g gVar) {
-        this.a = z10;
-        this.b = qVar;
-        this.c = gVar;
+    public b(p pVar) {
+        this.a = pVar;
+        pVar.a(new a1.c(this, 1));
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        if (!this.a) {
-            return null;
+    public final d a(String str) {
+        b bVar = (b) this.b.get();
+        return bVar == null ? c : bVar.a(str);
+    }
+
+    public final boolean b() {
+        b bVar = (b) this.b.get();
+        return bVar != null && bVar.b();
+    }
+
+    public final boolean c(String str) {
+        b bVar = (b) this.b.get();
+        return bVar != null && bVar.c(str);
+    }
+
+    public final void d(String str, long j10, b1 b1Var) {
+        String d = ta.b.d("Deferring native open session: ", str);
+        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+            Log.v("FirebaseCrashlytics", d, null);
         }
-        q qVar = this.b;
-        ExecutorService executorService = qVar.k;
-        m mVar = new m(2, qVar, this.c);
-        ExecutorService executorService2 = b0.a;
-        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        executorService.execute(new androidx.car.app.utils.a(mVar, executorService, taskCompletionSource, 11));
-        taskCompletionSource.getTask();
-        return null;
+        this.a.a(new a(str, j10, b1Var, 0));
     }
 }

@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class dd extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ id a;
@@ -20,29 +20,29 @@ public final class dd extends org.telegram.ui.ActionBar.j {
     }
 
     @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
+    public final void b(int i9) {
+        int i10;
         int i11;
-        int i12;
         id idVar = this.a;
         long j10 = idVar.e0;
         zc zcVar = idVar.r0;
-        if (i10 == -1) {
+        if (i9 == -1) {
             if (idVar.n0) {
-                id.Y(idVar);
+                id.X(idVar);
                 return;
             } else {
                 idVar.finishFragment();
                 return;
             }
         }
-        if (i10 == 1) {
-            int i13 = idVar.d0;
-            if (i13 == 0) {
+        if (i9 == 1) {
+            int i12 = idVar.d0;
+            if (i12 == 0) {
                 if (idVar.getParentActivity() == null) {
                     return;
                 }
                 if (idVar.n0) {
-                    id.Y(idVar);
+                    id.X(idVar);
                     return;
                 }
                 if (idVar.c.a.length() == 0) {
@@ -59,12 +59,12 @@ public final class dd extends org.telegram.ui.ActionBar.j {
                     idVar.m0 = true;
                     return;
                 } else {
-                    i12 = ((org.telegram.ui.ActionBar.n2) idVar).currentAccount;
-                    idVar.o0 = Integer.valueOf(MessagesController.getInstance(i12).createChat(idVar.c.getText().toString(), new ArrayList<>(), idVar.w.getText().toString(), 2, false, null, null, -1, idVar));
+                    i11 = ((org.telegram.ui.ActionBar.o2) idVar).currentAccount;
+                    idVar.o0 = Integer.valueOf(MessagesController.getInstance(i11).createChat(idVar.c.getText().toString(), new ArrayList<>(), idVar.w.getText().toString(), 2, false, null, null, -1, idVar));
                     return;
                 }
             }
-            if (i13 == 1) {
+            if (i12 == 1) {
                 if (idVar.W) {
                     Utilities.Callback2 callback2 = idVar.p0;
                     if (callback2 != null) {
@@ -88,12 +88,44 @@ public final class dd extends org.telegram.ui.ActionBar.j {
                         return;
                     }
                     AndroidUtilities.runOnUIThread(zcVar, 200L);
-                    i11 = ((org.telegram.ui.ActionBar.n2) idVar).currentAccount;
-                    MessagesController messagesController = MessagesController.getInstance(i11);
+                    i10 = ((org.telegram.ui.ActionBar.o2) idVar).currentAccount;
+                    MessagesController messagesController = MessagesController.getInstance(i10);
                     long j11 = idVar.e0;
                     String str = idVar.T;
-                    final int i14 = 0;
+                    final int i13 = 0;
                     Runnable runnable = new Runnable(this) { // from class: org.telegram.ui.cd
+                        public final /* synthetic */ dd b;
+
+                        {
+                            this.b = this;
+                        }
+
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i13) {
+                                case 0:
+                                    id idVar2 = this.b.a;
+                                    idVar2.f0(false);
+                                    Utilities.Callback2 callback22 = idVar2.p0;
+                                    if (callback22 != null) {
+                                        callback22.run(idVar2, Long.valueOf(idVar2.e0));
+                                        break;
+                                    }
+                                    break;
+                                default:
+                                    id idVar3 = this.b.a;
+                                    idVar3.f0(false);
+                                    Utilities.Callback2 callback23 = idVar3.p0;
+                                    if (callback23 != null) {
+                                        callback23.run(idVar3, Long.valueOf(idVar3.e0));
+                                        break;
+                                    }
+                                    break;
+                            }
+                        }
+                    };
+                    final int i14 = 1;
+                    messagesController.updateChannelUserName(idVar, j11, str, runnable, new Runnable(this) { // from class: org.telegram.ui.cd
                         public final /* synthetic */ dd b;
 
                         {
@@ -105,7 +137,7 @@ public final class dd extends org.telegram.ui.ActionBar.j {
                             switch (i14) {
                                 case 0:
                                     id idVar2 = this.b.a;
-                                    idVar2.g0(false);
+                                    idVar2.f0(false);
                                     Utilities.Callback2 callback22 = idVar2.p0;
                                     if (callback22 != null) {
                                         callback22.run(idVar2, Long.valueOf(idVar2.e0));
@@ -114,39 +146,7 @@ public final class dd extends org.telegram.ui.ActionBar.j {
                                     break;
                                 default:
                                     id idVar3 = this.b.a;
-                                    idVar3.g0(false);
-                                    Utilities.Callback2 callback23 = idVar3.p0;
-                                    if (callback23 != null) {
-                                        callback23.run(idVar3, Long.valueOf(idVar3.e0));
-                                        break;
-                                    }
-                                    break;
-                            }
-                        }
-                    };
-                    final int i15 = 1;
-                    messagesController.updateChannelUserName(idVar, j11, str, runnable, new Runnable(this) { // from class: org.telegram.ui.cd
-                        public final /* synthetic */ dd b;
-
-                        {
-                            this.b = this;
-                        }
-
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            switch (i15) {
-                                case 0:
-                                    id idVar2 = this.b.a;
-                                    idVar2.g0(false);
-                                    Utilities.Callback2 callback22 = idVar2.p0;
-                                    if (callback22 != null) {
-                                        callback22.run(idVar2, Long.valueOf(idVar2.e0));
-                                        break;
-                                    }
-                                    break;
-                                default:
-                                    id idVar3 = this.b.a;
-                                    idVar3.g0(false);
+                                    idVar3.f0(false);
                                     Utilities.Callback2 callback23 = idVar3.p0;
                                     if (callback23 != null) {
                                         callback23.run(idVar3, Long.valueOf(idVar3.e0));
@@ -162,7 +162,7 @@ public final class dd extends org.telegram.ui.ActionBar.j {
                     bundle.putInt("step", 2);
                     bundle.putLong("chatId", j10);
                     bundle.putInt("chatType", 2);
-                    idVar.presentFragment(new o60(bundle), true);
+                    idVar.presentFragment(new k60(bundle), true);
                 }
             }
         }

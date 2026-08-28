@@ -1,23 +1,123 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class hl0 extends FrameLayout {
-    public View a;
-    public TextView b;
+public final class hl0 extends Drawable {
+    public long a;
+    public boolean b;
+    public Paint c;
+    public float d;
+    public float e;
+    public float f;
+    public int g;
+    public int h;
+    public int i;
+    public org.telegram.ui.Cells.t1 j;
+    public float k;
+    public int l;
+    public int m;
+    public org.telegram.ui.ActionBar.b6 n;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+    public final void a() {
+        if (this.b) {
+            return;
+        }
+        this.a = System.currentTimeMillis();
+        this.b = true;
+        this.j.invalidate();
     }
 
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    public final void b() {
+        if (this.b) {
+            this.b = false;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Paint paint = this.c;
+        paint.setColor(i0.a.d(this.k, org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.ic, this.n), this.l));
+        int i9 = this.m;
+        if (i9 != 255) {
+            paint.setAlpha((int) ((paint.getAlpha() / 255.0f) * i9));
+        }
+        int i10 = getBounds().left;
+        int i11 = getBounds().top;
+        int i12 = 0;
+        while (i12 < 3) {
+            Canvas canvas2 = canvas;
+            canvas2.drawRect(AndroidUtilities.dp(2.0f) + i10, AndroidUtilities.dp((this.d * 7.0f) + 2.0f) + i11, AndroidUtilities.dp(4.0f) + i10, AndroidUtilities.dp(10.0f) + i11, paint);
+            canvas2.drawRect(AndroidUtilities.dp(5.0f) + i10, AndroidUtilities.dp((this.e * 7.0f) + 2.0f) + i11, AndroidUtilities.dp(7.0f) + i10, AndroidUtilities.dp(10.0f) + i11, paint);
+            canvas2.drawRect(AndroidUtilities.dp(8.0f) + i10, AndroidUtilities.dp((this.f * 7.0f) + 2.0f) + i11, AndroidUtilities.dp(10.0f) + i10, AndroidUtilities.dp(10.0f) + i11, paint);
+            i12++;
+            canvas = canvas2;
+        }
+        if (this.b) {
+            long currentTimeMillis = System.currentTimeMillis();
+            long j10 = currentTimeMillis - this.a;
+            this.a = currentTimeMillis;
+            if (j10 > 50) {
+                j10 = 50;
+            }
+            float f10 = j10;
+            float f11 = ((f10 / 300.0f) * this.g) + this.d;
+            this.d = f11;
+            if (f11 > 1.0f) {
+                this.g = -1;
+                this.d = 1.0f;
+            } else if (f11 < 0.0f) {
+                this.g = 1;
+                this.d = 0.0f;
+            }
+            float f12 = ((f10 / 310.0f) * this.h) + this.e;
+            this.e = f12;
+            if (f12 > 1.0f) {
+                this.h = -1;
+                this.e = 1.0f;
+            } else if (f12 < 0.0f) {
+                this.h = 1;
+                this.e = 0.0f;
+            }
+            float f13 = ((f10 / 320.0f) * this.i) + this.f;
+            this.f = f13;
+            if (f13 > 1.0f) {
+                this.i = -1;
+                this.f = 1.0f;
+            } else if (f13 < 0.0f) {
+                this.i = 1;
+                this.f = 0.0f;
+            }
+            this.j.invalidate();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(12.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(12.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i9) {
+        this.m = i9;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

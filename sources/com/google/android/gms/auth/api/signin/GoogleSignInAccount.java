@@ -6,17 +6,17 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import h7.r8;
+import g7.p8;
 import j5.d;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import y5.l;
-import z5.a;
+import x5.l;
+import y5.a;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 @Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInAccount extends a implements ReflectedParcelable {
@@ -35,8 +35,8 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
     public final String w;
     public final HashSet x = new HashSet();
 
-    public GoogleSignInAccount(int i10, String str, String str2, String str3, String str4, Uri uri, String str5, long j10, String str6, ArrayList arrayList, String str7, String str8) {
-        this.a = i10;
+    public GoogleSignInAccount(int i9, String str, String str2, String str3, String str4, Uri uri, String str5, long j10, String str6, ArrayList arrayList, String str7, String str8) {
+        this.a = i9;
         this.b = str;
         this.c = str2;
         this.d = str3;
@@ -61,8 +61,8 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
         HashSet hashSet = new HashSet();
         JSONArray jSONArray = jSONObject.getJSONArray("grantedScopes");
         int length = jSONArray.length();
-        for (int i10 = 0; i10 < length; i10++) {
-            hashSet.add(new Scope(1, jSONArray.getString(i10)));
+        for (int i9 = 0; i9 < length; i9++) {
+            hashSet.add(new Scope(1, jSONArray.getString(i9)));
         }
         String optString2 = jSONObject.optString("id");
         String optString3 = jSONObject.has("tokenId") ? jSONObject.optString("tokenId") : null;
@@ -106,22 +106,22 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.s(parcel, 1, 4);
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        r8.l(parcel, 2, this.b);
-        r8.l(parcel, 3, this.c);
-        r8.l(parcel, 4, this.d);
-        r8.l(parcel, 5, this.e);
-        r8.k(parcel, 6, this.f, i10);
-        r8.l(parcel, 7, this.h);
-        r8.s(parcel, 8, 8);
+        p8.l(parcel, 2, this.b);
+        p8.l(parcel, 3, this.c);
+        p8.l(parcel, 4, this.d);
+        p8.l(parcel, 5, this.e);
+        p8.k(parcel, 6, this.f, i9);
+        p8.l(parcel, 7, this.h);
+        p8.s(parcel, 8, 8);
         parcel.writeLong(this.n);
-        r8.l(parcel, 9, this.r);
-        r8.p(parcel, 10, this.s);
-        r8.l(parcel, 11, this.v);
-        r8.l(parcel, 12, this.w);
-        r8.r(parcel, q6);
+        p8.l(parcel, 9, this.r);
+        p8.p(parcel, 10, this.s);
+        p8.l(parcel, 11, this.v);
+        p8.l(parcel, 12, this.w);
+        p8.r(parcel, q10);
     }
 }

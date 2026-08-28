@@ -1,9 +1,9 @@
 package h3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class j1 {
-    public final j4.c0 a;
+    public final j4.d0 a;
     public final long b;
     public final long c;
     public final long d;
@@ -13,7 +13,7 @@ public final class j1 {
     public final boolean h;
     public final boolean i;
 
-    public j1(j4.c0 c0Var, long j10, long j11, long j12, long j13, boolean z10, boolean z11, boolean z12, boolean z13) {
+    public j1(j4.d0 d0Var, long j10, long j11, long j12, long j13, boolean z10, boolean z11, boolean z12, boolean z13) {
         boolean z14 = true;
         d5.a.f(!z13 || z11);
         d5.a.f(!z12 || z11);
@@ -21,7 +21,7 @@ public final class j1 {
             z14 = false;
         }
         d5.a.f(z14);
-        this.a = c0Var;
+        this.a = d0Var;
         this.b = j10;
         this.c = j11;
         this.d = j12;
@@ -52,7 +52,7 @@ public final class j1 {
         }
         if (obj != null && j1.class == obj.getClass()) {
             j1 j1Var = (j1) obj;
-            if (this.b == j1Var.b && this.c == j1Var.c && this.d == j1Var.d && this.e == j1Var.e && this.f == j1Var.f && this.g == j1Var.g && this.h == j1Var.h && this.i == j1Var.i && d5.g0.a(this.a, j1Var.a)) {
+            if (this.b == j1Var.b && this.c == j1Var.c && this.d == j1Var.d && this.e == j1Var.e && this.f == j1Var.f && this.g == j1Var.g && this.h == j1Var.h && this.i == j1Var.i && d5.f0.a(this.a, j1Var.a)) {
                 return true;
             }
         }

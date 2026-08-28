@@ -1,98 +1,65 @@
 package k9;
 
-import android.app.Application;
-import android.content.Context;
-import android.os.Build;
+import android.os.SystemClock;
 import android.util.Log;
-import java.io.File;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import t2.d;
+import w2.p;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class c {
-    public final File a;
-    public final File b;
-    public final File c;
-    public final File d;
-    public final File e;
-    public final File f;
+    public final double a;
+    public final double b;
+    public final long c;
+    public final long d;
+    public final int e;
+    public final ArrayBlockingQueue f;
+    public final ThreadPoolExecutor g;
+    public final p h;
+    public final we.b i;
+    public int j;
+    public long k;
 
-    public c(Context context) {
-        String str;
-        File filesDir = context.getFilesDir();
-        this.a = filesDir;
-        if (Build.VERSION.SDK_INT >= 28) {
-            str = ".com.google.firebase.crashlytics.files.v2" + File.pathSeparator + Application.getProcessName().replaceAll("[^a-zA-Z0-9.]", "_");
-        } else {
-            str = ".com.google.firebase.crashlytics.files.v1";
+    public c(p pVar, l9.a aVar, we.b bVar) {
+        double d = aVar.d;
+        double d9 = aVar.e;
+        this.a = d;
+        this.b = d9;
+        this.c = aVar.f * 1000;
+        this.h = pVar;
+        this.i = bVar;
+        this.d = SystemClock.elapsedRealtime();
+        int i9 = (int) d;
+        this.e = i9;
+        ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue(i9);
+        this.f = arrayBlockingQueue;
+        this.g = new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, arrayBlockingQueue);
+        this.j = 0;
+        this.k = 0L;
+    }
+
+    public final int a() {
+        if (this.k == 0) {
+            this.k = System.currentTimeMillis();
         }
-        File file = new File(filesDir, str);
-        c(file);
-        this.b = file;
-        File file2 = new File(file, "open-sessions");
-        c(file2);
-        this.c = file2;
-        File file3 = new File(file, "reports");
-        c(file3);
-        this.d = file3;
-        File file4 = new File(file, "priority-reports");
-        c(file4);
-        this.e = file4;
-        File file5 = new File(file, "native-reports");
-        c(file5);
-        this.f = file5;
-    }
-
-    public static void a(File file) {
-        if (file.exists() && d(file)) {
-            String str = "Deleted previous Crashlytics file system: " + file.getPath();
-            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                Log.d("FirebaseCrashlytics", str, null);
-            }
+        int currentTimeMillis = (int) ((System.currentTimeMillis() - this.k) / this.c);
+        int min = this.f.size() == this.e ? Math.min(100, this.j + currentTimeMillis) : Math.max(0, this.j - currentTimeMillis);
+        if (this.j != min) {
+            this.j = min;
+            this.k = System.currentTimeMillis();
         }
+        return min;
     }
 
-    public static synchronized void c(File file) {
-        synchronized (c.class) {
-            try {
-                if (file.exists()) {
-                    if (file.isDirectory()) {
-                        return;
-                    }
-                    String str = "Unexpected non-directory file: " + file + "; deleting file and creating new directory.";
-                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                        Log.d("FirebaseCrashlytics", str, null);
-                    }
-                    file.delete();
-                }
-                if (!file.mkdirs()) {
-                    Log.e("FirebaseCrashlytics", "Could not create Crashlytics-specific directory: " + file, null);
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
+    public final void b(e9.b bVar, TaskCompletionSource taskCompletionSource) {
+        String str = "Sending report through Google DataTransport: " + bVar.b;
+        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+            Log.d("FirebaseCrashlytics", str, null);
         }
-    }
-
-    public static boolean d(File file) {
-        File[] listFiles = file.listFiles();
-        if (listFiles != null) {
-            for (File file2 : listFiles) {
-                d(file2);
-            }
-        }
-        return file.delete();
-    }
-
-    public static List e(Object[] objArr) {
-        return objArr == null ? Collections.EMPTY_LIST : Arrays.asList(objArr);
-    }
-
-    public final File b(String str, String str2) {
-        File file = new File(this.c, str);
-        file.mkdirs();
-        return new File(file, str2);
+        this.h.a(new t2.a(null, bVar.a, d.c, null), new b(this, taskCompletionSource, SystemClock.elapsedRealtime() - this.d < 2000, bVar, 0));
     }
 }

@@ -1,14 +1,11 @@
 package hd;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static final /* synthetic */ int a = 0;
+public final class b implements y1 {
+    public static final b a = new b();
 
-    static {
-        ThreadLocal[] threadLocalArr = new ThreadLocal[4];
-        for (int i10 = 0; i10 < 4; i10++) {
-            threadLocalArr[i10] = new ThreadLocal();
-        }
+    public final String toString() {
+        return "Active";
     }
 }

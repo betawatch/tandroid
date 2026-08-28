@@ -13,12 +13,12 @@ public class q6 extends s6 implements LongConsumer {
     }
 
     @Override // j$.util.stream.s6
-    public final void i(Object obj, int i10, int i11, Object obj2) {
+    public final void i(Object obj, int i9, int i10, Object obj2) {
         long[] jArr = (long[]) obj;
         LongConsumer longConsumer = (LongConsumer) obj2;
-        while (i10 < i11) {
-            longConsumer.accept(jArr[i10]);
-            i10++;
+        while (i9 < i10) {
+            longConsumer.accept(jArr[i9]);
+            i9++;
         }
     }
 
@@ -46,17 +46,17 @@ public class q6 extends s6 implements LongConsumer {
     }
 
     @Override // j$.util.stream.s6
-    public final Object newArray(int i10) {
-        return new long[i10];
+    public final Object newArray(int i9) {
+        return new long[i9];
     }
 
     @Override // java.util.function.LongConsumer
     public void accept(long j10) {
         n();
         long[] jArr = (long[]) this.e;
-        int i10 = this.b;
-        this.b = i10 + 1;
-        jArr[i10] = j10;
+        int i9 = this.b;
+        this.b = i9 + 1;
+        jArr[i9] = j10;
     }
 
     @Override // java.lang.Iterable

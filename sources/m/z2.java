@@ -3,10 +3,10 @@ package m;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class z2 extends i1.b {
-    public static final Parcelable.Creator<z2> CREATOR = new f2.h1(2);
+    public static final Parcelable.Creator<z2> CREATOR = new f2.j1(2);
     public boolean c;
 
     public z2(Parcel parcel, ClassLoader classLoader) {
@@ -19,8 +19,8 @@ public final class z2 extends i1.b {
     }
 
     @Override // i1.b, android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        super.writeToParcel(parcel, i10);
+    public final void writeToParcel(Parcel parcel, int i9) {
+        super.writeToParcel(parcel, i9);
         parcel.writeValue(Boolean.valueOf(this.c));
     }
 }

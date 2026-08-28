@@ -1,64 +1,95 @@
 package j3;
 
-import java.io.Serializable;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class o0 {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public Serializable g;
-
-    public boolean a(int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        if ((i10 & (-2097152)) != -2097152 || (i11 = (i10 >>> 19) & 3) == 1 || (i12 = (i10 >>> 17) & 3) == 0 || (i13 = (i10 >>> 12) & 15) == 0 || i13 == 15 || (i14 = (i10 >>> 10) & 3) == 3) {
-            return false;
-        }
-        this.a = i11;
-        this.g = b.m[3 - i12];
-        int i15 = b.n[i14];
-        this.c = i15;
-        if (i11 == 2) {
-            this.c = i15 / 2;
-        } else if (i11 == 0) {
-            this.c = i15 / 4;
-        }
-        int i16 = (i10 >>> 9) & 1;
-        int i17 = 1152;
-        if (i12 != 1) {
-            if (i12 != 2) {
-                if (i12 != 3) {
-                    throw new IllegalArgumentException();
+public final class o0 extends x {
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00af A[ADDED_TO_REGION, LOOP:4: B:33:0x00af->B:34:0x00b1, LOOP_START, PHI: r0
+      0x00af: PHI (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:12:0x0036, B:34:0x00b1] A[DONT_GENERATE, DONT_INLINE]] */
+    @Override // j3.j
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(ByteBuffer byteBuffer) {
+        int i9;
+        int position = byteBuffer.position();
+        int limit = byteBuffer.limit();
+        int i10 = limit - position;
+        int i11 = this.b.c;
+        if (i11 != 3) {
+            if (i11 != 4) {
+                if (i11 != 268435456) {
+                    if (i11 == 536870912) {
+                        i10 /= 3;
+                    } else if (i11 != 805306368) {
+                        throw new IllegalStateException();
+                    }
                 }
-                i17 = 384;
+                ByteBuffer j10 = j(i10);
+                i9 = this.b.c;
+                if (i9 == 3) {
+                    while (position < limit) {
+                        j10.put((byte) 0);
+                        j10.put((byte) ((byteBuffer.get(position) & 255) - 128));
+                        position++;
+                    }
+                } else if (i9 == 4) {
+                    while (position < limit) {
+                        short g10 = (short) (d5.f0.g(byteBuffer.getFloat(position), -1.0f, 1.0f) * 32767.0f);
+                        j10.put((byte) (g10 & 255));
+                        j10.put((byte) ((g10 >> 8) & 255));
+                        position += 4;
+                    }
+                } else if (i9 == 268435456) {
+                    while (position < limit) {
+                        j10.put(byteBuffer.get(position + 1));
+                        j10.put(byteBuffer.get(position));
+                        position += 2;
+                    }
+                } else if (i9 == 536870912) {
+                    while (position < limit) {
+                        j10.put(byteBuffer.get(position + 1));
+                        j10.put(byteBuffer.get(position + 2));
+                        position += 3;
+                    }
+                } else {
+                    if (i9 != 805306368) {
+                        throw new IllegalStateException();
+                    }
+                    while (position < limit) {
+                        j10.put(byteBuffer.get(position + 2));
+                        j10.put(byteBuffer.get(position + 3));
+                        position += 4;
+                    }
+                }
+                byteBuffer.position(byteBuffer.limit());
+                j10.flip();
             }
-        } else if (i11 != 3) {
-            i17 = 576;
-        }
-        this.f = i17;
-        if (i12 == 3) {
-            int i18 = i11 == 3 ? b.o[i13 - 1] : b.p[i13 - 1];
-            this.e = i18;
-            this.b = (((i18 * 12) / this.c) + i16) * 4;
-        } else {
-            if (i11 == 3) {
-                int i19 = i12 == 2 ? b.q[i13 - 1] : b.r[i13 - 1];
-                this.e = i19;
-                this.b = ((i19 * 144) / this.c) + i16;
-            } else {
-                int i20 = b.s[i13 - 1];
-                this.e = i20;
-                this.b = (((i12 == 1 ? 72 : 144) * i20) / this.c) + i16;
+            i10 /= 2;
+            ByteBuffer j102 = j(i10);
+            i9 = this.b.c;
+            if (i9 == 3) {
             }
+            byteBuffer.position(byteBuffer.limit());
+            j102.flip();
         }
-        this.d = ((i10 >> 6) & 3) == 3 ? 1 : 2;
-        return true;
+        i10 *= 2;
+        ByteBuffer j1022 = j(i10);
+        i9 = this.b.c;
+        if (i9 == 3) {
+        }
+        byteBuffer.position(byteBuffer.limit());
+        j1022.flip();
+    }
+
+    @Override // j3.x
+    public final h f(h hVar) {
+        int i9 = hVar.c;
+        if (i9 == 3 || i9 == 2 || i9 == 268435456 || i9 == 536870912 || i9 == 805306368 || i9 == 4) {
+            return i9 != 2 ? new h(hVar.a, hVar.b, 2) : h.e;
+        }
+        throw new i(hVar);
     }
 }

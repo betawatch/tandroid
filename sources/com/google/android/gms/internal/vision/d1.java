@@ -2,7 +2,7 @@ package com.google.android.gms.internal.vision;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class d1 implements Cloneable {
     public final f1 a;
@@ -28,7 +28,7 @@ public abstract class d1 implements Cloneable {
         b(this.b, f1Var);
     }
 
-    public final void c(byte[] bArr, int i10, u0 u0Var) {
+    public final void c(byte[] bArr, int i9, u0 u0Var) {
         if (this.c) {
             d();
             this.c = false;
@@ -41,11 +41,11 @@ public abstract class d1 implements Cloneable {
             f1 f1Var2 = this.b;
             com.google.android.gms.internal.clearcut.m mVar = new com.google.android.gms.internal.clearcut.m();
             u0Var.getClass();
-            a2.f(f1Var2, bArr, 0, i10, mVar);
-        } catch (n1 e9) {
-            throw e9;
-        } catch (IOException e10) {
-            throw new RuntimeException("Reading from byte array should not throw IOException.", e10);
+            a2.f(f1Var2, bArr, 0, i9, mVar);
+        } catch (n1 e10) {
+            throw e10;
+        } catch (IOException e11) {
+            throw new RuntimeException("Reading from byte array should not throw IOException.", e11);
         } catch (IndexOutOfBoundsException unused) {
             throw n1.a();
         }
@@ -76,22 +76,22 @@ public abstract class d1 implements Cloneable {
     }
 
     public final f1 f() {
-        f1 e9 = e();
+        f1 e10 = e();
         boolean z10 = true;
-        byte byteValue = ((Byte) e9.e(1)).byteValue();
+        byte byteValue = ((Byte) e10.e(1)).byteValue();
         if (byteValue != 1) {
             if (byteValue == 0) {
                 z10 = false;
             } else {
                 k2 k2Var = k2.c;
                 k2Var.getClass();
-                z10 = k2Var.a(e9.getClass()).a(e9);
-                e9.e(2);
+                z10 = k2Var.a(e10.getClass()).a(e10);
+                e10.e(2);
             }
         }
         if (z10) {
-            return e9;
+            return e10;
         }
-        throw new a7.c("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
+        throw new androidx.car.app.j("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
     }
 }

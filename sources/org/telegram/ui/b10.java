@@ -1,67 +1,48 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
+import android.text.SpannableStringBuilder;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class b10 extends org.telegram.ui.Components.yk0 {
-    public final /* synthetic */ i10 c;
+public final class b10 implements org.telegram.ui.Cells.k7 {
+    public final /* synthetic */ c10 a;
 
-    public b10(i10 i10Var) {
-        this.c = i10Var;
+    public b10(c10 c10Var) {
+        this.a = c10Var;
     }
 
-    @Override // org.telegram.ui.Components.yk0
-    public final boolean D(f2.o1 o1Var) {
-        return true;
-    }
-
-    @Override // f2.q0
-    public final int h() {
-        i10 i10Var = this.c;
-        if (i10Var.f.isEmpty()) {
-            return 0;
+    @Override // org.telegram.ui.Cells.k7
+    public final void a(String str, boolean z10) {
+        f10 f10Var = this.a.v;
+        if (!z10) {
+            SpannableStringBuilder[] spannableStringBuilderArr = f10.o0;
+            f10Var.g(str);
+            return;
         }
-        return i10Var.f.size() + (!i10Var.J ? 1 : 0);
+        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(f10Var.G, null, false, false);
+        f3Var.fixNavigationBar();
+        f3Var.title = str;
+        f3Var.bigTitle = false;
+        CharSequence[] charSequenceArr = {LocaleController.getString(R.string.Open), LocaleController.getString(R.string.Copy)};
+        v vVar = new v(6, this, str);
+        f3Var.items = charSequenceArr;
+        f3Var.onClickListener = vVar;
+        f10Var.H.showDialog(f3Var);
     }
 
-    @Override // f2.q0
-    public final int j(int i10) {
-        return i10 >= this.c.f.size() ? 3 : 0;
+    @Override // org.telegram.ui.Cells.k7
+    public final void b(TLRPC.WebPage webPage, MessageObject messageObject) {
+        f10 f10Var = this.a.v;
+        SpannableStringBuilder[] spannableStringBuilderArr = f10.o0;
+        org.telegram.ui.Components.gu.I(f10Var.H, messageObject, f10Var.c0, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
     }
 
-    @Override // f2.q0
-    public final void v(f2.o1 o1Var, int i10) {
-        if (o1Var.f == 0) {
-            org.telegram.ui.Cells.p2 p2Var = (org.telegram.ui.Cells.p2) o1Var.a;
-            i10 i10Var = this.c;
-            MessageObject messageObject = (MessageObject) i10Var.f.get(i10);
-            p2Var.K = i10Var.l0;
-            p2Var.W(messageObject.getDialogId(), messageObject, messageObject.messageOwner.date, false, false);
-            p2Var.o2 = i10 != h() - 1;
-            p2Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.zj(this, p2Var, messageObject, p2Var.getMessage() != null && p2Var.getMessage().getId() == messageObject.getId(), 1));
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // f2.q0
-    public final f2.o1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.Components.rt0 rt0Var;
-        if (i10 == 0) {
-            rt0Var = new org.telegram.ui.Components.rt0(1, viewGroup.getContext(), true);
-        } else if (i10 != 3) {
-            org.telegram.ui.Cells.s3 s3Var = new org.telegram.ui.Cells.s3(viewGroup.getContext(), null);
-            s3Var.setText(LocaleController.getString(R.string.SearchMessages));
-            rt0Var = s3Var;
-        } else {
-            org.telegram.ui.Components.h00 h00Var = new org.telegram.ui.Components.h00(viewGroup.getContext(), null);
-            h00Var.setIsSingleCell(true);
-            h00Var.setViewType(1);
-            rt0Var = h00Var;
-        }
-        return org.telegram.ui.Cells.pa.l(rt0Var, rt0Var, -1, -2);
+    @Override // org.telegram.ui.Cells.k7
+    public final boolean f() {
+        return !this.a.v.k0.f();
     }
 }

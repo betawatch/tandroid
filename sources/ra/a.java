@@ -1,30 +1,73 @@
 package ra;
 
-import h7.w6;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
+import la.g;
+import la.j;
+import la.u;
+import la.v;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a extends w6 {
-    @Override // h7.w6
-    public final Method a(Class cls, Field field) {
-        throw new UnsupportedOperationException("Records are not supported on this JVM, this method should not be called");
+public final class a extends u {
+    public static final a b = new a();
+    public final SimpleDateFormat a;
+
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    public class a implements v {
+        @Override // la.v
+        public final u create(g gVar, sa.a aVar) {
+            if (aVar.a == Date.class) {
+                return new a(0);
+            }
+            return null;
+        }
     }
 
-    @Override // h7.w6
-    public final Constructor b(Class cls) {
-        throw new UnsupportedOperationException("Records are not supported on this JVM, this method should not be called");
+    public /* synthetic */ a(int i9) {
+        this();
     }
 
-    @Override // h7.w6
-    public final String[] c(Class cls) {
-        throw new UnsupportedOperationException("Records are not supported on this JVM, this method should not be called");
+    @Override // la.u
+    public final Object read(ta.a aVar) {
+        Date date;
+        if (aVar.x() == 9) {
+            aVar.t();
+            return null;
+        }
+        String v = aVar.v();
+        synchronized (this) {
+            TimeZone timeZone = this.a.getTimeZone();
+            try {
+                try {
+                    date = new Date(this.a.parse(v).getTime());
+                } catch (ParseException e10) {
+                    throw new j("Failed parsing '" + v + "' as SQL Date; at path " + aVar.j(), e10);
+                }
+            } finally {
+                this.a.setTimeZone(timeZone);
+            }
+        }
+        return date;
     }
 
-    @Override // h7.w6
-    public final boolean d(Class cls) {
-        return false;
+    @Override // la.u
+    public final void write(ta.c cVar, Object obj) {
+        String format;
+        Date date = (Date) obj;
+        if (date == null) {
+            cVar.i();
+            return;
+        }
+        synchronized (this) {
+            format = this.a.format((java.util.Date) date);
+        }
+        cVar.r(format);
+    }
+
+    private a() {
+        this.a = new SimpleDateFormat("MMM d, yyyy");
     }
 }

@@ -8,12 +8,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import g7.n6;
+import f7.o6;
 import java.util.Collections;
 import java.util.Set;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class j implements Application.ActivityLifecycleCallbacks {
     public final Set a = Collections.newSetFromMap(new WeakHashMap());
@@ -25,13 +25,13 @@ public final class j implements Application.ActivityLifecycleCallbacks {
             if (extras != null) {
                 bundle = extras.getBundle("gcm.n.analytics_data");
             }
-        } catch (RuntimeException e9) {
-            Log.w("FirebaseMessaging", "Failed trying to get analytics data from Intent extras.", e9);
+        } catch (RuntimeException e10) {
+            Log.w("FirebaseMessaging", "Failed trying to get analytics data from Intent extras.", e10);
         }
         if (bundle == null ? false : "1".equals(bundle.getString("google.c.a.e"))) {
             if (bundle != null) {
                 if ("1".equals(bundle.getString("google.c.a.tc"))) {
-                    if (t8.h.c().b(u8.a.class) != null) {
+                    if (s8.h.c().b(t8.a.class) != null) {
                         throw new ClassCastException();
                     }
                     if (Log.isLoggable("FirebaseMessaging", 3)) {
@@ -42,7 +42,7 @@ public final class j implements Application.ActivityLifecycleCallbacks {
                     Log.d("FirebaseMessaging", "Received event with track-conversion=false. Do not set user property");
                 }
             }
-            n6.a("_no", bundle);
+            o6.a("_no", bundle);
         }
     }
 

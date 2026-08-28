@@ -1,26 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class mo implements ValueAnimator.AnimatorUpdateListener {
-    public boolean a = false;
-    public final /* synthetic */ ap b;
+public final /* synthetic */ class mo implements d5.d {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ cp b;
 
-    public mo(ap apVar) {
-        this.b = apVar;
+    public /* synthetic */ mo(cp cpVar, int i9) {
+        this.a = i9;
+        this.b = cpVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        ap apVar = this.b;
-        apVar.O = floatValue;
-        apVar.N.invalidate();
-        if (this.a || apVar.O <= 0.5f) {
-            return;
+    @Override // d5.d
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                cp cpVar = this.b;
+                cpVar.b0 = (TL_stories.TL_premium_boostsStatus) obj;
+                cpVar.a0 = true;
+                cpVar.E(true);
+                cpVar.Z = false;
+                break;
+            default:
+                cp.m(this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                break;
         }
-        this.a = true;
     }
 }

@@ -1,49 +1,96 @@
 package ve;
 
-import com.google.firebase.messaging.d;
-import java.io.InputStream;
+import android.animation.ValueAnimator;
+import android.content.DialogInterface;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.xs0;
+import xf.q1;
+import xf.s0;
+import yf.f;
+import yf.g;
+import yf.j;
+import yf.m2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a extends d {
-    public final long d;
+public final /* synthetic */ class a implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public a(InputStream inputStream, long j10, long j11) {
-        super(inputStream, j10);
-        this.d = j10 + j11;
+    public /* synthetic */ a(Object obj, int i9, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = i9;
     }
 
-    public final long e() {
-        return this.d - this.b;
-    }
-
-    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
-    public final int read() {
-        if (this.b == this.d) {
-            return -1;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i9 = this.a;
+        final int i10 = this.b;
+        Object obj = this.c;
+        switch (i9) {
+            case 0:
+                c2[] c2VarArr = (c2[]) obj;
+                c2 c2Var = c2VarArr[0];
+                if (c2Var != null) {
+                    try {
+                        c2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: ve.b
+                            @Override // android.content.DialogInterface.OnCancelListener
+                            public final void onCancel(DialogInterface dialogInterface) {
+                                ConnectionsManager.getInstance(UserConfig.selectedAccount).cancelRequest(i10, true);
+                            }
+                        });
+                        c2VarArr[0].show();
+                        break;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
+                break;
+            case 1:
+                ((vg.a) obj).v0(i10, 0, null);
+                break;
+            case 2:
+                j jVar = (j) obj;
+                jVar.H = i10;
+                jVar.G = true;
+                int i11 = 2;
+                try {
+                    jVar.performHapticFeedback(3, 2);
+                } catch (Exception unused2) {
+                }
+                ValueAnimator valueAnimator = jVar.L;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                }
+                ValueAnimator valueAnimator2 = jVar.M;
+                if (valueAnimator2 != null) {
+                    valueAnimator2.cancel();
+                }
+                ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
+                jVar.L = duration;
+                duration.setInterpolator(gr.f);
+                jVar.L.addUpdateListener(new f(jVar, 5));
+                jVar.L.addListener(new g(jVar, i11));
+                jVar.L.start();
+                break;
+            case 3:
+                xs0 xs0Var = (xs0) obj;
+                q1 q1Var = xs0Var.G1;
+                xs0Var.s0(q1Var, null);
+                s0.e(i10).j(q1Var.c);
+                break;
+            default:
+                m2 m2Var = (m2) obj;
+                m2Var.getClass();
+                NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.customStickerCreated, Boolean.FALSE);
+                m2Var.h();
+                break;
         }
-        return super.read();
-    }
-
-    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
-    public final long skip(long j10) {
-        long j11 = this.b;
-        long j12 = j11 + j10;
-        long j13 = this.d;
-        if (j12 > j13) {
-            j10 = (int) (j13 - j11);
-        }
-        return super.skip(j10);
-    }
-
-    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
-    public final int read(byte[] bArr, int i10, int i11) {
-        long j10 = this.b;
-        long j11 = i11 + j10;
-        long j12 = this.d;
-        if (j11 <= j12 || (i11 = (int) (j12 - j10)) != 0) {
-            return super.read(bArr, i10, i11);
-        }
-        return -1;
     }
 }

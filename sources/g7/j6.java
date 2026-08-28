@@ -1,23 +1,24 @@
 package g7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.c21;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public enum j6 implements g {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    b(1),
-    c(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF33(3);
-
-    public final int a;
-
-    j6(int i10) {
-        this.a = i10;
+public abstract class j6 {
+    public static int a(c21 c21Var) {
+        c21Var.getClass();
+        return Math.max(1, (int) Math.ceil(0.5f * AndroidUtilities.density)) + (((int) Math.ceil(1.9f * AndroidUtilities.density)) * 2);
     }
 
-    @Override // g7.g
-    public final int zza() {
-        return this.a;
+    public static void b(Canvas canvas, Bitmap bitmap, int i9, float f10, float f11, int i10, int i11, Paint paint) {
+        int min = Math.min(i9, bitmap.getWidth());
+        int i12 = (int) f10;
+        int i13 = (int) f11;
+        canvas.drawBitmap(bitmap, new Rect(0, i10, min, i10 + i11), new Rect(i12, i13, min + i12, i11 + i13), paint);
     }
 }

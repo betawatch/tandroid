@@ -1,101 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class jl0 extends vv0 {
-    public float d;
-    public final Paint f;
-    public boolean a = false;
-    public long b = 0;
-    public boolean c = false;
-    public int e = 1;
+public final /* synthetic */ class jl0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ll0 b;
 
-    public jl0(boolean z10) {
-        if (z10) {
-            this.f = new Paint(1);
+    public /* synthetic */ jl0(ll0 ll0Var, int i9) {
+        this.a = i9;
+        this.b = ll0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ll0 ll0Var = this.b;
+                ll0Var.getClass();
+                AndroidUtilities.runOnUIThread(new jl0(ll0Var, 2));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new jl0(this.b, 3));
+                break;
+            case 2:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            default:
+                super/*android.app.Dialog*/.dismiss();
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.vv0
-    public final void b(int i10) {
-        Paint paint = this.f;
-        if (paint != null) {
-            paint.setColor(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.vv0
-    public final void c(boolean z10) {
-        this.a = z10;
-    }
-
-    @Override // org.telegram.ui.Components.vv0
-    public final void d() {
-        this.b = System.currentTimeMillis();
-        this.c = true;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Paint paint = this.f;
-        if (paint == null) {
-            paint = org.telegram.ui.ActionBar.g6.c2;
-        }
-        paint.setAlpha(((int) (this.d * 200.0f)) + 55);
-        canvas.drawCircle(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.a ? 8.0f : 9.0f), AndroidUtilities.dp(4.0f), paint);
-        if (this.c) {
-            long currentTimeMillis = System.currentTimeMillis();
-            long j10 = currentTimeMillis - this.b;
-            this.b = currentTimeMillis;
-            if (j10 > 50) {
-                j10 = 50;
-            }
-            float f10 = this.d;
-            int i10 = this.e;
-            float f11 = ((i10 * j10) / 400.0f) + f10;
-            this.d = f11;
-            if (i10 > 0 && f11 >= 1.0f) {
-                this.e = -1;
-                this.d = 1.0f;
-            } else if (i10 < 0 && f11 <= 0.0f) {
-                this.e = 1;
-                this.d = 0.0f;
-            }
-            a();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.vv0
-    public final void e() {
-        this.c = false;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(10.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(12.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

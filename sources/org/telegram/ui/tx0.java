@@ -2,15 +2,15 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tx0 implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ ProfileActivity b;
     public final /* synthetic */ String c;
 
-    public /* synthetic */ tx0(ProfileActivity profileActivity, String str, int i10) {
-        this.a = i10;
+    public /* synthetic */ tx0(ProfileActivity profileActivity, String str, int i9) {
+        this.a = i9;
         this.b = profileActivity;
         this.c = str;
     }
@@ -20,11 +20,11 @@ public final /* synthetic */ class tx0 implements View.OnClickListener {
         switch (this.a) {
             case 0:
                 ProfileActivity profileActivity = this.b;
-                we.e.s(profileActivity.getParentActivity(), "https://" + profileActivity.getMessagesController().linkPrefix + "/nft/" + this.c);
+                ve.e.s(profileActivity.getParentActivity(), "https://" + profileActivity.getMessagesController().linkPrefix + "/nft/" + this.c);
                 break;
             default:
                 ProfileActivity profileActivity2 = this.b;
-                we.e.s(profileActivity2.getParentActivity(), "https://" + profileActivity2.getMessagesController().linkPrefix + "/nft/" + this.c);
+                ve.e.s(profileActivity2.getParentActivity(), "https://" + profileActivity2.getMessagesController().linkPrefix + "/nft/" + this.c);
                 break;
         }
     }

@@ -1,21 +1,40 @@
 package androidx.activity.result;
 
 import androidx.fragment.app.e0;
+import d7.o;
+import d7.r;
+import d7.s;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class c {
+    public static s e;
     public final /* synthetic */ int a;
     public final /* synthetic */ String b;
     public final /* synthetic */ e0 c;
     public final /* synthetic */ f d;
 
-    public /* synthetic */ c(f fVar, String str, e0 e0Var, int i10) {
-        this.a = i10;
+    public /* synthetic */ c(f fVar, String str, e0 e0Var, int i9) {
+        this.a = i9;
         this.d = fVar;
         this.b = str;
         this.c = e0Var;
+    }
+
+    public static synchronized r b(o oVar) {
+        r rVar;
+        synchronized (c.class) {
+            try {
+                if (e == null) {
+                    e = new s(0);
+                }
+                rVar = (r) e.G(oVar);
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        return rVar;
     }
 
     public final void a(Object obj) {
@@ -31,9 +50,9 @@ public final class c {
                     try {
                         fVar.b(num.intValue(), e0Var, obj);
                         return;
-                    } catch (Exception e9) {
+                    } catch (Exception e10) {
                         fVar.d.remove(str);
-                        throw e9;
+                        throw e10;
                     }
                 }
                 throw new IllegalStateException("Attempting to launch an unregistered ActivityResultLauncher with contract " + e0Var + " and input " + obj + ". You must ensure the ActivityResultLauncher is registered before calling launch().");
@@ -48,9 +67,9 @@ public final class c {
                     try {
                         fVar2.b(num2.intValue(), e0Var2, obj);
                         return;
-                    } catch (Exception e10) {
+                    } catch (Exception e11) {
                         fVar2.d.remove(str2);
-                        throw e10;
+                        throw e11;
                     }
                 }
                 throw new IllegalStateException("Attempting to launch an unregistered ActivityResultLauncher with contract " + e0Var2 + " and input " + obj + ". You must ensure the ActivityResultLauncher is registered before calling launch().");

@@ -1,46 +1,44 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes3.dex */
-public final class zi extends mg.b {
-    public final /* synthetic */ int n;
-    public final /* synthetic */ rn r;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.TLRPC;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zi(rn rnVar, org.telegram.ui.ActionBar.c6 c6Var, int i10, int i11) {
-        super(i10, c6Var);
-        this.n = i11;
-        this.r = rnVar;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class zi implements MessagesStorage.IntCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ zi(int i9, Object obj, boolean z10) {
+        this.a = i9;
+        this.c = obj;
+        this.b = z10;
     }
 
-    @Override // mg.b, mg.a
-    public final int p2() {
-        int i10;
-        int i11;
-        switch (this.n) {
+    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+    public final void run(int i9) {
+        switch (this.a) {
             case 0:
-                rn rnVar = this.r;
-                i10 = ((org.telegram.ui.ActionBar.n2) rnVar).currentAccount;
-                if (!ng.c.c(i10, rnVar.aa)) {
-                    break;
-                } else if (rnVar.aa != null && !org.telegram.ui.ActionBar.g6.I.q()) {
-                    break;
-                } else {
+                qn qnVar = ((bj) this.c).b;
+                if (i9 > 0 && qnVar.getParentActivity() != null) {
+                    org.telegram.ui.Components.oc.a0(qnVar).m(this.b ? org.telegram.ui.Components.nc.C : org.telegram.ui.Components.nc.E, i9, 0, 0, qnVar.aa).j();
                     break;
                 }
                 break;
             default:
-                rn rnVar2 = this.r;
-                i11 = ((org.telegram.ui.ActionBar.n2) rnVar2).currentAccount;
-                if (!ng.c.c(i11, rnVar2.aa)) {
-                    break;
-                } else if (rnVar2.aa != null && !org.telegram.ui.ActionBar.g6.I.q()) {
+                aj ajVar = (aj) this.c;
+                qn qnVar2 = ajVar.b.b;
+                if (i9 < 50) {
+                    qnVar2.qa(qnVar2.Z3, true);
                     break;
                 } else {
+                    TLRPC.Chat chat = qnVar2.e;
+                    TLRPC.User user = qnVar2.f;
+                    boolean z10 = this.b;
+                    org.telegram.ui.Components.y4.s(qnVar2, true, chat, user, false, false, false, z10, new b1(ajVar, z10));
                     break;
                 }
-                break;
         }
-        return this.d;
     }
 }

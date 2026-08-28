@@ -1,30 +1,31 @@
 package oh;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.wk0;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o b;
+public final class h extends k41 {
+    public static final /* synthetic */ int a = 0;
 
-    public /* synthetic */ h(o oVar, int i10) {
-        this.a = i10;
-        this.b = oVar;
+    static {
+        k41.setup(new h());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        o oVar = this.b;
-        switch (i10) {
-            case 0:
-                o.W(oVar);
-                break;
-            default:
-                oVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_CHAT));
-                break;
-        }
+    @Override // org.telegram.ui.Components.k41
+    public final void bindView(View view, l41 l41Var, boolean z10, z41 z41Var, i51 i51Var) {
+        long j10 = l41Var.B;
+        ((i) view).a((int) j10, (int) (j10 >>> 32), l41Var.k, l41Var.l, l41Var.n, l41Var.q);
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final View createView(Context context, wk0 wk0Var, int i9, int i10, b6 b6Var) {
+        return new i(context, b6Var, false);
     }
 }

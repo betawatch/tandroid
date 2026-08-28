@@ -11,20 +11,20 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class u implements f, y0 {
-    public static final p8.l0 n = p8.z.x(4400000L, 3200000L, 2300000L, 1600000L, 810000L);
-    public static final p8.l0 o = p8.z.x(1400000L, 990000L, 730000L, 510000L, 230000L);
-    public static final p8.l0 p = p8.z.x(2100000L, 1400000L, 1000000L, 890000L, 640000L);
-    public static final p8.l0 q = p8.z.x(2600000L, 1700000L, 1300000L, 1000000L, 700000L);
-    public static final p8.l0 r = p8.z.x(5700000L, 3700000L, 2300000L, 1700000L, 990000L);
-    public static final p8.l0 s = p8.z.x(2800000L, 1800000L, 1400000L, 1100000L, 870000L);
+    public static final o8.l0 n = o8.z.x(4400000L, 3200000L, 2300000L, 1600000L, 810000L);
+    public static final o8.l0 o = o8.z.x(1400000L, 990000L, 730000L, 510000L, 230000L);
+    public static final o8.l0 p = o8.z.x(2100000L, 1400000L, 1000000L, 890000L, 640000L);
+    public static final o8.l0 q = o8.z.x(2600000L, 1700000L, 1300000L, 1000000L, 700000L);
+    public static final o8.l0 r = o8.z.x(5700000L, 3700000L, 2300000L, 1700000L, 990000L);
+    public static final o8.l0 s = o8.z.x(2800000L, 1800000L, 1400000L, 1100000L, 870000L);
     public static u t;
-    public final p8.b0 a;
-    public final k5.i b = new k5.i(7);
+    public final o8.b0 a;
+    public final xa.c b = new xa.c(8);
     public final w0 c;
-    public final d5.b0 d;
+    public final d5.a0 d;
     public final boolean e;
     public int f;
     public long g;
@@ -35,17 +35,17 @@ public final class u implements f, y0 {
     public volatile long l;
     public long m;
 
-    public u(Context context, Map map, int i10, d5.b0 b0Var, boolean z10) {
-        this.a = p8.b0.a(map);
-        this.c = new w0(i10);
-        this.d = b0Var;
+    public u(Context context, Map map, int i9, d5.a0 a0Var, boolean z10) {
+        this.a = o8.b0.a(map);
+        this.c = new w0(i9);
+        this.d = a0Var;
         this.e = z10;
         if (context == null) {
             this.i = 0;
             this.l = a(0);
             return;
         }
-        d5.x f10 = d5.x.f(context);
+        d5.w f10 = d5.w.f(context);
         int g10 = f10.g();
         this.i = g10;
         this.l = a(g10);
@@ -59,7 +59,7 @@ public final class u implements f, y0 {
             }
         }
         copyOnWriteArrayList.add(new WeakReference(sVar));
-        ((Handler) f10.b).post(new d5.u(0, f10, sVar));
+        ((Handler) f10.b).post(new a1.e(25, f10, sVar));
     }
 
     public static synchronized u b(Context context) {
@@ -68,7 +68,7 @@ public final class u implements f, y0 {
             try {
                 if (t == null) {
                     t tVar = new t(context);
-                    t = new u((Context) tVar.c, (HashMap) tVar.d, tVar.b, (d5.b0) tVar.e, tVar.a);
+                    t = new u((Context) tVar.c, (HashMap) tVar.d, tVar.b, (d5.a0) tVar.e, tVar.a);
                 }
                 uVar = t;
             } catch (Throwable th) {
@@ -78,9 +78,9 @@ public final class u implements f, y0 {
         return uVar;
     }
 
-    public final long a(int i10) {
-        Integer valueOf = Integer.valueOf(i10);
-        p8.b0 b0Var = this.a;
+    public final long a(int i9) {
+        Integer valueOf = Integer.valueOf(i9);
+        o8.b0 b0Var = this.a;
         Long l10 = (Long) b0Var.get(valueOf);
         if (l10 == null) {
             l10 = (Long) b0Var.get(0);
@@ -91,11 +91,11 @@ public final class u implements f, y0 {
         return l10.longValue();
     }
 
-    public final void c(int i10, long j10, long j11) {
-        int i11;
+    public final void c(int i9, long j10, long j11) {
+        int i10;
         long j12;
         long j13;
-        if (i10 == 0 && j10 == 0 && j11 == this.m) {
+        if (i9 == 0 && j10 == 0 && j11 == this.m) {
             return;
         }
         this.m = j11;
@@ -103,16 +103,16 @@ public final class u implements f, y0 {
         while (it.hasNext()) {
             e eVar = (e) it.next();
             if (eVar.c) {
-                i11 = i10;
+                i10 = i9;
                 j12 = j10;
                 j13 = j11;
             } else {
-                i11 = i10;
+                i10 = i9;
                 j12 = j10;
                 j13 = j11;
-                eVar.a.post(new d(eVar, i11, j12, j13, 0));
+                eVar.a.post(new d(eVar, i10, j12, j13, 0));
             }
-            i10 = i11;
+            i9 = i10;
             j10 = j12;
             j11 = j13;
         }

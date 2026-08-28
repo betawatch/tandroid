@@ -9,7 +9,7 @@ import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
 import java.net.SocketTimeoutException;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class a1 extends g {
     public final int a;
@@ -84,21 +84,21 @@ public final class a1 extends g {
             this.n = true;
             transferStarted(qVar);
             return -1L;
-        } catch (IOException e9) {
-            throw new z0(e9, 2001);
-        } catch (SecurityException e10) {
-            throw new z0(e10, 2006);
+        } catch (IOException e10) {
+            throw new z0(e10, 2001);
+        } catch (SecurityException e11) {
+            throw new z0(e11, 2006);
         }
     }
 
     @Override // com.google.android.exoplayer2.upstream.j
-    public final int read(byte[] bArr, int i10, int i11) {
-        if (i11 == 0) {
+    public final int read(byte[] bArr, int i9, int i10) {
+        if (i10 == 0) {
             return 0;
         }
-        int i12 = this.r;
+        int i11 = this.r;
         DatagramPacket datagramPacket = this.c;
-        if (i12 == 0) {
+        if (i11 == 0) {
             try {
                 DatagramSocket datagramSocket = this.e;
                 datagramSocket.getClass();
@@ -106,16 +106,16 @@ public final class a1 extends g {
                 int length = datagramPacket.getLength();
                 this.r = length;
                 bytesTransferred(length);
-            } catch (SocketTimeoutException e9) {
-                throw new z0(e9, 2002);
-            } catch (IOException e10) {
-                throw new z0(e10, 2001);
+            } catch (SocketTimeoutException e10) {
+                throw new z0(e10, 2002);
+            } catch (IOException e11) {
+                throw new z0(e11, 2001);
             }
         }
         int length2 = datagramPacket.getLength();
-        int i13 = this.r;
-        int min = Math.min(i13, i11);
-        System.arraycopy(this.b, length2 - i13, bArr, i10, min);
+        int i12 = this.r;
+        int min = Math.min(i12, i10);
+        System.arraycopy(this.b, length2 - i12, bArr, i9, min);
         this.r -= min;
         return min;
     }

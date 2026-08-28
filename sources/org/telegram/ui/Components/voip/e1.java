@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class e1 extends GestureDetector.SimpleOnGestureListener {
     public float a;
@@ -15,17 +15,17 @@ public final class e1 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int c;
     public final /* synthetic */ g1 d;
 
-    public e1(g1 g1Var, int i10) {
+    public e1(g1 g1Var, int i9) {
         this.d = g1Var;
-        this.c = i10;
+        this.c = i9;
     }
 
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
     public final boolean onDown(MotionEvent motionEvent) {
         g1 g1Var = this.d;
         if (g1Var.G) {
-            for (int i10 = 1; i10 < g1Var.e.getChildCount(); i10++) {
-                View childAt = g1Var.e.getChildAt(i10);
+            for (int i9 = 1; i9 < g1Var.e.getChildCount(); i9++) {
+                View childAt = g1Var.e.getChildAt(i9);
                 if (childAt.dispatchTouchEvent(motionEvent)) {
                     g1Var.F = childAt;
                     return true;
@@ -54,7 +54,7 @@ public final class e1 extends GestureDetector.SimpleOnGestureListener {
         jVar2.a = f10;
         jVar2.b = g1Var.N;
         jVar2.c = true;
-        jVar2.u.i = h7.n.a((f11 / 10.0f) + r9, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - g1Var.J) - AndroidUtilities.dp(16.0f));
+        jVar2.u.i = g7.n.a((f11 / 10.0f) + r9, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - g1Var.J) - AndroidUtilities.dp(16.0f));
         g1Var.P.f();
         return true;
     }
@@ -89,17 +89,17 @@ public final class e1 extends GestureDetector.SimpleOnGestureListener {
     public final boolean onSingleTapUp(MotionEvent motionEvent) {
         g1 g1Var = this.d;
         ValueAnimator valueAnimator = g1Var.H;
-        nh.f0 f0Var = g1Var.T;
+        mh.m2 m2Var = g1Var.T;
         if (valueAnimator == null) {
             if (g1Var.S) {
-                AndroidUtilities.cancelRunOnUIThread(f0Var);
+                AndroidUtilities.cancelRunOnUIThread(m2Var);
                 g1Var.S = false;
             }
             boolean z10 = !g1Var.G;
             g1Var.G = z10;
             g1Var.o(z10);
             if (g1Var.G && !g1Var.S) {
-                AndroidUtilities.runOnUIThread(f0Var, 2500L);
+                AndroidUtilities.runOnUIThread(m2Var, 2500L);
                 g1Var.S = true;
             }
         }

@@ -8,18 +8,18 @@ import android.text.TextUtils;
 import java.util.Arrays;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class e extends f0.e {
     /* JADX WARN: Multi-variable type inference failed */
-    public static void g(Activity activity, String[] strArr, int i10) {
+    public static void g(Activity activity, String[] strArr, int i9) {
         HashSet hashSet = new HashSet();
-        for (int i11 = 0; i11 < strArr.length; i11++) {
-            if (TextUtils.isEmpty(strArr[i11])) {
-                throw new IllegalArgumentException(a9.p.p(new StringBuilder("Permission request for permissions "), Arrays.toString(strArr), " must not contain null or empty values"));
+        for (int i10 = 0; i10 < strArr.length; i10++) {
+            if (TextUtils.isEmpty(strArr[i10])) {
+                throw new IllegalArgumentException(aa.d.r(new StringBuilder("Permission request for permissions "), Arrays.toString(strArr), " must not contain null or empty values"));
             }
-            if (Build.VERSION.SDK_INT < 33 && TextUtils.equals(strArr[i11], "android.permission.POST_NOTIFICATIONS")) {
-                hashSet.add(Integer.valueOf(i11));
+            if (Build.VERSION.SDK_INT < 33 && TextUtils.equals(strArr[i10], "android.permission.POST_NOTIFICATIONS")) {
+                hashSet.add(Integer.valueOf(i10));
             }
         }
         int size = hashSet.size();
@@ -28,20 +28,20 @@ public abstract class e extends f0.e {
             if (size == strArr.length) {
                 return;
             }
-            int i12 = 0;
-            for (int i13 = 0; i13 < strArr.length; i13++) {
-                if (!hashSet.contains(Integer.valueOf(i13))) {
-                    strArr2[i12] = strArr[i13];
-                    i12++;
+            int i11 = 0;
+            for (int i12 = 0; i12 < strArr.length; i12++) {
+                if (!hashSet.contains(Integer.valueOf(i12))) {
+                    strArr2[i11] = strArr[i12];
+                    i11++;
                 }
             }
         }
         if (Build.VERSION.SDK_INT >= 23) {
             if (activity instanceof d) {
             }
-            b.q(activity, strArr, i10);
+            b.q(activity, strArr, i9);
         } else if (activity instanceof c) {
-            new Handler(Looper.getMainLooper()).post(new androidx.activity.g(strArr2, activity, i10, 5));
+            new Handler(Looper.getMainLooper()).post(new androidx.activity.g(strArr2, activity, i9, 5));
         }
     }
 }

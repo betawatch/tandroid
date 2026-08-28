@@ -2,7 +2,7 @@ package m5;
 
 import android.content.Context;
 import android.os.Handler;
-import c2.t0;
+import c2.u0;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
@@ -12,19 +12,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class f0 extends com.google.android.gms.common.api.j implements g0 {
-    public static final r5.b G = new r5.b("CastClient", null);
-    public static final com.google.android.gms.common.api.e H = new com.google.android.gms.common.api.e("Cast.API_CXLESS", new a6.b(10), r5.j.a);
+    public static final q5.b G = new q5.b("CastClient", null);
+    public static final com.google.android.gms.common.api.e H = new com.google.android.gms.common.api.e("Cast.API_CXLESS", new b7.d(8), q5.j.a);
     public final CastDevice A;
     public final HashMap B;
     public final HashMap C;
-    public final n5.e0 D;
+    public final n5.f0 D;
     public final List E;
     public int F;
     public final e0 k;
-    public t0 l;
+    public u0 l;
     public boolean m;
     public boolean n;
     public TaskCompletionSource o;
@@ -38,7 +38,7 @@ public final class f0 extends com.google.android.gms.common.api.j implements g0 
     public boolean w;
     public int x;
     public int y;
-    public y z;
+    public x z;
 
     public f0(Context context, e eVar) {
         super(context, H, eVar, com.google.android.gms.common.api.i.c);
@@ -55,7 +55,7 @@ public final class f0 extends com.google.android.gms.common.api.j implements g0 
         j();
     }
 
-    public static void f(f0 f0Var, long j10, int i10) {
+    public static void f(f0 f0Var, long j10, int i9) {
         TaskCompletionSource taskCompletionSource;
         synchronized (f0Var.B) {
             HashMap hashMap = f0Var.B;
@@ -64,25 +64,25 @@ public final class f0 extends com.google.android.gms.common.api.j implements g0 
             f0Var.B.remove(valueOf);
         }
         if (taskCompletionSource != null) {
-            if (i10 == 0) {
+            if (i9 == 0) {
                 taskCompletionSource.setResult(null);
             } else {
-                taskCompletionSource.setException(y5.l.m(new Status(i10, null, null, null)));
+                taskCompletionSource.setException(x5.l.m(new Status(i9, null, null, null)));
             }
         }
     }
 
-    public static void g(f0 f0Var, int i10) {
+    public static void g(f0 f0Var, int i9) {
         synchronized (f0Var.s) {
             try {
                 TaskCompletionSource taskCompletionSource = f0Var.p;
                 if (taskCompletionSource == null) {
                     return;
                 }
-                if (i10 == 0) {
+                if (i9 == 0) {
                     taskCompletionSource.setResult(new Status(0, null, null, null));
                 } else {
-                    taskCompletionSource.setException(y5.l.m(new Status(i10, null, null, null)));
+                    taskCompletionSource.setException(x5.l.m(new Status(i9, null, null, null)));
                 }
                 f0Var.p = null;
             } catch (Throwable th) {
@@ -93,7 +93,7 @@ public final class f0 extends com.google.android.gms.common.api.j implements g0 
 
     public static Handler k(f0 f0Var) {
         if (f0Var.l == null) {
-            f0Var.l = new t0(f0Var.f, 1);
+            f0Var.l = new u0(f0Var.f, 1);
         }
         return f0Var.l;
     }
@@ -105,12 +105,12 @@ public final class f0 extends com.google.android.gms.common.api.j implements g0 
         }
     }
 
-    public final void i(int i10) {
+    public final void i(int i9) {
         synchronized (this.r) {
             try {
                 TaskCompletionSource taskCompletionSource = this.o;
                 if (taskCompletionSource != null) {
-                    taskCompletionSource.setException(y5.l.m(new Status(i10, null, null, null)));
+                    taskCompletionSource.setException(x5.l.m(new Status(i9, null, null, null)));
                 }
                 this.o = null;
             } catch (Throwable th) {

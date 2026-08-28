@@ -12,17 +12,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.rl;
-import org.telegram.ui.Components.c8;
+import org.telegram.messenger.ll;
+import org.telegram.ui.Components.d8;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ p(Object obj, int i10) {
-        this.a = i10;
+    public /* synthetic */ p(Object obj, int i9) {
+        this.a = i9;
         this.b = obj;
     }
 
@@ -30,31 +30,31 @@ public final /* synthetic */ class p implements Runnable {
     public final void run() {
         DialogInterface.OnDismissListener onDismissListener;
         DialogInterface.OnDismissListener onDismissListener2;
-        int i10 = this.a;
-        int i11 = 0;
+        int i9 = this.a;
+        int i10 = 0;
         Object obj = this.b;
-        switch (i10) {
+        switch (i9) {
             case 0:
                 Drawable drawable = ActionBarLayout.l1;
-                AndroidUtilities.runOnUIThread((ag.k0) obj);
+                AndroidUtilities.runOnUIThread((c3.d) obj);
                 break;
             case 1:
-                v0 v0Var = (v0) obj;
-                if (v0Var.getParent() != null) {
-                    v0Var.getParent().requestDisallowInterceptTouchEvent(true);
+                w0 w0Var = (w0) obj;
+                if (w0Var.getParent() != null) {
+                    w0Var.getParent().requestDisallowInterceptTouchEvent(true);
                 }
-                v0Var.M(null, null);
+                w0Var.M(null, null);
                 break;
             case 2:
-                ((u0) obj).setSelectedForDelete(false);
+                ((v0) obj).setSelectedForDelete(false);
                 break;
             case 3:
-                c1 c1Var = (c1) obj;
-                c1Var.Q = true;
-                AndroidUtilities.makeGlobalBlurBitmap(new x0(c1Var, i11), 8.0f);
+                d1 d1Var = (d1) obj;
+                d1Var.Q = true;
+                AndroidUtilities.makeGlobalBlurBitmap(new y0(d1Var, i10), 8.0f);
                 break;
             case 4:
-                ((p1) obj).c();
+                ((q1) obj).c();
                 break;
             case 5:
                 View view = (View) obj;
@@ -68,16 +68,16 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 break;
             case 6:
-                b2 b2Var = ((z1) obj).d;
-                int i12 = AndroidUtilities.displaySize.x;
-                b2Var.H = i12;
-                int dp = i12 - AndroidUtilities.dp(56.0f);
+                c2 c2Var = ((a2) obj).d;
+                int i11 = AndroidUtilities.displaySize.x;
+                c2Var.H = i11;
+                int dp = i11 - AndroidUtilities.dp(56.0f);
                 int dp2 = AndroidUtilities.isTablet() ? AndroidUtilities.isSmallTablet() ? AndroidUtilities.dp(446.0f) : AndroidUtilities.dp(496.0f) : AndroidUtilities.dp(356.0f);
-                Window window = b2Var.getWindow();
+                Window window = c2Var.getWindow();
                 WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
                 layoutParams.copyFrom(window.getAttributes());
                 int min = Math.min(dp2, dp);
-                Rect rect = b2Var.w0;
+                Rect rect = c2Var.w0;
                 layoutParams.width = min + rect.left + rect.right;
                 try {
                     window.setAttributes(layoutParams);
@@ -87,34 +87,34 @@ public final /* synthetic */ class p implements Runnable {
                     return;
                 }
             case 7:
-                f2 f2Var = (f2) obj;
-                f2Var.b1.setVisibility(0);
-                f2Var.d1.setAlpha(0.0f);
-                f2Var.c1.startAnimation(AnimationUtils.loadAnimation(f2Var.getContext(), f2Var.Z0));
-                f2Var.d1.animate().setDuration(300L).alpha(1.0f).setListener(new c2(f2Var, 0)).start();
+                g2 g2Var = (g2) obj;
+                g2Var.b1.setVisibility(0);
+                g2Var.d1.setAlpha(0.0f);
+                g2Var.c1.startAnimation(AnimationUtils.loadAnimation(g2Var.getContext(), g2Var.Z0));
+                g2Var.d1.animate().setDuration(300L).alpha(1.0f).setListener(new d2(g2Var, 0)).start();
                 break;
             case 8:
-                e3 e3Var = (e3) ((w2) obj).c;
-                onDismissListener = e3Var.onHideListener;
+                f3 f3Var = (f3) ((x2) obj).c;
+                onDismissListener = f3Var.onHideListener;
                 if (onDismissListener != null) {
-                    onDismissListener2 = e3Var.onHideListener;
-                    onDismissListener2.onDismiss(e3Var);
+                    onDismissListener2 = f3Var.onHideListener;
+                    onDismissListener2.onDismiss(f3Var);
                 }
                 try {
-                    e3Var.dismissInternal();
-                    break;
-                } catch (Exception e9) {
-                    FileLog.e(e9);
-                    return;
-                }
-            case 9:
-                v2 v2Var = (v2) obj;
-                v2Var.getClass();
-                try {
-                    v2Var.b.dismissInternal();
+                    f3Var.dismissInternal();
                     break;
                 } catch (Exception e10) {
                     FileLog.e(e10);
+                    return;
+                }
+            case 9:
+                w2 w2Var = (w2) obj;
+                w2Var.getClass();
+                try {
+                    w2Var.b.dismissInternal();
+                    break;
+                } catch (Exception e11) {
+                    FileLog.e(e11);
                     return;
                 }
             case 10:
@@ -128,7 +128,7 @@ public final /* synthetic */ class p implements Runnable {
                 ((v3) obj).f();
                 break;
             case 12:
-                t4 t4Var = (t4) ((d2) obj).b;
+                t4 t4Var = (t4) ((e2) obj).b;
                 t4Var.k();
                 t4Var.j();
                 break;
@@ -142,11 +142,11 @@ public final /* synthetic */ class p implements Runnable {
                 break;
             case 15:
                 Drawable drawable2 = (Drawable) obj;
-                g6.d = null;
-                g6.N();
-                if (!g6.b) {
-                    g6.i(drawable2);
-                    g6.h(drawable2);
+                f6.d = null;
+                f6.N();
+                if (!f6.b) {
+                    f6.i(drawable2);
+                    f6.h(drawable2);
                 }
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewWallpapper, new Object[0]);
                 break;
@@ -154,17 +154,17 @@ public final /* synthetic */ class p implements Runnable {
                 ((CountDownLatch) obj).countDown();
                 break;
             case 17:
-                rl.k(1, (n2) obj);
+                ll.m(1, (o2) obj);
                 break;
             case 18:
-                c8 c8Var = (c8) g6.e5.remove((MessageObject) obj);
-                if (c8Var != null) {
-                    c8Var.i = null;
+                d8 d8Var = (d8) f6.e5.remove((MessageObject) obj);
+                if (d8Var != null) {
+                    d8Var.i = null;
                     break;
                 }
                 break;
             default:
-                ((f6) obj).s();
+                ((e6) obj).s();
                 break;
         }
     }

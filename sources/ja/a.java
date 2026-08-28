@@ -1,36 +1,26 @@
 package ja;
 
-import f9.k;
-import kotlin.jvm.internal.j;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a {
-    public final rd.d a;
-    public k b = null;
+public final class a extends sc.c {
+    public Object a;
+    public qd.a b;
+    public /* synthetic */ Object c;
+    public final /* synthetic */ d d;
+    public int e;
 
-    public a(rd.d dVar) {
-        this.a = dVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a(d dVar, sc.c cVar) {
+        super(cVar);
+        this.d = dVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof a)) {
-            return false;
-        }
-        a aVar = (a) obj;
-        return this.a.equals(aVar.a) && j.a(this.b, aVar.b);
-    }
-
-    public final int hashCode() {
-        int hashCode = this.a.hashCode() * 31;
-        k kVar = this.b;
-        return hashCode + (kVar == null ? 0 : kVar.hashCode());
-    }
-
-    public final String toString() {
-        return "Dependency(mutex=" + this.a + ", subscriber=" + this.b + ')';
+    @Override // sc.a
+    public final Object invokeSuspend(Object obj) {
+        this.c = obj;
+        this.e |= TLObject.FLAG_31;
+        return this.d.c(this);
     }
 }

@@ -1,13 +1,13 @@
 package w2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b implements r9.d {
+public final class b implements q9.d {
     public static final b a = new b();
-    public static final r9.c b = new r9.c("storageMetrics", s3.c.h(s3.c.g(u9.d.class, new u9.a(1))));
+    public static final q9.c b = new q9.c("storageMetrics", ta.b.g(ta.b.f(t9.d.class, new t9.a(1))));
 
-    @Override // r9.a
+    @Override // q9.a
     public final void a(Object obj, Object obj2) {
-        ((r9.e) obj2).a(b, ((z2.b) obj).a);
+        ((q9.e) obj2).g(b, ((z2.b) obj).a);
     }
 }

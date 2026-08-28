@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class ScriptsAtom extends Atom {
     private static final int MAX_WRAP_DEPTH = 64;
@@ -17,9 +17,9 @@ public class ScriptsAtom extends Atom {
         this.base = atom;
         this.subscript = atom2;
         this.superscript = atom3;
-        int i10 = atom instanceof ScriptsAtom ? 1 + ((ScriptsAtom) atom).wrapDepth : 1;
-        this.wrapDepth = i10;
-        if (i10 > 64) {
+        int i9 = atom instanceof ScriptsAtom ? 1 + ((ScriptsAtom) atom).wrapDepth : 1;
+        this.wrapDepth = i9;
+        if (i9 > 64) {
             throw new DepthLimitExceededException();
         }
     }
@@ -45,12 +45,12 @@ public class ScriptsAtom extends Atom {
         Atom atom;
         float f13;
         float f14;
-        int i10;
-        int i11 = boxWrapDepth;
-        int i12 = i11 + 1;
-        boxWrapDepth = i12;
-        if (i12 > 64) {
-            boxWrapDepth = i11;
+        int i9;
+        int i10 = boxWrapDepth;
+        int i11 = i10 + 1;
+        boxWrapDepth = i11;
+        if (i11 > 64) {
+            boxWrapDepth = i10;
             throw new DepthLimitExceededException();
         }
         try {
@@ -64,9 +64,9 @@ public class ScriptsAtom extends Atom {
             TeXFont teXFont = teXEnvironment.getTeXFont();
             int style = teXEnvironment.getStyle();
             Atom atom3 = this.base;
-            int i13 = atom3.type_limits;
+            int i12 = atom3.type_limits;
             try {
-                if (i13 == 2 || (i13 == 0 && style == 0)) {
+                if (i12 == 2 || (i12 == 0 && style == 0)) {
                     boxWrapDepth--;
                     return new UnderOverAtom(new UnderOverAtom(atom3, this.subscript, 3, 0.3f, true, false), this.superscript, 3, 3.0f, true, true).createBox(teXEnvironment);
                 }
@@ -133,7 +133,7 @@ public class ScriptsAtom extends Atom {
                         createBox2.setShift(Math.max(Math.max(f12, teXFont.getSub1(style)), createBox2.getHeight() - ((Math.abs(teXFont.getXHeight(style, lastFontId)) * 4.0f) / 5.0f)));
                         horizontalBox.add(createBox2);
                         horizontalBox.add(strutBox);
-                        i10 = boxWrapDepth - 1;
+                        i9 = boxWrapDepth - 1;
                     } else {
                         Box createBox3 = atom.createBox(supStyle);
                         float width = createBox3.getWidth();
@@ -182,9 +182,9 @@ public class ScriptsAtom extends Atom {
                             horizontalBox.add(verticalBox);
                         }
                         horizontalBox.add(strutBox);
-                        i10 = boxWrapDepth - 1;
+                        i9 = boxWrapDepth - 1;
                     }
-                    boxWrapDepth = i10;
+                    boxWrapDepth = i9;
                     return horizontalBox;
                 }
                 Box createBox5 = ((AccentedAtom) atom4).base.createBox(teXEnvironment.crampStyle());
@@ -199,7 +199,7 @@ public class ScriptsAtom extends Atom {
                 atom = this.superscript;
                 if (atom != null) {
                 }
-                boxWrapDepth = i10;
+                boxWrapDepth = i9;
                 return horizontalBox;
             } catch (Throwable th) {
                 th = th;

@@ -1,132 +1,82 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public class mg extends ri0 {
-    public kg r;
-    public lg s;
-    public final int v;
-    public final hc.f w;
+public final class mg extends FrameLayout {
+    public final org.telegram.ui.ActionBar.h5 a;
+    public final RectF b;
+    public final Paint c;
+    public final Drawable d;
+    public boolean e;
 
-    public mg(Context context) {
-        this(context, 32);
+    public mg(Activity activity) {
+        super(activity);
+        this.b = new RectF();
+        this.c = new Paint(1);
+        this.e = false;
+        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(activity);
+        this.a = h5Var;
+        addView(h5Var, g7.e6.c(-1.0f, -1));
+        setWillNotDraw(false);
+        Drawable drawable = activity.getDrawable(R.drawable.msg_mini_close_tooltip);
+        this.d = drawable;
+        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+        setClipToPadding(false);
+        setClipChildren(false);
+        g7.g6.a(this);
     }
 
-    public kg getCurrentState() {
-        return this.r;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        if (!(view instanceof org.telegram.ui.ActionBar.h5) || !this.e) {
+            return super.drawChild(canvas, view, j10);
+        }
+        org.telegram.ui.ActionBar.h5 h5Var = (org.telegram.ui.ActionBar.h5) view;
+        canvas.save();
+        canvas.scale(0.8f, 0.8f);
+        canvas.translate(-AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f));
+        int color = h5Var.getTextPaint().getColor();
+        h5Var.getTextPaint().setColor(-1);
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        h5Var.getTextPaint().setColor(color);
+        canvas.restore();
+        return drawChild;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00cf  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void j(kg kgVar, boolean z10) {
-        int ordinal;
-        lg lgVar;
-        if (z10 && kgVar == this.r) {
-            return;
-        }
-        kg kgVar2 = this.r;
-        this.r = kgVar;
-        lg lgVar2 = null;
-        hc.f fVar = this.w;
-        if (z10 && kgVar2 != null) {
-            lg[] values = lg.values();
-            int length = values.length;
-            int i10 = 0;
-            while (true) {
-                if (i10 >= length) {
-                    lgVar = null;
-                    break;
-                }
-                lgVar = values[i10];
-                if (lgVar.a == kgVar2 && lgVar.b == kgVar) {
-                    break;
-                } else {
-                    i10++;
-                }
-            }
-            if (lgVar != null) {
-                kg kgVar3 = this.r;
-                lg[] values2 = lg.values();
-                int length2 = values2.length;
-                int i11 = 0;
-                while (true) {
-                    if (i11 >= length2) {
-                        break;
-                    }
-                    lg lgVar3 = values2[i11];
-                    if (lgVar3.a == kgVar2 && lgVar3.b == kgVar3) {
-                        lgVar2 = lgVar3;
-                        break;
-                    }
-                    i11++;
-                }
-                if (lgVar2 == this.s) {
-                    return;
-                }
-                this.s = lgVar2;
-                oi0 oi0Var = (oi0) fVar.get(lgVar2);
-                oi0Var.stop();
-                if (lgVar2 == lg.e) {
-                    oi0Var.N(30);
-                    oi0Var.Q(0.0f, false);
-                } else if (lgVar2 == lg.d) {
-                    oi0Var.N(60);
-                    oi0Var.Q(0.5f, false);
-                } else {
-                    oi0Var.Q(0.0f, false);
-                }
-                oi0Var.I(0);
-                oi0Var.q0 = new bg(this, 20);
-                setAnimation(oi0Var);
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Cells.q0(oi0Var, 1));
-                ordinal = kgVar.ordinal();
-                if (ordinal != 0) {
-                    setContentDescription(LocaleController.getString(R.string.AccDescrVoiceMessage));
-                    return;
-                } else {
-                    if (ordinal != 1) {
-                        return;
-                    }
-                    setContentDescription(LocaleController.getString(R.string.AccDescrVideoMessage));
-                    return;
-                }
-            }
-        }
-        kg kgVar4 = this.r;
-        lg[] values3 = lg.values();
-        int length3 = values3.length;
-        int i12 = 0;
-        while (true) {
-            if (i12 >= length3) {
-                break;
-            }
-            lg lgVar4 = values3[i12];
-            if (lgVar4.a == kgVar4) {
-                lgVar2 = lgVar4;
-                break;
-            }
-            i12++;
-        }
-        oi0 oi0Var2 = (oi0) fVar.get(lgVar2);
-        oi0Var2.stop();
-        oi0Var2.Q(kgVar != kg.a ? 0.0f : 0.5f, false);
-        setAnimation(oi0Var2);
-        ordinal = kgVar.ordinal();
-        if (ordinal != 0) {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.e) {
+            canvas.save();
+            int dp = AndroidUtilities.dp(26.0f);
+            canvas.translate(AndroidUtilities.dp(5.0f), (getMeasuredHeight() - dp) / 2.0f);
+            float f10 = dp;
+            RectF rectF = this.b;
+            rectF.set(-AndroidUtilities.dp(5.0f), 0.0f, getMeasuredWidth() - getPaddingEnd(), f10);
+            float f11 = f10 / 2.0f;
+            canvas.drawRoundRect(rectF, f11, f11, this.c);
+            int measuredWidth = (getMeasuredWidth() - getPaddingEnd()) - AndroidUtilities.dp(6.0f);
+            Drawable drawable = this.d;
+            canvas.translate(measuredWidth - drawable.getIntrinsicWidth(), AndroidUtilities.dp(5.0f));
+            drawable.draw(canvas);
+            canvas.restore();
         }
     }
 
-    public mg(Context context, int i10) {
-        super(context);
-        this.w = new hc.f(this, 1);
-        this.v = i10;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
+        super.onLayout(z10, i9, i10, i11, i12);
+        this.c.setShader(new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{-9071617, -5999873}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
     }
 }

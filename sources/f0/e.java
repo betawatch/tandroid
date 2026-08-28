@@ -8,13 +8,13 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Process;
 import android.text.TextUtils;
-import androidx.biometric.n;
+import androidx.biometric.o;
 import com.google.firebase.messaging.q;
 import e0.n0;
 import j$.util.Objects;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final Object a = null;
@@ -23,42 +23,42 @@ public abstract class e {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static int a(Context context, String str, int i10, int i11, String str2) {
-        int i12;
-        if (context.checkPermission(str, i10, i11) != -1) {
-            int i13 = Build.VERSION.SDK_INT;
-            String p6 = i13 >= 23 ? e0.b.p(str) : null;
+    public static int a(Context context, String str, int i9, int i10, String str2) {
+        int i11;
+        if (context.checkPermission(str, i9, i10) != -1) {
+            int i12 = Build.VERSION.SDK_INT;
+            String p6 = i12 >= 23 ? e0.b.p(str) : null;
             if (p6 != null) {
                 if (str2 == null) {
-                    String[] packagesForUid = context.getPackageManager().getPackagesForUid(i11);
+                    String[] packagesForUid = context.getPackageManager().getPackagesForUid(i10);
                     if (packagesForUid != null && packagesForUid.length > 0) {
                         str2 = packagesForUid[0];
                     }
                 }
                 int myUid = Process.myUid();
                 String packageName = context.getPackageName();
-                int i14 = 1;
-                if (myUid == i11 && Objects.equals(packageName, str2)) {
-                    if (i13 >= 29) {
+                int i13 = 1;
+                if (myUid == i10 && Objects.equals(packageName, str2)) {
+                    if (i12 >= 29) {
                         AppOpsManager c10 = q.c(context);
-                        i12 = c10 == null ? 1 : c10.checkOpNoThrow(p6, Binder.getCallingUid(), str2);
-                        if (i12 == 0) {
+                        i11 = c10 == null ? 1 : c10.checkOpNoThrow(p6, Binder.getCallingUid(), str2);
+                        if (i11 == 0) {
                             String b10 = q.b(context);
                             if (c10 != null) {
-                                i14 = c10.checkOpNoThrow(p6, i11, b10);
+                                i13 = c10.checkOpNoThrow(p6, i10, b10);
                             }
                         }
-                        if (i12 == 0) {
+                        if (i11 == 0) {
                             return -2;
                         }
-                    } else if (i13 >= 23) {
-                        i14 = e0.b.o((AppOpsManager) e0.b.i(context), p6, str2);
+                    } else if (i12 >= 23) {
+                        i13 = e0.b.o((AppOpsManager) e0.b.i(context), p6, str2);
                     }
-                } else if (i13 >= 23) {
-                    i14 = e0.b.o((AppOpsManager) e0.b.i(context), p6, str2);
+                } else if (i12 >= 23) {
+                    i13 = e0.b.o((AppOpsManager) e0.b.i(context), p6, str2);
                 }
-                i12 = i14;
-                if (i12 == 0) {
+                i11 = i13;
+                if (i11 == 0) {
                 }
             }
             return 0;
@@ -73,24 +73,24 @@ public abstract class e {
         throw new NullPointerException("permission must be non-null");
     }
 
-    public static int c(Context context, int i10) {
-        return Build.VERSION.SDK_INT >= 23 ? a.a(context, i10) : context.getResources().getColor(i10);
+    public static int c(Context context, int i9) {
+        return Build.VERSION.SDK_INT >= 23 ? a.a(context, i9) : context.getResources().getColor(i9);
     }
 
-    public static Drawable d(Context context, int i10) {
-        return context.getDrawable(i10);
+    public static Drawable d(Context context, int i9) {
+        return context.getDrawable(i9);
     }
 
     public static Executor e(Context context) {
-        return Build.VERSION.SDK_INT >= 28 ? c.a(context) : new n(new Handler(context.getMainLooper()), 3);
+        return Build.VERSION.SDK_INT >= 28 ? c.a(context) : new o(new Handler(context.getMainLooper()), 3);
     }
 
     public static Object f(Context context, Class cls) {
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 23) {
+        int i9 = Build.VERSION.SDK_INT;
+        if (i9 >= 23) {
             return a.b(context, cls);
         }
-        String c10 = i10 >= 23 ? a.c(context, cls) : (String) d.a.get(cls);
+        String c10 = i9 >= 23 ? a.c(context, cls) : (String) d.a.get(cls);
         if (c10 != null) {
             return context.getSystemService(c10);
         }

@@ -5,13 +5,13 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import l8.a0;
-import l8.f0;
-import l8.g0;
+import k8.b0;
+import k8.g0;
+import k8.h0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-final class ag extends g0 {
+final class ag extends h0 {
     final /* synthetic */ Bundle a;
     final /* synthetic */ Activity b;
     final /* synthetic */ TaskCompletionSource c;
@@ -19,40 +19,40 @@ final class ag extends g0 {
     final /* synthetic */ aj e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ag(aj ajVar, TaskCompletionSource taskCompletionSource, Bundle bundle, Activity activity, TaskCompletionSource taskCompletionSource2, int i10) {
+    public ag(aj ajVar, TaskCompletionSource taskCompletionSource, Bundle bundle, Activity activity, TaskCompletionSource taskCompletionSource2, int i9) {
         super(taskCompletionSource);
         this.a = bundle;
         this.b = activity;
         this.c = taskCompletionSource2;
-        this.d = i10;
+        this.d = i9;
         this.e = ajVar;
     }
 
-    @Override // l8.g0
+    @Override // k8.h0
     public final void b() {
-        f0 f0Var;
+        g0 g0Var;
         at atVar;
         try {
             aj ajVar = this.e;
-            a0 a0Var = (a0) ajVar.a.n;
+            b0 b0Var = (b0) ajVar.a.n;
             Bundle bundle = this.a;
             atVar = ajVar.e;
             as a2 = atVar.a(this.b, this.c, ajVar.a);
-            l8.y yVar = (l8.y) a0Var;
-            yVar.getClass();
+            k8.z zVar = (k8.z) b0Var;
+            zVar.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(yVar.c);
-            int i10 = l8.r.a;
+            obtain.writeInterfaceToken(zVar.c);
+            int i9 = k8.s.a;
             obtain.writeInt(1);
             bundle.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(a2);
-            yVar.F0(obtain, 3);
-        } catch (RemoteException e9) {
+            zVar.F0(obtain, 3);
+        } catch (RemoteException e10) {
             aj ajVar2 = this.e;
-            int i11 = this.d;
-            f0Var = ajVar2.b;
-            f0Var.a(e9, "requestAndShowDialog(%s)", Integer.valueOf(i11));
-            this.c.trySetException(new IntegrityServiceException(-100, e9));
+            int i10 = this.d;
+            g0Var = ajVar2.b;
+            g0Var.a(e10, "requestAndShowDialog(%s)", Integer.valueOf(i10));
+            this.c.trySetException(new IntegrityServiceException(-100, e10));
         }
     }
 }

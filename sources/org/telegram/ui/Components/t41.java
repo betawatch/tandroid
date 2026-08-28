@@ -1,38 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
 import android.view.View;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class t41 extends URLSpan {
-    public final xz0 a;
-    public boolean b;
+public final /* synthetic */ class t41 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UndoView b;
 
-    public t41(String str, xz0 xz0Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = xz0Var;
+    public /* synthetic */ t41(UndoView undoView, int i9) {
+        this.a = i9;
+        this.b = undoView;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        if (this.b && (view.getContext() instanceof LaunchActivity)) {
-            ((LaunchActivity) view.getContext()).T0 = true;
-        }
-        we.e.p(view.getContext(), Uri.parse(getURL()), true, true);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int color = textPaint.getColor();
-        super.updateDrawState(textPaint);
-        xz0 xz0Var = this.a;
-        if (xz0Var != null) {
-            xz0Var.a(textPaint);
-            textPaint.setUnderlineText(textPaint.linkColor == color);
+        int i9 = this.a;
+        UndoView undoView = this.b;
+        switch (i9) {
+            case 0:
+                int i10 = UndoView.a0;
+                if (undoView.a()) {
+                    undoView.e(1, false);
+                    break;
+                }
+                break;
+            default:
+                int i11 = UndoView.a0;
+                undoView.e(1, false);
+                break;
         }
     }
 }

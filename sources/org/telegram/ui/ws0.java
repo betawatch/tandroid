@@ -1,49 +1,17 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewPropertyAnimator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.Bitmap;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ws0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ PhotoViewer c;
+public final class ws0 extends yf.v0 {
+    public final /* synthetic */ PhotoViewer G;
 
-    public /* synthetic */ ws0(PhotoViewer photoViewer, int i10, int i11) {
-        this.a = i11;
-        this.c = photoViewer;
-        this.b = i10;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.c;
-                xs0 xs0Var = photoViewer.J1;
-                xs0Var.e.setVisibility(0);
-                FrameLayout frameLayout = xs0Var.r;
-                frameLayout.setVisibility(0);
-                frameLayout.setTranslationY(AndroidUtilities.dp(18.0f));
-                ViewPropertyAnimator translationY = frameLayout.animate().alpha(1.0f).translationY(0.0f);
-                org.telegram.ui.Components.er erVar = org.telegram.ui.Components.er.h;
-                org.telegram.messenger.rl.o(translationY, erVar, 320L);
-                xs0Var.w.animate().alpha(1.0f).translationX(0.0f).setInterpolator(erVar).setDuration(320L).start();
-                photoViewer.q4 = this.b;
-                photoViewer.m6 = null;
-                photoViewer.k6 = -1;
-                break;
-            default:
-                int i10 = this.b;
-                PhotoViewer photoViewer2 = this.c;
-                photoViewer2.q4 = i10;
-                photoViewer2.m6 = null;
-                photoViewer2.k6 = -1;
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ws0(PhotoViewer photoViewer, Context context, int i9, Bitmap bitmap, Bitmap bitmap2, int i10, MediaController.CropState cropState) {
+        super(context, i9, bitmap, bitmap2, i10, cropState);
+        this.G = photoViewer;
     }
 }

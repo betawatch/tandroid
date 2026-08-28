@@ -30,29 +30,29 @@ public final class z5 extends v5 {
         long length = iArr.length;
         j5 j5Var = this.a;
         j5Var.o(length);
-        int i10 = 0;
+        int i9 = 0;
         if (!this.b) {
             int length2 = iArr.length;
-            while (i10 < length2) {
-                j5Var.accept(iArr[i10]);
-                i10++;
+            while (i9 < length2) {
+                j5Var.accept(iArr[i9]);
+                i9++;
             }
         } else {
             int length3 = iArr.length;
-            while (i10 < length3) {
-                int i11 = iArr[i10];
+            while (i9 < length3) {
+                int i10 = iArr[i9];
                 if (j5Var.q()) {
                     break;
                 }
-                j5Var.accept(i11);
-                i10++;
+                j5Var.accept(i10);
+                i9++;
             }
         }
         j5Var.end();
     }
 
     @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i10) {
-        this.c.accept(i10);
+    public final void accept(int i9) {
+        this.c.accept(i9);
     }
 }

@@ -5,15 +5,15 @@ import android.util.Log;
 import android.util.Pair;
 import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class g extends c2.t0 {
+public final class g extends c2.u0 {
     @Override // android.os.Handler
     public final void handleMessage(Message message) {
-        int i10 = message.what;
-        if (i10 != 1) {
-            if (i10 != 2) {
-                Log.wtf("BasePendingResult", i0.a.k(i10, "Don't know how to handle message: "), new Exception());
+        int i9 = message.what;
+        if (i9 != 1) {
+            if (i9 != 2) {
+                Log.wtf("BasePendingResult", j3.r0.l(i9, "Don't know how to handle message: "), new Exception());
                 return;
             } else {
                 ((BasePendingResult) message.obj).e(Status.n);
@@ -21,13 +21,13 @@ public final class g extends c2.t0 {
             }
         }
         Pair pair = (Pair) message.obj;
-        o5.p pVar = (o5.p) pair.first;
-        com.google.android.gms.common.api.q qVar = (com.google.android.gms.common.api.q) pair.second;
+        o5.q qVar = (o5.q) pair.first;
+        com.google.android.gms.common.api.q qVar2 = (com.google.android.gms.common.api.q) pair.second;
         try {
-            pVar.a(qVar);
-        } catch (RuntimeException e9) {
-            BasePendingResult.m(qVar);
-            throw e9;
+            qVar.a(qVar2);
+        } catch (RuntimeException e10) {
+            BasePendingResult.m(qVar2);
+            throw e10;
         }
     }
 }

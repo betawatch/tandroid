@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import androidx.car.app.navigation.model.Maneuver;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzwn extends zzsn implements zztt {
     private static final zzwn zzb;
@@ -41,7 +41,7 @@ public final class zzwn extends zzsn implements zztt {
         return (zzwn) zzsn.zzx(zzb, bArr);
     }
 
-    public static /* synthetic */ void zzP(zzwn zzwnVar, int i10) {
+    public static /* synthetic */ void zzP(zzwn zzwnVar, int i9) {
         zzss zzssVar = zzwnVar.zzv;
         if (!zzssVar.zzc()) {
             zzwnVar.zzv = zzsn.zzz(zzssVar);
@@ -70,9 +70,9 @@ public final class zzwn extends zzsn implements zztt {
         zzwnVar.zze |= 4;
     }
 
-    public static /* synthetic */ void zzV(zzwn zzwnVar, int i10) {
+    public static /* synthetic */ void zzV(zzwn zzwnVar, int i9) {
         zzwnVar.zze |= 32;
-        zzwnVar.zzw = i10;
+        zzwnVar.zzw = i9;
     }
 
     public static /* synthetic */ void zzX(zzwn zzwnVar, String str) {
@@ -105,172 +105,172 @@ public final class zzwn extends zzsn implements zztt {
     }
 
     public final int zzaa() {
-        int i10;
+        int i9;
         switch (this.zzh) {
             case 0:
-                i10 = 2;
+                i9 = 2;
                 break;
             case 1:
-                i10 = 3;
+                i9 = 3;
                 break;
             case 2:
-                i10 = 4;
+                i9 = 4;
                 break;
             case 3:
-                i10 = 5;
+                i9 = 5;
                 break;
             case 4:
-                i10 = 6;
+                i9 = 6;
                 break;
             case 5:
-                i10 = 7;
+                i9 = 7;
                 break;
             case 6:
-                i10 = 8;
+                i9 = 8;
                 break;
             case 7:
-                i10 = 9;
+                i9 = 9;
                 break;
             case 8:
-                i10 = 10;
+                i9 = 10;
                 break;
             case 9:
-                i10 = 11;
+                i9 = 11;
                 break;
             case 10:
-                i10 = 12;
+                i9 = 12;
                 break;
             case 11:
-                i10 = 13;
+                i9 = 13;
                 break;
             case 12:
-                i10 = 14;
+                i9 = 14;
                 break;
             case 13:
-                i10 = 15;
+                i9 = 15;
                 break;
             case 14:
-                i10 = 16;
+                i9 = 16;
                 break;
             case 15:
-                i10 = 17;
+                i9 = 17;
                 break;
             case 16:
-                i10 = 18;
+                i9 = 18;
                 break;
             case 17:
-                i10 = 19;
+                i9 = 19;
                 break;
             case 18:
-                i10 = 20;
+                i9 = 20;
                 break;
             case 19:
-                i10 = 21;
+                i9 = 21;
                 break;
             case 20:
-                i10 = 22;
+                i9 = 22;
                 break;
             case 21:
-                i10 = 23;
+                i9 = 23;
                 break;
             case 22:
-                i10 = 24;
+                i9 = 24;
                 break;
             case 23:
-                i10 = 25;
+                i9 = 25;
                 break;
             case 24:
-                i10 = 26;
+                i9 = 26;
                 break;
             case 25:
-                i10 = 27;
+                i9 = 27;
                 break;
             case 26:
-                i10 = 28;
+                i9 = 28;
                 break;
             case 27:
-                i10 = 29;
+                i9 = 29;
                 break;
             case 28:
-                i10 = 30;
+                i9 = 30;
                 break;
             case 29:
-                i10 = 31;
+                i9 = 31;
                 break;
             case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                i10 = 32;
+                i9 = 32;
                 break;
             case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
-                i10 = 33;
+                i9 = 33;
                 break;
             case 32:
-                i10 = 34;
+                i9 = 34;
                 break;
             case 33:
-                i10 = 35;
+                i9 = 35;
                 break;
             case 34:
-                i10 = 36;
+                i9 = 36;
                 break;
             case 35:
-                i10 = 37;
+                i9 = 37;
                 break;
             case 36:
-                i10 = 38;
+                i9 = 38;
                 break;
             case 37:
-                i10 = 39;
+                i9 = 39;
                 break;
             case 38:
-                i10 = 40;
+                i9 = 40;
                 break;
             case Maneuver.TYPE_DESTINATION /* 39 */:
-                i10 = 41;
+                i9 = 41;
                 break;
             case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
-                i10 = 42;
+                i9 = 42;
                 break;
             case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                i10 = 43;
+                i9 = 43;
                 break;
             case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
-                i10 = 44;
+                i9 = 44;
                 break;
             case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
-                i10 = 45;
+                i9 = 45;
                 break;
             case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
-                i10 = 46;
+                i9 = 46;
                 break;
             case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                i10 = 47;
+                i9 = 47;
                 break;
             case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
-                i10 = 48;
+                i9 = 48;
                 break;
             case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
-                i10 = 49;
+                i9 = 49;
                 break;
             case 48:
-                i10 = 50;
+                i9 = 50;
                 break;
             default:
-                i10 = 0;
+                i9 = 0;
                 break;
         }
+        if (i9 == 0) {
+            return 1;
+        }
+        return i9;
+    }
+
+    public final int zzab() {
+        int i9 = this.zzp;
+        int i10 = i9 != 0 ? i9 != 1 ? i9 != 2 ? 0 : 4 : 3 : 2;
         if (i10 == 0) {
             return 1;
         }
         return i10;
-    }
-
-    public final int zzab() {
-        int i10 = this.zzp;
-        int i11 = i10 != 0 ? i10 != 1 ? i10 != 2 ? 0 : 4 : 3 : 2;
-        if (i11 == 0) {
-            return 1;
-        }
-        return i11;
     }
 
     public final int zzf() {
@@ -283,26 +283,26 @@ public final class zzwn extends zzsn implements zztt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsn
-    public final Object zzh(int i10, Object obj, Object obj2) {
+    public final Object zzh(int i9, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i11 = i10 - 1;
-        if (i11 == 0) {
+        int i10 = i9 - 1;
+        if (i10 == 0) {
             return (byte) 1;
         }
-        if (i11 == 2) {
+        if (i10 == 2) {
             return zzsn.zzF(zzb, "\u0000\u0011\u0001\u0001\u0001\u0013\u0011\u0000\u0001\u0000\u0001\f\u0002Ȉ\u0003\u0003\u0004\f\u0005ဉ\u0001\u0006ဉ\u0002\u0007Ȉ\bȈ\tȈ\nဉ\u0000\u000bဉ\u0003\rဉ\u0004\u000eȈ\u000f<\u0000\u0011'\u0012င\u0005\u0013\f", new Object[]{"zzg", "zzf", "zze", "zzh", "zzk", "zzn", "zzp", "zzq", "zzr", "zzs", "zzl", "zzm", "zzo", "zzt", "zzu", "zzj", zzvq.class, "zzv", "zzw", "zzi"});
         }
-        if (i11 == 3) {
+        if (i10 == 3) {
             return new zzwn();
         }
         zzwm zzwmVar = null;
-        if (i11 == 4) {
+        if (i10 == 4) {
             return new zzwk(zzwmVar);
         }
-        if (i11 == 5) {
+        if (i10 == 5) {
             return zzb;
         }
-        if (i11 != 6) {
+        if (i10 != 6) {
             throw null;
         }
         zzua zzuaVar2 = zzd;

@@ -1,16 +1,22 @@
 package cd;
 
-import j$.util.concurrent.ThreadLocalRandom;
-import java.util.Random;
-import kotlin.jvm.internal.j;
+import g7.u7;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a extends bd.a {
-    @Override // bd.a
-    public final Random a() {
-        ThreadLocalRandom current = ThreadLocalRandom.current();
-        j.d(current, "current(...)");
-        return current;
+public abstract class a implements Iterable {
+    public final char a;
+    public final char b;
+    public final int c = 1;
+
+    public a(char c10, char c11) {
+        this.a = c10;
+        this.b = (char) u7.a(c10, c11, 1);
+    }
+
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        return new b(this.a, this.b, this.c);
     }
 }

@@ -1,15 +1,17 @@
 package g7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes.dex */
-public final class d6 {
-    public final Long a;
-    public final k6 b;
-    public final Boolean c;
+import android.content.SharedPreferences;
+import org.telegram.messenger.MessagesController;
+import org.telegram.ui.Components.t30;
 
-    public /* synthetic */ d6(a5.n nVar) {
-        this.a = (Long) nVar.b;
-        this.b = (k6) nVar.c;
-        this.c = (Boolean) nVar.d;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public abstract class d6 {
+    public static void a() {
+        SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+        for (t30 t30Var : t30.values()) {
+            edit.remove(t30Var.a);
+        }
+        edit.apply();
     }
 }

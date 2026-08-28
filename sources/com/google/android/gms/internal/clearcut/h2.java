@@ -8,9 +8,9 @@ public final class h2 extends ContentObserver {
     public final /* synthetic */ int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h2(Handler handler, int i10) {
+    public /* synthetic */ h2(Handler handler, int i9) {
         super(handler);
-        this.a = i10;
+        this.a = i9;
     }
 
     @Override // android.database.ContentObserver

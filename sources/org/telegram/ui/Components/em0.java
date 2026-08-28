@@ -1,79 +1,32 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.view.View;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class em0 extends f2.q {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ ArrayList g;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ int i;
-    public final /* synthetic */ ArrayList j;
-    public final /* synthetic */ jm0 k;
+public final class em0 implements View.OnClickListener {
+    public final /* synthetic */ fm0 a;
 
-    public em0(jm0 jm0Var, int i10, int i11, int i12, int i13, int i14, ArrayList arrayList, int i15, int i16, ArrayList arrayList2) {
-        this.k = jm0Var;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-        this.f = i14;
-        this.g = arrayList;
-        this.h = i15;
-        this.i = i16;
-        this.j = arrayList2;
+    public em0(fm0 fm0Var) {
+        this.a = fm0Var;
     }
 
-    @Override // f2.q
-    public final boolean a(int i10, int i11) {
-        return b(i10, i11);
-    }
-
-    @Override // f2.q
-    public final boolean b(int i10, int i11) {
-        MessageObject messageObject;
-        jm0 jm0Var = this.k;
-        if (i10 >= 0 && i11 >= 0) {
-            if (i10 == this.c && i11 == jm0Var.s) {
-                return true;
-            }
-            if (i10 == this.d && i11 == jm0Var.x) {
-                return true;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        gm0 gm0Var = this.a.c;
+        for (int i9 = 0; i9 < gm0Var.e.size(); i9++) {
+            MessageObject messageObject = (MessageObject) gm0Var.e.get(i9);
+            if (gm0Var.D) {
+                AccountInstance.getInstance(UserConfig.selectedAccount).getFileLoader().cancelLoadFile(messageObject.getDocument());
+            } else {
+                AccountInstance.getInstance(UserConfig.selectedAccount).getFileLoader().loadFile(messageObject.getDocument(), messageObject, 0, 0);
+                DownloadController.getInstance(gm0Var.d).updateFilesLoadingPriority();
             }
         }
-        MessageObject messageObject2 = null;
-        int i12 = this.e;
-        if (i10 < i12 || i10 >= this.f) {
-            int i13 = this.h;
-            messageObject = (i10 < i13 || i10 >= this.i) ? null : (MessageObject) this.j.get(i10 - i13);
-        } else {
-            messageObject = (MessageObject) this.g.get(i10 - i12);
-        }
-        int i14 = jm0Var.v;
-        if (i11 < i14 || i11 >= jm0Var.w) {
-            int i15 = jm0Var.y;
-            if (i11 >= i15 && i11 < jm0Var.A) {
-                messageObject2 = (MessageObject) jm0Var.f.get(i11 - i15);
-            }
-        } else {
-            messageObject2 = (MessageObject) jm0Var.e.get(i11 - i14);
-        }
-        return (messageObject2 == null || messageObject == null || messageObject2.getDocument() == null || messageObject.getDocument() == null || messageObject2.getDocument().id != messageObject.getDocument().id) ? false : true;
-    }
-
-    @Override // f2.q
-    public final int d() {
-        return this.k.r;
-    }
-
-    @Override // f2.q
-    public final int e() {
-        return this.b;
+        gm0Var.d(true);
     }
 }

@@ -1,6 +1,7 @@
 package r1;
 
 import android.util.Log;
+import j3.r0;
 import java.io.ByteArrayInputStream;
 import java.io.DataInput;
 import java.io.DataInputStream;
@@ -9,7 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class b extends InputStream implements DataInput {
     public static final ByteOrder e = ByteOrder.LITTLE_ENDIAN;
@@ -29,24 +30,24 @@ public class b extends InputStream implements DataInput {
         ByteOrder byteOrder = ByteOrder.BIG_ENDIAN;
     }
 
-    public final void a(int i10) {
-        int i11 = 0;
-        while (i11 < i10) {
-            int i12 = i10 - i11;
+    public final void a(int i9) {
+        int i10 = 0;
+        while (i10 < i9) {
+            int i11 = i9 - i10;
             DataInputStream dataInputStream = this.a;
-            int skip = (int) dataInputStream.skip(i12);
+            int skip = (int) dataInputStream.skip(i11);
             if (skip <= 0) {
                 if (this.d == null) {
                     this.d = new byte[8192];
                 }
-                skip = dataInputStream.read(this.d, 0, Math.min(8192, i12));
+                skip = dataInputStream.read(this.d, 0, Math.min(8192, i11));
                 if (skip == -1) {
-                    throw new EOFException(i0.a.l(i10, "Reached EOF while skipping ", " bytes."));
+                    throw new EOFException(r0.m(i9, "Reached EOF while skipping ", " bytes."));
                 }
             }
-            i11 += skip;
+            i10 += skip;
         }
-        this.c += i11;
+        this.c += i10;
     }
 
     @Override // java.io.InputStream
@@ -55,7 +56,7 @@ public class b extends InputStream implements DataInput {
     }
 
     @Override // java.io.InputStream
-    public final void mark(int i10) {
+    public final void mark(int i9) {
         throw new UnsupportedOperationException("Mark is currently unsupported");
     }
 
@@ -98,9 +99,9 @@ public class b extends InputStream implements DataInput {
     }
 
     @Override // java.io.DataInput
-    public final void readFully(byte[] bArr, int i10, int i11) {
-        this.c += i11;
-        this.a.readFully(bArr, i10, i11);
+    public final void readFully(byte[] bArr, int i9, int i10) {
+        this.c += i10;
+        this.a.readFully(bArr, i9, i10);
     }
 
     @Override // java.io.DataInput
@@ -217,7 +218,7 @@ public class b extends InputStream implements DataInput {
     }
 
     @Override // java.io.DataInput
-    public final int skipBytes(int i10) {
+    public final int skipBytes(int i9) {
         throw new UnsupportedOperationException("skipBytes is currently unsupported");
     }
 
@@ -227,7 +228,7 @@ public class b extends InputStream implements DataInput {
         ByteOrder byteOrder = ByteOrder.BIG_ENDIAN;
     }
 
-    public b(int i10, InputStream inputStream) {
+    public b(int i9, InputStream inputStream) {
         ByteOrder byteOrder = ByteOrder.BIG_ENDIAN;
         this.b = byteOrder;
         DataInputStream dataInputStream = new DataInputStream(inputStream);
@@ -238,8 +239,8 @@ public class b extends InputStream implements DataInput {
     }
 
     @Override // java.io.InputStream
-    public final int read(byte[] bArr, int i10, int i11) {
-        int read = this.a.read(bArr, i10, i11);
+    public final int read(byte[] bArr, int i9, int i10) {
+        int read = this.a.read(bArr, i9, i10);
         this.c += read;
         return read;
     }

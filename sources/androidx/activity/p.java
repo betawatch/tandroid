@@ -1,58 +1,118 @@
 package androidx.activity;
 
+import android.util.Log;
 import androidx.fragment.app.a0;
+import androidx.fragment.app.i0;
+import androidx.fragment.app.j0;
+import androidx.fragment.app.t0;
+import androidx.fragment.app.u0;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class p extends kotlin.jvm.internal.k implements ad.a {
+public final class p extends kotlin.jvm.internal.j implements zc.l {
     public final /* synthetic */ int b;
-    public final /* synthetic */ w c;
+    public final /* synthetic */ x c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p(w wVar, int i10) {
-        super(0);
-        this.b = i10;
-        this.c = wVar;
+    public /* synthetic */ p(x xVar, int i9) {
+        super(1);
+        this.b = i9;
+        this.c = xVar;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v2 */
-    /* JADX WARN: Type inference failed for: r3v3 */
-    /* JADX WARN: Type inference failed for: r3v4, types: [java.lang.Object] */
-    @Override // ad.a
-    public final Object invoke() {
-        a0 a0Var;
+    @Override // zc.l
+    public final Object invoke(Object obj) {
+        Object obj2;
+        Object obj3;
         switch (this.b) {
             case 0:
-                this.c.b();
-                break;
-            case 1:
-                w wVar = this.c;
-                a0 a0Var2 = wVar.c;
+                kotlin.jvm.internal.i.e((b) obj, "backEvent");
+                x xVar = this.c;
+                pc.e eVar = xVar.b;
+                eVar.getClass();
+                ListIterator listIterator = eVar.listIterator(eVar.c);
+                while (true) {
+                    if (listIterator.hasPrevious()) {
+                        obj2 = listIterator.previous();
+                        if (((a0) obj2).a) {
+                        }
+                    } else {
+                        obj2 = null;
+                    }
+                }
+                a0 a0Var = (a0) obj2;
+                xVar.c = a0Var;
+                if (a0Var != null) {
+                    j0 j0Var = a0Var.d;
+                    if (j0.K(3)) {
+                        Log.d("FragmentManager", "handleOnBackStarted. PREDICTIVE_BACK = true fragment manager " + j0Var);
+                    }
+                    j0Var.x();
+                    j0Var.y(new i0(j0Var), false);
+                }
+                return oc.i.a;
+            default:
+                b backEvent = (b) obj;
+                kotlin.jvm.internal.i.e(backEvent, "backEvent");
+                x xVar2 = this.c;
+                a0 a0Var2 = xVar2.c;
                 if (a0Var2 == null) {
-                    qc.e eVar = wVar.b;
-                    ListIterator listIterator = eVar.listIterator(eVar.size());
+                    pc.e eVar2 = xVar2.b;
+                    eVar2.getClass();
+                    ListIterator listIterator2 = eVar2.listIterator(eVar2.c);
                     while (true) {
-                        if (listIterator.hasPrevious()) {
-                            a0Var = listIterator.previous();
-                            if (((a0) a0Var).a) {
+                        if (listIterator2.hasPrevious()) {
+                            obj3 = listIterator2.previous();
+                            if (((a0) obj3).a) {
                             }
                         } else {
-                            a0Var = 0;
+                            obj3 = null;
                         }
                     }
-                    a0Var2 = a0Var;
+                    a0Var2 = (a0) obj3;
                 }
-                wVar.c = null;
                 if (a0Var2 != null) {
-                    a0Var2.a();
+                    j0 j0Var2 = a0Var2.d;
+                    if (j0.K(2)) {
+                        Log.v("FragmentManager", "handleOnBackProgressed. PREDICTIVE_BACK = true fragment manager " + j0Var2);
+                    }
+                    if (j0Var2.h != null) {
+                        Iterator it = j0Var2.f(0, 1, new ArrayList(Collections.singletonList(j0Var2.h))).iterator();
+                        while (it.hasNext()) {
+                            androidx.fragment.app.l lVar = (androidx.fragment.app.l) it.next();
+                            lVar.getClass();
+                            if (j0.K(2)) {
+                                Log.v("FragmentManager", "SpecialEffectsController: Processing Progress " + backEvent.c);
+                            }
+                            ArrayList arrayList = lVar.c;
+                            ArrayList arrayList2 = new ArrayList();
+                            int size = arrayList.size();
+                            int i9 = 0;
+                            while (i9 < size) {
+                                Object obj4 = arrayList.get(i9);
+                                i9++;
+                                ((u0) obj4).getClass();
+                                pc.m.e(arrayList2, null);
+                            }
+                            List m10 = pc.g.m(pc.g.p(arrayList2));
+                            int size2 = m10.size();
+                            for (int i10 = 0; i10 < size2; i10++) {
+                                ((t0) m10.get(i10)).b(backEvent, lVar.a);
+                            }
+                        }
+                        Iterator it2 = j0Var2.n.iterator();
+                        if (it2.hasNext()) {
+                            it2.next().getClass();
+                            throw new ClassCastException();
+                        }
+                    }
                 }
-                break;
-            default:
-                this.c.b();
-                break;
+                return oc.i.a;
         }
-        return pc.i.a;
     }
 }

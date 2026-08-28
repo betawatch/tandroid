@@ -1,51 +1,95 @@
 package lb;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b {
-    public static final b a;
-    public static final b b;
-    public static final b c;
-    public static final b d;
-    public static final b e;
-    public static final b f;
-    public static final b h;
-    public static final /* synthetic */ b[] n;
+public final class b implements Cloneable {
+    public int a;
+    public int b;
+    public int c;
+    public int[] d;
 
-    static {
-        b bVar = new b("ERROR_CORRECTION", 0);
-        a = bVar;
-        b bVar2 = new b("CHARACTER_SET", 1);
-        b = bVar2;
-        b bVar3 = new b("DATA_MATRIX_SHAPE", 2);
-        b bVar4 = new b("DATA_MATRIX_COMPACT", 3);
-        b bVar5 = new b("MIN_SIZE", 4);
-        b bVar6 = new b("MAX_SIZE", 5);
-        b bVar7 = new b("MARGIN", 6);
-        c = bVar7;
-        b bVar8 = new b("PDF417_COMPACT", 7);
-        b bVar9 = new b("PDF417_COMPACTION", 8);
-        b bVar10 = new b("PDF417_DIMENSIONS", 9);
-        b bVar11 = new b("PDF417_AUTO_ECI", 10);
-        b bVar12 = new b("AZTEC_LAYERS", 11);
-        b bVar13 = new b("QR_VERSION", 12);
-        d = bVar13;
-        b bVar14 = new b("QR_MASK_PATTERN", 13);
-        e = bVar14;
-        b bVar15 = new b("QR_COMPACT", 14);
-        f = bVar15;
-        b bVar16 = new b("GS1_FORMAT", 15);
-        h = bVar16;
-        n = new b[]{bVar, bVar2, bVar3, bVar4, bVar5, bVar6, bVar7, bVar8, bVar9, bVar10, bVar11, bVar12, bVar13, bVar14, bVar15, bVar16, new b("FORCE_CODE_SET", 16), new b("FORCE_C40", 17), new b("CODE128_COMPACT", 18)};
+    public b(int i9, int i10) {
+        if (i9 < 1 || i10 < 1) {
+            throw new IllegalArgumentException("Both dimensions must be greater than 0");
+        }
+        this.a = i9;
+        this.b = i10;
+        int i11 = (i9 + 31) / 32;
+        this.c = i11;
+        this.d = new int[i11 * i10];
     }
 
-    public static b valueOf(String str) {
-        return (b) Enum.valueOf(b.class, str);
+    public final void a(int i9, int i10) {
+        int i11 = (i9 / 32) + (i10 * this.c);
+        int[] iArr = this.d;
+        iArr[i11] = (1 << (i9 & 31)) ^ iArr[i11];
     }
 
-    public static b[] values() {
-        return (b[]) n.clone();
+    public final boolean b(int i9, int i10) {
+        return ((this.d[(i9 / 32) + (i10 * this.c)] >>> (i9 & 31)) & 1) != 0;
+    }
+
+    public final void c(int i9, int i10, int i11, int i12) {
+        if (i10 < 0 || i9 < 0) {
+            throw new IllegalArgumentException("Left and top must be nonnegative");
+        }
+        if (i12 < 1 || i11 < 1) {
+            throw new IllegalArgumentException("Height and width must be at least 1");
+        }
+        int i13 = i11 + i9;
+        int i14 = i12 + i10;
+        if (i14 > this.b || i13 > this.a) {
+            throw new IllegalArgumentException("The region must fit inside the matrix");
+        }
+        while (i10 < i14) {
+            int i15 = this.c * i10;
+            for (int i16 = i9; i16 < i13; i16++) {
+                int[] iArr = this.d;
+                int i17 = (i16 / 32) + i15;
+                iArr[i17] = iArr[i17] | (1 << (i16 & 31));
+            }
+            i10++;
+        }
+    }
+
+    public final Object clone() {
+        int i9 = this.a;
+        int i10 = this.b;
+        int i11 = this.c;
+        int[] iArr = (int[]) this.d.clone();
+        b bVar = new b();
+        bVar.a = i9;
+        bVar.b = i10;
+        bVar.c = i11;
+        bVar.d = iArr;
+        return bVar;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof b)) {
+            return false;
+        }
+        b bVar = (b) obj;
+        return this.a == bVar.a && this.b == bVar.b && this.c == bVar.c && Arrays.equals(this.d, bVar.d);
+    }
+
+    public final int hashCode() {
+        int i9 = this.a;
+        return Arrays.hashCode(this.d) + (((((((i9 * 31) + i9) * 31) + this.b) * 31) + this.c) * 31);
+    }
+
+    public final String toString() {
+        int i9 = this.b;
+        int i10 = this.a;
+        StringBuilder sb2 = new StringBuilder((i10 + 1) * i9);
+        for (int i11 = 0; i11 < i9; i11++) {
+            for (int i12 = 0; i12 < i10; i12++) {
+                sb2.append(b(i12, i11) ? "X " : "  ");
+            }
+            sb2.append("\n");
+        }
+        return sb2.toString();
     }
 }

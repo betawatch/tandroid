@@ -8,7 +8,7 @@ import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class a extends BiometricPrompt.AuthenticationCallback {
     public final /* synthetic */ d a;
@@ -18,8 +18,8 @@ public final class a extends BiometricPrompt.AuthenticationCallback {
     }
 
     @Override // android.hardware.biometrics.BiometricPrompt.AuthenticationCallback
-    public void onAuthenticationError(int i10, CharSequence charSequence) {
-        this.a.a(i10, charSequence);
+    public void onAuthenticationError(int i9, CharSequence charSequence) {
+        this.a.a(i9, charSequence);
     }
 
     @Override // android.hardware.biometrics.BiometricPrompt.AuthenticationCallback
@@ -49,28 +49,28 @@ public final class a extends BiometricPrompt.AuthenticationCallback {
                 if (f10 != null) {
                     uVar = new u(f10);
                 } else {
-                    Mac e9 = b0.e(cryptoObject);
-                    if (e9 != null) {
-                        uVar = new u(e9);
+                    Mac e10 = b0.e(cryptoObject);
+                    if (e10 != null) {
+                        uVar = new u(e10);
                     } else if (Build.VERSION.SDK_INT >= 30 && (b10 = c0.b(cryptoObject)) != null) {
                         uVar = new u(b10);
                     }
                 }
             }
         }
-        int i10 = Build.VERSION.SDK_INT;
-        int i11 = -1;
-        if (i10 >= 30) {
+        int i9 = Build.VERSION.SDK_INT;
+        int i10 = -1;
+        if (i9 >= 30) {
             if (authenticationResult != null) {
-                i11 = c.a(authenticationResult);
+                i10 = c.a(authenticationResult);
             }
-        } else if (i10 != 29) {
-            i11 = 2;
+        } else if (i9 != 29) {
+            i10 = 2;
         }
-        this.a.b(new t(uVar, i11));
+        this.a.b(new t(uVar, i10));
     }
 
     @Override // android.hardware.biometrics.BiometricPrompt.AuthenticationCallback
-    public void onAuthenticationHelp(int i10, CharSequence charSequence) {
+    public void onAuthenticationHelp(int i9, CharSequence charSequence) {
     }
 }

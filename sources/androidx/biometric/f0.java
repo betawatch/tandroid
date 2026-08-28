@@ -16,17 +16,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.google.android.gms.internal.play_billing.r1;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class f0 extends androidx.fragment.app.p {
     public int A0;
     public ImageView B0;
     public TextView C0;
     public final Handler w0 = new Handler(Looper.getMainLooper());
-    public final a8.b x0 = new a8.b(this, 3);
+    public final androidx.activity.i x0 = new androidx.activity.i(this, 1);
     public y y0;
     public int z0;
 
@@ -47,13 +46,13 @@ public class f0 extends androidx.fragment.app.p {
 
     @Override // androidx.fragment.app.p
     public final Dialog O() {
-        n2.v vVar = new n2.v(K());
-        u5.k kVar = this.y0.f;
+        n2.w wVar = new n2.w(K());
+        t5.l lVar = this.y0.f;
         CharSequence charSequence = null;
-        CharSequence charSequence2 = kVar != null ? (CharSequence) kVar.b : null;
-        g.d dVar = (g.d) vVar.c;
-        dVar.d = charSequence2;
-        View inflate = LayoutInflater.from(dVar.a).inflate(R.layout.fingerprint_dialog_layout, (ViewGroup) null);
+        CharSequence charSequence2 = lVar != null ? (CharSequence) lVar.b : null;
+        g.c cVar = (g.c) wVar.c;
+        cVar.d = charSequence2;
+        View inflate = LayoutInflater.from(cVar.a).inflate(R.layout.fingerprint_dialog_layout, (ViewGroup) null);
         TextView textView = (TextView) inflate.findViewById(R.id.fingerprint_subtitle);
         if (textView != null) {
             this.y0.getClass();
@@ -66,8 +65,8 @@ public class f0 extends androidx.fragment.app.p {
         }
         TextView textView2 = (TextView) inflate.findViewById(R.id.fingerprint_description);
         if (textView2 != null) {
-            u5.k kVar2 = this.y0.f;
-            CharSequence charSequence3 = kVar2 != null ? (CharSequence) kVar2.c : null;
+            t5.l lVar2 = this.y0.f;
+            CharSequence charSequence3 = lVar2 != null ? (CharSequence) lVar2.c : null;
             if (TextUtils.isEmpty(charSequence3)) {
                 textView2.setVisibility(8);
             } else {
@@ -77,7 +76,7 @@ public class f0 extends androidx.fragment.app.p {
         }
         this.B0 = (ImageView) inflate.findViewById(R.id.fingerprint_icon);
         this.C0 = (TextView) inflate.findViewById(R.id.fingerprint_error);
-        if (r1.a(this.y0.c())) {
+        if (f7.m.a(this.y0.c())) {
             charSequence = q(R.string.confirm_device_credential_password);
         } else {
             y yVar = this.y0;
@@ -85,22 +84,22 @@ public class f0 extends androidx.fragment.app.p {
             if (str != null) {
                 charSequence = str;
             } else {
-                u5.k kVar3 = yVar.f;
-                if (kVar3 != null && (charSequence = (CharSequence) kVar3.d) == null) {
+                t5.l lVar3 = yVar.f;
+                if (lVar3 != null && (charSequence = (CharSequence) lVar3.d) == null) {
                     charSequence = "";
                 }
             }
         }
         x xVar = new x(this);
-        dVar.f = charSequence;
-        dVar.g = xVar;
-        dVar.k = inflate;
-        g.g d = vVar.d();
+        cVar.f = charSequence;
+        cVar.g = xVar;
+        cVar.k = inflate;
+        g.f d = wVar.d();
         d.setCanceledOnTouchOutside(false);
         return d;
     }
 
-    public final int P(int i10) {
+    public final int P(int i9) {
         Context n10 = n();
         androidx.fragment.app.v k10 = k();
         if (n10 == null || k10 == null) {
@@ -108,8 +107,8 @@ public class f0 extends androidx.fragment.app.p {
             return 0;
         }
         TypedValue typedValue = new TypedValue();
-        n10.getTheme().resolveAttribute(i10, typedValue, true);
-        TypedArray obtainStyledAttributes = k10.obtainStyledAttributes(typedValue.data, new int[]{i10});
+        n10.getTheme().resolveAttribute(i9, typedValue, true);
+        TypedArray obtainStyledAttributes = k10.obtainStyledAttributes(typedValue.data, new int[]{i9});
         int color = obtainStyledAttributes.getColor(0, 0);
         obtainStyledAttributes.recycle();
         return color;
@@ -129,17 +128,18 @@ public class f0 extends androidx.fragment.app.p {
         super.z(bundle);
         androidx.fragment.app.v k10 = k();
         if (k10 != null) {
-            y yVar = (y) new a5.n(k10).l(y.class);
+            y yVar = (y) new a5.m(k10).n(y.class);
             this.y0 = yVar;
             if (yVar.z == null) {
                 yVar.z = new androidx.lifecycle.z();
             }
-            yVar.z.d(this, new ae.b(this, 1));
+            int i9 = 2;
+            yVar.z.d(this, new fa.c(this, i9));
             y yVar2 = this.y0;
             if (yVar2.A == null) {
                 yVar2.A = new androidx.lifecycle.z();
             }
-            yVar2.A.d(this, new ga.c(this, 2));
+            yVar2.A.d(this, new k5.i(this, i9));
         }
         if (Build.VERSION.SDK_INT >= 26) {
             this.z0 = P(e0.a());

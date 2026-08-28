@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class cw0 extends org.telegram.ui.Components.zk0 {
+public final class cw0 extends org.telegram.ui.Components.wk0 {
     public final Paint T2;
     public final Path U2;
     public final /* synthetic */ fw0 V2;
@@ -24,11 +24,11 @@ public final class cw0 extends org.telegram.ui.Components.zk0 {
         this.V2 = fw0Var;
         Paint paint = new Paint(1);
         this.T2 = paint;
-        paint.setColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.h5, false));
+        paint.setColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.h5, false));
         this.U2 = new Path();
     }
 
-    @Override // org.telegram.ui.Components.zk0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.wk0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Path path = this.U2;
         path.rewind();
@@ -42,7 +42,7 @@ public final class cw0 extends org.telegram.ui.Components.zk0 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.zk0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.wk0, android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (this.V2.n.m0 >= 1.0f) {
             return false;
@@ -50,7 +50,7 @@ public final class cw0 extends org.telegram.ui.Components.zk0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.zk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.wk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (this.V2.n.m0 >= 1.0f) {
             return false;
@@ -58,23 +58,23 @@ public final class cw0 extends org.telegram.ui.Components.zk0 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.zk0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
+    @Override // org.telegram.ui.Components.wk0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onSizeChanged(int i9, int i10, int i11, int i12) {
+        super.onSizeChanged(i9, i10, i11, i12);
         PremiumPreviewFragment premiumPreviewFragment = this.V2.n;
+        int i13 = 0;
         int i14 = 0;
-        int i15 = 0;
         while (true) {
             ArrayList arrayList = premiumPreviewFragment.d;
-            if (i14 >= arrayList.size()) {
-                premiumPreviewFragment.K = i15;
+            if (i13 >= arrayList.size()) {
+                premiumPreviewFragment.K = i14;
                 return;
             }
-            premiumPreviewFragment.I.a((hw0) arrayList.get(i14), false);
-            premiumPreviewFragment.I.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
-            ((hw0) arrayList.get(i14)).h = i15;
-            i15 += premiumPreviewFragment.I.getMeasuredHeight();
-            i14++;
+            premiumPreviewFragment.I.a((hw0) arrayList.get(i13), false);
+            premiumPreviewFragment.I.measure(View.MeasureSpec.makeMeasureSpec(i9, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_31));
+            ((hw0) arrayList.get(i13)).h = i14;
+            i14 += premiumPreviewFragment.I.getMeasuredHeight();
+            i13++;
         }
     }
 }

@@ -10,13 +10,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class ProxyRotationController implements NotificationCenter.NotificationCenterDelegate {
     public static final int DEFAULT_TIMEOUT_INDEX = 1;
     private static final ProxyRotationController INSTANCE = new ProxyRotationController();
     public static final List<Integer> ROTATION_TIMEOUTS = Arrays.asList(5, 10, 15, 30, 60);
-    private Runnable checkProxyAndSwitchRunnable = new rg(this, 4);
+    private Runnable checkProxyAndSwitchRunnable = new ng(this, 4);
     private boolean isCurrentlyChecking;
 
     public static void init() {
@@ -24,8 +24,8 @@ public class ProxyRotationController implements NotificationCenter.NotificationC
     }
 
     private void initInternal() {
-        for (int i10 = 0; i10 < 4; i10++) {
-            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.didUpdateConnectionState);
+        for (int i9 = 0; i9 < 4; i9++) {
+            NotificationCenter.getInstance(i9).addObserver(this, NotificationCenter.didUpdateConnectionState);
         }
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.proxyCheckDone);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.proxySettingsChanged);
@@ -47,19 +47,19 @@ public class ProxyRotationController implements NotificationCenter.NotificationC
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$new$1(SharedConfig.ProxyInfo proxyInfo, long j10) {
-        AndroidUtilities.runOnUIThread(new nh(proxyInfo, j10, 0));
+        AndroidUtilities.runOnUIThread(new jh(proxyInfo, j10, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2() {
         this.isCurrentlyChecking = true;
-        int i10 = UserConfig.selectedAccount;
+        int i9 = UserConfig.selectedAccount;
         boolean z10 = false;
-        for (int i11 = 0; i11 < SharedConfig.proxyList.size(); i11++) {
-            SharedConfig.ProxyInfo proxyInfo = SharedConfig.proxyList.get(i11);
+        for (int i10 = 0; i10 < SharedConfig.proxyList.size(); i10++) {
+            SharedConfig.ProxyInfo proxyInfo = SharedConfig.proxyList.get(i10);
             if (!proxyInfo.checking && SystemClock.elapsedRealtime() - proxyInfo.availableCheckTime >= 120000) {
                 proxyInfo.checking = true;
-                proxyInfo.proxyCheckPingId = ConnectionsManager.getInstance(i10).checkProxy(proxyInfo.address, proxyInfo.port, proxyInfo.username, proxyInfo.password, proxyInfo.secret, new d(proxyInfo, 11));
+                proxyInfo.proxyCheckPingId = ConnectionsManager.getInstance(i9).checkProxy(proxyInfo.address, proxyInfo.port, proxyInfo.username, proxyInfo.password, proxyInfo.secret, new d(proxyInfo, 11));
                 z10 = true;
             }
         }
@@ -81,10 +81,10 @@ public class ProxyRotationController implements NotificationCenter.NotificationC
             ArrayList arrayList = new ArrayList(SharedConfig.proxyList);
             Collections.sort(arrayList, new q(26));
             int size = arrayList.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
+            int i9 = 0;
+            while (i9 < size) {
+                Object obj = arrayList.get(i9);
+                i9++;
                 SharedConfig.ProxyInfo proxyInfo = (SharedConfig.ProxyInfo) obj;
                 if (proxyInfo != SharedConfig.currentProxy && !proxyInfo.checking && proxyInfo.available) {
                     SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
@@ -110,21 +110,21 @@ public class ProxyRotationController implements NotificationCenter.NotificationC
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.proxyCheckDone) {
+    public void didReceivedNotification(int i9, int i10, Object... objArr) {
+        if (i9 == NotificationCenter.proxyCheckDone) {
             if (SharedConfig.isProxyEnabled() && SharedConfig.proxyRotationEnabled && SharedConfig.proxyList.size() > 1 && this.isCurrentlyChecking) {
                 switchToAvailable();
                 return;
             }
             return;
         }
-        if (i10 == NotificationCenter.proxySettingsChanged) {
+        if (i9 == NotificationCenter.proxySettingsChanged) {
             AndroidUtilities.cancelRunOnUIThread(this.checkProxyAndSwitchRunnable);
             return;
         }
-        if (i10 == NotificationCenter.didUpdateConnectionState && i11 == UserConfig.selectedAccount) {
+        if (i9 == NotificationCenter.didUpdateConnectionState && i10 == UserConfig.selectedAccount) {
             if ((SharedConfig.isProxyEnabled() || SharedConfig.proxyRotationEnabled) && SharedConfig.proxyList.size() > 1) {
-                if (ConnectionsManager.getInstance(i11).getConnectionState() != 4) {
+                if (ConnectionsManager.getInstance(i10).getConnectionState() != 4) {
                     AndroidUtilities.cancelRunOnUIThread(this.checkProxyAndSwitchRunnable);
                 } else {
                     if (this.isCurrentlyChecking) {

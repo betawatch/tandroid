@@ -1,138 +1,85 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import android.app.Dialog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class wf1 implements TextWatcher {
+public final /* synthetic */ class wf1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zf1 b;
+    public final /* synthetic */ ag1 b;
+    public final /* synthetic */ TLRPC.TL_error c;
 
-    public /* synthetic */ wf1(zf1 zf1Var, int i10) {
-        this.a = i10;
-        this.b = zf1Var;
+    public /* synthetic */ wf1(ag1 ag1Var, TLRPC.TL_error tL_error, int i9) {
+        this.a = i9;
+        this.b = ag1Var;
+        this.c = tL_error;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        org.telegram.ui.Components.oi0 oi0Var;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i9 = this.a;
+        TLRPC.TL_error tL_error = this.c;
+        ag1 ag1Var = this.b;
+        switch (i9) {
             case 0:
-                this.b.getClass();
+                ag1Var.v0();
+                if (tL_error != null) {
+                    if (!tL_error.text.startsWith("FLOOD_WAIT")) {
+                        ag1Var.F0(LocaleController.getString(R.string.TwoStepVerificationTitle), tL_error.text);
+                        break;
+                    } else {
+                        int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
+                        ag1Var.F0(LocaleController.getString(R.string.TwoStepVerificationTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
+                        break;
+                    }
+                } else {
+                    ag1Var.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ag1Var.getParentActivity());
+                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new rf1(ag1Var, 3));
+                    String string = LocaleController.getString(R.string.PasswordReset);
+                    org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+                    c2Var.P = string;
+                    c2Var.N = LocaleController.getString(R.string.TwoStepVerificationTitle);
+                    Dialog showDialog = ag1Var.showDialog(c2Var);
+                    if (showDialog != null) {
+                        showDialog.setCanceledOnTouchOutside(false);
+                        showDialog.setCancelable(false);
+                        break;
+                    }
+                }
                 break;
             case 1:
-                zf1 zf1Var = this.b;
-                if (!zf1Var.I) {
-                    int i10 = zf1Var.K;
-                    if (i10 != 0) {
-                        if (i10 != 1) {
-                            if (i10 == 8 && editable.length() > 0) {
-                                zf1Var.H0(true);
-                                break;
-                            }
+                ag1Var.v0();
+                if (tL_error != null) {
+                    if (!tL_error.text.startsWith("CODE_INVALID")) {
+                        if (!tL_error.text.startsWith("FLOOD_WAIT")) {
+                            ag1Var.F0(LocaleController.getString(R.string.AppName), tL_error.text);
+                            break;
                         } else {
-                            try {
-                                zf1Var.b0[6].N((int) ((Math.min(1.0f, zf1Var.n.getLayout().getLineWidth(0) / zf1Var.n.getWidth()) * 142.0f) + 18.0f));
-                                zf1Var.a.d();
-                                break;
-                            } catch (Exception e9) {
-                                FileLog.e(e9);
-                                return;
-                            }
+                            int intValue2 = Utilities.parseInt((CharSequence) tL_error.text).intValue();
+                            ag1Var.F0(LocaleController.getString(R.string.AppName), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue2 < 60 ? LocaleController.formatPluralString("Seconds", intValue2, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue2 / 60, new Object[0])));
+                            break;
                         }
                     } else {
-                        org.telegram.ui.Components.oi0 animatedDrawable = zf1Var.a.getAnimatedDrawable();
-                        if (zf1Var.n.length() <= 0) {
-                            if (animatedDrawable != zf1Var.b0[3] || zf1Var.n.getTransformationMethod() != null) {
-                                org.telegram.ui.Components.oi0[] oi0VarArr = zf1Var.b0;
-                                if (animatedDrawable != oi0VarArr[5]) {
-                                    oi0VarArr[2].N(-1);
-                                    org.telegram.ui.Components.oi0 oi0Var2 = zf1Var.b0[2];
-                                    if (animatedDrawable != oi0Var2) {
-                                        zf1Var.a.setAnimation(oi0Var2);
-                                        zf1Var.b0[2].L(49, false, false);
-                                    }
-                                    zf1Var.a.d();
-                                    break;
-                                }
-                            }
-                            zf1Var.a.setAnimation(zf1Var.b0[4]);
-                            zf1Var.b0[4].Q(0.0f, false);
-                            zf1Var.a.d();
-                            break;
-                        } else if (zf1Var.n.getTransformationMethod() != null) {
-                            org.telegram.ui.Components.oi0[] oi0VarArr2 = zf1Var.b0;
-                            if (animatedDrawable != oi0VarArr2[3]) {
-                                org.telegram.ui.Components.oi0 oi0Var3 = oi0VarArr2[2];
-                                if (animatedDrawable == oi0Var3) {
-                                    if (oi0Var3.X < 49) {
-                                        oi0Var3.N(49);
-                                        break;
-                                    }
-                                } else {
-                                    zf1Var.a.setAnimation(oi0Var3);
-                                    zf1Var.b0[2].N(49);
-                                    zf1Var.b0[2].Q(0.0f, false);
-                                    zf1Var.a.d();
-                                    break;
-                                }
-                            }
-                        } else {
-                            org.telegram.ui.Components.oi0[] oi0VarArr3 = zf1Var.b0;
-                            if (animatedDrawable != oi0VarArr3[3] && animatedDrawable != (oi0Var = oi0VarArr3[5])) {
-                                zf1Var.a.setAnimation(oi0Var);
-                                zf1Var.b0[5].Q(0.0f, false);
-                                zf1Var.a.d();
-                                break;
-                            }
-                        }
+                        ag1Var.x0();
+                        break;
                     }
+                } else if (ag1Var.getParentActivity() != null) {
+                    ag1Var.t0(new sf1(ag1Var, 5));
+                    break;
                 }
+                break;
+            case 2:
+                ag1.d0(ag1Var, tL_error);
                 break;
             default:
-                zf1 zf1Var2 = this.b;
-                if (zf1Var2.B) {
-                    if (zf1Var2.A.getVisibility() != 0 && !TextUtils.isEmpty(editable)) {
-                        AndroidUtilities.updateViewVisibilityAnimated(zf1Var2.A, true, 0.1f, true);
-                        break;
-                    } else if (zf1Var2.A.getVisibility() != 8 && TextUtils.isEmpty(editable)) {
-                        AndroidUtilities.updateViewVisibilityAnimated(zf1Var2.A, false, 0.1f, true);
-                        break;
-                    }
-                }
+                ag1.Y(ag1Var, tL_error);
                 break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void f(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

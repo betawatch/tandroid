@@ -1,54 +1,32 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.widget.TextView;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class db0 extends org.telegram.ui.Cells.g3 {
-    public boolean x;
-    public final /* synthetic */ fb0 y;
+public final /* synthetic */ class db0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kb0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public db0(fb0 fb0Var, Context context, String str, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, str, false, false, -1, c6Var);
-        this.y = fb0Var;
+    public /* synthetic */ db0(kb0 kb0Var, int i9) {
+        this.a = i9;
+        this.b = kb0Var;
     }
 
-    @Override // org.telegram.ui.Cells.g3
-    public final void b(Editable editable) {
-        int i10;
-        if (this.x) {
-            return;
-        }
-        boolean isEmpty = TextUtils.isEmpty(editable);
-        fb0 fb0Var = this.y;
-        if (isEmpty) {
-            fb0Var.s.setText("");
-            return;
-        }
-        try {
-            long parseLong = Long.parseLong(editable.toString());
-            if (parseLong > fb0Var.getMessagesController().starsSubscriptionAmountMax) {
-                this.x = true;
-                parseLong = fb0Var.getMessagesController().starsSubscriptionAmountMax;
-                setText(Long.toString(parseLong));
-                this.x = false;
-            }
-            TextView textView = fb0Var.s;
-            int i11 = fb0Var.getConnectionsManager().isTestBackend() ? R.string.RequireMonthlyFeePriceTest5Minutes : R.string.RequireMonthlyFeePrice;
-            BillingController billingController = BillingController.getInstance();
-            i10 = ((org.telegram.ui.ActionBar.n2) fb0Var).currentAccount;
-            textView.setText(LocaleController.formatString(i11, billingController.formatCurrency((long) ((parseLong / 1000.0d) * MessagesController.getInstance(i10).starsUsdWithdrawRate1000), "USD")));
-        } catch (Exception e9) {
-            FileLog.e(e9);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                kb0 kb0Var = this.b;
+                if (kb0Var.h >= 0) {
+                    ConnectionsManager.getInstance(kb0Var.b).cancelRequest(kb0Var.h, true);
+                    kb0Var.h = -1;
+                    break;
+                }
+                break;
+            default:
+                this.b.a();
+                break;
         }
     }
 }

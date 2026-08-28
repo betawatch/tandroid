@@ -1,87 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.content.SharedPreferences;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import android.text.Editable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SendMessagesHelper;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class y30 {
-    public static final y30 d;
-    public static final y30 e;
-    public static final y30 f;
-    public static final y30 h;
-    public static final y30 n;
-    public static final y30 r;
-    public static final y30 s;
-    public static final y30 v;
-    public static final /* synthetic */ y30[] w;
-    public final String a;
-    public final int b;
-    public final float c;
+public final class y30 implements org.telegram.ui.yp0 {
+    public boolean a;
+    public final /* synthetic */ HashMap b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ e40 d;
 
-    static {
-        y30 y30Var = new y30("RoundHint2", 0, "needShowRoundHint2", 3, 0.2f);
-        d = y30Var;
-        y30 y30Var2 = new y30("RoundHintChannel2", 1, "needShowRoundHintChannel2", 3, 0.2f);
-        e = y30Var2;
-        y30 y30Var3 = new y30("ChannelSuggestHint", 2, "channelsuggesthint", 3, 0.2f);
-        f = y30Var3;
-        y30 y30Var4 = new y30("ChannelGiftHint", 3, "channelgifthint", 3, 0.2f);
-        h = y30Var4;
-        y30 y30Var5 = new y30("GroupEmojiPackHintShown", 4, "groupEmojiPackShownHint", 1, 1.0f);
-        n = y30Var5;
-        y30 y30Var6 = new y30("AccountSwitchHint", 5, "accountswitchhint", 3, 1.0f);
-        r = y30Var6;
-        y30 y30Var7 = new y30("GiftMessageHint", 6, "giftMessaheHint", 3, 1.0f);
-        s = y30Var7;
-        y30 y30Var8 = new y30();
-        v = y30Var8;
-        w = new y30[]{y30Var, y30Var2, y30Var3, y30Var4, y30Var5, y30Var6, y30Var7, y30Var8};
+    public y30(e40 e40Var, HashMap hashMap, ArrayList arrayList) {
+        this.d = e40Var;
+        this.b = hashMap;
+        this.c = arrayList;
     }
 
-    public y30() {
-        this.a = "hints_controller_" + this;
-        this.b = 3;
-        this.c = 1.0f;
+    @Override // org.telegram.ui.yp0
+    public final boolean e() {
+        return this.d.b.e();
     }
 
-    public static y30 valueOf(String str) {
-        return (y30) Enum.valueOf(y30.class, str);
-    }
-
-    public static y30[] values() {
-        return (y30[]) w.clone();
-    }
-
-    public final void a() {
-        MessagesController.getGlobalMainSettings().edit().putInt(this.a, this.b).apply();
-    }
-
-    public final void b() {
-        SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-        String str = this.a;
-        MessagesController.getGlobalMainSettings().edit().putInt(str, globalMainSettings.getInt(str, 0) + 1).apply();
-    }
-
-    public final boolean c() {
-        if (MessagesController.getGlobalMainSettings().getInt(this.a, 0) < this.b) {
-            float f10 = this.c;
-            if (f10 >= 1.0f) {
-                return true;
-            }
-            if (f10 > 0.0f && Utilities.fastRandom.nextFloat() < f10) {
-                return true;
-            }
+    @Override // org.telegram.ui.yp0
+    public final void i(int i9, boolean z10, boolean z11) {
+        HashMap hashMap = this.b;
+        if (hashMap.isEmpty()) {
+            return;
         }
-        return false;
+        e40 e40Var = this.d;
+        if (e40Var.b == null || this.a || z10) {
+            return;
+        }
+        this.a = true;
+        ArrayList arrayList = new ArrayList();
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.c;
+            if (i10 >= arrayList2.size()) {
+                e40.b(e40Var, false, arrayList);
+                return;
+            }
+            Object obj = hashMap.get(arrayList2.get(i10));
+            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
+            arrayList.add(sendingMediaInfo);
+            if (obj instanceof MediaController.SearchImage) {
+                MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
+                String str = searchImage.imagePath;
+                if (str != null) {
+                    sendingMediaInfo.path = str;
+                } else {
+                    sendingMediaInfo.searchImage = searchImage;
+                }
+                sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
+                sendingMediaInfo.thumbPath = searchImage.thumbPath;
+                CharSequence charSequence = searchImage.caption;
+                sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
+                sendingMediaInfo.entities = searchImage.entities;
+                sendingMediaInfo.masks = searchImage.stickers;
+                sendingMediaInfo.ttl = searchImage.ttl;
+            }
+            i10++;
+        }
     }
 
-    public y30(String str, int i10, String str2, int i11, float f10) {
-        this.a = str2;
-        this.b = i11;
-        this.c = f10;
+    @Override // org.telegram.ui.yp0
+    public final void a() {
+    }
+
+    @Override // org.telegram.ui.yp0
+    public final void b(Editable editable) {
+    }
+
+    @Override // org.telegram.ui.yp0
+    public final /* synthetic */ void h() {
     }
 }

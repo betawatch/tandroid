@@ -1,27 +1,27 @@
 package v2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class f implements r9.d {
+public final class f implements q9.d {
     public static final f a = new f();
-    public static final r9.c b = r9.c.c("requestTimeMs");
-    public static final r9.c c = r9.c.c("requestUptimeMs");
-    public static final r9.c d = r9.c.c("clientInfo");
-    public static final r9.c e = r9.c.c("logSource");
-    public static final r9.c f = r9.c.c("logSourceName");
-    public static final r9.c g = r9.c.c("logEvent");
-    public static final r9.c h = r9.c.c("qosTier");
+    public static final q9.c b = q9.c.c("requestTimeMs");
+    public static final q9.c c = q9.c.c("requestUptimeMs");
+    public static final q9.c d = q9.c.c("clientInfo");
+    public static final q9.c e = q9.c.c("logSource");
+    public static final q9.c f = q9.c.c("logSourceName");
+    public static final q9.c g = q9.c.c("logEvent");
+    public static final q9.c h = q9.c.c("qosTier");
 
-    @Override // r9.a
+    @Override // q9.a
     public final void a(Object obj, Object obj2) {
-        r9.e eVar = (r9.e) obj2;
+        q9.e eVar = (q9.e) obj2;
         l lVar = (l) ((s) obj);
-        eVar.c(b, lVar.a);
-        eVar.c(c, lVar.b);
-        eVar.a(d, lVar.c);
-        eVar.a(e, lVar.d);
-        eVar.a(f, lVar.e);
-        eVar.a(g, lVar.f);
-        eVar.a(h, w.a);
+        eVar.d(b, lVar.a);
+        eVar.d(c, lVar.b);
+        eVar.g(d, lVar.c);
+        eVar.g(e, lVar.d);
+        eVar.g(f, lVar.e);
+        eVar.g(g, lVar.f);
+        eVar.g(h, w.a);
     }
 }

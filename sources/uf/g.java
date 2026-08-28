@@ -1,63 +1,66 @@
 package uf;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.os.Bundle;
+import android.text.TextPaint;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import java.util.Locale;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.l6;
+import org.telegram.ui.Components.pn0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float[] d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ float f;
+public final class g extends FrameLayout {
+    public pn0 a;
+    public float b;
+    public float c;
+    public float d;
+    public l6 e;
+    public String f;
+    public TextPaint h;
+    public int n;
 
-    public /* synthetic */ g(n nVar, float f10, float[] fArr, float f11, float f12, int i10) {
-        this.a = i10;
-        this.b = nVar;
-        this.c = f10;
-        this.d = fArr;
-        this.e = f11;
-        this.f = f12;
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.a.invalidate();
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                n nVar = this.b;
-                nVar.getClass();
-                float z10 = com.google.android.recaptcha.internal.a.z(this.c, 1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
-                float[] fArr = this.d;
-                float f10 = fArr[0];
-                float f11 = z10 / f10;
-                fArr[0] = f10 * f11;
-                l.g(nVar.H, f11, this.e, this.f);
-                nVar.r(false);
-                break;
-            default:
-                n nVar2 = this.b;
-                nVar2.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float f12 = this.c * floatValue;
-                float[] fArr2 = this.d;
-                float f13 = fArr2[1];
-                float f14 = f12 - f13;
-                fArr2[1] = f13 + f14;
-                float f15 = this.e * floatValue;
-                float f16 = fArr2[2];
-                float f17 = f15 - f16;
-                fArr2[2] = f16 + f17;
-                l lVar = nVar2.H;
-                float f18 = fArr2[0];
-                l.f(lVar, f14 * f18, f17 * f18);
-                float f19 = ((this.f - 1.0f) * floatValue) + 1.0f;
-                float f20 = fArr2[0];
-                float f21 = f19 / f20;
-                fArr2[0] = f20 * f21;
-                l.g(nVar2.H, f21, 0.0f, 0.0f);
-                nVar2.r(false);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        TextPaint textPaint = this.h;
+        textPaint.setColor(f6.w0(null, f6.G6, false));
+        canvas.drawText(this.f, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), textPaint);
+        textPaint.setColor(f6.w0(null, f6.I6, false));
+        String format = String.format(Locale.ROOT, "%.2f", Float.valueOf(this.d));
+        canvas.drawText(format, (getMeasuredWidth() - AndroidUtilities.dp(8.0f)) - textPaint.measureText(format), this.a.getY() + AndroidUtilities.dp(23.0f), textPaint);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        this.a.getSeekBarAccessibilityDelegate().e(this, accessibilityNodeInfo);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(i9, i10);
+        int size = View.MeasureSpec.getSize(i9);
+        if (this.n != size) {
+            pn0 pn0Var = this.a;
+            float floatValue = ((Float) this.e.get(null)).floatValue();
+            float f10 = this.b;
+            pn0Var.setProgress((floatValue - f10) / (this.c - f10));
+            this.n = size;
         }
+    }
+
+    @Override // android.view.View
+    public final boolean performAccessibilityAction(int i9, Bundle bundle) {
+        return super.performAccessibilityAction(i9, bundle) || this.a.getSeekBarAccessibilityDelegate().g(this, i9, bundle);
     }
 }

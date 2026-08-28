@@ -5,11 +5,11 @@ import android.text.method.PasswordTransformationMethod;
 import android.text.method.TransformationMethod;
 import android.util.SparseArray;
 import android.widget.TextView;
-import h7.n6;
+import g7.q6;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class f extends n6 {
+public final class f extends q6 {
     public final TextView a;
     public final d b;
     public boolean c = true;
@@ -19,14 +19,14 @@ public final class f extends n6 {
         this.b = new d(textView);
     }
 
-    @Override // h7.n6
+    @Override // g7.q6
     public final InputFilter[] a(InputFilter[] inputFilterArr) {
         if (!this.c) {
             SparseArray sparseArray = new SparseArray(1);
-            for (int i10 = 0; i10 < inputFilterArr.length; i10++) {
-                InputFilter inputFilter = inputFilterArr[i10];
+            for (int i9 = 0; i9 < inputFilterArr.length; i9++) {
+                InputFilter inputFilter = inputFilterArr[i9];
                 if (inputFilter instanceof d) {
-                    sparseArray.put(i10, inputFilter);
+                    sparseArray.put(i9, inputFilter);
                 }
             }
             if (sparseArray.size() == 0) {
@@ -34,40 +34,40 @@ public final class f extends n6 {
             }
             int length = inputFilterArr.length;
             InputFilter[] inputFilterArr2 = new InputFilter[inputFilterArr.length - sparseArray.size()];
-            int i11 = 0;
-            for (int i12 = 0; i12 < length; i12++) {
-                if (sparseArray.indexOfKey(i12) < 0) {
-                    inputFilterArr2[i11] = inputFilterArr[i12];
-                    i11++;
+            int i10 = 0;
+            for (int i11 = 0; i11 < length; i11++) {
+                if (sparseArray.indexOfKey(i11) < 0) {
+                    inputFilterArr2[i10] = inputFilterArr[i11];
+                    i10++;
                 }
             }
             return inputFilterArr2;
         }
         int length2 = inputFilterArr.length;
-        int i13 = 0;
+        int i12 = 0;
         while (true) {
             d dVar = this.b;
-            if (i13 >= length2) {
+            if (i12 >= length2) {
                 InputFilter[] inputFilterArr3 = new InputFilter[inputFilterArr.length + 1];
                 System.arraycopy(inputFilterArr, 0, inputFilterArr3, 0, length2);
                 inputFilterArr3[length2] = dVar;
                 return inputFilterArr3;
             }
-            if (inputFilterArr[i13] == dVar) {
+            if (inputFilterArr[i12] == dVar) {
                 return inputFilterArr;
             }
-            i13++;
+            i12++;
         }
     }
 
-    @Override // h7.n6
+    @Override // g7.q6
     public final void b(boolean z10) {
         if (z10) {
             d();
         }
     }
 
-    @Override // h7.n6
+    @Override // g7.q6
     public final void c(boolean z10) {
         this.c = z10;
         d();

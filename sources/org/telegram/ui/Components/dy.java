@@ -1,120 +1,61 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.FileLoader;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class dy extends bz {
-    public final tu0 X;
-    public final /* synthetic */ yy Y;
+public final class dy extends FrameLayout {
+    public final ImageView a;
+    public final TextView b;
+    public final RadialProgressView c;
+    public boolean d;
+    public final /* synthetic */ wy e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dy(yy yyVar) {
-        super(100, true);
-        this.Y = yyVar;
-        this.X = new tu0();
-        this.O = new gh.u5(this, 6);
+    public dy(wy wyVar, Context context) {
+        super(context);
+        this.e = wyVar;
+        ImageView imageView = new ImageView(getContext());
+        this.a = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.gif_empty);
+        int i9 = org.telegram.ui.ActionBar.f6.Le;
+        imageView.setColorFilter(new PorterDuffColorFilter(wyVar.z(i9), PorterDuff.Mode.MULTIPLY));
+        addView(imageView, g7.e6.d(-2, -2.0f, 17, 0.0f, 8.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        textView.setText(LocaleController.getString(R.string.NoGIFsFound));
+        textView.setTextSize(1, 16.0f);
+        textView.setTextColor(wyVar.z(i9));
+        addView(textView, g7.e6.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 0.0f));
+        RadialProgressView radialProgressView = new RadialProgressView(context, wyVar.V1);
+        this.c = radialProgressView;
+        radialProgressView.setVisibility(8);
+        radialProgressView.setProgressColor(wyVar.z(org.telegram.ui.ActionBar.f6.h6));
+        addView(radialProgressView, g7.e6.e(-2, -2, 17));
     }
 
-    @Override // f2.x0
-    public final int A() {
-        yy yyVar = this.Y;
-        f2.q0 adapter = yyVar.d0.getAdapter();
-        cy cyVar = yyVar.f0;
-        if (adapter == cyVar && cyVar.x.isEmpty()) {
-            return 0;
+    public final void a(boolean z10) {
+        if (this.d != z10) {
+            this.d = z10;
+            this.a.setVisibility(z10 ? 8 : 0);
+            this.b.setVisibility(z10 ? 8 : 0);
+            this.c.setVisibility(z10 ? 0 : 8);
         }
-        return B() - 1;
     }
 
-    @Override // org.telegram.ui.Components.bz
-    public final tu0 D1(int i10) {
-        ArrayList<TLRPC.DocumentAttribute> arrayList;
-        TLRPC.Document document;
-        yy yyVar = this.Y;
-        cy cyVar = yyVar.f0;
-        f2.q0 adapter = yyVar.d0.getAdapter();
-        cy cyVar2 = yyVar.j0;
-        TLRPC.Document document2 = null;
-        r4 = null;
-        ArrayList<TLRPC.DocumentAttribute> arrayList2 = null;
-        if (adapter != cyVar2) {
-            if (cyVar.x.isEmpty()) {
-                arrayList = null;
-                return F1(document2, arrayList);
-            }
-            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) cyVar.x.get(i10);
-            document = botInlineResult.document;
-            if (document != null) {
-                arrayList2 = document.attributes;
-            } else {
-                TLRPC.WebDocument webDocument = botInlineResult.content;
-                if (webDocument != null) {
-                    arrayList2 = webDocument.attributes;
-                } else {
-                    TLRPC.WebDocument webDocument2 = botInlineResult.thumb;
-                    if (webDocument2 != null) {
-                        arrayList2 = webDocument2.attributes;
-                    }
-                }
-            }
-            arrayList = arrayList2;
-            document2 = document;
-            return F1(document2, arrayList);
-        }
-        int i11 = cyVar2.D;
-        if (i10 <= i11) {
-            if (i10 == i11) {
-                return null;
-            }
-            document2 = (TLRPC.Document) yyVar.e1.get(i10);
-            arrayList = document2.attributes;
-            return F1(document2, arrayList);
-        }
-        TLRPC.BotInlineResult botInlineResult2 = (TLRPC.BotInlineResult) cyVar2.x.get((i10 - i11) - 1);
-        document = botInlineResult2.document;
-        if (document != null) {
-            arrayList2 = document.attributes;
-        } else {
-            TLRPC.WebDocument webDocument3 = botInlineResult2.content;
-            if (webDocument3 != null) {
-                arrayList2 = webDocument3.attributes;
-            } else {
-                TLRPC.WebDocument webDocument4 = botInlineResult2.thumb;
-                if (webDocument4 != null) {
-                    arrayList2 = webDocument4.attributes;
-                }
-            }
-        }
-        arrayList = arrayList2;
-        document2 = document;
-        return F1(document2, arrayList);
-    }
-
-    public final tu0 F1(TLRPC.Document document, List list) {
-        TLRPC.PhotoSize closestPhotoSizeWithSize;
-        int i10;
-        int i11;
-        tu0 tu0Var = this.X;
-        tu0Var.b = 100.0f;
-        tu0Var.a = 100.0f;
-        if (document != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90)) != null && (i10 = closestPhotoSizeWithSize.w) != 0 && (i11 = closestPhotoSizeWithSize.h) != 0) {
-            tu0Var.a = i10;
-            tu0Var.b = i11;
-        }
-        if (list != null) {
-            for (int i12 = 0; i12 < list.size(); i12++) {
-                TLRPC.DocumentAttribute documentAttribute = (TLRPC.DocumentAttribute) list.get(i12);
-                if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                    tu0Var.a = documentAttribute.w;
-                    tu0Var.b = documentAttribute.h;
-                    break;
-                }
-            }
-        }
-        return tu0Var;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.ll.y(8.0f, r0 - r4.X0, 3) * 1.7f) : this.e.d0.getMeasuredHeight() - AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
     }
 }

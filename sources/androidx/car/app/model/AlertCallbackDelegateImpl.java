@@ -5,12 +5,12 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IAlertCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class AlertCallbackDelegateImpl implements e {
     private final IAlertCallback mCallback;
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class AlertCallbackStub extends IAlertCallback.Stub {
         private final d mCallback;
 
@@ -18,7 +18,7 @@ public class AlertCallbackDelegateImpl implements e {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onAlertCancelled$0(int i10) {
+        public /* synthetic */ Object lambda$onAlertCancelled$0(int i9) {
             throw null;
         }
 
@@ -28,13 +28,13 @@ public class AlertCallbackDelegateImpl implements e {
         }
 
         @Override // androidx.car.app.model.IAlertCallback
-        public void onAlertCancelled(int i10, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.i.b(iOnDoneCallback, "onCancel", new g(this, i10, 0));
+        public void onAlertCancelled(int i9, IOnDoneCallback iOnDoneCallback) {
+            androidx.car.app.utils.j.b(iOnDoneCallback, "onCancel", new g(this, i9, 0));
         }
 
         @Override // androidx.car.app.model.IAlertCallback
         public void onAlertDismissed(IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.i.b(iOnDoneCallback, "onDismiss", new f(this, 0));
+            androidx.car.app.utils.j.b(iOnDoneCallback, "onDismiss", new f(this, 0));
         }
     }
 
@@ -46,23 +46,23 @@ public class AlertCallbackDelegateImpl implements e {
         return new AlertCallbackDelegateImpl(dVar);
     }
 
-    public void sendCancel(int i10, androidx.car.app.j jVar) {
+    public void sendCancel(int i9, androidx.car.app.k kVar) {
         try {
             IAlertCallback iAlertCallback = this.mCallback;
             Objects.requireNonNull(iAlertCallback);
-            iAlertCallback.onAlertCancelled(i10, androidx.car.app.utils.i.a());
-        } catch (RemoteException e9) {
-            throw new RuntimeException(e9);
+            iAlertCallback.onAlertCancelled(i9, androidx.car.app.utils.j.a());
+        } catch (RemoteException e10) {
+            throw new RuntimeException(e10);
         }
     }
 
-    public void sendDismiss(androidx.car.app.j jVar) {
+    public void sendDismiss(androidx.car.app.k kVar) {
         try {
             IAlertCallback iAlertCallback = this.mCallback;
             Objects.requireNonNull(iAlertCallback);
-            iAlertCallback.onAlertDismissed(androidx.car.app.utils.i.a());
-        } catch (RemoteException e9) {
-            throw new RuntimeException(e9);
+            iAlertCallback.onAlertDismissed(androidx.car.app.utils.j.a());
+        } catch (RemoteException e10) {
+            throw new RuntimeException(e10);
         }
     }
 

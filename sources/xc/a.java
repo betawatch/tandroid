@@ -1,29 +1,14 @@
 package xc;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes.dex */
-public abstract class a {
-    public static final Integer a;
+import java.io.ByteArrayOutputStream;
+import kotlin.jvm.internal.i;
 
-    static {
-        Integer num;
-        Object obj;
-        Integer num2 = null;
-        try {
-            obj = Class.forName("android.os.Build$VERSION").getField("SDK_INT").get(null);
-        } catch (Throwable unused) {
-        }
-        if (obj instanceof Integer) {
-            num = (Integer) obj;
-            if (num != null && num.intValue() > 0) {
-                num2 = num;
-            }
-            a = num2;
-        }
-        num = null;
-        if (num != null) {
-            num2 = num;
-        }
-        a = num2;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public final class a extends ByteArrayOutputStream {
+    public final byte[] a() {
+        byte[] buf = ((ByteArrayOutputStream) this).buf;
+        i.d(buf, "buf");
+        return buf;
     }
 }

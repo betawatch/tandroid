@@ -1,195 +1,139 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.tl.TL_iv;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Shader;
+import android.os.SystemClock;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class a90 extends g7.r8 {
-    public int a;
-    public final TL_iv.PageBlock b;
-    public TL_iv.textConcat c = new TL_iv.textConcat();
+public final class a90 extends TextView {
+    public final Matrix a;
+    public LinearGradient b;
+    public int c;
+    public boolean d;
+    public boolean e;
+    public float f;
+    public long h;
+    public final np n;
+    public boolean r;
+    public int s;
 
-    public a90(TL_iv.PageBlock pageBlock) {
-        this.b = pageBlock;
+    public a90(Context context) {
+        super(context);
+        this.a = new Matrix();
+        this.n = new np(this, 25);
     }
 
-    public static TL_iv.RichText x(TL_iv.textConcat textconcat) {
-        return textconcat.texts.isEmpty() ? new TL_iv.textEmpty() : textconcat.texts.size() == 1 ? textconcat.texts.get(0) : textconcat;
-    }
-
-    @Override // g7.r8
-    public final void a(je.b bVar) {
-        int i10 = this.a;
-        if (i10 >= 64) {
-            return;
-        }
-        this.a = i10 + 1;
-        try {
-            v(bVar);
-        } finally {
-            this.a--;
-        }
-    }
-
-    @Override // g7.r8
-    public final void b(je.c cVar) {
-        int i10 = this.a;
-        if (i10 >= 64) {
-            return;
-        }
-        this.a = i10 + 1;
-        try {
-            v(cVar);
-        } finally {
-            this.a--;
-        }
-    }
-
-    @Override // g7.r8
-    public final void c(je.d dVar) {
-        TL_iv.textFixed textfixed = new TL_iv.textFixed();
-        textfixed.text = d90.j(dVar.h);
-        w(textfixed);
-    }
-
-    @Override // g7.r8
-    public final void d(je.e eVar) {
-        if (eVar instanceof ce.a) {
-            TL_iv.textStrike textstrike = new TL_iv.textStrike();
-            textstrike.text = y(eVar);
-            w(textstrike);
-        } else if (eVar instanceof ic.d) {
-            w(d90.c(((ic.d) eVar).g));
+    public final void a() {
+        float min = Math.min(AndroidUtilities.dp(10.0f) / this.c, 0.49f);
+        int currentTextColor = getCurrentTextColor();
+        int i9 = 1048575 & currentTextColor;
+        this.b = new LinearGradient(0.0f, 0.0f, this.c, 0.0f, new int[]{i9, currentTextColor, currentTextColor, i9}, new float[]{0.0f, min, 1.0f - min, 1.0f}, Shader.TileMode.CLAMP);
+        if (this.d) {
+            getPaint().setShader(this.b);
         } else {
-            v(eVar);
+            getPaint().setShader(null);
         }
+        this.b.setLocalMatrix(this.a);
+        invalidate();
     }
 
-    @Override // g7.r8
-    public final void e(je.g gVar) {
-        TL_iv.textItalic textitalic = new TL_iv.textItalic();
-        textitalic.text = y(gVar);
-        w(textitalic);
-    }
-
-    @Override // g7.r8
-    public final void i(je.k kVar) {
-        w(y(kVar));
-    }
-
-    @Override // g7.r8
-    public final void k(je.n nVar) {
-        if (!(nVar instanceof ic.a)) {
-            v(nVar);
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        boolean z10;
+        int measuredWidth = getMeasuredWidth();
+        int dp = AndroidUtilities.dp(40.0f);
+        float f10 = this.f;
+        float f11 = measuredWidth;
+        float a2 = f10 < f11 ? g7.n.a(f10 / AndroidUtilities.dp(10.0f), 0.0f, 1.0f) : 0.0f;
+        Matrix matrix = this.a;
+        matrix.reset();
+        float dp2 = AndroidUtilities.dp(10.0f);
+        float f12 = this.c;
+        matrix.postScale(e2.c.z(1.0f, a2, dp2 / f12, 1.0f), 1.0f, f12, 0.0f);
+        matrix.postScale(1.0f - (this.s / this.c), 1.0f, 0.0f, 0.0f);
+        matrix.postTranslate(this.f, 0.0f);
+        this.b.setLocalMatrix(matrix);
+        canvas.save();
+        canvas.translate(-this.f, 0.0f);
+        super.onDraw(canvas);
+        canvas.restore();
+        if (measuredWidth > 0) {
+            float f13 = this.f;
+            if (f13 > 0.0f && f13 + getWidth() > f11 && this.d && this.e) {
+                float f14 = -this.f;
+                float f15 = dp;
+                matrix.postTranslate(f14 - ((f14 + f11) + f15), 0.0f);
+                this.b.setLocalMatrix(matrix);
+                canvas.save();
+                canvas.translate((-this.f) + f11 + f15, 0.0f);
+                super.onDraw(canvas);
+                canvas.restore();
+            }
+        }
+        boolean z11 = ((double) this.f) < 1.0E-4d;
+        long uptimeMillis = SystemClock.uptimeMillis();
+        long j10 = this.h;
+        long min = (j10 == 0 || z11) ? 16L : Math.min(uptimeMillis - j10, 120L);
+        this.h = uptimeMillis;
+        boolean z12 = this.d;
+        np npVar = this.n;
+        if ((z12 && this.e) || !z11) {
+            float b10 = org.telegram.ui.Cells.j2.b(min, 1000.0f, AndroidUtilities.dp(60.0f), this.f);
+            this.f = b10;
+            if (b10 > measuredWidth + dp) {
+                AndroidUtilities.cancelRunOnUIThread(npVar);
+                this.r = false;
+                this.e = false;
+                this.f = 0.0f;
+            }
+            invalidate();
+        }
+        if (!this.d || this.e || (z10 = this.r) || z10) {
             return;
         }
-        if (!this.c.texts.isEmpty()) {
-            w(d90.j("\n"));
+        this.r = true;
+        AndroidUtilities.runOnUIThread(npVar, 1500L);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(0, 0), i10);
+        this.c = View.MeasureSpec.getSize(i9);
+        this.d = getMeasuredWidth() > this.c - this.s;
+        a();
+    }
+
+    public void setCustomPaddingRight(int i9) {
+        this.s = i9;
+        boolean z10 = getMeasuredWidth() > this.c - this.s;
+        this.d = z10;
+        if (z10) {
+            getPaint().setShader(this.b);
+        } else {
+            getPaint().setShader(null);
         }
-        w(d90.c(((ic.a) nVar).g));
-        w(d90.j("\n"));
+        invalidate();
     }
 
-    @Override // g7.r8
-    public final void l(je.o oVar) {
-        int i10 = this.a;
-        if (i10 >= 64) {
-            return;
-        }
-        this.a = i10 + 1;
-        try {
-            v(oVar);
-        } finally {
-            this.a--;
-        }
+    @Override // android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(charSequence, bufferType);
+        AndroidUtilities.cancelRunOnUIThread(this.n);
+        this.r = false;
+        this.e = false;
+        this.f = 0.0f;
     }
 
-    @Override // g7.r8
-    public final void m(je.q qVar) {
-        int i10 = this.a;
-        if (i10 >= 64) {
-            return;
-        }
-        this.a = i10 + 1;
-        try {
-            v(qVar);
-        } finally {
-            this.a--;
-        }
-    }
-
-    @Override // g7.r8
-    public final void n(je.r rVar) {
-        if (!this.c.texts.isEmpty()) {
-            w(d90.j("\n\n"));
-        }
-        v(rVar);
-    }
-
-    @Override // g7.r8
-    public final void o(je.s sVar) {
-        w(d90.j(sVar.g));
-    }
-
-    @Override // g7.r8
-    public final void q(je.d dVar) {
-        w(d90.j(dVar.h));
-    }
-
-    @Override // g7.r8
-    public final void r(je.g gVar) {
-        w(d90.j("\n"));
-    }
-
-    @Override // g7.r8
-    public final void s(je.k kVar) {
-        String str = kVar.h;
-        if (str == null) {
-            str = "";
-        }
-        String trim = str.trim();
-        if (trim.startsWith("mailto:")) {
-            TL_iv.RichText textemail = new TL_iv.textEmail();
-            textemail.text = y(kVar);
-            textemail.email = trim.substring(7);
-            w(textemail);
-            return;
-        }
-        if (trim.startsWith("tel:")) {
-            TL_iv.textPhone textphone = new TL_iv.textPhone();
-            textphone.text = y(kVar);
-            textphone.phone = trim.substring(4);
-            w(textphone);
-            return;
-        }
-        TL_iv.RichText texturl = new TL_iv.textUrl();
-        texturl.text = y(kVar);
-        texturl.url = trim;
-        w(texturl);
-    }
-
-    @Override // g7.r8
-    public final void t(je.g gVar) {
-        w(d90.j(this.b instanceof TL_iv.pageBlockBlockquote ? "\n" : " "));
-    }
-
-    @Override // g7.r8
-    public final void u(je.g gVar) {
-        TL_iv.textBold textbold = new TL_iv.textBold();
-        textbold.text = y(gVar);
-        w(textbold);
-    }
-
-    public final void w(TL_iv.RichText richText) {
-        this.c.texts.add(richText);
-    }
-
-    public final TL_iv.RichText y(je.p pVar) {
-        TL_iv.textConcat textconcat = this.c;
-        this.c = new TL_iv.textConcat();
-        v(pVar);
-        TL_iv.RichText x8 = x(this.c);
-        this.c = textconcat;
-        return x8;
+    @Override // android.widget.TextView
+    public void setTextColor(int i9) {
+        super.setTextColor(i9);
+        a();
     }
 }

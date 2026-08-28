@@ -2,11 +2,11 @@ package androidx.car.app.navigation;
 
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.navigation.INavigationManager;
-import androidx.car.app.utils.c;
-import androidx.car.app.utils.i;
+import androidx.car.app.utils.d;
+import androidx.car.app.utils.j;
 import androidx.lifecycle.o;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 class NavigationManager$1 extends INavigationManager.Stub {
     final /* synthetic */ b this$0;
@@ -23,9 +23,9 @@ class NavigationManager$1 extends INavigationManager.Stub {
 
     @Override // androidx.car.app.navigation.INavigationManager
     public void onStopNavigation(IOnDoneCallback iOnDoneCallback) {
-        i.c(this.val$lifecycle, iOnDoneCallback, "onStopNavigation", new c() { // from class: androidx.car.app.navigation.a
-            @Override // androidx.car.app.utils.c
-            public final Object b() {
+        j.c(this.val$lifecycle, iOnDoneCallback, "onStopNavigation", new d() { // from class: androidx.car.app.navigation.a
+            @Override // androidx.car.app.utils.d
+            public final Object a() {
                 Object lambda$onStopNavigation$0;
                 lambda$onStopNavigation$0 = NavigationManager$1.this.lambda$onStopNavigation$0();
                 return lambda$onStopNavigation$0;

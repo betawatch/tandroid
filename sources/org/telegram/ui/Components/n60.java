@@ -1,31 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class n60 extends AnimatorListenerAdapter {
+public final /* synthetic */ class n60 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ o60 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ n60(o60 o60Var, int i10) {
-        this.a = i10;
-        this.b = o60Var;
+    public /* synthetic */ n60(Object obj, int i9) {
+        this.a = i9;
+        this.b = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i9, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
         switch (this.a) {
             case 0:
-                o60 o60Var = this.b;
-                o60Var.e.Z = null;
-                o60Var.requestLayout();
+                x60 x60Var = (x60) this.b;
+                if (x60Var.D()) {
+                    x60Var.O();
+                    break;
+                }
                 break;
             default:
-                o60 o60Var2 = this.b;
-                o60Var2.e.Z = null;
-                o60Var2.a = false;
+                lw0 lw0Var = (lw0) this.b;
+                bg.t tVar = lw0Var.h;
+                if (tVar != null && tVar.getLayout() != null) {
+                    lw0Var.B = tVar.getLayout().getLineWidth(0);
+                    break;
+                }
                 break;
         }
     }

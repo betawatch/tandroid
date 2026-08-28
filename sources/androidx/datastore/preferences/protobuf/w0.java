@@ -1,6 +1,18 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public interface w0 {
+public abstract class w0 {
+    public static final v0 a;
+    public static final v0 b;
+
+    static {
+        v0 v0Var = null;
+        try {
+            v0Var = (v0) Class.forName("androidx.datastore.preferences.protobuf.NewInstanceSchemaFull").getDeclaredConstructor(null).newInstance(null);
+        } catch (Exception unused) {
+        }
+        a = v0Var;
+        b = new v0();
+    }
 }

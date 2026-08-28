@@ -1,70 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class qi extends we.d {
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Cells.s1 f;
-    public final /* synthetic */ rn g;
+public final class qi implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 b;
 
-    public /* synthetic */ qi(rn rnVar, int i10, org.telegram.ui.Cells.s1 s1Var, int i11) {
-        this.d = i11;
-        this.g = rnVar;
-        this.e = i10;
-        this.f = s1Var;
+    public /* synthetic */ qi(int i9, org.telegram.ui.ActionBar.o2 o2Var) {
+        this.a = i9;
+        this.b = o2Var;
     }
 
-    @Override // we.d
-    public final void c(boolean z10) {
-        switch (this.d) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new cg.w1(this, this.e, 19), 240L);
-                    break;
-                }
+                qn qnVar = (qn) this.b;
+                qnVar.ha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                qnVar.T0.invalidate();
                 break;
             case 1:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new cg.w1(this, this.e, 21), 240L);
+                dy dyVar = (dy) this.b;
+                dyVar.D0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = dyVar.fragmentView;
+                if (view != null) {
+                    view.invalidate();
                     break;
                 }
                 break;
             default:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new cg.w1(this, this.e, 22), 240L);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // we.d
-    public final void d() {
-        switch (this.d) {
-            case 0:
-                int i10 = this.e;
-                rn rnVar = this.g;
-                rnVar.sb = i10;
-                rnVar.tb = 6;
-                this.f.invalidate();
-                break;
-            case 1:
-                int i11 = this.e;
-                rn rnVar2 = this.g;
-                rnVar2.sb = i11;
-                rnVar2.tb = 5;
-                rnVar2.vb = null;
-                this.f.invalidate();
-                break;
-            default:
-                int i12 = this.e;
-                rn rnVar3 = this.g;
-                rnVar3.sb = i12;
-                rnVar3.tb = 7;
-                this.f.invalidate();
+                ((oc1) this.b).t0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

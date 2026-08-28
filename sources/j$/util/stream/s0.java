@@ -13,9 +13,9 @@ public final class s0 extends d5 {
     public final /* synthetic */ a c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ s0(a aVar, j5 j5Var, int i10) {
+    public /* synthetic */ s0(a aVar, j5 j5Var, int i9) {
         super(j5Var);
-        this.b = i10;
+        this.b = i9;
         this.c = aVar;
     }
 
@@ -32,34 +32,34 @@ public final class s0 extends d5 {
     }
 
     @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i10) {
+    public final void accept(int i9) {
         switch (this.b) {
             case 0:
-                this.a.accept((j5) ((IntFunction) ((q) this.c).t).apply(i10));
+                this.a.accept((j5) ((IntFunction) ((q) this.c).t).apply(i9));
                 return;
             case 1:
-                ((IntConsumer) ((t0) this.c).t).accept(i10);
-                this.a.accept(i10);
+                ((IntConsumer) ((t0) this.c).t).accept(i9);
+                this.a.accept(i9);
                 return;
             case 2:
                 ((s) this.c).getClass();
                 IntUnaryOperator intUnaryOperator = null;
-                intUnaryOperator.applyAsInt(i10);
+                intUnaryOperator.applyAsInt(i9);
                 throw null;
             case 3:
                 ((t) this.c).getClass();
                 IntToLongFunction intToLongFunction = null;
-                intToLongFunction.applyAsLong(i10);
+                intToLongFunction.applyAsLong(i9);
                 throw null;
             case 4:
                 ((r) this.c).getClass();
                 IntToDoubleFunction intToDoubleFunction = null;
-                intToDoubleFunction.applyAsDouble(i10);
+                intToDoubleFunction.applyAsDouble(i9);
                 throw null;
             default:
                 ((s) this.c).getClass();
                 IntPredicate intPredicate = null;
-                intPredicate.test(i10);
+                intPredicate.test(i9);
                 throw null;
         }
     }

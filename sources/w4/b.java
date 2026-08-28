@@ -1,6 +1,6 @@
 package w4;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b {
     public final int a;
@@ -15,17 +15,17 @@ public final class b {
     public final int j;
     public final int k;
 
-    public b(int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, int i20) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = i14;
-        this.f = i15;
-        this.g = i16;
-        this.h = i17;
-        this.i = i18;
-        this.j = i19;
-        this.k = i20;
+    public b(int i9, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19) {
+        this.a = i9;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
+        this.f = i14;
+        this.g = i15;
+        this.h = i16;
+        this.i = i17;
+        this.j = i18;
+        this.k = i19;
     }
 }

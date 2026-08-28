@@ -1,28 +1,34 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class se0 implements View.OnAttachStateChangeListener {
-    public boolean b;
-    public final /* synthetic */ te0 d;
-    public long a = System.currentTimeMillis();
-    public final re0 c = new re0(this, 0);
+public final /* synthetic */ class se0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ue0 b;
 
-    public se0(te0 te0Var) {
-        this.d = te0Var;
+    public /* synthetic */ se0(ue0 ue0Var, int i9) {
+        this.a = i9;
+        this.b = ue0Var;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        this.b = true;
-        view.post(this.c);
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        this.b = false;
-        view.removeCallbacks(this.c);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ue0 ue0Var = this.b;
+                org.telegram.ui.Components.pi0 pi0Var = ue0Var.h;
+                pi0Var.getAnimatedDrawable().L(0, false, false);
+                pi0Var.d();
+                EditTextBoldCursor editTextBoldCursor = ue0Var.b;
+                editTextBoldCursor.requestFocus();
+                AndroidUtilities.showKeyboard(editTextBoldCursor);
+                break;
+            default:
+                this.b.b.requestFocus();
+                break;
+        }
     }
 }

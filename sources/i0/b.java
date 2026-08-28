@@ -1,184 +1,64 @@
 package i0;
 
-import android.graphics.Color;
+import android.graphics.Insets;
+import com.google.firebase.messaging.q;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static final ThreadLocal a = new ThreadLocal();
+public final class b {
+    public static final b e = new b(0, 0, 0, 0);
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
 
-    public static int a(float[] fArr) {
-        int round;
-        int round2;
-        int i10 = 0;
-        float f10 = fArr[0];
-        float f11 = fArr[1];
-        float f12 = fArr[2];
-        float abs = (1.0f - Math.abs((f12 * 2.0f) - 1.0f)) * f11;
-        float f13 = f12 - (0.5f * abs);
-        float abs2 = (1.0f - Math.abs(((f10 / 60.0f) % 2.0f) - 1.0f)) * abs;
-        switch (((int) f10) / 60) {
-            case 0:
-                i10 = Math.round((abs + f13) * 255.0f);
-                round = Math.round((abs2 + f13) * 255.0f);
-                round2 = Math.round(f13 * 255.0f);
-                break;
-            case 1:
-                i10 = Math.round((abs2 + f13) * 255.0f);
-                round = Math.round((abs + f13) * 255.0f);
-                round2 = Math.round(f13 * 255.0f);
-                break;
-            case 2:
-                i10 = Math.round(f13 * 255.0f);
-                round = Math.round((abs + f13) * 255.0f);
-                round2 = Math.round((abs2 + f13) * 255.0f);
-                break;
-            case 3:
-                i10 = Math.round(f13 * 255.0f);
-                round = Math.round((abs2 + f13) * 255.0f);
-                round2 = Math.round((abs + f13) * 255.0f);
-                break;
-            case 4:
-                i10 = Math.round((abs2 + f13) * 255.0f);
-                round = Math.round(f13 * 255.0f);
-                round2 = Math.round((abs + f13) * 255.0f);
-                break;
-            case 5:
-            case 6:
-                i10 = Math.round((abs + f13) * 255.0f);
-                round = Math.round(f13 * 255.0f);
-                round2 = Math.round((abs2 + f13) * 255.0f);
-                break;
-            default:
-                round2 = 0;
-                round = 0;
-                break;
-        }
-        return Color.rgb(j(i10), j(round), j(round2));
+    public b(int i9, int i10, int i11, int i12) {
+        this.a = i9;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
     }
 
-    public static void b(float[] fArr, int i10, int i11, int i12) {
-        float A;
-        float abs;
-        float f10 = i10 / 255.0f;
-        float f11 = i11 / 255.0f;
-        float f12 = i12 / 255.0f;
-        float max = Math.max(f10, Math.max(f11, f12));
-        float min = Math.min(f10, Math.min(f11, f12));
-        float f13 = max - min;
-        float f14 = (max + min) / 2.0f;
-        if (max == min) {
-            A = 0.0f;
-            abs = 0.0f;
-        } else {
-            A = max == f10 ? ((f11 - f12) / f13) % 6.0f : max == f11 ? com.google.android.recaptcha.internal.a.A(f12, f10, f13, 2.0f) : com.google.android.recaptcha.internal.a.A(f10, f11, f13, 4.0f);
-            abs = f13 / (1.0f - Math.abs((2.0f * f14) - 1.0f));
-        }
-        float f15 = (A * 60.0f) % 360.0f;
-        if (f15 < 0.0f) {
-            f15 += 360.0f;
-        }
-        fArr[0] = f15 < 0.0f ? 0.0f : Math.min(f15, 360.0f);
-        fArr[1] = abs < 0.0f ? 0.0f : Math.min(abs, 1.0f);
-        fArr[2] = f14 >= 0.0f ? Math.min(f14, 1.0f) : 0.0f;
+    public static b a(b bVar, b bVar2) {
+        return b(Math.max(bVar.a, bVar2.a), Math.max(bVar.b, bVar2.b), Math.max(bVar.c, bVar2.c), Math.max(bVar.d, bVar2.d));
     }
 
-    public static int c(double d, double d10, double d11) {
-        double d12 = (((-0.4986d) * d11) + (((-1.5372d) * d10) + (3.2406d * d))) / 100.0d;
-        double d13 = ((0.0415d * d11) + ((1.8758d * d10) + ((-0.9689d) * d))) / 100.0d;
-        double d14 = ((1.057d * d11) + (((-0.204d) * d10) + (0.0557d * d))) / 100.0d;
-        return Color.rgb(j((int) Math.round((d12 > 0.0031308d ? (Math.pow(d12, 0.4166666666666667d) * 1.055d) - 0.055d : d12 * 12.92d) * 255.0d)), j((int) Math.round((d13 > 0.0031308d ? (Math.pow(d13, 0.4166666666666667d) * 1.055d) - 0.055d : d13 * 12.92d) * 255.0d)), j((int) Math.round((d14 > 0.0031308d ? (Math.pow(d14, 0.4166666666666667d) * 1.055d) - 0.055d : 12.92d * d14) * 255.0d)));
+    public static b b(int i9, int i10, int i11, int i12) {
+        return (i9 == 0 && i10 == 0 && i11 == 0 && i12 == 0) ? e : new b(i9, i10, i11, i12);
     }
 
-    public static int d(float f10, int i10, int i11) {
-        float f11 = 1.0f - f10;
-        return Color.argb((int) ((Color.alpha(i11) * f10) + (Color.alpha(i10) * f11)), (int) ((Color.red(i11) * f10) + (Color.red(i10) * f11)), (int) ((Color.green(i11) * f10) + (Color.green(i10) * f11)), (int) ((Color.blue(i11) * f10) + (Color.blue(i10) * f11)));
+    public static b c(Insets insets) {
+        int i9;
+        int i10;
+        int i11;
+        int i12;
+        i9 = insets.left;
+        i10 = insets.top;
+        i11 = insets.right;
+        i12 = insets.bottom;
+        return b(i9, i10, i11, i12);
     }
 
-    public static double e(int i10, int i11) {
-        if (Color.alpha(i11) != 255) {
-            throw new IllegalArgumentException("background can not be translucent: #" + Integer.toHexString(i11));
-        }
-        if (Color.alpha(i10) < 255) {
-            i10 = h(i10, i11);
-        }
-        double f10 = f(i10) + 0.05d;
-        double f11 = f(i11) + 0.05d;
-        return Math.max(f10, f11) / Math.min(f10, f11);
+    public final Insets d() {
+        return q.d(this.a, this.b, this.c, this.d);
     }
 
-    public static double f(int i10) {
-        ThreadLocal threadLocal = a;
-        double[] dArr = (double[]) threadLocal.get();
-        if (dArr == null) {
-            dArr = new double[3];
-            threadLocal.set(dArr);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        int red = Color.red(i10);
-        int green = Color.green(i10);
-        int blue = Color.blue(i10);
-        if (dArr.length != 3) {
-            throw new IllegalArgumentException("outXyz must have a length of 3.");
+        if (obj == null || b.class != obj.getClass()) {
+            return false;
         }
-        double d = red / 255.0d;
-        double pow = d < 0.04045d ? d / 12.92d : Math.pow((d + 0.055d) / 1.055d, 2.4d);
-        double d10 = green / 255.0d;
-        double pow2 = d10 < 0.04045d ? d10 / 12.92d : Math.pow((d10 + 0.055d) / 1.055d, 2.4d);
-        double d11 = blue / 255.0d;
-        double pow3 = d11 < 0.04045d ? d11 / 12.92d : Math.pow((d11 + 0.055d) / 1.055d, 2.4d);
-        dArr[0] = ((0.1805d * pow3) + (0.3576d * pow2) + (0.4124d * pow)) * 100.0d;
-        double d12 = ((0.0722d * pow3) + (0.7152d * pow2) + (0.2126d * pow)) * 100.0d;
-        dArr[1] = d12;
-        dArr[2] = ((pow3 * 0.9505d) + (pow2 * 0.1192d) + (pow * 0.0193d)) * 100.0d;
-        return d12 / 100.0d;
+        b bVar = (b) obj;
+        return this.d == bVar.d && this.a == bVar.a && this.c == bVar.c && this.b == bVar.b;
     }
 
-    public static int g(float f10, int i10, int i11) {
-        int i12 = 255;
-        if (Color.alpha(i11) != 255) {
-            throw new IllegalArgumentException("background can not be translucent: #" + Integer.toHexString(i11));
-        }
-        double d = f10;
-        if (e(k(i10, 255), i11) < d) {
-            return -1;
-        }
-        int i13 = 0;
-        for (int i14 = 0; i14 <= 10 && i12 - i13 > 1; i14++) {
-            int i15 = (i13 + i12) / 2;
-            if (e(k(i10, i15), i11) < d) {
-                i13 = i15;
-            } else {
-                i12 = i15;
-            }
-        }
-        return i12;
+    public final int hashCode() {
+        return (((((this.a * 31) + this.b) * 31) + this.c) * 31) + this.d;
     }
 
-    public static int h(int i10, int i11) {
-        int alpha = Color.alpha(i11);
-        int alpha2 = Color.alpha(i10);
-        int i12 = 255 - (((255 - alpha2) * (255 - alpha)) / 255);
-        return Color.argb(i12, i(Color.red(i10), alpha2, Color.red(i11), alpha, i12), i(Color.green(i10), alpha2, Color.green(i11), alpha, i12), i(Color.blue(i10), alpha2, Color.blue(i11), alpha, i12));
-    }
-
-    public static int i(int i10, int i11, int i12, int i13, int i14) {
-        if (i14 == 0) {
-            return 0;
-        }
-        return a.e(255, i11, i12 * i13, (i10 * 255) * i11) / (i14 * 255);
-    }
-
-    public static int j(int i10) {
-        if (i10 < 0) {
-            return 0;
-        }
-        return Math.min(i10, 255);
-    }
-
-    public static int k(int i10, int i11) {
-        if (i11 < 0 || i11 > 255) {
-            throw new IllegalArgumentException("alpha must be between 0 and 255.");
-        }
-        return (i10 & 16777215) | (i11 << 24);
+    public final String toString() {
+        return "Insets{left=" + this.a + ", top=" + this.b + ", right=" + this.c + ", bottom=" + this.d + '}';
     }
 }

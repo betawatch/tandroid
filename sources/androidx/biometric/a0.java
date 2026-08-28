@@ -3,15 +3,15 @@ package androidx.biometric;
 import android.security.keystore.KeyGenParameterSpec;
 import javax.crypto.KeyGenerator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class a0 {
     public static KeyGenParameterSpec a(KeyGenParameterSpec.Builder builder) {
         return builder.build();
     }
 
-    public static KeyGenParameterSpec.Builder b(String str, int i10) {
-        return new KeyGenParameterSpec.Builder(str, i10);
+    public static KeyGenParameterSpec.Builder b(String str, int i9) {
+        return new KeyGenParameterSpec.Builder(str, i9);
     }
 
     public static void c(KeyGenerator keyGenerator, KeyGenParameterSpec keyGenParameterSpec) {

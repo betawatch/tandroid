@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class f2 implements n2 {
     public final l0 a;
@@ -17,7 +17,7 @@ public final class f2 implements n2 {
     @Override // com.google.android.gms.internal.vision.n2
     public final boolean a(Object obj) {
         this.c.getClass();
-        a9.p.t(obj);
+        aa.d.v(obj);
         throw null;
     }
 
@@ -26,14 +26,14 @@ public final class f2 implements n2 {
         this.b.getClass();
         ((f1) obj).zzb.e = false;
         this.c.getClass();
-        a9.p.t(obj);
+        aa.d.v(obj);
         throw null;
     }
 
     @Override // com.google.android.gms.internal.vision.n2
     public final void c(Object obj, y1 y1Var) {
         this.c.getClass();
-        a9.p.t(obj);
+        aa.d.v(obj);
         throw null;
     }
 
@@ -49,12 +49,12 @@ public final class f2 implements n2 {
     }
 
     @Override // com.google.android.gms.internal.vision.n2
-    public final void f(Object obj, byte[] bArr, int i10, int i11, com.google.android.gms.internal.clearcut.m mVar) {
+    public final void f(Object obj, byte[] bArr, int i9, int i10, com.google.android.gms.internal.clearcut.m mVar) {
         f1 f1Var = (f1) obj;
         if (f1Var.zzb == q2.f) {
             f1Var.zzb = q2.b();
         }
-        throw a9.p.i(obj);
+        throw aa.d.j(obj);
     }
 
     @Override // com.google.android.gms.internal.vision.n2
@@ -72,17 +72,17 @@ public final class f2 implements n2 {
     public final int zzb(Object obj) {
         this.b.getClass();
         q2 q2Var = ((f1) obj).zzb;
-        int i10 = q2Var.d;
-        if (i10 != -1) {
-            return i10;
+        int i9 = q2Var.d;
+        if (i9 != -1) {
+            return i9;
         }
-        int i11 = 0;
-        for (int i12 = 0; i12 < q2Var.a; i12++) {
-            int i13 = q2Var.b[i12] >>> 3;
-            q0 q0Var = (q0) q2Var.c[i12];
-            i11 += r0.J(3, q0Var) + r0.S(2, i13) + (r0.T(8) << 1);
+        int i10 = 0;
+        for (int i11 = 0; i11 < q2Var.a; i11++) {
+            int i12 = q2Var.b[i11] >>> 3;
+            q0 q0Var = (q0) q2Var.c[i11];
+            i10 += r0.J(3, q0Var) + r0.S(2, i12) + (r0.T(8) << 1);
         }
-        q2Var.d = i11;
-        return i11;
+        q2Var.d = i10;
+        return i10;
     }
 }

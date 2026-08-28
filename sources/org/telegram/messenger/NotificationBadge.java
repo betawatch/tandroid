@@ -20,7 +20,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class NotificationBadge {
     private static final List<Class<? extends Badger>> BADGERS;
@@ -28,7 +28,7 @@ public class NotificationBadge {
     private static ComponentName componentName;
     private static boolean initied;
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class AdwHomeBadger implements Badger {
         public static final String CLASSNAME = "CNAME";
         public static final String COUNT = "COUNT";
@@ -41,11 +41,11 @@ public class NotificationBadge {
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
-        public void executeBadge(int i10) {
+        public void executeBadge(int i9) {
             Intent intent = new Intent(INTENT_UPDATE_COUNTER);
             intent.putExtra(PACKAGENAME, NotificationBadge.componentName.getPackageName());
             intent.putExtra(CLASSNAME, NotificationBadge.componentName.getClassName());
-            intent.putExtra(COUNT, i10);
+            intent.putExtra(COUNT, i9);
             if (NotificationBadge.canResolveBroadcast(intent)) {
                 AndroidUtilities.runOnUIThread(new k(intent, 1));
             }
@@ -57,7 +57,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class ApexHomeBadger implements Badger {
         private static final String CLASS = "class";
         private static final String COUNT = "count";
@@ -70,10 +70,10 @@ public class NotificationBadge {
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
-        public void executeBadge(int i10) {
+        public void executeBadge(int i9) {
             Intent intent = new Intent(INTENT_UPDATE_COUNTER);
             intent.putExtra(PACKAGENAME, NotificationBadge.componentName.getPackageName());
-            intent.putExtra("count", i10);
+            intent.putExtra("count", i9);
             intent.putExtra(CLASS, NotificationBadge.componentName.getClassName());
             if (NotificationBadge.canResolveBroadcast(intent)) {
                 AndroidUtilities.runOnUIThread(new k(intent, 2));
@@ -86,7 +86,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class AsusHomeBadger implements Badger {
         private static final String INTENT_ACTION = "android.intent.action.BADGE_COUNT_UPDATE";
         private static final String INTENT_EXTRA_ACTIVITY_NAME = "badge_count_class_name";
@@ -99,9 +99,9 @@ public class NotificationBadge {
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
-        public void executeBadge(int i10) {
+        public void executeBadge(int i9) {
             Intent intent = new Intent(INTENT_ACTION);
-            intent.putExtra(INTENT_EXTRA_BADGE_COUNT, i10);
+            intent.putExtra(INTENT_EXTRA_BADGE_COUNT, i9);
             intent.putExtra(INTENT_EXTRA_PACKAGENAME, NotificationBadge.componentName.getPackageName());
             intent.putExtra(INTENT_EXTRA_ACTIVITY_NAME, NotificationBadge.componentName.getClassName());
             intent.putExtra("badge_vip_count", 0);
@@ -116,14 +116,14 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface Badger {
-        void executeBadge(int i10);
+        void executeBadge(int i9);
 
         List<String> getSupportLaunchers();
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class DefaultBadger implements Badger {
         private static final String INTENT_ACTION = "android.intent.action.BADGE_COUNT_UPDATE";
         private static final String INTENT_EXTRA_ACTIVITY_NAME = "badge_count_class_name";
@@ -139,9 +139,9 @@ public class NotificationBadge {
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
-        public void executeBadge(int i10) {
+        public void executeBadge(int i9) {
             Intent intent = new Intent(INTENT_ACTION);
-            intent.putExtra(INTENT_EXTRA_BADGE_COUNT, i10);
+            intent.putExtra(INTENT_EXTRA_BADGE_COUNT, i9);
             intent.putExtra(INTENT_EXTRA_PACKAGENAME, NotificationBadge.componentName.getPackageName());
             intent.putExtra(INTENT_EXTRA_ACTIVITY_NAME, NotificationBadge.componentName.getClassName());
             AndroidUtilities.runOnUIThread(new k(intent, 4));
@@ -153,24 +153,24 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class HuaweiHomeBadger implements Badger {
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ void lambda$executeBadge$0(Bundle bundle) {
             try {
                 ApplicationLoader.applicationContext.getContentResolver().call(Uri.parse("content://com.huawei.android.launcher.settings/badge/"), "change_badge", (String) null, bundle);
-            } catch (Exception e9) {
-                FileLog.e(e9);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
-        public void executeBadge(int i10) {
+        public void executeBadge(int i9) {
             Bundle bundle = new Bundle();
             bundle.putString("package", ApplicationLoader.applicationContext.getPackageName());
             bundle.putString("class", NotificationBadge.componentName.getClassName());
-            bundle.putInt("badgenumber", i10);
-            AndroidUtilities.runOnUIThread(new rg(bundle, 1));
+            bundle.putInt("badgenumber", i9);
+            AndroidUtilities.runOnUIThread(new ng(bundle, 1));
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
@@ -179,7 +179,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class NewHtcHomeBadger implements Badger {
         public static final String COUNT = "count";
         public static final String EXTRA_COMPONENT = "com.htc.launcher.extra.COMPONENT";
@@ -195,15 +195,15 @@ public class NotificationBadge {
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
-        public void executeBadge(int i10) {
+        public void executeBadge(int i9) {
             Intent intent = new Intent(INTENT_SET_NOTIFICATION);
             intent.putExtra(EXTRA_COMPONENT, NotificationBadge.componentName.flattenToShortString());
-            intent.putExtra(EXTRA_COUNT, i10);
+            intent.putExtra(EXTRA_COUNT, i9);
             Intent intent2 = new Intent(INTENT_UPDATE_SHORTCUT);
             intent2.putExtra(PACKAGENAME, NotificationBadge.componentName.getPackageName());
-            intent2.putExtra(COUNT, i10);
+            intent2.putExtra(COUNT, i9);
             if (NotificationBadge.canResolveBroadcast(intent) || NotificationBadge.canResolveBroadcast(intent2)) {
-                AndroidUtilities.runOnUIThread(new cc(29, intent, intent2));
+                AndroidUtilities.runOnUIThread(new yb(29, intent, intent2));
             }
         }
 
@@ -213,17 +213,17 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class NovaHomeBadger implements Badger {
         private static final String CONTENT_URI = "content://com.teslacoilsw.notifier/unread_count";
         private static final String COUNT = "count";
         private static final String TAG = "tag";
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
-        public void executeBadge(int i10) {
+        public void executeBadge(int i9) {
             ContentValues contentValues = new ContentValues();
             contentValues.put(TAG, NotificationBadge.componentName.getPackageName() + "/" + NotificationBadge.componentName.getClassName());
-            contentValues.put("count", Integer.valueOf(i10));
+            contentValues.put("count", Integer.valueOf(i9));
             ApplicationLoader.applicationContext.getContentResolver().insert(Uri.parse(CONTENT_URI), contentValues);
         }
 
@@ -233,7 +233,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class OPPOHomeBader implements Badger {
         private static final String INTENT_ACTION = "com.oppo.unsettledevent";
         private static final String INTENT_EXTRA_BADGEUPGRADE_COUNT = "app_badge_count";
@@ -243,22 +243,22 @@ public class NotificationBadge {
         private static final String PROVIDER_CONTENT_URI = "content://com.android.badge/badge";
         private int mCurrentTotalCount = -1;
 
-        private void executeBadgeByContentProvider(int i10) {
+        private void executeBadgeByContentProvider(int i9) {
             try {
                 Bundle bundle = new Bundle();
-                bundle.putInt(INTENT_EXTRA_BADGEUPGRADE_COUNT, i10);
+                bundle.putInt(INTENT_EXTRA_BADGEUPGRADE_COUNT, i9);
                 ApplicationLoader.applicationContext.getContentResolver().call(Uri.parse(PROVIDER_CONTENT_URI), "setAppBadgeCount", (String) null, bundle);
             } catch (Throwable unused) {
             }
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
-        public void executeBadge(int i10) {
-            if (this.mCurrentTotalCount == i10) {
+        public void executeBadge(int i9) {
+            if (this.mCurrentTotalCount == i9) {
                 return;
             }
-            this.mCurrentTotalCount = i10;
-            executeBadgeByContentProvider(i10);
+            this.mCurrentTotalCount = i9;
+            executeBadgeByContentProvider(i9);
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
@@ -267,29 +267,29 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class SamsungHomeBadger implements Badger {
         private static final String[] CONTENT_PROJECTION = {"_id", "class"};
         private static final String CONTENT_URI = "content://com.sec.badge/apps?notify=true";
         private static DefaultBadger defaultBadger;
 
-        private ContentValues getContentValues(ComponentName componentName, int i10, boolean z10) {
+        private ContentValues getContentValues(ComponentName componentName, int i9, boolean z10) {
             ContentValues contentValues = new ContentValues();
             if (z10) {
                 contentValues.put("package", componentName.getPackageName());
                 contentValues.put("class", componentName.getClassName());
             }
-            contentValues.put("badgecount", Integer.valueOf(i10));
+            contentValues.put("badgecount", Integer.valueOf(i9));
             return contentValues;
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
-        public void executeBadge(int i10) {
+        public void executeBadge(int i9) {
             try {
                 if (defaultBadger == null) {
                     defaultBadger = new DefaultBadger();
                 }
-                defaultBadger.executeBadge(i10);
+                defaultBadger.executeBadge(i9);
             } catch (Exception unused) {
             }
             Uri parse = Uri.parse(CONTENT_URI);
@@ -301,13 +301,13 @@ public class NotificationBadge {
                     String className = NotificationBadge.componentName.getClassName();
                     boolean z10 = false;
                     while (cursor.moveToNext()) {
-                        contentResolver.update(parse, getContentValues(NotificationBadge.componentName, i10, false), "_id=?", new String[]{String.valueOf(cursor.getInt(0))});
+                        contentResolver.update(parse, getContentValues(NotificationBadge.componentName, i9, false), "_id=?", new String[]{String.valueOf(cursor.getInt(0))});
                         if (className.equals(cursor.getString(cursor.getColumnIndex("class")))) {
                             z10 = true;
                         }
                     }
                     if (!z10) {
-                        contentResolver.insert(parse, getContentValues(NotificationBadge.componentName, i10, true));
+                        contentResolver.insert(parse, getContentValues(NotificationBadge.componentName, i9, true));
                     }
                 }
                 NotificationBadge.close(cursor);
@@ -323,7 +323,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class SonyHomeBadger implements Badger {
         private static final String INTENT_ACTION = "com.sonyericsson.home.action.UPDATE_BADGE";
         private static final String INTENT_EXTRA_ACTIVITY_NAME = "com.sonyericsson.home.intent.extra.badge.ACTIVITY_NAME";
@@ -338,17 +338,17 @@ public class NotificationBadge {
         private static AsyncQueryHandler mQueryHandler;
         private final Uri BADGE_CONTENT_URI = Uri.parse(PROVIDER_CONTENT_URI);
 
-        private static void executeBadgeByBroadcast(int i10) {
+        private static void executeBadgeByBroadcast(int i9) {
             Intent intent = new Intent(INTENT_ACTION);
             intent.putExtra(INTENT_EXTRA_PACKAGE_NAME, NotificationBadge.componentName.getPackageName());
             intent.putExtra(INTENT_EXTRA_ACTIVITY_NAME, NotificationBadge.componentName.getClassName());
-            intent.putExtra(INTENT_EXTRA_MESSAGE, String.valueOf(i10));
-            intent.putExtra(INTENT_EXTRA_SHOW_MESSAGE, i10 > 0);
+            intent.putExtra(INTENT_EXTRA_MESSAGE, String.valueOf(i9));
+            intent.putExtra(INTENT_EXTRA_SHOW_MESSAGE, i9 > 0);
             AndroidUtilities.runOnUIThread(new k(intent, 5));
         }
 
-        private void executeBadgeByContentProvider(int i10) {
-            if (i10 < 0) {
+        private void executeBadgeByContentProvider(int i9) {
+            if (i9 < 0) {
                 return;
             }
             if (mQueryHandler == null) {
@@ -362,12 +362,12 @@ public class NotificationBadge {
                     }
                 };
             }
-            insertBadgeAsync(i10, NotificationBadge.componentName.getPackageName(), NotificationBadge.componentName.getClassName());
+            insertBadgeAsync(i9, NotificationBadge.componentName.getPackageName(), NotificationBadge.componentName.getClassName());
         }
 
-        private void insertBadgeAsync(int i10, String str, String str2) {
+        private void insertBadgeAsync(int i9, String str, String str2) {
             ContentValues contentValues = new ContentValues();
-            contentValues.put(PROVIDER_COLUMNS_BADGE_COUNT, Integer.valueOf(i10));
+            contentValues.put(PROVIDER_COLUMNS_BADGE_COUNT, Integer.valueOf(i9));
             contentValues.put(PROVIDER_COLUMNS_PACKAGE_NAME, str);
             contentValues.put(PROVIDER_COLUMNS_ACTIVITY_NAME, str2);
             mQueryHandler.startInsert(0, null, this.BADGE_CONTENT_URI, contentValues);
@@ -383,11 +383,11 @@ public class NotificationBadge {
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
-        public void executeBadge(int i10) {
+        public void executeBadge(int i9) {
             if (sonyBadgeContentProviderExists()) {
-                executeBadgeByContentProvider(i10);
+                executeBadgeByContentProvider(i9);
             } else {
-                executeBadgeByBroadcast(i10);
+                executeBadgeByBroadcast(i9);
             }
         }
 
@@ -397,15 +397,15 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class VivoHomeBadger implements Badger {
         @Override // org.telegram.messenger.NotificationBadge.Badger
-        public void executeBadge(int i10) {
+        public void executeBadge(int i9) {
             Intent intent = new Intent("launcher.action.CHANGE_APPLICATION_NOTIFICATION_NUM");
             intent.setPackage("com.vivo.launcher");
             intent.putExtra("packageName", ApplicationLoader.applicationContext.getPackageName());
             intent.putExtra("className", NotificationBadge.componentName.getClassName());
-            intent.putExtra("notificationNum", i10);
+            intent.putExtra("notificationNum", i9);
             ApplicationLoader.applicationContext.sendBroadcast(intent);
         }
 
@@ -415,23 +415,23 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class XiaomiHomeBadger implements Badger {
         public static final String EXTRA_UPDATE_APP_COMPONENT_NAME = "android.intent.extra.update_application_component_name";
         public static final String EXTRA_UPDATE_APP_MSG_TEXT = "android.intent.extra.update_application_message_text";
         public static final String INTENT_ACTION = "android.intent.action.APPLICATION_MESSAGE_UPDATE";
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
-        public void executeBadge(int i10) {
+        public void executeBadge(int i9) {
             try {
                 Object newInstance = Class.forName("android.app.MiuiNotification").newInstance();
                 Field declaredField = newInstance.getClass().getDeclaredField("messageCount");
                 declaredField.setAccessible(true);
-                declaredField.set(newInstance, String.valueOf(i10 == 0 ? "" : Integer.valueOf(i10)));
+                declaredField.set(newInstance, String.valueOf(i9 == 0 ? "" : Integer.valueOf(i9)));
             } catch (Throwable unused) {
                 final Intent intent = new Intent(INTENT_ACTION);
                 intent.putExtra(EXTRA_UPDATE_APP_COMPONENT_NAME, NotificationBadge.componentName.getPackageName() + "/" + NotificationBadge.componentName.getClassName());
-                intent.putExtra(EXTRA_UPDATE_APP_MSG_TEXT, String.valueOf(i10 != 0 ? Integer.valueOf(i10) : ""));
+                intent.putExtra(EXTRA_UPDATE_APP_MSG_TEXT, String.valueOf(i9 != 0 ? Integer.valueOf(i9) : ""));
                 if (NotificationBadge.canResolveBroadcast(intent)) {
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationBadge.XiaomiHomeBadger.1
                         @Override // java.lang.Runnable
@@ -449,7 +449,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class ZukHomeBadger implements Badger {
         private final Uri CONTENT_URI = Uri.parse("content://com.android.badge/badge");
 
@@ -457,14 +457,14 @@ public class NotificationBadge {
         public /* synthetic */ void lambda$executeBadge$0(Bundle bundle) {
             try {
                 ApplicationLoader.applicationContext.getContentResolver().call(this.CONTENT_URI, "setAppBadgeCount", (String) null, bundle);
-            } catch (Exception e9) {
-                FileLog.e(e9);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
-        public void executeBadge(int i10) {
-            AndroidUtilities.runOnUIThread(new sg(0, this, a9.p.g(i10, "app_badge_count")));
+        public void executeBadge(int i9) {
+            AndroidUtilities.runOnUIThread(new og(0, this, aa.d.h(i9, "app_badge_count")));
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
@@ -490,7 +490,7 @@ public class NotificationBadge {
         linkedList.add(VivoHomeBadger.class);
     }
 
-    public static boolean applyCount(int i10) {
+    public static boolean applyCount(int i9) {
         try {
             if (badger == null && !initied) {
                 initBadger();
@@ -500,7 +500,7 @@ public class NotificationBadge {
             if (badger2 == null) {
                 return false;
             }
-            badger2.executeBadge(i10);
+            badger2.executeBadge(i9);
             return true;
         } catch (Throwable unused) {
             return false;
@@ -564,8 +564,8 @@ public class NotificationBadge {
         }
         List<ResolveInfo> queryIntentActivities = context.getPackageManager().queryIntentActivities(intent, 65536);
         if (queryIntentActivities != null) {
-            for (int i10 = 0; i10 < queryIntentActivities.size(); i10++) {
-                String str2 = queryIntentActivities.get(i10).activityInfo.packageName;
+            for (int i9 = 0; i9 < queryIntentActivities.size(); i9++) {
+                String str2 = queryIntentActivities.get(i9).activityInfo.packageName;
                 Iterator<Class<? extends Badger>> it2 = BADGERS.iterator();
                 while (true) {
                     if (!it2.hasNext()) {

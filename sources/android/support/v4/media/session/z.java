@@ -10,14 +10,14 @@ import android.text.style.LineHeightSpan;
 import android.view.View;
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class z {
-    public static void a(g.y yVar, View view) {
+    public static void a(g.x xVar, View view) {
         if (Build.VERSION.SDK_INT >= 29) {
-            yVar.a(view.getUniqueDrawingId());
+            xVar.a(view.getUniqueDrawingId());
         } else {
-            yVar.b = true;
+            xVar.b = true;
         }
     }
 
@@ -37,8 +37,8 @@ public abstract /* synthetic */ class z {
         return new MediaSession(context, str, null);
     }
 
-    public static /* synthetic */ LineHeightSpan.Standard f(int i10) {
-        return new LineHeightSpan.Standard(i10);
+    public static /* synthetic */ LineHeightSpan.Standard f(int i9) {
+        return new LineHeightSpan.Standard(i9);
     }
 
     public static /* synthetic */ WindowInsets.Builder g() {

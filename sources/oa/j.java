@@ -1,138 +1,58 @@
 package oa;
 
-import j$.util.Objects;
-import java.util.AbstractSet;
-import java.util.Iterator;
-import java.util.Map;
+import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class j extends AbstractSet {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l b;
+public final class j implements la.v {
+    public static final i c;
+    public static final i d;
+    public final g5.b a;
+    public final ConcurrentHashMap b = new ConcurrentHashMap();
 
-    public /* synthetic */ j(l lVar, int i10) {
-        this.a = i10;
-        this.b = lVar;
+    static {
+        int i9 = 0;
+        c = new i(i9);
+        d = new i(i9);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final void clear() {
-        switch (this.a) {
-            case 0:
-                this.b.clear();
-                break;
-            default:
-                this.b.clear();
-                break;
-        }
+    public j(g5.b bVar) {
+        this.a = bVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0034 A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean contains(Object obj) {
-        k a2;
-        switch (this.a) {
-            case 0:
-                if (!(obj instanceof Map.Entry)) {
-                    return false;
+    public final la.u a(g5.b bVar, la.g gVar, sa.a aVar, ma.a aVar2, boolean z10) {
+        la.u uVar;
+        Object Y1 = bVar.l(new sa.a(aVar2.value())).Y1();
+        boolean nullSafe = aVar2.nullSafe();
+        if (Y1 instanceof la.u) {
+            uVar = (la.u) Y1;
+        } else if (Y1 instanceof la.v) {
+            la.v vVar = (la.v) Y1;
+            if (z10) {
+                la.v vVar2 = (la.v) this.b.putIfAbsent(aVar.a, vVar);
+                if (vVar2 != null) {
+                    vVar = vVar2;
                 }
-                l lVar = this.b;
-                Map.Entry entry = (Map.Entry) obj;
-                Object key = entry.getKey();
-                k kVar = null;
-                if (key != null) {
-                    try {
-                        a2 = lVar.a(key, false);
-                    } catch (ClassCastException unused) {
-                    }
-                    if (a2 != null && Objects.equals(a2.n, entry.getValue())) {
-                        kVar = a2;
-                    }
-                    return kVar == null;
-                }
-                a2 = null;
-                if (a2 != null) {
-                    kVar = a2;
-                }
-                if (kVar == null) {
-                }
-            default:
-                return this.b.containsKey(obj);
+            }
+            uVar = vVar.create(gVar, aVar);
+        } else {
+            boolean z11 = Y1 instanceof la.o;
+            if (!z11) {
+                throw new IllegalArgumentException("Invalid attempt to bind an instance of " + Y1.getClass().getName() + " as a @JsonAdapter for " + na.d.k(aVar.b) + ". @JsonAdapter value must be a TypeAdapter, TypeAdapterFactory, JsonSerializer or JsonDeserializer.");
+            }
+            a0 a0Var = new a0(z11 ? (la.o) Y1 : null, gVar, aVar, z10 ? c : d, nullSafe);
+            nullSafe = false;
+            uVar = a0Var;
         }
+        return (uVar == null || !nullSafe) ? uVar : uVar.nullSafe();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        switch (this.a) {
-            case 0:
-                return new i(this.b, 0);
-            default:
-                return new i(this.b, 1);
+    @Override // la.v
+    public final la.u create(la.g gVar, sa.a aVar) {
+        ma.a aVar2 = (ma.a) aVar.a.getAnnotation(ma.a.class);
+        if (aVar2 == null) {
+            return null;
         }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:28:? A[RETURN, SYNTHETIC] */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean remove(Object obj) {
-        k a2;
-        switch (this.a) {
-            case 0:
-                if (!(obj instanceof Map.Entry)) {
-                    return false;
-                }
-                Map.Entry entry = (Map.Entry) obj;
-                Object key = entry.getKey();
-                l lVar = this.b;
-                k kVar = null;
-                if (key != null) {
-                    try {
-                        a2 = lVar.a(key, false);
-                    } catch (ClassCastException unused) {
-                    }
-                    if (a2 != null && Objects.equals(a2.n, entry.getValue())) {
-                        kVar = a2;
-                    }
-                    if (kVar != null) {
-                        return false;
-                    }
-                    lVar.c(kVar, true);
-                    return true;
-                }
-                a2 = null;
-                if (a2 != null) {
-                    kVar = a2;
-                }
-                if (kVar != null) {
-                }
-            default:
-                l lVar2 = this.b;
-                k kVar2 = null;
-                if (obj != null) {
-                    try {
-                        kVar2 = lVar2.a(obj, false);
-                    } catch (ClassCastException unused2) {
-                    }
-                }
-                if (kVar2 != null) {
-                    lVar2.c(kVar2, true);
-                }
-                return kVar2 != null;
-        }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        switch (this.a) {
-        }
-        return this.b.d;
+        return a(this.a, gVar, aVar, aVar2, true);
     }
 }

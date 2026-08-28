@@ -1,83 +1,74 @@
 package i8;
 
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.data.DataHolder;
-import java.io.Closeable;
-import java.util.ArrayList;
-import java.util.Iterator;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.Log;
+import g7.p8;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class e implements com.google.android.gms.common.api.q, Iterable, Closeable {
-    public final DataHolder a;
-    public boolean b = false;
-    public ArrayList c;
-    public final Status d;
+public final class e extends y5.a {
+    public static final Parcelable.Creator<e> CREATOR = new c(1);
+    public final f a;
+    public final int b;
+    public final int c;
+    public final int d;
 
-    public e(DataHolder dataHolder) {
-        this.a = dataHolder;
-        this.d = new Status(dataHolder.e, null, null, null);
+    public e(f fVar, int i9, int i10, int i11) {
+        this.a = fVar;
+        this.b = i9;
+        this.c = i10;
+        this.d = i11;
     }
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        DataHolder dataHolder = this.a;
-        if (dataHolder != null) {
-            dataHolder.close();
+    public final void b(h8.c cVar) {
+        f fVar = this.a;
+        int i9 = this.b;
+        if (i9 == 1) {
+            cVar.onChannelOpened(fVar);
+            return;
         }
-    }
-
-    @Override // com.google.android.gms.common.api.q
-    public final Status i() {
-        return this.d;
-    }
-
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return new kotlin.jvm.internal.a(this);
-    }
-
-    public final int n(int i10) {
-        if (i10 < 0 || i10 >= this.c.size()) {
-            throw new IllegalArgumentException(i0.a.l(i10, "Position ", " is out of bounds for this buffer"));
+        int i10 = this.d;
+        int i11 = this.c;
+        if (i9 == 2) {
+            cVar.onChannelClosed(fVar, i11, i10);
+            return;
         }
-        return ((Integer) this.c.get(i10)).intValue();
-    }
-
-    public final void o() {
-        synchronized (this) {
-            try {
-                if (!this.b) {
-                    DataHolder dataHolder = this.a;
-                    y5.l.h(dataHolder);
-                    int i10 = dataHolder.n;
-                    ArrayList arrayList = new ArrayList();
-                    this.c = arrayList;
-                    if (i10 > 0) {
-                        arrayList.add(0);
-                        int b10 = this.a.b(0);
-                        DataHolder dataHolder2 = this.a;
-                        dataHolder2.c(0, "path");
-                        String string = dataHolder2.d[b10].getString(0, dataHolder2.c.getInt("path"));
-                        for (int i11 = 1; i11 < i10; i11++) {
-                            int b11 = this.a.b(i11);
-                            DataHolder dataHolder3 = this.a;
-                            dataHolder3.c(i11, "path");
-                            String string2 = dataHolder3.d[b11].getString(i11, dataHolder3.c.getInt("path"));
-                            if (string2 == null) {
-                                throw new NullPointerException("Missing value for markerColumn: path, at row: " + i11 + ", for window: " + b11);
-                            }
-                            if (!string2.equals(string)) {
-                                this.c.add(Integer.valueOf(i11));
-                                string = string2;
-                            }
-                        }
-                    }
-                    this.b = true;
-                }
-            } catch (Throwable th) {
-                throw th;
+        if (i9 == 3) {
+            cVar.onInputClosed(fVar, i11, i10);
+        } else {
+            if (i9 == 4) {
+                cVar.onOutputClosed(fVar, i11, i10);
+                return;
             }
+            Log.w("ChannelEventParcelable", "Unknown type: " + i9);
         }
+    }
+
+    public final String toString() {
+        String valueOf = String.valueOf(this.a);
+        int i9 = this.b;
+        String num = i9 != 1 ? i9 != 2 ? i9 != 3 ? i9 != 4 ? Integer.toString(i9) : "OUTPUT_CLOSED" : "INPUT_CLOSED" : "CHANNEL_CLOSED" : "CHANNEL_OPENED";
+        int i10 = this.c;
+        String num2 = i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? Integer.toString(i10) : "CLOSE_REASON_LOCAL_CLOSE" : "CLOSE_REASON_REMOTE_CLOSE" : "CLOSE_REASON_DISCONNECTED" : "CLOSE_REASON_NORMAL";
+        StringBuilder q10 = j3.r0.q("ChannelEventParcelable[, channel=", valueOf, ", type=", num, ", closeReason=");
+        q10.append(num2);
+        q10.append(", appErrorCode=");
+        q10.append(this.d);
+        q10.append("]");
+        return q10.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.k(parcel, 2, this.a, i9);
+        p8.s(parcel, 3, 4);
+        parcel.writeInt(this.b);
+        p8.s(parcel, 4, 4);
+        parcel.writeInt(this.c);
+        p8.s(parcel, 5, 4);
+        parcel.writeInt(this.d);
+        p8.r(parcel, q10);
     }
 }

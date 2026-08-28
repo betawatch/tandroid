@@ -6,19 +6,19 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.Map;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class j1 extends w0 {
     public final w b;
     public final TaskCompletionSource c;
     public final t d;
 
-    public j1(int i10, w wVar, TaskCompletionSource taskCompletionSource, t tVar) {
-        super(i10);
+    public j1(int i9, w wVar, TaskCompletionSource taskCompletionSource, t tVar) {
+        super(i9);
         this.c = taskCompletionSource;
         this.b = wVar;
         this.d = tVar;
-        if (i10 == 2 && wVar.b) {
+        if (i9 == 2 && wVar.b) {
             throw new IllegalArgumentException("Best-effort write calls cannot pass methods that should auto-resolve missing features.");
         }
     }
@@ -38,12 +38,12 @@ public final class j1 extends w0 {
         TaskCompletionSource taskCompletionSource = this.c;
         try {
             this.b.c(p0Var.b, taskCompletionSource);
-        } catch (DeadObjectException e9) {
-            throw e9;
-        } catch (RemoteException e10) {
-            a(k1.e(e10));
-        } catch (RuntimeException e11) {
-            taskCompletionSource.trySetException(e11);
+        } catch (DeadObjectException e10) {
+            throw e10;
+        } catch (RemoteException e11) {
+            a(k1.e(e11));
+        } catch (RuntimeException e12) {
+            taskCompletionSource.trySetException(e12);
         }
     }
 
@@ -62,7 +62,7 @@ public final class j1 extends w0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.w0
-    public final v5.c[] g(p0 p0Var) {
+    public final u5.c[] g(p0 p0Var) {
         return this.b.a;
     }
 }

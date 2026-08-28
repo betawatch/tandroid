@@ -1,8 +1,6 @@
 package com.google.android.exoplayer2.upstream;
 
-import h3.q2;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -11,31 +9,31 @@ public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ long d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ d(Object obj, int i10, long j10, long j11, int i11) {
-        this.a = i11;
+    public /* synthetic */ d(Object obj, int i9, long j10, long j11, int i10) {
+        this.a = i10;
         this.e = obj;
-        this.b = i10;
+        this.b = i9;
         this.c = j10;
         this.d = j11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
+        int i9 = this.a;
         Object obj = this.e;
-        switch (i10) {
+        switch (i9) {
             case 0:
                 i3.f fVar = ((e) obj).b;
                 com.google.firebase.messaging.m mVar = fVar.d;
-                i3.a i11 = fVar.i(((p8.z) mVar.b).isEmpty() ? null : (j4.c0) p8.l.g((p8.z) mVar.b));
-                fVar.l(i11, 1006, new i3.e(i11, this.b, this.c, this.d));
+                i3.a i10 = fVar.i(((o8.z) mVar.b).isEmpty() ? null : (j4.d0) o8.l.g((o8.z) mVar.b));
+                fVar.l(i10, 1006, new i3.e(i10, this.b, this.c, this.d));
                 break;
             default:
-                j3.o oVar = ((j3.n) obj).b;
-                int i12 = d5.g0.a;
-                i3.f fVar2 = ((h3.h0) oVar).a.r;
+                j3.n nVar = ((j3.m) obj).b;
+                int i11 = d5.f0.a;
+                i3.f fVar2 = ((h3.h0) nVar).a.r;
                 i3.a k10 = fVar2.k();
-                fVar2.l(k10, 1011, new q2(k10, this.b, this.c, this.d));
+                fVar2.l(k10, 1011, new h9.a(k10, this.b, this.c, this.d));
                 break;
         }
     }

@@ -1,31 +1,46 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import android.os.Bundle;
+import org.telegram.messenger.voip.GroupCallMessage;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class n30 implements m2.e {
-    public final /* synthetic */ s50 a;
+public final class n30 implements tg.a {
+    public final /* synthetic */ o50 a;
 
-    public n30(s50 s50Var) {
-        this.a = s50Var;
+    public n30(o50 o50Var) {
+        this.a = o50Var;
     }
 
-    @Override // m2.e
-    public final void b(int i10) {
-        s50 s50Var = this.a;
-        s50Var.b.z0.k(i10);
-        k30 k30Var = s50Var.z2;
-        k30Var.F = k30Var.H;
-        k30Var.G = k30Var.I;
-        k30Var.J = 0.0f;
-        k30Var.K = 1;
-        k30Var.invalidate();
-    }
-
-    @Override // m2.e
-    public final void d(int i10) {
-    }
-
-    @Override // m2.e
-    public final void c(float f10, int i10, int i11) {
+    public final void a(GroupCallMessage groupCallMessage) {
+        org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
+        if (R == null) {
+            return;
+        }
+        boolean z10 = R instanceof ProfileActivity;
+        o50 o50Var = this.a;
+        if (z10 && ((ProfileActivity) R).a() == groupCallMessage.fromId) {
+            o50Var.dismiss();
+            return;
+        }
+        int P0 = o50Var.P0();
+        Bundle bundle = new Bundle();
+        long j10 = groupCallMessage.fromId;
+        if (j10 > 0) {
+            bundle.putLong("user_id", j10);
+        } else {
+            bundle.putLong("chat_id", -j10);
+        }
+        long j11 = groupCallMessage.fromId;
+        boolean z11 = true;
+        if (j11 == o50Var.d.getUserConfig().getClientUserId()) {
+            bundle.putBoolean("my_profile", true);
+        }
+        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
+        if (P0 > 0 && P0 != Integer.MAX_VALUE) {
+            z11 = false;
+        }
+        R.presentFragment(profileActivity, false, z11);
+        o50Var.dismiss();
     }
 }

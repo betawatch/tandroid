@@ -3,25 +3,26 @@ package com.google.android.gms.maps.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import h7.r8;
+import g7.p8;
 import java.util.Arrays;
-import r6.l;
-import w3.b0;
-import z5.a;
+import q7.j;
+import w4.e;
+import x5.l;
+import y5.a;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class LatLngBounds extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<LatLngBounds> CREATOR = new l(20);
+    public static final Parcelable.Creator<LatLngBounds> CREATOR = new j(11);
     public final LatLng a;
     public final LatLng b;
 
     public LatLngBounds(LatLng latLng, LatLng latLng2) {
-        y5.l.i(latLng, "southwest must not be null.");
-        y5.l.i(latLng2, "northeast must not be null.");
+        l.i(latLng, "southwest must not be null.");
+        l.i(latLng2, "northeast must not be null.");
         double d = latLng2.a;
-        double d10 = latLng.a;
-        y5.l.c(d >= d10, "southern latitude exceeds northern latitude (%s > %s)", Double.valueOf(d10), Double.valueOf(d));
+        double d9 = latLng.a;
+        l.c(d >= d9, "southern latitude exceeds northern latitude (%s > %s)", Double.valueOf(d9), Double.valueOf(d));
         this.a = latLng;
         this.b = latLng2;
     }
@@ -42,17 +43,17 @@ public final class LatLngBounds extends a implements ReflectedParcelable {
     }
 
     public final String toString() {
-        b0 b0Var = new b0(this);
-        b0Var.e(this.a, "southwest");
-        b0Var.e(this.b, "northeast");
-        return b0Var.toString();
+        e eVar = new e(this);
+        eVar.c(this.a, "southwest");
+        eVar.c(this.b, "northeast");
+        return eVar.toString();
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.k(parcel, 2, this.a, i10);
-        r8.k(parcel, 3, this.b, i10);
-        r8.r(parcel, q6);
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.k(parcel, 2, this.a, i9);
+        p8.k(parcel, 3, this.b, i9);
+        p8.r(parcel, q10);
     }
 }

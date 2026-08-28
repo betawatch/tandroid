@@ -1,52 +1,74 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class kc implements RequestDelegate {
+public final /* synthetic */ class kc implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
     public final /* synthetic */ long e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ kc(int i10, long j10, long j11, MessagesController messagesController) {
-        this.a = 0;
+    public /* synthetic */ kc(MessagesController messagesController, ArrayList arrayList, long j10, TLRPC.updates_ChannelDifference updates_channeldifference, TLRPC.Chat chat, a0.h hVar, int i9, long j11) {
+        this.a = 1;
         this.b = messagesController;
-        this.d = j10;
-        this.c = i10;
+        this.f = arrayList;
+        this.c = j10;
+        this.h = updates_channeldifference;
+        this.n = chat;
+        this.r = hVar;
+        this.d = i9;
         this.e = j11;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                int i10 = this.c;
-                long j10 = this.e;
-                this.b.lambda$getChannelDifference$349(this.d, i10, j10, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$ensureMessagesLoaded$460((boolean[]) this.f, (MessagesStorage) this.h, this.c, (Runnable[]) this.n, this.e, this.d, (MessagesController.MessagesLoadedCallback) this.r);
                 break;
             case 1:
-                long j11 = this.d;
-                long j12 = this.e;
-                this.b.lambda$sendTyping$172(this.c, j11, j12, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$getChannelDifference$347((ArrayList) this.f, this.c, (TLRPC.updates_ChannelDifference) this.h, (TLRPC.Chat) this.n, (a0.h) this.r, this.d, this.e);
+                break;
+            case 2:
+                ((WearReplyReceiver) this.b).lambda$onReceive$0((AccountInstance) this.f, (TLRPC.User) this.h, (CharSequence) this.n, this.c, this.e, this.d, (int[]) this.r);
                 break;
             default:
-                long j13 = this.d;
-                long j14 = this.e;
-                this.b.lambda$sendTyping$174(this.c, j13, j14, tLObject, tL_error);
+                ((WearReplyReceiver) this.b).lambda$onReceive$2((AccountInstance) this.f, (TLRPC.Chat) this.h, (CharSequence) this.n, this.c, this.e, this.d, (int[]) this.r);
                 break;
         }
     }
 
-    public /* synthetic */ kc(MessagesController messagesController, int i10, long j10, long j11, int i11) {
-        this.a = i11;
+    public /* synthetic */ kc(MessagesController messagesController, boolean[] zArr, MessagesStorage messagesStorage, long j10, Runnable[] runnableArr, long j11, int i9, MessagesController.MessagesLoadedCallback messagesLoadedCallback) {
+        this.a = 0;
         this.b = messagesController;
-        this.c = i10;
-        this.d = j10;
+        this.f = zArr;
+        this.h = messagesStorage;
+        this.c = j10;
+        this.n = runnableArr;
         this.e = j11;
+        this.d = i9;
+        this.r = messagesLoadedCallback;
+    }
+
+    public /* synthetic */ kc(WearReplyReceiver wearReplyReceiver, AccountInstance accountInstance, TLObject tLObject, CharSequence charSequence, long j10, long j11, int i9, int[] iArr, int i10) {
+        this.a = i10;
+        this.b = wearReplyReceiver;
+        this.f = accountInstance;
+        this.h = tLObject;
+        this.n = charSequence;
+        this.c = j10;
+        this.e = j11;
+        this.d = i9;
+        this.r = iArr;
     }
 }

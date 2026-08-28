@@ -1,41 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class z8 extends TextView {
-    public final Paint a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c6 b;
+public final class z8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ AtomicBoolean a;
+    public final /* synthetic */ org.telegram.ui.Components.l80 b;
+    public final /* synthetic */ String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z8(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        this.b = c6Var;
-        this.a = new Paint(1);
+    public z8(AtomicBoolean atomicBoolean, org.telegram.ui.Components.l80 l80Var, String str) {
+        this.a = atomicBoolean;
+        this.b = l80Var;
+        this.c = str;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int l1 = org.telegram.ui.ActionBar.g6.l1(0.8f, org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.z6, this.b));
-        Paint paint = this.a;
-        paint.setColor(l1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(1.0f);
-        float height = getHeight() / 2.0f;
-        Layout layout = getLayout();
-        int i10 = 0;
-        for (int i11 = 0; i11 < layout.getLineCount(); i11++) {
-            i10 = Math.max(i10, (int) layout.getLineWidth(i11));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        AtomicBoolean atomicBoolean = this.a;
+        if (atomicBoolean.get()) {
+            return;
         }
-        float f10 = i10 / 2.0f;
-        canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - f10) - AndroidUtilities.dp(8.0f), height, paint);
-        canvas.drawLine((getWidth() / 2.0f) + f10 + AndroidUtilities.dp(8.0f), height, getWidth(), height, paint);
-        super.dispatchDraw(canvas);
+        atomicBoolean.set(true);
+        this.b.setText(this.c);
     }
 }

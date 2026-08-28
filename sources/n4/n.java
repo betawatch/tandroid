@@ -1,9 +1,9 @@
 package n4;
 
-import d5.g0;
+import d5.f0;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class n extends s {
     public final long d;
@@ -85,7 +85,7 @@ public abstract class n extends s {
     public final long g(long j10) {
         long j11 = this.d;
         List list = this.f;
-        return g0.O(list != null ? ((q) list.get((int) (j10 - j11))).a - this.c : (j10 - j11) * this.e, 1000000L, this.b);
+        return f0.O(list != null ? ((q) list.get((int) (j10 - j11))).a - this.c : (j10 - j11) * this.e, 1000000L, this.b);
     }
 
     public abstract j h(k kVar, long j10);

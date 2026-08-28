@@ -1,42 +1,23 @@
 package zf;
 
 import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.lk0;
+import java.util.ArrayList;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.Components.dv;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class g1 extends f2.q0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ i1 d;
+public final class g1 extends dv {
+    public final /* synthetic */ k1 S;
 
-    public g1(i1 i1Var, Context context) {
-        this.d = i1Var;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g1(k1 k1Var, bg.i1 i1Var, Context context, b6 b6Var, ArrayList arrayList) {
+        super(i1Var, context, b6Var, arrayList);
+        this.S = k1Var;
     }
 
-    @Override // f2.q0
-    public final int h() {
-        return 14;
-    }
-
-    @Override // f2.q0
-    public final void v(f2.o1 o1Var, int i10) {
-        h1 h1Var = (h1) o1Var.a;
-        ViewGroup.LayoutParams layoutParams = h1Var.getLayoutParams();
-        i1 i1Var = this.d;
-        layoutParams.height = ((i1Var.getHeight() - i1Var.getPaddingTop()) - i1Var.getPaddingBottom()) / 2;
-        yf.r0 r0Var = i1Var.W2;
-        if (r0Var != null) {
-            h1Var.a = r0Var.b(i10);
-            h1Var.invalidate();
-            h1Var.b = i1Var.V2 == i10 ? 1.0f : 0.0f;
-            h1Var.invalidate();
-        }
-    }
-
-    @Override // f2.q0
-    public final f2.o1 x(ViewGroup viewGroup, int i10) {
-        return new lk0(new h1(this.d, this.c));
+    @Override // org.telegram.ui.Components.dv
+    public final void X() {
+        this.S.dismiss();
     }
 }

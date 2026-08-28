@@ -1,157 +1,105 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.Bundle;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityManager;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.view.accessibility.AccessibilityNodeProvider;
-import android.widget.Button;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'd' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public class ng0 extends AccessibilityNodeProvider {
-    public final /* synthetic */ int a = 1;
-    public final Object b;
+public final class ng0 {
+    public static final ng0 A;
+    public static final ng0 B;
+    public static final ng0 C;
+    public static final ng0 D;
+    public static final ng0 E;
+    public static final ng0 F;
+    public static final ng0 G;
+    public static final /* synthetic */ ng0[] H;
+    public static final ng0 d;
+    public static final ng0 e;
+    public static final ng0 f;
+    public static final ng0 h;
+    public static final ng0 n;
+    public static final ng0 r;
+    public static final ng0 s;
+    public static final ng0 v;
+    public static final ng0 w;
+    public static final ng0 x;
+    public static final ng0 y;
+    public final int a;
+    public final int b;
+    public final int c;
 
-    public ng0(m5.o oVar) {
-        this.b = oVar;
+    static {
+        int i9 = R.string.ProfileActionsMessage;
+        int i10 = R.drawable.filled_profile_message_24;
+        int i11 = R.drawable.outline_profile_message_24;
+        ng0 ng0Var = new ng0("MESSAGE", 0, i9, i10, i11);
+        d = ng0Var;
+        ng0 ng0Var2 = new ng0("NOTIFICATION_MUTE", 1, R.string.ProfileButtonMute, R.drawable.filled_profile_mute_24, R.drawable.outline_profile_mute_24);
+        e = ng0Var2;
+        ng0 ng0Var3 = new ng0("NOTIFICATION_UNMUTE", 2, R.string.ProfileButtonUnmute, R.drawable.filled_profile_unmute_24, R.drawable.outline_profile_unmute_24);
+        f = ng0Var3;
+        ng0 ng0Var4 = new ng0("DISCUSS", 3, R.string.ProfileActionsDiscuss, i10, i11);
+        h = ng0Var4;
+        ng0 ng0Var5 = new ng0("GIFT", 4, R.string.ProfileActionsGift, R.drawable.gift, R.drawable.input_gift_s);
+        n = ng0Var5;
+        ng0 ng0Var6 = new ng0("SHARE", 5, R.string.ProfileActionsShare, R.drawable.action_share, R.drawable.msg_share);
+        r = ng0Var6;
+        ng0 ng0Var7 = new ng0("CALL", 6, R.string.ProfileActionsCall, R.drawable.filled_profile_call_24, R.drawable.outline_profile_call_24);
+        s = ng0Var7;
+        ng0 ng0Var8 = new ng0("VIDEO", 7, R.string.ProfileActionsVideo, R.drawable.filled_profile_video_24, R.drawable.outline_profile_video_24);
+        v = ng0Var8;
+        ng0 ng0Var9 = new ng0("JOIN", 8, R.string.ProfileActionsJoin, R.drawable.filled_profile_member_24, R.drawable.outline_profile_member_24);
+        w = ng0Var9;
+        ng0 ng0Var10 = new ng0("REPORT", 9, R.string.ProfileActionsReport, R.drawable.report, R.drawable.msg_report);
+        x = ng0Var10;
+        int i12 = R.string.ProfileActionsLeave;
+        int i13 = R.drawable.leave;
+        ng0 ng0Var11 = new ng0("LEAVE", 10, i12, i13, i13);
+        y = ng0Var11;
+        int i14 = R.string.ProfileActionsVoiceChat;
+        int i15 = R.drawable.live_stream;
+        ng0 ng0Var12 = new ng0("VOICE_CHAT", 11, i14, i15, i15);
+        A = ng0Var12;
+        ng0 ng0Var13 = new ng0("STREAM", 12, R.string.ProfileActionsLiveStream, i15, i15);
+        B = ng0Var13;
+        ng0 ng0Var14 = new ng0("STORY", 13, R.string.ProfileActionsAddStory, R.drawable.filled_profile_story, R.drawable.outline_profile_story);
+        C = ng0Var14;
+        ng0 ng0Var15 = new ng0("STOP", 14, R.string.ProfileActionsStop, R.drawable.filled_profile_stop_24, R.drawable.outline_profile_stop_24);
+        D = ng0Var15;
+        ng0 ng0Var16 = new ng0("SET_PHOTO", 15, R.string.ProfileActionsEditPhoto2, R.drawable.filled_profile_photo, R.drawable.outline_profile_photo);
+        E = ng0Var16;
+        int i16 = R.string.ProfileActionsEditUsername;
+        int i17 = R.drawable.filled_profile_edit_24;
+        int i18 = R.drawable.outline_profile_edit_24;
+        ng0 ng0Var17 = new ng0("EDIT_USERNAME", 16, i16, i17, i18);
+        ng0 ng0Var18 = new ng0("EDIT_INFO", 17, R.string.ProfileActionsEditInfo, i17, i18);
+        F = ng0Var18;
+        ng0 ng0Var19 = new ng0("SETTINGS", 18, R.string.Settings, R.drawable.filled_profile_settings, R.drawable.outline_profile_settings);
+        G = ng0Var19;
+        H = new ng0[]{ng0Var, ng0Var2, ng0Var3, ng0Var4, ng0Var5, ng0Var6, ng0Var7, ng0Var8, ng0Var9, ng0Var10, ng0Var11, ng0Var12, ng0Var13, ng0Var14, ng0Var15, ng0Var16, ng0Var17, ng0Var18, ng0Var19};
     }
 
-    @Override // android.view.accessibility.AccessibilityNodeProvider
-    public final AccessibilityNodeInfo createAccessibilityNodeInfo(int i10) {
-        og0 og0Var;
-        switch (this.a) {
-            case 0:
-                int[] iArr = {0, 0};
-                rg0 rg0Var = (rg0) this.b;
-                ArrayList arrayList = rg0Var.a;
-                rg0Var.getLocationOnScreen(iArr);
-                if (i10 == -1) {
-                    AccessibilityNodeInfo obtain = AccessibilityNodeInfo.obtain(rg0Var);
-                    rg0Var.onInitializeAccessibilityNodeInfo(obtain);
-                    obtain.setEnabled(true);
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        obtain.addChild(rg0Var, ((og0) arrayList.get(i11)).a);
-                    }
-                    return obtain;
-                }
-                int i12 = 0;
-                while (true) {
-                    if (i12 >= arrayList.size()) {
-                        og0Var = null;
-                    } else if (((og0) arrayList.get(i12)).a == i10) {
-                        og0Var = (og0) arrayList.get(i12);
-                    } else {
-                        i12++;
-                    }
-                }
-                if (og0Var != null) {
-                    RectF rectF = og0Var.d;
-                    if (!rectF.isEmpty()) {
-                        AccessibilityNodeInfo obtain2 = AccessibilityNodeInfo.obtain();
-                        obtain2.setSource(rg0Var, i10);
-                        obtain2.setParent(rg0Var);
-                        obtain2.setPackageName(rg0Var.getContext().getPackageName());
-                        obtain2.addAction(16);
-                        obtain2.addAction(64);
-                        obtain2.setClickable(true);
-                        obtain2.setFocusable(true);
-                        obtain2.setEnabled(true);
-                        obtain2.setVisibleToUser(true);
-                        obtain2.setClassName(Button.class.getName());
-                        obtain2.setText(og0Var.l.k());
-                        Rect rect = new Rect((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-                        obtain2.setBoundsInParent(rect);
-                        rect.offset(iArr[0], iArr[1]);
-                        obtain2.setBoundsInScreen(rect);
-                        return obtain2;
-                    }
-                }
-                return null;
-            default:
-                s0.c u10 = ((m5.o) this.b).u(i10);
-                if (u10 == null) {
-                    return null;
-                }
-                return u10.a;
-        }
+    public ng0(String str, int i9, int i10, int i11, int i12) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
     }
 
-    @Override // android.view.accessibility.AccessibilityNodeProvider
-    public List findAccessibilityNodeInfosByText(String str, int i10) {
-        switch (this.a) {
-            case 1:
-                ((m5.o) this.b).getClass();
-                return null;
-            default:
-                return super.findAccessibilityNodeInfosByText(str, i10);
-        }
+    public static ng0 valueOf(String str) {
+        return (ng0) Enum.valueOf(ng0.class, str);
     }
 
-    @Override // android.view.accessibility.AccessibilityNodeProvider
-    public AccessibilityNodeInfo findFocus(int i10) {
-        switch (this.a) {
-            case 1:
-                s0.c w10 = ((m5.o) this.b).w(i10);
-                if (w10 == null) {
-                    return null;
-                }
-                return w10.a;
-            default:
-                return super.findFocus(i10);
-        }
-    }
-
-    @Override // android.view.accessibility.AccessibilityNodeProvider
-    public final boolean performAction(int i10, int i11, Bundle bundle) {
-        og0 og0Var;
-        switch (this.a) {
-            case 0:
-                rg0 rg0Var = (rg0) this.b;
-                ArrayList arrayList = rg0Var.a;
-                if (i10 == -1) {
-                    return rg0Var.performAccessibilityAction(i11, bundle);
-                }
-                int i12 = 0;
-                while (true) {
-                    if (i12 >= arrayList.size()) {
-                        og0Var = null;
-                    } else if (((og0) arrayList.get(i12)).a == i10) {
-                        og0Var = (og0) arrayList.get(i12);
-                    } else {
-                        i12++;
-                    }
-                }
-                if (og0Var != null) {
-                    if (i11 == 64) {
-                        if (((AccessibilityManager) rg0Var.getContext().getSystemService("accessibility")).isTouchExplorationEnabled()) {
-                            AccessibilityEvent obtain = AccessibilityEvent.obtain(32768);
-                            obtain.setPackageName(rg0Var.getContext().getPackageName());
-                            obtain.setSource(rg0Var, i10);
-                            if (rg0Var.getParent() != null) {
-                                rg0Var.getParent().requestSendAccessibilityEvent(rg0Var, obtain);
-                            }
-                        }
-                    } else if (i11 == 16) {
-                        qg0 qg0Var = rg0Var.B;
-                        if (qg0Var != null) {
-                            ProfileActivity.Y(((org.telegram.ui.gx0) qg0Var).b, i10, 0.0f, 0.0f);
-                        }
-                    }
-                    return true;
-                }
-                return false;
-            default:
-                return ((m5.o) this.b).y(i10, i11, bundle);
-        }
-    }
-
-    public ng0(rg0 rg0Var) {
-        this.b = rg0Var;
+    public static ng0[] values() {
+        return (ng0[]) H.clone();
     }
 }

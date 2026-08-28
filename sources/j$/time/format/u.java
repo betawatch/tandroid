@@ -34,12 +34,12 @@ public class u {
                 HashMap hashMap2 = new HashMap();
                 HashMap hashMap3 = new HashMap();
                 String[] eras = dateFormatSymbols.getEras();
-                for (int i10 = 0; i10 < eras.length; i10++) {
-                    if (!eras[i10].isEmpty()) {
-                        long j12 = i10;
-                        hashMap2.put(Long.valueOf(j12), eras[i10]);
+                for (int i9 = 0; i9 < eras.length; i9++) {
+                    if (!eras[i9].isEmpty()) {
+                        long j12 = i9;
+                        hashMap2.put(Long.valueOf(j12), eras[i9]);
                         Long valueOf = Long.valueOf(j12);
-                        String str = eras[i10];
+                        String str = eras[i9];
                         hashMap3.put(valueOf, str.substring(0, Character.charCount(str.codePointAt(0))));
                     }
                 }
@@ -108,12 +108,12 @@ public class u {
                     HashMap hashMap4 = new HashMap();
                     HashMap hashMap5 = new HashMap();
                     String[] amPmStrings = dateFormatSymbols2.getAmPmStrings();
-                    for (int i11 = 0; i11 < amPmStrings.length; i11++) {
-                        if (!amPmStrings[i11].isEmpty()) {
-                            long j16 = i11;
-                            hashMap4.put(Long.valueOf(j16), amPmStrings[i11]);
+                    for (int i10 = 0; i10 < amPmStrings.length; i10++) {
+                        if (!amPmStrings[i10].isEmpty()) {
+                            long j16 = i10;
+                            hashMap4.put(Long.valueOf(j16), amPmStrings[i10]);
                             Long valueOf3 = Long.valueOf(j16);
-                            String str2 = amPmStrings[i11];
+                            String str2 = amPmStrings[i10];
                             hashMap5.put(valueOf3, str2.substring(0, Character.charCount(str2.codePointAt(0))));
                         }
                     }

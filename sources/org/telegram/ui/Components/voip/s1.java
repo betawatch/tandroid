@@ -14,14 +14,15 @@ import android.view.ViewParent;
 import android.view.ViewPropertyAnimator;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
+import kh.g4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.rl;
+import org.telegram.messenger.ll;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.tg1;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.ug1;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class s1 extends FrameLayout {
     public float A;
@@ -48,11 +49,11 @@ public final class s1 extends FrameLayout {
     public boolean V;
     public ValueAnimator W;
     public float a;
-    public final ag.q1 a0;
+    public final f2.f0 a0;
     public float b;
     public ValueAnimator b0;
     public float c;
-    public final lh.m2 c0;
+    public final g4 c0;
     public float d;
     public View.OnClickListener d0;
     public boolean e;
@@ -81,12 +82,12 @@ public final class s1 extends FrameLayout {
         this.G = 0.0f;
         this.M = -1.0f;
         this.N = true;
-        this.a0 = new ag.q1(this, 10);
-        this.c0 = new lh.m2(this, 13);
+        this.a0 = new f2.f0(this, 9);
+        this.c0 = new g4(this, 10);
         this.r = ViewConfiguration.get(activity).getScaledTouchSlop();
-        setOutlineProvider(new lg.b(this, 4));
+        setOutlineProvider(new kg.b(this, 4));
         setClipToOutline(true);
-        paint.setColor(i0.b.k(-16777216, 102));
+        paint.setColor(i0.a.k(-16777216, 102));
         this.x = activity.getDrawable(R.drawable.calls_mute_mini);
     }
 
@@ -187,8 +188,8 @@ public final class s1 extends FrameLayout {
         s1Var.W.start();
         animate().setListener(null).cancel();
         ViewPropertyAnimator duration = animate().scaleX(0.23f).scaleY(0.23f).translationX(translationX2 - ((getMeasuredWidth() - (getMeasuredWidth() * 0.23f)) / 2.0f)).translationY(translationY2 - ((getMeasuredHeight() - (getMeasuredHeight() * 0.23f)) / 2.0f)).alpha(1.0f).setStartDelay(0L).setDuration(300L);
-        er erVar = er.f;
-        duration.setInterpolator(erVar).setListener(new p1(this, translationX2, translationY2, 0)).setInterpolator(erVar).start();
+        gr grVar = gr.f;
+        duration.setInterpolator(grVar).setListener(new p1(this, translationX2, translationY2, 0)).setInterpolator(grVar).start();
     }
 
     public final void d(float f10, float f11) {
@@ -242,7 +243,7 @@ public final class s1 extends FrameLayout {
         canvas.scale((1.0f / getScaleX()) * s1Var.F * s1Var.G, (1.0f / getScaleY()) * s1Var.F * s1Var.G, f10, f11);
         canvas.drawCircle(f10, f11, AndroidUtilities.dp(14.0f), s1Var.w);
         Drawable drawable = s1Var.x;
-        drawable.setBounds(rl.v(2, measuredWidth, drawable), rl.e(2, measuredHeight, drawable), rl.A(2, measuredWidth, drawable), rl.y(2, measuredHeight, drawable));
+        drawable.setBounds(ll.x(2, measuredWidth, drawable), ll.e(2, measuredHeight, drawable), ll.B(2, measuredWidth, drawable), ll.z(2, measuredHeight, drawable));
         drawable.draw(canvas);
         canvas.restore();
         if (s1Var.K) {
@@ -250,7 +251,7 @@ public final class s1 extends FrameLayout {
         }
     }
 
-    public final void e(float f10, float f11, int i10, int i11, boolean z10) {
+    public final void e(float f10, float f11, int i9, int i10, boolean z10) {
         Object parent = getParent();
         if (parent == null || !this.I || this.K || !this.N) {
             return;
@@ -258,11 +259,11 @@ public final class s1 extends FrameLayout {
         float systemWindowInsetTop = this.n == null ? 0.0f : r1.getSystemWindowInsetTop() + this.D;
         float systemWindowInsetBottom = this.n != null ? r3.getSystemWindowInsetBottom() + this.E : 0.0f;
         View view = (View) parent;
-        float z11 = com.google.android.recaptcha.internal.a.z((view.getMeasuredWidth() - this.B) - this.C, i10, f10, this.B);
-        float z12 = com.google.android.recaptcha.internal.a.z((view.getMeasuredHeight() - systemWindowInsetBottom) - systemWindowInsetTop, i11, f11, systemWindowInsetTop);
+        float z11 = e2.c.z((view.getMeasuredWidth() - this.B) - this.C, i9, f10, this.B);
+        float z12 = e2.c.z((view.getMeasuredHeight() - systemWindowInsetBottom) - systemWindowInsetTop, i10, f11, systemWindowInsetTop);
         if (z10) {
             animate().setListener(null).cancel();
-            animate().scaleX(1.0f).scaleY(1.0f).translationX(z11).translationY(z12).alpha(1.0f).setStartDelay(this.H ? 0L : 150L).setDuration(150L).setInterpolator(er.f).start();
+            animate().scaleX(1.0f).scaleY(1.0f).translationX(z11).translationY(z12).alpha(1.0f).setStartDelay(this.H ? 0L : 150L).setDuration(150L).setInterpolator(gr.f).start();
             return;
         }
         if (!this.O) {
@@ -288,9 +289,9 @@ public final class s1 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
+    public final void onMeasure(int i9, int i10) {
+        int size = View.MeasureSpec.getSize(i9);
+        int size2 = View.MeasureSpec.getSize(i10);
         this.L = false;
         if (this.I) {
             size = (int) (size * 0.23f);
@@ -302,7 +303,7 @@ public final class s1 extends FrameLayout {
         }
         r1 r1Var = this.e0;
         if (r1Var != null) {
-            ((tg1) r1Var).b.Z.d(this.F, this.L);
+            ((ug1) r1Var).b.Z.d(this.F, this.L);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         if (getMeasuredHeight() != this.f && getMeasuredWidth() != this.h) {
@@ -337,10 +338,10 @@ public final class s1 extends FrameLayout {
         if (action != 0) {
             if (action != 1) {
                 if (action == 2) {
-                    float x8 = (getX() + motionEvent.getX()) - this.a;
+                    float x10 = (getX() + motionEvent.getX()) - this.a;
                     float y10 = (getY() + motionEvent.getY()) - this.b;
                     if (!this.e) {
-                        float f10 = (y10 * y10) + (x8 * x8);
+                        float f10 = (y10 * y10) + (x10 * x10);
                         float f11 = this.r;
                         if (f10 > f11 * f11) {
                             if (parent != null) {
@@ -351,12 +352,12 @@ public final class s1 extends FrameLayout {
                             this.b = getY() + motionEvent.getY();
                             this.c = getTranslationX();
                             this.d = getTranslationY();
-                            x8 = 0.0f;
+                            x10 = 0.0f;
                             y10 = 0.0f;
                         }
                     }
                     if (this.e) {
-                        setTranslationX(this.c + x8);
+                        setTranslationX(this.c + x10);
                         setTranslationY(this.d + y10);
                         return true;
                     }
@@ -377,9 +378,9 @@ public final class s1 extends FrameLayout {
                     f12 += r5.getSystemWindowInsetTop();
                     f13 += this.n.getSystemWindowInsetBottom();
                 }
-                float x10 = getX();
+                float x11 = getX();
                 float f14 = this.B;
-                if (x10 < f14) {
+                if (x11 < f14) {
                     startDelay.translationX(f14);
                 } else if (getX() + getMeasuredWidth() > measuredWidth - this.C) {
                     startDelay.translationX((measuredWidth - getMeasuredWidth()) - this.C);
@@ -389,7 +390,7 @@ public final class s1 extends FrameLayout {
                 } else if (getY() + getMeasuredHeight() > measuredHeight - f13) {
                     startDelay.translationY((measuredHeight - getMeasuredHeight()) - f13);
                 }
-                startDelay.setDuration(150L).setInterpolator(er.f).start();
+                startDelay.setDuration(150L).setInterpolator(gr.f).start();
             }
             this.e = false;
             return true;

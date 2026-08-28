@@ -7,26 +7,26 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class DocumentObject {
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class ThemeDocument extends TLRPC.TL_document {
-        public org.telegram.ui.ActionBar.e6 accent;
-        public org.telegram.ui.ActionBar.f6 baseTheme;
+        public org.telegram.ui.ActionBar.d6 accent;
+        public org.telegram.ui.ActionBar.e6 baseTheme;
         public TLRPC.ThemeSettings themeSettings;
         public TLRPC.Document wallpaper;
 
         public ThemeDocument(TLRPC.ThemeSettings themeSettings) {
             this.themeSettings = themeSettings;
-            org.telegram.ui.ActionBar.f6 N0 = org.telegram.ui.ActionBar.g6.N0(org.telegram.ui.ActionBar.g6.q0(themeSettings));
+            org.telegram.ui.ActionBar.e6 N0 = org.telegram.ui.ActionBar.f6.N0(org.telegram.ui.ActionBar.f6.q0(themeSettings));
             this.baseTheme = N0;
             N0.getClass();
-            org.telegram.ui.ActionBar.e6 e6Var = new org.telegram.ui.ActionBar.e6();
-            org.telegram.ui.ActionBar.f6.i(e6Var, themeSettings);
-            e6Var.b = N0;
-            this.accent = e6Var;
+            org.telegram.ui.ActionBar.d6 d6Var = new org.telegram.ui.ActionBar.d6();
+            org.telegram.ui.ActionBar.e6.i(d6Var, themeSettings);
+            d6Var.b = N0;
+            this.accent = d6Var;
             TLRPC.WallPaper wallPaper = this.themeSettings.wallpaper;
             if (!(wallPaper instanceof TLRPC.TL_wallPaper)) {
                 this.id = -2147483648L;
@@ -57,19 +57,19 @@ public class DocumentObject {
             return false;
         }
         int size = arrayList.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            if (str.equalsIgnoreCase(arrayList.get(i10).type)) {
+        for (int i9 = 0; i9 < size; i9++) {
+            if (str.equalsIgnoreCase(arrayList.get(i9).type)) {
                 return true;
             }
         }
         return false;
     }
 
-    public static SvgHelper.SvgDrawable getCircleThumb(float f10, int i10, float f11) {
-        return getCircleThumb(f10, i10, null, f11);
+    public static SvgHelper.SvgDrawable getCircleThumb(float f10, int i9, float f11) {
+        return getCircleThumb(f10, i9, null, f11);
     }
 
-    public static SvgHelper.SvgDrawable getSvgRectThumb(int i10, float f10) {
+    public static SvgHelper.SvgDrawable getSvgRectThumb(int i9, float f10) {
         Path path = new Path();
         path.addRect(0.0f, 0.0f, 512.0f, 512.0f, Path.Direction.CW);
         path.close();
@@ -78,15 +78,15 @@ public class DocumentObject {
         svgDrawable.paints.put(path, new Paint(1));
         svgDrawable.width = 512;
         svgDrawable.height = 512;
-        svgDrawable.setupGradient(i10, f10, false);
+        svgDrawable.setupGradient(i9, f10, false);
         return svgDrawable;
     }
 
-    public static SvgHelper.SvgDrawable getSvgThumb(ArrayList<TLRPC.PhotoSize> arrayList, int i10, float f10) {
-        return getSvgThumb(arrayList, i10, f10, false);
+    public static SvgHelper.SvgDrawable getSvgThumb(ArrayList<TLRPC.PhotoSize> arrayList, int i9, float f10) {
+        return getSvgThumb(arrayList, i9, f10, false);
     }
 
-    public static SvgHelper.SvgDrawable getCircleThumb(float f10, int i10, org.telegram.ui.ActionBar.c6 c6Var, float f11) {
+    public static SvgHelper.SvgDrawable getCircleThumb(float f10, int i9, org.telegram.ui.ActionBar.b6 b6Var, float f11) {
         try {
             SvgHelper.SvgDrawable svgDrawable = new SvgHelper.SvgDrawable();
             SvgHelper.Circle circle = new SvgHelper.Circle(256.0f, 256.0f, f10 * 512.0f);
@@ -94,85 +94,85 @@ public class DocumentObject {
             svgDrawable.paints.put(circle, new Paint(1));
             svgDrawable.width = 512;
             svgDrawable.height = 512;
-            svgDrawable.setupGradient(i10, f11, false);
+            svgDrawable.setupGradient(i9, f11, false);
             return svgDrawable;
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             return null;
         }
     }
 
-    public static SvgHelper.SvgDrawable getSvgThumb(ArrayList<TLRPC.PhotoSize> arrayList, int i10, float f10, boolean z10) {
+    public static SvgHelper.SvgDrawable getSvgThumb(ArrayList<TLRPC.PhotoSize> arrayList, int i9, float f10, boolean z10) {
         int size = arrayList.size();
-        int i11 = 512;
+        int i10 = 512;
         TLRPC.TL_photoPathSize tL_photoPathSize = null;
-        int i12 = 512;
-        for (int i13 = 0; i13 < size; i13++) {
-            TLRPC.PhotoSize photoSize = arrayList.get(i13);
+        int i11 = 512;
+        for (int i12 = 0; i12 < size; i12++) {
+            TLRPC.PhotoSize photoSize = arrayList.get(i12);
             if (photoSize instanceof TLRPC.TL_photoPathSize) {
                 tL_photoPathSize = (TLRPC.TL_photoPathSize) photoSize;
             } else if ((photoSize instanceof TLRPC.TL_photoSize) && z10) {
-                i11 = photoSize.w;
-                i12 = photoSize.h;
+                i10 = photoSize.w;
+                i11 = photoSize.h;
             }
         }
-        if (tL_photoPathSize == null || i11 == 0 || i12 == 0) {
+        if (tL_photoPathSize == null || i10 == 0 || i11 == 0) {
             return null;
         }
-        SvgHelper.SvgDrawable drawableByPath = SvgHelper.getDrawableByPath(tL_photoPathSize.svgPath, i11, i12);
+        SvgHelper.SvgDrawable drawableByPath = SvgHelper.getDrawableByPath(tL_photoPathSize.svgPath, i10, i11);
         if (drawableByPath != null) {
-            drawableByPath.setupGradient(i10, f10, false);
+            drawableByPath.setupGradient(i9, f10, false);
         }
         return drawableByPath;
     }
 
-    public static SvgHelper.SvgDrawable getSvgThumb(TLRPC.Document document, int i10, float f10) {
-        return getSvgThumb(document, i10, f10, 1.0f, null);
+    public static SvgHelper.SvgDrawable getSvgThumb(TLRPC.Document document, int i9, float f10) {
+        return getSvgThumb(document, i9, f10, 1.0f, null);
     }
 
-    public static SvgHelper.SvgDrawable getSvgThumb(TLRPC.Document document, int i10, float f10, float f11, org.telegram.ui.ActionBar.c6 c6Var) {
+    public static SvgHelper.SvgDrawable getSvgThumb(TLRPC.Document document, int i9, float f10, float f11, org.telegram.ui.ActionBar.b6 b6Var) {
+        int i10;
         int i11;
-        int i12;
         if (document == null) {
             return null;
         }
         int size = document.thumbs.size();
-        int i13 = 0;
+        int i12 = 0;
         while (true) {
-            if (i13 >= size) {
+            if (i12 >= size) {
                 break;
             }
-            TLRPC.PhotoSize photoSize = document.thumbs.get(i13);
+            TLRPC.PhotoSize photoSize = document.thumbs.get(i12);
             if (photoSize instanceof TLRPC.TL_photoPathSize) {
                 int size2 = document.attributes.size();
-                for (int i14 = 0; i14 < size2; i14++) {
-                    TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i14);
+                for (int i13 = 0; i13 < size2; i13++) {
+                    TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i13);
                     if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                        i11 = documentAttribute.w;
-                        i12 = documentAttribute.h;
+                        i10 = documentAttribute.w;
+                        i11 = documentAttribute.h;
                         break;
                     }
                 }
+                i10 = 512;
                 i11 = 512;
-                i12 = 512;
-                if (i11 != 0 && i12 != 0) {
-                    SvgHelper.SvgDrawable drawableByPath = SvgHelper.getDrawableByPath(((TLRPC.TL_photoPathSize) photoSize).svgPath, (int) (i11 * f11), (int) (i12 * f11));
+                if (i10 != 0 && i11 != 0) {
+                    SvgHelper.SvgDrawable drawableByPath = SvgHelper.getDrawableByPath(((TLRPC.TL_photoPathSize) photoSize).svgPath, (int) (i10 * f11), (int) (i11 * f11));
                     if (drawableByPath != null) {
-                        drawableByPath.setupGradient(i10, c6Var, f10, false);
+                        drawableByPath.setupGradient(i9, b6Var, f10, false);
                     }
                     return drawableByPath;
                 }
             } else {
-                i13++;
+                i12++;
             }
         }
         return null;
     }
 
-    public static SvgHelper.SvgDrawable getSvgThumb(int i10, int i11, float f10) {
-        SvgHelper.SvgDrawable drawable = SvgHelper.getDrawable(i10, -65536);
+    public static SvgHelper.SvgDrawable getSvgThumb(int i9, int i10, float f10) {
+        SvgHelper.SvgDrawable drawable = SvgHelper.getDrawable(i9, -65536);
         if (drawable != null) {
-            drawable.setupGradient(i11, f10, false);
+            drawable.setupGradient(i10, f10, false);
         }
         return drawable;
     }

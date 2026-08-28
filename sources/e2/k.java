@@ -3,25 +3,26 @@ package e2;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import d7.u;
 import java.io.File;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class k {
     public static final c0.l a = new c0.l();
     public static final Object b = new Object();
-    public static w9.d c = null;
+    public static u c = null;
 
     public static long a(Context context) {
         PackageManager packageManager = context.getApplicationContext().getPackageManager();
         return Build.VERSION.SDK_INT >= 33 ? i.a(packageManager, context).lastUpdateTime : packageManager.getPackageInfo(context.getPackageName(), 0).lastUpdateTime;
     }
 
-    public static w9.d b() {
-        w9.d dVar = new w9.d(5);
-        c = dVar;
-        a.k(dVar);
+    public static u b() {
+        u uVar = new u(6);
+        c = uVar;
+        a.k(uVar);
         return c;
     }
 
@@ -36,7 +37,7 @@ public abstract class k {
     public static void c(Context context, boolean z10) {
         j a2;
         j jVar;
-        int i10;
+        int i9;
         if (z10 || c == null) {
             synchronized (b) {
                 if (!z10) {
@@ -48,11 +49,11 @@ public abstract class k {
                         throw th;
                     }
                 }
-                int i11 = Build.VERSION.SDK_INT;
-                if (i11 >= 28 && i11 != 30) {
+                int i10 = Build.VERSION.SDK_INT;
+                if (i10 >= 28 && i10 != 30) {
                     File file = new File(new File("/data/misc/profiles/ref/", context.getPackageName()), "primary.prof");
                     long length = file.length();
-                    int i12 = 0;
+                    int i11 = 0;
                     boolean z11 = file.exists() && length > 0;
                     File file2 = new File(new File("/data/misc/profiles/cur/0/", context.getPackageName()), "primary.prof");
                     long length2 = file2.length();
@@ -70,12 +71,12 @@ public abstract class k {
                         } else {
                             a2 = null;
                         }
-                        if (a2 != null && a2.c == a3 && (i10 = a2.b) != 2) {
-                            i12 = i10;
-                            if (z10 && z12 && i12 != 1) {
-                                i12 = 2;
+                        if (a2 != null && a2.c == a3 && (i9 = a2.b) != 2) {
+                            i11 = i9;
+                            if (z10 && z12 && i11 != 1) {
+                                i11 = 2;
                             }
-                            jVar = new j(a3, 1, (a2 == null && a2.b == 2 && i12 == 1 && length < a2.d) ? 3 : i12, length2);
+                            jVar = new j(a3, 1, (a2 == null && a2.b == 2 && i11 == 1 && length < a2.d) ? 3 : i11, length2);
                             if (a2 != null || !a2.equals(jVar)) {
                                 jVar.b(file3);
                             }
@@ -83,12 +84,12 @@ public abstract class k {
                             return;
                         }
                         if (z12) {
-                            i12 = 2;
+                            i11 = 2;
                         }
                         if (z10) {
-                            i12 = 2;
+                            i11 = 2;
                         }
-                        jVar = new j(a3, 1, (a2 == null && a2.b == 2 && i12 == 1 && length < a2.d) ? 3 : i12, length2);
+                        jVar = new j(a3, 1, (a2 == null && a2.b == 2 && i11 == 1 && length < a2.d) ? 3 : i11, length2);
                         if (a2 != null) {
                         }
                         jVar.b(file3);

@@ -1,14 +1,14 @@
 package q2;
 
-import org.telegram.ui.Cells.pa;
+import org.telegram.ui.Cells.j2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class g extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ ae.b e;
+    public static final /* synthetic */ zd.b e;
 
     static {
-        ae.a aVar = new ae.a(g.class, "DataEntryUrlBox.java");
+        zd.a aVar = new zd.a(g.class, "DataEntryUrlBox.java");
         e = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.DataEntryUrlBox", "", "", "java.lang.String"));
     }
 
@@ -18,7 +18,7 @@ public final class g extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        pa.u(ae.a.b(e, this, this));
+        j2.t(zd.a.b(e, this, this));
         return "DataEntryUrlBox[]";
     }
 }

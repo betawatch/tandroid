@@ -6,28 +6,28 @@ import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class p extends n {
-    public final u5.k j;
-    public final u5.k k;
+    public final t5.l j;
+    public final t5.l k;
     public final long l;
 
-    public p(j jVar, long j10, long j11, long j12, long j13, long j14, List list, long j15, u5.k kVar, u5.k kVar2, long j16, long j17) {
+    public p(j jVar, long j10, long j11, long j12, long j13, long j14, List list, long j15, t5.l lVar, t5.l lVar2, long j16, long j17) {
         super(jVar, j10, j11, j12, j14, list, j15, j16, j17);
-        this.j = kVar;
-        this.k = kVar2;
+        this.j = lVar;
+        this.k = lVar2;
         this.l = j13;
     }
 
     @Override // n4.s
     public final j a(m mVar) {
-        u5.k kVar = this.j;
-        if (kVar == null) {
+        t5.l lVar = this.j;
+        if (lVar == null) {
             return this.a;
         }
         t0 t0Var = mVar.a;
-        return new j(0L, -1L, kVar.a(t0Var.n, t0Var.a, 0L, 0L));
+        return new j(0L, -1L, lVar.a(t0Var.n, t0Var.a, 0L, 0L));
     }
 
     @Override // n4.n
@@ -45,7 +45,7 @@ public final class p extends n {
         BigInteger multiply = BigInteger.valueOf(j10).multiply(BigInteger.valueOf(this.b));
         BigInteger multiply2 = BigInteger.valueOf(this.e).multiply(BigInteger.valueOf(1000000L));
         RoundingMode roundingMode = RoundingMode.CEILING;
-        int i10 = q8.a.a;
+        int i9 = p8.a.a;
         return new BigDecimal(multiply).divide(new BigDecimal(multiply2), 0, roundingMode).toBigIntegerExact().longValue();
     }
 

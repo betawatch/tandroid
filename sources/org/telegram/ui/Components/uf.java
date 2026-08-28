@@ -1,67 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class uf extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ ChatActivityEnterView c;
+public final class uf extends wy {
+    public final /* synthetic */ ChatActivityEnterView L2;
 
-    public /* synthetic */ uf(ChatActivityEnterView chatActivityEnterView, int i10, int i11) {
-        this.a = i11;
-        this.c = chatActivityEnterView;
-        this.b = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uf(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.ActionBar.o2 o2Var, boolean z10, Context context, TLRPC.ChatFull chatFull, ViewGroup viewGroup, boolean z11, org.telegram.ui.ActionBar.b6 b6Var, boolean z12, boolean z13) {
+        super(o2Var, z10, true, true, context, true, chatFull, viewGroup, z11, b6Var, z12, z13);
+        this.L2 = chatActivityEnterView;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                int i10 = this.b;
-                ChatActivityEnterView chatActivityEnterView = this.c;
-                if (i10 == 0) {
-                    chatActivityEnterView.v2 = 0;
-                }
-                chatActivityEnterView.R0 = null;
-                chatActivityEnterView.C1.setTranslationY(0.0f);
-                chatActivityEnterView.C1.setVisibility(8);
-                chatActivityEnterView.G3.unlock();
-                ag agVar = chatActivityEnterView.U2;
-                if (agVar != null) {
-                    agVar.n(0.0f);
-                }
-                chatActivityEnterView.requestLayout();
-                break;
-            default:
-                ChatActivityEnterView chatActivityEnterView2 = this.c;
-                zu0 zu0Var = chatActivityEnterView2.h1;
-                chatActivityEnterView2.v3 = false;
-                chatActivityEnterView2.w3 = null;
-                qf qfVar = chatActivityEnterView2.Q0;
-                if (qfVar != null) {
-                    if (chatActivityEnterView2.Y4 == null) {
-                        qfVar.getLayoutParams().height = this.b;
-                    }
-                    chatActivityEnterView2.Q0.setLayerType(0, null);
-                }
-                if (zu0Var != null) {
-                    zu0Var.requestLayout();
-                    zu0Var.setForeground(null);
-                    zu0Var.setWillNotDraw(false);
-                }
-                if (chatActivityEnterView2.u2 && chatActivityEnterView2.t0()) {
-                    chatActivityEnterView2.s1(0, chatActivityEnterView2.a2, true, true);
-                }
-                ud udVar = chatActivityEnterView2.n0;
-                if (udVar != null) {
-                    udVar.run();
-                    chatActivityEnterView2.n0 = null;
-                }
-                chatActivityEnterView2.G3.unlock();
-                break;
+    @Override // org.telegram.ui.Components.wy, android.view.View
+    public final void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        ChatActivityEnterView chatActivityEnterView = this.L2;
+        if (chatActivityEnterView.R0 == null || chatActivityEnterView.j3 != 0) {
+            return;
         }
+        chatActivityEnterView.U2.o(f10);
     }
 }

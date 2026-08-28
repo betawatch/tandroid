@@ -1,26 +1,36 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ok implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TopicsController b;
-    public final /* synthetic */ long c;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ ok(TopicsController topicsController, long j10, int i10) {
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ok implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TranslateController b;
+    public final /* synthetic */ Utilities.Callback4 c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ String f;
+    public final /* synthetic */ long g;
+
+    public /* synthetic */ ok(TranslateController translateController, Utilities.Callback4 callback4, boolean z10, int i9, String str, long j10, int i10) {
         this.a = i10;
-        this.b = topicsController;
-        this.c = j10;
+        this.b = translateController;
+        this.c = callback4;
+        this.d = z10;
+        this.e = i9;
+        this.f = str;
+        this.g = j10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadTopics$6(this.c);
+                this.b.lambda$pushToTranslate$21(this.c, this.d, this.e, this.f, this.g, (String) obj, (Boolean) obj2);
                 break;
             default:
-                this.b.lambda$processTopics$8(this.c);
+                this.b.lambda$pushToTranslate$20(this.c, this.d, this.e, this.f, this.g, (String) obj, (Boolean) obj2);
                 break;
         }
     }

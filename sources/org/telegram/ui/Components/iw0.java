@@ -1,405 +1,242 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.widget.FrameLayout;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ra1;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public class iw0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    public boolean A;
-    public int B;
-    public int C;
-    public ValueAnimator D;
-    public float E;
-    public boolean F;
-    public final ra1 a;
-    public final n9 b;
-    public final RadialProgressView c;
-    public final eh.s d;
-    public final p80 e;
-    public final lh.d f;
-    public boolean h;
-    public final org.telegram.ui.ActionBar.c6 n;
-    public int r;
-    public final View s;
-    public int v;
-    public final int w;
-    public boolean x;
-    public final mu0 y;
-
-    public iw0(Context context) {
-        this(context, null, 1, null);
+public final class iw0 extends cc {
+    public iw0(LaunchActivity launchActivity, int i9, TLRPC.Document document) {
+        this(launchActivity, null, 1, i9, document, null);
     }
 
-    public void a() {
-        invalidate();
-    }
-
-    public final void b(int i10, boolean z10) {
-        if (this.v != i10) {
-            if (getVisibility() != 0) {
-                z10 = false;
-            }
-            this.v = i10;
-            float dp = (-(i10 >> 1)) + (i10 > 0 ? AndroidUtilities.dp(20.0f) : 0);
-            RadialProgressView radialProgressView = this.c;
-            ra1 ra1Var = this.a;
-            if (!z10) {
-                ra1Var.setTranslationY(dp);
-                if (radialProgressView != null) {
-                    radialProgressView.setTranslationY(dp);
-                    return;
-                }
-                return;
-            }
-            ViewPropertyAnimator translationY = ra1Var.animate().translationY(dp);
-            er erVar = er.f;
-            translationY.setInterpolator(erVar).setDuration(250L);
-            if (radialProgressView != null) {
-                radialProgressView.animate().translationY(dp).setInterpolator(erVar).setDuration(250L);
-            }
-        }
-    }
-
-    public final void c() {
-        Object obj;
-        TLRPC.Document document;
-        int i10;
-        int i11 = this.r;
-        n9 n9Var = this.b;
-        if (i11 != 0) {
-            if (i11 != 1) {
-                TLRPC.Document document2 = null;
-                String str = null;
-                document2 = null;
-                document2 = null;
-                int i12 = this.w;
-                if (i11 == 16) {
-                    document = MediaDataController.getInstance(i12).getEmojiAnimatedSticker("👍");
-                    obj = null;
-                } else {
-                    TLRPC.TL_messages_stickerSet stickerSetByName = MediaDataController.getInstance(i12).getStickerSetByName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
-                    if (stickerSetByName == null) {
-                        stickerSetByName = MediaDataController.getInstance(i12).getStickerSetByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
-                    }
-                    if (stickerSetByName != null && (i10 = this.r) >= 0 && i10 < stickerSetByName.documents.size()) {
-                        document2 = stickerSetByName.documents.get(this.r);
-                    }
-                    obj = stickerSetByName;
-                    document = document2;
-                    str = "130_130";
-                }
-                if (!LiteMode.isEnabled(3)) {
-                    str = s3.c.l(str, "_firstframe");
-                }
-                if (document == null) {
-                    MediaDataController.getInstance(i12).loadStickersByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME, false, obj == null);
-                    n9Var.getImageReceiver().clearImage();
-                    return;
-                }
-                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document.thumbs, this.C, 0.2f);
-                if (svgThumb != null) {
-                    svgThumb.overrideWidthAndHeight(512, 512);
-                }
-                n9Var.i(ImageLocation.getForDocument(document), str, "tgs", svgThumb, obj);
-                int i13 = this.r;
-                if (i13 == 9 || i13 == 0) {
-                    n9Var.getImageReceiver().setAutoRepeat(1);
-                    return;
-                } else {
-                    n9Var.getImageReceiver().setAutoRepeat(2);
-                    return;
-                }
-            }
-        }
-        n9Var.setImageDrawable(new oi0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), "utyan_empty", AndroidUtilities.dp(130.0f)));
-    }
-
-    public final void d(int i10, boolean z10) {
-        boolean z11 = i10 == 0;
-        if (this.F != z11) {
-            this.F = z11;
-            setEnabled(z11);
-            ValueAnimator valueAnimator = this.D;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                this.D = null;
-            }
-            if (z10) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.E, z11 ? 1.0f : 0.0f);
-                this.D = ofFloat;
-                ofFloat.setDuration(480L);
-                this.D.setInterpolator(er.h);
-                this.D.addUpdateListener(new v60(this, 24));
-                this.D.start();
-            } else {
-                this.E = z11 ? 1.0f : 0.0f;
-                a();
-            }
-        }
-        int visibility = getVisibility();
-        n9 n9Var = this.b;
-        RadialProgressView radialProgressView = this.c;
-        ra1 ra1Var = this.a;
-        View view = this.s;
-        if (visibility != i10 && i10 == 0) {
-            if (this.h) {
-                ra1Var.animate().alpha(0.0f).scaleY(0.8f).scaleX(0.8f).setDuration(150L).start();
-                view.animate().setListener(null).cancel();
-                view.setVisibility(0);
-                view.setAlpha(1.0f);
-            } else {
-                ra1Var.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(150L).start();
-                if (view != null) {
-                    view.animate().setListener(null).cancel();
-                    view.animate().setListener(new hw0(this, 0)).alpha(0.0f).setDuration(150L).start();
-                } else {
-                    radialProgressView.animate().alpha(0.0f).scaleY(0.5f).scaleX(0.5f).setDuration(150L).start();
-                }
-                n9Var.getImageReceiver().startAnimation();
-            }
-        }
-        super.setVisibility(i10);
-        if (getVisibility() == 0) {
-            c();
-            return;
-        }
-        this.B = 0;
-        ra1Var.setAlpha(0.0f);
-        ra1Var.setScaleX(0.8f);
-        ra1Var.setScaleY(0.8f);
-        if (view != null) {
-            view.animate().setListener(null).cancel();
-            view.animate().setListener(new hw0(this, 1)).alpha(0.0f).setDuration(150L).start();
-        } else {
-            radialProgressView.setAlpha(0.0f);
-            radialProgressView.setScaleX(0.5f);
-            radialProgressView.setScaleY(0.5f);
-        }
-        n9Var.getImageReceiver().stopAnimation();
-        n9Var.getImageReceiver().clearImage();
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.diceStickersDidLoad && AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME.equals((String) objArr[0]) && getVisibility() == 0) {
-            c();
-        }
-    }
-
-    public void e(boolean z10, boolean z11) {
-        if (this.h != z10) {
-            this.h = z10;
-            if (getVisibility() != 0) {
-                return;
-            }
-            RadialProgressView radialProgressView = this.c;
-            View view = this.s;
-            ra1 ra1Var = this.a;
-            if (z11) {
-                if (z10) {
-                    ra1Var.animate().alpha(0.0f).scaleY(0.8f).scaleX(0.8f).setDuration(150L).start();
-                    this.y.run();
-                    return;
-                }
-                ra1Var.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(150L).start();
-                if (view != null) {
-                    view.animate().setListener(null).cancel();
-                    view.animate().setListener(new hw0(this, 2)).alpha(0.0f).setDuration(150L).start();
-                } else {
-                    radialProgressView.animate().alpha(0.0f).scaleY(0.5f).scaleX(0.5f).setDuration(150L).start();
-                }
-                this.b.getImageReceiver().startAnimation();
-                return;
-            }
-            if (!z10) {
-                ra1Var.animate().cancel();
-                ra1Var.setAlpha(1.0f);
-                ra1Var.setScaleX(1.0f);
-                ra1Var.setScaleY(1.0f);
-                if (view != null) {
-                    view.animate().setListener(null).cancel();
-                    view.setVisibility(8);
-                    return;
-                } else {
-                    radialProgressView.setAlpha(0.0f);
-                    radialProgressView.setScaleX(0.5f);
-                    radialProgressView.setScaleY(0.5f);
-                    return;
-                }
-            }
-            ra1Var.animate().cancel();
-            ra1Var.setAlpha(0.0f);
-            ra1Var.setScaleX(0.8f);
-            ra1Var.setScaleY(0.8f);
-            if (view != null) {
-                view.animate().setListener(null).cancel();
-                view.setAlpha(1.0f);
-                view.setVisibility(0);
-            } else {
-                radialProgressView.setAlpha(1.0f);
-                radialProgressView.setScaleX(1.0f);
-                radialProgressView.setScaleY(1.0f);
-            }
-        }
-    }
-
-    public float getVisibilityFactor() {
-        return this.E;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (getVisibility() == 0) {
-            c();
-        }
-        NotificationCenter.getInstance(this.w).addObserver(this, NotificationCenter.diceStickersDidLoad);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getInstance(this.w).removeObserver(this, NotificationCenter.diceStickersDidLoad);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int i14;
-        super.onLayout(z10, i10, i11, i12, i13);
-        if ((this.A || this.x) && (i14 = this.B) > 0 && i14 != getMeasuredHeight()) {
-            float measuredHeight = (this.B - getMeasuredHeight()) / 2.0f;
-            ra1 ra1Var = this.a;
-            ra1Var.setTranslationY(ra1Var.getTranslationY() + measuredHeight);
-            if (!this.x) {
-                ra1Var.animate().translationY(0.0f).setInterpolator(er.f).setDuration(250L);
-            }
-            RadialProgressView radialProgressView = this.c;
-            if (radialProgressView != null) {
-                radialProgressView.setTranslationY(radialProgressView.getTranslationY() + measuredHeight);
-                if (!this.x) {
-                    radialProgressView.animate().translationY(0.0f).setInterpolator(er.f).setDuration(250L);
-                }
-            }
-        }
-        this.B = getMeasuredHeight();
-    }
-
-    public void setAnimateLayoutChange(boolean z10) {
-        this.A = z10;
-    }
-
-    public void setPreventMoving(boolean z10) {
-        this.x = z10;
+    /* JADX WARN: Removed duplicated region for block: B:109:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0088 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0142  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x01cd  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0255  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0266  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0277  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0288  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x02ff  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0366  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public iw0(Context context, TLObject tLObject, int i9, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(context, b6Var);
+        TLRPC.Document document2;
+        TLRPC.StickerSet stickerSet;
+        TLRPC.TL_stickerSetFullCovered tL_stickerSetFullCovered;
+        ArrayList<TLRPC.Document> arrayList;
+        TLRPC.Document document3;
+        ImageLocation forSticker;
+        TLRPC.TL_messages_stickerSet stickerSet2;
+        boolean z10 = tLObject instanceof TLRPC.TL_messages_stickerSet;
         if (z10) {
-            return;
-        }
-        this.a.setTranslationY(0.0f);
-        RadialProgressView radialProgressView = this.c;
-        if (radialProgressView != null) {
-            radialProgressView.setTranslationY(0.0f);
-        }
-    }
-
-    public void setStickerType(int i10) {
-        if (this.r != i10) {
-            this.r = i10;
-            c();
-        }
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        int i10 = 0;
-        for (int i11 = 0; i11 < charSequence.length(); i11++) {
-            if (Character.isWhitespace(charSequence.charAt(i11))) {
-                i10++;
-            }
-        }
-        if (i10 > 4 && charSequence.length() > 20) {
-            int length = charSequence.length() >> 1;
-            int i12 = -1;
-            int i13 = 0;
-            for (int i14 = 0; i14 < charSequence.length(); i14++) {
-                if (Character.isWhitespace(charSequence.charAt(i14))) {
-                    int abs = Math.abs(length - i14);
-                    if (i12 == -1 || abs < i13) {
-                        i12 = i14;
-                        i13 = abs;
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
+            stickerSet = tL_messages_stickerSet.set;
+            ArrayList<TLRPC.Document> arrayList2 = tL_messages_stickerSet.documents;
+            if (arrayList2 != null && !arrayList2.isEmpty()) {
+                document3 = arrayList2.get(0);
+                document2 = document3;
+                if (stickerSet == null && document2 != null && (stickerSet2 = MediaDataController.getInstance(UserConfig.selectedAccount).getStickerSet(MessageObject.getInputStickerSet(document2), true)) != null) {
+                    stickerSet = stickerSet2.set;
+                }
+                TLRPC.StickerSet stickerSet3 = stickerSet;
+                if (document2 == null) {
+                    TLObject closestPhotoSizeWithSize = stickerSet3 != null ? FileLoader.getClosestPhotoSizeWithSize(stickerSet3.thumbs, 90) : null;
+                    closestPhotoSizeWithSize = closestPhotoSizeWithSize == null ? document2 : closestPhotoSizeWithSize;
+                    boolean z11 = closestPhotoSizeWithSize instanceof TLRPC.Document;
+                    if (z11) {
+                        forSticker = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, 90), document2);
+                    } else {
+                        forSticker = ImageLocation.getForSticker((TLRPC.PhotoSize) closestPhotoSizeWithSize, document2, tLObject instanceof TLRPC.StickerSetCovered ? ((TLRPC.StickerSetCovered) tLObject).set.thumb_version : z10 ? ((TLRPC.TL_messages_stickerSet) tLObject).set.thumb_version : 0);
                     }
+                    ImageLocation imageLocation = forSticker;
+                    if (z11 && (MessageObject.isAnimatedStickerDocument(document2, true) || MessageObject.isVideoSticker(document2) || MessageObject.isGifDocument(document2))) {
+                        this.a.j(ImageLocation.getForDocument(document2), "50_50", imageLocation, null, 0, tLObject);
+                    } else if (imageLocation == null || imageLocation.imageType != 1) {
+                        this.a.i(imageLocation, "50_50", "webp", null, tLObject);
+                    } else {
+                        this.a.i(imageLocation, "50_50", "tgs", null, tLObject);
+                    }
+                } else {
+                    this.a.i(null, null, "webp", null, tLObject);
+                }
+                if (MessageObject.isTextColorEmoji(document2)) {
+                    this.a.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+                }
+                switch (i10) {
+                    case 0:
+                        if (stickerSet3 != null) {
+                            if (stickerSet3.masks) {
+                                this.b.setText(LocaleController.getString(R.string.MasksRemoved));
+                                this.c.setText(LocaleController.formatString("MasksRemovedInfo", R.string.MasksRemovedInfo, stickerSet3.title));
+                                return;
+                            } else {
+                                if (!stickerSet3.emojis) {
+                                    this.b.setText(LocaleController.getString(R.string.StickersRemoved));
+                                    this.c.setText(LocaleController.formatString("StickersRemovedInfo", R.string.StickersRemovedInfo, stickerSet3.title));
+                                    return;
+                                }
+                                this.b.setText(LocaleController.getString(R.string.EmojiRemoved));
+                                if (i9 > 1) {
+                                    this.c.setText(LocaleController.formatPluralString("EmojiRemovedMultipleInfo", i9, new Object[0]));
+                                    return;
+                                } else {
+                                    this.c.setText(LocaleController.formatString("EmojiRemovedInfo", R.string.EmojiRemovedInfo, stickerSet3.title));
+                                    return;
+                                }
+                            }
+                        }
+                        return;
+                    case 1:
+                        if (stickerSet3 != null) {
+                            if (stickerSet3.masks) {
+                                this.b.setText(LocaleController.getString(R.string.MasksArchived));
+                                this.c.setText(LocaleController.formatString("MasksArchivedInfo", R.string.MasksArchivedInfo, stickerSet3.title));
+                                return;
+                            } else if (stickerSet3.emojis) {
+                                this.b.setText(LocaleController.getString(R.string.EmojiArchived));
+                                this.c.setText(LocaleController.formatString("EmojiArchivedInfo", R.string.EmojiArchivedInfo, stickerSet3.title));
+                                return;
+                            } else {
+                                this.b.setText(LocaleController.getString(R.string.StickersArchived));
+                                this.c.setText(LocaleController.formatString("StickersArchivedInfo", R.string.StickersArchivedInfo, stickerSet3.title));
+                                return;
+                            }
+                        }
+                        return;
+                    case 2:
+                        if (stickerSet3 != null) {
+                            if (stickerSet3.masks) {
+                                this.b.setText(LocaleController.getString(R.string.AddMasksInstalled));
+                                this.c.setText(LocaleController.formatString("AddMasksInstalledInfo", R.string.AddMasksInstalledInfo, stickerSet3.title));
+                                return;
+                            } else {
+                                if (!stickerSet3.emojis) {
+                                    this.b.setText(LocaleController.getString(R.string.AddStickersInstalled));
+                                    this.c.setText(LocaleController.formatString("AddStickersInstalledInfo", R.string.AddStickersInstalledInfo, stickerSet3.title));
+                                    return;
+                                }
+                                this.b.setText(LocaleController.getString(R.string.AddEmojiInstalled));
+                                if (i9 > 1) {
+                                    this.c.setText(LocaleController.formatPluralString("AddEmojiMultipleInstalledInfo", i9, new Object[0]));
+                                    return;
+                                } else {
+                                    this.c.setText(LocaleController.formatString("AddEmojiInstalledInfo", R.string.AddEmojiInstalledInfo, stickerSet3.title));
+                                    return;
+                                }
+                            }
+                        }
+                        return;
+                    case 3:
+                        this.b.setText(LocaleController.getString(R.string.RemovedFromRecent));
+                        this.c.setVisibility(8);
+                        return;
+                    case 4:
+                        this.b.setText(LocaleController.getString(R.string.RemovedFromFavorites));
+                        this.c.setVisibility(8);
+                        return;
+                    case 5:
+                        this.b.setText(LocaleController.getString(R.string.AddedToFavorites));
+                        this.c.setVisibility(8);
+                        return;
+                    case 6:
+                        if (UserConfig.getInstance(UserConfig.selectedAccount).isPremium() || MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked()) {
+                            this.b.setText(LocaleController.formatString("LimitReachedFavoriteStickers", R.string.LimitReachedFavoriteStickers, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).stickersFavedLimitPremium)));
+                            this.c.setText(LocaleController.formatString("LimitReachedFavoriteStickersSubtitlePremium", R.string.LimitReachedFavoriteStickersSubtitlePremium, new Object[0]));
+                            return;
+                        } else {
+                            this.b.setText(LocaleController.formatString("LimitReachedFavoriteStickers", R.string.LimitReachedFavoriteStickers, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).stickersFavedLimitDefault)));
+                            this.c.setText(AndroidUtilities.premiumText(LocaleController.formatString("LimitReachedFavoriteStickersSubtitle", R.string.LimitReachedFavoriteStickersSubtitle, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).stickersFavedLimitPremium)), new l20(context, 2)));
+                            return;
+                        }
+                    case 7:
+                        boolean isPremium = UserConfig.getInstance(UserConfig.selectedAccount).isPremium();
+                        if (MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked() || isPremium) {
+                            this.b.setText(LocaleController.formatString(R.string.LimitReachedFavoriteGifs, Integer.valueOf(isPremium ? MessagesController.getInstance(UserConfig.selectedAccount).savedGifsLimitPremium : MessagesController.getInstance(UserConfig.selectedAccount).savedGifsLimitDefault)));
+                            this.c.setText(LocaleController.getString(R.string.LimitReachedFavoriteGifsSubtitlePremium));
+                            return;
+                        } else {
+                            this.b.setText(LocaleController.formatString(R.string.LimitReachedFavoriteGifs, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).savedGifsLimitDefault)));
+                            this.c.setText(AndroidUtilities.premiumText(LocaleController.formatString(R.string.LimitReachedFavoriteGifsSubtitle, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).savedGifsLimitPremium)), new l20(context, 3)));
+                            return;
+                        }
+                    default:
+                        return;
                 }
             }
-            if (i12 > 0) {
-                charSequence = ((Object) charSequence.subSequence(0, i12)) + "\n" + ((Object) charSequence.subSequence(i12 + 1, charSequence.length()));
+            document3 = document;
+            document2 = document3;
+            if (stickerSet == null) {
+                stickerSet = stickerSet2.set;
             }
-        }
-        this.e.setText(charSequence);
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        d(i10, true);
-    }
-
-    public iw0(Context context, View view, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        this.w = UserConfig.selectedAccount;
-        this.y = new mu0(this, 1);
-        this.C = org.telegram.ui.ActionBar.g6.c7;
-        this.n = c6Var;
-        this.s = view;
-        this.r = i10;
-        ra1 ra1Var = new ra1(this, context, 12);
-        this.a = ra1Var;
-        ra1Var.setOrientation(1);
-        n9 n9Var = new n9(context);
-        this.b = n9Var;
-        n9Var.setOnClickListener(new l70(this, 18));
-        eh.s sVar = new eh.s(context);
-        this.d = sVar;
-        sVar.setTypeface(AndroidUtilities.bold());
-        int i11 = org.telegram.ui.ActionBar.g6.G6;
-        sVar.setTag(Integer.valueOf(i11));
-        sVar.setTextColor(org.telegram.ui.ActionBar.g6.v0(i11, c6Var));
-        sVar.setTextSize(1, 20.0f);
-        sVar.setGravity(17);
-        p80 p80Var = new p80(context, null);
-        this.e = p80Var;
-        int i12 = org.telegram.ui.ActionBar.g6.y6;
-        p80Var.setTag(Integer.valueOf(i12));
-        p80Var.setTextColor(org.telegram.ui.ActionBar.g6.v0(i12, c6Var));
-        p80Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.J6, c6Var));
-        p80Var.setTextSize(1, 14.0f);
-        p80Var.setGravity(17);
-        lh.d dVar = new lh.d(context, c6Var, true);
-        dVar.setRoundRadius(24);
-        this.f = dVar;
-        dVar.setVisibility(8);
-        ra1Var.addView(n9Var, h7.z5.q(117, 117, 1));
-        ra1Var.addView(sVar, h7.z5.t(-2, -2, 1, 0, 12, 0, 0));
-        ra1Var.addView(p80Var, h7.z5.t(-2, -2, 1, 0, 8, 0, 0));
-        ra1Var.addView(dVar, h7.z5.t(-1, 48, 1, 28, 16, 28, 0));
-        addView(ra1Var, h7.z5.d(-2, -2.0f, 17, 46.0f, 0.0f, 46.0f, 30.0f));
-        if (view == null) {
-            RadialProgressView radialProgressView = new RadialProgressView(context, c6Var);
-            this.c = radialProgressView;
-            radialProgressView.setAlpha(0.0f);
-            radialProgressView.setScaleY(0.5f);
-            radialProgressView.setScaleX(0.5f);
-            addView(radialProgressView, h7.z5.e(-2, -2, 17));
+            TLRPC.StickerSet stickerSet32 = stickerSet;
+            if (document2 == null) {
+            }
+            if (MessageObject.isTextColorEmoji(document2)) {
+            }
+            switch (i10) {
+            }
+        } else if (tLObject instanceof TLRPC.StickerSetCovered) {
+            TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) tLObject;
+            stickerSet = stickerSetCovered.set;
+            TLRPC.Document document4 = stickerSetCovered.cover;
+            if (document4 != null) {
+                document3 = document4;
+            } else if (stickerSetCovered.covers.isEmpty()) {
+                if ((stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) && (arrayList = (tL_stickerSetFullCovered = (TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents) != null && !arrayList.isEmpty()) {
+                    document3 = tL_stickerSetFullCovered.documents.get(0);
+                }
+                document3 = document;
+            } else {
+                document3 = stickerSetCovered.covers.get(0);
+            }
+            document2 = document3;
+            if (stickerSet == null) {
+            }
+            TLRPC.StickerSet stickerSet322 = stickerSet;
+            if (document2 == null) {
+            }
+            if (MessageObject.isTextColorEmoji(document2)) {
+            }
+            switch (i10) {
+            }
+        } else {
+            if (document == null && tLObject != null && BuildVars.DEBUG_VERSION) {
+                throw new IllegalArgumentException("Invalid type of the given setObject: " + tLObject.getClass());
+            }
+            document2 = document;
+            stickerSet = null;
+            if (stickerSet == null) {
+            }
+            TLRPC.StickerSet stickerSet3222 = stickerSet;
+            if (document2 == null) {
+            }
+            if (MessageObject.isTextColorEmoji(document2)) {
+            }
+            switch (i10) {
+            }
         }
     }
 }

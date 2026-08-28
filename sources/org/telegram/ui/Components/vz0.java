@@ -1,54 +1,74 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vz0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wz0 b;
+public final class vz0 {
+    public int a;
+    public int b;
+    public int c;
+    public TLRPC.MessageEntity d;
+    public boolean e;
 
-    public /* synthetic */ vz0(wz0 wz0Var, int i10) {
-        this.a = i10;
-        this.b = wz0Var;
+    public vz0() {
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                wz0 wz0Var = this.b;
-                wz0Var.getClass();
-                wz0Var.B = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wz0Var.invalidate();
-                break;
-            case 1:
-                wz0 wz0Var2 = this.b;
-                wz0Var2.getClass();
-                wz0Var2.B = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wz0Var2.invalidate();
-                break;
-            case 2:
-                wz0 wz0Var3 = this.b;
-                wz0Var3.getClass();
-                wz0Var3.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wz0Var3.invalidate();
-                break;
-            case 3:
-                wz0 wz0Var4 = this.b;
-                wz0Var4.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wz0Var4.s = floatValue;
-                wz0Var4.w = (int) ((wz0Var4.h * floatValue) + 0);
-                wz0Var4.invalidate();
-                break;
-            default:
-                wz0 wz0Var5 = this.b;
-                wz0Var5.getClass();
-                wz0Var5.v = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wz0Var5.x = wz0Var5.r + ((int) Math.ceil((wz0Var5.n - r1) * r5));
-                wz0Var5.invalidate();
-                break;
+    public final void a(TextPaint textPaint) {
+        Typeface typeface;
+        if (this.e) {
+            typeface = (this.a & 2) != 0 ? AndroidUtilities.getTypeface("fonts/mw_bolditalic.ttf") : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
+        } else {
+            int i9 = this.a;
+            if ((i9 & 4) == 0 && (i9 & 2048) == 0) {
+                int i10 = i9 & 1;
+                typeface = (i10 == 0 || (i9 & 2) == 0) ? i10 != 0 ? AndroidUtilities.bold() : (i9 & 2) != 0 ? AndroidUtilities.getTypeface("fonts/ritalic.ttf") : null : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
+            } else {
+                typeface = Typeface.MONOSPACE;
+            }
         }
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        if ((this.a & 16) != 0) {
+            textPaint.setFlags(textPaint.getFlags() | 8);
+        } else {
+            textPaint.setFlags(textPaint.getFlags() & (-9));
+        }
+        int i11 = this.a;
+        if ((i11 & 8) == 0 && (i11 & 8192) == 0) {
+            textPaint.setFlags(textPaint.getFlags() & (-17));
+        } else {
+            textPaint.setFlags(textPaint.getFlags() | 16);
+        }
+        if ((this.a & 512) != 0) {
+            textPaint.bgColor = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.R9, false);
+        }
+        int i12 = this.a;
+        if ((i12 & 8192) != 0) {
+            textPaint.setColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.q7, false));
+        } else if ((i12 & 4096) != 0) {
+            textPaint.setColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.Oh, false));
+        }
+    }
+
+    public final void b(vz0 vz0Var) {
+        TLRPC.MessageEntity messageEntity;
+        this.a |= vz0Var.a;
+        if (this.d != null || (messageEntity = vz0Var.d) == null) {
+            return;
+        }
+        this.d = messageEntity;
+    }
+
+    public vz0(vz0 vz0Var) {
+        this.a = vz0Var.a;
+        this.b = vz0Var.b;
+        this.c = vz0Var.c;
+        this.d = vz0Var.d;
+        this.e = vz0Var.e;
     }
 }

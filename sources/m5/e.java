@@ -6,18 +6,18 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class e implements com.google.android.gms.common.api.b {
     public final CastDevice a;
-    public final n5.e0 b;
+    public final n5.f0 b;
     public final Bundle c;
     public final String d = UUID.randomUUID().toString();
 
-    public /* synthetic */ e(j9.a aVar) {
-        this.a = (CastDevice) aVar.b;
-        this.b = (n5.e0) aVar.c;
-        this.c = (Bundle) aVar.d;
+    public /* synthetic */ e(j4.c cVar) {
+        this.a = (CastDevice) cVar.b;
+        this.b = (n5.f0) cVar.c;
+        this.c = (Bundle) cVar.d;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:28:0x0058, code lost:
@@ -35,7 +35,7 @@ public final class e implements com.google.android.gms.common.api.b {
             return false;
         }
         e eVar = (e) obj;
-        if (y5.l.l(this.a, eVar.a)) {
+        if (x5.l.l(this.a, eVar.a)) {
             Bundle bundle = eVar.c;
             Bundle bundle2 = this.c;
             if (bundle2 != null && bundle != null) {
@@ -43,11 +43,11 @@ public final class e implements com.google.android.gms.common.api.b {
                     Set<String> keySet = bundle2.keySet();
                     if (keySet.containsAll(bundle.keySet())) {
                         for (String str : keySet) {
-                            if (!y5.l.l(bundle2.get(str), bundle.get(str))) {
+                            if (!x5.l.l(bundle2.get(str), bundle.get(str))) {
                                 break;
                             }
                         }
-                        if (y5.l.l(this.d, eVar.d)) {
+                        if (x5.l.l(this.d, eVar.d)) {
                             return true;
                         }
                     }

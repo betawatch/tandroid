@@ -1,5 +1,6 @@
 package g5;
 
+import a5.m;
 import android.content.Context;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
@@ -12,42 +13,46 @@ import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
 import android.view.View;
+import androidx.biometric.j;
 import c2.t;
 import com.google.android.exoplayer2.upstream.s0;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.s;
 import com.google.android.gms.internal.clearcut.e;
 import com.google.android.gms.internal.play_billing.a4;
-import com.google.android.gms.internal.play_billing.e3;
+import com.google.android.gms.internal.play_billing.b4;
 import com.google.android.gms.internal.play_billing.f3;
-import com.google.android.gms.internal.play_billing.h3;
-import com.google.android.gms.internal.play_billing.k3;
-import com.google.android.gms.internal.play_billing.n3;
+import com.google.android.gms.internal.play_billing.g3;
+import com.google.android.gms.internal.play_billing.i3;
+import com.google.android.gms.internal.play_billing.l3;
 import com.google.android.gms.internal.play_billing.o3;
-import com.google.android.gms.internal.play_billing.s3;
+import com.google.android.gms.internal.play_billing.p3;
+import com.google.android.gms.internal.play_billing.t3;
 import com.google.android.gms.internal.play_billing.u;
-import com.google.android.gms.internal.play_billing.u3;
 import com.google.android.gms.internal.play_billing.v3;
 import com.google.android.gms.internal.play_billing.w3;
-import com.google.android.gms.internal.play_billing.z3;
+import com.google.android.gms.internal.play_billing.x3;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import e7.v;
-import g7.e8;
+import f7.d7;
+import f7.f8;
+import g7.oa;
+import g7.t6;
+import g7.y5;
 import h3.n1;
 import h3.o1;
 import h3.p1;
 import h3.r1;
 import h3.s1;
-import h7.k6;
-import h7.oa;
-import h7.w6;
-import ia.d0;
+import ih.i4;
+import ih.l9;
+import ih.m9;
 import j4.a1;
-import j4.c0;
-import j4.h0;
-import j4.p;
+import j4.d0;
+import j4.i0;
+import j4.q;
+import j4.y;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
@@ -68,47 +73,39 @@ import java.util.SortedSet;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.concurrent.atomic.AtomicBoolean;
-import jh.e4;
-import jh.h9;
-import jh.i9;
-import jh.x3;
-import l3.h;
-import ld.n;
-import m.i3;
-import m2.g;
-import m3.j;
+import l3.g;
 import m3.k;
 import m3.w;
+import m5.c0;
 import m5.f0;
-import n2.b0;
+import mc.i;
+import n2.a0;
 import n2.d;
-import n2.z;
-import nc.i;
-import oa.m;
+import n5.e0;
+import na.n;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.f6;
+import q5.f;
+import q5.x;
 import r0.j0;
 import r0.m1;
 import r0.o;
-import r5.f;
-import r5.x;
-import w2.q;
-import y5.l;
+import x5.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b implements h0, h, s0, ld.b, OnCompleteListener, o, s, z, n9.a, ke.b, c6 {
+public final class b implements i0, g, kd.b, s0, OnCompleteListener, o, s, m9.a, je.b, a0, b6 {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
 
-    public /* synthetic */ b(int i10) {
-        this.a = i10;
+    public /* synthetic */ b(int i9) {
+        this.a = i9;
     }
 
-    public static String j(Class cls) {
+    public static String i(Class cls) {
         int modifiers = cls.getModifiers();
         if (Modifier.isInterface(modifiers)) {
             return "Interfaces can't be instantiated! Register an InstanceCreator or a TypeAdapter for this type. Interface name: ".concat(cls.getName());
@@ -141,14 +138,14 @@ public final class b implements h0, h, s0, ld.b, OnCompleteListener, o, s, z, n9
             sb2.append("/");
             boolean z10 = true;
             for (String str2 : collection) {
-                r5.a.b(str2);
+                q5.a.b(str2);
                 if (!z10) {
                     sb2.append(",");
                 }
-                if (!r5.a.a.matcher(str2).matches()) {
+                if (!q5.a.a.matcher(str2).matches()) {
                     StringBuilder sb3 = new StringBuilder(str2.length());
-                    for (int i10 = 0; i10 < str2.length(); i10++) {
-                        char charAt = str2.charAt(i10);
+                    for (int i9 = 0; i9 < str2.length(); i9++) {
+                        char charAt = str2.charAt(i9);
                         if ((charAt < 'A' || charAt > 'Z') && ((charAt < 'a' || charAt > 'z') && !((charAt >= '0' && charAt <= '9') || charAt == '_' || charAt == '-' || charAt == '.' || charAt == ':'))) {
                             sb3.append(String.format("%%%04x", Integer.valueOf(charAt)));
                         } else {
@@ -171,81 +168,88 @@ public final class b implements h0, h, s0, ld.b, OnCompleteListener, o, s, z, n9
         return sb2.toString();
     }
 
-    public void A(k3 k3Var) {
+    public void A(l3 l3Var) {
         try {
-            v3 t10 = w3.t();
-            t10.d((o3) this.b);
+            w3 t10 = x3.t();
+            t10.d((p3) this.b);
             t10.c();
-            w3.p((w3) t10.b, k3Var);
-            ((t) this.c).h((w3) t10.a());
+            x3.p((x3) t10.b, l3Var);
+            ((t) this.c).h((x3) t10.a());
         } catch (Throwable th) {
             u.i("BillingLogger", "Unable to log.", th);
         }
     }
 
-    public void B(z3 z3Var) {
+    public void B(a4 a4Var) {
         try {
             t tVar = (t) this.c;
-            v3 t10 = w3.t();
-            t10.d((o3) this.b);
+            w3 t10 = x3.t();
+            t10.d((p3) this.b);
             t10.c();
-            w3.r((w3) t10.b, z3Var);
-            tVar.h((w3) t10.a());
+            x3.r((x3) t10.b, a4Var);
+            tVar.h((x3) t10.a());
         } catch (Throwable th) {
             u.i("BillingLogger", "Unable to log.", th);
         }
     }
 
-    public void C(a4 a4Var) {
-        if (a4Var == null) {
+    public void C(b4 b4Var) {
+        if (b4Var == null) {
             return;
         }
         try {
-            v3 t10 = w3.t();
-            t10.d((o3) this.b);
+            w3 t10 = x3.t();
+            t10.d((p3) this.b);
             t10.c();
-            w3.s((w3) t10.b, a4Var);
-            ((t) this.c).h((w3) t10.a());
+            x3.s((x3) t10.b, b4Var);
+            ((t) this.c).h((x3) t10.a());
         } catch (Throwable th) {
             u.i("BillingLogger", "Unable to log.", th);
         }
     }
 
-    public void D(f3 f3Var, o3 o3Var) {
-        if (f3Var == null) {
+    @Override // com.google.android.exoplayer2.upstream.s0
+    public Object D(Uri uri, com.google.android.exoplayer2.upstream.o oVar) {
+        i4.a aVar = (i4.a) ((s0) this.b).D(uri, oVar);
+        List list = (List) this.c;
+        return (list == null || list.isEmpty()) ? aVar : (i4.a) aVar.a(list);
+    }
+
+    public void E(g3 g3Var, p3 p3Var) {
+        if (g3Var == null) {
             return;
         }
         try {
-            v3 t10 = w3.t();
-            t10.d(o3Var);
+            w3 t10 = x3.t();
+            t10.d(p3Var);
             t10.c();
-            w3.n((w3) t10.b, f3Var);
-            ((t) this.c).h((w3) t10.a());
+            x3.n((x3) t10.b, g3Var);
+            ((t) this.c).h((x3) t10.a());
         } catch (Throwable th) {
             u.i("BillingLogger", "Unable to log.", th);
         }
     }
 
-    public void E(h3 h3Var, o3 o3Var) {
+    public void F(i3 i3Var, p3 p3Var) {
         try {
-            v3 t10 = w3.t();
-            t10.d(o3Var);
+            w3 t10 = x3.t();
+            t10.d(p3Var);
             t10.c();
-            w3.o((w3) t10.b, h3Var);
-            ((t) this.c).h((w3) t10.a());
+            x3.o((x3) t10.b, i3Var);
+            ((t) this.c).h((x3) t10.a());
         } catch (Throwable th) {
             u.i("BillingLogger", "Unable to log.", th);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public ColorFilter F() {
-        return g6.v3;
+    @Override // org.telegram.ui.ActionBar.b6
+    public ColorFilter H() {
+        return f6.v3;
     }
 
     @Override // r0.o
-    public m1 I0(View view, m1 m1Var) {
-        g gVar = (g) this.c;
+    public m1 L0(View view, m1 m1Var) {
+        m2.g gVar = (m2.g) this.c;
         m1 h = j0.h(view, m1Var);
         if (h.a.n()) {
             return h;
@@ -256,8 +260,8 @@ public final class b implements h0, h, s0, ld.b, OnCompleteListener, o, s, z, n9
         rect.right = h.c();
         rect.bottom = h.a();
         int childCount = gVar.getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            m1 b10 = j0.b(gVar.getChildAt(i10), h);
+        for (int i9 = 0; i9 < childCount; i9++) {
+            m1 b10 = j0.b(gVar.getChildAt(i9), h);
             rect.left = Math.min(b10.b(), rect.left);
             rect.top = Math.min(b10.d(), rect.top);
             rect.right = Math.min(b10.c(), rect.right);
@@ -266,20 +270,25 @@ public final class b implements h0, h, s0, ld.b, OnCompleteListener, o, s, z, n9
         return h.f(rect.left, rect.top, rect.right, rect.bottom);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public Paint N(String str) {
-        return g6.S0(str);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public int N0(int i10) {
+    @Override // org.telegram.ui.ActionBar.b6
+    public int N0(int i9) {
         SparseIntArray sparseIntArray = (SparseIntArray) this.b;
-        int indexOfKey = sparseIntArray.indexOfKey(i10);
-        return indexOfKey >= 0 ? sparseIntArray.valueAt(indexOfKey) : g6.w0(null, i10, false);
+        int indexOfKey = sparseIntArray.indexOfKey(i9);
+        return indexOfKey >= 0 ? sparseIntArray.valueAt(indexOfKey) : f6.w0(null, i9, false);
     }
 
-    @Override // ke.b
-    public ke.a V0(b bVar) {
+    @Override // org.telegram.ui.ActionBar.b6
+    public Paint O(String str) {
+        return f6.S0(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public boolean a() {
+        return f6.I.q();
+    }
+
+    @Override // je.b
+    public je.a a1(we.b bVar) {
         List list = (List) this.c;
         List list2 = (List) bVar.b;
         int size = list2 != null ? list2.size() : 0;
@@ -290,28 +299,6 @@ public final class b implements h0, h, s0, ld.b, OnCompleteListener, o, s, z, n9
             list = arrayList;
         }
         return new i(bVar, (List) this.b, list);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public boolean a() {
-        return g6.I.q();
-    }
-
-    @Override // n9.a
-    public StackTraceElement[] a0(StackTraceElement[] stackTraceElementArr) {
-        if (stackTraceElementArr.length <= 1024) {
-            return stackTraceElementArr;
-        }
-        n9.a[] aVarArr = (n9.a[]) this.b;
-        StackTraceElement[] stackTraceElementArr2 = stackTraceElementArr;
-        for (int i10 = 0; i10 < 1; i10++) {
-            n9.a aVar = aVarArr[i10];
-            if (stackTraceElementArr2.length <= 1024) {
-                break;
-            }
-            stackTraceElementArr2 = aVar.a0(stackTraceElementArr);
-        }
-        return stackTraceElementArr2.length > 1024 ? ((ab.a) this.c).a0(stackTraceElementArr2) : stackTraceElementArr2;
     }
 
     @Override // com.google.android.gms.common.api.internal.s
@@ -338,75 +325,85 @@ public final class b implements h0, h, s0, ld.b, OnCompleteListener, o, s, z, n9
         }
     }
 
-    @Override // j4.h0
-    public void b(int i10, c0 c0Var, j4.x xVar) {
-        Pair o10 = o(i10, c0Var);
-        if (o10 != null) {
-            ((s1) this.c).i.c(new o1(this, o10, xVar, 0));
+    @Override // j4.i0
+    public void b(int i9, d0 d0Var, y yVar) {
+        Pair n10 = n(i9, d0Var);
+        if (n10 != null) {
+            ((s1) this.c).i.c(new o1(this, n10, yVar, 0));
         }
     }
 
-    @Override // j4.h0
-    public void c(int i10, c0 c0Var, j4.x xVar) {
-        Pair o10 = o(i10, c0Var);
-        if (o10 != null) {
-            ((s1) this.c).i.c(new o1(this, o10, xVar, 1));
+    @Override // j4.i0
+    public void c(int i9, d0 d0Var, y yVar) {
+        Pair n10 = n(i9, d0Var);
+        if (n10 != null) {
+            ((s1) this.c).i.c(new o1(this, n10, yVar, 1));
         }
     }
 
-    @Override // j4.h0
-    public void d(int i10, c0 c0Var, p pVar, j4.x xVar, IOException iOException, boolean z10) {
-        Pair o10 = o(i10, c0Var);
-        if (o10 != null) {
-            ((s1) this.c).i.c(new p1(this, o10, pVar, xVar, iOException, z10, 0));
+    @Override // j4.i0
+    public void d(int i9, d0 d0Var, q qVar, y yVar, IOException iOException, boolean z10) {
+        Pair n10 = n(i9, d0Var);
+        if (n10 != null) {
+            ((s1) this.c).i.c(new p1(this, n10, qVar, yVar, iOException, z10, 0));
         }
     }
 
-    @Override // com.google.android.exoplayer2.upstream.s0
-    public Object e(Uri uri, com.google.android.exoplayer2.upstream.o oVar) {
-        i4.a aVar = (i4.a) ((s0) this.b).e(uri, oVar);
-        List list = (List) this.c;
-        return (list == null || list.isEmpty()) ? aVar : (i4.a) aVar.a(list);
-    }
-
-    @Override // j4.h0
-    public void f(int i10, c0 c0Var, p pVar, j4.x xVar) {
-        Pair o10 = o(i10, c0Var);
-        if (o10 != null) {
-            ((s1) this.c).i.c(new n1(this, o10, pVar, xVar, 2));
+    @Override // j4.i0
+    public void e(int i9, d0 d0Var, q qVar, y yVar) {
+        Pair n10 = n(i9, d0Var);
+        if (n10 != null) {
+            ((s1) this.c).i.c(new n1(this, n10, qVar, yVar, 2));
         }
     }
 
-    @Override // j4.h0
-    public void g(int i10, c0 c0Var, p pVar, j4.x xVar) {
-        Pair o10 = o(i10, c0Var);
-        if (o10 != null) {
-            ((s1) this.c).i.c(new n1(this, o10, pVar, xVar, 1));
+    @Override // j4.i0
+    public void f(int i9, d0 d0Var, q qVar, y yVar) {
+        Pair n10 = n(i9, d0Var);
+        if (n10 != null) {
+            ((s1) this.c).i.c(new n1(this, n10, qVar, yVar, 1));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // j4.i0
+    public void g(int i9, d0 d0Var, q qVar, y yVar) {
+        Pair n10 = n(i9, d0Var);
+        if (n10 != null) {
+            ((s1) this.c).i.c(new n1(this, n10, qVar, yVar, 0));
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
     public /* synthetic */ Drawable getDrawable(String str) {
         return null;
     }
 
-    @Override // j4.h0
-    public void h(int i10, c0 c0Var, p pVar, j4.x xVar) {
-        Pair o10 = o(i10, c0Var);
-        if (o10 != null) {
-            ((s1) this.c).i.c(new n1(this, o10, pVar, xVar, 0));
-        }
-    }
-
-    public d i() {
+    public d h() {
         if (((n2.l) this.b) != null) {
             return new d(this);
         }
         throw new NullPointerException("ProductDetails is required for constructing ProductDetailsParams.");
     }
 
-    public boolean k(int i10) {
-        return ((d5.g) this.b).a.get(i10);
+    public boolean j(int i9) {
+        return ((d5.g) this.b).a.get(i9);
+    }
+
+    @Override // m9.a
+    public StackTraceElement[] k(StackTraceElement[] stackTraceElementArr) {
+        if (stackTraceElementArr.length <= 1024) {
+            return stackTraceElementArr;
+        }
+        m9.a[] aVarArr = (m9.a[]) this.b;
+        StackTraceElement[] stackTraceElementArr2 = stackTraceElementArr;
+        for (int i9 = 0; i9 < 1; i9++) {
+            m9.a aVar = aVarArr[i9];
+            if (stackTraceElementArr2.length <= 1024) {
+                break;
+            }
+            stackTraceElementArr2 = aVar.k(stackTraceElementArr);
+        }
+        return stackTraceElementArr2.length > 1024 ? ((v9.d) this.c).k(stackTraceElementArr2) : stackTraceElementArr2;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x008b A[RETURN] */
@@ -414,9 +411,9 @@ public final class b implements h0, h, s0, ld.b, OnCompleteListener, o, s, z, n9
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public m l(ta.a aVar) {
+    public n l(sa.a aVar) {
         String str;
-        m b0Var;
+        n eVar;
         Type type = aVar.b;
         Class cls = aVar.a;
         HashMap hashMap = (HashMap) this.b;
@@ -426,171 +423,171 @@ public final class b implements h0, h, s0, ld.b, OnCompleteListener, o, s, z, n9
         if (hashMap.get(cls) != null) {
             throw new ClassCastException();
         }
-        int i10 = 6;
-        m mVar = null;
-        m dVar = EnumSet.class.isAssignableFrom(cls) ? new n1.d(type, i10) : cls == EnumMap.class ? new m5.o(type, i10) : null;
-        if (dVar != null) {
-            return dVar;
+        n nVar = null;
+        n c0Var = EnumSet.class.isAssignableFrom(cls) ? new c0(type, 5) : cls == EnumMap.class ? new e0(type, 2) : null;
+        if (c0Var != null) {
+            return c0Var;
         }
-        oa.d.f((ArrayList) this.c);
+        na.d.f((ArrayList) this.c);
         if (!Modifier.isAbstract(cls.getModifiers())) {
             try {
                 Constructor declaredConstructor = cls.getDeclaredConstructor(null);
-                w6 w6Var = ra.c.a;
+                t6 t6Var = qa.c.a;
+                int i9 = 1;
                 try {
                     declaredConstructor.setAccessible(true);
                     str = null;
-                } catch (Exception e9) {
-                    str = "Failed making constructor '" + ra.c.b(declaredConstructor) + "' accessible; either increase its visibility or write a custom InstanceCreator or TypeAdapter for its declaring type: " + e9.getMessage() + ra.c.e(e9);
+                } catch (Exception e10) {
+                    str = "Failed making constructor '" + qa.c.b(declaredConstructor) + "' accessible; either increase its visibility or write a custom InstanceCreator or TypeAdapter for its declaring type: " + e10.getMessage() + qa.c.e(e10);
                 }
-                b0Var = str != null ? new b0(str, i10) : new o0.b(declaredConstructor, 2);
+                eVar = str != null ? new e(str) : new n5.a0(declaredConstructor, i9);
             } catch (NoSuchMethodException unused) {
             }
-            if (b0Var == null) {
-                return b0Var;
+            if (eVar == null) {
+                return eVar;
             }
-            int i11 = 17;
             if (Collection.class.isAssignableFrom(cls)) {
-                int i12 = 16;
-                mVar = SortedSet.class.isAssignableFrom(cls) ? new w9.d(i12) : Set.class.isAssignableFrom(cls) ? new xa.a(i12) : Queue.class.isAssignableFrom(cls) ? new za.b(i12) : new ab.a(i11);
+                int i10 = 16;
+                nVar = SortedSet.class.isAssignableFrom(cls) ? new v9.d(i10) : Set.class.isAssignableFrom(cls) ? new wa.a(i10) : Queue.class.isAssignableFrom(cls) ? new ya.b(i10) : new za.a(i10);
             } else if (Map.class.isAssignableFrom(cls)) {
-                mVar = ConcurrentNavigableMap.class.isAssignableFrom(cls) ? new v(i11) : ConcurrentMap.class.isAssignableFrom(cls) ? new w9.d(i11) : SortedMap.class.isAssignableFrom(cls) ? new xa.a(i11) : (!(type instanceof ParameterizedType) || String.class.isAssignableFrom(new ta.a(((ParameterizedType) type).getActualTypeArguments()[0]).a)) ? new ab.a(18) : new za.b(i11);
+                int i11 = 17;
+                nVar = ConcurrentNavigableMap.class.isAssignableFrom(cls) ? new d7.u(i11) : ConcurrentMap.class.isAssignableFrom(cls) ? new v9.d(i11) : SortedMap.class.isAssignableFrom(cls) ? new wa.a(i11) : (!(type instanceof ParameterizedType) || String.class.isAssignableFrom(new sa.a(((ParameterizedType) type).getActualTypeArguments()[0]).a)) ? new za.a(i11) : new ya.b(i11);
             }
-            if (mVar != null) {
-                return mVar;
+            if (nVar != null) {
+                return nVar;
             }
-            String j10 = j(cls);
-            return j10 != null ? new e(j10) : new b0(cls, 5);
+            String i12 = i(cls);
+            if (i12 == null) {
+                return new na.e(cls);
+            }
+            d7 d7Var = new d7();
+            d7Var.a = i12;
+            return d7Var;
         }
-        b0Var = null;
-        if (b0Var == null) {
+        eVar = null;
+        if (eVar == null) {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public void m(float f10, float f11, int i10, int i11) {
-        g6.q(f10, f11, i10, i11);
-    }
-
-    public mb.b n() {
-        if (((mb.b) this.c) == null) {
-            mb.f fVar = (mb.f) this.b;
+    public lb.b m() {
+        if (((lb.b) this.c) == null) {
+            lb.f fVar = (lb.f) this.b;
             int[] iArr = fVar.c;
-            lb.d dVar = fVar.a;
-            int i10 = dVar.a;
-            int i11 = dVar.b;
-            mb.b bVar = new mb.b(i10, i11);
-            if (fVar.b.length < i10) {
-                fVar.b = new byte[i10];
+            kb.d dVar = fVar.a;
+            int i9 = dVar.a;
+            int i10 = dVar.b;
+            lb.b bVar = new lb.b(i9, i10);
+            if (fVar.b.length < i9) {
+                fVar.b = new byte[i9];
             }
-            for (int i12 = 0; i12 < 32; i12++) {
-                iArr[i12] = 0;
+            for (int i11 = 0; i11 < 32; i11++) {
+                iArr[i11] = 0;
             }
-            for (int i13 = 1; i13 < 5; i13++) {
-                byte[] b10 = dVar.b((i11 * i13) / 5, fVar.b);
-                int i14 = (i10 * 4) / 5;
-                for (int i15 = i10 / 5; i15 < i14; i15++) {
-                    int i16 = (b10[i15] & 255) >> 3;
-                    iArr[i16] = iArr[i16] + 1;
+            for (int i12 = 1; i12 < 5; i12++) {
+                byte[] b10 = dVar.b((i10 * i12) / 5, fVar.b);
+                int i13 = (i9 * 4) / 5;
+                for (int i14 = i9 / 5; i14 < i13; i14++) {
+                    int i15 = (b10[i14] & 255) >> 3;
+                    iArr[i15] = iArr[i15] + 1;
                 }
             }
             int length = iArr.length;
+            int i16 = 0;
             int i17 = 0;
             int i18 = 0;
-            int i19 = 0;
-            for (int i20 = 0; i20 < length; i20++) {
-                int i21 = iArr[i20];
-                if (i21 > i17) {
-                    i19 = i20;
-                    i17 = i21;
+            for (int i19 = 0; i19 < length; i19++) {
+                int i20 = iArr[i19];
+                if (i20 > i16) {
+                    i18 = i19;
+                    i16 = i20;
                 }
-                if (i21 > i18) {
-                    i18 = i21;
+                if (i20 > i17) {
+                    i17 = i20;
                 }
             }
+            int i21 = 0;
             int i22 = 0;
-            int i23 = 0;
-            for (int i24 = 0; i24 < length; i24++) {
-                int i25 = i24 - i19;
-                int i26 = iArr[i24] * i25 * i25;
-                if (i26 > i23) {
-                    i22 = i24;
-                    i23 = i26;
+            for (int i23 = 0; i23 < length; i23++) {
+                int i24 = i23 - i18;
+                int i25 = iArr[i23] * i24 * i24;
+                if (i25 > i22) {
+                    i21 = i23;
+                    i22 = i25;
                 }
             }
-            if (i19 <= i22) {
-                int i27 = i19;
-                i19 = i22;
-                i22 = i27;
+            if (i18 <= i21) {
+                int i26 = i18;
+                i18 = i21;
+                i21 = i26;
             }
-            if (i19 - i22 <= length / 16) {
-                throw lb.e.a();
+            if (i18 - i21 <= length / 16) {
+                throw kb.e.a();
             }
-            int i28 = i19 - 1;
-            int i29 = i28;
-            int i30 = -1;
-            while (i28 > i22) {
-                int i31 = i28 - i22;
-                int i32 = (i18 - iArr[i28]) * (i19 - i28) * i31 * i31;
-                if (i32 > i30) {
-                    i29 = i28;
-                    i30 = i32;
+            int i27 = i18 - 1;
+            int i28 = i27;
+            int i29 = -1;
+            while (i27 > i21) {
+                int i30 = i27 - i21;
+                int i31 = (i17 - iArr[i27]) * (i18 - i27) * i30 * i30;
+                if (i31 > i29) {
+                    i28 = i27;
+                    i29 = i31;
                 }
-                i28--;
+                i27--;
             }
-            int i33 = i29 << 3;
+            int i32 = i28 << 3;
             byte[] a2 = dVar.a();
-            for (int i34 = 0; i34 < i11; i34++) {
-                int i35 = i34 * i10;
-                for (int i36 = 0; i36 < i10; i36++) {
-                    if ((a2[i35 + i36] & 255) < i33) {
-                        int i37 = (i36 / 32) + (bVar.c * i34);
+            for (int i33 = 0; i33 < i10; i33++) {
+                int i34 = i33 * i9;
+                for (int i35 = 0; i35 < i9; i35++) {
+                    if ((a2[i34 + i35] & 255) < i32) {
+                        int i36 = (i35 / 32) + (bVar.c * i33);
                         int[] iArr2 = bVar.d;
-                        iArr2[i37] = iArr2[i37] | (1 << (i36 & 31));
+                        iArr2[i36] = iArr2[i36] | (1 << (i35 & 31));
                     }
                 }
             }
             this.c = bVar;
         }
-        return (mb.b) this.c;
+        return (lb.b) this.c;
     }
 
-    public Pair o(int i10, c0 c0Var) {
-        c0 c0Var2;
+    public Pair n(int i9, d0 d0Var) {
+        d0 d0Var2;
         r1 r1Var = (r1) this.b;
-        c0 c0Var3 = null;
-        if (c0Var != null) {
-            int i11 = 0;
+        d0 d0Var3 = null;
+        if (d0Var != null) {
+            int i10 = 0;
             while (true) {
-                if (i11 >= r1Var.c.size()) {
-                    c0Var2 = null;
+                if (i10 >= r1Var.c.size()) {
+                    d0Var2 = null;
                     break;
                 }
-                if (((c0) r1Var.c.get(i11)).d == c0Var.d) {
-                    Object obj = c0Var.a;
+                if (((d0) r1Var.c.get(i10)).d == d0Var.d) {
+                    Object obj = d0Var.a;
                     Object obj2 = r1Var.b;
-                    int i12 = h3.a.d;
-                    c0Var2 = c0Var.b(Pair.create(obj2, obj));
+                    int i11 = h3.a.d;
+                    d0Var2 = d0Var.b(Pair.create(obj2, obj));
                     break;
                 }
-                i11++;
+                i10++;
             }
-            if (c0Var2 == null) {
+            if (d0Var2 == null) {
                 return null;
             }
-            c0Var3 = c0Var2;
+            d0Var3 = d0Var2;
         }
-        return Pair.create(Integer.valueOf(i10 + r1Var.d), c0Var3);
+        return Pair.create(Integer.valueOf(i9 + r1Var.d), d0Var3);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public int o1(int i10) {
-        return ((SparseIntArray) this.b).get(i10);
+    @Override // org.telegram.ui.ActionBar.b6
+    public void o(float f10, float f11, int i9, int i10) {
+        f6.q(f10, f11, i9, i10);
     }
 
     @Override // com.google.android.gms.tasks.OnCompleteListener
     public void onComplete(Task task) {
-        l8.c cVar = (l8.c) this.b;
+        k8.c cVar = (k8.c) this.b;
         TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.c;
         synchronized (cVar.f) {
             cVar.e.remove(taskCompletionSource);
@@ -598,132 +595,137 @@ public final class b implements h0, h, s0, ld.b, OnCompleteListener, o, s, z, n9
     }
 
     public k p(Object... objArr) {
-        Constructor c10;
+        Constructor a2;
         synchronized (((AtomicBoolean) this.c)) {
             if (!((AtomicBoolean) this.c).get()) {
                 try {
-                    c10 = ((ia.l) this.b).c();
+                    a2 = ((i3.i) this.b).a();
                 } catch (ClassNotFoundException unused) {
                     ((AtomicBoolean) this.c).set(true);
-                } catch (Exception e9) {
-                    throw new RuntimeException("Error instantiating extension", e9);
+                } catch (Exception e10) {
+                    throw new RuntimeException("Error instantiating extension", e10);
                 }
             }
-            c10 = null;
+            a2 = null;
         }
-        if (c10 == null) {
+        if (a2 == null) {
             return null;
         }
         try {
-            return (k) c10.newInstance(objArr);
-        } catch (Exception e10) {
-            throw new IllegalStateException("Unexpected error creating extractor", e10);
+            return (k) a2.newInstance(objArr);
+        } catch (Exception e11) {
+            throw new IllegalStateException("Unexpected error creating extractor", e11);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public int p0(int i9) {
+        return N0(i9);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
     /* JADX WARN: Removed duplicated region for block: B:21:0x0058  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x003f  */
-    @Override // ld.b
+    @Override // kd.b
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object q(ld.c cVar, tc.c cVar2) {
-        ld.d dVar;
-        int i10;
+    public Object q(kd.c cVar, sc.c cVar2) {
+        kd.d dVar;
+        int i9;
         b bVar;
         Throwable th;
         switch (this.a) {
-            case 10:
-                Object q6 = ((b) this.b).q(new ia.b0(cVar, (d0) this.c), cVar2);
-                return q6 == sc.a.a ? q6 : pc.i.a;
+            case 7:
+                Object q10 = ((b) this.b).q(new ha.a0(cVar, (ha.c0) this.c), cVar2);
+                return q10 == rc.a.a ? q10 : oc.i.a;
             default:
-                if (cVar2 instanceof ld.d) {
-                    dVar = (ld.d) cVar2;
-                    int i11 = dVar.b;
-                    if ((i11 & TLObject.FLAG_31) != 0) {
-                        dVar.b = i11 - TLObject.FLAG_31;
+                if (cVar2 instanceof kd.d) {
+                    dVar = (kd.d) cVar2;
+                    int i10 = dVar.b;
+                    if ((i10 & TLObject.FLAG_31) != 0) {
+                        dVar.b = i10 - TLObject.FLAG_31;
                         Object obj = dVar.a;
-                        Object obj2 = sc.a.a;
-                        i10 = dVar.b;
-                        if (i10 != 0) {
-                            k6.b(obj);
-                            ld.b bVar2 = (ld.b) this.b;
+                        Object obj2 = rc.a.a;
+                        i9 = dVar.b;
+                        if (i9 != 0) {
+                            y5.b(obj);
+                            kd.b bVar2 = (kd.b) this.b;
                             dVar.d = this;
                             dVar.e = cVar;
                             dVar.b = 1;
-                            obj = n.a(bVar2, cVar, dVar);
+                            obj = kd.n.a(bVar2, cVar, dVar);
                             if (obj == obj2) {
                                 return obj2;
                             }
                             bVar = this;
                         } else {
-                            if (i10 != 1) {
-                                if (i10 != 2) {
+                            if (i9 != 1) {
+                                if (i9 != 2) {
                                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                                 }
-                                k6.b(obj);
-                                return pc.i.a;
+                                y5.b(obj);
+                                return oc.i.a;
                             }
                             cVar = dVar.e;
                             bVar = dVar.d;
-                            k6.b(obj);
+                            y5.b(obj);
                         }
                         th = (Throwable) obj;
                         if (th != null) {
-                            ia.z zVar = (ia.z) bVar.c;
+                            ha.y yVar = (ha.y) bVar.c;
                             dVar.d = null;
                             dVar.e = null;
                             dVar.b = 2;
-                            if (zVar.a(cVar, th, dVar) == obj2) {
+                            if (yVar.a(cVar, th, dVar) == obj2) {
                                 return obj2;
                             }
                         }
-                        return pc.i.a;
+                        return oc.i.a;
                     }
                 }
-                dVar = new ld.d(this, cVar2);
+                dVar = new kd.d(this, cVar2);
                 Object obj3 = dVar.a;
-                Object obj22 = sc.a.a;
-                i10 = dVar.b;
-                if (i10 != 0) {
+                Object obj22 = rc.a.a;
+                i9 = dVar.b;
+                if (i9 != 0) {
                 }
                 th = (Throwable) obj3;
                 if (th != null) {
                 }
-                return pc.i.a;
+                return oc.i.a;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public int q0(int i10) {
-        return N0(i10);
+    @Override // org.telegram.ui.ActionBar.b6
+    public int q1(int i9) {
+        return ((SparseIntArray) this.b).get(i9);
     }
 
     public void r(boolean z10, boolean z11, float f10) {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b;
-        x3 x3Var = (x3) this.c;
-        i9 i9Var = x3Var.e;
-        i9.x1 = f10;
-        h9 h9Var = i9Var.v0;
-        if (h9Var != null) {
-            h9Var.setSpeed(f10);
+        ih.b4 b4Var = (ih.b4) this.c;
+        m9 m9Var = b4Var.e;
+        m9.x1 = f10;
+        l9 l9Var = m9Var.v0;
+        if (l9Var != null) {
+            l9Var.setSpeed(f10);
         }
-        e4.a0(x3Var.l, z10);
+        i4.a0(b4Var.l, z10);
         if (!z11 || actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() == null) {
             return;
         }
         actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
     }
 
-    public void s(o0.g gVar) {
-        androidx.biometric.n nVar = (androidx.biometric.n) this.c;
-        a9.i iVar = (a9.i) this.b;
-        int i10 = gVar.b;
-        if (i10 != 0) {
-            nVar.execute(new i3(iVar, i10));
+    public void s(o0.f fVar) {
+        androidx.biometric.o oVar = (androidx.biometric.o) this.c;
+        k5.i iVar = (k5.i) this.b;
+        int i9 = fVar.b;
+        if (i9 != 0) {
+            oVar.execute(new m.i3(iVar, i9));
         } else {
-            nVar.execute(new a9.o(iVar, gVar.a, false, 29));
+            oVar.execute(new j(iVar, fVar.a, false, 28));
         }
     }
 
@@ -738,170 +740,170 @@ public final class b implements h0, h, s0, ld.b, OnCompleteListener, o, s, z, n9
         }
     }
 
+    @Override // org.telegram.ui.ActionBar.b6
+    public /* synthetic */ boolean t0() {
+        return false;
+    }
+
     public String toString() {
         switch (this.a) {
-            case 16:
+            case 14:
                 try {
-                    return n().toString();
-                } catch (lb.e unused) {
+                    return m().toString();
+                } catch (kb.e unused) {
                     return "";
                 }
-            case 28:
+            case 26:
                 return ((HashMap) this.b).toString();
             default:
                 return super.toString();
         }
     }
 
-    public w u(int i10) {
-        int i11 = 0;
+    public w u(int i9) {
+        int i10 = 0;
         while (true) {
             int[] iArr = (int[]) this.b;
-            if (i11 >= iArr.length) {
-                d5.a.o("BaseMediaChunkOutput", "Unmatched track of type: " + i10);
-                return new j();
+            if (i10 >= iArr.length) {
+                d5.a.o("BaseMediaChunkOutput", "Unmatched track of type: " + i9);
+                return new m3.j();
             }
-            if (i10 == iArr[i11]) {
-                return ((a1[]) this.c)[i11];
+            if (i9 == iArr[i10]) {
+                return ((a1[]) this.c)[i10];
             }
-            i11++;
+            i10++;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public /* synthetic */ boolean u0() {
-        return false;
-    }
-
-    public void w(f3 f3Var) {
+    public void w(g3 g3Var) {
         try {
-            D(f3Var, (o3) this.b);
+            E(g3Var, (p3) this.b);
         } catch (Throwable th) {
             u.i("BillingLogger", "Unable to log.", th);
         }
     }
 
-    public void x(f3 f3Var, int i10, long j10) {
+    public void x(g3 g3Var, int i9, long j10) {
         try {
-            n3 n3Var = (n3) ((o3) this.b).g();
-            n3Var.c();
-            o3.p((o3) n3Var.b, i10);
-            o3 o3Var = (o3) n3Var.a();
-            this.b = o3Var;
+            o3 o3Var = (o3) ((p3) this.b).g();
+            o3Var.c();
+            p3.p((p3) o3Var.b, i9);
+            p3 p3Var = (p3) o3Var.a();
+            this.b = p3Var;
             if (j10 != 0) {
-                n3 n3Var2 = (n3) o3Var.g();
-                n3Var2.c();
-                o3.r((o3) n3Var2.b, j10);
-                o3Var = (o3) n3Var2.a();
+                o3 o3Var2 = (o3) p3Var.g();
+                o3Var2.c();
+                p3.r((p3) o3Var2.b, j10);
+                p3Var = (p3) o3Var2.a();
             }
-            D(f3Var, o3Var);
+            E(g3Var, p3Var);
         } catch (Throwable th) {
             u.i("BillingLogger", "Unable to log.", th);
         }
     }
 
-    public void y(f3 f3Var, long j10, boolean z10) {
-        o3 o3Var;
+    public void y(g3 g3Var, long j10, boolean z10) {
+        p3 p3Var;
         try {
-            e3 e3Var = (e3) f3Var.g();
-            s3 s3Var = (s3) f3Var.o().g();
-            s3Var.c();
-            u3.n((u3) s3Var.b, z10);
-            e3Var.c();
-            f3.r((f3) e3Var.b, (u3) s3Var.a());
-            f3 f3Var2 = (f3) e3Var.a();
+            f3 f3Var = (f3) g3Var.g();
+            t3 t3Var = (t3) g3Var.o().g();
+            t3Var.c();
+            v3.n((v3) t3Var.b, z10);
+            f3Var.c();
+            g3.r((g3) f3Var.b, (v3) t3Var.a());
+            g3 g3Var2 = (g3) f3Var.a();
             if (j10 == 0) {
-                o3Var = (o3) this.b;
+                p3Var = (p3) this.b;
             } else {
-                n3 n3Var = (n3) ((o3) this.b).g();
-                n3Var.c();
-                o3.r((o3) n3Var.b, j10);
-                o3Var = (o3) n3Var.a();
+                o3 o3Var = (o3) ((p3) this.b).g();
+                o3Var.c();
+                p3.r((p3) o3Var.b, j10);
+                p3Var = (p3) o3Var.a();
             }
-            D(f3Var2, o3Var);
+            E(g3Var2, p3Var);
         } catch (Throwable th) {
             u.i("BillingLogger", "Unable to log.", th);
         }
     }
 
-    public void z(f3 f3Var, int i10, long j10, boolean z10) {
-        o3 o3Var;
+    public void z(g3 g3Var, int i9, long j10, boolean z10) {
+        p3 p3Var;
         try {
-            n3 n3Var = (n3) ((o3) this.b).g();
-            n3Var.c();
-            o3.p((o3) n3Var.b, i10);
-            this.b = (o3) n3Var.a();
-            e3 e3Var = (e3) f3Var.g();
-            s3 s3Var = (s3) f3Var.o().g();
-            s3Var.c();
-            u3.n((u3) s3Var.b, z10);
-            e3Var.c();
-            f3.r((f3) e3Var.b, (u3) s3Var.a());
-            f3 f3Var2 = (f3) e3Var.a();
+            o3 o3Var = (o3) ((p3) this.b).g();
+            o3Var.c();
+            p3.p((p3) o3Var.b, i9);
+            this.b = (p3) o3Var.a();
+            f3 f3Var = (f3) g3Var.g();
+            t3 t3Var = (t3) g3Var.o().g();
+            t3Var.c();
+            v3.n((v3) t3Var.b, z10);
+            f3Var.c();
+            g3.r((g3) f3Var.b, (v3) t3Var.a());
+            g3 g3Var2 = (g3) f3Var.a();
             if (j10 == 0) {
-                o3Var = (o3) this.b;
+                p3Var = (p3) this.b;
             } else {
-                n3 n3Var2 = (n3) ((o3) this.b).g();
-                n3Var2.c();
-                o3.r((o3) n3Var2.b, j10);
-                o3Var = (o3) n3Var2.a();
+                o3 o3Var2 = (o3) ((p3) this.b).g();
+                o3Var2.c();
+                p3.r((p3) o3Var2.b, j10);
+                p3Var = (p3) o3Var2.a();
             }
-            D(f3Var2, o3Var);
+            E(g3Var2, p3Var);
         } catch (Throwable th) {
             u.i("BillingLogger", "Unable to log.", th);
         }
     }
 
-    public /* synthetic */ b(int i10, Object obj, Object obj2) {
-        this.a = i10;
+    public /* synthetic */ b(int i9, Object obj, Object obj2) {
+        this.a = i9;
         this.b = obj;
         this.c = obj2;
     }
 
-    public /* synthetic */ b(Object obj, Object obj2, boolean z10, int i10) {
-        this.a = i10;
+    public /* synthetic */ b(Object obj, Object obj2, boolean z10, int i9) {
+        this.a = i9;
         this.c = obj;
         this.b = obj2;
     }
 
-    public b(a5.n nVar) {
-        this.a = 4;
-        this.c = new e8();
-        this.b = nVar;
+    public b(m mVar) {
+        this.a = 1;
+        this.c = new f8();
+        this.b = mVar;
         oa.b();
     }
 
-    public b(Context context, o3 o3Var) {
-        this.a = 23;
+    public b(Context context, p3 p3Var) {
+        this.a = 24;
         t tVar = new t(5);
         try {
-            q.b(context);
-            tVar.c = q.a().c(u2.a.e).a("PLAY_BILLING_LIBRARY", new t2.c("proto"), new xa.a(15));
+            w2.q.b(context);
+            tVar.c = w2.q.a().c(u2.a.e).a("PLAY_BILLING_LIBRARY", new t2.c("proto"), new za.a(15));
         } catch (Throwable unused) {
             tVar.b = true;
         }
         this.c = tVar;
-        this.b = o3Var;
+        this.b = p3Var;
     }
 
-    public b(n9.a[] aVarArr) {
-        this.a = 25;
+    public b(m9.a[] aVarArr) {
+        this.a = 21;
         this.b = aVarArr;
-        this.c = new ab.a(16);
+        this.c = new v9.d(15);
     }
 
-    public b(mb.f fVar) {
-        this.a = 16;
+    public b(lb.f fVar) {
+        this.a = 14;
         this.b = fVar;
     }
 
     public b(d5.g gVar, SparseArray sparseArray) {
-        this.a = 6;
+        this.a = 8;
         this.b = gVar;
         SparseBooleanArray sparseBooleanArray = gVar.a;
         SparseArray sparseArray2 = new SparseArray(sparseBooleanArray.size());
-        for (int i10 = 0; i10 < sparseBooleanArray.size(); i10++) {
-            int a2 = gVar.a(i10);
+        for (int i9 = 0; i9 < sparseBooleanArray.size(); i9++) {
+            int a2 = gVar.a(i9);
             i3.a aVar = (i3.a) sparseArray.get(a2);
             aVar.getClass();
             sparseArray2.append(a2, aVar);
@@ -910,41 +912,41 @@ public final class b implements h0, h, s0, ld.b, OnCompleteListener, o, s, z, n9
     }
 
     public b(ArrayList arrayList, ArrayList arrayList2) {
-        this.a = 2;
+        this.a = 3;
         int size = arrayList.size();
         this.b = new int[size];
         this.c = new float[size];
-        for (int i10 = 0; i10 < size; i10++) {
-            ((int[]) this.b)[i10] = ((Integer) arrayList.get(i10)).intValue();
-            ((float[]) this.c)[i10] = ((Float) arrayList2.get(i10)).floatValue();
+        for (int i9 = 0; i9 < size; i9++) {
+            ((int[]) this.b)[i9] = ((Integer) arrayList.get(i9)).intValue();
+            ((float[]) this.c)[i9] = ((Float) arrayList2.get(i9)).floatValue();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public /* synthetic */ void c1(int i10, int i11) {
+    @Override // org.telegram.ui.ActionBar.b6
+    public /* synthetic */ void c1(int i9, int i10) {
     }
 
-    public b(int i10, int i11) {
-        this.a = 2;
-        this.b = new int[]{i10, i11};
+    public b(int i9, int i10) {
+        this.a = 3;
+        this.b = new int[]{i9, i10};
         this.c = new float[]{0.0f, 1.0f};
     }
 
-    public b(int i10, int i11, int i12) {
-        this.a = 2;
-        this.b = new int[]{i10, i11, i12};
+    public b(int i9, int i10, int i11) {
+        this.a = 3;
+        this.b = new int[]{i9, i10, i11};
         this.c = new float[]{0.0f, 0.5f, 1.0f};
     }
 
-    public b(g gVar) {
-        this.a = 18;
+    public b(m2.g gVar) {
+        this.a = 17;
         this.c = gVar;
         this.b = new Rect();
     }
 
-    public b(ia.l lVar) {
-        this.a = 19;
-        this.b = lVar;
+    public b(i3.i iVar) {
+        this.a = 18;
+        this.b = iVar;
         this.c = new AtomicBoolean(false);
     }
 }

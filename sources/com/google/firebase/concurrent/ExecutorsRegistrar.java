@@ -1,12 +1,9 @@
 package com.google.firebase.concurrent;
 
-import a9.a;
-import a9.h;
-import a9.l;
 import android.os.Build;
 import android.os.StrictMode;
 import com.google.firebase.components.ComponentRegistrar;
-import h7.v8;
+import g7.t8;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -15,72 +12,72 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import v8.b;
-import v8.c;
-import v8.d;
-import z8.m;
-import z8.q;
+import u8.b;
+import u8.c;
+import u8.d;
+import v0.l;
+import y8.f;
+import y8.n;
+import y8.r;
+import z8.a;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class ExecutorsRegistrar implements ComponentRegistrar {
-    public static final m a = new m(new l(0));
-    public static final m b = new m(new l(1));
-    public static final m c = new m(new l(2));
-    public static final m d = new m(new l(3));
+    public static final n a = new n(new f(2));
+    public static final n b = new n(new f(3));
+    public static final n c = new n(new f(4));
+    public static final n d = new n(new f(5));
 
-    public static h a() {
+    public static z8.f a() {
         StrictMode.ThreadPolicy.Builder detectNetwork = new StrictMode.ThreadPolicy.Builder().detectNetwork();
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 23) {
+        int i9 = Build.VERSION.SDK_INT;
+        if (i9 >= 23) {
             detectNetwork.detectResourceMismatches();
-            if (i10 >= 26) {
+            if (i9 >= 26) {
                 detectNetwork.detectUnbufferedIo();
             }
         }
-        return new h(Executors.newFixedThreadPool(4, new a("Firebase Background", 10, detectNetwork.penaltyLog().build())), (ScheduledExecutorService) d.get());
+        return new z8.f(Executors.newFixedThreadPool(4, new a("Firebase Background", 10, detectNetwork.penaltyLog().build())), (ScheduledExecutorService) d.get());
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        q qVar = new q(v8.a.class, ScheduledExecutorService.class);
-        int i10 = 2;
-        int i11 = 0;
-        int i12 = 1;
-        q[] qVarArr = {new q(v8.a.class, ExecutorService.class), new q(v8.a.class, Executor.class)};
+        r rVar = new r(u8.a.class, ScheduledExecutorService.class);
+        r[] rVarArr = {new r(u8.a.class, ExecutorService.class), new r(u8.a.class, Executor.class)};
         HashSet hashSet = new HashSet();
         HashSet hashSet2 = new HashSet();
         HashSet hashSet3 = new HashSet();
-        hashSet.add(qVar);
-        for (q qVar2 : qVarArr) {
-            v8.a(qVar2, "Null interface");
+        hashSet.add(rVar);
+        for (r rVar2 : rVarArr) {
+            t8.a(rVar2, "Null interface");
         }
-        Collections.addAll(hashSet, qVarArr);
-        z8.a aVar = new z8.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new a9.m(i11), hashSet3);
-        q qVar3 = new q(b.class, ScheduledExecutorService.class);
-        q[] qVarArr2 = {new q(b.class, ExecutorService.class), new q(b.class, Executor.class)};
+        Collections.addAll(hashSet, rVarArr);
+        y8.a aVar = new y8.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new l(14), hashSet3);
+        r rVar3 = new r(b.class, ScheduledExecutorService.class);
+        r[] rVarArr2 = {new r(b.class, ExecutorService.class), new r(b.class, Executor.class)};
         HashSet hashSet4 = new HashSet();
         HashSet hashSet5 = new HashSet();
         HashSet hashSet6 = new HashSet();
-        hashSet4.add(qVar3);
-        for (q qVar4 : qVarArr2) {
-            v8.a(qVar4, "Null interface");
+        hashSet4.add(rVar3);
+        for (r rVar4 : rVarArr2) {
+            t8.a(rVar4, "Null interface");
         }
-        Collections.addAll(hashSet4, qVarArr2);
-        z8.a aVar2 = new z8.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new a9.m(i12), hashSet6);
-        q qVar5 = new q(c.class, ScheduledExecutorService.class);
-        q[] qVarArr3 = {new q(c.class, ExecutorService.class), new q(c.class, Executor.class)};
+        Collections.addAll(hashSet4, rVarArr2);
+        y8.a aVar2 = new y8.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new l(15), hashSet6);
+        r rVar5 = new r(c.class, ScheduledExecutorService.class);
+        r[] rVarArr3 = {new r(c.class, ExecutorService.class), new r(c.class, Executor.class)};
         HashSet hashSet7 = new HashSet();
         HashSet hashSet8 = new HashSet();
         HashSet hashSet9 = new HashSet();
-        hashSet7.add(qVar5);
-        for (q qVar6 : qVarArr3) {
-            v8.a(qVar6, "Null interface");
+        hashSet7.add(rVar5);
+        for (r rVar6 : rVarArr3) {
+            t8.a(rVar6, "Null interface");
         }
-        Collections.addAll(hashSet7, qVarArr3);
-        z8.a aVar3 = new z8.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new a9.m(i10), hashSet9);
-        ug.b b10 = z8.a.b(new q(d.class, Executor.class));
-        b10.f = new a9.m(3);
+        Collections.addAll(hashSet7, rVarArr3);
+        y8.a aVar3 = new y8.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new l(16), hashSet9);
+        tg.b b10 = y8.a.b(new r(d.class, Executor.class));
+        b10.f = new l(17);
         return Arrays.asList(aVar, aVar2, aVar3, b10.b());
     }
 }

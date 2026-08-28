@@ -1,40 +1,58 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lf implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ Runnable d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ lf(MessagesStorage messagesStorage, ArrayList arrayList, Runnable runnable, int i10) {
-        this.a = i10;
-        this.b = messagesStorage;
-        this.c = arrayList;
-        this.d = runnable;
+    public /* synthetic */ lf(MessagesStorage messagesStorage, long j10, ArrayList arrayList, boolean z10, int i9, int i10) {
+        this.f = messagesStorage;
+        this.e = j10;
+        this.h = arrayList;
+        this.b = z10;
+        this.c = i9;
+        this.d = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadMessageAttachPaths$235(this.c, this.d);
-                break;
-            case 1:
-                this.b.lambda$processAnchoredEphemeralMessages$203(this.c, this.d);
-                break;
-            case 2:
-                this.b.lambda$processEphemeralMessages$201(this.c, this.d);
-                break;
-            case 3:
-                this.b.lambda$checkLoadedRemoteFilters$69(this.c, this.d);
+                ((MessagesStorage) this.f).lambda$markMessagesAsDeleted$229(this.e, (ArrayList) this.h, this.b, this.c, this.d);
                 break;
             default:
-                this.b.lambda$processEphemeralEditedMessages$202(this.c, this.d);
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.f;
+                CharSequence charSequence = (CharSequence) this.h;
+                chatActivityEnterView.b0 = null;
+                chatActivityEnterView.p0(true);
+                org.telegram.ui.Components.ff ffVar = chatActivityEnterView.A0;
+                if (ffVar != null) {
+                    ffVar.setText("");
+                }
+                org.telegram.ui.Components.eg egVar = chatActivityEnterView.U2;
+                if (egVar != null) {
+                    egVar.y(charSequence, this.b, this.c, this.d, this.e);
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ lf(ChatActivityEnterView chatActivityEnterView, CharSequence charSequence, boolean z10, int i9, int i10, long j10) {
+        this.f = chatActivityEnterView;
+        this.h = charSequence;
+        this.b = z10;
+        this.c = i9;
+        this.d = i10;
+        this.e = j10;
     }
 }

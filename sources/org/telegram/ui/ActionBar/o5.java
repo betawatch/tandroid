@@ -4,13 +4,13 @@ import android.graphics.Point;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class o5 extends h7.w5 {
-    @Override // h7.w5
-    public final void b(int i10, int i11) {
+public final class o5 extends g7.b6 {
+    @Override // g7.b6
+    public final void b(int i9, int i10) {
         Point point = AndroidUtilities.displaySize;
-        if ((point.x <= point.y) == (i10 <= i11)) {
+        if ((point.x <= point.y) == (i9 <= i10)) {
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewWallpapper, new Object[0]);
         }
     }

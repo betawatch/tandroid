@@ -1,31 +1,40 @@
 package org.telegram.messenger;
 
-import android.content.DialogInterface;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class va implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class va implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ TLRPC.Chat c;
 
-    public /* synthetic */ va(BaseController baseController, int i10, int i11) {
-        this.a = i11;
-        this.b = baseController;
-        this.c = i10;
+    public /* synthetic */ va(MessagesController messagesController, TLRPC.Chat chat, int i9) {
+        this.a = i9;
+        this.b = messagesController;
+        this.c = chat;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$convertToGigaGroup$271(this.c, dialogInterface);
+                this.b.lambda$addOrRemoveActiveVoiceChat$61(this.c);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$convertToMegaGroup$266(this.c, dialogInterface);
+                this.b.lambda$processLoadedDialogs$218(this.c);
+                break;
+            case 2:
+                this.b.lambda$processUpdateArray$413(this.c);
+                break;
+            case 3:
+                this.b.lambda$putChat$58(this.c);
+                break;
+            case 4:
+                this.b.lambda$putChat$59(this.c);
                 break;
             default:
-                ((SecretChatHelper) this.b).lambda$startSecretChat$31(this.c, dialogInterface);
+                this.b.lambda$putChat$60(this.c);
                 break;
         }
     }

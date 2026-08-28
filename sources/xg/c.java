@@ -1,41 +1,32 @@
 package xg;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import h7.z5;
+import kh.i9;
 import org.telegram.messenger.AndroidUtilities;
+import pf.o1;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public abstract class c extends FrameLayout {
-    public final LinearLayout a;
-    public float b;
-    public final Rect c;
-    public final Rect d;
-    public final Paint e;
+public final class c {
+    public final i9 a;
+    public b c = b.a;
+    public final o1 d = new o1(this, 15);
+    public final long b = (long) ((AndroidUtilities.getAnimatorDurationScale() * 250.0f) * 1.1f);
 
-    public c(Context context) {
-        super(context);
-        this.c = new Rect();
-        this.d = new Rect();
-        this.e = new Paint(1);
-        setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.a = linearLayout;
-        linearLayout.setOrientation(0);
-        addView(linearLayout, z5.c(-1.0f, -1));
+    public c(i9 i9Var) {
+        this.a = i9Var;
     }
 
-    public void setLensVisibility(float f10) {
-        this.b = f10;
-        int dp = AndroidUtilities.dp(f10 * 7.0f);
-        Rect rect = this.c;
-        Rect rect2 = this.d;
-        rect2.set(rect);
-        int i10 = -dp;
-        rect2.inset(i10, i10);
+    public final void a(b bVar, boolean z10) {
+        if (this.c != bVar) {
+            o1 o1Var = this.d;
+            AndroidUtilities.cancelRunOnUIThread(o1Var);
+            this.c = bVar;
+            if (z10) {
+                this.a.run(bVar);
+            }
+            if (bVar == b.b || bVar == b.c) {
+                AndroidUtilities.runOnUIThread(o1Var, this.b);
+            }
+        }
     }
 }

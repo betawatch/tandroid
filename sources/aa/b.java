@@ -1,39 +1,24 @@
 package aa;
 
-import a9.p;
 import m1.j;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b {
     public final String a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public final long e;
-    public final long f;
-    public final String g;
+    public final long b;
+    public final int c;
 
-    public b(String str, int i10, String str2, String str3, long j10, long j11, String str4) {
+    public b(String str, long j10, int i9) {
         this.a = str;
-        this.b = i10;
-        this.c = str2;
-        this.d = str3;
-        this.e = j10;
-        this.f = j11;
-        this.g = str4;
+        this.b = j10;
+        this.c = i9;
     }
 
-    public final a a() {
-        a aVar = new a(0);
-        aVar.c = this.a;
-        aVar.b = this.b;
-        aVar.d = this.c;
-        aVar.e = this.d;
-        aVar.g = Long.valueOf(this.e);
-        aVar.h = Long.valueOf(this.f);
-        aVar.f = this.g;
+    public static a6.a a() {
+        a6.a aVar = new a6.a((char) 0, 1);
+        aVar.d = 0L;
         return aVar;
     }
 
@@ -45,74 +30,41 @@ public final class b {
             return false;
         }
         b bVar = (b) obj;
-        String str = bVar.g;
-        String str2 = bVar.d;
-        String str3 = bVar.c;
-        String str4 = bVar.a;
-        String str5 = this.a;
-        if (str5 == null) {
-            if (str4 != null) {
+        int i9 = bVar.c;
+        String str = bVar.a;
+        String str2 = this.a;
+        if (str2 == null) {
+            if (str != null) {
                 return false;
             }
-        } else if (!str5.equals(str4)) {
+        } else if (!str2.equals(str)) {
             return false;
         }
-        if (!j.a(this.b, bVar.b)) {
+        if (this.b != bVar.b) {
             return false;
         }
-        String str6 = this.c;
-        if (str6 == null) {
-            if (str3 != null) {
-                return false;
-            }
-        } else if (!str6.equals(str3)) {
-            return false;
-        }
-        String str7 = this.d;
-        if (str7 == null) {
-            if (str2 != null) {
-                return false;
-            }
-        } else if (!str7.equals(str2)) {
-            return false;
-        }
-        if (this.e != bVar.e || this.f != bVar.f) {
-            return false;
-        }
-        String str8 = this.g;
-        return str8 == null ? str == null : str8.equals(str);
+        int i10 = this.c;
+        return i10 == 0 ? i9 == 0 : j.a(i10, i9);
     }
 
     public final int hashCode() {
         String str = this.a;
-        int hashCode = ((((str == null ? 0 : str.hashCode()) ^ 1000003) * 1000003) ^ j.b(this.b)) * 1000003;
-        String str2 = this.c;
-        int hashCode2 = (hashCode ^ (str2 == null ? 0 : str2.hashCode())) * 1000003;
-        String str3 = this.d;
-        int hashCode3 = (hashCode2 ^ (str3 == null ? 0 : str3.hashCode())) * 1000003;
-        long j10 = this.e;
-        int i10 = (hashCode3 ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003;
-        long j11 = this.f;
-        int i11 = (i10 ^ ((int) (j11 ^ (j11 >>> 32)))) * 1000003;
-        String str4 = this.g;
-        return (str4 != null ? str4.hashCode() : 0) ^ i11;
+        int hashCode = str == null ? 0 : str.hashCode();
+        long j10 = this.b;
+        int i9 = (((hashCode ^ 1000003) * 1000003) ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003;
+        int i10 = this.c;
+        return (i10 != 0 ? j.b(i10) : 0) ^ i9;
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("PersistedInstallationEntry{firebaseInstallationId=");
+        StringBuilder sb2 = new StringBuilder("TokenResult{token=");
         sb2.append(this.a);
-        sb2.append(", registrationStatus=");
-        int i10 = this.b;
-        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? BuildConfig.BETA_URL : "REGISTER_ERROR" : "REGISTERED" : "UNREGISTERED" : "NOT_GENERATED" : "ATTEMPT_MIGRATION");
-        sb2.append(", authToken=");
-        sb2.append(this.c);
-        sb2.append(", refreshToken=");
-        sb2.append(this.d);
-        sb2.append(", expiresInSecs=");
-        sb2.append(this.e);
-        sb2.append(", tokenCreationEpochInSecs=");
-        sb2.append(this.f);
-        sb2.append(", fisError=");
-        return p.p(sb2, this.g, "}");
+        sb2.append(", tokenExpirationTimestamp=");
+        sb2.append(this.b);
+        sb2.append(", responseCode=");
+        int i9 = this.c;
+        sb2.append(i9 != 1 ? i9 != 2 ? i9 != 3 ? BuildConfig.BETA_URL : "AUTH_ERROR" : "BAD_CONFIG" : "OK");
+        sb2.append("}");
+        return sb2.toString();
     }
 }

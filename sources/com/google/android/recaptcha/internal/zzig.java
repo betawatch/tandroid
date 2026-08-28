@@ -2,15 +2,15 @@ package com.google.android.recaptcha.internal;
 
 import android.net.Uri;
 import android.text.TextUtils;
-import gd.j;
+import fd.j;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import qc.h;
-import qc.i;
+import pc.h;
+import pc.i;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzig {
     private final List zza;
@@ -57,7 +57,7 @@ public final class zzig {
 
     public final boolean zzb(String str) {
         Uri parse = Uri.parse(str);
-        kotlin.jvm.internal.j.b(parse);
+        kotlin.jvm.internal.i.b(parse);
         return zze(parse) && zzd(parse.toString());
     }
 

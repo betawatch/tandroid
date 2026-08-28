@@ -1,80 +1,98 @@
 package v0;
 
-import android.credentials.CreateCredentialException;
-import android.credentials.CreateCredentialResponse;
-import android.credentials.Credential;
-import android.credentials.GetCredentialException;
-import android.credentials.GetCredentialResponse;
-import android.os.Bundle;
-import android.os.OutcomeReceiver;
-import android.util.Log;
-import h7.o8;
-import h7.t7;
-import h7.u7;
+import android.graphics.Typeface;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.firebase.components.ComponentRegistrar;
+import com.google.firebase.concurrent.ExecutorsRegistrar;
+import com.google.firebase.installations.FirebaseInstallationsRegistrar;
+import java.util.List;
+import java.util.concurrent.ScheduledExecutorService;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.c2;
+import xf.g0;
+import yf.m2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class l implements OutcomeReceiver {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ i b;
+public final /* synthetic */ class l implements t2.g, com.google.android.exoplayer2.upstream.l, g0, y8.e, x9.a, y8.d, OnFailureListener, b2 {
+    public final /* synthetic */ int a;
 
-    public l(i iVar, m mVar) {
-        this.b = iVar;
+    public /* synthetic */ l(int i9) {
+        this.a = i9;
     }
 
-    @Override // android.os.OutcomeReceiver
-    public final void onError(Throwable th) {
+    @Override // y8.d
+    public Object H1(b3.b bVar) {
+        y9.d lambda$getComponents$0;
         switch (this.a) {
-            case 0:
-                CreateCredentialException error = (CreateCredentialException) th;
-                kotlin.jvm.internal.j.e(error, "error");
-                Log.i("CredManProvService", "CreateCredentialResponse error returned from framework");
-                sd.b bVar = (sd.b) this.b;
-                String type = error.getType();
-                kotlin.jvm.internal.j.d(type, "getType(...)");
-                bVar.onError(o8.a(error.getMessage(), type));
+            case 12:
+                lambda$getComponents$0 = FirebaseInstallationsRegistrar.lambda$getComponents$0(bVar);
+                return lambda$getComponents$0;
+            case 13:
+            default:
+                y8.n nVar = ExecutorsRegistrar.a;
+                return z8.j.a;
+            case 14:
+                return (ScheduledExecutorService) ExecutorsRegistrar.a.get();
+            case 15:
+                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
+            case 16:
+                return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
+        }
+    }
+
+    @Override // xf.g0
+    public Typeface a() {
+        switch (this.a) {
+            case 4:
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM);
+            case 5:
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
+            case 6:
+                return Typeface.create("serif", 1);
+            case 7:
+                return AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf");
+            case 8:
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO);
+            default:
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
+        }
+    }
+
+    @Override // y8.e
+    public List b(ComponentRegistrar componentRegistrar) {
+        return componentRegistrar.getComponents();
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.l
+    public com.google.android.exoplayer2.upstream.m createDataSource() {
+        return new com.google.android.exoplayer2.upstream.c(ApplicationLoader.applicationContext);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(c2 c2Var, int i9) {
+        switch (this.a) {
+            case 18:
+                c2Var.dismiss();
                 break;
             default:
-                GetCredentialException error2 = (GetCredentialException) th;
-                kotlin.jvm.internal.j.e(error2, "error");
-                Log.i("CredManProvService", "GetCredentialResponse error returned from framework");
-                i iVar = this.b;
-                String type2 = error2.getType();
-                kotlin.jvm.internal.j.d(type2, "getType(...)");
-                iVar.onError(o8.b(error2.getMessage(), type2));
+                c2Var.dismiss();
                 break;
         }
     }
 
-    @Override // android.os.OutcomeReceiver
-    public final void onResult(Object obj) {
-        switch (this.a) {
-            case 0:
-                CreateCredentialResponse response = (CreateCredentialResponse) obj;
-                kotlin.jvm.internal.j.e(response, "response");
-                Log.i("CredManProvService", "Create Result returned from framework: ");
-                sd.b bVar = (sd.b) this.b;
-                Bundle data = response.getData();
-                kotlin.jvm.internal.j.d(data, "getData(...)");
-                bVar.onResult(t7.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
-                break;
-            default:
-                GetCredentialResponse response2 = (GetCredentialResponse) obj;
-                kotlin.jvm.internal.j.e(response2, "response");
-                Log.i("CredManProvService", "GetCredentialResponse returned from framework");
-                i iVar = this.b;
-                Credential credential = response2.getCredential();
-                kotlin.jvm.internal.j.d(credential, "getCredential(...)");
-                String type = credential.getType();
-                kotlin.jvm.internal.j.d(type, "getType(...)");
-                Bundle data2 = credential.getData();
-                kotlin.jvm.internal.j.d(data2, "getData(...)");
-                iVar.onResult(new p(u7.a(type, data2)));
-                break;
-        }
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public void onFailure(Exception exc) {
+        int i9 = m2.n0;
     }
 
-    public l(sd.b bVar, e eVar, m mVar) {
-        this.b = bVar;
+    @Override // t2.g
+    public void c(Exception exc) {
+    }
+
+    @Override // x9.a
+    public void e(x9.b bVar) {
     }
 }

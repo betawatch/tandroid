@@ -1,15 +1,13 @@
 package i0;
 
+import a0.k;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Typeface;
-import android.os.ParcelFileDescriptor;
-import android.system.ErrnoException;
-import android.system.Os;
-import android.system.OsConstants;
+import android.net.Uri;
 import android.util.Log;
-import g7.x7;
-import g7.y7;
+import f7.j8;
+import f7.k8;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -17,49 +15,35 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.nio.ByteBuffer;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
+import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public class g extends x7 {
-    public static Class a = null;
-    public static Constructor b = null;
-    public static Method c = null;
-    public static Method d = null;
-    public static boolean e = false;
+public final class g extends j8 {
+    public static final Class a;
+    public static final Constructor b;
+    public static final Method c;
+    public static final Method d;
 
-    public static boolean g(Object obj, String str, int i10, boolean z10) {
-        h();
-        try {
-            try {
-                return ((Boolean) c.invoke(obj, str, Integer.valueOf(i10), Boolean.valueOf(z10))).booleanValue();
-            } catch (InvocationTargetException e9) {
-                e = e9;
-                throw new RuntimeException(e);
-            }
-        } catch (IllegalAccessException | InvocationTargetException e10) {
-            e = e10;
-        }
-    }
-
-    public static void h() {
-        Method method;
+    static {
         Class<?> cls;
+        Method method;
         Method method2;
-        if (e) {
-            return;
-        }
-        e = true;
         Constructor<?> constructor = null;
         try {
             cls = Class.forName("android.graphics.FontFamily");
             Constructor<?> constructor2 = cls.getConstructor(null);
-            method2 = cls.getMethod("addFontWeightStyle", String.class, Integer.TYPE, Boolean.TYPE);
+            Class<?> cls2 = Integer.TYPE;
+            method2 = cls.getMethod("addFontWeightStyle", ByteBuffer.class, cls2, List.class, cls2, Boolean.TYPE);
             method = Typeface.class.getMethod("createFromFamiliesWithDefault", Array.newInstance(cls, 1).getClass());
             constructor = constructor2;
-        } catch (ClassNotFoundException | NoSuchMethodException e9) {
-            Log.e("TypefaceCompatApi21Impl", e9.getClass().getName(), e9);
-            method = null;
+        } catch (ClassNotFoundException | NoSuchMethodException e10) {
+            Log.e("TypefaceCompatApi24Impl", e10.getClass().getName(), e10);
             cls = null;
+            method = null;
             method2 = null;
         }
         b = constructor;
@@ -68,90 +52,102 @@ public class g extends x7 {
         d = method;
     }
 
-    @Override // g7.x7
-    public Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
-        h();
+    public static boolean g(Object obj, ByteBuffer byteBuffer, int i9, int i10, boolean z10) {
         try {
-            Object newInstance = b.newInstance(null);
-            for (h0.f fVar : eVar.a) {
-                File d10 = y7.d(context);
-                if (d10 == null) {
-                    return null;
-                }
-                try {
-                    if (!y7.b(d10, resources, fVar.f)) {
-                        return null;
-                    }
-                    if (!g(newInstance, d10.getPath(), fVar.b, fVar.c)) {
-                        return null;
-                    }
-                    d10.delete();
-                } catch (RuntimeException unused) {
-                    return null;
-                } finally {
-                    d10.delete();
-                }
-            }
-            h();
-            try {
-                Object newInstance2 = Array.newInstance((Class<?>) a, 1);
-                Array.set(newInstance2, 0, newInstance);
-                return (Typeface) d.invoke(null, newInstance2);
-            } catch (IllegalAccessException | InvocationTargetException e9) {
-                throw new RuntimeException(e9);
-            }
-        } catch (IllegalAccessException | InstantiationException | InvocationTargetException e10) {
-            throw new RuntimeException(e10);
+            return ((Boolean) c.invoke(obj, byteBuffer, Integer.valueOf(i9), null, Integer.valueOf(i10), Boolean.valueOf(z10))).booleanValue();
+        } catch (IllegalAccessException | InvocationTargetException unused) {
+            return false;
         }
     }
 
-    @Override // g7.x7
-    public Typeface b(Context context, o0.j[] jVarArr, int i10) {
-        File file;
-        String readlink;
-        if (jVarArr.length >= 1) {
-            try {
-                ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(f(jVarArr, i10).a, "r", null);
-                if (openFileDescriptor != null) {
+    public static Typeface h(Object obj) {
+        try {
+            Object newInstance = Array.newInstance((Class<?>) a, 1);
+            Array.set(newInstance, 0, obj);
+            return (Typeface) d.invoke(null, newInstance);
+        } catch (IllegalAccessException | InvocationTargetException unused) {
+            return null;
+        }
+    }
+
+    @Override // f7.j8
+    public final Typeface a(Context context, h0.e eVar, Resources resources, int i9) {
+        Object obj;
+        int i10;
+        MappedByteBuffer mappedByteBuffer;
+        FileInputStream fileInputStream;
+        try {
+            obj = b.newInstance(null);
+        } catch (IllegalAccessException | InstantiationException | InvocationTargetException unused) {
+            obj = null;
+        }
+        if (obj != null) {
+            h0.f[] fVarArr = eVar.a;
+            int length = fVarArr.length;
+            while (i10 < length) {
+                h0.f fVar = fVarArr[i10];
+                int i11 = fVar.f;
+                File d9 = k8.d(context);
+                if (d9 != null) {
                     try {
-                        try {
-                            readlink = Os.readlink("/proc/self/fd/" + openFileDescriptor.getFd());
-                        } finally {
-                        }
-                    } catch (ErrnoException unused) {
-                    }
-                    try {
-                        if (OsConstants.S_ISREG(Os.stat(readlink).st_mode)) {
-                            file = new File(readlink);
-                            if (file != null && file.canRead()) {
-                                Typeface createFromFile = Typeface.createFromFile(file);
-                                openFileDescriptor.close();
-                                return createFromFile;
+                        if (k8.b(d9, resources, i11)) {
+                            try {
+                                fileInputStream = new FileInputStream(d9);
+                            } catch (IOException unused2) {
+                                mappedByteBuffer = null;
                             }
-                            FileInputStream fileInputStream = new FileInputStream(openFileDescriptor.getFileDescriptor());
-                            Typeface d10 = d(context, fileInputStream);
-                            fileInputStream.close();
-                            openFileDescriptor.close();
-                            return d10;
+                            try {
+                                FileChannel channel = fileInputStream.getChannel();
+                                mappedByteBuffer = channel.map(FileChannel.MapMode.READ_ONLY, 0L, channel.size());
+                                fileInputStream.close();
+                                i10 = (mappedByteBuffer == null && g(obj, mappedByteBuffer, fVar.e, fVar.b, fVar.c)) ? i10 + 1 : 0;
+                            } finally {
+                            }
                         }
-                        Typeface d102 = d(context, fileInputStream);
-                        fileInputStream.close();
-                        openFileDescriptor.close();
-                        return d102;
                     } finally {
+                        d9.delete();
                     }
-                    file = null;
-                    if (file != null) {
-                        Typeface createFromFile2 = Typeface.createFromFile(file);
-                        openFileDescriptor.close();
-                        return createFromFile2;
-                    }
-                    FileInputStream fileInputStream2 = new FileInputStream(openFileDescriptor.getFileDescriptor());
-                } else if (openFileDescriptor != null) {
-                    openFileDescriptor.close();
-                    return null;
                 }
-            } catch (IOException unused2) {
+                mappedByteBuffer = null;
+                if (mappedByteBuffer == null) {
+                }
+            }
+            return h(obj);
+        }
+        return null;
+    }
+
+    @Override // f7.j8
+    public final Typeface b(Context context, o0.i[] iVarArr, int i9) {
+        Object obj;
+        try {
+            obj = b.newInstance(null);
+        } catch (IllegalAccessException | InstantiationException | InvocationTargetException unused) {
+            obj = null;
+        }
+        if (obj != null) {
+            int i10 = 0;
+            k kVar = new k(0);
+            int length = iVarArr.length;
+            while (true) {
+                if (i10 < length) {
+                    o0.i iVar = iVarArr[i10];
+                    Uri uri = iVar.a;
+                    ByteBuffer byteBuffer = (ByteBuffer) kVar.get(uri);
+                    if (byteBuffer == null) {
+                        byteBuffer = k8.e(context, uri);
+                        kVar.put(uri, byteBuffer);
+                    }
+                    if (byteBuffer == null || !g(obj, byteBuffer, iVar.b, iVar.c, iVar.d)) {
+                        break;
+                    }
+                    i10++;
+                } else {
+                    Typeface h = h(obj);
+                    if (h != null) {
+                        return Typeface.create(h, i9);
+                    }
+                }
             }
         }
         return null;

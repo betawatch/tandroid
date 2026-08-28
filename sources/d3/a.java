@@ -1,8 +1,6 @@
 package d3;
 
-import a9.p;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class a {
     public static final a f = new a(200, 10485760, 604800000, 10000, 81920);
@@ -12,12 +10,12 @@ public final class a {
     public final long d;
     public final int e;
 
-    public a(int i10, long j10, long j11, int i11, int i12) {
+    public a(int i9, long j10, long j11, int i10, int i11) {
         this.a = j10;
-        this.b = i10;
-        this.c = i11;
+        this.b = i9;
+        this.c = i10;
         this.d = j11;
-        this.e = i12;
+        this.e = i11;
     }
 
     public final boolean equals(Object obj) {
@@ -35,9 +33,9 @@ public final class a {
 
     public final int hashCode() {
         long j10 = this.a;
-        int i10 = (((((((int) (j10 ^ (j10 >>> 32))) ^ 1000003) * 1000003) ^ this.b) * 1000003) ^ this.c) * 1000003;
+        int i9 = (((((((int) (j10 ^ (j10 >>> 32))) ^ 1000003) * 1000003) ^ this.b) * 1000003) ^ this.c) * 1000003;
         long j11 = this.d;
-        return this.e ^ ((i10 ^ ((int) (j11 ^ (j11 >>> 32)))) * 1000003);
+        return this.e ^ ((i9 ^ ((int) (j11 ^ (j11 >>> 32)))) * 1000003);
     }
 
     public final String toString() {
@@ -50,6 +48,6 @@ public final class a {
         sb2.append(", eventCleanUpAge=");
         sb2.append(this.d);
         sb2.append(", maxBlobByteSizePerRow=");
-        return p.k(this.e, "}", sb2);
+        return aa.d.l(this.e, "}", sb2);
     }
 }

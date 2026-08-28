@@ -1,34 +1,24 @@
 package zf;
 
 import android.content.Context;
-import android.graphics.PointF;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.oi0;
-import org.telegram.ui.Components.tu0;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ys0;
+import org.telegram.ui.ActionBar.b6;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class y extends o2 {
-    public final /* synthetic */ l0 u0;
+public final class y extends p0 {
+    public final /* synthetic */ j0 L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y(l0 l0Var, Context context, PointF pointF, float f10, float f11, tu0 tu0Var, TLRPC.Document document, Object obj) {
-        super(context, pointF, f10, f11, tu0Var, document, obj);
-        this.u0 = l0Var;
+    public y(j0 j0Var, Context context, b6 b6Var) {
+        super(context, b6Var, true);
+        this.L = j0Var;
     }
 
-    @Override // zf.o2
-    public final void q(oi0 oi0Var) {
-        PhotoViewer photoViewer = ((ys0) this.u0).k2;
-        m61 m61Var = photoViewer.B2;
-        if (m61Var == null) {
+    @Override // android.view.View
+    public final void invalidate() {
+        if (this.L.b0) {
             return;
         }
-        long o10 = m61Var.o();
-        long j10 = photoViewer.h8;
-        oi0Var.R(o10 - (j10 > 0 ? j10 / 1000 : 0L));
+        super.invalidate();
     }
 }

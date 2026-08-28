@@ -1,45 +1,22 @@
 package rh;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h implements ViewTreeObserver.OnGlobalFocusChangeListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class h extends AnimatorListenerAdapter {
+    public final /* synthetic */ MessageObject.GroupedMessages.TransitionParams a;
 
-    public /* synthetic */ h(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public h(MessageObject.GroupedMessages.TransitionParams transitionParams) {
+        this.a = transitionParams;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalFocusChangeListener
-    public final void onGlobalFocusChanged(View view, View view2) {
-        switch (this.a) {
-            case 0:
-                ((p) this.b).Z();
-                break;
-            case 1:
-                ((x1) this.b).w0();
-                break;
-            case 2:
-                p3 p3Var = (p3) this.b;
-                p3Var.W2 = (view2 == null || p3Var.F(view2) == null) ? false : true;
-                if (view2 instanceof d1) {
-                    p3Var.H3 = (d1) view2;
-                    break;
-                }
-                break;
-            default:
-                g5 g5Var = (g5) this.b;
-                g5Var.x();
-                i5 i5Var = g5Var.v;
-                if (i5Var != null) {
-                    i5Var.invalidate();
-                    break;
-                }
-                break;
-        }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        MessageObject.GroupedMessages.TransitionParams transitionParams = this.a;
+        transitionParams.backgroundChangeBounds = false;
+        transitionParams.drawBackgroundForDeletedItems = false;
     }
 }

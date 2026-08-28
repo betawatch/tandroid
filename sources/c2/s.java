@@ -7,7 +7,7 @@ import android.os.RemoteException;
 import android.util.Log;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class s {
     public final Context a;
@@ -51,19 +51,19 @@ public abstract class s {
     public abstract void f(o oVar);
 
     public void g(t tVar) {
-        b0.b();
+        c0.b();
         if (((t) this.n) != tVar) {
             this.n = tVar;
             if (this.c) {
                 return;
             }
             this.c = true;
-            ((androidx.mediarouter.app.c) this.e).sendEmptyMessage(1);
+            ((androidx.mediarouter.app.d) this.e).sendEmptyMessage(1);
         }
     }
 
     public void h(o oVar) {
-        b0.b();
+        c0.b();
         if (Objects.equals((o) this.h, oVar)) {
             return;
         }
@@ -72,10 +72,10 @@ public abstract class s {
             return;
         }
         this.b = true;
-        ((androidx.mediarouter.app.c) this.e).sendEmptyMessage(2);
+        ((androidx.mediarouter.app.d) this.e).sendEmptyMessage(2);
     }
 
-    public abstract Object i(j6.e eVar, Context context);
+    public abstract Object i(i6.e eVar, Context context);
 
     public abstract void j();
 
@@ -90,30 +90,30 @@ public abstract class s {
             }
             try {
                 j();
-            } catch (RemoteException e9) {
-                Log.e((String) this.e, "Could not finalize native handle", e9);
+            } catch (RemoteException e10) {
+                Log.e((String) this.e, "Could not finalize native handle", e10);
             }
         }
     }
 
     public Object m() {
-        j6.e eVar;
+        i6.e eVar;
         synchronized (this.d) {
             Object obj = this.n;
             if (obj != null) {
                 return obj;
             }
             try {
-                eVar = j6.e.c(this.a, j6.e.c, (String) this.f);
-            } catch (j6.b unused) {
+                eVar = i6.e.c(this.a, i6.e.c, (String) this.f);
+            } catch (i6.b unused) {
                 String str = "com.google.android.gms.vision." + ((String) this.h);
                 if (Log.isLoggable("Vision", 3)) {
                     Log.d("Vision", "Cannot load thick client module, fall back to load optional module " + str);
                 }
                 try {
-                    eVar = j6.e.c(this.a, j6.e.b, str);
-                } catch (j6.b e9) {
-                    g7.f0.a(e9, "Error loading optional module %s", str);
+                    eVar = i6.e.c(this.a, i6.e.b, str);
+                } catch (i6.b e10) {
+                    com.google.android.gms.internal.cast.o.a(e10, "Error loading optional module %s", str);
                     if (!this.b) {
                         String str2 = (String) this.h;
                         if (Log.isLoggable("Vision", 3)) {
@@ -133,8 +133,8 @@ public abstract class s {
             if (eVar != null) {
                 try {
                     this.n = i(eVar, this.a);
-                } catch (RemoteException | j6.b e10) {
-                    Log.e((String) this.e, "Error creating remote native handle", e10);
+                } catch (RemoteException | i6.b e11) {
+                    Log.e((String) this.e, "Error creating remote native handle", e11);
                 }
             }
             boolean z10 = this.c;
@@ -148,15 +148,15 @@ public abstract class s {
         }
     }
 
-    public s(Context context, k5.i iVar) {
-        this.e = new androidx.mediarouter.app.c(this, 4);
+    public s(Context context, android.support.v4.media.c cVar) {
+        this.e = new androidx.mediarouter.app.d(this, 4);
         if (context != null) {
             this.a = context;
-            if (iVar == null) {
-                this.d = new k5.i(new ComponentName(context, getClass()), 5);
+            if (cVar == null) {
+                this.d = new android.support.v4.media.c(new ComponentName(context, getClass()), 5);
                 return;
             } else {
-                this.d = iVar;
+                this.d = cVar;
                 return;
             }
         }

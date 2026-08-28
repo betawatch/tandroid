@@ -1,12 +1,39 @@
 package gh;
 
-import android.view.View;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class i6 extends f2.l {
-    @Override // f2.l
-    public final float A(View view) {
-        return 0.3f;
+public final /* synthetic */ class i6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v7 b;
+    public final /* synthetic */ TLRPC.TL_payments_paymentResult c;
+
+    public /* synthetic */ i6(v7 v7Var, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i9) {
+        this.a = i9;
+        this.b = v7Var;
+        this.c = tL_payments_paymentResult;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                MessagesController.getInstance(this.b.a).processUpdates(this.c.updates, false);
+                break;
+            case 1:
+                MessagesController.getInstance(this.b.a).processUpdates(this.c.updates, false);
+                break;
+            case 2:
+                MessagesController.getInstance(this.b.a).processUpdates(this.c.updates, false);
+                break;
+            case 3:
+                MessagesController.getInstance(this.b.a).processUpdates(this.c.updates, false);
+                break;
+            default:
+                MessagesController.getInstance(this.b.a).processUpdates(this.c.updates, false);
+                break;
+        }
     }
 }

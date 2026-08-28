@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class ChooserTargetServiceCompat extends ChooserTargetService {
     @Override // android.service.chooser.ChooserTargetService
@@ -37,24 +37,24 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
         ArrayList arrayList = d.a;
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
+        int i9 = 0;
+        while (i9 < size) {
+            Object obj = arrayList.get(i9);
+            i9++;
             c cVar = (c) obj;
             if (cVar.b.equals(componentName.getClassName())) {
                 b[] bVarArr = cVar.a;
                 int length = bVarArr.length;
-                int i11 = 0;
+                int i10 = 0;
                 while (true) {
-                    if (i11 >= length) {
+                    if (i10 >= length) {
                         break;
                     }
-                    if (intentFilter.hasDataType(bVarArr[i11].a)) {
+                    if (intentFilter.hasDataType(bVarArr[i10].a)) {
                         arrayList2.add(cVar);
                         break;
                     }
-                    i11++;
+                    i10++;
                 }
             }
         }
@@ -70,11 +70,11 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
             ArrayList arrayList3 = new ArrayList();
             for (g0.c cVar2 : b10) {
                 int size2 = arrayList2.size();
-                int i12 = 0;
+                int i11 = 0;
                 while (true) {
-                    if (i12 < size2) {
-                        Object obj2 = arrayList2.get(i12);
-                        i12++;
+                    if (i11 < size2) {
+                        Object obj2 = arrayList2.get(i11);
+                        i11++;
                         c cVar3 = (c) obj2;
                         if (cVar2.j.containsAll(Arrays.asList(cVar3.c))) {
                             arrayList3.add(new a(cVar2, new ComponentName(applicationContext.getPackageName(), cVar3.b)));
@@ -88,36 +88,36 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
             }
             Collections.sort(arrayList3);
             ArrayList arrayList4 = new ArrayList();
-            int i13 = ((a) arrayList3.get(0)).a.m;
+            int i12 = ((a) arrayList3.get(0)).a.m;
             int size3 = arrayList3.size();
             float f10 = 1.0f;
-            int i14 = i13;
-            int i15 = 0;
-            while (i15 < size3) {
-                int i16 = i15 + 1;
-                a aVar = (a) arrayList3.get(i15);
+            int i13 = i12;
+            int i14 = 0;
+            while (i14 < size3) {
+                int i15 = i14 + 1;
+                a aVar = (a) arrayList3.get(i14);
                 g0.c cVar4 = aVar.a;
                 try {
                     iconCompat = shortcutInfoCompatSaverImpl.g(cVar4.b);
-                } catch (Exception e9) {
-                    Log.e("ChooserServiceCompat", "Failed to retrieve shortcut icon: ", e9);
+                } catch (Exception e10) {
+                    Log.e("ChooserServiceCompat", "Failed to retrieve shortcut icon: ", e10);
                     iconCompat = null;
                 }
                 Bundle bundle = new Bundle();
                 bundle.putString("android.intent.extra.shortcut.ID", cVar4.b);
-                int i17 = cVar4.m;
-                if (i14 != i17) {
+                int i16 = cVar4.m;
+                if (i13 != i16) {
                     f10 -= 0.01f;
-                    i14 = i17;
+                    i13 = i16;
                 }
                 float f11 = f10;
                 arrayList4.add(new ChooserTarget(cVar4.e, iconCompat != null ? iconCompat.m(null) : null, f11, aVar.b, bundle));
-                i15 = i16;
+                i14 = i15;
                 f10 = f11;
             }
             return arrayList4;
-        } catch (Exception e10) {
-            Log.e("ChooserServiceCompat", "Failed to retrieve shortcuts: ", e10);
+        } catch (Exception e11) {
+            Log.e("ChooserServiceCompat", "Failed to retrieve shortcuts: ", e11);
             return Collections.EMPTY_LIST;
         }
     }

@@ -7,17 +7,17 @@ import android.provider.Settings;
 import android.util.Pair;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class g {
     public static final g c = new g(8, new int[]{2});
     public static final g d = new g(8, new int[]{2, 5, 6});
-    public static final p8.q0 e;
+    public static final o8.q0 e;
     public final int[] a;
     public final int b;
 
     static {
-        b6.a aVar = new b6.a(4, 21);
+        a6.a aVar = new a6.a(4, 17);
         aVar.j(5, 6);
         aVar.j(17, 6);
         aVar.j(7, 6);
@@ -28,7 +28,7 @@ public final class g {
         e = aVar.c();
     }
 
-    public g(int i10, int[] iArr) {
+    public g(int i9, int[] iArr) {
         if (iArr != null) {
             int[] copyOf = Arrays.copyOf(iArr, iArr.length);
             this.a = copyOf;
@@ -36,19 +36,19 @@ public final class g {
         } else {
             this.a = new int[0];
         }
-        this.b = i10;
+        this.b = i9;
     }
 
     public static g a(Context context) {
-        Intent M = d5.g0.M(context, null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG"));
-        int i10 = d5.g0.a;
-        if (i10 >= 17) {
-            String str = d5.g0.c;
+        Intent M = d5.f0.M(context, null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG"));
+        int i9 = d5.f0.a;
+        if (i9 >= 17) {
+            String str = d5.f0.c;
             if (("Amazon".equals(str) || "Xiaomi".equals(str)) && Settings.Global.getInt(context.getContentResolver(), "external_surround_sound_enabled", 0) == 1) {
                 return d;
             }
         }
-        if (i10 >= 29 && (d5.g0.F(context) || (i10 >= 23 && context.getPackageManager().hasSystemFeature("android.hardware.type.automotive")))) {
+        if (i9 >= 29 && (d5.f0.F(context) || (i9 >= 23 && context.getPackageManager().hasSystemFeature("android.hardware.type.automotive")))) {
             return new g(8, f.a());
         }
         if (M == null || M.getIntExtra("android.media.extra.AUDIO_PLUG_STATE", 0) == 0) {
@@ -76,10 +76,10 @@ public final class g {
         str.getClass();
         int b10 = d5.q.b(str, t0Var.r);
         Integer valueOf = Integer.valueOf(b10);
-        p8.q0 q0Var = e;
+        o8.q0 q0Var = e;
         if (q0Var.containsKey(valueOf)) {
             int[] iArr = this.a;
-            int i10 = 6;
+            int i9 = 6;
             if (b10 == 18 && Arrays.binarySearch(iArr, 18) < 0) {
                 b10 = 6;
             } else if (b10 == 8 && Arrays.binarySearch(iArr, 8) < 0) {
@@ -88,41 +88,41 @@ public final class g {
             if (Arrays.binarySearch(iArr, b10) < 0) {
                 return null;
             }
-            int i11 = t0Var.O;
-            if (i11 == -1 || b10 == 18) {
-                int i12 = t0Var.P;
-                if (i12 == -1) {
-                    i12 = 48000;
+            int i10 = t0Var.O;
+            if (i10 == -1 || b10 == 18) {
+                int i11 = t0Var.P;
+                if (i11 == -1) {
+                    i11 = 48000;
                 }
-                if (d5.g0.a >= 29) {
-                    intValue = f.b(b10, i12);
+                if (d5.f0.a >= 29) {
+                    intValue = f.b(b10, i11);
                 } else {
                     Object obj = q0Var.get(Integer.valueOf(b10));
                     intValue = ((Integer) (obj != null ? obj : 0)).intValue();
                 }
-                i11 = intValue;
+                i10 = intValue;
             }
-            int i13 = d5.g0.a;
-            if (i13 <= 28) {
-                if (i11 == 7) {
-                    i10 = 8;
-                } else if (i11 != 3) {
-                    if (i11 != 4) {
+            int i12 = d5.f0.a;
+            if (i12 <= 28) {
+                if (i10 == 7) {
+                    i9 = 8;
+                } else if (i10 != 3) {
+                    if (i10 != 4) {
                     }
                 }
-                if (i13 <= 26 && "fugu".equals(d5.g0.b) && i10 == 1) {
-                    i10 = 2;
+                if (i12 <= 26 && "fugu".equals(d5.f0.b) && i9 == 1) {
+                    i9 = 2;
                 }
-                m10 = d5.g0.m(i10);
+                m10 = d5.f0.m(i9);
                 if (m10 != 0) {
                     return Pair.create(Integer.valueOf(b10), Integer.valueOf(m10));
                 }
             }
-            i10 = i11;
-            if (i13 <= 26) {
-                i10 = 2;
+            i9 = i10;
+            if (i12 <= 26) {
+                i9 = 2;
             }
-            m10 = d5.g0.m(i10);
+            m10 = d5.f0.m(i9);
             if (m10 != 0) {
             }
         }

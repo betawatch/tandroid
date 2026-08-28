@@ -10,12 +10,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.f11;
-import org.telegram.ui.lh1;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.Components.y11;
+import org.telegram.ui.mh1;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public abstract class v2 extends FrameLayout {
     public Activity a;
@@ -50,25 +50,25 @@ public abstract class v2 extends FrameLayout {
             return;
         }
         this.f = true;
-        if (lh1.j1 != null) {
+        if (mh1.j1 != null) {
             if (VoIPService.getSharedInstance() != null) {
-                int measuredHeight = lh1.j1.q0.getMeasuredHeight();
-                if (lh1.j1.z0 && !VoIPService.getSharedInstance().isConverting()) {
-                    lh1 lh1Var = lh1.j1;
-                    l2.l(lh1Var.b, lh1Var.a, lh1Var.q0.getMeasuredWidth(), measuredHeight, 0);
-                    WindowInsets windowInsets = lh1.j1.n0;
+                int measuredHeight = mh1.j1.q0.getMeasuredHeight();
+                if (mh1.j1.z0 && !VoIPService.getSharedInstance().isConverting()) {
+                    mh1 mh1Var = mh1.j1;
+                    l2.l(mh1Var.b, mh1Var.a, mh1Var.q0.getMeasuredWidth(), measuredHeight, 0);
+                    WindowInsets windowInsets = mh1.j1.n0;
                     if (windowInsets != null) {
                         l2.S = windowInsets.getSystemWindowInsetTop();
-                        lh1.j1.n0.getSystemWindowInsetBottom();
+                        mh1.j1.n0.getSystemWindowInsetBottom();
                     }
                 }
             }
-            lh1.j1.Y.d.release();
-            lh1.j1.Z.d.release();
-            lh1.j1.X.release();
-            lh1.j1.l();
+            mh1.j1.Y.d.release();
+            mh1.j1.Z.d.release();
+            mh1.j1.X.release();
+            mh1.j1.l();
         }
-        lh1.j1 = null;
+        mh1.j1 = null;
         if (this.b) {
             try {
                 ((WindowManager) this.a.getSystemService("window")).removeView(this);
@@ -76,7 +76,7 @@ public abstract class v2 extends FrameLayout {
             }
         } else {
             this.c.lock();
-            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new f11(this, 18)).setDuration(j10).setInterpolator(er.f).start();
+            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new y11(this, 16)).setDuration(j10).setInterpolator(gr.f).start();
         }
     }
 
@@ -96,8 +96,8 @@ public abstract class v2 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(i9, i10);
         if (this.e) {
             return;
         }
@@ -107,7 +107,7 @@ public abstract class v2 extends FrameLayout {
         }
         setTranslationY(getMeasuredHeight());
         setAlpha(0.0f);
-        animate().translationY(0.0f).alpha(1.0f).setDuration(330L).setInterpolator(er.f).start();
+        animate().translationY(0.0f).alpha(1.0f).setDuration(330L).setInterpolator(gr.f).start();
     }
 
     @Override // android.view.View
@@ -123,9 +123,9 @@ public abstract class v2 extends FrameLayout {
                 return false;
             }
             if (motionEvent.getAction() == 2) {
-                float x8 = motionEvent.getX() - this.h;
+                float x10 = motionEvent.getX() - this.h;
                 float y10 = motionEvent.getY() - this.n;
-                if (!this.r && Math.abs(y10) > AndroidUtilities.getPixelsInCM(0.4f, true) && Math.abs(y10) / 3.0f > x8) {
+                if (!this.r && Math.abs(y10) > AndroidUtilities.getPixelsInCM(0.4f, true) && Math.abs(y10) / 3.0f > x10) {
                     this.n = motionEvent.getY();
                     this.r = true;
                     y10 = 0.0f;

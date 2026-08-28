@@ -1,28 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
+import android.graphics.Rect;
+import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class aw extends xy {
-    public final /* synthetic */ yy d;
+public final class aw extends f2.y0 {
+    public final /* synthetic */ wy a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public aw(yy yyVar) {
-        super(yyVar, 2);
-        this.d = yyVar;
+    public aw(wy wyVar) {
+        this.a = wyVar;
     }
 
-    @Override // org.telegram.ui.Components.xy, f2.b1
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        yy yyVar;
-        jg.e eVar;
-        super.b(recyclerView, i10, i11);
-        if (Build.VERSION.SDK_INT < 31 || (eVar = (yyVar = this.d).f2) == null) {
+    @Override // f2.y0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, f2.n1 n1Var) {
+        recyclerView.getClass();
+        int R = RecyclerView.R(view);
+        wy wyVar = this.a;
+        f2.r0 adapter = wyVar.d0.getAdapter();
+        ay ayVar = wyVar.j0;
+        if (adapter == ayVar && R == ayVar.E) {
+            rect.set(0, 0, 0, 0);
             return;
         }
-        eVar.f(i10, i11);
-        yyVar.D();
+        if (R == 0) {
+            ayVar.getClass();
+        }
+        rect.left = 0;
+        rect.bottom = 0;
+        rect.top = AndroidUtilities.dp(2.0f);
+        cy cyVar = wyVar.e0;
+        ayVar.getClass();
+        rect.right = cyVar.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
     }
 }

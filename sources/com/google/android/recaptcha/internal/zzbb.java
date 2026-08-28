@@ -1,11 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import ad.p;
-import h7.k6;
-import rc.c;
-import tc.i;
+import g7.y5;
+import qc.c;
+import rc.a;
+import sc.i;
+import zc.p;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class zzbb extends i implements p {
     int zza;
@@ -20,16 +21,16 @@ final class zzbb extends i implements p {
         this.zzc = str;
     }
 
-    @Override // tc.a
+    @Override // sc.a
     public final c create(Object obj, c cVar) {
         zzbb zzbbVar = new zzbb(this.zzb, this.zzc, cVar);
         zzbbVar.zzd = obj;
         return zzbbVar;
     }
 
-    @Override // ad.p
+    @Override // zc.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbb) create((zzhk) obj, (c) obj2)).invokeSuspend(pc.i.a);
+        return ((zzbb) create((zzhk) obj, (c) obj2)).invokeSuspend(oc.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x0069, code lost:
@@ -72,13 +73,13 @@ final class zzbb extends i implements p {
     /* JADX WARN: Type inference failed for: r1v13 */
     /* JADX WARN: Type inference failed for: r1v14 */
     /* JADX WARN: Type inference failed for: r1v6 */
-    @Override // tc.a
+    @Override // sc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        sc.a aVar = sc.a.a;
+        a aVar = a.a;
         Object obj2 = this.zza;
         try {
         } catch (Exception unused) {
@@ -89,7 +90,7 @@ final class zzbb extends i implements p {
             zzhkVar = obj2;
         }
         if (obj2 == 0) {
-            k6.b(obj);
+            y5.b(obj);
             zzhk zzhkVar2 = (zzhk) this.zzd;
             zzbo zzboVar2 = this.zzb;
             String str = this.zzc;
@@ -99,13 +100,13 @@ final class zzbb extends i implements p {
             obj2 = zzhkVar2;
         } else if (obj2 == 1) {
             zzhk zzhkVar3 = (zzhk) this.zzd;
-            k6.b(obj);
+            y5.b(obj);
             obj2 = zzhkVar3;
         } else if (obj2 != 2) {
-            k6.b(obj);
+            y5.b(obj);
         } else {
             zzhk zzhkVar4 = (zzhk) this.zzd;
-            k6.b(obj);
+            y5.b(obj);
             zzhkVar = zzhkVar4;
             this.zzd = null;
             this.zza = 3;

@@ -1,172 +1,110 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
+import android.view.View;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public abstract class yh extends FrameLayout {
-    public final org.telegram.ui.ActionBar.c6 a;
-    public final gi b;
-    public zk0 c;
-    public zk0 d;
-    public int e;
-    public boolean f;
-    public boolean h;
+public final class yh extends l6 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ ki c;
 
-    public yh(Context context, org.telegram.ui.ActionBar.c6 c6Var, gi giVar) {
-        super(context);
-        this.a = c6Var;
-        this.b = giVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yh(ki kiVar, int i9) {
+        super("translation", 0);
+        this.b = i9;
+        switch (i9) {
+            case 1:
+                this.c = kiVar;
+                super("openProgress", 0);
+                break;
+            default:
+                this.c = kiVar;
+                break;
+        }
     }
 
-    public boolean D(int i10) {
-        return false;
+    @Override // org.telegram.ui.Components.l6
+    public final void b(Object obj, float f10) {
+        ViewGroup viewGroup;
+        float f11;
+        switch (this.b) {
+            case 0:
+                ki kiVar = this.c;
+                kiVar.Z = f10;
+                ci ciVar = kiVar.v0;
+                if (ciVar != null) {
+                    if ((ciVar instanceof hm) || (kiVar.u0 instanceof hm)) {
+                        int max = Math.max(ciVar.getWidth(), kiVar.u0.getWidth());
+                        if (kiVar.v0 instanceof hm) {
+                            kiVar.u0.setTranslationX((-max) * f10);
+                            kiVar.v0.setTranslationX((1.0f - f10) * max);
+                        } else {
+                            kiVar.u0.setTranslationX(max * f10);
+                            kiVar.v0.setTranslationX((1.0f - f10) * (-max));
+                        }
+                    } else {
+                        ciVar.setAlpha(f10);
+                        kiVar.v0.s(f10);
+                        ci ciVar2 = kiVar.v0;
+                        jn jnVar = kiVar.i0;
+                        if (ciVar2 == jnVar || kiVar.u0 == jnVar) {
+                            kiVar.a2(ciVar2 == jnVar ? 1 : 0);
+                        }
+                        ci ciVar3 = kiVar.v0;
+                        jn jnVar2 = kiVar.j0;
+                        if (ciVar3 == jnVar2 || kiVar.u0 == jnVar2) {
+                            kiVar.a2(ciVar3 == jnVar2 ? 1 : 0);
+                        }
+                        kiVar.v0.setTranslationY(AndroidUtilities.dp(78.0f) * f10);
+                        kiVar.u0.s(1.0f - Math.min(1.0f, f10 / 0.7f));
+                        kiVar.u0.k(kiVar.h2);
+                    }
+                    if (kiVar.p1 != null) {
+                        kiVar.a2(1);
+                    }
+                    kiVar.Z0();
+                    viewGroup = ((org.telegram.ui.ActionBar.f3) kiVar).containerView;
+                    viewGroup.invalidate();
+                    break;
+                }
+                break;
+            default:
+                nh nhVar = this.c.u1;
+                int childCount = nhVar.getChildCount();
+                for (int i9 = 0; i9 < childCount; i9++) {
+                    float f12 = (3 - i9) * 32.0f;
+                    View childAt = nhVar.getChildAt(i9);
+                    if (f10 > f12) {
+                        float f13 = f10 - f12;
+                        if (f13 <= 200.0f) {
+                            float f14 = f13 / 200.0f;
+                            f11 = gr.g.getInterpolation(f14) * 1.1f;
+                            childAt.setAlpha(gr.j.getInterpolation(f14));
+                        } else {
+                            childAt.setAlpha(1.0f);
+                            float f15 = f13 - 200.0f;
+                            f11 = f15 <= 100.0f ? 1.1f - (gr.i.getInterpolation(f15 / 100.0f) * 0.1f) : 1.0f;
+                        }
+                    } else {
+                        f11 = 0.0f;
+                    }
+                    if (childAt instanceof fi) {
+                        ((fi) childAt).a.setAttachScale(f11);
+                    }
+                }
+                break;
+        }
     }
 
-    public boolean I(int i10, boolean z10, int i11, boolean z11, long j10) {
-        return false;
-    }
-
-    public boolean J() {
-        return !(this instanceof nh.e4);
-    }
-
-    public boolean b() {
-        return true;
-    }
-
-    public boolean c() {
-        return true;
-    }
-
-    public boolean e() {
-        return false;
-    }
-
-    public boolean f() {
-        return false;
-    }
-
-    public boolean g() {
-        return false;
-    }
-
-    public int getButtonsHideOffset() {
-        return AndroidUtilities.dp(h() != 0 ? 12.0f : 17.0f);
-    }
-
-    public int getCurrentItemTop() {
-        return 0;
-    }
-
-    public int getCustomActionBarBackground() {
-        return 0;
-    }
-
-    public int getCustomBackground() {
-        return 0;
-    }
-
-    public int getFirstOffset() {
-        return 0;
-    }
-
-    public kg.a getIBlur3Capture() {
-        return null;
-    }
-
-    public int getListTopPadding() {
-        return 0;
-    }
-
-    public int getSelectedItemsCount() {
-        return 0;
-    }
-
-    public ArrayList<org.telegram.ui.ActionBar.i6> getThemeDescriptions() {
-        return null;
-    }
-
-    public int h() {
-        return 0;
-    }
-
-    public boolean i() {
-        return false;
-    }
-
-    public boolean l(MotionEvent motionEvent) {
-        return false;
-    }
-
-    public boolean n() {
-        return false;
-    }
-
-    public boolean q() {
-        return true;
-    }
-
-    public abstract void z(int i10, int i11);
-
-    public void B() {
-    }
-
-    public void C(int i10) {
-    }
-
-    public void E(yh yhVar) {
-    }
-
-    public void F() {
-    }
-
-    public void G() {
-    }
-
-    public void a(CharSequence charSequence) {
-    }
-
-    public void d() {
-    }
-
-    public void j() {
-    }
-
-    public void k(float f10) {
-    }
-
-    public void m() {
-    }
-
-    public void p(int i10) {
-    }
-
-    public void r() {
-    }
-
-    public void s() {
-    }
-
-    public void t(float f10) {
-    }
-
-    public void u(int i10) {
-    }
-
-    public void v() {
-    }
-
-    public void w() {
-    }
-
-    public void y() {
-    }
-
-    public void x(int i10, boolean z10) {
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(this.c.Z);
+            default:
+                return Float.valueOf(0.0f);
+        }
     }
 }

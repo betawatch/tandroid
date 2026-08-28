@@ -16,11 +16,11 @@ public final class x implements IntConsumer {
     }
 
     @Override // java.util.function.IntConsumer
-    public final void accept(int i10) {
+    public final void accept(int i9) {
         this.count++;
-        this.sum += i10;
-        this.min = Math.min(this.min, i10);
-        this.max = Math.max(this.max, i10);
+        this.sum += i9;
+        this.min = Math.min(this.min, i9);
+        this.max = Math.max(this.max, i9);
     }
 
     public final void a(x xVar) {

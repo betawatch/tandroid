@@ -1,18 +1,45 @@
 package gh;
 
-import android.view.View;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class w4 extends org.telegram.ui.ActionBar.f1 {
-    @Override // org.telegram.ui.ActionBar.f1, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
-            size = AndroidUtilities.dp(250.0f);
-        }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i11);
+public final class w4 extends Drawable {
+    public final float a;
+    public final Paint b;
+
+    public w4(float f10, int i9) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.a = f10;
+        paint.setColor(i9);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getBounds());
+        Paint paint = this.b;
+        float f10 = this.a;
+        canvas.drawRoundRect(rectF, f10, f10, paint);
+        AndroidUtilities.drawStroke(canvas, rectF, f10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i9) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -3,17 +3,17 @@ package org.telegram.ui.Components;
 import android.graphics.Paint;
 import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class c6 extends Paint {
-    public final org.telegram.ui.ActionBar.c6 a;
+    public final org.telegram.ui.ActionBar.b6 a;
     public final b5 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c6(View view, org.telegram.ui.ActionBar.c6 c6Var) {
+    public c6(View view, org.telegram.ui.ActionBar.b6 b6Var) {
         super(3);
-        er erVar = er.h;
-        this.a = c6Var;
-        this.b = new b5(view, 320L, erVar);
+        gr grVar = gr.h;
+        this.a = b6Var;
+        this.b = new b5(view, 320L, grVar);
     }
 }

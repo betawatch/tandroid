@@ -109,14 +109,14 @@ public abstract class b5 extends a implements Stream {
 
     @Override // j$.util.stream.a
     public final boolean L0(Spliterator spliterator, j5 j5Var) {
-        boolean q6;
+        boolean q10;
         do {
-            q6 = j5Var.q();
-            if (q6) {
+            q10 = j5Var.q();
+            if (q10) {
                 break;
             }
         } while (spliterator.tryAdvance(j5Var));
-        return q6;
+        return q10;
     }
 
     @Override // j$.util.stream.t3
@@ -238,14 +238,14 @@ public abstract class b5 extends a implements Stream {
 
     @Override // j$.util.stream.Stream
     public final Stream takeWhile(Predicate predicate) {
-        int i10 = w8.a;
+        int i9 = w8.a;
         Objects.requireNonNull(predicate);
         return new e8(this, w8.a, predicate, 0);
     }
 
     @Override // j$.util.stream.Stream
     public final Stream dropWhile(Predicate predicate) {
-        int i10 = w8.a;
+        int i9 = w8.a;
         Objects.requireNonNull(predicate);
         return new e8(this, w8.b, predicate, 1);
     }

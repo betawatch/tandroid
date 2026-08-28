@@ -1,48 +1,45 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
+import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class eg implements Utilities.Callback2 {
+public final /* synthetic */ class eg implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rn b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ eg(rn rnVar, String str, int i10) {
-        this.a = i10;
-        this.b = rnVar;
-        this.c = str;
+    public /* synthetic */ eg(Object obj, int i9) {
+        this.a = i9;
+        this.b = obj;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        Boolean bool = (Boolean) obj;
-        Boolean bool2 = (Boolean) obj2;
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                if (bool.booleanValue()) {
-                    boolean booleanValue = bool2.booleanValue();
-                    rn rnVar = this.b;
-                    String str = this.c;
-                    if (booleanValue) {
-                        rnVar.getMessagesController().addWebBrowserException(str, false);
-                    }
-                    rnVar.getParentActivity();
-                    we.e.n(str);
-                    break;
-                }
+                qn qnVar = (qn) this.b;
+                qnVar.X8 = true;
+                qnVar.V8 = 0;
+                qnVar.mb = 0;
+                qnVar.J4 = 0;
+                qnVar.r9();
+                qnVar.Nb(false);
+                break;
+            case 1:
+                ho hoVar = (ho) this.b;
+                hoVar.I0 = false;
+                hoVar.b = null;
+                hoVar.J0 = false;
+                break;
+            case 2:
+                ((hp) this.b).n = null;
                 break;
             default:
-                rn rnVar2 = this.b;
-                rnVar2.getClass();
-                if (bool.booleanValue()) {
-                    boolean booleanValue2 = bool2.booleanValue();
-                    String str2 = this.c;
-                    if (booleanValue2) {
-                        rnVar2.getMessagesController().addWebBrowserException(str2, true);
-                    }
-                    we.e.m(rnVar2.getParentActivity(), str2, false, null);
+                kb0 kb0Var = (kb0) this.b;
+                if (kb0Var.h >= 0) {
+                    ConnectionsManager.getInstance(kb0Var.b).cancelRequest(kb0Var.h, true);
+                    kb0Var.h = -1;
                     break;
                 }
                 break;

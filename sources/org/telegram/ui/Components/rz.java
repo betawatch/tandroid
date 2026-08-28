@@ -1,43 +1,70 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class rz extends f2.l0 {
-    public final /* synthetic */ org.telegram.ui.vq r;
+public final class rz extends vk0 {
+    public final Context c;
+    public final /* synthetic */ vz d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rz(org.telegram.ui.vq vqVar, Context context) {
-        super(context);
-        this.r = vqVar;
+    public rz(vz vzVar, Context context) {
+        this.d = vzVar;
+        this.c = context;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
-    
-        if ((org.telegram.messenger.AndroidUtilities.dp(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.yz) r5.r.J).getMeasuredWidth()) goto L13;
-     */
-    @Override // f2.l0, f2.k1
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void g(View view, f2.j1 j1Var) {
-        int j10 = j(o(), view);
-        if (j10 > 0 || (j10 == 0 && view.getLeft() - AndroidUtilities.dp(21.0f) < 0)) {
-            j10 += AndroidUtilities.dp(60.0f);
-        } else {
-            if (j10 >= 0) {
-                if (j10 == 0) {
-                }
+    @Override // org.telegram.ui.Components.vk0
+    public final boolean D(f2.q1 q1Var) {
+        return true;
+    }
+
+    @Override // f2.r0
+    public final int h() {
+        return this.d.h.size();
+    }
+
+    @Override // f2.r0
+    public final long i(int i9) {
+        return this.d.g0.get(i9);
+    }
+
+    @Override // f2.r0
+    public final int j(int i9) {
+        return 0;
+    }
+
+    @Override // f2.r0
+    public final void v(f2.q1 q1Var, int i9) {
+        tz tzVar = (tz) q1Var.a;
+        int id2 = tzVar.b != null ? tzVar.getId() : -1;
+        sz szVar = (sz) this.d.h.get(i9);
+        tzVar.b = szVar;
+        tzVar.e = i9;
+        tzVar.setContentDescription(szVar.b);
+        tzVar.requestLayout();
+        boolean z10 = tzVar.n;
+        sz szVar2 = tzVar.b;
+        if (z10 != (szVar2 != null && szVar2.g)) {
+            t5.release(tzVar, tzVar.r);
+            t5.release(tzVar, tzVar.K);
+            t5.release(tzVar, tzVar.M);
+            t5.release(tzVar, tzVar.O);
+            if (tzVar.h0) {
+                tzVar.r = t5.update(tzVar.b.g ? 26 : 0, tzVar, tzVar.r, tzVar.s);
+                tzVar.K = t5.update(tzVar.b.g ? 26 : 0, tzVar, tzVar.K, tzVar.L);
+                tzVar.M = t5.update(tzVar.b.g ? 26 : 0, tzVar, tzVar.M, tzVar.N);
+                tzVar.O = t5.update(tzVar.b.g ? 26 : 0, tzVar, tzVar.O, tzVar.P);
             }
-            j10 -= AndroidUtilities.dp(60.0f);
+            tzVar.n = tzVar.b.g;
         }
-        int k10 = k(p(), view);
-        int max = Math.max(180, m((int) Math.sqrt((k10 * k10) + (j10 * j10))));
-        if (max > 0) {
-            j1Var.b(-j10, -k10, max, this.j);
+        if (id2 != tzVar.getId()) {
+            tzVar.g0 = tzVar.b.f ? 1.0f : 0.0f;
         }
+    }
+
+    @Override // f2.r0
+    public final f2.q1 x(ViewGroup viewGroup, int i9) {
+        return new ik0(new tz(this.d, this.c));
     }
 }

@@ -6,15 +6,15 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.m;
 import com.google.android.gms.common.api.q;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class g extends com.google.android.gms.common.api.internal.e {
     public final /* synthetic */ int q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(m mVar, int i10) {
+    public g(m mVar, int i9) {
         super(g5.a.a, mVar);
-        this.q = i10;
+        this.q = i9;
     }
 
     @Override // com.google.android.gms.common.api.internal.BasePendingResult, com.google.android.gms.common.api.internal.f
@@ -24,7 +24,7 @@ public final class g extends com.google.android.gms.common.api.internal.e {
 
     @Override // com.google.android.gms.common.api.internal.BasePendingResult
     public final /* bridge */ /* synthetic */ q d(Status status) {
-        int i10 = this.q;
+        int i9 = this.q;
         return status;
     }
 
@@ -37,9 +37,9 @@ public final class g extends com.google.android.gms.common.api.internal.e {
                 f fVar = new f(this, 0);
                 GoogleSignInOptions googleSignInOptions = eVar.Q;
                 Parcel I0 = kVar.I0();
-                int i10 = t6.f.a;
+                int i9 = s6.f.a;
                 I0.writeStrongBinder(fVar);
-                t6.f.c(I0, googleSignInOptions);
+                s6.f.c(I0, googleSignInOptions);
                 kVar.J0(I0, 102);
                 break;
             default:
@@ -48,9 +48,9 @@ public final class g extends com.google.android.gms.common.api.internal.e {
                 f fVar2 = new f(this, 1);
                 GoogleSignInOptions googleSignInOptions2 = eVar2.Q;
                 Parcel I02 = kVar2.I0();
-                int i11 = t6.f.a;
+                int i10 = s6.f.a;
                 I02.writeStrongBinder(fVar2);
-                t6.f.c(I02, googleSignInOptions2);
+                s6.f.c(I02, googleSignInOptions2);
                 kVar2.J0(I02, 103);
                 break;
         }

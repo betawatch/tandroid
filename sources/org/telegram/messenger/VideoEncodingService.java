@@ -6,7 +6,7 @@ import android.os.IBinder;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class VideoEncodingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private static VideoEncodingService instance;
@@ -41,10 +41,10 @@ public class VideoEncodingService extends Service implements NotificationCenter.
         }
         updateBuilderForMessage(videoConvertMessage);
         this.currentMessage = videoConvertMessage;
-        int i10 = videoConvertMessage.currentAccount;
-        this.currentAccount = i10;
+        int i9 = videoConvertMessage.currentAccount;
+        this.currentAccount = i9;
         this.currentPath = videoConvertMessage.messageObject.messageOwner.attachPath;
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileUploadProgressChanged);
+        NotificationCenter.getInstance(i9).addObserver(this, NotificationCenter.fileUploadProgressChanged);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.fileUploadFailed);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.fileUploaded);
         if (isRunning()) {
@@ -57,8 +57,8 @@ public class VideoEncodingService extends Service implements NotificationCenter.
             try {
                 ApplicationLoader.applicationContext.startService(new Intent(ApplicationLoader.applicationContext, (Class<?>) VideoEncodingService.class));
                 return;
-            } catch (Exception e9) {
-                FileLog.e(e9);
+            } catch (Exception e10) {
+                FileLog.e(e10);
                 return;
             }
         }
@@ -117,14 +117,14 @@ public class VideoEncodingService extends Service implements NotificationCenter.
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i10, int i11, Object... objArr) {
+    public void didReceivedNotification(int i9, int i10, Object... objArr) {
         String str;
         String str2;
-        if (i10 != NotificationCenter.fileUploadProgressChanged) {
-            if (i10 == NotificationCenter.fileUploaded || i10 == NotificationCenter.fileUploadFailed) {
+        if (i9 != NotificationCenter.fileUploadProgressChanged) {
+            if (i9 == NotificationCenter.fileUploaded || i9 == NotificationCenter.fileUploadFailed) {
                 String str3 = (String) objArr[0];
-                if (i11 == this.currentAccount && (str = this.currentPath) != null && str.equals(str3)) {
-                    AndroidUtilities.runOnUIThread(new ql(this, 0));
+                if (i10 == this.currentAccount && (str = this.currentPath) != null && str.equals(str3)) {
+                    AndroidUtilities.runOnUIThread(new ml(this, 0));
                     return;
                 }
                 return;
@@ -132,13 +132,13 @@ public class VideoEncodingService extends Service implements NotificationCenter.
             return;
         }
         String str4 = (String) objArr[0];
-        if (i11 == this.currentAccount && (str2 = this.currentPath) != null && str2.equals(str4)) {
+        if (i10 == this.currentAccount && (str2 = this.currentPath) != null && str2.equals(str4)) {
             float min = Math.min(1.0f, ((Long) objArr[1]).longValue() / ((Long) objArr[2]).longValue());
-            int i12 = (int) (min * 100.0f);
+            int i11 = (int) (min * 100.0f);
             e0.t tVar = this.builder;
-            boolean z10 = i12 == 0;
+            boolean z10 = i11 == 0;
             tVar.n = 100;
-            tVar.o = i12;
+            tVar.o = i11;
             tVar.p = z10;
             updateNotification();
         }
@@ -168,7 +168,7 @@ public class VideoEncodingService extends Service implements NotificationCenter.
     }
 
     @Override // android.app.Service
-    public int onStartCommand(Intent intent, int i10, int i11) {
+    public int onStartCommand(Intent intent, int i9, int i10) {
         MediaController.VideoConvertMessage currentForegroundConverMessage;
         if (isRunning() || (currentForegroundConverMessage = MediaController.getInstance().getCurrentForegroundConverMessage()) == null) {
             return 2;
@@ -190,7 +190,7 @@ public class VideoEncodingService extends Service implements NotificationCenter.
         } catch (Throwable th) {
             FileLog.e(th);
         }
-        AndroidUtilities.runOnUIThread(new ql(this, 1));
+        AndroidUtilities.runOnUIThread(new ml(this, 1));
         return 2;
     }
 }

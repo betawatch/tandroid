@@ -9,10 +9,10 @@ import android.os.PersistableBundle;
 import android.text.TextUtils;
 import e0.p0;
 import f0.h;
-import h7.m6;
+import g7.p6;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b {
     public final c a;
@@ -42,13 +42,13 @@ public final class b {
         if (extras == null || !extras.containsKey("extraPersonCount")) {
             p0VarArr = null;
         } else {
-            int i10 = extras.getInt("extraPersonCount");
-            p0VarArr = new p0[i10];
-            int i11 = 0;
-            while (i11 < i10) {
+            int i9 = extras.getInt("extraPersonCount");
+            p0VarArr = new p0[i9];
+            int i10 = 0;
+            while (i10 < i9) {
                 StringBuilder sb2 = new StringBuilder("extraPerson_");
-                int i12 = i11 + 1;
-                sb2.append(i12);
+                int i11 = i10 + 1;
+                sb2.append(i11);
                 PersistableBundle persistableBundle = extras.getPersistableBundle(sb2.toString());
                 String string2 = persistableBundle.getString("name");
                 String string3 = persistableBundle.getString("uri");
@@ -62,15 +62,15 @@ public final class b {
                 p0Var.d = string4;
                 p0Var.e = z10;
                 p0Var.f = z11;
-                p0VarArr[i11] = p0Var;
-                i11 = i12;
+                p0VarArr[i10] = p0Var;
+                i10 = i11;
             }
         }
         cVar.i = p0VarArr;
         shortcutInfo.getUserHandle();
         shortcutInfo.getLastChangedTimestamp();
-        int i13 = Build.VERSION.SDK_INT;
-        if (i13 >= 30) {
+        int i12 = Build.VERSION.SDK_INT;
+        if (i12 >= 30) {
             shortcutInfo.isCached();
         }
         shortcutInfo.isDynamic();
@@ -80,14 +80,14 @@ public final class b {
         shortcutInfo.isEnabled();
         shortcutInfo.hasKeyFieldsOnly();
         c cVar2 = this.a;
-        if (i13 < 29) {
+        if (i12 < 29) {
             PersistableBundle extras2 = shortcutInfo.getExtras();
             if (extras2 != null && (string = extras2.getString("extraLocusId")) != null) {
                 hVar = new h(string);
             }
         } else if (shortcutInfo.getLocusId() != null) {
             LocusId locusId = shortcutInfo.getLocusId();
-            m6.a(locusId, "locusId cannot be null");
+            p6.a(locusId, "locusId cannot be null");
             String id2 = locusId.getId();
             if (TextUtils.isEmpty(id2)) {
                 throw new IllegalArgumentException("id cannot be empty");

@@ -1,19 +1,20 @@
 package h3;
 
+import fh.y5;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class t0 implements g {
     public final String A;
     public final String B;
     public final int C;
     public final List D;
-    public final l3.d E;
+    public final l3.c E;
     public final long F;
     public final int G;
     public final int H;
@@ -80,19 +81,19 @@ public final class t0 implements g {
     public static final String C0 = Integer.toString(29, 36);
     public static final String D0 = Integer.toString(30, 36);
     public static final String E0 = Integer.toString(31, 36);
-    public static final f9.z F0 = new f9.z(18);
+    public static final y5 F0 = new y5(14);
 
     public t0(s0 s0Var) {
         this.a = s0Var.a;
         this.b = s0Var.b;
-        this.c = d5.g0.I(s0Var.c);
+        this.c = d5.f0.I(s0Var.c);
         this.d = s0Var.d;
         this.e = s0Var.e;
-        int i10 = s0Var.f;
-        this.f = i10;
-        int i11 = s0Var.g;
-        this.h = i11;
-        this.n = i11 != -1 ? i11 : i10;
+        int i9 = s0Var.f;
+        this.f = i9;
+        int i10 = s0Var.g;
+        this.h = i10;
+        this.n = i10 != -1 ? i10 : i9;
         this.r = s0Var.h;
         this.s = s0Var.i;
         this.v = s0Var.j;
@@ -104,14 +105,14 @@ public final class t0 implements g {
         this.C = s0Var.p;
         List list = s0Var.q;
         this.D = list == null ? Collections.EMPTY_LIST : list;
-        l3.d dVar = s0Var.r;
-        this.E = dVar;
+        l3.c cVar = s0Var.r;
+        this.E = cVar;
         this.F = s0Var.s;
         this.G = s0Var.t;
         this.H = s0Var.u;
         this.I = s0Var.v;
-        int i12 = s0Var.w;
-        this.J = i12 == -1 ? 0 : i12;
+        int i11 = s0Var.w;
+        this.J = i11 == -1 ? 0 : i11;
         float f10 = s0Var.x;
         this.K = f10 == -1.0f ? 1.0f : f10;
         this.L = s0Var.y;
@@ -120,16 +121,16 @@ public final class t0 implements g {
         this.O = s0Var.B;
         this.P = s0Var.C;
         this.Q = s0Var.D;
-        int i13 = s0Var.E;
-        this.R = i13 == -1 ? 0 : i13;
-        int i14 = s0Var.F;
-        this.S = i14 != -1 ? i14 : 0;
+        int i12 = s0Var.E;
+        this.R = i12 == -1 ? 0 : i12;
+        int i13 = s0Var.F;
+        this.S = i13 != -1 ? i13 : 0;
         this.T = s0Var.G;
         this.U = s0Var.H;
         this.V = s0Var.I;
-        int i15 = s0Var.J;
-        if (i15 != 0 || dVar == null) {
-            this.W = i15;
+        int i14 = s0Var.J;
+        if (i14 != 0 || cVar == null) {
+            this.W = i14;
         } else {
             this.W = 1;
         }
@@ -181,8 +182,8 @@ public final class t0 implements g {
         if (list.size() != t0Var.D.size()) {
             return false;
         }
-        for (int i10 = 0; i10 < list.size(); i10++) {
-            if (!Arrays.equals((byte[]) list.get(i10), (byte[]) t0Var.D.get(i10))) {
+        for (int i9 = 0; i9 < list.size(); i9++) {
+            if (!Arrays.equals((byte[]) list.get(i9), (byte[]) t0Var.D.get(i9))) {
                 return false;
             }
         }
@@ -192,8 +193,8 @@ public final class t0 implements g {
     public final t0 c(t0 t0Var) {
         String str;
         String str2;
+        int i9;
         int i10;
-        int i11;
         if (this == t0Var) {
             return this;
         }
@@ -207,19 +208,19 @@ public final class t0 implements g {
         if ((g10 != 3 && g10 != 1) || (str = t0Var.c) == null) {
             str = this.c;
         }
-        int i12 = this.f;
-        if (i12 == -1) {
-            i12 = t0Var.f;
+        int i11 = this.f;
+        if (i11 == -1) {
+            i11 = t0Var.f;
         }
-        int i13 = this.h;
-        if (i13 == -1) {
-            i13 = t0Var.h;
+        int i12 = this.h;
+        if (i12 == -1) {
+            i12 = t0Var.h;
         }
         String str5 = this.r;
         if (str5 == null) {
-            String o10 = d5.g0.o(g10, t0Var.r);
-            if (d5.g0.Q(o10).length == 1) {
-                str5 = o10;
+            String o6 = d5.f0.o(g10, t0Var.r);
+            if (d5.f0.Q(o6).length == 1) {
+                str5 = o6;
             }
         }
         z3.c cVar2 = this.s;
@@ -230,94 +231,94 @@ public final class t0 implements g {
         if (f10 == -1.0f && g10 == 2) {
             f10 = t0Var.I;
         }
-        int i14 = this.d | t0Var.d;
-        int i15 = this.e | t0Var.e;
-        l3.d dVar = t0Var.E;
+        int i13 = this.d | t0Var.d;
+        int i14 = this.e | t0Var.e;
+        l3.c cVar3 = t0Var.E;
         ArrayList arrayList = new ArrayList();
-        if (dVar != null) {
-            str2 = dVar.c;
-            l3.c[] cVarArr = dVar.a;
-            int length = cVarArr.length;
-            int i16 = 0;
-            while (i16 < length) {
-                l3.c[] cVarArr2 = cVarArr;
-                l3.c cVar3 = cVarArr2[i16];
-                int i17 = length;
-                if (cVar3.e != null) {
-                    arrayList.add(cVar3);
+        if (cVar3 != null) {
+            str2 = cVar3.c;
+            l3.b[] bVarArr = cVar3.a;
+            int length = bVarArr.length;
+            int i15 = 0;
+            while (i15 < length) {
+                l3.b[] bVarArr2 = bVarArr;
+                l3.b bVar = bVarArr2[i15];
+                int i16 = length;
+                if (bVar.e != null) {
+                    arrayList.add(bVar);
                 }
-                i16++;
-                cVarArr = cVarArr2;
-                length = i17;
+                i15++;
+                bVarArr = bVarArr2;
+                length = i16;
             }
         } else {
             str2 = null;
         }
-        l3.d dVar2 = this.E;
-        if (dVar2 != null) {
+        l3.c cVar4 = this.E;
+        if (cVar4 != null) {
             if (str2 == null) {
-                str2 = dVar2.c;
+                str2 = cVar4.c;
             }
             int size = arrayList.size();
-            l3.c[] cVarArr3 = dVar2.a;
-            int length2 = cVarArr3.length;
-            int i18 = 0;
-            while (i18 < length2) {
-                int i19 = i18;
-                l3.c cVar4 = cVarArr3[i19];
-                l3.c[] cVarArr4 = cVarArr3;
-                if (cVar4.e != null) {
-                    UUID uuid = cVar4.b;
-                    i11 = length2;
-                    int i20 = 0;
+            l3.b[] bVarArr3 = cVar4.a;
+            int length2 = bVarArr3.length;
+            int i17 = 0;
+            while (i17 < length2) {
+                int i18 = i17;
+                l3.b bVar2 = bVarArr3[i18];
+                l3.b[] bVarArr4 = bVarArr3;
+                if (bVar2.e != null) {
+                    UUID uuid = bVar2.b;
+                    i10 = length2;
+                    int i19 = 0;
                     while (true) {
-                        if (i20 >= size) {
-                            i10 = size;
-                            arrayList.add(cVar4);
+                        if (i19 >= size) {
+                            i9 = size;
+                            arrayList.add(bVar2);
                             break;
                         }
-                        i10 = size;
-                        if (((l3.c) arrayList.get(i20)).b.equals(uuid)) {
+                        i9 = size;
+                        if (((l3.b) arrayList.get(i19)).b.equals(uuid)) {
                             break;
                         }
-                        i20++;
-                        size = i10;
+                        i19++;
+                        size = i9;
                     }
                 } else {
-                    i10 = size;
-                    i11 = length2;
+                    i9 = size;
+                    i10 = length2;
                 }
-                i18 = i19 + 1;
-                cVarArr3 = cVarArr4;
-                length2 = i11;
-                size = i10;
+                i17 = i18 + 1;
+                bVarArr3 = bVarArr4;
+                length2 = i10;
+                size = i9;
             }
         }
-        l3.d dVar3 = arrayList.isEmpty() ? null : new l3.d(str2, arrayList);
+        l3.c cVar5 = arrayList.isEmpty() ? null : new l3.c(str2, arrayList);
         s0 a2 = a();
         a2.a = str3;
         a2.b = str4;
         a2.c = str;
-        a2.d = i14;
-        a2.e = i15;
-        a2.f = i12;
-        a2.g = i13;
+        a2.d = i13;
+        a2.e = i14;
+        a2.f = i11;
+        a2.g = i12;
         a2.h = str5;
         a2.i = cVar;
-        a2.r = dVar3;
+        a2.r = cVar5;
         a2.v = f10;
         return new t0(a2);
     }
 
     public final boolean equals(Object obj) {
-        int i10;
+        int i9;
         if (this == obj) {
             return true;
         }
         if (obj != null && t0.class == obj.getClass()) {
             t0 t0Var = (t0) obj;
-            int i11 = this.X;
-            if ((i11 == 0 || (i10 = t0Var.X) == 0 || i11 == i10) && this.d == t0Var.d && this.e == t0Var.e && this.f == t0Var.f && this.h == t0Var.h && this.C == t0Var.C && this.F == t0Var.F && this.G == t0Var.G && this.H == t0Var.H && this.J == t0Var.J && this.M == t0Var.M && this.O == t0Var.O && this.P == t0Var.P && this.Q == t0Var.Q && this.R == t0Var.R && this.S == t0Var.S && this.T == t0Var.T && this.U == t0Var.U && this.V == t0Var.V && this.W == t0Var.W && Float.compare(this.I, t0Var.I) == 0 && Float.compare(this.K, t0Var.K) == 0 && d5.g0.a(this.a, t0Var.a) && d5.g0.a(this.b, t0Var.b) && d5.g0.a(this.r, t0Var.r) && d5.g0.a(this.A, t0Var.A) && d5.g0.a(this.B, t0Var.B) && d5.g0.a(this.c, t0Var.c) && Arrays.equals(this.L, t0Var.L) && d5.g0.a(this.s, t0Var.s) && d5.g0.a(this.N, t0Var.N) && d5.g0.a(this.E, t0Var.E) && b(t0Var)) {
+            int i10 = this.X;
+            if ((i10 == 0 || (i9 = t0Var.X) == 0 || i10 == i9) && this.d == t0Var.d && this.e == t0Var.e && this.f == t0Var.f && this.h == t0Var.h && this.C == t0Var.C && this.F == t0Var.F && this.G == t0Var.G && this.H == t0Var.H && this.J == t0Var.J && this.M == t0Var.M && this.O == t0Var.O && this.P == t0Var.P && this.Q == t0Var.Q && this.R == t0Var.R && this.S == t0Var.S && this.T == t0Var.T && this.U == t0Var.U && this.V == t0Var.V && this.W == t0Var.W && Float.compare(this.I, t0Var.I) == 0 && Float.compare(this.K, t0Var.K) == 0 && d5.f0.a(this.a, t0Var.a) && d5.f0.a(this.b, t0Var.b) && d5.f0.a(this.r, t0Var.r) && d5.f0.a(this.A, t0Var.A) && d5.f0.a(this.B, t0Var.B) && d5.f0.a(this.c, t0Var.c) && Arrays.equals(this.L, t0Var.L) && d5.f0.a(this.s, t0Var.s) && d5.f0.a(this.N, t0Var.N) && d5.f0.a(this.E, t0Var.E) && b(t0Var)) {
                 return true;
             }
         }
@@ -368,6 +369,6 @@ public final class t0 implements g {
         sb2.append("], [");
         sb2.append(this.O);
         sb2.append(", ");
-        return a9.p.k(this.P, "])", sb2);
+        return aa.d.l(this.P, "])", sb2);
     }
 }

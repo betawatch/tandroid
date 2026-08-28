@@ -28,9 +28,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class x5 extends BitmapDrawable implements Animatable, gf.f {
+public final class x5 extends BitmapDrawable implements Animatable, ff.f {
     public static final float[] R0 = new float[8];
     public static final ScheduledThreadPoolExecutor S0 = new ScheduledThreadPoolExecutor(8, new ThreadPoolExecutor.DiscardPolicy());
     public static final PorterDuffXfermode T0 = new PorterDuffXfermode(PorterDuff.Mode.SRC);
@@ -109,7 +109,7 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
     public boolean t0;
     public int u0;
     public u5 v;
-    public final gf.h v0;
+    public final ff.h v0;
     public boolean w;
     public com.google.android.gms.internal.cast.a w0;
     public boolean x;
@@ -118,8 +118,8 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
     public boolean y0;
     public v5 z0;
 
-    public x5(File file, boolean z10, long j10, int i10, TLRPC.Document document, ImageLocation imageLocation, Object obj, long j11, int i11, boolean z11) {
-        this(file, z10, j10, i10, document, imageLocation, obj, j11, i11, z11, 0, 0, null, document != null ? 1 : 0, true);
+    public x5(File file, boolean z10, long j10, int i9, TLRPC.Document document, ImageLocation imageLocation, Object obj, long j11, int i10, boolean z11) {
+        this(file, z10, j10, i9, document, imageLocation, obj, j11, i10, z11, 0, 0, null, document != null ? 1 : 0, true);
     }
 
     public final void A(boolean z10) {
@@ -139,11 +139,11 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
             int[] iArr3 = this.Q;
             System.arraycopy(iArr2, 0, iArr3, 0, iArr3.length);
         }
-        for (int i10 = 0; i10 < 4; i10++) {
-            if (!this.s0 && iArr[i10] != iArr2[i10]) {
+        for (int i9 = 0; i9 < 4; i9++) {
+            if (!this.s0 && iArr[i9] != iArr2[i9]) {
                 this.s0 = true;
             }
-            iArr2[i10] = iArr[i10];
+            iArr2[i9] = iArr[i9];
         }
     }
 
@@ -199,25 +199,25 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
     }
 
     public final void E() {
+        int i9;
         int i10;
-        int i11;
         int[] iArr;
+        int i11;
         int i12;
-        int i13;
-        if (this.j0 || (i10 = this.e0) <= 0 || (i11 = this.f0) <= 0 || (i12 = (iArr = this.d)[0]) <= 0 || (i13 = iArr[1]) <= 0) {
+        if (this.j0 || (i9 = this.e0) <= 0 || (i10 = this.f0) <= 0 || (i11 = (iArr = this.d)[0]) <= 0 || (i12 = iArr[1]) <= 0) {
             this.i0 = 1.0f;
             return;
         }
-        float max = Math.max(i11 / i12, i10 / i13);
+        float max = Math.max(i10 / i11, i9 / i12);
         this.i0 = max;
         if (max <= 0.0f || max > 0.7d) {
             this.i0 = 1.0f;
         }
     }
 
-    @Override // gf.f
+    @Override // ff.f
     public final int a(Bitmap bitmap) {
-        int i10;
+        int i9;
         if (this.J0 == null) {
             return -1;
         }
@@ -229,19 +229,19 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
         }
         this.J0.c(this.I0, false, this.c0, this.d0, this.g0);
         long j10 = this.H0;
-        if (j10 != 0 && ((i10 = iArr[3]) == 0 || j10 > i10)) {
+        if (j10 != 0 && ((i9 = iArr[3]) == 0 || j10 > i9)) {
             return 0;
         }
-        int i11 = this.L0;
-        int i12 = iArr[3];
-        if (i11 == i12) {
-            int i13 = this.K0 + 1;
-            this.K0 = i13;
-            if (i13 > 5) {
+        int i10 = this.L0;
+        int i11 = iArr[3];
+        if (i10 == i11) {
+            int i12 = this.K0 + 1;
+            this.K0 = i12;
+            if (i12 > 5) {
                 return 0;
             }
         }
-        this.L0 = i12;
+        this.L0 = i11;
         bitmap.eraseColor(0);
         canvas.save();
         float width = this.f0 / this.I0.getWidth();
@@ -252,12 +252,12 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
         return 1;
     }
 
-    @Override // gf.f
+    @Override // ff.f
     public final void b() {
         this.J0 = AnimatedFileNative.a(this.C.getAbsolutePath(), this.d, this.F, this.D, this.q0, false);
     }
 
-    @Override // gf.f
+    @Override // ff.f
     public final void c() {
         AnimatedFileNative animatedFileNative = this.J0;
         if (animatedFileNative != null) {
@@ -267,16 +267,16 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
     }
 
     public final void d() {
-        int i10;
+        int i9;
         if (this.f0 == 0 && this.e0 == 0) {
             int[] iArr = this.d;
-            int i11 = iArr[0];
-            if (i11 > 3000 || (i10 = iArr[1]) > 3000) {
-                this.f0 = i11 / 4;
+            int i10 = iArr[0];
+            if (i10 > 3000 || (i9 = iArr[1]) > 3000) {
+                this.f0 = i10 / 4;
                 this.e0 = iArr[1] / 4;
-            } else if (i11 > 2200 || i10 > 2200) {
-                this.f0 = i11 / 2;
-                this.e0 = i10 / 2;
+            } else if (i10 > 2200 || i9 > 2200) {
+                this.f0 = i10 / 2;
+                this.e0 = i9 / 2;
             }
         }
     }
@@ -321,46 +321,46 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
 
     @Override // android.graphics.drawable.BitmapDrawable, android.graphics.drawable.Drawable
     public final int getIntrinsicHeight() {
-        int i10 = 0;
+        int i9 = 0;
         if (this.x) {
             int[] iArr = this.d;
-            int i11 = iArr[2];
-            i10 = (i11 == 90 || i11 == 270) ? iArr[0] : iArr[1];
+            int i10 = iArr[2];
+            i9 = (i10 == 90 || i10 == 270) ? iArr[0] : iArr[1];
         }
-        return i10 == 0 ? AndroidUtilities.dp(100.0f) : (int) (i10 * this.i0);
+        return i9 == 0 ? AndroidUtilities.dp(100.0f) : (int) (i9 * this.i0);
     }
 
     @Override // android.graphics.drawable.BitmapDrawable, android.graphics.drawable.Drawable
     public final int getIntrinsicWidth() {
-        int i10 = 0;
+        int i9 = 0;
         if (this.x) {
             int[] iArr = this.d;
-            int i11 = iArr[2];
-            i10 = (i11 == 90 || i11 == 270) ? iArr[1] : iArr[0];
+            int i10 = iArr[2];
+            i9 = (i10 == 90 || i10 == 270) ? iArr[1] : iArr[0];
         }
-        return i10 == 0 ? AndroidUtilities.dp(100.0f) : (int) (i10 * this.i0);
+        return i9 == 0 ? AndroidUtilities.dp(100.0f) : (int) (i9 * this.i0);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getMinimumHeight() {
-        int i10 = 0;
+        int i9 = 0;
         if (this.x) {
             int[] iArr = this.d;
-            int i11 = iArr[2];
-            i10 = (i11 == 90 || i11 == 270) ? iArr[0] : iArr[1];
+            int i10 = iArr[2];
+            i9 = (i10 == 90 || i10 == 270) ? iArr[0] : iArr[1];
         }
-        return i10 == 0 ? AndroidUtilities.dp(100.0f) : i10;
+        return i9 == 0 ? AndroidUtilities.dp(100.0f) : i9;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getMinimumWidth() {
-        int i10 = 0;
+        int i9 = 0;
         if (this.x) {
             int[] iArr = this.d;
-            int i11 = iArr[2];
-            i10 = (i11 == 90 || i11 == 270) ? iArr[1] : iArr[0];
+            int i10 = iArr[2];
+            i9 = (i10 == 90 || i10 == 270) ? iArr[1] : iArr[0];
         }
-        return i10 == 0 ? AndroidUtilities.dp(100.0f) : i10;
+        return i9 == 0 ? AndroidUtilities.dp(100.0f) : i9;
     }
 
     @Override // android.graphics.drawable.BitmapDrawable, android.graphics.drawable.Drawable
@@ -388,22 +388,22 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
     }
 
     public final void i() {
-        int i10;
+        int i9;
         if (!this.X || this.N0 || this.f) {
             if (this.Q0) {
                 this.Q0 = false;
                 this.M0 = 0;
-                gf.k.d().f(this.O0);
+                ff.k.d().f(this.O0);
                 return;
             }
             return;
         }
-        if (this.Q0 || (i10 = this.d[5]) <= 0) {
+        if (this.Q0 || (i9 = this.d[5]) <= 0) {
             return;
         }
         this.Q0 = true;
         this.M0 = 0;
-        gf.k.d().b(this.O0, i10);
+        ff.k.d().b(this.O0, i9);
     }
 
     @Override // android.graphics.drawable.Animatable
@@ -413,25 +413,25 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
 
     public final void j() {
         ArrayList arrayList;
+        int i9 = 0;
         int i10 = 0;
-        int i11 = 0;
         while (true) {
             arrayList = this.p0;
-            if (i10 >= arrayList.size()) {
+            if (i9 >= arrayList.size()) {
                 break;
             }
-            ImageReceiver imageReceiver = (ImageReceiver) arrayList.get(i10);
+            ImageReceiver imageReceiver = (ImageReceiver) arrayList.get(i9);
             if (!imageReceiver.isAttachedToWindow()) {
-                arrayList.remove(i10);
-                i10--;
+                arrayList.remove(i9);
+                i9--;
             }
-            int i12 = imageReceiver.animatedFileDrawableRepeatMaxCount;
-            if (i12 > 0 && this.u0 >= i12) {
-                i11++;
+            int i11 = imageReceiver.animatedFileDrawableRepeatMaxCount;
+            if (i11 > 0 && this.u0 >= i11) {
+                i10++;
             }
-            i10++;
+            i9++;
         }
-        if (arrayList.size() == i11) {
+        if (arrayList.size() == i10) {
             stop();
         } else {
             start();
@@ -459,18 +459,18 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
             dispatchQueue.recycle();
             this.b0 = null;
         }
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             ArrayList arrayList = this.h;
-            if (i10 >= arrayList.size()) {
+            if (i9 >= arrayList.size()) {
                 arrayList.clear();
                 t();
                 return;
             } else {
-                u5 u5Var3 = (u5) arrayList.get(i10);
+                u5 u5Var3 = (u5) arrayList.get(i9);
                 u5Var3.b.recycle();
                 Arrays.fill(u5Var3.a, (Object) null);
-                i10++;
+                i9++;
             }
         }
     }
@@ -480,18 +480,18 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void l(Canvas canvas, boolean z10, long j10, int i10) {
+    public final void l(Canvas canvas, boolean z10, long j10, int i9) {
         boolean z11;
         float width;
         float height;
         float[] fArr;
-        int i11;
+        int i10;
         if (!g() || this.w) {
             return;
         }
         long currentTimeMillis = j10 == 0 ? System.currentTimeMillis() : j10;
-        RectF rectF = z10 ? this.l0[i10] : this.W;
-        Paint paint = z10 ? this.m0[i10] : getPaint();
+        RectF rectF = z10 ? this.l0[i9] : this.W;
+        Paint paint = z10 ? this.m0[i9] : getPaint();
         if (!z10) {
             D(currentTimeMillis);
         }
@@ -500,17 +500,17 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
         }
         int[] iArr = this.P;
         int length = iArr.length;
-        int i12 = 0;
+        int i11 = 0;
         while (true) {
-            if (i12 >= length) {
+            if (i11 >= length) {
                 z11 = false;
                 break;
             } else {
-                if (iArr[i12] != 0) {
+                if (iArr[i11] != 0) {
                     z11 = true;
                     break;
                 }
-                i12++;
+                i11++;
             }
         }
         if (!z10) {
@@ -525,31 +525,31 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
         if (!z10) {
             if (this.V) {
                 u5 u5Var = this.n;
-                int i13 = u5Var.c;
-                int i14 = u5Var.d;
-                int i15 = iArr2[2];
-                if (i15 == 90 || i15 == 270) {
-                    i13 = i14;
-                    i14 = i13;
+                int i12 = u5Var.c;
+                int i13 = u5Var.d;
+                int i14 = iArr2[2];
+                if (i14 == 90 || i14 == 270) {
+                    i12 = i13;
+                    i13 = i12;
                 }
                 rectF.set(getBounds());
-                width = rectF.width() / i13;
+                width = rectF.width() / i12;
                 this.T = width;
-                height = rectF.height() / i14;
+                height = rectF.height() / i13;
                 this.U = height;
                 this.V = false;
             }
             if (z11) {
                 canvas.save();
                 canvas.translate(rectF.left, rectF.top);
-                int i16 = iArr2[2];
-                if (i16 == 90) {
+                int i15 = iArr2[2];
+                if (i15 == 90) {
                     canvas.rotate(90.0f);
                     canvas.translate(0.0f, -rectF.width());
-                } else if (i16 == 180) {
+                } else if (i15 == 180) {
                     canvas.rotate(180.0f);
                     canvas.translate(-rectF.width(), -rectF.height());
-                } else if (i16 == 270) {
+                } else if (i15 == 270) {
                     canvas.rotate(270.0f);
                     canvas.translate(-rectF.height(), 0.0f);
                 }
@@ -558,42 +558,42 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
                 canvas.restore();
                 return;
             }
-            int i17 = z10 ? i10 + 1 : 0;
+            int i16 = z10 ? i9 + 1 : 0;
             u5 u5Var2 = this.n;
             BitmapShader[] bitmapShaderArr = u5Var2.a;
-            if (bitmapShaderArr[i17] == null) {
+            if (bitmapShaderArr[i16] == null) {
                 Bitmap bitmap = u5Var2.b;
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                bitmapShaderArr[i17] = new BitmapShader(bitmap, tileMode, tileMode);
+                bitmapShaderArr[i16] = new BitmapShader(bitmap, tileMode, tileMode);
             }
-            BitmapShader bitmapShader = bitmapShaderArr[i17];
+            BitmapShader bitmapShader = bitmapShaderArr[i16];
             paint.setShader(bitmapShader);
             Matrix[] matrixArr = this.R;
-            Matrix matrix = matrixArr[i17];
+            Matrix matrix = matrixArr[i16];
             if (matrix == null) {
                 matrix = new Matrix();
-                matrixArr[i17] = matrix;
+                matrixArr[i16] = matrix;
             }
             matrix.reset();
             matrix.setTranslate(rectF.left, rectF.top);
-            int i18 = iArr2[2];
-            if (i18 == 90) {
+            int i17 = iArr2[2];
+            if (i17 == 90) {
                 matrix.preRotate(90.0f);
                 matrix.preTranslate(0.0f, -rectF.width());
-            } else if (i18 == 180) {
+            } else if (i17 == 180) {
                 matrix.preRotate(180.0f);
                 matrix.preTranslate(-rectF.width(), -rectF.height());
-            } else if (i18 == 270) {
+            } else if (i17 == 270) {
                 matrix.preRotate(270.0f);
                 matrix.preTranslate(-rectF.height(), 0.0f);
             }
             matrix.preScale(f10, f11);
             bitmapShader.setLocalMatrix(matrix);
             Path[] pathArr = this.S;
-            Path path = pathArr[i17];
+            Path path = pathArr[i16];
             if (path == null) {
                 path = new Path();
-                pathArr[i17] = path;
+                pathArr[i16] = path;
             }
             boolean z12 = this.s0;
             RectF rectF2 = this.O;
@@ -601,45 +601,45 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
                 if (!z10) {
                     this.s0 = false;
                 }
-                int i19 = 0;
+                int i18 = 0;
                 while (true) {
                     int length2 = iArr.length;
                     fArr = R0;
-                    if (i19 >= length2) {
+                    if (i18 >= length2) {
                         break;
                     }
-                    int i20 = i19 * 2;
-                    float f12 = iArr[i19];
-                    fArr[i20] = f12;
-                    fArr[i20 + 1] = f12;
-                    i19++;
+                    int i19 = i18 * 2;
+                    float f12 = iArr[i18];
+                    fArr[i19] = f12;
+                    fArr[i19 + 1] = f12;
+                    i18++;
                 }
                 path.rewind();
                 path.addRoundRect(z10 ? rectF : rectF2, fArr, Path.Direction.CW);
             }
-            int i21 = iArr[0];
-            int i22 = iArr[1];
-            if (i21 != i22 || i22 != (i11 = iArr[2]) || i11 != iArr[3]) {
+            int i20 = iArr[0];
+            int i21 = iArr[1];
+            if (i20 != i21 || i21 != (i10 = iArr[2]) || i10 != iArr[3]) {
                 canvas.drawPath(path, paint);
                 return;
             }
             if (!z10) {
                 rectF = rectF2;
             }
-            float f13 = i21;
+            float f13 = i20;
             canvas.drawRoundRect(rectF, f13, f13, paint);
             return;
         }
         u5 u5Var3 = this.n;
-        int i23 = u5Var3.c;
-        int i24 = u5Var3.d;
-        int i25 = iArr2[2];
-        if (i25 == 90 || i25 == 270) {
-            i23 = i24;
-            i24 = i23;
+        int i22 = u5Var3.c;
+        int i23 = u5Var3.d;
+        int i24 = iArr2[2];
+        if (i24 == 90 || i24 == 270) {
+            i22 = i23;
+            i23 = i22;
         }
-        width = rectF.width() / i23;
-        height = rectF.height() / i24;
+        width = rectF.width() / i22;
+        height = rectF.height() / i23;
         float f14 = width;
         f11 = height;
         f10 = f14;
@@ -675,13 +675,13 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
     }
 
     public final int o() {
-        int i10;
+        int i9;
         if (this.I >= 0) {
             return (int) this.I;
         }
         u5 u5Var = this.r;
-        if (u5Var != null && (i10 = u5Var.e) != 0) {
-            return i10;
+        if (u5Var != null && (i9 = u5Var.e) != 0) {
+            return i9;
         }
         u5 u5Var2 = this.n;
         if (u5Var2 != null) {
@@ -697,10 +697,10 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
     }
 
     public final Bitmap p() {
-        int i10 = this.f0;
-        int i11 = this.e0;
+        int i9 = this.f0;
+        int i10 = this.e0;
         Bitmap.Config config = Bitmap.Config.ARGB_8888;
-        Bitmap createBitmap = Bitmap.createBitmap(i10, i11, config);
+        Bitmap createBitmap = Bitmap.createBitmap(i9, i10, config);
         Canvas canvas = new Canvas(createBitmap);
         AnimatedFileNative a2 = AnimatedFileNative.a(this.C.getAbsolutePath(), this.d, this.F, this.D, this.q0, false);
         if (a2 == null) {
@@ -788,14 +788,14 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
     }
 
     public final void t() {
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             ArrayList arrayList = this.p0;
-            if (i10 >= arrayList.size()) {
+            if (i9 >= arrayList.size()) {
                 return;
             }
-            ((ImageReceiver) arrayList.get(i10)).invalidate();
-            i10++;
+            ((ImageReceiver) arrayList.get(i9)).invalidate();
+            i9++;
         }
     }
 
@@ -804,13 +804,13 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
             this.G = true;
             return;
         }
-        int i10 = 0;
+        int i9 = 0;
         this.X = false;
         this.Y = true;
         AndroidUtilities.executeOnUIThread(new v5(this, 0));
         if (this.z0 != null) {
-            gf.h.c();
-            oi0.P0.cancelRunnable(this.z0);
+            ff.h.c();
+            mi0.P0.cancelRunnable(this.z0);
             this.z0 = null;
         }
         if (this.e == null) {
@@ -837,9 +837,9 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
             }
             ArrayList arrayList2 = this.h;
             int size = arrayList2.size();
-            while (i10 < size) {
-                Object obj = arrayList2.get(i10);
-                i10++;
+            while (i9 < size) {
+                Object obj = arrayList2.get(i9);
+                i9++;
                 u5 u5Var5 = (u5) obj;
                 if (u5Var5 != null) {
                     arrayList.add(u5Var5.b);
@@ -977,7 +977,7 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public x5(File file, boolean z10, long j10, int i10, TLRPC.Document document, ImageLocation imageLocation, Object obj, long j11, int i11, boolean z11, int i12, int i13, ge.i iVar, int i14, boolean z12) {
+    public x5(File file, boolean z10, long j10, int i9, TLRPC.Document document, ImageLocation imageLocation, Object obj, long j11, int i10, boolean z11, int i11, int i12, fe.i iVar, int i13, boolean z12) {
         char c10;
         char c11;
         long j12;
@@ -1011,12 +1011,12 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
         this.C = file;
         this.b = SharedConfig.deviceIsAboveAverage();
         this.D = j10;
-        this.E = i10;
-        this.F = i11;
-        this.e0 = i13;
-        this.f0 = i12;
+        this.E = i9;
+        this.F = i10;
+        this.e0 = i12;
+        this.f0 = i11;
         this.g0 = z12;
-        boolean z14 = iVar != null && i12 > 0 && i13 > 0;
+        boolean z14 = iVar != null && i11 > 0 && i12 > 0;
         this.h0 = z14;
         this.k0 = document;
         getPaint().setFlags(3);
@@ -1024,14 +1024,14 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
             c10 = 0;
         } else {
             c10 = 0;
-            this.q0 = new AnimatedFileDrawableStream(document, imageLocation, obj, i11, z11, i10, i14);
+            this.q0 = new AnimatedFileDrawableStream(document, imageLocation, obj, i10, z11, i9, i13);
         }
-        gf.h hVar = null;
+        ff.h hVar = null;
         if (!z10 || z14) {
             c11 = 1;
         } else {
             c11 = 1;
-            this.Z = AnimatedFileNative.a(file.getAbsolutePath(), iArr, i11, j10, this.q0, z11);
+            this.Z = AnimatedFileNative.a(file.getAbsolutePath(), iArr, i10, j10, this.q0, z11);
             this.a0 = this.Z == null && (!this.j0 || this.C0 > 15);
             if (this.Z != null && (iArr[c10] > 3840 || iArr[1] > 3840)) {
                 this.Z.f();
@@ -1042,12 +1042,12 @@ public final class x5 extends BitmapDrawable implements Animatable, gf.f {
             this.x = true;
         }
         if (z14) {
-            this.Z = AnimatedFileNative.a(file.getAbsolutePath(), iArr, i11, j10, this.q0, z11);
+            this.Z = AnimatedFileNative.a(file.getAbsolutePath(), iArr, i10, j10, this.q0, z11);
             this.a0 = this.Z == null && (!this.j0 || this.C0 > 15);
             if (this.Z == null || (iArr[c10] <= 3840 && iArr[c11] <= 3840)) {
                 j12 = j11;
                 z13 = false;
-                hVar = new gf.h(file, this, iVar, this.f0, this.e0, !this.t0, 0);
+                hVar = new ff.h(file, this, iVar, this.f0, this.e0, !this.t0, 0);
                 this.v0 = hVar;
                 if (j12 == 0) {
                     y(j12, z13, z13);

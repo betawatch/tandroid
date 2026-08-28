@@ -1,33 +1,20 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.content.Context;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class m7 extends xf.a {
-    public s6 c;
-    public ih.a d;
+public final class m7 extends org.telegram.ui.Cells.r7 {
+    public final /* synthetic */ n7 C0;
 
-    public final boolean equals(Object obj) {
-        ih.a aVar;
-        ih.a aVar2;
-        s6 s6Var;
-        s6 s6Var2;
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && m7.class == obj.getClass()) {
-            m7 m7Var = (m7) obj;
-            int i10 = this.a;
-            if (i10 == m7Var.a) {
-                if (i10 == 1 && (s6Var = this.c) != null && (s6Var2 = m7Var.c) != null) {
-                    return s6Var.a == s6Var2.a;
-                }
-                if (i10 == 2 && (aVar = this.d) != null && (aVar2 = m7Var.d) != null) {
-                    return Objects.equals(aVar.a, aVar2.a);
-                }
-            }
-        }
-        return false;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m7(n7 n7Var, Context context, org.telegram.ui.Cells.q7 q7Var, int i9) {
+        super(context, q7Var, i9);
+        this.C0 = n7Var;
+    }
+
+    @Override // org.telegram.ui.Cells.r7
+    public final void h() {
+        this.C0.v.v.o1(null, (hh.a) getTag(), true);
     }
 }

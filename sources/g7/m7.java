@@ -1,41 +1,44 @@
 package g7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import android.graphics.Bitmap;
+import android.os.Parcel;
+import android.os.RemoteException;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class m7 {
-    public static String a(String str) {
-        if (d(str)) {
-            return null;
+    public static c7.e a;
+
+    public static m5.c0 a(Bitmap bitmap) {
+        x5.l.i(bitmap, "image must not be null");
+        try {
+            c7.e eVar = a;
+            x5.l.i(eVar, "IBitmapDescriptorFactory is not initialized");
+            c7.c cVar = (c7.c) eVar;
+            Parcel M0 = cVar.M0();
+            c7.b.b(M0, bitmap);
+            Parcel L0 = cVar.L0(M0, 6);
+            h6.a J0 = h6.b.J0(L0.readStrongBinder());
+            L0.recycle();
+            return new m5.c0(J0);
+        } catch (RemoteException e10) {
+            throw new androidx.car.app.j(e10);
         }
-        return "American Express".equalsIgnoreCase(str) ? "American Express" : "MasterCard".equalsIgnoreCase(str) ? "MasterCard" : "Diners Club".equalsIgnoreCase(str) ? "Diners Club" : "Discover".equalsIgnoreCase(str) ? "Discover" : "JCB".equalsIgnoreCase(str) ? "JCB" : "Visa".equalsIgnoreCase(str) ? "Visa" : "Unknown";
     }
 
-    public static String b(String str) {
-        if (d(str)) {
-            return null;
+    public static m5.c0 b(int i9) {
+        try {
+            c7.e eVar = a;
+            x5.l.i(eVar, "IBitmapDescriptorFactory is not initialized");
+            c7.c cVar = (c7.c) eVar;
+            Parcel M0 = cVar.M0();
+            M0.writeInt(i9);
+            Parcel L0 = cVar.L0(M0, 1);
+            h6.a J0 = h6.b.J0(L0.readStrongBinder());
+            L0.recycle();
+            return new m5.c0(J0);
+        } catch (RemoteException e10) {
+            throw new androidx.car.app.j(e10);
         }
-        return "credit".equalsIgnoreCase(str) ? "credit" : "debit".equalsIgnoreCase(str) ? "debit" : "prepaid".equalsIgnoreCase(str) ? "prepaid" : "unknown";
-    }
-
-    public static boolean c(String str, String... strArr) {
-        if (str != null) {
-            for (String str2 : strArr) {
-                if (str.startsWith(str2)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public static boolean d(String str) {
-        return str == null || str.trim().length() == 0;
-    }
-
-    public static String e(String str) {
-        if (d(str)) {
-            return null;
-        }
-        return str;
     }
 }

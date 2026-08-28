@@ -3,17 +3,17 @@ package r0;
 import android.text.TextUtils;
 import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class x extends p1.c {
     public final /* synthetic */ int e;
 
-    public x(int i10, Class cls, int i11, int i12, int i13) {
-        this.e = i13;
-        this.a = i10;
+    public x(int i9, Class cls, int i10, int i11, int i12) {
+        this.e = i12;
+        this.a = i9;
         this.d = cls;
-        this.c = i11;
-        this.b = i12;
+        this.c = i10;
+        this.b = i11;
     }
 
     @Override // p1.c

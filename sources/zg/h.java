@@ -1,114 +1,33 @@
 package zg;
 
-import android.text.TextUtils;
-import android.util.SparseArray;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f6;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class h {
-    public final f a;
-    public final TLRPC.TL_messageMediaPoll b;
-    public final TLRPC.TL_inputMediaPoll c;
-    public final long d;
-    public final String e;
-    public final ArrayList f;
+public final class h extends yg.e {
+    public final TLRPC.Document b;
+    public final Object c;
 
-    public h(f fVar, TLRPC.TL_messageMediaPoll tL_messageMediaPoll, long j10, String str, ArrayList arrayList, ArrayList arrayList2) {
-        this.a = fVar;
-        this.d = j10;
-        this.e = str;
-        this.f = arrayList;
-        TLRPC.TL_inputMediaPoll tL_inputMediaPoll = new TLRPC.TL_inputMediaPoll();
-        TLRPC.TL_poll tL_poll = new TLRPC.TL_poll();
-        tL_inputMediaPoll.poll = tL_poll;
-        TLRPC.Poll poll = tL_messageMediaPoll.poll;
-        tL_poll.id = poll.id;
-        tL_poll.flags = poll.flags;
-        tL_poll.closed = poll.closed;
-        tL_poll.public_voters = poll.public_voters;
-        tL_poll.multiple_choice = poll.multiple_choice;
-        tL_poll.open_answers = poll.open_answers;
-        tL_poll.revoting_disabled = poll.revoting_disabled;
-        tL_poll.shuffle_answers = poll.shuffle_answers;
-        tL_poll.subscribers_only = poll.subscribers_only;
-        tL_poll.countries_iso2 = poll.countries_iso2;
-        tL_poll.hide_results_until_close = poll.hide_results_until_close;
-        tL_poll.creator = poll.creator;
-        tL_poll.quiz = poll.quiz;
-        tL_poll.answers = new ArrayList<>(tL_messageMediaPoll.poll.answers);
-        ArrayList<TLRPC.PollAnswer> arrayList3 = tL_messageMediaPoll.poll.answers;
-        int size = arrayList3.size();
-        int i10 = 0;
-        while (i10 < size) {
-            TLRPC.PollAnswer pollAnswer = arrayList3.get(i10);
-            i10++;
-            new TLRPC.TL_inputPollAnswer().text = pollAnswer.text;
-        }
-        TLRPC.Poll poll2 = tL_inputMediaPoll.poll;
-        TLRPC.Poll poll3 = tL_messageMediaPoll.poll;
-        poll2.question = poll3.question;
-        poll2.close_period = poll3.close_period;
-        poll2.close_date = poll3.close_date;
-        poll2.hash = poll3.hash;
-        TLRPC.PollResults pollResults = tL_messageMediaPoll.results;
-        if (pollResults != null && !TextUtils.isEmpty(pollResults.solution)) {
-            TLRPC.PollResults pollResults2 = tL_messageMediaPoll.results;
-            tL_inputMediaPoll.solution = pollResults2.solution;
-            tL_inputMediaPoll.solution_entities = pollResults2.solution_entities;
-            tL_inputMediaPoll.flags |= 2;
-        }
-        if (arrayList2 != null && !arrayList2.isEmpty()) {
-            tL_inputMediaPoll.correct_answers = new ArrayList<>(arrayList2);
-            tL_inputMediaPoll.flags |= 1;
-        }
-        if (fVar != null) {
-            SparseArray sparseArray = fVar.a;
-            int size2 = sparseArray.size();
-            for (int i11 = 0; i11 < size2; i11++) {
-                int keyAt = sparseArray.keyAt(i11);
-                e eVar = (e) sparseArray.valueAt(i11);
-                if (eVar instanceof ah.e) {
-                    TLRPC.TL_inputMediaWebPage tL_inputMediaWebPage = new TLRPC.TL_inputMediaWebPage();
-                    tL_inputMediaWebPage.url = ((ah.e) eVar).b;
-                    tL_inputMediaWebPage.optional = true;
-                    f.k(tL_inputMediaPoll, keyAt, tL_inputMediaWebPage);
-                } else if (eVar instanceof ah.g) {
-                    f.k(tL_inputMediaPoll, keyAt, hf.d.h(((ah.g) eVar).b));
-                } else if (eVar instanceof ah.i) {
-                    TLRPC.TL_inputMediaDocument tL_inputMediaDocument = new TLRPC.TL_inputMediaDocument();
-                    TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
-                    TLRPC.Document document = ((ah.i) eVar).b;
-                    tL_inputDocument.id = document.id;
-                    tL_inputDocument.access_hash = document.access_hash;
-                    tL_inputDocument.file_reference = document.file_reference;
-                    tL_inputMediaDocument.id = tL_inputDocument;
-                    f.k(tL_inputMediaPoll, keyAt, tL_inputMediaDocument);
-                }
-            }
-            int size3 = sparseArray.size();
-            for (int i12 = 0; i12 < size3; i12++) {
-                int keyAt2 = sparseArray.keyAt(i12);
-                e eVar2 = (e) sparseArray.valueAt(i12);
-                if (eVar2 instanceof ah.e) {
-                    TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = new TLRPC.TL_messageMediaWebPage();
-                    TLRPC.TL_webPage tL_webPage = new TLRPC.TL_webPage();
-                    tL_messageMediaWebPage.webpage = tL_webPage;
-                    String str2 = ((ah.e) eVar2).b;
-                    tL_webPage.display_url = str2;
-                    tL_webPage.url = str2;
-                    f.l(tL_messageMediaPoll, keyAt2, tL_messageMediaWebPage);
-                } else if (eVar2 instanceof ah.g) {
-                    f.l(tL_messageMediaPoll, keyAt2, ((ah.g) eVar2).b);
-                } else if (eVar2 instanceof ah.i) {
-                    TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
-                    tL_messageMediaDocument.document = ((ah.i) eVar2).b;
-                    f.l(tL_messageMediaPoll, keyAt2, tL_messageMediaDocument);
-                }
-            }
-        }
-        this.b = tL_messageMediaPoll;
-        this.c = tL_inputMediaPoll;
+    public h(TLRPC.Document document, Object obj) {
+        this.b = document;
+        this.c = obj;
+        MessageObject.isAnimatedEmoji(document);
+        ImageReceiver imageReceiver = this.a;
+        boolean z10 = MessageObject.isStickerDocument(document) || MessageObject.isVideoSticker(document);
+        MessageObject.isAnimatedStickerDocument(document, true);
+        imageReceiver.setImage(ImageLocation.getForDocument(document), "38_38", DocumentObject.getSvgThumb(document, f6.lc, 1.0f), document.size, z10 ? "webp" : null, obj, 0);
+    }
+
+    @Override // yg.e
+    public final void c(Canvas canvas, int i9, int i10) {
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.setImageCoords(0.0f, 0.0f, i9, i10);
+        imageReceiver.draw(canvas);
     }
 }

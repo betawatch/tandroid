@@ -22,7 +22,7 @@ import java.util.Random;
 import java.util.TimeZone;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class r {
     public int a;
@@ -32,7 +32,7 @@ public final class r {
     public Object e;
     public Object f;
 
-    public r(t5.a aVar, byte[] bArr) {
+    public r(s5.a aVar, byte[] bArr) {
         this.f = aVar;
         this.a = aVar.e;
         this.c = aVar.d;
@@ -75,27 +75,27 @@ public final class r {
     }
 
     public g1 a() {
-        y5.l.a("Must set register function", ((s) this.c) != null);
-        y5.l.a("Must set unregister function", ((s) this.d) != null);
-        y5.l.a("Must set holder", ((p) this.e) != null);
+        x5.l.a("Must set register function", ((s) this.c) != null);
+        x5.l.a("Must set unregister function", ((s) this.d) != null);
+        x5.l.a("Must set holder", ((p) this.e) != null);
         n nVar = ((p) this.e).c;
-        y5.l.i(nVar, "Key must not be null");
-        return new g1(new com.google.android.exoplayer2.upstream.t(this, (p) this.e, (v5.c[]) this.f, this.b, this.a), new g1(this, nVar));
+        x5.l.i(nVar, "Key must not be null");
+        return new g1(new com.google.android.exoplayer2.upstream.t(this, (p) this.e, (u5.c[]) this.f, this.b, this.a), new g1(this, nVar));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x016b  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x016c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void b() {
-        List e9;
+        List e10;
         String str;
         String str2;
-        int i10;
+        int i9;
         u1 u1Var;
         long parseLong;
         long parseLong2;
-        t5.a aVar = (t5.a) this.f;
+        s5.a aVar = (s5.a) this.f;
         if (this.b) {
             throw new IllegalStateException("do not reuse LogEventBuilder");
         }
@@ -103,20 +103,20 @@ public final class r {
         this.b = true;
         e2 e2Var = new e2(aVar.b, aVar.c, this.a, (String) this.c, (com.google.android.gms.internal.clearcut.r1) this.d);
         y1 y1Var = (y1) this.e;
-        t5.c cVar = new t5.c(e2Var, y1Var);
+        s5.c cVar = new s5.c(e2Var, y1Var);
         Context context = aVar.i.a;
         boolean z11 = false;
-        int i11 = y1Var != null ? y1Var.c : 0;
+        int i10 = y1Var != null ? y1Var.c : 0;
         boolean booleanValue = ((Boolean) d2.i.a()).booleanValue();
         String str3 = e2Var.h;
-        int i12 = e2Var.c;
+        int i11 = e2Var.c;
         if (booleanValue) {
             if (str3 == null || str3.isEmpty()) {
-                str3 = i12 >= 0 ? String.valueOf(i12) : null;
+                str3 = i11 >= 0 ? String.valueOf(i11) : null;
             }
             if (str3 != null) {
                 if (context == null) {
-                    e9 = Collections.EMPTY_LIST;
+                    e10 = Collections.EMPTY_LIST;
                 } else {
                     ConcurrentHashMap concurrentHashMap = d2.e;
                     com.google.android.gms.internal.clearcut.d dVar = (com.google.android.gms.internal.clearcut.d) concurrentHashMap.get(str3);
@@ -130,15 +130,15 @@ public final class r {
                             dVar = gVar;
                         }
                     }
-                    e9 = ((v1) dVar.a()).e();
+                    e10 = ((v1) dVar.a()).e();
                 }
-                Iterator it = e9.iterator();
+                Iterator it = e10.iterator();
                 while (true) {
                     if (!it.hasNext()) {
                         break;
                     }
                     u1 u1Var2 = (u1) it.next();
-                    if (!u1Var2.i() || u1Var2.e() == 0 || u1Var2.e() == i11) {
+                    if (!u1Var2.i() || u1Var2.e() == 0 || u1Var2.e() == i10) {
                         if (!d2.b(d2.a(d2.d(context), u1Var2.j()), u1Var2.k(), u1Var2.l())) {
                             z10 = false;
                             break;
@@ -148,7 +148,7 @@ public final class r {
             }
         } else {
             if (str3 == null || str3.isEmpty()) {
-                str3 = i12 >= 0 ? String.valueOf(i12) : null;
+                str3 = i11 >= 0 ? String.valueOf(i11) : null;
             }
             if (str3 != null) {
                 if (context == null || !d2.c(context)) {
@@ -169,20 +169,20 @@ public final class r {
                     int indexOf = str.indexOf(44);
                     if (indexOf >= 0) {
                         str2 = str.substring(0, indexOf);
-                        i10 = indexOf + 1;
+                        i9 = indexOf + 1;
                     } else {
                         str2 = "";
-                        i10 = 0;
+                        i9 = 0;
                     }
-                    int indexOf2 = str.indexOf(47, i10);
+                    int indexOf2 = str.indexOf(47, i9);
                     if (indexOf2 <= 0) {
                         Log.e("LogSamplerImpl", str.length() != 0 ? "Failed to parse the rule: ".concat(str) : new String("Failed to parse the rule: "));
                     } else {
                         try {
-                            parseLong = Long.parseLong(str.substring(i10, indexOf2));
+                            parseLong = Long.parseLong(str.substring(i9, indexOf2));
                             parseLong2 = Long.parseLong(str.substring(indexOf2 + 1));
-                        } catch (NumberFormatException e10) {
-                            Log.e("LogSamplerImpl", str.length() != 0 ? "parseLong() failed while parsing: ".concat(str) : new String("parseLong() failed while parsing: "), e10);
+                        } catch (NumberFormatException e11) {
+                            Log.e("LogSamplerImpl", str.length() != 0 ? "parseLong() failed while parsing: ".concat(str) : new String("parseLong() failed while parsing: "), e11);
                         }
                         if (parseLong < 0 || parseLong2 < 0) {
                             StringBuilder sb2 = new StringBuilder(72);
@@ -214,7 +214,7 @@ public final class r {
                                 c10.a(2);
                             }
                             if (!z11) {
-                                throw new a7.c();
+                                throw new androidx.car.app.j();
                             }
                             u1Var = (u1) c10;
                             if (u1Var != null) {
@@ -250,9 +250,9 @@ public final class r {
                 this.a = 0;
             }
         }
-        int i10 = this.a;
-        this.a = i10 + 1;
-        this.f = arrayList.get(i10);
+        int i9 = this.a;
+        this.a = i9 + 1;
+        this.f = arrayList.get(i9);
         return obj;
     }
 

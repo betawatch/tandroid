@@ -1,78 +1,25 @@
 package org.telegram.messenger;
 
-import android.os.Bundle;
-import android.os.CancellationSignal;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationBadge;
-import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.SendMessagesHelper;
+import android.app.NotificationChannel;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class rg implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-
-    public /* synthetic */ rg(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+public final /* synthetic */ class rg implements org.telegram.ui.ActionBar.b2, Vector.TLDeserializer {
+    public static /* bridge */ /* synthetic */ NotificationChannel a(Object obj) {
+        return (NotificationChannel) obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((MusicPlayerService) this.b).stopSelf();
-                break;
-            case 1:
-                NotificationBadge.HuaweiHomeBadger.lambda$executeBadge$0((Bundle) this.b);
-                break;
-            case 2:
-                ((NotificationsSettingsFacade) this.b).lambda$applyDialogNotificationsSettings$0();
-                break;
-            case 3:
-                ((CancellationSignal) this.b).cancel();
-                break;
-            case 4:
-                ((ProxyRotationController) this.b).lambda$new$2();
-                break;
-            case 5:
-                ((PushListenerController.GooglePushListenerServiceProvider) this.b).lambda$onRequestPushToken$1();
-                break;
-            case 6:
-                ((RichMessageLayout.PreviewView) this.b).lambda$onTouchEvent$0();
-                break;
-            case 7:
-                ((RichMessageLayout.RichButtonRowBlock) this.b).invalidate();
-                break;
-            case 8:
-                ((RichMessageLayout.RichButtonSpan) this.b).invalidate();
-                break;
-            case 9:
-                RichMessageLayout.RichUnsupportedBlock.lambda$new$0((RichMessageLayout) this.b);
-                break;
-            case 10:
-                ((RichMessageLayout.Text) this.b).lambda$scheduleLongPress$2();
-                break;
-            case 11:
-                ((SecretChatHelper) this.b).lambda$startSecretChat$25();
-                break;
-            case 12:
-                ((SendMessagesHelper) this.b).lambda$new$0();
-                break;
-            case 13:
-                ((MessagesStorage.StringCallback) this.b).run(null);
-                break;
-            case 14:
-                ((SendMessagesHelper.LocationProvider) this.b).lambda$start$0();
-                break;
-            case 15:
-                ((TelegramMediaSession) this.b).onAccountSwitched();
-                break;
-            default:
-                ((TranslateController) this.b).loadTranslatingDialogsCached();
-                break;
-        }
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public TLObject deserialize(InputSerializedData inputSerializedData, int i9, boolean z10) {
+        return TLRPC.PollAnswer.TLdeserialize(inputSerializedData, i9, z10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
+        SharedConfig.lambda$checkSdCard$1(c2Var, i9);
     }
 }

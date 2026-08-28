@@ -13,14 +13,14 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class f implements s0 {
     public static final Pattern a = Pattern.compile("(.+?)(Z|((\\+|-|−)(\\d\\d)(:?(\\d\\d))?))");
 
     @Override // com.google.android.exoplayer2.upstream.s0
-    public final Object e(Uri uri, com.google.android.exoplayer2.upstream.o oVar) {
-        String readLine = new BufferedReader(new InputStreamReader(oVar, o8.d.c)).readLine();
+    public final Object D(Uri uri, com.google.android.exoplayer2.upstream.o oVar) {
+        String readLine = new BufferedReader(new InputStreamReader(oVar, n8.d.c)).readLine();
         try {
             Matcher matcher = a.matcher(readLine);
             if (!matcher.matches()) {
@@ -37,8 +37,8 @@ public final class f implements s0 {
                 time -= (((parseLong * 60) + (TextUtils.isEmpty(group2) ? 0L : Long.parseLong(group2))) * 60000) * j10;
             }
             return Long.valueOf(time);
-        } catch (ParseException e9) {
-            throw t1.b(null, e9);
+        } catch (ParseException e10) {
+            throw t1.b(null, e10);
         }
     }
 }

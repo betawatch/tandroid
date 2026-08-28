@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class f implements Iterable {
     public c a;
@@ -63,13 +63,13 @@ public class f implements Iterable {
 
     public final int hashCode() {
         Iterator it = iterator();
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             b bVar = (b) it;
             if (!bVar.hasNext()) {
-                return i10;
+                return i9;
             }
-            i10 += ((Map.Entry) bVar.next()).hashCode();
+            i9 += ((Map.Entry) bVar.next()).hashCode();
         }
     }
 
@@ -89,8 +89,8 @@ public class f implements Iterable {
     }
 
     public Object n(Object obj) {
-        c i10 = i(obj);
-        if (i10 == null) {
+        c i9 = i(obj);
+        if (i9 == null) {
             return null;
         }
         this.d--;
@@ -98,24 +98,24 @@ public class f implements Iterable {
         if (!weakHashMap.isEmpty()) {
             Iterator it = weakHashMap.keySet().iterator();
             while (it.hasNext()) {
-                ((e) it.next()).a(i10);
+                ((e) it.next()).a(i9);
             }
         }
-        c cVar = i10.d;
+        c cVar = i9.d;
         if (cVar != null) {
-            cVar.c = i10.c;
+            cVar.c = i9.c;
         } else {
-            this.a = i10.c;
+            this.a = i9.c;
         }
-        c cVar2 = i10.c;
+        c cVar2 = i9.c;
         if (cVar2 != null) {
             cVar2.d = cVar;
         } else {
             this.b = cVar;
         }
-        i10.c = null;
-        i10.d = null;
-        return i10.b;
+        i9.c = null;
+        i9.d = null;
+        return i9.b;
     }
 
     public final String toString() {

@@ -1,48 +1,36 @@
 package com.google.android.gms.internal.play_billing;
 
-import g7.a6;
-import g7.g6;
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class r3 extends a6 {
-    public final AtomicReferenceFieldUpdater a;
-    public final AtomicReferenceFieldUpdater b;
-    public final AtomicReferenceFieldUpdater c;
-    public final AtomicReferenceFieldUpdater d;
-    public final AtomicReferenceFieldUpdater e;
+public final class r3 extends v1 {
+    private static final r3 zzb;
+    private int zzd;
+    private int zze;
 
-    public r3(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater3, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater4, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater5) {
-        this.a = atomicReferenceFieldUpdater;
-        this.b = atomicReferenceFieldUpdater2;
-        this.c = atomicReferenceFieldUpdater3;
-        this.d = atomicReferenceFieldUpdater4;
-        this.e = atomicReferenceFieldUpdater5;
+    static {
+        r3 r3Var = new r3();
+        zzb = r3Var;
+        v1.k(r3.class, r3Var);
     }
 
-    @Override // g7.a6
-    public final void a(e4 e4Var, e4 e4Var2) {
-        this.b.lazySet(e4Var, e4Var2);
-    }
-
-    @Override // g7.a6
-    public final void b(e4 e4Var, Thread thread) {
-        this.a.lazySet(e4Var, thread);
-    }
-
-    @Override // g7.a6
-    public final boolean c(f4 f4Var, u2 u2Var, u2 u2Var2) {
-        return g6.a(this.d, f4Var, u2Var, u2Var2);
-    }
-
-    @Override // g7.a6
-    public final boolean d(f4 f4Var, Object obj, Object obj2) {
-        return g6.a(this.e, f4Var, obj, obj2);
-    }
-
-    @Override // g7.a6
-    public final boolean e(f4 f4Var, e4 e4Var, e4 e4Var2) {
-        return g6.a(this.c, f4Var, e4Var, e4Var2);
+    @Override // com.google.android.gms.internal.play_billing.v1
+    public final Object d(int i9) {
+        int i10 = i9 - 1;
+        if (i10 == 0) {
+            return (byte) 1;
+        }
+        if (i10 == 2) {
+            return new s2(zzb, "\u0004\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001᠌\u0000", new Object[]{"zzd", "zze", d1.g});
+        }
+        if (i10 == 3) {
+            return new r3();
+        }
+        if (i10 == 4) {
+            return new y0(zzb);
+        }
+        if (i10 == 5) {
+            return zzb;
+        }
+        throw null;
     }
 }

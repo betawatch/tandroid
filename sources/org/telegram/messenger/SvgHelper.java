@@ -36,13 +36,13 @@ import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class SvgHelper {
     private static final Pattern SPLIT_BOUNDARY;
     private static final double[] pow10 = new double[128];
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class Circle {
         float rad;
         float x1;
@@ -55,7 +55,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class Line {
         float x1;
         float x2;
@@ -70,26 +70,26 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class NumberParse {
         private int nextCmd;
         private ArrayList<Float> numbers;
 
-        public NumberParse(ArrayList<Float> arrayList, int i10) {
+        public NumberParse(ArrayList<Float> arrayList, int i9) {
             this.numbers = arrayList;
-            this.nextCmd = i10;
+            this.nextCmd = i9;
         }
 
         public int getNextCmd() {
             return this.nextCmd;
         }
 
-        public float getNumber(int i10) {
-            return this.numbers.get(i10).floatValue();
+        public float getNumber(int i9) {
+            return this.numbers.get(i9).floatValue();
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class Oval {
         RectF rect;
 
@@ -98,31 +98,31 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class ParserHelper {
         private char current;
         private int n;
         public int pos;
         private CharSequence s;
 
-        public ParserHelper(CharSequence charSequence, int i10) {
+        public ParserHelper(CharSequence charSequence, int i9) {
             this.s = charSequence;
-            this.pos = i10;
+            this.pos = i9;
             this.n = charSequence.length();
-            this.current = charSequence.charAt(i10);
+            this.current = charSequence.charAt(i9);
         }
 
         private char read() {
-            int i10 = this.pos;
-            int i11 = this.n;
-            if (i10 < i11) {
-                this.pos = i10 + 1;
+            int i9 = this.pos;
+            int i10 = this.n;
+            if (i9 < i10) {
+                this.pos = i9 + 1;
             }
-            int i12 = this.pos;
-            if (i12 == i11) {
+            int i11 = this.pos;
+            if (i11 == i10) {
                 return (char) 0;
             }
-            return this.s.charAt(i12);
+            return this.s.charAt(i11);
         }
 
         private void reportUnexpectedCharacterError(char c10) {
@@ -133,22 +133,22 @@ public class SvgHelper {
             this.current = read();
         }
 
-        public float buildFloat(int i10, int i11) {
-            if (i11 < -125 || i10 == 0) {
+        public float buildFloat(int i9, int i10) {
+            if (i10 < -125 || i9 == 0) {
                 return 0.0f;
             }
-            if (i11 >= 128) {
-                return i10 > 0 ? Float.POSITIVE_INFINITY : Float.NEGATIVE_INFINITY;
+            if (i10 >= 128) {
+                return i9 > 0 ? Float.POSITIVE_INFINITY : Float.NEGATIVE_INFINITY;
             }
-            if (i11 == 0) {
-                return i10;
+            if (i10 == 0) {
+                return i9;
             }
-            if (i10 >= 67108864) {
-                i10++;
+            if (i9 >= 67108864) {
+                i9++;
             }
-            double d = i10;
+            double d = i9;
             double[] dArr = SvgHelper.pow10;
-            return (float) (i11 > 0 ? d * dArr[i11] : d / dArr[-i11]);
+            return (float) (i10 > 0 ? d * dArr[i10] : d / dArr[-i10]);
         }
 
         public float nextFloat() {
@@ -178,15 +178,15 @@ public class SvgHelper {
         */
         public float parseFloat() {
             boolean z10;
+            int i9;
             int i10;
             int i11;
-            int i12;
             boolean z11;
             char c10;
             char read;
             char read2;
             char c11 = this.current;
-            int i13 = 0;
+            int i12 = 0;
             boolean z12 = true;
             if (c11 == '+') {
                 z10 = true;
@@ -195,20 +195,20 @@ public class SvgHelper {
                     z10 = true;
                     switch (this.current) {
                         case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
+                            i9 = 0;
                             i10 = 0;
                             i11 = 0;
-                            i12 = 0;
                             z11 = false;
                             if (this.current == '.') {
                                 char read3 = read();
                                 this.current = read3;
                                 switch (read3) {
                                     case '0':
-                                        if (i10 == 0) {
+                                        if (i9 == 0) {
                                             while (true) {
                                                 char read4 = read();
                                                 this.current = read4;
-                                                i11--;
+                                                i10--;
                                                 switch (read4) {
                                                     case '0':
                                                     case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
@@ -238,10 +238,10 @@ public class SvgHelper {
                                     case '8':
                                     case '9':
                                         while (true) {
-                                            if (i10 < 9) {
-                                                i10++;
-                                                i11--;
-                                                i12 = (this.current - '0') + (i12 * 10);
+                                            if (i9 < 9) {
+                                                i9++;
+                                                i10--;
+                                                i11 = (this.current - '0') + (i11 * 10);
                                             }
                                             char read5 = read();
                                             this.current = read5;
@@ -292,11 +292,11 @@ public class SvgHelper {
                                                     case '7':
                                                     case '8':
                                                     case '9':
-                                                        int i14 = 0;
+                                                        int i13 = 0;
                                                         while (true) {
-                                                            if (i13 < 3) {
-                                                                i13++;
-                                                                i14 = (this.current - '0') + (i14 * 10);
+                                                            if (i12 < 3) {
+                                                                i12++;
+                                                                i13 = (this.current - '0') + (i13 * 10);
                                                             }
                                                             char read7 = read();
                                                             this.current = read7;
@@ -333,11 +333,11 @@ public class SvgHelper {
                                 }
                             }
                             if (!z12) {
-                                i13 = -i13;
-                            }
-                            int i15 = i13 + i11;
-                            if (!z10) {
                                 i12 = -i12;
+                            }
+                            int i14 = i12 + i10;
+                            if (!z10) {
+                                i11 = -i11;
                             }
                             break;
                         case '0':
@@ -349,9 +349,9 @@ public class SvgHelper {
                                     }
                                 }
                             }
+                            i9 = 0;
                             i10 = 0;
                             i11 = 0;
-                            i12 = 0;
                             z11 = true;
                             if (this.current == '.') {
                             }
@@ -368,7 +368,7 @@ public class SvgHelper {
                             }
                             if (!z12) {
                             }
-                            int i152 = i13 + i11;
+                            int i142 = i12 + i10;
                             if (!z10) {
                             }
                             break;
@@ -381,15 +381,15 @@ public class SvgHelper {
                         case '7':
                         case '8':
                         case '9':
+                            i9 = 0;
                             i10 = 0;
                             i11 = 0;
-                            i12 = 0;
                             while (true) {
-                                if (i10 < 9) {
-                                    i10++;
-                                    i12 = (i12 * 10) + (this.current - '0');
+                                if (i9 < 9) {
+                                    i9++;
+                                    i11 = (i11 * 10) + (this.current - '0');
                                 } else {
-                                    i11++;
+                                    i10++;
                                 }
                                 char read9 = read();
                                 this.current = read9;
@@ -411,7 +411,7 @@ public class SvgHelper {
                                 }
                                 if (!z12) {
                                 }
-                                int i1522 = i13 + i11;
+                                int i1422 = i12 + i10;
                                 if (!z10) {
                                 }
                                 break;
@@ -430,11 +430,11 @@ public class SvgHelper {
 
         public void skipNumberSeparator() {
             while (true) {
-                int i10 = this.pos;
-                if (i10 >= this.n) {
+                int i9 = this.pos;
+                if (i9 >= this.n) {
                     return;
                 }
-                char charAt = this.s.charAt(i10);
+                char charAt = this.s.charAt(i9);
                 if (charAt != '\t' && charAt != '\n' && charAt != ' ' && charAt != ',') {
                     return;
                 } else {
@@ -445,8 +445,8 @@ public class SvgHelper {
 
         public void skipWhitespace() {
             while (true) {
-                int i10 = this.pos;
-                if (i10 >= this.n || !Character.isWhitespace(this.s.charAt(i10))) {
+                int i9 = this.pos;
+                if (i9 >= this.n || !Character.isWhitespace(this.s.charAt(i9))) {
                     return;
                 } else {
                     advance();
@@ -455,7 +455,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class Properties {
         Attributes atts;
         ArrayList<StyleSet> styles;
@@ -465,8 +465,8 @@ public class SvgHelper {
             String str2 = null;
             if (arrayList != null && !arrayList.isEmpty()) {
                 int size = this.styles.size();
-                for (int i10 = 0; i10 < size; i10++) {
-                    str2 = this.styles.get(i10).getStyle(str);
+                for (int i9 = 0; i9 < size; i9++) {
+                    str2 = this.styles.get(i9).getStyle(str);
                     if (str2 != null) {
                         break;
                     }
@@ -530,7 +530,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class RoundRect {
         RectF rect;
         float rx;
@@ -541,13 +541,13 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public enum ScaleMode {
         Default,
         ByWidth
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class StyleSet {
         HashMap<String, String> styleMap;
 
@@ -572,7 +572,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class SvgDrawable extends Drawable {
         private static float gradientWidth;
         private static long lastUpdateTime;
@@ -582,7 +582,7 @@ public class SvgHelper {
         private Paint backgroundPaint;
         private float colorAlpha;
         private int currentColorKey;
-        private org.telegram.ui.ActionBar.c6 currentResourcesProvider;
+        private org.telegram.ui.ActionBar.b6 currentResourcesProvider;
         protected int height;
         private Integer overrideColor;
         private Paint overridePaint;
@@ -612,9 +612,9 @@ public class SvgHelper {
             lite = LiteMode.isEnabled(32);
         }
 
-        public void copyCommandFromPosition(int i10) {
+        public void copyCommandFromPosition(int i9) {
             ArrayList<Object> arrayList = this.commands;
-            arrayList.add(arrayList.get(i10));
+            arrayList.add(arrayList.get(i9));
         }
 
         @Override // android.graphics.drawable.Drawable
@@ -622,15 +622,15 @@ public class SvgHelper {
             drawInternal(canvas, false, 0, System.currentTimeMillis(), getBounds().left, getBounds().top, getBounds().width(), getBounds().height());
         }
 
-        public void drawInternal(Canvas canvas, boolean z10, int i10, long j10, float f10, float f11, float f12, float f13) {
+        public void drawInternal(Canvas canvas, boolean z10, int i9, long j10, float f10, float f11, float f12, float f13) {
             long j11;
-            int i11;
-            int i12 = this.currentColorKey;
-            if (i12 >= 0) {
-                setupGradient(i12, this.currentResourcesProvider, this.colorAlpha, z10);
+            int i10;
+            int i11 = this.currentColorKey;
+            if (i11 >= 0) {
+                setupGradient(i11, this.currentResourcesProvider, this.colorAlpha, z10);
             }
             float scale = getScale((int) f12, (int) f13);
-            if (this.placeholderGradient[i10] != null) {
+            if (this.placeholderGradient[i9] != null) {
                 float f14 = gradientWidth;
                 if (f14 > 0.0f && lite) {
                     if (z10) {
@@ -638,7 +638,7 @@ public class SvgHelper {
                         j11 = j12 <= 64 ? j12 : 64L;
                         if (j11 > 0) {
                             lastUpdateTime = j10;
-                            totalTranslation = a9.p.d(j11, f14, 1800.0f, totalTranslation);
+                            totalTranslation = aa.d.d(j11, f14, 1800.0f, totalTranslation);
                             while (true) {
                                 float f15 = totalTranslation;
                                 float f16 = gradientWidth;
@@ -654,7 +654,7 @@ public class SvgHelper {
                         j11 = j13 <= 64 ? j13 : 64L;
                         long j14 = j11 >= 0 ? j11 : 0L;
                         lastUpdateTime = j10;
-                        totalTranslation = a9.p.d(j14, gradientWidth, 1800.0f, totalTranslation);
+                        totalTranslation = aa.d.d(j14, gradientWidth, 1800.0f, totalTranslation);
                         while (true) {
                             float f17 = totalTranslation;
                             float f18 = gradientWidth;
@@ -675,24 +675,24 @@ public class SvgHelper {
                     }
                     ImageReceiver imageReceiver = this.parentImageReceiver;
                     if (imageReceiver == null || z10) {
-                        i11 = 0;
+                        i10 = 0;
                     } else {
                         int[] iArr = parentPosition;
                         imageReceiver.getParentPosition(iArr);
-                        i11 = iArr[0];
+                        i10 = iArr[0];
                     }
-                    int i13 = z10 ? i10 + 1 : 0;
-                    Matrix matrix = this.placeholderMatrix[i13];
+                    int i12 = z10 ? i9 + 1 : 0;
+                    Matrix matrix = this.placeholderMatrix[i12];
                     if (matrix != null) {
                         matrix.reset();
                         if (z10) {
-                            this.placeholderMatrix[i13].postTranslate(((-i11) + totalTranslation) - f10, 0.0f);
+                            this.placeholderMatrix[i12].postTranslate(((-i10) + totalTranslation) - f10, 0.0f);
                         } else {
-                            this.placeholderMatrix[i13].postTranslate(((-i11) + totalTranslation) - f10, 0.0f);
+                            this.placeholderMatrix[i12].postTranslate(((-i10) + totalTranslation) - f10, 0.0f);
                         }
                         float f19 = 1.0f / scale;
-                        this.placeholderMatrix[i13].postScale(f19, f19);
-                        this.placeholderGradient[i13].setLocalMatrix(this.placeholderMatrix[i13]);
+                        this.placeholderMatrix[i12].postScale(f19, f19);
+                        this.placeholderGradient[i12].setLocalMatrix(this.placeholderMatrix[i12]);
                         ImageReceiver imageReceiver2 = this.parentImageReceiver;
                         if (imageReceiver2 != null && !z10) {
                             imageReceiver2.invalidate();
@@ -703,19 +703,19 @@ public class SvgHelper {
             canvas.save();
             canvas.translate(f10, f11);
             if (!this.aspectFill || this.aspectCenter) {
-                canvas.translate(com.google.android.recaptcha.internal.a.w(this.width, scale, f12, 2.0f), com.google.android.recaptcha.internal.a.w(this.height, scale, f13, 2.0f));
+                canvas.translate(e2.c.d(this.width, scale, f12, 2.0f), e2.c.d(this.height, scale, f13, 2.0f));
             }
             canvas.scale(scale, scale);
             int size = this.commands.size();
-            for (int i14 = 0; i14 < size; i14++) {
-                Object obj = this.commands.get(i14);
+            for (int i13 = 0; i13 < size; i13++) {
+                Object obj = this.commands.get(i13);
                 if (obj instanceof Matrix) {
                     canvas.save();
                     canvas.concat((Matrix) obj);
                 } else if (obj == null) {
                     canvas.restore();
                 } else {
-                    Paint paint = this.overridePaintByPosition.get(i14);
+                    Paint paint = this.overridePaintByPosition.get(i13);
                     if (paint == null) {
                         paint = this.overridePaint;
                     }
@@ -767,20 +767,20 @@ public class SvgHelper {
             return -2;
         }
 
-        public float getScale(int i10, int i11) {
-            float f10 = i10 / this.width;
-            float f11 = i11 / this.height;
+        public float getScale(int i9, int i10) {
+            float f10 = i9 / this.width;
+            float f11 = i10 / this.height;
             return this.aspectFill ? Math.max(f10, f11) : Math.min(f10, f11);
         }
 
-        public void overrideWidthAndHeight(int i10, int i11) {
-            this.width = i10;
-            this.height = i11;
+        public void overrideWidthAndHeight(int i9, int i10) {
+            this.width = i9;
+            this.height = i10;
         }
 
         @Override // android.graphics.drawable.Drawable
-        public void setAlpha(int i10) {
-            this.crossfadeAlpha = i10 / 255.0f;
+        public void setAlpha(int i9) {
+            this.crossfadeAlpha = i9 / 255.0f;
         }
 
         public void setAspectCenter(boolean z10) {
@@ -791,12 +791,12 @@ public class SvgHelper {
             this.aspectFill = z10;
         }
 
-        public void setColor(int i10) {
-            this.overrideColor = Integer.valueOf(i10);
+        public void setColor(int i9) {
+            this.overrideColor = Integer.valueOf(i9);
         }
 
-        public void setColorKey(int i10) {
-            this.currentColorKey = i10;
+        public void setColorKey(int i9) {
+            this.currentColorKey = i9;
         }
 
         public void setPaint(Paint paint) {
@@ -807,15 +807,15 @@ public class SvgHelper {
             this.parentImageReceiver = imageReceiver;
         }
 
-        public void setupGradient(int i10, float f10, boolean z10) {
-            setupGradient(i10, null, f10, z10);
+        public void setupGradient(int i9, float f10, boolean z10) {
+            setupGradient(i9, null, f10, z10);
         }
 
         public SvgDrawable clone() {
             SvgDrawable svgDrawable = new SvgDrawable();
-            for (int i10 = 0; i10 < this.commands.size(); i10++) {
-                svgDrawable.commands.add(this.commands.get(i10));
-                Paint paint = this.paints.get(this.commands.get(i10));
+            for (int i9 = 0; i9 < this.commands.size(); i9++) {
+                svgDrawable.commands.add(this.commands.get(i9));
+                Paint paint = this.paints.get(this.commands.get(i9));
                 if (paint != null) {
                     Paint paint2 = new Paint();
                     paint2.setColor(paint.getColor());
@@ -823,7 +823,7 @@ public class SvgHelper {
                     paint2.setStrokeJoin(paint.getStrokeJoin());
                     paint2.setStrokeWidth(paint.getStrokeWidth());
                     paint2.setStyle(paint.getStyle());
-                    svgDrawable.paints.put(this.commands.get(i10), paint2);
+                    svgDrawable.paints.put(this.commands.get(i9), paint2);
                 }
             }
             svgDrawable.width = this.width;
@@ -831,13 +831,13 @@ public class SvgHelper {
             return svgDrawable;
         }
 
-        public void setColorKey(int i10, org.telegram.ui.ActionBar.c6 c6Var) {
-            this.currentColorKey = i10;
-            this.currentResourcesProvider = c6Var;
+        public void setColorKey(int i9, org.telegram.ui.ActionBar.b6 b6Var) {
+            this.currentColorKey = i9;
+            this.currentResourcesProvider = b6Var;
         }
 
-        public void setPaint(Paint paint, int i10) {
-            this.overridePaintByPosition.put(i10, paint);
+        public void setPaint(Paint paint, int i9) {
+            this.overridePaintByPosition.put(i9, paint);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -856,19 +856,19 @@ public class SvgHelper {
         /* JADX WARN: Type inference failed for: r28v7 */
         /* JADX WARN: Type inference failed for: r28v8 */
         /* JADX WARN: Type inference failed for: r28v9 */
-        public void setupGradient(int i10, org.telegram.ui.ActionBar.c6 c6Var, float f10, boolean z10) {
+        public void setupGradient(int i9, org.telegram.ui.ActionBar.b6 b6Var, float f10, boolean z10) {
             BitmapShader bitmapShader;
             Integer num = this.overrideColor;
-            int v02 = num == null ? org.telegram.ui.ActionBar.g6.v0(i10, c6Var) : num.intValue();
-            this.currentResourcesProvider = c6Var;
+            int v02 = num == null ? org.telegram.ui.ActionBar.f6.v0(i9, b6Var) : num.intValue();
+            this.currentResourcesProvider = b6Var;
             int[] iArr = this.currentColor;
             if (iArr[z10 ? 1 : 0] != v02) {
                 this.colorAlpha = f10;
-                this.currentColorKey = i10;
+                this.currentColorKey = i9;
                 iArr[z10 ? 1 : 0] = v02;
                 gradientWidth = AndroidUtilities.displaySize.x * 2;
                 if (!lite) {
-                    int k10 = i0.b.k(v02, 70);
+                    int k10 = i0.a.k(v02, 70);
                     if (z10) {
                         if (this.backgroundPaint == null) {
                             this.backgroundPaint = new Paint(1);
@@ -890,8 +890,8 @@ public class SvgHelper {
                 float f12 = dp / 2.0f;
                 Shader.TileMode tileMode = Shader.TileMode.REPEAT;
                 linearGradientArr[z10 ? 1 : 0] = new LinearGradient(0.0f, 0.0f, gradientWidth, 0.0f, new int[]{0, 0, argb, 0, 0}, new float[]{0.0f, f11 - f12, f11, f12 + f11, 1.0f}, tileMode);
-                int i11 = Build.VERSION.SDK_INT;
-                if (i11 >= 28) {
+                int i10 = Build.VERSION.SDK_INT;
+                if (i10 >= 28) {
                     bitmapShader = new LinearGradient(0.0f, 0.0f, gradientWidth, 0.0f, new int[]{argb, argb}, (float[]) null, tileMode);
                 } else {
                     Bitmap[] bitmapArr = this.backgroundBitmap;
@@ -908,7 +908,7 @@ public class SvgHelper {
                     if (this.backgroundPaint == null) {
                         this.backgroundPaint = new Paint(1);
                     }
-                    if (i11 <= 22) {
+                    if (i10 <= 22) {
                         this.backgroundPaint.setShader(bitmapShader);
                         return;
                     } else {
@@ -936,54 +936,54 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface SvgResult {
         Bitmap getBitmap();
 
         SvgDrawable getDrawable();
 
-        List<mf.c> getGiftPatternPositions();
+        List<lf.c> getGiftPatternPositions();
     }
 
     static {
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             double[] dArr = pow10;
-            if (i10 >= dArr.length) {
+            if (i9 >= dArr.length) {
                 SPLIT_BOUNDARY = Pattern.compile("(?<=\\))\\s*(?=[A-Za-z])");
                 return;
             } else {
-                dArr[i10] = Math.pow(10.0d, i10);
-                i10++;
+                dArr[i9] = Math.pow(10.0d, i9);
+                i9++;
             }
         }
     }
 
-    private static float[] arcToBeziers(double d, double d10) {
-        int ceil = (int) Math.ceil((Math.abs(d10) * 2.0d) / 3.141592653589793d);
-        double d11 = d10 / ceil;
-        double d12 = d11 / 2.0d;
-        double sin = (Math.sin(d12) * 1.3333333333333333d) / (Math.cos(d12) + 1.0d);
+    private static float[] arcToBeziers(double d, double d9) {
+        int ceil = (int) Math.ceil((Math.abs(d9) * 2.0d) / 3.141592653589793d);
+        double d10 = d9 / ceil;
+        double d11 = d10 / 2.0d;
+        double sin = (Math.sin(d11) * 1.3333333333333333d) / (Math.cos(d11) + 1.0d);
         float[] fArr = new float[ceil * 6];
+        int i9 = 0;
         int i10 = 0;
-        int i11 = 0;
-        while (i10 < ceil) {
-            double d13 = (i10 * d11) + d;
-            double cos = Math.cos(d13);
-            double sin2 = Math.sin(d13);
+        while (i9 < ceil) {
+            double d12 = (i9 * d10) + d;
+            double cos = Math.cos(d12);
+            double sin2 = Math.sin(d12);
             float[] fArr2 = fArr;
-            fArr2[i11] = (float) (cos - (sin * sin2));
-            fArr2[i11 + 1] = (float) ((cos * sin) + sin2);
-            double d14 = d13 + d11;
-            double cos2 = Math.cos(d14);
-            double sin3 = Math.sin(d14);
-            fArr2[i11 + 2] = (float) ((sin * sin3) + cos2);
-            fArr2[i11 + 3] = (float) (sin3 - (sin * cos2));
-            int i12 = i11 + 5;
-            fArr2[i11 + 4] = (float) cos2;
-            i11 += 6;
-            fArr2[i12] = (float) sin3;
-            i10++;
+            fArr2[i10] = (float) (cos - (sin * sin2));
+            fArr2[i10 + 1] = (float) ((cos * sin) + sin2);
+            double d13 = d12 + d10;
+            double cos2 = Math.cos(d13);
+            double sin3 = Math.sin(d13);
+            fArr2[i10 + 2] = (float) ((sin * sin3) + cos2);
+            fArr2[i10 + 3] = (float) (sin3 - (sin * cos2));
+            int i11 = i10 + 5;
+            fArr2[i10 + 4] = (float) cos2;
+            i10 += 6;
+            fArr2[i11] = (float) sin3;
+            i9++;
             fArr = fArr2;
             ceil = ceil;
         }
@@ -1005,13 +1005,13 @@ public class SvgHelper {
             StringBuilder sb2 = new StringBuilder(bArr.length * 2);
             sb2.append('M');
             for (byte b10 : bArr) {
-                int i10 = b10 & 255;
-                if (i10 >= 192) {
-                    sb2.append("AACAAAAHAAALMAAAQASTAVAAAZaacaaaahaaalmaaaqastava.az0123456789-,".charAt(i10 - 192));
+                int i9 = b10 & 255;
+                if (i9 >= 192) {
+                    sb2.append("AACAAAAHAAALMAAAQASTAVAAAZaacaaaahaaalmaaaqastava.az0123456789-,".charAt(i9 - 192));
                 } else {
-                    if (i10 >= 128) {
+                    if (i9 >= 128) {
                         sb2.append(',');
-                    } else if (i10 >= 64) {
+                    } else if (i9 >= 64) {
                         sb2.append('-');
                     }
                     sb2.append(b10 & 63);
@@ -1019,8 +1019,8 @@ public class SvgHelper {
             }
             sb2.append('z');
             return sb2.toString();
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             return "";
         }
     }
@@ -1055,11 +1055,11 @@ public class SvgHelper {
         float f22 = 0.0f;
         float f23 = 0.0f;
         while (true) {
-            int i10 = parserHelper.pos;
-            if (i10 >= length) {
+            int i9 = parserHelper.pos;
+            if (i9 >= length) {
                 return path;
             }
-            char charAt = str2.charAt(i10);
+            char charAt = str2.charAt(i9);
             switch (charAt) {
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
@@ -1313,44 +1313,44 @@ public class SvgHelper {
         double cos = Math.cos(radians);
         double sin = Math.sin(radians);
         double d = (f10 - f12) / 2.0d;
-        double d10 = (f11 - f13) / 2.0d;
-        double d11 = (sin * d10) + (cos * d);
-        double d12 = (d10 * cos) + ((-sin) * d);
-        double d13 = abs * abs;
-        double d14 = abs2 * abs2;
+        double d9 = (f11 - f13) / 2.0d;
+        double d10 = (sin * d9) + (cos * d);
+        double d11 = (d9 * cos) + ((-sin) * d);
+        double d12 = abs * abs;
+        double d13 = abs2 * abs2;
+        double d14 = d10 * d10;
         double d15 = d11 * d11;
-        double d16 = d12 * d12;
-        double d17 = (d16 / d14) + (d15 / d13);
-        if (d17 > 0.99999d) {
-            double sqrt = Math.sqrt(d17) * 1.00001d;
+        double d16 = (d15 / d13) + (d14 / d12);
+        if (d16 > 0.99999d) {
+            double sqrt = Math.sqrt(d16) * 1.00001d;
             abs = (float) (abs * sqrt);
             abs2 = (float) (sqrt * abs2);
-            d13 = abs * abs;
-            d14 = abs2 * abs2;
+            d12 = abs * abs;
+            d13 = abs2 * abs2;
         }
-        double d18 = z10 == z11 ? -1.0d : 1.0d;
-        double d19 = d13 * d14;
-        double d20 = d13 * d16;
-        double d21 = d14 * d15;
-        double d22 = ((d19 - d20) - d21) / (d20 + d21);
-        if (d22 < 0.0d) {
-            d22 = 0.0d;
+        double d17 = z10 == z11 ? -1.0d : 1.0d;
+        double d18 = d12 * d13;
+        double d19 = d12 * d15;
+        double d20 = d13 * d14;
+        double d21 = ((d18 - d19) - d20) / (d19 + d20);
+        if (d21 < 0.0d) {
+            d21 = 0.0d;
         }
-        double sqrt2 = Math.sqrt(d22) * d18;
-        double d23 = abs;
-        double d24 = d23 * d12;
-        double d25 = abs2;
-        double d26 = (d24 / d25) * sqrt2;
-        double d27 = sqrt2 * (-((d25 * d11) / d23));
-        double d28 = ((cos * d26) - (sin * d27)) + ((f10 + f12) / 2.0d);
-        double d29 = (cos * d27) + (sin * d26) + ((f11 + f13) / 2.0d);
-        double d30 = (d11 - d26) / d23;
-        double d31 = (d12 - d27) / d25;
-        double d32 = ((-d11) - d26) / d23;
-        double d33 = ((-d12) - d27) / d25;
-        double d34 = (d31 * d31) + (d30 * d30);
-        double acos = Math.acos(d30 / Math.sqrt(d34)) * (d31 < 0.0d ? -1.0d : 1.0d);
-        double checkedArcCos = ((d30 * d33) - (d31 * d32) < 0.0d ? -1.0d : 1.0d) * checkedArcCos(((d31 * d33) + (d30 * d32)) / Math.sqrt(((d33 * d33) + (d32 * d32)) * d34));
+        double sqrt2 = Math.sqrt(d21) * d17;
+        double d22 = abs;
+        double d23 = d22 * d11;
+        double d24 = abs2;
+        double d25 = (d23 / d24) * sqrt2;
+        double d26 = sqrt2 * (-((d24 * d10) / d22));
+        double d27 = ((cos * d25) - (sin * d26)) + ((f10 + f12) / 2.0d);
+        double d28 = (cos * d26) + (sin * d25) + ((f11 + f13) / 2.0d);
+        double d29 = (d10 - d25) / d22;
+        double d30 = (d11 - d26) / d24;
+        double d31 = ((-d10) - d25) / d22;
+        double d32 = ((-d11) - d26) / d24;
+        double d33 = (d30 * d30) + (d29 * d29);
+        double acos = Math.acos(d29 / Math.sqrt(d33)) * (d30 < 0.0d ? -1.0d : 1.0d);
+        double checkedArcCos = ((d29 * d32) - (d30 * d31) < 0.0d ? -1.0d : 1.0d) * checkedArcCos(((d30 * d32) + (d29 * d31)) / Math.sqrt(((d32 * d32) + (d31 * d31)) * d33));
         if (checkedArcCos == 0.0d) {
             path.lineTo(f12, f13);
             return;
@@ -1364,31 +1364,31 @@ public class SvgHelper {
         Matrix matrix = new Matrix();
         matrix.postScale(abs, abs2);
         matrix.postRotate(f16);
-        matrix.postTranslate((float) d28, (float) d29);
+        matrix.postTranslate((float) d27, (float) d28);
         matrix.mapPoints(arcToBeziers);
         arcToBeziers[arcToBeziers.length - 2] = f12;
         arcToBeziers[arcToBeziers.length - 1] = f13;
-        for (int i10 = 0; i10 < arcToBeziers.length; i10 += 6) {
-            path.cubicTo(arcToBeziers[i10], arcToBeziers[i10 + 1], arcToBeziers[i10 + 2], arcToBeziers[i10 + 3], arcToBeziers[i10 + 4], arcToBeziers[i10 + 5]);
+        for (int i9 = 0; i9 < arcToBeziers.length; i9 += 6) {
+            path.cubicTo(arcToBeziers[i9], arcToBeziers[i9 + 1], arcToBeziers[i9 + 2], arcToBeziers[i9 + 3], arcToBeziers[i9 + 4], arcToBeziers[i9 + 5]);
         }
     }
 
-    public static Bitmap getBitmap(int i10, int i11, int i12, int i13) {
-        return getBitmap(i10, i11, i12, i13, 1.0f);
+    public static Bitmap getBitmap(int i9, int i10, int i11, int i12) {
+        return getBitmap(i9, i10, i11, i12, 1.0f);
     }
 
-    public static Bitmap getBitmapByPathOnly(String str, int i10, int i11, int i12, int i13) {
+    public static Bitmap getBitmapByPathOnly(String str, int i9, int i10, int i11, int i12) {
         try {
             Path doPath = doPath(str);
-            Bitmap createBitmap = Bitmap.createBitmap(i12, i13, Bitmap.Config.ARGB_8888);
+            Bitmap createBitmap = Bitmap.createBitmap(i11, i12, Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(createBitmap);
-            canvas.scale(i12 / i10, i13 / i11);
+            canvas.scale(i11 / i9, i12 / i10);
             Paint paint = new Paint();
             paint.setColor(-1);
             canvas.drawPath(doPath, paint);
             return createBitmap;
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             return null;
         }
     }
@@ -1498,23 +1498,23 @@ public class SvgHelper {
             xMLReader.setContentHandler(sVGHandler);
             xMLReader.parse(new InputSource(new StringReader(str)));
             return sVGHandler.getDrawable();
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             return null;
         }
     }
 
-    public static SvgDrawable getDrawableByPath(String str, int i10, int i11) {
+    public static SvgDrawable getDrawableByPath(String str, int i9, int i10) {
         try {
             Path doPath = doPath(str);
             SvgDrawable svgDrawable = new SvgDrawable();
             svgDrawable.commands.add(doPath);
             svgDrawable.paints.put(doPath, new Paint(1));
-            svgDrawable.width = i10;
-            svgDrawable.height = i11;
+            svgDrawable.width = i9;
+            svgDrawable.height = i10;
             return svgDrawable;
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             return null;
         }
     }
@@ -1539,9 +1539,9 @@ public class SvgHelper {
     /* JADX INFO: Access modifiers changed from: private */
     public static NumberParse getNumberParseAttr(String str, Attributes attributes) {
         int length = attributes.getLength();
-        for (int i10 = 0; i10 < length; i10++) {
-            if (attributes.getLocalName(i10).equals(str)) {
-                return parseNumbers(attributes.getValue(i10));
+        for (int i9 = 0; i9 < length; i9++) {
+            if (attributes.getLocalName(i9).equals(str)) {
+                return parseNumbers(attributes.getValue(i9));
             }
         }
         return null;
@@ -1550,20 +1550,20 @@ public class SvgHelper {
     /* JADX INFO: Access modifiers changed from: private */
     public static String getStringAttr(String str, Attributes attributes) {
         int length = attributes.getLength();
-        for (int i10 = 0; i10 < length; i10++) {
-            if (attributes.getLocalName(i10).equals(str)) {
-                return attributes.getValue(i10);
+        for (int i9 = 0; i9 < length; i9++) {
+            if (attributes.getLocalName(i9).equals(str)) {
+                return attributes.getValue(i9);
             }
         }
         return null;
     }
 
-    public static SvgResult getSvgBitmap(File file, int i10, int i11, boolean z10) {
+    public static SvgResult getSvgBitmap(File file, int i9, int i10, boolean z10) {
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
             try {
                 XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-                SVGHandler sVGHandler = new SVGHandler(i10, i11, z10 ? -1 : null, false, 1.0f);
+                SVGHandler sVGHandler = new SVGHandler(i9, i10, z10 ? -1 : null, false, 1.0f);
                 if (!z10) {
                     sVGHandler.alphaOnly = true;
                 }
@@ -1573,8 +1573,8 @@ public class SvgHelper {
                 return sVGHandler;
             } finally {
             }
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             return null;
         }
     }
@@ -1582,33 +1582,33 @@ public class SvgHelper {
     private static NumberParse parseNumbers(String str) {
         int length = str.length();
         ArrayList arrayList = new ArrayList();
-        int i10 = 0;
+        int i9 = 0;
         boolean z10 = false;
-        for (int i11 = 1; i11 < length; i11++) {
+        for (int i10 = 1; i10 < length; i10++) {
             if (z10) {
                 z10 = false;
             } else {
-                char charAt = str.charAt(i11);
+                char charAt = str.charAt(i10);
                 switch (charAt) {
                     case '\t':
                     case '\n':
                     case ' ':
                     case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
                     case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                        if (charAt != '-' || str.charAt(i11 - 1) != 'e') {
-                            String substring = str.substring(i10, i11);
+                        if (charAt != '-' || str.charAt(i10 - 1) != 'e') {
+                            String substring = str.substring(i9, i10);
                             if (substring.trim().length() > 0) {
                                 arrayList.add(Float.valueOf(Float.parseFloat(substring)));
                                 if (charAt == '-') {
-                                    i10 = i11;
+                                    i9 = i10;
                                     break;
                                 } else {
-                                    i10 = i11 + 1;
+                                    i9 = i10 + 1;
                                     z10 = true;
                                     break;
                                 }
                             } else {
-                                i10++;
+                                i9++;
                                 break;
                             }
                         } else {
@@ -1635,23 +1635,23 @@ public class SvgHelper {
                     case 't':
                     case 'v':
                     case 'z':
-                        String substring2 = str.substring(i10, i11);
+                        String substring2 = str.substring(i9, i10);
                         if (substring2.trim().length() > 0) {
                             arrayList.add(Float.valueOf(Float.parseFloat(substring2)));
                         }
-                        return new NumberParse(arrayList, i11);
+                        return new NumberParse(arrayList, i10);
                 }
             }
         }
-        String substring3 = str.substring(i10);
+        String substring3 = str.substring(i9);
         if (substring3.length() > 0) {
             try {
                 arrayList.add(Float.valueOf(Float.parseFloat(substring3)));
             } catch (NumberFormatException unused) {
             }
-            i10 = str.length();
+            i9 = str.length();
         }
-        return new NumberParse(arrayList, i10);
+        return new NumberParse(arrayList, i9);
     }
 
     public static Matrix parseTransform(String str) {
@@ -1755,7 +1755,7 @@ public class SvgHelper {
         return arrayList;
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class SVGHandler extends DefaultHandler implements SvgResult {
         private boolean alphaOnly;
         private Bitmap bitmap;
@@ -1768,7 +1768,7 @@ public class SvgHelper {
         private HashMap<String, StyleSet> globalStyles;
         private boolean insideGiftRect;
         private int insideGiftRectDepth;
-        private List<mf.c> insideGiftRectPositions;
+        private List<lf.c> insideGiftRectPositions;
         private Paint paint;
         private Integer paintColor;
         boolean pushed;
@@ -1882,10 +1882,10 @@ public class SvgHelper {
         }
 
         @Override // org.xml.sax.helpers.DefaultHandler, org.xml.sax.ContentHandler
-        public void characters(char[] cArr, int i10, int i11) {
+        public void characters(char[] cArr, int i9, int i10) {
             StringBuilder sb2 = this.styles;
             if (sb2 != null) {
-                sb2.append(cArr, i10, i11);
+                sb2.append(cArr, i9, i10);
             }
         }
 
@@ -1893,9 +1893,9 @@ public class SvgHelper {
         public void endElement(String str, String str2, String str3) {
             int indexOf;
             if (this.insideGiftRect) {
-                int i10 = this.insideGiftRectDepth - 1;
-                this.insideGiftRectDepth = i10;
-                if (i10 == 0) {
+                int i9 = this.insideGiftRectDepth - 1;
+                this.insideGiftRectDepth = i9;
+                if (i9 == 0) {
                     this.insideGiftRect = false;
                 }
                 return;
@@ -1911,18 +1911,18 @@ public class SvgHelper {
                     StringBuilder sb2 = this.styles;
                     if (sb2 != null) {
                         String[] split = sb2.toString().split("\\}");
-                        int i11 = 0;
+                        int i10 = 0;
                         while (true) {
-                            if (i11 >= split.length) {
+                            if (i10 >= split.length) {
                                 this.styles = null;
                                 break;
                             } else {
-                                String replace = split[i11].trim().replace("\t", "").replace("\n", "");
-                                split[i11] = replace;
-                                if (replace.length() != 0 && split[i11].charAt(0) == '.' && (indexOf = split[i11].indexOf(123)) >= 0) {
-                                    this.globalStyles.put(split[i11].substring(1, indexOf).trim(), new StyleSet(split[i11].substring(indexOf + 1)));
+                                String replace = split[i10].trim().replace("\t", "").replace("\n", "");
+                                split[i10] = replace;
+                                if (replace.length() != 0 && split[i10].charAt(0) == '.' && (indexOf = split[i10].indexOf(123)) >= 0) {
+                                    this.globalStyles.put(split[i10].substring(1, indexOf).trim(), new StyleSet(split[i10].substring(indexOf + 1)));
                                 }
-                                i11++;
+                                i10++;
                             }
                         }
                     }
@@ -1941,16 +1941,16 @@ public class SvgHelper {
         }
 
         @Override // org.telegram.messenger.SvgHelper.SvgResult
-        public List<mf.c> getGiftPatternPositions() {
+        public List<lf.c> getGiftPatternPositions() {
             return this.insideGiftRectPositions;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r0v9, types: [mf.c] */
+        /* JADX WARN: Type inference failed for: r0v9, types: [lf.c] */
         @Override // org.xml.sax.helpers.DefaultHandler, org.xml.sax.ContentHandler
         public void startElement(String str, String str2, String str3, Attributes attributes) {
             String stringAttr;
-            int i10;
+            int i9;
             Float valueOf = Float.valueOf(0.0f);
             1 r14 = null;
             if (!ImageLoader.AUTOPLAY_FILTER.equals(str3) || this.insideGiftRect) {
@@ -1964,9 +1964,9 @@ public class SvgHelper {
                             RectF rectF = new RectF(parseFloat, parseFloat2, Float.parseFloat(attributes.getValue("width")) + parseFloat, Float.parseFloat(attributes.getValue("height")) + parseFloat2);
                             Matrix parseTransform = SvgHelper.parseTransform(attributes.getValue("transform"));
                             parseTransform.postScale(f10, f10);
-                            r14 = new mf.c(rectF, parseTransform);
-                        } catch (Exception e9) {
-                            FileLog.e(e9);
+                            r14 = new lf.c(rectF, parseTransform);
+                        } catch (Exception e10) {
+                            FileLog.e(e10);
                         }
                         if (r14 != null) {
                             if (this.insideGiftRectPositions == null) {
@@ -2052,8 +2052,8 @@ public class SvgHelper {
                                 pushTransform(attributes);
                                 Properties properties3 = new Properties(attributes, this.globalStyles);
                                 path.moveTo(((Float) arrayList.get(0)).floatValue(), ((Float) arrayList.get(1)).floatValue());
-                                for (int i11 = 2; i11 < arrayList.size(); i11 += 2) {
-                                    path.lineTo(((Float) arrayList.get(i11)).floatValue(), ((Float) arrayList.get(i11 + 1)).floatValue());
+                                for (int i10 = 2; i10 < arrayList.size(); i10 += 2) {
+                                    path.lineTo(((Float) arrayList.get(i10)).floatValue(), ((Float) arrayList.get(i10 + 1)).floatValue());
                                 }
                                 if (str2.equals("polygon")) {
                                     path.close();
@@ -2104,12 +2104,12 @@ public class SvgHelper {
                             ceil = this.desiredWidth;
                             ceil2 = this.desiredHeight;
                         } else {
-                            int i12 = this.desiredWidth;
-                            if (i12 != 0 && (i10 = this.desiredHeight) != 0) {
+                            int i11 = this.desiredWidth;
+                            if (i11 != 0 && (i9 = this.desiredHeight) != 0) {
                                 if (this.scaleMode == ScaleMode.ByWidth) {
-                                    this.scale = i12 / ceil;
+                                    this.scale = i11 / ceil;
                                 } else {
-                                    this.scale = Math.min(i12 / ceil, i10 / ceil2);
+                                    this.scale = Math.min(i11 / ceil, i9 / ceil2);
                                 }
                                 float f11 = this.scale;
                                 ceil = (int) (ceil * f11);
@@ -2231,11 +2231,11 @@ public class SvgHelper {
             }
         }
 
-        private SVGHandler(int i10, int i11, Integer num, boolean z10, float f10) {
-            this(i10, i11, num, z10, f10, ScaleMode.Default);
+        private SVGHandler(int i9, int i10, Integer num, boolean z10, float f10) {
+            this(i9, i10, num, z10, f10, ScaleMode.Default);
         }
 
-        private SVGHandler(int i10, int i11, Integer num, boolean z10, float f10, ScaleMode scaleMode) {
+        private SVGHandler(int i9, int i10, Integer num, boolean z10, float f10, ScaleMode scaleMode) {
             this.scale = 1.0f;
             this.paint = new Paint(1);
             this.rect = new RectF();
@@ -2246,8 +2246,8 @@ public class SvgHelper {
             this.insideGiftRect = false;
             this.insideGiftRectDepth = 0;
             this.globalScale = f10;
-            this.desiredWidth = i10;
-            this.desiredHeight = i11;
+            this.desiredWidth = i9;
+            this.desiredHeight = i10;
             this.paintColor = num;
             this.scaleMode = scaleMode;
             if (z10) {
@@ -2264,8 +2264,8 @@ public class SvgHelper {
         }
     }
 
-    public static Bitmap getBitmap(int i10, int i11, int i12, int i13, float f10) {
-        return getBitmap(i10, i11, i12, i13, f10, ScaleMode.Default);
+    public static Bitmap getBitmap(int i9, int i10, int i11, int i12, float f10) {
+        return getBitmap(i9, i10, i11, i12, f10, ScaleMode.Default);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2275,19 +2275,19 @@ public class SvgHelper {
             return f10;
         }
         if (stringAttr.endsWith("px")) {
-            stringAttr = com.google.android.recaptcha.internal.a.n(stringAttr, 2, 0);
+            stringAttr = e2.c.m(stringAttr, 2, 0);
         } else if (stringAttr.endsWith("mm")) {
             return null;
         }
         return Float.valueOf(Float.parseFloat(stringAttr));
     }
 
-    public static Bitmap getBitmap(int i10, int i11, int i12, int i13, float f10, ScaleMode scaleMode) {
+    public static Bitmap getBitmap(int i9, int i10, int i11, int i12, float f10, ScaleMode scaleMode) {
         try {
-            InputStream openRawResource = ApplicationLoader.applicationContext.getResources().openRawResource(i10);
+            InputStream openRawResource = ApplicationLoader.applicationContext.getResources().openRawResource(i9);
             try {
                 XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-                SVGHandler sVGHandler = new SVGHandler(i11, i12, Integer.valueOf(i13), false, f10, scaleMode);
+                SVGHandler sVGHandler = new SVGHandler(i10, i11, Integer.valueOf(i12), false, f10, scaleMode);
                 xMLReader.setContentHandler(sVGHandler);
                 xMLReader.parse(new InputSource(openRawResource));
                 Bitmap bitmap = sVGHandler.getBitmap();
@@ -2297,62 +2297,62 @@ public class SvgHelper {
                 return bitmap;
             } finally {
             }
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             return null;
         }
     }
 
-    public static SvgDrawable getDrawableByPath(Path path, int i10, int i11) {
+    public static SvgDrawable getDrawableByPath(Path path, int i9, int i10) {
         try {
             SvgDrawable svgDrawable = new SvgDrawable();
             svgDrawable.commands.add(path);
             svgDrawable.paints.put(path, new Paint(1));
-            svgDrawable.width = i10;
-            svgDrawable.height = i11;
+            svgDrawable.width = i9;
+            svgDrawable.height = i10;
             return svgDrawable;
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             return null;
         }
     }
 
-    public static SvgDrawable getDrawable(int i10, Integer num) {
+    public static SvgDrawable getDrawable(int i9, Integer num) {
         try {
             XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
             SVGHandler sVGHandler = new SVGHandler(0, 0, num, true, 1.0f);
             xMLReader.setContentHandler(sVGHandler);
-            xMLReader.parse(new InputSource(ApplicationLoader.applicationContext.getResources().openRawResource(i10)));
+            xMLReader.parse(new InputSource(ApplicationLoader.applicationContext.getResources().openRawResource(i9)));
             return sVGHandler.getDrawable();
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             return null;
         }
     }
 
-    public static Bitmap getBitmap(InputStream inputStream, int i10, int i11, boolean z10) {
+    public static Bitmap getBitmap(InputStream inputStream, int i9, int i10, boolean z10) {
         try {
             XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-            SVGHandler sVGHandler = new SVGHandler(i10, i11, z10 ? -1 : null, false, 1.0f);
+            SVGHandler sVGHandler = new SVGHandler(i9, i10, z10 ? -1 : null, false, 1.0f);
             xMLReader.setContentHandler(sVGHandler);
             xMLReader.parse(new InputSource(inputStream));
             return sVGHandler.getBitmap();
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             return null;
         }
     }
 
-    public static Bitmap getBitmap(File file, int i10, int i11, boolean z10) {
-        return getBitmap(file, i10, i11, z10, ScaleMode.Default);
+    public static Bitmap getBitmap(File file, int i9, int i10, boolean z10) {
+        return getBitmap(file, i9, i10, z10, ScaleMode.Default);
     }
 
-    public static Bitmap getBitmap(File file, int i10, int i11, boolean z10, ScaleMode scaleMode) {
+    public static Bitmap getBitmap(File file, int i9, int i10, boolean z10, ScaleMode scaleMode) {
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
             try {
                 XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-                SVGHandler sVGHandler = new SVGHandler(i10, i11, z10 ? -1 : null, false, 1.0f, scaleMode);
+                SVGHandler sVGHandler = new SVGHandler(i9, i10, z10 ? -1 : null, false, 1.0f, scaleMode);
                 if (!z10) {
                     sVGHandler.alphaOnly = true;
                 }
@@ -2363,21 +2363,21 @@ public class SvgHelper {
                 return bitmap;
             } finally {
             }
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             return null;
         }
     }
 
-    public static Bitmap getBitmap(String str, int i10, int i11, boolean z10) {
+    public static Bitmap getBitmap(String str, int i9, int i10, boolean z10) {
         try {
             XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-            SVGHandler sVGHandler = new SVGHandler(i10, i11, z10 ? -1 : null, false, 1.0f);
+            SVGHandler sVGHandler = new SVGHandler(i9, i10, z10 ? -1 : null, false, 1.0f);
             xMLReader.setContentHandler(sVGHandler);
             xMLReader.parse(new InputSource(new StringReader(str)));
             return sVGHandler.getBitmap();
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             return null;
         }
     }

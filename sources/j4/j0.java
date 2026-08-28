@@ -1,138 +1,140 @@
 package j4;
 
-import h3.j2;
+import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class j0 implements z, y {
-    public final z a;
-    public final long b;
-    public y c;
+public final class j0 implements b5.t {
+    public final b5.t a;
+    public final i1 b;
 
-    public j0(z zVar, long j10) {
-        this.a = zVar;
-        this.b = j10;
+    public j0(b5.t tVar, i1 i1Var) {
+        this.a = tVar;
+        this.b = i1Var;
     }
 
-    @Override // j4.z
-    public final long B(long j10, j2 j2Var) {
-        long j11 = this.b;
-        return this.a.B(j10 - j11, j2Var) + j11;
+    @Override // b5.t
+    public final int a(h3.t0 t0Var) {
+        return this.a.a(t0Var);
     }
 
-    @Override // j4.d1
-    public final long D() {
-        long D = this.a.D();
-        if (D == Long.MIN_VALUE) {
-            return Long.MIN_VALUE;
+    @Override // b5.t
+    public final i1 b() {
+        return this.b;
+    }
+
+    @Override // b5.t
+    public final boolean c(long j10, l4.e eVar, List list) {
+        return this.a.c(j10, eVar, list);
+    }
+
+    @Override // b5.t
+    public final int d() {
+        return this.a.d();
+    }
+
+    @Override // b5.t
+    public final boolean e(int i9, long j10) {
+        return this.a.e(i9, j10);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return D + this.b;
-    }
-
-    @Override // j4.z
-    public final void E(y yVar, long j10) {
-        this.c = yVar;
-        this.a.E(this, j10 - this.b);
-    }
-
-    @Override // j4.z
-    public final long F(b5.s[] sVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j10) {
-        b1[] b1VarArr2 = new b1[b1VarArr.length];
-        int i10 = 0;
-        while (true) {
-            b1 b1Var = null;
-            if (i10 >= b1VarArr.length) {
-                break;
-            }
-            k0 k0Var = (k0) b1VarArr[i10];
-            if (k0Var != null) {
-                b1Var = k0Var.a;
-            }
-            b1VarArr2[i10] = b1Var;
-            i10++;
+        if (!(obj instanceof j0)) {
+            return false;
         }
-        z zVar = this.a;
-        long j11 = this.b;
-        long F = zVar.F(sVarArr, zArr, b1VarArr2, zArr2, j10 - j11);
-        for (int i11 = 0; i11 < b1VarArr.length; i11++) {
-            b1 b1Var2 = b1VarArr2[i11];
-            if (b1Var2 == null) {
-                b1VarArr[i11] = null;
-            } else {
-                b1 b1Var3 = b1VarArr[i11];
-                if (b1Var3 == null || ((k0) b1Var3).a != b1Var2) {
-                    b1VarArr[i11] = new k0(b1Var2, j11);
-                }
-            }
-        }
-        return F + j11;
+        j0 j0Var = (j0) obj;
+        return this.a.equals(j0Var.a) && this.b.equals(j0Var.b);
     }
 
-    @Override // j4.d1
-    public final void I(long j10) {
-        this.a.I(j10 - this.b);
+    @Override // b5.t
+    public final boolean f(int i9, long j10) {
+        return this.a.f(i9, j10);
     }
 
-    @Override // j4.c1
-    public final void a(d1 d1Var) {
-        y yVar = this.c;
-        yVar.getClass();
-        yVar.a(this);
+    @Override // b5.t
+    public final void g(boolean z10) {
+        this.a.g(z10);
     }
 
-    @Override // j4.d1
-    public final boolean b() {
-        return this.a.b();
+    @Override // b5.t
+    public final h3.t0 h(int i9) {
+        return this.a.h(i9);
     }
 
-    @Override // j4.y
-    public final void e(z zVar) {
-        y yVar = this.c;
-        yVar.getClass();
-        yVar.e(this);
+    public final int hashCode() {
+        return this.a.hashCode() + ((this.b.hashCode() + 527) * 31);
     }
 
-    @Override // j4.d1
-    public final long g() {
-        long g10 = this.a.g();
-        if (g10 == Long.MIN_VALUE) {
-            return Long.MIN_VALUE;
-        }
-        return g10 + this.b;
+    @Override // b5.t
+    public final void i() {
+        this.a.i();
     }
 
-    @Override // j4.z
-    public final void m() {
-        this.a.m();
+    @Override // b5.t
+    public final int j(int i9) {
+        return this.a.j(i9);
     }
 
-    @Override // j4.z
-    public final long o(long j10) {
-        long j11 = this.b;
-        return this.a.o(j10 - j11) + j11;
+    @Override // b5.t
+    public final int k(long j10, List list) {
+        return this.a.k(j10, list);
     }
 
-    @Override // j4.z
-    public final void p(long j10) {
-        this.a.p(j10 - this.b);
+    @Override // b5.t
+    public final void l() {
+        this.a.l();
     }
 
-    @Override // j4.d1
-    public final boolean q(long j10) {
-        return this.a.q(j10 - this.b);
+    @Override // b5.t
+    public final int length() {
+        return this.a.length();
     }
 
-    @Override // j4.z
-    public final long w() {
-        long w10 = this.a.w();
-        if (w10 == -9223372036854775807L) {
-            return -9223372036854775807L;
-        }
-        return w10 + this.b;
+    @Override // b5.t
+    public final void m(long j10, long j11, long j12, List list, l4.l[] lVarArr) {
+        this.a.m(j10, j11, j12, list, lVarArr);
     }
 
-    @Override // j4.z
-    public final j1 z() {
-        return this.a.z();
+    @Override // b5.t
+    public final int n() {
+        return this.a.n();
+    }
+
+    @Override // b5.t
+    public final h3.t0 o() {
+        return this.a.o();
+    }
+
+    @Override // b5.t
+    public final int p() {
+        return this.a.p();
+    }
+
+    @Override // b5.t
+    public final void q(float f10) {
+        this.a.q(f10);
+    }
+
+    @Override // b5.t
+    public final Object r() {
+        return this.a.r();
+    }
+
+    @Override // b5.t
+    public final void s() {
+        this.a.s();
+    }
+
+    @Override // b5.t
+    public final void t() {
+        this.a.t();
+    }
+
+    @Override // b5.t
+    public final int u(int i9) {
+        return this.a.u(i9);
     }
 }

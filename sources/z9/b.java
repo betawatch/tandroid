@@ -1,97 +1,84 @@
 package z9;
 
-import java.io.IOException;
-import w3.b0;
+import android.content.SharedPreferences;
+import android.util.Base64;
+import android.util.Log;
+import java.security.KeyFactory;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.PublicKey;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.X509EncodedKeySpec;
+import s8.h;
+import s8.j;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c b;
+public final class b {
+    public static final String[] c = {"*", "FCM", "GCM", ""};
+    public final SharedPreferences a;
+    public final String b;
 
-    public /* synthetic */ b(c cVar, int i10) {
-        this.a = i10;
-        this.b = cVar;
-    }
-
-    /* JADX WARN: Finally extract failed */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0065  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x006e  */
-    @Override // java.lang.Runnable
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0045, code lost:
+    
+        if (r1.isEmpty() != false) goto L12;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void run() {
-        aa.b M;
-        aa.b i10;
-        int i11;
-        switch (this.a) {
-            case 0:
-                this.b.b();
-                return;
-            case 1:
-                c cVar = this.b;
-                synchronized (c.m) {
-                    try {
-                        t8.h hVar = cVar.a;
-                        hVar.a();
-                        b0 d = b0.d(hVar.a);
-                        try {
-                            M = cVar.c.M();
-                            if (d != null) {
-                                d.l();
-                            }
-                        } catch (Throwable th) {
-                            if (d != null) {
-                                d.l();
-                            }
-                            throw th;
-                        }
-                    } finally {
-                    }
+    public b(h hVar) {
+        hVar.a();
+        this.a = hVar.a.getSharedPreferences("com.google.android.gms.appid", 0);
+        hVar.a();
+        j jVar = hVar.c;
+        String str = jVar.e;
+        if (str == null) {
+            hVar.a();
+            str = jVar.b;
+            if (str.startsWith("1:") || str.startsWith("2:")) {
+                String[] split = str.split(":");
+                if (split.length == 4) {
+                    str = split[1];
                 }
-                try {
-                    int i12 = M.b;
-                    if (!(i12 == 5)) {
-                        if (!(i12 == 3)) {
-                            if (cVar.d.a(M)) {
-                                i10 = cVar.c(M);
-                                cVar.f(i10);
-                                cVar.m(M, i10);
-                                if (i10.b == 4) {
-                                    cVar.l(i10.a);
-                                }
-                                i11 = i10.b;
-                                if (i11 != 5) {
-                                    cVar.j(new e());
-                                    return;
-                                } else if (i11 == 2 || i11 == 1) {
-                                    cVar.j(new IOException("Installation ID could not be validated with the Firebase servers (maybe it was deleted). Firebase Installations will need to create a new Installation ID and auth token. Please retry your last request."));
-                                    return;
-                                } else {
-                                    cVar.k(i10);
-                                    return;
-                                }
-                            }
-                            return;
-                        }
-                    }
-                    i10 = cVar.i(M);
-                    cVar.f(i10);
-                    cVar.m(M, i10);
-                    if (i10.b == 4) {
-                    }
-                    i11 = i10.b;
-                    if (i11 != 5) {
-                    }
-                } catch (e e9) {
-                    cVar.j(e9);
-                    return;
-                }
-            default:
-                this.b.b();
-                return;
+                str = null;
+            }
+        }
+        this.b = str;
+    }
+
+    public final String a() {
+        String string;
+        synchronized (this.a) {
+            string = this.a.getString("|S|id", null);
+        }
+        return string;
+    }
+
+    public final String b() {
+        PublicKey publicKey;
+        synchronized (this.a) {
+            String str = null;
+            String string = this.a.getString("|S||P|", null);
+            if (string == null) {
+                return null;
+            }
+            try {
+                publicKey = KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(Base64.decode(string, 8)));
+            } catch (IllegalArgumentException | NoSuchAlgorithmException | InvalidKeySpecException e10) {
+                Log.w("ContentValues", "Invalid key stored " + e10);
+                publicKey = null;
+            }
+            if (publicKey == null) {
+                return null;
+            }
+            try {
+                byte[] digest = MessageDigest.getInstance("SHA1").digest(publicKey.getEncoded());
+                digest[0] = (byte) (((digest[0] & 15) + 112) & 255);
+                str = Base64.encodeToString(digest, 0, 8, 11);
+            } catch (NoSuchAlgorithmException unused) {
+                Log.w("ContentValues", "Unexpected error, device missing required algorithms");
+            }
+            return str;
         }
     }
 }

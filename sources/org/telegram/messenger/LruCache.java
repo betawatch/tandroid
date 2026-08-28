@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class LruCache<T> {
     private final LinkedHashMap<String, T> map;
@@ -14,11 +14,11 @@ public class LruCache<T> {
     private int maxSize;
     private int size;
 
-    public LruCache(int i10) {
-        if (i10 <= 0) {
+    public LruCache(int i9) {
+        if (i9 <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
-        this.maxSize = i10;
+        this.maxSize = i9;
         this.map = new LinkedHashMap<>(0, 0.75f, true);
         this.mapFilters = new LinkedHashMap<>();
     }
@@ -31,12 +31,12 @@ public class LruCache<T> {
         throw new IllegalStateException("Negative size: " + str + "=" + t10);
     }
 
-    private void trimToSize(int i10, String str) {
+    private void trimToSize(int i9, String str) {
         ArrayList<String> arrayList;
         synchronized (this) {
             try {
                 Iterator<Map.Entry<String, T>> it = this.map.entrySet().iterator();
-                while (it.hasNext() && this.size > i10 && !this.map.isEmpty()) {
+                while (it.hasNext() && this.size > i9 && !this.map.isEmpty()) {
                     Map.Entry<String, T> next = it.next();
                     String key = next.getKey();
                     if (str == null || !str.equals(key)) {

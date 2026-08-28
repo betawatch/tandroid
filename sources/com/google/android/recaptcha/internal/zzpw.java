@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import a9.p;
+import aa.d;
 import com.google.android.recaptcha.internal.zzpv;
 import com.google.android.recaptcha.internal.zzpw;
 import java.io.IOException;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class zzpw<MessageType extends zzpw<MessageType, BuilderType>, BuilderType extends zzpv<MessageType, BuilderType>> implements zzts {
     protected int zza = 0;
@@ -25,13 +25,13 @@ public abstract class zzpw<MessageType extends zzpw<MessageType, BuilderType>, B
             int zzo = zzo();
             zzqm zzqmVar = zzqm.zzb;
             byte[] bArr = new byte[zzo];
-            int i10 = zzqv.zzb;
+            int i9 = zzqv.zzb;
             zzqs zzqsVar = new zzqs(bArr, 0, zzo);
             zze(zzqsVar);
             zzqsVar.zzC();
             return new zzqk(bArr);
-        } catch (IOException e9) {
-            throw new RuntimeException(p.m("Serializing ", getClass().getName(), " to a ByteString threw an IOException (should never happen)."), e9);
+        } catch (IOException e10) {
+            throw new RuntimeException(d.o("Serializing ", getClass().getName(), " to a ByteString threw an IOException (should never happen)."), e10);
         }
     }
 
@@ -39,13 +39,13 @@ public abstract class zzpw<MessageType extends zzpw<MessageType, BuilderType>, B
         try {
             int zzo = zzo();
             byte[] bArr = new byte[zzo];
-            int i10 = zzqv.zzb;
+            int i9 = zzqv.zzb;
             zzqs zzqsVar = new zzqs(bArr, 0, zzo);
             zze(zzqsVar);
             zzqsVar.zzC();
             return bArr;
-        } catch (IOException e9) {
-            throw new RuntimeException(p.m("Serializing ", getClass().getName(), " to a byte array threw an IOException (should never happen)."), e9);
+        } catch (IOException e10) {
+            throw new RuntimeException(d.o("Serializing ", getClass().getName(), " to a byte array threw an IOException (should never happen)."), e10);
         }
     }
 }

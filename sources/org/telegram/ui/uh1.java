@@ -1,46 +1,60 @@
 package org.telegram.ui;
 
-import android.widget.EditText;
+import android.util.LongSparseArray;
+import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class uh1 extends org.telegram.ui.ActionBar.e5 {
-    public final /* synthetic */ WallpapersListActivity f;
+public final class uh1 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ WallpapersListActivity a;
 
     public uh1(WallpapersListActivity wallpapersListActivity) {
-        this.f = wallpapersListActivity;
+        this.a = wallpapersListActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void k() {
-        WallpapersListActivity wallpapersListActivity = this.f;
-        ai1 ai1Var = wallpapersListActivity.F;
-        ai1Var.n = null;
-        ai1Var.E(null, true);
-        wallpapersListActivity.H.setSearchFieldHint(LocaleController.getString(R.string.SearchBackgrounds));
-    }
-
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void m() {
-        WallpapersListActivity wallpapersListActivity = this.f;
-        wallpapersListActivity.D.setAdapter(wallpapersListActivity.E);
-        wallpapersListActivity.D.invalidate();
-        wallpapersListActivity.F.E(null, true);
-        wallpapersListActivity.H.setSearchFieldCaption(null);
-        k();
-    }
-
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void n() {
-        WallpapersListActivity wallpapersListActivity = this.f;
-        wallpapersListActivity.D.setAdapter(wallpapersListActivity.F);
-        wallpapersListActivity.D.invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void q(EditText editText) {
-        this.f.F.E(editText.getText().toString(), false);
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i9) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        WallpapersListActivity wallpapersListActivity = this.a;
+        LongSparseArray longSparseArray = wallpapersListActivity.e0;
+        if (i9 == -1) {
+            kVar = ((org.telegram.ui.ActionBar.o2) wallpapersListActivity).actionBar;
+            if (!kVar.s()) {
+                wallpapersListActivity.finishFragment();
+                return;
+            }
+            longSparseArray.clear();
+            kVar2 = ((org.telegram.ui.ActionBar.o2) wallpapersListActivity).actionBar;
+            kVar2.r();
+            wallpapersListActivity.C0();
+            return;
+        }
+        if (i9 != 4) {
+            if (i9 == 3) {
+                dy dyVar = new dy(org.telegram.messenger.l0.e(3, "onlySelect", "dialogsType", true));
+                dyVar.y2 = new th1(this);
+                wallpapersListActivity.presentFragment(dyVar);
+                return;
+            }
+            return;
+        }
+        if (wallpapersListActivity.getParentActivity() == null) {
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wallpapersListActivity.getParentActivity());
+        alertDialog$Builder.a.N = LocaleController.formatPluralString("DeleteBackground", longSparseArray.size(), new Object[0]);
+        alertDialog$Builder.a.P = LocaleController.formatString("DeleteChatBackgroundsAlert", R.string.DeleteChatBackgroundsAlert, new Object[0]);
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new th1(this));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+        org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+        wallpapersListActivity.showDialog(c2Var);
+        TextView textView = (TextView) c2Var.d(-1);
+        if (textView != null) {
+            textView.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.q7, false));
+        }
     }
 }

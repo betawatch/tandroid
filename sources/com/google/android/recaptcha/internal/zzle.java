@@ -4,13 +4,13 @@ import android.net.Uri;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import id.t;
+import hd.t;
 import java.io.ByteArrayInputStream;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzle extends WebViewClient {
     final /* synthetic */ zzly zza;
@@ -29,18 +29,18 @@ public final class zzle extends WebViewClient {
         zzmf zzmfVar;
         zzmfVar = this.zza.zzg;
         long zza = zzmfVar.zza(TimeUnit.MICROSECONDS);
-        int i10 = zzco.zza;
+        int i9 = zzco.zza;
         zzco.zza(zzcp.zzb.zza(), zza);
     }
 
     @Override // android.webkit.WebViewClient
-    public final void onReceivedError(WebView webView, int i10, String str, String str2) {
+    public final void onReceivedError(WebView webView, int i9, String str, String str2) {
         Map map;
-        super.onReceivedError(webView, i10, str, str2);
+        super.onReceivedError(webView, i9, str, str2);
         zzly zzlyVar = this.zza;
         zzce zzceVar = zzce.zzc;
         map = zzlyVar.zzc;
-        zzcd zzcdVar = (zzcd) map.get(Integer.valueOf(i10));
+        zzcd zzcdVar = (zzcd) map.get(Integer.valueOf(i9));
         if (zzcdVar == null) {
             zzcdVar = zzcd.zzM;
         }
@@ -55,7 +55,7 @@ public final class zzle extends WebViewClient {
         zzly zzlyVar = this.zza;
         Uri parse = Uri.parse(str);
         zzly.zzq(zzlyVar);
-        j.b(parse);
+        i.b(parse);
         if (!zzig.zzc(parse) || zzly.zzq(zzlyVar).zza(parse)) {
             return super.shouldInterceptRequest(webView, str);
         }

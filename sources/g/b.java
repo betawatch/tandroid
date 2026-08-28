@@ -1,25 +1,29 @@
 package g;
 
+import android.content.DialogInterface;
 import android.view.View;
-import android.widget.AbsListView;
+import android.widget.AdapterView;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b implements AbsListView.OnScrollListener {
-    public final /* synthetic */ View a;
-    public final /* synthetic */ View b;
+public final class b implements AdapterView.OnItemClickListener {
+    public final /* synthetic */ e a;
+    public final /* synthetic */ c b;
 
-    public b(View view, View view2) {
-        this.a = view;
-        this.b = view2;
+    public b(c cVar, e eVar) {
+        this.b = cVar;
+        this.a = eVar;
     }
 
-    @Override // android.widget.AbsListView.OnScrollListener
-    public final void onScroll(AbsListView absListView, int i10, int i11, int i12) {
-        f.b(absListView, this.a, this.b);
-    }
-
-    @Override // android.widget.AbsListView.OnScrollListener
-    public final void onScrollStateChanged(AbsListView absListView, int i10) {
+    @Override // android.widget.AdapterView.OnItemClickListener
+    public final void onItemClick(AdapterView adapterView, View view, int i9, long j10) {
+        c cVar = this.b;
+        DialogInterface.OnClickListener onClickListener = cVar.j;
+        e eVar = this.a;
+        onClickListener.onClick(eVar.b, i9);
+        if (cVar.l) {
+            return;
+        }
+        eVar.b.dismiss();
     }
 }

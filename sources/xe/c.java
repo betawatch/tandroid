@@ -1,55 +1,36 @@
 package xe;
 
-import com.google.android.exoplayer2.upstream.m;
-import com.google.android.exoplayer2.upstream.q;
-import java.io.IOException;
-import java.io.InputStream;
+import android.app.Activity;
+import android.content.ComponentCallbacks2;
+import android.view.View;
+import h3.k0;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c extends InputStream {
-    public final m a;
-    public final byte[] b = new byte[1];
-    public long c;
+public final class c {
+    public final Activity a;
+    public final ze.a b;
+    public String c;
+    public int d;
+    public int e = 0;
+    public boolean f = false;
+    public k0 g;
+    public int h;
+    public int i;
+    public View j;
+    public View k;
 
-    public c(m mVar, q qVar) {
-        this.a = mVar;
-        try {
-            this.c = mVar.open(qVar);
-        } catch (IOException e9) {
-            throw new RuntimeException(e9);
+    public c(Activity activity, ze.a aVar) {
+        this.a = activity;
+        this.b = aVar;
+    }
+
+    public final d a() {
+        ComponentCallbacks2 componentCallbacks2 = this.a;
+        if (componentCallbacks2 instanceof ye.a) {
+            return new d(((LaunchActivity) ((ye.a) componentCallbacks2)).i0, this);
         }
-    }
-
-    @Override // java.io.InputStream
-    public final int available() {
-        return (int) this.c;
-    }
-
-    @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        this.a.close();
-    }
-
-    @Override // java.io.InputStream
-    public final int read() {
-        m mVar = this.a;
-        byte[] bArr = this.b;
-        int read = mVar.read(bArr, 0, 1);
-        this.c--;
-        if (read == -1) {
-            return -1;
-        }
-        return bArr[0] & 255;
-    }
-
-    @Override // java.io.InputStream
-    public final int read(byte[] bArr, int i10, int i11) {
-        if (i11 == 0) {
-            return 0;
-        }
-        int read = this.a.read(bArr, i10, i11);
-        this.c -= read;
-        return read;
+        return null;
     }
 }

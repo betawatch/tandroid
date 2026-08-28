@@ -1,44 +1,87 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.ViewGroup;
+import android.os.Bundle;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.EmojiData;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ov implements jg.j {
+public final /* synthetic */ class ov implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ViewGroup b;
+    public final /* synthetic */ wy b;
 
-    public /* synthetic */ ov(ViewGroup viewGroup, int i10) {
-        this.a = i10;
-        this.b = viewGroup;
+    public /* synthetic */ ov(wy wyVar, int i9) {
+        this.a = i9;
+        this.b = wyVar;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // jg.j
-    public final boolean a(Canvas canvas, View view, long j10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                return ((ww) this.b).drawChild(canvas, view, j10);
+                wy wyVar = this.b;
+                wyVar.Y(false);
+                wyVar.F();
+                break;
             case 1:
-                return ((zk0) this.b).drawChild(canvas, view, j10);
+                wy wyVar2 = this.b;
+                wyVar2.L.postOnAnimation(new ov(wyVar2, 6));
+                break;
             case 2:
-                ew ewVar = ((yy) this.b).z0;
-                if (view instanceof xf.c) {
-                    canvas.save();
-                    canvas.translate(view.getX(), view.getY());
-                    org.telegram.ui.Cells.a8 a8Var = (org.telegram.ui.Cells.a8) ((xf.c) view);
-                    if (a8Var.H) {
-                        a8Var.b(canvas, ewVar);
-                    }
-                    canvas.restore();
+                fx fxVar = this.b.N;
+                if (fxVar != null) {
+                    fxVar.F(true);
+                    break;
                 }
-                return ewVar.drawChild(canvas, view, j10);
+                break;
             case 3:
-                return ((so0) this.b).drawChild(canvas, view, j10);
+                wy wyVar3 = this.b;
+                wyVar3.d0.postOnAnimation(new ov(wyVar3, 6));
+                break;
+            case 4:
+                wy wyVar4 = this.b;
+                wyVar4.z0.postOnAnimation(new ov(wyVar4, 6));
+                break;
+            case 5:
+                wy wyVar5 = this.b;
+                wx wxVar = wyVar5.p1;
+                if (wxVar != null) {
+                    wxVar.t(wyVar5.N.h);
+                    break;
+                }
+                break;
+            case 6:
+                this.b.C();
+                break;
+            case 7:
+                wx wxVar2 = this.b.p1;
+                if (wxVar2 != null) {
+                    wxVar2.q();
+                    break;
+                }
+                break;
+            case 8:
+                wy wyVar6 = this.b;
+                wyVar6.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putLong("user_id", UserConfig.getInstance(wyVar6.Y0).getClientUserId());
+                wyVar6.U1.presentFragment(new uw(bundle));
+                break;
             default:
-                return ((ys0) this.b).drawChild(canvas, view, j10);
+                wy wyVar7 = this.b;
+                ArrayList<jx> emojipacks = wyVar7.getEmojipacks();
+                for (int i9 = 0; i9 < emojipacks.size(); i9++) {
+                    if (emojipacks.get(i9).i) {
+                        int i10 = wyVar7.N.s.get(EmojiData.dataColored.length + i9);
+                        wyVar7.L.B0();
+                        wyVar7.V(i10);
+                        wyVar7.H(i10, AndroidUtilities.dp(-9.0f));
+                        wyVar7.n(null, 0);
+                    }
+                }
+                break;
         }
     }
 }

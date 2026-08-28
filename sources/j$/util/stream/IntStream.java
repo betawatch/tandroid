@@ -77,7 +77,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
     boolean r();
 
-    int reduce(int i10, IntBinaryOperator intBinaryOperator);
+    int reduce(int i9, IntBinaryOperator intBinaryOperator);
 
     j$.util.c0 reduce(IntBinaryOperator intBinaryOperator);
 
@@ -283,8 +283,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // java.util.stream.IntStream
-        public final /* synthetic */ int reduce(int i10, IntBinaryOperator intBinaryOperator) {
-            return IntStream.this.reduce(i10, intBinaryOperator);
+        public final /* synthetic */ int reduce(int i9, IntBinaryOperator intBinaryOperator) {
+            return IntStream.this.reduce(i9, intBinaryOperator);
         }
 
         @Override // java.util.stream.IntStream
@@ -545,8 +545,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // j$.util.stream.IntStream
-        public final /* synthetic */ int reduce(int i10, IntBinaryOperator intBinaryOperator) {
-            return this.a.reduce(i10, intBinaryOperator);
+        public final /* synthetic */ int reduce(int i9, IntBinaryOperator intBinaryOperator) {
+            return this.a.reduce(i9, intBinaryOperator);
         }
 
         @Override // j$.util.stream.IntStream

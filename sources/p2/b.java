@@ -3,7 +3,7 @@ package p2;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
@@ -18,26 +18,26 @@ public abstract class b {
         }
         try {
             return str.getBytes("UTF-8");
-        } catch (UnsupportedEncodingException e9) {
-            throw new Error(e9);
+        } catch (UnsupportedEncodingException e10) {
+            throw new Error(e10);
         }
     }
 
-    public static String c(int i10, byte[] bArr) {
+    public static String c(int i9, byte[] bArr) {
         int length = bArr.length;
-        char[] cArr = new char[(length << 1) + (i10 > 0 ? length / i10 : 0)];
-        int i11 = 0;
-        for (int i12 = 0; i12 < length; i12++) {
-            if (i10 > 0 && i12 % i10 == 0 && i11 > 0) {
-                cArr[i11] = '-';
-                i11++;
+        char[] cArr = new char[(length << 1) + (i9 > 0 ? length / i9 : 0)];
+        int i10 = 0;
+        for (int i11 = 0; i11 < length; i11++) {
+            if (i9 > 0 && i11 % i9 == 0 && i10 > 0) {
+                cArr[i10] = '-';
+                i10++;
             }
-            int i13 = i11 + 1;
-            byte b10 = bArr[i12];
+            int i12 = i10 + 1;
+            byte b10 = bArr[i11];
             char[] cArr2 = a;
-            cArr[i11] = cArr2[(b10 & 240) >>> 4];
-            i11 += 2;
-            cArr[i13] = cArr2[b10 & 15];
+            cArr[i10] = cArr2[(b10 & 240) >>> 4];
+            i10 += 2;
+            cArr[i12] = cArr2[b10 & 15];
         }
         return new String(cArr);
     }
@@ -47,8 +47,8 @@ public abstract class b {
         byteBuffer.get(bArr);
         try {
             return new String(bArr, "ISO-8859-1");
-        } catch (UnsupportedEncodingException e9) {
-            throw new RuntimeException(e9);
+        } catch (UnsupportedEncodingException e10) {
+            throw new RuntimeException(e10);
         }
     }
 
@@ -77,9 +77,9 @@ public abstract class b {
     }
 
     public static long j(ByteBuffer byteBuffer) {
-        long i10 = i(byteBuffer) << 32;
-        if (i10 >= 0) {
-            return i(byteBuffer) + i10;
+        long i9 = i(byteBuffer) << 32;
+        if (i9 >= 0) {
+            return i(byteBuffer) + i9;
         }
         throw new RuntimeException("I don't know how to deal with UInt64! long is not sufficient and I don't want to use BigInt");
     }
@@ -100,19 +100,19 @@ public abstract class b {
     }
 
     public static void m(ByteBuffer byteBuffer, double d) {
-        int i10 = (int) (d * 1.073741824E9d);
-        byteBuffer.put((byte) (((-16777216) & i10) >> 24));
-        byteBuffer.put((byte) ((16711680 & i10) >> 16));
-        byteBuffer.put((byte) ((65280 & i10) >> 8));
-        byteBuffer.put((byte) (i10 & 255));
+        int i9 = (int) (d * 1.073741824E9d);
+        byteBuffer.put((byte) (((-16777216) & i9) >> 24));
+        byteBuffer.put((byte) ((16711680 & i9) >> 16));
+        byteBuffer.put((byte) ((65280 & i9) >> 8));
+        byteBuffer.put((byte) (i9 & 255));
     }
 
     public static void n(ByteBuffer byteBuffer, double d) {
-        int i10 = (int) (d * 65536.0d);
-        byteBuffer.put((byte) (((-16777216) & i10) >> 24));
-        byteBuffer.put((byte) ((16711680 & i10) >> 16));
-        byteBuffer.put((byte) ((65280 & i10) >> 8));
-        byteBuffer.put((byte) (i10 & 255));
+        int i9 = (int) (d * 65536.0d);
+        byteBuffer.put((byte) (((-16777216) & i9) >> 24));
+        byteBuffer.put((byte) ((16711680 & i9) >> 16));
+        byteBuffer.put((byte) ((65280 & i9) >> 8));
+        byteBuffer.put((byte) (i9 & 255));
     }
 
     public static void o(ByteBuffer byteBuffer, double d) {
@@ -121,17 +121,17 @@ public abstract class b {
         byteBuffer.put((byte) (s10 & 255));
     }
 
-    public static void p(int i10, ByteBuffer byteBuffer) {
-        r((65535 & i10) >> 8, byteBuffer);
-        byteBuffer.put((byte) (i10 & 255));
+    public static void p(int i9, ByteBuffer byteBuffer) {
+        r((65535 & i9) >> 8, byteBuffer);
+        byteBuffer.put((byte) (i9 & 255));
     }
 
-    public static void q(int i10, ByteBuffer byteBuffer) {
-        p((16777215 & i10) >> 8, byteBuffer);
-        byteBuffer.put((byte) (i10 & 255));
+    public static void q(int i9, ByteBuffer byteBuffer) {
+        p((16777215 & i9) >> 8, byteBuffer);
+        byteBuffer.put((byte) (i9 & 255));
     }
 
-    public static void r(int i10, ByteBuffer byteBuffer) {
-        byteBuffer.put((byte) (i10 & 255));
+    public static void r(int i9, ByteBuffer byteBuffer) {
+        byteBuffer.put((byte) (i9 & 255));
     }
 }

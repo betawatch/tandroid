@@ -10,7 +10,7 @@ import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class yz0 extends View {
     public final RectF a;
@@ -42,16 +42,16 @@ public final class yz0 extends View {
         paint.setColor(637534208);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.d = ofFloat;
-        ofFloat.setInterpolator(org.telegram.ui.Components.er.j);
-        ofFloat.addUpdateListener(new g3(this, 29));
-        ofFloat.addListener(new n40(6, this, profileActivity.j1));
+        ofFloat.setInterpolator(org.telegram.ui.Components.gr.j);
+        ofFloat.addUpdateListener(new f3(this, 29));
+        ofFloat.addListener(new n60(5, this, profileActivity.j1));
         profileActivity.j0.b(new xz0(this));
         adapter.a.registerObserver(new h1.a(this, 3));
     }
 
     public final void a(boolean z10) {
         org.telegram.ui.ActionBar.k kVar;
-        int i10;
+        int i9;
         org.telegram.ui.ActionBar.k kVar2;
         ProfileActivity profileActivity = this.n;
         if (z10) {
@@ -67,12 +67,12 @@ public final class yz0 extends View {
         RectF rectF = this.a;
         rectF.right = measuredWidth;
         rectF.left = measuredWidth - (AndroidUtilities.dpf2(16.0f) + measureText);
-        kVar = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.o2) profileActivity).actionBar;
         if (kVar != null) {
-            kVar2 = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
+            kVar2 = ((org.telegram.ui.ActionBar.o2) profileActivity).actionBar;
             if (kVar2.getOccupyStatusBar()) {
-                i10 = AndroidUtilities.statusBarHeight;
-                float dp = AndroidUtilities.dp(15.0f) + i10;
+                i9 = AndroidUtilities.statusBarHeight;
+                float dp = AndroidUtilities.dp(15.0f) + i9;
                 rectF.top = dp;
                 rectF.bottom = dp + AndroidUtilities.dp(26.0f);
                 setPivotX(rectF.centerX());
@@ -80,8 +80,8 @@ public final class yz0 extends View {
                 invalidate();
             }
         }
-        i10 = 0;
-        float dp2 = AndroidUtilities.dp(15.0f) + i10;
+        i9 = 0;
+        float dp2 = AndroidUtilities.dp(15.0f) + i9;
         rectF.top = dp2;
         rectF.bottom = dp2 + AndroidUtilities.dp(26.0f);
         setPivotX(rectF.centerX());
@@ -137,7 +137,7 @@ public final class yz0 extends View {
     }
 
     @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+    public final void onSizeChanged(int i9, int i10, int i11, int i12) {
         a(false);
     }
 }

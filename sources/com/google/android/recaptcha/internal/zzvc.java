@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import libcore.io.Memory;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class zzvc {
     static final long zza;
@@ -32,7 +32,7 @@ final class zzvc {
         zzvb zzvbVar2;
         Unsafe zzg2 = zzg();
         zzc = zzg2;
-        int i10 = zzqa.zza;
+        int i9 = zzqa.zza;
         zzd = Memory.class;
         Class<?> cls = Long.TYPE;
         boolean zzv = zzv(cls);
@@ -155,7 +155,7 @@ final class zzvc {
     }
 
     private static Field zzB() {
-        int i10 = zzqa.zza;
+        int i9 = zzqa.zza;
         Field zzC = zzC(Buffer.class, "effectiveDirectAddress");
         if (zzC != null) {
             return zzC;
@@ -179,17 +179,17 @@ final class zzvc {
     public static void zzD(Object obj, long j10, byte b10) {
         Unsafe unsafe = zzf.zza;
         long j11 = (-4) & j10;
-        int i10 = unsafe.getInt(obj, j11);
-        int i11 = ((~((int) j10)) & 3) << 3;
-        unsafe.putInt(obj, j11, ((255 & b10) << i11) | (i10 & (~(255 << i11))));
+        int i9 = unsafe.getInt(obj, j11);
+        int i10 = ((~((int) j10)) & 3) << 3;
+        unsafe.putInt(obj, j11, ((255 & b10) << i10) | (i9 & (~(255 << i10))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void zzE(Object obj, long j10, byte b10) {
         Unsafe unsafe = zzf.zza;
         long j11 = (-4) & j10;
-        int i10 = (((int) j10) & 3) << 3;
-        unsafe.putInt(obj, j11, ((255 & b10) << i10) | (unsafe.getInt(obj, j11) & (~(255 << i10))));
+        int i9 = (((int) j10) & 3) << 3;
+        unsafe.putInt(obj, j11, ((255 & b10) << i9) | (unsafe.getInt(obj, j11) & (~(255 << i9))));
     }
 
     public static double zza(Object obj, long j10) {
@@ -211,8 +211,8 @@ final class zzvc {
     public static Object zze(Class cls) {
         try {
             return zzc.allocateInstance(cls);
-        } catch (InstantiationException e9) {
-            throw new IllegalStateException(e9);
+        } catch (InstantiationException e10) {
+            throw new IllegalStateException(e10);
         }
     }
 
@@ -248,8 +248,8 @@ final class zzvc {
         zzf.zzf(obj, j10, f10);
     }
 
-    public static void zzq(Object obj, long j10, int i10) {
-        zzf.zza.putInt(obj, j10, i10);
+    public static void zzq(Object obj, long j10, int i9) {
+        zzf.zza.putInt(obj, j10, i9);
     }
 
     public static void zzr(Object obj, long j10, long j11) {
@@ -270,7 +270,7 @@ final class zzvc {
 
     /* JADX WARN: Multi-variable type inference failed */
     public static boolean zzv(Class cls) {
-        int i10 = zzqa.zza;
+        int i9 = zzqa.zza;
         try {
             Class cls2 = zzd;
             Class cls3 = Boolean.TYPE;

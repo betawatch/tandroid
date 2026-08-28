@@ -1,475 +1,112 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.media.MediaMetadataRetriever;
-import android.os.AsyncTask;
-import android.view.MotionEvent;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class b71 extends View {
-    public static final Object P = new Object();
-    public int A;
-    public int B;
-    public float C;
-    public float D;
-    public boolean E;
-    public Rect F;
-    public Rect G;
-    public int H;
-    public Bitmap I;
-    public final ArrayList J;
-    public boolean K;
-    public z61 L;
-    public Path M;
-    public final Paint N;
-    public boolean O;
-    public long a;
-    public float b;
-    public float c;
-    public final Paint d;
-    public final Paint e;
-    public boolean f;
-    public boolean h;
-    public float n;
-    public MediaMetadataRetriever r;
-    public a71 s;
-    public final ArrayList v;
-    public y61 w;
-    public long x;
-    public int y;
+public final class b71 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n71 b;
 
-    public b71(Context context) {
-        super(context);
-        this.c = 1.0f;
-        Paint paint = new Paint();
-        this.d = paint;
-        Paint paint2 = new Paint();
-        this.e = paint2;
-        this.v = new ArrayList();
-        this.C = 1.0f;
-        this.D = 0.0f;
-        this.J = new ArrayList();
-        Paint paint3 = new Paint(1);
-        this.N = paint3;
-        paint.setColor(2130706432);
-        paint3.setColor(-1);
-        paint3.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
-        paint3.setStyle(Paint.Style.STROKE);
-        paint3.setStrokeCap(Paint.Cap.ROUND);
-        paint2.setColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.a7, false));
-        this.H = 0;
-        z61 z61Var = this.L;
-        if (z61Var != null) {
-            z61Var.b();
-        }
+    public /* synthetic */ b71(n71 n71Var, int i9) {
+        this.a = i9;
+        this.b = n71Var;
     }
 
-    public final void a(boolean z10) {
-        synchronized (P) {
-            try {
-                MediaMetadataRetriever mediaMetadataRetriever = this.r;
-                if (mediaMetadataRetriever != null) {
-                    mediaMetadataRetriever.release();
-                    this.r = null;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                n71 n71Var = this.b;
+                View[] viewArr = n71Var.e;
+                View[] viewArr2 = n71Var.e;
+                if (viewArr[1] != null) {
+                    n71Var.F();
+                    n71Var.h.put(n71Var.f[1], viewArr2[1]);
+                    n71Var.removeView(viewArr2[1]);
+                    n71Var.E(viewArr2[0], 0.0f);
+                    viewArr2[1] = null;
                 }
-            } catch (Exception e9) {
-                FileLog.e(e9);
-            }
-        }
-        if (z10) {
-            int i10 = 0;
-            if (this.J.isEmpty()) {
-                while (i10 < this.v.size()) {
-                    Bitmap bitmap = (Bitmap) this.v.get(i10);
-                    if (bitmap != null) {
-                        bitmap.recycle();
-                    }
-                    i10++;
+                n71Var.M = null;
+                n71Var.w(true);
+                c71 c71Var = n71Var.I;
+                if (c71Var != null) {
+                    c71Var.v.invalidate();
+                    n71Var.I.v.f1();
+                    n71Var.I.invalidate();
                 }
-            } else {
-                while (i10 < this.J.size()) {
-                    Bitmap bitmap2 = (Bitmap) this.J.get(i10);
-                    if (bitmap2 != null) {
-                        bitmap2.recycle();
+                n71Var.u();
+                n71Var.F.unlock();
+                break;
+            case 1:
+                n71 n71Var2 = this.b;
+                n71Var2.w = null;
+                View[] viewArr3 = n71Var2.e;
+                if (viewArr3[1] != null) {
+                    if (!n71Var2.B) {
+                        n71Var2.F();
                     }
-                    i10++;
+                    n71Var2.h.put(n71Var2.f[1], viewArr3[1]);
+                    n71Var2.removeView(viewArr3[1]);
+                    viewArr3[1].setVisibility(8);
+                    viewArr3[1] = null;
                 }
-            }
-        }
-        this.J.clear();
-        this.v.clear();
-        y61 y61Var = this.w;
-        if (y61Var != null) {
-            y61Var.cancel(true);
-            this.w = null;
-        }
-    }
-
-    public final void b(int i10) {
-        if (this.r == null) {
-            return;
-        }
-        if (i10 == 0) {
-            if (this.E) {
-                int dp = AndroidUtilities.dp(56.0f);
-                this.y = dp;
-                this.A = dp;
-                this.B = Math.max(1, (int) Math.ceil((getMeasuredWidth() - AndroidUtilities.dp(16.0f)) / (this.A / 2.0f)));
-            } else {
-                this.A = AndroidUtilities.dp(40.0f);
-                this.B = Math.max(1, (getMeasuredWidth() - AndroidUtilities.dp(16.0f)) / this.A);
-                this.y = (int) Math.ceil((getMeasuredWidth() - AndroidUtilities.dp(16.0f)) / this.B);
-            }
-            this.x = this.a / this.B;
-            ArrayList arrayList = this.J;
-            if (!arrayList.isEmpty()) {
-                float size = arrayList.size() / this.B;
-                float f10 = 0.0f;
-                for (int i11 = 0; i11 < this.B; i11++) {
-                    this.v.add((Bitmap) arrayList.get((int) f10));
-                    f10 += size;
+                n71Var2.x = false;
+                n71Var2.E = false;
+                c71 c71Var2 = n71Var2.I;
+                if (c71Var2 != null) {
+                    c71Var2.setEnabled(true);
                 }
-                return;
-            }
-        }
-        this.K = false;
-        y61 y61Var = new y61(this);
-        this.w = y61Var;
-        y61Var.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, Integer.valueOf(i10), null, null);
-    }
-
-    public float getLeftProgress() {
-        return this.b;
-    }
-
-    public float getRightProgress() {
-        return this.c;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.O) {
-            canvas.save();
-            Path path = this.M;
-            if (path != null) {
-                canvas.clipPath(path);
-            }
-        }
-        float measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(24.0f);
-        int dp = AndroidUtilities.dp(12.0f) + ((int) (this.b * measuredWidth));
-        int dp2 = AndroidUtilities.dp(12.0f) + ((int) (measuredWidth * this.c));
-        float f10 = 32.0f;
-        int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(32.0f)) >> 1;
-        ArrayList arrayList = this.v;
-        if (arrayList.isEmpty() && this.w == null) {
-            b(0);
-        }
-        if (arrayList.isEmpty()) {
-            if (this.O) {
-                canvas.restore();
-                return;
-            }
-            return;
-        }
-        if (!this.K) {
-            canvas.drawRect(0.0f, measuredHeight, getMeasuredWidth(), getMeasuredHeight() - measuredHeight, this.e);
-        }
-        int i10 = 0;
-        int i11 = 0;
-        while (i10 < arrayList.size()) {
-            Bitmap bitmap = (Bitmap) arrayList.get(i10);
-            if (bitmap != null && !bitmap.isRecycled()) {
-                boolean z10 = this.E;
-                int i12 = this.y;
-                if (z10) {
-                    i12 /= 2;
+                n71Var2.w(false);
+                n71Var2.u();
+                n71Var2.F.unlock();
+                break;
+            case 2:
+                n71 n71Var3 = this.b;
+                n71Var3.w = null;
+                View[] viewArr4 = n71Var3.e;
+                View view = viewArr4[1];
+                if (view != null) {
+                    n71Var3.removeView(view);
+                    viewArr4[1] = null;
                 }
-                int i13 = i12 * i11;
-                if (z10) {
-                    this.G.set(i13, measuredHeight, AndroidUtilities.dp(28.0f) + i13, AndroidUtilities.dp(f10) + measuredHeight);
-                    canvas.drawBitmap(bitmap, this.F, this.G, (Paint) null);
-                } else {
-                    canvas.drawBitmap(bitmap, i13, measuredHeight, (Paint) null);
+                n71Var3.x = false;
+                c71 c71Var3 = n71Var3.I;
+                if (c71Var3 != null) {
+                    c71Var3.setEnabled(true);
+                    c71 c71Var4 = n71Var3.I;
+                    c71Var4.F = false;
+                    c71Var4.a = 1.0f;
+                    c71Var4.v.f1();
+                    n71Var3.I.invalidate();
+                    break;
                 }
-            }
-            i11++;
-            i10++;
-            f10 = 32.0f;
-        }
-        float f11 = measuredHeight;
-        float measuredHeight2 = getMeasuredHeight() - measuredHeight;
-        Paint paint = this.d;
-        canvas.drawRect(0.0f, f11, dp, measuredHeight2, paint);
-        canvas.drawRect(dp2, f11, getMeasuredWidth(), getMeasuredHeight() - measuredHeight, paint);
-        float dp3 = dp - AndroidUtilities.dp(4.0f);
-        float dp4 = AndroidUtilities.dp(10.0f) + measuredHeight;
-        float dp5 = dp - AndroidUtilities.dp(4.0f);
-        float B = org.telegram.messenger.y1.B(10.0f, getMeasuredHeight(), measuredHeight);
-        Paint paint2 = this.N;
-        canvas.drawLine(dp3, dp4, dp5, B, paint2);
-        canvas.drawLine(AndroidUtilities.dp(4.0f) + dp2, AndroidUtilities.dp(10.0f) + measuredHeight, AndroidUtilities.dp(4.0f) + dp2, org.telegram.messenger.y1.B(10.0f, getMeasuredHeight(), measuredHeight), paint2);
-        if (this.O) {
-            canvas.restore();
-            return;
-        }
-        int measuredHeight3 = getMeasuredHeight() - (measuredHeight * 2);
-        int measuredWidth2 = getMeasuredWidth();
-        if (AndroidUtilities.dp(6.0f) != this.H) {
-            this.H = AndroidUtilities.dp(6.0f);
-            this.I = Bitmap.createBitmap(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Bitmap.Config.ARGB_8888);
-            Canvas canvas2 = new Canvas(this.I);
-            Paint paint3 = new Paint(1);
-            paint3.setColor(0);
-            paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-            canvas2.drawColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.Sd, false));
-            float f12 = this.H;
-            canvas2.drawCircle(f12, f12, f12, paint3);
-        }
-        int i14 = this.H >> 1;
-        canvas.save();
-        float f13 = 0;
-        canvas.drawBitmap(this.I, f13, f11, (Paint) null);
-        float f14 = (measuredHeight3 + measuredHeight) - i14;
-        canvas.rotate(-90.0f, i14, f14);
-        canvas.drawBitmap(this.I, f13, r2 - this.H, (Paint) null);
-        canvas.restore();
-        canvas.save();
-        float f15 = measuredWidth2 - i14;
-        canvas.rotate(180.0f, f15, f14);
-        Bitmap bitmap2 = this.I;
-        int i15 = this.H;
-        canvas.drawBitmap(bitmap2, measuredWidth2 - i15, r2 - i15, (Paint) null);
-        canvas.restore();
-        canvas.save();
-        canvas.rotate(90.0f, f15, measuredHeight + i14);
-        canvas.drawBitmap(this.I, measuredWidth2 - this.H, f11, (Paint) null);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        if (this.O) {
-            if (this.M == null) {
-                this.M = new Path();
-            }
-            this.M.rewind();
-            int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(32.0f)) >> 1;
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(0.0f, measuredHeight, getMeasuredWidth(), getMeasuredHeight() - measuredHeight);
-            this.M.addRoundRect(rectF, AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), Path.Direction.CCW);
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent != null) {
-            float x8 = motionEvent.getX();
-            float y10 = motionEvent.getY();
-            int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(24.0f);
-            float f10 = measuredWidth;
-            int dp = AndroidUtilities.dp(12.0f) + ((int) (this.b * f10));
-            int dp2 = AndroidUtilities.dp(12.0f) + ((int) (this.c * f10));
-            if (motionEvent.getAction() == 0) {
-                getParent().requestDisallowInterceptTouchEvent(true);
-                if (this.r != null) {
-                    int dp3 = AndroidUtilities.dp(24.0f);
-                    if (dp - dp3 <= x8 && x8 <= dp + dp3 && y10 >= 0.0f && y10 <= getMeasuredHeight()) {
-                        a71 a71Var = this.s;
-                        if (a71Var != null) {
-                            ((qe) a71Var).a.U2.A(0.0f, 1);
-                        }
-                        this.f = true;
-                        this.n = (int) (x8 - dp);
-                        this.L.setTime((int) ((this.a / 1000.0f) * this.b));
-                        this.L.setCx(AndroidUtilities.dp(4.0f) + getLeft() + dp);
-                        this.L.a(true);
-                        invalidate();
-                        return true;
+                break;
+            default:
+                n71 n71Var4 = this.b;
+                n71Var4.w = null;
+                View[] viewArr5 = n71Var4.e;
+                if (viewArr5[1] != null) {
+                    if (!n71Var4.B) {
+                        n71Var4.F();
                     }
-                    if (dp2 - dp3 > x8 || x8 > dp3 + dp2 || y10 < 0.0f || y10 > getMeasuredHeight()) {
-                        this.L.a(false);
-                        return false;
-                    }
-                    a71 a71Var2 = this.s;
-                    if (a71Var2 != null) {
-                        ((qe) a71Var2).a.U2.A(0.0f, 1);
-                    }
-                    this.h = true;
-                    this.n = (int) (x8 - dp2);
-                    this.L.setTime((int) ((this.a / 1000.0f) * this.c));
-                    this.L.setCx((getLeft() + dp2) - AndroidUtilities.dp(4.0f));
-                    this.L.a(true);
-                    invalidate();
-                    return true;
+                    n71Var4.h.put(n71Var4.f[1], viewArr5[1]);
+                    n71Var4.removeView(viewArr5[1]);
+                    viewArr5[1].setVisibility(8);
+                    viewArr5[1] = null;
                 }
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                if (this.f) {
-                    a71 a71Var3 = this.s;
-                    if (a71Var3 != null) {
-                        ((qe) a71Var3).a.U2.A(0.0f, 0);
-                    }
-                    this.f = false;
-                    invalidate();
-                    this.L.a(false);
-                    return true;
+                n71Var4.x = false;
+                n71Var4.E = false;
+                c71 c71Var5 = n71Var4.I;
+                if (c71Var5 != null) {
+                    c71Var5.setEnabled(true);
                 }
-                if (this.h) {
-                    a71 a71Var4 = this.s;
-                    if (a71Var4 != null) {
-                        ((qe) a71Var4).a.U2.A(0.0f, 0);
-                    }
-                    this.h = false;
-                    invalidate();
-                    this.L.a(false);
-                    return true;
-                }
-            } else if (motionEvent.getAction() == 2) {
-                if (this.f) {
-                    int i10 = (int) (x8 - this.n);
-                    if (i10 < AndroidUtilities.dp(16.0f)) {
-                        dp2 = AndroidUtilities.dp(16.0f);
-                    } else if (i10 <= dp2) {
-                        dp2 = i10;
-                    }
-                    float dp4 = (dp2 - AndroidUtilities.dp(16.0f)) / f10;
-                    this.b = dp4;
-                    float f11 = this.c;
-                    float f12 = f11 - dp4;
-                    float f13 = this.C;
-                    if (f12 > f13) {
-                        this.c = dp4 + f13;
-                    } else {
-                        float f14 = this.D;
-                        if (f14 != 0.0f && f12 < f14) {
-                            float f15 = f11 - f14;
-                            this.b = f15;
-                            if (f15 < 0.0f) {
-                                this.b = 0.0f;
-                            }
-                        }
-                    }
-                    this.L.setCx(((AndroidUtilities.dpf2(12.0f) + (f10 * this.b)) + getLeft()) - AndroidUtilities.dp(4.0f));
-                    this.L.setTime((int) ((this.a / 1000.0f) * this.b));
-                    this.L.a(true);
-                    a71 a71Var5 = this.s;
-                    if (a71Var5 != null) {
-                        float f16 = this.b;
-                        ChatActivityEnterView chatActivityEnterView = ((qe) a71Var5).a;
-                        VideoEditedInfo videoEditedInfo = chatActivityEnterView.Z2;
-                        if (videoEditedInfo != null) {
-                            videoEditedInfo.startTime = (long) (videoEditedInfo.estimatedDuration * f16);
-                            chatActivityEnterView.U2.A(f16, 2);
-                        }
-                    }
-                    invalidate();
-                    return true;
-                }
-                if (this.h) {
-                    int i11 = (int) (x8 - this.n);
-                    if (i11 >= dp) {
-                        dp = i11 > AndroidUtilities.dp(16.0f) + measuredWidth ? AndroidUtilities.dp(16.0f) + measuredWidth : i11;
-                    }
-                    float dp5 = (dp - AndroidUtilities.dp(16.0f)) / f10;
-                    this.c = dp5;
-                    float f17 = this.b;
-                    float f18 = dp5 - f17;
-                    float f19 = this.C;
-                    if (f18 > f19) {
-                        this.b = dp5 - f19;
-                    } else {
-                        float f20 = this.D;
-                        if (f20 != 0.0f && f18 < f20) {
-                            float f21 = f17 + f20;
-                            this.c = f21;
-                            if (f21 > 1.0f) {
-                                this.c = 1.0f;
-                            }
-                        }
-                    }
-                    this.L.setCx(AndroidUtilities.dpf2(12.0f) + (f10 * this.c) + getLeft() + AndroidUtilities.dp(4.0f));
-                    this.L.a(true);
-                    this.L.setTime((int) ((this.a / 1000.0f) * this.c));
-                    a71 a71Var6 = this.s;
-                    if (a71Var6 != null) {
-                        float f22 = this.c;
-                        ChatActivityEnterView chatActivityEnterView2 = ((qe) a71Var6).a;
-                        VideoEditedInfo videoEditedInfo2 = chatActivityEnterView2.Z2;
-                        if (videoEditedInfo2 != null) {
-                            videoEditedInfo2.endTime = (long) (videoEditedInfo2.estimatedDuration * f22);
-                            chatActivityEnterView2.U2.A(f22, 2);
-                        }
-                    }
-                    invalidate();
-                    return true;
-                }
-            }
+                n71Var4.w(false);
+                n71Var4.u();
+                n71Var4.F.unlock();
+                break;
         }
-        return false;
-    }
-
-    public void setDelegate(a71 a71Var) {
-        this.s = a71Var;
-    }
-
-    public void setKeyframes(ArrayList<Bitmap> arrayList) {
-        ArrayList arrayList2 = this.J;
-        arrayList2.clear();
-        arrayList2.addAll(arrayList);
-    }
-
-    public void setMaxProgressDiff(float f10) {
-        this.C = f10;
-        float f11 = this.c;
-        float f12 = this.b;
-        if (f11 - f12 > f10) {
-            this.c = f12 + f10;
-            invalidate();
-        }
-    }
-
-    public void setMinProgressDiff(float f10) {
-        this.D = f10;
-    }
-
-    public void setRoundFrames(boolean z10) {
-        this.E = z10;
-        if (z10) {
-            this.F = new Rect(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f));
-            this.G = new Rect();
-        }
-    }
-
-    public void setTimeHintView(z61 z61Var) {
-        this.L = z61Var;
-    }
-
-    public void setVideoPath(String str) {
-        a(false);
-        MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
-        this.r = mediaMetadataRetriever;
-        this.b = 0.0f;
-        this.c = 1.0f;
-        try {
-            mediaMetadataRetriever.setDataSource(str);
-            this.a = Long.parseLong(this.r.extractMetadata(9));
-        } catch (Exception e9) {
-            FileLog.e(e9);
-        }
-        invalidate();
     }
 }

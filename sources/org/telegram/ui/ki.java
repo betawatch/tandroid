@@ -1,23 +1,47 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ki extends org.telegram.ui.Cells.v0 {
-    public final /* synthetic */ rn g2;
+public final class ki implements Runnable {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ org.telegram.ui.Components.uj0 e;
+    public final /* synthetic */ float f;
+    public final /* synthetic */ float h;
+    public final /* synthetic */ hg.r0 n;
+    public final /* synthetic */ MessageObject r;
+    public final /* synthetic */ qn s;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ki(Activity activity, org.telegram.ui.ActionBar.c6 c6Var, rn rnVar) {
-        super(activity, c6Var, false);
-        this.g2 = rnVar;
+    public ki(qn qnVar, boolean z10, boolean z11, int i9, boolean z12, org.telegram.ui.Components.uj0 uj0Var, float f10, float f11, hg.r0 r0Var, MessageObject messageObject) {
+        this.s = qnVar;
+        this.a = z10;
+        this.b = z11;
+        this.c = i9;
+        this.d = z12;
+        this.e = uj0Var;
+        this.f = f10;
+        this.h = f11;
+        this.n = r0Var;
+        this.r = messageObject;
     }
 
-    @Override // org.telegram.ui.Cells.v0, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        float y10 = getY();
-        rn rnVar = this.g2;
-        W(rnVar.N0.getY() + y10, rnVar.T0.getBackgroundSizeY());
+    @Override // java.lang.Runnable
+    public final void run() {
+        if (!this.a) {
+            qn qnVar = this.s;
+            if (qnVar.Yb != null) {
+                qnVar.Yb = null;
+                if (this.b) {
+                    qnVar.h8(new ji(this, this.c, this.d, this.e, this.f, this.h, this.n, 0));
+                } else {
+                    qnVar.h8(new rd(16, this, this.r));
+                }
+                qnVar.A7(true);
+            }
+        }
     }
 }

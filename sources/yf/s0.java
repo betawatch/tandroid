@@ -1,86 +1,161 @@
 package yf;
 
-import android.graphics.Bitmap;
+import android.content.Context;
 import android.graphics.PointF;
-import org.telegram.ui.Components.tu0;
+import android.view.ViewGroup;
+import g7.e6;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ll;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.wj0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class s0 {
-    public final float a;
-    public final float b;
-    public final PointF c;
-    public final PointF d;
-    public final float e;
-    public final PointF f;
-    public final PointF g;
+public final class s0 extends j {
+    public final r0 m0;
+    public boolean n0;
+    public int o0;
+    public int p0;
+    public TLRPC.MessageMedia q0;
+    public TL_stories.MediaArea r0;
 
-    public s0(e8.a aVar, Bitmap bitmap, tu0 tu0Var, boolean z10) {
-        PointF pointF = null;
-        PointF pointF2 = null;
-        PointF pointF3 = null;
-        PointF pointF4 = null;
-        for (e8.d dVar : aVar.b) {
-            PointF pointF5 = dVar.a;
-            int i10 = dVar.b;
-            if (i10 == 4) {
-                pointF = b(pointF5, bitmap, tu0Var, z10);
-            } else if (i10 == 5) {
-                pointF3 = b(pointF5, bitmap, tu0Var, z10);
-            } else if (i10 == 10) {
-                pointF2 = b(pointF5, bitmap, tu0Var, z10);
-            } else if (i10 == 11) {
-                pointF4 = b(pointF5, bitmap, tu0Var, z10);
-            }
-        }
-        if (pointF != null && pointF2 != null) {
-            if (pointF.x < pointF2.x) {
-                PointF pointF6 = pointF2;
-                pointF2 = pointF;
-                pointF = pointF6;
-            }
-            PointF pointF7 = new PointF((pointF2.x * 0.5f) + (pointF.x * 0.5f), (pointF2.y * 0.5f) + (pointF.y * 0.5f));
-            this.d = pointF7;
-            float hypot = (float) Math.hypot(pointF2.x - pointF.x, pointF2.y - pointF.y);
-            this.e = hypot;
-            this.b = (float) Math.toDegrees(Math.atan2(pointF2.y - pointF.y, pointF2.x - pointF.x) + 3.141592653589793d);
-            this.a = 2.35f * hypot;
-            float f10 = hypot * 0.8f;
-            double radians = (float) Math.toRadians(r0 - 90.0f);
-            this.c = new PointF((((float) Math.cos(radians)) * f10) + pointF7.x, (f10 * ((float) Math.sin(radians))) + pointF7.y);
-        }
-        if (pointF3 == null || pointF4 == null) {
-            return;
-        }
-        if (pointF3.x < pointF4.x) {
-            PointF pointF8 = pointF4;
-            pointF4 = pointF3;
-            pointF3 = pointF8;
-        }
-        PointF pointF9 = new PointF((pointF4.x * 0.5f) + (pointF3.x * 0.5f), (pointF4.y * 0.5f) + (pointF3.y * 0.5f));
-        this.f = pointF9;
-        float f11 = this.e * 0.7f;
-        double radians2 = (float) Math.toRadians(this.b + 90.0f);
-        this.g = new PointF((((float) Math.cos(radians2)) * f11) + pointF9.x, (f11 * ((float) Math.sin(radians2))) + pointF9.y);
+    public s0(Context context, PointF pointF, int i9, TLRPC.MessageMedia messageMedia, TL_stories.MediaArea mediaArea, float f10, int i10) {
+        super(context, pointF);
+        r0 r0Var = new r0(context, f10);
+        this.m0 = r0Var;
+        r0Var.setMaxWidth(i10);
+        r(i9, messageMedia, mediaArea);
+        r0Var.e(0, this.o0);
+        addView(r0Var, e6.e(-2, -2, 51));
+        setClipChildren(false);
+        setClipToPadding(false);
+        k();
     }
 
-    public static PointF b(PointF pointF, Bitmap bitmap, tu0 tu0Var, boolean z10) {
-        return new PointF((tu0Var.a * pointF.x) / (z10 ? bitmap.getHeight() : bitmap.getWidth()), (tu0Var.b * pointF.y) / (z10 ? bitmap.getWidth() : bitmap.getHeight()));
+    public static String q(double d) {
+        double abs = Math.abs(d);
+        double floor = Math.floor(abs);
+        String l10 = aa.d.l((int) floor, "°", new StringBuilder(""));
+        double floor2 = Math.floor((abs - floor) * 60.0d);
+        StringBuilder n10 = e2.c.n(l10);
+        n10.append(floor2 <= 0.0d ? "0" : "");
+        n10.append(floor2 < 10.0d ? "0" : "");
+        String l11 = aa.d.l((int) floor2, "'", n10);
+        double floor3 = Math.floor(Math.floor(floor2) * 60.0d);
+        StringBuilder n11 = e2.c.n(l11);
+        n11.append(floor3 <= 0.0d ? "0" : "");
+        n11.append(floor3 < 10.0d ? "0" : "");
+        return aa.d.l((int) floor3, "\"", n11);
     }
 
-    public final PointF a(int i10) {
-        if (i10 == 0) {
-            return this.c;
+    @Override // yf.j
+    public final i a() {
+        return new o0(this, getContext());
+    }
+
+    public int getColor() {
+        return this.o0;
+    }
+
+    @Override // yf.j
+    public float getMaxScale() {
+        return 1.5f;
+    }
+
+    @Override // yf.j
+    public wj0 getSelectionBounds() {
+        ViewGroup viewGroup = (ViewGroup) getParent();
+        if (viewGroup == null) {
+            return new wj0();
         }
-        if (i10 == 1) {
-            return this.d;
+        float scaleX = viewGroup.getScaleX();
+        float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
+        float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
+        float v = ll.v(dp, 2.0f, getPositionX(), scaleX);
+        return new wj0(v, ll.v(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + v) - v, dp2 * scaleX);
+    }
+
+    @Override // yf.j
+    public float getStickyPaddingBottom() {
+        return this.m0.F;
+    }
+
+    @Override // yf.j
+    public float getStickyPaddingLeft() {
+        return this.m0.E;
+    }
+
+    @Override // yf.j
+    public float getStickyPaddingRight() {
+        return this.m0.E;
+    }
+
+    @Override // yf.j
+    public float getStickyPaddingTop() {
+        return this.m0.F;
+    }
+
+    public int getType() {
+        return this.p0;
+    }
+
+    public int getTypesCount() {
+        return this.m0.getTypesCount() - (!this.n0 ? 1 : 0);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
+        super.onLayout(z10, i9, i10, i11, i12);
+        k();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(i9, i10);
+        k();
+    }
+
+    public final void r(int i9, TLRPC.MessageMedia messageMedia, TL_stories.MediaArea mediaArea) {
+        String str;
+        this.q0 = messageMedia;
+        this.r0 = mediaArea;
+        String str2 = null;
+        if (messageMedia instanceof TLRPC.TL_messageMediaGeo) {
+            TLRPC.GeoPoint geoPoint = messageMedia.geo;
+            double d = geoPoint.lat;
+            double d9 = geoPoint._long;
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(q(d));
+            sb2.append(d > 0.0d ? "N" : "S");
+            sb2.append(" ");
+            sb2.append(q(d9));
+            sb2.append(d9 > 0.0d ? "E" : "W");
+            str = sb2.toString();
+        } else if (messageMedia instanceof TLRPC.TL_messageMediaVenue) {
+            String upperCase = messageMedia.title.toUpperCase();
+            str2 = ((TLRPC.TL_messageMediaVenue) messageMedia).emoji;
+            str = upperCase;
+        } else {
+            str = "";
         }
-        if (i10 == 2) {
-            return this.f;
-        }
-        if (i10 != 3) {
-            return null;
-        }
-        return this.g;
+        r0 r0Var = this.m0;
+        r0Var.d(i9, str2);
+        r0Var.setText(str);
+        m();
+    }
+
+    public void setColor(int i9) {
+        this.n0 = true;
+        this.o0 = i9;
+    }
+
+    public void setMaxWidth(int i9) {
+        this.m0.setMaxWidth(i9);
+    }
+
+    public void setType(int i9) {
+        this.p0 = i9;
+        this.m0.e(i9, this.o0);
     }
 }

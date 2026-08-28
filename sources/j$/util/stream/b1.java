@@ -13,9 +13,9 @@ public final class b1 extends e5 {
     public final /* synthetic */ a c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b1(a aVar, j5 j5Var, int i10) {
+    public /* synthetic */ b1(a aVar, j5 j5Var, int i9) {
         super(j5Var);
-        this.b = i10;
+        this.b = i9;
         this.c = aVar;
     }
 

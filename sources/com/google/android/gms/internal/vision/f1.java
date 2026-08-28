@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class f1 extends l0 {
     private static Map<Object, f1> zzd = new ConcurrentHashMap();
@@ -24,8 +24,8 @@ public abstract class f1 extends l0 {
             try {
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 f1Var = zzd.get(cls);
-            } catch (ClassNotFoundException e9) {
-                throw new IllegalStateException("Class initialization cannot fail.", e9);
+            } catch (ClassNotFoundException e10) {
+                throw new IllegalStateException("Class initialization cannot fail.", e10);
             }
         }
         if (f1Var != null) {
@@ -42,10 +42,10 @@ public abstract class f1 extends l0 {
     public static Object f(Method method, f1 f1Var, Object... objArr) {
         try {
             return method.invoke(f1Var, objArr);
-        } catch (IllegalAccessException e9) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e9);
-        } catch (InvocationTargetException e10) {
-            Throwable cause = e10.getCause();
+        } catch (IllegalAccessException e10) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e10);
+        } catch (InvocationTargetException e11) {
+            Throwable cause = e11.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -66,8 +66,8 @@ public abstract class f1 extends l0 {
     }
 
     @Override // com.google.android.gms.internal.vision.l0
-    public final void b(int i10) {
-        this.zzc = i10;
+    public final void b(int i9) {
+        this.zzc = i9;
     }
 
     @Override // com.google.android.gms.internal.vision.l0
@@ -75,7 +75,7 @@ public abstract class f1 extends l0 {
         return this.zzc;
     }
 
-    public abstract Object e(int i10);
+    public abstract Object e(int i9);
 
     public final boolean equals(Object obj) {
         if (this == obj) {
@@ -99,9 +99,9 @@ public abstract class f1 extends l0 {
     }
 
     public final int hashCode() {
-        int i10 = this.zza;
-        if (i10 != 0) {
-            return i10;
+        int i9 = this.zza;
+        if (i9 != 0) {
+            return i9;
         }
         k2 k2Var = k2.c;
         k2Var.getClass();

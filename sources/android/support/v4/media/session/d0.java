@@ -21,14 +21,14 @@ import android.support.v4.media.session.PlaybackStateCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
-import c2.j0;
+import c2.k0;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class d0 {
     public static int d;
@@ -44,7 +44,7 @@ public final class d0 {
             throw new IllegalArgumentException("tag must not be null or empty");
         }
         if (componentName == null) {
-            int i10 = j0.a;
+            int i9 = k0.a;
             Intent intent = new Intent("android.intent.action.MEDIA_BUTTON");
             intent.setPackage(context.getPackageName());
             List<ResolveInfo> queryBroadcastReceivers = context.getPackageManager().queryBroadcastReceivers(intent, 0);
@@ -66,12 +66,12 @@ public final class d0 {
             intent2.setComponent(componentName);
             pendingIntent = PendingIntent.getBroadcast(context, 0, intent2, Build.VERSION.SDK_INT >= 31 ? 33554432 : 0);
         }
-        int i11 = Build.VERSION.SDK_INT;
-        if (i11 >= 29) {
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 29) {
             this.a = new a0(context, str);
-        } else if (i11 >= 28) {
+        } else if (i10 >= 28) {
             this.a = new y(context, str);
-        } else if (i11 >= 22) {
+        } else if (i10 >= 22) {
             this.a = new x(context, str);
         } else {
             this.a = new w(context, str);
@@ -117,8 +117,8 @@ public final class d0 {
                 if (handler != null) {
                     handler.removeCallbacksAndMessages(null);
                 }
-            } catch (Exception e9) {
-                Log.w("MediaSessionCompat", "Exception happened while accessing MediaSession.mCallback.", e9);
+            } catch (Exception e10) {
+                Log.w("MediaSessionCompat", "Exception happened while accessing MediaSession.mCallback.", e10);
             }
         }
         mediaSession.setCallback(null);
@@ -129,10 +129,10 @@ public final class d0 {
         this.a.a.setActive(z10);
         ArrayList arrayList = this.c;
         int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
+        int i9 = 0;
+        while (i9 < size) {
+            Object obj = arrayList.get(i9);
+            i9++;
             ((c2.a) obj).getClass();
         }
     }
@@ -187,31 +187,31 @@ public final class d0 {
             playbackState = null;
         } else {
             if (playbackStateCompat.w == null) {
-                PlaybackState.Builder d10 = e0.d();
-                e0.x(d10, playbackStateCompat.a, playbackStateCompat.b, playbackStateCompat.d, playbackStateCompat.n);
-                e0.u(d10, playbackStateCompat.c);
-                e0.s(d10, playbackStateCompat.e);
-                e0.v(d10, playbackStateCompat.h);
+                PlaybackState.Builder d9 = e0.d();
+                e0.x(d9, playbackStateCompat.a, playbackStateCompat.b, playbackStateCompat.d, playbackStateCompat.n);
+                e0.u(d9, playbackStateCompat.c);
+                e0.s(d9, playbackStateCompat.e);
+                e0.v(d9, playbackStateCompat.h);
                 ArrayList arrayList = playbackStateCompat.r;
                 int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
+                int i9 = 0;
+                while (i9 < size) {
+                    Object obj = arrayList.get(i9);
+                    i9++;
                     PlaybackStateCompat.CustomAction customAction = (PlaybackStateCompat.CustomAction) obj;
                     PlaybackState.CustomAction customAction2 = customAction.e;
                     if (customAction2 == null) {
-                        PlaybackState.CustomAction.Builder e9 = e0.e(customAction.a, customAction.b, customAction.c);
-                        e0.w(e9, customAction.d);
-                        customAction2 = e0.b(e9);
+                        PlaybackState.CustomAction.Builder e10 = e0.e(customAction.a, customAction.b, customAction.c);
+                        e0.w(e10, customAction.d);
+                        customAction2 = e0.b(e10);
                     }
-                    e0.a(d10, customAction2);
+                    e0.a(d9, customAction2);
                 }
-                e0.t(d10, playbackStateCompat.s);
+                e0.t(d9, playbackStateCompat.s);
                 if (Build.VERSION.SDK_INT >= 22) {
-                    f0.b(d10, playbackStateCompat.v);
+                    f0.b(d9, playbackStateCompat.v);
                 }
-                playbackStateCompat.w = e0.c(d10);
+                playbackStateCompat.w = e0.c(d9);
             }
             playbackState = playbackStateCompat.w;
         }
@@ -229,7 +229,7 @@ public final class d0 {
                 }
                 long j10 = mediaSessionCompat$QueueItem.b;
                 if (hashSet.contains(Long.valueOf(j10))) {
-                    Log.e("MediaSessionCompat", a9.p.l(j10, "Found duplicate queue id: "), new IllegalArgumentException("id of each queue item should be unique"));
+                    Log.e("MediaSessionCompat", aa.d.m(j10, "Found duplicate queue id: "), new IllegalArgumentException("id of each queue item should be unique"));
                 }
                 hashSet.add(Long.valueOf(j10));
             }
@@ -255,14 +255,14 @@ public final class d0 {
         mediaSession.setQueue(arrayList);
     }
 
-    public final void h(int i10) {
+    public final void h(int i9) {
         w wVar = this.a;
-        if (wVar.i != i10) {
-            wVar.i = i10;
+        if (wVar.i != i9) {
+            wVar.i = i9;
             synchronized (wVar.c) {
                 for (int beginBroadcast = wVar.e.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
                     try {
-                        ((b) wVar.e.getBroadcastItem(beginBroadcast)).onRepeatModeChanged(i10);
+                        ((b) wVar.e.getBroadcastItem(beginBroadcast)).onRepeatModeChanged(i9);
                     } catch (RemoteException unused) {
                     }
                 }
@@ -271,14 +271,14 @@ public final class d0 {
         }
     }
 
-    public final void i(int i10) {
+    public final void i(int i9) {
         w wVar = this.a;
-        if (wVar.j != i10) {
-            wVar.j = i10;
+        if (wVar.j != i9) {
+            wVar.j = i9;
             synchronized (wVar.c) {
                 for (int beginBroadcast = wVar.e.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
                     try {
-                        ((b) wVar.e.getBroadcastItem(beginBroadcast)).q0(i10);
+                        ((b) wVar.e.getBroadcastItem(beginBroadcast)).l0(i9);
                     } catch (RemoteException unused) {
                     }
                 }

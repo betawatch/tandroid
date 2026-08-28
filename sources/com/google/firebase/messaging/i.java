@@ -8,9 +8,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.ExecutorService;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.kb0;
+import org.telegram.ui.gb0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i {
     public static final Object c = new Object();
@@ -39,7 +39,7 @@ public final class i {
             }
         }
         if (!z10) {
-            return f0Var.b(intent).continueWith(new kb0(1), new a9.m(21));
+            return f0Var.b(intent).continueWith(new gb0(1), new a9.b(15));
         }
         if (t.v().x(context)) {
             c0.c(context, f0Var, intent);
@@ -56,15 +56,15 @@ public final class i {
             intent.removeExtra("gcm.rawData64");
         }
         Context context = (Context) this.a;
-        kb0 kb0Var = (kb0) this.b;
-        boolean z10 = f6.b.d() && context.getApplicationInfo().targetSdkVersion >= 26;
+        gb0 gb0Var = (gb0) this.b;
+        boolean z10 = e6.b.d() && context.getApplicationInfo().targetSdkVersion >= 26;
         boolean z11 = (intent.getFlags() & TLObject.FLAG_28) != 0;
-        return (!z10 || z11) ? Tasks.call(kb0Var, new h(0, context, intent)).continueWithTask(kb0Var, new b5.d(context, intent, z11, 1)) : a(context, intent, z11);
+        return (!z10 || z11) ? Tasks.call(gb0Var, new h(0, context, intent)).continueWithTask(gb0Var, new b5.e(context, intent, z11, 1)) : a(context, intent, z11);
     }
 
     public i(Context context) {
         this.a = context;
-        this.b = new kb0(1);
+        this.b = new gb0(1);
     }
 
     public i(e0.t tVar, String str) {

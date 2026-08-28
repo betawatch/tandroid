@@ -1,38 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ie extends mg {
-    public final Rect x;
-    public final /* synthetic */ ChatActivityEnterView y;
+public final class ie implements x4, ok0 {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ie(ChatActivityEnterView chatActivityEnterView, Activity activity) {
-        super(activity, 24);
-        this.y = chatActivityEnterView;
-        this.x = new Rect();
+    public /* synthetic */ ie(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        ChatActivityEnterView chatActivityEnterView = this.y;
-        if (!chatActivityEnterView.W0) {
-            super.draw(canvas);
-            return;
+    @Override // org.telegram.ui.Components.x4
+    public void B(int i9, int i10, boolean z10) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        boolean T0 = chatActivityEnterView.T0(i9, z10, i10, true, 0L);
+        cf cfVar = chatActivityEnterView.H0;
+        if (cfVar != null) {
+            cfVar.h(!T0);
+            chatActivityEnterView.H0 = null;
         }
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        Rect rect = this.x;
-        rect.set(0, 0, measuredWidth, measuredHeight);
-        rect.inset(AndroidUtilities.dp(7.5f), AndroidUtilities.dp(7.5f));
-        Drawable drawable = getCurrentState() == kg.b ? chatActivityEnterView.J3 : chatActivityEnterView.I3;
-        drawable.setBounds(rect);
-        drawable.draw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.ok0
+    public boolean a(int i9, View view) {
+        if (!(view instanceof mh.a0)) {
+            return false;
+        }
+        String str = ((mh.a0) view).getCommand() + " ";
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.setFieldText(str);
+        chatActivityEnterView.i0.c();
+        return true;
     }
 }

@@ -5,12 +5,12 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IOnSelectedListener;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class OnSelectedDelegateImpl implements h0 {
     private final IOnSelectedListener mStub;
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class OnSelectedListenerStub extends IOnSelectedListener.Stub {
         private final t mListener;
 
@@ -18,13 +18,13 @@ public class OnSelectedDelegateImpl implements h0 {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onSelected$0(int i10) {
+        public /* synthetic */ Object lambda$onSelected$0(int i9) {
             throw null;
         }
 
         @Override // androidx.car.app.model.IOnSelectedListener
-        public void onSelected(int i10, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.i.b(iOnDoneCallback, "onSelectedListener", new g(this, i10, 1));
+        public void onSelected(int i9, IOnDoneCallback iOnDoneCallback) {
+            androidx.car.app.utils.j.b(iOnDoneCallback, "onSelectedListener", new g(this, i9, 1));
         }
     }
 
@@ -36,13 +36,13 @@ public class OnSelectedDelegateImpl implements h0 {
         return new OnSelectedDelegateImpl(tVar);
     }
 
-    public void sendSelected(int i10, androidx.car.app.j jVar) {
+    public void sendSelected(int i9, androidx.car.app.k kVar) {
         try {
             IOnSelectedListener iOnSelectedListener = this.mStub;
             Objects.requireNonNull(iOnSelectedListener);
-            iOnSelectedListener.onSelected(i10, androidx.car.app.utils.i.a());
-        } catch (RemoteException e9) {
-            throw new RuntimeException(e9);
+            iOnSelectedListener.onSelected(i9, androidx.car.app.utils.j.a());
+        } catch (RemoteException e10) {
+            throw new RuntimeException(e10);
         }
     }
 

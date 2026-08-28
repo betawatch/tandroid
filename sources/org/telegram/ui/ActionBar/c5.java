@@ -9,7 +9,7 @@ import android.os.SystemClock;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class c5 extends Drawable {
     public final Paint a;
@@ -81,16 +81,16 @@ public class c5 extends Drawable {
         float f11 = this.e;
         if (f10 != f11) {
             if (j10 != 0) {
-                int i10 = (int) (this.g + j11);
-                this.g = i10;
-                if (i10 >= 200) {
+                int i9 = (int) (this.g + j11);
+                this.g = i9;
+                if (i9 >= 200) {
                     this.f = f11;
                 } else {
                     DecelerateInterpolator decelerateInterpolator = this.i;
                     if (f10 < f11) {
-                        this.f = decelerateInterpolator.getInterpolation(i10 / 200.0f) * this.e;
+                        this.f = decelerateInterpolator.getInterpolation(i9 / 200.0f) * this.e;
                     } else {
-                        this.f = 1.0f - decelerateInterpolator.getInterpolation(i10 / 200.0f);
+                        this.f = 1.0f - decelerateInterpolator.getInterpolation(i9 / 200.0f);
                     }
                 }
             }
@@ -108,27 +108,27 @@ public class c5 extends Drawable {
         this.d = elapsedRealtime;
         canvas.save();
         canvas.translate(((AndroidUtilities.dp(24.0f) / 2) - AndroidUtilities.dp(9.0f)) - (AndroidUtilities.dp(1.0f) * this.f), AndroidUtilities.dp(24.0f) / 2);
-        int i11 = this.j;
-        if (i11 == 0) {
-            i11 = g6.w0(null, g6.v8, false);
+        int i10 = this.j;
+        if (i10 == 0) {
+            i10 = f6.w0(null, f6.v8, false);
         }
-        int i12 = this.k;
-        if (i12 == 0) {
-            i12 = g6.w0(null, g6.s8, false);
+        int i11 = this.k;
+        if (i11 == 0) {
+            i11 = f6.w0(null, f6.s8, false);
         }
         boolean z10 = this.h;
         Paint paint = this.a;
         if (z10) {
             canvas.rotate(this.f * (this.c ? -180 : 180), AndroidUtilities.dp(9.0f), 0.0f);
-            paint.setColor(i11);
+            paint.setColor(i10);
             paint.setAlpha(this.o);
-            canvas.drawLine(this.l ? com.google.android.recaptcha.internal.a.z(1.0f, this.f, paint.getStrokeWidth() / 2.0f, AndroidUtilities.dp(0.5f) * this.f) : 0.0f, 0.0f, ((AndroidUtilities.dp(18.0f) - (AndroidUtilities.dp(3.0f) * this.f)) - 0.0f) - (this.l ? (1.0f - this.f) * (paint.getStrokeWidth() / 2.0f) : 0.0f), 0.0f, paint);
+            canvas.drawLine(this.l ? e2.c.z(1.0f, this.f, paint.getStrokeWidth() / 2.0f, AndroidUtilities.dp(0.5f) * this.f) : 0.0f, 0.0f, ((AndroidUtilities.dp(18.0f) - (AndroidUtilities.dp(3.0f) * this.f)) - 0.0f) - (this.l ? (1.0f - this.f) * (paint.getStrokeWidth() / 2.0f) : 0.0f), 0.0f, paint);
             abs = ((1.0f - Math.abs(this.f)) * AndroidUtilities.dp(5.0f)) - (Math.abs(this.f) * AndroidUtilities.dp(0.5f));
             dp = AndroidUtilities.dp(18.0f) - (Math.abs(this.f) * AndroidUtilities.dp(2.5f));
             abs2 = (Math.abs(this.f) * AndroidUtilities.dp(2.0f)) + AndroidUtilities.dp(5.0f);
             abs3 = Math.abs(this.f) * AndroidUtilities.dp(7.5f);
             if (this.l) {
-                abs3 = com.google.android.recaptcha.internal.a.z(1.0f, this.f, paint.getStrokeWidth() / 2.0f, abs3);
+                abs3 = e2.c.z(1.0f, this.f, paint.getStrokeWidth() / 2.0f, abs3);
                 float dp2 = (AndroidUtilities.dp(0.5f) * this.f) + abs;
                 dp -= ((1.0f - this.f) * (paint.getStrokeWidth() / 2.0f)) + (AndroidUtilities.dp(0.5f) * this.f);
                 abs2 -= AndroidUtilities.dp(0.25f) * this.f;
@@ -137,7 +137,7 @@ public class c5 extends Drawable {
         } else {
             canvas.rotate(this.f * (this.c ? -225 : 135), AndroidUtilities.dp(9.0f), 0.0f);
             if (this.n) {
-                paint.setColor(i11);
+                paint.setColor(i10);
                 paint.setAlpha(this.o);
                 canvas.drawLine((AndroidUtilities.dp(1.0f) * this.f) + ((1.0f - Math.abs(this.f)) * AndroidUtilities.dpf2(2.0f)), 0.0f, ((AndroidUtilities.dp(17.0f) * this.f) + ((1.0f - this.f) * AndroidUtilities.dpf2(16.0f))) - 0.0f, 0.0f, paint);
                 abs = ((1.0f - Math.abs(this.f)) * AndroidUtilities.dpf2(5.0f)) - (Math.abs(this.f) * AndroidUtilities.dpf2(0.5f));
@@ -145,9 +145,9 @@ public class c5 extends Drawable {
                 abs2 = (Math.abs(this.f) * AndroidUtilities.dpf2(3.0f)) + AndroidUtilities.dpf2(5.0f);
                 abs3 = (Math.abs(this.f) * AndroidUtilities.dpf2(7.0f)) + AndroidUtilities.dpf2(2.0f);
             } else {
-                int w02 = g6.w0(null, g6.y8, false);
-                AndroidUtilities.getOffsetColor(i12, g6.w0(null, g6.w8, false), this.f, 1.0f);
-                paint.setColor(AndroidUtilities.getOffsetColor(i11, w02, this.f, 1.0f));
+                int w02 = f6.w0(null, f6.y8, false);
+                AndroidUtilities.getOffsetColor(i11, f6.w0(null, f6.w8, false), this.f, 1.0f);
+                paint.setColor(AndroidUtilities.getOffsetColor(i10, w02, this.f, 1.0f));
                 paint.setAlpha(this.o);
                 canvas.drawLine(this.f * AndroidUtilities.dp(1.0f), 0.0f, (AndroidUtilities.dp(18.0f) - (AndroidUtilities.dp(1.0f) * this.f)) - 0.0f, 0.0f, paint);
                 abs = ((1.0f - Math.abs(this.f)) * AndroidUtilities.dp(5.0f)) - (Math.abs(this.f) * AndroidUtilities.dp(0.5f));
@@ -186,11 +186,11 @@ public class c5 extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        if (this.o != i10) {
-            this.o = i10;
-            this.a.setAlpha(i10);
-            this.b.setAlpha(i10);
+    public final void setAlpha(int i9) {
+        if (this.o != i9) {
+            this.o = i9;
+            this.a.setAlpha(i9);
+            this.b.setAlpha(i9);
             invalidateSelf();
         }
     }

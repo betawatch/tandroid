@@ -1,70 +1,65 @@
 package gh;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.qa;
+import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.rx;
+import org.telegram.ui.LanguageSelectActivity;
+import org.telegram.ui.cn;
+import org.telegram.ui.ho;
+import org.telegram.ui.o50;
+import org.telegram.ui.pc0;
+import org.telegram.ui.tc1;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x implements View.OnClickListener {
+public final /* synthetic */ class x implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ x(Context context, org.telegram.ui.ActionBar.c6 c6Var, long j10, TL_stars.StarGift starGift, ArrayList arrayList) {
-        this.a = 2;
-        this.c = context;
-        this.d = c6Var;
-        this.b = j10;
-        this.f = starGift;
-        this.e = arrayList;
+    public /* synthetic */ x(Object obj, int i9, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = i9;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                i0.Q((i0) this.f, this.b, this.c, (org.telegram.ui.ActionBar.c6) this.d, (Runnable) this.e);
+                ConnectionsManager.getInstance(((c0) this.c).a).cancelRequest(this.b, true);
                 break;
             case 1:
-                p0 p0Var = (p0) this.f;
-                org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) this.d;
-                Runnable runnable = (Runnable) this.e;
-                p0Var.getClass();
-                v vVar = new v(this.c, c6Var, new u(this.b, true, null), p0Var.Z);
-                vVar.show();
-                vVar.j0 = runnable;
-                p0Var.dismiss();
+                ConnectionsManager.getInstance(((org.telegram.ui.ma) this.c).currentAccount).cancelRequest(this.b, true);
                 break;
             case 2:
-                new p0(this.c, (org.telegram.ui.ActionBar.c6) this.d, this.b, (TL_stars.StarGift) this.f, (ArrayList) this.e, null, true).show();
+                ((cn) this.c).a.getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 3:
+                ho hoVar = (ho) this.c;
+                hoVar.J0 = false;
+                hoVar.b = null;
+                hoVar.getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 4:
+                ((ChatActivityEnterView) this.c).K2.getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 5:
+                ConnectionsManager.getInstance(((rx) this.c).c.a.B.Y0).cancelRequest(this.b, true);
+                break;
+            case 6:
+                ((o50) this.c).d.getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 7:
+                ConnectionsManager.getInstance(((LanguageSelectActivity) this.c).currentAccount).cancelRequest(this.b, true);
+                break;
+            case 8:
+                ((pc0) this.c).getConnectionsManager().cancelRequest(this.b, true);
                 break;
             default:
-                m6.S((m6) this.f, this.b, this.c, (Runnable) this.e, (TL_stars.StarGift) this.d);
+                ConnectionsManager.getInstance(((tc1) this.c).currentAccount).cancelRequest(this.b, true);
                 break;
         }
-    }
-
-    public /* synthetic */ x(m6 m6Var, long j10, Context context, Runnable runnable, TL_stars.StarGift starGift) {
-        this.a = 3;
-        this.f = m6Var;
-        this.b = j10;
-        this.c = context;
-        this.e = runnable;
-        this.d = starGift;
-    }
-
-    public /* synthetic */ x(qa qaVar, long j10, Context context, org.telegram.ui.ActionBar.c6 c6Var, Runnable runnable, int i10) {
-        this.a = i10;
-        this.f = qaVar;
-        this.b = j10;
-        this.c = context;
-        this.d = c6Var;
-        this.e = runnable;
     }
 }

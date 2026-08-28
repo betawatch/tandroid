@@ -1,21 +1,84 @@
 package h8;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import h7.r8;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.data.DataHolder;
+import j3.r0;
+import java.io.Closeable;
+import java.util.ArrayList;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class e extends z5.a {
-    public static final Parcelable.Creator<e> CREATOR = new h5.h(11);
-    public String a;
-    public String b;
+public final class e implements com.google.android.gms.common.api.q, Iterable, Closeable {
+    public final DataHolder a;
+    public boolean b = false;
+    public ArrayList c;
+    public final Status d;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.l(parcel, 2, this.a);
-        r8.l(parcel, 3, this.b);
-        r8.r(parcel, q6);
+    public e(DataHolder dataHolder) {
+        this.a = dataHolder;
+        this.d = new Status(dataHolder.e, null, null, null);
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        DataHolder dataHolder = this.a;
+        if (dataHolder != null) {
+            dataHolder.close();
+        }
+    }
+
+    @Override // com.google.android.gms.common.api.q
+    public final Status i() {
+        return this.d;
+    }
+
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        return new kc.b(this);
+    }
+
+    public final int n(int i9) {
+        if (i9 < 0 || i9 >= this.c.size()) {
+            throw new IllegalArgumentException(r0.m(i9, "Position ", " is out of bounds for this buffer"));
+        }
+        return ((Integer) this.c.get(i9)).intValue();
+    }
+
+    public final void o() {
+        synchronized (this) {
+            try {
+                if (!this.b) {
+                    DataHolder dataHolder = this.a;
+                    x5.l.h(dataHolder);
+                    int i9 = dataHolder.n;
+                    ArrayList arrayList = new ArrayList();
+                    this.c = arrayList;
+                    if (i9 > 0) {
+                        arrayList.add(0);
+                        int b10 = this.a.b(0);
+                        DataHolder dataHolder2 = this.a;
+                        dataHolder2.c(0, "path");
+                        String string = dataHolder2.d[b10].getString(0, dataHolder2.c.getInt("path"));
+                        for (int i10 = 1; i10 < i9; i10++) {
+                            int b11 = this.a.b(i10);
+                            DataHolder dataHolder3 = this.a;
+                            dataHolder3.c(i10, "path");
+                            String string2 = dataHolder3.d[b11].getString(i10, dataHolder3.c.getInt("path"));
+                            if (string2 == null) {
+                                throw new NullPointerException("Missing value for markerColumn: path, at row: " + i10 + ", for window: " + b11);
+                            }
+                            if (!string2.equals(string)) {
+                                this.c.add(Integer.valueOf(i10));
+                                string = string2;
+                            }
+                        }
+                    }
+                    this.b = true;
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
     }
 }

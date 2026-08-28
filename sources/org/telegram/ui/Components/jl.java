@@ -1,58 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.util.Property;
 import android.view.View;
 import android.widget.ImageView;
 import org.telegram.messenger.R;
-import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class jl implements CameraView.CameraViewDelegate {
+public final class jl extends AnimatorListenerAdapter {
     public final /* synthetic */ ChatAttachAlertPhotoLayout a;
 
     public jl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
         this.a = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
-    public final void onCameraInit() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
         ImageView imageView = chatAttachAlertPhotoLayout.n0;
-        ImageView[] imageViewArr = chatAttachAlertPhotoLayout.O;
-        String currentFlashMode = chatAttachAlertPhotoLayout.L.getCameraSession().getCurrentFlashMode();
-        String nextFlashMode = chatAttachAlertPhotoLayout.L.getCameraSession().getNextFlashMode();
-        if (currentFlashMode == null || nextFlashMode == null) {
-            return;
-        }
-        if (currentFlashMode.equals(nextFlashMode)) {
-            for (int i10 = 0; i10 < 2; i10++) {
-                imageViewArr[i10].setVisibility(4);
-                imageViewArr[i10].setAlpha(0.0f);
-                imageViewArr[i10].setTranslationY(0.0f);
-            }
-        } else {
-            ChatAttachAlertPhotoLayout.o0(imageViewArr[0], chatAttachAlertPhotoLayout.L.getCameraSession().getCurrentFlashMode());
-            int i11 = 0;
-            while (i11 < 2) {
-                imageViewArr[i11].setVisibility(i11 == 0 ? 0 : 4);
-                imageViewArr[i11].setAlpha((i11 == 0 && chatAttachAlertPhotoLayout.U) ? 1.0f : 0.0f);
-                imageViewArr[i11].setTranslationY(0.0f);
-                i11++;
-            }
-        }
-        imageView.setImageResource(chatAttachAlertPhotoLayout.L.isFrontface() ? R.drawable.camera_revert1 : R.drawable.camera_revert2);
-        imageView.setVisibility(chatAttachAlertPhotoLayout.L.hasFrontFaceCamera() ? 0 : 4);
-        if (chatAttachAlertPhotoLayout.U) {
-            return;
-        }
-        AnimatorSet animatorSet = new AnimatorSet();
-        chatAttachAlertPhotoLayout.K = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(chatAttachAlertPhotoLayout.L, (Property<ql, Float>) View.ALPHA, 0.0f, 1.0f));
-        chatAttachAlertPhotoLayout.K.setDuration(180L);
-        chatAttachAlertPhotoLayout.K.addListener(new org.telegram.ui.am(this, 17));
-        chatAttachAlertPhotoLayout.K.start();
+        ul ulVar = chatAttachAlertPhotoLayout.L;
+        imageView.setImageResource((ulVar == null || !ulVar.isFrontface()) ? R.drawable.camera_revert2 : R.drawable.camera_revert1);
+        ObjectAnimator.ofFloat(chatAttachAlertPhotoLayout.n0, (Property<ImageView, Float>) View.SCALE_X, 1.0f).setDuration(100L).start();
     }
 }

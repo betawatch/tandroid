@@ -1,359 +1,338 @@
 package oa;
 
 import java.io.Serializable;
-import java.util.AbstractMap;
-import java.util.Comparator;
-import java.util.Set;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class l extends AbstractMap implements Serializable {
-    public static final d2.a r = new d2.a(6);
-    public final boolean b;
-    public k c;
-    public final k f;
-    public j h;
-    public j n;
-    public int d = 0;
-    public int e = 0;
-    public final Comparator a = r;
+public final class l extends ta.a {
+    public static final k E = new k();
+    public static final Object F = new Object();
+    public Object[] A;
+    public int B;
+    public String[] C;
+    public int[] D;
 
-    public l(boolean z10) {
-        this.b = z10;
-        this.f = new k(z10);
-    }
-
-    public final k a(Object obj, boolean z10) {
-        int i10;
-        k kVar;
-        k kVar2 = this.c;
-        d2.a aVar = r;
-        Comparator comparator = this.a;
-        if (kVar2 != null) {
-            Comparable comparable = comparator == aVar ? (Comparable) obj : null;
-            while (true) {
-                Object obj2 = kVar2.f;
-                i10 = comparable != null ? comparable.compareTo(obj2) : comparator.compare(obj, obj2);
-                if (i10 == 0) {
-                    return kVar2;
-                }
-                k kVar3 = i10 < 0 ? kVar2.b : kVar2.c;
-                if (kVar3 == null) {
-                    break;
-                }
-                kVar2 = kVar3;
-            }
-        } else {
-            i10 = 0;
-        }
-        k kVar4 = kVar2;
-        if (!z10) {
-            return null;
-        }
-        k kVar5 = this.f;
-        if (kVar4 != null) {
-            kVar = new k(this.b, kVar4, obj, kVar5, kVar5.e);
-            if (i10 < 0) {
-                kVar4.b = kVar;
-            } else {
-                kVar4.c = kVar;
-            }
-            b(kVar4, true);
-        } else {
-            if (comparator == aVar && !(obj instanceof Comparable)) {
-                throw new ClassCastException(obj.getClass().getName().concat(" is not Comparable"));
-            }
-            kVar = new k(this.b, kVar4, obj, kVar5, kVar5.e);
-            this.c = kVar;
-        }
-        this.d++;
-        this.e++;
-        return kVar;
-    }
-
-    public final void b(k kVar, boolean z10) {
-        while (kVar != null) {
-            k kVar2 = kVar.b;
-            k kVar3 = kVar.c;
-            int i10 = kVar2 != null ? kVar2.r : 0;
-            int i11 = kVar3 != null ? kVar3.r : 0;
-            int i12 = i10 - i11;
-            if (i12 == -2) {
-                k kVar4 = kVar3.b;
-                k kVar5 = kVar3.c;
-                int i13 = (kVar4 != null ? kVar4.r : 0) - (kVar5 != null ? kVar5.r : 0);
-                if (i13 == -1 || (i13 == 0 && !z10)) {
-                    e(kVar);
-                } else {
-                    f(kVar3);
-                    e(kVar);
-                }
-                if (z10) {
-                    return;
-                }
-            } else if (i12 == 2) {
-                k kVar6 = kVar2.b;
-                k kVar7 = kVar2.c;
-                int i14 = (kVar6 != null ? kVar6.r : 0) - (kVar7 != null ? kVar7.r : 0);
-                if (i14 == 1 || (i14 == 0 && !z10)) {
-                    f(kVar);
-                } else {
-                    e(kVar2);
-                    f(kVar);
-                }
-                if (z10) {
-                    return;
-                }
-            } else if (i12 == 0) {
-                kVar.r = i10 + 1;
-                if (z10) {
-                    return;
-                }
-            } else {
-                kVar.r = Math.max(i10, i11) + 1;
-                if (!z10) {
-                    return;
-                }
-            }
-            kVar = kVar.a;
-        }
-    }
-
-    public final void c(k kVar, boolean z10) {
-        k kVar2;
-        k kVar3;
-        int i10;
-        if (z10) {
-            k kVar4 = kVar.e;
-            kVar4.d = kVar.d;
-            kVar.d.e = kVar4;
-        }
-        k kVar5 = kVar.b;
-        k kVar6 = kVar.c;
-        k kVar7 = kVar.a;
-        int i11 = 0;
-        if (kVar5 == null || kVar6 == null) {
-            if (kVar5 != null) {
-                d(kVar, kVar5);
-                kVar.b = null;
-            } else if (kVar6 != null) {
-                d(kVar, kVar6);
-                kVar.c = null;
-            } else {
-                d(kVar, null);
-            }
-            b(kVar7, false);
-            this.d--;
-            this.e++;
+    @Override // ta.a
+    public final void C() {
+        int b10 = m1.j.b(x());
+        if (b10 == 1) {
+            e();
             return;
         }
-        if (kVar5.r > kVar6.r) {
-            k kVar8 = kVar5.c;
-            while (true) {
-                k kVar9 = kVar8;
-                kVar3 = kVar5;
-                kVar5 = kVar9;
-                if (kVar5 == null) {
-                    break;
-                } else {
-                    kVar8 = kVar5.c;
+        if (b10 != 9) {
+            if (b10 == 3) {
+                f();
+                return;
+            }
+            if (b10 == 4) {
+                I(true);
+                return;
+            }
+            K();
+            int i9 = this.B;
+            if (i9 > 0) {
+                int[] iArr = this.D;
+                int i10 = i9 - 1;
+                iArr[i10] = iArr[i10] + 1;
+            }
+        }
+    }
+
+    public final void F(int i9) {
+        if (x() == i9) {
+            return;
+        }
+        throw new IllegalStateException("Expected " + ta.b.k(i9) + " but was " + ta.b.k(x()) + H());
+    }
+
+    public final String G(boolean z10) {
+        StringBuilder sb2 = new StringBuilder("$");
+        int i9 = 0;
+        while (true) {
+            int i10 = this.B;
+            if (i9 >= i10) {
+                return sb2.toString();
+            }
+            Object[] objArr = this.A;
+            Object obj = objArr[i9];
+            if (obj instanceof la.h) {
+                i9++;
+                if (i9 < i10 && (objArr[i9] instanceof Iterator)) {
+                    int i11 = this.D[i9];
+                    if (z10 && i11 > 0 && (i9 == i10 - 1 || i9 == i10 - 2)) {
+                        i11--;
+                    }
+                    sb2.append('[');
+                    sb2.append(i11);
+                    sb2.append(']');
+                }
+            } else if ((obj instanceof la.l) && (i9 = i9 + 1) < i10 && (objArr[i9] instanceof Iterator)) {
+                sb2.append('.');
+                String str = this.C[i9];
+                if (str != null) {
+                    sb2.append(str);
                 }
             }
-        } else {
-            k kVar10 = kVar6.b;
-            while (true) {
-                kVar2 = kVar6;
-                kVar6 = kVar10;
-                if (kVar6 == null) {
-                    break;
-                } else {
-                    kVar10 = kVar6.b;
-                }
+            i9++;
+        }
+    }
+
+    public final String H() {
+        return " at path " + G(false);
+    }
+
+    public final String I(boolean z10) {
+        F(5);
+        Map.Entry entry = (Map.Entry) ((Iterator) J()).next();
+        String str = (String) entry.getKey();
+        this.C[this.B - 1] = z10 ? "<skipped>" : str;
+        L(entry.getValue());
+        return str;
+    }
+
+    public final Object J() {
+        return this.A[this.B - 1];
+    }
+
+    public final Object K() {
+        Object[] objArr = this.A;
+        int i9 = this.B - 1;
+        this.B = i9;
+        Object obj = objArr[i9];
+        objArr[i9] = null;
+        return obj;
+    }
+
+    public final void L(Object obj) {
+        int i9 = this.B;
+        Object[] objArr = this.A;
+        if (i9 == objArr.length) {
+            int i10 = i9 * 2;
+            this.A = Arrays.copyOf(objArr, i10);
+            this.D = Arrays.copyOf(this.D, i10);
+            this.C = (String[]) Arrays.copyOf(this.C, i10);
+        }
+        Object[] objArr2 = this.A;
+        int i11 = this.B;
+        this.B = i11 + 1;
+        objArr2[i11] = obj;
+    }
+
+    @Override // ta.a
+    public final void a() {
+        F(1);
+        L(((la.h) J()).a.iterator());
+        this.D[this.B - 1] = 0;
+    }
+
+    @Override // ta.a
+    public final void b() {
+        F(3);
+        L(((na.k) ((la.l) J()).a.entrySet()).iterator());
+    }
+
+    @Override // ta.a, java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        this.A = new Object[]{F};
+        this.B = 1;
+    }
+
+    @Override // ta.a
+    public final void e() {
+        F(2);
+        K();
+        K();
+        int i9 = this.B;
+        if (i9 > 0) {
+            int[] iArr = this.D;
+            int i10 = i9 - 1;
+            iArr[i10] = iArr[i10] + 1;
+        }
+    }
+
+    @Override // ta.a
+    public final void f() {
+        F(4);
+        this.C[this.B - 1] = null;
+        K();
+        K();
+        int i9 = this.B;
+        if (i9 > 0) {
+            int[] iArr = this.D;
+            int i10 = i9 - 1;
+            iArr[i10] = iArr[i10] + 1;
+        }
+    }
+
+    @Override // ta.a
+    public final String h() {
+        return G(false);
+    }
+
+    @Override // ta.a
+    public final String j() {
+        return G(true);
+    }
+
+    @Override // ta.a
+    public final boolean k() {
+        int x10 = x();
+        return (x10 == 4 || x10 == 2 || x10 == 10) ? false : true;
+    }
+
+    @Override // ta.a
+    public final boolean n() {
+        F(8);
+        boolean p6 = ((la.m) K()).p();
+        int i9 = this.B;
+        if (i9 > 0) {
+            int[] iArr = this.D;
+            int i10 = i9 - 1;
+            iArr[i10] = iArr[i10] + 1;
+        }
+        return p6;
+    }
+
+    @Override // ta.a
+    public final double o() {
+        int x10 = x();
+        if (x10 != 7 && x10 != 6) {
+            throw new IllegalStateException("Expected " + ta.b.k(7) + " but was " + ta.b.k(x10) + H());
+        }
+        double q10 = ((la.m) J()).q();
+        if (Double.isNaN(q10) || Double.isInfinite(q10)) {
+            throw new ta.d("JSON forbids NaN and infinities: " + q10);
+        }
+        K();
+        int i9 = this.B;
+        if (i9 > 0) {
+            int[] iArr = this.D;
+            int i10 = i9 - 1;
+            iArr[i10] = iArr[i10] + 1;
+        }
+        return q10;
+    }
+
+    @Override // ta.a
+    public final int p() {
+        int x10 = x();
+        if (x10 != 7 && x10 != 6) {
+            throw new IllegalStateException("Expected " + ta.b.k(7) + " but was " + ta.b.k(x10) + H());
+        }
+        la.m mVar = (la.m) J();
+        int intValue = mVar.a instanceof Number ? mVar.r().intValue() : Integer.parseInt(mVar.n());
+        K();
+        int i9 = this.B;
+        if (i9 > 0) {
+            int[] iArr = this.D;
+            int i10 = i9 - 1;
+            iArr[i10] = iArr[i10] + 1;
+        }
+        return intValue;
+    }
+
+    @Override // ta.a
+    public final long q() {
+        int x10 = x();
+        if (x10 != 7 && x10 != 6) {
+            throw new IllegalStateException("Expected " + ta.b.k(7) + " but was " + ta.b.k(x10) + H());
+        }
+        la.m mVar = (la.m) J();
+        long longValue = mVar.a instanceof Number ? mVar.r().longValue() : Long.parseLong(mVar.n());
+        K();
+        int i9 = this.B;
+        if (i9 > 0) {
+            int[] iArr = this.D;
+            int i10 = i9 - 1;
+            iArr[i10] = iArr[i10] + 1;
+        }
+        return longValue;
+    }
+
+    @Override // ta.a
+    public final String r() {
+        return I(false);
+    }
+
+    @Override // ta.a
+    public final void t() {
+        F(9);
+        K();
+        int i9 = this.B;
+        if (i9 > 0) {
+            int[] iArr = this.D;
+            int i10 = i9 - 1;
+            iArr[i10] = iArr[i10] + 1;
+        }
+    }
+
+    @Override // ta.a
+    public final String toString() {
+        return l.class.getSimpleName() + H();
+    }
+
+    @Override // ta.a
+    public final String v() {
+        int x10 = x();
+        if (x10 != 6 && x10 != 7) {
+            throw new IllegalStateException("Expected " + ta.b.k(6) + " but was " + ta.b.k(x10) + H());
+        }
+        String n10 = ((la.m) K()).n();
+        int i9 = this.B;
+        if (i9 > 0) {
+            int[] iArr = this.D;
+            int i10 = i9 - 1;
+            iArr[i10] = iArr[i10] + 1;
+        }
+        return n10;
+    }
+
+    @Override // ta.a
+    public final int x() {
+        if (this.B == 0) {
+            return 10;
+        }
+        Object J = J();
+        if (J instanceof Iterator) {
+            boolean z10 = this.A[this.B - 2] instanceof la.l;
+            Iterator it = (Iterator) J;
+            if (!it.hasNext()) {
+                return z10 ? 4 : 2;
             }
-            kVar3 = kVar2;
-        }
-        c(kVar3, false);
-        k kVar11 = kVar.b;
-        if (kVar11 != null) {
-            i10 = kVar11.r;
-            kVar3.b = kVar11;
-            kVar11.a = kVar3;
-            kVar.b = null;
-        } else {
-            i10 = 0;
-        }
-        k kVar12 = kVar.c;
-        if (kVar12 != null) {
-            i11 = kVar12.r;
-            kVar3.c = kVar12;
-            kVar12.a = kVar3;
-            kVar.c = null;
-        }
-        kVar3.r = Math.max(i10, i11) + 1;
-        d(kVar, kVar3);
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final void clear() {
-        this.c = null;
-        this.d = 0;
-        this.e++;
-        k kVar = this.f;
-        kVar.e = kVar;
-        kVar.d = kVar;
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final boolean containsKey(Object obj) {
-        k kVar = null;
-        if (obj != null) {
-            try {
-                kVar = a(obj, false);
-            } catch (ClassCastException unused) {
+            if (z10) {
+                return 5;
             }
+            L(it.next());
+            return x();
         }
-        return kVar != null;
-    }
-
-    public final void d(k kVar, k kVar2) {
-        k kVar3 = kVar.a;
-        kVar.a = null;
-        if (kVar2 != null) {
-            kVar2.a = kVar3;
+        if (J instanceof la.l) {
+            return 3;
         }
-        if (kVar3 == null) {
-            this.c = kVar2;
-        } else if (kVar3.b == kVar) {
-            kVar3.b = kVar2;
-        } else {
-            kVar3.c = kVar2;
+        if (J instanceof la.h) {
+            return 1;
         }
-    }
-
-    public final void e(k kVar) {
-        k kVar2 = kVar.b;
-        k kVar3 = kVar.c;
-        k kVar4 = kVar3.b;
-        k kVar5 = kVar3.c;
-        kVar.c = kVar4;
-        if (kVar4 != null) {
-            kVar4.a = kVar;
-        }
-        d(kVar, kVar3);
-        kVar3.b = kVar;
-        kVar.a = kVar3;
-        int max = Math.max(kVar2 != null ? kVar2.r : 0, kVar4 != null ? kVar4.r : 0) + 1;
-        kVar.r = max;
-        kVar3.r = Math.max(max, kVar5 != null ? kVar5.r : 0) + 1;
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final Set entrySet() {
-        j jVar = this.h;
-        if (jVar != null) {
-            return jVar;
-        }
-        j jVar2 = new j(this, 0);
-        this.h = jVar2;
-        return jVar2;
-    }
-
-    public final void f(k kVar) {
-        k kVar2 = kVar.b;
-        k kVar3 = kVar.c;
-        k kVar4 = kVar2.b;
-        k kVar5 = kVar2.c;
-        kVar.b = kVar5;
-        if (kVar5 != null) {
-            kVar5.a = kVar;
-        }
-        d(kVar, kVar2);
-        kVar2.c = kVar;
-        kVar.a = kVar2;
-        int max = Math.max(kVar3 != null ? kVar3.r : 0, kVar5 != null ? kVar5.r : 0) + 1;
-        kVar.r = max;
-        kVar2.r = Math.max(max, kVar4 != null ? kVar4.r : 0) + 1;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0010 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x000d  */
-    @Override // java.util.AbstractMap, java.util.Map
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object get(Object obj) {
-        k kVar;
-        if (obj != null) {
-            try {
-                kVar = a(obj, false);
-            } catch (ClassCastException unused) {
+        if (J instanceof la.m) {
+            Serializable serializable = ((la.m) J).a;
+            if (serializable instanceof String) {
+                return 6;
             }
-            if (kVar == null) {
-                return kVar.n;
+            if (serializable instanceof Boolean) {
+                return 8;
             }
-            return null;
-        }
-        kVar = null;
-        if (kVar == null) {
-        }
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final Set keySet() {
-        j jVar = this.n;
-        if (jVar != null) {
-            return jVar;
-        }
-        j jVar2 = new j(this, 1);
-        this.n = jVar2;
-        return jVar2;
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final Object put(Object obj, Object obj2) {
-        if (obj == null) {
-            throw new NullPointerException("key == null");
-        }
-        if (obj2 == null && !this.b) {
-            throw new NullPointerException("value == null");
-        }
-        k a2 = a(obj, true);
-        Object obj3 = a2.n;
-        a2.n = obj2;
-        return obj3;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0016 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x000d  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0013  */
-    @Override // java.util.AbstractMap, java.util.Map
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object remove(Object obj) {
-        k kVar;
-        if (obj != null) {
-            try {
-                kVar = a(obj, false);
-            } catch (ClassCastException unused) {
+            if (serializable instanceof Number) {
+                return 7;
             }
-            if (kVar != null) {
-                c(kVar, true);
-            }
-            if (kVar == null) {
-                return kVar.n;
-            }
-            return null;
+            throw new AssertionError();
         }
-        kVar = null;
-        if (kVar != null) {
+        if (J instanceof la.k) {
+            return 9;
         }
-        if (kVar == null) {
+        if (J == F) {
+            throw new IllegalStateException("JsonReader is closed");
         }
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final int size() {
-        return this.d;
+        throw new ta.d("Custom JsonElement subclass " + J.getClass().getName() + " is not supported");
     }
 }

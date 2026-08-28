@@ -4,7 +4,7 @@ import android.util.Log;
 import android.view.View;
 import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class x0 {
     public static final Field a;
@@ -25,8 +25,8 @@ public abstract class x0 {
             c = declaredField3;
             declaredField3.setAccessible(true);
             d = true;
-        } catch (ReflectiveOperationException e9) {
-            Log.w("WindowInsetsCompat", "Failed to get visible insets from AttachInfo " + e9.getMessage(), e9);
+        } catch (ReflectiveOperationException e10) {
+            Log.w("WindowInsetsCompat", "Failed to get visible insets from AttachInfo " + e10.getMessage(), e10);
         }
     }
 }

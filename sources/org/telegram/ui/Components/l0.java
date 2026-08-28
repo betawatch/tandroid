@@ -1,22 +1,22 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l0 implements dc0 {
+public final /* synthetic */ class l0 implements zb0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fc0 b;
-    public final /* synthetic */ fc0 c;
-    public final /* synthetic */ fc0 d;
+    public final /* synthetic */ bc0 b;
+    public final /* synthetic */ bc0 c;
+    public final /* synthetic */ bc0 d;
 
-    public /* synthetic */ l0(fc0 fc0Var, fc0 fc0Var2, fc0 fc0Var3, int i10) {
-        this.a = i10;
-        this.b = fc0Var;
-        this.c = fc0Var2;
-        this.d = fc0Var3;
+    public /* synthetic */ l0(bc0 bc0Var, bc0 bc0Var2, bc0 bc0Var3, int i9) {
+        this.a = i9;
+        this.b = bc0Var;
+        this.c = bc0Var2;
+        this.d = bc0Var3;
     }
 
-    @Override // org.telegram.ui.Components.dc0
-    public final void m(fc0 fc0Var, int i10) {
+    @Override // org.telegram.ui.Components.zb0
+    public final void m(bc0 bc0Var, int i9) {
         switch (this.a) {
             case 0:
                 y4.b(this.b, this.c, this.d);

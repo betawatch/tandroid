@@ -1,22 +1,33 @@
 package g7;
 
-import java.util.Date;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.dl0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class v6 {
-    public static a5.n a(String str) {
-        JSONObject jSONObject = new JSONObject(str);
-        String a2 = k7.a(jSONObject.getString("id"));
-        long j10 = jSONObject.getLong("created");
-        jSONObject.getBoolean("livemode");
-        String str2 = "card".equals(k7.a(jSONObject.getString(TeXSymbolParser.TYPE_ATTR))) ? "card" : null;
-        Boolean valueOf = Boolean.valueOf(jSONObject.getBoolean("used"));
-        JSONObject jSONObject2 = jSONObject.getJSONObject("card");
-        dc.a aVar = new dc.a(null, Integer.valueOf(jSONObject2.getInt("exp_month")), Integer.valueOf(jSONObject2.getInt("exp_year")), null, k7.a(jSONObject2.optString("name")), k7.a(jSONObject2.optString("address_line1")), k7.a(jSONObject2.optString("address_line2")), k7.a(jSONObject2.optString("address_city")), k7.a(jSONObject2.optString("address_state")), k7.a(jSONObject2.optString("address_zip")), k7.a(jSONObject2.optString("address_country")), m7.a(k7.a(jSONObject2.optString("brand"))), k7.a(jSONObject2.optString("last4")), k7.a(jSONObject2.optString("fingerprint")), m7.b(k7.a(jSONObject2.optString("funding"))), k7.a(jSONObject2.optString("country")), k7.a(jSONObject2.optString("currency")));
-        new Date(j10 * 1000);
-        return new a5.n(a2, valueOf, aVar, str2);
+    public static void a(dl0 dl0Var, org.telegram.ui.ActionBar.b6 b6Var) {
+        dl0Var.q(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.Oh, b6Var), b6Var != null ? b6Var.a() : org.telegram.ui.ActionBar.f6.I.q());
+    }
+
+    public static int b(qh.a aVar) {
+        if (aVar == null) {
+            return 0;
+        }
+        return c(aVar) + (Math.max(0, aVar.c) > 0 ? AndroidUtilities.dp(e2.c.e(r4, 1, 24, 28)) : 0);
+    }
+
+    public static int c(qh.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
+        }
+        return AndroidUtilities.dp(e2.c.e(r3, 1, 16, 12));
+    }
+
+    public static int d(qh.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
+        }
+        return AndroidUtilities.dp(e2.c.e(r3, 1, 16, 8));
     }
 }

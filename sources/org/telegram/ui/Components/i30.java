@@ -1,53 +1,67 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class i30 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k30 b;
+public final class i30 extends eu0 {
+    public final /* synthetic */ l30 b2;
 
-    public /* synthetic */ i30(k30 k30Var, int i10) {
-        this.a = i10;
-        this.b = k30Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i30(l30 l30Var, Context context, wt0 wt0Var, l30 l30Var2, h30 h30Var, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(context, 0L, wt0Var, 0, null, null, null, 8, 0, l30Var2, h30Var, 0, b6Var, null);
+        this.b2 = l30Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                k30 k30Var = this.b;
-                if (k30Var.U == animator) {
-                    k30Var.U = null;
-                    k30Var.b();
-                    break;
-                }
-                break;
-            default:
-                k30 k30Var2 = this.b;
-                if (k30Var2.T == animator) {
-                    k30Var2.T = null;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.eu0
+    public final int getInitialTab() {
+        return 8;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 1:
-                j30 j30Var = this.b.S;
-                if (j30Var != null) {
-                    ((org.telegram.ui.tr0) j30Var).a.a0.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
-        }
+    @Override // org.telegram.ui.Components.eu0
+    public final String getStoriesHashtag() {
+        return this.b2.b;
+    }
+
+    @Override // org.telegram.ui.Components.eu0
+    public final String getStoriesHashtagUsername() {
+        return this.b2.c;
+    }
+
+    @Override // org.telegram.ui.Components.eu0
+    public final boolean t0() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.eu0
+    public final void D0(SparseArray sparseArray) {
+    }
+
+    @Override // org.telegram.ui.Components.eu0
+    public final void K0(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.eu0
+    public final void M0(float f10) {
+    }
+
+    @Override // org.telegram.ui.Components.eu0
+    public final void N0(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.eu0
+    public final void b1(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.eu0
+    public final void o0() {
+    }
+
+    @Override // org.telegram.ui.Components.eu0
+    public final void P(Canvas canvas, float f10, Rect rect, Paint paint) {
     }
 }

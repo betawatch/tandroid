@@ -1,36 +1,36 @@
 package w3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class a implements m3.k {
     public final b a = new b(null, 0);
-    public final d5.z b = new d5.z(2786);
+    public final d5.y b = new d5.y(2786);
     public boolean c;
 
     @Override // m3.k
     public final int b(m3.l lVar, m3.n nVar) {
-        d5.z zVar = this.b;
-        int read = ((m3.h) lVar).read(zVar.a, 0, 2786);
+        d5.y yVar = this.b;
+        int read = ((m3.h) lVar).read(yVar.a, 0, 2786);
         if (read == -1) {
             return -1;
         }
-        zVar.C(0);
-        zVar.B(read);
+        yVar.C(0);
+        yVar.B(read);
         boolean z10 = this.c;
         b bVar = this.a;
         if (!z10) {
-            bVar.f(4, 0L);
+            bVar.k(4, 0L);
             this.c = true;
         }
-        bVar.b(zVar);
+        bVar.g(yVar);
         return 0;
     }
 
     @Override // m3.k
     public final void c(m3.m mVar) {
-        this.a.e(mVar, new e0(0, 1));
-        mVar.A();
-        mVar.n(new m3.o(-9223372036854775807L));
+        this.a.j(mVar, new d0(0, 1));
+        mVar.B();
+        mVar.y(new m3.o(-9223372036854775807L));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:27:0x0036, code lost:
@@ -49,36 +49,36 @@ public final class a implements m3.k {
     public final boolean f(m3.l lVar) {
         m3.h hVar;
         int b10;
-        d5.z zVar = new d5.z(10);
-        int i10 = 0;
+        d5.y yVar = new d5.y(10);
+        int i9 = 0;
         while (true) {
             hVar = (m3.h) lVar;
-            hVar.g(zVar.a, 0, 10, false);
-            zVar.C(0);
-            if (zVar.t() != 4801587) {
+            hVar.g(yVar.a, 0, 10, false);
+            yVar.C(0);
+            if (yVar.t() != 4801587) {
                 break;
             }
-            zVar.D(3);
-            int q6 = zVar.q();
-            i10 += q6 + 10;
-            hVar.a(q6, false);
+            yVar.D(3);
+            int q10 = yVar.q();
+            i9 += q10 + 10;
+            hVar.a(q10, false);
         }
         hVar.f = 0;
-        hVar.a(i10, false);
-        int i11 = i10;
+        hVar.a(i9, false);
+        int i10 = i9;
         loop1: while (true) {
-            int i12 = 0;
+            int i11 = 0;
             while (true) {
-                hVar.g(zVar.a, 0, 6, false);
-                zVar.C(0);
-                if (zVar.w() != 2935) {
+                hVar.g(yVar.a, 0, 6, false);
+                yVar.C(0);
+                if (yVar.w() != 2935) {
                     break;
                 }
-                i12++;
-                if (i12 >= 4) {
+                i11++;
+                if (i11 >= 4) {
                     return true;
                 }
-                byte[] bArr = zVar.a;
+                byte[] bArr = yVar.a;
                 if (bArr.length < 6) {
                     b10 = -1;
                 } else if (((bArr[5] & 248) >> 3) > 10) {
@@ -92,7 +92,7 @@ public final class a implements m3.k {
                 }
                 hVar.a(b10 - 6, false);
             }
-            hVar.a(i11, false);
+            hVar.a(i10, false);
         }
         return false;
     }
@@ -100,7 +100,7 @@ public final class a implements m3.k {
     @Override // m3.k
     public final void g(long j10, long j11) {
         this.c = false;
-        this.a.c();
+        this.a.h();
     }
 
     @Override // m3.k

@@ -1,18 +1,14 @@
 package kf;
 
-import e7.v;
+import d7.u;
 import java.nio.ShortBuffer;
-import za.b;
+import ya.b;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public interface a {
-    public static final xa.a i = new xa.a(11);
-    public static final v j = new v(12);
-    public static final b k = new b(11);
-    public static final ab.a l = new ab.a(12);
+    public static final b m = new b(12);
+    public static final u o = new u(13);
 
-    int C1(int i10, int i11, int i12);
-
-    void D0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11);
+    void g0(ShortBuffer shortBuffer, int i9, ShortBuffer shortBuffer2, int i10, int i11);
 }

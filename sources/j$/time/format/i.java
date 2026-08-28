@@ -9,20 +9,20 @@ public class i implements f {
     public final x d;
     public final int e;
 
-    public i(j$.time.temporal.o oVar, int i10, int i11, x xVar) {
+    public i(j$.time.temporal.o oVar, int i9, int i10, x xVar) {
         this.a = oVar;
-        this.b = i10;
-        this.c = i11;
+        this.b = i9;
+        this.c = i10;
         this.d = xVar;
         this.e = 0;
     }
 
-    public i(j$.time.temporal.o oVar, int i10, int i11, x xVar, int i12) {
+    public i(j$.time.temporal.o oVar, int i9, int i10, x xVar, int i11) {
         this.a = oVar;
-        this.b = i10;
-        this.c = i11;
+        this.b = i9;
+        this.c = i10;
         this.d = xVar;
-        this.e = i12;
+        this.e = i11;
     }
 
     public i a() {
@@ -32,8 +32,8 @@ public class i implements f {
         return new i(this.a, this.b, this.c, this.d, -1);
     }
 
-    public i b(int i10) {
-        return new i(this.a, this.b, this.c, this.d, this.e + i10);
+    public i b(int i9) {
+        return new i(this.a, this.b, this.c, this.d, this.e + i9);
     }
 
     @Override // j$.time.format.f
@@ -47,31 +47,31 @@ public class i implements f {
         v vVar = rVar.b.c;
         String l10 = longValue == Long.MIN_VALUE ? "9223372036854775808" : Long.toString(Math.abs(longValue));
         int length = l10.length();
-        int i10 = this.c;
-        if (length > i10) {
-            throw new j$.time.b("Field " + oVar + " cannot be printed as the value " + longValue + " exceeds the maximum print width of " + i10);
+        int i9 = this.c;
+        if (length > i9) {
+            throw new j$.time.b("Field " + oVar + " cannot be printed as the value " + longValue + " exceeds the maximum print width of " + i9);
         }
         vVar.getClass();
-        int i11 = this.b;
+        int i10 = this.b;
         x xVar = this.d;
         if (longValue >= 0) {
-            int i12 = c.a[xVar.ordinal()];
-            if (i12 != 1) {
-                if (i12 == 2) {
+            int i11 = c.a[xVar.ordinal()];
+            if (i11 != 1) {
+                if (i11 == 2) {
                     sb2.append('+');
                 }
-            } else if (i11 < 19 && longValue >= f[i11]) {
+            } else if (i10 < 19 && longValue >= f[i10]) {
                 sb2.append('+');
             }
         } else {
-            int i13 = c.a[xVar.ordinal()];
-            if (i13 == 1 || i13 == 2 || i13 == 3) {
+            int i12 = c.a[xVar.ordinal()];
+            if (i12 == 1 || i12 == 2 || i12 == 3) {
                 sb2.append('-');
-            } else if (i13 == 4) {
+            } else if (i12 == 4) {
                 throw new j$.time.b("Field " + oVar + " cannot be printed as the value " + longValue + " cannot be negative according to the SignStyle");
             }
         }
-        for (int i14 = 0; i14 < i11 - l10.length(); i14++) {
+        for (int i13 = 0; i13 < i10 - l10.length(); i13++) {
             sb2.append('0');
         }
         sb2.append(l10);
@@ -79,16 +79,16 @@ public class i implements f {
     }
 
     public String toString() {
-        int i10 = this.c;
+        int i9 = this.c;
         j$.time.temporal.o oVar = this.a;
         x xVar = this.d;
-        int i11 = this.b;
-        if (i11 == 1 && i10 == 19 && xVar == x.NORMAL) {
+        int i10 = this.b;
+        if (i10 == 1 && i9 == 19 && xVar == x.NORMAL) {
             return "Value(" + oVar + ")";
         }
-        if (i11 == i10 && xVar == x.NOT_NEGATIVE) {
-            return "Value(" + oVar + "," + i11 + ")";
+        if (i10 == i9 && xVar == x.NOT_NEGATIVE) {
+            return "Value(" + oVar + "," + i10 + ")";
         }
-        return "Value(" + oVar + "," + i11 + "," + i10 + "," + xVar + ")";
+        return "Value(" + oVar + "," + i10 + "," + i9 + "," + xVar + ")";
     }
 }

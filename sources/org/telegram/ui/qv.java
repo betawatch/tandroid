@@ -1,58 +1,62 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
 import android.view.View;
 import java.util.ArrayList;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qv implements org.telegram.ui.Components.pk0 {
+public final /* synthetic */ class qv implements View.OnLongClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ gy b;
+    public final /* synthetic */ dy b;
 
-    public /* synthetic */ qv(gy gyVar, int i10) {
-        this.a = i10;
-        this.b = gyVar;
+    public /* synthetic */ qv(dy dyVar, int i9) {
+        this.a = i9;
+        this.b = dyVar;
     }
 
-    @Override // org.telegram.ui.Components.pk0
-    public final void a(int i10, View view) {
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
         switch (this.a) {
             case 0:
-                gy gyVar = this.b;
-                Object obj = gyVar.y0.r0.G(i10).G;
-                if (!(obj instanceof MessageObject)) {
-                    if (obj instanceof jh.d6) {
-                        jh.d6 d6Var = (jh.d6) obj;
-                        Bundle g10 = a9.p.g(3, TeXSymbolParser.TYPE_ATTR);
-                        g10.putString("hashtag", d6Var.C);
-                        g10.putInt("storiesCount", d6Var.J);
-                        gyVar.presentFragment(new org.telegram.ui.Components.o90(g10, null));
-                        break;
+                dy dyVar = this.b;
+                dyVar.r4(dyVar.E2, 104, true, true, null);
+                break;
+            case 1:
+                dy dyVar2 = this.b;
+                ArrayList arrayList = dyVar2.E2;
+                if (dyVar2.getParentActivity() != null) {
+                    boolean z10 = true;
+                    for (int i9 = 0; i9 < arrayList.size(); i9++) {
+                        long longValue = ((Long) arrayList.get(i9)).longValue();
+                        if (DialogObject.isEncryptedDialog(longValue)) {
+                            z10 = false;
+                        }
+                        TLRPC.Chat chat = dyVar2.getMessagesController().getChat(Long.valueOf(-longValue));
+                        if (chat != null && !ChatObject.canWriteToChat(chat)) {
+                            z10 = false;
+                        }
                     }
-                } else {
-                    MessageObject messageObject = (MessageObject) obj;
-                    Bundle bundle = new Bundle();
-                    if (messageObject.getDialogId() >= 0) {
-                        bundle.putLong("user_id", messageObject.getDialogId());
-                    } else {
-                        bundle.putLong("chat_id", -messageObject.getDialogId());
-                    }
-                    bundle.putInt("message_id", messageObject.getId());
-                    rn rnVar = new rn(bundle);
-                    gy.d4(rnVar, messageObject);
-                    gyVar.presentFragment(rnVar);
+                    org.telegram.ui.Components.x60 H = org.telegram.ui.Components.x60.H(dyVar2, view);
+                    H.c(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new dv(dyVar2, 19), false);
+                    H.l(R.drawable.msg_calendar2, LocaleController.getString(R.string.ScheduleMessage), new dv(dyVar2, 20), z10);
+                    H.Z();
                     break;
                 }
                 break;
+            case 2:
+                this.b.p4(view);
+                break;
             default:
-                gy gyVar2 = this.b;
-                gyVar2.X.I0(true);
-                ArrayList arrayList = gyVar2.X.T2;
-                gyVar2.j3(arrayList.isEmpty() ? pf.g0.Y2[i10] : (pf.e0) arrayList.get(i10));
+                dy dyVar3 = this.b;
+                dyVar3.getContactsController().loadGlobalPrivacySetting();
+                dyVar3.K4();
                 break;
         }
+        return true;
     }
 }

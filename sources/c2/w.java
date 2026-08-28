@@ -1,16 +1,42 @@
 package c2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class w {
-    public final b0 a;
-    public final v b;
-    public u c = u.c;
-    public int d;
-    public long e;
+public abstract class w {
+    public abstract void e(a0 a0Var);
 
-    public w(b0 b0Var, v vVar) {
-        this.a = b0Var;
-        this.b = vVar;
+    public void h(c0 c0Var, a0 a0Var, int i9) {
+        g(a0Var);
+    }
+
+    public void j(c0 c0Var, a0 a0Var, int i9) {
+        i();
+    }
+
+    public void a() {
+    }
+
+    public void b() {
+    }
+
+    public void c() {
+    }
+
+    public void i() {
+    }
+
+    public void d(a0 a0Var) {
+    }
+
+    public void f(a0 a0Var) {
+    }
+
+    public void g(a0 a0Var) {
+    }
+
+    public void k(a0 a0Var) {
+    }
+
+    public void l(f0 f0Var) {
     }
 }

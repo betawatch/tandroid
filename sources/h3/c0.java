@@ -1,26 +1,26 @@
 package h3;
 
-import android.content.Context;
-import android.media.metrics.LogSessionId;
-import android.media.metrics.MediaMetricsManager;
+import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class c0 {
-    public static i3.k a(Context context, k0 k0Var, boolean z10) {
-        LogSessionId logSessionId;
-        MediaMetricsManager mediaMetricsManager = (MediaMetricsManager) context.getSystemService("media_metrics");
-        i3.i iVar = mediaMetricsManager == null ? null : new i3.i(context, mediaMetricsManager.createPlaybackSession());
-        if (iVar == null) {
-            d5.a.K("ExoPlayerImpl", "MediaMetricsService unavailable.");
-            logSessionId = LogSessionId.LOG_SESSION_ID_NONE;
-            return new i3.k(logSessionId);
+public final /* synthetic */ class c0 implements d5.k {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ List b;
+
+    public /* synthetic */ c0(i3.a aVar, List list) {
+        this.b = list;
+    }
+
+    @Override // d5.k
+    public final void invoke(Object obj) {
+        switch (this.a) {
+            case 0:
+                ((a2) obj).onCues(this.b);
+                break;
+            default:
+                ((i3.b) obj).getClass();
+                break;
         }
-        if (z10) {
-            i3.f fVar = k0Var.r;
-            fVar.getClass();
-            fVar.f.a(iVar);
-        }
-        return new i3.k(iVar.c.getSessionId());
     }
 }

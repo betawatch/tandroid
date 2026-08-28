@@ -15,11 +15,11 @@ public abstract class r6 implements j$.util.d1 {
     public Object e;
     public final /* synthetic */ s6 f;
 
-    public abstract void a(int i10, Object obj, Object obj2);
+    public abstract void a(int i9, Object obj, Object obj2);
 
-    public abstract j$.util.d1 b(Object obj, int i10, int i11);
+    public abstract j$.util.d1 b(Object obj, int i9, int i10);
 
-    public abstract j$.util.d1 c(int i10, int i11, int i12, int i13);
+    public abstract j$.util.d1 c(int i9, int i10, int i11, int i12);
 
     @Override // j$.util.Spliterator
     public final int characteristics() {
@@ -32,8 +32,8 @@ public abstract class r6 implements j$.util.d1 {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.p(this, i10);
+    public final /* synthetic */ boolean hasCharacteristics(int i9) {
+        return j$.com.android.tools.r8.a.p(this, i9);
     }
 
     @Override // j$.util.Spliterator
@@ -41,50 +41,50 @@ public abstract class r6 implements j$.util.d1 {
         throw new IllegalStateException();
     }
 
-    public r6(s6 s6Var, int i10, int i11, int i12, int i13) {
+    public r6(s6 s6Var, int i9, int i10, int i11, int i12) {
         this.f = s6Var;
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
+        this.a = i9;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
         Object[] objArr = s6Var.f;
-        this.e = objArr == null ? s6Var.e : objArr[i10];
+        this.e = objArr == null ? s6Var.e : objArr[i9];
     }
 
     @Override // j$.util.Spliterator
     public final long estimateSize() {
-        int i10 = this.a;
-        int i11 = this.d;
-        int i12 = this.b;
-        if (i10 == i12) {
-            return i11 - this.c;
+        int i9 = this.a;
+        int i10 = this.d;
+        int i11 = this.b;
+        if (i9 == i11) {
+            return i10 - this.c;
         }
         long[] jArr = this.f.d;
-        return ((jArr[i12] + i11) - jArr[i10]) - this.c;
+        return ((jArr[i11] + i10) - jArr[i9]) - this.c;
     }
 
     @Override // j$.util.d1
     public final boolean tryAdvance(Object obj) {
         Objects.requireNonNull(obj);
-        int i10 = this.a;
-        int i11 = this.b;
-        if (i10 >= i11 && (i10 != i11 || this.c >= this.d)) {
+        int i9 = this.a;
+        int i10 = this.b;
+        if (i9 >= i10 && (i9 != i10 || this.c >= this.d)) {
             return false;
         }
         Object obj2 = this.e;
+        int i11 = this.c;
+        this.c = i11 + 1;
+        a(i11, obj2, obj);
         int i12 = this.c;
-        this.c = i12 + 1;
-        a(i12, obj2, obj);
-        int i13 = this.c;
         Object obj3 = this.e;
         s6 s6Var = this.f;
-        if (i13 == s6Var.j(obj3)) {
+        if (i12 == s6Var.j(obj3)) {
             this.c = 0;
-            int i14 = this.a + 1;
-            this.a = i14;
+            int i13 = this.a + 1;
+            this.a = i13;
             Object[] objArr = s6Var.f;
-            if (objArr != null && i14 <= i11) {
-                this.e = objArr[i14];
+            if (objArr != null && i13 <= i10) {
+                this.e = objArr[i13];
             }
         }
         return true;
@@ -94,51 +94,51 @@ public abstract class r6 implements j$.util.d1 {
     public final void forEachRemaining(Object obj) {
         s6 s6Var;
         Objects.requireNonNull(obj);
-        int i10 = this.a;
-        int i11 = this.d;
-        int i12 = this.b;
-        if (i10 < i12 || (i10 == i12 && this.c < i11)) {
-            int i13 = this.c;
+        int i9 = this.a;
+        int i10 = this.d;
+        int i11 = this.b;
+        if (i9 < i11 || (i9 == i11 && this.c < i10)) {
+            int i12 = this.c;
             while (true) {
                 s6Var = this.f;
-                if (i10 >= i12) {
+                if (i9 >= i11) {
                     break;
                 }
-                Object obj2 = s6Var.f[i10];
-                s6Var.i(obj2, i13, s6Var.j(obj2), obj);
-                i10++;
-                i13 = 0;
+                Object obj2 = s6Var.f[i9];
+                s6Var.i(obj2, i12, s6Var.j(obj2), obj);
+                i9++;
+                i12 = 0;
             }
-            s6Var.i(this.a == i12 ? this.e : s6Var.f[i12], i13, i11, obj);
-            this.a = i12;
-            this.c = i11;
+            s6Var.i(this.a == i11 ? this.e : s6Var.f[i11], i12, i10, obj);
+            this.a = i11;
+            this.c = i10;
         }
     }
 
     @Override // j$.util.Spliterator
     public final j$.util.d1 trySplit() {
-        int i10 = this.a;
-        int i11 = this.b;
-        if (i10 < i11) {
-            int i12 = i11 - 1;
-            int i13 = this.c;
+        int i9 = this.a;
+        int i10 = this.b;
+        if (i9 < i10) {
+            int i11 = i10 - 1;
+            int i12 = this.c;
             s6 s6Var = this.f;
-            j$.util.d1 c10 = c(i10, i12, i13, s6Var.j(s6Var.f[i12]));
-            this.a = i11;
+            j$.util.d1 c10 = c(i9, i11, i12, s6Var.j(s6Var.f[i11]));
+            this.a = i10;
             this.c = 0;
-            this.e = s6Var.f[i11];
+            this.e = s6Var.f[i10];
             return c10;
         }
-        if (i10 != i11) {
+        if (i9 != i10) {
             return null;
         }
-        int i14 = this.c;
-        int i15 = (this.d - i14) / 2;
-        if (i15 == 0) {
+        int i13 = this.c;
+        int i14 = (this.d - i13) / 2;
+        if (i14 == 0) {
             return null;
         }
-        j$.util.d1 b10 = b(this.e, i14, i15);
-        this.c += i15;
+        j$.util.d1 b10 = b(this.e, i13, i14);
+        this.c += i14;
         return b10;
     }
 

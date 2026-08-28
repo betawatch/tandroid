@@ -1,23 +1,23 @@
 package d4;
 
-import h7.d0;
-import h7.p8;
+import g7.b0;
+import g7.y8;
 import java.nio.ByteBuffer;
 import java.nio.charset.CharacterCodingException;
 import java.nio.charset.CharsetDecoder;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import o8.d;
+import n8.d;
 import z3.e;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a extends p8 {
+public final class a extends y8 {
     public static final Pattern c = Pattern.compile("(.+?)='(.*?)';", 32);
     public final CharsetDecoder a = d.c.newDecoder();
     public final CharsetDecoder b = d.b.newDecoder();
 
-    @Override // h7.p8
+    @Override // g7.y8
     public final z3.c b(e eVar, ByteBuffer byteBuffer) {
         String str;
         CharsetDecoder charsetDecoder = this.b;
@@ -51,11 +51,11 @@ public final class a extends p8 {
         }
         Matcher matcher = c.matcher(str);
         String str3 = null;
-        for (int i10 = 0; matcher.find(i10); i10 = matcher.end()) {
+        for (int i9 = 0; matcher.find(i9); i9 = matcher.end()) {
             String group = matcher.group(1);
             String group2 = matcher.group(2);
             if (group != null) {
-                String b10 = d0.b(group);
+                String b10 = b0.b(group);
                 b10.getClass();
                 if (b10.equals("streamurl")) {
                     str3 = group2;

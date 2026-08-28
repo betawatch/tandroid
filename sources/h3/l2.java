@@ -1,26 +1,27 @@
 package h3;
 
+import fh.y5;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class l2 extends g2 {
     public static final String e;
     public static final String f;
-    public static final f9.z h;
+    public static final y5 h;
     public final int c;
     public final float d;
 
     static {
-        int i10 = d5.g0.a;
+        int i9 = d5.f0.a;
         e = Integer.toString(1, 36);
         f = Integer.toString(2, 36);
-        h = new f9.z(27);
+        h = new y5(23);
     }
 
-    public l2(int i10) {
-        d5.a.e("maxStars must be a positive integer", i10 > 0);
-        this.c = i10;
+    public l2(int i9) {
+        d5.a.e("maxStars must be a positive integer", i9 > 0);
+        this.c = i9;
         this.d = -1.0f;
     }
 
@@ -36,14 +37,14 @@ public final class l2 extends g2 {
         return Arrays.hashCode(new Object[]{Integer.valueOf(this.c), Float.valueOf(this.d)});
     }
 
-    public l2(int i10, float f10) {
+    public l2(int i9, float f10) {
         boolean z10 = false;
-        d5.a.e("maxStars must be a positive integer", i10 > 0);
-        if (f10 >= 0.0f && f10 <= i10) {
+        d5.a.e("maxStars must be a positive integer", i9 > 0);
+        if (f10 >= 0.0f && f10 <= i9) {
             z10 = true;
         }
         d5.a.e("starRating is out of range [0, maxStars]", z10);
-        this.c = i10;
+        this.c = i9;
         this.d = f10;
     }
 }

@@ -20,7 +20,7 @@ import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class s3 implements View.OnLongClickListener, View.OnHoverListener, View.OnAttachStateChangeListener {
     public static s3 v;
@@ -39,7 +39,7 @@ public final class s3 implements View.OnLongClickListener, View.OnHoverListener,
     /* JADX WARN: Type inference failed for: r0v0, types: [m.r3] */
     /* JADX WARN: Type inference failed for: r0v1, types: [m.r3] */
     public s3(View view, CharSequence charSequence) {
-        final int i10 = 0;
+        final int i9 = 0;
         this.d = new Runnable(this) { // from class: m.r3
             public final /* synthetic */ s3 b;
 
@@ -49,7 +49,7 @@ public final class s3 implements View.OnLongClickListener, View.OnHoverListener,
 
             @Override // java.lang.Runnable
             public final void run() {
-                switch (i10) {
+                switch (i9) {
                     case 0:
                         this.b.c(false);
                         break;
@@ -59,7 +59,7 @@ public final class s3 implements View.OnLongClickListener, View.OnHoverListener,
                 }
             }
         };
-        final int i11 = 1;
+        final int i10 = 1;
         this.e = new Runnable(this) { // from class: m.r3
             public final /* synthetic */ s3 b;
 
@@ -69,7 +69,7 @@ public final class s3 implements View.OnLongClickListener, View.OnHoverListener,
 
             @Override // java.lang.Runnable
             public final void run() {
-                switch (i11) {
+                switch (i10) {
                     case 0:
                         this.b.c(false);
                         break;
@@ -126,10 +126,10 @@ public final class s3 implements View.OnLongClickListener, View.OnHoverListener,
 
     public final void c(boolean z10) {
         int height;
+        int i9;
         int i10;
-        int i11;
         boolean z11;
-        int i12;
+        int i11;
         char c10;
         long longPressTimeout;
         long j10;
@@ -166,8 +166,8 @@ public final class s3 implements View.OnLongClickListener, View.OnHoverListener,
             View view2 = (View) t3Var.b;
             Context context2 = (Context) t3Var.a;
             this.n = t3Var;
-            int i13 = this.f;
-            int i14 = this.h;
+            int i12 = this.f;
+            int i13 = this.h;
             boolean z12 = this.r;
             WindowManager.LayoutParams layoutParams2 = (WindowManager.LayoutParams) t3Var.d;
             if (view2.getParent() != null && view2.getParent() != null) {
@@ -180,21 +180,21 @@ public final class s3 implements View.OnLongClickListener, View.OnHoverListener,
             layoutParams2.token = view.getApplicationWindowToken();
             int dimensionPixelOffset = context2.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_threshold);
             if (view.getWidth() < dimensionPixelOffset) {
-                i13 = view.getWidth() / 2;
+                i12 = view.getWidth() / 2;
             }
             if (view.getHeight() >= dimensionPixelOffset) {
                 int dimensionPixelOffset2 = context2.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_extra_offset);
-                height = i14 + dimensionPixelOffset2;
-                i10 = i14 - dimensionPixelOffset2;
+                height = i13 + dimensionPixelOffset2;
+                i9 = i13 - dimensionPixelOffset2;
             } else {
                 height = view.getHeight();
-                i10 = 0;
+                i9 = 0;
             }
             layoutParams2.gravity = 49;
             int dimensionPixelOffset3 = context2.getResources().getDimensionPixelOffset(z12 ? R.dimen.tooltip_y_offset_touch : R.dimen.tooltip_y_offset_non_touch);
             View rootView = view.getRootView();
             ViewGroup.LayoutParams layoutParams3 = rootView.getLayoutParams();
-            int i15 = i13;
+            int i14 = i12;
             if (!(layoutParams3 instanceof WindowManager.LayoutParams) || ((WindowManager.LayoutParams) layoutParams3).type != 2) {
                 Context context3 = view.getContext();
                 while (true) {
@@ -213,43 +213,43 @@ public final class s3 implements View.OnLongClickListener, View.OnHoverListener,
             } else {
                 rootView.getWindowVisibleDisplayFrame(rect);
                 if (rect.left >= 0 || rect.top >= 0) {
-                    i11 = i10;
+                    i10 = i9;
                     z11 = z12;
-                    i12 = 0;
+                    i11 = 0;
                     c10 = 1;
                 } else {
                     Resources resources = context2.getResources();
                     c10 = 1;
-                    i11 = i10;
+                    i10 = i9;
                     z11 = z12;
                     int identifier = resources.getIdentifier("status_bar_height", "dimen", "android");
                     int dimensionPixelSize = identifier != 0 ? resources.getDimensionPixelSize(identifier) : 0;
                     DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-                    i12 = 0;
+                    i11 = 0;
                     rect.set(0, dimensionPixelSize, displayMetrics.widthPixels, displayMetrics.heightPixels);
                 }
                 rootView.getLocationOnScreen(iArr);
                 view.getLocationOnScreen(iArr2);
-                int i16 = iArr2[i12] - iArr[i12];
-                iArr2[i12] = i16;
+                int i15 = iArr2[i11] - iArr[i11];
+                iArr2[i11] = i15;
                 iArr2[c10] = iArr2[c10] - iArr[c10];
-                layoutParams2.x = (i16 + i15) - (rootView.getWidth() / 2);
-                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i12, i12);
+                layoutParams2.x = (i15 + i14) - (rootView.getWidth() / 2);
+                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i11, i11);
                 view2.measure(makeMeasureSpec, makeMeasureSpec);
                 int measuredHeight = view2.getMeasuredHeight();
-                int i17 = iArr2[c10];
-                int i18 = ((i17 + i11) - dimensionPixelOffset3) - measuredHeight;
-                int i19 = i17 + height + dimensionPixelOffset3;
+                int i16 = iArr2[c10];
+                int i17 = ((i16 + i10) - dimensionPixelOffset3) - measuredHeight;
+                int i18 = i16 + height + dimensionPixelOffset3;
                 if (z11) {
-                    if (i18 >= 0) {
-                        layoutParams2.y = i18;
+                    if (i17 >= 0) {
+                        layoutParams2.y = i17;
                     } else {
-                        layoutParams2.y = i19;
+                        layoutParams2.y = i18;
                     }
-                } else if (measuredHeight + i19 <= rect.height()) {
-                    layoutParams2.y = i19;
-                } else {
+                } else if (measuredHeight + i18 <= rect.height()) {
                     layoutParams2.y = i18;
+                } else {
+                    layoutParams2.y = i17;
                 }
             }
             ((WindowManager) context2.getSystemService("window")).addView(view2, layoutParams2);
@@ -293,15 +293,15 @@ public final class s3 implements View.OnLongClickListener, View.OnHoverListener,
                         return false;
                     }
                 } else if (view2.isEnabled() && this.n == null) {
-                    int x8 = (int) motionEvent.getX();
+                    int x10 = (int) motionEvent.getX();
                     int y10 = (int) motionEvent.getY();
                     if (!this.s) {
-                        int abs = Math.abs(x8 - this.f);
-                        int i10 = this.c;
-                        if (abs <= i10) {
+                        int abs = Math.abs(x10 - this.f);
+                        int i9 = this.c;
+                        if (abs <= i9) {
                         }
                     }
-                    this.f = x8;
+                    this.f = x10;
                     this.h = y10;
                     this.s = false;
                     b(this);

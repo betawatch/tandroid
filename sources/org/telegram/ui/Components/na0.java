@@ -1,34 +1,45 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MediaDataController;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class na0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ab0 b;
+public final class na0 extends org.telegram.ui.ActionBar.g1 {
+    public final /* synthetic */ int H;
 
-    public /* synthetic */ na0(ab0 ab0Var, int i10) {
-        this.a = i10;
-        this.b = ab0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ na0(int i9, int i10, Context context, org.telegram.ui.ActionBar.b6 b6Var, boolean z10, boolean z11) {
+        super(i9, context, b6Var, z10, z11);
+        this.H = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.ui.ActionBar.g1
+    public final void i() {
+        switch (this.H) {
             case 0:
-                ab0 ab0Var = this.b;
-                ta0 ta0Var = ab0Var.f;
-                if (!ab0Var.V.d.webpageTop) {
-                    ta0Var.w0(ta0Var.computeVerticalScrollRange() - (ta0Var.computeVerticalScrollExtent() + ta0Var.computeVerticalScrollOffset()), MediaDataController.MAX_LINKS_COUNT, sh.m.V);
-                    break;
-                } else {
-                    ta0Var.w0(-ta0Var.computeVerticalScrollOffset(), MediaDataController.MAX_LINKS_COUNT, sh.m.V);
-                    break;
-                }
+                setBackground(null);
+                break;
             default:
-                this.b.g(true, false);
+                setBackground(null);
                 break;
         }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.H) {
+            case 0:
+                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
+                    break;
+                }
+                break;
+            default:
+                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
+                    break;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

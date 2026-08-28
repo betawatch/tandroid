@@ -2,14 +2,14 @@ package i1;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import f2.h1;
+import f2.j1;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class b implements Parcelable {
     public final Parcelable a;
     public static final a b = new a();
-    public static final Parcelable.Creator<b> CREATOR = new h1(1);
+    public static final Parcelable.Creator<b> CREATOR = new j1(1);
 
     public b() {
         this.a = null;
@@ -21,8 +21,8 @@ public abstract class b implements Parcelable {
     }
 
     @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeParcelable(this.a, i10);
+    public void writeToParcel(Parcel parcel, int i9) {
+        parcel.writeParcelable(this.a, i9);
     }
 
     public b(Parcelable parcelable) {

@@ -1,69 +1,60 @@
 package gh;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.zu0;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class g6 extends zu0 {
-    public int s0;
-    public final /* synthetic */ m6 t0;
+public final /* synthetic */ class g6 implements RequestDelegate {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ v7 b;
+    public final /* synthetic */ Utilities.Callback2 c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b6 e;
+    public final /* synthetic */ long f;
+    public final /* synthetic */ String g;
+    public final /* synthetic */ long h;
+    public final /* synthetic */ TLObject i;
+    public final /* synthetic */ TLObject j;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g6(m6 m6Var, Context context) {
-        super(context, null);
-        this.t0 = m6Var;
-        this.s0 = -1;
+    public /* synthetic */ g6(v7 v7Var, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.b6 b6Var, long j10, String str, long j11, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
+        this.b = v7Var;
+        this.c = callback2;
+        this.d = context;
+        this.e = b6Var;
+        this.f = j10;
+        this.g = str;
+        this.h = j11;
+        this.i = tLObject;
+        this.j = tL_textWithEntities;
     }
 
-    @Override // org.telegram.ui.Components.zu0
-    public final boolean P() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.zu0
-    public final boolean Q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.zu0
-    public final void T() {
-        this.t0.d.invalidate();
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (view == this.H) {
-            return true;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new h6(this.b, tLObject, tL_error, this.c, this.d, this.e, this.f, this.g, (TLRPC.TL_payments_paymentFormStarGift) this.i, (TL_stars.StarGift) this.j, this.h));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new h6(this.b, tLObject, tL_error, this.c, this.d, this.e, this.f, this.g, this.h, this.i, (TLRPC.TL_textWithEntities) this.j));
+                break;
         }
-        return super.drawChild(canvas, view, j10);
     }
 
-    @Override // org.telegram.ui.Components.zu0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        m6 m6Var = this.t0;
-        m6Var.e0.setTranslationY(((i13 - i11) - r4.getMeasuredHeight()) / 2.0f);
-        m6Var.g0.W(m6Var.g0.getY() + m6Var.e0.getY(), getBackgroundSizeY());
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        if (this.s0 != -1) {
-            super.onMeasure(i10, i11);
-            int measuredHeight = getMeasuredHeight();
-            int i12 = this.s0;
-            if (measuredHeight < i12) {
-                i11 = View.MeasureSpec.makeMeasureSpec(Math.max(i12, getMeasuredHeight()), TLObject.FLAG_31);
-            }
-        }
-        super.onMeasure(i10, i11);
-        int i13 = this.s0;
-        if (i13 == -1) {
-            this.s0 = Math.max(i13, getMeasuredHeight());
-        }
+    public /* synthetic */ g6(v7 v7Var, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.b6 b6Var, long j10, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j11) {
+        this.b = v7Var;
+        this.c = callback2;
+        this.d = context;
+        this.e = b6Var;
+        this.f = j10;
+        this.g = str;
+        this.i = tL_payments_paymentFormStarGift;
+        this.j = starGift;
+        this.h = j11;
     }
 }

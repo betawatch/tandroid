@@ -20,10 +20,10 @@ public abstract class z extends j {
     public static Object b(Method method, z zVar, Object... objArr) {
         try {
             return method.invoke(zVar, objArr);
-        } catch (IllegalAccessException e9) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e9);
-        } catch (InvocationTargetException e10) {
-            Throwable cause = e10.getCause();
+        } catch (IllegalAccessException e10) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e10);
+        } catch (InvocationTargetException e11) {
+            Throwable cause = e11.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -44,8 +44,8 @@ public abstract class z extends j {
             try {
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 zVar = zzjr.get(cls);
-            } catch (ClassNotFoundException e9) {
-                throw new IllegalStateException("Class initialization cannot fail.", e9);
+            } catch (ClassNotFoundException e10) {
+                throw new IllegalStateException("Class initialization cannot fail.", e10);
             }
         }
         if (zVar != null) {
@@ -55,7 +55,7 @@ public abstract class z extends j {
         throw new IllegalStateException(name.length() != 0 ? "Unable to get default instance for: ".concat(name) : new String("Unable to get default instance for: "));
     }
 
-    public abstract Object a(int i10);
+    public abstract Object a(int i9);
 
     public final boolean equals(Object obj) {
         if (this == obj) {
@@ -70,15 +70,15 @@ public abstract class z extends j {
     }
 
     public final int hashCode() {
-        int i10 = this.zzex;
-        if (i10 != 0) {
-            return i10;
+        int i9 = this.zzex;
+        if (i9 != 0) {
+            return i9;
         }
         w0 w0Var = w0.c;
         w0Var.getClass();
-        int e9 = w0Var.a(getClass()).e(this);
-        this.zzex = e9;
-        return e9;
+        int e10 = w0Var.a(getClass()).e(this);
+        this.zzex = e10;
+        return e10;
     }
 
     public final String toString() {

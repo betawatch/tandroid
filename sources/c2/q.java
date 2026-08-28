@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class q extends r {
     public final Object a = new Object();
     public Executor b;
-    public a9.i c;
+    public xa.c c;
     public n d;
     public ArrayList e;
 
@@ -30,7 +30,7 @@ public abstract class q extends r {
                 try {
                     Executor executor = this.b;
                     if (executor != null) {
-                        executor.execute(new bf.e(this, this.c, nVar, arrayList, 2));
+                        executor.execute(new af.f(this, this.c, nVar, arrayList, 2));
                     } else {
                         this.d = nVar;
                         this.e = new ArrayList(arrayList);

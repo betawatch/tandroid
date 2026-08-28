@@ -5,19 +5,18 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.SeekBar;
-import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class d0 extends SeekBar {
     public final e0 a;
 
-    public d0(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, R.attr.seekBarStyle);
+    public d0(Context context, AttributeSet attributeSet, int i9) {
+        super(context, attributeSet, i9);
         d3.a(this, getContext());
         e0 e0Var = new e0(this);
         this.a = e0Var;
-        e0Var.b(attributeSet, R.attr.seekBarStyle);
+        e0Var.b(attributeSet, i9);
     }
 
     @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View

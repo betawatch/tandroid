@@ -1,19 +1,19 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ax extends f2.k0 {
-    public final /* synthetic */ fy I;
-    public final /* synthetic */ bx J;
+public final class ax extends s51 {
+    public final /* synthetic */ dy e;
 
-    public ax(bx bxVar, fy fyVar) {
-        this.J = bxVar;
-        this.I = fyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ax(dy dyVar, zw zwVar) {
+        super(zwVar);
+        this.e = dyVar;
     }
 
-    @Override // f2.k0
-    public final int R0() {
-        fy fyVar = this.I;
-        return (fyVar.s == 0 && this.J.R.Z3() && fyVar.v == 2) ? 1 : 0;
+    @Override // org.telegram.ui.s51, android.widget.PopupWindow
+    public final void dismiss() {
+        super.dismiss();
+        this.e.I0 = null;
     }
 }

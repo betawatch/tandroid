@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class k {
     public final String a;
-    public final hc.d b;
+    public final m5.c0 b;
 
     public k(JSONObject jSONObject) {
         jSONObject.optString("basePlanId");
         jSONObject.optString("offerId").getClass();
         this.a = jSONObject.getString("offerIdToken");
-        this.b = new hc.d(jSONObject.getJSONArray("pricingPhases"));
+        this.b = new m5.c0(jSONObject.getJSONArray("pricingPhases"));
         JSONObject optJSONObject = jSONObject.optJSONObject("installmentPlanDetails");
         if (optJSONObject != null) {
             optJSONObject.getInt("commitmentPaymentsCount");
@@ -40,8 +40,8 @@ public final class k {
         ArrayList arrayList = new ArrayList();
         JSONArray optJSONArray = jSONObject.optJSONArray("offerTags");
         if (optJSONArray != null) {
-            for (int i10 = 0; i10 < optJSONArray.length(); i10++) {
-                arrayList.add(optJSONArray.getString(i10));
+            for (int i9 = 0; i9 < optJSONArray.length(); i9++) {
+                arrayList.add(optJSONArray.getString(i9));
             }
         }
     }

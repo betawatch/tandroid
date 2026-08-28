@@ -1,80 +1,80 @@
 package ig;
 
-import android.text.SpannableStringBuilder;
-import android.view.KeyEvent;
-import hh.m5;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.p8;
-import org.telegram.ui.Components.t5;
+import android.graphics.Canvas;
+import android.graphics.PointF;
+import android.graphics.RectF;
+import android.os.SystemClock;
+import android.view.View;
+import android.view.ViewGroup;
+import g.x;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s b;
+public final class k implements jg.a {
+    public final ViewGroup c;
+    public final j d;
+    public final ViewGroup e;
+    public boolean h;
+    public final RectF a = new RectF();
+    public final PointF b = new PointF();
+    public final RectF f = new RectF();
 
-    public /* synthetic */ k(s sVar, int i10) {
-        this.a = i10;
-        this.b = sVar;
+    public k(ViewGroup viewGroup, ViewGroup viewGroup2, j jVar) {
+        this.c = viewGroup;
+        this.d = jVar;
+        this.e = viewGroup2;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        p8 p8Var;
-        switch (this.a) {
-            case 0:
-                Boolean bool = (Boolean) obj;
-                s sVar = this.b;
-                h hVar = sVar.Q;
-                if (!sVar.a0()) {
-                    int editTextSelectionEnd = sVar.n.getEditTextSelectionEnd();
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(sVar.n.getText());
-                    for (t5 t5Var : (t5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), t5.class)) {
-                        if (spannableStringBuilder.getSpanEnd(t5Var) == editTextSelectionEnd) {
-                            sVar.A.remove(Long.valueOf(t5Var.documentId));
-                            sVar.B.remove(Long.valueOf(t5Var.documentId));
-                            sVar.b.A(Long.valueOf(t5Var.documentId));
-                            if (t5Var.documentId == -1 && (p8Var = sVar.s) != null) {
-                                p8Var.setChecked(false);
-                                sVar.n.setMaxLength(sVar.F);
-                            }
-                            if (bool.booleanValue()) {
-                                sVar.n.dispatchKeyEvent(new KeyEvent(0, 67));
-                                AndroidUtilities.cancelRunOnUIThread(hVar);
-                                AndroidUtilities.runOnUIThread(hVar, 350L);
-                                break;
-                            } else {
-                                t5Var.setRemoved(new d5.i(sVar, t5Var, editTextSelectionEnd, 7));
-                                sVar.W(t5Var);
-                                sVar.Y(false);
-                                break;
-                            }
-                        }
-                    }
-                    break;
-                }
-                break;
-            case 1:
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                s sVar2 = this.b;
-                if (!sVar2.isFinishing()) {
-                    sVar2.v.setLoading(false);
-                    if (tL_error.text.equals("CHAT_NOT_MODIFIED")) {
-                        sVar2.finishFragment();
-                        break;
-                    } else {
-                        AndroidUtilities.runOnUIThread(new m5(8, sVar2, tL_error), sVar2.M == null ? 200L : 0L);
-                        break;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // jg.a
+    public final void e(Canvas canvas, RectF rectF) {
+        long uptimeMillis = SystemClock.uptimeMillis();
+        ViewGroup viewGroup = this.c;
+        ViewGroup viewGroup2 = this.e;
+        PointF pointF = this.b;
+        if (pg.i.b(viewGroup, viewGroup2, pointF)) {
+            canvas.save();
+            canvas.clipRect(rectF);
+            canvas.translate(pointF.x, pointF.y);
+            if (!(viewGroup instanceof jg.a) || this.h) {
+                for (int i9 = 0; i9 < viewGroup.getChildCount(); i9++) {
+                    View childAt = viewGroup.getChildAt(i9);
+                    RectF rectF2 = this.a;
+                    if (pg.i.c(childAt, viewGroup2, rectF2) && rectF2.intersect(rectF)) {
+                        this.d.a(canvas, childAt, uptimeMillis);
                     }
                 }
-                break;
-            default:
-                s sVar3 = this.b;
-                sVar3.getClass();
-                sVar3.K = ((Integer) obj).intValue();
-                break;
+            } else {
+                RectF rectF3 = this.f;
+                rectF3.set(rectF);
+                rectF.offset(-pointF.x, -pointF.y);
+                ((jg.a) viewGroup).e(canvas, rectF);
+                rectF.set(rectF3);
+            }
+            canvas.restore();
         }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // jg.a
+    public final void g(x xVar, RectF rectF) {
+        ViewGroup viewGroup = this.c;
+        ViewGroup viewGroup2 = this.e;
+        PointF pointF = this.b;
+        if (!pg.i.b(viewGroup, viewGroup2, pointF)) {
+            xVar.b = true;
+            return;
+        }
+        if (!(viewGroup instanceof jg.a) || this.h) {
+            xVar.b = true;
+            return;
+        }
+        xVar.c(pointF.x);
+        xVar.c(pointF.y);
+        RectF rectF2 = this.f;
+        rectF2.set(rectF);
+        rectF.offset(-pointF.x, -pointF.y);
+        ((jg.a) viewGroup).g(xVar, rectF);
+        rectF.set(rectF2);
     }
 }

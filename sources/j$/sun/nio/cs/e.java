@@ -33,7 +33,7 @@ public final class e {
         return c10;
     }
 
-    public final int b(char c10, char[] cArr, int i10, int i11) {
+    public final int b(char c10, char[] cArr, int i9, int i10) {
         if (!Character.isHighSurrogate(c10)) {
             if (Character.isLowSurrogate(c10)) {
                 this.a = CoderResult.malformedForLength(1);
@@ -43,11 +43,11 @@ public final class e {
             this.a = null;
             return c10;
         }
-        if (i11 - i10 < 2) {
+        if (i10 - i9 < 2) {
             this.a = CoderResult.UNDERFLOW;
             return -1;
         }
-        char c11 = cArr[i10 + 1];
+        char c11 = cArr[i9 + 1];
         if (Character.isLowSurrogate(c11)) {
             int codePoint = Character.toCodePoint(c10, c11);
             this.b = true;

@@ -1,40 +1,31 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m20 implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s50 b;
+public final class m20 extends f2.x {
+    public final /* synthetic */ o50 c;
 
-    public /* synthetic */ m20(s50 s50Var, int i10) {
-        this.a = i10;
-        this.b = s50Var;
+    public m20(o50 o50Var) {
+        this.c = o50Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        TLRPC.Updates updates = (TLRPC.Updates) obj;
-        switch (this.a) {
-            case 0:
-                s50 s50Var = this.b;
-                if (updates != null) {
-                    s50Var.d.getMessagesController().processUpdates(updates, false);
-                }
-                AndroidUtilities.runOnUIThread(new e20(s50Var, 10));
-                break;
-            default:
-                s50 s50Var2 = this.b;
-                if (updates == null) {
-                    s50Var2.getClass();
-                    break;
-                } else {
-                    s50Var2.d.getMessagesController().processUpdates(updates, false);
-                    break;
-                }
+    @Override // f2.x
+    public final int i(int i9) {
+        i50 i50Var;
+        int i10;
+        int i11;
+        int i12 = o50.B3 ? 6 : 2;
+        if (o50.C3 || i9 < (i10 = (i50Var = this.c.L).C) || i9 >= (i11 = i50Var.D)) {
+            return i12;
         }
+        int i13 = i11 - i10;
+        int i14 = (i9 != i11 - 1 || (!o50.B3 && i13 % 2 == 0)) ? 1 : 2;
+        if (!o50.B3) {
+            return i14;
+        }
+        if (i13 == 1) {
+            return 6;
+        }
+        return i13 == 2 ? 3 : 2;
     }
 }

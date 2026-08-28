@@ -1,32 +1,38 @@
 package g7;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class c8 {
-    public static boolean a(i7.d0 d0Var, Collection collection) {
-        collection.getClass();
-        if (collection instanceof i7.v) {
-            collection = ((i7.v) collection).zza();
+    public static boolean a(m3.l lVar) {
+        d5.y yVar = new d5.y(8);
+        int i9 = com.google.android.exoplayer2.upstream.k0.b(lVar, yVar).a;
+        if (i9 != 1380533830 && i9 != 1380333108) {
+            return false;
         }
-        boolean z10 = false;
-        if (!(collection instanceof Set) || collection.size() <= d0Var.size()) {
-            Iterator it = collection.iterator();
-            while (it.hasNext()) {
-                z10 |= d0Var.remove(it.next());
+        lVar.c(0, 4, yVar.a);
+        yVar.C(0);
+        int e10 = yVar.e();
+        if (e10 == 1463899717) {
+            return true;
+        }
+        d5.a.o("WavHeaderReader", "Unsupported form type: " + e10);
+        return false;
+    }
+
+    public static com.google.android.exoplayer2.upstream.k0 b(int i9, m3.l lVar, d5.y yVar) {
+        com.google.android.exoplayer2.upstream.k0 b10 = com.google.android.exoplayer2.upstream.k0.b(lVar, yVar);
+        while (true) {
+            int i10 = b10.a;
+            if (i10 == i9) {
+                return b10;
             }
-            return z10;
-        }
-        Iterator<E> it2 = d0Var.iterator();
-        while (it2.hasNext()) {
-            if (collection.contains(it2.next())) {
-                it2.remove();
-                z10 = true;
+            e2.c.t(i10, "Ignoring unknown WAV chunk: ", "WavHeaderReader");
+            long j10 = b10.b + 8;
+            if (j10 > 2147483647L) {
+                throw h3.t1.c("Chunk is too large (~2GB+) to skip; id: " + i10);
             }
+            lVar.u((int) j10);
+            b10 = com.google.android.exoplayer2.upstream.k0.b(lVar, yVar);
         }
-        return z10;
     }
 }

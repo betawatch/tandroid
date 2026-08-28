@@ -1,15 +1,19 @@
 package h7;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class c6 {
-    public static ArrayList a(org.telegram.ui.ActionBar.h6 h6Var, int... iArr) {
-        ArrayList arrayList = new ArrayList(iArr.length);
-        for (int i10 : iArr) {
-            arrayList.add(new org.telegram.ui.ActionBar.i6(null, 0, null, null, null, h6Var, i10));
+public final class c6 implements q9.d {
+    public static final c6 a = new c6();
+
+    static {
+        e2.c.u(e2.c.s(h0.class, e2.c.j(2, e2.c.s(h0.class, new e0(1)))));
+    }
+
+    @Override // q9.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return arrayList;
+        throw null;
     }
 }

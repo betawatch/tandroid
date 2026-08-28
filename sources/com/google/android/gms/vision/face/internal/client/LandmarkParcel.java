@@ -2,37 +2,37 @@ package com.google.android.gms.vision.face.internal.client;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import f4.e;
-import h7.r8;
-import z5.a;
+import c.c;
+import g7.p8;
+import y5.a;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class LandmarkParcel extends a {
-    public static final Parcelable.Creator<LandmarkParcel> CREATOR = new e(4);
+    public static final Parcelable.Creator<LandmarkParcel> CREATOR = new c(20);
     public final int a;
     public final float b;
     public final float c;
     public final int d;
 
-    public LandmarkParcel(int i10, float f10, float f11, int i11) {
-        this.a = i10;
+    public LandmarkParcel(int i9, float f10, float f11, int i10) {
+        this.a = i9;
         this.b = f10;
         this.c = f11;
-        this.d = i11;
+        this.d = i10;
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.s(parcel, 1, 4);
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        r8.s(parcel, 2, 4);
+        p8.s(parcel, 2, 4);
         parcel.writeFloat(this.b);
-        r8.s(parcel, 3, 4);
+        p8.s(parcel, 3, 4);
         parcel.writeFloat(this.c);
-        r8.s(parcel, 4, 4);
+        p8.s(parcel, 4, 4);
         parcel.writeInt(this.d);
-        r8.r(parcel, q6);
+        p8.r(parcel, q10);
     }
 }

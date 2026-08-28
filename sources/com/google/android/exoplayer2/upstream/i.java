@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i extends g {
     public final ContentResolver a;
@@ -41,8 +41,8 @@ public final class i extends g {
                         if (assetFileDescriptor != null) {
                             assetFileDescriptor.close();
                         }
-                    } catch (IOException e9) {
-                        throw new h(e9, 2000);
+                    } catch (IOException e10) {
+                        throw new h(e10, 2000);
                     }
                 } finally {
                     this.c = null;
@@ -51,8 +51,8 @@ public final class i extends g {
                         transferEnded();
                     }
                 }
-            } catch (IOException e10) {
-                throw new h(e10, 2000);
+            } catch (IOException e11) {
+                throw new h(e11, 2000);
             }
         } catch (Throwable th) {
             this.d = null;
@@ -68,8 +68,8 @@ public final class i extends g {
                         transferEnded();
                     }
                     throw th;
-                } catch (IOException e11) {
-                    throw new h(e11, 2000);
+                } catch (IOException e12) {
+                    throw new h(e12, 2000);
                 }
             } finally {
                 this.c = null;
@@ -145,30 +145,30 @@ public final class i extends g {
             this.f = true;
             transferStarted(qVar);
             return j10 != -1 ? j10 : this.e;
-        } catch (h e9) {
-            throw e9;
-        } catch (IOException e10) {
-            throw new h(e10, e10 instanceof FileNotFoundException ? 2005 : 2000);
+        } catch (h e10) {
+            throw e10;
+        } catch (IOException e11) {
+            throw new h(e11, e11 instanceof FileNotFoundException ? 2005 : 2000);
         }
     }
 
     @Override // com.google.android.exoplayer2.upstream.j
-    public final int read(byte[] bArr, int i10, int i11) {
-        if (i11 == 0) {
+    public final int read(byte[] bArr, int i9, int i10) {
+        if (i10 == 0) {
             return 0;
         }
         long j10 = this.e;
         if (j10 != 0) {
             if (j10 != -1) {
                 try {
-                    i11 = (int) Math.min(j10, i11);
-                } catch (IOException e9) {
-                    throw new h(e9, 2000);
+                    i10 = (int) Math.min(j10, i10);
+                } catch (IOException e10) {
+                    throw new h(e10, 2000);
                 }
             }
             FileInputStream fileInputStream = this.d;
-            int i12 = d5.g0.a;
-            int read = fileInputStream.read(bArr, i10, i11);
+            int i11 = d5.f0.a;
+            int read = fileInputStream.read(bArr, i9, i10);
             if (read != -1) {
                 long j11 = this.e;
                 if (j11 != -1) {

@@ -1,51 +1,14 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ah0 implements eb0 {
-    public final /* synthetic */ kh0 a;
-
-    public ah0(kh0 kh0Var) {
-        this.a = kh0Var;
-    }
-
-    @Override // org.telegram.ui.eb0
-    public final void a(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
-        this.a.e0(tL_chatInviteExported);
-    }
-
-    @Override // org.telegram.ui.eb0
-    public final void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject) {
-        if (tLObject instanceof TLRPC.TL_messages_exportedChatInvite) {
-            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = (TLRPC.TL_chatInviteExported) ((TLRPC.TL_messages_exportedChatInvite) tLObject).invite;
-            kh0 kh0Var = this.a;
-            kh0Var.c0(tL_chatInviteExported2);
-            for (int i10 = 0; i10 < kh0Var.e0.size(); i10++) {
-                if (((TLRPC.TL_chatInviteExported) kh0Var.e0.get(i10)).link.equals(tL_chatInviteExported.link)) {
-                    if (!tL_chatInviteExported2.revoked) {
-                        kh0Var.e0.set(i10, tL_chatInviteExported2);
-                        kh0Var.i0(true);
-                        return;
-                    } else {
-                        bh0 f02 = kh0Var.f0();
-                        kh0Var.e0.remove(i10);
-                        kh0Var.f0.add(0, tL_chatInviteExported2);
-                        kh0Var.h0(f02);
-                        return;
-                    }
-                }
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.eb0
-    public final void c(TLObject tLObject) {
-        if (tLObject instanceof TLRPC.TL_chatInviteExported) {
-            AndroidUtilities.runOnUIThread(new ff0(5, this, tLObject), 200L);
-        }
+public final class ah0 extends FrameLayout {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), i10);
     }
 }

@@ -19,8 +19,8 @@ import java.util.function.ToLongFunction;
 public final /* synthetic */ class a1 implements ObjLongConsumer, LongBinaryOperator, ToLongFunction, BiConsumer, IntFunction, LongFunction, Supplier, Consumer, BinaryOperator {
     public final /* synthetic */ int a;
 
-    public /* synthetic */ a1(int i10) {
-        this.a = i10;
+    public /* synthetic */ a1(int i9) {
+        this.a = i9;
     }
 
     private final void accept$j$$util$stream$Node$$ExternalSyntheticLambda0(Object obj) {
@@ -35,7 +35,7 @@ public final /* synthetic */ class a1 implements ObjLongConsumer, LongBinaryOper
     @Override // java.util.function.Consumer
     /* renamed from: accept */
     public void x(Object obj) {
-        int i10 = this.a;
+        int i9 = this.a;
     }
 
     public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
@@ -126,28 +126,28 @@ public final /* synthetic */ class a1 implements ObjLongConsumer, LongBinaryOper
     }
 
     @Override // java.util.function.IntFunction
-    public Object apply(int i10) {
+    public Object apply(int i9) {
         switch (this.a) {
             case 4:
-                return new Long[i10];
+                return new Long[i9];
             case 12:
-                return new Object[i10];
+                return new Object[i9];
             case 20:
-                return new Object[i10];
+                return new Object[i9];
             case 21:
-                return new Integer[i10];
+                return new Integer[i9];
             case 22:
-                return new Long[i10];
+                return new Long[i9];
             case 23:
-                return new Double[i10];
+                return new Double[i9];
             case 26:
-                return new Integer[i10];
+                return new Integer[i9];
             case 27:
-                return new Integer[i10];
+                return new Integer[i9];
             case 28:
-                return new Long[i10];
+                return new Long[i9];
             default:
-                return new Long[i10];
+                return new Long[i9];
         }
     }
 

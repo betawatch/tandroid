@@ -7,9 +7,9 @@ import android.graphics.RectF;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ws;
+import org.telegram.ui.Components.xs;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class s extends LinearLayout {
     public static final /* synthetic */ int f = 0;
@@ -22,11 +22,11 @@ public final class s extends LinearLayout {
     public final void a(float f10) {
         this.e = f10;
         TextView textView = this.d;
-        int w02 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.G6, false);
-        int i10 = org.telegram.ui.ActionBar.g6.I6;
-        textView.setTextColor(i0.b.d(f10, w02, org.telegram.ui.ActionBar.g6.w0(null, i10, false)));
+        int w02 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.G6, false);
+        int i9 = org.telegram.ui.ActionBar.f6.I6;
+        textView.setTextColor(i0.a.d(f10, w02, org.telegram.ui.ActionBar.f6.w0(null, i9, false)));
         Paint paint = this.a;
-        paint.setColor(i0.b.d(f10, i0.b.k(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.M6, false), 63), org.telegram.ui.ActionBar.g6.w0(null, i10, false)));
+        paint.setColor(i0.a.d(f10, i0.a.k(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.M6, false), 63), org.telegram.ui.ActionBar.f6.w0(null, i9, false)));
         paint.setStrokeWidth(Math.max(2, AndroidUtilities.dp(AndroidUtilities.lerp(0.5f, 2.0f, f10))));
         invalidate();
     }
@@ -42,7 +42,7 @@ public final class s extends LinearLayout {
             return;
         }
         ValueAnimator duration = ValueAnimator.ofFloat(f11, f10).setDuration(250L);
-        duration.setInterpolator(ws.e);
+        duration.setInterpolator(xs.e);
         duration.addUpdateListener(new r(this, 0));
         duration.start();
     }

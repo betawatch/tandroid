@@ -21,9 +21,9 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.ui.i6;
+import org.telegram.ui.Cells.e3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuListener, androidx.lifecycle.t, androidx.lifecycle.u0, androidx.lifecycle.i, g2.f {
     public static final Object f0 = new Object();
@@ -54,7 +54,7 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     public Bundle b;
     public androidx.lifecycle.n0 b0;
     public SparseArray c;
-    public androidx.activity.n c0;
+    public androidx.activity.o c0;
     public Bundle d;
     public final ArrayList d0;
     public final q e0;
@@ -74,7 +74,7 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     public boolean T = true;
 
     public s() {
-        new a8.b(this, 5);
+        new androidx.activity.i(this, 3);
         this.Y = androidx.lifecycle.n.e;
         this.a0 = new androidx.lifecycle.z();
         new AtomicInteger();
@@ -132,14 +132,14 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         throw new IllegalStateException("Fragment " + this + " not attached to a context.");
     }
 
-    public final void L(int i10, int i11, int i12, int i13) {
-        if (this.U == null && i10 == 0 && i11 == 0 && i12 == 0 && i13 == 0) {
+    public final void L(int i9, int i10, int i11, int i12) {
+        if (this.U == null && i9 == 0 && i10 == 0 && i11 == 0 && i12 == 0) {
             return;
         }
-        j().b = i10;
-        j().c = i11;
-        j().d = i12;
-        j().e = i13;
+        j().b = i9;
+        j().c = i10;
+        j().d = i11;
+        j().e = i12;
     }
 
     public final void M(Bundle bundle) {
@@ -238,7 +238,7 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         return (g2.e) this.c0.c;
     }
 
-    public g7.y h() {
+    public f7.a0 h() {
         return new o(this);
     }
 
@@ -366,11 +366,11 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
             printWriter.println(this.R);
         }
         if (n() != null) {
-            new i6(this, f()).t2(str, printWriter);
+            new e3(this, f()).v2(str, printWriter);
         }
         printWriter.print(str);
         printWriter.println("Child " + this.H + ":");
-        this.H.w(s3.c.l(str, "  "), fileDescriptor, printWriter, strArr);
+        this.H.w(ta.b.j(str, "  "), fileDescriptor, printWriter, strArr);
     }
 
     public final r j() {
@@ -447,13 +447,13 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         throw new IllegalStateException("Fragment " + this + " not associated with a fragment manager.");
     }
 
-    public final String q(int i10) {
-        return K().getResources().getString(i10);
+    public final String q(int i9) {
+        return K().getResources().getString(i9);
     }
 
     public final void r() {
         this.Z = new androidx.lifecycle.v(this);
-        this.c0 = new androidx.activity.n(this);
+        this.c0 = new androidx.activity.o(this);
         this.b0 = null;
         ArrayList arrayList = this.d0;
         q qVar = this.e0;
@@ -487,7 +487,7 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         this.N = false;
     }
 
-    public final void startActivityForResult(Intent intent, int i10) {
+    public final void startActivityForResult(Intent intent, int i9) {
         if (this.G == null) {
             throw new IllegalStateException("Fragment " + this + " not attached to Activity");
         }
@@ -496,15 +496,15 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
             String str = this.e;
             f0 f0Var = new f0();
             f0Var.a = str;
-            f0Var.b = i10;
+            f0Var.b = i9;
             p6.F.addLast(f0Var);
             p6.C.a(intent);
             return;
         }
         u uVar = p6.w;
         uVar.getClass();
-        kotlin.jvm.internal.j.e(intent, "intent");
-        if (i10 != -1) {
+        kotlin.jvm.internal.i.e(intent, "intent");
+        if (i9 != -1) {
             throw new IllegalStateException("Starting activity with a requestCode requires a FragmentActivity host");
         }
         uVar.b.startActivity(intent, null);
@@ -556,9 +556,9 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         this.Q = true;
     }
 
-    public void x(int i10, int i11, Intent intent) {
+    public void x(int i9, int i10, Intent intent) {
         if (j0.K(2)) {
-            Log.v("FragmentManager", "Fragment " + this + " received the following in onActivityResult(): requestCode: " + i10 + " resultCode: " + i11 + " data: " + intent);
+            Log.v("FragmentManager", "Fragment " + this + " received the following in onActivityResult(): requestCode: " + i9 + " resultCode: " + i10 + " data: " + intent);
         }
     }
 

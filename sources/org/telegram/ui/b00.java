@@ -1,130 +1,95 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.view.ViewPropertyAnimator;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class b00 extends xf.b {
-    public final /* synthetic */ d00 d;
+public final class b00 extends org.telegram.ui.Cells.m4 {
+    public final TextView r;
+    public final gh.ca s;
+    public int v;
+    public final org.telegram.ui.Components.b5 w;
+    public boolean x;
+    public final /* synthetic */ n00 y;
 
-    public b00(d00 d00Var) {
-        this.d = d00Var;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public b00(n00 n00Var, Context context) {
+        super(context, r2, 22, 15, false, r6);
+        org.telegram.ui.ActionBar.b6 b6Var;
+        this.y = n00Var;
+        int i9 = org.telegram.ui.ActionBar.f6.L6;
+        b6Var = ((org.telegram.ui.ActionBar.o2) n00Var).resourceProvider;
+        TextView textView = new TextView(getContext());
+        this.r = textView;
+        textView.setTextSize(1, 14.0f);
+        textView.setTextColor(n00Var.getThemedColor(org.telegram.ui.ActionBar.f6.z6));
+        org.telegram.messenger.ll.l(n00Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium, textView, 5);
+        int i10 = (LocaleController.isRTL ? 3 : 5) | 48;
+        float f10 = this.b;
+        addView(textView, g7.e6.d(-1, -1.0f, i10, f10, 16.66f, f10, this.c));
+        textView.setAlpha(0.0f);
+        gh.ca caVar = new gh.ca(this, getContext());
+        this.s = caVar;
+        this.w = new org.telegram.ui.Components.b5(caVar, 320L, org.telegram.ui.Components.gr.h, 0);
+        caVar.setTextSize(AndroidUtilities.dp(10.0f));
+        caVar.setTypeface(AndroidUtilities.bold());
+        caVar.setGravity(5);
+        caVar.setPadding(AndroidUtilities.dp(4.66f), 0, AndroidUtilities.dp(4.66f), 0);
+        int i11 = LocaleController.isRTL ? 3 : 5;
+        float f11 = this.b;
+        addView(caVar, g7.e6.d(-1, -1.0f, i11 | 48, f11, 16.66f, f11, this.c));
     }
 
-    @Override // org.telegram.ui.Components.yk0
-    public final boolean D(f2.o1 o1Var) {
-        int i10 = o1Var.f;
-        return i10 == 8 || i10 == 7;
-    }
-
-    public final f2.q0 F() {
-        return this.d.d.getAdapter();
-    }
-
-    @Override // f2.q0
-    public final int h() {
-        return this.d.Z.size();
-    }
-
-    @Override // f2.q0
-    public final int j(int i10) {
-        return ((h00) this.d.Z.get(i10)).a;
-    }
-
-    @Override // f2.q0
-    public final void l() {
-        F().l();
-    }
-
-    @Override // f2.q0
-    public final void m(int i10) {
-        F().m(i10 + 1);
-    }
-
-    @Override // f2.q0
-    public final void p(int i10, int i11) {
-        F().p(i10 + 1, i11);
-    }
-
-    @Override // f2.q0
-    public final void q(int i10, int i11) {
-        F().q(i10 + 1, i11);
-    }
-
-    @Override // f2.q0
-    public final void r(int i10, int i11, Object obj) {
-        F().r(i10 + 1, i11, obj);
-    }
-
-    @Override // f2.q0
-    public final void s(int i10, int i11) {
-        F().s(i10 + 1, i11);
-    }
-
-    @Override // f2.q0
-    public final void t(int i10, int i11) {
-        F().t(i10 + 1, i11);
-    }
-
-    @Override // f2.q0
-    public final void v(f2.o1 o1Var, int i10) {
-        int i11;
-        int i12 = o1Var.f;
-        View view = o1Var.a;
-        ArrayList arrayList = this.d.Z;
-        h00 h00Var = (h00) arrayList.get(i10);
-        int i13 = i10 + 1;
-        boolean z10 = (i13 >= arrayList.size() || (i11 = ((h00) arrayList.get(i13)).a) == 3 || i11 == 6) ? false : true;
-        if (i12 == 7) {
-            ((j00) view).e(h00Var.m, z10);
-            return;
+    public final void d(int i9, boolean z10) {
+        n00 n00Var = this.y;
+        String string = LocaleController.getString(n00Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium);
+        TextView textView = this.r;
+        textView.setText(string);
+        int i10 = 0;
+        boolean z11 = i9 < 0;
+        if (!z11) {
+            int[] iArr = org.telegram.ui.ActionBar.f6.r8;
+            i10 = n00Var.getThemedColor(iArr[i9 % iArr.length]);
         }
-        if (i12 == 6 || i12 == 3) {
-            org.telegram.ui.Cells.x8 x8Var = (org.telegram.ui.Cells.x8) view;
-            if (i12 == 6) {
-                x8Var.setFixedSize(0);
-                x8Var.setText(h00Var.d);
-                return;
-            } else {
-                x8Var.setFixedSize(12);
-                x8Var.setText("");
-                return;
-            }
+        this.v = i10;
+        gh.ca caVar = this.s;
+        if (!z11) {
+            caVar.setEmojiColor(i10);
         }
-        if (i12 != 0 && i12 == 8) {
-            yz yzVar = (yz) view;
-            yzVar.a.setText(LocaleController.getString(R.string.CreateNewInviteLink));
-            if (yzVar.c != z10) {
-                yzVar.c = z10;
-                yzVar.setWillNotDraw(!z10);
-            }
+        if (!z10) {
+            this.w.a(this.v, true);
+        }
+        if (z11 != this.x) {
+            this.x = z11;
+            ViewPropertyAnimator duration = textView.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(320L);
+            org.telegram.ui.Components.gr grVar = org.telegram.ui.Components.gr.h;
+            duration.setInterpolator(grVar).start();
+            caVar.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(grVar).start();
         }
     }
 
-    @Override // f2.q0
-    public final f2.o1 x(ViewGroup viewGroup, int i10) {
-        View x8Var;
-        int i11;
-        d00 d00Var = this.d;
-        if (i10 == 8) {
-            x8Var = new yz(d00Var.getContext());
-            x8Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.h5, false));
-        } else if (i10 == 7) {
-            Context context = d00Var.getContext();
-            i11 = ((org.telegram.ui.ActionBar.e3) d00Var).currentAccount;
-            x8Var = new a00(this, context, i11, d00Var.T.id);
-            x8Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.h5, false));
-        } else if (i10 == 6 || i10 == 3) {
-            x8Var = new org.telegram.ui.Cells.x8(d00Var.getContext());
-            x8Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.a7, false));
-        } else {
-            x8Var = new c00(d00Var, d00Var.getContext());
+    public final void e(CharSequence charSequence, boolean z10) {
+        if (charSequence == null) {
+            charSequence = "";
         }
-        return new org.telegram.ui.Components.lk0(x8Var);
+        boolean z11 = false;
+        if (charSequence.length() > 12) {
+            charSequence = charSequence.subSequence(0, 12);
+        }
+        gh.ca caVar = this.s;
+        CharSequence replaceEmoji = Emoji.replaceEmoji(charSequence, caVar.getPaint().getFontMetricsInt(), false);
+        if (z10 && !LocaleController.isRTL) {
+            z11 = true;
+        }
+        caVar.c(replaceEmoji, z11, true);
     }
 }

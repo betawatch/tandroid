@@ -1,35 +1,54 @@
 package androidx.emoji2.text;
 
-import android.content.Context;
-import java.util.ArrayList;
+import android.graphics.Rect;
+import android.view.View;
+import f2.m0;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class f {
-    public volatile Object a;
-    public volatile Object b;
+public abstract class f {
+    public int a;
+    public final Object b;
     public final Object c;
 
-    public /* synthetic */ f(Object obj) {
-        this.c = obj;
+    public f(m0 m0Var) {
+        this.a = TLObject.FLAG_31;
+        this.c = new Rect();
+        this.b = m0Var;
     }
 
-    public boolean a() {
-        try {
-            Context context = (Context) this.c;
-            return context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.getBoolean("com.google.android.play.billingclient.enableBillingOverridesTesting", false);
-        } catch (Exception e9) {
-            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to retrieve metadata value for enableBillingOverridesTesting.", e9);
-            return false;
-        }
-    }
+    public abstract int a(View view);
 
-    public f(z8.o oVar) {
-        ab.a aVar = new ab.a(6);
-        xa.a aVar2 = new xa.a(4);
-        this.b = aVar;
-        this.c = new ArrayList();
-        this.a = aVar2;
-        oVar.a(new a9.m(this, 10));
+    public abstract int b(View view);
+
+    public abstract int c(View view);
+
+    public abstract int d(View view);
+
+    public abstract int e();
+
+    public abstract int f();
+
+    public abstract int g();
+
+    public abstract int h();
+
+    public abstract int i();
+
+    public abstract int j();
+
+    public abstract int k();
+
+    public abstract int l(View view);
+
+    public abstract int m(View view);
+
+    public abstract void n(int i9);
+
+    public f(j jVar) {
+        this.a = 0;
+        this.c = new d();
+        this.b = jVar;
     }
 }

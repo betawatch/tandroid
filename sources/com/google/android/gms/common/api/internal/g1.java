@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class g1 implements OnCompleteListener {
     public static final Status c = new Status(8, "The connection to Google Play services was lost", null, null);
@@ -77,8 +77,8 @@ public final class g1 implements OnCompleteListener {
         this.a = obj2;
     }
 
-    public g1(int i10) {
-        switch (i10) {
+    public g1(int i9) {
+        switch (i9) {
             case 3:
                 this.a = DesugarCollections.synchronizedMap(new WeakHashMap());
                 this.b = DesugarCollections.synchronizedMap(new WeakHashMap());

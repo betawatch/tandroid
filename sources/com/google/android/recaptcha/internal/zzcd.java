@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzcd {
     private final int zzaX;
@@ -106,8 +106,8 @@ public final class zzcd {
     public static final zzcd zzaV = new zzcd(115);
     public static final zzcd zzaW = new zzcd(121);
 
-    public zzcd(int i10) {
-        this.zzaX = i10;
+    public zzcd(int i9) {
+        this.zzaX = i9;
     }
 
     public final int zza() {

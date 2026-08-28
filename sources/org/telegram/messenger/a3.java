@@ -1,62 +1,46 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a3 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ BaseController e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ Object s;
-    public final /* synthetic */ Object v;
-    public final /* synthetic */ Object w;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ a3(FileLoader fileLoader, TLRPC.Document document, SecureDocument secureDocument, WebFile webFile, TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated, ImageLocation imageLocation, Object obj, String str, long j10, int i10, int i11) {
-        this.e = fileLoader;
-        this.f = document;
-        this.h = secureDocument;
-        this.n = webFile;
-        this.r = tL_fileLocationToBeDeprecated;
-        this.s = imageLocation;
-        this.v = obj;
-        this.w = str;
-        this.c = j10;
-        this.b = i10;
-        this.d = i11;
+    public /* synthetic */ a3(FileLoader.1 r22, boolean z10, String str, boolean z11) {
+        this.a = 0;
+        this.d = r22;
+        this.b = z10;
+        this.e = str;
+        this.c = z11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((FileLoader) this.e).lambda$loadFile$13((TLRPC.Document) this.f, (SecureDocument) this.h, (WebFile) this.n, (TLRPC.TL_fileLocationToBeDeprecated) this.r, (ImageLocation) this.s, this.v, (String) this.w, this.c, this.b, this.d);
+                ((FileLoader.1) this.d).lambda$didFailedUploadingFile$1(this.b, (String) this.e, this.c);
+                break;
+            case 1:
+                ((MessagesStorage) this.d).lambda$saveDialogFilter$74((MessagesController.DialogFilter) this.e, this.b, this.c);
                 break;
             default:
-                ((MediaDataController) this.e).lambda$processLoadedStickers$105(this.b, (a0.h) this.f, (HashMap) this.h, (ArrayList) this.n, this.c, this.d, (a0.h) this.r, (HashMap) this.s, (a0.h) this.v, (Runnable) this.w);
+                ((MessagesStorage) this.d).lambda$updateUsers$215((ArrayList) this.e, this.b, this.c);
                 break;
         }
     }
 
-    public /* synthetic */ a3(MediaDataController mediaDataController, int i10, a0.h hVar, HashMap hashMap, ArrayList arrayList, long j10, int i11, a0.h hVar2, HashMap hashMap2, a0.h hVar3, Runnable runnable) {
-        this.e = mediaDataController;
-        this.b = i10;
-        this.f = hVar;
-        this.h = hashMap;
-        this.n = arrayList;
-        this.c = j10;
-        this.d = i11;
-        this.r = hVar2;
-        this.s = hashMap2;
-        this.v = hVar3;
-        this.w = runnable;
+    public /* synthetic */ a3(MessagesStorage messagesStorage, Object obj, boolean z10, boolean z11, int i9) {
+        this.a = i9;
+        this.d = messagesStorage;
+        this.e = obj;
+        this.b = z10;
+        this.c = z11;
     }
 }

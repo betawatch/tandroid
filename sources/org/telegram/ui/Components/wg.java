@@ -1,75 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wg implements kg.a {
+public final /* synthetic */ class wg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ ki b;
 
-    public /* synthetic */ wg(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ wg(ki kiVar, int i9) {
+        this.a = i9;
+        this.b = kiVar;
     }
 
-    @Override // kg.a
-    public final void e(Canvas canvas, RectF rectF) {
-        Canvas canvas2;
-        RectF rectF2;
-        yh yhVar;
-        gh.s2 s2Var;
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean G1;
         switch (this.a) {
             case 0:
-                gi giVar = (gi) this.b;
-                int i10 = 0;
-                while (i10 < 2) {
-                    yh yhVar2 = i10 == 0 ? giVar.u0 : giVar.v0;
-                    if (yhVar2 == null || yhVar2.c == null || yhVar2.getVisibility() != 0) {
-                        canvas2 = canvas;
-                        rectF2 = rectF;
-                    } else {
-                        canvas2 = canvas;
-                        rectF2 = rectF;
-                        pg.c.a(yhVar2.c, canvas2, rectF2, yhVar2.d, giVar.getContainerView(), (int) (((i10 == 0 && (yhVar = giVar.v0) != null && yhVar.getVisibility() == 0) ? (1.0f - giVar.v0.getAlpha()) * yhVar2.getAlpha() : yhVar2.getAlpha()) * 255.0f));
-                    }
-                    i10++;
-                    canvas = canvas2;
-                    rectF = rectF2;
-                }
+                ki kiVar = this.b;
+                ut utVar = kiVar.Y ? kiVar.L0 : kiVar.A0;
+                kiVar.M1(utVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(utVar.getText().toString().trim()));
                 break;
             case 1:
-                kg.a[] aVarArr = (kg.a[]) this.b;
-                for (int i11 = 0; i11 < 3; i11++) {
-                    kg.a aVar = aVarArr[i11];
-                    if (aVar != null) {
-                        aVar.e(canvas, rectF);
+                ki kiVar2 = this.b;
+                cf cfVar = kiVar2.d0;
+                long k10 = cfVar != null ? cfVar.k() : 0L;
+                vh vhVar = kiVar2.E0;
+                kiVar2.J0 = k10;
+                vhVar.setEffect(k10);
+                ci ciVar = kiVar2.u0;
+                if (ciVar == kiVar2.f0 || ciVar == kiVar2.m0) {
+                    G1 = kiVar2.G1(0, false, 0, kiVar2.s1(), k10);
+                } else {
+                    if (!ciVar.H(0, false, 0, kiVar2.s1(), k10)) {
+                        kiVar2.dismiss();
                     }
+                    G1 = false;
                 }
-                break;
-            default:
-                hu0 hu0Var = (hu0) this.b;
-                for (zs0 zs0Var : hu0Var.g0) {
-                    jg.k kVar = zs0Var.n;
-                    if (kVar != null) {
-                        kVar.e(canvas, rectF);
-                    }
-                }
-                wq0 wq0Var = hu0Var.R;
-                if (wq0Var != null && (s2Var = wq0Var.N) != null) {
-                    s2Var.e(canvas, rectF);
+                cf cfVar2 = kiVar2.d0;
+                if (cfVar2 != null) {
+                    cfVar2.h(!G1);
+                    kiVar2.d0 = null;
                     break;
                 }
                 break;
+            case 2:
+                this.b.F1();
+                break;
+            default:
+                ki.w(this.b);
+                break;
         }
-    }
-
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // kg.a
-    public final void g(g.y yVar, RectF rectF) {
-        switch (this.a) {
-        }
-        yVar.b = true;
     }
 }

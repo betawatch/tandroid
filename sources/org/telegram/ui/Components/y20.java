@@ -1,64 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class y20 extends m2.a {
-    public final /* synthetic */ z20 c;
+public final /* synthetic */ class y20 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a30 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ int d;
 
-    public y20(z20 z20Var) {
-        this.c = z20Var;
+    public /* synthetic */ y20(a30 a30Var, String str, int i9, int i10) {
+        this.a = i10;
+        this.b = a30Var;
+        this.c = str;
+        this.d = i9;
     }
 
-    @Override // m2.a
-    public final void a(m2.g gVar, Object obj) {
-        gVar.removeView((View) obj);
-    }
-
-    @Override // m2.a
-    public final int b() {
-        return this.c.e.length;
-    }
-
-    @Override // m2.a
-    public final Object e(m2.g gVar, int i10) {
-        x20 x20Var = new x20(this, this.c.getContext(), i10, 0);
-        x20Var.setOnClickListener(new hh.z0(this, i10, 9));
-        x20Var.setFocusable(true);
-        x20Var.setTag(Integer.valueOf(i10));
-        x20Var.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-        x20Var.setScaleType(ImageView.ScaleType.FIT_XY);
-        x20Var.setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.dp(200.0f), -1));
-        if (i10 == 0) {
-            x20Var.setContentDescription(LocaleController.getString(R.string.VoipRecordAudio));
-        } else if (i10 == 1) {
-            x20Var.setContentDescription(LocaleController.getString(R.string.VoipRecordPortrait));
-        } else {
-            x20Var.setContentDescription(LocaleController.getString(R.string.VoipRecordLandscape));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                a30 a30Var = this.b;
+                String str = this.c;
+                int i9 = this.d;
+                if (a30Var.e != null) {
+                    a30Var.e = null;
+                    AndroidUtilities.runOnUIThread(new y20(a30Var, str, i9, 1));
+                    break;
+                }
+                break;
+            default:
+                a30 a30Var2 = this.b;
+                String str2 = this.c;
+                int i10 = this.d;
+                ArrayList arrayList = null;
+                a30Var2.e = null;
+                if (!ChatObject.isChannel(a30Var2.w.R) && a30Var2.w.S != null) {
+                    arrayList = new ArrayList(a30Var2.w.S.participants.participants);
+                }
+                ArrayList arrayList2 = arrayList;
+                if (arrayList2 != null) {
+                    Utilities.searchQueue.postRunnable(new c3.d(a30Var2, str2, i10, arrayList2, 19));
+                } else {
+                    a30Var2.h = false;
+                }
+                a30Var2.d.g(str2, ChatObject.canAddUsers(a30Var2.w.R), false, true, false, ChatObject.isChannel(a30Var2.w.R) ? a30Var2.w.R.id : 0L, false, 2, i10);
+                break;
         }
-        SvgHelper.SvgDrawable drawable = SvgHelper.getDrawable(AndroidUtilities.readRes(i10 == 0 ? R.raw.record_audio : i10 == 1 ? R.raw.record_video_p : R.raw.record_video_l));
-        drawable.setAspectFill(false);
-        x20Var.setImageDrawable(drawable);
-        if (x20Var.getParent() != null) {
-            ((ViewGroup) x20Var.getParent()).removeView(x20Var);
-        }
-        gVar.addView(x20Var, 0);
-        return x20Var;
-    }
-
-    @Override // m2.a
-    public final boolean f(View view, Object obj) {
-        return view.equals(obj);
-    }
-
-    @Override // m2.a
-    public final void h(int i10) {
     }
 }

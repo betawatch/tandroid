@@ -1,17 +1,16 @@
 package e1;
 
-import kotlin.jvm.internal.j;
 import v0.i;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ d b;
     public final /* synthetic */ w0.d c;
 
-    public /* synthetic */ c(d dVar, w0.d dVar2, int i10) {
-        this.a = i10;
+    public /* synthetic */ c(d dVar, w0.d dVar2, int i9) {
+        this.a = i9;
         this.b = dVar;
         this.c = dVar2;
     }
@@ -25,13 +24,13 @@ public final /* synthetic */ class c implements Runnable {
                     iVar.onError(this.c);
                     return;
                 } else {
-                    j.h("callback");
+                    kotlin.jvm.internal.i.h("callback");
                     throw null;
                 }
             default:
                 i iVar2 = this.b.f;
                 if (iVar2 == null) {
-                    j.h("callback");
+                    kotlin.jvm.internal.i.h("callback");
                     throw null;
                 }
                 Object obj = this.c;

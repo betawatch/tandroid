@@ -1,49 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class mk extends f2.b1 {
-    public final /* synthetic */ tk a;
+public final /* synthetic */ class mk implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xk b;
+    public final /* synthetic */ IMapsProvider.IMapView c;
 
-    public mk(tk tkVar) {
-        this.a = tkVar;
+    public /* synthetic */ mk(xk xkVar, IMapsProvider.IMapView iMapView, int i9) {
+        this.a = i9;
+        this.b = xkVar;
+        this.c = iMapView;
     }
 
-    @Override // f2.b1
-    public final void a(RecyclerView recyclerView, int i10) {
-        lk0 lk0Var;
-        tk tkVar = this.a;
-        hh.f1 f1Var = tkVar.L;
-        gi giVar = tkVar.b;
-        boolean z10 = i10 != 0;
-        tkVar.H = z10;
-        if (!z10 && tkVar.F != null) {
-            tkVar.F = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                xk.R(this.b, this.c);
+                break;
+            default:
+                IMapsProvider.IMapView iMapView = this.c;
+                try {
+                    iMapView.onCreate(null);
+                } catch (Exception unused) {
+                }
+                AndroidUtilities.runOnUIThread(new mk(this.b, iMapView, 0));
+                break;
         }
-        if (i10 == 0) {
-            int dp = AndroidUtilities.dp(13.0f);
-            int backgroundPaddingTop = giVar.getBackgroundPaddingTop();
-            if (((giVar.X1[0] - backgroundPaddingTop) - dp) + backgroundPaddingTop >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() || (lk0Var = (lk0) f1Var.K(0)) == null) {
-                return;
-            }
-            View view = lk0Var.a;
-            if (view.getTop() > tkVar.w0 - tkVar.v0) {
-                f1Var.v0(0, view.getTop() - (tkVar.w0 - tkVar.v0), null);
-            }
-        }
-    }
-
-    @Override // f2.b1
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        tk tkVar = this.a;
-        tkVar.e0();
-        if (tkVar.F != null) {
-            tkVar.G += i11;
-        }
-        tkVar.b.X1(tkVar, i11);
     }
 }

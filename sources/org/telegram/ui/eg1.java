@@ -1,42 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.Editable;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class eg1 extends org.telegram.ui.Cells.g3 {
-    public final /* synthetic */ int x;
-    public final /* synthetic */ UserInfoActivity y;
+public final /* synthetic */ class eg1 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UserInfoActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ eg1(UserInfoActivity userInfoActivity, Context context, String str, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
-        super(context, str, false, false, -1, c6Var);
-        this.x = i10;
-        this.y = userInfoActivity;
+    public /* synthetic */ eg1(UserInfoActivity userInfoActivity, int i9) {
+        this.a = i9;
+        this.b = userInfoActivity;
     }
 
-    @Override // org.telegram.ui.Cells.g3
-    public final void b(Editable editable) {
-        switch (this.x) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
             case 0:
-                this.y.b0(true);
-                break;
-            case 1:
-                this.y.b0(true);
+                UserInfoActivity userInfoActivity = this.b;
+                userInfoActivity.F = (TL_account.TL_birthday) obj;
+                org.telegram.ui.Components.c51 c51Var = userInfoActivity.x;
+                if (c51Var != null) {
+                    c51Var.U2.N(true);
+                }
+                userInfoActivity.a0(true);
                 break;
             default:
-                UserInfoActivity userInfoActivity = this.y;
-                userInfoActivity.b0(true);
-                userInfoActivity.e0();
+                TLRPC.Chat chat = (TLRPC.Chat) obj;
+                UserInfoActivity userInfoActivity2 = this.b;
+                if (userInfoActivity2.G != chat) {
+                    userInfoActivity2.G = chat;
+                    if (chat != null) {
+                        org.telegram.messenger.l0.p(R.string.EditProfileChannelSet, org.telegram.ui.Components.oc.a0(userInfoActivity2), R.raw.contact_check, 36);
+                    }
+                    userInfoActivity2.a0(true);
+                    org.telegram.ui.Components.c51 c51Var2 = userInfoActivity2.x;
+                    if (c51Var2 != null) {
+                        c51Var2.U2.N(true);
+                        break;
+                    }
+                }
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eg1(UserInfoActivity userInfoActivity, Context context, String str, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, str, true, false, i10, c6Var);
-        this.x = 2;
-        this.y = userInfoActivity;
     }
 }

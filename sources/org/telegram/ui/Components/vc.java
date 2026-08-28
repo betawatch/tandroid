@@ -1,425 +1,332 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Path;
+import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
+import android.text.TextPaint;
+import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class vc extends Drawable {
-    public static final eh.a H = new eh.a(1);
-    public int B;
-    public int C;
-    public int D;
-    public float h;
-    public float i;
-    public float j;
-    public float k;
-    public float l;
-    public float m;
-    public float n;
-    public float o;
-    public float p;
-    public final uc q;
-    public final uc r;
-    public float s;
-    public long t;
-    public boolean u;
-    public float v;
-    public float w;
-    public float x;
-    public final float a = AndroidUtilities.dp(18.0f);
-    public final float b = AndroidUtilities.dp(22.0f);
-    public final float c = 2.4f;
-    public final float d = AndroidUtilities.dp(12.0f);
-    public final float e = AndroidUtilities.dp(1.5f);
-    public final float f = 3600.0f;
-    public final float g = 0.25f;
-    public final Path y = new Path();
-    public final float[] z = new float[4];
-    public int A = -1;
-    public float E = 1.0f;
-    public final bg F = new bg(this, 16);
-    public int G = 255;
+    public final /* synthetic */ int a;
+    public final Object b;
+    public final Object c;
 
-    public vc() {
-        uc ucVar = new uc();
-        this.q = ucVar;
-        ucVar.a = 1.0f;
-        ucVar.b = 0.0f;
-        ucVar.c = AndroidUtilities.dp(0.5f);
-        ucVar.d = AndroidUtilities.dp(8.5f);
-        ucVar.e = 1.0f;
-        ucVar.f = 1.0f;
-        ucVar.g = 61;
-        uc ucVar2 = new uc();
-        this.r = ucVar2;
-        ucVar2.a = 0.82f;
-        ucVar2.b = 0.6f;
-        ucVar2.c = AndroidUtilities.dp(0.0f);
-        ucVar2.d = AndroidUtilities.dp(4.25f);
-        ucVar2.e = 0.55f;
-        ucVar2.f = 0.55f;
-        ucVar2.g = 128;
-        e(0, false);
+    public vc(boolean z10) {
+        this.a = 2;
+        Paint paint = new Paint();
+        this.b = paint;
+        Paint paint2 = new Paint();
+        this.c = paint2;
+        paint2.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        if (z10) {
+            paint.setColor(-14865331);
+            paint2.setColor(-15854042);
+        } else {
+            paint.setColor(-2172970);
+            paint2.setColor(-3752002);
+        }
     }
 
-    public final void a(float f10, float f11, float f12, float[] fArr) {
-        double d = f12;
-        float cos = (float) Math.cos(d);
-        float sin = (float) Math.sin(d);
-        float f13 = this.j;
-        fArr[0] = (f13 * cos) + f10;
-        fArr[1] = (f13 * sin) + f11;
-        fArr[2] = -sin;
-        fArr[3] = cos;
-    }
-
-    public final void b(Canvas canvas, uc ucVar, float f10, float f11, float f12) {
-        char c10;
-        char c11;
-        int i10 = ucVar.x;
-        if (i10 == 0) {
-            return;
+    public static String a(float f10) {
+        Math.abs(f10 - 0.25f);
+        float round = Math.round(f10 * 10.0f) / 10.0f;
+        long j10 = (long) round;
+        if (round == j10) {
+            return aa.d.m(j10, "");
         }
-        float f13 = ucVar.c;
-        float f14 = ucVar.d - f13;
-        float f15 = this.v;
-        float f16 = (f14 * f15) + f13;
-        float B = com.google.android.recaptcha.internal.a.B(f15, 1.0f, 0.0f, this.d * ucVar.e);
-        float[] fArr = ucVar.u;
-        float[] fArr2 = ucVar.v;
-        float[] fArr3 = ucVar.w;
-        char c12 = 0;
-        for (int i11 = 0; i11 < i10; i11++) {
-            float interpolation = H.getInterpolation(ucVar.o[i11]);
-            float f17 = 1.0f - interpolation;
-            fArr[i11] = (ucVar.l[i11] * interpolation) + (ucVar.k[i11] * f17);
-            fArr3[i11] = (ucVar.n[i11] * interpolation) + (ucVar.m[i11] * f17);
-        }
-        float f18 = this.g;
-        char c13 = 2;
-        if (f18 > 0.0f) {
-            int i12 = 0;
-            while (i12 < 2) {
-                int i13 = 0;
-                while (i13 < i10) {
-                    int i14 = i13 + 1;
-                    float f19 = (fArr[i13 == 0 ? i10 - 1 : i13 - 1] + fArr[i14 == i10 ? 0 : i14]) * 0.5f;
-                    float f20 = fArr[i13];
-                    fArr2[i13] = com.google.android.recaptcha.internal.a.z(f19, f20, f18, f20);
-                    i13 = i14;
-                }
-                i12++;
-                float[] fArr4 = fArr2;
-                fArr2 = fArr;
-                fArr = fArr4;
-            }
-        }
-        int i15 = 0;
-        while (i15 < i10) {
-            float f21 = (i15 / i10) + fArr3[i15];
-            float floor = (f21 - ((float) Math.floor(f21))) * this.p;
-            float f22 = this.m;
-            float[] fArr5 = this.z;
-            if (floor < f22) {
-                fArr5[c12] = (-this.k) + floor;
-                fArr5[1] = -this.i;
-                fArr5[c13] = 1.0f;
-                fArr5[3] = 0.0f;
-                c10 = 0;
-                c11 = 2;
-            } else {
-                float f23 = floor - f22;
-                float f24 = this.o;
-                c10 = 0;
-                float f25 = this.c;
-                if (f23 < f24) {
-                    c11 = 2;
-                    a(this.k, -this.l, (f23 / (f25 * this.j)) - 1.5707964f, fArr5);
-                } else {
-                    c11 = 2;
-                    float f26 = f23 - f24;
-                    float f27 = this.n;
-                    if (f26 < f27) {
-                        fArr5[0] = this.h;
-                        fArr5[1] = (-this.l) + f26;
-                        fArr5[2] = 0.0f;
-                        fArr5[3] = 1.0f;
-                    } else {
-                        float f28 = f26 - f27;
-                        if (f28 < f24) {
-                            a(this.k, this.l, f28 / (f25 * this.j), fArr5);
-                        } else {
-                            float f29 = f28 - f24;
-                            if (f29 < f22) {
-                                fArr5[0] = this.k - f29;
-                                fArr5[1] = this.i;
-                                fArr5[2] = -1.0f;
-                                fArr5[3] = 0.0f;
-                            } else {
-                                float f30 = f29 - f22;
-                                if (f30 < f24) {
-                                    a(-this.k, this.l, (f30 / (f25 * this.j)) + 1.5707964f, fArr5);
-                                } else {
-                                    float f31 = f30 - f24;
-                                    if (f31 < f27) {
-                                        fArr5[0] = -this.h;
-                                        fArr5[1] = this.l - f31;
-                                        fArr5[2] = 0.0f;
-                                        fArr5[3] = -1.0f;
-                                    } else {
-                                        a(-this.k, -this.l, ((f31 - f27) / (f25 * this.j)) + 3.1415927f, fArr5);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            float f32 = fArr5[3];
-            float f33 = -fArr5[c11];
-            float f34 = (fArr[i15] * B) + f16 + f12;
-            ucVar.q[i15] = (f32 * f34) + f10 + fArr5[c10];
-            ucVar.r[i15] = (f33 * f34) + f11 + fArr5[1];
-            ucVar.s[i15] = fArr5[c11];
-            ucVar.t[i15] = fArr5[3];
-            i15++;
-            c12 = 0;
-            c13 = 2;
-        }
-        Path path = this.y;
-        path.rewind();
-        path.moveTo(ucVar.q[0], ucVar.r[0]);
-        int i16 = 0;
-        while (i16 < i10) {
-            int i17 = i16 + 1;
-            int i18 = i17 < i10 ? i17 : 0;
-            float[] fArr6 = ucVar.q;
-            float f35 = fArr6[i18] - fArr6[i16];
-            float[] fArr7 = ucVar.r;
-            float f36 = fArr7[i18] - fArr7[i16];
-            float sqrt = ((float) Math.sqrt((f36 * f36) + (f35 * f35))) / 3.0f;
-            float[] fArr8 = ucVar.q;
-            float f37 = fArr8[i16];
-            float[] fArr9 = ucVar.s;
-            float f38 = (fArr9[i16] * sqrt) + f37;
-            float[] fArr10 = ucVar.r;
-            float f39 = fArr10[i16];
-            float[] fArr11 = ucVar.t;
-            float f40 = (fArr11[i16] * sqrt) + f39;
-            float f41 = fArr8[i18];
-            float f42 = f41 - (fArr9[i18] * sqrt);
-            float f43 = fArr10[i18];
-            path.cubicTo(f38, f40, f42, f43 - (fArr11[i18] * sqrt), f41, f43);
-            i16 = i17;
-        }
-        path.close();
-        canvas.drawPath(path, ucVar.i);
-    }
-
-    public final float c() {
-        uc ucVar = this.q;
-        float f10 = ucVar.d;
-        float f11 = ucVar.f;
-        float f12 = this.e;
-        float f13 = (f11 * f12) + f10;
-        float f14 = ucVar.e;
-        float f15 = this.d;
-        float f16 = (f14 * f15) + f13;
-        uc ucVar2 = this.r;
-        return Math.max(f16, (f15 * ucVar2.e) + (f12 * ucVar2.f) + ucVar2.d);
-    }
-
-    public final void d(float f10) {
-        this.w = f10;
-        if (LiteMode.isEnabled(512)) {
-            float f11 = this.w - this.v;
-            this.x = f11 / (((f11 > 0.0f ? 400.0f : 500.0f) * 0.55f) + 100.0f);
-        }
+        return "" + round;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        if (bounds.isEmpty() || this.h < 1.0f) {
-            return;
-        }
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long min = (this.u || this.E < 1.0f) ? Math.min(40L, Math.max(0L, elapsedRealtime - this.t)) : 0L;
-        this.t = elapsedRealtime;
-        boolean isEnabled = LiteMode.isEnabled(512);
-        uc ucVar = this.r;
-        uc ucVar2 = this.q;
-        if (isEnabled && min > 0) {
-            float f10 = this.w;
-            float f11 = this.v;
-            if (f10 != f11) {
-                float f12 = this.x;
-                float f13 = (min * f12) + f11;
-                this.v = f13;
-                if (f12 > 0.0f) {
-                    if (f13 > f10) {
-                        this.v = f10;
-                    }
-                } else if (f13 < f10) {
-                    this.v = f10;
+        switch (this.a) {
+            case 0:
+                wc wcVar = (wc) this.c;
+                if (wcVar.c <= 1) {
+                    wcVar.c(canvas, (Paint) this.b);
+                    break;
+                } else {
+                    wcVar.c(canvas, wcVar.o);
+                    break;
                 }
-            }
-            this.s = s3.c.c(min, this.f, 6.2831855f, this.s);
-            ucVar2.d(this.v);
-            ucVar.d(this.v);
-        }
-        float f14 = this.E;
-        if (f14 < 1.0f && min > 0) {
-            float f15 = (min / 250.0f) + f14;
-            this.E = f15;
-            if (f15 > 1.0f) {
-                this.E = 1.0f;
-            }
-            int d = i0.b.d(this.E, this.C, this.D);
-            this.B = d;
-            ucVar2.h = d;
-            ucVar.h = d;
-            ucVar2.a();
-            ucVar.a();
-        }
-        float exactCenterX = bounds.exactCenterX();
-        float exactCenterY = bounds.exactCenterY();
-        float f16 = 1.0f - (this.v * 0.7f);
-        float f17 = ucVar2.f;
-        float f18 = this.e;
-        float B = com.google.android.recaptcha.internal.a.B((float) Math.sin(this.s), 0.5f, 0.5f, f17 * f18 * f16);
-        float B2 = com.google.android.recaptcha.internal.a.B((float) Math.sin(this.s + ucVar.b), 0.5f, 0.5f, f18 * ucVar.f * f16);
-        b(canvas, this.q, exactCenterX, exactCenterY, B);
-        b(canvas, this.r, exactCenterX, exactCenterY, B2);
-        if (this.E < 1.0f) {
-            invalidateSelf();
-        }
-    }
-
-    public final void e(int i10, boolean z10) {
-        if (i10 != this.A || this.E < 1.0f) {
-            this.A = i10;
-            int w02 = i10 != 0 ? i10 != 1 ? i10 != 3 ? org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.bh, false) : i0.b.d(0.5f, i0.b.d(0.5f, org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.ih, false), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.jh, false)), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.kh, false)) : i0.b.d(0.5f, org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.Zg, false), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.ah, false)) : i0.b.d(0.5f, org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.Xg, false), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.Yg, false));
-            if (z10 && this.B != 0 && LiteMode.isEnabled(512)) {
-                this.C = this.B;
-                this.D = w02;
-                this.E = 0.0f;
-            } else {
-                this.E = 1.0f;
-                this.B = w02;
-                uc ucVar = this.q;
-                ucVar.h = w02;
-                uc ucVar2 = this.r;
-                ucVar2.h = w02;
-                ucVar.a();
-                ucVar2.a();
-            }
-            invalidateSelf();
-        }
-    }
-
-    public final void f(boolean z10) {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null) {
-            return;
-        }
-        int callState = sharedInstance.getCallState();
-        if (!sharedInstance.isSwitchingStream() && (callState == 1 || callState == 2 || callState == 6 || callState == 5)) {
-            e(2, z10);
-            return;
-        }
-        ChatObject.Call call = sharedInstance.groupCall;
-        if (call == null) {
-            e(sharedInstance.isMicMute() ? 1 : 0, z10);
-            return;
-        }
-        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) call.participants.f(sharedInstance.getSelfId());
-        if ((groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) && !sharedInstance.groupCall.call.rtmp_stream) {
-            e(sharedInstance.isMicMute() ? 1 : 0, z10);
-        } else {
-            sharedInstance.setMicMute(true, false, false);
-            e(3, z10);
+            case 1:
+                Paint paint = (Paint) this.b;
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
+                if (chatActivityEnterView.Q0 != null) {
+                    paint.setAlpha(Math.round(chatActivityEnterView.x3 * 102.0f));
+                    float width = chatActivityEnterView.getWidth();
+                    float y10 = (chatActivityEnterView.Q0.getY() - chatActivityEnterView.getHeight()) + org.telegram.ui.ActionBar.f6.i3.getIntrinsicHeight();
+                    ff ffVar = chatActivityEnterView.A0;
+                    canvas.drawRect(0.0f, 0.0f, width, y10 + (ffVar == null ? 0.0f : ffVar.getOffsetY()), paint);
+                    break;
+                }
+                break;
+            case 2:
+                Paint paint2 = (Paint) this.c;
+                canvas.drawRect(getBounds(), (Paint) this.b);
+                int dp = AndroidUtilities.dp(9.0f);
+                int width2 = getBounds().width() / dp;
+                int height = getBounds().height() / dp;
+                int i9 = getBounds().left;
+                int i10 = getBounds().top;
+                int i11 = 0;
+                int i12 = 0;
+                while (i12 < width2) {
+                    int i13 = i12 + 1;
+                    float f10 = (dp * i13) + i9;
+                    canvas.drawLine(f10, i10, f10, getBounds().height() + i10, paint2);
+                    i12 = i13;
+                }
+                while (i11 < height) {
+                    i11++;
+                    float f11 = (dp * i11) + i10;
+                    canvas.drawLine(i9, f11, getBounds().width() + i9, f11, paint2);
+                }
+                break;
+            case 3:
+                i6 i6Var = (i6) this.c;
+                Paint paint3 = (Paint) this.b;
+                if (paint3 != null) {
+                    paint3.setStrokeWidth(AndroidUtilities.dpf2(1.6f));
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    rectF.set(((AndroidUtilities.dp(24.0f) - i6Var.d()) / 2.0f) - AndroidUtilities.dpf2(3.0f), AndroidUtilities.dpf2(0.2f) + ((AndroidUtilities.dp(24.0f) - i6Var.e) / 2.0f), AndroidUtilities.dpf2(3.0f) + ((i6Var.d() + AndroidUtilities.dp(24.0f)) / 2.0f), (AndroidUtilities.dp(24.0f) + i6Var.e) / 2.0f);
+                    canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(3.0f), AndroidUtilities.dpf2(3.0f), paint3);
+                }
+                i6Var.a.setStrokeWidth(AndroidUtilities.dpf2(0.3f));
+                i6Var.setBounds(0, (int) ((AndroidUtilities.dp(24.0f) - i6Var.e) / 2.0f), AndroidUtilities.dp(24.0f), (int) ((AndroidUtilities.dp(24.0f) + i6Var.e) / 2.0f));
+                i6Var.draw(canvas);
+                break;
+            case 4:
+                Bitmap bitmap = (Bitmap) this.b;
+                if (!bitmap.isRecycled()) {
+                    canvas.drawBitmap(bitmap, (Rect) null, (Rect) this.c, (Paint) null);
+                    break;
+                }
+                break;
+            default:
+                ImageReceiver imageReceiver = (ImageReceiver) this.b;
+                imageReceiver.draw(canvas);
+                Drawable drawable = (Drawable) this.c;
+                int intrinsicWidth = (int) (drawable.getIntrinsicWidth() * 0.8f);
+                int intrinsicHeight = (int) (drawable.getIntrinsicHeight() * 0.8f);
+                int A = (int) e2.c.A(imageReceiver.getImageWidth(), intrinsicWidth, 2.0f, imageReceiver.getImageX());
+                int imageHeight = (int) ((((imageReceiver.getImageHeight() / 2.0f) - intrinsicHeight) + imageReceiver.getImageY()) - ((1.0f - gr.k.getInterpolation(imageReceiver.getCurrentAlpha())) * AndroidUtilities.dp(16.0f)));
+                drawable.setAlpha((int) (imageReceiver.getAlpha() * Math.min(1.0f, imageReceiver.getCurrentAlpha() * 5.0f) * 255.0f));
+                drawable.setBounds(A, imageHeight, intrinsicWidth + A, intrinsicHeight + imageHeight);
+                drawable.draw(canvas);
+                break;
         }
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.G;
+    public int getAlpha() {
+        switch (this.a) {
+            case 5:
+                return (int) (((ImageReceiver) this.b).getAlpha() * 255.0f);
+            default:
+                return super.getAlpha();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        switch (this.a) {
+            case 2:
+                return 0;
+            case 3:
+                return AndroidUtilities.dp(24.0f);
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        switch (this.a) {
+            case 2:
+                return 0;
+            case 3:
+                return AndroidUtilities.dp(24.0f);
+            default:
+                return super.getIntrinsicWidth();
+        }
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getOpacity() {
-        return -3;
+        switch (this.a) {
+            case 0:
+                return -2;
+            case 1:
+                return -2;
+            case 2:
+                return 0;
+            case 3:
+                return -2;
+            case 4:
+                return -3;
+            default:
+                return 0;
+        }
+    }
+
+    public void l(float f10, boolean z10) {
+        i6 i6Var = (i6) this.c;
+        String str = a(f10) + "X";
+        if (z10 && TextUtils.equals(i6Var.g, str)) {
+            return;
+        }
+        i6Var.b();
+        i6Var.q(str, z10, true);
+        invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        if (getBounds().isEmpty()) {
-            return;
-        }
-        float c10 = c() + AndroidUtilities.dp(1.0f);
-        float min = (Math.min(r6.width(), r6.height()) / 2.0f) - AndroidUtilities.dp(2.0f);
-        if (c10 > min) {
-            c10 = Math.max(0.0f, min);
-        }
-        this.h = (r6.width() / 2.0f) - c10;
-        float height = (r6.height() / 2.0f) - c10;
-        this.i = height;
-        float f10 = this.h;
-        if (f10 < 1.0f || height < 1.0f) {
-            return;
-        }
-        float min2 = Math.min(this.a, Math.min(f10, height));
-        this.j = min2;
-        float f11 = this.h - min2;
-        this.k = f11;
-        float f12 = this.i - min2;
-        this.l = f12;
-        float f13 = f11 * 2.0f;
-        this.m = f13;
-        float f14 = f12 * 2.0f;
-        this.n = f14;
-        float f15 = this.c * 1.5707964f * min2;
-        this.o = f15;
-        float f16 = (f14 * 2.0f) + (f13 * 2.0f);
-        this.p = (f15 * 4.0f) + f16;
-        int max = Math.max(12, Math.min(80, Math.round(((min2 * 6.2831855f) + f16) / this.b)));
-        uc ucVar = this.q;
-        if (max != ucVar.x) {
-            ucVar.c(max);
-            this.r.c(max);
+    public void onBoundsChange(Rect rect) {
+        switch (this.a) {
+            case 5:
+                ((ImageReceiver) this.b).setImageCoords(AndroidUtilities.dp(2.0f) + rect.left, AndroidUtilities.dp(2.0f) + rect.top, org.telegram.messenger.ll.w(2.0f, rect.left, rect.right - AndroidUtilities.dp(2.0f)), org.telegram.messenger.ll.w(2.0f, rect.top, rect.bottom - AndroidUtilities.dp(2.0f)));
+                break;
+            default:
+                super.onBoundsChange(rect);
+                break;
         }
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        if (this.G != i10) {
-            this.G = i10;
-            uc ucVar = this.q;
-            ucVar.y = i10;
-            ucVar.a();
-            uc ucVar2 = this.r;
-            ucVar2.y = i10;
-            ucVar2.a();
-            invalidateSelf();
+    public final void setAlpha(int i9) {
+        switch (this.a) {
+            case 0:
+            case 1:
+            case 2:
+                break;
+            case 3:
+                ((i6) this.c).w = i9;
+                Paint paint = (Paint) this.b;
+                if (paint != null) {
+                    paint.setAlpha(i9);
+                    break;
+                }
+                break;
+            case 4:
+                break;
+            default:
+                ((ImageReceiver) this.b).setAlpha(i9 / 255.0f);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setBounds(int i9, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 4:
+                super.setBounds(i9, i10, i11, i12);
+                Bitmap bitmap = (Bitmap) this.b;
+                if (bitmap != null && !bitmap.isRecycled()) {
+                    int i13 = i11 - i9;
+                    int i14 = i12 - i10;
+                    float width = bitmap.getWidth();
+                    float height = bitmap.getHeight();
+                    float min = Math.min(i13 / width, i14 / height);
+                    int round = Math.round(width * min);
+                    int round2 = Math.round(height * min);
+                    int i15 = i9 + ((i13 - round) / 2);
+                    int i16 = i10 + ((i14 - round2) / 2);
+                    ((Rect) this.c).set(i15, i16, round + i15, round2 + i16);
+                    break;
+                }
+                break;
+            default:
+                super.setBounds(i9, i10, i11, i12);
+                break;
         }
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
-        this.q.i.setColorFilter(colorFilter);
-        this.r.i.setColorFilter(colorFilter);
-        invalidateSelf();
+        int i9 = this.a;
+    }
+
+    public vc() {
+        this.a = 3;
+        eg.a aVar = new eg.a(this, 8);
+        i6 i6Var = new i6(false, true, true, false);
+        this.c = i6Var;
+        i6Var.setCallback(aVar);
+        i6Var.k(0.3f, 165L, gr.h);
+        i6Var.b = 1;
+        i6Var.u(AndroidUtilities.bold());
+        i6Var.t(AndroidUtilities.dp(10.0f));
+        Paint.Style style = Paint.Style.FILL_AND_STROKE;
+        TextPaint textPaint = i6Var.a;
+        textPaint.setStyle(style);
+        textPaint.setStrokeWidth(AndroidUtilities.dpf2(0.6f));
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setStyle(Paint.Style.STROKE);
+    }
+
+    public vc(wc wcVar, Paint paint) {
+        this.a = 0;
+        this.c = wcVar;
+        this.b = paint;
+    }
+
+    public vc(Bitmap bitmap) {
+        this.a = 4;
+        this.c = new Rect();
+        this.b = bitmap;
+    }
+
+    private final void b(int i9) {
+    }
+
+    private final void c(int i9) {
+    }
+
+    private final void d(int i9) {
+    }
+
+    private final void e(int i9) {
+    }
+
+    private final void f(ColorFilter colorFilter) {
+    }
+
+    private final void g(ColorFilter colorFilter) {
+    }
+
+    private final void h(ColorFilter colorFilter) {
+    }
+
+    private final void i(ColorFilter colorFilter) {
+    }
+
+    private final void j(ColorFilter colorFilter) {
+    }
+
+    private final void k(ColorFilter colorFilter) {
+    }
+
+    public vc(ImageReceiver imageReceiver, Drawable drawable) {
+        this.a = 5;
+        this.b = imageReceiver;
+        this.c = drawable;
+    }
+
+    public vc(ChatActivityEnterView chatActivityEnterView) {
+        this.a = 1;
+        this.c = chatActivityEnterView;
+        Paint paint = new Paint();
+        this.b = paint;
+        paint.setColor(0);
     }
 }

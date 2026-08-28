@@ -1,11 +1,46 @@
 package g7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class u7 {
-    public static final long a(long j10, hd.c sourceUnit, hd.c targetUnit) {
-        kotlin.jvm.internal.j.e(sourceUnit, "sourceUnit");
-        kotlin.jvm.internal.j.e(targetUnit, "targetUnit");
-        return targetUnit.a.convert(j10, sourceUnit.a);
+    public static final int a(int i9, int i10, int i11) {
+        if (i11 > 0) {
+            if (i9 < i10) {
+                int i12 = i10 % i11;
+                if (i12 < 0) {
+                    i12 += i11;
+                }
+                int i13 = i9 % i11;
+                if (i13 < 0) {
+                    i13 += i11;
+                }
+                int i14 = (i12 - i13) % i11;
+                if (i14 < 0) {
+                    i14 += i11;
+                }
+                return i10 - i14;
+            }
+        } else {
+            if (i11 >= 0) {
+                throw new IllegalArgumentException("Step is zero.");
+            }
+            if (i9 > i10) {
+                int i15 = -i11;
+                int i16 = i9 % i15;
+                if (i16 < 0) {
+                    i16 += i15;
+                }
+                int i17 = i10 % i15;
+                if (i17 < 0) {
+                    i17 += i15;
+                }
+                int i18 = (i16 - i17) % i15;
+                if (i18 < 0) {
+                    i18 += i15;
+                }
+                return i18 + i10;
+            }
+        }
+        return i10;
     }
 }

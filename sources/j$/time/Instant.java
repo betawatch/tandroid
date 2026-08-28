@@ -50,8 +50,8 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
         Objects.requireNonNull(lVar, "temporal");
         try {
             return I(lVar.y(j$.time.temporal.a.INSTANT_SECONDS), lVar.j(j$.time.temporal.a.NANO_OF_SECOND));
-        } catch (b e9) {
-            throw new b("Unable to obtain Instant from TemporalAccessor: " + lVar + " of type " + lVar.getClass().getName(), e9);
+        } catch (b e10) {
+            throw new b("Unable to obtain Instant from TemporalAccessor: " + lVar + " of type " + lVar.getClass().getName(), e10);
         }
     }
 
@@ -61,19 +61,19 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
         return ZonedDateTime.q(this.a, this.b, zoneId);
     }
 
-    public static Instant G(long j10, int i10) {
-        if ((i10 | j10) == 0) {
+    public static Instant G(long j10, int i9) {
+        if ((i9 | j10) == 0) {
             return c;
         }
         if (j10 < -31557014167219200L || j10 > 31556889864403199L) {
             throw new b("Instant exceeds minimum or maximum instant");
         }
-        return new Instant(j10, i10);
+        return new Instant(j10, i9);
     }
 
-    public Instant(long j10, int i10) {
+    public Instant(long j10, int i9) {
         this.a = j10;
-        this.b = i10;
+        this.b = i9;
     }
 
     @Override // j$.time.temporal.l
@@ -91,17 +91,17 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
         if (!(oVar instanceof j$.time.temporal.a)) {
             return j$.time.temporal.p.d(this, oVar).a(oVar.m(this), oVar);
         }
-        int i10 = d.a[((j$.time.temporal.a) oVar).ordinal()];
-        if (i10 == 1) {
+        int i9 = d.a[((j$.time.temporal.a) oVar).ordinal()];
+        if (i9 == 1) {
             return this.b;
         }
-        if (i10 == 2) {
+        if (i9 == 2) {
             return this.b / MediaDataController.MAX_STYLE_RUNS_COUNT;
         }
-        if (i10 == 3) {
+        if (i9 == 3) {
             return this.b / MediaController.VIDEO_BITRATE_480;
         }
-        if (i10 == 4) {
+        if (i9 == 4) {
             j$.time.temporal.a aVar = j$.time.temporal.a.INSTANT_SECONDS;
             aVar.b.a(this.a, aVar);
         }
@@ -110,25 +110,25 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
 
     @Override // j$.time.temporal.l
     public final long y(j$.time.temporal.o oVar) {
-        int i10;
+        int i9;
         if (!(oVar instanceof j$.time.temporal.a)) {
             return oVar.m(this);
         }
-        int i11 = d.a[((j$.time.temporal.a) oVar).ordinal()];
-        if (i11 == 1) {
-            i10 = this.b;
-        } else if (i11 == 2) {
-            i10 = this.b / MediaDataController.MAX_STYLE_RUNS_COUNT;
+        int i10 = d.a[((j$.time.temporal.a) oVar).ordinal()];
+        if (i10 == 1) {
+            i9 = this.b;
+        } else if (i10 == 2) {
+            i9 = this.b / MediaDataController.MAX_STYLE_RUNS_COUNT;
         } else {
-            if (i11 != 3) {
-                if (i11 == 4) {
+            if (i10 != 3) {
+                if (i10 == 4) {
                     return this.a;
                 }
                 throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
             }
-            i10 = this.b / MediaController.VIDEO_BITRATE_480;
+            i9 = this.b / MediaController.VIDEO_BITRATE_480;
         }
-        return i10;
+        return i9;
     }
 
     @Override // j$.time.temporal.Temporal
@@ -144,20 +144,20 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
         aVar.w(j10);
-        int i10 = d.a[aVar.ordinal()];
-        if (i10 != 1) {
-            if (i10 == 2) {
-                int i11 = ((int) j10) * MediaDataController.MAX_STYLE_RUNS_COUNT;
+        int i9 = d.a[aVar.ordinal()];
+        if (i9 != 1) {
+            if (i9 == 2) {
+                int i10 = ((int) j10) * MediaDataController.MAX_STYLE_RUNS_COUNT;
+                if (i10 != this.b) {
+                    return G(this.a, i10);
+                }
+            } else if (i9 == 3) {
+                int i11 = ((int) j10) * MediaController.VIDEO_BITRATE_480;
                 if (i11 != this.b) {
                     return G(this.a, i11);
                 }
-            } else if (i10 == 3) {
-                int i12 = ((int) j10) * MediaController.VIDEO_BITRATE_480;
-                if (i12 != this.b) {
-                    return G(this.a, i12);
-                }
             } else {
-                if (i10 != 4) {
+                if (i9 != 4) {
                     throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
                 }
                 if (j10 != this.a) {

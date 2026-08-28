@@ -1,15 +1,6 @@
 package h7;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class e8 {
-    public static final Exception a(x0.a aVar, String str, Exception exc) {
-        if (exc instanceof y0.a) {
-            return new y0.a(aVar, str);
-        }
-        if (exc instanceof y0.b) {
-            return new y0.b(aVar, str);
-        }
-        throw new z0.a();
-    }
 }

@@ -1,17 +1,17 @@
 package d4;
 
-import a9.p;
+import aa.d;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.o;
 import h3.g1;
 import h3.t0;
+import j3.r0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class c implements z3.b {
-    public static final Parcelable.Creator<c> CREATOR = new o(13);
+    public static final Parcelable.Creator<c> CREATOR = new c.c(5);
     public final byte[] a;
     public final String b;
     public final String c;
@@ -60,11 +60,11 @@ public final class c implements z3.b {
     }
 
     public final String toString() {
-        return p.k(this.a.length, "\"", i0.a.p("ICY: title=\"", this.b, "\", url=\"", this.c, "\", rawMetadata.length=\""));
+        return d.l(this.a.length, "\"", r0.q("ICY: title=\"", this.b, "\", url=\"", this.c, "\", rawMetadata.length=\""));
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeByteArray(this.a);
         parcel.writeString(this.b);
         parcel.writeString(this.c);

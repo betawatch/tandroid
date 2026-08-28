@@ -1,32 +1,31 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLObject;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ra implements Runnable {
+public final /* synthetic */ class ra implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 e;
+    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ ra(MessagesController messagesController, TLObject tLObject, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
+    public /* synthetic */ ra(BaseController baseController, int i9, int i10) {
         this.a = i10;
-        this.b = messagesController;
-        this.c = tLObject;
-        this.d = f6Var;
-        this.e = e6Var;
+        this.b = baseController;
+        this.c = i9;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.b.lambda$didReceivedNotification$46(this.c, this.d, this.e);
+                ((MessagesController) this.b).lambda$convertToGigaGroup$271(this.c, dialogInterface);
+                break;
+            case 1:
+                ((MessagesController) this.b).lambda$convertToMegaGroup$266(this.c, dialogInterface);
                 break;
             default:
-                this.b.lambda$didReceivedNotification$48(this.c, this.d, this.e);
+                ((SecretChatHelper) this.b).lambda$startSecretChat$31(this.c, dialogInterface);
                 break;
         }
     }

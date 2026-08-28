@@ -1,64 +1,121 @@
 package f2;
 
-import java.util.ArrayList;
+import android.os.Bundle;
+import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class r1 extends v0 {
-    public boolean m;
-    public boolean n;
+public final class r1 extends r0.b {
+    public final /* synthetic */ int d = 0;
+    public final Object e;
 
-    public r1() {
-        this.a = null;
-        this.b = new ArrayList();
-        this.c = 120L;
-        this.d = 120L;
-        this.e = 250L;
-        this.f = 250L;
-        this.g = 250L;
-        this.l = 0L;
-        this.m = true;
+    public r1(s1 s1Var) {
+        this.e = s1Var;
     }
 
-    @Override // f2.v0
-    public boolean a(o1 o1Var, d5.p pVar, d5.p pVar2) {
-        int i10;
-        int i11;
-        if (pVar != null && ((i10 = pVar.a) != (i11 = pVar2.a) || pVar.b != pVar2.b || this.n)) {
-            return r(o1Var, pVar, i10, pVar.b, i11, pVar2.b);
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0022, code lost:
+    
+        if (r3.b() > 1) goto L12;
+     */
+    @Override // r0.b
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void b(View view, AccessibilityEvent accessibilityEvent) {
+        boolean z10;
+        m2.a aVar;
+        switch (this.d) {
+            case 1:
+                m2.g gVar = (m2.g) this.e;
+                super.b(view, accessibilityEvent);
+                accessibilityEvent.setClassName(m2.g.class.getName());
+                m2.a aVar2 = gVar.e;
+                if (aVar2 != null) {
+                    z10 = true;
+                    break;
+                }
+                z10 = false;
+                accessibilityEvent.setScrollable(z10);
+                if (accessibilityEvent.getEventType() == 4096 && (aVar = gVar.e) != null) {
+                    accessibilityEvent.setItemCount(aVar.b());
+                    accessibilityEvent.setFromIndex(gVar.f);
+                    accessibilityEvent.setToIndex(gVar.f);
+                    break;
+                }
+                break;
+            default:
+                super.b(view, accessibilityEvent);
+                break;
         }
-        p(o1Var);
+    }
+
+    @Override // r0.b
+    public final void c(View view, s0.d dVar) {
+        switch (this.d) {
+            case 0:
+                this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
+                s1 s1Var = (s1) this.e;
+                RecyclerView recyclerView = s1Var.d;
+                RecyclerView recyclerView2 = s1Var.d;
+                if (!recyclerView.Z() && recyclerView2.getLayoutManager() != null) {
+                    recyclerView2.getLayoutManager().T(view, dVar);
+                    break;
+                }
+                break;
+            default:
+                AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
+                this.a.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                dVar.i(m2.g.class.getName());
+                m2.g gVar = (m2.g) this.e;
+                m2.a aVar = gVar.e;
+                accessibilityNodeInfo.setScrollable(aVar != null && aVar.b() > 1);
+                if (gVar.canScrollHorizontally(1)) {
+                    dVar.a(4096);
+                }
+                if (gVar.canScrollHorizontally(-1)) {
+                    dVar.a(8192);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // r0.b
+    public final boolean d(View view, int i9, Bundle bundle) {
+        switch (this.d) {
+            case 0:
+                s1 s1Var = (s1) this.e;
+                if (!super.d(view, i9, bundle)) {
+                    RecyclerView recyclerView = s1Var.d;
+                    RecyclerView recyclerView2 = s1Var.d;
+                    if (!recyclerView.Z() && recyclerView2.getLayoutManager() != null) {
+                        g1 g1Var = recyclerView2.getLayoutManager().b.b;
+                        break;
+                    }
+                }
+                break;
+            default:
+                m2.g gVar = (m2.g) this.e;
+                if (!super.d(view, i9, bundle)) {
+                    if (i9 == 4096) {
+                        if (gVar.canScrollHorizontally(1)) {
+                            gVar.setCurrentItem(gVar.f + 1);
+                            break;
+                        }
+                    } else if (i9 == 8192 && gVar.canScrollHorizontally(-1)) {
+                        gVar.setCurrentItem(gVar.f - 1);
+                        break;
+                    }
+                }
+                break;
+        }
         return true;
     }
 
-    public abstract void p(o1 o1Var);
-
-    public abstract boolean q(o1 o1Var, o1 o1Var2, d5.p pVar, int i10, int i11, int i12, int i13);
-
-    public abstract boolean r(o1 o1Var, d5.p pVar, int i10, int i11, int i12, int i13);
-
-    public abstract void s(o1 o1Var, d5.p pVar);
-
-    public boolean t(o1 o1Var) {
-        return !this.m || o1Var.h();
-    }
-
-    public final void u(o1 o1Var) {
-        w(o1Var);
-        d(o1Var);
-    }
-
-    public final void v(o1 o1Var) {
-        x(o1Var);
-        d(o1Var);
-    }
-
-    public void y() {
-    }
-
-    public void w(o1 o1Var) {
-    }
-
-    public void x(o1 o1Var) {
+    public r1(m2.g gVar) {
+        this.e = gVar;
     }
 }

@@ -1,6 +1,6 @@
 package org.telegram.ui.Components.voip;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class r0 implements m2.e {
     public int a = 0;
@@ -14,11 +14,11 @@ public final class r0 implements m2.e {
     /* JADX WARN: Type inference failed for: r0v1, types: [boolean] */
     /* JADX WARN: Type inference failed for: r0v2, types: [boolean] */
     @Override // m2.e
-    public final void b(int i10) {
-        int i11 = this.a;
+    public final void b(int i9) {
+        int i10 = this.a;
         u0 u0Var = this.c;
-        if (i11 == 0) {
-            if (i10 <= u0Var.y) {
+        if (i10 == 0) {
+            if (i9 <= u0Var.y) {
                 u0Var.n = 1;
             } else {
                 u0Var.n = 2;
@@ -26,7 +26,7 @@ public final class r0 implements m2.e {
             u0.a(u0Var);
             return;
         }
-        if (i10 <= u0Var.y) {
+        if (i9 <= u0Var.y) {
             this.b = 1;
         } else {
             this.b = 2;
@@ -34,20 +34,20 @@ public final class r0 implements m2.e {
     }
 
     @Override // m2.e
-    public final void c(float f10, int i10, int i11) {
+    public final void c(float f10, int i9, int i10) {
         u0 u0Var = this.c;
-        u0Var.x = i10;
+        u0Var.x = i9;
         u0Var.w = f10;
         u0Var.d();
     }
 
     @Override // m2.e
-    public final void d(int i10) {
-        this.a = i10;
-        if (i10 == 0) {
-            int i11 = this.b;
+    public final void d(int i9) {
+        this.a = i9;
+        if (i9 == 0) {
+            int i10 = this.b;
             u0 u0Var = this.c;
-            u0Var.n = i11;
+            u0Var.n = i10;
             u0.a(u0Var);
         }
     }

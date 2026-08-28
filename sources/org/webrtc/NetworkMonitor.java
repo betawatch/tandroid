@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.webrtc.NetworkChangeDetector;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
 public class NetworkMonitor {
     private static final String TAG = "NetworkMonitor";
@@ -19,7 +19,7 @@ public class NetworkMonitor {
     private final ArrayList<NetworkObserver> networkObservers;
     private int numObservers;
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class InstanceHolder {
         static final NetworkMonitor instance = new NetworkMonitor();
 
@@ -27,7 +27,7 @@ public class NetworkMonitor {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface NetworkObserver {
         void onConnectionTypeChanged(NetworkChangeDetector.ConnectionType connectionType);
     }
@@ -72,8 +72,8 @@ public class NetworkMonitor {
             }
 
             @Override // org.webrtc.NetworkChangeDetector.Observer
-            public void onNetworkPreference(List<NetworkChangeDetector.ConnectionType> list, int i10) {
-                NetworkMonitor.this.notifyObserversOfNetworkPreference(list, i10);
+            public void onNetworkPreference(List<NetworkChangeDetector.ConnectionType> list, int i9) {
+                NetworkMonitor.this.notifyObserversOfNetworkPreference(list, i9);
             }
         }, context);
     }
@@ -106,7 +106,7 @@ public class NetworkMonitor {
 
     private native void nativeNotifyOfNetworkDisconnect(long j10, long j11);
 
-    private native void nativeNotifyOfNetworkPreference(long j10, NetworkChangeDetector.ConnectionType connectionType, int i10);
+    private native void nativeNotifyOfNetworkPreference(long j10, NetworkChangeDetector.ConnectionType connectionType, int i9);
 
     private boolean networkBindingSupported() {
         boolean z10;
@@ -130,10 +130,10 @@ public class NetworkMonitor {
             arrayList = new ArrayList(this.networkObservers);
         }
         int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
+        int i9 = 0;
+        while (i9 < size) {
+            Object obj = arrayList.get(i9);
+            i9++;
             ((NetworkObserver) obj).onConnectionTypeChanged(connectionType);
         }
     }
@@ -155,12 +155,12 @@ public class NetworkMonitor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void notifyObserversOfNetworkPreference(List<NetworkChangeDetector.ConnectionType> list, int i10) {
+    public void notifyObserversOfNetworkPreference(List<NetworkChangeDetector.ConnectionType> list, int i9) {
         List<Long> nativeNetworkObserversSync = getNativeNetworkObserversSync();
         for (NetworkChangeDetector.ConnectionType connectionType : list) {
             Iterator<Long> it = nativeNetworkObserversSync.iterator();
             while (it.hasNext()) {
-                nativeNotifyOfNetworkPreference(it.next().longValue(), connectionType, i10);
+                nativeNotifyOfNetworkPreference(it.next().longValue(), connectionType, i9);
             }
         }
     }
@@ -203,11 +203,11 @@ public class NetworkMonitor {
     }
 
     public int getNumObservers() {
-        int i10;
+        int i9;
         synchronized (this.networkChangeDetectorLock) {
-            i10 = this.numObservers;
+            i9 = this.numObservers;
         }
-        return i10;
+        return i9;
     }
 
     public void removeObserver(NetworkObserver networkObserver) {
@@ -238,9 +238,9 @@ public class NetworkMonitor {
     public void stopMonitoring() {
         synchronized (this.networkChangeDetectorLock) {
             try {
-                int i10 = this.numObservers - 1;
-                this.numObservers = i10;
-                if (i10 == 0) {
+                int i9 = this.numObservers - 1;
+                this.numObservers = i9;
+                if (i9 == 0) {
                     this.networkChangeDetector.destroy();
                     this.networkChangeDetector = null;
                 }

@@ -1,18 +1,18 @@
 package com.google.android.gms.common.api.internal;
 
-import g7.h5;
+import f7.i5;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class i0 extends h5 {
+public final class i0 extends i5 {
     public final WeakReference a;
 
     public i0(j0 j0Var) {
         this.a = new WeakReference(j0Var);
     }
 
-    @Override // g7.h5
+    @Override // f7.i5
     public final void a() {
         j0 j0Var = (j0) this.a.get();
         if (j0Var == null) {

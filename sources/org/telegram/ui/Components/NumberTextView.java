@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class NumberTextView extends View {
     public final ArrayList a;
@@ -37,30 +37,30 @@ public class NumberTextView extends View {
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0038, code lost:
     
-        if (r22 < r21.f) goto L13;
+        if (r22 < r21.f) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x003a, code lost:
-    
-        r9 = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x003c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x005d, code lost:
     
         r9 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x005c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x005b, code lost:
     
-        if (r22 > r21.f) goto L13;
+        r9 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x0059, code lost:
+    
+        if (r22 > r21.f) goto L16;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(int i10, boolean z10) {
+    public final void a(int i9, boolean z10) {
         String sb2;
         String sb3;
         boolean z11;
-        int i11;
+        int i10;
         String str;
-        if (this.f == i10 && z10) {
+        if (this.f == i9 && z10) {
             return;
         }
         ObjectAnimator objectAnimator = this.d;
@@ -75,16 +75,16 @@ public class NumberTextView extends View {
         arrayList2.clear();
         if (this.h) {
             Locale locale = Locale.US;
-            sb2 = i0.a.k(this.f, "#");
-            sb3 = i0.a.k(i10, "#");
+            sb2 = j3.r0.l(this.f, "#");
+            sb3 = j3.r0.l(i9, "#");
         } else {
             Locale locale2 = Locale.US;
-            int i12 = this.f;
+            int i11 = this.f;
             StringBuilder sb4 = new StringBuilder();
-            sb4.append(i12);
+            sb4.append(i11);
             sb2 = sb4.toString();
             StringBuilder sb5 = new StringBuilder();
-            sb5.append(i10);
+            sb5.append(i9);
             sb3 = sb5.toString();
         }
         TextPaint textPaint = this.c;
@@ -92,35 +92,35 @@ public class NumberTextView extends View {
         float measureText = textPaint.measureText(sb2);
         this.s = measureText;
         boolean z12 = this.n && this.r != measureText;
-        this.f = i10;
+        this.f = i9;
         this.e = 0.0f;
-        int i13 = 0;
-        while (i13 < sb3.length()) {
-            int i14 = i13 + 1;
-            String substring = sb3.substring(i13, i14);
-            String substring2 = (arrayList.isEmpty() || i13 >= sb2.length()) ? null : sb2.substring(i13, i14);
+        int i12 = 0;
+        while (i12 < sb3.length()) {
+            int i13 = i12 + 1;
+            String substring = sb3.substring(i12, i13);
+            String substring2 = (arrayList.isEmpty() || i12 >= sb2.length()) ? null : sb2.substring(i12, i13);
             if (z12 || substring2 == null || !substring2.equals(substring)) {
                 if (z12 && substring2 == null) {
-                    i11 = i14;
+                    i10 = i13;
                     str = substring;
                     arrayList.add(new StaticLayout("", textPaint, 0, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
                 } else {
-                    i11 = i14;
+                    i10 = i13;
                     str = substring;
                 }
                 arrayList2.add(new StaticLayout(str, textPaint, (int) Math.ceil(textPaint.measureText(str)), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
             } else {
-                arrayList2.add((StaticLayout) arrayList.get(i13));
-                arrayList.set(i13, null);
-                i11 = i14;
+                arrayList2.add((StaticLayout) arrayList.get(i12));
+                arrayList.set(i12, null);
+                i10 = i13;
             }
-            i13 = i11;
+            i12 = i10;
         }
         if (z10 && !arrayList.isEmpty()) {
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z11 ? -1.0f : 1.0f, 0.0f);
             this.d = ofFloat;
             ofFloat.setDuration(this.h ? 180L : 150L);
-            this.d.addListener(new sz(this, 7));
+            this.d.addListener(new r60(this, 5));
             this.d.start();
         }
         invalidate();
@@ -160,11 +160,11 @@ public class NumberTextView extends View {
         int size = arrayList.size();
         ArrayList arrayList2 = this.b;
         int max = Math.max(size, arrayList2.size());
-        int i10 = 0;
-        while (i10 < max) {
+        int i9 = 0;
+        while (i9 < max) {
             canvas.save();
-            StaticLayout staticLayout = i10 < arrayList2.size() ? (StaticLayout) arrayList2.get(i10) : null;
-            StaticLayout staticLayout2 = i10 < arrayList.size() ? (StaticLayout) arrayList.get(i10) : null;
+            StaticLayout staticLayout = i9 < arrayList2.size() ? (StaticLayout) arrayList2.get(i9) : null;
+            StaticLayout staticLayout2 = i9 < arrayList.size() ? (StaticLayout) arrayList.get(i9) : null;
             float f12 = this.e;
             TextPaint textPaint = this.c;
             if (f12 > 0.0f) {
@@ -190,7 +190,7 @@ public class NumberTextView extends View {
                     canvas.restore();
                 }
                 if (staticLayout2 != null) {
-                    if (i10 == max - 1 || staticLayout != null) {
+                    if (i9 == max - 1 || staticLayout != null) {
                         textPaint.setAlpha((int) ((this.e + 1.0f) * 255.0f));
                         canvas.translate(0.0f, this.e * dp);
                     } else {
@@ -208,7 +208,7 @@ public class NumberTextView extends View {
             if (staticLayout2 != null && staticLayout != null) {
                 f11 = (staticLayout.getLineWidth(0) - staticLayout2.getLineWidth(0)) + f11;
             }
-            i10++;
+            i9++;
         }
         canvas.restore();
     }
@@ -225,13 +225,13 @@ public class NumberTextView extends View {
         invalidate();
     }
 
-    public void setTextColor(int i10) {
-        this.c.setColor(i10);
+    public void setTextColor(int i9) {
+        this.c.setColor(i9);
         invalidate();
     }
 
-    public void setTextSize(int i10) {
-        this.c.setTextSize(AndroidUtilities.dp(i10));
+    public void setTextSize(int i9) {
+        this.c.setTextSize(AndroidUtilities.dp(i9));
         this.b.clear();
         this.a.clear();
         a(this.f, false);
@@ -244,6 +244,6 @@ public class NumberTextView extends View {
         a(this.f, false);
     }
 
-    public void setOnTextWidthProgressChangedListener(gc0 gc0Var) {
+    public void setOnTextWidthProgressChangedListener(cc0 cc0Var) {
     }
 }

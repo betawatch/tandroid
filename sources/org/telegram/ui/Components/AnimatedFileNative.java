@@ -5,7 +5,7 @@ import android.os.Trace;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.AnimatedFileDrawableStream;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class AnimatedFileNative {
     public final int[] a;
@@ -17,10 +17,10 @@ public class AnimatedFileNative {
         this.a = iArr;
     }
 
-    public static AnimatedFileNative a(String str, int[] iArr, int i10, long j10, AnimatedFileDrawableStream animatedFileDrawableStream, boolean z10) {
+    public static AnimatedFileNative a(String str, int[] iArr, int i9, long j10, AnimatedFileDrawableStream animatedFileDrawableStream, boolean z10) {
         Trace.beginSection("AnimatedFileNative#createDecoder");
         try {
-            long nCreateDecoder = nCreateDecoder(str, iArr, i10, j10, animatedFileDrawableStream, z10);
+            long nCreateDecoder = nCreateDecoder(str, iArr, i9, j10, animatedFileDrawableStream, z10);
             Trace.endSection();
             if (nCreateDecoder == 0) {
                 return null;
@@ -41,7 +41,7 @@ public class AnimatedFileNative {
         }
     }
 
-    private static native long nCreateDecoder(String str, int[] iArr, int i10, long j10, Object obj, boolean z10);
+    private static native long nCreateDecoder(String str, int[] iArr, int i9, long j10, Object obj, boolean z10);
 
     private static native void nDestroyDecoder(long j10);
 

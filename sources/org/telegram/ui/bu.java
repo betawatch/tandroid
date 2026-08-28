@@ -1,40 +1,41 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bu implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ DataSettingsActivity b;
+public final /* synthetic */ class bu implements DialogInterface.OnClickListener {
+    public final /* synthetic */ DataSettingsActivity a;
+    public final /* synthetic */ SharedPreferences b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ bu(DataSettingsActivity dataSettingsActivity, int i10) {
-        this.a = i10;
-        this.b = dataSettingsActivity;
+    public /* synthetic */ bu(DataSettingsActivity dataSettingsActivity, SharedPreferences sharedPreferences, int i9) {
+        this.a = dataSettingsActivity;
+        this.b = sharedPreferences;
+        this.c = i9;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i9) {
         int i10;
-        switch (this.a) {
-            case 0:
-                this.b.getMediaDataController().clearAllDrafts(true);
-                break;
-            case 1:
-                DataSettingsActivity dataSettingsActivity = this.b;
-                dataSettingsActivity.T = true;
-                if (dataSettingsActivity.a != null && (i10 = dataSettingsActivity.s) >= 0) {
-                    dataSettingsActivity.n0(i10);
-                    break;
-                }
-                break;
-            default:
-                z6.i0 = null;
-                DataSettingsActivity dataSettingsActivity2 = this.b;
-                bu buVar = new bu(dataSettingsActivity2, 1);
-                AndroidUtilities.runOnUIThread(buVar, 100L);
-                z6.j0(new cu(dataSettingsActivity2, buVar, System.currentTimeMillis(), 0));
-                break;
+        DataSettingsActivity dataSettingsActivity = this.a;
+        dataSettingsActivity.getClass();
+        if (i9 != 0) {
+            i10 = 3;
+            if (i9 != 1) {
+                i10 = i9 != 2 ? i9 != 3 ? -1 : 2 : 1;
+            }
+        } else {
+            i10 = 0;
+        }
+        if (i10 != -1) {
+            this.b.edit().putInt("VoipDataSaving", i10).commit();
+            dataSettingsActivity.R = true;
+        }
+        cu cuVar = dataSettingsActivity.a;
+        if (cuVar != null) {
+            cuVar.m(this.c);
         }
     }
 }

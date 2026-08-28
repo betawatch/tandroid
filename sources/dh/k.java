@@ -1,103 +1,175 @@
 package dh;
 
+import android.R;
 import android.app.Activity;
-import android.content.res.Configuration;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
+import android.graphics.Paint;
+import android.graphics.Point;
 import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Cells.s1;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class k extends View {
-    public final HashMap a;
-    public final ArrayList b;
-    public final ArrayList c;
-    public final int d;
+public final class k {
+    public static HashMap n;
+    public final double a;
+    public final double b;
+    public final int c;
+    public final g d;
+    public final h e;
+    public j f;
+    public final int g;
+    public final int h;
+    public boolean i;
+    public final ArrayList j = new ArrayList();
+    public final HashMap k = new HashMap();
+    public int l = 0;
+    public final f m = new f(this, 0);
 
-    public k(Activity activity) {
-        super(activity);
-        this.a = new HashMap();
-        this.b = new ArrayList();
-        this.c = new ArrayList();
-        this.d = UserConfig.selectedAccount;
+    public k(int i9, g gVar, int i10, int i11) {
+        double d = 1.0d / ((int) AndroidUtilities.screenRefreshRate);
+        this.a = d;
+        this.b = d * 4.0d;
+        this.c = i9;
+        this.g = i10;
+        this.h = i11;
+        this.d = gVar;
+        h hVar = new h(this, gVar.getContext());
+        this.e = hVar;
+        hVar.setSurfaceTextureListener(new i(this, 0));
+        hVar.setOpaque(false);
+        gVar.addView(hVar);
     }
 
-    public static String b(s1 s1Var) {
-        MessageObject messageObject = s1Var.getMessageObject();
-        if (messageObject == null) {
+    public static k d(int i9, View view, ViewGroup viewGroup) {
+        int min;
+        if (view == null) {
             return null;
         }
-        return messageObject.getChatId() + "_" + messageObject.getId();
+        if (n == null) {
+            n = new HashMap();
+        }
+        k kVar = (k) n.get(Integer.valueOf(i9));
+        if (kVar == null) {
+            int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
+            if (devicePerformanceClass == 1) {
+                Point point = AndroidUtilities.displaySize;
+                min = Math.min(RichMessageLayout.PART_MAX_HEIGHT_DP, (int) (((point.x + point.y) / 2.0f) * 0.8f));
+            } else if (devicePerformanceClass != 2) {
+                Point point2 = AndroidUtilities.displaySize;
+                min = Math.min(720, (int) (((point2.x + point2.y) / 2.0f) * 0.7f));
+            } else {
+                Point point3 = AndroidUtilities.displaySize;
+                min = Math.min(1280, (int) (((point3.x + point3.y) / 2.0f) * 1.0f));
+            }
+            if (viewGroup == null) {
+                return null;
+            }
+            HashMap hashMap = n;
+            Integer valueOf = Integer.valueOf(i9);
+            g gVar = new g(viewGroup.getContext(), 0);
+            viewGroup.addView(gVar);
+            k kVar2 = new k(i9, gVar, min, min);
+            hashMap.put(valueOf, kVar2);
+            kVar = kVar2;
+        }
+        kVar.a(view);
+        return kVar;
     }
 
-    public final boolean a() {
-        Iterator it = this.a.entrySet().iterator();
-        while (it.hasNext()) {
-            if (!((j) ((Map.Entry) it.next()).getValue()).K) {
-                return true;
+    public static k e(View view) {
+        Activity findActivity = AndroidUtilities.findActivity(view.getContext());
+        ViewGroup viewGroup = null;
+        if (findActivity != null) {
+            View rootView = findActivity.findViewById(R.id.content).getRootView();
+            if (rootView instanceof ViewGroup) {
+                viewGroup = (ViewGroup) rootView;
             }
         }
-        return false;
+        return d(0, view, viewGroup);
     }
 
-    @Override // android.view.View, android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        super.invalidateDrawable(drawable);
-        if (drawable instanceof j) {
-            invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        HashMap hashMap = this.a;
-        Iterator it = hashMap.entrySet().iterator();
-        while (it.hasNext()) {
-            ((j) ((Map.Entry) it.next()).getValue()).d();
-        }
-        hashMap.clear();
-        this.b.clear();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        HashMap hashMap = this.a;
-        Iterator it = hashMap.entrySet().iterator();
-        while (it.hasNext()) {
-            ((j) ((Map.Entry) it.next()).getValue()).draw(canvas);
-        }
-        ArrayList arrayList = this.b;
-        if (arrayList.isEmpty()) {
+    public static void f(boolean z10) {
+        j jVar;
+        HashMap hashMap = n;
+        if (hashMap == null) {
             return;
         }
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            j jVar = (j) hashMap.remove((String) obj);
-            if (jVar != null) {
-                jVar.d();
+        for (k kVar : hashMap.values()) {
+            if (kVar.c == 0 && (jVar = kVar.f) != null) {
+                jVar.b = z10;
             }
         }
-        arrayList.clear();
     }
 
-    @Override // android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        Iterator it = this.a.entrySet().iterator();
-        while (it.hasNext()) {
-            ((j) ((Map.Entry) it.next()).getValue()).setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+    public final void a(View view) {
+        if (this.i) {
+            return;
         }
+        ArrayList arrayList = this.j;
+        if (arrayList.contains(view)) {
+            return;
+        }
+        arrayList.add(view);
+        int i9 = this.l;
+        this.l = i9 + 1;
+        this.k.put(view, Integer.valueOf(i9));
+    }
+
+    public final void b(View view) {
+        this.j.remove(view);
+        this.k.remove(view);
+        if (this.i) {
+            return;
+        }
+        f fVar = this.m;
+        AndroidUtilities.cancelRunOnUIThread(fVar);
+        AndroidUtilities.runOnUIThread(fVar, 30L);
+    }
+
+    public final void c(Canvas canvas, View view, int i9, int i10, float f10, boolean z10) {
+        if (canvas == null || view == null) {
+            return;
+        }
+        canvas.save();
+        Integer num = (Integer) this.k.get(view);
+        if (num == null) {
+            num = 0;
+        }
+        int i11 = this.g;
+        int i12 = this.h;
+        if (i9 > i11 || i10 > i12) {
+            float max = Math.max(i9 / i11, i10 / i12);
+            canvas.scale(max, max);
+        }
+        if (num.intValue() % 4 == 1) {
+            canvas.rotate(180.0f, i11 / 2.0f, i12 / 2.0f);
+        }
+        if (num.intValue() % 4 == 2) {
+            canvas.scale(-1.0f, 1.0f, i11 / 2.0f, i12 / 2.0f);
+        }
+        if (num.intValue() % 4 == 3) {
+            canvas.scale(1.0f, -1.0f, i11 / 2.0f, i12 / 2.0f);
+        }
+        h hVar = this.e;
+        if (z10) {
+            Bitmap bitmap = hVar.getBitmap();
+            if (bitmap != null) {
+                Paint paint = new Paint(7);
+                paint.setColor(-1);
+                canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
+                bitmap.recycle();
+            }
+        } else {
+            hVar.setAlpha(f10);
+            hVar.draw(canvas);
+        }
+        canvas.restore();
     }
 }

@@ -1,27 +1,49 @@
 package androidx.activity;
 
 import android.window.OnBackInvokedCallback;
-import android.window.OnBackInvokedDispatcher;
+import ih.m9;
+import kh.wb;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class r {
-    public static final r a = new r();
+public final /* synthetic */ class r implements OnBackInvokedCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public final OnBackInvokedCallback a(ad.a onBackInvoked) {
-        kotlin.jvm.internal.j.e(onBackInvoked, "onBackInvoked");
-        return new q(onBackInvoked, 0);
+    public /* synthetic */ r(Object obj, int i9) {
+        this.a = i9;
+        this.b = obj;
     }
 
-    public final void b(Object dispatcher, int i10, Object callback) {
-        kotlin.jvm.internal.j.e(dispatcher, "dispatcher");
-        kotlin.jvm.internal.j.e(callback, "callback");
-        ((OnBackInvokedDispatcher) dispatcher).registerOnBackInvokedCallback(i10, (OnBackInvokedCallback) callback);
-    }
-
-    public final void c(Object dispatcher, Object callback) {
-        kotlin.jvm.internal.j.e(dispatcher, "dispatcher");
-        kotlin.jvm.internal.j.e(callback, "callback");
-        ((OnBackInvokedDispatcher) dispatcher).unregisterOnBackInvokedCallback((OnBackInvokedCallback) callback);
+    @Override // android.window.OnBackInvokedCallback
+    public final void onBackInvoked() {
+        switch (this.a) {
+            case 0:
+                zc.a onBackInvoked = (zc.a) this.b;
+                kotlin.jvm.internal.i.e(onBackInvoked, "$onBackInvoked");
+                onBackInvoked.invoke();
+                break;
+            case 1:
+                ((g.q) this.b).t();
+                break;
+            case 2:
+                m9 m9Var = (m9) this.b;
+                m9Var.getClass();
+                LaunchActivity launchActivity = LaunchActivity.C1;
+                if (launchActivity == null) {
+                    m9Var.onAttachedBackPressed();
+                    break;
+                } else {
+                    launchActivity.onBackPressed();
+                    break;
+                }
+            case 3:
+                ((wb) this.b).M();
+                break;
+            default:
+                ((Runnable) this.b).run();
+                break;
+        }
     }
 }

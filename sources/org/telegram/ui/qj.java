@@ -1,59 +1,38 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class qj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rn b;
+import android.content.Context;
+import android.view.MotionEvent;
 
-    public /* synthetic */ qj(rn rnVar, int i10) {
-        this.a = i10;
-        this.b = rnVar;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes3.dex */
+public final class qj extends org.telegram.ui.Components.g11 {
+    public final /* synthetic */ qn e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qj(qn qnVar, Context context, int i9, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(context, i9, b6Var);
+        this.e = qnVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        rn rnVar = this.b;
-        switch (i10) {
-            case 0:
-                rn.i2(rnVar);
-                break;
-            case 1:
-                rn.i2(rnVar);
-                break;
-            case 2:
-                int i11 = rn.Dc;
-                rnVar.Ma();
-                break;
-            case 3:
-                int i12 = rn.Dc;
-                rnVar.Ma();
-                break;
-            case 4:
-                int i13 = rn.Dc;
-                rnVar.Ma();
-                break;
-            case 5:
-                int i14 = rn.Dc;
-                rnVar.Ma();
-                break;
-            case 6:
-                int i15 = rn.Dc;
-                rnVar.Ma();
-                break;
-            case 7:
-                int i16 = rn.Dc;
-                rnVar.Ma();
-                break;
-            case 8:
-                int i17 = rn.Dc;
-                rnVar.Ma();
-                break;
-            default:
-                int i18 = rn.Dc;
-                rnVar.Ma();
-                break;
+    @Override // org.telegram.ui.Components.g11, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.k kVar;
+        if (getAlpha() == 0.0f) {
+            return false;
         }
+        qn qnVar = this.e;
+        kVar = ((org.telegram.ui.ActionBar.o2) qnVar).actionBar;
+        if (kVar.s() || qnVar.A9()) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        if (getTranslationY() != f10) {
+            invalidate();
+        }
+        super.setTranslationY(f10);
     }
 }

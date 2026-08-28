@@ -3,15 +3,15 @@ package h5;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
-import h7.r8;
+import g7.p8;
 import java.util.Arrays;
-import n6.u;
-import y5.l;
+import m6.u;
+import x5.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class g extends z5.a {
-    public static final Parcelable.Creator<g> CREATOR = new h(5);
+public final class g extends y5.a {
+    public static final Parcelable.Creator<g> CREATOR = new h(6);
     public final String a;
     public final String b;
     public final String c;
@@ -48,17 +48,17 @@ public final class g extends z5.a {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.l(parcel, 1, this.a);
-        r8.l(parcel, 2, this.b);
-        r8.l(parcel, 3, this.c);
-        r8.l(parcel, 4, this.d);
-        r8.k(parcel, 5, this.e, i10);
-        r8.l(parcel, 6, this.f);
-        r8.l(parcel, 7, this.h);
-        r8.l(parcel, 8, this.n);
-        r8.k(parcel, 9, this.r, i10);
-        r8.r(parcel, q6);
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.l(parcel, 1, this.a);
+        p8.l(parcel, 2, this.b);
+        p8.l(parcel, 3, this.c);
+        p8.l(parcel, 4, this.d);
+        p8.k(parcel, 5, this.e, i9);
+        p8.l(parcel, 6, this.f);
+        p8.l(parcel, 7, this.h);
+        p8.l(parcel, 8, this.n);
+        p8.k(parcel, 9, this.r, i9);
+        p8.r(parcel, q10);
     }
 }

@@ -1,32 +1,58 @@
 package r4;
 
-import com.google.android.gms.common.api.internal.v;
-import java.util.ArrayDeque;
+import java.nio.ByteBuffer;
+import k3.m;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class e extends l {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ h d;
+public abstract class e extends m implements g {
+    public final String a;
 
-    public /* synthetic */ e(h hVar, int i10) {
-        this.c = i10;
-        this.d = hVar;
+    public e(String str) {
+        super(new j[2], new k[2]);
+        this.a = str;
+        setInitialInputBufferSize(1024);
     }
 
-    @Override // k3.k
-    public final void release() {
-        switch (this.c) {
-            case 0:
-                ArrayDeque arrayDeque = (ArrayDeque) ((v) this.d).d;
-                d5.a.i(arrayDeque.size() < 2);
-                d5.a.f(!arrayDeque.contains(this));
-                clear();
-                arrayDeque.addFirst(this);
-                break;
-            default:
-                ((f) this.d).releaseOutputBuffer(this);
-                break;
+    public abstract f c(int i9, boolean z10, byte[] bArr);
+
+    @Override // k3.m
+    public final k3.i createInputBuffer() {
+        return new j();
+    }
+
+    @Override // k3.m
+    public final k3.k createOutputBuffer() {
+        return new d(this, 1);
+    }
+
+    @Override // k3.m
+    public final k3.g createUnexpectedDecodeException(Throwable th) {
+        return new h("Unexpected decode error", th);
+    }
+
+    @Override // k3.m
+    public final k3.g decode(k3.i iVar, k3.k kVar, boolean z10) {
+        j jVar = (j) iVar;
+        k kVar2 = (k) kVar;
+        try {
+            ByteBuffer byteBuffer = jVar.b;
+            byteBuffer.getClass();
+            kVar2.a(jVar.d, c(byteBuffer.limit(), z10, byteBuffer.array()), jVar.n);
+            kVar2.clearFlag(TLObject.FLAG_31);
+            return null;
+        } catch (h e10) {
+            return e10;
         }
+    }
+
+    @Override // k3.e
+    public final String getName() {
+        return this.a;
+    }
+
+    @Override // r4.g
+    public final void a(long j10) {
     }
 }

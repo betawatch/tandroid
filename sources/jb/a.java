@@ -1,21 +1,25 @@
 package jb;
 
-import android.graphics.Bitmap;
+import ya.g;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a {
-    public final Bitmap a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
+public final /* synthetic */ class a implements y8.d {
+    public static final /* synthetic */ a b = new a(0);
+    public static final /* synthetic */ a c = new a(1);
+    public final /* synthetic */ int a;
 
-    public a(Bitmap bitmap, int i10, int i11, int i12, int i13) {
-        this.a = bitmap;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
+    public /* synthetic */ a(int i9) {
+        this.a = i9;
+    }
+
+    @Override // y8.d
+    public final Object H1(b3.b bVar) {
+        switch (this.a) {
+            case 0:
+                return new c((g) bVar.a(g.class));
+            default:
+                return new b((c) bVar.a(c.class), (ya.d) bVar.a(ya.d.class));
+        }
     }
 }

@@ -3,12 +3,12 @@ package k2;
 import android.content.res.ColorStateList;
 import android.graphics.Paint;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i extends l {
-    public b6.a d;
+    public a6.a d;
     public float e;
-    public b6.a f;
+    public a6.a f;
     public float g;
     public float h;
     public float i;
@@ -30,8 +30,8 @@ public final class i extends l {
     */
     public final boolean b(int[] iArr) {
         boolean z10;
-        b6.a aVar;
-        b6.a aVar2 = this.f;
+        a6.a aVar;
+        a6.a aVar2 = this.f;
         boolean z11 = true;
         if (aVar2.h()) {
             ColorStateList colorStateList = (ColorStateList) aVar2.d;
@@ -96,16 +96,16 @@ public final class i extends l {
         this.h = f10;
     }
 
-    public void setFillColor(int i10) {
-        this.f.c = i10;
+    public void setFillColor(int i9) {
+        this.f.c = i9;
     }
 
     public void setStrokeAlpha(float f10) {
         this.g = f10;
     }
 
-    public void setStrokeColor(int i10) {
-        this.d.c = i10;
+    public void setStrokeColor(int i9) {
+        this.d.c = i9;
     }
 
     public void setStrokeWidth(float f10) {

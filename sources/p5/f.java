@@ -13,25 +13,25 @@ import android.support.v4.media.session.MediaSessionCompat$Token;
 import android.text.TextUtils;
 import android.util.Log;
 import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
-import com.google.android.gms.internal.cast.c1;
-import com.google.android.gms.internal.cast.c2;
-import com.google.android.gms.internal.cast.y;
+import com.google.android.gms.internal.cast.d1;
+import com.google.android.gms.internal.cast.d2;
+import com.google.android.gms.internal.cast.z;
 import e0.j;
 import e0.k;
 import e0.t;
-import g7.q6;
+import f7.w6;
 import java.util.ArrayList;
 import java.util.Arrays;
 import o5.o;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.i6;
-import y5.l;
+import org.telegram.ui.Cells.e3;
+import x5.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class f {
-    public static final r5.b u = new r5.b("MediaNotificationProxy", null);
+    public static final q5.b u = new q5.b("MediaNotificationProxy", null);
     public final Context a;
     public final NotificationManager b;
     public final o5.f c;
@@ -40,10 +40,10 @@ public final class f {
     public ArrayList f = new ArrayList();
     public int[] g;
     public final long h;
-    public final af.h i;
+    public final b3.b i;
     public final Resources j;
-    public ge.b k;
-    public i6 l;
+    public fe.b k;
+    public e3 l;
     public k m;
     public k n;
     public k o;
@@ -57,7 +57,7 @@ public final class f {
         this.a = context;
         NotificationManager notificationManager = (NotificationManager) context.getSystemService("notification");
         this.b = notificationManager;
-        r5.b bVar = n5.a.l;
+        q5.b bVar = n5.a.l;
         l.e("Must be called from the main thread.");
         n5.a aVar = n5.a.n;
         l.h(aVar);
@@ -81,19 +81,19 @@ public final class f {
         }
         this.h = fVar.c;
         int dimensionPixelSize = resources.getDimensionPixelSize(fVar.D);
-        this.i = new af.h(context.getApplicationContext(), new o5.b(1, dimensionPixelSize, dimensionPixelSize));
-        if (f6.b.d() && notificationManager != null) {
+        this.i = new b3.b(context.getApplicationContext(), new o5.b(1, dimensionPixelSize, dimensionPixelSize));
+        if (e6.b.d() && notificationManager != null) {
             NotificationChannel notificationChannel = new NotificationChannel("cast_media_notification", context.getResources().getString(R.string.media_notification_channel_name), 2);
             notificationChannel.setShowBadge(false);
             notificationManager.createNotificationChannel(notificationChannel);
         }
-        c2.a(c1.q0);
+        d2.a(d1.q0);
     }
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
     public final k a(String str) {
+        int i9;
         int i10;
-        int i11;
         int hashCode = str.hashCode();
         long j10 = this.h;
         PendingIntent pendingIntent = null;
@@ -108,21 +108,21 @@ public final class f {
                         Intent intent = new Intent(MediaIntentReceiver.ACTION_REWIND);
                         intent.setComponent(componentName);
                         intent.putExtra(MediaIntentReceiver.EXTRA_SKIP_STEP_MS, j10);
-                        PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, intent, y.a | TLObject.FLAG_27);
-                        r5.b bVar = i.a;
-                        int i12 = fVar.y;
+                        PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, intent, z.a | TLObject.FLAG_27);
+                        q5.b bVar = i.a;
+                        int i11 = fVar.y;
                         if (j10 == 10000) {
-                            i12 = fVar.A;
+                            i11 = fVar.A;
                         } else if (j10 == 30000) {
-                            i12 = fVar.B;
+                            i11 = fVar.B;
                         }
-                        int i13 = fVar.N;
+                        int i12 = fVar.N;
                         if (j10 == 10000) {
-                            i13 = fVar.O;
+                            i12 = fVar.O;
                         } else if (j10 == 30000) {
-                            i13 = fVar.P;
+                            i12 = fVar.P;
                         }
-                        this.r = new j(i12, resources.getString(i13), broadcast).b();
+                        this.r = new j(i11, resources.getString(i12), broadcast).b();
                     }
                     return this.r;
                 }
@@ -134,7 +134,7 @@ public final class f {
                         if (z10) {
                             Intent intent2 = new Intent(MediaIntentReceiver.ACTION_SKIP_NEXT);
                             intent2.setComponent(componentName);
-                            pendingIntent = PendingIntent.getBroadcast(context, 0, intent2, y.a);
+                            pendingIntent = PendingIntent.getBroadcast(context, 0, intent2, z.a);
                         }
                         this.o = new j(fVar.r, resources.getString(fVar.I), pendingIntent).b();
                     }
@@ -148,7 +148,7 @@ public final class f {
                         if (z11) {
                             Intent intent3 = new Intent(MediaIntentReceiver.ACTION_SKIP_PREV);
                             intent3.setComponent(componentName);
-                            pendingIntent = PendingIntent.getBroadcast(context, 0, intent3, y.a);
+                            pendingIntent = PendingIntent.getBroadcast(context, 0, intent3, z.a);
                         }
                         this.p = new j(fVar.s, resources.getString(fVar.J), pendingIntent).b();
                     }
@@ -160,7 +160,7 @@ public final class f {
                     if (this.t == null) {
                         Intent intent4 = new Intent(MediaIntentReceiver.ACTION_STOP_CASTING);
                         intent4.setComponent(componentName);
-                        this.t = new j(fVar.C, resources.getString(fVar.Q), PendingIntent.getBroadcast(context, 0, intent4, y.a)).b();
+                        this.t = new j(fVar.C, resources.getString(fVar.Q), PendingIntent.getBroadcast(context, 0, intent4, z.a)).b();
                     }
                     return this.t;
                 }
@@ -170,34 +170,34 @@ public final class f {
                     if (this.s == null) {
                         Intent intent5 = new Intent(MediaIntentReceiver.ACTION_DISCONNECT);
                         intent5.setComponent(componentName);
-                        this.s = new j(fVar.C, resources.getString(fVar.Q, ""), PendingIntent.getBroadcast(context, 0, intent5, y.a)).b();
+                        this.s = new j(fVar.C, resources.getString(fVar.Q, ""), PendingIntent.getBroadcast(context, 0, intent5, z.a)).b();
                     }
                     return this.s;
                 }
                 break;
             case 235550565:
                 if (str.equals(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK)) {
-                    ge.b bVar2 = this.k;
-                    int i14 = bVar2.b;
+                    fe.b bVar2 = this.k;
+                    int i13 = bVar2.b;
                     if (!bVar2.a) {
                         if (this.m == null) {
                             Intent intent6 = new Intent(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK);
                             intent6.setComponent(componentName);
-                            this.m = new j(fVar.n, resources.getString(fVar.H), PendingIntent.getBroadcast(context, 0, intent6, y.a)).b();
+                            this.m = new j(fVar.n, resources.getString(fVar.H), PendingIntent.getBroadcast(context, 0, intent6, z.a)).b();
                         }
                         return this.m;
                     }
                     if (this.n == null) {
-                        if (i14 == 2) {
-                            i10 = fVar.f;
-                            i11 = fVar.F;
+                        if (i13 == 2) {
+                            i9 = fVar.f;
+                            i10 = fVar.F;
                         } else {
-                            i10 = fVar.h;
-                            i11 = fVar.G;
+                            i9 = fVar.h;
+                            i10 = fVar.G;
                         }
                         Intent intent7 = new Intent(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK);
                         intent7.setComponent(componentName);
-                        this.n = new j(i10, resources.getString(i11), PendingIntent.getBroadcast(context, 0, intent7, y.a)).b();
+                        this.n = new j(i9, resources.getString(i10), PendingIntent.getBroadcast(context, 0, intent7, z.a)).b();
                     }
                     return this.n;
                 }
@@ -208,27 +208,27 @@ public final class f {
                         Intent intent8 = new Intent(MediaIntentReceiver.ACTION_FORWARD);
                         intent8.setComponent(componentName);
                         intent8.putExtra(MediaIntentReceiver.EXTRA_SKIP_STEP_MS, j10);
-                        PendingIntent broadcast2 = PendingIntent.getBroadcast(context, 0, intent8, y.a | TLObject.FLAG_27);
-                        r5.b bVar3 = i.a;
-                        int i15 = fVar.v;
+                        PendingIntent broadcast2 = PendingIntent.getBroadcast(context, 0, intent8, z.a | TLObject.FLAG_27);
+                        q5.b bVar3 = i.a;
+                        int i14 = fVar.v;
                         if (j10 == 10000) {
-                            i15 = fVar.w;
+                            i14 = fVar.w;
                         } else if (j10 == 30000) {
-                            i15 = fVar.x;
+                            i14 = fVar.x;
                         }
-                        int i16 = fVar.K;
+                        int i15 = fVar.K;
                         if (j10 == 10000) {
-                            i16 = fVar.L;
+                            i15 = fVar.L;
                         } else if (j10 == 30000) {
-                            i16 = fVar.M;
+                            i15 = fVar.M;
                         }
-                        this.q = new j(i15, resources.getString(i16), broadcast2).b();
+                        this.q = new j(i14, resources.getString(i15), broadcast2).b();
                     }
                     return this.q;
                 }
                 break;
         }
-        r5.b bVar4 = u;
+        q5.b bVar4 = u;
         Log.e(bVar4.a, bVar4.d("Action: %s is not a pre-defined action.", str));
         return null;
     }
@@ -240,15 +240,15 @@ public final class f {
         if (notificationManager == null || this.k == null) {
             return;
         }
-        i6 i6Var = this.l;
-        Bitmap bitmap = i6Var == null ? null : (Bitmap) i6Var.c;
+        e3 e3Var = this.l;
+        Bitmap bitmap = e3Var == null ? null : (Bitmap) e3Var.c;
         Context context = this.a;
         t tVar = new t(context, "cast_media_notification");
         tVar.j(bitmap);
         o5.f fVar = this.c;
         tVar.E.icon = fVar.e;
         tVar.e = t.d((String) this.k.f);
-        int i10 = 0;
+        int i9 = 0;
         tVar.f = t.d(this.j.getString(fVar.E, (String) this.k.g));
         tVar.h(2, true);
         tVar.k = false;
@@ -269,28 +269,28 @@ public final class f {
             if (component != null) {
                 int size = arrayList.size();
                 try {
-                    for (Intent a3 = q6.a(context, component); a3 != null; a3 = q6.a(context, a3.getComponent())) {
+                    for (Intent a3 = w6.a(context, component); a3 != null; a3 = w6.a(context, a3.getComponent())) {
                         arrayList.add(size, a3);
                     }
-                } catch (PackageManager.NameNotFoundException e9) {
+                } catch (PackageManager.NameNotFoundException e10) {
                     Log.e("TaskStackBuilder", "Bad ComponentName while traversing activity parent metadata");
-                    throw new IllegalArgumentException(e9);
+                    throw new IllegalArgumentException(e10);
                 }
             }
             arrayList.add(intent);
-            int i11 = y.a | TLObject.FLAG_27;
+            int i10 = z.a | TLObject.FLAG_27;
             if (arrayList.isEmpty()) {
                 throw new IllegalStateException("No intents added to TaskStackBuilder; cannot getPendingIntent");
             }
             Intent[] intentArr = (Intent[]) arrayList.toArray(new Intent[0]);
             intentArr[0] = new Intent(intentArr[0]).addFlags(268484608);
-            activities = PendingIntent.getActivities(context, 1, intentArr, i11, null);
+            activities = PendingIntent.getActivities(context, 1, intentArr, i10, null);
         }
         if (activities != null) {
             tVar.g = activities;
         }
         o oVar = fVar.R;
-        r5.b bVar = u;
+        q5.b bVar = u;
         if (oVar != null) {
             bVar.b("actionsProvider != null", new Object[0]);
             int[] b10 = i.b(oVar);
@@ -299,10 +299,10 @@ public final class f {
             this.f = new ArrayList();
             if (a10 != null) {
                 int size2 = a10.size();
-                int i12 = 0;
-                while (i12 < size2) {
-                    Object obj = a10.get(i12);
-                    i12++;
+                int i11 = 0;
+                while (i11 < size2) {
+                    Object obj = a10.get(i11);
+                    i11++;
                     o5.d dVar = (o5.d) obj;
                     String str = dVar.a;
                     if (str.equals(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK) || str.equals(MediaIntentReceiver.ACTION_SKIP_NEXT) || str.equals(MediaIntentReceiver.ACTION_SKIP_PREV) || str.equals(MediaIntentReceiver.ACTION_FORWARD) || str.equals(MediaIntentReceiver.ACTION_REWIND) || str.equals(MediaIntentReceiver.ACTION_STOP_CASTING) || str.equals(MediaIntentReceiver.ACTION_DISCONNECT)) {
@@ -310,7 +310,7 @@ public final class f {
                     } else {
                         Intent intent2 = new Intent(str);
                         intent2.setComponent(this.d);
-                        a2 = new j(dVar.b, dVar.c, PendingIntent.getBroadcast(context, 0, intent2, y.a)).b();
+                        a2 = new j(dVar.b, dVar.c, PendingIntent.getBroadcast(context, 0, intent2, z.a)).b();
                     }
                     if (a2 != null) {
                         this.f.add(a2);
@@ -322,10 +322,10 @@ public final class f {
             this.f = new ArrayList();
             ArrayList arrayList2 = fVar.a;
             int size3 = arrayList2.size();
-            int i13 = 0;
-            while (i13 < size3) {
-                Object obj2 = arrayList2.get(i13);
-                i13++;
+            int i12 = 0;
+            while (i12 < size3) {
+                Object obj2 = arrayList2.get(i12);
+                i12++;
                 k a11 = a((String) obj2);
                 if (a11 != null) {
                     this.f.add(a11);
@@ -336,9 +336,9 @@ public final class f {
         }
         ArrayList arrayList3 = this.f;
         int size4 = arrayList3.size();
-        while (i10 < size4) {
-            Object obj3 = arrayList3.get(i10);
-            i10++;
+        while (i9 < size4) {
+            Object obj3 = arrayList3.get(i9);
+            i9++;
             k kVar = (k) obj3;
             if (kVar != null) {
                 tVar.b.add(kVar);

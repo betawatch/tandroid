@@ -34,8 +34,8 @@ public final class u extends a implements Serializable {
     }
 
     @Override // j$.time.chrono.k
-    public final l u(int i10) {
-        return x.s(i10);
+    public final l u(int i9) {
+        return x.s(i9);
     }
 
     @Override // j$.time.chrono.k
@@ -51,16 +51,16 @@ public final class u extends a implements Serializable {
                 int year = xVarArr[xVarArr.length - 1].b.getYear();
                 int year2 = 1000000000 - xVarArr[xVarArr.length - 1].b.getYear();
                 int year3 = xVarArr[0].b.getYear();
-                int i10 = 1;
+                int i9 = 1;
                 while (true) {
                     x[] xVarArr2 = x.e;
-                    if (i10 >= xVarArr2.length) {
+                    if (i9 >= xVarArr2.length) {
                         return j$.time.temporal.s.f(year2, 999999999 - year);
                     }
-                    x xVar = xVarArr2[i10];
+                    x xVar = xVarArr2[i9];
                     year2 = Math.min(year2, (xVar.b.getYear() - year3) + 1);
                     year3 = xVar.b.getYear();
-                    i10++;
+                    i9++;
                 }
             case 6:
                 x xVar2 = x.d;

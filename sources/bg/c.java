@@ -1,55 +1,109 @@
 package bg;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.Components.voip.k0;
-import org.telegram.ui.lh1;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.Components.i6;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ Object e;
+public final class c extends View {
+    public final i6 a;
+    public float b;
+    public ValueAnimator c;
+    public int d;
+    public final Paint e;
 
-    public /* synthetic */ c(Object obj, float f10, float f11, float f12, int i10) {
-        this.a = i10;
-        this.e = obj;
-        this.b = f10;
-        this.c = f11;
-        this.d = f12;
+    public c(Context context) {
+        super(context);
+        this.b = 1.0f;
+        i6 i6Var = new i6(false, false, true, false);
+        this.a = i6Var;
+        i6Var.k(0.3f, 250L, gr.h);
+        i6Var.setCallback(this);
+        i6Var.t(AndroidUtilities.dp(11.5f));
+        i6Var.u(AndroidUtilities.bold());
+        i6Var.r(-1);
+        i6Var.q("", true, true);
+        i6Var.b = 17;
+        Paint paint = new Paint(1);
+        this.e = paint;
+        paint.setColor(-6915073);
+        setVisibility(8);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                i iVar = (i) this.e;
-                iVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a aVar = iVar.b;
-                aVar.d = this.b * floatValue;
-                aVar.e = this.c * floatValue;
-                aVar.g = floatValue * this.d;
-                break;
-            case 1:
-                k0 k0Var = (k0) this.e;
-                k0Var.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k0Var.u0 = com.google.android.recaptcha.internal.a.z(1.0f, floatValue2, 1.0f, this.b * floatValue2);
-                k0Var.n0 = this.c * floatValue2;
-                k0Var.o0 = this.d * floatValue2;
-                k0Var.invalidate();
-                break;
-            default:
-                lh1 lh1Var = (lh1) this.e;
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                lh1Var.b1 = com.google.android.recaptcha.internal.a.z(1.0f, floatValue3, 1.0f, this.b * floatValue3);
-                lh1Var.U0 = this.c * floatValue3;
-                lh1Var.V0 = this.d * floatValue3;
-                lh1Var.s.invalidate();
-                break;
+    public final void a(int i9, boolean z10) {
+        int i10 = 0;
+        if (!u0.i()) {
+            i9 = 0;
         }
+        if (i9 > 0) {
+            setVisibility(0);
+        }
+        i6 i6Var = this.a;
+        if (z10) {
+            i6Var.b();
+        }
+        if (z10 && i9 != this.d && i9 > 0) {
+            ValueAnimator valueAnimator = this.c;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.c = null;
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.c = ofFloat;
+            ofFloat.addUpdateListener(new b(this, i10));
+            this.c.addListener(new ag.e(this, 1));
+            this.c.setInterpolator(new OvershootInterpolator(2.0f));
+            this.c.setDuration(200L);
+            this.c.start();
+        }
+        this.d = i9;
+        int length = i6Var.g.length();
+        i6Var.q("x" + i9, z10, true);
+        int length2 = i6Var.g.length();
+        invalidate();
+        if (length != length2) {
+            requestLayout();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.save();
+        canvas.translate(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
+        Rect rect = AndroidUtilities.rectTmp2;
+        int dp = AndroidUtilities.dp(8.0f);
+        i6 i6Var = this.a;
+        rect.set(0, 0, dp + ((int) i6Var.d()), AndroidUtilities.dp(20.0f));
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(rect);
+        if (this.b != 1.0f) {
+            canvas.save();
+            float f10 = this.b;
+            canvas.scale(f10, f10, rect.centerX(), rect.centerY());
+        }
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), this.e);
+        rect.set(0, 0, (int) rectF.width(), AndroidUtilities.dp(19.0f));
+        i6Var.setBounds(rect);
+        i6Var.draw(canvas);
+        if (this.b != 1.0f) {
+            canvas.restore();
+        }
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (this.a.e() + AndroidUtilities.dp(15.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(26.0f), TLObject.FLAG_30));
     }
 }

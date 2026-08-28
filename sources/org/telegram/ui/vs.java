@@ -1,38 +1,74 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vs implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kt b;
+public final /* synthetic */ class vs implements r0.o, org.telegram.ui.Components.tj0 {
+    public final /* synthetic */ ht a;
 
-    public /* synthetic */ vs(kt ktVar, int i10) {
-        this.a = i10;
-        this.b = ktVar;
+    public /* synthetic */ vs(ht htVar) {
+        this.a = htVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.c0 = null;
-                break;
-            case 1:
-                kt ktVar = this.b;
-                ktVar.A.setImageBitmap((Bitmap) null);
-                org.telegram.ui.Components.rc0 rc0Var = ktVar.C;
-                if (rc0Var != null) {
-                    rc0Var.a();
-                    ktVar.z.removeView(ktVar.C);
-                    ktVar.C = null;
-                    break;
-                }
-                break;
-            default:
-                this.b.Q.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(420L).setInterpolator(org.telegram.ui.Components.er.h).start();
-                break;
+    @Override // r0.o
+    public r0.m1 L0(View view, r0.m1 m1Var) {
+        this.a.q = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
+        return m1Var;
+    }
+
+    @Override // org.telegram.ui.Components.tj0
+    public void d(View view, hg.r0 r0Var, boolean z10, boolean z11) {
+        if (r0Var == null) {
+            return;
         }
+        ht htVar = this.a;
+        hg.e0 reactionsWindow = htVar.P.getReactionsWindow();
+        if (!htVar.o.contains(r0Var.f)) {
+            htVar.o.add(r0Var.f);
+            if (htVar.o.size() > 7) {
+                htVar.o.remove(0);
+            }
+        } else if (htVar.o.size() <= 1) {
+            return;
+        } else {
+            htVar.o.remove(r0Var.f);
+        }
+        htVar.P.setSelectedEmojis(htVar.o);
+        if (reactionsWindow != null) {
+            hg.z zVar = reactionsWindow.m;
+            htVar.P.p(null, null, false);
+            if (zVar != null) {
+                zVar.setSelectedReactions(htVar.o);
+                zVar.setRecentReactions(htVar.P.R);
+            }
+            reactionsWindow.d();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.tj0
+    public /* synthetic */ boolean n() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.tj0
+    public /* synthetic */ boolean p() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.tj0
+    public /* synthetic */ boolean u() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.tj0
+    public /* synthetic */ void t() {
+    }
+
+    @Override // org.telegram.ui.Components.tj0
+    public /* synthetic */ void s(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i9, boolean z10) {
     }
 }

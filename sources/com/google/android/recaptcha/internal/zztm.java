@@ -7,7 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zztm extends LinkedHashMap {
     private static final zztm zza;
@@ -90,12 +90,12 @@ public final class zztm extends LinkedHashMap {
     @Override // java.util.AbstractMap, java.util.Map
     public final int hashCode() {
         Iterator it = entrySet().iterator();
-        int i10 = 0;
+        int i9 = 0;
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            i10 += zzf(entry.getValue()) ^ zzf(entry.getKey());
+            i9 += zzf(entry.getValue()) ^ zzf(entry.getKey());
         }
-        return i10;
+        return i9;
     }
 
     @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map

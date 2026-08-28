@@ -17,20 +17,20 @@ public final class h6 extends v5 {
 
     @Override // j$.util.stream.d5, j$.util.stream.j5
     public final void end() {
-        int i10 = 0;
+        int i9 = 0;
         Arrays.sort(this.c, 0, this.d);
         long j10 = this.d;
         j5 j5Var = this.a;
         j5Var.o(j10);
         if (!this.b) {
-            while (i10 < this.d) {
-                j5Var.accept(this.c[i10]);
-                i10++;
+            while (i9 < this.d) {
+                j5Var.accept(this.c[i9]);
+                i9++;
             }
         } else {
-            while (i10 < this.d && !j5Var.q()) {
-                j5Var.accept(this.c[i10]);
-                i10++;
+            while (i9 < this.d && !j5Var.q()) {
+                j5Var.accept(this.c[i9]);
+                i9++;
             }
         }
         j5Var.end();
@@ -38,10 +38,10 @@ public final class h6 extends v5 {
     }
 
     @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i10) {
+    public final void accept(int i9) {
         int[] iArr = this.c;
-        int i11 = this.d;
-        this.d = i11 + 1;
-        iArr[i11] = i10;
+        int i10 = this.d;
+        this.d = i10 + 1;
+        iArr[i10] = i9;
     }
 }

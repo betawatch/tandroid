@@ -1,53 +1,29 @@
 package ya;
 
-import android.os.IBinder;
-import android.os.RemoteException;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.util.Log;
-import j8.x0;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c {
-    public final HashMap a = new HashMap();
+public abstract class c {
+    public static final b9.c a = new b9.c("CommonUtils", "");
 
-    public c() {
-    }
-
-    public void a(IBinder iBinder) {
-        synchronized (this.a) {
-            if (iBinder != null) {
-                try {
-                    iBinder.queryLocalInterface("com.google.android.gms.wearable.internal.IWearableService");
-                } catch (Throwable th) {
-                    throw th;
-                }
+    public static String a(Context context) {
+        try {
+            return String.valueOf(context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode);
+        } catch (PackageManager.NameNotFoundException e10) {
+            String concat = "Exception thrown when trying to get app version ".concat(e10.toString());
+            b9.c cVar = a;
+            if (!Log.isLoggable(cVar.b, 6)) {
+                return "";
             }
-            new x0();
-            for (Map.Entry entry : this.a.entrySet()) {
-                if (entry.getValue() != null) {
-                    throw new ClassCastException();
-                }
-                try {
-                    throw null;
-                } catch (RemoteException unused) {
-                    Log.w("WearableClient", "onPostInitHandler: Didn't add: " + String.valueOf(entry.getKey()) + "/" + BuildConfig.BETA_URL);
-                }
+            String str = cVar.c;
+            if (str != null) {
+                concat = str.concat(concat);
             }
-        }
-    }
-
-    public c(Set set) {
-        Iterator it = set.iterator();
-        while (it.hasNext()) {
-            b bVar = (b) it.next();
-            HashMap hashMap = this.a;
-            bVar.getClass();
-            hashMap.put(a.class, bVar.a);
+            Log.e("CommonUtils", concat);
+            return "";
         }
     }
 }

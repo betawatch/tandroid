@@ -2,14 +2,15 @@ package g4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import f8.r;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class e extends b {
-    public static final Parcelable.Creator<e> CREATOR = new f4.e(6);
+    public static final Parcelable.Creator<e> CREATOR = new r(16);
     public final long a;
     public final boolean b;
     public final boolean c;
@@ -24,7 +25,7 @@ public final class e extends b {
     public final int w;
     public final int x;
 
-    public e(long j10, boolean z10, boolean z11, boolean z12, boolean z13, long j11, long j12, List list, boolean z14, long j13, int i10, int i11, int i12) {
+    public e(long j10, boolean z10, boolean z11, boolean z12, boolean z13, long j11, long j12, List list, boolean z14, long j13, int i9, int i10, int i11) {
         this.a = j10;
         this.b = z10;
         this.c = z11;
@@ -35,13 +36,13 @@ public final class e extends b {
         this.n = DesugarCollections.unmodifiableList(list);
         this.r = z14;
         this.s = j13;
-        this.v = i10;
-        this.w = i11;
-        this.x = i12;
+        this.v = i9;
+        this.w = i10;
+        this.x = i11;
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeLong(this.a);
         parcel.writeByte(this.b ? (byte) 1 : (byte) 0);
         parcel.writeByte(this.c ? (byte) 1 : (byte) 0);
@@ -52,8 +53,8 @@ public final class e extends b {
         List list = this.n;
         int size = list.size();
         parcel.writeInt(size);
-        for (int i11 = 0; i11 < size; i11++) {
-            d dVar = (d) list.get(i11);
+        for (int i10 = 0; i10 < size; i10++) {
+            d dVar = (d) list.get(i10);
             parcel.writeInt(dVar.a);
             parcel.writeLong(dVar.b);
             parcel.writeLong(dVar.c);
@@ -75,7 +76,7 @@ public final class e extends b {
         this.h = parcel.readLong();
         int readInt = parcel.readInt();
         ArrayList arrayList = new ArrayList(readInt);
-        for (int i10 = 0; i10 < readInt; i10++) {
+        for (int i9 = 0; i9 < readInt; i9++) {
             arrayList.add(new d(parcel.readInt(), parcel.readLong(), parcel.readLong()));
         }
         this.n = DesugarCollections.unmodifiableList(arrayList);

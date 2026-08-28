@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class NotificationsDisabledReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -40,7 +40,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
             }
             SharedPreferences notificationsSettings = AccountInstance.getInstance(intValue).getNotificationsSettings();
             boolean startsWith = split[1].startsWith("channel");
-            int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            int i9 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             if (startsWith) {
                 if (!stringExtra.equals(notificationsSettings.getString("channels", null))) {
                     return;
@@ -60,9 +60,9 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                 SharedPreferences.Editor edit = notificationsSettings.edit();
                 String globalNotificationsKey = NotificationsController.getGlobalNotificationsKey(0);
                 if (!booleanExtra) {
-                    i10 = 0;
+                    i9 = 0;
                 }
-                edit.putInt(globalNotificationsKey, i10).commit();
+                edit.putInt(globalNotificationsKey, i9).commit();
                 AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(0);
             } else if (split[1].startsWith("private")) {
                 if (!stringExtra.equals(notificationsSettings.getString("private", null))) {
@@ -86,7 +86,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                     FileLog.d("apply channel{else} " + stringExtra + " state");
                 }
                 SharedPreferences.Editor edit2 = notificationsSettings.edit();
-                edit2.putInt(s3.c.e(NotificationsSettingsFacade.PROPERTY_NOTIFY, sharedPrefKey), booleanExtra ? 2 : 0);
+                edit2.putInt(ta.b.d(NotificationsSettingsFacade.PROPERTY_NOTIFY, sharedPrefKey), booleanExtra ? 2 : 0);
                 if (!booleanExtra) {
                     edit2.remove(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL + sharedPrefKey);
                 }

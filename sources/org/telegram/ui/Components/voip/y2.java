@@ -11,10 +11,10 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.i5;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class y2 extends View {
     public boolean A;
@@ -64,7 +64,7 @@ public final class y2 extends View {
             ValueAnimator ofInt = ValueAnimator.ofInt(0, dp);
             this.c = ofInt;
             ofInt.addUpdateListener(new x2(this, 0));
-            this.c.setInterpolator(er.g);
+            this.c.setInterpolator(gr.g);
             this.c.setDuration(200L);
             this.c.start();
         }
@@ -137,10 +137,10 @@ public final class y2 extends View {
             int height = getHeight();
             Rect rect = this.F;
             rect.set(0, 0, width, height);
-            float x8 = getX();
+            float x10 = getX();
             float y10 = getY();
             n1 n1Var = this.D;
-            n1Var.d(x8, y10);
+            n1Var.d(x10, y10);
             int measuredWidth = getMeasuredWidth() / 2;
             n3[] n3VarArr = this.a;
             n3VarArr[0].b((measuredWidth - AndroidUtilities.dp(120.0f)) - this.d, AndroidUtilities.dp(120.0f) - this.r);
@@ -178,8 +178,8 @@ public final class y2 extends View {
     }
 
     @Override // android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
+    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
+        super.onLayout(z10, i9, i10, i11, i12);
         if (this.G) {
             for (n3 n3Var : this.a) {
                 int measuredWidth = getMeasuredWidth();

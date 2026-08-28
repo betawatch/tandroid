@@ -1,49 +1,38 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import j$.util.function.Function$-CC;
+import java.util.function.Function;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k8 implements r0.o, Utilities.Callback5, Utilities.Callback5Return, org.telegram.ui.Components.ek0 {
-    public final /* synthetic */ j9 a;
+public final /* synthetic */ class k8 implements Function {
+    public final /* synthetic */ int a;
 
-    public /* synthetic */ k8(j9 j9Var) {
-        this.a = j9Var;
+    public /* synthetic */ k8(int i9) {
+        this.a = i9;
     }
 
-    @Override // r0.o
-    public r0.m1 I0(View view, r0.m1 m1Var) {
-        return this.a.onInsetsInternal(view, m1Var);
+    public /* synthetic */ Function andThen(Function function) {
+        int i9 = this.a;
+        return Function$-CC.$default$andThen(this, function);
     }
 
-    @Override // org.telegram.ui.Components.ek0
-    public void b() {
-        this.a.f0();
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        j9.X(this.a, (org.telegram.ui.Components.n41) obj, (View) obj2);
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        boolean z10;
-        View view = (View) obj2;
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        Object obj6 = ((org.telegram.ui.Components.n41) obj).G;
-        if (obj6 instanceof f9) {
-            this.a.e0(((f9) obj6).c, (e9) view);
-            z10 = true;
-        } else {
-            z10 = false;
+    @Override // java.util.function.Function
+    public final Object apply(Object obj) {
+        switch (this.a) {
+            case 3:
+                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj;
+                if (channelParticipant != null) {
+                    break;
+                }
+                break;
         }
-        return Boolean.valueOf(z10);
+        return ((lt) obj).a;
+    }
+
+    public /* synthetic */ Function compose(Function function) {
+        int i9 = this.a;
+        return Function$-CC.$default$compose(this, function);
     }
 }

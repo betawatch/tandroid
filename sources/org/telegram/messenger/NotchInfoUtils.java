@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.os.Build;
 import android.util.DisplayMetrics;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class NotchInfoUtils {
     private static final String BOTTOM_MARKER = "@bottom";
@@ -15,7 +15,7 @@ public class NotchInfoUtils {
     private static final String LEFT_MARKER = "@left";
     private static final String RIGHT_MARKER = "@right";
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class NotchInfo {
         public RectF bounds;
         public int gravity;
@@ -27,7 +27,7 @@ public class NotchInfoUtils {
 
     public static NotchInfo getInfo(Context context) {
         float f10;
-        int i10;
+        int i9;
         if (Build.VERSION.SDK_INT < 28) {
             return null;
         }
@@ -40,31 +40,31 @@ public class NotchInfoUtils {
             }
             String trim = string.trim();
             DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-            int i11 = displayMetrics.widthPixels;
+            int i10 = displayMetrics.widthPixels;
             float f11 = displayMetrics.density;
             if (trim.endsWith(RIGHT_MARKER)) {
-                f10 = i11;
+                f10 = i10;
                 trim = trim.substring(0, trim.length() - 6).trim();
-                i10 = 5;
+                i9 = 5;
             } else if (trim.endsWith(LEFT_MARKER)) {
                 trim = trim.substring(0, trim.length() - 5).trim();
                 f10 = 0.0f;
-                i10 = 3;
+                i9 = 3;
             } else {
-                f10 = i11 / 2.0f;
-                i10 = 17;
+                f10 = i10 / 2.0f;
+                i9 = 17;
             }
             boolean endsWith = trim.endsWith(DP_MARKER);
             if (endsWith) {
-                trim = com.google.android.recaptcha.internal.a.n(trim, 3, 0);
+                trim = e2.c.m(trim, 3, 0);
             }
             if (trim.contains(BOTTOM_MARKER)) {
                 trim = trim.split(BOTTOM_MARKER, 2)[0].trim();
             }
             try {
-                i0.e[] c10 = g7.w7.c(trim);
+                i0.d[] c10 = f7.i8.c(trim);
                 Path path = new Path();
-                i0.e.b(c10, path);
+                i0.d.b(c10, path);
                 Matrix matrix = new Matrix();
                 if (endsWith) {
                     matrix.postScale(f11, f11);
@@ -76,11 +76,11 @@ public class NotchInfoUtils {
                 path.computeBounds(rectF, true);
                 notchInfo.bounds = rectF;
                 DisplayMetrics displayMetrics2 = context.getResources().getDisplayMetrics();
-                if (i10 != 17 && Math.abs(rectF.centerX() - (displayMetrics2.widthPixels / 2.0f)) <= AndroidUtilities.dp(2.0f)) {
-                    i10 = 17;
+                if (i9 != 17 && Math.abs(rectF.centerX() - (displayMetrics2.widthPixels / 2.0f)) <= AndroidUtilities.dp(2.0f)) {
+                    i9 = 17;
                 }
-                int i12 = (i10 != 17 || rectF.left >= ((float) displayMetrics2.widthPixels) / 4.0f) ? i10 : 3;
-                notchInfo.gravity = (i12 != 17 || rectF.right <= (((float) displayMetrics2.widthPixels) / 4.0f) * 3.0f) ? i12 : 5;
+                int i11 = (i9 != 17 || rectF.left >= ((float) displayMetrics2.widthPixels) / 4.0f) ? i9 : 3;
+                notchInfo.gravity = (i11 != 17 || rectF.right <= (((float) displayMetrics2.widthPixels) / 4.0f) * 3.0f) ? i11 : 5;
                 notchInfo.rawPath = trim;
                 notchInfo.isAccurate = trim.contains("C") || trim.contains("S") || trim.contains("Q");
                 notchInfo.isLikelyCircle = rectF.width() <= ((float) AndroidUtilities.dp(32.0f)) || rectF.width() <= rectF.height();

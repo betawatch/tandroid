@@ -3,14 +3,14 @@ package org.telegram.ui;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ww0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ PrivacySettingsActivity b;
 
-    public /* synthetic */ ww0(PrivacySettingsActivity privacySettingsActivity, int i10) {
-        this.a = i10;
+    public /* synthetic */ ww0(PrivacySettingsActivity privacySettingsActivity, int i9) {
+        this.a = i9;
         this.b = privacySettingsActivity;
     }
 
@@ -27,15 +27,15 @@ public final /* synthetic */ class ww0 implements Runnable {
                 break;
             default:
                 PrivacySettingsActivity privacySettingsActivity2 = this.b;
-                org.telegram.ui.Components.mb mbVar = new org.telegram.ui.Components.mb(privacySettingsActivity2.getParentActivity(), null);
-                mbVar.d(R.raw.email_check_inbox, new String[0]);
-                mbVar.b.setText(LocaleController.getString(R.string.YourLoginEmailChangedSuccess));
-                org.telegram.ui.Components.ec.g(privacySettingsActivity2, mbVar, 1500).j();
+                org.telegram.ui.Components.ob obVar = new org.telegram.ui.Components.ob(privacySettingsActivity2.getParentActivity(), null);
+                obVar.d(R.raw.email_check_inbox, new String[0]);
+                obVar.b.setText(LocaleController.getString(R.string.YourLoginEmailChangedSuccess));
+                org.telegram.ui.Components.gc.g(privacySettingsActivity2, obVar, 1500).j();
                 try {
                     privacySettingsActivity2.fragmentView.performHapticFeedback(3, 2);
                 } catch (Exception unused) {
                 }
-                privacySettingsActivity2.z0();
+                privacySettingsActivity2.y0();
                 break;
         }
     }

@@ -19,95 +19,95 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class p6 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
-    public final p80 b;
+    public final l80 b;
     public final Runnable c;
 
-    public p6(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var, Runnable runnable, org.telegram.ui.ti tiVar) {
+    public p6(Context context, int i9, org.telegram.ui.ActionBar.b6 b6Var, Runnable runnable, org.telegram.ui.ri riVar) {
         super(context);
-        this.a = i10;
+        this.a = i9;
         this.c = runnable;
-        ContactsController.getInstance(i10).loadGlobalPrivacySetting();
+        ContactsController.getInstance(i9).loadGlobalPrivacySetting();
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, h7.z5.e(-1, -2, 17));
+        addView(linearLayout, g7.e6.e(-1, -2, 17));
         ImageView imageView = new ImageView(context);
-        imageView.setBackground(org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.K7, c6Var)));
+        imageView.setBackground(org.telegram.ui.ActionBar.f6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.K7, b6Var)));
         imageView.setImageResource(R.drawable.large_archive);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        linearLayout.addView(imageView, h7.z5.t(80, 80, 49, 0, tiVar != null ? 14 : 0, 0, 14));
+        linearLayout.addView(imageView, g7.e6.t(80, 80, 49, 0, riVar != null ? 14 : 0, 0, 14));
         TextView textView = new TextView(context);
         textView.setTextSize(1, 20.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.j5, c6Var));
+        textView.setTextColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.j5, b6Var));
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(1);
         textView.setText(LocaleController.getString(R.string.ArchiveHintHeader1));
-        linearLayout.addView(textView, h7.z5.t(-1, -2, 1, 32, 0, 32, 9));
-        p80 p80Var = new p80(context, null);
-        this.b = p80Var;
-        p80Var.setTextSize(1, 14.0f);
-        p80Var.setTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.z6, c6Var));
-        p80Var.setGravity(1);
+        linearLayout.addView(textView, g7.e6.t(-1, -2, 1, 32, 0, 32, 9));
+        l80 l80Var = new l80(context, null);
+        this.b = l80Var;
+        l80Var.setTextSize(1, 14.0f);
+        l80Var.setTextColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.z6, b6Var));
+        l80Var.setGravity(1);
         b();
-        linearLayout.addView(p80Var, h7.z5.t(-1, -2, 1, 32, 0, 32, 25));
-        linearLayout.addView(a(R.drawable.msg_archive_archive, LocaleController.getString("ArchiveHintSection1"), LocaleController.getString("ArchiveHintSection1Info"), c6Var), h7.z5.t(-1, -2, 7, 32, 0, 32, 16));
-        linearLayout.addView(a(R.drawable.msg_archive_hide, LocaleController.getString("ArchiveHintSection2"), LocaleController.getString("ArchiveHintSection2Info"), c6Var), h7.z5.t(-1, -2, 7, 32, 0, 32, 16));
-        linearLayout.addView(a(R.drawable.msg_archive_stories, LocaleController.getString("ArchiveHintSection3"), LocaleController.getString("ArchiveHintSection3Info"), c6Var), h7.z5.t(-1, -2, 7, 32, 0, 32, 16));
-        if (tiVar != null) {
-            lh.d g10 = org.telegram.messenger.rl.g(24, context, c6Var, true);
-            g10.g(LocaleController.getString("GotIt"), false, true);
-            g10.setOnClickListener(new o6(0, tiVar));
-            linearLayout.addView(g10, h7.z5.k(14.0f, 18.0f, 14.0f, 0.0f, -1, 48));
+        linearLayout.addView(l80Var, g7.e6.t(-1, -2, 1, 32, 0, 32, 25));
+        linearLayout.addView(a(R.drawable.msg_archive_archive, LocaleController.getString("ArchiveHintSection1"), LocaleController.getString("ArchiveHintSection1Info"), b6Var), g7.e6.t(-1, -2, 7, 32, 0, 32, 16));
+        linearLayout.addView(a(R.drawable.msg_archive_hide, LocaleController.getString("ArchiveHintSection2"), LocaleController.getString("ArchiveHintSection2Info"), b6Var), g7.e6.t(-1, -2, 7, 32, 0, 32, 16));
+        linearLayout.addView(a(R.drawable.msg_archive_stories, LocaleController.getString("ArchiveHintSection3"), LocaleController.getString("ArchiveHintSection3Info"), b6Var), g7.e6.t(-1, -2, 7, 32, 0, 32, 16));
+        if (riVar != null) {
+            kh.d i10 = org.telegram.messenger.ll.i(24, context, b6Var, true);
+            i10.g(LocaleController.getString("GotIt"), false, true);
+            i10.setOnClickListener(new o6(0, riVar));
+            linearLayout.addView(i10, g7.e6.k(14.0f, 18.0f, 14.0f, 0.0f, -1, 48));
         }
     }
 
-    public final FrameLayout a(int i10, String str, String str2, org.telegram.ui.ActionBar.c6 c6Var) {
+    public final FrameLayout a(int i9, String str, String str2, org.telegram.ui.ActionBar.b6 b6Var) {
         FrameLayout frameLayout = new FrameLayout(getContext());
         ImageView imageView = new ImageView(getContext());
-        int i11 = org.telegram.ui.ActionBar.g6.j5;
-        imageView.setColorFilter(org.telegram.ui.ActionBar.g6.v0(i11, c6Var));
-        imageView.setImageResource(i10);
-        frameLayout.addView(imageView, h7.z5.d(24, 24.0f, 51, 0.0f, 8.0f, 0.0f, 0.0f));
+        int i10 = org.telegram.ui.ActionBar.f6.j5;
+        imageView.setColorFilter(org.telegram.ui.ActionBar.f6.v0(i10, b6Var));
+        imageView.setImageResource(i9);
+        frameLayout.addView(imageView, g7.e6.d(24, 24.0f, 51, 0.0f, 8.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(1);
         TextView textView = new TextView(getContext());
-        textView.setTextColor(org.telegram.ui.ActionBar.g6.v0(i11, c6Var));
+        textView.setTextColor(org.telegram.ui.ActionBar.f6.v0(i10, b6Var));
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(0, AndroidUtilities.dp(14.0f));
         textView.setText(str);
-        linearLayout.addView(textView, h7.z5.k(0.0f, 2.6f, 0.0f, 0.0f, -1, -2));
+        linearLayout.addView(textView, g7.e6.k(0.0f, 2.6f, 0.0f, 0.0f, -1, -2));
         TextView textView2 = new TextView(getContext());
-        textView2.setTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.z6, c6Var));
+        textView2.setTextColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.z6, b6Var));
         textView2.setTextSize(0, AndroidUtilities.dp(14.0f));
         textView2.setText(str2);
-        linearLayout.addView(textView2, h7.z5.k(0.0f, 2.6f, 0.0f, 0.0f, -1, -2));
-        frameLayout.addView(linearLayout, h7.z5.d(-1, -2.0f, 55, 41.0f, 0.0f, 0.0f, 0.0f));
+        linearLayout.addView(textView2, g7.e6.k(0.0f, 2.6f, 0.0f, 0.0f, -1, -2));
+        frameLayout.addView(linearLayout, g7.e6.d(-1, -2.0f, 55, 41.0f, 0.0f, 0.0f, 0.0f));
         return frameLayout;
     }
 
     public final void b() {
         TLRPC.GlobalPrivacySettings globalPrivacySettings = ContactsController.getInstance(this.a).getGlobalPrivacySettings();
         String string = LocaleController.getString(globalPrivacySettings != null ? globalPrivacySettings.keep_archived_unmuted : true ? "ArchiveHintSubtitle" : "ArchiveHintSubtitleUnmutedMove");
-        int i10 = org.telegram.ui.ActionBar.g6.gc;
-        SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(string, i10, 0, this.c);
+        int i9 = org.telegram.ui.ActionBar.f6.gc;
+        SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(string, i9, 0, this.c);
         SpannableString spannableString = new SpannableString(">");
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_arrowright).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
-        cq cqVar = new cq(0, mutate);
-        cqVar.setColorKey(i10);
-        cqVar.setSize(AndroidUtilities.dp(18.0f));
-        cqVar.setWidth(AndroidUtilities.dp(11.0f));
-        cqVar.setTranslateX(-AndroidUtilities.dp(5.0f));
-        spannableString.setSpan(cqVar, 0, spannableString.length(), 33);
+        mutate.setColorFilter(new PorterDuffColorFilter(i9, PorterDuff.Mode.SRC_IN));
+        eq eqVar = new eq(0, mutate);
+        eqVar.setColorKey(i9);
+        eqVar.setSize(AndroidUtilities.dp(18.0f));
+        eqVar.setWidth(AndroidUtilities.dp(11.0f));
+        eqVar.setTranslateX(-AndroidUtilities.dp(5.0f));
+        spannableString.setSpan(eqVar, 0, spannableString.length(), 33);
         this.b.setText(AndroidUtilities.replaceCharSequence(">", replaceSingleTag, spannableString));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.privacyRulesUpdated) {
+    public final void didReceivedNotification(int i9, int i10, Object... objArr) {
+        if (i9 == NotificationCenter.privacyRulesUpdated) {
             b();
         }
     }
@@ -126,7 +126,7 @@ public final class p6 extends FrameLayout implements NotificationCenter.Notifica
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(400.0f), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30), i11);
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(400.0f), View.MeasureSpec.getSize(i9)), TLObject.FLAG_30), i10);
     }
 }

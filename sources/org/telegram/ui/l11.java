@@ -1,60 +1,40 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l11 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y11 b;
+public final /* synthetic */ class l11 implements org.telegram.ui.ActionBar.b2, r0.o {
+    public final /* synthetic */ z11 a;
 
-    public /* synthetic */ l11(y11 y11Var, int i10) {
-        this.a = i10;
-        this.b = y11Var;
+    public /* synthetic */ l11(z11 z11Var) {
+        this.a = z11Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                x11 x11Var = this.b.f;
-                if (x11Var != null) {
-                    x11Var.s.setClickable(true);
-                    break;
-                }
-                break;
-            case 1:
-                y11 y11Var = this.b;
-                y11Var.d0(0, y11Var.F, true);
-                org.telegram.ui.Components.oi0 animatedDrawable = y11Var.B.getAnimatedDrawable();
-                if (y11Var.E == null && animatedDrawable != null) {
-                    y11Var.E = Bitmap.createBitmap(animatedDrawable.b, animatedDrawable.c, Bitmap.Config.ARGB_8888);
-                    animatedDrawable.b();
-                    animatedDrawable.A0 = 33;
-                    animatedDrawable.a(y11Var.E);
-                    animatedDrawable.c();
-                    break;
-                }
-                break;
-            case 2:
-                int i10 = R.raw.default_pattern;
-                y11 y11Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new zs0(26, y11Var2, SvgHelper.getBitmap(i10, y11Var2.w.getWidth(), y11Var2.w.getHeight(), -16777216)));
-                break;
-            case 3:
-                y11 y11Var3 = this.b;
-                i6 i6Var = y11Var3.a;
-                i6Var.b = y11Var3.F.b(((org.telegram.ui.ActionBar.n2) ((y11) i6Var.c)).currentAccount, y11Var3.G ? 1 : 0);
-                break;
-            case 4:
-                y11.X(this.b);
-                break;
-            default:
-                y11.V(this.b);
-                break;
+    @Override // r0.o
+    public r0.m1 L0(View view, r0.m1 m1Var) {
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
+        z11 z11Var = this.a;
+        z11Var.M = defaultWindowInsets;
+        z11Var.fragmentView.requestLayout();
+        return r0.m1.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
+        z11 z11Var = this.a;
+        z11Var.getClass();
+        try {
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+            z11Var.getParentActivity().startActivity(intent);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
     }
 }

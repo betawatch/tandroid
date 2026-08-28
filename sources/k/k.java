@@ -1,17 +1,14 @@
 package k;
 
-import android.view.ActionMode;
-import android.view.SearchEvent;
+import android.view.KeyboardShortcutGroup;
+import android.view.Menu;
 import android.view.Window;
+import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class k {
-    public static boolean a(Window.Callback callback, SearchEvent searchEvent) {
-        return callback.onSearchRequested(searchEvent);
-    }
-
-    public static ActionMode b(Window.Callback callback, ActionMode.Callback callback2, int i10) {
-        return callback.onWindowStartingActionMode(callback2, i10);
+    public static void a(Window.Callback callback, List<KeyboardShortcutGroup> list, Menu menu, int i9) {
+        callback.onProvideKeyboardShortcuts(list, menu, i9);
     }
 }

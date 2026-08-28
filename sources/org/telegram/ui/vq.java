@@ -1,207 +1,59 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class vq extends f2.k0 {
-    public final /* synthetic */ int I;
-    public final /* synthetic */ Object J;
+public final class vq implements br {
+    public final /* synthetic */ jr a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ vq(ViewGroup viewGroup, int i10) {
-        super(0, false);
-        this.I = i10;
-        this.J = viewGroup;
+    public vq(jr jrVar) {
+        this.a = jrVar;
     }
 
-    @Override // f2.x0
-    public void S(f2.e1 e1Var, f2.l1 l1Var, s0.c cVar) {
-        switch (this.I) {
-            case 5:
-                super.S(e1Var, l1Var, cVar);
-                if (((org.telegram.ui.Components.o71) this.J).R) {
-                    cVar.p(false);
-                    break;
-                }
-                break;
-            case 6:
-            default:
-                super.S(e1Var, l1Var, cVar);
-                break;
-            case 7:
-                super.S(e1Var, l1Var, cVar);
-                if (!((pf.g0) this.J).isEnabled()) {
-                    cVar.p(false);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.br
+    public final void c(long j10, TLObject tLObject) {
+        jr jrVar = this.a;
+        if (jrVar.G.f(j10) == null) {
+            cr v02 = jrVar.v0();
+            jrVar.B.add(tLObject);
+            jrVar.G.k(tLObject, j10);
+            jrVar.y0(jrVar.B);
+            jrVar.z0(v02);
         }
     }
 
-    @Override // f2.k0
-    public int W0(f2.l1 l1Var) {
-        switch (this.I) {
-            case 4:
-                if (!((org.telegram.ui.Components.r11) this.J).W2) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.W0(l1Var);
-    }
-
-    @Override // f2.k0
-    public void k1(boolean z10) {
-        switch (this.I) {
-            case 2:
-                super.k1(z10);
-                ((org.telegram.ui.Components.aa0) this.J).b.setTranslationY(AndroidUtilities.dp(6.0f) * (z10 ? -1 : 1));
-                break;
-            default:
-                super.k1(z10);
-                break;
-        }
-    }
-
-    @Override // f2.k0, f2.x0
-    public int m0(int i10, f2.e1 e1Var, f2.l1 l1Var) {
-        switch (this.I) {
-            case 1:
-                org.telegram.ui.Components.b70 b70Var = ((gw) ((org.telegram.ui.Components.yz) this.J).F).b.H0;
-                if (b70Var != null && b70Var.D()) {
-                    i10 = 0;
-                }
-                return super.m0(i10, e1Var, l1Var);
-            case 2:
-            default:
-                return super.m0(i10, e1Var, l1Var);
-            case 3:
-                org.telegram.ui.Components.wj0 wj0Var = (org.telegram.ui.Components.wj0) this.J;
-                hh.f1 f1Var = wj0Var.b;
-                if (i10 < 0 && wj0Var.x0 != 0.0f) {
-                    float pullingLeftProgress = wj0Var.getPullingLeftProgress();
-                    wj0Var.x0 += i10;
-                    if ((pullingLeftProgress > 1.0f) != (wj0Var.getPullingLeftProgress() > 1.0f)) {
-                        try {
-                            f1Var.performHapticFeedback(3);
-                        } catch (Exception unused) {
-                        }
-                    }
-                    float f10 = wj0Var.x0;
-                    if (f10 < 0.0f) {
-                        i10 = (int) f10;
-                        wj0Var.x0 = 0.0f;
-                    } else {
-                        i10 = 0;
-                    }
-                    ag.y1 y1Var = wj0Var.O;
-                    if (y1Var != null) {
-                        y1Var.invalidate();
-                    }
-                    f1Var.invalidate();
-                }
-                int m0 = super.m0(i10, e1Var, l1Var);
-                if (i10 > 0 && m0 == 0 && f1Var.getScrollState() == 1 && wj0Var.q()) {
-                    ValueAnimator valueAnimator = wj0Var.u0;
-                    if (valueAnimator != null) {
-                        valueAnimator.removeAllListeners();
-                        wj0Var.u0.cancel();
-                    }
-                    float pullingLeftProgress2 = wj0Var.getPullingLeftProgress();
-                    wj0Var.x0 = (i10 * (pullingLeftProgress2 > 1.0f ? 0.05f : 0.6f)) + wj0Var.x0;
-                    if ((pullingLeftProgress2 > 1.0f) != (wj0Var.getPullingLeftProgress() > 1.0f)) {
-                        try {
-                            f1Var.performHapticFeedback(3);
-                        } catch (Exception unused2) {
-                        }
-                    }
-                    ag.y1 y1Var2 = wj0Var.O;
-                    if (y1Var2 != null) {
-                        y1Var2.invalidate();
-                    }
-                    f1Var.invalidate();
-                }
-                return m0;
+    @Override // org.telegram.ui.br
+    public final void d(long j10) {
+        jr jrVar = this.a;
+        if (jrVar.G.f(j10) == null) {
+            cr v02 = jrVar.v0();
+            TLRPC.TL_channelParticipantBanned tL_channelParticipantBanned = new TLRPC.TL_channelParticipantBanned();
+            if (j10 > 0) {
+                TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+                tL_channelParticipantBanned.peer = tL_peerUser;
+                tL_peerUser.user_id = j10;
+            } else {
+                TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
+                tL_channelParticipantBanned.peer = tL_peerChannel;
+                tL_peerChannel.channel_id = -j10;
+            }
+            tL_channelParticipantBanned.date = jrVar.getConnectionsManager().getCurrentTime();
+            tL_channelParticipantBanned.kicked_by = jrVar.getAccountInstance().getUserConfig().clientUserId;
+            jrVar.s.kicked_count++;
+            jrVar.B.add(tL_channelParticipantBanned);
+            jrVar.G.k(tL_channelParticipantBanned, j10);
+            jrVar.y0(jrVar.B);
+            jrVar.z0(v02);
         }
     }
 
-    @Override // f2.k0, f2.x0
-    public int o0(int i10, f2.e1 e1Var, f2.l1 l1Var) {
-        switch (this.I) {
-            case 0:
-                lr lrVar = (lr) this.J;
-                if (lrVar.N || lrVar.K != 0 || lrVar.B.size() != 0) {
-                    break;
-                }
-                break;
-        }
-        return super.o0(i10, e1Var, l1Var);
+    @Override // org.telegram.ui.br
+    public final /* synthetic */ void a(TLRPC.User user) {
     }
 
-    @Override // f2.k0, f2.x0
-    public void v0(RecyclerView recyclerView, f2.l1 l1Var, int i10) {
-        switch (this.I) {
-            case 1:
-                org.telegram.ui.Components.rz rzVar = new org.telegram.ui.Components.rz(this, recyclerView.getContext());
-                rzVar.a = i10;
-                w0(rzVar);
-                break;
-            case 5:
-                org.telegram.ui.Components.i71 i71Var = new org.telegram.ui.Components.i71(this, recyclerView.getContext());
-                i71Var.a = i10;
-                w0(i71Var);
-                break;
-            default:
-                super.v0(recyclerView, l1Var, i10);
-                break;
-        }
-    }
-
-    @Override // f2.k0, f2.x0
-    public boolean y0() {
-        switch (this.I) {
-            case 1:
-                return true;
-            case 2:
-                return false;
-            case 3:
-            case 4:
-            case 5:
-            default:
-                return super.y0();
-            case 6:
-                return false;
-            case 7:
-                return false;
-        }
-    }
-
-    @Override // f2.k0
-    public void z0(f2.l1 l1Var, int[] iArr) {
-        switch (this.I) {
-            case 6:
-                iArr[1] = ((StickersActivity) this.J).a.getHeight();
-                break;
-            default:
-                super.z0(l1Var, iArr);
-                break;
-        }
-    }
-
-    public /* synthetic */ vq(Object obj, int i10) {
-        this.I = i10;
-        this.J = obj;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vq(lr lrVar) {
-        super(1, false);
-        this.I = 0;
-        this.J = lrVar;
+    @Override // org.telegram.ui.br
+    public final /* synthetic */ void b(long j10) {
     }
 }

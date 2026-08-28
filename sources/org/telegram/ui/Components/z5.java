@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class z5 implements ud.f, xd.a {
+public final class z5 implements td.f, wd.a {
     public final View a;
     public boolean b;
     public boolean c;
@@ -15,7 +15,7 @@ public final class z5 implements ud.f, xd.a {
         this.a = view;
     }
 
-    @Override // xd.a
+    @Override // wd.a
     public final void a() {
         if (!this.b) {
             this.a.setVisibility(8);
@@ -23,7 +23,7 @@ public final class z5 implements ud.f, xd.a {
         this.c = false;
     }
 
-    @Override // ud.f
+    @Override // td.f
     public final /* synthetic */ int b(boolean z10) {
         return 0;
     }
@@ -35,12 +35,12 @@ public final class z5 implements ud.f, xd.a {
         return this.a.equals(((z5) obj).a);
     }
 
-    @Override // ud.f
+    @Override // td.f
     public final int getHeight() {
         return this.a.getMeasuredHeight();
     }
 
-    @Override // ud.f
+    @Override // td.f
     public final int getWidth() {
         return this.a.getMeasuredWidth();
     }

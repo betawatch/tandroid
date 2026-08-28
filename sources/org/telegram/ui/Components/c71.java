@@ -1,64 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
+import android.content.Context;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c71 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p71 b;
+public final class c71 extends m71 {
+    public final /* synthetic */ n71 p0;
 
-    public /* synthetic */ c71(p71 p71Var, int i10) {
-        this.a = i10;
-        this.b = p71Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c71(n71 n71Var, Context context, boolean z10, int i9, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(i9, context, b6Var, z10);
+        this.p0 = n71Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                p71 p71Var = this.b;
-                p71Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View[] viewArr = p71Var.e;
-                View view = viewArr[1];
-                if (view != null) {
-                    if (p71Var.y) {
-                        p71Var.E(view, (1.0f - floatValue) * viewArr[0].getMeasuredWidth());
-                        p71Var.E(viewArr[0], (-r1.getMeasuredWidth()) * floatValue);
-                    } else {
-                        p71Var.E(view, (1.0f - floatValue) * (-viewArr[0].getMeasuredWidth()));
-                        p71Var.E(viewArr[0], r1.getMeasuredWidth() * floatValue);
-                    }
-                    p71Var.c = floatValue;
-                    p71Var.w(true);
-                    e71 e71Var = p71Var.I;
-                    if (e71Var != null) {
-                        e71Var.v.invalidate();
-                        p71Var.I.v.f1();
-                        p71Var.I.invalidate();
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                p71 p71Var2 = this.b;
-                p71Var2.getClass();
-                p71Var2.N = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            case 2:
-                p71 p71Var3 = this.b;
-                p71Var3.J.onAnimationUpdate(valueAnimator);
-                p71Var3.I.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p71Var3.I.v.f1();
-                p71Var3.I.invalidate();
-                break;
-            default:
-                p71 p71Var4 = this.b;
-                p71Var4.getClass();
-                p71Var4.N = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
+    @Override // org.telegram.ui.Components.m71
+    public final void e(float f10, int i9, int i10) {
+        float f11 = f10 < 0.0f ? 0.0f : f10 > 1.0f ? 1.0f : f10;
+        this.B = i9;
+        SparseIntArray sparseIntArray = this.U;
+        this.C = sparseIntArray.get(i9);
+        if (f11 > 0.0f) {
+            l71 l71Var = this.y;
+            if (l71Var != null) {
+                e71 e71Var = ((n71) ((n2.p) l71Var).b).H;
+            }
+            this.H = i10;
+            this.I = sparseIntArray.get(i10);
+        } else {
+            this.H = -1;
+            this.I = -1;
         }
+        this.G = f11;
+        this.v.f1();
+        invalidate();
+        c(i9);
+        if (f11 >= 1.0f) {
+            this.H = -1;
+            this.I = -1;
+            this.B = i10;
+            this.C = sparseIntArray.get(i10);
+        }
+        l71 l71Var2 = this.y;
+        if (l71Var2 != null) {
+            ((n71) ((n2.p) l71Var2).b).s();
+        }
+        this.p0.y(f10 <= 0.5f ? i9 : i10, i9 < i10);
     }
 }

@@ -2,12 +2,12 @@ package z3;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import d5.g0;
-import h7.v6;
+import d5.f0;
+import g7.s6;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class c implements Parcelable {
     public static final Parcelable.Creator<c> CREATOR = new a();
@@ -22,7 +22,7 @@ public final class c implements Parcelable {
         if (cVar != null) {
             b[] bVarArr = cVar.a;
             if (bVarArr.length != 0) {
-                int i10 = g0.a;
+                int i9 = f0.a;
                 b[] bVarArr2 = this.a;
                 Object[] copyOf = Arrays.copyOf(bVarArr2, bVarArr2.length + bVarArr.length);
                 System.arraycopy(bVarArr, 0, copyOf, bVarArr2.length, bVarArr.length);
@@ -51,7 +51,7 @@ public final class c implements Parcelable {
     }
 
     public final int hashCode() {
-        return v6.a(this.b) + (Arrays.hashCode(this.a) * 31);
+        return s6.a(this.b) + (Arrays.hashCode(this.a) * 31);
     }
 
     public final String toString() {
@@ -69,7 +69,7 @@ public final class c implements Parcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         b[] bVarArr = this.a;
         parcel.writeInt(bVarArr.length);
         for (b bVar : bVarArr) {
@@ -89,12 +89,12 @@ public final class c implements Parcelable {
 
     public c(Parcel parcel) {
         this.a = new b[parcel.readInt()];
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             b[] bVarArr = this.a;
-            if (i10 < bVarArr.length) {
-                bVarArr[i10] = (b) parcel.readParcelable(b.class.getClassLoader());
-                i10++;
+            if (i9 < bVarArr.length) {
+                bVarArr[i9] = (b) parcel.readParcelable(b.class.getClassLoader());
+                i9++;
             } else {
                 this.b = parcel.readLong();
                 return;

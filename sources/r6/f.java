@@ -1,45 +1,61 @@
 package r6;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.os.ResultReceiver;
-import h7.r8;
-import n6.w0;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import f7.h5;
+import kotlin.jvm.internal.i;
+import q6.l;
+import q6.q;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class f extends z5.a {
-    public static final Parcelable.Creator<f> CREATOR = new w0(24);
-    public final String a;
-    public final Bundle b;
-    public final Bundle c;
-    public final String d;
-    public final String e;
-    public final ResultReceiver f;
+public final class f extends a7.a implements a {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ TaskCompletionSource c;
 
-    public f(String type, Bundle credentialData, Bundle candidateQueryData, String str, String str2, ResultReceiver resultReceiver) {
-        kotlin.jvm.internal.j.e(type, "type");
-        kotlin.jvm.internal.j.e(credentialData, "credentialData");
-        kotlin.jvm.internal.j.e(candidateQueryData, "candidateQueryData");
-        this.a = type;
-        this.b = credentialData;
-        this.c = candidateQueryData;
-        this.d = str;
-        this.e = str2;
-        this.f = resultReceiver;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f(int i9, TaskCompletionSource taskCompletionSource) {
+        super(0);
+        this.b = i9;
+        this.c = taskCompletionSource;
+        attachInterface(this, "com.google.android.gms.identitycredentials.internal.IIdentityCredentialCallbacks");
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel dest, int i10) {
-        kotlin.jvm.internal.j.e(dest, "dest");
-        int q6 = r8.q(dest, 20293);
-        r8.l(dest, 1, this.a);
-        r8.b(dest, 2, this.b);
-        r8.b(dest, 3, this.c);
-        r8.l(dest, 4, this.d);
-        r8.l(dest, 5, this.e);
-        r8.k(dest, 6, this.f, i10);
-        r8.r(dest, q6);
+    @Override // r6.a
+    public void U(Status status, q6.b bVar) {
+        i.e(status, "status");
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // r6.a
+    public void p0(Status status, l lVar) {
+        switch (this.b) {
+            case 1:
+                i.e(status, "status");
+                h5.a(status, lVar, this.c);
+                return;
+            default:
+                i.e(status, "status");
+                throw new UnsupportedOperationException();
+        }
+    }
+
+    @Override // r6.a
+    public void r0(Status status, q qVar) {
+        i.e(status, "status");
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // r6.a
+    public void t0(Status status, q6.e eVar) {
+        switch (this.b) {
+            case 0:
+                i.e(status, "status");
+                h5.a(status, eVar, this.c);
+                return;
+            default:
+                i.e(status, "status");
+                throw new UnsupportedOperationException();
+        }
     }
 }

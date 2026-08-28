@@ -1,46 +1,22 @@
 package ea;
 
-import af.h;
-import id.z0;
-import java.util.concurrent.Executor;
-import kotlin.jvm.internal.j;
-import v8.b;
-import v8.c;
-import z8.d;
-import z8.q;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a implements d {
-    public static final a b = new a(0);
-    public static final a c = new a(1);
-    public static final a d = new a(2);
-    public static final a e = new a(3);
-    public final /* synthetic */ int a;
+public enum a implements t9.b {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    b(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF23(2);
 
-    public /* synthetic */ a(int i10) {
-        this.a = i10;
+    public final int a;
+
+    a(int i9) {
+        this.a = i9;
     }
 
-    @Override // z8.d
-    public final Object u0(h hVar) {
-        switch (this.a) {
-            case 0:
-                Object b10 = hVar.b(new q(v8.a.class, Executor.class));
-                j.d(b10, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) b10);
-            case 1:
-                Object b11 = hVar.b(new q(c.class, Executor.class));
-                j.d(b11, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) b11);
-            case 2:
-                Object b12 = hVar.b(new q(b.class, Executor.class));
-                j.d(b12, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) b12);
-            default:
-                Object b13 = hVar.b(new q(v8.d.class, Executor.class));
-                j.d(b13, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) b13);
-        }
+    @Override // t9.b
+    public final int a() {
+        return this.a;
     }
 }

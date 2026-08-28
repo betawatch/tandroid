@@ -8,7 +8,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class l3 {
     public boolean A;
@@ -18,12 +18,12 @@ public class l3 {
     public boolean E;
     public String F;
     public float G;
-    public org.telegram.ui.m4 H;
-    public nh.x0 I;
+    public org.telegram.ui.l4 H;
+    public mh.y0 I;
     public boolean J;
-    public nh.q4 a;
-    public org.telegram.ui.web.w0 b;
-    public org.telegram.ui.q3 c;
+    public mh.s4 a;
+    public org.telegram.ui.web.v0 b;
+    public org.telegram.ui.p3 c;
     public Object d;
     public int e;
     public int f;
@@ -41,7 +41,7 @@ public class l3 {
     public boolean r;
     public boolean s;
     public boolean t;
-    public b6.a u;
+    public a6.a u;
     public String v;
     public boolean w;
     public boolean x;
@@ -50,17 +50,17 @@ public class l3 {
 
     public final void a() {
         try {
-            org.telegram.ui.web.w0 w0Var = this.b;
-            if (w0Var != null) {
-                w0Var.destroy();
+            org.telegram.ui.web.v0 v0Var = this.b;
+            if (v0Var != null) {
+                v0Var.destroy();
                 this.b = null;
             }
-            org.telegram.ui.m4 m4Var = this.H;
-            if (m4Var != null) {
-                m4Var.s();
+            org.telegram.ui.l4 l4Var = this.H;
+            if (l4Var != null) {
+                l4Var.s();
             }
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
     }
 
@@ -68,7 +68,7 @@ public class l3 {
         if (this.H != null) {
             return TextUtils.isEmpty(this.C) ? LocaleController.getString(R.string.WebEmpty) : this.C;
         }
-        nh.q4 q4Var = this.a;
-        return q4Var == null ? "" : UserObject.getUserName(MessagesController.getInstance(q4Var.a).getUser(Long.valueOf(this.a.c)));
+        mh.s4 s4Var = this.a;
+        return s4Var == null ? "" : UserObject.getUserName(MessagesController.getInstance(s4Var.a).getUser(Long.valueOf(this.a.c)));
     }
 }

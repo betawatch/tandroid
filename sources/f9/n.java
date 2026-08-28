@@ -1,24 +1,31 @@
 package f9;
 
-import android.os.Bundle;
-import java.util.concurrent.Callable;
+import n2.p;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class n implements Callable {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ o b;
+public abstract class n {
+    public static final p a;
 
-    public n(o oVar, long j10) {
-        this.b = oVar;
-        this.a = j10;
+    static {
+        s9.d dVar = new s9.d();
+        a aVar = a.a;
+        dVar.l(n.class, aVar);
+        dVar.l(b.class, aVar);
+        a = new p(dVar, 21);
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        Bundle g10 = a9.p.g(1, "fatal");
-        g10.putLong("timestamp", this.a);
-        this.b.k.s(g10);
-        return null;
+    public static b a(String str) {
+        JSONObject jSONObject = new JSONObject(str);
+        String string = jSONObject.getString("rolloutId");
+        String string2 = jSONObject.getString("parameterKey");
+        String string3 = jSONObject.getString("parameterValue");
+        String string4 = jSONObject.getString("variantId");
+        long j10 = jSONObject.getLong("templateVersion");
+        if (string3.length() > 256) {
+            string3 = string3.substring(0, 256);
+        }
+        return new b(string, string2, string3, string4, j10);
     }
 }

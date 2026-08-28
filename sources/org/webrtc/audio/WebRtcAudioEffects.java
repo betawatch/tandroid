@@ -7,7 +7,7 @@ import java.util.UUID;
 import org.webrtc.Logging;
 import ru.noties.jlatexmath.android.BuildConfig;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
 class WebRtcAudioEffects {
     private static final UUID AOSP_ACOUSTIC_ECHO_CANCELER = UUID.fromString("bb392ec0-8d4d-11e0-a896-0002a5d5c51b");
@@ -68,13 +68,13 @@ class WebRtcAudioEffects {
         return isEffectTypeAvailable(AudioEffect.EFFECT_TYPE_NS, AOSP_NOISE_SUPPRESSOR);
     }
 
-    public void enable(int i10) {
-        Logging.d(TAG, "enable(audioSession=" + i10 + ")");
+    public void enable(int i9) {
+        Logging.d(TAG, "enable(audioSession=" + i9 + ")");
         boolean z10 = false;
         assertTrue(this.aec == null);
         assertTrue(this.ns == null);
         if (isAcousticEchoCancelerSupported()) {
-            AcousticEchoCanceler create = AcousticEchoCanceler.create(i10);
+            AcousticEchoCanceler create = AcousticEchoCanceler.create(i9);
             this.aec = create;
             if (create != null) {
                 boolean enabled = create.getEnabled();
@@ -94,7 +94,7 @@ class WebRtcAudioEffects {
             }
         }
         if (isNoiseSuppressorSupported()) {
-            NoiseSuppressor create2 = NoiseSuppressor.create(i10);
+            NoiseSuppressor create2 = NoiseSuppressor.create(i9);
             this.ns = create2;
             if (create2 == null) {
                 Logging.e(TAG, "Failed to create the NoiseSuppressor instance");

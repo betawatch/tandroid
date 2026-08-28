@@ -1,27 +1,8 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import java.util.RandomAccess;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class j0 implements q0 {
-    public q0[] a;
-
-    @Override // androidx.datastore.preferences.protobuf.q0
-    public final a1 a(Class cls) {
-        for (q0 q0Var : this.a) {
-            if (q0Var.b(cls)) {
-                return q0Var.a(cls);
-            }
-        }
-        throw new UnsupportedOperationException("No factory is available for message type: ".concat(cls.getName()));
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.q0
-    public final boolean b(Class cls) {
-        for (q0 q0Var : this.a) {
-            if (q0Var.b(cls)) {
-                return true;
-            }
-        }
-        return false;
-    }
+public abstract class j0 extends b implements RandomAccess, y0 {
 }

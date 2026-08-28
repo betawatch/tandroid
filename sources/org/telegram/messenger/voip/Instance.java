@@ -10,7 +10,7 @@ import org.telegram.messenger.voip.NativeInstance;
 import org.webrtc.ContextUtils;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class Instance {
     public static final int AUDIO_STATE_ACTIVE = 1;
@@ -57,7 +57,7 @@ public final class Instance {
     private static ServerConfig globalServerConfig = new ServerConfig(new JSONObject());
     private static NativeInstance instance;
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class Candidate {
         public final String component;
         public final String foundation;
@@ -94,7 +94,7 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class Config {
         public final String customParameters;
         public final int dataSaving;
@@ -110,10 +110,10 @@ public final class Instance {
         public final double receiveTimeout;
         public final String statsLogPath;
 
-        public Config(double d, double d10, int i10, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14, boolean z15, String str, String str2, int i11, String str3) {
+        public Config(double d, double d9, int i9, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14, boolean z15, String str, String str2, int i10, String str3) {
             this.initializationTimeout = d;
-            this.receiveTimeout = d10;
-            this.dataSaving = i10;
+            this.receiveTimeout = d9;
+            this.dataSaving = i9;
             this.enableP2p = z10;
             this.enableAec = z11;
             this.enableNs = z12;
@@ -121,7 +121,7 @@ public final class Instance {
             this.enableCallUpgrade = z14;
             this.logPath = str;
             this.statsLogPath = str2;
-            this.maxApiLayer = i11;
+            this.maxApiLayer = i10;
             this.enableSm = z15;
             this.customParameters = str3;
         }
@@ -131,7 +131,7 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class EncryptionKey {
         public final boolean isOutgoing;
         public final byte[] value;
@@ -146,7 +146,7 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class Endpoint {
         public final long id;
         public final String ipv4;
@@ -162,13 +162,13 @@ public final class Instance {
         public final int type;
         public final String username;
 
-        public Endpoint(boolean z10, long j10, String str, String str2, int i10, int i11, byte[] bArr, boolean z11, boolean z12, String str3, String str4, boolean z13) {
+        public Endpoint(boolean z10, long j10, String str, String str2, int i9, int i10, byte[] bArr, boolean z11, boolean z12, String str3, String str4, boolean z13) {
             this.isRtc = z10;
             this.id = j10;
             this.ipv4 = str;
             this.ipv6 = str2;
-            this.port = i10;
-            this.type = i11;
+            this.port = i9;
+            this.type = i10;
             this.peerTag = bArr;
             this.turn = z11;
             this.stun = z12;
@@ -177,11 +177,11 @@ public final class Instance {
                 this.password = str4;
             } else if (bArr != null) {
                 this.username = "reflector";
-                int i12 = d5.g0.a;
+                int i11 = d5.f0.a;
                 StringBuilder sb2 = new StringBuilder(bArr.length * 2);
-                for (int i13 = 0; i13 < bArr.length; i13++) {
-                    sb2.append(Character.forDigit((bArr[i13] >> 4) & 15, 16));
-                    sb2.append(Character.forDigit(bArr[i13] & 15, 16));
+                for (int i12 = 0; i12 < bArr.length; i12++) {
+                    sb2.append(Character.forDigit((bArr[i12] >> 4) & 15, 16));
+                    sb2.append(Character.forDigit(bArr[i12] & 15, 16));
                 }
                 this.password = sb2.toString();
             } else {
@@ -196,7 +196,7 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class FinalState {
         public String debugLog;
         public final boolean isRatingSuggested;
@@ -215,7 +215,7 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class Fingerprint {
         public final String fingerprint;
         public final String hash;
@@ -232,36 +232,36 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface OnRemoteMediaStateUpdatedListener {
-        void onMediaStateUpdated(int i10, int i11);
+        void onMediaStateUpdated(int i9, int i10);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface OnSignalBarsUpdatedListener {
-        void onSignalBarsUpdated(int i10);
+        void onSignalBarsUpdated(int i9);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface OnSignalingDataListener {
         void onSignalingData(byte[] bArr);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface OnStateUpdatedListener {
-        void onStateUpdated(int i10, boolean z10);
+        void onStateUpdated(int i9, boolean z10);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class Proxy {
         public final String host;
         public final String login;
         public final String password;
         public final int port;
 
-        public Proxy(String str, int i10, String str2, String str3) {
+        public Proxy(String str, int i9, String str2, String str3) {
             this.host = str;
-            this.port = i10;
+            this.port = i9;
             this.login = str2;
             this.password = str3;
         }
@@ -274,11 +274,11 @@ public final class Instance {
             sb2.append(", login='");
             sb2.append(this.login);
             sb2.append("', password='");
-            return a9.p.p(sb2, this.password, "'}");
+            return aa.d.r(sb2, this.password, "'}");
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class ServerConfig {
         public final boolean enableStunMarking;
         public final boolean enable_h264_decoder;
@@ -319,7 +319,7 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static final class TrafficStats {
         public final long bytesReceivedMobile;
         public final long bytesReceivedWifi;
@@ -367,21 +367,21 @@ public final class Instance {
         return null;
     }
 
-    public static NativeInstance makeInstance(String str, Config config, String str2, Endpoint[] endpointArr, Proxy proxy, int i10, EncryptionKey encryptionKey, VideoSink videoSink, long j10, NativeInstance.AudioLevelsCallback audioLevelsCallback) {
+    public static NativeInstance makeInstance(String str, Config config, String str2, Endpoint[] endpointArr, Proxy proxy, int i9, EncryptionKey encryptionKey, VideoSink videoSink, long j10, NativeInstance.AudioLevelsCallback audioLevelsCallback) {
         if (!"2.4.4".equals(str)) {
             ContextUtils.initialize(ApplicationLoader.applicationContext);
         }
-        instance = NativeInstance.make(str, config, str2, endpointArr, proxy, i10, encryptionKey, videoSink, j10, audioLevelsCallback);
+        instance = NativeInstance.make(str, config, str2, endpointArr, proxy, i9, encryptionKey, videoSink, j10, audioLevelsCallback);
         setGlobalServerConfig(globalServerConfig.jsonObject.toString());
         setBufferSize(bufferSize);
         return instance;
     }
 
-    public static void setBufferSize(int i10) {
-        bufferSize = i10;
+    public static void setBufferSize(int i9) {
+        bufferSize = i9;
         NativeInstance nativeInstance = instance;
         if (nativeInstance != null) {
-            nativeInstance.setBufferSize(i10);
+            nativeInstance.setBufferSize(i9);
         }
     }
 
@@ -392,9 +392,9 @@ public final class Instance {
             if (nativeInstance != null) {
                 nativeInstance.setGlobalServerConfig(str);
             }
-        } catch (JSONException e9) {
+        } catch (JSONException e10) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("failed to parse tgvoip server config", e9);
+                FileLog.e("failed to parse tgvoip server config", e10);
             }
         }
     }

@@ -1,25 +1,24 @@
 package k1;
 
-import h7.k6;
-import ia.c0;
+import g7.y5;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class n extends tc.i implements ad.p {
+public final class n extends sc.i implements zc.p {
     public final /* synthetic */ int a;
     public int b;
     public /* synthetic */ Object c;
     public final /* synthetic */ z d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n(z zVar, rc.c cVar, int i10) {
+    public /* synthetic */ n(z zVar, qc.c cVar, int i9) {
         super(2, cVar);
-        this.a = i10;
+        this.a = i9;
         this.d = zVar;
     }
 
-    @Override // tc.a
-    public final rc.c create(Object obj, rc.c cVar) {
+    @Override // sc.a
+    public final qc.c create(Object obj, qc.c cVar) {
         switch (this.a) {
             case 0:
                 n nVar = new n(this.d, cVar, 0);
@@ -32,13 +31,13 @@ public final class n extends tc.i implements ad.p {
         }
     }
 
-    @Override // ad.p
+    @Override // zc.p
     public final Object invoke(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                return ((n) create((k) obj, (rc.c) obj2)).invokeSuspend(pc.i.a);
+                return ((n) create((k) obj, (qc.c) obj2)).invokeSuspend(oc.i.a);
             default:
-                return ((n) create((ld.c) obj, (rc.c) obj2)).invokeSuspend(pc.i.a);
+                return ((n) create((kd.c) obj, (qc.c) obj2)).invokeSuspend(oc.i.a);
         }
     }
 
@@ -50,7 +49,7 @@ public final class n extends tc.i implements ad.p {
     
         if (r8 == r0) goto L43;
      */
-    @Override // tc.a
+    @Override // sc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -58,11 +57,11 @@ public final class n extends tc.i implements ad.p {
         Object obj2;
         switch (this.a) {
             case 0:
-                sc.a aVar = sc.a.a;
-                int i10 = this.b;
-                pc.i iVar = pc.i.a;
-                if (i10 == 0) {
-                    k6.b(obj);
+                rc.a aVar = rc.a.a;
+                int i9 = this.b;
+                oc.i iVar = oc.i.a;
+                if (i9 == 0) {
+                    y5.b(obj);
                     k kVar = (k) this.c;
                     boolean z10 = kVar instanceof i;
                     z zVar = this.d;
@@ -76,7 +75,7 @@ public final class n extends tc.i implements ad.p {
                                     obj2 = zVar.f(this);
                                     break;
                                 }
-                            } else if (kotlin.jvm.internal.j.a(a0Var, b0.a)) {
+                            } else if (kotlin.jvm.internal.i.a(a0Var, b0.a)) {
                                 obj2 = zVar.f(this);
                                 break;
                             } else if (a0Var instanceof g) {
@@ -94,33 +93,33 @@ public final class n extends tc.i implements ad.p {
                         }
                     }
                 } else {
-                    if (i10 != 1 && i10 != 2) {
+                    if (i9 != 1 && i9 != 2) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    k6.b(obj);
+                    y5.b(obj);
                 }
                 return iVar;
             default:
                 z zVar2 = this.d;
-                ld.m mVar = zVar2.f;
-                sc.a aVar2 = sc.a.a;
-                int i11 = this.b;
-                if (i11 != 0) {
-                    if (i11 != 1) {
+                kd.m mVar = zVar2.f;
+                rc.a aVar2 = rc.a.a;
+                int i10 = this.b;
+                if (i10 != 0) {
+                    if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    k6.b(obj);
-                    return pc.i.a;
+                    y5.b(obj);
+                    return oc.i.a;
                 }
-                k6.b(obj);
-                ld.c cVar = (ld.c) this.c;
+                y5.b(obj);
+                kd.c cVar = (kd.c) this.c;
                 a0 a0Var2 = (a0) mVar.b();
                 if (!(a0Var2 instanceof b)) {
                     zVar2.n.E(new i(a0Var2));
                 }
-                c0 c0Var = new c0(a0Var2, null, 1);
+                ha.b0 b0Var = new ha.b0(a0Var2, null, 1);
                 this.b = 1;
-                mVar.q(new ld.i(new kotlin.jvm.internal.o(), new ia.b0(cVar), c0Var), this);
+                mVar.q(new kd.i(new kotlin.jvm.internal.n(), new ha.a0(cVar), b0Var), this);
                 return aVar2;
         }
     }

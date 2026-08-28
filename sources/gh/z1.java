@@ -1,41 +1,51 @@
 package gh;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class z1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b2 b;
-    public final /* synthetic */ boolean c;
+import android.view.View;
 
-    public /* synthetic */ z1(b2 b2Var, boolean z10, int i10) {
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class z1 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k5 b;
+    public final /* synthetic */ int c;
+
+    public /* synthetic */ z1(k5 k5Var, int i9, int i10) {
         this.a = i10;
-        this.b = b2Var;
-        this.c = z10;
+        this.b = k5Var;
+        this.c = i9;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                boolean z10 = this.c;
-                b2 b2Var = this.b;
-                if (!z10) {
-                    b2Var.C.setVisibility(8);
-                    break;
-                } else {
-                    b2Var.getClass();
-                    break;
-                }
+                k5 k5Var = this.b;
+                int i9 = this.c;
+                k5Var.N0 = i9;
+                q3 q3Var = k5Var.V;
+                q3Var.D(q3Var.getCurrentPosition() + (i9 > k5Var.G1() ? 1 : -1));
+                break;
+            case 1:
+                k5 k5Var2 = this.b;
+                int i10 = this.c;
+                k5Var2.N0 = i10;
+                q3 q3Var2 = k5Var2.V;
+                q3Var2.D(q3Var2.getCurrentPosition() + (i10 > k5Var2.G1() ? 1 : -1));
+                break;
+            case 2:
+                k5 k5Var3 = this.b;
+                int i11 = this.c;
+                k5Var3.N0 = i11;
+                q3 q3Var3 = k5Var3.V;
+                q3Var3.D(q3Var3.getCurrentPosition() + (i11 > k5Var3.G1() ? 1 : -1));
+                break;
             default:
-                boolean z11 = this.c;
-                b2 b2Var2 = this.b;
-                if (!z11) {
-                    b2Var2.v.setVisibility(8);
-                    break;
-                } else {
-                    b2Var2.getClass();
-                    break;
-                }
+                k5 k5Var4 = this.b;
+                int i12 = this.c;
+                k5Var4.N0 = i12;
+                q3 q3Var4 = k5Var4.V;
+                q3Var4.D(q3Var4.getCurrentPosition() + (i12 > k5Var4.G1() ? 1 : -1));
+                break;
         }
     }
 }

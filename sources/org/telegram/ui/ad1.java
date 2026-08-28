@@ -9,23 +9,23 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class ad1 extends FrameLayout {
     public final /* synthetic */ int a;
     public final /* synthetic */ dd1 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ad1(dd1 dd1Var, Context context, int i10) {
+    public /* synthetic */ ad1(dd1 dd1Var, Context context, int i9) {
         super(context);
-        this.a = i10;
+        this.a = i9;
         this.b = dd1Var;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
-        org.telegram.ui.Cells.s1 s1Var;
+        org.telegram.ui.Cells.t1 t1Var;
         switch (this.a) {
             case 0:
                 dd1 dd1Var = this.b;
@@ -40,9 +40,9 @@ public final class ad1 extends FrameLayout {
                     canvas2 = canvas;
                     canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), dd1Var.v);
                 }
-                if (dd1Var.J && (s1Var = dd1Var.G) != null) {
-                    s1Var.G7 = dd1Var.K;
-                    s1Var.invalidate();
+                if (dd1Var.J && (t1Var = dd1Var.G) != null) {
+                    t1Var.G7 = dd1Var.K;
+                    t1Var.invalidate();
                     dd1Var.J = false;
                 }
                 super.dispatchDraw(canvas2);
@@ -86,28 +86,28 @@ public final class ad1 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+    public void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
         switch (this.a) {
             case 0:
-                super.onLayout(z10, i10, i11, i12, i13);
+                super.onLayout(z10, i9, i10, i11, i12);
                 this.b.d();
                 break;
             default:
-                super.onLayout(z10, i10, i11, i12, i13);
+                super.onLayout(z10, i9, i10, i11, i12);
                 break;
         }
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
+    public void onMeasure(int i9, int i10) {
         switch (this.a) {
             case 2:
-                int size = View.MeasureSpec.getSize(i10);
-                int size2 = View.MeasureSpec.getSize(i11);
+                int size = View.MeasureSpec.getSize(i9);
+                int size2 = View.MeasureSpec.getSize(i10);
                 dd1 dd1Var = this.b;
                 dd1Var.e();
-                for (int i12 = 0; i12 < getChildCount(); i12++) {
-                    View childAt = getChildAt(i12);
+                for (int i11 = 0; i11 < getChildCount(); i11++) {
+                    View childAt = getChildAt(i11);
                     ViewGroup viewGroup = dd1Var.O;
                     if (childAt == viewGroup) {
                         float f10 = dd1Var.P;
@@ -122,9 +122,9 @@ public final class ad1 extends FrameLayout {
                             viewGroup2.measure(View.MeasureSpec.makeMeasureSpec(Math.min(size, (int) f11), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                         }
                     }
-                    org.telegram.ui.Components.wj0 wj0Var = dd1Var.L;
-                    if (childAt == wj0Var) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(wj0Var.getTotalWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
+                    org.telegram.ui.Components.uj0 uj0Var = dd1Var.L;
+                    if (childAt == uj0Var) {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(uj0Var.getTotalWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                     } else {
                         childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                     }
@@ -132,22 +132,22 @@ public final class ad1 extends FrameLayout {
                 setMeasuredDimension(size, size2);
                 break;
             default:
-                super.onMeasure(i10, i11);
+                super.onMeasure(i9, i10);
                 break;
         }
     }
 
     @Override // android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
+    public void onSizeChanged(int i9, int i10, int i11, int i12) {
         switch (this.a) {
             case 0:
-                super.onSizeChanged(i10, i11, i12, i13);
+                super.onSizeChanged(i9, i10, i11, i12);
                 dd1 dd1Var = this.b;
-                pg.c.c(dd1Var.A, dd1Var.b);
+                og.d.c(dd1Var.A, dd1Var.b);
                 dd1Var.B.d();
                 break;
             default:
-                super.onSizeChanged(i10, i11, i12, i13);
+                super.onSizeChanged(i9, i10, i11, i12);
                 break;
         }
     }

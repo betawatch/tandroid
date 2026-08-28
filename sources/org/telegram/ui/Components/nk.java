@@ -1,34 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class nk extends pf.i0 {
-    public final /* synthetic */ tk J;
+public final /* synthetic */ class nk implements x4 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xk b;
+    public final /* synthetic */ TLRPC.TL_messageMediaVenue c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nk(tk tkVar, Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
-        super(context, c6Var, z10, false);
-        this.J = tkVar;
+    public /* synthetic */ nk(xk xkVar, TLRPC.TL_messageMediaVenue tL_messageMediaVenue, int i9) {
+        this.a = i9;
+        this.b = xkVar;
+        this.c = tL_messageMediaVenue;
     }
 
-    @Override // f2.q0
-    public final void l() {
-        tk tkVar = this.J;
-        nk nkVar = tkVar.N;
-        org.telegram.ui.ActionBar.v0 v0Var = tkVar.A;
-        if (v0Var != null) {
-            v0Var.setShowSearchProgress(nkVar.F);
+    @Override // org.telegram.ui.Components.x4
+    public final void B(int i9, int i10, boolean z10) {
+        switch (this.a) {
+            case 0:
+                xk xkVar = this.b;
+                xkVar.t0.d(this.c, xkVar.u0, z10, i9, 0L);
+                xkVar.b.dismiss(true);
+                break;
+            default:
+                xk xkVar2 = this.b;
+                xkVar2.t0.d(this.c, xkVar2.u0, z10, i9, 0L);
+                xkVar2.b.dismiss(true);
+                break;
         }
-        TextView textView = tkVar.y;
-        if (textView != null) {
-            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, nkVar.x)));
-        }
-        super.l();
     }
 }

@@ -13,7 +13,7 @@ public final class y2 extends h2 implements w1 {
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i10) {
+    public final /* synthetic */ void accept(int i9) {
         t3.J();
         throw null;
     }
@@ -35,9 +35,9 @@ public final class y2 extends h2 implements w1 {
 
     @Override // j$.util.stream.w1
     public final e2 build() {
-        int i10 = this.b;
+        int i9 = this.b;
         Object[] objArr = this.a;
-        if (i10 >= objArr.length) {
+        if (i9 >= objArr.length) {
             return this;
         }
         throw new IllegalStateException(String.format("Current size %d is less than fixed size %d", Integer.valueOf(this.b), Integer.valueOf(objArr.length)));
@@ -55,11 +55,11 @@ public final class y2 extends h2 implements w1 {
     @Override // java.util.function.Consumer
     /* renamed from: accept */
     public final void x(Object obj) {
-        int i10 = this.b;
+        int i9 = this.b;
         Object[] objArr = this.a;
-        if (i10 < objArr.length) {
-            this.b = i10 + 1;
-            objArr[i10] = obj;
+        if (i9 < objArr.length) {
+            this.b = i9 + 1;
+            objArr[i9] = obj;
             return;
         }
         throw new IllegalStateException(String.format("Accept exceeded fixed size of %d", Integer.valueOf(objArr.length)));
@@ -67,9 +67,9 @@ public final class y2 extends h2 implements w1 {
 
     @Override // j$.util.stream.j5
     public final void end() {
-        int i10 = this.b;
+        int i9 = this.b;
         Object[] objArr = this.a;
-        if (i10 < objArr.length) {
+        if (i9 < objArr.length) {
             throw new IllegalStateException(String.format("End size %d is less than fixed size %d", Integer.valueOf(this.b), Integer.valueOf(objArr.length)));
         }
     }

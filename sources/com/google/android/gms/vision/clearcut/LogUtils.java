@@ -14,14 +14,14 @@ import com.google.android.gms.internal.vision.v;
 import com.google.android.gms.internal.vision.w;
 import com.google.android.gms.internal.vision.y;
 import com.google.android.gms.internal.vision.z;
-import h6.b;
+import g6.c;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class LogUtils {
-    public static f0 zza(long j10, int i10, String str, String str2, List<d0> list, f3 f3Var) {
+    public static f0 zza(long j10, int i9, String str, String str2, List<d0> list, f3 f3Var) {
         v l10 = w.l();
         o m10 = p.m();
         if (m10.c) {
@@ -34,7 +34,7 @@ public class LogUtils {
             m10.c = false;
         }
         p.j((p) m10.b, j10);
-        long j11 = i10;
+        long j11 = i9;
         if (m10.c) {
             m10.d();
             m10.c = false;
@@ -95,9 +95,9 @@ public class LogUtils {
 
     private static String zzb(Context context) {
         try {
-            return b.a(context).b(0, context.getPackageName()).versionName;
-        } catch (PackageManager.NameNotFoundException e9) {
-            g7.f0.a(e9, "Unable to find calling package info for %s", context.getPackageName());
+            return c.a(context).b(0, context.getPackageName()).versionName;
+        } catch (PackageManager.NameNotFoundException e10) {
+            com.google.android.gms.internal.cast.o.a(e10, "Unable to find calling package info for %s", context.getPackageName());
             return null;
         }
     }

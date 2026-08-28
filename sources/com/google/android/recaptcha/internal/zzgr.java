@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import h7.j6;
-import pc.c;
-import pc.g;
+import g7.x5;
+import oc.c;
+import oc.g;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzgr {
     private final zzhk zza;
@@ -14,12 +14,12 @@ public final class zzgr {
     private final c zze;
     private final int zzf;
 
-    public zzgr(zzhk zzhkVar, int i10, Integer num) {
+    public zzgr(zzhk zzhkVar, int i9, Integer num) {
         this.zza = zzhkVar;
-        this.zzf = i10;
+        this.zzf = i9;
         this.zzb = num;
-        int i11 = zzby.zza;
-        this.zze = j6.a(zzgq.zza);
+        int i10 = zzby.zza;
+        this.zze = x5.a(zzgq.zza);
         zzd();
         this.zzc = zzvl.zzc(zzvl.zzb(System.currentTimeMillis()));
         zzd();
@@ -30,7 +30,7 @@ public final class zzgr {
         return (zzdk) ((g) this.zze).a();
     }
 
-    private final zzwk zze(int i10) {
+    private final zzwk zze(int i9) {
         zzwk zzj = zzwn.zzj();
         zzj.zzA(this.zzf);
         zzj.zzr(zzgl.zza());
@@ -38,7 +38,7 @@ public final class zzgr {
         zzj.zzy(zzhkVar.zzb());
         zzj.zzu(zzhkVar.zza().zza());
         zzj.zzB(zzhkVar.zza().zzc());
-        zzj.zzC(i10);
+        zzj.zzC(i9);
         zzj.zzx(this.zzc);
         zzd();
         zzj.zzs(System.currentTimeMillis() - this.zzd);
@@ -55,7 +55,7 @@ public final class zzgr {
 
     public final void zzb() {
         zzwk zze = zze(3);
-        int i10 = zzgl.zza;
+        int i9 = zzgl.zza;
         zzgl.zzb(zze, this.zza.zza().zzb(), null);
     }
 
@@ -70,7 +70,7 @@ public final class zzgr {
         }
         zzwk zze = zze(4);
         zzhk zzhkVar = this.zza;
-        int i10 = zzgl.zza;
+        int i9 = zzgl.zza;
         zzgl.zzb(zze, zzhkVar.zza().zzb(), (zzwa) zzg.zzk());
     }
 }

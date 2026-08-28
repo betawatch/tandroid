@@ -3,14 +3,14 @@ package h3;
 import android.os.Looper;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class k2 extends b8.a implements s {
+public final class k2 extends a8.a implements s {
     public final k0 b;
     public final d5.c c;
 
     public k2(r rVar) {
-        super(2);
+        super(3);
         d5.c cVar = new d5.c();
         this.c = cVar;
         try {
@@ -23,7 +23,7 @@ public final class k2 extends b8.a implements s {
     }
 
     @Override // h3.c2
-    public final s2 A() {
+    public final r2 A() {
         Q();
         return this.b.A();
     }
@@ -56,16 +56,16 @@ public final class k2 extends b8.a implements s {
         return k0Var.u;
     }
 
-    @Override // b8.a
+    @Override // a8.a
     public final void N() {
         Q();
         this.b.N();
     }
 
-    @Override // b8.a
-    public final void O(long j10, int i10, int i11, boolean z10) {
+    @Override // a8.a
+    public final void O(long j10, int i9, int i10, boolean z10) {
         Q();
-        this.b.O(j10, i10, i11, z10);
+        this.b.O(j10, i9, i10, z10);
     }
 
     public final void Q() {
@@ -102,9 +102,9 @@ public final class k2 extends b8.a implements s {
     }
 
     @Override // h3.c2
-    public final void e(int i10) {
+    public final void e(int i9) {
         Q();
-        this.b.e(i10);
+        this.b.e(i9);
     }
 
     @Override // h3.c2
@@ -172,9 +172,9 @@ public final class k2 extends b8.a implements s {
     }
 
     @Override // h3.c2
-    public final void n(int i10, int i11) {
+    public final void n(int i9, int i10) {
         Q();
-        this.b.n(i10, i11);
+        this.b.n(i9, i10);
     }
 
     @Override // h3.c2
@@ -204,9 +204,9 @@ public final class k2 extends b8.a implements s {
     }
 
     @Override // h3.c2
-    public final void s(int i10, List list) {
+    public final void s(int i9, List list) {
         Q();
-        this.b.s(i10, list);
+        this.b.s(i9, list);
     }
 
     @Override // h3.c2
@@ -228,7 +228,7 @@ public final class k2 extends b8.a implements s {
     }
 
     @Override // h3.c2
-    public final u2 u() {
+    public final t2 u() {
         Q();
         return this.b.u();
     }
@@ -254,9 +254,9 @@ public final class k2 extends b8.a implements s {
     }
 
     @Override // h3.c2
-    public final void y(int i10, int i11, int i12) {
+    public final void y(int i9, int i10, int i11) {
         Q();
-        this.b.y(i10, i11, i12);
+        this.b.y(i9, i10, i11);
     }
 
     @Override // h3.c2

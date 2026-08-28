@@ -1,15 +1,15 @@
 package com.google.mlkit.vision.label.internal;
 
 import com.google.mlkit.vision.common.internal.MobileVisionBase;
-import gb.a;
-import gb.b;
+import fb.a;
+import fb.b;
 import java.util.List;
 import java.util.concurrent.Executor;
-import v5.c;
-import za.e;
-import za.j;
+import u5.c;
+import ya.e;
+import ya.j;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class ImageLabelerImpl extends MobileVisionBase<List<a>> implements b {
     public final c f;

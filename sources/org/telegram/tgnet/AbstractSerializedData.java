@@ -1,6 +1,6 @@
 package org.telegram.tgnet;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public abstract class AbstractSerializedData implements InputSerializedData, OutputSerializedData {
     private TLDataSourceType dataSourceType = TLDataSourceType.UNKNOWN;
@@ -32,7 +32,7 @@ public abstract class AbstractSerializedData implements InputSerializedData, Out
     public abstract void readBytes(byte[] bArr, boolean z10);
 
     @Override // org.telegram.tgnet.InputSerializedData
-    public abstract byte[] readData(int i10, boolean z10);
+    public abstract byte[] readData(int i9, boolean z10);
 
     @Override // org.telegram.tgnet.InputSerializedData
     public abstract double readDouble(boolean z10);
@@ -57,7 +57,7 @@ public abstract class AbstractSerializedData implements InputSerializedData, Out
     }
 
     @Override // org.telegram.tgnet.InputSerializedData, org.telegram.tgnet.OutputSerializedData
-    public abstract void skip(int i10);
+    public abstract void skip(int i9);
 
     @Override // org.telegram.tgnet.OutputSerializedData
     public abstract void writeBool(boolean z10);
@@ -66,13 +66,13 @@ public abstract class AbstractSerializedData implements InputSerializedData, Out
     public abstract void writeByte(byte b10);
 
     @Override // org.telegram.tgnet.OutputSerializedData
-    public abstract void writeByte(int i10);
+    public abstract void writeByte(int i9);
 
     @Override // org.telegram.tgnet.OutputSerializedData
     public abstract void writeByteArray(byte[] bArr);
 
     @Override // org.telegram.tgnet.OutputSerializedData
-    public abstract void writeByteArray(byte[] bArr, int i10, int i11);
+    public abstract void writeByteArray(byte[] bArr, int i9, int i10);
 
     @Override // org.telegram.tgnet.OutputSerializedData
     public abstract void writeByteBuffer(NativeByteBuffer nativeByteBuffer);
@@ -81,7 +81,7 @@ public abstract class AbstractSerializedData implements InputSerializedData, Out
     public abstract void writeBytes(byte[] bArr);
 
     @Override // org.telegram.tgnet.OutputSerializedData
-    public abstract void writeBytes(byte[] bArr, int i10, int i11);
+    public abstract void writeBytes(byte[] bArr, int i9, int i10);
 
     @Override // org.telegram.tgnet.OutputSerializedData
     public abstract void writeDouble(double d);
@@ -90,7 +90,7 @@ public abstract class AbstractSerializedData implements InputSerializedData, Out
     public abstract void writeFloat(float f10);
 
     @Override // org.telegram.tgnet.OutputSerializedData
-    public abstract void writeInt32(int i10);
+    public abstract void writeInt32(int i9);
 
     @Override // org.telegram.tgnet.OutputSerializedData
     public abstract void writeInt64(long j10);

@@ -203,8 +203,8 @@ public final class DateTimeFormatter {
         try {
             eVar.j(new r(lVar, this), sb2);
             return sb2.toString();
-        } catch (IOException e9) {
-            throw new j$.time.b(e9.getMessage(), e9);
+        } catch (IOException e10) {
+            throw new j$.time.b(e10.getMessage(), e10);
         }
     }
 

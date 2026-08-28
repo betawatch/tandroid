@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public static final q0 a = new q0();
@@ -15,8 +15,8 @@ public abstract class j0 {
 
     public static final void a(p0 p0Var, g2.e registry, o lifecycle) {
         Object obj;
-        kotlin.jvm.internal.j.e(registry, "registry");
-        kotlin.jvm.internal.j.e(lifecycle, "lifecycle");
+        kotlin.jvm.internal.i.e(registry, "registry");
+        kotlin.jvm.internal.i.e(lifecycle, "lifecycle");
         HashMap hashMap = p0Var.a;
         if (hashMap == null) {
             obj = null;
@@ -45,7 +45,7 @@ public abstract class j0 {
             }
             HashMap hashMap = new HashMap();
             for (String key : bundle2.keySet()) {
-                kotlin.jvm.internal.j.d(key, "key");
+                kotlin.jvm.internal.i.d(key, "key");
                 hashMap.put(key, bundle2.get(key));
             }
             return new i0(hashMap);
@@ -57,10 +57,10 @@ public abstract class j0 {
         }
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         int size = parcelableArrayList.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            Object obj = parcelableArrayList.get(i10);
-            kotlin.jvm.internal.j.c(obj, "null cannot be cast to non-null type kotlin.String");
-            linkedHashMap.put((String) obj, parcelableArrayList2.get(i10));
+        for (int i9 = 0; i9 < size; i9++) {
+            Object obj = parcelableArrayList.get(i9);
+            kotlin.jvm.internal.i.c(obj, "null cannot be cast to non-null type kotlin.String");
+            linkedHashMap.put((String) obj, parcelableArrayList2.get(i9));
         }
         return new i0(linkedHashMap);
     }
@@ -121,10 +121,10 @@ public abstract class j0 {
 
     public static final m0 e(u0 u0Var) {
         ArrayList arrayList = new ArrayList();
-        Class a2 = kotlin.jvm.internal.r.a(m0.class).a();
-        kotlin.jvm.internal.j.c(a2, "null cannot be cast to non-null type java.lang.Class<T of kotlin.jvm.JvmClassMappingKt.<get-java>>");
+        Class a2 = kotlin.jvm.internal.q.a(m0.class).a();
+        kotlin.jvm.internal.i.c(a2, "null cannot be cast to non-null type java.lang.Class<T of kotlin.jvm.JvmClassMappingKt.<get-java>>");
         arrayList.add(new v1.c(a2));
         v1.c[] cVarArr = (v1.c[]) arrayList.toArray(new v1.c[0]);
-        return (m0) new a5.n(u0Var.f(), new m5.o((v1.c[]) Arrays.copyOf(cVarArr, cVarArr.length)), u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).m(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
+        return (m0) new a5.m(u0Var.f(), new n5.a0((v1.c[]) Arrays.copyOf(cVarArr, cVarArr.length)), u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).o(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
     }
 }

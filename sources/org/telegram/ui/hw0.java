@@ -6,7 +6,7 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class hw0 {
     public final TLRPC.TL_premiumSubscriptionOption a;
@@ -27,16 +27,16 @@ public final class hw0 {
         if (lVar != null && this.g == null) {
             ArrayList arrayList = lVar.h;
             int size = arrayList.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
+            int i9 = 0;
+            while (i9 < size) {
+                Object obj = arrayList.get(i9);
+                i9++;
                 n2.k kVar = (n2.k) obj;
-                String str = ((n2.j) kVar.b.a.get(0)).d;
-                int i11 = this.a.months;
-                if (i11 != 12) {
+                String str = ((n2.j) ((ArrayList) kVar.b.b).get(0)).d;
+                int i10 = this.a.months;
+                if (i10 != 12) {
                     Locale locale = Locale.ROOT;
-                    if (str.equals("P" + i11 + "M")) {
+                    if (str.equals("P" + i10 + "M")) {
                         this.g = kVar;
                         return;
                     }
@@ -59,7 +59,7 @@ public final class hw0 {
         }
         a();
         n2.k kVar = this.g;
-        return kVar == null ? "" : ((n2.j) kVar.b.a.get(0)).c;
+        return kVar == null ? "" : ((n2.j) ((ArrayList) kVar.b.b).get(0)).c;
     }
 
     public final int c() {
@@ -68,9 +68,9 @@ public final class hw0 {
                 return 0;
             }
             if (this.e != 0) {
-                int i10 = (int) ((1.0d - (i() / this.e)) * 100.0d);
-                this.b = i10;
-                if (i10 == 0) {
+                int i9 = (int) ((1.0d - (i() / this.e)) * 100.0d);
+                this.b = i9;
+                if (i9 == 0) {
                     this.b = -1;
                 }
             }
@@ -104,7 +104,7 @@ public final class hw0 {
         if (kVar == null) {
             return 0L;
         }
-        return ((n2.j) kVar.b.a.get(0)).b;
+        return ((n2.j) ((ArrayList) kVar.b.b).get(0)).b;
     }
 
     public final long h() {

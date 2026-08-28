@@ -1,52 +1,90 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.ViewSwitcher;
+import android.content.SharedPreferences;
+import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dg0 implements ViewSwitcher.ViewFactory {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class dg0 {
+    public final /* synthetic */ eg0 a;
 
-    public /* synthetic */ dg0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public dg0(eg0 eg0Var) {
+        this.a = eg0Var;
     }
 
-    @Override // android.widget.ViewSwitcher.ViewFactory
-    public final View makeView() {
-        int i10 = this.a;
-        int i11 = 1;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                TextView textView = new TextView((Context) obj);
-                textView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f));
-                textView.setTextSize(1, 16.0f);
-                textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.G6, false));
-                textView.setHintTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.H6, false));
-                textView.setMaxLines(1);
-                textView.setSingleLine(true);
-                textView.setEllipsize(TextUtils.TruncateAt.END);
-                textView.setGravity((LocaleController.isRTL ? 5 : 3) | 1);
-                return textView;
-            case 1:
-                TextView textView2 = new TextView((Context) obj);
-                org.telegram.ui.Cells.pa.s(org.telegram.ui.ActionBar.g6.D6, null, false, textView2, 1);
-                textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                textView2.setTextSize(1, 15.0f);
-                return textView2;
-            default:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                Drawable[] drawableArr = PhotoViewer.P8;
-                return new pt0(photoViewer.A, photoViewer.P1, photoViewer.M, new oq0(photoViewer, 0), new ag0(photoViewer, i11));
+    public final void a(tf0 tf0Var) {
+        int i9;
+        eg0 eg0Var = this.a;
+        eg0Var.H = true;
+        fg0 fg0Var = eg0Var.R;
+        fg0Var.F = 0;
+        fg0Var.n1(0, false);
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 23 && AndroidUtilities.isSimAvailable()) {
+            boolean z10 = fg0Var.getParentActivity().checkSelfPermission("android.permission.READ_PHONE_STATE") == 0;
+            boolean z11 = fg0Var.getParentActivity().checkSelfPermission("android.permission.CALL_PHONE") == 0;
+            boolean z12 = i10 < 28 || fg0Var.getParentActivity().checkSelfPermission("android.permission.READ_CALL_LOG") == 0;
+            boolean z13 = i10 < 26 || fg0Var.getParentActivity().checkSelfPermission("android.permission.READ_PHONE_NUMBERS") == 0;
+            kj0 kj0Var = eg0Var.a;
+            if (kj0Var != null && "888".equals(kj0Var.getText())) {
+                z10 = true;
+                z11 = true;
+                z12 = true;
+                z13 = true;
+            }
+            if (fg0Var.v) {
+                fg0Var.r.clear();
+                if (!z10) {
+                    fg0Var.r.add("android.permission.READ_PHONE_STATE");
+                }
+                if (!z11) {
+                    fg0Var.r.add("android.permission.CALL_PHONE");
+                }
+                if (!z12) {
+                    fg0Var.r.add("android.permission.READ_CALL_LOG");
+                }
+                if (!z13 && i10 >= 26) {
+                    fg0Var.r.add("android.permission.READ_PHONE_NUMBERS");
+                }
+                if (!fg0Var.r.isEmpty()) {
+                    SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
+                    if (!globalMainSettings.getBoolean("firstlogin", true) && !fg0Var.getParentActivity().shouldShowRequestPermissionRationale("android.permission.READ_PHONE_STATE") && !fg0Var.getParentActivity().shouldShowRequestPermissionRationale("android.permission.READ_CALL_LOG")) {
+                        try {
+                            fg0Var.getParentActivity().requestPermissions((String[]) fg0Var.r.toArray(new String[0]), 6);
+                            return;
+                        } catch (Exception e10) {
+                            FileLog.e(e10);
+                            return;
+                        }
+                    }
+                    globalMainSettings.edit().putBoolean("firstlogin", false).commit();
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(fg0Var.getParentActivity());
+                    alertDialog$Builder.k(LocaleController.getString("Continue", R.string.Continue), null);
+                    if (!z10 && (!z11 || !z12)) {
+                        alertDialog$Builder.a.P = LocaleController.getString("AllowReadCallAndLog", R.string.AllowReadCallAndLog);
+                        i9 = R.raw.calls_log;
+                    } else if (z11 && z12) {
+                        alertDialog$Builder.a.P = LocaleController.getString("AllowReadCall", R.string.AllowReadCall);
+                        i9 = R.raw.incoming_calls;
+                    } else {
+                        alertDialog$Builder.a.P = LocaleController.getString("AllowReadCallLog", R.string.AllowReadCallLog);
+                        i9 = R.raw.calls_log;
+                    }
+                    alertDialog$Builder.m(i9, 46, org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.L5, false), null);
+                    fg0Var.h = fg0Var.showDialog(alertDialog$Builder.a);
+                    eg0Var.H = true;
+                    return;
+                }
+            }
         }
+        cg0 cg0Var = new cg0(0, tf0Var, this);
+        tf0Var.h.f(true, true);
+        AndroidUtilities.runOnUIThread(cg0Var, 400L);
     }
 }

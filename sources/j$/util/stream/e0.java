@@ -12,8 +12,8 @@ public final class e0 extends i0 implements g5 {
     }
 
     @Override // j$.util.stream.i0, j$.util.stream.j5
-    public final void accept(double d10) {
-        x(Double.valueOf(d10));
+    public final void accept(double d9) {
+        x(Double.valueOf(d9));
     }
 
     @Override // java.util.function.Supplier

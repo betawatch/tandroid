@@ -1,33 +1,66 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class tf1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zf1 b;
-    public final /* synthetic */ byte[] c;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ tf1(zf1 zf1Var, byte[] bArr, int i10) {
-        this.a = i10;
-        this.b = zf1Var;
-        this.c = bArr;
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class tf1 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ag1 b;
+
+    public /* synthetic */ tf1(ag1 ag1Var, int i9) {
+        this.a = i9;
+        this.b = ag1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                zf1.Y(this.b, this.c);
+                final int i9 = 0;
+                final ag1 ag1Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.vf1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i9) {
+                            case 0:
+                                ag1.a0(ag1Var, tL_error, tLObject);
+                                break;
+                            default:
+                                ag1.g0(ag1Var, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new wf1(this.b, tL_error, 0));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new wf1(this.b, tL_error, 1));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new wf1(this.b, tL_error, 2));
                 break;
             default:
-                zf1 zf1Var = this.b;
-                zf1Var.w0();
-                zf1Var.R = this.c;
-                zf1Var.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
-                zf1 zf1Var2 = new zf1(9, zf1Var.Q);
-                zf1Var2.D = zf1Var.D;
-                zf1Var2.C = zf1Var.C;
-                zf1Var.presentFragment(zf1Var2, true);
+                final int i10 = 1;
+                final ag1 ag1Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.vf1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                ag1.a0(ag1Var2, tL_error, tLObject);
+                                break;
+                            default:
+                                ag1.g0(ag1Var2, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
                 break;
         }
     }

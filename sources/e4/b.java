@@ -2,13 +2,14 @@ package e4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import d5.g0;
+import d5.f0;
+import j3.r0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b extends j {
-    public static final Parcelable.Creator<b> CREATOR = new c8.o(15);
+    public static final Parcelable.Creator<b> CREATOR = new c.c(7);
     public final byte[] b;
 
     public b(String str, byte[] bArr) {
@@ -30,11 +31,11 @@ public final class b extends j {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(this.b) + i0.a.g(527, 31, this.a);
+        return Arrays.hashCode(this.b) + r0.f(527, 31, this.a);
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeString(this.a);
         parcel.writeByteArray(this.b);
     }
@@ -46,7 +47,7 @@ public final class b extends j {
     public b(Parcel parcel) {
         super(r0);
         String readString = parcel.readString();
-        int i10 = g0.a;
+        int i9 = f0.a;
         this.b = parcel.createByteArray();
     }
 }

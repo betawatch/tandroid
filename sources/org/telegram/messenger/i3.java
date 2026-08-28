@@ -1,46 +1,31 @@
 package org.telegram.messenger;
 
-import java.io.Serializable;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i3 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Serializable h;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FileRefController b;
+    public final /* synthetic */ TLRPC.TL_messages_sendMultiMedia c;
+    public final /* synthetic */ Object[] d;
 
-    public /* synthetic */ i3(FilePathDatabase filePathDatabase, long j10, int i10, int i11, String str, int i12) {
-        this.f = filePathDatabase;
-        this.c = j10;
-        this.b = i10;
-        this.d = i11;
-        this.h = str;
-        this.e = i12;
+    public /* synthetic */ i3(FileRefController fileRefController, TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia, Object[] objArr, int i9) {
+        this.a = i9;
+        this.b = fileRefController;
+        this.c = tL_messages_sendMultiMedia;
+        this.d = objArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((FilePathDatabase) this.f).lambda$putPath$1(this.c, this.b, this.d, (String) this.h, this.e);
+                this.b.lambda$onUpdateObjectReference$30(this.c, this.d);
                 break;
             default:
-                ((MessagesStorage) this.f).lambda$updateRepliesCount$194(this.b, this.c, this.d, (ArrayList) this.h, this.e);
+                this.b.lambda$sendErrorToObject$41(this.c, this.d);
                 break;
         }
-    }
-
-    public /* synthetic */ i3(MessagesStorage messagesStorage, int i10, long j10, int i11, ArrayList arrayList, int i12) {
-        this.f = messagesStorage;
-        this.b = i10;
-        this.c = j10;
-        this.d = i11;
-        this.h = arrayList;
-        this.e = i12;
     }
 }

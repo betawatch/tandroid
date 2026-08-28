@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzza extends zzsn implements zztt {
     private static final zzza zzb;
@@ -22,26 +22,26 @@ public final class zzza extends zzsn implements zztt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsn
-    public final Object zzh(int i10, Object obj, Object obj2) {
+    public final Object zzh(int i9, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i11 = i10 - 1;
-        if (i11 == 0) {
+        int i10 = i9 - 1;
+        if (i10 == 0) {
             return (byte) 1;
         }
-        if (i11 == 2) {
+        if (i10 == 2) {
             return zzsn.zzF(zzb, "\u0000*\u0001\u0000\u0001**\u0000\u0000\u0000\u0001?\u0000\u0002?\u0000\u0003?\u0000\u0004?\u0000\u0005?\u0000\u0006?\u0000\u0007?\u0000\b?\u0000\t?\u0000\n?\u0000\u000b?\u0000\f?\u0000\r?\u0000\u000e?\u0000\u000f?\u0000\u0010?\u0000\u0011?\u0000\u0012?\u0000\u0013?\u0000\u0014?\u0000\u0015?\u0000\u0016?\u0000\u0017?\u0000\u0018?\u0000\u0019?\u0000\u001a?\u0000\u001b?\u0000\u001c?\u0000\u001d?\u0000\u001e?\u0000\u001f?\u0000 ?\u0000!?\u0000\"?\u0000#?\u0000$?\u0000%?\u0000&?\u0000'?\u0000(?\u0000)?\u0000*?\u0000", new Object[]{"zzf", "zze"});
         }
-        if (i11 == 3) {
+        if (i10 == 3) {
             return new zzza();
         }
         zzzb zzzbVar = null;
-        if (i11 == 4) {
+        if (i10 == 4) {
             return new zzyz(zzzbVar);
         }
-        if (i11 == 5) {
+        if (i10 == 5) {
             return zzb;
         }
-        if (i11 != 6) {
+        if (i10 != 6) {
             throw null;
         }
         zzua zzuaVar2 = zzd;

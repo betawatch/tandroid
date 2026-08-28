@@ -1,145 +1,116 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
+import android.graphics.ColorFilter;
+import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class o00 extends View {
-    public TextPaint a;
-    public Paint b;
-    public Path c;
-    public float[] d;
-    public pz0 e;
-    public pz0 f;
-    public pz0 h;
-    public LinearGradient n;
-    public LinearGradient r;
-    public Paint s;
-    public Paint v;
-    public Matrix w;
-    public Matrix x;
-    public i6 y;
+public final class o00 extends Drawable {
+    public final Drawable a;
+    public final Path b;
+    public boolean c = true;
+    public final Paint d;
+    public final Paint e;
 
-    public static CharSequence a(CharSequence charSequence) {
-        return "ALL_CHATS".equals(charSequence.toString()) ? LocaleController.getString(R.string.FilterAllChats) : charSequence;
+    public o00(Context context, int i9, int i10) {
+        this.a = context.getResources().getDrawable(i9);
+        if (i10 < 0) {
+            this.b = null;
+            this.d = null;
+            this.e = null;
+            return;
+        }
+        this.b = new Path();
+        Paint paint = new Paint(1);
+        this.d = paint;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(-16777216);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        paint.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(1.0f)));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        Paint paint2 = new Paint(1);
+        this.e = paint2;
+        paint2.setStyle(Paint.Style.FILL);
+        int[] iArr = org.telegram.ui.ActionBar.f6.r8;
+        paint2.setColor(org.telegram.ui.ActionBar.f6.w0(null, iArr[i10 % iArr.length], false));
+        paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(1.0f)));
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f10;
-        float f11;
-        float f12;
-        float f13;
-        pz0 pz0Var;
-        float f14;
-        float f15;
-        Paint paint = this.b;
-        Matrix matrix = this.x;
-        Matrix matrix2 = this.w;
-        Path path = this.c;
-        pz0 pz0Var2 = this.e;
-        i6 i6Var = this.y;
-        pz0 pz0Var3 = this.h;
-        super.onDraw(canvas);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
-        float measuredWidth = getMeasuredWidth() / 2.0f;
-        float measuredHeight = getMeasuredHeight() / 2.0f;
-        pz0 pz0Var4 = this.f;
-        if (pz0Var4 != null) {
-            canvas.save();
-            float f16 = pz0Var4.c;
-            f10 = 15.32f;
-            CharSequence charSequence = i6Var.g;
-            if (charSequence == null || charSequence.length() == 0) {
-                f15 = 0.0f;
-            } else {
-                f15 = i6Var.d() + AndroidUtilities.dp(15.32f);
-            }
-            float f17 = f16 + f15;
-            f11 = measuredWidth - (f17 / 2.0f);
-            canvas.translate(f11, measuredHeight - (pz0Var4.j() / 2.0f));
-            pz0Var4.d(canvas);
-            canvas.restore();
-            f12 = f17;
-        } else {
-            f10 = 15.32f;
-            f11 = measuredWidth;
-            f12 = 0.0f;
+    public final int a(float f10) {
+        return AndroidUtilities.lerp(getBounds().left, getBounds().right, f10);
+    }
+
+    public final int b(float f10) {
+        return AndroidUtilities.lerp(getBounds().top, getBounds().bottom, f10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Drawable drawable = this.a;
+        Path path = this.b;
+        if (path == null) {
+            drawable.setBounds(getBounds());
+            drawable.draw(canvas);
+            return;
         }
-        CharSequence charSequence2 = i6Var.g;
-        if (charSequence2 == null || charSequence2.length() == 0) {
-            f13 = measuredHeight;
-            pz0Var = pz0Var4;
-            f14 = 2.0f;
-        } else {
-            Rect rect = AndroidUtilities.rectTmp2;
-            f14 = 2.0f;
-            int dp = (int) (pz0Var4.c + f11 + AndroidUtilities.dp(4.66f));
-            int dp2 = (int) (measuredHeight - AndroidUtilities.dp(9.0f));
-            f13 = measuredHeight;
-            int d = (int) (i6Var.d() + pz0Var4.c + f11 + AndroidUtilities.dp(f10));
-            pz0Var = pz0Var4;
-            rect.set(dp, dp2, d, (int) (f13 + AndroidUtilities.dp(9.0f)));
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(rect);
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), paint);
-            rect.offset(-AndroidUtilities.dp(0.33f), -AndroidUtilities.dp(0.66f));
-            i6Var.setBounds(rect);
-            i6Var.draw(canvas);
+        canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, 255);
+        drawable.setBounds(getBounds());
+        drawable.draw(canvas);
+        boolean z10 = this.c;
+        Paint paint = this.d;
+        if (z10) {
+            path.rewind();
+            path.moveTo(a(0.4871f), b(0.6025f));
+            path.lineTo(a(0.8974f), b(0.6025f));
+            path.lineTo(a(1.0f), b(0.7564f));
+            path.lineTo(a(0.8974f), b(0.9102f));
+            path.lineTo(a(0.4871f), b(0.9102f));
+            path.close();
+            this.c = false;
+            paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
         }
-        float dp3 = AndroidUtilities.dp(30.0f);
-        float f18 = (f11 - dp3) - pz0Var2.c;
-        canvas.save();
-        canvas.translate(f18, (f13 - (pz0Var2.j() / f14)) + AndroidUtilities.dp(1.0f));
-        pz0Var2.d(canvas);
-        canvas.restore();
-        float f19 = f11 + f12;
-        if (pz0Var3 != null) {
-            canvas.save();
-            canvas.translate(f19 + dp3, (f13 - (pz0Var3.j() / f14)) + AndroidUtilities.dp(1.0f));
-            pz0Var3.d(canvas);
-            canvas.restore();
-            f19 += dp3 + pz0Var3.c;
-        }
-        float f20 = f19;
-        float dp4 = AndroidUtilities.dp(12.0f) + (pz0Var.j() / f14) + f13;
-        canvas.drawRect(0.0f, dp4, getMeasuredWidth(), 1.0f + dp4, this.a);
-        path.rewind();
-        RectF rectF2 = AndroidUtilities.rectTmp;
-        float f21 = f12 / f14;
-        float f22 = measuredWidth + f21;
-        rectF2.set((measuredWidth - f21) - AndroidUtilities.dp(4.0f), dp4 - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + f22, dp4);
-        path.addRoundRect(rectF2, this.d, Path.Direction.CW);
         canvas.drawPath(path, paint);
-        canvas.save();
-        float max = Math.max(AndroidUtilities.dp(8.0f), f18);
-        matrix2.reset();
-        matrix2.postTranslate(Math.min(f11, max + AndroidUtilities.dp(8.0f)), 0.0f);
-        this.n.setLocalMatrix(matrix2);
-        float min = Math.min(getMeasuredWidth() - AndroidUtilities.dp(8.0f), f20);
-        matrix.reset();
-        matrix.postTranslate(Math.max(f22, min - AndroidUtilities.dp(88.0f)), 0.0f);
-        this.r.setLocalMatrix(matrix);
-        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.s);
-        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.v);
-        canvas.restore();
+        canvas.drawPath(path, this.e);
         canvas.restore();
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.y || super.verifyDrawable(drawable);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.a.getIntrinsicHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.a.getIntrinsicWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return this.a.getOpacity();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i9) {
+        this.a.setAlpha(i9);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i9, int i10, int i11, int i12) {
+        super.setBounds(i9, i10, i11, i12);
+        this.c = true;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
     }
 }

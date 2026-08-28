@@ -1,27 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class q21 extends f2.l {
-    public final /* synthetic */ b31 F;
+public final class q21 extends ClickableSpan {
+    public final /* synthetic */ URLSpan a;
+    public final /* synthetic */ z21 b;
 
-    public q21(b31 b31Var) {
-        this.F = b31Var;
+    public q21(z21 z21Var, URLSpan uRLSpan) {
+        this.b = z21Var;
+        this.a = uRLSpan;
     }
 
-    @Override // f2.l
-    public final void O() {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.e3) this.F).containerView;
-        viewGroup.invalidate();
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        z21 z21Var = this.b;
+        Utilities.CallbackReturn callbackReturn = z21Var.J;
+        URLSpan uRLSpan = this.a;
+        if (callbackReturn != null) {
+            if (((Boolean) callbackReturn.run(uRLSpan)).booleanValue()) {
+                z21Var.dismiss();
+            }
+        } else {
+            org.telegram.ui.ActionBar.o2 o2Var = z21Var.I;
+            if (o2Var != null) {
+                y4.q0(o2Var, uRLSpan.getURL(), false, false);
+            }
+        }
     }
 
-    @Override // f2.l
-    public final void P(f2.o1 o1Var) {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.e3) this.F).containerView;
-        viewGroup.invalidate();
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & 255);
+        if (!(this.a instanceof p41)) {
+            textPaint.setUnderlineText(true);
+        }
+        textPaint.setColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.k5, false));
+        textPaint.setAlpha(min);
     }
 }

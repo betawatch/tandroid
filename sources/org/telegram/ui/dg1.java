@@ -1,48 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dg1 implements Utilities.Callback {
+public final /* synthetic */ class dg1 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ UserInfoActivity b;
 
-    public /* synthetic */ dg1(UserInfoActivity userInfoActivity, int i10) {
-        this.a = i10;
+    public /* synthetic */ dg1(UserInfoActivity userInfoActivity, int i9) {
+        this.a = i9;
         this.b = userInfoActivity;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                UserInfoActivity userInfoActivity = this.b;
-                userInfoActivity.F = (TL_account.TL_birthday) obj;
-                org.telegram.ui.Components.e51 e51Var = userInfoActivity.x;
-                if (e51Var != null) {
-                    e51Var.U2.N(true);
+                this.b.presentFragment(new PrivacyControlActivity(9, true));
+                break;
+            case 1:
+                org.telegram.ui.Components.c51 c51Var = this.b.x;
+                if (c51Var != null) {
+                    c51Var.U2.N(true);
+                    break;
                 }
-                userInfoActivity.b0(true);
+                break;
+            case 2:
+                UserInfoActivity userInfoActivity = this.b;
+                userInfoActivity.getClass();
+                userInfoActivity.presentFragment(new PrivacyControlActivity(11, false));
                 break;
             default:
-                TLRPC.Chat chat = (TLRPC.Chat) obj;
                 UserInfoActivity userInfoActivity2 = this.b;
-                if (userInfoActivity2.G != chat) {
-                    userInfoActivity2.G = chat;
-                    if (chat != null) {
-                        org.telegram.messenger.y1.q(R.string.EditProfileChannelSet, org.telegram.ui.Components.mc.a0(userInfoActivity2), R.raw.contact_check, 36);
-                    }
-                    userInfoActivity2.b0(true);
-                    org.telegram.ui.Components.e51 e51Var2 = userInfoActivity2.x;
-                    if (e51Var2 != null) {
-                        e51Var2.U2.N(true);
-                        break;
-                    }
-                }
+                userInfoActivity2.getClass();
+                userInfoActivity2.presentFragment(new PremiumPreviewFragment(0, "add_account"));
                 break;
         }
     }

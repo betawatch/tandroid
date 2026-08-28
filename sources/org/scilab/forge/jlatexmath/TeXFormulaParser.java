@@ -1,16 +1,16 @@
 package org.scilab.forge.jlatexmath;
 
-import a9.p;
-import i0.a;
+import aa.d;
+import j3.r0;
 import java.util.HashMap;
 import java.util.Map;
-import org.telegram.ui.Cells.pa;
+import org.telegram.ui.Cells.j2;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class TeXFormulaParser {
     private static final String ARG_OBJ_ATTR = "formula";
@@ -28,17 +28,17 @@ public class TeXFormulaParser {
     private final Map<String, TeXFormula> tempFormulas;
     private int type;
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface ActionParser {
         void parse(Element element);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface ArgumentValueParser {
         Object parseValue(String str, String str2);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class BooleanValueParser implements ArgumentValueParser {
         public BooleanValueParser() {
         }
@@ -52,11 +52,11 @@ public class TeXFormulaParser {
             if ("false".equals(str)) {
                 return Boolean.FALSE;
             }
-            throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", TeXFormulaParser.ARG_VAL_ATTR, pa.j("has an invalid '", str2, "'-value : '", str, "'!"));
+            throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", TeXFormulaParser.ARG_VAL_ATTR, j2.h("has an invalid '", str2, "'-value : '", str, "'!"));
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class CharValueParser implements ArgumentValueParser {
         public CharValueParser() {
         }
@@ -71,7 +71,7 @@ public class TeXFormulaParser {
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class ColorConstantValueParser implements ArgumentValueParser {
         public ColorConstantValueParser() {
         }
@@ -81,13 +81,13 @@ public class TeXFormulaParser {
             TeXFormulaParser.checkNullValue(str, str2);
             try {
                 return Color.class.getDeclaredField(str).get(null);
-            } catch (Exception e9) {
-                throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", TeXFormulaParser.ARG_VAL_ATTR, p.m("has an unknown color constant name as value : '", str, "'!"), e9);
+            } catch (Exception e10) {
+                throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", TeXFormulaParser.ARG_VAL_ATTR, d.o("has an unknown color constant name as value : '", str, "'!"), e10);
             }
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class CreateCommandParser implements ActionParser {
         public CreateCommandParser() {
         }
@@ -108,22 +108,22 @@ public class TeXFormulaParser {
                 for (Object obj : argumentValues) {
                     str = str + "Created object: " + obj + "\n";
                 }
-                StringBuilder r10 = p.r("Error creating the temporary command '", attrValueAndCheckIfNotNull, "' while constructing the predefined command '");
-                r10.append(TeXFormulaParser.this.formulaName);
-                r10.append("'!\n");
-                r10.append(str);
-                throw new XMLResourceParseException(r10.toString());
-            } catch (Exception e9) {
-                StringBuilder r11 = p.r("Error creating the temporary command '", attrValueAndCheckIfNotNull, "' while constructing the predefined command '");
-                r11.append(TeXFormulaParser.this.formulaName);
-                r11.append("'!\n");
-                r11.append(e9.toString());
-                throw new XMLResourceParseException(r11.toString());
+                StringBuilder t10 = d.t("Error creating the temporary command '", attrValueAndCheckIfNotNull, "' while constructing the predefined command '");
+                t10.append(TeXFormulaParser.this.formulaName);
+                t10.append("'!\n");
+                t10.append(str);
+                throw new XMLResourceParseException(t10.toString());
+            } catch (Exception e10) {
+                StringBuilder t11 = d.t("Error creating the temporary command '", attrValueAndCheckIfNotNull, "' while constructing the predefined command '");
+                t11.append(TeXFormulaParser.this.formulaName);
+                t11.append("'!\n");
+                t11.append(e10.toString());
+                throw new XMLResourceParseException(t11.toString());
             }
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class CreateTeXFormulaParser implements ActionParser {
         public CreateTeXFormulaParser() {
         }
@@ -135,17 +135,17 @@ public class TeXFormulaParser {
             Class[] argumentClasses = TeXFormulaParser.getArgumentClasses(elementsByTagName);
             try {
                 TeXFormulaParser.this.tempFormulas.put(attrValueAndCheckIfNotNull, (TeXFormula) TeXFormula.class.getConstructor(argumentClasses).newInstance(TeXFormulaParser.this.getArgumentValues(elementsByTagName)));
-            } catch (Exception e9) {
-                StringBuilder r10 = p.r("Error creating the temporary TeXFormula '", attrValueAndCheckIfNotNull, "' while constructing the predefined TeXFormula '");
-                r10.append(TeXFormulaParser.this.formulaName);
-                r10.append("'!\n");
-                r10.append(e9.toString());
-                throw new XMLResourceParseException(r10.toString());
+            } catch (Exception e10) {
+                StringBuilder t10 = d.t("Error creating the temporary TeXFormula '", attrValueAndCheckIfNotNull, "' while constructing the predefined TeXFormula '");
+                t10.append(TeXFormulaParser.this.formulaName);
+                t10.append("'!\n");
+                t10.append(e10.toString());
+                throw new XMLResourceParseException(t10.toString());
             }
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class FloatValueParser implements ArgumentValueParser {
         public FloatValueParser() {
         }
@@ -155,13 +155,13 @@ public class TeXFormulaParser {
             TeXFormulaParser.checkNullValue(str, str2);
             try {
                 return new Float(Float.parseFloat(str));
-            } catch (NumberFormatException e9) {
-                throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", TeXFormulaParser.ARG_VAL_ATTR, pa.j("has an invalid '", str2, "'-value : '", str, "'!"), e9);
+            } catch (NumberFormatException e10) {
+                throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", TeXFormulaParser.ARG_VAL_ATTR, j2.h("has an invalid '", str2, "'-value : '", str, "'!"), e10);
             }
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class IntValueParser implements ArgumentValueParser {
         public IntValueParser() {
         }
@@ -171,13 +171,13 @@ public class TeXFormulaParser {
             TeXFormulaParser.checkNullValue(str, str2);
             try {
                 return new Float(Integer.parseInt(str));
-            } catch (NumberFormatException e9) {
-                throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", TeXFormulaParser.ARG_VAL_ATTR, pa.j("has an invalid '", str2, "'-value : '", str, "'!"), e9);
+            } catch (NumberFormatException e10) {
+                throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", TeXFormulaParser.ARG_VAL_ATTR, j2.h("has an invalid '", str2, "'-value : '", str, "'!"), e10);
             }
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class MethodInvocationParser implements ActionParser {
         public MethodInvocationParser() {
         }
@@ -188,23 +188,23 @@ public class TeXFormulaParser {
             String attrValueAndCheckIfNotNull2 = TeXFormulaParser.getAttrValueAndCheckIfNotNull(TeXFormulaParser.ARG_OBJ_ATTR, element);
             Object obj = TeXFormulaParser.this.tempFormulas.get(attrValueAndCheckIfNotNull2);
             if (obj == null) {
-                throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", TeXFormulaParser.ARG_OBJ_ATTR, p.m("has an unknown temporary TeXFormula name as value : '", attrValueAndCheckIfNotNull2, "'!"));
+                throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", TeXFormulaParser.ARG_OBJ_ATTR, d.o("has an unknown temporary TeXFormula name as value : '", attrValueAndCheckIfNotNull2, "'!"));
             }
             NodeList elementsByTagName = element.getElementsByTagName("Argument");
             Class[] argumentClasses = TeXFormulaParser.getArgumentClasses(elementsByTagName);
             try {
                 TeXFormula.class.getMethod(attrValueAndCheckIfNotNull, argumentClasses).invoke((TeXFormula) obj, TeXFormulaParser.this.getArgumentValues(elementsByTagName));
-            } catch (Exception e9) {
-                StringBuilder p6 = a.p("Error invoking the method '", attrValueAndCheckIfNotNull, "' on the temporary TeXFormula '", attrValueAndCheckIfNotNull2, "' while constructing the predefined TeXFormula '");
-                p6.append(TeXFormulaParser.this.formulaName);
-                p6.append("'!\n");
-                p6.append(e9.toString());
-                throw new XMLResourceParseException(p6.toString());
+            } catch (Exception e10) {
+                StringBuilder q10 = r0.q("Error invoking the method '", attrValueAndCheckIfNotNull, "' on the temporary TeXFormula '", attrValueAndCheckIfNotNull2, "' while constructing the predefined TeXFormula '");
+                q10.append(TeXFormulaParser.this.formulaName);
+                q10.append("'!\n");
+                q10.append(e10.toString());
+                throw new XMLResourceParseException(q10.toString());
             }
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class ReturnParser implements ActionParser {
         public ReturnParser() {
         }
@@ -217,14 +217,14 @@ public class TeXFormulaParser {
                 TeXFormulaParser.this.result = obj;
                 return;
             }
-            StringBuilder r10 = p.r("contains an unknown temporary TeXFormula variable name '", attrValueAndCheckIfNotNull, "' for the predefined TeXFormula '");
-            r10.append(TeXFormulaParser.this.formulaName);
-            r10.append("'!");
-            throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, TeXFormulaParser.RETURN_EL, "name", r10.toString());
+            StringBuilder t10 = d.t("contains an unknown temporary TeXFormula variable name '", attrValueAndCheckIfNotNull, "' for the predefined TeXFormula '");
+            t10.append(TeXFormulaParser.this.formulaName);
+            t10.append("'!");
+            throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, TeXFormulaParser.RETURN_EL, "name", t10.toString());
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class TeXConstantsValueParser implements ArgumentValueParser {
         public TeXConstantsValueParser() {
         }
@@ -234,13 +234,13 @@ public class TeXFormulaParser {
             TeXFormulaParser.checkNullValue(str, str2);
             try {
                 return Integer.valueOf(TeXConstants.class.getDeclaredField(str).getInt(null));
-            } catch (Exception e9) {
-                throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", TeXFormulaParser.ARG_VAL_ATTR, p.m("has an unknown constant name as value : '", str, "'!"), e9);
+            } catch (Exception e10) {
+                throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", TeXFormulaParser.ARG_VAL_ATTR, d.o("has an unknown constant name as value : '", str, "'!"), e10);
             }
         }
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class TeXFormulaValueParser implements ArgumentValueParser {
         public TeXFormulaValueParser() {
         }
@@ -254,7 +254,7 @@ public class TeXFormulaParser {
             if (obj != null) {
                 return (TeXFormula) obj;
             }
-            throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", TeXFormulaParser.ARG_VAL_ATTR, p.m("has an unknown temporary TeXFormula name as value : '", str, "'!"));
+            throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", TeXFormulaParser.ARG_VAL_ATTR, d.o("has an unknown temporary TeXFormula name as value : '", str, "'!"));
         }
     }
 
@@ -303,21 +303,21 @@ public class TeXFormulaParser {
     /* JADX INFO: Access modifiers changed from: private */
     public static void checkNullValue(String str, String str2) {
         if (str.equals("")) {
-            throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", ARG_VAL_ATTR, p.m("is required for an argument of type '", str2, "'!"));
+            throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", ARG_VAL_ATTR, d.o("is required for an argument of type '", str2, "'!"));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static Class<?>[] getArgumentClasses(NodeList nodeList) {
         Class<?>[] clsArr = new Class[nodeList.getLength()];
-        int i10 = 0;
-        for (int i11 = 0; i11 < nodeList.getLength(); i11++) {
-            Class<?> cls = classMappings.get(getAttrValueAndCheckIfNotNull(TeXSymbolParser.TYPE_ATTR, (Element) nodeList.item(i11)));
+        int i9 = 0;
+        for (int i10 = 0; i10 < nodeList.getLength(); i10++) {
+            Class<?> cls = classMappings.get(getAttrValueAndCheckIfNotNull(TeXSymbolParser.TYPE_ATTR, (Element) nodeList.item(i10)));
             if (cls == null) {
                 throw new XMLResourceParseException(PredefinedTeXFormulaParser.RESOURCE_NAME, "Argument", TeXSymbolParser.TYPE_ATTR, "has an invalid class name value!");
             }
-            clsArr[i10] = cls;
-            i10++;
+            clsArr[i9] = cls;
+            i9++;
         }
         return clsArr;
     }
@@ -325,12 +325,12 @@ public class TeXFormulaParser {
     /* JADX INFO: Access modifiers changed from: private */
     public Object[] getArgumentValues(NodeList nodeList) {
         Object[] objArr = new Object[nodeList.getLength()];
-        int i10 = 0;
-        for (int i11 = 0; i11 < nodeList.getLength(); i11++) {
-            Element element = (Element) nodeList.item(i11);
+        int i9 = 0;
+        for (int i10 = 0; i10 < nodeList.getLength(); i10++) {
+            Element element = (Element) nodeList.item(i10);
             String attrValueAndCheckIfNotNull = getAttrValueAndCheckIfNotNull(TeXSymbolParser.TYPE_ATTR, element);
-            objArr[i10] = this.argValueParsers.get(attrValueAndCheckIfNotNull).parseValue(element.getAttribute(ARG_VAL_ATTR), attrValueAndCheckIfNotNull);
-            i10++;
+            objArr[i9] = this.argValueParsers.get(attrValueAndCheckIfNotNull).parseValue(element.getAttribute(ARG_VAL_ATTR), attrValueAndCheckIfNotNull);
+            i9++;
         }
         return objArr;
     }
@@ -346,8 +346,8 @@ public class TeXFormulaParser {
 
     public Object parse() {
         NodeList childNodes = this.formula.getChildNodes();
-        for (int i10 = 0; i10 < childNodes.getLength(); i10++) {
-            Node item = childNodes.item(i10);
+        for (int i9 = 0; i9 < childNodes.getLength(); i9++) {
+            Node item = childNodes.item(i9);
             if (item.getNodeType() != 3) {
                 Element element = (Element) item;
                 ActionParser actionParser = this.actionParsers.get(element.getTagName());
@@ -359,7 +359,7 @@ public class TeXFormulaParser {
         return this.result;
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public class StringValueParser implements ArgumentValueParser {
         public StringValueParser() {
         }

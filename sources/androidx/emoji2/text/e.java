@@ -2,37 +2,37 @@ package androidx.emoji2.text;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class e extends g7.u {
-    public final /* synthetic */ f a;
+public final class e extends f7.w {
+    public final /* synthetic */ a9.c a;
 
-    public e(f fVar) {
-        this.a = fVar;
+    public e(a9.c cVar) {
+        this.a = cVar;
     }
 
-    @Override // g7.u
+    @Override // f7.w
     public final void a(Throwable th) {
-        ((l) this.a.c).d(th);
+        ((k) this.a.a).d(th);
     }
 
-    @Override // g7.u
+    @Override // f7.w
     public final void b(com.google.firebase.messaging.t tVar) {
-        f fVar = this.a;
-        fVar.b = tVar;
-        fVar.a = new xe.b((com.google.firebase.messaging.t) fVar.b, new xa.a(1), ((l) fVar.c).h);
-        l lVar = (l) fVar.c;
-        lVar.getClass();
+        a9.c cVar = this.a;
+        cVar.c = tVar;
+        cVar.b = new we.b((com.google.firebase.messaging.t) cVar.c, new d7.u(2), ((k) cVar.a).h);
+        k kVar = (k) cVar.a;
+        kVar.getClass();
         ArrayList arrayList = new ArrayList();
-        lVar.a.writeLock().lock();
+        kVar.a.writeLock().lock();
         try {
-            lVar.c = 1;
-            arrayList.addAll(lVar.b);
-            lVar.b.clear();
-            lVar.a.writeLock().unlock();
-            lVar.d.post(new j(arrayList, lVar.c, (Throwable) null));
+            kVar.c = 1;
+            arrayList.addAll(kVar.b);
+            kVar.b.clear();
+            kVar.a.writeLock().unlock();
+            kVar.d.post(new i(arrayList, kVar.c, (Throwable) null));
         } catch (Throwable th) {
-            lVar.a.writeLock().unlock();
+            kVar.a.writeLock().unlock();
             throw th;
         }
     }

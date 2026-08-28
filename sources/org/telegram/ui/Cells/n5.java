@@ -1,36 +1,47 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.ll;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class n5 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public RectF b;
+    public ImageView a;
+    public ImageView b;
+    public TextView c;
+    public int d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n5(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.d, TLObject.FLAG_30), ll.C(2.0f, this.d, TLObject.FLAG_30));
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                RectF rectF = this.b;
-                rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.g6.i2);
-                break;
-            default:
-                RectF rectF2 = this.b;
-                rectF2.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                canvas.drawRoundRect(rectF2, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.g6.i2);
-                break;
+    public void setItemSize(int i9) {
+        this.d = i9;
+    }
+
+    public void setType(int i9) {
+        TextView textView = this.c;
+        ImageView imageView = this.b;
+        ImageView imageView2 = this.a;
+        if (i9 == 0) {
+            imageView2.setImageResource(R.drawable.permissions_camera1);
+            imageView.setImageResource(R.drawable.permissions_camera2);
+            textView.setText(LocaleController.getString(R.string.CameraPermissionText));
+            imageView2.setLayoutParams(g7.e6.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
+            imageView.setLayoutParams(g7.e6.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
+            return;
         }
+        imageView2.setImageResource(R.drawable.permissions_gallery1);
+        imageView.setImageResource(R.drawable.permissions_gallery2);
+        textView.setText(LocaleController.getString(R.string.GalleryPermissionText));
+        imageView2.setLayoutParams(g7.e6.d(44, 44.0f, 17, 0.0f, 0.0f, 2.0f, 27.0f));
+        imageView.setLayoutParams(g7.e6.d(44, 44.0f, 17, 0.0f, 0.0f, 2.0f, 27.0f));
     }
 }

@@ -1,107 +1,77 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ta1;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class lv extends Drawable {
-    public final /* synthetic */ int a;
-    public RectF b;
-    public Paint c;
+public final class lv extends xl0 {
+    public long h;
+    public boolean n;
+    public float r;
+    public final /* synthetic */ nv s;
 
-    public /* synthetic */ lv(int i10, byte b10) {
-        this.a = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                RectF rectF = this.b;
-                rectF.set(0.0f, 0.0f, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f));
-                canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(8.0f), AndroidUtilities.dpf2(8.0f), this.c);
-                break;
-            case 1:
-                RectF rectF2 = this.b;
-                rectF2.set(getBounds());
-                float height = rectF2.height() * 0.2f;
-                canvas.drawRoundRect(rectF2, height, height, this.c);
-                break;
-            case 2:
-                RectF rectF3 = this.b;
-                rectF3.set(getBounds());
-                rectF3.inset(AndroidUtilities.dp(1.0f), (rectF3.height() - AndroidUtilities.dp(28.0f)) / 2.0f);
-                canvas.drawRoundRect(rectF3, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), this.c);
-                break;
-            default:
-                RectF rectF4 = this.b;
-                rectF4.set(getBounds());
-                rectF4.inset(0.0f, (rectF4.height() - AndroidUtilities.dp(28.0f)) / 2.0f);
-                canvas.drawRoundRect(rectF4, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), this.c);
-                break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lv(nv nvVar, Context context) {
+        super(context);
+        this.s = nvVar;
+        boolean z10 = nvVar.n;
+        this.n = z10;
+        this.r = z10 ? 1.0f : 0.0f;
+        setSmoothScrollingEnabled(true);
+        int i9 = 0;
+        setHorizontalScrollBarEnabled(false);
+        setVerticalScrollBarEnabled(false);
+        setNestedScrollingEnabled(true);
+        ta1 ta1Var = new ta1(this, context, 7);
+        this.b = ta1Var;
+        ta1Var.setOrientation(0);
+        addView(this.b, new FrameLayout.LayoutParams(-2, -1));
+        while (true) {
+            int[] iArr = nv.a0;
+            if (i9 >= 8) {
+                return;
+            }
+            kv kvVar = new kv(this, context, iArr[i9], nv.b0[i9]);
+            kvVar.setContentDescription(nv.f(i9));
+            this.b.addView(kvVar);
+            i9++;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
+    public final void d(MotionEvent motionEvent) {
+        if (!this.n || this.d) {
+            return;
         }
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        switch (this.a) {
-            case 0:
-                this.c.setAlpha(i10);
-                break;
-            case 1:
-                this.c.setAlpha(i10);
-                break;
-            case 2:
-                this.c.setAlpha(i10);
-                break;
-            default:
-                this.c.setAlpha(i10);
-                break;
+        int action = motionEvent.getAction();
+        if (action != 0) {
+            if (action == 1) {
+                this.a = false;
+                return;
+            } else if (action != 2) {
+                return;
+            }
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        switch (this.a) {
-            case 1:
-                this.c.setColorFilter(colorFilter);
-                break;
+        this.a = true;
+        if (!this.d) {
+            this.e = -1;
         }
+        this.s.requestDisallowInterceptTouchEvent(true);
     }
 
-    public lv() {
-        this.a = 1;
-        this.b = new RectF();
-        this.c = new Paint(1);
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.lerp(AndroidUtilities.dp(30.0f), AndroidUtilities.dp(Math.min(5.7f, this.b.getChildCount()) * 32.0f), this.r), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
     }
 
-    public lv(int i10) {
-        this.a = 0;
-        Paint paint = new Paint();
-        this.c = paint;
-        this.b = new RectF();
-        paint.setAlpha(45);
-        paint.setColor(i10);
-    }
-
-    private final void a(ColorFilter colorFilter) {
-    }
-
-    private final void b(ColorFilter colorFilter) {
-    }
-
-    private final void c(ColorFilter colorFilter) {
+    @Override // org.telegram.ui.Components.xl0, android.widget.HorizontalScrollView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        d(motionEvent);
+        return super.onTouchEvent(motionEvent);
     }
 }

@@ -1,16 +1,17 @@
 package w2;
 
 import java.io.Closeable;
+import n5.e0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class j implements Closeable {
-    public oc.a a;
-    public e.a b;
-    public oc.a c;
-    public a9.i d;
-    public oc.a e;
-    public oc.a f;
+    public nc.a a;
+    public e0 b;
+    public nc.a c;
+    public fa.c d;
+    public nc.a e;
+    public nc.a f;
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public final void close() {

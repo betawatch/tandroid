@@ -1,41 +1,47 @@
 package kh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.h00;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final class n extends h00 {
-    public final Paint Q;
-    public final /* synthetic */ r R;
+public final /* synthetic */ class n implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mb b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(r rVar, Context context) {
-        super(context, null);
-        this.R = rVar;
-        this.Q = new Paint();
+    public /* synthetic */ n(mb mbVar, int i9) {
+        this.a = i9;
+        this.b = mbVar;
     }
 
-    @Override // org.telegram.ui.Components.h00
-    public final int getColumnsCount() {
-        return this.R.d;
-    }
-
-    @Override // org.telegram.ui.Components.h00
-    public final int getViewType() {
-        setIsSingleCell(false);
-        return 27;
-    }
-
-    @Override // org.telegram.ui.Components.h00, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int v02 = g6.v0(g6.d6, this.R.S.c);
-        Paint paint = this.Q;
-        paint.setColor(v02);
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint);
-        super.onDraw(canvas);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.n();
+                break;
+            case 1:
+                mb mbVar = this.b;
+                mbVar.G0 = false;
+                mbVar.H0 = TLObject.FLAG_31;
+                mbVar.invalidate();
+                mbVar.O0.setVisibility(0);
+                mbVar.P0.setVisibility(0);
+                break;
+            default:
+                wb wbVar = this.b.O1;
+                kb kbVar = wbVar.T0;
+                if (kbVar != null) {
+                    kbVar.K = false;
+                    kbVar.c();
+                    kb kbVar2 = wbVar.T0;
+                    kbVar2.m(0L);
+                    gc gcVar = kbVar2.B;
+                    if (gcVar != null) {
+                        gcVar.setProgress(0L);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

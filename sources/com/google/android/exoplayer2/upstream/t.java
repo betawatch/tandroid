@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import java.util.HashMap;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class t {
     public final boolean a;
@@ -15,12 +15,12 @@ public final class t {
     public final Object d;
     public final Object e;
 
-    public t(com.google.android.gms.common.api.internal.r rVar, com.google.android.gms.common.api.internal.p pVar, v5.c[] cVarArr, boolean z10, int i10) {
+    public t(com.google.android.gms.common.api.internal.r rVar, com.google.android.gms.common.api.internal.p pVar, u5.c[] cVarArr, boolean z10, int i9) {
         this.e = rVar;
         this.c = pVar;
         this.d = cVarArr;
         this.a = z10;
-        this.b = i10;
+        this.b = i9;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x01ea  */
@@ -436,12 +436,12 @@ public final class t {
         int[] iArr;
         TelephonyManager telephonyManager;
         this.c = context == null ? null : context.getApplicationContext();
-        int i10 = d5.g0.a;
+        int i9 = d5.f0.a;
         if (context != null && (telephonyManager = (TelephonyManager) context.getSystemService("phone")) != null) {
             String networkCountryIso = telephonyManager.getNetworkCountryIso();
             if (!TextUtils.isEmpty(networkCountryIso)) {
-                c10 = h7.d0.c(networkCountryIso);
-                p8.l0 l0Var = u.n;
+                c10 = g7.b0.c(networkCountryIso);
+                o8.l0 l0Var = u.n;
                 c10.getClass();
                 switch (c10) {
                     case "AD":
@@ -1020,7 +1020,7 @@ public final class t {
                 }
                 HashMap hashMap = new HashMap(8);
                 hashMap.put(0, 1000000L);
-                p8.l0 l0Var2 = u.n;
+                o8.l0 l0Var2 = u.n;
                 hashMap.put(2, (Long) l0Var2.get(iArr[0]));
                 hashMap.put(3, (Long) u.o.get(iArr[1]));
                 hashMap.put(4, (Long) u.p.get(iArr[2]));
@@ -1030,12 +1030,12 @@ public final class t {
                 hashMap.put(7, (Long) l0Var2.get(iArr[0]));
                 this.d = hashMap;
                 this.b = 2000;
-                this.e = d5.b0.a;
+                this.e = d5.a0.a;
                 this.a = true;
             }
         }
-        c10 = h7.d0.c(Locale.getDefault().getCountry());
-        p8.l0 l0Var3 = u.n;
+        c10 = g7.b0.c(Locale.getDefault().getCountry());
+        o8.l0 l0Var3 = u.n;
         c10.getClass();
         switch (c10) {
             case 2083:
@@ -1517,7 +1517,7 @@ public final class t {
         }
         HashMap hashMap2 = new HashMap(8);
         hashMap2.put(0, 1000000L);
-        p8.l0 l0Var22 = u.n;
+        o8.l0 l0Var22 = u.n;
         hashMap2.put(2, (Long) l0Var22.get(iArr[0]));
         hashMap2.put(3, (Long) u.o.get(iArr[1]));
         hashMap2.put(4, (Long) u.p.get(iArr[2]));
@@ -1527,7 +1527,7 @@ public final class t {
         hashMap2.put(7, (Long) l0Var22.get(iArr[0]));
         this.d = hashMap2;
         this.b = 2000;
-        this.e = d5.b0.a;
+        this.e = d5.a0.a;
         this.a = true;
     }
 }

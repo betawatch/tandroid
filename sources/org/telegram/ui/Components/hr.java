@@ -1,49 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.text.TextPaint;
+import android.view.KeyEvent;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class hr extends View {
-    public final TextPaint a;
-    public final TextPaint b;
-    public final String c;
-    public final String d;
-    public final Rect e;
+public final /* synthetic */ class hr implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kr b;
 
-    public hr(Context context, String str, String str2) {
-        super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        TextPaint textPaint2 = new TextPaint(1);
-        this.b = textPaint2;
-        this.e = new Rect();
-        this.c = str;
-        this.d = str2;
-        textPaint.setTextSize(AndroidUtilities.dp(24.0f));
-        textPaint2.setTextSize(AndroidUtilities.dp(14.0f));
-        textPaint.setColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.G6, false));
-        textPaint2.setColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.H6, false));
+    public /* synthetic */ hr(kr krVar, int i9) {
+        this.a = i9;
+        this.b = krVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        TextPaint textPaint = this.b;
-        String str = this.d;
-        float measureText = textPaint.measureText(str);
-        TextPaint textPaint2 = this.a;
-        String str2 = this.c;
-        float measureText2 = textPaint2.measureText(str2);
-        int length = str2.length();
-        Rect rect = this.e;
-        textPaint2.getTextBounds(str2, 0, length, rect);
-        textPaint.getTextBounds(str, 0, str.length(), rect);
-        canvas.drawText(str2, (getWidth() * 0.25f) - (measureText2 / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint2);
-        canvas.drawText(str, (getWidth() * 0.7f) - (measureText / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint);
+    @Override // java.lang.Runnable
+    public final void run() {
+        View view;
+        switch (this.a) {
+            case 0:
+                kr krVar = this.b;
+                if (krVar.b == null && (view = krVar.d) != null) {
+                    View findFocus = view.findFocus();
+                    if (findFocus instanceof EditText) {
+                        krVar.b = (EditText) findFocus;
+                    }
+                }
+                EditText editText = krVar.b;
+                if (editText != null) {
+                    if (editText.length() != 0 || krVar.e) {
+                        try {
+                            krVar.performHapticFeedback(3, 2);
+                            krVar.playSoundEffect(0);
+                        } catch (Exception unused) {
+                        }
+                        krVar.b.dispatchKeyEvent(new KeyEvent(0, 67));
+                        krVar.b.dispatchKeyEvent(new KeyEvent(1, 67));
+                        if (krVar.f) {
+                            krVar.postDelayed(krVar.h, 50L);
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                kr krVar2 = this.b;
+                krVar2.n = false;
+                krVar2.f = true;
+                krVar2.h.run();
+                break;
+        }
     }
 }

@@ -1,39 +1,40 @@
 package yf;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.UUID;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.Components.ik0;
+import org.telegram.ui.Components.vk0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class s1 {
-    public r1 a;
-    public final HashMap b = new HashMap();
-    public final ArrayList c = new ArrayList();
-
-    public final boolean a() {
-        return !this.c.isEmpty();
+public final class s1 extends vk0 {
+    @Override // org.telegram.ui.Components.vk0
+    public final boolean D(f2.q1 q1Var) {
+        return true;
     }
 
-    public final void b(UUID uuid, Runnable runnable) {
-        this.b.put(uuid, runnable);
-        this.c.add(uuid);
-        AndroidUtilities.runOnUIThread(new qf.b(this, 22));
+    @Override // f2.r0
+    public final int h() {
+        return xf.i0.c().size();
     }
 
-    public final void c() {
-        ArrayList arrayList = this.c;
-        if (arrayList.size() == 0) {
-            return;
+    @Override // f2.r0
+    public final void v(f2.q1 q1Var, int i9) {
+        n1 n1Var = (n1) q1Var.a;
+        xf.i0 i0Var = (xf.i0) xf.i0.c().get(i9);
+        n1Var.getClass();
+        n1Var.setTypeface(i0Var.d());
+        String str = i0Var.c;
+        if (str == null) {
+            str = LocaleController.getString(i0Var.b);
         }
-        int size = arrayList.size() - 1;
-        UUID uuid = (UUID) arrayList.get(size);
-        HashMap hashMap = this.b;
-        Runnable runnable = (Runnable) hashMap.get(uuid);
-        hashMap.remove(uuid);
-        arrayList.remove(size);
-        runnable.run();
-        AndroidUtilities.runOnUIThread(new qf.b(this, 22));
+        n1Var.setText(str);
+    }
+
+    @Override // f2.r0
+    public final f2.q1 x(ViewGroup viewGroup, int i9) {
+        n1 n1Var = new n1(viewGroup.getContext());
+        n1Var.setLayoutParams(new f2.a1(-1, -2));
+        return new ik0(n1Var);
     }
 }

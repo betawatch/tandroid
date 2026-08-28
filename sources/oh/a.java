@@ -1,71 +1,118 @@
 package oh;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import ff.s;
+import g7.e6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.w5;
+import org.telegram.ui.Components.o9;
+import org.telegram.ui.Components.z8;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final class a extends Drawable {
-    public int b;
-    public int c = 255;
-    public final Drawable a = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.settings_arrow).mutate();
+public final class a extends FrameLayout implements w5 {
+    public final b6 a;
+    public final o9 b;
+    public final TextView c;
+    public final TextView d;
+    public final ImageView e;
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float exactCenterX = getBounds().exactCenterX();
-        float exactCenterY = getBounds().exactCenterY();
-        int w02 = g6.w0(null, g6.G6, false);
-        int w03 = g6.w0(null, g6.d6, false);
-        int i10 = this.b;
-        Drawable drawable = this.a;
-        if (i10 != w03) {
-            this.b = w03;
-            drawable.setColorFilter(new PorterDuffColorFilter(w03, PorterDuff.Mode.SRC_IN));
+    public a(Context context, b6 b6Var) {
+        super(context);
+        this.a = b6Var;
+        o9 o9Var = new o9(context);
+        this.b = o9Var;
+        o9Var.setRoundRadius(AndroidUtilities.dp(7.3125f));
+        addView(o9Var, e6.d(26, 26.0f, 19, 16.0f, 0.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setGravity(16);
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 16.0f);
+        textView.setSingleLine(true);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        linearLayout.addView(textView, e6.n(-1, -2));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 13.0f);
+        textView2.setSingleLine(true);
+        textView2.setEllipsize(truncateAt);
+        linearLayout.addView(textView2, e6.k(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
+        addView(linearLayout, e6.d(-1, -2.0f, 19, 58.0f, 0.0f, 48.0f, 1.0f));
+        ImageView imageView = new ImageView(context);
+        this.e = imageView;
+        imageView.setImageResource(R.drawable.msg_inputarrow);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView, e6.d(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
+        d();
+    }
+
+    public final void a(int i9, TLRPC.Chat chat) {
+        if (chat == null) {
+            return;
         }
-        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(7.6666665f), g6.l0(i0.b.k(w03, this.c)));
-        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(6.6666665f), g6.l0(i0.b.k(w02, this.c)));
-        gf.s.d(drawable, exactCenterX, exactCenterY, 17);
-        canvas.translate(0.0f, AndroidUtilities.dp(0.66f));
-        canvas.save();
-        canvas.rotate(90.0f, exactCenterX, exactCenterY);
-        gf.s.b(canvas, drawable, 0.8f);
-        canvas.restore();
+        TLRPC.ChatFull chatFull = MessagesController.getInstance(i9).getChatFull(chat.id);
+        setTitle(DialogObject.getShortName(chat));
+        setSubtitle(LocaleController.formatPluralString("CommunityWithChats", chatFull != null ? chatFull.linked_peers.size() : 0, new Object[0]));
+        this.b.e(chat, new z8(chat));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.c;
+    @Override // org.telegram.ui.ActionBar.w5
+    public final void d() {
+        int i9 = f6.z6;
+        b6 b6Var = this.a;
+        this.e.setColorFilter(f6.v0(i9, b6Var));
+        this.c.setTextColor(f6.v0(f6.G6, b6Var));
+        this.d.setTextColor(f6.v0(i9, b6Var));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(13.333333f);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Drawable drawable = f6.S0;
+        o9 o9Var = this.b;
+        s.a(canvas, drawable, (o9Var.getWidth() / 2.0f) + o9Var.getLeft(), (o9Var.getHeight() / 2.0f) + o9Var.getTop(), o9Var.getHeight());
+        super.dispatchDraw(canvas);
+        b6 b6Var = this.a;
+        Paint O = b6Var != null ? b6Var.O("paintDivider") : null;
+        if (O == null) {
+            O = f6.k0;
+        }
+        canvas.drawLine(AndroidUtilities.dp(58.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, O);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(13.333333f);
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.c = i10;
-        this.a.setAlpha(i10);
+    public void setSubtitle(CharSequence charSequence) {
+        this.d.setText(charSequence);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public void setTitle(CharSequence charSequence) {
+        this.c.setText(charSequence);
     }
 }

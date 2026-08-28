@@ -1,50 +1,28 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import java.util.ArrayList;
-import java.util.HashMap;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class cp0 implements zp0 {
-    public final /* synthetic */ HashMap a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ jp0 c;
+public final class cp0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ ip0 a;
 
-    public cp0(jp0 jp0Var, HashMap hashMap, ArrayList arrayList) {
-        this.c = jp0Var;
-        this.a = hashMap;
-        this.b = arrayList;
+    public cp0(ip0 ip0Var) {
+        this.a = ip0Var;
     }
 
-    @Override // org.telegram.ui.zp0
-    public final void b(Editable editable) {
-        jp0 jp0Var = this.c;
-        org.telegram.ui.Components.tt ttVar = jp0Var.I;
-        jp0Var.a = editable;
-        ttVar.setText(editable);
-    }
-
-    @Override // org.telegram.ui.zp0
-    public final /* synthetic */ boolean e() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.zp0
-    public final void i(int i10, boolean z10, boolean z11) {
-        jp0 jp0Var = this.c;
-        jp0Var.removeSelfFromStack();
-        if (z10) {
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i9) {
+        ip0 ip0Var = this.a;
+        if (i9 == -1) {
+            ip0Var.finishFragment();
             return;
         }
-        jp0Var.V(this.a, this.b, z11, i10);
-    }
-
-    @Override // org.telegram.ui.zp0
-    public final void a() {
-    }
-
-    @Override // org.telegram.ui.zp0
-    public final /* synthetic */ void h() {
+        if (i9 != 1) {
+            if (i9 == 2) {
+                ip0.T(ip0Var, null);
+            }
+        } else if (ip0Var.R != null) {
+            ip0Var.finishFragment(false);
+            ip0Var.R.b();
+        }
     }
 }

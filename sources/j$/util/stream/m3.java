@@ -38,13 +38,13 @@ public final class m3 extends p3 implements h5 {
     }
 
     @Override // j$.util.stream.p3, j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i10) {
-        int i11 = this.f;
-        if (i11 >= this.g) {
+    public final void accept(int i9) {
+        int i10 = this.f;
+        if (i10 >= this.g) {
             throw new IndexOutOfBoundsException(Integer.toString(this.f));
         }
         int[] iArr = this.h;
-        this.f = i11 + 1;
-        iArr[i11] = i10;
+        this.f = i10 + 1;
+        iArr[i10] = i9;
     }
 }

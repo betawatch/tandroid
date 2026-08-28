@@ -11,9 +11,9 @@ public final class c0 {
         this.b = 0;
     }
 
-    public c0(int i10) {
+    public c0(int i9) {
         this.a = true;
-        this.b = i10;
+        this.b = i9;
     }
 
     public final boolean equals(Object obj) {

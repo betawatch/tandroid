@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class EmuDetector {
     private static final String IP = "10.0.2.15";
@@ -38,7 +38,7 @@ public class EmuDetector {
     private boolean isTelephony = false;
     private boolean isCheckPackage = true;
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public enum EmulatorTypes {
         GENY,
         ANDY,
@@ -48,12 +48,12 @@ public class EmuDetector {
         X86
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public interface OnEmulatorDetectorListener {
         void onResult(boolean z10);
     }
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class Property {
         public String name;
         public String seek_value;
@@ -214,16 +214,16 @@ public class EmuDetector {
 
     private boolean checkQEmuDrivers() {
         File[] fileArr = {new File("/proc/tty/drivers"), new File("/proc/cpuinfo")};
-        for (int i10 = 0; i10 < 2; i10++) {
-            File file = fileArr[i10];
+        for (int i9 = 0; i9 < 2; i9++) {
+            File file = fileArr[i9];
             if (file.exists() && file.canRead()) {
                 byte[] bArr = new byte[1024];
                 try {
                     FileInputStream fileInputStream = new FileInputStream(file);
                     fileInputStream.read(bArr);
                     fileInputStream.close();
-                } catch (Exception e9) {
-                    e9.printStackTrace();
+                } catch (Exception e10) {
+                    e10.printStackTrace();
                 }
                 String str = new String(bArr);
                 for (String str2 : QEMU_DRIVERS) {
@@ -237,18 +237,18 @@ public class EmuDetector {
     }
 
     private boolean checkQEmuProps() {
-        int i10 = 0;
+        int i9 = 0;
         for (Property property : PROPERTIES) {
             String prop = getProp(this.mContext, property.name);
             String str = property.seek_value;
             if (str == null && prop != null) {
-                i10++;
+                i9++;
             }
             if (str != null && prop.contains(str)) {
-                i10++;
+                i9++;
             }
         }
-        return i10 >= 5;
+        return i9 >= 5;
     }
 
     private boolean checkTelephony() {

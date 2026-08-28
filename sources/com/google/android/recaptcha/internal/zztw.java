@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 final class zztw implements zzug {
     private final zzts zza;
@@ -63,7 +63,7 @@ final class zztw implements zzug {
         while (zzufVar.zzc() != Integer.MAX_VALUE) {
             try {
                 int zzd = zzufVar.zzd();
-                int i10 = 0;
+                int i9 = 0;
                 if (zzd != 11) {
                     if ((zzd & 7) != 2) {
                         zzO = zzufVar.zzO();
@@ -93,8 +93,8 @@ final class zztw implements zzug {
                                 zzqmVar = zzufVar.zzp();
                             }
                         } else {
-                            i10 = zzufVar.zzj();
-                            zzsmVar = zzryVar.zza(this.zza, i10);
+                            i9 = zzufVar.zzj();
+                            zzsmVar = zzryVar.zza(this.zza, i9);
                         }
                     }
                     if (zzufVar.zzd() != 12) {
@@ -106,7 +106,7 @@ final class zztw implements zzug {
                         if (zzsmVar != null) {
                             throw null;
                         }
-                        zzuvVar.zzg(zza, i10, zzqmVar);
+                        zzuvVar.zzg(zza, i9, zzqmVar);
                     }
                 }
             } finally {
@@ -121,8 +121,8 @@ final class zztw implements zzug {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void zzi(Object obj, byte[] bArr, int i10, int i11, zzqb zzqbVar) {
-        int i12;
+    public final void zzi(Object obj, byte[] bArr, int i9, int i10, zzqb zzqbVar) {
+        int i11;
         zzsn zzsnVar = (zzsn) obj;
         zzuw zzuwVar = zzsnVar.zzc;
         if (zzuwVar == zzuw.zzc()) {
@@ -132,66 +132,66 @@ final class zztw implements zzug {
         zzuw zzuwVar2 = zzuwVar;
         ((zzsk) obj).zzi();
         zzsm zzsmVar = null;
-        while (i10 < i11) {
-            int zzi = zzqc.zzi(bArr, i10, zzqbVar);
-            int i13 = zzqbVar.zza;
-            if (i13 == 11) {
+        while (i9 < i10) {
+            int zzi = zzqc.zzi(bArr, i9, zzqbVar);
+            int i12 = zzqbVar.zza;
+            if (i12 == 11) {
                 byte[] bArr2 = bArr;
-                int i14 = i11;
+                int i13 = i10;
                 zzqb zzqbVar2 = zzqbVar;
-                int i15 = 0;
+                int i14 = 0;
                 zzqm zzqmVar = null;
                 while (true) {
-                    if (zzi >= i14) {
-                        i12 = zzi;
+                    if (zzi >= i13) {
+                        i11 = zzi;
                         break;
                     }
-                    i12 = zzqc.zzi(bArr2, zzi, zzqbVar2);
-                    int i16 = zzqbVar2.zza;
-                    int i17 = i16 >>> 3;
-                    int i18 = i16 & 7;
-                    if (i17 != 2) {
-                        if (i17 == 3) {
+                    i11 = zzqc.zzi(bArr2, zzi, zzqbVar2);
+                    int i15 = zzqbVar2.zza;
+                    int i16 = i15 >>> 3;
+                    int i17 = i15 & 7;
+                    if (i16 != 2) {
+                        if (i16 == 3) {
                             if (zzsmVar != null) {
-                                int i19 = zzuc.zza;
+                                int i18 = zzuc.zza;
                                 throw null;
                             }
-                            if (i18 == 2) {
-                                zzi = zzqc.zza(bArr2, i12, zzqbVar2);
+                            if (i17 == 2) {
+                                zzi = zzqc.zza(bArr2, i11, zzqbVar2);
                                 zzqmVar = (zzqm) zzqbVar2.zzc;
                             }
                         }
-                        if (i16 != 12) {
+                        if (i15 != 12) {
                             break;
                         } else {
-                            zzi = zzqc.zzo(i16, bArr2, i12, i14, zzqbVar2);
+                            zzi = zzqc.zzo(i15, bArr2, i11, i13, zzqbVar2);
                         }
-                    } else if (i18 == 0) {
-                        zzi = zzqc.zzi(bArr2, i12, zzqbVar2);
-                        i15 = zzqbVar2.zza;
-                        zzsmVar = zzqbVar2.zzd.zza(this.zza, i15);
-                    } else if (i16 != 12) {
+                    } else if (i17 == 0) {
+                        zzi = zzqc.zzi(bArr2, i11, zzqbVar2);
+                        i14 = zzqbVar2.zza;
+                        zzsmVar = zzqbVar2.zzd.zza(this.zza, i14);
+                    } else if (i15 != 12) {
                     }
                 }
                 if (zzqmVar != null) {
-                    zzuwVar2.zzj((i15 << 3) | 2, zzqmVar);
+                    zzuwVar2.zzj((i14 << 3) | 2, zzqmVar);
                 }
-                i10 = i12;
+                i9 = i11;
                 bArr = bArr2;
-                i11 = i14;
+                i10 = i13;
                 zzqbVar = zzqbVar2;
-            } else if ((i13 & 7) == 2) {
-                zzsmVar = zzqbVar.zzd.zza(this.zza, i13 >>> 3);
+            } else if ((i12 & 7) == 2) {
+                zzsmVar = zzqbVar.zzd.zza(this.zza, i12 >>> 3);
                 if (zzsmVar != null) {
-                    int i20 = zzuc.zza;
+                    int i19 = zzuc.zza;
                     throw null;
                 }
-                i10 = zzqc.zzh(i13, bArr, zzi, i11, zzuwVar2, zzqbVar);
+                i9 = zzqc.zzh(i12, bArr, zzi, i10, zzuwVar2, zzqbVar);
             } else {
-                i10 = zzqc.zzo(i13, bArr, zzi, i11, zzqbVar);
+                i9 = zzqc.zzo(i12, bArr, zzi, i10, zzqbVar);
             }
         }
-        if (i10 != i11) {
+        if (i9 != i10) {
             throw new zzsx("Failed to parse the message.");
         }
     }

@@ -1,92 +1,21 @@
 package com.google.android.gms.internal.cast;
 
-import java.security.AccessController;
-import java.security.PrivilegedActionException;
+import java.lang.reflect.Field;
+import java.security.PrivilegedExceptionAction;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class c4 extends g7.p5 {
-    public static final Unsafe a;
-    public static final long b;
-    public static final long c;
-    public static final long d;
-    public static final long e;
-    public static final long f;
-
-    static {
-        Unsafe unsafe;
-        try {
-            try {
-                unsafe = Unsafe.getUnsafe();
-            } catch (PrivilegedActionException e9) {
-                throw new RuntimeException("Could not initialize intrinsics", e9.getCause());
+public final class c4 implements PrivilegedExceptionAction {
+    @Override // java.security.PrivilegedExceptionAction
+    public final /* bridge */ /* synthetic */ Object run() {
+        for (Field field : Unsafe.class.getDeclaredFields()) {
+            field.setAccessible(true);
+            Object obj = field.get(null);
+            if (Unsafe.class.isInstance(obj)) {
+                return (Unsafe) Unsafe.class.cast(obj);
             }
-        } catch (SecurityException unused) {
-            unsafe = (Unsafe) AccessController.doPrivileged(new b4());
         }
-        try {
-            c = unsafe.objectFieldOffset(e4.class.getDeclaredField("c"));
-            b = unsafe.objectFieldOffset(e4.class.getDeclaredField("b"));
-            d = unsafe.objectFieldOffset(e4.class.getDeclaredField("a"));
-            e = unsafe.objectFieldOffset(d4.class.getDeclaredField("a"));
-            f = unsafe.objectFieldOffset(d4.class.getDeclaredField("b"));
-            a = unsafe;
-        } catch (NoSuchFieldException e10) {
-            throw new RuntimeException(e10);
-        } catch (RuntimeException e11) {
-            throw e11;
-        }
-    }
-
-    @Override // g7.p5
-    public final y3 a(e4 e4Var) {
-        y3 y3Var;
-        y3 y3Var2 = y3.d;
-        while (true) {
-            y3Var = e4Var.b;
-            if (y3Var2 == y3Var) {
-                break;
-            }
-            e4 e4Var2 = e4Var;
-            if (g4.a(a, e4Var2, b, y3Var, y3Var2)) {
-                break;
-            }
-            e4Var = e4Var2;
-        }
-        return y3Var;
-    }
-
-    @Override // g7.p5
-    public final d4 b(e4 e4Var) {
-        d4 d4Var;
-        d4 d4Var2 = d4.c;
-        do {
-            d4Var = e4Var.c;
-            if (d4Var2 == d4Var) {
-                break;
-            }
-        } while (!f(e4Var, d4Var, d4Var2));
-        return d4Var;
-    }
-
-    @Override // g7.p5
-    public final void c(d4 d4Var, d4 d4Var2) {
-        a.putObject(d4Var, f, d4Var2);
-    }
-
-    @Override // g7.p5
-    public final void d(d4 d4Var, Thread thread) {
-        a.putObject(d4Var, e, thread);
-    }
-
-    @Override // g7.p5
-    public final boolean e(e4 e4Var, Object obj, Object obj2) {
-        return g4.a(a, e4Var, d, obj, obj2);
-    }
-
-    @Override // g7.p5
-    public final boolean f(e4 e4Var, d4 d4Var, d4 d4Var2) {
-        return g4.a(a, e4Var, c, d4Var, d4Var2);
+        throw new NoSuchFieldError("the Unsafe");
     }
 }

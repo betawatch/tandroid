@@ -1,30 +1,27 @@
 package org.telegram.messenger;
 
-import java.util.function.ToLongFunction;
-import org.telegram.messenger.NotificationsController;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ie implements ToLongFunction {
+public final /* synthetic */ class ie implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController.DialogPhotos b;
 
-    public /* synthetic */ ie(int i10) {
-        this.a = i10;
+    public /* synthetic */ ie(MessagesController.DialogPhotos dialogPhotos, int i9) {
+        this.a = i9;
+        this.b = dialogPhotos;
     }
 
-    @Override // java.util.function.ToLongFunction
-    public final long applyAsLong(Object obj) {
-        long j10;
-        long j11;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                return Long.parseLong((String) obj);
-            case 1:
-                j10 = ((NotificationsController.StoryNotification) obj).date;
-                return j10;
+                this.b.lambda$loadCache$5();
+                break;
             default:
-                j11 = ((NotificationsController.StoryNotification) obj).date;
-                return j11;
+                this.b.lambda$saveCache$6();
+                break;
         }
     }
 }

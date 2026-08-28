@@ -2,91 +2,32 @@ package kh;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.jk0;
-import org.telegram.ui.Components.xt0;
-import org.telegram.ui.Components.ys0;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final class j extends xt0 {
-    public final /* synthetic */ r m3;
+public final class j extends ImageView {
+    public final float a;
+    public final org.telegram.ui.Components.pc b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(r rVar, Context context) {
+    public j(Context context) {
         super(context);
-        this.m3 = rVar;
+        this.b = new org.telegram.ui.Components.pc(this);
+        this.a = 0.2f;
     }
 
-    @Override // org.telegram.ui.Components.xt0
-    public final boolean A1() {
-        return true;
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        float a2 = this.b.a(this.a);
+        canvas.scale(a2, a2, getWidth() / 2.0f, getHeight() / 2.0f);
+        super.draw(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.xt0, org.telegram.ui.Components.y9, org.telegram.ui.Components.zk0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int i10 = 0;
-        for (int i11 = 0; i11 < getChildCount(); i11++) {
-            int bottom = getChildAt(i11).getBottom() - getPaddingTop();
-            if (bottom > i10) {
-                i10 = bottom;
-            }
-        }
-        float f10 = i10;
-        r rVar = this.m3;
-        o oVar = rVar.F;
-        if (rVar.b) {
-            ys0 ys0Var = rVar.r;
-            int i12 = 0;
-            for (int i13 = 0; i13 < ys0Var.getChildCount(); i13++) {
-                int bottom2 = ys0Var.getChildAt(i13).getBottom() - ys0Var.getPaddingTop();
-                if (bottom2 > i12) {
-                    i12 = bottom2;
-                }
-            }
-            f10 = AndroidUtilities.lerp(f10, i12, rVar.c);
-        }
-        oVar.setVisibility(rVar.v.h() <= 0 ? 8 : 0);
-        oVar.setTranslationY(f10);
-    }
-
-    @Override // org.telegram.ui.Components.xt0
-    public final int getAnimateToColumnsCount() {
-        return this.m3.e;
-    }
-
-    @Override // org.telegram.ui.Components.xt0
-    public final float getChangeColumnsProgress() {
-        return this.m3.c;
-    }
-
-    @Override // org.telegram.ui.Components.xt0
-    public final int getColumnsCount() {
-        return this.m3.d;
-    }
-
-    @Override // org.telegram.ui.Components.xt0
-    public final jk0 getMovingAdapter() {
-        r rVar = this.m3;
-        if (rVar.C.y != 0 || rVar.S.C.y1) {
-            return null;
-        }
-        return rVar.v;
-    }
-
-    @Override // org.telegram.ui.Components.xt0
-    public final jk0 getSupportingAdapter() {
-        return this.m3.w;
-    }
-
-    @Override // org.telegram.ui.Components.xt0
-    public final ys0 getSupportingListView() {
-        return this.m3.r;
-    }
-
-    @Override // org.telegram.ui.Components.xt0
-    public final boolean z1() {
-        return this.m3.b;
+    @Override // android.view.View
+    public void setPressed(boolean z10) {
+        super.setPressed(z10);
+        this.b.c(z10);
     }
 }

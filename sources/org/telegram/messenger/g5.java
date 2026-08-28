@@ -1,29 +1,14 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.ImageLoader;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ImageLoader.HttpImageTask b;
-    public final /* synthetic */ Boolean c;
-
-    public /* synthetic */ g5(ImageLoader.HttpImageTask httpImageTask, Boolean bool, int i10) {
-        this.a = i10;
-        this.b = httpImageTask;
-        this.c = bool;
+public abstract /* synthetic */ class g5 {
+    public static void b(ImageReceiver.ImageReceiverDelegate imageReceiverDelegate, ImageReceiver imageReceiver) {
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$onPostExecute$3(this.c);
-                break;
-            default:
-                this.b.lambda$onPostExecute$4(this.c);
-                break;
-        }
+    public static void a(ImageReceiver.ImageReceiverDelegate imageReceiverDelegate, int i9, String str, Drawable drawable) {
     }
 }

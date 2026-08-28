@@ -1,56 +1,50 @@
 package org.telegram.ui.Components;
 
-import java.util.Locale;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.R;
+import android.app.Activity;
+import android.graphics.Point;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nh0 implements bc0, dc0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sh0 b;
+public final class nh0 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ qh0 b;
 
-    public /* synthetic */ nh0(sh0 sh0Var, int i10) {
-        this.a = i10;
-        this.b = sh0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nh0(qh0 qh0Var, Activity activity) {
+        super(activity);
+        this.b = qh0Var;
+        this.a = false;
     }
 
-    @Override // org.telegram.ui.Components.bc0
-    public String g(int i10) {
-        int i11 = this.a;
-        sh0 sh0Var = this.b;
-        switch (i11) {
-            case 0:
-                return sh0Var.K ? LocaleController.formatString("MilesShort", R.string.MilesShort, Integer.valueOf(i10)) : LocaleController.formatString("KMetersShort", R.string.KMetersShort, Integer.valueOf(i10));
-            default:
-                if (!sh0Var.K) {
-                    if (i10 == 1) {
-                        return LocaleController.formatString("MetersShort", R.string.MetersShort, 50);
-                    }
-                    if (i10 > 1) {
-                        i10--;
-                    }
-                    return LocaleController.formatString("MetersShort", R.string.MetersShort, Integer.valueOf(i10 * 100));
-                }
-                if (i10 == 1) {
-                    return LocaleController.formatString("FootsShort", R.string.FootsShort, Integer.valueOf(MediaDataController.MAX_LINKS_COUNT));
-                }
-                if (i10 > 1) {
-                    i10--;
-                }
-                Locale locale = Locale.US;
-                return i0.a.k(i10, ".");
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i9, int i10) {
+        qh0 qh0Var = this.b;
+        bc0 bc0Var = qh0Var.D;
+        bc0 bc0Var2 = qh0Var.C;
+        this.a = true;
+        Point point = AndroidUtilities.displaySize;
+        int i11 = point.x > point.y ? 3 : 5;
+        bc0Var2.setItemCount(i11);
+        bc0Var.setItemCount(i11);
+        bc0Var2.getLayoutParams().height = AndroidUtilities.dp(54.0f) * i11;
+        bc0Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * i11;
+        this.a = false;
+        int size = View.MeasureSpec.getSize(i9);
+        qh0Var.J = size;
+        if (size != 0) {
+            qh0Var.c(false);
         }
+        super.onMeasure(i9, i10);
     }
 
-    @Override // org.telegram.ui.Components.dc0
-    public void m(fc0 fc0Var, int i10) {
-        sh0 sh0Var = this.b;
-        try {
-            sh0Var.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
         }
-        sh0Var.c(true);
+        super.requestLayout();
     }
 }

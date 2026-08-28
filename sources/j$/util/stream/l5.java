@@ -9,8 +9,8 @@ public final class l5 extends z4 {
     public final /* synthetic */ long t;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l5(b5 b5Var, int i10, long j10, long j11) {
-        super(b5Var, i10);
+    public l5(b5 b5Var, int i9, long j10, long j11) {
+        super(b5Var, i9);
         this.s = j10;
         this.t = j11;
     }
@@ -70,7 +70,7 @@ public final class l5 extends z4 {
     }
 
     @Override // j$.util.stream.a
-    public final j5 Q0(int i10, j5 j5Var) {
+    public final j5 Q0(int i9, j5 j5Var) {
         return new k5(this, j5Var);
     }
 }

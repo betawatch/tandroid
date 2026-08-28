@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class CharAtom extends CharSymbol {
     private final char c;
@@ -13,13 +13,13 @@ public class CharAtom extends CharSymbol {
         this.mathMode = z10;
     }
 
-    private Char getChar(TeXFont teXFont, int i10, boolean z10) {
+    private Char getChar(TeXFont teXFont, int i9, boolean z10) {
         char c10 = this.c;
         if (z10 && Character.isLowerCase(c10)) {
             c10 = Character.toUpperCase(this.c);
         }
         String str = this.textStyle;
-        return str == null ? teXFont.getDefaultChar(c10, i10) : teXFont.getChar(c10, str, i10);
+        return str == null ? teXFont.getDefaultChar(c10, i9) : teXFont.getChar(c10, str, i9);
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom

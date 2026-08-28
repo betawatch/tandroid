@@ -1,27 +1,27 @@
 package v2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class e implements r9.d {
+public final class e implements q9.d {
     public static final e a = new e();
-    public static final r9.c b = r9.c.c("eventTimeMs");
-    public static final r9.c c = r9.c.c("eventCode");
-    public static final r9.c d = r9.c.c("eventUptimeMs");
-    public static final r9.c e = r9.c.c("sourceExtension");
-    public static final r9.c f = r9.c.c("sourceExtensionJsonProto3");
-    public static final r9.c g = r9.c.c("timezoneOffsetSeconds");
-    public static final r9.c h = r9.c.c("networkConnectionInfo");
+    public static final q9.c b = q9.c.c("eventTimeMs");
+    public static final q9.c c = q9.c.c("eventCode");
+    public static final q9.c d = q9.c.c("eventUptimeMs");
+    public static final q9.c e = q9.c.c("sourceExtension");
+    public static final q9.c f = q9.c.c("sourceExtensionJsonProto3");
+    public static final q9.c g = q9.c.c("timezoneOffsetSeconds");
+    public static final q9.c h = q9.c.c("networkConnectionInfo");
 
-    @Override // r9.a
+    @Override // q9.a
     public final void a(Object obj, Object obj2) {
-        r9.e eVar = (r9.e) obj2;
+        q9.e eVar = (q9.e) obj2;
         k kVar = (k) ((r) obj);
-        eVar.c(b, kVar.a);
-        eVar.a(c, kVar.b);
-        eVar.c(d, kVar.c);
-        eVar.a(e, kVar.d);
-        eVar.a(f, kVar.e);
-        eVar.c(g, kVar.f);
-        eVar.a(h, kVar.g);
+        eVar.d(b, kVar.a);
+        eVar.g(c, kVar.b);
+        eVar.d(d, kVar.c);
+        eVar.g(e, kVar.d);
+        eVar.g(f, kVar.e);
+        eVar.d(g, kVar.f);
+        eVar.g(h, kVar.g);
     }
 }

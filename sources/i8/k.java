@@ -1,177 +1,77 @@
 package i8;
 
-import android.app.Service;
-import android.content.ComponentName;
-import android.content.Intent;
-import android.os.HandlerThread;
-import android.os.IBinder;
-import android.os.Looper;
+import android.net.Uri;
 import android.util.Log;
-import com.google.android.gms.tasks.Task;
-import java.util.List;
+import com.google.android.gms.common.data.DataHolder;
+import java.util.HashMap;
+import java.util.Map;
+import org.telegram.messenger.BuildConfig;
+import org.telegram.ui.Cells.j2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class k extends Service implements c {
-    public static final String BIND_LISTENER_INTENT_ACTION = "com.google.android.gms.wearable.BIND_LISTENER";
-    private ComponentName zza;
-    private p zzb;
-    private IBinder zzc;
-    private Intent zzd;
-    private Looper zze;
-    private boolean zzg;
-    private final Object zzf = new Object();
-    private j8.d zzh = new j8.d(new k5.i(this, 18));
+public final class k extends v5.a {
+    public final /* synthetic */ int d;
+    public final int e;
 
-    public Looper getLooper() {
-        if (this.zze == null) {
-            HandlerThread handlerThread = new HandlerThread("WearableListenerService");
-            handlerThread.start();
-            this.zze = handlerThread.getLooper();
-        }
-        return this.zze;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ k(DataHolder dataHolder, int i9, int i10, int i11) {
+        super(dataHolder, i9);
+        this.d = i11;
+        this.e = i10;
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0019, code lost:
-    
-        if (r1.equals(i8.k.BIND_LISTENER_INTENT_ACTION) != false) goto L28;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0022, code lost:
-    
-        if (r1.equals("com.google.android.gms.wearable.CHANNEL_EVENT") != false) goto L28;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x002b, code lost:
-    
-        if (r1.equals("com.google.android.gms.wearable.DATA_CHANGED") != false) goto L28;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0034, code lost:
-    
-        if (r1.equals("com.google.android.gms.wearable.MESSAGE_RECEIVED") != false) goto L28;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x003d, code lost:
-    
-        if (r1.equals("com.google.android.gms.wearable.REQUEST_RECEIVED") != false) goto L28;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0046, code lost:
-    
-        if (r1.equals("com.google.android.gms.wearable.CAPABILITY_CHANGED") != false) goto L28;
-     */
-    @Override // android.app.Service
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final IBinder onBind(Intent intent) {
-        String action;
-        if (intent == null || (action = intent.getAction()) == null) {
-            return null;
-        }
-        switch (action.hashCode()) {
-            case -1487371046:
-                break;
-            case -1140095138:
-                break;
-            case -786751258:
-                break;
-            case 915816236:
-                break;
-            case 1003809169:
-                break;
-            case 1460975593:
-                break;
-            default:
-                if (Log.isLoggable("WearableLS", 3)) {
-                    Log.d("WearableLS", "onBind: Provided bind intent (" + intent.toString() + ") is not allowed");
-                    break;
+    public final String toString() {
+        String str;
+        switch (this.d) {
+            case 0:
+                DataHolder dataHolder = this.a;
+                int i9 = this.b;
+                dataHolder.c(i9, "event_type");
+                if (dataHolder.d[this.c].getInt(i9, dataHolder.c.getInt("event_type")) == 1) {
+                    str = "changed";
+                } else {
+                    int i10 = this.b;
+                    dataHolder.c(i10, "event_type");
+                    str = dataHolder.d[this.c].getInt(i10, dataHolder.c.getInt("event_type")) == 2 ? "deleted" : "unknown";
                 }
-                break;
+                return j2.h("DataEventRef{ type=", str, ", dataitem=", new k(dataHolder, this.b, this.e, 1).toString(), " }");
+            default:
+                boolean isLoggable = Log.isLoggable("DataItem", 3);
+                DataHolder dataHolder2 = this.a;
+                int i11 = this.b;
+                dataHolder2.c(i11, "data");
+                byte[] blob = dataHolder2.d[this.c].getBlob(i11, dataHolder2.c.getInt("data"));
+                int i12 = this.e;
+                HashMap hashMap = new HashMap(i12);
+                for (int i13 = 0; i13 < i12; i13++) {
+                    l lVar = new l(dataHolder2, this.b + i13);
+                    DataHolder dataHolder3 = lVar.a;
+                    int i14 = lVar.b;
+                    dataHolder3.c(i14, "asset_key");
+                    if (dataHolder3.d[lVar.c].getString(i14, dataHolder3.c.getInt("asset_key")) != null) {
+                        int i15 = lVar.b;
+                        dataHolder3.c(i15, "asset_key");
+                        hashMap.put(dataHolder3.d[lVar.c].getString(i15, dataHolder3.c.getInt("asset_key")), lVar);
+                    }
+                }
+                StringBuilder sb2 = new StringBuilder("DataItemRef{ ");
+                int i16 = this.b;
+                dataHolder2.c(i16, "path");
+                sb2.append("uri=".concat(String.valueOf(Uri.parse(dataHolder2.d[this.c].getString(i16, dataHolder2.c.getInt("path"))))));
+                sb2.append(", dataSz=".concat((blob == null ? BuildConfig.BETA_URL : Integer.valueOf(blob.length)).toString()));
+                sb2.append(", numAssets=" + hashMap.size());
+                if (isLoggable && !hashMap.isEmpty()) {
+                    sb2.append(", assets=[");
+                    String str2 = "";
+                    for (Map.Entry entry : hashMap.entrySet()) {
+                        sb2.append(str2 + ((String) entry.getKey()) + ": " + ((h8.f) entry.getValue()).getId());
+                        str2 = ", ";
+                    }
+                    sb2.append("]");
+                }
+                sb2.append(" }");
+                return sb2.toString();
         }
-        return null;
-    }
-
-    @Override // i8.c
-    public void onChannelClosed(b bVar, int i10, int i11) {
-    }
-
-    @Override // i8.c
-    public void onChannelOpened(b bVar) {
-    }
-
-    @Override // android.app.Service
-    public void onCreate() {
-        super.onCreate();
-        this.zza = new ComponentName(this, getClass().getName());
-        if (Log.isLoggable("WearableLS", 3)) {
-            Log.d("WearableLS", "onCreate: ".concat(String.valueOf(this.zza)));
-        }
-        this.zzb = new p(this, getLooper());
-        Intent intent = new Intent(BIND_LISTENER_INTENT_ACTION);
-        this.zzd = intent;
-        intent.setComponent(this.zza);
-        this.zzc = new m(this);
-    }
-
-    @Override // android.app.Service
-    public void onDestroy() {
-        if (Log.isLoggable("WearableLS", 3)) {
-            Log.d("WearableLS", "onDestroy: ".concat(String.valueOf(this.zza)));
-        }
-        synchronized (this.zzf) {
-            this.zzg = true;
-            p pVar = this.zzb;
-            if (pVar == null) {
-                throw new IllegalStateException("onDestroy: mServiceHandler not set, did you override onCreate() but forget to call super.onCreate()? component=".concat(String.valueOf(this.zza)));
-            }
-            pVar.getLooper().quit();
-            pVar.a("quit");
-        }
-        super.onDestroy();
-    }
-
-    @Override // i8.c
-    public void onInputClosed(b bVar, int i10, int i11) {
-    }
-
-    public abstract void onMessageReceived(g gVar);
-
-    @Override // i8.c
-    public void onOutputClosed(b bVar, int i10, int i11) {
-    }
-
-    public Task<byte[]> onRequest(String str, String str2, byte[] bArr) {
-        return null;
-    }
-
-    public void onChannelClosed(d dVar, int i10, int i11) {
-    }
-
-    public void onChannelOpened(d dVar) {
-    }
-
-    public void onInputClosed(d dVar, int i10, int i11) {
-    }
-
-    public void onOutputClosed(d dVar, int i10, int i11) {
-    }
-
-    public void onCapabilityChanged(a aVar) {
-    }
-
-    public void onConnectedNodes(List<h> list) {
-    }
-
-    public void onDataChanged(e eVar) {
-    }
-
-    public void onEntityUpdate(l lVar) {
-    }
-
-    public void onNotificationReceived(n nVar) {
-    }
-
-    public void onPeerConnected(h hVar) {
-    }
-
-    public void onPeerDisconnected(h hVar) {
     }
 }

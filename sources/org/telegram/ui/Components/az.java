@@ -1,168 +1,175 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
+import android.util.SparseArray;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class az extends FrameLayout {
-    public static final /* synthetic */ int h = 0;
-    public final org.telegram.ui.ActionBar.c6 a;
-    public final TextView b;
-    public final View c;
-    public final ri0 d;
-    public boolean e;
-    public int f;
+public class az extends f2.y {
+    public final SparseArray Q;
+    public int R;
+    public int S;
+    public int T;
+    public final int U;
+    public final wk0 V;
+    public boolean W;
+    public boolean X;
 
-    public az(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        this.a = c6Var;
-        View radialProgressView = new RadialProgressView(context, null);
-        addView(radialProgressView, h7.z5.c(-2.0f, -2));
-        this.c = radialProgressView;
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
-        linearLayout.setGravity(1);
-        linearLayout.setClipChildren(false);
-        linearLayout.setClipToPadding(false);
-        linearLayout.setOrientation(1);
-        ri0 ri0Var = new ri0(context);
-        this.d = ri0Var;
-        ri0Var.setScaleType(ImageView.ScaleType.FIT_XY);
-        ri0Var.setImportantForAccessibility(2);
-        ri0Var.setVisibility(8);
-        linearLayout.addView(ri0Var, h7.z5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 20.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.c7, c6Var));
-        textView.setGravity(1);
-        textView.setText(LocaleController.getString(R.string.NoResult));
-        linearLayout.addView(textView, h7.z5.q(-2, -2, 17));
-        addView(linearLayout, h7.z5.c(-2.0f, -2));
-        AndroidUtilities.updateViewVisibilityAnimated(textView, false, 2.0f, false);
-        AndroidUtilities.updateViewVisibilityAnimated(radialProgressView, false, 1.0f, false);
-        setOnTouchListener(new kh.e(18));
+    public az(int i9, int i10, wk0 wk0Var) {
+        super(i9);
+        this.Q = new SparseArray();
+        this.R = -1;
+        this.W = true;
+        this.X = true;
+        this.V = wk0Var;
+        this.U = i10;
     }
 
-    public final void a(int i10, int i11, int i12) {
-        int i13 = i10 != 0 ? 0 : 8;
-        ri0 ri0Var = this.d;
-        ri0Var.setVisibility(i13);
-        if (i10 != 0) {
-            ri0Var.f(i10, i11, i12, null);
-            ri0Var.d();
+    public final void B1() {
+        wk0 wk0Var;
+        f2.r0 adapter;
+        int i9;
+        wk0 wk0Var2;
+        if (this.S <= 0 || !D1() || (adapter = (wk0Var = this.V).getAdapter()) == null) {
+            return;
         }
-    }
-
-    public final void b() {
-        AndroidUtilities.updateViewVisibilityAnimated(this.b, false, 0.9f, true);
-        AndroidUtilities.updateViewVisibilityAnimated(this.c, true, 1.0f, true);
-    }
-
-    public final void c() {
-        AndroidUtilities.updateViewVisibilityAnimated(this.b, true, 0.9f, true);
-        AndroidUtilities.updateViewVisibilityAnimated(this.c, false, 1.0f, true);
-    }
-
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int measuredHeight;
-        int paddingTop;
-        this.e = true;
-        int i14 = i12 - i10;
-        int i15 = i13 - i11;
-        int childCount = getChildCount();
-        for (int i16 = 0; i16 < childCount; i16++) {
-            View childAt = getChildAt(i16);
-            if (childAt.getVisibility() != 8) {
-                int measuredWidth = (i14 - childAt.getMeasuredWidth()) / 2;
-                View view = this.c;
-                if (childAt == view && (view instanceof h00)) {
-                    measuredHeight = (i15 - childAt.getMeasuredHeight()) / 2;
-                    paddingTop = getPaddingTop();
-                } else {
-                    int i17 = this.f;
-                    if (i17 == 2) {
-                        measuredHeight = (AndroidUtilities.dp(100.0f) - childAt.getMeasuredHeight()) / 2;
-                        paddingTop = getPaddingTop();
-                    } else if (i17 == 1) {
-                        measuredHeight = ((i15 / 2) - childAt.getMeasuredHeight()) / 2;
-                        paddingTop = getPaddingTop();
-                    } else {
-                        measuredHeight = (i15 - childAt.getMeasuredHeight()) / 2;
-                        paddingTop = getPaddingTop();
+        int i10 = this.J;
+        int h = adapter.h() - 1;
+        f2.x xVar = this.O;
+        int i11 = 0;
+        int i12 = 0;
+        boolean z10 = true;
+        int i13 = 0;
+        while (true) {
+            i9 = this.U;
+            if (i11 >= h) {
+                wk0Var2 = wk0Var;
+                break;
+            }
+            int i14 = xVar.i(i11);
+            i12 += i14;
+            if (i14 == i10 || i12 > i10) {
+                i12 = i14;
+                z10 = true;
+            }
+            if (z10) {
+                int j10 = adapter.j(i11);
+                SparseArray sparseArray = this.Q;
+                f2.q1 q1Var = (f2.q1) sparseArray.get(j10, null);
+                if (q1Var == null) {
+                    q1Var = adapter.g(wk0Var, j10);
+                    View view = q1Var.a;
+                    sparseArray.put(j10, q1Var);
+                    if (view.getLayoutParams() == null) {
+                        view.setLayoutParams(n());
                     }
                 }
-                int i18 = paddingTop + measuredHeight;
-                childAt.layout(measuredWidth, i18, childAt.getMeasuredWidth() + measuredWidth, childAt.getMeasuredHeight() + i18);
+                View view2 = q1Var.a;
+                if (this.W) {
+                    adapter.v(q1Var, i11);
+                }
+                f2.a1 a1Var = (f2.a1) view2.getLayoutParams();
+                wk0Var2 = wk0Var;
+                view2.measure(f2.z0.s(d(), this.T, this.k, E() + D() + ((ViewGroup.MarginLayoutParams) a1Var).leftMargin + ((ViewGroup.MarginLayoutParams) a1Var).rightMargin, ((ViewGroup.MarginLayoutParams) a1Var).width), f2.z0.s(this.X, this.S, this.l, C() + F() + ((ViewGroup.MarginLayoutParams) a1Var).topMargin + ((ViewGroup.MarginLayoutParams) a1Var).bottomMargin, ((ViewGroup.MarginLayoutParams) a1Var).height));
+                i13 += view2.getMeasuredHeight();
+                if (i13 >= (this.S - i9) - wk0Var2.getPaddingBottom()) {
+                    break;
+                } else {
+                    z10 = false;
+                }
+            } else {
+                wk0Var2 = wk0Var;
             }
+            i11++;
+            wk0Var = wk0Var2;
         }
-        this.e = false;
+        this.R = Math.max(0, ((this.S - i13) - i9) - wk0Var2.getPaddingBottom());
     }
 
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.e) {
-            return;
+    public final void C1() {
+        this.W = false;
+    }
+
+    public boolean D1() {
+        return true;
+    }
+
+    @Override // f2.z0
+    public final void Q() {
+        this.Q.clear();
+        B1();
+    }
+
+    @Override // f2.y, f2.z0
+    public final void V(RecyclerView recyclerView, int i9, int i10) {
+        super.V(recyclerView, i9, i10);
+        B1();
+    }
+
+    @Override // f2.y, f2.z0
+    public final void W(RecyclerView recyclerView) {
+        this.Q.clear();
+        B1();
+        super.W(recyclerView);
+    }
+
+    @Override // f2.y, f2.z0
+    public final void X(RecyclerView recyclerView, int i9, int i10) {
+        super.X(recyclerView, i9, i10);
+        B1();
+    }
+
+    @Override // f2.y, f2.z0
+    public final void Y(RecyclerView recyclerView, int i9, int i10) {
+        super.Y(recyclerView, i9, i10);
+        B1();
+    }
+
+    @Override // f2.z0
+    public final void Z() {
+        B1();
+    }
+
+    @Override // f2.y, f2.z0
+    public final void a0(RecyclerView recyclerView, int i9, int i10, Object obj) {
+        super.a0(recyclerView, i9, i10, obj);
+        B1();
+    }
+
+    @Override // f2.z0
+    public final void d0(f2.g1 g1Var, f2.n1 n1Var, int i9, int i10) {
+        int i11 = this.S;
+        this.T = View.MeasureSpec.getSize(i9);
+        int size = View.MeasureSpec.getSize(i10);
+        this.S = size;
+        if (i11 != size) {
+            B1();
         }
-        super.requestLayout();
+        super.d0(g1Var, n1Var, i9, i10);
     }
 
-    public void setProgressBarColor(int i10) {
-        View view = this.c;
-        if (view instanceof RadialProgressView) {
-            ((RadialProgressView) view).setProgressColor(i10);
+    @Override // f2.m0, f2.z0
+    public final boolean e() {
+        return this.X;
+    }
+
+    @Override // f2.y
+    public final void w1(View view, int i9, boolean z10) {
+        if (this.V.G(view).b() == B() - 1) {
+            ((ViewGroup.MarginLayoutParams) ((f2.a1) view.getLayoutParams())).height = Math.max(this.R, 0);
         }
+        super.w1(view, i9, z10);
     }
 
-    public void setShowAtCenter(boolean z10) {
-        this.f = z10 ? 1 : 0;
-    }
-
-    public void setShowAtTop(boolean z10) {
-        this.f = z10 ? 2 : 0;
-    }
-
-    public void setText(String str) {
-        this.b.setText(str);
-    }
-
-    public void setTextColor(int i10) {
-        this.b.setTextColor(i10);
-    }
-
-    public void setTextSize(int i10) {
-        this.b.setTextSize(1, i10);
-    }
-
-    public void setTopImage(int i10) {
-        TextView textView = this.b;
-        if (i10 == 0) {
-            textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, (Drawable) null, (Drawable) null);
-            return;
-        }
-        Drawable mutate = getContext().getResources().getDrawable(i10).mutate();
-        if (mutate != null) {
-            mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.c7, this.a), PorterDuff.Mode.MULTIPLY));
-        }
-        textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate, (Drawable) null, (Drawable) null);
-        textView.setCompoundDrawablePadding(AndroidUtilities.dp(1.0f));
+    public az(int i9, org.telegram.ui.u40 u40Var) {
+        super(i9, false);
+        this.Q = new SparseArray();
+        this.R = -1;
+        this.W = true;
+        this.X = true;
+        this.V = u40Var;
+        this.U = 0;
     }
 }

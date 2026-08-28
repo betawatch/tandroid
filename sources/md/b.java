@@ -1,27 +1,39 @@
 package md;
 
-import ld.o;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class b {
-    public o[] a;
-    public int b;
-    public int c;
+public abstract class b extends p {
+    public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(b.class, Object.class, "_consensus$volatile");
+    private volatile /* synthetic */ Object _consensus$volatile = a.a;
 
-    public final void a(o oVar) {
-        synchronized (this) {
-            try {
-                int i10 = this.b - 1;
-                this.b = i10;
-                if (i10 == 0) {
-                    this.c = 0;
+    @Override // md.p
+    public final Object a(Object obj) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = a;
+        Object obj2 = atomicReferenceFieldUpdater.get(this);
+        e5.c cVar = a.a;
+        if (obj2 == cVar) {
+            e5.c c10 = c(obj);
+            obj2 = atomicReferenceFieldUpdater.get(this);
+            if (obj2 == cVar) {
+                while (true) {
+                    if (atomicReferenceFieldUpdater.compareAndSet(this, cVar, c10)) {
+                        obj2 = c10;
+                        break;
+                    }
+                    if (atomicReferenceFieldUpdater.get(this) != cVar) {
+                        obj2 = atomicReferenceFieldUpdater.get(this);
+                        break;
+                    }
                 }
-                kotlin.jvm.internal.j.c(oVar, "null cannot be cast to non-null type kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot<kotlin.Any>");
-                oVar.a.set(null);
-            } catch (Throwable th) {
-                throw th;
             }
         }
+        b(obj, obj2);
+        return obj2;
     }
+
+    public abstract void b(Object obj, Object obj2);
+
+    public abstract e5.c c(Object obj);
 }

@@ -1,19 +1,19 @@
 package org.telegram.ui.Components.voip;
 
 import android.view.View;
-import org.telegram.ui.Components.q9;
+import org.telegram.ui.Components.r9;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t1 implements q9, ud.b {
+public final /* synthetic */ class t1 implements r9, td.b {
     public final /* synthetic */ View a;
 
-    @Override // ud.b
-    public void o(int i10, float f10, float f11, ud.c cVar) {
+    @Override // td.b
+    public void J0(int i9, float f10, float f11, td.c cVar) {
         this.a.invalidate();
     }
 
-    @Override // ud.b
-    public /* synthetic */ void A(float f10, int i10) {
+    @Override // td.b
+    public /* synthetic */ void B(float f10, int i9) {
     }
 }

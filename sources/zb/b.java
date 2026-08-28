@@ -1,38 +1,29 @@
 package zb;
 
-import java.nio.ByteBuffer;
-import java.nio.channels.ByteChannel;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b implements ByteChannel {
-    public ByteBuffer a;
+public final class b {
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public ArrayList f;
+    public ArrayList g;
+    public boolean h;
+    public int i;
+    public int j;
+    public int k;
+    public ArrayList l;
+    public int m;
+    public int n;
+    public int o;
+    public int p;
+    public int q;
 
-    @Override // java.nio.channels.Channel
-    public final boolean isOpen() {
-        return true;
-    }
-
-    @Override // java.nio.channels.ReadableByteChannel
-    public final int read(ByteBuffer byteBuffer) {
-        int remaining = byteBuffer.remaining();
-        ByteBuffer byteBuffer2 = this.a;
-        if (byteBuffer2.remaining() <= 0) {
-            return -1;
-        }
-        byteBuffer.put((ByteBuffer) byteBuffer2.duplicate().limit(byteBuffer.remaining() + byteBuffer2.position()));
-        byteBuffer2.position(byteBuffer2.position() + remaining);
-        return remaining;
-    }
-
-    @Override // java.nio.channels.WritableByteChannel
-    public final int write(ByteBuffer byteBuffer) {
-        int remaining = byteBuffer.remaining();
-        this.a.put(byteBuffer);
-        return remaining;
-    }
-
-    @Override // java.nio.channels.Channel, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
+    public final String toString() {
+        return "AvcDecoderConfigurationRecord{configurationVersion=" + this.a + ", avcProfileIndication=" + this.b + ", profileCompatibility=" + this.c + ", avcLevelIndication=" + this.d + ", lengthSizeMinusOne=" + this.e + ", hasExts=" + this.h + ", chromaFormat=" + this.i + ", bitDepthLumaMinus8=" + this.j + ", bitDepthChromaMinus8=" + this.k + ", lengthSizeMinusOnePaddingBits=" + this.m + ", numberOfSequenceParameterSetsPaddingBits=" + this.n + ", chromaFormatPaddingBits=" + this.o + ", bitDepthLumaMinus8PaddingBits=" + this.p + ", bitDepthChromaMinus8PaddingBits=" + this.q + '}';
     }
 }

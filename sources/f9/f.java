@@ -1,52 +1,35 @@
 package f9;
 
-import android.os.Process;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.util.Date;
-import java.util.Locale;
-import java.util.concurrent.atomic.AtomicLong;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.ui.co0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class f {
-    public static final AtomicLong a = new AtomicLong(0);
-    public static String b;
-
-    public f(x xVar) {
-        long time = new Date().getTime();
-        ByteBuffer allocate = ByteBuffer.allocate(4);
-        allocate.putInt((int) (time / 1000));
-        allocate.order(ByteOrder.BIG_ENDIAN);
-        allocate.position(0);
-        byte[] array = allocate.array();
-        byte b10 = array[0];
-        byte b11 = array[1];
-        byte b12 = array[2];
-        byte b13 = array[3];
-        byte[] a2 = a(time % 1000);
-        byte b14 = a2[0];
-        byte b15 = a2[1];
-        byte[] a3 = a(a.incrementAndGet());
-        byte b16 = a3[0];
-        byte b17 = a3[1];
-        byte[] a10 = a(Integer.valueOf(Process.myPid()).shortValue());
-        byte[] bArr = {b10, b11, b12, b13, b14, b15, b16, b17, a10[0], a10[1]};
-        String i10 = h.i(xVar.b().a);
-        String f10 = h.f(bArr);
-        Locale locale = Locale.US;
-        b = String.format(locale, "%s%s%s%s", f10.substring(0, 12), f10.substring(12, 16), f10.subSequence(16, 20), i10.substring(0, 12)).toUpperCase(locale);
-    }
-
-    public static byte[] a(long j10) {
-        ByteBuffer allocate = ByteBuffer.allocate(2);
-        allocate.putShort((short) j10);
-        allocate.order(ByteOrder.BIG_ENDIAN);
-        allocate.position(0);
-        return allocate.array();
-    }
-
-    public final String toString() {
-        return b;
+public final class f extends JSONObject {
+    public f(co0 co0Var, int i9) {
+        switch (i9) {
+            case 4:
+                put(TeXSymbolParser.TYPE_ATTR, "PAYMENT_GATEWAY");
+                Object obj = co0Var.I0;
+                if (obj == null) {
+                    f fVar = new f();
+                    fVar.put("gateway", "stripe");
+                    fVar.put("stripe:publishableKey", co0Var.f0);
+                    fVar.put("stripe:version", "3.5.0");
+                    put("parameters", fVar);
+                    break;
+                } else {
+                    put("parameters", obj);
+                    break;
+                }
+            default:
+                put(TeXSymbolParser.TYPE_ATTR, "DIRECT");
+                f fVar2 = new f();
+                fVar2.put("protocolVersion", "ECv2");
+                fVar2.put("publicKey", co0Var.G0);
+                put("parameters", fVar2);
+                break;
+        }
     }
 }

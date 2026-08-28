@@ -1,87 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class b40 extends Drawable {
-    public byte[] a;
-    public final Paint b = new Paint();
-    public final int[] c = {-1, -2758925, -13805707, -13657655};
+public final class b40 extends org.telegram.ui.rt0 {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ e40 b;
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        byte[] bArr = this.a;
-        if (bArr == null) {
-            return;
+    public b40(e40 e40Var, ArrayList arrayList) {
+        this.b = e40Var;
+        this.a = arrayList;
+    }
+
+    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
+    public final org.telegram.ui.bu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i9, boolean z10, boolean z11) {
+        d40 d40Var = this.b.b;
+        if (d40Var == null) {
+            return null;
         }
-        int length = bArr.length;
-        int[] iArr = this.c;
-        Paint paint = this.b;
-        if (length == 16) {
-            float floor = (float) Math.floor(Math.min(getBounds().width(), getBounds().height()) / 8.0f);
-            float f10 = 8.0f * floor;
-            float max = Math.max(0.0f, (getBounds().width() - f10) / 2.0f);
-            float max2 = Math.max(0.0f, (getBounds().height() - f10) / 2.0f);
-            int i10 = 0;
-            for (int i11 = 0; i11 < 8; i11++) {
-                int i12 = 0;
-                while (i12 < 8) {
-                    int i13 = i10 + 2;
-                    paint.setColor(iArr[Math.abs((this.a[i10 / 8] >> (i10 % 8)) & 3) % 4]);
-                    float f11 = (i12 * floor) + max;
-                    float f12 = i11 * floor;
-                    canvas.drawRect(f11, f12 + max2, f11 + floor, f12 + floor + max2, paint);
-                    i12++;
-                    i10 = i13;
-                }
-            }
-            return;
-        }
-        float floor2 = (float) Math.floor(Math.min(getBounds().width(), getBounds().height()) / 12.0f);
-        float f13 = 12.0f * floor2;
-        float max3 = Math.max(0.0f, (getBounds().width() - f13) / 2.0f);
-        float max4 = Math.max(0.0f, (getBounds().height() - f13) / 2.0f);
-        int i14 = 0;
-        int i15 = 0;
-        while (i15 < 12) {
-            int i16 = i14;
-            for (int i17 = 0; i17 < 12; i17++) {
-                paint.setColor(iArr[Math.abs((this.a[i16 / 8] >> (i16 % 8)) & 3) % 4]);
-                float f14 = (i17 * floor2) + max3;
-                float f15 = i15 * floor2;
-                canvas.drawRect(f14, f15 + max4, f14 + floor2, f15 + floor2 + max4, paint);
-                i16 += 2;
-            }
-            i15++;
-            i14 = i16;
-        }
+        return d40Var.getCloseIntoObject();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(32.0f);
+    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
+    public final boolean S() {
+        return false;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(32.0f);
+    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
+    public final void o(int i9, VideoEditedInfo videoEditedInfo, boolean z10, int i10, int i11, boolean z11) {
+        this.b.t((MediaController.PhotoEntry) this.a.get(0));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
+    public final boolean z() {
+        return false;
     }
 }

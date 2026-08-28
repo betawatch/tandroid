@@ -1,13 +1,8 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+import android.view.View;
+
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public interface xg0 {
-    void a();
-
-    void b(boolean z10);
-
-    void c();
-
-    void d();
+public final class xg0 extends View {
 }

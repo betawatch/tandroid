@@ -6,19 +6,19 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public abstract class m extends FrameLayout implements ud.i {
-    public final c6 a;
+public abstract class m extends FrameLayout implements td.i {
+    public final b6 a;
     public final com.google.firebase.messaging.l b;
-    public final ud.j c;
+    public final td.j c;
 
-    public m(Context context, c6 c6Var, com.google.firebase.messaging.l lVar) {
+    public m(Context context, b6 b6Var, com.google.firebase.messaging.l lVar) {
         super(context);
-        this.c = new ud.j(this, er.h, 350L);
-        this.a = c6Var;
+        this.c = new td.j(this, gr.h, 350L);
+        this.a = b6Var;
         this.b = lVar;
     }
 
@@ -26,7 +26,7 @@ public abstract class m extends FrameLayout implements ud.i {
         boolean z10;
         CharSequence charSequence2;
         boolean isEmpty = TextUtils.isEmpty(charSequence);
-        ud.j jVar = this.c;
+        td.j jVar = this.c;
         if (isEmpty) {
             jVar.a.r(null, true);
             return;
@@ -43,24 +43,24 @@ public abstract class m extends FrameLayout implements ud.i {
             charSequence2 = charSequence;
         }
         l lVar2 = new l(this, getContext());
-        int i10 = g6.gl;
-        c6 c6Var = this.a;
-        lVar2.setTextColor(g6.v0(i10, c6Var));
-        lVar2.setLinkTextColor(g6.v0(i10, c6Var));
+        int i9 = f6.gl;
+        b6 b6Var = this.a;
+        lVar2.setTextColor(f6.v0(i9, b6Var));
+        lVar2.setLinkTextColor(f6.v0(i9, b6Var));
         lVar2.setTextSize(1, 14.0f);
         lVar2.setAlpha(0.0f);
         lVar2.setText(charSequence2);
         if (z10) {
             lVar.c(lVar2);
         }
-        addView(lVar2, h7.z5.c(-2.0f, -2));
+        addView(lVar2, g7.e6.c(-2.0f, -2));
         jVar.i(lVar2, true);
     }
 
-    public void c(ud.j jVar) {
+    public void c(td.j jVar) {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
-            ud.e eVar = (ud.e) it.next();
+            td.e eVar = (td.e) it.next();
             float c10 = eVar.c();
             Object obj = eVar.a;
             float lerp = AndroidUtilities.lerp(0.85f, 1.0f, c10);
@@ -75,12 +75,12 @@ public abstract class m extends FrameLayout implements ud.i {
     public final void d() {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
-            ud.e eVar = (ud.e) it.next();
+            td.e eVar = (td.e) it.next();
             l lVar = (l) eVar.a;
-            int i10 = g6.gl;
-            c6 c6Var = this.a;
-            lVar.setTextColor(g6.v0(i10, c6Var));
-            ((l) eVar.a).setLinkTextColor(g6.v0(i10, c6Var));
+            int i9 = f6.gl;
+            b6 b6Var = this.a;
+            lVar.setTextColor(f6.v0(i9, b6Var));
+            ((l) eVar.a).setLinkTextColor(f6.v0(i9, b6Var));
         }
     }
 
@@ -88,7 +88,7 @@ public abstract class m extends FrameLayout implements ud.i {
         return this.c.a.d.c.a;
     }
 
-    @Override // ud.i
+    @Override // td.i
     public final /* synthetic */ void b() {
     }
 }

@@ -1,41 +1,11 @@
 package g;
 
-import android.R;
-import android.content.Context;
-import android.util.AttributeSet;
-import android.view.View;
-import java.lang.reflect.Constructor;
+import android.util.LongSparseArray;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class v {
-    public static final Class[] b = {Context.class, AttributeSet.class};
-    public static final int[] c = {R.attr.onClick};
-    public static final int[] d = {R.attr.accessibilityHeading};
-    public static final int[] e = {R.attr.accessibilityPaneTitle};
-    public static final int[] f = {R.attr.screenReaderFocusable};
-    public static final String[] g = {"android.widget.", "android.view.", "android.webkit."};
-    public static final a0.k h = new a0.k(0);
-    public final Object[] a = new Object[2];
-
-    public final View a(Context context, String str, String str2) {
-        String concat;
-        a0.k kVar = h;
-        Constructor constructor = (Constructor) kVar.get(str);
-        if (constructor == null) {
-            if (str2 != null) {
-                try {
-                    concat = str2.concat(str);
-                } catch (Exception unused) {
-                    return null;
-                }
-            } else {
-                concat = str;
-            }
-            constructor = Class.forName(concat, false, context.getClassLoader()).asSubclass(View.class).getConstructor(b);
-            kVar.put(str, constructor);
-        }
-        constructor.setAccessible(true);
-        return (View) constructor.newInstance(this.a);
+public abstract class v {
+    public static void a(LongSparseArray longSparseArray) {
+        longSparseArray.clear();
     }
 }

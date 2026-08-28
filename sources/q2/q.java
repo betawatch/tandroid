@@ -1,6 +1,6 @@
 package q2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class q {
     public final long a;
@@ -27,9 +27,9 @@ public final class q {
     public final int hashCode() {
         long j10 = this.a;
         long j11 = this.b;
-        int i10 = ((((int) (j10 ^ (j10 >>> 32))) * 31) + ((int) (j11 ^ (j11 >>> 32)))) * 31;
+        int i9 = ((((int) (j10 ^ (j10 >>> 32))) * 31) + ((int) (j11 ^ (j11 >>> 32)))) * 31;
         long j12 = this.c;
-        return i10 + ((int) (j12 ^ (j12 >>> 32)));
+        return i9 + ((int) (j12 ^ (j12 >>> 32)));
     }
 
     public final String toString() {

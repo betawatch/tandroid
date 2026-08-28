@@ -1,29 +1,32 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class m40 extends org.telegram.ui.Components.sp0 {
-    public final /* synthetic */ s50 X0;
+public final /* synthetic */ class m40 implements DialogInterface.OnShowListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c2 b;
+    public final /* synthetic */ EditTextBoldCursor c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m40(s50 s50Var, Context context, String str, String str2, String str3, String str4) {
-        super(context, null, str, str2, false, str3, str4, true);
-        this.X0 = s50Var;
+    public /* synthetic */ m40(Object obj, org.telegram.ui.ActionBar.c2 c2Var, EditTextBoldCursor editTextBoldCursor, int i9) {
+        this.a = i9;
+        this.d = obj;
+        this.b = c2Var;
+        this.c = editTextBoldCursor;
     }
 
-    @Override // org.telegram.ui.Components.sp0
-    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            int m10 = hVar.m();
-            s50 s50Var = this.X0;
-            if (m10 == 1) {
-                s50Var.k1().m(((TLRPC.Dialog) hVar.n(0)).id, Integer.valueOf(i10), 41);
-            } else {
-                s50Var.k1().k(0L, 41, Integer.valueOf(i10), Integer.valueOf(hVar.m()), null, null);
-            }
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                ((r40) this.d).b.s1(null, this.b, this.c, true);
+                break;
+            default:
+                ((n40) this.d).n.b.s1(null, this.b, this.c, true);
+                break;
         }
     }
 }

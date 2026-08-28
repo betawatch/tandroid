@@ -5,12 +5,12 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public interface IConstraintHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$constraints$IConstraintHost".replace('$', '.');
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static class Default implements IConstraintHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -18,7 +18,7 @@ public interface IConstraintHost extends IInterface {
         }
 
         @Override // androidx.car.app.constraints.IConstraintHost
-        public int getContentLimit(int i10) {
+        public int getContentLimit(int i9) {
             return 0;
         }
 
@@ -28,16 +28,16 @@ public interface IConstraintHost extends IInterface {
         }
     }
 
-    int getContentLimit(int i10);
+    int getContentLimit(int i9);
 
     boolean isAppDrivenRefreshEnabled();
 
-    /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
     public static abstract class Stub extends Binder implements IConstraintHost {
         static final int TRANSACTION_getContentLimit = 2;
         static final int TRANSACTION_isAppDrivenRefreshEnabled = 3;
 
-        /* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+        /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
         public static class Proxy implements IConstraintHost {
             private IBinder mRemote;
 
@@ -51,12 +51,12 @@ public interface IConstraintHost extends IInterface {
             }
 
             @Override // androidx.car.app.constraints.IConstraintHost
-            public int getContentLimit(int i10) {
+            public int getContentLimit(int i9) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IConstraintHost.DESCRIPTOR);
-                    obtain.writeInt(i10);
+                    obtain.writeInt(i9);
                     this.mRemote.transact(2, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readInt();
@@ -99,22 +99,22 @@ public interface IConstraintHost extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+        public boolean onTransact(int i9, Parcel parcel, Parcel parcel2, int i10) {
             String str = IConstraintHost.DESCRIPTOR;
-            if (i10 >= 1 && i10 <= 16777215) {
+            if (i9 >= 1 && i9 <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i10 == 1598968902) {
+            if (i9 == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            if (i10 == 2) {
+            if (i9 == 2) {
                 int contentLimit = getContentLimit(parcel.readInt());
                 parcel2.writeNoException();
                 parcel2.writeInt(contentLimit);
             } else {
-                if (i10 != 3) {
-                    return super.onTransact(i10, parcel, parcel2, i11);
+                if (i9 != 3) {
+                    return super.onTransact(i9, parcel, parcel2, i10);
                 }
                 boolean isAppDrivenRefreshEnabled = isAppDrivenRefreshEnabled();
                 parcel2.writeNoException();

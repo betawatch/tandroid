@@ -1,62 +1,43 @@
 package lb;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class g extends d {
-    public final byte[] c;
-    public final int d;
-    public final int e;
+public final class g {
+    public final float a;
+    public final float b;
+    public final float c;
+    public final float d;
+    public final float e;
+    public final float f;
+    public final float g;
+    public final float h;
+    public final float i;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(int i10, int i11, int[] iArr) {
-        super(i10, i11);
-        int i12 = i10 * i11;
-        if (iArr.length < i12) {
-            throw new IllegalArgumentException("Pixel array length is less than width * height");
-        }
-        byte[] bArr = new byte[i12];
-        for (int i13 = 0; i13 < i12; i13++) {
-            int i14 = iArr[i13];
-            bArr[i13] = (byte) (((((i14 >> 16) & 255) + ((i14 >> 7) & 510)) + (i14 & 255)) / 4);
-        }
-        this.c = bArr;
-        this.d = i10;
-        this.e = i11;
+    public g(float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17, float f18) {
+        this.a = f10;
+        this.b = f13;
+        this.c = f16;
+        this.d = f11;
+        this.e = f14;
+        this.f = f17;
+        this.g = f12;
+        this.h = f15;
+        this.i = f18;
     }
 
-    @Override // lb.d
-    public final byte[] a() {
-        byte[] bArr = this.c;
-        int i10 = this.a;
-        int i11 = this.b;
-        int i12 = this.d;
-        if (i10 == i12 && i11 == this.e) {
-            return bArr;
+    public static g a(float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17) {
+        float f18 = ((f10 - f12) + f14) - f16;
+        float f19 = ((f11 - f13) + f15) - f17;
+        if (f18 == 0.0f && f19 == 0.0f) {
+            return new g(f12 - f10, f14 - f12, f10, f13 - f11, f15 - f13, f11, 0.0f, 0.0f, 1.0f);
         }
-        int i13 = i10 * i11;
-        byte[] bArr2 = new byte[i13];
-        if (i10 == i12) {
-            System.arraycopy(bArr, 0, bArr2, 0, i13);
-            return bArr2;
-        }
-        int i14 = 0;
-        for (int i15 = 0; i15 < i11; i15++) {
-            System.arraycopy(bArr, i14, bArr2, i15 * i10, i10);
-            i14 += i12;
-        }
-        return bArr2;
-    }
-
-    @Override // lb.d
-    public final byte[] b(int i10, byte[] bArr) {
-        if (i10 < 0 || i10 >= this.b) {
-            throw new IllegalArgumentException(i0.a.k(i10, "Requested row is outside the image: "));
-        }
-        int i11 = this.a;
-        if (bArr == null || bArr.length < i11) {
-            bArr = new byte[i11];
-        }
-        System.arraycopy(this.c, i10 * this.d, bArr, 0, i11);
-        return bArr;
+        float f20 = f12 - f14;
+        float f21 = f16 - f14;
+        float f22 = f13 - f15;
+        float f23 = f17 - f15;
+        float f24 = (f20 * f23) - (f21 * f22);
+        float d = e2.c.d(f21, f19, f23 * f18, f24);
+        float d9 = e2.c.d(f18, f22, f20 * f19, f24);
+        return new g((d * f12) + (f12 - f10), (d9 * f16) + (f16 - f10), f10, (d * f13) + (f13 - f11), (d9 * f17) + (f17 - f11), f11, d, d9, 1.0f);
     }
 }

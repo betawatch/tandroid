@@ -6,9 +6,13 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
+import j3.r0;
+import m.b3;
 import m.c3;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class b extends BaseAdapter implements Filterable {
     public boolean a;
@@ -62,8 +66,6 @@ public abstract class b extends BaseAdapter implements Filterable {
 
     public abstract String c(Cursor cursor);
 
-    public abstract View d(ViewGroup viewGroup);
-
     @Override // android.widget.Adapter
     public final int getCount() {
         Cursor cursor;
@@ -74,11 +76,11 @@ public abstract class b extends BaseAdapter implements Filterable {
     }
 
     @Override // android.widget.BaseAdapter, android.widget.SpinnerAdapter
-    public View getDropDownView(int i10, View view, ViewGroup viewGroup) {
+    public View getDropDownView(int i9, View view, ViewGroup viewGroup) {
         if (!this.a) {
             return null;
         }
-        this.c.moveToPosition(i10);
+        this.c.moveToPosition(i9);
         if (view == null) {
             c3 c3Var = (c3) this;
             view = c3Var.s.inflate(c3Var.r, viewGroup, false);
@@ -98,34 +100,37 @@ public abstract class b extends BaseAdapter implements Filterable {
     }
 
     @Override // android.widget.Adapter
-    public final Object getItem(int i10) {
+    public final Object getItem(int i9) {
         Cursor cursor;
         if (!this.a || (cursor = this.c) == null) {
             return null;
         }
-        cursor.moveToPosition(i10);
+        cursor.moveToPosition(i9);
         return this.c;
     }
 
     @Override // android.widget.Adapter
-    public final long getItemId(int i10) {
+    public final long getItemId(int i9) {
         Cursor cursor;
-        if (this.a && (cursor = this.c) != null && cursor.moveToPosition(i10)) {
+        if (this.a && (cursor = this.c) != null && cursor.moveToPosition(i9)) {
             return this.c.getLong(this.d);
         }
         return 0L;
     }
 
     @Override // android.widget.Adapter
-    public View getView(int i10, View view, ViewGroup viewGroup) {
+    public View getView(int i9, View view, ViewGroup viewGroup) {
         if (!this.a) {
             throw new IllegalStateException("this should only be called when the cursor is valid");
         }
-        if (!this.c.moveToPosition(i10)) {
-            throw new IllegalStateException(i0.a.k(i10, "couldn't move cursor to position "));
+        if (!this.c.moveToPosition(i9)) {
+            throw new IllegalStateException(r0.l(i9, "couldn't move cursor to position "));
         }
         if (view == null) {
-            view = d(viewGroup);
+            c3 c3Var = (c3) this;
+            view = c3Var.s.inflate(c3Var.n, viewGroup, false);
+            view.setTag(new b3(view));
+            ((ImageView) view.findViewById(R.id.edit_query)).setImageResource(c3Var.A);
         }
         a(view, this.c);
         return view;

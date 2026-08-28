@@ -14,9 +14,9 @@ public final class h8 extends d5 implements o8 {
     }
 
     @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i10) {
+    public final void accept(int i9) {
         IntPredicate intPredicate = null;
-        intPredicate.test(i10);
+        intPredicate.test(i9);
         throw null;
     }
 }

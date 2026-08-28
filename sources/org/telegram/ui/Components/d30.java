@@ -1,53 +1,52 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.Utilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d30 implements Runnable {
+public final class d30 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ f30 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ int d;
 
-    public /* synthetic */ d30(f30 f30Var, String str, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ d30(f30 f30Var, int i9) {
+        this.a = i9;
         this.b = f30Var;
-        this.c = str;
-        this.d = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
                 f30 f30Var = this.b;
-                String str = this.c;
-                int i10 = this.d;
-                if (f30Var.e != null) {
-                    f30Var.e = null;
-                    AndroidUtilities.runOnUIThread(new d30(f30Var, str, i10, 1));
+                if (f30Var.U == animator) {
+                    f30Var.U = null;
+                    f30Var.b();
                     break;
                 }
                 break;
             default:
                 f30 f30Var2 = this.b;
-                String str2 = this.c;
-                int i11 = this.d;
-                ArrayList arrayList = null;
-                f30Var2.e = null;
-                if (!ChatObject.isChannel(f30Var2.w.R) && f30Var2.w.S != null) {
-                    arrayList = new ArrayList(f30Var2.w.S.participants.participants);
+                if (f30Var2.T == animator) {
+                    f30Var2.T = null;
+                    break;
                 }
-                if (arrayList != null) {
-                    Utilities.searchQueue.postRunnable(new ag.k0(f30Var2, str2, i11, arrayList));
-                } else {
-                    f30Var2.h = false;
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 1:
+                e30 e30Var = this.b.S;
+                if (e30Var != null) {
+                    ((org.telegram.ui.sr0) e30Var).a.a0.requestLayout();
+                    break;
                 }
-                f30Var2.d.g(str2, ChatObject.canAddUsers(f30Var2.w.R), false, true, false, ChatObject.isChannel(f30Var2.w.R) ? f30Var2.w.R.id : 0L, false, 2, i11);
+                break;
+            default:
+                super.onAnimationStart(animator);
                 break;
         }
     }

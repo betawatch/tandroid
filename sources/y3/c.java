@@ -7,11 +7,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.view.Surface;
-import c2.a1;
-import d5.g0;
+import c2.b1;
+import d5.f0;
 import java.nio.ByteBuffer;
+import pf.o1;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class c implements k {
     public final MediaCodec a;
@@ -37,7 +38,7 @@ public final class c implements k {
         HandlerThread handlerThread = eVar.b;
         if (!eVar.f) {
             handlerThread.start();
-            eVar.c = new androidx.mediarouter.app.c(eVar, handlerThread.getLooper());
+            eVar.c = new androidx.mediarouter.app.d(eVar, handlerThread.getLooper());
             eVar.f = true;
         }
         d5.a.c("startCodec");
@@ -46,40 +47,40 @@ public final class c implements k {
         cVar.e = 1;
     }
 
-    public static String j(int i10, String str) {
+    public static String j(int i9, String str) {
         StringBuilder sb2 = new StringBuilder(str);
-        if (i10 == 1) {
+        if (i9 == 1) {
             sb2.append("Audio");
-        } else if (i10 == 2) {
+        } else if (i9 == 2) {
             sb2.append("Video");
         } else {
             sb2.append("Unknown(");
-            sb2.append(i10);
+            sb2.append(i9);
             sb2.append(")");
         }
         return sb2.toString();
     }
 
     @Override // y3.k
-    public final void a(long j10, int i10, int i11, int i12) {
+    public final void a(long j10, int i9, int i10, int i11) {
         e eVar = this.c;
         RuntimeException runtimeException = (RuntimeException) eVar.d.getAndSet(null);
         if (runtimeException != null) {
             throw runtimeException;
         }
         d b10 = e.b();
-        b10.a = i10;
-        b10.b = i11;
+        b10.a = i9;
+        b10.b = i10;
         b10.d = j10;
-        b10.e = i12;
-        androidx.mediarouter.app.c cVar = eVar.c;
-        int i13 = g0.a;
-        cVar.obtainMessage(0, b10).sendToTarget();
+        b10.e = i11;
+        androidx.mediarouter.app.d dVar = eVar.c;
+        int i12 = f0.a;
+        dVar.obtainMessage(0, b10).sendToTarget();
     }
 
     @Override // y3.k
-    public final void b(int i10, long j10) {
-        this.a.releaseOutputBuffer(i10, j10);
+    public final void b(int i9, long j10) {
+        this.a.releaseOutputBuffer(i9, j10);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x001a A[Catch: all -> 0x001c, DONT_GENERATE, TryCatch #0 {all -> 0x001c, blocks: (B:4:0x0005, B:6:0x000f, B:12:0x001a, B:15:0x001e, B:17:0x0023, B:19:0x0027, B:24:0x0036, B:26:0x0032, B:28:0x0038, B:29:0x003a, B:30:0x003b, B:31:0x003d), top: B:3:0x0005 }] */
@@ -96,7 +97,7 @@ public final class c implements k {
                 boolean z11 = true;
                 if (fVar.k <= 0 && !fVar.l) {
                     z10 = false;
-                    int i10 = -1;
+                    int i9 = -1;
                     if (!z10) {
                         return -1;
                     }
@@ -110,17 +111,17 @@ public final class c implements k {
                         fVar.j = null;
                         throw codecException;
                     }
-                    a1 a1Var = fVar.d;
-                    if (a1Var.c != 0) {
+                    b1 b1Var = fVar.d;
+                    if (b1Var.c != 0) {
                         z11 = false;
                     }
                     if (!z11) {
-                        i10 = a1Var.e();
+                        i9 = b1Var.e();
                     }
-                    return i10;
+                    return i9;
                 }
                 z10 = true;
-                int i102 = -1;
+                int i92 = -1;
                 if (!z10) {
                 }
             } finally {
@@ -155,22 +156,22 @@ public final class c implements k {
                         fVar.j = null;
                         throw codecException;
                     }
-                    a1 a1Var = fVar.e;
-                    if (a1Var.c != 0) {
+                    b1 b1Var = fVar.e;
+                    if (b1Var.c != 0) {
                         z11 = false;
                     }
                     if (z11) {
                         return -1;
                     }
-                    int e9 = a1Var.e();
-                    if (e9 >= 0) {
+                    int e10 = b1Var.e();
+                    if (e10 >= 0) {
                         d5.a.j(fVar.h);
                         MediaCodec.BufferInfo bufferInfo2 = (MediaCodec.BufferInfo) fVar.f.remove();
                         bufferInfo.set(bufferInfo2.offset, bufferInfo2.size, bufferInfo2.presentationTimeUs, bufferInfo2.flags);
-                    } else if (e9 == -2) {
+                    } else if (e10 == -2) {
                         fVar.h = (MediaFormat) fVar.g.remove();
                     }
-                    return e9;
+                    return e10;
                 }
                 z10 = true;
                 if (!z10) {
@@ -181,13 +182,13 @@ public final class c implements k {
     }
 
     @Override // y3.k
-    public final void e(int i10, k3.d dVar, long j10) {
-        this.c.c(i10, dVar, j10);
+    public final void e(int i9, k3.d dVar, long j10) {
+        this.c.c(i9, dVar, j10);
     }
 
     @Override // y3.k
-    public final void f(int i10) {
-        this.a.setVideoScalingMode(i10);
+    public final void f(int i9) {
+        this.a.setVideoScalingMode(i9);
     }
 
     @Override // y3.k
@@ -198,8 +199,8 @@ public final class c implements k {
         synchronized (fVar.a) {
             fVar.k++;
             Handler handler = fVar.c;
-            int i10 = g0.a;
-            handler.post(new qf.b(fVar, 18));
+            int i9 = f0.a;
+            handler.post(new o1(fVar, 16));
         }
         this.a.start();
     }
@@ -210,13 +211,13 @@ public final class c implements k {
     }
 
     @Override // y3.k
-    public final ByteBuffer getInputBuffer(int i10) {
-        return this.a.getInputBuffer(i10);
+    public final ByteBuffer getInputBuffer(int i9) {
+        return this.a.getInputBuffer(i9);
     }
 
     @Override // y3.k
-    public final ByteBuffer getOutputBuffer(int i10) {
-        return this.a.getOutputBuffer(i10);
+    public final ByteBuffer getOutputBuffer(int i9) {
+        return this.a.getOutputBuffer(i9);
     }
 
     @Override // y3.k
@@ -237,8 +238,8 @@ public final class c implements k {
     }
 
     @Override // y3.k
-    public final void h(e5.h hVar, Handler handler) {
-        this.a.setOnFrameRenderedListener(new a(this, hVar, 0), handler);
+    public final void h(e5.i iVar, Handler handler) {
+        this.a.setOnFrameRenderedListener(new a(this, iVar, 0), handler);
     }
 
     @Override // y3.k
@@ -274,8 +275,8 @@ public final class c implements k {
     }
 
     @Override // y3.k
-    public final void releaseOutputBuffer(int i10, boolean z10) {
-        this.a.releaseOutputBuffer(i10, z10);
+    public final void releaseOutputBuffer(int i9, boolean z10) {
+        this.a.releaseOutputBuffer(i9, z10);
     }
 
     @Override // y3.k

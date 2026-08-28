@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class zzqv extends zzqe {
     public static final /* synthetic */ int zzb = 0;
@@ -15,8 +15,8 @@ public abstract class zzqv extends zzqe {
         throw null;
     }
 
-    public static int zzA(int i10) {
-        return (352 - (Integer.numberOfLeadingZeros(i10) * 9)) >>> 6;
+    public static int zzA(int i9) {
+        return (352 - (Integer.numberOfLeadingZeros(i9) * 9)) >>> 6;
     }
 
     public static int zzB(long j10) {
@@ -24,8 +24,8 @@ public abstract class zzqv extends zzqe {
     }
 
     @Deprecated
-    public static int zzw(int i10, zzts zztsVar, zzug zzugVar) {
-        int zzA = zzA(i10 << 3);
+    public static int zzw(int i9, zzts zztsVar, zzug zzugVar) {
+        int zzA = zzA(i9 << 3);
         return ((zzpw) zztsVar).zza(zzugVar) + zzA + zzA;
     }
 
@@ -62,8 +62,8 @@ public abstract class zzqv extends zzqe {
             int length = bytes.length;
             zzt(length);
             zzl(bytes, 0, length);
-        } catch (IndexOutOfBoundsException e9) {
-            throw new zzqt(e9);
+        } catch (IndexOutOfBoundsException e10) {
+            throw new zzqt(e10);
         }
     }
 
@@ -71,39 +71,39 @@ public abstract class zzqv extends zzqe {
 
     public abstract void zzb(byte b10);
 
-    public abstract void zzd(int i10, boolean z10);
+    public abstract void zzd(int i9, boolean z10);
 
-    public abstract void zze(int i10, zzqm zzqmVar);
+    public abstract void zze(int i9, zzqm zzqmVar);
 
-    public abstract void zzf(int i10, int i11);
+    public abstract void zzf(int i9, int i10);
 
-    public abstract void zzg(int i10);
+    public abstract void zzg(int i9);
 
-    public abstract void zzh(int i10, long j10);
+    public abstract void zzh(int i9, long j10);
 
     public abstract void zzi(long j10);
 
-    public abstract void zzj(int i10, int i11);
+    public abstract void zzj(int i9, int i10);
 
-    public abstract void zzk(int i10);
+    public abstract void zzk(int i9);
 
-    public abstract void zzl(byte[] bArr, int i10, int i11);
+    public abstract void zzl(byte[] bArr, int i9, int i10);
 
-    public abstract void zzm(int i10, zzts zztsVar, zzug zzugVar);
+    public abstract void zzm(int i9, zzts zztsVar, zzug zzugVar);
 
-    public abstract void zzn(int i10, zzts zztsVar);
+    public abstract void zzn(int i9, zzts zztsVar);
 
-    public abstract void zzo(int i10, zzqm zzqmVar);
+    public abstract void zzo(int i9, zzqm zzqmVar);
 
-    public abstract void zzp(int i10, String str);
+    public abstract void zzp(int i9, String str);
 
-    public abstract void zzr(int i10, int i11);
+    public abstract void zzr(int i9, int i10);
 
-    public abstract void zzs(int i10, int i11);
+    public abstract void zzs(int i9, int i10);
 
-    public abstract void zzt(int i10);
+    public abstract void zzt(int i9);
 
-    public abstract void zzu(int i10, long j10);
+    public abstract void zzu(int i9, long j10);
 
     public abstract void zzv(long j10);
 

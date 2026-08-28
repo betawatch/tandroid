@@ -50,9 +50,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.XiaomiUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public class EditTextBoldCursor extends nt {
+public class EditTextBoldCursor extends ot {
     private static final String BLINK_CLASS = "android.widget.Editor$Blink";
     public static final /* synthetic */ int a = 0;
     private static Class editorClass;
@@ -68,7 +68,7 @@ public class EditTextBoldCursor extends nt {
     private float activeLineWidth;
     private boolean allowDrawCursor;
     private View attachedToWindow;
-    jg.a blurredBackgroundDrawableViewFactory;
+    ig.a blurredBackgroundDrawableViewFactory;
     private boolean currentDrawHintAsHeader;
     ShapeDrawable cursorDrawable;
     private boolean cursorDrawn;
@@ -99,7 +99,7 @@ public class EditTextBoldCursor extends nt {
     private float hintAlpha;
     private i6 hintAnimatedDrawable;
     private i6 hintAnimatedDrawable2;
-    private px0 hintAnimator;
+    private nx0 hintAnimator;
     private int hintColor;
     private long hintLastUpdateTime;
     private StaticLayout hintLayout;
@@ -111,7 +111,7 @@ public class EditTextBoldCursor extends nt {
     private int ignoreBottomCount;
     public boolean ignoreClipTop;
     private int ignoreTopCount;
-    private final gf.j invalidateCallback;
+    private final ff.j invalidateCallback;
     private boolean isTextWatchersSuppressed;
     private float lastLineActiveness;
     int lastOffset;
@@ -167,8 +167,8 @@ public class EditTextBoldCursor extends nt {
         this.isTextWatchersSuppressed = false;
         this.padding = new Rect();
         this.lastTouchX = -1;
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 26) {
+        int i9 = Build.VERSION.SDK_INT;
+        if (i9 >= 26) {
             setImportantForAutofill(2);
         }
         this.linePaint = new Paint();
@@ -176,13 +176,13 @@ public class EditTextBoldCursor extends nt {
         TextPaint textPaint = new TextPaint(1);
         this.errorPaint = textPaint;
         textPaint.setTextSize(AndroidUtilities.dp(11.0f));
-        if (i10 >= 26) {
+        if (i9 >= 26) {
             setImportantForAutofill(2);
         }
-        if (i10 >= 29) {
-            et etVar = new et(this);
-            this.cursorDrawable = etVar;
-            etVar.setShape(new RectShape());
+        if (i9 >= 29) {
+            ft ftVar = new ft(this);
+            this.cursorDrawable = ftVar;
+            ftVar.setShape(new RectShape());
             this.gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{-11230757, -11230757});
             setTextCursorDrawable(this.cursorDrawable);
         }
@@ -278,7 +278,7 @@ public class EditTextBoldCursor extends nt {
                 this.headerTransformAnimation = animatorSet2;
                 animatorSet2.playTogether(ObjectAnimator.ofFloat(this, "headerAnimationProgress", z11 ? 1.0f : 0.0f));
                 this.headerTransformAnimation.setDuration(200L);
-                this.headerTransformAnimation.setInterpolator(er.h);
+                this.headerTransformAnimation.setInterpolator(gr.h);
                 this.headerTransformAnimation.start();
             } else {
                 this.headerAnimationProgress = z11 ? 1.0f : 0.0f;
@@ -330,14 +330,14 @@ public class EditTextBoldCursor extends nt {
             }
             ViewTreeObserver.OnPreDrawListener onPreDrawListener = this.listenerFixer;
             Objects.requireNonNull(onPreDrawListener);
-            AndroidUtilities.runOnUIThread(new lp(onPreDrawListener, 8), 500L);
+            AndroidUtilities.runOnUIThread(new np(onPreDrawListener, 8), 500L);
         } catch (Throwable unused) {
         }
         this.fixed = true;
     }
 
     public final void g() {
-        int i10;
+        int i9;
         Layout layout = getLayout();
         int length = this.forceCursorEnd ? layout.getText().length() : getSelectionStart();
         int lineForOffset = layout.getLineForOffset(length);
@@ -351,20 +351,20 @@ public class EditTextBoldCursor extends nt {
         }
         if (gradientDrawable != null) {
             gradientDrawable.getPadding(this.mTempRect);
-            i10 = gradientDrawable.getIntrinsicWidth();
+            i9 = gradientDrawable.getIntrinsicWidth();
         } else {
             this.mTempRect.setEmpty();
-            i10 = 0;
+            i9 = 0;
         }
         int scrollX = getScrollX();
         float f10 = max - scrollX;
         int width = (getWidth() - getCompoundPaddingLeft()) - getCompoundPaddingRight();
         float f11 = width;
-        int i11 = f10 >= f11 - 1.0f ? (width + scrollX) - (i10 - this.mTempRect.right) : (Math.abs(f10) <= 1.0f || (TextUtils.isEmpty(getText()) && ((float) (1048576 - scrollX)) <= f11 + 1.0f && max <= 1.0f)) ? scrollX - this.mTempRect.left : ((int) max) - this.mTempRect.left;
+        int i10 = f10 >= f11 - 1.0f ? (width + scrollX) - (i9 - this.mTempRect.right) : (Math.abs(f10) <= 1.0f || (TextUtils.isEmpty(getText()) && ((float) (1048576 - scrollX)) <= f11 + 1.0f && max <= 1.0f)) ? scrollX - this.mTempRect.left : ((int) max) - this.mTempRect.left;
         int dp = AndroidUtilities.dp(this.cursorWidth);
         GradientDrawable gradientDrawable2 = this.gradientDrawable;
         Rect rect = this.mTempRect;
-        gradientDrawable2.setBounds(i11, lineTop - rect.top, dp + i11, lineTop2 + rect.bottom);
+        gradientDrawable2.setBounds(i10, lineTop - rect.top, dp + i10, lineTop2 + rect.bottom);
         this.lastText = layout.getText();
         this.lastOffset = length;
     }
@@ -378,34 +378,34 @@ public class EditTextBoldCursor extends nt {
         return 0;
     }
 
-    public StaticLayout getErrorLayout(int i10) {
+    public StaticLayout getErrorLayout(int i9) {
         if (TextUtils.isEmpty(this.errorText)) {
             return null;
         }
-        return new StaticLayout(this.errorText, this.errorPaint, i10, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        return new StaticLayout(this.errorText, this.errorPaint, i9, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
     }
 
     @Override // android.widget.TextView
     public int getExtendedPaddingBottom() {
-        int i10 = this.ignoreBottomCount;
-        if (i10 == 0) {
+        int i9 = this.ignoreBottomCount;
+        if (i9 == 0) {
             return super.getExtendedPaddingBottom();
         }
-        this.ignoreBottomCount = i10 - 1;
-        int i11 = this.scrollY;
-        if (i11 != Integer.MAX_VALUE) {
-            return -i11;
+        this.ignoreBottomCount = i9 - 1;
+        int i10 = this.scrollY;
+        if (i10 != Integer.MAX_VALUE) {
+            return -i10;
         }
         return 0;
     }
 
     @Override // android.widget.TextView
     public int getExtendedPaddingTop() {
-        int i10 = this.ignoreTopCount;
-        if (i10 == 0) {
+        int i9 = this.ignoreTopCount;
+        if (i9 == 0) {
             return super.getExtendedPaddingTop();
         }
-        this.ignoreTopCount = i10 - 1;
+        this.ignoreTopCount = i9 - 1;
         return 0;
     }
 
@@ -430,7 +430,7 @@ public class EditTextBoldCursor extends nt {
         return this.onPremiumMenuLockClickListener;
     }
 
-    public org.telegram.ui.ActionBar.c6 getResourcesProvider() {
+    public org.telegram.ui.ActionBar.b6 getResourcesProvider() {
         return null;
     }
 
@@ -439,9 +439,9 @@ public class EditTextBoldCursor extends nt {
         if (this.cursorDrawable != null) {
             return super.getTextCursorDrawable();
         }
-        et etVar = new et(this, new RectShape());
-        etVar.getPaint().setColor(0);
-        return etVar;
+        ft ftVar = new ft(this, new RectShape());
+        ftVar.getPaint().setColor(0);
+        return ftVar;
     }
 
     @Override // android.widget.TextView
@@ -511,25 +511,25 @@ public class EditTextBoldCursor extends nt {
         return this.isTextWatchersSuppressed;
     }
 
-    @Override // org.telegram.ui.Components.nt, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.ot, android.widget.TextView, android.view.View
     public void onAttachedToWindow() {
         try {
             super.onAttachedToWindow();
-        } catch (Exception e9) {
-            FileLog.e(e9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
         this.attachedToWindow = getRootView();
         if (Build.VERSION.SDK_INT < 29) {
-            gf.k.d().b(this.invalidateCallback, 2);
+            ff.k.d().b(this.invalidateCallback, 2);
         }
     }
 
-    @Override // org.telegram.ui.Components.nt, android.view.View
+    @Override // org.telegram.ui.Components.ot, android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.attachedToWindow = null;
         if (Build.VERSION.SDK_INT < 29) {
-            gf.k.d().f(this.invalidateCallback);
+            ff.k.d().f(this.invalidateCallback);
         }
     }
 
@@ -577,7 +577,7 @@ public class EditTextBoldCursor extends nt {
     /* JADX WARN: Removed duplicated region for block: B:8:0x030c  */
     /* JADX WARN: Removed duplicated region for block: B:91:0x0626  */
     /* JADX WARN: Removed duplicated region for block: B:94:0x0644  */
-    @Override // org.telegram.ui.Components.nt, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.ot, android.widget.TextView, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -588,19 +588,19 @@ public class EditTextBoldCursor extends nt {
         boolean z10;
         int totalPaddingTop;
         Rect rect;
-        int i10;
+        int i9;
         float f12;
         Object obj;
         boolean z11;
         float elapsedRealtime;
-        int i11;
+        int i10;
         float f13;
         boolean z12;
         int totalPaddingTop2;
         Rect rect2;
-        int i12;
+        int i11;
         float f14;
-        int i13;
+        int i12;
         Field field2;
         Canvas canvas2 = canvas;
         if (length() == 0 || this.transformHintToHeader) {
@@ -659,15 +659,15 @@ public class EditTextBoldCursor extends nt {
                 canvas2.save();
                 float lineLeft = this.hintLayout.getLineLeft(0);
                 float lineWidth = this.hintLayout.getLineWidth(0);
-                int i14 = lineLeft != 0.0f ? (int) (0 - lineLeft) : 0;
+                int i13 = lineLeft != 0.0f ? (int) (0 - lineLeft) : 0;
                 if (this.supportRtlHint && LocaleController.isRTL) {
-                    float scrollX = getScrollX() + i14 + (getMeasuredWidth() - lineWidth);
+                    float scrollX = getScrollX() + i13 + (getMeasuredWidth() - lineWidth);
                     this.hintLayoutX = scrollX;
                     float height = (this.lineY - this.hintLayout.getHeight()) - AndroidUtilities.dp(7.0f);
                     this.hintLayoutY = height;
                     canvas2.translate(scrollX, height);
                 } else {
-                    float scrollX2 = getScrollX() + i14 + this.hintLayoutOffset;
+                    float scrollX2 = getScrollX() + i13 + this.hintLayoutOffset;
                     this.hintLayoutX = scrollX2;
                     float height2 = (this.lineY - this.hintLayout.getHeight()) - AndroidUtilities.dp2(7.0f);
                     this.hintLayoutY = height2;
@@ -683,63 +683,63 @@ public class EditTextBoldCursor extends nt {
                     }
                     canvas2.scale(f17, f17);
                     canvas2.translate(0.0f, (-AndroidUtilities.dp(22.0f)) * this.headerAnimationProgress);
-                    getPaint().setColor(i0.b.d(this.headerAnimationProgress, this.hintColor, this.headerHintColor));
+                    getPaint().setColor(i0.a.d(this.headerAnimationProgress, this.hintColor, this.headerHintColor));
                 } else {
                     getPaint().setColor(this.hintColor);
                     getPaint().setAlpha((int) ((Color.alpha(this.hintColor) / 255.0f) * this.hintAlpha * 255.0f));
                 }
-                px0 px0Var = this.hintAnimator;
-                if (px0Var == null || !px0Var.e) {
+                nx0 nx0Var = this.hintAnimator;
+                if (nx0Var == null || !nx0Var.e) {
                     f10 = 2.0f;
                     f11 = 150.0f;
                     Utilities.Callback2<Canvas, Runnable> callback2 = this.drawHint;
                     if (callback2 != null) {
-                        callback2.run(canvas2, new xq(5, this, canvas2));
+                        callback2.run(canvas2, new zq(5, this, canvas2));
                     } else {
                         this.hintLayout.draw(canvas2);
                     }
                 } else {
                     canvas2.save();
                     canvas2.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                    px0 px0Var2 = this.hintAnimator;
+                    nx0 nx0Var2 = this.hintAnimator;
                     TextPaint paint = getPaint();
-                    EditTextBoldCursor editTextBoldCursor = px0Var2.a;
-                    if (px0Var2.e) {
-                        float f19 = px0Var2.h * (px0Var2.f ? px0Var2.i : 1.0f - px0Var2.i);
+                    EditTextBoldCursor editTextBoldCursor = nx0Var2.a;
+                    if (nx0Var2.e) {
+                        float f19 = nx0Var2.h * (nx0Var2.f ? nx0Var2.i : 1.0f - nx0Var2.i);
                         int alpha = paint.getAlpha();
-                        if (px0Var2.d != null) {
+                        if (nx0Var2.d != null) {
                             canvas2.save();
                             canvas2.translate(f19, 0.0f);
-                            px0Var2.d.draw(canvas2);
+                            nx0Var2.d.draw(canvas2);
                             canvas2.restore();
                         }
-                        if (px0Var2.b != null) {
-                            float f20 = px0Var2.f ? 1.0f - px0Var2.i : px0Var2.i;
+                        if (nx0Var2.b != null) {
+                            float f20 = nx0Var2.f ? 1.0f - nx0Var2.i : nx0Var2.i;
                             canvas2.save();
                             f10 = 2.0f;
                             paint.setAlpha((int) (alpha * f20));
                             canvas2.translate(f19, 0.0f);
-                            if (px0Var2.g) {
+                            if (nx0Var2.g) {
                                 float f21 = (f20 * 0.1f) + 0.9f;
                                 canvas2.scale(f21, f21, f19, editTextBoldCursor.getMeasuredHeight() / 2.0f);
                             }
-                            px0Var2.b.draw(canvas2);
+                            nx0Var2.b.draw(canvas2);
                             canvas2.restore();
                             paint.setAlpha(alpha);
                         } else {
                             f10 = 2.0f;
                         }
-                        if (px0Var2.c != null) {
-                            float f22 = px0Var2.f ? px0Var2.i : 1.0f - px0Var2.i;
+                        if (nx0Var2.c != null) {
+                            float f22 = nx0Var2.f ? nx0Var2.i : 1.0f - nx0Var2.i;
                             canvas2.save();
                             f11 = 150.0f;
-                            paint.setAlpha((int) (alpha * (px0Var2.f ? px0Var2.i : 1.0f - px0Var2.i)));
+                            paint.setAlpha((int) (alpha * (nx0Var2.f ? nx0Var2.i : 1.0f - nx0Var2.i)));
                             canvas2.translate(f19, 0.0f);
-                            if (px0Var2.g) {
+                            if (nx0Var2.g) {
                                 float f23 = (f22 * 0.1f) + 0.9f;
                                 canvas2.scale(f23, f23, f19, editTextBoldCursor.getMeasuredHeight() / f10);
                             }
-                            px0Var2.c.draw(canvas2);
+                            nx0Var2.c.draw(canvas2);
                             canvas2.restore();
                             paint.setAlpha(alpha);
                             canvas2.restore();
@@ -772,12 +772,12 @@ public class EditTextBoldCursor extends nt {
                 super.onDraw(canvas);
                 this.drawInMaim = false;
                 field = mScrollYField;
-                if (field != null && (i13 = this.scrollY) != Integer.MAX_VALUE) {
+                if (field != null && (i12 = this.scrollY) != Integer.MAX_VALUE) {
                     try {
-                        field.set(this, Integer.valueOf(i13));
-                    } catch (Exception e9) {
+                        field.set(this, Integer.valueOf(i12));
+                    } catch (Exception e10) {
                         if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                            throw new RuntimeException(e9);
+                            throw new RuntimeException(e10);
                         }
                     }
                 }
@@ -806,18 +806,18 @@ public class EditTextBoldCursor extends nt {
                                     rect3.left = bounds.left;
                                     rect3.right = bounds.left + AndroidUtilities.dp(this.cursorWidth);
                                     rect = this.rect;
-                                    i10 = bounds.bottom;
-                                    rect.bottom = i10;
+                                    i9 = bounds.bottom;
+                                    rect.bottom = i9;
                                     rect.top = bounds.top;
                                     f12 = this.lineSpacingExtra;
                                     if (f12 != 0.0f && lineForOffset < lineCount - 1) {
-                                        rect.bottom = (int) (i10 - f12);
+                                        rect.bottom = (int) (i9 - f12);
                                     }
                                     int centerY = rect.centerY();
-                                    int i15 = this.cursorSize;
-                                    rect.top = centerY - (i15 / 2);
+                                    int i14 = this.cursorSize;
+                                    rect.top = centerY - (i14 / 2);
                                     Rect rect4 = this.rect;
-                                    rect4.bottom = rect4.top + i15;
+                                    rect4.bottom = rect4.top + i14;
                                     this.gradientDrawable.setBounds(rect4);
                                     this.gradientDrawable.draw(canvas2);
                                     canvas2.restore();
@@ -833,18 +833,18 @@ public class EditTextBoldCursor extends nt {
                                 rect32.left = bounds2.left;
                                 rect32.right = bounds2.left + AndroidUtilities.dp(this.cursorWidth);
                                 rect = this.rect;
-                                i10 = bounds2.bottom;
-                                rect.bottom = i10;
+                                i9 = bounds2.bottom;
+                                rect.bottom = i9;
                                 rect.top = bounds2.top;
                                 f12 = this.lineSpacingExtra;
                                 if (f12 != 0.0f) {
-                                    rect.bottom = (int) (i10 - f12);
+                                    rect.bottom = (int) (i9 - f12);
                                 }
                                 int centerY2 = rect.centerY();
-                                int i152 = this.cursorSize;
-                                rect.top = centerY2 - (i152 / 2);
+                                int i142 = this.cursorSize;
+                                rect.top = centerY2 - (i142 / 2);
                                 Rect rect42 = this.rect;
-                                rect42.bottom = rect42.top + i152;
+                                rect42.bottom = rect42.top + i142;
                                 this.gradientDrawable.setBounds(rect42);
                                 this.gradientDrawable.draw(canvas2);
                                 canvas2.restore();
@@ -861,17 +861,17 @@ public class EditTextBoldCursor extends nt {
                                     rect322.left = bounds22.left;
                                     rect322.right = bounds22.left + AndroidUtilities.dp(this.cursorWidth);
                                     rect = this.rect;
-                                    i10 = bounds22.bottom;
-                                    rect.bottom = i10;
+                                    i9 = bounds22.bottom;
+                                    rect.bottom = i9;
                                     rect.top = bounds22.top;
                                     f12 = this.lineSpacingExtra;
                                     if (f12 != 0.0f) {
                                     }
                                     int centerY22 = rect.centerY();
-                                    int i1522 = this.cursorSize;
-                                    rect.top = centerY22 - (i1522 / 2);
+                                    int i1422 = this.cursorSize;
+                                    rect.top = centerY22 - (i1422 / 2);
                                     Rect rect422 = this.rect;
-                                    rect422.bottom = rect422.top + i1522;
+                                    rect422.bottom = rect422.top + i1422;
                                     this.gradientDrawable.setBounds(rect422);
                                     this.gradientDrawable.draw(canvas2);
                                     canvas2.restore();
@@ -887,17 +887,17 @@ public class EditTextBoldCursor extends nt {
                                 rect3222.left = bounds222.left;
                                 rect3222.right = bounds222.left + AndroidUtilities.dp(this.cursorWidth);
                                 rect = this.rect;
-                                i10 = bounds222.bottom;
-                                rect.bottom = i10;
+                                i9 = bounds222.bottom;
+                                rect.bottom = i9;
                                 rect.top = bounds222.top;
                                 f12 = this.lineSpacingExtra;
                                 if (f12 != 0.0f) {
                                 }
                                 int centerY222 = rect.centerY();
-                                int i15222 = this.cursorSize;
-                                rect.top = centerY222 - (i15222 / 2);
+                                int i14222 = this.cursorSize;
+                                rect.top = centerY222 - (i14222 / 2);
                                 Rect rect4222 = this.rect;
-                                rect4222.bottom = rect4222.top + i15222;
+                                rect4222.bottom = rect4222.top + i14222;
                                 this.gradientDrawable.setBounds(rect4222);
                                 this.gradientDrawable.draw(canvas2);
                                 canvas2.restore();
@@ -924,18 +924,18 @@ public class EditTextBoldCursor extends nt {
                                 rect5.left = bounds3.left;
                                 rect5.right = bounds3.left + AndroidUtilities.dp(this.cursorWidth);
                                 rect2 = this.rect;
-                                i12 = bounds3.bottom;
-                                rect2.bottom = i12;
+                                i11 = bounds3.bottom;
+                                rect2.bottom = i11;
                                 rect2.top = bounds3.top;
                                 f14 = this.lineSpacingExtra;
                                 if (f14 != 0.0f && lineForOffset3 < lineCount3 - 1) {
-                                    rect2.bottom = (int) (i12 - f14);
+                                    rect2.bottom = (int) (i11 - f14);
                                 }
                                 int centerY3 = rect2.centerY();
-                                int i16 = this.cursorSize;
-                                rect2.top = centerY3 - (i16 / 2);
+                                int i15 = this.cursorSize;
+                                rect2.top = centerY3 - (i15 / 2);
                                 Rect rect6 = this.rect;
-                                rect6.bottom = rect6.top + i16;
+                                rect6.bottom = rect6.top + i15;
                                 this.gradientDrawable.setBounds(rect6);
                                 this.gradientDrawable.draw(canvas2);
                                 canvas2.restore();
@@ -952,18 +952,18 @@ public class EditTextBoldCursor extends nt {
                             rect52.left = bounds32.left;
                             rect52.right = bounds32.left + AndroidUtilities.dp(this.cursorWidth);
                             rect2 = this.rect;
-                            i12 = bounds32.bottom;
-                            rect2.bottom = i12;
+                            i11 = bounds32.bottom;
+                            rect2.bottom = i11;
                             rect2.top = bounds32.top;
                             f14 = this.lineSpacingExtra;
                             if (f14 != 0.0f) {
-                                rect2.bottom = (int) (i12 - f14);
+                                rect2.bottom = (int) (i11 - f14);
                             }
                             int centerY32 = rect2.centerY();
-                            int i162 = this.cursorSize;
-                            rect2.top = centerY32 - (i162 / 2);
+                            int i152 = this.cursorSize;
+                            rect2.top = centerY32 - (i152 / 2);
                             Rect rect62 = this.rect;
-                            rect62.bottom = rect62.top + i162;
+                            rect62.bottom = rect62.top + i152;
                             this.gradientDrawable.setBounds(rect62);
                             this.gradientDrawable.draw(canvas2);
                             canvas2.restore();
@@ -981,17 +981,17 @@ public class EditTextBoldCursor extends nt {
                                 rect522.left = bounds322.left;
                                 rect522.right = bounds322.left + AndroidUtilities.dp(this.cursorWidth);
                                 rect2 = this.rect;
-                                i12 = bounds322.bottom;
-                                rect2.bottom = i12;
+                                i11 = bounds322.bottom;
+                                rect2.bottom = i11;
                                 rect2.top = bounds322.top;
                                 f14 = this.lineSpacingExtra;
                                 if (f14 != 0.0f) {
                                 }
                                 int centerY322 = rect2.centerY();
-                                int i1622 = this.cursorSize;
-                                rect2.top = centerY322 - (i1622 / 2);
+                                int i1522 = this.cursorSize;
+                                rect2.top = centerY322 - (i1522 / 2);
                                 Rect rect622 = this.rect;
-                                rect622.bottom = rect622.top + i1622;
+                                rect622.bottom = rect622.top + i1522;
                                 this.gradientDrawable.setBounds(rect622);
                                 this.gradientDrawable.draw(canvas2);
                                 canvas2.restore();
@@ -1008,17 +1008,17 @@ public class EditTextBoldCursor extends nt {
                             rect5222.left = bounds3222.left;
                             rect5222.right = bounds3222.left + AndroidUtilities.dp(this.cursorWidth);
                             rect2 = this.rect;
-                            i12 = bounds3222.bottom;
-                            rect2.bottom = i12;
+                            i11 = bounds3222.bottom;
+                            rect2.bottom = i11;
                             rect2.top = bounds3222.top;
                             f14 = this.lineSpacingExtra;
                             if (f14 != 0.0f) {
                             }
                             int centerY3222 = rect2.centerY();
-                            int i16222 = this.cursorSize;
-                            rect2.top = centerY3222 - (i16222 / 2);
+                            int i15222 = this.cursorSize;
+                            rect2.top = centerY3222 - (i15222 / 2);
                             Rect rect6222 = this.rect;
-                            rect6222.bottom = rect6222.top + i16222;
+                            rect6222.bottom = rect6222.top + i15222;
                             this.gradientDrawable.setBounds(rect6222);
                             this.gradientDrawable.draw(canvas2);
                             canvas2.restore();
@@ -1055,18 +1055,18 @@ public class EditTextBoldCursor extends nt {
                         }
                     }
                     int measuredHeight = !this.lineYFix ? getMeasuredHeight() - AndroidUtilities.dp(f10) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() != null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), AndroidUtilities.dp(f10)) + getScrollY() + ((int) this.lineY);
-                    i11 = this.lastTouchX;
-                    if (i11 < 0) {
-                        i11 = getMeasuredWidth() / 2;
+                    i10 = this.lastTouchX;
+                    if (i10 < 0) {
+                        i10 = getMeasuredWidth() / 2;
                     }
-                    int i17 = i11;
-                    int max = Math.max(i17, getMeasuredWidth() - i17) * 2;
+                    int i16 = i10;
+                    int max = Math.max(i16, getMeasuredWidth() - i16) * 2;
                     if (this.lineActiveness < 1.0f) {
                         canvas2.drawRect(getScrollX(), measuredHeight - dp, getMeasuredWidth() + getScrollX(), measuredHeight, this.linePaint);
                     }
                     f13 = this.lineActiveness;
                     if (f13 <= 0.0f) {
-                        float interpolation = er.j.getInterpolation(f13);
+                        float interpolation = gr.j.getInterpolation(f13);
                         boolean z14 = this.lineActive;
                         if (z14) {
                             this.activeLineWidth = max * interpolation;
@@ -1074,7 +1074,7 @@ public class EditTextBoldCursor extends nt {
                         if (z14) {
                             interpolation = 1.0f;
                         }
-                        float f24 = i17;
+                        float f24 = i16;
                         canvas2 = canvas;
                         canvas2.drawRect(Math.max(0.0f, f24 - (this.activeLineWidth / f10)) + getScrollX(), measuredHeight - ((int) (interpolation * AndroidUtilities.dp(f10))), Math.min((this.activeLineWidth / f10) + f24, getMeasuredWidth()) + getScrollX(), measuredHeight, this.activeLinePaint);
                     } else {
@@ -1118,7 +1118,7 @@ public class EditTextBoldCursor extends nt {
         this.drawInMaim = false;
         field = mScrollYField;
         if (field != null) {
-            field.set(this, Integer.valueOf(i13));
+            field.set(this, Integer.valueOf(i12));
         }
         canvas2.restore();
         if (this.cursorDrawable != null) {
@@ -1137,11 +1137,11 @@ public class EditTextBoldCursor extends nt {
             if (elapsedRealtime < 1.0f) {
             }
             int measuredHeight2 = !this.lineYFix ? getMeasuredHeight() - AndroidUtilities.dp(f10) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() != null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), AndroidUtilities.dp(f10)) + getScrollY() + ((int) this.lineY);
-            i11 = this.lastTouchX;
-            if (i11 < 0) {
+            i10 = this.lastTouchX;
+            if (i10 < 0) {
             }
-            int i172 = i11;
-            int max2 = Math.max(i172, getMeasuredWidth() - i172) * 2;
+            int i162 = i10;
+            int max2 = Math.max(i162, getMeasuredWidth() - i162) * 2;
             if (this.lineActiveness < 1.0f) {
             }
             f13 = this.lineActiveness;
@@ -1153,11 +1153,11 @@ public class EditTextBoldCursor extends nt {
     }
 
     @Override // android.widget.TextView, android.view.View
-    public void onFocusChanged(boolean z10, int i10, Rect rect) {
+    public void onFocusChanged(boolean z10, int i9, Rect rect) {
         try {
-            super.onFocusChanged(z10, i10, rect);
-        } catch (Exception e9) {
-            FileLog.e(e9);
+            super.onFocusChanged(z10, i9, rect);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
         e(true);
     }
@@ -1170,14 +1170,14 @@ public class EditTextBoldCursor extends nt {
             if (getText().length() <= 0) {
                 accessibilityNodeInfo.setText(this.hintLayout.getText());
             } else {
-                new s0.c(accessibilityNodeInfo).l(this.hintLayout.getText());
+                new s0.d(accessibilityNodeInfo).l(this.hintLayout.getText());
             }
         }
     }
 
     @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
+    public void onMeasure(int i9, int i10) {
+        super.onMeasure(i9, i10);
         int measuredHeight = getMeasuredHeight() + (getMeasuredWidth() << 16);
         i6 i6Var = this.hintAnimatedDrawable;
         if (i6Var != null) {
@@ -1204,16 +1204,16 @@ public class EditTextBoldCursor extends nt {
     }
 
     @Override // android.widget.TextView, android.view.View
-    public void onScrollChanged(int i10, int i11, int i12, int i13) {
-        super.onScrollChanged(i10, i11, i12, i13);
-        if (i10 != i12) {
+    public void onScrollChanged(int i9, int i10, int i11, int i12) {
+        super.onScrollChanged(i9, i10, i11, i12);
+        if (i9 != i11) {
             getParent().requestDisallowInterceptTouchEvent(true);
         }
     }
 
-    @Override // org.telegram.ui.Components.nt, android.widget.TextView
-    public void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        super.onTextChanged(charSequence, i10, i11, i12);
+    @Override // org.telegram.ui.Components.ot, android.widget.TextView
+    public void onTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
+        super.onTextChanged(charSequence, i9, i10, i11);
         if (!this.transformHintToHeader || this.transformHintToHeaderOnFocus) {
             return;
         }
@@ -1233,23 +1233,23 @@ public class EditTextBoldCursor extends nt {
         if (Build.VERSION.SDK_INT < 29 || runnable == null || j10 != 500 || !BLINK_CLASS.equals(runnable.getClass().getName()) || Looper.myLooper() != Looper.getMainLooper()) {
             return super.postDelayed(runnable, j10);
         }
-        gf.k d = gf.k.d();
+        ff.k d = ff.k.d();
         d.getClass();
-        gf.k.c();
+        ff.k.c();
         int max = Math.max(1, Math.min(2, 60));
         d.h(runnable);
-        gf.i e9 = d.e(max);
-        if (e9.f == null) {
-            e9.f = new yd.b(true);
+        ff.i e10 = d.e(max);
+        if (e10.f == null) {
+            e10.f = new xd.b(true);
         }
-        e9.f.add(runnable);
+        e10.f.add(runnable);
         return true;
     }
 
     @Override // android.view.View
     public boolean removeCallbacks(Runnable runnable) {
         if (Looper.myLooper() == Looper.getMainLooper()) {
-            gf.k.d().h(runnable);
+            ff.k.d().h(runnable);
         }
         return super.removeCallbacks(runnable);
     }
@@ -1268,24 +1268,24 @@ public class EditTextBoldCursor extends nt {
         invalidate();
     }
 
-    public void setBlurredBackgroundDrawableViewFactory(jg.a aVar) {
+    public void setBlurredBackgroundDrawableViewFactory(ig.a aVar) {
         this.blurredBackgroundDrawableViewFactory = aVar;
     }
 
-    public void setCursorColor(int i10) {
+    public void setCursorColor(int i9) {
         ShapeDrawable shapeDrawable = this.cursorDrawable;
         if (shapeDrawable != null) {
-            shapeDrawable.getPaint().setColor(i10);
+            shapeDrawable.getPaint().setColor(i9);
         }
         GradientDrawable gradientDrawable = this.gradientDrawable;
         if (gradientDrawable != null) {
-            gradientDrawable.setColor(i10);
+            gradientDrawable.setColor(i9);
         }
         invalidate();
     }
 
-    public void setCursorSize(int i10) {
-        this.cursorSize = i10;
+    public void setCursorSize(int i9) {
+        this.cursorSize = i9;
     }
 
     public void setCursorWidth(float f10) {
@@ -1304,9 +1304,9 @@ public class EditTextBoldCursor extends nt {
         }
     }
 
-    public void setErrorLineColor(int i10) {
-        this.errorLineColor = i10;
-        this.errorPaint.setColor(i10);
+    public void setErrorLineColor(int i9) {
+        this.errorLineColor = i9;
+        this.errorPaint.setColor(i9);
         invalidate();
     }
 
@@ -1323,12 +1323,12 @@ public class EditTextBoldCursor extends nt {
         invalidate();
     }
 
-    public void setHandlesColor(int i10) {
-        if (Build.VERSION.SDK_INT < 29 || XiaomiUtilities.isMIUI() || this.mHandlesColor == i10) {
+    public void setHandlesColor(int i9) {
+        if (Build.VERSION.SDK_INT < 29 || XiaomiUtilities.isMIUI() || this.mHandlesColor == i9) {
             return;
         }
-        this.mHandlesColor = i10;
-        this.mHandlesColorFilter = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
+        this.mHandlesColor = i9;
+        this.mHandlesColorFilter = new PorterDuffColorFilter(i9, PorterDuff.Mode.SRC_IN);
         h(this.mTextSelectHandleLeft, false);
         h(this.mTextSelectHandleRight, false);
         h(this.mTextSelectHandle, false);
@@ -1339,16 +1339,16 @@ public class EditTextBoldCursor extends nt {
         invalidate();
     }
 
-    public void setHeaderHintColor(int i10) {
-        this.headerHintColor = i10;
+    public void setHeaderHintColor(int i9) {
+        this.headerHintColor = i9;
         invalidate();
     }
 
-    public void setHintColor(int i10) {
-        this.hintColor = i10;
+    public void setHintColor(int i9) {
+        this.hintColor = i9;
         i6 i6Var = this.hintAnimatedDrawable;
         if (i6Var != null) {
-            i6Var.r(i10);
+            i6Var.r(i9);
         }
         i6 i6Var2 = this.hintAnimatedDrawable2;
         if (i6Var2 != null) {
@@ -1357,8 +1357,8 @@ public class EditTextBoldCursor extends nt {
         invalidate();
     }
 
-    public void setHintRightOffset(int i10) {
-        float f10 = i10;
+    public void setHintRightOffset(int i9) {
+        float f10 = i9;
         if (this.rightHintOffset == f10) {
             return;
         }
@@ -1389,16 +1389,16 @@ public class EditTextBoldCursor extends nt {
         invalidate();
     }
 
-    public void setLineColors(int i10, int i11, int i12) {
+    public void setLineColors(int i9, int i10, int i11) {
         this.lineVisible = true;
         getContext().getResources().getDrawable(R.drawable.search_dark).getPadding(this.padding);
         Rect rect = this.padding;
         setPadding(rect.left, rect.top, rect.right, rect.bottom);
-        this.lineColor = i10;
-        this.activeLineColor = i11;
-        this.activeLinePaint.setColor(i11);
-        this.errorLineColor = i12;
-        this.errorPaint.setColor(i12);
+        this.lineColor = i9;
+        this.activeLineColor = i10;
+        this.activeLinePaint.setColor(i10);
+        this.errorLineColor = i11;
+        this.errorPaint.setColor(i11);
         invalidate();
     }
 
@@ -1417,11 +1417,11 @@ public class EditTextBoldCursor extends nt {
     }
 
     @Override // android.widget.EditText
-    public void setSelection(int i10, int i11) {
+    public void setSelection(int i9, int i10) {
         try {
-            super.setSelection(i10, i11);
-        } catch (Exception e9) {
-            FileLog.e(e9);
+            super.setSelection(i9, i10);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
     }
 
@@ -1429,7 +1429,7 @@ public class EditTextBoldCursor extends nt {
         this.supportRtlHint = z10;
     }
 
-    @Override // org.telegram.ui.Components.nt, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.ot, android.widget.EditText, android.widget.TextView
     public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
         super.setText(charSequence, bufferType);
         e(this.nextSetTextAnimated);
@@ -1458,7 +1458,7 @@ public class EditTextBoldCursor extends nt {
     }
 
     @Override // android.widget.TextView
-    public void setTextSize(int i10, float f10) {
+    public void setTextSize(int i9, float f10) {
         i6 i6Var = this.hintAnimatedDrawable;
         if (i6Var != null) {
             i6Var.t(AndroidUtilities.dp(f10));
@@ -1467,7 +1467,7 @@ public class EditTextBoldCursor extends nt {
         if (i6Var2 != null) {
             i6Var2.t(AndroidUtilities.dp(f10));
         }
-        super.setTextSize(i10, f10);
+        super.setTextSize(i9, f10);
     }
 
     public void setTextWatchersSuppressed(boolean z10, boolean z11) {
@@ -1534,10 +1534,10 @@ public class EditTextBoldCursor extends nt {
         org.telegram.ui.ActionBar.v4 v4Var = new org.telegram.ui.ActionBar.v4(context, view, getActionModeStyle(), getResourcesProvider(), this.blurredBackgroundDrawableViewFactory);
         this.floatingToolbar = v4Var;
         v4Var.j = this.onPremiumMenuLockClickListener;
-        v4Var.k = new bt(this, 0);
-        org.telegram.ui.ActionBar.g4 g4Var2 = new org.telegram.ui.ActionBar.g4(getContext(), new org.telegram.ui.Cells.h9(this, callback), this, this.floatingToolbar);
+        v4Var.k = new ct(this, 0);
+        org.telegram.ui.ActionBar.g4 g4Var2 = new org.telegram.ui.ActionBar.g4(getContext(), new org.telegram.ui.Cells.l9(this, callback), this, this.floatingToolbar);
         this.floatingActionMode = g4Var2;
-        this.floatingToolbarPreDrawListener = new ct(0, this);
+        this.floatingToolbarPreDrawListener = new dt(0, this);
         callback.onCreateActionMode(g4Var2, g4Var2.c);
         org.telegram.ui.ActionBar.g4 g4Var3 = this.floatingActionMode;
         extendActionMode(g4Var3, g4Var3.c);
@@ -1548,15 +1548,15 @@ public class EditTextBoldCursor extends nt {
     }
 
     public void useAnimatedTextDrawable() {
-        dt dtVar = new dt(0, this);
-        this.hintAnimatedDrawable = dtVar;
-        dtVar.n(true);
+        et etVar = new et(0, this);
+        this.hintAnimatedDrawable = etVar;
+        etVar.n(true);
         this.hintAnimatedDrawable.r(this.hintColor);
         this.hintAnimatedDrawable.t(getPaint().getTextSize());
-        dt dtVar2 = new dt(1, this);
-        this.hintAnimatedDrawable2 = dtVar2;
-        dtVar2.b = 5;
-        dtVar2.r(this.hintColor);
+        et etVar2 = new et(1, this);
+        this.hintAnimatedDrawable2 = etVar2;
+        etVar2.b = 5;
+        etVar2.r(this.hintColor);
         this.hintAnimatedDrawable2.t(getPaint().getTextSize());
     }
 
@@ -1582,14 +1582,14 @@ public class EditTextBoldCursor extends nt {
         boolean z12 = false;
         if (getMeasuredWidth() == 0 ? false : z10) {
             if (this.hintAnimator == null) {
-                this.hintAnimator = new px0(this);
+                this.hintAnimator = new nx0(this);
             }
-            px0 px0Var = this.hintAnimator;
+            nx0 nx0Var = this.hintAnimator;
             StaticLayout staticLayout = this.hintLayout;
             CharSequence charSequence6 = this.hint;
-            px0Var.getClass();
+            nx0Var.getClass();
             if (staticLayout != null && !charSequence6.equals(charSequence5)) {
-                ValueAnimator valueAnimator = px0Var.j;
+                ValueAnimator valueAnimator = nx0Var.j;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
@@ -1607,49 +1607,50 @@ public class EditTextBoldCursor extends nt {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence2);
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(charSequence2);
                     if (indexOf != 0) {
-                        spannableStringBuilder2.setSpan(new zy(z12), 0, indexOf, 0);
+                        spannableStringBuilder2.setSpan(new xy(z12), 0, indexOf, 0);
                     }
                     if (charSequence3.length() + indexOf != charSequence2.length()) {
-                        spannableStringBuilder2.setSpan(new zy(z12), charSequence3.length() + indexOf, charSequence2.length(), 0);
+                        spannableStringBuilder2.setSpan(new xy(z12), charSequence3.length() + indexOf, charSequence2.length(), 0);
                     }
-                    spannableStringBuilder.setSpan(new zy(z12), indexOf, charSequence3.length() + indexOf, 0);
+                    spannableStringBuilder.setSpan(new xy(z12), indexOf, charSequence3.length() + indexOf, 0);
                     int dp = AndroidUtilities.dp(400.0f);
                     Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                    px0Var.b = new StaticLayout(spannableStringBuilder, textPaint, dp, alignment, 1.0f, 0.0f, false);
+                    nx0Var.b = new StaticLayout(spannableStringBuilder, textPaint, dp, alignment, 1.0f, 0.0f, false);
                     StaticLayout staticLayout2 = new StaticLayout(spannableStringBuilder2, textPaint, AndroidUtilities.dp(400.0f), alignment, 1.0f, 0.0f, false);
-                    px0Var.d = staticLayout2;
-                    px0Var.e = true;
-                    px0Var.f = z11;
-                    px0Var.h = indexOf == 0 ? 0.0f : -staticLayout2.getPrimaryHorizontal(indexOf);
-                    px0Var.c = null;
-                    px0Var.g = false;
+                    nx0Var.d = staticLayout2;
+                    nx0Var.e = true;
+                    nx0Var.f = z11;
+                    nx0Var.h = indexOf == 0 ? 0.0f : -staticLayout2.getPrimaryHorizontal(indexOf);
+                    nx0Var.c = null;
+                    nx0Var.g = false;
                 } else {
                     int dp2 = AndroidUtilities.dp(400.0f);
                     Layout.Alignment alignment2 = Layout.Alignment.ALIGN_NORMAL;
-                    px0Var.b = new StaticLayout(charSequence5, textPaint, dp2, alignment2, 1.0f, 0.0f, false);
-                    px0Var.c = new StaticLayout(charSequence6, textPaint, AndroidUtilities.dp(400.0f), alignment2, 1.0f, 0.0f, false);
-                    px0Var.d = null;
-                    px0Var.e = true;
-                    px0Var.g = true;
-                    px0Var.h = 0.0f;
+                    nx0Var.b = new StaticLayout(charSequence5, textPaint, dp2, alignment2, 1.0f, 0.0f, false);
+                    nx0Var.c = new StaticLayout(charSequence6, textPaint, AndroidUtilities.dp(400.0f), alignment2, 1.0f, 0.0f, false);
+                    nx0Var.d = null;
+                    nx0Var.e = true;
+                    nx0Var.g = true;
+                    nx0Var.h = 0.0f;
                 }
-                px0Var.i = 0.0f;
+                nx0Var.i = 0.0f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                px0Var.j = ofFloat;
-                ofFloat.addUpdateListener(new v60(px0Var, 26));
-                px0Var.j.addListener(new sz(px0Var, 28));
-                px0Var.j.setDuration(150L);
-                px0Var.j.setInterpolator(er.f);
-                px0Var.j.start();
+                nx0Var.j = ofFloat;
+                int i9 = 26;
+                ofFloat.addUpdateListener(new q60(nx0Var, i9));
+                nx0Var.j.addListener(new r60(nx0Var, i9));
+                nx0Var.j.setDuration(150L);
+                nx0Var.j.setInterpolator(gr.f);
+                nx0Var.j.start();
             }
         } else {
-            px0 px0Var2 = this.hintAnimator;
-            if (px0Var2 != null) {
-                ValueAnimator valueAnimator2 = px0Var2.j;
+            nx0 nx0Var2 = this.hintAnimator;
+            if (nx0Var2 != null) {
+                ValueAnimator valueAnimator2 = nx0Var2.j;
                 if (valueAnimator2 != null) {
                     valueAnimator2.cancel();
                 }
-                px0Var2.e = false;
+                nx0Var2.e = false;
             }
         }
         this.hint = charSequence5;
@@ -1668,20 +1669,20 @@ public class EditTextBoldCursor extends nt {
     }
 
     @Override // android.widget.EditText
-    public void setSelection(int i10) {
+    public void setSelection(int i9) {
         try {
-            super.setSelection(i10);
-        } catch (Exception e9) {
-            FileLog.e(e9);
+            super.setSelection(i9);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
     }
 
     @Override // android.view.View
-    public ActionMode startActionMode(ActionMode.Callback callback, int i10) {
+    public ActionMode startActionMode(ActionMode.Callback callback, int i9) {
         if (Build.VERSION.SDK_INT >= 23 && (this.windowView != null || this.attachedToWindow != null)) {
             return startActionMode(callback);
         }
-        return super.startActionMode(callback, i10);
+        return super.startActionMode(callback, i9);
     }
 
     public void extendActionMode(ActionMode actionMode, Menu menu) {

@@ -2,24 +2,24 @@ package e4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import d5.g0;
+import d5.f0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class l extends j {
-    public static final Parcelable.Creator<l> CREATOR = new c8.o(21);
+    public static final Parcelable.Creator<l> CREATOR = new c.c(13);
     public final int b;
     public final int c;
     public final int d;
     public final int[] e;
     public final int[] f;
 
-    public l(int i10, int i11, int i12, int[] iArr, int[] iArr2) {
+    public l(int i9, int i10, int i11, int[] iArr, int[] iArr2) {
         super("MLLT");
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
+        this.b = i9;
+        this.c = i10;
+        this.d = i11;
         this.e = iArr;
         this.f = iArr2;
     }
@@ -47,7 +47,7 @@ public final class l extends j {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i9) {
         parcel.writeInt(this.b);
         parcel.writeInt(this.c);
         parcel.writeInt(this.d);
@@ -61,7 +61,7 @@ public final class l extends j {
         this.c = parcel.readInt();
         this.d = parcel.readInt();
         int[] createIntArray = parcel.createIntArray();
-        int i10 = g0.a;
+        int i9 = f0.a;
         this.e = createIntArray;
         this.f = parcel.createIntArray();
     }

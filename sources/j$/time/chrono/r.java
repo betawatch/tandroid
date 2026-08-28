@@ -16,14 +16,14 @@ public final class r extends a implements Serializable {
     private static final long serialVersionUID = -1440403870442975015L;
 
     @Override // j$.time.chrono.k
-    public final l u(int i10) {
-        if (i10 == 0) {
+    public final l u(int i9) {
+        if (i9 == 0) {
             return s.BCE;
         }
-        if (i10 == 1) {
+        if (i9 == 1) {
             return s.CE;
         }
-        throw new j$.time.b("Invalid era: " + i10);
+        throw new j$.time.b("Invalid era: " + i9);
     }
 
     @Override // j$.time.chrono.k

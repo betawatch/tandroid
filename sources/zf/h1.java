@@ -1,41 +1,62 @@
 package zf;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.animation.ValueAnimator;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.su0;
+import yf.a2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class h1 extends View {
-    public int a;
-    public float b;
-    public final /* synthetic */ i1 c;
+public final /* synthetic */ class h1 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h1(i1 i1Var, Context context) {
-        super(context);
-        this.c = i1Var;
-        setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-        setLayoutParams(new f2.y0(-2, 0));
+    public /* synthetic */ h1(int i9, Object obj, Object obj2) {
+        this.a = i9;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        i1 i1Var = this.c;
-        i1Var.T2.setColor(this.a);
-        float min = Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f;
-        if (this.b != 0.0f) {
-            min -= (i1Var.U2.getStrokeWidth() + AndroidUtilities.dp(3.0f)) * this.b;
-        }
-        float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
-        float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
-        i1.x1(width, height, min, this.a, canvas);
-        if (this.b != 0.0f) {
-            i1Var.U2.setColor(this.a);
-            i1Var.U2.setAlpha(255);
-            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - AndroidUtilities.dp(2.0f), i1Var.U2);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                su0 su0Var = (su0) this.b;
+                Drawable drawable = (Drawable) this.c;
+                su0Var.getClass();
+                drawable.setAlpha(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                View view = ((k1) su0Var.c).w0;
+                if (!(view instanceof org.telegram.ui.Cells.t1)) {
+                    view.invalidate();
+                    break;
+                } else {
+                    ((org.telegram.ui.Cells.t1) view).a3();
+                    break;
+                }
+            default:
+                a2 a2Var = (a2) this.b;
+                boolean[] zArr = (boolean[]) this.c;
+                a2Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (floatValue >= 0.5f) {
+                    if (!zArr[0]) {
+                        zArr[0] = true;
+                        a2Var.n0.b(a2Var.u0, false);
+                    }
+                    float f10 = (floatValue - 0.5f) / 0.5f;
+                    a2Var.setRotationY((1.0f - f10) * (-90.0f));
+                    a2Var.v0 = (f10 * 0.3f) + 0.7f;
+                    a2Var.invalidate();
+                    break;
+                } else {
+                    float f11 = floatValue / 0.5f;
+                    a2Var.setRotationY(90.0f * f11);
+                    a2Var.v0 = ((1.0f - f11) * 0.3f) + 0.7f;
+                    a2Var.invalidate();
+                    break;
+                }
         }
     }
 }

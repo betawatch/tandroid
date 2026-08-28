@@ -1,59 +1,73 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.text.style.ImageSpan;
-import org.telegram.messenger.Emoji;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class dn implements TextWatcher {
-    public final /* synthetic */ cn a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ gn c;
+public final class dn extends org.telegram.ui.Cells.c6 {
+    public final /* synthetic */ int B;
+    public final /* synthetic */ hn C;
 
-    public dn(gn gnVar, cn cnVar, int i10) {
-        this.c = gnVar;
-        this.a = cnVar;
-        this.b = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dn(hn hnVar, Context context, int i9, org.telegram.ui.ActionBar.b6 b6Var, int i10) {
+        super(context, i9, null, b6Var);
+        this.C = hnVar;
+        this.B = i10;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        in inVar = this.c.d;
-        cn cnVar = this.a;
-        if (cnVar.getTag() != null) {
-            return;
-        }
-        int i10 = this.b;
-        int i11 = i10 == 11 ? inVar.j0 : inVar.i0;
-        f2.o1 K = inVar.s.K(i11);
-        if (K != null && inVar.x != null) {
-            for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
-                editable.removeSpan(imageSpan);
+    @Override // org.telegram.ui.Cells.c6
+    public final void g(fh.s sVar, ActionMode actionMode) {
+        jn jnVar = this.C.d;
+        if (!jnVar.n && this.B == 11 && sVar.isFocused() && sVar.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
+                return;
             }
-            Emoji.replaceEmoji(editable, cnVar.getEditField().getPaint().getFontMetricsInt(), false);
-            inVar.x.setDirection(1);
-            inVar.x.setDelegate(cnVar);
-            inVar.x.setTranslationY(K.a.getY());
-            inVar.x.e();
+            org.telegram.ui.qn.k8(menu, ((org.telegram.ui.qn) jnVar.b.b0).h, false, true, true, true);
         }
-        if (i10 == 11) {
-            inVar.K = editable;
-        } else {
-            inVar.J = editable;
-        }
-        if (K != null) {
-            in.L(inVar, K.a, i11);
-        }
-        inVar.T();
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Cells.c6
+    public final void i(boolean z10) {
+        jn.L(this.C.d, this, z10);
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Cells.c6
+    public final void j(org.telegram.ui.Cells.c6 c6Var) {
+        jn.M(this.C.d, c6Var);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void k(fh.s sVar) {
+        this.C.d.b.t1(sVar, true);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean l(ArrayList arrayList) {
+        jn jnVar = this.C.d;
+        if (arrayList.isEmpty()) {
+            return false;
+        }
+        fh.s sVar = this.d;
+        sVar.getText().replace(sVar.getSelectionStart(), sVar.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+        int i9 = 0;
+        while (!arrayList.isEmpty() && i9 < jnVar.F) {
+            for (int length = jnVar.G.length - 1; length > i9; length--) {
+                CharSequence[] charSequenceArr = jnVar.G;
+                charSequenceArr[length] = charSequenceArr[length - 1];
+            }
+            jnVar.G[i9] = (CharSequence) arrayList.remove(0);
+            jnVar.I++;
+            i9++;
+        }
+        jnVar.g0();
+        jnVar.g0 = (jnVar.p0 + i9) - 1;
+        jnVar.s.setItemAnimator(jnVar.v);
+        jnVar.r.l();
+        return true;
     }
 }

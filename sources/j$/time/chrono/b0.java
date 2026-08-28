@@ -47,11 +47,11 @@ public final class b0 extends d {
             throw new j$.time.temporal.r(j$.time.c.a("Unsupported field: ", oVar));
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        int i10 = a0.a[aVar.ordinal()];
-        if (i10 == 1 || i10 == 2 || i10 == 3) {
+        int i9 = a0.a[aVar.ordinal()];
+        if (i9 == 1 || i9 == 2 || i9 == 3) {
             return this.a.l(oVar);
         }
-        if (i10 != 4) {
+        if (i9 != 4) {
             return z.c.s(aVar);
         }
         j$.time.temporal.s sVar = j$.time.temporal.a.YEAR.b;
@@ -61,21 +61,21 @@ public final class b0 extends d {
     @Override // j$.time.temporal.l
     public final long y(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            int i10 = a0.a[((j$.time.temporal.a) oVar).ordinal()];
-            if (i10 == 4) {
+            int i9 = a0.a[((j$.time.temporal.a) oVar).ordinal()];
+            if (i9 == 4) {
                 int N = N();
                 if (N < 1) {
                     N = 1 - N;
                 }
                 return N;
             }
-            if (i10 == 5) {
+            if (i9 == 5) {
                 return ((N() * 12) + this.a.b) - 1;
             }
-            if (i10 == 6) {
+            if (i9 == 6) {
                 return N();
             }
-            if (i10 != 7) {
+            if (i9 != 7) {
                 return this.a.y(oVar);
             }
             return N() < 1 ? 0 : 1;
@@ -103,25 +103,25 @@ public final class b0 extends d {
                 return this;
             }
             int[] iArr = a0.a;
-            int i10 = iArr[aVar.ordinal()];
-            if (i10 != 4) {
-                if (i10 == 5) {
+            int i9 = iArr[aVar.ordinal()];
+            if (i9 != 4) {
+                if (i9 == 5) {
                     z.c.s(aVar).b(j10, aVar);
                     long N = N() * 12;
                     return P(this.a.T(j10 - ((N + r10.b) - 1)));
                 }
-                if (i10 != 6) {
+                if (i9 != 6) {
                 }
             }
             int a2 = z.c.s(aVar).a(j10, aVar);
-            int i11 = iArr[aVar.ordinal()];
-            if (i11 == 4) {
+            int i10 = iArr[aVar.ordinal()];
+            if (i10 == 4) {
                 return P(this.a.Y(N() >= 1 ? a2 + 1911 : 1912 - a2));
             }
-            if (i11 == 6) {
+            if (i10 == 6) {
                 return P(this.a.Y(a2 + 1911));
             }
-            if (i11 == 7) {
+            if (i10 == 7) {
                 return P(this.a.Y(1912 - N()));
             }
             return P(this.a.c(j10, oVar));

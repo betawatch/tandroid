@@ -17,18 +17,18 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kp0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ op0 b;
+    public final /* synthetic */ np0 b;
     public final /* synthetic */ int c;
     public final /* synthetic */ String d;
 
-    public /* synthetic */ kp0(op0 op0Var, int i10, String str) {
+    public /* synthetic */ kp0(np0 np0Var, int i9, String str) {
         this.a = 1;
-        this.b = op0Var;
-        this.c = i10;
+        this.b = np0Var;
+        this.c = i9;
         this.d = str;
     }
 
@@ -46,62 +46,62 @@ public final /* synthetic */ class kp0 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
+        int i9;
         int i10;
         int i11;
-        int i12;
-        op0 op0Var;
-        sp0 sp0Var;
+        np0 np0Var;
+        rp0 rp0Var;
         String[] strArr;
+        int i12;
         int i13;
         int i14;
-        int i15;
         TLRPC.TL_chatAdminRights tL_chatAdminRights;
+        int i15;
         int i16;
-        int i17;
-        op0 op0Var2;
+        np0 np0Var2;
         ?? r12;
         boolean z10;
         switch (this.a) {
             case 0:
-                op0 op0Var3 = this.b;
-                op0Var3.f = null;
-                i10 = ((org.telegram.ui.ActionBar.e3) op0Var3.G).currentAccount;
-                DispatchQueue storageQueue = MessagesStorage.getInstance(i10).getStorageQueue();
+                np0 np0Var3 = this.b;
+                np0Var3.f = null;
+                i9 = ((org.telegram.ui.ActionBar.f3) np0Var3.G).currentAccount;
+                DispatchQueue storageQueue = MessagesStorage.getInstance(i9).getStorageQueue();
                 String str = this.d;
-                int i18 = this.c;
-                storageQueue.postRunnable(new kp0(op0Var3, str, i18, 2));
-                kp0 kp0Var = new kp0(op0Var3, i18, str);
-                op0Var3.h = kp0Var;
+                int i17 = this.c;
+                storageQueue.postRunnable(new kp0(np0Var3, str, i17, 2));
+                kp0 kp0Var = new kp0(np0Var3, i17, str);
+                np0Var3.h = kp0Var;
                 AndroidUtilities.runOnUIThread(kp0Var);
                 break;
             case 1:
-                op0 op0Var4 = this.b;
-                op0Var4.h = null;
-                int i19 = op0Var4.r;
-                int i20 = this.c;
-                if (i20 == i19) {
-                    op0Var4.e.g(this.d, true, true, true, true, 0L, false, 0, i20);
+                np0 np0Var4 = this.b;
+                np0Var4.h = null;
+                int i18 = np0Var4.r;
+                int i19 = this.c;
+                if (i19 == i18) {
+                    np0Var4.e.g(this.d, true, true, true, true, 0L, false, 0, i19);
                     break;
                 }
                 break;
             default:
                 String str2 = this.d;
-                int i21 = this.c;
-                op0 op0Var5 = this.b;
-                sp0 sp0Var2 = op0Var5.G;
+                int i20 = this.c;
+                np0 np0Var5 = this.b;
+                rp0 rp0Var2 = np0Var5.G;
                 try {
                     String lowerCase = str2.trim().toLowerCase();
                     if (lowerCase.length() == 0) {
-                        op0Var5.r = -1;
-                        AndroidUtilities.runOnUIThread(new km(op0Var5, op0Var5.r, new ArrayList(), 9));
+                        np0Var5.r = -1;
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.rl(np0Var5, np0Var5.r, new ArrayList(), 10));
                         break;
                     } else {
                         String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
                         if (lowerCase.equals(translitString) || translitString.length() == 0) {
                             translitString = null;
                         }
-                        int i22 = (translitString != null ? 1 : 0) + 1;
-                        String[] strArr2 = new String[i22];
+                        int i21 = (translitString != null ? 1 : 0) + 1;
+                        String[] strArr2 = new String[i21];
                         strArr2[0] = lowerCase;
                         if (translitString != null) {
                             strArr2[1] = translitString;
@@ -109,8 +109,8 @@ public final /* synthetic */ class kp0 implements Runnable {
                         ArrayList arrayList = new ArrayList();
                         ArrayList arrayList2 = new ArrayList();
                         a0.h hVar = new a0.h();
-                        i11 = ((org.telegram.ui.ActionBar.e3) sp0Var2).currentAccount;
-                        SQLiteCursor queryFinalized = MessagesStorage.getInstance(i11).getDatabase().queryFinalized("SELECT did, date FROM dialogs ORDER BY date DESC LIMIT 400", new Object[0]);
+                        i10 = ((org.telegram.ui.ActionBar.f3) rp0Var2).currentAccount;
+                        SQLiteCursor queryFinalized = MessagesStorage.getInstance(i10).getDatabase().queryFinalized("SELECT did, date FROM dialogs ORDER BY date DESC LIMIT 400", new Object[0]);
                         while (queryFinalized.next()) {
                             long longValue = queryFinalized.longValue(0);
                             fp0 fp0Var = new fp0();
@@ -129,39 +129,39 @@ public final /* synthetic */ class kp0 implements Runnable {
                         }
                         queryFinalized.dispose();
                         if (arrayList.isEmpty()) {
-                            i12 = i21;
-                            op0Var = op0Var5;
-                            sp0Var = sp0Var2;
+                            i11 = i20;
+                            np0Var = np0Var5;
+                            rp0Var = rp0Var2;
                             strArr = strArr2;
-                            i13 = 0;
+                            i12 = 0;
                         } else {
-                            i16 = ((org.telegram.ui.ActionBar.e3) sp0Var2).currentAccount;
-                            SQLiteDatabase database = MessagesStorage.getInstance(i16).getDatabase();
+                            i15 = ((org.telegram.ui.ActionBar.f3) rp0Var2).currentAccount;
+                            SQLiteDatabase database = MessagesStorage.getInstance(i15).getDatabase();
                             Locale locale = Locale.US;
                             String join = TextUtils.join(",", arrayList);
                             StringBuilder sb2 = new StringBuilder();
-                            sp0Var = sp0Var2;
+                            rp0Var = rp0Var2;
                             sb2.append("SELECT data, status, name FROM users WHERE uid IN(");
                             sb2.append(join);
                             sb2.append(")");
                             SQLiteCursor queryFinalized2 = database.queryFinalized(sb2.toString(), new Object[0]);
-                            int i23 = 0;
+                            int i22 = 0;
                             while (queryFinalized2.next()) {
                                 String stringValue = queryFinalized2.stringValue(2);
                                 String translitString2 = LocaleController.getInstance().getTranslitString(stringValue);
                                 if (stringValue.equals(translitString2)) {
                                     translitString2 = null;
                                 }
-                                int i24 = i23;
+                                int i23 = i22;
                                 int lastIndexOf = stringValue.lastIndexOf(";;;");
                                 String[] strArr3 = strArr2;
                                 String substring = lastIndexOf != -1 ? stringValue.substring(lastIndexOf + 3) : null;
-                                int i25 = 0;
+                                int i24 = 0;
                                 boolean z11 = false;
                                 while (true) {
-                                    if (i25 < i22) {
-                                        int i26 = i25;
-                                        String str3 = strArr3[i26];
+                                    if (i24 < i21) {
+                                        int i25 = i24;
+                                        String str3 = strArr3[i25];
                                         if (!stringValue.startsWith(str3)) {
                                             if (!stringValue.contains(" " + str3)) {
                                                 if (translitString2 != null) {
@@ -176,16 +176,16 @@ public final /* synthetic */ class kp0 implements Runnable {
                                                     if (byteBufferValue != null) {
                                                         TLRPC.User TLdeserialize = TLRPC.User.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
                                                         byteBufferValue.reuse();
-                                                        int i27 = i21;
-                                                        op0Var2 = op0Var5;
+                                                        int i26 = i20;
+                                                        np0Var2 = np0Var5;
                                                         fp0 fp0Var2 = (fp0) hVar.f(TLdeserialize.id);
                                                         TLRPC.UserStatus userStatus = TLdeserialize.status;
                                                         if (userStatus != null) {
-                                                            i17 = i27;
+                                                            i16 = i26;
                                                             z10 = true;
                                                             userStatus.expires = queryFinalized2.intValue(1);
                                                         } else {
-                                                            i17 = i27;
+                                                            i16 = i26;
                                                             z10 = true;
                                                         }
                                                         if (r12 == z10) {
@@ -195,10 +195,10 @@ public final /* synthetic */ class kp0 implements Runnable {
                                                         }
                                                         fp0Var2.b = TLdeserialize;
                                                         fp0Var2.a.id = TLdeserialize.id;
-                                                        i23 = i24 + 1;
+                                                        i22 = i23 + 1;
                                                     }
                                                 } else {
-                                                    i25 = i26 + 1;
+                                                    i24 = i25 + 1;
                                                     z11 = r12;
                                                 }
                                             }
@@ -208,22 +208,22 @@ public final /* synthetic */ class kp0 implements Runnable {
                                         }
                                     }
                                 }
-                                i17 = i21;
-                                op0Var2 = op0Var5;
-                                i23 = i24;
+                                i16 = i20;
+                                np0Var2 = np0Var5;
+                                i22 = i23;
                                 strArr2 = strArr3;
-                                op0Var5 = op0Var2;
-                                i21 = i17;
+                                np0Var5 = np0Var2;
+                                i20 = i16;
                             }
-                            i12 = i21;
-                            op0Var = op0Var5;
-                            i13 = i23;
+                            i11 = i20;
+                            np0Var = np0Var5;
+                            i12 = i22;
                             strArr = strArr2;
                             queryFinalized2.dispose();
                         }
                         if (!arrayList2.isEmpty()) {
-                            i15 = ((org.telegram.ui.ActionBar.e3) sp0Var).currentAccount;
-                            SQLiteDatabase database2 = MessagesStorage.getInstance(i15).getDatabase();
+                            i14 = ((org.telegram.ui.ActionBar.f3) rp0Var).currentAccount;
+                            SQLiteDatabase database2 = MessagesStorage.getInstance(i14).getDatabase();
                             Locale locale2 = Locale.US;
                             SQLiteCursor queryFinalized3 = database2.queryFinalized("SELECT data, name FROM chats WHERE uid IN(" + TextUtils.join(",", arrayList2) + ")", new Object[0]);
                             while (queryFinalized3.next()) {
@@ -232,8 +232,8 @@ public final /* synthetic */ class kp0 implements Runnable {
                                 if (stringValue2.equals(translitString3)) {
                                     translitString3 = null;
                                 }
-                                for (int i28 = 0; i28 < i22; i28++) {
-                                    String str4 = strArr[i28];
+                                for (int i27 = 0; i27 < i21; i27++) {
+                                    String str4 = strArr[i27];
                                     if (!stringValue2.startsWith(str4)) {
                                         if (!stringValue2.contains(" " + str4)) {
                                             if (translitString3 != null) {
@@ -253,22 +253,22 @@ public final /* synthetic */ class kp0 implements Runnable {
                                             fp0Var3.d = AndroidUtilities.generateSearchName(TLdeserialize2.title, null, str4);
                                             fp0Var3.b = TLdeserialize2;
                                             fp0Var3.a.id = -TLdeserialize2.id;
-                                            i13++;
+                                            i12++;
                                         }
                                     }
                                 }
                             }
                             queryFinalized3.dispose();
                         }
-                        ArrayList arrayList3 = new ArrayList(i13);
-                        for (int i29 = 0; i29 < hVar.m(); i29++) {
-                            fp0 fp0Var4 = (fp0) hVar.n(i29);
+                        ArrayList arrayList3 = new ArrayList(i12);
+                        for (int i28 = 0; i28 < hVar.m(); i28++) {
+                            fp0 fp0Var4 = (fp0) hVar.n(i28);
                             if (fp0Var4.b != null && fp0Var4.d != null) {
                                 arrayList3.add(fp0Var4);
                             }
                         }
-                        i14 = ((org.telegram.ui.ActionBar.e3) sp0Var).currentAccount;
-                        SQLiteCursor queryFinalized4 = MessagesStorage.getInstance(i14).getDatabase().queryFinalized("SELECT u.data, u.status, u.name, u.uid FROM users as u INNER JOIN contacts as c ON u.uid = c.uid", new Object[0]);
+                        i13 = ((org.telegram.ui.ActionBar.f3) rp0Var).currentAccount;
+                        SQLiteCursor queryFinalized4 = MessagesStorage.getInstance(i13).getDatabase().queryFinalized("SELECT u.data, u.status, u.name, u.uid FROM users as u INNER JOIN contacts as c ON u.uid = c.uid", new Object[0]);
                         while (queryFinalized4.next()) {
                             if (hVar.h(queryFinalized4.longValue(3)) < 0) {
                                 String stringValue3 = queryFinalized4.stringValue(2);
@@ -278,11 +278,11 @@ public final /* synthetic */ class kp0 implements Runnable {
                                 }
                                 int lastIndexOf2 = stringValue3.lastIndexOf(";;;");
                                 String substring2 = lastIndexOf2 != -1 ? stringValue3.substring(lastIndexOf2 + 3) : null;
-                                int i30 = 0;
+                                int i29 = 0;
                                 char c10 = 0;
                                 while (true) {
-                                    if (i30 < i22) {
-                                        String str5 = strArr[i30];
+                                    if (i29 < i21) {
+                                        String str5 = strArr[i29];
                                         if (!stringValue3.startsWith(str5)) {
                                             if (!stringValue3.contains(" " + str5)) {
                                                 if (translitString4 != null) {
@@ -314,7 +314,7 @@ public final /* synthetic */ class kp0 implements Runnable {
                                                         arrayList3.add(fp0Var5);
                                                     }
                                                 } else {
-                                                    i30++;
+                                                    i29++;
                                                 }
                                             }
                                         }
@@ -326,20 +326,20 @@ public final /* synthetic */ class kp0 implements Runnable {
                             }
                         }
                         queryFinalized4.dispose();
-                        Collections.sort(arrayList3, new lp0(0));
-                        AndroidUtilities.runOnUIThread(new km(op0Var, i12, arrayList3, 9));
+                        Collections.sort(arrayList3, new jn0(2));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.rl(np0Var, i11, arrayList3, 10));
                         break;
                     }
-                } catch (Exception e9) {
-                    FileLog.e(e9);
+                } catch (Exception e10) {
+                    FileLog.e(e10);
                 }
         }
     }
 
-    public /* synthetic */ kp0(op0 op0Var, String str, int i10, int i11) {
-        this.a = i11;
-        this.b = op0Var;
+    public /* synthetic */ kp0(np0 np0Var, String str, int i9, int i10) {
+        this.a = i10;
+        this.b = np0Var;
         this.d = str;
-        this.c = i10;
+        this.c = i9;
     }
 }

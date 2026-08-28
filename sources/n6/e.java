@@ -1,45 +1,16 @@
 package n6;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.os.IBinder;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public enum e implements Parcelable {
-    b("none"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF20("indirect"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF30("direct");
-
-    public static final Parcelable.Creator<e> CREATOR = new o0(16);
-    public final String a;
-
-    e(String str) {
-        this.a = str;
-    }
-
-    public static e a(String str) {
-        for (e eVar : values()) {
-            if (str.equals(eVar.a)) {
-                return eVar;
-            }
+public abstract class e extends y6.a implements f {
+    public static f asInterface(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
         }
-        throw new d(a9.p.m("Attestation conveyance preference ", str, " not supported"));
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    @Override // java.lang.Enum
-    public final String toString() {
-        return this.a;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeString(this.a);
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.flags.IFlagProvider");
+        return queryLocalInterface instanceof f ? (f) queryLocalInterface : new d(iBinder);
     }
 }

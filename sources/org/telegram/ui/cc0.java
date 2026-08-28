@@ -1,69 +1,45 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.IMapsProvider;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cc0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tc0 b;
+public final class cc0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ pc0 a;
 
-    public /* synthetic */ cc0(tc0 tc0Var, int i10) {
-        this.a = i10;
-        this.b = tc0Var;
+    public cc0(pc0 pc0Var) {
+        this.a = pc0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                tc0 tc0Var = this.b;
-                IMapsProvider.ICameraUpdate iCameraUpdate = tc0Var.F;
-                if (iCameraUpdate != null) {
-                    tc0Var.E.moveCamera(iCameraUpdate);
-                    tc0Var.F = null;
-                    break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i9) {
+        pc0 pc0Var = this.a;
+        if (i9 == -1) {
+            pc0Var.finishFragment();
+            return;
+        }
+        if (i9 != 1) {
+            if (i9 == 5) {
+                pc0Var.r0(false);
+                return;
+            } else {
+                if (i9 == 6) {
+                    pc0Var.q0(null);
+                    return;
                 }
-                break;
-            case 1:
-                tc0 tc0Var2 = this.b;
-                tc0Var2.getLocationController().setProximityLocation(tc0Var2.a0, 0, true);
-                tc0Var2.C = false;
-                break;
-            case 2:
-                tc0 tc0Var3 = this.b;
-                IMapsProvider.IMap iMap = tc0Var3.E;
-                if (iMap != null) {
-                    iMap.setPadding(AndroidUtilities.dp(70.0f), 0, AndroidUtilities.dp(70.0f), AndroidUtilities.dp(10.0f));
-                }
-                if (!tc0Var3.N.getRadiusSet()) {
-                    double d = tc0Var3.L;
-                    if (d > 0.0d) {
-                        tc0Var3.K.setRadius(d);
-                    } else {
-                        IMapsProvider.ICircle iCircle = tc0Var3.K;
-                        if (iCircle != null) {
-                            iCircle.remove();
-                            tc0Var3.K = null;
-                        }
-                    }
-                }
-                tc0Var3.N = null;
-                break;
-            case 3:
-                qc0 qc0Var = this.b.x;
-                if (qc0Var != null) {
-                    qc0Var.a();
-                    break;
-                }
-                break;
-            case 4:
-                tc0.W(this.b);
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new cc0(this.b, 0));
-                break;
+                return;
+            }
+        }
+        try {
+            TLRPC.GeoPoint geoPoint = pc0Var.x0.messageOwner.media.geo;
+            double d = geoPoint.lat;
+            double d9 = geoPoint._long;
+            pc0Var.getParentActivity().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d9 + "?q=" + d + "," + d9)));
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
     }
 }

@@ -24,12 +24,12 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
     public final int d;
 
     static {
-        int i10 = 0;
+        int i9 = 0;
         while (true) {
             h[] hVarArr = h;
-            if (i10 < hVarArr.length) {
-                hVarArr[i10] = new h(i10, 0, 0, 0);
-                i10++;
+            if (i9 < hVarArr.length) {
+                hVarArr[i9] = new h(i9, 0, 0, 0);
+                i9++;
             } else {
                 h hVar = hVarArr[0];
                 g = hVar;
@@ -43,12 +43,12 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
 
     public static h K(long j10) {
         j$.time.temporal.a.NANO_OF_DAY.w(j10);
-        int i10 = (int) (j10 / 3600000000000L);
-        long j11 = j10 - (i10 * 3600000000000L);
-        int i11 = (int) (j11 / 60000000000L);
-        long j12 = j11 - (i11 * 60000000000L);
-        int i12 = (int) (j12 / 1000000000);
-        return H(i10, i11, i12, (int) (j12 - (i12 * 1000000000)));
+        int i9 = (int) (j10 / 3600000000000L);
+        long j11 = j10 - (i9 * 3600000000000L);
+        int i10 = (int) (j11 / 60000000000L);
+        long j12 = j11 - (i10 * 60000000000L);
+        int i11 = (int) (j12 / 1000000000);
+        return H(i9, i10, i11, (int) (j12 - (i11 * 1000000000)));
     }
 
     public static h I(j$.time.temporal.l lVar) {
@@ -60,18 +60,18 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
         throw new b("Unable to obtain LocalTime from TemporalAccessor: " + lVar + " of type " + lVar.getClass().getName());
     }
 
-    public static h H(int i10, int i11, int i12, int i13) {
-        if ((i11 | i12 | i13) == 0) {
-            return h[i10];
+    public static h H(int i9, int i10, int i11, int i12) {
+        if ((i10 | i11 | i12) == 0) {
+            return h[i9];
         }
-        return new h(i10, i11, i12, i13);
+        return new h(i9, i10, i11, i12);
     }
 
-    public h(int i10, int i11, int i12, int i13) {
-        this.a = (byte) i10;
-        this.b = (byte) i11;
-        this.c = (byte) i12;
-        this.d = i13;
+    public h(int i9, int i10, int i11, int i12) {
+        this.a = (byte) i9;
+        this.b = (byte) i10;
+        this.c = (byte) i11;
+        this.d = i12;
     }
 
     @Override // j$.time.temporal.l
@@ -134,11 +134,11 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
             case 11:
                 return this.a % 12;
             case 12:
-                int i10 = this.a % 12;
-                if (i10 % 12 == 0) {
+                int i9 = this.a % 12;
+                if (i9 % 12 == 0) {
                     return 12;
                 }
-                return i10;
+                return i9;
             case 13:
                 return this.a;
             case 14:
@@ -182,19 +182,19 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
             case 6:
                 return K(j10 * 1000000);
             case 7:
-                int i10 = (int) j10;
-                if (this.c != i10) {
-                    j$.time.temporal.a.SECOND_OF_MINUTE.w(i10);
-                    return H(this.a, this.b, i10, this.d);
+                int i9 = (int) j10;
+                if (this.c != i9) {
+                    j$.time.temporal.a.SECOND_OF_MINUTE.w(i9);
+                    return H(this.a, this.b, i9, this.d);
                 }
                 return this;
             case 8:
                 return P(j10 - S());
             case 9:
-                int i11 = (int) j10;
-                if (this.b != i11) {
-                    j$.time.temporal.a.MINUTE_OF_HOUR.w(i11);
-                    return H(this.a, i11, this.c, this.d);
+                int i10 = (int) j10;
+                if (this.b != i10) {
+                    j$.time.temporal.a.MINUTE_OF_HOUR.w(i10);
+                    return H(this.a, i10, this.c, this.d);
                 }
                 return this;
             case 10:
@@ -207,20 +207,20 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
                 }
                 return M(j10 - (this.a % 12));
             case 13:
-                int i12 = (int) j10;
-                if (this.a != i12) {
-                    j$.time.temporal.a.HOUR_OF_DAY.w(i12);
-                    return H(i12, this.b, this.c, this.d);
+                int i11 = (int) j10;
+                if (this.a != i11) {
+                    j$.time.temporal.a.HOUR_OF_DAY.w(i11);
+                    return H(i11, this.b, this.c, this.d);
                 }
                 return this;
             case 14:
                 if (j10 == 24) {
                     j10 = 0;
                 }
-                int i13 = (int) j10;
-                if (this.a != i13) {
-                    j$.time.temporal.a.HOUR_OF_DAY.w(i13);
-                    return H(i13, this.b, this.c, this.d);
+                int i12 = (int) j10;
+                if (this.a != i12) {
+                    j$.time.temporal.a.HOUR_OF_DAY.w(i12);
+                    return H(i12, this.b, this.c, this.d);
                 }
                 return this;
             case 15:
@@ -230,12 +230,12 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
         }
     }
 
-    public final h U(int i10) {
-        if (this.d == i10) {
+    public final h U(int i9) {
+        if (this.d == i9) {
             return this;
         }
-        j$.time.temporal.a.NANO_OF_SECOND.w(i10);
-        return H(this.a, this.b, this.c, i10);
+        j$.time.temporal.a.NANO_OF_SECOND.w(i9);
+        return H(this.a, this.b, this.c, i9);
     }
 
     @Override // j$.time.temporal.Temporal
@@ -270,10 +270,10 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
 
     public final h N(long j10) {
         if (j10 != 0) {
-            int i10 = (this.a * 60) + this.b;
-            int i11 = ((((int) (j10 % 1440)) + i10) + 1440) % 1440;
-            if (i10 != i11) {
-                return H(i11 / 60, i11 % 60, this.c, this.d);
+            int i9 = (this.a * 60) + this.b;
+            int i10 = ((((int) (j10 % 1440)) + i9) + 1440) % 1440;
+            if (i9 != i10) {
+                return H(i10 / 60, i10 % 60, this.c, this.d);
             }
         }
         return this;
@@ -281,10 +281,10 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
 
     public final h P(long j10) {
         if (j10 != 0) {
-            int i10 = (this.b * 60) + (this.a * 3600) + this.c;
-            int i11 = ((((int) (j10 % 86400)) + i10) + 86400) % 86400;
-            if (i10 != i11) {
-                return H(i11 / 3600, (i11 / 60) % 60, i11 % 60, this.d);
+            int i9 = (this.b * 60) + (this.a * 3600) + this.c;
+            int i10 = ((((int) (j10 % 86400)) + i9) + 86400) % 86400;
+            if (i9 != i10) {
+                return H(i10 / 3600, (i10 / 60) % 60, i10 % 60, this.d);
             }
         }
         return this;
@@ -393,22 +393,22 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
         byte b10 = this.a;
         byte b11 = this.b;
         byte b12 = this.c;
-        int i10 = this.d;
+        int i9 = this.d;
         sb2.append(b10 < 10 ? "0" : "");
         sb2.append((int) b10);
         sb2.append(b11 < 10 ? ":0" : ":");
         sb2.append((int) b11);
-        if (b12 > 0 || i10 > 0) {
+        if (b12 > 0 || i9 > 0) {
             sb2.append(b12 < 10 ? ":0" : ":");
             sb2.append((int) b12);
-            if (i10 > 0) {
+            if (i9 > 0) {
                 sb2.append('.');
-                if (i10 % MediaController.VIDEO_BITRATE_480 == 0) {
-                    sb2.append(Integer.toString((i10 / MediaController.VIDEO_BITRATE_480) + MediaDataController.MAX_STYLE_RUNS_COUNT).substring(1));
-                } else if (i10 % MediaDataController.MAX_STYLE_RUNS_COUNT == 0) {
-                    sb2.append(Integer.toString((i10 / MediaDataController.MAX_STYLE_RUNS_COUNT) + MediaController.VIDEO_BITRATE_480).substring(1));
+                if (i9 % MediaController.VIDEO_BITRATE_480 == 0) {
+                    sb2.append(Integer.toString((i9 / MediaController.VIDEO_BITRATE_480) + MediaDataController.MAX_STYLE_RUNS_COUNT).substring(1));
+                } else if (i9 % MediaDataController.MAX_STYLE_RUNS_COUNT == 0) {
+                    sb2.append(Integer.toString((i9 / MediaDataController.MAX_STYLE_RUNS_COUNT) + MediaController.VIDEO_BITRATE_480).substring(1));
                 } else {
-                    sb2.append(Integer.toString(i10 + 1000000000).substring(1));
+                    sb2.append(Integer.toString(i9 + 1000000000).substring(1));
                 }
             }
         }
@@ -450,7 +450,7 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
     /* JADX WARN: Type inference failed for: r6v4, types: [int] */
     public static h Q(DataInput dataInput) {
         int readInt;
-        int i10;
+        int i9;
         int readByte = dataInput.readByte();
         byte b10 = 0;
         if (readByte >= 0) {
@@ -459,31 +459,31 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
                 ?? r62 = ~readByte2;
                 readInt = 0;
                 b10 = r62;
-                i10 = 0;
+                i9 = 0;
             } else {
                 byte readByte3 = dataInput.readByte();
                 if (readByte3 < 0) {
-                    i10 = ~readByte3;
+                    i9 = ~readByte3;
                     b10 = readByte2;
                 } else {
                     readInt = dataInput.readInt();
                     b10 = readByte2;
-                    i10 = readByte3;
+                    i9 = readByte3;
                 }
             }
             j$.time.temporal.a.HOUR_OF_DAY.w(readByte);
             j$.time.temporal.a.MINUTE_OF_HOUR.w(b10);
-            j$.time.temporal.a.SECOND_OF_MINUTE.w(i10);
+            j$.time.temporal.a.SECOND_OF_MINUTE.w(i9);
             j$.time.temporal.a.NANO_OF_SECOND.w(readInt);
-            return H(readByte, b10, i10, readInt);
+            return H(readByte, b10, i9, readInt);
         }
         readByte = ~readByte;
-        i10 = 0;
+        i9 = 0;
         readInt = 0;
         j$.time.temporal.a.HOUR_OF_DAY.w(readByte);
         j$.time.temporal.a.MINUTE_OF_HOUR.w(b10);
-        j$.time.temporal.a.SECOND_OF_MINUTE.w(i10);
+        j$.time.temporal.a.SECOND_OF_MINUTE.w(i9);
         j$.time.temporal.a.NANO_OF_SECOND.w(readInt);
-        return H(readByte, b10, i10, readInt);
+        return H(readByte, b10, i9, readInt);
     }
 }

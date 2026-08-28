@@ -2,9 +2,9 @@ package v0;
 
 import android.os.Bundle;
 import org.json.JSONObject;
-import org.telegram.ui.i6;
+import org.telegram.ui.Cells.e3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class e extends b {
     public final String d;
@@ -15,13 +15,13 @@ public final class e extends b {
     */
     public e(String requestJson) {
         super(r0, r7, r1);
-        kotlin.jvm.internal.j.e(requestJson, "requestJson");
+        kotlin.jvm.internal.i.e(requestJson, "requestJson");
         try {
             JSONObject jSONObject = new JSONObject(requestJson).getJSONObject("user");
             String string = jSONObject.getString("name");
             String string2 = jSONObject.isNull("displayName") ? null : jSONObject.getString("displayName");
-            kotlin.jvm.internal.j.b(string);
-            i6 i6Var = new i6(string, string2);
+            kotlin.jvm.internal.i.b(string);
+            e3 e3Var = new e3(string, string2);
             Bundle bundle = new Bundle();
             bundle.putString("androidx.credentials.BUNDLE_KEY_SUBTYPE", "androidx.credentials.BUNDLE_VALUE_SUBTYPE_CREATE_PUBLIC_KEY_CREDENTIAL_REQUEST");
             bundle.putString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON", requestJson);

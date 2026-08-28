@@ -59,11 +59,11 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
         a = values();
     }
 
-    public static j J(int i10) {
-        if (i10 < 1 || i10 > 12) {
-            throw new b("Invalid value for MonthOfYear: " + i10);
+    public static j J(int i9) {
+        if (i9 < 1 || i9 > 12) {
+            throw new b("Invalid value for MonthOfYear: " + i9);
         }
-        return a[i10 - 1];
+        return a[i9 - 1];
     }
 
     public final int getValue() {
@@ -103,14 +103,14 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
     }
 
     public final int H(boolean z10) {
-        int i10 = i.a[ordinal()];
-        return i10 != 1 ? (i10 == 2 || i10 == 3 || i10 == 4 || i10 == 5) ? 30 : 31 : z10 ? 29 : 28;
+        int i9 = i.a[ordinal()];
+        return i9 != 1 ? (i9 == 2 || i9 == 3 || i9 == 4 || i9 == 5) ? 30 : 31 : z10 ? 29 : 28;
     }
 
     public final int I() {
-        int i10 = i.a[ordinal()];
-        if (i10 != 1) {
-            return (i10 == 2 || i10 == 3 || i10 == 4 || i10 == 5) ? 30 : 31;
+        int i9 = i.a[ordinal()];
+        if (i9 != 1) {
+            return (i9 == 2 || i9 == 3 || i9 == 4 || i9 == 5) ? 30 : 31;
         }
         return 29;
     }

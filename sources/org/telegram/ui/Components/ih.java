@@ -1,184 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import android.widget.FrameLayout;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class ih extends FrameLayout {
+public final class ih extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ gi b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ rh c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ih(gi giVar, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = giVar;
+    public /* synthetic */ ih(rh rhVar, boolean z10, int i9) {
+        this.a = i9;
+        this.c = rhVar;
+        this.b = z10;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 2:
-                canvas.save();
-                canvas.clipRect(0.0f, this.b.R1, getMeasuredWidth(), getMeasuredHeight());
-                super.dispatchDraw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 2:
-                gi giVar = this.b;
-                ih ihVar = giVar.z0;
-                if (giVar.y0.getAlpha() > 0.0f) {
-                    float f10 = giVar.S1;
-                    if (f10 != 0.0f && f10 != ihVar.getTop() + giVar.S1) {
-                        ValueAnimator valueAnimator = giVar.T1;
-                        if (valueAnimator != null) {
-                            valueAnimator.cancel();
-                        }
-                        float top = giVar.S1 - (ihVar.getTop() + giVar.R1);
-                        giVar.R1 = top;
-                        ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
-                        giVar.T1 = ofFloat;
-                        ofFloat.addUpdateListener(new e6(this, 10));
-                        giVar.T1.setInterpolator(er.f);
-                        giVar.T1.setDuration(200L);
-                        giVar.T1.start();
-                        giVar.S1 = 0.0f;
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
-            case 3:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                gi giVar = this.b;
-                yh yhVar = giVar.u0;
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = giVar.f0;
-                if (yhVar == chatAttachAlertPhotoLayout) {
-                    accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendPhotos", chatAttachAlertPhotoLayout.getSelectedItemsCount(), new Object[0]));
-                } else {
-                    bk bkVar = giVar.l0;
-                    if (yhVar == bkVar) {
-                        accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendFiles", bkVar.getSelectedItemsCount(), new Object[0]));
-                    } else {
-                        ri riVar = giVar.h0;
-                        if (yhVar == riVar) {
-                            accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendAudio", riVar.getSelectedItemsCount(), new Object[0]));
-                        }
-                    }
-                }
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                if (this.b.e1.getVisibility() != 0) {
-                    return false;
+                rh rhVar = this.c;
+                ki kiVar = rhVar.e;
+                boolean z10 = this.b;
+                if (z10) {
+                    kiVar.t1.setVisibility(8);
+                } else {
+                    kiVar.A1.setVisibility(8);
                 }
-                return super.onInterceptTouchEvent(motionEvent);
+                int dp = z10 ? AndroidUtilities.dp(36.0f) : 0;
+                for (int i9 = 0; i9 < kiVar.t0.size(); i9++) {
+                    ((mh.g4) kiVar.t0.valueAt(i9)).setMeasureOffsetY(dp);
+                }
+                if (rhVar.a == animator) {
+                    rhVar.a = null;
+                    break;
+                }
+                break;
             default:
-                return super.onInterceptTouchEvent(motionEvent);
+                ki kiVar2 = this.c.e;
+                boolean z11 = this.b;
+                kiVar2.x1 = z11;
+                if (!z11) {
+                    kiVar2.y1.setVisibility(8);
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
         switch (this.a) {
-            case 1:
-                gi giVar = this.b;
-                if (giVar.D && giVar.E != 0) {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(36.0f) + (AndroidUtilities.dp(80.0f) * Integer.bitCount(giVar.E))), TLObject.FLAG_30), i11);
+            case 0:
+                ki kiVar = this.c.e;
+                if (this.b) {
+                    kiVar.A1.setAlpha(0.0f);
+                    kiVar.A1.setVisibility(0);
+                    int dp = AndroidUtilities.dp(36.0f);
+                    for (int i9 = 0; i9 < kiVar.t0.size(); i9++) {
+                        ((mh.g4) kiVar.t0.valueAt(i9)).setMeasureOffsetY(dp);
+                    }
                     break;
                 } else {
-                    super.onMeasure(i10, i11);
+                    kiVar.t1.setAlpha(0.0f);
+                    kiVar.t1.setVisibility(0);
                     break;
                 }
             default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                if (this.b.e1.getVisibility() != 0) {
-                    return false;
-                }
-                return super.onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f10) {
-        ViewGroup viewGroup;
-        switch (this.a) {
-            case 0:
-                super.setAlpha(f10);
-                gi giVar = this.b;
-                giVar.a2(0);
-                viewGroup = ((org.telegram.ui.ActionBar.e3) giVar).containerView;
-                viewGroup.invalidate();
-                break;
-            case 1:
-            default:
-                super.setAlpha(f10);
-                break;
-            case 2:
-                super.setAlpha(f10);
-                invalidate();
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f10) {
-        switch (this.a) {
-            case 1:
-                super.setTranslationY(f10);
-                this.b.u0.j();
-                break;
-            default:
-                super.setTranslationY(f10);
+                super.onAnimationStart(animator);
                 break;
         }
     }

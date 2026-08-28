@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class e implements q2.f, Iterator, Closeable {
     public static final d c = new d("eof ");
@@ -14,7 +14,7 @@ public abstract class e implements q2.f, Iterator, Closeable {
     public ArrayList b;
 
     static {
-        zb.c.a(e.class);
+        yb.c.a(e.class);
     }
 
     public final void a(q2.b bVar) {
@@ -27,8 +27,8 @@ public abstract class e implements q2.f, Iterator, Closeable {
 
     public final long b() {
         long j10 = 0;
-        for (int i10 = 0; i10 < this.b.size(); i10++) {
-            j10 += ((q2.b) this.b.get(i10)).getSize();
+        for (int i9 = 0; i9 < this.b.size(); i9++) {
+            j10 += ((q2.b) this.b.get(i9)).getSize();
         }
         return j10;
     }
@@ -36,10 +36,10 @@ public abstract class e implements q2.f, Iterator, Closeable {
     public final void c(WritableByteChannel writableByteChannel) {
         ArrayList arrayList = this.b;
         int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
+        int i9 = 0;
+        while (i9 < size) {
+            Object obj = arrayList.get(i9);
+            i9++;
             ((q2.b) obj).getBox(writableByteChannel);
         }
     }
@@ -93,11 +93,11 @@ public abstract class e implements q2.f, Iterator, Closeable {
         StringBuilder sb2 = new StringBuilder();
         sb2.append(getClass().getSimpleName());
         sb2.append("[");
-        for (int i10 = 0; i10 < this.b.size(); i10++) {
-            if (i10 > 0) {
+        for (int i9 = 0; i9 < this.b.size(); i9++) {
+            if (i9 > 0) {
                 sb2.append(";");
             }
-            sb2.append(((q2.b) this.b.get(i10)).toString());
+            sb2.append(((q2.b) this.b.get(i9)).toString());
         }
         sb2.append("]");
         return sb2.toString();

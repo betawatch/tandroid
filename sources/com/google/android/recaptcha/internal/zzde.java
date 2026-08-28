@@ -1,30 +1,32 @@
 package com.google.android.recaptcha.internal;
 
-import ad.l;
-import fd.b;
-import h7.y6;
-import id.b0;
-import id.b1;
-import id.g1;
-import id.h1;
-import id.i0;
-import id.p;
-import id.p0;
-import id.r;
-import id.s;
-import id.s1;
-import id.t;
-import id.t1;
-import id.u1;
-import id.v1;
+import ed.b;
+import g7.u6;
+import hd.b0;
+import hd.b1;
+import hd.g1;
+import hd.h1;
+import hd.i0;
+import hd.p;
+import hd.p0;
+import hd.r;
+import hd.s;
+import hd.s1;
+import hd.t;
+import hd.t1;
+import hd.u1;
+import hd.v1;
 import java.util.concurrent.CancellationException;
-import kotlin.jvm.internal.j;
-import rc.c;
-import rc.f;
-import rc.g;
-import rc.h;
+import k8.o;
+import kotlin.jvm.internal.i;
+import qc.c;
+import qc.f;
+import qc.g;
+import qc.h;
+import rc.a;
+import zc.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzde implements i0 {
     private final /* synthetic */ s zza;
@@ -33,95 +35,95 @@ public final class zzde implements i0 {
         this.zza = sVar;
     }
 
-    @Override // id.g1
+    @Override // hd.g1
     public final p attachChild(r rVar) {
         return ((v1) this.zza).attachChild(rVar);
     }
 
-    @Override // id.i0
+    @Override // hd.i0
     public final Object await(c cVar) {
         Object h = ((t) this.zza).h(cVar);
-        sc.a aVar = sc.a.a;
+        a aVar = a.a;
         return h;
     }
 
-    @Override // id.g1
+    @Override // hd.g1
     public final void cancel(CancellationException cancellationException) {
         ((v1) this.zza).cancel(cancellationException);
     }
 
-    @Override // rc.h
-    public final Object fold(Object obj, ad.p operation) {
+    @Override // qc.h
+    public final Object fold(Object obj, zc.p operation) {
         v1 v1Var = (v1) this.zza;
         v1Var.getClass();
-        j.e(operation, "operation");
+        i.e(operation, "operation");
         return operation.invoke(obj, v1Var);
     }
 
-    @Override // rc.h
+    @Override // qc.h
     public final f get(g gVar) {
         v1 v1Var = (v1) this.zza;
         v1Var.getClass();
-        return y6.a(v1Var, gVar);
+        return u6.a(v1Var, gVar);
     }
 
-    @Override // id.g1
+    @Override // hd.g1
     public final CancellationException getCancellationException() {
         return ((v1) this.zza).getCancellationException();
     }
 
-    @Override // id.g1
+    @Override // hd.g1
     public final b getChildren() {
         return ((v1) this.zza).getChildren();
     }
 
-    @Override // id.i0
+    @Override // hd.i0
     public final Object getCompleted() {
         return ((t) this.zza).p();
     }
 
-    @Override // id.i0
+    @Override // hd.i0
     public final Throwable getCompletionExceptionOrNull() {
         return ((v1) this.zza).getCompletionExceptionOrNull();
     }
 
-    @Override // rc.f
+    @Override // qc.f
     public final g getKey() {
         this.zza.getClass();
         return b0.b;
     }
 
-    public final qd.c getOnAwait() {
+    public final pd.b getOnAwait() {
         t tVar = (t) this.zza;
         tVar.getClass();
-        kotlin.jvm.internal.t.a(3, s1.a);
-        kotlin.jvm.internal.t.a(3, t1.a);
-        return new e.a(tVar);
+        kotlin.jvm.internal.s.a(3, s1.a);
+        kotlin.jvm.internal.s.a(3, t1.a);
+        return new o(tVar);
     }
 
-    public final qd.a getOnJoin() {
+    public final pd.a getOnJoin() {
         v1 v1Var = (v1) this.zza;
         v1Var.getClass();
-        kotlin.jvm.internal.t.a(3, u1.a);
-        return new qd.b(v1Var);
+        kotlin.jvm.internal.s.a(3, u1.a);
+        return new e.a(v1Var);
     }
 
-    @Override // id.g1
+    @Override // hd.g1
     public final g1 getParent() {
         return ((v1) this.zza).getParent();
     }
 
-    @Override // id.g1
+    @Override // hd.g1
     public final p0 invokeOnCompletion(l lVar) {
         return ((v1) this.zza).invokeOnCompletion(lVar);
     }
 
-    @Override // id.g1
+    @Override // hd.g1
     public final boolean isActive() {
         return ((v1) this.zza).isActive();
     }
 
-    @Override // id.g1
+    @Override // hd.g1
     public final boolean isCancelled() {
         return ((v1) this.zza).isCancelled();
     }
@@ -130,16 +132,16 @@ public final class zzde implements i0 {
         return !(((v1) this.zza).u() instanceof b1);
     }
 
-    @Override // id.g1
+    @Override // hd.g1
     public final Object join(c cVar) {
         return ((v1) this.zza).join(cVar);
     }
 
-    @Override // rc.h
+    @Override // qc.h
     public final h minusKey(g gVar) {
         v1 v1Var = (v1) this.zza;
         v1Var.getClass();
-        return y6.b(v1Var, gVar);
+        return u6.b(v1Var, gVar);
     }
 
     public final g1 plus(g1 g1Var) {
@@ -147,7 +149,7 @@ public final class zzde implements i0 {
         return g1Var;
     }
 
-    @Override // id.g1
+    @Override // hd.g1
     public final boolean start() {
         return ((v1) this.zza).start();
     }
@@ -156,16 +158,16 @@ public final class zzde implements i0 {
         ((v1) this.zza).cancel(null);
     }
 
-    @Override // id.g1
+    @Override // hd.g1
     public final p0 invokeOnCompletion(boolean z10, boolean z11, l lVar) {
         return ((v1) this.zza).invokeOnCompletion(z10, z11, lVar);
     }
 
-    @Override // rc.h
+    @Override // qc.h
     public final h plus(h hVar) {
         v1 v1Var = (v1) this.zza;
         v1Var.getClass();
-        return y6.c(v1Var, hVar);
+        return u6.c(v1Var, hVar);
     }
 
     public final boolean cancel(Throwable th) {

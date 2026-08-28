@@ -45,9 +45,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class vz0 extends org.telegram.ui.Components.yk0 {
+public final class vz0 extends org.telegram.ui.Components.vk0 {
     public final Context c;
     public final HashMap d = new HashMap();
     public final /* synthetic */ ProfileActivity e;
@@ -57,33 +57,33 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
         this.c = context;
     }
 
-    @Override // f2.q0
-    public final void A(f2.o1 o1Var) {
-        int b10 = o1Var.b();
+    @Override // f2.r0
+    public final void A(f2.q1 q1Var) {
+        int b10 = q1Var.b();
         ProfileActivity profileActivity = this.e;
         if (b10 == profileActivity.K2) {
             profileActivity.I2 = null;
         }
     }
 
-    @Override // org.telegram.ui.Components.yk0
-    public final boolean D(f2.o1 o1Var) {
+    @Override // org.telegram.ui.Components.vk0
+    public final boolean D(f2.q1 q1Var) {
         ProfileActivity profileActivity = this.e;
         if (profileActivity.b3 != -1) {
-            int b10 = o1Var.b();
+            int b10 = q1Var.b();
             if (b10 != profileActivity.b3 && b10 != profileActivity.P2 && b10 != profileActivity.d3 && b10 != profileActivity.c3 && b10 != profileActivity.R2 && b10 != profileActivity.S2 && b10 != profileActivity.v3 && b10 != profileActivity.e3 && b10 != profileActivity.f3 && b10 != profileActivity.m3 && b10 != profileActivity.j3 && b10 != profileActivity.g3 && b10 != profileActivity.i3 && b10 != profileActivity.n3 && b10 != profileActivity.o3 && b10 != profileActivity.r3 && b10 != profileActivity.s3 && b10 != profileActivity.t3 && b10 != profileActivity.u3 && b10 != profileActivity.K2 && b10 != profileActivity.W3 && b10 != profileActivity.Y3 && b10 != profileActivity.c4 && b10 != profileActivity.b4 && b10 != profileActivity.h3 && b10 != profileActivity.Q2 && b10 != profileActivity.M2 && b10 != profileActivity.Z3 && b10 != profileActivity.a4 && b10 != profileActivity.h4) {
                 return false;
             }
         } else {
-            View view = o1Var.a;
-            if (view instanceof org.telegram.ui.Cells.sa) {
-                Object currentObject = ((org.telegram.ui.Cells.sa) view).getCurrentObject();
+            View view = q1Var.a;
+            if (view instanceof org.telegram.ui.Cells.va) {
+                Object currentObject = ((org.telegram.ui.Cells.va) view).getCurrentObject();
                 if ((currentObject instanceof TLRPC.User) && UserObject.isUserSelf((TLRPC.User) currentObject)) {
                     return false;
                 }
             }
-            int i10 = o1Var.f;
-            if (i10 == 1 || i10 == 5 || i10 == 7 || i10 == 11 || i10 == 31 || i10 == 28 || i10 == 12 || i10 == 13 || i10 == 9 || i10 == 10 || i10 == 25 || i10 == 32) {
+            int i9 = q1Var.f;
+            if (i9 == 1 || i9 == 5 || i9 == 7 || i9 == 11 || i9 == 31 || i9 == 28 || i9 == 12 || i9 == 13 || i9 == 9 || i9 == 10 || i9 == 25 || i9 == 32) {
                 return false;
             }
         }
@@ -95,20 +95,20 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
         String str3 = str2;
         if (arrayList != null) {
             ArrayList arrayList2 = new ArrayList(arrayList);
-            int i10 = 0;
-            while (i10 < arrayList2.size()) {
-                if (!((TLRPC.TL_username) arrayList2.get(i10)).active || (str != null && str.equals(((TLRPC.TL_username) arrayList2.get(i10)).username))) {
-                    arrayList2.remove(i10);
-                    i10--;
+            int i9 = 0;
+            while (i9 < arrayList2.size()) {
+                if (!((TLRPC.TL_username) arrayList2.get(i9)).active || (str != null && str.equals(((TLRPC.TL_username) arrayList2.get(i9)).username))) {
+                    arrayList2.remove(i9);
+                    i9--;
                 }
-                i10++;
+                i9++;
             }
             str3 = str2;
             if (arrayList2.size() > 0) {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                    TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList2.get(i11);
-                    SpannableString spannableString = new SpannableString(s3.c.e("@", tL_username.username));
+                for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+                    TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList2.get(i10);
+                    SpannableString spannableString = new SpannableString(ta.b.d("@", tL_username.username));
                     HashMap hashMap = this.d;
                     ClickableSpan clickableSpan = (ClickableSpan) hashMap.get(tL_username);
                     if (clickableSpan == null) {
@@ -117,9 +117,9 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                         clickableSpan = oz0Var;
                     }
                     spannableString.setSpan(clickableSpan, 0, spannableString.length(), 33);
-                    spannableString.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.gc, this.e.v0)), 0, spannableString.length(), 33);
+                    spannableString.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.gc, this.e.v0)), 0, spannableString.length(), 33);
                     spannableStringBuilder.append((CharSequence) spannableString);
-                    if (i11 < arrayList2.size() - 1) {
+                    if (i10 < arrayList2.size() - 1) {
                         spannableStringBuilder.append((CharSequence) ", ");
                     }
                 }
@@ -136,114 +136,114 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
         return str3;
     }
 
-    @Override // f2.q0
+    @Override // f2.r0
     public final int h() {
         return this.e.J2;
     }
 
-    @Override // f2.q0
-    public final int j(int i10) {
+    @Override // f2.r0
+    public final int j(int i9) {
+        int i10;
         int i11;
         int i12;
-        int i13;
         ProfileActivity profileActivity = this.e;
-        if (i10 == profileActivity.z3 || i10 == profileActivity.p4 || i10 == profileActivity.a3 || i10 == profileActivity.O2 || i10 == profileActivity.l3 || i10 == profileActivity.q3 || i10 == profileActivity.j4) {
+        if (i9 == profileActivity.z3 || i9 == profileActivity.p4 || i9 == profileActivity.a3 || i9 == profileActivity.O2 || i9 == profileActivity.l3 || i9 == profileActivity.q3 || i9 == profileActivity.j4) {
             return 1;
         }
-        if (i10 == profileActivity.C3 || i10 == profileActivity.E3 || i10 == profileActivity.P2 || i10 == profileActivity.Q2) {
+        if (i9 == profileActivity.C3 || i9 == profileActivity.E3 || i9 == profileActivity.P2 || i9 == profileActivity.Q2) {
             return 2;
         }
-        if (i10 == profileActivity.H3 || i10 == profileActivity.R2) {
+        if (i9 == profileActivity.H3 || i9 == profileActivity.R2) {
             return 19;
         }
-        if (i10 == profileActivity.D3) {
+        if (i9 == profileActivity.D3) {
             return 30;
         }
-        if (i10 == profileActivity.F3 || i10 == profileActivity.G3 || i10 == profileActivity.S2) {
+        if (i9 == profileActivity.F3 || i9 == profileActivity.G3 || i9 == profileActivity.S2) {
             return 3;
         }
-        if (i10 == profileActivity.m4 || i10 == profileActivity.n4 || i10 == profileActivity.R3 || i10 == profileActivity.T3 || i10 == profileActivity.S3 || i10 == profileActivity.t4 || i10 == profileActivity.u4 || i10 == profileActivity.v4 || i10 == profileActivity.w4 || i10 == profileActivity.C4 || i10 == profileActivity.s4 || i10 == profileActivity.H4 || i10 == profileActivity.G4 || i10 == profileActivity.Q3 || i10 == profileActivity.b3 || i10 == profileActivity.d3 || i10 == profileActivity.c3 || i10 == profileActivity.e3 || i10 == profileActivity.f3 || i10 == profileActivity.m3 || i10 == profileActivity.j3 || i10 == profileActivity.g3 || i10 == profileActivity.i3 || i10 == profileActivity.n3 || i10 == profileActivity.o3 || i10 == profileActivity.r3 || i10 == profileActivity.s3 || i10 == profileActivity.t3 || i10 == profileActivity.u3 || i10 == profileActivity.K2 || i10 == profileActivity.W3 || i10 == profileActivity.V3 || i10 == profileActivity.h3 || i10 == profileActivity.c4 || i10 == profileActivity.b4 || i10 == profileActivity.x4 || i10 == profileActivity.y4 || i10 == profileActivity.z4) {
+        if (i9 == profileActivity.m4 || i9 == profileActivity.n4 || i9 == profileActivity.R3 || i9 == profileActivity.T3 || i9 == profileActivity.S3 || i9 == profileActivity.t4 || i9 == profileActivity.u4 || i9 == profileActivity.v4 || i9 == profileActivity.w4 || i9 == profileActivity.C4 || i9 == profileActivity.s4 || i9 == profileActivity.H4 || i9 == profileActivity.G4 || i9 == profileActivity.Q3 || i9 == profileActivity.b3 || i9 == profileActivity.d3 || i9 == profileActivity.c3 || i9 == profileActivity.e3 || i9 == profileActivity.f3 || i9 == profileActivity.m3 || i9 == profileActivity.j3 || i9 == profileActivity.g3 || i9 == profileActivity.i3 || i9 == profileActivity.n3 || i9 == profileActivity.o3 || i9 == profileActivity.r3 || i9 == profileActivity.s3 || i9 == profileActivity.t3 || i9 == profileActivity.u3 || i9 == profileActivity.K2 || i9 == profileActivity.W3 || i9 == profileActivity.V3 || i9 == profileActivity.h3 || i9 == profileActivity.c4 || i9 == profileActivity.b4 || i9 == profileActivity.x4 || i9 == profileActivity.y4 || i9 == profileActivity.z4) {
             return 4;
         }
-        i11 = profileActivity.botPermissionLocation;
-        if (i10 == i11) {
+        i10 = profileActivity.botPermissionLocation;
+        if (i9 == i10) {
             return 4;
         }
-        i12 = profileActivity.botPermissionBiometry;
-        if (i10 == i12) {
+        i11 = profileActivity.botPermissionBiometry;
+        if (i9 == i11) {
             return 4;
         }
-        i13 = profileActivity.botPermissionEmojiStatus;
-        if (i10 == i13 || i10 == profileActivity.a4) {
+        i12 = profileActivity.botPermissionEmojiStatus;
+        if (i9 == i12 || i9 == profileActivity.a4) {
             return 4;
         }
-        if (i10 == profileActivity.I3) {
+        if (i9 == profileActivity.I3) {
             return 5;
         }
-        if (i10 == profileActivity.J3) {
+        if (i9 == profileActivity.J3) {
             return 6;
         }
-        if (i10 == profileActivity.M3) {
+        if (i9 == profileActivity.M3) {
             return 20;
         }
-        if (i10 == profileActivity.I4 || i10 == profileActivity.D4 || i10 == profileActivity.i4 || i10 == profileActivity.o4 || i10 == profileActivity.Z2 || i10 == profileActivity.k3 || i10 == profileActivity.p3 || i10 == profileActivity.L2 || i10 == profileActivity.X2 || i10 == profileActivity.T2 || i10 == profileActivity.d4 || i10 == profileActivity.U3 || i10 == profileActivity.N2 || i10 == profileActivity.V2 || i10 == profileActivity.B4 || i10 == profileActivity.l4 || i10 == profileActivity.A4 || i10 == profileActivity.g4) {
+        if (i9 == profileActivity.I4 || i9 == profileActivity.D4 || i9 == profileActivity.i4 || i9 == profileActivity.o4 || i9 == profileActivity.Z2 || i9 == profileActivity.k3 || i9 == profileActivity.p3 || i9 == profileActivity.L2 || i9 == profileActivity.X2 || i9 == profileActivity.T2 || i9 == profileActivity.d4 || i9 == profileActivity.U3 || i9 == profileActivity.N2 || i9 == profileActivity.V2 || i9 == profileActivity.B4 || i9 == profileActivity.l4 || i9 == profileActivity.A4 || i9 == profileActivity.g4) {
             return 7;
         }
-        if (i10 >= profileActivity.q4 && i10 < profileActivity.r4) {
+        if (i9 >= profileActivity.q4 && i9 < profileActivity.r4) {
             return 8;
         }
-        if (i10 == profileActivity.w3) {
+        if (i9 == profileActivity.w3) {
             return 11;
         }
-        if (i10 == profileActivity.x3) {
+        if (i9 == profileActivity.x3) {
             return 31;
         }
-        if (i10 == profileActivity.y3) {
+        if (i9 == profileActivity.y3) {
             return 12;
         }
-        if (i10 == profileActivity.F4) {
+        if (i9 == profileActivity.F4) {
             return 13;
         }
-        if (i10 == profileActivity.v3) {
+        if (i9 == profileActivity.v3) {
             return 14;
         }
-        if (i10 == profileActivity.Y2 || i10 == profileActivity.W2 || i10 == profileActivity.U2) {
+        if (i9 == profileActivity.Y2 || i9 == profileActivity.W2 || i9 == profileActivity.U2) {
             return 15;
         }
-        if (i10 == profileActivity.X3) {
+        if (i9 == profileActivity.X3) {
             return 17;
         }
-        if (i10 == profileActivity.Y3) {
+        if (i9 == profileActivity.Y3) {
             return 18;
         }
-        if (i10 == profileActivity.Z3) {
+        if (i9 == profileActivity.Z3) {
             return 24;
         }
-        if (i10 == profileActivity.L3) {
+        if (i9 == profileActivity.L3) {
             return 21;
         }
-        if (i10 == profileActivity.K3) {
+        if (i9 == profileActivity.K3) {
             return 22;
         }
-        if (i10 == profileActivity.M2) {
+        if (i9 == profileActivity.M2) {
             return 23;
         }
-        if (i10 == profileActivity.e4) {
+        if (i9 == profileActivity.e4) {
             return 25;
         }
-        if (i10 == profileActivity.N3 || i10 == profileActivity.P3) {
+        if (i9 == profileActivity.N3 || i9 == profileActivity.P3) {
             return 26;
         }
-        if (i10 == profileActivity.f4) {
+        if (i9 == profileActivity.f4) {
             return 32;
         }
-        if (i10 == profileActivity.h4) {
+        if (i9 == profileActivity.h4) {
             return 33;
         }
-        if (i10 == profileActivity.O3) {
+        if (i9 == profileActivity.O3) {
             return 27;
         }
-        return (i10 == profileActivity.A3 || i10 == profileActivity.B3) ? 28 : 0;
+        return (i9 == profileActivity.A3 || i9 == profileActivity.B3) ? 28 : 0;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:566:0x0e35, code lost:
@@ -261,31 +261,31 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
     /* JADX WARN: Removed duplicated region for block: B:643:0x1308  */
     /* JADX WARN: Removed duplicated region for block: B:649:0x1348  */
     /* JADX WARN: Removed duplicated region for block: B:75:0x022e  */
-    @Override // f2.q0
+    @Override // f2.r0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void v(f2.o1 o1Var, int i10) {
+    public final void v(f2.q1 q1Var, int i9) {
+        int i10;
         int i11;
         int i12;
         int i13;
         int i14;
         int i15;
         int i16;
-        int i17;
         TLRPC.Chat chat;
         TLRPC.Chat chat2;
+        int i17;
         int i18;
         int i19;
         int i20;
         int i21;
         int i22;
         int i23;
-        int i24;
         String string;
         CharSequence charSequence;
         String str;
-        int i25;
+        int i24;
         String str2;
         TLRPC.ChatFull chatFull;
         TLRPC.ChatFull chatFull2;
@@ -304,13 +304,13 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
         long j14;
         long j15;
         long j16;
-        int i26;
+        int i25;
         long j17;
         TLRPC.TL_username tL_username;
         String str7;
         String str8;
         long j18;
-        int i27;
+        int i26;
         CharSequence formatTextWithEntities;
         long j19;
         String string2;
@@ -318,10 +318,10 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
         boolean z12;
         TLRPC.UserFull userFull;
         long j20;
-        int i28;
+        int i27;
         String formatString;
+        int i28;
         int i29;
-        int i30;
         TLRPC.UserFull userFull2;
         TLRPC.UserFull userFull3;
         TLRPC.UserFull userFull4;
@@ -342,6 +342,7 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
         TLRPC.UserFull userFull10;
         TLRPC.UserFull userFull11;
         TLRPC.UserFull userFull12;
+        int i30;
         int i31;
         int i32;
         int i33;
@@ -382,56 +383,55 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
         int i68;
         int i69;
         int i70;
+        org.telegram.ui.Cells.p8 p8Var;
         int i71;
-        org.telegram.ui.Cells.l8 l8Var;
         int i72;
-        int i73;
         TLRPC.UserFull userFull13;
         boolean z16;
-        int i74;
+        int i73;
         boolean z17;
-        int i75;
+        int i74;
         TLRPC.UserFull userFull14;
+        int i75;
         int i76;
         int i77;
-        int i78;
         long j21;
-        int i79;
+        int i78;
         TLRPC.ChatFull chatFull5;
-        int i80;
+        int i79;
         TLRPC.ChatFull chatFull6;
         TLRPC.ChatFull chatFull7;
+        int i80;
         int i81;
-        int i82;
         long j22;
-        int i83;
+        int i82;
         long j23;
-        int i84;
+        int i83;
         long j24;
-        int i85;
+        int i84;
         long j25;
-        int i86;
+        int i85;
         TLRPC.ChatFull chatFull8;
-        int i87;
+        int i86;
         TLRPC.ChatFull chatFull9;
-        int i88;
+        int i87;
         TLRPC.ChatFull chatFull10;
         TLRPC.ChatFull chatFull11;
-        int i89;
+        int i88;
         TLRPC.ChatFull chatFull12;
         TLRPC.Chat chat6;
-        int i90;
+        int i89;
         TLRPC.Chat chat7;
-        int i91;
+        int i90;
         TLRPC.Chat chat8;
         TLRPC.ChatFull chatFull13;
-        int i92;
+        int i91;
         TLRPC.Chat chat9;
         TLRPC.ChatFull chatFull14;
-        int i93;
+        int i92;
         TLRPC.Chat chat10;
+        int i93;
         int i94;
-        int i95;
         long j26;
         boolean z18;
         boolean z19;
@@ -448,9 +448,9 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
         boolean z25;
         boolean z26;
         boolean z27;
+        int i95;
         int i96;
         int i97;
-        int i98;
         long j30;
         TLRPC.UserFull userFull15;
         TLRPC.UserFull userFull16;
@@ -459,15 +459,15 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
         boolean z29;
         TLRPC.UserFull userFull18;
         TLRPC.UserFull userFull19;
+        int i98;
         int i99;
-        int i100;
         long j31;
         TLRPC.UserFull userFull20;
-        int i101;
+        int i100;
         TLRPC.UserFull userFull21;
         TLRPC.UserFull userFull22;
         TLRPC.UserFull userFull23;
-        int i102;
+        int i101;
         TLRPC.UserFull userFull24;
         TLRPC.UserFull userFull25;
         TLRPC.UserFull userFull26;
@@ -484,21 +484,21 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
         TLRPC.UserFull userFull31;
         TLRPC.UserFull userFull32;
         TLRPC.UserFull userFull33;
-        int i103;
-        org.telegram.ui.ActionBar.c6 c6Var;
+        int i102;
+        org.telegram.ui.ActionBar.b6 b6Var;
         long j33;
         TLRPC.Chat chat11;
         long j34;
         long j35;
+        int i103;
         int i104;
-        int i105;
         TLRPC.Chat chat12;
         ProfileActivity profileActivity = this.e;
         ArrayList arrayList = profileActivity.M4;
         ArrayList arrayList2 = profileActivity.N4;
         HashSet hashSet = profileActivity.d5;
-        int i106 = o1Var.f;
-        View view = o1Var.a;
+        int i105 = q1Var.f;
+        View view = q1Var.a;
         String str13 = "";
         String str14 = null;
         r10 = null;
@@ -508,44 +508,44 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
         TLRPC.ChatParticipant chatParticipant = null;
         r12 = true;
         boolean z30 = true;
-        int i107 = 0;
-        switch (i106) {
+        int i106 = 0;
+        switch (i105) {
             case 1:
-                org.telegram.ui.Cells.j4 j4Var = (org.telegram.ui.Cells.j4) view;
-                i11 = profileActivity.z3;
-                if (i10 == i11) {
+                org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
+                i10 = profileActivity.z3;
+                if (i9 == i10) {
                     chat = profileActivity.A2;
                     if (ChatObject.isChannel(chat)) {
                         chat2 = profileActivity.A2;
                         if (!chat2.megagroup && profileActivity.G3 != -1) {
-                            j4Var.setText(LocaleController.getString(R.string.ReportChatDescription));
+                            m4Var.setText(LocaleController.getString(R.string.ReportChatDescription));
                         }
                     }
-                    j4Var.setText(LocaleController.getString(R.string.Info));
+                    m4Var.setText(LocaleController.getString(R.string.Info));
                 } else {
-                    i12 = profileActivity.p4;
-                    if (i10 == i12) {
-                        j4Var.setText(LocaleController.getString(R.string.ChannelMembers));
+                    i11 = profileActivity.p4;
+                    if (i9 == i11) {
+                        m4Var.setText(LocaleController.getString(R.string.ChannelMembers));
                     } else {
-                        i13 = profileActivity.a3;
-                        if (i10 == i13) {
-                            j4Var.setText(LocaleController.getString(R.string.SETTINGS));
+                        i12 = profileActivity.a3;
+                        if (i9 == i12) {
+                            m4Var.setText(LocaleController.getString(R.string.SETTINGS));
                         } else {
-                            i14 = profileActivity.O2;
-                            if (i10 == i14) {
-                                j4Var.setText(LocaleController.getString(R.string.Account));
+                            i13 = profileActivity.O2;
+                            if (i9 == i13) {
+                                m4Var.setText(LocaleController.getString(R.string.Account));
                             } else {
-                                i15 = profileActivity.l3;
-                                if (i10 == i15) {
-                                    j4Var.setText(LocaleController.getString(R.string.SettingsHelp));
+                                i14 = profileActivity.l3;
+                                if (i9 == i14) {
+                                    m4Var.setText(LocaleController.getString(R.string.SettingsHelp));
                                 } else {
-                                    i16 = profileActivity.q3;
-                                    if (i10 == i16) {
-                                        j4Var.setText(LocaleController.getString(R.string.SettingsDebug));
+                                    i15 = profileActivity.q3;
+                                    if (i9 == i15) {
+                                        m4Var.setText(LocaleController.getString(R.string.SettingsDebug));
                                     } else {
-                                        i17 = profileActivity.j4;
-                                        if (i10 == i17) {
-                                            j4Var.setText(LocaleController.getString(R.string.BotProfilePermissions));
+                                        i16 = profileActivity.j4;
+                                        if (i9 == i16) {
+                                            m4Var.setText(LocaleController.getString(R.string.BotProfilePermissions));
                                         }
                                     }
                                 }
@@ -553,13 +553,13 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                         }
                     }
                 }
-                j4Var.setTextColor(profileActivity.getThemedColor(org.telegram.ui.ActionBar.g6.L6));
+                m4Var.setTextColor(profileActivity.getThemedColor(org.telegram.ui.ActionBar.f6.L6));
                 break;
             case 2:
             case 19:
             case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                org.telegram.ui.Cells.v8 v8Var = (org.telegram.ui.Cells.v8) view;
-                if (i10 == profileActivity.Q2) {
+                org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
+                if (i9 == profileActivity.Q2) {
                     MessagesController messagesController = profileActivity.getMessagesController();
                     j20 = profileActivity.a1;
                     TLRPC.UserFull userFull34 = messagesController.getUserFull(j20);
@@ -568,50 +568,50 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                         TL_account.TL_birthday tL_birthday = userFull34.birthday;
                         boolean z31 = (tL_birthday.flags & 1) != 0;
                         int years = z31 ? Period.between(LocalDate.of(tL_birthday.year, tL_birthday.month, tL_birthday.day), LocalDate.now()).getYears() : -1;
-                        String Z = UserInfoActivity.Z(userFull34.birthday);
+                        String Y = UserInfoActivity.Y(userFull34.birthday);
                         if (z31) {
-                            formatString = LocaleController.formatPluralString(isToday ? "ProfileBirthdayTodayValueYear" : "ProfileBirthdayValueYear", years, Z);
+                            formatString = LocaleController.formatPluralString(isToday ? "ProfileBirthdayTodayValueYear" : "ProfileBirthdayValueYear", years, Y);
                         } else {
-                            formatString = LocaleController.formatString(isToday ? R.string.ProfileBirthdayTodayValue : R.string.ProfileBirthdayValue, Z);
+                            formatString = LocaleController.formatString(isToday ? R.string.ProfileBirthdayTodayValue : R.string.ProfileBirthdayValue, Y);
                         }
-                        v8Var.c(Emoji.replaceWithRestrictedEmoji(formatString, v8Var.a, new ol0(this, o1Var, i10, 6)), LocaleController.getString(isToday ? R.string.ProfileBirthdayToday : R.string.ProfileBirthday), (!profileActivity.m1 && profileActivity.K3 == -1 && profileActivity.L3 == -1) ? false : true);
+                        z8Var.c(Emoji.replaceWithRestrictedEmoji(formatString, z8Var.a, new jh0(this, q1Var, i9, 7)), LocaleController.getString(isToday ? R.string.ProfileBirthdayToday : R.string.ProfileBirthday), (!profileActivity.m1 && profileActivity.K3 == -1 && profileActivity.L3 == -1) ? false : true);
                         if (!profileActivity.o1 && isToday && !profileActivity.getMessagesController().premiumPurchaseBlocked()) {
-                            i28 = 1;
-                            i107 = i28;
+                            i27 = 1;
+                            i106 = i27;
                         }
                     }
-                    i28 = 0;
-                    i107 = i28;
+                    i27 = 0;
+                    i106 = i27;
                 } else {
-                    i18 = profileActivity.C3;
-                    if (i10 == i18) {
+                    i17 = profileActivity.C3;
+                    if (i9 == i17) {
                         MessagesController messagesController2 = profileActivity.getMessagesController();
                         j19 = profileActivity.a1;
                         TLRPC.User user3 = messagesController2.getUser(Long.valueOf(j19));
                         if (user3 != null && !TextUtils.isEmpty(profileActivity.Z4)) {
-                            string2 = org.telegram.messenger.y1.k(new StringBuilder("+"), profileActivity.Z4, oe.b.c());
+                            string2 = org.telegram.messenger.ll.g(new StringBuilder("+"), profileActivity.Z4, ne.b.c());
                             str9 = profileActivity.Z4;
                         } else if (user3 == null || TextUtils.isEmpty(user3.phone)) {
                             string2 = LocaleController.getString(R.string.PhoneHidden);
                             str9 = null;
                         } else {
-                            String k10 = org.telegram.messenger.y1.k(new StringBuilder("+"), user3.phone, oe.b.c());
+                            String g10 = org.telegram.messenger.ll.g(new StringBuilder("+"), user3.phone, ne.b.c());
                             str9 = user3.phone;
-                            string2 = k10;
+                            string2 = g10;
                         }
                         profileActivity.X4 = str9 != null && str9.matches("888\\d{8}");
                         z12 = profileActivity.X4;
-                        v8Var.c(string2, LocaleController.getString(z12 ? R.string.AnonymousNumber : R.string.PhoneMobile), false);
+                        z8Var.c(string2, LocaleController.getString(z12 ? R.string.AnonymousNumber : R.string.PhoneMobile), false);
                     } else {
-                        i19 = profileActivity.D3;
-                        if (i10 == i19) {
+                        i18 = profileActivity.D3;
+                        if (i9 == i18) {
                             MessagesController messagesController3 = profileActivity.getMessagesController();
                             j18 = profileActivity.a1;
                             TLRPC.UserFull userFull35 = messagesController3.getUserFull(j18);
                             if (userFull35 != null) {
                                 TLRPC.TL_textWithEntities tL_textWithEntities = userFull35.note;
-                                i27 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
-                                if (UserConfig.getInstance(i27).isPremium()) {
+                                i26 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
+                                if (UserConfig.getInstance(i26).isPremium()) {
                                     formatTextWithEntities = MessageObject.formatTextWithEntities(tL_textWithEntities);
                                     if (!(formatTextWithEntities instanceof SpannableStringBuilder)) {
                                         formatTextWithEntities = new SpannableStringBuilder(formatTextWithEntities);
@@ -620,11 +620,11 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                                 } else {
                                     formatTextWithEntities = MessageObject.formatTextWithEntities(MessageObject.removeLinks(tL_textWithEntities));
                                 }
-                                v8Var.d(formatTextWithEntities, LocaleController.getString(R.string.ProfileNotes), LocaleController.getString(R.string.ProfileNotesInfo));
+                                z8Var.d(formatTextWithEntities, LocaleController.getString(R.string.ProfileNotes), LocaleController.getString(R.string.ProfileNotesInfo));
                             }
                         } else {
-                            i20 = profileActivity.H3;
-                            if (i10 == i20) {
+                            i19 = profileActivity.H3;
+                            if (i9 == i19) {
                                 ArrayList arrayList3 = new ArrayList();
                                 j10 = profileActivity.a1;
                                 if (j10 != 0) {
@@ -643,12 +643,12 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                                     }
                                     ArrayList arrayList4 = user4 == null ? new ArrayList() : new ArrayList(user4.usernames);
                                     if (TextUtils.isEmpty(str7)) {
-                                        int i108 = 0;
+                                        int i107 = 0;
                                         while (true) {
-                                            if (i108 < arrayList4.size()) {
-                                                TLRPC.TL_username tL_username2 = (TLRPC.TL_username) arrayList4.get(i108);
+                                            if (i107 < arrayList4.size()) {
+                                                TLRPC.TL_username tL_username2 = (TLRPC.TL_username) arrayList4.get(i107);
                                                 if (tL_username2 == null || !tL_username2.active || TextUtils.isEmpty(tL_username2.username)) {
-                                                    i108++;
+                                                    i107++;
                                                 } else {
                                                     str7 = tL_username2.username;
                                                     tL_username = tL_username2;
@@ -741,55 +741,55 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                                     }
                                 }
                                 CharSequence E = E(str5, arrayList3, str4);
-                                i26 = profileActivity.B3;
-                                v8Var.c(str3, E, i26 == -1 && !(!profileActivity.m1 && profileActivity.K3 == -1 && profileActivity.L3 == -1) && profileActivity.Q2 < 0);
-                                if (i107 == 0) {
-                                    Drawable d = f0.e.d(v8Var.getContext(), R.drawable.msg_input_gift);
-                                    d.setColorFilter(new PorterDuffColorFilter(profileActivity.getThemedColor(org.telegram.ui.ActionBar.g6.V6), PorterDuff.Mode.MULTIPLY));
+                                i25 = profileActivity.B3;
+                                z8Var.c(str3, E, i25 == -1 && !(!profileActivity.m1 && profileActivity.K3 == -1 && profileActivity.L3 == -1) && profileActivity.Q2 < 0);
+                                if (i106 == 0) {
+                                    Drawable d = f0.e.d(z8Var.getContext(), R.drawable.msg_input_gift);
+                                    d.setColorFilter(new PorterDuffColorFilter(profileActivity.getThemedColor(org.telegram.ui.ActionBar.f6.V6), PorterDuff.Mode.MULTIPLY));
                                     userFull = profileActivity.r2;
                                     if (UserObject.areGiftsDisabled(userFull)) {
-                                        v8Var.setImage(null);
-                                        v8Var.setImageClickListener(null);
+                                        z8Var.setImage(null);
+                                        z8Var.setImageClickListener(null);
                                     } else {
-                                        v8Var.b(d, LocaleController.getString(R.string.GiftPremium));
-                                        v8Var.setImageClickListener(new fx0(profileActivity, 11));
+                                        z8Var.b(d, LocaleController.getString(R.string.GiftPremium));
+                                        z8Var.setImageClickListener(new ex0(profileActivity, 11));
                                     }
                                 } else if (z10) {
-                                    Drawable d10 = f0.e.d(v8Var.getContext(), R.drawable.header_qr_24);
-                                    d10.setColorFilter(new PorterDuffColorFilter(profileActivity.getThemedColor(org.telegram.ui.ActionBar.g6.v8), PorterDuff.Mode.MULTIPLY));
-                                    v8Var.b(d10, LocaleController.getString(R.string.GetQRCode));
-                                    v8Var.setImageClickListener(new fx0(profileActivity, 12));
+                                    Drawable d9 = f0.e.d(z8Var.getContext(), R.drawable.header_qr_24);
+                                    d9.setColorFilter(new PorterDuffColorFilter(profileActivity.getThemedColor(org.telegram.ui.ActionBar.f6.v8), PorterDuff.Mode.MULTIPLY));
+                                    z8Var.b(d9, LocaleController.getString(R.string.GetQRCode));
+                                    z8Var.setImageClickListener(new ex0(profileActivity, 12));
                                 } else {
-                                    v8Var.setImage(null);
-                                    v8Var.setImageClickListener(null);
+                                    z8Var.setImage(null);
+                                    z8Var.setImageClickListener(null);
                                 }
-                                v8Var.setTag(Integer.valueOf(i10));
-                                v8Var.a.setLoading(profileActivity.e5);
-                                v8Var.b.setLoading(profileActivity.e5);
+                                z8Var.setTag(Integer.valueOf(i9));
+                                z8Var.a.setLoading(profileActivity.e5);
+                                z8Var.b.setLoading(profileActivity.e5);
                                 break;
                             } else {
-                                i21 = profileActivity.E3;
-                                if (i10 == i21) {
+                                i20 = profileActivity.E3;
+                                if (i9 == i20) {
                                     chatFull = profileActivity.q2;
                                     if (chatFull != null) {
                                         chatFull2 = profileActivity.q2;
                                         if (chatFull2.location instanceof TLRPC.TL_channelLocation) {
                                             chatFull3 = profileActivity.q2;
-                                            v8Var.c(((TLRPC.TL_channelLocation) chatFull3.location).address, LocaleController.getString(R.string.AttachLocation), false);
+                                            z8Var.c(((TLRPC.TL_channelLocation) chatFull3.location).address, LocaleController.getString(R.string.AttachLocation), false);
                                         }
                                     }
                                 } else {
-                                    i22 = profileActivity.P2;
-                                    if (i10 == i22) {
-                                        i25 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
-                                        TLRPC.User currentUser = UserConfig.getInstance(i25).getCurrentUser();
-                                        v8Var.c((currentUser == null || (str2 = currentUser.phone) == null || str2.length() == 0) ? LocaleController.getString(R.string.NumberUnknown) : org.telegram.messenger.y1.k(new StringBuilder("+"), currentUser.phone, oe.b.c()), LocaleController.getString(R.string.TapToChangePhone), true);
-                                        v8Var.setContentDescriptionValueFirst(false);
+                                    i21 = profileActivity.P2;
+                                    if (i9 == i21) {
+                                        i24 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
+                                        TLRPC.User currentUser = UserConfig.getInstance(i24).getCurrentUser();
+                                        z8Var.c((currentUser == null || (str2 = currentUser.phone) == null || str2.length() == 0) ? LocaleController.getString(R.string.NumberUnknown) : org.telegram.messenger.ll.g(new StringBuilder("+"), currentUser.phone, ne.b.c()), LocaleController.getString(R.string.TapToChangePhone), true);
+                                        z8Var.setContentDescriptionValueFirst(false);
                                     } else {
-                                        i23 = profileActivity.R2;
-                                        if (i10 == i23) {
-                                            i24 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
-                                            TLRPC.User currentUser2 = UserConfig.getInstance(i24).getCurrentUser();
+                                        i22 = profileActivity.R2;
+                                        if (i9 == i22) {
+                                            i23 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
+                                            TLRPC.User currentUser2 = UserConfig.getInstance(i23).getCurrentUser();
                                             String string4 = LocaleController.getString(R.string.Username);
                                             if (currentUser2 == null || currentUser2.usernames.size() <= 0) {
                                                 String publicUsername2 = UserObject.getPublicUsername(currentUser2);
@@ -797,16 +797,16 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                                                     string = LocaleController.getString(R.string.UsernameEmpty);
                                                     charSequence = string4;
                                                 } else {
-                                                    string = s3.c.e("@", publicUsername2);
+                                                    string = ta.b.d("@", publicUsername2);
                                                     charSequence = string4;
                                                 }
                                             } else {
-                                                int i109 = 0;
+                                                int i108 = 0;
                                                 while (true) {
-                                                    if (i109 < currentUser2.usernames.size()) {
-                                                        TLRPC.TL_username tL_username3 = currentUser2.usernames.get(i109);
+                                                    if (i108 < currentUser2.usernames.size()) {
+                                                        TLRPC.TL_username tL_username3 = currentUser2.usernames.get(i108);
                                                         if (tL_username3 == null || !tL_username3.active || TextUtils.isEmpty(tL_username3.username)) {
-                                                            i109++;
+                                                            i108++;
                                                         } else {
                                                             str = tL_username3.username;
                                                         }
@@ -820,8 +820,8 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                                                 string = (str == null || TextUtils.isEmpty(str)) ? LocaleController.getString(R.string.UsernameEmpty) : "@".concat(str);
                                                 charSequence = E(str, currentUser2.usernames, string4);
                                             }
-                                            v8Var.c(string, charSequence, true);
-                                            v8Var.setContentDescriptionValueFirst(true);
+                                            z8Var.c(string, charSequence, true);
+                                            z8Var.setContentDescriptionValueFirst(true);
                                         }
                                     }
                                 }
@@ -830,16 +830,16 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                     }
                 }
                 z10 = false;
-                if (i107 == 0) {
+                if (i106 == 0) {
                 }
-                v8Var.setTag(Integer.valueOf(i10));
-                v8Var.a.setLoading(profileActivity.e5);
-                v8Var.b.setLoading(profileActivity.e5);
+                z8Var.setTag(Integer.valueOf(i9));
+                z8Var.a.setLoading(profileActivity.e5);
+                z8Var.b.setLoading(profileActivity.e5);
                 break;
             case 3:
                 org.telegram.ui.Cells.j jVar = (org.telegram.ui.Cells.j) view;
-                i29 = profileActivity.F3;
-                if (i10 == i29) {
+                i28 = profileActivity.F3;
+                if (i9 == i28) {
                     userFull8 = profileActivity.r2;
                     if (userFull8.user != null) {
                         userFull12 = profileActivity.r2;
@@ -863,7 +863,7 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                     z15 = true;
                     userFull10 = profileActivity.r2;
                     jVar.f(userFull10.about, LocaleController.getString(R.string.UserBio), z15);
-                } else if (i10 == profileActivity.G3) {
+                } else if (i9 == profileActivity.G3) {
                     chatFull4 = profileActivity.q2;
                     String str18 = chatFull4.about;
                     while (str18.contains("\n\n\n")) {
@@ -882,8 +882,8 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                     z13 = false;
                     jVar.f(str18, string5, z13);
                 } else {
-                    i30 = profileActivity.S2;
-                    if (i10 == i30) {
+                    i29 = profileActivity.S2;
+                    if (i9 == i29) {
                         userFull2 = profileActivity.r2;
                         if (userFull2 != null) {
                             userFull7 = profileActivity.r2;
@@ -917,47 +917,47 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
             case 4:
             case 18:
             case 24:
-                org.telegram.ui.Cells.l8 l8Var2 = (org.telegram.ui.Cells.l8) view;
-                int i110 = org.telegram.ui.ActionBar.g6.m6;
-                int i111 = org.telegram.ui.ActionBar.g6.G6;
-                l8Var2.e(i110, i111);
-                l8Var2.setTag(Integer.valueOf(i111));
-                i31 = profileActivity.m4;
-                if (i10 == i31) {
-                    int i112 = org.telegram.messenger.y1.n(profileActivity.getMessagesController(), profileActivity.e1).ttl;
-                    l8Var2.o(LocaleController.getString(R.string.MessageLifetime), i112 == 0 ? LocaleController.getString(R.string.ShortMessageLifetimeForever) : LocaleController.formatTTLString(i112), false, false);
+                org.telegram.ui.Cells.p8 p8Var2 = (org.telegram.ui.Cells.p8) view;
+                int i109 = org.telegram.ui.ActionBar.f6.m6;
+                int i110 = org.telegram.ui.ActionBar.f6.G6;
+                p8Var2.e(i109, i110);
+                p8Var2.setTag(Integer.valueOf(i110));
+                i30 = profileActivity.m4;
+                if (i9 == i30) {
+                    int i111 = org.telegram.messenger.l0.l(profileActivity.getMessagesController(), profileActivity.e1).ttl;
+                    p8Var2.o(LocaleController.getString(R.string.MessageLifetime), i111 == 0 ? LocaleController.getString(R.string.ShortMessageLifetimeForever) : LocaleController.formatTTLString(i111), false, false);
                 } else {
-                    i32 = profileActivity.G4;
-                    if (i10 == i32) {
-                        l8Var2.i(LocaleController.getString(R.string.Unblock), false);
-                        l8Var2.e(-1, org.telegram.ui.ActionBar.g6.p7);
+                    i31 = profileActivity.G4;
+                    if (i9 == i31) {
+                        p8Var2.i(LocaleController.getString(R.string.Unblock), false);
+                        p8Var2.e(-1, org.telegram.ui.ActionBar.f6.p7);
                     } else {
-                        i33 = profileActivity.n4;
-                        if (i10 == i33) {
-                            org.telegram.ui.Components.b40 b40Var = new org.telegram.ui.Components.b40();
-                            TLRPC.EncryptedChat n10 = org.telegram.messenger.y1.n(profileActivity.getMessagesController(), profileActivity.e1);
-                            byte[] bArr = n10.key_hash;
-                            b40Var.a = bArr;
+                        i32 = profileActivity.n4;
+                        if (i9 == i32) {
+                            org.telegram.ui.Components.w30 w30Var = new org.telegram.ui.Components.w30();
+                            TLRPC.EncryptedChat l11 = org.telegram.messenger.l0.l(profileActivity.getMessagesController(), profileActivity.e1);
+                            byte[] bArr = l11.key_hash;
+                            w30Var.a = bArr;
                             if (bArr == null) {
-                                byte[] calcAuthKeyHash = AndroidUtilities.calcAuthKeyHash(n10.auth_key);
-                                b40Var.a = calcAuthKeyHash;
-                                n10.key_hash = calcAuthKeyHash;
+                                byte[] calcAuthKeyHash = AndroidUtilities.calcAuthKeyHash(l11.auth_key);
+                                w30Var.a = calcAuthKeyHash;
+                                l11.key_hash = calcAuthKeyHash;
                             }
-                            b40Var.invalidateSelf();
-                            l8Var2.t(LocaleController.getString(R.string.EncryptionKey), b40Var, false);
+                            w30Var.invalidateSelf();
+                            p8Var2.t(LocaleController.getString(R.string.EncryptionKey), w30Var, false);
                         } else {
-                            i34 = profileActivity.H4;
-                            if (i10 == i34) {
-                                l8Var2.e(-1, org.telegram.ui.ActionBar.g6.o6);
+                            i33 = profileActivity.H4;
+                            if (i9 == i33) {
+                                p8Var2.e(-1, org.telegram.ui.ActionBar.f6.o6);
                                 chat10 = profileActivity.A2;
                                 if (chat10.megagroup) {
-                                    l8Var2.i(LocaleController.getString(R.string.ProfileJoinGroup), false);
+                                    p8Var2.i(LocaleController.getString(R.string.ProfileJoinGroup), false);
                                 } else {
-                                    l8Var2.i(LocaleController.getString(R.string.ProfileJoinChannel), false);
+                                    p8Var2.i(LocaleController.getString(R.string.ProfileJoinChannel), false);
                                 }
                             } else {
-                                i35 = profileActivity.t4;
-                                if (i10 == i35) {
+                                i34 = profileActivity.t4;
+                                if (i9 == i34) {
                                     chatFull12 = profileActivity.q2;
                                     if (chatFull12 != null) {
                                         chat8 = profileActivity.A2;
@@ -967,85 +967,85 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                                                 String string6 = LocaleController.getString(R.string.ChannelSubscribers);
                                                 chatFull14 = profileActivity.q2;
                                                 String formatNumber = LocaleController.formatNumber(chatFull14.participants_count, ',');
-                                                int i113 = R.drawable.msg_groups;
-                                                i93 = profileActivity.D4;
-                                                l8Var2.q(string6, formatNumber, i113, i10 != i93 - 1);
+                                                int i112 = R.drawable.msg_groups;
+                                                i92 = profileActivity.D4;
+                                                p8Var2.q(string6, formatNumber, i112, i9 != i92 - 1);
                                             }
                                         }
                                         String string7 = LocaleController.getString(R.string.ChannelMembers);
                                         chatFull13 = profileActivity.q2;
                                         String formatNumber2 = LocaleController.formatNumber(chatFull13.participants_count, ',');
-                                        int i114 = R.drawable.msg_groups;
-                                        i92 = profileActivity.D4;
-                                        l8Var2.q(string7, formatNumber2, i114, i10 != i92 - 1);
+                                        int i113 = R.drawable.msg_groups;
+                                        i91 = profileActivity.D4;
+                                        p8Var2.q(string7, formatNumber2, i113, i9 != i91 - 1);
                                     } else {
                                         chat6 = profileActivity.A2;
                                         if (ChatObject.isChannel(chat6)) {
                                             chat7 = profileActivity.A2;
                                             if (!chat7.megagroup) {
                                                 String string8 = LocaleController.getString(R.string.ChannelSubscribers);
-                                                int i115 = R.drawable.msg_groups;
-                                                i91 = profileActivity.D4;
-                                                l8Var2.m(i115, string8, i10 != i91 - 1);
+                                                int i114 = R.drawable.msg_groups;
+                                                i90 = profileActivity.D4;
+                                                p8Var2.m(i114, string8, i9 != i90 - 1);
                                             }
                                         }
                                         String string9 = LocaleController.getString(R.string.ChannelMembers);
-                                        int i116 = R.drawable.msg_groups;
-                                        i90 = profileActivity.D4;
-                                        l8Var2.m(i116, string9, i10 != i90 - 1);
+                                        int i115 = R.drawable.msg_groups;
+                                        i89 = profileActivity.D4;
+                                        p8Var2.m(i115, string9, i9 != i89 - 1);
                                     }
                                 } else {
-                                    i36 = profileActivity.u4;
-                                    if (i10 == i36) {
+                                    i35 = profileActivity.u4;
+                                    if (i9 == i35) {
                                         chatFull10 = profileActivity.q2;
                                         if (chatFull10 != null) {
                                             String string10 = LocaleController.getString(R.string.SubscribeRequests);
                                             chatFull11 = profileActivity.q2;
                                             String format = String.format("%d", Integer.valueOf(chatFull11.requests_pending));
-                                            int i117 = R.drawable.msg_requests;
-                                            i89 = profileActivity.D4;
-                                            l8Var2.q(string10, format, i117, i10 != i89 - 1);
+                                            int i116 = R.drawable.msg_requests;
+                                            i88 = profileActivity.D4;
+                                            p8Var2.q(string10, format, i116, i9 != i88 - 1);
                                         }
                                     } else {
-                                        i37 = profileActivity.v4;
-                                        if (i10 == i37) {
+                                        i36 = profileActivity.v4;
+                                        if (i9 == i36) {
                                             chatFull8 = profileActivity.q2;
                                             if (chatFull8 != null) {
                                                 String string11 = LocaleController.getString(R.string.ChannelAdministrators);
                                                 chatFull9 = profileActivity.q2;
                                                 String format2 = String.format("%d", Integer.valueOf(chatFull9.admins_count));
-                                                int i118 = R.drawable.msg_admins;
-                                                i88 = profileActivity.D4;
-                                                l8Var2.q(string11, format2, i118, i10 != i88 - 1);
+                                                int i117 = R.drawable.msg_admins;
+                                                i87 = profileActivity.D4;
+                                                p8Var2.q(string11, format2, i117, i9 != i87 - 1);
                                             } else {
                                                 String string12 = LocaleController.getString(R.string.ChannelAdministrators);
-                                                int i119 = R.drawable.msg_admins;
-                                                i87 = profileActivity.D4;
-                                                l8Var2.m(i119, string12, i10 != i87 - 1);
+                                                int i118 = R.drawable.msg_admins;
+                                                i86 = profileActivity.D4;
+                                                p8Var2.m(i118, string12, i9 != i86 - 1);
                                             }
                                         } else {
-                                            i38 = profileActivity.w4;
-                                            if (i10 == i38) {
+                                            i37 = profileActivity.w4;
+                                            if (i9 == i37) {
                                                 String string13 = LocaleController.getString(R.string.ChannelAdminSettings);
-                                                int i120 = R.drawable.msg_customize;
-                                                i86 = profileActivity.D4;
-                                                l8Var2.m(i120, string13, i10 != i86 - 1);
+                                                int i119 = R.drawable.msg_customize;
+                                                i85 = profileActivity.D4;
+                                                p8Var2.m(i119, string13, i9 != i85 - 1);
                                             } else {
-                                                i39 = profileActivity.z4;
-                                                if (i10 == i39) {
-                                                    i84 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
-                                                    hh.c0 g10 = hh.c0.g(i84);
+                                                i38 = profileActivity.z4;
+                                                if (i9 == i38) {
+                                                    i83 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
+                                                    gh.c0 g11 = gh.c0.g(i83);
                                                     j24 = profileActivity.b1;
-                                                    TL_stars.StarsAmount c10 = g10.c(-j24);
-                                                    i85 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
-                                                    hh.c0 g11 = hh.c0.g(i85);
+                                                    TL_stars.StarsAmount c10 = g11.c(-j24);
+                                                    i84 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
+                                                    gh.c0 g12 = gh.c0.g(i84);
                                                     j25 = profileActivity.b1;
-                                                    long i121 = g11.i(-j25);
+                                                    long i120 = g12.i(-j25);
                                                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                                                    if (i121 > 0) {
-                                                        double d11 = i121 / 1.0E9d;
-                                                        if (d11 > 1000.0d) {
-                                                            spannableStringBuilder.append((CharSequence) "TON ").append((CharSequence) AndroidUtilities.formatWholeNumber((int) d11, 0));
+                                                    if (i120 > 0) {
+                                                        double d10 = i120 / 1.0E9d;
+                                                        if (d10 > 1000.0d) {
+                                                            spannableStringBuilder.append((CharSequence) "TON ").append((CharSequence) AndroidUtilities.formatWholeNumber((int) d10, 0));
                                                         } else {
                                                             DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
                                                             decimalFormatSymbols.setDecimalSeparator('.');
@@ -1053,40 +1053,40 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                                                             decimalFormat.setMinimumFractionDigits(2);
                                                             decimalFormat.setMaximumFractionDigits(3);
                                                             decimalFormat.setGroupingUsed(false);
-                                                            spannableStringBuilder.append((CharSequence) "TON ").append((CharSequence) decimalFormat.format(d11));
+                                                            spannableStringBuilder.append((CharSequence) "TON ").append((CharSequence) decimalFormat.format(d10));
                                                         }
                                                     }
                                                     if (c10.amount > 0) {
                                                         if (spannableStringBuilder.length() > 0) {
                                                             spannableStringBuilder.append((CharSequence) " ");
                                                         }
-                                                        spannableStringBuilder.append((CharSequence) "XTR ").append((CharSequence) hh.oa.K0(c10, 0.777f, ' '));
+                                                        spannableStringBuilder.append((CharSequence) "XTR ").append((CharSequence) gh.oa.K0(c10, 0.777f, ' '));
                                                     }
-                                                    l8Var2.q(LocaleController.getString(R.string.ChannelStars), fe.f0(hh.oa.X0(false, spannableStringBuilder, 0.7f, null), l8Var2.getTextView().getPaint(), 1.0f, 0.0f, true), R.drawable.menu_feature_paid, true);
+                                                    p8Var2.q(LocaleController.getString(R.string.ChannelStars), fe.f0(gh.oa.X0(false, spannableStringBuilder, 0.7f, null), p8Var2.getTextView().getPaint(), 1.0f, 0.0f, true), R.drawable.menu_feature_paid, true);
                                                 } else {
-                                                    i40 = profileActivity.x4;
-                                                    if (i10 == i40) {
-                                                        i83 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
-                                                        hh.c0 g12 = hh.c0.g(i83);
+                                                    i39 = profileActivity.x4;
+                                                    if (i9 == i39) {
+                                                        i82 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
+                                                        gh.c0 g13 = gh.c0.g(i82);
                                                         j23 = profileActivity.a1;
-                                                        TL_stars.StarsAmount c11 = g12.c(j23);
+                                                        TL_stars.StarsAmount c11 = g13.c(j23);
                                                         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
                                                         if (c11.amount > 0) {
-                                                            spannableStringBuilder2.append((CharSequence) "XTR ").append((CharSequence) hh.oa.K0(c11, 0.777f, ' '));
+                                                            spannableStringBuilder2.append((CharSequence) "XTR ").append((CharSequence) gh.oa.K0(c11, 0.777f, ' '));
                                                         }
-                                                        l8Var2.q(LocaleController.getString(R.string.BotBalanceStars), fe.f0(hh.oa.X0(false, spannableStringBuilder2, 0.7f, null), l8Var2.getTextView().getPaint(), 1.0f, 0.0f, true), R.drawable.menu_premium_main, true);
+                                                        p8Var2.q(LocaleController.getString(R.string.BotBalanceStars), fe.f0(gh.oa.X0(false, spannableStringBuilder2, 0.7f, null), p8Var2.getTextView().getPaint(), 1.0f, 0.0f, true), R.drawable.menu_premium_main, true);
                                                     } else {
-                                                        i41 = profileActivity.y4;
-                                                        if (i10 == i41) {
-                                                            i82 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
-                                                            hh.c0 g13 = hh.c0.g(i82);
+                                                        i40 = profileActivity.y4;
+                                                        if (i9 == i40) {
+                                                            i81 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
+                                                            gh.c0 g14 = gh.c0.g(i81);
                                                             j22 = profileActivity.a1;
-                                                            long i122 = g13.i(j22);
+                                                            long i121 = g14.i(j22);
                                                             SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
-                                                            if (i122 > 0) {
-                                                                double d12 = i122 / 1.0E9d;
-                                                                if (d12 > 1000.0d) {
-                                                                    spannableStringBuilder3.append((CharSequence) "TON ").append((CharSequence) AndroidUtilities.formatWholeNumber((int) d12, 0));
+                                                            if (i121 > 0) {
+                                                                double d11 = i121 / 1.0E9d;
+                                                                if (d11 > 1000.0d) {
+                                                                    spannableStringBuilder3.append((CharSequence) "TON ").append((CharSequence) AndroidUtilities.formatWholeNumber((int) d11, 0));
                                                                 } else {
                                                                     DecimalFormatSymbols decimalFormatSymbols2 = new DecimalFormatSymbols(Locale.US);
                                                                     decimalFormatSymbols2.setDecimalSeparator('.');
@@ -1094,249 +1094,249 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                                                                     decimalFormat2.setMinimumFractionDigits(2);
                                                                     decimalFormat2.setMaximumFractionDigits(3);
                                                                     decimalFormat2.setGroupingUsed(false);
-                                                                    spannableStringBuilder3.append((CharSequence) "TON ").append((CharSequence) decimalFormat2.format(d12));
+                                                                    spannableStringBuilder3.append((CharSequence) "TON ").append((CharSequence) decimalFormat2.format(d11));
                                                                 }
                                                             }
-                                                            l8Var2.q(LocaleController.getString(R.string.BotBalanceTON), fe.f0(hh.oa.X0(false, spannableStringBuilder3, 0.7f, null), l8Var2.getTextView().getPaint(), 1.0f, 0.0f, true), R.drawable.outline_gram_24, true);
+                                                            p8Var2.q(LocaleController.getString(R.string.BotBalanceTON), fe.f0(gh.oa.X0(false, spannableStringBuilder3, 0.7f, null), p8Var2.getTextView().getPaint(), 1.0f, 0.0f, true), R.drawable.outline_gram_24, true);
                                                         } else {
-                                                            i42 = profileActivity.C4;
-                                                            if (i10 == i42) {
+                                                            i41 = profileActivity.C4;
+                                                            if (i9 == i41) {
                                                                 chatFull5 = profileActivity.q2;
                                                                 if (chatFull5 != null) {
                                                                     String string14 = LocaleController.getString(R.string.ChannelBlacklist);
                                                                     chatFull6 = profileActivity.q2;
-                                                                    int i123 = chatFull6.banned_count;
+                                                                    int i122 = chatFull6.banned_count;
                                                                     chatFull7 = profileActivity.q2;
-                                                                    String format3 = String.format("%d", Integer.valueOf(Math.max(i123, chatFull7.kicked_count)));
-                                                                    int i124 = R.drawable.msg_user_remove;
-                                                                    i81 = profileActivity.D4;
-                                                                    l8Var2.q(string14, format3, i124, i10 != i81 - 1);
+                                                                    String format3 = String.format("%d", Integer.valueOf(Math.max(i122, chatFull7.kicked_count)));
+                                                                    int i123 = R.drawable.msg_user_remove;
+                                                                    i80 = profileActivity.D4;
+                                                                    p8Var2.q(string14, format3, i123, i9 != i80 - 1);
                                                                 } else {
                                                                     String string15 = LocaleController.getString(R.string.ChannelBlacklist);
-                                                                    int i125 = R.drawable.msg_user_remove;
-                                                                    i80 = profileActivity.D4;
-                                                                    l8Var2.m(i125, string15, i10 != i80 - 1);
+                                                                    int i124 = R.drawable.msg_user_remove;
+                                                                    i79 = profileActivity.D4;
+                                                                    p8Var2.m(i124, string15, i9 != i79 - 1);
                                                                 }
                                                             } else {
-                                                                i43 = profileActivity.s4;
-                                                                if (i10 == i43) {
-                                                                    l8Var2.e(i110, i111);
-                                                                    int i126 = i10 + 1;
-                                                                    boolean z32 = i126 >= profileActivity.q4 && i126 < profileActivity.r4;
+                                                                i42 = profileActivity.s4;
+                                                                if (i9 == i42) {
+                                                                    p8Var2.e(i109, i110);
+                                                                    int i125 = i9 + 1;
+                                                                    boolean z32 = i125 >= profileActivity.q4 && i125 < profileActivity.r4;
                                                                     String string16 = LocaleController.getString(R.string.AddMember);
-                                                                    int i127 = R.drawable.msg_contact_add;
-                                                                    i79 = profileActivity.D4;
-                                                                    l8Var2.m(i127, string16, i79 == -1 || z32);
+                                                                    int i126 = R.drawable.msg_contact_add;
+                                                                    i78 = profileActivity.D4;
+                                                                    p8Var2.m(i126, string16, i78 == -1 || z32);
                                                                 } else {
-                                                                    i44 = profileActivity.Q3;
-                                                                    if (i10 == i44) {
-                                                                        l8Var2.i(LocaleController.getString(R.string.SendMessageLocation), true);
+                                                                    i43 = profileActivity.Q3;
+                                                                    if (i9 == i43) {
+                                                                        p8Var2.i(LocaleController.getString(R.string.SendMessageLocation), true);
                                                                     } else {
-                                                                        i45 = profileActivity.V3;
-                                                                        if (i10 == i45) {
-                                                                            l8Var2.m(R.drawable.msg_contact_add, LocaleController.getString(R.string.AddToContacts), false);
-                                                                            l8Var2.e(i110, i111);
+                                                                        i44 = profileActivity.V3;
+                                                                        if (i9 == i44) {
+                                                                            p8Var2.m(R.drawable.msg_contact_add, LocaleController.getString(R.string.AddToContacts), false);
+                                                                            p8Var2.e(i109, i110);
                                                                         } else {
-                                                                            i46 = profileActivity.S3;
-                                                                            if (i10 == i46) {
-                                                                                l8Var2.m(R.drawable.menu_reaction_delete_24, LocaleController.getString(R.string.DeleteReactionMenu), false);
-                                                                                l8Var2.e(org.telegram.ui.ActionBar.g6.q7, org.telegram.ui.ActionBar.g6.p7);
+                                                                            i45 = profileActivity.S3;
+                                                                            if (i9 == i45) {
+                                                                                p8Var2.m(R.drawable.menu_reaction_delete_24, LocaleController.getString(R.string.DeleteReactionMenu), false);
+                                                                                p8Var2.e(org.telegram.ui.ActionBar.f6.q7, org.telegram.ui.ActionBar.f6.p7);
                                                                             } else {
-                                                                                i47 = profileActivity.T3;
-                                                                                if (i10 == i47) {
+                                                                                i46 = profileActivity.T3;
+                                                                                if (i9 == i46) {
                                                                                     MessagesController messagesController7 = profileActivity.getMessagesController();
                                                                                     j21 = profileActivity.W4;
                                                                                     TLRPC.Chat chat14 = messagesController7.getChat(Long.valueOf(-j21));
                                                                                     if (chat14 == null || !ChatObject.canBlockUsers(chat14)) {
-                                                                                        l8Var2.m(R.drawable.msg_report, LocaleController.getString(R.string.ReportReaction2), false);
+                                                                                        p8Var2.m(R.drawable.msg_report, LocaleController.getString(R.string.ReportReaction2), false);
                                                                                     } else {
-                                                                                        l8Var2.m(R.drawable.msg_block2, LocaleController.getString(R.string.ReportReactionAndBan2), false);
+                                                                                        p8Var2.m(R.drawable.msg_block2, LocaleController.getString(R.string.ReportReactionAndBan2), false);
                                                                                     }
-                                                                                    l8Var2.e(org.telegram.ui.ActionBar.g6.q7, org.telegram.ui.ActionBar.g6.p7);
+                                                                                    p8Var2.e(org.telegram.ui.ActionBar.f6.q7, org.telegram.ui.ActionBar.f6.p7);
                                                                                 } else {
-                                                                                    i48 = profileActivity.R3;
-                                                                                    if (i10 == i48) {
-                                                                                        l8Var2.i(LocaleController.getString(R.string.ReportUserLocation), false);
-                                                                                        int i128 = org.telegram.ui.ActionBar.g6.p7;
-                                                                                        l8Var2.e(-1, i128);
-                                                                                        l8Var2.e(-1, i128);
+                                                                                    i47 = profileActivity.R3;
+                                                                                    if (i9 == i47) {
+                                                                                        p8Var2.i(LocaleController.getString(R.string.ReportUserLocation), false);
+                                                                                        int i127 = org.telegram.ui.ActionBar.f6.p7;
+                                                                                        p8Var2.e(-1, i127);
+                                                                                        p8Var2.e(-1, i127);
                                                                                     } else {
-                                                                                        i49 = profileActivity.c3;
-                                                                                        if (i10 == i49) {
-                                                                                            l8Var2.s(LocaleController.getString(R.string.Language), LocaleController.getCurrentLanguageName(), false, R.drawable.msg2_language, false);
-                                                                                            l8Var2.setImageLeft(23);
+                                                                                        i48 = profileActivity.c3;
+                                                                                        if (i9 == i48) {
+                                                                                            p8Var2.s(LocaleController.getString(R.string.Language), LocaleController.getCurrentLanguageName(), false, R.drawable.msg2_language, false);
+                                                                                            p8Var2.setImageLeft(23);
                                                                                         } else {
-                                                                                            i50 = profileActivity.b3;
-                                                                                            if (i10 == i50) {
-                                                                                                l8Var2.m(R.drawable.msg2_notifications, LocaleController.getString(R.string.NotificationsAndSounds), true);
+                                                                                            i49 = profileActivity.b3;
+                                                                                            if (i9 == i49) {
+                                                                                                p8Var2.m(R.drawable.msg2_notifications, LocaleController.getString(R.string.NotificationsAndSounds), true);
                                                                                             } else {
-                                                                                                i51 = profileActivity.d3;
-                                                                                                if (i10 == i51) {
-                                                                                                    l8Var2.m(R.drawable.msg2_secret, LocaleController.getString(R.string.PrivacySettings), true);
+                                                                                                i50 = profileActivity.d3;
+                                                                                                if (i9 == i50) {
+                                                                                                    p8Var2.m(R.drawable.msg2_secret, LocaleController.getString(R.string.PrivacySettings), true);
                                                                                                 } else {
-                                                                                                    i52 = profileActivity.e3;
-                                                                                                    if (i10 == i52) {
-                                                                                                        l8Var2.m(R.drawable.msg2_data, LocaleController.getString(R.string.DataSettings), true);
+                                                                                                    i51 = profileActivity.e3;
+                                                                                                    if (i9 == i51) {
+                                                                                                        p8Var2.m(R.drawable.msg2_data, LocaleController.getString(R.string.DataSettings), true);
                                                                                                     } else {
-                                                                                                        i53 = profileActivity.f3;
-                                                                                                        if (i10 == i53) {
-                                                                                                            l8Var2.m(R.drawable.msg2_discussion, LocaleController.getString(R.string.ChatSettings), true);
+                                                                                                        i52 = profileActivity.f3;
+                                                                                                        if (i9 == i52) {
+                                                                                                            p8Var2.m(R.drawable.msg2_discussion, LocaleController.getString(R.string.ChatSettings), true);
                                                                                                         } else {
-                                                                                                            i54 = profileActivity.g3;
-                                                                                                            if (i10 == i54) {
-                                                                                                                l8Var2.m(R.drawable.msg2_folder, LocaleController.getString(R.string.Filters), true);
+                                                                                                            i53 = profileActivity.g3;
+                                                                                                            if (i9 == i53) {
+                                                                                                                p8Var2.m(R.drawable.msg2_folder, LocaleController.getString(R.string.Filters), true);
                                                                                                             } else {
-                                                                                                                i55 = profileActivity.i3;
-                                                                                                                if (i10 == i55) {
-                                                                                                                    l8Var2.m(R.drawable.msg2_sticker, LocaleController.getString(R.string.StickersName), true);
+                                                                                                                i54 = profileActivity.i3;
+                                                                                                                if (i9 == i54) {
+                                                                                                                    p8Var2.m(R.drawable.msg2_sticker, LocaleController.getString(R.string.StickersName), true);
                                                                                                                 } else {
-                                                                                                                    i56 = profileActivity.h3;
-                                                                                                                    if (i10 == i56) {
-                                                                                                                        l8Var2.m(R.drawable.msg2_battery, LocaleController.getString(R.string.PowerUsage), true);
+                                                                                                                    i55 = profileActivity.h3;
+                                                                                                                    if (i9 == i55) {
+                                                                                                                        p8Var2.m(R.drawable.msg2_battery, LocaleController.getString(R.string.PowerUsage), true);
                                                                                                                     } else {
-                                                                                                                        i57 = profileActivity.m3;
-                                                                                                                        if (i10 == i57) {
-                                                                                                                            l8Var2.m(R.drawable.msg2_ask_question, LocaleController.getString(R.string.AskAQuestion), true);
+                                                                                                                        i56 = profileActivity.m3;
+                                                                                                                        if (i9 == i56) {
+                                                                                                                            p8Var2.m(R.drawable.msg2_ask_question, LocaleController.getString(R.string.AskAQuestion), true);
                                                                                                                         } else {
-                                                                                                                            i58 = profileActivity.n3;
-                                                                                                                            if (i10 == i58) {
-                                                                                                                                l8Var2.m(R.drawable.msg2_help, LocaleController.getString(R.string.TelegramFAQ), true);
+                                                                                                                            i57 = profileActivity.n3;
+                                                                                                                            if (i9 == i57) {
+                                                                                                                                p8Var2.m(R.drawable.msg2_help, LocaleController.getString(R.string.TelegramFAQ), true);
                                                                                                                             } else {
-                                                                                                                                i59 = profileActivity.o3;
-                                                                                                                                if (i10 == i59) {
-                                                                                                                                    l8Var2.m(R.drawable.msg2_policy, LocaleController.getString(R.string.PrivacyPolicy), false);
+                                                                                                                                i58 = profileActivity.o3;
+                                                                                                                                if (i9 == i58) {
+                                                                                                                                    p8Var2.m(R.drawable.msg2_policy, LocaleController.getString(R.string.PrivacyPolicy), false);
                                                                                                                                 } else {
-                                                                                                                                    i60 = profileActivity.r3;
-                                                                                                                                    if (i10 == i60) {
-                                                                                                                                        l8Var2.i(LocaleController.getString(R.string.DebugSendLogs), true);
+                                                                                                                                    i59 = profileActivity.r3;
+                                                                                                                                    if (i9 == i59) {
+                                                                                                                                        p8Var2.i(LocaleController.getString(R.string.DebugSendLogs), true);
                                                                                                                                     } else {
-                                                                                                                                        i61 = profileActivity.s3;
-                                                                                                                                        if (i10 == i61) {
-                                                                                                                                            l8Var2.i(LocaleController.getString(R.string.DebugSendLastLogs), true);
+                                                                                                                                        i60 = profileActivity.s3;
+                                                                                                                                        if (i9 == i60) {
+                                                                                                                                            p8Var2.i(LocaleController.getString(R.string.DebugSendLastLogs), true);
                                                                                                                                         } else {
-                                                                                                                                            i62 = profileActivity.t3;
-                                                                                                                                            if (i10 == i62) {
-                                                                                                                                                l8Var2.i(LocaleController.getString(R.string.DebugClearLogs), profileActivity.u3 != -1);
-                                                                                                                                            } else if (i10 == profileActivity.u3) {
-                                                                                                                                                l8Var2.i("Switch Backend", false);
+                                                                                                                                            i61 = profileActivity.t3;
+                                                                                                                                            if (i9 == i61) {
+                                                                                                                                                p8Var2.i(LocaleController.getString(R.string.DebugClearLogs), profileActivity.u3 != -1);
+                                                                                                                                            } else if (i9 == profileActivity.u3) {
+                                                                                                                                                p8Var2.i("Switch Backend", false);
                                                                                                                                             } else {
-                                                                                                                                                i63 = profileActivity.j3;
-                                                                                                                                                if (i10 == i63) {
-                                                                                                                                                    l8Var2.m(R.drawable.msg2_devices, LocaleController.getString(R.string.Devices), true);
+                                                                                                                                                i62 = profileActivity.j3;
+                                                                                                                                                if (i9 == i62) {
+                                                                                                                                                    p8Var2.m(R.drawable.msg2_devices, LocaleController.getString(R.string.Devices), true);
                                                                                                                                                 } else {
-                                                                                                                                                    i64 = profileActivity.K2;
-                                                                                                                                                    if (i10 == i64) {
+                                                                                                                                                    i63 = profileActivity.K2;
+                                                                                                                                                    if (i9 == i63) {
                                                                                                                                                         profileActivity.S.N(86);
                                                                                                                                                         profileActivity.S.J();
-                                                                                                                                                        l8Var2.n(LocaleController.getString(R.string.SetProfilePhoto), profileActivity.S, false);
-                                                                                                                                                        l8Var2.e(org.telegram.ui.ActionBar.g6.v6, org.telegram.ui.ActionBar.g6.u6);
-                                                                                                                                                        l8Var2.getImageView().setPadding(0, 0, 0, AndroidUtilities.dp(8.0f));
-                                                                                                                                                        l8Var2.setImageLeft(12);
-                                                                                                                                                        profileActivity.I2 = l8Var2;
+                                                                                                                                                        p8Var2.n(LocaleController.getString(R.string.SetProfilePhoto), profileActivity.S, false);
+                                                                                                                                                        p8Var2.e(org.telegram.ui.ActionBar.f6.v6, org.telegram.ui.ActionBar.f6.u6);
+                                                                                                                                                        p8Var2.getImageView().setPadding(0, 0, 0, AndroidUtilities.dp(8.0f));
+                                                                                                                                                        p8Var2.setImageLeft(12);
+                                                                                                                                                        profileActivity.I2 = p8Var2;
                                                                                                                                                     } else {
-                                                                                                                                                        i65 = profileActivity.W3;
-                                                                                                                                                        if (i10 == i65) {
-                                                                                                                                                            l8Var2.m(R.drawable.msg_groups_create, LocaleController.getString(R.string.AddToGroupOrChannel), false);
+                                                                                                                                                        i64 = profileActivity.W3;
+                                                                                                                                                        if (i9 == i64) {
+                                                                                                                                                            p8Var2.m(R.drawable.msg_groups_create, LocaleController.getString(R.string.AddToGroupOrChannel), false);
                                                                                                                                                         } else {
-                                                                                                                                                            i66 = profileActivity.Y3;
-                                                                                                                                                            if (i10 == i66) {
-                                                                                                                                                                l8Var2.n(LocaleController.getString(R.string.TelegramPremium), new org.telegram.ui.Components.j5(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), ag.j2.d().f), true);
-                                                                                                                                                                l8Var2.setImageLeft(23);
+                                                                                                                                                            i65 = profileActivity.Y3;
+                                                                                                                                                            if (i9 == i65) {
+                                                                                                                                                                p8Var2.n(LocaleController.getString(R.string.TelegramPremium), new org.telegram.ui.Components.j5(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), zf.a1.d().f), true);
+                                                                                                                                                                p8Var2.setImageLeft(23);
                                                                                                                                                             } else {
-                                                                                                                                                                i67 = profileActivity.Z3;
-                                                                                                                                                                if (i10 == i67) {
-                                                                                                                                                                    i78 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
-                                                                                                                                                                    hh.u7 w10 = hh.u7.w(i78);
-                                                                                                                                                                    long j36 = w10.p().amount;
+                                                                                                                                                                i66 = profileActivity.Z3;
+                                                                                                                                                                if (i9 == i66) {
+                                                                                                                                                                    i77 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
+                                                                                                                                                                    gh.v7 w8 = gh.v7.w(i77);
+                                                                                                                                                                    long j36 = w8.p().amount;
                                                                                                                                                                     String string17 = LocaleController.getString(R.string.MenuTelegramStars);
                                                                                                                                                                     CharSequence charSequence2 = str13;
-                                                                                                                                                                    if (w10.e) {
+                                                                                                                                                                    if (w8.e) {
                                                                                                                                                                         charSequence2 = str13;
                                                                                                                                                                         if (j36 > 0) {
-                                                                                                                                                                            charSequence2 = hh.oa.J0(w10.p(), 0.85f, ' ');
+                                                                                                                                                                            charSequence2 = gh.oa.I0(w8.p(), 0.85f, ' ');
                                                                                                                                                                         }
                                                                                                                                                                     }
-                                                                                                                                                                    l8Var2.r(string17, charSequence2, new org.telegram.ui.Components.j5(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), ag.j2.d().h), true);
-                                                                                                                                                                    l8Var2.setImageLeft(23);
+                                                                                                                                                                    p8Var2.r(string17, charSequence2, new org.telegram.ui.Components.j5(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), zf.a1.d().h), true);
+                                                                                                                                                                    p8Var2.setImageLeft(23);
                                                                                                                                                                 } else {
-                                                                                                                                                                    i68 = profileActivity.a4;
-                                                                                                                                                                    if (i10 == i68) {
-                                                                                                                                                                        i77 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
-                                                                                                                                                                        hh.u7 L = hh.u7.L(i77);
+                                                                                                                                                                    i67 = profileActivity.a4;
+                                                                                                                                                                    if (i9 == i67) {
+                                                                                                                                                                        i76 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
+                                                                                                                                                                        gh.v7 L = gh.v7.L(i76);
                                                                                                                                                                         long j37 = L.p().amount;
                                                                                                                                                                         String string18 = LocaleController.getString(R.string.MyTON);
                                                                                                                                                                         CharSequence charSequence3 = str13;
                                                                                                                                                                         if (L.e) {
                                                                                                                                                                             charSequence3 = str13;
                                                                                                                                                                             if (j37 > 0) {
-                                                                                                                                                                                charSequence3 = hh.oa.J0(L.p(), 0.85f, ' ');
+                                                                                                                                                                                charSequence3 = gh.oa.I0(L.p(), 0.85f, ' ');
                                                                                                                                                                             }
                                                                                                                                                                         }
-                                                                                                                                                                        l8Var2.q(string18, charSequence3, R.drawable.settings_gram_24, true);
-                                                                                                                                                                        l8Var2.setImageLeft(23);
+                                                                                                                                                                        p8Var2.q(string18, charSequence3, R.drawable.settings_gram_24, true);
+                                                                                                                                                                        p8Var2.setImageLeft(23);
                                                                                                                                                                     } else {
-                                                                                                                                                                        i69 = profileActivity.b4;
-                                                                                                                                                                        if (i10 == i69) {
-                                                                                                                                                                            l8Var2.m(R.drawable.menu_shop, LocaleController.getString(R.string.TelegramBusiness), true);
-                                                                                                                                                                            l8Var2.setImageLeft(23);
+                                                                                                                                                                        i68 = profileActivity.b4;
+                                                                                                                                                                        if (i9 == i68) {
+                                                                                                                                                                            p8Var2.m(R.drawable.menu_shop, LocaleController.getString(R.string.TelegramBusiness), true);
+                                                                                                                                                                            p8Var2.setImageLeft(23);
                                                                                                                                                                         } else {
-                                                                                                                                                                            i70 = profileActivity.c4;
-                                                                                                                                                                            if (i10 == i70) {
-                                                                                                                                                                                l8Var2.m(R.drawable.menu_gift, LocaleController.getString(R.string.SendAGift), false);
-                                                                                                                                                                                l8Var2.setImageLeft(23);
+                                                                                                                                                                            i69 = profileActivity.c4;
+                                                                                                                                                                            if (i9 == i69) {
+                                                                                                                                                                                p8Var2.m(R.drawable.menu_gift, LocaleController.getString(R.string.SendAGift), false);
+                                                                                                                                                                                p8Var2.setImageLeft(23);
                                                                                                                                                                             } else {
-                                                                                                                                                                                i71 = profileActivity.botPermissionLocation;
-                                                                                                                                                                                if (i10 == i71) {
+                                                                                                                                                                                i70 = profileActivity.botPermissionLocation;
+                                                                                                                                                                                if (i9 == i70) {
                                                                                                                                                                                     String string19 = LocaleController.getString(R.string.BotProfilePermissionLocation);
-                                                                                                                                                                                    nh.t0 t0Var = profileActivity.o2;
-                                                                                                                                                                                    boolean z33 = t0Var != null && t0Var.g();
-                                                                                                                                                                                    int i129 = R.drawable.filled_access_location;
-                                                                                                                                                                                    int themedColor = profileActivity.getThemedColor(org.telegram.ui.ActionBar.g6.uj);
-                                                                                                                                                                                    i76 = profileActivity.botPermissionBiometry;
-                                                                                                                                                                                    l8Var = l8Var2;
-                                                                                                                                                                                    l8Var.k(string19, z33, i129, themedColor, i76 != -1);
+                                                                                                                                                                                    mh.u0 u0Var = profileActivity.o2;
+                                                                                                                                                                                    boolean z33 = u0Var != null && u0Var.g();
+                                                                                                                                                                                    int i128 = R.drawable.filled_access_location;
+                                                                                                                                                                                    int themedColor = profileActivity.getThemedColor(org.telegram.ui.ActionBar.f6.uj);
+                                                                                                                                                                                    i75 = profileActivity.botPermissionBiometry;
+                                                                                                                                                                                    p8Var = p8Var2;
+                                                                                                                                                                                    p8Var.k(string19, z33, i128, themedColor, i75 != -1);
                                                                                                                                                                                 } else {
-                                                                                                                                                                                    l8Var = l8Var2;
-                                                                                                                                                                                    i72 = profileActivity.botPermissionBiometry;
-                                                                                                                                                                                    if (i10 == i72) {
+                                                                                                                                                                                    p8Var = p8Var2;
+                                                                                                                                                                                    i71 = profileActivity.botPermissionBiometry;
+                                                                                                                                                                                    if (i9 == i71) {
                                                                                                                                                                                         String string20 = LocaleController.getString(R.string.BotProfilePermissionBiometry);
-                                                                                                                                                                                        nh.q qVar = profileActivity.p2;
-                                                                                                                                                                                        l8Var.k(string20, qVar != null && qVar.g(), R.drawable.filled_access_fingerprint, profileActivity.getThemedColor(org.telegram.ui.ActionBar.g6.xj), false);
+                                                                                                                                                                                        mh.r rVar = profileActivity.p2;
+                                                                                                                                                                                        p8Var.k(string20, rVar != null && rVar.g(), R.drawable.filled_access_fingerprint, profileActivity.getThemedColor(org.telegram.ui.ActionBar.f6.xj), false);
                                                                                                                                                                                     } else {
-                                                                                                                                                                                        i73 = profileActivity.botPermissionEmojiStatus;
-                                                                                                                                                                                        if (i10 == i73) {
+                                                                                                                                                                                        i72 = profileActivity.botPermissionEmojiStatus;
+                                                                                                                                                                                        if (i9 == i72) {
                                                                                                                                                                                             String string21 = LocaleController.getString(R.string.BotProfilePermissionEmojiStatus);
                                                                                                                                                                                             userFull13 = profileActivity.r2;
                                                                                                                                                                                             if (userFull13 != null) {
                                                                                                                                                                                                 userFull14 = profileActivity.r2;
                                                                                                                                                                                                 if (userFull14.bot_can_manage_emoji_status) {
                                                                                                                                                                                                     z16 = true;
-                                                                                                                                                                                                    int i130 = R.drawable.filled_access_sleeping;
-                                                                                                                                                                                                    int themedColor2 = profileActivity.getThemedColor(org.telegram.ui.ActionBar.g6.sj);
-                                                                                                                                                                                                    i74 = profileActivity.botPermissionLocation;
-                                                                                                                                                                                                    if (i74 == -1) {
-                                                                                                                                                                                                        i75 = profileActivity.botPermissionBiometry;
-                                                                                                                                                                                                        if (i75 == -1) {
+                                                                                                                                                                                                    int i129 = R.drawable.filled_access_sleeping;
+                                                                                                                                                                                                    int themedColor2 = profileActivity.getThemedColor(org.telegram.ui.ActionBar.f6.sj);
+                                                                                                                                                                                                    i73 = profileActivity.botPermissionLocation;
+                                                                                                                                                                                                    if (i73 == -1) {
+                                                                                                                                                                                                        i74 = profileActivity.botPermissionBiometry;
+                                                                                                                                                                                                        if (i74 == -1) {
                                                                                                                                                                                                             z17 = false;
-                                                                                                                                                                                                            l8Var.k(string21, z16, i130, themedColor2, z17);
+                                                                                                                                                                                                            p8Var.k(string21, z16, i129, themedColor2, z17);
                                                                                                                                                                                                         }
                                                                                                                                                                                                     }
                                                                                                                                                                                                     z17 = true;
-                                                                                                                                                                                                    l8Var.k(string21, z16, i130, themedColor2, z17);
+                                                                                                                                                                                                    p8Var.k(string21, z16, i129, themedColor2, z17);
                                                                                                                                                                                                 }
                                                                                                                                                                                             }
                                                                                                                                                                                             z16 = false;
-                                                                                                                                                                                            int i1302 = R.drawable.filled_access_sleeping;
-                                                                                                                                                                                            int themedColor22 = profileActivity.getThemedColor(org.telegram.ui.ActionBar.g6.sj);
-                                                                                                                                                                                            i74 = profileActivity.botPermissionLocation;
-                                                                                                                                                                                            if (i74 == -1) {
+                                                                                                                                                                                            int i1292 = R.drawable.filled_access_sleeping;
+                                                                                                                                                                                            int themedColor22 = profileActivity.getThemedColor(org.telegram.ui.ActionBar.f6.sj);
+                                                                                                                                                                                            i73 = profileActivity.botPermissionLocation;
+                                                                                                                                                                                            if (i73 == -1) {
                                                                                                                                                                                             }
                                                                                                                                                                                             z17 = true;
-                                                                                                                                                                                            l8Var.k(string21, z16, i1302, themedColor22, z17);
+                                                                                                                                                                                            p8Var.k(string21, z16, i1292, themedColor22, z17);
                                                                                                                                                                                         }
                                                                                                                                                                                     }
                                                                                                                                                                                 }
-                                                                                                                                                                                l8Var2 = l8Var;
+                                                                                                                                                                                p8Var2 = p8Var;
                                                                                                                                                                             }
                                                                                                                                                                         }
                                                                                                                                                                     }
@@ -1377,14 +1377,14 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                         }
                     }
                 }
-                l8Var2.c.setTextColor(profileActivity.getThemedColor(org.telegram.ui.ActionBar.g6.I6));
+                p8Var2.c.setTextColor(profileActivity.getThemedColor(org.telegram.ui.ActionBar.f6.I6));
                 break;
             case 6:
-                org.telegram.ui.Cells.g5 g5Var = (org.telegram.ui.Cells.g5) view;
-                i94 = profileActivity.J3;
-                if (i10 == i94) {
-                    i95 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
-                    SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i95);
+                org.telegram.ui.Cells.j5 j5Var = (org.telegram.ui.Cells.j5) view;
+                i93 = profileActivity.J3;
+                if (i9 == i93) {
+                    i94 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
+                    SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i94);
                     long j38 = profileActivity.e1;
                     if (j38 == 0) {
                         j27 = profileActivity.a1;
@@ -1399,8 +1399,8 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                     String sharedPrefKey = NotificationsController.getSharedPrefKey(j38, j26);
                     boolean z34 = notificationsSettings.getBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + sharedPrefKey, false);
                     boolean contains = notificationsSettings.contains(NotificationsSettingsFacade.PROPERTY_NOTIFY + sharedPrefKey);
-                    int c12 = org.telegram.messenger.y1.c(NotificationsSettingsFacade.PROPERTY_NOTIFY, sharedPrefKey, notificationsSettings, 0);
-                    int c13 = org.telegram.messenger.y1.c(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL, sharedPrefKey, notificationsSettings, 0);
+                    int c12 = org.telegram.messenger.l0.c(NotificationsSettingsFacade.PROPERTY_NOTIFY, sharedPrefKey, notificationsSettings, 0);
+                    int c13 = org.telegram.messenger.l0.c(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL, sharedPrefKey, notificationsSettings, 0);
                     if (c12 == 3 && c13 != Integer.MAX_VALUE) {
                         int currentTime = c13 - profileActivity.getConnectionsManager().getCurrentTime();
                         if (currentTime <= 0) {
@@ -1454,20 +1454,20 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                     }
                     String str19 = str14;
                     z20 = profileActivity.h5;
-                    g5Var.setAnimationsEnabled(z20);
-                    g5Var.b(LocaleController.getString(R.string.Notifications), str19, 0, z19, 0, false, profileActivity.e4 >= 0, false);
+                    j5Var.setAnimationsEnabled(z20);
+                    j5Var.b(LocaleController.getString(R.string.Notifications), str19, 0, z19, 0, false, profileActivity.e4 >= 0, false);
                     break;
                 }
                 break;
             case 7:
-                view.setTag(Integer.valueOf(i10));
+                view.setTag(Integer.valueOf(i9));
                 break;
             case 8:
-                org.telegram.ui.Cells.sa saVar = (org.telegram.ui.Cells.sa) view;
+                org.telegram.ui.Cells.va vaVar = (org.telegram.ui.Cells.va) view;
                 try {
-                    chatParticipant = !arrayList2.isEmpty() ? (TLRPC.ChatParticipant) arrayList.get(((Integer) arrayList2.get(i10 - profileActivity.q4)).intValue()) : (TLRPC.ChatParticipant) arrayList.get(i10 - profileActivity.q4);
-                } catch (Exception e9) {
-                    FileLog.e(e9);
+                    chatParticipant = !arrayList2.isEmpty() ? (TLRPC.ChatParticipant) arrayList.get(((Integer) arrayList2.get(i9 - profileActivity.q4)).intValue()) : (TLRPC.ChatParticipant) arrayList.get(i9 - profileActivity.q4);
+                } catch (Exception e10) {
+                    FileLog.e(e10);
                 }
                 if (chatParticipant != null) {
                     if (chatParticipant instanceof TLRPC.TL_chatChannelParticipant) {
@@ -1532,20 +1532,20 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                             final String str22 = str12;
                             final boolean z35 = z22;
                             final boolean z36 = z23;
-                            saVar.a(str12, z22, z23, z24, new View.OnClickListener() { // from class: org.telegram.ui.lz0
+                            vaVar.a(str12, z22, z23, z24, new View.OnClickListener() { // from class: org.telegram.ui.lz0
                                 @Override // android.view.View.OnClickListener
                                 public final void onClick(View view2) {
-                                    int i131;
-                                    org.telegram.ui.ActionBar.c6 c6Var2;
+                                    int i130;
+                                    org.telegram.ui.ActionBar.b6 b6Var2;
                                     ProfileActivity profileActivity2 = vz0.this.e;
                                     Activity parentActivity = profileActivity2.getParentActivity();
-                                    i131 = ((org.telegram.ui.ActionBar.n2) profileActivity2).currentAccount;
+                                    i130 = ((org.telegram.ui.ActionBar.o2) profileActivity2).currentAccount;
                                     long a2 = profileActivity2.a();
-                                    c6Var2 = ((org.telegram.ui.ActionBar.n2) profileActivity2).resourceProvider;
-                                    org.telegram.ui.Components.kz0.b(parentActivity, i131, a2, user5, str22, z35, z36, z21, c6Var2);
+                                    b6Var2 = ((org.telegram.ui.ActionBar.o2) profileActivity2).resourceProvider;
+                                    org.telegram.ui.Components.iz0.b(parentActivity, i130, a2, user5, str22, z35, z36, z21, b6Var2);
                                 }
                             });
-                            saVar.f(user5, i10 != profileActivity.r4 - 1);
+                            vaVar.f(user5, i9 != profileActivity.r4 - 1);
                             break;
                         }
                     }
@@ -1553,57 +1553,57 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                     final String str222 = str12;
                     final boolean z352 = z22;
                     final boolean z362 = z23;
-                    saVar.a(str12, z22, z23, z24, new View.OnClickListener() { // from class: org.telegram.ui.lz0
+                    vaVar.a(str12, z22, z23, z24, new View.OnClickListener() { // from class: org.telegram.ui.lz0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view2) {
-                            int i131;
-                            org.telegram.ui.ActionBar.c6 c6Var2;
+                            int i130;
+                            org.telegram.ui.ActionBar.b6 b6Var2;
                             ProfileActivity profileActivity2 = vz0.this.e;
                             Activity parentActivity = profileActivity2.getParentActivity();
-                            i131 = ((org.telegram.ui.ActionBar.n2) profileActivity2).currentAccount;
+                            i130 = ((org.telegram.ui.ActionBar.o2) profileActivity2).currentAccount;
                             long a2 = profileActivity2.a();
-                            c6Var2 = ((org.telegram.ui.ActionBar.n2) profileActivity2).resourceProvider;
-                            org.telegram.ui.Components.kz0.b(parentActivity, i131, a2, user5, str222, z352, z362, z21, c6Var2);
+                            b6Var2 = ((org.telegram.ui.ActionBar.o2) profileActivity2).resourceProvider;
+                            org.telegram.ui.Components.iz0.b(parentActivity, i130, a2, user5, str222, z352, z362, z21, b6Var2);
                         }
                     });
-                    saVar.f(user5, i10 != profileActivity.r4 - 1);
+                    vaVar.f(user5, i9 != profileActivity.r4 - 1);
                 }
                 break;
             case 12:
                 view.requestLayout();
                 break;
             case 15:
-                org.telegram.ui.Cells.v6 v6Var = (org.telegram.ui.Cells.v6) view;
-                i96 = profileActivity.Y2;
-                if (i10 != i96) {
-                    i97 = profileActivity.W2;
-                    if (i10 != i97) {
-                        i98 = profileActivity.U2;
-                        if (i10 == i98) {
-                            v6Var.setType(2);
+                org.telegram.ui.Cells.y6 y6Var = (org.telegram.ui.Cells.y6) view;
+                i95 = profileActivity.Y2;
+                if (i9 != i95) {
+                    i96 = profileActivity.W2;
+                    if (i9 != i96) {
+                        i97 = profileActivity.U2;
+                        if (i9 == i97) {
+                            y6Var.setType(2);
                             break;
                         }
                     } else {
-                        v6Var.setType(0);
+                        y6Var.setType(0);
                         break;
                     }
                 } else {
-                    v6Var.setType(1);
+                    y6Var.setType(1);
                     break;
                 }
                 break;
             case 17:
-                ((org.telegram.ui.Cells.x8) view).setText(LocaleController.getString(R.string.BotAddToGroupOrChannelInfo));
+                ((org.telegram.ui.Cells.b9) view).setText(LocaleController.getString(R.string.BotAddToGroupOrChannelInfo));
                 break;
             case 20:
                 String string22 = LocaleController.getString(R.string.Notifications);
                 MessagesController messagesController9 = profileActivity.getMessagesController();
                 long a2 = profileActivity.a();
                 j30 = profileActivity.c1;
-                ((org.telegram.ui.Cells.p8) view).f(string22, !messagesController9.isDialogMuted(a2, j30), false);
+                ((org.telegram.ui.Cells.t8) view).f(string22, !messagesController9.isDialogMuted(a2, j30), false);
                 break;
             case 21:
-                qf.c1 c1Var = (qf.c1) view;
+                pf.c1 c1Var = (pf.c1) view;
                 userFull15 = profileActivity.r2;
                 if (userFull15 != null) {
                     userFull16 = profileActivity.r2;
@@ -1612,7 +1612,7 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                 c1Var.a(tL_businessLocation, profileActivity.I3 < 0 && !profileActivity.o1);
                 break;
             case 22:
-                qf.b1 b1Var = (qf.b1) view;
+                pf.b1 b1Var = (pf.b1) view;
                 b1Var.setOnTimezoneSwitchClick(new kz0(this, r12 ? 1 : 0));
                 userFull17 = profileActivity.r2;
                 if (userFull17 != null) {
@@ -1627,18 +1627,18 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                 b1Var.b(tL_businessWorkHours, z28, z29, z30);
                 break;
             case 23:
-                org.telegram.ui.Cells.d6 d6Var = (org.telegram.ui.Cells.d6) view;
+                org.telegram.ui.Cells.g6 g6Var = (org.telegram.ui.Cells.g6) view;
                 MessagesController messagesController10 = profileActivity.getMessagesController();
                 userFull19 = profileActivity.r2;
                 TLRPC.Chat chat15 = messagesController10.getChat(Long.valueOf(userFull19.personal_channel_id));
-                org.telegram.ui.Cells.c6 c6Var2 = profileActivity.s2;
-                d6Var.a(c6Var2 != null ? c6Var2.d : null, chat15);
+                org.telegram.ui.Cells.f6 f6Var = profileActivity.s2;
+                g6Var.a(f6Var != null ? f6Var.d : null, chat15);
                 break;
             case 26:
-                org.telegram.ui.Cells.x8 x8Var = (org.telegram.ui.Cells.x8) view;
-                x8Var.setLinkTextRippleColor(null);
-                i99 = profileActivity.N3;
-                if (i10 == i99) {
+                org.telegram.ui.Cells.b9 b9Var = (org.telegram.ui.Cells.b9) view;
+                b9Var.setLinkTextRippleColor(null);
+                i98 = profileActivity.N3;
+                if (i9 == i98) {
                     profileActivity.getMessagesController().getUserOrChat(profileActivity.a());
                     userFull26 = profileActivity.r2;
                     if (userFull26 != null) {
@@ -1659,63 +1659,63 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                         if (TLObject.hasFlag(userFull28.flags2, 33554432)) {
                             userFull29 = profileActivity.r2;
                             l10 = Long.valueOf(userFull29.bot_manager_id);
-                            int i131 = 14;
+                            int i130 = 14;
                             if (profileActivity.e4 < 0 || botverification != null || l10 != null) {
-                                x8Var.setFixedSize(0);
+                                b9Var.setFixedSize(0);
                                 MessagesController messagesController11 = profileActivity.getMessagesController();
                                 j32 = profileActivity.a1;
                                 TLRPC.User user6 = messagesController11.getUser(Long.valueOf(j32));
                                 boolean z37 = user6 == null && user6.bot && user6.bot_can_edit;
                                 SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder();
                                 if (profileActivity.e4 >= 0) {
-                                    spannableStringBuilder4.append(AndroidUtilities.replaceSingleTag(LocaleController.getString(z37 ? R.string.ProfileBotOpenAppInfoOwner : R.string.ProfileBotOpenAppInfo), new org.telegram.ui.Components.f50(i131, this, z37)));
+                                    spannableStringBuilder4.append(AndroidUtilities.replaceSingleTag(LocaleController.getString(z37 ? R.string.ProfileBotOpenAppInfoOwner : R.string.ProfileBotOpenAppInfo), new org.telegram.ui.Components.a50(i130, this, z37)));
                                     if (botverification != null || l10 != null) {
                                         spannableStringBuilder4.append("\n\n\n");
                                     }
                                 }
                                 if (botverification == null) {
                                     spannableStringBuilder4.append("x");
-                                    spannableStringBuilder4.setSpan(new org.telegram.ui.Components.t5(botverification.icon, x8Var.getTextView().getPaint().getFontMetricsInt()), spannableStringBuilder4.length() - 1, spannableStringBuilder4.length(), 33);
+                                    spannableStringBuilder4.setSpan(new org.telegram.ui.Components.t5(botverification.icon, b9Var.getTextView().getPaint().getFontMetricsInt()), spannableStringBuilder4.length() - 1, spannableStringBuilder4.length(), 33);
                                     spannableStringBuilder4.append(" ");
                                     SpannableString spannableString2 = new SpannableString(botverification.description);
                                     try {
                                         AndroidUtilities.addLinksSafe(spannableString2, 1, false, false);
                                         URLSpan[] uRLSpanArr = (URLSpan[]) spannableString2.getSpans(0, spannableString2.length(), URLSpan.class);
-                                        while (i107 < uRLSpanArr.length) {
-                                            URLSpan uRLSpan = uRLSpanArr[i107];
+                                        while (i106 < uRLSpanArr.length) {
+                                            URLSpan uRLSpan = uRLSpanArr[i106];
                                             int spanStart = spannableString2.getSpanStart(uRLSpan);
                                             int spanEnd = spannableString2.getSpanEnd(uRLSpan);
                                             String url = uRLSpan.getURL();
                                             spannableString2.removeSpan(uRLSpan);
                                             spannableString2.setSpan(new nz0(this, url, url), spanStart, spanEnd, 33);
-                                            i107++;
+                                            i106++;
                                         }
-                                    } catch (Exception e10) {
-                                        FileLog.e(e10);
+                                    } catch (Exception e11) {
+                                        FileLog.e(e11);
                                     }
                                     spannableStringBuilder4.append((CharSequence) spannableString2);
                                 } else if (l10 != null && (user2 = profileActivity.getMessagesController().getUser(l10)) != null) {
                                     int length = spannableStringBuilder4.length();
                                     spannableStringBuilder4.append("</>");
-                                    spannableStringBuilder4.setSpan(new org.telegram.ui.Components.cq(R.drawable.managed_bot), length, spannableStringBuilder4.length(), 33);
+                                    spannableStringBuilder4.setSpan(new org.telegram.ui.Components.eq(R.drawable.managed_bot), length, spannableStringBuilder4.length(), 33);
                                     spannableStringBuilder4.append(" ");
-                                    spannableStringBuilder4.append(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.ProfileBotManagedBy, UserObject.getPublicUsername(user2)), profileActivity.getThemedColor(org.telegram.ui.ActionBar.g6.gc), new zs0(21, this, l10)));
+                                    spannableStringBuilder4.append(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.ProfileBotManagedBy, UserObject.getPublicUsername(user2)), profileActivity.getThemedColor(org.telegram.ui.ActionBar.f6.gc), new ys0(21, this, l10)));
                                 }
-                                x8Var.setLinkTextRippleColor(Integer.valueOf(org.telegram.ui.ActionBar.g6.l1(0.2f, profileActivity.getThemedColor(org.telegram.ui.ActionBar.g6.B6))));
-                                x8Var.setText(spannableStringBuilder4);
+                                b9Var.setLinkTextRippleColor(Integer.valueOf(org.telegram.ui.ActionBar.f6.l1(0.2f, profileActivity.getThemedColor(org.telegram.ui.ActionBar.f6.B6))));
+                                b9Var.setText(spannableStringBuilder4);
                                 break;
                             } else {
-                                x8Var.setFixedSize(14);
-                                x8Var.setText(null);
+                                b9Var.setFixedSize(14);
+                                b9Var.setText(null);
                                 break;
                             }
                         }
                     }
                     l10 = null;
-                    int i1312 = 14;
+                    int i1302 = 14;
                     if (profileActivity.e4 < 0) {
                     }
-                    x8Var.setFixedSize(0);
+                    b9Var.setFixedSize(0);
                     MessagesController messagesController112 = profileActivity.getMessagesController();
                     j32 = profileActivity.a1;
                     TLRPC.User user62 = messagesController112.getUser(Long.valueOf(j32));
@@ -1726,86 +1726,86 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                     }
                     if (botverification == null) {
                     }
-                    x8Var.setLinkTextRippleColor(Integer.valueOf(org.telegram.ui.ActionBar.g6.l1(0.2f, profileActivity.getThemedColor(org.telegram.ui.ActionBar.g6.B6))));
-                    x8Var.setText(spannableStringBuilder42);
+                    b9Var.setLinkTextRippleColor(Integer.valueOf(org.telegram.ui.ActionBar.f6.l1(0.2f, profileActivity.getThemedColor(org.telegram.ui.ActionBar.f6.B6))));
+                    b9Var.setText(spannableStringBuilder42);
                 } else {
-                    i100 = profileActivity.P3;
-                    if (i10 == i100) {
+                    i99 = profileActivity.P3;
+                    if (i9 == i99) {
                         MessagesController messagesController12 = profileActivity.getMessagesController();
                         j31 = profileActivity.a1;
                         TLRPC.User user7 = messagesController12.getUser(Long.valueOf(j31));
                         if (user7 != null && user7.bot && user7.bot_can_edit) {
-                            x8Var.setFixedSize(0);
-                            int i132 = R.string.ProfileBotAffiliateProgramInfoOwner;
+                            b9Var.setFixedSize(0);
+                            int i131 = R.string.ProfileBotAffiliateProgramInfoOwner;
                             String userName = UserObject.getUserName(user7);
                             userFull23 = profileActivity.r2;
                             if (userFull23 != null) {
                                 userFull24 = profileActivity.r2;
                                 if (userFull24.starref_program != null) {
                                     userFull25 = profileActivity.r2;
-                                    i102 = userFull25.starref_program.commission_permille;
-                                    x8Var.setText(LocaleController.formatString(i132, userName, nh.k.G0(i102)));
+                                    i101 = userFull25.starref_program.commission_permille;
+                                    b9Var.setText(LocaleController.formatString(i131, userName, mh.l.F0(i101)));
                                     break;
                                 }
                             }
-                            i102 = 0;
-                            x8Var.setText(LocaleController.formatString(i132, userName, nh.k.G0(i102)));
+                            i101 = 0;
+                            b9Var.setText(LocaleController.formatString(i131, userName, mh.l.F0(i101)));
                         } else {
-                            x8Var.setFixedSize(0);
-                            int i133 = R.string.ProfileBotAffiliateProgramInfo;
+                            b9Var.setFixedSize(0);
+                            int i132 = R.string.ProfileBotAffiliateProgramInfo;
                             String userName2 = UserObject.getUserName(user7);
                             userFull20 = profileActivity.r2;
                             if (userFull20 != null) {
                                 userFull21 = profileActivity.r2;
                                 if (userFull21.starref_program != null) {
                                     userFull22 = profileActivity.r2;
-                                    i101 = userFull22.starref_program.commission_permille;
-                                    x8Var.setText(LocaleController.formatString(i133, userName2, nh.k.G0(i101)));
+                                    i100 = userFull22.starref_program.commission_permille;
+                                    b9Var.setText(LocaleController.formatString(i132, userName2, mh.l.F0(i100)));
                                     break;
                                 }
                             }
-                            i101 = 0;
-                            x8Var.setText(LocaleController.formatString(i133, userName2, nh.k.G0(i101)));
+                            i100 = 0;
+                            b9Var.setText(LocaleController.formatString(i132, userName2, mh.l.F0(i100)));
                         }
                     }
                 }
                 break;
             case 27:
-                nh.h hVar = (nh.h) view;
-                hVar.a(profileActivity.getThemedColor(org.telegram.ui.ActionBar.g6.uj), R.drawable.filled_affiliate, LocaleController.getString(R.string.ProfileBotAffiliateProgram), null);
+                mh.i iVar = (mh.i) view;
+                iVar.a(profileActivity.getThemedColor(org.telegram.ui.ActionBar.f6.uj), R.drawable.filled_affiliate, LocaleController.getString(R.string.ProfileBotAffiliateProgram), null);
                 userFull31 = profileActivity.r2;
                 if (userFull31 != null) {
                     userFull32 = profileActivity.r2;
                     if (userFull32.starref_program != null) {
                         userFull33 = profileActivity.r2;
-                        str15 = nh.k.G0(userFull33.starref_program.commission_permille);
+                        str15 = mh.l.F0(userFull33.starref_program.commission_permille);
                     }
                 }
-                hVar.setPercent(str15);
+                iVar.setPercent(str15);
                 break;
             case 32:
                 TextView textView = (TextView) view;
                 textView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(10.0f));
-                i103 = profileActivity.f4;
-                if (i10 == i103) {
+                i102 = profileActivity.f4;
+                if (i9 == i102) {
                     SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder("⚠️");
-                    org.telegram.ui.Components.cq cqVar = new org.telegram.ui.Components.cq(R.drawable.round_warn);
-                    cqVar.translate(0.0f, AndroidUtilities.dp(1.0f));
-                    int i134 = org.telegram.ui.ActionBar.g6.wj;
-                    c6Var = profileActivity.v0;
-                    cqVar.setOverrideColor(org.telegram.ui.ActionBar.g6.v0(i134, c6Var));
-                    spannableStringBuilder5.setSpan(cqVar, 0, spannableStringBuilder5.length(), 33);
+                    org.telegram.ui.Components.eq eqVar = new org.telegram.ui.Components.eq(R.drawable.round_warn);
+                    eqVar.translate(0.0f, AndroidUtilities.dp(1.0f));
+                    int i133 = org.telegram.ui.ActionBar.f6.wj;
+                    b6Var = profileActivity.v0;
+                    eqVar.setOverrideColor(org.telegram.ui.ActionBar.f6.v0(i133, b6Var));
+                    spannableStringBuilder5.setSpan(eqVar, 0, spannableStringBuilder5.length(), 33);
                     spannableStringBuilder5.append((CharSequence) " ");
-                    int i135 = R.string.ProfileUnofficialSecurityRisk;
+                    int i134 = R.string.ProfileUnofficialSecurityRisk;
                     MessagesController messagesController13 = profileActivity.getMessagesController();
                     j33 = profileActivity.a1;
-                    spannableStringBuilder5.append((CharSequence) LocaleController.formatString(i135, UserObject.getForcedFirstName(messagesController13.getUser(Long.valueOf(j33)))));
+                    spannableStringBuilder5.append((CharSequence) LocaleController.formatString(i134, UserObject.getForcedFirstName(messagesController13.getUser(Long.valueOf(j33)))));
                     textView.setText(spannableStringBuilder5);
                     break;
                 }
                 break;
             case 33:
-                ph.b bVar = (ph.b) view;
+                oh.b bVar = (oh.b) view;
                 chat11 = profileActivity.A2;
                 if (chat11 == null) {
                     j34 = profileActivity.a1;
@@ -1814,60 +1814,60 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                         j35 = profileActivity.a1;
                         TLRPC.User user8 = messagesController14.getUser(Long.valueOf(j35));
                         if (user8 != null) {
-                            i104 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
-                            bVar.a(i104, profileActivity.getMessagesController().getChat(Long.valueOf(user8.linked_community_id)));
+                            i103 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
+                            bVar.a(i103, profileActivity.getMessagesController().getChat(Long.valueOf(user8.linked_community_id)));
                             break;
                         }
                     }
                 } else {
-                    i105 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
+                    i104 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
                     MessagesController messagesController15 = profileActivity.getMessagesController();
                     chat12 = profileActivity.A2;
-                    bVar.a(i105, messagesController15.getChat(Long.valueOf(chat12.linked_community_id)));
+                    bVar.a(i104, messagesController15.getChat(Long.valueOf(chat12.linked_community_id)));
                     break;
                 }
                 break;
         }
     }
 
-    @Override // f2.q0
-    public final f2.o1 x(ViewGroup viewGroup, int i10) {
-        View saVar;
+    @Override // f2.r0
+    public final f2.q1 x(ViewGroup viewGroup, int i9) {
+        View vaVar;
         View sz0Var;
         Context context = this.c;
         ProfileActivity profileActivity = this.e;
-        switch (i10) {
+        switch (i9) {
             case 1:
-                saVar = new org.telegram.ui.Cells.j4(this.c, org.telegram.ui.ActionBar.g6.L6, 18, 7, false, profileActivity.v0);
+                vaVar = new org.telegram.ui.Cells.m4(this.c, org.telegram.ui.ActionBar.f6.L6, 18, 7, false, profileActivity.v0);
                 break;
             case 2:
             case 19:
             case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                pz0 pz0Var = new pz0(this, this.c, profileActivity.v0, i10 == 30, i10 == 19);
+                pz0 pz0Var = new pz0(this, this.c, profileActivity.v0, i9 == 30, i9 == 19);
                 pz0Var.setContentDescriptionValueFirst(true);
-                saVar = pz0Var;
+                vaVar = pz0Var;
                 break;
             case 3:
                 qz0 qz0Var = new qz0(this, context, profileActivity, profileActivity.v0);
                 profileActivity.J5 = qz0Var;
-                saVar = qz0Var;
+                vaVar = qz0Var;
                 break;
             case 4:
-                saVar = new hs(this, context, profileActivity.v0);
+                vaVar = new gs(this, context, profileActivity.v0);
                 break;
             case 5:
-                View a3Var = new org.telegram.ui.Cells.a3(context, profileActivity.v0);
-                a3Var.setPadding(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(4.0f), 0, 0);
-                saVar = a3Var;
+                View c3Var = new org.telegram.ui.Cells.c3(context, profileActivity.v0);
+                c3Var.setPadding(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(4.0f), 0, 0);
+                vaVar = c3Var;
                 break;
             case 6:
-                saVar = new rz0(this, context, profileActivity.v0);
+                vaVar = new rz0(this, context, profileActivity.v0);
                 break;
             case 7:
-                saVar = new org.telegram.ui.Cells.w6(context, (org.telegram.messenger.rl) null);
+                vaVar = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.j2) null);
                 break;
             case 8:
-                saVar = new org.telegram.ui.Cells.sa(profileActivity.s4 == -1 ? 9 : 6, 0, this.c, profileActivity.v0, true, false);
+                vaVar = new org.telegram.ui.Cells.va(profileActivity.s4 == -1 ? 9 : 6, 0, this.c, profileActivity.v0, true, false);
                 break;
             case 9:
             case 10:
@@ -1875,25 +1875,25 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
             case 16:
             case 29:
             default:
-                org.telegram.ui.Cells.x8 x8Var = new org.telegram.ui.Cells.x8(context, 10, profileActivity.v0);
-                x8Var.getTextView().setGravity(1);
-                x8Var.getTextView().setTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.A6, profileActivity.v0));
-                x8Var.getTextView().setMovementMethod(null);
-                x8Var.setText(AndroidUtilities.getBuildVersionInfo());
-                x8Var.getTextView().setPadding(0, AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f));
-                saVar = x8Var;
+                org.telegram.ui.Cells.b9 b9Var = new org.telegram.ui.Cells.b9(context, 10, profileActivity.v0);
+                b9Var.getTextView().setGravity(1);
+                b9Var.getTextView().setTextColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.A6, profileActivity.v0));
+                b9Var.getTextView().setMovementMethod(null);
+                b9Var.setText(AndroidUtilities.getBuildVersionInfo());
+                b9Var.getTextView().setPadding(0, AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f));
+                vaVar = b9Var;
                 break;
             case 11:
             case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
-                View q3Var = new org.telegram.ui.Cells.q3(context, AndroidUtilities.dp(i10 == 31 ? 12.0f : 6.0f), 2);
-                q3Var.setTag(-33024);
-                saVar = q3Var;
+                View t3Var = new org.telegram.ui.Cells.t3(context, AndroidUtilities.dp(i9 == 31 ? 12.0f : 6.0f), 2);
+                t3Var.setTag(-33024);
+                vaVar = t3Var;
                 break;
             case 12:
                 sz0Var = new sz0(this, context);
                 sz0Var.setBackground(new ColorDrawable(0));
                 sz0Var.setTag(-33024);
-                saVar = sz0Var;
+                vaVar = sz0Var;
                 break;
             case 13:
                 if (profileActivity.K.getParent() != null) {
@@ -1901,86 +1901,86 @@ public final class vz0 extends org.telegram.ui.Components.yk0 {
                 }
                 sz0Var = profileActivity.K;
                 sz0Var.setTag(-33024);
-                saVar = sz0Var;
+                vaVar = sz0Var;
                 break;
             case 15:
-                saVar = new uz0(this, context, profileActivity.v0);
+                vaVar = new uz0(this, context, profileActivity.v0);
                 break;
             case 17:
-                saVar = new org.telegram.ui.Cells.x8(context, profileActivity.v0);
+                vaVar = new org.telegram.ui.Cells.b9(context, profileActivity.v0);
                 break;
             case 18:
             case 24:
-                View f3Var = new ag.f3(context, i10 == 18 ? 0 : 1, profileActivity.v0);
-                f3Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.d6, profileActivity.v0));
-                saVar = f3Var;
+                View r1Var = new zf.r1(context, i9 == 18 ? 0 : 1, profileActivity.v0);
+                r1Var.setBackgroundColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.d6, profileActivity.v0));
+                vaVar = r1Var;
                 break;
             case 20:
-                saVar = new org.telegram.ui.Cells.p8(18, context, profileActivity.v0, false);
+                vaVar = new org.telegram.ui.Cells.t8(18, context, profileActivity.v0, false);
                 break;
             case 21:
-                View c1Var = new qf.c1(context, profileActivity.v0);
-                c1Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.d6, profileActivity.v0));
-                saVar = c1Var;
+                View c1Var = new pf.c1(context, profileActivity.v0);
+                c1Var.setBackgroundColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.d6, profileActivity.v0));
+                vaVar = c1Var;
                 break;
             case 22:
                 View tz0Var = new tz0(this, context, profileActivity.v0);
-                tz0Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.d6, profileActivity.v0));
-                saVar = tz0Var;
+                tz0Var.setBackgroundColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.d6, profileActivity.v0));
+                vaVar = tz0Var;
                 break;
             case 23:
-                saVar = new mz0(profileActivity);
+                vaVar = new mz0(profileActivity);
                 break;
             case 25:
                 FrameLayout frameLayout = new FrameLayout(context);
-                lh.d dVar = new lh.d(context, profileActivity.v0, true);
+                kh.d dVar = new kh.d(context, profileActivity.v0, true);
                 dVar.e();
                 dVar.g(LocaleController.getString(R.string.ProfileBotOpenApp), false, true);
                 dVar.setOnClickListener(new kz0(this, 0));
-                frameLayout.addView(dVar, h7.z5.d(-1, 48.0f, 119, 18.0f, 14.0f, 18.0f, 14.0f));
-                frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.d6, profileActivity.v0));
-                saVar = frameLayout;
+                frameLayout.addView(dVar, g7.e6.d(-1, 48.0f, 119, 18.0f, 14.0f, 18.0f, 14.0f));
+                frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.d6, profileActivity.v0));
+                vaVar = frameLayout;
                 break;
             case 26:
-                saVar = new org.telegram.ui.Cells.x8(context, profileActivity.v0);
+                vaVar = new org.telegram.ui.Cells.b9(context, profileActivity.v0);
                 break;
             case 27:
-                saVar = new nh.h(context, profileActivity.v0);
+                vaVar = new mh.i(context, profileActivity.v0);
                 break;
             case 28:
-                sz0Var = new org.telegram.ui.Components.zm(context, 21);
+                sz0Var = new org.telegram.ui.Components.an(context, 23);
                 sz0Var.setTag(-33024);
-                saVar = sz0Var;
+                vaVar = sz0Var;
                 break;
             case 32:
-                saVar = new i01(profileActivity, context);
+                vaVar = new h01(profileActivity, context);
                 break;
             case 33:
-                saVar = new ph.b(context, profileActivity.v0);
+                vaVar = new oh.b(context, profileActivity.v0);
                 break;
         }
-        if (i10 != 13) {
-            saVar.setLayoutParams(new f2.y0(-1, -2));
+        if (i9 != 13) {
+            vaVar.setLayoutParams(new f2.a1(-1, -2));
         }
-        return new org.telegram.ui.Components.lk0(saVar);
+        return new org.telegram.ui.Components.ik0(vaVar);
     }
 
-    @Override // f2.q0
-    public final void y(f2.o1 o1Var) {
-        View view = o1Var.a;
+    @Override // f2.r0
+    public final void y(f2.q1 q1Var) {
+        View view = q1Var.a;
         ProfileActivity profileActivity = this.e;
         if (view == profileActivity.K) {
             profileActivity.M = true;
         }
-        if (view instanceof org.telegram.ui.Cells.v8) {
-            ((org.telegram.ui.Cells.v8) view).a.setLoading(profileActivity.e5);
-            ((org.telegram.ui.Cells.v8) view).b.setLoading(profileActivity.e5);
+        if (view instanceof org.telegram.ui.Cells.z8) {
+            ((org.telegram.ui.Cells.z8) view).a.setLoading(profileActivity.e5);
+            ((org.telegram.ui.Cells.z8) view).b.setLoading(profileActivity.e5);
         }
     }
 
-    @Override // f2.q0
-    public final void z(f2.o1 o1Var) {
-        View view = o1Var.a;
+    @Override // f2.r0
+    public final void z(f2.q1 q1Var) {
+        View view = q1Var.a;
         ProfileActivity profileActivity = this.e;
         if (view == profileActivity.K) {
             profileActivity.M = false;

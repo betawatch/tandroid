@@ -8,12 +8,12 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class i0 extends Drawable {
     public final Drawable a;
     public final Drawable b;
-    public final y5 c = new y5(new h0(this, 0), 1200, er.h, 0);
+    public final y5 c = new y5(new h0(this, 0), 1200, gr.h, 0);
 
     public i0(Context context) {
         this.a = context.getResources().getDrawable(R.drawable.input_ai).mutate();
@@ -33,12 +33,12 @@ public final class i0 extends Drawable {
         float width3 = (bounds.width() * 0.215f) + bounds.left;
         float height2 = (bounds.height() * 0.43f) + bounds.top;
         float width4 = bounds.width() * 0.09f * ((float) (1.0d - Math.sin(AndroidUtilities.cascade(d, 1.0f, 2.0f, 1.5f) * 3.141592653589793d)));
-        int i10 = (int) (width - width2);
-        int i11 = (int) (height - width2);
-        int i12 = (int) (width + width2);
-        int i13 = (int) (height + width2);
+        int i9 = (int) (width - width2);
+        int i10 = (int) (height - width2);
+        int i11 = (int) (width + width2);
+        int i12 = (int) (height + width2);
         Drawable drawable2 = this.b;
-        drawable2.setBounds(i10, i11, i12, i13);
+        drawable2.setBounds(i9, i10, i11, i12);
         drawable2.draw(canvas);
         drawable2.setBounds((int) (width3 - width4), (int) (height2 - width4), (int) (width3 + width4), (int) (height2 + width4));
         drawable2.draw(canvas);
@@ -60,9 +60,9 @@ public final class i0 extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
-        this.b.setAlpha(i10);
+    public final void setAlpha(int i9) {
+        this.a.setAlpha(i9);
+        this.b.setAlpha(i9);
     }
 
     @Override // android.graphics.drawable.Drawable

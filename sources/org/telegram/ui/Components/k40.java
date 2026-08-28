@@ -1,34 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.opengl.GLES20;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class k40 extends FrameLayout {
-    public View a;
-    public TextView b;
-    public ri0 c;
-    public LinearLayout d;
+public class k40 {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+    public k40(int i9) {
+        int a2 = l40.a(35633, R.raw.round_blur_vert);
+        this.b = a2;
+        int a3 = l40.a(35632, i9);
+        this.c = a3;
+        int glCreateProgram = GLES20.glCreateProgram();
+        GLES20.glAttachShader(glCreateProgram, a2);
+        GLES20.glAttachShader(glCreateProgram, a3);
+        GLES20.glLinkProgram(glCreateProgram);
+        int[] iArr = new int[1];
+        GLES20.glGetProgramiv(glCreateProgram, 35714, iArr, 0);
+        if (iArr[0] == 0) {
+            GLES20.glDeleteProgram(glCreateProgram);
+            glCreateProgram = 0;
+        }
+        this.a = glCreateProgram;
+        this.d = GLES20.glGetAttribLocation(glCreateProgram, "aPosition");
+        this.e = GLES20.glGetAttribLocation(glCreateProgram, "aTextureCoord");
+        this.f = GLES20.glGetUniformLocation(glCreateProgram, "sTexture");
     }
 
-    public void setGravity(int i10) {
-        this.b.setGravity(i10);
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
-    }
-
-    public void setTextColor(int i10) {
-        this.b.setTextColor(i10);
+    public final void a() {
+        GLES20.glDeleteProgram(this.a);
+        GLES20.glDeleteShader(this.b);
+        GLES20.glDeleteShader(this.c);
     }
 }

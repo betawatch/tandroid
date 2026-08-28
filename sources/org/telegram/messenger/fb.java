@@ -1,29 +1,34 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fb implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController.ErrorDelegate b;
-    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ a0.h c;
+    public final /* synthetic */ a0.h d;
 
-    public /* synthetic */ fb(MessagesController.ErrorDelegate errorDelegate, TLRPC.TL_error tL_error, int i10) {
-        this.a = i10;
-        this.b = errorDelegate;
-        this.c = tL_error;
+    public /* synthetic */ fb(MessagesController messagesController, a0.h hVar, a0.h hVar2, int i9) {
+        this.a = i9;
+        this.b = messagesController;
+        this.c = hVar;
+        this.d = hVar2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.run(this.c);
+                this.b.lambda$checkDeletingTask$86(this.c, this.d);
+                break;
+            case 1:
+                this.b.lambda$updatePrintingStrings$170(this.c, this.d);
+                break;
+            case 2:
+                this.b.lambda$getNewDeleteTask$83(this.c, this.d);
                 break;
             default:
-                this.b.run(this.c);
+                this.b.lambda$checkDeletingTask$85(this.c, this.d);
                 break;
         }
     }

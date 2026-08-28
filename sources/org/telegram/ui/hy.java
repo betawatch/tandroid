@@ -1,41 +1,52 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.DownloadController;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class hy implements DownloadController.FileDownloadProgressListener {
-    public long a;
-    public long b;
-    public final String c;
-    public final /* synthetic */ iy d;
+public final /* synthetic */ class hy implements DialogInterface.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public hy(iy iyVar, String str) {
-        this.d = iyVar;
-        this.c = str;
+    public /* synthetic */ hy(Object obj, int i9, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = i9;
     }
 
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final int getObserverTag() {
-        return 0;
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onProgressDownload(String str, long j10, long j11) {
-        this.b = j10;
-        this.a = j11;
-        this.d.c();
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onSuccessDownload(String str) {
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onFailedDownload(String str, boolean z10) {
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onProgressUpload(String str, long j10, long j11, boolean z10) {
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i9) {
+        switch (this.a) {
+            case 0:
+                my myVar = ((iy) this.c).b;
+                if (i9 == 0) {
+                    myVar.e.remove(this.b - myVar.n);
+                    myVar.Y();
+                    ly lyVar = myVar.f;
+                    if (lyVar != null) {
+                        lyVar.a();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                NotificationsSettingsActivity.W((NotificationsSettingsActivity) this.c, this.b, i9);
+                break;
+            default:
+                ThemeActivity themeActivity = (ThemeActivity) this.c;
+                themeActivity.getClass();
+                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+                edit.putInt("sortContactsBy", i9);
+                edit.commit();
+                xa1 xa1Var = themeActivity.a;
+                if (xa1Var != null) {
+                    xa1Var.m(this.b);
+                    break;
+                }
+                break;
+        }
     }
 }

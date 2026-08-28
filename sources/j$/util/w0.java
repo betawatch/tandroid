@@ -65,8 +65,8 @@ public final /* synthetic */ class w0 implements Spliterator.OfInt {
     }
 
     @Override // java.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return this.a.hasCharacteristics(i10);
+    public final /* synthetic */ boolean hasCharacteristics(int i9) {
+        return this.a.hasCharacteristics(i9);
     }
 
     public final /* synthetic */ int hashCode() {

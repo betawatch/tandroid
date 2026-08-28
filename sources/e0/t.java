@@ -14,7 +14,7 @@ import androidx.core.graphics.drawable.IconCompat;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class t {
     public f0.h A;
@@ -74,8 +74,8 @@ public final class t {
         return charSequence == null ? charSequence : charSequence.length() > 5120 ? charSequence.subSequence(0, 5120) : charSequence;
     }
 
-    public final void a(int i10, String str, PendingIntent pendingIntent) {
-        this.b.add(new k(i10 != 0 ? IconCompat.e(null, "", i10) : null, str, pendingIntent, new Bundle(), null, null, true, 0, true));
+    public final void a(int i9, String str, PendingIntent pendingIntent) {
+        this.b.add(new k(i9 != 0 ? IconCompat.e(null, "", i9) : null, str, pendingIntent, new Bundle(), null, null, true, 0, true));
     }
 
     public final Notification b() {
@@ -88,29 +88,29 @@ public final class t {
             b0Var.b(i0Var);
         }
         Notification.Builder builder = (Notification.Builder) i0Var.c;
-        int i10 = i0Var.a;
-        int i11 = Build.VERSION.SDK_INT;
-        if (i11 >= 26) {
+        int i9 = i0Var.a;
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 26) {
             build = builder.build();
-        } else if (i11 >= 24) {
+        } else if (i10 >= 24) {
             build = builder.build();
-            if (i10 != 0) {
-                if (build.getGroup() != null && (build.flags & 512) != 0 && i10 == 2) {
-                    i0.d(build);
+            if (i9 != 0) {
+                if (build.getGroup() != null && (build.flags & 512) != 0 && i9 == 2) {
+                    i0.b(build);
                 }
-                if (build.getGroup() != null && (build.flags & 512) == 0 && i10 == 1) {
-                    i0.d(build);
+                if (build.getGroup() != null && (build.flags & 512) == 0 && i9 == 1) {
+                    i0.b(build);
                 }
             }
         } else {
             builder.setExtras((Bundle) i0Var.e);
             build = builder.build();
-            if (i10 != 0) {
-                if (build.getGroup() != null && (build.flags & 512) != 0 && i10 == 2) {
-                    i0.d(build);
+            if (i9 != 0) {
+                if (build.getGroup() != null && (build.flags & 512) != 0 && i9 == 2) {
+                    i0.b(build);
                 }
-                if (build.getGroup() != null && (build.flags & 512) == 0 && i10 == 1) {
-                    i0.d(build);
+                if (build.getGroup() != null && (build.flags & 512) == 0 && i9 == 1) {
+                    i0.b(build);
                 }
             }
         }
@@ -130,13 +130,13 @@ public final class t {
             ArrayList<? extends Parcelable> arrayList = new ArrayList<>(g0Var.a.size());
             ArrayList arrayList2 = g0Var.a;
             int size = arrayList2.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList2.get(i10);
-                i10++;
+            int i9 = 0;
+            while (i9 < size) {
+                Object obj = arrayList2.get(i9);
+                i9++;
                 k kVar = (k) obj;
-                int i11 = Build.VERSION.SDK_INT;
-                if (i11 >= 23) {
+                int i10 = Build.VERSION.SDK_INT;
+                if (i10 >= 23) {
                     IconCompat a2 = kVar.a();
                     d = d0.a(a2 != null ? a2.m(null) : null, kVar.h, kVar.i);
                 } else {
@@ -147,10 +147,10 @@ public final class t {
                 boolean z10 = kVar.d;
                 Bundle bundle3 = bundle2 != null ? new Bundle(kVar.a) : new Bundle();
                 bundle3.putBoolean("android.support.allowGeneratedReplies", z10);
-                if (i11 >= 24) {
+                if (i10 >= 24) {
                     e0.a(d, z10);
                 }
-                if (i11 >= 31) {
+                if (i10 >= 31) {
                     f0.a(d, false);
                 }
                 c0.a(d, bundle3);
@@ -164,25 +164,25 @@ public final class t {
             }
             bundle.putParcelableArrayList("actions", arrayList);
         }
-        int i12 = g0Var.b;
-        if (i12 != 1) {
-            bundle.putInt("flags", i12);
+        int i11 = g0Var.b;
+        if (i11 != 1) {
+            bundle.putInt("flags", i11);
         }
         if (!g0Var.c.isEmpty()) {
             ArrayList arrayList3 = g0Var.c;
             bundle.putParcelableArray("pages", (Parcelable[]) arrayList3.toArray(new Notification[arrayList3.size()]));
         }
-        int i13 = g0Var.d;
-        if (i13 != 8388613) {
-            bundle.putInt("contentIconGravity", i13);
+        int i12 = g0Var.d;
+        if (i12 != 8388613) {
+            bundle.putInt("contentIconGravity", i12);
         }
-        int i14 = g0Var.e;
-        if (i14 != -1) {
-            bundle.putInt("contentActionIndex", i14);
+        int i13 = g0Var.e;
+        if (i13 != -1) {
+            bundle.putInt("contentActionIndex", i13);
         }
-        int i15 = g0Var.f;
-        if (i15 != 80) {
-            bundle.putInt("gravity", i15);
+        int i14 = g0Var.f;
+        if (i14 != 80) {
+            bundle.putInt("gravity", i14);
         }
         String str = g0Var.g;
         if (str != null) {
@@ -210,12 +210,12 @@ public final class t {
         this.e = d(charSequence);
     }
 
-    public final void h(int i10, boolean z10) {
+    public final void h(int i9, boolean z10) {
         Notification notification = this.E;
         if (z10) {
-            notification.flags = i10 | notification.flags;
+            notification.flags = i9 | notification.flags;
         } else {
-            notification.flags = (~i10) & notification.flags;
+            notification.flags = (~i9) & notification.flags;
         }
     }
 

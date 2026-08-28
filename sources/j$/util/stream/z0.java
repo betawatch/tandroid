@@ -65,7 +65,7 @@ public abstract class z0 extends a implements IntStream {
     @Override // j$.util.stream.a
     public final boolean L0(Spliterator spliterator, j5 j5Var) {
         IntConsumer i0Var;
-        boolean q6;
+        boolean q10;
         j$.util.x0 U0 = U0(spliterator);
         if (j5Var instanceof IntConsumer) {
             i0Var = (IntConsumer) j5Var;
@@ -78,12 +78,12 @@ public abstract class z0 extends a implements IntStream {
             i0Var = new j$.util.i0(j5Var, 1);
         }
         do {
-            q6 = j5Var.q();
-            if (q6) {
+            q10 = j5Var.q();
+            if (q10) {
                 break;
             }
         } while (U0.tryAdvance(i0Var));
-        return q6;
+        return q10;
     }
 
     @Override // j$.util.stream.t3
@@ -143,9 +143,9 @@ public abstract class z0 extends a implements IntStream {
     }
 
     @Override // j$.util.stream.IntStream
-    public final int reduce(int i10, IntBinaryOperator intBinaryOperator) {
+    public final int reduce(int i9, IntBinaryOperator intBinaryOperator) {
         Objects.requireNonNull(intBinaryOperator);
-        return ((Integer) I0(new j4(w6.INT_VALUE, intBinaryOperator, i10))).intValue();
+        return ((Integer) I0(new j4(w6.INT_VALUE, intBinaryOperator, i9))).intValue();
     }
 
     @Override // j$.util.stream.IntStream
@@ -190,14 +190,14 @@ public abstract class z0 extends a implements IntStream {
 
     @Override // j$.util.stream.IntStream
     public final IntStream a() {
-        int i10 = w8.a;
+        int i9 = w8.a;
         Objects.requireNonNull(null);
         return new c6(this, w8.a, 1);
     }
 
     @Override // j$.util.stream.IntStream
     public final IntStream c() {
-        int i10 = w8.a;
+        int i9 = w8.a;
         Objects.requireNonNull(null);
         return new c6(this, w8.b, 2);
     }

@@ -1,66 +1,82 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sf1 implements RequestDelegate {
+public final /* synthetic */ class sf1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zf1 b;
+    public final /* synthetic */ ag1 b;
 
-    public /* synthetic */ sf1(zf1 zf1Var, int i10) {
-        this.a = i10;
-        this.b = zf1Var;
+    public /* synthetic */ sf1(ag1 ag1Var, int i9) {
+        this.a = i9;
+        this.b = ag1Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                final int i10 = 0;
-                final zf1 zf1Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.uf1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                zf1.b0(zf1Var, tL_error, tLObject);
-                                break;
-                            default:
-                                zf1.h0(zf1Var, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
+                ag1 ag1Var = this.b;
+                EditTextBoldCursor editTextBoldCursor = ag1Var.n;
+                if (editTextBoldCursor != null && editTextBoldCursor.getVisibility() == 0) {
+                    ag1Var.n.requestFocus();
+                    AndroidUtilities.showKeyboard(ag1Var.n);
+                    break;
+                }
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new vf1(this.b, tL_error, 0));
+                ag1 ag1Var2 = this.b;
+                ld0 ld0Var = ag1Var2.w;
+                if (ld0Var != null && ld0Var.getVisibility() == 0) {
+                    ag1Var2.w.f[0].requestFocus();
+                    break;
+                }
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new vf1(this.b, tL_error, 1));
-                break;
+                int i9 = 0;
+                while (true) {
+                    vr[] vrVarArr = this.b.w.f;
+                    if (i9 >= vrVarArr.length) {
+                        break;
+                    } else {
+                        vrVarArr[i9].i(0.0f);
+                        i9++;
+                    }
+                }
             case 3:
-                AndroidUtilities.runOnUIThread(new vf1(this.b, tL_error, 2));
+                ag1 ag1Var3 = this.b;
+                EditTextBoldCursor editTextBoldCursor2 = ag1Var3.n;
+                if (editTextBoldCursor2 != null) {
+                    if (editTextBoldCursor2.length() != 0) {
+                        ag1Var3.b0[2].N(49);
+                        ag1Var3.b0[2].Q(0.0f, false);
+                        ag1Var3.a.d();
+                        break;
+                    } else {
+                        ag1Var3.E0(true);
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                ag1 ag1Var4 = this.b;
+                if (ag1Var4.c0 != null) {
+                    ag1Var4.E0(false);
+                    break;
+                }
+                break;
+            case 5:
+                ag1.e0(this.b);
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new sf1(this.b, 7), 150L);
                 break;
             default:
-                final int i11 = 1;
-                final zf1 zf1Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.uf1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                zf1.b0(zf1Var2, tL_error, tLObject);
-                                break;
-                            default:
-                                zf1.h0(zf1Var2, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
+                for (vr vrVar : this.b.w.f) {
+                    vrVar.i(0.0f);
+                }
                 break;
         }
     }

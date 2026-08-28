@@ -6,33 +6,33 @@ import android.os.Looper;
 import android.os.Message;
 import android.support.v4.media.MediaMetadataCompat;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class f extends Handler {
     public boolean a;
-    public final /* synthetic */ androidx.mediarouter.app.r b;
+    public final /* synthetic */ androidx.mediarouter.app.s b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(androidx.mediarouter.app.r rVar, Looper looper) {
+    public f(androidx.mediarouter.app.s sVar, Looper looper) {
         super(looper);
-        this.b = rVar;
+        this.b = sVar;
         this.a = false;
     }
 
     @Override // android.os.Handler
     public final void handleMessage(Message message) {
         if (this.a) {
-            int i10 = message.what;
-            androidx.mediarouter.app.r rVar = this.b;
-            switch (i10) {
+            int i9 = message.what;
+            androidx.mediarouter.app.s sVar = this.b;
+            switch (i9) {
                 case 1:
                     d0.a(message.getData());
                     break;
                 case 2:
-                    rVar.b((PlaybackStateCompat) message.obj);
+                    sVar.b((PlaybackStateCompat) message.obj);
                     break;
                 case 3:
-                    rVar.a((MediaMetadataCompat) message.obj);
+                    sVar.a((MediaMetadataCompat) message.obj);
                     break;
                 case 4:
                     break;
@@ -44,7 +44,7 @@ public final class f extends Handler {
                     d0.a((Bundle) message.obj);
                     break;
                 case 8:
-                    rVar.d();
+                    sVar.d();
                     break;
                 case 9:
                     ((Integer) message.obj).getClass();

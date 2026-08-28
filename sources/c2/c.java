@@ -1,34 +1,32 @@
 package c2;
 
-import ag.h1;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ h1 b;
+    public final /* synthetic */ androidx.emoji2.text.o b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ c(h1 h1Var, int i10, int i11) {
-        this.a = i11;
-        this.b = h1Var;
-        this.c = i10;
+    public /* synthetic */ c(androidx.emoji2.text.o oVar, int i9, int i10) {
+        this.a = i10;
+        this.b = oVar;
+        this.c = i9;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                z zVar = ((e) ((a5.n) this.b.f).d).d;
-                if (zVar != null) {
-                    zVar.j(this.c);
+                a0 a0Var = ((e) ((a5.m) this.b.f).d).d;
+                if (a0Var != null) {
+                    a0Var.j(this.c);
                     break;
                 }
                 break;
             default:
-                z zVar2 = ((e) ((a5.n) this.b.f).d).d;
-                if (zVar2 != null) {
-                    zVar2.k(this.c);
+                a0 a0Var2 = ((e) ((a5.m) this.b.f).d).d;
+                if (a0Var2 != null) {
+                    a0Var2.k(this.c);
                     break;
                 }
                 break;

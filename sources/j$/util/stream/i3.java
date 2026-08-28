@@ -33,32 +33,32 @@ public class i3 implements c2 {
     }
 
     @Override // j$.util.stream.e2
-    public final /* bridge */ /* synthetic */ e2 a(int i10) {
-        a(i10);
+    public final /* bridge */ /* synthetic */ e2 a(int i9) {
+        a(i9);
         throw null;
     }
 
     @Override // j$.util.stream.d2, j$.util.stream.e2
-    public final d2 a(int i10) {
+    public final d2 a(int i9) {
         throw new IndexOutOfBoundsException();
     }
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ void f(Object[] objArr, int i10) {
-        t3.O(this, (Long[]) objArr, i10);
+    public final /* synthetic */ void f(Object[] objArr, int i9) {
+        t3.O(this, (Long[]) objArr, i9);
     }
 
     @Override // j$.util.stream.d2
-    public final void c(int i10, Object obj) {
-        int i11 = this.b;
-        System.arraycopy(this.a, 0, (long[]) obj, i10, i11);
+    public final void c(int i9, Object obj) {
+        int i10 = this.b;
+        System.arraycopy(this.a, 0, (long[]) obj, i9, i10);
     }
 
     @Override // j$.util.stream.d2
     public final void d(Object obj) {
         LongConsumer longConsumer = (LongConsumer) obj;
-        for (int i10 = 0; i10 < this.b; i10++) {
-            longConsumer.accept(this.a[i10]);
+        for (int i9 = 0; i9 < this.b; i9++) {
+            longConsumer.accept(this.a[i9]);
         }
     }
 
@@ -89,8 +89,8 @@ public class i3 implements c2 {
     public final Object b() {
         long[] jArr = this.a;
         int length = jArr.length;
-        int i10 = this.b;
-        return length == i10 ? jArr : Arrays.copyOf(jArr, i10);
+        int i9 = this.b;
+        return length == i9 ? jArr : Arrays.copyOf(jArr, i9);
     }
 
     @Override // j$.util.stream.e2

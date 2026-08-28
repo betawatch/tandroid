@@ -1,116 +1,82 @@
 package f9;
 
 import android.util.Log;
-import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
-import com.google.mlkit.vision.common.internal.MobileVisionBase;
-import h7.fa;
-import h7.ga;
-import h7.na;
-import h7.oa;
 import java.io.File;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Executor;
+import java.io.IOException;
+import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class m implements Callable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class m implements c {
+    public static final Charset c = Charset.forName("UTF-8");
+    public final File a;
+    public k b;
 
-    public /* synthetic */ m(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.c = obj;
-        this.b = obj2;
+    public m(File file) {
+        this.a = file;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        ga gaVar;
-        int i10 = this.a;
-        Object obj = this.b;
-        Object obj2 = this.c;
-        switch (i10) {
-            case 0:
-                xe.b bVar = (xe.b) obj2;
-                o oVar = (o) bVar.c;
-                Boolean bool = (Boolean) obj;
-                if (bool.booleanValue()) {
-                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                        Log.d("FirebaseCrashlytics", "Sending cached crash reports...", null);
-                    }
-                    boolean booleanValue = bool.booleanValue();
-                    t tVar = oVar.b;
-                    if (!booleanValue) {
-                        tVar.getClass();
-                        throw new IllegalStateException("An invalid data collection token was used.");
-                    }
-                    tVar.h.trySetResult(null);
-                    Executor executor = (Executor) oVar.e.b;
-                    return ((Task) bVar.b).onSuccessTask(executor, new xe.b(25, this, executor));
-                }
-                if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                    Log.v("FirebaseCrashlytics", "Deleting cached crash reports...", null);
-                }
-                Iterator it = k9.c.e(oVar.g.b.listFiles(o.r)).iterator();
-                while (it.hasNext()) {
-                    ((File) it.next()).delete();
-                }
-                k9.c cVar = ((k9.b) oVar.m.b).b;
-                k9.b.a(k9.c.e(cVar.d.listFiles()));
-                k9.b.a(k9.c.e(cVar.e.listFiles()));
-                k9.b.a(k9.c.e(cVar.f.listFiles()));
-                oVar.q.trySetResult(null);
-                return Tasks.forResult(null);
-            case 1:
-                o.a((o) obj2, (String) obj, Boolean.FALSE);
-                return null;
-            case 2:
-                return q.a((q) obj2, (c3.g) obj);
-            case 3:
-                MobileVisionBase mobileVisionBase = (MobileVisionBase) obj;
-                eb.a aVar = (eb.a) obj2;
-                HashMap hashMap = ga.f;
-                oa.b();
-                int i11 = na.a;
-                oa.b();
-                if (Boolean.parseBoolean("")) {
-                    HashMap hashMap2 = ga.f;
-                    if (hashMap2.get("detectorTaskWithResource#run") == null) {
-                        hashMap2.put("detectorTaskWithResource#run", new ga("detectorTaskWithResource#run"));
-                    }
-                    gaVar = (ga) hashMap2.get("detectorTaskWithResource#run");
-                } else {
-                    gaVar = fa.h;
-                }
-                gaVar.a();
+    @Override // f9.c
+    public final void b() {
+        e9.h.c(this.b, "There was a problem closing the Crashlytics log file.");
+        this.b = null;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0085 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:5:0x0070  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x007d  */
+    @Override // f9.c
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String c() {
+        l lVar;
+        byte[] bArr;
+        File file = this.a;
+        if (file.exists()) {
+            if (this.b == null) {
                 try {
-                    Object e9 = mobileVisionBase.b.e(aVar);
-                    gaVar.close();
-                    return e9;
-                } catch (Throwable th) {
-                    try {
-                        gaVar.close();
-                    } catch (Throwable th2) {
-                        try {
-                            Throwable.class.getDeclaredMethod("addSuppressed", Throwable.class).invoke(th, th2);
-                        } catch (Exception unused) {
-                        }
-                    }
-                    throw th;
+                    this.b = new k(file);
+                } catch (IOException e10) {
+                    Log.e("FirebaseCrashlytics", "Could not open log file: " + file, e10);
                 }
-            default:
-                return (h2.f) ((ShortcutInfoCompatSaverImpl) obj2).b.get((String) obj);
+            }
+            k kVar = this.b;
+            if (kVar != null) {
+                int[] iArr = {0};
+                int i9 = 16;
+                if (kVar.c != 0) {
+                    h hVar = kVar.e;
+                    int i10 = hVar.a;
+                    int i11 = hVar.b;
+                    int i12 = kVar.d.a;
+                    i9 = i10 >= i12 ? 16 + (i10 - i12) + 4 + i11 : (((i10 + 4) + i11) + kVar.b) - i12;
+                }
+                byte[] bArr2 = new byte[i9];
+                try {
+                    kVar.a(new e(bArr2, iArr));
+                } catch (IOException e11) {
+                    Log.e("FirebaseCrashlytics", "A problem occurred while reading the Crashlytics log file.", e11);
+                }
+                lVar = new l(bArr2, iArr[0]);
+                if (lVar != null) {
+                    bArr = null;
+                } else {
+                    int i13 = lVar.a;
+                    bArr = new byte[i13];
+                    System.arraycopy(lVar.b, 0, bArr, 0, i13);
+                }
+                if (bArr == null) {
+                    return new String(bArr, c);
+                }
+                return null;
+            }
         }
-    }
-
-    public /* synthetic */ m(MobileVisionBase mobileVisionBase, eb.a aVar) {
-        this.a = 3;
-        this.b = mobileVisionBase;
-        this.c = aVar;
+        lVar = null;
+        if (lVar != null) {
+        }
+        if (bArr == null) {
+        }
     }
 }

@@ -17,10 +17,10 @@ public final class j implements f {
     public j(String str, String str2) {
         Objects.requireNonNull(str, "pattern");
         Objects.requireNonNull(str2, "noOffsetText");
-        for (int i10 = 0; i10 < 22; i10++) {
-            if (d[i10].equals(str)) {
-                this.b = i10;
-                this.c = i10 % 11;
+        for (int i9 = 0; i9 < 22; i9++) {
+            if (d[i9].equals(str)) {
+                this.b = i9;
+                this.c = i9 % 11;
                 this.a = str2;
                 return;
             }
@@ -36,31 +36,31 @@ public final class j implements f {
             return false;
         }
         long longValue = a2.longValue();
-        int i10 = (int) longValue;
-        if (longValue != i10) {
+        int i9 = (int) longValue;
+        if (longValue != i9) {
             throw new ArithmeticException();
         }
         String str = this.a;
-        if (i10 == 0) {
+        if (i9 == 0) {
             sb2.append(str);
             return true;
         }
-        int abs = Math.abs((i10 / 3600) % 100);
-        int abs2 = Math.abs((i10 / 60) % 60);
-        int abs3 = Math.abs(i10 % 60);
+        int abs = Math.abs((i9 / 3600) % 100);
+        int abs2 = Math.abs((i9 / 60) % 60);
+        int abs3 = Math.abs(i9 % 60);
         int length = sb2.length();
-        sb2.append(i10 < 0 ? "-" : "+");
+        sb2.append(i9 < 0 ? "-" : "+");
         if (this.b >= 11 && abs < 10) {
             sb2.append((char) (abs + 48));
         } else {
             a(false, abs, sb2);
         }
-        int i11 = this.c;
-        if ((i11 >= 3 && i11 <= 8) || ((i11 >= 9 && abs3 > 0) || (i11 >= 1 && abs2 > 0))) {
-            a(i11 > 0 && i11 % 2 == 0, abs2, sb2);
+        int i10 = this.c;
+        if ((i10 >= 3 && i10 <= 8) || ((i10 >= 9 && abs3 > 0) || (i10 >= 1 && abs2 > 0))) {
+            a(i10 > 0 && i10 % 2 == 0, abs2, sb2);
             abs += abs2;
-            if (i11 == 7 || i11 == 8 || (i11 >= 5 && abs3 > 0)) {
-                if (i11 > 0 && i11 % 2 == 0) {
+            if (i10 == 7 || i10 == 8 || (i10 >= 5 && abs3 > 0)) {
+                if (i10 > 0 && i10 % 2 == 0) {
                     z10 = true;
                 }
                 a(z10, abs3, sb2);
@@ -74,10 +74,10 @@ public final class j implements f {
         return true;
     }
 
-    public static void a(boolean z10, int i10, StringBuilder sb2) {
+    public static void a(boolean z10, int i9, StringBuilder sb2) {
         sb2.append(z10 ? ":" : "");
-        sb2.append((char) ((i10 / 10) + 48));
-        sb2.append((char) ((i10 % 10) + 48));
+        sb2.append((char) ((i9 / 10) + 48));
+        sb2.append((char) ((i9 % 10) + 48));
     }
 
     public final String toString() {

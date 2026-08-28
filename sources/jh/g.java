@@ -1,16 +1,28 @@
 package jh;
 
-import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
+import f2.x;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes4.dex */
-public final class g extends org.telegram.ui.Components.j5 {
-    @Override // org.telegram.ui.Components.j5, android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.save();
-        canvas.translate(AndroidUtilities.dp(-2.0f), AndroidUtilities.dp(1.0f));
-        super.draw(canvas);
-        canvas.restore();
+public final class g extends x {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ q d;
+
+    public /* synthetic */ g(q qVar, int i9) {
+        this.c = i9;
+        this.d = qVar;
+    }
+
+    @Override // f2.x
+    public final int i(int i9) {
+        switch (this.c) {
+            case 0:
+                this.d.v.getClass();
+                break;
+            default:
+                this.d.v.getClass();
+                break;
+        }
+        return 1;
     }
 }

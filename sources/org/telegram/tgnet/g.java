@@ -3,16 +3,16 @@ package org.telegram.tgnet;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ TLRPC.Updates c;
 
-    public /* synthetic */ g(int i10, TLRPC.Updates updates, int i11) {
-        this.a = i11;
-        this.b = i10;
+    public /* synthetic */ g(int i9, TLRPC.Updates updates, int i10) {
+        this.a = i10;
+        this.b = i9;
         this.c = updates;
     }
 

@@ -1,45 +1,45 @@
 package v3;
 
 import com.google.android.exoplayer2.extractor.FlacStreamMetadata;
-import d5.z;
+import d5.y;
+import g7.r;
+import g7.s;
 import h3.t0;
-import h7.r;
-import h7.s;
-import j4.u0;
+import j4.v0;
 import java.util.Arrays;
 import m3.p;
-import org.telegram.ui.i6;
+import org.telegram.ui.Cells.e3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class c extends i {
     public FlacStreamMetadata n;
-    public u0 o;
+    public v0 o;
 
     @Override // v3.i
-    public final long b(z zVar) {
-        byte[] bArr = zVar.a;
+    public final long b(y yVar) {
+        byte[] bArr = yVar.a;
         if (bArr[0] != -1) {
             return -1L;
         }
-        int i10 = (bArr[2] & 255) >> 4;
-        if (i10 == 6 || i10 == 7) {
-            zVar.D(4);
-            zVar.x();
+        int i9 = (bArr[2] & 255) >> 4;
+        if (i9 == 6 || i9 == 7) {
+            yVar.D(4);
+            yVar.x();
         }
-        int b10 = r.b(i10, zVar);
-        zVar.C(0);
+        int b10 = r.b(i9, yVar);
+        yVar.C(0);
         return b10;
     }
 
     @Override // v3.i
-    public final boolean c(z zVar, long j10, i6 i6Var) {
-        byte[] bArr = zVar.a;
+    public final boolean c(y yVar, long j10, e3 e3Var) {
+        byte[] bArr = yVar.a;
         FlacStreamMetadata flacStreamMetadata = this.n;
         if (flacStreamMetadata == null) {
             FlacStreamMetadata flacStreamMetadata2 = new FlacStreamMetadata(bArr, 17);
             this.n = flacStreamMetadata2;
-            i6Var.b = flacStreamMetadata2.getFormat(Arrays.copyOfRange(bArr, 9, zVar.c), null);
+            e3Var.b = flacStreamMetadata2.getFormat(Arrays.copyOfRange(bArr, 9, yVar.c), null);
             return true;
         }
         byte b10 = bArr[0];
@@ -47,23 +47,23 @@ public final class c extends i {
             if (b10 != -1) {
                 return true;
             }
-            u0 u0Var = this.o;
-            if (u0Var != null) {
-                u0Var.a = j10;
-                i6Var.c = u0Var;
+            v0 v0Var = this.o;
+            if (v0Var != null) {
+                v0Var.a = j10;
+                e3Var.c = v0Var;
             }
-            ((t0) i6Var.b).getClass();
+            ((t0) e3Var.b).getClass();
             return false;
         }
-        p b11 = s.b(zVar);
+        p b11 = s.b(yVar);
         FlacStreamMetadata copyWithSeekTable = flacStreamMetadata.copyWithSeekTable(b11);
         this.n = copyWithSeekTable;
-        u0 u0Var2 = new u0();
-        u0Var2.c = copyWithSeekTable;
-        u0Var2.d = b11;
-        u0Var2.a = -1L;
-        u0Var2.b = -1L;
-        this.o = u0Var2;
+        v0 v0Var2 = new v0();
+        v0Var2.c = copyWithSeekTable;
+        v0Var2.d = b11;
+        v0Var2.a = -1L;
+        v0Var2.b = -1L;
+        this.o = v0Var2;
         return true;
     }
 

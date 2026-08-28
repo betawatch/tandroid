@@ -1,26 +1,35 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class an0 extends t30 {
-    public final /* synthetic */ org.telegram.ui.px Y;
+public final class an0 extends of.f0 {
+    public final /* synthetic */ org.telegram.ui.dy E0;
+    public final /* synthetic */ Context F0;
+    public final /* synthetic */ org.telegram.ui.mx G0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public an0(org.telegram.ui.px pxVar, zk0 zk0Var, Context context, int i10) {
-        super(zk0Var, context, i10);
-        this.Y = pxVar;
+    public an0(org.telegram.ui.mx mxVar, Context context, org.telegram.ui.dy dyVar, int i9, int i10, f2.n nVar, boolean z10, org.telegram.ui.dy dyVar2, Context context2) {
+        super(context, dyVar, i9, i10, nVar, z10);
+        this.G0 = mxVar;
+        this.E0 = dyVar2;
+        this.F0 = context2;
     }
 
-    @Override // org.telegram.ui.Components.b51
-    public final void N(boolean z10) {
-        super.N(z10);
-        wm0 wm0Var = this.Y.o0;
-        wm0Var.e(false, z10);
-        wm0Var.d.setText(LocaleController.getString(R.string.NoResult));
-        wm0Var.e.setVisibility(8);
+    @Override // f2.r0
+    public final void l() {
+        gh.f1 f1Var;
+        int i9 = this.x0;
+        super.l();
+        org.telegram.ui.mx mxVar = this.G0;
+        if (!mxVar.E0 && (f1Var = mxVar.R) != null) {
+            f1Var.u0(0);
+            mxVar.E0 = true;
+        }
+        if (h() != 0 || i9 == 0 || this.z0 > 0) {
+            return;
+        }
+        mxVar.S.e(false, false);
     }
 }

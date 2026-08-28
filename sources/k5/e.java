@@ -14,9 +14,9 @@ import java.util.HashSet;
 import java.util.Set;
 import m.t3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class e extends y5.g {
+public final class e extends x5.g {
     public final GoogleSignInOptions Q;
 
     public e(Context context, Looper looper, t3 t3Var, GoogleSignInOptions googleSignInOptions, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar) {
@@ -41,7 +41,7 @@ public final class e extends y5.g {
             aVar.a = new HashSet();
             aVar.h = new HashMap();
         }
-        aVar.i = t6.e.a();
+        aVar.i = s6.e.a();
         if (!set.isEmpty()) {
             for (Scope scope : set) {
                 HashSet hashSet = aVar.a;
@@ -62,17 +62,17 @@ public final class e extends y5.g {
         this.Q = new GoogleSignInOptions(3, new ArrayList(hashSet2), aVar.f, aVar.d, aVar.b, aVar.c, aVar.e, aVar.g, aVar.h, aVar.i);
     }
 
-    @Override // y5.g, com.google.android.gms.common.api.c
-    public final int k() {
+    @Override // x5.g, com.google.android.gms.common.api.c
+    public final int l() {
         return 12451000;
     }
 
-    @Override // y5.g, com.google.android.gms.common.api.c
-    public final Intent n() {
+    @Override // x5.g, com.google.android.gms.common.api.c
+    public final Intent o() {
         return h.a(this.n, this.Q);
     }
 
-    @Override // y5.g
+    @Override // x5.g
     public final IInterface q(IBinder iBinder) {
         if (iBinder == null) {
             return null;
@@ -81,12 +81,12 @@ public final class e extends y5.g {
         return queryLocalInterface instanceof k ? (k) queryLocalInterface : new k(iBinder, "com.google.android.gms.auth.api.signin.internal.ISignInService", 9);
     }
 
-    @Override // y5.g
+    @Override // x5.g
     public final String v() {
         return "com.google.android.gms.auth.api.signin.internal.ISignInService";
     }
 
-    @Override // y5.g
+    @Override // x5.g
     public final String w() {
         return "com.google.android.gms.auth.api.signin.service.START";
     }

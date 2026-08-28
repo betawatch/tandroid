@@ -1,115 +1,73 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
+import android.app.Activity;
+import android.view.MotionEvent;
+import android.view.ViewParent;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class nc extends View {
-    public final Paint a;
-    public final Paint b;
-    public final Paint c;
-    public final Paint d;
-    public final Path e;
-    public final Path f;
-    public boolean h;
-    public boolean n;
-    public final org.telegram.ui.Components.nc r;
-    public boolean s;
-    public final org.telegram.ui.Components.y5 v;
-    public final /* synthetic */ oc w;
+public final class nc extends FrameLayout {
+    public final org.telegram.ui.ActionBar.b6 a;
+    public final va1 b;
+    public final f2.m0 c;
+    public final int d;
+    public int e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nc(oc ocVar, Context context) {
-        super(context);
-        this.w = ocVar;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Paint(1);
-        this.c = new Paint(1);
-        this.d = new Paint(1);
-        this.e = new Path();
-        this.f = new Path();
-        this.r = new org.telegram.ui.Components.nc(this);
-        this.v = new org.telegram.ui.Components.y5(this, 0L, 320L, org.telegram.ui.Components.er.h);
-        paint.setStyle(Paint.Style.STROKE);
+    public nc(int i9, Activity activity, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(activity);
+        this.d = i9;
+        this.a = b6Var;
+        va1 va1Var = new va1(activity, 3, b6Var);
+        this.b = va1Var;
+        va1Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(6.0f), 0);
+        va1Var.setClipToPadding(false);
+        va1Var.setAdapter(new lc(this, activity, b6Var, i9));
+        f2.m0 m0Var = new f2.m0();
+        this.c = m0Var;
+        m0Var.j1(0);
+        va1Var.setLayoutManager(m0Var);
+        addView(va1Var, g7.e6.c(-1.0f, -1));
     }
 
-    public final void a(MessagesController.PeerColor peerColor) {
-        org.telegram.ui.ActionBar.c6 c6Var = this.w.a;
-        boolean a2 = c6Var != null ? c6Var.a() : org.telegram.ui.ActionBar.g6.I.q();
-        Paint paint = this.c;
-        Paint paint2 = this.b;
-        if (a2 && peerColor.hasColor2() && !peerColor.hasColor3()) {
-            paint2.setColor(peerColor.getColor(1, c6Var));
-            paint.setColor(peerColor.getColor(0, c6Var));
-        } else {
-            paint2.setColor(peerColor.getColor(0, c6Var));
-            paint.setColor(peerColor.getColor(1, c6Var));
+    public final void a(int i9, boolean z10) {
+        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.d).peerColors;
+        int i10 = 0;
+        if (peerColors != null) {
+            int i11 = 0;
+            while (true) {
+                if (i11 >= peerColors.colors.size()) {
+                    break;
+                }
+                if (peerColors.colors.get(i11).id == i9) {
+                    i10 = i11;
+                    break;
+                }
+                i11++;
+            }
         }
-        this.d.setColor(peerColor.getColor(2, c6Var));
-        this.h = peerColor.hasColor2();
-        this.n = peerColor.hasColor3();
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        float a2 = this.r.a(0.05f);
-        canvas.scale(a2, a2, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        canvas.save();
-        canvas.clipPath(this.e);
-        canvas.drawPaint(this.b);
-        if (this.h) {
-            canvas.drawPath(this.f, this.c);
+        if (i10 != this.e) {
+            this.e = i10;
+            if (!z10) {
+                this.c.h1(i10, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(56.0f)) / 2);
+            }
+            AndroidUtilities.forEachViews((RecyclerView) this.b, (d5.d) new kc(0, this, z10));
         }
-        canvas.restore();
-        if (this.n) {
-            canvas.save();
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set((getMeasuredWidth() - AndroidUtilities.dp(12.4f)) / 2.0f, (getMeasuredHeight() - AndroidUtilities.dp(12.4f)) / 2.0f, (AndroidUtilities.dp(12.4f) + getMeasuredWidth()) / 2.0f, (AndroidUtilities.dp(12.4f) + getMeasuredHeight()) / 2.0f);
-            canvas.rotate(45.0f, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.33f), AndroidUtilities.dp(2.33f), this.d);
-            canvas.restore();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (getParent() != null) {
+            ViewParent parent = getParent();
+            boolean z10 = true;
+            if (!canScrollHorizontally(-1) && !canScrollHorizontally(1)) {
+                z10 = false;
+            }
+            parent.requestDisallowInterceptTouchEvent(z10);
         }
-        float e9 = this.v.e(this.s);
-        if (e9 > 0.0f) {
-            float dpf2 = AndroidUtilities.dpf2(2.0f);
-            Paint paint = this.a;
-            paint.setStrokeWidth(dpf2);
-            canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, AndroidUtilities.lerp((paint.getStrokeWidth() * 0.5f) + AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f) - (paint.getStrokeWidth() * 2.0f), e9), paint);
-        }
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-        Path path = this.e;
-        path.rewind();
-        path.addCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, AndroidUtilities.dp(20.0f), Path.Direction.CW);
-        Path path2 = this.f;
-        path2.rewind();
-        path2.moveTo(getMeasuredWidth(), 0.0f);
-        path2.lineTo(getMeasuredWidth(), getMeasuredHeight());
-        path2.lineTo(0.0f, getMeasuredHeight());
-        path2.close();
-    }
-
-    @Override // android.view.View
-    public final void setBackgroundColor(int i10) {
-        this.a.setColor(i10);
-    }
-
-    @Override // android.view.View
-    public final void setPressed(boolean z10) {
-        super.setPressed(z10);
-        this.r.c(z10);
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

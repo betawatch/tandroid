@@ -14,7 +14,7 @@ import android.util.SparseArray;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class h extends q {
     public final String f;
@@ -35,7 +35,7 @@ public final class h extends q {
         this.f = str;
         Messenger n10 = l.n(routingController);
         this.h = n10;
-        this.i = n10 == null ? null : new Messenger(new androidx.mediarouter.app.c(this));
+        this.i = n10 == null ? null : new Messenger(new androidx.mediarouter.app.d(this));
         this.k = new Handler(Looper.getMainLooper());
     }
 
@@ -45,13 +45,13 @@ public final class h extends q {
     }
 
     @Override // c2.r
-    public final void f(int i10) {
+    public final void f(int i9) {
         MediaRouter2.RoutingController routingController = this.g;
         if (routingController == null) {
             return;
         }
-        routingController.setVolume(i10);
-        this.n = i10;
+        routingController.setVolume(i9);
+        this.n = i9;
         Handler handler = this.k;
         af.e eVar = this.m;
         handler.removeCallbacks(eVar);
@@ -59,16 +59,16 @@ public final class h extends q {
     }
 
     @Override // c2.r
-    public final void i(int i10) {
+    public final void i(int i9) {
         MediaRouter2.RoutingController routingController = this.g;
         if (routingController == null) {
             return;
         }
-        int i11 = this.n;
-        if (i11 < 0) {
-            i11 = routingController.getVolume();
+        int i10 = this.n;
+        if (i10 < 0) {
+            i10 = routingController.getVolume();
         }
-        int max = Math.max(0, Math.min(i11 + i10, this.g.getVolumeMax()));
+        int max = Math.max(0, Math.min(i10 + i9, this.g.getVolumeMax()));
         this.n = max;
         this.g.setVolume(max);
         Handler handler = this.k;
@@ -83,11 +83,11 @@ public final class h extends q {
             Log.w("MR2Provider", "onAddMemberRoute: Ignoring null or empty routeId.");
             return;
         }
-        MediaRoute2Info o10 = this.p.o(str);
-        if (o10 == null) {
+        MediaRoute2Info o6 = this.p.o(str);
+        if (o6 == null) {
             Log.w("MR2Provider", "onAddMemberRoute: Specified route not found. routeId=".concat(str));
         } else {
-            this.g.selectRoute(o10);
+            this.g.selectRoute(o6);
         }
     }
 
@@ -97,11 +97,11 @@ public final class h extends q {
             Log.w("MR2Provider", "onRemoveMemberRoute: Ignoring null or empty routeId.");
             return;
         }
-        MediaRoute2Info o10 = this.p.o(str);
-        if (o10 == null) {
+        MediaRoute2Info o6 = this.p.o(str);
+        if (o6 == null) {
             Log.w("MR2Provider", "onRemoveMemberRoute: Specified route not found. routeId=".concat(str));
         } else {
-            this.g.deselectRoute(o10);
+            this.g.deselectRoute(o6);
         }
     }
 
@@ -113,9 +113,9 @@ public final class h extends q {
         }
         String str = (String) list.get(0);
         l lVar = this.p;
-        MediaRoute2Info o10 = lVar.o(str);
-        if (o10 != null) {
-            lVar.r.transferTo(o10);
+        MediaRoute2Info o6 = lVar.o(str);
+        if (o6 != null) {
+            lVar.r.transferTo(o6);
             return;
         }
         Log.w("MR2Provider", "onUpdateMemberRoutes: Specified route not found. routeId=" + str);
@@ -126,7 +126,7 @@ public final class h extends q {
         return nVar != null ? nVar.d() : this.g.getId();
     }
 
-    public final void q(int i10, String str) {
+    public final void q(int i9, String str) {
         Messenger messenger;
         MediaRouter2.RoutingController routingController = this.g;
         if (routingController == null || routingController.isReleased() || (messenger = this.h) == null) {
@@ -137,19 +137,19 @@ public final class h extends q {
         obtain.what = 7;
         obtain.arg1 = andIncrement;
         Bundle bundle = new Bundle();
-        bundle.putInt("volume", i10);
+        bundle.putInt("volume", i9);
         bundle.putString("routeId", str);
         obtain.setData(bundle);
         obtain.replyTo = this.i;
         try {
             messenger.send(obtain);
         } catch (DeadObjectException unused) {
-        } catch (RemoteException e9) {
-            Log.e("MR2Provider", "Could not send control request to service.", e9);
+        } catch (RemoteException e10) {
+            Log.e("MR2Provider", "Could not send control request to service.", e10);
         }
     }
 
-    public final void r(int i10, String str) {
+    public final void r(int i9, String str) {
         Messenger messenger;
         MediaRouter2.RoutingController routingController = this.g;
         if (routingController == null || routingController.isReleased() || (messenger = this.h) == null) {
@@ -160,15 +160,15 @@ public final class h extends q {
         obtain.what = 8;
         obtain.arg1 = andIncrement;
         Bundle bundle = new Bundle();
-        bundle.putInt("volume", i10);
+        bundle.putInt("volume", i9);
         bundle.putString("routeId", str);
         obtain.setData(bundle);
         obtain.replyTo = this.i;
         try {
             messenger.send(obtain);
         } catch (DeadObjectException unused) {
-        } catch (RemoteException e9) {
-            Log.e("MR2Provider", "Could not send control request to service.", e9);
+        } catch (RemoteException e10) {
+            Log.e("MR2Provider", "Could not send control request to service.", e10);
         }
     }
 }

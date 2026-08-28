@@ -1,46 +1,60 @@
 package yf;
 
-import android.os.Looper;
-import org.telegram.ui.Components.mu0;
+import android.content.Context;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Paint;
+import android.text.TextPaint;
+import kh.s5;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.Components.fa;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z0 b;
+public final class y0 extends org.telegram.ui.Cells.w0 {
+    public final fa g2;
+    public final TextPaint h2;
+    public final /* synthetic */ a1 i2;
 
-    public /* synthetic */ y0(z0 z0Var, int i10) {
-        this.a = i10;
-        this.b = z0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y0(a1 a1Var, Context context, com.google.firebase.messaging.m mVar) {
+        super(context, mVar, false);
+        this.i2 = a1Var;
+        this.g2 = new fa(a1Var.d, this, 10, false);
+        TextPaint textPaint = new TextPaint(1);
+        this.h2 = textPaint;
+        textPaint.setTypeface(AndroidUtilities.bold());
+        textPaint.setTextSize(AndroidUtilities.dp(Math.max(16, SharedConfig.fontSize) - 2));
+        textPaint.setColor(-1);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                z0 z0Var = this.b;
-                mu0 mu0Var = z0Var.w;
-                y0 y0Var = z0Var.s;
-                if (y0Var != null) {
-                    z0Var.cancelRunnable(y0Var);
-                    z0Var.s = null;
-                }
-                z0Var.cancelRunnable(mu0Var);
-                z0Var.postRunnable(mu0Var);
-                break;
-            case 1:
-                z0 z0Var2 = this.b;
-                z0Var2.s = null;
-                z0Var2.w.run();
-                break;
-            default:
-                this.b.finish();
-                Looper myLooper = Looper.myLooper();
-                if (myLooper != null) {
-                    myLooper.quit();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Cells.w0
+    public final Paint G(String str) {
+        if ("paintChatActionText".equals(str) || "paintChatActionText2".equals(str)) {
+            return this.h2;
         }
+        if ("paintChatActionBackground".equals(str)) {
+            s5 s5Var = this.i2.h;
+            s5Var.r0 = true;
+            boolean z10 = s5Var.x0;
+            fa faVar = this.g2;
+            if (faVar.r != z10) {
+                faVar.r = z10;
+                if (faVar.i == 10) {
+                    ColorMatrix colorMatrix = new ColorMatrix();
+                    colorMatrix.setSaturation(1.6f);
+                    AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, faVar.r ? 0.97f : 0.92f);
+                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, faVar.r ? 0.12f : -0.06f);
+                    faVar.h.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                    faVar.g.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                }
+            }
+            Paint c10 = faVar.c(1.0f);
+            if (c10 != null) {
+                return c10;
+            }
+        }
+        return super.G(str);
     }
 }

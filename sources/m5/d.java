@@ -3,16 +3,17 @@ package m5;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
-import h7.r8;
+import g7.p8;
 import j$.util.DesugarCollections;
+import j3.r0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class d extends z5.a {
-    public static final Parcelable.Creator<d> CREATOR = new w(17);
+public final class d extends y5.a {
+    public static final Parcelable.Creator<d> CREATOR = new v(17);
     public final String a;
     public final String b;
     public final List c;
@@ -43,7 +44,7 @@ public final class d extends z5.a {
             return false;
         }
         d dVar = (d) obj;
-        return r5.a.d(this.a, dVar.a) && r5.a.d(this.b, dVar.b) && r5.a.d(this.c, dVar.c) && r5.a.d(this.d, dVar.d) && r5.a.d(this.e, dVar.e) && r5.a.d(this.f, dVar.f) && r5.a.d(this.h, dVar.h);
+        return q5.a.d(this.a, dVar.a) && q5.a.d(this.b, dVar.b) && q5.a.d(this.c, dVar.c) && q5.a.d(this.d, dVar.d) && q5.a.d(this.e, dVar.e) && q5.a.d(this.f, dVar.f) && q5.a.d(this.h, dVar.h);
     }
 
     public final int hashCode() {
@@ -54,28 +55,28 @@ public final class d extends z5.a {
         List list = this.c;
         int size = list == null ? 0 : list.size();
         String valueOf = String.valueOf(this.e);
-        StringBuilder p6 = i0.a.p("applicationId: ", this.a, ", name: ", this.b, ", namespaces.count: ");
-        p6.append(size);
-        p6.append(", senderAppIdentifier: ");
-        p6.append(this.d);
-        p6.append(", senderAppLaunchUrl: ");
-        i0.a.z(p6, valueOf, ", iconUrl: ", this.f, ", type: ");
-        p6.append(this.h);
-        return p6.toString();
+        StringBuilder q10 = r0.q("applicationId: ", this.a, ", name: ", this.b, ", namespaces.count: ");
+        q10.append(size);
+        q10.append(", senderAppIdentifier: ");
+        q10.append(this.d);
+        q10.append(", senderAppLaunchUrl: ");
+        r0.A(q10, valueOf, ", iconUrl: ", this.f, ", type: ");
+        q10.append(this.h);
+        return q10.toString();
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.l(parcel, 2, this.a);
-        r8.l(parcel, 3, this.b);
-        r8.n(parcel, 5, DesugarCollections.unmodifiableList(this.c));
-        r8.l(parcel, 6, this.d);
-        r8.k(parcel, 7, this.e, i10);
-        r8.l(parcel, 8, this.f);
-        r8.l(parcel, 9, this.h);
-        r8.a(parcel, 10, this.n);
-        r8.a(parcel, 11, this.r);
-        r8.r(parcel, q6);
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.l(parcel, 2, this.a);
+        p8.l(parcel, 3, this.b);
+        p8.n(parcel, 5, DesugarCollections.unmodifiableList(this.c));
+        p8.l(parcel, 6, this.d);
+        p8.k(parcel, 7, this.e, i9);
+        p8.l(parcel, 8, this.f);
+        p8.l(parcel, 9, this.h);
+        p8.a(parcel, 10, this.n);
+        p8.a(parcel, 11, this.r);
+        p8.r(parcel, q10);
     }
 }

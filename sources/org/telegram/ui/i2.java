@@ -1,79 +1,82 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.HorizontalScrollView;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.CodeHighlighting;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class i2 extends HorizontalScrollView {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class i2 extends View {
+    public final /* synthetic */ a70 a;
+    public final /* synthetic */ j4 b;
+    public final /* synthetic */ j2 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i2(FrameLayout frameLayout, Context context, int i10) {
+    public i2(j2 j2Var, Context context, a70 a70Var, j4 j4Var) {
         super(context);
-        this.a = i10;
-        this.b = frameLayout;
+        this.c = j2Var;
+        this.a = a70Var;
+        this.b = j4Var;
     }
 
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                int mode = View.MeasureSpec.getMode(i10);
-                if (mode != 1073741824) {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), 0), i11);
-                    int measuredWidth = getMeasuredWidth();
-                    int i12 = ((rh.t3) this.b).G;
-                    if (mode == Integer.MIN_VALUE) {
-                        i12 = Math.min(i12, View.MeasureSpec.getSize(i10));
-                    }
-                    setMeasuredDimension(Math.min(measuredWidth, i12), getMeasuredHeight());
-                    break;
-                } else {
-                    super.onMeasure(i10, i11);
-                    break;
-                }
-            default:
-                super.onMeasure(i10, i11);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        j2 j2Var = this.c;
+        if (j2Var.c != null) {
+            canvas.save();
+            l4.v(this.a, canvas, j2Var, 0);
+            j2Var.c.draw(canvas, this);
+            canvas.restore();
+            j2Var.c.s = (int) getX();
+            j2Var.c.v = (int) getY();
         }
     }
 
     @Override // android.view.View
-    public void onScrollChanged(int i10, int i11, int i12, int i13) {
-        org.telegram.ui.Cells.j9 textSelectionHelper;
-        switch (this.a) {
-            case 0:
-                super.onScrollChanged(i10, i11, i12, i13);
-                d70 d70Var = (d70) this.b;
-                if (d70Var.d != null) {
-                    d70Var.d = null;
-                    d70Var.f = null;
-                    break;
+    public final void onMeasure(int i9, int i10) {
+        int i11;
+        j2 j2Var = this.c;
+        TL_iv.pageBlockPreformatted pageblockpreformatted = j2Var.f;
+        int i12 = 1;
+        if (pageblockpreformatted != null) {
+            CharSequence charSequence = j2Var.h;
+            j4 j4Var = this.b;
+            a70 a70Var = this.a;
+            if (charSequence == null) {
+                TL_iv.RichText richText = pageblockpreformatted.text;
+                int dp = AndroidUtilities.dp(5000.0f);
+                HashSet hashSet = l4.X0;
+                j2Var.h = l4.C(a70Var, j4Var.A, this, richText, richText, pageblockpreformatted, dp);
+                if (!TextUtils.isEmpty(j2Var.f.language)) {
+                    j2Var.h = CodeHighlighting.getHighlighted(j2Var.h, j2Var.f.language);
                 }
-                break;
-            case 1:
-            default:
-                super.onScrollChanged(i10, i11, i12, i13);
-                break;
-            case 2:
-                super.onScrollChanged(i10, i11, i12, i13);
-                rh.w2 w2Var = ((rh.g5) this.b).A;
-                if (w2Var != null && (textSelectionHelper = w2Var.a.getTextSelectionHelper()) != null && textSelectionHelper.y()) {
-                    textSelectionHelper.x();
+            }
+            e3 q10 = l4.q(a70Var, this, j2Var.h, null, AndroidUtilities.dp(5000.0f), 0, j2Var.f, j4Var);
+            j2Var.c = q10;
+            if (q10 != null) {
+                i11 = q10.d.getHeight();
+                int lineCount = j2Var.c.d.getLineCount();
+                for (int i13 = 0; i13 < lineCount; i13++) {
+                    i12 = Math.max((int) Math.ceil(j2Var.c.d.getLineWidth(i13)), i12);
                 }
-                invalidate();
-                break;
+            } else {
+                i11 = 0;
+            }
+        } else {
+            i11 = 1;
         }
+        setMeasuredDimension(AndroidUtilities.dp(32.0f) + i12, i11);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i2(Context context, d70 d70Var) {
-        super(context);
-        this.a = 0;
-        this.b = d70Var;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        j2 j2Var = this.c;
+        return l4.l(this.a, this.b, motionEvent, j2Var, j2Var.c, 0, 0) || super.onTouchEvent(motionEvent);
     }
 }

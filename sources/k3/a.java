@@ -2,25 +2,25 @@ package k3;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class a {
     private int flags;
 
-    public final void addFlag(int i10) {
-        this.flags = i10 | this.flags;
+    public final void addFlag(int i9) {
+        this.flags = i9 | this.flags;
     }
 
     public void clear() {
         this.flags = 0;
     }
 
-    public final void clearFlag(int i10) {
-        this.flags = (~i10) & this.flags;
+    public final void clearFlag(int i9) {
+        this.flags = (~i9) & this.flags;
     }
 
-    public final boolean getFlag(int i10) {
-        return (this.flags & i10) == i10;
+    public final boolean getFlag(int i9) {
+        return (this.flags & i9) == i9;
     }
 
     public final boolean hasSupplementalData() {
@@ -43,7 +43,7 @@ public abstract class a {
         return getFlag(1);
     }
 
-    public final void setFlags(int i10) {
-        this.flags = i10;
+    public final void setFlags(int i9) {
+        this.flags = i9;
     }
 }

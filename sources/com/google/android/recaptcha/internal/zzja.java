@@ -7,9 +7,9 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import qc.i;
+import pc.i;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class zzja {
     private final Map zza = new LinkedHashMap();
@@ -27,11 +27,11 @@ public final class zzja {
 
     public final Object zza(zzzt zzztVar) {
         int zzS = zzztVar.zzS();
-        int i10 = zzS - 1;
+        int i9 = zzS - 1;
         if (zzS == 0) {
             throw null;
         }
-        switch (i10) {
+        switch (i9) {
             case 0:
                 return this.zza.get(Integer.valueOf(zzztVar.zzi()));
             case 1:
@@ -74,21 +74,21 @@ public final class zzja {
         }
     }
 
-    public final Object zzb(int i10) {
-        return this.zza.remove(Integer.valueOf(i10));
+    public final Object zzb(int i9) {
+        return this.zza.remove(Integer.valueOf(i9));
     }
 
     public final void zzc() {
         this.zza.clear();
     }
 
-    public final void zzd(int i10, Object obj) {
+    public final void zzd(int i9, Object obj) {
         zze(173, obj);
         this.zzb.add(173);
     }
 
-    public final void zze(int i10, Object obj) {
-        this.zza.put(Integer.valueOf(i10), obj);
+    public final void zze(int i9, Object obj) {
+        this.zza.put(Integer.valueOf(i9), obj);
     }
 
     public final Class[] zzf(List list) {

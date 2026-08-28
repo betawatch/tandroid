@@ -7,14 +7,14 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kd implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ fe b;
 
-    public /* synthetic */ kd(fe feVar, int i10) {
-        this.a = i10;
+    public /* synthetic */ kd(fe feVar, int i9) {
+        this.a = i9;
         this.b = feVar;
     }
 
@@ -22,12 +22,12 @@ public final /* synthetic */ class kd implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                we.e.s(this.b.getContext(), LocaleController.getString(R.string.MonetizationStarsInfoLink));
+                ve.e.s(this.b.getContext(), LocaleController.getString(R.string.MonetizationStarsInfoLink));
                 break;
             case 1:
-                org.telegram.ui.Components.k51 k51Var = this.b.W0;
-                if (k51Var != null) {
-                    k51Var.U2.N(true);
+                org.telegram.ui.Components.i51 i51Var = this.b.W0;
+                if (i51Var != null) {
+                    i51Var.U2.N(true);
                     break;
                 }
                 break;
@@ -35,7 +35,7 @@ public final /* synthetic */ class kd implements Runnable {
                 fe feVar = this.b;
                 feVar.getClass();
                 try {
-                    org.telegram.ui.Components.zk0 currentListView = feVar.a1.getCurrentListView();
+                    org.telegram.ui.Components.wk0 currentListView = feVar.a1.getCurrentListView();
                     if (currentListView != null && currentListView.getAdapter() != null) {
                         currentListView.getAdapter().l();
                         break;
@@ -46,13 +46,13 @@ public final /* synthetic */ class kd implements Runnable {
                 break;
             case 3:
                 fe feVar2 = this.b;
-                int i10 = feVar2.u0;
+                int i9 = feVar2.u0;
                 AndroidUtilities.cancelRunOnUIThread(feVar2.r1);
                 if (feVar2.i1 != feVar2.j1) {
                     TLRPC.TL_channels_restrictSponsoredMessages tL_channels_restrictSponsoredMessages = new TLRPC.TL_channels_restrictSponsoredMessages();
-                    tL_channels_restrictSponsoredMessages.channel = MessagesController.getInstance(i10).getInputChannel(-feVar2.v0);
+                    tL_channels_restrictSponsoredMessages.channel = MessagesController.getInstance(i9).getInputChannel(-feVar2.v0);
                     tL_channels_restrictSponsoredMessages.restricted = feVar2.i1;
-                    ConnectionsManager.getInstance(i10).sendRequest(tL_channels_restrictSponsoredMessages, new qd(feVar2, 0));
+                    ConnectionsManager.getInstance(i9).sendRequest(tL_channels_restrictSponsoredMessages, new qd(feVar2, 0));
                     break;
                 }
                 break;
@@ -70,7 +70,7 @@ public final /* synthetic */ class kd implements Runnable {
                 this.b.Y0.setVisibility(8);
                 break;
             default:
-                we.e.s(this.b.getContext(), LocaleController.getString(R.string.MonetizationBalanceInfoLink));
+                ve.e.s(this.b.getContext(), LocaleController.getString(R.string.MonetizationBalanceInfoLink));
                 break;
         }
     }

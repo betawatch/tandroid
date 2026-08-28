@@ -1,26 +1,9 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class bj0 extends h00 {
-    public final /* synthetic */ gj0 Q;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bj0(gj0 gj0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        this.Q = gj0Var;
-    }
-
-    @Override // org.telegram.ui.Components.h00
-    public final int getAdditionalHeight() {
-        ga0 ga0Var;
-        gj0 gj0Var = this.Q;
-        if (gj0Var.D.isEmpty() || (ga0Var = gj0Var.F) == null) {
-            return 0;
-        }
-        return AndroidUtilities.dp(8.0f) + ga0Var.getMeasuredHeight();
-    }
+public interface bj0 {
+    void g(ArrayList arrayList);
 }

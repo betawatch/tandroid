@@ -17,10 +17,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.NotificationsController;
+import org.telegram.ui.Components.fy0;
 import org.telegram.ui.Components.hy0;
-import org.telegram.ui.Components.jy0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class i0 implements w3.y {
     public int a;
@@ -29,44 +29,69 @@ public final class i0 implements w3.y {
     public final Object d;
     public final Object e;
 
-    public i0(int i10) {
-        this.a = i10;
-        int i11 = i10 * 8;
-        this.b = new float[i11];
-        this.c = new float[i11];
-        this.d = new short[i10 * 6];
-        this.e = new int[i10 * 4];
-        for (short s10 = 0; s10 < i10; s10 = (short) (s10 + 1)) {
-            int i12 = s10 * 6;
-            int i13 = s10 * 4;
+    public i0(int i9) {
+        this.a = i9;
+        int i10 = i9 * 8;
+        this.b = new float[i10];
+        this.c = new float[i10];
+        this.d = new short[i9 * 6];
+        this.e = new int[i9 * 4];
+        for (short s10 = 0; s10 < i9; s10 = (short) (s10 + 1)) {
+            int i11 = s10 * 6;
+            int i12 = s10 * 4;
             short[] sArr = (short[]) this.d;
-            short s11 = (short) i13;
-            sArr[i12] = s11;
-            sArr[i12 + 1] = (short) (i13 + 1);
-            short s12 = (short) (i13 + 2);
-            sArr[i12 + 2] = s12;
-            sArr[i12 + 3] = s12;
-            sArr[i12 + 4] = (short) (i13 + 3);
-            sArr[i12 + 5] = s11;
+            short s11 = (short) i12;
+            sArr[i11] = s11;
+            sArr[i11 + 1] = (short) (i12 + 1);
+            short s12 = (short) (i12 + 2);
+            sArr[i11 + 2] = s12;
+            sArr[i11 + 3] = s12;
+            sArr[i11 + 4] = (short) (i12 + 3);
+            sArr[i11 + 5] = s11;
         }
     }
 
-    public static void c(float[] fArr, int i10, float f10, float f11, float f12, float f13) {
-        int i11 = i10 * 8;
-        fArr[i11] = f10;
-        fArr[i11 + 1] = f11;
-        fArr[i11 + 2] = f12;
-        fArr[i11 + 3] = f11;
-        fArr[i11 + 4] = f12;
-        fArr[i11 + 5] = f13;
-        fArr[i11 + 6] = f10;
-        fArr[i11 + 7] = f13;
+    public static void a(float[] fArr, int i9, float f10, float f11, float f12, float f13) {
+        int i10 = i9 * 8;
+        fArr[i10] = f10;
+        fArr[i10 + 1] = f11;
+        fArr[i10 + 2] = f12;
+        fArr[i10 + 3] = f11;
+        fArr[i10 + 4] = f12;
+        fArr[i10 + 5] = f13;
+        fArr[i10 + 6] = f10;
+        fArr[i10 + 7] = f13;
     }
 
-    public static void d(Notification notification) {
+    public static void b(Notification notification) {
         notification.sound = null;
         notification.vibrate = null;
         notification.defaults &= -4;
+    }
+
+    public void c(int i9, int i10) {
+        int[] iArr = (int[]) this.e;
+        int i11 = i9 * 4;
+        iArr[i11] = i10;
+        iArr[i11 + 1] = i10;
+        iArr[i11 + 2] = i10;
+        iArr[i11 + 3] = i10;
+    }
+
+    public void d(int i9) {
+        int[] iArr = (int[]) this.d;
+        if (iArr[i9] != 0) {
+            return;
+        }
+        iArr[i9] = 1;
+        for (fy0 fy0Var : ((fy0[][]) this.c)[i9]) {
+            d(fy0Var.a.b);
+            fy0[] fy0VarArr = (fy0[]) this.b;
+            int i10 = this.a;
+            this.a = i10 - 1;
+            fy0VarArr[i10] = fy0Var;
+        }
+        iArr[i9] = 2;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:53:0x0164, code lost:
@@ -77,241 +102,216 @@ public final class i0 implements w3.y {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void b(d5.z zVar) {
-        d5.f0 f0Var;
+    public void g(d5.y yVar) {
+        d5.e0 e0Var;
         SparseArray sparseArray;
-        d5.f0 f0Var2;
+        d5.e0 e0Var2;
+        int i9;
         int i10;
-        int i11;
         SparseArray sparseArray2;
-        int i12;
+        int i11;
         SparseArray sparseArray3 = (SparseArray) this.c;
         SparseIntArray sparseIntArray = (SparseIntArray) this.d;
-        d5.y yVar = (d5.y) this.b;
-        w3.c0 c0Var = (w3.c0) this.e;
-        SparseArray sparseArray4 = c0Var.f;
-        SparseBooleanArray sparseBooleanArray = c0Var.g;
-        o0.i iVar = c0Var.e;
-        List list = c0Var.b;
-        int i13 = c0Var.a;
-        if (zVar.r() != 2) {
+        d5.x xVar = (d5.x) this.b;
+        w3.b0 b0Var = (w3.b0) this.e;
+        SparseArray sparseArray4 = b0Var.f;
+        SparseBooleanArray sparseBooleanArray = b0Var.g;
+        o0.h hVar = b0Var.e;
+        List list = b0Var.b;
+        int i12 = b0Var.a;
+        if (yVar.r() != 2) {
             return;
         }
-        if (i13 == 1 || i13 == 2 || c0Var.l == 1) {
-            f0Var = (d5.f0) list.get(0);
+        if (i12 == 1 || i12 == 2 || b0Var.l == 1) {
+            e0Var = (d5.e0) list.get(0);
         } else {
-            f0Var = new d5.f0(((d5.f0) list.get(0)).c());
-            list.add(f0Var);
+            e0Var = new d5.e0(((d5.e0) list.get(0)).c());
+            list.add(e0Var);
         }
-        if ((zVar.r() & 128) == 0) {
+        if ((yVar.r() & 128) == 0) {
             return;
         }
-        zVar.D(1);
-        int w10 = zVar.w();
-        zVar.D(3);
-        zVar.c(0, 2, yVar.b);
-        yVar.p(0);
-        yVar.s(3);
-        c0Var.r = yVar.i(13);
-        zVar.c(0, 2, yVar.b);
-        yVar.p(0);
-        yVar.s(4);
-        zVar.D(yVar.i(12));
-        if (i13 == 2 && c0Var.p == null) {
-            w3.f0 a2 = iVar.a(21, new u2.b(21, (String) null, (ArrayList) null, d5.g0.f));
-            c0Var.p = a2;
+        yVar.D(1);
+        int w8 = yVar.w();
+        yVar.D(3);
+        yVar.c(0, 2, xVar.b);
+        xVar.p(0);
+        xVar.s(3);
+        b0Var.r = xVar.i(13);
+        yVar.c(0, 2, xVar.b);
+        xVar.p(0);
+        xVar.s(4);
+        yVar.D(xVar.i(12));
+        if (i12 == 2 && b0Var.p == null) {
+            w3.e0 a2 = hVar.a(21, new t5.c(21, (String) null, (ArrayList) null, d5.f0.f));
+            b0Var.p = a2;
             if (a2 != null) {
-                a2.a(f0Var, c0Var.k, new w3.e0(w10, 21, 8192));
+                a2.e(e0Var, b0Var.k, new w3.d0(w8, 21, 8192));
             }
         }
         sparseArray3.clear();
         sparseIntArray.clear();
-        int a3 = zVar.a();
+        int a3 = yVar.a();
         while (a3 > 0) {
-            zVar.c(0, 5, yVar.b);
-            yVar.p(0);
-            int i14 = yVar.i(8);
-            yVar.s(3);
-            int i15 = yVar.i(13);
-            yVar.s(4);
-            int i16 = yVar.i(12);
-            int i17 = zVar.b;
-            int i18 = i17 + i16;
-            int i19 = a3;
-            d5.y yVar2 = yVar;
+            yVar.c(0, 5, xVar.b);
+            xVar.p(0);
+            int i13 = xVar.i(8);
+            xVar.s(3);
+            int i14 = xVar.i(13);
+            xVar.s(4);
+            int i15 = xVar.i(12);
+            int i16 = yVar.b;
+            int i17 = i16 + i15;
+            int i18 = a3;
+            d5.x xVar2 = xVar;
             SparseArray sparseArray5 = sparseArray4;
-            d5.f0 f0Var3 = f0Var;
-            int i20 = -1;
+            d5.e0 e0Var3 = e0Var;
+            int i19 = -1;
             String str = null;
             ArrayList arrayList = null;
             while (true) {
-                if (zVar.b >= i18) {
-                    i11 = w10;
+                if (yVar.b >= i17) {
+                    i10 = w8;
                     break;
                 }
-                int r10 = zVar.r();
-                i11 = w10;
-                int r11 = zVar.b + zVar.r();
-                if (r11 > i18) {
+                int r10 = yVar.r();
+                i10 = w8;
+                int r11 = yVar.b + yVar.r();
+                if (r11 > i17) {
                     break;
                 }
                 SparseArray sparseArray6 = sparseArray3;
                 if (r10 == 5) {
-                    long s10 = zVar.s();
+                    long s10 = yVar.s();
                     if (s10 == 1094921523) {
-                        i20 = 129;
+                        i19 = 129;
                     } else if (s10 == 1161904947) {
-                        i20 = 135;
+                        i19 = 135;
                     } else {
                         if (s10 != 1094921524) {
                             if (s10 == 1212503619) {
-                                i20 = 36;
+                                i19 = 36;
                             }
                         }
-                        i20 = 172;
+                        i19 = 172;
                     }
-                    i12 = r11;
+                    i11 = r11;
                 } else if (r10 == 106) {
-                    i12 = r11;
-                    i20 = 129;
+                    i11 = r11;
+                    i19 = 129;
                 } else if (r10 == 122) {
-                    i12 = r11;
-                    i20 = 135;
+                    i11 = r11;
+                    i19 = 135;
                 } else {
                     if (r10 != 127) {
                         if (r10 == 123) {
-                            i20 = 138;
+                            i19 = 138;
                         } else if (r10 == 10) {
-                            str = zVar.p(3, o8.d.c).trim();
+                            str = yVar.p(3, n8.d.c).trim();
                         } else if (r10 == 89) {
                             arrayList = new ArrayList();
-                            while (zVar.b < r11) {
-                                String trim = zVar.p(3, o8.d.c).trim();
-                                zVar.r();
+                            while (yVar.b < r11) {
+                                String trim = yVar.p(3, n8.d.c).trim();
+                                yVar.r();
                                 byte[] bArr = new byte[4];
-                                zVar.c(0, 4, bArr);
-                                arrayList.add(new w3.d0(trim, bArr));
+                                yVar.c(0, 4, bArr);
+                                arrayList.add(new w3.c0(trim, bArr));
                                 r11 = r11;
                             }
-                            i12 = r11;
-                            i20 = 89;
+                            i11 = r11;
+                            i19 = 89;
                         } else {
-                            i12 = r11;
+                            i11 = r11;
                             if (r10 == 111) {
-                                i20 = 257;
+                                i19 = 257;
                             }
-                            zVar.D(i12 - zVar.b);
-                            w10 = i11;
+                            yVar.D(i11 - yVar.b);
+                            w8 = i10;
                             sparseArray3 = sparseArray6;
                         }
                     }
-                    i12 = r11;
+                    i11 = r11;
                 }
-                zVar.D(i12 - zVar.b);
-                w10 = i11;
+                yVar.D(i11 - yVar.b);
+                w8 = i10;
                 sparseArray3 = sparseArray6;
             }
             SparseArray sparseArray7 = sparseArray3;
-            zVar.C(i18);
-            u2.b bVar = new u2.b(i20, str, arrayList, Arrays.copyOfRange(zVar.a, i17, i18));
-            if (i14 == 6 || i14 == 5) {
-                i14 = i20;
+            yVar.C(i17);
+            t5.c cVar = new t5.c(i19, str, arrayList, Arrays.copyOfRange(yVar.a, i16, i17));
+            if (i13 == 6 || i13 == 5) {
+                i13 = i19;
             }
-            a3 = i19 - (i16 + 5);
-            int i21 = i13 == 2 ? i14 : i15;
-            if (sparseBooleanArray.get(i21)) {
+            a3 = i18 - (i15 + 5);
+            int i20 = i12 == 2 ? i13 : i14;
+            if (sparseBooleanArray.get(i20)) {
                 sparseArray2 = sparseArray7;
             } else {
-                w3.f0 a10 = (i13 == 2 && i14 == 21) ? c0Var.p : iVar.a(i14, bVar);
-                if (i13 != 2 || i15 < sparseIntArray.get(i21, 8192)) {
-                    sparseIntArray.put(i21, i15);
+                w3.e0 a10 = (i12 == 2 && i13 == 21) ? b0Var.p : hVar.a(i13, cVar);
+                if (i12 != 2 || i14 < sparseIntArray.get(i20, 8192)) {
+                    sparseIntArray.put(i20, i14);
                     sparseArray2 = sparseArray7;
-                    sparseArray2.put(i21, a10);
+                    sparseArray2.put(i20, a10);
                 } else {
                     sparseArray2 = sparseArray7;
                 }
             }
             sparseArray3 = sparseArray2;
-            yVar = yVar2;
+            xVar = xVar2;
             sparseArray4 = sparseArray5;
-            f0Var = f0Var3;
-            w10 = i11;
+            e0Var = e0Var3;
+            w8 = i10;
         }
         SparseArray sparseArray8 = sparseArray4;
-        int i22 = w10;
-        d5.f0 f0Var4 = f0Var;
+        int i21 = w8;
+        d5.e0 e0Var4 = e0Var;
         SparseArray sparseArray9 = sparseArray3;
         int size = sparseIntArray.size();
-        int i23 = 0;
-        while (i23 < size) {
-            int keyAt = sparseIntArray.keyAt(i23);
-            int valueAt = sparseIntArray.valueAt(i23);
+        int i22 = 0;
+        while (i22 < size) {
+            int keyAt = sparseIntArray.keyAt(i22);
+            int valueAt = sparseIntArray.valueAt(i22);
             sparseBooleanArray.put(keyAt, true);
-            c0Var.h.put(valueAt, true);
-            w3.f0 f0Var5 = (w3.f0) sparseArray9.valueAt(i23);
-            if (f0Var5 != null) {
-                if (f0Var5 != c0Var.p) {
-                    i10 = i22;
-                    f0Var2 = f0Var4;
-                    f0Var5.a(f0Var2, c0Var.k, new w3.e0(i10, keyAt, 8192));
+            b0Var.h.put(valueAt, true);
+            w3.e0 e0Var5 = (w3.e0) sparseArray9.valueAt(i22);
+            if (e0Var5 != null) {
+                if (e0Var5 != b0Var.p) {
+                    i9 = i21;
+                    e0Var2 = e0Var4;
+                    e0Var5.e(e0Var2, b0Var.k, new w3.d0(i9, keyAt, 8192));
                 } else {
-                    f0Var2 = f0Var4;
-                    i10 = i22;
+                    e0Var2 = e0Var4;
+                    i9 = i21;
                 }
                 sparseArray = sparseArray8;
-                sparseArray.put(valueAt, f0Var5);
+                sparseArray.put(valueAt, e0Var5);
             } else {
                 sparseArray = sparseArray8;
-                f0Var2 = f0Var4;
-                i10 = i22;
+                e0Var2 = e0Var4;
+                i9 = i21;
             }
-            i23++;
+            i22++;
             sparseArray8 = sparseArray;
-            i22 = i10;
-            f0Var4 = f0Var2;
+            i21 = i9;
+            e0Var4 = e0Var2;
         }
         SparseArray sparseArray10 = sparseArray8;
-        if (i13 == 2) {
-            if (c0Var.m) {
+        if (i12 == 2) {
+            if (b0Var.m) {
                 return;
             }
-            c0Var.k.A();
-            c0Var.l = 0;
-            c0Var.m = true;
+            b0Var.k.B();
+            b0Var.l = 0;
+            b0Var.m = true;
             return;
         }
         sparseArray10.remove(this.a);
-        int i24 = i13 == 1 ? 0 : c0Var.l - 1;
-        c0Var.l = i24;
-        if (i24 == 0) {
-            c0Var.k.A();
-            c0Var.m = true;
+        int i23 = i12 == 1 ? 0 : b0Var.l - 1;
+        b0Var.l = i23;
+        if (i23 == 0) {
+            b0Var.k.B();
+            b0Var.m = true;
         }
-    }
-
-    public void e(int i10, int i11) {
-        int[] iArr = (int[]) this.e;
-        int i12 = i10 * 4;
-        iArr[i12] = i11;
-        iArr[i12 + 1] = i11;
-        iArr[i12 + 2] = i11;
-        iArr[i12 + 3] = i11;
-    }
-
-    public void f(int i10) {
-        int[] iArr = (int[]) this.d;
-        if (iArr[i10] != 0) {
-            return;
-        }
-        iArr[i10] = 1;
-        for (hy0 hy0Var : ((hy0[][]) this.c)[i10]) {
-            f(hy0Var.a.b);
-            hy0[] hy0VarArr = (hy0[]) this.b;
-            int i11 = this.a;
-            this.a = i11 - 1;
-            hy0VarArr[i11] = hy0Var;
-        }
-        iArr[i10] = 2;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:146:0x0440  */
@@ -323,14 +323,14 @@ public final class i0 implements w3.y {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public i0(t tVar) {
-        int i10;
+        int i9;
         Notification.BubbleMetadata bubbleMetadata;
-        int i11;
+        int i10;
         Notification.BubbleMetadata a2;
         f0.h hVar;
         Bundle bundle;
         ArrayList arrayList;
-        int i12;
+        int i11;
         Bundle[] bundleArr;
         ArrayList arrayList2;
         Notification.Action.Builder builder;
@@ -343,15 +343,15 @@ public final class i0 implements w3.y {
         ArrayList arrayList4 = tVar.c;
         ArrayList arrayList5 = tVar.d;
         this.b = context;
-        int i13 = Build.VERSION.SDK_INT;
-        if (i13 >= 26) {
-            this.c = h6.a.a(context, tVar.y);
+        int i12 = Build.VERSION.SDK_INT;
+        if (i12 >= 26) {
+            this.c = g6.a.a(context, tVar.y);
         } else {
             this.c = new Notification.Builder(context);
         }
         Notification notification = tVar.E;
         ((Notification.Builder) this.c).setWhen(notification.when).setSmallIcon(notification.icon, notification.iconLevel).setContent(notification.contentView).setTicker(notification.tickerText, null).setVibrate(notification.vibrate).setLights(notification.ledARGB, notification.ledOnMS, notification.ledOffMS).setOngoing((notification.flags & 2) != 0).setOnlyAlertOnce((notification.flags & 8) != 0).setAutoCancel((notification.flags & 16) != 0).setDefaults(notification.defaults).setContentTitle(tVar.e).setContentText(tVar.f).setContentInfo(null).setContentIntent(tVar.g).setDeleteIntent(notification.deleteIntent).setFullScreenIntent(null, (notification.flags & 128) != 0).setNumber(tVar.i).setProgress(tVar.n, tVar.o, tVar.p);
-        if (i13 < 23) {
+        if (i12 < 23) {
             Notification.Builder builder2 = (Notification.Builder) this.c;
             IconCompat iconCompat = tVar.h;
             builder2.setLargeIcon(iconCompat == null ? null : iconCompat.f());
@@ -363,21 +363,21 @@ public final class i0 implements w3.y {
         ((Notification.Builder) this.c).setSubText(tVar.m).setUsesChronometer(false).setPriority(tVar.j);
         ArrayList arrayList6 = tVar.b;
         int size = arrayList6.size();
-        int i14 = 0;
-        while (i14 < size) {
-            Object obj = arrayList6.get(i14);
-            int i15 = i14 + 1;
+        int i13 = 0;
+        while (i13 < size) {
+            Object obj = arrayList6.get(i13);
+            int i14 = i13 + 1;
             k kVar = (k) obj;
-            int i16 = Build.VERSION.SDK_INT;
+            int i15 = Build.VERSION.SDK_INT;
             IconCompat a3 = kVar.a();
-            int i17 = kVar.f;
+            int i16 = kVar.f;
             boolean z10 = kVar.d;
             Bundle bundle3 = kVar.a;
             ArrayList arrayList7 = arrayList6;
             PendingIntent pendingIntent = kVar.i;
-            int i18 = size;
+            int i17 = size;
             CharSequence charSequence = kVar.h;
-            if (i16 >= 23) {
+            if (i15 >= 23) {
                 builder = b.b(a3 != null ? a3.m(null) : null, charSequence, pendingIntent);
             } else {
                 builder = new Notification.Action.Builder(a3 != null ? a3.g() : 0, charSequence, pendingIntent);
@@ -394,32 +394,32 @@ public final class i0 implements w3.y {
                 bundle2 = new Bundle();
             }
             bundle2.putBoolean("android.support.allowGeneratedReplies", z10);
-            int i19 = Build.VERSION.SDK_INT;
-            if (i19 >= 24) {
+            int i18 = Build.VERSION.SDK_INT;
+            if (i18 >= 24) {
                 androidx.emoji2.text.v.h(builder, z10);
             }
-            bundle2.putInt("android.support.action.semanticAction", i17);
-            if (i19 >= 28) {
-                d1.f.x(builder, i17);
+            bundle2.putInt("android.support.action.semanticAction", i16);
+            if (i18 >= 28) {
+                d1.f.x(builder, i16);
             }
-            if (i19 >= 29) {
+            if (i18 >= 29) {
                 com.google.firebase.messaging.q.g(builder);
             }
-            if (i19 >= 31) {
+            if (i18 >= 31) {
                 h0.a(builder);
             }
             bundle2.putBoolean("android.support.action.showsUserInterface", kVar.e);
             builder.addExtras(bundle2);
             ((Notification.Builder) this.c).addAction(builder.build());
             arrayList6 = arrayList7;
-            size = i18;
-            i14 = i15;
+            size = i17;
+            i13 = i14;
         }
         Bundle bundle4 = tVar.v;
         if (bundle4 != null) {
             ((Bundle) this.e).putAll(bundle4);
         }
-        int i20 = Build.VERSION.SDK_INT;
+        int i19 = Build.VERSION.SDK_INT;
         ((Notification.Builder) this.c).setShowWhen(tVar.k);
         ((Notification.Builder) this.c).setLocalOnly(tVar.t);
         ((Notification.Builder) this.c).setGroup(tVar.q);
@@ -431,16 +431,16 @@ public final class i0 implements w3.y {
         ((Notification.Builder) this.c).setVisibility(tVar.x);
         ((Notification.Builder) this.c).setPublicVersion(null);
         ((Notification.Builder) this.c).setSound(notification.sound, notification.audioAttributes);
-        if (i20 < 28) {
+        if (i19 < 28) {
             if (arrayList4 == null) {
                 arrayList2 = null;
             } else {
                 arrayList2 = new ArrayList(arrayList4.size());
                 int size2 = arrayList4.size();
-                int i21 = 0;
-                while (i21 < size2) {
-                    Object obj2 = arrayList4.get(i21);
-                    i21++;
+                int i20 = 0;
+                while (i20 < size2) {
+                    Object obj2 = arrayList4.get(i20);
+                    i20++;
                     p0 p0Var = (p0) obj2;
                     CharSequence charSequence2 = p0Var.a;
                     String str = p0Var.c;
@@ -463,10 +463,10 @@ public final class i0 implements w3.y {
         }
         if (arrayList3 != null && !arrayList3.isEmpty()) {
             int size3 = arrayList3.size();
-            int i22 = 0;
-            while (i22 < size3) {
-                Object obj3 = arrayList3.get(i22);
-                i22++;
+            int i21 = 0;
+            while (i21 < size3) {
+                Object obj3 = arrayList3.get(i21);
+                i21++;
                 ((Notification.Builder) this.c).addPerson((String) obj3);
             }
         }
@@ -478,10 +478,10 @@ public final class i0 implements w3.y {
             bundle5 = bundle5 == null ? new Bundle() : bundle5;
             Bundle bundle6 = new Bundle(bundle5);
             Bundle bundle7 = new Bundle();
-            int i23 = 0;
-            while (i23 < arrayList5.size()) {
-                String num = Integer.toString(i23);
-                k kVar2 = (k) arrayList5.get(i23);
+            int i22 = 0;
+            while (i22 < arrayList5.size()) {
+                String num = Integer.toString(i22);
+                k kVar2 = (k) arrayList5.get(i22);
                 Bundle bundle8 = new Bundle();
                 IconCompat a10 = kVar2.a();
                 Bundle bundle9 = kVar2.a;
@@ -498,16 +498,16 @@ public final class i0 implements w3.y {
                 r0[] r0VarArr2 = kVar2.c;
                 if (r0VarArr2 == null) {
                     arrayList = arrayList5;
-                    i12 = i23;
+                    i11 = i22;
                     bundleArr = null;
                 } else {
                     Bundle[] bundleArr2 = new Bundle[r0VarArr2.length];
                     arrayList = arrayList5;
-                    i12 = i23;
-                    int i24 = 0;
-                    while (i24 < r0VarArr2.length) {
-                        r0 r0Var = r0VarArr2[i24];
-                        int i25 = i24;
+                    i11 = i22;
+                    int i23 = 0;
+                    while (i23 < r0VarArr2.length) {
+                        r0 r0Var = r0VarArr2[i23];
+                        int i24 = i23;
                         Bundle bundle10 = new Bundle();
                         r0Var.getClass();
                         r0[] r0VarArr3 = r0VarArr2;
@@ -526,8 +526,8 @@ public final class i0 implements w3.y {
                             }
                             bundle10.putStringArrayList("allowedDataTypes", arrayList8);
                         }
-                        bundleArr3[i25] = bundle10;
-                        i24 = i25 + 1;
+                        bundleArr3[i24] = bundle10;
+                        i23 = i24 + 1;
                         r0VarArr2 = r0VarArr3;
                         bundleArr2 = bundleArr3;
                     }
@@ -537,7 +537,7 @@ public final class i0 implements w3.y {
                 bundle8.putBoolean("showsUserInterface", kVar2.e);
                 bundle8.putInt("semanticAction", kVar2.f);
                 bundle7.putBundle(num, bundle8);
-                i23 = i12 + 1;
+                i22 = i11 + 1;
                 arrayList5 = arrayList;
             }
             bundle5.putBundle("invisible_actions", bundle7);
@@ -548,43 +548,43 @@ public final class i0 implements w3.y {
             tVar.v.putBundle("android.car.EXTENSIONS", bundle5);
             ((Bundle) this.e).putBundle("android.car.EXTENSIONS", bundle6);
         }
-        int i26 = Build.VERSION.SDK_INT;
-        if (i26 >= 24) {
+        int i25 = Build.VERSION.SDK_INT;
+        if (i25 >= 24) {
             ((Notification.Builder) this.c).setExtras(tVar.v);
             androidx.emoji2.text.v.i((Notification.Builder) this.c);
         }
-        if (i26 >= 26) {
-            h6.a.h((Notification.Builder) this.c);
-            h6.a.n((Notification.Builder) this.c);
-            h6.a.o((Notification.Builder) this.c, tVar.z);
-            h6.a.p((Notification.Builder) this.c);
-            h6.a.j((Notification.Builder) this.c, tVar.B);
+        if (i25 >= 26) {
+            g6.a.h((Notification.Builder) this.c);
+            g6.a.n((Notification.Builder) this.c);
+            g6.a.o((Notification.Builder) this.c, tVar.z);
+            g6.a.p((Notification.Builder) this.c);
+            g6.a.j((Notification.Builder) this.c, tVar.B);
             if (!TextUtils.isEmpty(tVar.y)) {
                 bubbleMetadata = null;
-                i10 = 0;
+                i9 = 0;
                 ((Notification.Builder) this.c).setSound(null).setDefaults(0).setLights(0, 0, 0).setVibrate(null);
-                if (i26 >= 28) {
+                if (i25 >= 28) {
                     int size4 = arrayList4.size();
-                    while (i10 < size4) {
-                        Object obj4 = arrayList4.get(i10);
-                        i10++;
+                    while (i9 < size4) {
+                        Object obj4 = arrayList4.get(i9);
+                        i9++;
                         p0 p0Var2 = (p0) obj4;
                         Notification.Builder builder4 = (Notification.Builder) this.c;
                         p0Var2.getClass();
                         d1.f.a(builder4, d1.f.D(p0Var2));
                     }
                 }
-                i11 = Build.VERSION.SDK_INT;
-                if (i11 >= 29) {
+                i10 = Build.VERSION.SDK_INT;
+                if (i10 >= 29) {
                     return;
                 }
                 com.google.firebase.messaging.q.e((Notification.Builder) this.c, tVar.C);
                 Notification.Builder builder5 = (Notification.Builder) this.c;
                 r rVar = tVar.D;
                 if (rVar != null) {
-                    if (i11 >= 30) {
+                    if (i10 >= 30) {
                         a2 = q.a(rVar);
-                    } else if (i11 == 29) {
+                    } else if (i10 == 29) {
                         a2 = p.a(rVar);
                     }
                     com.google.firebase.messaging.q.f(builder5, a2);
@@ -602,59 +602,59 @@ public final class i0 implements w3.y {
                 }
             }
         }
-        i10 = 0;
+        i9 = 0;
         bubbleMetadata = null;
-        if (i26 >= 28) {
+        if (i25 >= 28) {
         }
-        i11 = Build.VERSION.SDK_INT;
-        if (i11 >= 29) {
+        i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 29) {
         }
     }
 
     @Override // w3.y
-    public void a(d5.f0 f0Var, m3.m mVar, w3.e0 e0Var) {
+    public void e(d5.e0 e0Var, m3.m mVar, w3.d0 d0Var) {
     }
 
-    public i0(j3.o0 o0Var, m3.y yVar, byte[] bArr, d5.c[] cVarArr, int i10) {
-        this.b = o0Var;
+    public i0(j3.n0 n0Var, m3.y yVar, byte[] bArr, d5.c[] cVarArr, int i9) {
+        this.b = n0Var;
         this.c = yVar;
         this.d = bArr;
         this.e = cVarArr;
-        this.a = i10;
+        this.a = i9;
     }
 
-    public i0(w3.c0 c0Var, int i10) {
-        this.e = c0Var;
-        this.b = new d5.y(new byte[5], 5);
+    public i0(w3.b0 b0Var, int i9) {
+        this.e = b0Var;
+        this.b = new d5.x(new byte[5], 5);
         this.c = new SparseArray();
         this.d = new SparseIntArray();
-        this.a = i10;
+        this.a = i9;
     }
 
-    public i0(jy0 jy0Var, hy0[] hy0VarArr) {
-        this.e = jy0Var;
-        int length = hy0VarArr.length;
-        this.b = new hy0[length];
+    public i0(hy0 hy0Var, fy0[] fy0VarArr) {
+        this.e = hy0Var;
+        int length = fy0VarArr.length;
+        this.b = new fy0[length];
         this.a = length - 1;
-        int e9 = jy0Var.e() + 1;
-        hy0[][] hy0VarArr2 = new hy0[e9][];
-        int[] iArr = new int[e9];
-        for (hy0 hy0Var : hy0VarArr) {
-            int i10 = hy0Var.a.a;
-            iArr[i10] = iArr[i10] + 1;
+        int e10 = hy0Var.e() + 1;
+        fy0[][] fy0VarArr2 = new fy0[e10][];
+        int[] iArr = new int[e10];
+        for (fy0 fy0Var : fy0VarArr) {
+            int i9 = fy0Var.a.a;
+            iArr[i9] = iArr[i9] + 1;
         }
-        for (int i11 = 0; i11 < e9; i11++) {
-            hy0VarArr2[i11] = new hy0[iArr[i11]];
+        for (int i10 = 0; i10 < e10; i10++) {
+            fy0VarArr2[i10] = new fy0[iArr[i10]];
         }
         Arrays.fill(iArr, 0);
-        for (hy0 hy0Var2 : hy0VarArr) {
-            int i12 = hy0Var2.a.a;
-            hy0[] hy0VarArr3 = hy0VarArr2[i12];
-            int i13 = iArr[i12];
-            iArr[i12] = i13 + 1;
-            hy0VarArr3[i13] = hy0Var2;
+        for (fy0 fy0Var2 : fy0VarArr) {
+            int i11 = fy0Var2.a.a;
+            fy0[] fy0VarArr3 = fy0VarArr2[i11];
+            int i12 = iArr[i11];
+            iArr[i11] = i12 + 1;
+            fy0VarArr3[i12] = fy0Var2;
         }
-        this.c = hy0VarArr2;
-        this.d = new int[((jy0) this.e).e() + 1];
+        this.c = fy0VarArr2;
+        this.d = new int[((hy0) this.e).e() + 1];
     }
 }

@@ -1,74 +1,53 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.CheckBoxSquare;
-import org.telegram.ui.Components.m80;
-import org.telegram.ui.Components.p80;
+import android.view.View;
+import org.telegram.ui.Components.pn;
+import org.telegram.ui.Components.wk0;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class l6 extends FrameLayout {
-    public final m80 a;
-    public final p80 b;
-    public final CheckBoxSquare c;
+public final class l6 extends ih.l7 {
+    public final /* synthetic */ int S = 0;
+    public final /* synthetic */ View T;
 
-    public l6(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        CheckBoxSquare checkBoxSquare = new CheckBoxSquare(context, null, false);
-        this.c = checkBoxSquare;
-        checkBoxSquare.setDuplicateParentStateEnabled(false);
-        checkBoxSquare.setFocusable(false);
-        checkBoxSquare.setFocusableInTouchMode(false);
-        checkBoxSquare.setClickable(false);
-        addView(checkBoxSquare, h7.z5.d(18, 18.0f, (LocaleController.isRTL ? 5 : 3) | 16, 21.0f, 0.0f, 21.0f, 0.0f));
-        m80 m80Var = new m80(this);
-        this.a = m80Var;
-        p80 p80Var = new p80(context, m80Var, c6Var);
-        this.b = p80Var;
-        p80Var.setTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.G6, c6Var));
-        p80Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.J6, c6Var));
-        p80Var.setTextSize(1, 15.0f);
-        p80Var.setMaxLines(2);
-        p80Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        p80Var.setEllipsize(TextUtils.TruncateAt.END);
-        boolean z10 = LocaleController.isRTL;
-        addView(p80Var, h7.z5.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 16.0f : 58.0f, 21.0f, z10 ? 58.0f : 16.0f, 21.0f));
-        setWillNotDraw(false);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l6(n6 n6Var, org.telegram.ui.ActionBar.b6 b6Var) {
+        super(b6Var, false);
+        this.T = n6Var;
     }
 
-    public CheckBoxSquare getCheckBox() {
-        return this.c;
-    }
-
-    public TextView getTextView() {
-        return this.b;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        m80 m80Var = this.a;
-        if (m80Var != null) {
-            canvas.save();
-            p80 p80Var = this.b;
-            canvas.translate(p80Var.getLeft(), p80Var.getTop());
-            if (m80Var.f(canvas)) {
-                invalidate();
-            }
-            canvas.restore();
+    @Override // ih.l7
+    public final void f(long j10) {
+        switch (this.S) {
+            case 0:
+                ((n6) this.T).b(j10);
+                break;
+            case 1:
+                va vaVar = (va) this.T;
+                org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
+                if (R != null) {
+                    R.getOrCreateStoryViewer().getClass();
+                    R.getOrCreateStoryViewer().D(vaVar.getContext(), j10, ih.e7.a((wk0) vaVar.getParent()));
+                    break;
+                }
+                break;
+            default:
+                pn pnVar = (pn) this.T;
+                pnVar.D.getOrCreateStoryViewer().D(pnVar.getContext(), j10, new org.telegram.ui.Components.s(this, 25));
+                break;
         }
     }
 
-    public void setChecked(boolean z10) {
-        this.c.a(z10, true);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l6(va vaVar) {
+        super(null, false);
+        this.T = vaVar;
     }
 
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l6(pn pnVar) {
+        super(null, true);
+        this.T = pnVar;
     }
 }

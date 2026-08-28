@@ -1,100 +1,67 @@
 package zg;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.er;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class d extends View {
-    public final Drawable a;
-    public final ud.a b;
-    public final int c;
-    public e d;
+public final class d extends yg.e {
+    public final MediaController.PhotoEntry b;
+    public final SendMessagesHelper.SendingMediaInfo c;
 
-    public d(Context context, int i10) {
-        super(context);
-        this.b = new ud.a(this, er.h, 380L);
-        this.c = i10;
-        Drawable mutate = context.getResources().getDrawable(R.drawable.outline_poll_attach_24).mutate();
-        this.a = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(g6.w0(null, g6.o7, false), PorterDuff.Mode.SRC_IN));
-    }
-
-    public final void a(e eVar, boolean z10) {
-        e eVar2;
-        e eVar3;
-        this.b.a(eVar != null, z10);
-        if (isAttachedToWindow() && (eVar3 = this.d) != null) {
-            eVar3.b();
-        }
-        this.d = eVar;
-        if (!isAttachedToWindow() || (eVar2 = this.d) == null) {
-            return;
-        }
-        eVar2.a(this);
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        e eVar = this.d;
-        if (eVar != null) {
-            eVar.a(this);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        e eVar = this.d;
-        if (eVar != null) {
-            eVar.b();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float f10 = this.b.e;
-        if (f10 < 1.0f) {
-            canvas.save();
-            float f11 = 1.0f - f10;
-            canvas.scale(f11, f11, width, height);
-            this.a.draw(canvas);
-            canvas.restore();
-        }
-        if (f10 > 0.0f) {
-            float f12 = this.c;
-            int dp = AndroidUtilities.dp(f12);
-            int width2 = (getWidth() - dp) / 2;
-            int height2 = (getHeight() - dp) / 2;
-            canvas.save();
-            canvas.translate(width2, height2);
-            canvas.scale(f10, f10, AndroidUtilities.dp(f12) / 2.0f, AndroidUtilities.dp(f12) / 2.0f);
-            e eVar = this.d;
-            if (eVar != null) {
-                eVar.c(canvas, AndroidUtilities.dp(f12), AndroidUtilities.dp(f12));
+    /* JADX WARN: Removed duplicated region for block: B:6:0x0087  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0090  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public d(SendMessagesHelper.SendingMediaInfo sendingMediaInfo) {
+        ImageLocation imageLocation;
+        ImageLocation imageLocation2;
+        this.c = sendingMediaInfo;
+        MediaController.PhotoEntry photoEntry = sendingMediaInfo.originalPhotoEntry;
+        this.b = photoEntry;
+        this.a.setRoundRadius(AndroidUtilities.dp(7.0f));
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.setOrientation(0, true);
+        String str = photoEntry.coverPath;
+        if (str != null) {
+            imageLocation = ImageLocation.getForPath(str);
+        } else {
+            String str2 = photoEntry.thumbPath;
+            if (str2 != null) {
+                imageLocation = ImageLocation.getForPath(str2);
+            } else if (photoEntry.path == null) {
+                imageReceiver.clearImage();
+                imageLocation = null;
+            } else {
+                if (!photoEntry.isVideo || photoEntry.isLivePhoto()) {
+                    ImageLocation forPath = ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path);
+                    imageReceiver.setOrientation(photoEntry.orientation, photoEntry.invert, true);
+                    imageLocation2 = forPath;
+                    if (imageLocation2 == null) {
+                        imageReceiver.setImage(imageLocation2, null, null, null, null, 0);
+                        return;
+                    } else {
+                        imageReceiver.clearImage();
+                        return;
+                    }
+                }
+                imageLocation = ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path);
             }
-            canvas.restore();
+        }
+        imageLocation2 = imageLocation;
+        if (imageLocation2 == null) {
         }
     }
 
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        int dp = AndroidUtilities.dp(24.0f);
-        int i14 = (i10 - dp) / 2;
-        int i15 = (i11 - dp) / 2;
-        this.a.setBounds(i14, i15, i14 + dp, dp + i15);
+    @Override // yg.e
+    public final void c(Canvas canvas, int i9, int i10) {
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.setImageCoords(0.0f, 0.0f, i9, i10);
+        imageReceiver.draw(canvas);
     }
 }

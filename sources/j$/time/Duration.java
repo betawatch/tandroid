@@ -25,24 +25,24 @@ public final class Duration implements Comparable<Duration>, Serializable {
 
     public static Duration k(long j10) {
         long j11 = j10 / 1000000000;
-        int i10 = (int) (j10 % 1000000000);
-        if (i10 < 0) {
-            i10 = (int) (i10 + 1000000000);
+        int i9 = (int) (j10 % 1000000000);
+        if (i9 < 0) {
+            i9 = (int) (i9 + 1000000000);
             j11--;
         }
-        return j(j11, i10);
+        return j(j11, i9);
     }
 
-    public static Duration j(long j10, int i10) {
-        if ((i10 | j10) == 0) {
+    public static Duration j(long j10, int i9) {
+        if ((i9 | j10) == 0) {
             return c;
         }
-        return new Duration(j10, i10);
+        return new Duration(j10, i9);
     }
 
-    public Duration(long j10, int i10) {
+    public Duration(long j10, int i9) {
         this.a = j10;
-        this.b = i10;
+        this.b = i9;
     }
 
     public long getSeconds() {
@@ -76,27 +76,27 @@ public final class Duration implements Comparable<Duration>, Serializable {
             j10++;
         }
         long j11 = j10 / 3600;
-        int i10 = (int) ((j10 % 3600) / 60);
-        int i11 = (int) (j10 % 60);
+        int i9 = (int) ((j10 % 3600) / 60);
+        int i10 = (int) (j10 % 60);
         StringBuilder sb2 = new StringBuilder(24);
         sb2.append("PT");
         if (j11 != 0) {
             sb2.append(j11);
             sb2.append('H');
         }
-        if (i10 != 0) {
-            sb2.append(i10);
+        if (i9 != 0) {
+            sb2.append(i9);
             sb2.append('M');
         }
-        if (i11 == 0 && this.b == 0 && sb2.length() > 2) {
+        if (i10 == 0 && this.b == 0 && sb2.length() > 2) {
             return sb2.toString();
         }
         if (this.a >= 0 || this.b <= 0) {
-            sb2.append(i11);
-        } else if (i11 == 0) {
+            sb2.append(i10);
+        } else if (i10 == 0) {
             sb2.append("-0");
         } else {
-            sb2.append(i11);
+            sb2.append(i10);
         }
         if (this.b > 0) {
             int length = sb2.length();

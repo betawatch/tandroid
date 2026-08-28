@@ -5,7 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.ContentInfo;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class d implements e, g {
     public final /* synthetic */ int a = 0;
@@ -32,8 +32,8 @@ public final class d implements e, g {
     }
 
     @Override // r0.e
-    public void c(int i10) {
-        ((ContentInfo.Builder) this.b).setFlags(i10);
+    public void c(int i9) {
+        ((ContentInfo.Builder) this.b).setFlags(i9);
     }
 
     @Override // r0.g
@@ -65,7 +65,7 @@ public final class d implements e, g {
         }
     }
 
-    public d(ClipData clipData, int i10) {
-        this.b = c.a(clipData, i10);
+    public d(ClipData clipData, int i9) {
+        this.b = c.a(clipData, i9);
     }
 }

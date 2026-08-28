@@ -1,34 +1,61 @@
 package hc;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import e4.h;
+import f7.e8;
+import fe.e;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b {
-    public static final Pattern d = Pattern.compile("[ |\t]*([^/^ ^;^,]+/[^ ^;^,]+)", 2);
-    public static final Pattern e = Pattern.compile("[ |\t]*(charset)[ |\t]*=[ |\t]*['|\"]?([^\"^'^;^,]*)['|\"]?", 2);
-    public static final Pattern f = Pattern.compile("[ |\t]*(boundary)[ |\t]*=[ |\t]*['|\"]?([^\"^'^;^,]*)['|\"]?", 2);
-    public final String a;
-    public final String b;
-    public final String c;
+public final class b extends ke.a {
+    public final a a = new a();
+    public final StringBuilder b = new StringBuilder();
+    public final int c;
 
-    public b(String str) {
-        this.a = str;
-        if (str != null) {
-            Matcher matcher = d.matcher(str);
-            this.b = matcher.find() ? matcher.group(1) : "";
-            Matcher matcher2 = e.matcher(str);
-            this.c = matcher2.find() ? matcher2.group(2) : null;
-        } else {
-            this.b = "";
-            this.c = "UTF-8";
-        }
-        if ("multipart/form-data".equalsIgnoreCase(this.b)) {
-            Matcher matcher3 = f.matcher(str);
-            if (matcher3.find()) {
-                matcher3.group(2);
+    public b(int i9) {
+        this.c = i9;
+    }
+
+    @Override // ke.a
+    public final void a(CharSequence charSequence) {
+        StringBuilder sb2 = this.b;
+        sb2.append(charSequence);
+        sb2.append('\n');
+    }
+
+    @Override // ke.a
+    public final void d() {
+        this.a.g = this.b.toString();
+    }
+
+    @Override // ke.a
+    public final ie.a e() {
+        return this.a;
+    }
+
+    @Override // ke.a
+    public final h h(e eVar) {
+        int i9;
+        int i10 = eVar.e;
+        CharSequence charSequence = eVar.a;
+        int length = charSequence.length();
+        if (eVar.g < 4) {
+            int i11 = i10;
+            while (true) {
+                if (i11 >= length) {
+                    i9 = length - i10;
+                    break;
+                }
+                if ('$' != charSequence.charAt(i11)) {
+                    i9 = i11 - i10;
+                    break;
+                }
+                i11++;
+            }
+            int i12 = this.c;
+            if (i9 == i12 && e8.b(' ', charSequence, i10 + i12, length) == length) {
+                return new h(-1, -1, true);
             }
         }
+        return h.a(eVar.b);
     }
 }

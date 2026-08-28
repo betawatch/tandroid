@@ -17,8 +17,8 @@ public final class l implements j$.time.temporal.l, j$.time.temporal.m, Comparab
     @Override // java.lang.Comparable
     public final int compareTo(Object obj) {
         l lVar = (l) obj;
-        int i10 = this.a - lVar.a;
-        return i10 == 0 ? this.b - lVar.b : i10;
+        int i9 = this.a - lVar.a;
+        return i9 == 0 ? this.b - lVar.b : i9;
     }
 
     static {
@@ -30,9 +30,9 @@ public final class l implements j$.time.temporal.l, j$.time.temporal.m, Comparab
         pVar.l(Locale.getDefault(), w.SMART, null);
     }
 
-    public l(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    public l(int i9, int i10) {
+        this.a = i9;
+        this.b = i10;
     }
 
     @Override // j$.time.temporal.l
@@ -50,8 +50,8 @@ public final class l implements j$.time.temporal.l, j$.time.temporal.m, Comparab
         }
         j J = j.J(this.a);
         J.getClass();
-        int i10 = i.a[J.ordinal()];
-        return j$.time.temporal.s.f(i10 != 1 ? (i10 == 2 || i10 == 3 || i10 == 4 || i10 == 5) ? 30 : 31 : 28, j.J(this.a).I());
+        int i9 = i.a[J.ordinal()];
+        return j$.time.temporal.s.f(i9 != 1 ? (i9 == 2 || i9 == 3 || i9 == 4 || i9 == 5) ? 30 : 31 : 28, j.J(this.a).I());
     }
 
     @Override // j$.time.temporal.l
@@ -61,20 +61,20 @@ public final class l implements j$.time.temporal.l, j$.time.temporal.m, Comparab
 
     @Override // j$.time.temporal.l
     public final long y(j$.time.temporal.o oVar) {
-        int i10;
+        int i9;
         if (!(oVar instanceof j$.time.temporal.a)) {
             return oVar.m(this);
         }
-        int i11 = k.a[((j$.time.temporal.a) oVar).ordinal()];
-        if (i11 == 1) {
-            i10 = this.b;
+        int i10 = k.a[((j$.time.temporal.a) oVar).ordinal()];
+        if (i10 == 1) {
+            i9 = this.b;
         } else {
-            if (i11 != 2) {
+            if (i10 != 2) {
                 throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
             }
-            i10 = this.a;
+            i9 = this.a;
         }
-        return i10;
+        return i9;
     }
 
     @Override // j$.time.temporal.l

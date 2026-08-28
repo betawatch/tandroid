@@ -20,21 +20,21 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class dd1 extends Dialog {
-    public final og.b A;
-    public final jg.a B;
+    public final ng.b A;
+    public final ig.a B;
     public MessageObject C;
     public boolean D;
     public bd1 E;
-    public iv0 F;
-    public org.telegram.ui.Cells.s1 G;
+    public hv0 F;
+    public org.telegram.ui.Cells.t1 G;
     public float H;
     public float I;
     public boolean J;
     public int K;
-    public org.telegram.ui.Components.wj0 L;
+    public org.telegram.ui.Components.uj0 L;
     public ViewGroup M;
     public float N;
     public ViewGroup O;
@@ -47,17 +47,17 @@ public final class dd1 extends Dialog {
     public boolean V;
     public boolean W;
     public boolean X;
-    public om Y;
+    public nm Y;
     public ValueAnimator Z;
-    public final org.telegram.ui.ActionBar.c6 a;
+    public final org.telegram.ui.ActionBar.b6 a;
     public ValueAnimator a0;
     public final ad1 b;
     public final ad1 c;
     public final ad1 d;
-    public final lh.h1 e;
+    public final kh.j1 e;
     public final TextView f;
-    public final org.telegram.ui.Components.eb0 h;
-    public i0.c n;
+    public final org.telegram.ui.Components.ab0 h;
+    public i0.b n;
     public Bitmap r;
     public BitmapShader s;
     public Paint v;
@@ -65,59 +65,59 @@ public final class dd1 extends Dialog {
     public float x;
     public float y;
 
-    public dd1(Activity activity, org.telegram.ui.ActionBar.c6 c6Var) {
+    public dd1(Activity activity, org.telegram.ui.ActionBar.b6 b6Var) {
         super(activity, R.style.TransparentDialog);
-        this.n = i0.c.e;
+        this.n = i0.b.e;
         this.H = 0.0f;
         this.I = 0.0f;
         this.N = -1.0f;
         this.P = -1.0f;
         this.W = false;
-        this.a = c6Var;
+        this.a = b6Var;
         ad1 ad1Var = new ad1(this, activity, 0);
         this.b = ad1Var;
-        ad1Var.setOnClickListener(new v21(this, 7));
-        og.b bVar = new og.b();
+        ad1Var.setOnClickListener(new w21(this, 7));
+        ng.b bVar = new ng.b();
         this.A = bVar;
-        jg.a aVar = new jg.a(bVar);
+        ig.a aVar = new ig.a(bVar);
         this.B = aVar;
-        aVar.d = new qg.j(ad1Var);
+        aVar.d = new pg.i(ad1Var);
         aVar.e = ad1Var;
         ad1 ad1Var2 = new ad1(this, activity, 1);
         this.c = ad1Var2;
         ad1Var2.setClipToPadding(false);
-        ad1Var.addView(ad1Var2, h7.z5.e(-1, -1, 119));
-        lh.h1 h1Var = new lh.h1(this, activity, 8);
-        this.e = h1Var;
-        h1Var.setAdapter(new cg.u(this, activity, 4));
-        ad1Var2.addView(h1Var, h7.z5.e(-1, -1, 119));
+        ad1Var.addView(ad1Var2, g7.e6.e(-1, -1, 119));
+        kh.j1 j1Var = new kh.j1(this, activity, 8);
+        this.e = j1Var;
+        j1Var.setAdapter(new bg.x(this, activity, 4));
+        ad1Var2.addView(j1Var, g7.e6.e(-1, -1, 119));
         ad1 ad1Var3 = new ad1(this, activity, 2);
         this.d = ad1Var3;
-        ad1Var2.addView(ad1Var3, h7.z5.e(-1, -1, 119));
-        org.telegram.ui.Components.eb0 eb0Var = new org.telegram.ui.Components.eb0(activity, c6Var);
-        this.h = eb0Var;
-        eb0Var.a(0, LocaleController.getString(R.string.TodoMenuTabTask));
-        eb0Var.a(1, LocaleController.getString(R.string.TodoMenuTabList));
-        ad1Var2.addView(eb0Var, h7.z5.e(-1, 66, 80));
-        eb0Var.setOnTabClick(new x3(h1Var, 22));
-        lg.d c10 = aVar.c(eb0Var, null, false);
-        c10.n(ng.c.j(c6Var));
+        ad1Var2.addView(ad1Var3, g7.e6.e(-1, -1, 119));
+        org.telegram.ui.Components.ab0 ab0Var = new org.telegram.ui.Components.ab0(activity, b6Var);
+        this.h = ab0Var;
+        ab0Var.a(0, LocaleController.getString(R.string.TodoMenuTabTask));
+        ab0Var.a(1, LocaleController.getString(R.string.TodoMenuTabList));
+        ad1Var2.addView(ab0Var, g7.e6.e(-1, 66, 80));
+        ab0Var.setOnTabClick(new w3(j1Var, 22));
+        kg.d c10 = aVar.c(ab0Var, null, false);
+        c10.n(mg.c.j(b6Var));
         c10.h.e = true;
         c10.o(AndroidUtilities.dp(8.0f));
         c10.p(AndroidUtilities.dp(16.0f));
-        eb0Var.setBackground(c10);
+        ab0Var.setBackground(c10);
         TextView textView = new TextView(activity);
         this.f = textView;
         textView.setTextSize(1, 13.0f);
-        textView.setTextColor(eb0Var.getColor());
-        org.telegram.messenger.rl.i(R.string.TodoMenuHint, textView, 17);
-        ad1Var2.addView(textView, h7.z5.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 66.0f));
-        gv0 gv0Var = new gv0(this, 6);
+        textView.setTextColor(ab0Var.getColor());
+        org.telegram.messenger.ll.l(R.string.TodoMenuHint, textView, 17);
+        ad1Var2.addView(textView, g7.e6.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 66.0f));
+        fv0 fv0Var = new fv0(this, 6);
         WeakHashMap weakHashMap = r0.j0.a;
-        r0.b0.j(ad1Var, gv0Var);
+        r0.b0.j(ad1Var, fv0Var);
     }
 
-    public final void b(boolean z10, org.telegram.ui.Components.f50 f50Var) {
+    public final void b(boolean z10, org.telegram.ui.Components.a50 a50Var) {
         ValueAnimator valueAnimator = this.Z;
         if (valueAnimator != null) {
             valueAnimator.cancel();
@@ -127,8 +127,8 @@ public final class dd1 extends Dialog {
             valueAnimator2.cancel();
         }
         d();
-        final int i10 = 0;
-        final int i11 = 1;
+        final int i9 = 0;
+        final int i10 = 1;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.x, z10 ? 1.0f : 0.0f);
         this.Z = ofFloat;
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.wc1
@@ -140,7 +140,7 @@ public final class dd1 extends Dialog {
 
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
-                switch (i10) {
+                switch (i9) {
                     case 0:
                         float floatValue = ((Float) valueAnimator3.getAnimatedValue()).floatValue();
                         dd1 dd1Var = this.b;
@@ -157,11 +157,11 @@ public final class dd1 extends Dialog {
                 }
             }
         });
-        this.Z.addListener(new androidx.fragment.app.g(this, z10, f50Var, 12));
+        this.Z.addListener(new androidx.fragment.app.g(this, z10, a50Var, 12));
         long j10 = !z10 ? 330L : 520L;
         ValueAnimator valueAnimator3 = this.Z;
-        org.telegram.ui.Components.er erVar = org.telegram.ui.Components.er.h;
-        valueAnimator3.setInterpolator(erVar);
+        org.telegram.ui.Components.gr grVar = org.telegram.ui.Components.gr.h;
+        valueAnimator3.setInterpolator(grVar);
         this.Z.setDuration(j10);
         this.Z.start();
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.y, z10 ? 1.0f : 0.0f);
@@ -175,7 +175,7 @@ public final class dd1 extends Dialog {
 
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator32) {
-                switch (i11) {
+                switch (i10) {
                     case 0:
                         float floatValue = ((Float) valueAnimator32.getAnimatedValue()).floatValue();
                         dd1 dd1Var = this.b;
@@ -192,16 +192,16 @@ public final class dd1 extends Dialog {
                 }
             }
         });
-        this.a0.addListener(new n40(11, this, z10));
+        this.a0.addListener(new n60(10, this, z10));
         this.a0.setDuration((long) (j10 * 1.5f));
-        this.a0.setInterpolator(erVar);
+        this.a0.setInterpolator(grVar);
         this.a0.start();
     }
 
     public final void c(boolean z10) {
-        org.telegram.ui.Cells.s1 s1Var;
-        org.telegram.ui.Components.wj0 wj0Var;
-        if (z10 && (wj0Var = this.L) != null && wj0Var.getReactionsWindow() != null && !this.L.getReactionsWindow().q) {
+        org.telegram.ui.Cells.t1 t1Var;
+        org.telegram.ui.Components.uj0 uj0Var;
+        if (z10 && (uj0Var = this.L) != null && uj0Var.getReactionsWindow() != null && !this.L.getReactionsWindow().q) {
             this.L.e();
             return;
         }
@@ -210,24 +210,24 @@ public final class dd1 extends Dialog {
         }
         this.W = true;
         this.S = false;
-        lh.h1 h1Var = this.e;
-        h1Var.l();
-        boolean z11 = h1Var.getCurrentPosition() == 1;
+        kh.j1 j1Var = this.e;
+        j1Var.l();
+        boolean z11 = j1Var.getCurrentPosition() == 1;
         if (z10 && z11) {
-            org.telegram.ui.Cells.s1 s1Var2 = this.G;
-            if (s1Var2 != null) {
-                s1Var2.setVisibility(4);
+            org.telegram.ui.Cells.t1 t1Var2 = this.G;
+            if (t1Var2 != null) {
+                t1Var2.setVisibility(4);
                 this.G.invalidate();
             }
-        } else if (!z10 && (s1Var = this.G) != null) {
-            s1Var.setVisibility(0);
-            org.telegram.ui.Cells.s1 s1Var3 = this.G;
-            s1Var3.G7 = -1;
-            s1Var3.invalidate();
+        } else if (!z10 && (t1Var = this.G) != null) {
+            t1Var.setVisibility(0);
+            org.telegram.ui.Cells.t1 t1Var3 = this.G;
+            t1Var3.G7 = -1;
+            t1Var3.invalidate();
         }
         this.X = !z10;
         d();
-        b(false, new org.telegram.ui.Components.f50(16, this, z11));
+        b(false, new org.telegram.ui.Components.a50(16, this, z11));
         this.b.invalidate();
     }
 
@@ -239,14 +239,14 @@ public final class dd1 extends Dialog {
         if (ad1Var.getWidth() <= 0) {
             return;
         }
-        org.telegram.ui.Cells.s1 s1Var = this.G;
-        if (s1Var != null) {
+        org.telegram.ui.Cells.t1 t1Var = this.G;
+        if (t1Var != null) {
             int[] iArr = new int[2];
-            s1Var.getLocationOnScreen(iArr);
-            int i10 = iArr[0];
-            i0.c cVar = this.n;
-            this.Q = i10 - cVar.a;
-            float f10 = iArr[1] - cVar.b;
+            t1Var.getLocationOnScreen(iArr);
+            int i9 = iArr[0];
+            i0.b bVar = this.n;
+            this.Q = i9 - bVar.a;
+            float f10 = iArr[1] - bVar.b;
             this.R = f10;
             if (!this.V) {
                 this.V = true;
@@ -254,37 +254,37 @@ public final class dd1 extends Dialog {
                 if (this.O != null) {
                     float height = f10 + this.G.getHeight() + this.O.getHeight();
                     int height2 = ad1Var.getHeight();
-                    i0.c cVar2 = this.n;
-                    if (height > ((height2 - cVar2.b) - cVar2.d) - AndroidUtilities.dp(66.0f)) {
+                    i0.b bVar2 = this.n;
+                    if (height > ((height2 - bVar2.b) - bVar2.d) - AndroidUtilities.dp(66.0f)) {
                         int height3 = ad1Var.getHeight();
-                        i0.c cVar3 = this.n;
-                        this.T = ((((height3 - cVar3.b) - cVar3.d) - AndroidUtilities.dp(66.0f)) - this.G.getHeight()) - this.O.getHeight();
+                        i0.b bVar3 = this.n;
+                        this.T = ((((height3 - bVar3.b) - bVar3.d) - AndroidUtilities.dp(66.0f)) - this.G.getHeight()) - this.O.getHeight();
                     }
                 }
-                int N2 = this.E.N2(this.K);
-                this.E.G2(N2);
-                float F2 = this.E.F2(N2);
+                int O2 = this.E.O2(this.K);
+                this.E.H2(O2);
+                float G2 = this.E.G2(O2);
                 float f11 = this.R;
                 this.U = f11;
-                float f12 = (int) F2;
+                float f12 = (int) G2;
                 float f13 = f11 + f12;
                 int height4 = ad1Var.getHeight();
-                i0.c cVar4 = this.n;
-                int dp = ((height4 - cVar4.b) - cVar4.d) - AndroidUtilities.dp(78.0f);
+                i0.b bVar4 = this.n;
+                int dp = ((height4 - bVar4.b) - bVar4.d) - AndroidUtilities.dp(78.0f);
                 TextView textView = this.f;
                 if (f13 > dp - textView.getHeight()) {
                     int height5 = ad1Var.getHeight();
-                    i0.c cVar5 = this.n;
-                    this.U = ((((height5 - cVar5.b) - cVar5.d) - AndroidUtilities.dp(78.0f)) - textView.getHeight()) - r1;
+                    i0.b bVar5 = this.n;
+                    this.U = ((((height5 - bVar5.b) - bVar5.d) - AndroidUtilities.dp(78.0f)) - textView.getHeight()) - r1;
                 }
                 if (this.M != null) {
                     float height6 = this.U + f12 + r3.getHeight();
                     int height7 = ad1Var.getHeight();
-                    i0.c cVar6 = this.n;
-                    if (height6 > (((height7 - cVar6.b) - cVar6.d) - AndroidUtilities.dp(78.0f)) - textView.getHeight()) {
+                    i0.b bVar6 = this.n;
+                    if (height6 > (((height7 - bVar6.b) - bVar6.d) - AndroidUtilities.dp(78.0f)) - textView.getHeight()) {
                         int height8 = ad1Var.getHeight();
-                        i0.c cVar7 = this.n;
-                        this.U = (((((height8 - cVar7.b) - cVar7.d) - AndroidUtilities.dp(78.0f)) - textView.getHeight()) - r1) - this.M.getHeight();
+                        i0.b bVar7 = this.n;
+                        this.U = (((((height8 - bVar7.b) - bVar7.d) - AndroidUtilities.dp(78.0f)) - textView.getHeight()) - r1) - this.M.getHeight();
                     }
                 }
             }
@@ -302,10 +302,10 @@ public final class dd1 extends Dialog {
     }
 
     public final void e() {
-        lh.h1 h1Var = this.e;
-        float positionAnimated = h1Var.getPositionAnimated();
-        float lerp = AndroidUtilities.lerp(0, -h1Var.getWidth(), positionAnimated);
-        float lerp2 = AndroidUtilities.lerp(h1Var.getWidth(), 0, positionAnimated);
+        kh.j1 j1Var = this.e;
+        float positionAnimated = j1Var.getPositionAnimated();
+        float lerp = AndroidUtilities.lerp(0, -j1Var.getWidth(), positionAnimated);
+        float lerp2 = AndroidUtilities.lerp(j1Var.getWidth(), 0, positionAnimated);
         if (this.S) {
             ViewGroup viewGroup = this.O;
             if (viewGroup instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
@@ -315,11 +315,11 @@ public final class dd1 extends Dialog {
                 float height = f10 + this.G.getHeight() + actionBarPopupWindow$ActionBarPopupWindowLayout.getVisibleHeight();
                 ad1 ad1Var = this.b;
                 int height2 = ad1Var.getHeight();
-                i0.c cVar = this.n;
-                if (height > ((height2 - cVar.b) - cVar.d) - AndroidUtilities.dp(66.0f)) {
+                i0.b bVar = this.n;
+                if (height > ((height2 - bVar.b) - bVar.d) - AndroidUtilities.dp(66.0f)) {
                     int height3 = ad1Var.getHeight();
-                    i0.c cVar2 = this.n;
-                    this.T = ((((height3 - cVar2.b) - cVar2.d) - AndroidUtilities.dp(66.0f)) - this.G.getHeight()) - actionBarPopupWindow$ActionBarPopupWindowLayout.getVisibleHeight();
+                    i0.b bVar2 = this.n;
+                    this.T = ((((height3 - bVar2.b) - bVar2.d) - AndroidUtilities.dp(66.0f)) - this.G.getHeight()) - actionBarPopupWindow$ActionBarPopupWindowLayout.getVisibleHeight();
                 }
             }
         }
@@ -331,7 +331,7 @@ public final class dd1 extends Dialog {
             if (this.D) {
                 viewGroup2.setTranslationX(((this.F.getPollButtonsLeft() + ((lerp2 + 0.0f) + this.F.getLeft())) - AndroidUtilities.dp(8.0f)) - this.O.getLeft());
             } else {
-                viewGroup2.setTranslationX((((lerp2 + 0.0f) + (this.F.y3() ? AndroidUtilities.dp(48.0f) : 0)) + this.F.getLeft()) - this.O.getLeft());
+                viewGroup2.setTranslationX((((lerp2 + 0.0f) + (this.F.z3() ? AndroidUtilities.dp(48.0f) : 0)) + this.F.getLeft()) - this.O.getLeft());
             }
             this.P = ad1Var2.getMeasuredWidth() - (this.O.getX() - lerp2);
             this.O.setTranslationY(((this.F.getY() + this.F.getHeight()) - this.O.getTop()) - ad1Var2.getTop());
@@ -343,16 +343,16 @@ public final class dd1 extends Dialog {
         this.E.setTranslationX(AndroidUtilities.lerp(this.Q, 0.0f, this.X ? 1.0f : this.x) + lerp);
         this.E.setTranslationY(AndroidUtilities.lerp(this.R, this.U, this.X ? 1.0f : this.x));
         if (this.M != null) {
-            int N2 = this.E.N2(this.K);
-            this.E.G2(N2);
-            float F2 = this.E.F2(N2);
+            int O2 = this.E.O2(this.K);
+            this.E.H2(O2);
+            float G2 = this.E.G2(O2);
             if (this.D) {
                 this.M.setTranslationX(((this.E.getPollButtonsLeft() + ((lerp + 0.0f) + this.E.getLeft())) - AndroidUtilities.dp(8.0f)) - this.M.getLeft());
             } else {
-                this.M.setTranslationX((((lerp + 0.0f) + (this.E.y3() ? AndroidUtilities.dp(48.0f) : 0)) + this.E.getLeft()) - this.M.getLeft());
+                this.M.setTranslationX((((lerp + 0.0f) + (this.E.z3() ? AndroidUtilities.dp(48.0f) : 0)) + this.E.getLeft()) - this.M.getLeft());
             }
             this.N = ad1Var2.getMeasuredWidth() - (this.M.getX() - lerp2);
-            this.M.setTranslationY(((this.E.getY() + ((int) F2)) - this.M.getTop()) - ad1Var2.getTop());
+            this.M.setTranslationY(((this.E.getY() + ((int) G2)) - this.M.getTop()) - ad1Var2.getTop());
             this.M.setAlpha(this.x);
             float lerp4 = AndroidUtilities.lerp(0.75f, 1.0f, this.x);
             this.M.setScaleX(lerp4);
@@ -376,9 +376,9 @@ public final class dd1 extends Dialog {
         TextView textView = this.f;
         textView.setTranslationX(lerp);
         textView.setAlpha(this.x);
-        org.telegram.ui.Components.eb0 eb0Var = this.h;
-        eb0Var.setSelectedTab(positionAnimated);
-        eb0Var.setAlpha(this.x);
+        org.telegram.ui.Components.ab0 ab0Var = this.h;
+        ab0Var.setSelectedTab(positionAnimated);
+        ab0Var.setAlpha(this.x);
     }
 
     @Override // android.app.Dialog
@@ -394,20 +394,20 @@ public final class dd1 extends Dialog {
         attributes.height = -1;
         attributes.gravity = 119;
         attributes.dimAmount = 0.0f;
-        int i10 = attributes.flags & (-3);
+        int i9 = attributes.flags & (-3);
         attributes.softInputMode = 48;
-        attributes.flags = i10 | (-1945959040);
+        attributes.flags = i9 | (-1945959040);
         AndroidUtilities.applyEdgeToEdgeLayoutParams(attributes);
         window.setAttributes(attributes);
         ad1Var.setSystemUiVisibility(1284);
-        AndroidUtilities.setLightNavigationBar(ad1Var, !org.telegram.ui.ActionBar.g6.I.q());
+        AndroidUtilities.setLightNavigationBar(ad1Var, !org.telegram.ui.ActionBar.f6.I.q());
     }
 
     @Override // android.app.Dialog
     public final void show() {
         if (AndroidUtilities.isSafeToShow(getContext())) {
             super.show();
-            org.telegram.ui.Components.ol0.d(new b5(this, 28));
+            org.telegram.ui.Components.ll0.d(new a5(this, 28));
             this.J = true;
             b(true, null);
         }

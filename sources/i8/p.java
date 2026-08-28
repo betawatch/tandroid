@@ -1,73 +1,27 @@
 package i8;
 
-import android.content.ComponentName;
-import android.content.Intent;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
+import android.os.Parcel;
+import android.os.Parcelable;
+import g7.p8;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class p extends Handler {
-    public boolean a;
-    public final o b;
-    public final /* synthetic */ k c;
+public final class p extends y5.a {
+    public static final Parcelable.Creator<p> CREATOR = new c(11);
+    public final int a;
+    public final b b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p(k kVar, Looper looper) {
-        super(looper);
-        this.c = kVar;
-        this.b = new o();
+    public p(int i9, b bVar) {
+        this.a = i9;
+        this.b = bVar;
     }
 
-    public final synchronized void a(String str) {
-        ComponentName componentName;
-        if (this.a) {
-            if (Log.isLoggable("WearableLS", 2)) {
-                componentName = this.c.zza;
-                Log.v("WearableLS", "unbindService: " + str + ", " + String.valueOf(componentName));
-            }
-            try {
-                this.c.unbindService(this.b);
-            } catch (RuntimeException e9) {
-                Log.e("WearableLS", "Exception when unbinding from local service", e9);
-            }
-            this.a = false;
-        }
-    }
-
-    @Override // android.os.Handler
-    public final void dispatchMessage(Message message) {
-        Intent intent;
-        ComponentName componentName;
-        synchronized (this) {
-            try {
-                if (!this.a) {
-                    if (Log.isLoggable("WearableLS", 2)) {
-                        componentName = this.c.zza;
-                        Log.v("WearableLS", "bindService: ".concat(String.valueOf(componentName)));
-                    }
-                    k kVar = this.c;
-                    intent = kVar.zzd;
-                    kVar.bindService(intent, this.b, 1);
-                    this.a = true;
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        try {
-            super.dispatchMessage(message);
-            if (hasMessages(0)) {
-                return;
-            }
-            a("dispatch");
-        } catch (Throwable th2) {
-            if (!hasMessages(0)) {
-                a("dispatch");
-            }
-            throw th2;
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.s(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        p8.k(parcel, 3, this.b, i9);
+        p8.r(parcel, q10);
     }
 }

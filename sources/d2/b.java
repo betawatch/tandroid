@@ -3,7 +3,7 @@ package d2;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class b {
     public final int a;
@@ -17,10 +17,10 @@ public final class b {
     public int i;
     public final /* synthetic */ c j;
 
-    public b(c cVar, int i10, int i11) {
+    public b(c cVar, int i9, int i10) {
         this.j = cVar;
-        this.a = i10;
-        this.b = i11;
+        this.a = i9;
+        this.b = i10;
         a();
     }
 
@@ -28,19 +28,25 @@ public final class b {
         c cVar = this.j;
         int[] iArr = (int[]) cVar.a;
         int[] iArr2 = (int[]) cVar.b;
+        int i9 = ConnectionsManager.DEFAULT_DATACENTER_ID;
         int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
         int i11 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        int i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        int i12 = TLObject.FLAG_31;
         int i13 = TLObject.FLAG_31;
         int i14 = TLObject.FLAG_31;
-        int i15 = TLObject.FLAG_31;
-        int i16 = 0;
-        for (int i17 = this.a; i17 <= this.b; i17++) {
-            int i18 = iArr[i17];
-            i16 += iArr2[i18];
-            int i19 = (i18 >> 10) & 31;
-            int i20 = (i18 >> 5) & 31;
-            int i21 = i18 & 31;
+        int i15 = 0;
+        for (int i16 = this.a; i16 <= this.b; i16++) {
+            int i17 = iArr[i16];
+            i15 += iArr2[i17];
+            int i18 = (i17 >> 10) & 31;
+            int i19 = (i17 >> 5) & 31;
+            int i20 = i17 & 31;
+            if (i18 > i12) {
+                i12 = i18;
+            }
+            if (i18 < i9) {
+                i9 = i18;
+            }
             if (i19 > i13) {
                 i13 = i19;
             }
@@ -53,20 +59,14 @@ public final class b {
             if (i20 < i11) {
                 i11 = i20;
             }
-            if (i21 > i15) {
-                i15 = i21;
-            }
-            if (i21 < i12) {
-                i12 = i21;
-            }
         }
-        this.d = i10;
-        this.e = i13;
-        this.f = i11;
-        this.g = i14;
-        this.h = i12;
-        this.i = i15;
-        this.c = i16;
+        this.d = i9;
+        this.e = i12;
+        this.f = i10;
+        this.g = i13;
+        this.h = i11;
+        this.i = i14;
+        this.c = i15;
     }
 
     public final int b() {

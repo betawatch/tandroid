@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-import a9.p;
+import aa.d;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public class TeXSymbolParser {
     public static final String DELIMITER_ATTR = "del";
@@ -44,15 +44,15 @@ public class TeXSymbolParser {
     public Map<String, SymbolAtom> readSymbols() {
         HashMap hashMap = new HashMap();
         NodeList elementsByTagName = this.root.getElementsByTagName("Symbol");
-        for (int i10 = 0; i10 < elementsByTagName.getLength(); i10++) {
-            Element element = (Element) elementsByTagName.item(i10);
+        for (int i9 = 0; i9 < elementsByTagName.getLength(); i9++) {
+            Element element = (Element) elementsByTagName.item(i9);
             String attrValueAndCheckIfNotNull = getAttrValueAndCheckIfNotNull("name", element);
             String attrValueAndCheckIfNotNull2 = getAttrValueAndCheckIfNotNull(TYPE_ATTR, element);
             String attribute = element.getAttribute(DELIMITER_ATTR);
             boolean z10 = attribute != null && attribute.equals("true");
             Integer num = typeMappings.get(attrValueAndCheckIfNotNull2);
             if (num == null) {
-                throw new XMLResourceParseException(RESOURCE_NAME, "Symbol", TYPE_ATTR, p.m("has an unknown value '", attrValueAndCheckIfNotNull2, "'!"));
+                throw new XMLResourceParseException(RESOURCE_NAME, "Symbol", TYPE_ATTR, d.o("has an unknown value '", attrValueAndCheckIfNotNull2, "'!"));
             }
             hashMap.put(attrValueAndCheckIfNotNull, new SymbolAtom(attrValueAndCheckIfNotNull, num.intValue(), z10));
         }
@@ -66,8 +66,8 @@ public class TeXSymbolParser {
             newInstance.setIgnoringComments(true);
             this.root = newInstance.newDocumentBuilder().parse(inputStream).getDocumentElement();
             setTypeMappings();
-        } catch (Exception e9) {
-            throw new XMLResourceParseException(str, e9);
+        } catch (Exception e10) {
+            throw new XMLResourceParseException(str, e10);
         }
     }
 }

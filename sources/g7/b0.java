@@ -1,70 +1,65 @@
 package g7;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.util.TypedValue;
-import android.view.ContextThemeWrapper;
-import android.widget.ProgressBar;
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class b0 {
-    public static ContextThemeWrapper a(Context context, boolean z10) {
-        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, g(context, !z10 ? R.attr.dialogTheme : R.attr.alertDialogTheme));
-        return g(contextThemeWrapper, R.attr.mediaRouteTheme) != 0 ? new ContextThemeWrapper(contextThemeWrapper, e(contextThemeWrapper)) : contextThemeWrapper;
-    }
-
-    public static int b(Context context) {
-        return i0.b.e(-1, f(context, R.attr.colorPrimary)) >= 3.0d ? -1 : -570425344;
-    }
-
-    public static float c(Context context) {
-        TypedValue typedValue = new TypedValue();
-        if (context.getTheme().resolveAttribute(android.R.attr.disabledAlpha, typedValue, true)) {
-            return typedValue.getFloat();
+    public static boolean a(String str, String str2) {
+        int i9;
+        char c10;
+        int length = str.length();
+        if (str == str2) {
+            return true;
         }
-        return 0.5f;
-    }
-
-    public static Drawable d(Context context, int i10) {
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(new int[]{i10});
-        Drawable d = k8.d(o7.b(context, obtainStyledAttributes.getResourceId(0, 0)));
-        if (h(context)) {
-            d.setTint(f0.e.c(context, R.color.mr_dynamic_dialog_icon_light));
+        if (length == str2.length()) {
+            while (i9 < length) {
+                char charAt = str.charAt(i9);
+                char charAt2 = str2.charAt(i9);
+                i9 = (charAt == charAt2 || ((c10 = (char) ((charAt | ' ') + (-97))) < 26 && c10 == ((char) ((charAt2 | ' ') + (-97))))) ? i9 + 1 : 0;
+            }
+            return true;
         }
-        obtainStyledAttributes.recycle();
-        return d;
+        return false;
     }
 
-    public static int e(Context context) {
-        return h(context) ? b(context) == -570425344 ? R.style.Theme_MediaRouter_Light : R.style.Theme_MediaRouter_Light_DarkControlPanel : b(context) == -570425344 ? R.style.Theme_MediaRouter_LightControlPanel : R.style.Theme_MediaRouter;
-    }
-
-    public static int f(Context context, int i10) {
-        TypedValue typedValue = new TypedValue();
-        context.getTheme().resolveAttribute(i10, typedValue, true);
-        return typedValue.resourceId != 0 ? context.getResources().getColor(typedValue.resourceId) : typedValue.data;
-    }
-
-    public static int g(Context context, int i10) {
-        TypedValue typedValue = new TypedValue();
-        if (context.getTheme().resolveAttribute(i10, typedValue, true)) {
-            return typedValue.resourceId;
+    public static String b(String str) {
+        int length = str.length();
+        int i9 = 0;
+        while (i9 < length) {
+            char charAt = str.charAt(i9);
+            if (charAt >= 'A' && charAt <= 'Z') {
+                char[] charArray = str.toCharArray();
+                while (i9 < length) {
+                    char c10 = charArray[i9];
+                    if (c10 >= 'A' && c10 <= 'Z') {
+                        charArray[i9] = (char) (c10 ^ ' ');
+                    }
+                    i9++;
+                }
+                return String.valueOf(charArray);
+            }
+            i9++;
         }
-        return 0;
+        return str;
     }
 
-    public static boolean h(Context context) {
-        TypedValue typedValue = new TypedValue();
-        return context.getTheme().resolveAttribute(R.attr.isLightTheme, typedValue, true) && typedValue.data != 0;
-    }
-
-    public static void i(Context context, ProgressBar progressBar) {
-        if (progressBar.isIndeterminate()) {
-            progressBar.getIndeterminateDrawable().setColorFilter(f0.e.c(context, h(context) ? R.color.mr_cast_progressbar_progress_and_thumb_light : R.color.mr_cast_progressbar_progress_and_thumb_dark), PorterDuff.Mode.SRC_IN);
+    public static String c(String str) {
+        int length = str.length();
+        int i9 = 0;
+        while (i9 < length) {
+            char charAt = str.charAt(i9);
+            if (charAt >= 'a' && charAt <= 'z') {
+                char[] charArray = str.toCharArray();
+                while (i9 < length) {
+                    char c10 = charArray[i9];
+                    if (c10 >= 'a' && c10 <= 'z') {
+                        charArray[i9] = (char) (c10 ^ ' ');
+                    }
+                    i9++;
+                }
+                return String.valueOf(charArray);
+            }
+            i9++;
         }
+        return str;
     }
 }

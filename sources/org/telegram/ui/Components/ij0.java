@@ -1,50 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ij0 implements d5.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wj0 b;
+public final class ij0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ uj0 b;
 
-    public /* synthetic */ ij0(wj0 wj0Var, int i10) {
-        this.a = i10;
-        this.b = wj0Var;
+    public ij0(uj0 uj0Var, float f10) {
+        this.b = uj0Var;
+        this.a = f10;
     }
 
-    @Override // d5.d
-    public final void accept(Object obj) {
-        View view = (View) obj;
-        switch (this.a) {
-            case 0:
-                wj0 wj0Var = this.b;
-                ArrayList arrayList = wj0Var.d;
-                wj0Var.b.getClass();
-                int R = RecyclerView.R(view);
-                if (R >= 0 && R < arrayList.size() && (view instanceof uj0)) {
-                    ((uj0) view).f(((nj0) arrayList.get(R)).c, true);
-                    break;
-                }
-                break;
-            default:
-                if (view instanceof uj0) {
-                    uj0 uj0Var = (uj0) view;
-                    tj0 tj0Var = uj0Var.b;
-                    uj0Var.J = false;
-                    tj0Var.setAlpha(1.0f);
-                    if (!this.b.J0) {
-                        uj0Var.d();
-                        break;
-                    } else {
-                        tj0Var.setScaleX(uj0Var.E * (uj0Var.w ? 0.76f : 1.0f));
-                        tj0Var.setScaleY(uj0Var.E * (uj0Var.w ? 0.76f : 1.0f));
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        uj0 uj0Var = this.b;
+        uj0Var.k0 = floatValue;
+        uj0Var.j0 = (1.0f - uj0Var.k0) * this.a;
+        uj0Var.invalidate();
     }
 }

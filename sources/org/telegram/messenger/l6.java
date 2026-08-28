@@ -1,55 +1,70 @@
 package org.telegram.messenger;
 
-import java.io.File;
-import java.io.Serializable;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l6 implements Runnable {
-    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Serializable n;
-    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ l6(MediaController mediaController, File file, TLRPC.TL_document tL_document, int i10, boolean z10, int i11, boolean z11, long j10) {
-        this.h = mediaController;
-        this.n = file;
-        this.r = tL_document;
-        this.c = i10;
+    public /* synthetic */ l6(Object obj, Object obj2, boolean z10, int i9) {
+        this.a = i9;
+        this.c = obj;
+        this.d = obj2;
         this.b = z10;
-        this.e = i11;
-        this.f = z11;
-        this.d = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaController) this.h).lambda$stopRecordingInternal$40((File) this.n, (TLRPC.TL_document) this.r, this.c, this.b, this.e, this.f, this.d);
+                ((MediaController.2) this.c).lambda$run$1((ByteBuffer) this.d, this.b);
+                break;
+            case 1:
+                ((FileLoader) this.c).lambda$cancelFileUpload$2(this.b, (String) this.d);
+                break;
+            case 2:
+                ((ImageLoader) this.c).lambda$cancelLoadingForImageReceiver$4(this.b, (ImageReceiver) this.d);
+                break;
+            case 3:
+                ((MediaDataController) this.c).lambda$loadBotKeyboard$196((MessagesStorage.TopicKey) this.d, this.b);
+                break;
+            case 4:
+                ((MediaDataController) this.c).lambda$buildShortcuts$143(this.b, (ArrayList) this.d);
+                break;
+            case 5:
+                ((MessagesController) this.c).lambda$processDialogsUpdate$229((TLRPC.messages_Dialogs) this.d, this.b);
+                break;
+            case 6:
+                ((MessagesStorage) this.c).lambda$updateUserInfo$130((TLRPC.UserFull) this.d, this.b);
+                break;
+            case 7:
+                ((MessagesStorage) this.c).lambda$putCachedPhoneBook$149((HashMap) this.d, this.b);
+                break;
+            case 8:
+                ((MessagesStorage) this.c).lambda$updateEncryptedChatSeq$171((TLRPC.EncryptedChat) this.d, this.b);
+                break;
+            case 9:
+                ((MessagesStorage) this.c).lambda$updateChatInfo$134((TLRPC.ChatFull) this.d, this.b);
                 break;
             default:
-                ((MessagesStorage) this.h).lambda$updatePinnedMessages$138(this.b, (HashMap) this.n, this.c, this.d, (ArrayList) this.r, this.e, this.f);
+                ((MessagesStorage) this.c).lambda$deleteEphemeralMessages$206((a0.h) this.d, this.b);
                 break;
         }
     }
 
-    public /* synthetic */ l6(MessagesStorage messagesStorage, boolean z10, HashMap hashMap, int i10, long j10, ArrayList arrayList, int i11, boolean z11) {
-        this.h = messagesStorage;
+    public /* synthetic */ l6(Object obj, boolean z10, Object obj2, int i9) {
+        this.a = i9;
+        this.c = obj;
         this.b = z10;
-        this.n = hashMap;
-        this.c = i10;
-        this.d = j10;
-        this.r = arrayList;
-        this.e = i11;
-        this.f = z11;
+        this.d = obj2;
     }
 }

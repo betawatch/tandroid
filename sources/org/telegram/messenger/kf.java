@@ -1,44 +1,43 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kf implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ kf(int i10, long j10, MessagesStorage messagesStorage) {
+    public /* synthetic */ kf(MessagesStorage messagesStorage, int i9, long j10, int i10) {
         this.a = i10;
         this.b = messagesStorage;
-        this.c = j10;
+        this.c = i9;
+        this.d = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$deleteStoryPushMessage$39(this.c);
+                this.b.lambda$saveChannelPts$34(this.c, this.d);
                 break;
             case 1:
-                this.b.lambda$clearUserPhotos$92(this.c);
+                this.b.lambda$markMessageAsMention$113(this.c, this.d);
                 break;
             case 2:
-                this.b.lambda$removeAllTopics$56(this.c);
+                this.b.lambda$setDialogPinned$251(this.c, this.d);
                 break;
             case 3:
-                this.b.lambda$deleteWallpaper$79(this.c);
+                this.b.lambda$setDialogTtl$60(this.c, this.d);
                 break;
             case 4:
-                this.b.lambda$deleteSavedDialog$55(this.c);
+                this.b.lambda$deleteDialog$90(this.c, this.d);
                 break;
             case 5:
-                this.b.lambda$onDeleteQueryComplete$91(this.c);
-                break;
-            case 6:
-                this.b.lambda$removePendingTask$11(this.c);
+                this.b.lambda$updateChatOnlineCount$135(this.c, this.d);
                 break;
             default:
-                this.b.lambda$loadChannelAdmins$123(this.c);
+                this.b.lambda$saveChatLinksCount$133(this.c, this.d);
                 break;
         }
     }

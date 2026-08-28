@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import h7.r8;
+import g7.p8;
+import j3.r0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,63 +17,63 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class l extends z5.a {
-    public static final j9.a e;
+public final class l extends y5.a {
+    public static final j4.c e;
     public final List a;
     public final Bundle b;
     public int c;
     public static final String[] d = {"none", "String", "int", "double", "ISO-8601 date String", "Time in milliseconds as long"};
-    public static final Parcelable.Creator<l> CREATOR = new w(11);
+    public static final Parcelable.Creator<l> CREATOR = new v(11);
 
     static {
-        j9.a aVar = new j9.a(13);
-        aVar.L(4, "com.google.android.gms.cast.metadata.CREATION_DATE", "creationDateTime");
-        aVar.L(4, "com.google.android.gms.cast.metadata.RELEASE_DATE", "releaseDate");
-        aVar.L(4, "com.google.android.gms.cast.metadata.BROADCAST_DATE", "originalAirdate");
-        aVar.L(1, "com.google.android.gms.cast.metadata.TITLE", "title");
-        aVar.L(1, "com.google.android.gms.cast.metadata.SUBTITLE", "subtitle");
-        aVar.L(1, "com.google.android.gms.cast.metadata.ARTIST", "artist");
-        aVar.L(1, "com.google.android.gms.cast.metadata.ALBUM_ARTIST", "albumArtist");
-        aVar.L(1, "com.google.android.gms.cast.metadata.ALBUM_TITLE", "albumName");
-        aVar.L(1, "com.google.android.gms.cast.metadata.COMPOSER", "composer");
-        aVar.L(2, "com.google.android.gms.cast.metadata.DISC_NUMBER", "discNumber");
-        aVar.L(2, "com.google.android.gms.cast.metadata.TRACK_NUMBER", "trackNumber");
-        aVar.L(2, "com.google.android.gms.cast.metadata.SEASON_NUMBER", "season");
-        aVar.L(2, "com.google.android.gms.cast.metadata.EPISODE_NUMBER", "episode");
-        aVar.L(1, "com.google.android.gms.cast.metadata.SERIES_TITLE", "seriesTitle");
-        aVar.L(1, "com.google.android.gms.cast.metadata.STUDIO", "studio");
-        aVar.L(2, "com.google.android.gms.cast.metadata.WIDTH", "width");
-        aVar.L(2, "com.google.android.gms.cast.metadata.HEIGHT", "height");
-        aVar.L(1, "com.google.android.gms.cast.metadata.LOCATION_NAME", "location");
-        aVar.L(3, "com.google.android.gms.cast.metadata.LOCATION_LATITUDE", "latitude");
-        aVar.L(3, "com.google.android.gms.cast.metadata.LOCATION_LONGITUDE", "longitude");
-        aVar.L(5, "com.google.android.gms.cast.metadata.SECTION_DURATION", "sectionDuration");
-        aVar.L(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_MEDIA", "sectionStartTimeInMedia");
-        aVar.L(5, "com.google.android.gms.cast.metadata.SECTION_START_ABSOLUTE_TIME", "sectionStartAbsoluteTime");
-        aVar.L(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_CONTAINER", "sectionStartTimeInContainer");
-        aVar.L(2, "com.google.android.gms.cast.metadata.QUEUE_ITEM_ID", "queueItemId");
-        aVar.L(1, "com.google.android.gms.cast.metadata.BOOK_TITLE", "bookTitle");
-        aVar.L(2, "com.google.android.gms.cast.metadata.CHAPTER_NUMBER", "chapterNumber");
-        aVar.L(1, "com.google.android.gms.cast.metadata.CHAPTER_TITLE", "chapterTitle");
-        e = aVar;
+        j4.c cVar = new j4.c(13);
+        cVar.J(4, "com.google.android.gms.cast.metadata.CREATION_DATE", "creationDateTime");
+        cVar.J(4, "com.google.android.gms.cast.metadata.RELEASE_DATE", "releaseDate");
+        cVar.J(4, "com.google.android.gms.cast.metadata.BROADCAST_DATE", "originalAirdate");
+        cVar.J(1, "com.google.android.gms.cast.metadata.TITLE", "title");
+        cVar.J(1, "com.google.android.gms.cast.metadata.SUBTITLE", "subtitle");
+        cVar.J(1, "com.google.android.gms.cast.metadata.ARTIST", "artist");
+        cVar.J(1, "com.google.android.gms.cast.metadata.ALBUM_ARTIST", "albumArtist");
+        cVar.J(1, "com.google.android.gms.cast.metadata.ALBUM_TITLE", "albumName");
+        cVar.J(1, "com.google.android.gms.cast.metadata.COMPOSER", "composer");
+        cVar.J(2, "com.google.android.gms.cast.metadata.DISC_NUMBER", "discNumber");
+        cVar.J(2, "com.google.android.gms.cast.metadata.TRACK_NUMBER", "trackNumber");
+        cVar.J(2, "com.google.android.gms.cast.metadata.SEASON_NUMBER", "season");
+        cVar.J(2, "com.google.android.gms.cast.metadata.EPISODE_NUMBER", "episode");
+        cVar.J(1, "com.google.android.gms.cast.metadata.SERIES_TITLE", "seriesTitle");
+        cVar.J(1, "com.google.android.gms.cast.metadata.STUDIO", "studio");
+        cVar.J(2, "com.google.android.gms.cast.metadata.WIDTH", "width");
+        cVar.J(2, "com.google.android.gms.cast.metadata.HEIGHT", "height");
+        cVar.J(1, "com.google.android.gms.cast.metadata.LOCATION_NAME", "location");
+        cVar.J(3, "com.google.android.gms.cast.metadata.LOCATION_LATITUDE", "latitude");
+        cVar.J(3, "com.google.android.gms.cast.metadata.LOCATION_LONGITUDE", "longitude");
+        cVar.J(5, "com.google.android.gms.cast.metadata.SECTION_DURATION", "sectionDuration");
+        cVar.J(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_MEDIA", "sectionStartTimeInMedia");
+        cVar.J(5, "com.google.android.gms.cast.metadata.SECTION_START_ABSOLUTE_TIME", "sectionStartAbsoluteTime");
+        cVar.J(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_CONTAINER", "sectionStartTimeInContainer");
+        cVar.J(2, "com.google.android.gms.cast.metadata.QUEUE_ITEM_ID", "queueItemId");
+        cVar.J(1, "com.google.android.gms.cast.metadata.BOOK_TITLE", "bookTitle");
+        cVar.J(2, "com.google.android.gms.cast.metadata.CHAPTER_NUMBER", "chapterNumber");
+        cVar.J(1, "com.google.android.gms.cast.metadata.CHAPTER_TITLE", "chapterTitle");
+        e = cVar;
     }
 
-    public l(ArrayList arrayList, Bundle bundle, int i10) {
+    public l(ArrayList arrayList, Bundle bundle, int i9) {
         this.a = arrayList;
         this.b = bundle;
-        this.c = i10;
+        this.c = i9;
     }
 
-    public static void c(int i10, String str) {
+    public static void c(int i9, String str) {
         if (TextUtils.isEmpty(str)) {
             throw new IllegalArgumentException("null and empty keys are not allowed");
         }
-        Integer num = (Integer) ((HashMap) e.b).get(str);
+        Integer num = (Integer) ((HashMap) e.d).get(str);
         int intValue = num != null ? num.intValue() : 0;
-        if (intValue != i10 && intValue != 0) {
-            throw new IllegalArgumentException(i0.a.n("Value for ", str, " must be a ", d[i10]));
+        if (intValue != i9 && intValue != 0) {
+            throw new IllegalArgumentException(r0.o("Value for ", str, " must be a ", d[i9]));
         }
     }
 
@@ -109,7 +110,7 @@ public final class l extends z5.a {
             jSONObject.put("metadataType", this.c);
         } catch (JSONException unused) {
         }
-        JSONArray b10 = s5.a.b(this.a);
+        JSONArray b10 = r5.a.b(this.a);
         if (b10.length() != 0) {
             try {
                 jSONObject.put("images", b10);
@@ -117,37 +118,37 @@ public final class l extends z5.a {
             }
         }
         ArrayList arrayList = new ArrayList();
-        int i10 = this.c;
-        if (i10 == 0) {
+        int i9 = this.c;
+        if (i9 == 0) {
             Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.TITLE", "com.google.android.gms.cast.metadata.ARTIST", "com.google.android.gms.cast.metadata.SUBTITLE", "com.google.android.gms.cast.metadata.RELEASE_DATE");
-        } else if (i10 == 1) {
+        } else if (i9 == 1) {
             Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.TITLE", "com.google.android.gms.cast.metadata.STUDIO", "com.google.android.gms.cast.metadata.SUBTITLE", "com.google.android.gms.cast.metadata.RELEASE_DATE");
-        } else if (i10 == 2) {
+        } else if (i9 == 2) {
             Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.TITLE", "com.google.android.gms.cast.metadata.SERIES_TITLE", "com.google.android.gms.cast.metadata.SEASON_NUMBER", "com.google.android.gms.cast.metadata.EPISODE_NUMBER", "com.google.android.gms.cast.metadata.BROADCAST_DATE");
-        } else if (i10 == 3) {
+        } else if (i9 == 3) {
             Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.TITLE", "com.google.android.gms.cast.metadata.ARTIST", "com.google.android.gms.cast.metadata.ALBUM_TITLE", "com.google.android.gms.cast.metadata.ALBUM_ARTIST", "com.google.android.gms.cast.metadata.COMPOSER", "com.google.android.gms.cast.metadata.TRACK_NUMBER", "com.google.android.gms.cast.metadata.DISC_NUMBER", "com.google.android.gms.cast.metadata.RELEASE_DATE");
-        } else if (i10 == 4) {
+        } else if (i9 == 4) {
             Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.TITLE", "com.google.android.gms.cast.metadata.ARTIST", "com.google.android.gms.cast.metadata.LOCATION_NAME", "com.google.android.gms.cast.metadata.LOCATION_LATITUDE", "com.google.android.gms.cast.metadata.LOCATION_LONGITUDE", "com.google.android.gms.cast.metadata.WIDTH", "com.google.android.gms.cast.metadata.HEIGHT", "com.google.android.gms.cast.metadata.CREATION_DATE");
-        } else if (i10 == 5) {
+        } else if (i9 == 5) {
             Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.CHAPTER_TITLE", "com.google.android.gms.cast.metadata.CHAPTER_NUMBER", "com.google.android.gms.cast.metadata.TITLE", "com.google.android.gms.cast.metadata.BOOK_TITLE", "com.google.android.gms.cast.metadata.SUBTITLE");
         }
         Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.SECTION_DURATION", "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_MEDIA", "com.google.android.gms.cast.metadata.SECTION_START_ABSOLUTE_TIME", "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_CONTAINER", "com.google.android.gms.cast.metadata.QUEUE_ITEM_ID");
         try {
             int size = arrayList.size();
-            int i11 = 0;
+            int i10 = 0;
             while (true) {
                 bundle = this.b;
-                if (i11 >= size) {
+                if (i10 >= size) {
                     break;
                 }
-                Object obj = arrayList.get(i11);
-                i11++;
+                Object obj = arrayList.get(i10);
+                i10++;
                 String str = (String) obj;
                 if (str != null && bundle.containsKey(str)) {
-                    j9.a aVar = e;
-                    String str2 = (String) ((HashMap) aVar.c).get(str);
+                    j4.c cVar = e;
+                    String str2 = (String) ((HashMap) cVar.b).get(str);
                     if (str2 != null) {
-                        Integer num = (Integer) ((HashMap) aVar.b).get(str);
+                        Integer num = (Integer) ((HashMap) cVar.d).get(str);
                         int intValue = num != null ? num.intValue() : 0;
                         if (intValue != 1) {
                             if (intValue == 2) {
@@ -157,7 +158,7 @@ public final class l extends z5.a {
                             } else if (intValue != 4) {
                                 if (intValue == 5) {
                                     long j10 = bundle.getLong(str);
-                                    Pattern pattern = r5.a.a;
+                                    Pattern pattern = q5.a.a;
                                     jSONObject.put(str2, j10 / 1000.0d);
                                 }
                             }
@@ -196,21 +197,21 @@ public final class l extends z5.a {
         }
         JSONArray optJSONArray = jSONObject.optJSONArray("images");
         if (optJSONArray != null) {
-            s5.a.c(list, optJSONArray);
+            r5.a.c(list, optJSONArray);
         }
         ArrayList arrayList = new ArrayList();
-        int i10 = this.c;
-        if (i10 == 0) {
+        int i9 = this.c;
+        if (i9 == 0) {
             Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.TITLE", "com.google.android.gms.cast.metadata.ARTIST", "com.google.android.gms.cast.metadata.SUBTITLE", "com.google.android.gms.cast.metadata.RELEASE_DATE");
-        } else if (i10 == 1) {
+        } else if (i9 == 1) {
             Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.TITLE", "com.google.android.gms.cast.metadata.STUDIO", "com.google.android.gms.cast.metadata.SUBTITLE", "com.google.android.gms.cast.metadata.RELEASE_DATE");
-        } else if (i10 == 2) {
+        } else if (i9 == 2) {
             Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.TITLE", "com.google.android.gms.cast.metadata.SERIES_TITLE", "com.google.android.gms.cast.metadata.SEASON_NUMBER", "com.google.android.gms.cast.metadata.EPISODE_NUMBER", "com.google.android.gms.cast.metadata.BROADCAST_DATE");
-        } else if (i10 == 3) {
+        } else if (i9 == 3) {
             Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.TITLE", "com.google.android.gms.cast.metadata.ALBUM_TITLE", "com.google.android.gms.cast.metadata.ARTIST", "com.google.android.gms.cast.metadata.ALBUM_ARTIST", "com.google.android.gms.cast.metadata.COMPOSER", "com.google.android.gms.cast.metadata.TRACK_NUMBER", "com.google.android.gms.cast.metadata.DISC_NUMBER", "com.google.android.gms.cast.metadata.RELEASE_DATE");
-        } else if (i10 == 4) {
+        } else if (i9 == 4) {
             Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.TITLE", "com.google.android.gms.cast.metadata.ARTIST", "com.google.android.gms.cast.metadata.LOCATION_NAME", "com.google.android.gms.cast.metadata.LOCATION_LATITUDE", "com.google.android.gms.cast.metadata.LOCATION_LONGITUDE", "com.google.android.gms.cast.metadata.WIDTH", "com.google.android.gms.cast.metadata.HEIGHT", "com.google.android.gms.cast.metadata.CREATION_DATE");
-        } else if (i10 == 5) {
+        } else if (i9 == 5) {
             Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.CHAPTER_TITLE", "com.google.android.gms.cast.metadata.CHAPTER_NUMBER", "com.google.android.gms.cast.metadata.TITLE", "com.google.android.gms.cast.metadata.BOOK_TITLE", "com.google.android.gms.cast.metadata.SUBTITLE");
         }
         Collections.addAll(arrayList, "com.google.android.gms.cast.metadata.SECTION_DURATION", "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_MEDIA", "com.google.android.gms.cast.metadata.SECTION_START_ABSOLUTE_TIME", "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_CONTAINER", "com.google.android.gms.cast.metadata.QUEUE_ITEM_ID");
@@ -220,8 +221,8 @@ public final class l extends z5.a {
             while (keys.hasNext()) {
                 String next = keys.next();
                 if (next != null && !"metadataType".equals(next)) {
-                    j9.a aVar = e;
-                    String str = (String) ((HashMap) aVar.d).get(next);
+                    j4.c cVar = e;
+                    String str = (String) ((HashMap) cVar.c).get(next);
                     if (str == null) {
                         hashSet = hashSet2;
                         Object obj = jSONObject.get(next);
@@ -236,7 +237,7 @@ public final class l extends z5.a {
                         try {
                             Object obj2 = jSONObject.get(next);
                             if (obj2 != null) {
-                                Integer num = (Integer) ((HashMap) aVar.b).get(str);
+                                Integer num = (Integer) ((HashMap) cVar.d).get(str);
                                 int intValue = num != null ? num.intValue() : 0;
                                 if (intValue == 1) {
                                     hashSet = hashSet2;
@@ -258,13 +259,13 @@ public final class l extends z5.a {
                                     hashSet = hashSet2;
                                     if (obj2 instanceof String) {
                                         String str2 = (String) obj2;
-                                        if (s5.a.a(str2) != null) {
+                                        if (r5.a.a(str2) != null) {
                                             bundle.putString(str, str2);
                                         }
                                     }
                                 } else if (intValue == 5) {
                                     long optLong = jSONObject.optLong(next);
-                                    Pattern pattern = r5.a.a;
+                                    Pattern pattern = q5.a.a;
                                     hashSet = hashSet2;
                                     try {
                                         bundle.putLong(str, optLong * 1000);
@@ -295,30 +296,30 @@ public final class l extends z5.a {
     }
 
     public final int hashCode() {
-        int i10 = 17;
+        int i9 = 17;
         Bundle bundle = this.b;
         if (bundle != null) {
             Iterator<String> it = bundle.keySet().iterator();
             while (it.hasNext()) {
                 Object obj = bundle.get(it.next());
-                i10 = (i10 * 31) + (obj != null ? obj.hashCode() : 0);
+                i9 = (i9 * 31) + (obj != null ? obj.hashCode() : 0);
             }
         }
-        return this.a.hashCode() + (i10 * 31);
+        return this.a.hashCode() + (i9 * 31);
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = r8.q(parcel, 20293);
-        r8.p(parcel, 2, this.a);
-        r8.b(parcel, 3, this.b);
-        int i11 = this.c;
-        r8.s(parcel, 4, 4);
-        parcel.writeInt(i11);
-        r8.r(parcel, q6);
+    public final void writeToParcel(Parcel parcel, int i9) {
+        int q10 = p8.q(parcel, 20293);
+        p8.p(parcel, 2, this.a);
+        p8.b(parcel, 3, this.b);
+        int i10 = this.c;
+        p8.s(parcel, 4, 4);
+        parcel.writeInt(i10);
+        p8.r(parcel, q10);
     }
 
-    public l(int i10) {
-        this(new ArrayList(), new Bundle(), i10);
+    public l(int i9) {
+        this(new ArrayList(), new Bundle(), i9);
     }
 }

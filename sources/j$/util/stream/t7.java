@@ -38,7 +38,7 @@ public final class t7 extends u7 implements j$.util.a1, LongConsumer {
     }
 
     @Override // j$.util.stream.u7
-    public final b7 e(int i10) {
-        return new a7(i10);
+    public final b7 e(int i9) {
+        return new a7(i9);
     }
 }

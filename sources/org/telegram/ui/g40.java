@@ -1,27 +1,27 @@
 package org.telegram.ui;
 
-import android.graphics.Paint;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class g40 extends Paint {
-    public final /* synthetic */ s50 a;
+public final class g40 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ o50 a;
 
-    public g40(s50 s50Var) {
-        this.a = s50Var;
+    public g40(o50 o50Var) {
+        this.a = o50Var;
     }
 
-    @Override // android.graphics.Paint
-    public final void setAlpha(int i10) {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
         ViewGroup viewGroup;
-        ViewGroup viewGroup2;
-        super.setAlpha(i10);
-        s50 s50Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.e3) s50Var).containerView;
-        if (viewGroup != null) {
-            viewGroup2 = ((org.telegram.ui.ActionBar.e3) s50Var).containerView;
-            viewGroup2.invalidate();
-        }
+        o50 o50Var = this.a;
+        o50Var.M.getViewTreeObserver().removeOnPreDrawListener(this);
+        o50Var.W1.j(null);
+        AndroidUtilities.updateVisibleRows(o50Var.i2);
+        viewGroup = ((org.telegram.ui.ActionBar.f3) o50Var).containerView;
+        viewGroup.requestLayout();
+        return false;
     }
 }

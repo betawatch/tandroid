@@ -3,21 +3,21 @@ package j3;
 import android.media.AudioAttributes;
 import android.media.AudioFormat;
 import android.media.AudioTrack;
-import h7.u6;
-import p8.x0;
+import g7.r6;
+import o8.x0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public abstract class f {
     public static final AudioAttributes a = new AudioAttributes.Builder().setUsage(1).setContentType(3).setFlags(0).build();
 
     public static int[] a() {
-        p8.x xVar = p8.z.b;
-        p8.w wVar = new p8.w();
-        p8.q0 q0Var = g.e;
-        p8.o0 o0Var = q0Var.b;
+        o8.x xVar = o8.z.b;
+        o8.w wVar = new o8.w();
+        o8.q0 q0Var = g.e;
+        o8.o0 o0Var = q0Var.b;
         if (o0Var == null) {
-            p8.o0 o0Var2 = new p8.o0(q0Var, new p8.p0(0, q0Var.f, q0Var.e));
+            o8.o0 o0Var2 = new o8.o0(q0Var, new o8.p0(0, q0Var.f, q0Var.e));
             q0Var.b = o0Var2;
             o0Var = o0Var2;
         }
@@ -29,13 +29,13 @@ public abstract class f {
             }
         }
         wVar.a(2);
-        return u6.e(wVar.c());
+        return r6.e(wVar.c());
     }
 
-    public static int b(int i10, int i11) {
-        for (int i12 = 8; i12 > 0; i12--) {
-            if (AudioTrack.isDirectPlaybackSupported(new AudioFormat.Builder().setEncoding(i10).setSampleRate(i11).setChannelMask(d5.g0.m(i12)).build(), a)) {
-                return i12;
+    public static int b(int i9, int i10) {
+        for (int i11 = 8; i11 > 0; i11--) {
+            if (AudioTrack.isDirectPlaybackSupported(new AudioFormat.Builder().setEncoding(i9).setSampleRate(i10).setChannelMask(d5.f0.m(i11)).build(), a)) {
+                return i11;
             }
         }
         return 0;

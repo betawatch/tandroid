@@ -1,68 +1,51 @@
 package yf;
 
-import android.graphics.PointF;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
+import android.graphics.drawable.Drawable;
+import kh.g4;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.ws0;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class u0 {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public double g;
-    public int h;
-    public int i;
-    public ByteBuffer j;
+public final class u0 implements xf.b1 {
+    public final /* synthetic */ v0 a;
 
-    public final boolean a(PointF pointF, float f10, float f11, float f12, int i10) {
-        if ((i10 != -1 && i10 >= this.i) || this.j.position() == this.j.limit()) {
-            d();
-            return false;
-        }
-        if (i10 != -1) {
-            this.j.position(i10 * 20);
-        }
-        this.j.putFloat(pointF.x);
-        this.j.putFloat(pointF.y);
-        this.j.putFloat(f10);
-        this.j.putFloat(f11);
-        this.j.putFloat(f12);
+    public u0(v0 v0Var) {
+        this.a = v0Var;
+    }
+
+    @Override // xf.b1
+    public final void a() {
+        v0 v0Var = this.a;
+        v0Var.e.animate().alpha(1.0f).setDuration(320L).setUpdateListener(new g4(v0Var, 19)).setInterpolator(gr.h);
+    }
+
+    @Override // xf.b1
+    public final boolean d() {
         return true;
     }
 
-    public final void b(int i10) {
-        int i11 = this.h + i10;
-        if (i11 > this.i || this.j == null) {
-            d();
-        }
-        this.h = i11;
+    @Override // xf.b1
+    public final void e() {
+        v0 v0Var = this.a;
+        v0Var.b.a.e();
+        v0Var.w.setViewHidden(false);
+        PhotoViewer photoViewer = ((ws0) v0Var).G;
+        Drawable[] drawableArr = PhotoViewer.P8;
+        photoViewer.X2(true, true);
     }
 
+    @Override // xf.b1
+    public final void f() {
+        this.a.w.setViewHidden(true);
+    }
+
+    @Override // xf.b1
+    public final /* synthetic */ void b() {
+    }
+
+    @Override // xf.b1
     public final void c() {
-        this.h = 0;
-        if (this.j != null) {
-            return;
-        }
-        this.i = 256;
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(256 * 5 * 4);
-        this.j = allocateDirect;
-        allocateDirect.order(ByteOrder.nativeOrder());
-        this.j.position(0);
-    }
-
-    public final void d() {
-        if (this.j != null) {
-            this.j = null;
-        }
-        int max = Math.max(this.i * 2, 256);
-        this.i = max;
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(max * 20);
-        this.j = allocateDirect;
-        allocateDirect.order(ByteOrder.nativeOrder());
-        this.j.position(0);
     }
 }

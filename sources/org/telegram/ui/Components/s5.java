@@ -7,7 +7,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public class s5 extends TextView {
     public int a;
@@ -52,21 +52,21 @@ public class s5 extends TextView {
     }
 
     @Override // android.widget.TextView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
+    public final void onMeasure(int i9, int i10) {
+        super.onMeasure(i9, i10);
         this.c = t5.update(this.a, this, this.c, getLayout());
     }
 
-    public void setCacheType(int i10) {
-        if (this.a == i10) {
+    public void setCacheType(int i9) {
+        if (this.a == i9) {
             return;
         }
-        this.a = i10;
-        this.c = t5.update(i10, this, this.c, getLayout());
+        this.a = i9;
+        this.c = t5.update(i9, this, this.c, getLayout());
     }
 
-    public void setEmojiColor(int i10) {
-        this.b = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
+    public void setEmojiColor(int i9) {
+        this.b = new PorterDuffColorFilter(i9, PorterDuff.Mode.SRC_IN);
     }
 
     @Override // android.widget.TextView

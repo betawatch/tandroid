@@ -1,18 +1,18 @@
 package m1;
 
-import ad.l;
 import android.content.Context;
-import qc.o;
+import pc.o;
+import zc.l;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class a extends kotlin.jvm.internal.k implements l {
+public final class a extends kotlin.jvm.internal.j implements l {
     public static final a b = new a(1);
 
-    @Override // ad.l
+    @Override // zc.l
     public final Object invoke(Object obj) {
         Context it = (Context) obj;
-        kotlin.jvm.internal.j.e(it, "it");
+        kotlin.jvm.internal.i.e(it, "it");
         return o.a;
     }
 }

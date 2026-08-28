@@ -19,14 +19,14 @@ import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class l extends s {
     public final f A;
     public ArrayList B;
     public final ArrayMap C;
     public final MediaRouter2 r;
-    public final ae.b s;
+    public final fa.c s;
     public final ArrayMap v;
     public final MediaRouter2.RouteCallback w;
     public final k x;
@@ -36,7 +36,7 @@ public final class l extends s {
         Log.isLoggable("MR2Provider", 3);
     }
 
-    public l(Context context, ae.b bVar) {
+    public l(Context context, fa.c cVar) {
         super(context, null);
         this.v = new ArrayMap();
         this.x = new k(this);
@@ -44,7 +44,7 @@ public final class l extends s {
         this.B = new ArrayList();
         this.C = new ArrayMap();
         this.r = MediaRouter2.getInstance(context);
-        this.s = bVar;
+        this.s = cVar;
         this.A = new f(new Handler(Looper.getMainLooper()), 0);
         if (Build.VERSION.SDK_INT >= 34) {
             this.w = new j(this, 1);
@@ -101,22 +101,22 @@ public final class l extends s {
     @Override // c2.s
     public final void f(o oVar) {
         ArrayList<String> arrayList;
-        u uVar;
+        v vVar;
         RouteDiscoveryPreference build;
         String str;
-        int i10 = b0.c == null ? 0 : b0.c().B;
+        int i9 = c0.c == null ? 0 : c0.c().B;
         g gVar = this.y;
         k kVar = this.x;
-        if (i10 <= 0) {
+        if (i9 <= 0) {
             this.r.unregisterRouteCallback(this.w);
             this.r.unregisterTransferCallback(kVar);
             this.r.unregisterControllerCallback(gVar);
             return;
         }
-        e0 e0Var = b0.c().u;
-        boolean z10 = e0Var == null ? false : e0Var.d;
+        f0 f0Var = c0.c().u;
+        boolean z10 = f0Var == null ? false : f0Var.d;
         if (oVar == null) {
-            oVar = new o(u.c, false);
+            oVar = new o(v.c, false);
         }
         oVar.a();
         ArrayList c10 = oVar.b.c();
@@ -130,10 +130,10 @@ public final class l extends s {
         } else {
             int size = c10.size();
             arrayList = null;
-            int i11 = 0;
-            while (i11 < size) {
-                Object obj = c10.get(i11);
-                i11++;
+            int i10 = 0;
+            while (i10 < size) {
+                Object obj = c10.get(i10);
+                i10++;
                 String str2 = (String) obj;
                 if (str2 == null) {
                     throw new IllegalArgumentException("category must not be null");
@@ -147,33 +147,33 @@ public final class l extends s {
             }
         }
         if (arrayList == null) {
-            uVar = u.c;
+            vVar = v.c;
         } else {
             Bundle bundle = new Bundle();
             bundle.putStringArrayList("controlCategories", arrayList);
-            uVar = new u(bundle, arrayList);
+            vVar = new v(bundle, arrayList);
         }
         boolean b10 = oVar.b();
-        if (uVar == null) {
+        if (vVar == null) {
             throw new IllegalArgumentException("selector must not be null");
         }
         Bundle bundle2 = new Bundle();
-        bundle2.putBundle("selector", uVar.a);
+        bundle2.putBundle("selector", vVar.a);
         bundle2.putBoolean("activeScan", b10);
         MediaRouter2 mediaRouter2 = this.r;
         MediaRouter2.RouteCallback routeCallback = this.w;
-        uVar.a();
-        if (uVar.b.contains(null)) {
+        vVar.a();
+        if (vVar.b.contains(null)) {
             build = new RouteDiscoveryPreference.Builder(new ArrayList(), false).build();
         } else {
             boolean z11 = bundle2.getBoolean("activeScan");
             ArrayList arrayList2 = new ArrayList();
-            ArrayList c11 = uVar.c();
+            ArrayList c11 = vVar.c();
             int size2 = c11.size();
-            int i12 = 0;
-            while (i12 < size2) {
-                Object obj2 = c11.get(i12);
-                i12++;
+            int i11 = 0;
+            while (i11 < size2) {
+                Object obj2 = c11.get(i11);
+                i11++;
                 str = (String) obj2;
                 str.getClass();
                 switch (str) {
@@ -203,13 +203,13 @@ public final class l extends s {
         }
         ArrayList arrayList = this.B;
         int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            MediaRoute2Info d = a9.m.d(obj);
-            if (TextUtils.equals(d.getId(), str)) {
-                return d;
+        int i9 = 0;
+        while (i9 < size) {
+            Object obj = arrayList.get(i9);
+            i9++;
+            MediaRoute2Info h = a9.b.h(obj);
+            if (TextUtils.equals(h.getId(), str)) {
+                return h;
             }
         }
         return null;
@@ -220,10 +220,10 @@ public final class l extends s {
         ArraySet arraySet = new ArraySet();
         Iterator<MediaRoute2Info> it = this.r.getRoutes().iterator();
         while (it.hasNext()) {
-            MediaRoute2Info d = a9.m.d(it.next());
-            if (d != null && !arraySet.contains(d) && !d.isSystemRoute()) {
-                arraySet.add(d);
-                arrayList.add(d);
+            MediaRoute2Info h = a9.b.h(it.next());
+            if (h != null && !arraySet.contains(h) && !h.isSystemRoute()) {
+                arraySet.add(h);
+                arrayList.add(h);
             }
         }
         if (arrayList.equals(this.B)) {
@@ -234,38 +234,38 @@ public final class l extends s {
         arrayMap.clear();
         ArrayList arrayList2 = this.B;
         int size = arrayList2.size();
+        int i9 = 0;
         int i10 = 0;
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList2.get(i11);
-            i11++;
-            MediaRoute2Info d10 = a9.m.d(obj);
-            Bundle extras = d10.getExtras();
+        while (i10 < size) {
+            Object obj = arrayList2.get(i10);
+            i10++;
+            MediaRoute2Info h10 = a9.b.h(obj);
+            Bundle extras = h10.getExtras();
             if (extras == null || extras.getString("androidx.mediarouter.media.KEY_ORIGINAL_ROUTE_ID") == null) {
-                Log.w("MR2Provider", "Cannot find the original route Id. route=" + d10);
+                Log.w("MR2Provider", "Cannot find the original route Id. route=" + h10);
             } else {
-                arrayMap.put(d10.getId(), extras.getString("androidx.mediarouter.media.KEY_ORIGINAL_ROUTE_ID"));
+                arrayMap.put(h10.getId(), extras.getString("androidx.mediarouter.media.KEY_ORIGINAL_ROUTE_ID"));
             }
         }
         ArrayList arrayList3 = new ArrayList();
         ArrayList arrayList4 = this.B;
         int size2 = arrayList4.size();
-        int i12 = 0;
-        while (i12 < size2) {
-            Object obj2 = arrayList4.get(i12);
-            i12++;
-            MediaRoute2Info d11 = a9.m.d(obj2);
-            n v = g0.f.v(d11);
-            if (d11 != null) {
+        int i11 = 0;
+        while (i11 < size2) {
+            Object obj2 = arrayList4.get(i11);
+            i11++;
+            MediaRoute2Info h11 = a9.b.h(obj2);
+            n v = g0.f.v(h11);
+            if (h11 != null) {
                 arrayList3.add(v);
             }
         }
         ArrayList arrayList5 = new ArrayList();
         if (!arrayList3.isEmpty()) {
             int size3 = arrayList3.size();
-            while (i10 < size3) {
-                Object obj3 = arrayList3.get(i10);
-                i10++;
+            while (i9 < size3) {
+                Object obj3 = arrayList3.get(i9);
+                i9++;
                 n nVar = (n) obj3;
                 if (nVar == null) {
                     throw new IllegalArgumentException("route must not be null");
@@ -292,8 +292,8 @@ public final class l extends s {
             return;
         }
         ArrayList h = g0.f.h(selectedRoutes);
-        int i10 = 0;
-        n v = g0.f.v(a9.m.d(selectedRoutes.get(0)));
+        int i9 = 0;
+        n v = g0.f.v(a9.b.h(selectedRoutes.get(0)));
         Bundle controlHints = routingController.getControlHints();
         String string = this.a.getString(R.string.mr_dialog_default_group_name);
         n nVar = null;
@@ -307,8 +307,8 @@ public final class l extends s {
                 if (bundle != null) {
                     nVar = new n(bundle);
                 }
-            } catch (Exception e9) {
-                Log.w("MR2Provider", "Exception while unparceling control hints.", e9);
+            } catch (Exception e10) {
+                Log.w("MR2Provider", "Exception while unparceling control hints.", e10);
             }
         }
         if (nVar == null) {
@@ -330,9 +330,9 @@ public final class l extends s {
         arrayList.clear();
         if (!h.isEmpty()) {
             int size = h.size();
-            while (i10 < size) {
-                Object obj = h.get(i10);
-                i10++;
+            while (i9 < size) {
+                Object obj = h.get(i9);
+                i9++;
                 String str = (String) obj;
                 if (TextUtils.isEmpty(str)) {
                     throw new IllegalArgumentException("groupMemberId must not be empty");
@@ -363,9 +363,9 @@ public final class l extends s {
     }
 
     public final void s(String str) {
-        MediaRoute2Info o10 = o(str);
-        if (o10 != null) {
-            this.r.transferTo(o10);
+        MediaRoute2Info o6 = o(str);
+        if (o6 != null) {
+            this.r.transferTo(o6);
             return;
         }
         Log.w("MR2Provider", "transferTo: Specified route not found. routeId=" + str);

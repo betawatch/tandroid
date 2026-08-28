@@ -14,10 +14,10 @@ import android.graphics.drawable.InsetDrawable;
 import android.graphics.drawable.RippleDrawable;
 import android.os.Build;
 import android.util.Log;
-import g7.k8;
+import f7.q8;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class d extends Drawable implements Drawable.Callback, c, b {
     public static final PorterDuff.Mode h = PorterDuff.Mode.SRC_IN;
@@ -33,8 +33,8 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
         if (n == null) {
             try {
                 n = Drawable.class.getDeclaredMethod("isProjected", null);
-            } catch (Exception e9) {
-                Log.w("WrappedDrawableApi21", "Failed to retrieve Drawable#isProjected() method", e9);
+            } catch (Exception e10) {
+                Log.w("WrappedDrawableApi21", "Failed to retrieve Drawable#isProjected() method", e10);
             }
         }
     }
@@ -70,8 +70,8 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
         this.f.draw(canvas);
     }
 
-    public final void e(int i10) {
-        setTintList(ColorStateList.valueOf(i10));
+    public final void e(int i9) {
+        setTintList(ColorStateList.valueOf(i9));
     }
 
     public final void f(ColorStateList colorStateList) {
@@ -123,7 +123,7 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
 
     @Override // android.graphics.drawable.Drawable
     public final int getLayoutDirection() {
-        return k8.a(this.f);
+        return q8.a(this.f);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -222,8 +222,8 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
         }
         try {
             return ((Boolean) method.invoke(drawable, null)).booleanValue();
-        } catch (Exception e9) {
-            Log.w("WrappedDrawableApi21", "Error calling Drawable#isProjected() method", e9);
+        } catch (Exception e10) {
+            Log.w("WrappedDrawableApi21", "Error calling Drawable#isProjected() method", e10);
             return false;
         }
     }
@@ -267,13 +267,13 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final boolean onLayoutDirectionChanged(int i10) {
-        return k8.b(i10, this.f);
+    public final boolean onLayoutDirectionChanged(int i9) {
+        return q8.b(i9, this.f);
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final boolean onLevelChange(int i10) {
-        return this.f.setLevel(i10);
+    public final boolean onLevelChange(int i9) {
+        return this.f.setLevel(i9);
     }
 
     @Override // android.graphics.drawable.Drawable.Callback
@@ -282,8 +282,8 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.f.setAlpha(i10);
+    public final void setAlpha(int i9) {
+        this.f.setAlpha(i9);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -292,8 +292,8 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setChangingConfigurations(int i10) {
-        this.f.setChangingConfigurations(i10);
+    public final void setChangingConfigurations(int i9) {
+        this.f.setChangingConfigurations(i9);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -317,8 +317,8 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setHotspotBounds(int i10, int i11, int i12, int i13) {
-        this.f.setHotspotBounds(i10, i11, i12, i13);
+    public final void setHotspotBounds(int i9, int i10, int i11, int i12) {
+        this.f.setHotspotBounds(i9, i10, i11, i12);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -331,11 +331,11 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setTint(int i10) {
+    public final void setTint(int i9) {
         if (b()) {
-            e(i10);
+            e(i9);
         } else {
-            this.f.setTint(i10);
+            this.f.setTint(i9);
         }
     }
 

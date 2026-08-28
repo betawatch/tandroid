@@ -10,22 +10,22 @@ public final class z6 extends b7 implements IntConsumer {
         return j$.com.android.tools.r8.a.c(this, intConsumer);
     }
 
-    public z6(int i10) {
-        this.c = new int[i10];
+    public z6(int i9) {
+        this.c = new int[i9];
     }
 
     @Override // j$.util.stream.b7
     public final void a(Object obj, long j10) {
         IntConsumer intConsumer = (IntConsumer) obj;
-        for (int i10 = 0; i10 < j10; i10++) {
-            intConsumer.accept(this.c[i10]);
+        for (int i9 = 0; i9 < j10; i9++) {
+            intConsumer.accept(this.c[i9]);
         }
     }
 
     @Override // java.util.function.IntConsumer
-    public final void accept(int i10) {
-        int i11 = this.b;
-        this.b = i11 + 1;
-        this.c[i11] = i10;
+    public final void accept(int i9) {
+        int i10 = this.b;
+        this.b = i10 + 1;
+        this.c[i10] = i9;
     }
 }

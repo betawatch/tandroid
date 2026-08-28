@@ -3,41 +3,41 @@ package org.telegram.ui;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class uy0 implements aq {
+public final class uy0 implements yp {
     public final /* synthetic */ int a;
     public final /* synthetic */ TLRPC.ChatParticipant b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ boolean[] d;
     public final /* synthetic */ ProfileActivity e;
 
-    public uy0(ProfileActivity profileActivity, int i10, TLRPC.ChatParticipant chatParticipant, boolean z10, boolean[] zArr) {
+    public uy0(ProfileActivity profileActivity, int i9, TLRPC.ChatParticipant chatParticipant, boolean z10, boolean[] zArr) {
         this.e = profileActivity;
-        this.a = i10;
+        this.a = i9;
         this.b = chatParticipant;
         this.c = z10;
         this.d = zArr;
     }
 
-    @Override // org.telegram.ui.aq
+    @Override // org.telegram.ui.yp
     public final void a(TLRPC.User user) {
         ProfileActivity profileActivity = this.e;
         profileActivity.I.m(-profileActivity.b1, user, profileActivity.A2.megagroup ? 10 : 9);
     }
 
-    @Override // org.telegram.ui.aq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+    @Override // org.telegram.ui.yp
+    public final void b(int i9, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
         TLRPC.ChatFull chatFull;
         boolean z10;
-        int i11 = 0;
+        int i10 = 0;
         TLRPC.ChatParticipant chatParticipant = this.b;
         ProfileActivity profileActivity = this.e;
-        int i12 = this.a;
-        if (i12 == 0) {
+        int i11 = this.a;
+        if (i11 == 0) {
             if (chatParticipant instanceof TLRPC.TL_chatChannelParticipant) {
                 TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = (TLRPC.TL_chatChannelParticipant) chatParticipant;
-                if (i10 == 1) {
+                if (i9 == 1) {
                     TLRPC.TL_channelParticipantAdmin tL_channelParticipantAdmin = new TLRPC.TL_channelParticipantAdmin();
                     tL_chatChannelParticipant.channelParticipant = tL_channelParticipantAdmin;
                     tL_channelParticipantAdmin.flags |= 4;
@@ -53,7 +53,7 @@ public final class uy0 implements aq {
                 channelParticipant.admin_rights = tL_chatAdminRights;
                 channelParticipant.rank = str;
             } else if (chatParticipant != null) {
-                TLRPC.ChatParticipant tL_chatParticipantAdmin = i10 == 1 ? new TLRPC.TL_chatParticipantAdmin() : new TLRPC.TL_chatParticipant();
+                TLRPC.ChatParticipant tL_chatParticipantAdmin = i9 == 1 ? new TLRPC.TL_chatParticipantAdmin() : new TLRPC.TL_chatParticipant();
                 tL_chatParticipantAdmin.user_id = chatParticipant.user_id;
                 tL_chatParticipantAdmin.date = chatParticipant.date;
                 tL_chatParticipantAdmin.inviter_id = chatParticipant.inviter_id;
@@ -62,41 +62,41 @@ public final class uy0 implements aq {
                     profileActivity.q2.participants.participants.set(indexOf, tL_chatParticipantAdmin);
                 }
             }
-            if (i10 != 1 || this.c) {
+            if (i9 != 1 || this.c) {
                 return;
             }
             this.d[0] = true;
             return;
         }
-        if (i12 == 1 && i10 == 0 && profileActivity.A2.megagroup && (chatFull = profileActivity.q2) != null && chatFull.participants != null) {
-            int i13 = 0;
+        if (i11 == 1 && i9 == 0 && profileActivity.A2.megagroup && (chatFull = profileActivity.q2) != null && chatFull.participants != null) {
+            int i12 = 0;
             while (true) {
-                if (i13 >= profileActivity.q2.participants.participants.size()) {
+                if (i12 >= profileActivity.q2.participants.participants.size()) {
                     z10 = false;
                     break;
                 } else {
-                    if (MessageObject.getPeerId(((TLRPC.TL_chatChannelParticipant) profileActivity.q2.participants.participants.get(i13)).channelParticipant.peer) == chatParticipant.user_id) {
+                    if (MessageObject.getPeerId(((TLRPC.TL_chatChannelParticipant) profileActivity.q2.participants.participants.get(i12)).channelParticipant.peer) == chatParticipant.user_id) {
                         TLRPC.ChatFull chatFull2 = profileActivity.q2;
                         chatFull2.participants_count--;
-                        chatFull2.participants.participants.remove(i13);
+                        chatFull2.participants.participants.remove(i12);
                         z10 = true;
                         break;
                     }
-                    i13++;
+                    i12++;
                 }
             }
             TLRPC.ChatFull chatFull3 = profileActivity.q2;
             if (chatFull3 != null && chatFull3.participants != null) {
                 while (true) {
-                    if (i11 >= profileActivity.q2.participants.participants.size()) {
+                    if (i10 >= profileActivity.q2.participants.participants.size()) {
                         break;
                     }
-                    if (profileActivity.q2.participants.participants.get(i11).user_id == chatParticipant.user_id) {
-                        profileActivity.q2.participants.participants.remove(i11);
+                    if (profileActivity.q2.participants.participants.get(i10).user_id == chatParticipant.user_id) {
+                        profileActivity.q2.participants.participants.remove(i10);
                         z10 = true;
                         break;
                     }
-                    i11++;
+                    i10++;
                 }
             }
             if (z10) {

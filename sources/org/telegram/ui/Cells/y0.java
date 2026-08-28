@@ -1,47 +1,77 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.view.View;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.RectF;
+import android.text.TextPaint;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
 public final class y0 extends FrameLayout {
-    public final ag.y1 a;
-    public final org.telegram.ui.ActionBar.c6 b;
-    public float c;
-    public int d;
+    public x0 a;
+    public boolean b;
+    public RectF c;
+    public TextPaint d;
 
-    public y0(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        this.b = c6Var;
-        ag.y1 y1Var = new ag.y1(this, context);
-        this.a = y1Var;
-        y1Var.setWillNotDraw(false);
-        addView(y1Var, h7.z5.e(36, 36, 17));
-        RadialProgressView radialProgressView = new RadialProgressView(context, c6Var);
-        radialProgressView.setSize(AndroidUtilities.dp(28.0f));
-        radialProgressView.setProgressColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.ic, c6Var));
-        y1Var.addView(radialProgressView, h7.z5.e(32, 32, 17));
-    }
-
-    public final void a(float f10, int i10) {
-        if (this.c != f10) {
-            invalidate();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        TextPaint textPaint = this.d;
+        int w02 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.M6, false);
+        int red = Color.red(w02);
+        int green = Color.green(w02);
+        int blue = Color.blue(w02);
+        x0 x0Var = this.a;
+        x0Var.b(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.g7, false), org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.h7, false));
+        RectF rectF = this.c;
+        rectF.set(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), getMeasuredWidth() - AndroidUtilities.dp(1.0f), AndroidUtilities.dp(73.0f));
+        org.telegram.ui.ActionBar.f6.X1.setColor(Color.argb((int) (x0Var.getProgress() * 43.0f), red, green, blue));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), org.telegram.ui.ActionBar.f6.X1);
+        rectF.set(0.0f, 0.0f, getMeasuredWidth(), AndroidUtilities.dp(74.0f));
+        org.telegram.ui.ActionBar.f6.t0.setColor(Color.argb((int) ((1.0f - x0Var.getProgress()) * 31.0f), red, green, blue));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), org.telegram.ui.ActionBar.f6.t0);
+        boolean z10 = this.b;
+        String string = LocaleController.getString(z10 ? R.string.ChatListExpanded : R.string.ChatListDefault);
+        int ceil = (int) Math.ceil(textPaint.measureText(string));
+        textPaint.setColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.G6, false));
+        int measuredWidth = getMeasuredWidth() - ceil;
+        canvas.drawText(string, measuredWidth / 2, AndroidUtilities.dp(96.0f), textPaint);
+        int i9 = 0;
+        for (int i10 = 2; i9 < i10; i10 = 2) {
+            int dp = AndroidUtilities.dp(i9 == 0 ? 21.0f : 53.0f);
+            org.telegram.ui.ActionBar.f6.t0.setColor(Color.argb(i9 == 0 ? 204 : 90, red, green, blue));
+            canvas.drawCircle(AndroidUtilities.dp(22.0f), dp, AndroidUtilities.dp(11.0f), org.telegram.ui.ActionBar.f6.t0);
+            int i11 = 0;
+            while (true) {
+                if (i11 < (z10 ? 3 : 2)) {
+                    org.telegram.ui.ActionBar.f6.t0.setColor(Color.argb(i11 == 0 ? 204 : 90, red, green, blue));
+                    if (z10) {
+                        float f10 = i11 * 7;
+                        rectF.set(AndroidUtilities.dp(41.0f), dp - AndroidUtilities.dp(8.3f - f10), getMeasuredWidth() - AndroidUtilities.dp(i11 != 0 ? 48.0f : 72.0f), dp - AndroidUtilities.dp(5.3f - f10));
+                        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(1.5f), AndroidUtilities.dpf2(1.5f), org.telegram.ui.ActionBar.f6.t0);
+                    } else {
+                        int i12 = i11 * 10;
+                        rectF.set(AndroidUtilities.dp(41.0f), dp - AndroidUtilities.dp(7 - i12), getMeasuredWidth() - AndroidUtilities.dp(i11 != 0 ? 48.0f : 72.0f), dp - AndroidUtilities.dp(3 - i12));
+                        canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), org.telegram.ui.ActionBar.f6.t0);
+                    }
+                    i11++;
+                }
+            }
+            i9++;
         }
-        this.c = f10;
-        this.d = i10;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
-    }
-
-    public void setProgressVisible(boolean z10) {
-        this.a.setVisibility(z10 ? 0 : 4);
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName(RadioButton.class.getName());
+        accessibilityNodeInfo.setChecked(this.a.f);
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setContentDescription(LocaleController.getString(this.b ? R.string.ChatListExpanded : R.string.ChatListDefault));
     }
 }

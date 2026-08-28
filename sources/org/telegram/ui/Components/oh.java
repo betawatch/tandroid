@@ -1,108 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.text.style.ImageSpan;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes3.dex */
-public final class oh implements TextWatcher {
-    public boolean a;
-    public boolean b;
-    public final /* synthetic */ gi c;
+public final class oh extends View {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ki b;
 
-    public oh(gi giVar) {
-        this.c = giVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ oh(ki kiVar, Context context, int i9) {
+        super(context);
+        this.a = i9;
+        this.b = kiVar;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        boolean z10;
-        int i10;
-        gi giVar = this.c;
-        j6 j6Var = giVar.v;
-        mh mhVar = giVar.A0;
-        j6 j6Var2 = giVar.s;
-        if (this.b != TextUtils.isEmpty(editable)) {
-            yh yhVar = giVar.u0;
-            if (yhVar != null) {
-                yhVar.C(yhVar.getSelectedItemsCount());
-            }
-            this.b = !this.b;
-        }
-        boolean z11 = false;
-        if (this.a) {
-            for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
-                editable.removeSpan(imageSpan);
-            }
-            Emoji.replaceEmoji(editable, mhVar.getEditText().getPaint().getFontMetricsInt(), false);
-            this.a = false;
-        }
-        int codePointCount = Character.codePointCount(editable, 0, editable.length());
-        giVar.H = codePointCount;
-        giVar.e.a(codePointCount > 0, true);
-        int i11 = giVar.G;
-        if (i11 <= 0 || (i10 = i11 - giVar.H) > 100) {
-            j6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.am(this, 12));
-            j6Var.setAlpha(0.0f);
-            z10 = true;
-        } else {
-            if (i10 < -9999) {
-                i10 = -9999;
-            }
-            long j10 = i10;
-            j6Var2.c(LocaleController.formatNumber(j10, ','), j6Var2.getVisibility() == 0, true);
-            if (j6Var2.getVisibility() != 0) {
-                j6Var2.setVisibility(0);
-                j6Var2.setAlpha(0.0f);
-                j6Var2.setScaleX(0.5f);
-                j6Var2.setScaleY(0.5f);
-            }
-            j6Var2.animate().setListener(null).cancel();
-            j6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
-            if (i10 < 0) {
-                j6Var2.setTextColor(giVar.getThemedColor(org.telegram.ui.ActionBar.g6.p7));
-                z10 = false;
-            } else {
-                j6Var2.setTextColor(giVar.getThemedColor(org.telegram.ui.ActionBar.g6.y6));
-                z10 = true;
-            }
-            j6Var.c(LocaleController.formatNumber(j10, ','), false, true);
-            j6Var.setAlpha(1.0f);
-        }
-        if (giVar.Q0 != z10) {
-            giVar.Q0 = z10;
-            giVar.E0.invalidate();
-        }
-        if (!giVar.Y) {
-            if (mhVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(mhVar.getText().toString().trim())) {
-                z11 = true;
-            }
-            giVar.M1(z11);
-        }
-        giVar.d1(true);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        if (i12 - i11 >= 1) {
-            this.a = true;
-        }
-        gi giVar = this.c;
-        if (giVar.x2 == null) {
-            gi.Q(giVar);
-        }
-        if (giVar.x2.getAdapter() != null) {
-            giVar.x2.setReversed(false);
-            giVar.x2.getAdapter().U(charSequence, giVar.A0.getEditText().getSelectionStart(), null, false, false);
-            giVar.U1();
+    @Override // android.view.View
+    public void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                super.draw(canvas);
+                this.b.X.draw(canvas);
+                break;
+            default:
+                super.draw(canvas);
+                break;
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                ki kiVar = this.b;
+                String format = String.format("%d", Integer.valueOf(Math.max(1, kiVar.u0.getSelectedItemsCount())));
+                int max = Math.max(AndroidUtilities.dp(16.0f) + ((int) Math.ceil(kiVar.F0.measureText(format))), AndroidUtilities.dp(24.0f));
+                int measuredWidth = getMeasuredWidth() / 2;
+                kiVar.F0.setColor(i0.a.k(kiVar.getThemedColor(org.telegram.ui.ActionBar.f6.C5), (int) (((kiVar.R0 * 0.42d) + 0.58d) * Color.alpha(r5))));
+                kiVar.H0.setColor(kiVar.getThemedColor(org.telegram.ui.ActionBar.f6.h5));
+                int i9 = max / 2;
+                kiVar.G0.set(measuredWidth - i9, 0.0f, i9 + measuredWidth, getMeasuredHeight());
+                canvas.drawRoundRect(kiVar.G0, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), kiVar.H0);
+                kiVar.H0.setColor(kiVar.getThemedColor(org.telegram.ui.ActionBar.f6.W9));
+                kiVar.G0.set(AndroidUtilities.dp(2.0f) + r6, AndroidUtilities.dp(2.0f), r3 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
+                canvas.drawRoundRect(kiVar.G0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), kiVar.H0);
+                canvas.drawText(format, measuredWidth - (r2 / 2), AndroidUtilities.dp(16.2f), kiVar.F0);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onSizeChanged(int i9, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                super.onSizeChanged(i9, i10, i11, i12);
+                this.b.X.setBounds(0, (i10 - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(48.0f), i9, i10);
+                break;
+            default:
+                super.onSizeChanged(i9, i10, i11, i12);
+                break;
+        }
     }
 }

@@ -1,124 +1,157 @@
 package o0;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.graphics.Typeface;
-import android.os.Build;
-import android.os.Trace;
-import g7.l8;
-import g7.x7;
+import d5.y;
+import h3.s0;
+import h3.t0;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import w3.a0;
+import w3.e0;
+import w3.m;
+import w3.p;
+import w3.r;
+import w3.s;
+import w3.t;
+import w3.u;
+import w3.z;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class h {
-    public static final a0.j a = new a0.j(16);
-    public static final ThreadPoolExecutor b;
-    public static final Object c;
-    public static final a0.k d;
+public final class h {
+    public final int a;
+    public final List b;
 
-    static {
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 10000, TimeUnit.MILLISECONDS, new LinkedBlockingDeque(), new l());
-        threadPoolExecutor.allowCoreThreadTimeOut(true);
-        b = threadPoolExecutor;
-        c = new Object();
-        d = new a0.k(0);
+    public h(int i9, List list) {
+        this.a = i9;
+        this.b = list;
     }
 
-    public static String a(int i10, List list) {
-        StringBuilder sb2 = new StringBuilder();
-        for (int i11 = 0; i11 < list.size(); i11++) {
-            sb2.append(((e) list.get(i11)).e);
-            sb2.append("-");
-            sb2.append(i10);
-            if (i11 < list.size() - 1) {
-                sb2.append(";");
+    public e0 a(int i9, t5.c cVar) {
+        String str = (String) cVar.c;
+        if (i9 != 2) {
+            if (i9 == 3 || i9 == 4) {
+                return new u(new t(str));
             }
+            if (i9 == 21) {
+                return new u(new w3.g());
+            }
+            if (i9 == 27) {
+                if (c(4)) {
+                    return null;
+                }
+                return new u(new p(new a0(0, b(cVar)), c(1), c(8)));
+            }
+            if (i9 == 36) {
+                return new u(new r(new a0(0, b(cVar))));
+            }
+            if (i9 == 89) {
+                return new u(new w3.g((List) cVar.b));
+            }
+            if (i9 != 138) {
+                if (i9 == 172) {
+                    return new u(new w3.b(str, 1));
+                }
+                if (i9 == 257) {
+                    return new z(new t5.c("application/vnd.dvb.ait", 6));
+                }
+                if (i9 == 134) {
+                    if (c(16)) {
+                        return null;
+                    }
+                    return new z(new t5.c("application/x-scte35", 6));
+                }
+                if (i9 != 135) {
+                    switch (i9) {
+                        case 15:
+                            if (c(2)) {
+                                return null;
+                            }
+                            return new u(new w3.e(str, false));
+                        case 16:
+                            return new u(new m(new a0(1, b(cVar))));
+                        case 17:
+                            if (c(2)) {
+                                return null;
+                            }
+                            return new u(new s(str));
+                        default:
+                            switch (i9) {
+                                case 128:
+                                    break;
+                                case 129:
+                                    break;
+                                case 130:
+                                    if (!c(64)) {
+                                        return null;
+                                    }
+                                    break;
+                                default:
+                                    return null;
+                            }
+                    }
+                }
+                return new u(new w3.b(str, 0));
+            }
+            return new u(new w3.f(str));
         }
-        return sb2.toString();
+        return new u(new w3.j(new a0(1, b(cVar))));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x004e A[Catch: all -> 0x00b5, TRY_LEAVE, TryCatch #1 {all -> 0x00b5, all -> 0x0074, all -> 0x00a6, NameNotFoundException -> 0x00ab, blocks: (B:3:0x0007, B:5:0x000f, B:10:0x0018, B:11:0x001c, B:16:0x004e, B:19:0x0057, B:21:0x005d, B:23:0x0063, B:26:0x0070, B:28:0x0091, B:31:0x009d, B:36:0x0075, B:37:0x0078, B:38:0x0079, B:41:0x008c, B:44:0x00a7, B:45:0x00aa, B:47:0x002b, B:49:0x0033, B:52:0x0037, B:54:0x003b, B:56:0x0046, B:65:0x00ab, B:25:0x006a, B:40:0x0086), top: B:2:0x0007 }] */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0057 A[Catch: all -> 0x00b5, TRY_ENTER, TryCatch #1 {all -> 0x00b5, all -> 0x0074, all -> 0x00a6, NameNotFoundException -> 0x00ab, blocks: (B:3:0x0007, B:5:0x000f, B:10:0x0018, B:11:0x001c, B:16:0x004e, B:19:0x0057, B:21:0x005d, B:23:0x0063, B:26:0x0070, B:28:0x0091, B:31:0x009d, B:36:0x0075, B:37:0x0078, B:38:0x0079, B:41:0x008c, B:44:0x00a7, B:45:0x00aa, B:47:0x002b, B:49:0x0033, B:52:0x0037, B:54:0x003b, B:56:0x0046, B:65:0x00ab, B:25:0x006a, B:40:0x0086), top: B:2:0x0007 }] */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0091 A[Catch: all -> 0x00b5, TRY_LEAVE, TryCatch #1 {all -> 0x00b5, all -> 0x0074, all -> 0x00a6, NameNotFoundException -> 0x00ab, blocks: (B:3:0x0007, B:5:0x000f, B:10:0x0018, B:11:0x001c, B:16:0x004e, B:19:0x0057, B:21:0x005d, B:23:0x0063, B:26:0x0070, B:28:0x0091, B:31:0x009d, B:36:0x0075, B:37:0x0078, B:38:0x0079, B:41:0x008c, B:44:0x00a7, B:45:0x00aa, B:47:0x002b, B:49:0x0033, B:52:0x0037, B:54:0x003b, B:56:0x0046, B:65:0x00ab, B:25:0x006a, B:40:0x0086), top: B:2:0x0007 }] */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x009d A[Catch: all -> 0x00b5, TRY_ENTER, TRY_LEAVE, TryCatch #1 {all -> 0x00b5, all -> 0x0074, all -> 0x00a6, NameNotFoundException -> 0x00ab, blocks: (B:3:0x0007, B:5:0x000f, B:10:0x0018, B:11:0x001c, B:16:0x004e, B:19:0x0057, B:21:0x005d, B:23:0x0063, B:26:0x0070, B:28:0x0091, B:31:0x009d, B:36:0x0075, B:37:0x0078, B:38:0x0079, B:41:0x008c, B:44:0x00a7, B:45:0x00aa, B:47:0x002b, B:49:0x0033, B:52:0x0037, B:54:0x003b, B:56:0x0046, B:65:0x00ab, B:25:0x006a, B:40:0x0086), top: B:2:0x0007 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static g b(String str, Context context, List list, int i10) {
-        Typeface typeface;
-        int i11;
-        Typeface b10;
-        a0.j jVar = a;
-        l8.a("getFontSync");
-        try {
-            typeface = (Typeface) jVar.a(str);
-        } catch (PackageManager.NameNotFoundException unused) {
-            return new g(-1);
-        } catch (Throwable th) {
-            throw th;
-        } finally {
+    public List b(t5.c cVar) {
+        String str;
+        int i9;
+        boolean c10 = c(32);
+        List list = this.b;
+        if (c10) {
+            return list;
         }
-        if (typeface != null) {
-            return new g(typeface);
+        y yVar = new y((byte[]) cVar.d);
+        while (yVar.a() > 0) {
+            int r10 = yVar.r();
+            int r11 = yVar.b + yVar.r();
+            if (r10 == 134) {
+                ArrayList arrayList = new ArrayList();
+                int r12 = yVar.r() & 31;
+                for (int i10 = 0; i10 < r12; i10++) {
+                    String p6 = yVar.p(3, n8.d.c);
+                    int r13 = yVar.r();
+                    boolean z10 = (r13 & 128) != 0;
+                    if (z10) {
+                        i9 = r13 & 63;
+                        str = "application/cea-708";
+                    } else {
+                        str = "application/cea-608";
+                        i9 = 1;
+                    }
+                    byte r14 = (byte) yVar.r();
+                    yVar.D(1);
+                    List singletonList = z10 ? Collections.singletonList((r14 & 64) != 0 ? new byte[]{1} : new byte[]{0}) : null;
+                    s0 s0Var = new s0();
+                    s0Var.o = str;
+                    s0Var.c = p6;
+                    s0Var.G = i9;
+                    s0Var.q = singletonList;
+                    arrayList.add(new t0(s0Var));
+                }
+                list = arrayList;
+            }
+            yVar.C(r11);
         }
-        i a2 = d.a(context, list);
-        List list2 = a2.b;
-        int i12 = a2.a;
-        if (i12 != 0) {
-            if (i12 == 1) {
-                i11 = -2;
-                if (i11 == 0) {
-                    return new g(i11);
-                }
-                if (list2.size() <= 1 || Build.VERSION.SDK_INT < 29) {
-                    j[] jVarArr = (j[]) list2.get(0);
-                    x7 x7Var = i0.f.a;
-                    l8.a("TypefaceCompat.createFromFontInfo");
-                    b10 = i0.f.a.b(context, jVarArr, i10);
-                    Trace.endSection();
-                    if (b10 != null) {
-                        return new g(-3);
-                    }
-                    jVar.b(str, b10);
-                    return new g(b10);
-                }
-                x7 x7Var2 = i0.f.a;
-                l8.a("TypefaceCompat.createFromFontInfoWithFallback");
-                b10 = i0.f.a.c(context, list2, i10);
-                Trace.endSection();
-                if (b10 != null) {
-                }
-            }
-            i11 = -3;
-            if (i11 == 0) {
-            }
-        } else {
-            j[] jVarArr2 = (j[]) list2.get(0);
-            if (jVarArr2 != null && jVarArr2.length != 0) {
-                int length = jVarArr2.length;
-                int i13 = 0;
-                while (true) {
-                    if (i13 >= length) {
-                        i11 = 0;
-                        break;
-                    }
-                    int i14 = jVarArr2[i13].e;
-                    if (i14 == 0) {
-                        i13++;
-                    } else if (i14 >= 0) {
-                        i11 = i14;
-                    }
-                }
-                if (i11 == 0) {
-                }
-            }
-            i11 = 1;
-            if (i11 == 0) {
-            }
-        }
+        return list;
+    }
+
+    public boolean c(int i9) {
+        return (i9 & this.a) != 0;
+    }
+
+    public h() {
+        this.a = 1;
+        this.b = Collections.singletonList(null);
+    }
+
+    public h(ArrayList arrayList) {
+        this.a = 0;
+        this.b = arrayList;
     }
 }

@@ -1,15 +1,30 @@
 package f9;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class e {
-    public final String a;
-    public final String b;
-    public final String c;
+public final class e implements j {
+    public static final za.a c = new za.a(7);
+    public final Object a;
+    public Object b;
 
-    public e(String str, String str2, String str3) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
+    public e(j9.c cVar) {
+        this.a = cVar;
+        this.b = c;
+    }
+
+    @Override // f9.j
+    public void a(i iVar, int i9) {
+        int[] iArr = (int[]) this.b;
+        try {
+            iVar.read((byte[]) this.a, iArr[0], i9);
+            iArr[0] = iArr[0] + i9;
+        } finally {
+            iVar.close();
+        }
+    }
+
+    public e(byte[] bArr, int[] iArr) {
+        this.a = bArr;
+        this.b = iArr;
     }
 }

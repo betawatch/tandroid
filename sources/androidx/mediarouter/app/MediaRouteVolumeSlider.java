@@ -9,32 +9,31 @@ import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-class MediaRouteVolumeSlider extends m.d0 {
+public class MediaRouteVolumeSlider extends m.d0 {
     public final float b;
     public boolean c;
     public Drawable d;
     public int e;
     public int f;
 
-    public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet);
-        this.b = g7.b0.c(context);
+    public MediaRouteVolumeSlider(Context context) {
+        this(context, null);
     }
 
-    public final void a(int i10, int i11) {
-        if (this.e != i10) {
-            if (Color.alpha(i10) != 255) {
-                Log.e("MediaRouteVolumeSlider", "Volume slider progress and thumb color cannot be translucent: #" + Integer.toHexString(i10));
+    public final void a(int i9, int i10) {
+        if (this.e != i9) {
+            if (Color.alpha(i9) != 255) {
+                Log.e("MediaRouteVolumeSlider", "Volume slider progress and thumb color cannot be translucent: #" + Integer.toHexString(i9));
             }
-            this.e = i10;
+            this.e = i9;
         }
-        if (this.f != i11) {
-            if (Color.alpha(i11) != 255) {
-                Log.e("MediaRouteVolumeSlider", "Volume slider background color cannot be translucent: #" + Integer.toHexString(i11));
+        if (this.f != i10) {
+            if (Color.alpha(i10) != 255) {
+                Log.e("MediaRouteVolumeSlider", "Volume slider background color cannot be translucent: #" + Integer.toHexString(i10));
             }
-            this.f = i11;
+            this.f = i10;
         }
     }
 
@@ -49,12 +48,12 @@ class MediaRouteVolumeSlider extends m.d0 {
     @Override // m.d0, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        int i10 = isEnabled() ? 255 : (int) (this.b * 255.0f);
+        int i9 = isEnabled() ? 255 : (int) (this.b * 255.0f);
         Drawable drawable = this.d;
-        int i11 = this.e;
+        int i10 = this.e;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        drawable.setColorFilter(i11, mode);
-        this.d.setAlpha(i10);
+        drawable.setColorFilter(i10, mode);
+        this.d.setAlpha(i9);
         Drawable progressDrawable = getProgressDrawable();
         if (progressDrawable instanceof LayerDrawable) {
             LayerDrawable layerDrawable = (LayerDrawable) getProgressDrawable();
@@ -63,7 +62,7 @@ class MediaRouteVolumeSlider extends m.d0 {
             progressDrawable = findDrawableByLayerId;
         }
         progressDrawable.setColorFilter(this.e, mode);
-        progressDrawable.setAlpha(i10);
+        progressDrawable.setAlpha(i9);
     }
 
     @Override // android.widget.AbsSeekBar
@@ -73,5 +72,14 @@ class MediaRouteVolumeSlider extends m.d0 {
             drawable = null;
         }
         super.setThumb(drawable);
+    }
+
+    public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet) {
+        this(context, attributeSet, org.telegram.messenger.beta.R.attr.seekBarStyle);
+    }
+
+    public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet, int i9) {
+        super(context, attributeSet, i9);
+        this.b = f7.d0.c(context);
     }
 }

@@ -1,39 +1,17 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public final class b5 implements v5 {
-    public static final b5 b = new b5(0);
-    public final /* synthetic */ int a;
+public abstract class b5 {
+    public static final a5 a = new a5();
+    public static final a5 b;
 
-    public /* synthetic */ b5(int i10) {
-        this.a = i10;
-    }
-
-    @Override // com.google.android.gms.internal.cast.v5
-    public final e6 zzb(Class cls) {
-        switch (this.a) {
-            case 0:
-                if (!d5.class.isAssignableFrom(cls)) {
-                    throw new IllegalArgumentException("Unsupported message type: ".concat(cls.getName()));
-                }
-                try {
-                    return (e6) d5.k(cls.asSubclass(d5.class)).h(3, null);
-                } catch (Exception e9) {
-                    throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e9);
-                }
-            default:
-                throw new IllegalStateException("This should never be called.");
+    static {
+        a5 a5Var = null;
+        try {
+            a5Var = (a5) Class.forName("com.google.protobuf.ExtensionSchemaFull").getDeclaredConstructor(null).newInstance(null);
+        } catch (Exception unused) {
         }
-    }
-
-    @Override // com.google.android.gms.internal.cast.v5
-    public final boolean zzc(Class cls) {
-        switch (this.a) {
-            case 0:
-                return d5.class.isAssignableFrom(cls);
-            default:
-                return false;
-        }
+        b = a5Var;
     }
 }

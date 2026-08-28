@@ -1,6 +1,6 @@
 package m3;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
 public final class x {
     public final byte[] a = new byte[10];
@@ -18,22 +18,22 @@ public final class x {
         }
     }
 
-    public final void b(w wVar, long j10, int i10, int i11, int i12, v vVar) {
-        if (!(this.g <= i11 + i12)) {
+    public final void b(w wVar, long j10, int i9, int i10, int i11, v vVar) {
+        if (!(this.g <= i10 + i11)) {
             throw new IllegalStateException("TrueHD chunk samples must be contiguous in the sample queue.");
         }
         if (this.b) {
-            int i13 = this.c;
-            int i14 = i13 + 1;
-            this.c = i14;
-            if (i13 == 0) {
+            int i12 = this.c;
+            int i13 = i12 + 1;
+            this.c = i13;
+            if (i12 == 0) {
                 this.d = j10;
-                this.e = i10;
+                this.e = i9;
                 this.f = 0;
             }
-            this.f += i11;
-            this.g = i12;
-            if (i14 >= 16) {
+            this.f += i10;
+            this.g = i11;
+            if (i13 >= 16) {
                 a(wVar, vVar);
             }
         }
@@ -44,8 +44,8 @@ public final class x {
             return;
         }
         byte[] bArr = this.a;
-        lVar.b(0, 10, bArr);
-        lVar.q();
+        lVar.c(0, 10, bArr);
+        lVar.t();
         if (bArr[4] == -8 && bArr[5] == 114 && bArr[6] == 111) {
             byte b10 = bArr[7];
             if ((b10 & 254) == 186) {

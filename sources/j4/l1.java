@@ -1,10 +1,10 @@
 package j4;
 
-import h3.s2;
+import h3.r2;
 
-/* compiled from: r8-map-id-818410c928e26989539d9c43666f59979e404aa44db880373fadfbe90836d366 */
+/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public abstract class l1 extends j {
+public abstract class l1 extends k {
     public final a k;
 
     public l1(a aVar) {
@@ -12,7 +12,7 @@ public abstract class l1 extends j {
     }
 
     @Override // j4.a
-    public s2 g() {
+    public r2 g() {
         return this.k.g();
     }
 
@@ -29,37 +29,37 @@ public abstract class l1 extends j {
     @Override // j4.a
     public final void l(com.google.android.exoplayer2.upstream.y0 y0Var) {
         this.j = y0Var;
-        this.i = d5.g0.k(null);
+        this.i = d5.f0.k(null);
         z();
     }
 
-    @Override // j4.j
-    public final c0 s(Object obj, c0 c0Var) {
-        return x(c0Var);
+    @Override // j4.k
+    public final d0 s(Object obj, d0 d0Var) {
+        return x(d0Var);
     }
 
-    @Override // j4.j
+    @Override // j4.k
     public final long t(Object obj, long j10) {
         return j10;
     }
 
-    @Override // j4.j
-    public final int u(int i10, Object obj) {
-        return i10;
+    @Override // j4.k
+    public final int u(int i9, Object obj) {
+        return i9;
     }
 
-    @Override // j4.j
-    public final void v(Object obj, a aVar, s2 s2Var) {
-        y(s2Var);
+    @Override // j4.k
+    public final void v(Object obj, a aVar, r2 r2Var) {
+        y(r2Var);
     }
 
-    public abstract void y(s2 s2Var);
+    public abstract void y(r2 r2Var);
 
     public void z() {
         w(null, this.k);
     }
 
-    public c0 x(c0 c0Var) {
-        return c0Var;
+    public d0 x(d0 d0Var) {
+        return d0Var;
     }
 }
